@@ -1,0 +1,20 @@
+.title {
+    color: red;
+}
+
+.form {
+    position: relative;
+}
+.button {
+    border: 0.5px solid black;
+    border-radius: 15rem 15rem 15rem 15rem ;
+    background-color: aqua;
+}
+
+.centre {
+    margin: 0;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-right: -50%;
+}

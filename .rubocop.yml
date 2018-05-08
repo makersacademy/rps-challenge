@@ -454,8 +454,8 @@ TernaryParentheses:
   Enabled: false
 TrailingCommaInArguments:
   Enabled: false
-TrailingCommaInLiteral:
-  Enabled: false
+#TrailingCommaInLiteral:
+#  Enabled: false
 TrailingUnderscoreVariable:
   Enabled: false
 TrailingWhitespace:

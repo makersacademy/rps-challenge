@@ -1,0 +1,17 @@
+= haml :header_partial
+.centre
+  %h1= "#{@player1_name} vs. #{@player2_name}"
+  %h1= "#{@player1_name}, choose your weapon"
+  %form.form{ action: '/game', method: 'POST' }
+    %button.button.button_rock{ name: :name, value: 'rock' }
+      %span.fa-stack.fa-10x
+        %i.far.fa-circle.fa-stack-2x
+        %i.far.fa-hand-rock.fa-stack-1x
+    %button.button.button_paper{ name: :name, value: 'paper' }
+      %span.fa-stack.fa-10x
+        %i.far.fa-circle.fa-stack-2x
+        %i.far.fa-hand-paper.fa-stack-1x
+    %button.button.button_scissors{ name: :name, value: 'scissors' }
+      %span.fa-stack.fa-10x
+        %i.far.fa-circle.fa-stack-2x
+        %i.far.fa-hand-scissors.fa-stack-1x

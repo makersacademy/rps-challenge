@@ -1,0 +1,8 @@
+= haml :header_partial
+.centre
+  %h1.title Welcome to Rock, Paper, Scissors!
+
+  %form.form{ action: '/name', method: 'POST' }
+    %label Please enter your name:
+    %input.form_inputfield{ type: 'text', name: 'name' }
+    %input.button.button_submit{ type: 'submit', value: 'Let\' play!' }
