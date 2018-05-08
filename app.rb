@@ -5,9 +5,6 @@ require './lib/game'
 
 class RPSWeb < Sinatra::Base
 
-  enable :sessions
-  set :session_secret, 'super secret'
-
   get '/' do
     erb :index
   end
@@ -35,14 +32,14 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/paper' do
-    @game.add_player_weapon(:rock)
+    @game.add_player_weapon(:paper)
     @game.add_computer_weapon
     @game.set_result
     erb(:paper)
   end
 
   get '/scissors' do
-    @game.add_player_weapon(:rock)
+    @game.add_player_weapon(:scissors)
     @game.add_computer_weapon
     @game.set_result
     erb(:scissors)
