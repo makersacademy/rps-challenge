@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/player'
+require_relative './lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -14,7 +15,6 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-
     erb :play
   end
 
@@ -25,6 +25,16 @@ class RPS < Sinatra::Base
 
   get '/weapon_confirm' do
     erb :weapon_confirm
+  end
+
+  post '/game' do
+    @game = Game.new
+    @game.game_roll
+    redirect '/game'
+  end
+
+  get '/game' do
+    erb :game
   end
 
 end
