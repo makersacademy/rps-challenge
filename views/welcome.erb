@@ -1,11 +1,23 @@
-<h1>Hey there <%= current_player.name %>!</h1>
-<h2>Pick either single or multiplayer</h2>
-<form action='/single' method='post'>
-  <input type='submit' value='1 player'>
-</form>
-<form action='/multi' method='post'>
-  <input type='submit' value='2 player'>
-</form>
-<form action='/logout' method='post'>
-  <input type='submit' value='Logout'>
-</form>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+  </head>
+  <body>
+    <h1>Hey there <%= current_player.name %>!</h1>
+    <h2>Pick either single or multiplayer</h2>
+    <form action='/single' method='post'>
+      <input class="button" type='submit' value='1 player'>
+    </form>
+    <form action='/multi' method='post'>
+      <input class="button" type='submit' value='2 player'>
+    </form>
+    <form action='/logout' method='post'>
+      <input class="button" type='submit' value='Logout'>
+    </form>
+
+  </body>
+</html>

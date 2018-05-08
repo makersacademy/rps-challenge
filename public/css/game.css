@@ -2,7 +2,11 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
-  background:
+  background-color: #ffef96;
+  color: #618685;
+  text-align: center;
+  align-items: center;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 img {
@@ -31,4 +35,28 @@ img {
 .selector:hover {
   cursor: pointer;
   box-shadow: 10px 10px 5px grey;
+}
+
+button {
+  margin: 10px;
+  font-size: 2em;
+  padding: 2px;
+  background-color: #80ced6;
+  color: white;
+  border-radius: 0.2em;
+}
+
+.button {
+  margin: 10px;
+  font-size: 2em;
+  padding: 2px;
+  background-color: #80ced6;
+  color: white;
+  border-radius: 0.2em;
+}
+
+.input_field {
+  font-size: 2em;
+  background-color:#618685;
+  color: #FFF;
 }

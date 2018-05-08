@@ -1,10 +1,21 @@
-<h1>Welcome to RPSLS!</h1>
-<form action='/names' method='post'>
-  <h3>Enter name:</h3>
-  <% if @game_id %>
-    <input type="hidden" name="game_id" value="<%= @game_id %>">
-  <% end %>  
-  <input type='text' name='name'>
-  <br>
-  <input type='submit' value='Submit'>
-</form>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+  </head>
+  <body>
+    <h1>Welcome to RPSLS!</h1>
+    <form action='/names' method='post'>
+      <h2>Enter name:</h2>
+      <% if @game_id %>
+        <input type="hidden" name="game_id" value="<%= @game_id %>">
+      <% end %>
+      <input class="input_field" type='text' name='name'>
+      <br>
+      <input class="button" type='submit' value='Submit'>
+    </form>
+  </body>
+</html>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>RPSLS</title>
-        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/game.css">
         <script type="text/javascript" src="/js/multiplay.js"></script>
     </head>
@@ -38,14 +38,14 @@
           <% end %>
           <form action='/multiplay_again' method='post'>
             <input type="hidden" name="game_id" value="<%= @game_id %>">
-            <input type='submit' value='Play again'>
+            <input  class="button" type='submit' value='Play again'>
           </form>
           <form action='/logout' method='post'>
             <input type="hidden" name="game_id" value="<%= @game_id %>">
-            <input type='submit' value='Logout'>
+            <input class="button" type='submit' value='Logout'>
           </form>
           <form action='/new_game' method='post'>
              <input type="hidden" name="game_id" value="<%= @game_id %>">
-            <input type='submit' value='New game'>
+            <input class="button" type='submit' value='New game'>
           </form>
     </body>
