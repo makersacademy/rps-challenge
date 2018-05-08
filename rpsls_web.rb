@@ -53,7 +53,8 @@ class RPSLSWeb < Sinatra::Base
     end
 
     def exit_game
-      set_game
+      set_game if params
+      @game
       @game.reset
       @game.reset_score
       Game.delete_game(@game_id) if (@game.one_player? || current_player == @game.player1)
@@ -149,7 +150,7 @@ class RPSLSWeb < Sinatra::Base
   end
 
   post '/logout' do
-    exit_game
+    exit_game if params[:game_id]
     delete_games
     session.clear
     redirect '/'

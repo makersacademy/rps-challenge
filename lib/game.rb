@@ -35,6 +35,7 @@ class Game
   end
 
   def self.delete_games(current_player)
+    return unless !!@games
     @games.delete_if { |_id, game| game.player1 == current_player }
   end
 
