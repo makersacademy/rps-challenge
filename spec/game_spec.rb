@@ -8,7 +8,7 @@ describe Game do
 
   let(:game) do
     id = described_class.start_game(player1, player2, weapon_class)
-    described_class.games[id]
+    described_class.games(id)
   end
 
   before do
@@ -109,13 +109,14 @@ describe Game do
 
   context '1 player game' do
     before do
-      described_class.start_game(player1, computer, weapon_class)
+      id = described_class.start_game(player1, computer, weapon_class)
+      @game = described_class.games(id)
       allow(computer).to receive(:is_a?).with(Computer).and_return(true)
     end
 
     describe '#add_weapon' do
       it 'asks the computer to set its own weapon' do
-        described_class.game.add_weapon(player1.object_id, "rock")
+        @game.add_weapon(player1.object_id, "rock")
         expect(computer).to have_received(:give_weapon).with(no_args)
       end
     end
