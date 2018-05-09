@@ -18,11 +18,30 @@ Getting started
 * Run the app from the top level of the directory with bundle exec rackup config.ru
 * Go to localhost:9292 on your browser and play the game. (Check your terminal for the port number if this doesn't work)
 
+Playing
+-------
+
+The login screen is as shown below and will ask for a name. Enter it and click submit.
+
+![Alt text](/public/images/Login.png?raw=true "Login")
+
+This will take you to a Welcome screen with the ability to select from single player against the computer or multiplayer against someone else.
+
+![Alt text](/public/images/Welcome.png?raw=true "Welcome screen")
+
+By clicking on 1 player you can go straight into the game. There select a weapon by clicking on it and wait to see the result. Click play again for another go. Logout to leave the programme and New Game to return to the Welcome screen.
+
+![Alt text](/public/images/Single.png?raw=true "Single player")
+
+If you select 2 player at the welcome screen you will be shown the games that are available to you. Either wait for someone to join you game and then click play or click play on someone else's game and you will enter the game. This can be played exactly the same way as the single player mode.
+
+![Alt text](/public/images/Games.png?raw=true "Multiplayer games screen")
+
 Areas for future development
 -----------------------------
 
-* Refactor code
-* Implement multiplayer game with other people online
+* Refactor code to reduce the amount of duplication in the methods of Game.rb and in the controller
+* Consider implementation of the multiplayer mode using WebSockets instead of a javascript reload
 * Improve the the user interface
 
 License
