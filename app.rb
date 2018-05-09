@@ -19,7 +19,10 @@ class RPS < Sinatra::Base
   end
 
   post '/weapon' do
-    @weapon = params[:weapon]
+    p @weapon = params[:weapon]
+    p Game.create(@weapon)
+    p Game.instance.computer_weapon
+    p Game.instance.player_weapon
     erb :weapon_confirm
   end
 
@@ -27,13 +30,9 @@ class RPS < Sinatra::Base
     erb :weapon_confirm
   end
 
-  post '/game' do
-    @game = Game.new
-    @game.game_roll
-    redirect '/game'
-  end
-
   get '/game' do
+    p @result = Game.instance.result
+    p @computer_weapon = Game.instance.computer_weapon
     erb :game
   end
 
