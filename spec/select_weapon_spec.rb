@@ -5,6 +5,6 @@ feature 'select weapon' do
     click_button 'Submit'
     select 'rock', from: 'weapon'
     click_button 'Submit'
-    expect(page).to have_content 'You have chosen :rock for this game!'
+    expect(page).to have_content 'You have chosen rock for this game!'
   end
 end
