@@ -1,86 +1,53 @@
-# RPS Challenge
+RPSLS Challenge
+==================
 
-Instructions
+Summary
 -------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+This app allows a player to play a game of rock, paper, scissors, lizard, spock against the computer.
+Currently the game offers either 1 payer or two player mode however 2 player mode does not work so make sure you select 1 player.
+The computer randomly selects a weapon after you choose yours and the result will appear on the screen.
+Follow the getting started instructions and then once you have the app running locally follow the instructions to enter your name and the select 1 player mode.
 
-Task
-----
+Getting started
+---------------
 
-Knowing how to build web applications is getting us almost there as web developers!
+* Clone this repository
+* Install bundler with gem install bundle
+* Run bundler with bundle
+* Run the app from the top level of the directory with bundle exec rackup config.ru
+* Go to localhost:9292 on your browser and play the game. (Check your terminal for the port number if this doesn't work)
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+Playing
+-------
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+The login screen is as shown below and will ask for a name. Enter it and click submit.
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+![Alt text](/public/images/Login.png?raw=true "Login")
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+This will take you to a Welcome screen with the ability to select from single player against the computer or multiplayer against someone else.
 
-Hints on functionality
+![Alt text](/public/images/Welcome.png?raw=true "Welcome screen")
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+By clicking on 1 player you can go straight into the game. There select a weapon by clicking on it and wait to see the result. Click play again for another go. Logout to leave the programme and New Game to return to the Welcome screen.
 
+![Alt text](/public/images/Single.png?raw=true "Single player")
 
-As usual please start by
+If you select 2 player at the welcome screen you will be shown the games that are available to you. Either wait for someone to join you game and then click play or click play on someone else's game and you will enter the game. This can be played exactly the same way as the single player mode.
 
-* Forking this repo
-* TEST driving development of your app
+![Alt text](/public/images/Games.png?raw=true "Multiplayer games screen")
 
+Areas for future development
+-----------------------------
 
-## Bonus level 1: Multiplayer
+* Refactor code to reduce the amount of duplication in the methods of Game.rb and in the controller
+* Consider implementation of the multiplayer mode using WebSockets instead of a javascript reload
+* Improve the the user interface
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+License
+-------
+License follows the details as shown in the LICENSE file
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+Contributors
+------------
+This is primarily the work of George Sykes, but would not have been possible without my fellow developers and coaches at Makers Academy.

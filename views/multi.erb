@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+    <script type="text/javascript" src="/js/multi.js"></script>
+  </head>
+  <body>
+      <% @games.each do |id, game| %>
+        <form id="game_selector" action="/multiplay" method="post">
+          <input type="hidden" name="game_id" value="<%= id %>">
+          <h2>Player 1: <%= game.player1.name %></h2>
+          <h2>Player 2: <%= game.player2 == "Pending" ? "Pending" : game.player2.name %></h2>
+          <input class="button" type='submit' value='Play'>
+        </form>
+      <% end %>
+      <form action='/new_game' method='post'>
+          <input class="button" type='submit' value='New game'>
+      </form>
+  </body>
+</html>

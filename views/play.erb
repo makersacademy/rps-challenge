@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>RPSLS</title>
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/game.css">
+        <script type="text/javascript" src="/js/game.js"></script>
+    </head>
+    <body>
+      <div class="game_info_container">
+        <div class="player1_info">
+          <h1><%= @game.player1.name %>:   <%= @game.player1_score %></h1>
+        </div>
+        <div class="player2_info">
+          <h1><%= @game.player2 == "Pending" ? "Pending" : @game.player2.name %>:   <%= @game.player2_score %></h1>
+        </div>
+      </div>
+          <% if !@game.result %>
+              <div class="controls">
+                  <form id="weapon" action="/weapon" method="post">
+                      <input type="hidden" name="game_id" value="<%= @game_id %>">
+                      <button type="button" class="selector" id="rock" name="rock" ><img src="/images/rock.png" width="100%"  alt="submit" /></button>
+                      <button type="button" class="selector" id="paper" name="paper"><img src="/images/paper.png" width="100%"  alt="submit" /></button>
+                      <button type="button" class="selector" id="scissors" name="scissors"><img src="/images/scissors.png" width="100%"  alt="submit" /></button>
+                      <button type="button" class="selector" id="lizard" name="lizard"><img src="/images/lizard.png" width="100%"  alt="submit" /></button>
+                      <button type="button" class="selector" id="spock" name="spock"><img src="/images/spock.png" width="100%"  alt="submit" /></button>
+                  </form>
+              </div>
+          <% else %>
+            <% if @game.result.to_s == "draw" %>
+                <h2>It's a draw</h2>
+            <% else %>
+                <h2><%= @game.winner.name %> wins!</h2>
+            <% end %>
+          <% end %>
+          <form action='/play_again' method='post'>
+            <input type="hidden" name="game_id" value="<%= @game_id %>">
+            <input class="button" type='submit' value='Play again'>
+          </form>
+          <form action='/logout' method='post'>
+            <input class="button" type='submit' value='Logout'>
+          </form>
+          <form action='/new_game' method='post'>
+             <input type="hidden" name="game_id" value="<%= @game_id %>">
+            <input class="button" type='submit' value='New game'>
+          </form>
+    </body>
