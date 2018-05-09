@@ -2,9 +2,9 @@
 <h2>Computer choice <%= @game.computer_weapon.to_s %></h2>
 </br>
 
-<% if @game.result == :win %>
+<% if @game.set_result == :win %>
 <h1>The winner is YOU</h1>
-<% elsif @game.result == :lose %>
+<% elsif @game.set_result == :lose %>
 <h1>The winner is COMPUTER</h1>
 <% else %>
 <h1>it is a draw!</h1>

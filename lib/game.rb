@@ -8,7 +8,7 @@ class Game
           paper: :rock,
           scissors: :paper }
 
-  attr_reader :player_weapon, :computer_weapon, :result, :player, :computer
+  attr_reader :player_weapon, :computer_weapon, :player, :computer
 
   def self.create(player, computer)
     @game = new(player, computer)
@@ -21,7 +21,6 @@ class Game
   def initialize(player, computer)
     @player = player.name
     @computer = computer.name
-    @result = nil
   end
 
   def add_player_weapon(choice)
@@ -33,8 +32,7 @@ class Game
   end
 
   def set_result
-    @result = :win if RULES[player_weapon] == computer_weapon
-    @result = :lose if RULES[computer_weapon] == player_weapon
-    @result = :draw if computer_weapon == player_weapon
+    return :draw if computer_weapon == player_weapon
+    RULES[player_weapon] == computer_weapon ? :win : :lose
   end
 end

@@ -40,8 +40,7 @@ describe Game do
       it "returns the result 'win' if player wins" do
         game.add_player_weapon(:paper)
         allow(game).to receive(:computer_weapon) { :rock }
-        game.set_result
-        expect(game.result).to eq :win
+        expect(game.set_result).to eq :win
       end
     end
 
@@ -49,8 +48,7 @@ describe Game do
       it "returns the result 'lose' if computer wins" do
         game.add_player_weapon(:scissors)
         allow(game).to receive(:computer_weapon) { :rock }
-        game.set_result
-        expect(game.result).to eq :lose
+        expect(game.set_result).to eq :lose
       end
     end
 
@@ -58,8 +56,7 @@ describe Game do
       it "returns the result 'draw' if noone wins" do
         game.add_player_weapon(:rock)
         allow(game).to receive(:computer_weapon) { :rock }
-        game.set_result
-        expect(game.result).to eq :draw
+        expect(game.set_result).to eq :draw
       end
     end
   end
