@@ -1,5 +1,5 @@
 require 'spec_helper'
-feature 'Regstering player name' do
+feature 'Registering player name' do
   scenario 'the player can enter their name' do
     visit '/'
     fill_in 'player_name', with: 'Paola'
