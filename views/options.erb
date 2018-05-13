@@ -1,0 +1,13 @@
+
+<h1><%= @turn %>, rock, paper or scissors?<%= %></h1>
+
+  <form action="/p1move" method="post">
+  <input type="image" name="option" value="rock" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ5rRA00Rj2gOpJdUPrBozrEXId6VaoNZff_48ANK9KblE9_PAYA">
+  <input type="image" name="option" value="paper" src="http://cdn.toonvectors.com/images/2/5818/toonvectors-5818-140.jpg">
+  <input type="image" name="option" value="scissors" src="https://png.pngtree.com/element_pic/17/02/09/08ad61b612011dad5c3e220d1663cc28.jpg">
+</form>
+
+<h1>Click only after you chose your option</h1>
+<form action="/result">
+<input type="submit" name="option2" value="compu_move">
+</form>
