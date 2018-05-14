@@ -13,7 +13,7 @@ class Result
   end
 
   def calculate
-    look_up = @rps_chart[@moves]
+    look_up = (@rps_chart[@moves]).to_i
     @names[look_up]
   end
 
