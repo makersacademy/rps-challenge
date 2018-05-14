@@ -1,4 +1,18 @@
+env:
+  secure: 0EODDh7Ri1rBEb6gMQdSrG3BtEOxEz0qpvFhNAR0wjVjKLxlRFWj3PJv8wrY9s/NBBAFUjAAUlMbrunwT6LCmCNNPBST9x6z3v0DeFz7DjiIm+LxtG2EuUeden7sza1jgAAy6TthWnxiwvoameETDXFdnpZyEeOakTsXqgmjcY4ZJPUvcac8FmLEcefrO1n8lGW5OI+FrljXIqGQyop+LYrjV+G7bJqW40HgsewhOhAHu6y/xRBPL3jVFsaPsWMdCPRCyzx8ziCKxfwrCKa6SxDEjUlDMy1wskhOGHOdDMuzigism4cm8udLISiNxXshAyx+OClk5wIspw0GIVqfzycc74I9yHMJfxlfhnQN/6Ba0jj/z+eWoimIQzTL4OGz1aPI7P8Px5kFHgONOs5divlTss3eKXkn6vhFHni6Cy/f+xHhV7m5xwcf1kIUYfELIYBnt/KI2UjkAfeECjUDrqMnFZlfVGKx1BBa5JdlxDHjC1Z0EwMNDViEoRKlD0HYbMFYx6mjo6R3N+9DEGG2w5DNYttLdo4EuRWYOb2Bxpz9hTulNqPLfTLZwYHi8QjmE/s3TUqn3r/RCaf7e+xW2dAfJuq4OW7YbOuErpyGVJSsUyxLWJbtEr1OpiUSnYWnRPo9Sm9q1UhWWISl/TNi3pnUWbsqrvDyCYZ1OdX+B9Q=
+language: ruby
 rvm:
-  - 2.4.0
+- 2.5.0
+before_install:
+- bundle install
+notifications: false
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
-  - bundle exec rspec spec
+- bundle exec rspec spec
+- bundle exec rubocop
+after_script:
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"

@@ -1,0 +1,31 @@
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Krona+One|Lobster|Quicksand|Nunito|Dosis" rel="stylesheet">
+</head>
+
+<html>
+  <body>
+
+    <h1 class="center">
+      <span class="rock">ROCK  </span>
+      <span class="paper">PAPER  </span>
+      <span class="scissors">SCISSORS</span>
+    </h1>
+
+        <div class="game_space">
+          <br/>
+          <p class=<%= @p1_move %>><%= @p1_name %> played <%= @p1_move %>!</p>
+          <br/>
+          <p class=<%= @p2_move %>><%= @p2_name %> played <%= @p2_move %>!</p>
+          <h1 class="subheader"><%= @result %>!</h1>
+        </div>
+        <div class="center">
+          <form action='/rematch'>
+            <button class="btn purple" id="restart">Rematch!</button>
+          </form>
+          <form action='/'>
+            <button class="btn purple" id="restart">Start Again!</button>
+          </form>
+        </div>
+  </body>
+</html>

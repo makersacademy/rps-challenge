@@ -6,7 +6,7 @@
 #
 # The linter file that doesn't lead junior developers to bad habits.
 # https://github.com/makersacademy/scaffolint
-# 
+#
 # Tested with Rubocop version 0.52.1
 #
 # Introduction
@@ -37,7 +37,8 @@
 # designed to make you write more readable code - not less.
 
 Metrics/LineLength:
-  Max: 100
+  Enabled: false
+  # Max: 100
 
 # We want to encourage testing, but it can be verbose in the early stages.
 # So we'll give you a break. As you learn, try removing the next two sections.
@@ -454,7 +455,9 @@ TernaryParentheses:
   Enabled: false
 TrailingCommaInArguments:
   Enabled: false
-TrailingCommaInLiteral:
+TrailingCommaInArrayLiteral:
+  Enabled: false
+TrailingCommaInHashLiteral:
   Enabled: false
 TrailingUnderscoreVariable:
   Enabled: false
