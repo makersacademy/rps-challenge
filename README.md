@@ -1,5 +1,10 @@
 # Rock Paper Scissors
 ![TravisCI_Status](https://travis-ci.org/julesnuggy/rps-challenge.svg?branch=master)
+
+[![CodeClimate_Maintainability](https://api.codeclimate.com/v1/badges/38507a175e0b80852b58/maintainability)](https://codeclimate.com/github/julesnuggy/rps-challenge/maintainability)
+
+[![CodeClimate_TestCoverage](https://api.codeclimate.com/v1/badges/38507a175e0b80852b58/test_coverage)](https://codeclimate.com/github/julesnuggy/rps-challenge/test_coverage)
+
 ## Introduction
 Play Rock-Paper-Scissors against the computer or a second (human) player.
 
