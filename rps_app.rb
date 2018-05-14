@@ -2,7 +2,6 @@ require 'sinatra'
 require 'sinatra/base'
 require_relative './lib/calc_result.rb'
 
-
 class RPS < Sinatra::Base
   enable :sessions
   set :session_secret, 'My Secret Session'

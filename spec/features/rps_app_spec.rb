@@ -1,4 +1,4 @@
-require '~/Documents/Coding/MA/weekend_challenges/rps-challenge/rps_app.rb'
+require_relative '../../rps_app.rb'
 
 describe RPS do
 
@@ -7,7 +7,6 @@ describe RPS do
   end
 
   feature 'Set up:' do
-
     scenario 'can enter player names' do
       expect(page).to have_content('Jules vs. Lee')
     end
@@ -15,8 +14,7 @@ describe RPS do
     scenario 'tells whose turn it is' do
       expect(page).to have_content('Jules - select your move!')
     end
-
-  end # Set up
+  end
 
   feature 'Make a move:' do
     context 'player 1' do
@@ -37,7 +35,6 @@ describe RPS do
     end
 
     context 'player 2' do
-
       before do
         find('//input[@id="p1_scissors"]').click
       end
@@ -57,7 +54,7 @@ describe RPS do
         expect(page).to have_content('Lee played scissors!')
       end
     end
-  end # Make a move
+  end
 
   feature 'Player 2 as computer:' do
     before do
@@ -69,10 +66,9 @@ describe RPS do
     end
 
     scenario 'is able to select a move by itself' do
-      click_on ('comp_move')
+      click_on 'comp_move'
       expect(page).to have_content('Lee (COMP) played')
     end
-
   end
 
   feature 'Process results:' do
@@ -81,7 +77,6 @@ describe RPS do
     end
 
     context 'P1 plays rock' do
-
       scenario 'P2 plays rock' do
         find('//input[@id="p1_rock"]').click
         find('//input[@id="p2_rock"]').click
@@ -99,53 +94,48 @@ describe RPS do
         find('//input[@id="p2_scissors"]').click
         expect(page).to have_content('Jules played rock! Lee played scissors! Jules is the winner!')
       end
-
     end
 
     context 'P1 plays paper' do
-
-        scenario 'P2 plays rock' do
-          find('//input[@id="p1_paper"]').click
-          find('//input[@id="p2_rock"]').click
-          expect(page).to have_content('Jules played paper! Lee played rock! Jules is the winner!')
-        end
-
-        scenario 'P2 plays paper' do
-          find('//input[@id="p1_paper"]').click
-          find('//input[@id="p2_paper"]').click
-          expect(page).to have_content('Jules played paper! Lee played paper! It\'s a draw!')
-        end
-
-        scenario 'P2 plays scissors' do
-          find('//input[@id="p1_paper"]').click
-          find('//input[@id="p2_scissors"]').click
-          expect(page).to have_content('Jules played paper! Lee played scissors! Lee is the winner!')
-        end
-
+      scenario 'P2 plays rock' do
+        find('//input[@id="p1_paper"]').click
+        find('//input[@id="p2_rock"]').click
+        expect(page).to have_content('Jules played paper! Lee played rock! Jules is the winner!')
       end
 
-      context 'P1 plays scissors' do
-
-        scenario 'P2 plays rock' do
-          find('//input[@id="p1_scissors"]').click
-          find('//input[@id="p2_rock"]').click
-          expect(page).to have_content('Jules played scissors! Lee played rock! Lee is the winner!')
-        end
-
-        scenario 'P2 plays paper' do
-          find('//input[@id="p1_scissors"]').click
-          find('//input[@id="p2_paper"]').click
-          expect(page).to have_content('Jules played scissors! Lee played paper! Jules is the winner!')
-        end
-
-        scenario 'P2 plays scissors' do
-          find('//input[@id="p1_scissors"]').click
-          find('//input[@id="p2_scissors"]').click
-          expect(page).to have_content('Jules played scissors! Lee played scissors! It\'s a draw!')
-        end
-
+      scenario 'P2 plays paper' do
+        find('//input[@id="p1_paper"]').click
+        find('//input[@id="p2_paper"]').click
+        expect(page).to have_content('Jules played paper! Lee played paper! It\'s a draw!')
       end
 
-  end # Process results
+      scenario 'P2 plays scissors' do
+        find('//input[@id="p1_paper"]').click
+        find('//input[@id="p2_scissors"]').click
+        expect(page).to have_content('Jules played paper! Lee played scissors! Lee is the winner!')
+      end
+    end
+
+    context 'P1 plays scissors' do
+      scenario 'P2 plays rock' do
+        find('//input[@id="p1_scissors"]').click
+        find('//input[@id="p2_rock"]').click
+        expect(page).to have_content('Jules played scissors! Lee played rock! Lee is the winner!')
+      end
+
+      scenario 'P2 plays paper' do
+        find('//input[@id="p1_scissors"]').click
+        find('//input[@id="p2_paper"]').click
+        expect(page).to have_content('Jules played scissors! Lee played paper! Jules is the winner!')
+      end
+
+      scenario 'P2 plays scissors' do
+        find('//input[@id="p1_scissors"]').click
+        find('//input[@id="p2_scissors"]').click
+        expect(page).to have_content('Jules played scissors! Lee played scissors! It\'s a draw!')
+      end
+    end
+
+  end
 
 end

@@ -1,7 +1,7 @@
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-
+require 'rubocop'
 require 'simplecov'
 require 'simplecov-console'
 
