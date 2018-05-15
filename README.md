@@ -1,9 +1,9 @@
-# 'Rock, paper and scissors'  
+# 'Rock, Paper, Scissors'  
 
 
 ## Description
 
-A web application built with Sinatra that enables a user to play Rock, Paper, Scissors with the computer.
+A web application that enables the user to play the Rock, Paper, Scissors game with the computer.
 
 
 ## User stories
@@ -22,7 +22,7 @@ I would like to be able to choose one option.
 
 As a user, 
 to ask my oponent to play,
-I would like to click a button for the computer to choose a random option.
+I would like the computer to choose a random option.
 
 As a user, 
 I would like to see who has won the game.
@@ -43,6 +43,11 @@ I would like to see who has won the game.
 
 ## Deployed on Heroku:  
 https://rpspaolap.herokuapp.com/
+
+
+## Test coverage 
+
+![screen shot 2018-05-15 at 17 03 00](https://user-images.githubusercontent.com/33669463/40069194-892c717a-5862-11e8-9b7f-5ecbc979b760.png)
 
 
 ## Work in progress
