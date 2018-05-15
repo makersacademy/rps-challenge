@@ -1,11 +1,11 @@
 require 'sinatra/base'
-#require_relative './lib/RPS.rb'
+require_relative './lib/game_result.rb'
 
 class Game < Sinatra::Base
 
   enable :sessions
   get '/' do
-    erb :index # this erb file contains the html stuff
+    erb :index 
   end
 
   post '/name' do
@@ -15,28 +15,27 @@ class Game < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
+    session[:turn] = session[:player_name]
     erb :play
   end
 
   get '/options' do
+    @turn = session[:turn]
     erb :options
   end
 
-  get '/options' do
+  post '/p1move' do
     session[:option] = params[:option]
+    session[:turn] = "computer's turn"
     redirect '/options'
   end
 
-  get '/confirm_option' do
-    erb :confirm_option
+  get "/result" do
+    session[:sample] = ["rock", "paper", "scissors"].sample
+    game_result = GameResult.new(session[:option], session[:sample], session[:player_name])
+    @final = game_result.calculate_result
+    erb :final
   end
 
-  # get '/confirm_option' do
-  #   erb :confirm_paper
-  # end
-
-  # get '/confirm_paper' do
-  #   erb :confirm_paper
-  # end
   run! if app_file == $0
 end
