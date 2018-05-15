@@ -3,7 +3,7 @@ class GameResult
   def initialize(p1move, compu_move, player_name)
     @two_moves = [p1move, compu_move]
     @result = ["It\'s a draw",
-    "#{player_name} is the winner!","computer wins!"]
+    "#{player_name} is the winner!", "computer wins!"]
     @combinations = {
       ["rock", "rock"] => 0,
       ["rock", "paper"] => 2,
@@ -16,7 +16,6 @@ class GameResult
       ["scissors", "scissors"] => 0
     }
   end
-
 
   def calculate_result
     moves = @combinations[@two_moves]
