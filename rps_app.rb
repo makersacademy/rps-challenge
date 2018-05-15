@@ -5,7 +5,7 @@ class Game < Sinatra::Base
 
   enable :sessions
   get '/' do
-    erb :index 
+    erb :index
   end
 
   post '/name' do
@@ -15,24 +15,22 @@ class Game < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
-    session[:turn] = session[:player_name]
     erb :play
   end
 
   get '/options' do
-    @turn = session[:turn]
     erb :options
   end
 
   post '/p1move' do
     session[:option] = params[:option]
-    session[:turn] = "computer's turn"
-    redirect '/options'
+    redirect '/result'
   end
 
   get "/result" do
-    session[:sample] = ["rock", "paper", "scissors"].sample
-    game_result = GameResult.new(session[:option], session[:sample], session[:player_name])
+    @compu_move = ["rock", "paper", "scissors"].sample
+    @player_move = session[:option]
+    game_result = GameResult.new(@player_move, @compu_move, session[:player_name])
     @final = game_result.calculate_result
     erb :final
   end

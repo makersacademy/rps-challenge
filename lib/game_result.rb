@@ -1,11 +1,7 @@
 class GameResult
-  attr_reader :player_name
 
   def initialize(p1move, compu_move, player_name)
-    @p1move = p1move
-    @compu_move = compu_move
     @two_moves = [p1move, compu_move]
-    @player_name = player_name
     @result = ["It\'s a draw",
     "#{player_name} is the winner!","computer wins!"]
     @combinations = {
