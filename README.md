@@ -7,7 +7,7 @@ Rock Paper Scissors Challenge
 
 [Check project online](https://powerful-chamber-96906.herokuapp.com/)
 
-Task
+Task:
 ----
 
 Create the Rock Paper Scissors Game!
@@ -16,7 +16,7 @@ Knowing how to build web applications is getting us almost there as web develope
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
-User stoty
+User stoty:
 ----
 
 ```
@@ -29,7 +29,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Technologies used
+Technologies used:
 -----
 1. ruby 2.5.0
 2. sinatra
@@ -42,7 +42,7 @@ Run project:
 * Onlinel: use this [link](https://powerful-chamber-96906.herokuapp.com/)
 * To run tests, type ```rspec```
 
-Result
+Result:
 -----
 The app has 4 classes:
 
