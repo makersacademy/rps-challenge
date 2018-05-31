@@ -1,24 +1,38 @@
+[![Build Status](https://travis-ci.org/Hemesh-Unka/rps-challenge.svg?branch=master)](https://travis-ci.org/Hemesh-Unka/rps-challenge)
+
 # RPS Challenge
+**Makers Academy - Weekend Challenge 3**
 
-Instructions
--------
+Our third weekend challenge. We were tasked to build a small web application to simulate the game of Rock, Paper, Scissors.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+## Aim
+After having trouble completing last weeks challenge, I wanted to keep this application as simple as possible. That meant doing tests first, coding and refactoring accordingly
 
-Task
-----
+I found that I was really comfortable this time around with what I was creating, and managed to achieve my goal of having a working solution before
 
-Knowing how to build web applications is getting us almost there as web developers!
+#### To Do
+- [ ] Implement Rock, Paper, Scissors, Spock, Lizard gameplay
+- [x] Fix RuboCop offenses with my code (5 offenses)
+- [ ] Tidy up README
+- [ ] Add domain modeling breakdown in readme
+- [ ] Refactor code and tests as required
+- [ ] In 2 player mode add a separate page so player 2 can enter there selection separately
+
+## Screenshots
+
+![screen shot 2018-03-11 at 7 56 53 pm](https://user-images.githubusercontent.com/12001682/37258789-dd72aca2-2574-11e8-977a-7f410e6a2ee7.png)
+![screen shot 2018-03-11 at 7 57 06 pm](https://user-images.githubusercontent.com/12001682/37258790-dd8be41a-2574-11e8-89a7-ca02a1cfb9b6.png)
+![screen shot 2018-03-11 at 7 57 21 pm](https://user-images.githubusercontent.com/12001682/37258791-dda4f4f0-2574-11e8-83e4-52c1baa5cd33.png)
+![screen shot 2018-03-11 at 7 57 31 pm](https://user-images.githubusercontent.com/12001682/37258792-ddbca8f2-2574-11e8-96eb-f6069d0c46a7.png)
+
+## Task
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
-```sh
+## User Stories
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -28,59 +42,15 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+## Getting Started
+1. Clone or download the repository to your system `https://github.com/Hemesh-Unka/rps-challenge.git`
+2. Redirect into the home directory `cd rps-challenge`
+3. With Bundle package manager type `bundle` to install required gems
+4. Type `rackup` to run the server
+5. Finally in your browser navigate to `localhost:9292` to view the app
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+## Testing
+Tests were designed to run using the RSpec and Capybara testing frameworks.
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+To run RSpec test:
+`rspec`

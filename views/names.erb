@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/spectre.min.css">
+
+<div class="container" style="padding-top:200px">
+  <div class="columns">
+    <div class="column col-5 centered text-center" >
+      <h1><%= @game.game_type.capitalize %> Game</h1>
+
+      <% if @game.two_player? %>
+        <label class="form-label"><h4>Please enter your names</h4></label>
+
+        <form action="/names" method="post">
+          <div class="form-group">
+            <input class="form-input" type="text" id="player1_name" placeholder="Player 1 Name" name="player1_name">
+          </div>
+
+          <div class="form-group">
+            <input class="form-input" type="text" id="player2_name" placeholder="Player 2 Name" name="player2_name">
+          </div>
+
+          <div style="padding-top: 20">
+            <button class="btn btn-lg" type="submit">Start game</button>
+          </div>
+        </form>
+
+      <% else %>
+        <label class="form-label"><h4>Please enter your name</h4></label>
+
+        <form action="/names" method="post">
+          <div class="form-group">
+            <input class="form-input" type="text" id="player1_name" placeholder="Player 1 Name" name="player1_name">
+          </div>
+
+          <div style="padding-top: 20">
+            <button class="btn btn-lg" type="submit">Start game</button>
+          </div>
+        </form>
+      <% end %>
+    </div>
+  </div>
+</div>

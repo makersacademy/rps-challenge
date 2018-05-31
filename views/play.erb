@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="/spectre.min.css">
+
+<div class="container" style="padding-top:200px">
+  <div class="columns">
+    <div class="column col-5 centered text-center" >
+      <h1><%= "#{@game.player1.name.capitalize} vs. #{@game.player2.name.capitalize}" %></h1>
+
+      <% if @game.two_player? %>
+        <div class="form-group">
+          <form action="/action" method="post">
+            <label class="form-label"><h5><%= "#{@game.player1.name.capitalize} - please select a option below to continue" %></h5></label>
+
+            <label class="form-radio">
+              <input id="p1-paper" type="radio" name="player1_action" value="paper" checked>
+                <i class="form-icon"></i> Paper
+            </label>
+
+            <label class="form-radio">
+              <input id="p1-scissors" type="radio" name="player1_action" value="scissors">
+              <i class="form-icon"></i> Scissors
+            </label>
+
+            <label class="form-radio">
+              <input id="p1-rock" type="radio" name="player1_action" value="rock">
+              <i class="form-icon"></i> Rock
+            </label>
+
+            <label class="form-label"><h5><%= "#{@game.player2.name.capitalize} - please select a option below to continue" %></h5></label>
+
+            <label class="form-radio">
+              <input id="p2-paper" type="radio" name="player2_action" value="paper" checked>
+                <i class="form-icon"></i> Paper
+            </label>
+
+            <label class="form-radio">
+              <input id="p2-scissors" type="radio" name="player2_action" value="scissors">
+              <i class="form-icon"></i> Scissors
+            </label>
+
+            <label class="form-radio">
+              <input id="p2-rock" type="radio" name="player2_action" value="rock">
+              <i class="form-icon"></i> Rock
+            </label>
+
+            <div style="padding-top: 20">
+              <button class="btn btn-lg" type="submit">Play</button>
+            </div>
+          </form>
+        </div>
+      <% else %>
+
+        <div class="form-group">
+          <form action="/action" method="post">
+            <label class="form-label"><h5><%= "#{@game.player1.name.capitalize} - please select a option below to continue" %></h5></label>
+
+            <label class="form-radio">
+              <input id="p1-paper" type="radio" name="player1_action" value="paper" checked>
+                <i class="form-icon"></i> Paper
+            </label>
+
+            <label class="form-radio">
+              <input id="p1-scissors" type="radio" name="player1_action" value="scissors">
+              <i class="form-icon"></i> Scissors
+            </label>
+
+            <label class="form-radio">
+              <input id="p1-rock" type="radio" name="player1_action" value="rock">
+              <i class="form-icon"></i> Rock
+            </label>
+            <div style="padding-top: 20">
+              <button class="btn btn-lg" type="submit">Play</button>
+            </div>
+          </form>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
