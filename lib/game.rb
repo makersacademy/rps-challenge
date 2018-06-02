@@ -21,13 +21,8 @@ class Game
   # attr_reader :players_choice, :computers_choice
 
   def determine_winner(computers_choice, players_choice)
-    # return "Draw" if draw?(computers_choice, players_choice)
-    if draw?(computers_choice, players_choice)
-      return "Draw"
-    end
-    if player_wins?(computers_choice, players_choice)
-      return "Player wins"
-    end
+    return "Draw" if draw?(computers_choice, players_choice)
+    return "Player wins" if player_wins?(computers_choice, players_choice)
     "Computer wins"
   end
 
@@ -36,12 +31,8 @@ class Game
   end
 
   def player_wins?(computers_choice, players_choice)
-    if players_choice == "Rock"
-      computers_choice == "Scissors"
-    elsif players_choice == "Paper"
-      computers_choice == "Rock"
-    elsif players_choice == "Scissors"
-      computers_choice == "Paper"
-    end
+    return true if players_choice == "Rock" && computers_choice == "Scissors"
+    return true if players_choice == "Paper" && computers_choice == "Rock"
+    return true if players_choice == "Scissors" && computers_choice == "Paper"
   end
 end
