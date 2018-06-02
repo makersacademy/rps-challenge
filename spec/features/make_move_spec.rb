@@ -18,12 +18,29 @@ feature 'Feature: page has buttons to make a move' do
   end
 end
 
-feature 'Feature: player win' do
-  scenario 'player chooses rock, computer chooses paper' do
+feature 'Feature: playing the game' do
+  before do
+    computer = Computer.new
+  end
+
+  scenario 'Player wins' do
     sign_in_and_play
     click_button 'ROCK'
-    computer = Computer.new
-    @move == 'paper'
+    @move == 'scissors'
     expect(page).to have_content 'Bruce wins'
+  end
+
+  scenario 'Player loses' do
+    sign_in_and_play
+    click_button 'ROCK'
+    @move == 'paper'
+    expect(page).to have_content 'Bruce loses'
+  end
+
+  scenario 'Draw' do
+    sign_in_and_play
+    click_button 'ROCK'
+    @move == 'rock'
+    expect(page).to have_content "It's a draw"
   end
 end
