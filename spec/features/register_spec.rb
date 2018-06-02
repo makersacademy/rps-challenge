@@ -10,6 +10,6 @@ feature 'Registering name' do
     # Exercise - user clicks submit
     click_button('Begin Game')
     # Verification - page has name on it as content
-    expect(page).to have_content('Player: Rob')
+    expect(page).to have_content('Rob')
   end
 end

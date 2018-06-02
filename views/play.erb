@@ -1,10 +1,33 @@
-Player: <%= @name %>
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"
+<head>
+  <title>RockScissorsPaper</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <style>
+    .jumbotron{
+      background-color:#6f42c1a6;
+    }
+    .form-control{
+      border-radius: 100;
+    }
 
-<form id="myform" method="post" action="/player_choice">
-  <input class="rock" type="image" name="player_choice" value="rock" src="rock.jpg">
-  <input type="image" name="player_choice" value="paper" src="paper.jpg">
-  <input type="image" name="player_choice" value="scissors" src="scissors.jpg">
-</form>
-
-
-<%=  %>
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>Select your weapon <%= @name.capitalize %>.<h1>
+    </div>
+    <div class="jumbotron">
+      <div class="text-center">
+        <form class="form-control form-rounded" id="myform" method="post" action="/player_choice">
+          <input type="image" name="player_choice" value="rock" src="rock.jpg">
+          <input type="image" name="player_choice" value="paper" src="paper.jpg">
+          <input type="image" name="player_choice" value="scissors" src="scissors.jpg">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

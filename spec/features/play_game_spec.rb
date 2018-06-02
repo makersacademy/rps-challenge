@@ -3,7 +3,7 @@
 # I would like to be able to play rock/paper/scissors
 
 feature 'playing a game' do
-  scenario 'user is told who wins' do
+  scenario 'user gets to end of game' do
     # Setup
     log_in_and_play
     # Exercise - user clicks rock
@@ -11,15 +11,6 @@ feature 'playing a game' do
     # Verification - user wins
     expect(page).to have_content("Results are in!")
   end
-
-  # scenario 'user loses a game' do
-  #   # Setup
-  #
-  #   # Exercise - user clicks rock
-  #
-  #   # Verification - computer wins
-  #
-  # end
 
   def log_in_and_play
     visit("/")
