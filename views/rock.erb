@@ -4,8 +4,11 @@
 
 <%if @player.win?%>
   <h1><%=@player.name%> is the winner!</h1>
+  <iframe src="https://giphy.com/embed/7VLeHDJUOKPrW" width="480" height="424" frameBorder="0" allowFullScreen></iframe>
 <%elsif @player.loose?%>
   <h1>Computer is the winner!</h1>
+  <iframe src="https://giphy.com/embed/3uQccl0slI208" width="480" height="336" frameBorder="0" allowFullScreen></iframe>
 <%else%>
   <h1>It's a draw!</h1>
+  <iframe src="https://giphy.com/embed/3OWtMkMLdnd6w" width="480" height="360" frameBorder="0" allowFullScreen></iframe>
 <%end%>
