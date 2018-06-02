@@ -2,9 +2,7 @@
 
 feature 'Initiate' do
   scenario 'start game' do
-    visit '/'
-    fill_in :player_name, with: 'Goose'
-    click_button 'Submit'
+    sign_in_and_play
     click_button 'Start game'
     expect(page).to have_content 'Please enter your weapon:'
   end
