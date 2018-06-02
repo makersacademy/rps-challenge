@@ -17,4 +17,28 @@ describe Player do
     end
   end
 
+  describe "#win?" do
+    it "when the player has won it returns true" do
+      moves_double = double(sample: "Scissors")
+      computer = Computer.new(moves_double)
+      player = Player.new("Pookie", computer)
+      player.select_move("Rock")
+      expect(player.win?).to eq true
+    end
+    it "when the player has won it returns true" do
+      moves_double = double(sample: "Paper")
+      computer = Computer.new(moves_double)
+      player = Player.new("Pookie", computer)
+      player.select_move("Scissors")
+      expect(player.win?).to eq true
+    end
+    it "when the player has won it returns true" do
+      moves_double = double(sample: "Rock")
+      computer = Computer.new(moves_double)
+      player = Player.new("Pookie", computer)
+      player.select_move("Paper")
+      expect(player.win?).to eq true
+    end
+  end
+
 end
