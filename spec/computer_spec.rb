@@ -3,7 +3,7 @@ require "computer"
 describe Computer do
 
   it "#name - should be 'computer'" do
-    expect(subject.name).to eq "computer"
+    expect(subject.name).to eq "Computer"
   end
 
   it "#shape - should be 'rock', 'paper' or 'scissors'" do
