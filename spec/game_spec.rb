@@ -1,7 +1,8 @@
 describe Game do
-  let(:randomizer) { Randomizer.new }
+  let(:randomizer) { double :randomizer}
+  let(:determinewinner) { double :determinewinner }
   let(:player) { double :player }
-  subject(:game) { described_class.new(player, randomizer) }
+  subject(:game) { described_class.new(player, randomizer ,determinewinner) }
 
   it 'can tell you the players name' do
     expect(game.player).to eq player
@@ -15,29 +16,31 @@ describe Game do
   end
 
   context 'can determine a winner' do
-    it 'player can win' do
+    it 'can reveal the winner' do
       # Setup
       game.players_choice("Rock")
       allow(randomizer).to receive(:result).and_return("Scissors")
       game.computers_choice
+      allow(determinewinner).to receive(:result).and_return("Player wins")
       # Exercise & verify
       expect(game.winner).to eq "Player wins"
     end
-    it 'player can lose' do
-      # Setup
-      game.players_choice("Paper")
-      allow(randomizer).to receive(:result).and_return("Scissors")
-      game.computers_choice
-      # Exercise & verify
-      expect(game.winner).to eq "Computer wins"
-    end
-    it 'there can be a draw' do
-      # Setup
-      game.players_choice("Paper")
-      allow(randomizer).to receive(:result).and_return("Paper")
-      game.computers_choice
-      # Exercise & Verify
-      expect(game.winner).to eq "Draw"
-    end
+    #
+    # it 'player can lose' do
+    #   # Setup
+    #   game.players_choice("Paper")
+    #   allow(randomizer).to receive(:result).and_return("Scissors")
+    #   game.computers_choice
+    #   # Exercise & verify
+    #   expect(game.winner).to eq "Computer wins"
+    # end
+    # it 'there can be a draw' do
+    #   # Setup
+    #   game.players_choice("Paper")
+    #   allow(randomizer).to receive(:result).and_return("Paper")
+    #   game.computers_choice
+    #   # Exercise & Verify
+    #   expect(game.winner).to eq "Draw"
+    # end
   end
 end
