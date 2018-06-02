@@ -1,4 +1,4 @@
-#1. I would like to initiate a game of rock paper scissors
+# 1. I would like to initiate a game of rock paper scissors
 
 feature 'Initiate' do
   scenario 'start game' do

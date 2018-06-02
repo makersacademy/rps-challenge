@@ -1,4 +1,4 @@
-#3. I would like to find out the result
+# 3. I would like to find out the result
 
 feature 'Result' do
   scenario 'Win' do

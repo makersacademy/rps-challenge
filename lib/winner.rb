@@ -6,11 +6,11 @@ class Winner
       "Scissors" => 3 }
   end
 
-  def result(weapon_1,weapon_2)
+  def result(weapon_1, weapon_2)
     difference = @weapons[weapon_1] - @weapons[weapon_2]
-    if difference == 1|| difference == -2
+    if [1, -2].include?(difference)
       :Won!
-    elsif difference == 0
+    elsif difference.zero?
       :Draw!
     else
       :Lost!
