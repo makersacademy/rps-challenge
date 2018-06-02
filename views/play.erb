@@ -1,3 +1,15 @@
-<%= @player_name %> vs <%= "Computer" %>
+<h1> <%= @player_name %> vs <%= "Computer" %> </h1>
 
 <%= "Choose rock, paper or scissors" %>
+
+<form action='/play_rock' method="post">
+  <button type="submit" name >ROCK</button>
+  </form>
+
+<form action='play_paper' method="post">
+<button type="submit" name >PAPER</button>
+</form>
+
+<form action='/play_scissors' method="post">
+  <button type="submit" name >SCISSORS</button>
+  </form>
