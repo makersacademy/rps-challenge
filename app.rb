@@ -19,8 +19,21 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rock' do
-    @player = $player.name
+    @player = $player
+    @player.select_move("Rock")
     erb(:rock)
+  end
+
+  get '/paper' do
+    @player = $player
+    @player.select_move("Paper")
+    erb(:paper)
+  end
+
+  get '/scissors' do
+    @player = $player
+    @player.select_move("Scissors")
+    erb(:scissors)
   end
 
   run! if app_file == $0
