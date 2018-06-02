@@ -1,5 +1,5 @@
-require "player"
-require "computer"
+require_relative "./player"
+require_relative "./computer"
 
 class Game
   attr_reader :player, :computer

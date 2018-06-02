@@ -11,23 +11,34 @@ feature "Feature Tests" do
     expect(page).to have_content "Luke Skywalker vs. Computer"
   end
 
-  feature "player can choose their shape" do
-    scenario "player chooses rock" do
-      visit("/")
-      fill_in "player_name", with: "Luke Skywalker"
-      click_on "Submit"
-      choose "rock"
-      click_on "Submit"
-      expect(page).to have_content "You chose rock."
-    end
+  # feature "player can choose their shape" do
+  #   scenario "player chooses rock" do
+  #     visit("/")
+  #     fill_in "player_name", with: "Luke Skywalker"
+  #     click_on "Submit"
+  #     choose "rock"
+  #     click_on "Submit"
+  #     expect(page).to have_content "You chose rock"
+  #   end
+  #   scenario "player chooses scissors" do
+  #     visit("/")
+  #     fill_in "player_name", with: "Luke Skywalker"
+  #     click_on "Submit"
+  #     choose "scissors"
+  #     click_on "Submit"
+  #     expect(page).to have_content "You chose scissors"
+  #   end
+  # end
 
-    scenario "player chooses scissors" do
-      visit("/")
-      fill_in "player_name", with: "Luke Skywalker"
-      click_on "Submit"
-      choose "scissors"
-      click_on "Submit"
-      expect(page).to have_content "You chose scissors."
-    end
-  end
+  # feature "display winner" do
+  #   scenario "player wins" do
+  #     allow(:$computer).to receive(:shape).and_return("scissors")
+  #     visit("/")
+  #     fill_in "player_name", with: "Luke Skywalker"
+  #     click_on "Submit"
+  #     choose "rock"
+  #     click_on "Submit"
+  #     expect(page).to have_content "You chose rock and computer chose scissors. You win!"
+  #   end
+  # end
 end

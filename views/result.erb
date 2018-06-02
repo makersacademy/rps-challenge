@@ -1,1 +1,7 @@
-You chose <%=params[:choice]%>.
+<%if params[:game].winner == "tie" %>
+  You both chose <%=params[:choice]%>. It's a tie!
+<%elsif params[:game].winner.name == "Computer" %>
+  You chose <%=params[:choice]%> and computer chose <%=params[:computer_choice]%>. You lose!
+<%else%>
+  You chose <%=params[:choice]%> and computer chose <%=params[:computer_choice]%>. You win!
+<%end%>
