@@ -1,5 +1,31 @@
-Results are in! </br>
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+  <title>RockScissorsPaper</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <style>
+    .jumbotron{
+      background-color:#6f42c1a6;
+    }
+    .form-control{
+      border-radius: 100;
+    }
 
-<%= @game.winner %> </br>
-You chose <%= @game.user_choice %> </br>
-Computer chose <%= @game.computers_choice %>
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="page-header" id="page-header">
+      <h1> Results are in: <%= @winner %>!<h1>
+    </div>
+    <div class="jumbotron">
+      <div class="text-center" id="results">
+        # <%= @winner %> </br>
+        # You chose <%= @game.user_choice %> </br>
+        # Computer chose <%= @game.computers_choice %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

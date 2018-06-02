@@ -28,6 +28,8 @@ class RPS < Sinatra::Base
 
   get '/final_result' do
     @game = $game
+    @winner = @game.winner
+    p @winner
     erb :final_result
   end
 
