@@ -6,6 +6,7 @@ feature 'playing a game' do
   scenario 'user wins a game' do
     # Setup
     log_in_and_play
+    allow(Randomizer.new).to receive(:random_result).and_return("scissors")
     # Exercise - user clicks rock
     find('img.rock').click
     # Verification - user wins
