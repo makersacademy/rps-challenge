@@ -17,20 +17,13 @@
 <body>
   <div class="container">
     <div class="page-header" id="page-header">
-      <h1> Results are in: <%= @winner %>!<h1>
+      <h1> Results are in: Computer wins!<h1>
     </div>
     <div class="jumbotron">
       <div class="text-center" id="results">
-        <%= @winner %> <br>
-        <div class="row">
-          <div class="col" id="user_pic">
-            You chose <%= @game.user_choice %> </br>
-            <img src=<%= "#{@game.user_choice.downcase}.jpg" %>>
-          </div>
-          <div class="col">
-            Computer chose <%= @game.computers_choice %>
-          </div>
-        </div>
+        # Computer wins </br>
+        # You chose rock </br>
+        # Computer chose Paper
       </div>
     </div>
   </div>
