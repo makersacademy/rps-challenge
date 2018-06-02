@@ -11,5 +11,9 @@ describe Winner do
       expect(subject.result("Paper", "Scissors")).to eq :Lost!
     end
 
+    it "returns Draw!" do
+      expect(subject.result("Paper", "Paper")).to eq :Draw!
+    end
+
   end
 end

@@ -10,6 +10,8 @@ class Winner
     difference = @weapons[weapon_1] - @weapons[weapon_2]
     if difference == 1|| difference == -2
       :Won!
+    elsif difference == 0
+      :Draw!
     else
       :Lost!
     end
