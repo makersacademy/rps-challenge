@@ -17,16 +17,45 @@ describe Game do
     computers_choice = game.computers_choice
   end
 
+  it 'player can win' do
+    # Setup
+    player = double :player
+    randomizer = double :randomizer
+    game = Game.new(player, randomizer)
+    game.players_choice("Rock")
+    allow(randomizer).to receive(:result).and_return("Scissors")
+    game.computers_choice
+    # Exercise
+    winner = game.winner
+    # Verify
+    expect(winner).to eq "Player wins"
+  end
 
-  # it 'can tell you the winner' do
-  #   # Setup
-  #   player = double :player
-  #   game = Game.new(player)
-  #   player.selects("Rock")
-  #
-  #   # Exercise
-  #   winner = game.winner
-  #   # Verify
-  #   expect(winner).to eq "Rob"
-  # end
+  it 'player can lose' do
+    # Setup
+    player = double :player
+    randomizer = double :randomizer
+    game = Game.new(player, randomizer)
+    game.players_choice("Paper")
+    allow(randomizer).to receive(:result).and_return("Scissors")
+    game.computers_choice
+    # Exercise
+    winner = game.winner
+    # Verify
+    expect(winner).to eq "Computer wins"
+  end
+
+  it 'there can be a draw' do
+    # Setup
+    player = double :player
+    randomizer = double :randomizer
+    game = Game.new(player, randomizer)
+    game.players_choice("Paper")
+    allow(randomizer).to receive(:result).and_return("Paper")
+    game.computers_choice
+    # Exercise
+    winner = game.winner
+    # Verify
+    expect(winner).to eq "Draw"
+  end
 end
