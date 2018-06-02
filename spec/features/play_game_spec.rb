@@ -3,14 +3,13 @@
 # I would like to be able to play rock/paper/scissors
 
 feature 'playing a game' do
-  scenario 'user wins a game' do
+  scenario 'user is told who wins' do
     # Setup
     log_in_and_play
-    allow(Randomizer.new).to receive(:random_result).and_return("scissors")
     # Exercise - user clicks rock
-    find('img.rock').click
+    click_button('rock')
     # Verification - user wins
-    expect(page).to have_content("You win!!!")
+    expect(page).to have_content("Results are in!")
   end
 
   # scenario 'user loses a game' do

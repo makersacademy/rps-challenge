@@ -10,9 +10,10 @@ describe Game do
 
   it 'can call the randomizer for a random choice' do
     # Verify
+    allow(determinewinner).to receive(:result)
     expect(randomizer).to receive(:result)
     # Exercise
-    computers_choice = game.computers_choice
+    game.winner
   end
 
   context 'can determine a winner' do
@@ -20,7 +21,6 @@ describe Game do
       # Setup
       game.players_choice("Rock")
       allow(randomizer).to receive(:result).and_return("Scissors")
-      game.computers_choice
       allow(determinewinner).to receive(:result).and_return("Player wins")
       # Exercise & verify
       expect(game.winner).to eq "Player wins"

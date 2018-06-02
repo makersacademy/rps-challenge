@@ -1,5 +1,10 @@
 Player: <%= @name %>
 
-<img src="rock.jpg" class="rock">
-<img src="paper.jpg" class="paper">
-<img src="scissors.jpg" class="scissors">
+<form id="myform" method="post" action="/player_choice">
+  <input class="rock" type="image" name="player_choice" value="rock" src="rock.jpg">
+  <input type="image" name="player_choice" value="paper" src="paper.jpg">
+  <input type="image" name="player_choice" value="scissors" src="scissors.jpg">
+</form>
+
+
+<%=  %>

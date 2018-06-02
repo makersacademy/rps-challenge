@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player
+  attr_reader :player, :user_choice, :computers_choice
 
   def initialize(player, randomizer = Randomizer.new, determinewinner = DetermineWinner.new)
     @randomizer = randomizer
@@ -8,15 +8,16 @@ class Game
     @determinewinner = determinewinner
   end
 
-  def computers_choice
-    @computers_choice = @randomizer.result
+  def decide_computers_choice
+    @randomizer.result
   end
 
   def players_choice(choice)
-    @players_choice = choice
+    @user_choice = choice
   end
 
   def winner
-    @determinewinner.result(@computers_choice, @players_choice)
+    @computers_choice = decide_computers_choice
+    @determinewinner.result(computer: @computers_choice, player: @user_choice)
   end
 end
