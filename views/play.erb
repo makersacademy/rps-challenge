@@ -1,0 +1,10 @@
+<%= @player %> vs Computer
+
+<p>Make your move: do you choose rock, paper or scissors?</p>
+
+<form action="/result" method='post'>
+  <input type="radio" name="choice" value="rock">Rock<br>
+  <input type="radio" name="choice" value="paper">Paper<br>
+  <input type="radio" name="choice" value="scissors">Scissors<br>
+  <input type="submit" value="Confirm choice">
+</form>
