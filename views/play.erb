@@ -1,1 +1,8 @@
 <%= params[:player_name] %> vs. Computer
+
+<form action="/result" method="get">
+  <input type="radio" name="choice" value="rock" id="rock"/>rock<br>
+  <input type="radio" name="choice" value="paper" id="paper"/>paper<br>
+  <input type="radio" name="choice" value="scissors" id="scissors"/>scissors<br>
+  <input type="submit" value="Submit"/>
+</form>
