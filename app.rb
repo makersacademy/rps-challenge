@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
+require './lib/randomizer'
 
 class RPS < Sinatra::Base
   get '/' do
