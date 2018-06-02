@@ -1,3 +1,11 @@
 <h1><%=@player.name%> has choosen: <%=@player.move%></h1>
 
 <h1>Computer has choosen: <%=@player.opponent.move%></h1>
+
+<%if @player.win?%>
+  <h1><%=@player.name%> is the winner!</h1>
+<%elsif @player.loose?%>
+  <h1>Computer is the winner!</h1>
+<%else%>
+  <h1>It's a draw!</h1>
+<%end%>
