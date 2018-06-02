@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/computer'
 require_relative './lib/winner'
+require_relative './lib/tally'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -26,9 +27,30 @@ class Rps < Sinatra::Base
     @computer_weapon = computer.choose_weapon
     winner = Winner.new
     @result = winner.result(@player_weapon,@computer_weapon)
+
+    if $tally == nil
+      $tally = Tally.new
+    end
+
+    if @result == :Won!
+      $tally.win
+    elsif @result == :Lost!
+      $tally.lose
+    end
+
+    @wins = $tally.wins
+    @losses = $tally.losses
+
     erb :result
   end
 
+  post '/items' do
+    if $list == nil
+      $list = List.new
+    end
+    $item = $list.add(params[:item])
+    redirect '/items'
+  end
 #  run! if app_file == $0 what does this do?
 end
 
