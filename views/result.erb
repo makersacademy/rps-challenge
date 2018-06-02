@@ -1,0 +1,12 @@
+<h2> Your move: </h2>
+<h3>  <%= @user_move %>! </h3>
+
+<h2> Auto move: </h2>
+<h3> <%= @auto_move %>! </h3>
+
+<h1><%= @result %></h1>
+
+
+<form action="/game" method="post">
+  <input type="submit" value="Play again!">
+</form>

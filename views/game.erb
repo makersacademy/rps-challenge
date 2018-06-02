@@ -1,0 +1,17 @@
+<h1> Let's play! </h1>
+
+<h2> Welcome to the game,
+  <%= @user.name %>!
+</h2>
+
+<h3> What is your move? </h3>
+
+<form action="/result" method="post">
+  <select name="move">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
