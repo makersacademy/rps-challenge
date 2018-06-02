@@ -1,20 +1,26 @@
 require 'sinatra/base'
 
-
 class Rps < Sinatra::Base
+  enable :sessions
+
   get '/' do
-    'Testing infrastructure working!'
     erb :enter
   end
 
   post '/name' do
-    @player_name = params[:player_name]
-    #I'm going to keep this until I fully understand why I need to change it
+    session[:player_name] = params[:player_name]
+    @player_name = session[:player_name]
     erb :initiate
   end
 
   post '/play' do
     erb :play
+  end
+
+  post '/result' do
+    @weapon = params[:weapon]
+    @player_name = session[:player_name]
+    erb :result
   end
 
 end
