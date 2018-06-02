@@ -3,6 +3,10 @@ describe Game do
   let(:player) { double :player }
   subject(:game) { described_class.new(player, randomizer) }
 
+  it 'can tell you the players name' do
+    expect(game.player).to eq player
+  end
+
   it 'can call the randomizer for a random choice' do
     # Verify
     expect(randomizer).to receive(:result)

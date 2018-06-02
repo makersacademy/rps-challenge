@@ -1,4 +1,7 @@
 class Game
+
+  attr_reader :player
+  
   def initialize(player, randomizer = Randomizer.new)
     @randomizer = randomizer
     @player = player
