@@ -6,7 +6,6 @@ class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
-    # 'This is a test'
     erb :index
   end
 
@@ -25,6 +24,20 @@ class RPS < Sinatra::Base
     computer=Computer.new
     @computer_move = computer.move
     erb :play_rock
+  end
+
+  post '/play_paper' do
+    @player_name = session[:player_name]
+    computer=Computer.new
+    @computer_move = computer.move
+    erb :play_paper
+  end
+  
+  post '/play_scissors' do
+    @player_name = session[:player_name]
+    computer=Computer.new
+    @computer_move = computer.move
+    erb :play_scissors
   end
 
   run! if app_file == $0

@@ -1,0 +1,11 @@
+<h1><%= @player_name %> chose paper! </h1>
+
+<h1>Computer chose.... <%= @computer_move %>!</h1>
+
+<% if @computer_move == "rock" %>
+<h1><%= @player_name %> wins :-) </h1>
+<% elsif @computer_move == "scissors" %>
+<h1><%= @player_name %> loses :-( </h1>
+<% else %>
+<h1>It's a draw :-|</h1>
+<% end %>
