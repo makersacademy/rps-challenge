@@ -1,6 +1,64 @@
 # RPS Challenge
 
-Instructions
+### Approach to solving the challenge:
+
+1. Set up Sinatra file system and frame work with Controller and Views.
+2. Created Capybara feature tests for ensuring the user behaviour was as expected.
+3. Worked through the Red, Green, Refactor process to address each user story.
+4. As game requirements progressed moved functionality out to the Model layer, starting with a Player class and developing to a Computer Class and eventually a Game class for the gameplay logic and winner calculation.
+5. Worked to keep the Controllers short by adding a Sinatra filter and refactoring wherever possible.
+6. Removed all global variables by swapping out for a Class variable on the Game.
+7. Added basic images and gifs to give a little personality. (Further styling would have been best served with a CSS sheet.)
+
+### Status at point of push:
+Single player vs Mr Rosso (the computer with a randomly generated choice of rock, paper or scissors) is complete.
+Rubocop checked and no offenses.
+Rspec running at 100% test coverage.
+
+### Description of what code does:
+Web based game that enables the user to register their name and play Rock Paper Scissors against the legendary guidance counselor of Freaks and Geeks. Views enable you to click an image for your rock, paper or scissors choice and click through to see if it's a win, loss or draw.  
+
+### Code Style:
+Standard Ruby, with Capybara and Rspec syntax for testing.
+
+### Features:
+Built with future extension in mind. A two player version can be swiftly updated using the Player Class of the Model to replace the Computer opponent.
+A play again button can be added to loop back to the home page for ease of repeat play.
+
+### Code Example:
+Extract from the Game class:
+```
+  def initialize(player, opponent)
+    @player = player
+    @opponent = opponent
+  end
+
+  def self.launch(player, opponent)
+    @game = Game.new(player, opponent)
+  end
+
+  def self.instance
+    @game
+  end
+
+  def win?
+    winning_move
+  end
+```
+
+### How to install the code:
+1. Fork this project.
+2. Run ```bundle``` to ensure you have all the relevant gems.
+3. Use Ruby 2.5.0
+
+### How to use the website:
+1. Load localhost server via ```rackup config.ru``` and note the port number listed.
+2. Visit 'localhost:XXXX' with the port number.
+
+### How to run the tests:
+Spec file includes unit tests and feature tests sub folder. All tests can be run via ```rspec```.
+
+Instructions Set by Makers Academy
 -------
 
 * Challenge time: rest of the day and weekend, until Monday 9am
