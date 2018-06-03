@@ -1,5 +1,14 @@
 <h1>RPS</h1>
 
-<p><b>The computer chose:</b> (computer choice goes here)</p>
+<p><%= @p1_name %> - watch this disappear!</p>
 
-<p>Game result goes here</p>
+<form method='post' action='/game'>
+    <input type='text' name='player_input'/>
+    <input type='submit' value='Play'/>
+</form>
+
+<p>You chose: <%= @player_input %></p>
+
+<p>The computer chose: <%= @rps_selector %></p>
+
+<p><%= @referee %></p>

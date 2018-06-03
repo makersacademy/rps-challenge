@@ -1,10 +1,12 @@
 feature 'User enters a choice' do
-    scenario 'submit one of rock, paper or scissors' do
+    scenario 'rock, paper or scissors' do
         #setup
-        visit'/'
+        visit'/game'
         #exercise
-        click_button 'Play'
+        fill_in 'input', with: 'Rock'
+        click_on 'submit'
+        save_and_open_page
         #verify
-        expect(page).to have_content('Rock')
+        expect(page).to have_content('You chose: Rock')
     end
 end

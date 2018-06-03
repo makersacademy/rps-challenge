@@ -4,7 +4,7 @@ describe Rps_game do
 
   it 'the computer selects rock, paper or scissors' do
     #setup
-    game = Rps_game.new("Rock")
+    game = Rps_game.new("Me")
     #exercise
     game.rps_selector
     #verify
@@ -13,10 +13,10 @@ describe Rps_game do
 
   it 'takes the input from a user' do
     #setup
-    game = Rps_game.new("Rock")
+    game = Rps_game.new("Me")
     #exercise
     #verify
-    expect(game.choice).to eq "Rock"
+    expect(game.choice("Rock")).to match ('(Rock|Paper|Scissors)')
   end
 
 end

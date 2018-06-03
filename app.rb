@@ -10,16 +10,22 @@ class RPS < Sinatra::Base
  end
 
  post '/game' do
-   $player_input = Rps_game.new(params[:player_input])
-   redirect '/players'
+   $p1_name = Rps_game.new(params[:p1_name])
+   @p1_name = $p1_name.name
+   @player_input = $p1_name.choice(params[:player_input])
+   @rps_selector = $p1_name.rps_selector
+   @referee = $p1_name.referee
+   @score = $p1_name.score
+   erb :game
  end
 
-  get '/players' do
-    @rps_selector = $player_input.rps_selector
-    @player_input = $player_input.choice
-    @referee = $player_input.referee
-    erb :players
-  end
+ # post '/game' do
+ #   @p1_name = $p1_name.name
+ #   @player_input = $p1_name.choice(params[:player_input])
+
+ #   @referee = $player1_name.referee
+ #   redirect '/game'
+ # end
 
 
   # start the server if ruby file executed directly

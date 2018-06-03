@@ -1,8 +1,12 @@
 class Rps_game
 
-attr_reader :choice, :rps
+attr_reader :name, :rps
 
-  def initialize(choice)
+  def initialize(name)
+    @name = name
+  end
+
+  def choice(choice)
     @choice = choice
   end
 
