@@ -1,10 +1,39 @@
-<%= $player.name %> vs Computer
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<p>Make your move: do you choose rock, paper or scissors?</p>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-<form action="/result" method='post'>
-  <input type="radio" name="choice" value="rock">Rock<br>
-  <input type="radio" name="choice" value="paper">Paper<br>
-  <input type="radio" name="choice" value="scissors">Scissors<br>
-  <input type="submit" value="Confirm choice">
-</form>
+    <title>RPS Game</title>
+
+    <style>
+    .container {
+      font-family: 'Open Sans Condensed', sans-serif;
+      margin: auto;
+      width: 50%;
+      padding-top: 50px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <h2><%= $player.name %> vs Computer </h2>
+
+      <img src="http://diysolarpanelsv.com/images/man-technology-clipart-36.jpg"/>
+      <p>Make your move: do you choose rock, paper or scissors?</p>
+
+      <form action="/result" method='post'>
+        <input type="radio" name="choice" value="rock">  Rock<br>
+        <input type="radio" name="choice" value="paper">  Paper<br>
+        <input type="radio" name="choice" value="scissors">  Scissors<br>
+        <br>
+        <input type="submit" class="btn btn-secondary" value="Confirm choice">
+      </form>
+    </div>
+  </body>
+</html>
