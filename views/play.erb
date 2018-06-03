@@ -1,1 +1,11 @@
-Welcome, <%= @player_name %>!
+Welcome, <%= @player_name %>!<br></br>
+
+Choose your weapon...<br></br>
+
+<form action="/play" method="post">
+  <input type="submit" name= "option" value="Rock">
+  <input type="submit" name= "option" value="Paper">
+  <input type="submit" name= "option" value="Scissors">
+</form>
+
+You selected <%= @option %>!
