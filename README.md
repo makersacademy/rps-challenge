@@ -49,13 +49,14 @@ Once you've navigated to localhost, you can follow the instructions on the scree
 
 3. See the results
 
-<img src="/public/final_results.png">
+<img src="/public/final_result.png">
 
 
 ## Tech/Framework used
 
 Built in Ruby (version 2.5.0)<br />
-Tested using Rspec (version 3.7), also using Capybara gem
+Tested using Rspec (version 3.7), also using Capybara gem<br />
+Built in the Sinatra framework (version 2.0.0)
 
 ## Running tests
 
@@ -63,10 +64,15 @@ run `rspec` from the projects root directory.
 
 ## Credits
 
-This Bootstrap tutorial. It's awesome. https://www.youtube.com/watch?v=gqOEoUR5RHg
+[This Bootstrap tutorial. It's awesome.](https://www.youtube.com/watch?v=gqOEoUR5RHg)
+[This CS50 lecture on HTTP, David Malan is the best.](https://www.youtube.com/watch?v=PUPDGbnpSjw&t=4902s)
+Stackoverflow, for somehow having the answer to every question I could think of. 
 
 ## Skills I used creating thing project
 
-* Sinatra
+* Sinatra & building a web application
 * HTTP
 * MVC
+* HTML, CSS and Bootstrap
+* Debugging web applications
+* Testing web apps using Capybara
