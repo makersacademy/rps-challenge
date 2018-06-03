@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
 
   post '/play' do
     session[:option] = params[:option]
-    session[:cpu_option] = Cpu.new.cpu_option
+    session[:cpu_option] = ['Rock','Paper','Scissors'].sample
     redirect '/play'
   end
 

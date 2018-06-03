@@ -5,6 +5,6 @@ def sign_in_and_play
   expect(page).to have_content 'Dan'
 end
 
-def cpu_options
-  [:rock, :paper, :scissors].map { |choice| "CPU selected #{cpu_options}"}
+def message_options
+  [:rock, :paper, :scissors].map { |choice| "CPU selected #{choice.to_s.capitalize}"}
 end

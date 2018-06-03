@@ -24,11 +24,10 @@ feature 'play the game' do
     expect(page).to have_content('You selected Scissors!')
   end
 
-  scenario 'cpu chooses rock' do
+  scenario 'cpu chooses RPS option' do
     sign_in_and_play
     click_button 'Rock'
-    # message = find(:css, "#cpu").text
-    # expect(cpu_options).to include message
-    expect(page).to have_content('CPU selected Rock')
+    message = find(:css, "#cpu").text
+    expect(message_options).to include message
   end
 end
