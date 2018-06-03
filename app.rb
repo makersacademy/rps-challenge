@@ -15,12 +15,13 @@ class RPS < Sinatra::Base
   get '/play' do
     @player_name = session[:player_name]
     @option = session[:option]
+    @cpu_option = session[:cpu_option]
     erb :play
   end
 
   post '/play' do
     session[:option] = params[:option]
-
+    session[:cpu_option] = Cpu.new.cpu_option
     redirect '/play'
   end
 
