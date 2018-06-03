@@ -36,9 +36,12 @@ How to use
 
 Demo
 ---------
-
+1. Player enters their name
 ![Player enters their name](https://github.com/simone-smith/rps-challenge/blob/master/screenshots/:index.png)
 
+
+2. Player chooses rock, paper or scissors
 ![Player chooses rock, paper or scissors](https://github.com/simone-smith/rps-challenge/blob/master/screenshots/:play.png)
 
+3. The result is declared
 ![The result is declared](https://github.com/simone-smith/rps-challenge/blob/master/screenshots/:result.png)
