@@ -64,9 +64,9 @@ run `rspec` from the projects root directory.
 
 ## Credits
 
-[This Bootstrap tutorial. It's awesome.](https://www.youtube.com/watch?v=gqOEoUR5RHg)
-[This CS50 lecture on HTTP, David Malan is the best.](https://www.youtube.com/watch?v=PUPDGbnpSjw&t=4902s)
-Stackoverflow, for somehow having the answer to every question I could think of. 
+[This Bootstrap tutorial. It's awesome.](https://www.youtube.com/watch?v=gqOEoUR5RHg)<br />
+[This CS50 lecture on HTTP, David Malan is the best.](https://www.youtube.com/watch?v=PUPDGbnpSjw&t=4902s)<br />
+Stackoverflow, for somehow having the answer to every question I could think of.
 
 ## Skills I used creating thing project
 
