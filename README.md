@@ -1,18 +1,5 @@
-Takeaway Challenge
+Rock Scissors Paper Challenge
 ==================
-```
-                            _________
-              r==           |       |
-           _  //            |  M.A. |   ))))
-          |_)//(''''':      |       |
-            //  \_____:_____.-------D     )))))
-           //   | ===  |   /        \
-       .:'//.   \ \=|   \ /  .:'':./    )))))
-      :' // ':   \ \ ''..'--:'-.. ':
-      '. '' .'    \:.....:--'.-'' .'
-       ':..:'                ':..:'
-
- ```
 
  ![Alt text](https://media.giphy.com/media/E7ClVqqCl8bVS/giphy.gif)
 
@@ -30,6 +17,13 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
+We were also given following behaviour:
+- the marketeer should be able to enter their name before the game
+- the marketeer will be presented the choices (rock, paper and scissors)
+- the marketeer can choose one option
+- the game will choose a random option
+- a winner will be declared
+
 ## Motivation
 
 This project has been created to give users a chance to play a 1 player game of rock, scissors, paper through their browser.
@@ -37,11 +31,17 @@ This project has been created to give users a chance to play a 1 player game of 
 ## Getting started
 
 * Fork this repo
-* RUN RACKUP AND THEN GO TO LOCALHOST:9292
+* Run Bundle install
+* Navigate to the directory on command line and enter ```rackup```. This will get your server running.
+* On your browser, navigate to localhost:9292
 
 ## Usage
 
-Once you've navigated to localhost, DO THIS AND THIS AND THIS
+Once you've navigated to localhost, you can follow the instructions on the screen.
+
+1. Enter your name to play
+
+<img src="enter_name.png">
 
 
 ## Tech/Framework used
@@ -55,7 +55,7 @@ run `rspec` from the projects root directory.
 
 ## Credits
 
-CREDITS HERE
+This Bootstrap tutorial. It's awesome. https://www.youtube.com/watch?v=gqOEoUR5RHg
 
 ## Skills I used creating thing project
 
