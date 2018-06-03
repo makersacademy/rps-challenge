@@ -27,7 +27,10 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+    @player = $player
     $computer = Computer.new
+    @computer = $computer.random_choice
+    $result = Result.new(@player, @computer)
     erb :result
   end
 

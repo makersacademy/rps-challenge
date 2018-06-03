@@ -1,6 +1,3 @@
-require_relative 'player'
-require_relative 'computer'
-
 class Result
   attr_reader :player, :computer
 
@@ -9,10 +6,27 @@ class Result
     @computer = computer
   end
 
-  def determine
-    if @player.choice == "paper" && @computer.random_choice == "rock"
-      "player wins!"
-    end
+  def win?
+    outcome == :win
   end
 
+  def lose?
+    outcome == :lose
+  end
+
+  def draw?
+    outcome == :draw
+  end
+
+  private
+
+  def outcome
+   return :win if @player.choice == "rock" && @computer == "scissors"
+   return :win if @player.choice == "paper" && @computer == "rock"
+   return :win if @player.choice == "scissors" && @computer == "paper"
+   return :draw if @player.choice == "rock" && @computer == "rock"
+   return :draw if @player.choice == "paper" && @computer == "paper"
+   return :draw if @player.choice == "scissors" && @computer == "scissors"
+   return :lose
+ end
 end

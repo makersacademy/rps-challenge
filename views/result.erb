@@ -1,4 +1,14 @@
-<p> You chose <%= $player.choice %> </p>
-<p> Computer chose <%= $computer.random_choice %>
+<p> <%= $player.name %> chose <%= $player.choice %> </p>
+<p> Computer chose <%= @computer %> </p> <br>
 
-<p>You win!</p>
+<p>
+<% if $result.win? %>
+  <%= $player.name %> wins!
+<% elsif $result.lose? %>
+  <%= $player.name %> loses!
+<% elsif $result.draw? %>
+  It's a draw!
+<% end %>
+</p>
+
+<a href='/play'>Play again</a>
