@@ -41,7 +41,7 @@ Once you've navigated to localhost, you can follow the instructions on the scree
 
 1. Enter your name to play
 
-<img src="enter_name.png">
+<img src="/public/enter_name.png">
 
 
 ## Tech/Framework used
