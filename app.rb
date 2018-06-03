@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/rps_game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -7,12 +9,17 @@ class RPS < Sinatra::Base
     erb :index
  end
 
- post '/players' do
-   @player1_name = params[:player1_name]
-   erb :players
-
+ post '/game' do
+   $player_input = Rps_game.new(params[:player_input])
+   redirect '/players'
  end
 
+  get '/players' do
+    @rps_selector = $player_input.rps_selector
+    @player_input = $player_input.choice
+    @referee = $player_input.referee
+    erb :players
+  end
 
 
   # start the server if ruby file executed directly
