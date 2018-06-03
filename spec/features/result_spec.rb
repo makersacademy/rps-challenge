@@ -14,4 +14,11 @@ feature 'Result' do
     click_button 'Rock'
     expect(page).to have_content "Tally:"
   end
+
+  scenario 'Capybara' do
+    sign_in_and_play
+    click_button 'Start game'
+    click_button 'Capybara'
+    expect(page).to have_content :Lost!
+  end
 end

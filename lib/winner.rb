@@ -3,7 +3,8 @@ class Winner
     @weapons = {
       "Rock" => 1,
       "Paper" => 2,
-      "Scissors" => 3 }
+      "Scissors" => 3,
+      "Capybara" => 10}
   end
 
   def result(weapon_1, weapon_2)
