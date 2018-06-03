@@ -14,6 +14,8 @@ Takeaway Challenge
 
  ```
 
+ ![Alt text] (<iframe src="https://giphy.com/embed/E7ClVqqCl8bVS" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/funny-friends-E7ClVqqCl8bVS">via GIPHY</a></p>)
+
 
 This project is our third weekend challenge. This week we were focusing on web applications, learning HTTP and Sinatra. Completed solo on 2nd-3rd June 2018. We were given the following user stories:
 
