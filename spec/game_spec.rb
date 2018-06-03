@@ -13,6 +13,11 @@ describe Game do
       game.computer_choice
       expect(game.result).to eq("Paper beats Rock, You Lose!")
     end
+    it 'should let Scissors win against Paper' do
+      game.player_move('Scissors')
+      game.computer_choice
+      expect(game.result).to eq("Scissors beats Paper, You Win!")
+    end
 
   end
 end
