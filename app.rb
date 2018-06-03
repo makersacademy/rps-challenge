@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -9,33 +11,32 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:name])
+    player = Player.new(params[:name])
+    opponent = Computer.new
+    $game = Game.new(player, opponent)
     redirect '/player'
   end
 
   get '/player' do
-    @player = $player.name
+    @game = $game
     erb(:player)
   end
 
   get '/rock' do
-    @player = $player
-    @player.select_move("Rock")
-    @player.opponent.move
+    @game = $game
+    @game.player.select_move("Rock")
     erb(:rock)
   end
 
   get '/paper' do
-    @player = $player
-    @player.select_move("Paper")
-    @player.opponent.move
+    @game = $game
+    @game.player.select_move("Paper")
     erb(:paper)
   end
 
   get '/scissors' do
-    @player = $player
-    @player.select_move("Scissors")
-    @player.opponent.move
+    @game = $game
+    @game.player.select_move("Scissors")
     erb(:scissors)
   end
 

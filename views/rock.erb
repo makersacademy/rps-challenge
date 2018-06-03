@@ -1,12 +1,12 @@
-<h1><%=@player.name%> has choosen: <%=@player.move%></h1>
+<h1><%=@game.player.name%> has choosen: <%=@game.player.move%></h1>
 
-<h1>Computer has choosen: <%=@player.opponent.move%></h1>
+<h1>Mr Rosso has choosen: <%=@game.opponent.move%></h1>
 
-<%if @player.win?%>
-  <h1><%=@player.name%> is the winner!</h1>
+<%if @game.win?%>
+  <h1><%=@game.player.name%> is the winner!</h1>
   <iframe src="https://giphy.com/embed/7VLeHDJUOKPrW" width="480" height="424" frameBorder="0" allowFullScreen></iframe>
-<%elsif @player.loose?%>
-  <h1>Computer is the winner!</h1>
+<%elsif @game.loose?%>
+  <h1>Mr Rosso is the winner!</h1>
   <iframe src="https://giphy.com/embed/3uQccl0slI208" width="480" height="336" frameBorder="0" allowFullScreen></iframe>
 <%else%>
   <h1>It's a draw!</h1>
