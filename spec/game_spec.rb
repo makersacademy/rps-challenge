@@ -1,8 +1,8 @@
 describe Game do
-  let(:randomizer) { double :randomizer}
+  let(:randomizer) { double :randomizer }
   let(:determinewinner) { double :determinewinner }
   let(:player) { double :player }
-  subject(:game) { described_class.new(player, randomizer ,determinewinner) }
+  subject(:game) { described_class.new(player, randomizer, determinewinner) }
 
   it 'can tell you the players name' do
     expect(game.player).to eq player

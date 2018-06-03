@@ -7,12 +7,8 @@ class Randomizer
 
   def randomly_select
     random_number = Kernel.rand(3)
-    if random_number == 1
-      return "Rock"
-    elsif random_number == 2
-      return "Paper"
-    elsif random_number == 3
-      return "Scissors"
-    end
+    return "Rock" if random_number == 1
+    return "Paper" if random_number == 2
+    return "Scissors" if random_number == 3
   end
 end
