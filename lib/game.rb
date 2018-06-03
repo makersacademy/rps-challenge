@@ -12,4 +12,24 @@ class Game
     @players.last
   end
 
+  def winner
+    if player1.selection == player2.selection
+      return "It's a draw!"
+    end
+    if winning_hand(player1.selection, player2.selection)
+      return "#{player1.name} wins!"
+    end
+    return "#{player2.name} wins!"
+  end 
+
+  def winning_hand(a,b)
+    combos = {
+      "Rock" => "Scissors",
+      "Scissors" => "Paper",
+      "Paper" => "Rock"
+    }
+    return true if combos[a] == b
+    return false
+  end
+
 end
