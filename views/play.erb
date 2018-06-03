@@ -1,13 +1,13 @@
-<%= @name %>
+<%= @name %><br></br>
 
 <form action="/play" method="post">
-  <input type="submit" name = "option" value="Rock" />
-  <input type="submit" name = "option" value="Paper" />
-  <input type="submit" name = "option" value="Scissors" />
-</form>
+  <input type="submit" name = "option" value="Rock" /><br></br>
+  <input type="submit" name = "option" value="Paper" /><br></br>
+  <input type="submit" name = "option" value="Scissors" /><br></br>
+</form><br></br>
 
-You chose <%= @option %>
+You chose <%= @option %><br></br>
 
 <div id="computer">
-  Computer chose <%= @option.to_s.capitalize %>
-</div>
+  Computer chose <%= $computer_option.to_s.capitalize %>
+</div><br></br>

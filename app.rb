@@ -20,6 +20,8 @@ class RPS < Sinatra::Base
 
   post '/play' do
     $option = params[:option]
+    $computer_option = Computer.new.option
+    @computer_option = $computer_option
     redirect '/play'
   end
 

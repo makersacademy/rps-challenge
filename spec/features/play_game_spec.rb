@@ -22,6 +22,13 @@ feature 'game in play' do
     expect(possible_message).to include message
   end
 
+  scenario 'game chooses a random option' do
+    srand(2223)
+    sign_in_and_play
+    click_button "Paper"
+    expect(page).to have_content "Computer chose Rock"
+  end
+
   def possible_message
     [:rock, :paper, :scissors].map { |option| "Computer chose #{option.to_s.capitalize}" }
   end
