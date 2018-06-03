@@ -5,6 +5,6 @@ feature 'Display game outcome', type: :feature do
     click_button "Submit"
     select("Rock", from: "move")
     click_button "Submit"
-    expect(page).to have_content "!"
+    expect(page).to have_content "Game result:"
   end
 end

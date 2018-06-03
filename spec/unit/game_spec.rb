@@ -10,7 +10,6 @@ describe Game do
     end
   end
 
-
   describe '#determine_outcome' do
     subject(:game) { described_class.new("scissors") }
 
@@ -30,12 +29,3 @@ describe Game do
     end
   end
 end
-
-#
-# return "You win!" if @user_move == "scissors" && @computer_move == "paper"
-# return "You lose!" if @user_move == "scissors" && @computer_move == "rock"
-# return "You win!" if @user_move == "paper" && @computer_move == "rock"
-# return "You lose!" if @user_move == "paper" && @computer_move == "scissors"
-# return "You win!" if @user_move == "rock" && @computer_move == "scissors"
-# return "You lose!" if @user_move == "rock" && @computer_move == "paper"
-# return "It's a draw!" if @user_move == @computer_move
