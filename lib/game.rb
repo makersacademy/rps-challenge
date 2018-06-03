@@ -7,6 +7,14 @@ class Game
     @opponent = opponent
   end
 
+  def self.launch(player, opponent)
+    @game = Game.new(player, opponent)
+  end
+
+  def self.instance
+    @game
+  end
+
   def win?
     winning_move
   end
