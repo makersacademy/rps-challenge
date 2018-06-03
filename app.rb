@@ -21,21 +21,21 @@ class RPS < Sinatra::Base
 
   post '/play_rock' do
     @player_name = session[:player_name]
-    computer=Computer.new
+    computer = Computer.new
     @computer_move = computer.move
     erb :play_rock
   end
 
   post '/play_paper' do
     @player_name = session[:player_name]
-    computer=Computer.new
+    computer = Computer.new
     @computer_move = computer.move
     erb :play_paper
   end
-  
+
   post '/play_scissors' do
     @player_name = session[:player_name]
-    computer=Computer.new
+    computer = Computer.new
     @computer_move = computer.move
     erb :play_scissors
   end
