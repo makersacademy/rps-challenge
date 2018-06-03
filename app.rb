@@ -29,8 +29,8 @@ class App < Sinatra::Base
 
   get '/result' do
     @user_move = $move.user_move
-    @auto_move = $move.determine_auto_move
-    @result = $move.determine_winner
+    @computer_move = $move.determine_computer_move
+    @result = $move.result
     erb :result
   end
 
