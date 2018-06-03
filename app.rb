@@ -22,6 +22,7 @@ class RPS < Sinatra::Base
 
   post '/player_choice' do
     @game = $game
+    @computers_choice = @game.computers_choice
     @game.players_choice(params[:player_choice])
     redirect '/final_result'
   end
@@ -29,10 +30,8 @@ class RPS < Sinatra::Base
   get '/final_result' do
     @game = $game
     @winner = @game.winner
-    p @winner
     erb :final_result
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end

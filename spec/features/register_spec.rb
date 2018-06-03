@@ -4,12 +4,9 @@
 
 feature 'Registering name' do
   scenario 'user registers name' do
-    # Setup - user enters name in form
     visit("/")
     fill_in('name', with: 'Rob')
-    # Exercise - user clicks submit
     click_button('Begin Game')
-    # Verification - page has name on it as content
     expect(page).to have_content("Rob")
   end
 end

@@ -11,7 +11,6 @@
     .form-control{
       border-radius: 100;
     }
-
   </style>
 </head>
 <body>
@@ -21,14 +20,15 @@
     </div>
     <div class="jumbotron">
       <div class="text-center" id="results">
-        <%= @winner %> <br>
-        <div class="row">
+        <h1><%= @winner %></h1> <br>
+        <div class="row" id="choices">
           <div class="col" id="user_pic">
-            You chose <%= @game.user_choice %> </br>
+            <h3>You chose <%= @game.user_choice %></h3> </br>
             <img src=<%= "#{@game.user_choice.downcase}.jpg" %>>
           </div>
-          <div class="col">
-            Computer chose <%= @game.computers_choice %>
+          <div class="col" id="comp_pic">
+            <h3>Computer chose <%= @game.computers_choice %></h3> </br>
+            <img src=<%= "#{@game.computers_choice}.jpg" %>>
           </div>
         </div>
       </div>
