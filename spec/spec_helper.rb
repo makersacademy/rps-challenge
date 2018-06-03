@@ -11,7 +11,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 
-Capybara.app = RPSLS
+Capybara.app = PairingBattle
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

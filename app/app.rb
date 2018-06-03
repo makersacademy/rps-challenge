@@ -1,31 +1,31 @@
 require 'sinatra/base'
 require './lib/spirit_animal_battle'
 
-class RPSLS < Sinatra::Base
+class PairingBattle < Sinatra::Base
 
-	# Root page requests the player's name
 	get '/' do
 		erb :specify_player_name
 	end
 
-	# Store the player's name ad redirects to the game arena
-	post '/save_player_name' do
+
+	post '/save_name' do
 		$player_name = params[:player_name] unless $player_name
 		redirect '/choose_your_spirit_animal'
 	end
 
-	# Let the games begin!
+
 	get '/choose_your_spirit_animal' do
-		erb :choose_your_spirit_animal
+		erb :choose_spirit_animal
 	end
 
+
 	post '/save_spirit_animal_choice' do
-		p1 = params[:player_warrior]
+		p1 = params[:spirit_animal]
 		g1 = SpiritAnimalBattle.new.game_choice
 
-		$player_warrior = p1
+		$spirit_animal = p1
 		$computer = g1
-		
+
 		$winner_is = SpiritAnimalBattle.new.pair_up(p1,g1)
 		redirect '/fight'
 	end
@@ -36,4 +36,5 @@ class RPSLS < Sinatra::Base
 	end
 
 
+	run! if app_file == $0
 end
