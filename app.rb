@@ -14,6 +14,7 @@ class RPS < Sinatra::Base
   get '/play' do
     @name = $player_name
     @game = $game
+    @option = $option
     erb :play
   end
 
