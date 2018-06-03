@@ -14,7 +14,7 @@ Takeaway Challenge
 
  ```
 
- ![Alt text] (https://media.giphy.com/media/E7ClVqqCl8bVS/giphy.gif)
+ ![Alt text](https://media.giphy.com/media/E7ClVqqCl8bVS/giphy.gif)
 
 
 This project is our third weekend challenge. This week we were focusing on web applications, learning HTTP and Sinatra. Completed solo on 2nd-3rd June 2018. We were given the following user stories:
