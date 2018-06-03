@@ -18,6 +18,11 @@ describe Game do
       game.computer_choice
       expect(game.result).to eq("Scissors beats Paper, You Win!")
     end
+    it 'Paper against Paper is a draw' do
+      game.player_move('Paper')
+      game.computer_choice
+      expect(game.result).to eq("It's a Draw!")
+    end
 
   end
 end
