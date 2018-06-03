@@ -17,4 +17,9 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/play' do
+    $option = params[:option]
+    redirect '/play'
+  end
+
 end
