@@ -4,7 +4,7 @@ require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
 
-  enable :sessions
+  # enable :sessions
 
   get '/' do
     erb :index

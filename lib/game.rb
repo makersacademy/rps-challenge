@@ -17,17 +17,17 @@ class Game
 
   def player_move(choice)
     @choice = choice
-   end
+  end
 
   def computer_choice
-    @computer_draw = @computer_pick.sample
+    @computer_pick.sample
   end
 
   def result
-    if @choice == @computer_draw
+    if @choice == computer_choice
       "It's a Draw!"
     else
-      case @computer_draw
+      case computer_choice
       when "Rock"
         @choice == "Paper" ? "Paper beats Rock, You Win!" : "Rock beats Scissors, You Lose!"
       when "Paper"

@@ -1,5 +1,37 @@
 # RPS Challenge
 
+
+Irb
+
+gadishas-MacBook-Pro:rps-challenge gadishazerari$ irb
+2.5.0 :001 > require './lib/player.rb'
+ => true
+2.5.0 :002 > require './lib/game.rb'
+ => true
+2.5.0 :003 > player =Player.new('Gadiza')
+ => #<Player:0x00007fb432038b88 @name="Gadiza">
+2.5.0 :004 > game = Game.new(player)
+ => #<Game:0x00007fb43114a8b0 @player1=#<Player:0x00007fb432038b88 @name="Gadiza">, @computer_pick=["Rock", "Paper", "Scissors"]>
+2.5.0 :005 > game.player_move('Rock')
+ => "Rock"
+2.5.0 :006 > game.computer_choice
+ => "Scissors"
+2.5.0 :007 > game.result
+ => "Rock beats Scissors, you Win!"
+2.5.0 :008 > game.player_move('Paper')
+ => "Paper"
+2.5.0 :009 > game.computer_choice
+ => "Paper"
+2.5.0 :010 > game.result
+ => "It's a Draw!"
+2.5.0 :011 > game.player_move('Scissors')
+ => "Scissors"
+2.5.0 :012 > game.computer_choice
+ => "Rock"
+2.5.0 :013 > game.result
+ => "Rock beats Scissors, You Lose!"
+
+
 Instructions
 -------
 
