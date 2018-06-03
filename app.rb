@@ -27,7 +27,9 @@ class Rps < Sinatra::Base
 
   get '/move' do
     @player1 = $game.player1
+    @player2 = $game.player2
     erb :move
+    # $game.switch_turns
   end
 
   run! if app_file == $0
