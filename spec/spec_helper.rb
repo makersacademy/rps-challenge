@@ -10,8 +10,6 @@ require 'capybara'
 # tell Capybara about our app class
 Capybara.app = RockPaperScissors
 
-
-
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
