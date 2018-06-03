@@ -14,4 +14,15 @@ feature 'game in play' do
     click_button "Paper"
     expect(page).to have_content 'You chose Paper'
   end
+
+  scenario 'game chooses an option' do
+    sign_in_and_play
+    click_button "Paper"
+    message = find(:css, "#computer").text.strip
+    expect(possible_message).to include message
+  end
+
+  def possible_message
+    [:rock, :paper, :scissors].map { |option| "Computer chose #{option.to_s.capitalize}" }
+  end
 end
