@@ -43,6 +43,14 @@ Once you've navigated to localhost, you can follow the instructions on the scree
 
 <img src="/public/enter_name.png">
 
+2. Choose your weapon
+
+<img src="/public/choose_weapon.png">
+
+3. See the results
+
+<img src="/public/final_results.png">
+
 
 ## Tech/Framework used
 
