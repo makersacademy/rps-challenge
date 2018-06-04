@@ -1,6 +1,6 @@
-class Rps_game
+class RpsGame
 
-attr_reader :name, :rps
+  attr_reader :name, :rps
 
   def initialize(name)
     @name = name
