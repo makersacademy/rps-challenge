@@ -1,0 +1,17 @@
+html {
+  background-image: url("https://www.kennedyspacecenter.com/-/media/DNC/KSCVC/Event-Images/Rocket-Launches/SPACEX_CRS6-for-web.ashx?h=600&w=900&la=en&hash=84FBC621B9E7D5E5AA6A30A15D07A71D412A4CFA");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.go_button {
+  height: 3em;
+  width: 20em;
+  font-size: 1.5em;
+  margin-left: 1.3em;
+}
+
+.go_button:hover {
+  background-color: red;
+  box-shadow: 2px 2px;
+}

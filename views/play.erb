@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='/play.css'>
+  </head>
+<div>
+  <h1>
+    <%= @game.player_1.name%>, ready to play Rock Paper Scissors???
+  </h1>
+
+  <form action='/make_choice' method='post'>
+    <button type="submit" value="rock", name='choice'>
+      <h2> I wanna rock, ROCK! <h2>
+    </button>
+
+    <form action='/make_choice' method='post'>
+      <button type="submit" value="paper", name='choice'>
+        <h2> Get ready for a PAPER cut! <h2>
+      </button>
+
+      <form action='/make_choice' method='post'>
+        <button type="submit" value="scissors", name='choice'>
+          <h2> Slice and dice, SCISSORS and spice! <h2>
+        </button>
+</div>
+</html>
