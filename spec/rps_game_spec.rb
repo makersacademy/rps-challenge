@@ -8,7 +8,7 @@ describe RpsGame do
     # exercise
     game.rps_selector
     # verify
-    expect(game.rps_selector).to match ('Rock|Paper|Scissors')
+    expect(game.rps_selector).to match 'Rock|Paper|Scissors'
   end
 
   it 'takes the input from a user' do
@@ -16,7 +16,7 @@ describe RpsGame do
     game = RpsGame.new("Me")
     # exercise
     # verify
-    expect(game.choice("Rock")).to match ('Rock|Paper|Scissors')
+    expect(game.choice("Rock")).to match 'Rock|Paper|Scissors'
   end
 
 end
