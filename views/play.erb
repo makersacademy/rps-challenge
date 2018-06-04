@@ -1,0 +1,10 @@
+<h1><%= @player1.name %> vs. <%= @player2.name %></h1>
+<br>
+<%= $game.current_turn.name %>'s turn
+<br>
+<form id = 'choiceform' action = '/move' method = 'post'>
+  <input type="radio" name="choice" id ='rock' value="Rock">Rock <br>
+  <input type="radio" name="choice" id = 'paper' value="Paper">Paper <br>
+  <input type="radio" name="choice" id = 'Scissors' value="scissors">Scissors <br>
+  <input type="submit" name="submit" value="submit">
+</form>
