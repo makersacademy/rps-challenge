@@ -1,0 +1,18 @@
+<h1> <%= @player_name %> vs <%= "Computer" %> </h1>
+<img src="https://d2zfkpu1r6ym98.cloudfront.net/sites/guideposts.org/files/styles/hero_box_left_lg/public/story/rock_paper_marquee.jpg" height = 250 width = 400>
+<br>
+<br>
+<%= "Choose rock, paper or scissors" %>
+<br>
+<br>
+<form action='/play_rock' method="post">
+  <button type="submit" name >ROCK</button>
+  </form>
+
+<form action='play_paper' method="post">
+  <button type="submit" name >PAPER</button>
+</form>
+
+<form action='/play_scissors' method="post">
+  <button type="submit" name >SCISSORS</button>
+</form>

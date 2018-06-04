@@ -1,0 +1,18 @@
+<h1><%= @player_name %> chose paper! </h1>
+
+<img src="https://multifiles.pressherald.com/uploads/sites/2/2013/01/m+jeff+lancaster+copy.jpg" height =300 width = 450>
+
+<h1>Computer chose.... <%= @computer_move %>!</h1>
+
+<% if @computer_move == "rock" %>
+<h1><%= @player_name %> wins :-) </h1>
+<img src="https://media1.tenor.com/images/a17a19d0110638638c7b584379ed2b57/tenor.gif?itemid=4398883">
+<% elsif @computer_move == "scissors" %>
+<h1><%= @player_name %> loses :-( </h1>
+<img src="https://media.giphy.com/media/zGIXdPSdN9Q08/giphy.gif">
+<% else %>
+<h1>It's a draw :-|</h1>
+<% end %>
+<br>
+<br>
+<a href="/play" class="btn btn-success">Play again?</a>

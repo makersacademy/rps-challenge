@@ -1,0 +1,18 @@
+<h1><%= @player_name %> chose rock! </h1>
+
+<img src="https://www.sickchirpse.com/wp-content/uploads/2014/07/90s-The-Rock-458x670.jpg" height = 400 width = 275>
+
+<h1>Computer chose.... <%= @computer_move %>!</h1>
+
+<% if @computer_move == "scissors" %>
+<h1><%= @player_name %> wins :-) </h1>
+<img src="https://media1.tenor.com/images/a17a19d0110638638c7b584379ed2b57/tenor.gif?itemid=4398883">
+<% elsif @computer_move == "paper" %>
+<h1><%= @player_name %> loses :-( </h1>
+<img src="https://media.giphy.com/media/zGIXdPSdN9Q08/giphy.gif">
+<% else %>
+<h1>It's a draw :-|</h1>
+<% end %>
+<br>
+<br>
+<a href="/play" class="button">Play again?</a>
