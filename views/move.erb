@@ -2,4 +2,8 @@
 <%= @player1.name %> picked <%= @player1.selection %>
 <br>
 <% end %>
-<a href = "/play"><button id = 'ok'>Okay</button></a>
+<% if @player2.selection %>
+<%= @player2.name %> picked <%= @player2.selection %>
+<br>
+<% end %>
+<a href = "/play" id = 'ok'><button>Okay</button></a>

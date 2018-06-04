@@ -21,15 +21,16 @@ class Rps < Sinatra::Base
   end
 
   post '/move' do
-    $game.player1.selection = params[:choice]
+    $game.current_turn.selection = params[:choice]
+    puts $game.current_turn.selection
     redirect '/move'
   end
 
   get '/move' do
+    $game.switch_turns
     @player1 = $game.player1
     @player2 = $game.player2
     erb :move
-    # $game.switch_turns
   end
 
   run! if app_file == $0
