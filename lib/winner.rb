@@ -1,21 +1,27 @@
 class Winner
   def initialize
-    @weapons = {
-      "Rock" => 1,
-      "Paper" => 2,
-      "Scissors" => 3,
-      "Capybara" => 10 }
+    @ranking = {
+      "Rock" => ["Scissors", "Capybara"],
+      "Paper" => ["Rock", "Capybara"],
+      "Scissors" => ["Paper", "Capybara"],
+      "Capybara" => []
+    }
   end
 
   def result(weapon_1, weapon_2)
-    difference = @weapons[weapon_1] - @weapons[weapon_2]
-    if [1, -2].include?(difference)
-      :Won!
-    elsif difference.zero?
+    if weapon_1 == weapon_2
       :Draw!
+    elsif beats?(weapon_1,weapon_2)
+      :Won!
     else
       :Lost!
     end
+  end
+
+  private
+
+  def beats?(weapon_1, weapon_2)
+    @ranking[weapon_1].include?(weapon_2)
   end
 
 end

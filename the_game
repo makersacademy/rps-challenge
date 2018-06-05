@@ -10,3 +10,23 @@ Well “play” rock paper scissors is broad. How can we break this down?
 4. I would like to play again
 5. I would like to see the tally of scores
 6. I would like some entertaining imagery
+
+To improve:
+- Add screanshot to readme
+- Stub randomness - done
+- If else statements for result - done (of sorts)
+- Remove global variable
+  - Create a game class
+  - Store Class data 
+- Weapons stored as constant - done
+- Conditional gifs - done (of sorts)
+
+To discuss with coach
+- Testing initiate which does not have text (can I work this out? probably)
+- The rubric didn't like my if else statement in my winner class. The rubric also missed out a draw option... who is right?
+- My Tally test in result_spec sometimes fails when I had wins: 2. I assume this is because spec files are not always executed in the same order. What is the best way to test this?
+- Stubbing randomness:
+    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+  seems very general, can affect other tests
+- Calling business logic from the view
+  I have conditional gifs, is this allowable? it feels odd to store gifs in the business logic

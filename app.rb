@@ -17,6 +17,8 @@ class Rps < Sinatra::Base
   end
 
   post '/choose_weapon' do
+    # unnecessary_sample = [1,2,3,4,5,6,7,8,9,"Scissors"].sample
+    # fail if unnecessary_sample =- "Scissors"
     erb :choose_weapon
   end
 
