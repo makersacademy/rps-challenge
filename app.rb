@@ -20,7 +20,7 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/newplay' do
+  post '/play' do
     session[:player_option] = params[:option].downcase.to_sym
     session[:computer_option] = Computer.new.option
     # @computer_option = $computer_option
