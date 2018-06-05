@@ -20,6 +20,16 @@ class Game
     result == :win
   end
 
+  def lose?
+    result == :lose
+  end
+
+  def draw?
+    result == :draw
+  end
+
+  private
+
   def result
     return if @computer_option.nil?
     GAME_RULES[@player_option][@computer_option]

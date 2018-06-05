@@ -14,4 +14,8 @@ You chose <%=@game.player_option.to_s.capitalize %><br></br>
 
 <%if @game.win? %>
 You win!
+<%elsif @game.lose? %>
+You lose!
+<%elsif @game.draw? %>
+You draw!
 <%end %>

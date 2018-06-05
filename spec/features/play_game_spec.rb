@@ -34,4 +34,11 @@ feature 'game in play' do
     expect(page).to have_content "You win!"
   end
 
+  scenario 'player loses' do
+    sign_in_and_play
+    srand(2223)
+    click_button "Scissors"
+    expect(page).to have_content "You lose!"
+  end
+
 end
