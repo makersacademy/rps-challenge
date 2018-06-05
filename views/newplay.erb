@@ -1,0 +1,9 @@
+You chose <%=@game.player_option.to_s.capitalize %><br></br>
+
+<div id="computer">
+  Computer chose <%=@game.computer_option.to_s.capitalize %>
+</div><br></br>
+
+<%if @game.win? %>
+You win!
+<%end %>

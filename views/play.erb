@@ -1,13 +1,17 @@
-<%= @name %><br></br>
+<%=@game.player_name %><br></br>
 
-<form action="/play" method="post">
+<form action="/newplay" method="post">
   <input type="submit" name = "option" value="Rock" /><br></br>
   <input type="submit" name = "option" value="Paper" /><br></br>
   <input type="submit" name = "option" value="Scissors" /><br></br>
 </form><br></br>
 
-You chose <%= @option %><br></br>
+You chose <%=@game.player_option.to_s.capitalize %><br></br>
 
 <div id="computer">
-  Computer chose <%= $computer_option.to_s.capitalize %>
+  Computer chose <%=@game.computer_option.to_s.capitalize %>
 </div><br></br>
+
+<%if @game.win? %>
+You win!
+<%end %>
