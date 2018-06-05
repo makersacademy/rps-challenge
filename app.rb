@@ -1,10 +1,14 @@
 require 'sinatra/base'
 require_relative './lib/computer'
 require_relative './lib/winner'
-require_relative './lib/tally'
+require_relative './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb :enter
@@ -13,6 +17,7 @@ class Rps < Sinatra::Base
   post '/name' do
     session[:player_name] = params[:player_name]
     @player_name = session[:player_name]
+    @game = Game.create
     erb :initiate
   end
 
@@ -28,7 +33,6 @@ class Rps < Sinatra::Base
     @computer_weapon = Computer.new.choose_weapon
     @result = Winner.new.result(@player_weapon, @computer_weapon)
 
-    create_tally
     update_tally
 
     erb :result
@@ -36,18 +40,14 @@ class Rps < Sinatra::Base
 
   private
 
-  def create_tally
-    $tally ||= Tally.new
-  end
-
   def update_tally
     if @result == :Won!
-      $tally.win
+      @game.win
     elsif @result == :Lost!
-      $tally.lose
+      @game.lose
     end
-    @wins = $tally.wins
-    @losses = $tally.losses
+    @wins = @game.wins
+    @losses = @game.losses
   end
 
 #  run! if app_file == $0 what does this do?

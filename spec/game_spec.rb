@@ -1,19 +1,13 @@
 require 'game'
 
-
 describe Game do
-
-  subject(:game) {described_class.new("Rock","Scissors")}
-
-  describe '#result' do
-    it 'knows the result of a game' do
-      expect(game.result).to eq :Won!
-    end
+  it "records wins" do
+    7.times { subject.win }
+    expect(subject.wins).to eq 7
   end
 
-  describe '#tally' do
-    it 'keeps a tally' do
-      expect(game.tally).to eq "Wins: 1, Losses: 0"
-    end
+  it "records losses" do
+    9.times { subject.lose }
+    expect(subject.losses).to eq 9
   end
 end

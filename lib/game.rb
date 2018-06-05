@@ -1,14 +1,27 @@
 class Game
-  def initialize(weapon_1,weapon_2)
-    @weapon_1 = weapon_1
-    @weapon_2 = weapon_2
+  #unerstands the long game
+  attr_reader :wins, :losses
+
+  def self.instance
+    @game
   end
 
-  def result
-    :Won!
+  def self.create
+    @game = Game.new
   end
 
-  def tally
-    "Wins: 1, Losses: 0"
+  def initialize
+    @wins = 0
+    @losses = 0
   end
+
+  def win
+    @wins += 1
+  end
+
+  def lose
+    @losses += 1
+  end
+
+
 end
