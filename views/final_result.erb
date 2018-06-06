@@ -39,11 +39,15 @@
 
 <table>
   <tr>
-  <th>Name</th>
-  <th>Gameswon</th>
-  <th>Gameslost</th>
-</tr>
+    <th> Name </th>
+    <th> Games won </td>
+    <th> Games lost </td>
+  </tr>
   <% @scoreboard.each do |line| %>
-    <li><%= line %></li>
+    <tr>
+      <td><%= line[:id] %></td>
+      <td><%= line[:gameswon] %></td>
+      <td><%= line[:gameslost] %></td>
+    </tr>
   <% end %>
 </table>
