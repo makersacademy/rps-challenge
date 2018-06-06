@@ -21,12 +21,14 @@ class Result
   private
 
   def outcome
-   return :win if @player.choice == "rock" && @computer == "scissors"
-   return :win if @player.choice == "paper" && @computer == "rock"
-   return :win if @player.choice == "scissors" && @computer == "paper"
-   return :draw if @player.choice == "rock" && @computer == "rock"
-   return :draw if @player.choice == "paper" && @computer == "paper"
-   return :draw if @player.choice == "scissors" && @computer == "scissors"
-   return :lose
- end
+    return :win if player_wins?
+    return :draw if @player.choice == @computer
+    return :lose
+  end
+
+  def player_wins?
+    @player.choice == "rock" && @computer == "scissors" ||
+    @player.choice == "paper" && @computer == "rock" ||
+    @player.choice == "scissors" && @computer == "paper"
+  end
 end

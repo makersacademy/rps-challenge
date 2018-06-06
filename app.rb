@@ -30,7 +30,7 @@ class RPS < Sinatra::Base
     @player = $player
     $computer = Computer.new.random_choice
     @computer = $computer
-    $result = Result.new(@player, @computer) 
+    $result = Result.new(@player, @computer)
     erb :result
   end
 

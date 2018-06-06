@@ -1,7 +1,7 @@
 require 'result'
 
 describe Result do
-  subject(:result) { described_class.new(player, computer = "scissors") }
+  subject(:result) { described_class.new(player, "scissors") }
   let(:computer) { double :computer }
   let(:player) { double :player }
 
