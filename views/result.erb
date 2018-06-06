@@ -35,9 +35,9 @@
       <br>
       <h2>
         <% if $result.win? %>
-          <%= $player.name %> wins!
+          <%= @player.name %> wins!
         <% elsif $result.lose? %>
-          <%= $player.name %> loses!
+          <%= @player.name %> loses!
         <% elsif $result.draw? %>
           It's a draw!
         <% end %>

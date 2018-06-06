@@ -28,9 +28,9 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @player = $player
-    $computer = Computer.new
-    @computer = $computer.random_choice
-    $result = Result.new(@player, @computer)
+    $computer = Computer.new.random_choice
+    @computer = $computer
+    $result = Result.new(@player, @computer) 
     erb :result
   end
 
