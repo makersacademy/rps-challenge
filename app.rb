@@ -3,6 +3,7 @@ require './lib/player'
 require './lib/game'
 require './lib/randomizer'
 require './lib/determinewinner'
+require './lib/scoreboard'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -28,6 +29,7 @@ class RPS < Sinatra::Base
   end
 
   get '/final_result' do
+    @scoreboard = Scoreboard.show
     @game = $game
     @winner = @game.winner
     erb :final_result

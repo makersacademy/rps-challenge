@@ -36,3 +36,14 @@
   </div>
 </body>
 </html>
+
+<table>
+  <tr>
+  <th>Name</th>
+  <th>Gameswon</th>
+  <th>Gameslost</th>
+</tr>
+  <% @scoreboard.each do |line| %>
+    <li><%= line %></li>
+  <% end %>
+</table>
