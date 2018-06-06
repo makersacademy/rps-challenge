@@ -27,16 +27,19 @@ class RockPaperScissors < Sinatra::Base
 
   get '/rock' do
     @game.player.select_move("Rock")
+    @game.opponent.move
     erb(:rock)
   end
 
   get '/paper' do
     @game.player.select_move("Paper")
+    @game.opponent.move
     erb(:paper)
   end
 
   get '/scissors' do
     @game.player.select_move("Scissors")
+    @game.opponent.move
     erb(:scissors)
   end
 

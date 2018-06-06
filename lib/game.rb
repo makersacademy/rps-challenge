@@ -16,43 +16,32 @@ class Game
   end
 
   def win?
-    winning_move
-  end
-
-  def winning_move
-    winning_move1 || winning_move2 || winning_move3
-  end
-
-  def winning_move1
-    @player.move == "Rock" && opponent.move == "Scissors"
-  end
-
-  def winning_move2
-    @player.move == "Scissors" && opponent.move == "Paper"
-  end
-
-  def winning_move3
-    @player.move == "Paper" && opponent.move == "Rock"
+    return true if player_wins?(player_move: "Rock", opponent_move: "Scissors")
+    return true if player_wins?(player_move: "Scissors", opponent_move: "Paper")
+    return true if player_wins?(player_move: "Paper", opponent_move: "Rock")
+    false
   end
 
   def loose?
-    loosing_move
+    return true if player_loose?(player_move: "Scissors", opponent_move: "Rock")
+    return true if player_loose?(player_move: "Paper", opponent_move: "Scissors")
+    return true if player_loose?(player_move: "Rock", opponent_move: "Paper")
+    false
   end
 
-  def loosing_move
-    loosing_move1 || loosing_move2 || loosing_move3
+  def draw?
+    return true if player.move == opponent.current_move
+    false
   end
 
-  def loosing_move1
-    @player.move == "Rock" && opponent.move == "Paper"
+  private
+
+  def player_wins?(player_move:, opponent_move:)
+    @player.move == player_move && @opponent.current_move == opponent_move
   end
 
-  def loosing_move2
-    @player.move == "Scissors" && opponent.move == "Rock"
-  end
-
-  def loosing_move3
-    @player.move == "Paper" && opponent.move == "Scissors"
+  def player_loose?(player_move:, opponent_move:)
+    @player.move == player_move && @opponent.current_move == opponent_move
   end
 
 end

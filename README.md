@@ -1,5 +1,19 @@
 # RPS Challenge
 
+### Quickstart:
+#### How to install the code:
+1. Fork this project.
+2. Run ```bundle``` to ensure you have all the relevant gems.
+3. Use Ruby 2.5.0
+
+#### How to use the website:
+1. Load localhost server via ```rackup config.ru``` and note the port number listed.
+2. Visit 'localhost:XXXX' with the port number.
+
+#### How to run the tests:
+Spec file includes unit tests and feature tests sub folder. All tests can be run via ```rspec```.
+
+
 ### Approach to solving the challenge:
 
 1. Set up Sinatra file system and frame work with Controller and Views.
@@ -45,18 +59,6 @@ Extract from the Game class:
     winning_move
   end
 ```
-
-### How to install the code:
-1. Fork this project.
-2. Run ```bundle``` to ensure you have all the relevant gems.
-3. Use Ruby 2.5.0
-
-### How to use the website:
-1. Load localhost server via ```rackup config.ru``` and note the port number listed.
-2. Visit 'localhost:XXXX' with the port number.
-
-### How to run the tests:
-Spec file includes unit tests and feature tests sub folder. All tests can be run via ```rspec```.
 
 Instructions Set by Makers Academy
 -------

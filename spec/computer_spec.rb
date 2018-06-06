@@ -6,7 +6,8 @@ describe Computer do
 
   describe "#move" do
     it "randomly selects a counter move for the computer" do
-      allow(Computer::MOVES).to receive(:sample) { "Paper" }
+      moves_double = double :available_moves, sample: "Paper"
+      computer = Computer.new(moves_double)
       expect(computer.move).to eq "Paper"
     end
   end
