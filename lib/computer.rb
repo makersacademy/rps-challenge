@@ -1,7 +1,6 @@
 class Computer
 
   DEFAULT_MOVES = ["Rock", "Paper", "Scissors"]
-  # MOVES = DEFAULT_MOVES
 
   attr_reader :available_moves
 
@@ -16,5 +15,5 @@ class Computer
   def current_move
     @move
   end
-  
+
 end
