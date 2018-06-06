@@ -25,22 +25,14 @@ class RockPaperScissors < Sinatra::Base
     erb(:player)
   end
 
-  get '/rock' do
-    @game.player.select_move("Rock")
+  post '/compete' do
+    @game.player.select_move(params["player_move"])
     @game.opponent.move
-    erb(:rock)
+    redirect '/compete'
   end
 
-  get '/paper' do
-    @game.player.select_move("Paper")
-    @game.opponent.move
-    erb(:paper)
-  end
-
-  get '/scissors' do
-    @game.player.select_move("Scissors")
-    @game.opponent.move
-    erb(:scissors)
+  get '/compete' do
+    erb(:compete)
   end
 
   run! if app_file == $0

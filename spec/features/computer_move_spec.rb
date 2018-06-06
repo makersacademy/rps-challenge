@@ -4,17 +4,17 @@ feature "computer move" do
   end
   scenario "computer 'Rock' move is displayed" do
     register_to_play
-    click_link('Rock')
+    click_button('Rock')
     expect(page).to have_content "Mr Rosso has choosen: Paper"
   end
   scenario "computer 'Paper' move is displayed" do
     register_to_play
-    click_link('Paper')
+    click_button('Paper')
     expect(page).to have_content "Mr Rosso has choosen: Paper"
   end
   scenario "computer 'Scissors' move is displayed" do
     register_to_play
-    click_link('Scissors')
+    click_button('Scissors')
     expect(page).to have_content "Mr Rosso has choosen: Paper"
   end
 end
