@@ -1,0 +1,8 @@
+<h2><%= @game.player1.name %> chose <%= @game.choice1.turn %></h2>
+<h2><%= @game.player2.name %> chose <% if @game.player2.name == 'Computer' %>
+  <%= @game.choice2.decide %><% else %><%= @game.choice2.turn %><%end%></h2>
+<% @game.results.winner %>
+<h3><%= @game.results.declare %><h3>
+<h3>Play again?</h3><form action="/">
+  <input type="submit" value="New Game">
+</form>
