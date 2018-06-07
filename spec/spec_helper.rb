@@ -1,6 +1,13 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'setup_test_database'
+
+RSpec.configure do |config|
+  config.before(:each) do
+    setup_test_database!
+  end
+end
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -17,7 +24,14 @@ RSpec.configure do |config|
   end
 end
 
+ENV['ENVIRONMENT'] = 'test'
 ENV['RACK_ENV'] = 'test'
+
+
+
+
+# we want to run the setup_test_database before
+
 
 # require our Sinatra app file
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
