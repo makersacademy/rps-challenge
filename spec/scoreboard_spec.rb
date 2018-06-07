@@ -1,10 +1,10 @@
 describe Scoreboard do
   describe '.show' do
     it 'returns all players and scores in an array' do
-      connection = PG.connect(dbname: 'rpschallenge_test')
+      # connection = PG.connect(dbname: 'rpschallenge_test')
 
-      connection.exec("INSERT INTO scoreboard VALUES('Dave', 3, 1);")
-      connection.exec("INSERT INTO scoreboard VALUES('Lucy', 2, 6);")
+      Scoreboard.addscore(id: 'Dave', gameswon: 3, gameslost: 1)
+      Scoreboard.addscore(id: 'Lucy', gameswon: 2, gameslost: 6)
 
       expected_array = [
         {id: 'Dave', gameswon: "3", gameslost: "1"},
@@ -12,6 +12,18 @@ describe Scoreboard do
       ]
 
       expect(Scoreboard.show).to eq expected_array
+    end
+  end
+
+  describe '.addscore' do
+    it 'adds the result of a game to the scoreboard' do
+      #setup
+
+      #exercise
+      Scoreboard.addscore(id: 'Dave', gameswon: 1, gameslost: 0)
+      new_result = {id: "Dave", gameswon: "1", gameslost: "0"}
+      #verify
+      expect(Scoreboard.show).to include new_result
     end
   end
 end

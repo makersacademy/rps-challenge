@@ -29,9 +29,13 @@ class RPS < Sinatra::Base
   end
 
   get '/final_result' do
-    @scoreboard = Scoreboard.show
     @game = $game
     @winner = @game.winner
+    @gameswon = @winner == 'Player wins' ? 1 : 0
+    @gameslost = @winner == 'Computer wins' ? 1 : 0
+    Scoreboard.addscore(id: @game.player, gameswon: @gameswon, gameslost: @gameslost)
+    @scoreboard = Scoreboard.show
+
     erb :final_result
   end
 
