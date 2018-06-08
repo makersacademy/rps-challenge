@@ -16,10 +16,23 @@ describe Scoreboard do
   end
 
   describe '.addscore' do
-    it 'adds the result of a game to the scoreboard' do
-      new_result = {id: "Dave", gameswon: "1", gameslost: "0"}
-      Scoreboard.addscore(id: 'Dave', gameswon: 1, gameslost: 0)
-      expect(Scoreboard.show).to include new_result
+    context 'when the user doesnt already exist' do
+      it 'adds the new user with their score to the scoreboard' do
+        new_result = {id: "Dave", gameswon: "1", gameslost: "0"}
+        Scoreboard.addscore(id: 'Dave', gameswon: 1, gameslost: 0)
+        expect(Scoreboard.show).to include new_result
+      end
+    end
+
+    context 'when the user already exists' do
+      it 'updates the users score' do
+        # Setup
+        Scoreboard.addscore(id: 'Rob', gameswon: 1, gameslost: 0)
+        # Exercise
+        Scoreboard.addscore(id: 'Rob', gameswon: 1, gameslost: 0)
+        # Verify
+        expect(Scoreboard.show).to eq (id: "Rob", gameswon: "2", gameslost: "0")
+      end
     end
   end
 end
