@@ -31,7 +31,7 @@ describe Scoreboard do
         # Exercise
         Scoreboard.addscore(id: 'Rob', gameswon: 1, gameslost: 0)
         # Verify
-        expect(Scoreboard.show).to eq (id: "Rob", gameswon: "2", gameslost: "0")
+        expect(Scoreboard.show).to include({id: "Rob", gameswon: "2", gameslost: "0"})
       end
     end
   end
