@@ -25,12 +25,7 @@ class Scoreboard
       connection = PG.connect(dbname: 'rpschallenge')
     end
 
-    result = connection.exec("SELECT * FROM scoreboard WHERE '#{id}' = id;")
-    number_of_people_in_database = result.map{|person| person }.length
-    # number_of_people_in_database > 0
-
-    # if player_exists?(connection, id)
-    if number_of_people_in_database > 0
+    if player_exists?(connection, id)
       update_existing_players_score(connection, gameswon, gameslost, id)
     else
       result = connection.exec("INSERT INTO scoreboard VALUES('#{id}',#{gameswon},#{gameslost});")
@@ -38,11 +33,11 @@ class Scoreboard
   end
 
 
-  # def player_exists?(connection, id)
-    # result = connection.exec("SELECT * FROM scoreboard WHERE #{id} = id")
-    # number_of_people_in_database = result.map{|person| person }.length
-    # number_of_people_in_database > 0
-  # end
+  def self.player_exists?(connection, id)
+    result = connection.exec("SELECT * FROM scoreboard WHERE '#{id}' = id")
+    number_of_people_in_database = result.map{|person| person }.length
+    number_of_people_in_database > 0
+  end
 
   def self.update_existing_players_score(connection, gameswon, gameslost, id)
     if gameswon == 1
