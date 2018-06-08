@@ -24,6 +24,31 @@ class Scoreboard
       # create a connection to the production database
       connection = PG.connect(dbname: 'rpschallenge')
     end
-    result = connection.exec("INSERT INTO scoreboard VALUES('#{id}',#{gameswon},#{gameslost});")
+
+    result = connection.exec("SELECT * FROM scoreboard WHERE '#{id}' = id;")
+    number_of_people_in_database = result.map{|person| person }.length
+    # number_of_people_in_database > 0
+
+    # if player_exists?(connection, id)
+    if number_of_people_in_database > 0
+      update_existing_players_score(connection, gameswon, gameslost, id)
+    else
+      result = connection.exec("INSERT INTO scoreboard VALUES('#{id}',#{gameswon},#{gameslost});")
+    end
+  end
+
+
+  # def player_exists?(connection, id)
+    # result = connection.exec("SELECT * FROM scoreboard WHERE #{id} = id")
+    # number_of_people_in_database = result.map{|person| person }.length
+    # number_of_people_in_database > 0
+  # end
+
+  def self.update_existing_players_score(connection, gameswon, gameslost, id)
+    if gameswon == 1
+      connection.exec("UPDATE scoreboard SET gameswon = gameswon + 1 WHERE '#{id}' = id;")
+    elsif gameslost == 1
+      connection.exec("UPDATE scoreboard SET gameslost = gameslost + 1 WHERE '#{id}' = id;")
+    end
   end
 end
