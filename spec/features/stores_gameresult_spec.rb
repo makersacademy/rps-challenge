@@ -2,10 +2,6 @@
 # So that I can keep track of my results
 # I would like to add my results to the scoreboard
 
-
-#play a game
-#see game result in scoreboard
-
 feature 'Stores the result' do
   scenario 'when game is over, adds result to scoreboard' do
     allow_any_instance_of(Randomizer).to receive(:result).and_return("Rock")

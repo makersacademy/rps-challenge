@@ -12,7 +12,6 @@ feature 'Viewing scoreboard' do
     expect(page).to have_content 'Lucy 2 6'
   end
 
-
   def log_in_and_play
     visit("/")
     fill_in('name', with: 'Rob')

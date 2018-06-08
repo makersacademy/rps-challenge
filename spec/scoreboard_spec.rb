@@ -17,12 +17,8 @@ describe Scoreboard do
 
   describe '.addscore' do
     it 'adds the result of a game to the scoreboard' do
-      #setup
-
-      #exercise
-      Scoreboard.addscore(id: 'Dave', gameswon: 1, gameslost: 0)
       new_result = {id: "Dave", gameswon: "1", gameslost: "0"}
-      #verify
+      Scoreboard.addscore(id: 'Dave', gameswon: 1, gameslost: 0)
       expect(Scoreboard.show).to include new_result
     end
   end
