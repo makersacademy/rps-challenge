@@ -1,6 +1,6 @@
 class RpsGame
 
-  attr_reader :rps
+  attr_reader :rps, :rpsmove
 
   def choice(choice)
     @choice = choice
@@ -8,7 +8,7 @@ class RpsGame
 
   def rps_selector
     @rps = ["Rock", "Paper", "Scissors"]
-    @rps = rps.sample
+    @rpsmove = @rps.sample
   end
 
   def score
@@ -18,28 +18,14 @@ class RpsGame
 
   def referee
     if @choice == @rps
-      draw
-    elsif @rps == "Rock" && @choice == "Scissors"
-      lose
-    elsif @rps == "Scissors" && @choice == "Paper"
-      lose
-    elsif @rps == "Paper" && @choice == "Rock"
-      lose
+      puts "It's a draw"
+    elsif (@rps == "Rock" && @choice == "Scissors") ||
+      (@rps == "Scissors" && @choice == "Paper") ||
+      (@rps == "Paper" && @choice == "Rock")
+      puts "You lose"
     else
-      win
+      "You win"
     end
-  end
-
-  def win
-    "You win"
-  end
-
-  def lose
-    "You lose"
-  end
-
-  def draw
-    "It's a draw"
   end
 
 end

@@ -6,17 +6,19 @@ describe RpsGame do
     # setup
     game = RpsGame.new
     # exercise
-    game.rps_selector
+    # this is a a freaking stub!!!!
+    allow(game).to receive(:rps_selector) { "Rock" }
     # verify
-    expect(game.rps_selector).to match 'Rock|Paper|Scissors'
+    expect(game.rps_selector).to eq("Rock")
   end
 
   it 'takes the input from a user' do
     # setup
     game = RpsGame.new
     # exercise
+    game.choice('Rock')
     # verify
-    expect(game.choice("Rock")).to match 'Rock|Paper|Scissors'
+    expect(game.choice("Rock")).to eq("Rock")
   end
 
 end
