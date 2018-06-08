@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/attack.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
+  </head>
+  <body>
+    <p1> <%= @single_game.player.name %> picked <%= @weapon %>. </p1> <br>
+    <p1> Computer picked <%= @computer_weapon %>. </p1> <br>
+    <p2> Final score: <%= @result %> </p2>
+    <form action="/">
+      <input type="submit" value="Play again" class="playagainbutton">
+    </form>
+  </body>
+</html>

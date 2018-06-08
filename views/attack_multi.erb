@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/attack.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
+  </head>
+  <body>
+    <p1> <%= @multi_game.player_one.name %> picked <%= @multi_game.player_1_weapon %>.<br> </p1>
+    <p1> <%= @multi_game.player_two.name %> picked <%= @multi_game.player_2_weapon %>.<br> </p1>
+    <p2> Final score: <%= @result %> </p2>
+    <form action="/">
+      <input type="submit" value="Play again" class="playagainbutton">
+    </form>
+  </body>
+</html>

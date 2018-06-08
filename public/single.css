@@ -1,0 +1,37 @@
+html {
+  background-color: #e5e5e5eb;
+}
+
+.title {
+  text-align: center;
+  font-size: 3.5em;
+  margin-bottom: 3em;
+  margin-top: 1em;
+  font-family: Barlow Condensed;
+  letter-spacing: 0.7;
+}
+
+.putnamebutton {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.2em;
+  display: block;
+  height: 2.8em;
+  font-size: 1.7em;
+  font-family: Barlow Condensed;
+  padding-left: 0.5em;
+}
+
+.submit-player-name {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 2em;
+  margin-top: 0.3em;
+  font-size: 1.2em;
+  font-family: Barlow Condensed;
+}
+
+.submit-player-name:hover {
+  box-shadow: 0px 0px 25px #948d8de3;
+}
