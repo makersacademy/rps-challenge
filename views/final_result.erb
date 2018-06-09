@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+  <title>RockScissorsPaper</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <style>
+    .jumbotron{
+      background-color:#6f42c1a6;
+    }
+    .form-control{
+      border-radius: 100;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="page-header" id="page-header">
+      <h1> Results are in: <%= @winner %>!<h1>
+    </div>
+    <div class="jumbotron">
+      <div class="text-center" id="results">
+        <h1><%= @winner %></h1> <br>
+        <div class="row" id="choices">
+          <div class="col" id="user_pic">
+            <h3>You chose <%= @game.user_choice %></h3> </br>
+            <img src=<%= "#{@game.user_choice.downcase}.jpg" %>>
+          </div>
+          <div class="col" id="comp_pic">
+            <h3>Computer chose <%= @game.computers_choice %></h3> </br>
+            <img src=<%= "#{@game.computers_choice}.jpg" %>>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<table>
+  <tr>
+    <th> Name </th>
+    <th> Games won </td>
+    <th> Games lost </td>
+  </tr>
+  <% @scoreboard.each do |line| %>
+    <tr>
+      <td><%= line[:id] %></td>
+      <td><%= line[:gameswon] %></td>
+      <td><%= line[:gameslost] %></td>
+    </tr>
+  <% end %>
+</table>
