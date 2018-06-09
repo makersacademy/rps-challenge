@@ -1,6 +1,7 @@
 require 'pg'
 
 class Scoreboard
+
   def self.show
     if ENV['ENVIRONMENT'] == 'test'
       # create a connection to the test database
@@ -32,6 +33,7 @@ class Scoreboard
     end
   end
 
+  private
 
   def self.player_exists?(connection, id)
     result = connection.exec("SELECT * FROM scoreboard WHERE '#{id}' = id")
