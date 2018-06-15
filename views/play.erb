@@ -1,0 +1,8 @@
+<h1>Hello <%= @player.name %>. Let's play Rock Paper Scissors!</h1>
+
+<p>Choose your weapon:</p>
+<form action="/calculate" method="post">
+  <button name="player_weapon" value= "rock">Rock</button>
+  <button name="player_weapon" value= "paper">Paper</button>
+  <button name="player_weapon" value= "scissors">Scissors</button>
+</form>
