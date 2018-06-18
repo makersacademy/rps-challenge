@@ -32,13 +32,12 @@ I would like to see who has won the game.
 ## Gems and ruby version used
 - ruby '2.5.0'
 
-- gem 'rake'
-- gem 'sinatra'
-- gem 'capybara'
-- gem 'rspec'
-- gem 'rubocop'
-- gem 'simplecov'
-- gem 'simplecov-console'
+- 'sinatra'
+- 'capybara'
+- 'rspec'
+- 'rubocop'
+- 'simplecov'
+
 
 
 ## Deployed on Heroku:  
@@ -51,4 +50,4 @@ https://rpspaolap.herokuapp.com/
 
 
 ## Work in progress
-If I'd had more time to continue with this application, I would have worked on style (HTML).
+As soon as I have more time to continue with this application, I will work on style (CSS).
