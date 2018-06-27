@@ -1,4 +1,5 @@
 # 'Rock, Paper, Scissors'  
+[![Build Status](https://travis-ci.com/paosch/RPS.svg?branch=master)](https://travis-ci.com/paosch/RPS)
 
 
 ## Description
