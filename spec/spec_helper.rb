@@ -4,6 +4,7 @@ require 'simplecov-console'
 require "rspec"
 
 require "capybara"
+require "features/web_helpers"
 
 # tell Capybara about our app class
 ENV["RACK_ENV"] = "test"

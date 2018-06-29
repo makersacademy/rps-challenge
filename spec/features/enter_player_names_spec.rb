@@ -5,9 +5,7 @@ require "./app.rb"
 # I would like to register my name before playing an online game
 feature 'Enter player name' do
   scenario 'Can submit name to play game' do
-    visit('/')
-    fill_in(:player1_name, with: 'Jay')
-    click_button('Submit')
+    register_and_play
     expect(page).to have_content('Welcome Jay!')
   end
 
