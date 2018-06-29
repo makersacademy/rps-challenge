@@ -1,2 +1,2 @@
-require_relative "./app"
-run RockPaperScissors
+require_relative "./rps"
+run RPS
