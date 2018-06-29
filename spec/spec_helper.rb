@@ -1,6 +1,12 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require "rspec"
+
+require "capybara"
+
+# tell Capybara about our app class
+ENV["RACK_ENV"] = "test"
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -16,3 +22,9 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+# require our Sinatra app file
+require File.join(File.dirname(__FILE__), "..", "app.rb")
+
+# tell Capybara about our app class
+Capybara.app = Game
