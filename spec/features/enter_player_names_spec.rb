@@ -1,4 +1,4 @@
-require "./app.rb"
+require "./rps.rb"
 
 # As a marketeer
 # So that I can see my name in lights

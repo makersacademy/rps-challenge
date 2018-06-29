@@ -25,7 +25,7 @@ RSpec.configure do |config|
 end
 
 # require our Sinatra app file
-require File.join(File.dirname(__FILE__), "..", "app.rb")
+require File.join(File.dirname(__FILE__), "..", "rps.rb")
 
 # tell Capybara about our app class
-Capybara.app = Game
+Capybara.app = RPS
