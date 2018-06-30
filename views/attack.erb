@@ -1,0 +1,24 @@
+ <!--<h1><%= @game.turn.name %> : <%= @game.turn.score %> </h1>-->
+ <!--<h1><%= @game.turn.name %> : <%= @game.turn.score %> </h1>-->
+
+<% if @game.player_1.score >= 3 %>
+
+  <h1><%= @game.player_1.name %> wins! </h1>
+  <form action="/">
+    <input type="submit" value="New Game?">
+  </form>
+
+<% elsif @game.player_2.score >= 3 %>
+
+  <h1><%= @game.player_2.name %> wins! </h1>
+  <form action="/">
+    <input type="submit" value="New Game?">
+  </form>
+
+<% else %>
+
+  <form action="/play">
+    <input type="submit" value="Next turn">
+  </form>
+
+<% end %>
