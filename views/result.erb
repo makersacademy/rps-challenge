@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+    <div class="main">
+      <h2><%= $game.player.name %> chose <%= $player_option %></h2>
+
+      <h3><%= $game.player2.name %> chose <%= $player2_option %></h3>
+      
+      <div id="winner">
+        <% if $game.player.weapon == $game.player2.weapon %>
+          It's a draw!
+        <% elsif $game.output_winner == $game.player.name %>
+          <%= $game.player.name %> wins!
+        <% else %>
+          <%= $game.player2.name %> wins!
+        <% end %>
+      </div>
+
+      <div class="play_again">
+        <% if $game.player2.name == 'Computer' %>
+          <form action="/round">
+        <% end %>
+          <form action="/round_p1">
+          <input type="submit" value="Play again!">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>RPS</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="main">
+      <h2>Please choose a game mode</h2>
+      <h3 style="color: blue">Player vs Computer | Player vs Player</h3>
+    </div>
+
+    <div id="game_modes">
+      <form action="/computer-mode">
+        <button type="submit" value="computer">
+          <i class="fas fa-desktop fa-5x"></i>
+        </button>
+      </form>
+
+      <form action="/multiplayer-mode">
+        <button type="submit" value="multiplayer">
+          <i class="far fa-handshake fa-5x"></i>
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

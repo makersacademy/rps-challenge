@@ -1,0 +1,49 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css");
+
+/* GENERAL */
+
+h2, h3, h4 {
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+i {
+  color: blue;
+}
+
+/* SPEC */
+
+.main {
+  text-align: center;
+}
+
+#game_modes {
+  text-align: center;
+}
+
+#game_modes button {
+  margin-top: 20px;
+}
+
+#winner {
+  color: blue;
+  margin-top: 40px;
+  font-size: 2em;
+}
+
+.play_again {
+  margin-top: 40px;
+}

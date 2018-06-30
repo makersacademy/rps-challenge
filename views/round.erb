@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Round</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <div class="main">
+      <h2>Hi, <%= $game.player.name %>!</h2>
+
+      <h4>Choose one: <i>Rock - Paper - Scissor - Lizard - Spock</i></h4>
+
+      <form action="/PvC_option" method="POST">
+        <button type="submit" name="option" value="Rock">
+          <i class="far fa-hand-rock fa-5x"></i>
+        </button>
+        
+        <button type="submit" name="option" value="Paper">
+          <i class="far fa-hand-paper fa-5x"></i>
+        </button>
+
+        <button type="submit" name="option" value="Scissors">
+          <i class="far fa-hand-scissors fa-5x"></i>
+        </button>
+
+        <button type="submit" name="option" value="Lizard">
+          <i class="far fa-hand-lizard fa-5x"></i>
+        </button>
+
+        <button type="submit" name="option" value="Spock">
+          <i class="far fa-hand-spock fa-5x"></i>
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
