@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Rock-paper-scissors</title>
+    <link href="stylesheets/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet">
+</head>
+<body>
+  <div class="header">
+    <p class="center">Hello <%= session[:player_name] %>. Let's play Rock, Paper, Scissors</p>
+  </div>
+  <div class="container">
+    <form action="/result" method="post">
+      <input type="image" width="300px" style="cursor:pointer;" src="https://i.imgur.com/QK44nQ8.png" name="player_weapon" value="rock">
+    </form>
+    <form action="/result" method="post">
+      <input type="image" width="300px"style="cursor:pointer;" src="https://i.imgur.com/rHSbJg7.png" name="player_weapon" value="paper">
+    </form>
+    <form action="/result" method="post">
+      <input type="image" width="300px" style="cursor:pointer;" src="https://i.imgur.com/xMBDxZE.png" name="player_weapon" value="scissors">
+    </form>
+  </div>
+  <div class="footer">
+    <p class="center">Choose your weapon</p>
+  </div>
+</body>

@@ -1,6 +1,35 @@
 # RPS Challenge
 
-Instructions
+See Challenge Instructions below for the challenge details.
+
+To play RPS open Terminal and do the following:
+
+```sh
+$ git clone git@github.com:[USERNAME]/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+Then navigate to local host with the port shown after rackup.
+
+Screenshots
+-------
+Enter your name:
+![Screenshot](https://i.imgur.com/yg21hU1.png)
+
+Choose your move:
+![Screenshot](https://i.imgur.com/92bHHvs.png)
+
+View the result:
+![Screenshot](https://i.imgur.com/xrlXtrP.png)
+
+
+
+
+
+
+
+Challenge Instructions
 -------
 
 * Challenge time: rest of the day and weekend, until Monday 9am
