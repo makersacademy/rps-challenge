@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/play.css">
+      <title>GAME!</title>
+  </head>
+  <body>
+    <center>
+  <div class="new_game">
+      <div class="header">
+          <% game = @game %>
+          <%= game.player.name %> vs Wench!
+      </div>
+      <h2><%= game.player.name %>, do something!</h2>
+      <div class="grid">
+          <div class="players_image">
+            <img src="<%= game.player.image %>" alt="player image">
+            <img src="https://image.ibb.co/kyPSO7/tavern_wench_char.jpg" alt="computer image">
+          </div>
+      </div>
+      <div class="footer">
+        <form action="/move" method="post">
+          <input type="submit" value="rock" label="Rock" name="move" class="choice">
+        <form action="/move" method="post">
+          <input type="submit" value="paper" label="Paper" name="move" class="choice">
+        <form action="/move" method="post">
+          <input type="submit" value="scissors" label="Scissors" name="move" class="choice">
+        </form>
+      </div>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+body {
+  background-image: url("https://image.ibb.co/mXmnrS/sss_victory.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: 10em;
+  line-height: 55px;
+}
+
+.result {
+  width: 600px;
+  height: auto;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.header {
+  font-family: 'Luminari', fantasy;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  font-size: 1.0em;
+  color: #A9A9A9;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Luminari', fantasy;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  font-size: 4.0em;
+  color: #A9A9A9;
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-family: 'Chalkduster', fantasy;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  font-size: 1.5em;
+  color: #A9A9A9;
+}
+
+img {
+  max-height: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  min-width: 200px;
+  border-radius: 50%;
+}
+
+.grid {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.normal {
+  font-family: 'Luminar', fantasy;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+  font-size: 3.0em;
+  text-align: center;
+  color: #A9A9A9;
+}
+
+.continue {
+  font-family: 'Luminari', fantasy;
+  font-size: 1.5em;
+  color: #A9A9A9;
+  background-color: rgba(50, 50, 50, 0.2) !important;
+  border: 0 !important;
+  border-radius: 20px;
+}
+
+.continue:hover {
+  box-shadow: #B8860B 0px 0px 35px;
+}
