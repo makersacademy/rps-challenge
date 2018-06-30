@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <h1><%= $game.player_1.name %> and <%= $game.player_2.name %>, prepare to fire your weapons!</h1>
+  <form action="/outcome" method="post">
+    <select name="player_1_weapon">
+      <option value="spock">Spock</option>
+      <option value="lizard">Lizard</option>
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+    </select>
+    <% unless $game.player_2.is_a?(Bot) %>
+      <select name="player_2_weapon">
+        <option value="spock">Spock</option>
+        <option value="lizard">Lizard</option>
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+      </select>
+    <% end %>
+    <div class="button">
+      <input type="submit" value="Fire!">
+    </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <h1>Your fate has been decided</h1>
+  <p><%= $game.player_1.name.upcase %> has chosen <%= $game.player_1.choice.upcase %></p>
+  <p><%= $game.player_2.name.upcase %> has chosen <%= $game.player_2.choice.upcase %></p>
+  <% if $game.draw? %>
+    <h2>It's a draw!</h2>
+  <% end %>
+  <h2><%= $game.result %> won this round!</h2>
+</body>
+</html>

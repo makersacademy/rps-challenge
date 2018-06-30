@@ -1,0 +1,43 @@
+
+body {
+  background-color: black;
+  background-image: url("./nebula.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0em;
+}
+
+h1 {
+  text-align: center;
+  color: lightgrey;
+  font-family: luminari;
+  font-size: 300%;
+}
+
+h2 {
+  text-align: center;
+  color: lightgrey;
+  font-family: luminari;
+  font-size: 300%;
+}
+
+h3 {
+  text-align: center;
+  color: lightgrey;
+  font-family: luminari;
+  font-size: 300%;
+}
+
+img {
+  border: 2px solid red;
+  padding: 0px;
+
+}
+
+form {
+  opacity: 50%;
+  text-align: center;
+  font-family: luminari;
+  font-size: 175%;
+}
