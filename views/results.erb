@@ -1,6 +1,17 @@
 <center>
-  <div>
-  <h2> Your move: <%= @game.player_1.move.to_s.capitalize %> </h2>
+
+  <h1>
+  <% if @game.outcome == :win %>
+  You win!
+  <% elsif @game.outcome == :lose %>
+  You lose! Better luck next time!
+  <% else %>
+  It's a tie!
+  <% end %>
+  </h1>
+
+<div>
+<h2> Your move: <%= @game.player_1.move.to_s.capitalize %> </h2>
 </div>
 
 <div>

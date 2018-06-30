@@ -25,8 +25,8 @@ feature 'playing the game' do
   end
 
   scenario 'the game chooses a random move' do
-    sign_in_and_play
     srand(1234)
+    sign_in_and_play
     click_button('Scissors')
     expect(page).to have_content("Opponent's move: Scissors")
   end

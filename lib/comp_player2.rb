@@ -1,7 +1,11 @@
-class CompPlayer2 
+class CompPlayer2
+
+  def initialize
+    @option = [:rock, :paper, :scissors].sample
+  end
 
   def move
-    [:rock, :paper, :scissors].sample
+    @option
   end
 
 end
