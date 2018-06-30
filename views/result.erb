@@ -1,0 +1,24 @@
+<h2><%= @game.player_1.name %>: you have selected <%= @game.player_1.move %></h2>
+<h2><%= @game.computer.name %>: you have selected <%= @game.computer.move %></h2>
+
+<% if @game.result == :draw %>
+
+  <h1>It's a Draw</h1>
+
+<% elsif @game.result == :p1_win %>
+
+  <% @game.player_1.tally_score %>
+  <h1><%= @game.player_1.name %> Wins!</h1>
+
+<% else %>
+
+  <% @game.computer.tally_score %>
+  <h1><%= @game.computer.name %> Wins!</h1>
+
+<% end %>
+
+<h1><%= @game.print_score %></h1>
+
+<form action="move" method="POST">
+  <input type="submit" value="Play Again?">
+</form>

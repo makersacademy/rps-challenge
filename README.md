@@ -1,5 +1,48 @@
 # RPS Challenge
 
+### Description
+
+* This software is designed for one player to play a simple game of 'rock, paper, scissors' against a computer.
+* Player one must be able to enter their name before being sent to the 'play' arena where they will make their CRUCIAL selections in a conventional game of 'RPS'.
+
+### Development Process
+
+1) Make root route for entering names. Upon submission, a post request is sent to take the players to the '/play' arena.
+
+EDIT: Realised simplest way to build game would be to make player 2 computerised with randomised selections. Made changes accordingly.
+
+2. Create a `Game` class to control the flow of the game. Another post request is used to ask player 1 to start the game. This will redirect them to where they can make their move.
+
+3. The Player class will be responsible for selecting moves and storing those moves. In order to pass the feature tests, each move selection redirects to a different route so now I will need to consolidate all move selections to one route called '/outcome'
+
+4. Create a Computer class for the human player to play against. Computer player's move will be randomised using #sample.
+
+5. Use constant variable to hold hash of possible outcomes to render winner of each game.
+
+6. Add tally_score method to Player and Computer class so that it's possible to track how many games have been won by the players.
+
+### Installation
+
+Install Bundler and the relevant gems with the below commands:
+
+`gem bundle install`
+
+`bundle`
+
+Run 'rackup' to launch the web app
+
+`rackup`
+
+### Author
+
+Terence Allitt
+
+### Time spent on project
+
+8 hours
+
+-------
+
 Instructions
 -------
 
