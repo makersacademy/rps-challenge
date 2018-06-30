@@ -1,9 +1,15 @@
 require 'sinatra'
 
 class RockPaperScissors < Sinatra::Base
- get '/' do
-   'Testing infrastructure working!'
+
+  get '/' do
+    erb(:index)
+  end
+
+  post "/play" do
+   @player_name = params[:player_name]
+   erb(:play)
  end
 
- run! if app_file == $0
 end
+#run! if app_file == $0
