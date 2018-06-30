@@ -1,9 +1,11 @@
 <center><h2>Welcome <%= @player1_name.capitalize %>, choose your move!</h2></center>
 
 <center>
-  <form>
-    <input type="submit" value="Rock">
-    <input type="submit" value="Paper">
-    <input type="submit" value="Scissors">
+  <form action= '/play' method="POST">
+    <input type="submit" name="move" value="Rock">
+    <input type="submit" name="move" value="Paper">
+    <input type="submit" name="move" value="Scissors">
   </form>
+
+  <h3> Your move: <%= @move %> </h3>
 </center>
