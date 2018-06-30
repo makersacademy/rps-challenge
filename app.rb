@@ -22,7 +22,6 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @game
     erb :play
   end
 
@@ -32,7 +31,6 @@ class RPS < Sinatra::Base
   end
 
   get '/results' do
-    @game
     erb :results
   end
 
