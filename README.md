@@ -1,86 +1,71 @@
-# RPS Challenge
+# Rock Paper Scissors Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
+About
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
+This is the Week 3 Makers Academy challenge, and was built over a weekend using Ruby and Sinatra.  
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+The task was to create a _Rock, Paper, Scissors_ game which can be played on the web with the following user stories:
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
-
+```
+```
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+#### Additional User Stories
+```
+As a player  
+So I can make my move
+I want to be able to choose my weapon
+```
+```
+As a player
+So I can claim victory over my opponents
+I want to see who wins
+```
+```
+As a player
+So I have a fair chance of winning
+My computer opponent should choose their weapon at random
+```
+```
+As a player
+So I can get on a winning streak
+I want to be able to play again
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+To run program
+---
+1. Clone this repo
+2. Run `$ bundle`
+3. Run `$ rackup`
+4. In a browser, go to http://localhost:9292/ and start playing!
+
+
+Approach
+----
+
+- I began by creating additional user stories (see above) for the features I wanted my RPS game to have
+
+- I then worked through the stories, creating feature tests for each one, ensuring I used TDD to write my code
+
+- I tried to follow Separation of Concerns as much as possible, which led me to create separate classes for Game, Player and Computer
+
+- Once I had the full functionality working, I created CSS files to style the public interface
+
+Additional features
+------
+As this was built over a single weekend, I wasn't able to implement every feature I would've liked. Since doing this project in Week 3, I have also learned a great deal more, so given more time now, I would:
+- Continue refactoring my code to move the logic into the model rather than the view/controller
+
+- Create a PvP mode, rather than just player vs. computer. The player could then select which mode they wanted
+
+- Add a win/loss counter so the player can keep track of their victories and defeats
+
+- Extend the game with further weapons (e.g. Rock Paper Scissors Lizard Spock)

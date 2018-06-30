@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/play.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <h1> Welcome <%= @game.player.name %>!</h1>
+      <p> Please select your weapon </p>
+      <div class="button">
+        <form action="/weapon" method="post">
+          <input type="hidden" name="weapon" value="Rock">
+          <input type="submit" value="Rock">
+        </form>
+      </div>
+      <div class="button">
+        <form action="/weapon" method="post">
+          <input type="hidden" name="weapon" value="Paper">
+          <input type="submit" value="Paper">
+        </form>
+      </div>
+      <div class="button">
+        <form action="/weapon" method="post">
+          <input type="hidden" name="weapon" value="Scissors">
+          <input type="submit" value="Scissors">
+        </form>
+      </div>
+    </div>
+  </body>
+
+</html>
