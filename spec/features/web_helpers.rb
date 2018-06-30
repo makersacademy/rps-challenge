@@ -5,7 +5,6 @@ def register_and_play
 end
 
 def select_option_rock
-  click_button('Play now!')
   select 'rock', from: 'name'
   click_button('Submit')
 end

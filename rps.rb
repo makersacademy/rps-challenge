@@ -3,18 +3,27 @@ require './lib/game'
 
 class RPS < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   post '/registered' do
-    @player_1 = params[:player1_name]
-    erb :registered
+    session[:player_1_name] = params[:player1_name]
+    # erb :registered
+    redirect '/play'
   end
 
-  post '/play' do
+  get '/play' do
+    @player_1 = session[:player_1_name]
+
     erb :play
   end
+
+  # post '/play' do
+  #   erb :play
+  # end
 
   post '/result' do
     @game = Game.new
@@ -39,7 +48,6 @@ class RPS < Sinatra::Base
   get '/server' do
     erb :server
   end
-
 
   # post '/result' do
   #   @game = Game.new
