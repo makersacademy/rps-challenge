@@ -1,26 +1,34 @@
 require 'sinatra/base'
 require './lib/comp_player2'
+require './lib/game'
+require './lib/player'
 
 class RPS < Sinatra::Base
   enable :sessions
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb :index
   end
 
   post '/names' do
-    session['player1'] = params[:player1_name]
+    player_1 = Player.new(params[:player1_name])
+    comp = CompPlayer2.new
+    @game = Game.create(player_1, comp)
     redirect '/play'
   end
 
   get '/play' do
-    @player1_name = session['player1']
+    @game
     erb :play
   end
 
   post '/play' do
-    session[:move] = params[:move]
-    session[:opponents_move] = CompPlayer2.new.move
+    @game
+    @game.player_1.submit_choice(params[:move])
     redirect '/results'
   end
 

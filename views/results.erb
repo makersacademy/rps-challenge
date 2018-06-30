@@ -1,10 +1,10 @@
 <center>
   <div>
-  <h2> Your move: <%= @move %> </h2>
+  <h2> Your move: <%= @game.player_1.move.to_s.capitalize %> </h2>
 </div>
 
 <div>
-<h2> Opponent's move: <%= @opponents_move.to_s.capitalize %> </h2>
+<h2> Opponent's move: <%= @game.player_2.move.to_s.capitalize %> </h2>
 </div>
 
 </center>

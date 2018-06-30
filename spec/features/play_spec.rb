@@ -18,7 +18,7 @@ feature 'playing the game' do
     expect(page).to have_content("Your move: Paper")
   end
 
-  scenario 'user can choose rock' do
+  scenario 'user can choose scissor' do
     sign_in_and_play
     click_button('Scissors')
     expect(page).to have_content("Your move: Scissors")
