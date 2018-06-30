@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/battle.css">
+    <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
+  </head>
+  <body>
+
+    <h1><%= @game.player.name %> chooses <%= @game.player.choice %>! Computer chooses <%= @game.computer.choice %>!</h1>
+
+    <% if @game.player.choice == @game.computer.choice %>
+
+      <h1>It's a draw!</h1>
+
+    <% elsif @game.winner == 'computer' %>
+
+      <h1>Computer's <%= @game.computer.choice %> beats <%= @game.player.name %>'s <%= @game.player.choice %>!</h1>
+      <h1>Computer wins this round!</h1>
+
+    <% else %>
+
+      <h1><%= @game.player.name %>'s <%= @game.player.choice %> beats Computer's <%= @game.computer.choice %>!</h1>
+      <h1><%= @game.player.name %> wins this round!</h1>
+
+    <% end %>
+
+    <% if @game.score.players_score == 2 %>
+
+      <h1><%= @game.player.name %> wins <%= @game.score.players_score %> <%= @game.score.computers_score %>!</h1>
+
+      <form action="/">
+        <input type="submit" value="New Game?">
+      </form>
+
+      <% elsif @game.score.computers_score == 2 %>
+
+      <h1>Computer wins <%= @game.score.computers_score %> <%= @game.score.players_score %>!</h1>
+
+      <form action="/">
+        <input type="submit" value="New Game?">
+      </form>
+
+    <% else %>
+    <div>
+      <h1>Scoreboard:</h1>
+      <table class="box" id="score">
+        <tr>
+          <th>Player</th>
+          <td><%= @game.player.name %></td>
+          <td>Computer</td>
+        </tr>
+        <tr>
+          <th>Score</th>
+          <td><%= @game.score.players_score %></td>
+          <td><%= @game.score.computers_score %></td>
+        </tr>
+      </table>
+    </div>
+
+
+      <form id="next-btn" action="/play">
+        <input type="submit" value="Next Round">
+      </form>
+
+    <% end %>
+
+  </body>
+</html>

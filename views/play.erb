@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/play.css">
+    <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
+  </head>
+  <body>
+    <h1><%= @game.player.name %> vs computer!</h1>
+
+    <h2>Rock, Paper, Scissors?</h2>
+    <div >
+      <form class="grid-container" action="/choice" method="post">
+        <input id="rock" class="grid-item" type="submit" name="choice" value="Rock" />
+        <input id="paper" class="grid-item" type="submit" name="choice" value="Paper" />
+        <input id="scissors" class="grid-item" type="submit" name="choice" value="Scissors" />
+      </form>
+    </div>
+
+  </body>
+</html>
