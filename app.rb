@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/comp_player2'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -14,14 +15,19 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player1_name = session['player1']
-    @move = session[:move]
     erb :play
   end
 
   post '/play' do
     session[:move] = params[:move]
-    redirect '/play'
+    session[:opponents_move] = CompPlayer2.new.move
+    redirect '/results'
+  end
 
+  get '/results' do
+    @move = session[:move]
+    @opponents_move = session[:opponents_move]
+    erb :results
   end
 
 
