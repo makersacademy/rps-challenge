@@ -17,6 +17,10 @@ get '/game' do
 @name = session[:name]
 erb(:game)
 
+post '/game' do
+
+end
+
 end
 
   run! if app_file == $0
