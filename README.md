@@ -1,4 +1,4 @@
-# Makers Academy Week Three - Rock, Paper, Scissors
+# Makers Academy Week Three - Janken! (Rock/Paper/Scissors)
 > 30 June - 01 July 2018
 
 Third week (weekend) solo project.
