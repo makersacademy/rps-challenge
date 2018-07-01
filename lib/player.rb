@@ -18,7 +18,7 @@ class Player
     @player.pick
   end
 
-  private
+private
   def initialize(name)
     @name = name
   end

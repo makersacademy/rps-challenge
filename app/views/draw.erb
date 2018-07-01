@@ -1,1 +1,11 @@
-It's a draw
+<title>It's a draw</title>
+
+<center>
+<h2>You pick <%=@player_pick%>.<br>
+    Sphinx picks <%=@computer_pick%>.</h2>
+It's a draw. Well, that's a bit anticlimactic.
+<h2>"Shall we play again?"</h2>
+<form action="/selection_screen" method="get">
+<button name="Play again" type="submit">Play again</button>
+</form>
+</center>

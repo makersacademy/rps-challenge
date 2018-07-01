@@ -27,9 +27,9 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/result' do
-    player_pick = Player.pick
-    computer_pick = Computer.pick
-    game = Game.new(player_pick, computer_pick)
+    @player_pick = Player.pick
+    @computer_pick = Computer.pick
+    game = Game.new(@player_pick, @computer_pick)
     erb game.result
   end
 end
