@@ -1,8 +1,12 @@
+require_relative 'game'
+require_relative 'player'
+
 class Opponent
 
-  OPTIONS = [:rock, :paper, :scissors]
+  attr_reader :opponent_option
 
   def option
-    OPTIONS.sample  
+    OPTIONS.sample
+    @opponent_option = Game:: OPTION.sample
   end
 end
