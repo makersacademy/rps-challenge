@@ -1,4 +1,11 @@
+ENV['RACK_ENV'] = 'test'
+
+require_relative '../app.rb'
+require_relative './features/web_helpers.rb'
+
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 
@@ -16,3 +23,5 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+Capybara.app = Janken
