@@ -4,7 +4,7 @@ require './lib/game'
 require './lib/player'
 
 class RPS < Sinatra::Base
-  enable :sessions
+  # enable :sessions
 
   before do
     @game = Game.instance
