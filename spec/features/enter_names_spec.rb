@@ -4,8 +4,7 @@
 
 feature 'Enter names ' do
   scenario 'player can add a name' do
-    visit('/')
-    fill_in :player, with: 'Kees'
+    sign_in_and_play
     click_button 'Submit'
     expect(page).to have_content 'Kees vs Computer'
   end
