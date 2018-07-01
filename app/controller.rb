@@ -1,45 +1,35 @@
-require 'Sinatra'
+require 'sinatra'
 require './lib/computer'
 require './lib/game'
+require './lib/player'
 
 class RPSWeb < Sinatra::Base
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   post '/store_name' do
-    $player_name = params[:name]
+    Player.create(params[:name])
     redirect '/selection_screen'
   end
 
   get '/selection_screen' do
+    @name = Player.name
     erb :selection_screen
   end
 
-  get '/rock' do
-    computer = Computer.new
-    player_pick = :rock
-    computer_pick = computer.pick
-    game = Game.new(player_pick, computer_pick)
-    @result = game.result
-    erb :result
+  post '/player_pick' do
+    player_pick = params[:player_pick].to_sym
+    Player.pick = player_pick
+    redirect '/result'
   end
 
-  get '/paper' do
-    computer = Computer.new
-    player_pick = :paper
-    computer_pick = computer.pick
+  get '/result' do
+    player_pick = Player.pick
+    computer_pick = Computer.pick
     game = Game.new(player_pick, computer_pick)
-    @result = game.result
-    erb :result
-  end
-
-  get '/scissors' do
-    computer = Computer.new
-    player_pick = :scissors
-    computer_pick = computer.pick
-    game = Game.new(player_pick, computer_pick)
-    @result = game.result
-    erb :result
+    erb game.result
   end
 end
