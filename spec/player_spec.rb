@@ -1,9 +1,9 @@
 require 'player'
 
 describe Player do
-  subject(:player) { described_class.new("Yvonne")}
+  subject(:player) { described_class.new("Yvonne") }
 
-  describe "name" do
+  describe "#name" do
     it "returns the player's name" do
       expect(player.name).to eq "Yvonne"
     end

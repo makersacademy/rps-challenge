@@ -1,4 +1,5 @@
 require 'sinatra'
+require './lib/opponent'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -23,8 +24,9 @@ class RockPaperScissors < Sinatra::Base
  end
 
  get "/result" do
-   @option = session[:option]
-   erb(:result) 
+   @player_option = session[:option]
+   @opponent = Opponent.new
+   erb(:result)
 end
 
  run! if app_file == $0
