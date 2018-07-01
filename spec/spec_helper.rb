@@ -1,7 +1,8 @@
 require 'simplecov'
 require 'simplecov-console'
-require './app/controller.rb'
 require 'capybara/rspec'
+require './app/controller'
+require './spec/web_helpers'
 
 Capybara.app = RPSWeb
 

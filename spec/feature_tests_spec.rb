@@ -3,9 +3,7 @@
 # I would like to register my name before playing an online game
 feature 'Signing in' do
   scenario 'See your name after signing in' do
-    visit '/'
-    fill_in :name, with: 'Bob'
-    click_button 'Submit'
+    sign_in
     expect(page).to have_content 'Bob'
   end
 end
@@ -19,25 +17,19 @@ feature 'Playing Rock, Paper, Scissors' do
   end
 
   scenario 'Winning a game' do
-    visit '/'
-    fill_in :name, with: 'Bob'
-    click_button 'Submit'
+    sign_in
     click_button :rock
     expect(page).to have_content 'You win'
   end
 
   scenario 'Losing a game' do
-    visit '/'
-    fill_in :name, with: 'Bob'
-    click_button 'Submit'
+    sign_in
     click_button :paper
     expect(page).to have_content 'You lose'
   end
 
   scenario 'Tying' do
-    visit '/'
-    fill_in :name, with: 'Bob'
-    click_button 'Submit'
+    sign_in
     click_button :scissors
     expect(page).to have_content "It's a draw"
   end
