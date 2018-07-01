@@ -8,4 +8,8 @@ class Player
   def initialize(name)
     @name = name
   end
+
+  def random_selection
+    @selection = ['Rock', 'Paper', 'Scissors'].sample
+  end
 end

@@ -1,7 +1,7 @@
 require './app.rb'
 
 describe Janken do
-# I can enter my name before the game
+
   feature '/player_one_entry' do
     scenario 'player is able to enter their name' do
       sign_in_single_player
@@ -9,8 +9,6 @@ describe Janken do
     end
   end
 
-# I will be presented with three choices
-# I can choose one option
   feature '/play' do
     scenario 'player is able to choose between three game objects' do
       sign_in_single_player
@@ -19,8 +17,13 @@ describe Janken do
     end
   end
 
-# The game will choose a random option
-
-# A winner is declared
-
+  # feature '/result' do
+  #   let(:player_two) { double(:player_two) }
+  #   scenario 'random object assigned to computer opponent in single player' do
+  #     sign_in_single_player
+  #     click_button 'Rock'
+  #     allow(player_two).to receive(:random_selection).and_return('Scissors')
+  #     expect(page).to have_content "#{:player_one} beat #{:player_two}!"
+  #   end
+  # end
 end

@@ -18,4 +18,8 @@ describe Game do
       expect(Game.session.player_one.name).to eq :player_name
     end
   end
+
+  describe '#result' do
+    
+  end
 end

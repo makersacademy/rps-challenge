@@ -40,6 +40,8 @@ class Janken < Sinatra::Base
   get '/result' do
     @game = Game.session
     @player_one = @game.player_one
+    @player_two = @game.player_two
+    @player_two.random_selection
     erb(:result)
   end
 
