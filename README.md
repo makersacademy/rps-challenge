@@ -1,6 +1,47 @@
 # RPS Challenge
+==================
 
-Instructions
+My working version of the RPS challenge.
+==================
+
+What is working:
+-------
+All of the following user stories listed below have been implemented.
+
+I have made a working assumption that that the customer is already at the takeaway, therefore my implementation does not contain a Takeaway object (or class).
+
+The RSpec tests at the moment do not include a double or mock for Twilio, so running RSpec will trigger the order confirmation SMS to be sent.
+
+Test coverage is: 98.82%
+
+
+Instructions to Start
+-------
+* Clone the repo
+* Run bundle install to ensure you have all the required gems
+* Open IRB and navigate to the root project folder
+* Type in the following to start the Sinatara server: 'racksup -p 4567' (you can replace '4567' with another port number)
+* If the server has successfully started, you should see a message like this: '2018-07-01 21:10:36] INFO  WEBrick 1.4.2
+[2018-07-01 21:10:36] INFO  ruby 2.5.0 (2017-12-25) [x86_64-darwin17]
+[2018-07-01 21:10:36] INFO  WEBrick::HTTPServer#start: pid=70836 port=456'
+* open Chrome (or which ever browser you use) and type in the following in the address bar: 'http://localhost:4567' (replace '4567' with whichever port number you specified in the previous step)
+* You are now ready to play Rock / Paper / Scissors!
+
+
+User Stories Implemented
+-----
+```
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+```
+
+
+<!-- Instructions
 -------
 
 * Challenge time: rest of the day and weekend, until Monday 9am
@@ -83,4 +124,4 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens! -->
