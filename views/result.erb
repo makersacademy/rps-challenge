@@ -1,1 +1,28 @@
-<%= @player_one.name %> selected <%= @player_one.selection %>
+<% if @game.draw? %>
+<div align = "center">
+<h1>It was a draw!</h1>
+<h3><%= @player_one.name %> selected <%= @player_one.selection %></h3>
+<h3><%= @player_two.name %> selected <%= @player_two.selection %></h3>
+</div>
+<form action="/play" method="get">
+  <input type="submit" value="Choose again">
+</form>
+<% elsif @game.player_one_win? %>
+<div align = "center">
+<h1><%= @player_one.name %> beat <%= @player_two.name %>!</h1>
+<h3><%= @player_one.name %> selected <%= @player_one.selection %></h3>
+<h3><%= @player_two.name %> selected <%= @player_two.selection %></h3>
+</div>
+<form action="/" method="get">
+  <input type="submit" value="Finish">
+</form>
+<% else %>
+<div align = "center">
+<h1><%= @player_two.name %> beat <%= @player_one.name %>!</h1>
+<h3><%= @player_one.name %> selected <%= @player_one.selection %></h3>
+<h3><%= @player_two.name %> selected <%= @player_two.selection %></h3>
+</div>
+<form action="/" method="get">
+  <input type="submit" value="Finish">
+</form>
+<% end %>
