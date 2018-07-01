@@ -1,1 +1,22 @@
-<%= @player_one %>
+<div align="center">
+<h1>さいしょはぐう!</h1>
+<h2><%= @player_one.name %> vs <%= @player_two.name %></h2>
+</div>
+<div align="left">
+<h3>グー</h3>
+<form action="/player_one_selection" method="post">
+  <input type="submit" name="selection" value="Rock">
+</form>
+</div>
+<div align="center">
+<h3>パー</h3>
+<form action="/player_one_selection" method="post">
+  <input type="submit" name="selection" value="Paper">
+</form>
+</div>
+<div align="right">
+<h3>チョキ</h3>
+<form action="/player_one_selection" method="post">
+  <input type="submit" name="selection" value="Scissors">
+</form>
+</div>

@@ -3,6 +3,7 @@
 # Understands keeping track of player hit points and receiving damage
 class Player
   attr_reader :name
+  attr_accessor :selection
 
   def initialize(name)
     @name = name
