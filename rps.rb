@@ -2,6 +2,7 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base
   run! if app_file == $0
+  enable :sessions
 
   get '/test' do
     'Welcome to Rock, Paper, Scissors!'
@@ -12,7 +13,17 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @player = params[:player]
+    session[:player] = params[:player]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player = session[:player]
     erb :play
+  end
+
+  get '/attack' do
+    @player = session[:player]
+    erb :attack
   end
 end
