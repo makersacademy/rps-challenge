@@ -6,7 +6,7 @@ require "./rps.rb"
 feature 'Enter player name' do
   scenario 'Can submit name to play game' do
     register_and_play
-    expect(page).to have_content('Welcome Jay to Rock, Paper, Scissors!')
+    expect(page).to have_content('Welcome Jay to Rock/ Paper/ Scissors!')
   end
 
 end

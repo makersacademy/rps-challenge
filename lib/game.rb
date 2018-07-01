@@ -1,5 +1,5 @@
 class Game
-  attr_reader :rps, :rps_computer, :result
+  attr_reader :rps, :computer_rps, :result
   def initialize
     @rps = ["rock", "paper", "scissors"]
     @computer_rps = []
