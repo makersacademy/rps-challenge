@@ -21,7 +21,7 @@ Change into the main directory:
 Run the app:
 `rackup config.ru`
 
-![Imgur](https://i.imgur.com/r6Z93U7.png)
+![Imgur](https://i.imgur.com/m1NfGPH.png)
 
 
 Then open your browser, head to http://localhost:9292/ where you should find the page shown above. Then simply follow the instructions on the page.
