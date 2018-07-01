@@ -14,9 +14,9 @@ Test coverage is: 97.22%
 Instructions to Start
 -------
 * Clone the repo
+* Open Terminal and navigate to the root project folder
 * Run bundle install to ensure you have all the required gems
-* Open IRB and navigate to the root project folder
-* Type in the following to start the Sinatara server: 'racksup -p 4567' (you can replace '4567' with another port number)
+* Type in the following command to start the Sinatara server: 'rackup -p 4567' (you can replace '4567' with another port number)
 * If the server has successfully started, you should see a message like this: '2018-07-01 21:10:36] INFO  WEBrick 1.4.2
 [2018-07-01 21:10:36] INFO  ruby 2.5.0 (2017-12-25) [x86_64-darwin17]
 [2018-07-01 21:10:36] INFO  WEBrick::HTTPServer#start: pid=70836 port=456'
