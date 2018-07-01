@@ -22,8 +22,18 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  get '/attack' do
+  get '/rock' do
     @player = session[:player]
-    erb :attack
+    erb :rock
+  end
+
+  get '/paper' do
+    @player = session[:player]
+    erb :paper
+  end
+
+  get '/scissors' do
+    @player = session[:player]
+    erb :scissors
   end
 end
