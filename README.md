@@ -8,11 +8,7 @@ What is working:
 -------
 All of the following user stories listed below have been implemented.
 
-I have made a working assumption that that the customer is already at the takeaway, therefore my implementation does not contain a Takeaway object (or class).
-
-The RSpec tests at the moment do not include a double or mock for Twilio, so running RSpec will trigger the order confirmation SMS to be sent.
-
-Test coverage is: 98.82%
+Test coverage is: 97.22%
 
 
 Instructions to Start
