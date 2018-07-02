@@ -2,29 +2,19 @@ describe Game do
 
   describe '#initialize' do
     context 'this array is used to randomnly generates value' do
-      it 'should return an empty array by default' do
-        expect(subject.computer_rps.length).to eq 0
-      end
-
       it 'should return an array containing rock / paper or scissors' do
-        expect(subject.rps.length).to eq 3
+        expect(Game::WEAPONS.length).to eq 3
       end
     end
   end
 
   describe '#compare' do
-    context 'this array stores a randomnly generated value' do
-      it 'should return an array with rock, paper or scissors' do
-        subject.compare("rock")
-        expect(subject.computer_rps.length).to eq 1
-      end
-    end
 
     context 'this array stores the randomnly generated element' do
       it 'should return an array with rock' do
         allow_any_instance_of(Array).to receive(:sample).and_return('rock')
         subject.compare("rock")
-        expect(subject.computer_rps.first).to eq 'rock'
+        expect(Game::WEAPONS.sample).to eq 'rock'
       end
     end
 

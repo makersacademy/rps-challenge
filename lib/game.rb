@@ -1,26 +1,26 @@
 class Game
+  WEAPONS = ["rock", "paper", "scissors"]
+
   attr_reader :rps, :computer_rps, :result
   def initialize
-    @rps = ["rock", "paper", "scissors"]
-    @computer_rps = []
     @result = nil
   end
 
   def compare(player_1_rps)
-    @computer_rps << @rps.sample
-    if @computer_rps.first == "rock" && player_1_rps == "scissors"
+    # @computer_rps << WEAPONS.sample
+    if WEAPONS.sample == "rock" && player_1_rps == "scissors"
       @result = :lost
-    elsif @computer_rps.first == "rock" && player_1_rps == "paper"
+    elsif WEAPONS.sample == "rock" && player_1_rps == "paper"
       @result = :win
-    elsif @computer_rps.first == "paper" && player_1_rps == "rock"
+    elsif WEAPONS.sample == "paper" && player_1_rps == "rock"
       @result = :lost
-    elsif @computer_rps.first == "paper" && player_1_rps == "scissors"
+    elsif WEAPONS.sample == "paper" && player_1_rps == "scissors"
       @result = :win
-    elsif @computer_rps.first == "scissors" && player_1_rps == "paper"
+    elsif WEAPONS.sample == "scissors" && player_1_rps == "paper"
       @result = :lost
-    elsif @computer_rps.first == "scissors" && player_1_rps == "rock"
+    elsif WEAPONS.sample == "scissors" && player_1_rps == "rock"
       @result = :win
-    elsif @computer_rps.first == player_1_rps
+    elsif WEAPONS.sample == player_1_rps
       @result = :draw
     else
       @result = :error

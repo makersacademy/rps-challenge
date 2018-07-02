@@ -20,6 +20,7 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
+    p params
     @game = Game.new
     @player_1_selection = params[:name]
     @game.compare(@player_1_selection)
@@ -44,5 +45,5 @@ class RPS < Sinatra::Base
   end
 
   run! if app_file == $0
-  
+
 end
