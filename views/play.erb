@@ -1,0 +1,10 @@
+<h1>Welcome <strong style="color:#ffa500;"><%= @player_1 %></strong> to Rock/ Paper/ Scissors!</h1>
+<h2>Pick one! </h2>
+<form action="/result" method="post">
+  <select name="name">
+    <option name="rock" value="rock">rock</option>
+    <option name="paper" value="paper">paper</option>
+    <option name="scissors" value="scissors">scissors</option>
+  </select>
+  <input type="submit" value="Submit">
+</form>
