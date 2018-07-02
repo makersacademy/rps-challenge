@@ -33,7 +33,7 @@ class RockPaperScissors < Sinatra::Base
 
  get "/result" do
    @player_option = @game.player.move(session[:option])
-   @opponent_option = game.opponent.option
+   @opponent_option = @game.opponent.option
    erb(:result)
 end
 
