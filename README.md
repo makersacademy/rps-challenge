@@ -57,7 +57,6 @@ ___
 ### Tech/Framework Used
 
 Ruby, Sinatra, HTML, CSS, RSpec, Rubocop, Capybara, Rackup
-____
 
 ### Launching the Application
 
