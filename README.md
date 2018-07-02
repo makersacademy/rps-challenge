@@ -1,6 +1,6 @@
 # Rock Paper Scissors
 
-=============================
+___
 
 ## Summary
 
