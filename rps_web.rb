@@ -32,10 +32,9 @@ class Rps < Sinatra::Base
 
   get '/battle' do
     @game = $game
+    @game.result
     erb :battle
   end
-
-
 
   run if app_file == $0
 end

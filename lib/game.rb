@@ -3,11 +3,12 @@ require_relative 'player'
 
 class Game
   attr_reader :player_choice, :computer_choice
-  RULES = { rock: :scissors,
-            scissors: :paper,
-            paper: :rock }
-  def initialize(player_1, computer)
-    @player = player_1
+  RULES = { rock: { rock: :draw, scissors: :win, paper: :lose },
+            scissors: { rock: :lose, scissors: :draw, paper: :win },
+            paper: { rock: :win, scissors: :lose, paper: :draw } }
+
+  def initialize(player, computer)
+    @player = player
     @computer = computer
   end
 
@@ -19,12 +20,11 @@ class Game
     @player_choice = @player.weapon(weapon)
   end
 
-
   def computer_action
     @computer_choice = @computer.weapon
   end
 
-  # def result
-  #   RULES[player_action][computer_action]
-  # end
+  def result
+    RULES[player_choice.to_sym][computer_choice.to_sym]
+  end
 end
