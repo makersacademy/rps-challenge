@@ -8,5 +8,4 @@ feature 'Enter player name' do
     register_and_play
     expect(page).to have_content('Welcome Jay to Rock/ Paper/ Scissors!')
   end
-
 end

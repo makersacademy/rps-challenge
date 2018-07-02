@@ -39,6 +39,10 @@ class RPS < Sinatra::Base
     erb :draw
   end
 
+  get '/error' do
+    erb :error
+  end
+
   # checks the site is up
   get '/server' do
     erb :server
