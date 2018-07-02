@@ -1,14 +1,13 @@
 class Game
-
-  attr_reader :player_hand, :opponent_hand
+  attr_reader :player_hand, :player # , :opponent_hand
 
   def initialize(player)
     @player = player
     @player_hand = nil
     @opponent_hand = nil
-    @rock = "rock"
-    @paper = "paper"
-    @scissors = "scissors"
+    @rock = 'rock'
+    @paper = 'paper'
+    @scissors = 'scissors'
   end
 
   def self.create(player)
@@ -17,10 +16,6 @@ class Game
 
   def self.instance
     @game
-  end
-
-  def player
-    @player
   end
 
   def rock
@@ -40,18 +35,16 @@ class Game
   end
 
   def random_hand
-    ["rock", "paper", "scissors"].sample
+    %w[rock paper scissors].sample
   end
 
   def winner?
-    if @player_hand == "rock" && (@opponent_hand == "scissors")
+    if @player_hand == 'rock' && (@opponent_hand == 'scissors')
       p true
-    elsif @player_hand == "paper" && @opponent_hand == "rock"
+    elsif @player_hand == 'paper' && @opponent_hand == 'rock'
       true
-    elsif @player_hand == "scissors" && @opponent_hand == "paper"
+    elsif @player_hand == 'scissors' && @opponent_hand == 'paper'
       true
-    elsif @player_hand == @opponent_hand
-      false
     else
       false
     end
@@ -62,5 +55,4 @@ class Game
     # @opponent_hand = "scissors"
     winner?
   end
-
 end

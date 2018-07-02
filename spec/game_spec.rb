@@ -54,14 +54,4 @@ describe Game do
       expect(game.winner?).to eq(true)
     end
   end
-
-# figure this out
-
-  #   it 'runs the playing sequence' do
-  #     allow(game).to receive(:random_hand) { "rock" }
-  #     game.rock
-  #     expect(game.play).to eq true
-  #   end
-  # end
-
 end
