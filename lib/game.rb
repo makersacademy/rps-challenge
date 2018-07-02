@@ -1,3 +1,5 @@
+# frozen_string_literal:true
+
 class Game
   attr_reader :player_hand, :player # , :opponent_hand
 
