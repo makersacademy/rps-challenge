@@ -1,0 +1,21 @@
+<title>Rock, Paper, Sphinx</title>
+
+<center>
+<h2>"Welcome <%= @name %>."<br></h2>
+The Sphinx booms,
+<h2>"I take you've come for the usual deal,<br>
+    solve a riddle, get the secret of eternal life?"</h2>
+"Uhm.. yes" you reply.<br>
+Little does she know you have been studying riddles for decades.<br>
+There is not a question out there that could stump you.
+<h2>"Well it seems that bastard Oedipus has stolen my book of riddles.<br>
+    Will you settle for a game of Rock, Paper, Scissors instead?"</h2>
+It doesn't seem like you have a choice.
+<h2>"Great! Here we go. On three.<br>
+    One...two.."</h2>
+<form action="/player_pick" method="post">
+<button name="player_pick" type="submit" value="rock">Rock</button>
+<button name="player_pick" type="submit" value="paper">Paper</button>
+<button name="player_pick" type="submit" value="scissors">Scissors</button>
+</form>
+</center>

@@ -1,86 +1,39 @@
-# RPS Challenge
+# Rock, Paper, Sphinx
+*A high stakes game of rock, paper, scissors between you and the mythical Sphinx. Will you win the secret to enternal life, or lose and be condemned to servitude?*
 
-Instructions
--------
+This app will let you play a game of rock, paper scissors in your browser. It was built over a weekend as part of the curriculum at the Makers Academy coding bootcamp.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+## Getting started
+Enter the following commands in your terminal:
 
-Task
-----
+Clone the repository:
+`git clone https://github.com/heuperman/rps-challenge.git`
 
-Knowing how to build web applications is getting us almost there as web developers!
+Install the required gems:
+`bundle install`
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+## Usage
+Enter the following commands in your terminal:
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Change into the main directory:
+`cd rps-challenge`
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+Run the app:
+`rackup config.ru`
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+![Imgur](https://i.imgur.com/m1NfGPH.png)
 
 
-As usual please start by
+Then open your browser, head to http://localhost:9292/ where you should find the page shown above. Then simply follow the instructions on the page.
 
-* Forking this repo
-* TEST driving development of your app
+## Running tests
+This app comes with a full feature test and unit tests with 100% coverage (determined using the simplecov gem).
 
+To run all available tests enter `rspec` in your terminal.
 
-## Bonus level 1: Multiplayer
+## Built with
+Sinatra -- a DSL for quickly creating web applications in Ruby
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+## Authors
+The good people at [Makers Academy](https://makers.tech/) -- set up, Gemfile and instructions
+[Cornelis Heuperman](https://github.com/heuperman) -- tests, code and flavour text

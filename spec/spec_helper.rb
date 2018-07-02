@@ -1,6 +1,10 @@
-require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'capybara/rspec'
+require './app/controller'
+require './spec/web_helpers'
+
+Capybara.app = RPSWeb
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
