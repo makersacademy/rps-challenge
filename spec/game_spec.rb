@@ -4,7 +4,7 @@ require "player"
 
 describe Game do
 
-  subject(:game) { described_class.new }
+  subject(:game) { described_class.new("Ben") }
 
   describe "#match" do
     it "returns a draw" do

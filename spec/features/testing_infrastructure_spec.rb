@@ -23,7 +23,7 @@ feature "Play again?" do
   scenario "Play again button exists" do
     sign_in_and_play
     click_button 'Paper'
-    expect(page).to have_selector(:link_or_button, "Play again?")
+    expect(page).to have_selector(:link_or_button, "PLAY AGAIN?")
   end
 end
 
