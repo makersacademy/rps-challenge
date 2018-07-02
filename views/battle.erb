@@ -1,4 +1,9 @@
-<h3> You win </h3>
-<h3> Your weapon: <%= @game.player_choice %>  </h3>
+<h2> You <%=@game.result %> </h2=>
 
+<h3> Your weapon: <%= @game.player_choice %>  </h3>
 <h3> Computer weapon: <%= @game.computer_choice %>  </h3>
+
+
+<form name="input" action="/play" method="GET">
+  <input type="submit" value="Play Again">
+</form>
