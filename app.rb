@@ -20,27 +20,25 @@ class Janken < Sinatra::Base
     @game = Game.session
     @game.player_one = Player.new(params[:player_one_name])
     @game.player_two = Player.new('Computer')
-    redirect '/play'
+    redirect '/game/play'
   end
 
-  get '/play' do
+  before '/game/*' do
     @game = Game.session
     @player_one = @game.player_one
     @player_two = @game.player_two
+  end
+
+  get '/game/play' do
     erb(:play)
   end
 
-  post '/player_one_selection' do
-    @game = Game.session
-    @player_one = @game.player_one
+  post '/game/player_one_selection' do
     @player_one.selection = params[:selection]
-    redirect '/result'
+    redirect '/game/result'
   end
 
-  get '/result' do
-    @game = Game.session
-    @player_one = @game.player_one
-    @player_two = @game.player_two
+  get '/game/result' do
     @player_two.random_selection
     erb(:result)
   end
