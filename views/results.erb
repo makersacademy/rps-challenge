@@ -1,0 +1,25 @@
+<center>
+
+  <h1>
+  <% if @game.outcome == :win %>
+  You win!
+  <% elsif @game.outcome == :lose %>
+  You lose! Better luck next time!
+  <% else %>
+  It's a tie!
+  <% end %>
+  </h1>
+
+<div>
+<h2> Your move: <%= @game.player_1.move.to_s.capitalize %> </h2>
+</div>
+
+<div>
+<h2> Opponent's move: <%= @game.player_2.move.to_s.capitalize %> </h2>
+</div>
+
+<form action= '/play'>
+  <input type="submit" value="Play again!">
+</form>
+
+</center>
