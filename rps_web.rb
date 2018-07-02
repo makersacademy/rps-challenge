@@ -3,7 +3,6 @@ require './lib/player'
 require './lib/computer'
 require './lib/game'
 
-
 class Rps < Sinatra::Base
   enable :sessions
 
@@ -32,7 +31,6 @@ class Rps < Sinatra::Base
 
   get '/battle' do
     @game = $game
-    @game.result
     erb :battle
   end
 
