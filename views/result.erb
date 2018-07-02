@@ -1,0 +1,17 @@
+<!-- <link rel="stylesheet" href="stylesheet.css" type="text/css" /> -->
+<div align = "center">
+  <% if @game.draw? %>
+    <h1>It was a draw!</h1>
+  <% elsif @game.player_one_win? %>
+    <h1><%= @player_one.name %> beat <%= @player_two.name %>!</h1>
+  <% else %>
+    <h1><%= @player_two.name %> beat <%= @player_one.name %>!</h1>
+  <% end %>
+  <h3><%= @player_one.name %> selected <%= @player_one.selection %></h3>
+  <h3><%= @player_two.name %> selected <%= @player_two.selection %></h3>
+</div>
+<div align = "center">
+  <form action="/game/play" method="get">
+    <input type="submit" value="Choose again">
+  </form>
+</div>
