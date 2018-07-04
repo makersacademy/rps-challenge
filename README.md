@@ -1,4 +1,5 @@
 # RPS Challenge
+[![BCH compliance](https://bettercodehub.com/edge/badge/nixlim/rps-challenge?branch=master)](https://bettercodehub.com/)
 
 Update
 ---
