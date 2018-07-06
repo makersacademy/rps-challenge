@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/style.css"/>
+
+<h1>Aw snap <%= @game.player2 %>! Your choice wasn't valid.</h1>
+
+<img src="oops.jpg" height="300">
+
+<h1>Choose rock, paper or scissors!</h1>
+
+<form action='/result' method=post>
+  <label for=move>
+    Your move:
+    <input type=text name=move>
+  </label>
+    <input type=submit value='Enter your choice'>
+</form>

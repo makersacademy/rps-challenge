@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="/style.css"/>
+
+  <div style="background-color:yellow">
+    <h1><%= @game.player1 %> vs <%= @game.player2 %></h1>
+  </div>
+
+  <form action='/first_move' method=post>
+      <input type=submit value="Let's play!">
+  </form>
