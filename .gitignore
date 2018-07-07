@@ -1,3 +1,4 @@
 /**/.DS_Store
 /coverage
 /spec/features/play_spec.rb
+Gemfile.lock
