@@ -1,1 +1,1 @@
-web: bundle exec rpsls_web.rb
+web: bundle exec rackup config.ru -p $PORT
