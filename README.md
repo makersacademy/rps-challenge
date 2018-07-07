@@ -35,7 +35,7 @@ By clicking on 1 player you can go straight into the game. There select a weapon
 
 If you select 2 player at the welcome screen you will be shown the games that are available to you. Either wait for someone to join you game and then click play or click play on someone else's game and you will enter the game. This can be played exactly the same way as the single player mode.
 
-![Alt text](/public/images/Games.png?raw=true "Multiplayer games screen")
+![Alt text](/public/images/Games.png?raw=true "Multiplayer games screen") 
 
 Areas for future development
 -----------------------------
