@@ -39,6 +39,9 @@ I would like to see who has won the game.
 - 'rubocop'
 - 'simplecov'
 
+### How to run the code 
+- clone this repository
+- run ```rackup```
 
 
 ## Deployed on Heroku:  
