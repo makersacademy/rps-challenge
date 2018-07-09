@@ -1,0 +1,15 @@
+body {
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/29/66/64583fd8be8000f.jpg");
+  background-size: 120% 100%;
+}
+
+#submit_form {
+  position:relative;
+  width:20%;
+  left:40%;
+  text-align: center;
+}
+
+.image_class {
+
+}
