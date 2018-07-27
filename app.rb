@@ -30,6 +30,10 @@ class RPS < Sinatra::Base
     erb(:scissors)
   end
 
+  get '/results' do
+    erb(:results)
+  end
+
   # start the server when 'ruby app.rb' is executed in terminal
   run! if app_file == $0
 
