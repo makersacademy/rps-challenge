@@ -18,6 +18,10 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/hand' do
+    erb(:hand)
+  end
+
   # start the server when 'ruby app.rb' is executed in terminal
   run! if app_file == $0
 
