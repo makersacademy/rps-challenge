@@ -1,35 +1,38 @@
 feature 'Able to choose between rock, paper, scissors' do
 
-  scenario 'displays your 3 choices' do
+  scenario 'displays rock as a choice' do
     enter_name_and_play
-    expect(page).to have_selector(:link_or_button, 'Rock')
+    expect(page).to have_selector("input[type=radio][value=rock]")
   end
 
-  scenario 'displays your 3 choices' do
+  scenario 'displays paper as a choice' do
     enter_name_and_play
-    expect(page).to have_selector(:link_or_button, 'Paper')
+    expect(page).to have_selector("input[type=radio][value=paper]")
   end
 
-  scenario 'displays your 3 choices' do
+  scenario 'displays scissors as a choice' do
     enter_name_and_play
-    expect(page).to have_selector(:link_or_button, 'Scissors')
+    expect(page).to have_selector("input[type=radio][value=scissors]")
   end
 
-  scenario 'confirms that Player 2 has been attacked' do
+  scenario 'Able to choose rock and confirms the choice' do
     enter_name_and_play
-    click_button('Rock')
+    choose('rock')
+    click_button 'Submit'
     expect(page).to have_content 'You have chosen Rock'
   end
 
-  scenario 'confirms that Player 2 has been attacked' do
+  scenario 'Able to choose paper and confirms the choice' do
     enter_name_and_play
-    click_button('Paper')
+    choose('paper')
+    click_button 'Submit'
     expect(page).to have_content 'You have chosen Paper'
   end
 
-  scenario 'confirms that Player 2 has been attacked' do
+  scenario 'Able to choose scissors and confirms the choice' do
     enter_name_and_play
-    click_button('Scissors')
+    choose('scissors')
+    click_button 'Submit'
     expect(page).to have_content 'You have chosen Scissors'
   end
 

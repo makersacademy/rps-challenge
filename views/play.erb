@@ -1,15 +1,9 @@
-Welcome to the game, <%= @player_name %>
+Welcome to the game, <%= @player_name %> </br>
 
 Please choose which hand you would like to play.
-<form action="/rock">
-  <input type="submit" value="Rock">
-</form>
-
-<form action="/paper">
-  <input type="submit" value="Paper">
-</form>
-
-
-<form action="/scissors">
-  <input type="submit" value="Scissors">
+<form action="/results" method="get">
+  <input type="radio" name="choice" value="rock" id="rock">Rock<br>
+  <input type="radio" name="choice" value="paper" id="paper">Paper<br>
+  <input type="radio" name="choice" value="scissors" id="scissors">Scissors<br>
+  <input type="submit" value="Submit">
 </form>

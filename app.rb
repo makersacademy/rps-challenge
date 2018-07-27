@@ -18,25 +18,14 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  get '/rock' do
-    erb(:rock)
-  end
-
-  get '/paper' do
-    erb(:paper)
-  end
-
-  get '/scissors' do
-    erb(:scissors)
-  end
-
-  post '/bot' do
-    session[:bot_choice] = ['Rock','Paper','Scissors'].sample
+  post '/hand' do
+    session[:choice] = params[:choice]
     redirect ('/results')
   end
 
   get '/results' do
-    @bot_choice = session[:bot_choice]
+    # @player_choice = session[:choice]
+    @bot_choice = ['Rock','Paper','Scissors'].sample
     erb(:results)
   end
 
