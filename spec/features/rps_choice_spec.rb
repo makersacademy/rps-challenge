@@ -21,4 +21,16 @@ feature 'Able to choose between rock, paper, scissors' do
     expect(page).to have_content 'You have chosen Rock'
   end
 
+  scenario 'confirms that Player 2 has been attacked' do
+    enter_name_and_play
+    click_button('Paper')
+    expect(page).to have_content 'You have chosen Paper'
+  end
+
+  scenario 'confirms that Player 2 has been attacked' do
+    enter_name_and_play
+    click_button('Scissors')
+    expect(page).to have_content 'You have chosen Scissors'
+  end
+
 end
