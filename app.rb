@@ -2,6 +2,8 @@ require 'sinatra/base'
 require 'sinatra'
 require_relative './lib/player.rb'
 
+# WE NEED TO GET RID OF THE GLOBAL VARIABLE AFTER THIS
+
 class RPS < Sinatra::Base
   enable :sessions
 
