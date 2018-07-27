@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra'
 require_relative './lib/player.rb'
+require_relative './lib/game.rb'
 
 # WE NEED TO GET RID OF THE GLOBAL VARIABLE AFTER THIS
 
