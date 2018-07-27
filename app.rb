@@ -30,7 +30,13 @@ class RPS < Sinatra::Base
     erb(:scissors)
   end
 
+  post '/bot' do
+    session[:bot_choice] = ['Rock','Paper','Scissors'].sample
+    redirect ('/results')
+  end
+
   get '/results' do
+    @bot_choice = session[:bot_choice]
     erb(:results)
   end
 
