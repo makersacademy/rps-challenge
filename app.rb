@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra'
 require_relative './lib/player.rb'
+require_relative './lib/bot.rb'
 require_relative './lib/game.rb'
 
 # WE NEED TO GET RID OF THE GLOBAL VARIABLE AFTER THIS
@@ -29,7 +30,7 @@ class RPS < Sinatra::Base
 
   get '/results' do
     # @player_choice = session[:choice]
-    @bot_choice = ['Rock','Paper','Scissors'].sample
+    @bot_choice = Bot.new.choice
     erb(:results)
   end
 
