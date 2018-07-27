@@ -6,9 +6,6 @@ feature 'Name Entry' do
   end
   context 'Page 2 tests' do
     before(:each) { click_button('Play!') }
-    scenario 'Player can start game' do
-      expect(page).to have_content('Go!')
-    end
     scenario 'Name is Displayed' do
       expect(page).to have_content('Jack')
     end
