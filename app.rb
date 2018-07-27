@@ -18,8 +18,16 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  get '/hand' do
-    erb(:hand)
+  get '/rock' do
+    erb(:rock)
+  end
+
+  get '/paper' do
+    erb(:paper)
+  end
+
+  get '/scissors' do
+    erb(:scissors)
   end
 
   # start the server when 'ruby app.rb' is executed in terminal
