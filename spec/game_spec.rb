@@ -12,8 +12,8 @@ describe Game do
 
   describe '#cpu' do
     it 'should show CPUs play' do
-      allow(game.cpu_decision).to receive(:sample).and_return("rock")
-      expect(game.cpu_decision).to eq "rock"
+      allow(game).to receive(:cpu).and_return("rock")
+      expect(game.cpu).to eq "rock"
     end
   end
 

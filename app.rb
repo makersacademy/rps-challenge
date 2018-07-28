@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game.rb'
 
 class RPS < Sinatra::Base
 
@@ -23,18 +24,18 @@ class RPS < Sinatra::Base
   end
 
   get '/rock' do
-    @choice = "rock"
-    #game.new(rock)
+    @game = Game.new("rock")
+    #game.new(rock
     erb(:rock)
   end
 
   get '/paper' do
-    @choice = "paper"
+    @game = Game.new("paper")
     erb(:paper)
   end
 
   get '/scissors' do
-    @choice = "scissors"
+    @game = Game.new("scissors")
     erb(:scissors)
   end
 
