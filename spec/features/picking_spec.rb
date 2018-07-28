@@ -2,8 +2,8 @@ feature 'Shows the winner' do
   scenario 'If rock' do
     visit('/')
     fill_in :player_name, with: 'Daniel'
-    click_button 'Submit'
-    click_button 'I am ready!'
+    click_button 'Go!'
+    click_button "LET ME AT 'EM!"
     click_button 'Rock'
     expect(page).to have_content "You played rock"
   end
@@ -11,8 +11,8 @@ feature 'Shows the winner' do
   scenario 'If paper' do
     visit('/')
     fill_in :player_name, with: 'Daniel'
-    click_button 'Submit'
-    click_button 'I am ready!'
+    click_button 'Go!'
+    click_button "LET ME AT 'EM!"
     click_button 'Paper'
     expect(page).to have_content "You played paper"
   end
@@ -20,8 +20,8 @@ feature 'Shows the winner' do
   scenario 'If scissors' do
     visit('/')
     fill_in :player_name, with: 'Daniel'
-    click_button 'Submit'
-    click_button 'I am ready!'
+    click_button 'Go!'
+    click_button "LET ME AT 'EM!"
     click_button 'Scissors'
     expect(page).to have_content "You played scissors"
   end
