@@ -5,12 +5,9 @@
 </head>
   <body>
     <div class = "flex-container">
-      <div><h1>Welcome to Rock Paper Scissors!</h1></div>
+      <div><h1>Hello <%= @player_1_name %>!</h1></div>
+      <div><p>Let's play Rock, Paper, Scissors!</p></div>
       <div class="form">
-        <form action="/names" method="post">
-        <input type="text" name="player_1_name">
-        <input type="submit" value="Submit">
-        </form>
       </div>
     </div>
   </body>
