@@ -1,7 +1,7 @@
 # RPS Challenge
 Background:
 -------
-This is the weekend challenge at the end of week 3 of teh Makers coding bootcamp.
+This is the weekend challenge at the end of week 3 of the Makers coding bootcamp.
 
 
 Instructions
