@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
+require_relative './lib/logic'
+
 class Game < Sinatra::Base
   enable :sessions
   get '/' do
@@ -14,7 +16,7 @@ class Game < Sinatra::Base
   post '/weapon' do
     $player_1_choice = params[:choice]
     $player_2_choice = ['rock', 'paper', 'scissors'].sample 
-    
+
 
     redirect '/result'
   end 
