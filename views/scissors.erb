@@ -1,4 +1,6 @@
-<p>You played scissors</p>
+<p>You played <%=@game.decision%></p>
+<p>Computer played <%=@game.cpu%></p>
+<p><%=@game.winner%></p>
 <form action="/battle" method="get">
   <input type="submit" value="Play Again!">
 </form>

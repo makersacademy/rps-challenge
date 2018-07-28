@@ -25,7 +25,6 @@ class RPS < Sinatra::Base
 
   get '/rock' do
     @game = Game.new("rock")
-    #game.new(rock
     erb(:rock)
   end
 
