@@ -1,7 +1,7 @@
 ##User Stories
 As a marketeer
 So that I can see my name in lights
-I would like to register my name before playing an online game
+I would like to register my name before playing an online game - done (need to add GUI)
 
 As a marketeer
 So that I can enjoy myself away from the daily grind
