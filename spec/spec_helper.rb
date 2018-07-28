@@ -24,7 +24,7 @@ RSpec.configure do |config|
   require 'capybara'
   require 'capybara/rspec'
   require 'rspec'
-  require 'features/web_helpers'
+  # require 'features/web_helpers'
 
   # let Capybara know about app's class
   Capybara.app = RPS
