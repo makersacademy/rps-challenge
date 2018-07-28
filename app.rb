@@ -17,7 +17,6 @@ class Game < Sinatra::Base
     $player_1_choice = params[:choice]
     $player_2_choice = ['rock', 'paper', 'scissors'].sample 
 
-
     redirect '/result'
   end 
 
