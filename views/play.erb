@@ -4,11 +4,32 @@
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
   <body>
-    <div class = "flex-container">
-      <div><h1>Hello <%= @player_1_name %>!</h1></div>
-      <div><p>Let's play Rock, Paper, Scissors!</p></div>
-      <div class="form">
+    <div class='menu-container'>
+      <div class='menu'>
+        <div class='welcome'><h1>Hello <%= @player_1_name %>!</h1></div>
+        <div><p>Let's play Rock, Paper, Scissors!</p></div> 
       </div>
     </div>
+    <div class = "form-container">
+      <div><h2>Choose Rock, Paper or Scissors</h2></div>
+      <div class="form">
+        <form action="/play">
+        <div class="radio-toolbar">
+          <input id="attack_type" name="attack_type" type="radio" value="rock" /> Rock<br />
+          <input id="attack_type" name="attack_type" type="radio" value="paper" /> Paper<br />
+          <input id="attack_type" name="attack_type" type="radio" value="scissors" /> Scissors<br />
+        </div>
+        <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+    <div class='header-container'>
+      <div class='header'>
+        <div class='player1'>Player 1</div>
+        <div class='RPS_logo'><img src='images/rps_hdr.jpg'/></div>
+        <div class='player2'>Player 2</div>
+      </div>
+    </div>
+    
   </body>
 </html>

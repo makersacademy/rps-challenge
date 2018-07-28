@@ -1,8 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu-container {
+  color: #fff;
+  background-color: #5995DA;  /* Blue */
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  width: 900px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.login {
+  margin-left: 20px;
+}
+
+.header-container {
+  color: #5995DA;
+  background-color: #D6E9FE;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.header {
+  width: 900px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.player1,
+.RPS_logo,
+.player2 {
+  border: 1px solid #5995DA;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 15px 0;
+}
+.form {
+  background-color: lightblue;
+  font-family: verdana;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding: 10px 0;
+}
+
 body {
   background-color: lightblue;
   background-image: url("");
   background-repeat: no-repeat, repeat;
   background-position: center top;
+  font-family: Verdana;
 }
 
 h1 {
@@ -12,7 +76,7 @@ h1 {
 }
 
 h2 {
-  color: rgb(61, 204, 43);
+  color: purple;
   text-align: center;
   font-size: 18px;
 }
@@ -20,22 +84,6 @@ h2 {
 p {
   font-family: verdana;
   text-align: center;
-}
-
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  padding-left: 0px;
-}
-.flex-container > div {
-  background-color: lightblue;
-  width: 350px;
-  text-align: center;
-  font-family: verdana;
-  font-size: 15px;
 }
 
 form {

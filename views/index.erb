@@ -4,8 +4,13 @@
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
   <body>
-    <div class = "flex-container">
-      <div><h1>Welcome to Rock Paper Scissors!</h1></div>
+    <div class='menu-container'>
+      <div class='menu'>
+        <div class='welcome'><h1>Welcome to Rock Paper Scissors!</h1></div>      <!-- This is nested now -->
+      </div>
+    </div>
+    <div class = "form-container">
+      <div><h2>Enter your name to start</h2></div>
       <div class="form">
         <form action="/names" method="post">
         <input type="text" name="player_1_name">
@@ -13,5 +18,13 @@
         </form>
       </div>
     </div>
+    <div class='header-container'>
+      <div class='header'>
+        <div class='player1'></div>
+        <div class='RPS_logo'><img src='images/rps_hdr.jpg'/></div>
+        <div class='player2'></div>
+      </div>
+    </div>
+    
   </body>
 </html>
