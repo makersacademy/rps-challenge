@@ -10,6 +10,18 @@ class Game < Sinatra::Base
     $player_1 = Player.new(params[:player_1_name])
     redirect '/play'
   end
+
+  post '/weapon' do
+    $player_1_choice = params[:choice]
+    $player_2_choice = ['rock', 'paper', 'scissors'].sample 
+    
+
+    redirect '/result'
+  end 
+
+  get '/result' do 
+  erb :result
+  end 
   
   get '/play' do 
     @player_1 = $player_1

@@ -1,1 +1,11 @@
-<h1> Welcome <%= @player_1.name %> </h1>
+<h1> Welcome <%= $player_1.name %> </h1>
+<h2> Please enter your move: </h2>
+<form action = "/weapon" method = "post">
+<select name="choice">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+<input type = "submit" value = "select weapon">
+
+</form>
