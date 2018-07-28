@@ -24,17 +24,17 @@ class RPS < Sinatra::Base
   end
 
   get '/rock' do
-    @game = Game.new("rock")
+    @game = Game.new("Rock")
     erb(:rock)
   end
 
   get '/paper' do
-    @game = Game.new("paper")
+    @game = Game.new("Paper")
     erb(:paper)
   end
 
   get '/scissors' do
-    @game = Game.new("scissors")
+    @game = Game.new("Scissors")
     erb(:scissors)
   end
 

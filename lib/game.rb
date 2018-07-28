@@ -3,17 +3,26 @@ class Game
 
   def initialize(decision)
     @decision = decision
-    @cpu = ["rock", "paper", "scissors"].sample
+    @cpu = ["Rock", "Paper", "Scissors"].sample
   end
 
   def winner
-    if (@decision == "rock" && @cpu == "scissors") || (@decision == "scissors" && @cpu == "paper") || (@decision == "paper" && @cpu == "rock")
+    if you_win
       return "YOU WIN!"
-    elsif (@decision == "rock" && @cpu == "paper") || (@decision == "scissors" && @cpu == "rock") || (@decision == "paper" && @cpu == "scissors")
-      return "Tough luck this time, the computer won!"
+    elsif you_lose
+      return "YOU LOSE!"
     else
-      return "Something to be happy about, IT WAS A DRAW"
+      return "IT WAS A DRAW!"
     end
+  end
+
+  private
+  def you_win
+    (@decision == "Rock" && @cpu == "Scissors") || (@decision == "Scissors" && @cpu == "Paper") || (@decision == "Paper" && @cpu == "Rock")
+  end
+
+  def you_lose
+    (@decision == "Rock" && @cpu == "Paper") || (@decision == "Scissors" && @cpu == "Rock") || (@decision == "Paper" && @cpu == "Scissors")
   end
 
 end
