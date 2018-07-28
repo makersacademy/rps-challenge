@@ -8,11 +8,11 @@ class Game
 
   def winner
     if (@decision == "rock" && @cpu == "scissors") || (@decision == "scissors" && @cpu == "paper") || (@decision == "paper" && @cpu == "rock")
-      return "YOU win!!!"
+      return "YOU WIN!"
     elsif (@decision == "rock" && @cpu == "paper") || (@decision == "scissors" && @cpu == "rock") || (@decision == "paper" && @cpu == "scissors")
-      return "Tough luck this time, the computer won"
+      return "Tough luck this time, the computer won!"
     else
-      return "Something to be happy about, it was a draw"
+      return "Something to be happy about, IT WAS A DRAW"
     end
   end
 

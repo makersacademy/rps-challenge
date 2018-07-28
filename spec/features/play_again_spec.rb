@@ -16,6 +16,6 @@ feature 'Lets a player decide' do
     click_button 'I am ready!'
     click_button 'Rock'
     click_button 'End'
-    expect(page).to have_content "Rock, Paper, Scissors"
+    expect(page).to have_content "Rock - Paper - Scissors"
   end
 end
