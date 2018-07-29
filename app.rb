@@ -6,6 +6,10 @@ class RPS < Sinatra::Base
   enable :sessions 
   # keeps state during requests
 
+  before do
+    @game = Game.instance
+  end
+
   configure do
     set :public_folder, 'public'
   end
@@ -15,7 +19,12 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    @player_1 = Player.new(params[:player_1_name])
+    player_1 = Player.new(params[:player_1_name])
+    @game = Game.create(player_1)
+    redirect '/play'
+  end
+
+  get '/play' do
     erb :play
   end
 
