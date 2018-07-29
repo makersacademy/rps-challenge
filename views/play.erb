@@ -1,10 +1,40 @@
-<%= $player.name %> vs Computer
 
-<h2>What&apos;s your weapon?</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Rock Paper Scissors styling for 1st TDD Ruby/Sinatra/ERB project">
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Kirang+Haerang" rel="stylesheet">
+  <title>Rock Paper Scissors for Makers Web Dev Bootcamp</title>
+</head>
+<body>
 
-<form action="/play" method='post'>
-  <input type="radio" name="move" value="rock">Rock<br/>
-  <input type="radio" name="move" value="paper">Paper<br/>
-  <input type="radio" name="move" value="scissors">Scissors<br/>
-  <input type="submit" id="OK" value="OK">
-</form>
+  <h2><%= $player.name %> vs Computer</h2>
+
+  <h4>What&apos;s your weapon?</h4>
+
+  <div class="enter">
+
+    <form action="/play" method='post'>
+
+      <input type="radio" id="radio-rock" name="move" value="rock" class="hidden-radio">
+      <label class="fa fa-hand-rock-o fa-3x" for="radio-rock"></label>
+      <label class="choice" for="radio-rock"> Rock</label>
+      
+      <input type="radio" id="radio-paper" name="move" value="paper" class="hidden-radio">
+      <label class="fa fa-hand-paper-o fa-3x" for="radio-paper"></label>
+      <label class="choice" for="radio-paper"> Paper</label>
+      
+      <input type="radio" id="radio-scissors" name="move" value="scissors" class="hidden-radio">
+      <label class="fa fa-hand-scissors-o fa-3x" for="radio-scissors"></label>
+      <label class="choice" for="radio-scissors"> Scissors</label>
+      
+      <br/>
+      
+      <input type="submit" class="ok" id="OK" value="OK ">
+    </form>
+  </div>
+</body>

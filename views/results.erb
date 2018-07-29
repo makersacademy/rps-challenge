@@ -1,23 +1,35 @@
-<p> <%= $player.name %> chose <%= $player.move %>: </p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Rock Paper Scissors styling for 1st TDD Ruby/Sinatra/ERB project">
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Kirang+Haerang" rel="stylesheet">
+  <title>Rock Paper Scissors for Makers Web Dev Bootcamp</title>
+</head>
+<body>
+  <h3> <%= $player.name %> chose <%= $player.move %>: </h3>
 
-<% if $player.move == "rock" %>
-  <p>Rock on!</p>
-<% elsif $player.move == "paper" %>
-  <p>Origami skills!</p>
-<% else %>
-  <p>Sharp choice!</p>
-<% end %>
+  <h4><% if $player.move == "rock" %>
+    <p>Rock on!</p>
+  <% elsif $player.move == "paper" %>
+    <p>Origami skills!</p>
+  <% else %>
+    <p>Sharp choice!</p>
+    <% end %></h4>
 
-<p> Computer chose <%= @computer %> </p>
-<br/>
+  <h3>Computer chose <%= @computer %>
+    </h3>
 
-<% if $results.win? %>
-  <p>You rule supreme!</p>
-<% elsif $results.lose? %>
-  <p>Can&apos;t beat the machine</p>
-<% elsif $results.draw? %>
-  <p>It&apos;s a draw!</p>
-<% end %>
+  <h4><% if $results.win? %>
+    <p>You rule supreme!</p>
+  <% elsif $results.lose? %>
+    <p>Can&apos;t beat the machine</p>
+  <% elsif $results.draw? %>
+    <p>It&apos;s a draw!</p>
+    <% end %></h4>
 
-
-<a href='/play'>Play again</a>
+  <a href='/play' class='again'>Play again?</a>
+</body>

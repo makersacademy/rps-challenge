@@ -7,7 +7,15 @@
 ![alt text](http://res.cloudinary.com/dani-devs-and-designs/image/upload/v1532796093/Kitsune-ken__%E7%8B%90%E6%8B%B3__Japanese_rock-paper-scissors_variant__from_the_Genyoku_sui_bento__1774_u2ghqi.jpg)
 
 
-Task
+## How to use?
+
+Clone this repository, install gems in Gemfile, and run localhost:9292 in your browser.  
+Have fun!
+
+
+# What did I actually do?
+
+## Task
 ----
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
@@ -85,3 +93,5 @@ ___________
 
 @sjmog  
 @simone-smith
+
+Artwork in by DocApoc https://imgur.com/gallery/DnvVP 
