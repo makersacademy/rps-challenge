@@ -9,8 +9,9 @@ Progress Made:
 - [x] the marketeer should be able to enter their name before the game
 - [x] the marketeer will be presented the choices (rock, paper and scissors)
 - [x] the marketeer can choose one option
-- [ ] the game will choose a random option
-- [ ] a winner will be declared  
+- [x] the game will choose a random option
+- [x] a winner will be declared  
+- [x] allowed for a re-match or quit
 
 How to Use
 ----------
