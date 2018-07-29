@@ -41,7 +41,7 @@
 .player1,
 .RPS_logo,
 .player2 {
-  border: 1px solid #5995DA;
+  
 }
 
 .form-container {
@@ -59,6 +59,17 @@
   justify-content: center;
   align-items: center; 
   padding: 10px 0;
+  text-align: center;
+}
+
+.radio-toolbar {
+  display: inline-block;
+  background-color: lightblue;
+  padding: 8px 11px;
+  font-family: Verdana;
+  cursor: pointer;
+  text-align: left;
+  font-size: 12px;
 }
 
 body {
@@ -86,17 +97,5 @@ p {
   text-align: center;
 }
 
-form {
-  text-align: center;
-  }
 
-  .radio-toolbar {
-    display: inline-block;
-    background-color: lightblue;
-    padding: 4px 11px;
-    font-family: Verdana;
-    cursor: pointer;
-    text-align: left;
-    font-size: 12px;
-  }
   

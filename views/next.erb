@@ -6,14 +6,14 @@
   <body>
     <div class='menu-container'>
       <div class='menu'>
-        <div class='welcome'><h1>Hello <%= @player_1_name %>!</h1></div>
+        <div class='welcome'><h1>Now for the computer's turn!</h1></div>
         <div><p>Let's play Rock, Paper, Scissors!</p></div> 
       </div>
     </div>
     <div class = "form-container">
       <div><h2>Choose Rock, Paper or Scissors</h2></div>
       <div class="form">
-        <form action="/next" method ='post'>
+        <form action="/result">
         <div class="radio-toolbar">
           <input id="rock" name="attack_type" type="radio" value="rock" /> Rock<br />
           <input id="paper" name="attack_type" type="radio" value="paper" /> Paper<br />
@@ -25,9 +25,15 @@
     </div>
     <div class='header-container'>
       <div class='header'>
-        <div class='player1'>Player 1</div>
-        <div class='RPS_logo'><img src='images/rps_hdr.jpg'/></div>
-        <div class='player2'>Player 2</div>
+        <% if @player_1_choice == 'rock' %>
+          <div class='player1'><img src='images/rock.png'/></div>
+        <% elsif @player_1_choice == 'paper' %>
+          <div class='player1'><img src='images/paper.png'/></div>
+        <% else %>
+          <div class='player1'><img src='images/scissors.png'/></div>
+        <% end %> 
+        <div class='RPS_logo'></div>
+        <div class='player2'><img src='images/question_mark.png'/></div>
       </div>
     </div>
     
