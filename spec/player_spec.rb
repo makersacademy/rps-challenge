@@ -10,4 +10,21 @@ describe Player do
     end
   end
 
+  describe '#attack_type' do
+    it 'returns the players move' do
+      expect(moxie.attack_type('rock')).to eq 'rock'
+    end
+  end
+
+  context 'stubbing randomness' do
+    before do
+      allow(moxie).to receive(:sample) { |move| Player::MOVES.last }
+    end
+
+    describe '#random_attack' do
+      it 'returns the players move' do
+        expect(moxie.random_attack).to eq 'scissors'
+      end
+    end
+  end
 end
