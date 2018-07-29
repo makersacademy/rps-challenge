@@ -2,8 +2,9 @@
 Please select one of the following:
 <br/>
 <br/>
-<a href="/result">Rock</a>
-<br/>
-<a href="/result">Paper</a>
-<br/>
-<a href="/result">Scissors</a>
+<form action="/result" method="get">
+  <input type="radio" name="choice" value="rock" id="rock">Rock<br>
+  <input type="radio" name="choice" value="paper" id="paper">Paper<br>
+  <input type="radio" name="choice" value="scissors" id="scissors">Scissors<br>
+  <input type="submit" value="Submit">
+</form>

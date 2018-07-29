@@ -10,4 +10,10 @@ feature 'Play rock, paper, scissors' do
     expect(page).to have_content 'Paper'
     expect(page).to have_content 'Scissors'
   end
+
+  scenario 'can check rock, paper or scissors' do
+    expect(page).to have_selector("input[type=radio][value=rock]")
+    expect(page).to have_selector("input[type=radio][value=paper]")
+    expect(page).to have_selector("input[type=radio][value=scissors]")
+  end
 end

@@ -12,6 +12,8 @@ class Battle < Sinatra::Base
   end
 
   get '/result' do
+    @choice = params[:choice]
+    @bot_choice = ["Rock", "Paper", "Scissors"].sample
     erb :result
   end
 
