@@ -94,4 +94,4 @@ ___________
 @sjmog  
 @simone-smith
 
-Artwork in by DocApoc https://imgur.com/gallery/DnvVP 
+Artwork in app by DocApoc https://imgur.com/gallery/DnvVP 
