@@ -13,8 +13,7 @@ class Player
   end
 
   def random_attack
-    @attack_type = MOVES.sample
+    @attack_type = MOVES[Kernel.rand(0..(MOVES.size - 1))]
   end
-
 
 end

@@ -17,12 +17,10 @@ describe Player do
   end
 
   context 'stubbing randomness' do
-    before do
-      allow(moxie).to receive(:sample) { |move| Player::MOVES.last }
-    end
 
     describe '#random_attack' do
       it 'returns the players move' do
+        allow(Kernel).to receive(:rand).and_return 2
         expect(moxie.random_attack).to eq 'scissors'
       end
     end
