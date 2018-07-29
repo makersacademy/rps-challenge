@@ -1,0 +1,84 @@
+<head>
+  <title>Rock Paper Scissors</title>
+</head>
+<style>
+.Page {
+  background-image: url("https://i1.wp.com/pulptastic.com/wp-content/uploads/2016/06/rock-paper-scissors.png?w=662");
+  margin-left: 200px;
+  margin-right: 200px;
+}
+  .Names {
+  background-image: url("https://media.giphy.com/media/CCrcZpwg2bmqk/giphy.gif");
+  margin-left: 500px;
+  margin-right: 500px;
+  border-style: outset;
+}
+.interface {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-image: url("https://media.giphy.com/media/PL0xxGTliM3G8/giphy.gif");
+}
+.Title_head {
+  color: blue;
+  background-color: green;
+  padding: 20px;
+  border: outset;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+.name_enter {
+  padding: 45px;
+  color: red;
+  background-color: green;
+  border-radius: 90%;
+  font-size: 30px;
+}
+.Play {
+  color: yellow;
+  background-color: green;
+  border-style: dashed;
+  margin-right: 300px;
+  margin-left: 300px;
+}
+.name_field {
+  padding: 20px;
+  brder-style: inset;
+  font-sixe: 25px;
+}
+</style>
+<body class="Page">
+  <div class="interface"align="center">
+    <div>
+    <br>
+    <h1 class="Title_head">Rock Paper Scissors</h1>
+    <br><br><br><br>
+    </div>
+    <div class="Play"align="center">
+      <br>
+      <h2>Enter Your Name!</h2>
+      <br>
+    </div>
+    <br><br>
+    <form id="players" action="names" method="post">
+    <div class = "Names">
+      <br><br><br>
+      <input class="name_field"type="entry"name="player_1_name">
+      <h2>Player 1</h2>
+      <input class="name_field"type="entry"name="player_2_name">
+      <h2>Player 2</h2>
+    </div>
+    <br><br><br>
+      <div>
+        <input class="name_enter"type="submit"value="Play!">
+      </div>
+    </form>
+    <br><br><br>
+  </div>
+   <div data-video=O2ulyJuvU3Q
+         data-autoplay="1"         
+         data-loop="0"             
+         id="youtube-audio">
+  </div>
+<script src="https://www.youtube.com/iframe_api" height="0px"></script>
+<script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script>
+</body>
