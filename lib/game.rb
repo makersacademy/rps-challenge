@@ -1,7 +1,8 @@
 # game class
 class Game
 
-  attr_reader :score, :names, :players, :game_over, :num_players, :move_list, :winner
+  attr_reader :score, :names, :players, :game_over, :num_players, :move_list, 
+              :winner, :first_round
 
   WINNERS = [[:Scissors, :Paper], [:Paper, :Rock], [:Rock, :Scissors],
              [:Rock, :Lizard], [:Lizard, :Spock], [:Spock, :Scissors],
@@ -25,6 +26,7 @@ class Game
   end
 
   def no_args_instance_creation 
+    @first_round = true
     @winner = nil
     @game_over = false
     @score = [0, 0] # score is made, index 0 = p1, 1 = p2
@@ -38,6 +40,7 @@ class Game
   end
 
   def make_move(p1_choice, p2_choice = nil)
+    @first_round = false
     @move_list.clear
     p2_choice = rand_choice if p2_choice.nil?
     @move_list.push(p1_choice, p2_choice) # add moves to list
@@ -46,7 +49,7 @@ class Game
   end
 
   def rand_choice
-    ['Rock', 'Paper', 'Scissors'].sample
+    ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'].sample
   end
 
 end

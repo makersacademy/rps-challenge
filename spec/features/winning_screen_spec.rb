@@ -19,4 +19,3 @@ feature 'Winning Screen' do
     expect(page).to have_content('5 - 0')
   end
 end
-

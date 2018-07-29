@@ -5,6 +5,11 @@ describe Game do
   let(:subject)      { described_class.new(player_class, 'Jack')           }
   let(:multi_subj)   { described_class.new(player_class, 'Jack', 'Durain') } 
   context 'core methods' do
+    describe '#first_round' do
+      it { expect(subject).to respond_to(:first_round) }
+      it { expect(subject.first_round).to eq(true) }
+      it { expect { subject.make_move('Rock') }.to change {subject.first_round} }
+    end
     describe '#no_args_instance_creation' do
       it { expect(subject).to respond_to(:no_args_instance_creation) }
     end

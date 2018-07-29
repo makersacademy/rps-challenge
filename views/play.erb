@@ -14,15 +14,14 @@
   background-color: #cccccc;
 }
 .score {
-  margin-right: 250px;
-  margin-left:250px;
+  margin-right: 350px;
+  margin-left: 350px;
   margin-top: 30px;
   background-color: white;
 }
 .moves{
   margin-right: 200px;
   margin-left: 200px;
-  border: dashed;
 }
 .GO {
   padding: 30px;
@@ -45,20 +44,25 @@
   background-image: url("https://media.giphy.com/media/3j6WrBwv5V9Ic/giphy.gif");
   border-style: inset;
 }
+.moveck {
+  transform: scale(1.5);
+}
 </style>
 <body class="Page">
   <div class="interface"align="center">
     <div class="score">
-      <br><br>
+      <br>
       <h1 align="center"><%=@score.join(' - ')%></h1>
       <h2 align="center"> <%=@names.join(' Vs. ')%> </h2>
-      <br><br>
+      <% if !@game.first_round %>
+        <h1><%= "#{@game.names[0]} used #{@game.move_list[0]} against #{@game.names[1]}'s #{@game.move_list[1]}"%></h1>
+        <% end %>
+      <br>
     </div>
     <div class="Result"
-        <br><br><br>
-        <h1><%= "#{@game.names[0]} used #{@game.move_list[0]} against #{@game.names[1]}'s #{@game.move_list[1]}"%></h1>
-        <br><br><br>
-    </div>
+        <br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
+    </div><br><br>
     <form class="moves"id="move"action="move"method="post">
       <div class="move_choice"align="center">
         <br>
@@ -76,6 +80,14 @@
         <br>
       </div>
       <input class="GO"type="submit"value="Go!">
+      <br><br><br><br>
     </form>
   </div>
+   <div data-video=XgUB3lF9IQA
+         data-autoplay="1"         
+         data-loop="0"             
+         id="youtube-audio">
+  </div>
+<script src="https://www.youtube.com/iframe_api" height="0px"></script>
+<script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script>
 </body>
