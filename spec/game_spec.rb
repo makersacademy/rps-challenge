@@ -8,7 +8,7 @@ describe Game do
     describe '#first_round' do
       it { expect(subject).to respond_to(:first_round) }
       it { expect(subject.first_round).to eq(true) }
-      it { expect { subject.make_move('Rock') }.to change {subject.first_round} }
+      it { expect { subject.make_move('Rock') }.to change { subject.first_round } }
     end
     describe '#no_args_instance_creation' do
       it { expect(subject).to respond_to(:no_args_instance_creation) }
