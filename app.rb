@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/pc'
  
 class RPS < Sinatra::Base
   enable :sessions
@@ -25,6 +26,7 @@ class RPS < Sinatra::Base
    
   get '/result' do
     @move = session[:move]
+    $computer = Computer.new
     erb :results
   end
    
