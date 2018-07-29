@@ -6,14 +6,14 @@
   <body>
     <div class='menu-container'>
       <div class='menu'>
-        <div class='welcome'><h1>Now for <%= @game.player_2.name %>'s turn!</h1></div>
-        <div><p>Let's play Rock, Paper, Scissors!</p></div> 
+        <div class='welcome'><h1><%= @game.winner.name %> wins! </h1></div>
+        <div><p>Winning at Rock, Paper, Scissors!</p></div> 
       </div>
     </div>
     <div class = "form-container">
-      <div><h2>Computer is thinking.......</h2></div>
+      <div><h2>Shall we play again?.......</h2></div>
       <div class="form">
-        <form action="/result" method='post'>
+        <form action="/" >
         
         <input type="submit" value="OK">
         </form>
@@ -28,7 +28,13 @@
         <% else %>
           <div class='player1'><img src='images/scissors.png'/></div>
         <% end %> 
-        <div class='RPS_logo'></div>
+        <% if @game.winner == player_1 %>
+          <div class='RPS_logo'><img src='images/player_1_wins.png'/></div>
+        <% elsif @game.winner == player_2 %>
+          <div class='RPS_logo'><img src='images/player_2_wins.png'/></div>
+        <% else %>
+          <div class='RPS_logo'>It's a draw</div>
+        <% end %> 
         <div class='player2'><img src='images/question_mark.png'/></div>
       </div>
     </div>

@@ -38,6 +38,15 @@ class RPS < Sinatra::Base
     erb(:next)
   end
 
+  post '/result' do
+    @game.player_2.random_attack
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb(:result)
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
