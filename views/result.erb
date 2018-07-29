@@ -17,9 +17,13 @@
     <div class = "form-container">
       <div><h2>Shall we play again?.......</h2></div>
       <div class="form">
+        <form action="/play_again" method='post' >
+        <input type="submit" value="Replay">
+        </form>
+      </div>
+      <div class="form">
         <form action="/" >
-        
-        <input type="submit" value="OK">
+        <input type="submit" value="Quit">
         </form>
       </div>
     </div>
@@ -39,7 +43,13 @@
         <% else %>
           <div class='RPS_logo'><img src='images/draw.png'/></div>
         <% end %> 
-        <div class='player2'><img src='images/question_mark.png'/></div>
+        <% if @game.player_2.choice == 'rock' %>
+          <div class='player2'><img src='images/rock.png'/></div>
+        <% elsif @game.player_2.choice == 'paper' %>
+          <div class='player2'><img src='images/paper.png'/></div>
+        <% else %>
+          <div class='player2'><img src='images/scissors.png'/></div>
+        <% end %> 
       </div>
     </div>
     

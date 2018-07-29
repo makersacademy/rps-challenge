@@ -46,6 +46,13 @@ class RPS < Sinatra::Base
     erb(:result)
   end
 
+  post '/play_again' do
+    player_1 = Player.new(@game.player_1.name)
+    player_2 = Player.new(@game.player_2.name)
+    @game = Game.create(player_1, player_2)
+    redirect '/play'
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
