@@ -3,14 +3,20 @@
 </head>
 <style>
 .Page {
-  background-color: gold;
+  background-image: url("https://i1.wp.com/pulptastic.com/wp-content/uploads/2016/06/rock-paper-scissors.png?w=662");
   margin-left: 200px;
   margin-right: 200px;
+}
+  .Names {
+  background-image: url("https://media.giphy.com/media/CCrcZpwg2bmqk/giphy.gif");
+  margin-left: 500px;
+  margin-right: 500px;
+  border-style: outset;
 }
 .interface {
   margin-top: 50px;
   margin-bottom: 50px;
-  background-color: blue;
+  background-image: url("https://media.giphy.com/media/PL0xxGTliM3G8/giphy.gif");
 }
 .Title_head {
   color: blue;
@@ -54,8 +60,12 @@
     </div>
     <br><br>
     <form id="players" action="names" method="post">
-    <div>
+    <div class = "Names">
+      <br><br><br>
       <input class="name_field"type="entry"name="player_1_name">
+      <h2>Player 1</h2>
+      <input class="name_field"type="entry"name="player_2_name">
+      <h2>Player 2</h2>
     </div>
     <br><br><br>
       <div>

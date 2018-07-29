@@ -11,26 +11,42 @@ class RPS < Sinatra::Base
     @game = Game.instance # use games class method to return stored game instance
   end
 
+  # multi use methods for our two play links
+
+  def play_methods
+    @names = @game.names
+    @score = @game.score
+    @move = session[:move]
+    redirect('/winner') if @game.game_over
+  end
+
   get '/' do
     erb(:index)
   end
 
   post '/names' do
     @player_1 = params[:player_1_name]
-    @game = Game.create(Player, @player_1) # assign @game class variable to new game
-    redirect '/play'
+    @player_2 = params[:player_2_name]
+    @game = Game.create(Player, @player_1, @player_2) # assign @game class variable to new game
+    session[:playpage] = @game.num_players == 1 ? '/play-1p' : './play-2p'
+    redirect session[:playpage] # store link in session for use on redirects
   end
 
-  get '/play' do
-    @names = @game.names
-    @score = @game.score
+  get '/play-1p' do
+    play_methods
     erb(:play)
+  end
+
+  get '/play-2p' do
+    play_methods
+    erb(:play2p)
   end
 
   post '/move' do
     @move = params[:move]
+    redirect session[:playpage] if @move.nil?
     @game.make_move(@move)
-    redirect '/play'
+    redirect session[:playpage]
   end
 
   run! if app_file == $PROGRAM_NAME
