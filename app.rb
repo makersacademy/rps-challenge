@@ -43,9 +43,9 @@ class RPS < Sinatra::Base
   end
 
   post '/move' do
-    @move = params[:move]
-    redirect session[:playpage] if @move.nil?
-    @game.make_move(@move)
+    @move = @game.num_players == 1 ? params[:move] : [params[:p1_move], params[:p2_move]]
+    redirect session[:playpage] if @move.nil? # prevent crashing if no move
+    @game.num_players == 1 ? @game.make_move(@move) : @game.make_move(@move[0], @move[1]) 
     redirect session[:playpage]
   end
 
