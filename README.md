@@ -9,7 +9,7 @@
 
 ## How to use?
 
-Clone this repository, install gems in Gemfile, and run localhost:9292 in your browser.  
+Clone this repository, install gems in Gemfile, type 'rackup' in your terminal, and run localhost:9292 in your browser.  
 Have fun!
 
 
