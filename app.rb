@@ -34,7 +34,9 @@ class RPS < Sinatra::Base
   end
 
   get '/winner' do
-    @winner = @game.players[@game.score.index(5)]
+    play_methods
+    @winner = @game.players[@game.score.index(5)].name
+    @loser = @game.players[@game.score.index(5) + 1].name
     erb(:winner)
   end
 
