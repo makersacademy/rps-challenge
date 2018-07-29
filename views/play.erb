@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Rock-Paper-Scissors-Spock-Lizard</title>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  </head>
+  <body>
+    <p class="headline centered white_text"><%= @game.player1.name %> vs. <%= @game.player2.name %></p>
+    <p class="title centered tan_text">Choose your move!</p>
+    <div class="centered div3 margintop">
+      <form action="/result" method="post">
+        <div class="fivecol">
+          <button class="brown" type="submit" name="attack_choice" value="rock">Rock</button>
+          <i class="play_icon brown_text fas fa-hand-rock"></i>
+        </div>
+        <div class="fivecol">
+          <button class="white" type="submit" name="attack_choice" value="paper">Paper</button>
+          <i class="play_icon white_text fas fa-hand-paper"></i>
+        </div>
+        <div class="fivecol">
+          <button class="blue" type="submit" name="attack_choice" value="scissors">Scissors</button>
+          <i class="play_icon blue_text fas fa-hand-scissors"></i>
+        </div>
+        <div class="fivecol">
+          <button class="tan" type="submit" name="attack_choice" value="spock">Spock</button>
+          <i class="play_icon tan_text fas fa-hand-spock"></i>
+        </div>
+        <div class="fivecol">
+          <button class="purple" type="submit" name="attack_choice" value="lizard">Lizard</button>
+          <i class="play_icon purple_text fas fa-hand-lizard"></i>
+        </div>
+      </form>
+    </div>
+    <div class="centered atbottom linkcontainer">
+      <form class="link" action="/rules">
+        <button class="blue_text linkbutton" type="submit">Need to know the rules?</button>
+      </form>
+      <!-- <a class="blue_text" href"#{url '/rules'}">Need to know the rules?</a> -->
+    </div>
+  </body>
+</html>

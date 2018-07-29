@@ -1,3 +1,6 @@
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+require 'features/web_helpers.rb'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
@@ -16,3 +19,9 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+ENV['RACK_ENV'] = 'test'
+
+# require Sinatra app file
+
+Capybara.app = Rpssl
