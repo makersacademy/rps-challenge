@@ -1,0 +1,8 @@
+require './lib/game.rb'
+require './lib/player.rb'
+game = Game.new(Player.new('Moxie'),Player.new('computer'))
+game.player_1.attack_type('rock')
+game.player_1.choice
+game.player_2.random_attack
+game.player_2.choice
+game.winner

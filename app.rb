@@ -29,12 +29,11 @@ class RPS < Sinatra::Base
   end
 
   post '/next' do
-    session[:player_1_choice] = params[:attack_type]
+    @game.player_1.attack_type(params[:attack_type])
     redirect '/next'
   end
 
   get '/next' do
-    @player_1_choice = session[:player_1_choice]
     erb(:next)
   end
 

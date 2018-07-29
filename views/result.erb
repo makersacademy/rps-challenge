@@ -6,8 +6,12 @@
   <body>
     <div class='menu-container'>
       <div class='menu'>
-        <div class='welcome'><h1><%= @game.winner.name %> wins! </h1></div>
-        <div><p>Winning at Rock, Paper, Scissors!</p></div> 
+        <% if @game.draw? %>
+          <div class='welcome'><h1>No-one wins, its a draw! </h1></div>
+        <% else %>
+          <div class='welcome'><h1><%= @game.winner.name %> wins! </h1></div>
+        <% end %>
+        <div><p><%= @game.player_2.name %> chose <%= @game.player_2.choice %></p></div> 
       </div>
     </div>
     <div class = "form-container">
@@ -21,16 +25,16 @@
     </div>
     <div class='header-container'>
       <div class='header'>
-        <% if @player_1_choice == 'rock' %>
+        <% if @game.player_1.choice == 'rock' %>
           <div class='player1'><img src='images/rock.png'/></div>
-        <% elsif @player_1_choice == 'paper' %>
+        <% elsif @game.player_1.choice == 'paper' %>
           <div class='player1'><img src='images/paper.png'/></div>
         <% else %>
           <div class='player1'><img src='images/scissors.png'/></div>
         <% end %> 
-        <% if @game.winner == player_1 %>
+        <% if @game.winner == @game.player_1 %>
           <div class='RPS_logo'><img src='images/player_1_wins.png'/></div>
-        <% elsif @game.winner == player_2 %>
+        <% elsif @game.winner == @game.player_2 %>
           <div class='RPS_logo'><img src='images/player_2_wins.png'/></div>
         <% else %>
           <div class='RPS_logo'>It's a draw</div>

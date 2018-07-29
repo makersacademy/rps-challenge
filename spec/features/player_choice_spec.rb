@@ -2,7 +2,7 @@
 # As player 1 I would like to make a choice of R,P,S
 
 feature 'Choose move' do
-  context 'submitting rock, paper or scissors' do
+  context 'player 1 submitting rock, paper or scissors' do
     scenario 'selects rock' do
       visit('/')
       sign_in_and_play

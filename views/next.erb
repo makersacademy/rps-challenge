@@ -21,9 +21,9 @@
     </div>
     <div class='header-container'>
       <div class='header'>
-        <% if @player_1_choice == 'rock' %>
+        <% if @game.player_1.choice == 'rock' %>
           <div class='player1'><img src='images/rock.png'/></div>
-        <% elsif @player_1_choice == 'paper' %>
+        <% elsif @game.player_1.choice == 'paper' %>
           <div class='player1'><img src='images/paper.png'/></div>
         <% else %>
           <div class='player1'><img src='images/scissors.png'/></div>
