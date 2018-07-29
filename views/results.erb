@@ -1,4 +1,5 @@
-<p> You chose <%= $player.move %>: </p>
+<p> <%= $player.name %> chose <%= $player.move %>: </p>
+
 <% if $player.move == "rock" %>
   <p>Rock on!</p>
 <% elsif $player.move == "paper" %>
@@ -10,5 +11,13 @@
 <p> Computer chose <%= $computer.pc_move %> </p>
 <br/>
 
+<% if $result.win? %>
+  <p>You rule supreme!</p>
+<% elsif $result.lose? %>
+  <p>Can&apos;t beat the machine</p>
+<% elsif $result.draw? %>
+  <p>It&apos;s a draw!</p>
+<% end %>
 
-<p> You rule supreme!</p>
+
+<a href='/play'>Play again</a>

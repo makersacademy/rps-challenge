@@ -78,3 +78,10 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 ```
+
+___________
+
+### Contributions:
+
+@sjmog
+@simone-smith

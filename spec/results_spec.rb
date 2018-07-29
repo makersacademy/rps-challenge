@@ -5,11 +5,27 @@ describe Results do
   let(:player) { double :player }
   let(:computer) { double :computer }
 
-  describe '#umpire' do
-    it 'calculates who won' do
+  describe '#win?' do
+    it 'player wins' do
       allow(computer).to receive(:pc_move).and_return("scissors")
       allow(player).to receive(:move).and_return("rock")
-      expect(results.umpire).to eq "Rock beats scissors: You rule supreme!"
+      expect(results.win?).to be true
+    end
+  end
+
+  describe '#lose?' do
+    it 'player loses' do
+      allow(computer).to receive(:pc_move).and_return("scissors")
+      allow(player).to receive(:move).and_return("paper")
+      expect(results.lose?).to be true
+    end
+  end
+
+  describe '#draw?' do
+    it 'player draws' do
+      allow(computer).to receive(:pc_move).and_return("scissors")
+      allow(player).to receive(:move).and_return("scissors")
+      expect(results.draw?).to be true
     end
   end
 end

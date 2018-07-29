@@ -4,7 +4,6 @@ require './lib/pc'
 require './lib/results'
  
 class RPS < Sinatra::Base
-  enable :sessions
   
   get '/' do
     erb :index
@@ -27,8 +26,10 @@ class RPS < Sinatra::Base
   end
    
   get '/result' do
-    # @move = session[:move]
+    @player = $player
     $computer = Computer.new
+    @computer = $computer.pc_move
+    $result = Results.new(@player, @computer)
     erb :results
   end
    
