@@ -1,31 +1,33 @@
 require 'sinatra/base'
+require './lib/player'
 require './lib/pc'
+require './lib/results'
  
 class RPS < Sinatra::Base
   enable :sessions
   
   get '/' do
-    # "Let's play RPS!"
     erb :index
   end
 
   post '/register' do # register name
-    session[:player] = params[:player]
+    $player = Player.new(params[:player])
     redirect '/play'
   end
    
-  get '/play' do # return name
-    @player = session[:player]
+  get '/play' do # return name and play
+    @player = $player
     erb :play
   end
 
   post '/result' do
-    session[:move] = params[:move]
+    @player = $player
+    @player.move = params[:move]
     redirect '/result'
   end
    
   get '/result' do
-    @move = session[:move]
+    # @move = session[:move]
     $computer = Computer.new
     erb :results
   end

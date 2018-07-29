@@ -1,12 +1,14 @@
-# <p> You chose <%= @move %> </p>
-<% if @move == "rock" %>
+<p> You chose <%= $player.move %>: </p>
+<% if $player.move == "rock" %>
   <p>Rock on!</p>
-<% elsif @move == "paper" %>
-  <p>Origami skills</p>
+<% elsif $player.move == "paper" %>
+  <p>Origami skills!</p>
 <% else %>
-  <p>Sharp choice</p>
+  <p>Sharp choice!</p>
 <% end %>
 
 <p> Computer chose <%= $computer.pc_move %> </p>
 <br/>
+
+
 <p> You rule supreme!</p>

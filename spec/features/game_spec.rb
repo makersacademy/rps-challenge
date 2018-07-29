@@ -10,13 +10,13 @@ feature 'Play RPS:' do
     sign_in_and_play
     choose(option: "paper")
     click_button 'OK'
-    expect(page).to have_content 'Origami skills'
+    expect(page).to have_content 'Origami skills!'
   end
 
   scenario 'human chooses scissors' do
     sign_in_and_play
     choose(option: "scissors")
     click_button 'OK'
-    expect(page).to have_content 'Sharp choice'
+    expect(page).to have_content 'Sharp choice!'
   end
 end
