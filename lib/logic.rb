@@ -1,9 +1,5 @@
-class Logic < Sinatra::Base
-    enable :sessions
-    def self.find_winner 
-    p1 = session[:player_1_choice]
-    p2 = session[:player_2_choice]
-    
+#perhaps move this into it's own class, but works for this project. 
+def find_winner(p1,p2)
     if p1 == p2 then winner = "it's a draw"
     elsif p1 == "rock"
       p2 == "scissors" ? 
@@ -14,5 +10,5 @@ class Logic < Sinatra::Base
       p2 == "paper" ? winner = "You win" : winner = "You lose"
       end 
   end 
-end 
+
 
