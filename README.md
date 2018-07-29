@@ -30,9 +30,14 @@ Demo of Web App
 
 ![Stage 3 - See move and watch the computer think](https://github.com/Whatapalaver/rps-challenge/blob/master/public/images/RPS_Stage3.png)
 
-Stage 4 - winner declared
+
+![Stage 4 - It's a draw](https://github.com/Whatapalaver/rps-challenge/blob/master/public/images/RPS_Stage4.png)
 
 
+![Stage 5 - Player 1 Wins!](https://github.com/Whatapalaver/rps-challenge/blob/master/public/images/RPS_Stage5.png)
+
+
+![Stage 6 - Computer wins!](https://github.com/Whatapalaver/rps-challenge/blob/master/public/images/RPS_Stage6.png)
 
 Task
 ----
