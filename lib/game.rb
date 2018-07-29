@@ -21,4 +21,18 @@ class Game
     @players.last
   end
 
+  private
+
+  def outcome
+    return :win if player_1_wins?
+    return :draw if @player_1.attack_type == @player_1.attack_type
+    return :lose
+  end
+
+  def player_1_wins?
+    @player_1.attack_type == "rock" && @player_2.attack_type == "scissors" ||
+    @player_1.attack_type == "paper" && @player_2.attack_type == "rock" ||
+    @player_1.attack_type == "scissors" && @player_2.attack_type == "paper"
+  end
+
 end

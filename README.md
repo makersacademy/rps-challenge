@@ -21,7 +21,18 @@ How to Use
 
 Demo of Web App
 ---------------
-Pics to follow.....  
+
+![Stage 1 - Enter player name](https://github.com/Whatapalaver/rps-challenge/blob/master/public/images/RPS_Stage1.png)
+
+
+![Stage 2 - Select move](https://github.com/Whatapalaver/rps-challenge/blob/master/public/images/RPS_Stage2.png)
+
+
+![Stage 3 - See move and watch the computer think](https://github.com/Whatapalaver/rps-challenge/blob/master/public/images/RPS_Stage3.png)
+
+Stage 4 - winner declared
+
+
 
 Task
 ----
