@@ -1,0 +1,63 @@
+<head>
+  <title>Rock Paper Scissors</title>
+</head>
+<style>
+body {
+    background-image: url("https://gifimage.net/wp-content/uploads/2018/04/peter-griffin-knee-gif-2.gif")
+}
+.Page {
+  margin-left: 200px;
+  margin-right: 200px;
+  background-image: url("https://i.kym-cdn.com/photos/images/newsfeed/000/307/189/6fe.jpg");
+}
+.WinHead {
+ background-image: url("https://media1.tenor.com/images/95ff95189b1c9e902c429ca6a896a4df/tenor.gif?itemid=4715720");
+  border-style: dotted;
+  margin-left: 500px;
+  margin-right: 500px;
+  color: white;
+}
+.Victory {
+  margin-left: 395px;
+  margin-right: 395px;
+  color: white;
+  background-color: red;
+}
+.again {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background-color: green;
+  font-size: 25px;
+  color: red;
+}
+.center {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+</style>
+  <div class="WinHead"align="center">
+    <h1> Victory! </h1>
+    <h2> <%=@winner%> is the winner </h2>
+    <h2> The mighty <%=@loser%> has been defeated!</h2>
+    <h2> Final Score : <%=@score.join(' - ')%></h2>
+  </div>
+  <div class="Victory">
+  <image class="center"src="https://i.imgur.com/t8IHP.gif"align="center">
+    <image class="center"src="https://i.kym-cdn.com/photos/images/newsfeed/000/913/887/841.jpg"align="center">
+    <br><br><br><br>
+  <form action="/">
+    <input class="again"type="submit"value="New Game">
+  </form>
+  </div>
+   <div data-video=kTPNSmHBNl4
+         data-autoplay="1"         
+         data-loop="0"             
+         id="youtube-audio">
+  </div>
+<script src="https://www.youtube.com/iframe_api" height="0px"></script>
+<script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script>
+</body>
