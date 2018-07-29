@@ -4,6 +4,6 @@ feature 'Computer makes random move' do
     sign_in_and_play
     choose_rock
     click_button 'OK'
-    expect(page).to have_content('computer chose rock'|'computer chose paper'|'computer chose scissors')
+    expect(page).to have_content('computer chose')
   end
 end
