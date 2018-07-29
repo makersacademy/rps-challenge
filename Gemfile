@@ -8,6 +8,7 @@ gem 'shotgun'
 
 group :test do
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'rspec'
   gem 'rubocop', '0.56.0'
   gem 'simplecov', require: false
