@@ -13,17 +13,17 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    @player_1_name = params[:player_1_name]
+    @player_1 = Player.new(params[:player_1_name])
     erb :play
   end
 
   post '/next' do
-    $player_1_choice = params[:attack_type]
+    session[:player_1_choice] = params[:attack_type]
     redirect '/next'
   end
 
   get '/next' do
-    @player_1_choice = $player_1_choice
+    @player_1_choice = session[:player_1_choice]
     erb(:next)
   end
 
