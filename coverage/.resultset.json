@@ -22,8 +22,6 @@
         0,
         0,
         null,
-        0,
-        null,
         null,
         1,
         0,
@@ -31,8 +29,6 @@
         null,
         1,
         1,
-        1,
-        null,
         null,
         1,
         null
@@ -42,25 +38,27 @@
         1,
         1,
         1,
+        0,
+        0,
         null,
         null
       ],
       "/Users/timothyblanchard/Projects/Makers/rps-challenge/lib/logic.rb": [
         1,
         1,
-        1,
-        1,
+        0,
         null,
-        1,
         null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null
@@ -84,6 +82,6 @@
         null
       ]
     },
-    "timestamp": 1532804122
+    "timestamp": 1532880270
   }
 }
