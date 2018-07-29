@@ -10,7 +10,8 @@
 .interface {
   margin-top: 50px;
   margin-bottom: 50px;
-  background-color: blue;
+  background-image: url("https://media.comicbook.com/2018/07/john-cena-smackdown-return-1125058-1280x0.jpeg");
+  background-color: #cccccc;
 }
 .score {
   margin-right: 250px;
@@ -27,18 +28,41 @@
   padding: 30px;
   color: red;
   background-color: green;
-  border-radius: 90%;
+  border-radius: 90% ;
 }
+.move_choice {
+  background-image: url("https://media2.giphy.com/media/xTiTnoHt2NwerFMsCI/200.gif");
+  background-color: #cccccc;
+  flex: 1; 
+}
+.Radi {
+  color: red;
+  font-size: 25px;
+}
+
 </style>
 <body class="Page">
   <div class="interface"align="center">
     <div class="score">
       <br><br>
-      <h1 align="center">Score</h1>
-      <h2 align="center"> </h2>
+      <h1 align="center"><%=@score.join(' - ')%></h1>
+      <h2 align="center"> <%=@names.join(' Vs. ')%> </h2>
       <br><br>
     </div>
     <form class="moves"id="move"action="move"method="post">
+      <div class="move_choice"align="center">
+        <br>
+        <br>
+        <br>
+        <label class="Radi">
+        <input type="radio"value="Rock"name="move"id="Rock">Rock
+        <input type="radio"value="Paper"name="move"id="Paper">Paper
+        <input type="radio"value="Scissors"name="move"id="Scissors">Scissors
+        </label>
+        <br>
+        <br>
+        <br>
+      </div>
       <input class="GO"type="submit"value="Go!">
     </form>
   </div>

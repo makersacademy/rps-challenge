@@ -5,9 +5,10 @@ feature 'Name Entry' do
     expect(page).to have_field('player_1_name')
   end
   context 'Page 2 tests' do
-    before(:each) { click_button('Play!') }
+    before(:each) { sign_in_and_play }
     scenario 'Name is Displayed' do
       expect(page).to have_content('Jack')
+      expect(page).to have_content('Computer')
     end
   end
 end

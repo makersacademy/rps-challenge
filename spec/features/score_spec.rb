@@ -4,6 +4,7 @@ feature 'Game Score' do
     expect(page).to have_content('0 - 0')
   end
   scenario 'Score changes after 1st go' do
+    choose('Rock')
     click_button('Go!')
     expect(page).not_to have_content('0 - 0')
     expect(page).to have_content('1')

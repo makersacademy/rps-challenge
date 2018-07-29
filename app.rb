@@ -8,7 +8,7 @@ class RPS < Sinatra::Base
   set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
 
   before do
-    @game = Game.instance
+    @game = Game.instance # use games class method to return stored game instance
   end
 
   get '/' do
@@ -17,7 +17,7 @@ class RPS < Sinatra::Base
 
   post '/names' do
     @player_1 = params[:player_1_name]
-    @game = Game.create(Player, @player_1)
+    @game = Game.create(Player, @player_1) # assign @game class variable to new game
     redirect '/play'
   end
 
@@ -28,7 +28,8 @@ class RPS < Sinatra::Base
   end
 
   post '/move' do
-
+    @move = params[:move]
+    @game.make_move(@move)
     redirect '/play'
   end
 
