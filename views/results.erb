@@ -8,14 +8,14 @@
   <p>Sharp choice!</p>
 <% end %>
 
-<p> Computer chose <%= $computer.pc_move %> </p>
+<p> Computer chose <%= @computer %> </p>
 <br/>
 
-<% if $result.win? %>
+<% if $results.win? %>
   <p>You rule supreme!</p>
-<% elsif $result.lose? %>
+<% elsif $results.lose? %>
   <p>Can&apos;t beat the machine</p>
-<% elsif $result.draw? %>
+<% elsif $results.draw? %>
   <p>It&apos;s a draw!</p>
 <% end %>
 

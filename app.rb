@@ -4,6 +4,7 @@ require './lib/pc'
 require './lib/results'
  
 class RPS < Sinatra::Base
+  enable :sessions
   
   get '/' do
     erb :index
@@ -19,17 +20,17 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/result' do
+  post '/play' do # results are calculated and recorded
     @player = $player
     @player.move = params[:move]
     redirect '/result'
   end
    
-  get '/result' do
+  get '/result' do # results are returned
     @player = $player
-    $computer = Computer.new
-    @computer = $computer.pc_move
-    $result = Results.new(@player, @computer)
+    $computer = Computer.new.pc_move
+    @computer = $computer
+    $results = Results.new(@player, @computer)
     erb :results
   end
    

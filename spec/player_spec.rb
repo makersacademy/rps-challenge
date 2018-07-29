@@ -1,32 +1,9 @@
-# require 'player'
-
-# describe Player do
-#   subject(:player) { described_class.new }
-  
-#   describe 'move" do
-    
-#     it 'player selects rock' do
-#       allow(player).to receive(:move).and_return ("rock")
-#       expect(player.move).to eq "rock"  
-#     end
-
-#     it 'plays scissors' do
-#       allow(player).to receive(:move).and_return ("scissors")
-#       expect(player.move).to eq "scissors"  
-#     end
-
-#     it 'plays paper' do
-#       allow(player).to receive(:move).and_return ("paper")
-#       expect(player.move).to eq "paper"  
-#     end
-#   end
-# end
-
 require 'player'
  
 describe Player do
   subject(:player) { described_class.new }
-  describe '#choice' do
+  
+  describe 'choice' do
     
   it 'player selects rock' do
       allow(player).to receive(:move).and_return ("rock")
