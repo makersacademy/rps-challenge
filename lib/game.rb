@@ -1,10 +1,13 @@
 # game class
 class Game
 
-  attr_reader :score, :names, :players, :game_over, :num_players, :move_list
+  attr_reader :score, :names, :players, :game_over, :num_players, :move_list, :winner
 
-
-  WINNERS = [[:Scissors, :Paper], [:Paper, :Rock], [:Rock, :Scissors]]
+  WINNERS = [[:Scissors, :Paper], [:Paper, :Rock], [:Rock, :Scissors],
+             [:Rock, :Lizard], [:Lizard, :Spock], [:Spock, :Scissors],
+             [:Scissors, :Lizard], [:Lizard, :Paper], [:Paper, :Spock],
+             [:Spock, :Rock]                           
+            ]
   def self.instance
     @game
   end
@@ -22,6 +25,7 @@ class Game
   end
 
   def no_args_instance_creation 
+    @winner = nil
     @game_over = false
     @score = [0, 0] # score is made, index 0 = p1, 1 = p2
     @move_list = [] # for easy access to game values

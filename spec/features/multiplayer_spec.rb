@@ -12,14 +12,12 @@ feature 'Multiplayer' do
       within('div#p1_choice') { choose 'Rock' }
       within('div#p2_choice') { choose 'Rock' }
       click_button('Go!')
-      expect(page).to have_content('0 - 0')
       expect(page).to have_content("Jack used Rock against Durain's Rock")
     end
     scenario 'above works when someone wins' do
       within('div#p1_choice') { choose 'Rock' }
       within('div#p2_choice') { choose 'Scissors' }
       click_button('Go!')
-      expect(page).to have_content('1 - 0')
       expect(page).to have_content("Jack used Rock against Durain's Scissors")
     end
   end

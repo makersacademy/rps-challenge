@@ -31,7 +31,12 @@ describe Game do
       it { expect(subject.rand_choice).to be_a(String) }
     end
     describe '#WINNERS' do
-      it { expect(Game::WINNERS).to eq([[:Scissors, :Paper], [:Paper, :Rock], [:Rock, :Scissors]]) }
+      it { expect(Game::WINNERS).to eq([[:Scissors, :Paper], [:Paper, :Rock], [:Rock, :Scissors],
+                                        [:Rock, :Lizard], [:Lizard, :Spock], [:Spock, :Scissors],
+                                        [:Scissors, :Lizard], [:Lizard, :Paper], [:Paper, :Spock],
+                                        [:Spock, :Rock]                           
+                                       ]) 
+      }
     end
     describe '#num_players' do
       it { expect(subject).to respond_to(:num_players) }
@@ -72,6 +77,14 @@ describe Game do
         expect(subject.score).to eq([1, 0])
       end
     end
+    describe 'All other additional combos' do
+      it { expect(subject.move('Spock', 'Scissors')).to eq([1, 0]) }
+      it { expect(subject.move('Lizard', 'Paper')).to eq([1, 0]) }
+      it { expect(subject.move('Spock', 'Paper')).to eq([0, 1]) }
+      it { expect(subject.move('Lizard', 'Scissors')).to eq([0, 1]) }
+      it { expect(subject.move('Spock', 'Lizzard')).to eq([0, 1]) }
+      it { expect(subject.move('Lizzard', 'Rock')).to eq([0, 1]) }
+    end
     describe 'all draws work correctly' do
       it { expect(subject.move('Rock', 'Rock')).to eq([0, 0]) }
       it { expect(subject.move('Paper', 'Paper')).to eq([0, 0]) }
@@ -80,6 +93,8 @@ describe Game do
         subject.make_move('Rock', 'Rock')
         subject.make_move('Paper', 'Paper')
         subject.make_move('Scissors', 'Scissors')
+        subject.make_move('Spock', 'Spock')
+        subject.make_move('Lizard', 'Lizard')
         expect(subject.score).to eq([0, 0])
       end
     end
