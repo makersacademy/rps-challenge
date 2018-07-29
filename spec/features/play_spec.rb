@@ -1,4 +1,4 @@
-feature 'Play rock, paper, scissors' do
+feature 'Choose rock, paper, scissors' do
   before do
     visit('/')
     fill_in :player_name, with: 'Kirt'
@@ -11,9 +11,9 @@ feature 'Play rock, paper, scissors' do
     expect(page).to have_content 'Scissors'
   end
 
-  scenario 'can check rock, paper or scissors' do
-    expect(page).to have_selector("input[type=radio][value=rock]")
-    expect(page).to have_selector("input[type=radio][value=paper]")
-    expect(page).to have_selector("input[type=radio][value=scissors]")
+  scenario 'can choose rock, paper or scissors' do
+    expect(page).to have_selector("input[type=radio][value=Rock]")
+    expect(page).to have_selector("input[type=radio][value=Paper]")
+    expect(page).to have_selector("input[type=radio][value=Scissors]")
   end
 end
