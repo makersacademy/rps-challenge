@@ -9,14 +9,13 @@ class Game < Sinatra::Base
   end
 
   post '/names' do
-    $player_1 = Player.new(params[:player_1_name])
+     session[:player_1_name] = params[:player_1_name]
     redirect '/play'
   end
 
   post '/weapon' do
-    $player_1_choice = params[:choice]
-    $player_2_choice = ['rock', 'paper', 'scissors'].sample 
-
+    session[:player_1_choice] = params[:choice]
+    session[:player_2_choice] = ['rock', 'paper', 'scissors'].sample
     redirect '/result'
   end 
 
@@ -25,9 +24,7 @@ class Game < Sinatra::Base
   end 
   
   get '/play' do 
-    @player_1 = $player_1
     erb :play
   end 
-
   run! if app_file == $PROGRAM_NAME
 end

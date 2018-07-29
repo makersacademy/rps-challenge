@@ -1,9 +1,9 @@
 
-<h2> You chose: <%= $player_1_choice %> </h2> </br>
-<h2> Your opponent chose: <%= $player_2_choice %> <h2> 
+<h2> You chose: <%= session[:player_1_choice] %> </h2> </br>
+<h2> Your opponent chose: <%= session[:player_2_choice] %> <h2> 
 
-<% p1 = $player_1_choice
-  p2 = $player_2_choice  
+<% p1 = session[:player_1_choice]
+  p2 = session[:player_2_choice] 
   winner = ""
 
 
@@ -17,4 +17,4 @@
     p2 == "paper" ? winner = "You win" : winner = "You lose"
     end %>
 
-  <h1><%= winner %> </h1>
+  <h1> <%=winner %> </h1> 
