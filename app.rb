@@ -25,17 +25,17 @@ class RPS < Sinatra::Base
 
   get '/rock' do
     @game = Game.new("Rock")
-    erb(:rock)
+    erb(:result)
   end
 
   get '/paper' do
     @game = Game.new("Paper")
-    erb(:paper)
+    erb(:result)
   end
 
   get '/scissors' do
     @game = Game.new("Scissors")
-    erb(:scissors)
+    erb(:result)
   end
 
   run! if app_file == $0
