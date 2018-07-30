@@ -22,4 +22,11 @@ feature 'Choose rock, paper, scissors' do
     click_button 'Submit'
     expect(page).to have_content 'You selected Scissors'
   end
+
+  scenario 'play again' do
+    choose('Scissors')
+    click_button 'Submit'
+    click_button 'Play again?'
+    expect(page). to have_content 'Please select one of the following:'
+  end
 end
