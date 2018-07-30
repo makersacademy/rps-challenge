@@ -19,7 +19,7 @@ class Game < Sinatra::Base
   end 
 
   get '/result' do 
-  erb :result
+    erb :result
   end 
   
   get '/play' do 

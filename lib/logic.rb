@@ -1,5 +1,6 @@
 #perhaps move this into it's own class, but works for this project. 
-def find_winner(p1,p2)
+class Logic 
+  def self.find_winner(p1,p2)
     if p1 == p2 then winner = "it's a draw"
     elsif p1 == "rock"
       p2 == "scissors" ? 
@@ -10,5 +11,4 @@ def find_winner(p1,p2)
       p2 == "paper" ? winner = "You win" : winner = "You lose"
       end 
   end 
-
-
+end 
