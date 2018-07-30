@@ -7,12 +7,17 @@ feature 'play rps game' do
   before do
     visit('/')
     fill_in :player_name, with:'Kirt'
-    click_button 'Submit'
+    click_button ('Submit')
   end
   # the marketeer will be presented the choices (rock, paper and scissors)
   scenario 'user can see the available options' do
-    expect(page).to have_content('Rock')
-    expect(page).to have_content('Paper')
-    expect(page).to have_content('Scissors')
+    expect(page).to have_button('Rock')
+    expect(page).to have_button('Paper')
+    expect(page).to have_button ('Scissors')
+  end
+  # the marketeer can choose one option
+  scenario 'user can choose one option' do
+    click_button ('Rock')
+    expect(page).to have_content("You chose Rock!")
   end
 end
