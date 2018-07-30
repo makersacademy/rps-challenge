@@ -1,0 +1,13 @@
+<h1> Welcome <%= session[:player_1_name] %></h1>
+<h2> Please enter your move: </h2>
+<div>
+<form action = "/weapon" method = "post">
+<select name="choice" id = "choice" name = "choice">
+    <option value="rock" label = "rock">Rock</option>
+    <option value="paper" label = "paper">Paper</option>
+    <option value="scissors" label = "scissors">Scissors</option>
+  </select>
+<input type = "submit" value = "select weapon">
+
+</form>
+</div>
