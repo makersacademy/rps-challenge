@@ -18,6 +18,7 @@ class Battle < Sinatra::Base
   get '/result' do
     @choice = params[:choice]
     @bot_choice = Bot.new.choice_rand
+    @outcome = Outcome.new(@choice, @bot_choice).winner
     erb :result
   end
 
