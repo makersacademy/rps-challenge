@@ -8,9 +8,7 @@ feature 'Lets a player decide' do
   end
 
   scenario 'to not play again when the game is over' do
-    visit('/')
-    fill_in :player_name, with: 'Daniel'
-    click_button 'Go!'
+    enter_name_and_play
     click_button "LET ME AT 'EM!"
     click_button 'Rock'
     click_button 'End'
