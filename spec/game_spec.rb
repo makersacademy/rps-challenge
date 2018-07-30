@@ -12,8 +12,15 @@ describe Game do
 
   describe '#cpu' do
     it 'should show CPUs play' do
-      allow(game).to receive(:cpu).and_return("rock")
-      expect(game.cpu).to eq "rock"
+      allow(game).to receive(:cpu).and_return("Rock")
+      expect(game.cpu).to eq "Rock"
+    end
+  end
+
+  describe '#result_message' do
+    it 'should declare the winner' do
+      allow(game).to receive(:cpu).and_return("Rock")
+      expect(game.result_message).to eq "IT WAS A DRAW"
     end
   end
 
