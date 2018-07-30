@@ -1,0 +1,10 @@
+<h2>Greetings <%= @player_name %>!</h2>
+Please select one of the following:
+<br/>
+<br/>
+<form action="/result" method="get">
+  <input type="radio" name="choice" value="Rock" id="Rock">Rock<br>
+  <input type="radio" name="choice" value="Paper" id="Paper">Paper<br>
+  <input type="radio" name="choice" value="Scissors" id="Scissors">Scissors<br>
+  <input type="submit" value="Submit">
+</form>
