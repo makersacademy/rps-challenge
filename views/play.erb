@@ -1,0 +1,9 @@
+Welcome to the game, <%= @player_name %> </br>
+
+Please choose which hand you would like to play.
+<form action="/results" method="get">
+  <input type="radio" name="choice" value="rock" id="rock">Rock<br>
+  <input type="radio" name="choice" value="paper" id="paper">Paper<br>
+  <input type="radio" name="choice" value="scissors" id="scissors">Scissors<br>
+  <input type="submit" value="Submit">
+</form>
