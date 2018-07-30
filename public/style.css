@@ -1,0 +1,36 @@
+
+   @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+   body {
+       
+       background-color: slategray;
+       background-image: url('http://paper5pc.com/rock-paper-scissors.html#gal_post_47338_rock-paper-scissors-wallpaper-1.jpg');
+   }
+
+   h1{
+
+       color: aliceblue; 
+       font-family: 'Open Sans';
+       font-size: 4.7em;
+       margin-left: 10%
+   }
+
+   h2{ 
+
+    color: aliceblue; 
+       font-family: 'Open Sans';
+       font-size: 3.7em;
+       margin-left: 10%; 
+   }
+
+   div{ 
+
+    margin-left: 10%; 
+   }
+label{ 
+    font-family: 'Open Sans';
+    font-size: 0.7em;
+    color: darkgrey; 
+
+
+}
