@@ -1,0 +1,159 @@
+/* body {
+  background-color: gray;
+  background-image: url("http://res.cloudinary.com/dani-devs-and-designs/image/upload/v1532890022/Samurai_Jack_r2iuyo.png");
+  background-size: 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+body {
+  background-color: #8f9d7c;
+  background-image: url("http://res.cloudinary.com/dani-devs-and-designs/image/upload/v1532905996/Samurai_Jek_pnqhmh.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 95%;
+}
+
+/* keeps page within screen boundaries */
+html,
+body {
+  height: 100%;
+  margin: 0px;
+  overflow-x: hidden;
+  padding: 0px;  
+  width: 100%;
+}
+
+h1, h2, h3, h4, .again {
+  display: flex;
+  font-family: 'Bangers', cursive; 
+  justify-content: center;
+}
+
+h2, h3 {
+  color: #F74F10;
+  font-size: 3em;
+  text-shadow: 6px 6px 12px #080808;
+}
+
+h1 {
+  color: #F74F10;
+  font-size: 4em;
+  text-shadow: 6px 6px 12px #080808;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h4 {  
+  font-size: 2em; 
+}
+
+.start {
+  padding: 4% 4% 0% 4%;  
+}
+
+.enter {
+  display: flex;
+  justify-content: center;
+}
+
+.text-field {
+  border: 1px solid;
+  border-radius: 4px;
+  height: 2em;
+  margin-bottom: 2em;
+  width: 15.4em;
+}
+
+.button {
+  border: 1px solid;
+  border-radius: 4px;
+  font-family: 'Kirang Haerang';
+  font-weight: bold;
+  font-size: 2em;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #F74F10; /* blood orange */
+  color: white;
+}
+
+.text-field:focus {
+  outline: 0;
+}
+
+.choice {
+  font-family: 'Roboto';
+}
+
+.ok {
+  border: 1px solid;
+  border-radius: 4px;
+  font-family: 'Bangers', cursive;';
+  font-weight: bold;
+  font-size: 2em;
+  margin: 10% 20% 0% 35%;
+  padding: 4%;
+  text-decoration: none !important;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.ok:hover {
+  background-color: #F74F10; /* blood orange */
+  color: white;
+}
+
+.hidden-radio {
+  position: absolute;
+  left: -9999em;
+}
+
+.hidden-radio + label,
+.hidden-radio + label + label {
+  cursor: pointer;
+  display: inline-block;
+  text-shadow: 0 0 0 rgba(0,0,0,0);
+  transition: transform 0.2s, color 0.2s, text-shadow 0.2s;
+}
+
+.hidden-radio + label {
+  margin-left: 10px;
+}
+
+.hidden-radio:first-child + label {
+  margin-left: 0;
+}
+
+.hidden-radio:checked + label,
+.hidden-radio:checked + label + label {
+  color: white;
+  transform: translateY(-8px);
+  text-shadow: 0 8px 0px rgba(0,0,0,0.1);
+}
+
+.again {
+  color: black;
+  font-size: 4em;
+  margin-bottom: 5%;
+  text-decoration: none !important;
+}
+
+/* responsive resizing */
+/* iPad Pro */
+@media only screen and (max-width: 1024px) {
+  h1 {
+    font-size: 3em;
+  }
+}
+
+/* mobile phone screens */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+}
