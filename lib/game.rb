@@ -6,6 +6,10 @@ class Game
     @cpu = ["Rock", "Paper", "Scissors"].sample
   end
 
+  # def self.play(decision)
+  #   @play
+  # end
+
   def result_message
     return "YOU WIN!" if you_win
     return "YOU LOSE!" if you_lose
