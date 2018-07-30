@@ -1,4 +1,5 @@
 class Game
+  attr_reader :player_choice, :bot_choice
 
   GAME = {
      "Rock" => { "Scissors" => :win, "Paper" => :lose },
@@ -6,16 +7,9 @@ class Game
      "Scissors" => { "Paper" => :win, "Rock" => :lose }
    }
 
-  def initialize(player = 'player')
-    @player = player
-  end
-
-  def player_choice
-    player.choice
-  end
-
-  def bot_choice
-    bot.choice
+  def initialize(player_choice, bot_choice)
+    @player_choice = player_choice
+    @bot_choice = bot_choice
   end
 
   def result

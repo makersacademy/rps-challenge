@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(:player) }
+  subject(:game) { described_class.new(:player_choice, :bot_choice) }
 
   describe '#result' do
 

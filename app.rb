@@ -23,14 +23,10 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  post '/hand' do
-    session[:choice] = params[:choice]
-    redirect ('/results')
-  end
-
   get '/results' do
-    # @player_choice = session[:choice]
+    @player_choice = params[:choice].capitalize
     @bot_choice = Bot.new.choice
+    @result = Game.new(@player_choice, @bot_choice).result
     erb(:results)
   end
 
