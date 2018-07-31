@@ -3,8 +3,6 @@ require './lib/player'
 require './lib/game'
 
 class RPS < Sinatra::Base
-  enable :sessions 
-  # keeps state during requests
 
   before do
     @game = Game.instance

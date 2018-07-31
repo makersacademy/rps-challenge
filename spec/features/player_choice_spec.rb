@@ -4,7 +4,6 @@
 feature 'Choose move' do
   context 'player 1 submitting rock, paper or scissors' do
     scenario 'selects rock' do
-      visit('/')
       sign_in_and_play
       choose_rock
       expect(page).not_to have_xpath("//img[contains(@src,'paper.png')]")
@@ -12,7 +11,6 @@ feature 'Choose move' do
       expect(page).to have_xpath("//img[contains(@src,'rock.png')]")
     end
     scenario 'selects paper' do
-      visit('/')
       sign_in_and_play
       choose_paper
       expect(page).not_to have_xpath("//img[contains(@src,'rock.png')]")
@@ -20,7 +18,6 @@ feature 'Choose move' do
       expect(page).to have_xpath("//img[contains(@src,'paper.png')]")
     end
     scenario 'selects scissors' do
-      visit('/')
       sign_in_and_play
       choose_scissors
       expect(page).not_to have_xpath("//img[contains(@src,'rock.png')]")
