@@ -14,6 +14,14 @@ describe Game do
     expect(game.player1).to eq player
   end
 
+  describe "#play_1_bot_match" do
+    it "calls make_choice on player1 and make_random_choice on player2" do
+      expect(game.player1).to receive(:make_choice)
+      expect(game.player2).to receive(:make_random_choice)
+      game.play_1_bot_match("rock")
+    end
+  end
+
   describe "#winner" do
     context "Rock smashes scissors" do
       it "Returns the the player if player wins" do

@@ -15,29 +15,65 @@ class Game
 
   attr_reader :player1, :player2
 
-  # This method looks at the indexes of player choices
-  # in relation to the CHOICES array in Player class
-  # You lose if your opponent's choice is to the right or 3 right of yours
-  # And you win if your opponent's choice is to the left or 3 left of yours
+  def play_1_bot_match(player1_choice)
+    @player1.make_choice(player1_choice)
+    @player2.make_random_choice
+  end
+
   def winner
-    p1_index = Player::CHOICES.index(@player1.choice)
-    p2_index = Player::CHOICES.index(@player2.choice)
-    return nil if p1_index == p2_index
-    return @player2 if ((p1_index + 1) % 5) == (p2_index % 5)
-    return @player2 if ((p1_index + 3) % 5) == (p2_index % 5)
-    @player1
+    return nil if tie_game?
+    return @player1 if player1_beats_player2?(@player1, @player2)
+    @player2
   end
 
   def loser
-    p1_index = Player::CHOICES.index(@player1.choice)
-    p2_index = Player::CHOICES.index(@player2.choice)
-    return nil if p1_index == p2_index
-    return @player1 if ((p1_index + 1) % 5) == (p2_index % 5)
-    return @player1 if ((p1_index + 3) % 5) == (p2_index % 5)
-    @player2
+    other_player(winner)
   end
 
   def tie_game?
     @player1.choice == @player2.choice
   end
+
+  def get_image(choice)
+    case choice
+    when "rock"
+      return '<i class="result_icon brown_text fas fa-hand-rock"></i>'
+    when "paper"
+      return '<i class="result_icon white_text fas fa-hand-paper"></i>'
+    when "scissors"
+      return '<i class="result_icon blue_text fas fa-hand-scissors"></i>'
+    when "spock"
+      return '<i class="result_icon tan_text fas fa-hand-spock"></i>'
+    when "lizard"
+      return '<i class="result_icon purple_text fas fa-hand-lizard"></i>'
+    end
+  end
+
+  private
+
+  def player1_beats_player2?(player1, player2)
+    case player1.choice
+    when "rock"
+      return true if ["scissors", "lizard"].include? player2.choice
+      false
+    when "paper"
+      return true if ["rock", "spock"].include? player2.choice
+      false
+    when "scissors"
+      return true if ["paper", "lizard"].include? player2.choice
+      false
+    when "spock"
+      return true if ["rock", "scissors"].include? player2.choice
+      false
+    when "lizard"
+      return true if ["paper", "spock"].include? player2.choice
+      false
+    end
+  end
+
+  def other_player(player)
+    return @player1 if player == @player2
+    return @player2 if player == @player1
+  end
+
 end

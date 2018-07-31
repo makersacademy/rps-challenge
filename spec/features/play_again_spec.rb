@@ -1,5 +1,5 @@
-feature "User can play again" do
-  context "At end of game, with a winner" do
+feature "User can click a button to play again or rematch" do
+  context "At the end of a game which was not a tie" do
     it "Redirects to play page with same player name" do
       allow(Kernel).to receive(:rand).and_return(2)
       sign_in_and_choose_rock
@@ -7,7 +7,7 @@ feature "User can play again" do
       expect(page).to have_content "Marek vs. Computer"
     end
   end
-  context "At end of game, which was a tie" do
+  context "At the end of a game which was a tie" do
     it "Redirects to play page with same player name" do
       allow(Kernel).to receive(:rand).and_return(0)
       sign_in_and_choose_rock

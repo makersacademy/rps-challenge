@@ -28,8 +28,7 @@ class Rpssl < Sinatra::Base
   end
 
   post '/result' do
-    @game.player1.make_choice(params[:attack_choice])
-    @game.player2.make_random_choice
+    @game.play_1_bot_match(params[:attack_choice])
     redirect '/result'
   end
 
