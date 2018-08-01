@@ -1,3 +1,5 @@
+require_relative "./displayer.rb"
+
 class Game
 
   def self.create(player1, player2 = Player.new("Computer"))
@@ -11,6 +13,7 @@ class Game
   def initialize(player1, player2 = Player.new("Computer"))
     @player1 = player1
     @player2 = player2
+    @displayer = Displayer.new
   end
 
   attr_reader :player1, :player2
@@ -35,53 +38,15 @@ class Game
   end
 
   def get_image(choice)
-    case choice
-    when "rock"
-      return '<i class="result_icon brown_text fas fa-hand-rock"></i>'
-    when "paper"
-      return '<i class="result_icon white_text fas fa-hand-paper"></i>'
-    when "scissors"
-      return '<i class="result_icon blue_text fas fa-hand-scissors"></i>'
-    when "spock"
-      return '<i class="result_icon tan_text fas fa-hand-spock"></i>'
-    when "lizard"
-      return '<i class="result_icon purple_text fas fa-hand-lizard"></i>'
-    end
+    @displayer.get_image(choice)
   end
 
   def get_result_string(winner_choice, loser_choice)
-    case winner_choice
-    when "rock"
-      if loser_choice == "scissors"
-        return "Rock smashes Scissors"
-      elsif loser_choice == "lizard"
-        return "Rock crushes Lizard"
-      end
-    when "paper"
-      if loser_choice == "rock"
-        return "Paper covers Rock"
-      elsif loser_choice == "spock"
-        return "Paper disproves Spock"
-      end
-    when "scissors"
-      if loser_choice == "paper"
-        return "Scissors cuts Paper"
-      elsif loser_choice == "lizard"
-        return "Scissors decapitates Lizard"
-      end
-    when "spock"
-      if loser_choice == "rock"
-        return "Spock vaporizes Rock"
-      elsif loser_choice == "scissors"
-        return "Spock bends Scissors"
-      end
-    when "lizard"
-      if loser_choice == "paper"
-        return "Lizard eats Paper"
-      elsif loser_choice == "spock"
-        return "Lizard poisons Spock"
-      end
-    end
+    @displayer.get_result_string(winner_choice, loser_choice)
+  end
+
+  def get_button(tie_or_winner)
+    @displayer.get_button(tie_or_winner)
   end
 
   private

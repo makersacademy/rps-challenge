@@ -30,18 +30,10 @@
         <% else %>
           <p class="centered title red_text"><%= @game.player2.name %> Wins!</p>
         <% end %>
-        <div class="centered div2">
-          <form action="/play_again" method="post">
-            <button class="white" type="submit">Play Again</button>
-          </form>
-        </div>
+        <%= ERB.new(@game.get_button("winner")).result %>
       <% elsif @game.tie_game? == true %>
         <p class="centered title white_text">It's a tie!</p>
-        <div class="centered div2">
-          <form action="/play_again" method="post">
-            <button class="white" type="submit">Rematch!</button>
-          </form>
-        </div>
+        <%= ERB.new(@game.get_button("tie")).result %>
       <% end %>
     </div>
   </body>

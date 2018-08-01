@@ -9,6 +9,7 @@ describe Game do
   let(:scissors_chooser) { double :player, choice: "scissors" }
   let(:spock_chooser)    { double :player, choice: "spock"    }
   let(:lizard_chooser)   { double :player, choice: "lizard"   }
+  let(:fake_displayer)   { double :display_instance }
 
   it "Knows it's player" do
     expect(game.player1).to eq player
@@ -139,13 +140,41 @@ describe Game do
   end
 
   describe "#tie_game?" do
-    it "returns true if the game was a tie" do
+    it "Returns true if the game was a tie" do
       game = Game.new(rock_chooser, rock_chooser)
       expect(game.tie_game?).to be true
     end
-    it "returns false if the game was not a tie" do
+    it "Returns false if the game was not a tie" do
       game = Game.new(rock_chooser, scissors_chooser)
       expect(game.tie_game?).to be false
+    end
+  end
+
+  context "Testing displaying" do
+
+    before do
+      game.instance_variable_set(:@displayer, fake_displayer)
+    end
+
+    describe "#get_image" do
+      it "Delegates getting of image to displayer instance" do
+        expect(fake_displayer).to receive(:get_image)
+        game.get_image("rock")
+      end
+    end
+
+    describe "#get_result_string" do
+      it "Delegates getting of result string to displayer instance" do
+        expect(fake_displayer).to receive(:get_result_string)
+        game.get_result_string("rock", "scissors")
+      end
+    end
+
+    describe "#get_button" do
+      it "Delegates getting of button to displayer instance" do
+        expect(fake_displayer).to receive(:get_button)
+        game.get_button("winner")
+      end
     end
   end
 
