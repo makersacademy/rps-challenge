@@ -49,6 +49,41 @@ class Game
     end
   end
 
+  def get_result_string(winner_choice, loser_choice)
+    case winner_choice
+    when "rock"
+      if loser_choice == "scissors"
+        return "Rock smashes Scissors"
+      elsif loser_choice == "lizard"
+        return "Rock crushes Lizard"
+      end
+    when "paper"
+      if loser_choice == "rock"
+        return "Paper covers Rock"
+      elsif loser_choice == "spock"
+        return "Paper disproves Spock"
+      end
+    when "scissors"
+      if loser_choice == "paper"
+        return "Scissors cuts Paper"
+      elsif loser_choice == "lizard"
+        return "Scissors decapitates Lizard"
+      end
+    when "spock"
+      if loser_choice == "rock"
+        return "Spock vaporizes Rock"
+      elsif loser_choice == "scissors"
+        return "Spock bends Scissors"
+      end
+    when "lizard"
+      if loser_choice == "paper"
+        return "Lizard eats Paper"
+      elsif loser_choice == "spock"
+        return "Lizard poisons Spock"
+      end
+    end
+  end
+
   private
 
   def player1_beats_player2?(player1, player2)
