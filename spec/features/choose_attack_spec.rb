@@ -1,5 +1,5 @@
 feature "Testing player choosing an attack" do
-  context "Player can choose rock, paper, or scissors and get cofirmation on screen" do
+  context "Player can choose rock, paper, or scissors and get confirmation on screen" do
     before do
       sign_in_and_play
     end

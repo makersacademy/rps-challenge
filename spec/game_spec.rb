@@ -16,7 +16,7 @@ describe Game do
   end
 
   describe "#play_1_bot_match" do
-    it "calls make_choice on player1 and make_random_choice on player2" do
+    it "Calls make_choice on player1 and make_random_choice on player2" do
       expect(game.player1).to receive(:make_choice)
       expect(game.player2).to receive(:make_random_choice)
       game.play_1_bot_match("rock")
