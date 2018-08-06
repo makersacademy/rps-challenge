@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+  <body>
+    <div class='menu-container'>
+      <div class='menu'>
+        <div class='welcome'><h1>Hello <%= @game.player_1.name %>!</h1></div>
+        <div><p>Let's play Rock, Paper, Scissors!</p></div> 
+      </div>
+    </div>
+    <div class = "form-container">
+      <div><h2>Choose Rock, Paper or Scissors</h2></div>
+      <div class="form">
+        <form action="/next" method ='post'>
+        <div class="radio-toolbar">
+          <input id="rock" name="attack_type" type="radio" value="rock" /> Rock<br />
+          <input id="paper" name="attack_type" type="radio" value="paper" /> Paper<br />
+          <input id="scissors" name="attack_type" type="radio" value="scissors" /> Scissors<br />
+        </div>
+        <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+    <div class='header-container'>
+      <div class='header'>
+        <div class='player1'><img src='images/question_mark.png'/></div>
+        <div class='RPS_logo'></div>
+        <div class='player2'></div>
+      </div>
+    </div>
+    
+  </body>
+</html>

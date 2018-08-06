@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+  <body>
+    <div class='menu-container'>
+      <div class='menu'>
+        <div class='welcome'><h1>Now for <%= @game.player_2.name %>'s turn!</h1></div>
+        <div><p>Let's play Rock, Paper, Scissors!</p></div> 
+      </div>
+    </div>
+    <div class = "form-container">
+      <div><h2>Computer is thinking.......</h2></div>
+      <div class="form">
+        <form action="/result" method='post'>
+        
+        <input type="submit" value="OK">
+        </form>
+      </div>
+    </div>
+    <div class='header-container'>
+      <div class='header'>
+        <% if @game.player_1.choice == 'rock' %>
+          <div class='player1'><img src='images/rock.png'/></div>
+        <% elsif @game.player_1.choice == 'paper' %>
+          <div class='player1'><img src='images/paper.png'/></div>
+        <% else %>
+          <div class='player1'><img src='images/scissors.png'/></div>
+        <% end %> 
+        <div class='RPS_logo'></div>
+        <div class='player2'><img src='images/question_mark.png'/></div>
+      </div>
+    </div>
+    
+  </body>
+</html>

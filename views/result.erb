@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+  <body>
+    <div class='menu-container'>
+      <div class='menu'>
+        <% if @game.draw? %>
+          <div class='welcome'><h1>No-one wins, its a draw! </h1></div>
+        <% else %>
+          <div class='welcome'><h1><%= @game.winner.name %> wins! </h1></div>
+        <% end %>
+        <div><p><%= @game.player_2.name %> chose <%= @game.player_2.choice %></p></div> 
+      </div>
+    </div>
+    <div class = "form-container">
+      <div><h2>Shall we play again?.......</h2></div>
+      <div class="form">
+        <form action="/play_again" method='post' >
+        <input type="submit" value="Replay">
+        </form>
+      </div>
+      <div class="form">
+        <form action="/" >
+        <input type="submit" value="Quit">
+        </form>
+      </div>
+    </div>
+    <div class='header-container'>
+      <div class='header'>
+        <% if @game.player_1.choice == 'rock' %>
+          <div class='player1'><img src='images/rock.png'/></div>
+        <% elsif @game.player_1.choice == 'paper' %>
+          <div class='player1'><img src='images/paper.png'/></div>
+        <% else %>
+          <div class='player1'><img src='images/scissors.png'/></div>
+        <% end %> 
+        <% if @game.winner == @game.player_1 %>
+          <div class='RPS_logo'><img src='images/player_1_wins.png'/></div>
+        <% elsif @game.winner == @game.player_2 %>
+          <div class='RPS_logo'><img src='images/player_2_wins.png'/></div>
+        <% else %>
+          <div class='RPS_logo'><img src='images/draw.png'/></div>
+        <% end %> 
+        <% if @game.player_2.choice == 'rock' %>
+          <div class='player2'><img src='images/rock.png'/></div>
+        <% elsif @game.player_2.choice == 'paper' %>
+          <div class='player2'><img src='images/paper.png'/></div>
+        <% else %>
+          <div class='player2'><img src='images/scissors.png'/></div>
+        <% end %> 
+      </div>
+    </div>
+    
+  </body>
+</html>

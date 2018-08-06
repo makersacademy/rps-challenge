@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu-container {
+  color: #fff;
+  background-color: #5995DA;  /* Blue */
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  width: 900px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.login {
+  margin-left: 20px;
+}
+
+.header-container {
+  color: #5995DA;
+  background-color: #D6E9FE;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.header {
+  width: 900px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.player1,
+.RPS_logo,
+.player2 {
+  
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 15px 0;
+}
+.form {
+  background-color: lightblue;
+  font-family: verdana;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding: 10px 0;
+  text-align: center;
+}
+
+.radio-toolbar {
+  display: inline-block;
+  background-color: lightblue;
+  padding: 8px 11px;
+  font-family: Verdana;
+  cursor: pointer;
+  text-align: left;
+  font-size: 12px;
+}
+
+body {
+  background-color: lightblue;
+  background-image: url("");
+  background-repeat: no-repeat, repeat;
+  background-position: center top;
+  font-family: Verdana;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+h2 {
+  color: purple;
+  text-align: center;
+  font-size: 18px;
+}
+
+p {
+  font-family: verdana;
+  text-align: center;
+}
+
+
+  
