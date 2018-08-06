@@ -1,8 +1,15 @@
 # RPS Challenge
 Background:
 -------
-This is the weekend challenge at the end of week 3 of the Makers coding bootcamp.
+This is the solo weekend challenge at the end of week 3 of the Makers coding bootcamp.
 Build a web app to allow an online player to challenge the computer to a game of Rock, Paper, Scissors.
+
+By the end of week 3 all Makers developers can:
+
+- Build a simple web app  
+- Follow an effective debugging process for web applications  
+- Explain the basics of how the web works (e.g. request/response, HTTP, HTML, CSS)  
+- Explain the MVC pattern  
 
 Progress Made:
 --------------
