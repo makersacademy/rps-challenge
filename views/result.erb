@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Result</title>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  </head>
+  <body>
+    <div style="height: 60vh">
+      <div class="column centered">
+        <p class="centered subtitle white_text"><%= @game.player1.name %> chose <%= @game.player1.choice %></p>
+        <div class="centered">
+          <%= ERB.new(@game.get_image(@game.player1.choice)).result %>
+        </div>
+      </div>
+      <div class="column centered">
+        <p class="centered subtitle white_text"><%= @game.player2.name %> chose <%= @game.player2.choice %></p>
+        <div class="centered">
+          <%= ERB.new(@game.get_image(@game.player2.choice)).result %>
+        </div>
+      </div>
+    </div>
+    <div class="centered" style="clear: both">
+      <% if @game.tie_game? == false %>
+        <p class="centered subtitle tan_text">
+          <%= @game.get_result_string(@game.winner.choice, @game.loser.choice) %>
+        </p>
+        <% if @game.winner == @game.player1 %>
+          <p class="centered title green_text"><%= @game.player1.name %> Wins!</p>
+        <% else %>
+          <p class="centered title red_text"><%= @game.player2.name %> Wins!</p>
+        <% end %>
+        <%= ERB.new(@game.get_button("winner")).result %>
+      <% elsif @game.tie_game? == true %>
+        <p class="centered title white_text">It's a tie!</p>
+        <%= ERB.new(@game.get_button("tie")).result %>
+      <% end %>
+    </div>
+  </body>
+</html>

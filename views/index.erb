@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Sign-in</title>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  </head>
+  <body>
+    <p class="centered headline white_text">Welcome to </br> Rock - Paper - Scissors - Lizard - Spock!</p>
+    <p class="centered title tan_text">Please enter your name to begin playing!</p>
+    <div class="centered div3">
+      <form action="/name" method = "post">
+        <label for="player_1" class="purple_text">Name:</label>
+        <input type="text" name="player_name">
+        <button type="submit" class="blue">Start Game</button>
+      </form>
+    </div>
+    <div class="banner">
+      <i class="index_icon brown_text fas fa-hand-rock"></i>
+      <i class="index_icon white_text fas fa-hand-paper"></i>
+      <i class="index_icon blue_text fas fa-hand-scissors"></i>
+      <i class="index_icon tan_text fas fa-hand-spock"></i>
+      <i class="index_icon purple_text fas fa-hand-lizard"></i>
+    </div
+  </body>
+</html>
