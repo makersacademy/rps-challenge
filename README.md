@@ -1,4 +1,5 @@
 # Rock-Paper-Scissors Challenge
+## <a href="https://mschmidt19.github.io/rps-challenge/" target="_blank">Check it out here!</a>
 
 ### Completed by Marek Schmidt
 #### See Instructions and User stories below
