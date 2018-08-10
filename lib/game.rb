@@ -1,14 +1,13 @@
 class Game
-  attr_reader :decision, :cpu
+  attr_reader :decision
 
   def initialize(decision)
     @decision = decision
-    @cpu = ["Rock", "Paper", "Scissors"].sample
   end
 
-  # def self.play(decision)
-  #   @play
-  # end
+  def cpu_weapon
+    ["Rock", "Paper", "Scissors"].sample
+  end
 
   def result_message
     return "YOU WIN!" if you_win
@@ -18,15 +17,15 @@ class Game
 
   private
   def you_win
-    (@decision == "Rock" && @cpu == "Scissors") ||
-    (@decision == "Scissors" && @cpu == "Paper") ||
-    (@decision == "Paper" && @cpu == "Rock")
+    (@decision == "Rock" && cpu_weapon == "Scissors") ||
+    (@decision == "Scissors" && cpu_weapon == "Paper") ||
+    (@decision == "Paper" && cpu_weapon == "Rock")
   end
 
   def you_lose
-    (@decision == "Rock" && @cpu == "Paper") ||
-    (@decision == "Scissors" && @cpu == "Rock") ||
-    (@decision == "Paper" && @cpu == "Scissors")
+    (@decision == "Rock" && cpu_weapon == "Paper") ||
+    (@decision == "Scissors" && cpu_weapon == "Rock") ||
+    (@decision == "Paper" && cpu_weapon == "Scissors")
   end
 
 end
