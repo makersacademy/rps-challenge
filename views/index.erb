@@ -1,7 +1,14 @@
 <h1>Hello</h1>
+<h2>Enter names & click 'Submit' to play</h2>
 
 <form action="/names" method="post">
-  <input type="text" name="player1_name">
-  <input type="text" name="player2_name">
+  <label for="player1_name">
+    Player 1:
+    <input type="text" name="player1_name">
+  </label>
+  <label for="player2_name">
+    Player 2:
+    <input type="text" name="player2_name">
+  </label>
   <input type="submit" value="Submit">
 </form>
