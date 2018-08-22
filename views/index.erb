@@ -1,14 +1,9 @@
 <h1>Hello</h1>
-<h2>Enter names & click 'Submit' to play</h2>
+<h2>One player or two? (Enter '1' or '2' and hit 'Submit')</h2>
 
-<form action="/names" method="post">
-  <label for="player1_name">
-    Player 1:
-    <input type="text" name="player1_name">
-  </label>
-  <label for="player2_name">
-    Player 2:
-    <input type="text" name="player2_name">
+<form action="/num_players" method="post">
+  <label for="num_players">
+    <input type="text" name="num_players">
   </label>
   <input type="submit" value="Submit">
 </form>
