@@ -13,9 +13,9 @@ class RPS < Sinatra::Base
     # click to start the game
   end
 
-  get '/game'
+  get '/game' do
 
-
+  end
 
 run! if app_file == $0
 

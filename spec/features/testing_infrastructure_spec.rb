@@ -9,6 +9,7 @@ feature 'name form' do
   scenario 'able to enter name in form' do
     visit('/')
     fill_in :player, with: 'samir'
+    # click_button 'Enter Game'
     expect(page).to have_content 'Welcome samir!'
   end
 end
