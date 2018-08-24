@@ -8,5 +8,20 @@
 
   <body>
     <h1> Hi <%= @game.name %> let's play!</h1><br>
+    <form action="/rock" method="post">
+      <div>
+        <input type="submit" value="Rock">
+      </div>
+    </form>
+    <form action="/paper" method="post">
+      <div>
+        <input type="submit" value="Paper">
+      </div>
+    </form>
+    <form action="/scissors" method="post">
+      <div>
+        <input type="submit" value="Scissors">
+      </div>
+    </form>
   </body>
 </html>

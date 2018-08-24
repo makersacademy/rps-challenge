@@ -14,4 +14,7 @@ class Game
     @name = name
   end
 
+  def play(move)
+  end
+
 end

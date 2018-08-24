@@ -18,4 +18,24 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
+  # could have a separate route for
+  # each button press
+  post '/rock' do
+    @game = Game.instance
+    @game.play('rock')
+    redirect '/play'
+  end
+
+  post '/paper' do
+    @game = Game.instance
+    @game.play('paper')
+    redirect '/play'
+  end
+
+  post '/scissors' do
+    @game = Game.instance
+    @game.play('scissors')
+    redirect '/play'
+  end
+
 end
