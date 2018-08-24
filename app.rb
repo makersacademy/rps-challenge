@@ -7,5 +7,16 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  post '/name' do
+    # see name in lights
+    # get params
+    # click to start the game
+  end
+
+  get '/game'
+
+
+
 run! if app_file == $0
+
 end
