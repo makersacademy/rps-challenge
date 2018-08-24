@@ -1,8 +1,12 @@
-<%= @player_name %> vs Computer <br>
+<%= @game.players.first.name %> vs Computer <br>
 <br>
 
-<form action="/game" method="post">
-  <button type="submit" id="choice" value="rock"> Rock </button>
-  <button type="submit" id="choice" value="paper"> Paper </button>
-  <button type="submit" id="choice" value="scissors"> Scissors </button>
+<form action="/play_game" method="post">
+  <button type="submit" name="choice" value="rock"> Rock </button>
+</form>
+<form action="/play_game" method="post">
+  <button type="submit" name="choice" value="paper"> Paper </button>
+</form>
+<form action="/play_game" method="post">
+  <button type="submit" name="choice" value="scissors"> Scissors </button>
 </form>

@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/player.rb'
+require './lib/computer_player.rb'
+require './lib/game.rb'
 
 class RPS_Game < Sinatra::Base
   enable :sessions
@@ -10,7 +13,6 @@ class RPS_Game < Sinatra::Base
   post '/num_players' do
     @num_players = params[:num_players]
     @num_players == '1' ? redirect('/one_player') : redirect('/two_players')
-    # erb(:num_players)
   end
 
   get '/one_player' do
@@ -22,17 +24,17 @@ class RPS_Game < Sinatra::Base
   end
 
   post '/play_one_player' do
-    @player_name = params[:player_name]
+    @game = Game.create(Player.new(params[:player_name]), ComputerPlayer.new)
     erb(:play_one_player)
   end
 
   post '/play_two_player' do
-    @player1_name = params[:player1_name]
-    @player2_name = params[:player2_name]
+    @game = Game.create(Player.new(params[:player1_name]), Player.new(params[:player2_name]))
     erb(:play_two_player)
   end
 
-  post '/game' do
-    erb(:game)
+  post '/play_game' do
+    @choice = params[:choice]
+    erb(:play_game)
   end
 end
