@@ -9,7 +9,8 @@ class RPS_Game < Sinatra::Base
 
   post '/num_players' do
     @num_players = params[:num_players]
-    erb(:num_players)
+    @num_players == '1' ? redirect('/one_player') : redirect('/two_players')
+    # erb(:num_players)
   end
 
   get '/one_player' do
@@ -29,5 +30,9 @@ class RPS_Game < Sinatra::Base
     @player1_name = params[:player1_name]
     @player2_name = params[:player2_name]
     erb(:play_two_player)
+  end
+
+  post '/game' do
+    erb(:game)
   end
 end
