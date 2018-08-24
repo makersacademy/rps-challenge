@@ -8,6 +8,7 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
+    
     redirect '/play'
   end
 
