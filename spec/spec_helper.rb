@@ -1,11 +1,12 @@
 ENV['RACK_ENV'] = 'test'
 
-require '/Users/mathou/Projects/rps-challenge/app.rb'
+require './app'
 require 'capybara'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'rspec'
+require_relative './features/web_helpers'
 
 Capybara.app = RPS
 

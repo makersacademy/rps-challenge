@@ -1,0 +1,11 @@
+<%= @player %> <br />
+<%= @player_choice %> <br />
+<%= @robot %>
+
+<% if @player_choice == @robot %>
+   "It's a draw"
+ <% elsif @game.player_wins %>
+   <%= @player %> wins!
+ <% else %>
+   <%= @player %> loses!
+ <% end %>
