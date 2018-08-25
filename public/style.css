@@ -1,0 +1,17 @@
+body {
+  background-color: #4D4337;
+}
+
+.content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#title {
+  border-bottom: 2px solid white
+}
+
+h1 {
+  color: white;
+  font-size: 4em
+}
