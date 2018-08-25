@@ -6,18 +6,8 @@ feature 'Enter name' do
 end
 
 feature 'Select Rock/Paper/Scissors' do
-  scenario "Player can select 'paper'" do
-    sign_in_and_play
-    click_link 'Paper' 
-  end
+  before { sign_in_and_play }
+  scenario { click_link 'Rock' }
+  scenario { click_link 'Paper' }
+  scenario { click_link 'Scissors' }
 end
-
-
-# As a marketeer
-# So that I can see my name in lights
-# I would like to register my name before playing an online game
-
-# As a marketeer
-# So that I can enjoy myself away from the daily grind
-# I would like to be able to play rock/paper/scissors
-

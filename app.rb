@@ -2,7 +2,6 @@ require 'sinatra/base'
 require_relative './lib/player'
 
 class RPS < Sinatra::Base
-
   enable :sessions
 
   get '/' do
@@ -20,5 +19,4 @@ class RPS < Sinatra::Base
   end
 
   run! if app_file == $0
-
 end
