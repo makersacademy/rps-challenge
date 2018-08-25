@@ -2,16 +2,17 @@
 Rock, Paper, Scissors 
 <h4> Format: </h4> Best of @game_type  <%# <% @game_type %>
 <br><br>
-
+------------------------------------
 <h2><%= @p1.name %> Vs. 
-<% if @p2_name %>
-<%= @p2_name %></h2>
+<% if @p2.name %>
+<%= @p2.name %></h2>
 <% else %> 
 <%= 'Rocky McRock Face'%>
 <% end  %></h2>
-
-<%# <h4> The current scores is: 
-<%= @p1 + ' ' + @p1.points ': ' @p2 + ' ' + @p2.points %> </h4>
+------------------------------------
+<h4><p>The current scores is: </h4>
+<p><%= @p1.name + ':' %> <%= @p1.points %><p> 
+<p><%= @p2.name + ':' %> <%= @p2.points %><p>
 
 <br>
 <h2> Make your choice </h2>
@@ -21,6 +22,6 @@ Rock, Paper, Scissors
 <input class="start_button" type="submit" value="SCISSORS">
 </form>
 
-<br><br><br>
+<br>
 <img src="https://media.giphy.com/media/E7ClVqqCl8bVS/giphy.gif" >
 <br>
