@@ -11,7 +11,7 @@ Best of @game_type
 <%= 'Rocky McRock Face'%>
 <% end  %></h2>
 <h4> The current scores is: </h4> 
-<%= @p1_name %>: 0  :  @p2_name: @p2.points
+<%= @p1_name + ': ' @p1.points %>  "Vs." <%= @p2_name + ': ' @p2.points %>
 <br><br>
 <h2> Make your choice </h2>
 <form action="/enter_dragon" method="post">
@@ -24,12 +24,6 @@ Best of @game_type
 <input class="start_button" type="submit" value="SCISSORS">
 </form>
 
-
-
-
-
-
-<br>
 <br><br><br>
 <img src="https://media.giphy.com/media/E7ClVqqCl8bVS/giphy.gif" >
 <br>

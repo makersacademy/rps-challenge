@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -14,13 +16,19 @@ class Rps < Sinatra::Base
     session[:p1_name] = params[:player_one]
     session[:p2_name] = params[:player_two]
     # $game = Game.new($p1, $p2)
-    redirect '/game_home'
+    redirect '/game_start'
+  end
+
+  get '/game_start' do
+    @p1_name = session[:p1_name]
+    @p2_name = session[:p2_name]
+    erb(:game_start)
   end
 
   get '/game_home' do
-    @p1_name = session[:p1_name]
-    @p2_name = session[:p2_name]
-    # @game = Game.new(@p1_name, @p2_name)
+    @p1 = Player.new(@p1_name)
+    @p2 = Player.new(@p2_name)
+    @game = Game.new(@p1, @p2)
     erb(:game_home)
   end
 
