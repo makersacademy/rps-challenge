@@ -12,11 +12,11 @@ feature "RPS Features" do
     expect(page).to have_content('Make your choice')
   end
 
-  scenario 'display current score' do
-    sign_in_and_play
-    click_on('Ready to RPS')
-    expect(page).to have_content('Mick : 0')
-  end
+  # scenario 'display current score' do
+  #   sign_in_and_play
+  #   click_on('Ready to RPS')
+  #   expect(page).to have_content('Mick : 0')
+  # end
 
   
 end

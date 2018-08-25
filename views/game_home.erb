@@ -1,26 +1,23 @@
 <h4> Game: </h4>
 Rock, Paper, Scissors 
-<h4> Format: </h4> 
-Best of @game_type
-<%# <% @game_type %>
-<br>
-<h2><p><%= @p1_name %> Vs. 
+<h4> Format: </h4> Best of @game_type  <%# <% @game_type %>
+<br><br>
+
+<h2><%= @p1_name %> Vs. 
 <% if @p2_name %>
 <%= @p2_name %></h2>
 <% else %> 
 <%= 'Rocky McRock Face'%>
 <% end  %></h2>
+
 <h4> The current scores is: </h4> 
-<%= @p1_name + ': ' @p1.points %>  "Vs." <%= @p2_name + ': ' @p2.points %>
+
+
 <br><br>
 <h2> Make your choice </h2>
 <form action="/enter_dragon" method="post">
 <input class="start_button" type="submit" value="ROCK">
-<%# </form> %>
-<%# <form action="/enter_dragon" method="post"> %>
 <input class="start_button" type="submit" value="PAPER">
-<%# </form> %>
-<%# <form action="/enter_dragon" method="post"> %>
 <input class="start_button" type="submit" value="SCISSORS">
 </form>
 

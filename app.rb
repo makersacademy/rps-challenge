@@ -26,14 +26,14 @@ class Rps < Sinatra::Base
   end
 
   get '/game_home' do
-    @p1 = Player.new(@p1_name)
-    @p2 = Player.new(@p2_name)
+    # name1 = @p1_name
+    # name2 = @p2_name
+    # @p1 = Player.new(name1)
+    # @p2 = Player.new(name2)
+    p1 = Player.new(@p1_name)
+    p2 = Player.new(@p2_name)
     @game = Game.new(@p1, @p2)
     erb(:game_home)
-  end
-
-  post '/game' do 
-    erb(:game)
   end
 
   get '/enter_dragon' do

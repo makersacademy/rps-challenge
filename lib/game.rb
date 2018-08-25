@@ -1,10 +1,10 @@
 class Game
   DEFAULT_OPPONENT = 'Rocky McRock Face'
-  attr_reader :player1, :player2
+  attr_reader :gamer1, :gamer2
 
   def initialize(player1, player2 = DEFAULT_OPPONENT)
-    @player1 = player1
-    @player2 = player2
+    @gamer1 = player1
+    @gamer2 = player2
   end
 
   # def attack
