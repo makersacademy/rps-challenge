@@ -7,20 +7,12 @@
   </head>
 
   <body>
-    <h1> Hi <%= @game.name %> let's play!</h1><br>
-    <form action="/rock" method="post">
+    <h1> Hi <%= @game.player1_name %> let's play!</h1><br>
+    <form action="/move" method="post">
       <div>
-        <input type="submit" value="Rock">
-      </div>
-    </form>
-    <form action="/paper" method="post">
-      <div>
-        <input type="submit" value="Paper">
-      </div>
-    </form>
-    <form action="/scissors" method="post">
-      <div>
-        <input type="submit" value="Scissors">
+        <button type="submit" name="action" value="rock">Rock</button>
+        <button type="submit" name="action" value="paper">Paper</button>
+        <button type="submit" name="action" value="scissors">Scissors</button>
       </div>
     </form>
   </body>

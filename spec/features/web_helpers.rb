@@ -1,6 +1,6 @@
-def enter_name_and_begin_game
+def begin_single_player_game
   visit('/')
-  click_button "Single player?"
+  click_button "single_player"
   fill_in :player_name, with: 'Dave'
   click_button "Submit"
 end

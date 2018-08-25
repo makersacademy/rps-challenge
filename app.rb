@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/game.rb'
+require_relative './lib/player.rb'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -8,7 +9,15 @@ class Rps < Sinatra::Base
     erb(:index)
   end
 
-  post '/singleplayer' do
+  post '/players' do
+    case params[:action]
+    when "single_player"
+      @game = Game.create(1)
+      @number_players = 1
+    when "multiplayer"
+      @game = Game.create(2)
+      @number_players = 2
+    end
     erb(:enter_name)
   end
 
@@ -17,7 +26,8 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    @game = Game.create(params[:player_name])
+    @game = Game.instance
+    @game.add_name(params[:player_name])
     redirect '/play'
   end
 
@@ -26,21 +36,13 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
-  post '/rock' do
+  post '/move' do
     @game = Game.instance
-    @game.play('Rock')
-    redirect '/winner'
-  end
-
-  post '/paper' do
-    @game = Game.instance
-    @game.play('Paper')
-    redirect '/winner'
-  end
-
-  post '/scissors' do
-    @game = Game.instance
-    @game.play('Scissors')
+    case params[:action]
+    when 'rock' then @game.play('Rock')
+    when 'paper' then @game.play('Paper')
+    when 'scissors' then @game.play('Scissors')
+    end
     redirect '/winner'
   end
 
