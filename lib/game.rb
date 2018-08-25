@@ -1,10 +1,10 @@
 class Game
 
-  attr_reader :player_move
+  attr_reader :player_move, :computer_move
 
   def initialize (player_move)
     @player_move = player_move
-    # @computer_move = ['ROCK','PAPER','SCISSORS'].sample
+    @computer_move = ['ROCK','PAPER','SCISSORS'].sample
   end
 
 end
