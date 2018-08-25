@@ -1,7 +1,5 @@
 feature "RPS Features" do
 
-  context 'One player game' do
-
   scenario 'players can enter & see names on screen' do
     sign_in_and_play
     expect(page).to have_content('Mick')
@@ -20,6 +18,5 @@ feature "RPS Features" do
     expect(page).to have_content('Mick : 0')
   end
 
-  end
   
 end

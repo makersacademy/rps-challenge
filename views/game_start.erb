@@ -1,11 +1,11 @@
 <%# <link rel="stylesheet" href="battlegame.css" type="text/css" /> %>
 <h3> RPS is a game of hand-brain coordination, tactics, strategy, luck, chance, nerves & suggestive eye-contact. </h3>
 <br>  <br>
-This contest is...
+Today's match will be between...
 <%# # Insert 'best of one' 'best of three' or 'best of five' buttons %>
-<h2><p><%= @p1_name %></h2> Vs. 
+<h2><p><%= @p1_name %> and  
 <% if @p2_name %>
-<h2> <%= @p2_name %></h2>
+<h2> <%= @p2_name %>
 <% else %> 
 <h2> <%= 'Rocky McRock Face'%></h2> 
 <% end  %>
