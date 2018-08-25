@@ -2,7 +2,6 @@ require_relative 'scores'
 
 class Game
   attr_reader :players, :scorer
-  
   def initialize(player1, player2, scorer=Scores.new)
     @players = [player1, player2]
     @scorer = scorer
