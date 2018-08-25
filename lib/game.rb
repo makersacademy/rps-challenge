@@ -1,20 +1,14 @@
 class Game
 
-  attr_reader :player_name, :computer_name, :player_move, :computer_move
+  attr_reader :player, :computer
 
-  def initialize (player_name = 'Player', computer_name = 'COMPUTER')
-    @player_name = player_name
-    @computer_name = computer_name
-    @player_move = nil
-    @computer_move = nil
+  def initialize (player, computer)
+    @player = player
+    @computer = computer
   end
 
-  def player_move_set(move)
-    @player_move = move
-  end
-
-  def self.create(player_name)
-    @game = Game.new(player_name)
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
   end
 
   def self.instance
