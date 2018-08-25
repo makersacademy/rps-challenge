@@ -1,17 +1,13 @@
 feature 'Enter name' do
   scenario 'can enter name' do
-    visit('/')
-    fill_in :player_name, with: 'Josh'
-    click_on 'Submit'
+    sign_in_and_play
     expect(page).to have_content 'Hi Josh!'
   end
 end
 
 feature 'Select Rock/Paper/Scissors' do
   scenario "Player can select 'paper'" do
-    visit('/')
-    fill_in :player_name, with: 'Josh'
-    click_on 'Submit'
+    sign_in_and_play
     click_link 'Paper' 
   end
 end
