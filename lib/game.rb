@@ -18,7 +18,7 @@ class Game
 
   def save_name(name1, name2 = nil)
     @players.first.save_name(name1)
-    !name2 ? @players.last.save_name('Computer') : @players.last.save_name(name2)
+    !name2 ? @players.last.save_name('Rival') : @players.last.save_name(name2)
   end
 
   def save_move(move, player_number)
