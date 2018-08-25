@@ -6,6 +6,10 @@ feature "RPS Features" do
     # expect(page).to have_content('Keith')
   end
 
-  scenario ''
+  scenario 'player presented with rps options' do 
+    sign_in_and_play
+    click_on('Ready to RPS')
+    expect(page).to have_content('Make your choice')
+  end
 
 end
