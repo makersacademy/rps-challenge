@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
 
-    subject(:game) { described_class.new }
+    subject(:game) { Game.new }
 
   describe '#computer_move' do
     it 'records ROCK as @computer_move' do
