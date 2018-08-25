@@ -28,14 +28,13 @@ class Rps < Sinatra::Base
     erb(:game)
   end
 
-  get '/enter_dragon'
+  get '/enter_dragon' do
     visualise player choice 
     generate selection on behalf of machine
     show machine selection
     show who won
     add point to winner score tally
   end 
-
 
 
 end
