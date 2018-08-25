@@ -24,12 +24,13 @@ class RockPaperScissors < Sinatra::Base
     player_choice = params[:choice]
     @game = $game
     @game.player01.choose(player_choice)
+    @game.player02.choose
     redirect "/battle"
   end
 
   get "/battle" do
     @game = $game
-
+    p @game.outcome
     erb :battle
   end
 

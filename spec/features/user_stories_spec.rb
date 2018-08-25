@@ -28,10 +28,10 @@ feature "User stories" do
   end
 
   feature "compare players choice to opponent's choice" do
-    scenario "player wins: they choose 'rock', opponent chooses 'scissors'" do
+    scenario "player finds out if they won or lost" do
       enter_name_and_play
       click_button "Rock"
-      expect(page).to have_content("Success! Rock beats scissors")
+      expect(page).to have_content("You win!" || "You lose!" || "It's a draw!")
     end
   end
 

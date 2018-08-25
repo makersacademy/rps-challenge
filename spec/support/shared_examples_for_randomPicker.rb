@@ -6,7 +6,7 @@ shared_examples_for RandomPicker do
 
   describe "#random_choice" do
     it "will randomly pick a weapon" do
-      srand(332)
+      srand(2000)
       expect(picker.random_choice).to eq("Scissors")
     end
   end

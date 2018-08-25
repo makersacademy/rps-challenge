@@ -20,7 +20,8 @@ describe Player do
     end
 
     it "will choose a random weapon if no argument is supplied" do
-      expect(player.choose).to eq("Scissors")
+      srand(3445)
+      expect(player.choose).to eq("Scissors" || "Paper" || "Rock")
     end
   end
 

@@ -1,1 +1,17 @@
-<h1>Success! Rock beats scissors</h1>
+<div>
+  <h3> <%= @game.player01.name %> <h3>
+  <h4> <%= @game.player01.weapon %> </h4>
+</div>
+
+<div> 
+  <h3> vs </h3> 
+</div>
+
+<div>
+  <h3> <%= @game.player02.name %> </h3>
+  <h4> <%= @game.player02.weapon %> </h4>
+</div>
+  
+<div>
+  <p> <%= @game.outcome %> </p>
+</div>
