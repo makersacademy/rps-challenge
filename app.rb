@@ -30,7 +30,6 @@ class RockPaperScissors < Sinatra::Base
 
   get "/battle" do
     @game = $game
-    p @game.outcome
     erb :battle
   end
 

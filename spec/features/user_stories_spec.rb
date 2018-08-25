@@ -31,8 +31,17 @@ feature "User stories" do
     scenario "player finds out if they won or lost" do
       enter_name_and_play
       click_button "Rock"
-      expect(page).to have_content("You win!" || "You lose!" || "It's a draw!")
+      expect(page).to have_content("You win!").or have_content("You lose!").or have_content("It's a draw!")
     end
   end
+
+  feature "player can choose to play again" do
+    scenario "carry on playing" do
+      enter_name_and_play
+      click_button "Rock"
+      click_link "Play again"
+      expect(page).to have_content("Choose your weapon:")
+    end
+  end 
 
 end
