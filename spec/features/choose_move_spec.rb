@@ -4,6 +4,6 @@ feature 'Entering move' do
     fill_in :player_name, with: "Jimmy"
     click_button 'Submit'
     click_button 'ROCK'
-    expect(page).to have_content 'You selected ROCK'
+    expect(page).to have_content 'Jimmy selected ROCK'
   end
 end

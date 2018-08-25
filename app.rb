@@ -8,13 +8,16 @@ class Rps < Sinatra::Base
   end
 
   post '/enter_name' do
-    @player_name = params[:player_name]
+    @game = Game.create(params[:player_name])
+    @player_name = @game.player_name
     erb :play
   end
 
   post '/play' do
-    @player_move = params[:player_move]
-    game = Game.new(@player_move)
+    @game = Game.instance
+    @game.player_move_set(params[:player_move])
+    @player_name = @game.player_name
+    @player_move = @game.player_move
     erb :game_result
   end
 
