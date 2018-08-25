@@ -20,11 +20,22 @@ class Rps < Sinatra::Base
   get '/game_home' do
     @p1_name = session[:p1_name]
     @p2_name = session[:p2_name]
+    # @game = Game.new(@p1_name, @p2_name)
     erb(:game_home)
   end
 
   post '/game' do 
     erb(:game)
   end
+
+  get '/enter_dragon'
+    visualise player choice 
+    generate selection on behalf of machine
+    show machine selection
+    show who won
+    add point to winner score tally
+  end 
+
+
 
 end
