@@ -1,6 +1,6 @@
 # RPS Challenge - Pokemon Battle!
 
-![pokeball](./public/images/pokeball.png)
+![pokeball](./public/images/pokeball.png =50x50)
 
 Instructions
 -------
