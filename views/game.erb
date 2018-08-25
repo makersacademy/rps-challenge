@@ -1,7 +1,20 @@
-<h2> Welcome to gaming nirvana... </h2>
+<%# <link rel="stylesheet" href="battlegame.css" type="text/css" /> %>
+<h3> RPS is a game of hand-brain coordination, tactics, luck, nerves & suggestive eye-contact </h3>
+<br>  <br>
+This contest is...
+<%# # Insert 'best of one' 'best of three' or 'best of five' buttons %>
+<h2><p><%= @p1_name %></h2> Vs. 
+<% if @p2_name %>
+<h2> <%= @p2_name %></h2>
+<% else %> 
+<h2> <%= 'Rocky McRock Face'%></h2> 
+<% end  %>
+<br><br>
+<%# Select the type of match you would like to play %>
+Click the button to play
+<br> <br>
+<form action="/play" method="post">
+<input class="start_button" type="submit" value="Ready to RPS"></h1>
+</form>
 <br>
-<Br>
-<h3><p><%= 'Player 1: ' + @p1_name %></p> </h3>
-Vs. 
-<h3> <p><%= 'Player 2: ' + @p2_name %></p> </h3>
-<br>
+<img src="https://media.giphy.com/media/7MezEc0TOaMlW/giphy.gif" >

@@ -14,7 +14,6 @@ class Rps < Sinatra::Base
     session[:p1_name] = params[:player_one]
     session[:p2_name] = params[:player_two]
     # $game = Game.new($p1, $p2)
-    # redirect '/coin_toss'
     redirect '/game'
   end
 
