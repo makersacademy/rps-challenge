@@ -1,10 +1,10 @@
 require './lib/player'
 
 describe Player do
+  let(:player) { Player.new("Moe Syzslak") }
 
-  describe "initialization" do
+  describe "#new" do
     it "will take a name as an argument" do
-      player = Player.new("Moe Syzslak")
       expect(player.name).to eq("Moe Syzslak")
     end
 
@@ -13,5 +13,15 @@ describe Player do
       expect(player_no_name.name).to eq("The Computer")
     end
   end
-  
+
+  describe "#choose" do
+    it "will save the player's choice" do
+      expect(player.choose("Rock")).to eq("Rock")
+    end
+
+    it "will choose a random weapon if no argument is supplied" do
+      expect(player.choose).to eq("Scissors")
+    end
+  end
+
 end

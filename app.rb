@@ -1,4 +1,6 @@
 require "sinatra/base"
+require "./lib/game"
+require "./lib/player"
 
 class RockPaperScissors < Sinatra::Base
   
@@ -7,13 +9,28 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/begin" do
-    $name = params[:name]
+    player_name = params[:name]
+    $game = Game.new(Player.new(player_name), Player.new)
     redirect "/choose"
   end
 
   get "/choose" do
-    @name = $name
+    @game = $game
+    
     erb :choose
+  end
+
+  post "/picked" do
+    player_choice = params[:choice]
+    @game = $game
+    @game.player01.choose(player_choice)
+    redirect "/battle"
+  end
+
+  get "/battle" do
+    @game = $game
+
+    erb :battle
   end
 
   run! if app_file == $0
