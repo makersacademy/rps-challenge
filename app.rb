@@ -19,4 +19,10 @@ class RPS < Sinatra::Base
     erb(:play_rps)
   end
 
+  post '/move' do
+    @move = params[:move]
+    # game = Game.new(@move)
+    erb(:result)
+  end
+
 end
