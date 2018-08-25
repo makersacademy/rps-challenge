@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/game'
 
 class Rps < Sinatra::Base
 
@@ -12,7 +13,8 @@ class Rps < Sinatra::Base
   end
 
   post '/play' do
-    @move = params[:player_move]
+    @player_move = params[:player_move]
+    game = Game.new(@player_move)
     erb :game_result
   end
 
