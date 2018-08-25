@@ -1,58 +1,52 @@
 require 'game'
 
 describe Game do
-  let(:player) { double :double }
-  let(:player_class) { double :double, new: player }
+  let(:player) { double :player, save_move: "" }
+  let(:player_class) { double :player_class, new: player }
 
   context 'Single player' do
     let(:subject) { described_class.new(1, player_class) }
 
-    describe '#add_name' do
-      it 'passes the given name to the Player object' do
-        expect(player).to receive(:add_name).with('Dave')
-        subject.add_name('Dave')
+    describe '#save_name' do
+      it 'saves name to Player object' do
+        expect(player).to receive(:save_name).with('Dave')
+        expect(player).to receive(:save_name).with('Computer')
+        subject.save_name('Dave')
       end
     end
 
-    describe '#play' do
-      it { is_expected.to respond_to(:play).with(1).argument }
-
-      it 'passes the move to the Player object' do
-        expect(player).to receive(:record_move).with('Paper')
-        subject.play('Paper')
+    describe '#save_move' do
+      it 'saves move to Player object' do
+        srand(0) # send 'Rock' to player 2 (Computer)
+        expect(player).to receive(:save_move).with('Rock').twice
+        subject.save_move('Rock', 1)
       end
+    end
 
-      context 'after the move has been passed to the Player object' do
+    describe '#determine_winner' do
+      context 'Given random move always returns "Rock"' do
+
         before do
-          allow(player).to receive(:record_move).with('Rock')
-        end
-
-        it 'calls method #random_move' do
-          expect(subject).to receive(:random_move)
-          subject.play('Rock')
-        end
-
-        it 'returns a random move into instance variable @computer_move' do
           srand(0)
-          subject.play('Rock')
-          expect(subject.computer_move).to eq 'Rock'
+          subject.save_move('Paper', 1)
         end
 
         it 'returns \'It\'s a draw!\' if the moves are the same' do
-          srand(0)
-          subject.play('Rock')
+          allow(player).to receive(:move).and_return('Rock')
+          subject.determine_winner
           expect(subject.result).to eq "It's a draw!"
         end
 
         it 'returns \'You\'re a winner baby!\' if the player wins' do
-          srand(5)
-          subject.play('Rock')
+          allow(player).to receive(:move).and_return('Paper')
+          allow(player).to receive(:move).and_return('Rock')
+          subject.determine_winner
           expect(subject.result).to eq "You're a winner baby!"
         end
 
         it 'returns \'You lose!\' if the player loses' do
-          srand(1)
-          subject.play('Rock')
+          allow(player).to receive(:move).and_return('Scissors')
+          subject.determine_winner
           expect(subject.result).to eq "You lose!"
         end
       end
@@ -64,11 +58,13 @@ describe Game do
 
     describe '#add_name' do
       it 'Passes names to the two Player objects' do
-        expect(player).to receive(:add_name).with('Dave')
-        expect(player).to receive(:add_name).with('Ben')
-        subject.add_name('Dave', 'Ben')
+        expect(player).to receive(:save_name).with('Dave')
+        expect(player).to receive(:save_name).with('Ben')
+        subject.save_name('Dave', 'Ben')
       end
     end
+
+    describe ''
 
   end
 

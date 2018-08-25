@@ -1,12 +1,12 @@
 class Player
 
-  attr_accessor :name, :move
+  attr_reader :name, :move
 
-  def add_name(name)
+  def save_name(name)
     @name = name
   end
 
-  def record_move(move)
+  def save_move(move)
     @move = move
   end
 

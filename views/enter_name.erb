@@ -8,14 +8,17 @@
 
   <body>
     <h1>Rock, Paper, Scissors</h1><br>
-    <h2>Enter your name:</h2><br>
+    <% if @game.number_of_players == 1 %>
+      <h2>Enter your name:</h2><br>
+    <% else %>
+      <h2>Enter your names:</h2><br>
+    <% end %>
     <form action="/name" method="post">
-
-        <input type="text" name="player_name">
+        <input type="text" name="player1_name">
+        <% if @game.number_of_players == 2 %>
+          <input type="text" name="player2_name">
+        <% end %>
         <input type="submit" value="Submit">
-              <% if true %>
-              true
-      <% end %>
     </form>
   </body>
 </html>
