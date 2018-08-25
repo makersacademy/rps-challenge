@@ -11,13 +11,13 @@ class RPS < Sinatra::Base
 
   post '/name' do
     session[:player] = params[:player]
-    $game = Game.new(@player_choice, @robot)
-    @game = $game
-    session[:random_robot] = @game.robot
     redirect '/play'
   end
 
   get '/play' do
+    $game = Game.new(@player, @robot)
+    @game = $game
+    session[:random_robot] = @game.robot
     @player = session[:player]
     erb :play
   end
