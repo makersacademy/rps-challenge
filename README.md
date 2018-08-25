@@ -1,24 +1,50 @@
 # RPS Challenge - Pokemon Battle!
 
-<img src="./public/images/pokeball.png" width="100" height="100" />
+<p align="center"><img src="./public/images/pokeball.png" width="100" height="100" /></p>
 
-Instructions
+Tags: OOP, TDD, Ruby, HTML, CSS, Sinatra, MVC, RSpec, Capybara, Mocks/Doubles, Dependency Injection
+
+
+What can you do?
 -------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Take a break from work and battle some basic Pokemon:
+<p align="center"><img src="./public/images/charmander.png" width="100" height="100" /><img src="./public/images/bulbasaur.png" width="100" height="100" /><img src="./public/images/squirtle.png" width="100" height="100" /></p>
 
-Task
+In the style of rock, paper, scissors you can battle Pokemon either:
+* in a single-player mode against the computer, or
+* together with a friend
+
+Go forth and enjoy!
+
+
+Model
+-----
+
+The web-app is built using Sinatra web server using a simple MVC architecture:
+
+<pre>
+Controller & Router (app.rb)  
+          |  
+          |<----------> Model (game.rb --> player.rb)  
+          |  
+          |
+          |<----------> View (HTML with embedded Ruby)
+                          |
+                          |
+                          |<---------------> CSS (to add styling on your browser)
+
+</pre>   
+
+The Ruby classes are based on the principle of single responsibility - only the Game class is instantiated in the Controller, and the Game class delegates player-related information to the Player class.
+
+The program was built test-first using Capybara and RSpec. Capybara allowed the user stories to be feature-tested. As with all good OOP testing, the classes are tested in isolation using dependency injection. All randomness is stubbed to ensure consistency of test results.
+
+
+User Stories
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+The game was built from these basic user stories. I updated the theme so I could practice my HTML/CSS with some interesting fonts and images.
 
 ```sh
 As a marketeer
@@ -34,3 +60,8 @@ So that I can enjoy myself with my colleagues
 I would like to be able to battle basic Pokemon with 1 other person
 ```
 
+...
+
+_We hope to see you again soon_
+
+...
