@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player.rb'
 require './lib/computer_player.rb'
 require './lib/game.rb'
+require './lib/scores.rb'
 
 class RPS_Game < Sinatra::Base
   enable :sessions
@@ -34,6 +35,8 @@ class RPS_Game < Sinatra::Base
   end
 
   post '/play_game' do
+    @score = Scores.new
+    @cp = ComputerPlayer.new.make_choice
     @choice = params[:choice]
     erb(:play_game)
   end

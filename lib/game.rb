@@ -1,7 +1,11 @@
+require_relative 'scores'
+
 class Game
-  attr_reader :players
-  def initialize(player1, player2)
+  attr_reader :players, :scorer
+  
+  def initialize(player1, player2, scorer=Scores.new)
     @players = [player1, player2]
+    @scorer = scorer
   end
 
   def self.create(player1, player2)
