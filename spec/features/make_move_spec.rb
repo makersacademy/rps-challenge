@@ -7,4 +7,3 @@ feature 'make move and see result' do
     expect(page).to have_content "Computer move"
   end
 end
-
