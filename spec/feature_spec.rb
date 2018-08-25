@@ -11,13 +11,21 @@ feature 'Select Rock/Paper/Scissors' do
     click_on 'Rock' 
     expect(page).to have_content 'You picked Rock!'
   }
-  scenario { click_on 'Paper' }
-  scenario { click_on 'Scissors' }
+  scenario { 
+    click_on 'Paper' 
+    expect(page).to have_content 'You picked Paper!'
+  }
+  scenario { 
+    click_on 'Scissors' 
+    expect(page).to have_content 'You picked Scissors!'
+  }
 end
 
-# feature 'Game has a winner' do
-#   scenario 'Player selects rock and computer selects paper' do
-#     sign_in_and_play
-#     click_link 'Rock'
-#   end
-# end
+feature 'Game winner' do
+  before { sign_in_and_play }
+  scenario 'Game has winner' do
+    click_on 'Scissors' 
+    click_link 'Go!'
+    expect(page).to have_content 'Game Over'
+  end
+end

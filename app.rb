@@ -21,7 +21,18 @@ class RPS < Sinatra::Base
   post '/select' do
     @player = $player
     @player.selection = params[:player_selection]
-    erb :select
+    redirect '/battle'
+  end
+
+  get '/battle' do
+    @player = $player
+    erb :battle
+  end
+
+  get '/result' do
+    @player = $player
+    @player2 = Player.new
+    erb :result
   end
 
   run! if app_file == $0
