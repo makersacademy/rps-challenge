@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- defining our character set and title -->
+    <meta charset="utf-8">
+    <title>RPS Winner</title>
+  </head>
+
+  <body>
+    <p><%= @game.name %> you chose <%= @game.player_move %></p><br>
+    <p>The computer chose <%= @game.computer_move %></p><br>
+    <p><%= @game.result %></p><br>
+
+    <form action="/play">
+        <input type="submit" value="Play again?">
+    </form>
+
+    <form action="/">
+        <input type="submit" value="Restart?">
+    </form>
+  </body>
+</html>

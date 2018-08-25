@@ -7,12 +7,13 @@
   </head>
 
   <body>
-    <h1>Enter your name to begin the game</h1><br>
-    <form action="/name" method="post">
-      <div>
-        <input type="text" name="player_name">
-        <input type="submit" value="Submit">
-      </div>
+    <h1>Rock, Paper, Scissors</h1><br>
+    <h2>Choose how you want to play:</h2><br>
+    <form action="/singleplayer" method="post">
+      <input type="submit" value="Single player?">
+    </form>
+    <form action="/multiplayer" method="post">
+      <input type="submit" value="Multiplayer?">
     </form>
   </body>
 </html>

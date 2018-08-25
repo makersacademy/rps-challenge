@@ -8,6 +8,14 @@ class Rps < Sinatra::Base
     erb(:index)
   end
 
+  post '/singleplayer' do
+    erb(:enter_name)
+  end
+
+  post '/multiplayer' do
+    erb(:enter_two_names)
+  end
+
   post '/name' do
     @game = Game.create(params[:player_name])
     redirect '/play'
@@ -18,24 +26,27 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
-  # could have a separate route for
-  # each button press
   post '/rock' do
     @game = Game.instance
-    @game.play('rock')
-    redirect '/play'
+    @game.play('Rock')
+    redirect '/winner'
   end
 
   post '/paper' do
     @game = Game.instance
-    @game.play('paper')
-    redirect '/play'
+    @game.play('Paper')
+    redirect '/winner'
   end
 
   post '/scissors' do
     @game = Game.instance
-    @game.play('scissors')
-    redirect '/play'
+    @game.play('Scissors')
+    redirect '/winner'
+  end
+
+  get '/winner' do
+    @game = Game.instance
+    erb(:winner)
   end
 
 end
