@@ -7,10 +7,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/begin" do
+    $name = params[:name]
     redirect "/choose"
   end
 
   get "/choose" do
+    @name = $name
     erb :choose
   end
 
