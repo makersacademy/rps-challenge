@@ -3,7 +3,7 @@ Rock, Paper, Scissors
 <h4> Format: </h4> Best of @game_type  <%# <% @game_type %>
 <br><br>
 
-<h2><%= @p1_name %> Vs. 
+<h2><%= @p1.name %> Vs. 
 <% if @p2_name %>
 <%= @p2_name %></h2>
 <% else %> 
@@ -12,7 +12,6 @@ Rock, Paper, Scissors
 
 <%# <h4> The current scores is: 
 <%= @p1 + ' ' + @p1.points ': ' @p2 + ' ' + @p2.points %> </h4>
-
 
 <br>
 <h2> Make your choice </h2>
