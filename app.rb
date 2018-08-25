@@ -39,12 +39,10 @@ class Rps < Sinatra::Base
     when 'fire' then @game.save_move('Charmander', @game.move_counter)
     end
 
-    if @game.number_of_players == 1
-      redirect '/winner'
-    else
-      redirect '/play' if @game.move_counter == 2
-      redirect '/winner'
+    if @game.number_of_players == 2 && @game.move_counter == 2
+      redirect '/play'
     end
+    redirect 'winner'
   end
 
   get '/winner' do

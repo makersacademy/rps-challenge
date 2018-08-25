@@ -10,15 +10,15 @@ class Game
     @game
   end
 
-  def initialize(number_of_players, player_1 = Player.new, player_2 = Player.new)
+  def initialize(number_of_players, p_1 = Player.new, p_2 = Player.new)
     @number_of_players = number_of_players
-    @players = [player_1, player_2]
+    @players = [p_1, p_2]
     @move_counter = 1
   end
 
   def save_name(name1, name2 = nil)
     @players.first.save_name(name1)
-    name2 == nil ? @players.last.save_name('Computer') : @players.last.save_name(name2)
+    !name2 ? @players.last.save_name('Computer') : @players.last.save_name(name2)
   end
 
   def save_move(move, player_number)
