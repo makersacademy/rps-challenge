@@ -4,32 +4,33 @@ require "./lib/player"
 
 class RockPaperScissors < Sinatra::Base
   
+  before do
+    @game = Game.instance
+  end
+
   get "/" do
     erb :index
   end
 
   post "/begin" do
-    player_name = params[:name]
-    $game = Game.new(Player.new(player_name), Player.new)
+    player01 = Player.new(params[:name])
+    player02 = Player.new
+    @game = Game.create(player01, player02)
     redirect "/choose"
   end
 
   get "/choose" do
-    @game = $game
-    
     erb :choose
   end
 
   post "/picked" do
     player_choice = params[:choice]
-    @game = $game
     @game.player01.choose(player_choice)
     @game.player02.choose
     redirect "/battle"
   end
 
   get "/battle" do
-    @game = $game
     erb :battle
   end
 
