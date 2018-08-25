@@ -1,1 +1,14 @@
-<%= @player_name %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Play</title>
+</head>
+
+<body>
+  <%= @player_name %>
+
+  <form action="/play-rps" method="get">
+    <input type="submit" value="Play Rock, Paper, Scissors">
+  </form>
+
+</body>
