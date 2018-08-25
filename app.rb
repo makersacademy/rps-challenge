@@ -13,7 +13,6 @@ class Rps < Sinatra::Base
     computer = Player.new('COMPUTER')
     @game = Game.create(player, computer)
     @player_name = @game.player.name
-    # @player_name = @game.player_name
     erb :play
   end
 
@@ -23,8 +22,14 @@ class Rps < Sinatra::Base
     @computer_move = @game.computer.set_move
     @player_name = @game.player.name
     @computer_name = @game.computer.name
-    # @game.result
+    @result = @game.result([@player_move, @computer_move])
     erb :game_result
+  end
+
+  get '/replay' do
+    @game = Game.instance
+    @player_name = @game.player.name
+    erb :play
   end
 
   run! if app_file == $0

@@ -1,2 +1,9 @@
 <%= @player_name %> selected <%= @player_move %></br>
-<%= @computer_name %> selected <%= @computer_move %>
+<%= @computer_name %> selected <%= @computer_move %></br>
+<%= @result %>
+<form action="/replay">
+  <button type="submit">PLAY AGAIN</button>
+</form>
+<form action="/">
+  <button type="submit">RESTART</button>
+</form>
