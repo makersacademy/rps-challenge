@@ -1,7 +1,12 @@
-<%= @player %> is our challenger!
+<head>
+  <link rel="stylesheet" type="text/css" href="rps.css">
+  <link href="https://fonts.googleapis.com/css?family=Muli|Roboto" rel="stylesheet">
+</head>
+
+<div class="text"><span class="contestant"><%= @player %></span> is our challenger!</div>
 
  <form action="/game" method="post">
-  <input type="submit" name= "choice" value="Rock">
-  <input type="submit" name= "choice" value="Paper">
-  <input type="submit" name= "choice" value="Scissors">
-</form> 
+  <input class="button" type="submit" name= "choice" value="rock">
+  <input class="button" type="submit" name= "choice" value="paper">
+  <input class="button" type="submit" name= "choice" value="scissors">
+</form>

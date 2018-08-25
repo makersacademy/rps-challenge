@@ -4,7 +4,7 @@ class Game
 
   def initialize(player, robot)
     @player = player
-    @robot = ['Rock', 'Paper', 'Scissors'].sample
+    @robot = ['rock', 'paper', 'scissors'].sample
   end
 
   def player_wins

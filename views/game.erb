@@ -1,11 +1,19 @@
-<%= @player %> <br />
-<%= @player_choice %> <br />
-<%= @robot %>
+ <head>
+   <link rel="stylesheet" type="text/css" href="rps.css">
+   <link href="https://fonts.googleapis.com/css?family=Muli|Roboto" rel="stylesheet">
+ </head>
+
+<div class="text"><span class="contestant"><%= @player %></span> picked <%= @player_choice %> <br />
+The computer picked <%= @robot %> <br />
 
 <% if @player_choice == @robot %>
-   "It's a draw"
+   It's a draw
  <% elsif @game.player_wins %>
    <%= @player %> wins!
  <% else %>
    <%= @player %> loses!
- <% end %>
+ <% end %></div>
+
+ <form action="/play" method="get">
+  <input class="button" type="submit" value="Play again?">
+</form>

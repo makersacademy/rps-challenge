@@ -1,0 +1,30 @@
+body {
+  background-color: #363B4E;
+  text-align: center;
+}
+
+h1 {
+  color: #CD626A;
+  font-family: 'Muli', sans-serif;
+}
+
+.text {
+  color: #E8AC90;
+  font-family: 'Roboto', sans-serif;
+  line-height: 45px;
+}
+
+.contestant {
+  color: #CD626A;
+}
+
+.button {
+  height: 40px;
+  width: 120px;
+  border-radius: 5px;
+  background-color: #CD626A;
+  border: none;
+  color: #563947;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}

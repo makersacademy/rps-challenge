@@ -13,12 +13,12 @@ feature 'Features - RPS' do
   # I would like to be able to play rock/paper/scissors
   scenario 'play would play rock paper scissors' do
     sign_in_and_play
-    click_button('Rock')
+    click_button('rock')
   end
 
   scenario 'player wins' do
     sign_in_and_play
-    click_button('Rock')
+    click_button('rock')
     robot = 'Paper'
     expect(page).to have_content('loses')
   end
