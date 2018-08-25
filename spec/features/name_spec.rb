@@ -3,6 +3,6 @@ feature 'enter names' do
     visit('/')
     fill_in :player, with: 'karho'
     click_button 'submit'
-    expect(page).to have_content 'player: karho'
+    expect(page).to have_content 'karho'
   end
 end

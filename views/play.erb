@@ -1,4 +1,4 @@
-player: <%= @player %> please choose your weapon: rock, paper, or scissors
+<%= @player.name %> please choose your weapon: rock, paper, or scissors
 
 <form action="/player_choice" method="post">
   <input type="text" name="weapon">
