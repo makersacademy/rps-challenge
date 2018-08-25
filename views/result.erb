@@ -5,6 +5,11 @@
 </head>
 
 <body>
-  <p>Your move <%=@move.upcase%> vs Computer move</p>
+  <p>Your move <%=@move.upcase%> vs Computer move <%=@game.move2.upcase%></p>
+
+  <p><%=@game.result%></p>
+
+
+  <a href="/play-rps">Play again</a>
 
 </body>

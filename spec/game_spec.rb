@@ -1,8 +1,12 @@
 require 'game'
 describe Game do
-  describe 'random move from computer' do
-    it 'returns a random move from computer' do
-      expect(["ROCK", "PAPER", "SCISSORS"]).to include(subject.computer_move)
+
+  let(:game) { described_class.new("ROCK") }
+
+  describe 'return result of game' do
+    it 'returns winner' do
+      allow(game).to receive(:rps) { "YOU WON!" }
+      expect(game.result).to include "YOU WON!"
     end
   end
 end
