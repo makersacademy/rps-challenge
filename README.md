@@ -1,5 +1,7 @@
 # RPS Challenge - Pokemon Battle!
 
+[pokeball](./public/images/pokeball.png)
+
 Instructions
 -------
 
