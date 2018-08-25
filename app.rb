@@ -18,5 +18,11 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/select' do
+    @player = $player
+    @player.selection = params[:player_selection]
+    erb :select
+  end
+
   run! if app_file == $0
 end
