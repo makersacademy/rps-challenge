@@ -10,10 +10,11 @@ Rock, Paper, Scissors
 <%= 'Rocky McRock Face'%>
 <% end  %></h2>
 
-<h4> The current scores is: </h4> 
+<%# <h4> The current scores is: 
+<%= @p1 + ' ' + @p1.points ': ' @p2 + ' ' + @p2.points %> </h4>
 
 
-<br><br>
+<br>
 <h2> Make your choice </h2>
 <form action="/enter_dragon" method="post">
 <input class="start_button" type="submit" value="ROCK">

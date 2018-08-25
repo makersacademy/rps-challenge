@@ -30,8 +30,8 @@ class Rps < Sinatra::Base
     # name2 = @p2_name
     # @p1 = Player.new(name1)
     # @p2 = Player.new(name2)
-    p1 = Player.new(@p1_name)
-    p2 = Player.new(@p2_name)
+    @p1 = Player.new(@p1_name)
+    @p2 = Player.new(@p2_name)
     @game = Game.new(@p1, @p2)
     erb(:game_home)
   end
