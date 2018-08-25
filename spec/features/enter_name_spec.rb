@@ -6,6 +6,9 @@ feature 'can enter a name' do
 end
 feature 'name will be shown' do
   scenario 'name has been entered' do
-
+    visit '/'
+    fill_in "name", with: "Bob"
+    click_button "Submit"
+    expect(page).to have_content "Name: Bob"
   end
 end
