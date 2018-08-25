@@ -34,9 +34,9 @@ class Rps < Sinatra::Base
   post '/move' do
     @game = Game.instance
     case params[:action]
-    when 'rock' then @game.save_move('Rock', @game.move_counter)
-    when 'paper' then @game.save_move('Paper', @game.move_counter)
-    when 'scissors' then @game.save_move('Scissors', @game.move_counter)
+    when 'grass' then @game.save_move('Bulbasaur', @game.move_counter)
+    when 'water' then @game.save_move('Squirtle', @game.move_counter)
+    when 'fire' then @game.save_move('Charmander', @game.move_counter)
     end
 
     if @game.number_of_players == 1

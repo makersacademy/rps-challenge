@@ -10,9 +10,9 @@ class Game
     @game
   end
 
-  def initialize(number_of_players, player_class = Player)
+  def initialize(number_of_players, player_1 = Player.new, player_2 = Player.new)
     @number_of_players = number_of_players
-    @players = [player_class.new, player_class.new]
+    @players = [player_1, player_2]
     @move_counter = 1
   end
 
@@ -43,18 +43,18 @@ class Game
     p1 = return_move(1)
     p2 = return_move(2)
     if p1 == p2
-      @result = "It's a draw!"
-    elsif (p1 == 'Rock' && p2 == 'Scissors') || (p1 == 'Paper' && p2 == 'Rock') || (p1 == 'Scissors' && p2 == 'Paper')
-      @result = "#{return_name(1)} wins!"
-    elsif (p1 == 'Scissors' && p2 == 'Rock') || (p1 == 'Rock' && p2 == 'Paper') || (p1 == 'Paper' && p2 == 'Scissors')
-      @result = "#{return_name(2)} wins!"
+      @result = "It was not very effective..."
+    elsif (p1 == 'Bulbasaur' && p2 == 'Squirtle') || (p1 == 'Squirtle' && p2 == 'Charmander') || (p1 == 'Charmander' && p2 == 'Bulbasaur')
+      @result = "#{return_name(1)} used a super effective move!"
+    elsif (p1 == 'Bulbasaur' && p2 == 'Charmander') || (p1 == 'Squirtle' && p2 == 'Bulbasaur') || (p1 == 'Charmander' && p2 == 'Squirtle')
+      @result = "#{return_name(2)} used a super effective move!"
     end
   end
 
   private
 
   def random_move
-    ["Rock", "Paper", "Scissors"].sample
+    ["Bulbasaur", "Squirtle", "Charmander"].sample
   end
 
 end

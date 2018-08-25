@@ -1,71 +1,72 @@
 require 'game'
 
 describe Game do
-  let(:player) { double :player, save_move: "" }
-  let(:player_class) { double :player_class, new: player }
+  let(:player1) { double :player, move: 'Bulbasaur' }
+  let(:player2) { double :player, move: 'Bulbasaur' }
 
   context 'Single player' do
-    let(:subject) { described_class.new(1, player_class) }
+    let(:subject) { described_class.new(1, player1, player2) }
 
     describe '#save_name' do
       it 'saves name to Player object' do
-        expect(player).to receive(:save_name).with('Dave')
-        expect(player).to receive(:save_name).with('Computer')
+        expect(player1).to receive(:save_name).with('Dave')
+        expect(player2).to receive(:save_name).with('Computer')
         subject.save_name('Dave')
       end
     end
 
     describe '#save_move' do
       it 'saves move to Player object' do
-        srand(0) # send 'Rock' to player 2 (Computer)
-        expect(player).to receive(:save_move).with('Rock').twice
-        subject.save_move('Rock', 1)
+        srand(0) # send 'Bulbasaur' to player 2 (Computer)
+        expect(player1).to receive(:save_move).with('Bulbasaur')
+        expect(player2).to receive(:save_move).with('Bulbasaur')
+        subject.save_move('Bulbasaur', 1)
       end
     end
 
     describe '#determine_winner' do
-      context 'Given random move always returns "Rock"' do
-
-        before do
-          srand(0)
-          subject.save_move('Paper', 1)
+      context 'Given Computer (player 2) always returns "Bulbasaur"' do
+        it 'returns \'It was not very effective...\' if the moves are the same' do
+          subject.determine_winner
+          expect(subject.result).to eq "It was not very effective..."
         end
 
-        it 'returns \'It\'s a draw!\' if the moves are the same' do
-          allow(player).to receive(:move).and_return('Rock')
+        it 'returns \'Dave used a super effective move!\' if the player wins' do
+          allow(player1).to receive(:move).and_return('Charmander')
+          allow(player1).to receive(:name).and_return('Dave')
+          allow(player2).to receive(:name).and_return('Computer')
           subject.determine_winner
-          expect(subject.result).to eq "It's a draw!"
+          expect(subject.result).to eq "Dave used a super effective move!"
         end
 
-        it 'returns \'You\'re a winner baby!\' if the player wins' do
-          allow(player).to receive(:move).and_return('Paper')
-          allow(player).to receive(:move).and_return('Rock')
+        it 'returns \'Computer used a super effective move!\' if the player loses' do
+          allow(player1).to receive(:move).and_return('Squirtle')
+          allow(player1).to receive(:name).and_return('Dave')
+          allow(player2).to receive(:name).and_return('Computer')
           subject.determine_winner
-          expect(subject.result).to eq "You're a winner baby!"
-        end
-
-        it 'returns \'You lose!\' if the player loses' do
-          allow(player).to receive(:move).and_return('Scissors')
-          subject.determine_winner
-          expect(subject.result).to eq "You lose!"
+          expect(subject.result).to eq "Computer used a super effective move!"
         end
       end
     end
   end
 
   context 'Multiplayer' do
-    let(:subject) { described_class.new(2, player_class) }
+    let(:subject) { described_class.new(2, player1, player2) }
 
     describe '#add_name' do
       it 'Passes names to the two Player objects' do
-        expect(player).to receive(:save_name).with('Dave')
-        expect(player).to receive(:save_name).with('Ben')
+        expect(player1).to receive(:save_name).with('Dave')
+        expect(player2).to receive(:save_name).with('Ben')
         subject.save_name('Dave', 'Ben')
       end
     end
 
-    describe ''
-
+    describe '#save_move' do
+      it 'Passes selected move to player 2 object' do
+        expect(player2).to receive(:save_move).with('Squirtle')
+        subject.save_move('Squirtle', 2)
+      end
+    end
+    # Note: all other methods function the same as for single-player
   end
-
 end

@@ -4,20 +4,21 @@
     <!-- defining our character set and title -->
     <meta charset="utf-8">
     <title>RPS Player</title>
+    <link rel="stylesheet" type="text/css" href="rps.css"/>
   </head>
 
   <body>
     <% if @game.move_counter == 1 %>
-      <h1><%= @game.return_name(1) %> make your choice:</h1><br>
+      <h1><%= @game.return_name(1) %>, choose your Pokemon</h1><br>
     <% elsif @game.move_counter == 2 %>
-      <h1><%= @game.return_name(2) %> make your choice:</h1><br>
+      <h1><%= @game.return_name(2) %>, choose your Pokemon</h1><br>
     <% end %>
 
     <form action="/move" method="post">
       <div>
-        <button type="submit" name="action" value="rock">Rock</button>
-        <button type="submit" name="action" value="paper">Paper</button>
-        <button type="submit" name="action" value="scissors">Scissors</button>
+        <button type="submit" name="action" value="grass" class="grass"></button>
+        <button type="submit" name="action" value="water" class="water"></button>
+        <button type="submit" name="action" value="fire" class="fire"></button>
       </div>
     </form>
   </body>

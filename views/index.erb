@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- defining our character set and title -->
     <meta charset="utf-8">
     <title>RPS</title>
+    <link rel="stylesheet" type="text/css" href="rps.css"/>
   </head>
 
   <body>
-    <h1>Rock, Paper, Scissors</h1><br>
-    <h2>Choose how you want to play:</h2><br>
+    <h1>Pokemon Battle</h1><br>
+    <h2>Battle alone or with friends:</h2><br>
     <form action="/players" method="post">
-      <button type="submit" name="action" value="single_player">Single Player</button>
-      <button type="submit" name="action" value="multiplayer">Multiplayer</button>
+      <button type="submit" name="action" value="single_player" class="play_button">Play<br>Alone</button>
+      <button type="submit" name="action" value="multiplayer" class="play_button">With Friends</button>
     </form>
   </body>
 </html>

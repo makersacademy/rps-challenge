@@ -3,15 +3,16 @@
   <head>
     <!-- defining our character set and title -->
     <meta charset="utf-8">
-    <title>RPS</title>
+    <title>RPS Name</title>
+    <link rel="stylesheet" type="text/css" href="rps.css"/>
   </head>
 
   <body>
-    <h1>Rock, Paper, Scissors</h1><br>
+    <h1>Pokemon Battle</h1><br>
     <% if @game.number_of_players == 1 %>
-      <h2>Enter your name:</h2><br>
+      <h2>What's your name?</h2><br>
     <% else %>
-      <h2>Enter your names:</h2><br>
+      <h2>What're your names?</h2><br>
     <% end %>
     <form action="/name" method="post">
         <input type="text" name="player1_name">
