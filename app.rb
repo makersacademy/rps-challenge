@@ -3,8 +3,6 @@ require './lib/game'
 
 class Rps < Sinatra::Base
 
-  enable :sessions
-
   get '/' do
     erb(:index)
   end
