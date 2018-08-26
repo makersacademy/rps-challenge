@@ -1,5 +1,6 @@
 require 'capybara/rspec'
 require_relative '../app'
+require_relative './features/web_helper'
 require 'simplecov'
 require 'simplecov-console'
 

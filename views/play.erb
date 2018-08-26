@@ -1,1 +1,10 @@
-Name: <%= @name %>
+<div>
+  Name: <%= @name %>
+</div>
+<div>
+  <form action="/move_entry" method="post">
+    <input value="Rock" type="submit" name="move">
+    <input value="Paper" type="submit" name="move">
+    <input value="Scissors" type="submit" name="move">
+  </form>
+</div>
