@@ -3,15 +3,17 @@
 <div class="content">
   <h1 id="title">ROCK PAPER SCISSORS</h1>
 
-  <form action="/begin" method="post">
+  <div>
+  <form id="index_form" action="/begin" method="post">
     <div>
-    <label for="name">Enter name to play</label>
+    <label for="name" id="form_text">Enter name to play</label>
     </div>
     <div>
     <input type="text" name="name" required>
     </div>
     <button>Submit</button>
   </form>
+  </div>
 </div>
 
 <%= erb :footer %>

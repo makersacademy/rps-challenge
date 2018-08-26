@@ -1,17 +1,83 @@
+* {
+  font-family: 'Roboto Slab', serif;
+}
+
 body {
-  background-color: #4D4337;
+  background-color: #fcfcf4;
+  margin: 0;
+  padding: 0;
 }
 
 .content {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
 }
 
 #title {
-  border-bottom: 2px solid white
+  text-decoration: underline;
+  text-decoration-color: #ee6a48;
+  color: #134248;
+  text-align: center;
 }
 
 h1 {
   color: white;
-  font-size: 4em
+  font-size: 4em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #134248;
+  padding: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav a:link {
+  text-decoration: none;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+#player1 {
+  grid-column: 1 / 3;
+  margin: 0 auto;
+}
+
+#player2 {
+  grid-column: 4 / 6;
+  margin: 0 auto;
+}
+
+#outcome {
+  grid-column: 3 / 4;
+}
+
+#play_again {
+  grid-column: 3 / 4;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 3em;
+}
+
+#index_form {
+  margin: 0 auto;
+  text-align: center;
+  color: #134248;
+  font-size: 2em;
 }

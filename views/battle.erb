@@ -1,23 +1,25 @@
-<%= erb :header %>
+<%= erb :header_nav %>
 
-<div>
-  <h3> <%= @game.player01.name %> <h3>
-  <h4> <%= @game.player01.weapon %> </h4>
-</div>
+<div class="content wrapper">
+  <div id="player1">
+    <h3 class="name"> <%= @game.player01.name %> <h3>
+    <h4> <%= @game.player01.weapon %> </h4>
+  </div>
 
-<div> 
-  <h3> vs </h3> 
-</div>
+  <div id="outcome"> 
+    <h3 class="name"> vs </h3> 
+  </div>
 
-<div>
-  <h3> <%= @game.player02.name %> </h3>
-  <h4> <%= @game.player02.weapon %> </h4>
-</div>
-  
-<div>
-  <p> <%= @game.outcome %> </p>
-</div>
+  <div id="player2">
+    <h3 class="name"> <%= @game.player02.name %> </h3>
+    <h4> <%= @game.player02.weapon %> </h4>
+  </div>
+    
+  <div>
+    <p> <%= @game.outcome %> </p>
+  </div>
 
-<a href="/choose"><button>Play again</button></a>
+  <a href="/choose" id="play_again"><button>Play again</button></a>
+</div>
 
 <%= erb :footer %>
