@@ -10,18 +10,33 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @game = Game.create(params[:name])
+    if params[:name2] == ""
+      @game = Game.create("1P", params[:name])
+    else
+      @game = Game.create("2P", params[:name], params[:name2])
+    end
     redirect '/play'
   end
 
   get '/play' do
-    @name = @game.name
+    @active = @game.active
     erb :play
   end
 
   post '/move_entry' do
-    @game.move = params[:move]
-    @game.move2 = @game.comp_move
+    if @game.mode == "1P"
+      @game.move = params[:move]
+      @game.move2 = @game.comp_move
+    else
+      if @game.active == @game.name
+        @game.move = params[:move]
+        @game.switch_active
+        redirect'/play'
+      else
+        @game.move2 = params[:move]
+        @game.switch_active
+      end
+    end
     redirect '/result'
   end
 

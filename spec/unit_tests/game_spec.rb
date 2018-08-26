@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  subject { described_class.new("Bob") }
+  subject { described_class.new("1P", "Bob") }
   it 'stores the name of the player' do
     expect(subject.name).to eq "Bob"
   end

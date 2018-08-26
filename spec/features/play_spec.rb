@@ -51,3 +51,21 @@ feature 'Replay button' do
     expect(page).to have_content "Computer's move: Rock"
   end
 end
+
+feature 'Two player mode' do
+  before { enter_two_names_and_click }
+  it 'shows players and moves one at a time' do
+    expect(page).to have_content "Name: Bob"
+    click_button "Rock"
+    expect(page).to have_content "Name: Jim"
+  end
+
+  it 'allows you to replay the game' do
+    click_button "Rock"
+    click_button "Rock"
+    click_button "Replay"
+    click_button "Scissors"
+    click_button "Scissors"
+    expect(page).to have_content "Draw"
+  end
+end

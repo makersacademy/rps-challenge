@@ -3,24 +3,30 @@ require_relative 'computer'
 class Game
   MOVES = ["Rock", "Paper", "Scissors"]
 
-  def self.create(name)
-    @game = Game.new(name)
+  def self.create(mode, name, name2 = "Computer")
+    @game = Game.new(mode, name, name2)
   end
 
   def self.instance
     @game
   end
 
-  attr_reader :name, :name2
-  attr_accessor :move, :move2
+  attr_reader :mode, :name, :name2
+  attr_accessor :move, :move2, :active
 
-  def initialize(name, name2 = "Computer")
+  def initialize(mode, name, name2 = "Computer")
+    @mode = mode
     @name = name
     @name2 = name2
+    @active = name
   end
 
   def comp_move
     MOVES.sample
+  end
+
+  def switch_active
+    @active == name ? (@active = name2) : (@active = name)
   end
 
   def winner
