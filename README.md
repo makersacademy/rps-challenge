@@ -2,12 +2,14 @@
 
 This challenge aims to build a 'Rock, Paper, Scissors' game using the framework Sinatra. This program was built test-first using RSpec and Capybara.
 
+<center><img src="/public/TBBT.gif" width="250px"></center>
+
 Run the app
 -------
 
 To download and run the app:
 ```sh
-$ git clone git@github.com:Alastair2D/rps-challenge.git
+$ git clone git@github.com:mathildeferrandcoeurderoy/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup -p 4567
