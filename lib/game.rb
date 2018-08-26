@@ -20,21 +20,14 @@ class Game
     opponent = @player02.weapon
     player = @player01.weapon
     
-    if player == "Rock" && opponent == "Paper"
-      "You lose!"
-    elsif player == "Rock" && opponent == "Scissors"
-      "You win!"
-    elsif player == "Paper" && opponent == "Rock"
-      "You win!"
-    elsif player == "Paper" && opponent == "Scissors"
-      "You lose!"
-    elsif player == "Scissors" && opponent == "Paper"
-      "You win!"
-    elsif player == "Scissors" && opponent == "Rock"
-      "You lose!"
-    else
-      "It's a draw!"
-    end
-
+    return "You lose!" if player == "Rock" && opponent == "Paper"
+    return "You win!" if player == "Rock" && opponent == "Scissors"
+    return "You win!" if player == "Paper" && opponent == "Rock"
+    return "You lose!" if player == "Paper" && opponent == "Scissors"
+    return "You win!" if player == "Scissors" && opponent == "Paper"
+    return "You lose!" if player == "Scissors" && opponent == "Rock"
+      
+    return "It's a draw!" if player == opponent
+    
   end
 end

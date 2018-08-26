@@ -27,8 +27,8 @@ describe Game do
     end
 
     it "will return 'it's a draw!'" do
-        game03 = Game.new(player01, player01)
-        expect(game03.outcome).to eq("It's a draw!")
+      game03 = Game.new(player01, player01)
+      expect(game03.outcome).to eq("It's a draw!")
     end
   end
 
