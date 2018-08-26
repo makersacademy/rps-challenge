@@ -11,15 +11,16 @@ class RPS < Sinatra::Base
 
   post '/name' do
     if params[:name2] == ""
-      @game = Game.create("1P", params[:name])
+      @game = Game.create("1P", params[:extended], params[:name])
     else
-      @game = Game.create("2P", params[:name], params[:name2])
+      @game = Game.create("2P", params[:extended], params[:name], params[:name2])
     end
     redirect '/play'
   end
 
   get '/play' do
     @active = @game.active
+    @extended = @game.extended
     erb :play
   end
 
