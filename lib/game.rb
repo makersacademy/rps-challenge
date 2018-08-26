@@ -24,7 +24,11 @@ class Game
   end
 
   def comp_move
-    MOVES.sample
+    if extended == false
+      return MOVES.sample
+    else
+      return MOVES_EXTENDED.sample
+    end
   end
 
   def switch_active

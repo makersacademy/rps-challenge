@@ -2,6 +2,7 @@ require 'game'
 
 describe Game do
   subject { described_class.new("1P",false, "Bob") }
+  let(:sub2) { described_class.new("1P",true, "Bob") }
   it 'stores the name of the player' do
     expect(subject.name).to eq "Bob"
   end
@@ -41,6 +42,10 @@ describe Game do
     it 'can make a random move' do
       moves = ["Rock", "Paper", "Scissors"]
       expect(moves).to include subject.comp_move
+    end
+    it 'can make a random move in extended version' do
+      moves = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
+      expect(moves).to include sub2.comp_move
     end
   end
 
