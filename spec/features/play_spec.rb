@@ -10,22 +10,22 @@ end
 
 feature 'Random computer move' do
   it 'will receive a move from the computer' do
-    allow_any_instance_of(Computer).to receive(:rand_move).and_return("Rock")
+    allow_any_instance_of(Game).to receive(:comp_move).and_return("Rock")
     enter_name_and_click
     click_button "Rock"
     expect(page).to have_content "Computer's move: Rock"
-    expect(page).to have_content "Drawer"
+    expect(page).to have_content "Draw"
   end
 end
 feature 'Display winner' do
   scenario 'computer plays Paper' do
-    allow_any_instance_of(Computer).to receive(:rand_move).and_return("Paper")
+    allow_any_instance_of(Game).to receive(:comp_move).and_return("Paper")
     enter_name_and_click
     click_button "Rock"
     expect(page).to have_content "Computer wins!"
   end
   scenario 'computer plays Scissors' do
-    allow_any_instance_of(Computer).to receive(:rand_move).and_return("Scissors")
+    allow_any_instance_of(Game).to receive(:comp_move).and_return("Scissors")
     enter_name_and_click
     click_button "Rock"
     expect(page).to have_content "Bob wins!"
@@ -33,7 +33,7 @@ feature 'Display winner' do
 end
 feature 'Replay button' do
   before {
-    allow_any_instance_of(Computer).to receive(:rand_move).and_return("Scissors")
+    allow_any_instance_of(Game).to receive(:comp_move).and_return("Scissors")
     enter_name_and_click
     click_button "Rock"
   }
@@ -45,7 +45,7 @@ feature 'Replay button' do
     expect(page).to have_content "Name: Bob"
   end
   it 'will receive a new move from the computer' do
-    allow_any_instance_of(Computer).to receive(:rand_move).and_return("Rock")
+    allow_any_instance_of(Game).to receive(:comp_move).and_return("Rock")
     click_button "Replay"
     click_button "Paper"
     expect(page).to have_content "Computer's move: Rock"

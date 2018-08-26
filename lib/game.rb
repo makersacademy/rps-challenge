@@ -1,6 +1,8 @@
 require_relative 'computer'
 
 class Game
+  MOVES = ["Rock", "Paper", "Scissors"]
+
   def self.create(name)
     @game = Game.new(name)
   end
@@ -17,16 +19,16 @@ class Game
     @name2 = name2
   end
 
-  def comp_move(player2 = Computer.new)
-    @move2 = player2.rand_move
+  def comp_move
+    MOVES.sample
   end
 
   def winner
-    moves = ["Rock", "Paper", "Scissors"]
+    moves = MOVES
     moves.rotate!(moves.index(@move))
     p2 = moves.index(@move2)
     if p2 == 0
-      return "Drawer"
+      return "Draw"
     elsif p2 == 1
       return "#{@name2} wins!"
     else

@@ -17,22 +17,30 @@ describe Game do
     expect(subject.name2).to eq "Computer"
   end
 
-  it 'returns the winner' do
-    subject.move = "Rock"
-    subject.move2 = "Scissors"
-    expect(subject.winner).to eq "Bob wins!"
+  describe "#winner" do
+    it 'returns the winner' do
+      subject.move = "Rock"
+      subject.move2 = "Scissors"
+      expect(subject.winner).to eq "Bob wins!"
+    end
+
+    it 'returns the winner' do
+      subject.move = "Rock"
+      subject.move2 = "Paper"
+      expect(subject.winner).to eq "Computer wins!"
+    end
+
+    it 'returns the winner' do
+      subject.move = "Paper"
+      subject.move2 = "Paper"
+      expect(subject.winner).to eq "Draw"
+    end
   end
 
-  it 'returns the winner' do
-    subject.move = "Rock"
-    subject.move2 = "Paper"
-    expect(subject.winner).to eq "Computer wins!"
+  describe "#comp_move" do
+    it 'can make a random move' do
+      moves = ["Rock", "Paper", "Scissors"]
+      expect(moves).to include subject.comp_move
+    end
   end
-
-  it 'returns the winner' do
-    subject.move = "Paper"
-    subject.move2 = "Paper"
-    expect(subject.winner).to eq "Drawer"
-  end
-
 end

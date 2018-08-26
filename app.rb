@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
 
   post '/move_entry' do
     @game.move = params[:move]
-    @game.comp_move
+    @game.move2 = @game.comp_move
     redirect '/result'
   end
 
