@@ -10,14 +10,11 @@ class RPS < Sinatra::Base
   post '/name' do
   $player = params[:player]
   @player = $player
-    erb(:name)
-    # see name in lights
-    # get params
-    # click to start the game
+  erb(:name)
   end
 
   get '/game' do
-
+  erb(:game)
   end
 
 run! if app_file == $0

@@ -13,3 +13,13 @@ feature 'name form' do
     expect(page).to have_content 'Welcome samir!'
   end
 end
+
+feature 'RPS option' do
+  scenario 'can choose RPS' do
+    visit('/')
+    fill_in :player, with: 'samir'
+    click_button 'Enter Game'
+    click_link 'Start Game'
+    expect(page).to have_content 'Rock! Paper! Scissors!'
+  end
+end
