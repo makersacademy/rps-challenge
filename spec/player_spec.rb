@@ -8,10 +8,10 @@ describe Player do
     end
   end
 
-  describe '#choice_log' do
-    it "returns an empty array" do
-      expect(player1.choice_log).to eq []
-    end
-  end
+  # describe '#choice_log' do
+  #   it "returns an empty array" do
+  #     expect(player1.choice_log).to eq []
+  #   end
+  # end
 
 end

@@ -9,14 +9,15 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-  $player = Player.new(params[:player])
-  @player = $player
-  erb(:name)
+    $player = Player.new(params[:player])
+    @player = $player
+    erb(:name)
   end
   # could make ai class to pass to game
 
   get '/game' do
-  erb(:game)
+    @player = $player
+    erb(:game)
   end
 
 run! if app_file == $0
