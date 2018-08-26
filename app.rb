@@ -18,5 +18,10 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post "/result" do
+  @player_move = params[:player_move]
+  erb :result
+  end
+
   run! if app_file == $PROGRAM_NAME
 end
