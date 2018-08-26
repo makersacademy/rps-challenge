@@ -8,6 +8,9 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
+  $player = params[:player]
+  @player = $player
+    erb(:name)
     # see name in lights
     # get params
     # click to start the game
