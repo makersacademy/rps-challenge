@@ -7,8 +7,9 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  get '/names' do
-    "hello world!"
+  get '/play' do
+    @name = params[:player_one]
+    erb(:play)
   end
 
 end
