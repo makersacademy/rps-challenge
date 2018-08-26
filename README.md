@@ -2,7 +2,7 @@
 
 This challenge aims to build a 'Rock, Paper, Scissors' game using the framework Sinatra. This program was built test-first using RSpec and Capybara.
 
-<center><img src="/public/TBBT.gif" width="250px"></center>
+<p align="center"><img src="/public/TBBT.gif" width="250px"></p>
 
 Run the app
 -------
