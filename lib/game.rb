@@ -18,17 +18,14 @@ class Game
   def initialize(mode, extended, name, name2 = "Computer")
     @mode = mode
     @extended = extended
+    extended ? (@moves = MOVES_EXTENDED) : (@moves = MOVES)
     @name = name
     @name2 = name2
     @active = name
   end
 
   def comp_move
-    if extended == false
-      return MOVES.sample
-    else
-      return MOVES_EXTENDED.sample
-    end
+    @moves.sample
   end
 
   def switch_active
@@ -36,13 +33,8 @@ class Game
   end
 
   def winner
-    if extended == false
-      moves = MOVES
-    else
-      moves = MOVES_EXTENDED
-    end
-    moves.rotate!(moves.index(@move))
-    p2 = moves.index(@move2)
+    @moves.rotate!(@moves.index(@move))
+    p2 = @moves.index(@move2)
     if p2 == 0
       return "Draw"
     elsif p2 % 2 ==  1
