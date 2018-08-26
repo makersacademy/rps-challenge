@@ -6,10 +6,10 @@ def single_sign_in
 end
 
 def single_sample_games
-  click link 'Rock'
-  click link 'Paper'
-  click link 'Rock'
-  click link 'Scissors'
-  click link 'Scissors'
-  click link 'Paper'
+  click_link 'Rock'
+  click_link 'Paper'
+  click_link 'Rock'
+  click_link 'Scissors'
+  click_link 'Scissors'
+  click_link 'Paper'
 end

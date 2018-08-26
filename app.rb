@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
-# require each in lib
 
 class RPS < Sinatra::Base
 
@@ -14,6 +13,7 @@ class RPS < Sinatra::Base
   @player = $player
   erb(:name)
   end
+  # could make ai class to pass to game
 
   get '/game' do
   erb(:game)
