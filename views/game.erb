@@ -7,12 +7,14 @@
 The computer picked <%= @robot %> <br />
 
 <% if @player_choice == @robot %>
-   It's a draw
- <% elsif @game.player_wins %>
-   <%= @player %> wins!
- <% else %>
-   <%= @player %> loses!
- <% end %></div>
+It's a draw
+<% elsif @game.player_wins == true %>
+<%= @player %> wins!
+<% else %>
+<%= @player %> loses!
+<% end %>
+
+</div>
 
  <form action="/play" method="get">
   <input class="button" type="submit" value="Play again?">
