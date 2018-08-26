@@ -30,6 +30,12 @@ feature 'Display winner' do
     click_button "Rock"
     expect(page).to have_content "Bob wins!"
   end
+  it 'displays the reason for winning' do
+    enter_two_names_and_click_with_extended
+    click_button "Spock"
+    click_button "Lizard"
+    expect(page).to have_content "Lizard poisons Spock!"
+  end
 end
 feature 'Replay button' do
   before {

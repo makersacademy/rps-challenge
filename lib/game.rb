@@ -1,8 +1,21 @@
 require_relative 'computer'
 
 class Game
+
   MOVES = ["Rock", "Paper", "Scissors"]
   MOVES_EXTENDED = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
+  REASONS = {
+  ['Rock', 'Scissors'] => 'Rock smashes Scissors!',
+  ['Lizard', 'Rock'] => 'Rock crushes Lizard!',
+  ['Lizard', 'Scissors'] => 'Scissors decapite Lizard!',
+  ['Paper', 'Scissors'] => 'Scissors cut Paper!',
+  ['Paper', 'Spock'] => 'Paper disproves Spock!',
+  ['Paper', 'Rock'] => 'Paper covers Rock!',
+  ['Scissors', 'Spock'] => 'Spock smashes Scissors!',
+  ['Rock', 'Spock'] => 'Spock vaporises Rock!',
+  ['Lizard', 'Spock'] => 'Lizard poisons Spock!',
+  ['Lizard', 'Paper'] => 'Lizard eats Paper!',
+  }
 
   def self.create(mode, extended, name, name2 = "Computer")
     @game = Game.new(mode, extended, name, name2)
@@ -37,11 +50,15 @@ class Game
     p2 = @moves.index(@move2)
     if p2 == 0
       return "Draw"
-    elsif p2 % 2 ==  1
+    elsif p2 % 2 == 1
       return "#{@name2} wins!"
     else
       return "#{@name} wins!"
     end
+  end
+
+  def reason
+    REASONS[[@move, @move2].sort]
   end
 
 end

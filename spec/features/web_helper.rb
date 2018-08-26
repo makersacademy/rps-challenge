@@ -10,3 +10,10 @@ def enter_two_names_and_click
   fill_in "name2", with: "Jim"
   click_button "Submit"
 end
+def enter_two_names_and_click_with_extended
+  visit '/'
+  fill_in "name", with: "Bob"
+  fill_in "name2", with: "Jim"
+  check "extended"
+  click_button "Submit"
+end

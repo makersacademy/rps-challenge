@@ -32,7 +32,7 @@ class RPS < Sinatra::Base
       if @game.active == @game.name
         @game.move = params[:move]
         @game.switch_active
-        redirect'/play'
+        redirect '/play'
       else
         @game.move2 = params[:move]
         @game.switch_active
@@ -44,6 +44,7 @@ class RPS < Sinatra::Base
   get '/result' do
     @move, @move2 = @game.move, @game.move2
     @name, @name2 = @game.name, @game.name2
+    @reason = @game.reason
     @winner = @game.winner
     erb :result
   end
