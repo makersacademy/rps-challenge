@@ -5,7 +5,7 @@ class RPS < Sinatra::Base
 
   get '/' do
     "<div style='border: 3px solid black; padding-left: 20px'>
-    <h1>Hello Rock, Paper and Scissors!</h1>
+    <h1>Hello, world!</h1>
    </div>"
   end
 end
