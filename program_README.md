@@ -15,9 +15,9 @@ user enters name
 until the game is won
 
   user picks rock, paper or scissors button
-      - same page for each player or seperate pages?
+    - same page for each player or seperate pages?
 
   user is shown outcome
-      - new page or event log below?
+    - new page or event log below?
 
   game class checks if there is a winner

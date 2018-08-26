@@ -31,10 +31,33 @@ feature 'Rock, Paper, Scissors game' do
   scenario 'allows a player to enter their name and title' do
     visit('/')
     click_link('Yes!')
-    fill_in('name', with: 'Hamish')
-    fill_in('title', with: 'Destroyer')
+    fill_in('player_1_name', with: 'Hamish')
+    fill_in('player_1_title', with: 'Destroyer')
     click_button('Submit')
     expect(page).to have_content 'Hamish the Destroyer'
+  end
+
+  scenario 'allows a player to choose their move' do
+    visit('/')
+    click_link('Yes!')
+    fill_in('player_1_name', with: 'Hamish')
+    fill_in('player_1_title', with: 'Destroyer')
+    click_button('Submit')
+    expect(page).to have_button "Submit"
+  end
+
+  scenario 'determines a round winner' do
+    visit('/')
+    click_link('Yes!')
+    fill_in('player_1_name', with: 'Hamish')
+    fill_in('player_1_title', with: 'Destroyer')
+    click_button('Submit')
+    choose('paper')
+    click_button('Submit')
+
+    expect(page).to have_content "Hamish chose paper"
+    expect(page).to have_content "Blue chose"
+
   end
 
 end
