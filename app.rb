@@ -8,19 +8,33 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    session['player_one'] = params[:player_one]
+    session['player_one'] = params[:player_one].capitalize
     p session['player_one']
     redirect '/play'
   end
 
   post '/weapons' do
-    session['weapon'] = params[:weapon]
+    session['weapon'] = params[:weapon].downcase
     redirect '/play'
   end
 
   get '/play' do
     @name = session['player_one']
     @weapon = session['weapon']
+    @computer_weapon = ['rock', 'paper', 'scissors'].sample
+    if @weapon == @computer_weapon
+      @message = "It's a draw..."
+    elsif @weapon == "rock" && @computer_weapon == "paper"
+      @message = "You lose!"
+    elsif @weapon == "paper" && @computer_weapon == "rock"
+      @message = "You win!"
+    elsif @weapon == "scissors" && @computer_weapon == "paper"
+      @message = "You win!"
+    elsif @weapon == "scissors" && @computer_weapon == "rock"
+      @message = "You lose!"
+    elsif @weapon == "rock" && @computer_weapon == "scissors"
+      @message = "You win!"
+    end
 
     erb(:play)
   end
@@ -28,6 +42,15 @@ class RPS < Sinatra::Base
   get '/attack' do
     @name = session['player_one']
     erb(:attack)
+  end
+
+  get '/reset' do
+    session['weapon'] = ""
+    session['computer_weapon'] = ""
+    @weapon = ""
+    @computer_weapon = ""
+    redirect '/attack'
+
   end
 
 end
