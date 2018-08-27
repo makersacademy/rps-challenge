@@ -3,7 +3,7 @@
 <div class="content wrapper">
   <div id="player1">
     <h3 class="name"> <%= @game.player01.name %> <h3>
-    <h4> <%= @game.player01.weapon %> </h4>
+    <h4 class="weapon"> <%= @game.player01.weapon %> </h4>
   </div>
 
   <div id="outcome"> 
@@ -12,14 +12,14 @@
 
   <div id="player2">
     <h3 class="name"> <%= @game.player02.name %> </h3>
-    <h4> <%= @game.player02.weapon %> </h4>
+    <h4 class="weapon"> <%= @game.player02.weapon %> </h4>
   </div>
     
-  <div>
-    <p> <%= @game.outcome %> </p>
+  <div id="result_box">
+    <p id="result"> <%= @game.outcome %> </p>
+    <a href="/choose"><button id="play_again">Play again</button></a>
   </div>
 
-  <a href="/choose" id="play_again"><button>Play again</button></a>
 </div>
 
 <%= erb :footer %>
