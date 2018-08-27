@@ -34,7 +34,6 @@ class RPS_Game < Sinatra::Base
     @game = Game.create(Player.new(params[:player1_name]), Player.new(params[:player2_name]))
     @score = Scores.new
     erb(:play_two_player)
-    @p1, @p2 = '', ''
   end
 
   post '/play_game_1p' do
