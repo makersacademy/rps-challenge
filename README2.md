@@ -21,7 +21,6 @@ SCISSORS________)
 
 
 ## What does the program do?
----------
 
 It allows you to "Rock, Paper, Scissors" either single player against the computer or multiplayer against a friend.
 
@@ -29,18 +28,18 @@ It allows you to "Rock, Paper, Scissors" either single player against the comput
  All tests are passing
 
 ## How do I download and run it?
----------
-From command line:
 
+From command line:
+```
 $ git clone git@github.com:LazySamir/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup
-
+```
 ## How do I use it?
----------
-From the root page:
-  Select whether you would like to play a 'single player' or 'multiplayer' game
+
+*From the root page:*
+  Select whether you would like to play a *'single player'* or *'multiplayer'* game
 
 _*For single player:*_
 
@@ -76,7 +75,6 @@ _*For multiplayer:*_
 
 
 ## What was my approach?
----------
 
 Player class is responsible for holding and displaying player choices.
 
@@ -84,7 +82,6 @@ Game class is responsible for determining who wins a round.
 
 
 ## How would I improve it?
----------
 
 - Make it pretty! There are many inconsistencies of style and the lack there of in some views files.
 
