@@ -34,6 +34,8 @@ class RPS < Sinatra::Base
       @message = win
     elsif @weapon == "scissors" && @computer_weapon == "rock"
       @message = lose
+    elsif @weapon == "paper" && @computer_weapon == "scissors"
+      @message = lose
     elsif @weapon == "rock" && @computer_weapon == "scissors"
       @message = win
     else
