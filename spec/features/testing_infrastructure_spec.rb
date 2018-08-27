@@ -1,7 +1,7 @@
 feature 'root page message' do
   scenario 'shows welcome message' do
     visit('/')
-    expect(page).to have_content 'please enter your name'
+    expect(page).to have_content 'Would you like to play a game'
   end
 end
 
