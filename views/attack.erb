@@ -1,10 +1,14 @@
  <div style='background-color: black; color: white; border: 3px solid black; padding-left: 20px; height: 1000px'>
+ 
   <% if @name == "" %>
-    <h1 style="padding-left: 380px">Player 1 name: <span style="color: yellow;" >
+    <h1 style="padding-left: 280px"><span style="color: yellow;">
     <%= @name = "Nameless Person" %>
-    </span></h1>
+    </span> is playing <span style="color:orange;">Rock</span>,  
+  <span style="color:red;">Paper</span>, <span style="color:green;">Scissors</span></h1>
   <% else %>
-    <h1 style="padding-left: 380px">Player 1 name: <span style="color: yellow;" ><%= @name  %></span></h1>
+    <h1 style="padding-left: 280px"><span style="color: yellow;">
+    <%= @name  %></span> is playing <span style="color:orange;">Rock</span>,  
+  <span style="color:red;">Paper</span>, <span style="color:green;">Scissors</span></h1>
   <% end %>
   <img src="https://image.ibb.co/kHMqV9/rps.png" alt="rps" border="0" 
   style="padding-left: 230px; padding-bottom: 23px; padding-top: 10px">  

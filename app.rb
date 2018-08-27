@@ -20,20 +20,22 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @name = session['player_one']
-    @weapon = session['weapon']
+    @weapon = session[:weapon]
+    lose = "Commiserations, #{@name} - you lose..."
+    win = "Congratulations, #{@name} - You win!"
     @computer_weapon = ['rock', 'paper', 'scissors'].sample
     if @weapon == @computer_weapon
       @message = "It's a draw"
     elsif @weapon == "rock" && @computer_weapon == "paper"
-      @message = "You lose!"
+      @message = lose
     elsif @weapon == "paper" && @computer_weapon == "rock"
-      @message = "You win!"
+      @message = win
     elsif @weapon == "scissors" && @computer_weapon == "paper"
-      @message = "You win!"
+      @message = win
     elsif @weapon == "scissors" && @computer_weapon == "rock"
-      @message = "You lose!"
+      @message = lose
     elsif @weapon == "rock" && @computer_weapon == "scissors"
-      @message = "You win!"
+      @message = win
     else
       redirect '/attack'
     end
