@@ -2,18 +2,18 @@ class Game
 
   attr_reader :player, :computer
 
-  def initialize (player, computer)
+  def initialize(player, computer)
     @player = player
     @computer = computer
   end
 
   def result(moves)
     case moves
-      when ['ROCK', 'ROCK'], ['SCISSORS', 'SCISSORS'], ['PAPER', 'PAPER']
+    when [:rock, :rock], [:scissors, :scissors], [:paper, :paper]
         'Tie'
-      when ['ROCK','SCISSORS'], ['SCISSORS', 'PAPER'], ['PAPER', 'ROCK']
+      when [:rock, :scissors], [:scissors, :paper], [:paper, :rock]
         'Player wins'
-      when ['ROCK', 'PAPER'], ['PAPER', 'SCISSORS'], ['SCISSORS', 'ROCK']
+      when [:rock, :paper], [:paper, :scissors], [:scissors, :rock]
         'Computer wins'
     end
   end

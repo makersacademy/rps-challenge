@@ -8,7 +8,7 @@ class Player
   end
 
   def set_move(move = nil)
-    @move = (move == nil ? ['ROCK','PAPER','SCISSORS'].sample : move)
+    @move = (move == nil ? [:rock, :paper, :scissors].sample : move)
   end
 
 end
