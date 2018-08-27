@@ -23,6 +23,4 @@ feature "RPS Features" do
     click_on("Submit")
     expect(page).to have_content('rock')
   end
-
-
 end
