@@ -1,6 +1,5 @@
 # RPS Challenge
 
-
 This _Rock, Paper, Scissors_ game responds to the following brief:
 
 ```sh
@@ -22,9 +21,14 @@ Hints on functionality
 - a winner will be declared
 
 
-## Bonus level 1: Multiplayer
+# How to play?
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+- rackup, go to localhost:9292
+- follow instructions on the screen
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+# Things to improve
 
+- move the logic over to models
+- add points shown on the screen
+- unit tests, doubles
+- DRY the whole thing
