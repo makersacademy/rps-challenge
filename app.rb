@@ -17,12 +17,11 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-     player1 = Player.new(params[:player1])
+     player1 = Player.new(params[:player])
      @game = Game.create(player1, Player.new('dummy'))
      # could remove this player 2 if used * in class argument
     erb(:name)
   end
-  # could make ai class to pass to game
 
   post '/mpname' do
     player1 = Player.new(params[:player1])
@@ -31,36 +30,34 @@ class RPS < Sinatra::Base
     erb(:mpname)
   end
 
-  get '/game' do
+  before do
     @game = Game.instance
+  end
+
+  get '/game' do
     erb(:game)
   end
 
   get '/mpgame' do
-    @game = Game.instance
     erb(:mpgame)
   end
 
   post '/choice1' do
-    @game = Game.instance
     @game.first_player.choice_log << params[:choice1]
     redirect(:mpgame)
   end
 
   post '/choice2' do
-    @game = Game.instance
     @game.second_player.choice_log << params[:choice2]
     redirect(:mpgame)
   end
 
   post '/match' do
-    @game = Game.instance
     @game.first_player.choice_log << params[:choice]
     erb(:match)
   end
 
   get '/mpmatch' do
-    @game = Game.instance
     erb(:mpmatch)
   end
 

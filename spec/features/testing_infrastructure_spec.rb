@@ -68,7 +68,6 @@ feature 'when in single player' do
   end
 end
 
-
 feature 'when in multiplayer' do
 
   feature 'mp name form' do
@@ -83,11 +82,11 @@ feature 'when in multiplayer' do
     scenario 'Confirms that players chose paper and rock' do
       multi_sign_in
       click_link 'Start Game'
-      click_button 'Paper1'
-      click_button 'Rock1'
+      find('[name=Paper1]').click
+      find('[name=Rock2]').click
       click_button 'See who won'
       expect(page).to have_content 'Player 1 chose: Paper'
-      expect(page).to have_content 'Player 1 chose: Rock'
+      expect(page).to have_content 'Player 2 chose: Rock'
     end
   end
   #

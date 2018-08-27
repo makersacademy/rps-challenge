@@ -1,6 +1,7 @@
 describe Game do
-  subject(:game1) { Game.new(:player) }
-  let(:player)    { double :player }
+  subject(:game1)   { Game.new(player1, player2) }
+  let(:player1)    { double :player }
+  let(:player2)    { double :player }
 
   describe '#ai_choice' do
     it "returns ai choice" do
