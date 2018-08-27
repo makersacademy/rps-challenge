@@ -9,8 +9,6 @@ class Game
   end
 end
 
-# srand(67809)
-#
 # <form action="/flipped_struggle" method="post">
 #   Struggle: <input type="text" name="struggle" />
 #   <input type="submit" value="Flip table">
