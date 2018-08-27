@@ -1,19 +1,19 @@
  <div style='background-color: black; color: white; border: 3px solid black; padding-left: 20px; height: 1000px'>
  
   <% if @name == "" %>
-    <h1 style="padding-left: 280px"><span style="color: yellow;">
+    <h1 style="padding-left: 230px"><span style="color: yellow;">
     <%= @name = "Nameless Person" %>
     </span> is playing <span style="color:orange;">Rock</span>,  
   <span style="color:red;">Paper</span>, <span style="color:green;">Scissors</span></h1>
   <% else %>
-    <h1 style="padding-left: 280px"><span style="color: yellow;">
+    <h1 style="padding-left: 230px"><span style="color: yellow;">
     <%= @name  %></span> is playing <span style="color:orange;">Rock</span>,  
   <span style="color:red;">Paper</span>, <span style="color:green;">Scissors</span></h1>
   <% end %>
   <img src="https://image.ibb.co/kHMqV9/rps.png" alt="rps" border="0" 
   style="padding-left: 230px; padding-bottom: 23px; padding-top: 10px">  
   
-  <form action="/weapons" method="post" style="padding-left: 320px">
+  <form action="/weapons" method="post" style="padding-left: 230px">
     <h1>Choose a weapon: (rock, paper or scissors)</h1>
     <input id="player_one" type="text" placeholder="Enter weapon here" name="weapon" required>
     <input type="submit" value="Fight!" >
