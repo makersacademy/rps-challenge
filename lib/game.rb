@@ -10,9 +10,17 @@ class Game
     'scissors' => 'paper'
   }
 
-  def initialize(name, computer = Computer.new)
+  def initialize(name, computer)
     @name = name
     @computer = computer
+  end
+
+  def self.create(name, computer)
+    @game = Game.new(name, computer)
+  end
+
+  def self.instance
+    @game
   end
 
   def result(pl1, pl2)
