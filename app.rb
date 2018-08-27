@@ -1,5 +1,5 @@
 require "sinatra/base"
-require "./lib/player"
+require "./lib/game"
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -20,6 +20,7 @@ class Rps < Sinatra::Base
 
   post "/result" do
   @player_move = params[:player_move]
+  @game = Game.new
   erb :result
   end
 
