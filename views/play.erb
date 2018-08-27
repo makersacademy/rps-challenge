@@ -2,7 +2,13 @@
   <h1 style="padding-left: 350px">We are almost playing this game!</h1>
   <img src="https://image.ibb.co/kHMqV9/rps.png" alt="rps" border="0" 
   style="padding-left: 230px; padding-bottom: 23px; padding-top: 10px">  
-  <h2 style="padding-left: 480px">Player 1 name: <span style="color: yellow;" ><%= @name %></span></h2>
+  <% if @name == "" %>
+    <h2 style="padding-left: 480px">Player 1 name: <span style="color: yellow;" ><%= @name = "Shameless Nameless" %></span></h2>
+  <% else %>
+    <h2 style="padding-left: 480px">Player 1 name: <span style="color: yellow;" ><%= @name  %></span></h2>
+  <% end %>
+
+
   <a href="/start" style="color:white;"><h2 style="padding-left: 540px">Let's start</h2></a>
 </div>
 
