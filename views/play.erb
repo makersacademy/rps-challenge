@@ -1,0 +1,14 @@
+<h1>Welcome to the game, <%= @game.player_name %></h1>
+
+<h3>Choose an option</h3>
+
+<form action="/selection" method="post">
+
+  <input type="radio" name="option" value="rock" checked> Rock <br>
+  <input type="radio" name="option" value="paper"> Paper <br>
+  <input type="radio" name="option" value="scissors"> Scissors <br>
+  <br>
+  <input type="submit" value="Submit">
+
+
+</form>
