@@ -18,13 +18,10 @@
     <h1 style="padding-left: 450px">Your Weapon: <span style="color: yellow;" ><%= @weapon %></span></h1>
     <h1 style="padding-left: 450px">Computer Weapon: <span style="color: yellow;" ><%= @computer_weapon %></span></h1>
     <h1 style="padding-left: 450px"><span style="color: yellow;" ><%= @message %></span></h1>
-    <% elsif !@weapon %>
-    <% @message = "You can't play if you don't choose a weapon" %>
    <% end %>
 
    <% if @message %>
     <a href="/reset" style="text-decoration: none;"><h1 style="padding-left: 450px; color: yellow;">Play again</h1></a>
-
    <% end %>
 </div>
 

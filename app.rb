@@ -23,7 +23,7 @@ class RPS < Sinatra::Base
     @weapon = session['weapon']
     @computer_weapon = ['rock', 'paper', 'scissors'].sample
     if @weapon == @computer_weapon
-      @message = "It's a draw..."
+      @message = "It's a draw"
     elsif @weapon == "rock" && @computer_weapon == "paper"
       @message = "You lose!"
     elsif @weapon == "paper" && @computer_weapon == "rock"
@@ -34,8 +34,6 @@ class RPS < Sinatra::Base
       @message = "You lose!"
     elsif @weapon == "rock" && @computer_weapon == "scissors"
       @message = "You win!"
-    else
-      redirect '/attack'
     end
 
     erb(:play)
@@ -52,6 +50,7 @@ class RPS < Sinatra::Base
     @weapon = ""
     @computer_weapon = ""
     redirect '/attack'
+
   end
 
 end
