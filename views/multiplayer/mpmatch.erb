@@ -1,0 +1,42 @@
+
+
+<!-- <form action="/game" method="get">
+    <input type="submit" value="Play again">
+</form>
+<br>
+<form action="/log" method="get">
+    <input type="submit" value="See previous choices">
+</form> -->
+
+<style>
+h3 { text-align: center; border: 2px dotted teal }
+h4 { text-align: center; border: 2px solid darkmagenta }
+h5 { text-align: left; border: 2px solid red }
+a { text-decoration: none; }
+div {
+    width:150px;
+    margin: auto;
+}
+</style>
+
+
+<div>
+
+<h5 style="color:purple">
+Player 1 chose: <%= player1_choice = @game.player1.choice_log.last %>
+<br>
+Player 2 chose: <%= player2_choice = @game.player2.choice_log.last %>
+<br>
+<%= @game.who_wins(player1_choice, player2_choice) %>
+<br>
+</h5>
+
+<h3 style="color:green">
+<a href="http://localhost:9292/mpgame">Play again</a>
+</h3>
+
+<h4 style="color:navy">
+<a href="http://localhost:9292/mplog">See previous choices</a>
+</h4>
+
+</div>

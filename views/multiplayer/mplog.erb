@@ -1,0 +1,10 @@
+Player 1 choices:
+<%= @game.player1.pretty_log %>
+<br>
+Player 2 choices:
+<%= @game.player2.pretty_log %>
+
+<br>
+<form action="/mpgame" method="get">
+    <input type="submit" value="Play again">
+</form>

@@ -28,4 +28,8 @@ attr_reader :player1, :player2
     return 'It\'s a draw!' if choice1 == choice2
   'You lose!'
   end
+
+  # alter the wording of win/loss to include player 2
+  # this can be done by making a new method 
+  # split method, one logic, other what it says if 1 or 2 players
 end

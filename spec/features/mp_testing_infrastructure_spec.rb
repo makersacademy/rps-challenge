@@ -11,30 +11,33 @@ feature 'single or multiplayer confirmation' do
   end
 end
 
-#     fill_in :player, with: 'samir'
-#
-# feature 'name form' do
-#   scenario 'welcomes name from form' do
-#     visit('/')
-#     fill_in :player, with: 'samir'
-#     click_button 'Enter Game'
-#     expect(page).to have_content 'Welcome samir!'
-#   end
-# end
-#
-# feature 'Confirms RPS choice' do
-#   scenario 'Confirms that player chose paper' do
-#     single_sign_in
-#     click_button 'Paper'
-#     expect(page).to have_content 'You have chosen: Paper'
-#   end
-#   scenario 'Confirms that AI chose scissors' do
-#     single_sign_in
-#     srand(3)
-#     click_button 'Paper'
-#     expect(page).to have_content 'The opponent chose: Scissors'
-#   end
-# end
+feature 'mp name form' do
+  scenario 'welcomes names from form' do
+    visit('/')
+    click_button 'Multiplayer'
+    fill_in :player1, with: 'samir'
+    fill_in :player2, with: 'jess'
+    click_button 'Enter Game'
+    expect(page).to have_content 'Welcome samir!'
+    expect(page).to have_content 'Welcome jess!'
+  end
+end
+
+feature 'Confirms mp RPS choices' do
+  scenario 'Confirms that players chose paper and rock' do
+    visit('/')
+    click_button 'Multiplayer'
+    fill_in :player1, with: 'samir'
+    fill_in :player2, with: 'jess'
+    click_button 'Enter Game'
+    click_link 'Start Game'
+    click_button 'Paper1'
+    click_button 'Rock1'
+    click_button 'See who won'
+    expect(page).to have_content 'Player 1 chose: Paper'
+    expect(page).to have_content 'Player 1 chose: Rock'
+  end
+end
 #
 # feature 'can resolve a match' do
 #   before do
