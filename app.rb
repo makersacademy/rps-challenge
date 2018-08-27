@@ -19,9 +19,8 @@ class Rps < Sinatra::Base
   end
 
   post "/result" do
-  @player_move = params[:player_move]
-  @game = Game.new
-  erb :result
+    @game = Game.new(params[:player_move])
+    erb :result
   end
 
   run! if app_file == $PROGRAM_NAME

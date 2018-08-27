@@ -1,3 +1,15 @@
-You chose to play <%= @player_move %>
+<h4>The results are in:</h4>
 <p></p>
-The Computer played <%= @game.comp_move %>
+<h3><%= @game.winner %></h3>
+<p></p>
+
+You chose to play <%= @game.player_move %>
+<p></p>
+The Computer played <%= @game.c_move %>
+<p></p>
+
+
+Play again?
+<form action="/play" method="get">
+<input type="submit" value="Play">
+</form>
