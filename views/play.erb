@@ -1,1 +1,13 @@
-<h3>Player is: <%= @p1 %></h3>
+<center>
+  <h1>Hello <%= @p1 %></h1>.
+  <br><br>
+
+   <h3>Make your move by hitting one of the buttons below</h3>
+   <br><br>
+
+   <form action="/choice" method="post">
+         <input value="Rock" type="submit" name="move">
+         <input value="Paper" type="submit" name="move">
+         <input value="Scissors" type="submit" name="move">
+   </form>
+</center>

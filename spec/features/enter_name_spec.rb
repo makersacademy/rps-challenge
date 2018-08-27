@@ -6,6 +6,6 @@ feature "page shows players name" do
     visit "/"
     fill_in :player_name, with: "Andrew"
     click_button "Submit"
-    expect(page).to have_content "Andrew"
+    expect(page).to have_content "Hello"
   end
 end
