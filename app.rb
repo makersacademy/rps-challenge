@@ -25,9 +25,13 @@ class RPS_Game < Sinatra::Base
   end
 
   post '/play_one_player' do
-    @game = Game.create(Player.new(params[:player_name]), ComputerPlayer.new) if Game.instance.nil?
+   if Game.instance.nil?
+    @game = Game.create(Player.new(params[:player_name]), ComputerPlayer.new) 
+   else
     @game = Game.instance
+    @game.reset_player1(Player.new(params[:player_name]))
     erb(:play_one_player)
+   end
   end
 
   post '/play_two_player' do
@@ -47,5 +51,11 @@ class RPS_Game < Sinatra::Base
   post '/play_game_2p' do
     @game = Game.instance
     @score = Scores.new
+  end
+
+  post '/reset_restart' do
+    @game = Game.instance
+    @game.reset
+    redirect('/')
   end
 end
