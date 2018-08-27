@@ -19,7 +19,6 @@ class RPS < Sinatra::Base
   post '/name' do
     player1 = Player.new(params[:player])
     @game = Game.create(player1, Player.new('dummy'))
-    # could remove this player 2 if used * in class argument
     erb(:name)
   end
 

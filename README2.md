@@ -28,6 +28,7 @@ It allows you to "Rock, Paper, Scissors" either single player against the comput
  Test coverage is: 100%
  All tests are passing
 
+
 ## How do I download and run it?
 
 From command line:
@@ -37,6 +38,7 @@ $ cd rps-challenge
 $ bundle
 $ rackup
 ```
+
 ## How do I use it?
 
 *From the root page:*
@@ -91,3 +93,5 @@ Game class is responsible for determining who wins a round.
 - Extract the Computer into it's own class.
 
 - Currently Player 2 is instantiated when game is instantiated. This is a waste when playing a single player game. I'd like to find a way to fix while keeping multiplayer functionality.
+
+- When a person doesn't make a choice, it reads "player chose:". I would like to change this to "player did not choose an option".

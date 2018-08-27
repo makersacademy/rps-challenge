@@ -10,8 +10,6 @@ describe Game do
     end
   end
 
-# test for first_player, last_player and players?
-
   describe '#who_wins' do
     context 'when player 1 wins' do
       it "rock vs scissors" do
@@ -60,6 +58,5 @@ describe Game do
         expect(game1.who_wins(nil, nil)).to eq 'No winner: you have to both choose!'
       end
     end
-
   end
 end

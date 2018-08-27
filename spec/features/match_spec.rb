@@ -1,4 +1,3 @@
-
 feature 'confirms single player choices' do
   scenario 'shows choice of player' do
     single_sign_in

@@ -1,5 +1,4 @@
 describe Player do
-
   subject(:player1) { Player.new('player1') }
 
   describe '#name' do
@@ -21,7 +20,7 @@ describe Player do
       expect(player1.pretty_log).to eq 'rock paper'
     end
   end
-# does this actually test anything?
+
   describe '#last_choice' do
     it "returns last choice entered" do
       player1.choice_log << 'rock'
