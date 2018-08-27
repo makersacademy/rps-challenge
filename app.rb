@@ -25,19 +25,28 @@ class RPS_Game < Sinatra::Base
   end
 
   post '/play_one_player' do
-    @game = Game.create(Player.new(params[:player_name]), ComputerPlayer.new)
+    @game = Game.create(Player.new(params[:player_name]), ComputerPlayer.new) if Game.instance.nil?
+    @game = Game.instance
     erb(:play_one_player)
   end
 
   post '/play_two_player' do
     @game = Game.create(Player.new(params[:player1_name]), Player.new(params[:player2_name]))
+    @score = Scores.new
     erb(:play_two_player)
+    @p1, @p2 = '', ''
   end
 
-  post '/play_game' do
+  post '/play_game_1p' do
+    @game = Game.instance
     @score = Scores.new
     @cp = ComputerPlayer.new.make_choice
     @choice = params[:choice]
-    erb(:play_game)
+    erb(:play_game_1p)
+  end
+
+  post '/play_game_2p' do
+    @game = Game.instance
+    @score = Scores.new
   end
 end

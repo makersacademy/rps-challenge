@@ -1,1 +1,60 @@
-<%= @game.players.first.name %> vs <%= @game.players.last.name %>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<h1><%= @game.players.first.name %> vs <%= @game.players.last.name %></h1>
+
+<div id="Content">
+  <div id="divA">
+    <button onclick="choosep1('rock')">Rock</button>
+    <button onclick="choosep1('paper')">Paper</button>
+    <button onclick="choosep1('scissors')">Scissors</button>
+    <div id="result"></div>
+    <br>
+    <br>
+     <button onclick="test()">test</button>
+  </div>
+
+  <div id="divB">
+    <button onclick="choosep2('rock')">Rock</button>
+    <button onclick="choosep2('paper')">Paper</button>
+    <button onclick="choosep2('scissors')">Scissors</button>
+    <div id="result"></div>
+    <br>
+    <br>
+     <button onclick="test()">test</button>
+  </div>
+</div>
+
+<script>
+  var p1choice;
+  var p2choice;
+
+  function choosep1(choice) {
+    p1choice = choice;
+  }
+
+  function choosep2(choice) {
+    p2choice = choice;
+  }
+
+  function test() {
+    alert("P1: " + p1choice + ", P2: " + p2choice);
+  }
+
+  function p1() {
+    return(p1choice)
+  }
+
+  function p2() {
+    return(p2choice)
+  }
+
+  function decide(p1, p2) {
+    <%= a = p1; b = p2 %>
+    <%= @score.decide_winner(a, b) %>
+  }
+</script>
+
+<button onclick="p1()">p1</button>
+<button onclick="p2()">p2</button>

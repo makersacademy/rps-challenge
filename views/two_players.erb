@@ -1,13 +1,24 @@
-<h2>Enter names & click 'Submit' to play</h2>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-<form action="/play_two_player" method="post">
-  <label for="player1_name">
-    Player 1:
-    <input type="text" name="player1_name">
-  </label>
-  <label for="player2_name">
-    Player 2:
-    <input type="text" name="player2_name">
-  </label>
-  <input type="submit" value="Submit">
-</form>
+<h1>Enter names:</h1>
+
+<body>
+  <form action="/play_two_player" method="post">
+    <label for="player1_name">
+      <h2>Player 1:</h2>
+      <br>
+      <input type="text" name="player1_name">
+    </label>
+    <br>
+    <label for="player2_name">
+      <h2>Player 2:</h2>
+      <br>
+      <input type="text" name="player2_name">
+    </label>
+    <br>
+    <br>
+    <button type="submit" name="Submit" value="Submit">Submit</button>
+  </form>
+</body>

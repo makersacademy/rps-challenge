@@ -1,0 +1,18 @@
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+<h1><%= @p1choice %></h1>
+  <% if @score.decide_winner(@p1choice, @p2choice) == :tie %>
+    <h1><b>Draw</b></h1>
+  <% elsif @score.decide_winner(@p1choice, @p2choice) == :p1 %>
+    <%= @game.p1_win; nil %>
+    <h1><b>Player 1 Wins</b></h1>
+  <% else %>
+    <%= @game.p2_win; nil %>
+    <h1><b>Player 2 Wins</b></h1>
+  <% end %>
+</body>
