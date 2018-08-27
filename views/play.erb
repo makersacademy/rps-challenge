@@ -1,12 +1,18 @@
-<h1 style='font-family: futura'>Rock Paper Scissors</h1>
-<h3 style='font-family: futura'>Hi <%=@player.name%>!</h3>
-<body style='font-family: futura'>Choose your weapon:</body><br><br>
-<form action='/select' method='post'>
-  <input type="submit" value="Rock" name='player_selection'>
-</form>
-<form action='/select' method='post'>
-  <input type="submit" value="Paper" name='player_selection'>
-</form>
-<form action='/select' method='post'>
-  <input type="submit" value="Scissors" name='player_selection'>
-</form>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Rock Paper Scissors</h1>
+    <h3>Hi <%=@player1.name%>!</h3>
+      Choose your weapon:<br><br>
+      <form action='/select' method='post'>
+        <input type="submit" value="Rock" name='player_selection'>
+      </form>
+      <form action='/select' method='post'>
+        <input type="submit" value="Paper" name='player_selection'>
+      </form>
+      <form action='/select' method='post'>
+        <input type="submit" value="Scissors" name='player_selection'>
+      </form>
+</body>

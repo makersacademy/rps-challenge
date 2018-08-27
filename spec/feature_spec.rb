@@ -29,3 +29,4 @@ feature 'Game winner' do
     expect(page).to have_content 'Game Over'
   end
 end
+

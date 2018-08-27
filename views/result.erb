@@ -1,8 +1,11 @@
-<h1 style='font-family: futura'>Rock Paper Scissors</h1>
-<h3 style='font-family: futura'>
-  Game Over:</h3>
-<h4 style='font-family: futura'>
-  <%=@player.name%> picked <%=@player.selection%><br>
-  <%=@player2.name%> picked <%=@player2.selection%><br>
-  <%=@game.win_message%>
-</h4>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Rock Paper Scissors</h1>
+    <h3>Game Over:</h3>
+        <%=@player1.name%> picked <%=@player1.selection%><br>
+        <%=@player2.name%> picked <%=@player2.selection%><br>
+      <h2><%=@game.win_message%></h2>
+</body>

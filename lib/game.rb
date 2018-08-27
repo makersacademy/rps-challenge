@@ -26,7 +26,7 @@ class Game
   end
 
   def win_message
-    winner == 'draw' ? "It's a draw" : "#{winner} wins!"
+    winner == 'draw' ? "It's a draw." : "#{winner} wins!"
   end
 
   private
