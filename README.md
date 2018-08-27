@@ -1,22 +1,32 @@
 # Rock Paper Scissors
 ##### Battle against the computer! 
 
-### Set-up:
+## Set-up:
 ```
 git clone https://github.com/EsamAl-Dabagh/rps-challenge.git
 cd rps-challenge
 bundle
-rackup
+rackup -p 4567
 ```
 
 ### Enter your name:
-SCREENSHOT
+![Homepage](https://imgur.com/fOM5fJo)
 
 ### Choose your weapon:
-SCREENSHOT
+![Choose page](https://imgur.com/AlqQSsd)
 
 ### Battle against the computer:
-SCREENSHOT
+![Battle page](https://imgur.com/JNlaybq)
+
+## Design
+This game consists of two models:
+`Game`, `Player`
+
+`Game` is initialized with two arguments, `player01`, `player02`.
+
+`Player` is initialized with one optional argument, `name`. If no argument is supplied, the default argument is "The Computer". This is the opponent the user plays against.
+
+`Player`'s `choose` method takes one optional argument. For the user, their selection on "/choose" is passed to `choose` as the argument. For "The Computer" a `RandomPicker` module is included to pass in a `random_choice` as the default argument to `choose`.
 
 ### Folder structure:
 ```
