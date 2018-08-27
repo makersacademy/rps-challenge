@@ -9,8 +9,14 @@
  
 
   <a href="/attack" style="color:white; text-decoration: none;">
-    <h1 style="padding-left: 450px; font-size: 60px; color: orange; ">Click to Play</h1>
+    <% if !@weapon %>
+     <h1 style="padding-left: 450px; font-size: 60px; color: orange; ">Click to Play</h1>
+    <% end %>
   </a>
+
+   <% if @weapon %>
+    <h1 style="padding-left: 450px">Weapon: <span style="color: yellow;" ><%= @weapon %></span></h1>
+   <% end %>
 </div>
 
 
