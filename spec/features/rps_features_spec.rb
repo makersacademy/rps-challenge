@@ -18,14 +18,14 @@ feature "RPS Features" do
   scenario 'player can choose a weapon, see a result' do
     sign_in_and_submit
     fill_in('weapon', with: 'rock')
-    click_on("Submit")
+    click_on("Fight!")
     expect(page).to have_content('rock')
   end
 
   scenario 'player can play again' do
     sign_in_and_submit
     fill_in('weapon', with: 'paper')
-    click_on("Submit")
+    click_on("Fight!")
     expect(page).to have_content('Play again')
   end
 end
