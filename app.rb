@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/computer'
 
 class Rps < Sinatra::Base
 
@@ -29,9 +30,10 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
-    @game_weapon = $game.computer_weapon
+    @game_weapon = $game.computer.weapon
     @player_weapon = $player_weapon
     @player = $game
+    @result = $game.result(@player_weapon, @game_weapon)
     erb(:result)
   end
 

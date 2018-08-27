@@ -1,4 +1,4 @@
-Computer's weapon is: <%= @game_weapon %>!
+computer's weapon is: <%= @game_weapon %>!
 
 <br>
 <br>
@@ -8,12 +8,6 @@ Computer's weapon is: <%= @game_weapon %>!
 <br>
 <br>
 
-<% if @player_weapon == @game_weapon %>
-  IT'S A DRAW!
-  <% elsif $game.to_win[@player_weapon] == @game_weapon %>
-  <%= @player.name %> wins!
-  <% elsif $game.to_win[@game_weapon] == @player_weapon %>
-  COMPUTER WINS!
-<% end %>
+<%= @result %>
 
-<a href="/play">ok</a>
+<a href="/play">play again</a>
