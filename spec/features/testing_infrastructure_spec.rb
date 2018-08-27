@@ -22,20 +22,29 @@ feature 'Confirms RPS choice' do
   end
   scenario 'Confirms that AI chose scissors' do
     single_sign_in
+    srand(3)
     click_button 'Paper'
     expect(page).to have_content 'The opponent chose: Scissors'
   end
 end
 
 feature 'can resolve a match' do
-  scenario 'lose a game when ai wins' do
+  before do
+    srand(3)
+  end
+  scenario 'lose a game' do
     single_sign_in
     click_button 'Paper'
-    expect(page).to have_content "You Lose!"
+    expect(page).to have_content "You lose!"
   end
-  scenario 'win a game when ai loses' do
+  scenario 'win a game' do
     single_sign_in
     click_button 'Rock'
-    expect(page).to have_content "You Win!"
+    expect(page).to have_content "You win!"
+  end
+  scenario 'draw a game when choices match' do
+    single_sign_in
+    click_button 'Scissors'
+    expect(page).to have_content "It's a draw!"
   end
 end

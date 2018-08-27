@@ -4,7 +4,7 @@ describe Game do
 
   describe '#ai_choice' do
     it "returns ai choice" do
-      srand(67809)
+      srand(3)
       expect(game1.ai_choice).to eq "Scissors"
     end
   end

@@ -1,3 +1,7 @@
-You have chosen: <%= @game.player.choice_log.last %>
 
-The opponent chose: <%= ['Rock', 'Paper', 'Scissors'].sample %>
+You have chosen: <%= player_choice = @game.player.choice_log.last %>
+
+The opponent chose: <%= ai_choice = @game.ai_choice %>
+<!-- using game.ai_choice twice will give diff results -->
+
+<%= @game.who_wins(player_choice, ai_choice) %>
