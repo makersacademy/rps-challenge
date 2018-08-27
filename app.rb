@@ -20,6 +20,12 @@ class RPS < Sinatra::Base
     erb(:game)
   end
 
+  post '/match' do
+    @player = $player
+    @player.choice_log << params[:choice]
+    erb(:match)
+  end
+
 run! if app_file == $0
 
 end

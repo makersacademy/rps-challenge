@@ -8,8 +8,3 @@ class Game
     ['Rock', 'Paper', 'Scissors'].sample
   end
 end
-
-# <form action="/flipped_struggle" method="post">
-#   Struggle: <input type="text" name="struggle" />
-#   <input type="submit" value="Flip table">
-# </form>
