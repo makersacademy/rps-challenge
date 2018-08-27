@@ -9,7 +9,7 @@ class Game
 
   def result(moves)
     case moves
-    when [:rock, :rock], [:scissors, :scissors], [:paper, :paper]
+      when [:rock, :rock], [:scissors, :scissors], [:paper, :paper]
         'Tie'
       when [:rock, :scissors], [:scissors, :paper], [:paper, :rock]
         'Player wins'

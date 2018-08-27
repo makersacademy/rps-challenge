@@ -18,8 +18,8 @@ class Rps < Sinatra::Base
 
   post '/play' do
     @game = Game.instance
-    @player_move = @game.player.set_move(params[:player_move]).to_sym
-    @computer_move = @game.computer.set_move
+    @player_move = @game.player.weapon_choice(params[:player_move]).to_sym
+    @computer_move = @game.computer.weapon_choice
     @player_name = @game.player.name
     @computer_name = @game.computer.name
     @result = @game.result([@player_move, @computer_move])

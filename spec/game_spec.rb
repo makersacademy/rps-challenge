@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
 
-  subject(:game) { Game.new('Player', 'COMPUTER')}
+  subject(:game) { Game.new('Player', 'COMPUTER') }
 
   describe '#player' do
     it 'retrieves player' do

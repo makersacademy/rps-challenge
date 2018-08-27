@@ -7,8 +7,8 @@ class Player
     @move = nil
   end
 
-  def set_move(move = nil)
-    @move = (move == nil ? [:rock, :paper, :scissors].sample : move)
+  def weapon_choice(move = "")
+    @move = (move == "" ? [:rock, :paper, :scissors].sample : move)
   end
 
 end
