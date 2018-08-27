@@ -3,7 +3,7 @@ require_relative 'text_client'
 class Game
   attr_reader :player1_score, :player2_score
   attr_accessor :players
-  def initialize(player1=nil, player2=nil, text_client=TextClient.new)
+  def initialize(player1=nil, player2=nil, text_client=nil)
     @players = [player1, player2]
     @player1_score, @player2_score = 0, 0
     @text_client = text_client
@@ -35,6 +35,7 @@ class Game
     @player2_score += 1
   end
 
+  private
   def text_choice
     @text_client.pull_texts.first
   end

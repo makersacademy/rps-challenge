@@ -1,5 +1,3 @@
-require 'play_game_2p'
-
 feature 'When two people ar playing' do
   before(:each) do
     play_for_2
