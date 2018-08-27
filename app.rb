@@ -18,4 +18,9 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/attack' do
+    @name = session['player_one']
+    erb(:attack)
+  end
+
 end
