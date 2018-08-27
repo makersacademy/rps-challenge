@@ -1,0 +1,9 @@
+Welcome <%= @player_name %>!</br>
+Let's play a game of Rock, Paper, Scissors!</br>
+Choose your move:</br>
+
+<form action="/play" method="post">
+  <button name="player_move" type="submit" value='rock'>ROCK</button>
+  <button name="player_move" type="submit" value='paper'>PAPER</button>
+  <button name="player_move" type="submit" value='scissors'>SCISSORS</button>
+</form>
