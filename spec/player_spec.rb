@@ -1,6 +1,6 @@
 describe Player do
 
-  subject(:player1) { Player.new('player1')}
+  subject(:player1) { Player.new('player1') }
 
   describe '#name' do
     it "returns player's name" do
@@ -29,5 +29,4 @@ describe Player do
       expect(player1.last_choice).to eq 'paper'
     end
   end
-
 end

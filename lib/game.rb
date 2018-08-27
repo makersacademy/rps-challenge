@@ -1,6 +1,7 @@
 class Game
+  attr_reader :players
 
-attr_reader :players
+  WINNER = { 'Scissors' => 'Paper', 'Paper' => 'Rock', 'Rock' => 'Scissors' }
 
   def initialize(player1, player2 = Player.new)
     @players = [player1, player2]
@@ -28,15 +29,13 @@ attr_reader :players
   end
 
   def who_wins(choice1, choice2)
-    return 'No winner: you have to both choose!' if choice1 == nil || choice2 == nil
-    return 'Player 1 wins!' if choice1 == 'Scissors' && choice2 == 'Paper'
-    return 'Player 1 wins!' if choice1 == 'Paper' && choice2 == 'Rock'
-    return 'Player 1 wins!' if choice1 == 'Rock' && choice2 == 'Scissors'
-    return 'It\'s a draw!' if choice1 == choice2
-  'Player 2 wins!'
+    return 'No winner: you have to both choose!' if choice1.nil? || choice2.nil?
+    if choice1 == choice2
+      "It\'s a draw!"
+    elsif WINNER[choice1] == choice2
+      "Player 1 wins!"
+    else
+      "Player 2 wins!"
+    end
   end
-
-  # alter the wording of win/loss to include player 2
-  # this can be done by making a new method
-  # split method, one logic, other what it says if 1 or 2 players
 end
