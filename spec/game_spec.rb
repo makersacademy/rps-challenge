@@ -9,6 +9,8 @@ describe Game do
     end
   end
 
+# test for first_player, last_player and players?
+
   describe '#who_wins' do
     it "returns that player wins" do
       expect(game1.who_wins('Rock', 'Scissors')).to eq 'You win!'

@@ -43,19 +43,19 @@ class RPS < Sinatra::Base
 
   post '/choice1' do
     @game = Game.instance
-    @game.player1.choice_log << params[:choice1]
+    @game.first_player.choice_log << params[:choice1]
     redirect(:mpgame)
   end
 
   post '/choice2' do
     @game = Game.instance
-    @game.player2.choice_log << params[:choice2]
+    @game.second_player.choice_log << params[:choice2]
     redirect(:mpgame)
   end
 
   post '/match' do
     @game = Game.instance
-    @game.player.choice_log << params[:choice]
+    @game.first_player.choice_log << params[:choice]
     erb(:match)
   end
 
@@ -64,15 +64,15 @@ class RPS < Sinatra::Base
     erb(:mpmatch)
   end
 
-  get '/log' do
-    @game = Game.instance
-    erb(:log)
-  end
-
-  get '/mplog' do
-    @game = Game.instance
-    erb(:mplog)
-  end
+  # get '/log' do
+  #   @game = Game.instance
+  #   erb(:log)
+  # end
+  #
+  # get '/mplog' do
+  #   @game = Game.instance
+  #   erb(:mplog)
+  # end
 
 run! if app_file == $0
 

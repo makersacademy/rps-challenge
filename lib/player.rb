@@ -6,9 +6,10 @@ attr_reader :choice_log, :name
   end
 
   def pretty_log
-    # choice_log.each_with_index do |choice, index|
-    #   "#{index}: choice"
-    # end
     choice_log.join(' ')
+  end
+
+  def last_choice
+    choice_log.last
   end
 end

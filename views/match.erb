@@ -23,20 +23,21 @@ div {
 <div>
 
 <h5 style="color:purple">
-Player 1 chose: <%= player1_choice = @game.player1.choice_log.last %>
+You have chosen: <%= player_choice = @game.first_player.last_choice %>
 <br>
-Player 2 chose: <%= player2_choice = @game.player2.choice_log.last %>
+The opponent chose: <%= ai_choice = @game.ai_choice %>
+<!-- using game.ai_choice twice will give diff results -->
 <br>
-<%= @game.who_wins(player1_choice, player2_choice) %>
+<%= @game.who_wins(player_choice, ai_choice) %>
 <br>
 </h5>
 
 <h3 style="color:green">
-<a href="http://localhost:9292/mpgame">Play again</a>
+<a href="http://localhost:9292/game">Play again</a>
 </h3>
 
-<h4 style="color:navy">
-<a href="http://localhost:9292/mplog">See previous choices</a>
-</h4>
+<!-- <h4 style="color:navy">
+<a href="http://localhost:9292/log">See previous choices</a>
+</h4> -->
 
 </div>

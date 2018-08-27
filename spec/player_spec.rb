@@ -21,6 +21,13 @@ describe Player do
       expect(player1.pretty_log).to eq 'rock paper'
     end
   end
-
+# does this actually test anything?
+  describe '#last_choice' do
+    it "returns last choice entered" do
+      player1.choice_log << 'rock'
+      player1.choice_log << 'paper'
+      expect(player1.last_choice).to eq 'paper'
+    end
+  end
 
 end
