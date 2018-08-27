@@ -1,11 +1,13 @@
 # Rock Paper Scissors: web app
 
+[![Build Status](https://travis-ci.org/rebeccasedgwick/rps-challenge.svg?branch=master)](https://travis-ci.org/rebeccasedgwick/rps-challenge)  
+
 Instructions
 ----
 
 To download and run via localhost do the following:
 
-``` 
+```
 $ git clone git@github.com:rebeccasedgwick/rps-challenge.git
 $ cd rps-challenge
 $ bundle
