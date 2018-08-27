@@ -4,7 +4,7 @@ feature 'root page message' do
     expect(page).to have_content 'please enter your name'
   end
 end
-# add a before to set single sign in
+
 feature 'name form' do
   scenario 'welcomes name from form' do
     visit('/')
@@ -13,7 +13,7 @@ feature 'name form' do
     expect(page).to have_content 'Welcome samir!'
   end
 end
-#may lose this
+
 feature 'Confirms RPS choice' do
   scenario 'Confirms that player chose paper' do
     single_sign_in
@@ -32,17 +32,17 @@ feature 'can resolve a match' do
   before do
     srand(3)
   end
-  scenario 'lose a game' do
+  scenario 'can lose a game' do
     single_sign_in
     click_button 'Paper'
     expect(page).to have_content "You lose!"
   end
-  scenario 'win a game' do
+  scenario 'can win a game' do
     single_sign_in
     click_button 'Rock'
     expect(page).to have_content "You win!"
   end
-  scenario 'draw a game when choices match' do
+  scenario 'can draw a game when choices match' do
     single_sign_in
     click_button 'Scissors'
     expect(page).to have_content "It's a draw!"
