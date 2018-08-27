@@ -1,5 +1,6 @@
 # Rock, Paper, Scissors
 
+```
     _______
 ---'   ____)
       (_____)
@@ -18,7 +19,7 @@ PAPER     _______)
 SCISSORS________)
       (____)
 ---.__(___)
-
+```
 
 ## What does the program do?
 
