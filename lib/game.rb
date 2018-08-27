@@ -1,23 +1,23 @@
 class Game
 
-  attr_reader :players_choice, :games_choice
+  attr_reader :players_choice, :computers_choice
 
   def initialize(players_choice)
     @players_choice = players_choice
-    @games_choice = ["Rock", "Paper", "Scissors"].sample
+    @computers_choice = ["Rock", "Paper", "Scissors"].sample
   end
 
   def determine_result
-    if @players_choice == "Rock" && @games_choice == "Scissors"
-      "You win"
-    elsif @players_choice == "Paper" && @games_choice == "Rock"
-      "You win"
-    elsif @players_choice == "Scissors" && @games_choice == "Paper"
-      "You win"
-    elsif @players_choice == @games_choice
+    if @players_choice == "Rock" && @computers_choice == "Scissors"
+      "Man wins"
+    elsif @players_choice == "Paper" && @computers_choice == "Rock"
+      "Man wins"
+    elsif @players_choice == "Scissors" && @computers_choice == "Paper"
+      "Man wins"
+    elsif @players_choice == @computers_choice
       "It's a draw"
     else
-      "You lose"
+      "Computer wins"
     end
   end
 

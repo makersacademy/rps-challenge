@@ -21,13 +21,19 @@ class Rps < Sinatra::Base
    post '/choice' do
      $choice = params[:move]
      @choice = $choice
+     $game = Game.new(@choice)
+     @game = $game
+     $computers_choice = @game.computers_choice
+     $winner = @game.determine_result
      redirect  '/decision'
    end
 
    get '/decision' do
       @p1 = $p1
       @choice = $choice
+      @computers_choice = $computers_choice
+      @winner = $winner
      erb :decision
    end
-   
+
 end

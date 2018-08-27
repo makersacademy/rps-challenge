@@ -1,7 +1,4 @@
-# As a marketeer
-# So that I can enjoy myself away from the daily grind
-# I would like to be able to play rock/paper/scissors
-feature "page shows players name" do
+feature "page shows the results" do
   scenario "Game page loads" do
     visit "/"
     fill_in :player_name, with: "Andrew"
