@@ -10,4 +10,11 @@ feature "RPS Features" do
     expect(page).to have_content('Dave')
   end
 
+  scenario 'player can choose rock, paper or scissors' do
+    sign_in_and_submit
+    click_link("Click to Play")
+    expect(page).to have_content('Choose your weapon')
+  end
+
+
 end
