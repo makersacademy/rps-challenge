@@ -34,6 +34,8 @@ class RPS < Sinatra::Base
       @message = "You lose!"
     elsif @weapon == "rock" && @computer_weapon == "scissors"
       @message = "You win!"
+    else
+      redirect '/attack'
     end
 
     erb(:play)
@@ -50,7 +52,6 @@ class RPS < Sinatra::Base
     @weapon = ""
     @computer_weapon = ""
     redirect '/attack'
-
   end
 
 end

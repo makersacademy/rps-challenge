@@ -1,8 +1,16 @@
  <div style='background-color: black; color: white; border: 3px solid black; padding-left: 20px; height: 1000px'>
+  <% if @name == "" %>
+    <h1 style="padding-left: 450px">Player 1 name: <span style="color: yellow;" ><%= @name = "Nameless Person" %></span></h1>
+  <% else %>
+    <h1 style="padding-left: 450px">Player 1 name: <span style="color: yellow;" ><%= @name  %></span></h1>
+  <% end %>
+  <img src="https://image.ibb.co/kHMqV9/rps.png" alt="rps" border="0" 
+  style="padding-left: 230px; padding-bottom: 23px; padding-top: 10px">  
+  
   <form action="/weapons" method="post" style="padding-left: 440px">
    Choose a weapon: 
-    <input id="player_one" type="text" placeholder="Enter weapon here" name="weapon">
-    <input type="submit" value="Submit">
+    <input id="player_one" type="text" placeholder="Enter weapon here" name="weapon" required>
+    <input type="submit" value="Submit" >
   </form>
-
+  <% @message %>
 </div>
