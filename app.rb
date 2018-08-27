@@ -8,12 +8,27 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  get '/single' do
+    erb(:single)
+  end
+
+  get '/multi' do
+    erb(:multi)
+  end
+
   post '/name' do
      player1 = Player.new(params[:player])
      @game = Game.create(player1)
     erb(:name)
   end
   # could make ai class to pass to game
+
+  post '/mpname' do
+    player1 = Player.new(params[:player1])
+    player2 = Player.new(params[:player2])
+    @game = Game.create(player1, player2)
+    erb(:mpname)
+  end
 
   get '/game' do
     @game = Game.instance

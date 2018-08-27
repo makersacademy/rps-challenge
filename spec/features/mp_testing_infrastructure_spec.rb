@@ -1,17 +1,10 @@
-feature 'root page message' do
-  scenario 'shows welcome message' do
-    visit('/')
-    expect(page).to have_content 'Would you like to play a game'
-  end
-end
-
-feature 'single or multiplayer' do
+feature 'single or multiplayer confirmation' do
   scenario 'single player' do
     visit('/')
     click_button 'Single Player'
     expect(page).to have_content 'You have selected single player mode'
   end
-  scenario 'single player' do
+  scenario 'multiplayer' do
     visit('/')
     click_button 'Multiplayer'
     expect(page).to have_content 'You have selected multiplayer mode'

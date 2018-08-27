@@ -1,14 +1,16 @@
 class Game
 
-attr_reader :player
+attr_reader :player1, :player2
 
-  def initialize(player)
-    @player = player
+  def initialize(player1, player2 = Player.new)
+    @player1 = player1
+    @player2 = player2
     # needed?
+    # could use *player2? that way it isnt created if not needed.
   end
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player1, player2 = Player.new)
+    @game = Game.new(player1, player2)
   end
 
   def self.instance

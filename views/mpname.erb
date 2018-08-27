@@ -1,0 +1,18 @@
+<style>
+h1 { text-align: center; border: 4px dotted Tomato }
+h2 { text-align: center; border: 2px solid mediumblue }
+a { text-decoration: none; }
+div {
+    width:300px;
+    margin: auto;
+}
+</style>
+
+<div>
+<h1 style="color:Crimson">
+Welcome <%= @game.player1.name %>! </h1>
+<h1 style="color:Crimson">
+Welcome <%= @game.player2.name %>! </h1>
+
+<h2><a href="http://localhost:9292/game">Start Game</a></h2>
+</div>
