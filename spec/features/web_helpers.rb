@@ -7,14 +7,14 @@ end
 
 def single_sample_games
   click_button 'Rock'
-  click_button 'Play again'
+  click_link 'Play again'
   click_button 'Paper'
-  click_button 'Play again'
+  click_link 'Play again'
   click_button 'Rock'
-  click_button 'Play again'
+  click_link 'Play again'
   click_button 'Scissors'
-  click_button 'Play again'
+  click_link 'Play again'
   click_button 'Scissors'
-  click_button 'Play again'
+  click_link 'Play again'
   click_button 'Paper'
 end

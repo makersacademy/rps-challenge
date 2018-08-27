@@ -1,4 +1,28 @@
 
+
+<!-- <form action="/game" method="get">
+    <input type="submit" value="Play again">
+</form>
+<br>
+<form action="/log" method="get">
+    <input type="submit" value="See previous choices">
+</form> -->
+
+<style>
+h3 { text-align: center; border: 2px dotted teal }
+h4 { text-align: center; border: 2px solid darkmagenta }
+h5 { text-align: left; border: 2px solid red }
+a { text-decoration: none; }
+div {
+    width:150px;
+    margin: auto;
+}
+</style>
+
+
+<div>
+
+<h5 style="color:purple">
 You have chosen: <%= player_choice = @game.player.choice_log.last %>
 <br>
 The opponent chose: <%= ai_choice = @game.ai_choice %>
@@ -6,10 +30,14 @@ The opponent chose: <%= ai_choice = @game.ai_choice %>
 <br>
 <%= @game.who_wins(player_choice, ai_choice) %>
 <br>
-<form action="/game" method="get">
-    <input type="submit" value="Play again">
-</form>
-<br>
-<form action="/log" method="get">
-    <input type="submit" value="See previous choices">
-</form>
+</h5>
+
+<h3 style="color:green">
+<a href="http://localhost:9292/game">Play again</a>
+</h3>
+
+<h4 style="color:navy">
+<a href="http://localhost:9292/log">See previous choices</a>
+</h4>
+
+</div>
