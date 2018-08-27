@@ -10,13 +10,13 @@ rackup -p 4567
 ```
 
 ### Enter your name:
-![Homepage](https://imgur.com/fOM5fJo)
+![Homepage](https://i.imgur.com/fOM5fJo.png)
 
 ### Choose your weapon:
-![Choose page](https://imgur.com/AlqQSsd)
+![Choose page](https://i.imgur.com/AlqQSsd.png)
 
 ### Battle against the computer:
-![Battle page](https://imgur.com/JNlaybq)
+![Battle page](https://i.imgur.com/JNlaybq.png)
 
 ## Design
 This game consists of two models:
