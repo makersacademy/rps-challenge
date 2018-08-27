@@ -53,10 +53,7 @@ class RPS < Sinatra::Base
   get '/reset' do
     session['weapon'] = ""
     session['computer_weapon'] = ""
-    @weapon = ""
-    @computer_weapon = ""
     redirect '/attack'
-
   end
 
 end
