@@ -6,9 +6,7 @@ feature "RPS Features" do
   end
   
   scenario 'players can enter names, submit and see names on screen' do
-    visit('/')
-    fill_in('player_one', with: 'Dave')
-    click_on('Submit') 
+    sign_in_and_submit
     expect(page).to have_content('Dave')
   end
 
