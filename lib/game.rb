@@ -4,6 +4,7 @@ class Game
 
   def self.create(number_of_players)
     @game = Game.new(number_of_players)
+    # Establish @number_of_players here instead of initialize?
   end
 
   def self.instance
@@ -13,7 +14,7 @@ class Game
   def initialize(number_of_players, p_1 = Player.new, p_2 = Player.new)
     @number_of_players = number_of_players
     @players = [p_1, p_2]
-    @move_counter = 1
+    @move_counter = 1 # Track if player1 turn or player2 turn
   end
 
   def save_name(name1, name2 = nil)
@@ -42,6 +43,7 @@ class Game
     @move_counter = 1 # reset to initialized value
     p1 = return_move(1)
     p2 = return_move(2)
+    # Not sure how to make the evaluation below more simple
     if p1 == p2
       @result = "It was not very effective..."
     elsif (p1 == 'Bulbasaur' && p2 == 'Squirtle') || (p1 == 'Squirtle' && p2 == 'Charmander') || (p1 == 'Charmander' && p2 == 'Bulbasaur')
