@@ -61,16 +61,6 @@ class RPS < Sinatra::Base
     erb(:mpmatch)
   end
 
-  # get '/log' do
-  #   @game = Game.instance
-  #   erb(:log)
-  # end
-  #
-  # get '/mplog' do
-  #   @game = Game.instance
-  #   erb(:mplog)
-  # end
-
 run! if app_file == $0
 
 end

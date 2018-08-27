@@ -51,13 +51,13 @@ feature 'when in single player' do
       single_sign_in
       click_link 'Start Game'
       click_button 'Paper'
-      expect(page).to have_content "You lose!"
+      expect(page).to have_content "Player 2 wins!"
     end
     scenario 'can win a game' do
       single_sign_in
       click_link 'Start Game'
       click_button 'Rock'
-      expect(page).to have_content "You win!"
+      expect(page).to have_content "Player 1 wins!"
     end
     scenario 'can draw a game when choices match' do
       single_sign_in
@@ -89,27 +89,38 @@ feature 'when in multiplayer' do
       expect(page).to have_content 'Player 2 chose: Rock'
     end
   end
-  #
-  # feature 'can resolve a match' do
-  #   before do
-  #     srand(3)
-  #   end
-  #   scenario 'can lose a game' do
-  #     single_sign_in
-  #     click_button 'Paper'
-  #     expect(page).to have_content "You lose!"
-  #   end
-  #   scenario 'can win a game' do
-  #     single_sign_in
-  #     click_button 'Rock'
-  #     expect(page).to have_content "You win!"
-  #   end
-  #   scenario 'can draw a game when choices match' do
-  #     single_sign_in
-  #     click_button 'Scissors'
-  #     expect(page).to have_content "It's a draw!"
-  #   end
-  # end
 
-
+  feature 'can resolve a match' do
+    scenario 'Player 1 wins' do
+      multi_sign_in
+      click_link 'Start Game'
+      find('[name=Paper1]').click
+      find('[name=Rock2]').click
+      click_button 'See who won'
+      expect(page).to have_content 'Player 1 wins!'
+    end
+    scenario 'Player 2 wins' do
+      multi_sign_in
+      click_link 'Start Game'
+      find('[name=Paper1]').click
+      find('[name=Scissors2]').click
+      click_button 'See who won'
+      expect(page).to have_content 'Player 2 wins!'
+    end
+    scenario 'Its a draw' do
+      multi_sign_in
+      click_link 'Start Game'
+      find('[name=Paper1]').click
+      find('[name=Paper2]').click
+      click_button 'See who won'
+      expect(page).to have_content 'It\'s a draw!'
+    end
+    scenario 'A player does not choose' do
+      multi_sign_in
+      click_link 'Start Game'
+      find('[name=Paper1]').click
+      click_button 'See who won'
+      expect(page).to have_content 'No winner: you have to both choose!'
+    end
+  end
 end

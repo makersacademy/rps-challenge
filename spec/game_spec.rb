@@ -14,10 +14,10 @@ describe Game do
 
   describe '#who_wins' do
     it "returns that player wins" do
-      expect(game1.who_wins('Rock', 'Scissors')).to eq 'You win!'
+      expect(game1.who_wins('Rock', 'Scissors')).to eq 'Player 1 wins!'
     end
     it "returns that player loses" do
-      expect(game1.who_wins('Rock', 'Paper')).to eq 'You lose!'
+      expect(game1.who_wins('Rock', 'Paper')).to eq 'Player 2 wins!'
     end
     it "returns that player draws" do
       expect(game1.who_wins('Rock', 'Rock')).to eq 'It\'s a draw!'

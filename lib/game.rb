@@ -28,11 +28,12 @@ attr_reader :players
   end
 
   def who_wins(choice1, choice2)
-    return 'You win!' if choice1 == 'Scissors' && choice2 == 'Paper'
-    return 'You win!' if choice1 == 'Paper' && choice2 == 'Rock'
-    return 'You win!' if choice1 == 'Rock' && choice2 == 'Scissors'
+    return 'No winner: you have to both choose!' if choice1 == nil || choice2 == nil
+    return 'Player 1 wins!' if choice1 == 'Scissors' && choice2 == 'Paper'
+    return 'Player 1 wins!' if choice1 == 'Paper' && choice2 == 'Rock'
+    return 'Player 1 wins!' if choice1 == 'Rock' && choice2 == 'Scissors'
     return 'It\'s a draw!' if choice1 == choice2
-  'You lose!'
+  'Player 2 wins!'
   end
 
   # alter the wording of win/loss to include player 2
