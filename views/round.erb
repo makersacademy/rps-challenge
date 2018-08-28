@@ -2,19 +2,19 @@
 
 <head>
   <title>
-    Round XXX
+    Round <%= @game.round + 1 %>
   </title>
 </head>
 <body>
   <h1><%= @player_1.full_name %> vs <%= @player_2.full_name %></h1>
 
-  <form action="/round_winner" method="post">
+  <form action="/moves" method="post">
     <p>Make your choice</p>
 
     <div>
-      <input type="radio" name="move" value="rock" checked="checked"> rock
-      <input type="radio" name="move" value="paper"> paper
-      <input type="radio" name="move" value="scissors"> scissors
+      <input type="radio" name="move" id="rock" value="rock"> rock
+      <input type="radio" name="move" id="paper" value="paper"> paper
+      <input type="radio" name="move" id="scissors" value="scissors"> scissors
     </div>
 
     <input type="submit" value="Submit">

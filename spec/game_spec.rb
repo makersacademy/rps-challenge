@@ -16,9 +16,33 @@ describe Game do
   end
 
   it "compares player moves" do
+    allow(mockPlayer_1).to receive(:name).and_return("Hamish")
+    allow(mockPlayer_2).to receive(:name).and_return("Sarah")
     allow(game.player_1).to receive(:move).and_return("rock")
     allow(game.player_2).to receive(:move).and_return("paper")
-    expect(game.round_winner).to eq mockPlayer_2
+
+    expect(game.round_winner).to eq "Sarah"
   end
+
+  it "determines if the game is over" do
+    game.winners << "Hamish"
+    game.winners << "Hamish"
+    game.winners << "Hamish"
+    expect(game.end?).to eq true
+  end
+
+  it "determines a winner" do
+    game.winners << "Hamish"
+    game.winners << "Hamish"
+    game.winners << "Hamish"
+    allow(mockPlayer_1).to receive(:name).and_return("Hamish")
+    allow(mockPlayer_2).to receive(:name).and_return("Sarah")
+    expect(game.find_winner).to eq "Hamish"
+  end
+
+  it "resets to allow players to continue" do
+
+  end
+
 
 end
