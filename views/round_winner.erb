@@ -1,0 +1,34 @@
+<html>
+
+<head>
+  <title>
+    <% if @round_winner == "tie" %>
+      Tie
+    <% else %>
+      <%= @round_winner %> wins!
+    <% end %>
+  </title>
+</head>
+
+<body>
+  <div>
+    <p><%= @player_1.name %> played <%= @player_1.move %></p>
+    <p><%= @player_2.name %> played <%= @player_2.move %></p>
+  </div>
+
+  <div>
+    <% if @round_winner == "tie" %>
+      It's a tie
+    <% else %>
+      <%= @round_winner %> wins!
+    <% end %>
+  </div>
+</body>
+
+<div>
+  <a href="/win_check">Next round</a>
+</div>
+
+</html>
+
+

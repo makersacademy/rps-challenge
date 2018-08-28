@@ -1,0 +1,24 @@
+<html>
+
+  <head>
+    <title>
+      Game Over
+    </title>
+  </head>
+
+  <body>
+    <% if @winner == "tie" %>
+      <p>It's a tie!</p>
+    <% else %>
+      <p><%= @winner %> wins</p>
+    <% end %>
+    <div>
+      Would you like to play again?
+    </div>
+    <div>
+      <a href="/reset">Yes!</a>
+      <a href="/goodbye">No</a>
+    </div>
+  </body>
+
+</html>

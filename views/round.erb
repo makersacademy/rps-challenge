@@ -1,0 +1,24 @@
+<html>
+
+<head>
+  <title>
+    Round <%= @game.round + 1 %>
+  </title>
+</head>
+<body>
+  <h1><%= @player_1.full_name %> vs <%= @player_2.full_name %></h1>
+
+  <form action="/moves" method="post">
+    <p>Make your choice</p>
+
+    <div>
+      <input type="radio" name="move" id="rock" value="rock"> rock
+      <input type="radio" name="move" id="paper" value="paper"> paper
+      <input type="radio" name="move" id="scissors" value="scissors"> scissors
+    </div>
+
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>
