@@ -1,0 +1,31 @@
+<body>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <h1><%= @game.players.first.name %> vs Computer</h1>
+  <br>
+  <br>
+  <form action="/play_game_1p" method="post">
+    <button type="submit" name="choice" value="rock"> Rock </button>
+  </form>
+  <form action="/play_game_1p" method="post">
+    <button type="submit" name="choice" value="paper"> Paper </button>
+  </form>
+  <form action="/play_game_1p" method="post">
+    <button type="submit" name="choice" value="scissors"> Scissors </button>
+  </form>
+  <br>
+  <br>
+  <h2><%= @game.players.first.name %>: <b><%= @game.player1_score %></b>, Computer: <b><%= @game.player2_score %></b></h2>
+  <br>
+</body>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<form action="/reset_restart" method="post">
+  <button type="submit" name="menu" value="menu"> Menu </button>
+</form>

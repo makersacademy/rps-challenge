@@ -1,0 +1,64 @@
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<h1><%= @game.players.first.name %> vs <%= @game.players.last.name %></h1>
+
+<body>
+  <div id="Content">
+    <div id="divA">
+      <h2><%= @game.players.first.name %></h2>
+      <br>
+      <button onclick="choosep1('rock')" name="p1choice" value="rock">Rock</button>
+      <br>
+      <br>
+      <button onclick="choosep1('paper')" name="p1choice" value="paper">Paper</button>
+      <br>
+      <br>
+      <button onclick="choosep1('scissors')" name="p1choice" value="scissors">Scissors</button>
+      <br>
+      <br>
+      <div id="result"></div>
+      <br>
+      <br>
+    </div>
+
+    <div id="divB">
+      <h2><%= @game.players.last.name %></h2>
+      <br>
+      <button onclick="choosep2('rock')" name="p2choice" value="rock">Rock</button>
+      <br>
+      <br>
+      <button onclick="choosep2('paper')" name="p2choice" value="paper">Paper</button>
+      <br>
+      <br>
+      <button onclick="choosep2('scissors')" name="p2choice" value="scissors">Scissors</button>
+      <br>
+      <br>
+      <div id="result"></div>
+      <br>
+      <br>
+    </div>
+  </div>
+
+  <button onclick="test()">test</button>
+</body>
+
+<h2><%= params[:p1choice] %></h2>
+
+<script>
+  var p1choice;
+  var p2choice;
+
+  function choosep1(choice) {
+    p1choice = choice;
+  }
+
+  function choosep2(choice) {
+    p2choice = choice;
+  }
+
+  function test() {
+    alert("P1: " + p1choice + ", P2: " + p2choice);
+  }
+</script>
