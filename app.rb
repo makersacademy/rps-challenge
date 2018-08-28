@@ -22,18 +22,15 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @player = @game
     erb(:play)
   end
 
   post '/player_choice' do
-    @player = @game
     session[:weapon] = params[:weapon]
     redirect '/cpu'
   end
 
   get '/cpu' do
-    @player = @game
     @player_weapon = session[:weapon]
     erb(:cpu)
   end
@@ -41,7 +38,6 @@ class Rps < Sinatra::Base
   get '/result' do
     @game_weapon = @game.computer.weapon
     @player_weapon = session[:weapon]
-    @player = @game
     @result = @game.result(@player_weapon, @game_weapon)
     erb(:result)
   end
