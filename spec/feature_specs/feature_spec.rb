@@ -22,9 +22,12 @@ end
 
 feature 'submit an option' do
   scenario 'win the round' do
+    allow_any_instance_of(Game).to receive(:computer_move).and_return('rock')
+    # I think this is only working superficially
     sign_in
+    select 'Rock', from: 'choice'
     click_button 'Submit'
-    expect(page).to have_content 'You win!' || 'You lose'
+    expect(page).to have_content "You chose rock, the computer chose rock It's a draw! Play again"
   end
 end
 

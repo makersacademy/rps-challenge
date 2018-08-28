@@ -5,6 +5,7 @@ class Game
   def initialize(name)
     @player_name = name
     @calculator = Calculator.new
+    #@human_move = 'default'
   end
 
   def selection(move)

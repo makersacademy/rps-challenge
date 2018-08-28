@@ -11,10 +11,19 @@ describe Game do
   end
 
   describe '#human_move' do
+    it 'returns the human move' do
+      game.selection('rock')
+      expect(game.human_move).to eq 'rock'
+    end
   end
 
-  describe '#computer_move' do
-  end
+  #can't work out how to test random method
+  # describe '#computer_move' do
+  #   it 'returns a random computer move' do
+  #     game.selection('rock')
+  #     expect(game.computer_move).to eq 'rock' || 'paper' || 'scissors'
+  #   end
+  # end
 
   describe '#selection' do
     it 'can be called' do
