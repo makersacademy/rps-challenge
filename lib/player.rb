@@ -11,5 +11,4 @@ class Player
     @points += 1
   end
 
-
 end

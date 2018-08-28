@@ -31,13 +31,12 @@ class Rps < Sinatra::Base
   end
 
   get '/enter_dragon' do
-    
+
     visualise player choice 
     generate selection on behalf of machine
     show machine selection
     show who won
     add point to winner score tally
   end 
-
 
 end
