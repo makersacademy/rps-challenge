@@ -1,13 +1,14 @@
 class Game
 
-  attr_reader :player_name, :last_move
+  attr_reader :player_name, :human_move, :computer_move
 
   def initialize(name)
     @player_name = name
   end
 
   def selection(move)
-    @last_move = move
+    @human_move = move
+    @computer_move = computer_move
   end
 
   private

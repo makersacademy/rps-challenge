@@ -13,7 +13,7 @@ describe Game do
   describe '#selection' do
     it 'can be called' do
       game.selection('rock')
-      expect(game.last_move).to eq 'rock'
+      expect(game.human_move).to eq 'rock'
     end
   end
 
