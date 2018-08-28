@@ -6,12 +6,11 @@
   <h1>Hello</h1>
   <h2>One player or two?</h2>
 
-  <form action="/num_players" method="post">
-    <label for="num_players">
-      <input type="text" name="num_players">
-    </label>
-    <br>
-    <br>
-    <button type="submit" value="submit">Submit</button>
+  <form action="/one_player" method="get">
+    <button type="submit" name="one_player" value="one_player">One</button>
+  </form>
+
+  <form action="/two_players" method="get">
+    <button type="submit" name="two_players" value="two_players">Two</button>
   </form>
 </body>

@@ -7,7 +7,7 @@ class Scores
                 
   def decide_winner(p1, p2)
     score = SCORES_HASH[p1.to_sym] - SCORES_HASH[p2.to_sym]
-    return :tie if score == 0
-    score == 1 || score == -2 ? :p1 : :p2
+    return :tie if score.zero?
+    [1, -2].include?(score) ? :p1 : :p2
   end
 end
