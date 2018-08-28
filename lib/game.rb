@@ -41,14 +41,14 @@ class Game
 
   def determine_winner
     @move_counter = 1 # reset to initialized value
-    p1 = return_move(1)
-    p2 = return_move(2)
+    player1 = return_move(1)
+    player2 = return_move(2)
     # Not sure how to make the evaluation below more simple
-    if p1 == p2
+    if player1 == player2
       @result = "It was not very effective..."
-    elsif (p1 == 'Bulbasaur' && p2 == 'Squirtle') || (p1 == 'Squirtle' && p2 == 'Charmander') || (p1 == 'Charmander' && p2 == 'Bulbasaur')
+    elsif player1_wins(player1, player2)
       @result = "#{return_name(1)} used a super effective move!"
-    elsif (p1 == 'Bulbasaur' && p2 == 'Charmander') || (p1 == 'Squirtle' && p2 == 'Bulbasaur') || (p1 == 'Charmander' && p2 == 'Squirtle')
+    elsif player2_wins(player1, player2)
       @result = "#{return_name(2)} used a super effective move!"
     end
   end
@@ -57,6 +57,18 @@ class Game
 
   def random_move
     ["Bulbasaur", "Squirtle", "Charmander"].sample
+  end
+
+  def player1_wins(player1, player2)
+    (player1 == 'Bulbasaur' && player2 == 'Squirtle') ||
+    (player1 == 'Squirtle' && player2 == 'Charmander') ||
+    (player1 == 'Charmander' && player2 == 'Bulbasaur')
+  end
+
+  def player2_wins(player1, player2)
+    (player1 == 'Bulbasaur' && player2 == 'Charmander') ||
+    (player1 == 'Squirtle' && player2 == 'Bulbasaur') ||
+    (player1 == 'Charmander' && player2 == 'Squirtle')
   end
 
 end
