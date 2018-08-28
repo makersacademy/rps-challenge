@@ -5,8 +5,6 @@ require './lib/game.rb'
 require './lib/scores.rb'
 
 class RPS_Game < Sinatra::Base
-  enable :sessions
-
   get '/' do
     erb(:index)
   end
@@ -25,13 +23,13 @@ class RPS_Game < Sinatra::Base
   end
 
   post '/play_one_player' do
-   if Game.instance.nil?
-    @game = Game.create(Player.new(params[:player_name]), ComputerPlayer.new) 
-   else
-    @game = Game.instance
-    @game.reset_player1(Player.new(params[:player_name]))
+    @game = Game.create(Player.new(params[:player_name]), ComputerPlayer.new)
     erb(:play_one_player)
-   end
+  end
+
+  get '/play_one_player' do
+    @game = Game.instance
+    erb(:play_one_player)
   end
 
   post '/play_two_player' do
@@ -54,8 +52,6 @@ class RPS_Game < Sinatra::Base
   end
 
   post '/reset_restart' do
-    @game = Game.instance
-    @game.reset
     redirect('/')
   end
 end

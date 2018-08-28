@@ -7,6 +7,7 @@ class Game
     @players = [player1, player2]
     @player1_score, @player2_score = 0, 0
     @text_client = text_client
+    @reset_status = false
   end
 
   def self.create(player1, player2)
@@ -20,6 +21,7 @@ class Game
   def reset
     @player1_score, @player2_score = 0, 0
     @players = []
+    @reset_status = true
   end
 
   def reset_player1(player)
