@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game.rb'
+require './lib/calculator.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -18,7 +19,16 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  # post '/selection' do
+  post '/selection' do
+    @game = $game
+    p params
+    @game.selection(params[:option])
+    redirect '/results'
+  end
     
+  get '/results' do
+    @game = $game
+    erb :results
+  end
 
 end

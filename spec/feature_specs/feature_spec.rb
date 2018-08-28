@@ -26,9 +26,6 @@ feature 'submit an option' do
     click_button 'Submit'
     expect(page).to have_content 'You win!' || 'You lose'
   end
-  scenario 'lose the round' do
-
-  end
 end
 
 # As a marketeer

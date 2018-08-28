@@ -4,16 +4,21 @@ class Game
 
   def initialize(name)
     @player_name = name
+    @calculator = Calculator.new
   end
 
   def selection(move)
     @human_move = move
-    @computer_move = computer_move
+    @computer_move = comp_move
+  end
+
+  def calculate(move = @computer_move)
+    @calculator.calculate(@human_move, move)
   end
 
   private
 
-  def computer_move
+  def comp_move
     number = rand(3)
     case number
       when 0
