@@ -22,7 +22,8 @@ class RPS < Sinatra::Base
   post '/game' do
     session[:player_choice] = params[:choice]
     @player_choice = session[:player_choice]
-    $game = Game.new(@player_choice, @robot)
+    @player = session[:player]
+    $game = Game.new(@player_choice, @robot, @player)
     @game = $game
     session[:random_robot] = @game.robot
     redirect '/game'

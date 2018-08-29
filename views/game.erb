@@ -6,16 +6,10 @@
 <div class="text"><span class="contestant"><%= @player %></span> picked <%= @player_choice %> <br />
 The computer picked <%= @robot %> <br />
 
-<% if @player_choice == @robot %>
-It's a draw
-<% elsif @game.player_wins == true %>
-<%= @player %> wins!
-<% else %>
-<%= @player %> loses!
-<% end %>
+<%= @game.result %>
 
 </div>
 
- <form action="/play" method="get">
+<form action="/play" method="get">
   <input class="button" type="submit" value="Play again?">
 </form>

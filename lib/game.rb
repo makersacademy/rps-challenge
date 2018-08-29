@@ -1,10 +1,11 @@
 class Game
 
-  attr_reader :player_choice, :robot
+  attr_reader :player_choice, :robot, :player
 
-  def initialize(player_choice, robot)
+  def initialize(player_choice, robot, player)
     @player_choice = player_choice
     @robot = ['rock', 'paper', 'scissors'].sample
+    @player = player
   end
 
   def player_wins
@@ -13,4 +14,13 @@ class Game
     	(@player_choice == "scissors" && @robot == "paper")
   end
 
+  def result
+    if @player_choice == @robot
+      "It's a draw"
+    elsif player_wins == true
+      "#{@player} wins"
+    else
+      "#{@player} loses"
+    end
+  end
 end
