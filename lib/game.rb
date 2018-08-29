@@ -24,5 +24,5 @@ class Game
       else
         "YOU WIN!"
       end
-    end
+  end
 end
