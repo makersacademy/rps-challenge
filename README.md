@@ -1,8 +1,7 @@
 # RPS Challenge
-----
+
 Rock/paper/scissors web-app built on Sinatra and tested with Capybara/Rspec.
 
-![Alt text](./screenshot.png "rps-screenshot")
 
 Tags: OOP, TDD, Ruby, HTML, CSS, Sinatra, MVC, RSpec, Capybara
 
@@ -53,3 +52,6 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+
+![Alt text](./screenshot.png "rps-screenshot")
+
