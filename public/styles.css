@@ -1,0 +1,22 @@
+html { 
+  background: url("https://media3.giphy.com/media/BHNfhgU63qrks/source.gif") no-repeat center center fixed; 
+  background-size: cover;
+}
+
+body {
+  text-align: center;
+  font-family: futura;
+  color: rgb(255, 255, 255);
+}
+
+h1 {
+  font-size: 400%;
+  padding: 15px;
+  padding-top: 120px;
+}
+
+button {
+  font-size: 150%;
+  border-radius: 30px;
+}
+
