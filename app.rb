@@ -29,13 +29,11 @@ class RPS < Sinatra::Base
   end
 
   get '/battle' do
-    @game = @game
     @player1 = @game.player1
     erb :battle
   end
 
   get '/result' do
-    @game = @game
     @player1 = @game.player1
     @player2 = @game.player2
     erb :result
