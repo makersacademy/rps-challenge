@@ -1,7 +1,11 @@
 class Game
+  attr_reader :computer_move, :player_move, :result
+
   VALID_MOVES = ["ROCK", "PAPER", "SCISSORS"]
 
-  attr_reader :computer_move, :player_move, :result
+  RULES = { rock: :scissors,
+            paper: :rock,
+            scissors: :paper }
 
   def initialize(player_move)
     @player_move = player_move
@@ -9,14 +13,16 @@ class Game
   end
 
   def calculate_result
-    @result = if @computer_move == @player_move
-                "IT'S A DRAW!"
-              elsif (@computer_move == "ROCK" && @player_move == "SCISSORS") ||
-                (@computer_move == "PAPER" && @player_move == "ROCK") ||
-                (@computer_move == "SCISSORS" && @player_move == "PAPER")
-                "COMPUTER WINS!"
-              else
-                "YOU WIN!"
-              end
-  end
+    c_move = @computer_move.downcase.to_sym
+    p_move = @player_move.downcase.to_sym
+
+    @result = \
+      if c_move == p_move
+        "IT'S A DRAW!"
+      elsif p_move == RULES[c_move]
+        "COMPUTER WINS!"
+      else
+        "YOU WIN!"
+      end
+    end
 end
