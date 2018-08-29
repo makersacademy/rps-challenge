@@ -1,0 +1,11 @@
+<% if @player_weapon != 'rock' && @player_weapon != 'paper' && @player_weapon != 'scissors' %>
+  THAT IS NOT A WEAPON!
+  <br>
+<a href="/play">go back</a>
+  <% else %>
+<%= @game.name %>'s choice <%= @player_weapon %>
+  <br>
+  <br>
+computer will now choose it's weapon at random!
+<a href="/result">go ahead!</a>
+<% end %>
