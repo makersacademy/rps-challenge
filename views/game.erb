@@ -1,0 +1,14 @@
+<h1><font face ="verdana">RPS</font></h1>
+
+<p>Name: <%= @p1_name %></p>
+
+<form method='post' action='/game'>
+    <input type='text' name='player_input'/>
+    <input type='submit' value='Play'/>
+</form>
+
+<p>You chose: <%= @player_input %></p>
+
+<p>The computer chose: <%= @rps_selector %></p>
+
+<p><%= @referee %></p>
