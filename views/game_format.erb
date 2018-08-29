@@ -1,0 +1,23 @@
+<!-- <%# <link rel="stylesheet" href="battlegame.css" type="text/css" /> %> -->
+<h3> RPS is a game of hand-brain coordination, tactics, strategy, luck, chance, nerves & suggestive eye-contact </h3>
+<br> 
+Today's match will be between...
+<h2><p></p><%= @p1_name %></h2> Vs. 
+<% if @p2_name %>
+<h2> <%= @p2_name %></h2>
+<% else %> 
+<h2> <%= 'Rocky McRock Face'%></h2> 
+<% end  %>
+---------------------------------
+<br><br>
+Click a button to select the format of your match...
+<br> <br>
+
+<form action="/game_home" method="post">
+  <input class="start_button" type="submit" value="Sudden Death">
+  <input class="start_button" type="submit" value="Best of Three">
+  <input class="start_button" type="submit" value="Best of Five"></h1>
+</form>
+
+<br>
+<img src="https://media.giphy.com/media/7MezEc0TOaMlW/giphy.gif" >

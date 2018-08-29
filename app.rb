@@ -9,34 +9,33 @@ class Rps < Sinatra::Base
     erb(:index)
   end
 
-  post '/names' do
-    session[:p1_name] = params[:player_one]
-    session[:p2_name] = params[:player_two]
-    redirect '/game_start'
+  post '/players' do
+    case params[:action]
+    when 'ONE PLAYER' then @game = Game.create(1)
+    when 'TWO PLAYER' then @game = Game.create(2)
+    end
+    erb(:enter_names)
   end
 
-  get '/game_start' do
-    @p1_name = session[:p1_name]
-    @p2_name = session[:p2_name] 
-    erb(:game_start)
+  post '/names' do 
+    @game = Game.instance
+    case @game.number_of_players 
+    when 1 then @game.save_name(params[:player_one])
+    when 2 then @game.save_name(params[:player_one], params[:player_two])
+    end
+    # redirect '/game_format'
+    redirect '/play'
   end
 
-  get '/game_home' do
-    @p1_name = session[:p1_name]
-    @p2_name = session[:p2_name]
-    @p1 = Player.new(@p1_name)
-    @p2 = Player.new(@p2_name)
-    @game = Game.new(@p1, @p2)
-    erb(:game_home)
+  get '/game_format' do
+    erb(:game_format)
   end
 
-  get '/enter_dragon' do
+  get '/play' do
+    @game = Game.instance 
+    erb(:game_format)
+  end
 
-    visualise player choice 
-    generate selection on behalf of machine
-    show machine selection
-    show who won
-    add point to winner score tally
-  end 
+
 
 end

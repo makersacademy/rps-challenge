@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>NAMES</title>
+  <link rel="stylesheet" type="text/css" href="rps.css" />
+</head>
+
+<body>
+  <h1>** Rock Paper Scissors ** </h1><br>
+  <% if @game.number_of_players == 1 %>
+  <h2>What's your name?</h2><br>
+  <% else %>
+  <h2>What're your names?</h2><br>
+  <% end %>
+
+<form action="/names" method="post">
+  <input type="text" name="player_one">
+  <% if @game.number_of_players == 2 %>
+  <input type="text" name="player_two">
+  <% end %>
+  <input type="submit" value="Submit">
+</form>
+</body>
+
+</html>

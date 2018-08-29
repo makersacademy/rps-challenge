@@ -2,11 +2,9 @@ Welcome to gaming nirvana...
 <br>
 <h1>  **  ROCK PAPER SCISSORS **  <h1>
 <br>
-<h3>
-<form action="/names" method="post">
-  <label for="player1">Player 1: </label>
-  <input id="player_one" type="text" name="player_one">
-  <label for="player2">Player 2: </label>
-  <input id="player_two" type="text" name="player_two">
-  <input type="submit" value="Submit">
-</form> </h3>
+<h2> Would you like to play against the machine or a friend? </h2>
+<br>
+<form action="/players" method="post">
+  <button type="submit" name="action" value="ONE PLAYER" class="play_button">Solo</button>
+  <button type="submit" name="action" value="TWO PLAYER" class="play_button">Multi</button>
+</form>
