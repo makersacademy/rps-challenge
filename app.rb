@@ -23,8 +23,8 @@ class Rps < Sinatra::Base
     when 1 then @game.save_name(params[:player_one])
     when 2 then @game.save_name(params[:player_one], params[:player_two])
     end
-    # redirect '/game_format'
-    redirect '/play'
+    # redirect '/play'
+    redirect '/game_format'
   end
 
   get '/game_format' do
@@ -33,7 +33,7 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @game = Game.instance 
-    erb(:game_format)
+    erb(:play)
   end
 
 

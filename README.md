@@ -1,6 +1,8 @@
 # RPS Challenge
 
-To download and run the app:
+Rock Paper Scissors is web-app built on Sinatra.  
+
+## To download and run the app:
 ```sh
 $ git clone git@github.com:Alastair2D/rps-challenge.git
 $ cd rps-challenge
@@ -8,7 +10,23 @@ $ bundle
 $ rackup
 ```
 
-Task
+## Model
+
+```
+** INSERT MODEL **
+```
+
+The Ruby classes are designed around the principle of single responsibility - only the Game class is instantiated in the Controller, and the Game class delegates player-related information to the Player class.
+
+The program was built test-first using Capybara and RSpec (Capybara allows the user stories to be feature-tested). As with all good OOP testing, the classes are tested in isolation using dependency injection. All randomness is stubbed to ensure consistency of test results.
+
+
+## Goals
+- Classes should be designed around the principles of Delegation & Single Responsibility.  The Game class delegates state and behaviour of player-related information to the Player class.  
+- Only the Game class is instantiated in the controller, separating concerns to make this web-app a more modular program.
+
+
+## Task
 ----
 Knowing how to build web applications is getting us almost there as web developers!
 

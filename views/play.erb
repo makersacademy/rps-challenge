@@ -2,10 +2,11 @@
 Rock, Paper, Scissors 
 <h4> Format: </h4> Best of <%= @game_type %>
 <br><br>
-------------------------------------
-<h2><%= @p1.name %> Vs. 
-<% if @p2.name %>
-<%= @p2.name %></h2>
+------------------------------------<br>
+Today's match is between...<br>
+<h2><%= @game.p1_name %> Vs. 
+<% if @p2_name %>
+<%= @p2_name %></h2>
 <% else %> 
 <%= 'Rocky McRock Face'%>
 <% end  %></h2>
