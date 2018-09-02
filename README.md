@@ -15,10 +15,7 @@ $ rackup
 [HTTP Request-Response Cycle + MVC Model](https://imgur.com/a/EpLJtuC)
 <br>
 [Domain Model](https://imgur.com/r3bDqJh)
-
 <!-- [Domain Model]([Imgur](https://i.imgur.com/XVUM7Y7.png)) -->
-<!-- <blockquote class="imgur-embed-pub" lang="en" data-id="a/EpLJtuC"><a href="//imgur.com/EpLJtuC"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script> -->
-<!-- ![alt text](https://imgur.com/a/EpLJtuC) -->
 
 ## Goals
 - Classes are designed around the principles of Delegation & Single Responsibility.  The Game class delegates state and behaviour of player-related information to the Player class.  
