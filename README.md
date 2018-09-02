@@ -12,9 +12,12 @@ $ rackup
 
 ## Domain Model
 
-```
-** INSERT MODEL **
-```
+[Domain Model](https://imgur.com/a/EpLJtuC)
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/EpLJtuC"><a href="//imgur.com/EpLJtuC"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+<!-- ![alt text](https://imgur.com/a/EpLJtuC) -->
+
 
 ## Testing
 The Ruby classes are designed around the principle of single responsibility - only the Game class is instantiated in the Controller, and the Game class delegates player-related information to the Player class.
