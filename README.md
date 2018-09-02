@@ -10,20 +10,15 @@ $ bundle
 $ rackup
 ```
 
-## Domain Model
+## Modelling
 
-[Domain Model](https://imgur.com/a/EpLJtuC)
-[DM2](https://imgur.com/a/EpLJtuC)
+[HTTP Request-Response Cycle + MVC Model](https://imgur.com/a/EpLJtuC)
+<br>
+[Domain Model](https://imgur.com/r3bDqJh)
 
 <!-- [Domain Model]([Imgur](https://i.imgur.com/XVUM7Y7.png)) -->
 <!-- <blockquote class="imgur-embed-pub" lang="en" data-id="a/EpLJtuC"><a href="//imgur.com/EpLJtuC"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script> -->
 <!-- ![alt text](https://imgur.com/a/EpLJtuC) -->
-
-
-## Testing
-The Ruby classes are designed around the principle of single responsibility - only the Game class is instantiated in the Controller, and the Game class delegates player-related information to the Player class.
-
-The program was built test-first using Capybara and RSpec (Capybara allows the user stories to be feature-tested). As with all good OOP testing, the classes are tested in isolation using dependency injection. All randomness is stubbed to ensure consistency of test results.
 
 ## Focus Goals
 - Classes should be designed around the principles of Delegation & Single Responsibility.  The Game class delegates state and behaviour of player-related information to the Player class.  
@@ -34,7 +29,7 @@ The program was built test-first using Capybara and RSpec (Capybara allows the u
 - As with all good OOP testing, all unit tests have been isolated using doubles, mocks, stubs & spies.  
 
 ## Task
-Knowing how to build web applications is getting us almost there as web developers!  The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.  Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Knowing how to build web applications is getting us almost there as web developers!  The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.  Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web fulfilling the following requirements.
 
 ## User Stories
 ```
