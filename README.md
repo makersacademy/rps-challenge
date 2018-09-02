@@ -13,6 +13,7 @@ $ rackup
 ## Domain Model
 
 [Domain Model](https://imgur.com/a/EpLJtuC)
+[DM2](https://imgur.com/a/EpLJtuC)
 
 <!-- [Domain Model]([Imgur](https://i.imgur.com/XVUM7Y7.png)) -->
 <!-- <blockquote class="imgur-embed-pub" lang="en" data-id="a/EpLJtuC"><a href="//imgur.com/EpLJtuC"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script> -->
