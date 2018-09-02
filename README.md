@@ -14,8 +14,8 @@ $ rackup
 
 [Domain Model](https://imgur.com/a/EpLJtuC)
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/EpLJtuC"><a href="//imgur.com/EpLJtuC"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-
+<!-- [Domain Model]([Imgur](https://i.imgur.com/XVUM7Y7.png)) -->
+<!-- <blockquote class="imgur-embed-pub" lang="en" data-id="a/EpLJtuC"><a href="//imgur.com/EpLJtuC"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script> -->
 <!-- ![alt text](https://imgur.com/a/EpLJtuC) -->
 
 
