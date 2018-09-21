@@ -1,0 +1,21 @@
+require "sinatra/base"
+
+class RockPaperScissors < Sinatra::Application
+  enable(:sessions)
+  get '/' do
+    # 'Testing infrastructure works'
+    erb(:index)
+  end
+
+  post "/names" do
+    session[:player1_name] = Player.new(params[:player1_name])
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player1 = session[:player1_name]
+    erb(:play)
+  end
+
+  run! if app_file == $0
+end
