@@ -14,6 +14,7 @@ class RPS < Sinatra::Base
   
   post '/move' do
     @move = params[:move]
+    puts @move
     erb(:players)
   end
   run! if app_file == $0
