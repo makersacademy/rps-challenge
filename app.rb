@@ -19,6 +19,10 @@ class GameApp < Sinatra::Base
     erb :move
   end
 
+  post '/move' do
+    @choice = params[:choice]
+    erb :result
+  end
 
 
   # start the server if ruby file executed dierectly

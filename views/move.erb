@@ -1,9 +1,18 @@
 <h1> Lets play <%= @name %> </h1>
 
 <h2> Please select your move! </h2>
+<h2> - type 'r' for 'rock' </h2>
+<h2> - type 'p' for 'paper' </h2>
+<h2> - type 's' for 'scissors' </h2>
+<h2> THEN CLICK 'SUBMIT' </h2>
 
-<form actions="/move">
+<!-- <form actions="/move">
   <input type="submit" value="rock">
   <input type="submit" value="paper">
   <input type="submit" value="scissors">
+</form> -->
+
+<form action="/names" method="post">
+  <input type="text" name="choice">
+  <input type="submit" value="Submit">
 </form>
