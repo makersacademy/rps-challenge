@@ -21,4 +21,22 @@ feature 'user can select a move' do
     click_button('Rock')
     expect(page).to have_content('You chose Rock, good luck!')
   end
+
+  scenario 'user can click "paper"' do
+    visit('/')
+    fill_in('username', with: 'Nerdpuff')
+    click_button('Submit')
+    expect(page).to have_content('Player one: Nerdpuff')
+    click_button('Paper')
+    expect(page).to have_content('You chose Paper, good luck!')
+  end
+
+  scenario 'user can click "scissors"' do
+    visit('/')
+    fill_in('username', with: 'Nerdpuff')
+    click_button('Submit')
+    expect(page).to have_content('Player one: Nerdpuff')
+    click_button('Scissors')
+    expect(page).to have_content('You chose Scissors, good luck!')
+  end
 end
