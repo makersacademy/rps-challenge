@@ -2,11 +2,12 @@ require 'computer'
 
 describe Computer do
 
-  subject(:pc) {Computer.new("r")} #stub
+  # it { is_expected.to respond_to(:random_move) }
 
-  describe 'computer class' do
-    it 'it returns an instance of the computer class with rock(r) choice' do
-      expect(pc.computer_move).to eq("r")
+  describe '#random_move' do
+    it 'returns a random choice with rock(r)' do
+      pc = Computer.new
+      allow(pc).to receive(:random_move).and_return("r")
     end
   end
 

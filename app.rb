@@ -24,7 +24,6 @@ class GameApp < Sinatra::Base
     erb :result
   end
 
-
   # start the server if ruby file executed dierectly
   run! if app_file == $0
 
