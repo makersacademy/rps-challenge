@@ -1,3 +1,12 @@
 <div>
   Hello <%= @name %>
 </div>
+
+<div>
+  <form action="/player_choice" method="post">
+    <input type="radio" id="Rock" name="player_choice" value="Rock"> Rock </br>
+    <input type="radio" id="Paper" name="player_choice" value="Paper"> Paper </br>
+    <input type="radio" id="Scissors" name="player_choice" value="Scissors"> Scissors </br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
