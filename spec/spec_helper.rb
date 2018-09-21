@@ -1,6 +1,9 @@
+require File.expand_path '../../app/rps_app.rb', __FILE__ 
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+Capybara.app = RPS
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
