@@ -3,6 +3,9 @@ ENV['RACK_ENV'] = 'test'
 # require our Sinatra app file
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
+# this requires the test helper to help with DRY...
+require 'features/web_helpers'
+
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
