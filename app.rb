@@ -1,6 +1,5 @@
 require 'sinatra/base'
 
-
 class Game < Sinatra::Base
 
   enable :sessions
@@ -15,8 +14,11 @@ class Game < Sinatra::Base
     erb(:game)
   end
 
-  get '/results' do
+  get '/rock' do
     @player_name = session[:player_name]
+    @computer_move = Computer.new.move
     erb(:results)
   end
+
+
 end
