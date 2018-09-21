@@ -3,7 +3,12 @@ require 'sinatra/base'
 class GameApp < Sinatra::Base
 
   get '/' do
-    'Testing infrastructure working!'
+    erb :index
+  end
+
+  post '/names' do
+    @name = params[:name]
+    erb :named_player
   end
 
   # start the server if ruby file executed dierectly
