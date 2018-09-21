@@ -1,9 +1,10 @@
-<div>
-  Player one: <%= @player_one.username %>
-</div>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-<div>
-  <form method="post" action="/move">
+<div class="center">
+  <p>Player one: <%= @player_one.username %></p>
+  <form method="post" action="/end">
     <input type="submit" value="Rock" name="move">
     <input type="submit" value="Paper" name="move">
     <input type="submit" value="Scissors" name="move">

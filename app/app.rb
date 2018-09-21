@@ -19,14 +19,14 @@ class RPS < Sinatra::Base
     erb(:game)
   end
 
-  post '/move' do
+  post '/end' do
     session[:move] = params[:move]
-    redirect('/move')
+    redirect('/end')
   end
 
-  get '/move' do
+  get '/end' do
     @move = session[:move]
-    erb(:move)
+    erb(:end)
   end
 
   # start the server if ruby file executed directly
