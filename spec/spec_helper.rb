@@ -1,6 +1,15 @@
+# require 'capybara'
+# require 'rspec'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+ENV['RACK_ENV']='test'
+
+require File.join(File.dirname(__FILE__), '../app', 'rps_web.rb')
+require File.join(File.dirname(__FILE__), 'features', 'web_helpers.rb')
+
+Capybara.app = RPSWeb
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

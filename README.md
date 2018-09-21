@@ -42,6 +42,11 @@ As usual please start by
 * Forking this repo
 * TEST driving development of your app
 
+HOW TO DOWNLOAD AND RUN THE APP:
+$ git clone git@github.com: nazzkadri/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
 
 ## Bonus level 1: Multiplayer
 

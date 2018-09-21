@@ -1,0 +1,9 @@
+<h1>Welcome <%= @player_name.name %></h1>
+<br>
+<form action="/result" method="post">
+  Please select from one of the options<br>
+  <input type="radio" id= 'rock' name="choices" value="rock">Rock<br>
+  <input type="radio" id= 'paper' name="choices" value="paper">Paper<br>
+  <input type="radio" id= 'scisssors' name="choices" value="scissors">Scissors<br>
+  <input type="submit" value="Play">
+</form>
