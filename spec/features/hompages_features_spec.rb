@@ -1,6 +1,10 @@
 feature "Homepage" do
-  scenario "Says Hello" do
+  scenario "Displays the name of the player" do
     visit '/'
-    expect(page).to have_content("Hello")
+    within('form') do
+      fill_in 'name', with: 'Name'
+      click_button 'Submit'
+    end
+    expect(page).to have_content("Hello Name")
   end
 end
