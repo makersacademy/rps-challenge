@@ -13,9 +13,8 @@ class RPS < Sinatra::Base
   end
   
   post '/move' do
-    p params
     @move = params[:move]
-    "#{$player} chose #{@move}!"
+    erb(:players)
   end
   run! if app_file == $0
 end
