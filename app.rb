@@ -2,6 +2,6 @@ require 'sinatra/base'
  
 class RPS < Sinatra::Base
   get '/' do
-    'hello world'
+    'Welcome to Rock, Paper, Scissors game!'
   end
 end
