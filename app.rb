@@ -1,9 +1,9 @@
 require 'sinatra/base'
 
-class Game < Sinatra::Base
+class GameApp < Sinatra::Base
 
   get '/' do
-    'RPG game!'
+    'Testing infrastructure working!'
   end
 
   # start the server if ruby file executed dierectly
