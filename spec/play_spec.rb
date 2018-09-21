@@ -10,3 +10,4 @@ feature 'update screen with player name' do
     expect(page).to have_content('Vu')
   end
 end
+
