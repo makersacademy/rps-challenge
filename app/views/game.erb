@@ -1,3 +1,11 @@
 <div>
   Player one: <%= @player_one.username %>
 </div>
+
+<div>
+  <form method="post">
+    <button type="submit" formaction="/move/Rock"">Rock</button>
+    <button type="submit" formaction="/move/Paper">Paper</button>
+    <button type="submit" formaction="/move/Scissors">Scissors</button>
+  </form>
+</div>

@@ -9,7 +9,7 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  post '/submit_users' do
+  post '/submit-users' do
     session[:player_one] = Player.new(params[:username])
     redirect('/game')
   end
@@ -18,7 +18,17 @@ class RPS < Sinatra::Base
     @player_one = session[:player_one]
     erb(:game)
   end
-  
+
+  post '/move/:name' do
+    session[:move] = params[:name]
+    redirect('/move')
+  end
+
+  get '/move' do
+    @move = session[:move]
+    erb(:move)
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 

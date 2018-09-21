@@ -11,3 +11,14 @@ feature 'user can select a name' do
     expect(page).to have_content('Player one: Nerdpuff')
   end
 end
+
+feature 'user can select a move' do
+  scenario 'user can click "rock"' do
+    visit('/')
+    fill_in('username', with: 'Nerdpuff')
+    click_button('Submit')
+    expect(page).to have_content('Player one: Nerdpuff')
+    click_button('Rock')
+    expect(page).to have_content('You chose Rock, good luck!')
+  end
+end
