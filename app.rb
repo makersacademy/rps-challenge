@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -15,6 +16,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/game' do
     @name = session[:name]
+    @game = Game.create(@name)
     erb(:game)
   end
 
