@@ -8,9 +8,7 @@ describe RockPaperScissors do
     end
     
     it "#fills in name and submits form" do
-      visit '/'
-      fill_in 'player', with: "Carolina"
-      click_button 'Play Game'
+      visit_and_begin_game
       expect(page).to have_text("Carolina")
     end
   end
