@@ -16,4 +16,10 @@ feature 'Results' do
     click_button 'paper'
     expect(page).to have_content 'You chose paper'
   end
+
+  scenario 'in singleplayer, shows the computers move' do
+    single_player_name
+    click_button 'paper'
+    expect(page).to have_content 'Your opponent the computer chose'
+  end
 end

@@ -8,7 +8,8 @@
   </head>
   <body>
     <h1>Game over: you have</h1>
-    <h2>You chose <%= session[:move] %></h2>
+    <h2>You chose <%= session[:player].move %></h2>
+    <h2>Your opponent the computer chose <%= session[:player2].move %></h2>
     <form class="rps" action="/singleplayer-game" method="get">
       <input type="submit" value="play_again" class="btn btn-info">
     </form>
