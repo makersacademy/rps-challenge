@@ -5,9 +5,12 @@
 <h1> Rock Paper Scissors Lizard Spock! </h1>
 <p> <%= @player_name %>, let's play RPSLS!" </p>
 <p> Choose your move! </p>
-<select name='day' >
-  <% @options.each do |option| %>
-    <option value="<%= option%>"> <%= option %> </option>
-  <% end %>
+<form method='post' action='/play'>
+  <select name='possible_moves'>
+    <% @options.each do |option| %>
+      <option value="<%= option%>"> <%= option %> </option>
+    <% end %>
+    <input class="fsSubmitButton" type="submit" value="Go!"></input>
 </select>
+</form>
 </body>
