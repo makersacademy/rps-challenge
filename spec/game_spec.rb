@@ -4,7 +4,8 @@ describe Game do
 
   let(:player1) { double :Player, move: :rock }
   let(:ai_player) { double :AI, move: :scissors }
-  subject(:game) { described_class.new(player1, ai_player) }
+  let(:referee) { double :RPSReferee, decision: 0 }
+  subject(:game) { described_class.new(player1, ai_player, referee) }
 
   context "#initialize" do
     it "should store players in an Array" do
@@ -20,6 +21,12 @@ describe Game do
   end
 
   context "#who_won" do
+    it "RPSReferee#decision receives symbol arguments" do
+      symbol = an_instance_of(Symbol)
+      expect(referee).to receive(:decision).with(symbol, symbol)
+      game.who_won
+    end
+    
     it "calculates who won" do
       expect(game.who_won).to eq player1
     end
