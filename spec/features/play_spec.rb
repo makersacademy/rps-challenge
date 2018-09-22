@@ -14,7 +14,6 @@ feature "playing the game" do
     scenario "player selects a shape" do
       visit('/play')
       click_button "Rock"
-      #choice = "paper"
       expect(page).to have_content 'You chose Rock!!'
     end
   end
