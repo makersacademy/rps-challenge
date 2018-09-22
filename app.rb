@@ -45,6 +45,10 @@ class RockPaperScissors < Sinatra::Base
     @decider = session[:game].decision(@outcome, @computer_outcome)
     erb :outcome
   end
+
+  get '/mama' do
+    erb :mama
+  end
   
   run! if app_file == $0
 end
