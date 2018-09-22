@@ -1,22 +1,20 @@
-require_relative './computer'
 class Game
-  attr_reader :player, :result, :computer
+  attr_reader :player1, :result, :player2
 
-  def initialize(player)
-    @player = player
+  def initialize(player1, player2 = Computer.new)
+    @player1 = player1
+    @player2 = player2
     @key_beats_value = { 'Rock' => 'Scissors', 'Paper' => 'Rock',
       'Scissors' => 'Paper' }
-    @computer = Computer.new
   end
 
-  def play(player_choice)
-    computer_choice = computer.choice
-    if player_choice == computer_choice
+  def play
+    if @player1.player_choice == @player2.player_choice
       'draw'
-    elsif @key_beats_value[player_choice] == computer_choice
-      'player'
-    elsif @key_beats_value[computer_choice] == player_choice
-      'computer'
+    elsif @key_beats_value[@player1.player_choice] == @player2.player_choice
+      'player1'
+    elsif @key_beats_value[@player2.player_choice] == @player1.player_choice
+      'player2'
     end
   end
 end

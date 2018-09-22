@@ -2,10 +2,10 @@
 <br>
 <br>
 
-<% if @result == 'player' %>
-  <%= @game.player.name %> wins! :D
-<% elsif @result == 'computer' %>
-  <%= @game.player.name %> lost :( Try again!
+<% if @result == 'player1' %>
+  <%= @game.player1.name %> wins! :D
+<% elsif @result == 'player2' %>
+  <%= @game.player2.name %> wins! :D
 <% elsif @result == 'draw' %>
    It's a tie! Try again!
 <% end %>
@@ -13,6 +13,6 @@
 <br>
 <br>
 
-<form action=/play method='get'>
+<form action='/play' method='get'>
   <input type='submit' value='Play again'>
 </form>

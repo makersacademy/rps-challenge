@@ -10,8 +10,9 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:player])
-    session[:game] = Game.new(player)
+    @player1 = Player.new(params[:player1])
+    @player2 = Player.new(params[:player2])
+    session[:game] = Game.new(@player1, @player2)
     redirect '/play'
   end
 
@@ -20,16 +21,28 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/option' do
+  post '/optionp1' do
     @game = session[:game]
-    @player_choice = params[:commit]
+    session[:player1_choice] = params[:commit]
+    redirect '/playp2'
+  end
+
+  get '/playp2' do
+    @game = session[:game]
+    erb :optionp2
+  end
+
+  post '/optionp2' do
+    @game = session[:game]
+    session[:player2_choice] = params[:option]
     redirect '/result'
   end
 
   get '/result' do
     @game = session[:game]
-    @player_choice = params[:commit]
-    @result = @game.play(@player_choice)
+    @game.player1.choice(session[:player1_choice])
+    @game.player2.choice(session[:player2_choice])
+    @result = @game.play
     erb :result
   end
 

@@ -5,17 +5,17 @@ describe Computer do
   context '#choice' do
     it 'returns paper' do
       allow_any_instance_of(Array).to receive(:sample) { 'Paper' }
-      expect(computer.choice).to eq 'Paper'
+      expect(computer.player_choice).to eq 'Paper'
     end
 
     it 'returns rock' do
       allow_any_instance_of(Array).to receive(:sample) { 'Rock' }
-      expect(computer.choice).to eq 'Rock'
+      expect(computer.player_choice).to eq 'Rock'
     end
 
     it 'returns scissors' do
       allow_any_instance_of(Array).to receive(:sample) { 'Scissors' }
-      expect(computer.choice).to eq 'Scissors'
+      expect(computer.player_choice).to eq 'Scissors'
     end
   end
 end

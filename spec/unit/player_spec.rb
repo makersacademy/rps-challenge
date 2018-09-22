@@ -7,4 +7,11 @@ describe Player do
       expect(player.name).to eq 'claudia'
     end
   end
+
+  context '#choice' do
+    it "returns player's choice" do
+      player.choice('Paper')
+      expect(player.player_choice).to eq 'Paper'
+    end
+  end
 end
