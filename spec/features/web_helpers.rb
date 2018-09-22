@@ -4,6 +4,7 @@ def player_sign_in
   click_button "Submit"
 end
 
-# def player_move
-#
-# end
+def player_move
+  fill_in('player_move', with: 'Rock')
+  click_button 'GO!'
+end

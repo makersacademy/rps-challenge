@@ -13,8 +13,6 @@ describe Player do
     scenario 'player makes their choice' do
       player_sign_in
       expect(page).to have_content("Choose: Rock, paper or scissors.")
-      fill_in('player_move', with: 'Rock')
-      click_button 'GO!'
     end
   end
 end

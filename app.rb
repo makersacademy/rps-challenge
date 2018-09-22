@@ -17,4 +17,9 @@ class Player < Sinatra::Base
     @name = session[:name]
     erb :play
   end
+
+  get '/result' do
+    @decision = params[:decision]
+    erb :result
+  end
 end
