@@ -9,4 +9,10 @@ describe AI do
       expect(ai.move).to eq :scissors
     end
   end
+
+  context "#name" do
+    it "returns RPSbot" do
+      expect(ai.name).to eq :RPSbot
+    end
+  end
 end
