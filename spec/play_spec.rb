@@ -20,7 +20,7 @@ feature 'Player can pick rock paper scissors' do
     visit('/')
     fill_in('player1_name', with:'Vu')
     click_button('Submit')
-    click_link('rock')
+    click_button('Rock')
     expect(page).to have_content('You have picked: Rock')
   end
 end
