@@ -12,6 +12,14 @@ class Game
     @game_move = ["Rock", "Paper", "Scissors"].sample
   end
 
-  
+  def calculate
+    move
+    
+    if @player.player_move == "Rock" && @game_move == "Rock"
+      return "It's A Draw!"
+    else
+      return "huh?"
+    end
+  end
 
 end
