@@ -15,7 +15,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/singleplayer-game' do
     session[:player] = Player.new(params[:name])
-    session[:player2] = Player.new('Computer')
+    session[:player2] = Player.new('The Computer')
     session[:computer] = MoveGenerator.new
     redirect '/singleplayer-game'
   end
