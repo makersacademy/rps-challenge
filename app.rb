@@ -9,12 +9,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1] = params[:player_1]
+    player_1 = params[:player_1]
+    @game = Game.create(player_1, player_2 = computer)
     redirect '/play'
   end
 
   get '/play' do
-    @player_1 = session[:player_1]
+    @game = Game.instance
     erb :play
   end
   run! if app_file == $0
