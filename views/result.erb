@@ -1,0 +1,18 @@
+<head>
+</head>
+
+<body>
+<h1> Rock Paper Scissors Lizard Spock! </h1>
+<p> The computer chose: <%= @game.computer_move %>.</p>
+
+<% if @game.player_wins? %>
+<p> Well done, <%= @game.player_name %>! <%= @game.player_move %> <%= @game.victory_type %> <%= @game.computer_move %>! </p>
+<% else %>
+<p> Unlucky, <%= @game.player_name %>. <%= @game.player_move %> <%= @game.victory_type %> <%= @game.computer_move %>. </p>
+<% end %>
+
+<p> Play again? </p>
+<form method='get' action='/play'>
+  <input class="fsSubmitButton" type="submit" value="Go!"></input>
+</select>
+</body>

@@ -3,9 +3,9 @@
 
 <body>
 <h1> Rock Paper Scissors Lizard Spock! </h1>
-<p> <%= @player_name %>, let's play RPSLS!" </p>
+<p> <%= @player.name %>, let's play RPSLS!" </p>
 <p> Choose your move! </p>
-<form method='post' action='/play'>
+<form method='post' action='/result'>
   <select name='possible_moves'>
     <% @options.each do |option| %>
       <option value="<%= option%>"> <%= option %> </option>
