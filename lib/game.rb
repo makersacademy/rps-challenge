@@ -2,7 +2,7 @@ require_relative "player"
 
 class Game
 
-  attr_reader :player
+  attr_reader :player, :game_move
 
   def initialize(player)
     @player = player

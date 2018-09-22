@@ -7,7 +7,9 @@ describe Game do
 
   describe "#move" do
     it "returns a game move" do
-      expect(game.move).to eq("Rock").or eq("Paper"). or eq("Scissors")
+      game.move
+      expect(game.game_move).to eq("Rock").or eq("Paper"). or eq("Scissors")
     end
   end
+
 end
