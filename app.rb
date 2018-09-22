@@ -6,5 +6,9 @@ class ChoiceGame < Sinatra::Base
     erb :index
   end
 
+  # post '/solo' do
+  #
+  # end
+
   run! if app_file == $0
 end
