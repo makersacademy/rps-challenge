@@ -28,10 +28,13 @@ feature 'playing a game' do
 
   # As a marketeer
   # So I can play a game
-  # I want the game to choose a rock
-  scenario 'Computer chose rock' do
+  # I want the game to choose a random option
+  scenario 'Computer chose random option' do
+    # player one's move
     choose 'rock'
     click_button 'Submit'
-    expect(page).to have_content 'Computer chose rock!'
-  end  
+    # player two's move
+    comp_values = ["Computer chose rock!", "Computer chose paper!", "Computer chose scissors!"]
+    expect(page).to satisfy { |page| page.has_content?(comp_values[0]) or page.has_content?(comp_values[1]) or page.has_content?(comp_values[2])}
+  end 
 end

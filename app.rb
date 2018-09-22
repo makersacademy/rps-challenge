@@ -25,7 +25,7 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @player1_move = session[:player1_move]
-    @player2_move = 'rock'
+    @player2_move = ['rock', 'paper', 'scissors'].sample
     erb(:result)
   end
 
