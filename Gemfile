@@ -6,6 +6,7 @@ gem 'pry'
 gem 'rake'
 gem 'rubycritic'
 gem 'selenium-webdriver'
+gem 'shotgun'
 gem 'sinatra'
 
 group :test do
