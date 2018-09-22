@@ -12,4 +12,10 @@ feature "Winner page" do
     from_welcome_to_winner
     expect(page).to have_content "And the winner is RPSbot"
   end
+
+  scenario "allows user to play again" do
+    from_welcome_to_winner
+    click_button "Play again"
+    expect(page).to have_content("Dave vs Computer")
+  end
 end
