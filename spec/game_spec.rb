@@ -28,7 +28,7 @@ describe Game do
       let(:player1) { double(:player1, name: 'Player1', choice: :rock) } 
       let(:player2) { double(:player2, name: 'Player2', choice: :rock, computer?: false) }
       it "returns 'Draw' when both players have made the same choice" do
-        expect(game.return_winner).to eq('Draw')
+        expect(game.return_winner).to eq(nil)
       end
     end
 

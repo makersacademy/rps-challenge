@@ -1,1 +1,7 @@
-<h1> <%= @player %> has chosen '<%= @move %>' </h1>
+<h2> <%= @player1.name %> has chosen '<%= @player1.choice.capitalize %>' </h2>
+<h2> <%= @player2.name %> has chosen '<%= @player2.choice.capitalize %>' </h2>
+<% if @winner.nil? %>
+<h1>You drew!</h1>
+<% else %>
+<h1> <%= @winner %> is the winner! </h1>
+<% end %>

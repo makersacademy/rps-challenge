@@ -1,9 +1,8 @@
-<h1> Choose your weapon, <%= @player.name %>! </h1>
+<h1> Choose your weapon, <%= @player1.name %>! </h1>
 <div>
   <form action="/move" method="post">
-    <input type="submit" value="Rock" name="move" /> <!-- This needs to refer to moves.rb --> 
-    <input type="submit" value="Paper" name="move" />
-    <input type="submit" value="Scissors" name="move" />
+    <% @player1.weapons.rack.each do |weapon|%>
+      <input type="submit" value="<%=weapon.to_s.capitalize%>" name="move"/> 
+    <% end %>
   </form>
-
 </div>

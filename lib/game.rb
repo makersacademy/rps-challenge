@@ -17,7 +17,7 @@ class Game
   
   def return_winner
     @player2.computer_move if @player2.computer?
-    return "Draw" if @player1.choice == @player2.choice
+    return nil if @player1.choice == @player2.choice
     return player1.name if choice_wins?
     @player2.name
   end

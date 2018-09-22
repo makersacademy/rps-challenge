@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
-require './lib/weapons.rb'
+# require './lib/weapons.rb'
 
 class RPS < Sinatra::Base
 enable :sessions
@@ -11,28 +11,32 @@ enable :sessions
   end
 
   post '/name' do
-    session[:player_one] = params[:name_one]
-
+    session[:player_one] = Player.new(name: params[:name_one])
     redirect '/play'
   end
 
   get '/play' do
-    # @player = session[:player_one]
-    @player = Player.new(name: session[:player_one])
+    @player1 = session[:player_one]
+    session[:game] = Game.new(player1: @player1)
     erb(:play)
   end
 
   post '/move' do
     session[:move] = params[:move]
-    # @move = @player.make_move(session[:move]) ?or?
-    # @move = @player.make_move(:move)
+    @player1 = session[:player_one]
+    @player1.make_move(params[:move].downcase.to_sym)
     redirect '/result'
   end
 
   get '/result' do
-    @player = session[:player_one]
-    # ? needs to reference Player one from above ?
-    @move = session[:move]
+    @game = session[:game]
+    @player1 = session[:player_one]
+    @player2 = @game.player2
+    p @player2
+    p @game
+    @winner = @game.return_winner
+    p @player2
+
     erb(:result)
   end
 
