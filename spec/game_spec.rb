@@ -13,6 +13,8 @@ describe Game do
     end
   end
 
+#controller.instance_variable_set(:@some_variable, value)
+
   describe "#calculate" do
 
     context "Player moves Rock " do
@@ -20,20 +22,24 @@ describe Game do
       let(:player) { double :player_class, :player_move => "Rock" }
       let(:game) { described_class.new(player) }
 
+
       it "returns draw if computer move is Rock" do
-        allow(game).to receive(:move) { "Rock" }
+
         player.player_move
+        game.instance_variable_set(:@game_move, "Rock")
         expect(game.calculate).to eq("It's A Draw!")
       end
 
+
       it "returns win if computer move is scissors" do
-        allow(game).to receive(:move) { "Scissors" }
+        game.instance_variable_set(:@game_move, "Scissors")
         player.player_move
         expect(game.calculate).to eq("You win!")
       end
 
       it "returns lose if computer move is paper" do
-        allow(game).to receive(:move) { "Paper" }
+
+        game.instance_variable_set(:@game_move, "Paper")
         player.player_move
         expect(game.calculate).to eq("You lose!")
       end
@@ -46,19 +52,19 @@ describe Game do
       let(:game) { described_class.new(player) }
 
       it "returns draw if computer move is Scissors" do
-        allow(game).to receive(:move) { "Scissors" }
+        game.instance_variable_set(:@game_move, "Scissors")
         player.player_move
         expect(game.calculate).to eq("It's A Draw!")
       end
 
       it "returns win if computer move is paper" do
-        allow(game).to receive(:move) { "Paper" }
+        game.instance_variable_set(:@game_move, "Paper")
         player.player_move
         expect(game.calculate).to eq("You win!")
       end
 
       it "returns lose if computer move is rock" do
-        allow(game).to receive(:move) { "Rock" }
+        game.instance_variable_set(:@game_move, "Rock")
         player.player_move
         expect(game.calculate).to eq("You lose!")
       end
@@ -70,19 +76,19 @@ describe Game do
       let(:game) { described_class.new(player) }
 
       it "returns draw if computer move is Paper" do
-        allow(game).to receive(:move) { "Paper" }
+        game.instance_variable_set(:@game_move, "Paper")
         player.player_move
         expect(game.calculate).to eq("It's A Draw!")
       end
 
       it "returns win if computer move is Rock" do
-        allow(game).to receive(:move) { "Rock" }
+        game.instance_variable_set(:@game_move, "Rock")
         player.player_move
         expect(game.calculate).to eq("You win!")
       end
 
       it "returns lose if computer move is scissors" do
-        allow(game).to receive(:move) { "Scissors" }
+        game.instance_variable_set(:@game_move, "Scissors")
         player.player_move
         expect(game.calculate).to eq("You lose!")
       end

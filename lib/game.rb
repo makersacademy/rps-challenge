@@ -2,27 +2,29 @@ require_relative "player"
 
 class Game
 
-  attr_reader :player
+  attr_reader :player, :game_move
 
   def initialize(player)
     @player = player
+    @game_move = game_move
   end
 
   def move
-    ["Rock", "Paper", "Scissors"].sample
+    @game_move = ["Rock", "Paper", "Scissors"].sample
+
   end
 
   def calculate
-    move
-    return "It's A Draw!" if @player.player_move == "Rock" && move == "Rock"
-    return "You win!" if @player.player_move == "Rock" && move == "Scissors"
-    return "You lose!" if @player.player_move == "Rock" && move == "Paper"
-    return "It's A Draw!" if @player.player_move == "Scissors" && move == "Scissors"
-    return "You win!" if @player.player_move == "Scissors" && move == "Paper"
-    return "You lose!" if @player.player_move == "Scissors" && move == "Rock"
-    return "It's A Draw!" if @player.player_move == "Paper" && move == "Paper"
-    return "You win!" if @player.player_move == "Paper" && move == "Rock"
-    return "You lose!" if @player.player_move == "Paper" && move == "Scissors"
+
+    return "It's A Draw!" if @player.player_move == "Rock" && @game_move == "Rock"
+    return "You win!" if @player.player_move == "Rock" && @game_move == "Scissors"
+    return "You lose!" if @player.player_move == "Rock" && @game_move == "Paper"
+    return "It's A Draw!" if @player.player_move == "Scissors" && @game_move == "Scissors"
+    return "You win!" if @player.player_move == "Scissors" && @game_move == "Paper"
+    return "You lose!" if @player.player_move == "Scissors" && @game_move == "Rock"
+    return "It's A Draw!" if @player.player_move == "Paper" && @game_move == "Paper"
+    return "You win!" if @player.player_move == "Paper" && @game_move == "Rock"
+    return "You lose!" if @player.player_move == "Paper" && @game_move == "Scissors"
   end
 
 end
