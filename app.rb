@@ -3,6 +3,8 @@ require './lib/player'
  
 class RPS < Sinatra::Base
   enable :sessions
+  set :session_secret, "secret"
+
   get '/' do
     erb(:index)
   end
