@@ -6,15 +6,18 @@ describe RPSReferee do
 
   context "#decision" do
     it "calculates decision (Draw)" do
-      expect(referee.decision(:rock, :rock)).to eq :Draw
+      moves = [:rock, :rock]
+      expect(referee.decision(moves)).to eq :Draw
     end
 
     it "calculates decision (Player 1 wins)" do
-      expect(referee.decision(:rock, :scissors)).to eq 0
+      moves = [:rock, :scissors]
+      expect(referee.decision(moves)).to eq 0
     end
 
     it "calculates decision (Player 2 wins)" do
-      expect(referee.decision(:rock, :paper)).to eq 1
+      moves = [:rock, :paper]
+      expect(referee.decision(moves)).to eq 1
     end
   end
 end
