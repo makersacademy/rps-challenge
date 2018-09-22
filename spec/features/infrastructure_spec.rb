@@ -75,4 +75,17 @@ feature 'Result' do
     click_button 'paper'
     expect(page).to have_content 'Game over: you have'
   end
+
+  scenario 'has a play again? button that takes you back to another game' do
+    visit '/'
+    click_button 'singleplayer'
+    fill_in 'name', with: 'Dwayne Johnson'
+    click_button 'submit'
+    click_button 'paper'
+    click_button 'play_again'
+    expect(page).to have_content 'Welcome Dwayne Johnson, Please enter your move:'
+    expect(page).to have_button 'rock'
+    expect(page).to have_button 'scissors'
+    expect(page).to have_button 'paper'
+  end
 end
