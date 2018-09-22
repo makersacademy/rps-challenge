@@ -15,6 +15,11 @@ class Game
   def calculate
     move
     return "It's A Draw!" if @player.player_move == "Rock" && move == "Rock"
+    return "You win!" if @player.player_move == "Rock" && move == "Scissors"
+    return "You lose!" if @player.player_move == "Rock" && move == "Paper"
+    return "It's A Draw!" if @player.player_move == "Scissors" && move == "Scissors"
+    return "You win!" if @player.player_move == "Scissors" && move == "Paper"
+    return "You lose!" if @player.player_move == "Scissors" && move == "Rock"
   end
 
 end
