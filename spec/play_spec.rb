@@ -24,9 +24,17 @@ feature 'Player can pick rock paper scissors' do
 end
 
 feature 'Player can pick rock paper scissors' do
-  scenario 'expect player to be able to choose paper' do
+  scenario 'expect player to be able to choose scissors' do
     sign_into_game
     click_button('Scissors')
     expect(page).to have_content('You have picked: Scissors')
+  end
+end
+
+feature 'Player can pick rock paper scissors' do
+  scenario 'expect player to be able to choose paper' do
+    sign_into_game
+    click_button('Paper')
+    expect(page).to have_content('You have picked: Paper')
   end
 end
