@@ -106,6 +106,18 @@ describe Game do
     end
   end
 
+  describe '#multiplayer' do
+    it 'returns true if p2 is a Computer object' do
+      allow(bar).to receive(:is_a?).with(Computer).and_return(true)
+      expect(subject.multiplayer?).to eq(false)
+    end
+
+    it 'returns false if p2 is not a Computer object' do
+      allow(bar).to receive(:is_a?).with(Computer).and_return(false)
+      expect(subject.multiplayer?).to eq(true)
+    end
+  end
+
   describe '#tie?' do
     context 'winner is equal to :tie' do
       it 'returns true if winner is equal to :tie' do
