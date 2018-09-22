@@ -23,11 +23,14 @@ class RockPaperScissors < Sinatra::Base
   
   post '/move' do
     session[:outcome] = session[:game].move
+    session[:computer_outcome] = session[:game].computer_move
     redirect '/outcome'
   end
 
   get '/outcome' do
     @outcome = session[:outcome]
+    @computer_outcome = session[:computer_outcome]
+    @decider
     erb :outcome
   end
   
