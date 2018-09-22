@@ -2,15 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>RPS - Single Player</title>
+    <title>RPS - Game</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   </head>
   <body>
-    <h1>Rock Paper Scissors - Single Player</h1>
-    <form action="/singleplayer-game" method="get">
-      <input type="text" name="name" value="" placeholder="Enter Name">
-      <input type="submit" name="submit" value="submit">
+    <h1>Welcome Dwayne Johnson, Please enter your move:</h1>
+    <form class="rps" action="/result" method="get">
+      <input type="submit" value="rock" class="btn btn-info">
+      <input type="submit" value="paper" class="btn btn-info">
+      <input type="submit" value="✂ scissors" class="btn btn-info">
     </form>
+
   </body>
 </html>
