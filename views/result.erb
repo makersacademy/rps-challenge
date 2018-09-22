@@ -1,21 +1,20 @@
-<h1> Result </h1>
 <br>
 <br>
 
 <% if @result == 'player1' %>
-  <%= @game.player1.name %> wins! :D
+  <p> <%= @game.player1.name %> wins! :D </p>
 <% elsif @result == 'player2' %>
-  <%= @game.player2.name %> wins! :D
+<p>  <%= @game.player2.name %> wins! :D </p>
 <% elsif @result == 'draw' %>
-   It's a tie! Try again!
+  <p> It's a tie! Try again! </p>
 <% end %>
 
 <br>
 <br>
 
 <form action='/play'  method='get'>
-  <input type='submit' value='Play again'>
+  <input type='submit' value='Play again' class='button'>
 </form>
 <form action='/'  method='get'>
-  <input type='submit' value='Start new game'>
+  <input type='submit' value='Start new game' class='button'>
 </form>
