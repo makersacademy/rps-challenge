@@ -51,6 +51,18 @@ RSpec.feature 'Testing solo player' do
     click_button 'Paper'
     expect(page).to have_content "It's a tie! Try again!"
   end
+
+  scenario 'player can play again' do
+    solo_name_play
+    click_button 'Paper'
+    expect(page).to have_button('Play again')
+  end
+
+  scenario 'player can start new game' do
+    solo_name_play
+    click_button 'Paper'
+    expect(page).to have_button('Start new game')
+  end
 end
 
 RSpec.feature 'testing multiplayer' do
@@ -71,33 +83,7 @@ RSpec.feature 'testing multiplayer' do
     click_button '2 players'
     expect(page).to have_button('Play')
   end
-end
 
-RSpec.feature 'After a game' do
-  scenario 'player can play again' do
-    visit '/'
-    click_button '2 players'
-    fill_in 'player1', with: 'Claudia'
-    fill_in 'player2', with: 'Marianne'
-    click_button 'Play'
-    click_button 'Paper'
-    click_button 'Rock'
-    expect(page).to have_button('Play again')
-  end
-
-  scenario 'player can play again' do
-    visit '/'
-    click_button '2 players'
-    fill_in 'player1', with: 'Claudia'
-    fill_in 'player2', with: 'Marianne'
-    click_button 'Play'
-    click_button 'Paper'
-    click_button 'Rock'
-    expect(page).to have_button('Start new game')
-  end
-end
-
-RSpec.feature 'multiplayer' do
   scenario 'player1 can choose rock' do
     multi_name_play
     expect(page).to have_button('Rock')
@@ -118,7 +104,7 @@ RSpec.feature 'multiplayer' do
     expect(page).to have_button('Spock')
   end
 
-  scenario 'player1 can choose rock' do
+  scenario 'player1 can choose lizard' do
     multi_name_play
     expect(page).to have_button('Lizard')
   end
@@ -172,5 +158,19 @@ RSpec.feature 'multiplayer' do
     click_button 'Paper'
     click_button 'Paper'
     expect(page).to have_content("It's a tie! Try again!")
+  end
+
+  scenario 'players can play again' do
+    multi_name_play
+    click_button 'Paper'
+    click_button 'Rock'
+    expect(page).to have_button('Play again')
+  end
+
+  scenario 'players start new game' do
+    multi_name_play
+    click_button 'Paper'
+    click_button 'Rock'
+    expect(page).to have_button('Start new game')
   end
 end

@@ -19,7 +19,7 @@ class Game
       'player1'
     elsif @key_beats_value[p2].include?(p1)
       'player2'
-    elsif p1 == p2
+    else
       'draw'
     end
   end
