@@ -1,0 +1,25 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<h1>Rock Paper Scissors</h1>
+<div class="player-container left">
+  <div class="rps-container cc-selector">
+    <form id="rps-form" action="/choice" method="post">
+      <input id="rock" type="radio" name="rps" value="rock" />
+      <label class="drinkcard-cc rock" for="rock"></label>
+      <input id="paper" type="radio" name="rps" value="paper" />
+      <label class="drinkcard-cc paper" for="paper"></label>
+      <input id="scissors" type="radio" name="rps" value="scissors" />
+      <label class="drinkcard-cc scissors" for="scissors"></label>
+    </form>
+  </div>
+  <h2><%=@name%></h2>
+</div>
+<div class="player-container right">
+  <div class="rps-container">
+  </div>  
+  <h2>Computer</h2>
+</div>
+<div>
+  <input type="submit" form="rps-form" value="Go!" class="left"/>
+</div>

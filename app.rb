@@ -13,7 +13,17 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    session[:name]
+    @name = session[:name]
+    puts @name
+    erb(:play)
+  end
+
+  post '/choice' do
+    redirect '/round'
+  end
+
+  get '/round' do
+    'Rock'
   end
 
   run! if app_file == $0
