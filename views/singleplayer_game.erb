@@ -7,7 +7,7 @@
 
   </head>
   <body>
-    <h1>Welcome <%= session[:game].p1.name %>, Please enter your move:</h1>
+    <h1>Welcome <%= session[:game].player1.name %>, Please enter your move:</h1>
     <form class="rps" action="/results" method="post">
       <input type="submit" name="move" value="rock" class="btn btn-info">
       <input type="submit" name="move" value="paper" class="btn btn-info">
