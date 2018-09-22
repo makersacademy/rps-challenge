@@ -15,7 +15,7 @@
     <h1>Game over: <%= session[:game].winner ? "#{session[:game].winner.name} won!" : 'Draw' %></h1>
     <h2><%= session[:game].player1.name %> chose <%= session[:game].player1.move %></h2>
     <h2><%= session[:game].player2.name %> chose <%= session[:game].player2.move %></h2>
-    <form class="rps" action="/singleplayer-game" method="get">
+    <form class="rps" action="/multi_p1" method="get">
       <input type="submit" value="play_again" class="btn btn-info">
     </form>
   </body>
