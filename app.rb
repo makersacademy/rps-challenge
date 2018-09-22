@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/computer.rb'
+require './lib/player.rb'
+require './lib/game.rb'
 
 class GameApp < Sinatra::Base
 
@@ -21,6 +24,7 @@ class GameApp < Sinatra::Base
 
   post '/move' do
     @choice = params[:choice]
+    @name = session[:name]
     erb :result
   end
 
