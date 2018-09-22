@@ -1,9 +1,29 @@
-<h1>Welcome <%= @player_name.name %></h1>
+<style>
+h1 {
+    font-size: 30px;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button1 {padding: 14px 40px;}
+</style>
+<h1 style="font-weight: bold; color:Blue;">Welcome <%= @player_name.name %></h1>
 <br>
 <form action="/result" method="post">
-  Please select from one of the options<br>
-  <input type="radio" id= 'rock' name="choices" value="rock">Rock<br>
-  <input type="radio" id= 'paper' name="choices" value="paper">Paper<br>
+  <h1>Please select from one of the options </h1><br>
+  <div style= "font-size: 30px;">
+  <input  type="radio" id= 'rock' name="choices" value="rock">Rock<br>
+  <input  type="radio" id= 'paper' name="choices" value="paper">Paper<br>
   <input type="radio" id= 'scisssors' name="choices" value="scissors">Scissors<br>
-  <input type="submit" value="Play">
+  <br>
+  <input class= "button button1" type="submit" value="Play">
+</div>
 </form>

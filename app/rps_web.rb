@@ -35,11 +35,9 @@ class RPSWeb < Sinatra::Application
   end
 
   get '/result' do
-    @game.player_1
+    @player_1_name = @game.player_1.name
     @player_1_choice = @game.player_1.weapon
     @player_2_choice = @game.player_2.weapon
-    p @player_1_choice
-    p @player_2_choice
     erb(:result)
   end
 

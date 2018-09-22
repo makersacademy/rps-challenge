@@ -1,9 +1,16 @@
-<h1>Player 1 has selected <%= @player_1_choice %></h1>
-<h1>Player 2 has selected <%= @player_2_choice %></h1>
+
+<style>
+body {
+    background-image: url("paper.gif");
+}
+</style>
+<h1 style="font-weight: bold; color:Blue;"><%= @player_1_name %> has selected <%= @player_1_choice %></h1>
+<h1 style= "font-weight: bold; color:Green;">Player 2 has selected <%= @player_2_choice %></h1>
 <h1>
 <% if @game.result(@player_1_choice, @player_2_choice) == :win %>
-  Congratulations - you won
+  <font color="Red">Congratulations - you won</font>
 <% else %>
-  Sorry - you lost
+  <font color="Red">Sorry - you lost</font>
 <% end %>
 </h1>
+</body>
