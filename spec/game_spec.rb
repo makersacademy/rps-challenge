@@ -24,7 +24,7 @@ describe Game do
 
   describe '#winner' do
     it 'raises an error if either player does not have a move' do
-      expect{ rps_no_move.winner }.to raise_error 'Players have not made a move'
+      expect { rps_no_move.winner }.to raise_error 'Players have not made a move'
     end
 
     context 'testing all 9 RPS outcomes' do
