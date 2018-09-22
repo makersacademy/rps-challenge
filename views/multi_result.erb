@@ -9,10 +9,17 @@
         position: absolute;
         left: 10px;
       }
+      h1 {
+          -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+          transition: 2s;
+      }
+      h1:hover {
+          font-size: 100px;
+      }
     </style>
   </head>
   <body>
-    <h1>Game over: <%= session[:game].winner ? "#{session[:game].winner.name} won!" : 'Draw' %></h1>
+    <h1>Game over: <span><%= session[:game].winner ? "#{session[:game].winner.name} won!" : 'Draw' %></span></h1>
     <h2><%= session[:game].player1.name %> chose <%= session[:game].player1.move %></h2>
     <h2><%= session[:game].player2.name %> chose <%= session[:game].player2.move %></h2>
     <form class="rps" action="/multi_p1" method="get">

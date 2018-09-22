@@ -17,7 +17,7 @@ class Game
     end
   end
 
-  # private #----------------------------
+  private #----------------------------
 
   def no_move
     !(@player1.move && @player2.move)
