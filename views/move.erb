@@ -19,16 +19,10 @@ body {
 <h1> Lets play <%= @name %> </h1>
 
 <h2> Please select your move! </h2>
-<h2> - type 'rock', 'paper' OR 'scissors' </h2>
-<h2> THEN CLICK 'SUBMIT' </h2>
-
-<!-- <form actions="/move">
-  <input type="submit" value="rock">
-  <input type="submit" value="paper">
-  <input type="submit" value="scissors">
-</form> -->
+<h2> - press 'ROCK', 'PAPER' OR 'SCISSORS' </h2>
 
 <form action="/move" method="post">
-  <input type="text" name="choice">
-  <input type="submit" value="Submit">
+  <input type="submit" name="choice" value="rock">
+  <input type="submit" name="choice" value="paper">
+  <input type="submit" name="choice" value="scissors">
 </form>
