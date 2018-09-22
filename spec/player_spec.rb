@@ -12,8 +12,8 @@ describe Player do
 
   describe "#player_move" do
     it "returns a player move" do
-      new_player.action
-      expect(new_player.player_move).to eq("Rock").or eq("Paper"). or eq("Scissors")
+      new_player.action("Rock")
+      expect(new_player.player_move).to eq("Rock")
     end
   end
 

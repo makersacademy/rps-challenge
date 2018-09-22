@@ -7,8 +7,8 @@ class Player
     @player = name
   end
 
-  def action
-    @player_move = ["Rock", "Paper", "Scissors"].sample
+  def action(move)
+    @player_move = move
   end
 
 end
