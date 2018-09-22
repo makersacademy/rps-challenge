@@ -10,6 +10,13 @@ p go
 g = Game.new(player_move, go)
 %>
 
+<h1> You chose <%= player_move %> </h1>
 <h1> Computer has chosen <%= go %>... </h1>
 
 <h2> <%= g.decider %> </h2>
+
+<h2> Please press submit to play again... </h2>
+
+<form action="/">
+  <input type="submit" value="START!">
+</form>

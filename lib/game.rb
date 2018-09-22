@@ -10,11 +10,11 @@ class Game
   def decider
     mapper = { 's' => 'p', 'p' => 'r', 'r' => 's' }
     if @human == @puter
-      "Draw!"
+      "IT'S A DRAW!"
     elsif mapper[@human] == @puter
-      "Player 1 won!"
+      "YOU HAVE WON!"
     else
-      "Player 2 won!"
+      "YOU LOST... COMPUTER HAS WON!"
     end
   end
 
