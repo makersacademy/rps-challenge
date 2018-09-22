@@ -14,7 +14,6 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
-    puts @name
     erb(:play)
   end
 
@@ -23,7 +22,7 @@ class RPS < Sinatra::Base
   end
 
   get '/round' do
-    'Rock'
+    'Rock, Paper and Scissors'
   end
 
   run! if app_file == $0
