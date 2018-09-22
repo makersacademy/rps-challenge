@@ -1,4 +1,5 @@
 require_relative 'ai'
+require_relative 'rps_referee'
 
 class Game
 
@@ -16,7 +17,7 @@ class Game
   def who_won
     moves = [@players.first.move, @players.last.move]
     decision = referee.decision(moves)
-    return @players[decision] if decision.integer?
-    decision
+    return decision if decision == :Draw
+    @players[decision]
   end
 end
