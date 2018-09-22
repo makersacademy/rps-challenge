@@ -17,4 +17,12 @@ feature "playing the game" do
       expect(page).to have_content 'You chose Rock!!'
     end
   end
+
+  context "when computer must choose an option" do
+    scenario "computer selects a shape" do
+      visit('/play')
+      click_button "Rock"
+      expect(page).to have_content 'Computer chose Paper!!'
+    end
+  end
 end
