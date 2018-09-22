@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
 
-  
+  # let(:game) { Game.new() }
 
   # subject(:pc) {Computer.new("r")} #stub
   #
