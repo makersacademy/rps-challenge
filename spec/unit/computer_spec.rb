@@ -2,6 +2,13 @@ require 'computer'
 
 describe Computer do
   subject(:computer) { described_class.new }
+
+  context '#initialize' do
+    it 'set the name as Skynet' do
+      expect(computer.name).to eq 'Skynet'
+    end
+  end
+
   context '#choice' do
     it 'returns paper' do
       allow_any_instance_of(Array).to receive(:sample) { 'Paper' }

@@ -1,5 +1,11 @@
 class Computer
+  attr_reader :name, :choice
+
+  def initialize
+    @name = 'Skynet'
+  end
+
   def player_choice
-    ['Rock', 'Scissors', 'Paper'].sample
+    @choice = ['Rock', 'Scissors', 'Paper'].sample
   end
 end
