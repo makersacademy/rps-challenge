@@ -33,6 +33,7 @@ class RPS < Sinatra::Base
   end
 
   get '/winner' do
+    @winner = session[:game].who_won
     erb :winner
   end
 end
