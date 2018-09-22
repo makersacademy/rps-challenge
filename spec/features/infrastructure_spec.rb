@@ -6,8 +6,14 @@ feature 'homepage' do
 
   scenario 'has a button called single player that takes you to a single player game' do
     visit '/'
-    click_button 'singleplayer'
+    click_button 'Single Player'
     expect(page).to have_content "Rock Paper Scissors - Single Player"
+  end
+
+  scenario 'has a button called two player that takes you to two player game' do
+    visit '/'
+    click_button 'Two Player'
+    expect(page).to have_content "Rock Paper Scissors - Two Player"
   end
 end
 

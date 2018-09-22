@@ -14,6 +14,10 @@ class RockPaperScissors < Sinatra::Base
     erb :singleplayer
   end
 
+  get '/twoplayer' do
+    erb :twoplayer
+  end
+
   post '/singleplayer-game' do
     session[:game] = Game.new(Player.new(params[:name]), Player.new('The Computer'))
     session[:computer] = MoveGenerator.new

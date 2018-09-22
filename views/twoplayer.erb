@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RPS - Two Player</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      body{
+        position: absolute;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rock Paper Scissors - Two Player</h1>
+    <form action="/twoplayer-game" method="post">
+      <p>Player 1:</p>
+      <input type="text" name="name1" value="" required><br>
+      <p>player 2:</p>
+      <input type="text" name="name2" value="" required><br><br>
+      <input type="submit" value="Submit" class="btn btn-info">
+    </form>
+  </body>
+</html>
