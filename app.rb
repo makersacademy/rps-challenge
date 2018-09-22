@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative 'lib/game'
+require_relative 'lib/player'
 
 class RPS < Sinatra::Base
 
@@ -22,5 +24,11 @@ class RPS < Sinatra::Base
   get '/play' do
     @name = session[:game].players.first.name
     erb :play
+  end
+
+  post '/move_input' do
+    p params
+    p session
+    p session[:game]
   end
 end
