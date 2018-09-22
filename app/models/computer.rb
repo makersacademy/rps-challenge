@@ -5,12 +5,12 @@ class Computer < Player
     @name = "Computer"
   end
 
-  def move=(ignore)  #how to avoid parameter?
+  # how to avoid parameter?
+  def move=(_ignore)
     @move = choice
   end
 
   private
-  
   def choice
     [:rock, :paper, :scissors].sample
   end

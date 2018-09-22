@@ -2,7 +2,7 @@ require_relative 'computer'
 require_relative 'player'
 
 class Game
-  P1_WIN  = [[:rock, :scissors], [:scissors, :paper], [:paper, :rock]]
+  P1_WIN = [[:rock, :scissors], [:scissors, :paper], [:paper, :rock]]
 
   attr_reader :player1, :player2, :players, :on_turn, :winner
 
@@ -30,8 +30,8 @@ class Game
   end
 
   def make_move(p1choice, p2choice)
-    player1.move = (p1choice)
-    player2.move = (p2choice)
+    player1.move = p1choice
+    player2.move = p2choice
   end
 
   def calculate_winner
