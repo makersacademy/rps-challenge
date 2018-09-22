@@ -1,0 +1,2 @@
+class VictoryGenerator
+end 

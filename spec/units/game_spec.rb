@@ -5,6 +5,8 @@ RSpec.describe Game do
   let(:billy) { double :Player, name: "Billy", move: "Rock" }
   let(:rpslsbot) { double :RandomPlayer, name: "RPSLSbot", move: "Scissors" }
 
+  subject { described_class.new(billy, player2: rpslsbot) }
+
   it "returns the players names when asked" do
     expect(subject.player_names).to eq ["Billy", "RPSLSbot"]
   end
