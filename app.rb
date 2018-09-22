@@ -12,7 +12,7 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    p params
+
     session[:player_name] = params[:player_name]
     redirect '/play'
   end
@@ -20,6 +20,10 @@ class Rps < Sinatra::Base
   get '/play' do
     @player = session[:player_name]
     erb :play
+  end
+
+  post '/choice' do
+
   end
 
 run! if app_file == $0
