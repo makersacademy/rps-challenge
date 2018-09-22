@@ -25,13 +25,23 @@ feature 'singleplayer' do
 end
 
 feature 'twoplayer' do
-  scenario 'lets you enter 2 names into the two player game' do
+  scenario 'lets you enter 2 names into the two player game and takes you to player1s go' do
     visit '/'
     click_button 'Two Player'
     fill_in 'name1', with: 'Bugs Bunny'
     fill_in 'name2', with: 'Daffy Duck'
     click_button 'Submit'
     expect(page).to have_content "Bugs Bunny it is your turn, please enter your move (don't let Daffy Duck see!)"
+  end
+
+  scenario 'after entering players 1s move, goes to the page for player 2 to enter a move' do
+    visit '/'
+    click_button 'Two Player'
+    fill_in 'name1', with: 'Bugs Bunny'
+    fill_in 'name2', with: 'Daffy Duck'
+    click_button 'Submit'
+    click_button 'rock'
+    expect(page).to have_content "Daffy Duck, it's now your turn"
   end
 end
 
