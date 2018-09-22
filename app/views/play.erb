@@ -1,7 +1,7 @@
 <h1> Choose your weapon, <%= @player %>! </h1>
 <div>
   <form action="/move" method="post">
-    <input type="submit" value="Rock" name="move" />
+    <input type="submit" value="Rock" name="move" /> <!-- This needs to refer to moves.rb --> 
     <input type="submit" value="Paper" name="move" />
     <input type="submit" value="Scissors" name="move" />
   </form>

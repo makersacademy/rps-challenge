@@ -16,16 +16,20 @@ enable :sessions
 
   get '/play' do
     @player = session[:player_one]
+    # @player = Player.new(session[:player_one])
     erb(:play)
   end
 
   post '/move' do
     session[:move] = params[:move]
+    # @move = @player.make_move(session[:move]) ?or?
+    # @move = @player.make_move(:move)
     redirect '/result'
   end
 
   get '/result' do
     @player = session[:player_one]
+    # ? needs to reference Player one from above ?
     @move = session[:move]
     erb(:result)
   end

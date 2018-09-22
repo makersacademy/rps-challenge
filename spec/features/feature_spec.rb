@@ -46,22 +46,22 @@ feature 'Choose an attack' do
   end
 end
 
-feature 'Computer chooses an attack' do
-  scenario 'Computer selects Scissors' do
-    sign_in
-    click_button('Rock')
-    expect(page).to have_content("The computer has has selected 'Scissors'")
-  end
+xfeature 'Computer chooses an attack' do
+  # scenario 'Computer selects Scissors' do
+  #   sign_in
+  #   click_button('Rock')
+  #   expect(page).to have_content("The computer has has selected 'Scissors'")
+  # end
 end
 
 # a winner will be declared
 
-# feature 'A winner will be declared' do
+xfeature 'A winner will be declared' do
 #   scenario 'The player beat the computer Rock vs Scissors' do
 #     sign_in
 #     click_button('Rock')
 #     expect(page).to have_content("'Rock' beats 'Scissors' - Freya wins")
 #   end  
-# end
+end
 
 end
