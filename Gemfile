@@ -2,7 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.5.0'
 
+gem 'pry'
 gem 'rake'
+gem 'rubycritic'
+gem 'selenium-webdriver'
 gem 'sinatra'
 
 group :test do
