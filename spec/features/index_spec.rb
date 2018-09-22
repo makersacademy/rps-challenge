@@ -1,8 +1,13 @@
 
-feature 'register my name before playing an online game' do
+feature 'Game page' do
   scenario 'welcomes me on the page' do
     visit '/'
     expect(page).to have_content("Hello there!")
+  end
+
+  scenario 'ask for my name' do
+    visit '/'
+    expect(page).to have_content("What's your name?")
   end
 
   scenario 'asks me for my name and shows it' do

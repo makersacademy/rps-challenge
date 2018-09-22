@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class Game < Sinatra::Base
 
@@ -8,15 +9,19 @@ class Game < Sinatra::Base
     erb(:index)
   end
 
-  post '/game' do
-    session[:player_name] = params[:name]
-    @player_name = session[:player_name]
+  post '/names' do
+    $player = Player.new(params[:name])
+    redirect '/game'
+  end
+
+  get '/game' do
+    @player_name = $player.name
     erb(:game)
   end
 
-  get '/rock' do
-    @player_name = session[:player_name]
-    @computer_move = Computer.new.move
+  get '/results' do
+    @player_name = $player.name
+    @player_move = session[:player_move]
     erb(:results)
   end
 

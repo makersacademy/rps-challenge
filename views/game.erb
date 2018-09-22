@@ -1,13 +1,9 @@
 <h1>Let's play <%= @player_name %></h1>
 
-<form action="/rock" method="get">
-  <input type="submit" value="Rock">
-<form>
+<form action="/results" method="get">
+  <input type="radio" value= "rock" id="rock" name="player_move"> Rock
+  <input type="radio" value="paper" id="paper" name="player_move"> Paper
+  <input type="radio" value="scissors" id="scissors" name ="player_move"> Scissors
+  <input type="submit" value="Submit">
 
-<form action="/paper" method="get">
-  <input type="submit" value="Paper">
-</form>
-
-<form action="/scissors" method="get">
-  <input type="submit" value="Scissors">
 </form>
