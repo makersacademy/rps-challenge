@@ -13,8 +13,6 @@ describe Game do
     end
   end
 
-#controller.instance_variable_set(:@some_variable, value)
-
   describe "#calculate" do
 
     context "Player moves Rock " do
@@ -22,14 +20,12 @@ describe Game do
       let(:player) { double :player_class, :player_move => "Rock" }
       let(:game) { described_class.new(player) }
 
-
       it "returns draw if computer move is Rock" do
 
         player.player_move
         game.instance_variable_set(:@game_move, "Rock")
         expect(game.calculate).to eq("It's A Draw!")
       end
-
 
       it "returns win if computer move is scissors" do
         game.instance_variable_set(:@game_move, "Scissors")
@@ -92,11 +88,7 @@ describe Game do
         player.player_move
         expect(game.calculate).to eq("You lose!")
       end
-
-
     end
-
-
   end
 end
 

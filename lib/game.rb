@@ -15,7 +15,7 @@ class Game
   end
 
   def calculate
-
+#game should probably automatically move
     return "It's A Draw!" if @player.player_move == "Rock" && @game_move == "Rock"
     return "You win!" if @player.player_move == "Rock" && @game_move == "Scissors"
     return "You lose!" if @player.player_move == "Rock" && @game_move == "Paper"
