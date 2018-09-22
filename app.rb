@@ -15,8 +15,15 @@ class RpsWeb < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
+    @shape = session[:shape]
     erb :play
   end
+
+  post '/play' do
+    session[:shape] = params[:shape]
+    redirect '/play'
+  end
+
 
   run! if app_file == $0
 end

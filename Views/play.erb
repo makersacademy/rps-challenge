@@ -1,5 +1,9 @@
 <h2>GAME TIME!!!!</h2>
 <%= @name %> vs. Computer<br><br>
-Rock
-Paper
-Scissors
+<form action='/play' method='post'>
+  <input type="submit" name="shape" value="Rock"/><br><br><p>
+  <input type="submit" name="shape" value="Paper"/><br><br><p>
+  <input type="submit" name="shape" value="Scissors"/><br><br><p>
+</form>
+
+You chose <%= @shape%>!!
