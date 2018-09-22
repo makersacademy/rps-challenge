@@ -1,3 +1,22 @@
-</h1> Rock, paper, scicssors! </h1>
-</h1> <%= @game.player_1 %> vs. The Machine </h1>
-<div> Choose an option to play: </div>
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock, paper, scissors</title>
+  </head>
+
+  <body>
+    </h1> Rock, paper, scissors! </h1> </br>
+    </h1> <%= @game.player_1.name %> vs. The Machine </h1></br>
+    <div> Choose an option to play: </div></br>
+
+
+    <form action="/options" method="post">
+      <button type="submit" name="chosen_option" value="rock">Rock</button>
+      <button type="submit" name="chosen_option" value="paper">Paper</button>
+      <button type="submit" name="chosen_option" value="scissors">Scissors</button>
+    </form>
+
+    </body>
+</html>

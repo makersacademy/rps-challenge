@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+  </head>
+
+  <body>
+      <%= @game.player_1.name %> chose <%= @option_1 %></br>
+      The Machine chose <%= @option_2 %> </br>
+
+      <% if @result == "tie" %>
+        It's a tie!
+      <% else %>
+         And the winner is... <%= @result.name %>!
+      <% end %>
+
+      <form action="/play"> <button > Play again </button> </form>
+      <form action="/end"> <button > End game </button> </form>
+
+  </body>
+</html>

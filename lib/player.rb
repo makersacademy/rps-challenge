@@ -1,17 +1,14 @@
 class Player
-  attr_reader :name, :options, :chosen_option
+  attr_reader :name, :chosen_option, :options
 
-  def initialize(name)
+  def initialize(name = "Anonymous player")
     @name = name
-    @options = ["rock", "paper", "scissors"]
     @chosen_option = nil
+    @options = ["rock", "paper", "scissors"]
   end
 
   def choose_option(option)
     @chosen_option = option
   end
 
-  def computer_option
-    options.sample
-  end
 end

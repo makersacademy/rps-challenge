@@ -15,16 +15,4 @@ describe Player do
       expect(player.chosen_option).to eq "rock"
     end
   end
-
-  describe "#computer_option" do
-    it "should choose a random option when the computer plays" do
-      srand(1)
-      expect(player.computer_option).to eq "paper"
-    end
-
-    it "should choose a random option when the computer plays" do
-      srand(2)
-      expect(player.computer_option).to eq "rock"
-    end
-  end
 end

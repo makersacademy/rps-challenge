@@ -1,6 +1,9 @@
+require_relative 'player'
+
 class Game
-  attr_reader :player_1, :player_2
-  def initialize(player_1, player_2 = computer)
+  attr_reader :player_1, :player_2, :options
+
+  def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
   end
@@ -21,7 +24,11 @@ class Game
       when "rock"
         option_2 == "scissors" ? player_1 : player_2
       when "scissors"
+        option_2 == "paper" ? player_1 : player_2
     end
   end
 
+  def computer_option
+    player_2.random_option
+  end
 end
