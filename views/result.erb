@@ -3,7 +3,7 @@
 <br>
 
 <% if @result == 'player' %>
-  <%= @game.player.name %> wins!
+  <%= @game.player.name %> wins! :D
 <% elsif @result == 'computer' %>
   <%= @game.player.name %> lost :( Try again!
 <% elsif @result == 'draw' %>
@@ -12,3 +12,7 @@
 
 <br>
 <br>
+
+<form action=/play method='get'>
+  <input type='submit' value='Play again'>
+</form>

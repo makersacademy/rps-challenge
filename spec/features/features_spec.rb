@@ -13,7 +13,7 @@ RSpec.feature 'Testing homepage' do
   end
 end
 
-RSpec.feature 'testing result' do
+RSpec.feature 'Testing result' do
   scenario 'player can choose rock' do
     log_info
     click_button 'Rock'
@@ -30,5 +30,13 @@ RSpec.feature 'testing result' do
     log_info
     click_button 'Scissors'
     expect(page).to have_content 'Result'
+  end
+end
+
+RSpec.feature 'play again' do
+  scenario 'player can play again' do
+    log_info
+    click_button 'Scissors'
+    expect(page).to have_button("Play again")
   end
 end

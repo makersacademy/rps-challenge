@@ -10,11 +10,12 @@ class Game
   end
 
   def play(player_choice)
-    if player_choice == computer.choice
-       'draw'
-    elsif @key_beats_value[player_choice] == computer.choice
+    computer_choice = computer.choice
+    if player_choice == computer_choice
+      'draw'
+    elsif @key_beats_value[player_choice] == computer_choice
       'player'
-    elsif @key_beats_value[computer.choice] == player_choice
+    elsif @key_beats_value[computer_choice] == player_choice
       'computer'
     end
   end
