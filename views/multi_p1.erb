@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RPS - Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+  body{
+    position: absolute;
+    left: 10px;
+  }
+  input{
+    width: 15%;
+  }
+</style>
+
+  </head>
+  <body>
+    <h1><%= session[:game].player1.name %> it is your turn, please enter your move (don't let <%= session[:game].player2.name %> see!)</h1>
+    <form class="rps" action="/multi_p2" method="post">
+      <input type="submit" name="move" value="rock" class="btn btn-outline-primary">
+      <input type="submit" name="move" value="paper" class="btn btn-outline-danger">
+      <input type="submit" name="move" value="scissors" class="btn btn-outline-success">
+    </form>
+  </body>
+</html>

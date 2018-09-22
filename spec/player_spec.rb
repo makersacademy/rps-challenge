@@ -4,7 +4,7 @@ describe Player do
   let(:the_rock) { described_class.new('Dwayne Johnson') }
   describe '#name' do
     it 'returns the players name' do
-      expect(the_rock.name).to eq 'Dwayne johnson'
+      expect(the_rock.name).to eq 'Dwayne Johnson'
     end
   end
 

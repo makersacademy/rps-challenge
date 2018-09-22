@@ -20,7 +20,18 @@ end
 feature 'singleplayer' do
   scenario 'lets you enter your name into the single player game' do
     single_player_name
-    expect(page).to have_content 'Welcome Dwayne johnson, Please enter your move:'
+    expect(page).to have_content 'Welcome Dwayne Johnson, Please enter your move:'
+  end
+end
+
+feature 'twoplayer' do
+  scenario 'lets you enter 2 names into the two player game' do
+    visit '/'
+    click_button 'Two Player'
+    fill_in 'name1', with: 'Bugs Bunny'
+    fill_in 'name2', with: 'Daffy Duck'
+    click_button 'Submit'
+    expect(page).to have_content "Bugs Bunny it is your turn, please enter your move (don't let Daffy Duck see!)"
   end
 end
 
@@ -64,7 +75,7 @@ feature 'Result' do
     single_player_name
     click_button 'paper'
     click_button 'play_again'
-    expect(page).to have_content 'Welcome Dwayne johnson, Please enter your move:'
+    expect(page).to have_content 'Welcome Dwayne Johnson, Please enter your move:'
     expect(page).to have_button 'rock'
     expect(page).to have_button 'scissors'
     expect(page).to have_button 'paper'

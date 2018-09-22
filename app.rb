@@ -28,6 +28,15 @@ class RockPaperScissors < Sinatra::Base
     erb :singleplayer_game
   end
 
+  post '/twoplayer-game' do
+    session[:game] = Game.new(Player.new(params[:name1]),Player.new(params[:name2]))
+    redirect '/player1-turn'
+  end
+
+  get '/player1-turn' do
+    erb :multi_p1
+  end
+
   post '/results' do
     session[:game].player1.player_move(params[:move])
     session[:game].player2.player_move(session[:computer].random_move)
