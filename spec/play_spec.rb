@@ -17,10 +17,16 @@ end
 
 feature 'Player can pick rock paper scissors' do
   scenario 'expect player to be able to choose rock' do
-    visit('/')
-    fill_in('player1_name', with:'Vu')
-    click_button('Submit')
+    sign_into_game
     click_button('Rock')
     expect(page).to have_content('You have picked: Rock')
+  end
+end
+
+feature 'Player can pick rock paper scissors' do
+  scenario 'expect player to be able to choose paper' do
+    sign_into_game
+    click_button('Scissors')
+    expect(page).to have_content('You have picked: Scissors')
   end
 end
