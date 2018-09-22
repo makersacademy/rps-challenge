@@ -1,5 +1,5 @@
 class Computer
-  # 
+  #
   # attr_reader :computer_move
   #
   # def initialize
@@ -7,7 +7,7 @@ class Computer
   # end
 
   def random_move
-    array = ["r", "p", "s"]
+    array = ["rock", "paper", "scissors"]
     array.sample
   end
 

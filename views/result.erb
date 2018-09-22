@@ -1,11 +1,9 @@
 <%
 p = Player.new(@name)
-puts p.player_name
-p player_move = @choice
+player_move = @choice
 
 c = Computer.new
 go = c.random_move
-p go
 
 g = Game.new(player_move, go)
 %>

@@ -8,7 +8,7 @@ class Game
   end
 
   def decider
-    mapper = { 's' => 'p', 'p' => 'r', 'r' => 's' }
+    mapper = { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
     if @human == @puter
       "IT'S A DRAW!"
     elsif mapper[@human] == @puter

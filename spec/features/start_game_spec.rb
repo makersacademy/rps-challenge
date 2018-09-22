@@ -7,6 +7,6 @@ feature 'starting game' do
     begin_and_submit
     click_button "START!"
     expect(page).to have_content('Lets play Damo')
-    expect(page).to have_content('Please select your move!')
+    expect(page).to have_content('Please select your move!') 
   end
 end
