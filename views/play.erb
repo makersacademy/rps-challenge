@@ -1,0 +1,13 @@
+<head>
+</head>
+
+<body>
+<h1> Rock Paper Scissors Lizard Spock! </h1>
+<p> <%= @player_name %>, let's play RPSLS!" </p>
+<p> Choose your move! </p>
+<select name='day' >
+  <% @options.each do |option| %>
+    <option value="<%= option%>"> <%= option %> </option>
+  <% end %>
+</select>
+</body>
