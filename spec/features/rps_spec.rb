@@ -7,7 +7,6 @@ feature 'Configure Player 1' do
   end
 end
 
-
 feature 'Choose Rock, Paper or Scissors' do
   scenario 'Player chooses Rock' do
     sign_in_and_play
