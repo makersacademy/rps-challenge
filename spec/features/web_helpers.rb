@@ -3,3 +3,10 @@ def visit_and_begin_game
   fill_in 'player', with: "Carolina"
   click_button 'Play Game'
 end
+
+def visit_for_multiplayer
+  visit '/'
+  click_button 'I want to beat my friend'
+  fill_in 'player1', with: "patrick"
+  fill_in 'player2', with: "squidward"
+end
