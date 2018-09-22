@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/player'
 
 class ChoiceGame < Sinatra::Base
 
@@ -6,9 +7,9 @@ class ChoiceGame < Sinatra::Base
     erb :index
   end
 
-  # post '/solo' do
-  #
-  # end
+  post '/solo' do
+    player = Player.new(params[:name])
+  end
 
   run! if app_file == $0
 end
