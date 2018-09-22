@@ -11,3 +11,16 @@ feature 'update screen with player name' do
   end
 end
 
+# As a marketeer
+# So that I can enjoy myself away from the daily grind
+# I would like to be able to play rock/paper/scissors
+
+feature 'Player can pick rock paper scissors' do
+  scenario 'expect player to be able to choose rock' do
+    visit('/')
+    fill_in('player1_name', with:'Vu')
+    click_button('Submit')
+    click_link('rock')
+    expect(page).to have_content('You have picked: Rock')
+  end
+end

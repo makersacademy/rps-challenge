@@ -10,4 +10,8 @@ class RPS < Sinatra::Base
     @player1_name = Player.new(params[:player1_name]).name
     erb(:play)
   end
+
+  get '/choice' do
+    erb(:choice)
+  end
 end
