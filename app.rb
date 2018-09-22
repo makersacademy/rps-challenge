@@ -9,7 +9,7 @@ class RPS < Sinatra::Base
     erb :welcome
   end
 
-  get '/names' do
+  get '/names_input' do
     erb :names
   end
 end
