@@ -1,1 +1,14 @@
-You selected an option
+<h1> Result </h1>
+<br>
+<br>
+
+<% if @result == 'player' %>
+  <%= @game.player.name %> wins!
+<% elsif @result == 'computer' %>
+  <%= @game.player.name %> lost :( Try again!
+<% elsif @result == 'draw' %>
+   It's a tie! Try again!
+<% end %>
+
+<br>
+<br>

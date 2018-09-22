@@ -1,8 +1,8 @@
-Choose an option, <%= @name %>
+<h1> Choose an option, <%= @game.player.name %> </h1>
 <br>
 <br>
 <form action='/result' method='get'>
-  <input type='submit' value='Rock'>
-  <input type='submit' value='Paper'>
-  <input type='submit' value='Scissors'>
+  <input type='submit' value='Rock' name ="commit">
+  <input type='submit' value='Paper' name="commit">
+  <input type='submit' value='Scissors' name="commit">
 </form>
