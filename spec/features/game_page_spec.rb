@@ -13,5 +13,19 @@ describe RockPaperScissors do
       click_button 'Rock, Paper, Scissors...'
       expect(page).to have_content('The All-Knowing Computer\'s move:')
     end
+
+    it "returns the winner" do
+      srand(3)
+      visit_and_begin_game
+      click_button 'Rock, Paper, Scissors...'
+      expect(page).to have_content('wins!')
+    end
+    
+    it "returns a tie" do
+      srand(4)
+      visit_and_begin_game
+      click_button 'Rock, Paper, Scissors...'
+      expect(page).to have_content('tie!')
+    end
   end
 end

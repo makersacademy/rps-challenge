@@ -30,7 +30,7 @@ class RockPaperScissors < Sinatra::Base
   get '/outcome' do
     @outcome = session[:outcome]
     @computer_outcome = session[:computer_outcome]
-    @decider
+    @decider = session[:game].decision(@outcome, @computer_outcome)
     erb :outcome
   end
   
