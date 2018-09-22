@@ -13,8 +13,10 @@ class Game
   def who_won
     player1 = @players.first
     player2 = @players.last
-    return :Draw if draw?(player1.move, player2.move)
-    return player1 if player1_wins?(player1_move, player2_move)
+    move1 = player1.move
+    move2 = player2.move
+    return :Draw if draw?(move1, move2)
+    return player1 if player1_wins?(move1, move2)
     player2
   end
 
