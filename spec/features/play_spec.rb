@@ -20,6 +20,7 @@ feature "playing the game" do
 
   context "when computer must choose an option" do
     scenario "computer selects a shape" do
+      allow_any_instance_of(Game).to receive(:choice).and_return(:Paper)
       visit('/play')
       click_button "Rock"
       expect(page).to have_content 'Computer chose Paper!!'

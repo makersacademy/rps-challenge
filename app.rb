@@ -1,5 +1,5 @@
 require 'sinatra/base'
-
+require './lib/game'
 class RpsWeb < Sinatra::Base
 
   enable :sessions
@@ -16,7 +16,7 @@ class RpsWeb < Sinatra::Base
   get '/play' do
     @name = session[:name]
     @shape = session[:shape]
-    @computer_shape = session[:computer_shape]
+    @computer_shape = Game.new
     erb :play
   end
 
