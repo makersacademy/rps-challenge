@@ -1,7 +1,7 @@
-<h1>Welcome : <%=$player%>!</h1>
+<h1>Welcome : <%=$player_one.name%>!</h1>
 <h1>let's start playing!</h1>
 
-<form action='/move' method = "post">
+<form action='/result' method = "post">
   <label for="rock">Rock</label>
   <input type="radio" name="move" id="rock" value="rock"><br>
   <label for="paper">Paper</label>
@@ -11,4 +11,4 @@
   <input type="submit" value="Submit">
 </form>
 
- <h1><%=$player%> chose <%=@move%>!"</h1>
+ 
