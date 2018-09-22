@@ -1,17 +1,17 @@
-class Player
-  require_relative './weapons.rb'
+require_relative './weapons.rb'
 
-  attr_reader :name, :choice, :weapons
+class Player
   COMPUTER_NAME = 'Computer - Hal'
+  attr_reader :name, :choice, :weapons
 
   def initialize(name: nil, weapons: Weapons.new)
+    @computer = !name
     @name = name || COMPUTER_NAME
     @weapons = weapons
-    @choice = choice
   end
 
   def computer?
-    @name == COMPUTER_NAME
+    @computer
   end
 
   def make_move(choice)

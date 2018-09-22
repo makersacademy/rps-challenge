@@ -1,10 +1,9 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
-# require './lib/weapons.rb'
 
 class RPS < Sinatra::Base
-enable :sessions
+  enable :sessions
   
   get '/' do
     erb(:index)
@@ -32,11 +31,7 @@ enable :sessions
     @game = session[:game]
     @player1 = session[:player_one]
     @player2 = @game.player2
-    p @player2
-    p @game
     @winner = @game.return_winner
-    p @player2
-
     erb(:result)
   end
 

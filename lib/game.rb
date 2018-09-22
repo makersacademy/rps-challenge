@@ -1,6 +1,7 @@
+require_relative './player.rb'
+require_relative './weapons.rb'
+
 class Game
-  require_relative './player.rb'
-  require_relative './weapons.rb'
   attr_reader :player1, :player2, :player_choices
 
   WINNING_PAIRS = [
@@ -18,8 +19,8 @@ class Game
   def return_winner
     @player2.computer_move if @player2.computer?
     return nil if @player1.choice == @player2.choice
-    return player1.name if choice_wins?
-    @player2.name
+    return @player1 if choice_wins?
+    @player2
   end
 
   private

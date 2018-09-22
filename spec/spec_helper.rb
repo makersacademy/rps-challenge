@@ -1,4 +1,4 @@
-require File.expand_path '../../app/rps_app.rb', __FILE__ 
+require File.expand_path('../app/rps_app.rb', __dir__)
 require 'features/web_helpers.rb'
 require 'capybara/rspec'
 require 'simplecov'

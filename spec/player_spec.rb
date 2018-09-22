@@ -2,7 +2,7 @@ require 'player'
 
 describe Player do
   subject(:player) { described_class.new(name: name, weapons: weapons) }
-  subject(:computer) { described_class.new(weapons: weapons)}
+  subject(:computer) { described_class.new(weapons: weapons) }
   let(:name) { double :name }
   let(:weapons) { double :weapons }
   let(:choice) { double :choice }
@@ -34,6 +34,7 @@ describe Player do
       it 'chooses a random weapon for the computer player' do
         allow(weapons).to receive(:random_select).and_return(choice)
         expect(computer.computer_move).to eq(choice)
+        expect(computer.choice).to eq(choice)
       end
     end
   end
@@ -46,7 +47,7 @@ describe Player do
     end
     it 'does not allow player to make an invalid choice' do
       allow(weapons).to receive(:available?).and_return(false)
-      expect{ player.make_move(choice) }.to raise_error('This is not a valid move')
+      expect { player.make_move(choice) }.to raise_error('This is not a valid move')
     end
   end
 

@@ -2,60 +2,62 @@ require 'game'
 
 describe Game do
   subject(:game) { described_class.new(player1: player1, player2: player2) }
-  let(:player1) { double :player1 }
-  let(:player2) { double :player2 }
-    
-  describe '#return_winner' do
-    context "Player1's choice is 'paper'. Player2's choice is 'rock'. Player1 wins." do
-      let(:player1) { double(:player1, name: 'Player1', choice: :paper) } 
-      let(:player2) { double(:player2, name: 'Player2', choice: :rock, computer?: false) } 
+  let(:player1) { double :player1, name: 'Player 1', choice: p1_choice, computer?: false }
+  let(:player2) { double :player2, name: 'Player 2', choice: p2_choice, computer?: p2_computer }
+  let(:p1_choice) { :rock }
+  let(:p2_choice) { :paper }
 
-      it 'returns the name of Player1 as the winning player' do
-        new_game = described_class.new(player1: player1, player2: player2)
-        expect(game.return_winner).to eq(player1.name)
-      end
-    end
-    context "Player1's choice is 'rock'. Player2's choice is 'paper'. Player2 wins." do
-      let(:player1) { double(:player1, name: 'Player1', choice: :rock) } 
-      let(:player2) { double(:player2, name: 'Player2', choice: :paper, computer?: false) }
-
-      it 'returns the name of Player2 as the winning player' do
-        new_game = described_class.new(player1: player1, player2: player2)
-        expect(game.return_winner).to eq(player2.name)
-      end
-    end
-    context "Players have made the same choice" do
-      let(:player1) { double(:player1, name: 'Player1', choice: :rock) } 
-      let(:player2) { double(:player2, name: 'Player2', choice: :rock, computer?: false) }
-      it "returns 'Draw' when both players have made the same choice" do
-        expect(game.return_winner).to eq(nil)
-      end
-    end
-
-  end
-
-  context 'Both players are humans' do
+  context "Both players are humans" do
+    let(:p2_computer) { false }
 
     it "creates a new game with two players" do
       expect(game.player1).to eq(player1)
       expect(game.player2).to eq(player2)    
     end
 
+    context "Player 1's choice is 'Rock', Player 2's choice is 'Paper, Player 1 is a human player'" do
+    
+      describe '#return_winner' do
+        it 'returns the name of Player 2 as the winning player' do
+          expect(game.return_winner).to eq(player2)
+        end
+      end
+  
+    end
+
+    context "Player 1's choice is 'Paper', Player 2's choice is 'Rock'" do
+    
+      describe '#return_winner' do
+        let(:p1_choice) { :paper } 
+        let(:p2_choice) { :rock } 
+        it 'returns the name of Player 1 as the winning player' do 
+          expect(game.return_winner).to eq(player1)
+        end
+      end
+  
+    end
+  
+    context "Players have made the same choice" do
+      let(:p1_choice) { :rock } 
+      let(:p2_choice) { :rock } 
+      it "returns nil when both players have made the same choice" do
+        expect(game.return_winner).to eq(nil)
+      end
+    end
+
   end
 
-  context 'Player2 is a computer' do
-    let(:game_computer) { described_class.new(player1: player1)}
-    let(:player1) { double(:player1, name: 'Player1', choice: :paper) } 
-    let(:computer_player) { double(:computer_opponent, computer?: true, computer_move: nil, choice: :rock) }
+  context "Player 2 is a computer" do
+    subject(:game_with_computer) { described_class.new(player1: player1) }
 
-    it "creates a computer opponent if player2 is empty" do
-      expect(game_computer.player2).to be_an_instance_of(Player)
+    it 'creates a computer opponent if player one is empty' do
+      expect(game_with_computer.player2).to be_an_instance_of(Player)
     end
 
     describe '#return_winner' do
-      it 'makes a move for the computer' do
-        new_game = described_class.new(player1: player1, player2: computer_player)
-        expect(new_game.return_winner).to eq(player1.name)
+      it 'gets a weapon choice for the computer' do
+        expect(game_with_computer.player2).to receive(:computer_move)
+        game_with_computer.return_winner
       end
     end
 
