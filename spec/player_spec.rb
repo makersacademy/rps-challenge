@@ -13,7 +13,7 @@ describe Player do
   context "#store_move" do
     it "should save the move in @move" do
       player.store_move("Rock")
-      expect(player.move).to eq "Rock"
+      expect(player.move).to eq :Rock
     end
   end
 end

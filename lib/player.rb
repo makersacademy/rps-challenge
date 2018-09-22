@@ -7,6 +7,6 @@ class Player
   end
 
   def store_move(selected_move)
-    @move = selected_move
+    @move = selected_move.to_sym
   end
 end

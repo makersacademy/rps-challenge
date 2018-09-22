@@ -27,7 +27,7 @@ class RPS < Sinatra::Base
   end
 
   post '/store_move' do
-    selected_move = params.first[0].to_sym
+    selected_move = params.first[0]
     session[:game].store_move(selected_move)
     redirect '/winner'
   end
