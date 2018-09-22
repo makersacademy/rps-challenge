@@ -8,5 +8,12 @@
 </head>
 <body>
   <h1>Ready to win <%= @player.capitalize %>?</h1>
+  <form action="/move" method="post">
+    <input type="submit" name="move" value="Rock, Paper, Scissors...">
+  </form>
+
+  <% if @move %>
+    <h4>Your move: <%= @move %></h4>
+  <% end %>
 </body>
 </html>
