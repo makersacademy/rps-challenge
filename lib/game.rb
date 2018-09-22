@@ -4,8 +4,16 @@ class Game
     @moves = ["Rock", "Paper", "Scissors"]
   end
 
-  def move 
-    @player_move = @moves.sample
+  def rock 
+    @moves[0]
+  end
+  
+  def paper
+    @moves[1]
+  end
+  
+  def scissors
+    @moves[2]
   end
 
   def computer_move

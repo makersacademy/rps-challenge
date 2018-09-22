@@ -7,9 +7,14 @@ describe Game do
       expect { game }.not_to raise_error
     end
 
-    it "#move" do
-      srand(2) # creates a seed for a random sequence -- begins with Rock
-      expect(game.move).to eq "Rock"
+    it "#rock" do
+      expect(game.rock).to eq "Rock"
+    end
+    it "#paper" do
+      expect(game.paper).to eq "Paper"
+    end
+    it "#scissors" do
+      expect(game.scissors).to eq "Scissors"
     end
 
     it "#computer_move" do
@@ -19,24 +24,24 @@ describe Game do
 
     context "who is the winner" do 
       it "computer wins" do
-        srand(2)
-        player = game.move
+        srand(1)
+        move = game.rock
         computer = game.computer_move
-        expect(game.decision(player, computer)).to eq "Computer is the winner!"
+        expect(game.decision(move, computer)).to eq "Computer is the winner!"
       end
       
       it "player wins" do
-        srand(1)
-        player = game.move
+        srand(2)
+        move = game.paper
         computer = game.computer_move
-        expect(game.decision(player, computer)).to eq "You are the winner!"
+        expect(game.decision(move, computer)).to eq "You are the winner!"
       end
       
       it "is a tie" do
-        srand(4)
-        player = game.move
+        srand(12345)
+        move = game.scissors
         computer = game.computer_move
-        expect(game.decision(player, computer)).to eq "It's a tie!"
+        expect(game.decision(move, computer)).to eq "It's a tie!"
       end
     end
   end

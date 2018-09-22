@@ -9,8 +9,14 @@
 </head>
 <body>
   <h1>Ready to play, <%= @player.capitalize %>?</h1>
-  <form action="/move" method="post">
-    <input type="submit" value="Rock, Paper, Scissors...">
+  <form action="/rock" method="post">
+    <input type="submit" value="Rock">
+  </form>
+  <form action="/paper" method="post">
+    <input type="submit" value="Paper">
+  </form>
+  <form action="/scissors" method="post">
+    <input type="submit" value="Scissors">
   </form>
 </body>
 </html>

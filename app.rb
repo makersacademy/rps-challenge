@@ -20,13 +20,25 @@ class RockPaperScissors < Sinatra::Base
     @player = session[:name].name
     erb :play
   end
-  
-  post '/move' do
-    session[:outcome] = session[:game].move
+
+  post '/rock' do
+    session[:outcome] = session[:game].rock
     session[:computer_outcome] = session[:game].computer_move
     redirect '/outcome'
   end
 
+  post '/paper' do
+    session[:outcome] = session[:game].paper
+    session[:computer_outcome] = session[:game].computer_move
+    redirect '/outcome'
+  end
+
+  post '/scissors' do
+    session[:outcome] = session[:game].scissors
+    session[:computer_outcome] = session[:game].computer_move
+    redirect '/outcome'
+  end
+  
   get '/outcome' do
     @outcome = session[:outcome]
     @computer_outcome = session[:computer_outcome]
