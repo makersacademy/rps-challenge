@@ -1,1 +1,5 @@
-<h1>And the winner is </h1>
+<% if @winner == :Draw %>
+  <h1>It was a DRAW!<br>Booooooooo<br>Boring!</h1>
+<% else %>
+  <h1>And the winner is <%= @winner.name %></h1>
+<% end %>
