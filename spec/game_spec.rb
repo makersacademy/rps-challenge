@@ -10,4 +10,11 @@ describe Game do
       expect(game.players).to eq [player1]
     end
   end
+
+  context "#store_move" do
+    it "calls Player#store_move" do
+      expect(player1).to receive(:store_move)
+      game.store_move("Rock")
+    end
+  end
 end
