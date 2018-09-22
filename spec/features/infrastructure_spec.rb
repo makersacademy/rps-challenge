@@ -47,3 +47,32 @@ feature 'RPS - singleplayer' do
     expect(page).to have_button 'scissors'
   end
 end
+
+feature 'Result' do
+  scenario 'making a scissors move takes you to results page' do
+    visit '/'
+    click_button 'singleplayer'
+    fill_in 'name', with: 'Dwayne Johnson'
+    click_button 'submit'
+    click_button 'scissors'
+    expect(page).to have_content 'Game over: you have'
+  end
+
+  scenario 'making a rock move takes you to results page' do
+    visit '/'
+    click_button 'singleplayer'
+    fill_in 'name', with: 'Dwayne Johnson'
+    click_button 'submit'
+    click_button 'rock'
+    expect(page).to have_content 'Game over: you have'
+  end
+
+  scenario 'making a paper move takes you to results page' do
+    visit '/'
+    click_button 'singleplayer'
+    fill_in 'name', with: 'Dwayne Johnson'
+    click_button 'submit'
+    click_button 'paper'
+    expect(page).to have_content 'Game over: you have'
+  end
+end

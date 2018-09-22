@@ -12,4 +12,12 @@ end
 get '/singleplayer-game' do
   erb :singleplayer_game
 end
+
+post '/results' do
+  redirect '/results'
+end
+
+get '/results' do
+  erb :results
+end
 end
