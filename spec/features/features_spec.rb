@@ -73,7 +73,7 @@ RSpec.feature 'testing multiplayer' do
   end
 end
 
-RSpec.feature 'play again' do
+RSpec.feature 'After a game' do
   scenario 'player can play again' do
     visit '/'
     click_button '2 players'
@@ -83,6 +83,17 @@ RSpec.feature 'play again' do
     click_button 'Paper'
     click_button 'Rock'
     expect(page).to have_button('Play again')
+  end
+
+  scenario 'player can play again' do
+    visit '/'
+    click_button '2 players'
+    fill_in 'player1', with: 'Claudia'
+    fill_in 'player2', with: 'Marianne'
+    click_button 'Play'
+    click_button 'Paper'
+    click_button 'Rock'
+    expect(page).to have_button('Start new game')
   end
 end
 
