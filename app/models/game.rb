@@ -14,15 +14,11 @@ class Game
   end
 
   def multiplayer?
-    !(player2.is_a?(Computer))
+    !player2.is_a?(Computer)
   end
 
   def switch
-    self.on_turn = off_turn
-  end
-
-  def off_turn
-    opposite_of(on_turn)
+    self.on_turn = opposite_of(on_turn)
   end
 
   def loser

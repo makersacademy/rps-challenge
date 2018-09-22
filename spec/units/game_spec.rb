@@ -27,16 +27,11 @@ describe Game do
     end
   end
 
-  # refactor!!!
   describe 'switch' do
     before { subject.switch }
     context '@on_turn set to @player1' do
       it 'sets @on_turn to @player2' do
         expect(subject.on_turn).to eq(bar)
-      end
-
-      it 'sets @off_turn to @player1' do
-        expect(subject.off_turn).to eq(foo)
       end
     end
 
@@ -44,9 +39,6 @@ describe Game do
       before { subject.switch }
       it 'sets @on_turn to @player1' do
         expect(subject.on_turn).to eq(foo)
-      end
-      it 'sets @off_turn to @player2' do
-        expect(subject.off_turn).to eq(bar)
       end
     end
   end

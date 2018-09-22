@@ -9,9 +9,12 @@ class RPS < Sinatra::Base
   end
 
   post '/' do
-    p params
     session[:p1] = Player.new(params[:name])
-    params[:name2].empty? ? session[:p2] = Computer.new : session[:p2] = Player.new(params[:name2])
+    if params[:name2].empty?
+      session[:p2] = Computer.new
+    else
+      session[:p2] = Player.new(params[:name2])
+    end
     session[:game] = Game.new(session[:p1], session[:p2])
     redirect('/play')
   end
@@ -22,14 +25,22 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    session[:p1choice] = params["choice"]
+    @game = session[:game]
+    if @game.on_turn == session[:p1]
+      session[:choice1] = params['choice'].to_sym
+      redirect '/result' unless @game.multiplayer?
+      @game.switch
+      redirect '/play'
+    else
+      session[:choice2] = params['choice'].to_sym
+      @game.switch
+    end
     redirect '/result'
   end
 
   get '/result' do
     @game = session[:game]
-    @p1choice = session[:p1choice].to_sym
-    @game.make_move(@p1choice, 'nil')
+    @game.make_move(session[:choice1], session[:choice2])
     @game.calculate_winner
     @game.tie? ? erb(:tie) : erb(:winner)
   end
