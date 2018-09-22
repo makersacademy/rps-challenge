@@ -21,5 +21,10 @@ class Rock < Sinatra::Base
     erb(:lights)
   end
 
+  post"/results"do
+    @game = $game
+    player.action(params[:choice])
+
+  end
 
 end

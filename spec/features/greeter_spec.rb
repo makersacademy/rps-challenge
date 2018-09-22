@@ -11,6 +11,6 @@ feature "Greeter" do
      visit('/')
      fill_in :name, with: "Florence"
      click_button "Submit"
-     expect(page).to have_content("Florence!")
+     expect(page).to have_content("Florence! Get ready to play!")
    end
 end
