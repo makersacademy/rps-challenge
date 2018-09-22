@@ -29,7 +29,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/twoplayer-game' do
-    session[:game] = Game.new(Player.new(params[:name1]),Player.new(params[:name2]))
+    session[:game] = Game.new(Player.new(params[:name1]), Player.new(params[:name2]))
     redirect '/multi_p1'
   end
 

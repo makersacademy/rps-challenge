@@ -43,6 +43,17 @@ feature 'twoplayer' do
     click_button 'rock'
     expect(page).to have_content "Daffy Duck, it's now your turn"
   end
+
+  scenario 'after both players enter their moves it goes to a results page' do
+    visit '/'
+    click_button 'Two Player'
+    fill_in 'name1', with: 'Bugs Bunny'
+    fill_in 'name2', with: 'Daffy Duck'
+    click_button 'Submit'
+    click_button 'rock'
+    click_button 'paper'
+    expect(page).to have_content 'Game over:'
+  end
 end
 
 feature 'RPS - singleplayer' do
