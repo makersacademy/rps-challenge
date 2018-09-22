@@ -6,6 +6,6 @@ class Computer
   end
 
   def player_choice
-    @choice = ['Rock', 'Scissors', 'Paper'].sample
+    @choice = ['Rock', 'Scissors', 'Paper', 'Lizard', 'Spock'].sample
   end
 end

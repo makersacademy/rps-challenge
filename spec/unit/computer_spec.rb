@@ -24,5 +24,16 @@ describe Computer do
       allow_any_instance_of(Array).to receive(:sample) { 'Scissors' }
       expect(computer.player_choice).to eq 'Scissors'
     end
+
+    it 'returns spock' do
+      allow_any_instance_of(Array).to receive(:sample) { 'Spock' }
+      expect(computer.player_choice).to eq 'Spock'
+    end
+
+    it 'returns Lizard' do
+      allow_any_instance_of(Array).to receive(:sample) { 'Lizard' }
+      expect(computer.player_choice).to eq 'Lizard'
+    end
+
   end
 end

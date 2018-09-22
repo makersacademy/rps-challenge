@@ -113,6 +113,16 @@ RSpec.feature 'multiplayer' do
     expect(page).to have_button('Scissors')
   end
 
+  scenario 'player1 can choose spock' do
+    multi_name_play
+    expect(page).to have_button('Spock')
+  end
+
+  scenario 'player1 can choose rock' do
+    multi_name_play
+    expect(page).to have_button('Lizard')
+  end
+
   scenario 'player2 can choose rock' do
     multi_name_play
     click_button 'Paper'
@@ -129,6 +139,18 @@ RSpec.feature 'multiplayer' do
     multi_name_play
     click_button 'Paper'
     expect(page).to have_button('Scissors')
+  end
+
+  scenario 'player2 can choose spock' do
+    multi_name_play
+    click_button 'Paper'
+    expect(page).to have_button('Spock')
+  end
+
+  scenario 'player2 can choose lizard' do
+    multi_name_play
+    click_button 'Paper'
+    expect(page).to have_button('Lizard')
   end
 
   scenario 'player 1 wins' do
