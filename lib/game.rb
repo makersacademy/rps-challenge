@@ -1,8 +1,10 @@
+require 'ai'
+
 class Game
 
   attr_reader :players
 
-  def initialize(player1, player2 = "AI")
+  def initialize(player1, player2 = AI.new)
     @players = [player1, player2]
   end
 
