@@ -21,10 +21,12 @@ class Rock < Sinatra::Base
     erb(:lights)
   end
 
-  post"/results"do
+  post "/results" do
     @game = $game
-    player.action(params[:choice])
-
+    p @game.player.action(params[:choice])
+    p @game.move
+    p @result = @game.calculate
+    erb(:end)
   end
 
 end
