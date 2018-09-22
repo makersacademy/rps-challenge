@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Game Has Started</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Ready to win <%= @player.capitalize %>?</h1>
+  <h1>Ready to play, <%= @player.capitalize %>?</h1>
   <form action="/move" method="post">
     <input type="submit" value="Rock, Paper, Scissors...">
   </form>

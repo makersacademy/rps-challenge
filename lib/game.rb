@@ -14,23 +14,23 @@ class Game
 
   def decision(player_move, computer_move)
     if player_move == "Rock" && computer_move == "Paper"
-      "Computer wins!"
+      "Computer is the winner!"
     elsif player_move == "Rock" && computer_move == "Rock"
       "It's a tie!"
     elsif player_move == "Rock" && computer_move == "Scissors"
-      "Player wins!"
+      "You are the winner!"
     elsif player_move == "Paper" && computer_move == "Scissors"
-      "Computer wins!"
+      "Computer is the winner!"
     elsif player_move == "Paper" && computer_move == "Paper"
       "It's a tie!"
     elsif player_move == "Paper" && computer_move == "Rock"
-      "Player wins!"
+      "You are the winner!"
     elsif player_move == "Scissors" && computer_move == "Rock"
-      "Computer wins!"
+      "Computer is the winner!"
     elsif player_move == "Scissors" && computer_move == "Scissors"
       "It's a tie!"
     else 
-      "Player wins!"
+      "You are the winner!"
     end
   end
 end

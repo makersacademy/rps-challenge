@@ -18,7 +18,7 @@ describe RockPaperScissors do
       srand(3)
       visit_and_begin_game
       click_button 'Rock, Paper, Scissors...'
-      expect(page).to have_content('wins!')
+      expect(page).to have_content('winner!')
     end
     
     it "returns a tie" do

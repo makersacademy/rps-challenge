@@ -1,4 +1,25 @@
-<h4>Your move is: <%= @outcome %></h4>
-<h4>The All-Knowing Computer's move: <%= @computer_outcome %> </h4>
-<h4> <%= @decider %> </h4>
-<a href="/play">Play Again?</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h4>Your move is: <span class="choice"><%= @outcome %></span></h4>
+  <h4>The computer's move: <span class="choice"><%= @computer_outcome %></span></h4>
+  <h4 class="decision"> <%= @decider %> </h4>
+  <a href="/play">Play Again?</a>
+
+  <% if @decider == "It's a tie!" %>
+  <img src="https://media.giphy.com/media/l2SqdyhxrYW6Rzcwo/giphy.gif" alt="it's a tie" style="display:block;padding-top:20px;margin:auto;">
+  <% elsif @decider == "You are the winner!" %>
+  <img src="https://media.giphy.com/media/xT0GqssRweIhlz209i/giphy.gif" style="display:block;padding-top:20px;margin:auto;" alt="breaking bad win">
+  <% elsif @decider == "Computer is the winner!"%>
+  <img src="https://media.giphy.com/media/rKj0oXtnMQNwY/giphy.gif" alt="you lost..." style="display:block;padding-top:20px;margin:auto;">
+  <% end %>
+    
+</body>
+</html>

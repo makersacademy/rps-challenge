@@ -21,21 +21,21 @@ describe Game do
       it "computer wins" do
         srand(2)
         player = game.move
-        computer =  game.computer_move
-        expect(game.decision(player, computer)).to eq "Computer wins!"
+        computer = game.computer_move
+        expect(game.decision(player, computer)).to eq "Computer is the winner!"
       end
       
       it "player wins" do
         srand(1)
         player = game.move
         computer = game.computer_move
-        expect(game.decision(player, computer)).to eq "Player wins!"
+        expect(game.decision(player, computer)).to eq "You are the winner!"
       end
       
       it "is a tie" do
         srand(4)
         player = game.move
-        computer =  game.computer_move
+        computer = game.computer_move
         expect(game.decision(player, computer)).to eq "It's a tie!"
       end
     end
