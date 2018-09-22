@@ -3,12 +3,14 @@
 
 <body>
 <h1> Rock Paper Scissors Lizard Spock! </h1>
-<p> The computer chose: <%= @game.computer_move %>.</p>
+<p> The computer chose: <%= @game.chosen_moves[1] %>.</p>
 
-<% if @game.player_wins? %>
-<p> Well done, <%= @game.player_name %>! <%= @game.player_move %> <%= @game.victory_type %> <%= @game.computer_move %>! </p>
+<% if @game.winner == 0 %>
+<p> Well done, <%= @game.player_names[0] %>! <%= @game.chosen_moves[0] %> <%= @game.victory_type %> <%= @game.chosen_moves[1] %>! </p>
+<% elsif @game.winner == 1 %>
+<p> Unlucky, <%= @game.player_names[0] %>. <%= @game.chosen_moves[1] %> <%= @game.victory_type %> <%= @game.chosen_moves[0] %>. </p>
 <% else %>
-<p> Unlucky, <%= @game.player_name %>. <%= @game.player_move %> <%= @game.victory_type %> <%= @game.computer_move %>. </p>
+<p> It's a draw! You both chose <%= @game.chosen_moves[0] %>. </p>
 <% end %>
 
 <p> Play again? </p>
