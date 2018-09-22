@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/move_generator'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -14,8 +15,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/singleplayer-game' do
-    session[:player] = Player.new(params[:name])
-    session[:player2] = Player.new('The Computer')
+    session[:game] = Game.new(Player.new(params[:name]),Player.new('The Computer'))
     session[:computer] = MoveGenerator.new
     redirect '/singleplayer-game'
   end
@@ -25,8 +25,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/results' do
-    session[:player].player_move(params[:move])
-    session[:player2].player_move(session[:computer].random_move)
+    session[:game].p1.player_move(params[:move])
+    session[:game].p2.player_move(session[:computer].random_move)
     redirect '/results'
   end
 
