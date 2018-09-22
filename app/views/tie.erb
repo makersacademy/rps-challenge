@@ -1,0 +1,9 @@
+<h1><%=@game.player1.name%> has chosen <%=@game.player1.move%></h1>
+
+<h1><%=@game.player2.name%> has chosen <%=@game.player2.move%></h1>
+
+<h1>The game is tied!</h1>
+
+<form action='/play' method='get'>
+  <input type='Submit' value='Click here to start again!'>
+</form>
