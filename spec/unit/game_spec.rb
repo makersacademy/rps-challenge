@@ -1,9 +1,9 @@
 require 'game'
 
 describe Game do
-  let(:player) { double('Player', name: 'Willow', choice: 'Scissors')}
-  let(:computer) { double('Computer', name: 'Computer', choice: 'Paper')}
-  let(:winning_computer) { double('Computer', name: 'Computer', choice: 'Rock')}
+  let(:player) { double('Player', name: 'Willow', choice: 'Scissors') }
+  let(:computer) { double('Computer', name: 'Computer', choice: 'Paper') }
+  let(:winning_computer) { double('Computer', name: 'Computer', choice: 'Rock') }
   let(:solo_game) { described_class.new(player, computer) }
   let(:lost_solo_game) { described_class.new(player, winning_computer) }
 

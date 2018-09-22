@@ -9,6 +9,7 @@ class ChoiceGame < Sinatra::Base
 
   post '/solo' do
     player = Player.new(params[:name])
+    session[:game] = Game.new(player, Player.new('Computer'))
   end
 
   run! if app_file == $0
