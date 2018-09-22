@@ -27,7 +27,8 @@ describe Game do
     end
   end
 
-  describe 'switch' do    # refactor!!!
+  # refactor!!!
+  describe 'switch' do
     before { subject.switch }
     context '@on_turn set to @player1' do
       it 'sets @on_turn to @player2' do
@@ -57,6 +58,7 @@ describe Game do
     end
   end
 
+  # have i tested delegation correctly?
   describe '#make_move - sets move for p1 and p2' do
     before do
       allow(foo).to receive(:move=)
@@ -64,10 +66,10 @@ describe Game do
       subject.make_move(:hello, :test)
     end
     it 'foo receives call for move= with :hello' do
-      expect(subject.player1).to have_received(:move=).with(:hello)
+      expect(foo).to have_received(:move=).with(:hello)
     end
     it 'bar receives call for move= with :test' do
-      expect(subject.player2).to have_received(:move=).with(:test)
+      expect(bar).to have_received(:move=).with(:test)
     end
   end
 
@@ -106,14 +108,14 @@ describe Game do
 
   describe '#tie?' do
     context 'winner is equal to :tie' do
-      it 'returns true if calculate_winner is equal to :tie' do
+      it 'returns true if winner is equal to :tie' do
         allow(subject).to receive(:winner).and_return(:tie)
         expect(subject.tie?).to eq(true)
       end
     end
 
     context 'winner is not equal to :tie' do
-      it 'returns false if calculate_winner is not equal to :tie' do
+      it 'returns false if winner is not equal to :tie' do
         allow(subject).to receive(:winner).and_return(foo)
         expect(subject.tie?).to eq(false)
       end
