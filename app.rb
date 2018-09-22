@@ -31,4 +31,8 @@ class RPS < Sinatra::Base
     session[:game].store_move(selected_move)
     redirect '/winner'
   end
+
+  get '/winner' do
+    erb :winner
+  end
 end
