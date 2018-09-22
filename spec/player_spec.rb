@@ -6,7 +6,7 @@ describe Player do
 
   describe "#initialize" do
     it "knows it's own name" do
-      expect(new_player.player).to eq("Florence")
+      expect(new_player.name).to eq("Florence")
     end
   end
 

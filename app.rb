@@ -10,4 +10,16 @@ class Rock < Sinatra::Base
     erb(:index)
   end
 
+  post '/save_name' do
+    player = Player.new(params[:name])
+    $game = Game.new(player)
+    redirect "/lights"
+  end
+
+  get "/lights" do
+    @game = $game
+    erb(:lights)
+  end
+
+
 end
