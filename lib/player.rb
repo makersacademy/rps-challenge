@@ -1,8 +1,9 @@
 class Player
   attr_reader :name, :move
+  COMPUTER_NAME = 'Computer - Hal'
 
-  def initialize(name)
-    @name = name
+  def initialize(name: nil)
+    @name = name || COMPUTER_NAME
   end
 
   def make_move(move)
