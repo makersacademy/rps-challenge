@@ -1,4 +1,4 @@
-require 'ai'
+require_relative 'ai'
 
 class Game
 
