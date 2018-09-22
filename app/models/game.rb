@@ -13,6 +13,10 @@ class Game
     @on_turn  = @player1
   end
 
+  def multiplayer?
+    !(player2.is_a?(Computer))
+  end
+
   def switch
     self.on_turn = off_turn
   end
@@ -38,7 +42,7 @@ class Game
     play = [player1.move, player2.move]
     if play[0] == play[1]
       self.winner = :tie
-    elsif P1_WIN.include?(play)
+    elsif Game::P1_WIN.include?(play)
       self.winner = player1
     else
       self.winner = player2
