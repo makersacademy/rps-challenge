@@ -9,26 +9,30 @@ class RPS < Sinatra::Base
   end
   
   post '/play' do
-    session[:player_one] = Player.new(params[:player_one])
+    session[:player_one] = Player.new(params[:player_one], false)
+    session[:player_two] = Player.new("AI", true)
     redirect '/play'
   end
   
   get '/play' do
-    $player_one = session[:player_one]
-    erb(:play)
+    @player_one = session[:player_one]
+    @player_two = session[:player_two]
+    erb :play
   end
 
   post '/result' do
-    session[:player1_move] = params[:move]
+    @player_1 = session[:player_one]
+    @player_2 = session[:player_two]
+    @player_1.play_move(params[:move])
+    @player_2.play_move()
     redirect '/result'
   end
 
   get '/result' do
-    @player1_move = session[:player1_move]
-    @player2_move = ['rock', 'paper', 'scissors'].sample
-    erb(:result)
+    @player_one = session[:player_one]
+    @player_two = session[:player_two]
+    erb :result
   end
-
  
   run! if app_file == $0
 end

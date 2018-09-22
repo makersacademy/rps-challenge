@@ -33,8 +33,11 @@ feature 'playing a game' do
     # player one's move
     choose 'rock'
     click_button 'Submit'
-    # player two's move
-    comp_values = ["Computer chose rock!", "Computer chose paper!", "Computer chose scissors!"]
-    expect(page).to satisfy { |page| page.has_content?(comp_values[0]) or page.has_content?(comp_values[1]) or page.has_content?(comp_values[2])}
+    # player two's move`
+    computer_move = page.find("#player2_move").text
+    allowed_moves = ["rock", "paper", "scissors"]
+    expect(computer_move).to satisfy { |page| page.include?(allowed_moves[0]) or page.include?(allowed_moves[1]) or page.include?(allowed_moves[2])}
   end 
+
+  
 end
