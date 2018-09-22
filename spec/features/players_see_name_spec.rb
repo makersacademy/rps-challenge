@@ -6,6 +6,6 @@
 feature 'player can register their name' do
   scenario 'player should be shown the form to fill in and submit' do
     sign_and_play
-    expect(page).to have_content "Welcome Bob"
+    expect(page).to have_content "Bob vs. Sam"
   end
 end

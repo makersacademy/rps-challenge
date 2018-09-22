@@ -48,6 +48,17 @@ $ cd rps-challenge
 $ bundle
 $ rackup
 
+SCREENSHOTS:
+
+https://www.dropbox.com/s/1tkw8h7j0dr8hs8/Screen%20Shot%202018-09-22%20at%2020.17.14.png?dl=0
+https://www.dropbox.com/s/e25c0vrzyq1kn40/Screen%20Shot%202018-09-22%20at%2020.17.29.png?dl=0
+https://www.dropbox.com/s/ahee1gxlikqho88/Screen%20Shot%202018-09-22%20at%2020.17.45.png?dl=0
+https://www.dropbox.com/s/w6ajl6zp557k7m1/Screen%20Shot%202018-09-22%20at%2020.17.54.png?dl=0
+https://www.dropbox.com/s/b9iwmmjgepjc844/Screen%20Shot%202018-09-22%20at%2009.12.33.png?dl=0
+https://www.dropbox.com/s/vd9ghxfs2647fq0/Screen%20Shot%202018-09-22%20at%2009.11.57.png?dl=0
+https://www.dropbox.com/s/1tkw8h7j0dr8hs8/Screen%20Shot%202018-09-22%20at%2020.17.14.png?dl=0
+https://www.dropbox.com/s/rvrn7mk62pmwabh/Screen%20Shot%202018-09-22%20at%2009.12.53.png?dl=0
+
 ## Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).

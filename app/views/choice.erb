@@ -17,8 +17,8 @@ h1 {
 </style>
 <h1 style="font-weight: bold; color:Blue;"><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
 <br>
-<form action="/choice" method="post">
-  <h1><%= @game.player_1.name %> please select from one of the options </h1><br>
+<form action="/result" method="post">
+  <h1><%= @game.player_2.name %> please select from one of the options </h1><br>
   <div style= "font-size: 30px;">
   <input  type="radio" id= 'rock' name="choices" value="rock">Rock<br>
   <input  type="radio" id= 'paper' name="choices" value="paper">Paper<br>

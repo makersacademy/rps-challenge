@@ -3,21 +3,25 @@
 # I would like to be able to play rock/paper/scissors
 
 feature 'player can play "rock, paper and scissors"' do
-  scenario "when I submit 'rock' I get a message I whether I have won" do
-    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
+  scenario "when I submit 'rock' I get a message I whether I have lost" do
     sign_and_play
     choose('rock')
     click_button('Play')
-    expect(page).to have_content "Congratulations - you won"
+    visit('/choice')
+    choose('paper')
+    click_button('Play')
+    expect(page).to have_content "Sorry - Bob you lost"
   end
 end
 
 feature 'player can play "rock, paper and scissors"' do
-  scenario "when I submit 'rock' I get a message I whether I have lost" do
-    allow_any_instance_of(Array).to receive(:sample).and_return('paper')
+  scenario "when I submit 'rock' I get a message I whether I have won" do
     sign_and_play
-    choose('rock')
+    choose('scissors')
     click_button('Play')
-    expect(page).to have_content "Sorry - you lost"
+    visit('/choice')
+    choose('paper')
+    click_button('Play')
+    expect(page).to have_content "Congratulations - Bob you won"
   end
 end

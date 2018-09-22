@@ -10,11 +10,4 @@ describe Player do
     end
   end
 
-  # describe  "user selects one of the available weapon" do
-  #   it "allows user to select one of the weapons" do
-  #     weapon = "rock"
-  #     expect(player.player_choice(weapon.to_sym)).to include?(weapon)
-  #   end
-  # end
-
 end

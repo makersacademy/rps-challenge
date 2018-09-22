@@ -3,11 +3,11 @@ require 'game'
 describe Game do
   let(:game) { described_class.new(player_1, player_2) }
   let(:player_1) { double :player_1, name: "Bob" }
-  let(:player_2) { double :player_2}
-  let(:weapons) {[:rock, :paper, :scissors]}
+  let(:player_2) { double :player_2 }
+  let(:weapons) { [:rock, :paper, :scissors] }
   let(:player_1_choice) { double player_1_choice }
   let(:player_1_choice) { double player_1_choice }
-  let(:weapon_instance) { double :weapon, :beats}
+  let(:weapon_instance) { double :weapon, :beats }
   # let(:rules) do
   #     {       rock: :scissors,
   #             paper: :rock,

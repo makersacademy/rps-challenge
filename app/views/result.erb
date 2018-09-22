@@ -5,12 +5,12 @@ body {
 }
 </style>
 <h1 style="font-weight: bold; color:Blue;"><%= @player_1_name %> has selected <%= @player_1_choice %></h1>
-<h1 style= "font-weight: bold; color:Green;">Player 2 has selected <%= @player_2_choice %></h1>
+<h1 style= "font-weight: bold; color:Green;"><%= @game.player_2.name %> has selected <%= @player_2_choice %></h1>
 <h1>
 <% if @game.result(@player_1_choice, @player_2_choice) == :win %>
-  <font color="Red">Congratulations - you won</font>
+  <font color="Red">Congratulations - <%= @game.player_1.name %> you won</font>
 <% else %>
-  <font color="Red">Sorry - you lost</font>
+  <font color="Red">Sorry - <%= @game.player_1.name %> you lost</font>
 <% end %>
 </h1>
 </body>
