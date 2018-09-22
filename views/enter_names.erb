@@ -1,0 +1,31 @@
+<h1>Rock Paper Scissors</h1>
+<p>It's not like anyone is even gonna play this so why waste time with an intro</p>
+<% if @player_count == '1p' %>
+  <h3>Enter your name</h3>
+	<form action="/names" method="post">
+	<div>
+			<label for="player1_name">Player 1 name:</label>
+			<input type="text" id="player1_name" name="player1_name">
+	</div>
+	<div class="button">
+			<button type="submit" value="submit">Confirm your name</button>
+	</div>
+
+	</form>
+<% else %>
+	<h3>Enter your names</h3>
+	<form action="/names" method="post">
+	<div>
+			<label for="player1_name">Player 1 name:</label>
+			<input type="text" id="player1_name" name="player1_name">
+	</div>
+	<div>
+			<label for="player2_name">Player 2 name:</label>
+			<input type="text" id="player2_name" name="player2_name">
+	</div>
+	<div class="button">
+			<button type="submit" value="submit">Confirm your names</button>
+	</div>
+
+	</form>	
+<% end %>

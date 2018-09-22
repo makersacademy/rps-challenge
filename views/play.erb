@@ -1,7 +1,2 @@
-<h3> Welcome <%= @player1.name%>, to this riveting game of rock paper scissors </h3>
-
-<form action="/result" method="post">
-	<input type="submit" name="player_choice" value="rock">
-	<input type="submit" name="player_choice" value="paper">
-	<input type="submit" name="player_choice" value="scissors">
-</form>
+<h3> <%= @player1.name %> chose <%= @player1.choice%> </h3>
+<h3> <%= @player2.name%> chose <%= @player2.choice%> </h3>

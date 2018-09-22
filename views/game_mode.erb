@@ -1,0 +1,8 @@
+<h1>Welcome <%= @player1.name%> & <%= @player2.name%> </h1>
+<h3>pick your game mode: rock paper scissors || rock paper scissors lizard spock</h3>
+
+
+<form action="/game_mode" method="post">
+	<input type="submit" name="game_mode" value="rps">
+	<input type="submit" name="game_mode" value="rpsls">
+</form>
