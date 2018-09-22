@@ -7,17 +7,20 @@ class Player
   def initialize(name: nil, weapons: Weapons.new)
     @name = name || COMPUTER_NAME
     @weapons = weapons
-  end
-
-  def make_move(choice)
-    raise "This is not a valid move" unless choice_available?
     @choice = choice
   end
 
-  private
+  def computer?
+    @name == COMPUTER_NAME
+  end
 
-  def choice_available?
-    @weapons.available?(choice)
+  def make_move(choice)
+    raise "This is not a valid move" unless @weapons.available?(choice)
+    @choice = choice
+  end
+
+  def computer_move
+    @choice = @weapons.random_select
   end
 
 end

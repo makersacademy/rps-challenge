@@ -1,8 +1,9 @@
 class Game
   require_relative './player.rb'
+  require_relative './weapons.rb'
   attr_reader :player1, :player2, :player_choices
 
-  RULES = [
+  WINNING_PAIRS = [
     { rock: :scissors },
     { paper: :rock },
     { scissors: :paper }               
@@ -15,15 +16,17 @@ class Game
   end
   
   def return_winner
+    @player2.computer_move if @player2.computer?
+    return "Draw" if @player1.choice == @player2.choice
     return player1.name if choice_wins?
-    player2.name
+    @player2.name
   end
 
   private
 
   def choice_wins?
     @player_choices[@player1.choice] = @player2.choice
-    RULES.include?(@player_choices)
+    WINNING_PAIRS.include?(@player_choices)
   end 
 
 end

@@ -9,4 +9,8 @@ class Weapons
     @rack.include?(weapon)
   end
 
+  def random_select
+    @rack.sample
+  end
+
 end
