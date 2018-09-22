@@ -7,7 +7,7 @@
 
   </head>
   <body>
-    <h1>Welcome Dwayne Johnson, Please enter your move:</h1>
+    <h1>Welcome <%= session[:player].name %>, Please enter your move:</h1>
     <form class="rps" action="/results" method="post">
       <input type="submit" name="move" value="rock" class="btn btn-info">
       <input type="submit" name="move" value="paper" class="btn btn-info">

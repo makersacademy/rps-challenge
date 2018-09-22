@@ -1,4 +1,3 @@
-
 feature 'homepage' do
   scenario 'the homepage contains the title Rock Paper Scissors' do
     visit '/'
