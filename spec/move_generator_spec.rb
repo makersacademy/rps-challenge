@@ -1,4 +1,4 @@
-require 'computer'
+require 'move_generator'
 
 describe MoveGenerator do
   describe '#random_move' do
