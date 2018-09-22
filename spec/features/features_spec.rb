@@ -8,19 +8,27 @@ RSpec.feature 'Testing homepage' do
   end
 
   scenario 'player can enter name' do
-    visit '/'
-    fill_in 'player', with: 'Claudia'
-    click_button 'Play'
+    log_info
     expect(page).to have_content('Choose an option, Claudia')
   end
 end
 
 RSpec.feature 'testing result' do
-  scenario 'player can choose option' do
-    visit '/'
-    fill_in 'player', with: 'Claudia'
-    click_button 'Play'
+  scenario 'player can choose rock' do
+    log_info
     click_button 'Rock'
+    expect(page).to have_content 'Result'
+  end
+
+  scenario 'player can choose paper' do
+    log_info
+    click_button 'Paper'
+    expect(page).to have_content 'Result'
+  end
+
+  scenario 'player can choose scissors' do
+    log_info
+    click_button 'Scissors'
     expect(page).to have_content 'Result'
   end
 end
