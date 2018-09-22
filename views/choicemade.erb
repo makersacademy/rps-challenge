@@ -1,3 +1,7 @@
 <h1>I see you have selected <%= @choice.chosen %>... Interesting....</h1>
 
 <h2>Now it is time for me to make my choice.... click sumbit to find out...</h2>
+
+<form action="/winner" method="post">
+  <input type="submit" value="Submit">
+</form>

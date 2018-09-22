@@ -31,4 +31,10 @@ class Challenge < Sinatra::Base
     erb :choicemade
   end
 
+  post '/winner' do
+    @choice = session[:choice]
+    @computer = ["Rock", "Paper", "Scissors"].sample
+    erb :winner
+  end
+
 end
