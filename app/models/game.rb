@@ -54,6 +54,10 @@ class Game
     end
   end
 
+  def reason
+
+  end
+
   private
   attr_writer :on_turn, :winner
 
