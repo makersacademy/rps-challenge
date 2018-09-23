@@ -17,22 +17,22 @@ class MultiplayerGame
     @first_player == player1 ? player2 : player1
   end
 
-  def decision(player_move, computer_move)
-    if player_move == "Rock" && computer_move == "Paper"
+  def decision(player_move, player_two_move)
+    if player_move == "Rock" && player_two_move == "Paper"
       "#{finale(second_player)} is the RPS Champion of #{Date.today.year}!"
-    elsif player_move == "Rock" && computer_move == "Rock"
+    elsif player_move == "Rock" && player_two_move == "Rock"
       "It's a tie!"
-    elsif player_move == "Rock" && computer_move == "Scissors"
+    elsif player_move == "Rock" && player_two_move == "Scissors"
       "#{finale(@first_player)} is the RPS Champion of #{Date.today.year}!"
-    elsif player_move == "Paper" && computer_move == "Scissors"
+    elsif player_move == "Paper" && player_two_move == "Scissors"
       "#{finale(second_player)} is the RPS Champion of #{Date.today.year}!"
-    elsif player_move == "Paper" && computer_move == "Paper"
+    elsif player_move == "Paper" && player_two_move == "Paper"
       "It's a tie!"
-    elsif player_move == "Paper" && computer_move == "Rock"
+    elsif player_move == "Paper" && player_two_move == "Rock"
       "#{finale(@first_player)} is the RPS Champion of #{Date.today.year}!"
-    elsif player_move == "Scissors" && computer_move == "Rock"
+    elsif player_move == "Scissors" && player_two_move == "Rock"
       "#{finale(second_player)} is the RPS Champion of #{Date.today.year}!"
-    elsif player_move == "Scissors" && computer_move == "Scissors"
+    elsif player_move == "Scissors" && player_two_move == "Scissors"
       "It's a tie!"
     else 
       "#{finale(@first_player)} is the RPS Champion of #{Date.today.year}!"
