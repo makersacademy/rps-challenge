@@ -39,10 +39,10 @@ describe Game do
   end
   context "Multiplayer" do
 
-  let(:player1) { double :Player, move: :rock }
-  let(:player2) { double :Player, move: :scissors }
-  let(:referee) { double :RPSReferee, decision: 0 }
-  subject(:game) { described_class.new(player1, player2, referee) }
+    let(:player1) { double :Player, move: :rock }
+    let(:player2) { double :Player, move: :scissors }
+    let(:referee) { double :RPSReferee, decision: 0 }
+    subject(:game) { described_class.new(player1, player2, referee) }
 
     context "#initialize" do
       it "should store players in an Array" do
@@ -54,7 +54,7 @@ describe Game do
       it "calls Player#store_move" do
         expect(player1).to receive(:store_move)
         expect(player2).to receive(:store_move)
-        game.store_move("Rock","Rock")
+        game.store_move("Rock", "Rock")
       end
     end
   end

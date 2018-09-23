@@ -10,11 +10,9 @@ class Game
     @referee = referee
   end
 
-  def store_move(player1_move, player2_move = nil )
+  def store_move(player1_move, player2_move = nil)
     @players.first.store_move(player1_move)
-    unless player2_move == nil
-      @players.last.store_move(player2_move)
-    end
+    @players.last.store_move(player2_move) unless player2_move.nil?
   end
 
   def who_won

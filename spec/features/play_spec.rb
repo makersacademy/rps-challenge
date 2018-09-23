@@ -20,7 +20,4 @@ feature "Play page" do
     move_past_welcome_multiplayer
     expect(page).to have_select("player2_move", :with_options => ["Rock", "Paper", "Scissors"])
   end
-
-
-
 end
