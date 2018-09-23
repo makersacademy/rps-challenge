@@ -12,17 +12,17 @@ class Rock < Sinatra::Base
 
   post '/save_name' do
     player = Player.new(params[:name])
-    $game = Game.new(player)
+    Game.create(player)
     redirect "/lights"
   end
 
   get "/lights" do
-    @game = $game
+    @game = Game.instance
     erb(:lights)
   end
 
   post "/results" do
-    @game = $game
+    @game = Game.instance
     @game.player.action(params[:choice])
     @computer_choice = @game.move
     @result = @game.calculate

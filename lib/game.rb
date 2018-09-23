@@ -4,6 +4,14 @@ class Game
 
   attr_reader :player, :game_move
 
+  def self.create(player)
+    @@game = Game.new(player)
+  end
+
+  def self.instance
+    @@game
+  end
+
   def initialize(player)
     @player = player
     @game_move = game_move
