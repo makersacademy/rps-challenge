@@ -1,4 +1,22 @@
-.img__svg {
-  width: 100px;
-  height: 150px
+.img__svg{
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.btn--choice {
+  border-radius: 20%;
+  border: none;
+  outline-color: green;
+}
+
+.img__svg--multi {
+  margin: 10px 2px;
+  border: solid white 2px;
+  border-radius: 20%;
+}
+
+.img__svg--multi:active {
+  border: solid 2px green ;
 }

@@ -8,13 +8,13 @@
   <body>
     <h1>Make your choice <%= @game.player1.name %></h1>
     <form action="/selection" method="post">
-      <button type="submit" value="rock" name="choice">
+      <button class="btn--choice" type="submit" value="rock" name="choice">
         <img class="img__svg" src="images/stone.svg" alt="rock" />
       </button>
-      <button type="submit" value="paper" name="choice">
+      <button class="btn--choice" type="submit" value="paper" name="choice">
         <img class="img__svg" src="images/paper.svg" alt="paper" />
       </button>
-      <button type="submit" value="scissors" name="choice">
+      <button class="btn--choice" type="submit" value="scissors" name="choice">
         <img class="img__svg" src="images/scissors.svg" alt="scissors" />
       </button>
     </form>

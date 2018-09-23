@@ -17,7 +17,7 @@
 </table>
 <% if @game.player2.name != "Computer" %>
 <form action="/multiplayer" method="get">
-  <input type="submit" value="PvP Again!" name="try_again"/>
+  <input type="submit" value="PvP Again!" name="pvp_again"/>
 </form>
 <% else %>
 <form action="/sologame" method="get">

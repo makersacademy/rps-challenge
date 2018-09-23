@@ -16,7 +16,7 @@ feature do
     find_button('PvP!').click
     choose('choice', option: 'rock', visible: false)
     choose('p2_choice', option: 'paper', visible: false)
-    find_button('Play again!').click
+    find_button('Play!').click
     expect(page).to have_content("Willow wins!")
   end
 end
