@@ -77,7 +77,7 @@ $ bundle
 
 Run RSpec
 ```
-$ gem install bundle
+$ rspec
 ```
 
 Run the app from the command line using Rackup 
