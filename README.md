@@ -29,7 +29,8 @@ Instructions to run this at home
 $ git clone git@github.com:fbl11/rps-challenge.git
 $ cd rps-challenge
 $ bundle
-$ rackup
+$ rackup -p 4567
+go to http://127.0.0.1:4567/ in your browser and start the game
 ```
 
 STATUS
