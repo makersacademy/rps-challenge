@@ -3,16 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Rock Paper Scissors Battle</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
   </head>
   <body>
-    <div>
-      <h1>Rock Paper Scissors War! Enter at your own Risk...</h1>
-      <form action='/name' method='post'>
+    <div class="wrapper">
+      <img class="image" src="https://boardgamestrategyblog.files.wordpress.com/2016/12/rock-paper-scissors.png"/>
+      <h1>Rock Paper Scissors War!</h1>
+      <h2>Enter at your own Risk...</h2>
+      <form action="/name" method="post">
         <label for="player_name">
-          <h2>Please enter your name:</h2>
-          <input type='text' name='player_name'>
+          <h3>Please enter your name:</h3>
+          <input class="input" type="text" name="player_name">
         </label>
-          <input type='submit' value='Submit'>
+          <button class="button" type="submit" value="Submit">Go</button>
       </form>
     </div>
   </body>

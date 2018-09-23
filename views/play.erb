@@ -3,14 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>Battle Time!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
   </head>
   <body>
-    <h1>Welcome <%= @game.player.name %>!</h1>
-    <h2>Choose your deadly weapon:</h2>
-    <form action="/choice" method="post">
-    <input type ="submit" name="choice" value ="Rock"/>
-    <input type ="submit" name="choice" value ="Paper"/>
-    <input type ="submit" name="choice" value ="Scissors"/>
-    </form>
+    <div class="wrapper">
+      <img class="image" src="https://boardgamestrategyblog.files.wordpress.com/2016/12/rock-paper-scissors.png"/>
+      <h1>Welcome <%= @game.player.name %>!</h1>
+      <h2>Choose your deadly weapon:</h2>
+      <form action="/choice" method="post">
+        <button class="button rock" type="submit" name="choice" value="Rock">Rock</button>
+        <button class="button paper" type="submit" name="choice" value="Paper">Paper</button>
+        <button class="button scissors" type="submit" name="choice" value="Scissors">Scissors</button>
+      </form>
+    </div>
   </body>
 </html>

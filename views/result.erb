@@ -3,16 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>The Battle Has Been Decided</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
   </head>
   <body>
-    <h2>Your choice of weapon: <%= @game.player.choice %>
-      <br>
-    <h2>Your opponents choice of weapon: <%= @game.computer.choice %>
-      <br>
-    <h3><%= @game.result %></h3>
+    <div class="wrapper">
+      <img class="image" src="https://boardgamestrategyblog.files.wordpress.com/2016/12/rock-paper-scissors.png"/>
+      <h2 class="result">Your choice of weapon: <span class="weapon"><%= @game.player.choice %></span>
+      <h2>Your opponents choice of weapon: <span class="weapon"><%= @game.computer.choice %></span>
+      <h3><%= @game.result %></h3>
 
-    <form action="/play" method="post">
-      <input type="submit" name="submit" value="Dare to play again?">
-    </form>
+      <form action="/play" method="post">
+        <button class="button" type="submit" name="submit" value="Dare to play again?">Dare to play again?</button>
+      </form>
+    </div>
   </body>
 </html>
