@@ -5,6 +5,7 @@ describe 'Features' do
   feature 'Welcoming player to page' do
     scenario 'Can run app and check page content' do
       visit('/')
+      expect(page.status_code).to eq(200)
       expect(page).to have_content 'Welcome to Rock, Paper, Scissors!'
     end
   end
@@ -17,6 +18,7 @@ describe 'Features' do
   feature 'Enter name' do
     scenario 'Player submits their name' do
       sign_in
+      expect(page.status_code).to eq(200)
       expect(page).to have_content 'Choose your weapon, Freya!'
     end
   end
@@ -29,6 +31,7 @@ describe 'Features' do
   feature 'Get a choice of attacks' do
     scenario 'Player can chose between rock, paper or scissors' do
       sign_in
+      expect(page.status_code).to eq(200)
       ['Rock', 'Paper', 'Scissors'].each do |weapon|
         expect(page).to have_selector("input[type=submit][value='#{weapon}']")
       end
@@ -45,6 +48,7 @@ describe 'Features' do
     scenario "Player selects 'Rock'" do
       sign_in
       click_button('Rock')
+      expect(page.status_code).to eq(200)
       expect(page).to have_content("Freya has chosen 'Rock'")
     end
   end
@@ -54,18 +58,23 @@ describe 'Features' do
     scenario 'Computer selects Scissors' do
       sign_in
       click_button('Rock')
+      expect(page.status_code).to eq(200)
       expect(page).to have_content("Computer - Hal has chosen")
     end
   end
 
-# a winner will be declared
-# test for OR ? regex?
-  xfeature 'A winner will be declared' do
-    scenario 'The player beat the computer Rock vs Scissors' do
+  feature 'A winner will be declared' do
+    scenario "When I submit 'Rock' I am told if I have won" do
+      allow_any_instance_of(Weapons).to receive(:random_select).and_return(:scissors)
       sign_in
-      click_button('Rock')
-      expect(page).to have_content("is the winner!")
-    end  
+      click_button 'Rock'
+      # Save page HTML to file
+      # file = File.new('page.html', 'w')
+      # file.write page.body + "\n"
+      # file.close
+      expect(page.status_code).to eq(200)
+      expect(page).to have_content "Freya is the winner"
+    end
   end
 
 end
