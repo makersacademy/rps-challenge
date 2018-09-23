@@ -59,4 +59,11 @@ describe Player do
       end
     end
   end
+
+  describe '#reset_choice' do
+    it 'should set player choice to nil' do
+      player.reset_choice
+      expect(player.choice).to be_nil
+    end
+  end
 end

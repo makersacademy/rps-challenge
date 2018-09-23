@@ -15,6 +15,10 @@ class Player
     @choice = choice
   end
 
+  def reset_choice
+    @choice = nil
+  end
+
   private
 
   def invalid_choice?(choice)
