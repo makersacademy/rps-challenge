@@ -4,3 +4,15 @@
 <h2><%= @game.opponent.name %> you have chosen <%= @P2answer %></h2>
 
 <h1><%= @game.winner %>
+
+
+  
+
+<h2>If you still fancy a challenge, why not one of you battle against me!</h2>
+
+<h2>Put your name in here and let's give it a go!</h2>
+
+<form action="/heyplayer" method="post">
+  <input type="text" name="player1">
+  <input type="submit" value="Submit">
+</form>
