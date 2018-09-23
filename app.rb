@@ -43,12 +43,14 @@ class RPS < Sinatra::Base
 
   post '/optionsolo' do
     @game = session[:game]
-    session[:player1_choice] = params[:commit]
+    session[:player1_choice] = nil
+    session[:player1_choice] = params[:solo]
     redirect '/resultsolo'
   end
 
   post '/optionp1' do
     @game = session[:game]
+    session[:player1_choice] = nil
     session[:player1_choice] = params[:commit]
     redirect '/playp2'
   end
@@ -60,6 +62,7 @@ class RPS < Sinatra::Base
 
   post '/optionp2' do
     @game = session[:game]
+    session[:player2_choice] = nil
     session[:player2_choice] = params[:option]
     redirect '/result'
   end
