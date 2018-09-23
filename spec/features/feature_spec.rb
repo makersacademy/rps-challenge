@@ -6,7 +6,7 @@ describe 'Features' do
     scenario 'Can run app and check page content' do
       visit('/')
       expect(page.status_code).to eq(200)
-      expect(page).to have_content 'Welcome to Rock, Paper, Scissors!'
+      expect(page).to have_content 'Welcome to Rock, Paper, Scissors, Lizard, Spock!'
     end
   end
 

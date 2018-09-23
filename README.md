@@ -1,47 +1,9 @@
-# RPS Challenge
-
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+RPS-Challenge
+==================
 
 Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
+-------
+Build a rock, paper, scissors game.
 
 ## Bonus level 1: Multiplayer
 
@@ -51,36 +13,133 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
-## Basic Rules
+Work on this challenge as conclusion of week 3, to work towards these goals:
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+* I version-control my projects
+* I use a methodical approach to solving problems
+* I test-drive my code
+* I can work to a specification
+* I create effective documentation
+* I can design and build user interfaces
+* I can write standards-compliant, clean object-oriented code
 
-In code review we'll be hoping to see:
+Instructions to run this at home
+-----
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+$ git clone git@github.com:fbl11/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+STATUS
+-----
+Allows users to play a game of Rock, Paper, Lizard, Scissors, Spock against a computer using a web interface.
 
-Notes on test coverage
-----------------------
+This version completes all basic user stories and adds choices 'Lizard' and 'Spock' to the original weapons.
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+Controller
+includes
+- rps_app.rb
+- feature_spec.rb testing all features
+- web_helbers.rb to automate common steps in feature_spec.rb
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+Views
+include
+- index.erb
+- play.erb
+- result.erb
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+Model
+includes
+- weapons.rb / weapons_spec.rb
+- player.rb / player_spec.rb
+- game.rb / game_spec.rb
+
+No rubocop offenses, 100% overall test coverage according to Rspec.
+
+**Notes**
+takeaway.rb includes 'inspect' method:
+```
+  def inspect
+    "Takeaway"
+  end
+```
+Uncomment to make IRB output easier to read.
+
+**TO DO**
+
+- Unit tests for Twilio / SMS order confirmation (sms_sender_spec.rb)
+- refactoring (including removing numbers from specs)
+- tidy up order.rb methods to ensure single responsibility (formatting should be done somewhere else - maybe in takeaway)
+- fix heredoc indentation problem
+- integrate use of files to load menu items into menu
+
+Notes on use in IRB
+------------------
+```
+2.5.0 :001 > require './lib/order.rb'
+ => true
+2.5.0 :002 > require './lib/menu.rb'
+ => true
+2.5.0 :003 > require './lib/menu_item.rb'
+ => false
+2.5.0 :004 > require './lib/takeaway.rb'
+ => true
+2.5.0 :005 > ta = Takeaway.new
+ => #<Takeaway:0x00007ffe4a01c138 @menu=#<Menu:0x00007ffe49153e30 @items=[#<MenuItem:0x00007ffe49152f08 @name="Pizza", @price=8>, #<MenuItem:0x00007ffe49151a68 @name="Burger", @price=9>, #<MenuItem:0x00007ffe491518b0 @name="Chips", @price=4.5>]>, @order=#<Order:0x00007ffe49151770 @basket={}>>
+2.5.0 :006 > ta.read_menu
+1. Pizza: £8.00
+2. Burger: £9.00
+3. Chips: £4.50
+ => [#<MenuItem:0x00007ffe49152f08 @name="Pizza", @price=8>, #<MenuItem:0x00007ffe49151a68 @name="Burger", @price=9>, #<MenuItem:0x00007ffe491518b0 @name="Chips", @price=4.5>]
+2.5.0 :007 > ta.order_item('Chips', 2)
+ => 2
+2.5.0 :008 > ta.order_item('Pizza')
+ => 1
+2.5.0 :009 > ta.order_item('Curry', 2)
+RuntimeError (This dish is not on the menu!)
+2.5.0 :010 > ta.show_order_basket
+Chips: £4.50 x 2
+Pizza: £8.00 x 1
+ => {#<MenuItem:0x00007ffe491518b0 @name="Chips", @price=4.5>=>2, #<MenuItem:0x00007ffe49152f08 @name="Pizza", @price=8>=>1}
+2.5.0 :011 > ta.show_order_subtotals
+Chips x 2: £9.00
+Pizza x 1: £8.00
+ => {#<MenuItem:0x00007ffe491518b0 @name="Chips", @price=4.5>=>2, #<MenuItem:0x00007ffe49152f08 @name="Pizza", @price=8>=>1}
+2.5.0 :012 > ta.show_order_total
+Total: £17.00
+ => nil
+2.5.0 :013 > ta.checkout(15)
+RuntimeError (Totals do not match!)
+2.5.0 :014 > ta.checkout
+You will receive a confirmation text shortly.
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+User stories
+-----
+```
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors/lizard/spock
+
+As a marketeer
+So I can choose my weapon
+I would be presented with choices (rock, paper, scissors, lizard, spock)
+
+As a marketeer
+So I can play against an opponent
+the game will choose a random weapon for a computer opponent
+
+As a marketeer
+So I know whether I've won
+the game will declare a winner based on the players' moves
+
+```
+
+Author
+-----
+Freya Becker [fbl11](https://github.com/fbl11/)
