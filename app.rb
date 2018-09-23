@@ -29,7 +29,7 @@ class RockPaperScissors < Sinatra::Base
     @player1_choice = session[:player_choice]
     @game = Game.instance
     @player2_choice = @game.results.player2
-    @winner = @game.results.winner(@player1_choice)
+    @message = @game.results.message(@player1_choice)
     erb(:results)
   end
 
