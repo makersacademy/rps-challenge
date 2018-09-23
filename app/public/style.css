@@ -13,7 +13,7 @@ p {
     margin-bottom: 10px;
 }
 
-button, input {
+input {
     background-color: transparent;
     border: 1px solid #2980b9;
     color: #2980b9;
@@ -21,7 +21,7 @@ button, input {
     transition: 0.6s
 }
 
-button:hover, input:hover {
+input[type="submit"]:hover {
     background-color: #2980b9;
     color: white;
 }

@@ -19,7 +19,7 @@ feature 'user can select a move' do
     click_button('Submit')
     expect(page).to have_content('Player one: Nerdpuff')
     click_button('Rock')
-    expect(page).to have_content('You chose Rock, good luck!')
+    expect(page).to have_content('You chose rock')
   end
 
   scenario 'user can click "paper"' do
@@ -28,7 +28,7 @@ feature 'user can select a move' do
     click_button('Submit')
     expect(page).to have_content('Player one: Nerdpuff')
     click_button('Paper')
-    expect(page).to have_content('You chose Paper, good luck!')
+    expect(page).to have_content('You chose paper')
   end
 
   scenario 'user can click "scissors"' do
@@ -37,6 +37,6 @@ feature 'user can select a move' do
     click_button('Submit')
     expect(page).to have_content('Player one: Nerdpuff')
     click_button('Scissors')
-    expect(page).to have_content('You chose Scissors, good luck!')
+    expect(page).to have_content('You chose scissors')
   end
 end
