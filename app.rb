@@ -14,12 +14,13 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    @move = session[:move]
     @name = session[:name]
     erb(:play)
   end
 
   post '/move' do
-    # params.keys
+    session[:move] = params.values[0]
     redirect '/play'
   end
 

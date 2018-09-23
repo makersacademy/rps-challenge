@@ -4,6 +4,7 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require './app'
+require 'features/web_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
