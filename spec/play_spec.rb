@@ -38,3 +38,11 @@ feature 'Player can pick rock paper scissors' do
     expect(page).to have_content('You have picked: Paper')
   end
 end
+
+feature 'Computer can pick' do
+  scenario 'expect computer to return a pick' do
+    sign_into_game
+    click_button('Rock')
+    expect(page).to have_content('Computer picked:')
+  end
+end

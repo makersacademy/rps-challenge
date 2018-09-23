@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
  
 class RPS < Sinatra::Base
   enable :sessions
@@ -17,6 +18,7 @@ class RPS < Sinatra::Base
 
   get '/choice' do
     session[:player1].choice  = params[:choice]
+    session[:game] = Game.new(session[:player1])
     erb(:choice)
   end
 end
