@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -10,18 +11,19 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    session[:player] = Player.new(params[:player_name])
+    session[:game] = Game.new(Player.new(params[:player_name]))
     redirect '/play'
   end
 
   get '/play' do
-    @player = session[:player]
-    @options = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+    @game = session[:game]
+    @options = Game::POSSIBLE_MOVES
     erb(:play)
   end
 
   post '/result' do
-    session[:player].chose_move(params[:possible_moves])
+    session[:game].choose_move(0, params[:possible_moves])
+    session[:game].choose_move(1)
     redirect '/result'
   end
 
