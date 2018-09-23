@@ -43,7 +43,7 @@ describe Game do
         expect(game.play).to eq 'player2'
       end
 
-      it 'returns draw when same option when player chooses paper' do
+      it 'returns draw when player chooses paper' do
         game = Game.new(player1)
         allow(player1).to receive(:player_choice) { 'Paper' }
 
@@ -85,7 +85,7 @@ describe Game do
         expect(game.play).to eq 'player2'
       end
 
-      it 'returns draw when same option when player chooses scissors' do
+      it 'returns draw when player chooses scissors' do
         game = Game.new(player1)
         allow(player1).to receive(:player_choice) { 'Scissors' }
 
@@ -127,7 +127,7 @@ describe Game do
         expect(game.play).to eq 'player2'
       end
 
-      it 'returns draw when same option when player chooses rock' do
+      it 'returns draw when player chooses Rock' do
         game = Game.new(player1)
         allow(player1).to receive(:player_choice) { 'Rock' }
 
@@ -169,7 +169,7 @@ describe Game do
         expect(game.play).to eq 'player2'
       end
 
-      it 'returns draw when same option when player chooses Lizard' do
+      it 'returns draw when player chooses lizard' do
         game = Game.new(player1)
         allow(player1).to receive(:player_choice) { 'Lizard' }
 
@@ -211,7 +211,7 @@ describe Game do
         expect(game.play).to eq 'player2'
       end
 
-      it 'returns draw when same option when player chooses Spock' do
+      it 'returns draw when player chooses spock' do
         game = Game.new(player1)
         allow(player1).to receive(:player_choice) { 'Spock' }
 
