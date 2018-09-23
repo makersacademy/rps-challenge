@@ -11,7 +11,7 @@ enable :sessions
   end
 
   post '/solo' do
-    player = Player.new(params[:name])
+    player = Player.new(params[:solo_player])
     session[:game] = Game.new(player, Player.new('Computer'))
     redirect "/sologame"
   end
@@ -22,7 +22,7 @@ enable :sessions
   end
 
   post '/multi' do
-    player = Player.new(params[:name])
+    player = Player.new(params[:player_one])
     player2 = Player.new(params[:player_two])
     session[:game] = Game.new(player, player2)
     redirect "/multiplayer"
