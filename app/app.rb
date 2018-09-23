@@ -1,5 +1,6 @@
 require 'sinatra'
 require_relative '../lib/player.rb'
+require_relative '../lib/game.rb'
 
 class RPS < Sinatra::Base
 
@@ -10,27 +11,24 @@ class RPS < Sinatra::Base
   end
 
   post '/submit-users' do
-    session[:player_one] = Player.new(params[:player_one])
-    p2 = params[:player_two].empty? ? 'AI' : params[:player_two]
-    session[:player_two] = Player.new(p2)
+    p1 = params[:player_one].capitalize
+    p2 = params[:player_two].empty? ? 'AI' : params[:player_two].capitalize
+    session[:game] = Game.new(Player.new(p1), Player.new(p2))
     redirect('/play')
   end
 
   get '/play' do
-    @player_one = session[:player_one]
-    @player_two = session[:player_two]
+    @game = session[:game]
     erb(:play)
   end
 
   post '/end' do
-    session[:player_one].move = params[:move_1]
-    session[:player_two].move = params[:move_2]
+    session[:game].player_one.move = params[:move_1].downcase
     redirect('/end')
   end
 
   get '/end' do
-    @player_one = session[:player_one]
-    @player_two = session[:player_two]
+    @game = session[:game]
     erb(:end)
   end
 

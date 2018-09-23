@@ -3,9 +3,9 @@
 </head>
 
 <div>
-  You chose <%= @player_one.move.downcase %>
+  <%= @game.player_one.username %> chose <%= @game.player_one.move %>
 </div>
 
 <div>
-  
+  <%= @game.generate_message %>
 </div>

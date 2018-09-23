@@ -23,21 +23,21 @@ feature 'player one can select a move' do
     within('#p1') do
       click_button('Rock')
     end
-    expect(page).to have_content('You chose rock')
+    expect(page).to have_content('Nerdpuff chose rock')
   end
 
   scenario 'player one can click "paper"' do
     within('#p1') do
       click_button('Paper')
     end
-    expect(page).to have_content('You chose paper')
+    expect(page).to have_content('Nerdpuff chose paper')
   end
 
   scenario 'player one can click "scissors"' do
     within('#p1') do
       click_button('Scissors')
     end    
-    expect(page).to have_content('You chose scissors')
+    expect(page).to have_content('Nerdpuff chose scissors')
   end
 end
 
