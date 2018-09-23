@@ -1,22 +1,21 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Technologies
+----
+Ruby
+Sinatra
+Capybara
+HTML
+CSS
+Git
 
 Task
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
+Create a _Rock, Paper, Scissors_ game for the The Makers Academy Marketing Array ( **MAMA** ) - their daily grind is pretty tough and they need time to steam a little!
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+User Stories
+----
 
 ```sh
 As a marketeer
@@ -28,59 +27,72 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
+Functionality 
+----
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
 
+Approach
+----
 
-As usual please start by
+I started by building a simple web page where users were prompted to enter their name. They would then get the option to choose their weapon from either Rock, Paper or Scissors. Selections were stored as instance variables in sessions.
 
-* Forking this repo
-* TEST driving development of your app
+After planning what objects and messages I wanted to use I decided to create 3 classes after implementing the basic functionality: Player, Computer and Game. 
 
+The Player class handled the users name and choice of weapon and the Computer class allowed the computer to randomly select a weapon from an Array. 
 
-## Bonus level 1: Multiplayer
+The Game class handled the battle between a user and the computer. The user's choice would be matched against a set of rules created in a hash in the Game class and would inform the user if they had won, lost or drew against the computer.
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+I ran into some problems using instance variables to store the user responses as they became unreachable and the data was not accessible in the new routes that I was creating. I solved this by using a class instance variable to store the Game instance, DRY'ing out my code using a Sinatra filter to define the instance in every route handler:
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+```
+  before do
+    @game = Game.instance
+  end
+  
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+I would like to add functionality for multiplayer and add the special rules for Rock, Paper, Scissors, Spock, Lizard.
+
+Interface
+----
+
+How to use
+----
+
+Clone this repo 
+
+```
+https://github.com/darciew/rps-challenge
+```
+Install and run bundle
+```
+$ gem install bundle
+$ bundle
+```
+
+Run RSpec
+```
+$ gem install bundle
+```
+
+Run the app from the command line using Rackup 
+```
+config.ru app.rb  -p 4567
+```
+
+Type localhost:4567 in your favourite browser 
+
+```
+http://localhost:4567/
+```
+
+Put in your name 
+
+Choose between rock, paper or scissors
+
+See if you can beat the computer!
+
