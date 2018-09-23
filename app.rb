@@ -25,15 +25,14 @@ class RPS < Sinatra::Base
     player1 = Player.new(params[:player1_name])
     player2 = Player.new(params[:player2_name])
     game_mode = GameMode.new(player_mode: session[:play_mode], player1: player1, player2: player2)
-    session[:game] = game_mode.game
-    session[:game_mode]= game_mode
+    session[:game_mode] = game_mode
     redirect '/play'
   end
 
   get '/play' do
     @play_mode = session[:play_mode]
-    @player1_name = session[:game].players.first.name
-    @player2_name = session[:game].players.last.name
+    @player1_name = session[:game_mode].game.players.first.name
+    @player2_name = session[:game_mode].game.players.last.name
     erb :play
   end
 
@@ -45,7 +44,7 @@ class RPS < Sinatra::Base
   end
 
   get '/winner' do
-    @winner = session[:game].who_won
+    @winner = session[:game_mode].who_won
     erb :winner
   end
 end
