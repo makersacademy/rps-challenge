@@ -18,7 +18,8 @@ RSpec.describe Game do
   let(:fakevg) do
     double :VictoryGenerator,
     winner: billy,
-    victory_type: 'crushes'
+    victory_type: 'crushes',
+    draw?: false
   end
 
   subject do
@@ -54,5 +55,10 @@ RSpec.describe Game do
   it 'raises an error when checking the victory type if the game is not over' do
     allow(rpslsbot).to receive(:move).and_return(nil)
     expect { subject.victory_type }.to raise_error 'Game is not yet over'
+  end
+
+  it 'knows when a draw has happened' do
+    allow(fakevg).to receive(:draw?).and_return(true)
+    expect(subject.victory_type).to eq nil
   end
 end
