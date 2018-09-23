@@ -52,6 +52,5 @@ class Rps < Sinatra::Base
     erb :winner
   end
 
-
   run! if app_file == $0
 end

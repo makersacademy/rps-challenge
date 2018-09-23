@@ -9,20 +9,18 @@ class Game
     @computer = computer
   end
 
-
-    def winner
-      if player.move == "Rock" && computer.move == "Scissors"
-        player.name
-      elsif player.move == "Paper" && computer.move == "Rock"
-        player.name
-      elsif player.move == "Scissors" && computer.move == "Paper"
-        player.name
-      elsif player.move == computer.move
-        "You drew everybody"
-      else
-        "Computer"
-      end
-
+  def winner
+    if player.move == "Rock" && computer.move == "Scissors"
+      player.name
+    elsif player.move == "Paper" && computer.move == "Rock"
+      player.name
+    elsif player.move == "Scissors" && computer.move == "Paper"
+      player.name
+    elsif player.move == computer.move
+      "You drew everybody"
+    else
+      "Computer"
     end
+  end
 
 end

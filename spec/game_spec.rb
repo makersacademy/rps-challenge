@@ -3,7 +3,7 @@ require 'game'
 describe Game do
 
   let(:jamie) { double :player, move: 'Rock' }
-  let(:computer) {double :player, move: 'Paper' }
+  let(:computer) { double :player, move: 'Paper' }
   let(:new) { described_class.new(jamie, computer) }
 
   describe 'initialize' do
