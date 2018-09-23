@@ -4,7 +4,7 @@
 
 <form action='/play' method='post'>
   <h1><%=@game.on_turn.name%> - Make Your Choice!</h1>
-  <% ['rock', 'paper', 'scissors'].each do |choice| %>
+  <% ['rock', 'paper', 'scissors', 'spock', 'lizard'].each do |choice| %>
     <input type='submit' name="choice" value=<%=choice%>>
   <%end%>
 </form>
