@@ -41,24 +41,15 @@ feature 'player one can select a move' do
   end
 end
 
-# feature 'AI is created with a random move if no player two' do
-#   it 'creates a player class for "AI"' do
-#     visit('/')
-#     fill_in('player_one', with: 'Nerdpuff')
-#     click_button('Submit')
-#     expect(page).to have_content('Player two: AI')
-#   end
-# end
-
 feature 'user can win a game' do
   scenario 'user picks rock, beats scissors' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
     visit('/')
     fill_in('player_one', with: 'Nerdpuff')
     click_button('Submit')
-    expect(page).to have_content('Player one: Nerdpuff')
     within('#p1') do
       click_button('Rock')
     end
-    expect(page).to have_content('Rock beats scissors, Nerdpuff wins!')
+    expect(page).to have_content('Nerdpuff beat AI with rock vs scissors!')
   end
 end

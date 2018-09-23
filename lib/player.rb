@@ -3,5 +3,6 @@ class Player
   attr_accessor :move
   def initialize(username)
     @username = username
+    @move = ['rock', 'paper', 'scissors'].sample
   end
 end
