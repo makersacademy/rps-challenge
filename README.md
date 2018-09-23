@@ -14,8 +14,11 @@ To use this repo to create a game on your local server:
 
 ## Behind the scenes
 
-I started off creating the framework of the actual website before writing objects that would control the game. By drawing out a simple outline of how I wanted the website to work as shown ![here](master_plan.jpg)
-, I had a clear idea in my head of how to move on at each step.
+I started off creating the framework of the actual website before writing objects that would control the game. By drawing out a simple outline of how I wanted the website to work as shown below I had it clear in my head whilst building it.
+
+![here](master_plan.jpg)
+
+Then once the website was built I created the models for how I wanted a game of RPS to run and linked the two together.
 
 ## Plans for the future of this project
 
