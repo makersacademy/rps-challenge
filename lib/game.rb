@@ -26,6 +26,7 @@ class Game
     raise 'Game is not yet over' if game_not_over?
 
     return nil if draw?
+
     players.index(@victory_generator.winner(players))
   end
 
@@ -33,6 +34,7 @@ class Game
     raise 'Game is not yet over' if game_not_over?
 
     return nil if draw?
+    
     @victory_generator.victory_type(players)
   end
 
