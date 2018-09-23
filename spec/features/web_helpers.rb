@@ -1,6 +1,7 @@
-def sign_in_and_play
+def sign_in_one_player
   visit("/")
-  fill_in(:player_name, with: "Billy")
+  click_button 'One Player!'
+  fill_in(:player_name_1, with: "Billy")
   click_button 'Play!'
 end
 

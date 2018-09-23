@@ -3,9 +3,11 @@
 
 <body>
 <h1> Rock Paper Scissors Lizard Spock! </h1>
-<p> Please enter your name to play. </p>
-<form method="post" action="name">
-  <input type="text" name="player_name" value="Enter your name here"/>
-  <input type="submit" value="Play!"/>
+<p> Do you want to play a one-player or two-player game? </p>
+<form method="post" action="/one_player">
+  <input type="submit" value="One Player!"/>
+</form>
+<form method="post" action="/two_player">
+  <input type="submit" value="Two Player!"/>
 </form>
 </body>

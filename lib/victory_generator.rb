@@ -16,7 +16,7 @@ class VictoryGenerator
   # This function returns [type, winner] and whether the players were reversed
   def search_types(hash)
     return [WINNING_TYPES[hash.values], 0] if valid_type?(hash)
-    
+
     [WINNING_TYPES[hash.values.reverse], 1]
   end
 
@@ -29,6 +29,10 @@ class VictoryGenerator
   def victory_type(players)
     hash = players_to_hash(players)
     search_types(hash)[0][0]
+  end
+
+  def draw?(players)
+    players[0].move == players[1].move
   end
 
   private

@@ -2,10 +2,13 @@
 </head>
 
 <body>
+
 <h1> Rock Paper Scissors Lizard Spock! </h1>
 <p> <%= @game.players[0].name %>, let's play RPSLS!" </p>
+
+<% if @game.players[1].is_a?(RandomPlayer) %>
 <p> Choose your move! </p>
-<form method='post' action='/result'>
+<form method='post' action='/one_player_result'>
   <select name='possible_moves'>
     <% @options.each do |option| %>
       <option value="<%= option%>"> <%= option %> </option>
@@ -13,4 +16,29 @@
     <input class="fsSubmitButton" type="submit" value="Go!"></input>
 </select>
 </form>
+
+<% elsif @game.players[0].move == nil %>
+<p> <%= @game.players[0].name %>, choose your move! Don't let <%= @game.players[1].name %> see!</p>
+<form method='post' action='/first_move'>
+  <select name='possible_moves'>
+    <% @options.each do |option| %>
+      <option value="<%= option%>"> <%= option %> </option>
+    <% end %>
+    <input class="fsSubmitButton" type="submit" value="Go!"></input>
+</select>
+</form>
+
+<% else %>
+<p> <%= @game.players[1].name %>, choose your move! </p>
+<form method='post' action='/second_move'>
+  <select name='possible_moves'>
+    <% @options.each do |option| %>
+      <option value="<%= option%>"> <%= option %> </option>
+    <% end %>
+    <input class="fsSubmitButton" type="submit" value="Go!"></input>
+</select>
+</form>
+
+<% end %>
+
 </body>

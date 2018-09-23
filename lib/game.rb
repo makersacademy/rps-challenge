@@ -8,9 +8,9 @@ class Game
 
   attr_reader :players
 
-  def initialize(player1, player2: RandomPlayer.new,
+  def initialize(player_1, player_2: RandomPlayer.new,
       victory_generator: VictoryGenerator.new)
-    @players = [player1, player2]
+    @players = [player_1, player_2]
     @victory_generator = victory_generator
   end
 
@@ -24,13 +24,15 @@ class Game
 
   def winner
     raise 'Game is not yet over' if game_not_over?
-    
+
+    return nil if draw?
     players.index(@victory_generator.winner(players))
   end
 
   def victory_type
     raise 'Game is not yet over' if game_not_over?
 
+    return nil if draw?
     @victory_generator.victory_type(players)
   end
 
@@ -38,5 +40,9 @@ class Game
 
   def game_not_over?
     players.map { |player| player.move }.include?(nil)
+  end
+
+  def draw?
+    @victory_generator.draw?(players)
   end
 end

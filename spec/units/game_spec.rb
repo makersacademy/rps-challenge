@@ -22,7 +22,7 @@ RSpec.describe Game do
   end
 
   subject do
-    described_class.new(billy, player2: rpslsbot, victory_generator: fakevg)
+    described_class.new(billy, player_2: rpslsbot, victory_generator: fakevg)
   end
 
   it 'returns the players names when asked' do
