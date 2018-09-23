@@ -38,7 +38,7 @@ describe Game do
       end
       
       it "is a tie" do
-        srand(12345)
+        srand(123_45)
         move = game.scissors
         computer = game.computer_move
         expect(game.decision(move, computer)).to eq "It's a tie!"
