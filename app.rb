@@ -62,23 +62,29 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/flip-coin' do
-    session[:flipped_coin] = session[:multiplayer_game].flip_coin
+    session[:first_turn] = session[:multiplayer_game].flip_coin
+    session[:second_turn] = session[:multiplayer_game].second_player
     redirect '/multiplayer-game'
   end
 
   get '/multiplayer-game' do
-    erb :multigame, { locals: { player1: session[:multiplayer_game].player1, player2: session[:multiplayer_game].player2, flipped_coin: session[:flipped_coin] } }
+    erb :multigame, { locals: { player1: session[:multiplayer_game].player1, player2: session[:multiplayer_game].player2, flipped_coin: session[:first_turn] } }
   end
 
   post '/first-choice' do
-    session[:choice] = params[:name]
-    session[:flipped_coin] = false
-    redirect '/player2-move'
+    session[:first_choice] = params[:choice]
+    session[:first_turn] = false
+    redirect '/second-choice'
   end
 
-  get '/player2-move' do
-    @player1 = session[:choice]
-    erb :second_move
+  get '/second-choice' do
+    erb :second_move, locals: { player2: session[:second_turn] }
+  end
+
+  post '/second-choice' do
+    session[:second_choice] = params[:choice]
+    session[:second_turn] = false
+    redirect '/finale'
   end
   
   run! if app_file == $0

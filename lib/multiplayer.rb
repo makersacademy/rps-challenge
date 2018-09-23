@@ -6,11 +6,15 @@ class MultiplayerGame
   end
 
   def players
-    [@player1, @player2]
+    [player1, player2]
   end
 
   def flip_coin
-    players.sample
+    @first_player = players.sample
+  end
+
+  def second_player
+    @first_player == player1 ? player2 : player1
   end
 
 end

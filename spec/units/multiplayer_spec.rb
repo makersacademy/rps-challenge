@@ -17,5 +17,9 @@ describe MultiplayerGame do
     it "#flips coin" do
       expect(multiplayer.flip_coin).to eq player2
     end
+
+    it "#second player" do
+      expect(multiplayer.second_player).to eq player1
+    end
   end
 end
