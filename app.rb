@@ -40,8 +40,13 @@ class RPS < Sinatra::Base
   end
 
   post '/store_move' do
-    selected_move = params.first[0]
-    session[:game].store_move(selected_move)
+    selected_move1 = params[:player1_move]
+    if session[:play_mode] == :single_player
+      session[:game].store_move(selected_move1)
+    else
+      selected_move2 = params[:player2_move]
+      session[:game].store_move(selected_move1, selected_move2)
+    end
     redirect '/winner'
   end
 
