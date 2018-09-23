@@ -10,19 +10,28 @@ end
 feature 'Choose Rock, Paper or Scissors' do
   scenario 'Player chooses Rock' do
     sign_in_and_play
-    make_choice('rock')
+    make_player_choice('rock')
     expect(page).to have_content('Rock')
   end
 
   scenario 'Player chooses Paper' do
     sign_in_and_play
-    make_choice('paper')
+    make_player_choice('paper')
     expect(page).to have_content('Paper')
   end
 
   scenario 'Player chooses Scissors' do
     sign_in_and_play
-    make_choice('scissors')
+    make_player_choice('scissors')
     expect(page).to have_content('Scissors')
+  end
+end
+
+feature 'Decide who won the round' do
+  scenario 'Rock beats Scissors' do
+    sign_in_and_play
+    make_computer_choice(:scissors)
+    make_player_choice('rock')
+    expect(page).to have_content('You win!')
   end
 end

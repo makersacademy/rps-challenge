@@ -22,11 +22,15 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
+    game = Game.instance
+    game.player.choose(params[:choice].to_sym)
+    game.computer.choose(:random) if game.computer.choice.nil?
     redirect '/round'
   end
 
   get '/round' do
-    'Rock, Paper and Scissors'
+    @game = Game.instance
+    erb(:round)
   end
 
   run! if app_file == $0
