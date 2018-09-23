@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative 'lib/game'
+require_relative 'lib/game_mode'
 require_relative 'lib/player'
 
 class RPS < Sinatra::Base
@@ -23,12 +23,9 @@ class RPS < Sinatra::Base
 
   post '/store_names' do
     player1 = Player.new(params[:player1_name])
-    if session[:play_mode] == :single_player
-      session[:game] = Game.new(player1)
-    else
-      player2 = Player.new(params[:player2_name])
-      session[:game] = Game.new(player1, player2)
-    end
+    player2 = Player.new(params[:player2_name])
+    game_mode = GameMode.new(player_mode: session[:play_mode], player1: player1, player2: player2)
+    session[:game] = game_mode.game
     redirect '/play'
   end
 
