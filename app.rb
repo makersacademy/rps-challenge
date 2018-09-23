@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/decision'
 require './lib/winner'
 require './lib/player'
+require './lib/game'
 
 class Challenge < Sinatra::Base
   enable :sessions
@@ -40,26 +41,33 @@ class Challenge < Sinatra::Base
     erb :winner
   end
 
+  before do
+    @game = Game.instance
+  end
+
   post '/2player' do
     erb :face_off
   end
 
   post '/names' do
     p params
-    session[:player_1] = Player.new(params[:player_1])
-    session[:player_2] = Player.new(params[:player_2])
+    player = Player.new(params[:player_1])
+    opponent = Player.new(params[:player_2])
+    @game = Game.create(player, opponent)
+    # session[:player_1] = Player.new(params[:player_1])
+    # session[:player_2] = Player.new(params[:player_2])
     redirect '/2playergame'
   end
 
   get '/2playergame' do
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
+    # @player_1 = session[:player_1]
+    # @player_2 = session[:player_2]
     erb :contestants
   end
 
   get '/letsbattle' do
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
+    # @player_1 = session[:player_1]
+    # @player_2 = session[:player_2]
     erb :P1choose
   end
 
@@ -69,8 +77,8 @@ class Challenge < Sinatra::Base
   end
 
   get '/P2option' do
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
+    # @player_1 = session[:player_1]
+    # @player_2 = session[:player_2]
     erb :P2choose
   end
 
@@ -80,10 +88,10 @@ class Challenge < Sinatra::Base
   end
 
   get '/bothchosen' do
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
-    @P1answer = @player_1.move(session[:choiceP1])
-    @P2answer = @player_2.move(session[:choiceP2])
+    # @player_1 = session[:player_1]
+    # @player_2 = session[:player_2]
+    @P1answer = @game.player.move(session[:choiceP1])
+    @P2answer = @game.opponent.move(session[:choiceP2])
     erb :bothchosen
   end
 

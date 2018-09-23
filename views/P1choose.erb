@@ -1,6 +1,6 @@
-<h1>So now it is time to choose! First <%= @player_1.name %></h1>
+<h1>So now it is time to choose! First <%= @game.player.name %></h1>
 
-<h2><%= @player_2.name %>, take 10 minutes. Go.... meditate! I hear it's good for you!</h2>
+<h2><%= @game.opponent.name %>, take 10 minutes. Go.... meditate! I hear it's good for you!</h2>
 
 <div>
   <form action="/option" method="post">

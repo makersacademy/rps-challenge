@@ -1,6 +1,6 @@
-<h1>Good choice! Next, <%= @player_2.name %></h1>
+<h1>Good choice! Next, <%= @game.opponent.name %></h1>
 
-<h2><%= @player_1.name %> take ten! Go practice those yoga moves you been studying!</h2>
+<h2><%= @game.player.name %> take ten! Go practice those yoga moves you been studying!</h2>
 
 <div>
   <form action="/option1" method="post">
