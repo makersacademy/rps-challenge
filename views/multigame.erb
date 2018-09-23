@@ -3,17 +3,22 @@
 
 <% if flip_coin != nil %>
   <h2> It's <%= flip_coin.capitalize %>'s turn! </h2>
-    <form action="/rock" method="post">
+  <form action="/rock" method="post">
     <input type="submit" value="Rock">
   </form>
+
   <form action="/paper" method="post">
     <input type="submit" value="Paper">
   </form>
+  
   <form action="/scissors" method="post">
     <input type="submit" value="Scissors">
   </form>
+
 <% else %>
+
   <form action="/flip-coin" method="post">
     <input type="submit" value="Flip Coin">
   </form>
+
 <% end %>
