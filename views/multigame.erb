@@ -1,19 +1,32 @@
-<h1><%= player1.name.capitalize %> vs <%= player2.name.capitalize %>!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="multiplayer.css">
+  <title>Multiplayer!!!</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="header" ><%= player1.name.capitalize %> vs <%= player2.name.capitalize %>!</h1>
+    <div class ="flippedCoin">
+    <% if flipped_coin %>
+      <h2>It's <%= flipped_coin.name.capitalize %>'s turn. </h2>
 
-<% if flipped_coin %>
-  <h2>It's <%= flipped_coin.name.capitalize %>'s turn. </h2>
+      <form action="/first-choice" method="post">
+        <input type="submit" class="rock" name="choice" value="Rock">
+        <input type="submit" class="paper" name="choice" value="Paper">
+        <input type="submit" class="scissors" name="choice" value="Scors">
+      </form>
+    <% else %>
 
-  <form action="/first-choice" method="post">
-    <input type="submit" name="choice" value="Rock">
-    <input type="submit" name="choice" value="Paper">
-    <input type="submit" name="choice" value="Scissors">
-  </form>
-<% else %>
-
-  <form action="/flip-coin" method="post">
-    <input type="submit" value="Flip Coin">
-  </form>
-
-<% end %>
-
-
+      <form action="/flip-coin" method="post">
+        <input type="submit" value="Flip Coin">
+      </form>
+    <% end %>
+    </div>
+  </div>
+</body>
+</html>

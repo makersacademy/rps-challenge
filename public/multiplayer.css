@@ -1,0 +1,27 @@
+.header {
+  text-align: center;
+  font-size: 5em;
+}
+.flippedCoin {
+  text-align: center;
+  font-size: 2em;
+  padding-top: 10px;
+}
+.scissors {
+  background: url(https://cdn.onlinewebfonts.com/svg/img_19555.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  border: 0 none;
+}
+.paper {
+  background: url(https://www.svgrepo.com/show/7274/toilet-paper.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  border: 0 none;
+}
+.rock {
+  background: url(https://www.shareicon.net/download/2016/09/27/836153_festival_512x512.png) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  border: 0 none;
+}
