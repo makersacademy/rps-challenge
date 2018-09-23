@@ -15,7 +15,7 @@ class Game
   end
 
   def player_names
-    @players.map { |player| player.name }
+    players.map { |player| player.name }
   end
 
   def choose_move(index, move = nil)
@@ -23,10 +23,18 @@ class Game
   end
 
   def winner
-    @victory_generator.winner(@players)
+    raise 'Game is not yet over' if game_not_over?
+    players.index(@victory_generator.winner(players))
   end
 
   def victory_type
-    @victory_generator.victory_type(@players)
+    raise 'Game is not yet over' if game_not_over?
+    @victory_generator.victory_type(players)
   end
+
+  private
+
+  def game_not_over?
+    players.map { |player| player.move }.include?(nil)
+  end 
 end

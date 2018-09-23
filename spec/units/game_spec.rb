@@ -5,12 +5,14 @@ RSpec.describe Game do
   let(:billy) do
     double :Player,
     name: 'Billy',
+    move: 'Rock',
     choose_move: 'Rock'
   end
 
   let(:rpslsbot) do
     double :RandomPlayer,
-    name: 'RPSLSbot'
+    name: 'RPSLSbot',
+    move: 'Scissors'
   end
 
   let(:fakevg) do
@@ -37,10 +39,20 @@ RSpec.describe Game do
   end
 
   it 'knows who has won the game' do
-    expect(subject.winner).to eq billy
+    expect(subject.winner).to eq 0
   end
 
   it 'returns the victory type when asked' do
     expect(subject.victory_type).to eq 'crushes'
+  end
+
+  it 'raises an error when checking the winner if the game is not over' do
+    allow(rpslsbot).to receive(:move).and_return(nil)
+    expect { subject.winner }.to raise_error 'Game is not yet over'
+  end
+
+  it 'raises an error when checking the victory type if the game is not over' do
+    allow(rpslsbot).to receive(:move).and_return(nil)
+    expect { subject.victory_type }.to raise_error 'Game is not yet over'
   end
 end
