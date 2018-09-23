@@ -13,12 +13,12 @@
       <label class="drinkcard-cc scissors" for="scissors"></label>
     </form>
   </div>
-  <h2><%=@name%></h2>
+  <h2><%=@game.player.name%></h2>
 </div>
 <div class="player-container right">
   <div class="rps-container">
   </div>  
-  <h2>Computer</h2>
+  <h2><%=@game.computer.name%></h2>
 </div>
 <div>
   <input type="submit" form="rps-form" value="Go!" class="left"/>
