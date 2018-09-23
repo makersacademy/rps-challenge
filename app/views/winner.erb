@@ -1,12 +1,21 @@
-<h1><%=@game.player1.name%> has chosen <%=@game.player1.move%></h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <title>!!!</title>
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
 
-<h1><%=@game.player2.name%> has chosen <%=@game.player2.move%></h1>
+<body>
+  <h2><%=@game.player1.name%> has chosen <%=@game.player1.move%></h2>
 
-<h1><%=@game.winner.name%> has won! Sorry <%=@game.loser.name%></h1>
+  <h2><%=@game.player2.name%> has chosen <%=@game.player2.move%></h2>
 
-<form action='/play' method='get'>
-  <input type='submit' value='Click here to play again!'>
-</form>
-<form action='/' method='get'>
-  <input type='submit' value='Click here to start a new game!'>
-</form>
+  <h1><%=@game.winner.name%> has won! Sorry <%=@game.loser.name%></h1>
+
+  <form action='/play' method='get'>
+    <input type='submit' value='Click here to play again!'>
+  </form>
+  <form action='/' method='get'>
+    <input type='submit' value='Click here to start a new game!'>
+  </form>
+</body>

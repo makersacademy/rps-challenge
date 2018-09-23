@@ -1,10 +1,19 @@
-<div>
-  <h1><%=@game.player1.name%> vs. <%=@game.player2.name%></h1>
-</div>
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Make your choice!</title>
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
 
-<form action='/play' method='post'>
-  <h1><%=@game.on_turn.name%> - Make Your Choice!</h1>
-  <% ['rock', 'paper', 'scissors', 'spock', 'lizard'].each do |choice| %>
-    <input type='submit' name="choice" value=<%=choice%>>
-  <%end%>
-</form>
+<body>
+  <div>
+    <h1><%=@game.player1.name%> vs. <%=@game.player2.name%></h1>
+  </div>
+
+  <form action='/play' method='post'>
+    <h2><%=@game.on_turn.name%> - Make Your Choice!</h2>
+    <% ['rock', 'paper', 'scissors', 'spock', 'lizard'].each do |choice| %>
+      <input type='submit' name="choice" value=<%=choice%>>
+    <%end%>
+  </form>
+</body>
