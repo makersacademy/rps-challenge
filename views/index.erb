@@ -1,6 +1,25 @@
-<div>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+</head>
+<body>
+
+<div class="index-background">
+<div class="index-background-1"></div>
+<div class="index-background-2"></div>
+
+<div class="title">
+  <p> What's your name? <p>
+</div>
+
+<div class="form">
   <form action="/name" method="post">
-    <input type="text" name="name">
-    <input type="submit" value="Submit">
+    <input id="name" type="text" name="name">
+    <input id="submit" type="submit" value="Submit">
   </form>
 </div>
+
+</div>
+</body>
+</html>
