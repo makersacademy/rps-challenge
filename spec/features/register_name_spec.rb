@@ -12,11 +12,11 @@ feature 'landing page' do
   # So that I can see my name in lights
   # I would like to register my name before playing an online game
 
-  # scenario 'updates form and registers player' do
-  #   visit('/')
-  #   fill_in('player_one', with: "SHWETA")
-  #   click_button "Start game!"
-  #   expect(page).to have_content 'Welcome : SHWETA!'
-  # end
+  scenario 'updates form and registers player' do
+    visit('/')
+    fill_in('player_one', with: "SHWETA")
+    click_button "Start game!"
+    expect(page).to have_content 'Welcome : SHWETA!'
+  end
 
 end

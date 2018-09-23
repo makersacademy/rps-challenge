@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -10,13 +11,15 @@ class RPS < Sinatra::Base
   
   post '/play' do
     session[:player_one] = Player.new(params[:player_one], false)
-    session[:player_two] = Player.new("AI", true)
+    session[:player_two] = Player.new("Computer", true)
     redirect '/play'
   end
   
   get '/play' do
     @player_one = session[:player_one]
     @player_two = session[:player_two]
+
+    session[:game] = Game.new(@player_one, @player_two)
     erb :play
   end
 
@@ -31,8 +34,9 @@ class RPS < Sinatra::Base
   get '/result' do
     @player_one = session[:player_one]
     @player_two = session[:player_two]
+    @game = session[:game]
     erb :result
   end
- 
+
   run! if app_file == $0
 end
