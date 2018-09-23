@@ -1,7 +1,7 @@
 class Player
   attr_reader :name, :choice, :choices
   def initialize(name)
-    @name = name
+    @name = name.capitalize
     @choices = ['Rock', 'Paper', 'Scissors']
     @choice = nil
   end
