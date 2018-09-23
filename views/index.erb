@@ -1,31 +1,38 @@
-<% if session[:game].mode == 'standard' %>
-  <h1>Rock, Paper, Scissors</h1>
-<% else %>
-  <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
-<% end %>
-<h3>Mode</h3>
-  <form action="/mode" method="post">
+<div style="text-align: center">
+  <!-- Title -->
+  <% if session[:game].mode == 'standard' %>
+    <h1>Rock, Paper, Scissors</h1>
+  <% else %>
+    <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+  <% end %>
+
+  <h3>Mode</h3>
+    <form action="/mode" method="post">
+      <div style="display: block">
+        <% if session[:game].mode == 'standard' %>
+          <input type="radio" name="mode" value="standard" id="standard" checked="checked">Standard</input>
+        <% else %>
+          <input type="radio" name="mode" value="standard" id="standard">Standard</input>
+        <% end %>
+      </div>
+      <div style="display: block">
+        <% if session[:game].mode == 'standard' %>
+          <input type="radio" name="mode" value="spock" id="spock">Rock, Paper, Scissors, Lizard, Spock</input>
+        <% else %>
+          <input type="radio" name="mode" value="spock" id="spock" checked="checked">Rock, Paper, Scissors, Lizard, Spock</input>
+        <% end %>
+      </div>
+      <div style="display: block">
+        <input type="submit" value="Change mode">
+      </div>
+    </form>
+
+  <h3>Who is playing?</h3>
+  <form action="/save-name1" method="post">
+    <input type="text" name="name1"/>
     <div style="display: block">
-      <% if session[:game].mode == 'standard' %>
-        <input type="radio" name="mode" value="standard" id="standard" checked="checked">Standard</input>
-      <% else %>
-        <input type="radio" name="mode" value="standard" id="standard">Standard</input>
-      <% end %>
-    </div>
-    <div style="display: block">
-      <% if session[:game].mode == 'standard' %>
-        <input type="radio" name="mode" value="spock" id="spock">Rock, Paper, Scissors, Lizard, Spock</input>
-      <% else %>
-        <input type="radio" name="mode" value="spock" id="spock" checked="checked">Rock, Paper, Scissors, Lizard, Spock</input>
-      <% end %>
-    </div>
-    <div style="display: block">
-      <input type="submit" value="Change mode">
+      <input type="submit" name="button" value="Start game against computer"/>
+      <input type="submit" name="button" value="Add another human player"/>
     </div>
   </form>
-<h3>Who is playing?</h3>
-<form action="/save-name1" method="post">
-  <input type="text" name="name1"/>
-  <input type="submit" name="button" value="Start game against computer"/>
-  <input type="submit" name="button" value="Add another human player"/>
-</form>
+</div>

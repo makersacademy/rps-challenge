@@ -31,17 +31,8 @@ class Game
     @moves[1]
   end
 
-  def set_logic
-    if @mode == 'standard'
-      @logic = Logic::STD
-    else
-      @logic = Logic::SPOCK
-    end
-  end
-
   def set_mode(mode)
     @mode = mode
-    p @mode
     set_logic
   end
 
@@ -66,6 +57,16 @@ class Game
     return @player1 if @logic[@moves] == 1
     return @player2 if @logic[@moves] == 2
     return 'draw' if @logic[@moves] == nil
+  end
+
+  private
+
+  def set_logic
+    if @mode == 'standard'
+      @logic = Logic::STD
+    else
+      @logic = Logic::SPOCK
+    end
   end
 
 end
