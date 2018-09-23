@@ -3,10 +3,15 @@
 Technologies
 ----
 Ruby
+
 Sinatra
+
 Capybara
+
 HTML
+
 CSS
+
 Git
 
 Task
