@@ -1,0 +1,37 @@
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #3F4519;
+  color: #2C112E;
+}
+
+.btn-submit {
+  padding: 10px;
+  display: inline-block;
+}
+
+.img-center {
+  margin: auto;
+}
+
+.choice {
+  display: block;
+  font-size: 30px;
+  color: #7A8050;
+}
+
+.tinyFont {
+  font-size: 10px;
+}
+.decision {
+  font-size: 3em;
+  background: linear-gradient(90deg, rgb(113, 111, 124) 0%, rgba(27,10,42,1) 17%, rgba(44,17,46,1) 29%, rgba(29,11,31,1) 66%, rgba(77,64,78,1) 93%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: #1E0821;
+}

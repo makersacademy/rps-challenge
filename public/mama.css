@@ -1,0 +1,14 @@
+* {
+  background-image: url(https://media.giphy.com/media/PzY2K7SaqIEyA/giphy.gif);
+}
+
+.easter {
+  padding-top: 99999px;
+}
+
+#egg {
+  font-size: 20em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  color: papayawhip;
+}
