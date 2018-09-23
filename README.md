@@ -38,9 +38,9 @@ Functionality
 Approach
 ----
 
-I started by building a simple web page where users were prompted to enter their name. They would then get the option to choose their weapon from either Rock, Paper or Scissors. Selections were stored as instance variables in sessions.
+I started by building a simple web page where a user is prompted to enter their name. They would then get the option to choose their weapon from either Rock, Paper or Scissors. Selections were stored as instance variables in sessions.
 
-After planning what objects and messages I wanted to use I decided to create 3 classes after implementing the basic functionality: Player, Computer and Game. 
+After implementing the basic functionality I planned what objects and messages I wanted to use and decided to create 3 classes: Player, Computer and Game. 
 
 The Player class handled the users name and choice of weapon and the Computer class allowed the computer to randomly select a weapon from an Array. 
 
@@ -51,8 +51,7 @@ I ran into some problems using instance variables to store the user responses as
 ```
   before do
     @game = Game.instance
-  end
-  
+  end  
 ```
 
 I would like to add functionality for multiplayer and add the special rules for Rock, Paper, Scissors, Spock, Lizard.
@@ -84,15 +83,8 @@ Run the app from the command line using Rackup
 config.ru app.rb  -p 4567
 ```
 
-Type localhost:4567 in your favourite browser 
+Type localhost:4567 in your favourite browser and play!
 
 ```
 http://localhost:4567/
 ```
-
-Put in your name 
-
-Choose between rock, paper or scissors
-
-See if you can beat the computer!
-
