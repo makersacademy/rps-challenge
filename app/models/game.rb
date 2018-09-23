@@ -2,7 +2,8 @@ require_relative 'computer'
 require_relative 'player'
 
 class Game
-  P1_WIN = [[:rock, :scissors], [:scissors, :paper], [:paper, :rock]]
+  MOVES   = [:rock, :paper, :scissors]
+  P1_WIN  = [[:rock, :scissors], [:scissors, :paper], [:paper, :rock]]
 
   attr_reader :player1, :player2, :players, :on_turn, :winner
 
@@ -14,7 +15,7 @@ class Game
   end
 
   def multiplayer?
-    !player2.is_a?(Computer)
+    !player2.computer?
   end
 
   def switch
@@ -29,9 +30,14 @@ class Game
     self.winner == :tie
   end
 
-  def make_move(p1choice, p2choice)
-    player1.move = p1choice
-    player2.move = p2choice
+  def make_move(choices)
+    players.each_with_index do |player, index|
+      if player.computer?
+        player.move = Game::MOVES
+      else
+        player.move = (choices[index])
+      end
+    end
   end
 
   def calculate_winner

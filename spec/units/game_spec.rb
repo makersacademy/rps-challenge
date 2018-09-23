@@ -52,16 +52,35 @@ describe Game do
 
   # have i tested delegation correctly?
   describe '#make_move - sets move for p1 and p2' do
-    before do
-      allow(foo).to receive(:move=)
-      allow(bar).to receive(:move=)
-      subject.make_move(:hello, :test)
+    context 'multiplayer' do
+      before do
+        allow(foo).to receive(:computer?).and_return(false)
+        allow(bar).to receive(:computer?).and_return(false)
+        allow(foo).to receive(:move=)
+        allow(bar).to receive(:move=)
+        subject.make_move([:hello, :test])
+      end
+      it 'foo receives call for move = with :hello' do
+        expect(foo).to have_received(:move=).with(:hello)
+      end
+      it 'bar receives call for move = with :test' do
+        expect(bar).to have_received(:move=).with(:test)
+      end
     end
-    it 'foo receives call for move= with :hello' do
-      expect(foo).to have_received(:move=).with(:hello)
-    end
-    it 'bar receives call for move= with :test' do
-      expect(bar).to have_received(:move=).with(:test)
+    context 'singleplayer' do
+      before do
+        allow(foo).to receive(:computer?).and_return(false)
+        allow(bar).to receive(:computer?).and_return(true)
+        allow(foo).to receive(:move=)
+        allow(bar).to receive(:move=)
+        subject.make_move([:hello, :test])
+      end
+      it 'foo receives call for move = with :hello' do
+        expect(foo).to have_received(:move=).with(:hello)
+      end
+      it 'bar receives call for move = with :test' do
+        expect(bar).to have_received(:move=).with(Game::MOVES)
+      end
     end
   end
 
@@ -100,12 +119,12 @@ describe Game do
 
   describe '#multiplayer' do
     it 'returns true if p2 is a Computer object' do
-      allow(bar).to receive(:is_a?).with(Computer).and_return(true)
+      allow(bar).to receive(:computer?).and_return(true)
       expect(subject.multiplayer?).to eq(false)
     end
 
     it 'returns false if p2 is not a Computer object' do
-      allow(bar).to receive(:is_a?).with(Computer).and_return(false)
+      allow(bar).to receive(:computer?).and_return(false)
       expect(subject.multiplayer?).to eq(true)
     end
   end
