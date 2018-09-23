@@ -24,8 +24,8 @@ class Rock < Sinatra::Base
   post "/results" do
     @game = Game.instance
     @game.player.action(params[:choice])
+    
     @computer_choice = @game.move
-    @result = @game.calculate
     erb(:end)
   end
 

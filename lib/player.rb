@@ -8,7 +8,11 @@ class Player
   end
 
   def action(move)
-    @player_move = move
+    if move != ("Rock" || "Paper" || "Scissors")
+      @player_move = "Error"
+    else
+      @player_move = move
+    end
   end
 
 end
