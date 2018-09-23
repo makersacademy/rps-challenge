@@ -1,16 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-html {
+
+body {
     font-family: 'Roboto', sans-serif;
+    background-image: url('stripes-light.png')
 }
 
 .center {
+    border: 1px solid #eae8e8;
+    background: rgba(255, 255, 255, 0.70);
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    max-width: fit-content;
-    margin: auto;
 }
 
 p {
     margin-bottom: 10px;
+}
+
+h1, p {
+    color: #2980b9;
 }
 
 input {
@@ -18,10 +29,22 @@ input {
     border: 1px solid #2980b9;
     color: #2980b9;
     padding: 5px 7px;
-    transition: 0.6s
+    transition: 0.6s;
+    margin-right: 5px;
 }
 
 input[type="submit"]:hover {
     background-color: #2980b9;
     color: white;
+}
+
+span.win, span.lose {
+    font-weight: bold;
+}
+
+span.win {
+    color: #2980b9;
+}
+span.lose {
+    color: #e74c3c;
 }

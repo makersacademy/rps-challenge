@@ -23,7 +23,7 @@ class RPS < Sinatra::Base
   end
 
   post '/end' do
-    session[:game].player_one.move = params[:move_1].downcase
+    session[:game].player_one.move = params[:move_1].downcase.to_sym
     redirect('/end')
   end
 

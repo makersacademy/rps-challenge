@@ -2,10 +2,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<div>
-  <%= @game.player_one.username %> chose <%= @game.player_one.move %>
+<div class="center">
+  <div id="finish"><%= @game.generate_message %></div>
 </div>
 
-<div>
-  <%= @game.generate_message %>
-</div>
+  

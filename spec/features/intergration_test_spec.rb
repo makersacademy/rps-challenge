@@ -21,29 +21,26 @@ feature 'player one can select a move' do
 
   scenario 'player one can click "rock"' do
     within('#p1') do
-      click_button('Rock')
+      expect { click_button('Rock') }.to_not raise_error
     end
-    expect(page).to have_content('Nerdpuff chose rock')
   end
 
   scenario 'player one can click "paper"' do
     within('#p1') do
-      click_button('Paper')
+      expect { click_button('Paper') }.to_not raise_error
     end
-    expect(page).to have_content('Nerdpuff chose paper')
   end
 
   scenario 'player one can click "scissors"' do
     within('#p1') do
-      click_button('Scissors')
+      expect { click_button('Scissors') }.to_not raise_error
     end    
-    expect(page).to have_content('Nerdpuff chose scissors')
   end
 end
 
-feature 'user can win a game' do
+feature 'user can win and lose a game' do
   scenario 'Player one picks rock, beats scissors' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     visit('/')
     fill_in('player_one', with: 'Nerdpuff')
     click_button('Submit')
@@ -54,7 +51,7 @@ feature 'user can win a game' do
   end
 
   scenario 'Player one picks scissors, loses to rock' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('rock')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
     visit('/')
     fill_in('player_one', with: 'Nerdpuff')
     click_button('Submit')

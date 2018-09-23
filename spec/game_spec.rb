@@ -1,7 +1,7 @@
 require 'game'
 describe Game do
-  let(:player_one) { double(:player_one, move: 'rock', username: 'Nerdpuff') }
-  let(:player_two) { double(:player_two, move: 'scissors', username: 'AI') }
+  let(:player_one) { double(:player_one, move: :rock, username: 'Nerdpuff') }
+  let(:player_two) { double(:player_two, move: :scissors, username: 'AI') }
   subject { described_class.new(player_one, player_two) }
   
   describe '#initialize' do
@@ -18,7 +18,10 @@ describe Game do
 
   describe '#generate_message' do
     it 'creates a message with winnner, loser, and moves' do
-      msg = 'Nerdpuff beat AI with rock vs scissors!'
+      msg = "<span class='win'>Nerdpuff</span> " \
+      "beat <span class='lose'>AI</span> " \
+      "with <span class='win'>rock</span> vs " \
+      "<span class='lose'>scissors</span>!"
       expect(subject.generate_message).to eq(msg)
     end
 

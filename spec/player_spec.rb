@@ -14,12 +14,12 @@ describe Player do
 
   describe '#move' do
     it 'allows you to set the move' do
-      expect { subject.move = 'rock' }.to_not raise_error
+      expect { subject.move = :rock }.to_not raise_error
     end
 
     it 'allows you to read the move' do
-      subject.move = 'rock'
-      expect(subject.move).to eq('rock')
+      subject.move = :rock
+      expect(subject.move).to eq(:rock)
     end
   end
 end
