@@ -7,7 +7,7 @@ Build a rock, paper, scissors game.
 
 ## Bonus level 1: Multiplayer
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+Change the game so that two marketeers can play against each other.
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
@@ -36,7 +36,7 @@ STATUS
 -----
 Allows users to play a game of Rock, Paper, Lizard, Scissors, Spock against a computer using a web interface.
 
-This version completes all basic user stories and adds choices 'Lizard' and 'Spock' to the original weapons.
+This version completes all basic user stories and adds choices 'Lizard' and 'Spock' to the original weapons (Bonus Level 2).
 
 Controller
 includes
