@@ -1,6 +1,6 @@
 require './app'
 
-describe Player do
+describe RPS do
 
   feature 'Player name' do
     scenario 'Entering the name' do

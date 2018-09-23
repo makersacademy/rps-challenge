@@ -1,7 +1,7 @@
 require 'sinatra/base'
 # require'lib/game'
 
-class Player < Sinatra::Base
+class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do

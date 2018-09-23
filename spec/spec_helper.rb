@@ -9,7 +9,7 @@ require 'simplecov'
 require 'simplecov-console'
 require './spec/features/web_helpers'
 
-Capybara.app = Player
+Capybara.app = RPS
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
