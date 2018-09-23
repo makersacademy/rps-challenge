@@ -3,7 +3,7 @@
 The application intends to reproduce the Rock,Paper,Scissors game against the computer in one hand only and declare a winner.
 The application has been built using the Model–view–controller architectural pattern.
 I have used Sinatra web framework and capybara ruby testing tool.
-At this stage the application is still incomplete as the last user story (which is declaring a winner is still missing). Also comments have been added to indicate the areas that I am exploring for changes.
+At this stage the application is still incomplete as the last user story (which is declaring a winner)is still missing. Also comments have been added to indicate the areas that I am exploring for changes.
 The functionalities of the application are listed below:
 
 ```
