@@ -9,9 +9,9 @@ class Player
   end
 
   def choose(choice)
-    msg = "Invalid choice. Should be one of " +
-          "#{Player::CHOICES}"
-    raise msg if invalid_choice?(choice)
+    return random_choice if choice == :random
+    raise "Invalid choice. Should be one of " +
+          "#{Player::CHOICES}" if invalid_choice?(choice)
     @choice = choice
   end
 
@@ -19,5 +19,9 @@ class Player
 
   def invalid_choice?(choice)
     !Player::CHOICES.include?(choice)
+  end
+
+  def random_choice
+    @choice = Player::CHOICES.sample
   end
 end

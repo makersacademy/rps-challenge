@@ -41,5 +41,22 @@ describe Player do
         expect { player.choose(:banana) }.to raise_error(msg)
       end
     end
+
+    context 'choice is random' do
+      it 'should return :rock' do
+        srand(0)
+        expect(player.choose(:random)).to be :rock
+      end
+
+      it 'should return :paper' do
+        srand(1)
+        expect(player.choose(:random)).to be :paper
+      end
+
+      it 'should return :scissors' do
+        srand(3)
+        expect(player.choose(:random)).to be :scissors
+      end
+    end
   end
 end
