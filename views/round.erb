@@ -4,15 +4,19 @@
 <h1>Rock Paper Scissors</h1>
 <div class="player-container left">
   <div class="rps-container cc-selector">
+    <div id="player-choice" class="choice <%=@game.player.choice.to_s%>"></div>
   </div>
   <h2><%=@game.player.name%></h2>
 </div>
-<div class="player-container right">
+<div class="computer-container right">
   <div class="rps-container">
+    <div id="computer-choice" class="choice <%=@game.computer.choice.to_s%>"></div>
   </div>  
   <h2><%=@game.computer.name%></h2>
 </div>
-<div>
-  <input type="submit" form="rps-form" value="Go!" class="left"/>
+<div class="controls">
+  <form action="/play">
+    <input type="submit" value="Again!" class="left"/>
+  </form>
 </div>
-<h2>You win!</h2>
+<h2><%=@game.round_outcome%></h2>

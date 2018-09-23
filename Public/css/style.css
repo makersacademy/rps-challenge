@@ -1,5 +1,5 @@
 body {
-  background-color: #4A90E2;
+  background-color: #4a90e2;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
@@ -16,7 +16,8 @@ body {
   margin-top: 1em;
 }
 
-button, input {
+button,
+input {
   background-color: #326095;
   color: white;
   font-size: 1.5em;
@@ -25,7 +26,8 @@ button, input {
   width: 10%;
 }
 
-.player-container {
+.player-container,
+.computer-container {
   margin: 0 5%;
   width: 35%;
 }
@@ -35,9 +37,27 @@ button, input {
   height: 300px;
 }
 
-.left { float: left }
-.right { float: right }
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
 
+.controls {
+  height: 350px;
+}
+
+.controls input {
+  margin-top: 125px;
+}
+
+.choice {
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
 
 /* 
   radio button images (modified from http://jsfiddle.net/La8wQ/8737/) 

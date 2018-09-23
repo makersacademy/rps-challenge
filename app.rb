@@ -18,6 +18,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @game = Game.instance
+    @game.reset_choices
     erb(:play)
   end
 
