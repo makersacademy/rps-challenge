@@ -8,6 +8,7 @@ class Player
   end
 
   def action(move)
+    move.capitalize!
     if ["Rock", "Paper", "Scissors"].include?(move)
       @player_move = move
     else

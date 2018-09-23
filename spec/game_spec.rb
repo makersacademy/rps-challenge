@@ -22,7 +22,7 @@ describe Game do
       it "asks the user to try again" do
 
         player.player_move
-        expect(game.calculate).to eq("That is not a valid move. I am case sensitive. Please try again.")
+        expect(game.calculate).to eq("That is not a valid move. I am little bit case sensitive, please don't put capitals in the middle of your word. I have my limits. Please try again.")
       end
      end
 
