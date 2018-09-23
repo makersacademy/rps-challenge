@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/decision'
+require './lib/winner'
 
 class Challenge < Sinatra::Base
   enable :sessions
@@ -34,6 +35,7 @@ class Challenge < Sinatra::Base
   post '/winner' do
     @choice = session[:choice]
     @computer = ["Rock", "Paper", "Scissors"].sample
+    @winner = Winner.new(@choice, @computer)
     erb :winner
   end
 
