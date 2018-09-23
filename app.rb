@@ -71,7 +71,6 @@ class Challenge < Sinatra::Base
   get '/P2option' do
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
-    @P1choice = @player_1.move(session[:choiceP1])
     erb :P2choose
   end
 
@@ -83,8 +82,8 @@ class Challenge < Sinatra::Base
   get '/bothchosen' do
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
-    @P1choice = @player_1.move(session[:choiceP1])
-    @P2choice = @player_2.move(session[:choiceP2])
+    @P1answer = @player_1.move(session[:choiceP1])
+    @P2answer = @player_2.move(session[:choiceP2])
     erb :bothchosen
   end
 
