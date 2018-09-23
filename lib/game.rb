@@ -8,6 +8,7 @@ class Game
   end
 
   def retrieve_winner(first_player, second_player)
+    return nil if first_player.choice == second_player.choice
     case first_player.choice
     when "rock"
       @winner = first_player.name if second_player.choice == "scissors"

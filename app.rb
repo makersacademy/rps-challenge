@@ -66,7 +66,7 @@ class RockPaperScissors < Sinatra::Application
     @game = Game.new(@player1, @player2)
     @mode = session[:game_mode]
     if session[:player_count] == '1p'
-      if @mode = 'rpsls'
+      if @mode == 'rpsls'
         @player2.add_special_weapons
       end
       @player2.random_move

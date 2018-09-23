@@ -13,4 +13,11 @@ feature 'finish a game and declare a winner' do
     click_button("paper")
     expect(page).to have_content("John is the winner")
   end
+  scenario 'user plays rps and draws' do
+    two_players_signin
+    rpsls_mode
+    click_button("scissors")
+    click_button("scissors")
+    expect(page).to have_content("It's a draw")
+  end
 end
