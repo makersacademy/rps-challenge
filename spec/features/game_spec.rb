@@ -17,7 +17,29 @@ feature 'multiplayer game' do
     make_choice('paper', 'paper')
     expect(page).to have_content('The game is tied!')
   end
+end
 
+feature 'single-player' do
+  scenario 'p1 wins' do
+    sign_in
+    click_on 'paper'
+    expect(page).to have_content('John has won')
+  end
+
+  scenario 'computer wins' do
+    sign_in
+    click_on 'scissors'
+    expect(page).to have_content('Computer has won')
+  end
+
+  scenario 'tie' do
+    sign_in
+    click_on 'rock'
+    expect(page).to have_content('The game is tied!')
+  end
+end
+
+feature 'selecting menus' do
   scenario 'new game started succesfully' do
     sign_in_multiplayer
     make_choice('paper', 'paper')
