@@ -1,13 +1,11 @@
-<h1>Welcome <%= @player1 %>!</h1>
+<h1>Good choice! Next, <%= @player_2.name %></h1>
 
-<h2>My name is Ed, and I will be your competition today.</h2>
-
-<h3>Please pick your choice: Rock, Paper or Scissors?</h3>
+<h2><%= @player_1.name %> take ten! Go practice those yoga moves you been studying!</h2>
 
 <div>
-  <form action="/humanchoice" method="post">
+  <form action="/option1" method="post">
     <label>Choose:</label>
-    <select name="choice" />
+    <select name="choiceP2" />
       <option selected>select</option>
       <option value="Rock">Rock</option>
       <option value="Paper">Paper</option>

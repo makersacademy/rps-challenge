@@ -5,4 +5,8 @@ class Player
   def initialize(name)
     @name = name
   end
+
+  def move(option)
+    @option = option
+  end
 end

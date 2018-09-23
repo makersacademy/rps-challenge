@@ -11,6 +11,6 @@ feature Challenge do
 
   scenario "asks for name of player 2" do
     two_player_option
-    expect(page).to have_content "And we have Thomas Miller"
+    expect(page).to have_content "and we have Thomas Miller"
   end
 end

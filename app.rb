@@ -57,4 +57,35 @@ class Challenge < Sinatra::Base
     erb :contestants
   end
 
+  get '/letsbattle' do
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    erb :P1choose
+  end
+
+  post '/option' do
+    session[:choiceP1] = params[:choiceP1]
+    redirect '/P2option'
+  end
+
+  get '/P2option' do
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    @P1choice = @player_1.move(session[:choiceP1])
+    erb :P2choose
+  end
+
+  post '/option1' do
+    session[:choiceP2] = params[:choiceP2]
+    redirect '/bothchosen'
+  end
+
+  get '/bothchosen' do
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    @P1choice = @player_1.move(session[:choiceP1])
+    @P2choice = @player_2.move(session[:choiceP2])
+    erb :bothchosen
+  end
+
 end
