@@ -25,7 +25,7 @@ RSpec.feature 'Testing solo' do
     solo_name_play
     allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
     click_button 'Rock'
-    expect(page).to have_content 'Skynet wins! :D'
+    expect(page).to have_content 'Skynet wins! :('
   end
 
   scenario 'draw' do
