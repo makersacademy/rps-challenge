@@ -21,7 +21,6 @@ class RockPaperScissors < Sinatra::Application
   post "/names" do
     session[:player1] = Player.new(params[:player1_name])
     params[:player2_name].nil? ? session[:player2] = Player.new() : session[:player2] = Player.new(params[:player2_name])
-    session[:player2_name] = params[:player2_name]
     redirect '/game_mode'
   end
 
@@ -62,9 +61,18 @@ class RockPaperScissors < Sinatra::Application
   end
 
   get '/play' do
-    @mode = session[:game_mode]
     @player1 = session[:player1]
     @player2 = session[:player2]
+    @game = Game.new(@player1, @player2)
+    @mode = session[:game_mode]
+    if session[:player_count] == '1p'
+      if @mode = 'rpsls'
+        @player2.add_special_weapons
+      end
+      @player2.random_move
+    end
+    @game.retrieve_winner(@player1, @player2)
+    @champ = @game.winner
     erb(:play)
   end
 
