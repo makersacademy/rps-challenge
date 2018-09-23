@@ -94,8 +94,19 @@ describe Game do
       it 'banana vs. tangerine' do
         allow(computer).to receive(:choice).and_return(:banana)
         allow(player).to receive(:choice).and_return(:tangerine)
-        expect { game.round_outcome }.to raise_error
+        msg = "I don't know who won! " +
+              "Player: #{player.choice}, " +
+              "Computer: #{computer.choice}"
+        expect { game.round_outcome }.to raise_error msg
       end
+    end
+  end
+
+  describe '#reset_choices' do
+    it 'should reset both players choices' do
+      expect(player).to receive(:reset_choice)
+      expect(computer).to receive(:reset_choice)
+      game.reset_choices
     end
   end
 end

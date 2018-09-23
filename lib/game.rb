@@ -17,6 +17,11 @@ class Game
     @computer = computer
   end
 
+  def reset_choices
+    player.reset_choice
+    computer.reset_choice
+  end
+
   def round_outcome
     return 'You win!' if player_wins?
     return 'You lose!' if player_loses?
