@@ -1,4 +1,5 @@
 def sign_in
+  allow_any_instance_of(Computer).to receive(:move).and_return(:rock)
   visit('/')
   fill_in 'name', with: 'John'
   click_on('Go')
@@ -12,5 +13,5 @@ def sign_in_multiplayer
 end
 
 def make_choice(*choices)
-  choices.each { |choice| click_on choice } 
+  choices.each { |choice| click_on choice }
 end
