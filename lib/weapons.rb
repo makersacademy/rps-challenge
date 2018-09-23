@@ -2,7 +2,7 @@ class Weapons
   attr_reader :rack
 
   def initialize
-    @rack = [:rock, :paper, :scissors]
+    @rack = [:rock, :paper, :scissors, :lizard, :spock]
   end
 
   def available?(weapon)

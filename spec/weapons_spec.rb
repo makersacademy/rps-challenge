@@ -4,13 +4,13 @@ describe Weapons do
   subject(:weapons) { described_class.new }
 
   it 'contains the weapons a player can choose from' do
-    expect(weapons.rack).to eq([:rock, :paper, :scissors])
+    expect(weapons.rack).to eq([:rock, :paper, :scissors, :lizard, :spock])
   end
 
   describe '#available?' do
     it 'checks whether a weapon is available' do
-      expect(weapons.available?(:rock)).to be(true)
-      expect(weapons.available?(:lizard)).to be(false)
+      expect(weapons.available?(:spock)).to be(true)
+      expect(weapons.available?(:blizzard)).to be(false)
     end
   end
 
