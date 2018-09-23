@@ -3,7 +3,18 @@
 <% else %>
 <h1> <%= @game.winner %> wins!</h1>
 <% end %>
-<h2> <%= @game.player1.choice %> : <%= @game.player2.choice %> </h2>
+<table>
+  <tr>
+    <th> <%= @game.player1.name %> </th>
+      <th> : </th>
+    <th> <%= @game.player2.name %> </th>
+  </tr>
+  <tr>
+    <td> <%= @game.player1.choice %> </td>
+    <td> : </td>
+    <td> <%= @game.player2.choice %> </td>
+  </tr>
+</table>
 <form action="/sologame" method="get">
   <input type="submit" value="Try Again!" name="try_again"/>
 </form>
