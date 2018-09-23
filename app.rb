@@ -17,19 +17,25 @@ class RPS < Sinatra::Base
   end
 
   get '/names_input' do
-    p session[:play_mode]
     @play_mode = session[:play_mode]
     erb :names
   end
 
   post '/store_names' do
     player1 = Player.new(params[:player1_name])
-    session[:game] = Game.new(player1)
+    if session[:play_mode] == :single_player
+      session[:game] = Game.new(player1)
+    else
+      player2 = Player.new(params[:player2_name])
+      session[:game] = Game.new(player1, player2)
+    end
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:game].players.first.name
+    @play_mode = session[:play_mode]
+    @player1_name = session[:game].players.first.name
+    @player2_name = session[:game].players.last.name
     erb :play
   end
 
