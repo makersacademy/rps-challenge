@@ -6,8 +6,15 @@ class Game
 
   WINNING_PAIRS = [
     { rock: :scissors },
+    { rock: :lizzard },
     { paper: :rock },
-    { scissors: :paper }               
+    { paper: :spock },
+    { scissors: :paper },
+    { scissors: :lizard },
+    { lizard: :spock },
+    { lizard: :paper },
+    { spock: :scissors },
+    { spock: :rock }                                   
   ]
   
   def initialize(player1:, player2: nil)
