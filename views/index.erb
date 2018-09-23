@@ -9,15 +9,27 @@
     <h1>Game Options</h1>
     <form action='/solo' method='post'>
       <h2>Solo</h2>
-      <input required="true" type='text' name="name"/>
+      <input required="true"
+             pattern="[A-Za-z]+"
+             type='text'
+             name="name"
+             placeholder="letters only"/>
       <input type="submit" value="Play!"/>
     </form>
 
-    <!-- <form action='/multi' method='post'>
+    <form action='/multi' method='post'>
       <h2>Multiplayer</h2>
-      <input type='text' name="player_one"/>
-      <input type='text' name="player_two"/>
-      <input type="submit" value="Play!"/>
-    </form> -->
+      <input type='text'
+             required="true"
+             pattern="[A-Za-z]+"
+             name="name"
+             placeholder="letters only"/>
+      <input type='text'
+             required="true"
+             pattern="[A-Za-z]+"
+             name="player_two"
+             placeholder="letters only" />
+      <input type="submit" value="PvP!"/>
+    </form>
   </body>
 </html>

@@ -21,12 +21,26 @@ enable :sessions
     erb :sologame
   end
 
+  post '/multi' do
+    player = Player.new(params[:name])
+    player2 = Player.new(params[:player_two])
+    session[:game] = Game.new(player, player2)
+    redirect "/multiplayer"
+  end
+
+  get '/multiplayer' do
+    @game = session[:game]
+    erb :multiplayer
+  end
+
   post '/selection' do
     p "choice is :::: #{params[:choice]}"
     @game = session[:game]
     choice = params[:choice]
+    p2_choice = params[:p2_choice]
     @game.player1.choice_setter(choice)
-    @game.player2.choice_setter
+    @game.player2.choice_setter if @game.player2.name == 'Computer'
+    @game.player2.choice_setter(p2_choice) if @game.player2.name != 'Computer'
     redirect '/gameover'
   end
 
@@ -35,6 +49,7 @@ enable :sessions
     @game.find_winner
     erb :winner
   end
+
 
   run! if app_file == $0
 end
