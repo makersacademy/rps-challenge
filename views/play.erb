@@ -3,7 +3,7 @@
 
 <body>
 <h1> Rock Paper Scissors Lizard Spock! </h1>
-<p> <%= @player.name %>, let's play RPSLS!" </p>
+<p> <%= @game.players[0].name %>, let's play RPSLS!" </p>
 <p> Choose your move! </p>
 <form method='post' action='/result'>
   <select name='possible_moves'>
