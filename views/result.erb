@@ -1,28 +1,29 @@
 <head>
+  <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 
 <body>
 <h1> Rock Paper Scissors Lizard Spock! </h1>
 <% if @game.players[1].is_a?(RandomPlayer) %>
-  <p> The computer chose: <%= @game.players[1].move %>.</p>
+  <h2> The computer chose: <%= @game.players[1].move %>.</h2>
 <% else %>
   <% @game.players.each do |player| %>
-    <p> <%= player.name %> chose <%= player.move %>. </p>
+    <h2> <%= player.name %> chose <%= player.move %>. </h2>
   <% end %>
 <% end %>
 
 <% if @game.winner == 0 %>
-<p> Well done, <%= @game.players[0].name %>! <%= @game.players[0].move %> <%= @game.victory_type %> <%= @game.players[1].move %>! </p>
+<h2> Well done, <%= @game.players[0].name %>! <%= @game.players[0].move %> <%= @game.victory_type %> <%= @game.players[1].move %>! </h2>
 <% elsif @game.winner == 1 && @game.players[1].is_a?(RandomPlayer) %>
-<p> Unlucky, <%= @game.players[0].name %>. <%= @game.players[1].move %> <%= @game.victory_type %> <%= @game.players[0].move %>. </p>
+<h2> Unlucky, <%= @game.players[0].name %>. <%= @game.players[1].move %> <%= @game.victory_type %> <%= @game.players[0].move %>. </h2>
 <% elsif @game.winner == 1 %>
-<p> Well done, <%= @game.players[1].name %>! <%= @game.players[1].move %> <%= @game.victory_type %> <%= @game.players[0].move %>! </p>
+<h2> Well done, <%= @game.players[1].name %>! <%= @game.players[1].move %> <%= @game.victory_type %> <%= @game.players[0].move %>! </h2>
 <% else %>
-<p> It's a draw! You both chose <%= @game.players[0].move %>. </p>
+<h2> It's a draw! You both chose <%= @game.players[0].move %>. </h2>
 <% end %>
 
-<p> Play again? </p>
+<h2> Play again? </h2>
 <form method='get' action='/'>
-  <input class="fsSubmitButton" type="submit" value="Go!"></input>
+  <input class="fsSubmitButton" type="submit" value="Yes!"></input>
 </select>
 </body>

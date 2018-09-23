@@ -1,43 +1,47 @@
 <head>
+  <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 
 <body>
 
 <h1> Rock Paper Scissors Lizard Spock! </h1>
-<p> <%= @game.players[0].name %>, let's play RPSLS!" </p>
+<h2> <%= @game.players[0].name %>, let's play RPSLS!" </h2>
 
 <% if @game.players[1].is_a?(RandomPlayer) %>
-<p> Choose your move! </p>
+<h2> Choose your move! </h2>
 <form method='post' action='/one_player_result'>
-  <select name='possible_moves'>
+  <select name='possible_moves' id='possible_moves'>
     <% @options.each do |option| %>
-      <option value="<%= option%>"> <%= option %> </option>
-    <% end %>
-    <input class="fsSubmitButton" type="submit" value="Go!"></input>
-</select>
-</form>
+      <option value="<%= option%>"> <%= option %> <br> </option><br>
+    <% end %> <br><br>
+
+  </select>
+  <div><br><input class="fsSubmitButton" type="submit" value="Go!"><br></input></div>
+</form><br>
 
 <% elsif @game.players[0].move == nil %>
-<p> <%= @game.players[0].name %>, choose your move! Don't let <%= @game.players[1].name %> see!</p>
+<h2> <%= @game.players[0].name %>, choose your move! Don't let <%= @game.players[1].name %> see!</h2>
 <form method='post' action='/first_move'>
-  <select name='possible_moves'>
+  <select name='possible_moves' id='possible_moves'>
     <% @options.each do |option| %>
-      <option value="<%= option%>"> <%= option %> </option>
-    <% end %>
-    <input class="fsSubmitButton" type="submit" value="Go!"></input>
-</select>
-</form>
+      <option value="<%= option%>"> <%= option %><br> </option><br>
+    <% end %><br><br>
+
+  </select>
+  <div><br><input class="fsSubmitButton" type="submit" value="Go!"><br></input></div>
+</form><br>
 
 <% else %>
-<p> <%= @game.players[1].name %>, choose your move! </p>
+<h2> <%= @game.players[1].name %>, choose your move! </h2>
 <form method='post' action='/second_move'>
-  <select name='possible_moves'>
+  <select name='possible_moves' id='possible_moves'>
     <% @options.each do |option| %>
-      <option value="<%= option%>"> <%= option %> </option>
-    <% end %>
-    <input class="fsSubmitButton" type="submit" value="Go!"></input>
-</select>
-</form>
+      <option value="<%= option%>"> <%= option %><br> </option><br>
+    <% end %><br><br>
+
+  </select>
+  <div><br><input class="fsSubmitButton" type="submit" value="Go!"><br></input></div>
+</form><br>
 
 <% end %>
 

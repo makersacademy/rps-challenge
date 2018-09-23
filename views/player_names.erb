@@ -1,21 +1,22 @@
 <head>
+  <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 
 <body>
 <h1> Rock Paper Scissors Lizard Spock! </h1>
 <% if session[:no_players] == 1 %>
 <form method="post" action="/player_names">
-  <p> Please enter your name to play. </p>
-  <input type="text" name="player_name_1" value="Enter your name here"/><br>
-  <input type="submit" value="Play!"/>
+  <h2> Please enter your name to play. </h2>
+  <input type="text" name="player_name_1"/><br>
+  <div><br><input type="submit" value="Play!"/></div>
 </form>
 </body>
 <% else %>
 <form method="post" action="/player_names">
-  <p> Player 1, please enter your name to play. </p>
-  <input type="text" name="player_name_1" value="Enter your name here"/>
-  <p> Player 2, please enter your name to play. </p>
-  <input type="text" name="player_name_2" value="Enter your name here"/><br>
-  <input type="submit" value="Play!"/>
+  <h2> Player 1, please enter your name to play. </h2>
+  <input type="text" name="player_name_1"/>
+  <h2> Player 2, please enter your name to play. </h2>
+  <input type="text" name="player_name_2"/><br>
+  <div><br><input type="submit" value="Play!"/></div>
 </form>
 <% end %>
