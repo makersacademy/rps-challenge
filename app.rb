@@ -11,7 +11,14 @@ class RPS < Sinatra::Base
     erb :welcome
   end
 
+  post '/store_play_mode' do
+    session[:play_mode] = params[:play_mode].to_sym
+    redirect '/names_input'
+  end
+
   get '/names_input' do
+    p session[:play_mode]
+    @play_mode = session[:play_mode]
     erb :names
   end
 
