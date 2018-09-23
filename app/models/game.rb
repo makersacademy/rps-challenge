@@ -2,8 +2,11 @@ require_relative 'computer'
 require_relative 'player'
 
 class Game
-  MOVES   = [:rock, :paper, :scissors]
-  P1_WIN  = [[:rock, :scissors], [:scissors, :paper], [:paper, :rock]]
+  MOVES   = [:rock, :paper, :scissors, :spock, :lizard]
+  P1_WIN  = [[:scissors, :paper], [:paper, :rock], [:rock, :lizard],
+          [:lizard, :spock], [:spock, :scissors], [:scissors, :lizard],
+          [:lizard, :paper], [:paper, :spock], [:spock, :rock],
+          [:rock, :scissors]]
 
   attr_reader :player1, :player2, :players, :on_turn, :winner
 
