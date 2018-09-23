@@ -10,6 +10,6 @@ class RandomPlayer
   end
 
   def choose_move(_move = nil)
-    Game::POSSIBLE_MOVES[rand(5)]
+    @move = Game::POSSIBLE_MOVES[rand(5)]
   end
 end
