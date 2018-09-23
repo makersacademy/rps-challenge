@@ -13,13 +13,13 @@ class RPS < Sinatra::Base
     session[:player_one] = Player.new(params[:player_one])
     p2 = params[:player_two].empty? ? 'AI' : params[:player_two]
     session[:player_two] = Player.new(p2)
-    redirect('/game')
+    redirect('/play')
   end
 
-  get '/game' do
+  get '/play' do
     @player_one = session[:player_one]
     @player_two = session[:player_two]
-    erb(:game)
+    erb(:play)
   end
 
   post '/end' do

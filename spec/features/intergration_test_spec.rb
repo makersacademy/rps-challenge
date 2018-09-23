@@ -50,13 +50,15 @@ end
 #   end
 # end
 
-# feature 'user can win a game' do
-#   scenario 'user picks rock, beats scissors' do
-#     visit('/')
-#     fill_in('player_one', with: 'Nerdpuff')
-#     click_button('Submit')
-#     expect(page).to have_content('Player one: Nerdpuff')
-#     click_button('Scissors')
-#     expect(page).to have_content('Rock beats scissors, Nerdpuff wins!')
-#   end
-# end
+feature 'user can win a game' do
+  scenario 'user picks rock, beats scissors' do
+    visit('/')
+    fill_in('player_one', with: 'Nerdpuff')
+    click_button('Submit')
+    expect(page).to have_content('Player one: Nerdpuff')
+    within('#p1') do
+      click_button('Rock')
+    end
+    expect(page).to have_content('Rock beats scissors, Nerdpuff wins!')
+  end
+end
