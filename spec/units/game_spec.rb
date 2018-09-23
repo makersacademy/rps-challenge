@@ -78,7 +78,7 @@ describe Game do
       it 'foo receives call for move = with :hello' do
         expect(foo).to have_received(:move=).with(:hello)
       end
-      it 'bar receives call for move = with :test' do
+      it 'bar receives call for move = with Game::MOVES' do
         expect(bar).to have_received(:move=).with(Game::MOVES)
       end
     end
