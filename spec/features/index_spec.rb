@@ -1,5 +1,5 @@
 
-feature 'Game page' do
+feature 'Index page' do
   scenario 'welcomes me on the page' do
     visit '/'
     expect(page).to have_content("Hello there!")

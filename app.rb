@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require './lib/player'
+require './lib/player.rb'
+
 
 class Game < Sinatra::Base
 
@@ -10,20 +11,22 @@ class Game < Sinatra::Base
   end
 
   post '/names' do
-    $player = Player.new(params[:name])
-    redirect '/game'
+    session[:player_name] = Player.new(params[:name])
+    redirect 'game'
   end
 
   get '/game' do
-    @player_name = $player.name
+    @player_name = session[:player_name].name
     erb(:game)
   end
 
-  get '/results' do
-    @player_name = $player.name
+  post '/results' do
+    session[:player_move]= params[:player_move]
     @player_move = session[:player_move]
+    @outcome = session[:player_name].move(@player_move)
     erb(:results)
   end
 
+  run! if app_file == $0
 
 end
