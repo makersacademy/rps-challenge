@@ -4,24 +4,10 @@ require_relative './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
-  set :session_secret, "enabled"
+  set :session_secret, "will this fix my aching woes?"
 
   get '/' do
     erb :index
-  end
-
-  get '/multiplayer' do
-    erb :multiplayer
-  end
-
-  post '/multiplayer-game' do
-    session[:player1] = Player.new(params[:player1])
-    session[:player2] = Player.new(params[:player2])
-    redirect '/multiplayer-game'
-  end
-
-  get '/multiplayer-game' do
-    erb :multigame, { locals: { player1: session[:player1], player2: session[:player2] } }
   end
 
   post '/name' do

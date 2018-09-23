@@ -16,6 +16,10 @@ class Game
     @moves[2]
   end
 
+  def multiplayer(player1, player2)
+    [player1, player2].sample
+  end
+
   def computer_move
     @computer_move = @moves.sample
   end

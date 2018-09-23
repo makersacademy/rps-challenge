@@ -10,3 +10,9 @@ def visit_for_multiplayer
   fill_in 'player1', with: "patrick"
   fill_in 'player2', with: "squidward"
 end
+
+def multiplayer_game_started
+  visit_for_multiplayer
+  click_on 'Begin'
+  click_button 'Flip Coin'
+end
