@@ -25,11 +25,12 @@ Work on this challenge as conclusion of week 3, to work towards these goals:
 
 Instructions to run this at home
 -----
-
+```sh
 $ git clone git@github.com:fbl11/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup
+```
 
 STATUS
 -----
