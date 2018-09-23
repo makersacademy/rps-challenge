@@ -27,12 +27,12 @@ class RPS < Sinatra::Base
   post '/play' do
     @game = session[:game]
     if @game.on_turn == session[:p1]
-      session[:choice1] = params['choice'].to_sym
+      session[:choices] = [params['choice'].to_sym]
       redirect '/result' unless @game.multiplayer?
       @game.switch
       redirect '/play'
     else
-      session[:choice2] = params['choice'].to_sym
+      session[:choices] << params['choice'].to_sym
       @game.switch
     end
     redirect '/result'
@@ -40,7 +40,7 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @game = session[:game]
-    @game.make_move(session[:choice1], session[:choice2])
+    @game.make_move(session[:choices])
     @game.calculate_winner
     @game.tie? ? erb(:tie) : erb(:winner)
   end
