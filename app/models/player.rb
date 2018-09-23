@@ -5,10 +5,6 @@ class Player
     @name = name
   end
 
-  def process_move(choice)
-    @move = choice
-  end
-
   def computer?
     false
   end
