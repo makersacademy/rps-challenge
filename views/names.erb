@@ -1,6 +1,16 @@
-<h2>Enter your name:</h2>
+<% if @play_mode == :single_player %>
+  <h2>Enter your name:</h2>
 
-<form action="/store_names" method="post">
-  <input type="text" name="player1_name">
-  <button type="submit">Play</button>
-</form>
+  <form action="/store_names" method="post">
+    <input type="text" name="player1_name">
+    <button type="submit">Play</button>
+  </form>
+<% else %>
+  <form action="/store_names" method="post">
+    <label for="player1_name"><h2>Player 1 your name:</h2></label>
+      <input type="text" name="player1_name">
+    <label for="player2_name"><h2>Player 2 your name:</h2></label>
+      <input type="text" name="player2_name">
+    <button type="submit">Play</button>
+  </form>
+<% end %>
