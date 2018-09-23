@@ -49,7 +49,6 @@ enable :sessions
     @game.find_winner
     erb :winner
   end
-
-
+  
   run! if app_file == $0
 end

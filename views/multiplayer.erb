@@ -13,18 +13,36 @@
         <th>Player2</th>
         <tr>
           <td>
-            <input type="radio" name="choice" value="rock" checked> <img class="img__svg" src="images/stone.svg" alt="rock" /></input><br>
-            <input type="radio" name="choice" value="paper"> <img class="img__svg" src="images/paper.svg" alt="paper" /></input><br>
-            <input type="radio" name="choice" value="scissors"> <img class="img__svg" src="images/scissors.svg" alt="scissors" /></input>
+            <label >
+            <input style="display: none" class="radio_btn" type="radio" name="choice" value="rock" checked/>
+            <img class="img__svg" src="images/stone.svg" alt="rock"  />
+            </label>
+            <label>
+              <input style="display: none" class="radio_btn" type="radio" name="choice" value="paper"/>
+              <img class="img__svg" src="images/paper.svg" alt="paper" />
+            </label>
+            <label>
+              <input style="display: none" class="radio_btn" type="radio" name="choice" value="scissors"/>
+              <img class="img__svg" src="images/scissors.svg" alt="scissors" />
+            </label>
           </td>
           <td>
-            <input type="radio" name="p2_choice" value="rock" checked> <img class="img__svg" src="images/stone.svg" alt="rock" /></input><br>
-            <input type="radio" name="p2_choice" value="paper"> <img class="img__svg" src="images/paper.svg" alt="paper" /></input><br>
-            <input type="radio" name="p2_choice" value="scissors"> <img class="img__svg" src="images/scissors.svg" alt="scissors" /></input>
+            <label>
+              <input style="display: none"  type="radio" name="p2_choice" value="rock" checked/>
+              <img class="img__svg" src="images/stone.svg" alt="rock" />
+            </label>
+            <label id="p2_selection"  >
+              <input style="display: none"  type="radio" name="p2_choice" value="paper"/>
+              <img class="img__svg" src="images/paper.svg" alt="paper" />
+            </label>
+            <label>
+              <input style="display: none"  type="radio" name="p2_choice" value="scissors"/>
+              <img class="img__svg" src="images/scissors.svg" alt="scissors" />
+            </label>
           </td>
         </tr>
       </table>
-      <input type="submit" value="Ready!" >
+      <input type="submit" value="Play again!" >
     </form>
 
 <!--

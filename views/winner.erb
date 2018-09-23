@@ -15,7 +15,7 @@
     <td> <%= @game.player2.choice %> </td>
   </tr>
 </table>
-<% if @game.player2 != "Computer" %>
+<% if @game.player2.name != "Computer" %>
 <form action="/multiplayer" method="get">
   <input type="submit" value="PvP Again!" name="try_again"/>
 </form>
@@ -24,3 +24,6 @@
   <input type="submit" value="Try Again!" name="try_again"/>
 </form>
 <% end %>
+<form action="/" method="get">
+  <input type="submit" value="Different game type!" name="different_game"/>
+</form>
