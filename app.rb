@@ -11,7 +11,7 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:game] = Game.new(params[:name])
+    session[:game] = Game.new(Player.new(params[:name]), Player.new('Computer'))
     session[:moves] = Moves.new
     p session
     redirect '/play'
@@ -24,19 +24,25 @@ class Rps < Sinatra::Base
   end
 
   post '/rock' do
-    session[:game].player.user_move(params[:user_move])
+    session[:user_move] = params[:user_move]
+    session[:game].player.user_move(session[:user_move])
+    session[:game].computer.user_move(session[:moves].comp_move)
     p session
     redirect '/winner'
   end
 
   post '/paper' do
-    session[:game].player.user_move(params[:user_move])
+    session[:user_move] = params[:user_move]
+    session[:game].player.user_move(session[:user_move])
+    session[:game].computer.user_move(session[:moves].comp_move)
     p session
     redirect '/winner'
   end
 
   post '/scissors' do
-    session[:game].player.user_move(params[:user_move])
+    session[:user_move] = params[:user_move]
+    session[:game].player.user_move(session[:user_move])
+    session[:game].computer.user_move(session[:moves].comp_move)
     p session
     redirect '/winner'
   end

@@ -1,10 +1,6 @@
-<font size="10" face="courier" color="blue">
-  <p> <% if @moves.winner? %>
-    Well done you won!
-      <%= else %>
-      Unlucky you lost!
-      <% end %>
-    </p>
+<font size="5" face="courier" color="blue">
 
-<h2> <%= @name %> attacked with <%= @user_move %> </h2>
-<h2> Your opponent attacked with <%= session[:moves].computer %> </h2>
+<h1> <%= @game.winner %> won! </h1>
+
+<h2> <%= @game.player.name %> attacked with <%= @game.player.move %> </h2>
+<h2> <%= @game.computer.name %> attacked with <%= @game.computer.move %> </h2>
