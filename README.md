@@ -69,3 +69,7 @@ Next, Billy can choose which move he wants to play (he chooses Lizard). There wi
 Since Lizard poisons Spock, Billy wins. Billy and Barry can choose to play another game.
 
 ![Lizard poisons Spock](images/lizardpoisonsspock.png)
+
+## Contributing
+
+If anyone wants to update this repository to feature an implementation of Rock Paper Scissors Lizard Spock Wizard Glock (which has only a one seventh chance of a draw), I would be very happy to receive a pull request.
