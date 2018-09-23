@@ -1,7 +1,7 @@
 
 # Outline
 
-_Rock, Paper, Scissors_ The online reckoning:
+#### Rock, Paper, Scissors The online reckoning:
 
 #### Rules (for those who have never played or have forgotten)
 
@@ -28,11 +28,5 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-
----
-
-### Feature Tests:
-
-
 
 ---
