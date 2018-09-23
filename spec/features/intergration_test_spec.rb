@@ -42,7 +42,7 @@ feature 'player one can select a move' do
 end
 
 feature 'user can win a game' do
-  scenario 'user picks rock, beats scissors' do
+  scenario 'Player one picks rock, beats scissors' do
     allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
     visit('/')
     fill_in('player_one', with: 'Nerdpuff')
@@ -51,5 +51,16 @@ feature 'user can win a game' do
       click_button('Rock')
     end
     expect(page).to have_content('Nerdpuff beat AI with rock vs scissors!')
+  end
+
+  scenario 'Player one picks scissors, loses to rock' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('rock')
+    visit('/')
+    fill_in('player_one', with: 'Nerdpuff')
+    click_button('Submit')
+    within('#p1') do
+      click_button('Scissors')
+    end
+    expect(page).to have_content('AI beat Nerdpuff with rock vs scissors!')
   end
 end
