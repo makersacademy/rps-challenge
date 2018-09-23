@@ -1,0 +1,9 @@
+<% if @game.winner == "Draw" %>
+<h1> It's a <%= @game.winner %> !</h1>
+<% else %>
+<h1> <%= @game.winner %> wins!</h1>
+<% end %>
+<h2> <%= @game.player1.choice %> : <%= @game.player2.choice %> </h2>
+<form action="/sologame" method="get">
+  <input type="submit" value="Try Again!" name="try_again"/>
+</form>

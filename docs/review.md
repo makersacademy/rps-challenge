@@ -123,7 +123,7 @@ to ensure the user interface logic is correct.
 
 ```ruby
 feature 'Playing the game' do
-  scenario "When I submit 'Rock' I am told if I have won" do
+  scenario "When I submit 'rock' I am told if I have won" do
     allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
     visit '/'
     fill_in('name', with: 'Philip')
@@ -190,7 +190,7 @@ in `views/win.erb`:
 
 Long `if` and `elsif` trees are very difficult to read and nested `if` statements require too much working memory for a reader to quickly scan.
 
-There are a number of approaches to the game logic of Rock Paper Scissors,  e.g.:
+There are a number of approaches to the game logic of rock paper scissors,  e.g.:
 
 - Use a hash to map the rules:
 
@@ -310,7 +310,7 @@ If you have something like this:
 
 ```ruby
 def weapons
-  ['Rock', 'Paper', 'Scissors']
+  ['rock', 'paper', 'scissors']
 end
 ```
 

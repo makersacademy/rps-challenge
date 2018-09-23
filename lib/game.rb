@@ -5,13 +5,14 @@ class Game
     @player2 = player2
     @winner = nil
     @player_one_wins = [
-      "Rock-Paper",
-      "Paper-Rock",
-      "Scissors-Paper"
+      "rock-paper",
+      "paper-rock",
+      "scissors-paper"
     ]
   end
 
   def find_winner
+    return @winner = "Draw" if player1.choice == player2.choice
     if player_one_wins.include?("#{player1.choice}-#{player2.choice}")
       @winner = player1.name
     else

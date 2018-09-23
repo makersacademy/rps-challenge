@@ -16,7 +16,7 @@ Knowing how to build web applications is getting us almost there as web develope
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Your task is to provide a _rock, paper, scissors_ game for them so they can play on the web with the following user stories:
 
 ```sh
 As a marketeer
@@ -47,15 +47,15 @@ As usual please start by
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+## Bonus level 2: rock, paper, scissors, Spock, Lizard
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/rock-paper-scissors-lizard-Spock_ )
 
 ## Basic Rules
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+- rock beats scissors
+- scissors beats paper
+- paper beats rock
 
 In code review we'll be hoping to see:
 
