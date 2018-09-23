@@ -1,7 +1,7 @@
 .button {
     display: inline-block;
     width: 120px;
-    background-color: #9900CC;
+    background-color: #8A2BE2 ;
     border: 2px solid white;
     color: white;
     text-decoration: none;
@@ -30,15 +30,22 @@ body a {
     color: white;
     text-decoration: none;
     font-family: "Courier New", Courier, monospace;
-    font-size: 60px;
+    font-size: 65px;
     text-align: center;
-    margin: 70px;
+    margin: 60px;
     display: block;
 }
 
 h1 {
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
+
+}
+
+.im {
+  position: relative;
+    top: -140px;
+    right: -60px;
 }
 
 
@@ -48,20 +55,21 @@ form {
 
 p {
   text-align: center;
-  font-size: 80px;
+  font-size: 70px;
 }
 h2 {
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
 }
 
 form input[type='text'] {
-    border: 2px solid #FF66FF;
+    border: 2px solid #8A2BE2 ;
     font-family: "Courier New", Courier, monospace;
     font-size: 16px;
     text-align: center;
     width: 200px;
     padding: 3px;
-    margin-top: 20px;
+    margin-top: 40px;
+    background-color: white;
 
 }
