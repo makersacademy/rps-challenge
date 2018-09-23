@@ -2,6 +2,7 @@ require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/game'
 
+# This class is just the wrapper for the website.
 class RockPaperScissors < Sinatra::Base
 
   enable :sessions
@@ -25,12 +26,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player_names' do
-    player_1 = Player.new(params[:player_name_1])
+    first_player = Player.new(params[:player_name_1])
     if session[:no_players] == 1
-      session[:game] = Game.new(player_1)
+      session[:game] = Game.new(first_player)
     else
-      player_2 = Player.new(params[:player_name_2])
-      session[:game] = Game.new(player_1, player_2: player_2)
+      second_player = Player.new(params[:player_name_2])
+      session[:game] = Game.new(first_player, player_2: second_player)
     end
     redirect '/play'
   end
