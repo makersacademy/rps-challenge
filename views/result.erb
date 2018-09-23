@@ -10,5 +10,9 @@
     <h2>Your opponents choice of weapon: <%= @game.computer.choice %>
       <br>
     <h3><%= @game.result %></h3>
+
+    <form action="/play" method="post">
+      <input type="submit" name="submit" value="Dare to play again?">
+    </form>
   </body>
 </html>

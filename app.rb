@@ -25,6 +25,11 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+ post '/play' do
+    @player = @game.player
+    redirect '/play'
+  end
+
   post '/choice' do
     @game.computer.choice = Computer.new.rand_choice
     @game.player.choice = params[:choice].downcase.to_sym
