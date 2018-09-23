@@ -51,8 +51,7 @@ $ rackup
 NOTES:
 
 I have not yet used helpers but I intend to use it if this is extended.
-
-
+I intend to refactor my code more. I want to make my controller more thinner.
 
 SCREENSHOTS:
 
@@ -72,6 +71,7 @@ https://www.dropbox.com/s/b9iwmmjgepjc844/Screen%20Shot%202018-09-22%20at%2009.1
 https://www.dropbox.com/s/vd9ghxfs2647fq0/Screen%20Shot%202018-09-22%20at%2009.11.57.png?dl=0
 https://www.dropbox.com/s/1tkw8h7j0dr8hs8/Screen%20Shot%202018-09-22%20at%2020.17.14.png?dl=0
 https://www.dropbox.com/s/rvrn7mk62pmwabh/Screen%20Shot%202018-09-22%20at%2009.12.53.png?dl=0
+
 
 ## Bonus level 1: Multiplayer
 
