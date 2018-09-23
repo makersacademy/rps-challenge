@@ -7,8 +7,8 @@ class Game
   RULES = { rock: :scissors, paper: :rock, scissors: :paper }
 
   def initialize(player, computer = Computer.new)
-   @player = player
-   @computer = computer
+    @player = player
+    @computer = computer
   end
 
   def self.create(player, computer)
