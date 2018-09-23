@@ -19,7 +19,6 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @game = Game.new
     @decision = params[:decision]
     erb @game.result
   end

@@ -9,18 +9,8 @@ class Game
     Scissors: :Paper
   }
 
-  def result
-  end
-
-  def win
-    'Congratulations, you won!'
-  end
-
-  def draw
-    "It's a draw!"
-  end
-
-  def lose
-    "Unlucky, you lost!"
+  def player_move(weapon)
+    fail 'not a possible weapon' unless OPTIONS.include? weapon
+    @player_move = weapon
   end
 end

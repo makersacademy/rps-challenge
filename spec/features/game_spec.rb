@@ -20,21 +20,9 @@ describe Game do
     end
   end
 
-  describe '#win' do
-    it 'Tells the player they won' do
-      expect(game.win).to eq('Congratulations, you won!')
-    end
-  end
-
-  describe '#draw' do
-    it 'Tells the player they drew' do
-      expect(game.draw).to eq("It's a draw!")
-    end
-  end
-
-  describe '#lose' do
-    it 'Tells the player they lost' do
-      expect(game.lose).to eq("Unlucky, you lost!")
+  describe '#player_move' do
+    it "raises error" do
+      expect { Game::OPTIONS.exclude? game.player_move(Game::OPTIONS) }.to raise_error ('not a possible weapon')
     end
   end
 end
