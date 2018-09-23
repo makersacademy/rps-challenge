@@ -5,12 +5,12 @@
     <title>Battle Time!</title>
   </head>
   <body>
-    <h1>Welcome <%= @player %>!</h1>
+    <h1>Welcome <%= @game.player.name %>!</h1>
     <h2>Choose your deadly weapon:</h2>
     <form action="/choice" method="post">
-    <input type = "submit" name="choice" value = "Rock"/>
-    <input type = "submit" name="choice" value = "Paper"/>
-    <input type = "submit" name="choice" value = "Scissors"/>
+    <input type ="submit" name="choice" value ="Rock"/>
+    <input type ="submit" name="choice" value ="Paper"/>
+    <input type ="submit" name="choice" value ="Scissors"/>
     </form>
   </body>
 </html>
