@@ -14,7 +14,7 @@ describe Game do
   end
 
   context "#store_move" do
-    it "calls Player#store_move" do
+    it "calls Player#store_move (single_player)" do
       expect(player1).to receive(:store_move)
       game.store_move("Rock")
     end
@@ -41,6 +41,28 @@ describe Game do
     it "calculates who won(Draw)" do
       allow(referee).to receive(:decision).and_return(:Draw)
       expect(game.who_won).to eq :Draw
+    end
+  end
+end
+
+describe Game do
+
+  let(:player1) { double :Player, move: :rock }
+  let(:player2) { double :Player, move: :scissors }
+  let(:referee) { double :RPSReferee, decision: 0 }
+  subject(:game) { described_class.new(player1, player2, referee) }
+
+  context "#initialize" do
+    it "should store players in an Array" do
+      expect(game.players).to eq [player1, player2]
+    end
+  end
+
+  context "#store_move" do
+    it "calls Player#store_move (multiplayer)" do
+      expect(player1).to receive(:store_move)
+      expect(player2).to receive(:store_move)
+      game.store_move("Rock","Rock")
     end
   end
 end
