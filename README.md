@@ -58,61 +58,16 @@ includes
 No rubocop offenses, 100% overall test coverage according to Rspec.
 
 **Notes**
-takeaway.rb includes 'inspect' method:
 ```
-  def inspect
-    "Takeaway"
-  end
 ```
-Uncomment to make IRB output easier to read.
 
 **TO DO**
 
-- Unit tests for Twilio / SMS order confirmation (sms_sender_spec.rb)
-- refactoring (including removing numbers from specs)
-- tidy up order.rb methods to ensure single responsibility (formatting should be done somewhere else - maybe in takeaway)
-- fix heredoc indentation problem
-- integrate use of files to load menu items into menu
+- Allow two players to play against each other
 
-Notes on use in IRB
+Notes on use
 ------------------
 ```
-2.5.0 :001 > require './lib/order.rb'
- => true
-2.5.0 :002 > require './lib/menu.rb'
- => true
-2.5.0 :003 > require './lib/menu_item.rb'
- => false
-2.5.0 :004 > require './lib/takeaway.rb'
- => true
-2.5.0 :005 > ta = Takeaway.new
- => #<Takeaway:0x00007ffe4a01c138 @menu=#<Menu:0x00007ffe49153e30 @items=[#<MenuItem:0x00007ffe49152f08 @name="Pizza", @price=8>, #<MenuItem:0x00007ffe49151a68 @name="Burger", @price=9>, #<MenuItem:0x00007ffe491518b0 @name="Chips", @price=4.5>]>, @order=#<Order:0x00007ffe49151770 @basket={}>>
-2.5.0 :006 > ta.read_menu
-1. Pizza: £8.00
-2. Burger: £9.00
-3. Chips: £4.50
- => [#<MenuItem:0x00007ffe49152f08 @name="Pizza", @price=8>, #<MenuItem:0x00007ffe49151a68 @name="Burger", @price=9>, #<MenuItem:0x00007ffe491518b0 @name="Chips", @price=4.5>]
-2.5.0 :007 > ta.order_item('Chips', 2)
- => 2
-2.5.0 :008 > ta.order_item('Pizza')
- => 1
-2.5.0 :009 > ta.order_item('Curry', 2)
-RuntimeError (This dish is not on the menu!)
-2.5.0 :010 > ta.show_order_basket
-Chips: £4.50 x 2
-Pizza: £8.00 x 1
- => {#<MenuItem:0x00007ffe491518b0 @name="Chips", @price=4.5>=>2, #<MenuItem:0x00007ffe49152f08 @name="Pizza", @price=8>=>1}
-2.5.0 :011 > ta.show_order_subtotals
-Chips x 2: £9.00
-Pizza x 1: £8.00
- => {#<MenuItem:0x00007ffe491518b0 @name="Chips", @price=4.5>=>2, #<MenuItem:0x00007ffe49152f08 @name="Pizza", @price=8>=>1}
-2.5.0 :012 > ta.show_order_total
-Total: £17.00
- => nil
-2.5.0 :013 > ta.checkout(15)
-RuntimeError (Totals do not match!)
-2.5.0 :014 > ta.checkout
-You will receive a confirmation text shortly.
 ```
 
 User stories
