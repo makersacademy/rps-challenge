@@ -39,3 +39,6 @@ Approach
 - I then added 2 options to the game: lizard and Spock
 - I added the option to start a new game after a game ends
 - Having finished implementing its functionality ,I used css to make it look nice
+
+
+[Play now!](https://stark-journey-20582.herokuapp.com/)
