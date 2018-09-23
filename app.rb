@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/decision'
 require './lib/winner'
+require './lib/player'
 
 class Challenge < Sinatra::Base
   enable :sessions
@@ -37,6 +38,23 @@ class Challenge < Sinatra::Base
     @computer = ["Rock", "Paper", "Scissors"].sample
     @winner = Winner.new(@choice, @computer)
     erb :winner
+  end
+
+  post '/2player' do
+    erb :face_off
+  end
+
+  post '/names' do
+    p params
+    session[:player_1] = Player.new(params[:player_1])
+    session[:player_2] = Player.new(params[:player_2])
+    redirect '/2playergame'
+  end
+
+  get '/2playergame' do
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    erb :contestants
   end
 
 end
