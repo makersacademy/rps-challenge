@@ -1,5 +1,4 @@
 require_relative '../app.rb'
-require_relative '../controller/multiplayer.rb'
 require_relative './features/web_helpers'
 require 'capybara/rspec'
 require 'simplecov'
