@@ -24,11 +24,13 @@ class Game
 
   def winner
     raise 'Game is not yet over' if game_not_over?
+    
     players.index(@victory_generator.winner(players))
   end
 
   def victory_type
     raise 'Game is not yet over' if game_not_over?
+
     @victory_generator.victory_type(players)
   end
 
@@ -36,5 +38,5 @@ class Game
 
   def game_not_over?
     players.map { |player| player.move }.include?(nil)
-  end 
+  end
 end
