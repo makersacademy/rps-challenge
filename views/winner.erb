@@ -1,0 +1,10 @@
+<font size="10" face="courier" color="blue">
+  <p> <% if @moves.winner? %>
+    Well done you won!
+      <%= else %>
+      Unlucky you lost!
+      <% end %>
+    </p>
+
+<h2> <%= @name %> attacked with <%= @user_move %> </h2>
+<h2> Your opponent attacked with <%= session[:moves].computer %> </h2>

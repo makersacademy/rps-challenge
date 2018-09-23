@@ -7,4 +7,8 @@ describe Player do
     expect(subject.name).to eq('Jamie')
   end
 
+  it 'should have a move' do
+    expect(subject.user_move("Paper")).to eq('Paper')
+  end
+
 end
