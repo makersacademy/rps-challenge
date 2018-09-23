@@ -1,7 +1,32 @@
-<h1><%= @name %> vs Computer</h1>
+<h1><%= @player1_name %> vs <%= @player2_name %></h1>
 
+<% if @play_mode == :single_player%>
 <form action="/store_move" method="post">
-  <button type="submit" name="rock">Rock</button>
-  <button type="submit" name="paper">Paper</button>
-  <button type="submit" name="scissors">Scissors</button>
+  <label for="player1_move"><%= @player1_name %>
+    <select name="player1_move">
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+    </select>
+  </label>
+  <button type="submit">Submit</button>
 </form>
+<% else %>
+<form action="/store_move" method="post">
+  <label for="player1_move"><%= @player1_name %>
+    <select name="player1_move">
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+    </select>
+  </label>
+  <label for="player2_move"><%= @player2_name %>
+    <select name="player2_move">
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+    </select>
+  </label>
+  <button type="submit">Submit</button>
+</form>
+<% end %>

@@ -7,7 +7,8 @@ end
 
 def from_welcome_to_winner
   move_past_welcome
-  click_button "Rock"
+  select "Rock", :from => "player1_move"
+  click_button "Submit"
 end
 
 def move_past_welcome_multiplayer
