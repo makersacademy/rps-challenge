@@ -34,9 +34,9 @@ $ rackup
 
 STATUS
 -----
-Allows users to play a game of Rock, Paper, Lizard, Scissors, Spock against a computer using a web interface.
+Allows users to play a game of Rock, Paper, Lizard, Scissors, Spock against a computer or another human using a web interface.
 
-This version completes all basic user stories and adds choices 'Lizard' and 'Spock' to the original weapons (Bonus Level 2).
+This version completes all basic user stories and adds choices 'Lizard' and 'Spock' to the original weapons (Bonus Level 2).  The player can choose between a human opponent or a computer opponent (Bonus Level 1).
 
 Controller
 includes
@@ -45,10 +45,18 @@ includes
 - web_helbers.rb to automate common steps in feature_spec.rb
 
 Views
-include
+both
 - index.erb
+
+for single-player
+- singleplayer.erb
 - play.erb
 - result.erb
+
+for multi-player
+- multiplayer.erb
+- play2_p2.erb
+- result_mp.erb
 
 Model
 includes
@@ -64,7 +72,7 @@ No rubocop offenses, 100% overall test coverage according to Rspec.
 
 **TO DO**
 
-- Allow two players to play against each other
+- Revisit Weapons class.  Currently injected in player, not ideal.  Possibly better in Game class?  Also, consider making weapons a constant.
 
 Notes on use
 ------------------

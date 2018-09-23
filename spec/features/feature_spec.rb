@@ -10,71 +10,120 @@ describe 'Features' do
     end
   end
 
-# As a marketeer
-# So that I can see my name in lights
-# I would like to register my name before playing an online game
-# the marketeer should be able to enter their name before the game
-
-  feature 'Enter name' do
-    scenario 'Player submits their name' do
-      sign_in
+  feature 'Choose opponent' do
+    scenario 'Player chooses between human or computer opponent' do
+      visit('/')
       expect(page.status_code).to eq(200)
-      expect(page).to have_content 'Choose your weapon, Freya!'
+      expect(page).to have_content 'Who would you like to play with?'
     end
   end
 
-# As a marketeer
-# So that I can enjoy myself away from the daily grind
-# I would like to be able to play rock/paper/scissors
-# the marketeer will be presented the choices (rock, paper and scissors)
+  context 'Computer opponent' do
 
-  feature 'Get a choice of attacks' do
-    scenario 'Player can chose between rock, paper or scissors' do
-      sign_in
-      expect(page.status_code).to eq(200)
-      ['Rock', 'Paper', 'Scissors'].each do |weapon|
-        expect(page).to have_selector("input[type=submit][value='#{weapon}']")
+    feature 'Player gets a human or computer opponent' do
+      scenario 'Player has chosen to play with a computer opponent' do
+        visit('/')
+        click_button 'Computer opponent'
+        expect(page.status_code).to eq(200)
+        expect(page).to have_content 'You will play against the computer!'
       end
-      # expect(page).to have_selector("input[type=submit][value='Rock']")
-      # expect(page).to have_selector("input[type=submit][value='Paper']")
-      # expect(page).to have_selector("input[type=submit][value='Scissors']")
     end
+
+    feature 'Enter name' do
+      scenario 'Player submits their name' do
+        sign_in_and_choose_computer
+        expect(page.status_code).to eq(200)
+        expect(page).to have_content 'Choose your weapon, Freya!'
+      end
+    end
+
+    feature 'Get a choice of attacks' do
+      scenario 'Player can chose between rock, paper or scissors' do
+        sign_in_and_choose_computer
+        expect(page.status_code).to eq(200)
+        ['Rock', 'Paper', 'Scissors'].each do |weapon|
+          expect(page).to have_selector("input[type=submit][value='#{weapon}']")
+        end
+      end
+    end
+
+    feature 'Choose an attack' do
+      scenario "Player selects 'Rock'" do
+        sign_in_and_choose_computer
+        click_button('Rock')
+        expect(page.status_code).to eq(200)
+        expect(page).to have_content("Freya has chosen 'Rock'")
+      end
+    end
+
+    # test for specific content? regex?
+    feature 'Computer chooses an attack' do
+      scenario 'Computer selects Scissors' do
+        sign_in_and_choose_computer
+        click_button('Rock')
+        expect(page.status_code).to eq(200)
+        expect(page).to have_content("Computer - Hal has chosen")
+      end
+    end
+
+    feature 'A winner will be declared' do
+      scenario "When I submit 'Rock' I am told if I have won" do
+        allow_any_instance_of(Weapons).to receive(:random_select).and_return(:scissors)
+        sign_in_and_choose_computer
+        click_button 'Rock'
+        expect(page.status_code).to eq(200)
+        expect(page).to have_content "Freya is the winner"
+      end
+    end
+
   end
 
-# the marketeer can choose one option
-# the game will choose a random option
+  context 'Human opponent' do
 
-  feature 'Choose an attack' do
-    scenario "Player selects 'Rock'" do
-      sign_in
-      click_button('Rock')
-      expect(page.status_code).to eq(200)
-      expect(page).to have_content("Freya has chosen 'Rock'")
+    feature 'Player gets a human or computer opponent' do
+      scenario 'Player has chosen to play with a computer opponent' do
+        visit('/')
+        click_button 'Human opponent'
+        expect(page.status_code).to eq(200)
+        expect(page).to have_content 'You will play against each other!'
+      end
     end
-  end
 
-  # test for specific content? regex?
-  feature 'Computer chooses an attack' do
-    scenario 'Computer selects Scissors' do
-      sign_in
-      click_button('Rock')
-      expect(page.status_code).to eq(200)
-      expect(page).to have_content("Computer - Hal has chosen")
+    feature 'Enter names' do
+      scenario 'Player 1 submits their name' do
+        sign_in_and_choose_human
+        expect(page.status_code).to eq(200)
+        expect(page).to have_content 'Choose your weapon, Freya!'
+      end
+      scenario 'Player 2 submits their name' do
+        sign_in_and_choose_human
+        click_button('Spock')
+        expect(page.status_code).to eq(200)
+        expect(page).to have_content 'Choose your weapon, Ayerf!'
+      end
     end
-  end
 
-  feature 'A winner will be declared' do
-    scenario "When I submit 'Rock' I am told if I have won" do
-      allow_any_instance_of(Weapons).to receive(:random_select).and_return(:scissors)
-      sign_in
-      click_button 'Rock'
-      # Save page HTML to file
-      # file = File.new('page.html', 'w')
-      # file.write page.body + "\n"
-      # file.close
-      expect(page.status_code).to eq(200)
-      expect(page).to have_content "Freya is the winner"
+    feature 'Choose an attack' do
+      scenario "Player 2 selects 'Rock'" do
+        sign_in_and_choose_human
+        click_button('Spock')
+        click_button('Rock')
+        expect(page.status_code).to eq(200)
+        expect(page).to have_content("Freya has chosen 'Spock'")
+        expect(page).to have_content("Ayerf has chosen 'Rock'")
+      end
     end
+
+    feature 'A winner will be declared' do
+      scenario "After player 2 has made a choice we are told who has won" do
+        sign_in_and_choose_human
+        click_button('Spock')
+        click_button('Rock')
+        expect(page.status_code).to eq(200)
+        expect(page).to have_content "Freya is the winner"
+      end
+    end
+
   end
 
 end
