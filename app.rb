@@ -1,15 +1,22 @@
-require 'sinatra'
-set :session_secret, 'super secret'
+require 'sinatra/base'
 
-get '/' do
-  erb :index
-end
+class RPS <Sinatra::Base
 
-get '/begin_game' do
-  erb :begin_game
-end
+  get '/' do
+    @name = params[:player]
+    erb :index
+  end
 
-get '/play' do
-  @computer_chooses = ["Rock", "Paper", "Scissors"].sample
-  erb :play
+  post '/begin_game' do
+    @user_chooses = params[:user_chooses]
+    erb :begin_game
+  end
+
+  post '/play' do
+    @user_chooses = params[:user_chooses]
+    @computer_chooses = ["rock", "paper", "scissors"].sample
+    erb :play
+  end
+
+  run! if app_file == $0
 end
