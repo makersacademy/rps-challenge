@@ -5,13 +5,18 @@ class Computer < Player
     @name = "Computer"
   end
 
-  # how to avoid parameter?
-  def move=(_ignore)
-    @move = choice
+  # Is it a bad idea to change setter methods like this?
+  def move=(list)
+    @move = choice(list)
+  end
+
+  def computer?
+    true
   end
 
   private
-  def choice
-    [:rock, :paper, :scissors].sample
+  # I made the sample method private in order to stub it. is that correct?
+  def choice(options)
+    options.sample
   end
 end
