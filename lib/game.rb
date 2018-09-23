@@ -3,6 +3,12 @@ require_relative 'player'
 class Game
   attr_reader :player_1, :player_2, :options
 
+  RULES = {
+    paper: :rock,
+    rock: :scissors,
+    scissors: :paper
+  }
+
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
@@ -18,17 +24,26 @@ class Game
 
   def result(option_1, option_2)
     return "tie" if option_1 == option_2
-    case option_1
-      when "paper"
-        option_2 == "rock" ? player_1 : player_2
-      when "rock"
-        option_2 == "scissors" ? player_1 : player_2
-      when "scissors"
-        option_2 == "paper" ? player_1 : player_2
-    end
+    RULES[option_1.to_sym] == option_2.to_sym ? player_1 : player_2
   end
 
   def computer_option
     player_2.random_option
+  end
+
+  def player_1_option
+    player_1.chosen_option
+  end
+
+  def player_2_option
+    player_2.chosen_option
+  end
+
+  def choose_player_1_option(option)
+    player_1.choose_option(option)
+  end
+
+  def choose_player_2_option(option)
+    player_2.choose_option(option)
   end
 end

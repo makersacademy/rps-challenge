@@ -1,5 +1,5 @@
 class Computer < Player
   def random_option
-    @chosen_option = @options.sample
+    OPTIONS.sample
   end
 end

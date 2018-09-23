@@ -4,11 +4,13 @@
   <head>
     <meta charset="UTF-8">
     <title>Results</title>
+    <base href="/">
+    <link rel="stylesheet" href="/styles.css">
   </head>
 
   <body>
-      <%= @game.player_1.name %> chose <%= @option_1 %></br>
-      The Machine chose <%= @option_2 %> </br>
+      <%= @game.player_1.name %> chose <%= @game.player_1_option %></br>
+      The Machine chose <%= @game.player_2_option%> </br>
 
       <% if @result == "tie" %>
         It's a tie!

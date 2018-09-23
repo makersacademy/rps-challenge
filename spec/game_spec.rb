@@ -57,4 +57,32 @@ describe Game do
       game.computer_option
     end
   end
+
+  describe "#player_1_option" do
+    it "should return player 1's chosen option" do
+      expect(game.player_1).to receive(:chosen_option)
+      game.player_1_option
+    end
+  end
+
+  describe "#player_2_option" do
+    it "should return player 2's chosen option" do
+      expect(game.player_2).to receive(:chosen_option)
+      game.player_2_option
+    end
+  end
+
+  describe "#choose_player_1_option" do
+    it "should assign an chosen option to player 1" do
+      expect(game.player_1).to receive(:choose_option).with(anything)
+      game.choose_player_1_option("paper")
+    end
+  end
+
+  describe "#choose_player_2_option" do
+    it "should assign an chosen option to player 2" do
+      expect(game.player_2).to receive(:choose_option).with(anything)
+      game.choose_player_2_option("paper")
+    end
+  end
 end

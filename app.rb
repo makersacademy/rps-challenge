@@ -25,18 +25,14 @@ class RockPaperScissors < Sinatra::Base
 
   post '/options' do
     @game = Game.instance
-    option_1 = params[:chosen_option]
-    option_2 = @game.computer_option
-    session[:option_1] = option_1
-    session[:option_2] = option_2
+    @game.choose_player_1_option(params[:chosen_option])
+    @game.choose_player_2_option(@game.computer_option)
     redirect '/result'
   end
 
   get '/result' do
     @game = Game.instance
-    @option_1 = session[:option_1]
-    @option_2 = session[:option_2]
-    @result = @game.result(@option_1, @option_2)
+    @result = @game.result(@game.player_1_option, @game.player_2_option)
     erb :result
   end
 

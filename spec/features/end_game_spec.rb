@@ -2,7 +2,7 @@ require 'spec_helper'
 require './app'
 
 feature "End game" do
-  scenario "Player is able to choose an option" do
+  scenario "Thanks player" do
     sign_in_and_play
     click_button "Rock"
     click_button "End game"

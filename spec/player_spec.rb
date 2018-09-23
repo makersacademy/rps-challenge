@@ -10,9 +10,9 @@ describe Player do
   end
 
   describe "#choose_option" do
-    it "should assign new chosen option " do
-      player.choose_option("rock")
-      expect(player.chosen_option).to eq "rock"
+    it "should assign a chosen option" do
+      player.choose_option("paper")
+      expect(player.chosen_option).to eq "paper"
     end
   end
 end

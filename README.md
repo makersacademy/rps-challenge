@@ -1,24 +1,44 @@
-# RPS Challenge
+RPS Challenge
+==================
+This is my proposal to build the Makers Academy Weekend 3 Challenge: Rock, Paper, Scissors
 
-Instructions
+Setup
 -------
+1. Download this repository
+2. Run _bundle install_ in the command line to make sure all gems are installed
+3. Run _rackup_ in the command line
+4. Go to http://localhost:9292 in your browser
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task
+What is this challenge about?
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
+The program is a small web app to play _rock, paper, scissors_ online against the computer:
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+- You can enter your name before starting
+- You can choose one of the options to play: rock, paper, scissors
+- The computer will choose an option randomly and a winner will be declared
+- After that, you can choose if you want to end the game or if you want to play again
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
-```sh
+Approach to solve the challenge
+-------
+To solve the challenge, we have implemented the following structure:
+- A lib folder with the models (classes): the game, the player and the computer (subclass of player). The game is in charge of declaring the result of the game according to the specified rules and chosen options. The player is responsible for choosing the option to play, and the computer is a subclass of player which can choose an option randomly.
+- A views folder with four files for four different views: index, play, result and end.
+- A public folder with the .css file
+- An app.rb file as the controller
+- A spec folder with all ours tests (features and unit tests)
+
+Challenge instructions
+-------
+
+Full instructions [here](https://github.com/makersacademy/rps-challenge)
+
+User Stories
+-----
+
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -27,60 +47,3 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
