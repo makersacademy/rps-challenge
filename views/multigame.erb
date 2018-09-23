@@ -1,20 +1,13 @@
 <h1><%= player1.name.capitalize %> vs <%= player2.name.capitalize %>!</h1>
 
+<% if flipped_coin %>
+  <h2>It's <%= flipped_coin.name.capitalize %>'s turn. </h2>
 
-<% if flip_coin != nil %>
-  <h2> It's <%= flip_coin.capitalize %>'s turn! </h2>
-  <form action="/rock" method="post">
-    <input type="submit" value="Rock">
+  <form action="/first-choice" method="post">
+    <input type="submit" name="Rock" value="Rock">
+    <input type="submit" name="Paper" value="Paper">
+    <input type="submit" name="Scissors" value="Scissors">
   </form>
-
-  <form action="/paper" method="post">
-    <input type="submit" value="Paper">
-  </form>
-  
-  <form action="/scissors" method="post">
-    <input type="submit" value="Scissors">
-  </form>
-
 <% else %>
 
   <form action="/flip-coin" method="post">
@@ -22,3 +15,5 @@
   </form>
 
 <% end %>
+
+

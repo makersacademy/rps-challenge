@@ -13,8 +13,10 @@ describe RockPaperScissors do
     it "allow person to choose." do
       multiplayer_game_started
       click_button "Rock"
-      expect(page).to have_content("It's not your turn")
+      expect(page).to have_content("Patrick's Turn!")
     end
+
+    
     
   end
 end

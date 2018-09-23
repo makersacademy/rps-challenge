@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player.rb'
 require_relative './lib/game.rb'
+require_relative './lib/multiplayer.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -50,24 +51,34 @@ class RockPaperScissors < Sinatra::Base
     erb :mama
   end
 
+  # Multiplayer -- 
   get '/multiplayer' do
     erb :multiplayer
   end
 
   post '/multiplayer-game' do
-    session[:player1] = Player.new(params[:player1])
-    session[:player2] = Player.new(params[:player2])
-    session[:game] = Game.new
+    session[:multiplayer_game] = MultiplayerGame.new(Player.new(params[:player1]), Player.new(params[:player2]))
     redirect '/multiplayer-game'
   end
 
   post '/flip-coin' do
-    session[:flipped_coin] = [session[:player1].name, session[:player2].name].sample
+    session[:flipped_coin] = session[:multiplayer_game].flip_coin
     redirect '/multiplayer-game'
   end
 
   get '/multiplayer-game' do
-    erb :multigame, { locals: { player1: session[:player1], player2: session[:player2], flip_coin: session[:flipped_coin] } }
+    erb :multigame, { locals: { player1: session[:multiplayer_game].player1, player2: session[:multiplayer_game].player2, flipped_coin: session[:flipped_coin] } }
+  end
+
+  post '/first-choice' do
+    session[:choice] = params[:name]
+    session[:flipped_coin] = false
+    redirect '/player2-move'
+  end
+
+  get '/player2-move' do
+    @player1 = session[:choice]
+    erb :second_move
   end
   
   run! if app_file == $0
