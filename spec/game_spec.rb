@@ -28,4 +28,74 @@ describe Game do
       expect(game_1).to be game_2
     end
   end
+
+  describe '#round_outcome' do
+    context 'player wins' do
+      it 'rock blunts scissors' do
+        allow(player).to receive(:choice).and_return(:rock)
+        allow(computer).to receive(:choice).and_return(:scissors)
+        expect(game.round_outcome).to eq 'You win!'
+      end
+
+      it 'paper wraps rock' do
+        allow(player).to receive(:choice).and_return(:paper)
+        allow(computer).to receive(:choice).and_return(:rock)
+        expect(game.round_outcome).to eq 'You win!'
+      end
+
+      it 'scissors cut paper' do
+        allow(player).to receive(:choice).and_return(:scissors)
+        allow(computer).to receive(:choice).and_return(:paper)
+        expect(game.round_outcome).to eq 'You win!'
+      end
+    end
+
+    context 'player loses' do
+      it 'rock blunts scissors' do
+        allow(computer).to receive(:choice).and_return(:rock)
+        allow(player).to receive(:choice).and_return(:scissors)
+        expect(game.round_outcome).to eq 'You lose!'
+      end
+
+      it 'paper wraps rock' do
+        allow(computer).to receive(:choice).and_return(:paper)
+        allow(player).to receive(:choice).and_return(:rock)
+        expect(game.round_outcome).to eq 'You lose!'
+      end
+
+      it 'scissors cut paper' do
+        allow(computer).to receive(:choice).and_return(:scissors)
+        allow(player).to receive(:choice).and_return(:paper)
+        expect(game.round_outcome).to eq 'You lose!'
+      end
+    end
+
+    context 'its a draw' do
+      it 'rock vs. rock' do
+        allow(computer).to receive(:choice).and_return(:rock)
+        allow(player).to receive(:choice).and_return(:rock)
+        expect(game.round_outcome).to eq "It's a draw!"
+      end
+
+      it 'paper vs. paper' do
+        allow(computer).to receive(:choice).and_return(:paper)
+        allow(player).to receive(:choice).and_return(:paper)
+        expect(game.round_outcome).to eq "It's a draw!"
+      end
+
+      it 'scissors vs. scissors' do
+        allow(computer).to receive(:choice).and_return(:scissors)
+        allow(player).to receive(:choice).and_return(:scissors)
+        expect(game.round_outcome).to eq "It's a draw!"
+      end
+    end
+
+    context 'unknown outcome' do
+      it 'banana vs. tangerine' do
+        allow(computer).to receive(:choice).and_return(:banana)
+        allow(player).to receive(:choice).and_return(:tangerine)
+        expect { game.round_outcome }.to raise_error
+      end
+    end
+  end
 end
