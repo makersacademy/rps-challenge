@@ -8,10 +8,10 @@ class Player
   end
 
   def action(move)
-    if move != ("Rock" || "Paper" || "Scissors")
-      @player_move = "Error"
-    else
+    if ["Rock", "Paper", "Scissors"].include?(move)
       @player_move = move
+    else
+      @player_move = "Error"
     end
   end
 

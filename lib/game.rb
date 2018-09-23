@@ -23,7 +23,7 @@ class Game
   end
 
   def calculate
-    #return "That is not a valid move. I am case sensitive. Please try again." if @player.player_move == "error"
+    return "That is not a valid move. I am case sensitive. Please try again." if @player.player_move == "Error"
     return "It's A Draw!" if @player.player_move == "Rock" && @game_move == "Rock"
     return "You win!" if @player.player_move == "Rock" && @game_move == "Scissors"
     return "You lose!" if @player.player_move == "Rock" && @game_move == "Paper"

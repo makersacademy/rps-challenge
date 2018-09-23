@@ -16,12 +16,9 @@ describe Player do
       expect(new_player.player_move).to eq("Rock")
     end
 
-    it "saves the player move to error if an incorrect value is entered" do
-      new_player.action("scissors")
-      expect(new_player.player_move).to eq("Error")
+    it "saves the player move as error if wrong value entered" do
+      new_player.action("rock")
+      expect(new_player.player_move).to eq ("Error")
     end
-
   end
-
-
 end

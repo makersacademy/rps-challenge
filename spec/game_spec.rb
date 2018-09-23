@@ -15,6 +15,17 @@ describe Game do
 
   describe "#calculate" do
 
+    context "Player makes an error" do
+      let(:player) { double :player_class, :player_move => "Error" }
+      let(:game) { described_class.new(player) }
+
+      it "asks the user to try again" do
+
+        player.player_move
+        expect(game.calculate).to eq("That is not a valid move. I am case sensitive. Please try again.")
+      end
+     end
+
     context "Player moves Rock " do
 
       let(:player) { double :player_class, :player_move => "Rock" }
