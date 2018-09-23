@@ -5,7 +5,14 @@
 
 feature 'player can register their name' do
   scenario 'player should be shown the form to fill in and submit' do
-    sign_and_play
-    expect(page).to have_content "Bob vs. Sam"
+    two_players_sign_in
+    expect(page).to have_content "Welcome Bob and Welcome Sam"
+  end
+end
+
+feature 'player can register their name' do
+  scenario 'player should be shown the form to fill in and submit' do
+    one_player_sign_in
+    expect(page).to have_content "Welcome Bob and Welcome Computer"
   end
 end

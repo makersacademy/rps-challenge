@@ -3,25 +3,31 @@
 # I would like to be able to play rock/paper/scissors
 
 feature 'player can play "rock, paper and scissors"' do
-  scenario "when I submit 'rock' I get a message I whether I have lost" do
-    sign_and_play
+  scenario "when I submit 'rock' I get a message whether I have won" do
+    two_players_sign_in
+    visit('/select_game')
+    click_button('rps')
     choose('rock')
     click_button('Play')
-    visit('/choice')
-    choose('paper')
+    choose('scissors')
     click_button('Play')
-    expect(page).to have_content "Sorry - Bob you lost"
+    expect(page).to have_content "Bob has selected rock"
+    expect(page).to have_content "Sam has selected scissors"
+    expect(page).to have_content "Congratulations - Bob you won"
   end
 end
 
 feature 'player can play "rock, paper and scissors"' do
-  scenario "when I submit 'rock' I get a message I whether I have won" do
-    sign_and_play
-    choose('scissors')
+  scenario "when I submit 'rock' I get a message whether I have lost" do
+    two_players_sign_in
+    visit('/select_game')
+    click_button('rps')
+    choose('rock')
     click_button('Play')
-    visit('/choice')
     choose('paper')
     click_button('Play')
-    expect(page).to have_content "Congratulations - Bob you won"
+    expect(page).to have_content "Bob has selected rock"
+    expect(page).to have_content "Sam has selected paper"
+    expect(page).to have_content "Sorry - Bob you lost"
   end
 end

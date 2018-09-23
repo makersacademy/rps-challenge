@@ -15,15 +15,11 @@ h1 {
 }
 .button1 {padding: 14px 40px;}
 </style>
-<h1 style="font-weight: bold; color:Blue;"><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
-<br>
-<form action="/choice" method="post">
-  <h1><%= @game.player_1.name %> please select from one of the options </h1><br>
-  <div style= "font-size: 30px;">
-  <input  type="radio" id= 'rock' name="choices" value="rock">Rock<br>
-  <input  type="radio" id= 'paper' name="choices" value="paper">Paper<br>
-  <input type="radio" id= 'scissors' name="choices" value="scissors">Scissors<br>
-  <br>
-  <input class= "button button1" type="submit" value="Play">
-</div>
-</form>
+
+<h1 style="font-weight: bold; color:Blue;"><%= @game.player_1.name %> has selected <%= @game.player_1.weapon %></h1>
+<h1 style= "font-weight: bold; color:Green;"><%= @game.player_2.name %> has selected <%= @game.player_2.weapon %></h1>
+<% if @game.result(@game.player_1.weapon, @game.player_2.weapon) == :win %>
+ <font color="Red">Congratulations - <%= @game.player_1.name %> you won</font>
+<% else %>
+<font color="Red">Sorry - <%= @game.player_1.name %> you lost</font>
+<% end %>

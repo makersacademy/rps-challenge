@@ -1,0 +1,45 @@
+<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button1 {padding: 14px 40px;}
+</style>
+
+<% if @player_count == '1player' %>
+  <h3>Enter your name</h3>
+	<form action="/names" method="post">
+	<div>
+			<label for="player_1_name">Player 1 name:</label>
+			<input type="text" id="player_1_name" name="player_1_name">
+	</div>
+  <br>
+	<div class="button">
+			<button type="submit" value="Submit">Confirm your name</button>
+	</div>
+	</form>
+  <% else %>
+	<h3>Enter your names</h3>
+	<form action="/names" method="post">
+	<div>
+			<label for="player_1_name">Player 1 name:</label>
+			<input type="text" id="player_1_name" name="player_1_name">
+	</div>
+	<div>
+			<label for="player_2_name">Player 2 name:</label>
+			<input type="text" id="player_2_name" name="player_2_name">
+	</div>
+  <br>
+	<div class="button">
+			<button type="submit" value="Submit">Confirm your names</button>
+	</div>
+
+	</form>
+<% end %>

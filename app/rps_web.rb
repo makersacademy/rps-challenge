@@ -27,38 +27,68 @@ class RPSWeb < Sinatra::Application
     erb(:index)
   end
 
-  post '/names' do
-    player_1 = Player.new(params[:player_1_name])
-    add_player(player_1)
-    player_2 = Player.new(params[:player_2_name])
-    add_player(player_2)
-    @game = Game.create(player_1, player_2)
-    redirect '/play'
+  post '/player_count' do
+    session[:player_count] = params[:player_count]
+    redirect '/enter_names'
   end
 
-  get '/play' do
-    erb(:play)
+  get '/enter_names' do
+    @player_count = session[:player_count]
+    erb(:enter_names)
+  end
+
+  post '/names' do
+    params[:player_2_name].nil? ? player_2 = Computer.new() : player_2 = Player.new(params[:player_2_name])
+    player_1 = Player.new(params[:player_1_name])
+    session[:player2] = player_2
+    @game = Game.create(player_1, player_2)
+    redirect '/select_game'
+  end
+
+  get '/select_game' do
+    erb(:select_game)
+  end
+
+  post '/select_game' do
+    @game.game_mode = params[:game_mode]
+    redirect '/pick_weapon'
+  end
+
+  get '/pick_weapon' do
+    #@mode = session[:game_mode]
+    @player_count = session[:player_count]
+    erb(:pick_weapon)
   end
 
   post '/choice' do
-    @game.player_1.weapon = @game.player_choice(params[:choices])
-    erb(:choice)
+    @player_count = session[:player_count]
+    if @game.player_1.weapon.nil?
+      @game.player_1.weapon = params[:choices]
+      if @player_count == "1player"
+        redirect '/play'
+      else
+        redirect '/pick_weapon'
+      end
+    elsif @game.player_2.weapon.nil? && @player_count == "2players"
+        @game.player_2.weapon = params[:choices]
+        redirect '/play'
+      else
+        redirect '/play'
+    end
   end
 
-  get '/choice' do
-    erb(:choice)
-  end
-
-  post '/result' do
-    @game.player_2.weapon = @game.player_choice(params[:choices])
-    redirect '/result'
-  end
-
-  get '/result' do
-    @player_1_name = @game.player_1.name
-    @player_1_choice = @game.player_1.weapon
-    @player_2_choice = @game.player_2.weapon
-    erb(:result)
+  get '/play' do
+    if session[:player_count] == '1player'
+      @player_2 = session[:player2]
+      @game.game_mode
+      if @game.game_mode == 'rpsls'
+         @player_2_choice = @game.player_2.rpsls_weapon
+         @game.player_2.weapon = @player_2_choice
+      end
+        @player_2_choice = @player_2.weapon_select
+        @game.player_2.weapon = @player_2_choice
+    end
+    erb(:play)
   end
 
   run! if app_file == $0

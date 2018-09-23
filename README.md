@@ -48,7 +48,21 @@ $ cd rps-challenge
 $ bundle
 $ rackup
 
+NOTES:
+
+I have not yet used helpers but I intend to use it if this is extended.
+
+
+
 SCREENSHOTS:
+
+Screenshots of game with rps and rpsls options
+https://www.dropbox.com/s/x2sy3f6pnem4u6q/Screen%20Shot%202018-09-23%20at%2019.24.32.png?dl=0
+https://www.dropbox.com/s/te5nse9jkyitw40/Screen%20Shot%202018-09-23%20at%2019.24.46.png?dl=0
+https://www.dropbox.com/s/ua8senisl81649y/Screen%20Shot%202018-09-23%20at%2019.24.55.png?dl=0
+https://www.dropbox.com/s/pamic1zqi0f9jam/Screen%20Shot%202018-09-23%20at%2019.26.02.png?dl=0
+https://www.dropbox.com/s/whmxaaa3le6am55/Screen%20Shot%202018-09-23%20at%2019.26.09.png?dl=0
+https://www.dropbox.com/s/7yx6gvfzozwpxeo/Screen%20Shot%202018-09-23%20at%2019.26.20.png?dl=0
 
 https://www.dropbox.com/s/1tkw8h7j0dr8hs8/Screen%20Shot%202018-09-22%20at%2020.17.14.png?dl=0
 https://www.dropbox.com/s/e25c0vrzyq1kn40/Screen%20Shot%202018-09-22%20at%2020.17.29.png?dl=0

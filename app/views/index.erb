@@ -17,16 +17,10 @@
 
 <h2>Sign in to play</h2>
 <br>
-<div style= "font-size: 30px;">
-<form action="/names" method="post">
-  <label for="player_1_name" font-size: 60px;>
-    Player 1 name
-  <input type="text" name="player_1_name">
-</label>
-<label for="player_2_name">
-  Player 2 name
-  <input type="text" name="player_2_name">
-</label>
-  <input class= "button button1" type="submit" value="Submit">
-</div>
+
+<h3>Choose how many players are playing: 1player or 2 players</h3>
+
+<form action="/player_count" method="post">
+	<input class= "button button1" type="submit" name="player_count" value="1player">
+	<input class= "button button1" type="submit" name="player_count" value="2players">
 </form>
