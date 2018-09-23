@@ -4,9 +4,10 @@ require_relative 'player'
 class Game
   MOVES   = [:rock, :paper, :scissors, :spock, :lizard]
   P1_WIN  = [[:scissors, :paper], [:paper, :rock], [:rock, :lizard],
-          [:lizard, :spock], [:spock, :scissors], [:scissors, :lizard],
-          [:lizard, :paper], [:paper, :spock], [:spock, :rock],
-          [:rock, :scissors]]
+            [:lizard, :spock], [:spock, :scissors], [:scissors, :lizard],
+            [:lizard, :paper], [:paper, :spock], [:spock, :rock],
+            [:rock, :scissors]]
+  P2_WIN  = P1_WIN.map { |combo| combo.reverse }
 
   attr_reader :player1, :player2, :players, :on_turn, :winner
 
@@ -45,12 +46,10 @@ class Game
 
   def calculate_winner
     play = [player1.move, player2.move]
-    if play[0] == play[1]
+    if play.uniq.size == 1
       self.winner = :tie
-    elsif Game::P1_WIN.include?(play)
-      self.winner = player1
     else
-      self.winner = player2
+      self.winner = return_winner(play)
     end
   end
 
@@ -60,6 +59,12 @@ class Game
 
   private
   attr_writer :on_turn, :winner
+
+  # returns p1 wins, false if p2 wins
+  def return_winner(combo)
+    return player1 if Game::P1_WIN.include?(combo)
+    return player2 if Game::P2_WIN.include?(combo)
+  end
 
   def opposite_of(player)
     players.detect { |choice| choice != player }
