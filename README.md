@@ -59,6 +59,8 @@ I would like to add functionality for multiplayer and add the special rules for 
 Interface
 ----
 
+![Imgur](https://i.imgur.com/OrGwzPg.png)
+
 How to use
 ----
 
