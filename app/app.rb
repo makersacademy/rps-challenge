@@ -10,22 +10,27 @@ class RPS < Sinatra::Base
   end
 
   post '/submit-users' do
-    session[:player_one] = Player.new(params[:username])
+    session[:player_one] = Player.new(params[:player_one])
+    p2 = params[:player_two].empty? ? 'AI' : params[:player_two]
+    session[:player_two] = Player.new(p2)
     redirect('/game')
   end
 
   get '/game' do
     @player_one = session[:player_one]
+    @player_two = session[:player_two]
     erb(:game)
   end
 
   post '/end' do
-    session[:move] = params[:move]
+    session[:player_one].move = params[:move_1]
+    session[:player_two].move = params[:move_2]
     redirect('/end')
   end
 
   get '/end' do
-    @move = session[:move]
+    @player_one = session[:player_one]
+    @player_two = session[:player_two]
     erb(:end)
   end
 
