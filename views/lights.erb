@@ -1,8 +1,8 @@
-
-<h1> <%= @game.player.name %>! Get ready to play! </h1>
+<body bgcolor="#82E0AA">
+<center><h1> <%= @game.player.name %>! Get ready to play! </h1>
 <h1> Please enter Rock, Paper or Scissors...
   And good luck. The stakes are high. </h1>
 <form action="/results" method="post">
   <input type="text" name="choice">
   <input type="submit" value="Submit">
-</form>
+</form></center>
