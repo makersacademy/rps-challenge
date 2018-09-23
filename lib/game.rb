@@ -1,25 +1,22 @@
+require_relative 'logic'
 require_relative 'player'
 require_relative 'random_move'
+
 class Game
 
   MOVES = ['rock', 'paper', 'scissors']
-  LOGIC = {
-    ['rock', 'paper'] => 2,
-    ['rock', 'scissors'] => 1,
-    ['paper', 'rock'] => 1,
-    ['paper', 'scissors'] => 2,
-    ['scissors', 'paper'] => 1,
-    ['scissors', 'rock'] => 2,
-  }
 
-  attr_reader :player1, :player2, :moves
-  attr_accessor :multiplayer
+  attr_reader  :moves, :multiplayer, :player1, :player2, :logic
+  attr_accessor :mode
 
-  def initialize(player1,player2,player=Player)
-    @player1 = player.new(player1)
-    @player2 = player.new(player2)
-    @multiplayer = false
+  def initialize(player1: 'Player 1', player2: 'Computer', player: Player, multiplayer: false, mode: 'standard', logic: Logic::STD)
+    @player = player
+    @player1 = @player.new(player1)
+    @player2 = @player.new(player2)
+    @multiplayer = multiplayer
+    @mode = mode
     @moves = []
+    @logic = set_logic
   end
 
   def add_move(move)
@@ -34,14 +31,41 @@ class Game
     @moves[1]
   end
 
+  def set_logic
+    if @mode == 'standard'
+      @logic = Logic::STD
+    else
+      @logic = Logic::SPOCK
+    end
+  end
+
+  def set_mode(mode)
+    @mode = mode
+    p @mode
+    set_logic
+  end
+
+  def set_multiplayer(bool)
+    @multiplayer = bool
+  end
+
+  def set_player1(name)
+    @player1 = @player.new(name)
+  end
+
+  def set_player2(name)
+    @player2 = @player.new(name)
+  end
+
   def computer_move(random_move = RandomMove.new)
     add_move(random_move.move)
   end
 
   def winner
-    return @player1 if LOGIC[@moves] == 1
-    return @player2 if LOGIC[@moves] == 2
-    return 'draw' if LOGIC[@moves] == nil
+    p @logic
+    return @player1 if @logic[@moves] == 1
+    return @player2 if @logic[@moves] == 2
+    return 'draw' if @logic[@moves] == nil
   end
 
 end

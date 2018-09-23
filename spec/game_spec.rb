@@ -12,7 +12,7 @@ describe Game do
     allow(player_class).to receive(:new).with('Skaiste') { player1 }
     allow(player_class).to receive(:new).with('Seb') { player2 }
     allow(player_class).to receive(:new).with('Computer') { computer }
-    @game = described_class.new('Skaiste', 'Computer', player_class)
+    @game = described_class.new(player1: 'Skaiste', player2: 'Computer', player: player_class)
   }
 
   describe 'initialize' do
@@ -51,6 +51,38 @@ describe Game do
       @game.add_move('rock')
       @game.add_move('paper')
       expect(@game.second_move).to eq 'paper'
+    end
+  end
+
+  describe 'set_mode' do
+    it 'sets mode' do
+      @game.set_mode('standard')
+      expect(@game.mode).to eq 'standard'
+    end
+    it 'sets logic accordingly' do
+      @game.set_mode('spock')
+      expect(@game.logic).to eq Logic::SPOCK
+    end
+  end
+
+  describe 'set_multiplayer' do
+    it 'sets player1' do
+      @game.set_multiplayer(true)
+      expect(@game.multiplayer).to eq true
+    end
+  end
+
+  describe 'set_player1' do
+    it 'sets player1' do
+      @game.set_player1('Skaiste')
+      expect(@game.player1).to eq player1
+    end
+  end
+
+  describe 'set_player2' do
+    it 'sets player2' do
+      @game.set_player1('Seb')
+      expect(@game.player1).to eq player2
     end
   end
 

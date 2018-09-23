@@ -6,6 +6,7 @@ class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
+    session[:game] = Game.new
     erb :index
   end
 
@@ -25,12 +26,13 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  get '/multi' do
-    erb :multi
-  end
-
   get '/result' do
     erb :result
+  end
+
+  post '/mode' do
+    session[:game].set_mode(params["mode"])
+    erb :index
   end
 
   post '/move1' do
@@ -49,16 +51,14 @@ class RPS < Sinatra::Base
   end
 
   post '/restart' do
-    @multiplayer = session[:game].multiplayer
-    session[:game] = Game.new(session[:game].player1.name,session[:game].player2.name)
-    session[:game].multiplayer = @multiplayer
+    @old_game = session[:game]
+    session[:game] = Game.new(player1: @old_game.player1.name, player2: @old_game.player2.name, multiplayer: @old_game.multiplayer, mode: @old_game.mode)
     redirect 'play'
   end
 
   post '/save-name1' do
-    session[:name1] = params[:name1]
+    session[:game].set_player1(params[:name1])
     if params[:button] == "Start game against computer"
-      session[:game] = Game.new(session[:name1],'Computer')
       redirect '/play'
     else
       redirect '/add-player'
@@ -66,8 +66,8 @@ class RPS < Sinatra::Base
   end
 
   post '/save-name2' do
-    session[:game] = Game.new(session[:name1],params[:name2])
-    session[:game].multiplayer = true
+    session[:game].set_player2(params[:name2])
+    session[:game].set_multiplayer(true)
     redirect '/play'
   end
 
