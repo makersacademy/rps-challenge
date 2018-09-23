@@ -17,7 +17,7 @@ class Results
 
   def winner(player1)
     @results_check.each { |result|
-      if player1.downcase == result[:player1] && @player2 == result[:player2]
+      if player1 == result[:player1] && @player2 == result[:player2]
         return result[:result]
       end
     }

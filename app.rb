@@ -26,10 +26,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/results' do
-    @player_choice = session[:player_choice]
+    @player1_choice = session[:player_choice]
     @game = Game.instance
-    @opponents_choice = @game.results.player2
-    @winner = @game.results.winner(@player_choice)
+    @player2_choice = @game.results.player2
+    @winner = @game.results.winner(@player1_choice)
     erb(:results)
   end
 
