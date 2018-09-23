@@ -80,7 +80,7 @@ $ gem install bundle
 
 Run the app from the command line using Rackup 
 ```
-config.ru app.rb  -p 4567
+$ config.ru app.rb -p 4567
 ```
 
 Type localhost:4567 in your favourite browser and play!
