@@ -14,4 +14,10 @@ describe Player do
       expect(subject.move).to eq(:rock)
     end
   end
+
+  describe '#computer?' do
+    it 'returns false' do
+      expect(subject.computer?).to eq(false)
+    end
+  end
 end
