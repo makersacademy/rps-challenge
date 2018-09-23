@@ -53,6 +53,7 @@ class RockPaperScissors < Sinatra::Base
 
   # Multiplayer -- 
   get '/multiplayer' do
+    session[:game] = Game.new
     erb :multiplayer
   end
 
@@ -73,18 +74,27 @@ class RockPaperScissors < Sinatra::Base
 
   post '/first-choice' do
     session[:first_choice] = params[:choice]
-    session[:first_turn] = false
     redirect '/second-choice'
   end
-
+  
   get '/second-choice' do
     erb :second_move, locals: { player2: session[:second_turn] }
   end
-
+  
   post '/second-choice' do
     session[:second_choice] = params[:choice]
-    session[:second_turn] = false
     redirect '/finale'
+  end
+  
+  get '/finale' do
+    @first_choice = session[:first_choice]
+    @second_choice = session[:second_choice]
+    @decider = session[:multiplayer_game].decision(session[:first_choice], session[:second_choice])
+    @first_player = session[:first_turn]
+    @second_player = session[:second_turn] 
+    session[:first_turn] = false
+    session[:second_turn] = false
+    erb :finale
   end
   
   run! if app_file == $0

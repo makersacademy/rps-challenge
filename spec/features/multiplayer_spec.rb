@@ -18,6 +18,7 @@ describe RockPaperScissors do
     end
 
     it "reaches the grand finale" do
+      srand(1523524273897238437489379247)
       multiplayer_game_started
       click_button "Scissors"
       click_button "Rock"

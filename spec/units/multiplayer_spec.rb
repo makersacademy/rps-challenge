@@ -3,7 +3,8 @@ require 'multiplayer'
 describe MultiplayerGame do
   context "regulates and controls multiplayer functionality" do
     let(:player1) { double :player1 }
-    let(:player2) { double :player2 }
+    let(:player2) { double :player2, name: "Player 2" }
+    let(:victor) {double :player2, name: "Player 2"}
     let(:multiplayer) { described_class.new(player1, player2) }
 
     it "#works" do
@@ -21,5 +22,6 @@ describe MultiplayerGame do
     it "#second player" do
       expect(multiplayer.second_player).to eq player1
     end
+    
   end
 end
