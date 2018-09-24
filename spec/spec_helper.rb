@@ -5,7 +5,7 @@ require 'simplecov-console'
 
 ENV['RACK_ENV'] = 'test'
 
-#Tell Capybara about our app class
+# Tell Capybara about our app class
 Capybara.app = RPS
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([

@@ -4,6 +4,7 @@ class Winner
 
   def initialize(computer = Computer.new)
     @comp_move = computer.move
+
   end
 
   def result_calc(marketeer_move)

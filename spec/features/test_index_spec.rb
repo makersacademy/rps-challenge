@@ -1,4 +1,4 @@
-#Basic test to see if page is working
+# Basic test to see if page is working
 
 # feature 'visit homepage' do
 #   scenario 'check home page says Boo' do
@@ -14,9 +14,9 @@
 
 feature 'allow player to register name and see it appear on page' do
   scenario 'allow player to register name' do
-  visit '/'
-  fill_in 'marketeer1', with: 'Rory'
-  click_button 'Submit'
-  expect(page).to have_content('Welcome Rory')
+    visit '/'
+    fill_in 'marketeer1', with: 'Rory'
+    click_button 'Submit'
+    expect(page).to have_content('Welcome Rory')
   end
 end

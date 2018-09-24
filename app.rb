@@ -24,6 +24,7 @@ class RPS < Sinatra::Base
     @marketeer_player = session[:marketeer_player]
     session[:marketeer_move] = params[:marketeer_move]
     @marketeer_move = session[:marketeer_move]
+    @comp_move = Computer.new.move
     @outcome = Winner.new.result_calc(@marketeer_move)
     erb :result
   end
