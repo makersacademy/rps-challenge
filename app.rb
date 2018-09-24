@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player.rb'
+require './lib/computer.rb'
 
 class Game < Sinatra::Base
 
