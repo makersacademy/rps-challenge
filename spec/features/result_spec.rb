@@ -1,7 +1,7 @@
 # declaring the result page
 
 feature 'results page' do
-  scenario 'declaring a drawn result' do
+  scenario 'correct display on screen' do
     begin_and_submit
     click_button 'START!'
     click_button 'rock'
