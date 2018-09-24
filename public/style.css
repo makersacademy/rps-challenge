@@ -1,3 +1,24 @@
+/* HOMEPAGE */
+
+
+
+.title__main{
+  font-size: 3em;
+  -webkit-animation: glitch 5s infinite;
+  animation: glitch 5s infinite;
+  text-align: center;
+  -webkit-text-fill-color: yellow;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #d0bc06;
+}
+
+@keyframes glitch {
+    0%  {padding-left: 0px; }
+    25%  {padding-left: 30px; }
+    75%  {padding-left: -30px; }
+    100%  {padding-left:0px; }
+}
+
 .img__svg{
   width: 125px;
   height: 125px;
@@ -12,6 +33,10 @@
 }
 
 .img__svg--multi {
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+  padding: 10px;
   margin: 10px 2px;
   border: solid white 2px;
   border-radius: 20%;

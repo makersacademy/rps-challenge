@@ -4,7 +4,8 @@ require_relative 'lib/game'
 
 class ChoiceGame < Sinatra::Base
 
-enable :sessions
+  enable :sessions
+  set :session_secret, "I dont know"
 
   get '/' do
     erb :index
@@ -34,7 +35,6 @@ enable :sessions
   end
 
   post '/selection' do
-    p "choice is :::: #{params[:choice]}"
     @game = session[:game]
     choice = params[:choice]
     p2_choice = params[:p2_choice]
@@ -49,6 +49,6 @@ enable :sessions
     @game.find_winner
     erb :winner
   end
-  
+
   run! if app_file == $0
 end
