@@ -1,5 +1,7 @@
 class Winner
 
+  attr_reader :user_chooses, :computer_chooses
+
   def initialize(user_chooses, computer_chooses)
     @user_chooses = user_chooses
     @computer_chooses = computer_chooses
