@@ -24,6 +24,7 @@ class Game < Sinatra::Base
     session[:player_move]= params[:player_move]
     @player_move = session[:player_move]
     @outcome = session[:player_name].move(@player_move)
+    @computer = session[:player_name].computer
     erb(:results)
   end
 

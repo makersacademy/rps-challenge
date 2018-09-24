@@ -1,4 +1,4 @@
-feature 'I would like to be able to play rock/paper/scissors' do
+feature 'Results' do
   scenario 'the results page shows the results' do
   enter_name_and_play
   choose 'rock'
@@ -12,6 +12,7 @@ feature 'I would like to be able to play rock/paper/scissors' do
   click_button 'Submit'
   expect(page).to have_content "rock"
   end
+
 
 
 end

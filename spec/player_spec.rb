@@ -12,14 +12,15 @@ describe Player do
   describe "#play" do
     it 'return lost if I choose rock and computer is paper' do
       computer = double(:computer)
-      allow(computer).to receive(:move).and_return("paper")
+      allow(computer).to receive(:choice).and_return("paper")
       expect(subject.move("rock")).to eq("Lost")
     end
 
     it 'return draw if I choose draw and computer too' do
       computer = double(:computer)
-      allow(computer).to receive(:move).and_return("paper")
+      allow(computer).to receive(:choice).and_return("paper")
       expect(subject.move("paper")).to eq("Draw")
     end
   end
+
 end
