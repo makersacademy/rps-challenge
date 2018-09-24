@@ -8,6 +8,9 @@ class Game
   end
 
   def retrieve_winner(first_player, second_player)
+    #should refactor using a hash. key value should be winner loser
+    #eg. rock => scissors, and cycle through checking if player 1
+    # or player 2 have won
     return nil if first_player.choice == second_player.choice
     case first_player.choice
     when "rock"

@@ -18,6 +18,6 @@ feature 'finish a game and declare a winner' do
     rpsls_mode
     click_button("scissors")
     click_button("scissors")
-    expect(page).to have_content("It's a draw")
+    expect(page).to have_content("It's a draw!")
   end
 end
