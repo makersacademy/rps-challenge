@@ -16,8 +16,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 
 ```
-
-Hints on functionality
+The below Hints on functionality have been used to model and create further user story, as the second user story above needed to be broken down further.
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
