@@ -38,6 +38,10 @@ input[type="submit"]:hover {
     color: white;
 }
 
+input:disabled {
+    background-color: rgba(187, 185, 185, 0.5);
+}
+
 span.win, span.lose {
     font-weight: bold;
 }
