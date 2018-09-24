@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require './lib/player.rb'
 
-
 class Game < Sinatra::Base
 
   enable :sessions
@@ -21,7 +20,7 @@ class Game < Sinatra::Base
   end
 
   post '/results' do
-    session[:player_move]= params[:player_move]
+    session[:player_move] = params[:player_move]
     @player_move = session[:player_move]
     @outcome = session[:player_name].move(@player_move)
     @computer = session[:player_name].computer
