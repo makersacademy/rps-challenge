@@ -88,7 +88,7 @@ describe Game do
 
   describe 'computer move' do
     it 'adds computer move' do
-      @game.computer_move(random_move)
+      @game.computer_move
       expect(@game.moves[0]).to eq random_move.move
     end
   end

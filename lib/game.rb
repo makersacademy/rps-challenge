@@ -4,8 +4,6 @@ require_relative 'random_move'
 
 class Game
 
-  MOVES = ['rock', 'paper', 'scissors']
-
   attr_reader  :moves, :multiplayer, :player1, :player2, :logic
   attr_accessor :mode
 
@@ -48,8 +46,8 @@ class Game
     @player2 = @player.new(name)
   end
 
-  def computer_move(random_move = RandomMove.new)
-    add_move(random_move.move)
+  def computer_move(mode = @mode)
+    add_move(RandomMove.new(mode).move)
   end
 
   def winner

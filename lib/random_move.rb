@@ -2,12 +2,16 @@ require_relative 'game'
 
 class RandomMove
 
-  def initialize(moves = Game::MOVES)
-    @moves = moves
+  MOVES = ['rock', 'paper', 'scissors']
+  MOVES_SPOCK = ['rock', 'paper', 'scissors', 'lizard', 'spock']
+
+  def initialize(mode)
+    @mode = mode
   end
 
   def move()
-    @moves.sample
+    return MOVES.sample if @mode == 'standard'
+    return MOVES_SPOCK.sample if @mode == 'spock'
   end
 
 end
