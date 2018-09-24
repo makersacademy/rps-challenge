@@ -2,7 +2,7 @@
   <h2> Choose your weapon, <%= @player2_name %>! </h2>
   <div>
     <form action="/move_p2" method="post">
-      <% Weapons.new.rack.each do |weapon|%>
+      <% @weapons.rack.each do |weapon|%>
         <input type="submit" value="<%=weapon.to_s.capitalize%>" name="move_p2"/> 
       <% end %>
     </form>

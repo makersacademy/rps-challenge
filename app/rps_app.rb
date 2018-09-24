@@ -29,6 +29,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    @weapons = Weapons.new
     @player1_name = session[:player_one_name]
     erb(:play)
   end
@@ -56,6 +57,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play_p2' do
+    @weapons = Weapons.new
     @player2_name = session[:player_two_name]
     erb(:play_p2)
   end
