@@ -18,8 +18,14 @@ class Game
       player.name
     elsif player.move == computer.move
       "You drew everybody"
+    elsif computer.move == "Rock" && player.move == "Scissors"
+      player.name
+    elsif computer.move == "Paper" && player.move == "Rock"
+      player.name
+    elsif computer.move == "Scissors" && player.move == "Paper"
+      computer.name
     else
-      "Computer"
+      "There was an error, no one"
     end
   end
 

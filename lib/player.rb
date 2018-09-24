@@ -8,7 +8,6 @@ class Player
 
   def user_move(user_move)
     @move = user_move
-
   end
 
 end

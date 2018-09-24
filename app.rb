@@ -10,6 +10,10 @@ class Rps < Sinatra::Base
     erb :index
   end
 
+  get '/2' do
+    erb :index2
+  end
+
   post '/name' do
     session[:game] = Game.new(Player.new(params[:name]), Player.new('Computer'))
     session[:moves] = Moves.new
@@ -17,10 +21,22 @@ class Rps < Sinatra::Base
     redirect '/play'
   end
 
+  post '/2names' do
+    session[:game] = Game.new(Player.new(params[:name1]), Player.new(params[:name2]))
+    p session
+    redirect '/play2'
+  end
+
   get '/play' do
     p session
     @game = session[:game]
     erb :play
+  end
+
+  get '/play2' do
+    p session
+    @game = session[:game]
+    erb :play2
   end
 
   post '/rock' do
@@ -49,6 +65,16 @@ class Rps < Sinatra::Base
 
   get '/winner' do
     @game = session[:game]
+    erb :winner
+  end
+
+  get '/result' do
+    session[:user_move] = params[:user_move]
+    session[:comp_move] = params[:comp_move]
+    session[:game].player.user_move(session[:user_move])
+    session[:game].computer.user_move(session[:comp_move])
+    @game = session[:game]
+    p session
     erb :winner
   end
 

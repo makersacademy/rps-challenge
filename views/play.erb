@@ -1,7 +1,7 @@
 <font face="courier" color="blue">
   <h1 align="center" >Rock Paper Scissors Game</h1>
-    <h2 align="center" >The Computer vs. <%= @game.player.name %></h2>
-
+    <h2 align="center" > <%= @game.player.name%> vs. <%= @game.computer.name %></h2>
+    <h2> <%= @game.player.name%> please choose your move <h2>
     <form action="/rock" method="post">
       <input type="submit" name="user_move" value="Rock"/>
     </form>

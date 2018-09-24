@@ -1,0 +1,17 @@
+<font face="courier" color="blue">
+  <h1 align="center" >Rock Paper Scissors Game</h1>
+    <h2 align="center" > <%= @game.player.name%> vs. <%= @game.computer.name %></h2>
+    <h2 align="center" > Please each choose one of Rock, Paper and Scissors <h2>
+    <h3 align="center" > Please capitalise the first letter of Rock, Paper or Scissors<h3>  
+    <form action="/result" method="get">
+      <label for="user_move">
+        Player 1 move
+        <input type="text" name="user_move">
+      </label>
+      <label for="comp_move">
+        Player 2 move
+        <input type="text" name="comp_move">
+      </label>
+        <input type='submit' value='Submit'>
+    </form>
+  </font>
