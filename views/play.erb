@@ -1,0 +1,13 @@
+<div style="text-align: center">
+  <h1>Hi <%= @player.name %>!</h1>
+  <h3>What's your move?</h3>
+  <form action=<%= @move %> method='post'>
+    <input type='submit' name='move' value='rock'/>
+    <input type='submit' name='move' value='paper'/>
+    <input type='submit' name='move' value='scissors'/>
+    <% if session[:game].mode == 'spock' %>
+    <input type='submit' name='move' value='spock'/>
+    <input type='submit' name='move' value='lizard'/>
+    <% end %>
+  </form>
+</div>
