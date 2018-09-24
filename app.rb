@@ -1,5 +1,6 @@
 require 'sinatra/base'
-
+require './lib/computer_rps'
+require './lib/game_formular'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -21,7 +22,9 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @marketeer_player = session[:marketeer_player]
-    @comp_move = Computer.new.move
+    session[:marketeer_move] = params[:marketeer_move]
+    @marketeer_move = session[:marketeer_move]
+    @outcome = Winner.new.result_calc(@marketeer_move)
     erb :result
   end
 

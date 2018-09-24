@@ -4,6 +4,10 @@ feature 'results page' do
     fill_in 'marketeer1', with: 'Rory'
     click_button 'Submit'
     click_button 'Rock'
-    expect(page).to have_content("Thats a draw")
+
+    computer = double(:computer)
+    allow(computer).to receive(:move).and_return("Rock")
+    p computer.move
+    expect(page).to have_content("Draw!")
   end
 end
