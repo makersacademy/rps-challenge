@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Result!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      body{
+        position: absolute;
+        left: 10px;
+      }
+      h1 {
+          -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+          transition: 2s;
+      }
+      h1:hover {
+          font-size: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Game over: <span><%= session[:game].winner ? "#{session[:game].winner.name} won!" : 'Draw' %></span></h1>
+    <h2><%= session[:game].player1.name %> chose <%= session[:game].player1.move %></h2>
+    <h2><%= session[:game].player2.name %> chose <%= session[:game].player2.move %></h2>
+    <form class="rps" action="/multi_p1" method="get">
+      <input type="submit" value="play again" class="btn btn-info">
+    </form>
+  </body>
+</html>

@@ -1,86 +1,27 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+This repo contains the homework challenge from week 3 at Makers Academy. The challenge was to create a website that lets you player rock paper scissors either in single player or multi-player and this has been completed using Sinatra to host the server for the games and Ruby to run all of the logic behind who wins and loses.
 
 
-As usual please start by
+## How to use
 
-* Forking this repo
-* TEST driving development of your app
+To use this repo to create a game on your local server:
+1. clone it
+2. on the command line, navigate to the directory it's saved in
+3. run ```bundle```
+4. run the command ```rackup```
+5. open your favourite browser and head to localhost:9292
 
+## Behind the scenes
 
-## Bonus level 1: Multiplayer
+I started off creating the framework of the actual website before writing objects that would control the game. By drawing out a simple outline of how I wanted the website to work as shown below I had it clear in my head whilst building it.
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+![here](master_plan.jpg)
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+Then once the website was built I created the models for how I wanted a game of RPS to run and linked the two together.
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+## Plans for the future of this project
 
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+- update it with a counter to track how many wins and losses each player has
+- rock paper scissors lizard spock - found some nice examples on how to run this game without having a million if and elsif statements
+- in general make it look a bit more fancy. it has a simplistic but nice look at the moment but an amazing thing would be adding graphics of scissor cutting paper, rock crushing scissors etc.
