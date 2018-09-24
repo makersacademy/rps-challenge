@@ -54,9 +54,7 @@ class RockPaperScissors < Sinatra::Application
       end
     elsif session[:player2].choice.nil? && @player_count == "2p"
       session[:player2].choice = params[:player_choice]
-      redirect '/play'
-    else
-      redirect '/play'       
+      redirect '/play'     
     end
   end
 
@@ -75,6 +73,5 @@ class RockPaperScissors < Sinatra::Application
     @champ = @game.winner
     erb(:play)
   end
-
   run! if app_file == $0
 end

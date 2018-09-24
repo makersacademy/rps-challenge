@@ -9,9 +9,9 @@ describe Player do
 
   describe '#random_move' do
     it 'randomly returns a choice between rock, paper and scissors' do
-      allow(subject.weapons).to receive(:sample).and_return(:rock)
+      allow(subject.weapons).to receive(:sample).and_return("rock")
       subject.random_move
-      expect(subject.choice).to eql(:rock)
+      expect(subject.choice).to eql("rock")
     end
   end
 
