@@ -15,13 +15,13 @@ class Play < Sinatra::Base
   end
 
   get '/battle_ready' do
-    @player_1_name = session[:round1].player_1_name
+    @player_1_name = session[:round1]
     erb(:form)
   end
 
   post '/memorial' do
-    session[:round1] = params[:player_1_name].duel([:weapon])
-    @finish = session[:round1] 
+
+    @finish = session[:round1].duel(params[:weapon])
     erb(:finale)
   end
 

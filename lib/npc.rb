@@ -1,5 +1,5 @@
 class NPC
   def arm_thyself
-    ["rock","paper","scissors"].sample
+    ["Rock", "Paper", "Scissors"].sample
   end
 end
