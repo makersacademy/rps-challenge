@@ -1,0 +1,9 @@
+<div style="color:green;text-align:center">
+  <h2> <%= @player1.name %> has chosen '<%= @player1.choice.capitalize %>' </h2> <!-- loop -->
+  <h2> <%= @player2.name %> has chosen '<%= @player2.choice.capitalize %>' </h2>
+  <% if @winner.nil? %>
+    <h1>You drew!</h1>
+  <% else %>
+    <h1> <%= @winner.name %> is the winner! </h1>
+  <% end %>
+</div>

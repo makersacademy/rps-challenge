@@ -1,86 +1,110 @@
-# RPS Challenge
-
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+RPS-Challenge
+==================
 
 Task
-----
+-------
+Build a rock, paper, scissors game.
 
-Knowing how to build web applications is getting us almost there as web developers!
+## Bonus level 1: Multiplayer
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+Change the game so that two marketeers can play against each other.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
+Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+
+Work on this challenge as conclusion of week 3, to work towards these goals:
+
+* I version-control my projects
+* I use a methodical approach to solving problems
+* I test-drive my code
+* I can work to a specification
+* I create effective documentation
+* I can design and build user interfaces
+* I can write standards-compliant, clean object-oriented code
+
+Instructions to run this at home
+-----
 ```sh
+$ git clone git@github.com:fbl11/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup -p 4567
+go to http://127.0.0.1:4567/ in your browser and start the game
+```
+
+STATUS
+-----
+Allows users to play a game of Rock, Paper, Lizard, Scissors, Spock against a computer or another human using a web interface.
+
+This version completes all basic user stories and adds choices 'Lizard' and 'Spock' to the original weapons (Bonus Level 2).  The player can choose between a human opponent or a computer opponent (Bonus Level 1).
+
+Controller
+includes
+- rps_app.rb
+- feature_spec.rb testing all features
+- web_helbers.rb to automate common steps in feature_spec.rb
+
+Views
+both
+- index.erb
+
+for single-player
+- singleplayer.erb
+- play.erb
+- result.erb
+
+for multi-player
+- multiplayer.erb
+- play2_p2.erb
+- result_mp.erb
+
+Model
+includes
+- weapons.rb / weapons_spec.rb
+- player.rb / player_spec.rb
+- game.rb / game_spec.rb
+
+No rubocop offenses, 100% overall test coverage according to Rspec.
+
+**Notes**
+```
+```
+
+**TO DO**
+
+- Revisit Weapons class.  Currently injected in player, not ideal.  Possibly better in Game class?  Also, consider making weapons a constant.
+
+Notes on use
+------------------
+```
+```
+
+User stories
+-----
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
 As a marketeer
 So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+I would like to be able to play rock/paper/scissors/lizard/spock
+
+As a marketeer
+So I can choose my weapon
+I would be presented with choices (rock, paper, scissors, lizard, spock)
+
+As a marketeer
+So I can play against an opponent
+the game will choose a random weapon for a computer opponent
+
+As a marketeer
+So I know whether I've won
+the game will declare a winner based on the players' moves
+
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+Author
+-----
+Freya Becker [fbl11](https://github.com/fbl11/)

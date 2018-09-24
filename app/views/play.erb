@@ -1,0 +1,10 @@
+<div style="color:green;text-align:center">
+  <h2> Choose your weapon, <%= @player1_name %>! </h2>
+  <div>
+    <form action="/move" method="post">
+      <% @weapons.rack.each do |weapon|%>
+        <input type="submit" value="<%=weapon.to_s.capitalize%>" name="move"/> 
+      <% end %>
+    </form>
+  </div>
+</div>
