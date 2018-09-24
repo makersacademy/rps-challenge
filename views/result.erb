@@ -2,9 +2,13 @@
 <br>
 
 <% if @result == 'player1' %>
-  <p> <%= @game.player1.name %> wins! :D </p>
+  <p> <%= @game.player1.name.capitalize %> wins! :D </p>
 <% elsif @result == 'player2' %>
-  <p> <%= @game.player2.name %> wins! :D </p>
+    <% if @gamemode == :singleplayer %>
+    <p> Skynet wins! :(  </p>
+    <% else %>
+  <p> <%= @game.player2.name.capitalize %> wins! :D </p>
+  <% end %>
 <% elsif @result == 'draw' %>
   <p> It's a tie! Try again! </p>
 <% end %>

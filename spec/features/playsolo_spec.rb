@@ -4,13 +4,13 @@ require './app'
 RSpec.feature 'Testing solo' do
   scenario 'player can enter name' do
     visit '/'
-    click_button '1 player'
-    expect(page).to have_field('player')
+    click_button 'singleplayer'
+    expect(page).to have_field('player1')
   end
 
   scenario 'player can start the game' do
     visit '/'
-    click_button '1 player'
+    click_button 'singleplayer'
     expect(page).to have_button('Play')
   end
 
@@ -33,17 +33,5 @@ RSpec.feature 'Testing solo' do
     allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
     click_button 'Paper'
     expect(page).to have_content "It's a tie! Try again!"
-  end
-
-  scenario 'player can play again' do
-    solo_name_play
-    click_button 'Paper'
-    expect(page).to have_button('Play again')
-  end
-
-  scenario 'player can start new game' do
-    solo_name_play
-    click_button 'Paper'
-    expect(page).to have_button('Start new game')
   end
 end
