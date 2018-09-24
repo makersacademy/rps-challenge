@@ -1,8 +1,11 @@
+ENV['RACK_ENV'] = 'test'
+
 source 'https://rubygems.org'
 
-ruby '2.5.0'
+ruby '2.5.1'
 
 gem 'rake'
+gem 'shotgun'
 gem 'sinatra'
 
 group :test do
