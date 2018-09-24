@@ -9,6 +9,12 @@ RSpec.describe Game do
     choose_move: 'Rock'
   end
 
+  let(:barry) do
+    double :Player,
+    name: 'Barry',
+    choose_move: 'Paper'
+  end
+
   let(:rpslsbot) do
     double :RandomPlayer,
     name: 'RPSLSbot',
@@ -37,6 +43,11 @@ RSpec.describe Game do
 
   it 'lets players choose moves' do
     expect(subject.choose_move(0, 'Rock')).to eq 'Rock'
+  end
+
+  it 'lets players choose moves whatever move they choose' do
+    barry_subject = described_class.new(barry)
+    expect(barry_subject.choose_move(0, 'Paper')).to eq 'Paper'
   end
 
   it 'knows who has won the game' do
