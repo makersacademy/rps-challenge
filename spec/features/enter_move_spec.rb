@@ -1,5 +1,5 @@
 feature 'Results' do
-  scenario 'when you enter rock, it says you entered rock in the reuslts page' do
+  scenario 'when you enter rock, it says you entered rock in the results page' do
     single_player_name
     click_button 'rock'
     expect(page).to have_content 'Dwayne Johnson chose rock'

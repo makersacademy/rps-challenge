@@ -26,62 +26,29 @@ end
 
 feature 'twoplayer' do
   scenario 'lets you enter 2 names into the two player game and takes you to player1s go' do
-    visit '/'
-    click_button 'Two Player'
-    fill_in 'name1', with: 'Bugs Bunny'
-    fill_in 'name2', with: 'Daffy Duck'
-    click_button 'Submit'
+    two_player_game
     expect(page).to have_content "Bugs Bunny it is your turn, please enter your move (don't let Daffy Duck see!)"
   end
 
   scenario 'after entering players 1s move, goes to the page for player 2 to enter a move' do
-    visit '/'
-    click_button 'Two Player'
-    fill_in 'name1', with: 'Bugs Bunny'
-    fill_in 'name2', with: 'Daffy Duck'
-    click_button 'Submit'
+    two_player_game
     click_button 'rock'
     expect(page).to have_content "Daffy Duck, it's now your turn"
   end
 
   scenario 'after both players enter their moves it goes to a results page' do
-    visit '/'
-    click_button 'Two Player'
-    fill_in 'name1', with: 'Bugs Bunny'
-    fill_in 'name2', with: 'Daffy Duck'
-    click_button 'Submit'
+    two_player_game
     click_button 'rock'
     click_button 'paper'
     expect(page).to have_content 'Game over:'
   end
 
   scenario 'after getting to the results page you can go back and play again' do
-    visit '/'
-    click_button 'Two Player'
-    fill_in 'name1', with: 'Bugs Bunny'
-    fill_in 'name2', with: 'Daffy Duck'
-    click_button 'Submit'
+    two_player_game
     click_button 'rock'
     click_button 'paper'
-    click_button 'play_again'
+    click_button 'play again'
     expect(page).to have_content "Bugs Bunny it is your turn, please enter your move (don't let Daffy Duck see!)"
-  end
-end
-
-feature 'RPS - singleplayer' do
-  scenario 'has a button called rock' do
-    single_player_name
-    expect(page).to have_button 'rock'
-  end
-
-  scenario 'has a button called paper' do
-    single_player_name
-    expect(page).to have_button 'paper'
-  end
-
-  scenario 'has a button called scissors' do
-    single_player_name
-    expect(page).to have_button 'scissors'
   end
 end
 
