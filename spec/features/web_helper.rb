@@ -1,3 +1,4 @@
+require './app/models/computer'
 def sign_in
   allow_any_instance_of(Computer).to receive(:move).and_return(:rock)
   visit('/')
