@@ -36,7 +36,9 @@ feature 'playing a game' do
     # player two's move`
     computer_move = page.find("#player2_move").text
     allowed_moves = ["rock", "paper", "scissors"]
-    expect(computer_move).to satisfy { |page| page.include?(allowed_moves[0]) or page.include?(allowed_moves[1]) or page.include?(allowed_moves[2]) }
+    expect(computer_move).to satisfy("match one of the three moves") do |page| 
+      page.include?(allowed_moves[0]) or page.include?(allowed_moves[1]) or page.include?(allowed_moves[2]) 
+    end
   end 
 
   # As a marketeer

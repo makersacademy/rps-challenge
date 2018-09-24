@@ -11,12 +11,12 @@ describe Player do
     it 'if computer, then gets a random move' do
       allow(described_class::MOVES).to receive(:sample).and_return("rock")
       computer.play_move("rock") 
-      p computer
+      expect(computer.name).to eq("Computer")
       expect(computer.move).to eq("rock")
     end
 
     it 'gets move chose by player' do
-      player.play_move('paper') 
+      player.play_move('paper')
       expect(player.move).to eq("paper")
     end
   end
