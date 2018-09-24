@@ -1,0 +1,51 @@
+html, body, .index-background {
+  height: 100%;
+  margin: 0;
+  font-family: helvetica;
+}
+
+.index-background-1, .index-background-2  {
+  float: left;
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  z-index: -1;
+}
+
+.index-background-1 {
+  background-color: #aae0ff;
+}
+
+.index-background-2 {
+  background-color: #fcd9f5;
+}
+
+.title {
+  position:fixed;
+  color: white;
+  top: 40%;
+  left: 36%;
+  font-size: 20px;
+}
+
+.form {
+  position:fixed;
+  top: 47%;
+  left: 36%;
+}
+
+#name {
+  height: 30px;
+  width: 300px;
+}
+
+#submit {
+  background-color: #fcd9f5;
+  border: solid;
+  border-color: #fcd9f5;
+  color: white;
+  padding: 7px 12px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+}
