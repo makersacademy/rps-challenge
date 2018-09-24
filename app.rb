@@ -2,7 +2,6 @@ require 'sinatra/base'
 require './lib/game'
 require './lib/player'
 
-
 class RPS < Sinatra::Base
   enable :sessions
   set :session_secret, "something secret"
@@ -21,13 +20,15 @@ class RPS < Sinatra::Base
     @game = session[:game]
     @move = @game.player.moves[-1]
     @name = @game.player.name
-    @cp_move = @game.cp_move
+    @cp_move = @game.cp_moves[-1]
+
     erb(:play)
   end
 
   post '/move' do
     @game = session[:game]
     @game.player.move(params.values[0])
+    @game.cp_move
 
     redirect '/play'
   end
