@@ -16,7 +16,7 @@ class Game
     p1 = @player1.player_choice
     p2 = @player2.player_choice
     if @key_beats_value[p1].include?(p2)
-      'player1'
+      'player1' 
     elsif @key_beats_value[p2].include?(p1)
       'player2'
     else

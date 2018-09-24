@@ -19,15 +19,15 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @player = Player.new(params[:player])
-    session[:game] = Game.new(@player)
+    player = Player.new(params[:player])
+    session[:game] = Game.new(player)
     redirect '/playsolo'
   end
 
   post '/names' do
-    @player1 = Player.new(params[:player1])
-    @player2 = Player.new(params[:player2])
-    session[:game] = Game.new(@player1, @player2)
+    player1 = Player.new(params[:player1])
+    player2 = Player.new(params[:player2])
+    session[:game] = Game.new(player1, player2)
     redirect '/play'
   end
 
@@ -43,14 +43,12 @@ class RPS < Sinatra::Base
 
   post '/optionsolo' do
     @game = session[:game]
-    session[:player1_choice] = nil
     session[:player1_choice] = params[:solo]
     redirect '/resultsolo'
   end
 
   post '/optionp1' do
     @game = session[:game]
-    session[:player1_choice] = nil
     session[:player1_choice] = params[:commit]
     redirect '/playp2'
   end
@@ -62,7 +60,6 @@ class RPS < Sinatra::Base
 
   post '/optionp2' do
     @game = session[:game]
-    session[:player2_choice] = nil
     session[:player2_choice] = params[:option]
     redirect '/result'
   end
