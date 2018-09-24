@@ -16,9 +16,10 @@ feature 'Play' do
     expect(page).to have_content("Hi Seb! What's your move?")
   end
   scenario 'Shows result' do
+    allow_any_instance_of(Array).to receive(:sample) { 'rock' }
     sign_up_single
     click_button('rock')
-    expect(page).to have_content("Result: ")
+    expect(page).to have_content("Computer chose rock")
   end
   scenario 'Shows correct result' do
     sign_up_multi

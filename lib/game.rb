@@ -46,8 +46,8 @@ class Game
     @player2 = @player.new(name)
   end
 
-  def computer_move(mode = @mode)
-    add_move(RandomMove.new(mode).move)
+  def computer_move(random_move_class: RandomMove)
+    add_move(random_move_class.new(@mode).move)
   end
 
   def winner

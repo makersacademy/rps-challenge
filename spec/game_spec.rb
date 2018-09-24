@@ -7,6 +7,7 @@ describe Game do
   let(:computer) { double :computer}
   let(:player_class) { double :player_class }
   let(:random_move) { double :random_move, move: 'rock' }
+  let(:random_move_class) { double :random_move, new: random_move }
 
   before() {
     allow(player_class).to receive(:new).with('Skaiste') { player1 }
@@ -88,7 +89,7 @@ describe Game do
 
   describe 'computer move' do
     it 'adds computer move' do
-      @game.computer_move
+      @game.computer_move(random_move_class: random_move_class)
       expect(@game.moves[0]).to eq random_move.move
     end
   end
