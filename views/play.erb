@@ -1,0 +1,8 @@
+<h3> <%= @player1.name %> chose <%= @player1.choice%> </h3>
+<h3> <%= @player2.name%> chose <%= @player2.choice%> </h3>
+<% if @champ.nil? %>
+	<h3>It's a draw!</h3>
+<% else %>
+	<h3><%=@champ%> is the winner</h3>
+<% end %>
+<a href="/">start again</a>

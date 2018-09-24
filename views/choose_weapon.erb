@@ -1,0 +1,16 @@
+<% if @player1.choice.nil? %>
+	<h3>Welcome <%= @player1.name%>, to this riveting game. Choose your weapon</h3>
+<% else %>
+	<h3>And <%= @player2.name%>, think carefully and choose your.. oh who the hell cares</h3>
+	<h4>just pick one</h4>
+<% end %>
+
+<form action="/choice" method="post">
+	<input type="submit" name="player_choice" value="rock">
+	<input type="submit" name="player_choice" value="paper">
+	<input type="submit" name="player_choice" value="scissors">
+    <% if @mode == 'rpsls' %>
+      <input type="submit" name="player_choice" value="lizard">
+      <input type="submit" name="player_choice" value="spock">
+    <% end %>
+</form>
