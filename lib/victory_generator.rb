@@ -1,4 +1,5 @@
-# This class dexides who has won, if there is a draw, and the type of victory
+# This class decides who has won, if there is a draw, and the type of victory.
+# We also see if player 1 or player 2 won.
 class VictoryGenerator
 
   WINNING_TYPES = { ['Rock', 'Paper'] => ['covers', 1],
