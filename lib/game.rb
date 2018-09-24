@@ -1,6 +1,10 @@
 class Game
   attr_reader :player1, :player2
 
+  WINNING_HAND = [{ 'rock' => 'scissors' },
+                   { 'scissors' => 'paper' },
+                   { 'paper' => 'rock' }]
+
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
@@ -8,7 +12,7 @@ class Game
 
   def winner
     raise 'Players have not made a move' if no_move
-    if (player1.move == 'rock' && player2.move == 'scissors') || (player1.move == 'scissors' && player2.move == 'paper') || (player1.move == 'paper' && player2.move == 'rock')
+    if WINNING_HAND.include? hand
       player1
     elsif player1.move == player2.move
       nil
@@ -18,6 +22,10 @@ class Game
   end
 
   private #----------------------------
+
+  def hand
+    { player1.move => player2.move }
+  end
 
   def no_move
     !(@player1.move && @player2.move)

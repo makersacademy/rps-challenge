@@ -20,6 +20,6 @@ feature 'Results' do
   scenario 'in singleplayer, shows the computers move' do
     single_player_name
     click_button 'paper'
-    expect(page).to have_content 'The Computer chose'
+    expect(page).to have_content 'Computer chose'
   end
 end
