@@ -2,34 +2,39 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link rel="stylesheet" href="style.css" type="text/css">
   <title>RPS!</title>
   </head>
   <body>
     <h1 class="title__main">Game Options</h1>
-    <form class="form" action='/solo' method='post'>
-      <h2>Solo</h2>
-      <input required="true"
-             pattern="[A-Za-z]+"
-             type='text'
-             name="solo_player"
-             placeholder="Player Name"/>
-      <input type="submit" value="Play!"/>
-    </form>
-
-    <form action='/multi' method='post'>
-      <h2>Multiplayer</h2>
-      <input type='text'
-             required="true"
-             pattern="[A-Za-z]+"
-             name="player_one"
-             placeholder="Player One Name"/>
-      <input type='text'
-             required="true"
-             pattern="[A-Za-z]+"
-             name="player_two"
-             placeholder="Player Two Name" />
-      <input type="submit" value="PvP!"/>
-    </form>
+    <div class="div--main">
+      <form class="form--main" action='/solo' method='post'>
+        <h2 class="title__sub">Solo</h2>
+        <input required="true"
+               class= "input input--solo"
+               pattern="[A-Za-z]+"
+               type='text'
+               name="solo_player"
+               placeholder="Player Name"/>
+        <input type="submit" value="Play!"/>
+      </form>
+      <form class="form--main" class="form--main" action='/multi' method='post'>
+        <h2 class="title__sub">Multiplayer</h2>
+        <input type='text'
+               class= "input input--multi"
+               required="true"
+               pattern="[A-Za-z]+"
+               name="player_one"
+               placeholder="Player One Name"/>
+        <input type='text'
+               class= "input input--multi"
+               required="true"
+               pattern="[A-Za-z]+"
+               name="player_two"
+               placeholder="Player Two Name" />
+        <input type="submit" value="PvP!"/>
+      </form>
+    </div>
   </body>
 </html>

@@ -1,22 +1,51 @@
 /* HOMEPAGE */
 
-
+body {
+    font-family: 'Nunito', sans-serif;
+}
 
 .title__main{
-  font-size: 3em;
-  -webkit-animation: glitch 5s infinite;
-  animation: glitch 5s infinite;
+  font-size: 2.5em;
+  -webkit-animation: glitch 3s infinite;
+  animation: glitch 3s infinite;
   text-align: center;
   -webkit-text-fill-color: yellow;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 0.8px;
   -webkit-text-stroke-color: #d0bc06;
+  transition-timing-function: ease-in-out;
+  margin-bottom: -50px;
 }
 
 @keyframes glitch {
-    0%  {padding-left: 0px; }
-    25%  {padding-left: 30px; }
-    75%  {padding-left: -30px; }
-    100%  {padding-left:0px; }
+    0%  {padding-right: 10px; }
+    50%  {padding-left: 20px; }
+    100% {padding-right: 10px; }
+}
+
+.div--main{
+  width: 80%;
+  height: 50%;
+  padding: 10px;
+  margin: auto;
+  border: black 5px solid;
+  border-top: black 46px solid;
+}
+
+.form--main {
+  text-align: center;
+  margin: auto;
+}
+
+.title__sub {
+  margin-bottom: -2px;
+}
+
+.input {
+  width: 70%;
+}
+
+.input--solo {
+  margin-bottom: 20px;
 }
 
 .img__svg{
