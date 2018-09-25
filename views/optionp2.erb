@@ -2,9 +2,7 @@
 <br>
 <br>
 <form action='/optionp2' method='post'>
-  <input type='submit' value='Rock' name ="option" class='button'>
-  <input type='submit' value='Paper' name="option" class='button'>
-  <input type='submit' value='Scissors' name="option" class='button'>
-  <input type='submit' value='Lizard' name="option" class='button'>
-  <input type='submit' value='Spock' name="option" class='button'>
+  <% ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'].each do |choice| %>
+  <input type='submit' value=<%=choice%> name='commit' class='button' >
+  <% end %>
 </form>

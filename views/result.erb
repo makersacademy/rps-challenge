@@ -1,5 +1,10 @@
 <br>
 <br>
+<% if @gamemode == :singleplayer %>
+<p style="font-size:60px"> Skynet chose <%= @game.player2.player_choice %></p>
+<br>
+<br>
+<%end%>
 
 <% if @result == 'player1' %>
   <p> <%= @game.player1.name.capitalize %> wins! :D </p>
