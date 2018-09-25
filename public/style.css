@@ -33,7 +33,8 @@ body {
 
 .form--main {
   text-align: center;
-  margin: auto;
+  margin: 2px auto 10px;
+  border: grey 0.5px solid;
 }
 
 .title__sub {
@@ -41,11 +42,15 @@ body {
 }
 
 .input {
-  width: 70%;
+  width: 80%;
+  margin-bottom: 5px;
 }
 
-.input--solo {
-  margin-bottom: 20px;
+.btn {
+  margin: 10px auto;
+  display: block;
+  width: 60px;
+  border-radius: 5px;
 }
 
 .img__svg{
@@ -73,4 +78,14 @@ body {
 
 .img__svg--multi:active {
   border: solid 2px green ;
+}
+
+@media only screen and (min-width: 800px) {
+  .div--main {
+    margin: 25px auto;
+    width: 30%;
+  }
+  .title__main {
+    margin: 25px auto -75px;
+  }
 }
