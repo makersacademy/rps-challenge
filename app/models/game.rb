@@ -46,21 +46,18 @@ class Game
 
   def calculate_winner
     play = [player1.move, player2.move]
-    if play.uniq.size == 1
-      self.winner = :tie
-    else
-      self.winner = return_winner(play)
-    end
+    self.winner = equal?(play) ? :tie : return_winner(play)
   end
 
-  def reason
-
-  end
 
   private
   attr_writer :on_turn, :winner
 
-  # returns p1 wins, false if p2 wins
+  def equal?(array)
+    array.uniq.size == 1
+  end
+
+  # returns p1 or p2
   def return_winner(combo)
     return player1 if Game::P1_WIN.include?(combo)
     return player2 if Game::P2_WIN.include?(combo)
