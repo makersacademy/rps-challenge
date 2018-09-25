@@ -8,6 +8,10 @@ class Menus
 		puts "Hello #{name}!"
 	end
 
+	def human_turn(human_player)
+		puts "#{human_player}, please enter your move ('Rock', 'Paper' or 'Scissors')"
+	end
+
 	def break
 		puts "===================================================="
 	end
@@ -26,39 +30,44 @@ class Game
 	end
 
 	def score_update(human_player)
-		if @human_score == 3 || computer_score == 3
-			puts "Final score: #{human_player}: #{self.human_score}, Computer: #{self.computer_score}"
+		if @human_score == 3	
+			puts "The final score is #{human_player}: #{self.human_score}, Computer: #{self.computer_score}!"
+			puts "===================================================="
 			puts "The winner is #{human_player}!!!"
 		elsif @computer_score == 3
-			puts "Final score: #{human_player}: #{self.human_score}, Computer: #{self.computer_score}"
+			puts "The final score is #{human_player}: #{self.human_score}, Computer: #{self.computer_score}!"
+			puts "===================================================="
 			puts "Unlucky...the computer wins!!!"
 		else
-			puts "The score is #{human_player}: #{self.human_score}, Computer: #{self.computer_score}!"
+			puts "The score is now #{human_player}: #{self.human_score}, Computer: #{self.computer_score}!"
 		end
+	end
+
+	def pause
+		sleep 0.75
 	end
 
 	def move(human_turn, computer_turn, human_player)
 		if (human_turn == 'Rock' && computer_turn == 'Scissors' || human_turn == 'Paper' && computer_turn == 'Rock' || human_turn == 'Scissors' && computer_turn == 'Paper')
 				puts "#{human_player} wins!"
 				self.human_score += 1
-		# Computer wins
 		elsif (computer_turn == 'Rock' && human_turn == 'Scissors' || computer_turn == 'Paper' && human_turn == 'Rock' || computer_turn == 'Scissors' && human_turn == 'Paper')
 				puts "Computer Wins!"
 				self.computer_score += 1
-		# Draws
 		elsif (computer_turn == 'Rock' && human_turn == 'Rock' || computer_turn == 'Paper' && human_turn == 'Paper' || computer_turn == 'Scissors' && human_turn == 'Scissors')
 				puts "That's a draw!"
-		else # Computer wins
-				puts "Ooops! Please enter 'Rock', 'Paper' or 'Scissors'!"
 		end
 	end
-
 end
 # HUMAN CLASS =================================================================
 class Human
 	attr_accessor :name
 	def initialize(name)
 		@name = name
+	end
+
+	def valid_weapons
+		@valid_weapons = ['Rock', 'Paper', 'Scissors']
 	end
 
 	def to_s
@@ -68,14 +77,12 @@ end
 # COMPUTER CLASS ========================================================
 class Computer
 	def initialize
-		@game = ['Rock', 'Paper', 'Scissors']
+		@move = ['Rock', 'Paper', 'Scissors']
 	end
 	def turn
-		@game.sample
+		@move.sample
 	end
 end
-
-
 # PROGRAM RUNNER ========================================================
 game = Game.new
 menu = Menus.new
@@ -85,27 +92,31 @@ human_player = Human.new(name = gets.chomp.strip.capitalize)
 menu.break
 menu.welcome_player(human_player)
 menu.break
-sleep 0.5
+game.pause
 # game loop
 until game.winner?
-	puts "#{human_player.name}, please enter your move ('Rock', 'Paper' or 'Scissors')"
+	menu.human_turn(human_player)
 	menu.break
-	human_turn = gets.chomp.strip.capitalize
-	menu.break
-	puts "#{human_player.name}'s turn: #{human_turn}"
-	menu.break
-	sleep 0.5
-	puts "Computer's turn: " + (computer_turn = computer_player.turn)
-	menu.break
-	sleep 0.5
-	# Game moves
-	game.move(human_turn, computer_turn, human_player)
-	# Score update after each turn
-	menu.break
-	sleep 0.5
-	game.score_update(human_player)
-	menu.break
-	sleep 0.5
+	if human_player.valid_weapons.include?(human_turn = gets.chomp.strip.capitalize)
+		menu.break
+		puts "#{human_player.name}'s turn: #{human_turn}"
+		menu.break
+		game.pause
+		puts "Computer's turn: " + (computer_turn = computer_player.turn)
+		menu.break
+		game.pause
+		game.move(human_turn, computer_turn, human_player)
+		menu.break
+		game.pause
+		game.score_update(human_player)
+		menu.break
+		game.pause
+	else
+		menu.break
+		puts "Please use a valid weapon!"
+		menu.break
+		game.pause
+	end
 end
 
 
