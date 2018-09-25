@@ -22,6 +22,6 @@ class Game
   end
 
   def computer_choice
-    [:Rock, :Paper, :Scissors, :Spock, :Lizard].sample
+    ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard'].sample
   end
 end

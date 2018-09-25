@@ -16,38 +16,6 @@ describe Game do
     end
   end
 
-  context '#play versus computer' do
-    context 'computer choice is paper' do
-
-      before(:each) do
-        allow_any_instance_of(Array).to receive(:sample) { 'Paper' }
-      end
-
-      it 'returns player1 as the winner when player chooses scissors' do
-        game = Game.new(player1, player2)
-        allow(player1).to receive(:player_choice) { 'Scissors' }
-        allow(player2).to receive(:player_choice) { 'Paper' }
-
-        expect(game.play).to eq 'player1'
-      end
-
-      it 'returns computer as winner when player chooses rock' do
-        game = Game.new(player1, player2)
-        allow(player1).to receive(:player_choice) { 'Rock' }
-        allow(player2).to receive(:player_choice) { 'Paper' }
-
-        expect(game.play).to eq 'player2'
-      end
-
-      it 'returns draw when player chooses paper' do
-        game = Game.new(player1, player2)
-        allow(player1).to receive(:player_choice) { 'Paper' }
-        allow(player2).to receive(:player_choice) { 'Paper' }
-
-        expect(game.play).to eq 'draw'
-      end
-    end
-  end
 
   context '#play versus player2' do
     subject(:game) { described_class.new(player1, player2) }

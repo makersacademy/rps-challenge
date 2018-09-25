@@ -32,7 +32,6 @@ class RPS < Sinatra::Base
   end
 
   post '/optionp1' do
-    @game = session[:game]
     @gamemode = session[:game_mode]
     session[:player1_choice] = params[:commit]
     if @gamemode == :singleplayer
@@ -48,7 +47,6 @@ class RPS < Sinatra::Base
   end
 
   post '/optionp2' do
-    @game = session[:game]
     session[:player2_choice] = params[:option]
     redirect '/result'
   end
