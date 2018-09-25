@@ -1,2 +1,18 @@
-<h1>You have picked: <%= session[:player1].choice %></h1>
-<h1>Computer picked: <%= session[:game].computer_pick %>
+<h1 style="font-family:Palatino; font-size:400%; background-color:SlateBlue; color:white;">You have picked: <%= session[:player1].choice %></h1>
+<h1 style="font-family:Palatino; font-size:400%; background-color:Tomato; color:white;">Computer picked: <%= session[:game].computer_pick %></h1>
+
+<% if session[:game].win_lose == 'YOU LOSE' %>
+<h1 style="font-family:Palatino; font-size:800%; background-color:Tomato; color:white;"><%= session[:game].win_lose %></h1>
+<% end %>
+
+<% if session[:game].win_lose == 'YOU WIN' %>
+<h1 style="font-family:Palatino; font-size:800%; background-color:MediumSeaGreen; color:white;"><%= session[:game].win_lose %></h1>
+<% end %>
+
+<% if session[:game].win_lose == 'YOU DREW' %>
+<h1 style="font-family:Palatino; font-size:800%; background-color:LightGray; color:white;"><%= session[:game].win_lose %></h1>
+<% end %>
+
+<form action='/play' method='get' align="middle"> 
+    <input type="submit" value="Play again" style="height=300px; width:300px">
+</form>

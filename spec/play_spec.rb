@@ -46,3 +46,33 @@ feature 'Computer can pick' do
     expect(page).to have_content('Computer picked:')
   end
 end
+
+feature 'Player picks Rock, computer picks Paper' do
+  scenario 'expect page to have result of game: YOU LOSE' do
+    srand(1) #causes the srand to always choose the same one, in this scenario, "Paper"
+    sign_into_game
+    click_button('Rock')
+    # save_and_open_page
+    expect(page).to have_content('YOU LOSE')
+  end
+end
+
+feature 'Player picks Rock, computer picks Scissors' do
+  scenario 'expect page to have result of game: YOU WIN' do
+    srand(3) #causes the srand to always choose the same one, in this scenario, "Scissors"
+    sign_into_game
+    click_button('Rock')
+    # save_and_open_page
+    expect(page).to have_content('YOU WIN')
+  end
+end
+
+feature 'Player picks Rock, computer picks Rock' do
+  scenario 'expect page to have result of game: YOU DREW' do
+    srand(2) #causes the srand to always choose the same one, in this scenario, "Scissors"
+    sign_into_game
+    click_button('Rock')
+    save_and_open_page
+    expect(page).to have_content('YOU DREW')
+  end
+end

@@ -1,13 +1,14 @@
 <body style="text-align:center;">
     <img src="https://s28209.pcdn.co/wp-content/uploads/2017/04/rock-paper-scissors-featured.jpg" alt="rock paper scissors">
-    <h3 style="font-family:Palatino; font-size:150%; background-color:SlateBlue; color:white;">Player name: <%= session[:player1_name] %></h3>
+    <h3 style="font-family:Palatino; font-size:150%; background-color:SlateBlue; color:white;">Player name: Vu</h3>
     <h2 style="font-family:Palatino; font-size:150%; background-color:Tomato; color:white;">Choose rock, paper or scissors</h2>
     
     <div style="float:left;">
     <form action='/choice' method='get' align="left"> 
         <img src="https://images-na.ssl-images-amazon.com/images/I/91ArnT6tnPL._SY445_.jpg" id="rock" alt="rock" style="width:335px;height:445px;">
         <br>
-        <input type="submit" value="Rock" name='choice'>
+        <input type='text' value='Rock' name='choice'>
+        <input type="submit" value="Pick: Rock">
     </form>
     </div>
     
@@ -15,7 +16,8 @@
     <form action='/choice' method='get' align="right"> 
         <img src="https://i.kym-cdn.com/photos/images/original/000/602/032/20f.jpg" id="scissors" alt="scissors" style="width:335px;height:445px;">
         <br>
-        <input type="submit" value="Scissors" name='choice'>
+        <input type='text' value='Scissors' name='choice'>
+        <input type="submit" value="Pick: Scissors">
     </form>
     </div>
 
@@ -23,7 +25,9 @@
     <form action='/choice' method='get' align="middle"> 
         <img src="http://af416ca.is2.byuh.edu/cis101.2135/project/paper.jpg" id="paper" alt="paper" style="width:335px;height:445px;">
         <br>
-        <input type="submit" value="Paper" name='choice'>
+        <input type='text' value='Paper' name='choice'>
+        <input type="submit" value="Pick: Paper">
     </form>
     </div>
+
 </body>
