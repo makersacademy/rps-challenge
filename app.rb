@@ -2,7 +2,7 @@ require 'sinatra/base'
 require_relative './lib/winner'
 require_relative './lib/player'
 
-class RPS <Sinatra::Base
+class RPS < Sinatra::Base
 
   get '/' do
     @name = params[:player]
