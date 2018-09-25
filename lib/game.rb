@@ -1,9 +1,37 @@
+class Menu
+	def welcome
+		"Hello! Welcome to Rock, Paper, Scissors! What is your name?"
+	end
+
+	def welcome_player(name)
+		"Hello #{name}!"
+	end
+end
+
+class Game
+	attr_accessor :human_score, :computer_score
+	def initialize(human_score=0, computer_score=0)
+		@human_score = human_score
+		@computer_score = computer_score
+	end
+
+	def winner?
+		@human_score == 3 || @computer_score == 3
+	end
+end
+
 class Human
 	attr_reader :name
-
 	def initialize(name)
 		@name = name
 	end
+
+	def to_s
+		@name	
+	end
+	# def valid_move?(turn)
+	# 	turn == 'Rock' || turn == 'Paper' || turn == 'Scissors'
+	# end
 end
 
 class Computer
@@ -15,17 +43,17 @@ class Computer
 	end
 end
 
-puts "Hello! Welcome to Rock, Paper, Scissors!"
-puts "What is your name?"
-human_player = Human.new(name = gets.chomp.strip.capitalize)
-puts "Hello #{human_player.name}"
-
+# Program........
+game = Game.new
+menu = Menu.new
 computer_player = Computer.new
-human_score = 0
-computer_score = 0
+puts menu.welcome
+human_player = Human.new(name = gets.chomp.strip.capitalize)
+puts menu.welcome_player(human_player)
+sleep 1
 
-until human_score == 3 || computer_score == 3
-puts "#{human_player.name}, please enter your move (Rock, Paper or Scissors)"
+until game.winner?
+puts "#{human_player.name}, please enter your move ('Rock', 'Paper' or 'Scissors')"
 human_turn = gets.chomp.strip.capitalize
 puts "#{human_player.name}'s turn: #{human_turn}"
 sleep 1
@@ -34,21 +62,23 @@ sleep 1
 	# Human wins
 	if (human_turn == 'Rock' && computer_turn == 'Scissors' || human_turn == 'Paper' && computer_turn == 'Rock' || human_turn == 'Scissors' && computer_turn == 'Paper')
 			puts "#{name} wins!"
-			human_score += 1
+			@human_score += 1
 	# Computer wins
 	elsif (computer_turn == 'Rock' && human_turn == 'Scissors' || computer_turn == 'Paper' && human_turn == 'Rock' || computer_turn == 'Scissors' && human_turn == 'Paper')
-			puts "#{name} wins!"
-			computer_score += 1
+			puts "Computer Wins!"
+			@computer_score += 1
 	# Draws
 	elsif (computer_turn == 'Rock' && human_turn == 'Rock' || computer_turn == 'Paper' && human_turn == 'Paper' || computer_turn == 'Scissors' && human_turn == 'Scissors')
 			puts "That's a draw!"
 	else # Computer wins
-			puts "Ooops! Please enter Rock, Paper or Scissors!"
+			puts "Ooops! Please enter 'Rock', 'Paper' or 'Scissors'!"
 	end
 	# Score update after each turn
+	sleep 1
 	puts "The score is #{human_player.name}: #{human_score}, Computer player: #{computer_score}!"
 end
-# The winner is....
+sleep 1
+# puts @human_score > @computer_score ? "#{human_player.name} wins!" : "Computer wins!"
 
 
 
