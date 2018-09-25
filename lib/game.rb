@@ -10,6 +10,7 @@ end
 
 class Game
 	attr_accessor :human_score, :computer_score
+
 	def initialize(human_score=0, computer_score=0)
 		@human_score = human_score
 		@computer_score = computer_score
@@ -18,10 +19,15 @@ class Game
 	def winner?
 		@human_score == 3 || @computer_score == 3
 	end
+
+	def score_update(human_player)
+		"The score is #{human_player}: #{self.human_score}, Computer player: #{self.computer_score}!"
+	end
+
 end
 
 class Human
-	attr_reader :name
+	attr_accessor :name
 	def initialize(name)
 		@name = name
 	end
@@ -56,17 +62,17 @@ until game.winner?
 puts "#{human_player.name}, please enter your move ('Rock', 'Paper' or 'Scissors')"
 human_turn = gets.chomp.strip.capitalize
 puts "#{human_player.name}'s turn: #{human_turn}"
-sleep 1
+sleep 0.5
 puts "Computer's turn: " + (computer_turn = computer_player.turn)
-sleep 1
+sleep 0.5
 	# Human wins
 	if (human_turn == 'Rock' && computer_turn == 'Scissors' || human_turn == 'Paper' && computer_turn == 'Rock' || human_turn == 'Scissors' && computer_turn == 'Paper')
 			puts "#{name} wins!"
-			@human_score += 1
+			game.human_score += 1
 	# Computer wins
 	elsif (computer_turn == 'Rock' && human_turn == 'Scissors' || computer_turn == 'Paper' && human_turn == 'Rock' || computer_turn == 'Scissors' && human_turn == 'Paper')
 			puts "Computer Wins!"
-			@computer_score += 1
+			game.computer_score += 1
 	# Draws
 	elsif (computer_turn == 'Rock' && human_turn == 'Rock' || computer_turn == 'Paper' && human_turn == 'Paper' || computer_turn == 'Scissors' && human_turn == 'Scissors')
 			puts "That's a draw!"
@@ -75,7 +81,7 @@ sleep 1
 	end
 	# Score update after each turn
 	sleep 1
-	puts "The score is #{human_player.name}: #{human_score}, Computer player: #{computer_score}!"
+	puts game.score_update(human_player)
 end
 sleep 1
 # puts @human_score > @computer_score ? "#{human_player.name} wins!" : "Computer wins!"
