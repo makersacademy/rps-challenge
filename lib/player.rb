@@ -1,7 +1,7 @@
-class Player
+class Player2
 
   def random_turn
-    ["rock", "paper", "scissors"].sample
+    ["ROCK!", "PAPER!", "SCISSORS!"].sample
   end
 
 end

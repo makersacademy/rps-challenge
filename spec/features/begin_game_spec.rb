@@ -6,11 +6,21 @@ feature 'Begin Game' do
     expect(page).to have_content "Choose rock, paper or scissors."
   end
 
-  scenario 'User Chooses rock, paper or scissors' do
+  scenario 'User chooses' do
     submit_name_and_play
-    fill_in :user_chooses, with: 'rock'
-    click_button 'GO!'
-    expect(page).to have_content 'You chose rock.'
+    click_button 'ROCK!'
+    expect(page).to have_content 'You chose ROCK!'
   end
 
+  scenario 'User chooses' do
+    submit_name_and_play
+    click_button 'PAPER!'
+    expect(page).to have_content 'You chose PAPER!'
+  end
+
+  scenario 'User chooses' do
+    submit_name_and_play
+    click_button 'SCISSORS!'
+    expect(page).to have_content 'You chose SCISSORS!'
+  end
 end

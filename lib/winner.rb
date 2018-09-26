@@ -1,39 +1,22 @@
 class Winner
 
-  attr_reader :user_chooses, :computer_chooses
+  attr_reader :player, :user_chooses, :computer_chooses
 
-  def initialize(user_chooses, computer_chooses)
+  def initialize(player, user_chooses, computer_chooses)
+    @player = player
     @user_chooses = user_chooses
     @computer_chooses = computer_chooses
   end
 
-#   def who_wins
-#     if @user_chooses == "rock" && @computer_chooses == "scissors" ||
-#       @user_chooses == "paper" && @computer_chooses == "rock" ||
-#       @user_chooses == "scissors" && @computer_chooses == "paper"
-#       return "You won!!!"
-#     elsif @computer_chooses == "rock" && @user_chooses == "scissors" ||
-#       @computer_chooses == "paper" && @user_chooses == "rock" ||
-#       @computer_chooses == "scissors" && @user_chooses == "paper"
-#       return "I won!!!"
-#     elsif @user_chooses == @computer_chooses
-#       return 'It\'s a tie!'
-#     end
-#   end
-# end
-
-
   def who_wins
-    game = { "rock" => "scissors", "paper" => "rock", "scissors" => "paper" }
+    game = { "ROCK!" => "SCISSORS!", "PAPER!" => "ROCK!", "SCISSORS!" => "PAPER!" }
       if game[@user_chooses] == @computer_chooses
-        return "You won!!!"
+        return "#{@player} WON!!!"
       elsif game[@computer_chooses] == @user_chooses
-        return "I won!!!"
-      elsif @user_chooses == @computer_chooses
-        return "It\'s a tie!"
+        return "I WON!!!"
       else
-        "You have to choose either rock, paper or scissors to play!"
+        @user_chooses == @computer_chooses
+        return "IT\'S A TIE!"
       end
   end
-
 end
