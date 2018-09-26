@@ -30,6 +30,4 @@ This port ensures you will get the up-to-date CSS and functionality.
 Once you have entered this command within your Terminal from the rps-challenge
 folder head to:
 
-```
 [http://localhost:9000](http://localhost:9000)
-```
