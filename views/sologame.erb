@@ -2,22 +2,25 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <title>RPS!</title>
     <link rel="stylesheet" href="style.css" type="text/css">
   </head>
   <body>
-    <h1>Make your choice <%= @game.player1.name %></h1>
-    <form action="/selection" method="post">
-      <button class="btn--choice" type="submit" value="rock" name="choice">
-        <img class="img__svg" src="images/stone.svg" alt="rock" />
-      </button>
-      <button class="btn--choice" type="submit" value="paper" name="choice">
-        <img class="img__svg" src="images/paper.svg" alt="paper" />
-      </button>
-      <button class="btn--choice" type="submit" value="scissors" name="choice">
-        <img class="img__svg" src="images/scissors.svg" alt="scissors" />
-      </button>
-    </form>
+    <div>
+      <h1 class="title__sub">Make your choice <%= @game.player1.name %></h1>
+      <form action="/selection" method="post">
+        <button class="btn--choice" type="submit" value="rock" name="choice">
+          <img class="img__svg" src="images/stone.svg" alt="rock" />
+        </button>
+        <button class="btn--choice" type="submit" value="paper" name="choice">
+          <img class="img__svg" src="images/paper.svg" alt="paper" />
+        </button>
+        <button class="btn--choice" type="submit" value="scissors" name="choice">
+          <img class="img__svg" src="images/scissors.svg" alt="scissors" />
+        </button>
+      </form>
+    </div>
     <!-- <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
     <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
 
