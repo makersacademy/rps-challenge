@@ -16,7 +16,6 @@ describe Game do
     end
   end
 
-
   context '#play versus player2' do
     subject(:game) { described_class.new(player1, player2) }
 
