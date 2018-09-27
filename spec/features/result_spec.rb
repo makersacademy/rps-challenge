@@ -15,11 +15,18 @@ feature "Results" do
     expect(page).to have_content "The Machine chose paper"
   end
 
-  scenario "Shows winner if not a tie" do
+  scenario "Shows winner(computer) if not a tie" do
     allow_any_instance_of(Array).to receive(:sample).and_return('paper')
     sign_in_and_play
     click_button "Rock"
     expect(page).to have_content "And the winner is... The Machine!"
+  end
+
+  scenario "Shows winner(player) if not a tie" do
+    allow_any_instance_of(Array).to receive(:sample).and_return('paper')
+    sign_in_and_play
+    click_button "Scissors"
+    expect(page).to have_content "And the winner is... Dumbledore!"
   end
 
   scenario "Informs of tie" do

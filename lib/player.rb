@@ -1,8 +1,5 @@
 class Player
-  attr_reader :name
-  attr_accessor :chosen_option
-
-  OPTIONS = ["rock", "paper", "scissors"]
+  attr_reader :name, :chosen_option
 
   def initialize(name = "Anonymous player")
     @name = name
