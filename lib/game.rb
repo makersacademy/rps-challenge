@@ -22,9 +22,9 @@ class Game
     @game
   end
 
-  def result(option_1, option_2)
-    return "tie" if option_1 == option_2
-    RULES[option_1.to_sym] == option_2.to_sym ? player_1 : player_2
+  def result
+    return "tie" if player_1.chosen_option == player_2.chosen_option
+    RULES[player_1.chosen_option.to_sym] == player_2.chosen_option.to_sym ? player_1 : player_2
   end
 
   def computer_option

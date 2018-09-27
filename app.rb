@@ -32,7 +32,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @game = Game.instance
-    @result = @game.result(@game.player_1_option, @game.player_2_option)
+    @result = @game.result
     erb :result
   end
 

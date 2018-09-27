@@ -17,36 +17,53 @@ describe Game do
 
   describe "#result" do
     it "should return a tie if both options are the same" do
-      expect(game.result('paper', 'paper')).to eq "tie"
+      allow(player_1).to receive(:chosen_option).and_return('paper')
+      allow(player_2).to receive(:chosen_option).and_return('paper')
+      expect(game.result).to eq "tie"
     end
 
     context "player 1 chooses paper" do
+      before do
+        allow(player_1).to receive(:chosen_option).and_return('paper')
+      end
       it "player 1 should win if player 2 chooses rock" do
-        expect(game.result('paper', 'rock')).to eq player_1
+        allow(player_2).to receive(:chosen_option).and_return('rock')
+        expect(game.result).to eq player_1
       end
 
       it "player 2 should win if player 2 chooses scissors" do
-        expect(game.result('paper', 'scissors')).to eq player_2
+        allow(player_2).to receive(:chosen_option).and_return('scissors')
+        expect(game.result).to eq player_2
       end
     end
 
     context "player 1 chooses rock" do
+      before do
+        allow(player_1).to receive(:chosen_option).and_return('rock')
+      end
       it "player 1 should win if player 2 chooses scissors" do
-        expect(game.result('rock', 'scissors')).to eq player_1
+        allow(player_2).to receive(:chosen_option).and_return('scissors')
+        expect(game.result).to eq player_1
       end
 
       it "player 2 should win if player 2 chooses paper" do
-        expect(game.result('rock', 'paper')).to eq player_2
+        allow(player_2).to receive(:chosen_option).and_return('paper')
+        expect(game.result).to eq player_2
       end
     end
 
     context "player 1 chooses scissors" do
+      before do
+        allow(player_1).to receive(:chosen_option).and_return('scissors')
+      end
       it "player 1 should win if player 2 chooses paper" do
-        expect(game.result('scissors', 'paper')).to eq player_1
+        allow(player_2).to receive(:chosen_option).and_return('paper')
+        expect(game.result).to eq player_1
       end
 
       it "player 2 should win if player 2 chooses rock" do
-        expect(game.result('scissors', 'rock')).to eq player_2
+        allow(player_2).to receive(:chosen_option).and_return('rock')
+        expect(game.result).to eq player_2
       end
     end
   end
