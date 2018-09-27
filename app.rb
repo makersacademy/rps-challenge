@@ -15,15 +15,22 @@ class RpsWeb < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
-    @shape = session[:shape]
-    @computer_shape = Game.new
     erb :play
   end
 
   post '/play' do
     session[:shape] = params[:shape]
-    session[:computer_shape] = :Paper
-    redirect '/play'
+    session[:game] = Game.new(session[:shape])
+    redirect '/endgame'
+  end
+
+  get '/endgame' do
+    @game = session[:game]
+    @computer_shape = @game.choice
+    @player_shape = @game.player_shape
+    @results = @game.result(@computer_shape)
+    @isdraw = @game.draw?(@computer_shape)
+    erb :endgame
   end
 
   run! if app_file == $0
