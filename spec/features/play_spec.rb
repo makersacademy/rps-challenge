@@ -17,7 +17,7 @@ feature 'Play' do
 
   # scenario 'Display users choice' do
   #   submit_name_and_play
-  #   allow(Player2).to receive(:random_turn).and_return("SCISSORS!")
+  #   allow(Player2.new).to receive(:random_turn).and_return("SCISSORS!")
   #   visit('/play')
   #   expect(page).to have_content "I chose SCISSORS!"
   # end
