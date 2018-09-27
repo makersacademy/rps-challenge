@@ -9,6 +9,10 @@ Setup
 3. Run _rackup_ in the command line
 4. Go to http://localhost:9292 in your browser
 
+Test with Rspec
+-----
+1. Open this directory in the command line
+2. Run 'rspec'
 
 What is this challenge about?
 ----
