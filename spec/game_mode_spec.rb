@@ -55,4 +55,19 @@ describe GameMode do
       end
     end
   end
+
+  context "testing self.methods" do
+    context ".create" do
+      it "should create an instance of GameMode" do
+        expect(GameMode.create).to be_an_instance_of(GameMode)
+      end
+    end
+
+    context ".instance" do
+      it "should return an instance of GameMode" do
+        GameMode.create
+        expect(GameMode.instance).to be_an_instance_of(GameMode)
+      end
+    end
+  end
 end
