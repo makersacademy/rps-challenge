@@ -12,7 +12,7 @@ describe AI do
 
   context "#name" do
     it "returns RPSbot" do
-      expect(ai.name).to eq :RPSbot
+      expect(ai.name).to eq "RPSbot"
     end
   end
 end
