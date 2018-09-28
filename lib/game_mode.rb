@@ -4,8 +4,11 @@ class GameMode
 
   attr_reader :game, :player_mode
 
-  def initialize(player_mode: :single_player, player1: nil, player2: nil, game_class: Game)
+  def initialize(player_mode: :single_player)
     @player_mode = player_mode
+  end
+
+  def new_game(player1: nil, player2: nil, game_class: Game)
     if player_mode == :single_player
       @game = game_class.new(player1)
     else
@@ -13,11 +16,4 @@ class GameMode
     end
   end
 
-  def store_move(player1_move, player2_move = nil)
-    game.store_move(player1_move, player2_move)
-  end
-
-  def who_won
-    game.who_won
-  end
 end
