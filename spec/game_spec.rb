@@ -15,6 +15,20 @@ describe Game do
     end
   end
 
+  describe '.created' do
+    it "creates an instance of the described class" do
+      Game.create(player_1, player_2)
+      expect(Game.instance).to be_a Game
+    end
+  end
+
+  describe '.instance' do
+    it "sets the previously created instance of the class" do
+      Game.create(player_1, player_2)
+      expect(Game.instance).to be_a Game
+    end
+  end
+
   describe "#result" do
     it "should return a tie if both options are the same" do
       allow(player_1).to receive(:chosen_option).and_return('paper')
