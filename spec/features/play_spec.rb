@@ -15,10 +15,11 @@ feature 'Play' do
     expect(page).to have_content "You chose PAPER!"
   end
 
-  # scenario 'Display users choice' do
-  #   submit_name_and_play
-  #   allow(Player2.new).to receive(:random_turn).and_return("SCISSORS!")
-  #   visit('/play')
-  #   expect(page).to have_content "I chose SCISSORS!"
-  # end
+  scenario 'Display users choice' do
+    submit_name_and_play
+    allow(Player2.new).to receive(:random_turn).and_return("SCISSORS!")
+    click_button('SCISSORS!')
+    visit('/play')
+    expect(page).to have_content "I chose SCISSORS!"
+  end
 end
