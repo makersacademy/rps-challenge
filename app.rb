@@ -19,12 +19,12 @@ class RpsWeb < Sinatra::Base
   end
 
   post '/play' do
-    session[:game] = Game.new(params[:shape])
+    @game = Game.create(params[:shape])
     redirect '/endgame'
   end
 
   get '/endgame' do
-    @game = session[:game]
+    @game = Game.instance
     @computer_shape = @game.choice
     @player_shape = @game.player_shape
     @results = @game.result(@computer_shape)

@@ -28,4 +28,12 @@ class Game
       false
     end
   end
+
+  def self.create(player_shape)
+    @game = Game.new(player_shape)
+  end
+
+  def self.instance
+    @game
+  end
 end

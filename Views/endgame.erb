@@ -2,9 +2,9 @@
 <%if @isdraw %>
   <h1>It's a draw!</h1>
 <% elsif @results %>
-  <h1>Congratulation You won!!</h1>
+  <h1>Congratulations You won!!</h1>
 <% else%>
-  <h1>Computer won</h1>
+  <h1>Computer won!!</h1>
 <% end %>
 <form action="/play" method="get">
   <input type="submit" name="again" value="Try again?">

@@ -35,5 +35,13 @@ describe Game do
         expect(game.result("Paper")).to eq false
       end
     end
+
+    describe ".create" do
+      it "creates an instance of Game" do
+        Game.create("Rock")
+        game = Game.instance
+        expect(game).to be_a Game
+      end
+    end
   end
 end

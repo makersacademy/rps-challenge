@@ -21,7 +21,7 @@ feature "playing the game" do
 
   context "when computer must choose an option" do
     scenario "computer selects a shape" do
-      allow_any_instance_of(Game).to receive(:choice).and_return(:Paper)
+      allow_any_instance_of(Game).to receive(:choice).and_return("Paper")
       register
       click_button 'Rock'
       expect(page).to have_content 'Computer chose Paper!!'
@@ -30,7 +30,7 @@ feature "playing the game" do
 
   context "when game ends" do
     scenario "Player wins" do
-      allow_any_instance_of(Game).to receive(:choice).and_return(:Scissors)
+      allow_any_instance_of(Game).to receive(:choice).and_return("Scissors")
       register
       click_button 'Rock'
       expect(page).to have_content 'Congratulations You won!!'
@@ -39,7 +39,7 @@ feature "playing the game" do
 
   context "when game ends" do
     scenario "Player loses" do
-      allow_any_instance_of(Game).to receive(:choice).and_return(:Scissors)
+      allow_any_instance_of(Game).to receive(:choice).and_return("Scissors")
       register
       click_button 'Paper'
       expect(page).to have_content 'Computer won!!'
@@ -48,7 +48,7 @@ feature "playing the game" do
 
   context "when game ends" do
     scenario "It is a draw" do
-      allow_any_instance_of(Game).to receive(:choice).and_return(:Scissors)
+      allow_any_instance_of(Game).to receive(:choice).and_return("Scissors")
       register
       click_button 'Scissors'
       expect(page).to have_content "It's a draw!"
