@@ -24,7 +24,7 @@ class Game
 
   def result
     return "tie" if player_1.chosen_option == player_2.chosen_option
-    RULES[player_1.chosen_option.to_sym] == player_2.chosen_option.to_sym ? player_1 : player_2
+    RULES[player_1_option.to_sym] == player_2_option.to_sym ? player_1 : player_2
   end
 
   def computer_option
