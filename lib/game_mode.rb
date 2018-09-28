@@ -16,4 +16,11 @@ class GameMode
     end
   end
 
+  def self.create(player_mode: :single_player)
+    @game_mode = GameMode.new(player_mode: player_mode)
+  end
+
+  def self.instance
+    @game_mode
+  end
 end
