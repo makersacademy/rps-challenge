@@ -35,7 +35,7 @@ describe GameMode do
       end
 
       it "should delegate storing the move to the Game class" do
-        expect(new_game).to receive(:store_move).with(:rock)
+        expect(new_game).to receive(:store_move).with(:rock, nil)
         game_mode.store_move(:rock)
       end
     end

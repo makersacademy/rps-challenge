@@ -14,11 +14,7 @@ class GameMode
   end
 
   def store_move(player1_move, player2_move = nil)
-    if player_mode == :single_player
-      game.store_move(player1_move)
-    else
-      game.store_move(player1_move, player2_move)
-    end
+    game.store_move(player1_move, player2_move)
   end
 
   def who_won
