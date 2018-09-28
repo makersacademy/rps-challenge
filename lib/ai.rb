@@ -7,6 +7,6 @@ class AI
   end
 
   def name
-    :RPSbot
+    "RPSbot"
   end
 end
