@@ -1,0 +1,12 @@
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<div class="center">
+  <p>Player one: <%= @game.player_one.username %></p>
+  <form id='p1' method="post" action="/end">
+    <input type="submit" value="Rock" name="move_1">
+    <input type="submit" value="Paper" name="move_1">
+    <input type="submit" value="Scissors" name="move_1">
+  </form>
+</div>
