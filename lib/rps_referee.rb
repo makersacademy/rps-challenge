@@ -1,5 +1,7 @@
 class RPSReferee
 
+  WINNING_TYPES = [[:rock, :scissors],[:scissors, :paper], [:paper, :rock]]
+
   def decision(moves)
     return :Draw if draw?(moves)
     return 0 if player1_wins?(moves)
@@ -13,9 +15,7 @@ class RPSReferee
   end
 
   def player1_wins?(moves)
-    return true if moves[0] == :rock && moves[1] == :scissors
-    return true if moves[0] == :scissors && moves[1] == :paper
-    return true if moves[0] == :paper && moves[1] == :rock
+    return true if WINNING_TYPES.include?(moves)
   end
 
 end
