@@ -4,8 +4,6 @@ require_relative 'lib/player'
 
 class RPS < Sinatra::Base
 
-  
-
   get '/' do
     erb :welcome
   end
