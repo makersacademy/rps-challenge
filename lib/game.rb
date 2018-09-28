@@ -18,14 +18,14 @@ class Game
   end
 
   def result(computer_shape)
-     if @player_shape == "Rock" && computer_shape == "Scissors"
-       true
-     elsif @player_shape == "Paper" && computer_shape == "Rock"
-       true
-     elsif @player_shape == "Scissors" && computer_shape == "Paper"
-       true
-     else
-       false
-     end
-   end
+    if @player_shape == "Rock" && computer_shape == "Scissors"
+      true
+    elsif @player_shape == "Paper" && computer_shape == "Rock"
+      true
+    elsif @player_shape == "Scissors" && computer_shape == "Paper"
+      true
+    else
+      false
+    end
+  end
 end

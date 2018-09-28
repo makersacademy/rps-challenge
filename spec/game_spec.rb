@@ -29,11 +29,11 @@ describe Game do
     end
   end
 
-   context "when game ends with a winning computer" do
-     describe "#result?" do
-       it "returns false if player shape is rock and computer shape is paper" do
-         expect(game.result("Paper")).to eq false
-       end
-     end
-   end
+  context "when game ends with a winning computer" do
+    describe "#result?" do
+      it "returns false if player shape is rock and computer shape is paper" do
+        expect(game.result("Paper")).to eq false
+      end
+    end
+  end
 end

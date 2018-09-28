@@ -19,8 +19,7 @@ class RpsWeb < Sinatra::Base
   end
 
   post '/play' do
-    session[:shape] = params[:shape]
-    session[:game] = Game.new(session[:shape])
+    session[:game] = Game.new(params[:shape])
     redirect '/endgame'
   end
 
