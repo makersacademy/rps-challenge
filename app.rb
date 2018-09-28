@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/flash'
 require_relative 'lib/game'
 require_relative 'lib/player'
 require_relative 'lib/computer'
@@ -6,12 +7,14 @@ require_relative 'lib/computer'
 class RockPaperScissors < Sinatra::Base
 
   enable :sessions
+  register Sinatra::Flash
 
   get '/' do
     erb :index
   end
 
   post '/names' do
+    return flash[:notice] = "Please enter your name" if params[:player_1].empty?
     player_1 = Player.new(params[:player_1])
     player_2 = Computer.new("The Machine")
     @game = Game.create(player_1, player_2)

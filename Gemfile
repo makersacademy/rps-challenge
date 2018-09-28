@@ -6,6 +6,7 @@ gem 'rake'
 gem 'selenium-webdriver'
 gem 'shotgun'
 gem 'sinatra'
+gem 'sinatra-flash'
 
 group :test do
   gem 'capybara'
