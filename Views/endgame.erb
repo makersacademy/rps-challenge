@@ -1,0 +1,15 @@
+
+<%if @isdraw %>
+  <h1>It's a draw!</h1>
+<% elsif @results %>
+  <h1>Congratulations You won!!</h1>
+<% else%>
+  <h1>Computer won!!</h1>
+<% end %>
+<form action="/play" method="get">
+  <input type="submit" name="again" value="Try again?">
+</form>
+
+
+You chose <%= @player_shape%>!!
+Computer chose <%= @computer_shape%>!!

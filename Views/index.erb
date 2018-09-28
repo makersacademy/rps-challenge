@@ -1,0 +1,27 @@
+<center>
+<h1>Welcome to Rock, Paper, Scissor!!</1>
+<h2>Sign in to play<h2>
+<form action='/name' method='post'>
+  <style>
+    body {
+      animation: colorchange 20s infinite;
+ }
+  @keyframes colorchange
+  {
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: lightblue;}
+    75%  {background: lightgreen;}
+    100% {background: red;}
+  }
+</style>
+  <label for="name">
+    Player
+    <input type="text" name="name" value=""/>
+  </label>
+  <input type="submit" value="Submit"/><br><br><p>
+  <div>
+    <img src='https://futurism.com/wp-content/uploads/2014/05/rock-paper-scissors.jpg'>
+  </div>
+</form>
+</center>
