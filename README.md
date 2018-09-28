@@ -12,7 +12,7 @@ Setup
 Test with Rspec
 -----
 1. Open this directory in the command line
-2. Run 'rspec'
+2. Run _rspec_
 
 What is this challenge about?
 ----
