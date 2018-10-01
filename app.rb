@@ -16,19 +16,20 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
-  get '/play' do
+  before do
     @game = Game.instance
+  end
+
+  get '/play' do
     erb :play
   end
 
   post '/options' do
-    @game = Game.instance
     @game.play(params[:chosen_option])
     redirect '/result'
   end
 
   get '/result' do
-    @game = Game.instance
     erb :result
   end
 
