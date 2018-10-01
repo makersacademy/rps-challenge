@@ -15,39 +15,47 @@ describe Game do
     end
   end
 
-  describe '.created' do
+  describe '.create' do
     it "creates an instance of the described class" do
-      Game.create(player_1, player_2)
+      Game.create(player_1)
       expect(Game.instance).to be_a Game
     end
   end
 
   describe '.instance' do
     it "sets the previously created instance of the class" do
-      Game.create(player_1, player_2)
+      Game.create(player_1)
       expect(Game.instance).to be_a Game
     end
   end
 
-  describe "#result" do
-    it "should return a tie if both options are the same" do
+  describe "#tie?" do
+    it "should return true if both players chose the same option" do
       allow(player_1).to receive(:chosen_option).and_return('paper')
       allow(player_2).to receive(:chosen_option).and_return('paper')
-      expect(game.result).to eq "tie"
+      expect(game.tie?).to be true
     end
 
+    it "should return false if players chose different options" do
+      allow(player_1).to receive(:chosen_option).and_return('paper')
+      allow(player_2).to receive(:chosen_option).and_return('rock')
+      expect(game.tie?).to be false
+    end
+  end
+
+  describe "#winner" do
     context "player 1 chooses paper" do
       before do
         allow(player_1).to receive(:chosen_option).and_return('paper')
       end
       it "player 1 should win if player 2 chooses rock" do
         allow(player_2).to receive(:chosen_option).and_return('rock')
-        expect(game.result).to eq player_1
+        expect(game.winner).to eq player_1
       end
 
       it "player 2 should win if player 2 chooses scissors" do
         allow(player_2).to receive(:chosen_option).and_return('scissors')
-        expect(game.result).to eq player_2
+        expect(game.winner).to eq player_2
       end
     end
 
@@ -57,12 +65,12 @@ describe Game do
       end
       it "player 1 should win if player 2 chooses scissors" do
         allow(player_2).to receive(:chosen_option).and_return('scissors')
-        expect(game.result).to eq player_1
+        expect(game.winner).to eq player_1
       end
 
       it "player 2 should win if player 2 chooses paper" do
         allow(player_2).to receive(:chosen_option).and_return('paper')
-        expect(game.result).to eq player_2
+        expect(game.winner).to eq player_2
       end
     end
 
@@ -72,48 +80,13 @@ describe Game do
       end
       it "player 1 should win if player 2 chooses paper" do
         allow(player_2).to receive(:chosen_option).and_return('paper')
-        expect(game.result).to eq player_1
+        expect(game.winner).to eq player_1
       end
 
       it "player 2 should win if player 2 chooses rock" do
         allow(player_2).to receive(:chosen_option).and_return('rock')
-        expect(game.result).to eq player_2
+        expect(game.winner).to eq player_2
       end
-    end
-  end
-
-  describe "#computer_option" do
-    it "should call random_option on the player_2" do
-      expect(game.player_2).to receive(:random_option)
-      game.computer_option
-    end
-  end
-
-  describe "#player_1_option" do
-    it "should return player 1's chosen option" do
-      expect(game.player_1).to receive(:chosen_option)
-      game.player_1_option
-    end
-  end
-
-  describe "#player_2_option" do
-    it "should return player 2's chosen option" do
-      expect(game.player_2).to receive(:chosen_option)
-      game.player_2_option
-    end
-  end
-
-  describe "#choose_player_1_option" do
-    it "should assign an chosen option to player 1" do
-      expect(game.player_1).to receive(:choose_option).with(anything)
-      game.choose_player_1_option("paper")
-    end
-  end
-
-  describe "#choose_player_2_option" do
-    it "should assign an chosen option to player 2" do
-      expect(game.player_2).to receive(:choose_option).with(anything)
-      game.choose_player_2_option("paper")
     end
   end
 end

@@ -9,13 +9,13 @@
   </head>
 
   <body>
-      <%= @game.player_1.name %> chose <%= @game.player_1_option %></br>
-      The Machine chose <%= @game.player_2_option%> </br>
+      <%= @game.player_1.name %> chose <%= @game.player_1.chosen_option %></br>
+      The Machine chose <%= @game.player_2.chosen_option%> </br>
 
-      <% if @result == "tie" %>
+      <% if @game.tie?  %>
         It's a tie!
       <% else %>
-         And the winner is... <%= @result.name %>!
+         And the winner is... <%= @game.winner.name %>!
       <% end %>
 
       <form action="/play"> <button > Play again </button> </form>
