@@ -29,7 +29,11 @@ class Game
   end
 
   def winner
-    RULES[player_1.chosen_option.to_sym] == player_2.chosen_option.to_sym ? player_1 : player_2
+    if RULES[player_1.chosen_option.to_sym] == player_2.chosen_option.to_sym
+      player_1
+    else
+      player_2
+    end
   end
 
   def tie?
