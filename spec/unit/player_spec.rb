@@ -9,19 +9,19 @@ describe Player do
     end
   end
 
-  context '#generate_choice' do
+  context '#set_choice' do
     it 'expects player to be able to save their choice' do
-      player.generate_choice('scissors')
+      player.set_choice('scissors')
       expect(player.choice).to eq "scissors"
     end
 
     it 'throws an error if something other than set options are given' do
-      expect { player.generate_choice('Bananas') }.to raise_error "That option is not avaiable"
+      expect { player.set_choice('Bananas') }.to raise_error "That option is not avaiable"
     end
 
     it 'chooses randomly from the choices selection if no option passed' do
       srand(90)
-      player.generate_choice
+      player.set_choice
       expect(player.choice).to eq "paper"
     end
   end

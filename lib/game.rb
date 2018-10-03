@@ -11,7 +11,7 @@ class Game
   end
 
   def set_choice(player_index,choice)
-    players[index].generate_choice(choice)
+    players[index].set_choice(choice)
   end
 
   def retrieve_playername(index)
