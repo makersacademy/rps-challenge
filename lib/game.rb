@@ -1,5 +1,5 @@
 class Game
-  attr_reader :winner, :players
+  attr_reader :winner
   def initialize(player1, player2)
     @players = [player1, player2]
     @winner = nil
@@ -10,17 +10,21 @@ class Game
     ]
   end
 
-  def set_choice(player_index,choice)
-    players[index].set_choice(choice)
+  def set_choice(player_index, choice)
+    players[player_index].set_choice(choice)
   end
 
   def retrieve_playername(index)
     players[index].name
   end
 
+  def retrieve_playerchoice(index)
+    players[index].choice
+  end
+
   def find_winner
     return @winner = "Draw" if players[0].choice == players[1].choice
-    if player_one_wins.include?("#{players[0].choice}-#{players[1].choice}")
+    if @player_one_wins.include?("#{players[0].choice}-#{players[1].choice}")
       @winner = players[0].name
     else
       @winner = players[1].name
@@ -28,6 +32,5 @@ class Game
   end
 
   private
-
-  attr_reader :player_one_wins
+   attr_reader :players
 end

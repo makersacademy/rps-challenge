@@ -5,17 +5,17 @@
 <% end %>
 <table>
   <tr>
-    <th> <%= @game.player1.name %> </th>
+    <th> <%= @game.retrieve_playername(0) %> </th>
       <th> : </th>
-    <th> <%= @game.player2.name %> </th>
+    <th> <%= @game.retrieve_playername(1) %> </th>
   </tr>
   <tr>
-    <td> <%= @game.player1.choice %> </td>
+    <td> <%= @game.retrieve_playerchoice(0) %> </td>
     <td> : </td>
-    <td> <%= @game.player2.choice %> </td>
+    <td> <%= @game.retrieve_playerchoice(1) %> </td>
   </tr>
 </table>
-<% if @game.player2.name != "Computer" %>
+<% if @game.retrieve_playername(1) != "Computer" %>
 <form action="/multiplayer" method="get">
   <input type="submit" value="PvP Again!" name="pvp_again"/>
 </form>

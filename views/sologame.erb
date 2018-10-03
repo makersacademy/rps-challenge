@@ -8,7 +8,7 @@
   </head>
   <body>
     <div>
-      <h1 class="title__sub">Make your choice <%= @game.player1.name %></h1>
+      <h1 class="title__sub">Make your choice <%= @game.retrieve_playername(0) %></h1>
       <form action="/selection" method="post">
         <button class="btn--choice" type="submit" value="rock" name="choice">
           <img class="img__svg" src="images/stone.svg" alt="rock" />
