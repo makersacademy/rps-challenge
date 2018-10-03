@@ -6,7 +6,7 @@ class Player
     @choice = nil
   end
 
-  def choice_setter(option = choices[rand(0..2)])
+  def generate_choice(option = choices[rand(0..2)])
     raise "That option is not avaiable" unless avaiable_option?(option)
     @choice = option
   end

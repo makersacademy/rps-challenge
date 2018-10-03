@@ -38,9 +38,9 @@ class ChoiceGame < Sinatra::Base
     @game = session[:game]
     choice = params[:choice]
     p2_choice = params[:p2_choice]
-    @game.player1.choice_setter(choice)
-    @game.player2.choice_setter if @game.player2.name == 'Computer'
-    @game.player2.choice_setter(p2_choice) if @game.player2.name != 'Computer'
+    @game.set_choice(0, choice)
+    @game.set_choice(1, choice) if @game.retrieve_playername(1) == 'Computer'
+    @game.set_choice(1, p2_choice) if @game.retrieve_playername(1) != 'Computer'
     redirect '/gameover'
   end
 

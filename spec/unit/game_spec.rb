@@ -26,4 +26,16 @@ describe Game do
     end
   end
 
+  context '#retrieve_playername' do
+
+    it "should return player one's name" do
+      expect(solo_game.retrieve_playername(0)).to eq "Willow";
+    end
+
+    it "should return player two's name" do
+      expect(solo_game.retrieve_playername(1)).to eq "Computer";
+    end
+  end
+
+
 end

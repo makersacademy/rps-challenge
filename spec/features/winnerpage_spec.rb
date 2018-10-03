@@ -1,4 +1,4 @@
-feature do
+xfeature do
   scenario 'check can fill in name of player' do
     visit('/')
     fill_in :solo_player, with: "Willow"
