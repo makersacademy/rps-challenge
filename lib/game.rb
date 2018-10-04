@@ -20,7 +20,7 @@ class Game
   end
 
   def self.instance
-    @game
+    @game ||= create(player_1)
   end
 
   def play(option)

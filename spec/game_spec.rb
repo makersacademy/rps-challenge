@@ -1,9 +1,20 @@
 require 'game'
 
 describe Game do
-  let(:game) { described_class.new(player_1, player_2) }
-  let(:player_1) { double :player_1 }
-  let(:player_2) { double :player_2, random_option: nil }
+  let(:game)      { described_class.new(player_1, player_2) }
+  let(:player_1)  { double :player_1 }
+  let(:player_2)  { double :player_2 }
+  let(:option)    { 'rock' }
+
+  describe 'play' do
+    it 'instructs computer to choose an option' do
+      expect(player_1).to receive(:choose_option).with(option)
+
+      allow(player_2).to receive(:random_option).and_return('paper')
+
+      expect(game.play(option)).to eq 'paper'
+    end
+  end
 
   describe "initialize" do
     it "should assign a player to player_1" do
@@ -17,15 +28,20 @@ describe Game do
 
   describe '.create' do
     it "creates an instance of the described class" do
-      Game.create(player_1)
-      expect(Game.instance).to be_a Game
+      expect(described_class).to receive(:new).with(player_1)
+
+      described_class.create(player_1)
+      expect(described_class.create(player_1)).to be_a Game
+
+      # expect(described_class.create(player_1)).to be_a Game
+      # expect(described_class.instance).to be_a Game
     end
   end
 
   describe '.instance' do
     it "sets the previously created instance of the class" do
-      Game.create(player_1)
-      expect(Game.instance).to be_a Game
+      # Game.create(player_1)
+      expect(Game.instance).to be_a Game ?
     end
   end
 
