@@ -4,7 +4,7 @@ class Game
     @players = [player1, player2]
     @winner = nil
     @player_one_wins = [
-      "rock-paper",
+      "rock-scissors",
       "paper-rock",
       "scissors-paper"
     ]
