@@ -87,11 +87,11 @@ $ rspec
 
 Run the app from the command line using Rackup 
 ```
-$ config.ru app.rb -p 4567
+$ rackup
 ```
 
-Type localhost:4567 in your favourite browser and play!
+Type localhost:9292 in your favourite browser and play!
 
 ```
-http://localhost:4567/
+http://localhost:9292/
 ```
