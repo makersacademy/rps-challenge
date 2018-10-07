@@ -28,6 +28,8 @@ class Game
   def save_move(move, player_number)
     @players.first.move = move if player_number == 1
     @players.last.move = move if player_number == 2
+    p @players.last.class
+    @players.last.make_move if @players.last.class == Computer
     @move_counter += 1
   end
 
