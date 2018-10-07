@@ -28,7 +28,7 @@ The web-app is built on Sinatra and the design is based on an MVC architecture:
 <pre>
 Controller & Router (app.rb)  
           |  
-          |<----------> Model (game.rb --> player.rb)  
+          |<----------> Model (game.rb --> player.rb/computer.rb)  
           |  
           |
           |<----------> View (HTML with embedded Ruby)
