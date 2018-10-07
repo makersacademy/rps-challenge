@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon Battle Winner</title>
+    <link rel="stylesheet" type="text/css" href="rps.css"/>
+  </head>
+
+  <body>
+    <p><%= @game.return_name(1) %> chose <%= @game.return_move(1) %></p>
+    <p><%= @game.return_name(2) %> chose <%= @game.return_move(2) %></p>
+    <p>...</p>
+    <p><%= @game.result %></p><br><br><br><br>
+    <form action="/play">
+        <input type="submit" value="Play again?">
+    </form>
+    <br><br>
+    <form action="/">
+        <input type="submit" value="Restart?">
+    </form>
+  </body>
+</html>

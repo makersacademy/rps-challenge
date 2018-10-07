@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon Battle: enter moves</title>
+    <link rel="stylesheet" type="text/css" href="rps.css"/>
+  </head>
+
+  <body>
+    <% if @game.move_counter == 1 %>
+      <h1><%= @game.return_name(1) %>, choose your Pokemon</h1><br>
+    <% elsif @game.move_counter == 2 %>
+      <h1><%= @game.return_name(2) %>, choose your Pokemon</h1><br>
+    <% end %>
+
+    <form action="/move" method="post">
+      <div>
+        <button type="submit" name="action" value="grass" class="grass"></button>
+        <button type="submit" name="action" value="water" class="water"></button>
+        <button type="submit" name="action" value="fire" class="fire"></button>
+      </div>
+    </form>
+  </body>
+</html>
