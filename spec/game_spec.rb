@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  let(:player) { double :player, :move=> :bulbasaur, :name=> "" }
+  let(:player) { double :player, :move => :bulbasaur, :name => "" }
   let(:computer) { double :computer, name: 'Rival', move: :bulbasaur, class: Computer }
   let(:playerKlass) { double :playerKlass, new: player }
   let(:computerKlass) { double :computerKlass, new: computer }
@@ -31,7 +31,7 @@ describe Game do
     describe '#save_move' do
       it 'saves move to Player object' do
         srand(0) # send 'Bulbasaur' to player 1 (Rival)
-        allow(computer).to receive(:make_move)        
+        allow(computer).to receive(:make_move)
         expect(player).to receive(:move=).with(:bulbasaur)
         subject.save_move(:bulbasaur, 1)
       end
