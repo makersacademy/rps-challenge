@@ -38,6 +38,48 @@ Controller & Router (app.rb)
 
 </pre>   
 
+And a representation of the objects I have created:
+
+```
+   Client
+╔════════════╗  
+║            ║ Sends HTTP requests
+║  Browser   ║ (GET, POST, PATH, DELETE)      
+║            ║
+╚════════════╝
+      |
+      |
+      |
+Server (Sinatra Framework) is listening on a specific port
+╔════════════╗
+║            ║ Rack maps HTTP requests/response into/from Ruby
+║    RACK    ║ Rack provides the DSL to write the web app
+║            ║
+╚════════════╝
+      |
+      |
+      |
+   app.rb                       Model                 
+╔════════════╗             ╔════════════╗  The game:      
+║            ║------------>║            ║   - Defines the rules (what move beats what)      
+║ Controller ║             ║    Game    ║   - Call methods on Player and Computer 
+║            ║<------------║   (class)  ║   - Provides state to controller for rendering in the view      
+╚════════════╝             ╚════════════╝ 
+      |                           |
+╔════════════╗                    |              ╔════════════╗
+║            ║                    |              ║            ║  Both Player and Computer:          
+║   Views    ║                    |------------->║   Player   ║   - Know their name
+║            ║                    |              ║  (class)   ║   - Know their move
+╚════════════╝                    |              ╚════════════╝   - Uses the rules to know if their move wins
+ Embedded Ruby                    | 
+                                  |              ╔════════════╗ 
+                                  |              ║            ║
+                                  |------------->║  Computer  ║ 
+                                                 ║  (class)   ║
+                                                 ╚════════════╝            
+                                            
+```
+
 The Ruby classes are designed around the principle of single responsibility - only the Game class is instantiated in the Controller, and the Game class delegates player-related information to the Player class.
 
 The program was built test-first using Capybara and RSpec (Capybara allows the user stories to be feature-tested). As with all good OOP testing, the classes are tested in isolation using dependency injection. All randomness is stubbed to ensure consistency of test results.
