@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/game.rb'
 require_relative './lib/player.rb'
+require_relative './lib/computer.rb'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -34,9 +35,9 @@ class Rps < Sinatra::Base
   post '/move' do
     @game = Game.instance
     case params[:action]
-    when 'grass' then @game.save_move('Bulbasaur', @game.move_counter)
-    when 'water' then @game.save_move('Squirtle', @game.move_counter)
-    when 'fire' then @game.save_move('Charmander', @game.move_counter)
+    when 'grass' then @game.save_move(:bulbasaur, @game.move_counter)
+    when 'water' then @game.save_move(:squirtle, @game.move_counter)
+    when 'fire' then @game.save_move(:charmander, @game.move_counter)
     end
 
     redirect '/play' if @game.number_of_players == 2 && @game.move_counter == 2

@@ -7,7 +7,11 @@ class Computer
   end
 
   def move
-    ["Bulbasaur", "Squirtle", "Charmander"].sample
+    [:bulbasaur, :squirtle, :charmander].sample
+  end
+
+  def beats?(opponent_move)
+    Game::RULES[move] == opponent_move
   end
 
 end
