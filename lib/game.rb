@@ -4,28 +4,26 @@ class Game
 
   def self.create(number_of_players)
     @game = Game.new(number_of_players)
-    # Establish @number_of_players here instead of initialize?
   end
 
   def self.instance
     @game
   end
 
-  def initialize(number_of_players, p_1 = Player.new, p_2 = Player.new)
+  def initialize(number_of_players, player = Player, computer = Computer)
     @number_of_players = number_of_players
-    @players = [p_1, p_2]
+    number_of_players == 1 ? @players = [player.new, computer.new] : @players = [player.new, player.new]
     @move_counter = 1 # Track if player1 turn or player2 turn
   end
 
   def save_name(name1, name2 = nil)
     @players.first.save_name(name1)
-    !name2 ? @players.last.save_name('Rival') : @players.last.save_name(name2)
+    @players.last.save_name(name2) if name2 != nil
   end
 
   def save_move(move, player_number)
     @players.first.save_move(move) if player_number == 1
     @players.last.save_move(move) if player_number == 2
-    @players.last.save_move(random_move) if @number_of_players == 1
     @move_counter += 1
   end
 
