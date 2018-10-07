@@ -53,10 +53,6 @@ class Game
 
   private
 
-  def random_move
-    ["Bulbasaur", "Squirtle", "Charmander"].sample
-  end
-
   def player1_wins(player1, player2)
     (player1 == 'Bulbasaur' && player2 == 'Squirtle') ||
     (player1 == 'Squirtle' && player2 == 'Charmander') ||

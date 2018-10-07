@@ -16,4 +16,17 @@ describe Player do
     end
   end
 
+  describe '#beats?' do
+    it 'returns true if the saved move beats the move provided' do
+      subject.save_move('Squirtle')
+      expect(subject.beats?('Charmander')).to eq true
+    end
+
+    it 'returns false if the saved move doesn\'t beat the move provided' do
+      subject.save_move('Charmander')
+      expect(subject.beats?('Squirtle')).to eq false
+    end
+
+  end
+
 end
