@@ -55,7 +55,6 @@ class RPSWeb < Sinatra::Application
   end
 
   get '/pick_weapon' do
-    #@mode = session[:game_mode]
     @player_count = session[:player_count]
     erb(:pick_weapon)
   end

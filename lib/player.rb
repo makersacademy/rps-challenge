@@ -23,5 +23,4 @@ class Player
     @player_name
   end
 
-  
 end

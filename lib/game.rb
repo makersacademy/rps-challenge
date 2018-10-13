@@ -38,12 +38,10 @@ class Game
   def result(player_1_choice, player_2_choice)
     player_1_choice = player_1_choice.to_sym
     if player_2_choice.nil?
-      #p player_2_choice
       player_2_choice = @game.player_2.weapon.to_sym
     else
     player_2_choice = player_2_choice.to_sym
     end
-    #player_2_choice = player_2_choice.to_sym
     if @game_mode == "rps"
       compare(HANDLER[player_1_choice][player_2_choice])
     else
