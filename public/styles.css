@@ -1,0 +1,13 @@
+body {
+    background-color: darkslategrey;
+    color: azure;
+    font-size: 1.1em;
+    text-align: center;
+}
+h1 {
+    color: coral;
+}
+
+button:hover {
+  cursor: pointer;
+}
