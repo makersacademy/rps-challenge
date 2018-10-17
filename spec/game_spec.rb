@@ -6,16 +6,6 @@ describe Game do
   let(:player_2)  { double :player_2 }
   let(:option)    { 'rock' }
 
-  describe 'play' do
-    it 'instructs computer to choose an option' do
-      expect(player_1).to receive(:choose_option).with(option)
-
-      allow(player_2).to receive(:random_option).and_return('paper')
-
-      expect(game.play(option)).to eq 'paper'
-    end
-  end
-
   describe "initialize" do
     it "should assign a player to player_1" do
       expect(game.player_1).to eq player_1
@@ -29,19 +19,28 @@ describe Game do
   describe '.create' do
     it "creates an instance of the described class" do
       expect(described_class).to receive(:new).with(player_1)
-
       described_class.create(player_1)
-      expect(described_class.create(player_1)).to be_a Game
-
-      # expect(described_class.create(player_1)).to be_a Game
-      # expect(described_class.instance).to be_a Game
     end
   end
 
   describe '.instance' do
     it "sets the previously created instance of the class" do
-      # Game.create(player_1)
-      expect(Game.instance).to be_a Game ?
+      Game.create(player_1)
+      expect(Game.instance).to be_a Game
+    end
+  end
+
+  describe 'play' do
+    it 'functions to assign options to players are called' do
+      expect(player_1).to receive(:choose_option).with(option)
+      expect(player_2).to receive(:random_option)
+      game.play(option)
+    end
+
+    it 'instructs computer to choose an option' do
+      allow(player_1).to receive(:choose_option).with(option)
+      allow(player_2).to receive(:random_option).and_return('paper')
+      expect(game.play(option)).to eq 'paper'
     end
   end
 
