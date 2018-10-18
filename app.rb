@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative "./lib/player"
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -8,8 +9,13 @@ class RPS < Sinatra::Base
   end
 
   post '/' do
+    redirect '/no_name' if params[:name_1].empty?
     $player_1 = Player.new(params[:name_1])
     redirect '/play'
+  end
+
+  get '/no_name' do
+    erb :home_no_name
   end
 
   get '/play' do
