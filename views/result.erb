@@ -9,3 +9,12 @@
 <% else %>
   <h3><%= @game.result.name %> wins!</h3>
 <% end %>
+
+
+<form action = "/game">
+  <input type="submit" value="Play Again">
+</form>
+
+<form action = "/">
+  <input type="submit" value="Back to Start">
+</form>

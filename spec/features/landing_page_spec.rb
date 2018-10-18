@@ -1,11 +1,15 @@
 feature "landing_page" do
+  before { visit '/' }
+
   it "contains title" do
-    visit '/'
     expect(page).to have_content("Rock, Paper, Scissors")
   end
 
-  it "contains 'Start Game' button" do
-    visit '/'
-    expect(page).to have_selector(:button, "Start Game")
+  it "contains 'Single Player' button" do
+    expect(page).to have_selector(:button, "Single Player")
+  end
+
+  it "contains 'Multiplayer' button" do
+    expect(page).to have_selector(:button, "Multiplayer")
   end
 end

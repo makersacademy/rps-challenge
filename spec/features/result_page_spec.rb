@@ -23,4 +23,14 @@ feature "result page" do
     expect(page).to have_content("Dog wins!")
   end
 
+  scenario "shows 'Play Again' button" do
+    play_rock
+    expect(page).to have_selector(:button, "Play Again")
+  end
+
+  scenario "shows 'Back to Start' button" do
+    play_rock
+    expect(page).to have_selector(:button, "Back to Start")
+  end
+
 end

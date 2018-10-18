@@ -1,6 +1,6 @@
 def play_game
   visit '/'
-  click_button 'Start Game'
+  click_button 'Single Player'
 end
 
 def enter_name
