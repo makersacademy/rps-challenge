@@ -14,7 +14,7 @@ RSpec.describe VictoryGenerator do
   end
 
   it 'should know how the victory happed (e.g. lizard POISONS spock)' do
-    expect(subject.victory_type([billy, rpslsbot])).to eq 'crushes'
+    expect(subject.victory_type([billy, rpslsbot])).to eq 'blunts'
   end
 
   it 'knows when a draw happens' do
