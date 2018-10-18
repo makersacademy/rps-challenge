@@ -1,4 +1,6 @@
 # RPS Challenge
+[![Build Status](https://travis-ci.com/camjw/rps-challenge.svg?branch=master)](https://travis-ci.com/camjw/rps-challenge)
+[![codecov](https://codecov.io/gh/camjw/rps-challenge/branch/master/graph/badge.svg)](https://codecov.io/gh/camjw/rps-challenge)
 
 This repository is a Ruby/Sinatra implementation of the following user stories:
 
