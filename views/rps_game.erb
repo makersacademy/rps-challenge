@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Rock, Paper, Scissors!</title>
+  </head>
+  <body style="background-color: yellow; text-align: center; font-size:40px; color:blue">
+    <h1>Rock, Paper, Scissors!</h1>
+    <h2>Human Vs. Machine<h2>
+    <img src=https://homeworkstar.files.wordpress.com/2015/07/man-vs-machine.jpg>
+    <h3>Make your move <%=@player_1%></h3>
+    <form action="move" method="post">
+      <label for="player_move">
+      player move
+        <input type="text" name="player_move">
+      </label>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
