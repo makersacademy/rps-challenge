@@ -3,7 +3,7 @@
 class VictoryGenerator
 
   WINNING_TYPES = { ['Rock', 'Paper'] => ['covers', 1],
-                    ['Rock', 'Scissors'] => ['crushes', 0],
+                    ['Rock', 'Scissors'] => ['blunts', 0],
                     ['Rock', 'Lizard'] => ['crushes', 0],
                     ['Rock', 'Spock'] => ['vaporises', 1],
                     ['Paper', 'Scissors'] => ['cuts', 1],
