@@ -5,10 +5,11 @@ require 'pry'
 
 class RockPaperScissors < Sinatra::Base
   set :port, 5678
+  enable :sessions
 
   before do
     @game = Game.current_game
-    @mode = params[:mode]
+    @mode = session[:mode]
   end
 
   get '/' do
@@ -16,7 +17,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/name' do
-    @mode = params[:mode]
+    session[:mode] = params[:mode]
+    @mode = session[:mode]
     erb :name
   end
 
@@ -28,13 +30,25 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game' do
+    @game.reset_choices if @game.complete?
     erb :game
   end
 
   post '/choice' do
-    @game.player_one.choose(params[:choice_one])
-    @game.player_two.choose_random
+
+    if @game.player_one.has_chosen?
+      @game.player_two.choose(params[:choice])
+    else
+      @game.player_one.choose(params[:choice])
+      # binding.pry
+      if @mode == "Multiplayer"
+        redirect "/game"
+        return
+      end
+      @game.player_two.choose_random
+    end
     redirect "/result"
+
   end
 
   get '/result' do

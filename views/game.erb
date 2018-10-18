@@ -1,15 +1,15 @@
 <h1><%= @game.player_one.name %> vs <%= @game.player_two.name %></h1>
 
-<h2><%= @game.player_one.name %>, choose your weapon!</h2>
+<h2><%= @game.chooser.name %>, choose your weapon!</h2>
 
 <form action = "/choice" method = "post">
-  <input type="submit" name="choice_one" value="Rock">
+  <input type="submit" name="choice" value="Rock">
 </form>
 
 <form action = "/choice" method = "post">
-  <input type="submit" name="choice_one" value="Paper">
+  <input type="submit" name="choice" value="Paper">
 </form>
 
 <form action = "/choice" method = "post">
-  <input type="submit" name="choice_one" value="Scissors">
+  <input type="submit" name="choice" value="Scissors">
 </form>

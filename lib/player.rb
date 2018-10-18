@@ -14,6 +14,14 @@ class Player
     @choice = random_item
   end
 
+  def has_chosen?
+    !!@choice
+  end
+
+  def reset_choice
+    @choice = nil
+  end
+
   private
   def random_item
     CHOICES.sample

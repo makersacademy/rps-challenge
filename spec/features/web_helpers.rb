@@ -8,13 +8,13 @@ def start_multiplayer
   click_button 'Multiplayer'
 end
 
-def enter_name
-  start_single_player
+def enter_single_name
   fill_in(:name_one, with: "Dog")
   click_button "Submit"
 end
 
-def play_rock
-  enter_name
-  click_button "Rock"
+def enter_multiple_names
+  fill_in(:name_one, with: "Dog")
+  fill_in(:name_two, with: "Cat")
+  click_button "Submit"
 end
