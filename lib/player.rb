@@ -3,7 +3,7 @@ class Player
   attr_reader :name, :choice
 
   def initialize(name)
-    @name = name
+    @name = name || "Computer" # will use computer if name is nil, i.e. if params[:name_two] doesn't get filled in
   end
 
   def choose(item)

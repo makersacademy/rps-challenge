@@ -1,11 +1,16 @@
-def play_game
+def start_single_player
   visit '/'
   click_button 'Single Player'
 end
 
+def start_multiplayer
+  visit '/'
+  click_button 'Multiplayer'
+end
+
 def enter_name
-  play_game
-  fill_in(:name, with: "Dog")
+  start_single_player
+  fill_in(:name_one, with: "Dog")
   click_button "Submit"
 end
 

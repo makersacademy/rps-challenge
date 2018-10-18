@@ -4,9 +4,9 @@ feature "game page" do
   it "shows player names" do
     expect(page).to have_content("Dog vs Computer")
   end
-  
+
   it "invites player to choose weapon" do
-    expect(page).to have_content("Choose your weapon!")
+    expect(page).to have_content("Dog, choose your weapon!")
   end
 
   it "has 'Rock' button'" do
