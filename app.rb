@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './model/player'
+require './model/game'
 
 class Game < Sinatra::Base
   get '/' do
@@ -8,6 +9,7 @@ class Game < Sinatra::Base
 
   post '/name' do
     @player = Player.new(params[:name])
+    @game = Game.new
     erb :play
   end
 
