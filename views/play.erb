@@ -1,5 +1,17 @@
 <h1>Welcome <%= @player.name %>, select a move!</h1>
 
 <form action="/result" action="post">
-  
+  <label>
+    Rock
+    <input type="radio" name="move" value="rock">
+  </label>
+  <label>
+    Paper
+    <input type="radio" name="move" value="paper">
+  </label>
+  <label>
+    Scissors
+    <input type="radio" name="move" value="scissors">
+  </label>
+  <input type="submit" value="Submit">
 </form>

@@ -11,7 +11,7 @@ class Game < Sinatra::Base
     erb :play
   end
 
-  post '/result' do
+  get '/result' do
     erb :result
   end
 
