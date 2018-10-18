@@ -1,5 +1,7 @@
 # RPS Challenge
 
+###### _by Henry Cooksley_
+
 Challenge: Make a playable rock-paper-scissors game using Ruby and Sinatra.
 
 ### Installation
@@ -24,4 +26,4 @@ Then you can view the app by pointing your browser to `localhost:4567`.
 
 ### Screenshots
 
-(screenshots go here)
+![Screenshot](https://path_to_your_image)
