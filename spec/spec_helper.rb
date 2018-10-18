@@ -2,7 +2,7 @@ require 'simplecov'
 SimpleCov.start
 
 require 'codecov'
-SimpleCov.formatter
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
 require 'capybara'
 require 'capybara/rspec'
