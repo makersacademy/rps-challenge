@@ -16,7 +16,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
-Capybara.app = Game
+Capybara.app = RPS
 
 RSpec.configure do |config|
   config.after(:suite) do

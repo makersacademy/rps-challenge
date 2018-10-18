@@ -2,7 +2,7 @@ require 'sinatra/base'
 require './model/player'
 require './model/game'
 
-class Game < Sinatra::Base
+class RPS < Sinatra::Base
   get '/' do
     erb :index
   end
