@@ -8,16 +8,16 @@ class RPS < Sinatra::Base
   end
 
   post '/' do
-    session[:name_1] = params[:name_1]
+    $player_1 = Player.new(params[:name_1])
     redirect '/play'
   end
 
   get '/play' do
-    @name_1 = session[:name_1]
     erb :play
   end
 
   post '/play' do
+    $player_1.choose_weapon(params[:weapon])
     redirect '/results'
   end
 
