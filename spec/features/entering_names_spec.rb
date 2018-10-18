@@ -4,7 +4,7 @@ feature 'entering a name' do
   end
 
   scenario 'user enters their name' do
-    fill_in "name_1", with: "John"
+    fill_in "name_1", with: "Alice"
   end
 
   scenario 'user submits their name and arrives at the play page' do
