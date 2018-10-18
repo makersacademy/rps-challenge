@@ -1,0 +1,11 @@
+<h2>
+<%= @game.player_one.name %> played <%= @game.player_one.choice %>.
+
+<%= @game.player_two.name %> played <%= @game.player_two.choice %>.
+</h2>
+
+<% if @game.result == "tie" %>
+  <h3>It's a tie!</h3>
+<% else %>
+  <h3><%= @game.result.name %> wins!</h3>
+<% end %>
