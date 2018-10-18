@@ -16,17 +16,17 @@ class RPS < Sinatra::Base
   end
 
    post '/game/rock' do
-     @move = rock
+     @user_move = "rock"
      erb(:win_or_lose)
    end
 
    post '/game/paper' do
-     @move = paper
+     @user_move = "paper"
      erb(:win_or_lose)
    end
 
    post '/game/scissors' do
-     @move = scissors
+     @user_move = "scissors"
      erb(:win_or_lose)
    end
 
