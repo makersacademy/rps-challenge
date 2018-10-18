@@ -9,16 +9,26 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  post '/name' do
-    session['name'] = params[:name]
-    redirect '/game'
-  end
-
   post '/game' do
-    session['name'] = params[:name] # do I actually need to do this?
+    session['name'] = params[:name]
     @name = session['name']
     erb(:game)
   end
+
+   post '/game/rock' do
+     @move = rock
+     erb(:win_or_lose)
+   end
+
+   post '/game/paper' do
+     @move = paper
+     erb(:win_or_lose)
+   end
+
+   post '/game/scissors' do
+     @move = scissors
+     erb(:win_or_lose)
+   end
 
   run! if app_file == $0
 end
