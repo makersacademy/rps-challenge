@@ -29,8 +29,38 @@ class Game
     @computer.make_a_choice
   end
 
-  # def computer_choice
-  #   @computer.choice
-  # end
+  def computer_choice
+    @computer.choice
+  end
+
+  def score_game
+    if user_winning_choices.include?([user_choice, computer_choice])
+      win
+    elsif user_choice == computer_choice
+      draw
+    end
+  end
+
+  def win
+    @win = true
+  end
+
+  def draw
+    @draw = true
+  end
+
+  def result
+    if @win
+      return "Win"
+    elsif @draw
+      return "Draw"
+    else
+      return "Lose"
+    end
+  end
+
+  def user_winning_choices
+    [["Rock", "Scissors"], ["Paper", "Rock"], ["Scissors", "Paper"]]
+  end
 
 end
