@@ -7,8 +7,4 @@ class Computer
 
   attr_accessor :name, :move
 
-  def random_move
-    @random_move = ["Rock", "Paper", "Scissors"].sample
-  end
-
 end

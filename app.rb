@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player.rb'
 require './lib/computer.rb'
 require './lib/game.rb'
+require './lib/evaluator.rb'
 
 class RPS < Sinatra::Base
 
@@ -12,7 +13,7 @@ class RPS < Sinatra::Base
 
   post '/name' do
     player_1 = Player.new(params[:player_1_name])
-    player_2 = Player.new(nil)
+    player_2 = Computer.new
     @game = Game.create(player_1, player_2)
     redirect '/enter_move'
   end
@@ -27,6 +28,8 @@ class RPS < Sinatra::Base
 
   post '/move' do
     @game.player1.move = (params[:choice])
+    @game.player2.move = @game.random_move
+    @game.evaluate(@game.player1, @game.player2)
     redirect '/outcome'
   end
 
