@@ -8,8 +8,8 @@ class Computer
     @name = "Computer"
   end
 
-  def random_choice
-    CHOICES.sample
+  def choice
+    @choice = CHOICES.sample
   end
 
 end

@@ -10,10 +10,10 @@ describe Computer do
 
   end
 
-  describe '#random_choice' do
+  describe '#choice' do
 
     it 'should return a choice' do
-      expect(subject.random_choice).to eq('rock').or eq('scissors').or eq('paper')
+      expect(subject.choice).to eq('rock').or eq('scissors').or eq('paper')
     end
 
   end
