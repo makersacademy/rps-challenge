@@ -10,6 +10,10 @@ class Battle < Sinatra::Base
     erb :play
   end
 
+  post '/play' do 
+    @choice = params[:choice]
+    erb :result
+  end
  
   run! if app_file == $0 
 end
