@@ -16,5 +16,11 @@ describe Game do
     it 'returns a result' do
       expect(subject.result).to eq "Win"
     end
+
+    it 'returns "lose"' do
+      allow(player).to receive(:move) { "Scissors" }
+      allow(computer).to receive(:move) { "Rock" }
+      expect(subject.result).to eq "Lose"
+    end
   end
 end
