@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require "./lib/player"
 require "./lib/game"
+require "./lib/router"
 require 'pry'
 
 class RockPaperScissors < Sinatra::Base
@@ -39,14 +40,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    if @game.player_one.has_chosen?
-      @game.player_two.choose(params[:choice].to_sym)
-    else
-      @game.player_one.choose(params[:choice].to_sym)
-      redirect "/game" if @game.mode == "Multiplayer"
-      @game.player_two.choose_random
-    end
-    redirect "/result"
+    router = Router.new(@game)
+    choice = params[:choice].to_sym
+    redirect(router.route(choice))
   end
 
   get '/result' do

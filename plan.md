@@ -1,5 +1,29 @@
 ## App
 
+
+```ruby
+def route(choice)
+  if @player_one.has_chosen?
+    @player_two.choose(choice)
+  else
+    @player_one.choose(choice)
+    return "/game" if @mode == "Multiplayer"
+    @player_two.choose_random
+  end
+  return "/result"
+end
+```
+
+
+
+
+
+
+
+
+
+
+
 * Player
   - #play(:rock, :paper or :scissors)
     - @choice = :rock, :paper or :scissors

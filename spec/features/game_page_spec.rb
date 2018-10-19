@@ -58,6 +58,14 @@ feature "game page" do
       expect(page).to have_selector(:button, :scissors)
     end
 
+    it "has :lizard button'" do
+      expect(page).to have_selector(:button, :lizard)
+    end
+
+    it "has :spock button'" do
+      expect(page).to have_selector(:button, :spock)
+    end
+
     it "shows both player names" do
       expect(page).to have_content("Dog vs Cat")
     end
