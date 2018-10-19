@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
+require './lib/computer.rb'
 
 class RPS < Sinatra::Base
 
@@ -32,6 +33,7 @@ class RPS < Sinatra::Base
   end
 
   get '/computer_choice' do
+    $computer_choice = Computer.new.computer_choice
     erb :computers_choice
   end
 
