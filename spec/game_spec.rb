@@ -13,4 +13,11 @@ describe Game do
       expect(Game.create(player: player)).to be_a Game
     end
   end
+
+  describe "self.instance" do
+    it "should return the created Game" do
+      game = Game.create(player: player)
+      expect(Game.instance).to eq game
+    end
+  end
 end
