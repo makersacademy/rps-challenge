@@ -19,8 +19,8 @@ class Battle < Sinatra::Base
       @error_message = "Enter two or more names"
       erb :index
     else
-      hands = get_hands(players.length)
-      @game = Game.create(players: players, hands: hands)
+      @hands = get_hands(players.length)
+      @game = Game.create(players: players, hands: @hands)
       erb :play
     end
   end

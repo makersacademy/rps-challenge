@@ -94,6 +94,5 @@ describe Game do
         expect(subject.winners).to include player_2
       end
     end
-
   end
 end
