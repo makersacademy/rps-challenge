@@ -11,3 +11,11 @@ def sign_in_and_play
   click_button 'Submit'
   click_button 'PLAY'
 end
+
+def play_full_game
+  visit '/'
+  fill_in :player_name, with: 'James'
+  click_button 'Submit'
+  click_button 'PLAY'
+  click_button 'Rock'
+end
