@@ -1,6 +1,6 @@
 class Game
 
-  WIN_TABLE = {
+  MOVE_LOOKUP = {
     rock: :paper,
     paper: :scissors,
     scissors: :rock
@@ -26,11 +26,10 @@ class Game
     end
   end
 
-  private
   def self.calculate_moves
     computer_move = :rock
-    @win_move = WIN_TABLE[computer_move]
+    @win_move = MOVE_LOOKUP[computer_move]
     @draw_move = computer_move
-    @lose_move = WIN_TABLE.key(computer_move)
+    @lose_move = MOVE_LOOKUP.key(computer_move)
   end
 end
