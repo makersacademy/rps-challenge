@@ -40,13 +40,18 @@ class RPS < Sinatra::Base
     round = params[:round]
     roundchoice = params[:choice].downcase
     if round == "1"
-      @game.update_choice(roundchoice)
+      # p "choice a#{@game.player1.choice}"
+      @game.update_choice(roundchoice, @game.player1)
+      # p "choice b#{@game.player1.choice}"
     else
-      @game.update_oppchoice(roundchoice)
+      # p "choice c#{@game.player2.choice}"
+      @game.update_choice(roundchoice, @game.player2)
+      # p "choice d#{@game.player2.choice}"
     end
     if @game.gametype == "Multiplayer" && round == "1"
       erb :play2
     else
+      @game.update_choice(roundchoice, @game.player2)
       redirect '/result'
     end
   end

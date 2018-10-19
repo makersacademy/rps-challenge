@@ -18,12 +18,12 @@ describe Game do
     let(:player1) { double :player1, :name => "Clare", :playertype => "human" }
     let(:player2) { double :player2, :name => "Laura", :playertype => "human" }
 
-    describe "player 2 plays" do
-      it 'pick paper' do
-        subject.update_oppchoice("paper")
-        expect(subject.opponent_choice).to eq('paper')
-      end
-    end
+    # describe "player 2 plays" do
+    #   it 'pick paper' do
+    #     subject.update_choice
+    #     expect(subject.opponent_choice).to eq('paper')
+    #   end
+    # end
   end
 
   describe "what beats what" do
