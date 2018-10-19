@@ -29,11 +29,12 @@ class Game
 
   def message
     result
-    if result == "Win"
+    case result
+    when "Win"
       "You win!"
-    elsif result == "Lose"
+    when "Lose"
       "You lose!"
-    elsif result == "Draw"
+    when "Draw"
       "Draw!"
     end
   end
