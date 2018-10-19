@@ -1,8 +1,14 @@
 class Game
   attr_reader :player, :computer
-  
+
   def initialize(player, computer = Computer.new)
     @player = player
     @computer = computer
+  end
+
+  def result
+    if @player.move == "Rock" && @computer.move == "Scissors"
+      "Win"
+    end
   end
 end
