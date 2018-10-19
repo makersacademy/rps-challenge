@@ -8,6 +8,8 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  $wins = 0
+
   get '/' do
     erb :index
   end
