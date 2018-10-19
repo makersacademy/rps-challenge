@@ -1,4 +1,4 @@
-feature 'One player' do
+feature 'Multiplayer' do
   scenario 'Can select to have two players' do
     visit('/')
     click_button 'Two players'

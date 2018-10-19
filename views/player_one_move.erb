@@ -1,0 +1,13 @@
+<h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h2>
+
+<p>Player: <%= @game.player_1.name %>
+
+<p>Pick your choice:</p>
+<form action="/player_one_choice" method="post">
+  <select name="choice">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Submit">
+</form>
