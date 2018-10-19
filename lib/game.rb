@@ -1,8 +1,6 @@
 class Game
   attr_reader :player, :computer
 
-  MOVES = ["Rock", "Paper", "Scissors"]
-
   def initialize(player, computer = Computer.new)
     @player = player
     @computer = computer
