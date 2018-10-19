@@ -16,11 +16,13 @@ class RPS < Sinatra::Base
 
   post '/register' do
     @gametype = params[:gametype]
+    @gamevariant = params[:gamevariant]
     erb :register
   end
 
   post '/register-process' do
     gametype = params[:gametype]
+    gamevariant = params[:gamevariant]
     player1 = Player.new(params[:name], "human")
     if gametype == "Single player"
       player2_name, player2_type = "computer", "computer"
@@ -28,7 +30,7 @@ class RPS < Sinatra::Base
       player2_name, player2_type = params[:name2], "human"
     end
     player2 = Player.new(player2_name, player2_type)
-    @game = Game.create(player1, player2, gametype)
+    @game = Game.create(player1, player2, gametype, gamevariant)
     redirect '/play'
   end
 
@@ -40,13 +42,9 @@ class RPS < Sinatra::Base
     round = params[:round]
     roundchoice = params[:choice].downcase
     if round == "1"
-      # p "choice a#{@game.player1.choice}"
       @game.update_choice(roundchoice, @game.player1)
-      # p "choice b#{@game.player1.choice}"
     else
-      # p "choice c#{@game.player2.choice}"
       @game.update_choice(roundchoice, @game.player2)
-      # p "choice d#{@game.player2.choice}"
     end
     if @game.gametype == "Multiplayer" && round == "1"
       erb :play2

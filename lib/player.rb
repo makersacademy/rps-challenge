@@ -9,7 +9,6 @@ class Player
   end
 
   def update_choice(choice)
-    # if @playertype = "computer"
     @choice = choice
   end
 

@@ -1,42 +1,58 @@
 class Game
 
-  attr_reader :player1, :player2, :gametype
+  attr_reader :player1, :player2, :gametype, :gamearray
 
-  def self.create(player1, player2, gametype)
-    # p player1
-    # p player2
-    @game = Game.new(player1, player2, gametype)
+  def self.create(player1, player2, gametype, gamevariant = "classic")
+    @game = Game.new(player1, player2, gametype, gamevariant)
   end
 
   def self.instance
     @game
   end
 
-  def initialize(player1, player2, gametype)
+  def initialize(player1, player2, gametype, gamevariant = "classic")
+    @game_scenarios = {
+          "rock" => ["scissors"],
+          "paper" => ["rock"],
+          "scissors" => ["paper"]
+        }
+
+        @game_scenarios2 = {"rock" => %w(lizard scissors),
+  "paper" => %w(rock spock),
+  "scissors" => %w(lizard paper),
+  "lizard" => %w(paper spock),
+  "spock" => %w(scissors rock)
+  }
     @player1 = player1
     @player2 = player2
     @gametype = gametype
-    # @choice = nil
-    # if @player2.playertype == "computer"
-    #   @opponent_choice = random
-    #   @gametype = "Single player"
-    # else
-    #   @opponent_choice = nil
-    #   @gametype = "Multiplayer"
-    # end
-    @game_scenarios = {
-    			"rock" => "scissors",
-    			"paper" => "rock",
-    			"scissors" => "paper"
-    		}
+    @gamevariant = gamevariant
+    @gamearray = ['rock', 'paper', 'scissors']
+    if @gamevariant != "classic"
+      @gamearray << "lizard, spock"
+      # @gamearray << "spock"
+    end
+    @scenarios = @game_scenarios
+    # p @scenarios
+    # p @gamevariant
+    if @gamevariant == "classic"
+      @scenarios = @game_scenarios
+    else
+      @scenarios = @game_scenarios2
+    end
+
+
+
+# p @game_scenarios2["rock"].include?("lizard")
   end
 
   def random
-    ['rock', 'paper', 'scissors'].sample
+
+
+    @gamearray.sample
   end
 
   def update_choice(choice, player)
-    # @choice = choice
     if player.playertype == "computer"
       choice = random
     else
@@ -45,15 +61,12 @@ class Game
     player.update_choice(choice)
   end
 
-  # def update_oppchoice(choice)
-  #   @opponent_choice = choice
-  # end
 
   def win_logic(round1 = @player1.choice, round2 = @player2.choice)
-
+# p @scenarios
     if round1 == round2
       "draw"
-		elsif @game_scenarios[round1] == round2
+		elsif @scenarios[round1].include?(round2)
     @player1
 		else
     @player2
