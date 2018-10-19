@@ -1,9 +1,9 @@
-
-
 class Game
 
+  attr_reader :hands
+
   def self.create(players:, hands:)
-    @the_game = Game.new(player: players, hands: hands)
+    @the_game = Game.new(players: players, hands: hands)
   end
 
   def self.instance
@@ -20,6 +20,14 @@ class Game
 
   def players
     @players
+  end
+
+  def current_player
+    @players.first
+  end
+
+  def next_go
+    @players.rotate
   end
 
   def winners

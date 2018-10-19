@@ -1,8 +1,6 @@
 feature 'enter players name' do
-  scenario 'enter two players' do
-    visit('/')
-    fill_in :player_1_name, with: 'Todd'
-    fill_in :player_2_name, with: 'James'
-    click_button 'Submit'
+  scenario 'enter two players and display battle screen' do
+    sign_in_and_play
+    expect(page).to have_content "Todd vs James"
   end
 end

@@ -4,7 +4,8 @@
 <div class="container">
   <h1>Battle</h1>
   <h3>Sign in to play</h3>
-  <p><strong>Enter a minimum of 2 and maximum of 5 names</strong></p>
+  <p ><strong>Enter a minimum of 2 and maximum of 5 names</strong></p>
+  <% if @error_message %> <p style="color:red"><%= @error_message %></p><% end %>
     <form action="/names" method="post">
       <div class="form-group">
         <label for="player_1_name"> Player 1 name</label>
