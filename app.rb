@@ -1,9 +1,29 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
+require './lib/human'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
+  enable :sessions
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
+    erb :enter_name
+  end
 
+  post '/submit-name' do
+    player_1 = Human.new(params[:name])
+    player_2 = Computer.new('Computer')
+    @game = Game.create(player_1, player_2)
+    redirect '/game'
+  end
+
+  get '/game' do
+    erb :game
   end
 
   # start the server if ruby file executed directly

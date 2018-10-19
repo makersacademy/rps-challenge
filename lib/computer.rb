@@ -1,0 +1,3 @@
+class Computer < Player
+
+end

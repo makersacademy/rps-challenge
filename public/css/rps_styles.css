@@ -1,3 +1,26 @@
+/* Utility helpers */
+body {
+  min-height: 100vh;
+  position: relative;
+  margin: 0;"
+}
+
+.spacing-div {
+  height: 20px
+}
+
+#spacing_for_footer {
+  height: 50px
+}
+
+img {
+  max-height: 200px !important
+}
+
+thead {
+  border-bottom: 2px solid #dee2e6
+}
+
 /* forms */
 input {
   text-align:center;
@@ -24,7 +47,7 @@ border:1px solid #ccc !important;
   height: 50px;
 }
 
-/* Utility helpers */
-.spacing-div {
-  height: 20px
+/* Alerts */
+.alert {
+  font-size: 1.5rem
 }

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link type="image/x-icon" rel="icon" href="https://makers.tech/wp-content/themes/wp-makers-2018/favicon.ico">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/rps_styles.css">
+
+    <title>Rock, Paper, Scissors - Makers Academy Challenge</title>
+    <meta name="description" content="Terry Mace's attemp at the Makers Academy Rock, Paper, Scissors challenge">
+    <link rel="canonical" href="https://github.com/tolvic" />
+
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-dark bg-dark justify-content-center mb-4">
+        <a href="/"><h1 class="navbar-brand mb-0 h1">Rock, Paper, Scissors</h1></a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div id="alert" class="row">
+        <div class="col-3"></div>
+          <div class="col-6 alert alert-light text-center" role="alert" >
+            Player 1 wins! Rock smashes scissors!
+          </div>
+        <div class="col-3"></div>
+      </div>
+
+      <div id="players" class="row mb-4">
+        <div id="player_1" class="col-md text-center">
+
+          <div class="col-md text-center">
+            <h2 class="text-center">
+              <%=@game.player_1.name %>
+            </h2>
+          </div>
+
+          <div class="col-md">
+            <img src="http://picoplex.net/games/rpslp/rock.png" alt="Responsive image">
+            <p>Rock</p>
+          </div>
+
+        </div>
+
+        <div id="player_2" class="col-md text-center">
+          <div class="col-md">
+            <h2>Computer</h2>
+          </div>
+
+          <div class="col-md">
+            <img src="http://picoplex.net/games/rpslp/paper.png" alt="Responsive image">
+            <p>Paper</p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div id="buttons" class="col-md text-center">
+        <div class="col-12">
+          <div class="btn-group mb-2" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-rock"></i> Rock</button>
+            <button type="button" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-paper"></i> Paper</button>
+            <button type="button" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-scissors"></i> Scissors</button>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="btn-group mb-2" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-spock"></i> Spock</button>
+            <button type="button" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-lizard"></i> Lizard</button>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div id="results_table" class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+          <div class="table-responsive">
+            <table class="table table-borderless text-center">
+              <thead>
+                <tr>
+                  <th scope="col">Player 1 wins</th>
+                  <th scope="col">Ties</th>
+                  <th scope="col">Player 2 wins</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-2"></div>
+      </div>
+
+      <div id="spacing_for_footer" class ="row">
+      </div>
+    </main>
+
+
+    <footer class="footer bg-dark">
+      <div class="container text-center pt-3">
+        <span class="text-muted">Created by Terry Mace</span>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
