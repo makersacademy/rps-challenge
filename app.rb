@@ -4,13 +4,18 @@ require_relative "./lib/player"
 class RPS < Sinatra::Base
   enable :sessions
 
+  before do
+    @game = Game.current_game
+  end
+
   get '/' do
     erb :home
   end
 
   post '/' do
     redirect '/no_name' if params[:name_1].empty?
-    $player_1 = Player.new(params[:name_1])
+    player_1 = params[:name_1]
+    Game.store_game(Game.new(Player.new(player_1)))
     redirect '/play'
   end
 
@@ -23,7 +28,7 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    $player_1.choose_weapon(params[:weapon])
+    @game.choose_weapon(params[:weapon])
     redirect '/results'
   end
 
