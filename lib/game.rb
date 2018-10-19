@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player_1
+  attr_reader :player_1, :player_2
 
   @current_game = nil
 
@@ -20,6 +20,7 @@ class Game
 
   def choose_weapon(weapon)
     @player_1.choose_weapon(weapon)
+    @player_2.choose_weapon(weapon)
   end
 
   def winner

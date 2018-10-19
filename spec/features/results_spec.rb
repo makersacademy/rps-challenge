@@ -11,4 +11,8 @@ feature "results page" do
   scenario "should confirm weapon choice on results page" do
     expect(page).to have_content("Alice chose ROCK")
   end
+
+  scenario "displaying the winner on the results page" do
+    expect(page).to have_content(/Alice wins!|RPSbot wins!|It's a draw!/)
+  end
 end

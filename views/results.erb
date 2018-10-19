@@ -5,5 +5,10 @@
   <h3><%= @game.player_1.name %> vs. RPSbot</h3>
 </div>
 <div>
-  <h4><%= @game.player_1.name %> chose <%= @game.player_1.weapon %>.</h4>
+  <h4><%= @game.player_1.name %> chose <%= @game.player_1.weapon %><br>
+  <%= @game.player_2.name %> chose <%= @game.player_2.weapon %>.<br>
+  ...</h4><br>
+</div>
+<div>
+  <h2><i><%= @winner %></i></h2>
 </div>

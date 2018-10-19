@@ -11,8 +11,16 @@ describe Computer do
     expect(described_class::WEAPONS).to eq list
   end
 
-  it "can randomly choose a weapon" do
-    expect_any_instance_of(Array).to receive(:sample)
-    subject.weapon
+  context "choosing a weapon" do
+    it "can randomly choose a weapon" do
+      expect_any_instance_of(Array).to receive(:sample)
+      subject.choose_weapon
+    end
+
+    it "will save its weapon choce" do
+      allow_any_instance_of(Array).to receive(:sample).and_return "ROCK"
+      subject.choose_weapon
+      expect(subject.weapon).to eq "ROCK"
+    end
   end
 end
