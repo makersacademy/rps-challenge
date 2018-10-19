@@ -50,13 +50,9 @@ class Game
   end
 
   def result
-    if @win
-      return "Win"
-    elsif @draw
-      return "Draw"
-    else
-      return "Lose"
-    end
+    return "Win" if @win
+    return "Draw" if @draw
+    return "Lose"
   end
 
   def user_winning_choices

@@ -43,6 +43,8 @@ class RPS < Sinatra::Base
     @game = Game.instance
     @user_choice = @game.user_choice
     @computer_choice = @game.computer_chooses
+    @game.score_game
+    @result = @game.result
     erb(:play_end)
   end
 
