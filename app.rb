@@ -19,7 +19,6 @@ class RPS < Sinatra::Base
 
   post '/game/move' do
     @user_move = params["move"]
-    p @user_move
     game = Game.new(['rock', 'paper', 'scissors'])
     winner = Winner.new
     @game_move = game.move

@@ -1,25 +1,26 @@
 class Winner
   def determine(game, user)
-
-    if game == "rock" && user == "paper"
-      "You won!"
-    elsif game == "rock" && user == "scissors"
-      "You lost!"
-    elsif game == "rock" && user == "rock"
-      "It's a draw!"
-    elsif game == "paper" && user == "rock"
-      "You lost!"
-    elsif game == "paper" && user == "paper"
-      "It's a draw!"
-    elsif game == "paper" && user == "scissors"
-      "You won!"
-    elsif game == "scissors" && user == "rock"
-      "You won!"
-    elsif game == "scissors" && user == "paper"
-      "You lost!"
-    elsif game == "scissors" && user == "scissors"
-      "It's a draw!"
-    end
-
+    return won if game == "rock" && user == "paper"
+    return lost if game == "rock" && user == "scissors"
+    return draw if game == "rock" && user == "rock"
+    return lost if game == "paper" && user == "rock"
+    return draw if game == "paper" && user == "paper"
+    return won if game == "paper" && user == "scissors"
+    return won if game == "scissors" && user == "rock"
+    return lost if game == "scissors" && user == "paper"
+    return draw if game == "scissors" && user == "scissors"
   end
+
+  def won
+    "You won!"
+  end
+
+  def lost
+    "You lost!"
+  end
+
+  def draw
+    "It's a draw!"
+  end
+
 end

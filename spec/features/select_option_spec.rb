@@ -2,7 +2,7 @@ feature 'Selecting an option' do
 
   before do
     sign_in_and_play
-    game_is_rock
+    allow_any_instance_of(Array).to receive(:sample).and_return('rock')
   end
 
   scenario 'selects rock and is shown confirmation page' do
