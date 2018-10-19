@@ -3,12 +3,10 @@ class Game
 
   @current_game = nil
 
-  def initialize(player_1)
+  def initialize(player_1, calculator_class = ResultsCalculator)
     @player_1 = player_1
-  end
-
-  def choose_weapon(weapon)
-    @player_1.choose_weapon(weapon)
+    @calculator_class = calculator_class
+    @calculator = nil
   end
 
   def self.store_game(game)
@@ -17,6 +15,22 @@ class Game
 
   def self.current_game
     @current_game
+  end
+
+  def choose_weapon(weapon)
+    @player_1.choose_weapon(weapon)
+  end
+
+  def check_winner
+    return @player_1 if calculator.winner == @player_1.weapon
+    return "DRAW" if calculator.winner == "DRAW"
+    calculator.winner
+  end
+
+  private
+
+  def calculator
+    @calculator ||= @calculator_class.new(@player_1.weapon, random_weapon)
   end
 
   def random_weapon
