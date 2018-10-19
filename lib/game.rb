@@ -5,11 +5,7 @@ class Game
     @player = player
     @computer = computer
   end
-
-  def move
-    MOVES.sample
-  end
-
+  
   def result
     if @player.move == "Rock" && @computer.move == "Scissors"
       "Win"
