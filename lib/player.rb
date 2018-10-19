@@ -1,5 +1,7 @@
+require_relative "rps_rules"
+
 class Player
-  CHOICES = ["Rock", "Paper", "Scissors"]
+  CHOICES = RPSRules::CHOICES
   attr_reader :name, :choice
 
   def initialize(name)

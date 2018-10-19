@@ -2,19 +2,9 @@ require "game"
 
 describe Game do
   let(:player_one) { double(:player_one, choice: "Rock", :has_chosen? => false) }
-  let(:player_two) { double(:player_two, choice: "Scissors", :has_chosen? => false) }
-  let(:game) { Game.new(player_one, player_two) }
-
-  describe '#result' do
-    it 'returns winning player' do
-      expect(game.result).to eq player_one
-    end
-
-    it 'returns "tie" if no winner' do
-      allow(player_two).to receive(:choice).and_return("Rock")
-      expect(game.result).to eq "tie"
-    end
-  end
+  let(:player_two) { double(:player_two, :has_chosen? => false) }
+  let(:scorekeeper) { double(:scorekeeper) }
+  let(:game) { Game.new(player_one, player_two, scorekeeper) }
 
   describe '#chooser' do
     it 'returns player_one before choice' do
@@ -38,6 +28,13 @@ describe Game do
       allow(player_one).to receive(:has_chosen?).and_return(true)
       allow(player_two).to receive(:has_chosen?).and_return(true)
       expect(game).to be_complete
+    end
+  end
+
+  describe '#result' do
+    it 'calls result on scorekeeper' do
+      expect(scorekeeper).to receive(:result).with(player_one, player_two)
+      game.result
     end
   end
 

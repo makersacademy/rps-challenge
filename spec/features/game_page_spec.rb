@@ -18,6 +18,14 @@ feature "game page" do
       expect(page).to have_selector(:button, "Scissors")
     end
 
+    it "has 'Lizard' button'" do
+      expect(page).to have_selector(:button, "Lizard")
+    end
+
+    it "has 'Spock' button'" do
+      expect(page).to have_selector(:button, "Spock")
+    end
+
     it "shows player and computer names" do
       expect(page).to have_content("Dog vs Computer")
     end

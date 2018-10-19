@@ -35,23 +35,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-
     if @game.player_one.has_chosen?
       @game.player_two.choose(params[:choice])
     else
       @game.player_one.choose(params[:choice])
-      # binding.pry
-      if @mode == "Multiplayer"
-        redirect "/game"
-        return
-      end
+      redirect "/game" if @mode == "Multiplayer"
       @game.player_two.choose_random
     end
     redirect "/result"
-
   end
 
   get '/result' do
+    @result = @game.result
     erb :result
   end
 
