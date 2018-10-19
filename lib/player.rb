@@ -6,7 +6,7 @@ class Player
     @move = ""
   end
 
-  def set_move(move)
+  def pick_move(move)
     @move = move
   end
 end
