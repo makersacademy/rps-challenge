@@ -19,4 +19,7 @@ class Game
     @current_game
   end
 
+  def random_weapon
+    ["ROCK", "PAPER", "SCISSORS"].sample
+  end
 end
