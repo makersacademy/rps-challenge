@@ -15,7 +15,7 @@ class RPS < Sinatra::Base
   end
 
   get '/two_players' do
-    'TWO PLAYERS'
+    erb :two_players
   end
 
   post '/name' do
