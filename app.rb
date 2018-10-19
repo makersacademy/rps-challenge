@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/RPS'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -18,8 +19,10 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
+    $rps = RockPaperScissors.new
     @name = session[:name]
     @choice = params[:choice]
+    @rps = $rps
     erb :choice
   end
 
