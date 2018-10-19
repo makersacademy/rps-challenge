@@ -1,3 +1,5 @@
+require_relative 'computer_player'
+
 class Game
 
   MOVE_LOOKUP = {
@@ -27,7 +29,7 @@ class Game
   end
 
   def self.calculate_moves
-    computer_move = :rock
+    computer_move = ComputerPlayer.move
     @win_move = MOVE_LOOKUP[computer_move]
     @draw_move = computer_move
     @lose_move = MOVE_LOOKUP.key(computer_move)
