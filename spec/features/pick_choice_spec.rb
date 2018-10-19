@@ -19,5 +19,4 @@ feature 'Selecting choice' do
     click_button 'Submit'
     expect(page).to have_content 'Mel chose scissors'
   end
-
  end
