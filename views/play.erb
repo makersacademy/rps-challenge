@@ -1,9 +1,13 @@
-<h1>Today's challenger is <%= @player_1_name %></h1>
-
-<h2>Wins so far: 0</h2>
-
-<h2>Choose your weapon</h2>
-
-<a href="/attack">Rock</a>
-<a href="/attack">Paper</a>
-<a href="/attack">Scissors</a>
+<div style="background:rgb(254, 228, 232); width: 100%; height: 100%; text-align: center; padding-top: 10%;">
+  <h1 style="color:rgb(247, 41, 74)">Today's challenger is <%= @player_1_name %></h1>
+  <br>
+  <h2 style="color:rgb(247, 41, 74)">Wins so far: 0</h2>
+  <br>
+  <h2 style="color:rgb(247, 41, 74)">Choose your weapon</h2>
+  <br>
+  <div>
+    <a href="/attack" id="Rock"><img src="./images/rock1.png" alt="picture of paper" style="width:100px; height: auto;"></a>
+    <a href="/attack"><img src="./images/paper.png" alt="picture of paper" style="width:100px; height: auto; margin-left:50px;">Paper</a>
+    <a href="/attack"><img src="./images/scissors.jpg" alt="picture of paper" style="width:100px; height: auto; margin-left:50px">Scissors</a>
+  </div>
+</div>
