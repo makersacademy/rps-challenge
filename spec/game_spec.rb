@@ -1,3 +1,5 @@
+require 'game'
+
 describe Game do
   describe "#register" do
     # As a marketeer
