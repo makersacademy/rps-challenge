@@ -12,10 +12,17 @@ describe Game do
   end
 
   describe "what beats what" do
-    it 'returns rock when passed rock and scissors' do
-      allow(subject).to receive(:random).and_return("scissors")
-      # p subject.random
-      expect(subject.win_logic("rock", "scissors")).to eq "human"
+    it 'returns winner when passed rock and scissors' do
+      expect(subject.win_logic("rock", "scissors")).to eq "winner"
+    end
+    it 'returns loser when passed rock and paper' do
+      expect(subject.win_logic("rock", "paper")).to eq "loser"
+    end
+    it 'returns loser when passed paper and scissors' do
+      expect(subject.win_logic("paper", "scissors")).to eq "loser"
+    end
+    it 'returns draw when passed paper and scissors' do
+      expect(subject.win_logic("paper", "paper")).to eq "draw"
     end
   end
 end

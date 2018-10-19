@@ -18,10 +18,17 @@ feature 'Feature - Play Rock Paper Scissors' do
 
   end
 
-  scenario 'win or lose' do
+  scenario 'winner or loser' do
     register
     click_button 'Rock'
     # expect(page).to have_content 'You are a '
     expect(page).to have_content(/You are a (winner|loser)/)
   end
+
+  # scenario 'win or lose - outcome' do
+  #   register
+  #   click_button 'Rock'
+  #   # expect(page).to have_content 'You are a '
+  #   expect(page).to have_content(/rock (draws with|beats|loses to)/)
+  # end
 end

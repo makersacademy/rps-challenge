@@ -1,3 +1,4 @@
 <p>You played <%=@choice%></p>
-<p>Your opponent played <%=session[:game].opponent_choice%></p>
-<p>Rock beats Scissors - You are a winner</p>
+<p>Your opponent played <%=@game.opponent_choice%></p>
+
+<p>You are a <%=@game.win_logic%></p>
