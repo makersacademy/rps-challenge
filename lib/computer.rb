@@ -1,7 +1,7 @@
 class Computer
   MOVES = ["Rock", "Paper", "Scissors"]
 
-  def move
+  def pick_move
     MOVES.sample
   end
 end
