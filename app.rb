@@ -18,6 +18,7 @@ class RPS < Sinatra::Base
   end
 
   post '/game/rock' do
+    p params
     @user_move = "rock"
     game = Game.new(['rock', 'paper', 'scissors'])
     winner = Winner.new

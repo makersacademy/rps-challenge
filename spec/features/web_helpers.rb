@@ -8,7 +8,7 @@ end
 
 def game_is_rock
   options = ['rock', 'paper', 'scissors']
+  allow_any_instance_of(Array).to receive(:sample).and_return('rock')
   game = Game.new(options)
-  allow(options).to receive(:sample).and_return('rock')
-  game.move
+  p "game move is #{game.move}"
 end
