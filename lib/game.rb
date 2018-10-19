@@ -1,18 +1,12 @@
+require_relative 'computer'
+
 class Game
 
-attr_reader :marketeer
+attr_reader :marketeer, :computer_choice
 
   def initialize(marketeer)
     @marketeer = marketeer
-  end
-
-  def random_assignment
-    @choices = ['Rock', 'Paper', 'Scissors']
-    @choice = @choices[rand(@choices.length)]
-  end
-
-  def computer_choice
-    random_assignment
+    @computer_choice = Computer.new.choice
   end
 
 end

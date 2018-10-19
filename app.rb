@@ -26,7 +26,7 @@ enable :sessions
       redirect to('/lose')
     elsif $game.computer_choice == 'Rock'
       redirect to('/draw')
-    else
+    elsif $game.computer_choice == 'Scissors'
      redirect to('/win')
    end
   end
@@ -36,7 +36,7 @@ enable :sessions
       redirect to('/draw')
     elsif $game.computer_choice == 'Rock'
       redirect to('/win')
-    else
+    elsif $game.computer_choice == 'Scissors'
      redirect to('/lose')
    end
   end
@@ -46,7 +46,7 @@ enable :sessions
       redirect to('/win')
     elsif $game.computer_choice == 'Rock'
       redirect to('/lose')
-    else
+    elsif $game.computer_choice == 'Scissors'
      redirect to('/draw')
     end
   end
