@@ -4,7 +4,7 @@
 <%=@game.player1.name%>, it's your turn
 <%end%>
 <form action="/saveturn" method="post">
-  <%@game.gamearray.each { |btn| %>
+  <%@game.settings.weapon_list.each { |btn| %>
 <input type="submit" name="choice" value="<%=btn.capitalize%>">
 <% } %>
 <!-- <input type="submit" name="choice" value="Paper">
