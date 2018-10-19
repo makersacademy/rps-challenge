@@ -1,7 +1,7 @@
 class Game
 
   def initialize(player, computer = Computer.new)
-    @gameplay = [player.move, computer.move]
+    @gameplay = [player.choice, computer.choice]
   end
 
   def beats
