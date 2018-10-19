@@ -52,4 +52,22 @@ describe Game do
       expect(subject.result).to eq "Lose"
     end
   end
+
+  context '#message' do
+    it 'returns a win message' do
+      expect(subject.message).to eq "You won!"
+    end
+
+    it 'returns a lose message' do
+      allow(player).to receive(:move) { "Rock" }
+      allow(computer).to receive(:move) { "Paper" }
+      expect(subject.message).to eq "You lose!"
+    end
+
+    it 'returns a draw message' do
+      allow(player).to receive(:move) { "Rock" }
+      allow(computer).to receive(:move) { "Rock" }
+      expect(subject.message).to eq "Draw!"
+    end
+  end
 end
