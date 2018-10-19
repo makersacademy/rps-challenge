@@ -9,6 +9,8 @@ class Game
   def result
     if @player.move == "Rock" && @computer.move == "Scissors"
       "Win"
+    elsif @player.move == "Scissors" && @computer.move == "Rock"
+      "Lose"
     end
   end
 end
