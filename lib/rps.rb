@@ -14,11 +14,11 @@ class Rps
         :win
       when @player_1.selection == "S" && @player_2.selection == "P"
         :win
-      when @player_2.selection == "R" && @player_1.selection == "S"
+      when @player_1.selection == "R" && @player_2.selection == "P"
         :lose
-      when @player_2.selection == "P" && @player_1.selection == "R"
+      when @player_1.selection == "P" && @player_2.selection == "S"
         :lose
-      when @player_2.selection == "S" && @player_1.selection == "P"
+      when @player_1.selection == "S" && @player_2.selection == "R"
         :lose
     end
   end
