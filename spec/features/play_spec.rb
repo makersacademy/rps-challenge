@@ -1,4 +1,4 @@
-feature 'Enter name' do
+feature 'Start Game' do
   scenario 'submit name' do
     visit('/')
     click_button "Start Game"
