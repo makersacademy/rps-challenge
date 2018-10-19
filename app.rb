@@ -3,7 +3,7 @@ require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
 
   get '/' do
-    'Testing infrastructure working!'
+    erb :game_type
   end
 
   # start the server if ruby file executed directly
