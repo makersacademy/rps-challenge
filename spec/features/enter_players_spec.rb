@@ -1,9 +1,8 @@
-feature 'Register player names' do
-  scenario 'submits names' do
+feature 'Register player name' do
+  scenario 'submits name' do
     visit('/')
-    fill_in :player_one_name, with: 'Bill'
-    fill_in :player_two_name, with: 'Opponent'
+    fill_in :player_name, with: 'Bill'
     click_button 'Submit'
-    expect(page).to have_content 'Bill vs. Opponent'
+    expect(page).to have_content 'Bill vs. Computer'
   end
 end
