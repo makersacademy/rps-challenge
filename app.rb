@@ -5,7 +5,7 @@ require_relative 'lib/game'
 class RPSGame < Sinatra::Base
 
   before do
-    @game = Game.game
+
   end
 
   get "/" do
@@ -14,7 +14,7 @@ class RPSGame < Sinatra::Base
 
   post "/names" do
     player_1 = Player.new(params[:player_1_name])
-    Game.new_game(player_1)
+    Game.new(player_1)
     redirect '/play'
   end
 
