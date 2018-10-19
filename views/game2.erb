@@ -4,10 +4,10 @@
 
 <body>
   <div>
-    <h1><%= @name1 %> vs <%= @name2 %></h1>
-    <p>It's currently <%= @name1 %>'s turn</p>
+    <h1><%= @turn.name1 %> vs <%= @turn.name2 %></h1>
+    <p>It's currently <%= @turn.move %>'s turn</p>
     <p>What move would you like to play?</p>
-    <form action=/game2 method=post >
+    <form action=/game/move method=post >
     <input name='move' type="submit" value="rock">
     <input name='move' type="submit" value="paper">
     <input name='move' type="submit" value="scissors">
