@@ -14,17 +14,20 @@ class Settings
     "spock" => %w(scissors rock)
     }
 
-    attr_reader :weapon_hash
+  attr_reader :weapon_hash
 
-    def initialize(gamevariant = "CLASSIC")
-      if gamevariant = "CLASSIC"
-        @weapon_hash = CLASSIC
-      else
-        @weapon_hash = SPOCK
-      end
-    end
+  def initialize(gamevariant = "CLASSIC")
+    # p gamevariant
+    # if gamevariant.upcase == "CLASSIC"
+     # p Settings.const_get(gamevariant.upcase)
+    # if gamevariant.casecmp("CLASSIC").zero?
+    @weapon_hash = Settings.const_get(gamevariant.upcase)
+    # else
+      # @weapon_hash = Settings.const_get(gamevariant.upcase)
+    # end
+  end
 
-    def weapon_list
-      @weapon_hash.keys
-    end
+  def weapon_list
+    @weapon_hash.keys
+  end
 end
