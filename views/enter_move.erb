@@ -1,0 +1,13 @@
+<h1> Welcome <%= @player_1.name %>! </h1>
+<div> <p> </p> </div>
+<div> <p> Pick your poison... </p>
+
+<form action="/move" method="post">
+<input type="submit" value="ROCK" name="rock">
+
+<form action="/move" method="post">
+<input type="submit" value="PAPER" name="paper">
+
+<form action="/move" method="post">
+<input type="submit" value="SCISSORS" name="scissors">
+</form>
