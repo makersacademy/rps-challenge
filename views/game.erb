@@ -1,15 +1,15 @@
 <h1>Let's begin <%= @name %>!</h1>
 <h2>What move would you like to play?</h2>
 <form action=/game/rock method=post >
-<input name='rock' type="submit" value="Rock">
+<input name='move' type="submit" value="rock">
 </form>
 
 <form action=/game/paper method=post >
-<input type="submit" value="Paper">
+<input name='move' type="submit" value="paper">
 </form>
 
 <form action=/game/scissors method=post >
-<input type="submit" value="Scissors">
+<input name='move' type="submit" value="scissors">
 </form>
 
 
