@@ -1,11 +1,9 @@
 class RockPaperScissors
 
-  def random_choice
-    ['rock', 'paper', 'scissors'].sample
-  end
+  CHOICES = ['rock', 'paper', 'scissors']
 
-  def create_choice(choice = random_choice)
-    choice
+  def random_choice
+    CHOICES.sample
   end
 
 end
