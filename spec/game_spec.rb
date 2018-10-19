@@ -22,5 +22,10 @@ describe Game do
       allow(computer).to receive(:move) { "Rock" }
       expect(subject.result).to eq "Lose"
     end
+
+    it 'returns "draw"' do
+      allow(player).to receive(:move) { "Scissors" }
+      expect(subject.result).to eq "Draw"
+    end
   end
 end
