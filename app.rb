@@ -1,5 +1,7 @@
 require 'sinatra/base'
-require './lib/RPS'
+require './lib/game'
+require './lib/player'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -9,20 +11,19 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    player_1 = Player.new(params[:name])
+    $game = Game.new(player_1)
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:name]
+    @game = $game
     erb :play
   end
 
   post '/choice' do
-    $rps = RockPaperScissors.new
-    @name = session[:name]
+    @game = $game
     @choice = params[:choice]
-    @rps = $rps
     erb :choice
   end
 
