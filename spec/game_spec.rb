@@ -17,18 +17,18 @@ describe Game do
       expect(subject.result).to eq "Win"
     end
 
-    it 'returns "Lose"' do
+    it 'returns "Lose" if player plays Scissors and computer plays Rock' do
       allow(player).to receive(:move) { "Scissors" }
       allow(computer).to receive(:move) { "Rock" }
       expect(subject.result).to eq "Lose"
     end
 
-    it 'returns "Draw"' do
+    it 'returns "Draw" if both player and computer play the same option' do
       allow(player).to receive(:move) { "Scissors" }
       expect(subject.result).to eq "Draw"
     end
 
-    it 'returns "Win"' do
+    it 'returns "Win" if player plays Paper and computer plays Rock' do
       allow(player).to receive(:move) { "Paper" }
       allow(computer).to receive(:move) { "Rock" }
       expect(subject.result).to eq "Win"
