@@ -3,25 +3,24 @@ class GameResult
   def self.calculate(player_choice, game_choice)
     @player_choice = player_choice
     @game_choice = game_choice
-    @result = 'tie' if @player_choice == @game_choice
-    when_player_picks_rock
-    when_player_picks_paper
-    when_player_picks_scissors
+    when_choices_are_not_equal
+    when_choices_are_equal
     @result
   end
 
-  def self.when_player_picks_rock
-    @result = 'win' if @player_choice == "Rock" and @game_choice == "Paper"
-    @result = 'lose' if @player_choice == "Rock" and @game_choice == "Scissors"
+  def self.when_choices_are_not_equal
+    outcomes = {
+                  ['Rock', 'Paper'] => 'win',
+                  ['Rock', 'Scissors'] => 'lose',
+                  ['Paper', 'Scissors'] => 'win',
+                  ['Paper', 'Rock'] => 'lose',
+                  ['Scissors', 'Rock'] => 'win',
+                  ['Scissors', 'Paper'] => 'lose',
+                }
+    @result = outcomes[[@player_choice, @game_choice]]
   end
 
-  def self.when_player_picks_paper
-    @result = 'win' if @player_choice == "Paper" and @game_choice == "Scissors"
-    @result = 'lose' if @player_choice == "Paper" and @game_choice == "Rock"
-  end
-
-  def self.when_player_picks_scissors
-    @result = 'win' if @player_choice == "Scissors" and @game_choice == "Rock"
-    @result = 'lose' if @player_choice == "Scissors" and @game_choice == "Paper"
+  def self.when_choices_are_equal
+    @result = 'tie' if @player_choice == @game_choice
   end
 end
