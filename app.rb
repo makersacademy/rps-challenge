@@ -20,9 +20,15 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  get '/rock' do
+  post '/choose_rock' do
     @game = Game.instance
-    erb(:rock)
+    @game.player.choose_rock
+    redirect to '/move'
+  end
+
+  get '/move' do
+    @game = Game.instance
+    erb(:move)
   end
 
   run! if app_file == $0
