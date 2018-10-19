@@ -22,8 +22,8 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
+    $game.player_1.move(params[:choice])
     @game = $game
-    @choice = params[:choice]
     erb :choice
   end
 
