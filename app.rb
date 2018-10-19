@@ -4,18 +4,25 @@ require './lib/computer'
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
 
   post '/name' do
-    @player = Player.new(params[:name])
-    $game = Game.new(@player)
-    @game = $game
+    player = Player.new(params[:name])
+    @game = Game.create(player)
+    redirect '/play'
+  end
+
+  get '/play' do
     erb :play
   end
 
-  get '/result' do
+  post '/result' do
     @game.player.set_move(params[:move])
     erb :result
   end

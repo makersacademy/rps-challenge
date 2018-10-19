@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   let(:player) { double :player, :move => "Rock" }
-  let(:computer) { double :computer, :move => "Scissors" }
+  let(:computer) { double :computer, :move => "Scissors", :pick_move => "" }
   subject { Game.new(player, computer) }
 
   context '#initialize' do
