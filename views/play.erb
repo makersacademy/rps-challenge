@@ -1,17 +1,9 @@
 <h1> Welcome <%= @game.player.name %>, please select a move!</h1>
 
-<form action="/result" method="post">
-  <label>
-    Rock
-    <input type="radio" name="Rock">
-  </label>
-  <label>
-    Paper
-    <input type="radio" name="Paper">
-  </label>
-  <label>
-    Scissors
-    <input type="radio" name="Scissors">
-  </label>
+<form action="/result" method="get">
+  <select name="move">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
   <input type="submit" value="Submit">
 </form>

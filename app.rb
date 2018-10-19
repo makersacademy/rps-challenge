@@ -15,7 +15,8 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/result' do
+  get '/result' do
+    @game.player.set_move(params[:move])
     erb :result
   end
 
