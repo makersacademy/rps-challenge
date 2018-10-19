@@ -17,26 +17,9 @@ class RPS < Sinatra::Base
     erb(:game)
   end
 
-  post '/game/rock' do
+  post '/game/move' do
     @user_move = params["move"]
-    game = Game.new(['rock', 'paper', 'scissors'])
-    winner = Winner.new
-    @game_move = game.move
-    @winner = winner.determine(game.move, @user_move)
-    erb(:win_or_lose)
-  end
-
-  post '/game/paper' do
-    @user_move = "paper"
-    game = Game.new(['rock', 'paper', 'scissors'])
-    winner = Winner.new
-    @game_move = game.move
-    @winner = winner.determine(game.move, @user_move)
-    erb(:win_or_lose)
-  end
-
-  post '/game/scissors' do
-    @user_move = "scissors"
+    p @user_move
     game = Game.new(['rock', 'paper', 'scissors'])
     winner = Winner.new
     @game_move = game.move

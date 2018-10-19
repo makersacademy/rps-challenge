@@ -1,16 +1,7 @@
 <h1>Let's begin <%= @name %>!</h1>
 <h2>What move would you like to play?</h2>
-<form action=/game/rock method=post >
+<form action=/game/move method=post >
 <input name='move' type="submit" value="rock">
-</form>
-
-<form action=/game/paper method=post >
 <input name='move' type="submit" value="paper">
-</form>
-
-<form action=/game/scissors method=post >
 <input name='move' type="submit" value="scissors">
 </form>
-
-
-<!-- one form with 3 buttons, then use params -->
