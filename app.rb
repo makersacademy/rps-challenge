@@ -17,32 +17,32 @@ class RPS < Sinatra::Base
     erb(:game)
   end
 
-   post '/game/rock' do
-     @user_move = "rock"
-     game = Game.new(['rock', 'paper', 'scissors'] )
-     winner = Winner.new
-     @game_move = game.move
-     @winner = winner.determine(game.move, @user_move)
-     erb(:win_or_lose)
-   end
+  post '/game/rock' do
+    @user_move = "rock"
+    game = Game.new(['rock', 'paper', 'scissors'])
+    winner = Winner.new
+    @game_move = game.move
+    @winner = winner.determine(game.move, @user_move)
+    erb(:win_or_lose)
+  end
 
-   post '/game/paper' do
-     @user_move = "paper"
-     game = Game.new(['rock', 'paper', 'scissors'] )
-     winner = Winner.new
-     @game_move = game.move
-     @winner = winner.determine(game.move, @user_move)
-     erb(:win_or_lose)
-   end
+  post '/game/paper' do
+    @user_move = "paper"
+    game = Game.new(['rock', 'paper', 'scissors'])
+    winner = Winner.new
+    @game_move = game.move
+    @winner = winner.determine(game.move, @user_move)
+    erb(:win_or_lose)
+  end
 
-   post '/game/scissors' do
-     @user_move = "scissors"
-     game = Game.new(['rock', 'paper', 'scissors'] )
-     winner = Winner.new
-     @game_move = game.move
-     @winner = winner.determine(game.move, @user_move)
-     erb(:win_or_lose)
-   end
+  post '/game/scissors' do
+    @user_move = "scissors"
+    game = Game.new(['rock', 'paper', 'scissors'])
+    winner = Winner.new
+    @game_move = game.move
+    @winner = winner.determine(game.move, @user_move)
+    erb(:win_or_lose)
+  end
 
   run! if app_file == $0
 end

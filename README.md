@@ -10,5 +10,3 @@ You will then be redirected to a page that confirms your move, let's you know wh
 
 ### Running the tests
 The tests for this program use rspec and capybara, so simply run rspec from within this directory.
-
-s

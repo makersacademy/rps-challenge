@@ -1,5 +1,6 @@
 class Winner
   def determine(game, user)
+
     if game == "rock" && user == "paper"
       "You won!"
     elsif game == "rock" && user == "scissors"
@@ -19,5 +20,6 @@ class Winner
     elsif game == "scissors" && user == "scissors"
       "It's a draw!"
     end
+
   end
 end
