@@ -4,11 +4,11 @@ feature 'Enter name' do
   end
 
   scenario 'User is asked for name' do
-    expect(page).to have_content "please enter your name"
+    expect(page).to have_content "please enter your names"
   end
 
   scenario 'Can submit name and sees a welcome' do
     sign_in_and_play
-    expect(page).to have_content "Let's begin Caitlin!"
+    expect(page).to have_content "Caitlin vs James"
   end
 end
