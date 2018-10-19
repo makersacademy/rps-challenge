@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/rps.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -23,8 +24,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    @player_choice = session[:selection]
-    erb :result
+    @user_name = session[:user_name]
+    @selection = session[:selection]
+    game = Rps.new(Player.new(@selection, @user_name), Computer.new)
+    if game.decide == :win
+      erb :win
+    elsif game.decide == :lose
+      erb :lose
+    else
+      erb :tie
+    end
   end
 
   run! if app_file == $0

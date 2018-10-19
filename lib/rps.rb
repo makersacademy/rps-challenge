@@ -1,45 +1,25 @@
 class Rps
-
-  attr_reader :selection
-
-  def initialize(selection)
-    @selection = selection
-    @arr = []
+  def initialize(player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
-  def chance
-    rand(1..3)
-  end
-
-  def computer(val)
-    if val == 1
-      @arr.push "R"
-    elsif val == 2
-      @arr.push "P"
-    else
-      @arr.push "S"
+  def decide
+    case
+      when @player_1.selection == @player_2.selection
+        :tie
+      when @player_1.selection == "R" && @player_2.selection == "S"
+        :win
+      when @player_1.selection == "P" && @player_2.selection == "R"
+        :win
+      when @player_1.selection == "S" && @player_2.selection == "P"
+        :win
+      when @player_2.selection == "R" && @player_1.selection == "S"
+        :lose
+      when @player_2.selection == "P" && @player_1.selection == "R"
+        :lose
+      when @player_2.selection == "S" && @player_1.selection == "P"
+        :lose
     end
   end
-
-    def user
-      if @selection == "Rock"
-        @arr.push "R"
-      elsif @selection == "Paper"
-        @arr.push "P"
-      else
-        @arr.push "S"
-      end
-    end
-
-    def decide
-      case
-        when @arr == ["R","R"] || ["P","P"] || ["S","S"]
-          :tie
-        when @arr == ["R","S"] || ["P","R"] || ["S","P"]
-          :lose
-        when @arr == ["S","R"] || ["R","P"] || ["P","S"]
-          :win
-      end
-    end
-
 end

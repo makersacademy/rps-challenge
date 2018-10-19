@@ -12,7 +12,8 @@ feature "The user sees their own name" do
   end
 end
 
-feature "The game begins" do
+feature "Playing the game" do
+  let(:computer) {double :computer, :selection => "S"}
   scenario "The user selects rock and wins" do
     visit('/')
     fill_in :user_name, with: "Lucas"
