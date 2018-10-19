@@ -12,17 +12,18 @@ class Game
 
   def initialize(player1, player2, gametype, gamevariant = "classic")
     @game_scenarios = {
-          "rock" => ["scissors"],
-          "paper" => ["rock"],
-          "scissors" => ["paper"]
-        }
+      "rock" => ["scissors"],
+      "paper" => ["rock"],
+      "scissors" => ["paper"]
+      }
 
-        @game_scenarios2 = {"rock" => %w(lizard scissors),
-  "paper" => %w(rock spock),
-  "scissors" => %w(lizard paper),
-  "lizard" => %w(paper spock),
-  "spock" => %w(scissors rock)
-  }
+    @game_scenarios2 = {
+      "rock" => %w(lizard scissors),
+      "paper" => %w(rock spock),
+      "scissors" => %w(lizard paper),
+      "lizard" => %w(paper spock),
+      "spock" => %w(scissors rock)
+      }
     @player1 = player1
     @player2 = player2
     @gametype = gametype
@@ -30,25 +31,17 @@ class Game
     @gamearray = ['rock', 'paper', 'scissors']
     if @gamevariant != "classic"
       @gamearray << "lizard, spock"
-      # @gamearray << "spock"
     end
     @scenarios = @game_scenarios
-    # p @scenarios
-    # p @gamevariant
     if @gamevariant == "classic"
       @scenarios = @game_scenarios
     else
       @scenarios = @game_scenarios2
     end
 
-
-
-# p @game_scenarios2["rock"].include?("lizard")
   end
 
   def random
-
-
     @gamearray.sample
   end
 
@@ -60,7 +53,6 @@ class Game
     end
     player.update_choice(choice)
   end
-
 
   def win_logic(round1 = @player1.choice, round2 = @player2.choice)
 # p @scenarios
