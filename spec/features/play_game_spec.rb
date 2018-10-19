@@ -3,7 +3,8 @@ feature 'Play game' do
     visit '/'
     fill_in 'name', with: "Mittens"
     click_button 'Submit'
-    choose 'Rock'
+    select 'Rock', from: 'move'
+    allow_any_instance_of(Array).to receive(:sample) { "Scissors" }
     click_button 'Submit'
     expect(page).to have_content 'You win!'
   end
