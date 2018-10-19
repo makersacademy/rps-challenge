@@ -7,6 +7,7 @@ class Game
   end
 
   def result
+    @computer.pick_move
     if @player.move == "Rock" && @computer.move == "Scissors"
       "Win"
     elsif @player.move == "Scissors" && @computer.move == "Paper"

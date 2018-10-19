@@ -12,4 +12,11 @@ describe Player do
       expect(subject.move).to eq ""
     end
   end
+
+  context '#set_move' do
+    it 'sets the move attribute' do
+      subject.set_move("Rock")
+      expect(subject.move).to eq "Rock"
+    end
+  end
 end

@@ -9,7 +9,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $game = Game.new(Player.new(params[:name]))
+    @player = Player.new(params[:name])
+    $game = Game.new(@player)
     @game = $game
     erb :play
   end
