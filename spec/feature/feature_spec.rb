@@ -22,4 +22,22 @@ feature "Playing the game" do
     click_button("Submit")
     expect(page).to have_content "Rock beats Scissors, you win!"
   end
+
+  scenario "The user selects Paper and loses" do
+    visit('/')
+    fill_in :user_name, with: "Lucas"
+    click_button("Submit")
+    choose('paper')
+    click_button("Submit")
+    expect(page).to have_content "Sorry, Lucas you lose!"
+  end
+
+  scenario "The user selects Scissors, it's a tie" do
+    visit('/')
+    fill_in :user_name, with: "Lucas"
+    click_button("Submit")
+    choose('scissors')
+    click_button("Submit")
+    expect(page).to have_content "It's a tie!"
+  end
 end
