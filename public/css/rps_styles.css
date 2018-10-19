@@ -1,5 +1,12 @@
+/* forms */
 input {
   text-align:center;
+}
+
+input[type="name"], textarea {
+outline: none;
+box-shadow:none !important;
+border:1px solid #ccc !important;
 }
 
 .form-signin {
@@ -9,9 +16,15 @@ input {
   transform: translate(-45%, -50%);
 }
 
+/* footer */
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 50px;
+}
+
+/* Utility helpers */
+.spacing-div {
+  height: 20px
 }

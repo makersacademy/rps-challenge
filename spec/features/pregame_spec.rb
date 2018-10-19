@@ -25,3 +25,57 @@ feature 'User asked how many players' do
     expect(page).to have_selector(:link_or_button, '2 Player')
   end
 end
+
+feature 'User(s) asked to enter name' do
+  scenario 'RPS > 1 player' do
+    visit('/')
+    click_link 'RPS'
+    click_link '1 Player'
+    expect(page).to have_content 'Player 1'
+    fill_in :name, with: 'Terry'
+    click_link 'Submit'
+    expect(page).to have_current_path('/game')
+  end
+
+  scenario 'RPSLS > 1 player' do
+    visit('/')
+    click_link 'RPS'
+    click_link '1 Player'
+    expect(page).to have_content 'Player 1'
+    fill_in :name, with: 'Terry'
+    click_link 'Submit'
+    expect(page).to have_current_path('/game')
+  end
+
+  scenario 'RPS > 2 player' do
+    visit('/')
+    click_link 'RPS'
+    click_link '1 Player'
+    fill_in :name, with: 'Terry'
+    click_link 'Submit'
+    expect(page).to have_current_path('/player-2-name')
+  end
+
+
+
+end
+
+# feature 'User enters player name' do
+#   scenario 'RPS > 1 player' do
+#     visit('/')
+#     click_link 'RPS'
+#     click_link '1 Player'
+#     fill_in :player_1_name, with: 'Terry'
+#     expect(page).to have_content 'How many players?'
+#     expect(page).to have_selector(:link_or_button, '1 Player')
+#     expect(page).to have_selector(:link_or_button, '2 Player')
+#   end
+#
+#   scenario 'After selecting RPSLS game type' do
+#     visit('/')
+#     click_link 'RPSLS'
+#     expect(page).to have_content 'How many players?'
+#     expect(page).to have_selector(:link_or_button, '1 Player')
+#     expect(page).to have_selector(:link_or_button, '2 Player')
+#   end
+# end
