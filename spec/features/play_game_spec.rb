@@ -1,4 +1,9 @@
 feature 'Feature - Play Rock Paper Scissors' do
+
+  before :each do
+    srand(1)
+  end
+
   scenario 'Play Rock' do
     register
     click_button 'Rock'
@@ -23,6 +28,13 @@ feature 'Feature - Play Rock Paper Scissors' do
     click_button 'Rock'
     # expect(page).to have_content 'You are a '
     expect(page).to have_content(/You are a (winner|loser)/)
+  end
+
+  scenario 'draw' do
+    register
+    click_button 'Paper'
+    # expect(page).to have_content 'You are a '
+    expect(page).to have_content "Draw"
   end
 
   # scenario 'win or lose - outcome' do

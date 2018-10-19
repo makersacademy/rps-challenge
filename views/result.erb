@@ -1,4 +1,8 @@
 <p>You played <%=@choice%></p>
 <p>Your opponent played <%=@game.opponent_choice%></p>
 
+<%if @game.win_logic == "draw"%>
+Draw - <a href="/play">play again?</a>
+<%else%>
 <p>You are a <%=@game.win_logic%></p>
+<%end%>
