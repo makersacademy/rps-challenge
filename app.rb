@@ -10,6 +10,14 @@ class RPS < Sinatra::Base
     erb :index
   end
 
+  get '/one_player' do
+    erb :one_player
+  end
+
+  get '/two_players' do
+    'TWO PLAYERS'
+  end
+
   post '/name' do
     player_1 = Player.new(params[:name])
     $game = Game.new(player_1)
