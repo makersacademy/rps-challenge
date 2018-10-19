@@ -1,3 +1,6 @@
+require './lib/game'
+require './lib/player'
+require './lib/computer'
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
@@ -6,7 +9,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @player = Player.new(params[:name])
+    $game = Game.new(Player.new(params[:name]))
+    @game = $game
     erb :play
   end
 
