@@ -1,13 +1,14 @@
+require_relative './web_helpers'
+
 feature 'homepage' do
   scenario 'player can see welcome message' do
     visit('/')
-    expect(page).to have_content("Rock, Paper, Scissors - Exciting!")
+    expect(page).to have_content("Let's play")
+    expect(page).to have_content("Enter your name:")
   end
 
   scenario 'player can enter his or her name' do
-    visit('/')
-    fill_in(:player_name, with: 'Irina')
-    click_button('Start the game!')
+    sign_in_and_play
     expect(page).to have_content("Hello, Irina")
   end
 end
