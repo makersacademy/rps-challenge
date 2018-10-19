@@ -20,7 +20,13 @@ class RPS < Sinatra::Base
 
   post '/move' do
     @player_1 = $player_1
-    @player_1.move = (params[:name])
+    @player_1.move = (params[:choice])
+    redirect '/outcome'
+  end
+
+  get '/outcome' do
+    @player_1 = $player_1
+    erb :outcome
   end
 
   # start the server if ruby file executed directly
