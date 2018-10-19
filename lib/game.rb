@@ -3,8 +3,9 @@ class Game
 
   @current_game = nil
 
-  def initialize(player_1, calculator_class = ResultsCalculator)
+  def initialize(player_1, player_2 = Computer.new, calculator_class = ResultsCalculator)
     @player_1 = player_1
+    @player_2 = player_2
     @calculator_class = calculator_class
     @calculator = nil
   end
@@ -21,17 +22,14 @@ class Game
     @player_1.choose_weapon(weapon)
   end
 
-  def check_winner
-    calculator.winner
+  def winner
+    return "It's a draw!" if calculator.winner == :draw
+    "#{calculator.winner} wins!"
   end
 
   private
 
   def calculator
-    @calculator ||= @calculator_class.new(@player_1.weapon, random_weapon)
-  end
-
-  def random_weapon
-    ["ROCK", "PAPER", "SCISSORS"].sample
+    @calculator ||= @calculator_class.new(@player_1, @player_2)
   end
 end

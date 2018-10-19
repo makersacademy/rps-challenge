@@ -1,13 +1,11 @@
 class Computer
   WEAPONS = ["ROCK", "PAPER", "SCISSORS"]
 
-  attr_reader :name
-
-  def initialize
-    @name = "RPSbot"
+  def name
+    "RPSbot"
   end
 
-  def choose_weapon
+  def weapon
     WEAPONS.sample
   end
 end

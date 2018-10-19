@@ -32,7 +32,7 @@ describe ResultsCalculator do
     end
 
     it 'should be able to declare a draw' do
-      expect(draw.winner).to eq "It's a draw!"
+      expect(draw.winner).to eq :draw
     end
   end
 end
