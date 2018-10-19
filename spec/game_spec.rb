@@ -33,5 +33,23 @@ describe Game do
       allow(computer).to receive(:move) { "Rock" }
       expect(subject.result).to eq "Win"
     end
+
+    it 'returns "Win" when player plays Scissors and computer plays Paper' do
+      allow(player).to receive(:move) { "Scissors" }
+      allow(computer).to receive(:move) { "Paper" }
+      expect(subject.result).to eq "Win"
+    end
+
+    it 'returns "Lose" when player plays Paper and computer plays Scissors' do
+      allow(player).to receive(:move) { "Paper" }
+      allow(computer).to receive(:move) { "Scissors" }
+      expect(subject.result).to eq "Lose"
+    end
+
+    it 'returns "Lose" when player plays Rock and computer plays Scissors' do
+      allow(player).to receive(:move) { "Rock" }
+      allow(computer).to receive(:move) { "Paper" }
+      expect(subject.result).to eq "Lose"
+    end
   end
 end
