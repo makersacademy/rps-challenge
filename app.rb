@@ -2,6 +2,6 @@ require 'sinatra/base'
 
 class RPSGame < Sinatra::Base
   get "/" do
-    "Hello"
+    erb :index
   end
 end
