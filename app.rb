@@ -32,6 +32,12 @@ class RPS < Sinatra::Base
     redirect to '/move'
   end
 
+  post '/choose_scissors' do
+    @game = Game.instance
+    @game.player.choose_scissors
+    redirect to '/move'
+  end
+
   get '/move' do
     @game = Game.instance
     erb(:move)
