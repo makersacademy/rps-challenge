@@ -41,7 +41,7 @@
 
           <div class="col-md">
             <img src="http://picoplex.net/games/rpslp/rock.png" alt="Responsive image">
-            <p>Rock</p>
+            <p id="player_1_move"><%=@game.player_1.move %></p>
           </div>
 
         </div>
@@ -53,7 +53,7 @@
 
           <div class="col-md">
             <img src="http://picoplex.net/games/rpslp/paper.png" alt="Responsive image">
-            <p>Paper</p>
+            <p id="player_2_move">Paper</p>
           </div>
 
         </div>
@@ -63,19 +63,22 @@
 
 
       <div id="buttons" class="col-md text-center">
-        <div class="col-12">
-          <div class="btn-group mb-2" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-rock"></i> Rock</button>
-            <button type="button" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-paper"></i> Paper</button>
-            <button type="button" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-scissors"></i> Scissors</button>
+        <form method="post" action="/make-move">
+
+          <div class="col-12">
+            <div class="btn-group mb-2" role="group" aria-label="Basic example">
+              <button type="submit" name="move" value="rock "class="btn btn-lg btn-outline-dark"><i class="far fa-hand-rock"></i> Rock</button>
+              <button type="submit" name="move" value="paper" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-paper"></i> Paper</button>
+              <button type="submit" name="move" value="scissors" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-scissors"></i> Scissors</button>
+            </div>
           </div>
-        </div>
-        <div class="col-12">
-          <div class="btn-group mb-2" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-spock"></i> Spock</button>
-            <button type="button" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-lizard"></i> Lizard</button>
+          <div class="col-12">
+            <div class="btn-group mb-2" role="group" aria-label="Basic example">
+              <button type="submit" name="move" value="spock" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-spock"></i> Spock</button>
+              <button type="submit" name="move" value="lizard" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-lizard"></i> Lizard</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <hr>
