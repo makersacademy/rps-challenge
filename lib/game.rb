@@ -2,6 +2,7 @@ class Game
 
   def initialize(user)
     @user = user
+    @computer = Computer.new
   end
 
   def self.create(name)
@@ -23,5 +24,13 @@ class Game
   def user_choice
     @user.choice
   end
+
+  def computer_chooses
+    @computer.make_a_choice
+  end
+
+  # def computer_choice
+  #   @computer.choice
+  # end
 
 end

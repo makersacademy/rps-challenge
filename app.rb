@@ -42,6 +42,7 @@ class RPS < Sinatra::Base
   get '/play_end' do
     @game = Game.instance
     @user_choice = @game.user_choice
+    @computer_choice = @game.computer_chooses
     erb(:play_end)
   end
 

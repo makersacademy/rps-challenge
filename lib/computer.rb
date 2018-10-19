@@ -1,7 +1,11 @@
 class Computer
 
   def make_a_choice
-    ['Rock', 'Paper', 'Scissors'].sample
+    @choice = ['Rock', 'Paper', 'Scissors'].sample
   end
+  #
+  # def choice
+  #   @choice
+  # end
 
 end
