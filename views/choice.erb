@@ -1,3 +1,10 @@
 <p><%= @game.player_1.name %> chose <%= @game.player_1.choice %>
 
-<p>Computer chose <%= @game.player_2.choice %> </p>
+<p>Computer chose <%= @game.player_2.random_choice %> </p>
+
+<p><% if @game.winner == 'draw' %>
+  It's a draw!
+  <% else %>
+  <%= @game.winner.name %> wins!
+  <% end %>
+</p>
