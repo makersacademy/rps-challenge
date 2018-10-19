@@ -13,7 +13,8 @@ end
 class Game
   attr_accessor :player_one, :player_two, :mode
 
-  def initialize(player_one = nil, player_two = nil, scorekeeper = Scorekeeper.new)
+  def initialize(player_one = nil, player_two = nil,
+     scorekeeper = Scorekeeper.new)
     @player_one, @player_two, @scorekeeper = player_one, player_two, scorekeeper
   end
 
