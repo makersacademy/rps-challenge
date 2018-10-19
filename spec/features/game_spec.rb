@@ -16,12 +16,12 @@ describe Game do
     expect(game.player2).to eq player2
   end
 
-  # it 'initializes a game with one player and one computer' do
-  #   player1 = Player.new("Ray")
-  #   player2 = Computer.new
-  #   game = Game.new(player1, player2)
-  #   expect(game.player1).to eq player1
-  #   expect(game.player2).to eq player2
-  # end
+  it 'initializes a game with one player and one computer' do
+    player1 = Player.new("Ray")
+    player2 = Computer.new
+    game = Game.new(player1, player2)
+    expect(game.player1.name).to eq "Ray"
+    expect(game.player2.name).to eq "The Computer"
+  end
 
 end
