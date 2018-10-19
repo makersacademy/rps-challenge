@@ -25,9 +25,20 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/choice' do
+    p params[:choice]
+    $player_1_choice = params[:choice]
+    redirect '/attack'
+  end
+
+  get '/computer_choice' do
+    erb :computers_choice
+  end
+
   get '/attack' do
     @player_1_name = $player_1.name
-    erb:attack
+    @player1_choice = $game
+    erb :attack
   end
 
   # start the server if ruby file executed directly

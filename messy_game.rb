@@ -187,3 +187,9 @@ game.result
 
 
 # end
+
+# <form action="/choice" method="post">
+#     <a href="/attack" id="Rock"><img src="./images/rock1.png" alt="picture of paper" style="width:100px; height: auto;"></a>
+#     <a href="/attack" id="Paper"><img src="./images/paper.png" alt="picture of paper" style="width:100px; height: auto; margin-left:50px;"></a>
+#     <a href="/attack" id="Scissors"><img src="./images/scissors.jpg" alt="picture of paper" style="width:100px; height: auto; margin-left:50px"></a>
+# </form>
