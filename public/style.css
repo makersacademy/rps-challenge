@@ -1,69 +1,20 @@
 body {
   font-family: sans-serif;
-  margin: 0 auto;
   text-align: center;
-  background-color: #eee;
+  background-image: url("white_bed_sheet.png");
+  background-repeat: repeat;
 }
 
-#game-container {
-  margin-top: 100px;
+a {
+  text-decoration: none;
 }
 
-#name-form {
+.game-container {
+  margin: 100px 0;
+}
+
+.form-container {
   margin: 50px;
-}
+  display: inline-flex;
 
-#w1 {
-  color: red;
-}
-#e2 {
-  color: orange;
-}
-#l3 {
-  color: yellow;
-}
-#c4 {
-  color: green;
-}
-#o5 {
-  color: blue;
-}
-#m6 {
-  color: indigo;
-}
-#e7 {
-  color: violet;
-}
-#t8 {
-  color: red;
-}
-#o9 {
-  color: orange;
-}
-#m10 {
-  color: yellow;
-}
-#y11 {
-  color: green;
-}
-#w12 {
-  color: blue;
-}
-#e13 {
-  color: indigo;
-}
-#b14 {
-  color: violet;
-}
-#s15 {
-  color: red;
-}
-#i16 {
-  color: orange;
-}
-#t17 {
-  color: yellow;
-}
-#e18 {
-  color: green;
 }

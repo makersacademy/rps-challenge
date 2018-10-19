@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <link rel="stylesheet" href="/style.css" type="text/css" />
 </head>
 <body>
-  <div id="rainbow title">
-    <h2>✊&nbsp;&nbsp;🤚&nbsp;&nbsp;✌️</h2>
+  <div class="title">
+    <a href="/"><h2>✊&nbsp;&nbsp;🤚&nbsp;&nbsp;✌️</h2></a>
   </div>
-  <div id="game-container">
-    Welcome <%= Game.player.name %>!
+  <div class="game-container">
+    <div><em>Welcome <%= Game.player.name %>! Choose your move...</em></div>
+    <div class="form-container">
+      <form action="/rock" method="post">
+        <input type="submit" value="Rock">
+      </form>&nbsp;
+      <form action="/paper" method="post">
+        <input type="submit" value="Paper">
+      </form>&nbsp;
+      <form action="/scissors" method="post">
+        <input type="submit" value="Scissors">
+      </form>
+    </div>
   </div>
 </body>

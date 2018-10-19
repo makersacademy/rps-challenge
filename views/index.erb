@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <link rel="stylesheet" href="/style.css" type="text/css" />
 </head>
-
 <body>
-  <div id="rainbow-title">
-    <h2>✊&nbsp;&nbsp;🤚&nbsp;&nbsp;✌️</h2>
+  <div class="title">
+    <a href="/"><h2>✊&nbsp;&nbsp;🤚&nbsp;&nbsp;✌️</h2></a>
   </div>
-  <div id="game-container">
-    <span><em>Enter your name to play...</em></span>
-    <form id="name-form" action="/names" method="post">
-      <input type="text" name="player_1_name">
-      <br>
-      <br>
-      <input type="submit" value="Submit">
-    </form>
+  <div class="game-container">
+    <div><span><em>Enter your name to play...</em></span></div>
+    <div class="form-container">
+      <form action="/names" method="post">
+        <input type="text" name="player_1_name">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
   </div>
 </body>
 </html>
