@@ -1,1 +1,19 @@
-Hello <%= @player_name %>
+Hello <%= @player_name %>. Please select rock, paper or scissors.
+
+<form action="/choice" method="post">
+  <label>
+    Rock
+  <input type="radio" name="choice" value="Rock">
+  </label>
+  <label>
+    Paper
+  <input type="radio" name="choice" value="Paper">
+  </label>
+  <label>
+    Scissors
+  <input type="radio" name="choice" value="Scissors">
+  </label>
+  <br>
+  <input type="submit" value="Submit">
+
+</form>
