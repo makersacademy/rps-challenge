@@ -31,7 +31,7 @@ Change the game so that two marketeers can play against each other ( _yes there 
 Use the _special_ rules _(you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)_
 
 ### Approach
-1. Diagram classes and methods
+1. Model and Diagram
 2. Write Rspec unit tests for classes and methods
 3. Make unit tests pass
 4. Write feature tests for using capybara
