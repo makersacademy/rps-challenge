@@ -7,8 +7,8 @@
       <h2>Rock, Paper, Scissors!</h2>
     <hr width="50%"></hr>
     <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-6mdQP137rYtCVT6SnQ0DOHrwbbMwQKeg7rQkwojQ0uOzwEOTTg>
-    <h2><%=@player_1_name%>: <%=@result%></h2>
-    <h3>You played <i><%=@player_move%></i>. The computer played <i><%=@player_2_move%></i>.</h3>
+    <h2><%=@result%> <%=@player_1_name%></h2>
+    <h3><%=@player_1_name%> played <i><%=@player_1_move%></i>. <%=@player_2_name%> played <i><%=@player_2_move%></i>.</h3>
     <h3>Would you like to play again?</h3>
     <div style="margin-right: 215px; margin-left: 215px; background-color: blue">
       <form action="/play_again" method="post">

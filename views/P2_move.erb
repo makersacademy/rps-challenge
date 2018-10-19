@@ -7,9 +7,9 @@
       <h2>Rock, Paper, Scissors!</h2>
     <hr width="50%"></hr>
     <h3><%=@player_1_name%> Vs. <%=@player_2_name%><h3>
-    <h4><%=@player_1_name%>: click on a picture below, to choose your move</h4>
+    <h4><%=@player_2_name%>: click on a picture below, to choose your move</h4>
     <div style="margin-right: 215px; margin-left: 215px; background-color: blue">
-      <form action="/move" method="post">
+      <form action="/set_P2_move" method="post">
         <button name="player_move" type="submit" value="rock"><h2><img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs5Xt-4HeRXZf6fp92kQiRUADaIVIm8T89HoHvC5ItH_MRyx_l></h2></button>
         <button name="player_move" type="submit" value="paper"><h2><img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyrsjq1PaJ6fZ49AT8KpBngRwJWlFDrxoeslCMz3bXbEZTiRDT></h2></button>
         <button name="player_move" type="submit" value="scissors"><h2><img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU6g3PvDycqx-j22f1a_n15EYrvFLa_AKaz3jvyeBcgFIdqWtP></h2></button>
@@ -17,4 +17,3 @@
     </div>
   </body>
 </html>
-
