@@ -22,7 +22,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player_1_name = $player_1.name
+    $player_1_name = $player_1.name
     erb :play
   end
 
@@ -40,7 +40,7 @@ class RPS < Sinatra::Base
   end
 
   get '/attack' do
-    @player_1_name = $player_1.name
+    $player_1_name = $player_1.name
     @player1_choice = $game
     erb :attack
   end
