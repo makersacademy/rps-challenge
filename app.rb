@@ -32,6 +32,7 @@ class Rps < Sinatra::Base
   end
 
   get '/outcome' do
+    @game.pick_option
     erb :outcome
   end
 
