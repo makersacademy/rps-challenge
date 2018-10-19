@@ -1,0 +1,8 @@
+<form action="/register-process" method="post">
+  <input name="name" type="text">
+  <%if @gametype == "Multiplayer"%>
+  <input name="name2" type="text">
+  <%end%>
+  <input type="submit" value="Play">
+  <input type="hidden" name="gametype" value="<%=@gametype%>">
+</form>

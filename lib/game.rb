@@ -1,19 +1,29 @@
 class Game
 
-  attr_reader :opponent_choice, :choice, :player
+  attr_reader :opponent_choice, :choice, :player1, :player2, :gametype
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player1, player2, gametype)
+    # p player1
+    # p player2
+    @game = Game.new(player1, player2, gametype)
   end
 
   def self.instance
     @game
   end
 
-  def initialize(player)
-    @player = player
+  def initialize(player1, player2, gametype)
+    @player1 = player1
+    @player2 = player2
+    @gametype = gametype
     @choice = nil
-    @opponent_choice = random
+    if @player2.playertype == "computer"
+      @opponent_choice = random
+      @gametype = "Single player"
+    else
+      @opponent_choice = nil
+      @gametype = "Multiplayer"
+    end
     @game_scenarios = {
     			"rock" => "scissors",
     			"paper" => "rock",
@@ -29,15 +39,19 @@ class Game
     @choice = choice
   end
 
+  def update_oppchoice(choice)
+    @opponent_choice = choice
+  end
+
   def win_logic(choice = @choice, choice2 = @opponent_choice)
     @opponent_choice = choice2
     @choice = choice
     if @choice == @opponent_choice
       "draw"
 		elsif @game_scenarios[@choice] == @opponent_choice
-    "winner"
+    @player1
 		else
-    "loser"
+    @player2
     end
   end
 

@@ -5,7 +5,7 @@ describe Player do
 
   describe 'set name' do
     it 'takes the name and returns it' do
-      player = Player.new("Clare")
+      player = Player.new("Clare", "human")
       expect(player.name).to eq "Clare"
     end
   end

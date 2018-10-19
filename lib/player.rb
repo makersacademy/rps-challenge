@@ -1,9 +1,10 @@
 class Player
 
-  attr_reader :name
+  attr_reader :name, :playertype
 
-  def initialize(name)
+  def initialize(name = "computer", playertype = "computer")
     @name = name
+    @playertype = playertype
   end
 
 end

@@ -14,18 +14,44 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/play' do
-    player = Player.new(params[:name])
-    # session[:player] = Player.new(params[:name])
-    @game = Game.create(player)
-    # session[:game] = Game.new(@player)
-    # p @player.name
+  post '/register' do
+    @gametype = params[:gametype]
+    erb :register
+  end
+
+  post '/register-process' do
+    gametype = params[:gametype]
+    player1 = Player.new(params[:name], "human")
+    if gametype == "Single player"
+      player2_name, player2_type = "computer", "computer"
+    else
+      player2_name, player2_type = params[:name2], "human"
+    end
+    player2 = Player.new(player2_name, player2_type)
+    @game = Game.create(player1, player2, gametype)
+    redirect '/play'
+  end
+
+  get '/play' do
     erb :play
   end
 
-  post '/result' do
-    @choice = params[:choice].downcase
-    @game.update_choice(@choice)
+  post '/saveturn' do
+    round = params[:round]
+    roundchoice = params[:choice].downcase
+    if round == "1"
+      @game.update_choice(roundchoice)
+    else
+      @game.update_oppchoice(roundchoice)
+    end
+    if @game.gametype == "Multiplayer" && round == "1"
+      erb :play2
+    else
+      redirect '/result'
+    end
+  end
+
+  get '/result' do
     erb :result
   end
 
