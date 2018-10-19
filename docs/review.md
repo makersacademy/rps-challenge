@@ -123,11 +123,11 @@ to ensure the user interface logic is correct.
 
 ```ruby
 feature 'Playing the game' do
-  scenario "When I submit 'Rock' I am told if I have won" do
-    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
+  scenario "When I submit :rock I am told if I have won" do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     visit '/'
     fill_in('name', with: 'Philip')
-    select('rock', from: 'your_choice')
+    select(:rock, from: 'your_choice')
     click_button('Play')
     expect(page).to have_content "The result is .... You won"
   end
@@ -310,7 +310,7 @@ If you have something like this:
 
 ```ruby
 def weapons
-  ['Rock', 'Paper', 'Scissors']
+  [:rock, :paper, :scissors]
 end
 ```
 

@@ -6,24 +6,24 @@ feature "game page" do
       enter_single_name
     end
 
-    it "has 'Rock' button'" do
-      expect(page).to have_selector(:button, "Rock")
+    it "has :rock button'" do
+      expect(page).to have_selector(:button, :rock)
     end
 
-    it "has 'Paper' button'" do
-      expect(page).to have_selector(:button, "Paper")
+    it "has :paper button'" do
+      expect(page).to have_selector(:button, :paper)
     end
 
-    it "has 'Scissors' button'" do
-      expect(page).to have_selector(:button, "Scissors")
+    it "has :scissors button'" do
+      expect(page).to have_selector(:button, :scissors)
     end
 
-    it "has 'Lizard' button'" do
-      expect(page).to have_selector(:button, "Lizard")
+    it "has :lizard button'" do
+      expect(page).to have_selector(:button, :lizard)
     end
 
-    it "has 'Spock' button'" do
-      expect(page).to have_selector(:button, "Spock")
+    it "has :spock button'" do
+      expect(page).to have_selector(:button, :spock)
     end
 
     it "shows player and computer names" do
@@ -35,7 +35,7 @@ feature "game page" do
     end
 
     it "does not redirect to invite second player to choose weapon" do
-      click_button "Rock"
+      click_button :rock
       expect(page).not_to have_content("Computer, choose your weapon!")
     end
   end
@@ -46,16 +46,16 @@ feature "game page" do
       enter_multiple_names
     end
 
-    it "has 'Rock' button'" do
-      expect(page).to have_selector(:button, "Rock")
+    it "has :rock button'" do
+      expect(page).to have_selector(:button, :rock)
     end
 
-    it "has 'Paper' button'" do
-      expect(page).to have_selector(:button, "Paper")
+    it "has :paper button'" do
+      expect(page).to have_selector(:button, :paper)
     end
 
-    it "has 'Scissors' button'" do
-      expect(page).to have_selector(:button, "Scissors")
+    it "has :scissors button'" do
+      expect(page).to have_selector(:button, :scissors)
     end
 
     it "shows both player names" do
@@ -67,13 +67,13 @@ feature "game page" do
     end
 
     it "redirects to invite second player to choose weapon" do
-      click_button "Rock"
+      click_button :rock
       expect(page).to have_content("Cat, choose your weapon!")
     end
 
     it "does not redirect twice" do
-      click_button "Rock"
-      click_button "Paper"
+      click_button :rock
+      click_button :paper
       expect(page).not_to have_content("choose your weapon!")
     end
   end

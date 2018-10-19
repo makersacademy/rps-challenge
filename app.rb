@@ -16,6 +16,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/mode' do
+    p "I GET PRINTED"
     Game.create
     @game = Game.current_game
     @game.mode = params[:mode]
@@ -39,9 +40,9 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice' do
     if @game.player_one.has_chosen?
-      @game.player_two.choose(params[:choice])
+      @game.player_two.choose(params[:choice].to_sym)
     else
-      @game.player_one.choose(params[:choice])
+      @game.player_one.choose(params[:choice].to_sym)
       redirect "/game" if @game.mode == "Multiplayer"
       @game.player_two.choose_random
     end

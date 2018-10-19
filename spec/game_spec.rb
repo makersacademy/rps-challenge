@@ -1,7 +1,7 @@
 require "game"
 
 describe Game do
-  let(:player_one) { double(:player_one, choice: "Rock", :has_chosen? => false) }
+  let(:player_one) { double(:player_one, choice: :rock, :has_chosen? => false) }
   let(:player_two) { double(:player_two, :has_chosen? => false) }
   let(:scorekeeper) { double(:scorekeeper) }
   let(:game) { Game.new(player_one, player_two, scorekeeper) }
