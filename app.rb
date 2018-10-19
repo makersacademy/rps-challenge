@@ -36,9 +36,24 @@ class RPS < Sinatra::Base
     erb :player_one_move
   end
 
+  post '/player_one_choice' do
+    $game.player_1.move(params[:player_one_choice])
+    redirect '/player_two_move'
+  end
+
   get '/player_two_move' do
     @game = $game
     erb :player_two_move
+  end
+
+  post '/player_two_choice' do
+    $game.player_2.move(params[:player_two_choice])
+    redirect '/choice'
+  end
+
+  get '/results' do
+    @game = $game
+    erb :results
   end
 
   get '/play' do
@@ -48,6 +63,11 @@ class RPS < Sinatra::Base
 
   post '/choice' do
     $game.player_1.move(params[:choice])
+    $game.player_2.random_choice
+    redirect '/choice'
+  end
+
+  get '/choice' do
     @game = $game
     erb :choice
   end

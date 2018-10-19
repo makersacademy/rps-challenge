@@ -5,11 +5,7 @@ feature 'Enter name' do
   end
 
   scenario 'Can enter two players names' do
-    visit('/')
-    click_button 'Two players'
-    fill_in :player_1, with: 'Mel'
-    fill_in :player_2, with: 'Aimee'
-    click_button 'Submit'
+    fill_form_2_players
     expect(page).to have_content 'Mel vs. Aimee'
   end
 end

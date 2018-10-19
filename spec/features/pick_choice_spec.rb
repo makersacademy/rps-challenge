@@ -19,4 +19,16 @@ feature 'Selecting choice' do
     click_button 'Submit'
     expect(page).to have_content 'Mel chose scissors'
   end
+
+  scenario 'Player one chooses first in two player game' do
+    fill_form_2_players
+    expect(page).to have_content 'Mel, what is your move?'
+  end
+
+  scenario 'Player two chooses second in two player game' do
+    fill_form_2_players
+    page.select 'Rock', from: 'player_one_choice'
+    click_button 'Submit'
+    expect(page).to have_content 'Aimee, what is your move?'
+  end
 end

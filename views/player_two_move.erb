@@ -1,8 +1,9 @@
-<p>Player: <%= @game.player_2.name %>
+<h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h2>
 
-<p>Pick your choice:</p>
+<p><%= @game.player_2.name %>, what is your move?</p>
+
 <form action="/player_two_choice" method="post">
-  <select name="choice">
+  <select name="player_two_choice">
     <option value="rock">Rock</option>
     <option value="paper">Paper</option>
     <option value="scissors">Scissors</option>

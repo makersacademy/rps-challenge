@@ -22,4 +22,14 @@ feature 'Announces winner' do
     click_button 'Submit'
     expect(page).to have_content "It's a draw!"
   end
+
+  scenario 'it shows the winner in a two player game' do
+    fill_form_2_players
+    page.select 'Rock', from: 'player_one_choice'
+    click_button 'Submit'
+    page.select 'Scissors', from: 'player_two_choice'
+    click_button 'Submit'
+    expect(page).to have_content 'Mel wins!'
+  end
+
 end
