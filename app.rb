@@ -17,7 +17,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/mode' do
-    p "I GET PRINTED"
     Game.create
     @game = Game.current_game
     @game.mode = params[:mode]
