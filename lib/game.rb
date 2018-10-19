@@ -5,7 +5,7 @@ class Game
   end
 
   def self.create(player: )
-    @game = Game.new(player: player)
+    @game = Game.new(player: Player.new(player))
   end
 
   def self.instance
