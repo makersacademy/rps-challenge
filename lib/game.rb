@@ -1,5 +1,8 @@
 class Game
-  def generate(options)
-    options.sample
+
+  attr_reader :move
+  
+  def initialize(options)
+    @move = options.sample
   end
 end
