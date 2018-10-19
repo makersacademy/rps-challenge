@@ -7,5 +7,4 @@ class Player
     @wins = wins
   end
 
-
 end
