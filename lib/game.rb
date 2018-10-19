@@ -1,10 +1,11 @@
+require_relative 'game_result'
+
 class Game
 
   attr_reader :player, :choice
 
   def initialize(player)
     @player = player
-    @result = nil
     @choice = nil
   end
 
@@ -24,30 +25,7 @@ class Game
   end
 
   def result
-    calculate_outcome
-    @result
+    GameResult.calculate(@player.choice, choice)
   end
 
-  private
-  def calculate_outcome
-    @result = 'tie' if @player.choice == choice
-    compare_when_player_picks_rock
-    compare_when_player_picks_paper
-    compare_when_player_picks_scissors
-  end
-
-  def compare_when_player_picks_rock
-    @result = 'win' if @player.choice == "Rock" and choice == "Paper"
-    @result = 'lose' if @player.choice == "Rock" and choice == "Scissors"
-  end
-
-  def compare_when_player_picks_paper
-    @result = 'win' if @player.choice == "Paper" and choice == "Scissors"
-    @result = 'lose' if @player.choice == "Paper" and choice == "Rock"
-  end
-
-  def compare_when_player_picks_scissors
-    @result = 'win' if @player.choice == "Scissors" and choice == "Rock"
-    @result = 'lose' if @player.choice == "Scissors" and choice == "Paper"
-  end
 end
