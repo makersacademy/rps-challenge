@@ -18,6 +18,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    $game = Game.new
     @player = $player.name
     erb(:result)
   end

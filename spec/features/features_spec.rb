@@ -1,5 +1,6 @@
 feature 'Testing RPS' do
   let(:steve) { double :steve }
+  let(:computer) { double :computer }
 
   scenario "should accept a player's name" do
     sign_in_and_play
@@ -10,6 +11,13 @@ feature 'Testing RPS' do
     click_button('Rock')
     allow(steve).to receive(:pick).with("rock").and_return("rock")
     steve.pick("rock")
-    expect(page).to have_content "Steve chose rock"
+    expect(page).to have_content "Result:"
   end
+  # scenario "should accept a computer's current_pick" do
+  #   sign_in_and_play
+  #   click_button('Rock')
+  #   allow(steve).to receive(:pick).with("rock").and_return("rock")
+  #   steve.pick("rock")
+  #   expect(page).to have_content "Result:"
+  # end
 end
