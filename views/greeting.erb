@@ -1,0 +1,14 @@
+<h3>Hi, <%= @user_name %>!</h3>
+<h4>Let's play Rock, Paper, Scissors!</h4>
+<h5>What do you pick?</h5>
+<div>
+<form action="/choice" method="post">
+
+  <input type="radio" name="selection" id="rock" value="Rock"> Rock<br>
+
+  <input type="radio" name="selection" id="paper" value="Paper"> Paper<br>
+
+  <input type="radio" name="selection" id="scissors" value="Scissors"> Scissors
+  <input type='submit' value='Submit'>
+</form>
+</div>
