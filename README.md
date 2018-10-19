@@ -9,23 +9,33 @@
 
 ### Set up
 - [x] Fork Repo
-- [ ] Install Gems
-  - [ ] SimpleCov
-  - [ ] RSpec
-  - [ ] Sinatra
-  - [ ] Capybara
-- [ ] Key files and folders
-  - [ ] lib
-  - [ ] spec
-    - [ ] features
-  - [ ] views
-  - [ ] app.rb
-  - [ ] config.ru
-  - [ ] gemfile
-- [ ] Set up RPS class in app.rb
-- [ ] Require your Sinatra app file, capybara, capybara/rspec and rspec.
-- [ ] Tell Capybara about your app class using Capybara.app
-- [ ] Hello world view and tests
+- [x] Install Gems
+  - [x] SimpleCov
+  - [x] RSpec
+  - [x] Sinatra
+  - [x] Capybara
+- [x] Key files and folders
+  - [x] lib
+  - [x] spec
+    - [x] features
+  - [x] views
+  - [x] app.rb
+  - [x] config.ru
+  - [x] gemfile
+- [x] Set up RPS class in app.rb
+- [x] Require Sinatra app file, capybara, capybara/rspec and rspec.
+- [x] Tell Capybara about your app class using Capybara.app
+- [x] Hello world view and tests
+
+### Production
+- [ ] Ask user which game type they would like to play
+  - [ ] Feature test
+  - [ ] Unit test
+  - [ ] Pass tests
+- [ ] Ask user how many players
+  - [ ] Feature test
+  - [ ] Unit test
+  - [ ] Pass tests
 
 
 
