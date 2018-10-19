@@ -4,9 +4,9 @@ class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
-    "Hello World"
+    erb :home
   end
 
-run! if app_file == $0
+  run! if app_file == $0
 
 end
