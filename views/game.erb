@@ -1,23 +1,13 @@
 <h1><%= @game.player_one.name %> vs <%= @game.player_two.name %></h1>
 
-<h2><%= @game.chooser.name %>, choose your weapon!</h2>
+<h3><%= @game.chooser.name %>, choose your weapon!</h3>
 
-<form action = "/choice" method = "post">
-  <input type="submit" name="choice" value="rock">
-</form>
-
-<form action = "/choice" method = "post">
-  <input type="submit" name="choice" value="paper">
-</form>
-
-<form action = "/choice" method = "post">
-  <input type="submit" name="choice" value="scissors">
-</form>
-
-<form action = "/choice" method = "post">
-  <input type="submit" name="choice" value="lizard">
-</form>
-
-<form action = "/choice" method = "post">
-  <input type="submit" name="choice" value="spock">
-</form>
+<div class="form-container">
+  <form action = "/choice" method = "post">
+    <button class="btn btn-warning" type="submit" name="choice" value="rock">Rock</button>
+    <button class="btn btn-primary" type="submit" name="choice" value="paper">Paper</button>
+    <button class="btn btn-danger" type="submit" name="choice" value="scissors">Scissors</button>
+    <button class="btn btn-success" type="submit" name="choice" value="lizard">Lizard</button>
+    <button class="btn btn-info" type="submit" name="choice" value="spock">Spock</button>
+  </form>
+</div>

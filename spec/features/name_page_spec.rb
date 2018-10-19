@@ -1,7 +1,7 @@
 feature "name page" do
   it "Has a title" do
     start_single_player
-    expect(page).to have_content("Please enter your name:")
+    expect(page).to have_content("Please enter your name")
   end
 
   it "Has a name form" do

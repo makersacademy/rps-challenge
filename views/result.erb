@@ -1,3 +1,5 @@
+<h1>And the winner is...</h1>
+
 <h2>
 <%= @game.player_one.name %> played <%= @game.player_one.choice %>.
 
@@ -12,9 +14,9 @@
 
 
 <form action = "/game">
-  <input type="submit" value="Play Again">
+  <button type="submit" class="btn btn-success" value="Play Again">Play Again</button>
 </form>
 
 <form action = "/">
-  <input type="submit" value="Back to Start">
+  <button type="submit" class="btn btn-info" value="Back to Start">Back to Start</button>
 </form>
