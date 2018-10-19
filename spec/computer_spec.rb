@@ -8,8 +8,8 @@ describe Computer do
       expect(subject.move).to eq "Paper"
     end
   end
-  
-  context '#move' do
+
+  context '#pick_move' do
     it 'generates a move' do
       srand(1)
       expect(subject.pick_move).to eq "Paper"
