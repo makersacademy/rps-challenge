@@ -1,4 +1,7 @@
-body {background-color: darkturquoise;}
+body {
+  background-color: darkturquoise;
+  font-family: "Tahoma", Geneva, sans-serif;
+}
 
 h1 {
     color: white;
@@ -12,10 +15,6 @@ h2 {
 
 p {
     color: white;
-    text-align: center;
-}
-
-link {
     text-align: center;
 }
 
