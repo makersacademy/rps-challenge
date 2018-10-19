@@ -7,5 +7,9 @@ describe Player do
     it "returns the player's name" do
       expect(subject.name).to eq "Mittens"
     end
+
+    it 'creates a player with a blank move' do
+      expect(subject.move).to eq ""
+    end
   end
 end
