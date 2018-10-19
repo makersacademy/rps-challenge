@@ -1,0 +1,25 @@
+.button {
+  background-color: lightgreen;
+  border: none;
+  font-size: 16px;
+  width: 90px;
+  height: auto;
+  padding: 32px 16px;
+  font-family: futura;
+  border-radius: 50%;
+  box-shadow: 0 9px #999;
+}
+.button:hover {
+  background-color: #a82a2a;
+}
+.button:active {
+  background-color: #90EE90;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.header {
+  background-color: linen;
+  border: solid black;
+  height: 20%;
+}

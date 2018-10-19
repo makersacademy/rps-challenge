@@ -1,3 +1,31 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/styles.css" />
+</head>
+
 <center>
+  <h1 class="header">
   <%= @game.player.name %> VS RPS
+  </h1>
+</center>
+
+<center>
+  <form action='/round' method='post' >
+    <div>
+      <button class="button" id="rock" type='submit'>Rock</button>
+    </div>
+    <div>
+      <button class="button" id="paper" type='submit'>Paper</button>
+      &emsp;
+      &emsp;
+      &emsp;
+      &emsp;
+      <button class="button" id="scissors" type='submit'>Scissors</button>
+    </div>
+    &emsp;
+    <div>
+      <button class="button" id="lizard" type='submit'>Lizard</button>
+      &emsp;
+      <button class="button" id="spock" type='submit'>Spock</button>
+    </div>
+  </form>
 </center>

@@ -6,6 +6,10 @@ class Rps < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.current_game
+  end
+
   get '/' do
     erb :index
   end
@@ -16,13 +20,17 @@ class Rps < Sinatra::Base
 
   post '/player' do
     player = Player.new(params[:player_name])
-    $game = Game.new(player)
+    Game.store_game(Game.new(player))
     redirect '/play'
   end
 
   get '/play' do
     @game = $game
     erb :play
+  end
+
+  post '/play' do
+    redirect '/play'
   end
 
   run! if app_file == $0
