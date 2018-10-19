@@ -9,12 +9,12 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    # $game = Game.new(Player.new(params[:player]))
+    $player = Player.new(params[:player])
     redirect '/play'
   end
 
   get '/play' do
-    
+    erb(:play)
   end
 
   run! if app_file == $0

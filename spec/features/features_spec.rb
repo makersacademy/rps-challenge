@@ -6,7 +6,8 @@ feature 'Testing app.rb' do
 
   scenario 'user can input their name' do
     visit('/')
+    fill_in(:player,with: 'Meg')
     click_button("Submiteth, Peasent")
-
+    expect(page).to have_content "Meg"
   end
 end
