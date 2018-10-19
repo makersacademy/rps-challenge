@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game.rb'
 require './lib/player.rb'
+require './lib/computer.rb'
 require 'pry'
 
 class RPS < Sinatra::Base
@@ -17,16 +18,21 @@ class RPS < Sinatra::Base
   post '/' do
     player_1 = Player.new(params[:name])
     @game = Game.create(player_1)
-    redirect 'select_rps'
+    redirect '/select_rps'
   end
 
   get '/select_rps' do
-    @game.choices << (params[:name])
     erb :select_rps
   end
 
+  post '/select_rps' do
+    @game.choices << (params[:name])
+    # @game.choices << (Computer.new.choice)
+    redirect '/result'
+  end
+
   get '/result' do
-    'you win'
+    'winner'
   end
 
   run! if app_file == $0
