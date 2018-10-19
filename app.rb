@@ -6,6 +6,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
+    @player = Player.new(params[:name])
     erb :play
   end
 
