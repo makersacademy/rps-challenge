@@ -26,8 +26,8 @@ class Game
     @players.first
   end
 
-  def next_go
-    @players.rotate
+  def rotate
+    @players.rotate!
   end
 
   def winners

@@ -21,8 +21,20 @@ class Battle < Sinatra::Base
     else
       @hands = get_hands(players.length)
       @game = Game.create(players: players, hands: @hands)
-      erb :play
+      redirect '/play'
     end
+  end
+
+  post '/move' do
+    @game = Game.instance
+    @game.current_player.hand = params['hand']
+    @game.rotate
+    redirect '/play'
+  end
+
+  get '/play' do
+    @game = Game.instance
+    erb :play
   end
 
 end
