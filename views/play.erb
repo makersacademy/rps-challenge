@@ -1,1 +1,17 @@
 <h1> Welcome <%= @player.name %>, please select a move!</h1>
+
+<form action="/result">
+  <label>
+    Rock
+    <input type="radio" name="Rock">
+  </label>
+  <label>
+    Paper
+    <input type="radio" name="Paper">
+  </label>
+  <label>
+    Scissors
+    <input type="radio" name="Scissors">
+  </label>
+  <input type="submit" value="Submit">
+</form>
