@@ -11,6 +11,8 @@ class Game
       "Win"
     elsif @player.move == "Scissors" && @computer.move == "Rock"
       "Lose"
+    elsif @player.move == @computer.move
+      "Draw"
     end
   end
 end
