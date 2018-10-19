@@ -1,5 +1,6 @@
 require 'sinatra'
 require_relative 'lib/player'
+require_relative 'lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -18,7 +19,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    $game = Game.new
     @player = $player.name
     erb(:result)
   end

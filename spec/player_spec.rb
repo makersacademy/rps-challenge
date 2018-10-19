@@ -7,14 +7,6 @@ describe Player do
   let(:paper) { double :paper }
   let(:scissors) { double :scissors }
 
-  describe '#initialize' do
-
-    it 'should have a name' do
-      expect(steve.name).to eq "steve"
-    end
-
-  end
-
   describe '#pick' do
 
     it 'should pick rock' do

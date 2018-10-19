@@ -13,11 +13,11 @@ feature 'Testing RPS' do
     steve.pick("rock")
     expect(page).to have_content "Result:"
   end
-  # scenario "should accept a computer's current_pick" do
+  # scenario "should say if you win" do
+  #   computer = double("computer", :current_pick => "scissors")
   #   sign_in_and_play
   #   click_button('Rock')
   #   allow(steve).to receive(:pick).with("rock").and_return("rock")
-  #   steve.pick("rock")
-  #   expect(page).to have_content "Result:"
+  #   expect(page).to have_content "Result: You win"
   # end
 end
