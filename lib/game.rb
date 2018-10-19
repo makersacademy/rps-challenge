@@ -1,4 +1,11 @@
 class Game
+
+  WIN_TABLE = {
+    rock: :paper,
+    paper: :scissors,
+    scissors: :rock
+  }
+
   def self.player
     @@player
   end
@@ -8,5 +15,22 @@ class Game
   end
 
   def self.play(move)
+    self.calculate_moves
+    case move
+    when @win_move
+      :win
+    when @draw_move
+      :draw
+    when @lose_move
+      :lose
+    end
+  end
+
+  private
+  def self.calculate_moves
+    computer_move = :rock
+    @win_move = WIN_TABLE[computer_move]
+    @draw_move = computer_move
+    @lose_move = WIN_TABLE.key(computer_move)
   end
 end

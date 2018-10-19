@@ -4,10 +4,6 @@ require_relative 'lib/game'
 
 class RPSGame < Sinatra::Base
 
-  before do
-
-  end
-
   get "/" do
     erb :index
   end
@@ -23,21 +19,47 @@ class RPSGame < Sinatra::Base
   end
 
   post "/rock" do
-    Game.play(:rock)
-    redirect "/win"
+    case Game.play(:rock)
+    when :win
+      redirect "/win"
+    when :draw
+      redirect "/draw"
+    when :lose
+      redirect "/lose"
+    end
   end
 
   post "/paper" do
-    Game.play(:paper)
-    redirect "/win"
+    case Game.play(:paper)
+    when :win
+      redirect "/win"
+    when :draw
+      redirect "/draw"
+    when :lose
+      redirect "/lose"
+    end
   end
 
   post "/scissors" do
-    Game.play(:scissors)
-    redirect "/win"
+    case Game.play(:scissors)
+    when :win
+      redirect "/win"
+    when :draw
+      redirect "/draw"
+    when :lose
+      redirect "/lose"
+    end
   end
 
   get "/win" do
-    "You win!"
+    erb :win
+  end
+
+  get "/draw" do
+    erb :draw
+  end
+
+  get "/lose" do
+    erb :lose
   end
 end
