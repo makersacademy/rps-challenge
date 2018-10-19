@@ -1,7 +1,15 @@
-<h1>Let's begin <%= @name %>!</h1>
-<h2>What move would you like to play?</h2>
-<form action=/game/move method=post >
-<input name='move' type="submit" value="rock">
-<input name='move' type="submit" value="paper">
-<input name='move' type="submit" value="scissors">
-</form>
+<head>
+  <link rel="stylesheet" type = "text/css" href="/stylesheet.css">
+</head>
+
+<body>
+  <div>
+    <h1>Let's begin <%= @name %>!</h1>
+    <p>What move would you like to play?</p>
+    <form action=/game/move method=post >
+    <input name='move' type="submit" value="rock">
+    <input name='move' type="submit" value="paper">
+    <input name='move' type="submit" value="scissors">
+    </form>
+  </div>
+</body>

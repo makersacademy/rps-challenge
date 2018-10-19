@@ -1,3 +1,11 @@
-<p>Your move was <%= @user_move %></p>
-<p>The game's move was <%= @game_move %></p>
-<h1><%= @winner %></h1>
+<head>
+  <link rel="stylesheet" type = "text/css" href="/stylesheet.css">
+</head>
+
+<body>
+  <div>
+    <p>Your move was <%= @user_move %>.<br>The game's move was <%= @game_move %>.</p>
+    <br>
+    <h1><%= @winner %></h1>
+  </div>
+</body>

@@ -1,0 +1,9 @@
+body {
+  font-family: helvetica;
+}
+
+div {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+}
