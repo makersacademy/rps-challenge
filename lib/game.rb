@@ -10,8 +10,11 @@ class Game
 
   attr_reader :player_1
 
+  attr_accessor :choices
+
   def initialize(player_1)
     @player_1 = player_1
+    @choices = []
   end
 
 end

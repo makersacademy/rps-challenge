@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game.rb'
 require './lib/player.rb'
+require 'pry'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -20,7 +21,12 @@ class RPS < Sinatra::Base
   end
 
   get '/select_rps' do
+    @game.choices << (params[:name])
     erb :select_rps
+  end
+
+  get '/result' do
+    'you win'
   end
 
   run! if app_file == $0
