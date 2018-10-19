@@ -1,9 +1,34 @@
-<h1> Welcome <%= @game.player.name %>, please select a move!</h1>
+<html>
+  <head>
+  <style>
+    body {
+      text-align: center;
+      background-color: #559E54;
+      font-family: Arial, Gadget, sans-serif;
+    }
 
-<form action="/choice" method="post">
-  <select name="move">
-    <option value="Rock">Rock</option>
-    <option value="Paper">Paper</option>
-    <option value="Scissors">Scissors</option>
-  <input type="submit" value="Submit">
-</form>
+    h1 {
+      font-family: "Arial Black", Gadget, sans-serif;
+      font-color: #B83214;
+    }
+
+    input[type=submit] {
+      width: 100px;
+    }
+  </style>
+  </head>
+
+  <body>
+    <h1> Welcome <%= @game.player.name %>, please select a move!</h1>
+
+    <form action="/choice" method="post">
+      <select name="move">
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+      </select>
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
