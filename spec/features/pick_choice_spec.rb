@@ -1,5 +1,5 @@
 feature 'Selecting choice' do
-   scenario 'Player can select Rock' do
+  scenario 'Player can select Rock' do
     fill_form
     page.select 'Rock', from: 'choice'
     click_button 'Submit'
@@ -19,4 +19,4 @@ feature 'Selecting choice' do
     click_button 'Submit'
     expect(page).to have_content 'Mel chose scissors'
   end
- end
+end
