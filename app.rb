@@ -34,6 +34,7 @@ class RPS < Sinatra::Base
 
   get '/computer_choice' do
     $computer_choice = Computer.new.computer_choice
+    p $computer_choice
     $winner = Game.new.winner
     erb :computers_choice
   end

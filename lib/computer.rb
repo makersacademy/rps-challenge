@@ -1,7 +1,7 @@
 class Computer
 
   def computer_choice
-    @choice = [:rock, :paper, :scissors]
+    @choice = ["Rock", "Paper", "Scissors"]
     @choice.sample
   end
 
