@@ -22,7 +22,7 @@ class Game
   end
 
   def check_winner
-    return @player_1 if calculator.winner == @player_1.weapon
+    return @player_1.name if calculator.winner == @player_1.weapon
     return "DRAW" if calculator.winner == "DRAW"
     calculator.winner
   end

@@ -1,42 +1,38 @@
 require 'results_calculator'
 
 describe ResultsCalculator do
-  let(:calculation_1) { described_class.new("ROCK", "SCISSORS") }
-  let(:calculation_2) { described_class.new("PAPER", "ROCK") }
-  let(:calculation_3) { described_class.new("SCISSORS", "PAPER") }
-  let(:draw_1) { described_class.new("ROCK", "ROCK") }
-  let(:draw_2) { described_class.new("PAPER", "PAPER") }
-  let(:draw_3) { described_class.new("SCISSORS", "SCISSORS") }
+  let(:player_rock) { double(:player, name: "Alice", weapon: "ROCK") }
+  let(:player_paper) { double(:player, name: "Bob", weapon: "PAPER") }
+  let(:player_scissors) { double(:player, name: "Alicebob", weapon: "SCISSORS") }
+  let(:calculator_1) { described_class.new(player_rock, player_scissors) }
+  let(:calculator_2) { described_class.new(player_paper, player_rock) }
+  let(:calculator_3) { described_class.new(player_scissors, player_paper) }
+  let(:draw) { described_class.new(player_rock, player_rock) }
 
-  describe "#weapons" do
-    it 'should be able to store 2 weapons' do
-      expect(calculation_1.weapons).to eq "ROCK, SCISSORS"
-    end
+  it 'should have a set list of moves' do
+    list = {
+      "ROCK" => "SCISSORS",
+      "PAPER" => "ROCK",
+      "SCISSORS" => "PAPER"
+    }
+    expect(described_class::MOVES).to eq list
   end
 
   describe "#winner" do
-    it "should announce that rock wins in rock vs. scissors" do
-      expect(calculation_1.winner).to eq "ROCK"
+    it 'should declare that rock wins over scissors' do
+      expect(calculator_1.winner).to eq player_rock.name
     end
 
-    it "should announce that paper wins in rock vs. paper" do
-      expect(calculation_2.winner).to eq "PAPER"
+    it 'should declare that paper wins over rock' do
+      expect(calculator_2.winner).to eq player_paper.name
     end
 
-    it "should announce that scissors wins in scissors vs. paper" do
-      expect(calculation_3.winner).to eq "SCISSORS"
+    it 'should declare that scissors wins over paper' do
+      expect(calculator_3.winner).to eq player_scissors.name
     end
 
-    it "should announce a draw when both are rock" do
-      expect(draw_1.winner).to eq "DRAW"
-    end
-
-    it "should announce a draw when both are paper" do
-      expect(draw_2.winner).to eq "DRAW"
-    end
-
-    it "should announce a draw when both are scissors" do
-      expect(draw_3.winner).to eq "DRAW"
+    it 'should be able to declare a draw' do
+      expect(draw.winner).to eq "It's a draw!"
     end
   end
 end
