@@ -5,7 +5,7 @@ class Game
     @player = player
     @computer = computer
   end
-  
+
   def result
     if @player.move == "Rock" && @computer.move == "Scissors"
       "Win"
@@ -21,6 +21,17 @@ class Game
       "Lose"
     elsif @player.move == @computer.move
       "Draw"
+    end
+  end
+
+  def message
+    result
+    if result == "Win"
+      "You win!"
+    elsif result == "Lose"
+      "You lose!"
+    elsif result == "Draw"
+      "Draw!"
     end
   end
 end

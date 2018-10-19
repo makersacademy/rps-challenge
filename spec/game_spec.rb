@@ -55,7 +55,7 @@ describe Game do
 
   context '#message' do
     it 'returns a win message' do
-      expect(subject.message).to eq "You won!"
+      expect(subject.message).to eq "You win!"
     end
 
     it 'returns a lose message' do
