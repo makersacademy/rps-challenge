@@ -6,9 +6,8 @@
     <hr width="50%"></hr>  
       <h2>Rock, Paper, Scissors!</h2>
     <hr width="50%"></hr>
-    <h2>Human Vs. Machine<h2>
-    <img src=https://homeworkstar.files.wordpress.com/2015/07/man-vs-machine.jpg>
-    <h3>Click on a picture below, to choose your move</h3>
+    <h3><%=@game%><h3>
+    <h4><%=@player_1_name%>: click on a picture below, to choose your move</h4>
     <div style="margin-right: 215px; margin-left: 215px; background-color: blue">
       <form action="/move" method="post">
         <button name="player_move" type="submit" value="rock"><h2><img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs5Xt-4HeRXZf6fp92kQiRUADaIVIm8T89HoHvC5ItH_MRyx_l></h2></button>

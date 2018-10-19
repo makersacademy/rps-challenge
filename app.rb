@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/model.rb'
+require './lib/player.rb'
+require './lib/game.rb'
 
 class Controller < Sinatra::Base
   enable :sessions
@@ -8,23 +10,29 @@ class Controller < Sinatra::Base
     erb :index
   end
 
+  before do
+    @game_current = Game.instance
+    @player_1 = Player.instance
+  end
+
   post '/name' do
-    session[:name] = params[:player_name]
+    @player_1 = Player.create(params[:player_name])
     redirect 'game_type'
   end
 
   get '/game_type' do
-    @player_1 = session[:name]
+    @player_1_name = @player_1.name
     erb :game_type
   end
 
   post '/game_option' do
-    session[:game] = params[:game]
+    @game = Game.create(params[:game])
     redirect '/rps_game'
   end
 
   get '/rps_game' do
-    @game = session[:game]
+    @player_1_name = @player_1.name
+    @game = @game_current.game_type
     erb :rps_game
   end
 
@@ -34,6 +42,7 @@ class Controller < Sinatra::Base
   end
 
   get '/game_result' do
+    @player_1_name = @player_1.name
     @player_move = session[:player_move]
     @player_2_move = machine_move
     @result = rock(@player_2_move) if @player_move == "rock"
