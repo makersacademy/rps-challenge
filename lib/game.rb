@@ -17,7 +17,6 @@ class Game
   end
 
   def result
-    @computer.pick_move
     if @player.move == WINS.key(@computer.move)
       "Win"
     elsif @player.move == @computer.move

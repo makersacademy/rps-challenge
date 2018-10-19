@@ -1,5 +1,5 @@
 class Computer
-  attr_accessor :move
+  attr_reader :move
 
   MOVES = ["Rock", "Paper", "Scissors"]
 
