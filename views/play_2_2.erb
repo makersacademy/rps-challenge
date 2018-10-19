@@ -1,0 +1,16 @@
+<div style="background:rgb(254, 228, 232); width: 100%; height: 100%; text-align: center; padding-top: 10%;">
+  <h1 style="color:rgb(247, 41, 74)">Today's challengers are <%= $player_1_name %> and <%= $player_2_name %></h1>
+  <br>
+  <h2 style="color:rgb(247, 41, 74)"><%= $player_1_name %>'s wins so far: <%= $wins_p1 %></h2>
+  <h2 style="color:rgb(247, 41, 74)"><%= $player_2_name %>'s wins so far: <%= $wins_p2 %></h2>
+  <br>
+  <h2 style="color:rgb(247, 41, 74)">Choose your weapon</h2>
+  <h2 style="color:rgb(247, 41, 74)">Rock, Paper, Scissors, Spock or Lizard?</h2>
+  <form action="/choice_3" method="post">
+     <label style="color:rgb(247, 41, 74)"><h3><%= $player_2_name %> Take your pick!</h3></label>
+      <input type="text" name="choice">
+      <br>
+      <br>
+     <input type="submit" value="Submit">
+   </form>
+</div>
