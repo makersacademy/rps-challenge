@@ -1,7 +1,13 @@
 class Computer
+  attr_accessor :move
+
   MOVES = ["Rock", "Paper", "Scissors"]
 
+  def initialize
+    @move = ""
+  end
+
   def pick_move
-    MOVES.sample
+    @move = MOVES.sample
   end
 end

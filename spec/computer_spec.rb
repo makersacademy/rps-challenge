@@ -11,6 +11,7 @@ describe Computer do
   context '#initialize' do
     it 'retrieves a move' do
       srand(1)
+      subject.pick_move
       expect(subject.move).to eq "Paper"
     end
   end
