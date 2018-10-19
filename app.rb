@@ -9,23 +9,26 @@ class RockPaperScissors < Sinatra::Base
 
   before do
     @game = Game.current_game
-    @mode = session[:mode]
   end
 
   get '/' do
     erb :index
   end
 
+  post '/mode' do
+    Game.create
+    @game = Game.current_game
+    @game.mode = params[:mode]
+    redirect '/name'
+  end
+
   get '/name' do
-    session[:mode] = params[:mode]
-    @mode = session[:mode]
     erb :name
   end
 
   post '/name' do
-    player_one = Player.new(params[:name_one])
-    player_two = Player.new(params[:name_two])
-    Game.create(player_one, player_two)
+    @game.player_one = Player.new(params[:name_one])
+    @game.player_two = Player.new(params[:name_two])
     redirect "/game"
   end
 
@@ -39,7 +42,7 @@ class RockPaperScissors < Sinatra::Base
       @game.player_two.choose(params[:choice])
     else
       @game.player_one.choose(params[:choice])
-      redirect "/game" if @mode == "Multiplayer"
+      redirect "/game" if @game.mode == "Multiplayer"
       @game.player_two.choose_random
     end
     redirect "/result"

@@ -5,8 +5,8 @@
     Player One Name
     <input type="text" name="name_one">
   </label>
-  
-  <% if @mode == "Multiplayer" %>
+
+  <% if @game.mode == "Multiplayer" %>
     <label for="name_two">
       Player Two Name
       <input type="text" name="name_two">
