@@ -4,14 +4,6 @@ class Winner
     @players = players
   end
 
-  def self.create(players)
-    @winner = Winner.new(players)
-  end
-
-  def self.instance
-    @winner
-  end
-
   def determine
     return player2_won if @players.move1 == "rock" && @players.move2 == "paper"
     return player1_won if @players.move1 == "rock" && @players.move2 == "scissors"

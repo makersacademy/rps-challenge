@@ -75,7 +75,6 @@ class RPS < Sinatra::Base
     @players.move1 = params["move1"] if @players.move1.nil?
     @players.move2 = params["move2"] if @players.move2.nil?
     @move2 = @players.move2
-    winner = Winner.create(@players)
     redirect '/game/move'
   end
 
@@ -85,7 +84,7 @@ class RPS < Sinatra::Base
     @name2 = @players.name2
     @move1 = @players.move1
     @move2 = @players.move2
-    @winner = Winner.instance
+    @winner = Winner.new(@players)
     @determine_winner = @winner.determine
     erb(:win_or_lose)
   end
