@@ -22,7 +22,7 @@ class Game
   end
 
   def player_2_choice
-    @choices[1]
+    @choices[1].downcase
   end
 
 end

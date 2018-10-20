@@ -6,17 +6,17 @@ describe Computer do
     it 'it returns rock' do
       allow(Kernel).to receive(:rand).and_return 1
       computer = Computer.new
-      expect(computer.choice).to eq ('rock')
+      expect(computer.choice).to eq 'Rock'
     end
     it 'it returns paper' do
       allow(Kernel).to receive(:rand).and_return 2
       computer = Computer.new
-      expect(computer.choice).to eq ('paper')
+      expect(computer.choice).to eq 'Paper'
     end
     it 'it returns scissors' do
       allow(Kernel).to receive(:rand).and_return 3
       computer = Computer.new
-      expect(computer.choice).to eq ('scissors')
+      expect(computer.choice).to eq 'Scissors'
     end
   end
 

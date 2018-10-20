@@ -1,4 +1,4 @@
-feature 'result' do
+feature 'Results' do
 
   before do
     submit_name
@@ -6,7 +6,7 @@ feature 'result' do
 
   scenario "shows player 1's and player 2's choices" do
     click_button 'Rock'
-    expect(page).to have_content 'Jane, you chose Rock'
+    expect(page).to have_content 'Jane, you chose rock'
     expect(page).to have_content 'The computer chose'
   end
 
@@ -14,5 +14,5 @@ feature 'result' do
     click_button 'Rock'
     expect(page).to have_content 'The winner is'
   end
-  
+
 end
