@@ -1,6 +1,6 @@
 class Game
   attr_reader :player
-  def initialize(player: )
+  def initialize(player:)
     @player = player
     @possible_moves = ["Rock", "Paper", 'Scissors']
   end
@@ -9,7 +9,7 @@ class Game
     @possible_moves.dup
   end
 
-  def self.create(player: )
+  def self.create(player:)
     @game = Game.new(player: Player.new(player))
   end
 
