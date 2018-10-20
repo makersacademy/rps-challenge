@@ -11,13 +11,13 @@ class Battle < Sinatra::Base
 
   post '/names' do
     players = [ Player.new(name: params["player_1_name"]), Player.new(name: params["player_2_name"])]
-    @game = Game.create(players: players, hands: @hands)
+    @game = Game.create(players: players, hands: ['Scissors', 'Paper', 'Rock'])
     redirect '/play'
   end
 
   post '/move' do
     @game = Game.instance
-    @game.current_player.hand = params['hand']
+    @game.player_1.hand = params['hand']
     redirect '/results' if @game.round_complete?
     @game.rotate
     redirect '/play'

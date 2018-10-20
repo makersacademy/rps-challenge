@@ -13,21 +13,20 @@ class Game
   def initialize(players:, hands:)
     @players = players
     @first_player = @players[0]
-    # @hands = hands
-    # @hands = Hash[hands.each_with_index.map { |hand, index| [index + 1, hand]}]
     @hand_matrix = Hash[hands.each_with_index.map { |hand, i|
-                    [hand, ((hands.length - 1)/2).times.map { |z| ((i + z * 2) % hands.length ) + 1 }]}]
-    # x = @hands.keys.sort
-    # l = hands.length
-    # @results_matrix = l.times.map { |y| ((l - 1)/2).times.map { |index| ((y + index * 2) % l) + 1 } }
+                    [hand, ((hands.length - 1)/2).times.map { |z| hands[((i + (1 + z * 2)) % hands.length )] }]}]
   end
 
   def players
     @players
   end
 
-  def current_player
+  def player_1
     @players.first
+  end
+
+  def player_2
+    @players.last
   end
 
   def round_complete?
@@ -38,12 +37,13 @@ class Game
     @players.rotate!
   end
 
-  def winners
-    @players
-      .select { |player| @players
-      .reject { |plyer| plyer == player }
-      .select { |opponent|
-        @hand_matrix[opponent.hand].include? @hand_matrix.keys.index(player.hand) }.length > 0 }
+  def winner
+    return nil if player_1.hand == player_2.hand
+    if @hand_matrix[player_1.hand].include? player_2.hand
+      player_1
+    else
+      player_2
+    end
   end
 
 end
