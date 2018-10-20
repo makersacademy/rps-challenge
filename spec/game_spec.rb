@@ -6,6 +6,7 @@ describe Game do
 
   before do
     Game.new(player)
+    allow(Kernel).to receive(:rand).and_return(0) 
   end
 
   describe "#self.new" do
