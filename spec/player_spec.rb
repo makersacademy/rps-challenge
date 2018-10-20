@@ -33,4 +33,12 @@ describe Player do
       expect(Player::MOVES).to include imtiyaz.move
     end
   end
+
+  describe "#reset_move" do
+    it "move should return nil" do
+      imtiyaz.choose_random
+      imtiyaz.reset_move
+      expect(imtiyaz.move).to be_nil
+    end
+  end
 end

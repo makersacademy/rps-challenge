@@ -22,4 +22,8 @@ class Player
   def choose_random
     @move = MOVES.sample
   end
+
+  def reset_move
+    @move = nil
+  end
 end
