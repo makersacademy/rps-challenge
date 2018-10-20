@@ -17,12 +17,17 @@ class RPS < Sinatra::Base
     erb(:two_player_sign_in)
   end
 
+  get '/invalid_name' do
+    erb(:invalid_name)
+  end
+
   post '/name' do
     @game = Game.create(player_1: params[:player_name])
     redirect to '/play'
   end
 
   post '/two_names' do
+    redirect to '/invalid_name' if params[:player_1_name] == "Computer" || params[:player_2_name] == "Computer"
     @game = Game.create(player_1: params[:player_1_name],
       player_2: params[:player_2_name])
     redirect to '/play'
