@@ -37,28 +37,28 @@ class RPS < Sinatra::Base
   post '/choose_rock' do
     @game = Game.instance
     @game.player_1.choose_rock
-    @game.choose_move
-    redirect to '/lose' if @game.chosen_move == "Paper"
-    redirect to '/draw' if @game.chosen_move == "Rock"
-    redirect to '/win' if @game.chosen_move == "Scissors"
+    @game.player_2.choose_random
+    redirect to '/lose' if @game.player_2.move == "Paper"
+    redirect to '/draw' if @game.player_2.move == "Rock"
+    redirect to '/win' if @game.player_2.move == "Scissors"
   end
 
   post '/choose_paper' do
     @game = Game.instance
     @game.player_1.choose_paper
-    @game.choose_move
-    redirect to '/lose' if @game.chosen_move == "Scissors"
-    redirect to '/draw' if @game.chosen_move == "Paper"
-    redirect to '/win' if @game.chosen_move == "Rock"
+    @game.player_2.choose_random
+    redirect to '/lose' if @game.player_2.move == "Scissors"
+    redirect to '/draw' if @game.player_2.move == "Paper"
+    redirect to '/win' if @game.player_2.move == "Rock"
   end
 
   post '/choose_scissors' do
     @game = Game.instance
     @game.player_1.choose_scissors
-    @game.choose_move
-    redirect to '/lose' if @game.chosen_move == "Rock"
-    redirect to '/draw' if @game.chosen_move == "Scissors"
-    redirect to '/win' if @game.chosen_move == "Paper"
+    @game.player_2.choose_random
+    redirect to '/lose' if @game.player_2.move == "Rock"
+    redirect to '/draw' if @game.player_2.move == "Scissors"
+    redirect to '/win' if @game.player_2.move == "Paper"
   end
 
   get '/move' do

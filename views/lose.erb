@@ -1,5 +1,5 @@
 <h1><%=@game.player_1.name%> chose <%=@game.player_1.move%></h1>
-<h1>Computer chose <%=@game.chosen_move%>. You Lose :(</h1>
+<h1><%=@game.player_2.name%> chose <%=@game.player_2.move%>. You Lose :(</h1>
 
 <form action="/play">
   <input type="submit" value="Play again?">
