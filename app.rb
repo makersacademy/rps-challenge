@@ -26,11 +26,12 @@ class RPS < Sinatra::Base
     @game = Game.create(player_1: params[:player_1_name],
       player_2: params[:player_2_name])
     redirect to '/play'
-
   end
 
   get '/play' do
     @game = Game.instance
+    @game.player_1.reset_move
+    @game.player_2.reset_move
     erb(:play)
   end
 
