@@ -20,21 +20,30 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/lose' do
+    @game = Game.instance
+    erb(:lose)
+  end
+
   post '/choose_rock' do
     @game = Game.instance
     @game.player.choose_rock
-    redirect to '/move'
+    @game.choose_move
+    redirect to '/lose' if @game.chosen_move == "Paper"
+    redirect to '/move' if @game.chosen_move != "Paper"
   end
 
   post '/choose_paper' do
     @game = Game.instance
     @game.player.choose_paper
+    @game.choose_move
     redirect to '/move'
   end
 
   post '/choose_scissors' do
     @game = Game.instance
     @game.player.choose_scissors
+    @game.choose_move
     redirect to '/move'
   end
 
