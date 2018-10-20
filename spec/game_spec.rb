@@ -20,32 +20,32 @@ describe Game do
   let(:cpu3) { double(:Cpu, name: "CPU", choice: :scissors) }
 
   describe '#Result' do
-    it 'returns win with rock v scissors' do
-      expect(game.result(human.choice, cpu3.choice)).to eq(:win)
+    it 'returns wins with rock v scissors' do
+      expect(game.result(human.choice, cpu3.choice)).to eq(:wins)
     end
-    it 'returns win with paper v rock' do
-      expect(game.result(human2.choice, cpu.choice)).to eq(:win)
+    it 'returns wins with paper v rock' do
+      expect(game.result(human2.choice, cpu.choice)).to eq(:wins)
     end
-    it 'returns win with scissors v paper' do
-      expect(game.result(human3.choice, cpu2.choice)).to eq(:win)
+    it 'returns wins with scissors v paper' do
+      expect(game.result(human3.choice, cpu2.choice)).to eq(:wins)
     end
-    it 'returns draw with rock v rock' do
-      expect(game.result(human.choice, cpu.choice)).to eq(:draw)
+    it 'returns draws with rock v rock' do
+      expect(game.result(human.choice, cpu.choice)).to eq(:draws)
     end
-    it 'returns draw with paper v paper' do
-      expect(game.result(human2.choice, cpu2.choice)).to eq(:draw)
+    it 'returns draws with paper v paper' do
+      expect(game.result(human2.choice, cpu2.choice)).to eq(:draws)
     end
-    it 'returns draw with scissors v scissor' do
-      expect(game.result(human3.choice, cpu3.choice)).to eq(:draw)
+    it 'returns draws with scissors v scissor' do
+      expect(game.result(human3.choice, cpu3.choice)).to eq(:draws)
     end
-    it 'returns loss with rock v paper' do
-      expect(game.result(human.choice, cpu2.choice)).to eq(:loss)
+    it 'returns loses with rock v paper' do
+      expect(game.result(human.choice, cpu2.choice)).to eq(:loses)
     end
-    it 'returns loss with paper v scissors' do
-      expect(game.result(human2.choice, cpu3.choice)).to eq(:loss)
+    it 'returns loses with paper v scissors' do
+      expect(game.result(human2.choice, cpu3.choice)).to eq(:loses)
     end
-    it 'returns loss with scissors v rock' do
-      expect(game.result(human3.choice, cpu.choice)).to eq(:loss)
+    it 'returns loses with scissors v rock' do
+      expect(game.result(human3.choice, cpu.choice)).to eq(:loses)
     end
   end
 end

@@ -14,6 +14,6 @@ feature 'Play' do
   scenario 'after the player chooses, their choice is displayed' do
     sign_in_and_play
     click_button 'rock'
-    expect(page).to have_content("John: Rock")
+    expect(page).to have_xpath("//img[contains(@src,'Rock.png')]")
   end
 end

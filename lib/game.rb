@@ -20,11 +20,11 @@ class Game
 
   def result(choice_1, choice_2)
     if WINS.include?([choice_1, choice_2])
-      :win
+      :wins
     elsif choice_1 == choice_2
-      :draw
+      :draws
     else
-      :loss
+      :loses
     end
   end
 

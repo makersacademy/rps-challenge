@@ -1,19 +1,36 @@
 
 <!DOCTYPE html>
 <html>
-<%= @player_1.name %>
+
 <head>
 <link rel=”stylesheet” type=”text/css” href=”/css/style.css” />
+
 </head>
+<center>
 
 <form method="post" action="/decision">
 <div class="rock">
 <INPUT type="submit" name="player_choice" value="rock">
 </div>
+<div>
+<img src="/images/Rock.png">
+</div>
 <div class="paper">
 <INPUT type="submit" name="player_choice" value="paper">
+</div>
+<div>
+<img src="/images/Paper.png">
 </div>
 <div class="scissors">
 <INPUT type="submit" name="player_choice" value="scissors">
 </div>
+<div>
+<img src="/images/Scissors.png">
+
+</div>
+<!-- <div>
+  <button type="submit">Submit</button>
+</div> -->
 </form>
+  <%= @player_1.name %> choose your weapon!
+</center>

@@ -1,11 +1,24 @@
-<div>
-  <%= @player_1.name %>: <%= @player_1.choice.capitalize %>
-</div>
 
-<div>
-  <%= @player_2.name %>: <%= @player_2.choice.capitalize %>
-</div>
+<!DOCTYPE html>
+<html>
 
+<head>
+<link rel=”stylesheet” type=”text/css” href=”/css/style.css” />
+
+</head>
+
+<center>
 <div>
-  <%= @game.result(@player_1.choice, @player_2.choice) %>
 </div>
+<div>
+<img src="/images/<%= @player_1.choice.capitalize %>.png">
+</div>
+<div>
+</div>
+<div>
+<img src="/images/<%= @player_2.choice.capitalize %>.png">
+</div>
+<div>
+  <%= @player_1.name.to_s+" "+@game.result(@player_1.choice, @player_2.choice).to_s+" against "+@player_2.name.to_s %>
+</div>
+</center>
