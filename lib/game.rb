@@ -17,4 +17,12 @@ class Game
     @choices = []
   end
 
+  def player_1_choice
+    @choices[0].downcase
+  end
+
+  def player_2_choice
+    @choices[1]
+  end
+
 end

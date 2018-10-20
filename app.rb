@@ -26,13 +26,13 @@ class RPS < Sinatra::Base
   end
 
   post '/select_rps' do
-    @game.choices << (params[:name])
-    # @game.choices << (Computer.new.choice)
-    redirect '/result'
+    @game.choices << (params[:selected])
+    @game.choices << (Computer.new.choice)
+    redirect '/results'
   end
 
-  get '/result' do
-    'winner'
+  get '/results' do
+    erb :results
   end
 
   run! if app_file == $0
