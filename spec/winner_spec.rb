@@ -2,57 +2,62 @@ require 'winner'
 
 describe Winner do
 
-  it 'should determine name2 as the winner' do
-    players = double(:players, move1: "rock", move2: "paper", name1: "Caitlin", name2: "James")
+  it 'should determine that rock beats scissors' do
+    players = double(:players, name1: "Caitlin", name2: "James", move1: "rock", move2: "scissors")
     winner = Winner.new(players)
-    expect(winner.determine).to eq "James won!"
+    expect(winner.determine).to eq winner.player1_won
   end
 
-  it 'should determine name1 as the winner' do
-    players = double(:players, move1: "rock", move2: "scissors", name1: "Caitlin", name2: "James")
+  it 'should determine that paper beats rock' do
+    players = double(:players, name1: "Caitlin", name2: "James", move1: "paper", move2: "rock")
     winner = Winner.new(players)
-    expect(winner.determine).to eq "Caitlin won!"
+    expect(winner.determine).to eq winner.player1_won
   end
 
-  it 'should determine a draw' do
-    players = double(:players, move1: "rock", move2: "rock", name1: "Caitlin", name2: "James")
-    winner = Winner.new(players)
-    expect(winner.determine).to eq "It's a draw!"
-  end
-
-  it 'should determine name2 as the winner' do
-    players = double(:players, move1: "paper", move2: "scissors", name1: "Caitlin", name2: "James")
-    winner = Winner.new(players)
-    expect(winner.determine).to eq "James won!"
-  end
-
-  it 'should determine name1 as the winner' do
-    players = double(:players, move1: "paper", move2: "rock", name1: "Caitlin", name2: "James")
-    winner = Winner.new(players)
-    expect(winner.determine).to eq "Caitlin won!"
-  end
-
-  it 'should determine a draw' do
-    players = double(:players, move1: "paper", move2: "paper", name1: "Caitlin", name2: "James")
-    winner = Winner.new(players)
-    expect(winner.determine).to eq "It's a draw!"
-  end
-
-  it 'should determine name2 as the winner' do
-    players = double(:players, move1: "scissors", move2: "rock", name1: "Caitlin", name2: "James")
-    winner = Winner.new(players)
-    expect(winner.determine).to eq "James won!"
-  end
-
-  it 'should determine name1 as the winner' do
+  it 'should determine that scissors beats paper' do
     players = double(:players, name1: "Caitlin", name2: "James", move1: "scissors", move2: "paper")
     winner = Winner.new(players)
-    expect(winner.determine).to eq "Caitlin won!"
+    expect(winner.determine).to eq winner.player1_won
   end
 
-  it 'should determine a draw' do
-    players = double(:players, move1: "scissors", move2: "scissors", name1: "Caitlin", name2: "James")
+  it 'should determine that scissors beats lizard' do
+    players = double(:players, name1: "Caitlin", name2: "James", move1: "scissors", move2: "lizard")
     winner = Winner.new(players)
-    expect(winner.determine).to eq "It's a draw!"
+    expect(winner.determine).to eq winner.player1_won
+  end
+
+  it 'should determine that rock beats lizard' do
+    players = double(:players, name1: "Caitlin", name2: "James", move1: "rock", move2: "lizard")
+    winner = Winner.new(players)
+    expect(winner.determine).to eq winner.player1_won
+  end
+
+  it 'should determine that lizard beats paper' do
+    players = double(:players, name1: "Caitlin", name2: "James", move1: "lizard", move2: "paper")
+    winner = Winner.new(players)
+    expect(winner.determine).to eq winner.player1_won
+  end
+
+  it 'should determine that paper beats spock' do
+    players = double(:players, name1: "Caitlin", name2: "James", move1: "paper", move2: "spock")
+    winner = Winner.new(players)
+    expect(winner.determine).to eq winner.player1_won
+  end
+  it 'should determine that lizard beats spock' do
+    players = double(:players, name1: "Caitlin", name2: "James", move1: "lizard", move2: "spock")
+    winner = Winner.new(players)
+    expect(winner.determine).to eq winner.player1_won
+  end
+
+  it 'should determine that spock beats rock' do
+    players = double(:players, name1: "Caitlin", name2: "James", move1: "spock", move2: "rock")
+    winner = Winner.new(players)
+    expect(winner.determine).to eq winner.player1_won
+  end
+
+  it 'should determine that spock beats scissors' do
+    players = double(:players, name1: "Caitlin", name2: "James", move1: "spock", move2: "scissors")
+    winner = Winner.new(players)
+    expect(winner.determine).to eq winner.player1_won
   end
 end
