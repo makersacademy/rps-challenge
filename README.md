@@ -37,7 +37,9 @@ I would like to be able to play rock/paper/scissors
 * 3 Views: /index, /play & /result
 * Aimed to use the MVC pattern to improve the maintainability of the app
 * Encapsulated Computer in a separate class to take advantage of duck-typing in the Game class - the game does not need to know if it's comparing two players or one player and a computer!
-* This also allows for easy extension of the game to multiplayer, the Game class is currently initialised in the following way:
+* This also allows for easy extension of the game to multiplayer
+
+An instance of the Game class is currently initialised with player_2 equal to an instance of the Computer class:
 
 `def initialize(player_1, player_2 = Computer.new)  
     @player_1 = player_1  
