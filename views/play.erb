@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 <div class="container">
@@ -6,9 +5,9 @@
   <p>What move would you like to make?</p>
   <p>Options are:</p>
   <form action="/move" method='post'>
-    <% for index, hand in @game.hands %>
+    <% for hand, matrix in @game.hand_matrix %>
     <div class="radio">
-      <label><strong><%= hand%></strong><input type='radio' class="form-control" name="hand" value=<%= index %>></label>
+      <label><strong><%= hand %></strong><input type='radio' class="form-control" name="hand" value=<%= hand %>></label>
     </div>
     <% end %>
     <input class="btn btn-success" type="submit" value="Submit">

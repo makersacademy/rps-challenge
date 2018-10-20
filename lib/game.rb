@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :hands
+  attr_reader :hand_matrix
 
   def self.create(players:, hands:)
     @the_game = Game.new(players: players, hands: hands)
@@ -12,10 +12,14 @@ class Game
 
   def initialize(players:, hands:)
     @players = players
-    @hands = Hash[hands.each_with_index.map { |hand, index| [index + 1, hand]}]
-    x = @hands.keys.sort
-    l = hands.length
-    @results_matrix = x.map { |y| ((l - 1)/2).times.map { |index| ((y + index * 2) % l) + 1 } }
+    @first_player = @players[0]
+    # @hands = hands
+    # @hands = Hash[hands.each_with_index.map { |hand, index| [index + 1, hand]}]
+    @hand_matrix = Hash[hands.each_with_index.map { |hand, i|
+                    [hand, ((hands.length - 1)/2).times.map { |z| ((i + z * 2) % hands.length ) + 1 }]}]
+    # x = @hands.keys.sort
+    # l = hands.length
+    # @results_matrix = l.times.map { |y| ((l - 1)/2).times.map { |index| ((y + index * 2) % l) + 1 } }
   end
 
   def players
@@ -26,15 +30,20 @@ class Game
     @players.first
   end
 
+  def round_complete?
+    @players[1] == @first_player
+  end
+
   def rotate
     @players.rotate!
   end
 
   def winners
-    @players.select { |player| @players
+    @players
+      .select { |player| @players
       .reject { |plyer| plyer == player }
       .select { |opponent|
-        !@results_matrix[opponent.hand - 1].include? player.hand }.length > 0 }
+        @hand_matrix[opponent.hand].include? @hand_matrix.keys.index(player.hand) }.length > 0 }
   end
 
 end
