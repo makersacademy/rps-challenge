@@ -11,22 +11,19 @@
 <!-- <h1>Welcome to Rock Paper Scissors, <%=@game.player1.name%><%if @game.gametype == "Multiplayer"%> and <%=@game.player2.name%><%end%>!</h1> -->
 
 <form action="/saveturn" method="post">
-  <div class="play_buttons">
-  <h1>Welcome to Rock Paper Scissors, <%=@game.player1.name%><%if @game.gametype == "Multiplayer"%> and <%=@game.player2.name%><%end%>!</h1>
-  <p>
-  <!-- <%if @game.gametype == "Multiplayer"%> -->
-  <%=@game.player2.name%>, it's your turn
-  <!-- <%end%> -->
-  </p>
 
-  <%@game.settings.weapon_list.each { |btn| %>
+  <div class="grid-container-playgame">
+  <div class="PlayHeading"><h1>Welcome to Rock Paper Scissors, <%=@game.player1.name%><%if @game.gametype == "Multiplayer"%> and <%=@game.player2.name%><%end%>!</h1><h2>Pick your weapon</h2></div>
+  <div class="TurnDetails">
+  <p><%=@game.player2.name%>, it's your turn</p>
+  </div>
+  <div class="ButtonChoice"><%@game.settings.weapon_list.each { |btn| %>
     <button class="<%=btn%>_btn" name="choice" type="submit" value="<%=btn.capitalize%>"></button>
 <!-- <input type="submit" name="choice" id="<%=btn%>" value="<%=btn.capitalize%>"> -->
-<% } %></div>
-<!-- <input type="submit" name="choice" value="Paper">
-<input type="submit" name="choice" value="Scissors"> -->
-<input type="hidden" name="round" value="2">
-<!-- <button class="rock" type="submit" value="test"></button> -->
+<% } %><input type="hidden" name="round" value="2"></div>
+
+</div>
+
 </form>
 <!-- <div class="play_test">this is a test</div> -->
 </div>

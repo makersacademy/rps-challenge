@@ -13,21 +13,19 @@
   .p2_name_label { grid-area: p2_name_label; }
   .p2_name_field { grid-area: p2_name_field; }
   .register_submit { grid-area: register_submit; } -->
-  <div class="grid-container-register">
-    <form action="/register-process" method="post">
-  <div class="register-heading"><h1>So, who's playing?</h1></div>
-  <div class="blank1"></div>
-  <div class="p1_name_label"><p>Player 1 name: <input name="name" type="text"></p></div>
-  <!-- <div class="p1_name_field"><input name="name" type="text"></div> -->
-  <%if @gametype == "Multiplayer"%>
-  <div class="p2_name_label"><p>Player 2 name: <input name="name2" type="text"></p></div>
-  <!-- <div class="p2_name_field"><input name="name2" type="text"></div> -->
-  <!-- <p><label for="name2">Player 2 name:</label><input name="name2" type="text"></p> -->
-  <%end%>
-  <div class="register_submit"><p><button type="submit" class="play_btn" value="Play"></button>
-  <!-- <button type="submit" class="human" name="gametype" value="Multiplayer"></button></p> -->
-  <input type="hidden" name="gametype" value="<%=@gametype%>">
-  <input type="hidden" name="gamevariant" value="<%=@gamevariant%>"></div>
-  <div class="item4"></div>
-</form>
+          <form action="/register-process" method="post">
+            <div class="grid-container-registration">
+
+              <div class="Heading"><h1>So, who's playing?</h1></div>
+              <div class="P1"><p>Player 1 name:</p></div>
+              <%if @gametype == "Multiplayer"%><div class="P2"><p>Player 2 name:</p></div><%end%>
+              <div class="P1_field"><input name="name" type="text"></div>
+              <%if @gametype == "Multiplayer"%><div class="P2_field"><input name="name2" type="text"></div><%end%>
+              <div class="register_btn"><p><button type="submit" class="play_btn" value="Play"></button><input type="hidden" name="gametype" value="<%=@gametype%>">
+              <input type="hidden" name="gamevariant" value="<%=@gamevariant%>"></div>
+              </div>
+
+            </div>
+          </form>
+
 </div></body></html>

@@ -110,37 +110,58 @@ body {
   /* font-size: 30px; */
 }
 
-.register-heading { grid-area: register-header; }
-.blank1 { grid-area: menu; }
-.item4 { grid-area: right; }
-.p1_name_label { grid-area: p1_name_label; text-align: center; vertical-align: center;}
-.p1_name_field { grid-area: p1_name_field; text-align: center; }
-.p2_name_label { grid-area: p2_name_label; text-align: center; vertical-align: center;}
-.p2_name_field { grid-area: p2_name_field; text-align: center; }
-.register_submit { grid-area: register_submit; text-align: center; }
+.Heading { grid-area: header;  text-align: center; }
+.P1 { grid-area: P1; text-align: right;}
+.P2 { grid-area: P2; text-align: right;}
+.P1_field { grid-area: P1_field;  text-align: left;}
+.P2_field { grid-area: P2_field;  text-align: left;}
+.register_btn { grid-area: register_btn;  text-align: center;}
+.item5 { grid-area: footer; }
 
-.grid-container-register {
+.grid-container-registration {
   display: grid;
   grid-template-areas:
-    'register-header register-header register-header register-header  '
-    'menu p1_name_label p1_name_label right'
-		'menu p2_name_label p2_name_label right'
-    'menu register_submit register_submit right ';
-
+    'header header header header'
+    'P1 P1 P1_field P1_field'
+    'P2 P2 P2_field P2_field'
+    'register_btn register_btn register_btn register_btn';
   grid-gap: 10px;
   /* background-color: #2196F3; */
   padding: 10px;
 	font-family: 'Fjalla One', sans-serif;
 	max-width: 800px;
 	margin: 10px auto;
-	/* padding: 16px; */
 }
-.grid-container-register > div {
+.grid-container-registration > div {
   /* background-color: rgba(255, 255, 255, 0.8); */
   text-align: center;
-  padding: 10px 0;
-  /* font-size: 30px; */
+  padding: 20px 0;
+  font-size: 30px;
 }
+
+
+.PlayHeading { grid-area: PlayHeading; }
+.TurnDetails { grid-area: TurnDetails; }
+.ButtonChoice { grid-area: ButtonChoice; }
+
+.grid-container-playgame {
+  display: grid;
+  grid-template-areas:
+    'PlayHeading PlayHeading PlayHeading PlayHeading'
+    'TurnDetails TurnDetails TurnDetails TurnDetails'
+    'ButtonChoice ButtonChoice ButtonChoice ButtonChoice';
+  grid-gap: 10px;
+  padding: 10px;
+	font-family: 'Fjalla One', sans-serif;
+	max-width: 800px;
+	margin: 10px auto;
+}
+.grid-container-playgame > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
 
 .play_header { grid-area: play_header; }
 .blank1 { grid-area: menu; }
