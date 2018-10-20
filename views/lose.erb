@@ -1,2 +1,6 @@
 <h1><%=@game.player.name%> chose <%=@game.player.move%></h1>
 <h1>Computer chose <%=@game.chosen_move%>. You Lose :(</h1>
+
+<form action="/play">
+  <input type="submit" value="Play again?">
+</form>
