@@ -1,0 +1,30 @@
+body {
+  font-family: 'Source Sans Pro', cursive;
+  background-color: #E3D4FF;
+  background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #9F4EDD;
+  text-align: center;
+  height: 120;
+}
+div#separator {
+  height: 3;
+  background-color: black;
+}
+h1#title {
+  font-family: 'Bungee Shade', cursive;
+  color: white;
+  font-size: 80px;
+}
+h4#subtitle {
+  position: relative;
+  bottom: 70;
+  right: 33;
+  color: white;
+  white-space: pre;
+  word-spacing: 3.6;
+}
