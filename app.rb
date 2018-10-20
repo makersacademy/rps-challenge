@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require "./lib/computer"
+require "./lib/game"
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -18,10 +20,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
 ###unfinished block############
-  get '/player_makes_move' do #
-    @player_1_move =          #
-    erb :player_makes_move    #
-  end                         #
+
+
+  get '/player_makes_move' do
+    session[:player_1_move] = params[:move]
+    @player_1_move = session[:player_1_move]
+    @computer = Computer.new
+    @computer_move = @computer.computer_move
+    @game = Game.new
+    @play_game = @game.play_game
+    erb :player_makes_move
+  end
 ###############################
 
   run! if app_file == $0

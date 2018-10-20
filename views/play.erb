@@ -1,5 +1,21 @@
 <h1><%= @player_1_name %> vs. Computer, bring it!</h>
 <h2>Choose your move</h2>
-<button id="rock">rock</button>
-<button id="paper">paper</button>
-<button id="scissors">scissors</button>
+
+<form action="/player_makes_move">
+  <div>
+    <input type="radio" id="contactChoice1"
+     name="move" value="rock">
+    <label for="moveChoice1">rock</label>
+
+    <input type="radio" id="contactChoice2"
+     name="move" value="paper">
+    <label for="moveChoice2">paper</label>
+
+    <input type="radio" id="contactChoice3"
+     name="move" value="scissors">
+    <label for="moveChoice3">scissors</label>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
