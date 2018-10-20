@@ -4,6 +4,8 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
   margin: 0;
   padding: 0;
+  font-size: 20px;
+  text-align: center;
 }
 a {
   text-decoration: none;
@@ -28,9 +30,6 @@ div#separator {
   height: 5;
   background-color: #671391;
 }
-section#home_buttons {
-  text-align: center;
-}
 h1#title {
   font-family: 'Bungee Shade', cursive;
   color: white;
@@ -44,6 +43,7 @@ h4#subtitle {
   bottom: 70;
   right: 33;
   color: white;
+  font-size: 16px;
   white-space: pre;
   word-spacing: 3.6;
 }
@@ -64,4 +64,30 @@ h4#subtitle {
 .choice_button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+.action_button {
+  background-color: #9F4EDD;
+  color: white;
+  border: none;
+  font-size: 14px;
+  padding: 32px 16px;
+  border-radius: 10%;
+  box-shadow: 0 9px #999;
+  width: 150;
+  font-family: 'Bungee', cursive;
+}
+.action_button:hover {
+  color: #671391;
+}
+.action_button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.text_form {
+  font-size: 16px;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid #9F4EDD;
 }
