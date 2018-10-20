@@ -8,7 +8,6 @@ require 'simplecov'
 require 'simplecov-console'
 require 'features/web_helpers'
 
-
 # tell Capybara about our app class
 Capybara.app = RockPaperScissors
 
