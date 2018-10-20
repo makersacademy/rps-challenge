@@ -15,6 +15,7 @@ require 'rspec'
 require_relative './features/web_helpers'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 Capybara.app = RPS
+set :environment, :test
 
 RSpec.configure do |config|
   config.after(:suite) do

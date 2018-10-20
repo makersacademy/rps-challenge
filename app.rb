@@ -75,6 +75,7 @@ class RPS < Sinatra::Base
     @players.move1 = params["move1"] if @players.move1.nil?
     @players.move2 = params["move2"] if @players.move2.nil?
     @move2 = @players.move2
+    p @move2
     redirect '/game/result'
   end
 

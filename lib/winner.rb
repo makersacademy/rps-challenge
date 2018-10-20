@@ -1,6 +1,6 @@
 class Winner
 
-  WIN_COMBOS = [["rock", "scissors"], ["paper", "rock"], ["scissors", "paper"]]
+  WIN_COMBOS = [["rock", "scissors"], ["paper", "rock"], ["scissors", "paper"], ["scissors", "lizard"], ["rock", "lizard"], ["lizard", "paper"], ["paper", "spock"], ["lizard", "spock"], ["spock", "rock"], ["spock", "scissors"]]
 
   def initialize(players)
     @players = players

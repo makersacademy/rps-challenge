@@ -21,6 +21,16 @@ feature 'Selects and option' do
     find_button('scissors').click
     expect(page).to have_content "Caitlin's move was scissors"
   end
+
+  scenario 'selects lizard' do
+    find_button('lizard').click
+    expect(page).to have_content "Caitlin's move was lizard"
+  end
+
+  scenario 'selects spock' do
+    find_button('spock').click
+    expect(page).to have_content "Caitlin's move was spock"
+  end
 end
 
 feature 'Computers move is returned' do
@@ -44,5 +54,19 @@ feature 'Computers move is returned' do
     single_sign_in
     find_button('rock').click
     expect(page).to have_content "Computer's move was scissors"
+  end
+
+  scenario 'when its move is lizard' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('lizard')
+    single_sign_in
+    find_button('rock').click
+    expect(page).to have_content "Computer's move was lizard"
+  end
+
+  scenario 'when its move is spock' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('spock')
+    single_sign_in
+    find_button('rock').click
+    expect(page).to have_content "Computer's move was spock"
   end
 end
