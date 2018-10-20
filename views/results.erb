@@ -1,6 +1,10 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<h1>Winners</h1>
-<% for winner in @game.winners %>
-<%= winner.name %>
-<% end %>
+<div class="container">
+  <h3>Winner</h3>
+  <% if @game.winner %>
+    <h1><%= @game.winner.name %> wins </h1>
+  <% else %>
+    <h1>It was a tie</h1>
+  <% end %>
+</div>

@@ -4,26 +4,24 @@
 <div class="container">
   <h1>Battle</h1>
   <h3>Sign in to play</h3>
-  <p ><strong>Enter a minimum of 2 and maximum of 5 names</strong></p>
-  <% if @error_message %> <p style="color:red"><%= @error_message %></p><% end %>
-    <form action="/names" method="post">
-      <div class="form-group">
-        <label for="player_1_name"> Player 1 name</label>
-          <input type="text" name="player_1_name" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="player_2_name"> Player 2 name </label>
-          <input type="text" name="player_2_name" class="form-control">
-      </div>
-      <div class="radio">
-        <label>Rock Paper Scissors<input class="form-control" type="radio" name="options" value="standard"></label>
-      </div>
-      <div class="radio">
-        <label>Rock Paper Scissors Lizzard Spock<input class="form-control" type="radio" name="options" value="extra"></label>
-      </div>
-      <div class="radio">
-        <label>Custom<input class="form-control" type="radio" name="options" value="custom"></label>
-      </div>
-      <input class="btn btn-success float-right" type="submit" value="Submit">
-    </form>
+  <form action="/setup" method="post">
+    <div class="form-group">
+      <label for="player_1_name"> Player 1 name</label>
+        <input type="text" name="player_1_name" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="player_2_name"> Player 2 name </label>
+        <input type="text" name="player_2_name" class="form-control">
+    </div>
+    <div class="radio">
+      <label>Standard<input class="form-control" type="radio" name="mode" value="1"></label>
+    </div>
+    <div class="radio">
+      <label>Extra<input class="form-control" type="radio" name="mode" value="2"></label>
+    </div>
+    <div class="radio">
+      <label>Custom<input class="form-control" type="radio" name="mode" value="3"></label>
+    </div>
+    <input class="btn btn-success float-right" type="submit" value="Submit">
+  </form>
 </div>

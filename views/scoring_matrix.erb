@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<div class="container">
+
+  <h3>Scoring Matrix</h3>
+  <table class="table table-sm table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Weapon</th>
+        <th style="text-align: center" colspan=<%=(@game.weapon_matrix.length - 1) / 2 %>> Defeats </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for weapon, opponents in @game.weapon_matrix %>
+      <tr>
+        <th><%= weapon %></th>
+        <% for opponent in opponents %>
+        <td><%= opponent %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

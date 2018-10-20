@@ -1,20 +1,31 @@
 class Game
 
-  attr_reader :hand_matrix
+  attr_reader :weapon_matrix
 
-  def self.create(players:, hands:)
-    @the_game = Game.new(players: players, hands: hands)
+  def self.create(players:, weapons:)
+    @the_game = Game.new(players: players, weapons: weapons)
   end
 
   def self.instance
     @the_game
   end
 
-  def initialize(players:, hands:)
+  def initialize(players:, weapons:)
     @players = players
     @first_player = @players[0]
-    @hand_matrix = Hash[hands.each_with_index.map { |hand, i|
-                    [hand, ((hands.length - 1)/2).times.map { |z| hands[((i + (1 + z * 2)) % hands.length )] }]}]
+    @weapon_matrix = get_weapons_matrix(weapons)
+  end
+
+  def get_weapons_matrix(weapons)
+    Hash[weapons.each_with_index.map { |weapon, i| [weapon, weapon_defeats(weapons, i)]}]
+  end
+
+  def weapon_defeats(weapons, i)
+    ((weapons.length - 1)/2).times.map { |z| weapons[((i + (1 + z * 2)) % weapons.length )] }
+  end
+
+  def add_weapons(weapon_1:, weapon_2:)
+    @weapon_matrix = get_weapons_matrix(weapons_list.concat([weapon_1, weapon_2]))
   end
 
   def players
@@ -29,6 +40,10 @@ class Game
     @players.last
   end
 
+  def weapons_list
+    @weapon_matrix.keys
+  end
+
   def round_complete?
     @players[1] == @first_player
   end
@@ -38,8 +53,8 @@ class Game
   end
 
   def winner
-    return nil if player_1.hand == player_2.hand
-    if @hand_matrix[player_1.hand].include? player_2.hand
+    return nil if player_1.weapon == player_2.weapon
+    if @weapon_matrix[player_1.weapon].include? player_2.weapon
       player_1
     else
       player_2

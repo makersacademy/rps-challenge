@@ -5,9 +5,9 @@
   <p>What move would you like to make?</p>
   <p>Options are:</p>
   <form action="/move" method='post'>
-    <% for hand, matrix in @game.hand_matrix %>
+    <% for weapon, matrix in @game.weapon_matrix %>
     <div class="radio">
-      <label><strong><%= hand %></strong><input type='radio' class="form-control" name="hand" value=<%= hand %>></label>
+      <label><input type='radio' name="weapon" value=<%= weapon %>><strong> <%= weapon %> </strong></label>
     </div>
     <% end %>
     <input class="btn btn-success" type="submit" value="Submit">
