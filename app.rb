@@ -52,6 +52,7 @@ class RPS < Sinatra::Base
     @game.player.choose_scissors
     @game.choose_move
     redirect to '/lose' if @game.chosen_move == "Rock"
+    redirect to '/draw' if @game.chosen_move == "Scissors"
     redirect to '/move' if @game.chosen_move != "Rock"
   end
 

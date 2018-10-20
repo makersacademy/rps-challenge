@@ -16,4 +16,13 @@ feature "Drawing" do
       expect(page).to have_content("Computer chose Paper. You Draw :|")
     end
   end
+
+  context "player and computer both choose scissors" do
+    scenario "diplays 'You Draw' on screen" do
+      allow_any_instance_of(Game).to receive(:chosen_move).and_return("Scissors")
+      sign_in_and_play
+      click_button("Scissors")
+      expect(page).to have_content("Computer chose Scissors. You Draw :|")
+    end
+  end
 end
