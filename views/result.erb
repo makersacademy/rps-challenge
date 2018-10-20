@@ -1,1 +1,7 @@
-<h1> Result: </h1>
+<h1> You picked: <%= $game.player.current_pick %> & Computer picked: <%= $game.computer.current_pick %>. <%= $game.outcome %> </h1>
+<form action="/">
+  <input type="submit" value="New player">
+</form>
+<form action="/play">
+  <input type="submit" value="Same player, play again">
+</form>

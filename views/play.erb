@@ -1,6 +1,10 @@
-<h1> Welcome <%= $player.name %>. Please choose Rock, Paper or Scissors! </h1>
-<form action="/result">
+<h1> Welcome <%= @name %>. Please choose Rock, Paper or Scissors! </h1>
+<form action="/rock_result">
   <input type="submit" value="Rock">
+</form>
+<form action="/paper_result">
   <input type="submit" value="Paper">
+</form>
+<form action="/scissors_result">
   <input type="submit" value="Scissors">
 </form>

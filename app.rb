@@ -9,17 +9,27 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    $player = Player.new(params[:player])
+    $game = Game.new(params[:player])
     redirect '/play'
   end
 
   get '/play' do
-    @player = $player.name
+    @name = $game.player.name
     erb(:play)
   end
 
-  get '/result' do
-    @player = $player.name
+  get '/rock_result' do
+    $game.player.pick("rock")
+    erb(:result)
+  end
+
+  get '/paper_result' do
+    $game.player.pick("paper")
+    erb(:result)
+  end
+
+  get '/scissors_result' do
+    $game.player.pick("scissors")
     erb(:result)
   end
 
