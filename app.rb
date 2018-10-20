@@ -26,6 +26,7 @@ class RPS < Sinatra::Base
     computer = Computer.create(['rock', 'paper', 'scissors'])
     @name2 = computer.name2
     @players = Players.create(@name1, @name2)
+    @players.move2 = computer.move2
     redirect '/game1'
   end
 
@@ -72,7 +73,7 @@ class RPS < Sinatra::Base
     @name2 = @players.name2
     @move1 = @players.move1
     @players.move1 = params["move1"] if @players.move1.nil?
-    @players.move2 = params["move2"]
+    @players.move2 = params["move2"] if @players.move2.nil?
     @move2 = @players.move2
     winner = Winner.create(@players)
     redirect '/game/move'
