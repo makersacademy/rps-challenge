@@ -1,5 +1,5 @@
 class Computer
-  WEAPONS = ["ROCK", "PAPER", "SCISSORS"]
+  WEAPONS = [:rock, :paper, :scissors]
 
   attr_reader :name, :weapon
 

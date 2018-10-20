@@ -1,8 +1,8 @@
 class ResultsCalculator
   MOVES = {
-    "ROCK" => "SCISSORS",
-    "PAPER" => "ROCK",
-    "SCISSORS" => "PAPER"
+    rock: :scissors,
+    paper: :rock,
+    scissors: :paper
   }
 
   def initialize(player_1, player_2)

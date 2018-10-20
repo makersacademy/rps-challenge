@@ -1,9 +1,9 @@
 require 'results_calculator'
 
 describe ResultsCalculator do
-  let(:player_rock) { double(:player, name: "Alice", weapon: "ROCK") }
-  let(:player_paper) { double(:player, name: "Bob", weapon: "PAPER") }
-  let(:player_scissors) { double(:player, name: "Alicebob", weapon: "SCISSORS") }
+  let(:player_rock) { double(:player, name: "Alice", weapon: :rock) }
+  let(:player_paper) { double(:player, name: "Bob", weapon: :paper) }
+  let(:player_scissors) { double(:player, name: "Alicebob", weapon: :scissors) }
   let(:calculator_1) { described_class.new(player_rock, player_scissors) }
   let(:calculator_2) { described_class.new(player_paper, player_rock) }
   let(:calculator_3) { described_class.new(player_scissors, player_paper) }
@@ -11,9 +11,9 @@ describe ResultsCalculator do
 
   it 'should have a set list of moves' do
     list = {
-      "ROCK" => "SCISSORS",
-      "PAPER" => "ROCK",
-      "SCISSORS" => "PAPER"
+      rock: :scissors,
+      paper: :rock,
+      scissors: :paper
     }
     expect(described_class::MOVES).to eq list
   end

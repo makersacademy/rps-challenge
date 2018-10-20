@@ -7,7 +7,7 @@ describe Computer do
   end
 
   it "should have a list of possible weapons" do
-    list = ["ROCK", "PAPER", "SCISSORS"]
+    list = [:rock, :paper, :scissors]
     expect(described_class::WEAPONS).to eq list
   end
 
@@ -18,9 +18,9 @@ describe Computer do
     end
 
     it "will save its weapon choce" do
-      allow_any_instance_of(Array).to receive(:sample).and_return "ROCK"
+      allow_any_instance_of(Array).to receive(:sample).and_return :rock
       subject.choose_weapon
-      expect(subject.weapon).to eq "ROCK"
+      expect(subject.weapon).to eq :rock
     end
   end
 end
