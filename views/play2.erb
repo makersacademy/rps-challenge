@@ -3,14 +3,15 @@
 <head>
 <!-- <link rel=”stylesheet” type=”text/css” href=”/styles.css” /> -->
 <link rel="stylesheet" href="/css/style.css"/>
-
+<title>Rock Paper Scissors - Round 2</title>
 </head>
 <body>
+  <form action="/saveturn" method="post">
 <div class="grid-container-play">
   <!-- <div class="play_header"><h1>Welcome to Rock Paper Scissors, <%=@game.player1.name%><%if @game.gametype == "Multiplayer"%> and <%=@game.player2.name%><%end%>!</h1></div> -->
 <!-- <h1>Welcome to Rock Paper Scissors, <%=@game.player1.name%><%if @game.gametype == "Multiplayer"%> and <%=@game.player2.name%><%end%>!</h1> -->
 
-<form action="/saveturn" method="post">
+
 
   <div class="grid-container-playgame">
   <div class="PlayHeading"><h1>Welcome to Rock Paper Scissors, <%=@game.player1.name%><%if @game.gametype == "Multiplayer"%> and <%=@game.player2.name%><%end%>!</h1><h2>Pick your weapon</h2></div>
@@ -24,7 +25,7 @@
 
 </div>
 
-</form>
+
 <!-- <div class="play_test">this is a test</div> -->
-</div>
+</div></form>
 </body></html>

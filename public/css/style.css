@@ -233,8 +233,16 @@ body {
   font-size: 30px;
 }
 
-.grid-container-play > .play_header {
-height: 200px;
+.grid-container-registration > .Heading {
+height: 60px;
+}
+
+/* .grid-container-playgame > .PlayHeading {
+height: 80px;
+} */
+
+.grid-container-result > .item1 {
+height: 60px;
 }
 
 .grid-container-index > .welcome {
@@ -325,13 +333,13 @@ grid-container-register input{
   height: 110px;
 }
 
-.grid-container-index-2 input:active +.drinkcard-cc, .grid-container-index input:active +.drinkcard-cc{opacity: .9;}
-.grid-container-index-2 input:checked +.drinkcard-cc, .grid-container-index input:checked +.drinkcard-cc{
+.grid-container-index-2 input:active +.gamepicker-cc, .grid-container-index input:active +.gamepicker-cc{opacity: .7;}
+.grid-container-index-2 input:checked +.gamepicker-cc, .grid-container-index input:checked +.gamepicker-cc{
     -webkit-filter: none;
        -moz-filter: none;
             filter: none;
 }
-.drinkcard-cc{
+.gamepicker-cc{
     cursor:pointer;
     /* background-size:contain; */
     background-repeat:no-repeat;
@@ -341,14 +349,28 @@ grid-container-register input{
     -webkit-transition: all 100ms ease-in;
        -moz-transition: all 100ms ease-in;
             transition: all 100ms ease-in;
-    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
-       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
-            filter: brightness(1.8) grayscale(1) opacity(.7);
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7) blur(2px) ;
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7) blur(2px) ;
+            filter: brightness(1.8) grayscale(1) opacity(.7) blur(2px) ;
 }
-.drinkcard-cc:hover{
-    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
-       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
-            filter: brightness(1.2) grayscale(.5) opacity(.9);
+.gamepicker-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9) invert(50%);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9) invert(50%);
+            filter: brightness(1.2) grayscale(.5) opacity(.9) invert(50%);
+}
+
+.restart_btn, .play_brn, .rock_btn, .paper_btn, .scissors_btn, .lizard_btn, .spock_btn, .human-submit, .robot-submit{
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(1) ;
+       -moz-filter: brightness(1.8) grayscale(1) opacity(1) ;
+            filter: brightness(1.8) grayscale(1) opacity(1) ;
+}
+.restart_btn:hover, .play_btn:hover, .rock_btn:hover, .paper_btn:hover, .scissors_btn:hover, .lizard_btn:hover, .spock_btn:hover, .human-submit:hover, .robot-submit:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9)  invert(50%);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9)  invert(50%);
+            filter: brightness(1.2) grayscale(.5) opacity(.9)  invert(50%);
 }
 
 /* Extras */
