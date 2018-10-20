@@ -1,14 +1,15 @@
 
 
 class Cpu
-attr_reader :name
+
+  attr_reader :choice
 
   def initialize
-    @name = "CPU"
+    @choice = Game::OPTIONS.sample
   end
 
-  def choice
-    Game::OPTIONS.sample
+  def name
+    "CPU__" + ["BOB", "EVE", "JIM", "HAL"].sample + rand(3000).to_s
   end
 
 end

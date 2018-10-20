@@ -1,1 +1,11 @@
-<%= @human.name %>: <%= @human.choice %>
+<div>
+  <%= @player_1.name %>: <%= @player_1.choice.capitalize %>
+</div>
+
+<div>
+  <%= @player_2.name %>: <%= @player_2.choice.capitalize %>
+</div>
+
+<div>
+  <%= @game.result(@player_1.choice, @player_2.choice) %>
+</div>

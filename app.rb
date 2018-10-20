@@ -10,23 +10,25 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    human = Human.new(params[:player_name])
-    cpu = Cpu.new
-    game = Game.create(human, cpu)
+    player_1 = Human.new(params[:player_name])
+    player_2 = Cpu.new
+    @game = Game.create(player_1, player_2)
     redirect '/play'
   end
 
-  get '/play' do
+  before do
     @game = Game.instance
+  end
+
+  get '/play' do
     @player_1 = @game.player_1
     erb :play
   end
 
   post '/decision' do
-    @game = Game.instance
-    @human = Game.instance.player_1
-    @cpu = Game.instance.player_2
-    @human.store(params[:player_choice])
+    @player_1 = @game.player_1
+    @player_2 = @game.player_2
+    @player_1.store(params[:player_choice])
     erb :decision
   end
 

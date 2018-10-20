@@ -6,12 +6,10 @@ class Human
     @name = name
   end
 
-  def choice
-    @choice
-  end
+  attr_reader :choice
 
   def store(choice)
-    @choice = choice
+    @choice = choice.downcase.to_sym
   end
 
 end

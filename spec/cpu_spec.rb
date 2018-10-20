@@ -4,10 +4,6 @@ describe Cpu do
 
   subject(:cpu) { described_class.new }
 
-  it "has a random choice" do
-    allow(cpu).to receive(:choice).and_return(:rock)
-    expect(cpu.choice).to eq :rock
-  end
   it "can select rock, paper, or scissors" do
     expect(memory).to include(:rock, :paper, :scissors)
   end
@@ -17,7 +13,7 @@ describe Cpu do
 
   def memory
     memory = []
-    100.times { memory << cpu.choice }
+    100.times { memory << Cpu.new.choice }
     memory
   end
 
