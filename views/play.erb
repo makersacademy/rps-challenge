@@ -4,4 +4,5 @@ Hi
 <button type="submit" name="choice" value="rock">rock</button>
 <button type="submit" name="choice" value="paper">paper</button>
 <button type="submit" name="choice" value="scissors">scissors</button>
-<br> <%= choice_message %>
+<br> <%= @game.choice_message %>
+<br> <%= @game.winning_message(@winner) %>

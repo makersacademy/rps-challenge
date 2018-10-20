@@ -1,8 +1,11 @@
 require 'sinatra/base'
-require 'game'
+require './lib/game'
+require 'pry'
 # require 'sinatra/reloader'
 
 class RockPaperScissors < Sinatra::Base
+
+  attr_reader :game
 
   enable :sessions
 
@@ -18,18 +21,14 @@ class RockPaperScissors < Sinatra::Base
   get "/play" do
     @game = Game.new
     @welcome_message = "Welcome, #{session[:name]}!"
-    def choice_message
-      return ''  if session[:choice].nil?
-      "You selected #{session[:choice]}, your opponent selected paper."
-    end
+    selection = session[:choice]
+    @winner = @game.player_selection(selection) unless selection.nil?
     erb :play
   end
 
   post "/choice" do
-    session[:choice] = params[:choice]
+    session[:choice] = params[:choice].to_sym
     erb :choice
   end
-
-
 
 end

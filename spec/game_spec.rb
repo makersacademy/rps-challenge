@@ -1,6 +1,5 @@
 require 'game'
 
-
 describe Game do
 
   it 'user selects a move' do
@@ -9,7 +8,7 @@ describe Game do
   end
 
   it 'computer selects a move' do
-    subject.computer_selection
+    subject.player_selection(:rock)
     expect(subject.player_2_move).not_to be nil
   end
 
@@ -36,6 +35,5 @@ describe Game do
       expect(subject.winning_message(winner)).to eq "It's a draw!"
     end
   end
-
 
 end

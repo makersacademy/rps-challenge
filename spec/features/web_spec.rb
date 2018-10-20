@@ -1,5 +1,10 @@
 
 feature 'rock paper scissors webapp' do
+
+  before do
+    allow_any_instance_of(Game).to receive(:computer_selection).and_return(:paper)
+  end
+
   scenario 'greets user' do
     visit '/'
     expect(page).to have_content("Welcome to Rock Paper Scissors!")
@@ -11,33 +16,33 @@ feature 'rock paper scissors webapp' do
   end
 
   scenario 'user selects rock, paper or scissors' do
-    sign_in_and_select('rock')
+    sign_in_and_select(:rock)
     expect(page).to have_content "You selected rock"
   end
 
   scenario "I can see what I selected, and what the computer selected" do
-    sign_in_and_select('rock')
+    sign_in_and_select(nil)
+    click_on('rock')
     click_on 'OK'
     expect(page).to have_content "You selected rock, your opponent selected paper"
   end
 
   scenario "I can select paper" do
-    sign_in_and_select('paper')
+    sign_in_and_select(:paper)
     click_on 'OK'
     expect(page).to have_content "You selected paper, your opponent selected paper"
   end
 
   scenario "I can select scissors" do
-    sign_in_and_select('scissors')
+    sign_in_and_select(:scissors)
     click_on 'OK'
     expect(page).to have_content "You selected scissors, your opponent selected paper"
   end
 
   scenario "User loses a game" do
-    sign_in_and_select('scissors')
+    sign_in_and_select(:rock)
     click_on 'OK'
-    expect(page).to have_content "You lost the game :("
+    expect(page).to have_content "player_2 won the round"
   end
-
 
 end
