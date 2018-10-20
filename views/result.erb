@@ -9,13 +9,13 @@
 
   <div class="grid-container-result">
     <div class="item1"><h1>... and the winner is ...</h1></div>
-    <div class="item3"><p><%=@game.player1.name%> played <%=@game.player1.choice%></p></div>
-    <div class="item5"><p><%=@game.player2.name%> played <%=@game.player2.choice%></p></div>
+    <div class="item3"><button class="<%=@game.player1.choice%>_btn"></button><h2><%=@game.player1.name%> played <%=@game.player1.choice%></h2></div>
+    <div class="item5"><button class="<%=@game.player2.choice%>_btn"></button><h2><%=@game.player2.name%> played <%=@game.player2.choice%></h2></div>
     <div class="item4">
 <%if @game.win_logic == "draw"%>
-<p>It's a draw</a></p>
+<h2>It's a draw</a></h2>
 <%else%>
-<p><%=@game.win_logic.name%> wins</p>
+<h2><%=@game.win_logic.name%> wins</h2>
 
 <%end%>
 <p><a href="/">play again?</a></p>

@@ -20,6 +20,19 @@ p	{
 	/* padding-bottom: 20px; */
 }
 
+a	{
+	font-family: 'Fjalla One', sans-serif;
+	margin-left: 1.66%;
+	font-size: 20px;
+	font-weight: 400;
+  color: white;
+	text-decoration: underline;
+	/* text-transform: uppercase; */
+	/* border-bottom: 2px solid #f1f1f1; */
+	/* width: 30%; */
+	/* padding-bottom: 20px; */
+}
+
 label	{
 	font-family: 'Fjalla One', sans-serif;
 	margin-left: 1.66%;
