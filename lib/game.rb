@@ -1,3 +1,5 @@
+require_relative 'evaluate'
+
 class Game
 
   def self.instance

@@ -1,5 +1,3 @@
-require 'pry'
-
 class Evaluate
 
   def evaluate(array)
