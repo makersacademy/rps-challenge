@@ -1,4 +1,6 @@
 class Game
+  RULES = RPSRules::RULES
+
   attr_reader :player
 
   def initialize(player)
