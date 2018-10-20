@@ -1,7 +1,7 @@
 ## RPS Challenge
 ##### *(Makers Academy - Week 2)*
 
-### [Introduction](#introduction) | [Approach](#approach) | [Setup](#setup) | [Run](#run) | [Examples](#examples)
+### [Introduction](#introduction) | [Approach](#approach) | [Setup](#setup) | [Run](#run)
 
 ## Introduction
 This is the third weekend challenge at the 12 week [Makers Academy](https://makers.tech/) bootcamp. Working individually the task was to create a web application to play **Rock Paper Scissors** based on the following user stories:
@@ -30,45 +30,24 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 Use the _special_ rules _(you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)_
 
-### Approach
-1. Model and Diagram
-2. Write Rspec unit tests for classes and methods
+# Approach
+1. Model and Diagram Class structure and Methods
+2. Write RSpec unit tests
 3. Make unit tests pass
-4. Write feature tests for using capybara
+4. Write feature tests using capybara
 5. Make feature tests pass
 6. Refactor
 
-##### diagram
-![diagram](./docs/images/diagram.png)
+# Setup
 
-## Setup
-
-<!-- ##### prerequisites -->
-
-<!-- * [ngrok](https://ngrok.com/) installed locally.
-For Macs users use [homebrew](https://brew.sh/).
-```
-$ brew cask install ngrok
-```
-* registered [twilio](https://www.twilio.com/) account -->
-
-##### clone  and install
 ```
 $ git clone https://github.com/toddpla/rps-challenge.git
 
+$ cd rps-challenge
+
 $ bundle
 ```
-
-<!-- ## Run
-
-##### start local server
-
+# Run
 ```
-$ ruby './lib/twilio.rb'
-``` -->
-
-
-
-
-
-<!-- [![asciicast](https://asciinema.org/a/m0s3gCALX6e3tb2qDwy0RwQzx.png)](https://asciinema.org/a/m0s3gCALX6e3tb2qDwy0RwQzx) -->
+$ rackup config.ru
+```
