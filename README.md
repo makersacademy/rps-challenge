@@ -41,7 +41,7 @@ I would like to be able to play rock/paper/scissors
 `def initialize(player_1, player_2 = Computer.new)
     @player_1 = player_1
     @player_2 = player_2
-  end`
+ end`
 
 ## Getting started
 
