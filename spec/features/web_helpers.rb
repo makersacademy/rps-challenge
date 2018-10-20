@@ -21,3 +21,10 @@ def sign_in_and_play_custom
   choose('Custom')
   click_button 'Submit'
 end
+
+def player_one_game
+  choose('Rock')
+  click_button('Submit')
+  choose('Paper')
+  click_button('Submit')
+end

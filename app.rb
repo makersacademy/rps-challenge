@@ -33,6 +33,7 @@ class Battle < Sinatra::Base
 
   get '/results' do
     @game = Game.instance
+    @game.rotate
     erb :results
   end
 
