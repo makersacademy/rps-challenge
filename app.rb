@@ -23,7 +23,6 @@ class RPS < Sinatra::Base
   end
 
   post '/two_names' do
-    p params
     @game = Game.create(player_1: params[:player_1_name],
       player_2: params[:player_2_name])
     redirect to '/play'
@@ -69,6 +68,7 @@ class RPS < Sinatra::Base
     @game = Game.instance
     @game.player_2.choose_rock
     redirect to '/lose' if @game.player_1.move == "Scissors"
+    redirect to '/draw' if @game.player_1.move == "Rock"
   end
 
   post '/choose_paper' do
@@ -85,6 +85,7 @@ class RPS < Sinatra::Base
     @game = Game.instance
     @game.player_2.choose_paper
     redirect to '/lose' if @game.player_1.move == "Rock"
+    redirect to '/draw' if @game.player_1.move == "Paper"
   end
 
   post '/choose_scissors' do
@@ -101,6 +102,8 @@ class RPS < Sinatra::Base
     @game = Game.instance
     @game.player_2.choose_scissors
     redirect to '/lose' if @game.player_1.move == "Paper"
+    redirect to '/draw' if @game.player_1.move == "Scissors"
+
   end
 
   run! if app_file == $0
