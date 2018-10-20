@@ -1,6 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One');
 
+/* .main-div{
+	font-family: 'Fjalla One', sans-serif;
+	max-width: 800px;
+	margin: 10px auto;
+	padding: 16px;
+
+} */
+
 p	{
+	font-family: 'Fjalla One', sans-serif;
+	margin-left: 1.66%;
+	font-size: 22px;
+	font-weight: 400;
+  color: white;
+	/* text-transform: uppercase; */
+	border-bottom: 2px solid #f1f1f1;
+	width: 30%;
+	padding-bottom: 20px;
+}
+
+label	{
 	font-family: 'Fjalla One', sans-serif;
 	margin-left: 1.66%;
 	font-size: 22px;
@@ -14,6 +34,7 @@ p	{
 
 h1	{
 	font-family: 'Fjalla One', sans-serif;
+  font-size: 50px;
   color:white;
 
 }
