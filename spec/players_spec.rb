@@ -10,10 +10,10 @@ describe Players do
   end
 
   it 'returns the move that the first player selected' do
-    expect(players.move1=("rock")).to eq "rock"
+    expect(players.move1 = "rock").to eq "rock"
   end
 
   it 'returns the move that the second player selected' do
-    expect(players.move2=("scissors")).to eq "scissors"
+    expect(players.move2 = "scissors").to eq "scissors"
   end
 end

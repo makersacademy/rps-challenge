@@ -9,10 +9,10 @@ class Players
   end
 
   def self.create(name1, name2)
-    @turn = Players.new(name1, name2)
+    @players = Players.new(name1, name2)
   end
 
   def self.instance
-    @turn
+    @players
   end
 end

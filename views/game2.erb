@@ -7,7 +7,7 @@
     <h1><%= @players.name1 %> vs <%= @players.name2 %></h1>
     <p>It's currently <%= @players.name2 %>'s turn</p>
     <p>What move would you like to play?</p>
-    <form action=/game/move method=post >
+    <form action=/game/determine method=post >
     <input name='move2' type="submit" value="rock">
     <input name='move2' type="submit" value="paper">
     <input name='move2' type="submit" value="scissors">
