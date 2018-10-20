@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+p	{
+	font-family: 'Fjalla One', sans-serif;
+	margin-left: 1.66%;
+	font-size: 22px;
+	font-weight: 400;
+  color: white;
+	/* text-transform: uppercase; */
+	border-bottom: 2px solid #f1f1f1;
+	width: 30%;
+	padding-bottom: 20px;
+}
+
+h1	{
+	font-family: 'Fjalla One', sans-serif;
+  color:white;
+
+}
+body {
+  background-image: url("/images/abstract-art-astronomy-220071.jpg");
+  background-color: #cccccc;
+}
+
+cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.cc-selector-2 input{
+    position:absolute;
+    z-index:999;
+}
+
+.classic{
+  background: url(/images/spritesheet_trans5.png) -150px -5px;
+  display:inline-block;
+  width: 135px;
+  height: 110px;
+}
+.spock{
+  background: url(/images/spritesheet_trans5.png) -5px -5px;
+  display:inline-block;
+  width: 135px;
+  height: 110px;
+}
+
+.cc-selector-2 input:active +.drinkcard-cc, .cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector-2 input:checked +.drinkcard-cc, .cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    /* background-size:contain; */
+    background-repeat:no-repeat;
+    display:inline-block;
+    width: 135px;
+    height: 110px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+/* Extras */
+a:visited{color:#888}
+a{color:#444;text-decoration:none;}
+p{margin-bottom:.3em;}
+* { font-family:monospace; }
+.cc-selector-2 input{ margin: 5px 0 0 12px; }
+.cc-selector-2 label{ margin-left: 7px; }
+span.cc{ color:#6d84b4 }
+
+
+/*
+gametype-div input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.gametype-div-2 input{
+    position:absolute;
+    z-index:999;
+}
+
+.classic{
+  background: url(/images/spritesheet_trans5.png) -150px -5px;
+  display:inline-block;
+  width: 135px;
+  height: 110px;
+}
+.spock{
+  background: url(/images/spritesheet_trans5.png) -5px -5px;
+  display:inline-block;
+  width: 135px;
+  height: 110px;
+}
+
+.gametype-div-2  input:active +.option_cc, .gametype-div input:active +.option_cc{opacity: .9;}
+.gametype-div-2  input:checked +.option_cc, .gametype-div input:checked +.option_cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.option_cc{
+    cursor:pointer;
+    /* background-size:contain; */
+    /* background-repeat:no-repeat;
+    display:inline-block;
+    width: 135px;
+    height: 110px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.option_cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+} */
+
+/* Extras */
+/* a:visited{color:#888}
+a{color:#444;text-decoration:none;}
+p{margin-bottom:.3em;}
+* { font-family:monospace; }
+.gametype-div-2 input{ margin: 5px 0 0 12px; }
+.gametype-div-2  label{ margin-left: 7px; }
+span.cc{ color:#6d84b4 } */ */
+
+.radios .spock{
+    background: url(/images/spritesheet_trans5.png) -5px -5px;
+    display:inline-block;
+    width: 135px;
+    height: 110px;
+}
+.radios .spock input[type="radio"]:checked {
+  background: url(/images/spritesheet_trans5.png) -730px -5px;
+  display:inline-block;
+  width: 135px;
+  height: 110px;
+}
+
+.radios .classic{
+  background: url(/images/spritesheet_trans5.png) -150px -5px;
+  display:inline-block;
+  width: 135px;
+  height: 110px;
+}
+
+.radios .classic input[type="radio"]:checked {
+  background: url(/images/spritesheet_trans5.png) -585px -5px;
+  display:inline-block;
+  width: 135px;
+  height: 110px;
+}
+
+.radios input[type=radio]{
+    display:none
+}
+
+
+
+/* .radios input[type=radio]:checked + .radio{
+    background-color:#241009
+} */
+
+.rpsls {
+  cursor: pointer;
+    width: 135px;
+    height: 110px;
+    border-style: none;
+    background: url(/images/spritesheet_trans5.png) -5px -5px;
+}
+
+.rps {
+  cursor: pointer;
+    width: 135px;
+    height: 110px;
+    border-style: none;
+    background: url(/images/spritesheet_trans5.png) -150px -5px;
+}
+
+.robot {
+  cursor: pointer;
+    width: 135px;
+    height: 110px;
+    border-style: none;
+    background: url(/images/spritesheet_trans5.png) -295px -5px;
+}
+
+.human {
+  cursor: pointer;
+    width: 135px;
+    height: 110px;
+    border-style: none;
+    background: url(/images/spritesheet_trans5.png) -440px -5px;
+}
+
+  .rock_btn {
+    cursor: pointer;
+      width: 135px;
+      height: 110px;
+      border-style: none;
+      background: url(/images/spritesheet_trans5.png) -875px -5px;
+  }
+
+  .paper_btn {
+    cursor: pointer;
+      width: 135px;
+      height: 110px;
+      border-style: none;
+      background: url(/images/spritesheet_trans5.png) -1020px -5px;
+  }
+
+  .scissors_btn {
+    cursor: pointer;
+      width: 135px;
+      height: 110px;
+      border-style: none;
+      background: url(/images/spritesheet_trans5.png) -1165px -5px;
+  }
+
+  .lizard_btn {cursor: pointer;
+      width: 135px;
+      height: 110px;
+      border-style: none;
+      background: url(/images/spritesheet_trans5.png) -1310px -5px;
+  }
+
+  .spock_btn {cursor: pointer;
+      width: 135px;
+      height: 110px;
+      border-style: none;
+      background: url(/images/spritesheet_trans5.png) -1455px -5px;
+  }

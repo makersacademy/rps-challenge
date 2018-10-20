@@ -1,8 +1,18 @@
-<h1><%=@game.player2.name%>, it's your turn!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <link rel=”stylesheet” type=”text/css” href=”/styles.css” /> -->
+<link rel="stylesheet" href="/styles.css"/>
+<style>
+</style>
+</head>
+<body><h1><%=@game.player2.name%>, it's your turn!</h1>
 
 <form action="/saveturn" method="post">
-<input type="submit" name="choice" value="Rock">
-<input type="submit" name="choice" value="Paper">
-<input type="submit" name="choice" value="Scissors">
+<%@game.settings.weapon_list.each { |btn| %>
+  <button class="<%=btn%>_btn" name="choice" type="submit" value="<%=btn.capitalize%>"></button>
+<!-- <input type="submit" name="choice" id="<%=btn%>" value="<%=btn.capitalize%>"> -->
+<% } %>
 <input type="hidden" name="round" value="2">
 </form>
+</body></html>

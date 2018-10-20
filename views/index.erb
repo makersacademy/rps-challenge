@@ -1,8 +1,44 @@
-<form action="/register" method="post"><label for="classic">Rock, paper, scissors classic</label>
-  <input type="radio" name="gamevariant" id="classic" value="classic" >
-  <label for="spock">Rock, paper, scissors, lizard, spock</label>
-  <input type="radio" name="gamevariant" id="spock" value="spock" >
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <link rel=”stylesheet” type=”text/css” href=”/styles.css” /> -->
+<link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body><h1>Welcome to Rock Paper Scissors</h1>
+<form action="/register" method="post">
+  <p>Choose what type of game you want to play</p>
+  <div class="cc-selector">
+          <input checked="checked" id="classic1" type="radio" name="gamevariant" value="classic" />
+          <label class="drinkcard-cc classic" for="classic1">Rock, paper, scissors classic</label>
+          <input id="spock1" type="radio" name="gamevariant" value="spock" />
+          <label class="drinkcard-cc spock"for="spock1">Rock, paper, scissors, lizard, spock</label>
+      </div>
+  <!-- <div class="radios">
+      <input type="radio" name="gamevariant" value="classic" id="classic" checked="checked" />
+      <label class="classic" for="classic">Rock, paper, scissors classic</label>
+      <input type="radio" name="gamevariant" value="spock" id="spock" />
+      <label class="spock" for="spock">Rock, paper, scissors, lizard, spock</label>
+  </div> -->
+  <!-- <p>
+  <input type="radio" name="gamevariant" id="classic" class="classic" value="classic" checked >
+<label for="classic">Rock, paper, scissors classic</label></p>
+<p>
 
-  <input type="submit" name="gametype" value="Single player">
-  <input type="submit" name="gametype" value="Multiplayer">
+  <input type="radio" name="gamevariant" id="spock" class="spock" value="spock" >
+<label for="spock">Rock, paper, scissors, lizard, spock</label>
+</p> -->
+<p> and do you want to play against the computer or another person?</p>
+  <p><button type="submit" class="robot" name="gametype" value="Single player"></button>
+
+  <button type="submit" class="human" name="gametype" value="Multiplayer"></button></p>
 </form>
+
+
+
+    <!-- <div class="gametype-div">
+        <input type="radio" name="gamevariant" value="classic" id="classic"" checked="checked" />
+        <label class="option_cc classic" for="classic"></label>
+        <input type="radio" name="gamevariant" value="spock" id="spock" />
+        <label class="option_cc spock" for="spock"></label>
+    </div> -->
+</body></html>

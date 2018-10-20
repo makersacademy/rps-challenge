@@ -1,4 +1,11 @@
-<p><%=@game.player1.name%> played <%=@game.player1.choice%></p>
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <link rel=”stylesheet” type=”text/css” href=”/styles.css” /> -->
+<link rel="stylesheet" href="/css/styles.css"/>
+
+</head>
+<body><p><%=@game.player1.name%> played <%=@game.player1.choice%></p>
 <p><%=@game.player2.name%> played <%=@game.player2.choice%></p>
 
 <%if @game.win_logic == "draw"%>
@@ -6,3 +13,4 @@ Draw - <a href="/">play again?</a>
 <%else%>
 <p><%=@game.win_logic.name%> wins</p>
 <%end%>
+</body></html>

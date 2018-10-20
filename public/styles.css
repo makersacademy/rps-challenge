@@ -1,0 +1,52 @@
+p	{
+	font-family: 'Raleway', sans-serif;
+	margin-left: 1.66%;
+	font-size: 23px;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-bottom: 2px solid #f1f1f1;
+	width: 30%;
+	padding-bottom: 20px;
+}
+
+h1	{
+	font-family: 'Raleway', sans-serif;
+	
+}
+body {
+    background-color: lightgreen;
+}
+
+
+  .rock {
+    cursor: pointer;
+      width: 135px;
+      height: 110px;
+      background: url(/images/spritesheet.png) -5px -5px;
+  }
+
+  .paper {
+    cursor: pointer;
+      width: 135px;
+      height: 110px;
+      background: url(/images/spritesheet.png) -150px -5px;
+  }
+
+  .scissors {
+    cursor: pointer;
+      width: 135px;
+      height: 110px;
+      background: url(/images/spritesheet.png) -295px -5px;
+  }
+
+  .lizard {cursor: pointer;
+      width: 135px;
+      height: 110px;
+      background: url(/images/spritesheet.png) -440px -5px;
+  }
+
+  .spock {cursor: pointer;
+      width: 135px;
+      height: 110px;
+      background: url(/images/spritesheet.png) -585px -5px;
+  }

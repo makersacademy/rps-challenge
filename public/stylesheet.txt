@@ -1,0 +1,35 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-RPSLS_2_02 {
+    width: 135px;
+    height: 110px;
+    background-position: -5px -5px;
+}
+
+.sprite-RPSLS_2_03 {
+    width: 135px;
+    height: 110px;
+    background-position: -150px -5px;
+}
+
+.sprite-RPSLS_2_04 {
+    width: 135px;
+    height: 110px;
+    background-position: -295px -5px;
+}
+
+.sprite-RPSLS_2_05 {
+    width: 135px;
+    height: 110px;
+    background-position: -440px -5px;
+}
+
+.sprite-RPSLS_2_06 {
+    width: 135px;
+    height: 110px;
+    background-position: -585px -5px;
+}
