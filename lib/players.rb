@@ -1,6 +1,7 @@
 class Players
 
   attr_reader :name1, :name2
+  attr_accessor :move1, :move2
 
   def initialize(name1, name2)
     @name1 = name1
@@ -13,12 +14,5 @@ class Players
 
   def self.instance
     @turn
-  end
-
-  def move1
-  end
-
-  def move2
-
   end
 end

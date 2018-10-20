@@ -27,18 +27,21 @@ feature 'Second name selects an option' do
   scenario 'selects rock and is shown confirmation page' do
     find_button('rock').click
     find_button('rock').click
-    expect(page).to have_content "draw"
+    expect(page).to have_content "Caitlin's move was rock"
+    expect(page).to have_content "James's move was rock"
   end
 
   scenario 'selects paper and is shown confirmation page' do
     find_button('paper').click
     find_button('rock').click
-    expect(page).to have_content "won"
+    expect(page).to have_content "Caitlin's move was paper"
+    expect(page).to have_content "James's move was rock"
   end
 
   scenario 'selects scissors and is shown confirmation page' do
     find_button('scissors').click
     find_button('rock').click
-    expect(page).to have_content "won"
+    expect(page).to have_content "Caitlin's move was scissors"
+    expect(page).to have_content "James's move was rock"
   end
 end

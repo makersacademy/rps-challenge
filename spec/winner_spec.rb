@@ -1,12 +1,11 @@
 require 'winner'
 
 describe Winner do
-  let(:winner) { Winner.new }
+  let(:winner) { Winner.new(players) }
+  let(:players) { double(:players, move1: "rock", move2: "paper", name1: "Caitlin", name2: "James") }
 
   it 'should determine name1 as the winner' do
-    name1 = double(:name1, move: "rock", name: "Caitlin")
-    name2 = double(:name1, move: "paper", name: "James")
-    expect(winner.determine(name1, name2)).to eq "Caitlin won!"
+    expect(winner.determine).to eq "James won!"
   end
 
 

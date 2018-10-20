@@ -21,17 +21,20 @@ class RPS < Sinatra::Base
   end
 
   post '/game2' do
-    @user_move1 = params["move"]
     @players = Players.instance
+    @players.move1 = params["move1"]
     erb(:game2)
   end
 
   post '/game/move' do
-    @name1 = session['name1']
-    @name2 = session['name2']
-    @user_move2 = params["move"]
-    winner = Winner.new
-    @winner = winner.determine(@user_move1, @user_move2)
+    @players = Players.instance
+    @name1 = @players.name1
+    @name2 = @players.name2
+    @move1 = @players.move1
+    @players.move2 = params["move2"]
+    @move2 = @players.move2
+    set_winner = Winner.new(@players)
+    @winner = set_winner.determine
     erb(:win_or_lose)
   end
 
