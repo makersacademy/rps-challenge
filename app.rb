@@ -69,6 +69,7 @@ class RPS < Sinatra::Base
     @game.player_2.choose_rock
     redirect to '/lose' if @game.player_1.move == "Scissors"
     redirect to '/draw' if @game.player_1.move == "Rock"
+    redirect to '/win' if @game.player_1.move == "Paper"
   end
 
   post '/choose_paper' do
@@ -86,6 +87,7 @@ class RPS < Sinatra::Base
     @game.player_2.choose_paper
     redirect to '/lose' if @game.player_1.move == "Rock"
     redirect to '/draw' if @game.player_1.move == "Paper"
+    redirect to '/win' if @game.player_1.move == "Scissors"
   end
 
   post '/choose_scissors' do
@@ -103,7 +105,7 @@ class RPS < Sinatra::Base
     @game.player_2.choose_scissors
     redirect to '/lose' if @game.player_1.move == "Paper"
     redirect to '/draw' if @game.player_1.move == "Scissors"
-
+    redirect to '/win' if @game.player_1.move == "Rock"
   end
 
   run! if app_file == $0
