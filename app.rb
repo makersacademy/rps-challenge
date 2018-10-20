@@ -60,11 +60,6 @@ class RPS < Sinatra::Base
     redirect to '/draw' if @game.player_2.move == "Scissors"
     redirect to '/win' if @game.player_2.move == "Paper"
   end
-
-  get '/move' do
-    @game = Game.instance
-    erb(:move)
-  end
-
+  
   run! if app_file == $0
 end
