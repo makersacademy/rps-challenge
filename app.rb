@@ -25,12 +25,11 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @game = $game
     erb :play
   end
 
-  post '/play' do
-    redirect '/play'
+  post '/choice' do
+
   end
 
   run! if app_file == $0
