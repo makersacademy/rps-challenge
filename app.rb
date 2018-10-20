@@ -57,10 +57,10 @@ class RPS < Sinatra::Base
   post '/game2names' do
     @players = Players.instance
     @players.move1 = params["move1"]
-    redirect '/game2'
+    redirect '/multiplayer_game2'
   end
 
-  get '/game2' do
+  get '/multiplayer_game2' do
     @players = Players.instance
     @name1 = @players.name1
     @name2 = @players.name2
