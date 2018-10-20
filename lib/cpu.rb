@@ -1,6 +1,6 @@
-require "human.rb"
 
-class Cpu < Human
+
+class Cpu
 attr_reader :name
 
   def initialize

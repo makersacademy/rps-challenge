@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/cpu.rb'
+require './lib/game.rb'
+require './lib/human.rb'
 
 class RPS < Sinatra::Base
 
