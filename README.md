@@ -38,9 +38,9 @@ I would like to be able to play rock/paper/scissors
 * Aimed to use the MVC pattern to improve the maintainability of the app
 * Encapsulated Computer in a separate class to take advantage of duck-typing in the Game class - the game does not need to know if it's comparing two players or one player and a computer!
 * This also allows for easy extension of the game to multiplayer, the Game class is currently initialised with the following
-`def initialize(player_1, player_2 = Computer.new)<br/>
-    @player_1 = player_1<br/>
-    @player_2 = player_2<br/>
+`def initialize(player_1, player_2 = Computer.new)  
+    @player_1 = player_1  
+    @player_2 = player_2  
  end`
 
 ## Getting started
