@@ -1,5 +1,5 @@
 ## RPS Challenge
-##### *(Makers Academy - Week 2)*
+##### *(Makers Academy - Week 3)*
 
 ### [Introduction](#introduction) | [Approach](#approach) | [Setup](#setup) | [Run](#run)
 
