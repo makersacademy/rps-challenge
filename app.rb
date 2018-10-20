@@ -44,7 +44,8 @@ class RPS < Sinatra::Base
     @game = Game.instance
     @game.player.choose_scissors
     @game.choose_move
-    redirect to '/move'
+    redirect to '/lose' if @game.chosen_move == "Rock"
+    redirect to '/move' if @game.chosen_move != "Rock"
   end
 
   get '/move' do
