@@ -26,4 +26,11 @@ describe Player do
       expect(imtiyaz.move).to eq "Scissors"
     end
   end
+
+  describe "#choose_random" do
+    it "should choose a random move" do
+      imtiyaz.choose_random
+      expect(Player::MOVES).to include imtiyaz.move
+    end
+  end
 end
