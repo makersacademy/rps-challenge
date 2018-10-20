@@ -22,6 +22,20 @@ body {
   background-color: #cccccc;
 }
 
+.cc-selector input[type=radio]{
+    display:none
+}
+
+/* label[for="spock1"]
+{
+    display:none;
+}
+
+label[for="classic1"]
+{
+    display:none;
+} */
+
 cc-selector input{
     margin:0;padding:0;
     -webkit-appearance:none;
