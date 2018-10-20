@@ -1,0 +1,17 @@
+<div>
+  <h1>R P S !</h1>
+</div>
+<div>
+  <h3><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h3>
+</div>
+<div>
+  <h4><i><%= @game.player_1.name %>, choose your weapon...</i></h4><br>
+  <h4><%= @game.player_2.name %>, look away now!</h4>
+</div>
+<section>
+  <form action='/player_1_play' method='post'>
+    <input type='submit' name='weapon' value="ROCK">
+    <input type='submit' name='weapon' value="PAPER">
+    <input type='submit' name='weapon' value="SCISSORS">
+  </form>
+</section>

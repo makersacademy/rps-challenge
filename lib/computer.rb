@@ -8,7 +8,7 @@ class Computer
     @name = "RPSbot"
   end
 
-  def choose_weapon(weapon = nil)
+  def choose_weapon
     @weapon = WEAPONS.sample
   end
 end

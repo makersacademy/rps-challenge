@@ -18,11 +18,6 @@ class Game
     @current_game
   end
 
-  def choose_weapon(weapon)
-    @player_1.choose_weapon(weapon)
-    @player_2.choose_weapon(weapon)
-  end
-
   def winner
     return "It's a draw!" if calculator.winner == :draw
     "#{calculator.winner} wins!"

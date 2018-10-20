@@ -11,13 +11,6 @@ describe Game do
     expect(subject.player_1.name).to eq "Alice"
   end
 
-  it "should be able to choose a weapon for its players" do
-    chosen_weapon = "ROCK"
-    expect(player_1).to receive(:choose_weapon).with(chosen_weapon)
-    expect(computer).to receive(:choose_weapon).with(chosen_weapon)
-    subject.choose_weapon(chosen_weapon)
-  end
-
   it "can store a current game's data" do
     described_class.store_game(subject)
     expect(described_class.current_game).to eq subject
