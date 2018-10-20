@@ -1,0 +1,29 @@
+<div style='background-color: black; color: white; border: 3px solid black; padding-left: 20px; height: 1000px'>
+  <% if @name == "" %>
+    <h1 style="padding-left: 230px"><span style="color: yellow;">
+    <%= @name = "Nameless Person" %>
+    </span> is playing <span style="color:orange;">Rock</span>,  
+  <span style="color:red;">Paper</span>, <span style="color:green;">Scissors</span></h1>
+  <% else %>
+    <h1 style="padding-left: 230px"><span style="color: yellow;">
+    <%= @name  %></span> is playing <span style="color:orange;">Rock</span>,  
+  <span style="color:red;">Paper</span>, <span style="color:green;">Scissors</span></h1>
+  <% end %>
+  <img src="https://image.ibb.co/kHMqV9/rps.png" alt="rps" border="0" 
+  style="padding-left: 230px; padding-bottom: 0px; padding-top: 10px">  
+ 
+   <% if @weapon %>
+    <h1 style="padding-left: 230px">You: <span style="color: yellow;" ><%= @weapon %></span> -
+    Computer: <span style="color: yellow;" ><%= @computer_weapon %></span>
+    </h1>
+    <h1 style="padding-left: 230px"><span style="color: yellow;" ><%= @message %></span></h1>
+   <% end %>
+
+   <% if @message %>
+    <a href="/reset" style="text-decoration: none;"><h1 style="padding-left: 230px; color: green;">Play again</h1></a>
+   <% end %>
+</div>
+
+
+
+
