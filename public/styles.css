@@ -17,9 +17,16 @@ a {
 .home_button {
 
 }
+div#footer {
+  position: fixed;
+  bottom: 0;
+  height: 5;
+  width: 100%;
+  background-color: #671391;
+}
 div#separator {
-  height: 3;
-  background-color: black;
+  height: 5;
+  background-color: #671391;
 }
 section#home_buttons {
   text-align: center;
