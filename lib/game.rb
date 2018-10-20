@@ -27,4 +27,8 @@ class Game
     end
   end
 
+  def comp_move
+    @comp = ['rock', 'paper', 'scissors'].sample
+  end
+
 end

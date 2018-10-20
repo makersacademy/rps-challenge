@@ -10,4 +10,12 @@ feature 'Testing app.rb' do
     click_button("Submiteth, Peasent")
     expect(page).to have_content "Meg"
   end
+
+  scenario 'user can play a round of RPS' do
+    visit('/')
+    fill_in(:player, with: 'Meg')
+    click_button("Submiteth, Peasent")
+    click_button("Rocketh")
+    
+  end
 end
