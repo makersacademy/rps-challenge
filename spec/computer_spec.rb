@@ -2,7 +2,7 @@ require 'computer'
 
 describe Computer do
   let(:game) { Computer.new(options) }
-  let(:options) { ['rock', 'paper', 'scissors', 'lizard', 'spock'] }
+  let(:options) { [:rock, :paper, :scissors, :lizard, :spock] }
 
   it 'returns rock' do
     allow(options).to receive(:sample).and_return('rock')

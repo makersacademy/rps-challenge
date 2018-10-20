@@ -23,7 +23,7 @@ class RPS < Sinatra::Base
   post '/single_player_names' do
     session['name1'] = params[:name1]
     @name1 = session['name1']
-    computer = Computer.create(['rock', 'paper', 'scissors'])
+    computer = Computer.new([:rock, :paper, :scissors, :lizard, :spock])
     @name2 = computer.name2
     @players = Players.create(@name1, @name2)
     @players.move2 = computer.move2
