@@ -65,6 +65,12 @@ class RPS < Sinatra::Base
     redirect to '/p2_play' if @game.player_2.move.nil?
   end
 
+  post '/p2_choose_rock' do
+    @game = Game.instance
+    @game.player_2.choose_rock
+    redirect to '/lose' if @game.player_1.move == "Scissors"
+  end
+
   post '/choose_paper' do
     @game = Game.instance
     @game.player_1.choose_paper
@@ -75,6 +81,12 @@ class RPS < Sinatra::Base
     redirect to '/p2_play' if @game.player_2.move.nil?
   end
 
+  post '/p2_choose_paper' do
+    @game = Game.instance
+    @game.player_2.choose_paper
+    redirect to '/lose' if @game.player_1.move == "Rock"
+  end
+
   post '/choose_scissors' do
     @game = Game.instance
     @game.player_1.choose_scissors
@@ -83,6 +95,12 @@ class RPS < Sinatra::Base
     redirect to '/draw' if @game.player_2.move == "Scissors"
     redirect to '/win' if @game.player_2.move == "Paper"
     redirect to '/p2_play' if @game.player_2.move.nil?
+  end
+
+  post '/p2_choose_scissors' do
+    @game = Game.instance
+    @game.player_2.choose_scissors
+    redirect to '/lose' if @game.player_1.move == "Paper"
   end
 
   run! if app_file == $0
