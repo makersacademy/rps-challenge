@@ -1,19 +1,21 @@
 class Winner
 
+  WIN_COMBOS = [["rock", "scissors"], ["paper", "rock"], ["scissors", "paper"]]
+
   def initialize(players)
     @players = players
+    @player1_move = @players.move1
+    @player2_move = @players.move2
   end
 
   def determine
-    return player2_won if @players.move1 == "rock" && @players.move2 == "paper"
-    return player1_won if @players.move1 == "rock" && @players.move2 == "scissors"
-    return draw if @players.move1 == "rock" && @players.move2 == "rock"
-    return player1_won if @players.move1 == "paper" && @players.move2 == "rock"
-    return draw if @players.move1 == "paper" && @players.move2 == "paper"
-    return player2_won if @players.move1 == "paper" && @players.move2 == "scissors"
-    return player2_won if @players.move1 == "scissors" && @players.move2 == "rock"
-    return player1_won if @players.move1 == "scissors" && @players.move2 == "paper"
-    return draw if @players.move1 == "scissors" && @players.move2 == "scissors"
+    WIN_COMBOS.each do |combo|
+      if combo[0] == @player1_move && combo[1] == @player2_move
+        return player1_won
+      end
+    end
+    return draw if @player1_move == @player2_move
+    return player2_won
   end
 
   def player1_won
