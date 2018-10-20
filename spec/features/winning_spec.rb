@@ -16,4 +16,13 @@ feature "Winning" do
       expect(page).to have_content("Computer chose Rock. You Win! :D")
     end
   end
+
+  context "computer chose paper" do
+    scenario "display 'You Win' if player chooses scissors" do
+      allow_any_instance_of(Game).to receive(:chosen_move).and_return("Paper")
+      sign_in_and_play
+      click_button("Scissors")
+      expect(page).to have_content("Computer chose Paper. You Win! :D")
+    end
+  end
 end
