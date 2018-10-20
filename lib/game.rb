@@ -25,4 +25,22 @@ class Game
     @choices[1].downcase
   end
 
+  def result
+    answer = evaluate
+    winner(answer)
+  end
+
+  private
+
+  def winner(answer)
+    return "The winner is #{@player_1}" if answer == 'player_1_win'
+    return "The winner is the computer" if answer == 'player_2_win'
+    return "It's a draw" if answer == 'draw'
+  end
+
+  def evaluate
+    subject = Evaluate.new
+    subject.evaluate(@choices)
+  end
+
 end
