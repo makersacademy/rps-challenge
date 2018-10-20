@@ -1,7 +1,7 @@
 feature "Losing" do
   context "one player mode" do
     context "computer chooses paper" do
-      scenario "diplays 'You Lose' on screen if player chooses rock" do
+      scenario "diplays 'Luigi Wins! :D' on screen if player chooses rock" do
         allow_any_instance_of(Player).to receive(:move).and_return("Paper")
         one_player_sign_in_and_play
         click_button("Rock")
@@ -10,7 +10,7 @@ feature "Losing" do
     end
 
     context "computer chooses scissors" do
-      scenario "diplays 'You Lose' on screen if player chooses paper" do
+      scenario "diplays 'Luigi Wins! :D' on screen if player chooses paper" do
         allow_any_instance_of(Player).to receive(:move).and_return("Scissors")
         one_player_sign_in_and_play
         click_button("Paper")
@@ -19,7 +19,7 @@ feature "Losing" do
     end
 
     context "computer chooses rock" do
-      scenario "diplays 'You Lose' on screen if player chooses scissors" do
+      scenario "diplays 'Luigi Wins! :D' on screen if player chooses scissors" do
         allow_any_instance_of(Player).to receive(:move).and_return("Rock")
         one_player_sign_in_and_play
         click_button("Scissors")
