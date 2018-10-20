@@ -5,20 +5,32 @@ body {
   margin: 0;
   padding: 0;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .header {
   background-color: #9F4EDD;
   text-align: center;
   height: 120;
 }
+.home_button {
+
+}
 div#separator {
   height: 3;
   background-color: black;
+}
+section#home_buttons {
+  text-align: center;
 }
 h1#title {
   font-family: 'Bungee Shade', cursive;
   color: white;
   font-size: 80px;
+}
+h1#title:hover {
+  color: #671391;
 }
 h4#subtitle {
   position: relative;
@@ -27,4 +39,22 @@ h4#subtitle {
   color: white;
   white-space: pre;
   word-spacing: 3.6;
+}
+.choice_button {
+  background-color: #9F4EDD;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 32px 16px;
+  border-radius: 10%;
+  box-shadow: 0 9px #999;
+  width: 200;
+  font-family: 'Bungee', cursive;
+}
+.choice_button:hover {
+  color: #671391;
+}
+.choice_button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
