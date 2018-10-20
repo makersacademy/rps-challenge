@@ -7,6 +7,6 @@ class Player
   end
 
   def choose_weapon(weapon)
-    @weapon = weapon.to_sym
+    @weapon = weapon.downcase.to_sym
   end
 end
