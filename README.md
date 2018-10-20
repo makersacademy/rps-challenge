@@ -30,6 +30,7 @@ I would like to be able to play rock/paper/scissors
 * The user can choose one option
 * The computer/bot will choose a random option
 * A winner will be declared
+* User can click 'Play again' and start a new game
 
 ## Approach
 * 3 Classes: Player, Game & Computer
