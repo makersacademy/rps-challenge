@@ -4,7 +4,7 @@ feature 'index page' do
   end
 
   scenario 'user sees a title on the home page' do
-    expect(page).to have_content("R P S !")
+    expect(page).to have_content("R P S !\nRock Paper Scissors")
   end
 
   scenario 'user can specify single player mode' do
