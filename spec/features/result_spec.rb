@@ -10,9 +10,16 @@ feature 'Results' do
     expect(page).to have_content 'The computer chose'
   end
 
-  scenario "it shows who the winner is" do
+  scenario "it declares the winner" do
+    srand(234_56)
     click_button 'Rock'
     expect(page).to have_content 'The winner is'
+  end
+
+  scenario "it declares a draw" do
+    srand(234_56)
+    click_button 'Scissors'
+    expect(page).to have_content "It's a draw"
   end
 
 end
