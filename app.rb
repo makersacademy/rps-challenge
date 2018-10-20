@@ -9,6 +9,10 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  get '/one_player_sign_in' do
+    erb(:one_player_sign_in)
+  end
+
   post '/name' do
     @game = Game.create(player_1: params[:player_name])
     redirect to '/play'
@@ -60,6 +64,6 @@ class RPS < Sinatra::Base
     redirect to '/draw' if @game.player_2.move == "Scissors"
     redirect to '/win' if @game.player_2.move == "Paper"
   end
-  
+
   run! if app_file == $0
 end
