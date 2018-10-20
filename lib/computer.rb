@@ -1,7 +1,7 @@
 class Computer
 
   def weapon
-    ["Rock", "Paper", "Scissors"].sample
+    [:rock, :paper, :scissors].sample
   end
 
 end

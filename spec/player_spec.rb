@@ -11,7 +11,7 @@ describe Player do
 
   describe '#weapon' do
     it 'returns the value of weapon' do
-      expect(subject.weapon("Rock")).to eq 'Rock'
+      expect(subject.weapon("rock")).to eq 'rock'
     end
   end
 end
