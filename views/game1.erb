@@ -1,0 +1,15 @@
+<head>
+  <link rel="stylesheet" type = "text/css" href="/stylesheet.css">
+</head>
+
+<body>
+  <div>
+    <h1><%= @name1 %> vs <%= @name2 %></h1>
+    <p>What move would you like to play <%= @name1 %>?</p>
+    <form action=/game/determine method=post >
+    <input name='move1' type="submit" value="rock">
+    <input name='move1' type="submit" value="paper">
+    <input name='move1' type="submit" value="scissors">
+    </form>
+  </div>
+</body>

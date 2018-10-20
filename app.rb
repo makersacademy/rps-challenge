@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/base'
 require_relative './lib/players'
 require_relative './lib/winner'
+require_relative './lib/computer'
 
 class RPS < Sinatra::Base
 
@@ -17,6 +18,23 @@ class RPS < Sinatra::Base
 
   post '/oneplayer' do
     erb(:oneplayer)
+  end
+
+  post '/gamenames1' do
+    session['name1'] = params[:name1]
+    @name1 = session['name1']
+    computer = Computer.create(['rock', 'paper', 'scissors'])
+    @name2 = computer.name2
+    @players = Players.create(@name1, @name2)
+    redirect '/game1'
+  end
+
+  get '/game1' do
+    @players = Players.instance
+    @name1 = @players.name1
+    @name2 = @players.name2
+    @players.move1 = params["move1"]
+    erb(:game1)
   end
 
   post '/gamenames' do
@@ -53,6 +71,7 @@ class RPS < Sinatra::Base
     @name1 = @players.name1
     @name2 = @players.name2
     @move1 = @players.move1
+    @players.move1 = params["move1"] if @players.move1.nil?
     @players.move2 = params["move2"]
     @move2 = @players.move2
     winner = Winner.create(@players)
