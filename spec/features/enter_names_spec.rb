@@ -1,9 +1,8 @@
-feature 'Enter name' do
-  before do
-    visit '/'
-  end
+feature 'Enter names for two players' do
 
-  scenario 'User is asked for name' do
+  scenario 'User is asked for both names' do
+    visit '/'
+    find_button('Two').click
     expect(page).to have_content "please enter your names"
   end
 

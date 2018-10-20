@@ -6,13 +6,12 @@
 <body>
   <div>
     <h1>Rock. Paper. Scissors.</h1>
-    <p>To begin, please enter your names</p>
-    <form action="/gamenames" method="post">
-      <label for="name1"></label>
-      <input type="text" name="name1">
-      <label for="name2"></label>
-      <input type="text" name="name2">
-      <input type="submit" value="Let's play!">
+    <p>How many players would you like?</p>
+    <form style=width:10em; action="/oneplayer" method="post">
+      <input style=float:left; type="submit" value="One">
     </form>
+    <form action="/twoplayer" method="post">
+    <input style=float:right; type="submit" value="Two">
+  </form>
   </div>
 </body>

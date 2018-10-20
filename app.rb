@@ -11,6 +11,14 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  post '/twoplayer' do
+    erb(:twoplayer)
+  end
+
+  post '/oneplayer' do
+    erb(:oneplayer)
+  end
+
   post '/gamenames' do
     session['name1'] = params[:name1]
     session['name2'] = params[:name2]
