@@ -4,18 +4,18 @@ feature 'First name selects an option' do
     sign_in_and_play
   end
 
-  scenario 'selects rock and is shown game2' do
+  scenario 'selects rock and is shown next page' do
     find_button('rock').click
-    expect(page).to have_content "Caitlin vs James"
+    expect(page).to have_content "It's currently James's turn"
   end
 
-  scenario 'selects paper and is shown game2' do
+  scenario 'selects paper and is shown next page' do
     find_button('paper').click
-    expect(page).to have_content "Caitlin vs James"
+    expect(page).to have_content "It's currently James's turn"
   end
-  scenario 'selects scissors and is shown game2' do
+  scenario 'selects scissors and is shown next page' do
     find_button('scissors').click
-    expect(page).to have_content "Caitlin vs James"
+    expect(page).to have_content "It's currently James's turn"
   end
 end
 
@@ -32,16 +32,16 @@ feature 'Second name selects an option' do
   end
 
   scenario 'selects paper and is shown confirmation page' do
-    find_button('paper').click
     find_button('rock').click
-    expect(page).to have_content "Caitlin's move was paper"
-    expect(page).to have_content "James's move was rock"
+    find_button('paper').click
+    expect(page).to have_content "Caitlin's move was rock"
+    expect(page).to have_content "James's move was paper"
   end
 
   scenario 'selects scissors and is shown confirmation page' do
-    find_button('scissors').click
     find_button('rock').click
-    expect(page).to have_content "Caitlin's move was scissors"
-    expect(page).to have_content "James's move was rock"
+    find_button('scissors').click
+    expect(page).to have_content "Caitlin's move was rock"
+    expect(page).to have_content "James's move was scissors"
   end
 end

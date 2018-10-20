@@ -12,46 +12,46 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  post '/twoplayer' do
-    erb(:twoplayer)
+  post '/two_player' do
+    erb(:two_player)
   end
 
-  post '/oneplayer' do
-    erb(:oneplayer)
+  post '/one_player' do
+    erb(:one_player)
   end
 
-  post '/gamenames1' do
+  post '/single_player_names' do
     session['name1'] = params[:name1]
     @name1 = session['name1']
     computer = Computer.create(['rock', 'paper', 'scissors'])
     @name2 = computer.name2
     @players = Players.create(@name1, @name2)
     @players.move2 = computer.move2
-    redirect '/game1'
+    redirect '/single_player_game'
   end
 
-  get '/game1' do
+  get '/single_player_game' do
     @players = Players.instance
     @name1 = @players.name1
     @name2 = @players.name2
     @players.move1 = params["move1"]
-    erb(:game1)
+    erb(:single_player_game)
   end
 
-  post '/gamenames' do
+  post '/multiplayer_names' do
     session['name1'] = params[:name1]
     session['name2'] = params[:name2]
     @name1 = session['name1']
     @name2 = session['name2']
     @players = Players.create(@name1, @name2)
-    redirect '/game'
+    redirect '/multiplayer_game'
   end
 
-  get '/game' do
+  get '/multiplayer_game' do
     @players = Players.instance
     @name1 = @players.name1
     @name2 = @players.name2
-    erb(:game)
+    erb(:multiplayer_game)
   end
 
   post '/game2names' do
@@ -64,7 +64,7 @@ class RPS < Sinatra::Base
     @players = Players.instance
     @name1 = @players.name1
     @name2 = @players.name2
-    erb(:game2)
+    erb(:multiplayer_game2)
   end
 
   post '/game/determine' do
@@ -75,10 +75,10 @@ class RPS < Sinatra::Base
     @players.move1 = params["move1"] if @players.move1.nil?
     @players.move2 = params["move2"] if @players.move2.nil?
     @move2 = @players.move2
-    redirect '/game/move'
+    redirect '/game/result'
   end
 
-  get '/game/move' do
+  get '/game/result' do
     @players = Players.instance
     @name1 = @players.name1
     @name2 = @players.name2
@@ -86,7 +86,7 @@ class RPS < Sinatra::Base
     @move2 = @players.move2
     @winner = Winner.new(@players)
     @determine_winner = @winner.determine
-    erb(:win_or_lose)
+    erb(:result)
   end
 
   run! if app_file == $0
