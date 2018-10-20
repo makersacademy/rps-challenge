@@ -1,0 +1,14 @@
+<div style="text-align:center; font-size:30px; font-family: Arial">
+
+<%= @game.player_1.name %> chose <%= @game.player_1.shape %>
+<br>
+</br>
+<%= @game.player_2.name %> chose <%= @game.player_2.shape %>
+<br>
+</br>
+<% if @game.result == "draw" %>
+  It's a draw!
+<% else %>
+  <%= @game.result.name %> wins!
+<% end %>
+</div>

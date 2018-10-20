@@ -1,9 +1,14 @@
 class Game
 
-  attr_reader :player
+  RULES = [["Rock", "Scissors"],
+          ["Scissors", "Paper"],
+          ["Paper", "Rock"]]
 
-  def initialize(player)
-    @player = player
+  attr_reader :player_1, :player_2
+
+  def initialize(player_1, player_2 = Computer.new)
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
   def self.create(player)
@@ -14,12 +19,19 @@ class Game
     @game
   end
 
-  def player_wins
-
+  def result
+    winner(@player_1, @player_2)
   end
 
-  def player_looses
+  private
 
+  def winner(player_1, player_2)
+    if RULES.include?([player_1.shape, player_2.shape])
+      player_1
+    elsif RULES.include?([player_2.shape, player_1.shape])
+      player_2
+    else
+      "draw"
+    end
   end
-
 end

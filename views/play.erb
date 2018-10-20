@@ -1,19 +1,12 @@
-<h1 style="text-align:center; font-size:45px; font-family: Arial"> <%= @game.player.name %> vs. Bot</h1>
-<h2 style="text-align:center; font-size:35px; font-family: Arial">Hello <%= @game.player.name %>!</h2>
+<h1 style="text-align:center; font-size:45px; font-family: Arial"> <%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+<h2 style="text-align:center; font-size:35px; font-family: Arial">Hello <%= @game.player_1.name %>!</h2>
 
 <div style="text-align:center; font-size:30px; font-family: Arial">
-Select your move ...
+Choose your shape ...
 </div>
 
-<form style="text-align:center; font-size:15px; font-family: Arial" action="/move" method="post">
-  <input type="submit" value="Rock">
+<form style="text-align:center; font-size:15px; font-family: Arial" action="/shape" method="post">
+  <input type="submit" name="shape" value="Rock">
+  <input type="submit" name="shape" value="Paper">
+  <input type="submit" name="shape" value="Scissors">
 </form>
-</div>
-<form style="text-align:center; font-size:15px; font-family: Arial" action="/move" method="post">
-  <input type="submit" value="Paper">
-</form>
-</div>
-<form style="text-align:center; font-size:15px; font-family: Arial" action="/move" method="post">
-  <input type="submit" value="Scissors">
-</form>
-</div>
