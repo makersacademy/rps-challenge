@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+.main-div{
+	font-family: 'Fjalla One', sans-serif;
+	max-width: 800px;
+	margin: 10px auto;
+	/* padding: 16px; */
+
+}
+
+p	{
+	font-family: 'Fjalla One', sans-serif;
+	margin-left: 1.66%;
+	font-size: 20px;
+	font-weight: 400;
+  color: white;
+	/* text-transform: uppercase; */
+	/* border-bottom: 2px solid #f1f1f1; */
+	/* width: 30%; */
+	/* padding-bottom: 20px; */
+}
+
+label	{
+	font-family: 'Fjalla One', sans-serif;
+	margin-left: 1.66%;
+	font-size: 22px;
+	font-weight: 400;
+  color: white;
+	/* text-transform: uppercase; */
+	/* border-bottom: 2px solid #f1f1f1; */
+	/* width: 30%; */
+	/* padding-bottom: 5px; */
+}
+
+h1	{
+	font-family: 'Fjalla One', sans-serif;
+  font-size: 50px;
+  color:white;
+  text-align: center;
+
+}
+
+h2	{
+	font-family: 'Fjalla One', sans-serif;
+  font-size: 35px;
+  color:white;
+  text-align: center;
+
+}
+body {
+  background-image: url("/images/abstract-art-astronomy-220071.jpg");
+  background-color: #cccccc;
+  font-family: 'Fjalla One', sans-serif;
+	margin-left: 1.66%;
+	font-size: 22px;
+	font-weight: 400;
+  color: white;
+}
+
+.welcome { grid-area: header; }
+.blank1 { grid-area: menu; }
+.gamevariant { grid-area: gamevariant; }
+.item4 { grid-area: right; }
+.who-play-against { grid-area: howmany; }
+.rps-selector { grid-area: classic2; }
+.rpsls-selector { grid-area: spock2; }
+.robot-submit { grid-area: single; }
+.human-submit { grid-area: multi; }
+.classic-title {grid-area: c-title;}
+.spock-title {grid-area: s-title;}
+.single-title {grid-area: robot-title;}
+.multi-title {grid-area: human-title;}
+
+.grid-container-index {
+  display: grid;
+  grid-template-areas:
+    'header header header header  '
+    'header header header header  '
+    'menu gamevariant gamevariant right '
+    'menu classic2 spock2 right'
+		'menu c-title s-title right'
+    'menu howmany howmany right '
+    'menu single multi right'
+		'menu robot-title human-title right';
+  grid-gap: 10px;
+  /* background-color: #2196F3; */
+  padding: 10px;
+	font-family: 'Fjalla One', sans-serif;
+	max-width: 800px;
+	margin: 10px auto;
+	/* padding: 16px; */
+}
+.grid-container-index > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  padding: 10px 0;
+  /* font-size: 30px; */
+}
+
+.register-heading { grid-area: register-header; }
+.blank1 { grid-area: menu; }
+.item4 { grid-area: right; }
+.p1_name_label { grid-area: p1_name_label; text-align: center; vertical-align: center;}
+.p1_name_field { grid-area: p1_name_field; text-align: center; }
+.p2_name_label { grid-area: p2_name_label; text-align: center; vertical-align: center;}
+.p2_name_field { grid-area: p2_name_field; text-align: center; }
+.register_submit { grid-area: register_submit; text-align: center; }
+
+.grid-container-register {
+  display: grid;
+  grid-template-areas:
+    'register-header register-header register-header register-header  '
+    'menu p1_name_label p1_name_label right'
+		'menu p2_name_label p2_name_label right'
+    'menu register_submit register_submit right ';
+
+  grid-gap: 10px;
+  /* background-color: #2196F3; */
+  padding: 10px;
+	font-family: 'Fjalla One', sans-serif;
+	max-width: 800px;
+	margin: 10px auto;
+	/* padding: 16px; */
+}
+.grid-container-register > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  padding: 10px 0;
+  /* font-size: 30px; */
+}
+
+.play_header { grid-area: play_header; }
+.blank1 { grid-area: menu; }
+.play_test {grid-area: play_test;}
+.item4 { grid-area: right; }
+.play_buttons { grid-area: play_buttons; text-align: center; vertical-align: center;}
+/* .p1_name_field { grid-area: p1_name_field; text-align: center; }
+.p2_name_label { grid-area: p2_name_label; text-align: center; vertical-align: center;}
+.p2_name_field { grid-area: p2_name_field; text-align: center; } */
+/* .register_submit { grid-area: register_submit; text-align: center; } */
+
+.grid-container-play {
+  display: grid;
+  grid-template-areas:
+    'play_header play_header play_header play_header'
+		'play_buttons play_buttons play_buttons play_buttons'
+		'play_test play_test play_test play_test' ;
+
+
+  grid-gap: 10px;
+  /* background-color: #2196F3; */
+  padding: 10px;
+	font-family: 'Fjalla One', sans-serif;
+	max-width: 800px;
+	margin: 10px auto;
+	/* padding: 16px; */
+}
+.grid-container-play > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  padding: 10px 0;
+  /* font-size: 30px; */
+}
+
+/* .result-heading { grid-area: result-header; text-align: center; }
+.blank1 { grid-area: menu; }
+.item4 { grid-area: right; }
+.P1-result { grid-area: P1-result; text-align: center; }
+.P2-result { grid-area: P2-result; text-align: center; } */
+
+/* .p2_name_label { grid-area: p2_name_label; text-align: center; vertical-align: center;}
+.p2_name_field { grid-area: p2_name_field; text-align: center; } */
+/* .register_submit { grid-area: register_submit; text-align: center; } */
+
+.item1 { grid-area: header; text-align: center; }
+.blank1 { grid-area: blank1; text-align: center; }
+.item3 { grid-area: item3; text-align: center; }
+.item4 { grid-area: item4; text-align: center; }
+.item5 { grid-area: item5; text-align: center; }
+
+.grid-container-result {
+  display: grid;
+  grid-template-areas:
+    'header header header header'
+   	'item3 item3 item5 item5'
+    'item4 item4 item4 item4';
+		text-align: center;
+		grid-gap: 10px;
+	  /* background-color: #2196F3; */
+	  padding: 10px;
+		font-family: 'Fjalla One', sans-serif;
+		max-width: 800px;
+		margin: 10px auto;
+}
+.grid-container-result > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.grid-container-play > .play_header {
+height: 200px;
+}
+
+.grid-container-index > .welcome {
+height: 60px;
+}
+
+.grid-container-index > .gamevariant {
+height: 60px;
+}
+
+.grid-container-index > .classic-title {
+height: 20px;
+}
+.grid-container-index > .spock-title {
+height: 20px;
+}
+
+.grid-container-index > .single-title {
+height: 20px;
+}
+.grid-container-index > .multi-title {
+height: 20px;
+}
+.grid-container-index > .who-play-against {
+height: 60px;
+}
+
+.grid-container-index > .rps-selector {
+height: 100px;
+}
+
+.grid-container-index > .rpsls-selector {
+height: 100px;
+}
+
+.grid-container-index input[type=radio]{
+    display:none
+}
+
+.grid-container-index input[type=radio]{
+    display:none
+}
+
+/* label[for="spock1"]
+{
+    display:none;
+}
+
+label[for="classic1"]
+{
+    display:none;
+} */
+
+grid-container-index input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.grid-container-index-2 input{
+    position:absolute;
+    z-index:999;
+}
+
+grid-container-register input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.grid-container-register-2 input{
+    position:absolute;
+    z-index:999;
+}
+
+.classic{
+  background: url(/images/spritesheet_trans6.png) -150px -5px;
+  display:inline-block;
+  width: 135px;
+  height: 110px;
+}
+.spock{
+  background: url(/images/spritesheet_trans6.png) -5px -5px;
+  display:inline-block;
+  width: 135px;
+  height: 110px;
+}
+
+.grid-container-index-2 input:active +.drinkcard-cc, .grid-container-index input:active +.drinkcard-cc{opacity: .9;}
+.grid-container-index-2 input:checked +.drinkcard-cc, .grid-container-index input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    /* background-size:contain; */
+    background-repeat:no-repeat;
+    display:inline-block;
+    width: 135px;
+    height: 110px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+/* Extras */
+a:visited{color:#888}
+a{color:#444;text-decoration:none;}
+p{margin-bottom:.3em;}
+* { font-family:monospace; }
+.grid-container-index-2 input{ margin: 5px 0 0 12px; }
+.grid-container-index-2 label{ margin-left: 7px; }
+span.cc{ color:#6d84b4 }
+
+
+
+
+.radios .spock{
+    background: url(/images/spritesheet_trans6.png) -5px -5px;
+    display:inline-block;
+    width: 135px;
+    height: 110px;
+}
+.radios .spock input[type="radio"]:checked {
+  background: url(/images/spritesheet_trans6.png) -730px -5px;
+  display:inline-block;
+  width: 135px;
+  height: 110px;
+}
+
+.radios .classic{
+  background: url(/images/spritesheet_trans6.png) -150px -5px;
+  display:inline-block;
+  width: 135px;
+  height: 110px;
+}
+
+.radios .classic input[type="radio"]:checked {
+  background: url(/images/spritesheet_trans6.png) -585px -5px;
+  display:inline-block;
+  width: 135px;
+  height: 110px;
+}
+
+.radios input[type=radio]{
+    display:none
+}
+
+
+
+/* .radios input[type=radio]:checked + .radio{
+    background-color:#241009
+} */
+
+.rpsls {
+  cursor: pointer;
+    width: 135px;
+    height: 110px;
+    border-style: none;
+    background: url(/images/spritesheet_trans6.png) -5px -5px;
+}
+
+.rps {
+  cursor: pointer;
+    width: 135px;
+    height: 110px;
+    border-style: none;
+    background: url(/images/spritesheet_trans6.png) -150px -5px;
+}
+
+.robot {
+  cursor: pointer;
+    width: 135px;
+    height: 110px;
+    border-style: none;
+    background: url(/images/spritesheet_trans6.png) -295px -5px;
+}
+
+.human {
+  cursor: pointer;
+    width: 135px;
+    height: 110px;
+    border-style: none;
+    background: url(/images/spritesheet_trans6.png) -440px -5px;
+}
+
+  .rock_btn {
+    cursor: pointer;
+      width: 135px;
+      height: 110px;
+      border-style: none;
+      background: url(/images/spritesheet_trans6.png) -875px -5px;
+  }
+
+  .paper_btn {
+    cursor: pointer;
+      width: 135px;
+      height: 110px;
+      border-style: none;
+      background: url(/images/spritesheet_trans6.png) -1020px -5px;
+  }
+
+  .scissors_btn {
+    cursor: pointer;
+      width: 135px;
+      height: 110px;
+      border-style: none;
+      background: url(/images/spritesheet_trans6.png) -1165px -5px;
+  }
+
+  .lizard_btn {cursor: pointer;
+      width: 135px;
+      height: 110px;
+      border-style: none;
+      background: url(/images/spritesheet_trans6.png) -1310px -5px;
+  }
+
+  .spock_btn {cursor: pointer;
+      width: 135px;
+      height: 110px;
+      border-style: none;
+      background: url(/images/spritesheet_trans6.png) -1455px -5px;
+  }
+
+	.play_btn {cursor: pointer;
+			width: 135px;
+			height: 110px;
+			border-style: none;
+			background: url(/images/spritesheet_trans6.png) -1575px -1px;
+	}
+
+  /*  */

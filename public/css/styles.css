@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One');
 
-/* .main-div{
+.main-div{
 	font-family: 'Fjalla One', sans-serif;
 	max-width: 800px;
 	margin: 10px auto;
 	padding: 16px;
 
-} */
+}
 
 p	{
 	font-family: 'Fjalla One', sans-serif;
@@ -15,9 +15,9 @@ p	{
 	font-weight: 400;
   color: white;
 	/* text-transform: uppercase; */
-	border-bottom: 2px solid #f1f1f1;
-	width: 30%;
-	padding-bottom: 20px;
+	/* border-bottom: 2px solid #f1f1f1; */
+	/* width: 30%; */
+	/* padding-bottom: 20px; */
 }
 
 label	{
@@ -36,11 +36,48 @@ h1	{
 	font-family: 'Fjalla One', sans-serif;
   font-size: 50px;
   color:white;
+  text-align: center;
 
 }
 body {
   background-image: url("/images/abstract-art-astronomy-220071.jpg");
   background-color: #cccccc;
+  font-family: 'Fjalla One', sans-serif;
+	margin-left: 1.66%;
+	font-size: 22px;
+	font-weight: 400;
+  color: white;
+}
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: gamevariant; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+.item6 { grid-area: howmany; }
+.item7 { grid-area: classic2; }
+.item8 { grid-area: spock2; }
+.item9 { grid-area: single; }
+.item10 { grid-area: multi; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header  '
+    'header header header header  '
+    'menu gamevariant gamevariant right '
+    'menu classic2 spock2 right'
+    'menu howmany howmany right '
+    'menu single multi right';
+  grid-gap: 10px;
+  /* background-color: #2196F3; */
+  padding: 10px;
+}
+.grid-container > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
 }
 
 .cc-selector input[type=radio]{
@@ -285,3 +322,93 @@ span.cc{ color:#6d84b4 } */ */
       border-style: none;
       background: url(/images/spritesheet_trans5.png) -1455px -5px;
   }
+
+  /*  */
+  .grid-container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 150px 400px 400px 150px;
+    grid-template-rows: 100px 100px 250px 100px 250px;
+    grid-gap: 1px 1px;
+    grid-template-areas: "welcome welcome welcome welcome" ". gamevariant-title gamevariant-title ." ". rps rpsls ." ". gametype-title gametype-title ." ". single multi .";
+  }
+
+  .welcome {
+    display: grid;
+    grid-area: welcome;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    grid-gap: 1px 1px;
+    grid-template-areas: ".";
+    text-align: center;
+  }
+
+  .gamevariant-title {
+    display: grid;
+    grid-area: gamevariant-title;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 1px 1px;
+    grid-template-areas: ".";
+  }
+
+  .rps {
+    display: grid;
+    grid-area: rps;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1px 1px;
+    grid-template-areas: "." "rps-btn";
+  }
+
+  .rps-btn { grid-area: rps-btn; }
+
+  .rps-title { grid-area: 1 / 1 / 2 / 3; }
+
+  .rpsls {
+    display: grid;
+    grid-area: rpsls;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1px 1px;
+    grid-template-areas: "." ".";
+  }
+
+  .rpsls-title { grid-area: 1 / 1 / 2 / 3; }
+
+  .rpsls-btn { grid-area: 2 / 1 / 3 / 3; }
+
+  .gametype-title {
+    display: grid;
+    grid-area: gametype-title;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 1px 1px;
+    grid-template-areas: ".";
+  }
+
+  .single {
+    display: grid;
+    grid-area: single;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1px 1px;
+    grid-template-areas: "." ".";
+  }
+
+  .single-btn { grid-area: 1 / 1 / 2 / 3; }
+
+  .single-title { grid-area: 2 / 1 / 3 / 3; }
+
+  .multi {
+    display: grid;
+    grid-area: multi;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1px 1px;
+    grid-template-areas: "." ".";
+  }
+
+  .multi-btn { grid-area: 1 / 1 / 2 / 3; }
+
+  .multi-title { grid-area: 2 / 1 / 3 / 3; }

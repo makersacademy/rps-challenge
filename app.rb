@@ -47,11 +47,16 @@ class RPS < Sinatra::Base
       @game.update_choice(roundchoice, @game.player2)
     end
     if @game.gametype == "Multiplayer" && round == "1"
-      erb :play2
+      redirect '/next_round'
+
     else
       @game.update_choice(roundchoice, @game.player2)
       redirect '/result'
     end
+  end
+
+  get '/next_round' do
+    erb :play2
   end
 
   get '/result' do

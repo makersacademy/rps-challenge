@@ -2,15 +2,25 @@
 <html>
 <head>
 <!-- <link rel=”stylesheet” type=”text/css” href=”/styles.css” /> -->
-<link rel="stylesheet" href="/css/styles.css"/>
+<link rel="stylesheet" href="/css/style.css"/>
 
 </head>
-<body><p><%=@game.player1.name%> played <%=@game.player1.choice%></p>
-<p><%=@game.player2.name%> played <%=@game.player2.choice%></p>
+<body>
 
+  <div class="grid-container-result">
+    <div class="item1"><h1>... and the winner is ...</h1></div>
+    <div class="item3"><p><%=@game.player1.name%> played <%=@game.player1.choice%></p></div>
+    <div class="item5"><p><%=@game.player2.name%> played <%=@game.player2.choice%></p></div>
+    <div class="item4">
 <%if @game.win_logic == "draw"%>
-Draw - <a href="/">play again?</a>
+<p>It's a draw</a></p>
 <%else%>
 <p><%=@game.win_logic.name%> wins</p>
+
 <%end%>
+<p><a href="/">play again?</a></p>
+</div>
+<div class="blank1"></div>
+<div class="item4"></div>
+</div>
 </body></html>

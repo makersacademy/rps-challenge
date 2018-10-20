@@ -33,7 +33,7 @@ feature 'Feature - Play Rock Paper Scissors - single player' do
     register_for_singleplayer_and_play
     click_button 'Paper'
     # expect(page).to have_content 'You are a '
-    expect(page).to have_content "Draw"
+    expect(page).to have_content "It's a draw"
   end
 
 end
@@ -54,7 +54,7 @@ feature 'Feature - Play Rock Paper Scissors - multiplayer' do
     register_for_multiplayer_and_play
     click_button 'Rock'
     click_button 'Rock'
-    expect(page).to have_content "Draw"
+    expect(page).to have_content "It's a draw"
   end
 
   scenario 'rock and paper returns player 2 wins' do
