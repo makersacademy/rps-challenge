@@ -6,5 +6,8 @@ body {
 div {
   margin: auto;
   text-align: center;
+  position: fixed;
+  top: 25%;
+  left: 25%;
   width: 50%;
 }
