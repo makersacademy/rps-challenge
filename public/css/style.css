@@ -456,4 +456,11 @@ span.cc{ color:#6d84b4 }
 			background: url(/images/spritesheet_trans6.png) -1575px -1px;
 	}
 
+	.restart_btn {cursor: pointer;
+			width: 135px;
+			height: 110px;
+			border-style: none;
+			background: url(/images/restart_edit.png);
+	}
+
   /*  */
