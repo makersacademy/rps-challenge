@@ -60,7 +60,7 @@ class RPS < Sinatra::Base
     erb(:win)
   end
 
-  post '/choose_rock' do
+  post '/p1_choose_rock' do
     @game = Game.instance
     @game.player_1.choose_rock
     @game.player_2.choose_random if @game.player_2.name == "Computer"
@@ -73,12 +73,12 @@ class RPS < Sinatra::Base
   post '/p2_choose_rock' do
     @game = Game.instance
     @game.player_2.choose_rock
-    redirect to '/lose' if @game.player_1.move == "Scissors"
-    redirect to '/draw' if @game.player_1.move == "Rock"
-    redirect to '/win' if @game.player_1.move == "Paper"
+    redirect to '/lose' if @game.player_1.chose_scissors?
+    redirect to '/draw' if @game.player_1.chose_rock?
+    redirect to '/win' if @game.player_1.chose_paper?
   end
 
-  post '/choose_paper' do
+  post '/p1_choose_paper' do
     @game = Game.instance
     @game.player_1.choose_paper
     @game.player_2.choose_random if @game.player_2.name == "Computer"
@@ -91,12 +91,12 @@ class RPS < Sinatra::Base
   post '/p2_choose_paper' do
     @game = Game.instance
     @game.player_2.choose_paper
-    redirect to '/lose' if @game.player_1.move == "Rock"
-    redirect to '/draw' if @game.player_1.move == "Paper"
-    redirect to '/win' if @game.player_1.move == "Scissors"
+    redirect to '/lose' if @game.player_1.chose_rock?
+    redirect to '/draw' if @game.player_1.chose_paper?
+    redirect to '/win' if @game.player_1.chose_scissors?
   end
 
-  post '/choose_scissors' do
+  post '/p1_choose_scissors' do
     @game = Game.instance
     @game.player_1.choose_scissors
     @game.player_2.choose_random if @game.player_2.name == "Computer"
@@ -109,9 +109,9 @@ class RPS < Sinatra::Base
   post '/p2_choose_scissors' do
     @game = Game.instance
     @game.player_2.choose_scissors
-    redirect to '/lose' if @game.player_1.move == "Paper"
-    redirect to '/draw' if @game.player_1.move == "Scissors"
-    redirect to '/win' if @game.player_1.move == "Rock"
+    redirect to '/lose' if @game.player_1.chose_paper?
+    redirect to '/draw' if @game.player_1.chose_scissors?
+    redirect to '/win' if @game.player_1.chose_rock?
   end
 
   run! if app_file == $0
