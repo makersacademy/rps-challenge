@@ -51,4 +51,14 @@ feature "Multiplayer game" do
     expect(page).to have_content "It's a Scissors draw!"
   end
 
+  scenario "Rock draw" do
+    start_game(player_1_name: "Edyta", player_2_name: "Caio")
+
+    choose_rock
+    choose_rock
+
+    expect(page).to have_content "It's a Rock draw!"
+  end
+
+
 end

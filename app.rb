@@ -41,6 +41,7 @@ class RPSapp < Sinatra::Base
     @player_2_move = params[:current_player_move]
 
     if @player_1_move == @player_2_move
+      @draw_move = @player_1_move
       erb :draw
 
     elsif @player_1_move == "Rock" && @player_2_move == "Paper"
