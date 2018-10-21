@@ -20,11 +20,11 @@ class Game
 
   def result(player1, player2)
     if WINS.include? [player1, player2]
-      "win"
+      "#{@player1.name} wins!"
     elsif player1 == player2
-      "draw"
+      "It's a hard earned draw."
     else
-      "lose"
+      "#{@player1.name} loses!"
     end
   end
 end

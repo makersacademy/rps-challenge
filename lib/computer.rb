@@ -11,9 +11,7 @@ class Computer
     ['Edward', 'Balboa', 'Cutter'].sample
   end
 
-  def choice
-    @choice
-  end
+  attr_reader :choice
 
   def pick
     @choice = Game::MOVES.sample

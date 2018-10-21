@@ -12,13 +12,13 @@ describe Game do
   end
   context '#result' do
     it 'rock beats scissors' do
-      expect(game.result(player1.choice, player3.choice)).to eq "win"
+      expect(game.result(player1.choice, player3.choice)).to eq "John wins!"
     end
     it 'paper beats rock' do
-      expect(game.result(player1.choice, player1.choice)).to eq "draw"
+      expect(game.result(player1.choice, player1.choice)).to eq "It's a hard earned draw."
     end
     it 'scissors beats paper' do
-      expect(game.result(player1.choice, player2.choice)).to eq "lose"
+      expect(game.result(player1.choice, player2.choice)).to eq "John loses!"
     end
   end
 end

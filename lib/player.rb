@@ -4,7 +4,6 @@ class Player
 
   def initialize(name)
     @name = name
-    @choice
   end
 
   attr_reader :name

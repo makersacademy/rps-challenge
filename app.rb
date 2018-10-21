@@ -25,6 +25,7 @@ class Rps < Sinatra::Base
   end
 
   post '/choice' do
+    @game.player2.pick
     @game.player1.choose = params[:move]
     @game.result(@game.player1.choice, @game.player2.choice)
     redirect('play')
