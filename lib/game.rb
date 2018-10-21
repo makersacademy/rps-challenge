@@ -31,4 +31,8 @@ class Game
     string = "#{@winner.choice.name}_#{@loser.choice.name}"
     @rules.rules[string.to_sym]
   end
+
+  def tie_text 
+    TIE
+  end
 end

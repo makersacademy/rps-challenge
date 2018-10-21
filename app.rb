@@ -36,16 +36,6 @@ class RockPaperScissors < Sinatra::Base
     @game = session[:game]
     @game.player1.make_choice(@game.choices, choice_string: choice)
     @game.player2.make_choice(@game.choices)
-    redirect '/match'
-  end
-
-  get '/match' do
-    @game = session[:game]
-    erb :match
-  end
-
-  post '/game-over' do
-    @game = session[:game]
     @game.game_over
     redirect '/game-over'
   end

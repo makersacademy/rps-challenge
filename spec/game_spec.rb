@@ -102,5 +102,11 @@ describe Game do
         subject.winner_text
       end
     end
+
+    describe '#tie_text' do
+      it 'returns the tie text' do
+        expect(subject.tie_text).to eq Game::TIE
+      end
+    end
   end
 end

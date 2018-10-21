@@ -1,10 +1,9 @@
-feature 'Playing game' do
+feature 'Playing the game' do
 
   scenario 'have a winner' do
     sign_in
     allow(Kernel).to receive(:rand).and_return(2)
     click_button 'rock'
-    click_button 'FIGHT!'
     expect(page).to have_content "The winner is... \nVin Diesel!"
   end
 
@@ -12,8 +11,14 @@ feature 'Playing game' do
     sign_in
     allow(Kernel).to receive(:rand).and_return(2)
     click_button 'rock'
-    click_button 'FIGHT!'
     expect(page).to have_content "(and as it always has) Rock crushes Scissors"
+  end
+
+  scenario 'tie' do
+    sign_in
+    allow(Kernel).to receive(:rand).and_return(0)
+    click_button 'rock'
+    expect(page).to have_content "It's a tie!"
   end
 
 end

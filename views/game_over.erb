@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
   <body>
+   <div>
+      <%= @game.player1.name%> vs. <%= @game.player2.name%>
+    </div>
+    <div>
+    <img src="<%= @game.player1.choice.img %>"> vs.<img src="<%= @game.player2.choice.img %>">
+    </div>
     <% if @game.tie? %>
-    <h2> It's a tie! </h2 >
+    <h2> <%= @game.tie_text %> </h2 >
     <% else %>
     <h2> <%= @game.winner_text %> </h2>
     <h2> The winner is...</h2>
