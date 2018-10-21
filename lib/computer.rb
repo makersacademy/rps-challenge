@@ -1,5 +1,5 @@
 class Computer
   def choice
-    ["rock", "paper", "scissors"].sample
+    ["Rock", "Paper", "Scissors"].sample
   end
 end

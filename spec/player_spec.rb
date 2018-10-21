@@ -1,11 +1,12 @@
 require 'player'
 
 describe Player do
-  let(:player) { described_class.new(player_name, player_choice) }
-  let(:player_name) {double :player_name}
-  let(:player_choice) {double :player_choice}
+  subject(:chloe) { described_class.new('Chloe') }
 
-  it "retains player's choice" do
-   expect(player.choice).to eq(player_choice)
- end
+  describe '#name' do
+    it 'should return the player\'s name' do
+      expect(chloe.player_name).to eq 'Chloe'
+    end
+  end
+
 end
