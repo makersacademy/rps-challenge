@@ -30,7 +30,9 @@ class Rps < Sinatra::Base
   end
 
   post '/play' do
-    @game.play(params[:choice], @game.computer_selection)
+    @player_choice = params[:choice]
+    @computer_choice = @game.computer_selection
+    @game.play(@player_choice, @computer_choice)
     redirect '/game_over' if @game.end_of_game
     redirect '/play'
   end

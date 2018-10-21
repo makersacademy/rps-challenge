@@ -12,7 +12,7 @@ class Game
 
   RULES = RPSRules::RULES
 
-  attr_reader :player_one, :player_two
+  attr_reader :player_one, :player_two, :player_choice, :computer_choice
 
   def initialize(player_one, player_two = Player.new("Bot"))
     @player_one, @player_two = player_one, player_two
@@ -42,6 +42,11 @@ class Game
 
   def end_of_game
     true if @player_one.dead? || @player_two.dead?
+  end
+
+  def winner
+    @player_one if @player_two.dead?
+    @player_two if @player_one.dead?
   end
 
   private

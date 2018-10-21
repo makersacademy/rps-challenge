@@ -25,6 +25,12 @@
   height: 20%;
 }
 
+.header_two {
+  background-color: lightblue;
+  border: solid black;
+  height: 10%;
+}
+
 .container {
     position: relative;
     text-align: center;

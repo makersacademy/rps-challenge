@@ -1,0 +1,20 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body background="https://1.fwcdn.pl/an/np/867323/2018/14502_1.7.jpg" height='100%' width="100%" margin='0'>
+
+<center>
+  <h1 class='header_two'>
+    <% if @game.winner == @game.player_one %>
+    <%= @game.player_one.name %> defeated <%= @game.player_two.name %>
+    <% else %>
+    <%= @game.player_two.name %> defeated <%= @game.player_one.name %>
+    <% end %>
+    <form action='/'>
+      &emsp;
+      <button type='submit'> Play Again? </button>
+    </form>
+  </h1>
+</center>

@@ -23,6 +23,23 @@
   <div class="bottom-right"> HP: <%= @game.player_two.hp %> </div>
 </div>
 
+  <div>
+    <% if "Rock" == @player_choice %>
+    <img src='https://cdn4.vectorstock.com/i/1000x1000/17/73/punching-fist-hand-vector-10801773.jpg' height='100px' width='100px'>
+    <% elsif @player_choice == "Paper" %>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/5/58/Shuto.png' >
+    <% elsif @player_choice == "Scissors" %>
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD74tD-AsevPmG1F8-I0cZHeQWuo3O_PePJq-L75YrTNdhEuR5' >
+    <% elsif @player_choice == "Lizard" %>
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZMiUoiGAznH9x6lBBCEwpDZehF5DzS5MNhBDjFSU04ZDF1DIBiQ' >
+    <% elsif @player_choice == "Spock" %>
+    <img src='https://i.pinimg.com/originals/ef/72/ee/ef72eea802c63ecab6f40b5d051276ab.png' >
+    <% else %>
+    <% end %>
+  </div>
+
+
+
 
 <center>
   <form action = "/play" method = "post">
