@@ -4,7 +4,7 @@ feature 'play' do
   scenario 'user sees a greeting' do
     sign_in_and_play
     expect(page).to have_content("You'll be playing against the computer.")
-    expect(page).to have_content("Hope you brought your A game.")
+    expect(page).to have_content("Hope you brought your A game")
     expect(page).to have_content("Choose one:")
   end
 

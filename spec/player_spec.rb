@@ -1,14 +1,14 @@
-require 'user'
+require 'player'
 
-describe User do
+describe Player do
 
   it 'has a name' do
-    user = User.new("Irina")
-    expect(user.player_name).to eq("Irina")
+    user = Player.new("Irina")
+    expect(user.name).to eq("Irina")
   end
 
   it 'can make a choice' do
-    user = User.new("Irina")
+    user = Player.new("Irina")
     user.make_a_choice("Paper")
     expect(user.choice).to eq("Paper")
   end

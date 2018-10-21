@@ -1,9 +1,9 @@
-class User
+class Player
 
-  attr_reader :player_name, :choice
+  attr_reader :name, :choice
 
   def initialize(name)
-    @player_name = name
+    @name = name
   end
 
   def make_a_choice(choice)

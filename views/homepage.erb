@@ -1,8 +1,21 @@
-<div>Let's play</div>
-<div>
-  <form action="/name" method="post">
+<style>
+.rock-paper-scissors {
+  padding: 20px;
+  text-align: center;
+}
+.player-name-form {
+  padding: 50px;
+}
+</style>
+<body style="background-color:#8cd9af">
+<h1 style="font-family:Courier" align='center'>Let's play</h1>
+<div class="rock-paper-scissors">
+  <div class="grid-item"><img src=/images/rps.jpg></div>
+</div>
+<div class="player-name-form">
+  <form style="font-family:Courier" align='center' action="/name" method="post">
     Enter your name:<br>
     <input type='text' name='player_name'<br>
-    <input type='submit' value='Start the game!'>
+    <input style="font-family:Courier" type='submit' value='Start the game!'>
   </form>
 </div>

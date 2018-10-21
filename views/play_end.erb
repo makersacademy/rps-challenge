@@ -1,5 +1,13 @@
-<div>You chose: <%= @user_choice %></div>
-<div>Computer chose: <%= @computer_choice %></div>
-<form action='/play_start' method="get">
+<body style="background-color:powderblue;">
+<div style="font-family:Courier" align='center'>You chose: <%= @user_choice %></div>
+<div style="font-family:Courier" align='center'>Computer chose: <%= @computer_choice %></div>
+<% if @result == "Win"%>
+<div style="font-family:Courier" align='center'>"Congratulations, you WON!"</div>
+<% elsif @result == "Draw"%>
+<div style="font-family:Courier" align='center'>"Great minds thing alike - you drew."</div>
+<% else %>
+<div style="font-family:Courier" align='center'>"Oh oh, you LOST!"</div>
+<% end %>
+<form align='center' action='/play_start' method="get">
   <button type="play again">Play again</button>
 </form>

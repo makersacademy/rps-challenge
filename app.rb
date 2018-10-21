@@ -1,5 +1,5 @@
 require_relative './lib/game'
-require_relative './lib/user'
+require_relative './lib/player'
 require_relative './lib/computer'
 require 'sinatra/base'
 require 'pry'
@@ -10,39 +10,37 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @player = User.new(params[:player_name])
-    @game = Game.create(@player)
+    @game = Game.create(params[:player_name])
     redirect '/play_start'
   end
 
-  get '/play_start' do
+  before do
     @game = Game.instance
+  end
+
+  get '/play_start' do
     @player_name = @game.player_name
     erb(:play_start)
   end
 
   post '/rock' do
-    @game = Game.instance
-    @game.user_chooses('Rock')
+    @game.player_chooses('Rock')
     redirect '/play_end'
   end
 
   post '/paper' do
-    @game = Game.instance
-    @game.user_chooses('Paper')
+    @game.player_chooses('Paper')
     redirect '/play_end'
   end
 
   post '/scissors' do
-    @game = Game.instance
-    @game.user_chooses('Scissors')
+    @game.player_chooses('Scissors')
     redirect '/play_end'
   end
 
   get '/play_end' do
-    @game = Game.instance
-    @user_choice = @game.user_choice
-    @computer_choice = @game.computer_chooses
+    @user_choice = @game.player_choice
+    @computer_choice = @game.computer_choice
     @game.score_game
     @result = @game.result
     erb(:play_end)
