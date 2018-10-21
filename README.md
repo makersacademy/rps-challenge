@@ -14,7 +14,7 @@ Original instructions are [here](../master/Instruction_README.md).
 - Lizard, Spock choices
 - ChoiceReader - read the choices from a JSON file ( rock, paper, scissors, lizard, spock). In my app it is automatically get created, and loaded in the game.
 - RulesFactory - read a JSON file with the rules. Also automatically get called in my app.
-- I would like to make the multiplayer version later on, and beautify my views.
+- I would like to make the multiplayer version later on, and beautify my views with CSS.
 
 ## Run
 
