@@ -1,11 +1,9 @@
 <%= erb :game_header %>
+<br><br><br>
 <div>
-  <h3><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h3>
-</div>
-<div>
-  <h4><%= @game.player_1.name %> chose <%= @game.player_1.weapon %>.<br>
-  <%= @game.player_2.name %> chose <%= @game.player_2.weapon %>.<br>
-  ...</h4><br>
+  <h3><%= @game.player_1.name %> chose <%= @game.player_1.weapon %>.</h3>
+  <h2 class="ellipsis"><i>...</i></h2>
+  <h3><%= @game.player_2.name %> chose <%= @game.player_2.weapon %>!<br></h3><br>
 </div>
 <div>
   <h2><i><%= @winner %></i></h2>

@@ -25,7 +25,7 @@ feature "displaying correct result" do
   scenario "should confirm other player's choice on results page" do
     allow_any_instance_of(Array).to receive(:sample).and_return :rock
     click_button "ROCK"
-    expect(page).to have_content "RPSbot chose rock."
+    expect(page).to have_content "RPSbot chose rock!"
   end
 
   scenario "displays correct result when computer chooses rock" do
