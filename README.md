@@ -26,7 +26,7 @@ I decided to fully format my project using CSS, which was optional. RSpec and Ca
 
 ### How to play
 
-Currently this app can only be run locally using ruby. Type `ruby app.rb` in bash inside the project directory to execute the app, then visit `http://localhost:4567/` to play. After choosing single player or multiplayer, enter your name(s) and press the play button to begin!
+Currently this app can only be run locally using ruby. Type `ruby app.rb` in bash inside the project directory to execute the app, then visit `http://localhost:4567/` to play. After choosing single player or multiplayer, enter your name(s) and press the play button to begin! After winning or losing, you can choose to start over by clicking the 'play again' button. The RPS text at the top will also take you back to the home screen.
 
 
 :)
