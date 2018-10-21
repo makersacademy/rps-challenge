@@ -12,6 +12,10 @@ class RPS < Sinatra::Base
     erb :index
   end
 
+  get '/new_game' do
+    erb :new_game
+  end
+
   post '/name' do
     player = Player.new(params[:name])
     @game = Game.create(player, Computer.new)
