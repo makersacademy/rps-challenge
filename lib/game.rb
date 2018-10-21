@@ -1,5 +1,13 @@
 class Game
 
+  RULES = {
+    rock: ['scissors', 'lizard'],
+    paper: ['rock', 'spock'],
+    scissors: ['paper' 'lizard'],
+    lizard: ['paper', 'spock'],
+    spock: ['rock', 'scissors']
+  }
+
   def self.create(player_1, player_2)
     @game = Game.new(player_1, player_2)
   end
@@ -18,6 +26,26 @@ class Game
 
   def player_2
     @players.last
+  end
+
+  def outcome
+    if player_1.move == ''
+      '&nbsp;'
+    elsif draw?
+      "It's a draw."
+    elsif winner?
+      "You win!"
+    else
+      "You lose!"
+    end
+  end
+
+  def draw?
+    player_1.move == player_2.move
+  end
+
+  def winner?
+    RULES[player_1.move.to_sym].include?(player_2.move)
   end
 
 end

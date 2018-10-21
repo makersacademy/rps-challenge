@@ -16,4 +16,15 @@ describe Player do
     end
   end
 
+  describe '#image' do
+    it 'returns corresponding image' do
+      player.set_move('paper')
+      expect(player.image).to eq("'/images/paper.png'")
+    end
+
+    it 'returns rock image at game start' do
+      expect(player.image).to eq("'/images/rock.png'")
+    end
+  end
+
 end

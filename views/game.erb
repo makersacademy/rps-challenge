@@ -25,6 +25,9 @@
       <div id="alert" class="row">
         <div class="col-3"></div>
           <div class="col-6 alert alert-light text-center" role="alert" >
+            <p id="result">
+              <%=@game.outcome %>
+            </p>
             Player 1 wins! Rock smashes scissors!
           </div>
         <div class="col-3"></div>
@@ -40,8 +43,10 @@
           </div>
 
           <div class="col-md">
-            <img src="http://picoplex.net/games/rpslp/rock.png" alt="Responsive image">
-            <p id="player_1_move"><%=@game.player_1.move %></p>
+            <img src=<%=@game.player_1.image %> alt="Responsive image">
+            <p id="player_1_move">
+              <%=@game.player_1.move %>
+            </p>
           </div>
 
         </div>
@@ -52,8 +57,8 @@
           </div>
 
           <div class="col-md">
-            <img src="http://picoplex.net/games/rpslp/paper.png" alt="Responsive image">
-            <p id="player_2_move">Paper</p>
+            <img src=<%=@game.player_2.image %> alt="Responsive image">
+            <p id="player_2_move"><%=@game.player_2.move %></p>
           </div>
 
         </div>
@@ -67,7 +72,7 @@
 
           <div class="col-12">
             <div class="btn-group mb-2" role="group" aria-label="Basic example">
-              <button type="submit" name="move" value="rock "class="btn btn-lg btn-outline-dark"><i class="far fa-hand-rock"></i> Rock</button>
+              <button type="submit" name="move" value="rock" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-rock"></i> Rock</button>
               <button type="submit" name="move" value="paper" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-paper"></i> Paper</button>
               <button type="submit" name="move" value="scissors" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-scissors"></i> Scissors</button>
             </div>

@@ -28,6 +28,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/make-move' do
     @game.player_1.set_move(params[:move])
+    @game.player_2.comp_choice
     redirect '/game'
   end
 
