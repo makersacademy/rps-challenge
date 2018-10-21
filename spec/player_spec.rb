@@ -41,4 +41,25 @@ describe Player do
       expect(imtiyaz.move).to be_nil
     end
   end
+
+  describe "#chose_rock?" do
+    it "should return true" do
+      imtiyaz.choose_rock
+      expect(imtiyaz.chose_rock?).to eq true
+    end
+  end
+
+  describe "#chose_paper?" do
+    it "should return true" do
+      imtiyaz.choose_paper
+      expect(imtiyaz.chose_paper?).to eq true
+    end
+  end
+
+  describe "#chose_scissors?" do
+    it "should return true" do
+      imtiyaz.choose_scissors
+      expect(imtiyaz.chose_scissors?).to eq true
+    end
+  end
 end

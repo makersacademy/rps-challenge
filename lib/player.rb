@@ -26,4 +26,16 @@ class Player
   def reset_move
     @move = nil
   end
+
+  def chose_rock?
+    @move == MOVES[0]
+  end
+
+  def chose_paper?
+    @move == MOVES[1]
+  end
+
+  def chose_scissors?
+    @move == MOVES[2]
+  end
 end
