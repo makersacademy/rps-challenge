@@ -7,7 +7,7 @@
   <form action="/move" method='post'>
     <% for weapon, matrix in @game.weapon_matrix %>
     <div class="radio">
-      <label> <input type='radio' name="weapon" value=<%= weapon %> required> <strong> <%= weapon %> </strong></label>
+      <label> <input type='radio' name="weapon" value=<%= weapon %>> <strong> <%= weapon %> </strong></label>
     </div>
     <% end %>
     <input class="btn btn-success" type="submit" value="Submit">
