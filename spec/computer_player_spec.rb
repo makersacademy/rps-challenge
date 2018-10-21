@@ -17,5 +17,4 @@ describe ComputerPlayer do
       expect(subject.name).to eq 'Computer'
     end
   end
-
 end

@@ -12,8 +12,11 @@ feature 'Choose move' do
     expect(page).to have_xpath("//img[contains(@src,'scissors.png')]")
   end
 
-  scenario 'chose a move' do
+  scenario 'chose a move and play' do
     sign_in
+    click_button 'rock'
+    expect(page).to have_xpath("//img[contains(@src,'rock.png')]")
+    expect(page).to have_content 'Vin Diesel vs. Computer'
   end
 
 end

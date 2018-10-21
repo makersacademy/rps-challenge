@@ -1,0 +1,7 @@
+<% if @game.tie? %>
+<h2> It's a tie! </h2 >
+<% else %>
+<h2> <%= @game.winner_text %> </h2>
+<h2> The winner is...</h2>
+<h2> <%= @game.winner.name %>!</h2>
+<%end%>

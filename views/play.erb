@@ -1,13 +1,12 @@
 <h2><%= @game.player1.name %>, please choose your move!</h2>
-<div>
-  <img src='./img/rock.png'/> Rock
-</div>
-<div>
-  <img src='./img/paper.png'/> Paper
-</div>
-<div>
-  <img src='./img/scissors.png'/> Scissors
-</div>
+<form action="/choice" method="post">
+<% @game.choices.each do |choice| %>
+<button type="submit" name="choice" value="<%= choice.name %>" class="btn-link">
+  <img src="<%= choice.img %>" alt="<%= choice.name %>" >
+</button>
+<% end %>
+</form>
+
 <h4>Rules</h4>
   <ul>
     <li>Rock beats Scissors</li>
