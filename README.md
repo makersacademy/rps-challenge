@@ -14,16 +14,20 @@ $ bundle
 
 ### Usage
 
-To run the server, just run the `app.rb` file...
+To run the server, just run rackup:
 
 ```shell
-$ ruby app.rb
+$ rackup
 ```
 
-You should see that the built-in Sinatra server is running on e.g. port 4567 (check the output to make sure).
+You should see that the rackup server is running on e.g. port 9292 (check the output to make sure).
 
-Then you can view the app by pointing your browser to `localhost:4567`.
+Then you can view the app by pointing your browser to `localhost:9292`.
 
 ### Screenshots
 
-![Screenshot](https://path_to_your_image)
+![Screenshot 1](./assets/screenshots/RPS_1.png)
+
+![Screenshot 2](./assets/screenshots/RPS_2.png)
+
+![Screenshot 3](./assets/screenshots/RPS_3.png)
