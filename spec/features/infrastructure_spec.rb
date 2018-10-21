@@ -1,6 +1,6 @@
 feature "Single-Player" do
   scenario 'greets user' do
-    visit ('/')
+    visit('/')
     expect(page).to have_content("Enter your name to play solo")
   end
   scenario 'submits name' do
@@ -32,7 +32,7 @@ end
 
 feature "Two-Player" do
   scenario 'greets user' do
-    visit ('/')
+    visit('/')
     expect(page).to have_content("Enter your names to battle each other!")
   end
   scenario 'submits name' do

@@ -4,6 +4,6 @@ class Player
     @move = move
   end
 
-attr_accessor :name, :move
+  attr_accessor :name, :move
 
 end

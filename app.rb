@@ -6,7 +6,6 @@ require './lib/game.rb'
 class RPS < Sinatra::Base
 
   get '/' do
-    #enter_names
     erb :index
   end
 
@@ -28,13 +27,13 @@ class RPS < Sinatra::Base
     @game = Game.instance
   end
 
-#SINGLE PLAYER STREAM
+# SINGLE PLAYER STREAM
   get '/single_player_enter_move' do
     erb :sp_enter_move
   end
 
   post '/single_player_move' do
-    @game.player1.move = (params[:choice])
+    @game.player1.move = params[:choice]
     @game.player2.move = @game.player2.random_move
     @game.evaluate(@game.player1, @game.player2)
     redirect '/single_player_outcome'
@@ -44,13 +43,13 @@ class RPS < Sinatra::Base
     erb :sp_outcome
   end
 
-#TWO PLAYER STREAM
+# TWO PLAYER STREAM
   get '/two_player_enter_move1' do
     erb :tp_enter_move1
   end
 
   post '/two_player_move1' do
-    @game.player1.move = (params[:choice])
+    @game.player1.move = params[:choice]
     redirect '/two_player_enter_move2'
   end
 
@@ -59,7 +58,7 @@ class RPS < Sinatra::Base
   end
 
   post '/two_player_move2' do
-    @game.player2.move = (params[:choice])
+    @game.player2.move = params[:choice]
     @game.evaluate(@game.player1, @game.player2)
     redirect '/two_player_outcome'
   end
@@ -69,6 +68,6 @@ class RPS < Sinatra::Base
   end
 
   # start the server if ruby file executed directly
- run! if app_file == $0
+  run! if app_file == $0
 
 end

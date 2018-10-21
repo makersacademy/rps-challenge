@@ -17,14 +17,14 @@ class Game
   attr_reader :player1, :player2, :winner
 
   def evaluate(player1, player2)
-      @winner = "No one" if player1.move == player2.move
+    @winner = "No one" if player1.move == player2.move
     if player1.move == "Rock"
       @winner = player1.name if player2.move == "Scissors"
       @winner = player2.name if player2.move == "Paper"
     elsif player1.move == "Paper"
       @winner = player1.name if player2.move == "Rock"
       @winner = player2.name if player2.move == "Scissors"
-    else player1.move == "Scissors"
+    else # player1.move == "Scissors"
       @winner = player1.name if player2.move == "Paper"
       @winner = player2.name if player2.move == "Rock"
     end
