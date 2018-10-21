@@ -7,7 +7,7 @@
 
 <center>
   <h1 class='header_two'>
-    <% if @game.winner == @game.player_one %>
+    <% if @game.player_two.dead? %>
     <%= @game.player_one.name %> defeated <%= @game.player_two.name %>
     <% else %>
     <%= @game.player_two.name %> defeated <%= @game.player_one.name %>
