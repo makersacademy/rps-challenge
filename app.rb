@@ -23,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
 
   get "/play" do
     @player_1 = User.new(session[:name])
-    @player_2 = User.new('computer', automated = true)
+    @player_2 = User.new('computer', true)
     @game = Game.new(@player_1, @player_2)
     @welcome_message = "Welcome, #{@player_1.name}!"
     selection = session[:choice]

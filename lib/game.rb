@@ -5,7 +5,6 @@ class Game
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
-    @moves = [:rock, :paper, :scissors]
     @rules = { :paper => :rock, :rock => :scissors, :scissors => :paper }
   end
 
@@ -16,7 +15,7 @@ class Game
   end
 
   def computer_selection
-    @moves.sample
+    [:rock, :paper, :scissors].sample
   end
 
   def play(p_1, p_2)
@@ -27,14 +26,18 @@ class Game
   end
 
   def winning_message(winner)
-    # binding.pry
-    return "" if @player_1_move.nil?
+    return "" if chosen?
     return "It's a draw!" if winner.nil?
     return "#{winner} won the round"
   end
 
   def choice_message
-    return ''  if @player_1_move.nil?
+    return ''  if chosen?
     "You selected #{@player_1_move}, your opponent selected #{@player_2_move}."
   end
+
+  def chosen?
+    @player_1_move.nil? || @player_2_move.nil?
+  end
+
 end

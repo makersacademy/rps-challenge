@@ -4,7 +4,7 @@ class User
 
   def initialize(name, automated = false)
     @name = name
-    @automated
+    @automated = automated
   end
 
 end

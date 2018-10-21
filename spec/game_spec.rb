@@ -2,10 +2,9 @@ require 'game'
 
 describe Game do
 
-  let(:computer) {double :computer, name: "Computer", automated: true}
-  let(:becka) {double :user, name: "Becka", automated: false }
+  let(:computer) { double :computer, name: "Computer", automated: true }
+  let(:becka) { double :user, name: "Becka", automated: false }
   let(:game) { Game.new(becka, computer) }
-
 
   it 'user selects a move' do
     game.player_selection(:rock)
