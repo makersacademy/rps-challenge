@@ -12,7 +12,7 @@ class Game
 
   RULES = RPSRules::RULES
 
-  attr_reader :player_one, :player_two, :player_choice, :computer_choice
+  attr_reader :player_one, :player_two 
 
   def initialize(player_one, player_two = Player.new("Bot"))
     @player_one, @player_two = player_one, player_two
