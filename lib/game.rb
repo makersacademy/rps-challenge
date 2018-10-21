@@ -32,7 +32,7 @@ class Game
     when "Win"
       "#{@player_1.name} wins!"
     when "Lose"
-      "#{@player_1.name} loses!"
+      "#{@player_2.name} wins!"
     when "Draw"
       "Draw!"
     end

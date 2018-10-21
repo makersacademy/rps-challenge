@@ -61,7 +61,7 @@ describe Game do
     it 'returns a lose message' do
       allow(player).to receive(:move) { :Rock }
       allow(computer).to receive(:move) { :Paper }
-      expect(subject.message).to eq "Mittens loses!"
+      expect(subject.message).to eq "Dave wins!"
     end
 
     it 'returns a draw message' do
