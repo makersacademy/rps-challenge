@@ -14,9 +14,9 @@ class RPS < Sinatra::Base
 
   post '/new_game' do
     if params[:players] == 'One Player'
-      erb :new_game
-    else
-      
+      erb :new_game_one_player
+    else params[:players] == 'Two Player'
+      erb :new_game_two_player
     end
   end
 

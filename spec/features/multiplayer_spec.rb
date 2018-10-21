@@ -3,8 +3,8 @@ feature 'Multiplayer' do
     visit '/'
     select 'One Player', from: 'players'
     click_button 'Submit'
-    fill_in 'player_1', with: "Mittens"
-    fill_in 'player_2', with: "Dave"
+    fill_in 'player_1_name', with: "Mittens"
+    fill_in 'player_2_name', with: "Dave"
     click_button 'Submit'
     expect(page).to have_content 'Mittens vs. Dave!'
     expect(page).to have_content 'Mittens, please select a move!'
