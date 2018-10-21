@@ -60,3 +60,11 @@ Don’t forget to shutdown the server with Control-C when you’re done  =P
 
 Run both feature and unit tests using:
 `rspec`
+
+## Screenshots
+
+[Screen-Shot-1.png](https://postimg.cc/ZvFLdpFj)
+
+[Screen-Shot-2.png](https://postimg.cc/vcn43bJF)
+
+[Screen-Shot-3.png](https://postimg.cc/Yv3qs98V)
