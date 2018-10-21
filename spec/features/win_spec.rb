@@ -1,5 +1,6 @@
 feature 'player wins' do
 
+let (:computer) {double :computer, choice: 'Rock'}
 let (:game) {double :game, computer_choice: 'Rock'}
 
   scenario 'Player can see they have won' do
