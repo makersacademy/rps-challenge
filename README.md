@@ -22,11 +22,12 @@ I decided to fully implement the multiplayer functionality as well as a player v
 
 The marketeer can choose from single player or multiplayer on the home screen. If single player is selected, then the marketeer's weapon choice is compared against the randomly selected RPSbot weapon. In multiplayer, the marketeers take turns choosing their weapon (and are encouraged to look away from the screen when it isn't their turn!).
 
-I decided to fully format my project using CSS, which was optional. RSpec and Capybara were used for testing.
+I decided to fully format my project using CSS, which was optional. RSpec and Capybara were used for testing, and I test drove development at every stage.
 
 ### How to play
 
-Currently this app can only be run locally using ruby. Type `ruby app.rb` in bash inside the project directory to execute the app, then visit `http://localhost:4567/` to play. Enjoy!
+Currently this app can only be run locally using ruby. Type `ruby app.rb` in bash inside the project directory to execute the app, then visit `http://localhost:4567/` to play. After choosing single player or multiplayer, enter your name(s) and press the play button to begin!
+
 
 :)
 ===========
