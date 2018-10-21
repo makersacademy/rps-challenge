@@ -2,8 +2,10 @@ require 'game'
 
 describe Game do
 
-  let(:becka) { double :user, name: "Becka" }
-  let(:game) { Game.new(becka) }
+  let(:computer) {double :computer, name: "Computer", automated: true}
+  let(:becka) {double :user, name: "Becka", automated: false }
+  let(:game) { Game.new(becka, computer) }
+
 
   it 'user selects a move' do
     game.player_selection(:rock)
@@ -23,7 +25,7 @@ describe Game do
 
     it 'paper vs scissors - scissors wins' do
       game.player_selection(:paper)
-      expect(game.play(game.player_1_move, :scissors)).to eq 'player_2'
+      expect(game.play(game.player_1_move, :scissors)).to eq 'Computer'
     end
 
     it 'has a winning message' do

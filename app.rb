@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/user'
 require 'pry'
 # require 'sinatra/reloader'
 
@@ -15,12 +16,15 @@ class RockPaperScissors < Sinatra::Base
 
   post "/name" do
     session[:name] = params[:name]
-    redirect '/play'
+    session[:player_2_name] = params[:p2_name]
+    redirect '/play' if session[:player_2_name] == ''
+    redirect '/two-player-play'
   end
 
   get "/play" do
     @player_1 = User.new(session[:name])
-    @game = Game.new(@player_1)
+    @player_2 = User.new('computer', automated = true)
+    @game = Game.new(@player_1, @player_2)
     @welcome_message = "Welcome, #{@player_1.name}!"
     selection = session[:choice]
     @winner = @game.player_selection(selection) unless selection.nil?
@@ -30,6 +34,14 @@ class RockPaperScissors < Sinatra::Base
   post "/choice" do
     session[:choice] = params[:choice].to_sym
     erb :choice
+  end
+
+  get '/two-player-play' do
+    @player_1 = User.new(session[:name])
+    @player_2 = User.new(session[:player_2_name])
+    @game = Game.new(@player_1, @player_2)
+    @welcome_message = "Welcome, #{player_1.name} and #{player_2.name}"
+    erb :two_player
   end
 
 end
