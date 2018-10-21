@@ -14,3 +14,7 @@ end
 def choose_rock
   click_button 'Rock'
 end
+
+def choose_paper
+  click_button 'Paper'
+end

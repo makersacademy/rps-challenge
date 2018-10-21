@@ -6,5 +6,7 @@
 <form action="/game" method="post">
   <input type="hidden" name="player_1_name" value="<%= @player_1_name %>">
   <input type="hidden" name="player_2_name" value ="<%= @player_2_name %>">
-  <input type="submit" name="move" value="Rock">
+  <input type="hidden" name="player_1_move" value="<%= @player_1_move %>">
+  <input type="submit" name="current_player_move" value="Rock">
+  <input type="submit" name="current_player_move" value="Paper">
 </form>
