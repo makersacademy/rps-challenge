@@ -9,12 +9,20 @@
     <h2>Please select the number of players.</h2>
 
     <form action="/new_game">
+      <select name="players">
+        <option value="One Player">One Player</option>
+        <option value="Two Player">Two Player</option>
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+
+    <!-- <form action="/new_game">
       <input type="submit" value="One Player">
     </form>
 
     <form action="/">
       <input type="submit" value="Two Player">
-    </form>
+    </form> -->
 
     <!-- <form action="/name" method="post">
       <label>
