@@ -26,7 +26,4 @@ feature "Enter player name" do
       end
     end
   end
-
-
-
 end
