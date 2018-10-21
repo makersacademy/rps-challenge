@@ -10,39 +10,23 @@ class RPSapp < Sinatra::Base
     @player_1_name = params[:player_1_name]
     @player_2_name = params[:player_2_name]
 
-    request_player_1_choice
+    erb :player_1_choice
   end
 
   post '/player_2_turn' do
     @player_1_name = params[:player_1_name]
+    @player_1_move = params[:player_1_move]
     @player_2_name = params[:player_2_name]
 
-    store_player_1_choice
-    request_player_2_choice
+    erb :player_2_choice
   end
 
   post '/result' do
     @player_1_name = params[:player_1_name]
-    @player_2_name = params[:player_2_name]
-
-    render_result
-  end
-
-  def request_player_1_choice
-    erb :player_1_choice
-  end
-
-  def store_player_1_choice
-    @player_1_move = params[:current_player_move]
-  end
-
-  def request_player_2_choice
-    erb :player_2_choice
-  end
-
-  def render_result
     @player_1_move = params[:player_1_move]
-    @player_2_move = params[:current_player_move]
+
+    @player_2_name = params[:player_2_name]
+    @player_2_move = params[:player_2_move]
 
     if draw?
       render_draw_for(@player_1_move)
