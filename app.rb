@@ -27,7 +27,7 @@ class RPS < Sinatra::Base
   end
 
   post '/two_names' do
-    redirect to '/invalid_name' if params[:player_1_name] == "Computer" || params[:player_2_name] == "Computer"
+    redirect to '/invalid_name' if a_name_is_computer?
     @game = Game.create(player_1: params[:player_1_name],
       player_2: params[:player_2_name])
     redirect to '/play'
@@ -63,10 +63,10 @@ class RPS < Sinatra::Base
   post '/p1_choose_rock' do
     @game = Game.instance
     @game.player_1.choose_rock
-    @game.player_2.choose_random if @game.player_2.name == "Computer"
-    redirect to '/lose' if @game.player_2.move == "Paper"
-    redirect to '/draw' if @game.player_2.move == "Rock"
-    redirect to '/win' if @game.player_2.move == "Scissors"
+    @game.player_2.choose_random if @game.player_2.computer?
+    redirect to '/lose' if @game.player_2.chose_paper?
+    redirect to '/draw' if @game.player_2.chose_rock?
+    redirect to '/win' if @game.player_2.chose_scissors?
     redirect to '/p2_play' if @game.player_2.move.nil?
   end
 
@@ -81,10 +81,10 @@ class RPS < Sinatra::Base
   post '/p1_choose_paper' do
     @game = Game.instance
     @game.player_1.choose_paper
-    @game.player_2.choose_random if @game.player_2.name == "Computer"
-    redirect to '/lose' if @game.player_2.move == "Scissors"
-    redirect to '/draw' if @game.player_2.move == "Paper"
-    redirect to '/win' if @game.player_2.move == "Rock"
+    @game.player_2.choose_random if @game.player_2.computer?
+    redirect to '/lose' if @game.player_2.chose_scissors?
+    redirect to '/draw' if @game.player_2.chose_paper?
+    redirect to '/win' if @game.player_2.chose_rock?
     redirect to '/p2_play' if @game.player_2.move.nil?
   end
 
@@ -99,10 +99,10 @@ class RPS < Sinatra::Base
   post '/p1_choose_scissors' do
     @game = Game.instance
     @game.player_1.choose_scissors
-    @game.player_2.choose_random if @game.player_2.name == "Computer"
-    redirect to '/lose' if @game.player_2.move == "Rock"
-    redirect to '/draw' if @game.player_2.move == "Scissors"
-    redirect to '/win' if @game.player_2.move == "Paper"
+    @game.player_2.choose_random if @game.player_2.computer?
+    redirect to '/lose' if @game.player_2.chose_rock?
+    redirect to '/draw' if @game.player_2.chose_scissors?
+    redirect to '/win' if @game.player_2.chose_paper?
     redirect to '/p2_play' if @game.player_2.move.nil?
   end
 
@@ -115,4 +115,9 @@ class RPS < Sinatra::Base
   end
 
   run! if app_file == $0
+
+  private
+  def a_name_is_computer?
+    params[:player_1_name] == "Computer" || params[:player_2_name] == "Computer"
+  end
 end
