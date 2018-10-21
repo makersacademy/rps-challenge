@@ -3,16 +3,26 @@
 <head >
   <style media="screen">
     .message {
-      font-size: 15em;
+      font-size: 5em;
       color: #BADA55;
     }
   </style>
 </head>
 
 <body>
+<span class="message"> <%= @p1_name %> VS <%= @p2_name %> </span>
 
+<form action=/choice method=post >
+  <input type=submit name=move value=Rock>
+  <input type=submit name=move value=Paper>
+  <input type=submit name=move value=Scissors>
+</form>
 
-<span class=message> You are: <%= @p1_name %> </span>
+<div name=moves>
+<span class="message" name=p1_move ><%= @p1_name %> chose <%= @game.player1.choice%>! </span>
+<span class="message" name=p2_move ><%= @p2_name %> chose <%= @game.player2.choice%>! </span>
+</div>
+
 
 </body>
 </html>

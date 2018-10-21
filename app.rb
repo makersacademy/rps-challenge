@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
+require './lib/computer'
 
 class Rps < Sinatra::Base
 
@@ -13,12 +16,18 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.create(Player.new(params[:p1_name]))
+    @game = Game.create(Player.new(params[:p1_name]), Computer.new)
     redirect('/play')
   end
 
   get '/play' do
     @p1_name = @game.player1.name
+    erb(:play)
+  end
+
+  post '/choice' do
+    @game.player1.choose=(params[:move])
+    redirect('play')
   end
 
 end
