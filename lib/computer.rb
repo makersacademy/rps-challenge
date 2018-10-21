@@ -1,9 +1,10 @@
 class Computer
-  attr_reader :move
+  attr_reader :move, :name
 
   MOVES = [:Rock, :Paper, :Scissors]
 
   def initialize
+    @name = "The computer"
     @move = ""
   end
 

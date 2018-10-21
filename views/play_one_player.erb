@@ -7,7 +7,7 @@
     <h1> Welcome <%= @game.player_1.name %>, please select a move!</h1>
 
     <form action="/choice" method="post">
-      <select name="move">
+      <select name="player_1_move">
         <option value="Rock">Rock</option>
         <option value="Paper">Paper</option>
         <option value="Scissors">Scissors</option>

@@ -30,9 +30,9 @@ class Game
     result
     case result
     when "Win"
-      "You win!"
+      "#{@player_1.name} wins!"
     when "Lose"
-      "You lose!"
+      "#{@player_1.name} loses!"
     when "Draw"
       "Draw!"
     end

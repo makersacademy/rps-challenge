@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player) { double :player, :move => :Rock }
-  let(:computer) { double :computer, :move => :Scissors, :pick_move => "" }
+  let(:player) { double :player, :move => :Rock, :name => "Mittens" }
+  let(:computer) { double :computer, :move => :Scissors, :pick_move => "", :name => "Dave" }
   subject { Game.new(player, computer) }
 
   context '#initialize' do
@@ -55,13 +55,13 @@ describe Game do
 
   context '#message' do
     it 'returns a win message' do
-      expect(subject.message).to eq "You win!"
+      expect(subject.message).to eq "Mittens wins!"
     end
 
     it 'returns a lose message' do
       allow(player).to receive(:move) { :Rock }
       allow(computer).to receive(:move) { :Paper }
-      expect(subject.message).to eq "You lose!"
+      expect(subject.message).to eq "Mittens loses!"
     end
 
     it 'returns a draw message' do

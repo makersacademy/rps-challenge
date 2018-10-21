@@ -1,0 +1,32 @@
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <h1> <%= @game.player_1.name %> vs. <%= @game.player_2.name %>! </h1>
+    <h2> Please select your moves! </h2>
+
+    <form action="/choice" method="post">
+      <label>
+        <%= @game.player_1.name %>'s move:
+      </label>
+        <select name="player_1_move">
+          <option value="Rock">Rock</option>
+          <option value="Paper">Paper</option>
+          <option value="Scissors">Scissors</option>
+        </select>
+        <br>
+      <label>
+        <%= @game.player_2.name %>'s move:
+      </label>
+        <select name="player_2_move">
+          <option value="Rock">Rock</option>
+          <option value="Paper">Paper</option>
+          <option value="Scissors">Scissors</option>
+        </select>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

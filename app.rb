@@ -21,19 +21,36 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:name])
-    @game = Game.create(player, Computer.new)
-    redirect '/play'
+    if params[:player_2_name] == nil
+      player = Player.new(params[:name])
+      @game = Game.create(player, Computer.new)
+      redirect '/play_one_player'
+    else
+      player_1 = Player.new(params[:player_1_name])
+      player_2 = Player.new(params[:player_2_name])
+      @game = Game.create(player_1, player_2)
+      redirect '/play_two_player'
+    end
   end
 
-  get '/play' do
-    erb :play
+  get '/play_one_player' do
+    erb :play_one_player
+  end
+
+  get '/play_two_player' do
+    erb :play_two_player
   end
 
   post '/choice' do
-    @game.player_1.pick_move(params[:move].to_sym)
-    @game.player_2.pick_move
-    redirect '/result'
+    if params[:player_2_move] == nil
+      @game.player_1.pick_move(params[:player_1_move].to_sym)
+      @game.player_2.pick_move
+      redirect '/result'
+    else
+      @game.player_1.pick_move(params[:player_1_move].to_sym)
+      @game.player_2.pick_move(params[:player_2_move].to_sym)
+      redirect '/result'
+    end
   end
 
   get '/result' do

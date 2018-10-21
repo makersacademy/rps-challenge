@@ -4,6 +4,6 @@ def enter_name_and_play
   click_button 'Submit'
   fill_in 'name', with: "Mittens"
   click_button 'Submit'
-  select 'Rock', from: 'move'
+  select 'Rock', from: 'player_1_move'
   click_button 'Submit'
 end

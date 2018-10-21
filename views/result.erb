@@ -4,8 +4,8 @@
   </head>
 
   <body>
-    You picked <%= @game.player_1.move %>.<br>
-    The computer picked <%= @game.player_2.move %>.
+    <%= @game.player_1.name %> picked <%= @game.player_1.move %>.<br>
+    <%= @game.player_2.name %> picked <%= @game.player_2.move %>.
 
     <h1><%= @game.message %></h1>
   </body>
