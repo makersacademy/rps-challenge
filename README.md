@@ -18,7 +18,7 @@ I would like to be able to play rock/paper/scissors
 
 ## My approach
 
-I decided to fully implement the multiplayer functionality as well as a player vs. computer ('RPSbot') mode. I divided responsibilities across four classes in my model - Player, Computer, Game, and ResultsCalculator. Weapons are chosen then passed as params to my model where they are stored to calculate the game result.
+I decided to fully implement the multiplayer functionality as well as a player vs. computer ('RPSbot') mode. I divided responsibilities across four classes in my model - Player, Computer, Game, and ResultsCalculator. Weapons are chosen then passed as params to my model where they are stored to calculate the game result. Game logic is restricted almost entirely to the model - the controller handles params and the storing of a current game inside the Game class.
 
 The marketeer can choose from single player or multiplayer on the home screen. If single player is selected, then the marketeer's weapon choice is compared against the randomly selected RPSbot weapon. In multiplayer, the marketeers take turns choosing their weapon (and are encouraged to look away from the screen when it isn't their turn!).
 
