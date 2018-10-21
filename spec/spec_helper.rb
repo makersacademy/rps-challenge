@@ -6,7 +6,7 @@ require 'simplecov'
 require 'simplecov-console'
 require_relative './features/web_helpers.rb'
 
-Capybara.app = Game
+Capybara.app = RPS
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

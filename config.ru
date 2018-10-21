@@ -1,2 +1,2 @@
-require_relative 'app.rb'
-run Game
+require_relative './app.rb'
+run RPS
