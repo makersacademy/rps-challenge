@@ -1,1 +1,7 @@
 <%= @winner_name %> (<%= @winner_move %>) won against <%= @looser_name %> (<%= @looser_move %>)!
+<br>
+<form action="/game" method="post">
+  <input type="hidden" name="player_1_name" value="<%= @player_1_name %>">
+  <input type="hidden" name="player_2_name" value ="<%= @player_2_name %>">
+  <input type="submit" value="Play again!">
+</form>
