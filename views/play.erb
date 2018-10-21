@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Battle</title>
+    <link href="main.css" type="text/css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="content">
+      <main class="screen1">
+        <fieldset class="screen2">
+          <h1>Rock Paper Scissors</h1>
+          <h3>Hi <%=@player1.name%>!</h3>
+          Choose your weapon:<br><br>
+          <form action='/select' method='post'>
+            <input type="submit" value="Rock" name='player_move_made'>
+          </form>
+          <form action='/select' method='post'>
+            <input type="submit" value="Paper" name='player_move_made'>
+          </form>
+          <form action='/select' method='post'>
+            <input type="submit" value="Scissors" name='player_move_made'>
+          </form>
+        </fieldset>
+      </main>
+    </div>
+  </body>
+</html>
