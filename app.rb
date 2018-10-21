@@ -1,4 +1,5 @@
 require 'sinatra'
+require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Application
 enable :sessions
@@ -22,6 +23,7 @@ enable :sessions
   end
 
   get '/outcome' do
+    @outcome = Game.new($selection).outcome
     erb :outcome
   end
 end
