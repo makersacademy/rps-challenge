@@ -21,8 +21,10 @@ class Game
       "Win"
     elsif @player_1.move == @player_2.move
       "Draw"
-    else
+    elsif @player_2.move == WINS.key(@player_1.move)
       "Lose"
+    else
+      fail "Move not valid."
     end
   end
 
