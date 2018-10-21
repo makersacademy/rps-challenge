@@ -1,4 +1,4 @@
-<h2> Puny <%= $game.player.name %>, You dare challenge me?</h2>
+<h2> Puny <%= session[:game].player.name %>, You dare challenge me?</h2>
 <h3>Very well. Commenceth the game!</h3>
 <form action="/attack" method="post">
   <input name ='move' type='submit' value="Rocketh">

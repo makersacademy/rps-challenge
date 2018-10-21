@@ -10,7 +10,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $game = Game.new(Player.new(params[:player]))
+    session[:game] = Game.new(Player.new(params[:player]))
     redirect '/play'
   end
 
@@ -20,9 +20,8 @@ class RPS < Sinatra::Base
   end
 
   post '/attack' do
-    @move = session[:move]
-    game = $game.move(@move, $game.comp_move)
-    session[:result] = $game.store(game)
+    @attack = session[:move]
+    session[:result] = session[:game].store(session[:game].move(@attack, session[:game].comp_move))
     redirect '/result'
   end
 
