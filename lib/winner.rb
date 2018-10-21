@@ -1,4 +1,7 @@
+require_relative "messages"
+
 class Winner
+  include Messages
 
   WIN_COMBOS = [[:rock, :scissors], [:paper, :rock], [:scissors, :paper], [:scissors, :lizard], [:rock, :lizard], [:lizard, :paper], [:paper, :spock], [:lizard, :spock], [:spock, :rock], [:spock, :scissors]]
 
@@ -15,18 +18,6 @@ class Winner
     end
     return draw if @player1_move == @player2_move
     return player2_won
-  end
-
-  def player1_won
-    "#{@players.name1} won!"
-  end
-
-  def player2_won
-    "#{@players.name2} won!"
-  end
-
-  def draw
-    "It's a draw!"
   end
 
   private
