@@ -1,12 +1,12 @@
 class Game
 
-  def initialize(name)
-    @player = Player.new(name)
-    @computer = Computer.new
+  def initialize(player, computer)
+    @player = player
+    @computer = computer
   end
 
-  def self.create(player_name)
-    @game = Game.new(player_name)
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
   end
 
   def self.instance

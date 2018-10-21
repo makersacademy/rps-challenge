@@ -5,7 +5,7 @@ describe Game do
 
   let(:player) { double :player, :name => "Irina" }
   let(:computer) { double :computer }
-  let(:game) { Game.create(player.name) }
+  let(:game) { Game.create(player, computer) }
 
   it 'is created with a human player' do
     expect(game).to be_an_instance_of(Game)
