@@ -1,4 +1,4 @@
-feature 'Choose move' do
+feature 'Playing game' do
 
   scenario 'have a winner' do
     sign_in

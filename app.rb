@@ -44,9 +44,14 @@ class RockPaperScissors < Sinatra::Base
     erb :match
   end
 
-  get '/game-over' do
+  post '/game-over' do
     @game = session[:game]
     @game.game_over
+    redirect '/game-over'
+  end
+
+  get '/game-over' do
+    @game = session[:game]
     erb :game_over
   end
 

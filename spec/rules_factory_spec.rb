@@ -9,7 +9,7 @@ describe RulesFactory do
   subject { described_class.new(rules_class) }
 
   describe '#create_rules' do
-    it 'reads a json file, and calls make a rules instance' do
+    it 'reads a json file, and make a rules instance' do
       allow(File).to receive(:read).with(file_name).and_return(file_like_object)
       allow(JSON).to receive(:parse).with(file_like_object, { :symbolize_names => true }).and_return(rules_hash)
       expect(rules_class).to receive(:new).with(rules_hash)

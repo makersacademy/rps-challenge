@@ -2,7 +2,7 @@ feature 'Choose move' do
 
   scenario 'have rules' do
     sign_in
-    expect(page).to have_content "Rules\nRock beats Scissors\nScissors beats Paper\nPaper beats Rock\n"
+    expect(page).to have_content "Rules\nScissors cuts Paper\nPaper covers Rock\n"
   end
 
   scenario 'shows options' do
