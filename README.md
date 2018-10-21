@@ -1,5 +1,16 @@
 # RPS Challenge
 
+- [RPS Challenge](#rps-challenge)
+  * [Task](#task)
+    + [Bonus level 1: Multiplayer](#bonus-level-1--multiplayer)
+    + [Bonus level 2: Rock, Paper, Scissors, Spock, Lizard](#bonus-level-2--rock--paper--scissors--spock--lizard)
+    + [Basic Rules](#basic-rules)
+  * [Finished product](#finished-product)
+  * [My approach](#my-approach)
+  * [How to install/run](#how-to-install-run)
+  * [Game details](#game-details)
+  * [Test Results](#test-results)
+
 Task
 ----
 
