@@ -16,17 +16,17 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.create(Player.new(params[:p1_name]), Computer.new)
+    @game = Game.create(Player.new(params[:p1_name]))
     redirect('/play')
   end
 
   get '/play' do
-    @p1_name = @game.player1.name
     erb(:play)
   end
 
   post '/choice' do
-    @game.player1.choose=(params[:move])
+    @game.player1.choose = params[:move]
+    @game.result(@game.player1.choice, @game.player2.choice)
     redirect('play')
   end
 

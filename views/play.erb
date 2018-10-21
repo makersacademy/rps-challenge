@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<span class="message"> <%= @p1_name %> VS <%= @p2_name %> </span>
+<span class="message"> <%= @game.player1.name %> VS <%= @game.player2.name %> </span>
 
 <form action=/choice method=post >
   <input type=submit name=move value=Rock>
@@ -18,11 +18,17 @@
   <input type=submit name=move value=Scissors>
 </form>
 
-<div name=moves>
-<span class="message" name=p1_move ><%= @p1_name %> chose <%= @game.player1.choice%>! </span>
-<span class="message" name=p2_move ><%= @p2_name %> chose <%= @game.player2.choice%>! </span>
+<% unless @game.player1.choice.nil? %>
+  <div name=moves>
+  <span style="float:left; width: 50%;" class="message" name=p1_move ><%= @game.player1.name %> chose <%= @game.player1.choice%>! </span>
+  <span style="float:right; width: 50%;" class="message" name=p2_move ><%= @game.player2.name %> chose <%= @game.player2.choice%>! </span>
+  </div>
+
+<div class=message name=result>
+  <span type=text > <%= @game.result(@game.player1.choice, @game.player2.choice) %></span>
 </div>
 
+<% end %>
 
 </body>
 </html>

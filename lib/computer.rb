@@ -12,11 +12,11 @@ class Computer
   end
 
   def choice
-    pick
+    @choice
   end
 
   def pick
-    ['Rock', 'Paper', 'Scissors'].sample
+    @choice = Game::MOVES.sample
   end
 
 end
