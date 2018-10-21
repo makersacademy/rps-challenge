@@ -34,7 +34,7 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )_
 
 ## Basic Rules
 
@@ -46,14 +46,50 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 
 ## Finished product - click on image to view video
 
-[![Game Demo](public/images/game-screenshot.png)](http://www.youtube.com/watch?v=214c3RVzyqs "Game Demo")
+[![Game Demo](docs/game-screenshot.png)](http://www.youtube.com/watch?v=214c3RVzyqs "Game Demo")
 
 ## My approach
-TBA
+Created in Ruby as a demo in creating a web app using Sinatra and Capybara.  I also used this an opportunity to play with some front end code and the majority of they styling of the page is done with css
+
+I probably got a bit too into the front end side of this challenge, even creating a favicon:   
+![favicon](docs/favicon-screenshot.png)
+
+
+But I really enjoyed it.
+
+I was able to implement the additional two bonus challenges; multiplayer, and rock paper scissors lizard spock.  Due to the way I implemented the solution, it would be relatively easy to add in further variants - as long as there was a clear win/lose logic.
 
 ## How to install/run
 
-## Test Results
-100% coverage
+- Run `bundle install` to install the gems needed for the game
+- Run `rackup` to start the local server
+- Go to http://localhost:9292
 
-100% Rubocop pass
+## Game details
+
+You can choose to play classic rock paper scissors, or the advanced variant, rock paper scissors lizard spock.
+
+![Game index](docs/game-screenshot.png)
+
+You can also decide to play against a robot or against another player for both variants of the game.
+
+Once the options are selected you are prompted to enter the player details (leaving this blank will default the names to Player 1 and Player 2 respectively)
+
+![Registration](public/images/register-screenshot.png)
+
+You then pick which weapon you want to play
+
+![Play](docs/play-screenshot.png)
+
+you can check out the details of what each option wins and loses to by going to `/rules` - available on the weapon selection screen.
+
+![Rules](docs/rules-screenshot.png)
+
+Finally, you will see the results and a winner is declared
+
+![Results](docs/results-screenshot.png)
+
+## Test Results
+`100% coverage`
+
+`100% Rubocop pass`
