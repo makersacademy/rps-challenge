@@ -10,7 +10,7 @@ describe Game do
     end
 
     it 'retrieves the Second player' do
-      expect(game.player_two).to eq "Bot"
+      expect(game.player_two.name).to eq "Bot"
     end
   end
 
@@ -20,21 +20,17 @@ describe Game do
     end
   end
 
-  # describe '#rock' do
-  #   it 'Lizard should return true' do
-  #     expect(game.rock("Lizard")).to eq true
-  #   end
-  #
-  #   it 'Scissors should return true' do
-  #     expect(game.rock("Scissors")).to eq true
-  #   end
-  #
-  #   it 'paper should return false' do
-  #     expect(game.rock("Paper")).to eq false
-  #   end
-  #
-  #   it 'Spock should return false' do
-  #     expect(game.rock("Spock")).to eq false
-  #   end
-  # end
+  describe '#play' do
+    it 'should return player one' do
+      expect(game.play("Rock", "Lizard")).to eq game.player_one
+    end
+
+    it 'should return player two' do
+      expect(game.play("Rock", "Paper")).to eq game.player_two
+    end
+
+    it 'should return tie' do
+      expect(game.play("Rock", "Rock")).to eq "tie"
+    end
+  end
 end

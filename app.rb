@@ -30,7 +30,8 @@ class Rps < Sinatra::Base
   end
 
   post '/choice' do
-
+    @game.play(params[:choice], @game.computer_selection)
+    redirect '/play'
   end
 
   run! if app_file == $0

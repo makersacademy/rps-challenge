@@ -14,7 +14,7 @@ class Game
 
   attr_reader :player_one, :player_two
 
-  def initialize(player_one, player_two = "Bot")
+  def initialize(player_one, player_two = Player.new("Bot"))
     @player_one, @player_two = player_one, player_two
     @current_game = nil
   end
@@ -29,10 +29,20 @@ class Game
   end
 
   def play(player_selection, computer_selection)
-
+    if wins?(player_selection, computer_selection)
+      @player_two.hit if @player_two.is_a?(Player)
+      @player_one
+    elsif wins?(computer_selection, player_selection)
+      @player_one.hit if @player_one.is_a?(Player)
+      @player_two
+    else
+      "tie"
+    end
   end
 
-  # def rock(computer)
-  #   ["Scissors", "Lizard" ].include? computer
-  # end
+  private
+
+  def wins?(choice_1, choice_2)
+    RULES[choice_1].include?(choice_2)
+  end
 end
