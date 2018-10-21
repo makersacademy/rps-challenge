@@ -10,21 +10,21 @@ class Game
     @player_weapon = weapon
   end
 
-  def cp_weapon
-    ['Rock', 'Paper', 'Scissors'].sample
+  def cp_choose_weapon
+    @cp_weapon = ['Rock', 'Paper', 'Scissors'].sample
   end
 
   def announce_winner
-    if @player_weapon == cp_weapon
+    if @player_weapon == @cp_weapon
       'You drew!'
     else
       case @player_weapon
       when 'Rock'
-        cp_weapon == 'Scissors' ? 'You win!' : 'You lose!'
+        @cp_weapon == 'Scissors' ? 'You win!' : 'You lose!'
       when 'Paper'
-        cp_weapon == 'Rock' ? 'You win!' : 'You lose!'
+        @cp_weapon == 'Rock' ? 'You win!' : 'You lose!'
       when 'Scissors'
-        cp_weapon == 'Paper' ? 'You win!' : 'You lose!'
+        @cp_weapon == 'Paper' ? 'You win!' : 'You lose!'
       end
     end
   end
