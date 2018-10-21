@@ -42,7 +42,6 @@ describe Game do
     end
   end
 
-
   describe '#outcome' do
     it 'win' do
       expect(game.outcome).to eq "You win!"
@@ -55,6 +54,19 @@ describe Game do
     it 'Loss' do
       expect(loss_game.outcome).to eq "You lose!"
     end
+  end
 
+  describe '#action' do
+    it 'returns action when player 1 wins' do
+      expect(game.action).to eq 'Rock smashes scissors.'
+    end
+
+    it 'returns action when player 2 wins' do
+      expect(loss_game.action).to eq 'Rock smashes scissors.'
+    end
+
+    it 'returns action when its a draw' do
+      expect(draw_game.action).to eq "&nbsp;"
+    end
   end
 end

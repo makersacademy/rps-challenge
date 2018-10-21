@@ -8,6 +8,12 @@ class Game
     spock: ['rock', 'scissors']
   }
 
+  OUTCOMES = {
+    rock: 'Rock smashes scissors.',
+    paper: 'Paper covers rock.',
+    scissors: 'Scissors cuts paper.'
+  }
+
   def self.create(player_1, player_2)
     @game = Game.new(player_1, player_2)
   end
@@ -46,6 +52,16 @@ class Game
 
   def winner?
     RULES[player_1.move.to_sym].include?(player_2.move)
+  end
+
+  def action
+    if draw?
+      '&nbsp;'
+    elsif winner?
+      OUTCOMES[player_1.move.to_sym]
+    else
+      OUTCOMES[player_2.move.to_sym]
+    end
   end
 
 end
