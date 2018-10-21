@@ -23,11 +23,13 @@ class RPS < Sinatra::Base
   post '/register-process' do
     gametype = params[:gametype]
     gamevariant = params[:gamevariant]
-    player1 = Player.new(params[:name], "human")
+    p1 = params[:name] == '' ? 'Player 1' : params[:name]
+    p2 = params[:name2] == '' ? 'Player 2' : params[:name2]
+    player1 = Player.new(p1, "human")
     if gametype == "Single player"
-      player2_name, player2_type = "computer", "computer"
+      player2_name, player2_type = "Robot", "computer"
     else
-      player2_name, player2_type = params[:name2], "human"
+      player2_name, player2_type = p2, "human"
     end
     player2 = Player.new(player2_name, player2_type)
     @game = Game.create(player1, player2, gametype, gamevariant)

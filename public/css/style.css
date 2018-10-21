@@ -4,7 +4,6 @@
   font-family: 'Fjalla One', sans-serif;
   max-width: 800px;
   margin: 10px auto;
-  /* padding: 16px; */
 }
 
 p {
@@ -13,10 +12,6 @@ p {
   font-size: 20px;
   font-weight: 400;
   color: white;
-  /* text-transform: uppercase; */
-  /* border-bottom: 2px solid #f1f1f1; */
-  /* width: 30%; */
-  /* padding-bottom: 20px; */
 }
 
 a {
@@ -26,10 +21,6 @@ a {
   font-weight: 400;
   color: white;
   text-decoration: underline;
-  /* text-transform: uppercase; */
-  /* border-bottom: 2px solid #f1f1f1; */
-  /* width: 30%; */
-  /* padding-bottom: 20px; */
 }
 
 label {
@@ -38,10 +29,6 @@ label {
   font-size: 22px;
   font-weight: 400;
   color: white;
-  /* text-transform: uppercase; */
-  /* border-bottom: 2px solid #f1f1f1; */
-  /* width: 30%; */
-  /* padding-bottom: 5px; */
 }
 
 h1 {
@@ -60,9 +47,6 @@ h2 {
 
 body {
   background-image: url("/images/abstract-art-astronomy-220071.jpg");
-  /* background-image: url("/images/abstract-architectural-art-532563.jpg"); */
-  /* background-size: cover; */
-  /* background-size: 300px 100px */
   background-color: #cccccc;
   font-family: 'Fjalla One', sans-serif;
   margin-left: 1.66%;
@@ -135,19 +119,15 @@ body {
     'menu single multi right'
     'menu robot-title human-title right';
   grid-gap: 10px;
-  /* background-color: #2196F3; */
   padding: 10px;
   font-family: 'Fjalla One', sans-serif;
   max-width: 800px;
   margin: 10px auto;
-  /* padding: 16px; */
 }
 
 .grid-container-index>div {
-  /* background-color: rgba(255, 255, 255, 0.8); */
   text-align: center;
   padding: 10px 0;
-  /* font-size: 30px; */
 }
 
 .rules-win {
@@ -242,7 +222,6 @@ body {
     'P2 P2 P2_field P2_field'
     'register_btn register_btn register_btn register_btn';
   grid-gap: 10px;
-  /* background-color: #2196F3; */
   padding: 10px;
   font-family: 'Fjalla One', sans-serif;
   max-width: 800px;
@@ -250,7 +229,6 @@ body {
 }
 
 .grid-container-registration>div {
-  /* background-color: rgba(255, 255, 255, 0.8); */
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
@@ -272,7 +250,6 @@ body {
   display: grid;
   grid-template-areas:
     'PlayHeading PlayHeading PlayHeading PlayHeading'
-    'TurnDetails TurnDetails TurnDetails TurnDetails'
     'ButtonChoice ButtonChoice ButtonChoice ButtonChoice';
   grid-gap: 10px;
   padding: 10px;
@@ -312,7 +289,6 @@ body {
 /* .p1_name_field { grid-area: p1_name_field; text-align: center; }
 .p2_name_label { grid-area: p2_name_label; text-align: center; vertical-align: center;}
 .p2_name_field { grid-area: p2_name_field; text-align: center; } */
-/* .register_submit { grid-area: register_submit; text-align: center; } */
 .grid-container-play {
   display: grid;
   grid-template-areas:
@@ -321,19 +297,15 @@ body {
     'play_test play_test play_test play_test'
     'play_rules play_rules play_rules play_rules';
   grid-gap: 10px;
-  /* background-color: #2196F3; */
   padding: 10px;
   font-family: 'Fjalla One', sans-serif;
   max-width: 800px;
   margin: 10px auto;
-  /* padding: 16px; */
 }
 
 .grid-container-play>div {
-  /* background-color: rgba(255, 255, 255, 0.8); */
   text-align: center;
   padding: 10px 0;
-  /* font-size: 30px; */
 }
 
 /* .result-heading { grid-area: result-header; text-align: center; }
@@ -343,7 +315,6 @@ body {
 .P2-result { grid-area: P2-result; text-align: center; } */
 /* .p2_name_label { grid-area: p2_name_label; text-align: center; vertical-align: center;}
 .p2_name_field { grid-area: p2_name_field; text-align: center; } */
-/* .register_submit { grid-area: register_submit; text-align: center; } */
 .item1 {
   grid-area: header;
   text-align: center;
@@ -378,7 +349,6 @@ body {
     'item4 item4 item4 item4';
   text-align: center;
   grid-gap: 10px;
-  /* background-color: #2196F3; */
   padding: 10px;
   font-family: 'Fjalla One', sans-serif;
   max-width: 800px;
@@ -386,7 +356,6 @@ body {
 }
 
 .grid-container-result>div {
-  /* background-color: rgba(255, 255, 255, 0.8); */
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
@@ -508,11 +477,14 @@ grid-container-register input {
   -webkit-filter: none;
   -moz-filter: none;
   filter: none;
+  border-style: outset;
+  webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
 .gamepicker-cc {
   cursor: pointer;
-  /* background-size:contain; */
   background-repeat: no-repeat;
   display: inline-block;
   width: 135px;
@@ -520,9 +492,9 @@ grid-container-register input {
   -webkit-transition: all 100ms ease-in;
   -moz-transition: all 100ms ease-in;
   transition: all 100ms ease-in;
-  -webkit-filter: brightness(1.8) grayscale(1) opacity(.7) blur(2px);
-  -moz-filter: brightness(1.8) grayscale(1) opacity(.7) blur(2px);
-  filter: brightness(1.8) grayscale(1) opacity(.7) blur(2px);
+  -webkit-filter: brightness(1.8) grayscale(1) opacity(.5) blur(0px);
+  -moz-filter: brightness(1.8) grayscale(1) opacity(.5) blur(0px);
+  filter: brightness(1.8) grayscale(1) opacity(.5) blur(0px);
 }
 
 .gamepicker-cc:hover {
@@ -546,7 +518,6 @@ grid-container-register input {
   filter: brightness(1.2) grayscale(.5) opacity(.9) invert(50%);
 }
 
-/* Extras */
 a:visited {
   color: #888
 }
@@ -714,5 +685,3 @@ span.cc {
   border-style: none;
   background: url(/images/rules_btn.png);
 }
-
-/*  */

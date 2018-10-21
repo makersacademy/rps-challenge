@@ -23,4 +23,8 @@ class Settings
   def weapon_list
     @weapon_hash.keys
   end
+
+  def random_weapon
+    weapon_list.sample
+  end
 end

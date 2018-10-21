@@ -21,7 +21,7 @@ class Game
   end
 
   def random
-    @settings.weapon_list.sample
+    @settings.random_weapon
   end
 
   def update_choice(choice, player)

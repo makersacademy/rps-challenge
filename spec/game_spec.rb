@@ -1,9 +1,10 @@
 require 'game'
+require 'settings'
 
 describe Game do
   context('SINGLE PLAYER') do
     subject(:game) { described_class.new(player1, player2, "Single player") }
-    let(:player1) { double :player1, :name => "Clare", :playertype => "human" }
+    let(:player1) { double :player1, :name => "Adam", :playertype => "human" }
     let(:player2) { double :player2, :name => "computer", :playertype => "computer" }
 
     describe "Computer plays" do
@@ -15,8 +16,8 @@ describe Game do
 
   context('MULTI PLAYER') do
     subject(:game) { described_class.new(player1, player2, "Multiplayer") }
-    let(:player1) { double :player1, :name => "Clare", :playertype => "human" }
-    let(:player2) { double :player2, :name => "Laura", :playertype => "human" }
+    let(:player1) { double :player1, :name => "Adam", :playertype => "human" }
+    let(:player2) { double :player2, :name => "Billy", :playertype => "human" }
 
     # describe "player 2 plays" do
     #   it 'pick paper' do
@@ -28,8 +29,8 @@ describe Game do
 
   describe "what beats what" do
     subject(:game) { described_class.new(player1, player2, "Multiplayer") }
-    let(:player1) { double :player1, :name => "Clare", :playertype => "human" }
-    let(:player2) { double :player2, :name => "Laura", :playertype => "human" }
+    let(:player1) { double :player1, :name => "Adam", :playertype => "human" }
+    let(:player2) { double :player2, :name => "Billy", :playertype => "human" }
 
     it 'returns winner when passed rock and scissors' do
       expect(subject.win_logic("rock", "scissors")).to eq player1
