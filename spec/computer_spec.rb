@@ -6,8 +6,4 @@ describe Computer do
     expect(subject.move).to eq(nil)
   end
 
-  it 'assigns the computer a random move' do
-    
-  end
-
 end

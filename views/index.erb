@@ -1,8 +1,18 @@
-<form action="/name" method="post">
-  <h1> Rock... </h1>
-  <h1> Paper... </h1>
-  <h1> Scissors... </h1>
-  <p> Enter your name below to play </p>
-  <input type="text" name="player_1_name">
-  <input type="submit" value="Let's Play!" name="submit">
-</form>
+
+  <h1> Rock... Paper... Scissors... </h1>
+  <h1> </h1>
+
+  <h2> Single Player </h2>
+  <p> Enter your name to play solo! </p>
+  <form action="/single_player_name" method="post">
+    <input type="text" name="player_1_name">
+    <input type="submit" value="Let's Play!" name="submit">
+  </form>
+
+  <h2> Two Players </h2>
+  <p> Enter your names to battle each other! </p>
+  <form action="/two_player_name" method="post">
+    <input type="text" name="player_2_name">
+    <input type="text" name="player_3_name">
+    <input type="submit" value="Let's Battle!" name="submit">
+  </form>

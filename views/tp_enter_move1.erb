@@ -1,0 +1,14 @@
+<h2> Welcome <%= @game.player1.name %> and <%= @game.player2.name %> to the Rock-Paper-Scissors Battle.</h2>
+<div> <p> </p> </div>
+<h2> <div> <p> It's your turn <%= @game.player1.name %>! Pick your poison... </p> </div> </h2>
+<div> <p> (Look away <%= @game.player2.name %>, don't be a cheater!) </p> </div>
+
+<form action="/two_player_move1" method="post">
+<input type="submit" value="Rock" name="choice">
+
+<form action="/two_player_move1" method="post">
+<input type="submit" value="Paper" name="choice">
+
+<form action="/two_player_move1" method="post">
+<input type="submit" value="Scissors" name="choice">
+</form>
