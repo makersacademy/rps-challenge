@@ -62,6 +62,9 @@ h2	{
 }
 body {
   background-image: url("/images/abstract-art-astronomy-220071.jpg");
+	/* background-image: url("/images/abstract-architectural-art-532563.jpg"); */
+	/* background-size: cover; */
+	/* background-size: 300px 100px */
   background-color: #cccccc;
   font-family: 'Fjalla One', sans-serif;
 	margin-left: 1.66%;
@@ -108,6 +111,34 @@ body {
   text-align: center;
   padding: 10px 0;
   /* font-size: 30px; */
+}
+.rules-win {color: #99D597; font-family: 'Fjalla One', sans-serif; }
+.rules-lose {color: #F46D6D; font-family: 'Fjalla One', sans-serif;}
+
+
+.rulesheading { grid-area: rulesheading; }
+.classic_rules { grid-area: classic_rules; }
+.rules_image { grid-area: rules_image; }
+.spock_rules { grid-area: spock_rules; }
+.rules_back { grid-area: rules_back; }
+
+.grid-container-rules {
+  display: grid;
+	grid-template-columns: 33%, 34%, 33%;
+  grid-template-areas:
+    'rulesheading rulesheading rulesheading'
+    'classic_rules rules_image  spock_rules'
+    'rules_back rules_back rules_back';
+  grid-gap: 10px;
+  padding: 10px;
+	font-family: 'Fjalla One', sans-serif;
+	max-width: 800px;
+	margin: 10px auto;
+}
+.grid-container-rules > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
 }
 
 .Heading { grid-area: header;  text-align: center; }
@@ -178,7 +209,8 @@ body {
   grid-template-areas:
     'play_header play_header play_header play_header'
 		'play_buttons play_buttons play_buttons play_buttons'
-		'play_test play_test play_test play_test' ;
+		'play_test play_test play_test play_test'
+		'play_rules play_rules play_rules play_rules' ;
 
 
   grid-gap: 10px;
@@ -214,6 +246,7 @@ body {
 
 .grid-container-result {
   display: grid;
+	grid-template-columns: 25%, 25%, 25%, 25% ;
   grid-template-areas:
     'header header header header'
    	'item3 item3 item5 item5'
@@ -240,6 +273,12 @@ height: 60px;
 /* .grid-container-playgame > .PlayHeading {
 height: 80px;
 } */
+
+
+
+.grid-container-rules > .rulesheading {
+height: 60px;
+}
 
 .grid-container-result > .item1 {
 height: 60px;
@@ -321,13 +360,13 @@ grid-container-register input{
 }
 
 .classic{
-  background: url(/images/spritesheet_trans6.png) -150px -5px;
+  background: url(/images/spritesheet_trans_final.png) -150px -5px;
   display:inline-block;
   width: 135px;
   height: 110px;
 }
 .spock{
-  background: url(/images/spritesheet_trans6.png) -5px -5px;
+  background: url(/images/spritesheet_trans_final.png) -5px -5px;
   display:inline-block;
   width: 135px;
   height: 110px;
@@ -386,27 +425,27 @@ span.cc{ color:#6d84b4 }
 
 
 .radios .spock{
-    background: url(/images/spritesheet_trans6.png) -5px -5px;
+    background: url(/images/spritesheet_trans_final.png) -5px -5px;
     display:inline-block;
     width: 135px;
     height: 110px;
 }
 .radios .spock input[type="radio"]:checked {
-  background: url(/images/spritesheet_trans6.png) -730px -5px;
+  background: url(/images/spritesheet_trans_final.png) -730px -5px;
   display:inline-block;
   width: 135px;
   height: 110px;
 }
 
 .radios .classic{
-  background: url(/images/spritesheet_trans6.png) -150px -5px;
+  background: url(/images/spritesheet_trans_final.png) -150px -5px;
   display:inline-block;
   width: 135px;
   height: 110px;
 }
 
 .radios .classic input[type="radio"]:checked {
-  background: url(/images/spritesheet_trans6.png) -585px -5px;
+  background: url(/images/spritesheet_trans_final.png) -585px -5px;
   display:inline-block;
   width: 135px;
   height: 110px;
@@ -427,7 +466,7 @@ span.cc{ color:#6d84b4 }
     width: 135px;
     height: 110px;
     border-style: none;
-    background: url(/images/spritesheet_trans6.png) -5px -5px;
+    background: url(/images/spritesheet_trans_final.png) -5px -5px;
 }
 
 .rps {
@@ -435,7 +474,7 @@ span.cc{ color:#6d84b4 }
     width: 135px;
     height: 110px;
     border-style: none;
-    background: url(/images/spritesheet_trans6.png) -150px -5px;
+    background: url(/images/spritesheet_trans_final.png) -150px -5px;
 }
 
 .robot {
@@ -443,7 +482,7 @@ span.cc{ color:#6d84b4 }
     width: 135px;
     height: 110px;
     border-style: none;
-    background: url(/images/spritesheet_trans6.png) -295px -5px;
+    background: url(/images/spritesheet_trans_final.png) -295px -5px;
 }
 
 .human {
@@ -451,7 +490,7 @@ span.cc{ color:#6d84b4 }
     width: 135px;
     height: 110px;
     border-style: none;
-    background: url(/images/spritesheet_trans6.png) -440px -5px;
+    background: url(/images/spritesheet_trans_final.png) -440px -5px;
 }
 
   .rock_btn {
@@ -459,7 +498,7 @@ span.cc{ color:#6d84b4 }
       width: 135px;
       height: 110px;
       border-style: none;
-      background: url(/images/spritesheet_trans6.png) -875px -5px;
+      background: url(/images/spritesheet_trans_final.png) -875px -5px;
   }
 
   .paper_btn {
@@ -467,7 +506,7 @@ span.cc{ color:#6d84b4 }
       width: 135px;
       height: 110px;
       border-style: none;
-      background: url(/images/spritesheet_trans6.png) -1020px -5px;
+      background: url(/images/spritesheet_trans_final.png) -1020px -5px;
   }
 
   .scissors_btn {
@@ -475,28 +514,28 @@ span.cc{ color:#6d84b4 }
       width: 135px;
       height: 110px;
       border-style: none;
-      background: url(/images/spritesheet_trans6.png) -1165px -5px;
+      background: url(/images/spritesheet_trans_final.png) -1165px -5px;
   }
 
   .lizard_btn {cursor: pointer;
       width: 135px;
       height: 110px;
       border-style: none;
-      background: url(/images/spritesheet_trans6.png) -1310px -5px;
+      background: url(/images/spritesheet_trans_final.png) -1310px -5px;
   }
 
   .spock_btn {cursor: pointer;
       width: 135px;
       height: 110px;
       border-style: none;
-      background: url(/images/spritesheet_trans6.png) -1455px -5px;
+      background: url(/images/spritesheet_trans_final.png) -1455px -5px;
   }
 
 	.play_btn {cursor: pointer;
 			width: 135px;
 			height: 110px;
 			border-style: none;
-			background: url(/images/spritesheet_trans6.png) -1575px -1px;
+			background: url(/images/spritesheet_trans_final.png) -1575px -1px;
 	}
 
 	.restart_btn {cursor: pointer;
@@ -504,6 +543,20 @@ span.cc{ color:#6d84b4 }
 			height: 110px;
 			border-style: none;
 			background: url(/images/restart_edit.png);
+	}
+
+	.back_btn {cursor: pointer;
+			width: 135px;
+			height: 110px;
+			border-style: none;
+			background: url(/images/back_button.png);
+	}
+
+	.rules_btn {cursor: pointer;
+			width: 100px;
+			height: 81px;
+			border-style: none;
+			background: url(/images/rules_btn.png);
 	}
 
   /*  */

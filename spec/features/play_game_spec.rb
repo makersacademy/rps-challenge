@@ -36,6 +36,14 @@ feature 'Feature - Play Rock Paper Scissors - single player' do
     expect(page).to have_content "It's a draw"
   end
 
+  scenario 'Check rules - singleplayer' do
+    register_for_singleplayer_and_play
+    # p URI.parse(current_url)
+    click_button 'Rules'
+    # click_button 'Rock'
+    expect(page).to have_content "The Rules"
+  end
+
 end
 
 feature 'Feature - Play Rock Paper Scissors - multiplayer' do
@@ -62,6 +70,16 @@ feature 'Feature - Play Rock Paper Scissors - multiplayer' do
     click_button 'Rock'
     click_button 'Paper'
     expect(page).to have_content "Laura wins"
+  end
+
+  scenario 'Check rules - multiplayer' do
+    register_for_multiplayer_and_play
+    click_button 'Rock'
+    # p URI.parse(current_url)
+    click_button 'Rules'
+    # p URI.parse(current_url)
+    # click_button 'Rock'
+    expect(page).to have_content "The Rules"
   end
 end
 feature 'Feature - Rock paper scissors lizard spock' do
