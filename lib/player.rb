@@ -1,7 +1,7 @@
 class Player
   attr_reader :name, :move
 
-  MOVES = ["Rock", "Paper", "Scissors"]
+  MOVES = [:Rock, :Paper, :Scissors]
 
   def initialize(name)
     @name = name
