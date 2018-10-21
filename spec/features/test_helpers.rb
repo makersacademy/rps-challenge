@@ -18,3 +18,7 @@ end
 def choose_paper
   click_button 'Paper'
 end
+
+def choose_scissors
+  click_button 'Scissors'
+end

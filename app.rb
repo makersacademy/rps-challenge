@@ -37,12 +37,28 @@ class RPSapp < Sinatra::Base
   end
 
   def display_result
-    @winner_name = @player_2_name
-    @winner_move = params[:current_player_move]
-    @looser_name = @player_1_name
-    @looser_move = params[:player_1_move]
+    @player_1_move = params[:player_1_move]
+    @player_2_move = params[:current_player_move]
 
-    erb :result
+    if @player_1_move == @player_2_move
+      erb :draw
+
+    elsif @player_1_move == "Rock" && @player_2_move == "Paper"
+      @winner_name = @player_2_name
+      @winner_move = @player_2_move
+      @looser_name = @player_1_name
+      @looser_move = @player_1_move
+
+      erb :result
+    else
+      @winner_name = @player_1_name
+      @winner_move = @player_1_move
+      @looser_name = @player_2_name
+      @looser_move = @player_2_move
+
+      erb :result
+    end
+
   end
 
   def no_one_played_yet
