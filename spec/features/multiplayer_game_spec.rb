@@ -105,4 +105,15 @@ feature "Multiplayer game" do
     expect(page).to have_content "It's a Paper draw!"
   end
 
+  scenario "Play again after draw" do
+    start_game(player_1_name: "Edyta", player_2_name: "Caio")
+
+    choose_paper
+    choose_paper
+    choose_play_again
+
+    expect(page).to have_content "Edyta vs Caio"
+    expect(page).to have_content "Edyta's turn"
+  end
+
 end

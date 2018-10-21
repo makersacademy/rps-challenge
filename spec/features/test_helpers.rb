@@ -22,3 +22,7 @@ end
 def choose_scissors
   click_button 'Scissors'
 end
+
+def choose_play_again
+  click_button 'Play again!'
+end
