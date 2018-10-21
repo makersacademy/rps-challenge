@@ -43,23 +43,50 @@ describe Player do
   end
 
   describe "#chose_rock?" do
-    it "should return true" do
-      imtiyaz.choose_rock
-      expect(imtiyaz.chose_rock?).to eq true
+    context "player chose rock" do
+      it "should return true" do
+        imtiyaz.choose_rock
+        expect(imtiyaz.chose_rock?).to eq true
+      end
+    end
+
+    context "player did not choose rock" do
+      it "should return false" do
+        imtiyaz.choose_paper
+        expect(imtiyaz.chose_rock?).to eq false
+      end
     end
   end
 
   describe "#chose_paper?" do
-    it "should return true" do
-      imtiyaz.choose_paper
-      expect(imtiyaz.chose_paper?).to eq true
+    context "player chose rock" do
+      it "should return true" do
+        imtiyaz.choose_paper
+        expect(imtiyaz.chose_paper?).to eq true
+      end
+    end
+
+    context "player did not choose paper" do
+      it "should return false" do
+        imtiyaz.choose_rock
+        expect(imtiyaz.chose_paper?).to eq false
+      end
     end
   end
 
   describe "#chose_scissors?" do
-    it "should return true" do
-      imtiyaz.choose_scissors
-      expect(imtiyaz.chose_scissors?).to eq true
+    context "player chose rock" do
+      it "should return true" do
+        imtiyaz.choose_scissors
+        expect(imtiyaz.chose_scissors?).to eq true
+      end
+    end
+
+    context "player did not choose scissors" do
+      it "should return false" do
+        imtiyaz.choose_rock
+        expect(imtiyaz.chose_paper?).to eq false
+      end
     end
   end
 end
