@@ -1,22 +1,24 @@
-feature "Start game" do
-  scenario "Step 1 - Enter names" do
-    visit('/')
-    fill_in :player_1_name, with: 'Edyta'
-    fill_in :player_2_name, with: 'Caio'
+require_relative 'test_helpers'
 
-    click_button 'Start the game!'
+feature "Multiplayer game" do
+  
+  scenario "Home displays welcome message" do
+    visit_home
+
+    expect(page).to have_content 'Welcome to Rock-Paper-Scissors!'
+  end
+
+  scenario "Start game with names" do
+    start_game(player_1_name: "Edyta", player_2_name: "Caio")
 
     expect(page).to have_content "Edyta vs Caio"
     expect(page).to have_content "Edyta's turn"
   end
 
-  scenario "Step 2 - Player 1 selects move" do
-    visit('/')
-    fill_in :player_1_name, with: 'Edyta'
-    fill_in :player_2_name, with: 'Caio'
+  scenario "Player 1 selects a move" do
+    start_game(player_1_name: "Edyta", player_2_name: "Caio")
 
-    click_button 'Start the game!'
-    click_button 'Rock'
+    choose_rock
 
     expect(page).to have_content "Edyta vs Caio"
     expect(page).to have_content "Caio's turn"
