@@ -53,9 +53,7 @@ class RPS < Sinatra::Base
   post '/p1_choose_rock' do
     @game = Game.instance
     @game.player_1.choose_rock
-    @game.player_2.choose_random if @game.player_2.computer?
-    redirect to '/end' unless @game.player_2.move.nil?
-    redirect to '/p2_play' if @game.player_2.move.nil?
+    next_move
   end
 
   post '/p2_choose_rock' do
@@ -67,9 +65,7 @@ class RPS < Sinatra::Base
   post '/p1_choose_paper' do
     @game = Game.instance
     @game.player_1.choose_paper
-    @game.player_2.choose_random if @game.player_2.computer?
-    redirect to '/end' unless @game.player_2.move.nil?
-    redirect to '/p2_play' if @game.player_2.move.nil?
+    next_move
   end
 
   post '/p2_choose_paper' do
@@ -81,9 +77,7 @@ class RPS < Sinatra::Base
   post '/p1_choose_scissors' do
     @game = Game.instance
     @game.player_1.choose_scissors
-    @game.player_2.choose_random if @game.player_2.computer?
-    redirect to '/end' unless @game.player_2.move.nil?
-    redirect to '/p2_play' if @game.player_2.move.nil?
+    next_move
   end
 
   post '/p2_choose_scissors' do
@@ -92,10 +86,14 @@ class RPS < Sinatra::Base
     redirect to '/end'
   end
 
-  run! if app_file == $0
-
   private
   def a_name_is_computer?
     params[:player_1_name] == "Computer" || params[:player_2_name] == "Computer"
+  end
+
+  def next_move
+    @game.player_2.choose_random if @game.player_2.computer?
+    redirect to '/end' unless @game.player_2.move.nil?
+    redirect to '/p2_play' if @game.player_2.move.nil?
   end
 end
