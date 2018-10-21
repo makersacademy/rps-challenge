@@ -51,6 +51,12 @@ describe Game do
       allow(computer).to receive(:move) { :Paper }
       expect(subject.result).to eq "Lose"
     end
+
+    it 'returns "Lose" when player 1 plays Spock and player 2 plays Paper' do
+      allow(player).to receive(:move) { :Spock }
+      allow(computer).to receive(:move) { :Paper }
+      expect(subject.result).to eq "Lose"
+    end
   end
 
   context '#message' do
