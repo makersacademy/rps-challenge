@@ -15,7 +15,7 @@ describe Judge do
     end
 
     it "raises an error of tie if all moves are played: scissor / rock / paper" do
-      expect{judge.decide_round_winner([jack,john,jane])}.to raise_error("No winner")
+      expect{judge.decide_round_winner([jack,john,jane])}.to raise_error(NoWinnerError)
     end
 
     it "check round winner: rock / paper" do
@@ -39,7 +39,7 @@ describe Judge do
     end
 
     it "raises an error of tie if there is no Game winner" do
-      expect{judge.decide_game_winner([jack,john])}.to raise_error("No winner")
+      expect{judge.decide_game_winner([jack,john])}.to raise_error(NoWinnerError)
     end
 
   end

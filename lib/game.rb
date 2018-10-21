@@ -38,6 +38,9 @@ class Game
     @round.get_round_winner(@players)
     @rounds.push(@round)
     @round.winners
+    rescue NoWinnerError
+    @rounds.push(@round)
+    raise NoWinnerError.new("No winner for last round")
   end
 
   def finish_game(judge = Judge.new)

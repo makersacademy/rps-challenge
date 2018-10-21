@@ -1,9 +1,15 @@
-<h1>Congratulations! The game is over.</h1>
-<h2>Total rounds played: <%=@game.rounds_played%></h2>
+<div style = "background: yellow">
+
+<h1>The game is over</h1>
 <h2>Total players: <%=@game.players_in_game%></h2>
-
-<h2>The result is: <%=@errormessage ? @errormessage : @winners.each{|w| w.get_name}%></h2>
-
+<h2>Total rounds played: <%=@game.rounds_played%></h2>
 <br>
 <br>
-<a href="/">RePlay</a>
+<h3><%=@game.players[0].get_name%>  : <%=@game.players[0].get_score%> points<br>
+  <br>
+<%=@game.players[1].get_name%>  : <%=@game.players[1].get_score%> points<br></h3>
+<h2>Result: <%= @err ? @err : "Winner - " << @resstr %></h2>
+<br>
+<h3><a href="/">Lets play again</a><h3>
+  <br>  <br>  <br>
+<div>

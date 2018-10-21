@@ -30,24 +30,32 @@ class RPSGame < Sinatra::Base
 
   get '/play' do
     @winners = @game.finish_round
+    @resstr = ""
+    @winners.each {|w| @resstr << w.get_name<< " " } if @winners
+    erb :playrps
+  rescue NoWinnerError => err
+    @err = err
     erb :playrps
   end
 
   post '/play' do
-    if params[:commit] == "Submit"
+    if params[:submit] == "submit"
       @game.start_round
       @game.player_plays(@game.players[0],params[:move1])
-      @game.player_plays(@game.players[1],params[:move2])
+      @game.players[1].get_name == "Computer" ? @game.player_plays(@game.players[1],["rock","paper","scissors"].sample) : @game.player_plays(@game.players[1],params[:move2])
       redirect "/play"
-    elsif params[:commit] == "Finish"
+    elsif params[:submit] == "finish"
       redirect "/complete"
     end
   end
 
   get "/complete" do
     @winners = @game.finish_game
-  rescue
-    @errormessage = "Its a tie - no winners no losers!"
+    @resstr = ""
+    @winners.each {|w| @resstr << w.get_name << " " } if @winners
+    erb :complete
+  rescue NoWinnerError => err
+    @err = err
     erb :complete
   end
 
