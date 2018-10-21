@@ -7,6 +7,7 @@ require 'simplecov-console'
 
 
 
+
 Capybara.app = RPS
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([

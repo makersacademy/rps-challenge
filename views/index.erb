@@ -1,5 +1,35 @@
 
-<form action="/name" method="post">
-  <input type="text" name="player_name">
-  <input type="submit" value="Start a game!">
-</form>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      body {background-color: black;}
+      h1   {color: blue;}
+      .image {
+        max-width: 300px;
+        margin-bottom: 20px;
+      }
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        height: 100vh;
+      }
+</style>
+  </head>
+
+  <body>
+  <div class="wrapper">
+    <img class="image" src="https://images.discordapp.net/avatars/421090818506358784/ad4a1fad288cf8d6471c067ef414cd53.png?size=512"/>
+    <form action="/name" method="post">
+      <input type="text" name="player_name">
+      <input type="submit" value="Start a game!">
+    </form>
+  </div>
+  </html>

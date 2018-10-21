@@ -1,11 +1,45 @@
 
- <div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+      body {background-color: black}
+      h1   {color: white;}
+      .image {
+        max-width: 300px;
+        margin-bottom: 20px;
+      }
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        height: 100vh;
+      }
+
+</style>
+  </head>
+
+  <body>
+  <div class="wrapper">
+    <img class="image" src="https://images.discordapp.net/avatars/421090818506358784/ad4a1fad288cf8d6471c067ef414cd53.png?size=512"/>
+
    <h1> Welcome <%= @player_name %> ! Please choose your move :
      <form action = "/play" method = "post">
        <input type = "submit" name = "choice" value = "Rock" />
        <input type = "submit" name = "choice" value= "Paper" />
        <input type = "submit" name = "choice" value= "Scissors" />
      </form>
-
-     You chose <%= @choice %> 
-</div>
+     You chose <%= @choice %>
+     <div id = 'computer'>
+       Computer chose <%= @computer_choice %>
+     </div>
+   </div>
+</body>
+</html>

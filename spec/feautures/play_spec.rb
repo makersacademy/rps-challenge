@@ -18,4 +18,5 @@ feature 'playing rock,paper,scissors game' do
     click_button 'Paper'
     expect(page).to have_content "You chose Paper"
   end
+
 end
