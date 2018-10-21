@@ -10,7 +10,7 @@ feature 'Enter user data and game play' do
     fill_in :name, with: 'Neil'
     click_button 'Lets Play!'
     click_button 'Rock'
-    expect(page).to have_content ('You Win!' || 'Sorry you lose!')
+    expect(page).to have_content ('you chose Rock')
   end
 
 end

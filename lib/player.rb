@@ -9,4 +9,5 @@ class Player
 
   def chose_weapon(weapon_choice = ["rock", "paper", "scissors"].sample)
     @weapon = weapon_choice
+  end
 end
