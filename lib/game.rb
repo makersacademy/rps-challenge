@@ -1,19 +1,22 @@
+require_relative 'rules'
+
 class Game
-  RULES = RPSRules::RULES
 
-  attr_reader :player
-
-  def initialize(player)
-    @player = player
-    @current_game = nil
-  end
-
-  def self.store_game(game)
-    @current_game = game
+  def self.store_game(player_one, player_two)
+    @current_game = Game.new(player_one, player_two)
   end
 
   def self.current_game
     @current_game
+  end
+
+  RULES = RPSRules::RULES
+
+  attr_reader :player_one, :player_two
+
+  def initialize(player_one, player_two = "Bot")
+    @player_one, @player_two = player_one, player_two
+    @current_game = nil
   end
 
   def computer_selection
@@ -26,7 +29,7 @@ class Game
   end
 
   def play(player_selection, computer_selection)
-    
+
   end
 
   # def rock(computer)

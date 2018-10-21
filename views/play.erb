@@ -4,12 +4,24 @@
 
 <center>
   <h1 class="header">
-  <%= @game.player.name %> VS RPS
+  <%= @game.player_one.name %> VS RPS
   </h1>
 </center>
 
+<div class="container" style='float: left; border:5px solid black;'>
+  <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHFuiom5jEMhF5pieB5D46TMhLt2IF-wjooHpR6RA34wdIB7Gy'>
+  <div class="bottom-left"> Name: <%= @game.player_one.name %> </div>
+  <div class="bottom-right"> HP: <%= @game.player_one.name %> </div>
+</div>
+<div class="container" style='float: right; border:5px solid black;'>
+  <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHFuiom5jEMhF5pieB5D46TMhLt2IF-wjooHpR6RA34wdIB7Gy'>
+  <div class="bottom-left"> Name: <%= @game.player_two.name %> </div>
+  <div class="bottom-right"> HP: <%= @game.player_two.name %> </div>
+</div>
+
+
 <center>
-  <form action = "/choice" method = "post">
+  <form>
     <div>
       <button class="button" type='submit' name="choice" value='Rock'>Rock</button>
     </div>

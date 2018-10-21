@@ -6,7 +6,11 @@ describe Game do
 
   describe '#Recieves Player' do
     it 'retrieves the first player' do
-      expect(game.player).to eq player
+      expect(game.player_one).to eq player
+    end
+
+    it 'retrieves the Second player' do
+      expect(game.player_two).to eq "Computer"
     end
   end
 
