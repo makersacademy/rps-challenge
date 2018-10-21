@@ -22,11 +22,11 @@ class Game
   end
 
   def result
-    if WINS.values_at(@player_1.move).any?{ |x| x.include?(@player_2.move) }
+    if WINS.values_at(@player_1.move).any? { |x| x.include?(@player_2.move) }
       "Win"
     elsif @player_1.move == @player_2.move
       "Draw"
-    elsif WINS.values_at(@player_2.move).any?{ |x| x.include?(@player_1.move) }
+    elsif WINS.values_at(@player_2.move).any? { |x| x.include?(@player_1.move) }
       "Lose"
     else
       fail "Move not valid."

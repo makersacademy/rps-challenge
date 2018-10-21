@@ -15,13 +15,13 @@ class RPS < Sinatra::Base
   post '/new_game' do
     if params[:players] == 'One Player'
       erb :new_game_one_player
-    else params[:players] == 'Two Player'
+    elsif params[:players] == 'Two Player'
       erb :new_game_two_player
     end
   end
 
   post '/name' do
-    if params[:player_2_name] == nil
+    if params[:player_2_name].nil?
       player = Player.new(params[:name])
       @game = Game.create(player, Computer.new)
       redirect '/play_one_player'
@@ -42,15 +42,14 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    if params[:player_2_move] == nil
+    if params[:player_2_move].nil?
       @game.player_1.pick_move(params[:player_1_move].to_sym)
       @game.player_2.pick_move
-      redirect '/result'
     else
       @game.player_1.pick_move(params[:player_1_move].to_sym)
       @game.player_2.pick_move(params[:player_2_move].to_sym)
-      redirect '/result'
     end
+    redirect '/result'
   end
 
   get '/result' do
