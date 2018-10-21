@@ -1,13 +1,16 @@
 <%= erb :game_header %>
-<div>
-  <h3><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h3>
-</div>
+<br><br><br><br>
 <div>
   <h4><i><%= @game.player_1.name %>, choose your weapon...</i></h4>
 </div>
+<br>
 <section>
   <form action='/single_player_play' method='post'>
     <%= erb :buttons %>
   </form>
 </section>
+<br><br><br><br><br><br><br>
+<div>
+  <h3 id="bottom_text" ><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h3>
+</div>
 <%= erb :footer %>

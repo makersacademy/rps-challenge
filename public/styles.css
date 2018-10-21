@@ -1,5 +1,5 @@
 body {
-  font-family: 'Source Sans Pro', cursive;
+  font-family: 'K2D', cursive;
   background-color: #E3D4FF;
   background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
   margin: 0;
@@ -37,6 +37,9 @@ h1#title {
 }
 h1#title:hover {
   color: #671391;
+}
+h3#bottom_text {
+  font-family: 'Bungee', cursive;
 }
 h4#subtitle {
   position: relative;
