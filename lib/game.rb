@@ -1,15 +1,15 @@
 class Game
-  attr_reader :player, :computer
+  attr_reader :player_1, :player_2
 
   WINS = { :Scissors => :Paper, :Rock => :Scissors, :Paper => :Rock }
 
-  def initialize(player, computer)
-    @player = player
-    @computer = computer
+  def initialize(player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
-  def self.create(player, computer = Computer.new)
-    @game = Game.new(player, computer)
+  def self.create(player_1, player_2 = Computer.new)
+    @game = Game.new(player_1, player_2)
   end
 
   def self.instance
@@ -17,9 +17,9 @@ class Game
   end
 
   def result
-    if @player.move == WINS.key(@computer.move)
+    if @player_1.move == WINS.key(@player_2.move)
       "Win"
-    elsif @player.move == @computer.move
+    elsif @player_1.move == @player_2.move
       "Draw"
     else
       "Lose"
