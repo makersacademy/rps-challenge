@@ -46,7 +46,7 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 
 ## Finished product - click on image to view video
 
-[![Game Demo](https://github.com/ClareJolly/rps-challenge/raw/master/public/images/game-screenshot.png)](http://www.youtube.com/watch?v=214c3RVzyqs "Game Demo")
+[![Game Demo](public/images/game-screenshot.png)](http://www.youtube.com/watch?v=214c3RVzyqs "Game Demo")
 
 ## My approach
 TBA
