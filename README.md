@@ -1,12 +1,12 @@
 # Rock Paper Scissors Lizard Spock Game WebApp
 
 A game project for Makers.
-Original instructions are [here](../blob/master/Instruction_README.md).
+Original instructions are [here](../master/Instruction_README.md).
 
 
 ## Approach
 
-1. I created [mockups](../blob/master/mockups/) for the pages and designed the flow of the game.
+1. I created [mockups](../master/mockups/) for the pages and designed the flow of the game.
 2. Using the TDD approach, I followed the feature tests and unit tests to implement the model, view and controller. I tried to follow the princple of single responsibilty and other design princples during this process.
 3. I refactored during the implementation. After I was done with code I simplified the views and the controller.
 
