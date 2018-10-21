@@ -40,7 +40,7 @@ class RockPaperScissors < Sinatra::Base
     @player_1 = User.new(session[:name])
     @player_2 = User.new(session[:player_2_name])
     @game = Game.new(@player_1, @player_2)
-    @welcome_message = "Welcome, #{player_1.name} and #{player_2.name}"
+    @welcome_message = "Welcome, #{@player_1.name} and #{@player_2.name}!"
     erb :two_player
   end
 

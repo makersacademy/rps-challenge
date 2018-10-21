@@ -8,6 +8,7 @@ end
 
 def two_player_sign_in
   visit '/'
+  fill_in('name', with: 'Becka')
   fill_in('p2_name', with: 'Jess')
   click_on('Submit')
 end
