@@ -40,9 +40,10 @@ class RPS < Sinatra::Base
 
   get '/play_end' do
     @user_choice = @game.player_choice
+    @game.computer_chooses
     @computer_choice = @game.computer_choice
-    @game.score_game
-    @result = @game.result
+    @result = @game.score_game
+    # @result = @game.result
     erb(:play_end)
   end
 

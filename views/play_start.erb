@@ -1,32 +1,45 @@
 <style>
+h1 {
+  padding-top: 40px;
+}
 .grid-container {
   display: grid;
-  grid-template-columns: 50px 50px 50px;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 20px;
   justify-content: space-evenly;
-  padding: 10px;
+  padding: 10px 300px 10px 300px;
+  padding: auto;
+  align-content: center;
 }
 .grid-item {
-  padding: 20px;
+  padding-top: 10px;
   font-size: 30px;
   text-align: center;
+  width: auto;
+  align-self: center;
 }
 .button {
-    background-color: white; /* Green */
-    border: none;
-    color: black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-family: Courier;
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Courier;
+  width: 150px;
+  border-radius: 10px;
+  border-color: grey;
+  border-style: solid;
+  border-width: 1px;
 }
 </style>
-<body style="background-color:powderblue;">
+<body style="background-color:#8cd9af;">
 <h1 style="font-family:Courier" align='center'>Hello, <%= @player_name %></h1>
 <p style="font-family:Courier" align='center'>You'll be playing against the computer.<br>
 Hope you brought your A game!</p>
-<div style="font-family:Courier" align='center'>Choose one:</div>
+<h3 style="font-family:Courier" align='center'>Choose one:</h3>
 <div class="grid-container">
   <div class="grid-item"><form style="font-family:Courier" align='center' action='/rock' method="post">
     <button class="button">Rock</button>
@@ -35,6 +48,6 @@ Hope you brought your A game!</p>
     <button class="button">Paper</button>
   </form></div>
   <div class="grid-item"><form style="font-family:Courier" align='center' action='/scissors' method="post">
-    <button class="button">Scissors</scissors>
+    <button class="button">Scissors</button>
   </form></div>
 </div>

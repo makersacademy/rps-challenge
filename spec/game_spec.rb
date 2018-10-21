@@ -22,8 +22,7 @@ describe Game do
     allow(player).to receive(:choice).and_return("Rock")
     allow(game).to receive(:computer).and_return(computer)
     allow(computer).to receive(:choice).and_return("Scissors")
-    game.score_game
-    expect(game.result).to eq("Win")
+    expect(game.score_game).to eq("Win")
   end
 
   it 'if user chooses Scissors, computer chooses Rock, user loses' do
@@ -31,8 +30,7 @@ describe Game do
     allow(player).to receive(:choice).and_return("Scissors")
     allow(game).to receive(:computer).and_return(computer)
     allow(computer).to receive(:choice).and_return("Rock")
-    game.score_game
-    expect(game.result).to eq("Lose")
+    expect(game.score_game).to eq("Lose")
   end
 
   it 'if user chooses Scissors, computer chooses Scissors, then it\'s a draw' do
@@ -40,7 +38,7 @@ describe Game do
     allow(player).to receive(:choice).and_return("Scissors")
     allow(game).to receive(:computer).and_return(computer)
     allow(computer).to receive(:choice).and_return("Scissors")
-    game.score_game
-    expect(game.result).to eq("Draw")
+    expect(game.score_game).to eq("Draw")
   end
+
 end

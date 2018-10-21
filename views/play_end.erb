@@ -1,13 +1,42 @@
-<body style="background-color:powderblue;">
+<style>
+h1 {
+  padding-top: 40px;
+}
+.button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Courier;
+    width: 200px;
+    border-radius: 10px;
+    border-color: grey;
+    border-style: solid;
+    border-width: 1px;
+}
+.choices {
+  padding: 30px;
+}
+</style>
+<body style="background-color:#8cd9af;">
+
+<% if @result == "Win"%>
+<h1 style="font-family:Courier" align='center'>"Congratulations, you WON!"</h1>
+<% elsif @result == "Draw"%>
+<h1 style="font-family:Courier" align='center'>"Great minds think alike - you drew."</h1>
+<% else %>
+<h1 style="font-family:Courier" align='center'>"Oh oh, you LOST!"</h1>
+<% end %>
+
+<div class="choices">
 <div style="font-family:Courier" align='center'>You chose: <%= @user_choice %></div>
 <div style="font-family:Courier" align='center'>Computer chose: <%= @computer_choice %></div>
-<% if @result == "Win"%>
-<div style="font-family:Courier" align='center'>"Congratulations, you WON!"</div>
-<% elsif @result == "Draw"%>
-<div style="font-family:Courier" align='center'>"Great minds thing alike - you drew."</div>
-<% else %>
-<div style="font-family:Courier" align='center'>"Oh oh, you LOST!"</div>
-<% end %>
+</div>
+
 <form align='center' action='/play_start' method="get">
-  <button type="play again">Play again</button>
+  <button class="button">Play again</button>
 </form>

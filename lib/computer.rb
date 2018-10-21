@@ -1,7 +1,9 @@
 class Computer
 
-  def choice
-    ['Rock', 'Paper', 'Scissors'].sample
+  attr_reader :choice
+
+  def make_a_choice
+    @choice = ['Rock', 'Paper', 'Scissors'].sample
   end
 
 end

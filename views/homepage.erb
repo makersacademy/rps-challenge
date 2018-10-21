@@ -1,21 +1,48 @@
 <style>
+.game-title {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
 .rock-paper-scissors {
-  padding: 20px;
   text-align: center;
 }
 .player-name-form {
-  padding: 50px;
+  padding: 30px 0 50px 0;
+}
+input[type=text], select {
+  font-size: 20px;
+  font-family: Courier;
+  padding: 9px 20px;
+  border-radius: 10px;
+}
+input[type=submit] {
+  font-size: 20px;
+  font-family: Courier;
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border-color: grey;
+  border-style: solid;
+  border-width: 1px;
 }
 </style>
+
 <body style="background-color:#8cd9af">
+
+<div class="game-title">
 <h1 style="font-family:Courier" align='center'>Let's play</h1>
+</div>
+
 <div class="rock-paper-scissors">
   <div class="grid-item"><img src=/images/rps.jpg></div>
 </div>
+
 <div class="player-name-form">
   <form style="font-family:Courier" align='center' action="/name" method="post">
-    Enter your name:<br>
+    <h2>Enter your name:</h2><br>
     <input type='text' name='player_name'<br>
-    <input style="font-family:Courier" type='submit' value='Start the game!'>
+    <input type='submit' value='Start the game!'>
   </form>
 </div>
