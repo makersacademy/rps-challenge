@@ -14,11 +14,12 @@
 <%if @game.win_logic == "draw"%>
 <h2>It's a draw</a></h2>
 <%else%>
-<h2><%=@game.win_logic.name%> wins</h2>
+<h1 class="flashit"><%=@game.win_logic.name%> wins</h1>
 
 <%end%>
 <p><button type="button" class="restart_btn" value="Play" onclick="location.href='/';"></button><!--<a href="/" class="restart_btn">play again?</a>--></p>
 </div>
 
 </div>
+
 </body></html>
