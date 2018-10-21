@@ -16,6 +16,6 @@ feature 'Testing app.rb' do
     fill_in(:player, with: 'Meg')
     click_button("Submiteth, Peasent")
     click_button("Rocketh")
-    
+    #need to test this once I understand how to make the page work
   end
 end

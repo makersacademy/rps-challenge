@@ -3,6 +3,7 @@ require './lib/player'
 require './lib/game'
 
 class RPS < Sinatra::Base
+  enable :sessions
 
   get '/' do
     erb(:index)
@@ -14,12 +15,20 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    session[:move] = params[:move]
     erb(:play)
   end
 
-  get '/attack' do
-    $game.move(params[:player], $game.comp_move)
-    erb(:attack)
+  post '/attack' do
+    @move = session[:move]
+    game = $game.move(@move, $game.comp_move)
+    session[:result] = $game.store(game)
+    redirect '/result'
+  end
+
+  get '/result' do
+    @end_game = session[:result]
+    erb(:result)
   end
 
   run! if app_file == $0
