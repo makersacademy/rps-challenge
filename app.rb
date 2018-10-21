@@ -21,18 +21,23 @@ class RPS < Sinatra::Base
     erb(:invalid_name)
   end
 
-  get '/p1_no_name' do
+  get '/one_player_no_name' do
     erb(:one_player_no_name_error)
   end
 
+  get '/two_player_missing_name' do
+    erb(:two_player_missing_name_error)
+  end
+
   post '/name' do
-    redirect to '/p1_no_name' if params[:player_name] == ""
+    redirect to '/one_player_no_name' if player_name_is_missing?
     @game = Game.create(player_1: params[:player_name])
     redirect to '/play'
   end
 
   post '/two_names' do
     redirect to '/invalid_name' if a_name_is_computer?
+    redirect to '/two_player_missing_name' if a_name_is_missing?
     @game = Game.create(player_1: params[:player_1_name],
       player_2: params[:player_2_name])
     redirect to '/play'
@@ -94,6 +99,14 @@ class RPS < Sinatra::Base
   private
   def a_name_is_computer?
     params[:player_1_name] == "Computer" || params[:player_2_name] == "Computer"
+  end
+
+  def a_name_is_missing?
+    params[:player_1_name] == "" || params[:player_2_name] == ""
+  end
+
+  def player_name_is_missing?
+    params[:player_name] == ""
   end
 
   def next_move

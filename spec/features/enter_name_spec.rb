@@ -23,6 +23,33 @@ feature "Enter player name" do
         expect(page).to have_content "Rock, Paper, Scissors! Mario vs Luigi"
       end
 
+      context "no name entered" do
+        scenario "should raise an error" do
+          visit '/'
+          click_button '2 Player'
+          click_button 'Submit'
+          expect(page).to have_content "Error! A name must be entered for both players"
+        end
+      end
+
+      context "only one name entered" do
+        scenario "should raise an error" do
+          visit '/'
+          click_button '2 Player'
+          fill_in(:player_1_name, with: "Mario")
+          click_button 'Submit'
+          expect(page).to have_content "Error! A name must be entered for both players"
+        end
+
+        scenario "should raise an error" do
+          visit '/'
+          click_button '2 Player'
+          fill_in(:player_2_name, with: "Mario")
+          click_button 'Submit'
+          expect(page).to have_content "Error! A name must be entered for both players"
+        end
+      end
+
       context "'Computer' entered into a name field" do
         scenario "should raise error" do
           visit '/'
