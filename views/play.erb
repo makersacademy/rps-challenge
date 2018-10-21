@@ -1,3 +1,10 @@
 <%= @player_1_name %> vs <%= @player_2_name %>
 <br>
-<%= @player_1_name %>'s turn
+<%= @current_player_name %>'s turn
+<br>
+
+<form action="/game" method="post">
+  <input type="hidden" name="player_1_name" value="<%= @player_1_name %>">
+  <input type="hidden" name="player_2_name" value ="<%= @player_2_name %>">
+  <input type="submit" name="move" value="Rock">
+</form>

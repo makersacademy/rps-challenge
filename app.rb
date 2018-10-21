@@ -9,6 +9,14 @@ class RPSapp < Sinatra::Base
   post '/game' do
     @player_1_name = params[:player_1_name]
     @player_2_name = params[:player_2_name]
+    @move = params[:move]
+
+    if @move.nil?
+      @current_player_name = @player_1_name
+    else
+      @current_player_name = @player_2_name
+    end
+
     erb :play
   end
 
