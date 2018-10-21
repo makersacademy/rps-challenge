@@ -14,7 +14,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    player = (Player.new(params[:player]))
+    player = Player.new(params[:player])
     Game.store_game(Game.new(player))
     redirect '/play'
   end

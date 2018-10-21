@@ -1,7 +1,5 @@
 require 'game'
 require 'computer'
-require 'pry'
-
 
 describe Game do
   subject(:game) { described_class.new(chloe) }
@@ -44,7 +42,7 @@ describe Game do
 
   describe '#player_win?' do
     subject(:game) { described_class.new(player) }
-    let(:player) { double :player, name: "Chloe"}
+    let(:player) { double :player, name: "Chloe" }
     it 'should return true if player won' do
       game.player_choice("Rock")
       allow_any_instance_of(Computer).to receive(:choice).and_return("Scissors")
@@ -53,18 +51,18 @@ describe Game do
       expect(subject.player_win?).to eq true
     end
     it 'should return false if player drew' do
-    game.player_choice("Scissors")
-    allow_any_instance_of(Computer).to receive(:choice).and_return("Scissors")
-    game.computer_choice
-    # binding.pry
-    expect(subject.player_win?).to eq false
+      game.player_choice("Scissors")
+      allow_any_instance_of(Computer).to receive(:choice).and_return("Scissors")
+      game.computer_choice
+      # binding.pry
+      expect(subject.player_win?).to eq false
     end
     it 'should return false if player lost' do
-    game.player_choice("Paper")
-    allow_any_instance_of(Computer).to receive(:choice).and_return("Scissors")
-    game.computer_choice
-    # binding.pry
-    expect(subject.player_win?).to eq false
+      game.player_choice("Paper")
+      allow_any_instance_of(Computer).to receive(:choice).and_return("Scissors")
+      game.computer_choice
+      # binding.pry
+      expect(subject.player_win?).to eq false
     end
     it 'should return true if player won' do
       game.player_choice("Scissors")
@@ -80,10 +78,10 @@ describe Game do
       # binding.pry
       expect(subject.player_win?).to eq true
     end
-end
+  end
   describe '#player_drew?' do
     subject(:game) { described_class.new(player) }
-    let(:player) { double :player, name: "Chloe"}
+    let(:player) { double :player, name: "Chloe" }
     it 'should return true if players drew' do
       game.player_choice("Scissors")
       allow_any_instance_of(Computer).to receive(:choice).and_return("Scissors")
