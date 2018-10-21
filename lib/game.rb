@@ -40,4 +40,9 @@ class Game
     @player_1_move.nil? || @player_2_move.nil?
   end
 
+  def welcome_message
+    return "Welcome, #{@player_1.name}!" if @player_2.automated
+    "Welcome, #{@player_1.name} and #{@player_2.name}!"
+  end
+    
 end
