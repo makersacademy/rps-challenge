@@ -5,4 +5,9 @@ describe Computer do
     expect(subject.name).to eq("The Computer")
     expect(subject.move).to eq(nil)
   end
+
+  it 'assigns the computer a random move' do
+    
+  end
+
 end

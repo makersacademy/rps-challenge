@@ -1,5 +1,4 @@
 require 'game'
-#require 'player'
 
 describe Game do
   it 'initializes a game with one player' do
@@ -22,6 +21,16 @@ describe Game do
     game = Game.new(player1, player2)
     expect(game.player1.name).to eq "Ray"
     expect(game.player2.name).to eq "The Computer"
+  end
+
+  it "evaluates who has won the game" do
+    player1 = Player.new("Ray", "Rock")
+    player2 = Computer.new
+    game = Game.new(player1, player2)
+    allow(player2).to receive(:random_move).and_return("Scissors")
+    player2.move = player2.random_move
+    game.evaluate(player1, player2)
+    expect(game.player2.move).to eq("Scissors")
   end
 
 end
