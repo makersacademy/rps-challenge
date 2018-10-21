@@ -29,9 +29,14 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  post '/choice' do
+  post '/play' do
     @game.play(params[:choice], @game.computer_selection)
+    redirect '/game_over' if @game.end_of_game
     redirect '/play'
+  end
+
+  get '/game_over' do
+    erb :game_over
   end
 
   run! if app_file == $0

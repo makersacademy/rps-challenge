@@ -40,6 +40,10 @@ class Game
     end
   end
 
+  def end_of_game
+    true if @player_one.dead? || @player_two.dead?
+  end
+
   private
 
   def wins?(choice_1, choice_2)

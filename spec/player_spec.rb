@@ -18,5 +18,10 @@ describe Player do
       ryan.hit
       expect(ryan.hp).to eq 90
     end
+
+    it 'should not go below 0' do
+      10.times { ryan.hit }
+      expect(ryan.dead?).to eq true
+    end
   end
 end
