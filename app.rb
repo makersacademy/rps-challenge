@@ -8,9 +8,6 @@ require './lib/rules_factory'
 
 # RockPaperScissors
 class RockPaperScissors < Sinatra::Base
-  configure do
-    register Sinatra::Partial
-  end
   enable :sessions
 
   get '/' do
