@@ -6,6 +6,15 @@ feature "Enter player name" do
         one_player_sign_in_and_play
         expect(page).to have_content "Rock, Paper, Scissors! Imtiyaz vs Computer"
       end
+
+      context "no name entered" do
+        scenario "should raise an error" do
+          visit '/'
+          click_button '1 Player'
+          click_button 'Submit'
+          expect(page).to have_content "Error! A name must be entered"
+        end
+      end
     end
 
     context "two player mode" do

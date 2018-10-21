@@ -21,7 +21,12 @@ class RPS < Sinatra::Base
     erb(:invalid_name)
   end
 
+  get '/p1_no_name' do
+    erb(:one_player_no_name_error)
+  end
+
   post '/name' do
+    redirect to '/p1_no_name' if params[:player_name] == ""
     @game = Game.create(player_1: params[:player_name])
     redirect to '/play'
   end
