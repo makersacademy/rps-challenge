@@ -1,7 +1,12 @@
 class Game
   attr_reader :player_1, :player_2
 
-  WINS = { :Scissors => :Paper, :Rock => :Scissors, :Paper => :Rock }
+  WINS = { :Scissors => [:Paper, :Lizard],
+    :Paper => [:Rock, :Spock],
+    :Rock => [:Lizard, :Scissors],
+    :Lizard => [:Spock, :Paper],
+    :Spock => [:Scissors, :Rock],
+  }
 
   def initialize(player_1, player_2)
     @player_1 = player_1
@@ -17,11 +22,11 @@ class Game
   end
 
   def result
-    if @player_1.move == WINS.key(@player_2.move)
+    if WINS.values_at(@player_1.move).any?{ |x| x.include?(@player_2.move) }
       "Win"
     elsif @player_1.move == @player_2.move
       "Draw"
-    elsif @player_2.move == WINS.key(@player_1.move)
+    elsif WINS.values_at(@player_2.move).any?{ |x| x.include?(@player_1.move) }
       "Lose"
     else
       fail "Move not valid."
