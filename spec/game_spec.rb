@@ -10,7 +10,7 @@ describe Game do
     end
 
     it 'retrieves the Second player' do
-      expect(game.player_two).to eq "Computer"
+      expect(game.player_two).to eq "Bot"
     end
   end
 

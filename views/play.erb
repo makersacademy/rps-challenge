@@ -3,20 +3,21 @@
 </head>
 
 <center>
-  <h1 class="header">
-  <%= @game.player_one.name %> VS RPS
+  <h1 class='header'>
+    <%= @game.player_one.name %> VS RPS
+    <img src='https://ksr-ugc.imgix.net/assets/001/057/549/5ca7f2d6c2e946024b8fad44c85e654d_original.jpg?ixlib=rb-1.1.0&w=680&fit=max&v=1381479586&auto=format&gif-q=50&q=92&s=6abb0fb3956cbe88651ab861db9df8aa' height='70%' width='95%' >
   </h1>
 </center>
 
 <div class="container" style='float: left; border:5px solid black;'>
-  <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHFuiom5jEMhF5pieB5D46TMhLt2IF-wjooHpR6RA34wdIB7Gy'>
+  <img src='https://uploads.disquscdn.com/images/d151788cd04ad2fe888570798af5c4ac644a5eb541c43c26f427a13007b0e28f.gif' width="400px">
   <div class="bottom-left"> Name: <%= @game.player_one.name %> </div>
-  <div class="bottom-right"> HP: <%= @game.player_one.name %> </div>
+  <div class="bottom-right"> HP: <%= @game.player_one.hp %> </div>
 </div>
 <div class="container" style='float: right; border:5px solid black;'>
-  <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHFuiom5jEMhF5pieB5D46TMhLt2IF-wjooHpR6RA34wdIB7Gy'>
+  <img src='https://uploads.disquscdn.com/images/d151788cd04ad2fe888570798af5c4ac644a5eb541c43c26f427a13007b0e28f.gif' width="400px">
   <div class="bottom-left"> Name: <%= @game.player_two.name %> </div>
-  <div class="bottom-right"> HP: <%= @game.player_two.name %> </div>
+  <div class="bottom-right"> HP: <%= @game.player_two.hp %> </div>
 </div>
 
 

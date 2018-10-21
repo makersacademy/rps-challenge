@@ -20,7 +20,7 @@ class Rps < Sinatra::Base
 
   post '/player' do
     player = Player.new(params[:player_name])
-    computer = Player.new("RPS")
+    computer = Player.new("Bot")
     @game = Game.store_game(player, computer)
     redirect '/play'
   end
