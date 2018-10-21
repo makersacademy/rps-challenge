@@ -51,4 +51,10 @@ feature "displaying correct result" do
     click_button "ROCK"
     expect(page).to have_selector home_button
   end
+
+  scenario "play again button should return to index page" do
+    click_button "ROCK"
+    click_button "Play again!"
+    expect(page).to have_current_path('/')
+  end
 end
