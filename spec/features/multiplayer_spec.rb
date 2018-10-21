@@ -1,7 +1,8 @@
 feature 'Multiplayer' do
   scenario 'player 1 and player 2 enter their names and get a welcome screen' do
     visit '/'
-    click_button 'Two Player'
+    select 'One Player', from: 'players'
+    click_button 'Submit'
     fill_in 'player_1', with: "Mittens"
     fill_in 'player_2', with: "Dave"
     click_button 'Submit'
