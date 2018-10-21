@@ -22,26 +22,6 @@ describe Game do
     end
   end
 
-  describe '#draw?' do
-    it 'is a draw' do
-      expect(draw_game.draw?).to eq true
-    end
-
-    it 'is not a draw' do
-      expect(game.draw?).to eq false
-    end
-  end
-
-  describe '#winner?' do
-    it 'returns true' do
-      expect(game.winner?).to eq true
-    end
-
-    it 'returns false' do
-      expect(draw_game.winner?).to eq false
-    end
-  end
-
   describe '#outcome' do
     it 'win' do
       expect(game.outcome).to eq "You win!"
@@ -69,4 +49,22 @@ describe Game do
       expect(draw_game.action).to eq "&nbsp;"
     end
   end
+
+  describe '#stats_to_update' do
+    it 'updates player 1 wins counter' do
+      game.update_stats
+      expect(game.player_1_wins) == 1
+    end
+
+    it 'updates player 2 wins counter' do
+      loss_game.update_stats
+      expect(loss_game.player_2_wins) == 1
+    end
+
+    it 'updates player 2 wins counter' do
+      draw_game.update_stats
+      expect(draw_game.player_1_wins) == 0
+    end
+  end
+
 end

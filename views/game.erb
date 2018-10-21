@@ -25,10 +25,10 @@
       <div id="alert" class="row">
         <div class="col-3"></div>
           <div class="col-6 alert alert-light text-center" role="alert" >
-            <p id="result">
+            <p class="mb-0" id="result">
               <%=@game.outcome %>
             </p>
-            <p>
+            <p class="mb-0">
               <%=@game.action %>
             </p>
           </div>
@@ -97,16 +97,16 @@
             <table class="table table-borderless text-center">
               <thead>
                 <tr>
-                  <th scope="col">Player 1 wins</th>
+                  <th scope="col"><%=@game.player_1.name %> wins</th>
                   <th scope="col">Ties</th>
-                  <th scope="col">Player 2 wins</th>
+                  <th scope="col"><%=@game.player_2.name %> wins</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
+                  <td><%=@game.player_1_wins %></td>
+                  <td><%=@game.draws %></td>
+                  <td><%=@game.player_2_wins %></td>
                 </tr>
               </tbody>
             </table>

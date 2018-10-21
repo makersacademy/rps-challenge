@@ -22,8 +22,13 @@ class Game
     @game
   end
 
+  attr_reader :player_1_wins, :player_2_wins, :draws
+
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
+    @player_1_wins = 0
+    @player_2_wins = 0
+    @draws = -1
   end
 
   def player_1
@@ -46,6 +51,29 @@ class Game
     end
   end
 
+  def action
+    if draw?
+      '&nbsp;'
+    elsif winner?
+      OUTCOMES[player_1.move.to_sym]
+    else
+      OUTCOMES[player_2.move.to_sym]
+    end
+  end
+
+  def update_stats
+    case stats_to_update
+    when 'draw'
+      @draws += 1
+    when 'player_1'
+      @player_1_wins += 1
+    when 'player_2'
+      @player_2_wins += 1
+    end
+  end
+
+  private
+
   def draw?
     player_1.move == player_2.move
   end
@@ -54,13 +82,13 @@ class Game
     RULES[player_1.move.to_sym].include?(player_2.move)
   end
 
-  def action
+  def stats_to_update
     if draw?
-      '&nbsp;'
+      'draw'
     elsif winner?
-      OUTCOMES[player_1.move.to_sym]
+      'player_1'
     else
-      OUTCOMES[player_2.move.to_sym]
+      'player_2'
     end
   end
 

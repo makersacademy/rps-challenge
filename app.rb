@@ -23,6 +23,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game' do
+    @game.update_stats
     erb :game
   end
 
