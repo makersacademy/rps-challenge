@@ -1,8 +1,12 @@
 feature "Drawing" do
   context "one player mode" do
     context "player and computer both choose rock" do
-      scenario "diplays 'You Draw' on screen" do
+      before {
+        allow_any_instance_of(Player).to receive(:chose_paper?).and_return(false)
+        allow_any_instance_of(Player).to receive(:chose_rock?).and_return(true)
         allow_any_instance_of(Player).to receive(:move).and_return("Rock")
+      }
+      scenario "diplays 'You Draw' on screen" do
         one_player_sign_in_and_play
         click_button("Rock")
         expect(page).to have_content("Computer chose Rock. You Draw :|")
@@ -10,8 +14,12 @@ feature "Drawing" do
     end
 
     context "player and computer both choose paper" do
-      scenario "diplays 'You Draw' on screen" do
+      before {
+        allow_any_instance_of(Player).to receive(:chose_scissors?).and_return(false)
+        allow_any_instance_of(Player).to receive(:chose_paper?).and_return(true)
         allow_any_instance_of(Player).to receive(:move).and_return("Paper")
+      }
+      scenario "diplays 'You Draw' on screen" do
         one_player_sign_in_and_play
         click_button("Paper")
         expect(page).to have_content("Computer chose Paper. You Draw :|")
@@ -19,8 +27,12 @@ feature "Drawing" do
     end
 
     context "player and computer both choose scissors" do
-      scenario "diplays 'You Draw' on screen" do
+      before {
+        allow_any_instance_of(Player).to receive(:chose_rock?).and_return(false)
+        allow_any_instance_of(Player).to receive(:chose_scissors?).and_return(true)
         allow_any_instance_of(Player).to receive(:move).and_return("Scissors")
+      }
+      scenario "diplays 'You Draw' on screen" do
         one_player_sign_in_and_play
         click_button("Scissors")
         expect(page).to have_content("Computer chose Scissors. You Draw :|")

@@ -1,8 +1,13 @@
 feature "Winning" do
   context "one player mode" do
     context "computer chose scissors" do
-      scenario "display 'You Win' if player chooses rock" do
+      before {
+        allow_any_instance_of(Player).to receive(:chose_paper?).and_return(false)
+        allow_any_instance_of(Player).to receive(:chose_rock?).and_return(false)
+        allow_any_instance_of(Player).to receive(:chose_scissors?).and_return(true)
         allow_any_instance_of(Player).to receive(:move).and_return("Scissors")
+      }
+      scenario "display 'You Win' if player chooses rock" do
         one_player_sign_in_and_play
         click_button("Rock")
         expect(page).to have_content("Computer chose Scissors. You Win! :D")
@@ -10,8 +15,13 @@ feature "Winning" do
     end
 
     context "computer chose rock" do
-      scenario "display 'You Win' if player chooses paper" do
+      before {
+        allow_any_instance_of(Player).to receive(:chose_scissors?).and_return(false)
+        allow_any_instance_of(Player).to receive(:chose_paper?).and_return(false)
+        allow_any_instance_of(Player).to receive(:chose_rock?).and_return(true)
         allow_any_instance_of(Player).to receive(:move).and_return("Rock")
+      }
+      scenario "display 'You Win' if player chooses paper" do
         one_player_sign_in_and_play
         click_button("Paper")
         expect(page).to have_content("Computer chose Rock. You Win! :D")
@@ -19,8 +29,13 @@ feature "Winning" do
     end
 
     context "computer chose paper" do
-      scenario "display 'You Win' if player chooses scissors" do
+      before {
+        allow_any_instance_of(Player).to receive(:chose_rock?).and_return(false)
+        allow_any_instance_of(Player).to receive(:chose_scissors?).and_return(false)
+        allow_any_instance_of(Player).to receive(:chose_paper?).and_return(true)
         allow_any_instance_of(Player).to receive(:move).and_return("Paper")
+      }
+      scenario "display 'You Win' if player chooses scissors" do
         one_player_sign_in_and_play
         click_button("Scissors")
         expect(page).to have_content("Computer chose Paper. You Win! :D")
