@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <!-- <link rel=”stylesheet” type=”text/css” href=”/styles.css” /> -->
-    <link rel="stylesheet" href="/css/style.css" />
+  <head>
+    <link rel="stylesheet" href="/css/style.css"/>
     <title>Rock Paper Scissors - Choose your game</title>
-</head>
+  </head>
 
-<body>
-<form action="/register" method="post">
-  <div class="grid-container-index">
-  <div class="welcome"><h1>Welcome to Rock Paper Scissors</h1></div>
-  <!-- <div class="blank1"></div> -->
+  <body>
+    <form action="/register" method="post">
+      <div class="grid-container-index">
+        <div class="welcome">
+          <h1>Welcome to Rock Paper Scissors</h1>
+        </div>
 
-  <div class="gamevariant"><h2>What type of game do you want to play?</h2></div>
-  <!-- <div class="cc-selector"> -->
+        <div class="gamevariant">
+          <h2>What type of game do you want to play?</h2>
+        </div>
+        <div class="rps-selector"><input checked="checked" id="classic1" type="radio" name="gamevariant" value="classic"/>
+          <label class="gamepicker-cc classic" for="classic1">
+          </label>
+        </div>
+        <div class="rpsls-selector">
+          <input id="spock1" type="radio" name="gamevariant" value="spock"/>
+          <label class="gamepicker-cc spock" for="spock1">
+          </label>
+        </div>
+        <div class="classic-title">
+          <p>Classic</p>
+        </div>
+        <div class="spock-title">
+          <p>Lizard, Spock</p>
+        </div>
+        <div class="who-play-against">
+          <h2>Who do you want to play against?</h2>
+        </div>
+        <div class="robot-submit">
+          <button type="submit" class="robot" name="gametype" value="Single player"></button>
+        </div>
+        <div class="human-submit">
+          <button type="submit" class="human" name="gametype" value="Multiplayer"></button>
+        </div>
+        <div class="single-title">
+          <p>Robot</p>
+        </div>
+        <div class="multi-title">
+          <p>Player 2</p>
+        </div>
 
-  <div class="rps-selector"><input checked="checked" id="classic1" type="radio" name="gamevariant" value="classic" />
-  <label class="gamepicker-cc classic" for="classic1"><!--Rock, paper, scissors classic--></label>
-</div>
-  <div class="rpsls-selector">  <input id="spock1" type="radio" name="gamevariant" value="spock" />
-  <label class="gamepicker-cc spock" for="spock1"><!--Rock, paper, scissors, lizard, spock--></label>
-</div>
-  <!-- </div> -->
-  <div class="classic-title"><p>Classic</p></div>
-  <div class="spock-title"><p>Lizard, Spock</p></div>
-  <div class="who-play-against"><h2>Who do you want to play against?</h2></div>
-  <div class="robot-submit"><button type="submit" class="robot" name="gametype" value="Single player"></button></div>
-  <div class="human-submit"><button type="submit" class="human" name="gametype" value="Multiplayer"></button></div>
-  <div class="single-title"><p>Robot</p></div>
-  <div class="multi-title"><p>Player 2</p></div>
-  <!-- <div class="item4"></div> -->
+      </div>
 
-
-</div>
-
-</form>
+    </form>

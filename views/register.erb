@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-<!-- <link rel=”stylesheet” type=”text/css” href=”/styles.css” /> -->
-<link rel="stylesheet" href="/css/style.css"/>
-<title>Rock Paper Scissors - who's playing?</title>
-</head>
-<body>
-  <!-- .register-heading { grid-area: register-header; }
-  .blank1 { grid-area: menu; }
-  .p1_name_label { grid-area: p1_name_label; }
-  .p1_name_field { grid-area: p1_name_field; }
-  .p2_name_label { grid-area: p2_name_label; }
-  .p2_name_field { grid-area: p2_name_field; }
-  .register_submit { grid-area: register_submit; } -->
-          <form action="/register-process" method="post">
-            <div class="grid-container-registration">
+  <head>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <title>Rock Paper Scissors - who's playing?</title>
+  </head>
+  <body>
 
-              <div class="Heading"><h1>So, who's playing?</h1></div>
-              <div class="P1"><p>Player 1 name:</p></div>
-              <%if @gametype == "Multiplayer"%><div class="P2"><p>Player 2 name:</p></div><%end%>
-              <div class="P1_field"><input name="name" type="text"></div>
-              <%if @gametype == "Multiplayer"%><div class="P2_field"><input name="name2" type="text"></div><%end%>
-              <div class="register_btn"><p><button type="submit" class="play_btn" value="Play"></button><input type="hidden" name="gametype" value="<%=@gametype%>">
-              <input type="hidden" name="gamevariant" value="<%=@gamevariant%>"></div>
-              </div>
+    <form action="/register-process" method="post">
+      <div class="grid-container-registration">
 
-            </div>
-          </form>
+        <div class="Heading">
+          <h1>So, who's playing?</h1>
+        </div>
+        <div class="P1">
+          <p>Player 1 name:</p>
+        </div>
+        <%if @gametype == "Multiplayer"%>
+          <div class="P2">
+            <p>Player 2 name:</p>
+          </div>
+        <%end%>
+        <div class="P1_field"><input name="name" type="text"></div>
+        <%if @gametype == "Multiplayer"%>
+          <div class="P2_field"><input name="name2" type="text"></div>
+        <%end%>
+        <div class="register_btn">
+          <p>
+            <button type="submit" class="play_btn" value="Play"></button><input type="hidden" name="gametype" value="<%=@gametype%>">
+            <input type="hidden" name="gamevariant" value="<%=@gamevariant%>"></div>
+        </div>
 
-</div></body></html>
+      </div>
+    </form>
+
+  </div>
+</body>
+</html>
