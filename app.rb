@@ -34,5 +34,6 @@ class RPS < Sinatra::Base
     redirect '/in_game' if @winner == "Draw"
     erb(:result)
   end
+  
   run! if app_file == $0
 end

@@ -18,6 +18,6 @@ describe Result do
     expect(subject.outcome(paper_player, rock_player)).to eq paper_player
   end
   it "expect the same choice to return draw" do
-    expect(subject.outcome(rock_player, rock_player)).to eq "draw"
+    expect(subject.outcome(rock_player, rock_player)).to eq "Draw"
   end
 end
