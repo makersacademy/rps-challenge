@@ -45,4 +45,10 @@ feature "displaying correct result" do
     click_button "ROCK"
     expect(page).to have_content "Alice wins!"
   end
+
+  scenario "includes button to play again by returning to index" do
+    home_button = "input[type=submit][value='Play again!']"
+    click_button "ROCK"
+    expect(page).to have_selector home_button
+  end
 end
