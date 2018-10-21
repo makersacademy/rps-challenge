@@ -42,41 +42,82 @@ describe Game do
     end
   end
 
-  # describe '#player_win?' do
-  #   let(:computer) { double :computer}
-  #   it 'should return true if player won' do
-  #     player = Player.new("Chloe")
-  #     game = Game.new(player)
-  #     game.player_choice("Scissors")
-  #     allow(game.computer_choice).to receive(:choice).and_return("Paper")
-  #     # binding.pry
-  #     expect(game.player_win?).to eq true
-  #   end
-  #   it 'should return false if player lost or drew' do
-  #     player = Player.new("Chloe")
-  #     game = Game.new(player)
-  #     game.player_choice("Paper")
-  #     allow(game.computer_choice).to receive(:choice) { "Paper" }
-  #     # binding.pry
-  #     expect(game.player_win?).to eq false
-  #   end
-  # end
-  # describe '#player_drew?' do
-  #   it 'should return true if players drew' do
-  #     player = Player.new("Chloe")
-  #     game = Game.new(player)
-  #     game.player_choice("Paper")
-  #     allow(game.computer_choice).to receive(:choice) { "Paper" }
-  #     # binding.pry
-  #     expect(game.player_win?).to eq true
-  #   end
-  #   it 'should return false if player did not draw' do
-  #     player = Player.new("Chloe")
-  #     game = Game.new(player)
-  #     game.player_choice("Scissors")
-  #     allow(game.computer_choice).to receive(:choice) { "Paper" }
-  #     # binding.pry
-  #     expect(game.player_win?).to eq false
-  #   end
-  # end
+  describe '#player_win?' do
+    subject(:game) { described_class.new(player) }
+    let(:player) { double :player, name: "Chloe"}
+    it 'should return true if player won' do
+      game.player_choice("Rock")
+      allow_any_instance_of(Computer).to receive(:choice).and_return("Scissors")
+      game.computer_choice
+      # binding.pry
+      expect(subject.player_win?).to eq true
+    end
+    it 'should return false if player drew' do
+    game.player_choice("Scissors")
+    allow_any_instance_of(Computer).to receive(:choice).and_return("Scissors")
+    game.computer_choice
+    # binding.pry
+    expect(subject.player_win?).to eq false
+    end
+    it 'should return false if player lost' do
+    game.player_choice("Paper")
+    allow_any_instance_of(Computer).to receive(:choice).and_return("Scissors")
+    game.computer_choice
+    # binding.pry
+    expect(subject.player_win?).to eq false
+    end
+    it 'should return true if player won' do
+      game.player_choice("Scissors")
+      allow_any_instance_of(Computer).to receive(:choice).and_return("Paper")
+      game.computer_choice
+      # binding.pry
+      expect(subject.player_win?).to eq true
+    end
+    it 'should return true if player won' do
+      game.player_choice("Paper")
+      allow_any_instance_of(Computer).to receive(:choice).and_return("Rock")
+      game.computer_choice
+      # binding.pry
+      expect(subject.player_win?).to eq true
+    end
+end
+  describe '#player_drew?' do
+    subject(:game) { described_class.new(player) }
+    let(:player) { double :player, name: "Chloe"}
+    it 'should return true if players drew' do
+      game.player_choice("Scissors")
+      allow_any_instance_of(Computer).to receive(:choice).and_return("Scissors")
+      game.computer_choice
+      # binding.pry
+      expect(subject.player_drew?).to eq true
+    end
+    it 'should return false if player wins' do
+      game.player_choice("Rock")
+      allow_any_instance_of(Computer).to receive(:choice).and_return("Scissors")
+      game.computer_choice
+      # binding.pry
+      expect(subject.player_drew?).to eq false
+    end
+    it 'should return false if player loses' do
+      game.player_choice("Paper")
+      allow_any_instance_of(Computer).to receive(:choice).and_return("Scissors")
+      game.computer_choice
+      # binding.pry
+      expect(subject.player_drew?).to eq false
+    end
+    it 'should return true if players drew' do
+      game.player_choice("Paper")
+      allow_any_instance_of(Computer).to receive(:choice).and_return("Paper")
+      game.computer_choice
+      # binding.pry
+      expect(subject.player_drew?).to eq true
+    end
+    it 'should return true if players drew' do
+      game.player_choice("Rock")
+      allow_any_instance_of(Computer).to receive(:choice).and_return("Rock")
+      game.computer_choice
+      # binding.pry
+      expect(subject.player_drew?).to eq true
+    end
+  end
 end
