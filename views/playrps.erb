@@ -1,27 +1,29 @@
 <h1>Rock Paper Scissors!</h1>
 
-<h2><%=@game.player1.show_name%> vs. <%=@game.player2.show_name%></h2>
-<h2><%=@game.player1.show_name%>  : <%=@game.player1.get_score%>HP</h2>
-<h2><%=@game.player2.show_name%>  : <%=@game.player2.get_score%>HP</h2>
+<h2><%=@game.players[0].get_name%> vs. <%=@game.players[1].get_name%></h2>
+<h2><%=@game.round ? "ROUND WON BY:"<<@winners.to_s : "Fresh Game" %></h2>
+<h2><%=@game.players[0].get_name%>  : <%=@game.players[0].get_score%> points</h2>
+<h2><%=@game.players[1].get_name%>  : <%=@game.players[1].get_score%> points</h2>
 
 
 <form action="/play" method="post" id = "form2">
-<h2><%=@game.player1.show_name%>: Select the move you want to play:</h2>
-<select name = "move1" >
-  <option value=1 selected="selected" >rock</option>
-  <option value=2>paper</option>
-  <option value=3>scissors</option>
-</select>
+<button name="commit" type="submit" value="Finish">Finish</button>
+<br><br>
+<hr><br>
+<h3><%=@game.players[0].get_name%>: Select the move you want to play:
+  <select name = "move1" >
+    <option value="rock" selected="selected" >rock</option>
+    <option value="paper">paper</option>
+    <option value="scissors">scissors</option>
+  </select>
 <br>
-<br>
-<h2><%=@game.player2.show_name%>: Select the move you want to play:</h2>
+<%=@game.players[1].get_name%>: Select the move you want to play:
 <select name = "move2" >
-  <option value=1 selected="selected" >rock</option>
-  <option value=2>paper</option>
-  <option value=3>scissors</option>
+  <option value="rock" selected="selected" >rock</option>
+  <option value="paper">paper</option>
+  <option value="scissors">scissors</option>
 </select>
-<input type="text" name="paralyse" value="N"<br>
 <br>
+</h3>
 
 <button name="commit" type="submit" value="Submit">Play</button>
-<button name="commit" type="submit" value="Finish">Finish</button>

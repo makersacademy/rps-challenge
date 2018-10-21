@@ -15,6 +15,10 @@ attr_reader :move
     @score
   end
 
+  def get_move
+    @move
+  end
+
   def increase_score
     @score += 1
   end

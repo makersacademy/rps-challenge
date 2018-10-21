@@ -1,3 +1,6 @@
+require "./lib/judge"
+require "./lib/player"
+
 class Round
 
  attr_reader :winners
@@ -6,8 +9,8 @@ class Round
     player.define_move(move)
   end
 
-  def calc_winner(players, judge = Judge.new)
-    @winners = judge.decide_winner(players)
+  def get_round_winner(players, judge = Judge.new)
+    @winners = judge.decide_round_winner(players)
     @winners.each{|winner|
       winner.increase_score
     }

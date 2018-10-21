@@ -1,21 +1,24 @@
-require "round"
-require "player"
+require "./lib/round.rb"
+require "./lib/player.rb"
 
 class Game
+
+  attr_reader :players, :rounds, :round
 
   def self.instance
     @game
   end
 
   def self.create()
+    @players = Array.new
     @game = Game.new()
-    @rounds = Array.new
   end
 
   def assign_players(players)
+    @players = Array.new
     @rounds = Array.new
     if players[0].is_a?(String)
-      players.each  {|player|
+      players.each {|player|
         @players.push(Player.new(player))
       }
     else @players = players
@@ -31,24 +34,14 @@ class Game
   end
 
   def finish_round
-    @round.calc_winner(@players)
+    return if !@round
+    @round.get_round_winner(@players)
     @rounds.push(@round)
-    @round.winner
+    @round.winners
   end
 
-  def finish_game
-    winners =[]
-    winningscore = @players[0].get_score.to_i
-    @players.each { |player|
-      winners.push(player) if player.get_score == winningscore
-      if player.get_score > winningscore
-        winningscore = player.get_score
-        winners = []
-        winners.push(player)
-      end
-    }
-    raise ("Its a Tie") if winners.length > 1
-    winners
+  def finish_game(judge = Judge.new)
+    winners = judge.decide_game_winner(@players)
   end
 
  def rounds_played

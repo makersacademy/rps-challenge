@@ -5,8 +5,9 @@ describe Game do
   let(:john){double :john, :get_name => "John", :get_score => 10}
   let(:jane){double :jane, :get_name => "Jane", :get_score => 20}
   let(:jack){double :jack, :get_name => "Jack", :get_score => 10}
+  let(:judge){double :judge, :decide_game_winner => [jane], :winners => true, :player_plays => true}
 
-  let(:round){double :round, :calc_winner => john, :winner => true, :player_plays => true}
+  let(:round){double :round, :get_round_winner => [john], :winners => true, :player_plays => true}
 
   before(:each) do
     # subject(:game){described_class}
@@ -21,7 +22,7 @@ describe Game do
 
   it "finishes a round" do
     subject.start_round(round)
-    expect(round).to receive(:calc_winner)
+    expect(round).to receive(:get_round_winner)
     subject.finish_round()
   end
 
@@ -32,12 +33,13 @@ describe Game do
   end
 
   it "finishes a game and declares a winner" do
-    expect(subject.finish_game).to eq [jane]
+    expect(subject.finish_game(judge)).to eq [jane]
   end
 
-  it "finishes a game and declares a tie" do
+  it "finishes a game and calls on the judge" do
     subject.assign_players([john,jack])
-    expect{subject.finish_game}.to raise_error("Its a Tie")
+    expect(judge).to receive(:decide_game_winner)
+    subject.finish_game(judge)
   end
 
 end

@@ -1,7 +1,9 @@
-Congratulations! The winner is: <%=@game.get_winner.show_name%>
+<h1>Congratulations! The game is over.</h1>
+<h2>Total rounds played: <%=@game.rounds_played%></h2>
+<h2>Total players: <%=@game.players_in_game%></h2>
+
+<h2>The result is: <%=@errormessage ? @errormessage : @winners.each{|w| w.get_name}%></h2>
 
 <br>
 <br>
-<form action="/names" method="post">
-  <input type="submit" value="Re-Play?">
-</form>
+<a href="/">RePlay</a>
