@@ -12,8 +12,12 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  get '/new_game' do
-    erb :new_game
+  post '/new_game' do
+    if params[:players] == 'One Player'
+      erb :new_game
+    else
+      
+    end
   end
 
   post '/name' do
