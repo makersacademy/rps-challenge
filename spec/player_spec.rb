@@ -89,4 +89,20 @@ describe Player do
       end
     end
   end
+
+  describe "#computer?" do
+    context "when player is 'Computer'" do
+      it "should return true" do
+        player = Player.new("Computer")
+        expect(player.computer?).to eq true
+      end
+    end
+
+    context "when player is not 'Computer'" do
+      it "should return true" do
+        player = Player.new("Mario")
+        expect(player.computer?).to eq false
+      end
+    end
+  end
 end

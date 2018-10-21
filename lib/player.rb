@@ -38,4 +38,8 @@ class Player
   def chose_scissors?
     @move == MOVES[2]
   end
+
+  def computer?
+    @name == "Computer"
+  end
 end
