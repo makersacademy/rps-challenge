@@ -6,6 +6,10 @@
   <h3><%= @game.player_2.name %> chose <%= @game.player_2.weapon %>!<br></h3><br>
 </div>
 <div>
-  <h2><i><%= @winner %></i></h2>
+  <h2 style="font-family: 'Bungee', cursive;"><i><%= @winner %></i></h2>
 </div>
+<br>
+<form action='/results' method='post'>
+  <input class="choice_button" type='submit' name='mode' value="Play again!">
+</form>
 <%= erb :footer %>
