@@ -1,7 +1,7 @@
 
 class Computer
 
-  attr_reader :name
+  attr_reader :name, :choice
 
   def initialize
     @name = name_choice
@@ -10,8 +10,6 @@ class Computer
   def name_choice
     ['Edward', 'Balboa', 'Cutter'].sample
   end
-
-  attr_reader :choice
 
   def pick
     @choice = Game::MOVES.sample
