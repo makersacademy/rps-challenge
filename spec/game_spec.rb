@@ -3,7 +3,7 @@ require 'game'
 describe Game do
   let(:player_1) { double(:player, name: "Alice") }
   let(:computer) { double(:computer, name: "RPSbot") }
-  let(:calculator) { double(:calculator)}
+  let(:calculator) { double(:calculator) }
   let(:calculator_class) { double(:results_calculator) }
   subject(:game_1) { Game.new(player_1, computer, calculator_class) }
 
