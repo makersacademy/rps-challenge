@@ -41,3 +41,18 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
+---
+
+## Finished product - click on image to view video
+[![Game Demo](http://img.youtube.com/vi/214c3RVzyqs/0.jpg)](http://www.youtube.com/watch?v=214c3RVzyqs "Game Demo")
+
+## My approach
+TBA
+
+## How to install/run
+
+## Test Results
+100% coverage
+
+100% Rubocop pass
