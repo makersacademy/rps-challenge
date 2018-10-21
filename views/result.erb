@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel=”stylesheet” type=”text/css” href=”/css/style.css” />
+
+</head>
+
+<center>
+<div>
+</div>
+<div>
+<img src="/images/<%= @game.player_1.choice.capitalize %>.png">
+</div>
+<div>
+</div>
+<div>
+<img src="/images/<%= @game.player_2.choice.capitalize %>.png">
+</div>
+<div>
+  <%= @game.player_1.name %>
+  <%=" " +@game.result(@game.player_1.choice, @game.player_2.choice).to_s+
+  " against "+@game.player_2.name.to_s %>
+</div>
+</center>

@@ -1,9 +1,13 @@
 
 class Human
-  attr_reader :name
+
 
   def initialize(name)
     @name = name
+  end
+
+  def name
+    @name
   end
 
   attr_reader :choice
