@@ -1,5 +1,7 @@
 require 'game'
 require 'computer'
+require 'pry'
+
 
 describe Game do
   subject(:game) { described_class.new(chloe) }
@@ -40,4 +42,41 @@ describe Game do
     end
   end
 
+  # describe '#player_win?' do
+  #   let(:computer) { double :computer}
+  #   it 'should return true if player won' do
+  #     player = Player.new("Chloe")
+  #     game = Game.new(player)
+  #     game.player_choice("Scissors")
+  #     allow(game.computer_choice).to receive(:choice).and_return("Paper")
+  #     # binding.pry
+  #     expect(game.player_win?).to eq true
+  #   end
+  #   it 'should return false if player lost or drew' do
+  #     player = Player.new("Chloe")
+  #     game = Game.new(player)
+  #     game.player_choice("Paper")
+  #     allow(game.computer_choice).to receive(:choice) { "Paper" }
+  #     # binding.pry
+  #     expect(game.player_win?).to eq false
+  #   end
+  # end
+  # describe '#player_drew?' do
+  #   it 'should return true if players drew' do
+  #     player = Player.new("Chloe")
+  #     game = Game.new(player)
+  #     game.player_choice("Paper")
+  #     allow(game.computer_choice).to receive(:choice) { "Paper" }
+  #     # binding.pry
+  #     expect(game.player_win?).to eq true
+  #   end
+  #   it 'should return false if player did not draw' do
+  #     player = Player.new("Chloe")
+  #     game = Game.new(player)
+  #     game.player_choice("Scissors")
+  #     allow(game.computer_choice).to receive(:choice) { "Paper" }
+  #     # binding.pry
+  #     expect(game.player_win?).to eq false
+  #   end
+  # end
 end

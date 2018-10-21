@@ -1,8 +1,5 @@
 <h1>Game on!</h1>
 <br><br>
-<h2> Computer chose <%= @computer.choice %></h2>
+<h2> Computer chose <%= @game.computer_choice %></h2>
 <br><br>
-<h2><%= @game.winner %> won!</h2>
-<form action="/play">
-  <input type="submit" value ="Play again">
-</form>
+<h2><%= @game.winner %></h2>

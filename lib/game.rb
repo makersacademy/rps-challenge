@@ -5,9 +5,19 @@ class Game
 
   attr_reader :player
 
+  @current_game = nil
+
     def initialize(player)
       @player = player
     end
+
+    def self.store_game(game)
+    @current_game = game
+  end
+
+  def self.current_game
+    @current_game
+  end
 
     def player_choice(choice)
       @choice = choice
@@ -24,7 +34,6 @@ class Game
       end
     end
 
-    private
 
     def player_win?
       if @choice == "Rock" && @computer_choice == "Scissors"
@@ -33,6 +42,7 @@ class Game
         true
       elsif @choice == "Scissors" && @computer_choice == "Paper"
         true
+      else false
       end
     end
 
@@ -43,6 +53,7 @@ class Game
         true
       elsif @choice == "Scissors" && @computer_choice == "Scissors"
         true
+      else false
       end
     end
 
