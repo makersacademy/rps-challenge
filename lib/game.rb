@@ -2,7 +2,9 @@ class Game
 
   attr_reader :player_1_move, :player_2_move, :winner
 
-  def initialize
+  def initialize(player_1, player_2 = nil)
+    @player_1 = player_1
+    @player_2 = player_2
     @moves = [:rock, :paper, :scissors]
     @rules = { :paper => :rock, :rock => :scissors, :scissors => :paper }
   end
@@ -19,7 +21,7 @@ class Game
 
   def play(p_1, p_2)
     winner = nil
-    winner = 'player_1' if @rules[p_1] == p_2
+    winner = @player_1.name if @rules[p_1] == p_2
     winner = 'player_2' if @rules[p_2] == p_1
     return winner
   end

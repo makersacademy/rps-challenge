@@ -19,8 +19,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/play" do
-    @game = Game.new
-    @welcome_message = "Welcome, #{session[:name]}!"
+    @player_1 = User.new(session[:name])
+    @game = Game.new(@player_1)
+    @welcome_message = "Welcome, #{@player_1.name}!"
     selection = session[:choice]
     @winner = @game.player_selection(selection) unless selection.nil?
     erb :play
