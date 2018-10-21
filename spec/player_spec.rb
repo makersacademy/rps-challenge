@@ -15,8 +15,8 @@ describe Player do
 
   context '#pick_move' do
     it 'sets the move attribute' do
-      subject.pick_move("Rock")
-      expect(subject.move).to eq "Rock"
+      subject.pick_move(:Rock)
+      expect(subject.move).to eq :Rock
     end
   end
 end

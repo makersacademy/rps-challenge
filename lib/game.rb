@@ -1,7 +1,7 @@
 class Game
   attr_reader :player, :computer
 
-  WINS = { "Scissors" => "Paper", "Rock" => "Scissors", "Paper" => "Rock" }
+  WINS = { :Scissors => :Paper, :Rock => :Scissors, :Paper => :Rock }
 
   def initialize(player, computer)
     @player = player

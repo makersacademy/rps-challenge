@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player) { double :player, :move => "Rock" }
-  let(:computer) { double :computer, :move => "Scissors", :pick_move => "" }
+  let(:player) { double :player, :move => :Rock }
+  let(:computer) { double :computer, :move => :Scissors, :pick_move => "" }
   subject { Game.new(player, computer) }
 
   context '#initialize' do
@@ -18,37 +18,37 @@ describe Game do
     end
 
     it 'returns "Lose" if player plays Scissors and computer plays Rock' do
-      allow(player).to receive(:move) { "Scissors" }
-      allow(computer).to receive(:move) { "Rock" }
+      allow(player).to receive(:move) { :Scissors }
+      allow(computer).to receive(:move) { :Rock }
       expect(subject.result).to eq "Lose"
     end
 
     it 'returns "Draw" if both player and computer play the same option' do
-      allow(player).to receive(:move) { "Scissors" }
+      allow(player).to receive(:move) { :Scissors }
       expect(subject.result).to eq "Draw"
     end
 
     it 'returns "Win" if player plays Paper and computer plays Rock' do
-      allow(player).to receive(:move) { "Paper" }
-      allow(computer).to receive(:move) { "Rock" }
+      allow(player).to receive(:move) { :Paper }
+      allow(computer).to receive(:move) { :Rock }
       expect(subject.result).to eq "Win"
     end
 
     it 'returns "Win" when player plays Scissors and computer plays Paper' do
-      allow(player).to receive(:move) { "Scissors" }
-      allow(computer).to receive(:move) { "Paper" }
+      allow(player).to receive(:move) { :Scissors }
+      allow(computer).to receive(:move) { :Paper }
       expect(subject.result).to eq "Win"
     end
 
     it 'returns "Lose" when player plays Paper and computer plays Scissors' do
-      allow(player).to receive(:move) { "Paper" }
-      allow(computer).to receive(:move) { "Scissors" }
+      allow(player).to receive(:move) { :Paper }
+      allow(computer).to receive(:move) { :Scissors }
       expect(subject.result).to eq "Lose"
     end
 
     it 'returns "Lose" when player plays Rock and computer plays Scissors' do
-      allow(player).to receive(:move) { "Rock" }
-      allow(computer).to receive(:move) { "Paper" }
+      allow(player).to receive(:move) { :Rock }
+      allow(computer).to receive(:move) { :Paper }
       expect(subject.result).to eq "Lose"
     end
   end
@@ -59,14 +59,14 @@ describe Game do
     end
 
     it 'returns a lose message' do
-      allow(player).to receive(:move) { "Rock" }
-      allow(computer).to receive(:move) { "Paper" }
+      allow(player).to receive(:move) { :Rock }
+      allow(computer).to receive(:move) { :Paper }
       expect(subject.message).to eq "You lose!"
     end
 
     it 'returns a draw message' do
-      allow(player).to receive(:move) { "Rock" }
-      allow(computer).to receive(:move) { "Rock" }
+      allow(player).to receive(:move) { :Rock }
+      allow(computer).to receive(:move) { :Rock }
       expect(subject.message).to eq "Draw!"
     end
   end
