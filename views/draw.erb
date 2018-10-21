@@ -1,6 +1,6 @@
 It's a <%= @draw_move %> draw!
 <br>
-<form action="/game" method="post">
+<form action="/player_1_turn" method="post">
   <input type="hidden" name="player_1_name" value="<%= @player_1_name %>">
   <input type="hidden" name="player_2_name" value ="<%= @player_2_name %>">
   <input type="submit" value="Play again!">

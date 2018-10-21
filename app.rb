@@ -6,24 +6,30 @@ class RPSapp < Sinatra::Base
     erb :index
   end
 
-  post '/game' do
+  post '/player_1_turn' do
     @player_1_name = params[:player_1_name]
     @player_2_name = params[:player_2_name]
 
-    if no_one_played_yet?
-      request_player_1_choice
-    elsif both_played?
-      render_result
-    else
-      store_player_1_choice
-      request_player_2_choice
-    end
+    request_player_1_choice
+  end
+
+  post '/player_2_turn' do
+    @player_1_name = params[:player_1_name]
+    @player_2_name = params[:player_2_name]
+
+    store_player_1_choice
+    request_player_2_choice
+  end
+
+  post '/result' do
+    @player_1_name = params[:player_1_name]
+    @player_2_name = params[:player_2_name]
+
+    render_result
   end
 
   def request_player_1_choice
-    @current_player_name = @player_1_name
-
-    erb :play
+    erb :player_1_choice
   end
 
   def store_player_1_choice
@@ -31,17 +37,7 @@ class RPSapp < Sinatra::Base
   end
 
   def request_player_2_choice
-    @current_player_name = @player_2_name
-
-    erb :play
-  end
-
-  def no_one_played_yet?
-    params[:current_player_move].nil?
-  end
-
-  def both_played?
-    !params[:player_1_move].empty? && !params[:current_player_move].nil?
+    erb :player_2_choice
   end
 
   def render_result
