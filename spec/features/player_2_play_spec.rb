@@ -4,6 +4,10 @@ feature "player 2 play page" do
     click_button "ROCK"
   end
 
+  scenario "should ask the other player to look away" do
+    expect(page).to have_content "Alice, look away now!"
+  end
+
   scenario "should have a 'rock' button" do
     rock = "input[type=submit][value='ROCK']"
     expect(page).to have_selector rock

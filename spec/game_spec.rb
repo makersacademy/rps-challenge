@@ -17,10 +17,6 @@ describe Game do
   end
 
   describe "#winner" do
-    before do
-      allow(calculator).to receive(:winner)
-    end
-
     it "can ask calculator determine a winning player by choosing rand weapon" do
       allow(calculator).to receive(:winner)
       expect(calculator_class).to receive(:new).with(player_1, computer).and_return calculator
