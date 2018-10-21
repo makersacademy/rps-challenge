@@ -25,9 +25,10 @@ class RockPaperScissors < Sinatra::Base
   get '/player_makes_move' do
     session[:player_1_move] = params[:move]
     @player_1_move = session[:player_1_move]
+    @player_1 = Player.new(@player_1_name,@player_1_move)
     @computer = Computer.new
     @computer_move = @computer.computer_move
-    @game = Game.new
+    @game = Game.new(@player_1_move,@computer_move)
     @play_game = @game.play_game
     erb :player_makes_move
   end
