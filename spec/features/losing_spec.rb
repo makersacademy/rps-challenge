@@ -1,11 +1,15 @@
 feature "Losing" do
   context "one player mode" do
+    before {
+      allow_any_instance_of(Game).to receive(:outcome).and_return("You Lose :(")
+    }
     context "computer chooses paper" do
       before {
         allow_any_instance_of(Player).to receive(:chose_paper?).and_return(true)
         allow_any_instance_of(Player).to receive(:move).and_return("Paper")
       }
-      scenario "diplays 'Luigi Wins! :D' on screen if player chooses rock" do
+      scenario "diplays 'You Lose :(' on screen if player chooses rock" do
+        allow_any_instance_of(Player).to receive(:chose_rock?).and_return(true)
         one_player_sign_in_and_play
         click_button("Rock")
         expect(page).to have_content("Computer chose Paper. You Lose :(")
@@ -17,7 +21,7 @@ feature "Losing" do
         allow_any_instance_of(Player).to receive(:chose_scissors?).and_return(true)
         allow_any_instance_of(Player).to receive(:move).and_return("Scissors")
       }
-      scenario "diplays 'Luigi Wins! :D' on screen if player chooses paper" do
+      scenario "diplays 'You Lose :(' on screen if player chooses paper" do
         one_player_sign_in_and_play
         click_button("Paper")
         expect(page).to have_content("Computer chose Scissors. You Lose :(")
@@ -29,7 +33,7 @@ feature "Losing" do
         allow_any_instance_of(Player).to receive(:chose_rock?).and_return(true)
         allow_any_instance_of(Player).to receive(:move).and_return("Rock")
       }
-      scenario "diplays 'Luigi Wins! :D' on screen if player chooses scissors" do
+      scenario "diplays 'You Lose :(' on screen if player chooses scissors" do
         one_player_sign_in_and_play
         click_button("Scissors")
         expect(page).to have_content("Computer chose Rock. You Lose :(")

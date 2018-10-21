@@ -1,5 +1,8 @@
 feature "Winning" do
   context "one player mode" do
+    before {
+      allow_any_instance_of(Game).to receive(:outcome).and_return("You Win! :D")
+    }
     context "computer chose scissors" do
       before {
         allow_any_instance_of(Player).to receive(:chose_paper?).and_return(false)
