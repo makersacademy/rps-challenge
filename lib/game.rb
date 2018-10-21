@@ -3,7 +3,7 @@ require_relative 'computer'
 
 class Game
 
-  attr_reader :outcome, :player, :computer
+  attr_reader :player, :computer
 
   def initialize(player, computer = Computer.new)
     @player = Player.new(player)
@@ -11,17 +11,17 @@ class Game
   end
 
   def outcome
-    if @player.current_pick == "rock" && @computer.current_pick  == "scissors"
+    if @player.current_pick == "rock" && @computer.current_pick == "scissors"
       "You win"
-    elsif @player.current_pick  == "scissors" && @computer.current_pick  == "paper"
+    elsif @player.current_pick == "scissors" && @computer.current_pick == "paper"
       "You win"
-    elsif @player.current_pick  == "paper" && @computer.current_pick  == "rock"
+    elsif @player.current_pick == "paper" && @computer.current_pick == "rock"
       "You win"
-    elsif @player.current_pick  == "rock" && @computer.current_pick  == "paper"
+    elsif @player.current_pick == "rock" && @computer.current_pick == "paper"
       "You lose"
-    elsif @player.current_pick  == "scissors" && @computer.current_pick  == "rock"
+    elsif @player.current_pick == "scissors" && @computer.current_pick == "rock"
       "You lose"
-    elsif @player.current_pick  == "paper" && @computer.current_pick  == "scissors"
+    elsif @player.current_pick == "paper" && @computer.current_pick == "scissors"
       "You lose"
     else
       "You draw"

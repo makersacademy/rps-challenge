@@ -10,8 +10,8 @@ describe Player do
   describe '#pick' do
 
     it 'should pick rock' do
-    steve.pick(rock)
-    expect(steve.current_pick).to eq rock
+      steve.pick(rock)
+      expect(steve.current_pick).to eq rock
     end
 
     it 'should choose paper' do

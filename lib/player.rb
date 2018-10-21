@@ -6,7 +6,6 @@ class Player
     @name = name
   end
 
-
   def pick(item)
     @current_pick = item
   end
