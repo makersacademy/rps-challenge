@@ -51,11 +51,6 @@ class RPS < Sinatra::Base
     redirect '/choice'
   end
 
-  get '/results' do
-    @game = $game
-    erb :results
-  end
-
   get '/play' do
     @game = $game
     erb :play
