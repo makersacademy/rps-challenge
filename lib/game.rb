@@ -36,7 +36,7 @@ class Game
   def player_win?
     if choice == "Rock" && computer_choice == "Scissors"
       return true
-    elsif choice == "Paper" # && computer_choice == "Rock"
+    elsif choice == "Paper" && computer_choice == "Rock"
       return true
     elsif choice == "Scissors" && computer_choice == "Paper"
       return true
