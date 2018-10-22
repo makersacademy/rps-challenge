@@ -16,8 +16,8 @@ class Game
 
   attr_reader :player1, :player2, :winner
 
-  def winning_combos
-    @winning_combos = {
+  def winning_combo
+    @win_combo = {
       "Rock" => ["Scissors", "Lizard"],
       "Scissors" => ["Paper", "Lizard"],
       "Paper" => ["Rock", "Spock"],
@@ -28,14 +28,14 @@ class Game
 
   def evaluate(player1, player2)
     @winner = player1.name if player1_wins?
-    @winner = player2.name if !player1_wins?
+    @winner = player2.name unless player1_wins?
     @winner = "No one" if player1.move == player2.move
   end
 
   def player1_wins?
-    winning_combos.each do |move1, _move2|
-      @p1_win = true if player1.move == move1 && player2.move == @winning_combos[move1][0]
-      @p1_win = true if player1.move == move1 && player2.move == @winning_combos[move1][1]
+    winning_combo.each do |m1, _m2|
+      @p1_win = true if player1.move == m1 && player2.move == @win_combo[m1][0]
+      @p1_win = true if player1.move == m1 && player2.move == @win_combo[m1][1]
     end
     @p1_win
   end
