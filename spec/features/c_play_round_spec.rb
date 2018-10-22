@@ -16,6 +16,14 @@ feature 'C - Play the round' do
     expect(page).to have_content 'No winner for last round'
   end
 
+  scenario 'selecting random moves for player' do
+    sign_in_and_player_number
+    accept_player_names
+    player_moves_rockrock
+    # srand 0 
+    expect(page).to have_content 'No winner for last round'
+  end
+
 end
 
 #Feature / scenario is in Capybara

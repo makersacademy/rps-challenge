@@ -4,12 +4,17 @@
 <h2>Total players: <%=@game.players_in_game%></h2>
 <h2>Total rounds played: <%=@game.rounds_played%></h2>
 <br>
-<br>
-<h3><%=@game.players[0].get_name%>  : <%=@game.players[0].get_score%> points<br>
+<h4><%=@game.players[0].get_name%>  : <%=@game.players[0].get_score%> points<br>
   <br>
-<%=@game.players[1].get_name%>  : <%=@game.players[1].get_score%> points<br></h3>
+<%=@game.players[1].get_name%>  : <%=@game.players[1].get_score%> points<br></h4>
 <h2>Result: <%= @err ? @err : "Winner - " << @resstr %></h2>
 <br>
 <h3><a href="/">Lets play again</a><h3>
-  <br>  <br>  <br>
-<div>
+  <br>
+</div>
+<div style = "background: orange">
+<br>
+<h2>Game history:</h2>
+<%=@replay%>
+ <br>
+</div>

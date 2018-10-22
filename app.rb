@@ -23,8 +23,7 @@ class RPSGame < Sinatra::Base
   end
 
   post '/players' do
-    @game = Game.create()
-    @game.assign_players([params[:player1],params[:player2]])
+    @game = Game.create.assign_players([params[:player1],params[:player2]])
     redirect "/play"
   end
 
@@ -53,6 +52,8 @@ class RPSGame < Sinatra::Base
     @winners = @game.finish_game
     @resstr = ""
     @winners.each {|w| @resstr << w.get_name << " " } if @winners
+    @replay = ""
+    #@game.rounds.each_with_index {|r,i| @replay << i.to_s << ". " << (r.winners.each{|pl| pl.get_name } if r.winners) } if @game.rounds
     erb :complete
   rescue NoWinnerError => err
     @err = err

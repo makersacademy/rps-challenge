@@ -1,25 +1,24 @@
 <div style = "background: yellow">
 <h1>Rock Paper Scissors!</h1>
-<h2><%=@game.players[0].get_name%> vs. <%=@game.players[1].get_name%>
+<h2><%=@game.players[0].get_name%>    vs.    <%=@game.players[1].get_name%><h2>
+<h2><%=@game.players[0].get_move%> <===> <%=@game.players[1].get_move%><h2>
 <br>
+<h2><%=@err? @err : " * " %></h2>
+<h2><%=@winners? "Round won by: "<<@resstr : " * "%></h2>
 <br>
-
-<%@game.players[1].get_name == "Computer" && @game.rounds_played > 0 ? "Computer played: "<<@players[1].get_move : "Hmmm..."%><br>
-
-<%=@err? @err : "Hmmm..." %><br>
-<%=@winners? "Last round won by: "<<@resstr : "Hmmm..."%><br></h2>
-
-Rounds played: <%=@game.rounds_played%><br><br>
-<%=@game.players[0].get_name%>  : <%=@game.players[0].get_score%> points<br>
-<%=@game.players[1].get_name%>  : <%=@game.players[1].get_score%> points<br>
-
+Rounds played: <%=@game.rounds_played%>
+<br><br>
+<%=@game.players[0].get_name%>  : <%=@game.players[0].get_score%> points
+<br>
+<%=@game.players[1].get_name%>  : <%=@game.players[1].get_score%> points
+<br>
 <br>
 <form action="/play" method="post" id = "form2">
 <button name="submit" type="submit" value="finish">Finish</button>
 <br><br>
-<div>
-
-<div style = "background: red">
+</div>
+<br>
+<div style = "background: pink">
 <h2>Continue playing!</h2>
 
 <h4><%=@game.players[0].get_name%>: Select the move you want to play:
@@ -42,4 +41,4 @@ Rounds played: <%=@game.rounds_played%><br><br>
 <button name="submit" type="submit" value="submit">Play</button>
   <br>  <br>
 </form>
-<div>
+</div>
