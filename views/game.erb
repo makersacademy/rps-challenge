@@ -36,7 +36,7 @@
               <% if @game.show_results? %>
                 <%=@game.action %>
               <% else %>
-                  &nbsp;
+                <%="#{@game.player_2.name}'s Turn" %>
               <% end %>
             </p>
           </div>
