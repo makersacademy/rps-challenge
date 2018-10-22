@@ -20,4 +20,8 @@ You will then be redirected to a page that confirms both moves and let's you kno
 The tests for this program use rspec and capybara, so simply run rspec from within this directory.
 
 ### Known Issues
-* Line 6 in `winner.rb` is too long. I am looking in to another option to refactor this class.
+* Line 6 in `winner.rb` is too long. I plan to use a hash instead of an array and access the values of that the see player 2 move
+* I am aware that perhaps my routes are a little confusing and could be made better by redirecting to a game page that would display different things depending on the params that it has
+* I plan to change players from taking 2 players, to creating a single player. I would then be able to pass two instances of player (with their names and moves) to a Game class. This would hopefully eliminate the need for name1 and name2 as well as move1 and move2 which I feel restricts the code.
+
+I would then hope that computer could inherit from, and therefore be treated as a player.
