@@ -3,7 +3,7 @@ class Game
 
   @current_game = nil
 
-  def initialize(player_1, player_2 = Computer.new, calculator_class = ResultsCalculator)
+  def initialize(player_1, player_2, calculator_class = ResultsCalculator)
     @player_1 = player_1
     @player_2 = player_2
     @calculator_class = calculator_class

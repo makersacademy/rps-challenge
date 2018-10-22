@@ -1,8 +1,8 @@
 require 'sinatra/base'
-require './lib/player.rb'
-require './lib/game.rb'
-require './lib/computer.rb'
-require './lib/results_calculator.rb'
+require './lib/player'
+require './lib/game'
+require './lib/computer'
+require './lib/results_calculator'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -31,7 +31,7 @@ class RPS < Sinatra::Base
   post '/single_player_home' do
     redirect '/single_player_no_name' if params[:name_1].empty?
     player_1 = params[:name_1]
-    Game.store_game(Game.new(Player.new(player_1)))
+    Game.store_game(Game.new(Player.new(player_1), Computer.new))
     redirect '/single_player_play'
   end
 
