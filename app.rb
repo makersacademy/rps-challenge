@@ -9,21 +9,23 @@ enable :sessions
   end
 
   post '/greeter' do
-    $name = params[:name]
+    session[:name] = params[:name]
     redirect '/choice'
   end
 
   get '/choice' do
+    @name = session[:name]
     erb :choice
   end
 
   post '/selection' do
-    $selection = params[:selection]
+    @game = Game.create(params[:selection])
     redirect '/outcome'
   end
 
   get '/outcome' do
-    @outcome = Game.new($selection).outcome
+    @game = Game.instance
+    @outcome = @game.outcome
     erb :outcome
   end
 end
