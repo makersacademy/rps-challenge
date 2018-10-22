@@ -22,16 +22,33 @@ form {
     text-align: center;
 }
 
-img {
+.img1 {
   border-radius: 8px;
-  text-align: center;
   width: 1000px;
   height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.img2 {
+  border-radius: 8px;
+  width: 300px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column {
+    float: left;
     width: 50%;
+    padding: 10px;
+    height: 300px;
+  }
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
