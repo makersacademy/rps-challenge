@@ -4,10 +4,12 @@ describe Game do
 
   let(:player_1) { double :player, :move => 'rock', :name => 'Terry' }
   let(:player_2) { double :player, :move => 'scissors', :name => 'Mace' }
+  let(:player_no_move) { double :player, :move => '&nbsp;' }
 
   subject(:game) { described_class.new(player_1, player_2) }
   subject(:draw_game) { described_class.new(player_1, player_1) }
   subject(:loss_game) { described_class.new(player_2, player_1) }
+  subject(:no_move_game) { described_class.new(player_no_move, player_no_move) }
 
 
   describe '#player_1' do
@@ -23,16 +25,41 @@ describe Game do
   end
 
   describe '#outcome' do
-    it 'win' do
-      expect(game.outcome).to eq "You win!"
+    it 'shows line break at start of game' do
+      expect(no_move_game.outcome).to eq '&nbsp;'
     end
 
-    it 'draw' do
-      expect(draw_game.outcome).to eq "It's a draw."
+    context '1 Player' do
+
+      it 'shows a win' do
+        expect(game.outcome).to eq "You win!"
+      end
+
+      it 'shows a draw' do
+        expect(draw_game.outcome).to eq "It's a draw."
+      end
+
+      it 'shows a loss' do
+        expect(loss_game.outcome).to eq "You lose!"
+      end
     end
 
-    it 'Loss' do
-      expect(loss_game.outcome).to eq "You lose!"
+    context '2 Players' do
+
+      it 'Shows player 1 Wins' do
+        game.no_players = 2
+        expect(game.outcome).to eq "Terry wins!"
+      end
+
+      it 'shows a draw' do
+        draw_game.no_players = 2
+        expect(draw_game.outcome).to eq "It's a draw."
+      end
+
+      it 'shows player 2 wins' do
+        loss_game.no_players = 2
+        expect(loss_game.outcome).to eq "Terry wins!"
+      end
     end
   end
 
@@ -50,7 +77,7 @@ describe Game do
     end
   end
 
-  describe '#stats_to_update' do
+  describe '#update_stats' do
     it 'updates player 1 wins counter' do
       game.update_stats
       expect(game.player_1_wins) == 1
@@ -64,6 +91,18 @@ describe Game do
     it 'updates player 2 wins counter' do
       draw_game.update_stats
       expect(draw_game.player_1_wins) == 0
+    end
+  end
+
+  describe '#show_results' do
+    it 'returns true when both players have made a move' do
+      game.move_number = 2
+      expect(game.show_results?).to eq true
+    end
+
+    it 'returns false when both players have not made a move' do
+      game.move_number = 1
+      expect(game.show_results?).to eq false
     end
   end
 

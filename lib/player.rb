@@ -4,7 +4,7 @@ class Player
 
   def initialize(name)
     @name = name
-    @move = ''
+    @move = '&nbsp;'
   end
 
   def set_move(move)
@@ -12,7 +12,7 @@ class Player
   end
 
   def image
-    if move == ''
+    if move == '&nbsp;'
       "'/images/rock.png'"
     else
       "'/images/#{move}.png'"
