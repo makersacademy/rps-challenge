@@ -15,26 +15,56 @@ describe Game do
     expect(Game.instance).to be_an_instance_of Game
   end
 
-  context 'when a player chooses Rock and the Game chooses Paper' do
-    it 'shows that the Game won' do
+  context 'when the computer/player 2 beats player 1' do
+    it 'shows that player 2 won' do
       allow(player_1).to receive(:choice) { 'Rock' }
       allow(player_2).to receive(:choice) { 'Paper' }
       expect(subject.result).to eq player_2
     end
+    it 'shows that player 2 won' do
+      allow(player_1).to receive(:choice) { 'Scissors' }
+      allow(player_2).to receive(:choice) { 'Rock' }
+      expect(subject.result).to eq player_2
+    end
+    it 'shows that player 2 won' do
+      allow(player_1).to receive(:choice) { 'Paper' }
+      allow(player_2).to receive(:choice) { 'Scissors' }
+      expect(subject.result).to eq player_2
+    end
   end
 
-  context "when a player chooses Scissors and the Game chooses Paper" do
-    it 'shows that the Game lost' do
+  context 'when player 1 beats the computer/player 2' do
+    it 'shows that player 1 won' do
       allow(player_1).to receive(:choice) { 'Scissors' }
       allow(player_2).to receive(:choice) { 'Paper' }
       expect(subject.result).to eq player_1
     end
+    it 'shows that player 1 won' do
+      allow(player_1).to receive(:choice) { 'Paper' }
+      allow(player_2).to receive(:choice) { 'Rock' }
+      expect(subject.result).to eq player_1
+    end
+    it 'shows that player 1 won' do
+      allow(player_1).to receive(:choice) { 'Rock' }
+      allow(player_2).to receive(:choice) { 'Scissors' }
+      expect(subject.result).to eq player_1
+    end
   end
 
-  context "when a player chooses Paper and the Game chooses Paper" do
-    it 'shows that the Game tied' do
+  context 'when player 1 and the computer/player 2 choose the same' do
+    it 'shows that it is a tie' do
       allow(player_1).to receive(:choice) { 'Paper' }
       allow(player_2).to receive(:choice) { 'Paper' }
+      expect(subject.result).to eq :tie
+    end
+    it 'shows that it is a tie' do
+      allow(player_1).to receive(:choice) { 'Rock' }
+      allow(player_2).to receive(:choice) { 'Rock' }
+      expect(subject.result).to eq :tie
+    end
+    it 'shows that it is a tie' do
+      allow(player_1).to receive(:choice) { 'Scissors' }
+      allow(player_2).to receive(:choice) { 'Scissors' }
       expect(subject.result).to eq :tie
     end
   end
