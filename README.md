@@ -5,15 +5,15 @@
 Instructions
 -------
 
-To install, run
+To install, clone the repo, then run
 
 ``` bundle ```
 
-then,
+and,
 
 ``` ruby app.rb ```
 
-Visit http://localhost:9292 in your browser to play
+Then visit http://localhost:9292 in your browser to play
 
 WIP
 -------
