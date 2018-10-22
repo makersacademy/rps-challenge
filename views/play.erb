@@ -16,13 +16,19 @@
     }
     input[type=submit] {
       cursor: pointer;
-      background-color: #2376D8;
+      background-color: #2A2025;
       font-size: 1.2em;
       color: #fff;
       font-weight: 700;
       border-radius: 10px;
       margin: 1em;
       padding: .8em 2em;
+    }
+    div[name=result] {
+      color: #702020;
+    }
+    span[name=move] {
+       width: 25%;
     }
   </style>
 </head>
@@ -38,8 +44,8 @@
 
 <% unless @game.player1.choice.nil? %>
   <div name=moves>
-  <span style="float:left; width: 25%;" class="message" name=p1_move ><%= @game.player1.name %> chose <%= @game.player1.choice%>! </span>
-  <span style="float:right; width: 25%;" class="message" name=p2_move ><%= @game.player2.name %> chose <%= @game.player2.choice%>! </span>
+  <span style="float:left;" class="message" name=move ><%= @game.player1.name %> chose <%= @game.player1.choice%>! </span>
+  <span style="float:right;" class="message" name=move ><%= @game.player2.name %> chose <%= @game.player2.choice%>! </span>
   </div>
 
 <div class=message name=result>
