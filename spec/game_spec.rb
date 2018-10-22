@@ -33,7 +33,7 @@ describe Game do
       allow(player2).to receive(:random_move).and_return("Scissors")
       player2.move = player2.random_move
       game.evaluate(player1, player2)
-      expect(game.player2.move).to eq("Scissors")
+      expect(game.winner).to eq("Ray")
     end
   end
 

@@ -22,6 +22,16 @@ feature "Single-Player" do
     click_button "Scissors"
     expect(page).to have_content("You played Scissors.")
   end
+  scenario 'it allows user to choose Lizard' do
+    start_game_sp
+    click_button "Lizard"
+    expect(page).to have_content("You played Lizard.")
+  end
+  scenario 'it allows user to choose Spock' do
+    start_game_sp
+    click_button "Spock"
+    expect(page).to have_content("You played Spock.")
+  end
   scenario 'it outputs the computers move & winner' do
     start_game_sp
     click_button "Rock"
@@ -73,6 +83,13 @@ feature "Two-Player" do
     click_button "Paper"
     click_button "Scissors"
     expect(page).to have_content("Ray played Paper. Bob played Scissors.")
+    expect(page).to have_content("Bob is the winner")
+  end
+  scenario 'it allows player 2 to choose Lizard' do
+    start_game_tp
+    click_button "Spock"
+    click_button "Lizard"
+    expect(page).to have_content("Ray played Spock. Bob played Lizard.")
     expect(page).to have_content("Bob is the winner")
   end
 end

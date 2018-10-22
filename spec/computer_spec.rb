@@ -11,4 +11,14 @@ describe Computer do
     expect(subject.random_move).to eq("Scissors")
   end
 
+  it 'selects lizard as weapon for computer' do
+    allow(Computer::WEAPONS).to receive(:sample).and_return("Lizard")
+    expect(subject.random_move).to eq("Lizard")
+  end
+
+  it 'selects spock as weapon for computer' do
+    allow(Computer::WEAPONS).to receive(:sample).and_return("Spock")
+    expect(subject.random_move).to eq("Spock")
+  end
+
 end
