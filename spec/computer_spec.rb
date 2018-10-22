@@ -8,7 +8,7 @@ describe Computer do
 
   it 'selects a random weapon for computer' do
     allow(Computer::WEAPONS).to receive(:sample).and_return("Scissors")
-    expect(subject.random_move).to eq ("Scissors")
+    expect(subject.random_move).to eq("Scissors")
   end
 
 end

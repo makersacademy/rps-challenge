@@ -32,7 +32,7 @@ class Game
 
   def player1_win?
     @player1_win = false
-    winning_combos.each do | move1, move2 |
+    winning_combos.each do |move1, move2|
       @player1_win = true if player1.move == move1 && player2.move == move2
     end
     @player1_win
