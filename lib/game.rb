@@ -46,11 +46,7 @@ class Game
   end
 
   def player_drew?
-    if @choice == "Rock" && @computer_choice == "Rock"
-      true
-    elsif @choice == "Paper" && @computer_choice == "Paper"
-      true
-    elsif @choice == "Scissors" && @computer_choice == "Scissors"
+    if @choice == @computer_choice
       true
     else false
     end
