@@ -26,6 +26,7 @@ enable :sessions
   get '/outcome' do
     @game = Game.instance
     @outcome = @game.outcome
+    @computer_choice = @game.computer_choice
     erb :outcome
   end
 end

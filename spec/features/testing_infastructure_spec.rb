@@ -10,6 +10,6 @@ feature 'Choose an option' do
     sign_in_and_play
     page.select 'Rock', from: 'selection'
     click_button 'Submit'
-    expect(page).to have_content 'You chose Rock...'
+    expect(page).to have_content 'You chose Rock'
   end
 end

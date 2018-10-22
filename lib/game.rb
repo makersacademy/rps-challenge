@@ -8,18 +8,14 @@ class Game
     @game
   end
 
-  attr_reader :player_choice
+  attr_reader :player_choice, :computer_choice
 
   def initialize(choice)
     @player_choice = choice.to_sym
   end
 
-  def computer_choice
-    @computer_choice = random_choice
-  end
-
   def random_choice
-    [:Rock, :Paper, :Scissors].sample
+    @computer_choice = [:Rock, :Paper, :Scissors].sample
   end
 
   def rules
@@ -27,10 +23,10 @@ class Game
   end
 
   def outcome
-    computer_choice
+    random_choice
     return "Draw" if draw
     rules.each do |key, value|
-      if player_choice == key && @computer_choice == value
+      if player_choice == key && computer_choice == value
         return "Player wins"
       end
     end
@@ -40,7 +36,7 @@ class Game
   private
 
   def draw
-    player_choice == @computer_choice
+    player_choice == computer_choice
   end
 
 end
