@@ -56,7 +56,6 @@ class Game
     else
       @no_players == 1 ? result_1_player : result_2_players
     end
-
   end
 
   def action
@@ -97,16 +96,16 @@ class Game
     winner? ? player_1.name : player_2.name
   end
 
-  def result_2_players
-    draw? ? "It's a draw." : "#{winning_player} wins!"
-  end
-
   def result_1_player
     if draw?
       "It's a draw."
     else
       winner? ? "You win!" : "You lose!"
     end
+  end
+
+  def result_2_players
+    draw? ? "It's a draw." : "#{winning_player} wins!"
   end
 
   def stats_to_update

@@ -1,105 +1,15 @@
 # RPS Challenge
+This program is a simple Rock Paper Scissor game. The game can be played against the computer or against another player. The game also has the option to play the Rock Paper Scissors Lizard Spock rules
 
-## Todo
-### Planning
-- [x] Review brief
-- [x] Reviewing code checklist
-- [x] Review doc/review
-- [x] Plan system
+## Installation
+Step 1: clone the repository
+step 2: Run bundle
+step 3: run ```ruby app.rb```
 
-### Set up
-- [x] Fork Repo
-- [x] Install Gems
-  - [x] SimpleCov
-  - [x] RSpec
-  - [x] Sinatra
-  - [x] Capybara
-- [x] Key files and folders
-  - [x] lib
-  - [x] spec
-    - [x] features
-  - [x] views
-  - [x] app.rb
-  - [x] config.ru
-  - [x] gemfile
-- [x] Set up RPS class in app.rb
-- [x] Require Sinatra app file, capybara, capybara/rspec and rspec.
-- [x] Tell Capybara about your app class using Capybara.app
-- [x] Hello world view and tests
-
-### Production
-- [ ] Ask user which game type they would like to play
-  - [ ] Feature test
-  - [ ] Unit test
-  - [ ] Pass tests
-- [ ] Ask user how many players
-  - [ ] Feature test
-  - [ ] Unit test
-  - [ ] Pass tests
-
-
-
-### Testing
-- [ ] All possible outcomes are tested in unit tests (not feature tests)
-  - [ ] win
-  - [ ] loss
-  - [ ] draw.
-- [ ] Stub out random behaviour
-
-### Review
-- [ ] Test Coverage > 95%
-- [ ] Code is elegant
-- [ ] Methods are short
-- [ ] Single responsibility
-- [ ] Separation of Concerns
-
-
-## Considerations
-### Functionality
-- [ ] User should be able to enter their name before the game
-- [ ] will be presented the choices (rock, paper and scissors)
-  - [ ] User can choose one option
-- [ ]the game will choose a random option
-- [ ]a winner will be declared
-
-### Testing
-- [ ] Tests are passing
-- [ ] There are feature and unit tests
-- [ ] Tests are really testing what they say they do
-- [ ] Unit tests are isolated
-- [ ] Unhappy paths and edge cases are tested
-
-### Application Code
-- [ ] presentation strings should not be include in business logic layer
-- [ ] Avoid long if/else conditionals
-- [ ] Don't use global variables
-- [ ] Each discrete action of your programme should have its own dedicated route
-- [ ] Game logic should be executed in your lib files. You should minimise the amount of logic in the controller by extracting it to the lib file
-
-### Readability
-- [ ] consistent folder structure
-- [ ] consistent file names
-- [ ] rubocop
-- [ ] Clear class/method/variable/test names
-- [ ] Names are not abbreviated
-- [ ] Code is easy to understand
-- [ ] Remove commented out code
-
-### Design
-- [ ] Classes follow the single responsibility principle
-- [ ] Code does not repeat itself, nor do tests
-- [ ] The programming style is consistent throughout
-
-###Repository & README
-- [ ] There is a README
-- [ ] README starts with a clear explanation of the programme for the casual reader/recruiter.
 - [ ] README describes how to install the programme and its dependencies
 - [ ] README describes how to use it - maybe includes screenshots
 - [ ] README describes the approach and strategy for solving the problem
-- [ ] README has reasonable spelling and grammar
-Files in the repo are clearly organised
-- [ ] Commit messages are clear
-- [ ] Tests and code to make them pass were committed at the same time
+
 
 ## System Plan
 Before writing any tests or code, I made an initial plan of what I believed the system would look like when completed. This allowed me to consider how each component would work together while working on them.
