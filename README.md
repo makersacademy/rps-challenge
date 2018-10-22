@@ -18,3 +18,6 @@ You will then be redirected to a page that confirms both moves and let's you kno
 
 ### Running the tests
 The tests for this program use rspec and capybara, so simply run rspec from within this directory.
+
+### Known Issues
+* Line 6 in `winner.rb` is too long. I am looking in to another option to refactor this class.

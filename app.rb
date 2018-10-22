@@ -6,8 +6,6 @@ require_relative './lib/computer'
 
 class RPS < Sinatra::Base
 
-  enable :session
-
   get '/' do
     erb(:index)
   end
@@ -21,8 +19,7 @@ class RPS < Sinatra::Base
   end
 
   post '/single_player_names' do
-    session['name1'] = params[:name1]
-    @name1 = session['name1']
+    @name1 = params[:name1]
     computer = Computer.new([:rock, :paper, :scissors, :lizard, :spock])
     @name2 = computer.name2
     @players = Players.create(@name1, @name2)
@@ -39,10 +36,8 @@ class RPS < Sinatra::Base
   end
 
   post '/multiplayer_names' do
-    session['name1'] = params[:name1]
-    session['name2'] = params[:name2]
-    @name1 = session['name1']
-    @name2 = session['name2']
+    @name1 = params[:name1]
+    @name2 = params[:name2]
     @players = Players.create(@name1, @name2)
     redirect '/multiplayer_game'
   end
@@ -54,7 +49,7 @@ class RPS < Sinatra::Base
     erb(:multiplayer_game)
   end
 
-  post '/game2names' do
+  post '/multiplayer_game2_names' do
     @players = Players.instance
     @players.move1 = params["move1"]
     redirect '/multiplayer_game2'
@@ -69,12 +64,8 @@ class RPS < Sinatra::Base
 
   post '/game/determine' do
     @players = Players.instance
-    @name1 = @players.name1
-    @name2 = @players.name2
-    @move1 = @players.move1
     @players.move1 = params["move1"] if @players.move1.nil?
     @players.move2 = params["move2"] if @players.move2.nil?
-    @move2 = @players.move2
     redirect '/game/result'
   end
 
