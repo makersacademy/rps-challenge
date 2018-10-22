@@ -15,7 +15,7 @@ feature 'Testing app.rb' do
     visit('/')
     fill_in(:player, with: 'Meg')
     click_button("Submiteth, Peasent")
-    click_button("Rocketh")
+    click_button("rock")
     #need to test this once I understand how to make the page work
   end
 end
