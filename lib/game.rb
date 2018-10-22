@@ -19,8 +19,7 @@ class Game
   end
 
   def winner
-    return "It's a draw!" if calculator.winner == :draw
-    "#{calculator.winner} wins!"
+    calculator.winner
   end
 
   private

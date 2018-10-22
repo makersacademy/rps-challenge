@@ -22,9 +22,4 @@ feature "player 2 play page" do
     scissors = "input[type=submit][value='SCISSORS']"
     expect(page).to have_selector scissors
   end
-
-  scenario "clicking a button takes the marketeers to the results page" do
-    click_button "SCISSORS"
-    expect(page).to have_current_path("/results")
-  end
 end

@@ -1,12 +1,4 @@
 <%= erb :game_header %>
 <br><br><br>
-<div>
-  <form action="/multiplayer_home" method="post">
-    <label for="name_1" type="text"><p>Enter your name player 1:</p></label>
-    <input class="text_form" type="text" name="name_1"><br>
-    <label for="name_2" type="text"><p>Enter your name player 2:</p></label>
-    <input class="text_form" type="text" name="name_2"><br><br>
-    <input class="action_button" type="submit" value="Play!">
-  </form>
-</div>
+<%= erb :multiplayer_name_entry %>
 <%= erb :footer %>

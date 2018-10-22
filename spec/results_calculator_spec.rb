@@ -20,15 +20,15 @@ describe ResultsCalculator do
 
   describe "#winner" do
     it 'should declare that rock wins over scissors' do
-      expect(calculator_1.winner).to eq player_rock.name
+      expect(calculator_1.winner).to eq :player_1_wins
     end
 
     it 'should declare that paper wins over rock' do
-      expect(calculator_2.winner).to eq player_paper.name
+      expect(calculator_2.winner).to eq :player_1_wins
     end
 
     it 'should declare that scissors wins over paper' do
-      expect(calculator_3.winner).to eq player_scissors.name
+      expect(calculator_3.winner).to eq :player_1_wins
     end
 
     it 'should be able to declare a draw' do

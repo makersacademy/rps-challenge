@@ -24,9 +24,9 @@ describe Game do
     end
 
     it "can determine a winner" do
-      allow(calculator).to receive(:winner).and_return player_1.name
+      allow(calculator).to receive(:winner).and_return :player_1_wins
       allow(calculator_class).to receive(:new).with(player_1, computer).and_return calculator
-      expect(subject.winner).to eq "#{player_1.name} wins!"
+      expect(subject.winner).to eq :player_1_wins
     end
   end
 end
