@@ -2,12 +2,11 @@
 
 <h3><%= @game.chooser.name %>, choose your weapon!</h3>
 
-<div class="form-container">
-  <form action = "/choice" method = "post">
-    <button class="btn btn-warning" type="submit" name="choice" value="rock">Rock</button>
-    <button class="btn btn-primary" type="submit" name="choice" value="paper">Paper</button>
-    <button class="btn btn-danger" type="submit" name="choice" value="scissors">Scissors</button>
-    <button class="btn btn-success" type="submit" name="choice" value="lizard">Lizard</button>
-    <button class="btn btn-info" type="submit" name="choice" value="spock">Spock</button>
-  </form>
-</div>
+
+<form action = "/choice" method = "post">
+  <button class="btn btn-warning" type="submit" name="choice" value="rock">Rock</button>
+  <button class="btn btn-primary" type="submit" name="choice" value="paper">Paper</button>
+  <button class="btn btn-danger" type="submit" name="choice" value="scissors">Scissors</button>
+  <button class="btn btn-success" type="submit" name="choice" value="lizard">Lizard</button>
+  <button class="btn btn-info" type="submit" name="choice" value="spock">Spock</button>
+</form>

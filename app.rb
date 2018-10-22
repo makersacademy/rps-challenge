@@ -2,11 +2,9 @@ require 'sinatra/base'
 require "./lib/player"
 require "./lib/game"
 require "./lib/router"
-require 'pry'
 
 class RockPaperScissors < Sinatra::Base
   set :port, 5678
-  enable :sessions
 
   before do
     @game = Game.current_game
