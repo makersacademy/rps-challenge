@@ -4,7 +4,6 @@ require './lib/game'
 require './lib/result'
 
 class RPS < Sinatra::Base
-  enable :sessions
 
   before do
     @game = Game.instance
@@ -34,6 +33,6 @@ class RPS < Sinatra::Base
     redirect '/in_game' if @winner == "Draw"
     erb(:result)
   end
-  
+
   run! if app_file == $0
 end

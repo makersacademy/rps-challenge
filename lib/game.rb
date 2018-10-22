@@ -11,7 +11,7 @@ class Game
     @game
   end
 
-  def initialize(player1, player2)
+  def initialize(player1, player2 = Bot.new)
     @player1 = player1
     @player2 = player2
   end
