@@ -1,3 +1,27 @@
+To run the game you would need to git clone the repo from github using the following:
+
+git clone https://github.com/hurc87/rps-challenge.git
+
+Then change directory into the file :
+
+$ cd rps-challenge
+
+Install the gems by running the bundle:
+
+$ bundle
+
+Then use the following to start the server:
+$ rackup
+
+You can then play the game by connecting to the local host in the browser by :
+http://localhost:9292/ 
+
+From here you can pick one or two players, you would enter the names of players. To pick the options you would need to type in Rock, Paper, Scissors, Lizard or Spock. 
+
+After each round you are asked if you would like to play again or end game, if you chose not to play again , you would come to a game over page and the game would be over. 
+
+
+
 # RPS Challenge
 
 Instructions
