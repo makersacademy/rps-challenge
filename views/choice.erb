@@ -40,9 +40,9 @@
 </div>
 
 <p><% if @game.winner == 'draw' %>
-  It's a draw!
+  <font size="5">It's a draw!</font>
   <% else %>
-  <%= @game.winner.name %> wins!
+  <font size="5"><%= @game.winner.name %> wins!</font>
   <% end %>
 </p>
 
