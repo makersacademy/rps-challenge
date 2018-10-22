@@ -2,8 +2,6 @@ class Game
 
   def self.create(player1, player2)
     @game = Game.new(player1, player2)
-    #@game = @game || Game.new(player1, player2)
-    #called 'Singleton Pattern' because it really only works if one Game.
   end
 
   def self.instance
@@ -13,24 +11,31 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-    @winner = "test"
+    @winner = "unassigned"
   end
 
   attr_reader :player1, :player2, :winner
 
+  def winning_combos
+    @winning_combos = {
+      "Rock" => "Scissors",
+      "Scissors" => "Paper",
+      "Paper" => "Rock"
+      }
+  end
+
   def evaluate(player1, player2)
+    @winner = player1.name if player1_win?
+    @winner = player2.name if !player1_win?
     @winner = "No one" if player1.move == player2.move
-    if player1.move == "Rock"
-      @winner = player1.name if player2.move == "Scissors"
-      @winner = player2.name if player2.move == "Paper"
-    elsif player1.move == "Paper"
-      @winner = player1.name if player2.move == "Rock"
-      @winner = player2.name if player2.move == "Scissors"
-    else # player1.move == "Scissors"
-      @winner = player1.name if player2.move == "Paper"
-      @winner = player2.name if player2.move == "Rock"
+  end
+
+  def player1_win?
+    @player1_win = false
+    winning_combos.each do | move1, move2 |
+      @player1_win = true if player1.move == move1 && player2.move == move2
     end
-    @winner
+    @player1_win
   end
 
 end
