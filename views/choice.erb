@@ -1,38 +1,43 @@
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="mystyle.css">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+</style>
 </head>
-<!--
+<body>
+
+<h2>Results</h2>
+
 <div class="row">
-  <div class="column" > -->
+  <div class="column">
+    <p><%= @game.player_1.name %> chose <%= @game.player_1.choice %></p>
 
-<p><%= @game.player_1.name %> chose <%= @game.player_1.choice %></p>
-
-<% case @game.player_1.choice %>
-<% when "rock" %>
-  <img src="rock.jpg" class="img2">
-<% when "paper" %>
-  <img src="paper.jpg" class="img2">
-<% when "scissors" %>
-  <img src="scissors.jpg" class="img2">
-<% end %>
-
-  <!-- </div>
-
-  <div class="column"> -->
-
-<p><%= @game.player_2.name %> chose <%= @game.player_2.choice %> </p>
-
-<% case @game.player_2.choice %>
-<% when "rock" %>
-  <img src="rock.jpg" class="img2">
-<% when "paper" %>
-  <img src="paper.jpg" class="img2">
-<% when "scissors" %>
-  <img src="scissors.jpg" class="img2">
-<% end %>
-<!-- 
+    <% case @game.player_1.choice %>
+    <% when "rock" %>
+      <img src="rock.jpg" class="img2">
+    <% when "paper" %>
+      <img src="paper.jpg" class="img2">
+    <% when "scissors" %>
+      <img src="scissors.jpg" class="img2">
+    <% end %>
   </div>
-</div> -->
+  <div class="column">
+    <p><%= @game.player_2.name %> chose <%= @game.player_2.choice %> </p>
+
+    <% case @game.player_2.choice %>
+    <% when "rock" %>
+      <img src="rock.jpg" class="img2">
+    <% when "paper" %>
+      <img src="paper.jpg" class="img2">
+    <% when "scissors" %>
+      <img src="scissors.jpg" class="img2">
+    <% end %>
+  </div>
+</div>
 
 <p><% if @game.winner == 'draw' %>
   It's a draw!
@@ -40,3 +45,6 @@
   <%= @game.winner.name %> wins!
   <% end %>
 </p>
+
+
+</body>
