@@ -34,7 +34,7 @@ class RPS < Sinatra::Base
 
   post '/single_player_move' do
     @game.player1.move = params[:choice]
-    @game.player2.move = @game.player2.random_move
+    @game.player2.random_move
     @game.evaluate(@game.player1, @game.player2)
     redirect '/single_player_outcome'
   end

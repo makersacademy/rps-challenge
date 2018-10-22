@@ -1,15 +1,16 @@
 
 class Computer
+WEAPONS = ["Rock", "Paper", "Scissors"]
+
   def initialize
     @name = "The Computer"
-    @choices = ["Rock", "Paper", "Scissors"]
     @move = nil
   end
 
   attr_accessor :name, :move
 
   def random_move
-    @choices.sample
+    @move = WEAPONS.sample
   end
 
 end

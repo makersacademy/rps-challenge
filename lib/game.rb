@@ -2,6 +2,8 @@ class Game
 
   def self.create(player1, player2)
     @game = Game.new(player1, player2)
+    #@game = @game || Game.new(player1, player2)
+    #called 'Singleton Pattern' because it really only works if one Game.
   end
 
   def self.instance
