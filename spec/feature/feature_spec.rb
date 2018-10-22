@@ -22,7 +22,7 @@ feature "Playing the game" do
     click_button("Submit")
     expect(page).to have_content "Rock beats Scissors, you win!"
   end
-
+  let(:computer) {double :computer, :selection => "S"}
   scenario "The user selects Paper and loses" do
     visit('/')
     fill_in :user_name, with: "Lucas"
@@ -31,7 +31,7 @@ feature "Playing the game" do
     click_button("Submit")
     expect(page).to have_content "Sorry, Lucas you lose!"
   end
-
+  let(:computer) {double :computer, :selection => "S"}
   scenario "The user selects Scissors, it's a tie" do
     visit('/')
     fill_in :user_name, with: "Lucas"
