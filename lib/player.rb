@@ -2,12 +2,13 @@ class Player
 
   attr_reader :name, :move
 
-  def initialize(name)
+  def initialize(name, game_type = 'rps')
     @name = name
     @move = '&nbsp;'
+    @game_type = game_type
   end
 
-  def set_move(move)
+  def make_move(move)
     @move = move
   end
 

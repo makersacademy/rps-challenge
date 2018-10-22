@@ -3,16 +3,23 @@ class Game
   RULES = {
     rock: ['scissors', 'lizard'],
     paper: ['rock', 'spock'],
-    scissors: ['paper' 'lizard'],
+    scissors: ['paper', 'lizard'],
     lizard: ['paper', 'spock'],
     spock: ['rock', 'scissors']
   }
 
   OUTCOMES = {
-    rock: 'Rock smashes scissors.',
-    paper: 'Paper covers rock.',
-    scissors: 'Scissors cuts paper.'
-  }
+    rock_scissors: 'Rock smashes scissors.',
+    rock_lizard: 'Rock crushes Lizard',
+    paper_rock: 'Paper covers rock.',
+    paper_spock: 'Paper disproves Spock',
+    scissors_paper: 'Scissors cuts paper.',
+    scissors_lizard: 'Scissors decapitates Lizard',
+    lizard_spock: 'Lizard poisons Spock',
+    lizard_paper: 'Lizard eats Paper',
+    spock_scissors: 'Spock smashes Scissors',
+    spock_rock: 'Spock vaporizes Rock'
+    }
 
   def self.create(player_1, player_2)
     @game = Game.new(player_1, player_2)
@@ -23,7 +30,7 @@ class Game
   end
 
   attr_reader :player_1_wins, :player_2_wins, :draws
-  attr_accessor :move_number, :no_players
+  attr_accessor :move_number, :no_players, :game_type
 
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
@@ -32,6 +39,7 @@ class Game
     @draws = -1
     @no_players = 1
     @move_number = 0
+    @game_type = 'rps'
   end
 
   def player_1
@@ -45,10 +53,8 @@ class Game
   def outcome
     if player_1.move == '&nbsp;'
       '&nbsp;'
-    elsif @no_players == 1
-      result_1_player
     else
-      result_2_players
+      @no_players == 1 ? result_1_player : result_2_players
     end
 
   end
@@ -57,13 +63,11 @@ class Game
     if draw?
       '&nbsp;'
     elsif winner?
-      OUTCOMES[player_1.move.to_sym]
+      OUTCOMES["#{player_1.move}_#{player_2.move}".to_sym]
     else
-      OUTCOMES[player_2.move.to_sym]
+      OUTCOMES["#{player_2.move}_#{player_1.move}".to_sym]
     end
   end
-
-
 
   def update_stats
     case stats_to_update
@@ -77,11 +81,10 @@ class Game
   end
 
   def show_results?
-    @move_number % 2 == 0
+    (@move_number % 2).zero?
   end
 
   private
-
   def draw?
     player_1.move == player_2.move
   end
@@ -101,20 +104,16 @@ class Game
   def result_1_player
     if draw?
       "It's a draw."
-    elsif winner?
-      "You win!"
     else
-      "You lose!"
+      winner? ? "You win!" : "You lose!"
     end
   end
 
   def stats_to_update
     if draw?
       'draw'
-    elsif winner?
-      'player_1'
     else
-      'player_2'
+      winner? ? 'player_1' : 'player_2'
     end
   end
 

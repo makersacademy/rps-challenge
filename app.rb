@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
-require './lib/human'
 require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
@@ -12,6 +11,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
+    erb :game_type
+  end
+
+  get '/no-players' do
     erb :no_players
   end
 
@@ -20,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/submit-name' do
-    player_1 = Human.new(params[:name])
+    player_1 = Player.new(params[:name])
     player_2 = Computer.new('Computer')
     @game = Game.create(player_1, player_2)
     redirect '/game'
@@ -31,10 +34,39 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/submit-names' do
-    player_1 = Human.new(params[:name_1])
-    player_2 = Human.new(params[:name_2])
+    player_1 = Player.new(params[:name_1])
+    player_2 = Player.new(params[:name_2])
     @game = Game.create(player_1, player_2)
     @game.no_players = 2
+    redirect '/game'
+  end
+
+  get '/no-players-rpsls' do
+    erb :no_players_rpsls
+  end
+
+  get '/enter-name-rpsls' do
+    erb :enter_name_rpsls
+  end
+
+  post '/submit-name-rpsls' do
+    player_1 = Player.new(params[:name])
+    player_2 = Computer.new('Computer', 'rpsls')
+    @game = Game.create(player_1, player_2)
+    @game.game_type = 'RPSLS'
+    redirect '/game'
+  end
+
+  get '/enter-names-rpsls' do
+    erb :enter_names_rpsls
+  end
+
+  post '/submit-names-rpsls' do
+    player_1 = Player.new(params[:name_1])
+    player_2 = Player.new(params[:name_2])
+    @game = Game.create(player_1, player_2)
+    @game.no_players = 2
+    @game.game_type = 'RPSLS'
     redirect '/game'
   end
 
@@ -46,16 +78,16 @@ class RockPaperScissors < Sinatra::Base
   post '/make-move' do
 
     if @game.player_2.instance_of? Computer
-      @game.player_1.set_move(params[:move])
+      @game.player_1.make_move(params[:move])
       @game.player_2.comp_choice
       redirect '/game'
     end
 
-    @game.move_number +=1
+    @game.move_number += 1
     if @game.show_results?
-      @game.player_2.set_move(params[:move])
+      @game.player_2.make_move(params[:move])
     else
-      @game.player_1.set_move(params[:move])
+      @game.player_1.make_move(params[:move])
     end
     redirect '/game'
   end

@@ -1,4 +1,0 @@
-class Human < Player
-
-
-end

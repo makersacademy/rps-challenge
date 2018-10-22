@@ -11,7 +11,6 @@ describe Game do
   subject(:loss_game) { described_class.new(player_2, player_1) }
   subject(:no_move_game) { described_class.new(player_no_move, player_no_move) }
 
-
   describe '#player_1' do
     it 'returns player 1' do
       expect(game.player_1).to eq player_1

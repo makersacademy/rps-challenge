@@ -111,12 +111,17 @@
               <button type="submit" name="move" value="scissors" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-scissors"></i> Scissors</button>
             </div>
           </div>
-          <div class="col-12">
-            <div class="btn-group mb-2" role="group" aria-label="Basic example">
-              <button type="submit" name="move" value="spock" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-spock"></i> Spock</button>
-              <button type="submit" name="move" value="lizard" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-lizard"></i> Lizard</button>
-            </div>
-          </div>
+          <% if @game.game_type == "RPSLS" %>
+            <%= puts
+              '<div class="col-12">
+                <div class="btn-group mb-2" role="group" aria-label="Basic example">
+                  <button type="submit" name="move" value="spock" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-spock"></i> Spock</button>
+                  <button type="submit" name="move" value="lizard" class="btn btn-lg btn-outline-dark"><i class="far fa-hand-lizard"></i> Lizard</button>
+                </div>
+              </div>'
+             %>
+          <% end %>
+
         </form>
       </div>
 
