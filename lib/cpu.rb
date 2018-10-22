@@ -2,14 +2,27 @@
 
 class Cpu
 
-  attr_reader :choice
+  attr_reader :choice, :name
 
-  def initialize
-    @choice = Game::OPTIONS.sample
+  def initialize(config, name = random_name)
+    @options = config.options
+    @choice = nil
+    @name = name
   end
 
-  def name
-    "CPU__" + ["BOB", "EVE", "JIM", "HAL"].sample + rand(3000).to_s
+  def select
+    @choice = @options.sample
+  end
+
+  def random_name
+    [
+      "WATSON",
+      "KITT",
+      "MOTHER",
+      "DEEP THOUGHT",
+      "HAL 9000",
+      "SKYNET"
+    ].sample
   end
 
 end

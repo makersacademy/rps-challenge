@@ -3,24 +3,51 @@
 <html>
 
 <head>
-<link rel=”stylesheet” type=”text/css” href=”/css/style.css” />
+
 
 </head>
 
 <center>
+  <div>
+    <% if @config.mode == "Regular" %>
+    <img src="/images/rps.png">
+    <% else %>
+  <img src="/images/rpsls.png">
+    <% end %>
+
+  </div>
 <div>
 </div>
+ <font face="courier" >
+<%= @game.player_1.name %>
 <div>
 <img src="/images/<%= @game.player_1.choice.capitalize %>.png">
 </div>
 <div>
 </div>
+<%= @game.player_2.name %>
 <div>
+  <% if @config.players == "1" %>
+  <img src="/images/<%= @game.player_2.select.capitalize %>.png">
+  <% else %>
 <img src="/images/<%= @game.player_2.choice.capitalize %>.png">
+  <% end %>
+
 </div>
 <div>
   <%= @game.player_1.name %>
   <%=" " +@game.result(@game.player_1.choice, @game.player_2.choice).to_s+
   " against "+@game.player_2.name.to_s %>
 </div>
+&nbsp;
+<div>
+<form style="text-align:center; font-family:courier;"  action="/play">
+<input type="submit" value="Rematch" />
+</form>
+&nbsp;
+<form style="text-align:center; font-family:courier;"  action="/">
+<input type="submit" value="Modeselection" />
+</div
+</form>
+</font>
 </center>

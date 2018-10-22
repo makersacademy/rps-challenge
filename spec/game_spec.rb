@@ -2,16 +2,19 @@ require 'game.rb'
 
 describe Game do
 
-  subject(:game) { described_class.new(human, cpu) }
-  subject(:game2) { described_class.new(human, cpu2) }
-  subject(:game3) { described_class.new(human, cpu3) }
-  subject(:game4) { described_class.new(human2, cpu) }
-  subject(:game5) { described_class.new(human2, cpu2) }
-  subject(:game6) { described_class.new(human2, cpu3) }
-  subject(:game7) { described_class.new(human3, cpu) }
-  subject(:game8) { described_class.new(human3, cpu2) }
-  subject(:game9) { described_class.new(human3, cpu3) }
+  wins = Config::WINS
 
+  subject(:game) { described_class.new(human, cpu, regular) }
+  subject(:game2) { described_class.new(human, cpu2, regular) }
+  subject(:game3) { described_class.new(human, cpu3, regular) }
+  subject(:game4) { described_class.new(human2, cpu, regular) }
+  subject(:game5) { described_class.new(human2, cpu2, regular) }
+  subject(:game6) { described_class.new(human2, cpu3, regular) }
+  subject(:game7) { described_class.new(human3, cpu, regular) }
+  subject(:game8) { described_class.new(human3, cpu2, regular) }
+  subject(:game9) { described_class.new(human3, cpu3, regular) }
+  let(:regular) { double(:config, wins: wins[0..2]) }
+  let(:hard) { double(:config, wins: wins) }
   let(:human) { double(:Human, name: "John", choice: :rock) }
   let(:human2) { double(:Human, name: "John", choice: :paper) }
   let(:human3) { double(:Human, name: "John", choice: :scissors) }

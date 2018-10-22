@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+<center>
+  <div>
+    <% if @config.mode == "Regular" %>
+    <img src="/images/rps.png">
+    <% else %>
+  <img src="/images/rpsls.png">
+    <% end %>
+
+  </div>
+
+<div>
+  <form style="text-align:center; font-family:courier;" method="post" action="/players">
+          <label for="Players">
+           Enter your name<%if @config.players == "2" %>s<% end %>
+           <div>
+             <i class="fa fa-user icon"></i>
+          <input name="player_1_name" type=text />
+         </div>
+          <%if @config.players == "2" %>
+          <div>
+          <input name="player_2_name" type=text />
+            </div>
+          <% end %>
+
+          </label>
+
+
+
+
+
+<div>
+<img src="/images/Rock.png">
+<img src="/images/Paper.png">
+<img src="/images/Scissors.png">
+<% if @config.mode == "Hard" %>
+<img src="/images/Lizard.png">
+<img src="/images/Spock.png">
+<% end %>
+</div>
+
+
+<div>
+<input type="submit" value="Play" />
+</form>
+</div>
