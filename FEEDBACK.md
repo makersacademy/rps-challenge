@@ -12,10 +12,14 @@
 
 ## Tests
 
-* All pass
+
+* Could be more thorough: e.g. scorekeeper tests should cover all outcomes
 
 ## Design
 
-## Conventions
+* Maybe could have used a computer class - not sure it's that important though
+* Maybe could have made multiple simpler views, isntead of using fat controllers/conditionals to re-use same ones?
 
-* Rubocop mostly passes
+## Conventions and good practices
+
+* Rubocop mostly passes: could have shortened that line
