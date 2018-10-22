@@ -6,7 +6,7 @@ describe Computer do
 
   describe '#weapon' do
     it 'chooses a weapon' do
-      expect(computer.weapon).to eq 'paper'
+      expect(computer.weapon).to eq('paper').or eq('rock').or eq('scissors')
     end
   end
 

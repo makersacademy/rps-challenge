@@ -23,7 +23,7 @@ feature 'Computer' do
     click_button 'Submit'
     choose "Rock"
     click_button 'Submit'
-    expect(page).to have_content 'The computer chose rock'
+    expect(page).to have_content('The computer chose')
   end
 end
 

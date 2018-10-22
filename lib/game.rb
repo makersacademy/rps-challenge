@@ -10,6 +10,14 @@ class Game
     @result = ""
   end
 
+  def self.create
+    @game = Game.new
+  end
+
+  def self.instance
+    @game
+  end
+
   def check_choices(player_choice, computer_choice)
     RULES.select do |k, v|
       if player_choice == k && computer_choice == k
