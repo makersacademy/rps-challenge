@@ -2,50 +2,40 @@ require 'game'
 
 describe Game do
 
-  let(:player) { double :player }
-  subject { described_class.new(player) }
+  let(:player_1) { double :player }
+  let(:player_2) { double :player }
+  subject { described_class.new(player_1, player_2) }
 
   it 'should return a player instance' do
-    expect(subject.player).to eq player
+    expect(subject.player_1).to eq player_1
   end
 
   it 'should return an instance of itself using a class method' do
-    Game.new_game(player)
+    Game.new_game(player_1)
     expect(Game.instance).to be_an_instance_of Game
-  end
-
-  context 'when asked to pick an option' do
-    it 'returns a random choice of rock, paper or scissors' do
-      allow(Kernel).to receive(:rand) { 1 }
-      subject.pick_option
-      expect(subject.choice).to eq 'Rock'
-    end
   end
 
   context 'when a player chooses Rock and the Game chooses Paper' do
     it 'shows that the Game won' do
-      allow(player).to receive(:choice) { 'Rock' }
-      allow(Kernel).to receive(:rand) { 2 }
-      subject.pick_option
-      expect(subject.result).to eq 'win'
+      allow(player_1).to receive(:choice) { 'Rock' }
+      allow(player_2).to receive(:choice) { 'Paper' }
+      expect(subject.result).to eq player_2
     end
   end
 
   context "when a player chooses Scissors and the Game chooses Paper" do
     it 'shows that the Game lost' do
-      allow(player).to receive(:choice) { 'Scissors' }
-      allow(Kernel).to receive(:rand) { 2 }
-      subject.pick_option
-      expect(subject.result).to eq 'lose'
+      allow(player_1).to receive(:choice) { 'Scissors' }
+      allow(player_2).to receive(:choice) { 'Paper' }
+      expect(subject.result).to eq player_1
     end
   end
 
   context "when a player chooses Paper and the Game chooses Paper" do
     it 'shows that the Game tied' do
-      allow(player).to receive(:choice) { 'Paper' }
-      allow(Kernel).to receive(:rand) { 2 }
-      subject.pick_option
-      expect(subject.result).to eq 'tie'
+      allow(player_1).to receive(:choice) { 'Paper' }
+      allow(player_2).to receive(:choice) { 'Paper' }
+      expect(subject.result).to eq :tie
     end
   end
 end

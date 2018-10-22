@@ -1,12 +1,18 @@
-require_relative 'game_result'
+require_relative 'computer'
 
 class Game
 
-  attr_reader :player, :choice
+  OUTCOMES = [
+               ['Rock', 'Paper'],
+               ['Paper', 'Scissors'],
+               ['Scissors', 'Rock']
+             ]
 
-  def initialize(player)
-    @player = player
-    @choice = nil
+  attr_reader :player_1, :player_2
+
+  def initialize(player_1, player_2 = Computer.new)
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
   def self.new_game(player)
@@ -17,15 +23,10 @@ class Game
     @game
   end
 
-  def pick_option
-    num = Kernel.rand(1..3)
-    @choice = 'Rock' if num == 1
-    @choice = 'Paper' if num == 2
-    @choice = 'Scissors' if num == 3
-  end
-
   def result
-    GameResult.calculate(@player.choice, choice)
+    return @player_2 if OUTCOMES.include?([@player_1.choice, @player_2.choice])
+    return @player_1 if OUTCOMES.include?([@player_2.choice, @player_1.choice])
+    return :tie
   end
 
 end

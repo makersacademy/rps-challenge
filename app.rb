@@ -13,8 +13,8 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:player_name])
-    @game = Game.new_game(player)
+    player_1 = Player.new(params[:player_name])
+    @game = Game.new_game(player_1)
     redirect '/ready'
   end
 
@@ -27,12 +27,12 @@ class Rps < Sinatra::Base
   end
 
   post '/choice' do
-    @game.player.update_choice(params[:choice])
+    @game.player_1.update_choice(params[:choice])
     redirect '/outcome'
   end
 
   get '/outcome' do
-    @game.pick_option
+    @game.player_2.pick_option
     erb :outcome
   end
 

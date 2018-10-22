@@ -1,11 +1,11 @@
-<h2>You chose <%= @game.player.choice %>!</h2>
-<h3>And I chose... <%= @game.choice %>!</h3>
+<h2>You chose <%= @game.player_1.choice %>!</h2>
+<h3>And I chose... <%= @game.player_2.choice %>!</h3>
 
-<% if @game.result == 'tie' %>
+<% if @game.result == :tie %>
   It's a tie!
-<% elsif @game.result == 'lose' %>
+<% elsif @game.result == @game.player_1 %>
   You win!
-<% elsif @game.result == 'win'%>
+<% elsif @game.result == @game.player_2 %>
   You lose!
 <% end %>
 
