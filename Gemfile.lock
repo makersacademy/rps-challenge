@@ -29,6 +29,9 @@ GEM
     powerpack (0.1.1)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     public_suffix (3.0.1)
     rack (2.0.4)
     rack-protection (2.0.0)
@@ -82,6 +85,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  pry
   rake
   rspec
   rubocop (= 0.56.0)

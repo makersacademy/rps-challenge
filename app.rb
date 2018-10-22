@@ -28,7 +28,7 @@ class RockPaperScissors < Sinatra::Base
     redirect '/results'
   end
 
-  post '/results' do
+  get '/results' do
     erb :results
   end
 
