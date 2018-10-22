@@ -18,14 +18,18 @@ class Game
     if @player_weapon == @cp_weapon
       'You drew!'
     else
-      case @player_weapon
-      when 'Rock'
-        @cp_weapon == 'Scissors' ? 'You win!' : 'You lose!'
-      when 'Paper'
-        @cp_weapon == 'Rock' ? 'You win!' : 'You lose!'
-      when 'Scissors'
-        @cp_weapon == 'Paper' ? 'You win!' : 'You lose!'
-      end
+      win_or_lose
+    end
+  end
+
+  def win_or_lose
+    case @player_weapon
+    when 'Rock'
+      @cp_weapon == 'Scissors' ? 'You win!' : 'You lose!'
+    when 'Paper'
+      @cp_weapon == 'Rock' ? 'You win!' : 'You lose!'
+    when 'Scissors'
+      @cp_weapon == 'Paper' ? 'You win!' : 'You lose!'
     end
   end
 end

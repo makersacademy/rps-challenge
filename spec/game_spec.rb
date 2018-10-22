@@ -8,9 +8,4 @@ describe Game do
     expect(game.player_choose_weapon('Rock')).to eq 'Rock'
   end
 
-  it 'draws when players choose the same weapon' do
-    game.player_choose_weapon('Rock')
-    allow(game.cp_choose_weapon).to receive('Rock').and_return('Rock')
-    expect(game.announce_winner).to eq 'You drew!'
-  end
 end
