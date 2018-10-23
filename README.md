@@ -1,6 +1,6 @@
 # RPS Challenge
 
-This web application was built with Ruby and Sinatra using TDD. The unit tests were written in RSpec (isolated using doubles and stubs) and the feature tests were written with RSpec/capybara.
+This web application was built with Ruby and Sinatra using TDD and OOD. The unit tests were written in RSpec and the feature tests were written with RSpec/capybara.
 
 ### Play Rock, Paper, Scissors against your computer!
 
