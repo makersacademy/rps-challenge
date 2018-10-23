@@ -63,6 +63,6 @@ Run both feature and unit tests using:
 
 ## Screenshots
 
-![Screenshot 1](./assets/screenshots/Screen-Shot-1.png)
-![Screenshot 2](./assets/screenshots/Screen-Shot-2.png)
-![Screenshot 3](./assets/screenshots/Screen-Shot-3.png)
+![Screenshot 1](./public/images/Screen-Shot-1.png)
+![Screenshot 2](./public/images/Screen-Shot-2.png)
+![Screenshot 3](./public/images/Screen-Shot-3.png)
