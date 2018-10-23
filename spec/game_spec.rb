@@ -24,6 +24,30 @@ describe Game do
       expect(subject.result).to eq player_1
     end
 
+    it 'player wins' do
+      allow(player_1).to receive(:shape).and_return("Paper")
+      allow(player_2).to receive(:shape).and_return("Rock")
+      expect(subject.result).to eq player_1
+    end
+
+    it 'player wins' do
+      allow(player_1).to receive(:shape).and_return("Scissors")
+      allow(player_2).to receive(:shape).and_return("Paper")
+      expect(subject.result).to eq player_1
+    end
+
+    it 'player loses' do
+      allow(player_1).to receive(:shape).and_return("Scissors")
+      allow(player_2).to receive(:shape).and_return("Rock")
+      expect(subject.result).to eq player_2
+    end
+
+    it 'player loses' do
+      allow(player_1).to receive(:shape).and_return("Rock")
+      allow(player_2).to receive(:shape).and_return("Paper")
+      expect(subject.result).to eq player_2
+    end
+
     it 'player loses' do
       allow(player_1).to receive(:shape).and_return("Paper")
       allow(player_2).to receive(:shape).and_return("Scissors")
@@ -31,8 +55,20 @@ describe Game do
     end
 
     it 'player draws' do
+      allow(player_1).to receive(:shape).and_return("Rock")
+      allow(player_2).to receive(:shape).and_return("Rock")
+      expect(game.result).to eq "draw"
+    end
+
+    it 'player draws' do
       allow(player_1).to receive(:shape).and_return("Paper")
       allow(player_2).to receive(:shape).and_return("Paper")
+      expect(game.result).to eq "draw"
+    end
+
+    it 'player draws' do
+      allow(player_1).to receive(:shape).and_return("Scissors")
+      allow(player_2).to receive(:shape).and_return("Scissors")
       expect(game.result).to eq "draw"
     end
   end
