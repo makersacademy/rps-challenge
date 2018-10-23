@@ -63,6 +63,6 @@ Run both feature and unit tests using:
 
 ## Screenshots
 
-[![Screen-Shot-1.png](https://i.postimg.cc/zf1Q7ph4/Screen-Shot-1.png)](https://postimg.cc/cvXT4RXc)
-[![Screen-Shot-2.png](https://i.postimg.cc/KvksyCrd/Screen-Shot-2.png)](https://postimg.cc/6yKhrjP0)
-[![Screen-Shot-3.png](https://i.postimg.cc/63bzkh7W/Screen-Shot-3.png)](https://postimg.cc/VrMjMnBp)
+![Screenshot 1](./assets/screenshots/Screen-Shot-1.png)
+![Screenshot 2](./assets/screenshots/Screen-Shot-2.png)
+![Screenshot 3](./assets/screenshots/Screen-Shot-3.png)
