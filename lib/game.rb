@@ -34,10 +34,9 @@ class Game
 
   def player1_wins?
     winning_combo.each do |m1, _m2|
-      @p1_win = true if player1.move == m1 && player2.move == @win_combo[m1][0]
-      @p1_win = true if player1.move == m1 && player2.move == @win_combo[m1][1]
+      return true if player1.move == m1 && @win_combo[m1].include?(player2.move)
     end
-    @p1_win
+    false
   end
 
 end
