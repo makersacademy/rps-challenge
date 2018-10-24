@@ -3,8 +3,10 @@ class Computer
 
   attr_reader :name, :choice
 
+
   def initialize
     @name = name_choice
+    @wins = 0
   end
 
   def name_choice
