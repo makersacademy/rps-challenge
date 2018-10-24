@@ -3,7 +3,7 @@ feature "shows the the Game's choice" do
     sign_in_and_play
     allow(Kernel).to receive(:rand) { 1 }
     click_button 'Rock'
-    expect(page).to have_content 'And I chose... Rock!'
+    expect(page).to have_content 'The computer chose Rock!'
   end
 end
 
@@ -19,13 +19,13 @@ feature 'win, lose or tie' do
     sign_in_and_play
     allow(Kernel).to receive(:rand) { 3 }
     click_button 'Rock'
-    expect(page).to have_content "You win!"
+    expect(page).to have_content "James wins!"
   end
 
   scenario 'the user loses' do
     sign_in_and_play
     allow(Kernel).to receive(:rand) { 2 }
     click_button 'Rock'
-    expect(page).to have_content "You lose!"
+    expect(page).to have_content "The computer wins!"
   end
 end

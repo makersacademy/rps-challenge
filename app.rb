@@ -32,7 +32,7 @@ class Rps < Sinatra::Base
   end
 
   get '/outcome' do
-    @game.player_2.pick_option
+    @game.player_2.update_choice(params[:choice])
     erb :outcome
   end
 

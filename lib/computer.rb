@@ -1,8 +1,13 @@
 class Computer
 
-  attr_reader :choice
+  attr_reader :choice, :name
 
-  def pick_option
+  def initialize
+    @choice = nil
+    @name = "The computer"
+  end
+
+  def update_choice(*)
     num = Kernel.rand(1..3)
     @choice = 'Rock' if num == 1
     @choice = 'Paper' if num == 2
