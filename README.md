@@ -20,7 +20,7 @@ Head to you localhostXXXX where XXXX is the port number referenced by rack on te
 
 Fill in your name and play!
 
-## My Approach ##
+##  My Approach  ##
 
 The computer randomnly samples the three game options each turn. The game mechanics are computed in the Model layer and the Controller links the Presentation layer with the Model. 
 
