@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>Battle</title>
-    <link href="main.css" type="text/css" rel="stylesheet">
+    <link href="./rps_main.css" type="text/css" rel="stylesheet">
   </head>
 
   <body>
@@ -12,7 +12,7 @@
 
     <main class="screen1">
       <h1>Game Over</h1>
-      
+
       </fieldset>
     </main>
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Battle</title>
-    <link href="main.css" type="text/css" rel="stylesheet">
+    <link href="./rps_main.css" type="text/css" rel="stylesheet">
   </head>
 
   <body>
@@ -11,7 +11,9 @@
 
       <main class="screen1">
         <fieldset class="screen2">
-
+          <h1>Rock Paper Scissors</h1>
+          <h3>You picked <%=@player1.move_made%>...</h3>
+          <a href='/result'><button>Battle!</button></a>
 
         </fieldset>
       </main>

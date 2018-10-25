@@ -21,3 +21,12 @@ feature 'Select Rock/Paper/Scissors' do
     expect(page).to have_content 'You picked Scissors'
   }
 end
+
+feature 'Game winner' do
+  before { sign_in_and_play }
+  scenario 'winner of the game?' do
+    click_on 'Scissors'
+    click_link 'Battle!'
+    expect(page).to have_content 'Game Over'
+  end
+end

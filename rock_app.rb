@@ -24,8 +24,13 @@ class RPSchallenge < Sinatra::Base
 
   post '/select' do
     @player1 = @game.player1
-    @player1.move_made = params[:player_selection]
+    @player1.move_made = params[:player_move_made]
     redirect '/battle'
+  end
+
+  get '/battle' do
+   @player1 = @game.player1
+   erb :battle
   end
 
   run! if app_file == $0
