@@ -15,7 +15,7 @@ class Game
     @player_2 = player_2
   end
 
-  def self.new_game(player_1, player_2 = Computer.new)
+  def self.create(player_1, player_2 = Computer.new)
     @game = Game.new(player_1, player_2)
   end
 

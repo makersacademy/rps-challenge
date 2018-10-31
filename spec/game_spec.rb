@@ -11,7 +11,7 @@ describe Game do
   end
 
   it 'should return an instance of itself using a class method' do
-    Game.new_game(player_1)
+    Game.create(player_1)
     expect(Game.instance).to be_an_instance_of Game
   end
 
