@@ -1,5 +1,5 @@
 class Player
-  attr_reader :name, :choice, :choices
+  attr_reader :name, :choice
   def initialize(name)
     @name = name.capitalize
     @choices = ['rock', 'paper', 'scissors']
@@ -12,6 +12,8 @@ class Player
   end
 
   private
+
+  attr_reader :choices
 
   def avaiable_option?(option)
     choices.include?(option)

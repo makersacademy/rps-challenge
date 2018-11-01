@@ -10,6 +10,10 @@ class Game
     ]
   end
 
+  def change_computer_choice
+    players[1].shuffle_turn
+  end
+
   def set_choice(player_index, choice)
     players[player_index].set_choice(choice)
   end

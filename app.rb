@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/game'
+require_relative 'lib/computer'
 
 class ChoiceGame < Sinatra::Base
 
@@ -12,13 +13,15 @@ class ChoiceGame < Sinatra::Base
   end
 
   post '/solo' do
+    computer = Computer.new()
     player = Player.new(params[:solo_player])
-    session[:game] = Game.new(player, Player.new('Computer'))
+    session[:game] = Game.new(player, computer)
     redirect "/sologame"
   end
 
   get '/sologame' do
     @game = session[:game]
+    @game.change_computer_choice
     erb :sologame
   end
 
@@ -39,8 +42,8 @@ class ChoiceGame < Sinatra::Base
     choice = params[:choice]
     p2_choice = params[:p2_choice]
     @game.set_choice(0, choice)
-    @game.set_choice(1, choice) if @game.retrieve_playername(1) == 'Computer'
-    @game.set_choice(1, p2_choice) if @game.retrieve_playername(1) != 'Computer'
+    # @game.set_choice(1, choice) if @game.retrieve_playername(1) == 'Computer'
+    # @game.set_choice(1, p2_choice) if @game.retrieve_playername(1) != 'Computer'
     redirect '/gameover'
   end
 
