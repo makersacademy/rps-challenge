@@ -1,0 +1,29 @@
+<style>
+
+h1 {outline-color:green;}
+h1.outset {outline-style: outset;}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+body {
+  color: red;
+}
+</style>
+
+<h1 class="outset"> Welcome <%= @name %> !!! </h1>
+
+<h2> Click to start game </h2>
+
+<form action="/play">
+  <input type="submit" value="START!">
+</form>

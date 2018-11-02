@@ -1,0 +1,28 @@
+<style>
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+body {
+  color: blue;
+}
+</style>
+
+<h1> Lets play <%= @name %> </h1>
+
+<h2> Please select your move! </h2>
+<h2> - press 'ROCK', 'PAPER' OR 'SCISSORS' </h2>
+
+<form action="/move" method="post">
+  <input type="submit" name="choice" value="rock">
+  <input type="submit" name="choice" value="paper">
+  <input type="submit" name="choice" value="scissors">
+</form>

@@ -1,11 +1,22 @@
+ENV['RACK_ENV'] = 'test'
+
+# require our Sinatra app file
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+# this requires the test helper to help with DRY...
+require 'features/web_helpers'
+
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
+# tell Capybara about our app class
+Capybara.app = GameApp
+
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
+  SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
 

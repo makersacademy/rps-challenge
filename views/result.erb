@@ -1,0 +1,38 @@
+<%
+p = Player.new(@name)
+player_move = @choice
+
+c = Computer.new
+go = c.random_move
+
+g = Game.new(player_move, go)
+%>
+
+<style>
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+body {
+  color: purple;
+}
+</style>
+
+<h1> You chose <%= player_move %> </h1>
+<h1> Computer has chosen <%= go %>... </h1>
+
+<h2> <%= g.decider %> </h2>
+
+<h2> Please press start to play again... </h2>
+
+<form action="/">
+  <input type="submit" value="START!">
+</form>
