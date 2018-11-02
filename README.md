@@ -10,6 +10,12 @@ Capybara
 Sinatra
 
 
+To start the game
+-----------------
+- type 'rackup -p 8080' in the terminal.
+- then open 'localhost:8080' in your browser.
+
+
 Additional Notes
 ----------------
 Everything seems to work fine in this human v pc version. The results page loops back to the start as I had planned, but there could be an option to terminate/quit here.
