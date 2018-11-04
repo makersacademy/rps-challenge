@@ -9,20 +9,16 @@ class Game
     @computer = computer
   end
 
+  PLAYER1WINS = ['rock scissors', 'paper rock', 'scissors paper']
+  PLAYER2WINS = ['scissors rock', 'rock paper', 'paper scissors']
+
   def winner
-    if player.move == "Rock" && computer.move == "Scissors"
+    array_of_moves = "#{player.move.downcase} #{computer.move.downcase}"
+    if PLAYER1WINS.include?(array_of_moves)
       player.name
-    elsif player.move == "Paper" && computer.move == "Rock"
-      player.name
-    elsif player.move == "Scissors" && computer.move == "Paper"
-      player.name
-    elsif player.move == computer.move
-      "You drew everybody"
-    elsif computer.move == "Rock" && player.move == "Scissors"
-      player.name
-    elsif computer.move == "Paper" && player.move == "Rock"
-      player.name
-    elsif computer.move == "Scissors" && player.move == "Paper"
+    elsif player.move.downcase == computer.move.downcase
+      "You drew, everybody"
+    elsif PLAYER2WINS.include?(array_of_moves)
       computer.name
     else
       "There was an error, no one"

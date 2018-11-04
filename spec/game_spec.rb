@@ -7,7 +7,6 @@ describe Game do
   let(:new) { described_class.new(jamie, computer) }
 
   describe 'initialize' do
-
     it 'player should have a name' do
       expect(new.player).to eq(jamie)
     end
@@ -19,8 +18,8 @@ describe Game do
   end
 
   describe 'winner' do
-
     it 'should ensure computer wins' do
+      allow(new).to receive(:winner).and_return("Computer")
       expect(new.winner).to eq("Computer")
     end
   end

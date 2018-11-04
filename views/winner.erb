@@ -2,8 +2,10 @@
 
 <h1> <%= @game.winner %> won! </h1>
 
-<h2> <%= @game.player.name %> attacked with <%= @game.player.move %> </h2>
-<h2> <%= @game.computer.name %> attacked with <%= @game.computer.move %> </h2>
+<h2> <%= @game.player.name.capitalize %> attacked with
+<%= @game.player.move.capitalize %> </h2>
+<h2> <%= @game.computer.name.capitalize %> attacked with
+<%= @game.computer.move.capitalize %> </h2>
 
-<form action="/play2" method="get">
+<form action="/" method="get">
 <input type='submit' value='Play again?'>

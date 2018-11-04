@@ -10,6 +10,10 @@ class Rps < Sinatra::Base
     erb :index
   end
 
+  get '/1' do
+    erb :index1
+  end
+
   get '/2' do
     erb :index2
   end
@@ -22,7 +26,8 @@ class Rps < Sinatra::Base
   end
 
   post '/2names' do
-    session[:game] = Game.new(Player.new(params[:name1]), Player.new(params[:name2]))
+    session[:game] = Game.new(Player.new(params[:name1]),
+    Player.new(params[:name2]))
     p session
     redirect '/play2'
   end
