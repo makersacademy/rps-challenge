@@ -2,18 +2,6 @@
 Rock, Paper, Scissors 
 <h4> Format: </h4> Best of <%= @game_type %>
 <br><br>
-------------------------------------<br>
-Today's match is between...<br>
-<h2><%= @game.p1_name %> Vs. 
-<% if @p2_name %>
-<%= @p2_name %></h2>
-<% else %> 
-<%= 'Rocky McRock Face'%>
-<% end  %></h2>
-------------------------------------
-<h4><p>The current scores is: </h4>
-<p><%= @p1.name + ':' %> <%= @p1.points %><p> 
-<p><%= @p2.name + ':' %> <%= @p2.points %><p>
 
 <br>
 <h2> Make your choice </h2>
