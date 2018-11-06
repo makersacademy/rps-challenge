@@ -13,7 +13,6 @@ $ rackup
 ## Modelling
 
 [HTTP Request-Response Cycle + MVC Model](https://imgur.com/a/EpLJtuC)<br>
-[Domain Model](https://imgur.com/r3bDqJh)<br>
 [Domain Model](https://github.com/Alastair2D/rps-challenge/blob/master/images/domain_model.png)
 
 
