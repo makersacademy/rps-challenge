@@ -2,6 +2,10 @@
 
 - This is a Sinatra-based web app for playing rock, paper, scissors against the computer
 
+![index](/public/images/index_screenshot.jpg)
+![game](/public/images/game_screenshot.jpg)
+![end](/public/images/game_end.jpg)
+
 ## Basic Rules
 
 - Rock beats Scissors
