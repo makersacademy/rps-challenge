@@ -1,6 +1,6 @@
 # RPS Challenge
 
-- This is a Sinatra-based web app for playing rock, paper, scissors against the computer
+- This is a Sinatra-based web app for playing rock, paper, scissors against the computer. This was built for a weekend challenge in week 3 of Makers.
 
 ![index](/public/images/index_screenshot.jpg)
 ![game](/public/images/game_screenshot.jpg)
