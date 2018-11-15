@@ -3,7 +3,7 @@ require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
 
   get '/' do
-    'Hello RPS'
+    'Testing infrastructure working'
   end
 
 end
