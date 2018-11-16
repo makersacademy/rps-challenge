@@ -20,5 +20,16 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  post '/options' do
+    @game = Game.instance
+    @game.player.option = params[:option]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game = Game.instance
+    # @game.player.option = params[:option]
+    erb(:result)
+  end
 
 end

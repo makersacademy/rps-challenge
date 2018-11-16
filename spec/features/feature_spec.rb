@@ -15,3 +15,13 @@ feature "Play page" do
     expect(page).to have_content "Choose an option, Tom"
   end
 end
+
+# feature "Choosing an option" do
+#   scenario 'Player can choose an option' do
+#     visit ('/')
+#     fill_in 'name', with: 'Tom'
+#     click_button 'Submit'
+#     click_button 'Rock'
+#     expect(page).to have_content "You chose Rock"
+#   end
+# end
