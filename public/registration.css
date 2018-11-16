@@ -1,0 +1,21 @@
+body {
+	background-color: #7eacf7;
+	text-align: center
+}
+
+h1 {
+	
+}
+
+form {
+	display: inline-block;
+	
+}
+
+input[type=text] {
+	border-radius: 4px;
+}
+
+input[type=submit] {
+	margin: 25px;
+}
