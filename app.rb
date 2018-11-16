@@ -28,6 +28,7 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @game = Game.instance
+    @game.outcome
     # @game.player.option = params[:option]
     erb(:result)
   end

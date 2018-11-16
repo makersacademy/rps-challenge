@@ -1,10 +1,10 @@
 class Player
 
   attr_reader :name
-  attr_accessor :option
+  attr_accessor :move
 
   def initialize(name)
     @name = name
-    @option = nil
+    @move = nil
   end
 end
