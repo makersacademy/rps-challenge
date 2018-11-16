@@ -1,14 +1,13 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
-  enable :sessions
-
   get '/' do
     erb :index
   end
 
   post '/save_name' do
-    session[:player_name] = params[:name]
+    Game.start params[:name]
     redirect '/saved_name'
   end
 
@@ -25,7 +24,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/result' do
-    session[:player_move] = params[:move]
+    Game.play_a_round params[:move]
     redirect '/result'
   end
 end

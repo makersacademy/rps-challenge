@@ -1,1 +1,3 @@
-<%= session[:player_name] %> chose <%= session[:player_move] %>
+<%= Game.see_player_name %> chose <%= Game.see_result[:player_move] %>
+<br>
+Robot chose <%= Game.see_result[:robot_move] %>
