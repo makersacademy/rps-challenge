@@ -1,19 +1,13 @@
-Let's play <%= @player_1.name %>!
+Let's play <%= @name %>!
 <br>
 <br>
-Please pick Rock, Paper or Scissors
-<br>
-<br>
-<form action="player_rock">
-  <input type="submit" value="Rock">
+<form action="/play" method="post">
+  <input type="submit" name="move" value="Rock">
+  <input type="submit" name="move" value="Paper">
+  <input type="submit" name="move" value="Scissors">
 </form>
+
+You chose <%= @move %>!
 <br>
 <br>
-<form action="player_paper">
-  <input type="submit" value="Paper">
-</form>
-<br>
-<br>
-<form action="player_scissors">
-  <input type="submit" value="Scissors">
-</form>
+Opponent chose <%= @opponent_move %>!
