@@ -1,4 +1,10 @@
 <h1>Result</h1>
 <%= @player_name %> picked <%= @player_choice %>
 <br>
+Computer picked <%= @ai_choice %>
+<br>
 <%= @player_name %> you <%= @result %>
+<br>
+<form action="/play">
+	<input type="submit" value="play again?" name="play again">
+</form>
