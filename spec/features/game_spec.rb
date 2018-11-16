@@ -13,6 +13,8 @@ feature "Player can click one of three buttons" do
     fill_in('player1', with: 'Wayne')
     click_button('Submit')
     click_button('Rock')
+    # select('Rock', from: 'selection')
+    # click_button('Submit')
     expect(page).to have_content "You chose Rock"
   end
 end

@@ -5,23 +5,22 @@
     <title>Play</title>
   </head>
   <body>
-    <div>
-      <p>Welcome <%= @player1 %>!</p>
-    </div>
-    <div>
+    <div align="center"><br>
+      <p>Welcome <%= @player1 %>!</p><br>
       <p>Please make your choice</p>
       <br>
       <form action="/chosen" method="post">
-        <input type="submit" value="Rock">
-      </form>
-
-      <form action="/chosen" method="post">
-        <input type="submit" value="Paper">
-      </form>
-
-      <form action="/chosen" method="post">
-        <input type="submit" value="Scissors">
+        <input type="submit" name="button" value="Rock">
+        <input type="submit" name="button" value="Paper">
+        <input type="submit" name="button" value="Scissors">
       </form>
     </div>
   </body>
 </html>
+
+<!-- <select name="selection" required>
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+</select>
+<input type="submit" value="Submit"> -->

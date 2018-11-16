@@ -27,9 +27,8 @@ class RPS < Sinatra::Base
 
   post '/chosen' do
     # from play.erb
-    session[:selection] = params[:Rock]
-    session[:selection] = params[:Paper]
-    session[:selection] = params[:Scissors]
+    puts params
+    session[:selection] = params[:button]
     redirect '/result'
   end
 
@@ -38,7 +37,6 @@ class RPS < Sinatra::Base
     @selection = session[:selection]
     erb(:result)
   end
-
 
 
   run! if app_file == $0
