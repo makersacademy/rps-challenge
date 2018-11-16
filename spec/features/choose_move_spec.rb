@@ -1,5 +1,5 @@
-feature "Enter a name when starting the game" do
-  scenario "Player starting the game is able to enter a name" do
+feature "Shows the options available for a move" do
+  scenario "Player enters name, and is presented with a range of combat options" do
     sign_in_and_play
     expect(page).to have_content('ROCK')
     expect(page).to have_content('PAPER')

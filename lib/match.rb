@@ -1,7 +1,7 @@
 require_relative './player'
 
 class Match
-  attr_reader :p1, :p2, :game_type
+  attr_reader :play1, :play2, :game_type
 
   def initialize(play1,
     play2: "Computer",
@@ -12,4 +12,16 @@ class Match
     @game_type = game_type
   end
 
+  def do_move(player, move)
+    player.make_move(move)
+  end
+
+  def do_random_move(player)
+    player.make_random_move
+  end
+
+  def see_move(player)
+    player.move
+  end
+  
 end
