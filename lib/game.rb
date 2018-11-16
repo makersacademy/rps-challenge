@@ -22,6 +22,10 @@ class Game
 		}
 	end
 
+	def self.instance
+		@game ||= Game.new
+	end
+
 	def decide_winner (ai_choice, player_choice)
 		@rules[player_choice.to_sym][ai_choice.to_sym]
 	end
