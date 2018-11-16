@@ -5,8 +5,7 @@ feature "User's name is stored" do
   end
 
   scenario "the name is visible while playing the game" do
-    sign_in
-    click_button "Play"
+    sign_in_and_play
     expect(page).to have_content "Jo Brown is playing Rock, Paper, Scissors"
   end
 end
