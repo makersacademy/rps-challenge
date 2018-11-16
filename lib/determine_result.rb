@@ -1,14 +1,14 @@
 require_relative './computer_player'
 
 class DetermineResult
-  attr_reader :comp_move
+  attr_reader :comp_move, :winner
 
   def initialize(player_move, computer_player = ComputerPlayer.new)
     @p1_move = player_move.downcase
     @comp_move = computer_player.move
   end
 
-  def winner
+  def find_winner
     @p1_move == @comp_move ? @winner = 'draw' : send(@p1_move, @comp_move)
   end
 
