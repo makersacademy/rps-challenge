@@ -1,6 +1,12 @@
 feature RockPaperScissors do
-  scenario "it has a message on the home page" do
+  scenario "the user is asked to provide their name" do
     visit '/'
-    expect(page).to have_content "Hello Rock, Paper & Scissors"
+    expect(page).to have_content "Please enter your name to begin"
+  end
+
+  scenario "there are input fields for the user to enter their name" do
+    visit '/'
+    expect(page).to have_css 'input[type=text]'
+    expect(page).to have_css 'input[type=submit]'
   end
 end
