@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'rps'
+# require 'rps'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -9,7 +9,9 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
-  post '/' do
+  post '/play' do
+    @name = params[:name]
+    erb(:play)
   end
 
   run! if app_file == $0
