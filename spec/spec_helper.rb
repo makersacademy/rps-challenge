@@ -1,3 +1,11 @@
+ENV['RACK_ENV'] = 'test'
+require "./rps.rb"
+require "capybara"
+require "capybara/rspec"
+require "rspec"
+Capybara.app = RockPaperScissors
+
+
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'

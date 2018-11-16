@@ -1,0 +1,11 @@
+<p>Welcome <%= @name %></p>
+<p> Are you ready to play Rock Paper Scissors? </p>
+<p> Select your option: </p>
+<form action="/choice" method="post">
+  <select name="choice">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Submit">
+</form>

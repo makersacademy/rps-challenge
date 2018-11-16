@@ -1,0 +1,2 @@
+require './rps'
+run RockPaperScissors
