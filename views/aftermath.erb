@@ -1,7 +1,18 @@
 The battle was frantic, with great losses on both sides.
 <br />
+<%= "The honorable, venerable and tenacious #{@match.play1.name.capitalize} used
+the traditional #{@match.play1.move.capitalize} of their ancient house." %>
+<br />
+<%= "The loser #{@match.play2.name.downcase} used some
+#{@match.play2.move.downcase}." %>
+<br />
 <% unless @match.result == "DRAW" %>
-  <%= "#{@match.result.name} won, with their trusty #{@match.result.move}" %>
+  <%= "In the end, #{@match.result.name} emerged victorious,
+  with their trusty #{@match.result.move.downcase}" %>
 <% else %>
-  <%= "lel draw" %>
+  <%= "lel freakin' draw" %>
 <% end %>
+<br />
+<form action="/playing" method="get">
+  <input type="submit" value="REMATCH" />
+</form>
