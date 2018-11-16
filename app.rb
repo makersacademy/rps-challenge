@@ -20,22 +20,12 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/rock' do
-    session[:player_move] = "Rock"
-    redirect '/result'
-  end
-
-  post '/paper' do
-    session[:player_move] = "Paper"
-    redirect '/result'
-  end
-
-  post '/scissors' do
-    session[:player_move] = "Scissors"
-    redirect '/result'
-  end
-
   get '/result' do
     erb :result
+  end
+
+  post '/result' do
+    session[:player_move] = params[:move]
+    redirect '/result'
   end
 end

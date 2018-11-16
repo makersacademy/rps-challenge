@@ -1,12 +1,15 @@
 <h3><%= session[:player_name] %> is playing Rock, Paper, Scissors</h3>
 <br>
 Select one of Rock, Paper or Scissors:
-<form action=rock method=post>
-  <input type=submit value='Rock'>
-</form>
-<form action=paper method=post>
-  <input type=submit value='Paper'>
-</form>
-<form action=scissors method=post>
-  <input type=submit value='Scissors'>
+<form action=result method=post>
+  <input type=radio name=move value='Rock' id='rock' checked=true>
+  <label for='rock'>Rock</label>
+
+  <input type=radio name=move value='Paper' id='paper'>
+  <label for='paper'>Paper</label>
+
+  <input type=radio name=move value='Scissors' id='scissors'>
+  <label for='scissors'>Scissors</label>
+
+  <input type=submit value="Submit">
 </form>

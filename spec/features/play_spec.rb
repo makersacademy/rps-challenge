@@ -7,19 +7,22 @@ feature "play rock papers scissors" do
   context "player makes a move" do
     scenario "confirm the player has selected Rock" do
       sign_in_and_play
-      click_button "Rock"
+      choose "Rock"
+      click_button "Submit"
       expect(page).to have_content "Jo Brown chose Rock"
     end
 
     scenario "confirm the player has selected Paper" do
       sign_in_and_play
-      click_button "Paper"
+      choose "Paper"
+      click_button "Submit"
       expect(page).to have_content "Jo Brown chose Paper"
     end
 
     scenario "confirm the player has selected Scissors" do
       sign_in_and_play
-      click_button "Scissors"
+      choose "Scissors"
+      click_button "Submit"
       expect(page).to have_content "Jo Brown chose Scissors"
     end
   end
