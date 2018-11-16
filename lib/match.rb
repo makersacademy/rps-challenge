@@ -1,4 +1,5 @@
 require_relative './player'
+require_relative './adjudicator'
 
 class Match
   attr_reader :play1, :play2, :game_type
@@ -23,5 +24,5 @@ class Match
   def see_move(player)
     player.move
   end
-  
+
 end
