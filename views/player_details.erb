@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body style="background-color:white;">
+
+
+<style>
+  body {text-align:center}
+  h1 {color: red;}
+  p {color: red}
+  wrap_all {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  }
+
+</style>
+
+
+
+<h1> Player </h1>
+<p><%= @name %></p>
+
+
+<p> In the game of rock, paper, scissors there can only be 1 winner <p>
+  <p> Choose your weapon carefully <p>
+
+<form action="/player_move" method="post">
+  <input type="radio" name="move" value="Rock"> Rock<br>
+  <input type="radio" name="move" value="Paper"> Paper<br>
+  <input type="radio" name="move" value="Scissors"> Scissors<br>
+  <input type="submit" value="Make your move">
+</form>
+
+<div>
+<img src= 'https://media1.tenor.com/images/b2a284afcda426722f679d3298566ced/tenor.gif?itemid=4954978'>
+<div>
+
+</body>
+</html>
