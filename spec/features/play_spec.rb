@@ -25,5 +25,12 @@ feature "play rock papers scissors" do
       click_button "Submit"
       expect(page).to have_content "Jo Brown chose Scissors"
     end
+
+    scenario "display the result" do
+      sign_in_and_play
+      choose "Rock"
+      click_button "Submit"
+      expect(page).to have_content "wins!"
+    end
   end
 end

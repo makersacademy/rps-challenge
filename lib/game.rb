@@ -6,6 +6,7 @@ class Game
   def self.start(name)
     @player_name = name
     @moves = ['Rock', 'Paper', 'Scissors']
+    @outcomes = ["No-one wins!", "#{@player_name} wins!", "The Robot wins!"]
     @result = {}
   end
 
@@ -13,13 +14,18 @@ class Game
     @result
   end
 
-  def self.play_a_round(player_move)
+  def self.play_a_round(player_move, opponent_move = robot_move)
     @result[:player_move] = player_move
-    @result[:robot_move] = robot_move
-    @result[:outcome] = player_move > robot_move
+    @result[:opponent_move] = opponent_move
+    @result[:outcome] = outcome(@result[:player_move], @result[:opponent_move])
   end
 
   def self.robot_move
     @moves.sample
+  end
+
+  def self.outcome(move_1, move_2)
+    difference = @moves.find_index(move_1) - @moves.find_index(move_2)
+    @outcomes[difference % 3]
   end
 end
