@@ -1,1 +1,13 @@
-Player 1 name: <%= @player_1_name %>
+<h2>Hi <%= @player_1_name %>! You will be playing <%= @player_2_name %></h2>
+
+<p>Just to explain the rules in case you have been living under a *ahem*
+  rock (sorry). You choose a move from a drop-down box and
+the computer (your nemesis!) will also select one.</p>
+
+<p>Rock beats Scissors, Scissors beats Paper and Paper beats Rock</p>
+
+<p>Click on the Start button to continue</p>
+
+<form action="/game_ready_to_start" method="get">
+<input type="submit" value="START!">
+</form>
