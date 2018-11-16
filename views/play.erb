@@ -1,7 +1,8 @@
-<p>Choose an option, <%= @name %></p>
+<p>Choose an option, <%= @game.player.name %></p>
 
-<form action='/option' methods='post'>
-  <input type='submit' value='Rock' />
-  <input type='submit' value='Paper' />
-  <input type='submit' value='Scissors' />
+<form action='/options' methods='post'>
+  <!-- <button type='submit' name='option' value='Rock'>Rock</> -->
+  <input type='submit' name='option' value='Rock' />
+  <input type='submit' name='option' value='Paper' />
+  <input type='submit' name='option' value='Scissors' />
 </form>
