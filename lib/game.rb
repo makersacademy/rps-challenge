@@ -25,5 +25,4 @@ class Game
 	def decide_winner (ai_choice, player_choice)
 		@rules[player_choice.to_sym][ai_choice.to_sym]
 	end
-
 end

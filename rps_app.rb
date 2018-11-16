@@ -1,4 +1,6 @@
 require 'sinatra'
+require './lib/game'
+require './lib/computer_player'
 
 class RPSapp < Sinatra::Base
 	enable :sessions
@@ -20,6 +22,8 @@ class RPSapp < Sinatra::Base
 	get '/result' do
 		@player_choice = session[:player_choice]
 		@player_name = session[:player_name]
+		@ai_choice = Computer_player.new.attack
+		@result = Game.new.decide_winner(@player_choice, @ai_choice)
 		erb(:result)
 	end
 
