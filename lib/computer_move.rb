@@ -1,9 +1,10 @@
 class ComputerMove
+  attr_reader :move
 
-  MOVES = ['rock','paper','scissors']
+  MOVES = ['rock', 'paper', 'scissors']
 
-  def select_move
-    MOVES.sample
+  def initialize
+    @move = MOVES.sample
   end
 
 end

@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/determine_result'
 
 class RockPaperScissors < Sinatra::Base
   run! if app_file == $0
@@ -21,6 +22,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/action' do
     session[:action] = params[:action]
+
     redirect '/result'
   end
 
