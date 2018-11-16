@@ -31,5 +31,10 @@ class RockPaperScissors < Sinatra::Base
     erb(:result)
   end
 
+  get '/replay' do
+    @name = $game.name
+    erb(:play)
+  end
+
   run! if app_file == $0
 end

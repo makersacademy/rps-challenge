@@ -1,34 +1,7 @@
 <!DOCTYPE html>
 <head>
-
+<link rel="stylesheet" type="text/css" href="button.css" />
 </head>
-<style>
-  .button {
-      background-color: #4CAF50; /* Green */
-      border: none;
-      color: white;
-      padding: 16px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      -webkit-transition-duration: 0.4s; /* Safari */
-      transition-duration: 0.4s;
-      cursor: pointer;
-  }
-
-  .button1 {
-      background-color: white;
-      color: black;
-      border: 2px solid #4CAF50;
-  }
-
-  .button1:hover {
-      background-color: #4CAF50;
-      color: white;
-  }
-</style>
 <body>
 Welcome to Rock, Paper, Scissors <%= @name %>!
 <form class="" action="/rock" method="post">
@@ -39,5 +12,8 @@ Welcome to Rock, Paper, Scissors <%= @name %>!
 </form>
 <form class="" action="/scissors" method="post">
   <input class="button button1" type="submit" name="" value="Scissors">
+</form>
+<form class="" action="/">
+  <input class="button button1" type="submit" name="" value="Home">
 </form>
 </body>
