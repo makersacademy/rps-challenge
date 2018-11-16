@@ -1,5 +1,5 @@
 feature 'Testing infrastructure' do
-  scenario 'index shows Welcome To Rock, Paper, Scissors!' do
+  scenario "index shows Welcome To Rock, Paper, Scissors!" do
     visit('/')
     expect(page).to have_content "Welcome To Rock, Paper, Scissors!"
   end
