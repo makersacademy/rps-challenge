@@ -7,7 +7,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/save_name' do
-    Game.start params[:name_1]
+    params[:name_2] == "" ?
+      Game.start(params[:name_1]) :
+      Game.start(params[:name_1], params[:name_2])
     redirect '/play'
   end
 

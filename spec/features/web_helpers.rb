@@ -1,7 +1,14 @@
 def sign_in
   visit '/'
   fill_in 'name_1', with: "Jo Brown"
-  click_button 'Enter name'
+  click_button 'Enter names'
+end
+
+def two_player_sign_in
+  visit '/'
+  fill_in 'name_1', with: "Jo Brown"
+  fill_in 'name_2', with: "Mel Smith"
+  click_button 'Enter names'
 end
 
 def sign_in_and_play(first_move)
