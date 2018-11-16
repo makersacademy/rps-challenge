@@ -1,7 +1,8 @@
 require_relative './computer_player'
+require_relative './message_generator'
 
 class DetermineResult
-  attr_reader :comp_move, :winner
+  attr_reader :p1_move, :comp_move, :winner
 
   def initialize(player_move, computer_player = ComputerPlayer.new)
     @p1_move = player_move.downcase
