@@ -7,5 +7,24 @@
   <body>
     <h2>Hi <%= @name %>!</h2>
     <h3>Please make a choice</h3>
+    <form action="/choice" method="post">
+      <legend>
+        Please make a choice
+      </legend>
+      <input type="radio" name="choice" value="rock" class="" id="rock">
+      <label for="rock">
+        <img src="" alt="rock">
+      </label>
+      <input type="radio" name="choice" value="paper" class="" id="paper">
+      <label for="paper">
+        <img src="" alt="paper">
+      </label>
+      <input type="radio" name="choice" value="scissors" class="" id="scissors">
+      <label for="paper">
+        <img src="" alt="scissors">
+      </label>
+      <br/>
+      <input type="submit"  value="Submit">
+    </form>
   </body>
 </html>
