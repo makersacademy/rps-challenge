@@ -1,14 +1,14 @@
 feature 'Result page' do
 
-  scenario 'expect to see move that player chose' do
+  scenario 'expect to have option to play again' do
     start_the_game
     click_button 'Rock'
-    expect(page).to have_content('You chose rock')
+    expect(page).to have_button('Play Again')
   end
 
-  scenario 'expect to see move that computer chose' do
+  scenario 'expect to have option to start a new game' do
     start_the_game
     click_button 'Rock'
-    expect(page).to have_content('Computer player chose')
+    expect(page).to have_button('New Game')
   end
 end

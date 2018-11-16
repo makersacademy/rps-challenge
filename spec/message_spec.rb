@@ -2,7 +2,7 @@ require 'message_generator'
 
 describe MessageGenerator do
   let(:winner) { double :game_winner }
-  let(:winning_move) { double :winning_move}
+  let(:winning_move) { double :winning_move }
 
   describe 'who wins' do
     it 'returns "You win!" if player wins' do

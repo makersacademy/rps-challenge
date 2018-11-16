@@ -28,12 +28,13 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     @action = session[:action]
     @result = DetermineResult.new(@action)
-    if @result.find_winner == "player"
-       @winning_move = @result.p1_move
+    @winner = result.find_winner
+    if @winner == "player"
+      @winning_move = @result.p1_move
      else
-        @winning_move = @result.comp_move
+       @winning_move = @result.comp_move
     end
-    @msg_generator = MessageGenerator.new(@result.find_winner,@winning_move).message
+    @msg_generator = MessageGenerator.new(@winner, @winning_move).message
     erb(:result)
   end
 

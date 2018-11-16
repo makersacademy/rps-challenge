@@ -10,7 +10,7 @@ class MessageGenerator
   def message
     case @winner
     when "player"
-       @messages << "You win!"
+      @messages << "You win!"
     when "computer"
       @messages << "You lose!"
     when "draw"
