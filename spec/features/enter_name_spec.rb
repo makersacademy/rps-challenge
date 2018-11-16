@@ -1,8 +1,12 @@
 feature 'enter name' do
 
-  scenario 'enter name, click submit and see name on next page' do
+  scenario 'front page has name field' do
     visit '/'
-    fill_in :name, with: 'Dana'
-    click_button "Let's Play!"
+    expect(page).to have_field "name"
+  end
+
+  scenario 'enter name, click submit and see name on next page' do
+    start_the_game
+    expect(page).to have_content "Dana"
   end
 end
