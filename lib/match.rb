@@ -2,7 +2,7 @@ require_relative './player'
 require_relative './adjudicator'
 
 class Match
-  attr_reader :play1, :play2, :game_type
+  attr_reader :play1, :play2, :game_type, :result
 
   def initialize(play1,
     play2: "Computer",
@@ -13,6 +13,15 @@ class Match
     @play2 = player_class.new(play2)
     @game_type = game_type
     @adjudicator_class = adjudicator_class
+  end
+
+  def self.create(player1, player2 = "Computer")
+    @match = Match.new(player1) if player2 == "Computer"
+    @match = Match.new(player1, play2: player2) if player2 != "Computer"
+  end
+
+  def self.instance
+    @match
   end
 
   def do_move(player, move)
@@ -27,7 +36,7 @@ class Match
   def find_winner
     judge = @adjudicator_class.new(@play1, @play2)
     judge.who_wins
-    return judge.result
+    @result = judge.result
   end
 
 end

@@ -1,8 +1,13 @@
 require 'sinatra/base'
+require_relative './lib/match'
 
 class Game < Sinatra::Base
 
   enable :sessions
+
+  before do
+    @match = Match.instance
+  end
 
   get '/' do
     erb :index
@@ -10,6 +15,7 @@ class Game < Sinatra::Base
 
   post '/named' do
     session[:charname] = params[:charname]
+    @match = Match.create(params[:charname])
     redirect '/playing'
   end
 
@@ -18,11 +24,12 @@ class Game < Sinatra::Base
   end
 
   post '/played' do
-    session[:move] = params[:move]
+    @match.do_move(@match.play1, params[:move])
     redirect '/aftermath'
   end
 
   get '/aftermath' do
+    @match.find_winner
     erb :aftermath
   end
 

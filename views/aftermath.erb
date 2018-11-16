@@ -1,1 +1,7 @@
-The battle was frantic, with great losses on both sides
+The battle was frantic, with great losses on both sides.
+<br />
+<% unless @match.result == "DRAW" %>
+  <%= "#{@match.result.name} won, with their trusty #{@match.result.move}" %>
+<% else %>
+  <%= "lel draw" %>
+<% end %>
