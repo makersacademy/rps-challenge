@@ -13,13 +13,6 @@ feature 'Rock Paper Scissors' do
     expect(page).to have_content("You have chosen Rock")
   end
 
-  scenario 'user chooses paper' do
-    sign_in_and_submit
-    select 'Paper', from: 'choice'
-    click_button("Submit")
-    expect(page).to have_content("You have chosen Paper")
-  end
-
   scenario 'user chooses scissors' do
     sign_in_and_submit
     select 'Scissors', from: 'choice'
