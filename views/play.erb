@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Play</title>
+  </head>
+  <body>
+    <div>
+      <p>Welcome <%= @player1 %>!</p>
+    </div>
+    <div>
+      <p>Please make your choice</p>
+      <br>
+      <form action="/chosen" method="post">
+        <input type="submit" value="Rock">
+      </form>
+
+      <form action="/chosen" method="post">
+        <input type="submit" value="Paper">
+      </form>
+
+      <form action="/chosen" method="post">
+        <input type="submit" value="Scissors">
+      </form>
+    </div>
+  </body>
+</html>
