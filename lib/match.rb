@@ -16,7 +16,7 @@ class Match
   end
 
   def self.create(player1, player2 = "Computer")
-    if player2 == "Computer" || player2 == ""
+    if ["Computer", ""].include? player2
       @match = Match.new(player1)
     else
       @match = Match.new(player1, play2: player2, game_type: "multi")
