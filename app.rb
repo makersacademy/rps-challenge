@@ -1,26 +1,29 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RPS < Sinatra::Base
-
-  enable :sessions
 
   get '/' do
     erb(:index)
   end
 
   post '/register' do
-    session[:human_player_name] = params[:human_player_name]
+    $game = Game.new(params[:human_player_name])
     redirect '/play'
   end
 
-  get 'play' do
-    @human_player_name = session[:human_player_name]
+  get '/play' do
+    @human_player_name = $game.human_player.name
     erb(:play)
   end
 
+  get '/outcome' do
+    @outcome = $game.decide_winner($game.human_player.move(params[:choice]), $game.computer_player.move)
+    if @outcome == "Draw"
+      erb(:draw)
+    else
+      erb(:win)
+    end
+  end
 
-  #play > redirect to get
-
-
-  #route for each move?
 end
