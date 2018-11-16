@@ -1,0 +1,21 @@
+<div>
+  <font size=32 color="red">The end is nigh, <%= "MIGHTY #{@match.play2.name.upcase}" %></font>
+</div>
+
+<div>
+  <form action="/ending" method="post">
+    <label for="rock">
+      <font size=8 color="green">Dost thou wisheth to useth theth noble ROCK?</font>
+      <br /><input type="submit" value="ROCK" name="move">
+    </label>
+    <br />
+    <label for="paper">
+      <font size=8 color="blue">Or lo, perchance thy hand veers towards the cunning PAPER?</font>
+      <br /><input type="submit" value="PAPER" name="move">
+    </label>
+    <br />
+    <label for="scissors">
+      or sicsors i guess
+      <br /><input type="submit" value="SCISSORS" name="move">
+    </label>
+</div>

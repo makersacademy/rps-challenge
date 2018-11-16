@@ -16,8 +16,11 @@ class Match
   end
 
   def self.create(player1, player2 = "Computer")
-    @match = Match.new(player1) if player2 == "Computer"
-    @match = Match.new(player1, play2: player2) if player2 != "Computer"
+    if player2 == "Computer" || player2 == ""
+      @match = Match.new(player1)
+    else
+      @match = Match.new(player1, play2: player2, game_type: "multi")
+    end
   end
 
   def self.instance
