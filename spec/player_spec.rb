@@ -11,5 +11,9 @@ describe Player do
     it "creates an instance of the Player class" do
       expect(karen.instance_of? Player).to be true
     end
+
+    it "records the name variable" do
+      expect(karen.name).to eq "Karen"
+    end
   end
 end
