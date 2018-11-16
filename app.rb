@@ -15,7 +15,6 @@ class Game < Sinatra::Base
 
   post '/named' do
     @match = Match.create(params[:charname], params[:char2])
-    puts @match.game_type
     redirect '/playing'
   end
 
