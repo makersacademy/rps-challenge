@@ -22,6 +22,21 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  get '/player_rock' do
+    @player_1.move("Rock")
+    erb :result
+  end
+
+  get '/player_paper' do
+    @player_1.move("Paper")
+    erb :result
+  end
+
+  get '/player_scissors' do
+    @player_1.move("Scissors")
+    erb :result
+  end
+
   run! if app_file == $0
 
 end
