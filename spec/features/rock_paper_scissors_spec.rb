@@ -1,0 +1,2 @@
+feature RockPaperScissors do
+end
