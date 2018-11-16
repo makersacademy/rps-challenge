@@ -15,4 +15,11 @@ describe Player do
       expect(player.move).to eq("ROCK")
     end
   end
+
+  describe '#make_random_move' do
+    it 'returns a random move when called' do
+      player.make_random_move
+      expect(player.move).to be_a_kind_of(String)
+    end
+  end
 end

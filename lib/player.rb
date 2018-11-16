@@ -10,4 +10,8 @@ class Player
     @move = move
   end
 
+  def make_random_move
+    @move = ["ROCK", "PAPER", "SCISSORS"].sample
+  end
+
 end
