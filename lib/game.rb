@@ -1,12 +1,17 @@
 class Game
-  def self.see_player_name
-    @player_name
+  def self.see_player_1
+    @player_1
   end
 
-  def self.start(name)
-    @player_name = name
+  def self.see_player_2
+    @player_2
+  end
+
+  def self.start(name_1, name_2 = "The Robot")
+    @player_1 = name_1
+    @player_2 = name_2
     @moves = ['Rock', 'Paper', 'Scissors']
-    @outcomes = ["No-one wins!", "#{@player_name} wins!", "The Robot wins!"]
+    @outcomes = ["No-one wins!", "#{@player_1} wins!", "#{@player_2} wins!"]
     @result = {}
   end
 
@@ -15,9 +20,10 @@ class Game
   end
 
   def self.play_a_round(player_move, opponent_move = robot_move)
-    @result[:player_move] = player_move
-    @result[:opponent_move] = opponent_move
-    @result[:outcome] = outcome(@result[:player_move], @result[:opponent_move])
+    @result[:player_1_move] = player_move
+    @result[:player_2_move] = opponent_move
+    @result[:outcome] =
+      outcome(@result[:player_1_move], @result[:player_2_move])
   end
 
   def self.robot_move
