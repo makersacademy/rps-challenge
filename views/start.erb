@@ -1,5 +1,12 @@
 <center>
   <h1><%=@player_1%> vs CPU</h1>
-
-
+  <br>
+  <h1>Make your move <%=@player_1%></h1>
+  <br>
+  <form class="" action="/result" method="post">
+    <label>Rock<input type="radio" name="move" value="Rock" ></label>
+    <label>Paper<input type="radio" name="move" value="Paper"></label>
+    <label>Scissors<input type="radio" name="move" value="Scissors"></label> <br>
+    <input type="submit" value="Submit">
+  </form>
 </center>
