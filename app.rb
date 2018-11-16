@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 # require 'rps'
 
 class RockPaperScissors < Sinatra::Base
@@ -10,11 +11,23 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    @name = params[:name]
+    $game = Game.new(params[:name])
+    @name = $game.name
     erb(:play)
   end
 
-  post '/result' do
+  post '/rock' do
+    @result = $game.rock
+    erb(:result)
+  end
+
+  post '/paper' do
+    @result = $game.paper
+    erb(:result)
+  end
+
+  post '/scissors' do
+    @result = $game.scissors
     erb(:result)
   end
 

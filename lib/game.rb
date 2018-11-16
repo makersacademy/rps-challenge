@@ -1,5 +1,7 @@
 class Game
 
+  attr_reader :name
+
   def initialize(name, computer = Computer.new)
     @name = name
     @computer = computer
