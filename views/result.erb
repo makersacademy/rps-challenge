@@ -1,0 +1,9 @@
+<h1><%= @message %></h1>
+
+<h3>You chose <%= @action.downcase %> </h3>
+<h3>Computer player chose <%= @winner.comp_move %></h3>
+
+<form class="" action="/play_again" method="post">
+  <button type="submit" name="game_choice">Play Again</button>
+  <button type="submit" name="game_choice">New Player</button>
+</form>

@@ -1,4 +1,4 @@
-class ComputerMove
+class ComputerPlayer
   attr_reader :move
 
   MOVES = ['rock', 'paper', 'scissors']

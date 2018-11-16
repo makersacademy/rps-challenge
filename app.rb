@@ -22,12 +22,18 @@ class RockPaperScissors < Sinatra::Base
 
   post '/action' do
     session[:action] = params[:action]
-
     redirect '/result'
   end
 
   get '/result' do
+    @action = session[:action]
+    @winner = DetermineResult.new(@action)
+    @winner == "player" ? @message = "You win!" : @message = "You lose!"
+    erb(:result)
+  end
 
+  post '/play_again' do
+    params[:game_choice] == "Play Again" ? (redirect '/play') : (redirect '/')
   end
 
 end
