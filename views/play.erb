@@ -1,1 +1,9 @@
-<h1>Ready to play? <%= @player_name %></h1>
+<h1>Ready to play <%= @player_name %> ?</h1>
+<h2>Select your move!</h2>
+<br>
+<form action="/choice" method="post">
+	<input type="radio" value="rock" name="player_choice"> rock <br>
+	<input type="radio" value="paper" name="player_choice"> paper <br>
+	<input type="radio" value="scissors" name="player_choice"> scissors <br>
+	<input type="submit" value="submit" name="submit">
+</form>
