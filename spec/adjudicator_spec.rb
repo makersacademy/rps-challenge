@@ -3,7 +3,7 @@ require 'adjudicator'
 describe Adjudicator do
   let(:rocker) { double :rocker, move: "ROCK" }
   let(:paperer) { double :paperer, move: "PAPER" }
-  let(:scissorator) { double :scissorator, move: "SCISSORS"}
+  let(:scissorator) { double :scissorator, move: "SCISSORS" }
 
   describe '#playX.move' do
     it 'returns the player moves as strings' do
@@ -16,7 +16,20 @@ describe Adjudicator do
   describe '#who_wins' do
     it 'returns the paper player when rock vs paper' do
       judge = Adjudicator.new(rocker, paperer)
-      expect(judge.who_wins).to eq(paperer)
+      judge.who_wins
+      expect(judge.result).to eq(paperer)
+    end
+
+    it 'returns the scissors player when scissors vs paper' do
+      judge = Adjudicator.new(scissorator, paperer)
+      judge.who_wins
+      expect(judge.result).to eq(scissorator)
+    end
+
+    it 'returns DRAW if both players are paper' do
+      judge = Adjudicator.new(paperer, paperer)
+      judge.who_wins
+      expect(judge.result).to eq("DRAW")
     end
   end
 end
