@@ -28,9 +28,9 @@
   <p> Choose your weapon carefully <p>
 
 <form action="/player_move" method="post">
-  <input type="radio" name="move" value="Rock"> Rock<br>
-  <input type="radio" name="move" value="Paper"> Paper<br>
-  <input type="radio" name="move" value="Scissors"> Scissors<br>
+  <input type="radio" name="move" value=<%=@name%>> Rock<br>
+  <input type="radio" name="move" value=<%=@name%>> Paper<br>
+  <input type="radio" name="move" value=<%=@name%>> Scissors<br>
   <input type="submit" value="Make your move">
 </form>
 

@@ -19,13 +19,14 @@ enable :sessions
   end
 
   post '/player_move' do
+    @name = session[:name]
     session[:move] = params[:move]
     redirect to('/results')
   end
 
   get '/results' do
-    p session[:move]
     @move = session[:move]
+    @name = session[:name]
     erb(:result_calculation)
   end
 
