@@ -17,5 +17,9 @@ class Game < Sinatra::Base
     erb :playing
   end
 
+  post '/played' do
+    session[:move] = params[:move]
+  end
+
   run! if app_file == $0
 end
