@@ -17,7 +17,11 @@ describe 'Rock Paper scissors app' do
     end
 
     it 'calculates the result and shows it to the user' do
-
+      choice = 'rock'
+      submit_name(name)
+      choose choice
+      click_on 'Submit'
+      expect(page).to have_content("Play again?")
     end
   end
 end
