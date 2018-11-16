@@ -1,3 +1,5 @@
+require 'robot'
+
 class Game
   def self.see_player_1
     @player_1
@@ -7,7 +9,8 @@ class Game
     @player_2
   end
 
-  def self.start(name_1, name_2 = "The Robot")
+  def self.start(name_1, name_2)
+    name_2 = "The Robot" if name_2 == ""
     @player_1 = name_1
     @player_2 = name_2
     @moves = ['Rock', 'Paper', 'Scissors']
@@ -19,15 +22,11 @@ class Game
     @result
   end
 
-  def self.play_a_round(player_move, opponent_move = robot_move)
+  def self.play_a_round(player_move, opponent_move = Robot.move(@moves))
     @result[:player_1_move] = player_move
     @result[:player_2_move] = opponent_move
     @result[:outcome] =
       outcome(@result[:player_1_move], @result[:player_2_move])
-  end
-
-  def self.robot_move
-    @moves.sample
   end
 
   def self.outcome(move_1, move_2)

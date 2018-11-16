@@ -1,5 +1,5 @@
 describe Game do
-  before(:each) { Game.start "Pat Baker" }
+  before(:each) { Game.start "Pat Baker", "" }
 
   it "stores the player's name" do
     expect(Game.see_player_1).to eq "Pat Baker"
