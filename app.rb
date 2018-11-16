@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require './lib/game'
-# require 'rps'
 
 class RockPaperScissors < Sinatra::Base
 
