@@ -1,7 +1,17 @@
-<p>Choose an option, <%= @game.player.name %></p>
 
-<form action='/options' methods='post'>
-  <button type='submit' name='option' value='Rock'>Rock</>
-  <button type='submit' name='option' value='Paper'>Paper</>
-  <button type='submit' name='option' value='Scissors'>Paper</>
+<!-- <form action='/result' methods='post'>
+  <button type='submit' name='move' value='Rock'>Rock</>
+  <button type='submit' name='move' value='Paper'>Paper</>
+  <button type='submit' name='move' value='Scissors'>Scissors</>
+</form> -->
+<body>
+<h2>Select your move, <%= @game.player.name %></h2>
+<form action = "/move" method = "post">
+<select name="move">
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+</select>
+<input type = "submit" value = 'Submit'>
 </form>
+</body>

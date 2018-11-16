@@ -12,16 +12,26 @@ feature "Play page" do
     visit ('/')
     fill_in 'name', with: 'Tom'
     click_button 'Submit'
-    expect(page).to have_content "Choose an option, Tom"
+    expect(page).to have_content "Select your move, Tom"
   end
 end
 
-# feature "Choosing an option" do
-#   scenario 'Player can choose an option' do
-#     visit ('/')
-#     fill_in 'name', with: 'Tom'
-#     click_button 'Submit'
-#     click_button 'Rock'
-#     expect(page).to have_content "You chose Rock"
-#   end
-# end
+feature "Choosing an option" do
+  scenario 'Player can choose an option' do
+    visit ('/')
+    fill_in 'name', with: 'Tom'
+    click_button 'Submit'
+    expect(page).to have_content "Select your move"
+  end
+end
+
+feature "Result page" do
+  scenario 'shows players move' do
+    visit ('/')
+    fill_in 'name', with: 'Tom'
+    click_button 'Submit'
+    select 'Rock', from: 'move'
+    click_button 'Submit'
+    expect(page).to have_content "You chose"
+  end
+end
