@@ -1,1 +1,27 @@
-<h1>WORKING</h1>
+<h1>WELCOME TO ROCK PAPER SCISSORS</h1>
+
+<form action="/start-game" method="post">
+  <div>
+    <label for="p1name">Player 1 name:</label>
+    <input type="text" id="p1name" name="player_1_name">
+  </div>
+  <div>
+    <label for="p1type">Player 1 type:</label>
+    <select id="p1type" name="player_1_type">
+      <option value="human">Human</option>
+      <option value="cpu">CPU</option>
+    </select>
+  </div>
+  <div>
+    <label for="name">Player 2 name:</label>
+    <input type="text" id="p2name" name="player_2_name">
+  </div>
+  <div>
+    <label for="p2type">Player 2 type:</label>
+    <select id="p2type" name="player_2_type">
+      <option value="human">Human</option>
+      <option value="cpu">CPU</option>
+    </select>
+  </div>
+  <input type="submit">
+</form>
