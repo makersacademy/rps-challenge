@@ -5,6 +5,6 @@ feature "Enter a name when starting the game" do
     click_button "Begin the RAMPAGE"
     expect(page).to have_content('ROCK')
     expect(page).to have_content('PAPER')
-    expect(page).to have_content('SCISSORS')
+    expect(page).to have_content('sicsors')
   end
 end

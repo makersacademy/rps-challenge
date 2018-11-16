@@ -1,4 +1,21 @@
 <div>
-  The end is nigh,
-  <font size=32 color="red"><%= "MIGHTY #{session[:charname].upcase}" %></font>
+  <font size=32 color="red">The end is nigh, <%= "MIGHTY #{session[:charname].upcase}" %></font>
+</div>
+
+<div>
+  <form action="/played" method="post">
+    <label for="rock">
+      <font size=8 color="green">Dost thou wisheth to useth theth noble ROCK?</font>
+      <input type="submit" value="ROCK" name="rock">
+    </label>
+    <br />
+    <label for="paper">
+      <font size=8 color="blue">Or lo, perchance thy hand veers towards the cunning PAPER?</font>
+      <input type="submit" value="PAPER" name="paper">
+    </label>
+    <br />
+    <label for="scissors">
+      or sicsors i guess
+      <input type="submit" value="SCISSORS" name="scissors">
+    </label>
 </div>
