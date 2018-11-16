@@ -3,6 +3,8 @@ feature "Enter a name when starting the game" do
     visit "/"
     fill_in "charname", with: "Henry"
     click_button "Begin the RAMPAGE"
-    expect(page).to have_text "The end is nigh, MIGHTY HENRY"
+    expect(page).to have_content('ROCK')
+    expect(page).to have_content('PAPER')
+    expect(page).to have_content('SCISSORS')
   end
 end
