@@ -10,6 +10,4 @@ class Computer_player
 		@moves.sample
 	end
 
-
-
 end
