@@ -19,6 +19,11 @@ class Game < Sinatra::Base
 
   post '/played' do
     session[:move] = params[:move]
+    redirect '/aftermath'
+  end
+
+  get '/aftermath' do
+    erb :aftermath
   end
 
   run! if app_file == $0
