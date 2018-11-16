@@ -21,4 +21,14 @@ feature 'Playing rock, paper, scissors' do
     expect(page).to have_content "Ajay chose Scissors"
   end
 
+  scenario 'CPU chooses a random move' do
+    game = Game.new
+    sign_in
+    choose 'Scissors'
+    click_button "Submit"
+    allow(game).to receive(:cpu_move) {"Paper"}
+    expect(page).to have_content "CPU chose Paper"
+  end
+
+
 end
