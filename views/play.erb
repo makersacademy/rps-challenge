@@ -1,6 +1,6 @@
-<h3><%= Game.see_player_1 %> is playing Rock, Paper, Scissors</h3>
+<h3><%= Game.see_player_1 %> is playing Rock, Paper, Scissors against <%= Game.see_player_2 %></h3>
 <br>
-Select one of Rock, Paper or Scissors:
+<%= Game.see_player_1 %>: Select one of Rock, Paper or Scissors:
 <form action=result method=post>
   <input type=radio name=move value='Rock' id='rock' checked=true>
   <label for='rock'>Rock</label>

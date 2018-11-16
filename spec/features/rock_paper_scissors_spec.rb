@@ -1,8 +1,8 @@
 feature RockPaperScissors do
   context "home page" do
-    scenario "the user is asked to provide their name" do
+    scenario "players' names are requested" do
       visit '/'
-      expect(page).to have_content "Please enter your name to begin"
+      expect(page).to have_content "Please enter your names to begin"
     end
 
     scenario "there are input fields for the user to enter their name" do

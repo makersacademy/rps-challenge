@@ -7,8 +7,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/save_name' do
-    Game.start params[:name]
-    redirect '/saved_name'
+    Game.start params[:name_1]
+    redirect '/play'
   end
 
   get '/saved_name' do

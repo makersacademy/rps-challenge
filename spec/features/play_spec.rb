@@ -1,6 +1,6 @@
-feature "play rock papers scissors" do
+feature "play rock paper scissors" do
   scenario "the user is prompted for a move" do
-    sign_in_and_play
+    sign_in
     expect(page).to have_content "Select one of Rock, Paper or Scissors"
   end
 
@@ -27,9 +27,12 @@ feature "play rock papers scissors" do
 
     scenario "further moves update correctly" do
       sign_in_and_play "Rock"
-      click_button "Play again?"
-      play_move "Paper"
-      expect(page).to have_content "Jo Brown chose Paper"
+      10.times do
+        click_button "Play again?"
+        move = ["Rock", "Paper", "Scissors"].sample
+        play_move move
+        expect(page).to have_content "Jo Brown chose #{move}"
+      end
     end
   end
 end

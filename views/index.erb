@@ -5,11 +5,21 @@
 <div>
   <h2 style=padding-top:50px>Welcome to Rock Paper Scissors online!</h2>
   <br>
-  Please enter your name to begin:
+  Please enter your names to begin:
   <br>
   <br>
   <form action=save_name method=post>
-    <input type=text name='name'>
-    <input type=submit value='Enter name'>
+    <p>
+      <label for='name_1'>Player 1:</label>
+      <input type=text name='name_1'>
+    </p>
+    <p>
+      <label for='name_2'>Player 2:</label>
+      <input type=text name='name_2'>
+    </p>
+    <p>
+      (leave Player 2 blank to play against The Robot)
+    </p>
+    <input type=submit value='Enter names'>
   </form>
 </div>
