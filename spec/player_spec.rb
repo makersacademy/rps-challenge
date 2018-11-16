@@ -22,4 +22,5 @@ describe Player do
       expect(player.move).to be_a_kind_of(String)
     end
   end
+  
 end
