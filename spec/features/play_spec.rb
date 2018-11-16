@@ -4,18 +4,23 @@ feature "play rock papers scissors" do
     expect(page).to have_content "Select one of Rock, Paper or Scissors"
   end
 
-  scenario "the user can select Rock" do
-    sign_in_and_play
-    expect(page).to have_css 'input[value=Rock]'
-  end
+  context "player makes a move" do
+    scenario "confirm the player has selected Rock" do
+      sign_in_and_play
+      click_button "Rock"
+      expect(page).to have_content "Jo Brown chose Rock"
+    end
 
-  scenario "the user can select Paper" do
-    sign_in_and_play
-    expect(page).to have_css 'input[value=Paper]'
-  end
+    scenario "confirm the player has selected Paper" do
+      sign_in_and_play
+      click_button "Paper"
+      expect(page).to have_content "Jo Brown chose Paper"
+    end
 
-  scenario "the user can select Scissors" do
-    sign_in_and_play
-    expect(page).to have_css 'input[value=Scissors]'
+    scenario "confirm the player has selected Scissors" do
+      sign_in_and_play
+      click_button "Scissors"
+      expect(page).to have_content "Jo Brown chose Scissors"
+    end
   end
 end

@@ -8,7 +8,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/save_name' do
-    session[:user_name] = params[:name]
+    session[:player_name] = params[:name]
     redirect '/saved_name'
   end
 
@@ -18,5 +18,24 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     erb :play
+  end
+
+  post '/rock' do
+    session[:player_move] = "Rock"
+    redirect '/result'
+  end
+
+  post '/paper' do
+    session[:player_move] = "Paper"
+    redirect '/result'
+  end
+
+  post '/scissors' do
+    session[:player_move] = "Scissors"
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
   end
 end
