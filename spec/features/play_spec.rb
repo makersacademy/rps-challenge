@@ -24,5 +24,12 @@ feature "play rock papers scissors" do
       sign_in_and_play "Rock"
       expect(page).to have_content "wins!"
     end
+
+    scenario "further moves update correctly" do
+      sign_in_and_play "Rock"
+      click_button "Play again?"
+      play_move "Paper"
+      expect(page).to have_content "Jo Brown chose Paper"
+    end
   end
 end
