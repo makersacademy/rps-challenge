@@ -1,4 +1,4 @@
-require 'robot'
+require_relative 'robot'
 
 class Game
   def self.see_player_1
