@@ -20,7 +20,7 @@ class RPS_app < Sinatra::Base
   end
 
   post '/choice' do
-  
+
     redirect '/result'
   end
 
