@@ -2,7 +2,7 @@ require 'weapon'
 
 describe Weapon do
   let(:weapon) { Weapon.new("Rock") }
-  let(:other_weapon) { Weapon.new("Scissors")}
+  let(:other_weapon) { Weapon.new("Scissors") }
 
   describe "initialize" do
     it "creates an instance of Weapon" do
