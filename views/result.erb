@@ -3,15 +3,30 @@
 <p><%= @game.player_2.name %> chose <%= @game.player_2.moves %></p>
 
 <% if @game.win?(@game.player_1.moves, @game.player_2.moves) %>
-  <h2><%= @game.player_1.name %> won!
-    Better luck next time <%= @game.player_2.name %></h2>
+  <h2><%= @game.player_1.name %> won!</h2>
+  <h3>Better luck next time <%= @game.player_2.name %></h3>
 <% elsif @game.draw?(@game.player_1.moves, @game.player_2.moves) %>
   <h2>It's a draw</h2>
+  <h3>Hmmm...that's no good, why not go again?</h3>
 <% else %>
-<h2><%= @game.player_2.name %> won!
-  Better luck next time <%= @game.player_1.name %></h2>
+  <h2><%= @game.player_2.name %> won!</h2>
+  <h3>Better luck next time <%= @game.player_1.name %></h3>
 <% end %>
 
 <form action="/play" >
   <input type="submit" value="Play again?">
 </form>
+
+<% if @game.multi %>
+
+<form action="/" >
+  <input type="submit" value="Switch to practice?">
+</form>
+
+<% else %>
+
+<form action="/" >
+  <input type="submit" value="Switch to 2 player?">
+</form>
+
+<% end %>

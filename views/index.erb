@@ -1,7 +1,24 @@
+<h1>ROCK! PAPER! SCISSORS!</h1>
+<p></p>
+<p>So, you want to play? First things first:</p>
+<p>Do you want to practice against reigning champ
+Swifthands McDraw?</p>
 <form action='/names_solo' method='post'>
-  <label for="player_1_name">
+  <label for="solo_name">
     Enter your name
+    <input type="text" name="solo_name">
+  </label>
+  <input type="submit" value="Practice">
+</form>
+<p>Or do you want to have a 2 player throwdown?</p>
+<form action='/names_multi' method='post'>
+  <label for="player_1_name">
+    Player 1:
     <input type="text" name="player_1_name">
   </label>
-  <input type="submit" value="Submit">
+  <label for="player_2_name">
+    Player 2:
+    <input type="text" name="player_2_name">
+  </label>
+  <input type="submit" value="2 player throwdown">
 </form>

@@ -22,8 +22,8 @@ class Game
     player_1_move == opponent_move
   end
 
-  def self.create(player_1, player_2)
-    @game = Game.new(player_1, player_2)
+  def self.create(player_1, player_2, multi = false)
+    @game = Game.new(player_1, player_2, multi)
   end
 
   def self.instance

@@ -1,13 +1,13 @@
 <p> Ok, <%= @game.player_1.name %>, make your choice...</p>
 
-<form action='/player_rock'>
-<input type="submit" value="Rock">
+<form action='/player_1_move' method='post'>
+<input type="submit" name="Choice" value="Rock">
 </form>
 
-<form action='/player_paper'>
-<input type="submit" value="Paper">
+<form action='/player_1_move' method='post'>
+<input type="submit" name="Choice" value="Paper">
 </form>
 
-<form action='/player_scissors'>
-<input type="submit" value="Scissors">
+<form action='/player_1_move' method='post'>
+<input type="submit" name="Choice" value="Scissors">
 </form>

@@ -15,9 +15,16 @@ class Rps < Sinatra::Base
   end
 
   post '/names_solo' do
-    player_1 = Player.new(params[:player_1_name])
+    player_1 = Player.new(params[:solo_name])
     player_2 = Player.new
     @game = Game.create(player_1, player_2)
+    redirect '/play'
+  end
+
+  post '/names_multi' do
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new(params[:player_2_name])
+    @game = Game.create(player_1, player_2, true)
     redirect '/play'
   end
 
@@ -25,21 +32,26 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
-  get '/player_rock' do
-    @game.player_1.move('Rock')
-    @game.player_2.random_move
-    erb(:result)
+  post '/player_1_move' do
+    @game.player_1.move(params[:Choice])
+    redirect '/player_2_go'
   end
 
-  get '/player_paper' do
-    @game.player_1.move('Paper')
-    @game.player_2.random_move
-    erb(:result)
+  get '/player_2_go' do
+    if @game.multi
+      erb(:player_2)
+    else
+      @game.player_2.random_move
+      redirect '/result'
+    end
   end
 
-  get '/player_scissors' do
-    @game.player_1.move('Scissors')
-    @game.player_2.random_move
+  post '/player_2_move' do
+    @game.player_2.move(params[:Choice])
+    redirect '/result'
+  end
+
+  get '/result' do
     erb(:result)
   end
 
