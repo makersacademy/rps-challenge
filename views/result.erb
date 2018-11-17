@@ -9,7 +9,11 @@
   <h2>It's a draw</h2>
   <h3>Hmmm...that's no good, why not go again?</h3>
 <% else %>
+  <% if @game.multi %>
   <h2><%= @game.player_2.name %> won!</h2>
+  <% else %>
+  <h2>You lose, that's why Swifthands is the champ</h2>
+  <% end %>
   <h3>Better luck next time <%= @game.player_1.name %></h3>
 <% end %>
 
