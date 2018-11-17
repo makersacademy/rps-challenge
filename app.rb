@@ -17,7 +17,7 @@ class RPS < Sinatra::Base
     erb(:multiplayer)
   end
 
-#single player methods:
+# single player methods:
 
   post '/name' do
     player1 = Player.new(params[:name])

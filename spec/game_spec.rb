@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   let(:game) { described_class.new(player1) }
-  let(:player1) { double("player1", :name => 'Tom')}
+  let(:player1) { double("player1", :name => 'Tom') }
 
   it 'can randomly choose computers move' do
     test_array = []

@@ -6,8 +6,8 @@ def singleplayer_entername
 end
 
 def singleplayer_move
-select 'Rock', from: 'move'
-click_button 'Submit'
+  select 'Rock', from: 'move'
+  click_button 'Submit'
 end
 
 def multiplayer_game

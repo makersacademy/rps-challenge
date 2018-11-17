@@ -2,15 +2,15 @@ require_relative 'player'
 
 class Game
 
-GAME_MOVES = ["Rock", "Paper", "Scissors"]
-WIN_LOSE_HASH = { "Rock" => "Scissors",
-                  "Paper" => "Rock",
-                  "Scissors" => "Paper" }
+  GAME_MOVES = ["Rock", "Paper", "Scissors"]
+  WIN_LOSE_HASH = { "Rock" => "Scissors",
+                    "Paper" => "Rock",
+                    "Scissors" => "Paper" }
 
   attr_reader :player2
   attr_accessor :player1, :type
 
-  def self.create(player1, player2 = Player.new("Computer"))
+  def self.create(player1, player2 = Player.new("Computer",true))
     @game = Game.new(player1, player2)
   end
 
@@ -18,7 +18,7 @@ WIN_LOSE_HASH = { "Rock" => "Scissors",
     @game
   end
 
-  def initialize(player1, player2 = Player.new("Computer"))
+  def initialize(player1, player2 = Player.new("Computer",true))
     @player1 = player1
     @player2 = player2
     @draw = false
@@ -52,7 +52,6 @@ WIN_LOSE_HASH = { "Rock" => "Scissors",
     return "It's a draw" if draw?
     return "#{@player1.name} won" if player1_wins?
     return "#{@player2.name} won" if player2_wins?
-    # return "Computer won" if player2_wins? && against_computer?
   end
 
 private
@@ -88,6 +87,7 @@ private
   end
 
   def against_computer?
-    @player2.name == "Computer"
+    @player2.computer
   end
+
 end

@@ -1,4 +1,13 @@
+<style>
+body {background-color: powderblue;
+  text-align: center;
+  vertical-align: middle;
+  font-family: sans-serif}
+</style>
+
 <body>
+  <h1>Rock, Paper, Scissors game</h1>
+  <br>
 <h2>Select your move, <%= @game.player2.name %></h2>
 <form action = "/player2_save_move" method = "post">
 <select name="move">

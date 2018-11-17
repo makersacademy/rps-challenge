@@ -1,17 +1,27 @@
-<p> <%= @game.player1.name %> chose <%= @game.player1.move %>, <%= @game.player2.name %> chose <%= @game.player2.move%></p>
- <p> <%= @game.outcome %></p>
+<style>
+body {background-color: powderblue;
+  text-align: center;
+  vertical-align: middle;
+  font-family: sans-serif}
+</style>
+<body>
+  <h1>Rock, Paper, Scissors game</h1>
+  <br>
+  <p> <%= @game.player1.name %> chose <%= @game.player1.move %>, <%= @game.player2.name %> chose <%= @game.player2.move%></p>
+ <h1> <%= @game.outcome %></h1>
  <br>
  <br>
  What you you want to do next?
- <%if @game.type = 'singleplayer' %>
-    <form action='/play'> <% end %>
+ <%if @game.type == 'singleplayer' %>
+    <form action='/play'><% end %>
 
-  <%if @game.type = 'multiplayer' %>
-    <form action='/player1_move'> <% end %>
+  <%if @game.type == 'multiplayer' %>
+    <form action='/player1_move'><% end %>
 
-   <input type='submit' value='Play again'>
- </form>
+    <input type='submit' value='Play again'>
+  </form>
 
  <form action='/'>
    <input type='submit' value='Go back to game options'>
  </form>
+</body>

@@ -1,3 +1,11 @@
+<style>
+body {background-color: powderblue;
+  text-align: center;
+  vertical-align: middle;
+  font-family: sans-serif}
+</style>
+ <body>
+
 <h1>Rock, Paper, Scissors game</h1>
 <br>
 <h2><%= @game.player1.name %>'s move is saved.<br>
@@ -6,3 +14,5 @@ Click 'Next' when you are ready, <%= @game.player2.name %>.</h2>
 <form action='/player2_move'>
   <input type='submit' value='Next'>
 </form>
+
+</body>
