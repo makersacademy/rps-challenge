@@ -16,10 +16,10 @@ describe Player do
   end
 
   describe '#random_move' do
-    it "randomly selects the computer's move" do
+    it "randomly selects a move" do
       options = ["Rock", "Paper", "Scissors"]
       player_1.random_move
-      expect(options).to include(player_1.opponent_move)
+      expect(options).to include(player_1.moves)
     end
   end
 

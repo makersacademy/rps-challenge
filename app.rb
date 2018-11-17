@@ -7,15 +7,17 @@ class Rps < Sinatra::Base
   enable :sessions
 
   before do
-    @player_1 = session[:player_1]
+    @game = Game.instance
   end
 
   get '/' do
     erb(:index)
   end
 
-  post '/names' do
-    session[:player_1] = Player.new(params[:player_1_name])
+  post '/names_solo' do
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new
+    @game = Game.create(player_1, player_2)
     redirect '/play'
   end
 
@@ -24,23 +26,20 @@ class Rps < Sinatra::Base
   end
 
   get '/player_rock' do
-    @player_1.move('Rock')
-    @player_1.random_move
-    @game = Game.new(@player_1)
+    @game.player_1.move('Rock')
+    @game.player_2.random_move
     erb(:result)
   end
 
   get '/player_paper' do
-    @player_1.move('Paper')
-    @player_1.random_move
-    @game = Game.new(@player_1)
+    @game.player_1.move('Paper')
+    @game.player_2.random_move
     erb(:result)
   end
 
   get '/player_scissors' do
-    @player_1.move('Scissors')
-    @player_1.random_move
-    @game = Game.new(@player_1)
+    @game.player_1.move('Scissors')
+    @game.player_2.random_move
     erb(:result)
   end
 

@@ -1,11 +1,10 @@
 class Player
 
-  attr_reader :name, :moves, :opponent_move
+  attr_reader :name, :moves
 
-  def initialize(name = 'Player')
+  def initialize(name = 'Swifthands McDraw')
     @name = name
     @moves = ""
-    @opponent_move = ""
   end
 
   def move(move)
@@ -13,7 +12,7 @@ class Player
   end
 
   def random_move
-    @opponent_move = ["Rock", "Paper", "Scissors"].sample
+    @moves = ["Rock", "Paper", "Scissors"].sample
   end
 
 end

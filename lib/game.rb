@@ -2,10 +2,12 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player_1
+  attr_reader :player_1, :player_2, :multi
 
-  def initialize(player_1)
+  def initialize(player_1, player_2, multi = false)
     @player_1 = player_1
+    @player_2 = player_2
+    @multi = multi
   end
 
   @@winning_pairs = [["Rock", "Scissors"],
@@ -18,6 +20,14 @@ class Game
 
   def draw?(player_1_move, opponent_move)
     player_1_move == opponent_move
+  end
+
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
   end
 
 end

@@ -1,12 +1,17 @@
-<p>You chose <%= @player_1.moves %></p>
-<p>Your opponent chose <%= @player_1.opponent_move %></p>
-<% if @game.win?(@player_1.moves, @player_1.opponent_move) %>
-  <h2>You won!</h2>
-<% elsif @game.draw?(@player_1.moves, @player_1.opponent_move) %>
-  <h2>You drew</h2>
+<p><%= @game.player_1.name %> chose <%= @game.player_1.moves %></p>
+
+<p><%= @game.player_2.name %> chose <%= @game.player_2.moves %></p>
+
+<% if @game.win?(@game.player_1.moves, @game.player_2.moves) %>
+  <h2><%= @game.player_1.name %> won!
+    Better luck next time <%= @game.player_2.name %></h2>
+<% elsif @game.draw?(@game.player_1.moves, @game.player_2.moves) %>
+  <h2>It's a draw</h2>
 <% else %>
-  <h2>You lost, better luck next time</h2>
+<h2><%= @game.player_2.name %> won!
+  Better luck next time <%= @game.player_1.name %></h2>
 <% end %>
+
 <form action="/play" >
   <input type="submit" value="Play again?">
 </form>
