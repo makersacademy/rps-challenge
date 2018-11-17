@@ -28,8 +28,8 @@ describe Turn do
     subject(:lose_turn) { described_class.new(lose_options) }
     subject(:draw_turn) { described_class.new(draw_options) }
 
-    let(:lose_options) { {"player_1_name" => "Asad", "player_1_move" => :Scissors, "opponent_move" => :Rock} }
-    let(:draw_options) { {"player_1_name" => "Asad", "player_1_move" => :Scissors, "opponent_move" => :Scissors} }
+    let(:lose_options) { { "player_1_name" => "Asad", "player_1_move" => :Scissors, "opponent_move" => :Rock } }
+    let(:draw_options) { { "player_1_name" => "Asad", "player_1_move" => :Scissors, "opponent_move" => :Scissors } }
 
     describe "#win?" do
       it "return true if Player_move is Scissors and opponent move is Paper" do
