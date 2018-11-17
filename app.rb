@@ -5,4 +5,9 @@ Capybara.app
 
 class RPS < Sinatra::Base
 
+  get '/' do
+    "Hello!!"
+  end
+
+
 end
