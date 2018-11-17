@@ -16,5 +16,8 @@ class Game
     @@winning_pairs.include?([player_1_move, opponent_move])
   end
 
+  def draw?(player_1_move, opponent_move)
+    player_1_move == opponent_move
+  end
 
 end

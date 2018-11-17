@@ -13,9 +13,19 @@ describe Game do
 
   describe '#win?' do
     it 'evaluates pairs to see if player_1 wins' do
-      expect(game.win?("Rock", "Scissors")).to be true
-      expect(game.win?("Rock", "Paper")).to be false
+      expect(game.win?(rock, scissors)).to be true
+    end
+    it 'is false if player_1 does not win' do
+      expect(game.win?(rock, paper)).to be false
     end
   end
 
+  describe '#draw?' do
+    it 'confirms is a match is a draw' do
+      expect(game.draw?(rock, rock)).to be true
+    end
+    it 'is false is a match is not a draw' do
+      expect(game.draw?(rock, scissors)).to be false
+    end
+  end
 end
