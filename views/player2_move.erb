@@ -1,7 +1,6 @@
-
 <body>
-<h2>Select your move, <%= @game.player1.name %></h2>
-<form action = "/move" method = "post">
+<h2>Select your move, <%= @game.player2.name %></h2>
+<form action = "/player2_save_move" method = "post">
 <select name="move">
   <option value="Rock">Rock</option>
   <option value="Paper">Paper</option>

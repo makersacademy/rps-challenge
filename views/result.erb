@@ -1,6 +1,17 @@
-<p> You chose <%= @game.player.move %>, Computer chose <%= @game.player2%></p>
+<p> <%= @game.player1.name %> chose <%= @game.player1.move %>, <%= @game.player2.name %> chose <%= @game.player2.move%></p>
  <p> <%= @game.outcome %></p>
  <br>
- <form action='/play'>
+ <br>
+ What you you want to do next?
+ <%if @game.type = 'singleplayer' %>
+    <form action='/play'> <% end %>
+
+  <%if @game.type = 'multiplayer' %>
+    <form action='/player1_move'> <% end %>
+
    <input type='submit' value='Play again'>
+ </form>
+
+ <form action='/'>
+   <input type='submit' value='Go back to game options'>
  </form>

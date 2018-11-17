@@ -1,0 +1,8 @@
+<h1>Rock, Paper, Scissors game</h1>
+<br>
+<h2><%= @game.player1.name %>'s move is saved.<br>
+Click 'Next' when you are ready, <%= @game.player2.name %>.</h2>
+<br>
+<form action='/player2_move'>
+  <input type='submit' value='Next'>
+</form>

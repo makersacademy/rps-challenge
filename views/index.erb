@@ -1,6 +1,21 @@
+<style>
+body {background-color: powderblue;
+  text-align: center;
+  vertical-align: middle;
+  font-family: sans-serif}
+</style>
+ <body>
 <h1>Rock, Paper, Scissors game</h1>
-
-<form action='/names' method='post'>
-  <input type='text' name='name'>
-  <input type='submit' value='Submit'>
+<br>
+<h2>Who do you want to play against?</h2>
+<br>
+<label for="mode">
+<form action='/singleplayer'>
+  <input type='submit' value='Computer'>
 </form>
+
+<form action='/multiplayer'>
+  <input type='submit' value='Another player'>
+</form>
+</label>
+</body>
