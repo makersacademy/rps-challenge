@@ -38,7 +38,7 @@ class RockPaperScissors < Sinatra::Base
     erb(:result)
   end
 
-  # post 'result' do
-  #   erb(:result)
-  # end
+  post 'result' do
+    erb(:result)
+  end
 end
