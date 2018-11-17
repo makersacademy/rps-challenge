@@ -2,12 +2,6 @@ require 'sinatra/base'
 require 'capybara'
 require_relative 'lib/game.rb'
 
-# - the marketeer should be able to enter their name before the game
-# - the marketeer will be presented the choices (rock, paper and scissors)
-# - the marketeer can choose one option
-# - the game will choose a random option
-# - a winner will be declared
-
 Capybara.app
 
 class Rps < Sinatra::Base
