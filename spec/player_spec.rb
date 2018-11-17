@@ -10,10 +10,11 @@ describe Player do
     end
   end
 
-  describe '#weapon' do
-    it 'can have a weapon' do
+  describe '#add_weapon' do
+    it 'adds a weapon' do
       weapon = double(:weapon)
-      expect(player.add_weapon(weapon)).to eq weapon
+      player.add_weapon(weapon)
+      expect(player.weapon).to eq weapon
     end
   end
 
