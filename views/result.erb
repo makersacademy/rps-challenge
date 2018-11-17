@@ -1,1 +1,9 @@
-<%= @player_1.moves %>
+You chose <%= @player_1.moves %>
+Your opponent chose <%= @player_1.opponent_move %>
+<% if @game.win?(@player_1.moves, @player_1.opponent_move) %>
+  You won!
+<% elsif @game.draw?(@player_1.moves, @player_1.opponent_move) %>
+  You drew
+<% else %>
+  You lost, better luck next time
+<% end %>
