@@ -15,8 +15,10 @@ feature "Playing a game" do
     expect(page).to have_content "You chose Rock!"
   end
 
-  scenario "opponent move 'Rock'" do
+  scenario "opponent's move 'Rock'" do
     click_button "Rock"
+    message = find(:css, "#opponent").text
     expect(possible_messages).to include message
   end
+
 end

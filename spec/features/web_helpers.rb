@@ -5,5 +5,5 @@ def sign_in_and_play
 end
 
 def possible_messages
-  [:Rock, :Paper, :Scissors].map { |move| "Opponent chose #{move}"}
+  [:Rock, :Paper, :Scissors].map { |move| "Opponent chose #{move}!"}
 end
