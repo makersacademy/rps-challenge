@@ -1,9 +1,12 @@
-You chose <%= @player_1.moves %>
-Your opponent chose <%= @player_1.opponent_move %>
+<p>You chose <%= @player_1.moves %></p>
+<p>Your opponent chose <%= @player_1.opponent_move %></p>
 <% if @game.win?(@player_1.moves, @player_1.opponent_move) %>
-  You won!
+  <h2>You won!</h2>
 <% elsif @game.draw?(@player_1.moves, @player_1.opponent_move) %>
-  You drew
+  <h2>You drew</h2>
 <% else %>
-  You lost, better luck next time
+  <h2>You lost, better luck next time</h2>
 <% end %>
+<form action="/play" >
+  <input type="submit" value="Play again?">
+</form>
