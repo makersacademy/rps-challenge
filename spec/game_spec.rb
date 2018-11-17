@@ -1,15 +1,11 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(cesare)}
-  let(:cesare) { double :player }
+  subject(:game) { described_class.new(cesare, rock) }
+  let(:cesare) { double :player_name }
+  let(:rock) { double :player_move }
   let(:pc_moves) { double Game::PC_MOVES }
-
-  describe '#draw' do
-    it "Checks for a draw" do
-
-    end
-  end
+  let(:fake_combo) { double Game::COMBINATIONS}
 
   describe '#au_pair' do
     it "Shows a 'It's a draw!' message" do

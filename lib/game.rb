@@ -1,7 +1,7 @@
-require_relative 'player'
+# require_relative 'player'
 
 class Game
-  attr_reader :player, :player_move, :pc_move, :match
+  attr_reader :player_name, :player_move, :pc_move, :match
 
   COMBINATIONS = [ { rock: :scissors },
                    { paper: :rock },
@@ -9,15 +9,23 @@ class Game
 
   PC_MOVES = [:rock, :paper, :scissors]
 
-  def initialize(player)
-    @player = player
-    @player_move = player.move
+  def initialize(player_name, player_move)
+    @player_name = player_name
+    @player_move = player_move
     @pc_move = PC_MOVES.sample
     @match = { player_move => pc_move }
   end
 
+  def self.create(player_name, player_move)
+    @RPS_game = Game.new(player_name, player_move)
+  end
+
+  def self.instance
+    @RPS_game
+  end
+
   def draw
-    player_move == pc_move ? au_pair : showdown
+    player_move == pc_move ? self.au_pair : self.showdown
   end
 
   def showdown

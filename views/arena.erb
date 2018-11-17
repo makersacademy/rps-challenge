@@ -1,17 +1,18 @@
 <body style="background-color:lightgreen;">
 <center><h1><font face="century gothic">  Rock Paper Scissors </font></h1></center><br>
 <center><img src="https://i1.wp.com/www.laserfiche.com/content/uploads/2016/01/shutterstock_284660570.jpg?zoom=2&resize=524%2C349&ssl=1" style="width:400px;height:200px;"></center><br>
-<center><h1><font face="century gothic"> <%=@name%> Move: </font></h1></center>
-<center><h2><font face="century gothic"> - <%=@move%> - </font></h2></center>
+<center><h1><font face="century gothic"> <%=@player_name%> Move: </font></h1></center>
+<center><h2><font face="century gothic"> - <%=@player_move%> - </font></h2></center>
 <br><br>
 <center><h1><font face="century gothic"> PC Move: </font></h1></center>
 <center><h2><font face="century gothic"> - Scissors - </font></h2></center>
 <br><br>
 <center><form action="/message"><input type="submit" font="century gothic" value="Result"></form></center>
-<% if @game.player_wins %>
-<% redirect '/player' %>
-<% elsif @game.pc_wins %>
-<% redirect '/PC' %>
+
+<% if @RPS_game.player_wins %>
+<% redirect '/player-wins' %>
+<% elsif @RPS_game.pc_wins %>
+<% redirect '/PC-wins' %>
 <% else %>
 <% redirect '/au-pair' %>
 <% end %>
