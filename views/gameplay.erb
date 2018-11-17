@@ -3,16 +3,41 @@
   <head>
     <meta charset="UTF-8">
     <title>Player Selection</title>
+    <style>
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #E17A19;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #000000}
+
+.button:active {
+  background-color: #000000;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
   <head>
 
-<body bgcolor="#730B2B"; style="text-align: center">
+<body bgcolor="#24A7CA"; style="text-align: center">
 <h1> Hello <%= @name %>, Make your choice? </h1>
+<br>
+<img class="lazy2" src="https://png2.kisspng.com/sh/9820fe828298a6b80822f6e57c8da433/L0KzQYm3VcI6N5h2f5H0aYP2gLBuTgJwa5x1eeJucoPmecT6jCJ0NZhmhdc2cnBme373ggBmel54e9t8c3B1g368gsBlPpdnT9RvZEPnRnABU8g2OWg4S6MAMke5QIi5UsM4QGY8RuJ3Zx==/kisspng-rockpaperscissors-game-rock-paper-scissors-5b0d6fb7bfd3d6.8385173315276072237857.png" alt="Rock" style="width:300px" >
+<img class="lazy2" src="https://www.rock-paper-scissors-game.com/i/paper.png" alt="Paper" style="width:300px">
+<img class="lazy2" src="https://png2.kisspng.com/sh/6a3411b0c8ba9ffb4030802a88beed31/L0KzQYm3VcI6N5J0kZH0aYP2gLBuTgJwa5x1eeJucoPmecT6jCJ0NaN0e902cHHzdcO0kBNqe6R0iuU2NXKzdIW3gBY3amFqTak3NUe3R4a7WMAyPWM8TasAMkG4RISBVb5xdpg=/kisspng-rockpaperscissors-rock-paper-scissors-5b0d40cf6b0e57.5747548015275952154385.png" alt="Scissors" style="width:300px" >
+<br>
 <form action="/result" method="get">
-<button type="submit" name="player_selection" value="Rock" >Rock</button><br>
-<button type="submit" name="player_selection" value="Paper" >Paper</button><br>
-<button type="submit" name="player_selection" value="Scissors" >Scissors</button><br>
+<button class="button" type="submit" name="player_selection" value="Rock" >Rock</button>
+<button class="button" type="submit" name="player_selection" value="Paper" >Paper</button>
+<button class="button" type="submit" name="player_selection" value="Scissors" >Scissors</button>
 
 </form>
-
-</body>
 </html>

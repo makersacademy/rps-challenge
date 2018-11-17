@@ -5,9 +5,9 @@
     <title>And the winner is...</title>
   <head>
 
-<body bgcolor="#0D7822">
-<%= @name %>, you have selected <%= @player_selection %><br>
-The computer player has selected <%= @computer_choice %><br>
+<body bgcolor="#7AEAF5"; style="text-align: center" >
+<%= @name %> has selected :<%= @player_selection %>&nbsp &nbsp
+The computer player has selected :<%= @computer_choice %><br>
 <% @game_result %><br>
 
 <% if @game_result == "draw" %>
