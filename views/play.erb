@@ -24,15 +24,23 @@ body {font-size:16px;}
   <div class="w3-main" style="margin-left:240px;margin-right:40px">
     <div class="w3-container" id="contact" style="margin-top:75px">
       <h1 class="w3-xxxlarge w3-text-red"><b>Welcome, <%= @name %>!</b></h1>
-      <form class="" action="/rock" method="post">
-        <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Rock</button>
-      </form>
-      <form class="" action="/paper" method="post">
-        <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Paper</button>
-      </form>
-      <form class="" action="/scissors" method="post">
-        <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Scissors</button>
-      </form>
+      <div class="w3-row-padding">
+        <div class="w3-col m4 w3-margin-bottom">
+          <form class="" action="/rock" method="post">
+            <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Rock</button>
+          </form>
+        </div>
+        <div class="w3-col m4 w3-margin-bottom">
+          <form class="" action="/paper" method="post">
+            <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Paper</button>
+          </form>
+        </div>
+        <div class="w3-col m4 w3-margin-bottom">
+          <form class="" action="/scissors" method="post">
+            <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Scissors</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </body>
