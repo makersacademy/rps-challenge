@@ -17,11 +17,12 @@ describe RPS do
   end
 
   describe '#play'do
-    it { expect(subject).to respond_to :play }
+    it 'returns a draw message' do
+      allow(subject).to receive(:random).and_return(:rock)
+      expect(subject.play).to eq 'It looks like we are going no where!'
+    end
   end
 
-  describe '#message'do
-    it { expect(subject).to respond_to :message }
-  end
+
 
 end

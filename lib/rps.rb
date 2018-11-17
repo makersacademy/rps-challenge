@@ -12,11 +12,12 @@ class RPS
   end
 
   def play
-
+     choice == random ? 'It looks like we are going no where!' : result
   end
 
-  def message
-    
+  private
+  def result
+    RULES.include?(game) ? 'You saved us, John Connor!!!' : 'Good job, John Connor.. The machines are rising...'
   end
 
 end
