@@ -1,1 +1,18 @@
-Your name is <%= @player1 %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Player Selection</title>
+  <head>
+
+<body bgcolor="#730B2B">
+<h1> Hello <%= @name %>, what would you like to choose? </h1>
+<form action="/result" method="get">
+<button type="submit" name="player_selection" value="Rock" >Rock</button><br>
+<button type="submit" name="player_selection" value="Paper" >Paper</button><br>
+<button type="submit" name="player_selection" value="Scissors" >Scissors</button><br>
+
+</form>
+
+</body>
+</html>

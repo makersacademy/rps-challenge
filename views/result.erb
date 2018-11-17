@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>And the winner is...</title>
+  <head>
+
+<body bgcolor="#0D7822">
+<%= @name %>, you have selected <%= @player_selection %><br>
+The computer player has selected <%= @computer_choice %><br>
+<% @game_result %><br>
+
+<% if @game_result == "draw" %>
+  Result is a draw
+<% end %>
+<% if @game_result == "win" %>
+  <%= @name %> is the winner
+<% end %>
+<% if @game_result == "lose" %>
+  The computer is the winner
+<% end %>
+
+
+
+</body>
+</html>
