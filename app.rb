@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player.rb'
 require_relative './lib/weapon.rb'
+require_relative './lib/computer_player'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -28,6 +29,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    @computer_player = ComputerPlayer.new
     erb :result
   end
 

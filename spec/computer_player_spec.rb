@@ -9,7 +9,7 @@ describe ComputerPlayer do
   end
 
   it 'randomly chooses a wepaon' do
-    allow(computer_player.weapons).to receive(:sample).and_return("rock")
-    expect(computer_player.move).to eq "rock"
+    allow(computer_player.weapons).to receive(:sample).and_return("paper")
+    expect(computer_player.move).to eq "paper"
   end
 end

@@ -14,4 +14,8 @@ class Player
     @player
   end
 
+  def add_weapon(weapon)
+    @weapon = weapon
+  end
+
 end

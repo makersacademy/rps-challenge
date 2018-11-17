@@ -10,6 +10,13 @@ describe Player do
     end
   end
 
+  describe '#weapon' do
+    it 'can have a weapon' do
+      weapon = double(:weapon)
+      expect(player.add_weapon(weapon)).to eq weapon
+    end
+  end
+
   describe '#self.create' do
     it 'created a new instance of self' do
       expect(Player.create("Chris")).to be_an_instance_of described_class
