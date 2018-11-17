@@ -1,4 +1,5 @@
 require 'sinatra'
+require './lib/player'
 
 
 # class RPS < Sinatra::Base
@@ -7,8 +8,9 @@ get '/' do
 end
 
 post '/result' do
-  @player_1 = params[:player_1]
-  @choice = params[:options]
+  @player_1_name = params[:player_1]
+  @weapon = params[:options]
+  @player_1 = Player.new(@player_1_name, @weapon)
   erb :result
 end
 
