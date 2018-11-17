@@ -1,5 +1,7 @@
 feature "Playing a game" do
 
+  SEED = 999_999
+
   before do
     sign_in_and_play
   end
@@ -19,6 +21,12 @@ feature "Playing a game" do
     click_button "Rock"
     message = find(:css, "#opponent").text
     expect(possible_messages).to include message
+  end
+
+  scenario "opponent chooses a random option" do
+    srand(SEED)
+    click_button "Paper"
+    expect(page).to have_content "Opponent chose Paper"
   end
 
 end

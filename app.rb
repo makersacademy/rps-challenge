@@ -20,7 +20,7 @@ class Rps < Sinatra::Base
 
   post '/play' do
     session[:player_1_move] = params[:player_1_move]
-    session[:opponent_move] = :Rock
+    session[:opponent_move] = Opponent.new.move
     redirect '/play'
   end
 

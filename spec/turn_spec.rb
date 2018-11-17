@@ -3,7 +3,7 @@ require "turn"
 describe Turn do
 
   subject(:turn) { described_class.new(options) }
-  let(:options) { {"player_1_name" => "Asad", "player_1_move" => :rock, "opponent_move" => :rock} }
+  let(:options) { { "player_1_name" => "Asad", "player_1_move" => :rock, "opponent_move" => :rock } }
 
   describe "#player_name" do
     it "returns the players name" do
