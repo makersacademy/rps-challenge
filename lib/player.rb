@@ -6,4 +6,12 @@ class Player
     @name = name
   end
 
+  def self.create(name)
+    @player = self.new(name)
+  end
+
+  def self.instance
+    @player
+  end
+
 end
