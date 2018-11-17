@@ -7,7 +7,7 @@ class Weapon
   end
 
   def self.create(type)
-    @weapon = self.new(type)
+    @weapon = Weapon.new(type)
   end
 
   def self.instance

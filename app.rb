@@ -28,7 +28,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    p @player.weapon.type
     @computer_player = ComputerPlayer.new
     erb :result
   end

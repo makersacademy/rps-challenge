@@ -11,3 +11,11 @@ def sign_in_and_select_rock
   select 'Rock', from: 'weapon'
   click_button 'Play!'
 end
+
+def sign_in_and_select_paper
+  visit '/'
+  fill_in :name, with: 'Chris'
+  click_button 'Go!'
+  select 'Paper', from: 'weapon'
+  click_button 'Play!'
+end
