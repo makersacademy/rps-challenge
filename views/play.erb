@@ -1,15 +1,15 @@
-Let's play <%= @name %>!
+Let's play <%= @turn.player_1_name %>!
 <br>
 <br>
 <form action="/play" method="post">
-  <input type="submit" name="move" value="Rock">
-  <input type="submit" name="move" value="Paper">
-  <input type="submit" name="move" value="Scissors">
+  <input type="submit" name="player_1_move" value="Rock">
+  <input type="submit" name="player_1_move" value="Paper">
+  <input type="submit" name="player_1_move" value="Scissors">
 </form>
 
-You chose <%= @move %>!
+You chose <%= @turn.player_1_move %>!
 <br>
 <br>
 <div id="opponent">
-  Opponent chose <%= @opponent_move %>!
+  Opponent chose <%= @turn.opponent_move %>!
 </div>
