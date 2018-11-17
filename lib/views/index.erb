@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html>
+<head>
+   <!-- <script type="text/javascript" src="multi.js"></script> -->
+</head>
+
 <body bgcolor="#C0DCFF">
   <div align="center">
     <br>
     <br>
     <h1>Welcome! Pick your poison!</h1>
     <form action="/choice" method="post">
-      <button type="Submit" name="rock">Rock</button>
-      <button type="Submit" name="paper">Paper</button>
-      <button type="Submit" name="scissors">Scissors</button>
-      <button type="Submit" name="lizard">Lizard</button>
-      <button type="Submit" name="spock">Spock</button>
+      <h3>Please enter your name!</h3>
+      <input type="text" name="name_1" placeholder="e.g. Henry">
+      <br>
+      <br>
+      <br>
+      <input type="radio" name="choice_1" value="rock"> Rock
+      <input type="radio" name="choice_1" value="paper"> Paper
+      <input type="radio" name="choice_1" value="scissors"> Scissors
+      <input type="radio" name="choice_1" value="lizard"> Lizard
+      <input type="radio" name="choice_1" value="spock"> Spock
+      <button type="Submit" value="Submit">Fight!</button>
     </form>
-
   </div>
 </body>
 </html>

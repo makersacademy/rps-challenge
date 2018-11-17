@@ -1,5 +1,6 @@
 require "sinatra/base"
-require "game"
+require_relative "./game"
+require_relative "./player"
 
 class Rps < Sinatra::Base
 
@@ -13,9 +14,14 @@ class Rps < Sinatra::Base
     erb :index
   end
 
-  post '/choice' do
-    p params
-    @game = Game.create()
-    redirect ''
+  get "/choice" do
+    player1 = Player.new(params[:name_1],params[:choice_1])
+    player2 = Player.new()
+    @game = Game.create(player1,player2)
+    redirect "/result"
+  end
+
+  get "/result" do
+    erb :result
   end
 end
