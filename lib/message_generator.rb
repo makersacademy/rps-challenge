@@ -1,41 +1,38 @@
 class MessageGenerator
   attr_reader :messages
 
-  def initialize(winner, winning_move)
+  def initialize(winner)
     @winner = winner
-    @winning_move = winning_move
+    @winner == "draw" ? @winning_move = "draw" : @winning_move = @winner.move
     @messages = []
   end
 
   def message
-    case @winner
-    when "player"
-      @messages << "You win!"
-    when "computer"
-      @messages << "You lose!"
-    when "draw"
+    if @winner == "draw"
       @messages << "It's a draw"
+    else
+      @messages << "#{@winner.name} wins!"
     end
     game_commentary
   end
 
   def game_commentary
-    send(@winning_move)
+    @messages <<  send(@winning_move)
   end
 
   def rock
-    @messages << "Rock crushes scissors"
+    "Rock crushes scissors"
   end
 
   def paper
-    @messages << "Paper covers rock"
+    "Paper covers rock"
   end
 
   def scissors
-    @messages << "Scissors cut paper"
+    "Scissors cut paper"
   end
 
   def draw
-    @messages << "Stalemate!"
+    "Stalemate!"
   end
 end

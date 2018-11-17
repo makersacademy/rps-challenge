@@ -7,11 +7,11 @@ feature 'play RockPaperScissors' do
 
   scenario 'user can select paper' do
     start_the_game
-    expect(page).to have_button "Rock"
+    expect(page).to have_button "Paper"
   end
 
   scenario 'user can select scissors' do
     start_the_game
-    expect(page).to have_button "Rock"
+    expect(page).to have_button "Scissors"
   end
 end

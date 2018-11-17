@@ -1,6 +1,6 @@
 require 'computer_player'
 
-describe ComputerPlayer do
+describe Computer do
   let(:computer_player) { described_class.new }
 
   it 'will select a move at random' do
