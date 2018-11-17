@@ -1,0 +1,24 @@
+body {
+	background-color: #7eacf7
+}
+
+.footer {
+	padding: 50px;
+	margin: 50px;
+	text-align: center;
+}
+
+.container {
+	padding: 20px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#options {
+	display: inline-block;
+	text-align: center;
+}
+
+.form {
+	text-align: center;
+}
