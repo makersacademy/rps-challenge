@@ -18,48 +18,44 @@ enable :sessions
   end
 
   get '/' do
-    #data collection
     erb :index
   end
 
   get '/1_player' do
     erb :oneplayername
   end
-  #
-  # get '2_player'do
-  #
-  #   erb :twoplayername
-  # end
+
+  get '/2_player' do
+    erb :twoplayername
+  end
 
   post '/1_player_name' do
     @game = Game.create(params[:p1_name], 'computer')
     redirect '/move_1_player'
   end
   #
-  # post '/2_player_name' do
-  #   @game = Game.create(params[:p1_name], params[:p2_name])
-  #   redirect '/move_2_player'
-  # end
+  post '/2_player_name' do
+    @game = Game.create(params[:p1_name], params[:p2_name])
+    redirect '/move_2_player'
+  end
 
   get '/move_1_player' do
     erb :moveoneplayer
   end
   #
-  # get '/move_2_player' do
-  #   # showcases result (calls on method here)
-  #   erb :movetwoplayer
-  # end
+  get '/move_2_player' do
+    erb :movetwoplayer
+  end
 
   post '/calculating_p1' do
     @game.move(params[:select],'computer')
-      # @game.create(params[:p1_move], params[:p2_move])
     redirect '/result'
   end
-  #
-  # post 'calculating_p2' do
-  #
-  #   redirect '/result'
-  # end
+
+  post '/calculating_p2' do
+    @game.move(params[:select_p1], params[:select_p2])
+    redirect '/result'
+  end
 
   get '/result' do
     erb :result

@@ -1,21 +1,39 @@
   <style>
   .center {
-      margin: auto;
-      background-color: lightblue;
-      width: 40%;
+      /* margin: auto;
+      background-color: #FFC300;
+      width: 30%;
       border: 3px solid black;
-      padding: 30px;
-  }
+      padding: 30px; */
+  /* } */
+
+  background-color: #FFC300;
+  width: 30%;
+  border: 3px solid black;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
   </style>
 <body>
-
+  <center>
   <div class="center">
   <h1>Rock, Paper, Sissors - GO!</h1>
+
+
+
   <form action="/1_player" method="get">
-    <input type="submit" value="1 player">
+    <input type="submit" value="1 player" style="width:100px;height:50px">
+
   </form>
 
   <form action="/2_player" method="get">
-    <input type="submit" value="2 player">
+    <input type="submit" value="2 player" style="width:100px;height:50px">
   </form>
+    </center>
+
 </body>

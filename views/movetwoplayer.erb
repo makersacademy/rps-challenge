@@ -17,13 +17,22 @@
 <body>
 
   <div class="center">
-  <h1>Make your selection</h1>
-  <form action="/calculating_p1" method="post">
-<select name="select">
+<h1> <%= @game.p1_name.capitalize %>'s move: </h1> <form action="/calculating_p2" method="post">
+<select name="select_p1">
   <option value="Rock">Rock</option>
   <option value="Paper">Paper</option>
   <option value="Sissors">Sissors</option>
 </select>
+<p></p>
+<p></p>
+
+<h1> <%= @game.p2_name.capitalize %>'s move: </h1> <select name="select_p2">
+<option value="Rock">Rock</option>
+<option value="Paper">Paper</option>
+<option value="Sissors">Sissors</option>
+</select>
+<p></p>
+
 <input type="submit" value="Submit">
 </form>
 </body>

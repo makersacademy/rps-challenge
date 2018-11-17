@@ -1,8 +1,26 @@
 
+<style>
+.center {
+  background-color: #FFC300;
+  width: 30%;
+  border: 3px solid black;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 30px
 
-<h1> <%= @game.p1_name %> has <%=@game.result %> </h1>
+}
+</style>
 
+<div class="center">
+  <center>
+<h1> <%= @game.result %> </h1>
 
 
 <h3> <%= @game.p1_name.capitalize %> move: <%=@game.p1_move %> </h3>
 <h3> <%= @game.p2_name.capitalize %> move: <%=@game.p2_move %> </h3>
+  </center>
+</div>

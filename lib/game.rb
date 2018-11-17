@@ -1,5 +1,5 @@
 class Game
-  attr_reader :p1_name, :p2_name, :p1_move, :p2_move, :p1move
+  attr_reader :p1_name, :p2_name, :p1_move, :p2_move
 
 
   def self.create(p1_name, p2_name)
@@ -15,16 +15,12 @@ class Game
     @p2_name = p2_name
   end
 
-  def player_1(move)
-    @p1move = move
-  end
-
   def move(p1_move, p2_move)
     @p1_move = p1_move
     p2_move == 'computer' ? @p2_move = ['Rock', 'Paper', 'Sissors'].sample : @p2_move = p2_move
   end
 
-  def result
+  def win_conditions
     return 'Drawn' if @p1_move == @p2_move
     return 'Won' if @p1_move == 'Rock' && @p2_move == 'Sissors'
     return 'Lost' if @p1_move == 'Rock' && @p2_move == 'Paper'
@@ -33,4 +29,11 @@ class Game
     return 'Lost' if @p1_move == 'Sissors' && @p2_move == 'Rock'
     return 'Won' if @p1_move == 'Sissors' && @p2_move == 'Paper'
   end
+
+  def result
+    return "#{p1_name.capitalize} has Won!" if win_conditions == 'Won'
+    return "#{p2_name.capitalize} has Won!" if win_conditions == 'Lost'
+    return "Its a draw!" if win_conditions == 'Drawn'
+  end
+
 end
