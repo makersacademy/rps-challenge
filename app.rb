@@ -5,6 +5,7 @@ class RockPaperScissors < Sinatra::Base
 
   before do
     @player = Player.instance
+    @weapon = Weapon.instance
   end
 
   get '/' do
@@ -18,6 +19,15 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     erb :play
+  end
+
+  post '/weapon' do
+    @weapon = Weapon.create(params[:weapon])
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
   end
 
 end
