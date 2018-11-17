@@ -12,14 +12,14 @@
     transition-duration: 0.4s;
     cursor: pointer;
 }
-/*
-button1 {
+
+.button:hover {
     background-color: white;
     color: black;
     border: 2px solid #4CAF50;
 }
 
-button1:hover {
+/* .button:hover {
     background-color: #4CAF50;
     color: white;
 } */

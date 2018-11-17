@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <head>
-<link rel="stylesheet" type="text/css" href="button.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
 <body>
-<%= @result %>
-  <form class="" action="/replay">
-    <input class="button button1" type="submit" name="" value="Play Again!">
-  </form>
-  <form class="" action="/">
-    <input class="button button1" type="submit" name="" value="Home">
-  </form>
+  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index: 3; width: 200px; font-weight: bold; display: none;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:26px">Close Menu</a>
+    <div class="w3-container">
+      <h3 class="w3-padding-64"><b>Rock<br>Paper<br>Scissors</b></h3>
+    </div>
+    <div class="w3-bar-block">
+      <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+      <a href="/replay" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Play Again!</a>
+    </div>
+  </nav>
+  <div class="w3-main" style="margin-left:240px;margin-right:40px">
+    <div class="w3-container" id="contact" style="margin-top:75px">
+      <p><%= @result %></p>
+    </div>
+  </div>
 </body>
