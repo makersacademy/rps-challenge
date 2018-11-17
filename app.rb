@@ -9,5 +9,6 @@ class RPS < Sinatra::Base
     "Hello!!"
   end
 
+run! if app_file == $0
 
 end
