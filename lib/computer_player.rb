@@ -6,7 +6,7 @@ class ComputerPlayer
     @weapons = ["rock", "paper", "scissors"]
   end
 
-  def move
+  def weapon
     @weapons.sample
   end
 

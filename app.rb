@@ -7,7 +7,6 @@ class RockPaperScissors < Sinatra::Base
 
   before do
     @player = Player.instance
-    @weapon = Weapon.instance
   end
 
   get '/' do
@@ -24,11 +23,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/weapon' do
-    @weapon = Weapon.create(params[:weapon])
+    @player.add_weapon(Weapon.create(params[:weapon]))
     redirect '/result'
   end
 
   get '/result' do
+    p @player.weapon.type
     @computer_player = ComputerPlayer.new
     erb :result
   end

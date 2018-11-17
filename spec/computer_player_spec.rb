@@ -10,6 +10,6 @@ describe ComputerPlayer do
 
   it 'randomly chooses a wepaon' do
     allow(computer_player.weapons).to receive(:sample).and_return("paper")
-    expect(computer_player.move).to eq "paper"
+    expect(computer_player.weapon).to eq "paper"
   end
 end
