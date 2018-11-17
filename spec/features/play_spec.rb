@@ -26,7 +26,30 @@ feature "Playing a game" do
   scenario "opponent chooses a random option" do
     srand(SEED)
     click_button "Paper"
-    expect(page).to have_content "Opponent chose Paper"
+    expect(page).to have_content "Opponent chose Paper!"
+  end
+
+  context "End game scenarios" do
+
+    before do
+      srand(SEED)
+    end
+
+    scenario "You win" do
+      click_button "Scissors"
+      expect(page).to have_content "You win!"
+    end
+
+    scenario "You lose" do
+      click_button "Rock"
+      expect(page).to have_content "You lose!"
+    end
+
+    scenario "You draw" do
+      click_button "Paper"
+      expect(page).to have_content "You draw!"
+    end
+
   end
 
 end

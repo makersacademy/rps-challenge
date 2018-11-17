@@ -13,3 +13,11 @@ You chose <%= @turn.player_1_move %>!
 <div id="opponent">
   Opponent chose <%= @turn.opponent_move %>!
 </div>
+<br>
+<% if @turn.win? %>
+  You win!
+<% elsif @turn.lose? %>
+  You lose!
+<% elsif @turn.draw? %>
+  You draw!
+<% end %>

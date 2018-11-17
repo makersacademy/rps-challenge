@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative "./lib/turn"
+require_relative "./lib/opponent"
 
 class Rps < Sinatra::Base
 
@@ -19,7 +21,7 @@ class Rps < Sinatra::Base
   end
 
   post '/play' do
-    session[:player_1_move] = params[:player_1_move]
+    session[:player_1_move] = params[:player_1_move].to_sym
     session[:opponent_move] = Opponent.new.move
     redirect '/play'
   end
