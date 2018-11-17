@@ -14,4 +14,16 @@ feature 'enter name' do
     start_the_game
     expect(page).to have_content "Dana vs. Matt"
   end
+
+  scenario 'let user know to enter only 1 name for 1 player game' do
+    visit '/'
+    expect(page).to have_content "To play against the computer, only enter Player 1 name"
+  end
+
+  scenario 'play against computer if only 1 name entered' do
+    visit '/'
+    fill_in :p1_name, with: 'Dana'
+    click_button "Let's Play!"
+    expect(page).to have_content "Dana vs. Computer"
+  end
 end

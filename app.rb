@@ -8,7 +8,7 @@ class RockPaperScissors < Sinatra::Base
 
   enable :sessions
   before do
-  @game = Game.instance
+    @game = Game.instance
   end
 
   get '/' do

@@ -1,74 +1,75 @@
 require 'game'
 
 describe Game do
-  let(:computer_player) { double :computer_player }
+  let(:player1) { double :player1 }
+  let(:player2) { double :player2 }
 
   describe 'should determine the winner correctly' do
-    context 'player_move = rock' do
-      it 'should determine player wins if computer selects scissors' do
-        player_move = "Rock"
-        allow(computer_player).to receive(:move).and_return("scissors")
-        game = Game.new(player_move, computer_player)
-        expect(game.find_winner).to eq "player"
+    context 'player1.move = rock' do
+      before do
+        allow(player1).to receive(:move).and_return "rock"
+      end
+      it 'should determine player1 wins if player2 selects scissors' do
+        allow(player2).to receive(:move).and_return "scissors"
+        game = Game.new(player1, player2)
+        expect(game.find_winner).to eq player1
       end
 
-      it 'should determine the computer the winner if computer selects paper' do
-        player_move = "Rock"
-        allow(computer_player).to receive(:move).and_return("paper")
-        game = Game.new(player_move, computer_player)
-        expect(game.find_winner).to eq "computer"
+      it 'should determine player2 the winner if player2 paper' do
+        allow(player2).to receive(:move).and_return "paper"
+        game = Game.new(player1, player2)
+        expect(game.find_winner).to eq player2
       end
 
-      it 'should determine a draw if computer selects rock' do
-        player_move = "Rock"
-        allow(computer_player).to receive(:move).and_return("rock")
-        game = Game.new(player_move, computer_player)
+      it 'should determine a draw if player2 selects rock' do
+        allow(player2).to receive(:move).and_return "rock"
+        game = Game.new(player1, player2)
         expect(game.find_winner).to eq "draw"
       end
     end
 
-    context 'player_move = paper' do
-      it 'should determine player wins if computer selects rock' do
-        player_move = "Paper"
-        allow(computer_player).to receive(:move).and_return("rock")
-        game = Game.new(player_move, computer_player)
-        expect(game.find_winner).to eq "player"
+    context 'player1.move = paper' do
+      before do
+        allow(player1).to receive(:move).and_return "paper"
+      end
+      it 'should determine player1 wins if player2 selects rock' do
+        allow(player2).to receive(:move).and_return "rock"
+        game = Game.new(player1, player2)
+        expect(game.find_winner).to eq player1
       end
 
-      it 'should determine the computer the winner if computer selects scissors' do
-        player_move = "Paper"
-        allow(computer_player).to receive(:move).and_return("scissors")
-        game = Game.new(player_move, computer_player)
-        expect(game.find_winner).to eq "computer"
+      it 'should determine player2 the winner if player2 selects scissors' do
+        allow(player2).to receive(:move).and_return "scissors"
+        game = Game.new(player1, player2)
+        expect(game.find_winner).to eq player2
       end
 
-      it 'should determine a draw if computer selects paper' do
-        player_move = "Paper"
-        allow(computer_player).to receive(:move).and_return("paper")
-        game = Game.new(player_move, computer_player)
+      it 'should determine a draw if player2 selects paper' do
+        allow(player2).to receive(:move).and_return "paper"
+        game = Game.new(player1, player2)
         expect(game.find_winner).to eq "draw"
       end
     end
 
-    context 'player_move = scissors' do
-      it 'should determine player wins if computer selects paper' do
-        player_move = "Scissors"
-        allow(computer_player).to receive(:move).and_return("paper")
-        game = Game.new(player_move, computer_player)
-        expect(game.find_winner).to eq "player"
+    context 'player1.move = scissors' do
+      before do
+        allow(player1).to receive(:move).and_return "scissors"
+      end
+      it 'should determine player1 wins if player2 selects paper' do
+        allow(player2).to receive(:move).and_return "paper"
+        game = Game.new(player1, player2)
+        expect(game.find_winner).to eq player1
       end
 
-      it 'should determine the computer the winner if computer selects rock' do
-        player_move = "Scissors"
-        allow(computer_player).to receive(:move).and_return("rock")
-        game = Game.new(player_move, computer_player)
-        expect(game.find_winner).to eq "computer"
+      it 'should determine player2 the winner if player2 selects rock' do
+        allow(player2).to receive(:move).and_return "rock"
+        game = Game.new(player1, player2)
+        expect(game.find_winner).to eq player2
       end
 
-      it 'should determine a draw if computer selects scissors' do
-        player_move = "Scissors"
-        allow(computer_player).to receive(:move).and_return("scissors")
-        game = Game.new(player_move, computer_player)
+      it 'should determine a draw if player2 selects scissors' do
+        allow(player2).to receive(:move).and_return "scissors"
+        game = Game.new(player1, player2)
         expect(game.find_winner).to eq "draw"
       end
     end

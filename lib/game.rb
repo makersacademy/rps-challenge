@@ -11,7 +11,7 @@ class Game
   end
 
   def self.create(player1, player2)
-    @@game = Game.new(player1,player2)
+    @@game = Game.new(player1, player2)
   end
 
   def initialize(player1, player2)
