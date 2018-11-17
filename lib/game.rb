@@ -7,7 +7,7 @@ class Game
     @players = [player_1]
   end
 
-  # def add_player(player)
-  #   @players << push
-  # end
+  def add_player(player)
+    @players << player
+  end
 end

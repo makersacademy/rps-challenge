@@ -12,4 +12,11 @@ describe Game do
       expect(game.players).to include karen
     end
   end
+
+  describe "add_player" do
+    it "adds another player to the Game" do
+      game.add_player(ai_player)
+      expect(game.players).to include ai_player
+    end
+   end
 end

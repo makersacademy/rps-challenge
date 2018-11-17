@@ -12,7 +12,10 @@ class RPSWeb < Sinatra::Base
   post '/names' do
     p params
     player_1 = Player.new(params[:player_name])
+    player_2 = Player.new("Computer")
     @game = Game.new(player_1)
+    @game.add_player(player_2)
+
     redirect to('/play')
   end
 
