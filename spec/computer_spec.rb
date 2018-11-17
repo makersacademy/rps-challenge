@@ -15,7 +15,7 @@ describe Computer do
   end
 
   describe "#choose_weapon" do
-    it "lets a player choose a weapon" do
+    it "chooses a weapon randomly" do
       stub_const("Weapon::WEAPONS", [:lizard, :spock])
       computer.choose_weapon
       expect(Weapon::WEAPONS).to include computer.weapon_choice

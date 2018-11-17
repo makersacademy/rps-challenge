@@ -11,7 +11,7 @@ feature "Testing infrastructure" do
 
   scenario "shows the play page after user enters name" do
     visit_and_fill_in_player_name
-    expect(page).to have_content "Rock, Paper or Scissors?"
+    expect(page).to have_content "Choose your weapon: Rock, Paper or Scissors?"
     expect(page).not_to have_content "Welcome"
   end
 end
