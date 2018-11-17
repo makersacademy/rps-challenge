@@ -8,7 +8,7 @@ describe Player do
 # So that I can see my name in lights
 # I would like to register my name before playing an online game
 
-  describe 'initialize' do
+  describe "initialize" do
     it "creates an instance of the Player class" do
       expect(karen.instance_of? Player).to be true
     end

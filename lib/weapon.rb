@@ -5,6 +5,8 @@ class Weapon
             paper: :rock,
             scissors: :paper }
 
+  WEAPONS = [:rock, :paper, :scissors]
+
   def initialize(weapon_type)
     @type = weapon_type.downcase.to_sym
   end

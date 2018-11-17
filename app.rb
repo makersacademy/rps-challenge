@@ -15,7 +15,6 @@ class RPSWeb < Sinatra::Base
     player_2 = Player.new("Computer")
     @game = Game.new(player_1)
     @game.add_player(player_2)
-
     redirect to('/play')
   end
 
