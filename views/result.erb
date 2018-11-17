@@ -6,20 +6,26 @@
   <head>
 
 <body bgcolor="#7AEAF5"; style="text-align: center" >
-<%= @name %> has selected :<%= @player_selection %>&nbsp &nbsp
+<h3 style="font-size:75px"> <%= @name %> has selected :<%= @player_selection %><br>
+<br>
 The computer player has selected :<%= @computer_choice %><br>
+
 <% @game_result %><br>
 
 <% if @game_result == "draw" %>
   Result is a draw
 <% end %>
 <% if @game_result == "win" %>
-  <%= @name %> is the winner
+  <img src="https://png2.kisspng.com/sh/fd41531cdef9cc8d3f720706853053a3/L0KzQYm3UsI5N6ppiZH0aYP2gLBuTgRzd6FtkZ9wb3znPb7shPFtNZJ8eeRtLYD1ecvsTgZma6V0ip9wb3zndbA0lQJweJlARadqOUa7dLe3hckybGUARqk9OUC3RYm6UcUyQWk2TqMCNkm4RIq1kP5o/kisspng-trophy-gold-medal-award-prize-vector-golden-trophy-5a968df0e91d49.7490458315198161769549.png" alt="trophy" style="width:75px"> &nbsp
+  <%= @name %> is the winner! &nbsp
+  <img src="https://png2.kisspng.com/sh/fd41531cdef9cc8d3f720706853053a3/L0KzQYm3UsI5N6ppiZH0aYP2gLBuTgRzd6FtkZ9wb3znPb7shPFtNZJ8eeRtLYD1ecvsTgZma6V0ip9wb3zndbA0lQJweJlARadqOUa7dLe3hckybGUARqk9OUC3RYm6UcUyQWk2TqMCNkm4RIq1kP5o/kisspng-trophy-gold-medal-award-prize-vector-golden-trophy-5a968df0e91d49.7490458315198161769549.png" alt="trophy" style="width:75px">
 <% end %>
 <% if @game_result == "lose" %>
-  The computer is the winner
+  <img src="https://png2.kisspng.com/sh/fd41531cdef9cc8d3f720706853053a3/L0KzQYm3UsI5N6ppiZH0aYP2gLBuTgRzd6FtkZ9wb3znPb7shPFtNZJ8eeRtLYD1ecvsTgZma6V0ip9wb3zndbA0lQJweJlARadqOUa7dLe3hckybGUARqk9OUC3RYm6UcUyQWk2TqMCNkm4RIq1kP5o/kisspng-trophy-gold-medal-award-prize-vector-golden-trophy-5a968df0e91d49.7490458315198161769549.png" alt="trophy" style="width:75px"> &nbsp
+  The computer is the winner! &nbsp
+  <img src="https://png2.kisspng.com/sh/fd41531cdef9cc8d3f720706853053a3/L0KzQYm3UsI5N6ppiZH0aYP2gLBuTgRzd6FtkZ9wb3znPb7shPFtNZJ8eeRtLYD1ecvsTgZma6V0ip9wb3zndbA0lQJweJlARadqOUa7dLe3hckybGUARqk9OUC3RYm6UcUyQWk2TqMCNkm4RIq1kP5o/kisspng-trophy-gold-medal-award-prize-vector-golden-trophy-5a968df0e91d49.7490458315198161769549.png" alt="trophy" style="width:75px">
 <% end %>
-
+</h3>
 
 
 </body>
