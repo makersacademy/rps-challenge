@@ -18,8 +18,8 @@ describe Player do
 
   describe '#self.instance' do
     it 'allows us to access an instance of Player' do
-      player = Player.create("Chris")
-      expect(Player.instance).to eq player
+      new_player = Player.create("Chris")
+      expect(Player.instance).to eq new_player
     end
   end
 
