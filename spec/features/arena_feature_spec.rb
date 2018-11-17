@@ -2,7 +2,7 @@
 feature 'arena page' do
   scenario "Moves showdown" do
     visit "/"
-    fill_in('player', with: 'Cesare')
+    fill_in('name', with: 'Cesare')
     page.select "rock" , from: "move"
     click_on "Play!"
     expect(page).to have_content("Rock Paper Scissors")
