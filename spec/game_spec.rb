@@ -1,5 +1,4 @@
 require 'game'
-require 'player'
 
 describe Game do
   let(:player) { double :player }
@@ -18,5 +17,5 @@ describe Game do
       game.add_player(ai_player)
       expect(game.players).to include ai_player
     end
-   end
+  end
 end
