@@ -3,7 +3,7 @@ require './lib/player'
 require './lib/game'
 
 
-# class RPS < Sinatra::Base
+class RPS < Sinatra::Base
 enable :sessions
 
 get '/' do
@@ -29,4 +29,4 @@ post '/result' do
   erb :result
 end
 
-# end
+end
