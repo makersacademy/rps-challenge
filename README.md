@@ -1,7 +1,6 @@
 # RPS Challenge
 
-The Task
-----
+## The Task
 
 The task was to design a _Rock, Paper, Scissors_ game, following these user stories:
 
@@ -15,8 +14,22 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-![](./images/home.png)
+## Downloading and setting up the repo
 
-![](./images/play.png)
+```sh
+$ git clone git@github.com:nepeanwjdw/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup config.ru
+```
 
-![](./images/result)
+## What to expect
+
+Enter your name
+![Home](./images/home.png)
+
+Choose your weapon
+![Play](./images/play.png)
+
+See the result. Options on the sidebar will let you play again or return to the home page
+![Result](./images/result.png)
