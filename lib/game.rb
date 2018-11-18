@@ -2,9 +2,9 @@ class Game
 
   attr_reader :p1, :p2
 
-  def initialize(p1,p2)
-    @p1 = p1
-    @p2 = p2
+  def initialize(player1, player2)
+    @p1 = player1
+    @p2 = player2
   end
 
   def result
@@ -31,8 +31,8 @@ class Game
     @p2 = player
   end
 
-  def self.create(p1, p2)
-    @game = Game.new(p1, p2)
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
   end
 
   def self.instance

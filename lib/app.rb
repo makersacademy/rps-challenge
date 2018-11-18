@@ -15,9 +15,10 @@ class Rps < Sinatra::Base
   end
 
   post "/choice" do
-    player1 = Player.new(params[:name_1],params[:choice_1])
+    p "Hello!"
+    player1 = Player.new(params[:name_1], params[:choice_1])
     player2 = Player.new()
-    @game = Game.create(player1,player2)
+    @game = Game.create(player1, player2)
     if params[:opponent] == "human"
       redirect "/get-opponent"
     else
@@ -30,7 +31,7 @@ class Rps < Sinatra::Base
   end
 
   post "/add-enemy" do
-    player2 = Player.new(params[:name_2],params[:choice_2])
+    player2 = Player.new(params[:name_2], params[:choice_2])
     @game.add_player(player2)
     redirect "/result"
   end

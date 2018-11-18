@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <!-- <script type="text/javascript" src="multi.js"></script> -->
+  <style media="screen">
+    h1   {color: pink;}
+  </style>
 </head>
 
 <body bgcolor="#C0DCFF">
   <div align="center">
     <br>
     <br>
-    <h1>Welcome! Pick your poison!</h1>
+    <h1 style="color:">Welcome! Pick your poison!</h1>
     <form action="/choice" method="post">
       <h3>Please enter your name!</h3>
       <input type="text" name="name_1" placeholder="e.g. Henry">
@@ -25,7 +27,7 @@
       <input type="radio" name="choice_1" value="scissors"> Scissors
       <input type="radio" name="choice_1" value="lizard"> Lizard
       <input type="radio" name="choice_1" value="spock"> Spock
-      <button type="Submit" value="Submit">Fight!</button>
+      <button type="Submit" value="submit">Fight!</button>
     </form>
   </div>
 </body>
