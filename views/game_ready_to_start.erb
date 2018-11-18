@@ -1,9 +1,13 @@
 <h2><%= @player_1_name %> - Select a move - rock, paper or scissors</h2>
-<select>
+
+<!-- Getting dropdown value to use is causing issues - to look at -->
+<!-- <select>
   <option value="rock">Rock</option>
   <option value="paper">Paper</option>
   <option value="scissors">Scissors</option>
-</select>
+</select> -->
+
 <form action="/gameresult" method="get">
+<input type="text" name="user_move">
 <input type="submit" value="Submit">
 </form>
