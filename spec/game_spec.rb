@@ -29,18 +29,18 @@ describe Game do
   end
 
   describe '#result' do
-    it 'decides a win' do
+    it 'player 1 win' do
       player_1 = double(:player_1, weapon: :rock)
       player_2 = double(:player_2, weapon: :scissor)
       game = described_class.new(player_1, player_2)
-      expect(game.result(player_1.weapon, player_2.weapon)).to eq :win
+      expect(game.result(player_1.weapon, player_2.weapon)).to eq :player_1_win
     end
 
-    it 'decises a loss' do
+    it 'player 2 win' do
       player_1 = double(:player_1, weapon: :rock)
       player_2 = double(:player_2, weapon: :paper)
       game = described_class.new(player_1, player_2)
-      expect(game.result(player_1.weapon, player_2.weapon)).to eq :loss
+      expect(game.result(player_1.weapon, player_2.weapon)).to eq :player_2_win
     end
 
     it 'decises a draw' do

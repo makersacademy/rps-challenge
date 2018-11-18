@@ -4,6 +4,7 @@ class ComputerPlayer
 
   def initialize(weapons = Weapon::WEAPONS)
     @weapons = weapons
+    @name = "Computer"
   end
 
   def choose_weapon

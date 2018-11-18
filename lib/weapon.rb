@@ -9,5 +9,4 @@ class Weapon
     @weapons = weapons
   end
 
-
 end
