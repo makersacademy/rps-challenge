@@ -7,31 +7,31 @@ describe Game do
       srand(1)
       game = Game.new('Leon', 'computer')
       game.move('Paper', 'computer')
-      expect(game.win_conditions).to eq "Drawn"
+      expect(game.result).to eq "Its a draw!"
     end
     it 'Returns a result vs computer (computer = rock)' do
       srand(2)
       game = Game.new('Leon', 'computer')
       game.move('Paper', 'computer')
-      expect(game.win_conditions).to eq "Won"
+      expect(game.result).to eq "Leon has Won!"
     end
-    it 'Returns a result vs computer (computer = sissors)' do
+    it 'Returns a result vs computer (computer = Scissors)' do
       srand(3)
       game = Game.new('Leon', 'computer')
       game.move('Paper', 'computer')
-      expect(game.win_conditions).to eq "Lost"
+      expect(game.result).to eq "Computer has Won!"
     end
   end
   describe 'vs_p2' do
     it 'Returns a result vs p2 (p1 win)' do
       game = Game.new('Leon', 'Alfred')
       game.move('Paper', 'Rock')
-      expect(game.win_conditions).to eq "Won"
+      expect(game.result).to eq "Leon has Won!"
     end
     it 'Returns a result vs p2 (draw)' do
       game = Game.new('Leon', 'Alfred')
       game.move('Paper', 'Paper')
-      expect(game.win_conditions).to eq "Drawn"
+      expect(game.result).to eq "Its a draw!"
     end
   end
   describe '#result_message' do

@@ -5,7 +5,6 @@ require_relative 'lib/game.rb'
 Capybara.app
 
 class Rps < Sinatra::Base
-enable :sessions
 
   before do
     @game = Game.instance
@@ -27,7 +26,7 @@ enable :sessions
     @game = Game.create(params[:p1_name], 'computer')
     redirect '/move_1_player'
   end
-  #
+
   post '/2_player_name' do
     @game = Game.create(params[:p1_name], params[:p2_name])
     redirect '/move_2_player'
@@ -36,13 +35,13 @@ enable :sessions
   get '/move_1_player' do
     erb :moveoneplayer
   end
-  #
+
   get '/move_2_player' do
     erb :movetwoplayer
   end
 
   post '/calculating_p1' do
-    @game.move(params[:select],'computer')
+    @game.move(params[:select], 'computer')
     redirect '/result'
   end
 
