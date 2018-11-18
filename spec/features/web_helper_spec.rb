@@ -19,3 +19,11 @@ def sign_in_and_select_paper
   select 'Paper', from: 'weapon'
   click_button 'Play!'
 end
+
+def sign_in_and_select_scissor
+  visit '/'
+  fill_in :name, with: 'Chris'
+  click_button 'Go!'
+  select 'Scissor', from: 'weapon'
+  click_button 'Play!'
+end
