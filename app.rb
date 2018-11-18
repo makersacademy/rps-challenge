@@ -29,7 +29,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/weapon' do
     @game.player_1.add_weapon(Weapon.create(params[:weapon]))
-    @game.winner(@game.player_1.weapon.type, @game.player_2.weapon)
+    @game.player_2.add_weapon(Weapon.create(@game.player_2.choose_weapon))
+    @game.winner(@game.player_1.weapon.type, @game.player_2.weapon.type)
     redirect '/result'
   end
 

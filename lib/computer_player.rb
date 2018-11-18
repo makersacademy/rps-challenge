@@ -1,6 +1,6 @@
 class ComputerPlayer
 
-  attr_reader :weapons, :name
+  attr_reader :weapons, :name, :weapon
 
   def initialize(name = "Computer")
     @name = name
@@ -15,8 +15,12 @@ class ComputerPlayer
     @computer_player
   end
 
-  def weapon
+  def choose_weapon
     @weapons.sample
+  end
+
+  def add_weapon(weapon)
+    @weapon = weapon
   end
 
 end
