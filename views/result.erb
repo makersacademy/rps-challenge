@@ -5,7 +5,8 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <h1>You chose <%=@player.weapon.type%>!</h1>
-    <h1>The computer chose <%=@computer_player.weapon%>!</h1>
+    <h1>You chose <%=@game.player_1.weapon.type%>!</h1>
+    <h1>The computer chose <%=@computer_weapon%>!</h1>
+    <h1><%=@game.the_winner.name%> wins!</h1>
   </body>
 </html>

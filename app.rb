@@ -2,11 +2,14 @@ require 'sinatra/base'
 require_relative './lib/player.rb'
 require_relative './lib/weapon.rb'
 require_relative './lib/computer_player'
+require_relative './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
 
   before do
     @player = Player.instance
+    @game = Game.instance
+    @computer_player = ComputerPlayer.instance
   end
 
   get '/' do
@@ -14,7 +17,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/form' do
+    @computer_player = ComputerPlayer.create
     @player = Player.create(params[:name])
+    @game = Game.create(@player, @computer_player)
     redirect '/play'
   end
 
@@ -23,12 +28,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/weapon' do
-    @player.add_weapon(Weapon.create(params[:weapon]))
+    @game.player_1.add_weapon(Weapon.create(params[:weapon]))
+    @game.winner(@game.player_1.weapon.type, @game.player_2.weapon)
     redirect '/result'
   end
 
   get '/result' do
-    @computer_player = ComputerPlayer.new
     erb :result
   end
 
