@@ -1,3 +1,5 @@
 <h1> <%= @game.player_1.name %> choose <%=@game.player_1.weapon %> </h1>
-<h1> Computer choose <%= @game.computer_weapon %> </h1>
-<h1> Winner is <%= @game.winner %> </h1>
+<h1> <%= @game.player_2.name %> choose <%=@game.player_2.weapon %> </h1>
+<h1> Winner is: <%= @game.winner_name%> </h1>
+<h1> <%= @game.player_1.name %> :  <%= @game.player_1.score %></h1>
+<h1> <%= @game.player_2.name %> :  <%= @game.player_2.score %></h1>

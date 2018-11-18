@@ -8,7 +8,7 @@ describe Player do
   end
 
   it 'returns the weapon' do
-    expect(luisa.weapon).to eq 'Rock'
+    expect(luisa.weapon).to eq :Rock
   end
 
 end

@@ -1,27 +1,39 @@
+require './lib/player'
+
 class Game
 
-  attr_reader :player_1, :computer_weapon, :winner
-  WEAPONS = ["Rock", "Scissors", "Paper"]
+  attr_reader :player_1, :player_2, :winner_name
+  WEAPON_WIN = {
+      Rock: :Scissors,
+      Scissors: :Paper,
+      Paper: :Rock
+  }
 
-  def initialize(player_1)
+  def initialize(player_1, player_2)
     @player_1 = player_1
-    @computer_weapon = "Paper"
-    @winner = "Computer"
+    @player_2 = player_2
+    @winner_name = nil
   end
 
-  def computer_random_choice
-    @computer_weapon = WEAPONS.sample
+  # Return nil if it's a draw otherwise return the winner
+  def resolve_winner(player_1_weapon, player_2_weapon)
+
+    if player_1_weapon == player_2_weapon
+      nil
+    else
+      WEAPON_WIN[player_1_weapon] == player_2_weapon ? @player_1 : @player_2
+    end
+
   end
 
-  def players_index_location
-    @computer_weapon = computer_random_choice
-    @computer_index = WEAPONS.index(@computer_weapon)
-    @player_1_index = WEAPONS.index(@player_1.weapon)
+  def play
+    @winner = resolve_winner(@player_1.weapon, @player_2.weapon)
+    if @winner.nil?
+      @winner_name = "It's a draw"
+    else
+      @winner.add_to_score
+      @winner_name = @winner.name
+    end
   end
 
-  def play_game
-    players_index_location
-    return @winner = @player_1.name if WEAPONS[@computer_index - 1] == WEAPONS[@player_1_index]
-    return @winner = "It's a draw" if @computer_index == @player_1_index
-  end
 end
