@@ -13,7 +13,7 @@ class Game
     @player_name = player_name
     @player_move = player_move
     @pc_move = PC_MOVES.sample
-    @match = { player_move => pc_move }
+    @match = { player_move.to_sym => pc_move }
   end
 
   def self.create(player_name, player_move)
@@ -25,23 +25,11 @@ class Game
   end
 
   def draw
-    player_move == pc_move ? au_pair : showdown
+    player_move.to_sym == pc_move ? "It's a Draw!" : showdown
   end
 
   def showdown
-    COMBINATIONS.include?(match) ? player_wins : pc_wins
-  end
-
-  def au_pair
-    "It's a draw!"
-  end
-
-  def player_wins
-    "Player wins!"
-  end
-
-  def pc_wins
-    "PC wins!"
+    COMBINATIONS.include?(match) ? "#{player_name} Wins!" : "PC Wins!"
   end
 
 end

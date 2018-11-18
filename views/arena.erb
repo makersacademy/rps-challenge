@@ -1,18 +1,8 @@
 <body style="background-color:lightgreen;">
-<center><h1><font face="century gothic">  Rock Paper Scissors </font></h1></center><br>
+<center><h1><font face="century gothic">  Rock Paper Scissors </font></h1></center>
 <center><img src="https://i1.wp.com/www.laserfiche.com/content/uploads/2016/01/shutterstock_284660570.jpg?zoom=2&resize=524%2C349&ssl=1" style="width:400px;height:200px;"></center><br>
-<center><h1><font face="century gothic"> <%=@RPSgame.player_name%> Move: </font></h1></center>
-<center><h2><font face="century gothic"> - <%=@RPSgame.player_move%> - </font></h2></center>
-<br><br>
-<center><h1><font face="century gothic"> PC Move: </font></h1></center>
-<center><h2><font face="century gothic"> - <%=@RPSgame.pc_move%> - </font></h2></center>
-<br><br>
-
-
-<% if @RPSgame.player_wins %>
-<% redirect '/player-wins' %>
-<% elsif @RPSgame.pc_wins %>
-<% redirect '/PC-wins' %>
-<% else %>
-<% redirect '/au-pair' %>
-<% end %>
+<center><h2><font face="century gothic"> <%=@RPSgame.player_name%> plays with: <%=@RPSgame.player_move%></font></h2></center>
+<center><h2><font face="century gothic"> PC plays with: <%=@RPSgame.pc_move%> </font></h2></center><br>
+<center><h1> - <%=@RPSgame.draw%> - </h1></center><br>
+<center><h3><font face="century gothic"><a href="/">One more round?</a></font></h3></center>
+</body>
