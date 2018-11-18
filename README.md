@@ -15,8 +15,8 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-![](https://www.dropbox.com/s/26f80omflagnpwj/Screen%20Shot%202018-11-18%20at%2021.56.37.png?dl=1)
+![](./images/home.png)
 
-![](https://www.dropbox.com/s/y5rk2wh66gjym2b/Screen%20Shot%202018-11-18%20at%2021.57.28.png?dl=1 "Play")
+![](./images/play.png)
 
-![](https://www.dropbox.com/s/aynviqxyj3en4zw/Screen%20Shot%202018-11-18%20at%2021.58.24.png?dl=1 "Result")
+![](./images/result)
