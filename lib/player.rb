@@ -5,7 +5,7 @@ class Player
     @name = name
   end
 
-  def choice(weapon = ['rock', 'paper', 'scissors'].sample)
+  def choice(weapon = ['rock', 'paper', 'scissors', 'lizard', 'spock'].sample)
     @weapon = weapon
   end
 end
