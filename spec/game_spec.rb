@@ -25,8 +25,8 @@ describe Game do
 	describe '#Getting a winner' do
 		it 'Selecting a winner through a random selection of weapon' do
 			game.player_weapon = :rock
-			game.computer_weapon = :paper
-			expect(game.result).to eq :lose
+			game.computer_weapons
+			expect(game.result).to eq(:lose).or eq(:win).or eq(:tie)
 		end
 	end
 end

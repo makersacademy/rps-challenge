@@ -20,6 +20,7 @@ class Game
 	end
 
 	def result
+		computer_weapons
 		@final = RULES[@player_weapon][@computer_weapon]
 	end
 end
