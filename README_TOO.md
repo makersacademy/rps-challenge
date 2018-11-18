@@ -5,9 +5,8 @@
 This project asks for a user to be able to play a game of Rock, Paper, Scissors with a computer as an opponent.
 This is the Week 3 challenge, which followed on from a week focusing on the basics of how the web works and creation of a web application using Sinatra, Ruby, HTML and CSS.
 
-To complete this challenge I used the MVC model in order to keep code clean and readable.  Due to some personal issues I submitted an incomplete program previously.
+To complete this challenge I used the MVC model in order to keep code clean and readable.
 
-This is the updated version, which meets the initial user request.
 
 ## Getting started
 
