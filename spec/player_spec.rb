@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  let(:luisa) { Player.new('Luisa', 'Rock') }
+  let(:luisa) { Player.new('Luisa', :Rock) }
 
   it 'Should return player name' do
     expect(luisa.name).to eq 'Luisa'
