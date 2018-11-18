@@ -6,12 +6,6 @@ describe Game do
   let(:ai_player) { double :player, name: "Computer" }
   let(:game) { Game.new(karen) }
 
-  describe "initialize" do
-    it "creates an instance of Game with a player" do
-      expect(game.players).to include karen
-    end
-  end
-
   describe "add_player" do
     it "adds another player to the Game" do
       game.add_player(ai_player)

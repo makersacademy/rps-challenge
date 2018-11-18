@@ -5,10 +5,6 @@ describe Computer do
   let(:weapon) { double :weapon }
 
   describe "initialize" do
-    it "creates an instance of the Computer class" do
-      expect(computer.instance_of? Computer).to be true
-    end
-
     it "records the name variable" do
       expect(computer.name).to eq "Computer"
     end
