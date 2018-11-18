@@ -1,1 +1,17 @@
-<h1>Welcome, <%=@registered_player.name%></h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <link href='/style.css' rel="stylesheet" type="text/css" /> -->
+  </head>
+  <body>
+    <h1>Welcome, <%=@registered_player.name%></h1>
+
+    <h2>To play, please select a weapon</h2>
+
+    <form action="/play" method="post">
+      <button type="submit" name="Rock" value="Rock">Rock</button>
+      <button type="submit" name="Paper" value="Paper">Paper</button>
+      <button type="submit" name="Scissors" value="Scissors">Scissors</button>
+    </form>
+  </body>
+</html>
