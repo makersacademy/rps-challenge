@@ -6,8 +6,9 @@ class Game
 		scissors: {scissors: :tie,   paper: :win,  rock: :lose}
 	}
 	attr_accessor :name_player, :player_weapon, :computer_weapon, :final
-	def initialize(name_player)
+	def initialize(name_player, computer_weapon = WEAPONS.sample)
 		@name_player = name_player
+		@computer_weapon = computer_weapon
 	end
 
 	def player_weapons(player_weapon)
@@ -19,7 +20,6 @@ class Game
 	end
 
 	def result
-		computer_weapons
 		@final = RULES[@player_weapon][@computer_weapon]
 	end
 end

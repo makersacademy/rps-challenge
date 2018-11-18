@@ -12,7 +12,7 @@ describe Game do
 
 	describe '#player_weapon' do
 		it 'Choose a weapon' do
-			expect(game.player_weapons(player_weapon)).to eq player_weapon
+			expect(game.player_weapons(:rock)).to eq :rock
 		end
 	end
 
