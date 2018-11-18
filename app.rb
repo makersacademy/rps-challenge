@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative 'lib/player'
+require_relative 'lib/game'
 
 class App < Sinatra::Base
 
@@ -6,19 +8,22 @@ class App < Sinatra::Base
   enable :static
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
 
   post '/name' do
-    session[:player_name] = params[:player_name]
-    # player = Player.new(params[:player_1_name])
-    # @game = Game.create(player, enemy)
+    # session[:player_name] = params[:player_name]
+    player = Player.new(params[:player_name])
+    @game = Game.create(player)
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name].upcase
     erb :play
   end
 
