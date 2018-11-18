@@ -3,7 +3,7 @@ require 'player'
 describe Player do
   it "can creare a person and store a name" do
     player = Player.create("Ajay")
-    expect(player.player).to eq "Ajay"
+    expect(player.name).to eq "Ajay"
   end
 
   it "can use #self.instance to access it's name" do

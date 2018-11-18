@@ -1,32 +1,32 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/player'
 
 class Rps < Sinatra::Base
   enable :sessions
-
-  before do
-    @game = Game.create
-  end
 
   get '/' do
     erb :name
   end
 
+  before do
+    @player = Player.instance
+    @game = Game.instance
+  end
+
   post '/start' do
-    $game = Game.new
-    $player_1 = params[:player_1]
-    @player_1 = $player_1
+    @player = Player.create(params[:player_1])
+    @game = Game.create
     erb :start
   end
 
-  post '/result' do
+  before do
+    @player = Player.instance
     @game = Game.instance
-    @game = $game
-    @player_1 = $player_1
-    $player_1_move = params[:move]
-    @player_1_move = $player_1_move
-    $winner = @game.winner(@player_1_move, @game.cpu_move)
-    @winner = $winner
+  end
+
+  post '/result' do
+    @player.move = params[:move]
     erb :result
   end
 

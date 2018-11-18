@@ -13,11 +13,11 @@
   <body>
     <center>
       <div>
-        <h1><%= @player_1%> chose <%= @player_1_move %></h1>
+        <h1><%= @player.name%> chose <%= @player.move %></h1>
         <br>
         <h1> CPU chose <%= @game.cpu_move %></h1>
         <br>
-        <h1>You <%= @winner %></h1>
+        <h1>You <%= @game.winner(@player.move, @game.cpu_move) %></h1>
       </div>
       <br>
       <a href="/">
