@@ -4,7 +4,7 @@ class Game
             paper: :rock,
             scissor: :paper }
 
-  attr_reader :player_1, :player_2
+  attr_reader :player_1, :player_2, :rules
 
   def initialize(player_1, player_2, rules = RULES)
     @player_1 = player_1
@@ -21,9 +21,9 @@ class Game
   end
 
   def result(player_1_weapon, player_2_weapon)
-    if @rules[player_1_weapon] == player_2_weapon
+    if rules[player_1_weapon] == player_2_weapon
       :player_1_win
-    elsif @rules[player_2_weapon] == player_1_weapon
+    elsif rules[player_2_weapon] == player_1_weapon
       :player_2_win
     else
       :draw

@@ -3,8 +3,8 @@ require 'game'
 describe Game do
 
   subject(:game) { described_class.new(human, computer) }
-  let(:human)    { double(:human)  }
-  let(:computer) { double(:computer)  }
+  let(:human)    { double(:human) }
+  let(:computer) { double(:computer) }
 
   describe '#self.create' do
     it 'created a new instance of self' do

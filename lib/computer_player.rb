@@ -8,7 +8,7 @@ class ComputerPlayer
   end
 
   def choose_weapon
-    @weapons.sample
+    weapons.sample
   end
 
   def add_weapon(weapon)
