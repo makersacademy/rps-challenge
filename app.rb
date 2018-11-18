@@ -28,22 +28,27 @@ class App < Sinatra::Base
   end
 
   get '/rock' do
+    @game.player.rock
     redirect '/play'
   end
 
   get '/paper' do
+    @game.player.paper
     redirect '/play'
   end
 
   get '/scissors' do
+    @game.player.scissors
     redirect '/play'
   end
 
   get '/lizard' do
+    @game.player.lizard
     redirect '/play'
   end
 
   get '/spock' do
+    @game.player.spock
     redirect '/play'
   end
 

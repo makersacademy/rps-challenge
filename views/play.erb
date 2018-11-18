@@ -51,5 +51,9 @@
     <a href="/lizard"><img class="weapon" src="<%= url('/lizard.png') %>" /></a>
     <a href="/spock"><img class="weapon" src="<%= url('/spock.png') %>" /></a>
 
+    <% if @game.player.choice != '' %>
+      <p class="head2"><%=@game.player.name.upcase%> PLAYS <%=@game.player.choice.upcase%></p>
+    <% end %>
+
   </body>
 </html>
