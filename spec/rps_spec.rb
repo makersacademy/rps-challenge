@@ -16,5 +16,12 @@ describe RPS do
     end
   end
 
-  
+  describe '#game'do
+    it 'returns the player\'s choice' do
+      expect(subject.players_choice).to eq :rock
+    end
+  end
+
+
+
 end
