@@ -6,8 +6,8 @@ describe ComputerPlayer do
 
   describe '#choose_weapon' do
     it 'randomly chooses a wepaon' do
-      allow(computer_player.weapons).to receive(:sample).and_return("paper")
-      expect(computer_player.choose_weapon).to eq "paper"
+      allow(computer_player.weapons).to receive(:sample).and_return(:paper)
+      expect(computer_player.choose_weapon).to eq :paper
     end
   end
 
