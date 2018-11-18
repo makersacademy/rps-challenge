@@ -1,20 +1,21 @@
+require_relative 'player'
 require_relative 'robot'
 
 class Game
   def self.see_player_1
-    @player_1
+    @player_1.name
   end
 
   def self.see_player_2
-    @player_2
+    @player_2.name
   end
 
   def self.start(name_1, name_2)
-    name_2 = "The Robot" if name_2 == ""
-    @player_1 = name_1
-    @player_2 = name_2
+    @player_1 = Player.new(name_1)
+    @player_2 = Player.new(name_2)
     @moves = ['Rock', 'Paper', 'Scissors']
-    @outcomes = ["No-one wins!", "#{@player_1} wins!", "#{@player_2} wins!"]
+    @outcomes =
+      ["No-one wins!", "#{@player_1.name} wins!", "#{@player_2.name} wins!"]
     @result = {}
   end
 
