@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock-Paper-Scissors-Lizard-Spock</title>
+
+    <style>
+      body {
+        background-color: #20242A;
+        text-align: center;
+        color: white;
+        font-family: "Verdana", Geneva, sans-serif;
+        font-size: 1.5em;
+      }
+      .head1 {
+        font-size: 2.5em;
+        letter-spacing: 8px;
+      }
+      .head2 {
+        font-size: 1.5em;
+        letter-spacing: 5px;
+      }
+      .weapon {
+        /* padding: 8px; */
+        /* display: block; */
+        /* float: left; */
+        transition: 0.50s;
+        -webkit-transition: 0.50s;
+        -moz-transition: 0.50s;
+        -ms-transition: 0.50s;
+        -o-transition: 0.50s;
+        /* float: left; */
+      }
+      .weapon:hover {
+        transition: 0.50s;
+        -webkit-transition: 0.50s;
+        -moz-transition: 0.50s;
+        -ms-transition: 0.50s;
+        -o-transition: 0.50s;
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    </style>
+
+  </head>
+  <body>
+    <p class="head1"><%=@player_name%></p>
+    <p class="head2">CHOOSE YOUR WEAPON:</p>
+    <a href="/rock"><img class="weapon" src="<%= url('/rock.png') %>" /></a>
+    <a href="/paper"><img class="weapon" src="<%= url('/paper.png') %>" /></a>
+    <a href="/scissors"><img class="weapon" src="<%= url('/scissors.png') %>" /></a>
+    <a href="/lizard"><img class="weapon" src="<%= url('/lizard.png') %>" /></a>
+    <a href="/spock"><img class="weapon" src="<%= url('/spock.png') %>" /></a>
+
+  </body>
+</html>
