@@ -14,17 +14,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-    <title>Give me your NAME!</title>
+    <title>Choice your weapon!</title>
   </head>
   <body>
     <center>
-      <form action="/name" method="post" style='border: 3px solid red;margin-top: 1%;margin-left: 4%;margin-right: 4%'>
+      <form action="/choice" method="post" style='border: 3px solid red;margin-top: 1%;margin-left: 4%;margin-right: 4%'>
         <div class="form-row">
           <div class="col">
-            <input name="name" type="text" class="form-control" placeholder="Your name">
+            <h1>Hey <%= @name_player%>!</h1>
+          </div>
+          <div class="col">
+          	<label>Choose your weapon!</label>
+           <select name="your_choice" class="form-control">
+            <option selected>Select your option:</option>
+            <option value="rock">rock</option>
+            <option value="scissors">scissors</option>
+            <option value="paper">paper</option>
+          </select>
           </div>
         </div>
-       <input type="submit" class="btn btn-primary" style="margin-top: 1%" value="Submit">
+       <input type="submit" class="btn btn-primary" style="margin-top: 1%" value="Play">
       </form>
     </center>
   </body>

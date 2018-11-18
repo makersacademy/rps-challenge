@@ -7,14 +7,24 @@ class RPSWEB < Sinatra::Base
 		erb :index
 	end
 
+	post '/name' do
+		$game = Game.new(params[:name])
+		redirect '/play'
+	end
+
+	get '/play' do
+		@name_player = $game.name_player
+		erb(:play)
+	end
+
 	post '/choice' do
-		$game = Game.new(params[:name],params[:choice])
+		$game.player_weapons(params[:your_choice])
 		redirect '/result'
 	end
 
 	get '/result' do
-		@name_player = $game.name_player
-		@player_weapon = $game.player_weapon
+		@game = $game
+		@result = $game.result
 		erb(:result)
 	end
 end

@@ -1,6 +1,6 @@
-feature 'Enter names' do
-	scenario 'Submiting names' do
-		sign_in_and_play
-		expect(page).to have_content 'The result is .... You won'
+feature 'Enter name' do
+	scenario 'Submiting name' do
+		sign_in
+		expect(page).to have_content 'Hey Dave!'
 	end
 end
