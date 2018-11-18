@@ -1,5 +1,9 @@
 class Game
 
+  RULES = { rock: :scissor,
+            paper: :rock,
+            scissor: :paper }
+
   attr_reader :player_1, :player_2
 
   def initialize(player_1, player_2)
@@ -15,10 +19,10 @@ class Game
     @game
   end
 
-  def result(player_1, player_2)
-    if player_1 == :rock && player_2 == :scissor || player_1 == :scissor && player_2 == :paper || player_1 == :paper && player_2 == :rock
+  def result(player_1_weapon, player_2_weapon)
+    if RULES[player_1_weapon] == player_2_weapon
       :player_1_win
-    elsif player_2 == :rock && player_1 == :scissor || player_2 == :scissor && player_1 == :paper || player_2 == :paper && player_1 == :rock
+    elsif RULES[player_2_weapon] == player_1_weapon
       :player_2_win
     else
       :draw
