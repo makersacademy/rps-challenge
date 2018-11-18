@@ -15,17 +15,17 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/move' do
+    Game.record_move params[:move]
+    redirect Game.next_page
+  end
+
   get '/result' do
     erb :result
   end
 
-  post '/result' do
-    Game.play_a_round params[:move]
-    redirect '/result'
-  end
-
   get '/restart' do
     Game.begin_round
-  redirect Game.next_page
+    redirect Game.next_page
   end
 end

@@ -1,14 +1,14 @@
 describe Game do
-  context "single player" do
+  context "human vs robot" do
     before(:each) { Game.start "Pat Baker", "" }
 
     it "stores the player's name" do
       expect(Game.see_player_1).to eq "Pat Baker"
     end
 
-    context "#play_a_round" do
+    context "#record_move" do
       it "generates a move for the Robot opponent" do
-        Game.play_a_round('Rock')
+        Game.record_move('Rock')
         expect(Game.see_result[:player_2_move]).not_to be nil
       end
     end
@@ -36,11 +36,31 @@ describe Game do
       expect(Game.see_player_2).to eq "The Robot"
     end
 
-    context '#play_a_round' do
-      it "generates a move for each robot player" do
-        Game.play_a_round
-        expect(Game.see_result[:player_1_move]).not_to be nil
-        expect(Game.see_result[:player_2_move]).not_to be nil
+    it "calculates the result without requesting a move" do
+      expect(Game.see_result[:player_1_move]).not_to be nil
+      expect(Game.see_result[:player_2_move]).not_to be nil
+      expect(Game.see_result[:outcome]).not_to be nil
+    end
+  end
+
+  context "human vs human" do
+    before(:each) { Game.start("Alex Kidd", "Stevie Dult") }
+
+    it "has both players" do
+      expect(Game.see_player_1).to eq "Alex Kidd"
+      expect(Game.see_player_2).to eq "Stevie Dult"
+    end
+
+    context "#record_move" do
+      it "registers player 1's move" do
+        Game.record_move('Rock')
+        expect(Game.see_result[:player_1_move]).to eq "Rock"
+      end
+
+      it "registers player 2's move after player 1's" do
+        Game.record_move('Rock')
+        Game.record_move('Paper')
+        expect(Game.see_result[:player_2_move]).to eq "Paper"
       end
     end
   end
