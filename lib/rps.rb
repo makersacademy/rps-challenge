@@ -5,12 +5,13 @@ class RPS
   WEAPONS = [ :rock, :paper, :scissors]
   RULES = [  {rock: :scissors}, {paper: :rock},{ scissors: :paper}]
 
-  attr_reader :choice, :random, :game, :player
+  attr_reader :players_choice, :random, :game, :player
 
   def initialize(player = Player.new)
     @player = player
     @random = WEAPONS.sample
-    @game = { choice => random }
+    @players_choice = @player.choice
+    @game = { players_choice => random }
   end
 
   def play
