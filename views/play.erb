@@ -12,7 +12,11 @@
         font-family: "Verdana", Geneva, sans-serif;
         font-size: 1.5em;
       }
+      span {
+        color: orange;
+      }
       .head1 {
+        color: orange;
         font-size: 2.5em;
         letter-spacing: 8px;
       }
@@ -55,6 +59,12 @@
     <% if @game.player.choice != '' %>
       <p class="head2"><%=@game.player.name.upcase%> PLAYS <%=@game.player.choice.upcase%></p>
       <p class="head2">YOUR ENEMY PLAYS <%=@game.enemy.choice.upcase%></p>
+      <p class="head2">RESULT: <span><%=@game.outcome[0]%></span></p>
+      <% if @game.outcome[0] == 'YOU WIN' %>
+        <p class = "head2">(<%=@game.player.choice.upcase%> <%=@game.outcome[1].upcase%> <%=@game.enemy.choice.upcase%>)</p>
+      <% elsif @game.outcome[0] == 'YOU LOSE' %>
+        <p class = "head2">(<%=@game.enemy.choice.upcase%> <%=@game.outcome[1].upcase%> <%=@game.player.choice.upcase%>)</p>
+      <% end %>
     <% end %>
 
   </body>

@@ -9,7 +9,7 @@ describe Enemy do
     it 'returns a random weapon' do
       subject.choose_weapon
       p subject.choice
-      expect(Game::WEAPONS).to include subject.choice
+      expect(Enemy::CHOICES).to include subject.choice
     end
   end
 
