@@ -9,7 +9,5 @@ describe Game do
       allow(game).to receive(:computer_weapon).and_return('Paper')
       expect(game.computer_weapon).to eq 'Paper'
     end
-
   end
-
 end
