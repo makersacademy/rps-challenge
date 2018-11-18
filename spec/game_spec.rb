@@ -1,29 +1,61 @@
 describe Game do
+  context "#current_player" do
+    it "returns the first player if human" do
+      Game.start("Player 1", "Player 2")
+      expect(Game.current_player).to eq "Player 1"
+    end
+
+    it "returns the second player if the first is a robot" do
+      Game.start("", "Player 2")
+      expect(Game.current_player).to eq "Player 2"
+    end
+
+    it "returns the second player if the first player has moved" do
+      Game.start("Player 1", "Player 2")
+      Game.record_move('Rock')
+      expect(Game.current_player).to eq "Player 2"
+    end
+  end
+
+  context "#begin_round" do
+    it "empties the result" do
+      Game.start("Player 1", "Player 2")
+      Game.record_move('Rock')
+      Game.record_move('Rock')
+      Game.begin_round
+      expect(Game.see_result).to eq({})
+    end
+  end
+
+  context "#next_page" do
+    it "returns '/play' when a player needs to move" do
+      Game.start("Player 1", "")
+      expect(Game.next_page).to eq "/play"
+    end
+
+    it "returns '/result' when an outcome has been calculated" do
+      Game.start("Player 1", "")
+      Game.record_move('Rock')
+      expect(Game.next_page).to eq "/result"
+    end
+  end
+
   context "human vs robot" do
-    before(:each) { Game.start "Pat Baker", "" }
+    before(:each) { Game.start("Pat Baker", "") }
 
     it "stores the player's name" do
       expect(Game.see_player_1).to eq "Pat Baker"
     end
 
     context "#record_move" do
+      it "records the player's move" do
+        Game.record_move('Rock')
+        expect(Game.see_result[:player_1_move]).to eq "Rock"
+      end
+
       it "generates a move for the Robot opponent" do
         Game.record_move('Rock')
         expect(Game.see_result[:player_2_move]).not_to be nil
-      end
-    end
-
-    context '#outcome' do
-      it "identifies when both moves are the same" do
-        expect(Game.outcome 'Rock', 'Rock').to eq "No-one wins!"
-      end
-
-      it "identifies when the first move wins" do
-        expect(Game.outcome 'Rock', 'Scissors').to eq "Pat Baker wins!"
-      end
-
-      it "identifies when the second move wins" do
-        expect(Game.outcome 'Rock', 'Paper').to eq "The Robot wins!"
       end
     end
   end
@@ -61,6 +93,26 @@ describe Game do
         Game.record_move('Rock')
         Game.record_move('Paper')
         expect(Game.see_result[:player_2_move]).to eq "Paper"
+      end
+    end
+
+    context "determining the outcome" do
+      it "identifies when both moves are the same" do
+        Game.record_move('Rock')
+        Game.record_move('Rock')
+        expect(Game.see_result[:outcome]).to eq "No-one wins!"
+      end
+
+      it "identifies when the first move wins" do
+        Game.record_move('Rock')
+        Game.record_move('Scissors')
+        expect(Game.see_result[:outcome]).to eq "Alex Kidd wins!"
+      end
+
+      it "identifies when the second move wins" do
+        Game.record_move('Rock')
+        Game.record_move('Paper')
+        expect(Game.see_result[:outcome]).to eq "Stevie Dult wins!"
       end
     end
   end
