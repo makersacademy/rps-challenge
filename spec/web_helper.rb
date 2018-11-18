@@ -17,3 +17,10 @@ def choose_scissors
   choose 'Scissors'
   click_button "Submit"
 end
+
+def choose_scissors_then_rock
+  choose 'Scissors'
+  click_button "Submit"
+  choose 'Rock'
+  click_button "Submit"
+end

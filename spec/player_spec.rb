@@ -11,4 +11,8 @@ describe Player do
     expect(Player.instance).to be_instance_of(Player)
   end
 
+  it "can store player 2's move and retrieve it" do
+    
+  end
+
 end

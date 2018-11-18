@@ -56,6 +56,19 @@ feature 'Playing rock, paper, scissors' do
       expect(page).to have_content 'Make your move Ryu'
     end
 
+    scenario 'player 1 and 2 moves can be stored and recalled' do
+      players = Player.create("Ryu", "Ken")
+      sign_in_two_player
+      choose_scissors_then_rock
+      expect(Player.instance.move).to eq "Scissors"
+    end
+
+    scenario 'player 1 and 2 moves can be stored and recalled' do
+      sign_in_two_player
+      choose_scissors_then_rock
+      expect(Player.instance.move2).to eq "Rock"
+    end
+
   end
 
 end

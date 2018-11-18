@@ -34,6 +34,14 @@ class Rps < Sinatra::Base
     erb :start_two_player
   end
 
+  post '/player_two_turn' do
+    @player = Player.create(params[:player_1], params[:player_2])
+    @player.move = params[:move]
+    @player.move2 = params[:move2]
+    @game = Game.create
+    erb :player_two_turn
+  end
+
   before do
     @player = Player.instance
     @game = Game.instance
@@ -42,6 +50,10 @@ class Rps < Sinatra::Base
   post '/result' do
     @player.move = params[:move]
     erb :result
+  end
+
+  post '/two_player_result' do
+    @player.move2 = params[:move2]
   end
 
   run! if app_file == $0
