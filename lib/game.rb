@@ -11,20 +11,24 @@ class Game
     if @p1.choice == @p2.choice
       "Draw!"
     elsif
-      @p1_guess == "scissors" && @p2_guess == "paper" ||
-      @p1_guess == "scissors" && @p2_guess == "lizard" ||
-      @p1_guess == "paper" && @p2_guess == "rock" ||
-      @p1_guess == "paper" && @p2_guess == "spock" ||
-      @p1_guess == "rock" && @p2_guess == "lizard" ||
-      @p1_guess == "rock" && @p2_guess == "scissors" ||
-      @p1_guess == "lizard" && @p2_guess == "spock" ||
-      @p1_guess == "lizard" && @p2_guess == "paper" ||
-      @p1_guess == "spock" && @p2_guess == "scissors" ||
-      @p1_guess == "spock" && @p2_guess == "rock"
+      @p1.choice == "scissors" && @p2.choice == "paper" ||
+      @p1.choice == "scissors" && @p2.choice == "lizard" ||
+      @p1.choice == "paper" && @p2.choice == "rock" ||
+      @p1.choice == "paper" && @p2.choice == "spock" ||
+      @p1.choice == "rock" && @p2.choice == "lizard" ||
+      @p1.choice == "rock" && @p2.choice == "scissors" ||
+      @p1.choice == "lizard" && @p2.choice == "spock" ||
+      @p1.choice == "lizard" && @p2.choice == "paper" ||
+      @p1.choice == "spock" && @p2.choice == "scissors" ||
+      @p1.choice == "spock" && @p2.choice == "rock"
       "#{@p1.name} wins!"
     else
       "#{@p2.name} wins!"
     end
+  end
+
+  def add_player(player)
+    @p2 = player
   end
 
   def self.create(p1, p2)

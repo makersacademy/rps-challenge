@@ -14,10 +14,24 @@ class Rps < Sinatra::Base
     erb :index
   end
 
-  get "/choice" do
+  post "/choice" do
     player1 = Player.new(params[:name_1],params[:choice_1])
     player2 = Player.new()
     @game = Game.create(player1,player2)
+    if params[:opponent] == "human"
+      redirect "/get-opponent"
+    else
+      redirect "/result"
+    end
+  end
+
+  get "/get-opponent" do
+    erb :opponent
+  end
+
+  post "/add-enemy" do
+    player2 = Player.new(params[:name_2],params[:choice_2])
+    @game.add_player(player2)
     redirect "/result"
   end
 
