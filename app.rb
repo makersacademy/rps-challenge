@@ -22,6 +22,26 @@ class App < Sinatra::Base
     erb :play
   end
 
+  get '/rock' do
+    redirect '/play'
+  end
+
+  get '/paper' do
+    redirect '/play'
+  end
+
+  get '/scissors' do
+    redirect '/play'
+  end
+
+  get '/lizard' do
+    redirect '/play'
+  end
+
+  get '/spock' do
+    redirect '/play'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 
