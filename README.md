@@ -15,10 +15,15 @@ The user stories were simple - add the functionality to have a 'name' and then b
 
 I mapped out my approach, with a focus on the user stories and bonus challenges. In my design, I started on a simple one player, rps-3 design, but ensured that this was able to  be simply scaled up for heightened functionality. Once completed, I reformatted. This was heavily focused on Test Driven Development.
 
-See below for images of the the UI
-
 ## Images
-![Main menu - select 1 or 2 players](https://imgur.com/QuiwkL3)
-![Enter your name](https://imgur.com/IAOiRhM)
-![Make your move](https://imgur.com/3u6CoPw)
-![Presenting the winner](https://imgur.com/zH33pI6)
+Main menu - select 1 or 2 players
+[[https://github.com/leoncross/rps-challenge/blob/master/Screenshot%202018-11-18%20at%2012.09.24.png]]
+
+Enter your name
+[[https://github.com/leoncross/rps-challenge/blob/master/Screenshot%202018-11-18%20at%2011.53.54.png]]
+
+Make your move
+[[https://github.com/leoncross/rps-challenge/blob/master/Screenshot%202018-11-18%20at%2011.54.12.png]]
+
+Presenting the winner
+[[https://github.com/leoncross/rps-challenge/blob/master/Screenshot%202018-11-18%20at%2011.54.25.png]]
