@@ -12,7 +12,6 @@ class Weapon
   end
 
   def beats?(other_weapon)
-    # return true if RULES[type] == other_weapon.type
     RULES[type] == other_weapon.type
   end
 end

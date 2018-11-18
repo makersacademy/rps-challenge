@@ -7,8 +7,6 @@ require_relative "./lib/weapon.rb"
 class RPSWeb < Sinatra::Base
   enable :sessions
 
-  attr_reader :players
-
   get '/' do
     erb(:index)
   end
@@ -32,7 +30,7 @@ class RPSWeb < Sinatra::Base
     weapon_1 = Weapon.new(params[:weapon_type])
     @player_1_weapon = @player_1.choose_weapon(weapon_1)
     @computer = Computer.new("Computer")
-    @computer_weapon = @computer.choose_weapon
+    weapon_2 = Weapon.new(@computer.choose_weapon)
     @game = Game.new(@player_1)
     @game.add_player(@computer)
 
