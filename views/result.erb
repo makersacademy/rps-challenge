@@ -11,10 +11,11 @@
 	Computer picked <%= @ai_choice %>
 	<br>
 	<%= @player_name %> you <%= @result %>
-	<br>
-	<form action="/play">
-		<input type="submit" value="play again?" name="play again">
-	</form>
+	<div class="replay">
+		<form action="/play">
+			<input type="submit" value="play again?" name="play again">
+		</form>
+	</div>
 </body>
 </html>
 

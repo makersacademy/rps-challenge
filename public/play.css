@@ -8,7 +8,6 @@ body {
 .rock, .paper, .scissors {
 	float: left;
 	text-align: center;
-	border: solid green 1px;
 	margin: 10px;
 	padding: 20px 20px;
 }
@@ -24,16 +23,13 @@ body {
 label {
 	text-align: center;
 	float: right;
-	border: solid red 1px;
 }
 
 form {
-	border: dashed yellow 1px;
 	text-align: center;
 }
 
 img {
-	border: dashed purple 1px;
 }
 
 .submit {
