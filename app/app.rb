@@ -13,7 +13,16 @@ class RPS_app < Sinatra::Base
   post '/data' do
     session[:name] = params[:name]
     session[:choice] = params[:choice]
-    redirect '/result'
+    choice = session[:choice]
+    RPS::WEAPONS.include?(choice.to_sym) ? (redirect '/result') : (redirect '/onejob')
+
+  end
+
+  get '/onejob' do
+    name = session[:name]
+    choice = session[:choice]
+    @player = Player.new(name, choice)
+    erb :onejob
   end
 
   get '/result' do

@@ -11,12 +11,6 @@ describe RPS do
 
   describe '#players_choice'do
     it 'returns the player\'s choice' do
-      expect(player.choice).to eq :rock
-    end
-  end
-
-  describe '#players_choice'do
-    it 'returns the player\'s choice' do
       expect(subject.players_choice).to eq :rock
     end
   end
@@ -24,20 +18,20 @@ describe RPS do
 
   describe '#play'do
     it 'returns a draw message' do
-      allow(subject).to receive(:random).and_return(:rock)
+      allow(RPS::WEAPONS).to receive(:sample) { :rock }
       expect(subject.play).to eq 'It looks like we are going no where!'
     end
   end
 
   describe '#result'do
-    it 'returns a win message' do
+    it 'returns a message for the winner' do
       allow(RPS::RULES).to receive(:include?) { true }
-      expect(subject.result).to eq 'You saved us, John Connor!!!'
+      expect(subject.result).to eq "You saved us, John Connor!!! #{player.choice} beats #{subject.random}"
     end
 
-    it 'returns a win message' do
+    it 'returns a message for the loser' do
       allow(RPS::RULES).to receive(:include?) { false }
-      expect(subject.result).to eq 'Good job, John Connor.. The machines are rising...'
+      expect(subject.result).to eq "Good job, John Connor.. The machines are rising... #{subject.random} beats #{player.choice}"
     end
   end
 end

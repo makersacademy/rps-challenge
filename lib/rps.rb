@@ -20,7 +20,7 @@ class RPS
 
   def result
 
-    RULES.include?(@game) ? "You saved us, John Connor!!!#{@player.choice} beats #{@random}" : "Good job, John Connor.. The machines are rising...#{@random} beats #{@player.choice}"
+    RULES.include?(@game) ? "You saved us, John Connor!!! #{@player.choice} beats #{@random}" : "Good job, John Connor.. The machines are rising... #{@random} beats #{@player.choice}"
   end
 
 end

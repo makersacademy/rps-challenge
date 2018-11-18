@@ -5,6 +5,6 @@ feature 'result' do
   end
 
   scenario 'returns win or lose message' do
-    expect(page).to have_content 'win or lose message'
+    expect(page).to have_content 'Restart the game'
   end
 end
