@@ -1,0 +1,17 @@
+<h1><center>ᕦ(ò_óˇ)ᕤ Rock Paper Scissors ᕦ(ò_óˇ)ᕤ </center></h1>
+<h2><center><%=  @player_name + ": " +  @player_choice + " vs. Computer: " + @random_choice.to_s  %></center></h2>
+<style> body {background-color: Skyblue;} </style
+<% if @outcome == "draw" %>
+   <body><h3><center> <%= @player_choice%> vs <%= @random_choice%>. Draw!<center>
+<img src=https://www.biography.com/.image/t_share/MTI1NDg4NTg2MDAxODA1Mjgy/bob-ross-promojpg.jpg
+   width="1000" height="500"></body></h3>
+<% elsif @outcome == "Player 1 wins" %>
+<h3><center><%= @player_choice%> beats <%= @random_choice%>.You're out of this world!<center></h3>
+ <body><img src=https://memegenerator.net/img/instances/66432966.jpg
+   width="1000" height="500"></body>
+ <% elsif @outcome == "Player 2 wins" %>
+ <h3><center><%= @random_choice%> beats <%= @player_choice%>. You lose<center></h3>
+ <body><center><img src=https://i.kym-cdn.com/photos/images/original/001/166/089/485.jpg
+   width="1000" height="500"><center></body>
+<% end %>
+</body>
