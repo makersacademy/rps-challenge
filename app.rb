@@ -8,11 +8,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/save_name' do
     Game.start(params[:name_1], params[:name_2])
-    redirect '/play'
-  end
-
-  get '/saved_name' do
-    erb :saved_name
+    redirect Game.next_page
   end
 
   get '/play' do
@@ -26,5 +22,10 @@ class RockPaperScissors < Sinatra::Base
   post '/result' do
     Game.play_a_round params[:move]
     redirect '/result'
+  end
+
+  get '/restart' do
+    Game.begin_round
+  redirect Game.next_page
   end
 end

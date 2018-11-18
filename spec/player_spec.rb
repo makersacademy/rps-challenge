@@ -10,6 +10,7 @@ describe Player do
       expect(subject.robot?).to eq false
     end
   end
+  
   context "created without a name" do
     let(:subject) { Player.new("") }
 
