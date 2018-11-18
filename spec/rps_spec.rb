@@ -3,8 +3,7 @@ require 'rps'
 describe RPS do
 
   let(:player) { Player.new('Luca', :rock) }
-  subject(:subject) {described_class.new(player)}
-
+  subject(:subject) { described_class.new(player) }
 
   describe '#random'do
     it { expect(subject).to respond_to :random }
@@ -35,11 +34,10 @@ describe RPS do
       allow(RPS::RULES).to receive(:include?) { true }
       expect(subject.result).to eq 'You saved us, John Connor!!!'
     end
+
     it 'returns a win message' do
       allow(RPS::RULES).to receive(:include?) { false }
       expect(subject.result).to eq 'Good job, John Connor.. The machines are rising...'
     end
   end
-
-
 end

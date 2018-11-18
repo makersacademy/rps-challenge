@@ -1,5 +1,6 @@
 require "sinatra/base"
 require "capybara"
+require './lib/rps'
 
 class RPS_app < Sinatra::Base
 
@@ -11,22 +12,15 @@ class RPS_app < Sinatra::Base
 
   post '/data' do
     session[:name] = params[:name]
-    redirect '/game'
-  end
-
-  get '/game' do
-    @name = session[:name]
-    erb :game
-  end
-
-  post '/choice' do
-    # @match = RPS.new(session[:name])
-    # session[:rock] = params[:rock]
+    session[:choice] = params[:choice]
     redirect '/result'
   end
 
   get '/result' do
-    @user_choice = session[:rock]
+    name = session[:name]
+    choice = session[:choice]
+    @player = Player.new(name, choice)
+    @game = RPS.new(@player)
     erb :result
   end
 
