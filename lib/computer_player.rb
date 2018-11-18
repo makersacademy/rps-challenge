@@ -1,18 +1,10 @@
 class ComputerPlayer
 
-  attr_reader :weapons, :name, :weapon
+  attr_reader :weapons, :weapon, :names, :name
 
-  def initialize(name = "Computer")
-    @name = name
-    @weapons = ["rock", "paper", "scissors"]
-  end
-
-  def self.create
-    @computer_player = ComputerPlayer.new
-  end
-
-  def self.instance
-    @computer_player
+  def initialize(weapons = Weapon::WEAPONS)
+    @weapons = weapons
+    @names = ["Nicolas", "Louise", "Anna", "Michael"]
   end
 
   def choose_weapon
@@ -21,6 +13,14 @@ class ComputerPlayer
 
   def add_weapon(weapon)
     @weapon = weapon
+  end
+
+  def choose_name
+    @names.sample
+  end
+
+  def add_name
+    @name = choose_name
   end
 
 end
