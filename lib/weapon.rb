@@ -1,5 +1,5 @@
 class Weapon
-  attr_reader :type
+  attr_reader :type, :beats
 
   RULES = { rock: :scissors,
             paper: :rock,
@@ -12,6 +12,7 @@ class Weapon
   end
 
   def beats?(other_weapon)
-    return true if RULES[type] == other_weapon.type
+    # return true if RULES[type] == other_weapon.type
+    RULES[type] == other_weapon.type
   end
 end

@@ -4,9 +4,6 @@ describe Player do
   let(:karen) { Player.new("Karen") }
   let(:weapon) { double :weapon }
   let(:rock) { double :weapon, type: :rock }
-# As a marketeer
-# So that I can see my name in lights
-# I would like to register my name before playing an online game
 
   describe "initialize" do
     it "creates an instance of the Player class" do

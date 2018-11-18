@@ -1,4 +1,5 @@
-require_relative './player.rb'
+require_relative 'player'
+require_relative 'computer'
 
 class Game
   attr_reader :players

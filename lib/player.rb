@@ -1,7 +1,8 @@
-require 'weapon'
+require_relative 'weapon'
 
 class Player
-  attr_reader :name, :weapon_choice
+  attr_reader :name
+  attr_accessor :weapon_choice
 
   def initialize(player_name)
     @name = player_name

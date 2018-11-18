@@ -14,4 +14,11 @@ feature "Testing infrastructure" do
     expect(page).to have_content "Choose your weapon: Rock, Paper or Scissors?"
     expect(page).not_to have_content "Welcome"
   end
+
+  scenario "shows the result page after user has chosen their weapon" do
+    visit_and_fill_in_player_name
+    click_button "Rock"
+    expect(page).to have_content "Karen has chosen"
+    expect(page).not_to have_content "Choose your weapon:"
+  end
 end
