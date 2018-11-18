@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/game'
+require_relative 'lib/enemy'
 
 class App < Sinatra::Base
 
@@ -19,7 +20,8 @@ class App < Sinatra::Base
   post '/name' do
     # session[:player_name] = params[:player_name]
     player = Player.new(params[:player_name])
-    @game = Game.create(player)
+    enemy = Enemy.new
+    @game = Game.create(player, enemy)
     redirect '/play'
   end
 
