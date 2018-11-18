@@ -3,6 +3,9 @@ require_relative "./lib/game.rb"
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb(:index)
@@ -28,10 +31,10 @@ class RockPaperScissors < Sinatra::Base
   get '/results' do
     @choice = session[:choice]
     @player_name = session[:name]
-    $game = Game.new(@player_name, "computer")
-    $game.player_1.choice = @choice
-    $game.play
-    @winner = $game.winner
+    @game = Game.new_game(@player_name, "computer")
+    @game.player_1.choice = @choice
+    @game.play
+    @winner = @game.winner
     redirect to('/draw') if @winner == nil
     erb(:results)
   end

@@ -27,4 +27,10 @@ class Game
       @winner = assignments.key("Scissors")
     end
   end
+  def self.new_game(name1, name2, player_class_1 = Player, player_class_2 = Player)
+    @game = Game.new(name1, name2, player_class_1 = Player, player_class_2 = Player)
+  end
+  def self.instance
+    @game
+  end
 end

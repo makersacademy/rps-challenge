@@ -20,7 +20,7 @@ feature 'Rock Paper Scissors' do
     expect(page).to have_content("You have chosen Scissors")
   end
 
-  scenario 'user makes a choice and returns to play page again ' do
+  scenario 'user makes a choice and returns to play page again' do
     sign_in_and_submit
     select 'Scissors', from: 'choice'
     click_button("Submit")

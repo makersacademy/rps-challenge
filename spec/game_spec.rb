@@ -27,4 +27,9 @@ describe Game do
     srand(2345)
     expect(game.random).to eq Game::CHOICES[index]
   end
+  it "creates an instance of Game and stores in @game" do
+    Game.new_game("Nim", "computer", player_class_1, player_class_2)
+    expect(Game.instance.instance_of? Game).to eq true
+  end
+
 end
