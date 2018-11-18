@@ -11,7 +11,8 @@ class RPS_app < Sinatra::Base
   end
 
   post '/data' do
-    session[:name] = params[:name]
+    params[:name].length < 1 ?
+    (session[:name] = "anonymous") : (session[:name] = params[:name])
     session[:choice] = params[:choice]
     choice = session[:choice]
     RPS::WEAPONS.include?(choice.to_sym) ?
