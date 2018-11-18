@@ -6,7 +6,15 @@ class Rps < Sinatra::Base
   enable :sessions
 
   get '/' do
-    erb :name
+    erb :welcome_page
+  end
+
+  get '/one_player' do
+    erb :one_player
+  end
+
+  get '/two_player' do
+    erb :two_player
   end
 
   before do

@@ -41,7 +41,7 @@ feature 'Playing rock, paper, scissors' do
       sign_in
       choose_scissors
       click_button "Play again??"
-      expect(page).to have_current_path "/result"
+      expect(page).to have_current_path "/"
     end
   end
 
