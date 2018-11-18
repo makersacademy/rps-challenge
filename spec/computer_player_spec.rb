@@ -11,13 +11,6 @@ describe ComputerPlayer do
     end
   end
 
-  describe '#name' do
-    it 'has a random name' do
-      allow(computer_player.names).to receive(:sample).and_return("Nicholas")
-      expect(computer_player.choose_name).to eq "Nicholas"
-    end
-  end
-
   describe '#add_weapon' do
     it 'adds a weapon' do
       weapon = double(:weapon)

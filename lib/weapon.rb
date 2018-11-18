@@ -1,6 +1,6 @@
 class Weapon
 
-  WEAPONS = ["rock", "paper", "scissors"]
+  WEAPONS = ["rock", "paper", "scissor"]
 
   attr_reader :type
 
