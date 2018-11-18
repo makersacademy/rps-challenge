@@ -5,7 +5,12 @@ body {background-color: powderblue;
   font-family: sans-serif}
 </style>
 <body>
+  <%if session[:version] == 'standard' %>
   <h1>Rock, Paper, Scissors game</h1>
+  <% end %>
+  <%if session[:version] == 'extended' %>
+  <h1>Rock, Paper, Scissors, Spock, Lizard game</h1>
+  <% end %>
   <br>
   <p> <%= @game.player1.name %> chose <%= @game.player1.move %>, <%= @game.player2.name %> chose <%= @game.player2.move%></p>
  <h1> <%= @game.outcome %></h1>

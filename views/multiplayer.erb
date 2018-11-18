@@ -5,7 +5,13 @@ body {background-color: powderblue;
   font-family: sans-serif}
 </style>
  <body>
-<h1>Rock, Paper, Scissors game</h1>
+ <%if session[:version] == 'standard' %>
+ <h1>Rock, Paper, Scissors game</h1>
+ <% end %>
+ <%if session[:version] == 'extended' %>
+ <h1>Rock, Paper, Scissors, Spock, Lizard game</h1>
+ <% end %>
+
 <br>
    <h2>Enter your names</h2>
 <form action="/names" method="post">

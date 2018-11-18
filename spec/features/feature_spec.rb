@@ -9,18 +9,37 @@ feature "Index page" do
 
   scenario 'player can choose to play against computer' do
     visit ('/')
-    click_button 'Computer'
+    find('#standard', :visible => false).click
+    find('#singleplayer', :visible => false).click
+    click_button 'Submit'
     expect(page).to have_content "Enter your name"
   end
 
   scenario 'player can choose to play against another player' do
     visit ('/')
-    click_button 'Another player'
+    find('#standard', :visible => false).click
+    find('#multiplayer', :visible => false).click
+    click_button 'Submit'
     expect(page).to have_content "Enter your names"
+  end
+
+  scenario 'player can choose to play standard version' do
+    visit ('/')
+    find('#standard', :visible => false).click
+    find('#singleplayer', :visible => false).click
+    click_button 'Submit'
+    expect(page).to have_content "Rock, Paper, Scissors"
+  end
+
+  scenario 'player can choose to play extended version' do
+    visit ('/')
+    find('#extended', :visible => false).click
+    find('#singleplayer', :visible => false).click
+    click_button 'Submit'
+    expect(page).to have_content "Rock, Paper, Scissors, Spock, Lizard"
   end
 end
 
-feature "Game against computer"
 feature "Play page" do
   scenario 'Player can enter their name' do
     singleplayer_entername
@@ -29,9 +48,18 @@ feature "Play page" do
 end
 
 feature "Choosing an option" do
-  scenario 'Player can choose an option' do
+  scenario 'Player sees Rock, Paper, Scissors in a standard version' do
     singleplayer_entername
-    expect(page).to have_content "Select your move"
+    expect(page).to have_content "Tom Rock Paper Scissors"
+  end
+  scenario 'Player sees Rock, Paper, Scissors, Spock, Lizard in an extended version' do
+    visit ('/')
+    find('#extended', :visible => false).click
+    find('#singleplayer', :visible => false).click
+    click_button 'Submit'
+    fill_in 'name', with: 'Tom'
+    click_button 'Submit'
+    expect(page).to have_content "Tom Rock Paper Scissors Spock Lizard"
   end
 end
 

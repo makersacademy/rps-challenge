@@ -7,15 +7,21 @@ body {background-color: powderblue;
  <body>
 <h1>Rock, Paper, Scissors game</h1>
 <br>
-<h2>Who do you want to play against?</h2>
-<br>
-<label for="mode">
-<form action='/singleplayer'>
-  <input type='submit' value='Computer'>
-</form>
+<form action='/gameoptions' method='post'>
+<h2>What version of the game do you want to play?</h2>
 
-<form action='/multiplayer'>
-  <input type='submit' value='Another player'>
+<input type="radio" name="version" value="standard" id="standard">Rock, Paper, Scissors<br>
+
+
+<input type="radio" name="version" value="extended" id="extended">Rock, Paper, Scissors, Spock, Lizard<br>
+<br>
+<h2>Who do you want to play against?</h2>
+<section class='singleplayer'>
+<input type="radio" name="mode" value="singleplayer" id="singleplayer"> Computer<br>
+</section>
+<input type="radio" name="mode" value="multiplayer" id="multiplayer"> Another player<br>
+<br>
+  <input type='submit' value='Submit'>
 </form>
 </label>
 </body>

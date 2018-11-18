@@ -2,23 +2,27 @@ require_relative 'player'
 
 class Game
 
-  GAME_MOVES = ["Rock", "Paper", "Scissors"]
-  WIN_LOSE_HASH = { "Rock" => "Scissors",
-                    "Paper" => "Rock",
-                    "Scissors" => "Paper" }
+  STANDARD_GAME_MOVES = ["Rock", "Paper", "Scissors"]
+  EXTENDED_GAME_MOVES = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
+  WIN_LOSE_HASH = { "Rock" => ["Scissors", "Lizard"],
+                    "Paper" => ["Rock", "Spock"],
+                    "Scissors" => ["Paper", "Lizard"],
+                    "Spock" => ["Scissors", "Rock"],
+                    "Lizard" => ["Paper", "Spock"] }
 
-  attr_reader :player2
-  attr_accessor :player1, :type
+  attr_accessor :player1, :player2, :type, :version
 
-  def self.create(player1, player2 = Player.new("Computer",true))
-    @game = Game.new(player1, player2)
+  def self.create(player1, player2 = \
+    Player.new("Computer", true), version = 'standard')
+    @game = Game.new(player1, player2, version)
   end
 
   def self.instance
     @game
   end
 
-  def initialize(player1, player2 = Player.new("Computer",true))
+  def initialize(player1, player2 = \
+    Player.new("Computer", true), version = 'standard')
     @player1 = player1
     @player2 = player2
     @draw = false
@@ -26,23 +30,30 @@ class Game
     @player1_wins = false
     @player2_move = nil
     type = nil
+    @version = version
   end
 
   def play
+    select_possible_moves
     computer_move if against_computer?
     clear_results
     evaluate
     outcome
   end
 
+  def select_possible_moves
+    @game_moves = EXTENDED_GAME_MOVES if extended_version?
+    @game_moves = STANDARD_GAME_MOVES unless extended_version?
+  end
+
   def computer_move
-    @player2.move = GAME_MOVES[Kernel.rand(GAME_MOVES.count)]
+    @player2.move = @game_moves[Kernel.rand(@game_moves.count)]
   end
 
   def evaluate
     if @player2.move == @player1.move
       draw
-    elsif @player2.move == WIN_LOSE_HASH[@player1.move]
+    elsif WIN_LOSE_HASH[@player1.move].include?(@player2.move)
       player1_wins
     else player2_wins
     end
@@ -55,6 +66,9 @@ class Game
   end
 
 private
+  def extended_version?
+    @version == 'extended'
+  end
 
   def draw?
     @draw

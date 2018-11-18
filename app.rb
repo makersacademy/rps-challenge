@@ -9,19 +9,27 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  post '/gameoptions' do
+    session[:version] = params[:version]
+    session[:mode] = params[:mode]
+    if session[:mode] == "singleplayer"
+      redirect '/singleplayer'
+    else
+      redirect '/multiplayer'
+    end
+  end
+
+  # single player methods:
+
   get '/singleplayer' do
+    @version = session[:version]
     erb(:singleplayer)
   end
 
-  get '/multiplayer' do
-    erb(:multiplayer)
-  end
-
-# single player methods:
-
   post '/name' do
     player1 = Player.new(params[:name])
-    @game = Game.create(player1)
+    @game = Game.create(player1, \
+      Player.new("Computer", true), @version)
     @game.type = 'singleplayer'
     redirect '/play'
   end
@@ -39,10 +47,15 @@ class RPS < Sinatra::Base
 
 # multi player methods:
 
+  get '/multiplayer' do
+    @version = session[:version]
+    erb(:multiplayer)
+  end
+
   post '/names' do
     player1 = Player.new(params[:player_1_name])
     player2 = Player.new(params[:player_2_name])
-    @game = Game.create(player1, player2)
+    @game = Game.create(player1, player2, @version)
     @game.type = 'multiplayer'
     redirect '/player1_move'
   end

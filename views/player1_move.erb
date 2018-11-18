@@ -5,7 +5,12 @@ body {background-color: powderblue;
   font-family: sans-serif}
 </style>
 <body>
+  <%if session[:version] == 'standard' %>
   <h1>Rock, Paper, Scissors game</h1>
+  <% end %>
+  <%if session[:version] == 'extended' %>
+  <h1>Rock, Paper, Scissors, Spock, Lizard game</h1>
+  <% end %>
   <br>
 <h2>Select your move, <%= @game.player1.name %></h2>
 <form action = "/player1_save_move" method = "post">
@@ -13,6 +18,10 @@ body {background-color: powderblue;
   <option value="Rock">Rock</option>
   <option value="Paper">Paper</option>
   <option value="Scissors">Scissors</option>
+  <%if session[:version] == 'extended' %>
+  <option value="Spock">Spock</option>
+  <option value="Lizard">Lizard</option>
+  <% end %>
 </select>
 <input type = "submit" value = 'Submit'>
 </form>
