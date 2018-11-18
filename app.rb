@@ -31,26 +31,31 @@ class App < Sinatra::Base
 
   get '/rock' do
     @game.player.rock
+    @game.enemy.choose_weapon
     redirect '/play'
   end
 
   get '/paper' do
     @game.player.paper
+    @game.enemy.choose_weapon
     redirect '/play'
   end
 
   get '/scissors' do
     @game.player.scissors
+    @game.enemy.choose_weapon
     redirect '/play'
   end
 
   get '/lizard' do
     @game.player.lizard
+    @game.enemy.choose_weapon
     redirect '/play'
   end
 
   get '/spock' do
     @game.player.spock
+    @game.enemy.choose_weapon
     redirect '/play'
   end
 

@@ -42,6 +42,7 @@
     </style>
 
   </head>
+
   <body>
     <p class="head1"><%=@game.player.name.upcase%></p>
     <p class="head2">CHOOSE YOUR WEAPON:</p>
@@ -53,6 +54,7 @@
 
     <% if @game.player.choice != '' %>
       <p class="head2"><%=@game.player.name.upcase%> PLAYS <%=@game.player.choice.upcase%></p>
+      <p class="head2">YOUR ENEMY PLAYS <%=@game.enemy.choice.upcase%></p>
     <% end %>
 
   </body>
