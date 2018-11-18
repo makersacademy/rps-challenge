@@ -11,4 +11,7 @@ describe Player do
     expect(luisa.weapon).to eq :Rock
   end
 
+  it 'returns the score' do
+    expect(luisa.score).to eq 0
+  end
 end
