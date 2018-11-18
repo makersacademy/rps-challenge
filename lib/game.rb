@@ -17,19 +17,19 @@ class Game
   end
 
   def self.create(player_name, player_move)
-    @RPS_game = Game.new(player_name, player_move)
+    @RPSgame = Game.new(player_name, player_move)
   end
 
   def self.instance
-    @RPS_game
+    @RPSgame
   end
 
   def draw
-    player_move == pc_move ? self.au_pair : self.showdown
+    player_move == pc_move ? au_pair : showdown
   end
 
   def showdown
-    COMBINATIONS.include?(match) ? self.player_wins : self.pc_wins
+    COMBINATIONS.include?(match) ? player_wins : pc_wins
   end
 
   def au_pair

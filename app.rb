@@ -11,30 +11,36 @@ class Rps_App < Sinatra::Base
   end
 
   post '/data' do
-    @RPS_game = Game.create(player_name = params[:player_name], player_move = params[:player_move])
-    redirect '/arena'
+    player_name = params[:player_name]
+    player_move = params[:player_move]
+    @RPSgame = Game.create(player_name, player_move)
+    redirect '/showdown'
   end
 
-  post '/arena' do
-    @RPS_game = Game.create(player_name = params[:player_name], player_move = params[:player_move])
-    @RPS_game = Game.instance
-    @RPS_game.draw
+  get '/showdown' do
+    @RPSgame = Game.instance
+    erb :showdown
+  end
+
+  get '/arena' do
+    @RPSgame = Game.instance
+    @RPSgame.draw
     erb :arena
   end
 
   get '/au-pair' do
-    @RPS_game.au_pair
-    erb :player
+    @RPSgame = Game.instance
+    erb :au_pair
   end
 
   get '/player-wins' do
-    @RPS_game.player_wins
-    erb :player
+    @RPSgame = Game.instance
+    erb :player_wins
   end
 
-  get '/PC-wins' do
-    @RPS_game.pc_wins
-    erb :player
+  get '/pc-wins' do
+    @RPSgame = Game.instance
+    erb :pc_wins
   end
 
 

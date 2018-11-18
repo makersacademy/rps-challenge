@@ -7,12 +7,4 @@
 <center><h1><font face="century gothic"> PC Move: </font></h1></center>
 <center><h2><font face="century gothic"> - <%=@RPSgame.pc_move%> - </font></h2></center>
 <br><br>
-
-
-<% if @RPSgame.player_wins %>
-<% redirect '/player-wins' %>
-<% elsif @RPSgame.pc_wins %>
-<% redirect '/PC-wins' %>
-<% else %>
-<% redirect '/au-pair' %>
-<% end %>
+<center><form action="/arena"><input type="submit" font="century gothic" value="Result"></form></center>
