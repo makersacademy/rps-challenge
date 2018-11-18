@@ -1,21 +1,22 @@
 require 'sinatra/base'
 require 'shotgun'
-require './lib/player.rb'
+require './lib/player'
+require './lib/game'
+require './lib/computer'
 
 class RPS < Sinatra::Base
-  enable :sessions
-
-  before do
-    @registered_player = Player.instance
-  end
 
   get '/' do
     erb(:index)
   end
 
   post '/register' do
-    @registered_player = Player.register(params[:name])
+    @game = Game.create(Player.new(params[:name]), Computer.new)
     redirect '/game'
+  end
+
+  before do
+    @game = Game.instance
   end
 
   get '/game' do
