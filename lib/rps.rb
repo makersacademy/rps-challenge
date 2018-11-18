@@ -5,7 +5,7 @@ class RPS
   WEAPONS = [ :rock, :paper, :scissors]
   RULES = [  {rock: :scissors}, {paper: :rock},{ scissors: :paper}]
 
-  attr_reader :players_choice, :random, :game, :player
+  attr_reader :players_choice, :random, :player
 
   def initialize(player = Player.new)
     @player = player
@@ -19,7 +19,12 @@ class RPS
   end
 
   def result
-    RULES.include?(game) ? 'You saved us, John Connor!!!' : 'Good job, John Connor.. The machines are rising...'
+    RULES.include?(@game) ? 'You saved us, John Connor!!!' : 'Good job, John Connor.. The machines are rising...'
   end
 
 end
+
+# l = Player.new('luca', :rock)
+# g = RPS.new l
+# p g.random
+# p g.play
