@@ -1,12 +1,31 @@
-<center>
-  <h1><%=@player_1%> vs CPU</h1>
-  <br>
-  <h1>Make your move <%=@player_1%></h1>
-  <br>
-  <form class="" action="/result" method="post">
-    <label>Rock<input type="radio" name="move" value="Rock" ></label>
-    <label>Paper<input type="radio" name="move" value="Paper"></label>
-    <label>Scissors<input type="radio" name="move" value="Scissors"></label> <br>
-    <input type="submit" value="Submit">
-  </form>
-</center>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      center {
+        background-color: orange;
+        padding-top: 10%;
+        padding-bottom: 20%;
+      }
+    </style>
+
+    <title></title>
+  </head>
+  <body>
+    <center>
+      <h1><%=@player_1%> vs CPU</h1>
+      <br>
+      <h1>Make your move <%=@player_1%></h1>
+      <br>
+      <form class="" action="/result" method="post">
+        <div id="radio_buttons">
+        <label>Rock<input type="radio" name="move" value="Rock" ></label>
+        <label>Paper<input type="radio" name="move" value="Paper"></label>
+        <label>Scissors<input type="radio" name="move" value="Scissors"></label>
+        <br>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </center>
+  </body>
+</html>

@@ -1,6 +1,28 @@
-<center>
-
-  <h1><%= @player_1%> chose <%= @player_1_move %></h1>
-  <br>
-  <h1> CPU chose <%= @game.cpu_move %></h1>
-</center>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      center {
+        background-color: orange;
+        padding-top: 20%;
+        padding-bottom: 20%;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <center>
+      <div>
+        <h1><%= @player_1%> chose <%= @player_1_move %></h1>
+        <br>
+        <h1> CPU chose <%= @game.cpu_move %></h1>
+        <br>
+        <h1>You <%= @winner %></h1>
+      </div>
+      <br>
+      <a href="/">
+       <input type="button" value="Play again??" />
+      </a>
+    </center>
+  </body>
+</html>

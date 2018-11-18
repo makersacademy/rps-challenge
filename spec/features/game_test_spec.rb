@@ -1,3 +1,5 @@
+require 'game'
+
 feature 'Playing rock, paper, scissors' do
 
   scenario 'Player 1 chooses Rock' do
@@ -16,19 +18,33 @@ feature 'Playing rock, paper, scissors' do
 
   scenario 'Player 1 chooses Scissors' do
     sign_in
-    choose 'Scissors'
-    click_button "Submit"
+    choose_scissors
     expect(page).to have_content "Ajay chose Scissors"
   end
 
   scenario 'CPU chooses a random move' do
-    game = Game.new
+    allow(MOVES).to receive(:sample) { "Paper" }
     sign_in
-    choose 'Scissors'
-    click_button "Submit"
-    allow(game).to receive(:cpu_move) {"Paper"}
+    choose_scissors
     expect(page).to have_content "CPU chose Paper"
   end
+
+  scenario 'Page has the content Player 1 wins' do
+    allow(MOVES).to receive(:sample) { "Paper" }
+    sign_in
+    choose_scissors
+    expect(page).to have_content "You Win"
+  end
+
+  feature 'After playing rock, paper, scissors' do
+    scenario 'Player is returned to the start' do
+      sign_in
+      choose_scissors
+      click_button "Play again??"
+      expect(page).to have_current_path "/result"
+    end
+  end
+
 
 
 end
