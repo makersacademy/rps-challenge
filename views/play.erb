@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 	<title>Rock Paper Scissors</title>
-
 	<link rel="stylesheet" type="text/css" href="play.css">
-
-
 </head>
 	<body>
 		<div class="container">
 			<h1>Ready to play <%= @player_name %> ?</h1>
 			<h2>Select your move!</h2>
 		</div>
-		<div class="form">
 			<form action="/choice" method="post">
 				<div class="rock" id="options">
-					<input type="radio" value="rock" name="player_choice" required> 
-					<img src="images/rock.png">
 					<label for="rock">Rock</label>
+					<img src="images/rock.png">
+					<span class="radio_button">
+						<input type="radio" value="rock" name="player_choice" required> 
+					</span>	
 				</div>
 				<div class="paper" id="options">
-					<input type="radio" value="paper" name="player_choice" required>
-					<img src="images/paper.png">
 					<label for="paper">Paper</label>
+					<img src="images/paper.png">
+					<span class="radio_button">
+						<input type="radio" value="paper" name="player_choice" required>
+					</span>		
 				</div>
 	  		<div class="scissors" id="options">
-					<input type="radio" value="scissors" name="player_choice" required> 
-					<img src="images/scissors.png">
-					<label for="scissors">Scissors</label>
+	  			<label for="scissors">Scissors</label>
+	  			<img src="images/scissors.png">
+	  			<span class="radio_button">
+	  				<input type="radio" value="scissors" name="player_choice" required>
+	  			</span>
 	  		</div>
-				<input type="submit" value="submit" name="submit">
+	  		<div class="submit">
+	  			<input type="submit" value="submit" name="submit">
+	  		</div>
 			</form>
-		</div>
 		<div class="footer">
 			Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
 		</div>

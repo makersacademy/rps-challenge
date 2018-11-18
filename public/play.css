@@ -1,24 +1,46 @@
 body {
-	background-color: #7eacf7
+	background-color: #7eacf7;
+	width: 960px;
+	margin: auto;
+	text-align: center;
 }
 
-.footer {
-	padding: 50px;
-	margin: 50px;
+.rock, .paper, .scissors {
+	float: left;
 	text-align: center;
+	border: solid green 1px;
+	margin: 10px;
+	padding: 20px 20px;
 }
 
 .container {
-	padding: 20px;
-	margin: 0 auto;
 	text-align: center;
 }
 
-#options {
-	display: inline-block;
+.footer {
+	display: block;
+}
+
+label {
+	text-align: center;
+	float: right;
+	border: solid red 1px;
+}
+
+form {
+	border: dashed yellow 1px;
 	text-align: center;
 }
 
-.form {
-	text-align: center;
+img {
+	border: dashed purple 1px;
+}
+
+.submit {
+}
+
+.footer {
+	position: static;
+  bottom: 0;
+  width: 100%;
 }
