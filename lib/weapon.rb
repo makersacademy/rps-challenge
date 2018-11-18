@@ -4,9 +4,9 @@ class Weapon
 
   attr_reader :type
 
-  def initialize(type)
+  def initialize(type, weapons = WEAPONS)
     @type = type
-    @weapons = WEAPONS
+    @weapons = weapons
   end
 
 
