@@ -23,4 +23,12 @@ describe Player do
     end
   end
 
+  describe '#rpssl_random' do
+    it "randomly selects a rpssl move" do
+      options = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
+      player_1.rpssl_random
+      expect(options).to include(player_1.moves)
+    end
+  end
+
 end

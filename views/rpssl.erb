@@ -1,0 +1,28 @@
+<h1>ROCK! PAPER! SCISSORS! SPOCK! LIZARD!</h1>
+<p>Are you ready to step up? The rules are:</p>
+<p>* Rock crushes Scissors and Lizard</p>
+<p>* Paper covers Rock and disproves Spock</p>
+<p>* Scissors cut Paper and decapitate Lizard</p>
+<p>* Spock smashes Scissors and vaporises Rock</p>
+<p>* Lizard eats Paper and poisons Spock</p>
+<p></p>
+<p>Simple, right? You can practice against James T Kirk</p>
+<form action='/rpssl_solo' method='post'>
+  <label for="solo_name">
+    Enter your name
+    <input type="text" name="solo_name">
+  </label>
+  <input type="submit" value="Practice">
+</form>
+<p>Or you can go straight to a 2 player RPSSL throwdown?</p>
+<form action='/rpssl_multi' method='post'>
+  <label for="player_1_name">
+    Player 1:
+    <input type="text" name="player_1_name">
+  </label>
+  <label for="player_2_name">
+    Player 2:
+    <input type="text" name="player_2_name">
+  </label>
+  <input type="submit" value="2 player throwdown">
+</form>

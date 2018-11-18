@@ -2,7 +2,7 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player_1, :player_2, :multi
+  attr_reader :player_1, :player_2, :multi, :rpssl
 
   def initialize(player_1, player_2, multi = false, rpssl = false)
     @player_1 = player_1

@@ -5,3 +5,12 @@
 <input type="submit" name="Choice" value="Paper">
 <input type="submit" name="Choice" value="Scissors">
 </form>
+
+<% if @game.rpssl %>
+
+<form action='/player_1_move' method='post'>
+<input type="submit" name="Choice" value="Spock">
+<input type="submit" name="Choice" value="Lizard">
+</form>
+
+<% end %>

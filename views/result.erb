@@ -12,7 +12,7 @@
   <% if @game.multi %>
   <h2><%= @game.player_2.name %> won!</h2>
   <% else %>
-  <h2>You lose, that's why Swifthands is the champ</h2>
+  <h2>You lose, that's why <%= @game.player_2.name %> is the champ</h2>
   <% end %>
   <h3>Better luck next time <%= @game.player_1.name %></h3>
 <% end %>
@@ -21,16 +21,46 @@
   <input type="submit" value="Play again?">
 </form>
 
-<% if @game.multi %>
+<% if @game.rpssl == false %>
 
-<form action="/" >
-  <input type="submit" value="Switch to practice?">
-</form>
+  <% if @game.multi %>
 
-<% else %>
+    <form action="/" >
+      <input type="submit" value="Switch to practice?">
+    </form>
 
-<form action="/" >
-  <input type="submit" value="Switch to 2 player?">
-</form>
+  <% else %>
+
+    <form action="/" >
+      <input type="submit" value="Switch to 2 player?">
+    </form>
+
+  <% end %>
+
+  <form action="/rpssl" >
+    <input type="submit" value="Switch to RPSSL?">
+  </form>
+
+<% end %>
+
+<% if @game.rpssl %>
+
+  <% if @game.multi %>
+
+    <form action="/rpssl" >
+      <input type="submit" value="Switch to practice?">
+    </form>
+
+  <% else %>
+
+    <form action="/rpssl" >
+      <input type="submit" value="Switch to 2 player?">
+    </form>
+
+  <% end %>
+
+  <form action="/" >
+    <input type="submit" value="Switch to standard RockPaperScissors?">
+  </form>
 
 <% end %>
