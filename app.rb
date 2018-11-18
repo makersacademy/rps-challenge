@@ -17,15 +17,21 @@ class Rps < Sinatra::Base
     erb :two_player
   end
 
-  before do
-    @player = Player.instance
-    @game = Game.instance
-  end
+  # before do
+  #   @player = Player.instance
+  #   @game = Game.instance
+  # end
 
   post '/start' do
     @player = Player.create(params[:player_1])
     @game = Game.create
     erb :start
+  end
+
+  post '/start_two_player' do
+    @player = Player.create(params[:player_1], params[:player_2])
+    @game = Game.create
+    erb :start_two_player
   end
 
   before do

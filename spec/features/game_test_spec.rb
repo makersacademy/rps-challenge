@@ -45,6 +45,17 @@ feature 'Playing rock, paper, scissors' do
     end
   end
 
+  feature '2 player rock, paper, scissors' do
+    scenario 'both players names should be displayed on next page' do
+      sign_in_two_player
+      expect(page).to have_content 'Ryu vs Ken'
+    end
 
+    scenario 'player 1 will be asked to make a move' do
+      sign_in_two_player
+      expect(page).to have_content 'Make your move Ryu'
+    end
+
+  end
 
 end

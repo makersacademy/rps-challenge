@@ -10,5 +10,4 @@ feature 'Welcome page' do
     click_button '2 Player'
     expect(page).to have_current_path '/two_player'
   end
-
 end

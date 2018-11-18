@@ -22,13 +22,13 @@ class Game
     MOVES.sample
   end
 
-  def winner(player_move, cpu_move)
-    if player_move == "Rock"
-      ROCK[cpu_move]
-    elsif player_move == "Paper"
-      PAPER[cpu_move]
+  def winner(move1, move2)
+    if move1 == "Rock"
+      ROCK[move2]
+    elsif move1 == "Paper"
+      PAPER[move2]
     else
-      SCISSORS[cpu_move]
+      SCISSORS[move2]
     end
   end
 end

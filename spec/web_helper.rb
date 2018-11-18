@@ -8,7 +8,8 @@ end
 def sign_in_two_player
   visit '/'
   click_button "2 Player"
-  fill_in 'player_1', with: 'Ajay'
+  fill_in 'player_1', with: 'Ryu'
+  fill_in 'player_2', with: 'Ken'
   click_button 'Submit'
 end
 

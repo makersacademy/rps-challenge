@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      center {
+        background-color: orange;
+        padding-top: 10%;
+        padding-bottom: 20%;
+      }
+    </style>
+
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+    <center>
+      <h1><%=@player.name%> vs <%= @player.name2%></h1>
+      <br>
+      <h1>Make your move <%=@player.name%></h1>
+      <br>
+      <form class="" action="/Player_2_turn" method="post">
+        <div id="radio_buttons">
+        <label>Rock<input type="radio" name="move" value="Rock" ></label>
+        <label>Paper<input type="radio" name="move" value="Paper"></label>
+        <label>Scissors<input type="radio" name="move" value="Scissors"></label>
+        <br>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </center>
+  </body>
+</html>
