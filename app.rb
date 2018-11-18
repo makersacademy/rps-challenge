@@ -1,5 +1,5 @@
 require 'sinatra/base'
-
+require_relative 'lib/game.rb'
 class RPSWEB < Sinatra::Base
 	enable :sessions
 
@@ -8,14 +8,13 @@ class RPSWEB < Sinatra::Base
 	end
 
 	post '/choice' do
-		$name = params[:name]
-		$weapon = params[:choice]
+		$game = Game.new(params[:name],params[:choice])
 		redirect '/result'
 	end
 
 	get '/result' do
-		@name = $name
-		@weapon = $weapon
+		@name_player = $game.name_player
+		@player_weapon = $game.player_weapon
 		erb(:result)
 	end
 end
