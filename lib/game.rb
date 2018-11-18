@@ -19,11 +19,11 @@ class Game
 
   def winner(player_1, player_2)
     if player_1 == 'rock' && player_2 == 'scissor' || player_1 == 'scissor' && player_2 == 'paper' || player_1 == 'paper' && player_2 == 'rock'
-      @the_winner = @player_1
+      :win
     elsif player_2 == 'rock' && player_1 == 'scissor' || player_2 == 'scissor' && player_1 == 'paper' || player_2 == 'paper'  && player_1 == 'rock'
-      @the_winner = @player_2
+      :loss
     else
-      @the_winner = nil
+      :draw
     end
   end
 
