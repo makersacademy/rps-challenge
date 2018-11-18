@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  subject(:lorna) { Player.new('Lorna') }
+  subject(:lorna) { Player.new('Lorna', 'Paper') }
 
   describe '#name' do
     it 'returns the name' do
@@ -11,13 +11,13 @@ describe Player do
 
   describe '#player_move' do
     it "player to make move" do
-      expect(lorna.player_move).to eq 'Rock'
+      expect(lorna.player_move).to eq 'Paper'
     end
   end
 
   describe '#computer_move' do
     it "returns computers move" do
-      expect(subject.computer_move).to eq 'Paper' || 'Rock' || 'Scissors'
+      ['Paper', 'Rock', 'Scissors'].include? (lorna.computer_move)
     end
   end
 

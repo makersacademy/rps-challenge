@@ -2,16 +2,17 @@ class Player
 
   attr_reader :name
 
-  def initialize(name)
+  def initialize(name, move)
     @name = name
+    @move = move
   end
 
   def player_move
-    'Rock'
+    @move
   end
 
   def computer_move
-    'Paper'
+    ['Paper', 'Rock', 'Scissors'].sample
   end
 
 
