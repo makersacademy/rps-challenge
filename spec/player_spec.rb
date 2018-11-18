@@ -3,7 +3,7 @@ require 'player'
 describe Player do
   describe '#name' do
     it "has a name" do
-      expect(subject.name).to eq("Hal")
+      expect(subject.name).to eq('Rick')
     end
   end
   describe '#choice' do

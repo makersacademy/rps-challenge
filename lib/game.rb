@@ -29,23 +29,23 @@ class Game
   def rock
     case p_2.weapon
     when 'rock' then draw()
-    when 'paper' then lose("covers")
-    when 'scissors' then win("blunts")
+    when 'paper' then lose('covers')
+    when 'scissors' then win('blunts')
     end
   end
 
   def paper
     case p_2.weapon
-    when 'rock' then win("covers")
+    when 'rock' then win('covers')
     when 'paper' then draw()
-    when 'scissors' then lose("cut")
+    when 'scissors' then lose('cut')
     end
   end
 
   def scissors
     case p_2.weapon
-    when 'rock' then lose("blunts")
-    when 'paper' then win("cut")
+    when 'rock' then lose('blunts')
+    when 'paper' then win('cut')
     when 'scissors' then draw()
     end
   end

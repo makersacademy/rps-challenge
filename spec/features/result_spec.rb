@@ -18,32 +18,32 @@ end
 feature 'p_1 chose rock' do
   scenario 'p_2 chose paper' do
     weapon_set('rock', 'paper')
-    expect(page).to have_content "Paper covers rock. Hal wins!"
+    expect(page).to have_content "Paper covers rock. Morty wins!"
   end
   scenario 'p_2 chose scissors' do
     weapon_set('rock', 'scissors')
-    expect(page).to have_content "Rock blunts scissors. Archer wins!"
+    expect(page).to have_content "Rock blunts scissors. Rick wins!"
   end
 end
 
 feature 'p_1 chose paper' do
   scenario 'p_2 chose rock' do
     weapon_set('paper', 'rock')
-    expect(page).to have_content "Paper covers rock. Archer wins!"
+    expect(page).to have_content "Paper covers rock. Rick wins!"
   end
   scenario 'p_2 chose scissors' do
     weapon_set('paper', 'scissors')
-    expect(page).to have_content "Scissors cut paper. Hal wins!"
+    expect(page).to have_content "Scissors cut paper. Morty wins!"
   end
 end
 
 feature 'p_1 chose scissors' do
   scenario 'p_2 chose rock' do
     weapon_set('scissors', 'rock')
-    expect(page).to have_content "Rock blunts scissors. Hal wins!"
+    expect(page).to have_content "Rock blunts scissors. Morty wins!"
   end
   scenario 'p_2 chose paper' do
     weapon_set('scissors', 'paper')
-    expect(page).to have_content "Scissors cut paper. Archer wins!"
+    expect(page).to have_content "Scissors cut paper. Rick wins!"
   end
 end
