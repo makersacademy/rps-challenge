@@ -1,0 +1,118 @@
+h1 {
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.rock {
+  width: 50%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%
+}
+
+.rock img {
+  width: 50%;
+  height: auto;
+}
+
+.rock .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.rock .btn:hover {
+  background-color: black;
+}
+
+.paper {
+  position: relative;
+  width: 50%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%
+}
+
+.paper img {
+  width: 50%;
+  height: auto;
+  position: relative;
+}
+
+.paper .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.paper .btn:hover {
+  background-color: black;
+}
+
+.scissors {
+  position: relative;
+  width: 50%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%
+}
+
+.scissors img {
+  width: 50%;
+  height: auto;
+}
+
+.scissors .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.scissors .btn:hover {
+  background-color: black;
+}

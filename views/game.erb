@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <link href='/style.css' rel="stylesheet" type="text/css" /> -->
+    <link href='/style.css' rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
     <h1>Welcome, <%=@game.player.name%></h1>
     <h2>To begin the game, please select a weapon</h2>
     <form action="/play" method="post">
-      <button type="submit" name="player_choice" value=rock>Rock</button>
-      <button type="submit" name="player_choice" value=paper>Paper</button>
-      <button type="submit" name="player_choice" value=scissors>Scissors</button>
+      <div class="rock">
+        <img src="rock.jpg" alt="Rock">
+        <button class="btn" type="submit" name="player_choice" value=rock>Rock</button>
+      </div>
+      <div class="paper">
+        <img src="paper.jpg" alt="Paper">
+        <button class="btn" type="submit" name="player_choice" value=paper>Paper</button>
+      </div>
+      <div class="scissors">
+        <img src="scissors.jpg" alt="Scissors">
+        <button class="btn type="submit" name="player_choice" value=scissors>Scissors</button>
+      </div>
     </form>
   </body>
 </html>
