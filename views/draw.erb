@@ -1,6 +1,9 @@
 <p>
   You drew!
 </p>
+<p>
+  You have chosen <%= @game.player_1.choice %>
+</p>
 <form action="/play">
   <input type="submit" value="Play again" /><br />
 </form>

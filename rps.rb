@@ -29,10 +29,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/results' do
-    @choice = session[:choice]
-    @player_name = session[:name]
-    @game = Game.new_game(@player_name, "computer")
-    @game.player_1.choice = @choice
+    @game = Game.new_game(session[:name], "computer")
+    @game.player_1.choice = session[:choice]
     @game.play
     @winner = @game.winner
     redirect to('/draw') if @winner == nil

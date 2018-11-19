@@ -18,12 +18,12 @@ class Game
     assign_winner(assignments)
   end
   def assign_winner(assignments)
-    choices = assignments.values
-    if choices == ["Rock", "Paper"] || choices == ["Paper", "Rock"]
+    choices = assignments.values.sort
+    if choices == ["Paper", "Rock"]
       @winner = assignments.key("Paper")
-    elsif choices == ["Rock", "Scissors"] || choices == ["Scissors", "Rock"]
+    elsif choices == ["Rock", "Scissors"]
       @winner = assignments.key("Rock")
-    elsif choices == ["Paper", "Scissors"] || choices == ["Scissors", "Paper"]
+    elsif choices == ["Paper", "Scissors"]
       @winner = assignments.key("Scissors")
     end
   end
