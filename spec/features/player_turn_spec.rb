@@ -3,9 +3,9 @@ feature 'Player takes turn' do
   scenario 'the player can correctly select an option' do
     register
     click_button 'Rock'
-    expect(page).to have_content 'You chose: rock'
-    expect(page).not_to have_content 'You chose: scissors'
-    expect(page).not_to have_content 'You chose: paper'
+    expect(page).to have_content 'You chose: Rock'
+    expect(page).not_to have_content 'You chose: Scissors'
+    expect(page).not_to have_content 'You chose: Paper'
   end
 
   scenario 'player wins' do

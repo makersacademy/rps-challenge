@@ -2,12 +2,12 @@
 <html>
   <head>
     <link href='/style.css' rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
-    <h2>You chose: <%=@game.player.player_choice%>
+    <h2>You chose: <%=@game.player.player_choice.capitalize%>
     <br>
-    The computer chose: <%=@game.computer.computer_choice%>
+    The computer chose: <%=@game.computer.computer_choice.capitalize%></h2>
     <br>
     <h1>You <%=@game.result%>!</h1>
     <br>
