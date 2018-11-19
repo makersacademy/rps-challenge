@@ -30,3 +30,7 @@ The player(s) should then continue in browser.
 In terminal, in the directory for this project:
 
 `rspec`
+
+and:
+
+`rubocop`
