@@ -32,5 +32,4 @@ class Game
       return "Its a draw!" if @p2_move == @p1_move
     end
   end
-
 end

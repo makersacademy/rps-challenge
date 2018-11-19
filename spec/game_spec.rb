@@ -4,7 +4,7 @@ describe Game do
 
   describe '#vs_computer' do
     it 'Returns a result vs computer (computer = paper)' do
-      srand(1)
+      srand(10)
       game = Game.new('Leon', 'computer')
       game.move('Paper', 'computer')
       expect(game.result).to eq "Its a draw!"
