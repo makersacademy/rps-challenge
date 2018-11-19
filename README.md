@@ -1,3 +1,10 @@
+Designing a simple RockPaperScissors app.  It allows:
+- 1 player or 2 player
+- RockPaperScissors or RockPaperScissorsSpockLizard
+
+Enjoy.
+
+
 # RPS Challenge
 
 Instructions

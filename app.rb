@@ -58,6 +58,9 @@ class Rps < Sinatra::Base
   get '/player_2_go' do
     if @game.multi
       erb(:player_2)
+    elsif @game.rpssl
+      @game.player_2.rpssl_random
+      redirect '/result'
     else
       @game.player_2.random_move
       redirect '/result'
