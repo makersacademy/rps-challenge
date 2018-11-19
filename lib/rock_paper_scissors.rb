@@ -26,7 +26,6 @@ class RockPaperScissors < Sinatra::Application
   end
 
   post '/choice' do
-    @name = session[:name]
     session[:choice] = params[:choice]
     redirect '/result'
   end
