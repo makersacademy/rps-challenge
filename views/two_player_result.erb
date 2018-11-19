@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      center {
+        background-color: orange;
+        padding-top: 20%;
+        padding-bottom: 20%;
+      }
+
+    </style>
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+    <center>
+      <div>
+        <h1><%= @player.name%> chose <%= @player.move %></h1>
+        <br>
+        <h1> <%= @player.name2%> <%= @player.move2 %></h1>
+        <br>
+        <h1> <%= @player.name%> <%= @game.winner(@player.move, @player.move2) %></h1>
+      </div>
+      <br>
+      <form class="" action="/" method="get">
+        <input type="submit" value="Play again??">
+      </form>
+    </center>
+  </body>
+</html>

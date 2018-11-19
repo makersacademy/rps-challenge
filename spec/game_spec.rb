@@ -14,7 +14,7 @@ describe Game do
     it "can return 'Win'" do
       game_double = double :game, :cpu_move => "Paper"
       player_move = "Scissors"
-      expect(game.winner(player_move, game_double.cpu_move)).to eq "Win"
+      expect(game.winner(player_move, game_double.cpu_move)).to eq "Won"
     end
   end
 

@@ -33,7 +33,7 @@ feature 'Playing rock, paper, scissors' do
     allow(MOVES).to receive(:sample) { "Paper" }
     sign_in
     choose_scissors
-    expect(page).to have_content "You Win"
+    expect(page).to have_content "You Won"
   end
 
   feature 'After playing rock, paper, scissors' do
@@ -67,6 +67,12 @@ feature 'Playing rock, paper, scissors' do
       sign_in_two_player
       choose_scissors_then_rock
       expect(Player.instance.move2).to eq "Rock"
+    end
+
+    scenario 'player 2 beats player 1' do
+      sign_in_two_player
+      choose_scissors_then_rock
+      expect(page).to have_content "Ryu Lost"
     end
 
   end

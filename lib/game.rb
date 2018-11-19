@@ -1,6 +1,6 @@
-ROCK = { "Rock" => "Drew", "Paper" => "Lose", "Scissors" => "Win" }
-PAPER = { "Rock" => "Win", "Paper" => "Drew", "Scissors" => "Lose" }
-SCISSORS = { "Rock" => "Lose", "Paper" => "Win", "Scissors" => "Drew" }
+ROCK = { "Rock" => "Drew", "Paper" => "Lost", "Scissors" => "Won" }
+PAPER = { "Rock" => "Won", "Paper" => "Drew", "Scissors" => "Lost" }
+SCISSORS = { "Rock" => "Lost", "Paper" => "Won", "Scissors" => "Drew" }
 MOVES = ["Rock", "Paper", "Scissors"]
 
 class Game
