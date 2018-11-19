@@ -16,14 +16,16 @@ class RPSapp < Sinatra::Base
 
 	post '/choice' do
 		session[:player_choice] = params[:player_choice]
+		session[:ai_choice] = Computer_player.new.attack
+		session[:result] = Game.new.decide_winner(session[:player_choice], session[:ai_choice])
 		redirect '/result'
 	end
 
 	get '/result' do
-		@player_choice = session[:player_choice]
 		@player_name = session[:player_name]
-		@ai_choice = Computer_player.new.attack
-		@result = Game.new.decide_winner(@player_choice, @ai_choice)
+		@player_choice = session[:player_choice]
+		@ai_choice = session[:ai_choice]
+		@result = session[:result]
 		erb(:result)
 	end
 
