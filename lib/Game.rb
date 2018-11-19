@@ -18,7 +18,7 @@ class Game
     @player_1 = player_1
     @player_2 = player_2
     @best_of = best_of.to_i
-    @moves_hash = (game_type == "rps" ?  RPS_HASH : SPOCK_HASH)
+    @moves_hash = (game_type == "rps" ? RPS_HASH : SPOCK_HASH)
     @current_player = @player_1
     @round_over = false
     @game_over = false
@@ -58,7 +58,7 @@ class Game
     puts "p2 score = #{@player_2.score}"
     puts "best of = #{@best_of}"
     puts "best of / 2 = #{@best_of / 2.0}"
-    [@player_1.score, @player_2.score].max >= @best_of / 2.0 ? true : false
+    [@player_1.score, @player_2.score].max >= @best_of / 2.0
   end
 
   def possible_moves
