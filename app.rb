@@ -1,17 +1,22 @@
 require 'sinatra'
-
+require './lib/player'
+require './lib/move'
+class RockPaperScissors < Sinatra::Base
 get '/' do
   erb :index
 end
 
 post '/results' do
-  $player_1 = Player.new(params[:player1])
-  $the_move = Player.new(params[:move])
+  $player1 = Player.new(params[:player1])
+  $move = Move.new(params[:move])
   redirect '/play'
 end
 
 get '/play' do
-  @player1 = $player_1
-  @move = $the_move
+  @player1 = $player1
+  @move = $move
   erb :play
+end
+run! if app_file == $0
+
 end
