@@ -17,7 +17,7 @@ feature 'enter name' do
 
   scenario 'let user know to enter only 1 name for 1 player game' do
     visit '/'
-    expect(page).to have_content "To play against the computer, only enter Player 1 name"
+    expect(page).to have_content "To play against the computer, only enter Player 1's name"
   end
 
   scenario 'play against computer if only 1 name entered' do

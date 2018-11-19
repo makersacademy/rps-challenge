@@ -6,7 +6,6 @@ require_relative './lib/computer_player'
 class RockPaperScissors < Sinatra::Base
   run! if app_file == $0
 
-  enable :sessions
   before do
     @game = Game.instance
   end
@@ -16,17 +15,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    session[:p1_name] = params[:p1_name]
-    session[:p2_name] = params[:p2_name]
-    @player1 = Player.new(session[:p1_name])
-    if session[:p2_name] == ""
+    @player1 = Player.new(params[:p1_name])
+    if params[:p2_name] == ""
       @player2 = Computer.new
-      session[:players] = 1
+      players = 1
     else
-      @player2 = Player.new(session[:p2_name])
-      session[:players] = 2
+      @player2 = Player.new(params[:p2_name])
+      players = 2
     end
-    Game.create(@player1, @player2)
+    @game = Game.create(@player1, @player2)
+    @game.number_of_players(players)
     redirect '/play'
   end
 
@@ -39,7 +37,7 @@ class RockPaperScissors < Sinatra::Base
   post '/move' do
     @player1 = @game.p1
     @player1.select_move(params[:p1_move])
-    session[:players] == 1 ? (redirect '/result') : (redirect '/p2_move')
+    @game.players == 1 ? (redirect '/result') : (redirect '/p2_move')
   end
 
   get '/p2_move' do

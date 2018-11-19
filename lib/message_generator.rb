@@ -29,7 +29,7 @@ class MessageGenerator
   end
 
   def scissors
-    "Scissors cut paper"
+    "Scissors cuts paper"
   end
 
   def draw

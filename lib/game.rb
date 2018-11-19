@@ -3,7 +3,7 @@ require_relative './player'
 require_relative './message_generator'
 
 class Game
-  attr_reader :p1, :p2, :winner
+  attr_reader :p1, :p2, :winner, :players
   @@game = nil
 
   def self.instance
@@ -17,6 +17,10 @@ class Game
   def initialize(player1, player2)
     @p1 = player1
     @p2 = player2
+  end
+
+  def number_of_players(num)
+    @players = num
   end
 
   def find_winner

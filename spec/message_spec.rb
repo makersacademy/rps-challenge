@@ -8,7 +8,7 @@ describe MessageGenerator do
       allow(winner).to receive(:name).and_return "Matt"
       allow(winner).to receive(:move).and_return "rock"
     end
-    it 'returns "You win!" if player wins' do
+    it "returns 'winner.name wins!' if player wins" do
       msg_generator = MessageGenerator.new(winner)
       msg_generator.message
       expect(msg_generator.messages).to include "Matt wins!"
@@ -43,7 +43,7 @@ describe MessageGenerator do
       allow(winner).to receive(:move).and_return "scissors"
       msg_generator = MessageGenerator.new(winner)
       msg_generator.message
-      expect(msg_generator.messages).to include "Scissors cut paper"
+      expect(msg_generator.messages).to include "Scissors cuts paper"
     end
 
     it 'returns "Stalemate!" if winning_move = draw' do

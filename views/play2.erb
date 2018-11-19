@@ -1,7 +1,11 @@
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
 <h1><%= "#{@player1.name} vs. #{@player2.name}" %></h1>
 <h3><%= "#{@player2.name}, Select your weapon" %></h3>
 
-<form class="weapons" action="/p2_move" method="post">
+<form class="button" action="/p2_move" method="post">
   <input type="submit" name="p2_move" value="Rock">
   <input type="submit" name="p2_move" value="Paper">
   <input type="submit" name="p2_move" value="Scissors">
