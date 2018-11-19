@@ -27,4 +27,6 @@ class RPSWEB < Sinatra::Base
 		@result = $game.result
 		erb(:result)
 	end
+
+	run! if app_file == $0
 end
