@@ -8,7 +8,7 @@
   <div align="center">
     <br>
     <br>
-    <h1>Welcome! Pick your poison!</h1>
+    <h1>Welcome <%= @game.p1.name %>'s enemy! Pick your poison!</h1>
     <form action="/add-enemy" method="post">
       <h3>Please enter your name!</h3>
       <input type="text" name="name_2" placeholder="e.g. Henry">
@@ -20,7 +20,7 @@
       <input type="radio" name="choice_2" value="scissors"> Scissors
       <input type="radio" name="choice_2" value="lizard"> Lizard
       <input type="radio" name="choice_2" value="spock"> Spock
-      <button type="Submit" value="Submit">Fight!</button>
+      <button type="submit" value="submit">Fight!</button>
     </form>
   </div>
 </body>
