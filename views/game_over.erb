@@ -1,0 +1,8 @@
+<p>The winner of the game is <%= @game.winner.name %>!</p>
+<p><%= "#{@game.player_1.name} score: #{@game.player_1.score}" %></p>
+<p><%= "#{@game.player_2.name} score: #{@game.player_2.score}" %></p>
+<p>This was a best of <%= @game.best_of %> game!</p>
+
+<form action="/">
+  <input type="submit">
+</form>

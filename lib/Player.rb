@@ -11,8 +11,8 @@ class Player
     @score = 0
   end
 
-  def make_move(move = nil)
-    move = Game.possible_moves.sample if @type == :cpu
+  def make_move(game, move = nil)
+    move = game.possible_moves.sample if @type == :cpu
     @move = move
   end
 
