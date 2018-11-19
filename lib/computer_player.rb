@@ -1,6 +1,6 @@
 class ComputerPlayer
 
-  attr_reader :weapons, :weapon, :names, :name
+  attr_reader :weapons, :weapon, :name
 
   def initialize(weapons = Weapon::WEAPONS)
     @weapons = weapons
