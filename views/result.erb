@@ -4,6 +4,12 @@
     <!-- <link href='/style.css' rel="stylesheet" type="text/css" /> -->
   </head>
   <body>
-    "Your choice: Rock"    
+    <h2>You chose: <%=@game.player.player_choice%>
+    <br>
+    The computer chose: <%=@game.computer.computer_choice%>
+    <br>
+    <h1>You <%=@game.result%>!</h1>
+    <br>
+    <h2>Want to play again?</h2>
   </body>
 </html>

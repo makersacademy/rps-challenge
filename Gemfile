@@ -3,8 +3,9 @@ source 'https://rubygems.org'
 ruby '2.5.0'
 
 gem 'rake'
-gem 'sinatra'
 gem 'shotgun'
+gem 'sinatra'
+gem 'pry'
 
 group :test do
   gem 'capybara'

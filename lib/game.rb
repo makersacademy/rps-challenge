@@ -1,6 +1,12 @@
 class Game
 
-  attr_reader :player, :computer
+  RESULTS_MATRIX = {
+    paper: {scissors: :lose, paper: :draw, rock: :win},
+    rock: {scissors: :win, paper: :lose, rock: :draw},
+    scissors: {scissors: :draw, paper: :win, rock: :lose}
+    }
+
+  attr_reader :player, :computer, :result
 
   def initialize(player, computer)
     @player = player
@@ -13,6 +19,14 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def play(player_choice, computer_choice)
+    @result = RESULTS_MATRIX[player_choice][computer_choice]
+  end
+
+  def result
+    @result
   end
 
 end

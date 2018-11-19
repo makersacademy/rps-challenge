@@ -9,12 +9,12 @@ class Computer
   end
 
   def selection
-    @computer_choice = randomizer
+    @computer_choice = choose_weapon
   end
 
   private
 
-  def randomizer
+  def choose_weapon
     WEAPONS.sample
   end
 

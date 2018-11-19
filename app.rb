@@ -3,6 +3,7 @@ require 'shotgun'
 require './lib/player'
 require './lib/game'
 require './lib/computer'
+require 'pry'
 
 class RPS < Sinatra::Base
 
@@ -24,6 +25,10 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
+    player_choice = @game.player.selection(params[:player_choice].to_sym)
+    @game.computer.selection
+    computer_choice = @game.computer.computer_choice
+    @game.play(player_choice, computer_choice)
     redirect '/result'
   end
 

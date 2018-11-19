@@ -17,4 +17,40 @@ describe Game do
        expect(game).to eq game
      end
    end
- end
+
+   describe '#play' do
+     context "player wins" do
+      it "expects rock to beat scissors" do
+        game.play(:rock, :scissors)
+        expect(game.result).to eq (:win)
+      end
+
+      it "expects paper to beat rock" do
+        game.play(:paper, :rock)
+        expect(game.result).to eq (:win)
+      end
+
+      it "expects scissors to beat paper" do
+        game.play(:scissors, :paper)
+        expect(game.result).to eq (:win)
+      end
+    end
+
+    context "player loses" do
+      it "expects rock to beat scissors" do
+        game.play(:scissors, :rock)
+        expect(game.result).to eq (:lose)
+      end
+
+      it "expects paper to beat rock" do
+        game.play(:rock, :paper)
+        expect(game.result).to eq (:lose)
+      end
+
+      it "expects scissors to beat paper" do
+        game.play(:paper, :scissors)
+        expect(game.result).to eq (:lose)
+      end
+    end
+  end
+end
