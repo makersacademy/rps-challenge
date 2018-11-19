@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+body {
+    background-color: lightblue;
+}
+/* h1 {
+    color: white;
+    text-align: center;
+} */
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+</style>
+    <meta charset="utf-8">
+    <title>Result</title>
+  </head>
+  <body>
+    <div align="center"><br>
+      <p>You chose <%= @selection %> </p>
+      <p>The computer chose <%= @computer_move %> </p>
+      <p><h1><%= @winner %> </h1></p>
+      <br><br>
+      <h2><form action="/play_again" method="get">
+      <input type="submit" value="Click to play again"></h2>
+    </div>
+  </body>
+</html>
