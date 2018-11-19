@@ -37,7 +37,9 @@ class RPS < Sinatra::Base
 
   post '/make-move' do
     @game = $game
-    move = params['move'].to_sym unless move == nil
+    p "post /make-move"
+    p params['move']
+    move = params['move']
     @game.current_player.make_move(@game, move)
     @game.change_player
     redirect('round-over') if @game.round_over?

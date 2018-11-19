@@ -11,9 +11,10 @@ class Player
     @score = 0
   end
 
-  def make_move(game, move = nil)
+  def make_move(game, move)
+    p move
     move = game.possible_moves.sample if @type == :cpu
-    @move = move
+    @move = move.to_sym
   end
 
   def increase_score

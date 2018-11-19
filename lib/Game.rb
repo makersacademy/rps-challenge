@@ -25,8 +25,10 @@ class Game
   end
 
   def winner(player_1 = @player_1, player_2 = @player_2)
-    @player_1_item = @moves_hsah[player_1.move]
+    @player_1_item = @moves_hash[player_1.move]
     @player_2_item = @moves_hash[player_2.move]
+    p @player_1_item
+    p @player_2_item
     return @player_1 if @player_1_item.can_beat?(@player_2_item.symbol)
     return @player_2 if @player_2_item.can_beat?(@player_1_item.symbol)
     :draw
