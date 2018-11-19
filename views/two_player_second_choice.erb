@@ -1,3 +1,8 @@
+<head>
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
+</head>
+
+<body>
 <h1>Rock! Paper!! Scissors!!! Lizard!!!! Spock!!!!!</h1>
 <p>What will it be, <%= @game.p_2.name %>? (<%= @game.p_1.name %>, you should look away)</p>
 <form action='/two_player_second_turn' method='post'>
@@ -7,3 +12,4 @@
   <button name='choice' type='submit' value='lizard'>Lizard</button>
   <button name='choice' type='submit' value='spock'>Spock</button>
 </form>
+</body>
