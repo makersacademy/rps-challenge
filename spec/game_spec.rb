@@ -52,5 +52,22 @@ describe Game do
         expect(game.result).to eq (:lose)
       end
     end
+
+    context "draw" do
+      it "expects scissors to draw with scissors" do
+        game.play(:scissors, :scissors)
+        expect(game.result).to eq (:draw)
+      end
+
+      it "expects paper to draw with paper " do
+        game.play(:paper, :paper)
+        expect(game.result).to eq (:draw)
+      end
+
+      it "expects rock to draw with rock" do
+        game.play(:rock, :rock)
+        expect(game.result).to eq (:draw)
+      end
+    end
   end
 end
