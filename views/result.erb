@@ -18,27 +18,17 @@
       <h2>Time to reveal weapons!
       </h2>
       <br>
-      <% weapon_2 = @game.players[1].weapon_choice %>
-      <% weapon_1 = @game.players[0].weapon_choice %>
-      <% p1_name = @game.players[0].name.capitalize %>
-      <% p2_name = @game.players[1].name.capitalize %>
       <h2>
-        <%= p1_name %> has chosen <%= weapon_1 %>!
+        <%= @name %> has chosen <%= @weapon_1.type.capitalize %>!
         <br>
         <br>
-        <%= p2_name %> has chosen <%= weapon_2 %>!
+        <%= @computer_name %> has chosen <%= @weapon_2.type.capitalize %>!
         <br>
-        <br>
-        <% if Weapon::RULES[weapon_1] == weapon_2 %>
-          <img src="http://www.powaydaysparade.org/wp-content/uploads/2015/09/winner.jpeg">
-          <br>
-          <h1><%= p1_name.upcase %>, YOU HAVE WON!
-            </h1>
-        <% elsif weapon_1 == weapon_2 %>
-          It is a tie, as you both chose <%= weapon_1 %>.
-        <% else %>
-          We are sorry, <%= p1_name %>, but you have lost.
+        <% if @result == "YOU HAVE WON!" %>
+        <img src="http://www.powaydaysparade.org/wp-content/uploads/2015/09/winner.jpeg">
         <% end %>
+        <br>
+        <%= @name %>, <%= @result %>
       </h2>
     </div>
 </body>

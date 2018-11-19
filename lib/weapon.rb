@@ -1,5 +1,5 @@
 class Weapon
-  attr_reader :type, :beats
+  attr_accessor :type
 
   RULES = { rock: :scissors,
             paper: :rock,
@@ -11,7 +11,9 @@ class Weapon
     @type = weapon_type.downcase.to_sym
   end
 
-  def beats?(other_weapon)
-    RULES[type] == other_weapon.type
+  def beats(other_weapon)
+    return "YOU HAVE WON!" if RULES[type] == other_weapon.type
+    return "it is a tie." if type == other_weapon.type
+    return "you have lost." if RULES[other_weapon.type] == type
   end
 end

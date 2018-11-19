@@ -1,8 +1,7 @@
 require 'sinatra/base'
+require_relative "./lib/weapon.rb"
 require_relative "./lib/player.rb"
 require_relative "./lib/game.rb"
-require_relative "./lib/computer.rb"
-require_relative "./lib/weapon.rb"
 
 class RPSWeb < Sinatra::Base
   enable :sessions
@@ -13,7 +12,6 @@ class RPSWeb < Sinatra::Base
 
   post '/names' do
     session[:player_name] = params[:player_name]
-    @name = session[:player_name]
     redirect to('/play')
   end
 
@@ -22,18 +20,25 @@ class RPSWeb < Sinatra::Base
     erb(:play)
   end
 
-  post '/result' do
+  post '/calculate' do
     p params
-    @name = session[:player_name]
-    session[:weapon_type] = params[:weapon_type]
-    @player_1 = Player.new(@name)
-    weapon_1 = Weapon.new(params[:weapon_type])
-    @player_1_weapon = @player_1.choose_weapon(weapon_1)
-    @computer = Computer.new("Computer")
-    weapon_2 = Weapon.new(@computer.choose_weapon)
-    @game = Game.new(@player_1)
-    @game.add_player(@computer)
+    session[:weapon_1] = Weapon.new(params[:weapon_type])
+    session[:computer_name] = "Computer"
+    computer = Computer.new(session[:computer_name])
+    session[:weapon_2] = Weapon.new(computer.choose_weapon)
+    @game = Game.new(session[:player_1])
+    @game.add_player(session[:computer])
+    session[:result] = session[:weapon_1].beats(session[:weapon_2])
+    p "session[:result] is now #{session[:result]}"
+    redirect to('/result')
+  end
 
+  get '/result' do
+    @name = session[:player_name]
+    @computer_name = session[:computer_name]
+    @weapon_1 = session[:weapon_1]
+    @weapon_2 = session[:weapon_2]
+    @result = session[:result]
     erb(:result)
   end
 
