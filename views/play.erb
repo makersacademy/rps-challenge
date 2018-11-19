@@ -24,7 +24,12 @@
         font-size: 1.5em;
         letter-spacing: 5px;
       }
+      .head3 {
+        font-size: 1.2em;
+        letter-spacing: 4px;
+      }
       .weapon {
+        padding: 5px;
         transition: 0.50s;
         -webkit-transition: 0.50s;
         -moz-transition: 0.50s;
@@ -61,9 +66,9 @@
       <p class="head2">YOUR ENEMY PLAYS <%=@game.enemy.choice.upcase%></p>
       <p class="head2">RESULT: <span><%=@game.outcome[0]%></span></p>
       <% if @game.outcome[0] == 'YOU WIN' %>
-        <p class = "head2">(<%=@game.player.choice.upcase%> <%=@game.outcome[1].upcase%> <%=@game.enemy.choice.upcase%>)</p>
+        <p class = "head3">(<%=@game.player.choice.upcase%> <span><%=@game.outcome[1].upcase%></span> <%=@game.enemy.choice.upcase%>)</p>
       <% elsif @game.outcome[0] == 'YOU LOSE' %>
-        <p class = "head2">(<%=@game.enemy.choice.upcase%> <%=@game.outcome[1].upcase%> <%=@game.player.choice.upcase%>)</p>
+        <p class = "head3">(<%=@game.enemy.choice.upcase%> <span><%=@game.outcome[1].upcase%></span> <%=@game.player.choice.upcase%>)</p>
       <% end %>
     <% end %>
 
