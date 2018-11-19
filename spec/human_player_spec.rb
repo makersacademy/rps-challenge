@@ -1,7 +1,7 @@
 require 'human_player'
 
-describe Human_Player do
-  subject(:human_player) { Human_Player.new("Steve") }
+describe HumanPlayer do
+  subject(:human_player) { HumanPlayer.new("Steve") }
 
   it "has a name" do
     expect(human_player.name).to eq("Steve")

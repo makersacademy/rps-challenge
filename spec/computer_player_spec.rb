@@ -1,7 +1,7 @@
 require 'computer_player'
 
-describe Computer_Player do
-  subject(:computer_player) { Computer_Player.new("Computer") }
+describe ComputerPlayer do
+  subject(:computer_player) { ComputerPlayer.new("Computer") }
 
   it "has a name" do
     expect(computer_player.name).to eq("Computer")

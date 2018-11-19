@@ -1,5 +1,5 @@
-class Computer_Player
-  attr_reader :name, :selected_move
+class ComputerPlayer
+  attr_reader :name
   attr_accessor :selected_move
 
   def initialize(name = "Computer")

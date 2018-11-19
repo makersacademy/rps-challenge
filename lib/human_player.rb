@@ -1,4 +1,4 @@
-class Human_Player
+class HumanPlayer
   attr_reader :name, :selected_move
 
   def initialize(name)
