@@ -1,0 +1,16 @@
+<h1><center>ᕦ(ò_óˇ)ᕤ Rock Paper Scissors ᕦ(ò_óˇ)ᕤ </center></h1>
+<h2><center><%= "Hello " + @player_name  + ", please click on an image below to select rock, paper or scissors." %></center></h2>
+<style> body {background-color: Skyblue;} </style
+  <body>
+    <form action="/choice" method="post">
+      <button type="submit" name="player_choice" value="Rock"><img
+        src=http://thesmickle.com/wp-content/uploads/2012/02/rock-bull-dwayne-the-rock-johnson-775398_1178_1319.jpg
+        alt="rock" width="450" height="333"></button>
+      <button type="submit" name="player_choice" value="Paper"><img
+        src=https://www.origamiway.com/images/yoda/easy-origami-yoda.jpg
+        alt="rock" width="450" height="333"></button>
+      <button type="submit" name="player_choice" value="Scissors"><img
+        src=https://www.wadayaneed.com/images/giant-ceremonial-scissors.jpg
+        alt="Submit Form" width="450" height="333"></button>
+    </form>
+  </body>
