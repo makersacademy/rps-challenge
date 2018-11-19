@@ -1,40 +1,38 @@
 require 'sinatra/base'
+require './lib/game_model.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
+  game = Game.new
 
   get '/' do
-    # root
     erb(:index)
   end
 
   get '/register' do
-    # from root
     erb(:register)
   end
 
   post '/name' do
-    # from register.erb
     session[:player1] = params[:player1]
     redirect '/play'
   end
 
   get '/play' do
-    # from /name
     @player1 = session[:player1]
     erb(:play)
   end
 
   post '/chosen' do
-    # from play.erb
     puts params
     session[:selection] = params[:button]
     redirect '/result'
   end
 
   get '/result' do
-    # from /chosen
     @selection = session[:selection]
+    @computer_move = game.computer_move
+    @winner = game.who_wins(@selection, @computer_move)
     erb(:result)
   end
 
