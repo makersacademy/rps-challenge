@@ -1,17 +1,13 @@
 class Player
 
-  attr_reader :name
+  attr_reader :name, :player_choice
 
   def initialize(name)
     @name = name
   end
 
-  # def self.register(name)
-  #   @registered_player = Player.new(name)
-  # end
-  #
-  # def self.instance
-  #   @registered_player
-  # end
-
+  def selection(weapon)
+    @player_choice = weapon
+  end
+  
 end

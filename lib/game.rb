@@ -15,6 +15,4 @@ class Game
     @game
   end
 
-
-
 end
