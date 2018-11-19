@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/random.rb'
+require './lib/random_rps.rb'
 require './lib/choices.rb'
 
 class Game < Sinatra::Base
@@ -33,6 +33,9 @@ class Game < Sinatra::Base
     erb :outcome
   end
 
+  post '/play-again' do
+    redirect '/play'
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
