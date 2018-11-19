@@ -1,8 +1,15 @@
 require 'sinatra/base'
+require './lib/results'
+require './lib/opponent.rb'
+
 
 class Rps < Sinatra::Base
 
 enable :sessions
+
+  # def initialize(Results.new)
+  #   @result = result
+  # end
 
   get '/' do
     erb(:login)
@@ -17,39 +24,17 @@ enable :sessions
     @name = session[:name]
     erb(:player_details)
   end
-  #
+
   post '/player_move' do
     session[:move] = params[:move]
+    @move = session[:move]
     redirect to('/results')
   end
 
   get '/results' do
-    @move = session[:move]
-    erb(:result_calculation)
+    @move = session[:move].to_sym
+    @name = session[:name]
+    @end_game = Result.new.result(@move)
+    erb(:result_page)
   end
 end
-
-#potential second route for rps calculation
-  # post '/rock' do
-  #   @name = session[:name]
-  #   session[:move] = params[:rock]
-  #   @move = session[:move]
-  #   p @move
-  #   redirect to('/results')
-  # end
-  #
-  # post '/paper' do
-  #   @name = session[:name]
-  #   session[:move] = params[:value]
-  #   @move = session[:move]
-  #   p @move
-  #   redirect to('/results')
-  # end
-  #
-  # post '/scissors' do
-  #   @name = session[:name]
-  #   session[:move] = params[:value]
-  #   @move = session[:move]
-  #   p @move
-  #   redirect to('/results')
-  # end

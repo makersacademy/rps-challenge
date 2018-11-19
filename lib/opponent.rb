@@ -1,8 +1,8 @@
 
+class Opponent
 
-class Computer_move
-
-  def comp_move
+  def move
     [:rock, :paper, :scissors].sample
   end
+
 end
