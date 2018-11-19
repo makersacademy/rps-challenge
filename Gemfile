@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.5.0'
 
+gem 'pry'
 gem 'rake'
 gem 'shotgun'
 gem 'sinatra'
-gem 'pry'
 
 group :test do
   gem 'capybara'

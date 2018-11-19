@@ -6,7 +6,7 @@ describe Player do
 
   describe '#initialize' do
     it "initializes with the player's name" do
-     expect(player.name).to eq 'Tomas'
+      expect(player.name).to eq 'Tomas'
     end
   end
 

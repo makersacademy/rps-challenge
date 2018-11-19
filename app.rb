@@ -3,7 +3,6 @@ require 'shotgun'
 require './lib/player'
 require './lib/game'
 require './lib/computer'
-require 'pry'
 
 class RPS < Sinatra::Base
 
