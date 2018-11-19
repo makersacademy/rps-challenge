@@ -1,9 +1,3 @@
-class Player
-end
-
-class Computer
-end
-
 class Game
   def computer_move
     ["Rock", "Paper", "Scissors"].sample
@@ -40,6 +34,7 @@ class Game
       "It's a draw"
     end
   end
+
 
 
 end

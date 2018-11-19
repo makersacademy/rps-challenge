@@ -36,6 +36,11 @@ class RPS < Sinatra::Base
     erb(:result)
   end
 
+  get '/play_again' do
+    @player1 = "back " + session[:player1]
+    # @player1 = session[:player1]
+    erb(:play)
+  end
 
   run! if app_file == $0
 end
