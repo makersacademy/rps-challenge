@@ -9,6 +9,10 @@ In terminal, in the directory where you would like this project:
 
 `git clone git@github.com:alittlecross/rps-challenge.git`
 
+In terminal, in the directory for this project, type:
+
+`bundle`
+
 ## Usage
 
 In terminal, in the directory for this project, type:
@@ -19,7 +23,7 @@ Then in a browser of your choice, go to:
 
 `http://localhost:9292/`
 
-The player(s) should the continue in browser.
+The player(s) should then continue in browser.
 
 ## Running tests
 
