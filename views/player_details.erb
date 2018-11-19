@@ -1,42 +1,53 @@
 <!DOCTYPE html>
+<html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-</head>
+  <head>
+    <title>Game lobby</title>
+    <style>
 
-<body style="background-color:white;">
+      body {text-align:center}
+        h1 {color: red;}
+        p {color: red}
+      wrap_all {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      blink {
+        animation: blinker 0.6s linear infinite;
+        color: #ff0000;
+       }
+      @keyframes blinker {
+        50% { opacity: 0; }
+       }
+
+    </style>
+
+    <h3>
+      Player
+      <blink><%=@name%></blink>
+    </h3>
+
+    <p> In the game of rock, paper, scissors there can only be 1 winner <p>
+    <p> Choose your weapon carefully <p>
+
+      <form action="/rock" method="post">
+        <input type="submit" value="Rock" />
+      </form>
+
+      <form action="/paper" method="post">
+        <input type="submit" value="Paper" />
+      </form>
+
+      <form action="/scissors" method="post">
+        <input type="submit" value="Scissors" />
+      </form>
+
+  <div>
+  <img src= 'https://media1.tenor.com/images/b2a284afcda426722f679d3298566ced/tenor.gif?itemid=4954978'>
+  <div>
 
 
-<style>
-  body {text-align:center}
-  h1 {color: red;}
-  p {color: red}
-  wrap_all {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  }
+  </head>
+  <body>
 
-</style>
-
-
-
-<h1> Player </h1>
-<p><%= @name %></p>
-
-
-<p> In the game of rock, paper, scissors there can only be 1 winner <p>
-  <p> Choose your weapon carefully <p>
-
-<form action="/player_move" method="post">
-  <input type="radio" name="move" value=<%=@name%>> Rock<br>
-  <input type="radio" name="move" value=<%=@name%>> Paper<br>
-  <input type="radio" name="move" value=<%=@name%>> Scissors<br>
-  <input type="submit" value="Make your move">
-</form>
-
-<div>
-<img src= 'https://media1.tenor.com/images/b2a284afcda426722f679d3298566ced/tenor.gif?itemid=4954978'>
-<div>
-
-</body>
 </html>

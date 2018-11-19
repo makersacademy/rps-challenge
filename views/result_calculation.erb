@@ -5,8 +5,11 @@
   </head>
 
   <body>
-
-    <h1> The winner is...<%= @name %></h1>
+    <% if @move == 'Rock'%>
+    <%= "The winner is...#{@name}" %>
+    <% else %>
+    <%= "The winner is computer" %>
+    <% end %>
 
     <div>
     <img src= 'https://allthingsbooker.files.wordpress.com/2016/12/winner.jpg'>
