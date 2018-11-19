@@ -6,8 +6,9 @@ Clone this repo to your machine.
 With BASH/ZSH or similar:
 - CD tp rps-challenge
 - bundle install for gems/dependencies
-- rackup to start a server(or ruby app.rb)
+- rackup to start a local server (or ruby app.rb)
 - navigate to local host eg. localhost:9292 in your browser
+  (your terminal will show you which port to use)
 - Enjoy!
 
 Rules:

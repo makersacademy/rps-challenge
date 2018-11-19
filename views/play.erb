@@ -55,11 +55,11 @@
   <body>
     <p class="head1"><%=@game.player.name.upcase%></p>
     <p class="head2">CHOOSE YOUR WEAPON:</p>
-    <a href="/rock"><img class="weapon" src="<%= url('/rock.png') %>" /></a>
-    <a href="/paper"><img class="weapon" src="<%= url('/paper.png') %>" /></a>
-    <a href="/scissors"><img class="weapon" src="<%= url('/scissors.png') %>" /></a>
-    <a id="lizard" href="/lizard"><img class="weapon" src="<%= url('/lizard.png') %>" alt="LIZARD" /></a>
-    <a href="/spock"><img class="weapon" src="<%= url('/spock.png') %>" /></a>
+    <a id = "rock" href="/rock"><img class="weapon" src="<%= url('/rock.png') %>" /></a>
+    <a id = "paper" href="/paper"><img class="weapon" src="<%= url('/paper.png') %>" /></a>
+    <a id = "scissors" href="/scissors"><img class="weapon" src="<%= url('/scissors.png') %>" /></a>
+    <a id = "lizard" href="/lizard"><img class="weapon" src="<%= url('/lizard.png') %>" alt="LIZARD" /></a>
+    <a id = "spock" href="/spock"><img class="weapon" src="<%= url('/spock.png') %>" /></a>
 
     <% if @game.player.choice != '' %>
       <p class="head2"><%=@game.player.name.upcase%> PLAYS <%=@game.player.choice.upcase%></p>
