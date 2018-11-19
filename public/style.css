@@ -1,0 +1,111 @@
+html {
+  font-size: 20px;
+/*  background: url(background.jpg);*/
+/*  background-size: cover;*/
+  text-align: center;
+}
+
+#menu_bg {
+  background-repeat: repeat;
+  background-position: center center; 
+  background: url('/menu_bg.jpeg');
+}
+
+#get_name {
+  font-size: 28px;
+  font-family: cursive; 
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px #5e6060;
+  border: 5px solid black;
+  border-radius: 10px;
+  margin: 80px;
+  padding: 10px 10px;
+  background: rgba(0,0,0,0.5);
+  width: 750px;
+  transition: all .05s;
+}
+
+.heading {
+  font-size: 40px;
+  font-family: cursive; 
+  text-transform: uppercase;
+  color: #ffc600;
+  letter-spacing: 0.1px;
+  text-align: center;
+  padding-top: 30px 
+}
+
+.submit_button {
+  background: #843b1791;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 10px 30px;
+  font: 600 18px/1em "Sharp Sans",Arial,sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.input_field {
+  font-size: 20px;
+  background: #843b1791;
+  color: #fff;
+  border-color: #4130bc;
+  height: 30px;
+  width: 160px;
+  margin:20px;
+}
+
+.play_header {
+  border: 2px;
+  background: url('/rps_cartoon.jpg'), rgba(0,0,0,0.3);
+}
+
+.action {
+  font-size: 28px;
+  font-family: cursive; 
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px #5e6060;
+
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+.action select {
+  background-color: rgba(0,0,0,0.3);
+  border: 1px
+  color: #fff;
+  font-size: 25px;
+  padding: .5em;
+  padding-right: 2.5em; 
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+}
+
+#result_page {
+  background-position: center; 
+  background-repeat: repeat;
+  background: url('/result_bg.jpg');
+  font: 600 1.5em/1 'Raleway', sans-serif;
+  color: rgba(0,0,0,.5);
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  width: 100%;
+}
+
+.result_sentence {
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #efedce;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  letter-spacing: .1em;
+  padding: .15em 0 .25em 0;
+}

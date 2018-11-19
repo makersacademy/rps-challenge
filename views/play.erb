@@ -1,0 +1,35 @@
+<head>
+    <link href='/style.css' rel="stylesheet" type="text/css" />
+</head>
+
+<body id="menu_bg">
+  <h1 class="heading"> Game Start </h1>
+  <h2 class="play_header">Player 1's Turn!</h2>
+
+  <form action="/player_1_action" method="post">
+
+    <span class="action"> 
+      <%=@game_1.player_1.name%> choose:
+      <select name="player_1_action">
+         <option value="Paper">Paper</option>
+         <option value="Scissors">Scissors</option>
+         <option value="Rock">Rock</option>
+      </select>
+    </span> 
+
+
+  <!--   <p> <%=@game_1.player_2.name%> action: 
+      <select name="player_2_action">
+         <option value="Paper">Paper</option>
+         <option value="Scissors">Scissors</option>
+         <option value="Rock">Rock</option>
+      </select>
+    </p> -->
+    <br>
+    <br>    
+    <br>
+    <br>
+    <input type="submit" class="submit_button" value="Confirm!">
+
+</form>
+</body>

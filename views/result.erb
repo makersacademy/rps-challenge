@@ -1,0 +1,28 @@
+<head>
+    <link href='/style.css' rel="stylesheet" type="text/css" />
+</head>
+
+<body id="result_page">
+
+  <div>
+    <p> <%=@game_1.player_1.name%> used <%=@xx%> </p>
+    <p> <%=@game_1.player_2.name%> used <%=@yy%> </p>
+  </div>
+
+  <%if @game_1.check_tie%>
+    <p class="result_sentence">Tie!<br>wow you two know each other well!</p>
+  <%end%>
+
+  <%if !(@game_1.check_tie)%>
+    <p class="result_sentence"> <%= @game_1.result.name%> won!! </p>
+  <%end%>
+
+  <form action="/play">
+    <input type="submit" class="submit_button" value="Again?">
+  </form>
+
+  <form action="/">
+    <input type="submit" class="submit_button" value="We hate each other and want new partner!!">
+  </form>
+
+</body>
