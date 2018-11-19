@@ -1,7 +1,9 @@
-ROCK = { "Rock" => "Drew", "Paper" => "Lost", "Scissors" => "Won" }
-PAPER = { "Rock" => "Won", "Paper" => "Drew", "Scissors" => "Lost" }
-SCISSORS = { "Rock" => "Lost", "Paper" => "Won", "Scissors" => "Drew" }
-MOVES = ["Rock", "Paper", "Scissors"]
+ROCK = { "Rock" => "Drew", "Paper" => "Lost", "Scissors" => "Won" , "Lizard" => "Won", "Spock" => "Lost"}
+PAPER = { "Rock" => "Won", "Paper" => "Drew", "Scissors" => "Lost", "Lizard" => "Lost", "Spock" => "Won"}
+SCISSORS = { "Rock" => "Lost", "Paper" => "Won", "Scissors" => "Drew", "Lizard" => "Won", "Spock" => "Lost"}
+LIZARD = { "Rock" => "Lost", "Paper" => "Won", "Scissors" => "Lost", "Lizard" => "Drew", "Spock" => "Won"}
+SPOCK = { "Rock" => "Won", "Paper" => "Lost", "Scissors" => "Won", "Lizard" => "Lost", "Spock" => "Drew"}
+MOVES = ["Rock", "Paper", "Scissors", "Lizard" , "Spock"]
 
 class Game
   attr_reader :cpu_move
@@ -27,8 +29,12 @@ class Game
       ROCK[move2]
     elsif move1 == "Paper"
       PAPER[move2]
-    else
+    elsif move1 == "Scissors"
       SCISSORS[move2]
+    elsif move1 == "Lizard"
+      LIZARD[move2]
+    else
+      SPOCK[move2]
     end
   end
 end

@@ -76,5 +76,109 @@ feature 'Playing rock, paper, scissors' do
     end
 
   end
+  feature '2 players can play Rock, Paper, Scissors, Spock' do
+    scenario 'win' do
+      sign_in_two_player
+      choose 'Lizard'
+      click_button "Submit"
+      choose 'Spock'
+      click_button "Submit"
+      expect(page).to have_content "Ryu Won"
+    end
+
+    scenario 'win' do
+      sign_in_two_player
+      choose 'Spock'
+      click_button "Submit"
+      choose 'Rock'
+      click_button "Submit"
+      expect(page).to have_content "Ryu Won"
+    end
+
+    scenario 'lose' do
+      sign_in_two_player
+      choose 'Spock'
+      click_button "Submit"
+      choose 'Paper'
+      click_button "Submit"
+      expect(page).to have_content "Ryu Lost"
+    end
+
+    scenario 'lose' do
+      sign_in_two_player
+      choose 'Lizard'
+      click_button "Submit"
+      choose 'Scissors'
+      click_button "Submit"
+      expect(page).to have_content "Ryu Lost"
+    end
+
+    scenario 'draw' do
+      sign_in_two_player
+      choose 'Lizard'
+      click_button "Submit"
+      choose 'Lizard'
+      click_button "Submit"
+      expect(page).to have_content "Ryu Drew"
+    end
+
+    scenario 'draw' do
+      sign_in_two_player
+      choose 'Spock'
+      click_button "Submit"
+      choose 'Spock'
+      click_button "Submit"
+      expect(page).to have_content "Ryu Drew"
+    end
+  end
+
+  feature '1 player can play Rock, Paper, Scissors, Spock' do
+    scenario 'win' do
+      allow(MOVES).to receive(:sample) { "Spock" }
+      sign_in
+      choose 'Lizard'
+      click_button "Submit"
+      expect(page).to have_content "You Won"
+    end
+
+    scenario 'win' do
+      allow(MOVES).to receive(:sample) { "Lizard" }
+      sign_in
+      choose_scissors
+      expect(page).to have_content "You Won"
+    end
+
+    scenario 'lose' do
+      allow(MOVES).to receive(:sample) { "Rock" }
+      sign_in
+      choose 'Lizard'
+      click_button "Submit"
+      expect(page).to have_content "You Lost"
+    end
+
+    scenario 'lose' do
+      allow(MOVES).to receive(:sample) { "Spock" }
+      sign_in
+      choose 'Rock'
+      click_button "Submit"
+      expect(page).to have_content "You Lost"
+    end
+
+    scenario 'draw' do
+      allow(MOVES).to receive(:sample) { "Lizard" }
+      sign_in
+      choose 'Lizard'
+      click_button "Submit"
+      expect(page).to have_content "You Drew"
+    end
+
+    scenario 'draw' do
+      allow(MOVES).to receive(:sample) { "Spock" }
+      sign_in
+      choose 'Spock'
+      click_button "Submit"
+      expect(page).to have_content "You Drew"
+    end
+  end
 
 end

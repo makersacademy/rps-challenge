@@ -18,4 +18,60 @@ describe Game do
     end
   end
 
+  describe '#Rock, Paper, Scissors, Lizard, Spock' do
+    it "can return 'Win' if p1 uses Rock and p2 uses Lizard" do
+      game_double = double :game, :cpu_move => "Lizard"
+      player_move = "Rock"
+      expect(game.winner(player_move, game_double.cpu_move)).to eq "Won"
+    end
+
+    it "can return 'Win' if p1 uses Spock and p2 uses Scissors" do
+      game_double = double :game, :cpu_move => "Scissors"
+      player_move = "Spock"
+      expect(game.winner(player_move, game_double.cpu_move)).to eq "Won"
+    end
+
+    it "can return 'Win' if p1 uses Lizard and p2 uses Spock" do
+      game_double = double :game, :cpu_move => "Spock"
+      player_move = "Lizard"
+      expect(game.winner(player_move, game_double.cpu_move)).to eq "Won"
+    end
+
+    it "can return 'Win'id p1 uses Paper and p2 uses Spock" do
+      game_double = double :game, :cpu_move => "Spock"
+      player_move = "Paper"
+      expect(game.winner(player_move, game_double.cpu_move)).to eq "Won"
+    end
+
+    it "can return 'Drew' if p1 and p2 use Spock" do
+      game_double = double :game, :cpu_move => "Spock"
+      player_move = "Spock"
+      expect(game.winner(player_move, game_double.cpu_move)).to eq "Drew"
+    end
+
+    it "can return 'Drew' if p1 and p2 use Lizard" do
+      game_double = double :game, :cpu_move => "Lizard"
+      player_move = "Lizard"
+      expect(game.winner(player_move, game_double.cpu_move)).to eq "Drew"
+    end
+
+    it "can return 'Lost' if p2 uses Spock and p1 uses Scissors" do
+      game_double = double :game, :cpu_move => "Spock"
+      player_move = "Scissors"
+      expect(game.winner(player_move, game_double.cpu_move)).to eq "Lost"
+    end
+
+    it "can return 'Lost' if p1 uses Rock and p2 uses Spock" do
+      game_double = double :game, :cpu_move => "Spock"
+      player_move = "Rock"
+      expect(game.winner(player_move, game_double.cpu_move)).to eq "Lost"
+    end
+
+    it "can return 'Win'id p1 uses Paper and p2 uses Lizard" do
+      game_double = double :game, :cpu_move => "Lizard"
+      player_move = "Paper"
+      expect(game.winner(player_move, game_double.cpu_move)).to eq "Lost"
+    end
+  end
+
 end
