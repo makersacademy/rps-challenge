@@ -1,4 +1,4 @@
-class RandomRps
+class RandomMove
   attr_reader :choice
 
   def initialize(choice = Choices.new)
