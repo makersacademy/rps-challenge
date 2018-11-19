@@ -13,4 +13,9 @@ feature 'Playing RPS' do
     expect(page).to have_content 'Scissors'
   end
 
+  scenario 'will display a winner' do
+    make_a_move
+    expect(page).to have_content 'The winner is...'
+  end
+
 end
