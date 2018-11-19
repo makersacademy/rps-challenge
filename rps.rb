@@ -25,15 +25,14 @@ class RockPaperScissors < Sinatra::Base
   post '/choice' do
     p params
     session[:choice] = params[:choice]
+    @game = Game.new_game(session[:name], "computer")
+    @game.player_1.choice = session[:choice] # I could probably refactor the sessions out by moving Game.new into /choice
+    @game.play
+    redirect to('/draw') if @game.winner == nil
     redirect to('/results')
   end
 
   get '/results' do
-    @game = Game.new_game(session[:name], "computer")
-    @game.player_1.choice = session[:choice]
-    @game.play
-    @winner = @game.winner
-    redirect to('/draw') if @winner == nil
     erb(:results)
   end
   get '/draw' do
