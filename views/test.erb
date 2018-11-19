@@ -1,7 +1,26 @@
- #potential second route
+ #potential routes
+<form action="/rock" method="post">
+  <input type="submit" value="Rock" />
+</form>
+
+<form action="/paper" method="post">
+  <input type="submit" value="Paper" />
+</form>
+
+<form action="/scissors" method="post">
+  <input type="submit" value="Scissors" />
+</form>
+
+
+
+
+--------------------------------------------------
+
+
+
 <form action="/player_move" method="post">
-  <input type="radio" name="<%=@name%>" value="rock"> Rock<br>
-  <input type="radio" name="<%=@name%>" value="paper"> Paper<br>
-  <input type="radio" name="<%=@name%>" value="scissors"> Scissors<br>
+  <input type="radio" name="move" value="rock"> Rock<br>
+  <input type="radio" name="move" value="paper"> Paper<br>
+  <input type="radio" name="move" value="scissors"> Scissors<br>
   <input type="submit" value="Make your move">
 </form>

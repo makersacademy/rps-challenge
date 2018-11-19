@@ -30,17 +30,13 @@
     <p> In the game of rock, paper, scissors there can only be 1 winner <p>
     <p> Choose your weapon carefully <p>
 
-      <form action="/rock" method="post">
-        <input type="submit" value="Rock" />
+      <form action="/player_move" method="post">
+        <input type="radio" name="move" value="rock"> Rock<br>
+        <input type="radio" name="move" value="paper"> Paper<br>
+        <input type="radio" name="move" value="scissors"> Scissors<br>
+        <input type="submit" value="Make your move">
       </form>
 
-      <form action="/paper" method="post">
-        <input type="submit" value="Paper" />
-      </form>
-
-      <form action="/scissors" method="post">
-        <input type="submit" value="Scissors" />
-      </form>
 
   <div>
   <img src= 'https://media1.tenor.com/images/b2a284afcda426722f679d3298566ced/tenor.gif?itemid=4954978'>
