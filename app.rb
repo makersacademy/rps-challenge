@@ -46,19 +46,14 @@ class RockPaperScissors < Sinatra::Base
     erb(:play2)
   end
 
-  post '/p2_move' do
-    @player2 = @game.p2
-    @player2.select_move(params[:p2_move])
+  post '/p2_choice' do
+    @game.p2.select_move(params[:p2_choice])
     redirect '/result'
   end
 
   get '/result' do
-    @winner = @game.find_winner
-    if @winner != "draw"
-      @msg_generator = MessageGenerator.new(@winner).message
-    else
-      @msg_generator = MessageGenerator.new("draw").message
-    end
+    @game.find_winner
+    @msg_generator = MessageGenerator.new(@game.winner, @game.loser).message
     erb(:result)
   end
 

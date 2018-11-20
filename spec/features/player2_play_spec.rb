@@ -17,4 +17,16 @@ feature 'player2 RockPaperScissors' do
     click_button 'Rock'
     expect(page).to have_button "Scissors"
   end
+
+  scenario 'player 2 can select lizard' do
+    start_the_game
+    click_button 'Rock'
+    expect(page).to have_button "Lizard"
+  end
+
+  scenario 'player 2 can select Spock' do
+    start_the_game
+    click_button 'Rock'
+    expect(page).to have_button "Spock"
+  end
 end

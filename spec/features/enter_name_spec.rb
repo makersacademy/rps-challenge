@@ -20,7 +20,7 @@ feature 'enter name' do
     expect(page).to have_content "To play against the computer, only enter Player 1's name"
   end
 
-  scenario 'play against computer if only 1 name entered' do
+  scenario 'play against computer if only player 1\'s name entered' do
     visit '/'
     fill_in :p1_name, with: 'Dana'
     click_button "Let's Play!"

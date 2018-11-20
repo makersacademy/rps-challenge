@@ -3,8 +3,14 @@ require_relative './player'
 require_relative './message_generator'
 
 class Game
-  attr_reader :p1, :p2, :winner, :players
+  attr_reader :p1, :p2, :winner, :loser, :players
   @@game = nil
+
+  RULES = { rock: [:scissors, :lizard],
+            paper: [:rock, :spock],
+            scissors: [:paper, :lizard],
+            lizard: [:paper, :spock],
+            spock: [:rock, :scissors] }
 
   def self.instance
     @@game
@@ -24,18 +30,26 @@ class Game
   end
 
   def find_winner
-    @p1.move == @p2.move ? @winner = 'draw' : send(@p1.move)
+    @p1_move = @p1.move.to_sym
+    @p2_move = @p2.move.to_sym
+    case
+    when @p1_move == @p2_move
+      draw
+    when RULES[@p2_move].include?(@p1_move)
+      winner_loser(@p2, @p1)
+    else
+      winner_loser(@p1, @p2)
+    end
   end
 
-  def rock
-    @p2.move == 'paper' ? @winner = @p2 : @winner = @p1
+  def draw
+    @winner = 'draw'
+    @loser = 'draw'
   end
 
-  def paper
-    @p2.move == 'scissors' ? @winner = @p2 : @winner = @p1
+  def winner_loser(winner,loser)
+    @winner = winner
+    @loser = loser
   end
 
-  def scissors
-    @p2.move == 'rock' ? @winner = @p2 : @winner = @p1
-  end
 end
