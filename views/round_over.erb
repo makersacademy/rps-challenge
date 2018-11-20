@@ -1,5 +1,5 @@
-<p><%= "#{@game.player_1.name} chose #{@game.player_1.move}" %></p>
-<p><%= "#{@game.player_2.name} chose #{@game.player_2.move}" %></p>
+<p><%= "#{@game.player_1.name} chose #{@player_1_item_name}" %></p>
+<p><%= "#{@game.player_2.name} chose #{@player_2_item_name}" %></p>
 <% if @game.winner == :draw %>
 <p>It's a draw!</p>
 <% else %>

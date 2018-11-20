@@ -37,8 +37,6 @@ class RPS < Sinatra::Base
 
   post '/make-move' do
     @game = $game
-    p "post /make-move"
-    p params['move']
     move = params['move']
     @game.current_player.make_move(@game, move)
     @game.change_player
@@ -49,6 +47,8 @@ class RPS < Sinatra::Base
   get '/round-over' do
     @game = $game
     $game.increase_winner_score
+    @player_1_item_name = @game.moves_hash[@game.player_1.move].name
+    @player_2_item_name = @game.moves_hash[@game.player_2.move].name
     erb(:round_over)
   end
 

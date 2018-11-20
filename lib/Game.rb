@@ -4,21 +4,40 @@ class Game
 
   attr_reader :player_1, :player_2, :current_player, :best_of, :moves_hash
 
-  RPS_HASH = {  rock: Item.new(:rock, "Rock", [:scissors]),
-                paper: Item.new(:paper, "Paper", [:rock]),
-                scissors: Item.new(:scissors, "Scissors", [:paper]) }
+  RPS_HASH = {
+    rock: Item.new(:rock, "Rock", [:scissors]),
+    paper: Item.new(:paper, "Paper", [:rock]),
+    scissors: Item.new(:scissors, "Scissors", [:paper])
+  }
 
-  SPOCK_HASH = {  rock: Item.new(:rock, "Rock", [:lizard, :scissors]),
-                  lizard: Item.new(:lizard, "Lizard", [:spock, :paper]),
-                  spock: Item.new(:spock, "Spock", [:scissors, :rock]),
-                  scissors: Item.new(:scissors, "Scissors", [:paper, :lizard]),
-                  paper: Item.new(:paper, "Paper", [:rock, :spock]) }
+  LIZARD_SPOCK_HASH = {
+    rock: Item.new(:rock, "Rock", [:lizard, :scissors]),
+    lizard: Item.new(:lizard, "Lizard", [:spock, :paper]),
+    spock: Item.new(:spock, "Spock", [:scissors, :rock]),
+    scissors: Item.new(:scissors, "Scissors", [:paper, :lizard]),
+    paper: Item.new(:paper, "Paper", [:rock, :spock])
+  }
+
+  FRIENDS_HASH = {
+    rock: Item.new(:rock, "Rock", [:scissors]),
+    paper: Item.new(:paper, "Paper", [:rock]),
+    scissors: Item.new(:scissors, "Scissors", [:paper]),
+    fire: Item.new(:fire, "Fire", [:rock, :paper, :scissors]),
+    water: Item.new(:water, "Water balloon", [:fire])
+  }
 
   def initialize(player_1, player_2, game_type = "rps", best_of = "3")
     @player_1 = player_1
     @player_2 = player_2
     @best_of = best_of.to_i
-    @moves_hash = (game_type == "rps" ? RPS_HASH : SPOCK_HASH)
+    @moves_hash = case game_type
+                  when "rps"
+                    RPS_HASH
+                  when "lizardspock"
+                    LIZARD_SPOCK_HASH
+                  when "friends"
+                    FRIENDS_HASH
+                  end
     @current_player = @player_1
     @round_over = false
     @game_over = false
