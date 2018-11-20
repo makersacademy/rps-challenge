@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/game'
 require_relative './lib/player'
-require_relative './lib/computer_player'
 
 class RockPaperScissors < Sinatra::Base
   run! if app_file == $0
@@ -16,15 +15,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     @player1 = Player.new(params[:p1_name])
-    if params[:p2_name] == ""
-      @player2 = Computer.new
-      players = 1
-    else
-      @player2 = Player.new(params[:p2_name])
-      players = 2
-    end
+    @player2 = Player.new(params[:p2_name])
     @game = Game.create(@player1, @player2)
-    @game.number_of_players(players)
     redirect '/play'
   end
 

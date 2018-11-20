@@ -1,4 +1,3 @@
-require_relative './computer_player'
 require_relative './player'
 require_relative './message_generator'
 
@@ -23,10 +22,11 @@ class Game
   def initialize(player1, player2)
     @p1 = player1
     @p2 = player2
+    number_of_players
   end
 
-  def number_of_players(num)
-    @players = num
+  def number_of_players
+    @p2.name == "Computer" ? @number_of_players = 1 : @number_of_players = 2
   end
 
   def find_winner
