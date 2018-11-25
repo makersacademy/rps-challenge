@@ -11,11 +11,8 @@ class Result
   end
 
   def result(player_input)
-    p player_input
     computer_input = @opponent.move
-    p computer_input
     @correct_line = RESULTS[player_input]
-    p @correct_line
     @correct_line[@opponent.move]
   end
 
