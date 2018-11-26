@@ -1,6 +1,8 @@
 # RPS Challenge
 
-Task
+[User Stories](#user-stories) | [Game Rules](#rules) | [Technologies](#technologies) | [User Interaction and Interaction](#experience) | [Running the App](#running-app) | [Running tests](#tests) | [Approach](#approach) | [Contributing](#contributing) 
+
+<a name="user-stories">User stories</a>
 ----
 
 ```sh
@@ -12,7 +14,8 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-Game rules
+
+<a name="rules">Game Rules</a>
 ---
 
 - Rock beats Scissors
@@ -26,7 +29,50 @@ Game rules
 - Scissors beats Lizard
 - Paper beats Spock
 
-Approach
+<a name="technologies"> Technologies</a>
+
+- Ruby
+- RSpec
+- Capybara
+- CSS
+
+<a name="experience"> User Interaction and Experience</a>
+
+![1](./assets/1.png)
+
+![2](./assets/2.png)
+
+![3](./assets/3.png)
+
+<a name="running-app"> Running the app</a>
+
+- Clone this repository
+```
+$ git clone https://github.com/m-rcd/rps-challenge
+$ cd rps-challenge
+```
+- Install dependencies:
+```
+$ gem install
+```
+- Run the app
+```
+$ rackup
+```
+- In your browser, go to
+```
+localhost:9292
+```
+
+<a name="tests">Running the tests</a>
+- Run
+```
+$ rspec
+```
+
+![test](./assets/test.png)
+
+<a name="approach">Approach</a>
 ---
 
 - Using TDD, I started by creating a web app that allow the user to enter their name and choose rock, paper or scissors.
@@ -39,6 +85,15 @@ Approach
 - I then added 2 options to the game: lizard and Spock
 - I added the option to start a new game after a game ends
 - Having finished implementing its functionality ,I used css to make it look nice
+
+<a name="contributing"> Contributing</a>
+---
+
+Pull Requests are always welcome.
+
+When you edit the code, please run `rspec` to check all the tests pass. Also run `rubocop` before you git commit.
+
+Ensure the PR description clearly describes the problem and solution. It should include the relevant issue number, if applicable.
 
 
 [Play now!](https://stark-journey-20582.herokuapp.com/)
