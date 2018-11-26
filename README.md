@@ -1,6 +1,6 @@
 # RPS Challenge
 
-[User Stories](#user-stories) | [Game Rules](#rules) | [Technologies](#technologies) | [User Interaction and Interaction](#experience) | [Running the App](#running-app) | [Running tests](#tests) | [Approach](#approach) | [Contributing](#contributing) 
+[User Stories](#user-stories) | [Game Rules](#rules) | [Technologies](#technologies) | [User Interaction and Interaction](#experience) | [Running the App](#running-app) | [Running tests](#tests) | [Approach](#approach) | [Contributing](#contributing)
 
 <a name="user-stories">User stories</a>
 ----
@@ -30,6 +30,7 @@ I would like to be able to play rock/paper/scissors
 - Paper beats Spock
 
 <a name="technologies"> Technologies</a>
+---
 
 - Ruby
 - RSpec
@@ -37,6 +38,7 @@ I would like to be able to play rock/paper/scissors
 - CSS
 
 <a name="experience"> User Interaction and Experience</a>
+---
 
 ![1](./assets/1.png)
 
@@ -45,6 +47,7 @@ I would like to be able to play rock/paper/scissors
 ![3](./assets/3.png)
 
 <a name="running-app"> Running the app</a>
+---
 
 - Clone this repository
 ```
@@ -65,6 +68,7 @@ localhost:9292
 ```
 
 <a name="tests">Running the tests</a>
+---
 - Run
 ```
 $ rspec
