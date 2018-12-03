@@ -51,3 +51,7 @@ $ bundle
 ```
 $ rackup config.ru
 ```
+
+# diagram
+
+![diagram](https://github.com/toddpla/rps-challenge/blob/master/docs/images/diagram-2.jpg?raw=true)
