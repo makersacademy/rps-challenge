@@ -1,0 +1,7 @@
+<h1>So we have <%= @game.player.name %> and we have <%= @game.opponent.name %></h1>
+
+<h1><%= @game.player.name %> VS <%= @game.opponent.name %>... LET'S GET READY TO RUMBLE!!!</h1>
+
+<form action="/letsbattle" method="get">
+  <input type="submit" value="LET'S GO!!!">
+</form>
