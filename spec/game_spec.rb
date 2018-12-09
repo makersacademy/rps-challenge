@@ -33,7 +33,7 @@ describe Game do
     it 'declares no winner' do
       allow(player).to receive(:option).and_return("Rock")
       allow(opponent).to receive(:option).and_return("Rock")
-      expect(game.winner).to eq "It's a draw"
+      expect(game.winner).to eq "It's a Draw"
     end
   end
 
