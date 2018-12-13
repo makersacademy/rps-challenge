@@ -84,3 +84,11 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+`git clone repo name`
+
+`bundle`
+
+From the lib file `shotgun app.rb` This will open a local server for you to interact with the app 
+
+
