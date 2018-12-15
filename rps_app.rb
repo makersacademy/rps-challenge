@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
+require './lib/cpu'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -13,8 +14,9 @@ class Rps < Sinatra::Base
 
   post '/names' do
     player_1 = Player.new(params[:player_1])
+    player_2 = Cpu.new
 
-    @game = Game.create(player_1)
+    @game = Game.create(player_1, player_2)
     redirect '/play'
   end
 
@@ -24,6 +26,8 @@ class Rps < Sinatra::Base
 
   post '/attack' do
     @game.player_1.choose(params[:choice])
+    @game.player_2.choose
+
     redirect '/result'
   end
 

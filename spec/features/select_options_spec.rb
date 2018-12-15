@@ -34,4 +34,12 @@ feature 'Selecting move' do
     click_button 'Go!'
     expect(page).to have_content('Gon chose Scissors')
   end
+
+  scenario 'CPU picks a move at random' do
+    choose 'rock'
+    srand(2)
+    click_button 'Go!'
+
+    expect(page).to have_content('CPU chose Rock')
+  end
 end
