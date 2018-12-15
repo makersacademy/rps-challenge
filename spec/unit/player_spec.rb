@@ -8,4 +8,12 @@ describe Player do
       expect(gon.name).to eq 'Gon'
     end
   end
+
+  describe '#choice' do
+    it "returns the player's chosen move" do
+      gon.choose('rock')
+
+      expect(gon.choice).to eq 'rock'
+    end
+  end
 end
