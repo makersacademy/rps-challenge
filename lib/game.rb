@@ -15,7 +15,7 @@ class Game
   end
 
   def challenger_move
-    @challenger.move
+    @challenger.choice
   end
 
   def computer_name
@@ -26,4 +26,8 @@ class Game
     @computer.choice
   end
 
+  def challenger_win?
+    false
+  end
+  
 end

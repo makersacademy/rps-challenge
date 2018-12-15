@@ -1,10 +1,10 @@
 class Challenger
 
-  attr_reader :name, :move
+  attr_reader :name, :choice
 
-  def initialize(name, move)
+  def initialize(name, choice)
     @name = name
-    @move = move
+    @choice = choice
   end
 
 end

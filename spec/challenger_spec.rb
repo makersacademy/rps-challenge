@@ -9,9 +9,9 @@ describe Challenger do
     end
   end
 
-  describe '#move' do
+  describe '#choice' do
     it 'returns challenger move' do
-      expect(challenger.move).to eq(:rock)
+      expect(challenger.choice).to eq(:rock)
     end
   end
   
