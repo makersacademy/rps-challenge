@@ -15,10 +15,23 @@ feature 'Viewing moves' do
 end
 
 feature 'Selecting move' do
+  background { sign_in_and_play }
+
   scenario 'choosing rock' do
-    sign_in_and_play
     choose 'rock'
     click_button 'Go!'
     expect(page).to have_content('Gon chose Rock')
+  end
+
+  scenario 'choosing paper' do
+    choose 'paper'
+    click_button 'Go!'
+    expect(page).to have_content('Gon chose Paper')
+  end
+
+  scenario 'choosing scissors' do
+    choose 'scissors'
+    click_button 'Go!'
+    expect(page).to have_content('Gon chose Scissors')
   end
 end
