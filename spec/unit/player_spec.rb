@@ -9,7 +9,7 @@ describe Player do
     end
   end
 
-  describe '#choice' do
+  describe '#choose' do
     it "returns the player's chosen move" do
       gon.choose('rock')
 
