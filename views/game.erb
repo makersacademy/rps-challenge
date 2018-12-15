@@ -1,1 +1,9 @@
-<h5><%= @player_1 %></h5>
+<h2><%= @player_1 %></h2>
+
+<h4>Choose your attack:</h4>
+<h4>Rock, Paper or Scissors</h4>
+
+<form action="/attack">
+  <input type="text" name="player_1_attack">
+  <input type="submit" value="Submit">
+</form>
