@@ -10,8 +10,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name-move' do
-    session[:challenger] = Challenger.new(params[:challenger])
-    session[:move] = params[:move]
+    session[:move] = Move.new(params[:move])
+    session[:challenger] = Challenger.new(params[:challenger], session[:move])
     redirect '/game'
   end
 
