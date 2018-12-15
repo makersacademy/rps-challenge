@@ -8,13 +8,15 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  post '/challenger' do
+  post '/name-move' do
     session[:challenger] = params[:challenger]
+    session[:move] = params[:move]
     redirect '/game'
   end
 
   get '/game' do
     @challenger = session[:challenger]
+    @move = session[:move]
     erb(:game)
   end
 
