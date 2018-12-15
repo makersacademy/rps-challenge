@@ -1,4 +1,4 @@
-<code><span style="display:block;line-height:8px; font-size: 8px; font-weight:bold;white-space:pre;font-family: monospace;color: black; background: white;">                                                                                                   
+
                           %@@@@@@@      &@@@@@@      @@@@@@     @@@   @@@                          
                           %@@&   @@@   @@@   @@@   @@@.         @@@@@@                             
                           %@@@@@@@     @@@   @@@   @@@.         @@@@@@                             
@@ -14,9 +14,9 @@
       @@@@@   @@@            .@@@          .@@@@        @@@@&   @@@   @@@   @@@@@@@@         @@@@@ 
   @   @@@@@   @@@   @@@.     .@@@      @.  .@@@@   @@   @@@@&   @@@   @@@   @@@  @      ,@   @@@@@ 
    @@@@@@.      @@@@@@      @@@@@@      &@@@@@@      @@@@@@      @@@@@@#    @@@   @@@(    @@@@@@   
-</span></code>
 
-<code><span style="display:block;line-height:8px; font-size: 8px; font-weight:bold;white-space:pre;font-family: monospace;color: black; background: white;">                                                            ,.,****///*////////(((((#(((((////**,,,
+
+                                                             ,.,****///*////////(((((#(((((////**,,,
                                                            ,*///////((((((((((((((#((((///****,,   
                                                           ,/(((((((((/(((/((((((((((((//***,,.     
                                                          */****/(//(((/((((((((((((///**,,,        
@@ -54,7 +54,6 @@
                                                                   .**/////////(((#(((//(//*,,..    
                                                    ,/.*(//*       ,.***//////////((((((((////*,,   
                                                       .,*(((((((((,,,,**/////**/*///((((((((//*,,. 
-</span></code>
 
 1. Instructions on how to download and install the app from Github
 2. Screenshots of the game in use
