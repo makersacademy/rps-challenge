@@ -5,7 +5,7 @@ describe Computer do
 
   describe '#name' do
     it 'returns computer name' do
-      expect(computer.name).to eq('Computer')
+      expect(computer.name).to eq(:Computer)
     end
   end
 

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-  <h1><%= @challenger.name %> chose <%= @move.choice %><h1>
-  <h1><%= @computer.name %> chose <%= @computer_move %><h1>
-  <h2><%= @computer_move %> beats <%= @move.choice %>, <%= @challenger.name %> defeated!<h2>
+  <h1><%= @game.challenger_name%> chose <%= @game.challenger_move %><h1>
+  <h1><%= @game.computer_name %> chose <%= @game.computer_move %><h1>
+  <h2><%= @game.computer_move %> beats <%= @game.challenger_move %>, <%= @game.challenger_name %> defeated!<h2>
 </body>
 </html>

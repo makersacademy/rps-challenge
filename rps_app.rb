@@ -1,6 +1,5 @@
 require 'sinatra/base'
-require './lib/challenger'
-require './lib/computer'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -17,10 +16,7 @@ class RPS < Sinatra::Base
   end
 
   get '/game' do
-    @challenger = session[:challenger]
-    @move = session[:move]
-    @computer = Computer.new 
-    @computer_move = @computer.choice
+    @game = Game.new(session[:challenger], Computer.new)
     erb(:game)
   end
 
