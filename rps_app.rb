@@ -23,6 +23,5 @@ class Rps < Sinatra::Base
     erb :attack
   end
 
-
   run! if app_file == $0
 end
