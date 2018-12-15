@@ -22,8 +22,12 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  get '/attack' do
+  post '/attack' do
     @game.player_1.choose(params[:choice])
+    redirect '/result'
+  end
+
+  get '/result' do
     erb :attack
   end
 
