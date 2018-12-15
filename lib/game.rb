@@ -15,7 +15,7 @@ class Game
   end
 
   def challenger_move
-    @challenger.move.choice
+    @challenger.move
   end
 
   def computer_name

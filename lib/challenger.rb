@@ -1,10 +1,8 @@
-require_relative 'move'
-
 class Challenger
 
   attr_reader :name, :move
 
-  def initialize(name, move = Move.new)
+  def initialize(name, move)
     @name = name
     @move = move
   end
