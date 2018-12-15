@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/challenger'
 
 class RPS < Sinatra::Base
 
@@ -9,7 +10,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name-move' do
-    session[:challenger] = params[:challenger]
+    session[:challenger] = Challenger.new(params[:challenger])
     session[:move] = params[:move]
     redirect '/game'
   end
