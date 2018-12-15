@@ -2,7 +2,8 @@
 <html>
 <body>
 
-<%= @challenger.name %> chose <%= @move.choice %>
-
+  <h1><%= @challenger.name %> chose <%= @move.choice %><h1>
+  <h1><%= @computer.name %> chose <%= @computer_move %><h1>
+  <h2><%= @computer_move %> beats <%= @move.choice %>, <%= @challenger.name %> defeated!<h2>
 </body>
 </html>
