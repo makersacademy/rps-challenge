@@ -1,9 +1,10 @@
 require 'game'
 
 describe Game do
-  subject(:game) { Game.new(player) }
   let(:player) { double :player }
   let(:computer) { double :computer }
+
+  subject(:game) { Game.new(player, computer) }
 
   describe '#player' do
     it 'retrieves the player' do
@@ -15,7 +16,7 @@ describe Game do
     it 'decides the winner' do
       allow(player).to receive(:selected_option).and_return('rock')
       allow(computer).to receive(:computer_choice).and_return('paper')
-      expect(game.winner).to eq computer
+      expect(game.winner).to eq 'You lost!'
     end
   end
 end

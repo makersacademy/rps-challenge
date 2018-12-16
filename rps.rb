@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player.rb'
+require './lib/game.rb'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -20,14 +21,17 @@ class Rps < Sinatra::Base
   end
 
   post '/selection' do
-    @player_name = session[:player].name
     @player = session[:player]
     @player.selected_option = params[:option]
     erb :selection
   end
 
   post '/result' do
-    @player_name = session[:player].name
+    @player = session[:player]
+    @game = Game.new(@player, Computer.new)
+    @game.computer.random
+    erb :result
   end
+
   run! if app_file == $PROGRAM_NAME
 end

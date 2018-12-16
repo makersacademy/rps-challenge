@@ -20,12 +20,15 @@ feature 'User options' do
 end
 
 feature 'Computer option' do
+  let(:computer) { double :computer }
   scenario 'the computer generates an option automatically then a winner is decided' do
-    expect(Computer.new).to receive(:computer_choice).and_return('paper')
+    allow(Computer).to receive(:new).and_return(computer)
+    allow(computer).to receive(:random)
+    allow(computer).to receive(:computer_choice).and_return('paper')
     sign_in_and_play
-    page.choose('rock')
+    page.choose('paper')
     click_button 'Submit'
     click_button 'Generate computer choice'
-    expect(page).to have_content('Computer chose paper! Mario loses!')
+    expect(page).to have_content('Computer chose paper! It is a draw!')
   end
 end
