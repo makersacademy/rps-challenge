@@ -36,3 +36,15 @@
 - This test led to a full breakdown in approach and testing method, I have ended up going down paths of just coding to complete the project. It now functions but basically and with no special design to it.
 
   - The breakdown came after creating the test to see if the PlayGame class can decide a winner. This can do this, and is tested thoroughly.
+
+  - have worked through the above issues, recognising the need to call methods and save their output to variables.
+  - Currently the code is very good to a point, the last point, the ugly get /play_game method needs work, but am unsure how, I will need to seek feedback on this area and how to work the flow better.
+  - Numerous refactor points available and need of reflection.
+
+#### This project was a good learning experience which solidified my knowledge from the previous week. I feel a lot more comfortable TDD'ing and following methodical approaches. Sadly it broke down towards the end due to sheer exhaustion. My state entering this project was one of tiredness; and feeling overwhelmed and frustrated at a difficult week and originally plannning on not doing this project but finishing the week project. I am happy withmyself for my progress made on this project, it has can given me the confidence to start saying "I think I can TDD anything", I felt my tests were good although the test coverage app is irritating me. And I felt my tests really drove my development of the app, up until the final test/commit in which it all fell apart. I am ashamed it fell apart so poorly at the end but my work. I need to aware of thge reasons for method breakdown and I have identified the following:
+            - Tired at the end of long weekend working on project.
+            - Frustration borne of working alone, I do not enjoy working on my own having now experienced how joyful collaborative work is. I become frustrated and need to leave the computer, this uses up valuable time, but does allow my emotions to remain controlled? Seek feedback from Dana/coaches to control this better.
+            - Lack of discipline with self, breaks went over time and external pressures took my priority away.
+            - Lack of motivation, as mentioned above I was tired of code going into this project, desperately wanting some time not looking at coloured words on a screen, it is fair to say that I lacked motivation to complete this project, especially as I would have rather continued with the battle project.
+            - Lack of confidence in material. While the project reinforced this points lack of validity and now I feel more confident with whats covered here I must accept the fact that each step to get started and going was dragged and laboured.
+            
