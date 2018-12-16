@@ -6,13 +6,20 @@
  </head>
  <body>
 <p> Player name: <%= @player_name %> </p>
+ <% if !@player_choice %>
+
  <form action="/choice" method='POST'>
     <label for='player_choice'>
-      Type in your choice: rock, paper or scissors
+      Type in your choice: Rock, Paper or Scissors
         <input type='text' name='player_choice'>
       </label>
     <input type='submit' value='Submit'>
-<p> Player choice: <%= @player_choice %> </p>
+<% end %>
+
+<p> <%= @player_name %>'s choice: <%= @player_choice %> </p>
+<% if @player_choice %>
+<p> Computer's choice: <%= @computer_choice %> </p>
+<% end %>
    
   </form>
  </body>

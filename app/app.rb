@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative '../lib/player.rb'
+require_relative '../lib/computer.rb'
 
 class RPS < Sinatra::Base
 
@@ -11,6 +12,7 @@ enable :sessions
 
   post '/names' do
   $player1 = Player.new(params[:player_name])
+  $computer = Computer.new
   redirect '/play'
   end
 
@@ -20,13 +22,13 @@ enable :sessions
   redirect '/play'
   end
 
-
   get '/play' do
-  p params
   @player_name = $player1.player_name
   @player_choice = $player1.print_choice
-  p @player_choice
+  @computer_choice = $computer.print_choice
   erb(:play)
   end
+
+  
 
 end

@@ -4,8 +4,16 @@ class Player
   @name = name
   end
 
-  def playername
+  def player_name
   @name
+  end
+
+  def player_choice(choice)
+  	@choice = choice
+  end
+
+  def print_choice
+  	@choice
   end
 
 end
