@@ -4,6 +4,6 @@ feature 'Presenting choices' do
     visit '/'
     fill_in :player_1_name, with: 'Arjun'
     click_button 'Submit'
-    expect(page).to have_content 'Choices: rock, paper, scissors'
+    expect(page).to have_content 'Player choices: rock, paper, scissors'
   end
 end

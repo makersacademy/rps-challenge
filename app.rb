@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer'
 
 # Creating our own subclass of Sinatra::Base - Modular application style.
 class RPS < Sinatra::Base
@@ -25,8 +26,11 @@ class RPS < Sinatra::Base
 
   post '/make_choice' do
     # Storing value held in params hash to instance variable.
-    @choice_made = params[:choice]
+    @player_1_choice_made = params[:choice]
     p params
+    # @computer_choice_made = [:rock, :paper, :scissors].sample
+    @computer_choice_made = Computer.new.make_random_choice
+    p @computer_choice_made
     erb(:choice_made)
   end
 
