@@ -12,14 +12,22 @@ class RPS < Sinatra::Base
   post '/name' do
     # Extrating values in param hash to session hash.
     session[:player_1_name] = params[:player_1_name]
+    p params
     # Redirect to '/play' route transferring responsibility of rendering.
     redirect '/play'
   end
 
   get '/play' do
-    # Storing values held in session hash to instance variables.
+    # Storing value held in session hash to instance variable.
     @player_1_name = session[:player_1_name]
     erb(:play)
+  end
+
+  post '/make_choice' do
+    # Storing value held in params hash to instance variable.
+    @choice_made = params[:choice]
+    p params
+    erb(:choice_made)
   end
 
   # run! starts a server.
