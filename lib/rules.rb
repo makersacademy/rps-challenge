@@ -6,17 +6,23 @@ class Rules
   end
 
   def decide
-    if @move == "Rock" && @compmove == "Scissors"
+    if win?
       "You won!!"
-    elsif @move == "Paper" && @compmove == "Rock"
-      "You won!!"
-    elsif @move == "Scissors" && @compmove == "Paper"
-      "You won!!"
-    elsif @move == @compmove
+    elsif draw?
       "You drew... A little underwhelming"
     else
       "You lost! HA"
     end
   end
 
+  private
+  def win?
+    @move == "Rock" && @compmove == "Scissors" ||
+    @move == "Paper" && @compmove == "Rock" ||
+    @move == "Scissors" && @compmove == "Paper"
+  end
+
+  def draw?
+    @move == @compmove
+  end
 end
