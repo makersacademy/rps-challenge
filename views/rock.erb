@@ -1,1 +1,10 @@
-<h1>rock</h1>
+<div>
+  <h1> <%= @player_choice %> vs <%= @game_choice %> </h1>
+</div>
+<% if @player_choice == "rock" && @game_choice == "rock" %>
+  <h2>Tied Play Again</h2>
+<% elsif @player_choice == "rock" && @game_choice == "paper" %>
+  <h2>YOU LOSE!</h2>
+<%elsif @player_choice == "rock" && @game_choice == "scissors" %>
+  <h2>YOU WIN!</h2>
+<% end%>

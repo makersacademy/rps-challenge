@@ -1,12 +1,12 @@
 require 'sinatra/base'
+require './lib/game'
 
 
-
-class Rps  < Sinatra::Base
+class Rps < Sinatra::Base
   enable :sessions
 
   before do
-    @game = Game.instance
+   p @game = Game.instance
   end
 
   get '/' do
@@ -19,12 +19,15 @@ class Rps  < Sinatra::Base
     redirect '/play'
   end
 
-  get '/play' do 
+  get '/play' do
     erb(:name)
   end
 
   get '/rock' do
+    @player_choice = "rock"
+    @game_choice = @game.rand_choice
     erb(:rock)
+   
   end
   
 end

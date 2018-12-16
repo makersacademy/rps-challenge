@@ -5,6 +5,7 @@ class Game
   
   def initialize(player)
     @player = player
+    @rps_array = ["rock", "paper", "scissor"]
   end
 
   def self.create(player)
@@ -13,6 +14,10 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def rand_choice
+    @choice = @rps_array.sample
   end
   
 end 
