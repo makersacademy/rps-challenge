@@ -1,7 +1,7 @@
 class Battle 
     MOVES = ['garnet', 'amythyst', 'pearl', 'steven', 'lapiz'].freeze
     
-    WINNING_MOVES = {
+    WHO_BEATS_WHO = {
         'garnet' => ['amythyst', 'steven'],
         'amythyst' => ['pearl', 'lapiz'],
         'pearl' => ['steven', 'garnet'],
@@ -9,7 +9,7 @@ class Battle
         'lapiz' => ['garnet', 'pearl']
     }
 
-    attr_reader :player, :opponent_move
+    attr_reader :player, :outcome, :opponent_move
 
     def initialize(player_obj)
         @player = player_obj
@@ -23,8 +23,8 @@ class Battle
         end
     end 
 
-    def check_winning_moves 
-        if WINNING_MOVES[@player.move].include?(@opponent_move)
+    def player_win? 
+        if WHO_BEATS_WHO[@player.move].include?(@opponent_move)
             @outcome << "won!"
         else
             @outcome << "lost!"
@@ -32,9 +32,8 @@ class Battle
     end
 
     def play
-      check_winning_moves
+      player_win?
       draw?
-      return @outcome
     end
 
 

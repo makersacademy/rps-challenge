@@ -33,15 +33,18 @@ describe Battle do
             srand(4)
             }
 
-        describe '#check_winning_moves' do 
+        describe '#player_win' do 
         it 'returns true if @opponent_move is a value within the array of the key pair' do 
-            expect(game.check_winning_moves).to eql("#{PLAYER_NAME} won!")
+            expect(game.player_win?).to eql("#{PLAYER_NAME} won!")
         end
     end
 
     describe '#play' do 
+        before {
+            game.play
+        }
         it 'will run through the required method calls and out put a winner or looser' do 
-            expect(game.play).to eql("#{PLAYER_NAME} won!")
+            expect(game.outcome).to eql("#{PLAYER_NAME} won!")
         end
     end
   end
