@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/computer'
 
 class Rps < Sinatra::Base
 
@@ -16,6 +18,10 @@ class Rps < Sinatra::Base
   get '/play' do
     @name = session[:name]
     erb(:play)
+  end
+
+  get '/rock' do
+    erb(:rock)
   end
 
 end
