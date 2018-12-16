@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <style>
+    body{
+      background-color: #d3d3d3;
+    }
+    img{
+      width: 250px;
+    }
+  </style>
+  </head>
   <h3> You've selected Rock </h3>
-  <h3> Computer choose <%= @computer_choice %> </h3>
+  <img src='https://res.cloudinary.com/itsellej/image/upload/v1533400140/rock-paper-scissors/rock.png'>
+  <h4> Computer choose <%= @computer_choice %> </h4>
   <h3> <%= @result %> </h3>
   <a href= '/play'>Play again </a>
 </html>
