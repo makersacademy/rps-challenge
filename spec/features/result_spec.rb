@@ -1,6 +1,6 @@
 require 'app'
 
-feature '/play' do
+feature '/result' do
   scenario 'shows the users name' do
     visit '/'
     fill_in 'player_name', with: 'Adam'
