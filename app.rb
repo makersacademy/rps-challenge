@@ -19,15 +19,17 @@ class Game < Sinatra::Base
   end
 
   post '/name' do 
-    @player = Player.create_player(params['player_name'])
-    erb :play
+    @player = Player.store_name(params['player_name'])
+    erb :play, locals:{
+      :name => params['player_name']
+    }
     
   end
 
   post '/move' do 
-    #  @player = Player.move(params['player_name'])
-    # fight = Battle.new(@player.name, params['char'])
-    # outcome = fight.play
+    @player = Player.create_player(params['char'])
+    fight = Battle.new(@player)
+    outcome = fight.play
     erb :end, locals:{
       :outcome => outcome
     }

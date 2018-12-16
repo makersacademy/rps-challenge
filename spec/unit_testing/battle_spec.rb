@@ -23,7 +23,7 @@ describe Battle do
         it 'should have a guard statement that returns an string of draw if its a draw' do
             allow(player).to receive(:move).and_return('pearl')
             srand(4) ##setting to Pearl
-            expect(game.draw?).to eql('its a draw!') 
+            expect(game.draw?).to eql("#{PLAYER_NAME} its a draw!") 
         end
     end
 
@@ -35,13 +35,13 @@ describe Battle do
 
         describe '#check_winning_moves' do 
         it 'returns true if @opponent_move is a value within the array of the key pair' do 
-            expect(game.check_winning_moves).to eql("#{game.player.name} won!")
+            expect(game.check_winning_moves).to eql("#{PLAYER_NAME} won!")
         end
     end
 
     describe '#play' do 
         it 'will run through the required method calls and out put a winner or looser' do 
-            expect(game.play).to eql("#{game.player.name} won!")
+            expect(game.play).to eql("#{PLAYER_NAME} won!")
         end
     end
   end

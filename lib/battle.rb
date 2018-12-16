@@ -14,20 +14,20 @@ class Battle
     def initialize(player_obj)
         @player = player_obj
         @opponent_move = MOVES.sample
-        @outcome = ''
+        @outcome = "#{@player.name} "
     end
 
     def draw?
         if @player.move == @opponent_move
-            @outcome = 'its a draw!'
+            @outcome << 'its a draw!'
         end
     end 
 
     def check_winning_moves 
         if WINNING_MOVES[@player.move].include?(@opponent_move)
-            @outcome = "#{@player.name} won!"
+            @outcome << "won!"
         else
-            @outcome = "#{@player.name} lost!"
+            @outcome << "lost!"
         end
     end
 

@@ -4,6 +4,6 @@ feature 'play page form' do
       fill_in_name
       choose 'garnet'
       click_button 'Submit'
-      expect(page).to have_content(PLAYER_MOVE)
+      expect(page).to have_content(PLAYER_NAME)
     end
   end

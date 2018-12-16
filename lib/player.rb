@@ -5,13 +5,14 @@ class Player
         @player
     end
 
-    def self.create_player(name)
-        @player = Player.new(name)
+    def self.store_name(name)
+        @name = name
     end
 
-    # def self.give_player_move(move)
-    #     @player.move(move)
-    # end
+    def self.create_player(move)
+        name = @name
+        @player = Player.new(name, move)
+    end
 
 
     #everyone else
@@ -19,12 +20,8 @@ class Player
     attr_reader :name, :move
 
 
-    def initialize(name)
+    def initialize(name, move)
         @name = name
-        @move = false
-    end
-
-    def player_move(move)
         @move = move
     end
 
