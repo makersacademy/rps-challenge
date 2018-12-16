@@ -1,19 +1,19 @@
 class Player
 
   def initialize(name)
-  @name = name
+    @name = name
   end
 
   def player_name
-  @name
+    @name
   end
 
   def player_choice(choice)
-  	@choice = choice
+    @choice = choice
   end
 
   def print_choice
-  	@choice
+    @choice
   end
 
 end
