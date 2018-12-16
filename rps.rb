@@ -3,7 +3,9 @@ require './lib/player.rb'
 require './lib/game.rb'
 
 class Rps < Sinatra::Base
-  enable :sessions
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb :index
@@ -11,24 +13,20 @@ class Rps < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:player_name])
-    session[:player] = player
+    @game = Game.create(player, Computer.new)
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player].name
     erb :play
   end
 
   post '/selection' do
-    @player = session[:player]
-    @player.selected_option = params[:option]
+    @game.player.selected_option = params[:option]
     erb :selection
   end
 
   post '/result' do
-    @player = session[:player]
-    @game = Game.new(@player, Computer.new)
     @game.computer.random
     erb :result
   end
