@@ -2,27 +2,24 @@
 
 Description
 -------
-
-This Rock, Paper, Scissor web app is built using `Sinatra`. It allows the user to play _Rock, Paper, Scissors_ against the computer
+This Rock, Paper, Scissor is a [Sinatra modualar application](https://www.oreilly.com/library/view/sinatra-up-and/9781449306847/ch04.html). It allows the user to play _Rock, Paper, Scissors_ against the computer
 
 - the player can be enter their name before the game
-- the player is be presented the choices (rock, paper and scissors)
+- the player is then the choices (rock, paper and scissors)
 - the player can choose one option
 - the game chooses a random option
 - a winner is declared
 
 Installation
 -------
-
 `git clone https://github.com/CazaBelle/rps-challenge`
 
 `bundle` to install required gems
 
-`rackup` This will open a local server for you to interact with the app. The app is run via the `config.ru` file so running `shotgun` will not demonstrate apps functionally
+`rackup` to open a local server for you to interact with the app
 
 User Stories
 ----
-
 This program currently meets the requirements of the below user stories:
 
 ```sh
@@ -37,21 +34,24 @@ I would like to be able to play rock/paper/scissors
 
 Basic Rules
 -------
-
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
- want this weekend.
+ 
 
- Tests
+ Testing
 -----
-
 run `rspec` in the command line
+
+Feature testing done with `capybara` and unit testing done with `rspec`
+
+![](images/test_coverage.png)
+
 
 Planned Extensions
 -----
-- Score tracking so that user knows how many times they have won
+- Score tracking/score board
 - Multi player option 
-- Randomize image on 
+- Image randomizer for win, lose and draw  
 
 
