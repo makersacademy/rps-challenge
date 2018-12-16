@@ -9,24 +9,28 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-  $player = Player.new(params[:name])
+  @player = Player.create(params[:name])
   redirect '/play'
   end
 
   get '/play' do
-  @name = $player.name
+  @player = Player.instance
+  @name = @player.name
   erb(:game)
   end
 
   post '/choice' do
-  $player.randomchoice
-  $player.choose(params[:choice])
+  @player = Player.instance
+  @player.randomchoice
+  @player.choose(params[:choice])
+  @player = Player.create(@player.name, @player.choice, @player.computer_choice)
   redirect '/final'
   end
 
   get '/final' do
-  @result = $player.game_result
-  @computer_choice = $player.computer_choice
+  @player = Player.instance
+  @result = @player.game_result
+  @computer_choice = @player.computer_choice
   erb(:final)
   end
 

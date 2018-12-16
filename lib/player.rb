@@ -2,8 +2,10 @@ class Player
 
   attr_reader :name, :choice, :computer_choice
 
-  def initialize(name)
+  def initialize(name, choice = nil, computer_choice = nil)
     @name = name
+    @choice = choice
+    @computer_choice = computer_choice
   end
 
   def choose(choice)
@@ -34,4 +36,14 @@ class Player
       "win"
     end
   end
+
+  def self.create(name, choice = nil, computer_choice = nil)
+   @player = Player.new(name, choice, computer_choice)
+  end
+
+  def self.instance
+   @player
+  end
+
+
 end
