@@ -16,5 +16,8 @@
 
 
 
-#### After the 3rd feature test I decided to refactor player into a class as the controller was handling both player info during the session and ther flow of the site.
+#### After the 3rd feature test I decided to refactor player into a class as the controller was handling both player info during the session and the flow of the site.
 - Next unit test is for the player object to set and hold a weapon variable via a choice method.
+- Test complete and class extraction completed with it. Was interesting learning how to get the class to interact with the display. Knowing that info is flowing through the model correctly is rewarding and informative!
+
+#### The next test will be around the pc taking and storing a choice as this is the next most important step. 
