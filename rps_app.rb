@@ -32,6 +32,7 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
+    @game.assign_winner(@game.player_1.choice, @game.player_2.choice)
     erb :attack
   end
 
