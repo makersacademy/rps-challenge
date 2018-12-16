@@ -20,8 +20,8 @@ scenario 'Players can input their choice of object' do
     click_button 'Submit'
     expect(page).to have_content "Type in your choice: Rock, Paper or Scissors"
     fill_in 'player_choice', with: "Rock"
-	click_button 'Submit'
-	expect(page).to have_content "Rocky 'Scissor-Widowmaker' Balboa's choice: Rock"
+  click_button 'Submit'
+  expect(page).to have_content "Rocky 'Scissor-Widowmaker' Balboa's choice: Rock"
   end
 end
 
@@ -31,8 +31,8 @@ scenario 'After player choice, page displays computer choice' do
     fill_in 'player_name', with: "Rocky 'Scissor-Widowmaker' Balboa"
     click_button 'Submit'
     fill_in 'player_choice', with: "Rock"
-	click_button 'Submit'
-	expect(page).to have_content "Rocky 'Scissor-Widowmaker' Balboa's choice: Rock"
+  click_button 'Submit'
+  expect(page).to have_content "Rocky 'Scissor-Widowmaker' Balboa's choice: Rock"
   end
 end
 
