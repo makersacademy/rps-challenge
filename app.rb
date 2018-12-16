@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'lib/player'
+require_relative 'lib/player'
 
 set :session_secret, 'super secret' ## this line is allowing us to work with shotgun
 
@@ -16,7 +16,7 @@ class Game < Sinatra::Base
 
   post '/name' do 
     erb :play, locals:{
-      :name => Player.new(params['player_name'])
+      :player => Player.new(params['player_name'])
     }
   end
 
