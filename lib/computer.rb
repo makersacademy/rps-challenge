@@ -1,7 +1,11 @@
 class Computer
 
-  attr_reader :name
+  ATTACKS = [:rock, :paper, :scissors]
+
+  attr_reader :name, :move
+
   def initialize
     @name = :computer
+    @move = ATTACKS.sample
   end
 end
