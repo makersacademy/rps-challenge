@@ -8,3 +8,13 @@ def choose_rock_and_submit
   choose 'rock'
   click_button 'Go!'
 end
+
+def choose_paper_and_submit
+  choose 'paper'
+  click_button 'Go!'
+end
+
+def choose_scissors_and_submit
+  choose 'scissors'
+  click_button 'Go!'
+end
