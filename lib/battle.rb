@@ -7,4 +7,12 @@ class Battle
         @player = player_obj
         @opponent_move = MOVES.sample
     end
+
+    def draw?
+        if @player.move == @opponent_move
+            return 'its a draw!'
+        end
+    end 
+
+
 end
