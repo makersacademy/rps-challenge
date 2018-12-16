@@ -13,4 +13,8 @@ class Rpsgame < Sinatra::Base
     erb(:hold)
   end
 
+  post "/game" do
+    "Game result to go here once functionality implemented"
+  end
+
 end
