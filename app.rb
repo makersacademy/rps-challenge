@@ -19,13 +19,13 @@ class Game  < Sinatra::Base
   end
 
   post '/choice' do
-    session[:player_choice] = params[:player_choice]
+    @player = session[:player]
+    @player.choice(params[:player_choice])
     redirect '/game'
   end
 
   get '/game' do
     @player = session[:player]
-    @player_choice = session[:player_choice]
     erb :game
   end
 

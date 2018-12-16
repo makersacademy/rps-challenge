@@ -7,4 +7,10 @@ describe Player do
     expect(player1.name).to eq "Fulgrim"
   end
 
-end 
+  it 'Records a choice' do
+    player1 = Player.new('Fulgrim')
+    player1.choice('rock')
+    expect(player1.weapon).to eq('rock')
+  end 
+
+end
