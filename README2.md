@@ -26,3 +26,9 @@
 - This was a really good show of TDD principles and why its better than planning too far ahead in the way mentioned above.
 - During this step the class changed name a few times before settling on GameAI, while not overly happy with the name it is the most descriptive despite the wildly liberally inference of 'intelligence' in the machine here.
 - I first thought I should mock or stub the unit test for the random choice, realising this to be rather vacuous I changed to a less pretty .or eq method, this while not pretty or necessarily the cleanest code does test my class outputs what I expect and nothing else. This test could be a target on code review and for later refactoring.
+
+#### The next test will be to test if a class called game can compare the player's choice and pc's choice and determine a winner.
+- I will need to create a double of each class Player and AI here and stub there choice methods with set responses.
+- I am having trouble moving forward. The way to put the different bits together in one class eludes me. I feel a need for dependancy injection but think it is far too much work as almost the entire app would need an overhaul.
+- I am trying now to simply get the bots choice to disply, which I dont need to do, no one asked for it!!!!
+- Back from that pit I move forward testing the game classes ability to get info from other classes and compare it. 
