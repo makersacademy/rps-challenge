@@ -20,4 +20,7 @@
 - Next unit test is for the player object to set and hold a weapon variable via a choice method.
 - Test complete and class extraction completed with it. Was interesting learning how to get the class to interact with the display. Knowing that info is flowing through the model correctly is rewarding and informative!
 
-#### The next test will be around the pc taking and storing a choice as this is the next most important step. 
+#### The next test will be around the pc taking and storing a choice as this is the next most important step.
+- Going into this I realised I need to actually test drive a new class, game, which will handle both PC's choice and comparison when we test drive that (Perhaps guilty of thinking too far ahead here? Will this though guide my TDD now? Or will my TDD change my thought?)
+- Throughout testing process, the class became a GameAI class, singly responsible for making and returning the AI's choice. 
+- This was a really good show of TDD principles and why its better than planning too far ahead in the way mentioned above.
