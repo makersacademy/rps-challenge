@@ -9,19 +9,23 @@ require 'sinatra/base'
 class Game < Sinatra::Base
   # ... app code here ...
 
+  before do 
+    @player = Player.instance
+  end
+
   get '/' do 
     'Testing infrastructure working!'
     erb :home
   end
 
   post '/name' do 
-    erb :play, locals:{
-      :player => Player.new(params['player_name'])
-    }
+    @player = Player.create_player(params['player_name'])
+    erb :play
+    
   end
 
   post '/move' do 
-    p params
+
     erb :end, locals:{
       :move => params['char']
     }
