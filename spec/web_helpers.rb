@@ -1,5 +1,5 @@
 PLAYER_NAME = 'PERIDOT'
-PLAYER_MOVE = 'GARNET'
+PLAYER_MOVE = 'garnet'
 
 def fill_in_name
     visit('/')
