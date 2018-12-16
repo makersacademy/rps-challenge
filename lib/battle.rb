@@ -1,5 +1,12 @@
 class Battle 
     MOVES = ['garnet', 'amythyst', 'pearl', 'steven', 'lapiz'].freeze
+    WINNING_MOVES = {
+        'garnet' => ['amythyst', 'steven'],
+        'amythyst' => ['pearl', 'lapiz'],
+        'pearl' => ['steven', 'garnet'],
+        'steven' => ['lapiz', 'amythyst'],
+        'lapiz' => ['garnet', 'pearl']
+    }
 
     attr_reader :player, :opponent_move
 
@@ -13,6 +20,10 @@ class Battle
             return 'its a draw!'
         end
     end 
+
+    
+
+    
 
 
 end

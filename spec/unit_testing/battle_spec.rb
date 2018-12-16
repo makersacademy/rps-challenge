@@ -26,4 +26,12 @@ describe Battle do
             expect(game.draw?).to eql('its a draw!') 
         end
     end
+
+    describe '#check_winning_moves' do 
+       it 'returns true if @opponent_move is a value within the array of the key pair' do 
+        allow(player).to receive(:move).and_return('amythyst')
+        srand(4)
+        expect(game.check_winning_moves).to eql(true)
+       end
+   end
 end
