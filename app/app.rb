@@ -14,9 +14,18 @@ enable :sessions
   redirect '/play'
   end
 
+  post '/choice' do
+  choice = (params[:player_choice])
+  $player1.player_choice(choice)
+  redirect '/play'
+  end
+
+
   get '/play' do
   p params
-  @player_name = $player1.playername
+  @player_name = $player1.player_name
+  @player_choice = $player1.print_choice
+  p @player_choice
   erb(:play)
   end
 
