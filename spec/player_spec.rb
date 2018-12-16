@@ -10,7 +10,10 @@ describe Player do
 
   describe '#attack' do
     it 'contains the players attack' do
-      expect(player.attack("Rock")).not_to be_empty
+      expect(player.attack("rock")).not_to be_empty
+    end
+    it 'takes the attack as a symbol' do
+      expect(player.attack("rock")).to eq :rock
     end
   end
 end
