@@ -18,8 +18,8 @@ RSpec.describe Game do
   end
 
   describe '#player_2_move' do
-    it 'returns scissors, paper or rock' do
-      expect(game.player_2_move).to be(:rock).or be(:paper).or be(:scissors)
+    it 'returns a string' do
+      expect(game.player_2_move).to be_an_instance_of(String)
     end
   end
 end

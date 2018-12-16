@@ -1,7 +1,6 @@
 <h1> <%= @user.name %> chose <%= @user_move %> and
 <%= @computer.name %> chose <%= @computer_move %> </h1>
 
-
 <% if @user_move == 'rock' and @computer_move == 'scissors' %>
   <% @computer.decrease_life %>
 <% elsif @user_move == 'scissors' and @computer_move == 'paper' %>
@@ -10,13 +9,18 @@
   <% @computer.decrease_life %>
 <% elsif @user_move == @computer_move %>
   <h2> Nobody loose any points in this instance. </h2>
-<% else %>  
+<% else %>
   <% @user.decrease_life %>
 <% end %>
 
 <h1> <%= @user.name %> has <%= @user.life %> lifes left. </h1>
 <h1> <%= @computer.name %> has <%= @computer.life %> lifes left. </h1>
 
+<% if @user.life < 1 %>
+  <h1> <%= @user.name %> lost the match! Congratulation to Computer for winning the match!</h1>
+<% elsif @computer.life < 1 %>
+  <h1> Computer lost the match! Congratulation to <%= @user.name %> for winning the match!</h1>
+<% end %>
 
 <form action="/play" method="get">
   <input type="submit" value="Next round">
