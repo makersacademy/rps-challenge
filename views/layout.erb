@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Crystal Gems Wars | <%= page_name %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+    <link rel="stylesheet" type="text/css" href="<%= url("css/style.css")%>">
+    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+    <script src="<%= url("script/main.js")%>"></script>
 </head>
 <body>
+    <div class='background'></div>
     <%= yield %>
+    <div class='background'></div>
 </body>
 </html>
