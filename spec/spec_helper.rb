@@ -17,6 +17,8 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 
+require File.join(File.dirname(__FILE__),'web_helpers.rb')
+
 Capybara.app = Game
 
 

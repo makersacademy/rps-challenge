@@ -1,6 +1,6 @@
 feature 'start page form' do
 
-    let(:player_name){ 'Donnie Darko' }
+
 
     scenario 'onload there should be a form' do
       visit('/')
@@ -8,9 +8,7 @@ feature 'start page form' do
     end
 
     scenario 'filling in of form should save players names' do
-        visit('/')
-        fill_in('player_name', :with => player_name)
-        click_button 'Play!'
+        fill_in_name
         expect(page).to have_content(player_name)
       end
   end
