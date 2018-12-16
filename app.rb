@@ -29,6 +29,7 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
+    @user = @game.player_1
     erb :play
   end
 
