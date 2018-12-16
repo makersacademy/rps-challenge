@@ -6,7 +6,7 @@ class Game < Sinatra::Base
     erb(:index)
   end
 
-  get "/name" do
+  post "/name" do
     erb(:name)
   end
 
