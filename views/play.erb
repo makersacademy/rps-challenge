@@ -1,1 +1,30 @@
+<script>
+function which_character()
+{
+  var element = document.form.char;
+  for (var i=0; i < element.length; i++)
+  {
+    if (element[i].checked)
+    {
+      var char = element[i].value;
+      break;
+    }
+  }
+}
+</script>
+
 <%= player.name %>
+
+<form action ='/move' method='POST'> 
+    <label for='garnet'>Garnet</label>
+    <input type = 'radio' name='char' value ='Garnet' id='garnet'>
+    <label for='amythyst'>Amythyst</label>
+    <input type = 'radio' name='char' value ='Amysthyst' id='amythyst'>
+    <label for='pearl'>Pearl</label>
+    <input type = 'radio' name='char' value ='Pearl' id='pearl'>
+    <label for='steven'>Steven</label>
+    <input type = 'radio' name='char' value ='Steven' id='steven'>
+    <label for='lapiz'>Lapiz</label>
+    <input type = 'radio' name='char' value ='Lapiz' id='lapiz'>
+    <input type = 'submit' onclick='which_character()' value = 'Submit'>
+</form>

@@ -20,6 +20,13 @@ class Game < Sinatra::Base
     }
   end
 
+  post '/move' do 
+    p params
+    erb :end, locals:{
+      :move => params['char']
+    }
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

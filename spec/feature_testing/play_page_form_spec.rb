@@ -4,8 +4,8 @@ feature 'play page form' do
 
     scenario 'onload there should be a form' do
       fill_in_name
-      fill_in('move', :with => move)
-      click_button 'play!'
+      choose 'garnet'
+      click_button 'Submit'
       expect(page).to have_content(move)
     end
 
