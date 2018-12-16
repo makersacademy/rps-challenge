@@ -74,6 +74,17 @@
       ],
       "/Users/Huxley/Desktop/makers_ruby/week3/rps-challenge/spec/web_helpers.rb": [
         1,
+<<<<<<< HEAD
+=======
+        null,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Huxley/Desktop/makers_ruby/week3/rps-challenge/spec/feature_testing/play_page_form_spec.rb": [
+>>>>>>> 3472f8feccd9780c78b88c9dd21e34c55ec28a47
         1,
         null,
         1,
@@ -91,13 +102,23 @@
         1,
         1,
         1,
-        1,
+        0,
+        0,
         null,
         null,
         null
       ],
       "/Users/Huxley/Desktop/makers_ruby/week3/rps-challenge/spec/feature_testing/start_page_has_form_spec.rb": [
         1,
+        null,
+        null,
+<<<<<<< HEAD
+        null
+      ],
+      "/Users/Huxley/Desktop/makers_ruby/week3/rps-challenge/spec/feature_testing/start_page_has_form_spec.rb": [
+        1,
+=======
+>>>>>>> 3472f8feccd9780c78b88c9dd21e34c55ec28a47
         null,
         1,
         1,
@@ -183,6 +204,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1544977908
+=======
+    "timestamp": 1544970970
+>>>>>>> 3472f8feccd9780c78b88c9dd21e34c55ec28a47
   }
 }
