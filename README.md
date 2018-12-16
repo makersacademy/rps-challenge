@@ -18,25 +18,26 @@ Starting out on this challenges i wanted to build my understanding with the foll
 # Unforseen Challenges
 
   - Ran into a merge conflict when my github had fallen behind my local repo, what a fun time. 
-  - Learnt that HTML5 checkbox and radio buttons do not send query strings on submit, that they must be told by JavaScript to do so. 
+
+  - Learnt that HTML5 checkbox and radio buttons do not send query strings on submit, that they must be told by JavaScript to do so.
+
+  - CSS took longer then expected as was using rackup wonder if could use shotgun. 
 
 # Reflection of L.O.
 
-  - I wanted to create a singlton of the player class. As the game involved a preliminary stage of entering a players name and then entering a move on a seperate form. I thought that the use of a singlton class for Player as well as a before filter in sinartra would mean i'd be free from global variables. Whilst i was able to set up the singlton class, i was unable to add values on to it ...
+  - I wanted to create a singlton of the player class. As the game involved a preliminary stage of entering a players name and then entering a move on a seperate form. I thought that the use of a singlton class for Player as well as a before filter in sinartra would mean i'd be free from global variables. Whilst i was able to set up the singlton class, i was unable to add values on to it in the way i wanted. 
 
-  - i breifly read through layout and templating files with erb, and included a terrible style sheet that turns everything blue, just because i could :p ( I will style this nicely later but my concern was the mecahnics for this project)
+  - i breifly read through layout and templating files with erb. I've managed to change page titles using local variables and create a basic style sheet for everything.
 
-  - I think i was able to effectively use stubbing and doubles with this projects until it came to the singleton part, i wasnt sure how to test wether this was set up working..... 
+  - I think i was able to effectively use stubbing and doubles with this projects until it came to the singleton part, i wasnt sure how to test wether this was set up working.....
+
+ 
 
  # still to do
 
-  - if i can get the singleton Pattern to work and add a move on to the Player, I can instantiate the Battle class which will output the result of the winner. (i want to do it via singleton - would be able to do if i just made battle accpet two params but thats not waht i want.)
+  - I'm unsure if i've sused the singleton correctly, id like to beable to make a player and then add the move. I have stored the players name then made player when also had the move.
 
-  - style things and check the writing reads well
-
-  - id like to see how to change the page title through the layouts: erb
-
-  - I will try to spend 30 mins refactoring the code to ensure all reads ok.
+  - refactor everything -> css, spelling mistake, code repetition, check wording of rspec test. I will try to spend 30 mins refactoring the code to ensure all reads ok.
 
 # mechanics of battle 
 
@@ -46,9 +47,7 @@ Starting out on this challenges i wanted to build my understanding with the foll
 
     So I went for a hash array matched to arrays. i tried to seperate concerns of checking for draw, checking for win etc. only thing could have been clearer is the outcome message.
 
-
- 
-
+  
 
 
 Instructions
