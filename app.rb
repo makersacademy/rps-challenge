@@ -13,6 +13,6 @@ class Rps  < Sinatra::Base
     session[:name] = params[:name]
     p @name = session[:name]
     erb(:name)
-
+    
   end
 end
