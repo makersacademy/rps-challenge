@@ -48,7 +48,7 @@ feature 'Declaring a winner' do
   end
 
   context 'player 1 chooses rock' do
-    scenario 'player 1 wins' do
+    scenario 'player 1 wins' do  
       srand(1)
       choose_scissors_and_submit
 
