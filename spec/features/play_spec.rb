@@ -13,10 +13,10 @@ feature 'Able to enter name' do
   end
 end
 
-  # # feature 'Able to play rock paper scissors' do
-  # #   scenario 'can enter scissors and told if lost, drew or won' do
-  # #     sign_in_and_play
-  # #     click_button 'scissors'
-  # #     expect(page).to scissors_options
-  # #   end
-  # end
+# feature 'Able to play rock paper scissors' do
+#    scenario 'can enter scissors and told if lost, drew or won' do
+#       sign_in_and_play
+#       click_button 'scissors'
+#       expect(page).to scissors_options
+#       end
+#    end
