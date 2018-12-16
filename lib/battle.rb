@@ -29,9 +29,14 @@ class Battle
         end
     end
 
-
-
-    
+    def play
+        return if draw?
+        if check_winning_moves
+            return "#{@player.name} won!"
+        else 
+          return "#{@player.name} lost!"
+        end
+    end
 
 
 end
