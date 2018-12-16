@@ -16,7 +16,15 @@ class Rps  < Sinatra::Base
   post '/name' do 
     player = Player.new(params[:name])
     @game = Game.create(player)
-    erb(:name)
-
+    redirect '/play'
   end
+
+  get '/play' do 
+    erb(:name)
+  end
+
+  get '/rock' do
+    erb(:rock)
+  end
+  
 end
