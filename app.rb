@@ -5,14 +5,18 @@ require 'sinatra/base'
 class Rps  < Sinatra::Base
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end 
 
   post '/name' do 
-    session[:name] = params[:name]
-    p @name = session[:name]
+    player = Player.new(params[:name])
+    @game = Game.create(player)
     erb(:name)
-    
+
   end
 end
