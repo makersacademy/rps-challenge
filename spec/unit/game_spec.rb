@@ -20,15 +20,15 @@ describe Game do
   describe '#decide_winner' do
     context 'player 1 chooses Rock'
       it 'chooses player 1 as the winner' do
-        expect(game.decide_winner('Rock', 'Scissors')).to eq 'Gon'
+        expect(game.decide_winner(['Rock', 'Scissors'])).to eq 'Gon'
       end
 
       it 'chooses player 2 as the winner' do
-        expect(game.decide_winner('Rock', 'Paper')).to eq 'CPU'
+        expect(game.decide_winner(['Rock', 'Paper'])).to eq 'CPU'
       end
 
       it 'declares a draw' do
-        expect(game.decide_winner('Rock', 'Rock')).to eq 'Draw'
+        expect(game.decide_winner(['Rock', 'Rock'])).to eq 'Draw'
       end
   end
 end

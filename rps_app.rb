@@ -27,12 +27,12 @@ class Rps < Sinatra::Base
   post '/attack' do
     @game.player_1.choose(params[:choice])
     @game.player_2.choose
+    @game.play_round
 
     redirect '/result'
   end
 
   get '/result' do
-    @game.assign_winner(@game.player_1.choice, @game.player_2.choice)
     erb :attack
   end
 
