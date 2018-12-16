@@ -2,12 +2,20 @@ require "sinatra/base"
 
 class Game < Sinatra::Base
 
+  enable :sessions
+
   get "/" do
     erb(:index)
   end
 
   post "/name" do
-    erb(:name)
+    session[:name] = params[:name]
+    redirect "/lights"
+  end
+
+  get "/lights" do
+    # session[:name] = params[:name]
+    erb(:lights)
   end
 
   run! if app_file == $0
