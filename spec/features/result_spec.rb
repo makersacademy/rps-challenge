@@ -14,6 +14,15 @@ feature '/result' do
     fill_in 'player_name', with: 'Adam'
     select 'Rock', from: 'weapon'
     click_button 'Submit'
-    expect(page).to have_content 'Rock'
+    expect(page).to have_content 'you chose Rock'
+  end
+
+  scenario 'shows the computers choice' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('paper')
+    visit '/'
+    fill_in 'player_name', with: 'Adam'
+    select 'Rock', from: 'weapon'
+    click_button 'Submit'
+    expect(page).to have_content 'Your opponent randomly chose paper'
   end
 end
