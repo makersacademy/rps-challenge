@@ -7,6 +7,6 @@ feature 'player can see attack options' do
     expect(page).to have_content message
     select 'Rock', from: 'move'
     click_button 'Submit'
-    expect(page).to have_content "You win with Rock!"
+    expect(page).to have_content "You win with rock!"
   end
 end
