@@ -11,7 +11,7 @@ class CalcResult
     index = @weapons.index(@player_weapon)
     winning_weapon = @weapons[index - 1]
     
-    return "it's a draw!" if @player_weapon == @computer_weapon
+    return "It's a draw!" if @player_weapon == @computer_weapon
     @computer_weapon == winning_weapon ? "Unlucky, you lost." : "Congrats! You're a winner baby!"   
   end
 
