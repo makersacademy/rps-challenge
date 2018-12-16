@@ -1,3 +1,5 @@
+require_relative 'user'
+
 class Game
 
   MOVES = [:rock, :paper, :scissors]
@@ -22,11 +24,7 @@ class Game
     @players.last
   end
 
-  # def player_1_move
-  #   @players.first.move
-  # end
-
   def player_2_move
-    MOVES.sample
+    MOVES.sample.to_s
   end
 end

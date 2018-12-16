@@ -11,4 +11,8 @@ class User
   def round(move)
     @move = move
   end
+
+  def decrease_life
+    @life -= 1
+  end
 end

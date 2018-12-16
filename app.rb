@@ -34,6 +34,7 @@ class Rps < Sinatra::Base
 
   post '/move' do
     @user_move = @game.player_1.round(params[:move])
+    @computer_move = @game.player_2_move
     redirect '/match'
   end
 
