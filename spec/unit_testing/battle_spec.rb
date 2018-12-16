@@ -35,7 +35,7 @@ describe Battle do
 
         describe '#check_winning_moves' do 
         it 'returns true if @opponent_move is a value within the array of the key pair' do 
-            expect(game.check_winning_moves).to eql(true)
+            expect(game.check_winning_moves).to eql("#{game.player.name} won!")
         end
     end
 
