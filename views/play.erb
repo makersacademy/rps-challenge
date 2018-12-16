@@ -1,5 +1,10 @@
 <div style = 'background-color: orange'>
 <h1>Hello <%=@player%>, ready to Rock some Scissors?</h1>
 </div>
-<div style = 'background-color: light blue'>
-</div>
+<form action='/compmove', method='post'>
+  <select name="move">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  <input type="submit" value="Submit">
+</form>
