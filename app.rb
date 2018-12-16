@@ -10,6 +10,7 @@ class Game < Sinatra::Base
 
   get '/' do 
     'Testing infrastructure working!'
+    erb :home
   end
 
   # start the server if ruby file executed directly
