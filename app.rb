@@ -9,11 +9,13 @@ class Rps < Sinatra::Base
 
   post '/user_name' do
     session[:user_name] = params[:user_name]
+    session[:move] = params[:move]
     redirect '/display_name'
   end
 
   get '/display_name' do
     @user_name = session[:user_name]
+    @move = session[:move]
     erb :user_name
   end
 
