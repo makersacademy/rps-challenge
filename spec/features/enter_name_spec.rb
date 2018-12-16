@@ -1,7 +1,7 @@
 feature 'Enter name' do
   scenario 'submitting name' do
     visit('/')
-    fill_in :user_name, with: 'Manu'
+    fill_in :user, with: 'Manu'
     select('SCISSORS')
     click_button 'Submit'
     expect(page).to have_content 'Manu'
@@ -9,7 +9,7 @@ feature 'Enter name' do
 
   scenario 'choosing move' do
     visit('/')
-    fill_in :user_name, with: 'Manu'
+    fill_in :user, with: 'Manu'
     select('SCISSORS')
     click_button 'Submit'
     expect(page).to have_content 'scissors'

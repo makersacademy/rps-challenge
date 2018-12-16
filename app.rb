@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/user'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -8,13 +9,13 @@ class Rps < Sinatra::Base
   end
 
   post '/user_name' do
-    session[:user_name] = params[:user_name]
+    session[:user] = User.new(params[:user])
     session[:move] = params[:move]
-    redirect '/display_name'
+    redirect '/display'
   end
 
-  get '/display_name' do
-    @user_name = session[:user_name]
+  get '/display' do
+    @user = session[:user]
     @move = session[:move]
     erb :user_name
   end
