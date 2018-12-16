@@ -1,12 +1,6 @@
 PLAYER_NAME = 'PERIDOT'
-<<<<<<< HEAD
+
 PLAYER_MOVE = 'garnet'
-=======
-<<<<<<< HEAD
-PLAYER_MOVE = 'garnet'
-=======
->>>>>>> 3472f8feccd9780c78b88c9dd21e34c55ec28a47
->>>>>>> 5a8d26292e52760138616ee7f15381416ec6d665
 
 def fill_in_name
     visit('/')
