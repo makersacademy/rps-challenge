@@ -18,6 +18,8 @@ Installation
 
 `rackup` to open a local server for you to interact with the app
 
+Open browser and navigate to [http://localhost:9292](http://localhost:9292) 
+
 User Stories
 ----
 This program currently meets the requirements of the below user stories:
