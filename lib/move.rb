@@ -11,4 +11,12 @@ class Move
     Game::RULES[@challenger_choice] == @computer_choice
   end
 
+  def draw?
+    @challenger_choice == @computer_choice
+  end
+
+  def result
+    draw? ? :draw : beats?
+  end
+
 end

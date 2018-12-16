@@ -5,14 +5,14 @@ describe Game do
   let(:challenger) { double :challenger, name: 'Link' }
   let(:computer) { double :computer, name: :Computer }
 
-  describe '#challenger_win?' do
+  describe '#game_result' do
     context 'challenger: rock, computer: paper' do
       it 'returns loss for challenger as boolean' do
         allow(challenger).to receive(:choice).and_return(:rock)
         allow(computer).to receive(:choice).and_return(:paper)
         challenger = game.challenger_move
         computer = game.computer_move
-        expect(game.challenger_win?(challenger, computer)).to eq(false)
+        expect(game.game_result(challenger, computer)).to eq(false)
       end
     end
 
@@ -22,7 +22,7 @@ describe Game do
         allow(computer).to receive(:choice).and_return(:scissors)
         challenger = game.challenger_move
         computer = game.computer_move
-        expect(game.challenger_win?(challenger, computer)).to eq(false)
+        expect(game.game_result(challenger, computer)).to eq(false)
       end
     end
 
@@ -32,7 +32,7 @@ describe Game do
         allow(computer).to receive(:choice).and_return(:rock)
         challenger = game.challenger_move
         computer = game.computer_move
-        expect(game.challenger_win?(challenger, computer)).to eq(false)
+        expect(game.game_result(challenger, computer)).to eq(false)
       end
     end
 
@@ -42,7 +42,7 @@ describe Game do
         allow(computer).to receive(:choice).and_return(:scissors)
         challenger = game.challenger_move
         computer = game.computer_move
-        expect(game.challenger_win?(challenger, computer)).to eq(true)
+        expect(game.game_result(challenger, computer)).to eq(true)
       end
     end
     
@@ -52,7 +52,7 @@ describe Game do
         allow(computer).to receive(:choice).and_return(:paper)
         challenger = game.challenger_move
         computer = game.computer_move
-        expect(game.challenger_win?(challenger, computer)).to eq(true)
+        expect(game.game_result(challenger, computer)).to eq(true)
       end
     end
 
@@ -62,7 +62,7 @@ describe Game do
         allow(computer).to receive(:choice).and_return(:rock)
         challenger = game.challenger_move
         computer = game.computer_move
-        expect(game.challenger_win?(challenger, computer)).to eq(true)
+        expect(game.game_result(challenger, computer)).to eq(true)
       end
     end
 

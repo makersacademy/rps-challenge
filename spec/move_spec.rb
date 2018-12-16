@@ -19,7 +19,6 @@ describe Move do
 
   describe '#beats?' do
     it 'returns true if challenger move beats the computer' do
-      move = described_class.new(challenger, computer)
       expect(move.beats?).to eq(true)
     end
 
@@ -30,4 +29,30 @@ describe Move do
     end
   end
 
-end 
+  describe '#draw?' do
+    it 'return true if challenger and computer moves the same' do
+      computer = :scissors
+      move = described_class.new(challenger, computer)
+      expect(move.draw?).to eq(true)
+    end
+  end
+
+  describe '#result' do
+    it 'returns draw if challenger and computer moves the same' do
+      computer = :scissors
+      move = described_class.new(challenger, computer)
+      expect(move.result).to eq(:draw)
+    end
+
+    it 'returns win as boolean if challenger beats computer' do
+      expect(move.result).to eq(true)
+    end
+
+    it 'returns loss as bollean if challenger loses to computer' do
+      computer = :rock
+      move = described_class.new(challenger, computer)
+      expect(move.result).to eq(false)
+    end
+  end
+
+end
