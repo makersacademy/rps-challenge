@@ -1,12 +1,11 @@
 require 'sinatra/base'
 require './lib/game'
 
-
 class Rps < Sinatra::Base
   enable :sessions
 
   before do
-   p @game = Game.instance
+    @game = Game.instance
   end
 
   get '/' do

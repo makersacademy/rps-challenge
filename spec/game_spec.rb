@@ -1,7 +1,7 @@
 require 'game'
 
 RSpec.describe Game do 
-  let(:player) { double :player}
+  let(:player) { double :player }
   describe '#new' do 
     it 'stores a player at start' do 
       game = Game.new(:player)
