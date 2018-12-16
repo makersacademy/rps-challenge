@@ -20,10 +20,10 @@ Installation
 
 To install this Rock Paper Scissors game
 
-`$ git clone git@github.com:rednblack99/rps-challenge.git
-$ cd rps-challenge
-$ bundle install
-$ rackup config.ru`
+`$ git clone git@github.com:rednblack99/rps-challenge.git`
+`$ cd rps-challenge`
+`$ bundle install`
+`$ rackup config.ru`
 
 Then head to the assigned port (default: 9292) to play the game!
 
