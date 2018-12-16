@@ -32,9 +32,4 @@ class Game
         "Oups, it's a draw!"
     end
   end
-  #  def rock(choice)
-  #   return "Oups, it's a draw !" if choice == "Rock"
-  #   return "Great, you won this round !" if choice == "Scissors"
-  #   return "Sadly, you lost this one!" if choice == "Paper"
-  # end
 end

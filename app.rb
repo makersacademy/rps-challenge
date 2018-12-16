@@ -26,4 +26,10 @@ class Rps < Sinatra::Base
     erb(:rock)
   end
 
+  get '/scissors' do
+    @computer_choice = Computer.new.play
+    @result = Game.new.scissors(@computer_choice)
+    erb(:scissors)
+  end
+
 end
