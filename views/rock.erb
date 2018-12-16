@@ -1,5 +1,6 @@
 <div>
-  <h1> <%= @player_choice.upcase %> vs <%= @game_choice.upcase %> </h1>
+  <h1>You Picked: <%= @player_choice.upcase %></h1> 
+  <h1>Computer Picked: <%= @game_choice.upcase %> </h1>
 </div>
 <% if @player_choice == "rock" && @game_choice == "rock" %>
   <h2>YOU TIED! Try Again </h2>

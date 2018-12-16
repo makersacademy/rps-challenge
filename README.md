@@ -1,22 +1,29 @@
 # RPS Challenge
 
-Instructions
+Description
 -------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+This Rock, Paper, Scissor web app is built using `Sinatra`. It allows the user to play _Rock, Paper, Scissors_ against the computer
 
-Task
+- the player can be enter their name before the game
+- the player is be presented the choices (rock, paper and scissors)
+- the player can choose one option
+- the game chooses a random option
+- a winner is declared
+
+Installation
+-------
+
+`git clone https://github.com/CazaBelle/rps-challenge`
+
+`bundle` to install required gems
+
+`rackup` This will open a local server for you to interact with the app. The app is run via the `config.ru` file so running `shotgun` will not demonstrate apps functionally
+
+User Stories
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+This program currently meets the requirements of the below user stories:
 
 ```sh
 As a marketeer
@@ -28,67 +35,93 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
+Basic Rules
+-------
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+ want this weekend.
 
-In code review we'll be hoping to see:
+ Tests
+-----
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+run `rspec` in the command line
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+Planned Extensions
+-----
+- Score tracking so that user knows how many times they have won
+- Multi player option 
+- Randomize image on 
 
-Notes on test coverage
-----------------------
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+Takeaway Challenge - Caz's Calzones 
+==================
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+Description
+-------
+
+This takeaway program uses Ruby to manage its ordering process. It currently supports the following features:
+
+* Reading the full menu
+* Adding items to your order
+* Checking the total cost of your current order and confirming if it is correct
+* Place an order that sends a text to the user confirming delivery time (1 hour from checkout)
+
+Installation
+-----
+
+`git clone https://github.com/CazaBelle/takeaway-challenge.git`
+ 
+`bundle` to install all required gems
+
+Require a `twilio` account with a verified `account_sid` and `auth_token`
+
+
+Instructions
+-----
+`order = Order.new`
+
+`order.show_menu`
+
+`order.take_order(item_wanted_from_menu)` repeat this process for as many items you would like to add to basket
+
+`order.print_basket` to confirm items and total
+
+`order.complete_order` to receive a sms to confirm delivery time
+
+Customer stories
+-----
+
+This program currently meets the requirements of the below user stories:
+
+```
+As a customer
+So that I can check if I want to order something
+I would like to see a list of dishes with prices
+
+As a customer
+So that I can order the meal I want
+I would like to be able to select some number of several available dishes
+
+As a customer
+So that I can verify that my order is correct
+I would like to check that the total I have been given matches the sum of the various dishes in my order
+
+As a customer
+So that I am reassured that my order will be delivered on time
+I would like to receive a text such as "Thank you! Your order was placed and will be delivered before 18:52" after I have ordered
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+API Reference
+-----
 
-`git clone repo name`
+Built using `Twilio-Ruby`
 
-`bundle`
 
-From the lib file `shotgun app.rb` This will open a local server for you to interact with the app 
 
+Resources 
+------------------
+* How to map over an array of hashes: https://medium.freecodecamp.org/ruby-using-the-select-map-and-reduce-methods-together-a9b2af30804b
 
