@@ -26,6 +26,25 @@ context 'Player loses' do
     losing_game = described_class.new('Scissors', 'Rock')
     expect(losing_game.compare).to eq 'You lost!'
   end
+end
 
+context 'Player wins' do
+it 'Player rock wins against computer scissors' do
+    winning_game = described_class.new('Rock', 'Scissors')
+    expect(winning_game.compare).to eq 'You won!'
   end
+
+  it 'Player paper wins against computer rock' do
+    winning_game = described_class.new('Paper', 'Rock')
+    expect(winning_game.compare).to eq 'You won!'
+  end
+
+  it 'Player scissors wins against computer paper' do
+    winning_game = described_class.new('Scissors', 'Paper')
+    expect(winning_game.compare).to eq 'You won!'
+  end
+
+
+end
+
 end
