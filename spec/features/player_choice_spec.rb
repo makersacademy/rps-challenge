@@ -1,5 +1,5 @@
 feature "Choosing" do
-  scenario 'Player can choose Rock, paper of scissors' do
+  scenario 'Player can choose Rock, paper or scissors' do
     visit('/')
     fill_in :player, with: "Fulgrim"
     click_button "Submit"

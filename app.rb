@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class Game  < Sinatra::Base
   enable :sessions
@@ -8,7 +9,7 @@ class Game  < Sinatra::Base
   end
 
   post '/name' do
-    session[:player] = params[:player]
+    session[:player] = Player.new(params[:player])
     redirect '/play'
   end
 
