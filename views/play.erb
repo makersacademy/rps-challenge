@@ -25,3 +25,13 @@
   <h1 class="glow"><%= @player_name %></h1>
 </body>
 </html>
+
+
+
+<h2>Please select one option from below then click play</h2>
+<form action="/player_move" method="post">
+  <input type="radio" name="choice" value="rock"> Rock<br>
+  <input type="radio" name="choice" value="paper"> Paper<br>
+  <input type="radio" name="choice" value="scissors"> Scissors<br>
+  <input type="submit" value="Play">
+</form>

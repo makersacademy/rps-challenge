@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
 
-class Game < Sinatra::Base
+class RPS < Sinatra::Base
 
     get '/' do
        "Rock, Paper, Scissors!"
@@ -14,7 +14,21 @@ class Game < Sinatra::Base
     end
 
     get '/play' do
+        @player = $player
         @player_name = $player.name
         erb(:play)
     end
+
+    post '/player_move' do
+        $player_move = (params[:choice])
+        @player_move = $player_move
+        redirect '/result'
+    end
+
+    get '/result' do
+        @player = $player
+        @player_move = $player_move
+        erb(:result)
+    end
+
 end

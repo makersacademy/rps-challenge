@@ -8,9 +8,9 @@ ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
-#require 'features/web_helpers'
+require 'features/web_helpers'
 
-Capybara.app = Game
+Capybara.app = RPS
 
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
