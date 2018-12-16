@@ -1,2 +1,10 @@
-<%= @user.name %> chose <%= @user_move %> and 
-<%= @computer.name %> chose <%= @computer_move %>
+<h1> <%= @user.name %> chose <%= @user_move %> and
+<%= @computer.name %> chose <%= @computer_move %> </h1>
+
+<h2> <%= @user.name %> has <%= @user.life %> lifes left.
+<%= @computer.name %> has <%= @computer.life %> lifes left. </h2>
+
+
+<form action="/play" method="get">
+  <input type="submit" value="Next round">
+</form>

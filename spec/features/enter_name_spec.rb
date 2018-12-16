@@ -3,7 +3,7 @@ feature 'Enter name' do
     visit('/')
     fill_in :user, with: 'Manu'
     select('SCISSORS')
-    click_button 'Submit'
+    click_button 'Play'
     expect(page).to have_content 'Manu'
   end
 
@@ -11,7 +11,7 @@ feature 'Enter name' do
     visit('/')
     fill_in :user, with: 'Manu'
     select('SCISSORS')
-    click_button 'Submit'
+    click_button 'Play'
     expect(page).to have_content 'scissors'
   end
 end

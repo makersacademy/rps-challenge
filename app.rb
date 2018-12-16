@@ -28,5 +28,14 @@ class Rps < Sinatra::Base
     erb :match
   end
 
+  get '/play' do
+    erb :play
+  end
+
+  post '/move' do
+    @user_move = @game.player_1.round(params[:move])
+    redirect '/match'
+  end
+
   run! if app_file == $0
 end
