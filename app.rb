@@ -17,10 +17,10 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-  # Storing values held in session hash to instance variables.
-  @player_1_name = session[:player_1_name]
-  erb(:play)
-end
+    # Storing values held in session hash to instance variables.
+    @player_1_name = session[:player_1_name]
+    erb(:play)
+  end
 
   # run! starts a server.
   # Only start a server if the file has been executed directly with __FILE__
