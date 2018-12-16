@@ -1,12 +1,18 @@
 require 'sinatra/base'
 
+
+
 class Rps  < Sinatra::Base
+  enable :sessions
 
   get '/' do
-    "Welcome to Rock, Paper, Scissors"
+    erb(:index)
   end 
 
-  # get '/' do
-  # end
- 
+  post '/name' do 
+    session[:name] = params[:name]
+    p @name = session[:name]
+    erb(:name)
+
+  end
 end
