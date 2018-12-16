@@ -12,7 +12,7 @@ class CalcResult
     winning_weapon = @weapons[index - 1]
     
     return "It's a draw!" if @player_weapon == @computer_weapon
-    @computer_weapon == winning_weapon ? "Unlucky, you lost." : "Congrats! You're a winner baby!"   
+    @computer_weapon == winning_weapon ? "You lost" : "You're a winner baby!"
   end
 
 end

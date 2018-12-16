@@ -9,6 +9,10 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  # Sorry for the global variables! I know these are VERY BAD NEWS
+  # I didn't manage to get my head around the Singleton pattern this weekend.
+  # Refactoring needed!
+
   post '/play' do
     $player = Player.new(params[:player_name], params[:weapon])
     $computer = Computer.new

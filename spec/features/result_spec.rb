@@ -30,13 +30,13 @@ feature '/result winning selections' do
   it 'returns a loss if player chooses rock and computer, paper' do
     allow_any_instance_of(Computer).to receive(:choose_weapon).and_return(:paper)
     choose_name_and_weapon
-    expect(page).to have_content "Unlucky, you lost."   
+    expect(page).to have_content "You lost"   
   end
 
   it 'returns a win if player chooses rock and computer, scissors' do
     allow_any_instance_of(Computer).to receive(:choose_weapon).and_return(:scissors)
     choose_name_and_weapon
-    expect(page).to have_content "Congrats! You're a winner baby!" 
+    expect(page).to have_content "You're a winner baby!" 
   end
 
 end
