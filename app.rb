@@ -32,4 +32,9 @@ class Rps < Sinatra::Base
     erb(:scissors)
   end
 
+  get '/paper' do
+    @computer_choice = Computer.new.play
+    @result = Game.new.paper(@computer_choice)
+    erb(:paper)
+  end
 end
