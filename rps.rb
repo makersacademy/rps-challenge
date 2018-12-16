@@ -26,5 +26,8 @@ class Rps < Sinatra::Base
     erb :selection
   end
 
+  post '/result' do
+    @player_name = session[:player].name
+  end
   run! if app_file == $PROGRAM_NAME
 end

@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-12-16T13:07:16+00:00">2018-12-16T13:07:16+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-12-16T19:06:18+00:00">2018-12-16T19:06:18+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.12
+         1.19
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>4</b> files in total.
-    <b>34</b> relevant lines. 
-    <span class="green"><b>34</b> lines covered</span> and
+    <b>6</b> files in total.
+    <b>58</b> relevant lines. 
+    <span class="green"><b>58</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -51,21 +51,41 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#13f8c5e107e6dcf9d34cfc2aa0a27aaa9980b6bf" class="src_link" title="lib/game.rb">lib/game.rb</a></td>
+        <td class="strong"><a href="#38c2f51a833dc4e0889dead775494b112bfe006d" class="src_link" title="lib/computer.rb">lib/computer.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>7</td>
-        <td>4</td>
-        <td>4</td>
+        <td>5</td>
+        <td>3</td>
+        <td>3</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
       
       <tr>
+        <td class="strong"><a href="#13f8c5e107e6dcf9d34cfc2aa0a27aaa9980b6bf" class="src_link" title="lib/game.rb">lib/game.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>9</td>
+        <td>4</td>
+        <td>4</td>
+        <td>0</td>
+        <td>1.3</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#ecb3bb41c503a853f727ebfb15aa0b9c6f69dfe6" class="src_link" title="spec/computer_spec.rb">spec/computer_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>12</td>
+        <td>7</td>
+        <td>7</td>
+        <td>0</td>
+        <td>1.4</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#75889eb31abe9c452d9710313b9fd298ace227ac" class="src_link" title="spec/features/features_spec.rb">spec/features/features_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>20</td>
-        <td>13</td>
-        <td>13</td>
+        <td>31</td>
+        <td>21</td>
+        <td>21</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -73,11 +93,11 @@
       <tr>
         <td class="strong"><a href="#69f36c46df454c191ebf589482a0f602317d44c8" class="src_link" title="spec/game_spec.rb">spec/game_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>12</td>
-        <td>7</td>
-        <td>7</td>
+        <td>21</td>
+        <td>13</td>
+        <td>13</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -105,6 +125,55 @@
       </div>
     
       <div class="source_files">
+      
+        <div class="source_table" id="38c2f51a833dc4e0889dead775494b112bfe006d">
+  <div class="header">
+    <h3>lib/computer.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Computer</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def computer_choice</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    %w[rock paper scissors].sample</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
       
         <div class="source_table" id="13f8c5e107e6dcf9d34cfc2aa0a27aaa9980b6bf">
   <div class="header">
@@ -141,11 +210,11 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  def initialize(player)</code>
+          <code class="ruby">  def initialize(player, _computer = Computer.new)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
           
           <code class="ruby">    @player = player</code>
         </li>
@@ -157,6 +226,109 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  # player.selected_option compare with computer.computer_choice</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="ecb3bb41c503a853f727ebfb15aa0b9c6f69dfe6">
+  <div class="header">
+    <h3>spec/computer_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;computer&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe Computer do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  subject(:computer) { Computer.new }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;#computer_choice&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;generates a valid choice&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      choice = computer.computer_choice</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="9">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      expect(%w[rock paper scissors].find { |item| item == choice }).to_not be_nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">end</code>
@@ -172,8 +344,8 @@
     <h3>spec/features/features_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>13</b> relevant lines. 
-      <span class="green"><b>13</b> lines covered</span> and
+      <b>21</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -226,13 +398,13 @@
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">feature &#39;Options&#39; do</code>
+          <code class="ruby">feature &#39;User options&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">  scenario &#39;user is presented with the three opptions&#39; do</code>
+          <code class="ruby">  scenario &#39;user is presented with the three options&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
@@ -274,7 +446,7 @@
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">    choose(&#39;rock&#39;)</code>
+          <code class="ruby">    page.choose(&#39;rock&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
@@ -301,6 +473,72 @@
           <code class="ruby">end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">feature &#39;Computer option&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &#39;the computer generates an option automatically then a winner is decided&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(Computer.new).to receive(:computer_choice).and_return(&#39;paper&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_in_and_play</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    page.choose(&#39;rock&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button &#39;Submit&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button &#39;Generate computer choice&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&#39;Computer chose paper! Mario loses!&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
     </ol>
   </pre>
 </div>
@@ -311,8 +549,8 @@
     <h3>spec/game_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>13</b> relevant lines. 
+      <span class="green"><b>13</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -338,55 +576,109 @@
           <code class="ruby">describe Game do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
           
           <code class="ruby">  subject(:game) { Game.new(player) }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
           
           <code class="ruby">  let(:player) { double :player }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  let(:computer) { double :computer }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;#player&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;retrieves the player&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(game.player).to eq player</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;#winner&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;decides the winner&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      allow(player).to receive(:selected_option).and_return(&#39;rock&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      allow(computer).to receive(:computer_choice).and_return(&#39;paper&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(game.winner).to eq computer</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>

@@ -1,1 +1,7 @@
-<%= @player_name %> chose <%= @player.selected_option %>! Let us see what the computer chooses!'
+<%= @player_name %> chose <%= @player.selected_option %>! Let us see what the computer chooses!
+
+<br>
+
+<form action="/result" method="post">
+  <input type="submit" value="Generate computer choice"> 
+</form>
