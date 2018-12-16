@@ -2,7 +2,8 @@ require 'game'
 
 describe Game do
   let(:player) { double :player, name: "Samson", attack: "Rock" }
-  let(:game) { Game.new(player) }
+  let(:computer) { double :computer, name: :computer, move: :paper}
+  let(:game) { Game.new(player, computer) }
 
   describe '#name' do
     it 'returns the players name' do

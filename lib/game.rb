@@ -4,8 +4,9 @@ class Game
 
   attr_reader :player
 
-  def initialize(player)
+  def initialize(player, computer)
     @player = player
+    @computer = computer
   end
 
   def name
@@ -15,4 +16,5 @@ class Game
   def attack
     @player.attack
   end
+
 end
