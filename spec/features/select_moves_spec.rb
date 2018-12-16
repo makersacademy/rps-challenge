@@ -2,15 +2,15 @@ feature 'Viewing moves' do
   background { sign_in_and_play }
 
   scenario 'seeing rock' do
-    expect(page).to have_content('Rock')
+    expect(page).to have_content 'Rock'
   end
 
   scenario 'seeing paper' do
-    expect(page).to have_content('Paper')
+    expect(page).to have_content 'Paper'
   end
 
   scenario 'seeing scissors' do
-    expect(page).to have_content('Scissors')
+    expect(page).to have_content 'Scissors'
   end
 end
 
@@ -20,19 +20,19 @@ feature 'Selecting move' do
   scenario 'choosing rock' do
     choose 'rock'
     click_button 'Go!'
-    expect(page).to have_content('Gon chose Rock')
+    expect(page).to have_content 'Gon chose Rock'
   end
 
   scenario 'choosing paper' do
     choose 'paper'
     click_button 'Go!'
-    expect(page).to have_content('Gon chose Paper')
+    expect(page).to have_content 'Gon chose Paper'
   end
 
   scenario 'choosing scissors' do
     choose 'scissors'
     click_button 'Go!'
-    expect(page).to have_content('Gon chose Scissors')
+    expect(page).to have_content 'Gon chose Scissors'
   end
 
   scenario 'CPU picks a move at random' do
@@ -40,6 +40,6 @@ feature 'Selecting move' do
     srand(2)
     click_button 'Go!'
 
-    expect(page).to have_content('CPU chose Rock')
+    expect(page).to have_content 'CPU chose Rock'
   end
 end

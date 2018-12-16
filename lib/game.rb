@@ -33,7 +33,7 @@ class Game
   end
 
   def decide_winner(choices)
-    return 'Draw' if choices.first == choices.last
+    return "It's a Draw" if choices.first == choices.last
     return player_1.name if P1_WINNING_MOVES.include?(choices)
     player_2.name
   end

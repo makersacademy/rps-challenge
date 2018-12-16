@@ -18,7 +18,7 @@ describe Game do
   end
 
   describe '#decide_winner' do
-    context 'player 1 chooses Rock'
+    context 'player 1 chooses Rock' do
       it 'chooses player 1 as the winner' do
         expect(game.decide_winner(['Rock', 'Scissors'])).to eq 'Gon'
       end
@@ -28,7 +28,8 @@ describe Game do
       end
 
       it 'declares a draw' do
-        expect(game.decide_winner(['Rock', 'Rock'])).to eq 'Draw'
+        expect(game.decide_winner(['Rock', 'Rock'])).to eq "It's a Draw"
       end
+    end
   end
 end

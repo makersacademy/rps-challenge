@@ -20,7 +20,7 @@ feature 'Declaring a winner' do
       srand(2)
       choose_rock_and_submit
 
-      expect(page).to have_content 'The winner is ... Draw!'
+      expect(page).to have_content "The winner is ... It's a Draw!"
     end
   end
 
@@ -43,12 +43,12 @@ feature 'Declaring a winner' do
       srand(1)
       choose_paper_and_submit
 
-      expect(page).to have_content 'The winner is ... Draw!'
+      expect(page).to have_content "The winner is ... It's a Draw!"
     end
   end
 
   context 'player 1 chooses rock' do
-    scenario 'player 1 wins' do  
+    scenario 'player 1 wins' do
       srand(1)
       choose_scissors_and_submit
 
@@ -66,7 +66,7 @@ feature 'Declaring a winner' do
       srand(3)
       choose_scissors_and_submit
 
-      expect(page).to have_content 'The winner is ... Draw!'
+      expect(page).to have_content "The winner is ... It's a Draw!"
     end
   end
 end
