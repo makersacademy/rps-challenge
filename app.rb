@@ -13,6 +13,12 @@ class Game < Sinatra::Base
     erb :home
   end
 
+  post '/name' do 
+    erb :play, locals:{
+      :name => params['player_name']
+    }
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
