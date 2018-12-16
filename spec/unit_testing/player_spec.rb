@@ -7,4 +7,8 @@ describe Player do
     it '#initialize requires a name to be passed which is set to @name' do 
       expect(player.name).to eql(player_name)
     end
+
+    it '#initialize should set it up with an @move set to false' do 
+    expect(player.move).to eql(false)
+  end
 end
