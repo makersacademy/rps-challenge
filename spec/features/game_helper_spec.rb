@@ -1,5 +1,5 @@
 def greet_and_name
-  visit ("/")
+  visit("/")
   fill_in "name", with: "Subomi"
   click_button "Proceed"
 end

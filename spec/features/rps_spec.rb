@@ -26,6 +26,6 @@ feature "Display RPS choices" do
     name_in_lights
     visit("/game")
     expect(page).to have_content "#{@name}, choose wisely"
-    click_button ("Rock" || "Paper"|| "Scissors")
+    click_button("Rock" || "Paper" || "Scissors")
   end
 end

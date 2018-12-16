@@ -19,7 +19,7 @@ class Game < Sinatra::Base
   end
 
   get "/game" do
-    
+    erb(:game)
   end
 
   run! if app_file == $0
