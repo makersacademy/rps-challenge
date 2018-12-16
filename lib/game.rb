@@ -9,4 +9,8 @@ class Game
   def name
     @player.name
   end
+
+  def attack
+    @player.attack
+  end
 end
