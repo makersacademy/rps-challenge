@@ -6,6 +6,10 @@ class Game < Sinatra::Base
     erb(:index)
   end
 
+  get "/name" do
+    erb(:name)
+  end
+
   run! if app_file == $0
 
 end
