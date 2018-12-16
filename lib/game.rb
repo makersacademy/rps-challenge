@@ -5,7 +5,7 @@ class Game
   
   def initialize(player)
     @player = player
-    @rps_array = ["rock", "paper", "scissor"]
+    @rps_array = ["rock", "paper", "scissors"]
   end
 
   def self.create(player)

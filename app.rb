@@ -27,7 +27,12 @@ class Rps < Sinatra::Base
     @player_choice = "rock"
     @game_choice = @game.rand_choice
     erb(:rock)
-   
   end
+
+  get '/paper' do
+    @player_choice = "paper"
+    @game_choice = @game.rand_choice
+    erb(:paper) 
+  end 
   
 end

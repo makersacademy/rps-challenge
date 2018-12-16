@@ -2,9 +2,12 @@
   <h1> <%= @player_choice %> vs <%= @game_choice %> </h1>
 </div>
 <% if @player_choice == "rock" && @game_choice == "rock" %>
-  <h2>Tied Play Again</h2>
+  <h2>YOU TIED! </h2>
 <% elsif @player_choice == "rock" && @game_choice == "paper" %>
   <h2>YOU LOSE!</h2>
 <%elsif @player_choice == "rock" && @game_choice == "scissors" %>
   <h2>YOU WIN!</h2>
+  <%# <img src=''> %>
 <% end%>
+
+<button><a href="/play"> PLAY AGAIN</a></button>
