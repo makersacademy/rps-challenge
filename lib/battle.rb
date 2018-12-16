@@ -1,5 +1,6 @@
 class Battle 
     MOVES = ['garnet', 'amythyst', 'pearl', 'steven', 'lapiz'].freeze
+    
     WINNING_MOVES = {
         'garnet' => ['amythyst', 'steven'],
         'amythyst' => ['pearl', 'lapiz'],
