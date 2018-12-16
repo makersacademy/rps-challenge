@@ -1,6 +1,6 @@
 require "sinatra/base"
 
-class Game < Sinatra::Base
+class RPS < Sinatra::Base
 
   enable :sessions
 
@@ -18,8 +18,8 @@ class Game < Sinatra::Base
     erb(:lights)
   end
 
-  get "/game" do
-    erb(:game)
+  get "/selection" do
+    erb(:selection)
   end
 
   run! if app_file == $0

@@ -23,4 +23,4 @@ require "rspec"
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-Capybara.app = Game
+Capybara.app = RPS

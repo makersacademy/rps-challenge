@@ -24,7 +24,7 @@ feature "Display RPS choices" do
   scenario "Ask Marketeer to select RPS choice" do
     greet_and_name
     name_in_lights
-    visit("/game")
+    visit("/selection")
     expect(page).to have_content "#{@name}, choose wisely"
     click_button("Rock" || "Paper" || "Scissors")
   end
