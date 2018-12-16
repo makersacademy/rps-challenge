@@ -35,14 +35,20 @@ class Game  < Sinatra::Base
     @player = session[:player]
     @player_choice = @player.weapon
     @bot = session[:bot]
-    @bot_choice = @bot.weapon
+    @bot_choice = @bot.choice
     @game = PlayGame.new(@player_choice, @bot_choice)
-    if @game.win == "win"
+    @result = @game.play
+    p @player_choice
+    p @bot_choice
+    p @result
+    if @result == "win"
       erb :winner
-    elsif @game.win == "lose"
-      erb :loser
-    else @game.win == "draw"
+    elsif @result == "lose"
+      erb :lose
+    elsif @result == "draw"
       erb :draw
+    else
+      erb :error
     end
   end
 

@@ -31,4 +31,8 @@
 - I will need to create a double of each class Player and AI here and stub there choice methods with set responses.
 - I am having trouble moving forward. The way to put the different bits together in one class eludes me. I feel a need for dependancy injection but think it is far too much work as almost the entire app would need an overhaul.
 - I am trying now to simply get the bots choice to disply, which I dont need to do, no one asked for it!!!!
-- Back from that pit I move forward testing the game classes ability to get info from other classes and compare it. 
+- Back from that pit I move forward testing the game classes ability to get info from other classes and compare it.
+
+- This test led to a full breakdown in approach and testing method, I have ended up going down paths of just coding to complete the project. It now functions but basically and with no special design to it.
+
+  - The breakdown came after creating the test to see if the PlayGame class can decide a winner. This can do this, and is tested thoroughly.
