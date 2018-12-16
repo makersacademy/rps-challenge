@@ -4,7 +4,7 @@ def sign_in
   click_button "Submit"
 end
 
-def play
-  select "Rock", :from => "move"
+def play(string)
+  select string, :from => "move"
   click_button "Submit"
 end

@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/computer.rb'
+require './lib/rules.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -25,7 +26,10 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @comp = Computer.new
+    @compmove = @comp.compmove
     @move = session[:move]
+    @rules = Rules.new(@move, @compmove)
+    @winner = @rules.decide
     erb(:result)
   end
 end
