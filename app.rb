@@ -21,6 +21,8 @@ class Rps < Sinatra::Base
   end
 
   get '/rock' do
+    @computer_choice = Computer.new.play
+    @result = Game.new.rock(@computer_choice)
     erb(:rock)
   end
 

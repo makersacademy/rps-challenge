@@ -1,7 +1,7 @@
 class Game
 
-  def rock(choice)
-    case choice
+  def rock(computer_choice)
+    case computer_choice
       when "Rock"
         "Oups, it's a draw!"
       when "Scissors"
@@ -11,8 +11,8 @@ class Game
     end
   end
 
-  def scissors(choice)
-    case choice
+  def scissors(computer_choice)
+    case computer_choice
       when "Rock"
         "Sadly, you lost this one!"
       when "Scissors"
@@ -22,8 +22,8 @@ class Game
     end
   end
 
-  def paper(choice)
-    case choice
+  def paper(computer_choice)
+    case computer_choice
       when "Rock"
         "Great, you won this round!"
       when "Scissors"
