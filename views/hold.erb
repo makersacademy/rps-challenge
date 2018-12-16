@@ -1,1 +1,10 @@
 <h1>Welcome <%= @player_1 %> </h1>
+
+<h2>You are about to play against a computer - please select your weapon of choice</h2>
+
+<form action="game">
+   <input type="radio" name="player_option" value="rock"> Rock<br>
+   <input type="radio" name="player_option" value="paper"> Paper<br>
+   <input type="radio" name="player_option" value="scissors"> Scissors<br>
+   <input type="submit" value="Submit">
+ </form>

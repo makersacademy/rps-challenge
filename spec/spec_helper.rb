@@ -6,6 +6,7 @@ require 'simplecov'
 require 'simplecov-console'
 require "capybara"
 require "rspec"
+require_relative "../spec/features/feature_helper"
 
 Capybara.app = Rpsgame
 
