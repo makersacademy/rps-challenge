@@ -1,4 +1,4 @@
-require_relative '../../app'
+require 'app'
 
 feature 'check the homepage' do
   scenario 'says Rock Paper Scissors' do

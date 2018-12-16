@@ -1,5 +1,5 @@
 ENV['RACK_ENV'] = 'test'
-require_relative '../app'
+require 'app'
 require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
