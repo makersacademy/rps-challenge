@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title> Rock, Scissors and Paper </title>
+  <h1> Welcome to our Rock Paper and Scissors web app! </h1>
+  <h2> To start to play type in your name and make your move from the dropdown menu. </h2>
+  <style type="text/css">
+    body
+    {
+      padding : 0;
+      margin: 0;
+      background: #ffd200;
+      font-size: 1.5em;
+      text-align: center;
+      font-family: 'arial';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  </style>
+</head>
 <body>
 
-  <h1> Welcome to the newest Rock Paper and Scissors web app! </h1>
-  <h2> To start to play type in your name and make your move from the dropdown menu. </h2>
-
   <form action="/users" method="post">
-    <input type="text" name="user">
-    <select name="move">
+    <p> Enter your name: <input type="text" name="user"> </p>
+    <p> Make your move: <select name="move">
       <option value="rock">ROCK</option>
       <option value="paper">PAPER</option>
       <option value="scissors">SCISSORS</option>
     </select>
-    <input type="submit" value="Play">
+    </p>
+    <p> Hit that button to start! <input type="submit" value="Play"> </p>
   </form>
 
 </body>

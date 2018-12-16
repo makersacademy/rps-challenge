@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
-<body>
-
+<head>
+  <title> Rock, Scissors and Paper </title>
   <h1> <%= @user.name %> chose <%= @user_move %> and
   <%= @computer.name %> chose <%= @computer_move %> </h1>
+  <style type="text/css">
+    body
+    {
+      padding : 0;
+      margin: 0;
+      background: #ffd200;
+      font-size: 1.5em;
+      text-align: center;
+      font-family: 'arial';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  </style>
+</head>
+<body>
 
   <% if @user_move == 'rock' and @computer_move == 'scissors' %>
     <% @computer.decrease_life %>
@@ -17,18 +34,18 @@
     <% @user.decrease_life %>
   <% end %>
 
-  <h1> <%= @user.name %> has <%= @user.life %> lifes left. </h1>
-  <h1> <%= @computer.name %> has <%= @computer.life %> lifes left. </h1>
+  <h2> <%= @user.name %> has <%= @user.life %> lifes left. </h2>
+  <h2> <%= @computer.name %> has <%= @computer.life %> lifes left. </h2>
+
+  <form action="/play" method="get">
+    <p> Hit this button to play the next round! <input type="submit" value="Next round"> </p>
+  </form>
 
   <% if @user.life < 1 %>
     <h1> <%= @user.name %> lost the match! Congratulation to Computer for winning the match!</h1>
   <% elsif @computer.life < 1 %>
     <h1> Computer lost the match! Congratulation to <%= @user.name %> for winning the match!</h1>
   <% end %>
-
-  <form action="/play" method="get">
-    <input type="submit" value="Next round">
-  </form>
 
 </body>
 </html>
