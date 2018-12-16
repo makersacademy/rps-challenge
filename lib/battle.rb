@@ -21,7 +21,15 @@ class Battle
         end
     end 
 
-    
+    def check_winning_moves 
+        if WINNING_MOVES[@player.move].include?(@opponent_move)
+            return true
+        else
+            return false
+        end
+    end
+
+
 
     
 
