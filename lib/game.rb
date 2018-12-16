@@ -7,9 +7,6 @@ class Game
 
     WEAPONS = [:Rock, :Paper, :Scissors]
 
-    RULES = { rock: :scissors,
-          paper: :rock,
-          scissors: :paper }
 
     def initialize(player = Player.new, computer = Computer.new)
         @player = player
@@ -17,7 +14,7 @@ class Game
     end    
 
     def player_choice
-        @player.move(player_move)
+        @player.move(choice)
     end
 
     def computer_choice
