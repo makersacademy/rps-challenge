@@ -5,7 +5,7 @@ feature 'player can see attack options' do
     click_button 'Submit'
     message = "Samson\nChoose your attack: Rock, Paper or Scissors"
     expect(page).to have_content message
-    fill_in :player_1_attack, with: 'Rock'
+    select 'Rock', from: 'move'
     click_button 'Submit'
     expect(page).to have_content "You win with Rock!"
   end

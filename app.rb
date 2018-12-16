@@ -18,8 +18,8 @@ class Rps < Sinatra::Base
     erb :game
   end
 
-  get '/attack' do
-    session[:player_1_attack] = params[:player_1_attack]
+  post '/attack' do
+    session[:player_1_attack] = params[:move]
     redirect '/results'
   end
 
