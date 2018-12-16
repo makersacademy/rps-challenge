@@ -8,8 +8,8 @@ RSpec.describe Game do
       expect(game.player).to eq :player
     end
   end
+  
   describe '#generate_computer_choice' do
-   
     it 'returns rock' do 
       srand(0)
       expect(game.generate_computer_choice).to eq "rock"

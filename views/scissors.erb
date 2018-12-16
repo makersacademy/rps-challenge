@@ -3,11 +3,14 @@
 </div>
 <% if @player_choice == "scissors" && @game_choice == "scissors" %>
   <h2>YOU TIED! </h2>
+  <img src='https://media.giphy.com/media/1inouzQjjcBMhK2oq9/giphy.gif'>
 <% elsif @player_choice == "scissors" && @game_choice == "rock" %>
   <h2>YOU LOSE!</h2>
+  <img src='https://media.giphy.com/media/yX8PN7T58DqQo/giphy.gif'>
 <%elsif @player_choice == "scissors" && @game_choice == "paper" %>
   <h2>YOU WIN!</h2>
-  <%# <img src=''> %>
+  <img src='https://media.giphy.com/media/QMkPpxPDYY0fu/giphy.gif'>
 <% end%>
-
-<button><a href="/play"> PLAY AGAIN</a></button>
+<div>
+  <button><a href="/play"> PLAY AGAIN</a></button>
+</div>
