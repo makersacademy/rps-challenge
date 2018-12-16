@@ -6,7 +6,9 @@ class Rpsgame < Sinatra::Base
 
   enable :sessions
 
-  before { @game = Game.instance }
+  before do
+    @game = Game.instance
+  end
 
   get "/" do
     erb(:index)
@@ -14,10 +16,14 @@ class Rpsgame < Sinatra::Base
 
   post "/hold" do
     @player_1 = params[:player_1]
-    @player_2 = Player.new
+    @player_2 = Player.new("computer", "rock")
     @game = Game.create(@player_1, @player_2)
     erb :hold
   end
+
+  # to whoever reviews this - for some reason my code falls over here when
+  # I load it in rackup - NoMethodError at /game
+  # I'd appreciate any feedback on how to fix this please :)
 
   post "/game" do
     erb :game

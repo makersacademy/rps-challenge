@@ -1,5 +1,39 @@
 # RPS Challenge
 
+My approach to this challenge
+---------
+* Use user stories to build file structure and think about how I want them to interact with one another
+* Build a test for a method I want, let it fail, then write the code and rework until it passes - using the TDD process learned in week 1 at Makers Academy
+* Two items were present in the user stories - Game & Player
+* Used the user stories info to build these classes, for example the player had the ability to select a random attack from R/P/S
+* Ran feature tests every step along the way to make sure the code was doing what I wanted it to be doing, and the tests weren't just passing by accident
+* Effectively used the given tests to gain 0 rubocop infractions & 100% test coverage
+* Were I to continue with this I would try to implement working RPSLS & Multiplayer
+* My code works in PRY/IRB, does not fail RSpec, however it does fail on Rackup after the user selects an attack - to anyone reviewing this I have made a note in my app.rb file detailing this.
+* One of my favourite TV shows makes an appearance in the video at the start!
+
+![Imgur](https://i.imgur.com/3EGHNY1.png)
+![Imgur](https://i.imgur.com/yFXPBip.png)
+
+An example of how the program can be run in irb
+---------
+
+```
+Simons-MBP:~ simon$ cd projects
+Simons-MBP:projects simon$ cd rps-challenge/
+Simons-MBP:rps-challenge simon$ irb
+2.5.0 :001 > require "./app.rb"
+ => true
+2.5.0 :002 > p1 = Player.new("Simon","rock")
+ => #<Player:0x00007fc6702b8660 @name="Simon", @options="rock">
+2.5.0 :003 > p2 = Player.new("Computer","scissors")
+ => #<Player:0x00007fc6702e0480 @name="Computer", @options="scissors">
+2.5.0 :004 > g = Game.new(p1,p2)
+ => #<Game:0x00007fc6708a4a10 @player_1=#<Player:0x00007fc6702b8660 @name="Simon", @options="rock">, @player_2=#<Player:0x00007fc6702e0480 @name="Computer", @options="scissors">>
+2.5.0 :005 > g.result
+ => "Simon wins!"
+```
+
 Instructions
 -------
 
