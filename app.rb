@@ -24,15 +24,21 @@ class Rps < Sinatra::Base
   end
 
   get '/rock' do
-    @player_choice = "rock"
-    @game_choice = @game.rand_choice
+    @player_choice = @game.player_picks_rock    
+    @game_choice = @game.generate_computer_choice
     erb(:rock)
   end
 
   get '/paper' do
-    @player_choice = "paper"
-    @game_choice = @game.rand_choice
+    @player_choice = @game.player_picks_paper
+    @game_choice = @game.generate_computer_choice
     erb(:paper) 
   end 
-  
+
+  get '/scissors' do 
+    @player_choice = @game.player_picks_scissors
+    @game_choice = @game.generate_computer_choice
+    erb(:scissors)
+  end
+
 end

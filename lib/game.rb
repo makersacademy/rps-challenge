@@ -16,8 +16,19 @@ class Game
     @game
   end
 
-  def rand_choice
+  def generate_computer_choice
     @choice = @rps_array.sample
   end
-  
+
+  def player_picks_rock
+    @players_choice = "rock"
+  end
+
+  def player_picks_paper
+    @players_choice = "paper" 
+  end
+
+  def player_picks_scissors
+    @players_choice = "scissors"
+  end
 end 
