@@ -37,5 +37,5 @@ Basic Rules
 Screenshots
 -------
 
-![Screenshot](https://imgur.com/c7lfo05)
-![Screenshot](https://imgur.com/eN7KHB1)
+![Screenshot of Homepage](https://i.imgur.com/c7lfo05.png)
+![Screenshot of Results Page](https://i.imgur.com/eN7KHB1.png)
