@@ -1,8 +1,14 @@
 <h1> Rock Paper Scissors </h1>
 
 <form action="/play" method="post">
-  <div>
-    <input type="text" name="player_name">
-    <input type="submit" value="Submit">
-  </div>
+    <p> What is your name? <input type="text" name="player_name"> </p>
+    <p> Choose your weapon:
+    <select name ="weapon">
+      <option value = "Rock" selected>Rock</option>
+      <option value = "Paper">Paper</option>
+      <option value = "Scissors">Scissors</option>
+    </select>
+    </p>
+
+    <p> Hit submit when you're ready to play! <input type="submit" value="Submit"> </p>
 </form>

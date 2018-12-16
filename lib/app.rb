@@ -8,6 +8,7 @@ class RPS < Sinatra::Base
 
   post '/play' do
     @player_name = params[:player_name]
+    @weapon = params[:weapon]
     erb(:play)
   end
 
