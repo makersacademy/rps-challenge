@@ -1,0 +1,12 @@
+<h1>Rock Paper Scissors showdown!</h1>
+<h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h2>
+
+<%= @game.player_1.name %> opted for <%= @game.player_1.choice %>
+  /  <%= @game.player_2.name %> opted for <%= @game.player_2.choice %> <br><br>
+
+
+<%= @game.result %>
+
+<form action="/" method="get">
+ <button type="Submit" value="Submit">Rematch?</button>
+</form>

@@ -10,11 +10,14 @@ class Rpsgame < Sinatra::Base
 
   post "/hold" do
     @player_1 = params[:player_1]
+    @player_2 = Player.new("computer", "")
+    @game = Game.create(@player_1, @player_2)
     erb(:hold)
   end
 
   post "/game" do
-    "Game result to go here once functionality implemented"
+    erb(:game)
   end
 
+  run! if app_file == $0
 end
