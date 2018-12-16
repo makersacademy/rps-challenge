@@ -12,15 +12,11 @@ class Rules
       "You won!!"
     elsif @move == "Scissors" && @compmove == "Paper"
       "You won!!"
-    elsif @move == "Rock" && @compmove == "Rock"
-      "You drew... A little underwhelming"
-    elsif @move == "Paper" && @compmove == "Paper"
-      "You drew... A little underwhelming"
-    elsif @move == "Scissors" && @compmove == "Scissors"
+    elsif @move == @compmove
       "You drew... A little underwhelming"
     else
       "You lost! HA"
     end
   end
-  
+
 end
