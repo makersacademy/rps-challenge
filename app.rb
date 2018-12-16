@@ -1,9 +1,22 @@
 require 'sinatra/base'
 require 'shotgun'
+require_relative './lib/player.rb'
 
 class Rps < Sinatra::Base
 
   get '/' do
-      erb(:index)
+  erb(:index)
   end
+
+  post '/name' do
+  $player = Player.new(params[:name])
+  redirect '/play'
+  end
+
+  get '/play' do
+  @name = $player.name
+  erb(:game)
+  end
+
+  run! if app_file == $0
 end
