@@ -9,29 +9,29 @@ def initialize(player, computer)
 end
 
 def compare
-	if @player == "Rock" && @computer == "Scissors"
-		win
-	elsif @player == "Paper" && @computer == "Rock"
-		win
-	elsif @player == "Scissors" && @computer == "Paper"
-		win
-	elsif @player == @computer
-		draw
-	else
-		lose
-	end
+  if @player == "Rock" && @computer == "Scissors"
+    win
+  elsif @player == "Paper" && @computer == "Rock"
+    win
+  elsif @player == "Scissors" && @computer == "Paper"
+    win
+  elsif @player == @computer
+    draw
+  else
+    lose
+  end
 end
 
 def win
-	"You won!"
+  "You won!"
 end
 
 def draw
-	"It's a draw!"
+  "It's a draw!"
 end
 
 def lose 
-	"You lost!"
+  "You lost!"
 end
 
 end

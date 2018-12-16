@@ -17,7 +17,11 @@
 <% if @player_choice %>
 	<p> Computer's choice: <%= @computer_choice %> </p>
 <% end %>
-   
+
+<% if @player_choice && @computer_choice%>
+<p> <%= @outcome%> </p>
+
+<% end %>   
   </form>
  </body>
 <html>

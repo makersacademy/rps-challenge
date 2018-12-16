@@ -28,9 +28,11 @@ enable :sessions
   @player_name = $player1.player_name
   @player_choice = $player1.print_choice
   @computer_choice = $computer.print_choice
+  $game = Game.new(@player_choice, @computer_choice)
+  @outcome = $game.compare
   erb(:play)
   end
 
-  
+
 
 end
