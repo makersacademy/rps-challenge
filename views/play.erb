@@ -1,3 +1,10 @@
-<h1> <%= @player_name %> vs Computer </h1>
+<h1> <%= @player_name %> vs Computer!</h1>
 
-<h2> Choose from these different options : </h2>
+<h2> Choose from these different options: </h2>
+
+<form action="/player_selection" method="post">
+  <input type="radio" name="rock" value="rock" > rock<br>
+  <input type="radio" name="paper" value="paper"> paper<br>
+  <input type="radio" name="scissors" value="scissors"> scissors<br><br>
+  <input type="submit" value="Submit">
+</form>

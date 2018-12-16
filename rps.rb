@@ -19,5 +19,8 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/player_selection' do
+  end
+
   run! if app_file == $PROGRAM_NAME
 end
