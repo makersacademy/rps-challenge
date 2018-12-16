@@ -17,11 +17,11 @@ class Rps < Sinatra::Base
     player_2 = Cpu.new
 
     @game = Game.create(player_1, player_2)
-    redirect '/play'
+    redirect '/choose-move'
   end
 
-  get '/play' do
-    erb :play
+  get '/choose-move' do
+    erb :choose_move
   end
 
   post '/attack' do
@@ -33,7 +33,7 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
-    erb :attack
+    erb :result
   end
 
   run! if app_file == $0
