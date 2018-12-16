@@ -9,14 +9,23 @@ class Player
         @player = Player.new(name)
     end
 
+    # def self.give_player_move(move)
+    #     @player.move(move)
+    # end
+
+
     #everyone else
-    attr_accessor :move
-    attr_reader :name
+    
+    attr_reader :name, :move
 
 
     def initialize(name)
         @name = name
         @move = false
     end
-    
+
+    def player_move(move)
+        @move = move
+    end
+
 end

@@ -25,7 +25,7 @@ class Game < Sinatra::Base
   end
 
   post '/move' do 
-
+    #  @player = Player.create_player(params['player_name'])
     erb :end, locals:{
       :move => params['char']
     }
