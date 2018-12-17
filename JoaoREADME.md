@@ -77,9 +77,9 @@ Download & Install Instructions
 2. Open the Terminal.app
 3. In terminal, Use the change directory ('cd') command to navigate into the folder where you have downloaded the repo e.g.
 ```
-cd ./Projects/web/rps-challenge
+cd ./Folder-name/another-folder-name/rps-challenge
 ```
-4. In terminal, type
+4. Once you're in the rps-challenge directory, type
 ```
 bundle install
 ```
@@ -111,13 +111,13 @@ How to run tests
 
 1. Make sure you are in the game's root directory. You can check this with using the below command, which should end on 'rps-challenge'
 ```
-pwd /Users/your-name/projects/rps-challenge
+pwd /Users/your-name/your-files/maybe-more-files/rps-challenge
 ```
-2. Once you know you're in the root directory, type 
+2. Once you know you're in the RPS root directory, type the below command into terminal and press enter
 ```
 rspec
 ```
-3. You will see the unit and feature test titles, contexts, coverage and whether they're passing
+3. You will see the unit and feature test titles, contexts, coverage results and pass/fail numbers.
 
 4. If you'd like to see the tests themselves, use cd as below
 
@@ -129,7 +129,7 @@ or
 cd ./spec/unit_tests
 ```
 
-The feature tests cover user stories through a series of actions and the unit tests cover each of the methods used in the Game, Computer and Player classes.
+The feature tests cover user stories through a series of actions and the unit tests cover individual methods used in the Game, Computer and Player classes.
 
 User Stories Covered
 -------
@@ -163,7 +163,7 @@ rackup config.ru
 [2018-12-17 07:23:33] INFO  ruby 2.5.0 (2017-12-25) [x86_64-darwin15]
 [2018-12-17 07:23:33] INFO  WEBrick::HTTPServer#start: pid=2141 port=9292
 `
-4. Open your browser and in the address bar type 'local-host:9292' (or whichever port is specified after running rackup)
+4. Open your browser and enter in the address bar 'local-host:9292' (or whichever port number is specified after running the `rackup` command)
 
 ![RPS home page on on Chrome Browser](/screenshots/rps-address-bar.png?raw=true "RPS home page on on Chrome Browser")
 
@@ -201,26 +201,36 @@ _Back-end_
 
 _Front-end_
 
-* The game uses four routes - /, /names, /choice and /play
+* The game uses four routes: /, /names, /choice and /play
 
-* _/_ On landing on the / page, the user sees the index.rb file, which gives them a field in which they can enter their name. On pressing the 'Submit' button, a post request is sent to /names for this information to be saved
+Program flow
 
-* _/names_ This happens in /names by attributing the user input to a new instance of the Player class. To allow this to be accessed by other routes, this new instance is stored as a global (!!!) variable. At this point a new instance of the Computer class is also instantiated and assigned to another (!!!!!!) global variable. The user won't see this however, it will appear as if they've just been directed straightaway to /play
+* _/_ On landing on the / page, the user sees the index.erb file, which gives them a field in which they can enter their name.
 
-* _/play_  uses the play.erb file to hide the name entry field, instead displaying 'Player name: [entered name here]'. Now the user is able to enter their choice of Rock, Paper or Scissors. The outcome of this is sent to the Game class along with the Computer's random choice. Game class returns the outcome to be displayed
+![RPS home page on on Chrome Browser](/screenshots/rps-address-bar.png?raw=true "RPS home page on on Chrome Browser")
+
+ On pressing the 'Submit' button, a post request is sent to /names for this information to be saved
+
+* _/names_ In /names the user input is used to instantiate an object of the Player class. To allow this information to be accessed by the other routes, this new instance is stored as a global (!!! :( ) variable. At this point a new instance of the Computer class is also instantiated and assigned to _another_ (!!!!!!) global variable. The user won't see this however, it will appear as if they've just been directed straightaway to /play
+
+* _/play_  uses the play.erb file display 'Player name: [entered name here]' and the option for the user to enter their choice of Rock, Paper or Scissors. The user choice submitted is sent via a post request from /choice
+
+* _/choice_ on this page the player choice is stored as an instance variable on the Player class object using the #player_choice method. The user is redirected back to /play. Again this happens during the page reload so the user never usually sees /choice 
+
+* _/play_ the /play route can now send a get request to /choice to receive the player's choice. This is sent to the Game class, along with the Computer class choice (using $computer.print_choice). Game returns an appropriate message using the #compare method that is then displayed through the @outcome instance variable in the play.erb file
 
 
 _Improvements_
 
-* No use of global variables
+* No use of global variables. Thought I'd have time to refactor and remove this after I'd written everything but it is now 8:51 on Monday so...I don't.
 
-* Seperated the Game class into two, one which compares Computer and PLayer choices to calculate result, one which displays the result
+* Seperated the Game class into two, one which compares Computer and Player choices to calculate result, one which displays the result
 
 * Seperated the /play route into two, one page for user to enter input, one page to display outcome of the game
 
 * Reducing length of the Game #compare method
 
-* Getting CSS applied, game currently looks horrible
+* Getting CSS applied, RPS currently looks horrible
 
 
 
