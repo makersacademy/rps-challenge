@@ -1,5 +1,16 @@
 # RPS Challenge
 
+How to use this webapp
+---------
+
+```
+$ git clone git@github.com:scass91/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+The app should now be available in your browser at localhost:9292
+```
+
 My approach to this challenge
 ---------
 * Use user stories to build file structure and think about how I want them to interact with one another
