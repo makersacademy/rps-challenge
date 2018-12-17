@@ -55,6 +55,7 @@
                                          .*,*(/*,   ..,**/////////((((((///*,  
                                            .,*//(((((/*,**////****//((((((/**,,
 \\\
+
 Download & Install Instructions
 -------
 1. Fork this repo onto your local machine: https://github.com/joaoag/rps-challenge (for instructions on how to fork a repo see here: https://help.github.com/articles/fork-a-repo/)
@@ -74,6 +75,20 @@ System Requirements
 -------
 
 * Ruby 2.5.0
+* Mac OS X
+
+
+Built with
+-------
+
+* Ruby
+* Rack
+* RSpec
+* Capybara
+* Selenium
+* Sinatra
+* Rubocop
+
 
 How to run tests
 -------
@@ -88,14 +103,17 @@ rspec
 ```
 3. You will see the unit and feature test titles, contexts, coverage and whether they're passing
 
-4. If you'd like to see the tests themselves cd to
+4. If you'd like to see the tests themselves, use cd as below
 
 ```
 cd ./spec/features
 ```
 or 
-
+```
 cd ./spec/unit_tests
+```
+
+The feature tests cover user stories through a series of actions and the unit tests cover each of the methods used in the Game, Computer and Player classes.
 
 User Stories Covered
 -------
@@ -151,11 +169,40 @@ rackup config.ru
 
 
 
-Design approach (+ for next time)
+Design & approach
 -------
 
+_Back-end_
+
+* The game uses three classes - Game, Player & Computer
+
+* _Player_ class stores user input from browser for both name and weapon of choice. It sends the name variable to the play.erb file and the choice variable to the Game class
+
+* _Computer_ class generates a random choice from an array of Rock, Paper or Scissors. The outcome of this is then sent to the Game class
+
+* _Game_ compares what it has been sent by the Computer and Player messages, decides who has won based on the rules of Rock, Paper, Scissors and returns a message relevant to the outcome of the game that is displayed through the play.erb file
 
 
+_Front-end_
+
+* The game uses four routes - /, /names, /choice and /play
+
+* _/_ On landing on the / page, the user sees the index.rb file, which gives them a field in which they can enter their name. On pressing the 'Submit' button, a post request is sent to /names for this information to be saved
+
+* _/names_ This happens in /names by attributing the user input to a new instance of the Player class. To allow this to be accessed by other routes, this new instance is stored as a global (!!!) variable. At this point a new instance of the Computer class is also instantiated and assigned to another (!!!!!!) global variable. The user won't see this however, it will appear as if they've just been directed straightaway to /play
+
+* _/play_  uses the play.erb file to hide the name entry field, instead displaying 'Player name: [entered name here]'. Now the user is able to enter their choice of Rock, Paper or Scissors. The outcome of this is sent to the Game class along with the Computer's random choice. Game class returns the outcome to be displayed
+
+
+_Improvements_
+
+* No use of global variables
+
+* Seperated the Game class into two, one which compares Computer and PLayer choices to calculate result, one which displays the result
+
+* Seperated the /play route into two, one page for user to enter input, one page to display outcome of the game
+
+* Getting CSS applied, game currently looks horrible
 
 
 
