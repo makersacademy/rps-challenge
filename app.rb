@@ -38,9 +38,6 @@ class Game  < Sinatra::Base
     @bot_choice = @bot.choice
     @game = PlayGame.new(@player_choice, @bot_choice)
     @result = @game.play
-    p @player_choice
-    p @bot_choice
-    p @result
     if @result == "win"
       erb :winner
     elsif @result == "lose"
