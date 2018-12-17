@@ -1,0 +1,26 @@
+body {
+  background-color: #40E0D0;
+  margin-top: 150px;
+}
+
+.name_form {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.options_form_container {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+h1, h2 {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#final_result {
+  font-size: 100px;
+}

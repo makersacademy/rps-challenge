@@ -15,7 +15,7 @@ feature 'User options' do
     sign_in_and_play
     page.choose('rock')
     click_button 'Submit'
-    expect(page).to have_content('Mario chose rock! Let us see what the computer chooses!')
+    expect(page).to have_content('Mario chose rock. Let us see what the computer chooses!')
   end
 end
 
@@ -29,6 +29,6 @@ feature 'Computer option' do
     page.choose('paper')
     click_button 'Submit'
     click_button 'Generate computer choice'
-    expect(page).to have_content('Computer chose paper! It is a draw!')
+    expect(page).to have_content('Computer chose paper. It is a draw!')
   end
 end

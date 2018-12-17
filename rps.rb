@@ -3,6 +3,9 @@ require './lib/player.rb'
 require './lib/game.rb'
 
 class Rps < Sinatra::Base
+
+  set :public_folder, 'stylesheets'
+
   before do
     @game = Game.instance
   end

@@ -1,7 +1,14 @@
-<%= @game.player.name%> chose <%= @game.player.selected_option %>! Let us see what the computer chooses!
-
-<br>
-
-<form action="/result" method="post">
-  <input type="submit" name="computer_choice" value="Generate computer choice">
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="rps.css" type='text/css'>
+</head>
+<body>
+  <h2> <%= @game.player.name%> chose <%= @game.player.selected_option %>. </h2>
+  <h2> Let us see what the computer chooses! </h2>
+  <br>
+  <form class="options_form_container" action="/result" method="post">
+    <input type="submit" name="computer_choice" value="Generate computer choice">
+  </form>
+</body>
+</html>
