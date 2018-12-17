@@ -20,7 +20,8 @@ class Game_rsp < Sinatra::Base
   end
 
   post '/submit' do
-    $game = Game.new(params[:name], params[:option])
+    p params[:name]
+    $game = Game.new(params[:option])
     session[:result] = $game.play
     redirect '/result'
   end

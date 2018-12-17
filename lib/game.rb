@@ -1,9 +1,8 @@
 
 class Game
 
-  def initialize(player_name, player)
+  def initialize(player)
     @pc = ["rock", "paper", "scissors"].sample
-    @player_name = player_name
     @player = player
   end
 
@@ -13,15 +12,15 @@ class Game
     elsif @player == "rock" && @pc == "paper"
       return "PC wins"
     elsif @player == "rock" && @pc == "scissors"
-      return "#{@player} wins"
+      return "You win"
     elsif @player == "paper" && @pc == "rock"
-      return "#{@player} wins"
+      return "You win"
     elsif @player == "paper" && @pc == "scissors"
       return "PC wins"
     elsif @player == "scissors" && @pc == "rock"
       return "PC wins"
     elsif @player == "scissors" && @pc == "paper"
-      return "#{@player} wins"
+      return "You win"
     end
   end
 end
