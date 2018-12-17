@@ -1,18 +1,7 @@
-# RPS Challenge
-
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+# RPS Challenge - Weekend 3
 
 Task
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -83,4 +72,39 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!__
+
+My Approach
+-----
+* Repo forked from Makers Academy and cloned to local machine
+* Before running bundle install, ensure all required gems are included within the Gemfile.
+- Capybara
+- Rspec
+- Rake
+- Sinatra
+- Rubocop (for formatting)
+- SimpleCov (for test coverage)
+
+* Run bundle install in local repo to install gems
+* Initialise rspec within rep with "rspec --init"
+* Create directories that will be required
+- ./lib (for rb class files)
+- ./spec/features (for feature test and helper files)
+- ./views (for page route erb files)
+
+* Create "app.rb" file and "config.ru" so that the app can be run on your local server using "rackup"
+* The spec_helper file will need to have necessary files required in order for the app and tests to work as expected. See below for the lines added to this spec_helper.
+**require "simplecov"
+require "simplecov-console"
+ENV["RACK_ENV"] = "test"
+require File.join(File.dirname(__FILE__), "..", "app.rb"
+require "capybara"
+require "rspec"
+require 'capybara/rspec'
+Capybara.app = RPS**
+
+* Write feature tests for expected page behaviour and then create routes and index pages to make the tests pass.
+* Once required routes have been created, create class rb files and spec files. Create unit tests for classes which will be used to extract behaviour.
+* Make these tests pass and incorporate single responsibility into your methods an classes.
+
+**MAKE SURE TO COMMIT CHANGES AS REGULARLY AS POSSIBLE/WITH EACH PASSING TEST"**
