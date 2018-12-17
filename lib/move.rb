@@ -16,7 +16,7 @@ class Move
   end
 
   def result
-    draw? ? :draw : beats?
+    draw? ? 'Draw!' : beats?
   end
 
 end

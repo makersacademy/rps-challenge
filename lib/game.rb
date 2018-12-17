@@ -15,9 +15,11 @@ class Game
     @computer = computer
   end
 
-  def game_result(challenger_move, computer_move)
+  def winner(challenger_move, computer_move)
     @moves = Move.new(challenger_move, computer_move)
-    @moves.result
+    return 'Draw!' if @moves.result == 'Draw!'
+    return 'Challenger wins!' if @moves.result == true
+    return 'Computer wins!' if @moves.result == false
   end
 
   def challenger_name

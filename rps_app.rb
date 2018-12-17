@@ -15,7 +15,10 @@ class RPS < Sinatra::Base
   end
 
   get '/game' do
-    @game = Game.new(session[:challenger], Computer.new)
+    p @game = Game.new(session[:challenger], Computer.new)
+    p @challenger_move = @game.challenger_move
+    p @computer_move = @game.computer_move
+    p @result = @game.winner(@challenger_move, @computer_move)
     erb(:game)
   end
 

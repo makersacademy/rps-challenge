@@ -41,7 +41,7 @@ describe Move do
     it 'returns draw if challenger and computer moves the same' do
       computer = :scissors
       move = described_class.new(challenger, computer)
-      expect(move.result).to eq(:draw)
+      expect(move.result).to eq('Draw!')
     end
 
     it 'returns win as boolean if challenger beats computer' do
