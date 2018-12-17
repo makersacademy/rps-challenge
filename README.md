@@ -1,3 +1,33 @@
+Rock, Paper Scissors CHALLENGE
+This is my response to the 'weekend challenge' of Week 3 of Makers Academy. For full details of what the challenge involved, see 'APPENDIX' below.
+
+Getting started
+Instructions are for Terminal on Mac OS
+
+git clone github.com:jaywayawyaj/rps-challenge.git
+gem install bundle
+Navigate to rps-challenge
+ruby app.rb
+Open any web browser
+Enter 'localhost:4567' into the address bar
+
+Running tests
+Run rspec
+
+100% test coverage.
+
+Main Issues
+The choose_attack_spec is not stubbed to account for all three outcomes so only passes 33% of the time. I have commented it out for now.
+It looks very basic with no styling or formatting.
+
+Ways I Would Extend this project
+Use HTML and CSS to make the pages presentable
+Add two player functionality so you could play a human opponent or the computer
+Keep a score count to allow players to keep track of their score
+Add a hard reset method which would take the user back to the homepage
+
+
+
 # RPS Challenge
 
 Instructions
