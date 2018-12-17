@@ -26,8 +26,8 @@ class Rps < Sinatra::Base
   end
 
   get '/results' do
-    @player_1 = session[:player_1]
-    erb :results
+    @game = Game.new(session[:player_1], Computer.new)
+    @game.draw? ? (erb :draw) : (@game.win? ? (erb :win) : (erb :lose))
   end
 
   run! if app_file == $0

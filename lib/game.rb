@@ -5,9 +5,9 @@ class Game
 
   attr_reader :player, :computer
 
-  RULES = { :rock => "scissors",
-            :paper => "rock",
-            :scissors => "paper" }
+  RULES = { rock: :scissors,
+            paper: :rock,
+            scissors: :paper }
 
   def initialize(player, computer)
     @player = player
