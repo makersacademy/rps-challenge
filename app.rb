@@ -9,13 +9,13 @@ enable :sessions
   end 
 
   post '/play' do 
-    @player_1 = params[:player_1]
+    session[:player_1] = params[:player_1]
     redirect '/choose'
   end 
 
   get '/choose' do 
-    @player_1 
-    erb :play
+    @player_1 = session[:player_1]
+    erb :choose
   end 
 
   run! if app_file == $0
