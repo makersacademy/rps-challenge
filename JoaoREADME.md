@@ -136,17 +136,18 @@ rackup config.ru
 
 5. Now type your name in the box and press the 'Submit' button
 
-SCREENSHOT
+![RPS name entered](/screenshots/rps-name-entered.png?raw=true "RPS home page with name entered")
 
 6. Type your choice of 'Rock' 'Paper' or 'Scissors' (always using an uppercase letter at the beginning) and press the 'Submit' button
 
-SCREENSHOT
+![RPS entering choice](/screenshots/rps-entering-choice.png?raw=true "RPS home page with choice about to be entered")
+
 
 7. You'll then see the computer's choice at the same time as the result of the game, which in this case was a draw
 
-SCREENSHOT
+![RPS outcome](/screenshots/rps-outcome.png?raw=true "RPS outcome")
 
-8. To play again, simply revisit the 'local-host:9292' site
+8. To play again, simply refresh the page using the 'local-host:9292' address
 
 
 
