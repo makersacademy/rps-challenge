@@ -56,6 +56,21 @@
                                            .,*//(((((/*,**////****//((((((/**,,
 \\\
 
+
+
+Rock! Paper! Scissors! (RPS)
+-------
+This is a simple program that allows you to play Rock, Paper, Scissors against a computer. You enter your name and choice as indicated in the instructions below, the computer makes a random choice and you see the outcome of the game - win, lose or draw.
+
+Eat your heart out, Candy Crush.
+
+_Rules_
+
+* Rock beats Scissors
+* Scissors beats Paper
+* Paper beats Rock
+
+
 Download & Install Instructions
 -------
 1. Fork this repo onto your local machine: https://github.com/joaoag/rps-challenge (for instructions on how to fork a repo see here: https://help.github.com/articles/fork-a-repo/)
@@ -76,6 +91,7 @@ System Requirements
 
 * Ruby 2.5.0
 * Mac OS X
+* Any modern web browser
 
 
 Built with
@@ -201,6 +217,8 @@ _Improvements_
 * Seperated the Game class into two, one which compares Computer and PLayer choices to calculate result, one which displays the result
 
 * Seperated the /play route into two, one page for user to enter input, one page to display outcome of the game
+
+* Reducing length of the Game #compare method
 
 * Getting CSS applied, game currently looks horrible
 
