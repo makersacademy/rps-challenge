@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
 require_relative './lib/game'
+require_relative './lib/computer'
 
 class Game_rsp < Sinatra::Base
   enable :sessions
@@ -11,6 +12,7 @@ class Game_rsp < Sinatra::Base
 
   post '/name' do
     $player = Player.new(params[:name])
+    $computer = Computer.new
     redirect '/play'
   end
 
@@ -20,9 +22,8 @@ class Game_rsp < Sinatra::Base
   end
 
   post '/submit' do
-    p params[:name]
-    $game = Game.new(params[:option])
-    session[:result] = $game.play
+    @game = Game.new(params[:option], $computer.move)
+    session[:result] = @game.play
     redirect '/result'
   end
 
