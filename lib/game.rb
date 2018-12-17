@@ -1,8 +1,8 @@
 class Game
-attr_reader :choices
+  attr_reader :choices
 
   def initialize
-      @choices = [:rock, :paper, :scissors]
+    @choices = [:rock, :paper, :scissors]
   end
 
   def play
