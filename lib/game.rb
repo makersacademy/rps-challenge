@@ -5,9 +5,9 @@ class Game
 
   attr_reader :player, :computer
 
-  RULES = { rock: :scissors,
-            paper: :rock,
-            scissors: :paper }
+  RULES = { :rock => "scissors",
+            :paper => "rock",
+            :scissors => "paper" }
 
   def initialize(player, computer)
     @player = player
@@ -15,20 +15,11 @@ class Game
   end
 
   def draw?
-    @player.move == @computer.move
+    @player.move == @computer.move.to_sym
   end
 
-  def win?(other)
-    RULES[@player.move][@computer.move]
+  def win?
+    RULES[@player.move][@computer.move] ? true : false
   end
-
-
-  # def name
-  #   @player.name
-  # end
-
-  # def attack
-  #   @player.attack
-  # end
 
 end

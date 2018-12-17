@@ -1,6 +1,6 @@
 class Computer
 
-  ATTACKS = [:rock, :paper, :scissors]
+  ATTACKS = ["rock", "paper", "scissors"]
 
   attr_reader :name, :move
 
