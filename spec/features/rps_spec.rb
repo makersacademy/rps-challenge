@@ -26,6 +26,28 @@ feature "Display RPS choices" do
     name_in_lights
     visit("/selection")
     expect(page).to have_content "#{@name}, choose wisely"
-    click_button("Rock" || "Paper" || "Scissors")
+    click_button("Rock")
+    # click_button("Paper")
+    # click_button("Scissors")
+  end
+end
+
+feature "Display RPS choices" do
+  scenario "Ask Marketeer to select RPS choice" do
+    greet_and_name
+    name_in_lights
+    visit("/selection")
+    expect(page).to have_content "#{@name}, choose wisely"
+    click_button("Paper")
+  end
+end
+
+feature "Display RPS choices" do
+  scenario "Ask Marketeer to select RPS choice" do
+    greet_and_name
+    name_in_lights
+    visit("/selection")
+    expect(page).to have_content "#{@name}, choose wisely"
+    click_button("Scissors")
   end
 end

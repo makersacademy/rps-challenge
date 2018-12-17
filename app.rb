@@ -1,8 +1,13 @@
 require "sinatra/base"
+require_relative "./lib/game"
 
 class RPS < Sinatra::Base
 
   enable :sessions
+
+  before do
+    @game = Game.new
+  end
 
   get "/" do
     erb(:index)
@@ -20,6 +25,18 @@ class RPS < Sinatra::Base
 
   get "/selection" do
     erb(:selection)
+  end
+
+  get "/result_rock" do
+    erb(:result_rock)
+  end
+
+  get "/result_paper" do
+    erb(:result_paper)
+  end
+
+  get "/result_scissors" do
+    erb(:result_scissors)
   end
 
   run! if app_file == $0

@@ -3,11 +3,20 @@ class Game
   attr_reader :options
 
   def initialize
-    @options = { 1 => "Rock", 2 => "Paper", 3 => "Scissors" }
+    @options = ["Rock", "Paper", "Scissors"]
+    # { 1 => "Rock", 2 => "Paper", 3 => "Scissors"
   end
 
+  # def self.create
+  #   @game = Game.new
+  # end
+
+  # def self.instance
+  #  @game
+  # end
+
   def choice
-    @options[rand(1..3)]
+    @options.sample
   end
 
 end
