@@ -14,7 +14,14 @@ class Game < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
+    @user_choice = session[:user_choice]
     erb :play
   end
 
+  post '/play' do
+    session[:user_choice] = params[:user_choice]
+    redirect to('/play')
+  end
+
+  run! if app_file == $0
 end
