@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/computer'
 
 class Game < Sinatra::Base
   enable :sessions
@@ -21,7 +22,8 @@ class Game < Sinatra::Base
 
   post '/play' do
     session[:user_choice] = params[:user_choice]
-    session[:computer_choice] = :paper
+    @computer = Computer.new
+    session[:computer_choice] = @computer.play
     redirect to('/play')
   end
 
