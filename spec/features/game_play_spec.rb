@@ -14,8 +14,10 @@ feature 'Playing Game' do
 
   scenario '#computer chooses an attack' do
     sign_in_and_play
-    select 'Paper', from: 'user_choice'
+    srand(3)
+    select 'Scissors', from: 'user_choice'
     click_button 'Go'
-    expect(page).to have_content 'Computer chose le Paper!'
+    expect(page).to have_content 'Computer chose le Scissors!'
   end
+
 end
