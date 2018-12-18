@@ -4,12 +4,12 @@ class Player
 
   attr_accessor :name, :options
 
-  def initialize(name = "computer")
+  def initialize(name = "computer", options = OPTIONS.sample)
     @name = name
     @options = options
   end
 
   def generate_choice
-    "rock"
+    OPTIONS.sample
   end
 end

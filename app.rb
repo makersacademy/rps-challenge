@@ -15,30 +15,34 @@ class Rpsgame < Sinatra::Base
   end
 
   post "/hold" do
-    @player_1 = Player.new(params[:player_1])
-    @player_2 = Player.new("computer")
-    @game = Game.create(@player_1, @player_2)
+    session[:player_1] = Player.new(params[:player_1],"options")
+    session[:player_2] = Player.new("computer","options")
+    session[:game] = Game.create(session[:player_1], session[:player_2])
     redirect "/interim"
   end
 
   get "/interim" do
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    @game = session[:game]
     erb :hold
   end
 
-  # to whoever reviews this - for some reason my code falls over here when
-  # I load it in rackup - NoMethodError at /game
-  # I'd appreciate any feedback on how to fix this please :)
-
   post "/game" do
-    @player_1_choice = params[:options]
-    @player_2_choice = @game.player_2.generate_choice
-    @options = []
-    @options << @player_1_choice
-    @p2options = []
-    @p2options << @player_2_choice
-    erb :game
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    @player_1.options = params[:options]
+    @player_2.options = @game.player_2.generate_choice
+    @game = session[:game]
+    redirect "/result"
   end
 
+  get "/result" do
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    @game = session[:game]
+    erb :game
+  end
 
   run! if app_file == $0
 end
