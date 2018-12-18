@@ -4,7 +4,7 @@ feature 'Homepage' do
     expect(page).to have_content 'Welcome Socks!'
   end
 
-  scenario 'play game' do
+  scenario 'selects attack' do
     sign_in_and_play
     expect(page).to have_content 'Choose your attack:'
     expect(page).to have_content 'Computer vs. Socks'
