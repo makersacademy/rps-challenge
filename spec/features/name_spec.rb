@@ -7,6 +7,6 @@ feature 'Enter Name' do
 
   scenario 'fills in name' do
     sign_in_and_play
-    expect(page).to have_content 'Welcome Socks!'
+    expect(page).to have_content 'Welcome Socks! Computer vs. Socks'
   end
 end
