@@ -19,12 +19,11 @@ My approach to this challenge
 * Used the user stories info to build these classes, for example the player had the ability to select a random attack from R/P/S
 * Ran feature tests every step along the way to make sure the code was doing what I wanted it to be doing, and the tests weren't just passing by accident
 * Effectively used the given tests to gain 0 rubocop infractions & 100% test coverage
-* Were I to continue with this I would try to implement working RPSLS & Multiplayer
-* My code works in PRY/IRB, does not fail RSpec, however it does fail on Rackup after the user selects an attack - to anyone reviewing this I have made a note in my app.rb file detailing this.
 * One of my favourite TV shows makes an appearance in the video at the start!
 
 ![Imgur](https://i.imgur.com/3EGHNY1.png)
 ![Imgur](https://i.imgur.com/yFXPBip.png)
+![Imgur](https://i.imgur.com/zo6PCBN.png)
 
 An example of how the program can be run in irb
 ---------
@@ -44,6 +43,12 @@ Simons-MBP:rps-challenge simon$ irb
 2.5.0 :005 > g.result
  => "Simon wins!"
 ```
+
+Future direction
+---------
+* Implement full multiplayer functionality
+* Implement further weapons in the form of Rock, Paper, Scissors, Lizard, Spock
+* Improve how the app looks by adding more graphics/CSS styling
 
 Instructions
 -------
