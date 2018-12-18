@@ -5,11 +5,17 @@ feature 'Playing Game' do
     expect(page).to have_content 'Computer vs. Socks'
     select 'Rock', from: 'user_choice'
   end
-  scenario 'choses one attack' do
+  scenario '#user choses one attack' do
     sign_in_and_play
     select 'Rock', from: 'user_choice'
     click_button 'Go'
     expect(page).to have_content 'You chose le Rock!'
   end
 
+  scenario '#computer chooses an attack' do
+    sign_in_and_play
+    select 'Paper', from: 'user_choice'
+    click_button 'Go'
+    expect(page).to have_content 'Computer chose le Paper!'
+  end
 end
