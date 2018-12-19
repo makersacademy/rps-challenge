@@ -49,6 +49,7 @@ Future direction
 * Implement full multiplayer functionality
 * Implement further weapons in the form of Rock, Paper, Scissors, Lizard, Spock
 * Improve how the app looks by adding more graphics/CSS styling
+* Add a scoreboard tracker to keep count of current score when multiple matches are played, i.e. implement a best of 3 scenario
 
 Instructions
 -------
