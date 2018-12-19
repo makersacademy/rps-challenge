@@ -1,28 +1,28 @@
 require_relative 'computer'
 
 class Game
-  attr_reader :player, :computer
+  attr_reader :player1, :player2
 
-  def self.create(player, computer = Computer.new)
-    @game = Game.new(player, computer)
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
   end
 
   def self.instance
     @game
   end
 
-  def initialize(player, computer)
-    @player = player
-    @computer = computer
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
   end
 
   def winner
-    player_option = player.selected_option
-    computer_option = computer.computer_choice
-    return 'It is a draw!' if player_option == computer_option
-    return 'You won!' if (player_option == 'rock') && (computer_option == 'scissors') ||
-                         (player_option == 'scissors') && (computer_option == 'paper') ||
-                         (player_option == 'paper') && (computer_option == 'rock')
-    'You lost!'
+    player1_option = player1.selected_option
+    player2_option = player2.selected_option
+    return 'It is a draw!' if player1_option == player2_option
+    return "#{player1.name} wins!" if (player1_option == 'rock') && (player2_option == 'scissors') ||
+                         (player1_option == 'scissors') && (player2_option == 'paper') ||
+                         (player1_option == 'paper') && (player2_option == 'rock')
+    "#{player2.name} wins!"
     end
 end

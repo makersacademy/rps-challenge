@@ -1,7 +1,7 @@
 feature 'Enter name' do
   scenario 'submit name' do
     sign_in_and_play
-    expect(page).to have_content('Mario vs Computer!')
+    expect(page).to have_content('Mario vs Luigi')
   end
 end
 

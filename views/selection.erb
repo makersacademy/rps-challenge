@@ -4,11 +4,11 @@
   <link rel="stylesheet" href="rps.css" type='text/css'>
 </head>
 <body>
-  <h2> <%= @game.player.name%> chose <%= @game.player.selected_option %>. </h2>
-  <h2> Let us see what the computer chooses! </h2>
+  <h2> <%= @game.player1.name%> chose <%= @game.player1.selected_option %>. </h2>
+  <h2> <%= @game.player2.name%> chose <%= @game.player2.selected_option %>. </h2>
   <br>
   <form class="options_form_container" action="/result" method="post">
-    <input type="submit" name="computer_choice" value="Generate computer choice">
+    <input type="submit" name="computer_choice" value="See result!">
   </form>
 </body>
 </html>

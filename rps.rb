@@ -15,8 +15,9 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:player_name])
-    @game = Game.create(player, Computer.new)
+    player1 = Player.new(params[:player1_name])
+    player2 = Player.new(params[:player2_name])
+    @game = Game.create(player1, player2)
     redirect '/play'
   end
 
@@ -25,12 +26,12 @@ class Rps < Sinatra::Base
   end
 
   post '/selection' do
-    @game.player.selected_option = params[:option]
+    @game.player1.selected_option = params[:option1]
+    @game.player2.selected_option = params[:option2]
     erb :selection
   end
 
   post '/result' do
-    @game.computer.random
     erb :result
   end
 
