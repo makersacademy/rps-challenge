@@ -11,18 +11,12 @@ How to install the app and associated tests
 
 Implemented functionality 
 -------
-* At the moment one player is accepted. The player inserts their name, chooses one of the three options (rock, paper, scissors) after which the computer generates a random option as well. The winner is decided based on the below rules:
+* This game accepts two players. Each player needs to introduce their name and choose one of the three options (rock, paper, scissors) to play.
 
-Rules                | 
-------------------   |
-Rock beats Scissors  | 
-Scissors beats Paper | 
-Paper beats Rock     |
+Rules to decide the winner             | 
+-------------------------------------  |
+Rock beats Scissors                    | 
+Scissors beats Paper                   | 
+Paper beats Rock                       |
 
-* Moving forward, functionality allowing a second player will be implemented. 
-* Screenshots of the application are below. Further improvements to be added to the stylesheets.
-
-![Image-of-application](https://github.com/AlinaGoaga/rps-challenge/blob/master/stylesheets/app_pic_1.jpeg)
-![Image-of-application](https://github.com/AlinaGoaga/rps-challenge/blob/master/stylesheets/app_pic_2.jpeg)
-![Image-of-application](https://github.com/AlinaGoaga/rps-challenge/blob/master/stylesheets/app_pic_3.jpeg)
-![Image-of-application](https://github.com/AlinaGoaga/rps-challenge/blob/master/stylesheets/app_pic_4.jpeg)
+* Screenshots of an earlier release of the application (player vs computer) are in the stylesheets folder.
