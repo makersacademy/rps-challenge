@@ -13,9 +13,11 @@ Implemented functionality
 -------
 * At the moment one player is accepted. The player inserts their name, chooses one of the three options (rock, paper, scissors) after which the computer generates a random option as well. The winner is decided based on the below rules:
 
-** Rock beats Scissors
-** Scissors beats Paper
-** Paper beats Rock
+Rules                | 
+------------------   |
+Rock beats Scissors  | 
+Scissors beats Paper | 
+Paper beats Rock     |
 
 * Moving forward, functionality allowing a second player will be implemented. 
 * Screenshots of the application are below. Further improvements to be added to the stylesheets.
