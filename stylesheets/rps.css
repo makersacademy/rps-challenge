@@ -3,24 +3,16 @@ body {
   margin-top: 150px;
 }
 
-.name_form {
+h1, h2, .name_form, .options_form_container, .introduction {
   display:flex;
   justify-content:center;
   align-items:center;
+
 }
 
-.options_form_container {
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.introduction {
+  font-size: 50px;
 }
-
-h1, h2 {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
 #final_result {
   font-size: 100px;
 }
