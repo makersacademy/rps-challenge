@@ -2,9 +2,13 @@
 
 ## How to use  
 
+`bundle`
 `git clone https://github.com/chrisjgilbert/rps-challenge`  
 `rackup`  
 `http://localhost:9292`  
+
+## How to run tests
+`rspec`
 
 ## User Stories
 
