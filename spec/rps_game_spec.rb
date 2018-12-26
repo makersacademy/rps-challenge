@@ -43,4 +43,9 @@ describe RpsGame do
     expect { game.move('paper', 'inalid') }.to raise_error("invalid move")
     expect { game.move('foobar', 'invalid') }.to raise_error("invalid move")
   end
+
+  moves = %w[rock paper scissors]
+  it 'generates a random move' do
+    expect(moves).to include(game.random_move)
+  end
 end
