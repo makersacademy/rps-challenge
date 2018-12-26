@@ -16,6 +16,13 @@ class RpsGame
       when 'scissors'
         return P1_WINS
       end
+
+    when 'paper'
+      case p2_move
+      when 'rock'
+        return P1_WINS
+      
+      end
     end
 
     raise 'invalid move'
