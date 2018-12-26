@@ -12,5 +12,10 @@ describe RpsGame do
     expect(game.move('rock', 'paper')).to eq RpsGame::P2_WINS
   end
 
-  
+  # paper
+  it 'paper beats rock' do
+    expect(game.move('paper', 'rock')).to eq RpsGame::P1_WINS
+  end
+
+
 end
