@@ -36,4 +36,11 @@ describe RpsGame do
       expect(game.move(m, m)).to eq RpsGame::DRAW
     end
   end
+
+  # wrong value(s)
+  it 'supplied wrong move' do
+    expect { game.move('foobar', 'rock') }.to raise_error("invalid move")
+    expect { game.move('paper', 'inalid') }.to raise_error("invalid move")
+    expect { game.move('foobar', 'invalid') }.to raise_error("invalid move")
+  end
 end
