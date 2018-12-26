@@ -4,6 +4,13 @@ class RpsGame
   P2_WINS = 1
   DRAW    = 2
 
+  MOVES = %w[rock paper scissors].freeze
+
+  def random_move
+    move_index = rand(RpsGame::MOVES.length)
+    RpsGame::MOVES[move_index]
+  end
+
   def move(p1_move, p2_move)
 
     case p1_move
