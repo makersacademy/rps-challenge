@@ -25,4 +25,15 @@ describe RpsGame do
   it 'scissors beats paper' do
     expect(game.move('scissors', 'paper')).to eq RpsGame::P1_WINS
   end
+
+  it 'scissors beaten by rock' do
+    expect(game.move('scissors', 'rock')).to eq RpsGame::P2_WINS
+  end
+
+  # same move --> draw
+  it 'draw' do
+    ['rock', 'paper', 'scissors'].each do |m|
+      expect(game.move(m, m)).to eq RpsGame::DRAW
+    end
+  end
 end
