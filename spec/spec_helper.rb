@@ -27,4 +27,4 @@ require 'capybara/rspec'
 require 'rspec'
 
 
-Capybara.app = RPS
+Capybara.app = App
