@@ -1,18 +1,39 @@
-require 'sinatra/base'
+# frozen_string_literal: true
 
-class RPS < Sinatra::Base
-  # get '/' do
-  #   'Testing infrastructure working!'
-  # end
+require 'sinatra/base'
+require './lib/rps_game'
+require './lib/player'
+
+class App < Sinatra::Base
+  enable :sessions
+
   get '/' do
-    erb :index
+    erb :register_player
   end
 
-  post '/name' do
-    @player_name = params[:player_name]
+  post '/do_register' do
+    session[:player_name] = params[:player_name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_name = session[:player_name]
+    if @player_name.to_s.empty?
+      redirect '/'
+    else
+      erb :play
+    end
+  end
+
+  post '/play' do
     erb :play
   end
 
-# start the server if ruby file executed directly
-  run! if app_file == $0
+  get '/logout' do
+    session[:player_name] = ''
+    redirect '/'
+  end
+
+  # start the server if ruby file executed directly
+  run! if app_file == $PROGRAM_NAME
 end
