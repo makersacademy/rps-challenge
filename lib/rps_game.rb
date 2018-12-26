@@ -21,7 +21,8 @@ class RpsGame
       case p2_move
       when 'rock'
         return P1_WINS
-      
+      when 'scissors'
+        return P2_WINS
       end
     end
 
