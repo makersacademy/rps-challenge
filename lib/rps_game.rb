@@ -23,6 +23,8 @@ class RpsGame
         return P1_WINS
       when 'scissors'
         return P2_WINS
+      when 'paper'
+        return DRAW
       end
 
     when 'scissors'
@@ -31,6 +33,8 @@ class RpsGame
         return P2_WINS
       when 'paper'
         return P1_WINS
+      when 'scissors'
+        return DRAW
       end
     end
 
