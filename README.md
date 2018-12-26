@@ -1,6 +1,6 @@
 # RPS Challenge
 
-## How To Use  
+## How To Use
 
 `git clone https://github.com/chrisjgilbert/rps-challenge`  
 `rackup`  
