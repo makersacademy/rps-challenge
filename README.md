@@ -2,7 +2,7 @@
 
 ## How to use  
 
-`bundle`
+`bundle`  
 `git clone https://github.com/chrisjgilbert/rps-challenge`  
 `rackup`  
 `http://localhost:9292`  
