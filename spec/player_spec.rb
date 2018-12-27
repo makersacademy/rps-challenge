@@ -6,4 +6,7 @@ describe Player do
   it 'stores player\'s name' do
     expect(player.name).to eq 'Sam'
   end
+  it 'stores a move which is defaulted to nil at instantiation' do
+     expect(player.move).to eq nil
+   end
 end
