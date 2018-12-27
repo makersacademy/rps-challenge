@@ -5,4 +5,7 @@ class Player
     @name = name
     @move = move
   end
+  def update_move(move)
+    @move = move
+  end
 end
