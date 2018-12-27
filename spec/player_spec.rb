@@ -9,4 +9,9 @@ describe Player do
   it 'stores a move which is defaulted to nil at instantiation' do
      expect(player.move).to eq nil
    end
+
+   it 'updates player\'s move' do
+     subject.update_move('rock')
+     expect(subject.move).to eq 'rock'
+   end
 end
