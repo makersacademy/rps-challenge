@@ -29,6 +29,10 @@ class App < Sinatra::Base
     erb :play
   end
 
+  post '/do_play' do
+    p params
+  end
+
   get '/logout' do
     session[:player_name] = ''
     redirect '/'

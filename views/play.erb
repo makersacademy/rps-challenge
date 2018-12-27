@@ -1,1 +1,20 @@
-<%= @player_name %>
+<h1>Hi <%= @player_name %>!</h1>
+
+<p>
+Let's play!
+</p>
+
+<form action="/do_play" method="POST">
+  <input type="radio" name="move" id="move_rock" value="rock" />
+  <label for="move_rock">Rock</label>
+
+  <input type="radio" name="move" id="move_paper" value="paper" />
+  <label for="move_paper">Paper</label>
+
+  <input type="radio" name="move" id="move_scissors" value="scissors" />
+  <label for="move_scissors">Scissors</label>
+
+  <p>
+    <input type="submit" value="Make your move!" />
+  </p>
+</form>
