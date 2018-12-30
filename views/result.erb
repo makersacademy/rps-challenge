@@ -1,0 +1,25 @@
+<h1><%= @player_name %> vs Computer</h1>
+
+<p>
+  Your move: <%= @user_move %>
+</p>
+
+<p>
+  Compuer move: <%= @computer_move %>
+</p>
+
+
+<h2><%= @win_msg %></h2>
+
+
+<p>
+  <form action="/play" method="get">
+    <input type="submit" value="Let's play again!" />
+  </form>
+</p>
+
+<p>
+  <form action="/logout" method="get">
+    <input type="submit" value="Log in as different user" />
+  </form>
+</p>
