@@ -17,15 +17,15 @@
       }
       .head1 {
         color: orange;
-        font-size: 2.5em;
+        font-size: 2em;
         letter-spacing: 8px;
       }
       .head2 {
-        font-size: 1.5em;
+        font-size: 1.2em;
         letter-spacing: 5px;
       }
       .head3 {
-        font-size: 1.2em;
+        font-size: 1em;
         letter-spacing: 4px;
       }
       .weapon {
@@ -62,9 +62,9 @@
     <a id = "spock" href="/spock"><img class="weapon" src="<%= url('/spock.png') %>" /></a>
 
     <% if @game.player.choice != '' %>
-      <p class="head2"><%=@game.player.name.upcase%> PLAYS <%=@game.player.choice.upcase%></p>
-      <p class="head2">YOUR ENEMY PLAYS <%=@game.enemy.choice.upcase%></p>
-      <p class="head2">RESULT: <span><%=@game.outcome[0]%></span></p>
+      <p class="head3"><%=@game.player.name.upcase%> PLAYS <strong><%=@game.player.choice.upcase%></strong></p>
+      <p class="head3">YOUR ENEMY PLAYS <strong><%=@game.enemy.choice.upcase%></strong></p>
+      <p class="head2"><span><%=@game.outcome[0]%></span></p>
       <% if @game.outcome[0] == 'YOU WIN' %>
         <p class = "head3">(<%=@game.player.choice.upcase%> <span><%=@game.outcome[1].upcase%></span> <%=@game.enemy.choice.upcase%>)</p>
       <% elsif @game.outcome[0] == 'YOU LOSE' %>
