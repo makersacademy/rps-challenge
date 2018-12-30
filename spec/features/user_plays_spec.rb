@@ -1,16 +1,18 @@
 feature 'Play' do
-
-  scenario 'A checkbox' do
-    sign_in
-    visit '/play'
-    expect(page).to have_field('move_rock', with: 'rock')
-    expect(page).to have_field('move_paper', with: 'paper')
-    expect(page).to have_field('move_scissors', with: 'scissors')
-  end
-
-  scenario 'user submits move and gets his move displayed' do
+  scenario 'user can click radio button' do
     sign_in_and_play
     choose('move_rock')
     expect(page).to have_selector("input[value='rock']")
+  end
+
+  scenario 'computer move' do
+    sign_in_and_play
+    choose('move_rock')
+    expect(page).to have_selector("input[value='rock']")
+    visit '/do_play'
+    game = RpsGame.new
+    @user_move = 'rock'
+    @computer_move = game.random_move
+    expect(game.random_move).to eq("#{@computer_move}")
   end
 end

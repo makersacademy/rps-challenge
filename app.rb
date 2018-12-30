@@ -30,7 +30,13 @@ class App < Sinatra::Base
   end
 
   post '/do_play' do
-    p params
+
+    game = RpsGame.new
+    @computer_move = game.random_move
+    @user_move = params[:move]
+    game_result = game.move(@user_move, @computer_move)
+    @player_name = session[:player_name]
+    erb :result
   end
 
   get '/logout' do
