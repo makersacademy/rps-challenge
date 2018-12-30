@@ -24,17 +24,20 @@ class App < Sinatra::Base
       erb :play
     end
   end
-
-  post '/play' do
-    erb :play
-  end
-
+  
   post '/do_play' do
-
     game = RpsGame.new
     @computer_move = game.random_move
     @user_move = params[:move]
     game_result = game.move(@user_move, @computer_move)
+    case game_result
+    when RpsGame::P1_WINS
+      @win_msg = 'You Win!'
+    when RpsGame::P2_WINS
+      @win_msg = 'You Lose!'
+    when RpsGame::DRAW
+      @win_msg = "It's a draw..."
+    end
     @player_name = session[:player_name]
     erb :result
   end
