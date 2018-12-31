@@ -12,8 +12,8 @@ feature 'First name selects an option' do
   scenario 'selects paper and is shown next page' do
     find_button('paper').click
     expect(page).to have_content "It's currently James's turn"
-
   end
+
   scenario 'selects scissors and is shown next page' do
     find_button('scissors').click
     expect(page).to have_content "It's currently James's turn"

@@ -20,10 +20,10 @@ class RPS < Sinatra::Base
 
   post '/single_player_names' do
     @name1 = params[:name1]
+    @player1 = Players.new(@name1)
     computer = Computer.new([:rock, :paper, :scissors, :lizard, :spock])
-    @name2 = computer.name2
-    @players = Players.create(@name1, @name2)
-    @players.move2 = computer.move2
+    @player2 = Players.new(computer.name2)
+    @players.last.move = computer.move2
     redirect '/single_player_game'
   end
 
@@ -52,7 +52,7 @@ class RPS < Sinatra::Base
 
   post '/multiplayer_game' do
     @players = Players.all
-    @players.move1 = params["move1"]
+    @players.first.move = params["move1"]
     redirect '/multiplayer_game2'
   end
 
@@ -64,18 +64,18 @@ class RPS < Sinatra::Base
   end
 
   post '/game/determine' do
-    @players = Players.instance
-    @players.move1 = params["move1"] if @players.move1.nil?
-    @players.move2 = params["move2"] if @players.move2.nil?
+    @players = Players.all
+    @players.first.move = params["move1"] if @players.first.move.nil?
+    @players.last.move = params["move2"] if @players.last.move.nil?
     redirect '/game/result'
   end
 
   get '/game/result' do
-    @players = Players.instance
-    @name1 = @players.name1
-    @name2 = @players.name2
-    @move1 = @players.move1
-    @move2 = @players.move2
+    @players = Players.all
+    @name1 = @players.first.name
+    @name2 = @players.last.name
+    @move1 = @players.first.move
+    @move2 = @players.last.move
     @winner = Winner.new(@players)
     @determine_winner = @winner.determine
     erb(:result)

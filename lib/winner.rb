@@ -23,7 +23,7 @@ class Winner
   private
 
   def convert_to_sym
-    player1_move, player2_move = @players.move1, @players.move2
+    player1_move, player2_move = @players.first.move, @players.last.move
     @player1_move = player1_move.to_sym unless player1_move.nil?
     @player2_move = player2_move.to_sym unless player2_move.nil?
   end

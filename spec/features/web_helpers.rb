@@ -4,6 +4,7 @@ def sign_in_and_play
   fill_in('name1', with: 'Caitlin')
   fill_in('name2', with: 'James')
   click_button("Let's play!")
+  # save_and_open_page
 end
 
 def single_sign_in
