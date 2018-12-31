@@ -3,7 +3,13 @@ require_relative "messages"
 class Winner
   include Messages
 
-  WIN_COMBOS = [[:rock, :scissors], [:paper, :rock], [:scissors, :paper], [:scissors, :lizard], [:rock, :lizard], [:lizard, :paper], [:paper, :spock], [:lizard, :spock], [:spock, :rock], [:spock, :scissors]]
+  PLAYER1_WIN_COMBOS = {
+    rock: [:scissors, :lizard],
+    paper: [:rock, :spock],
+    scissors: [:paper, :lizard],
+    lizard: [:paper, :spock],
+    spock: [:rock, :scissors]
+  }
 
   def initialize(players)
     @players = players
@@ -11,8 +17,8 @@ class Winner
   end
 
   def determine
-    WIN_COMBOS.each do |combo|
-      if combo[0] == @player1_move && combo[1] == @player2_move
+    PLAYER1_WIN_COMBOS[@player1_move].each do |move|
+      if @player2_move == move
         return player1_won
       end
     end

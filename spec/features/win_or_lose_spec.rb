@@ -1,6 +1,6 @@
 feature 'Win or lose' do
-  player1 = Player.new("Caitlin")
-  player2 = Player.new("James")
+  Player.new("Caitlin")
+  Player.new("James")
   let(:players) { Player.all }
   let(:winner) { Winner.new(players) }
 

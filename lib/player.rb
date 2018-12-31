@@ -6,6 +6,7 @@ class Player
   def initialize(name)
     @name = name
   end
+
   # FIX ME
   # def self.create(name)
   #   @players = Players.new(name)
