@@ -23,10 +23,10 @@ class RPS < Sinatra::Base
     computer = Computer.new
     player2 = Player.new(computer.name)
     player2.move = computer.move
-    redirect '/single_player/move'
+    redirect '/single_player_move'
   end
 
-  get '/single_player/move' do
+  get '/single_player_move' do
     players = Player.all
     @player1_name = players.first.name
     @player2_name = players.last.name
@@ -36,23 +36,23 @@ class RPS < Sinatra::Base
   post '/multiplayer' do
     Player.new(params[:name1])
     Player.new(params[:name2])
-    redirect '/multiplayer/first_move'
+    redirect '/multiplayer_first_move'
   end
 
-  get '/multiplayer/first_move' do
+  get '/multiplayer_first_move' do
     players = Player.all
     @player1_name = players.first.name
     @player2_name = players.last.name
     erb(:multiplayer_first_move)
   end
 
-  post '/multiplayer/first_move' do
+  post '/multiplayer_first_move' do
     players = Player.all
     players.first.move = params["move1"]
-    redirect '/multiplayer/second_move'
+    redirect '/multiplayer_second_move'
   end
 
-  get '/multiplayer/second_move' do
+  get '/multiplayer_second_move' do
     players = Player.all
     @player1_name = players.first.name
     @player2_name = players.last.name

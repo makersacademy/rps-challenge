@@ -1,18 +1,20 @@
 <head>
+  <title>RPSLS</title>
   <link rel="stylesheet" type = "text/css" href="/stylesheet.css">
 </head>
 
 <body>
   <div>
+    <img src="rock-paper-scissors.png" alt="Rock, Paper, Scissors, Lizard, Spock">
     <h1><%= @player1_name %> vs <%= @player2_name %></h1>
     <p>It's currently <%= @player2_name %>'s turn</p>
     <p>What move would you like to play?</p>
     <form action=/result method=post >
-    <input name='move2' type="submit" value="rock">
-    <input name='move2' type="submit" value="paper">
-    <input name='move2' type="submit" value="scissors">
-    <input name='move2' type="submit" value="lizard">
-    <input name='move2' type="submit" value="spock">
+      <input name='move2' type="submit" value="rock">
+      <input name='move2' type="submit" value="paper">
+      <input name='move2' type="submit" value="scissors">
+      <input name='move2' type="submit" value="lizard">
+      <input name='move2' type="submit" value="spock">
     </form>
   </div>
 </body>
