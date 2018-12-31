@@ -7,9 +7,14 @@ With BASH/ZSH or similar:
 - CD tp rps-challenge
 - bundle install for gems/dependencies
 - rackup to start a local server (or ruby app.rb)
-- navigate to local host eg. localhost:9292 in your browser
+- navigate to local host eg. localhost:4567 in your browser
   (your terminal will show you which port to use)
 - Enjoy!
+
+Deployment
+------
+- App is live on Heroku with continuous deployment from git master
+- Find it here: https://z9-rps-lizard-spock.herokuapp.com/
 
 Rules:
 ------
