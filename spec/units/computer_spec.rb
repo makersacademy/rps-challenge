@@ -1,31 +1,34 @@
 require 'computer'
 
 describe Computer do
-  let(:computer) { Computer.new(options) }
-  let(:options) { [:rock, :paper, :scissors, :lizard, :spock] }
+  let(:computer) { Computer.new }
+
+  it 'is named computer' do
+    expect(computer.name).to eq 'Computer'
+  end
 
   it 'returns rock' do
-    allow(options).to receive(:sample).and_return(:rock)
-    expect(computer.move2).to eq :rock
+    allow(Computer::OPTIONS).to receive(:sample).and_return(:rock)
+    expect(computer.move).to eq :rock
   end
 
   it 'returns paper' do
-    allow(options).to receive(:sample).and_return(:paper)
-    expect(computer.move2).to eq :paper
+    allow(Computer::OPTIONS).to receive(:sample).and_return(:paper)
+    expect(computer.move).to eq :paper
   end
 
   it 'returns scissors' do
-    allow(options).to receive(:sample).and_return(:scissors)
-    expect(computer.move2).to eq :scissors
+    allow(Computer::OPTIONS).to receive(:sample).and_return(:scissors)
+    expect(computer.move).to eq :scissors
   end
 
   it 'returns lizard' do
-    allow(options).to receive(:sample).and_return(:lizard)
-    expect(computer.move2).to eq :lizard
+    allow(Computer::OPTIONS).to receive(:sample).and_return(:lizard)
+    expect(computer.move).to eq :lizard
   end
 
   it 'returns spock' do
-    allow(options).to receive(:sample).and_return(:spock)
-    expect(computer.move2).to eq :spock
+    allow(Computer::OPTIONS).to receive(:sample).and_return(:spock)
+    expect(computer.move).to eq :spock
   end
 end

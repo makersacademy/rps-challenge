@@ -1,9 +1,9 @@
-class Computer
+class Computer < Player
 
-  attr_reader :move2, :name2
+  OPTIONS = [:rock, :paper, :scissors, :lizard, :spock]
 
-  def initialize(options)
-    @move2 = options.sample
-    @name2 = 'Computer'
+  def initialize
+    @move = OPTIONS.sample
+    @name = 'Computer'
   end
 end
