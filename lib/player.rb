@@ -7,11 +7,6 @@ class Player
     @name = name
   end
 
-  # FIX ME
-  # def self.create(name)
-  #   @players = Players.new(name)
-  # end
-  #
   def self.all
     ObjectSpace.each_object(self).to_a.reverse
   end
