@@ -1,18 +1,17 @@
 class Players
 
-  attr_reader :name1, :name2
-  attr_accessor :move1, :move2
+  attr_reader :name
+  attr_accessor :move
 
-  def initialize(name1, name2)
-    @name1 = name1
-    @name2 = name2
+  def initialize(name)
+    @name = name
   end
-
-  def self.create(name1, name2)
-    @players = Players.new(name1, name2)
-  end
-
-  def self.instance
-    @players
+  # FIX ME
+  # def self.create(name)
+  #   @players = Players.new(name)
+  # end
+  #
+  def self.all
+    ObjectSpace.each_object(self).to_a
   end
 end

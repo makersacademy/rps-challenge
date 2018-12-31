@@ -10,11 +10,11 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  post '/two_player' do
+  get '/two_player' do
     erb(:two_player)
   end
 
-  post '/one_player' do
+  get '/one_player' do
     erb(:one_player)
   end
 
@@ -38,27 +38,29 @@ class RPS < Sinatra::Base
   post '/multiplayer_names' do
     @name1 = params[:name1]
     @name2 = params[:name2]
-    @players = Players.create(@name1, @name2)
+    @player1 = Players.new(@name1)
+    @player2 = Players.new(@name2)
+    @players = [@player1, @player2]
     redirect '/multiplayer_game'
   end
 
   get '/multiplayer_game' do
-    @players = Players.instance
-    @name1 = @players.name1
-    @name2 = @players.name2
+    @players = Players.all
+    @name1 = @players.first.name
+    @name2 = @players.last.name
     erb(:multiplayer_game)
   end
 
-  post '/multiplayer_game2_names' do
-    @players = Players.instance
+  post '/multiplayer_game' do
+    @players = Players.all
     @players.move1 = params["move1"]
     redirect '/multiplayer_game2'
   end
 
   get '/multiplayer_game2' do
-    @players = Players.instance
-    @name1 = @players.name1
-    @name2 = @players.name2
+    @players = Players.all
+    @name1 = @players.first.name
+    @name2 = @players.last.name
     erb(:multiplayer_game2)
   end
 
