@@ -5,9 +5,8 @@
 <body>
   <div>
     <h1><%= @name1 %> vs <%= @name2 %></h1>
-    <p>It's currently <%= @name1 %>'s turn</p>
-    <p>What move would you like to play?</p>
-    <form action=/multiplayer_game method=post >
+    <p>What move would you like to play <%= @name1 %>?</p>
+    <form action=/result method=post >
     <input name='move1' type="submit" value="rock">
     <input name='move1' type="submit" value="paper">
     <input name='move1' type="submit" value="scissors">

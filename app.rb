@@ -10,68 +10,68 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  get '/two_player' do
-    erb(:two_player)
+  get '/multiplayer' do
+    erb(:multiplayer)
   end
 
-  get '/one_player' do
-    erb(:one_player)
+  get '/single_player' do
+    erb(:single_player)
   end
 
-  post '/single_player_names' do
+  post '/single_player' do
     @name1 = params[:name1]
     @player1 = Player.new(@name1)
     computer = Computer.new
     @player2 = Player.new(computer.name)
     @players = Player.all
     @players.last.move = computer.move
-    redirect '/single_player_game'
+    redirect '/single_player/move'
   end
 
-  get '/single_player_game' do
+  get '/single_player/move' do
     @players = Player.all
     @name1 = @players.first.name
     @name2 = @players.last.name
     @players.first.move = params["move1"]
-    erb(:single_player_game)
+    erb(:single_player_move)
   end
 
-  post '/multiplayer_names' do
+  post '/multiplayer' do
     @name1 = params[:name1]
     @name2 = params[:name2]
     @player1 = Player.new(@name1)
     @player2 = Player.new(@name2)
-    redirect '/multiplayer_game'
+    redirect '/multiplayer/first_move'
   end
 
-  get '/multiplayer_game' do
+  get '/multiplayer/first_move' do
     @players = Player.all
     @name1 = @players.first.name
     @name2 = @players.last.name
-    erb(:multiplayer_game)
+    erb(:multiplayer_first_move)
   end
 
-  post '/multiplayer_game' do
+  post '/multiplayer/first_move' do
     @players = Player.all
     @players.first.move = params["move1"]
-    redirect '/multiplayer_game2'
+    redirect '/multiplayer/second_move'
   end
 
-  get '/multiplayer_game2' do
+  get '/multiplayer/second_move' do
     @players = Player.all
     @name1 = @players.first.name
     @name2 = @players.last.name
-    erb(:multiplayer_game2)
+    erb(:multiplayer_second_move)
   end
 
-  post '/game/determine' do
+  post '/result' do
     @players = Player.all
     @players.first.move = params["move1"] if @players.first.move.nil?
     @players.last.move = params["move2"] if @players.last.move.nil?
-    redirect '/game/result'
+    redirect '/result'
   end
 
-  get '/game/result' do
+  get '/result' do
     @players = Player.all
     @name1 = @players.first.name
     @name2 = @players.last.name
