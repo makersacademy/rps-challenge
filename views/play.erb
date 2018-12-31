@@ -15,6 +15,18 @@
       span {
         color: orange;
       }
+      .button {
+        background-color: orange;
+        font-size: 0.8em;
+        color: white;
+        text-decoration: none;
+        padding: 2px;
+        margin-top: 10px;
+        margin-right: 10px;
+        position:absolute;
+        top:0;
+        right:0;
+      }
       .head1 {
         color: orange;
         font-size: 2em;
@@ -53,6 +65,7 @@
   </head>
 
   <body>
+    <a href="/" class="button">HOME</a>
     <p class="head1"><%=@game.player.name.upcase%></p>
     <p class="head2">CHOOSE YOUR WEAPON:</p>
     <a id = "rock" href="/rock"><img class="weapon" src="<%= url('/rock.png') %>" /></a>
