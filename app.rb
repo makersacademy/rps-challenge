@@ -23,15 +23,16 @@ class RPS < Sinatra::Base
     @player1 = Players.new(@name1)
     computer = Computer.new([:rock, :paper, :scissors, :lizard, :spock])
     @player2 = Players.new(computer.name2)
+    @players = Players.all
     @players.last.move = computer.move2
     redirect '/single_player_game'
   end
 
   get '/single_player_game' do
     @players = Players.all
-    @name1 = @players.name1
-    @name2 = @players.name2
-    @players.move1 = params["move1"]
+    @name1 = @players.first.name
+    @name2 = @players.last.name
+    @players.first.move = params["move1"]
     erb(:single_player_game)
   end
 
