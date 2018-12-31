@@ -1,7 +1,8 @@
 feature 'Win or lose' do
-  Player.new("Caitlin")
-  Player.new("James")
-  let(:players) { Player.all }
+  player1 = Player.new("Caitlin")
+  player2 = Player.new("James")
+  Game.create(player1, player2)
+  let(:players) { Game.players }
   let(:winner) { Winner.new(players) }
 
   before do

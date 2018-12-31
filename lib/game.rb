@@ -3,7 +3,7 @@ class Game
     @players = [player1, player2]
   end
 
-  def self.players
-    @players
+  class << self
+    attr_reader :players
   end
 end
