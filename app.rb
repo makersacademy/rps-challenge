@@ -28,7 +28,7 @@ class RPS < Sinatra::Base
   end
 
   get '/single_player_game' do
-    @players = Players.instance
+    @players = Players.all
     @name1 = @players.name1
     @name2 = @players.name2
     @players.move1 = params["move1"]
@@ -40,7 +40,6 @@ class RPS < Sinatra::Base
     @name2 = params[:name2]
     @player1 = Players.new(@name1)
     @player2 = Players.new(@name2)
-    @players = [@player1, @player2]
     redirect '/multiplayer_game'
   end
 
