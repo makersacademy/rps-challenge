@@ -57,7 +57,8 @@ feature 'Playing rock, paper, scissors' do
     end
 
     scenario 'player 1 and 2 moves can be stored and recalled' do
-      players = Player.create("Ryu", "Ken")
+      # players = Player.create("Ryu", "Ken")
+      Player.create("Ryu", "Ken")
       sign_in_two_player
       choose_scissors_then_rock
       expect(Player.instance.move).to eq "Scissors"

@@ -1,4 +1,5 @@
 require 'game'
+require 'player'
 
 describe Game do
   let(:game) { Game.new }
@@ -72,6 +73,20 @@ describe Game do
       player_move = "Paper"
       expect(game.winner(player_move, game_double.cpu_move)).to eq "Lost"
     end
+
+    describe "#win_message" do
+      let(:player_double) { double :player, :name => "Ryu", :name2 => "Ken",
+                            :move => "Spock", :move2 => "Paper" }
+
+      it "can output a losing message" do
+
+      end
+
+      it "can output a draw message" do
+
+      end
+    end
+
   end
 
 end

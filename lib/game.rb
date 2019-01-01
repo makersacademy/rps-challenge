@@ -37,4 +37,15 @@ class Game
       SPOCK[move2]
     end
   end
+
+  # def message(move, name1, name2)
+  #   if move == "Drew"
+  #     "You both drew!!"
+  #   elsif move == "Win"
+  #     "#{name1} beat #{name2}"
+  #   else
+  #     "#{name2} beat #{name1}"
+  #   end
+  # end
+
 end

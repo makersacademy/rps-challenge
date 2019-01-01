@@ -17,10 +17,6 @@ class Rps < Sinatra::Base
     erb :two_player
   end
 
-  # before do
-  #   @player = Player.instance
-  #   @game = Game.instance
-  # end
 
   post '/start' do
     @player = Player.create(params[:player_1])
@@ -40,16 +36,8 @@ class Rps < Sinatra::Base
   end
 
   post '/player_two_turn' do
-    # @player = Player.create(params[:player_1], params[:player_2])
     @player.move = params[:move]
-    # @player.move2 = params[:move2]
-    @game = Game.create
     erb :player_two_turn
-  end
-
-  before do
-    @player = Player.instance
-    @game = Game.instance
   end
 
   post '/result' do

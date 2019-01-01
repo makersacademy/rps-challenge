@@ -3,9 +3,24 @@
   <head>
     <style>
       center {
-        background-color: orange;
+        color: white;
         padding-top: 10%;
         padding-bottom: 20%;
+
+      }
+      body {
+        background-image: url("/simple.jpg");
+        background-size: cover;
+        color: white;
+      }
+      label{
+        margin-left: 10px;
+      }
+      input {
+        margin: 10px;
+      }
+      #submit{
+        margin-top: 20px;
       }
     </style>
 
@@ -20,14 +35,19 @@
       <br>
       <form class="" action="/result" method="post">
         <div id="radio_buttons">
-        <label>Rock<input type="radio" name="move" value="Rock" ></label>
-        <label>Paper<input type="radio" name="move" value="Paper"></label>
-        <label>Scissors<input type="radio" name="move" value="Scissors"></label>
-        <label>Lizard<input type="radio" name="move" value="Lizard"></label>
-        <label>Spock<input type="radio" name="move" value="Spock"></label>
-        <br>
+          <label>Rock</label>
+            <input type="radio" name="move" value="Rock" checked="checked">
+          <label>Paper</label>
+          <input type="radio" name="move" value="Paper">
+          <label>Scissors</label>
+          <input type="radio" name="move" value="Scissors">
+          <label>Lizard</label>
+          <input type="radio" name="move" value="Lizard">
+          <label>Spock</label>
+          <input type="radio" name="move" value="Spock">
+          <br>
         </div>
-        <input type="submit" value="Submit">
+        <input id="submit" class="btn btn-primary btn-lg" type="submit" value="Submit">
       </form>
     </center>
   </body>
