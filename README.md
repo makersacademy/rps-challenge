@@ -1,86 +1,68 @@
-# RPS Challenge
+# Rock, Paper, Scissors, Lizard, Spock app
 
-Instructions
--------
+If you want to give the app a try, please feel free, it's live at:
+https://rpsls-demo.herokuapp.com
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+## Features
 
-Task
-----
+This app was created to simulate games of rock, paper, scissors, lizard, Spock.  Users can play against the computer in single player games or they can play local 2 player games.
 
-Knowing how to build web applications is getting us almost there as web developers!
+The following features were implemented to make the experience as good as possible:
+- 1 and 2 player
+- Computer player can make randomised moves in single player games
+- User name displays
+- Move selections are displayed in their corresponding colour
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+## Technology used
+- Sinatra
+- Ruby
+- HTML
+- CSS
+- Rspec (for testing)
 
 
-As usual please start by
+## Welcome!!
 
-* Forking this repo
-* TEST driving development of your app
+![Welcome Page](https://github.com/Ajay233/rps-challenge/blob/master/public/Welcome.png?raw=true)
+
+The look of the page was inspired by the Big Bang Theory (where Rock, Paper, Scissors, Lizard, Spock was born).  I've tried to keep the look of the app inline with this by using sci-fi and comic elements in the styling.  
+
+The welcome page above gives the user the rules so they know how to play and provides the options to either play a single player game or have a 2 player game.
+
+## Play a single player game against the computer
+
+If the user clicks on the "1 Player" button, they will be taken to the screen below where they will need to enter their secret identity (although entering a name will do as well).  
+
+![Single player name entry](https://github.com/Ajay233/rps-challenge/blob/master/public/1playerEnterName.png?raw=true)
 
 
-## Bonus level 1: Multiplayer
+When the user clicks submit, they are taken to the screen below where their name is displayed, showing that they are going up against the CPU.  Here the user can make their move by clicking on one of the radio buttons and then clicking the "Submit" button.  
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+![Single player turn](https://github.com/Ajay233/rps-challenge/blob/master/public/1playerTurn.png?raw=true)
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+The user will then be taken to the screen below where the results are displayed.  The user's move is displayed along with the computer's move (which is made using a method that picks a random move).  Below this the user is notified whether they won, lot or drew.  They then have the option to play again.  Clicking on the "Play again??" button will take the user to the welcome page where they can choose to playe a single player game or start a 2 player game.
 
-## Basic Rules
+![Single player game over](https://github.com/Ajay233/rps-challenge/blob/master/public/1playerGameOver.png?raw=true)
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
 
-In code review we'll be hoping to see:
+## Play a 2 player game
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+If the user clicks on "2 player", they will be taken to the screen below where both players can enter their names.  
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+![2 player name entry](https://github.com/Ajay233/rps-challenge/blob/master/public/2playerEnterNames.png?raw=true)
 
-Notes on test coverage
-----------------------
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+After clicking the "Submit" button, they will be taken to the screen below where both players' names are displayed and player 1 is invited to make their move.  (As this is a local game, player 2o will need to aver their gaze while player 1 makes their move )
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+![player 1's turn](https://github.com/Ajay233/rps-challenge/blob/master/public/2playerTurnOne.png?raw=true)
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+After clicking "submit", player 2 will then be asked to make their move.
+
+![player 2's turn](https://github.com/Ajay233/rps-challenge/blob/master/public/2playerTurnTwo.png?raw=true)
+
+
+After both players have made their moves, they will be taken to the screen below where they will be given the results and can then choose if they want to play again.
+
+![2 player game over](https://github.com/Ajay233/rps-challenge/blob/master/public/2PlayerGameOver.png?raw=true)
