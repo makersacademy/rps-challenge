@@ -5,6 +5,8 @@ LIZARD = { "Rock" => "Lost", "Paper" => "Won", "Scissors" => "Lost", "Lizard" =>
 SPOCK = { "Rock" => "Won", "Paper" => "Lost", "Scissors" => "Won", "Lizard" => "Lost", "Spock" => "Drew"}
 MOVES = ["Rock", "Paper", "Scissors", "Lizard" , "Spock"]
 
+
+
 class Game
   attr_reader :cpu_move
 
@@ -37,6 +39,8 @@ class Game
       SPOCK[move2]
     end
   end
+
+
 
   # def message(move, name1, name2)
   #   if move == "Drew"
