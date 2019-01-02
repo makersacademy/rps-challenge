@@ -27,5 +27,4 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 
-
 Capybara.app = App

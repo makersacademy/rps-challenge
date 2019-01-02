@@ -7,12 +7,11 @@ class RpsGame
   MOVES = %w[rock paper scissors].freeze
 
   def random_move
-    move_index = rand(RpsGame::MOVES.length)
+    move_index = Kernel.rand(RpsGame::MOVES.length)
     RpsGame::MOVES[move_index]
   end
 
   def move(p1_move, p2_move)
-
     case p1_move
     when 'rock'
       case p2_move
@@ -44,7 +43,6 @@ class RpsGame
         return DRAW
       end
     end
-
     raise 'invalid move'
   end
 end
