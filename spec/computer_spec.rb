@@ -2,7 +2,7 @@ require 'computer'
 describe Computer do
 
   let(:subject) { described_class.new }
-  let(:choice) { ['Rock', 'Paper', 'Scissors'] }
+  let(:moves) { ['rock', 'paper', 'scissors'] }
 
   describe '#choose_move' do
     it 'generates computer\'s move' do
@@ -24,6 +24,5 @@ describe Computer do
       subject.update_move
       expect(subject.move).to eq 'scissors'
     end
-
   end
 end

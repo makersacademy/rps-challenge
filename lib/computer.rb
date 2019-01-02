@@ -1,12 +1,6 @@
 class Computer
 
-  MOVES = %w[rock paper scissors].freeze
-
   attr_reader :move
-
-  def generate_move
-    @move = ['Rock', 'Paper', 'Scissors'].sample
-  end
 
   def update_move(*)
     move_index = Kernel.rand(0..2)

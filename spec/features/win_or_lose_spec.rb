@@ -28,4 +28,24 @@ feature 'shows win lose or draw' do
     click_button 'Make your move!'
     expect(page).to have_content('You Win!')
   end
+
+  scenario 'computer move is paper message' do
+    sigin_in_as_sam
+    visit '/play'
+    allow(Kernel).to receive(:rand) { 1 }
+    choose('move_rock')
+    expect(page).to have_selector("input[value='rock']")
+    click_button 'Make your move!'
+    expect(page).to have_content('Compuer move: paper')
+  end
+
+  scenario 'user move is scissors message' do
+    sigin_in_as_sam
+    visit '/play'
+    allow(Kernel).to receive(:rand) { 0 }
+    choose('move_scissors')
+    expect(page).to have_selector("input[value='scissors']")
+    click_button 'Make your move!'
+    expect(page).to have_content('Your move: scissors')
+  end
 end
