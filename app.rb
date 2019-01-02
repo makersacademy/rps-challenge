@@ -19,12 +19,12 @@ class App < Sinatra::Base
   get '/play' do
     @player_name = session[:player_name]
     if @player_name.to_s.empty?
-      redirect '/'
+      erb :no_name_error
     else
       erb :play
     end
   end
-  
+
   post '/do_play' do
     game = RpsGame.new
     @computer_move = game.random_move
