@@ -11,13 +11,13 @@ class App < Sinatra::Base
     erb :register_player
   end
 
-  post '/do_register' do
-    session[:player_name] = params[:player_name]
+  post '/names' do
+    $player_1 = Player.new(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
+    @player_name = $player_1.name
     if @player_name.to_s.empty?
       erb :no_name_error
     else
@@ -38,7 +38,7 @@ class App < Sinatra::Base
     when RpsGame::DRAW
       @win_msg = "It's a draw..."
     end
-    @player_name = session[:player_name]
+    @player_name = $player_1.name
     erb :result
   end
 
@@ -47,6 +47,5 @@ class App < Sinatra::Base
     redirect '/'
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME
 end
