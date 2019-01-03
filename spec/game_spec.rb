@@ -16,10 +16,38 @@ describe Game do
   end
 
   describe '#winner' do
-    it 'decides the winner' do
-      allow(player1).to receive(:selected_option).and_return('rock')
-      allow(player2).to receive(:selected_option).and_return('paper')
-      expect(game.winner).to eq 'Luigi wins!'
+    context 'decides the winner' do
+      it 'paper wins over rock' do
+        allow(player1).to receive(:selected_option).and_return('rock')
+        allow(player2).to receive(:selected_option).and_return('paper')
+        expect(game.winner).to eq 'Luigi wins!'
+      end
+      it 'scisorrs wins over paper' do
+        allow(player1).to receive(:selected_option).and_return('paper')
+        allow(player2).to receive(:selected_option).and_return('scissors')
+        expect(game.winner).to eq 'Luigi wins!'
+      end
+      it 'rock wins over scisorrs' do
+        allow(player1).to receive(:selected_option).and_return('scisorrs')
+        allow(player2).to receive(:selected_option).and_return('rock')
+        expect(game.winner).to eq 'Luigi wins!'
+      end
+      it 'paper looses in front of scisorrs' do
+        allow(player1).to receive(:selected_option).and_return('scissors')
+        allow(player2).to receive(:selected_option).and_return('paper')
+        expect(game.winner).to eq 'Mario wins!'
+      end
+      it 'rock looses in front of paper' do
+        allow(player1).to receive(:selected_option).and_return('paper')
+        allow(player2).to receive(:selected_option).and_return('rock')
+        expect(game.winner).to eq 'Mario wins!'
+      end
+      it 'scisorrs looses in front of rock' do
+        allow(player1).to receive(:selected_option).and_return('rock')
+        allow(player2).to receive(:selected_option).and_return('scissors')
+        expect(game.winner).to eq 'Mario wins!'
+      end
     end
   end
+
 end
