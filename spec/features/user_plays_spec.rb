@@ -13,7 +13,6 @@ feature 'Play' do
 
   scenario 'user can click radio button' do
     sign_in_and_play
-    visit '/play'
     choose('move_rock')
     expect(page).to have_selector("input[value='rock']")
   end
