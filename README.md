@@ -19,4 +19,5 @@ Rock beats Scissors                    |
 Scissors beats Paper                   | 
 Paper beats Rock                       |
 
-* Screenshots of an earlier release of the application (player vs computer) are in the stylesheets folder.
+* Screenshots of an earlier release of the application (player vs computer) are in the stylesheets folder. 
+The diagrams which I've drawn for the first release and for the updated one can be found in the same folder.
