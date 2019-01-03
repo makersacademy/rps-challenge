@@ -26,7 +26,7 @@ class App < Sinatra::Base
   end
 
   post '/do_play' do
-    game = RpsGame.new
+    game = RpsGame.new(@player_1, @player_2)
     @computer_move = game.random_move
     @user_move = params[:move]
     game_result = game.move(@user_move, @computer_move)

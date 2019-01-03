@@ -11,6 +11,12 @@ class RpsGame
     RpsGame::MOVES[move_index]
   end
 
+  RULES = [
+               ['Rock', 'Paper'],
+               ['Paper', 'Scissors'],
+               ['Scissors', 'Rock']
+             ]
+
   def move(p1_move, p2_move)
     case p1_move
     when 'rock'
@@ -44,5 +50,27 @@ class RpsGame
       end
     end
     raise 'invalid move'
+  end
+  attr_reader :player_1, :player_2
+
+  def initialize(player_1, player_2)
+    @players = [player_1, player_2]
+
+  end
+  def self.create(player_1, player_2 = Compuer.new)
+    @game = RpsGame.new(player_1, player_2)
+  end
+
+  def player_1
+    @players.first
+  end
+
+  def player_2
+      @players.last
+    end
+
+
+  def result(player_1_move, player_2_move)
+    return @player_2 if RULES.include?[@player_1.move, @player_2.move]
   end
 end
