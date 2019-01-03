@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player1) { double :player, name: Mario }
-  let(:player2) { double :player, name: Luigi }
+  let(:player1) { double :player, name: 'Mario' }
+  let(:player2) { double :player, name: 'Luigi' }
 
   subject(:game) { Game.new(player1, player2) }
 
@@ -19,7 +19,7 @@ describe Game do
     it 'decides the winner' do
       allow(player1).to receive(:selected_option).and_return('rock')
       allow(player2).to receive(:selected_option).and_return('paper')
-      expect(game.winner).to eq 'Mario lost!'
+      expect(game.winner).to eq 'Luigi wins!'
     end
   end
 end
