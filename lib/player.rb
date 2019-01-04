@@ -4,6 +4,7 @@ class Player
   def initialize(name, move = nil)
     @name = name
     @move = move
+    @win = 0
   end
 
   def update_move(move)

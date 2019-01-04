@@ -4,17 +4,16 @@ class RpsGame
   P2_WINS = 1
   DRAW    = 2
 
-  MOVES = %w[rock paper scissors].freeze
-
   def random_move
     move_index = Kernel.rand(RpsGame::MOVES.length)
     RpsGame::MOVES[move_index]
   end
 
-  RULES = [
-               ['Rock', 'Paper'],
-               ['Paper', 'Scissors'],
-               ['Scissors', 'Rock']
+  MOVES = %w[rock paper scissors].freeze
+  WINS = [
+               ['Rock', 'Scissors'],
+               ['Paper', 'Rock'],
+               ['Scissors', 'Paper']
              ]
 
   def move(p1_move, p2_move)
@@ -54,23 +53,18 @@ class RpsGame
   attr_reader :player_1, :player_2
 
   def initialize(player_1, player_2)
-    @players = [player_1, player_2]
 
+    @player_1 = player_1
+    @player_2 = player_2
   end
+
   def self.create(player_1, player_2 = Compuer.new)
-    @game = RpsGame.new(player_1, player_2)
+    @game = @RpsGame || @RpsGame.new(player_1, player_2)
   end
 
-  def player_1
-    @players.first
-  end
-
-  def player_2
-      @players.last
-    end
-
-
-  def result(player_1_move, player_2_move)
-    return @player_2 if RULES.include?[@player_1.move, @player_2.move]
+  def result(player_1, player_2)
+    return "You Win" if WINS.include? [player_1, player_2]
+    return "It\'s a Draw" if player_1 == player_2
+    return "You Lose"
   end
 end
