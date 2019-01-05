@@ -51,3 +51,10 @@ Polymorphisim so the game is easy to extend to two players or with a Bot when in
 - Scissors beats Paper
 - Paper beats Rock
 
+## Screenshots
+
+![Login page](https://github.com/becc-mu/rps-challenge/blob/player_vs_computer/public/Screen%20Shot%202019-01-05%20at%2004.23.41.png)
+
+![choose options](https://github.com/becc-mu/rps-challenge/blob/player_vs_computer/public/Screen%20Shot%202019-01-05%20at%2004.25.03.png)
+
+![winner declared](https://github.com/becc-mu/rps-challenge/blob/player_vs_computer/public/Screen%20Shot%202019-01-05%20at%2004.25.40.png)
