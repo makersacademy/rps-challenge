@@ -2,7 +2,6 @@ feature 'Play' do
   scenario 'should raise an error' do
     visit '/'
     click_button 'Submit'
-    visit ''
     expect(page).to have_content 'Error! A name must be entered'
   end
 

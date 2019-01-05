@@ -1,16 +1,13 @@
-<h1><%= @player_name %> vs Computer</h1>
+<h1><%= @game.player_1.name %> vs <%= @game.player_2.name %></h1>
 
-<p>
-  Your move: <%= @user_move %>
-</p>
+<% unless @game.player_1.choice.nil? %>
 
-<p>
-  Compuer move: <%= @computer_move %>
-</p>
+<h2><%= @game.player_1.name %> chose <%= @game.player_1.choice %>!</h2>
+<h2><%= @game.player_2.name %> chose <%= @game.player_2.choice %>!</h2>
 
+<h2><%= @game.result(@game.player_1.choice, @game.player_2.choice) %></h2>
 
-<h2><%= @win_msg %></h2>
-
+<% end %>
 
 <p>
   <form action="/play" method="get">

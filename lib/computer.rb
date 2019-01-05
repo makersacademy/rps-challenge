@@ -1,18 +1,17 @@
 class Computer
 
-  attr_reader :move
+  attr_reader :choice, :name
 
   def initialize
-    @name = name
+    @name = "Computer"
+    @wins = 0
+    @choice = update_rand
   end
 
-  attr_reader :name
+  MOVES = %w[rock paper scissors].sample
 
-
-  def update_move(*)
-    move_index = Kernel.rand(0..2)
-    @move = 'rock' if move_index == 0
-    @move = 'paper' if move_index == 1
-    @move = 'scissors' if move_index == 2
+  def update_rand(*)
+    move_index = Kernel.rand(Game::MOVES.length)
+    @choice = Game::MOVES[move_index]
   end
 end
