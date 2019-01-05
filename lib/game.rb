@@ -11,41 +11,6 @@ class Game
                ['Paper', 'Rock'],
                ['Scissors', 'Paper']
              ]
-
-  def move(p1_move, p2_move)
-    case p1_move
-    when 'rock'
-      case p2_move
-      when 'rock'
-        return DRAW
-      when 'paper'
-        return P2_WINS
-      when 'scissors'
-        return P1_WINS
-      end
-
-    when 'paper'
-      case p2_move
-      when 'rock'
-        return P1_WINS
-      when 'scissors'
-        return P2_WINS
-      when 'paper'
-        return DRAW
-      end
-
-    when 'scissors'
-      case p2_move
-      when 'rock'
-        return P2_WINS
-      when 'paper'
-        return P1_WINS
-      when 'scissors'
-        return DRAW
-      end
-    end
-    raise 'invalid move'
-  end
   attr_reader :player_1, :player_2
 
   def initialize(player_1, player_2)

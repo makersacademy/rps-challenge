@@ -31,11 +31,6 @@ class App < Sinatra::Base
     end
   end
 
-  post '/play/choice' do
-    @game.result(@game.player_1.choose, @game.player_2.choose)
-    redirect '/do_play'
-  end
-
   post '/do_play' do
     @game.player_2.update_rand(params[:choice])
     @game.player_1.choice = params[:move]
