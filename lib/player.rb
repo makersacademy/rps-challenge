@@ -1,13 +1,13 @@
 class Player
   attr_reader :name
-  attr_accessor :move
-  def initialize(name, move = nil)
+  attr_accessor :choice
+  def initialize(name, choice = nil)
     @name = name
-    @move = move
+    @choice = choice
     @win = 0
   end
 
-  def update_move(move)
-    @move = move
+  def update_choice(choice)
+    @choice = choice
   end
 end

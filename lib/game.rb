@@ -1,13 +1,9 @@
-class RpsGame
+require_relative 'computer'
+class Game
 
   P1_WINS = 0
   P2_WINS = 1
   DRAW    = 2
-
-  def random_move
-    move_index = Kernel.rand(RpsGame::MOVES.length)
-    RpsGame::MOVES[move_index]
-  end
 
   MOVES = %w[rock paper scissors].freeze
   WINS = [
@@ -53,18 +49,25 @@ class RpsGame
   attr_reader :player_1, :player_2
 
   def initialize(player_1, player_2)
-
     @player_1 = player_1
     @player_2 = player_2
   end
 
-  def self.create(player_1, player_2 = Compuer.new)
-    @game = @RpsGame || @RpsGame.new(player_1, player_2)
+  def self.create(player_1, player_2 = Computer.new)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
   end
 
   def result(player_1, player_2)
-    return "You Win" if WINS.include? [player_1, player_2]
-    return "It\'s a Draw" if player_1 == player_2
-    return "You Lose"
+    if WINS.include? [player_1, player_2]
+      "#{@player_1.name} loses"
+    elsif player_1 == player_2
+      "It's a Draw"
+    else
+      "#{@player_1.name} wins"
+    end
   end
 end
