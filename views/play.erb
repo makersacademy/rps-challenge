@@ -1,8 +1,29 @@
-<h1>Hi <%= @game.player_1.name %>!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1, h2, h3, body {
+  text-align: center;
+}
+p.a {
+  font-family: "Times New Roman", Times, serif;
+}
+label {
+    font-size: 20px;
+    font-family: sans-serif;
+}
+input[type="submit"] {
+    font-size: 20px;
+    padding: 1em;
+    margin: 20px;
+}
+</style>
+</head>
+<body>
+<h1>ROCK PAPER SCISSORS GAME</h1>
+<h2>Hi <%= @game.player_1.name %>!</h2>
 
-<p>
-Let's play!
-</p>
+<h3>Let's play!</h3>
 
 <form action="/do_play" method="POST">
   <input type="radio" name="move" id="move_rock" value="rock" />
@@ -14,13 +35,16 @@ Let's play!
   <input type="radio" name="move" id="move_scissors" value="scissors" />
   <label for="move_scissors">Scissors</label>
 
-  <p>
+  <br>
     <input type="submit" value="Make your move!" />
-  </p>
+  <br>
 </form>
 
-<p>
+<br>
   <form action="/logout" method="get">
     <input type="submit" value="Log out" />
   </form>
-</p>
+<br>
+
+</body>
+</html>
