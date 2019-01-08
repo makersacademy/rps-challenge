@@ -35,6 +35,8 @@ I took an iterative approach when solving this problem. I first implemented sing
 
 I TDD'd the app using OOP principles. For example I refactored to ensure separation of concerns for example using the `messages` module to handle display messages.
 
+I have used Travis as CI tool
+
 ### Structure
 The model (classes and modules) is held in the `lib` folder. Views for the pages are held in the `views` folder. `App.rb` is the controller for the app. All tests are in the `spec` folder, these are split into `features` and `units` folders. The `public` folder contains style sheets and images.
 
