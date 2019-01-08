@@ -3,6 +3,8 @@
 # Rock, Paper, Scissors, Lizard, Spock
 This is a game that let's you play a game of rock paper scissors lizard spock, you can play single player against the computer or multiplayer. The app is written in Ruby using Sinatra as the framework.
 
+The app is deployed to Heroku and can be found [here](https://caitlin-rps.herokuapp.com/)
+
 ### How do I Use it?
 1. Clone this repo `https://github.com/Caitlin-cooling/rps-challenge.git`
 2. Run `bundle` to install all gems
