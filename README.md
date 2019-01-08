@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Caitlin-cooling/rps-challenge.svg?branch=master)](https://travis-ci.org/Caitlin-cooling/rps-challenge)
+
 # Rock, Paper, Scissors, Lizard, Spock
 This is a game that let's you play a game of rock paper scissors lizard spock, you can play single player against the computer or multiplayer. The app is written in Ruby using Sinatra as the framework.
 
