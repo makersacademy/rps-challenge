@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player_1) { double :player, name: 'Luisa', weapon: 'Rock'}
-  let(:player_2) { double :player, name: 'Logan', weapon: 'Paper'}
+  let(:player_1) { double :player, name: 'Luisa', weapon: 'Rock' }
+  let(:player_2) { double :player, name: 'Logan', weapon: 'Paper' }
   let(:game) { Game.new(player_1, player_2) }
 
   describe '#resolve_winner' do
