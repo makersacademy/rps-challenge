@@ -1,7 +1,7 @@
 require 'sinatra'
 require './lib/player'
+require './lib/computer'
 require './lib/game'
-
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -16,16 +16,14 @@ class RPS < Sinatra::Base
     if session[:game]
       @game = session[:game]
       @game.player_1.weapon = params[:options_1].to_sym
-      @game.player_2.weapon = params[:options_2].to_sym
-      @game.play
+      @game.player_2.weapon = ['Rock', 'Paper', 'Scissors'].sample.to_sym
     else
       player_1 = Player.new(params[:player_1], params[:options_1].to_sym)
-      player_2 = Player.new(params[:player_2], params[:options_2].to_sym)
+      player_2 = Computer.new("Computer")
       session[:game] = Game.new(player_1, player_2)
       @game = session[:game]
-      @game.play
     end
-
+    @game.play
     erb :result
 
   end
