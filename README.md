@@ -24,7 +24,7 @@ User Stories
 ----
 This program currently meets the requirements of the below user stories:
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -50,7 +50,7 @@ Feature testing done with `capybara` and unit testing done with `rspec`
 ![](images/test_coverage.png)
 
 
-Planned Extensions
+ Extensions
 -----
 - Score tracking/score board
 - Multi player option 
