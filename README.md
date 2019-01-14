@@ -1,4 +1,122 @@
 # RPS Challenge
+This program is a simple Rock Paper Scissor game. The game can be played against the computer or against another player. The game also has the option to play the Rock Paper Scissors Lizard Spock variaton of the rules. 
+
+## Installing and Running the App
+1. clone this repository
+2. With [Bundler](https://bundler.io/) installed run ```bundle install``` to install dependencies
+3. run ```ruby app.rb``` to start the app
+4. Navigate to ```http://localhost:4567``` to play.
+5. To run the test use the command ```rspec```
+
+## System Plan
+Before writing any tests or code, I made an initial plan of what I believed the system would look like when completed. This allowed me to consider how each component would work together while working on them.
+
+### Model
+**Game Class**
+
+Constants
+  * RULES{
+    rps: {
+      {rock: ['scissors'],}
+      paper: ['rock'],
+      scissors: ['paper']
+    },
+    rpsls: {
+      {rock: ['scissors', 'lizard'],}
+      paper: ['rock', spock],
+      scissors: ['paper' lizard],
+      lizard: ['paper', 'spock'],
+      spock: ['rock', 'scissors']
+    }
+  }
+  * OUTCOMES{
+    rock smashes scissors etc
+  }
+
+initialize:
+``` Ruby
+  def initialize(gametype, player_1, player_2)
+    @gametype rps or rpsls
+    @players = [player_1, player_2] - player 2 > (Player::Computer class) or (Player::Human class)
+    @current_turn = player_1
+    @score = {p1: 0, draw: 0, p2: 1}
+  end
+```
+
+
+Methods
+  * #player_1 - @players.first
+  * #player_2 - @players.last
+  * #result - if draw return draw else winner
+  * #draw?
+  * #winner
+  * #outcome - rock smashes scissors etc.
+  * #switch_turn
+
+**Player Class**
+
+Constants
+  * MOVES {rps: ['rock', 'paper', 'scissors'], rpsls: ['rock', 'paper', 'scissors', 'spock', 'lizard']}
+  IMAGES {rock: '/rock.png', paper: '', ...}
+Instance variable:
+  * @options = set_moves
+
+Methods
+  * set_moves
+    * return MOVES[gametype]
+    * set_image
+  * set_image
+
+
+**Human Class < Player Class**
+
+Instance variables
+  * @name = name
+  * @image = 'rock.png'
+
+Methods
+  * #make_move
+    * raise error unless valid_move?
+    * set players move
+    * set_image
+  * #valid_move?
+
+
+**Computer Class < Computer Class**
+
+Instance variables
+  * @name = 'computer'
+
+Methods:
+  * #make_move - random selection from options class
+
+
+### Views
+
+```
+    ├── / (game_type)
+    ├── /no_players
+    │   ├── one_player_signin
+    │   │   ├── /signin
+    │   │   ├── /game_initialization (redirects to next stage)
+    │   │   └── /make_move < game type
+    │   │       ├── RPS
+    │   │       └── RPSLS   
+    │   └── two_player_signin
+    │       ├── /signin_player_one
+    │       ├── /signin_player_two
+    │       ├── /game_initialization (redirects to next stage)
+    │       ├── /make_move_player_1 < game type
+    │       │    ├── RPS
+    │       │    └── RPSLS   
+    │       └── /make_move_player_1 < game type
+    │             ├── RPS
+    │             └── RPSLS   
+    └── /result
+```
+
+
+
 
 Instructions
 -------

@@ -1,0 +1,53 @@
+/* Utility helpers */
+body {
+  min-height: 100vh;
+  position: relative;
+  margin: 0;"
+}
+
+.spacing-div {
+  height: 20px
+}
+
+#spacing_for_footer {
+  height: 50px
+}
+
+img {
+  max-height: 150px !important
+}
+
+thead {
+  border-bottom: 2px solid #dee2e6
+}
+
+/* forms */
+input {
+  text-align:center;
+}
+
+input[type="name"], textarea {
+outline: none;
+box-shadow:none !important;
+border:1px solid #ccc !important;
+}
+
+.form-signin {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-45%, -50%);
+}
+
+/* footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+/* Alerts */
+.alert {
+  font-size: 1.5rem
+}
