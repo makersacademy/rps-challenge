@@ -1,4 +1,4 @@
-feature 'shows win, loss or draw' do
+feature 'feature - shows win, loss or draw' do
 
   context "Classic game" do
     context "1 Player" do
@@ -14,7 +14,7 @@ feature 'shows win, loss or draw' do
       scenario "after user selection" do
         click_button 'paper'
         result = find_by_id('result')
-        expect(result).to have_text
+        expect(result).to have_text("")
       end
     end
 
@@ -32,7 +32,7 @@ feature 'shows win, loss or draw' do
         click_button 'paper'
         click_button 'paper'
         result = find_by_id('result')
-        expect(result).to have_text
+        expect(result).to have_text("It's a draw.")
       end
     end
   end
@@ -51,7 +51,7 @@ feature 'shows win, loss or draw' do
       scenario "after user selection" do
         click_button 'paper'
         result = find_by_id('result')
-        expect(result).to have_text
+        expect(result).to have_text("You") || have_text("It's a draw.")
       end
     end
 
@@ -69,7 +69,7 @@ feature 'shows win, loss or draw' do
         click_button 'paper'
         click_button 'paper'
         result = find_by_id('result')
-        expect(result).to have_text
+        expect(result).to have_text "It's a draw."
       end
     end
   end
