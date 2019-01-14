@@ -1,15 +1,12 @@
 # RPS Challenge
-This program is a simple Rock Paper Scissor game. The game can be played against the computer or against another player. The game also has the option to play the Rock Paper Scissors Lizard Spock rules
+This program is a simple Rock Paper Scissor game. The game can be played against the computer or against another player. The game also has the option to play the Rock Paper Scissors Lizard Spock variaton of the rules. 
 
-## Installation
-Step 1: clone the repository
-step 2: Run bundle
-step 3: run ```ruby app.rb```
-
-- [ ] README describes how to install the programme and its dependencies
-- [ ] README describes how to use it - maybe includes screenshots
-- [ ] README describes the approach and strategy for solving the problem
-
+## Installing and Running the App
+1. clone this repository
+2. With [Bundler](https://bundler.io/) installed run ```bundle install``` to install dependencies
+3. run ```ruby app.rb``` to start the app
+4. Navigate to ```http://localhost:4567``` to play.
+5. To run the test use the command ```rspec```
 
 ## System Plan
 Before writing any tests or code, I made an initial plan of what I believed the system would look like when completed. This allowed me to consider how each component would work together while working on them.
