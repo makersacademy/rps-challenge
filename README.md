@@ -1,22 +1,9 @@
 # RPS Challenge
 
-Instructions
--------
+[User Stories](#user-stories) | [Game Rules](#rules) | [Technologies](#technologies) | [User Interaction and Interaction](#experience) | [Running the App](#running-app) | [Running tests](#tests) | [Approach](#approach) | [Contributing](#contributing)
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
+<a name="user-stories">User stories</a>
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ```sh
 As a marketeer
@@ -28,59 +15,89 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
+<a name="rules">Game Rules</a>
+---
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+- Lizard beats Paper
+- Lizard beats Spock
+- Spock beats Rock
+- Spock beats Scissors
+- Rock beats Lizard
+- Scissors beats Lizard
+- Paper beats Spock
 
-In code review we'll be hoping to see:
+<a name="technologies"> Technologies</a>
+---
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+- Ruby
+- RSpec
+- Capybara
+- CSS
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+<a name="experience"> User Interaction and Experience</a>
+---
 
-Notes on test coverage
-----------------------
+![1](./assets/1.png)
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+![2](./assets/2.png)
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+![3](./assets/3.png)
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+<a name="running-app"> Running the app</a>
+---
+
+- Clone this repository
+```
+$ git clone https://github.com/m-rcd/rps-challenge
+$ cd rps-challenge
+```
+- Install dependencies:
+```
+$ gem install
+```
+- Run the app
+```
+$ rackup
+```
+- In your browser, go to
+```
+localhost:9292
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+<a name="tests">Running the tests</a>
+---
+- Run
+```
+$ rspec
+```
+
+![test](./assets/test.png)
+
+<a name="approach">Approach</a>
+---
+
+- Using TDD, I started by creating a web app that allow the user to enter their name and choose rock, paper or scissors.
+- I then created a file called game.rb which contained the game logic.
+- I also added a player class to allow the user to have a name
+- I added a computer class which choose an option randomly.
+- I then added a result page which would declare the winner
+- I added a button that allows the user to play again
+- I added the option to play a multiplayer game: 2 players can add their names, each choose an option and then see the winner
+- I then added 2 options to the game: lizard and Spock
+- I added the option to start a new game after a game ends
+- Having finished implementing its functionality ,I used css to make it look nice
+
+<a name="contributing"> Contributing</a>
+---
+
+Pull Requests are always welcome.
+
+When you edit the code, please run `rspec` to check all the tests pass. Also run `rubocop` before you git commit.
+
+Ensure the PR description clearly describes the problem and solution. It should include the relevant issue number, if applicable.
+
+
+[Play now!](https://stark-journey-20582.herokuapp.com/)

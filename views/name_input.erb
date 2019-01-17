@@ -1,0 +1,26 @@
+<% if @gamemode == :multiplayer %>
+<h2> Please enter your names to play! </h2>
+<br>
+
+<form action=/name method='post'>
+  <label for='player1'>
+    Player 1:
+    <input type='text' name='player1' required type="text">
+  </label>
+  <label for='player2'>
+    Player 2:
+    <input type='text' name='player2' required type="text">
+  </label>
+  <input type='submit' value='Play' class='button'>
+</form>
+<%else%>
+<h2> Please enter your name to play! </h2>
+<br>
+<form action=/name method='post'>
+  <label for='player1'>
+    Player:
+    <input type='text' name='player1' required type="text">
+  </label>
+  <input type='submit' value='Play' class='button'>
+</form>
+<%end%>

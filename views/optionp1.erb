@@ -1,0 +1,9 @@
+<h1> Choose an option, <%= @game.player1.name.capitalize %> </h1>
+<br>
+<br>
+
+<form action='/optionp1' method='post'>
+  <% ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'].each do |choice| %>
+    <input type='submit' name='commit' class='button' value=<%=choice %> >
+  <% end %>
+</form>
