@@ -1,0 +1,58 @@
+/* #region fonts */
+
+@font-face {
+  font-family: 'meatloaf_sketched';
+  src: url('fonts/meatloaf_sketched.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'meatloaf_outline';
+  src: url('fonts/meatloaf_outline.ttf') format('truetype');
+}
+
+/* #endregion */
+
+body {
+  background-color: #ff0055;
+  font-family: 'meatloaf_sketched';
+}
+
+#container, #heading { width: 800px; }
+
+#container { margin: auto; }
+
+input[type=text], button, #buttons, #heading, #sentence-one, #sentence-two { text-align: center; }
+
+input[type=text], #heading, #sentence-one { font-size: 80px; }
+
+button, #sentence-two { font-size: 60px; }
+
+form {
+  margin: 0;
+  border: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+}
+
+input[type=text] {
+  margin: 0 250px;
+  border: none;
+  width: 300px;
+  height: 80px;
+  background: none;
+  font-family: 'meatloaf_sketched';
+}
+
+button {
+  display: inline;
+  box-shadow: 0 4px 8px 0 #00000080, 0 6px 20px 0 #00000080; 
+  margin: 20px 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 0 20px;
+  background-color: #ffffff;
+  font-family: 'meatloaf_outline';
+}
+
+button:hover { font-family: 'meatloaf_sketched'; }

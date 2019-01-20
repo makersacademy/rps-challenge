@@ -1,0 +1,22 @@
+<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+<div id='container'>
+  <div id='heading'>Rock, Paper, Scissors, Lizard, Spock.</div>
+
+  <div id='sentence-one'>What will it be<% if @game.one.name != 'You' %>, <%= @game.one.name %><% end %>?</div>
+  
+  <form id='choice' action='/choice_one' method='post'></form>
+  
+  <div id='buttons'>
+    <button form='choice' type='submit' name='choice' value='rock'>rock</button>
+    <button form='choice' type='submit' name='choice' value='paper'>paper</button>
+    <button form='choice' type='submit' name='choice' value='scissors'>scissors</button>
+    <button form='choice' type='submit' name='choice' value='lizard'>lizard</button>
+    <button form='choice' type='submit' name='choice' value='spock'>spock</button>
+  </div>
+  
+  <% if @game.two.name != 'Computer' %>
+  <div id='sentence-two'>(<%= @game.two.name %>, you should look away)</div>
+  <% end %>
+  
+</div>

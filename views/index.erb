@@ -1,13 +1,15 @@
-<head>
-<link rel="stylesheet" type="text/css" href="bootstrap.css">
-</head>
+<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 
-<body>
-<h1>Rock! Paper!! Scissors!!! Lizard!!!! Spock!!!!!</h1>
-<form action='/one_player'>
-  <button name='choice' type='submit' value='one_player'>One Player</button>
-</form>
-<form action='/two_player'>
-  <button name='choice' type='submit' value='two_player'>Two Player</button>
-</form>
-</body>
+<div id='container'>
+  <div id='heading'>Rock, Paper, Scissors, Lizard, Spock.</div>
+
+  <form id='names' action='/create_game' method='post'></form>
+
+  <div><input form='names' type='text' name='one' placeholder='one player'></div>
+  <div><input form='names' type='text' name='two' placeholder='two player'></div>
+
+  <div id='buttons'>
+    <button form='names' type='submit' value='Go!'>Go!</button>
+  </div>
+
+</div>

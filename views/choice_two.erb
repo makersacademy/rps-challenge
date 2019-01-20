@@ -1,0 +1,20 @@
+<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+<div id='container'>
+  <div id='heading'>Rock, Paper, Scissors, Lizard, Spock.</div>
+
+  <div id='sentence-one'>What will it be, <%= @game.two.name %>?</div>
+
+  <form id='choice' action='/choice_two' method='post'></form>
+
+  <div id='buttons'>
+    <button class='weapon' form='choice' type='submit' name='choice' value='rock'>rock</button>
+    <button class='weapon' form='choice' type='submit' name='choice' value='paper'>paper</button>
+    <button class='weapon' form='choice' type='submit' name='choice' value='scissors'>scissors</button>
+    <button class='weapon' form='choice' type='submit' name='choice' value='lizard'>lizard</button>
+    <button class='weapon' form='choice' type='submit' name='choice' value='spock'>spock</button>
+  </div>
+
+  <div id='sentence-two'>(<%= @game.one.name %>, you should look away)</div>
+
+</div>

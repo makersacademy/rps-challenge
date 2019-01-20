@@ -1,13 +1,16 @@
-<head>
-<link rel="stylesheet" type="text/css" href="bootstrap.css">
-</head>
+<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 
-<body>
-<h1>Rock! Paper!! Scissors!!! Lizard!!!! Spock!!!!!</h1>
-<p><%= @game.p_1.name %> chose <%= @game.p_1.weapon %>.</p>
-<p><%= @game.p_2.name %> chose <%= @game.p_2.weapon %>.</p>
-<p><%= @game.fight %></p>
-<form action='/'>
-  <button type='submit' value='submit'>Play Again!</button>
-</form>
-</body>
+<div id='container'>
+  <div id='heading'>Rock, Paper, Scissors, Lizard, Spock.</div>
+
+  <div id='sentence-one'><%= @game.one.name %> chose <%= @game.one.weapon %>.</div>
+  <div id='sentence-one'><%= @game.two.name %> chose <%= @game.two.weapon %>.</div>
+  <div id='sentence-one'><%= @game.fight %></div>
+
+  <form id='choice' action='/choice_one'></form>
+
+  <div id='buttons'>
+    <button form='choice' type='submit' value='Again!'>Again!</button>
+  </div>
+
+</div>

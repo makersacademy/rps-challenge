@@ -11,53 +11,33 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
-  get '/one_player' do
-    erb(:one_player)
+  post '/create_game' do
+    params[:one] == '' ? one = 'You' : one = params[:one]
+    params[:two] == '' ? two = 'Computer' : two = params[:two]
+    @game = Game.create(Player.new(one), Player.new(two))
+    redirect '/choice_one'
   end
 
-  post '/one_player_setup' do
-    p_1 = Player.new(params[:p_1])
-    p_2 = Player.new()
-    @game = Game.create(p_1, p_2)
-    redirect '/one_player_choice'
+  get '/choice_one' do
+    erb(:choice_one)
   end
 
-  get '/one_player_choice' do
-    erb(:one_player_choice)
-  end
-
-  post '/one_player_turn' do
-    @game.p_1.choice(params[:choice])
-    @game.p_2.choice()
-    redirect '/result'
+  post '/choice_one' do
+    @game.one.choice(params[:choice].to_sym)
+    if @game.two.name == 'Computer'
+      @game.two.choice
+      redirect '/result'
+    else
+      redirect '/choice_two'
+    end
   end
   
-  get '/two_player' do
-    erb(:two_player)
-  end
-  
-  post '/two_player_setup' do
-    p_1 = Player.new(params[:p_1])
-    p_2 = Player.new(params[:p_2])
-    @game = Game.create(p_1, p_2)
-    redirect '/two_player_first_choice'
-  end
-  
-  get '/two_player_first_choice' do
-    erb(:two_player_first_choice)
+  get '/choice_two' do
+    erb(:choice_two)
   end
 
-  post '/two_player_first_turn' do
-    @game.p_1.choice(params[:choice])
-    redirect '/two_player_second_choice'
-  end
-
-  get '/two_player_second_choice' do
-    erb(:two_player_second_choice)
-  end
-
-  post '/two_player_second_turn' do
-    @game.p_2.choice(params[:choice])
+  post '/choice_two' do
+    @game.two.choice(params[:choice].to_sym)
     redirect '/result'
   end
 

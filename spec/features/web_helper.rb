@@ -1,22 +1,19 @@
 def one_player_sign_in
   visit('/')
-  click_button 'one_player'
-  fill_in :p_1, with: "Rick"
-  click_button 'submit'
+  fill_in(:one, with: 'Rick')
+  click_button('Go!')
 end
 
 def two_player_sign_in
   visit('/')
-  click_button 'two_player'
-  fill_in :p_1, with: "Rick"
-  fill_in :p_2, with: "Morty"
-  click_button 'submit'
+  fill_in(:one, with: 'Rick')
+  fill_in(:two, with: 'Morty')
+  click_button('Go!')
 end
 
 def weapon_set(one, two)
   two_player_sign_in
-  @game = Game.instance
-  @game.p_1.choice(one)
-  @game.p_2.choice(two)
+  click_button(one)
+  click_button(two)
   visit('/result')
 end
