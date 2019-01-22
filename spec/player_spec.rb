@@ -10,9 +10,4 @@ describe Player do
     end
   end
 
-  # def '#hand' do
-  #   expect(subject).to receive(:rand).and_return(0.3)
-  #
-  # end
-
 end
