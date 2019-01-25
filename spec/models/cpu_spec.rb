@@ -9,4 +9,11 @@ describe Cpu do
       expect(subject.move).to eq("Paper")
     end
   end
+
+  describe '#name' do
+
+    it 'should give the cpu\'s name' do
+      expect(subject.name).to eq("cpu")
+    end
+  end
 end

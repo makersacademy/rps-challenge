@@ -16,7 +16,7 @@ end
 
 feature 'play game' do
 
-  scenario 'it should start a game of RPS' do
+  scenario 'it show a player winning' do
     allow_any_instance_of(Game).to receive(:random_move) { "Rock" }
     visit('/')
     fill_in('name', with: 'test')
@@ -25,5 +25,27 @@ feature 'play game' do
     select("Paper", from: "moves").select_option
     click_button("Go")
     expect(page).to have_content 'test wins'
+  end
+
+  scenario 'it show the cpu winning' do
+    allow_any_instance_of(Game).to receive(:random_move) { "Rock" }
+    visit('/')
+    fill_in('name', with: 'test')
+    click_button('OK')
+    click_button('Begin game')
+    select("Scissors", from: "moves").select_option
+    click_button("Go")
+    expect(page).to have_content 'cpu wins'
+  end
+
+  scenario 'it should show a draw' do
+    allow_any_instance_of(Game).to receive(:random_move) { "Rock" }
+    visit('/')
+    fill_in('name', with: 'test')
+    click_button('OK')
+    click_button('Begin game')
+    select("Rock", from: "moves").select_option
+    click_button("Go")
+    expect(page).to have_content 'It is a draw'
   end
 end
