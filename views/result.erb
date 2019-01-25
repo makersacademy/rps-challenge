@@ -1,0 +1,9 @@
+<h1>
+  <% if @choice == 'Rock' %>
+  Unlucky <%=@name%>, you lost!
+  <% elsif @choice == 'Paper' %>
+  It's a draw
+  <% else @choice == 'Scissors' %>
+  Well done <%=@name%> you win!
+  <%end%>
+</h1>

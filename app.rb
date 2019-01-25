@@ -13,7 +13,14 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    "#{session[:name]} vs Computer"
+    @name = session[:name]
+    erb :play
+  end
+
+  get '/result' do
+    @name = session[:name]
+    @choice = params[:choice]
+    erb :result
   end
 
 end
