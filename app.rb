@@ -1,10 +1,10 @@
 require 'sinatra/base'
+require_relative 'lib/player'
 
 class RockPaperScissors < Sinatra::Base
     get '/' do
        erb (:homepage)
     end
-
 
 enable :sessions
 
@@ -14,7 +14,7 @@ enable :sessions
     end
 
     get '/display-name' do
-        @name = session[:firstname]
+        $player = Player.new(session[:firstname])
         erb (:pre_game)
     end
 
