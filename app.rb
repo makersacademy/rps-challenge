@@ -1,8 +1,14 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
 
 
 class Mama < Sinatra::Base
   enable :sessions
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb :welcome
@@ -10,6 +16,13 @@ class Mama < Sinatra::Base
 
   post '/entry' do
     player1 = Player.new(params[:player1])
-    
+    @game = Game.create(player1)
+    redirect '/game'
   end
+
+  get '/game' do
+    erb :ready
+  end
+
+
 end
