@@ -17,7 +17,8 @@ class Game
   def win?
   end
 
-  
+
+
   def computers_hand
     ['Rock', 'Paper','Scissors'].sample
   end

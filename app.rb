@@ -28,7 +28,12 @@ class Mama < Sinatra::Base
     erb :gameplay
   end
 
-  get '/result' do
+  post '/result' do
+    p @game.player1.set_hand(params[:move])
+    redirect '/outcome'
+  end
+
+  get '/outcome' do
     erb :result
   end
 
