@@ -17,19 +17,15 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  get '/rock' do
-    @player_name = session[:player_name]
-    erb :rock
+  post '/player_choice' do
+    session[:weapon] = params[:weapon].downcase
+    redirect '/weapon'
   end
 
-  get '/paper' do
+  get '/weapon' do
     @player_name = session[:player_name]
-    erb :paper
-  end
-
-  get '/scissors' do
-    @player_name = session[:player_name]
-    erb :scissors
+    @weapon = session[:weapon]
+    erb :weapon
   end
 
   run! if app_file == $0

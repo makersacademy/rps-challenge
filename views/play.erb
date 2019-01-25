@@ -1,5 +1,13 @@
 <h1>Let's go, <%= @player_name %>!</h1>
 <h2>Choose your weapon:</h2>
-<form action="/rock"><input type="submit" value="ROCK"></form>
+
+<form action="/player_choice" method="post">
+  <input type="submit" name="weapon" value="ROCK">
+  <input type="submit" name="weapon" value="PAPER">
+  <input type="submit" name="weapon" value="SCISSORS">
+</form>
+
+
+<!-- <form action="/rock"><input type="submit" value="ROCK"></form>
 <form action="/paper"><input type="submit" value="PAPER"></form>
-<form action="/scissors"><input type="submit" value="SCISSORS"></form>
+<form action="/scissors"><input type="submit" value="SCISSORS"></form> -->
