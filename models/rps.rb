@@ -9,17 +9,11 @@ class Rps
   end
 
   def decide_result(player, cpu)
-    if rock_wins(player.move, cpu.move)
-      player
-    elsif paper_wins(player.move, cpu.move)
-      player
-    elsif scissors_wins(player.move, cpu.move)
-      player
-    elsif draw(player.move, cpu.move)
-      "draw"
-    else
-      cpu
-    end
+    return player if rock_wins(player.move, cpu.move)
+    return player if paper_wins(player.move, cpu.move)
+    return player if scissors_wins(player.move, cpu.move)
+    return "draw" if draw(player.move, cpu.move)
+    cpu
   end
 
   private
