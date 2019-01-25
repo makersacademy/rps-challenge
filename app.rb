@@ -11,12 +11,24 @@ class RPS < Sinatra::Base
   end
 
   get '/' do
+    erb :menu
+  end
+
+  post '/singleplayer' do
     erb :index
   end
 
-  post '/setup' do
+  post '/spsetup' do
     player1 = Player.new(params[:player1])
     player2 = Computer.new
+    rounds = params[:rounds]
+    @game = Game.create(player1, player2, rounds)
+    redirect '/play'
+  end
+
+  post '/mpsetup' do
+    player1 = Player.new(params[:player1])
+    player1 = Player.new(params[:player1])
     rounds = params[:rounds]
     @game = Game.create(player1, player2, rounds)
     redirect '/play'
@@ -27,7 +39,6 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @game.player2.assign_move
     @winner = @game.round_winner?
     if @winner != "Draw!"
       @winner.increment_score
@@ -41,18 +52,28 @@ class RPS < Sinatra::Base
   end
 
   post '/rock' do
-    @game.player1.assign_move(params[:rock])
-    redirect '/result'
+    @game.turn.assign_move(params[:rock])
+    redirect '/botcheck'
   end
 
   post '/scissors' do
-    @game.player1.assign_move(params[:scissors])
-    redirect '/result'
+    @game.turn.assign_move(params[:scissors])
+    redirect '/botcheck'
   end
 
   post '/paper' do
-    @game.player1.assign_move(params[:paper])
+    @game.turn.assign_move(params[:paper])
+    redirect '/botcheck'
+  end
+
+  get '/botcheck' do
+    if @game.player2.is_a? Computer
+      @game.player2.assign_move
+    else
+      @game.switch_turn
+    end
     redirect '/result'
   end
+
 
 end

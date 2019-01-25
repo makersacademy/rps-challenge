@@ -1,5 +1,5 @@
 class Game
-  attr_reader :players, :total_rounds, :current_round
+  attr_reader :players, :total_rounds, :current_round, :turn
 
   def self.create(player1, player2, rounds)
     @game = Game.new(player1, player2, rounds)
@@ -13,6 +13,7 @@ class Game
     @players = [player1, player2]
     @total_rounds = rounds.to_i
     @current_round = 0
+    @turn = player1
   end
 
   def player1
@@ -21,6 +22,10 @@ class Game
 
   def player2
     players.last
+  end
+
+  def switch_turn
+    turn == player1 ? @turn = player2 : @turn = player1
   end
 
   def winning?

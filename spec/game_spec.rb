@@ -42,6 +42,16 @@ describe Game do
       end
     end
 
+    describe '#turn' do
+      it 'Initializes with turn set to player1' do
+        expect(game.turn).to eq player1
+      end
+      it 'Switches the turn of the player' do
+        game.switch_turn
+        expect(game.turn).to eq player2
+      end
+    end
+
     describe '#round_winner' do
       it 'Returns player1 if Rock vs Scissors' do
         rps = Game.new(rock, scissors, 5)
