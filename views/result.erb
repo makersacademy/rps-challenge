@@ -1,2 +1,8 @@
-You played <%= @round.current_turn.moves.last%>
-Computer played <%=@round.opponent.moves.last%>
+You played <%= @round.current_turn.moves.last%> <br>
+Computer played <%=@round.opponent.moves.last%> <br>
+
+<% if @round.winner.last == "Draw"%>
+It was a draw
+<% else%>
+<%= @round.winner.last.name%> wins!
+<%end%>

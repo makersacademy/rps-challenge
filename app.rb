@@ -35,6 +35,7 @@ class Game < Sinatra::Base
   end
 
   get '/result' do
+    @round.calculate_outcome
     erb :result
   end
 

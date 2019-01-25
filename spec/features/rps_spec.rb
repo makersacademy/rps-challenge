@@ -8,11 +8,31 @@ feature 'Rock Paper Scissor options' do
 
   scenario 'computer random move' do
     load_and_play
-    user_move_rock
     srand(4)
+    user_move_rock
     expect(page).to have_content "Computer played paper"
   end
 
-  scenario 'calculate result' do
+  scenario 'Player wins' do
+    load_and_play
+    srand(8)
+    user_move_rock
+    expect(page).to have_content "Lily wins"
   end
+
+  scenario 'Computer wins' do
+    load_and_play
+    srand(4)
+    user_move_rock
+    expect(page).to have_content "Computer wins"
+  end
+
+  scenario 'Draw' do
+    load_and_play
+    srand(10)
+    user_move_rock
+    expect(page).to have_content "It was a draw"
+  end
+
+
 end
