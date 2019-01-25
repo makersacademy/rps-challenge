@@ -1,0 +1,12 @@
+<div align=center>
+<h1>Game Over!</h1>
+<h2><%="#{@game.game_over?.name} Wins!"%> <br>
+  Final Score: <br>
+  <%="#{@game.player_one.name} = #{@game.player_one.score}"%> <br>
+  <%="#{@game.player_two.name} = #{@game.player_two.score}"%> <br>
+  </h2>
+
+<form action='/'>
+  <input type='submit' value='Another Game?' >
+</form>
+</div>

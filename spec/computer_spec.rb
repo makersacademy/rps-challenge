@@ -1,14 +1,27 @@
-feature 'Testing infrastructure' do
+require 'computer'
 
-  scenario 'Can run app and check page content' do
-    visit('/')
-    expect(page).to have_content 'Player 1 :'
-    expect(page).to have_content 'Player 2 :'
+describe Computer do
+  subject(:ai) { described_class.new }
+
+  describe 'new' do
+    it 'Initializes with score set to 0' do
+      expect(ai.score).to eq 0
+    end
+    it 'Initializes with move set to an empty string' do
+      expect(ai.move).to eq ""
+    end
   end
 
-  scenario 'Can accept and display names given' do
-    visit('/')
-    enter_names_and_play
-    expect(page).to have_content "Paul vs. John"
+  describe '#set_move' do
+    it 'Selects a random move' do
+      expect(["Rock", "Paper", "Scissors"]).to include(ai.set_move)
+    end
+  end
+
+  describe '#increment_score' do
+    it 'Increments the score' do
+      ai.increment_score
+      expect(ai.score).to eq 1
+    end
   end
 end

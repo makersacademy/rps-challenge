@@ -19,4 +19,11 @@ describe Player do
     end
   end
 
+  describe '#increment_score' do
+    it 'Increments the score' do
+      player_one.increment_score
+      expect(player_one.score).to eq 1
+    end
+  end
+
 end

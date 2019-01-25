@@ -11,4 +11,8 @@ class Player
     @move = move
   end
 
+  def increment_score
+    @score += 1
+  end
+
 end

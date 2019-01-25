@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
   subject(:game) { described_class.new(player_one, player_two, 5) }
-  let(:player_one) { double :player, name: "Paul" }
-  let(:player_two) { double :player, name: "John" }
+  let(:player_one) { double :player, name: "Paul", score: 3 }
+  let(:player_two) { double :player, name: "John", score: 2 }
   let(:rock)       { double :player, move: "Rock" }
   let(:paper)      { double :player, move: "Paper" }
   let(:scissors)   { double :player, move: "Scissors" }
@@ -26,7 +26,10 @@ describe Game do
       expect(game.players).to eq [player_one, player_two]
     end
     it 'Initializes with rounds set to 5' do
-      expect(game.rounds).to eq 5
+      expect(game.total_rounds).to eq 5
+    end
+    it 'Initializes with current_round set to 0' do
+      expect(game.current_round).to eq 0
     end
   end
 
@@ -39,27 +42,34 @@ describe Game do
     end
   end
 
-  describe '#winner' do
+  describe '#round_winner' do
     it 'Returns player_one if Rock vs Scissors' do
       rps = Game.new(rock, scissors, 5)
-      expect(rps.winner?).to eq rock
+      expect(rps.round_winner?).to eq rock
     end
     it 'Returns player_one if Paper vs Rock' do
       rps = Game.new(paper, rock, 5)
-      expect(rps.winner?).to eq paper
+      expect(rps.round_winner?).to eq paper
     end
     it 'Returns player_one if Scissors vs Paper' do
       rps = Game.new(scissors, paper, 5)
-      expect(rps.winner?).to eq scissors
+      expect(rps.round_winner?).to eq scissors
     end
     it 'Returns Draw! if moves are equal' do
       rps = Game.new(rock, rock, 5)
-      expect(rps.winner?).to eq "Draw!"
+      expect(rps.round_winner?).to eq "Draw!"
     end
     it 'Returns player_two if Scissors vs Rock' do
       rps = Game.new(scissors, rock, 5)
-      expect(rps.winner?).to eq rock
+      expect(rps.round_winner?).to eq rock
     end
   end
-end
-end
+
+  describe '#game_over' do
+    it 'Returns player_one if score exceeds half of total rounds' do
+    expect(game.game_over?).to eq player_one
+    end
+  end
+  
+end # End of Instance Methods
+end # End of Game

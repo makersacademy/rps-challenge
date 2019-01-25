@@ -10,4 +10,9 @@ class Computer
   def set_move
     @move = ["Rock", "Paper", "Scissors"].sample
   end
+
+  def increment_score
+    @score += 1
+  end
+
 end
