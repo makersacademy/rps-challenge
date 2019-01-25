@@ -1,1 +1,10 @@
-<%=@player.name%> is playing
+<h1> Your turn, <%=@round.current_turn.name%>! </h1>
+
+<form action= '/result' method='post'>
+<select name = "move">
+  <option name = "rock">Rock</option>
+  <option name = "paper">Paper</option>
+  <option name = "scissors">Scissors</option>
+</select>
+<input type= "submit" value="Go!">
+</form>

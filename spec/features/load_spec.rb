@@ -1,8 +1,11 @@
 feature 'Set up game' do
   scenario 'form accepts one name' do
-    visit '/'
-    fill_in 'name', with: 'Lily'
-    click_on 'Play'
-    expect(page).to have_content 'Lily is playing'
+    load_and_play
+    expect(page).to have_content 'Your turn, Lily'
+  end
+
+  scenario 'loads page with rps options' do
+    load_and_play
+    expect(page).to have_content 'Rock'
   end
 end

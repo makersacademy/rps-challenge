@@ -1,10 +1,13 @@
+require './lib/round'
 require './lib/player'
 require 'sinatra/base'
 
 class Game < Sinatra::Base
 
+  enable :sessions
+
   before do
-    @player = Player.instance
+    @round = Round.this_round
   end
 
   get '/' do
@@ -12,11 +15,23 @@ class Game < Sinatra::Base
   end
 
   post '/name' do
-    Player.create(params[:name])
+    player = Player.new(params[:name])
+    @round = Round.create(player)
     redirect '/play'
   end
 
   get '/play' do
     erb :options
   end
+
+  # get '/computer-move' do
+  #   @round.random_move
+  #   redirect '/result'
+  # end
+
+  post '/result' do
+    erb :result
+  end
+
+
 end
