@@ -4,9 +4,11 @@ describe Game do
   let(:cpu) { double(:cpu, move: true) }
   let(:cpu_class) { double(:cpu_class, new: cpu) }
   let(:player) { double(:player, move: true) }
-  let(:rps) { double(:rps, available_moves: ["Rock", "Paper", "Scissors"]) }
+  let(:rps) { double(:rps, decide_result: true, available_moves: ["Rock", "Paper", "Scissors"]) }
   let(:rps_class) { double(:rps_class, new: rps) }
-  let(:game) { Game.new(player, cpu_class, rps_class) }
+  let(:printer) { double(:printer, move: true) }
+  let(:printer_class) { double(:printer_class, new: printer) }
+  let(:game) { Game.new(player, cpu_class, rps_class, printer_class) }
 
   describe '#select_player_move' do
 
@@ -30,11 +32,11 @@ describe Game do
     end
   end
 
-  describe '#decide_result' do
+  describe '#print_result' do
 
-    it 'shoud decide the winner' do
-      expect(rps).to receive(:decide_result)
-      game.decide_result
+    it 'should print the winner' do
+      expect(printer).to receive(:winner)
+      game.print_result
     end
   end
 

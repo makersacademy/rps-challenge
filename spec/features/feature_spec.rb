@@ -24,6 +24,6 @@ feature 'play game' do
     click_button('Begin game')
     select("Paper", from: "moves").select_option
     click_button("Go")
-    expect(page).to have_content 'Player wins'
+    expect(page).to have_content 'test wins'
   end
 end

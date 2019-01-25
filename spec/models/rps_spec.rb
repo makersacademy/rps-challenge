@@ -3,6 +3,8 @@ require './models/player'
 require './models/cpu'
 
 describe Rps do
+  let(:player) { double(:player) }
+  let(:cpu) { double(:cpu) }
 
   describe '#moves' do
 
@@ -15,23 +17,33 @@ describe Rps do
   describe '#decide_result' do
 
     it 'should show rock beats scissors' do
-      expect(subject.decide_result("Rock", "Scissors")).to eq "Rock"
+      allow(player).to receive(:move).and_return("Rock")
+      allow(cpu).to receive(:move).and_return("Scissors")
+      expect(subject.decide_result(player, cpu)).to eq player
     end
 
     it 'should show scissors beats paper' do
-      expect(subject.decide_result("Scissors", "Paper")).to eq "Scissors"
+      allow(player).to receive(:move).and_return("Scissors")
+      allow(cpu).to receive(:move).and_return("Paper")
+      expect(subject.decide_result(player, cpu)).to eq player
     end
 
     it 'should show paper beats rock' do
-      expect(subject.decide_result("Paper", "Rock")).to eq "Paper"
+      allow(player).to receive(:move).and_return("Paper")
+      allow(cpu).to receive(:move).and_return("Rock")
+      expect(subject.decide_result(player, cpu)).to eq player
     end
 
     it 'should show scissors beats paper' do
-      expect(subject.decide_result("Paper", "Scissors")).to eq "Scissors"
+      allow(player).to receive(:move).and_return("Paper")
+      allow(cpu).to receive(:move).and_return("Scissors")
+      expect(subject.decide_result(player, cpu)).to eq cpu
     end
 
     it 'should show a draw' do
-      expect(subject.decide_result("Scissors", "Scissors")).to eq "draw"
+      allow(player).to receive(:move).and_return("Scissors")
+      allow(cpu).to receive(:move).and_return("Scissors")
+      expect(subject.decide_result(player, cpu)).to eq "draw"
     end
 
   end
