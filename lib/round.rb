@@ -18,4 +18,8 @@ class Round
   def switch_turn
     @current_turn = @players.select { |player| player != @current_turn }.shift
   end
+
+  def store_move(move)
+    @current_turn.store_move(move)
+  end
 end

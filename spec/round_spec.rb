@@ -25,4 +25,12 @@ describe Round do
       expect(subject.current_turn).to eq computer
     end
   end
+
+  describe '#store_move' do
+
+    it 'should store each move in an array' do
+      expect(lily).to receive(:store_move)
+      subject.store_move('rock')
+    end
+  end
 end
