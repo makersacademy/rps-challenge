@@ -1,0 +1,39 @@
+<!DOCTYPE = html >
+<html>
+  <head>
+    <style>
+    body, input, select {
+      background-color: #f9f509;
+      text-align: center;
+      font-size: 30px;
+      margin-top: 20px;
+      margin-bottom: 30px
+    }
+
+    select, input {
+      width: 500px;
+      height: 50px;
+      background-color:#fff;
+      border-bottom: 2px solid
+    }
+
+    h1 {
+      color: #000;
+      margin-top: 50px;
+      text-align: center
+    }
+    </style>
+  </head>
+
+  <body>
+    <h1> Rock, Paper, Scissor </h1>
+    <form action= '/type' method=post >
+      Select game type: <br>
+      <select name = "type">
+        <option name = "single">Battle computer</option>
+        <option name = "2 player">2 player</option>
+      </select>
+      <input type= "submit" value= "Play" > <br>
+    </form>
+</body>
+</html>
