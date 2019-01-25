@@ -23,4 +23,13 @@ class RockPaperScissors < Sinatra::Base
     erb :play_one_player
   end
 
+  post '/rock' do
+    Game.instance.player_1.make_move("Rock")
+    redirect '/winner'
+  end
+
+  get '/winner' do
+    
+  end
+
 end
