@@ -8,3 +8,7 @@ body {
   font-family: 'Monoton', cursive;
   font-size: 50;
 }
+
+.small_print {
+  font-size: 12;
+}
