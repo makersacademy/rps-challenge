@@ -22,4 +22,4 @@ Break the task into smaller bites:<br>
 3) Player can choose rock/papers/scissors(RPS).
   - on the `/play` page, user can choose among the R/P/S buttons
   - client will send GET request to server which directs to the /game route
-  - the /game route will contain a allow interaction with relevant models 
+  - the /game route will contain a allow interaction with relevant models
