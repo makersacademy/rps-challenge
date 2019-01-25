@@ -3,6 +3,6 @@ feature 'Set up game' do
     visit '/'
     fill_in 'name', with: 'Lily'
     click_on 'Play'
-    expect(page).to have_content 'Lily'
+    expect(page).to have_content 'Lily is playing'
   end
 end
