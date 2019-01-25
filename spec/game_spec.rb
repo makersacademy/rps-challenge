@@ -1,7 +1,9 @@
 describe Game do
-  let(:petes_game) { Game.new("Pete") }
+  let(:printer) { double(:printer, print_result: nil) }
+  let(:printer_class) { double(new: printer) }
+  let(:petes_game) { Game.new("Pete", printer_class) }
   let(:steves_game) do
-    steves_game = Game.new("Steve")
+    steves_game = Game.new("Steve", printer_class)
     steves_game.make_choice("Rock")
     steves_game
   end
@@ -38,6 +40,14 @@ describe Game do
         srand(8)
         expect(steves_game.result).to eq 'Draw'
       end
+    end
+  end
+
+  describe '#print result' do
+    it "tells printer object to print result" do
+      srand(9)
+      expect(printer).to receive(:print_result).with('Win')
+      steves_game.show_result
     end
   end
 end

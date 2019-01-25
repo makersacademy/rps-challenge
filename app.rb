@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'game'
+require 'printer'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -18,9 +19,14 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  get '/result' do
+  post '/play' do
     @game = Game.instances
     @game.make_choice(params[:choice])
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game = Game.instances
     erb :result
   end
 

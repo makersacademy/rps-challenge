@@ -1,9 +1,10 @@
 class Game
 
-  attr_reader :player_name, :player_choice
+  attr_reader :player_name, :player_choice, :printer
 
-  def initialize(player_name)
+  def initialize(player_name, printer = Printer)
     @player_name = player_name
+    @printer = printer.new(player_name)
   end
 
   def self.create(player_name)
@@ -12,6 +13,10 @@ class Game
 
   def self.instances
     @games
+  end
+
+  def show_result
+    printer.print_result(result)
   end
 
   def make_choice(choice)
