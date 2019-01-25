@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/winner'
 
 class RockPaperScissors < Sinatra::Base
     get '/' do
@@ -14,7 +15,7 @@ enable :sessions
     end
 
     get '/display-name' do
-        $player = Player.new(session[:firstname])
+        $winner = Winner.new(Player.new(session[:firstname]))
         erb (:pre_game)
     end
 
@@ -24,7 +25,7 @@ enable :sessions
     end
 
     get '/player-choice' do
-        $player.select_move(session[:playermove])
+        $winner.player1.select_move(session[:playermove])
         erb (:player_choice)
     end
 

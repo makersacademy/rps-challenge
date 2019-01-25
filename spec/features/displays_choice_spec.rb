@@ -6,6 +6,6 @@ feature 'Choice Collector' do
         enter_name_and_start_playing
         select 'Rock', from: 'playermove'
         click_on('Confirm Selection')
-        expect(page).to have_content("You have selected Rock as your move")
+        expect(page).to have_content "You have selected Rock as your move"
     end
 end
