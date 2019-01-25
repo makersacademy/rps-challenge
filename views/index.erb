@@ -1,14 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="rps_style.css">
+</head>
+
 <body>
 <div align=center>
   <h1> Rock / Paper / Scissors </h1>
   <form action="/setup" method="post">
     Player 1 :<br>
-    <input type="text" name="player1"><br>
+    <input type="text" name="player1" required><br>
     <!-- Player 2 :<br>
     <input type="text" name="player2"><br> -->
     Number of Rounds : <br>
-    <input type="text" name="rounds"><br>
+    <input type="text" name="rounds" required><br>
     <input type="submit" value="Play!">
   </form>
 </div>
 </body>
+</html>

@@ -1,12 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="rps_style.css">
+</head>
+
+
 <div align=center>
 <h1>Game Over!</h1>
+</div>
+<div align=center>
 <h2><%="#{@game.game_over?.name} Wins!"%> <br>
   Final Score: <br>
   <%="#{@game.player_one.name} = #{@game.player_one.score}"%> <br>
   <%="#{@game.player_two.name} = #{@game.player_two.score}"%> <br>
   </h2>
+  </div>
 
-<form action='/'>
+<form align=center action='/'>
   <input type='submit' value='Another Game?' >
 </form>
-</div>
+</html>

@@ -26,11 +26,6 @@ get '/play' do
   erb :play
 end
 
-# get '/result' do
-#   @winner = @game.round_winner?
-#   erb :result
-# end
-
 get '/result' do
   @game.player_two.set_move
   @winner = @game.round_winner?

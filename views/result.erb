@@ -1,17 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="rps_style.css">
+</head>
 <div align=center>
-
-<%= @game.player_one.name %> picked: <%= @game.player_one.move %> <br>
+<h3><%= @game.player_one.name %> picked: <%= @game.player_one.move %> <br>
 <%= @game.player_two.name %> picked: <%= @game.player_two.move %> <br>
-
-<% if @winner == "Draw!" %>
+</div>
+<div align =center>
+<h2><% if @winner == "Draw!" %>
 <%= @winner %> <br>
 Nobody wins this round!
   <% else %>
 <%= @winner.name %> wins this round!
-  <% end %>
+  <% end %></h2>
+</div>
 
-<form action='/play'>
+<form align=center action='/play'>
   <input type='submit' value='Ok' >
 </form>
-
-</div>
+</html>

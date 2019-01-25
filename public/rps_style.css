@@ -1,0 +1,19 @@
+body {
+  border: none;
+  background-color: black;
+  color: white;
+  font-family: monospace;
+}
+h1 {
+  font-size: 75px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 25px;
+}
+input, form, form[type=input] {
+  margin: 5px;
+  font-size: 30px;
+}
