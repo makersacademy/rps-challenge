@@ -4,7 +4,7 @@ require 'simplecov-console'
 require 'sinatra'
 require 'rspec'
 require_relative './../rps_game'
-
+require_relative './features/web_helpers.rb'
 Capybara.app = RPS
 
 ENV['RACK_ENV'] = 'test'
