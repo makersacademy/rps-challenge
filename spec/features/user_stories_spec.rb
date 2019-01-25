@@ -24,3 +24,13 @@ feature 'Enter name' do
     expect(page).to have_content 'Let\'s go, Archie!'
   end
 end
+
+feature 'Present choices' do
+  scenario 'present player with choices' do
+    visit('/')
+    fill_in :player_name, with: 'Archie'
+    click_button 'Play!'
+    expect(page).to have_content 'Choose your weapon:'
+  end
+
+end
