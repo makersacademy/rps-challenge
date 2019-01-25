@@ -5,7 +5,10 @@ describe Game do
 
   #tests for ?create and instance methods?
 
+
   it 'Game initializes with player 1 object' do
     expect(game.player1).to eq marketeer
   end
+
+
 end

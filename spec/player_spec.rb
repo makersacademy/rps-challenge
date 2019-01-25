@@ -1,4 +1,3 @@
-require 'player'
 describe Player do
 
   let(:player1) { Player.new("Marketeer") }

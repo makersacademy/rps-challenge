@@ -24,5 +24,12 @@ class Mama < Sinatra::Base
     erb :ready
   end
 
+  get '/rps' do
+    erb :gameplay
+  end
+
+  get '/result' do
+    erb :result
+  end
 
 end
