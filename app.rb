@@ -28,5 +28,9 @@ enable :sessions
         erb (:player_choice)
     end
 
+    get '/winner' do
+        'You are the winner!'
+    end
+
     run! if app_file == $0
 end

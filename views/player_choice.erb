@@ -1,1 +1,7 @@
-<h1>"You have selected <%=$player.move%> as your move"</h1>
+<h1>You have selected <%=$player.move%> as your move</h1>
+<h2>The question is...</h2>
+<h2>Did you win?</h2>
+
+<form action="/winner" method="get">
+    <input type='submit' value='Find Out Winner'/>
+</form>
