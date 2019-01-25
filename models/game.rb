@@ -29,6 +29,22 @@ class Game
     decide_result == "draw" ? @printer.draw : @printer.winner(decide_result)
   end
 
+  def player_name
+    @player.name
+  end
+
+  def cpu_name
+    @cpu.name
+  end
+
+  def player_move
+    @player.move
+  end
+
+  def cpu_move
+    @cpu.move
+  end
+
   private
 
   def random_move

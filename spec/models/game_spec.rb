@@ -40,4 +40,36 @@ describe Game do
     end
   end
 
+  describe '#player_move' do
+
+    it 'should print out the players move' do
+      expect(player).to receive(:move)
+      game.player_move
+    end
+  end
+
+  describe '#cpu_move' do
+
+    it 'should print out the cpus move' do
+      expect(cpu).to receive(:move)
+      game.cpu_move
+    end
+  end
+
+  describe '#player_name' do
+
+    it 'should print out the players name' do
+      expect(player).to receive(:name)
+      game.player_name
+    end
+  end
+
+  describe '#cpu_name' do
+
+    it 'should print out the cpus name' do
+      expect(cpu).to receive(:name)
+      game.cpu_name
+    end
+  end
+
 end
