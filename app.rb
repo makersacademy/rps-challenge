@@ -29,6 +29,8 @@ class Game < Sinatra::Base
     @round.store_move(params[:move])
     @round.switch_turn
   #  @round.random_move
+  @round.switch_turn
+
     redirect '/result'
   end
 

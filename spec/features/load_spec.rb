@@ -6,6 +6,6 @@ feature 'Set up game' do
 
   scenario 'loads page with rps options' do
     load_and_play
-    expect(page).to have_content 'Rock'
+    expect(page).to have_content 'rock'
   end
 end
