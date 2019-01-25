@@ -10,7 +10,7 @@ class Game
     @game
   end
 
-  attr_reader :player1, :winner
+  attr_reader :player1, :winner, :computer
 
   def initialize(player1)
     @player1=player1
@@ -33,19 +33,18 @@ class Game
     elsif @player1.hand=="Scissors" && @computer.hand == "Rock"
       @winner = @computer
 
-    elsif @player1.hand=="Paper" && @computer.hand == "Paper"
+    elsif @player1.hand==@computer.hand
       @winner
-    elsif @player1.hand=="Rock" && @computer.hand == "Rock"
-      @winner
-    elsif @player1.hand=="Scissors" && @computer.hand == "Scissors"
-      @winner
-
     end
   end
 
-# private
-#   def computers_hand
-#     ['Rock', 'Paper','Scissors'].sample
-#   end
+  # results = {
+  #   rock:     {rock: :draw,  paper: :lose, scissors: :win},
+  #   paper:    {rock: :win,   paper: :draw, scissors: :loose},
+  #   scissors: {rock: :loose, paper: :win,  scissors: :draw}
+  # }
+  #
+  # results[player1_weapon][player2_weapon]
+  # results[player1.hand][computer.hand]
 
 end

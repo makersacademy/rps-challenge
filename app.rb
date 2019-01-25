@@ -31,12 +31,23 @@ class Mama < Sinatra::Base
   post '/result' do
     @game.player1.set_hand(params[:move])
     @game.gaming
-    if @game.winner == @player1
-        redirect '/winner'
-    elsif @game.winner == @computer
-        redirect '/looser'
+
+    if @game.winner == @game.player1
+        p @game.player1
+        p @game.computer
+        p @game.winner
+    redirect '/winner'
+
+    elsif @game.winner == @game.computer
+        p @game.player1
+        p @game.computer
+        p @game.winner
+    redirect '/looser'
     else
-        redirect '/try_again'
+      p @game.player1
+      p @game.computer
+      p @game.winner
+    redirect '/try_again'
     end
   end
 
