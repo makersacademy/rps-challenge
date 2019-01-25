@@ -10,4 +10,11 @@ describe Game do
     end
   end
 
+  describe '#attack' do
+    it "tells a player to take damage" do
+      expect(player2).to receive :receive_damage
+      game.attack(player2)
+    end
+  end
+
 end

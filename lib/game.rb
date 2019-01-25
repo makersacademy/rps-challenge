@@ -31,7 +31,7 @@ def run_game
     @winner = player1.name
 
   elsif player1.move == 'Paper' && player2.move == 'Rock'
-    @winner = player2.name
+    @winner = player1.name
 
   elsif player2.move == 'Rock' && player1.move == 'Scissors'
     @winner = player2.name
