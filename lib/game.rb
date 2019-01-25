@@ -30,7 +30,7 @@ class Game
 
   def winning?
     return player1.name if player1.score > player2.score
-    return player2.name if player1.score > player2.score
+    return player2.name if player2.score > player1.score
     "Nobody"
   end
 

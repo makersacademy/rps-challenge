@@ -83,5 +83,4 @@ class RPS < Sinatra::Base
     end
   end
 
-
 end
