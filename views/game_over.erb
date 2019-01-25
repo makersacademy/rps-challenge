@@ -7,16 +7,17 @@
 
 <div align=center>
 <h1>Game Over!</h1>
+<h1>:(</h1>
 </div>
 <div align=center>
-<h2><%="#{@game.game_over?.name} Wins!"%> <br>
-  Final Score: <br>
+<h2><%="#{@game.game_over?.name} Wins!"%> <br></h2>
+<h2>Final Score: <br>
   <%="#{@game.player_one.name} = #{@game.player_one.score}"%> <br>
   <%="#{@game.player_two.name} = #{@game.player_two.score}"%> <br>
   </h2>
   </div>
 
 <form align=center action='/'>
-  <input type='submit' value='Another Game?' >
+  <input class='another' type='submit' value='Another Game?' >
 </form>
 </html>
