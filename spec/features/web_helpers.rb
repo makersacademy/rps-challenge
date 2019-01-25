@@ -1,3 +1,4 @@
+# Fills In Player and Round Fields
 def enter_names_and_play
   fill_in('player1', with: 'Paul')
   fill_in('rounds', with: '5')
@@ -5,6 +6,7 @@ def enter_names_and_play
   click_button('Play!')
 end
 
+# Clicks Rock and Ok
 def rock_and_ok
   click_button 'Rock'
   click_button 'Ok'

@@ -12,9 +12,9 @@ describe Computer do
     end
   end
 
-  describe '#set_move' do
+  describe '#assign_move' do
     it 'Selects a random move' do
-      expect(["Rock", "Paper", "Scissors"]).to include(ai.set_move)
+      expect(["Rock", "Paper", "Scissors"]).to include(ai.assign_move)
     end
   end
 

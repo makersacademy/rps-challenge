@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  subject(:player_one) { described_class.new("Paul")}
+  subject(:player_one) { described_class.new("Paul") }
 
   describe '#new' do
     it 'Initializes with a name' do
@@ -12,9 +12,9 @@ describe Player do
     end
   end
 
-  describe '#set_move' do
-    it 'Sets move to argument' do
-      player_one.set_move("Rock")
+  describe '#assign_move' do
+    it 'Assigns move to argument' do
+      player_one.assign_move("Rock")
       expect(player_one.move).to eq "Rock"
     end
   end

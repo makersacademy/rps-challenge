@@ -7,7 +7,7 @@ class Computer
     @move = ""
   end
 
-  def set_move
+  def assign_move
     @move = ["Rock", "Paper", "Scissors"].sample
   end
 

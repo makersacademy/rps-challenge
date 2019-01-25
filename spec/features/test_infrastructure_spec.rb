@@ -27,11 +27,12 @@ feature 'Testing infrastructure' do
   end
 
   scenario 'Can display game_over screen and winner on a win' do
+    message = "Game Over! :( Paul Wins! Final Score: Paul = 3 Computer = 0"
     allow_any_instance_of(Computer).to receive(:move) { "Scissors" }
     visit('/')
     enter_names_and_play
     2.times { rock_and_ok }
     click_button 'Rock'
-    expect(page).to have_content "Game Over! Paul Wins!"
+    expect(page).to have_content message
   end
 end

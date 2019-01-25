@@ -5,7 +5,7 @@
 </head>
 <body>
 <div align=center>
-  <h1><%="#{@game.player_one.name} vs. #{@game.player_two.name}"%></h1>
+  <h1><%="#{@game.player1.name} vs. #{@game.player2.name}"%></h1>
 </div>
 
 <div id="container">
@@ -30,8 +30,8 @@
     <h2><%="Round: #{@game.current_round}"%> <br></h2>
     <h2><%="Game is best of #{@game.total_rounds}"%></h2>
     <h3>Current Score <br>
-      <%="#{@game.player_one.name}: #{@game.player_one.score}"%> <br>
-      <%="#{@game.player_two.name}: #{@game.player_two.score}"%> <br> </h3>
+      <%="#{@game.player1.name}: #{@game.player1.score}"%> <br>
+      <%="#{@game.player2.name}: #{@game.player2.score}"%> <br> </h3>
   </div>
   <div align=center>
     <h2><%="#{@game.winning?} is in the lead!"%><br></h2>
