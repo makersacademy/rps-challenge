@@ -11,22 +11,35 @@
 <div id="container">
     <h1><%="#{@game.turn.name}'s Turn"%></h1>
     <h2>Pick a Move!</h2>
+    </div>
 
-    <form id="left" action="/rock" method="post">
+<div id="container">
+    <form id="rock" action="/rock" method="post">
       Rock : <br>
     <input class="moves" type="submit" name="rock" value="Rock">
     </form>
 
-    <form id="right" float=center action="/paper" method="post">
+    <form id="paper" action="/paper" method="post">
     Paper : <br>
     <input class="moves" type="submit" name="paper" value="Paper">
     </form>
 
-    <form float=right action="/scissors" method="post">
+    <form id="scissors" action="/scissors" method="post">
     Scissors : <br>
     <input class="moves" type="submit" name="scissors" value="Scissors">
     </form>
+
+    <form id ="lizard" action="/lizard" method="post">
+    Lizard : <br>
+    <input class="moves" type="submit" name="lizard" value="Lizard">
+    </form>
+
+    <form id ="spock" action="/spock" method="post">
+    Spock : <br>
+    <input class="moves" type="submit" name="spock" value="Spock">
+    </form>
 </div>
+
 <div align=center>
     <h2><%="Round: #{@game.current_round}"%> <br></h2>
     <h2><%="Game is best of #{@game.total_rounds}"%></h2>
@@ -34,8 +47,10 @@
       <%="#{@game.player1.name}: #{@game.player1.score}"%> <br>
       <%="#{@game.player2.name}: #{@game.player2.score}"%> <br> </h3>
   </div>
+
   <div align=center>
     <h2><%="#{@game.winning?} is in the lead!"%><br></h2>
       </div>
+
 </body>
 </html>

@@ -57,6 +57,16 @@ class RPS < Sinatra::Base
     redirect '/botcheck'
   end
 
+  post '/lizard' do
+    @game.turn.assign_move(params[:lizard])
+    redirect '/botcheck'
+  end
+
+  post '/spock' do
+    @game.turn.assign_move(params[:spock])
+    redirect '/botcheck'
+  end
+
   get '/botcheck' do
     if @game.player2.is_a? Computer
       @game.player2.assign_move

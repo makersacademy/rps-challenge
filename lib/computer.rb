@@ -8,7 +8,7 @@ class Computer
   end
 
   def assign_move
-    @move = ["Rock", "Paper", "Scissors"].sample
+    @move = ["Rock", "Paper", "Scissors", "Lizard", "Spock"].sample
   end
 
   def increment_score
