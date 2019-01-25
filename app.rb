@@ -17,5 +17,20 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  get '/rock' do
+    @player_name = session[:player_name]
+    erb :rock
+  end
+
+  get '/paper' do
+    @player_name = session[:player_name]
+    erb :paper
+  end
+
+  get '/scissors' do
+    @player_name = session[:player_name]
+    erb :scissors
+  end
+
   run! if app_file == $0
 end
