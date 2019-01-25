@@ -1,4 +1,4 @@
-featuer 'Register name' do
+feature 'Register name' do
   scenario 'A user register his name' do
     visit('/')
     fill_in :player, with: 'Raymond'
