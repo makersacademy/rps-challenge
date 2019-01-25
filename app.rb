@@ -18,7 +18,7 @@ class RockPaperScissors < Sinatra::Base
   post '/welcome_message' do
     player = Player.new(params[:name])
     @game = Game.create(player)
-    erb(:welcome_message)
+    redirect '/play'
   end
 
   get '/play' do

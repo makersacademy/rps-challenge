@@ -1,3 +1,5 @@
+require_relative './helpers'
+
 feature 'loading page' do
 
   scenario 'it should load a starting page' do
@@ -6,9 +8,7 @@ feature 'loading page' do
   end
 
   scenario 'it should allow me to enter my name' do
-    visit('/')
-    fill_in('name', with: 'test')
-    click_button('OK')
+    fill_name_in
     expect(page).to have_content 'Let\'s play RPS, are you ready test?'
   end
 
@@ -18,10 +18,7 @@ feature 'play game' do
 
   scenario 'it show a player winning' do
     allow_any_instance_of(Game).to receive(:random_move) { "Rock" }
-    visit('/')
-    fill_in('name', with: 'test')
-    click_button('OK')
-    click_button('Begin game')
+    fill_name_in
     select("Paper", from: "moves").select_option
     click_button("Go")
     expect(page).to have_content 'test wins'
@@ -29,10 +26,7 @@ feature 'play game' do
 
   scenario 'it show the cpu winning' do
     allow_any_instance_of(Game).to receive(:random_move) { "Rock" }
-    visit('/')
-    fill_in('name', with: 'test')
-    click_button('OK')
-    click_button('Begin game')
+    fill_name_in
     select("Scissors", from: "moves").select_option
     click_button("Go")
     expect(page).to have_content 'cpu wins'
@@ -40,10 +34,7 @@ feature 'play game' do
 
   scenario 'it should show a draw' do
     allow_any_instance_of(Game).to receive(:random_move) { "Rock" }
-    visit('/')
-    fill_in('name', with: 'test')
-    click_button('OK')
-    click_button('Begin game')
+    fill_name_in
     select("Rock", from: "moves").select_option
     click_button("Go")
     expect(page).to have_content 'It is a draw'
