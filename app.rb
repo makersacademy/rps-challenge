@@ -30,12 +30,26 @@ class Mama < Sinatra::Base
 
   post '/result' do
     @game.player1.set_hand(params[:move])
-    redirect '/outcome'
+    @game.gaming
+    if @game.winner == @player1
+        redirect '/winner'
+    elsif @game.winner == @computer
+        redirect '/looser'
+    else
+        redirect '/try_again'
+    end
   end
 
-  get '/outcome' do
-    #@game.win?
-    erb :result
+  get '/winner' do
+    erb :win
+  end
+
+  get '/looser' do
+    erb :loose
+  end
+
+  get '/try_again' do
+    erb :again
   end
 
 end
