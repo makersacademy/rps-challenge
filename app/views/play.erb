@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <h1>Rock, paper, scissors</h1>
+    <p> Contestant: <%= "#{@player.name}" %> </p>
+    <form action="/choice_received" method="post" >
+      <input type="submit" value="Rock">
+      <input type="submit" value="Paper">
+      <input type="submit" value="Scissors">
+    </form>
+  </body>
+</html>
