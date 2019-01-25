@@ -42,28 +42,8 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/rock' do
-    @game.turn.assign_move(params[:rock])
-    redirect '/botcheck'
-  end
-
-  post '/scissors' do
-    @game.turn.assign_move(params[:scissors])
-    redirect '/botcheck'
-  end
-
-  post '/paper' do
-    @game.turn.assign_move(params[:paper])
-    redirect '/botcheck'
-  end
-
-  post '/lizard' do
-    @game.turn.assign_move(params[:lizard])
-    redirect '/botcheck'
-  end
-
-  post '/spock' do
-    @game.turn.assign_move(params[:spock])
+  post '/weapon' do
+    @game.turn.assign_move(params[:weapon])
     redirect '/botcheck'
   end
 

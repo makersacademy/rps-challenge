@@ -12,31 +12,31 @@
     <h1><%="#{@game.turn.name}'s Turn"%></h1>
     <h2>Pick a Move!</h2>
     </div>
-
+<!-- Change name to "Weapon" to remove links -->
 <div id="container">
-    <form id="rock" action="/rock" method="post">
+    <form id="rock" action="/weapon" method="post">
       Rock : <br>
-    <input class="moves" type="submit" name="rock" value="Rock">
+    <input class="moves" type="submit" name="weapon" value="Rock">
     </form>
 
-    <form id="paper" action="/paper" method="post">
+    <form id="paper" action="/weapon" method="post">
     Paper : <br>
-    <input class="moves" type="submit" name="paper" value="Paper">
+    <input class="moves" type="submit" name="weapon" value="Paper">
     </form>
 
-    <form id="scissors" action="/scissors" method="post">
+    <form id="scissors" action="/weapon" method="post">
     Scissors : <br>
-    <input class="moves" type="submit" name="scissors" value="Scissors">
+    <input class="moves" type="submit" name="weapon" value="Scissors">
     </form>
 
-    <form id ="lizard" action="/lizard" method="post">
+    <form id ="lizard" action="/weapon" method="post">
     Lizard : <br>
-    <input class="moves" type="submit" name="lizard" value="Lizard">
+    <input class="moves" type="submit" name="weapon" value="Lizard">
     </form>
 
-    <form id ="spock" action="/spock" method="post">
+    <form id ="spock" action="/weapon" method="post">
     Spock : <br>
-    <input class="moves" type="submit" name="spock" value="Spock">
+    <input class="moves" type="submit" name="weapon" value="Spock">
     </form>
 </div>
 

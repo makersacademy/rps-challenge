@@ -45,6 +45,6 @@ input, form, input[type="submit"] {
     width:100%;
     text-align:center;
 }
-#rock, #scissors, #paper, #lizard, #spock {
+#rock, #scissors, #paper, #lizard, #spock, .moves {
     display: inline-block;
 }
