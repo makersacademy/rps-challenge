@@ -6,7 +6,7 @@ require 'simplecov-console'
 require 'capybara'
 require 'rspec'
 require 'features/web_helpers'
-require File.join(File.dirname(FILE), '..', 'app.rb')
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 Capybara.app = RPSServer
 
