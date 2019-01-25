@@ -18,5 +18,15 @@ enable :sessions
         erb (:pre_game)
     end
 
+    post '/saves-choice' do
+        session[:playermove] = params[:playermove]
+        redirect '/player-choice'
+    end
+
+    get '/player-choice' do
+        $player.select_move(session[:playermove])
+        erb (:player_choice)
+    end
+
     run! if app_file == $0
 end
