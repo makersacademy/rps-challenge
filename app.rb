@@ -5,7 +5,7 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do
-    "Hello world"
+    erb :index
   end
 
   # start the server if ruby file executed directly
