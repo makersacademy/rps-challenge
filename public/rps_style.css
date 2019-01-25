@@ -1,8 +1,8 @@
 body {
-  border: none;
   background-color: black;
   color: white;
   font-family: monospace;
+  text-align: center;
 }
 h1 {
   font-size: 75px;
@@ -13,7 +13,38 @@ h2 {
 h3 {
   font-size: 25px;
 }
-input, form, form[type=input] {
-  margin: 5px;
+input, form, input[type="submit"] {
+  margin: 15px;
   font-size: 30px;
+}
+.result {
+  margin-top: 15%;
+}
+.moves {
+  border: none;
+  width: 150px;
+  height: 50px;
+}
+
+#container {
+    width:100%;
+    text-align:center;
+}
+
+#left {
+    display: inline-block;
+    float:left;
+    width:33%;
+}
+
+#center {
+    display: inline-block;
+    float: center;
+    width:33%;
+}
+
+#right {
+    display: inline-block;
+    float:right;
+    width:33%;
 }

@@ -3,35 +3,40 @@
 <head>
   <link rel="stylesheet" type="text/css" href="rps_style.css">
 </head>
-<div align=center >
+<body>
+<div align=center>
   <h1><%="#{@game.player_one.name} vs. #{@game.player_two.name}"%></h1>
   <h2><%="Game is best of #{@game.total_rounds}"%></h2>
   <h3>Current Score <br>
     <%="#{@game.player_one.name}: #{@game.player_one.score}"%> <br>
     <%="#{@game.player_two.name}: #{@game.player_two.score}"%> <br> </h3>
-  <h2><%="#{@game.winning?} is in the lead!"%></h2>
-
 </div>
-<body>
 <div align=center>
-  <h1><%="Round: #{@game.current_round}"%> <br>
-      Pick a Move!
-  </h1>
+  <h2><%="#{@game.winning?} is in the lead!"%><br></h2>
+    </div>
 
-  <form action="/rock" method="post">
-    Rock :
-    <input type="submit" name="rock" value="Rock"><br>
+<div align=center>
+  <h2><%="Round: #{@game.current_round}"%> <br></h2>
+    </div>
+
+<div id="container">
+    <h2>Pick a Move!</h2>
+
+    <form id="left" action="/rock" method="post">
+      Rock : <br>
+    <input class="moves" type="submit" name="rock" value="Rock">
     </form>
 
-    <form action="/paper" method="post">
-    Paper :
-    <input type="submit" name="paper" value="Paper"><br>
+    <form id="right" float=center action="/paper" method="post">
+    Paper : <br>
+    <input class="moves" type="submit" name="paper" value="Paper">
     </form>
 
-    <form action="/scissors" method="post">
-    Scissors :
-    <input type="submit" name="scissors" value="Scissors">
+    <form float=right action="/scissors" method="post">
+    Scissors : <br>
+    <input class="moves" type="submit" name="scissors" value="Scissors">
     </form>
+
 </div>
 </body>
 </html>
