@@ -33,6 +33,4 @@ feature 'Rock Paper Scissor options' do
     user_move_rock
     expect(page).to have_content "It was a draw"
   end
-
-
 end

@@ -1,8 +1,31 @@
-You played <%= @round.current_turn.moves.last%> <br>
-Computer played <%=@round.opponent.moves.last%> <br>
+<!DOCTYPE = html>
+<html>
+  <head>
+    <style>
+      body {
+        <!-- font-family:  -->
+        
+      }
+    </style>
+  </head>
+  <body>
+    You played <%= @round.current_turn.moves.last%> <br>
+    Computer played <%=@round.opponent.moves.last%> <br>
 
-<% if @round.winner.last == "Draw"%>
-It was a draw
-<% else%>
-<%= @round.winner.last.name%> wins!
-<%end%>
+    <div>
+      <% if @round.winner.last == "Draw"%>
+      <h2>It was a draw</h2>
+      <% else%>
+      <h2><%= @round.winner.last.name%> wins! <br></h2>
+      <%end%>
+    </div>
+
+    <div>
+      <h3><%= @round.current_turn.name%>'s Scores </h3>
+
+      Wins: <%= @round.current_turn.count_outcome("won")%> <br>
+      Losses: <%= @round.current_turn.count_outcome("lost")%> <br>
+      Draws: <%= @round.current_turn.count_outcome("draw")%> <br>
+    </div>
+  </body>
+</html>

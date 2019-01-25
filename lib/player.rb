@@ -5,7 +5,7 @@ class Player
   def initialize(name)
     @name = name
     @moves = []
-    @outcomes = { "won" =>[],
+    @outcomes = { "won" => [],
       "lost" => [],
       "draw" => []
     }

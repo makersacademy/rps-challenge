@@ -3,7 +3,6 @@ require './lib/player'
 require 'sinatra/base'
 
 class Game < Sinatra::Base
-
   enable :sessions
 
   before do
@@ -35,9 +34,7 @@ class Game < Sinatra::Base
   end
 
   get '/result' do
-    @round.calculate_outcome
+    @round.run_outcome
     erb :result
   end
-
-
 end

@@ -2,8 +2,8 @@ require 'round'
 
 describe Round do
 
-  let(:computer) { double(:computer, store_move: nil, moves: ["paper"]) }
-  let(:lily) { double(:lily, store_move: nil, moves: ["rock"]) }
+  let(:computer) { double(:computer, store_move: nil, moves: ["paper"], add_outcome: nil) }
+  let(:lily) { double(:lily, store_move: nil, moves: ["rock"], add_outcome: nil) }
   let(:subject) { Round.new(lily, computer) }
 
   describe '#initialize' do
@@ -49,20 +49,20 @@ describe Round do
       #   expect(subject.generate_random).to eq "paper"
       # end
 
-      it 'should store random move to person' do
-        srand(4)
-        expect(lily).to receive(:store_move)
-        subject.computer_move
-      end
+    it 'should store random move to person' do
+      srand(4)
+      expect(lily).to receive(:store_move)
+      subject.computer_move
+    end
 
-      it 'should store random move to other person' do
-        subject.store_and_switch("rock")
-        srand(4)
+    it 'should store random move to other person' do
+      subject.store_and_switch("rock")
+      srand(4)
 
-        expect(lily).not_to receive(:store_move)
-        expect(computer).to receive(:store_move)
-        subject.computer_move
-      end
+      expect(lily).not_to receive(:store_move)
+      expect(computer).to receive(:store_move)
+      subject.computer_move
+    end
   end
 
   describe '#winner' do
@@ -70,7 +70,6 @@ describe Round do
     let(:computer2) { double(:computer2, moves: ["rock"]) }
     let(:lily2) { double(:lily2, moves: ["paper"]) }
     let(:subject2) { Round.new(lily2, computer2) }
-
     let(:subject3) { Round.new(lily2, computer) }
 
     # it 'should return moves' do
@@ -79,10 +78,9 @@ describe Round do
     #   subject.computer_move
     #   expect(subject.return_last_moves).to eq "Rock, Paper"
     # end
-
-    it 'should retrive moves from players' do
-      expect(lily).to receive (:moves)
-      expect(computer).to receive (:moves)
+    it 'should retreive moves from players' do
+      expect(lily).to receive :moves
+      expect(computer).to receive :moves
       subject.calculate_outcome
     end
 
@@ -100,9 +98,16 @@ describe Round do
       subject3.calculate_outcome
       expect(subject3.winner.last).to eq "Draw"
     end
-    #
-    # it 'should record win/loss on player profile' do
-    # end
+
+    it 'should record win/loss on player profile' do
+      expect(lily).to receive :add_outcome
+      subject.run_outcome
+    end
+
+    it 'should record "win" on player profile' do
+      expect(lily).to receive :add_outcome
+      subject.run_outcome
+    end
 
   end
 end

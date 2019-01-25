@@ -29,11 +29,16 @@ class Round
   end
 
   def opponent
-    @players.select { |player| player != @current_turn }.first
+    @players.reject { |player| player == @current_turn }.first
   end
 
   def switch_turn
     @current_turn = opponent
+  end
+
+  def run_outcome
+    calculate_outcome
+    record_outcome
   end
 
   def calculate_outcome
@@ -41,7 +46,7 @@ class Round
     p2_move = opponent.moves.last
     if p1_move == p2_move
       @winner << "Draw"
-    elsif (p1_move == "rock" &&  p2_move == "scissors" ||
+    elsif (p1_move == "rock" && p2_move == "scissors" ||
       p1_move == "scissors" && p2_move == "paper" ||
       p1_move == "paper" && p2_move == "rock")
       @winner << @current_turn
@@ -66,4 +71,16 @@ class Round
     @current_turn.store_move(move)
   end
 
+  def record_outcome
+    @players.each do |player|
+      case @winner.last
+      when player
+        player.add_outcome("won", self)
+      when "Draw"
+        player.add_outcome("draw", self)
+      else
+        player.add_outcome("lost", self)
+      end
+    end
+  end
 end
