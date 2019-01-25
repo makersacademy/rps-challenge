@@ -19,12 +19,37 @@ class Game
   end
 
   def result
-    if @player_choice == 'Rock'
-      'Loose'
-    elsif @player_choice == 'Paper'
-      'Draw'
-    else
-      'Win'
-    end
+    find_outcome[computer_choice.to_sym]
+  end
+
+  private
+
+  def find_outcome
+    return rock if player_choice == 'Rock'
+    return paper if player_choice == 'Paper'
+    return scissors if player_choice == 'Scissors'
+  end
+
+  def rock
+    { Rock: 'Draw',
+    Paper: 'Loose',
+    Scissors: 'Win' }
+  end
+
+  def paper
+    { Rock: 'Draw',
+    Paper: 'Loose',
+    Scissors: 'Win' }
+  end
+
+  def scissors
+    { Rock: 'Draw',
+    Paper: 'Loose',
+    Scissors: 'Win' }
+  end
+
+  def computer_choice
+    options = ['Rock', 'Paper', 'Scissors']
+    options[rand(0..2)]
   end
 end

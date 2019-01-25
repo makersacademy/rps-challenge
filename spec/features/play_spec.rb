@@ -1,20 +1,19 @@
 feature 'play RPS' do
   scenario 'player selects rock' do
-    # for time being computer selection is fixed at paper
-    enter_name_submit
-    click_button 'Rock'
+    srand(12_314)
+    select_rock
     expect(page).to have_content "Loose"
   end
 
-  scenario 'player selects paper' do
-    enter_name_submit
-    click_button 'Paper'
-    expect(page).to have_content "Draw"
+  scenario 'player selects Rock' do
+    srand(9)
+    select_rock
+    expect(page).to have_content "Win"
   end
 
-  scenario 'player selects Scissors' do
-    enter_name_submit
-    click_button 'Scissors'
-    expect(page).to have_content "Win"
+  scenario 'player selects Rock' do
+    srand(8)
+    select_rock
+    expect(page).to have_content "Draw"
   end
 end
