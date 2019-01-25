@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -8,18 +9,18 @@ class Rps < Sinatra::Base
   end
 
   post '/' do
-    session[:name] = params[:name]
+    Game.create(params[:name])
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:name]
+    @game = Game.instances
     erb :play
   end
 
   get '/result' do
-    @name = session[:name]
-    @choice = params[:choice]
+    @game = Game.instances
+    @game.make_choice(params[:choice])
     erb :result
   end
 
