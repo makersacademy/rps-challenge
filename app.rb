@@ -14,8 +14,16 @@ class RPSServer < Sinatra::Base
   end
 
   get '/rps' do
-    @name = session[:name]
     erb :rps
+  end
+
+  post '/declare_winner' do
+    session[:winner] = session[:name]
+    redirect '/declare_winner'
+  end
+
+  get '/declare_winner' do
+    erb :declare_winner
   end
 
   # start the server if ruby file executed directly
