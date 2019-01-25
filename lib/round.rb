@@ -1,3 +1,5 @@
+require_relative 'player'
+
 class Round
 
   def self.create(player)
@@ -15,8 +17,38 @@ class Round
     @current_turn = player
   end
 
+  def store_and_switch(move)
+    store_move(move)
+    switch_turn
+  end
+
+  def computer_move
+    random_move
+    switch_turn
+  end
+
+  def opponent
+    @players.select { |player| player != @current_turn }.first
+  end
+
   def switch_turn
-    @current_turn = @players.select { |player| player != @current_turn }.shift
+    @current_turn = opponent
+  end
+
+  # def return_last_moves
+  #   @players.each { |player| player.moves.last }
+  # end
+
+  private
+
+  def random_move
+    move = generate_random
+    store_move(move)
+  end
+
+  def generate_random
+    options = ["scissor", "rock", "paper"]
+    options[rand(0..2)]
   end
 
   def store_move(move)

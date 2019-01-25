@@ -24,13 +24,13 @@ class Game < Sinatra::Base
     erb :options
   end
 
+  post '/store-move' do
+    @round.store_and_switch(params[:move])
+    redirect '/computer-move'
+  end
 
-  post '/computer-move' do
-    @round.store_move(params[:move])
-    @round.switch_turn
-  #  @round.random_move
-  @round.switch_turn
-
+  get '/computer-move' do
+    @round.computer_move
     redirect '/result'
   end
 
