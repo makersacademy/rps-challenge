@@ -1,0 +1,11 @@
+<body>
+<h3> <%= @game.player.name %> attacked computer with: <%= @game.player.move %> </h3>
+
+
+<p> Computer attacked <%= @game.player.name %> with: <%= @game.computer.move %> </p>
+
+
+<form action="/turn_over" method="post">
+<input type="submit" value="OK">
+</form>
+</body>
