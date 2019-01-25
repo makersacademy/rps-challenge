@@ -1,5 +1,13 @@
 class Game
 
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
   attr_reader :player, :cpu
 
   def initialize(player, cpu = Cpu, rps = Rps, printer = Printer)
@@ -18,7 +26,7 @@ class Game
   end
 
   def print_result
-    @printer.winner(decide_result)
+    decide_result == "draw" ? @printer.draw : @printer.winner(decide_result)
   end
 
 

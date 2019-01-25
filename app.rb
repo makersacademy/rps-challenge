@@ -3,16 +3,21 @@ require './models/player'
 require './models/rps'
 require './models/game'
 require './models/cpu'
+require './models/printer'
 
 class RockPaperScissors < Sinatra::Base
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb(:index)
   end
 
   post '/welcome_message' do
-    $player = Player.new(params[:name])
-    @player = $player
+    player = Player.new(params[:name])
+    @game = Game.create(player)
     erb(:welcome_message)
   end
 
@@ -20,8 +25,7 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  get '/winner' do
-    @game = Game.new($player)
+  post '/winner' do
     @game.select_player_move(params[:moves])
     @game.select_cpu_move
     erb(:winner)

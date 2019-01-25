@@ -2,7 +2,7 @@
   <link rel="stylesheet" type="text/css" href="theme.css" />
 </head>
 
-<h1>Let's play RPS, are you ready <%= @player.name %>?</h1>
+<h1>Let's play RPS, are you ready <%= @game.player.name %>?</h1>
 
 <form action=/play method="get" id="ready">
   <input type="submit" value="Begin game">

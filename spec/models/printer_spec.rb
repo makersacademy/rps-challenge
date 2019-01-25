@@ -10,4 +10,11 @@ describe Printer do
      end
   end
 
+  describe '#draw' do
+
+     it 'should print out message if a draw' do
+       expect(subject.draw).to eq "It is a draw"
+     end
+  end
+
 end
