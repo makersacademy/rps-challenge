@@ -2,10 +2,32 @@
 <html>
   <head>
     <style>
-      body {
-        <!-- font-family:  -->
-        
-      }
+    body, input, select {
+      background-color: #f9f509;
+      text-align: center;
+      font-size: 30px;
+      margin-top: 20px;
+      margin-bottom: 30px
+    }
+
+    select, input {
+      width: 500px;
+      height: 50px;
+      background-color:#fff;
+      border-bottom: 2px solid
+    }
+
+    h1, h2 {
+      color: #000;
+      margin-top: 50px;
+      text-align: center
+    }
+    .column {
+      float: left;
+      width: 50%;
+    }
+
+
     </style>
   </head>
   <body>
@@ -14,18 +36,47 @@
 
     <div>
       <% if @round.winner.last == "Draw"%>
-      <h2>It was a draw</h2>
+      <h1>It was a draw</h1>
       <% else%>
-      <h2><%= @round.winner.last.name%> wins! <br></h2>
+      <h1><%= @round.winner.last.name%> wins! <br></h1>
       <%end%>
     </div>
 
-    <div>
-      <h3><%= @round.current_turn.name%>'s Scores </h3>
-
-      Wins: <%= @round.current_turn.count_outcome("won")%> <br>
-      Losses: <%= @round.current_turn.count_outcome("lost")%> <br>
-      Draws: <%= @round.current_turn.count_outcome("draw")%> <br>
+    <div class="row">
+      <div class="column"></div>
+      <div class="column"></div>
     </div>
+
+
+    <div class="row">
+      <div class="column">
+        <h3><%= @round.current_turn.name%>'s Scores </h3>
+        <b>Wins: <%= @round.current_turn.count_outcome("won")%> </b><br>
+        Losses: <%= @round.current_turn.count_outcome("lost")%> <br>
+        Draws: <%= @round.current_turn.count_outcome("draw")%> <br>
+      </div>
+
+      <div class="column">
+        <h3><%= @round.opponent.name%>'s Scores </h3>
+        <b>Wins: <%= @round.opponent.count_outcome("won")%> </b><br>
+        Losses: <%= @round.opponent.count_outcome("lost")%> <br>
+        Draws: <%= @round.opponent.count_outcome("draw")%> <br>
+      </div>
+
+    </div>
+
+    <div>
+      <h2> Your turn <%=@round.current_turn.name%>! </h2>
+
+      <form action= '/store-move' method='post'>
+      <select name = "move">
+        <option name = "rock">rock</option>
+        <option name = "paper">paper</option>
+        <option name = "scissors">scissors</option>
+      </select>
+      <input type= "submit" value="Go!">
+      </form>
+
+</div>
   </body>
 </html>
