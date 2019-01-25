@@ -31,7 +31,7 @@
   </head>
   <body>
     You played <%= @round.current_turn.moves.last%> <br>
-    Computer played <%=@round.opponent.moves.last%> <br>
+    <%=@round.opponent.name%> played <%=@round.opponent.moves.last%> <br>
 
     <div>
       <% if @round.winner.last == "Draw"%>

@@ -20,7 +20,8 @@ class Game < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:name])
-    @round = Round.create(player)
+    player2 = params[:name2] || "Computer"
+    @round = Round.create(player, Player.new(player2) )
     redirect '/play'
   end
 

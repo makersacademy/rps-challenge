@@ -2,8 +2,8 @@ require_relative 'player'
 
 class Round
 
-  def self.create(player)
-    @round = Round.new(player)
+  def self.create(player, computer = Player.new("Computer"))
+    @round = Round.new(player, computer)
   end
 
   def self.this_round
@@ -12,7 +12,7 @@ class Round
 
   attr_reader :players, :current_turn, :winner
 
-  def initialize(player, computer = Player.new("Computer"))
+  def initialize(player, computer)
     @players = [player, computer]
     @current_turn = player
     @winner = []
