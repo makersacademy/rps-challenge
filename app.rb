@@ -15,7 +15,7 @@ class RPS < Sinatra::Base
   end
 
   post '/singleplayer' do
-    erb :index
+    erb :sp_input
   end
 
   post '/spsetup' do
@@ -26,9 +26,13 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
+  post '/multiplayer' do
+    erb :mp_input
+  end
+
   post '/mpsetup' do
     player1 = Player.new(params[:player1])
-    player1 = Player.new(params[:player1])
+    player2 = Player.new(params[:player2])
     rounds = params[:rounds]
     @game = Game.create(player1, player2, rounds)
     redirect '/play'
@@ -69,10 +73,14 @@ class RPS < Sinatra::Base
   get '/botcheck' do
     if @game.player2.is_a? Computer
       @game.player2.assign_move
+      redirect '/result'
+    elsif @game.turn == @game.player2
+      @game.switch_turn
+      redirect '/result'
     else
       @game.switch_turn
+      redirect '/play'
     end
-    redirect '/result'
   end
 
 
