@@ -49,6 +49,11 @@ class Game
     @current_round += 1
   end
 
+  def increment_round_and_score(winning_player)
+    increment_round
+    winning_player.increment_score
+  end
+
   def game_over?
     break_point = total_rounds / 2
     return player1 if player1.score > break_point

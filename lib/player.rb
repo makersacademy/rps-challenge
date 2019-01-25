@@ -4,7 +4,6 @@ class Player
   def initialize(name)
     @name = name
     @score = 0
-    @move = ""
   end
 
   def assign_move(move)

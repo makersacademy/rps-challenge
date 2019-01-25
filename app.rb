@@ -62,15 +62,8 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @winner = @game.round_winner?
-    if @winner != "Draw!"
-      @winner.increment_score
-      @game.increment_round
-    end
-    if @game.game_over?
-      erb :game_over
-    else
-      erb :result
-    end
+    @game.increment_round_and_score(@winner) if @winner != "Draw!"
+    @game.game_over? ? erb(:game_over) : erb(:result)
   end
 
 end

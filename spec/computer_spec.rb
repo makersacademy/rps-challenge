@@ -4,11 +4,11 @@ describe Computer do
   subject(:ai) { described_class.new }
 
   describe 'new' do
+    it 'Initializes with name set to computer' do
+      expect(ai.name).to eq "Computer"
+    end
     it 'Initializes with score set to 0' do
       expect(ai.score).to eq 0
-    end
-    it 'Initializes with move set to an empty string' do
-      expect(ai.move).to eq ""
     end
   end
 

@@ -4,7 +4,6 @@ class Computer
   def initialize
     @name = "Computer"
     @score = 0
-    @move = ""
   end
 
   def assign_move
