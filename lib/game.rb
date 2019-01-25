@@ -14,4 +14,12 @@ class Game
     @player1=player1
   end
 
+  def win?
+  end
+
+  
+  def computers_hand
+    ['Rock', 'Paper','Scissors'].sample
+  end
+
 end

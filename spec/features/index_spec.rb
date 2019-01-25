@@ -17,4 +17,5 @@ feature 'Enter player name' do
     click_button 'Rock Paper Scissors!'
     expect(page).to have_content "Select your hand"
   end
+  
 end
