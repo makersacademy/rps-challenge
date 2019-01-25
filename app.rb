@@ -10,6 +10,11 @@ class Game < Sinatra::Base
   end
 
   get '/' do
+    erb :game_type_form
+  end
+
+  post '/type' do
+    @type = params[:type]
     erb :entry_form
   end
 

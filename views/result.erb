@@ -27,7 +27,6 @@
       width: 50%;
     }
 
-
     </style>
   </head>
   <body>
@@ -62,12 +61,10 @@
         Losses: <%= @round.opponent.count_outcome("lost")%> <br>
         Draws: <%= @round.opponent.count_outcome("draw")%> <br>
       </div>
-
     </div>
 
     <div>
       <h2> Your turn <%=@round.current_turn.name%>! </h2>
-
       <form action= '/store-move' method='post'>
       <select name = "move">
         <option name = "rock">rock</option>

@@ -30,7 +30,11 @@
     <form action= '/name' method=post >
       Your name: <br>
       <input type= "text" name="name" required ><br>
-      <input type= "submit" value= "Play" > <br>
+      <%if @type == "2 player"%>
+      Opponent name: <br>
+      <input type= "text" name="name2" required ><br>
+      <%end%>
+        <input type= "submit" value= "Play" > <br>
     </form>
 </body>
 </html>
