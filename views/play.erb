@@ -1,5 +1,21 @@
-<h1> <%= @p1name%> <br> vs <br> <%= @p2name%> </h1>
+<h1>What's Your Weapon Of Choice,  <%=  @p1name%>? </h1>
 
-<img src="/rock.png" width="82" height="86" title="rock" alt="rock">
-<img src="/paper.png" width="82" height="86" title="paper" alt="scisspaperors">
-<img src="/scissors.png" width="82" height="86" title="scissors" alt="scissors">
+<form action="/move1" method="post">
+  <select name="move">
+    <option value="Rock"> Rock </option>
+    <option value="Paper"> Paper </option>
+    <option value="Scissors"> Scissors </option>
+	</select>
+	<input type="submit" name="Submit" value="Submit">
+</form>
+
+<!-- refactor to use images instead of dropdown list
+<form action="/move1" method="post">
+<input type="image" name="move" id="rock" src="/rock.png" width="82" height="86" alt="rock" />
+</form>
+<form action="/move1" method="post">
+<input type="image" name="move" id="paper" src="/paper.png" width="82" height="86" alt="paper"/>
+</form>
+<form action="/move1" method="post">
+<input type="image" name="move" id="scissors" src="/scissors.png" width="82" height="86" alt="scissors"/>
+</form> -->
