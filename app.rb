@@ -42,19 +42,6 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  get '/result' do
-    @winner = @game.round_winner?
-    if @winner != "Draw!"
-      @winner.increment_score
-      @game.increment_round
-    end
-    if @game.game_over?
-      erb :game_over
-    else
-      erb :result
-    end
-  end
-
   post '/rock' do
     @game.turn.assign_move(params[:rock])
     redirect '/botcheck'
@@ -80,6 +67,19 @@ class RPS < Sinatra::Base
     else
       @game.switch_turn
       redirect '/play'
+    end
+  end
+
+  get '/result' do
+    @winner = @game.round_winner?
+    if @winner != "Draw!"
+      @winner.increment_score
+      @game.increment_round
+    end
+    if @game.game_over?
+      erb :game_over
+    else
+      erb :result
     end
   end
 

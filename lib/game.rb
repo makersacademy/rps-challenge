@@ -35,9 +35,13 @@ class Game
   end
 
   def round_winner?
-    beats = { 'Rock' => 'Scissors', 'Paper' => 'Rock', 'Scissors' => 'Paper' }
+    beats = { 'Rock' => ['Scissors', 'Lizard'],
+              'Paper' => ['Spock', 'Rock'],
+              'Scissors' => ['Lizard', 'Paper'],
+              'Lizard' => ['Spock', 'Paper'],
+              'Spock' => ['Rock', 'Scissors'] }
     return "Draw!" if player1.move == player2.move
-    return player1 if beats[player1.move] == player2.move
+    return player1 if beats[player1.move].include?(player2.move)
     player2
   end
 
