@@ -1,0 +1,33 @@
+<head>
+  <link rel="stylesheet" href="/CSS/style2.css" type="text/css" />
+</head>
+
+<% if @game.winner == 'Tie' %>
+<center><h1 contenteditable>It's a tie!</h1>
+<font size="5" color="white">
+<%= @game.player1.name %> chose <%= @game.player1.move %><br>
+<%= @game.player2.name %> chose <%= @game.player2.move %><br>
+</font></center>
+<% else %>
+<center><h1 contenteditable><%= @game.winner %> won!</h1>
+<font size="5" color="white">
+<%= @game.player1.name %> chose <%= @game.player1.move %><br>
+<%= @game.player2.name %> chose <%= @game.player2.move %><br>
+</font></center>
+<% end %>
+
+<% if @game.winner == @game.player1.name %>
+<center>
+  <img src="/images/computer.gif" style="width:320px;height:248px;"><br>
+  <font size="5" color="white">
+    Darn! you got lucky this time <%= @game.player1.name %>!, Play again?
+    </font>
+    </center>
+<% elsif @game.winner == @game.player2.name %>
+<center>
+  <img src="/images/computer.gif" style="width:320px;height:248px;"><br>
+  <font size="5" color="white">
+  <%= @game.player2.name %> THE CHAMPIONAYYYYY, Play again?
+    </font>
+    </center>
+<% end %>

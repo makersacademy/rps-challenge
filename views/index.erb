@@ -1,1 +1,25 @@
-<h1>YEY!!! the server works!</h1>
+<head>
+  <link rel="stylesheet" href="/CSS/style.css" type="text/css" />
+</head>
+
+
+<h1 contenteditable>Rock Paper Scissors</h1>
+<% if @game == nil %>
+<center><font color="white"><h2>What's your name?</h2>
+  <form action="/name" method="post">
+    <input type="text" name="player_name">
+    <input type="submit" value="Submit">
+  </form>
+</center>
+<% else %>
+<center><font color="white"><h2>Great, thanks <%= @game.player1.name %>, Let's get going</h2>
+</font>
+  </center>
+<div class="btn-wrapper">
+  <div class="btn-wrapper__container">
+    <div class="btn-inner">
+      <a class="btn-inner__text" id="button" href="/play_game">Play Game</a>
+    </div>
+  </div>
+</div>
+<% end %>

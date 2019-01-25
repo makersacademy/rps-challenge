@@ -1,0 +1,23 @@
+<head>
+  <link rel="stylesheet" href="/CSS/style2.css" type="text/css" />
+</head>
+
+<div align="center">
+  <h1 contenteditable><%= @game.player1.name %>Vs. <%= @game.player2.name %></h1>
+</div>
+
+<div align="center">
+  <img src="/images/computer.gif" style="width:320px;height:248px;"><br>
+  <font size= "5" color="white">Hey <%= @game.player1.name %>!, I'm <%= @game.player2.name %>, Lets play Rock, Paper, Scissors!</font><br><br>
+  <font size= "5" color="white">Which will you choose?</font>
+</div>
+
+<div align="center">
+  <form action="/move" method="post">
+  <select name="input">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+    <input type="submit" value="Submit">
+</div>
