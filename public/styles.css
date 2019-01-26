@@ -21,15 +21,79 @@ h1, h2 {
 }
 
 
+ 
+.index_body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: red;
+}
+
+.index_rps {
+  position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 7.5s;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+  0% {
+    background-position: -325%;
+  }
+  100% {
+    background-position: 1000%;
+    color: black;
+  }
+}
+
+.index_question {
+  animation: from_black 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes from_black {
+  0% {
+    color: black;
+    filter: blur(2px);
+  }
+  50% {
+    color: black;
+    filter: blur(1.5px);
+  }
+  100% {
+    color: grey;
+    filter: blur(0.5px); 
+  }
+}
+
+
 .index_submit {
   position: relative;
   width: 10%;
   height: 10%;
   top: 8vh;
-  border-radius: 80px;
-  animation: uparrow 1.2s infinite;
+  border-radius: 80px; 
+  animation: hide_me 24s, uparrow 1.2s infinite;
   animation-timing-function: linear;
 }
+
+@keyframes hide_me {
+  0% { visibility: hidden; opacity: 0};
+  100% {visibility: visible; opacity: 1};
+}
+
 
 @keyframes uparrow {
   0% {top: 6vh; filter: blur(1.5px);}
@@ -46,6 +110,8 @@ h1, h2 {
   font-weight: bold;
   border-radius: 10px;
   filter: drop-shadow(12px 12px 14px red) invert(85%);
+    animation: hide_me 24s;
+  animation-fill-mode: forwards;
 }
 
 .rock { 

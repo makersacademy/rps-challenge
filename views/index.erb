@@ -3,8 +3,13 @@
   <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
 </head>
 
+
 <div class="index">
-<h1 class="index_rps" style="color: red" >Rock, Paper, Scissors</h1>
+<h1 class="index_rps" style="color: red" >Rock, Paper, Scissors</h1> 
+<audio autoplay>
+  <source src="rps.mp3" type="audio/mpeg">
+</audio>
+
 <br>
 <h2 class="index_question">What Should I Call You?
   <form action="/names" method="post">

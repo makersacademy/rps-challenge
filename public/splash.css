@@ -26,18 +26,31 @@ body {
 .makers {
   background: url(makers_sliced.png) 0px 150px, url(makers_sliced.png) 0px -225px, black;
   background-repeat: no-repeat;
-  -webkit-transition: background-position 0.5s ease;
-  -moz-transition: background-position 0.5s ease;
-  -o-transition: background-position 0.5s ease;
-  -ms-transition: background-position 0.5s ease;
-  transition: background-position 0.5s ease;
+  -webkit-transition: background-position 0.5s ease; filter: blur(0px);
+  -moz-transition: background-position 0.5s ease; filter: blur(2px);
+  -o-transition: background-position 0.5s ease; filter: blur(4px);
+  -ms-transition: background-position 0.5s ease; filter: blur(2px);
+  transition: background-position 0.5s ease; filter: blur(0px);
 }
  
 .makers:hover {
   background: url(makers_sliced.png) 0px 210px, url(makers_sliced.png) 0px -285px, black;
   background-repeat: no-repeat;
+  animation: focus_out 40s infinite;
 }
  
+
+@keyframes focus_out{
+  0% {filter: blur(0px);}
+  25% {filter: blur(0.5px);}
+  50% {filter: blur(3px);}
+  75% {filter: blur(4px);}
+  100% {filter: blur(5px);}
+  75% {filter: blur(7.5px);}
+  50% {filter: blur(10px);}
+  25% {filter: blur(15px);}
+}
+
 .reveal p {
   font: 45px/300px Helvetica, Arial, sans-serif;
   text-align: center;
@@ -53,7 +66,7 @@ body {
 }
  
 .reveal:hover p {
-  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=100);
   opacity: 1;
   cursor: pointer;
@@ -64,5 +77,5 @@ body {
 }
 
 .zoom:hover {
-  transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(2);
 }
