@@ -27,6 +27,11 @@ describe Battle do
       allow(@computer).to receive(:move) { :scissors }
       expect(Battle.new(@player,@computer).winner).to eq(:draw)
     end
+    it "returns nil if players haven't chosen moves" do
+      allow(@player).to receive(:move) { nil }
+      allow(@computer).to receive(:move) { nil }
+      expect(Battle.new(@player,@computer).winner).to eq(nil)
+    end
   end
   describe "#loser" do
     it "returns the loser" do

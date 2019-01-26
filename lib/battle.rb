@@ -5,11 +5,19 @@ class Battle
   end
 
   def winner
-    return result[:draw] ? :draw : result[:win]
+    begin
+      return result[:draw] ? :draw : result[:win]
+    rescue NoMethodError
+      return nil
+    end
   end
 
   def loser
-    return result[:draw] ? :draw : result[:lose]
+    begin
+      return result[:draw] ? :draw : result[:lose]
+    rescue NoMethodError
+      return nil
+    end
   end
 
   private
@@ -20,10 +28,14 @@ class Battle
       paper: {rock: :win, paper: :draw, scissors: :lose},
       scissors: {rock: :lose, paper: :win, scissors: :draw}
     }
-    case lookup[@player1.move][@player2.move]
-      when :draw then return {win: nil, lose: nil, draw: true}
-      when :win then return {win: @player1, lose: @player2, draw: false}
-      when :lose then return {win: @player2, lose: @player1, draw: false}
+    begin
+      case lookup[@player1.move][@player2.move]
+        when :draw then return {win: nil, lose: nil, draw: true}
+        when :win then return {win: @player1, lose: @player2, draw: false}
+        when :lose then return {win: @player2, lose: @player1, draw: false}
+      end
+    rescue NoMethodError
+      return nil
     end
   end
 end
