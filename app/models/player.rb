@@ -1,17 +1,13 @@
 class Player
 
-  attr_reader :name
-
-  def self.create(name)
-    @player = Player.new(name)
-  end
-
-  def self.instance
-    @player
-  end
+  attr_reader :name, :choice
 
   def initialize(name)
     @name = name
   end
+
+  # def choice(choice)
+  #   @choice = choice
+  # end
 
 end

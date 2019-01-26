@@ -2,10 +2,6 @@ require_relative 'web_helpers.rb'
 
 feature 'Testing infrastructure' do
 
-  # As a marketeer
-  # So that I can see my name in lights
-  # I would like to register my name before playing an online game
-
   scenario 'App can load and have content' do
     visit ('/')
     expect(page).to have_content 'Welcome, player'
@@ -17,19 +13,20 @@ feature 'Testing infrastructure' do
     expect(page).to have_content 'Test Name'
   end
 
-  # As a marketeer
-  # So that I can enjoy myself away from the daily grind
-  # I would like to be able to play rock/paper/scissors
-
-  scenario 'Can select an option from Rock, Paper, and Scissors' do
+  scenario 'Can select an option from Rock, Paper, and Scissors and display it' do
     enter_name_and_play
     click_button('Rock')
+    expect(page).to have_content('You picked rock')
   end
 
-  scenario 'Display user selection once button is pressed' do
+  scenario 'Can display the computers choice' do
+    srand 876
     enter_name_and_play
-    click_button('Rock')
-    expect(page).to have_content 'Your selection: Rock'
+    click_button('Paper')
+    click_button('See what the computer picked')
+    expect(page).to have_content 'The computer picked: '
+    expect(page).to have_content 'scissors'
+    expect(page).to have_content 'YOU LOSE!'
   end
 
 end

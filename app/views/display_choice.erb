@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <h1>You picked</h1>
+    <p> <%= @game.translate(@game.round[0]) %> </p>
+    <form action="/computer_choice" method="get" >
+      <input type="submit" value="See what the computer picked.">
+    </form>
+  </body>
+</html>
