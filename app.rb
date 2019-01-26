@@ -26,6 +26,7 @@ class Rps < Sinatra::Base
     @game = Game.new(@player, params[:weapon])
     @weapon = @game.weapon
     @machine = @game.machine
+    @outcome = @game.printer
 
     erb :game
   end

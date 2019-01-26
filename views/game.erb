@@ -12,9 +12,11 @@
     margin-bottom: 50px;
     color: Tomato;
   }
-  input {
-    margin-top: 5px;
-    margin-bottom: 5px;
+  h2 {
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: DeepPink;
   }
   button {
     font-size: 25px;
@@ -28,6 +30,7 @@
 
 <h1><%=@player%> chose <b><%=@weapon%></b></h1>
 <h1>Computer chose <b><%=@machine%></b></h1>
+<h2><%=@outcome%></h2>
 
 <form action="/play">
   <button type="submit">Try Again</button>

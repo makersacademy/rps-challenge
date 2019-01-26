@@ -20,4 +20,14 @@ class Game
     rules[@weapon.to_sym][@machine.to_sym]
   end
 
+  def printer
+    if self.outcomes == :win
+      "Hurray! you win!"
+    elsif self.outcomes == :lose
+      "I'm sorry, you lose ..."
+    else
+      "It is a darw"
+    end
+  end
+
 end
