@@ -15,7 +15,26 @@ class RockPaperScissors < Sinatra::Base
 
   get '/game' do
     @name = session[:name]
+    @rock = session[:rock]
+    @paper = session[:paper]
+    @scissors = session[:scissors]
     erb :game
+  end
+
+  post '/play' do
+    session[:rock] = params[:rock]
+    session[:paper] = params[:paper]
+    session[:scissors] = params[:scissors]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @name = session[:name]
+    @computer_choice = ['rock', 'paper', 'scissors'].sample
+    @rock = session[:rock]
+    @paper = session[:paper]
+    @scissors = session[:scissors]
+    erb :result
   end
 
   # start the server if ruby file executed directly
