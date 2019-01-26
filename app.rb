@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/computer'
-require './lib/game_result'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -18,7 +18,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player = $player
-    p @player
     erb :play
   end
 
@@ -32,7 +31,6 @@ class RockPaperScissors < Sinatra::Base
     @computer = Computer.new
     @computer_move = @computer.random_move
     @player.move = $move
-    p @player
     erb :result
   end
 
