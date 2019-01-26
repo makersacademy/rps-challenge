@@ -1,4 +1,5 @@
 require 'sinatra'
+require './lib/rock_paper_scissors'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -23,6 +24,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+    @computer_choice = RockPaperScissorsResult.new.opponent_pick_rps
     @player1_name = session[:player1_name]
     @player1_choice = session[:player1_choice]
     erb(:result)

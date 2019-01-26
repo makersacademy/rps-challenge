@@ -9,4 +9,14 @@ feature RPS do
     expect(page).to have_button("paper")
     expect(page).to have_button("scissors")
   end
+  scenario 'User can choose one of the weapons and is presented with the result' do
+    player1_sign_in
+    click_button("rock")
+    expect(page).to have_content("Marketeer 1 has gone with")
+  end
+  scenario 'User is presented with the option the computer chose' do
+    player1_sign_in
+    click_button("rock")
+    expect(page).to have_content("Your opponent has gone with")
+  end
 end
