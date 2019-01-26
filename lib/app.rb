@@ -35,8 +35,7 @@ class RPS < Sinatra::Base
 
   post '/reset' do
     Game.reset
-    session[:player_one_name] = nil
-    session[:weapon] = nil
+    session[:player_one_name], session[:weapon] = nil
     redirect '/'
   end
 
