@@ -23,3 +23,7 @@ Break the task into smaller bites:<br>
   - on the `/play` page, user can choose among the R/P/S buttons
   - client will send GET request to server which directs to the /game route
   - the /game route will contain a allow interaction with relevant models
+
+  #### Contribution
+
+  The hash method for storing game rules was taken from [rps-exemplar](https://github.com/makersacademy/rps-exemplar/blob/master/lib/turn.rb)

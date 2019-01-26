@@ -14,7 +14,7 @@ describe Game do
   describe "#random_rps" do
     # NOT SURE HOW TO STUB RANDOM FOM ANOTHER CLASS
     it "choose paper" do
-      allow(game).to receive(:random_rps).and_return "PAPER"
+      allow(game.machine).to receive(:random_rps).and_return "PAPER"
       expect(game.machine).to eq "PAPER"
     end
   end
