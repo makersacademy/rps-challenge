@@ -10,13 +10,13 @@ class RockPaperScissors < Sinatra::Base
   end
   post "/registername" do
     session['player1name'] = params['player1name']
+    session['player1'] = Player.new(session['player1name'])
+    session['computerplayer'] = Computer.new
     redirect '/match'
   end
   get "/match" do
-    session['player1'] ||= Player.new(session['player1name'])
-    session['computerplayer'] ||= Computer.new
     @player1 = session['player1']
-    @winner = Game.new(session['player1'],session['player2']).winner
+    @winner = Battle.new(session['player1'],session['computerplayer']).winner
     erb(:match)
   end
 
@@ -27,8 +27,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/paper" do
+    session['player1'].choose_move(:paper)
+    session['computerplayer'].choose_move
+    redirect '/match'
   end
   post "/scissors" do
+    session['player1'].choose_move(:scissors)
+    session['computerplayer'].choose_move
+    redirect '/match'
   end
   run! if app_file == $0
 end

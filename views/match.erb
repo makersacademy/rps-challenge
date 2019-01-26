@@ -1,1 +1,23 @@
 Hi <%= @player1.name %>
+
+<% if @winner==nil %>
+Choose your move
+<% end %>
+
+<form action="/rock" method="post">
+ <input type="submit" value=rock>
+</form>
+
+<form action="/paper" method="post">
+ <input type="submit" value=paper>
+</form>
+
+<form action="/scissors" method="post">
+ <input type="submit" value=scissors>
+</form>
+
+<% if @winner!=nil && @winner!=:draw %>
+<%= @winner.name %> wins!
+<% elsif @winner!=nil && @winner==:draw %>
+It's a draw!
+<% end %>
