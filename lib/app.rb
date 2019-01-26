@@ -17,6 +17,7 @@ class RPS < Sinatra::Base
   get '/play' do
     @player_one_name = session[:player_one_name]
     @player_one_weapon = session[:weapon]
+    @player_two_weapon = Game.choose_weapon
     erb :play
   end
 
