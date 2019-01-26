@@ -18,7 +18,8 @@ class RPS < Sinatra::Base
   get '/play' do
     @player_one_name = session[:player_one_name]
     @player_one_weapon = session[:weapon]
-    @player_two_weapon = Game.choose_weapon
+    session[:player_two_weapon] = Game.choose_weapon
+    @player_two_weapon = session[:player_two_weapon]
     erb :play
   end
 
@@ -28,7 +29,7 @@ class RPS < Sinatra::Base
   end
 
   post '/resolve' do
-
+    session[:result] = Game.resolve()
   end
 
   run! if app_file == $0
