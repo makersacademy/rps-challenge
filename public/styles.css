@@ -1,3 +1,47 @@
+body {
+  background-color: black
+}
+
+h1, h2 {
+  color: white
+}
+
+
+.index {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.index_rps, .index_question {
+  text-align: center;
+}
+
+.index_submit {
+  position: relative;
+  width: 10%;
+  height: 10%;
+  top: 8vh;
+  border-radius: 80px;
+  animation: uparrow 1.2s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes uparrow {
+  0% {top: 6vh; filter: blur(0.5px);}
+  25% {filter: blur(1px);}
+  50% {top: 7vh; filter: blur(1.5px);}
+  75% {filter: blur(1px);}
+  100% {top: 6vh; filter: blur(0.5px);}
+}
+
+.index_input {
+  position: relative;
+  top: 5vh;
+}
+
 .rock { 
   background-color: lightblue
 }
@@ -8,6 +52,8 @@
   background-color: lightblue
 
 }
+
+
 
 #container {
  width:100%;
@@ -42,3 +88,5 @@
   opacity: 1;
   cursor: pointer;
 }
+
+

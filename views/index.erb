@@ -1,13 +1,16 @@
 <head>
-  <title>Howdy, Rowdy!</title>
+  <title>What's Your Name?</title>
   <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
 </head>
 
-<h1>Rock, Paper, Scissors</h1>
+<div class="index">
+<h1 class="index_rps">Rock, Paper, Scissors</h1>
 <br>
-<h2>What Should I Call You?
+<h2 class="index_question">What Should I Call You?
   <form action="/names" method="post">
-  	<input type="text" name="p1name" autofocus="">  
-  	<input type="submit" name="Submit" value="Submit"> 
+  	<input class="index_input" type="text" name="p1name" autofocus="">  
+  	<br>
+  	<input id="bounce" class="index_submit" type="image" src="play_button.png"  value="Submit"> 
   </form>
 </h2>
+</div>
