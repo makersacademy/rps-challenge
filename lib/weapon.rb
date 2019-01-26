@@ -2,7 +2,6 @@ class Weapon
 
   @wins = []
   @loses = []
-  @opponent = ""
 
   def self.compare(other_weapon)
     @opponent = other_weapon.to_s
