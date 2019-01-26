@@ -8,21 +8,21 @@ class Game
   end
 
   def result
-      case
-    when player == "rock" && computer == "scissors"
-      puts "You win!"
-    when computer == "rock" && player == "scissors"
-      puts "Computer wins"
-    when player == "paper" && computer == "rock"
-      puts "You win!"
-    when computer == "paper" && player == "rock"
-      puts "Computer wins"
-    when player == "scissors" && computer == "paper"
-      puts "You win!"
-    when computer == "scissors" && player == "paper"
-      puts "Computer wins"
+    case 
+    when @player == "rock" && @computer == "scissors"
+      "You win!"
+    when @computer == "rock" && @player == "scissors"
+      "Computer wins"
+    when @player == "paper" && @computer == "rock"
+      "You win!"
+    when @computer == "paper" && @player == "rock"
+      "Computer wins"
+    when @player == "scissors" && @computer == "paper"
+      "You win!"
+    when @computer == "scissors" && @player == "paper"
+      "Computer wins"
     else
-      puts "It's a draw"
+      "It's a draw"
     end
   end
 

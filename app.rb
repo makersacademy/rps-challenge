@@ -30,7 +30,9 @@ class RockPaperScissors < Sinatra::Base
     @player = $player
     @computer = Computer.new
     @computer_move = @computer.random_move
-    @player.move = $move
+    @player.move = $move.downcase
+    @game = Game.new(@player.move, @computer_move)
+    @game.result
     erb :result
   end
 
