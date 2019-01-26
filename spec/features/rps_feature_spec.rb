@@ -47,7 +47,16 @@ feature 'play rock paper scissors' do
     sign_in_and_play
     choose_rock_and_scissors
     click_button('Resolve')
-    expect(page).to have_content(Game::COMPUTER_WIN_MESSAGE)
+    expect(page).to have_content(Game::COMPUTER_LOSE_MESSAGE)
+  end
+
+  scenario 'the game can be reset' do
+    sign_in_and_play
+    choose_rock_and_scissors
+    click_button('Resolve')
+    click_button('Reset')
+    expect(page).to have_content('Please sign in to play')
+
   end
 
 end

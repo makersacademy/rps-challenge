@@ -33,6 +33,13 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
+  post '/reset' do
+    Game.reset
+    session[:player_one_name] = nil
+    session[:weapon] = nil
+    redirect '/'
+  end
+
   run! if app_file == $0
 
 end

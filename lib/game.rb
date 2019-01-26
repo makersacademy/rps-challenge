@@ -22,6 +22,11 @@ class Game
     generate_result_string(@result) unless @result.nil?
   end
 
+  def self.reset
+    @result = nil
+    @player_two_weapon = nil
+  end
+
   private
 
   def self.generate_result_string(result)

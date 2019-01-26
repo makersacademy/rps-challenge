@@ -30,7 +30,4 @@ describe Game do
     expect(Game.resolve("Scissors")).to eq(:lose)
   end
 
-
-
-
 end
