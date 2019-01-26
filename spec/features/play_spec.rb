@@ -22,11 +22,11 @@ feature 'choose scissors' do
   end
 end
 
-feature 'choose paper' do
+feature 'computer choice' do
   scenario 'should confirm computer choice' do
     enter_name
-    srand(3)
+    srand(1)
     click_button 'Rock'
-    expect(page).to have_content "Computer chose Scissors!"
+    expect(page).to have_content "Computer played Paper! COMPUTER WON!"
   end
 end

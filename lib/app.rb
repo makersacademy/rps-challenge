@@ -25,13 +25,15 @@ class RPS < Sinatra::Base
   post '/choice' do
     session[:choice] = params[:choice]
     @choice = session[:choice]
+    session[:game] = Game.new(@player, @choice).result
+    @game = session[:game]
     redirect '/set'
   end
 
   get '/set' do
-    @game = Game.new
     @player = session[:player]
     @choice = session[:choice]
+    @game = session[:game]
     erb(:choice)
   end
 
