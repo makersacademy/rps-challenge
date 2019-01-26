@@ -39,13 +39,16 @@ feature 'play rock paper scissors' do
 
   scenario 'game will select a random option' do
     sign_in_and_play
+    allow(Game).to receive(:choose_weapon).and_return(:Scissors)
     click_button('Rock')
-    allow(Game).to receive(:choose_weapon).and_return('Scissors')
     expect(page).to have_content('The computer has chosen Scissors!')
   end
 
   xscenario 'the game will declare a winner' do
-
+    sign_in_and_play
+    click_button('Rock')
+    allow(Game).to receive(:choose_weapon).and_return(:Scissors)
+    expect(page).to have_content('Jill wins!')
   end
 
 end
