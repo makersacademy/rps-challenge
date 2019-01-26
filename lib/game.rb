@@ -1,5 +1,5 @@
-require 'player'
-require 'computer'
+require_relative 'player'
+require_relative 'computer'
 
 class Game
 
@@ -21,7 +21,7 @@ class Game
       @winner = @player
     elsif @player.choice == :scissors and @computer.choice == :paper
       @winner == @player
-    elsif
+    else
       @winner == @computer
     end
   end
