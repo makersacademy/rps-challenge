@@ -1,7 +1,7 @@
 feature 'Testing welcome page' do
   scenario 'Checking name of the game' do
     visit('/')
-    expect(page).to have_content "Rock paper scissors" 
+    expect(page).to have_content "Rock Paper Scissors" 
   end
 
   
