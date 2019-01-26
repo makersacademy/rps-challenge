@@ -9,7 +9,7 @@ feature 'play ' do
 
   scenario "player can choose rock, paper or scissors" do
     visit('/play')
-    find_button('Paper').click
+    find_button("Rock").click
   end
 
 end

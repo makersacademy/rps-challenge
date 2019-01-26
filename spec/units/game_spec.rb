@@ -1,7 +1,7 @@
 # require 'game'
 #
 # RSpec.describe Game do
-#   subject(:game) { Game.new("player1", "player2")}
+#   subject(:game) { Game.new("rock")}
 #
 #   describe '#computer_move' do
 #     it 'generates random move for computer' do

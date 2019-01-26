@@ -19,6 +19,16 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/move' do
+    $move = params[:move]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player = $player
+    erb :result
+  end
+
   run! if app_file == $0
 
 end
