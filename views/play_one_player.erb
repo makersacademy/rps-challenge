@@ -11,6 +11,13 @@
 </form>
 
 <% if @game.round > 0 %>
+
+  <%= @game.player_1.move %> vs. <%= @game.player_2.move %><br>
+  <% if @game.round_winner == "Draw" %>
+    It's a draw!<br>
+  <% else %>
+    <%= @game.round_winner %> wins!<br>
+  <% end %>
   <%= @game.player_1.name %>: <%= @game.player_1.score %>
   <%= @game.player_2.name %>: <%= @game.player_2.score %>
 <% end %>

@@ -44,5 +44,4 @@ class RockPaperScissors < Sinatra::Base
   get '/winner' do
 
   end
-
 end

@@ -10,8 +10,10 @@ class WinningLogic
           "Draw"
     elsif @winning_hash[player_1.move] == player_2.move
       player_1.add_point
+      player_1.name
     else
       player_2.add_point
+      player_2.name
     end
   end
 end
