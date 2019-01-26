@@ -5,9 +5,11 @@ require_relative 'lib/computer.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
+
   get "/" do
     erb(:enterplayer)
   end
+
   post "/registername" do
     session['player1'] = Player.new(params['player1name'])
     if params['player2name'] == ""
@@ -15,9 +17,11 @@ class RockPaperScissors < Sinatra::Base
       redirect '/match'
     else
       session['player2'] = Player.new(params['player2name'])
+      session['turn'] = Turn.new(session['player1'],session['player2'])
       redirect '/2pmatch'
     end
   end
+
   get "/match" do
     @player2 = session['computerplayer']
     @player1 = session['player1']
@@ -48,5 +52,7 @@ class RockPaperScissors < Sinatra::Base
     session['computerplayer'].choose_move
     redirect '/match'
   end
+
+
   run! if app_file == $0
 end
