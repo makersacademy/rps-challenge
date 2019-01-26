@@ -1,8 +1,13 @@
 require 'sinatra/base'
+require './lib/middle'
 
 class RockPaperScissors < Sinatra::Base
   
   enable :sessions
+
+  before do
+    @game = Middle.game_instance
+  end
 
   get '/' do
     erb :index
@@ -10,18 +15,18 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     session[:name] = params[:name]
+    @game = Middle.create_game(session[:name], Middle.computer)
+    p @game
     redirect '/game'
   end
 
   get '/game' do
-    @name = session[:name]
-    @rock = session[:rock]
-    @paper = session[:paper]
-    @scissors = session[:scissors]
+    @name = @game.players[0]
     erb :game
   end
 
   post '/play' do
+    # Take player 1's play and set it in game...
     session[:rock] = params[:rock]
     session[:paper] = params[:paper]
     session[:scissors] = params[:scissors]
