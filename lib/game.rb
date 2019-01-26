@@ -9,25 +9,23 @@ class Game
   COMPUTER_LOSE_MESSAGE = "You have beaten the computer! Congratulations!"
   ERROR_MESSAGE = "Something has gone wrong with the result calculation (sorry!)."
 
-  def self.choose_weapon
-    @player_two_weapon = WEAPONS.sample
-
-  end
-
-  def self.resolve(player_1_weapon)
-    @result = @player_two_weapon.compare(player_1_weapon)
+  def self.resolve(player_1_weapon, player_2_weapon = player_two_weapon)
+    @result = player_2_weapon.compare(player_1_weapon)
   end
 
   def self.print_result
-    generate_result_string(@result) unless @result.nil?
+    generate_result_string(@result)
+  end
+
+  def self.player_two_weapon
+    @weapon || generate_weapon
   end
 
   def self.reset
-    @result = nil
-    @player_two_weapon = nil
+    @weapon, @result = nil
   end
 
-  private
+  private_class_method
 
   def self.generate_result_string(result)
     case result
@@ -40,6 +38,10 @@ class Game
     else
       ERROR_MESSAGE
     end
+  end
+
+  def self.generate_weapon
+    @weapon = WEAPONS.sample
   end
 
 end

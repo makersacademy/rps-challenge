@@ -40,6 +40,7 @@ feature 'play rock paper scissors' do
   scenario 'game will select a random option' do
     sign_in_and_play
     choose_rock_and_scissors
+    click_button('Resolve')
     expect(page).to have_content('The computer has chosen Scissors!')
   end
 

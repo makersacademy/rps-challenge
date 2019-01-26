@@ -18,8 +18,6 @@ class RPS < Sinatra::Base
   get '/play' do
     @player_one_name = session[:player_one_name]
     @player_one_weapon = session[:weapon]
-    @player_two_weapon = Game.choose_weapon
-    @result = Game.print_result
     erb :play
   end
 
@@ -30,7 +28,15 @@ class RPS < Sinatra::Base
 
   post '/resolve' do
     Game.resolve(session[:weapon])
-    redirect '/play'
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player_one_name = session[:player_one_name]
+    @player_one_weapon = session[:weapon]
+    @player_two_weapon = Game.player_two_weapon
+    @result = Game.print_result
+    erb :result
   end
 
   post '/reset' do

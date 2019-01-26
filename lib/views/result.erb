@@ -1,0 +1,9 @@
+<div>The computer has chosen <%= @player_two_weapon %>!</div>
+<div><%= @result %></div>
+<div>Would you like to play again?</div>
+<div>
+  <form action="/reset" method="post">
+    <input type="submit" value="Reset">
+  </form>
+</div>
+
