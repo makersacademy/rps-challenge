@@ -1,9 +1,13 @@
+<head>
+  <title>Howdy, Rowdy!</title>
+  <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
 <h1>Rock, Paper, Scissors</h1>
 <br>
-
 <h2>What Should I Call You?
   <form action="/names" method="post">
-  	<input type="text" name="p1name">  
+  	<input type="text" name="p1name" autofocus="">  
   	<input type="submit" name="Submit" value="Submit"> 
   </form>
 </h2>

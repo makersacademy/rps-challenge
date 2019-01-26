@@ -4,6 +4,7 @@ class Player
   def initialize(name)
     @name = name
     @player_choice 
+    @ip 
   end
 
   def player_move(choice)
@@ -12,5 +13,9 @@ class Player
 
   def show
     @player_choice
+  end
+
+  def ip(ip)
+    @ip = ip
   end
 end

@@ -29,5 +29,6 @@ class Game
     "Are You Ready, ", "Have You Considered Your Choice Carefully, ", "Will This Be Your Victory, ", "Do You Think This Is A Good Move, "]
     @rand_message = msg.sample
   end
+
 end
 

@@ -1,9 +1,13 @@
 require "sinatra/base"
+require "geocoder"
 require_relative "./lib/game"
 
 class RPS < Sinatra::Base
 enable :sessions
 
+get '/welcome' do
+  erb(:splash)
+end
 
 get '/' do
   erb(:index)
@@ -20,8 +24,18 @@ get '/play' do
   erb(:play)
 end
 
-post '/move1' do 
-  $game.player.player_move(params[:move])
+get '/rock' do
+  $game.player.player_move("Rock")
+  redirect '/result'
+end
+
+get '/paper' do
+  $game.player.player_move("Paper")
+  redirect '/result'
+end
+
+get '/scissors' do
+  $game.player.player_move("Scissors")
   redirect '/result'
 end
 

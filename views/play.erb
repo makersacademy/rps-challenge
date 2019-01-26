@@ -1,21 +1,37 @@
+<head>
+  <title><%=$game.player.name%> vs Vaith</title>
+  <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
 <h1><%=$game.rand_messages%> <%=  $game.player.name%>? </h1>
 
-<form action="/move1" method="post">
-  <select name="move">
-    <option value="Rock"> Rock! </option>
-    <option value="Paper"> Paper! </option>
-    <option value="Scissors"> Scissors! </option>
-	</select>
-	<input type="submit" name="Submit" value="Submit">
-</form>
+<div id="container">
 
-<!-- refactor to use images instead of dropdown list
-<form action="/move1" method="post">
-<input type="image" name="move" id="rock" src="/rock.png" width="82" height="86" alt="rock" />
-</form>
-<form action="/move1" method="post">
-<input type="image" name="move" id="paper" src="/paper.png" width="82" height="86" alt="paper"/>
-</form>
-<form action="/move1" method="post">
-<input type="image" name="move" id="scissors" src="/scissors.png" width="82" height="86" alt="scissors"/>
-</form> -->
+<div class="choice">
+  <a href="/rock">
+    <div class="rock" style="border-radius: 25px;">
+      <img src="rock.png" alt="rock" style="width:22vw;height:22vh;">
+    </div>
+  </a>
+</div>
+
+<div class="choice">
+  <a href="/paper">
+    <div class="paper" style="border-radius: 25px;">
+      <img src="paper.png" alt="paper" style="width:22vw;height:22vh;">
+    </div>
+  </a>
+</div>
+
+<div>
+  <a href="/scissors">
+    <div class="scissors" style="border-radius: 25px;">
+      <img src="scissors.png" alt="scissors" style="width:22vw;height:22vh;">
+    </div>
+  </a>
+</div>
+
+</div>
+
+</body>
