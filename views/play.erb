@@ -19,11 +19,11 @@
   }
 </style>
 
-<h1><%=@player%>, let's start the game!</h1>
+<h1><%=@game.player1.name%>, let's start the game!</h1>
 
 <h2>Choose:</h2>
 <form action="/game">
-<button type="submit" name="choice" value="ROCK">ROCK</button>
-<button type="submit" name="choice" value="PAPER">PAPER</button>
-<button type="submit" name="choice" value="SCISSORS">SCISSORS</button>
+<button type="submit" name="weapon" value="ROCK">ROCK</button>
+<button type="submit" name="weapon" value="PAPER">PAPER</button>
+<button type="submit" name="weapon" value="SCISSORS">SCISSORS</button>
 </form>

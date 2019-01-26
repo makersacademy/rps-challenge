@@ -15,6 +15,17 @@
     margin-top: 5px;
     margin-bottom: 5px;
   }
+  button {
+    font-size: 25px;
+    padding: 14px 40px;
+    background-color: SlateBlue;
+    color: white;
+  }
 </style>
 
-<h1><%=@player%> chose <%=@choice%></h1>
+<h1><%=@game.player1.name%> chose <%=@weapon1%></h1>
+<h1>Computer chose <%=@weapon2%></h1>
+
+<form action="/play">
+  <button type="submit">Try Again</button>
+  </form>

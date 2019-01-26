@@ -12,18 +12,20 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:player])
+    player1 = Player.new(params[:player])
+    $game = Game.new(player1)
     redirect '/play'
   end
 
   get '/play' do
-    @player = $player.name
+    @game = $game
     erb :play
   end
 
   get '/game' do
-    @player = $player.name
-    @choice = params[:choice]
+    @game = $game
+    @weapon1 = params[:weapon]
+    @weapon2 = @game.random_rps
     erb :game
   end
 end
