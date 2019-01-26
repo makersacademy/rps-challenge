@@ -15,6 +15,7 @@ class RockPaperScissors < Sinatra::Base
     redirect '/match'
   end
   get "/match" do
+    @player2 = session['computerplayer']
     @player1 = session['player1']
     @winner = Battle.new(session['player1'],session['computerplayer']).winner
     erb(:match)
