@@ -110,35 +110,116 @@ h1, h2 {
   font-weight: bold;
   border-radius: 10px;
   filter: drop-shadow(12px 12px 14px red) invert(85%);
-    animation: hide_me 24s;
+  animation: hide_me 15s;
   animation-fill-mode: forwards;
 }
 
-.rock { 
-  background-color: lightblue
+.rand_mess {
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
+.parent{
+    width: 100%;
+    text-align: justify;
+    position: absolute;
+    left: 17.5%;
+    top: 65%;
+}
+
+.c1, .c2, .c3 {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin: 10px;
+    text-align: left;
+}
+
+.c1:hover, .c2:hover, .c3:hover{
+  transform: scale(1.15);
+  position: relative; top: -7vh; 
+  filter: drop-shadow(12px 12px 14px red) invert(100%);
+}
+
+.rock {
+ display: inline-block;
+  background-color: transparent; 
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: auto;
+    position: relative;
+}
+
 .paper { 
-  background-color: lightblue
+  display: inline-block;
+  background-color: transparent;
+      width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: auto;
+    position: relative;
 }
 .scissors { 
-  background-color: lightblue
-
+  display: inline-block;
+  background-color: transparent;
+      width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 14px;
+    position: relative;
 }
 
 
 
-#container {
- width:100%;
- text-align:center;
+.c1, .c2, .c3 {
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(-45deg, rgba(255,0,0,1), rgba(255,0,0,0.2));
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 10s ease infinite;
 }
-#container > div {
- width: calc(100% / 3);  
- display: inline-block;
- vertical-align: top;   
- text-align:center;
- margin:2%;    
- padding:20px;
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
 }
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+
+
 
 .reveal p {
   font: 45px/300px Helvetica, Arial, sans-serif;

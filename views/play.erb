@@ -4,11 +4,11 @@
 </head>
 
 <body>
-<h1><%=$game.rand_messages%> <%=  $game.player.name%>? </h1>
+<h1 class="rand_mess"><%=$game.rand_messages%> <%=  $game.player.name%>? </h1>
 
-<div id="container">
+<section class="parent">
 
-<div class="choice">
+<div class="c1">
   <a href="/rock">
     <div class="rock" style="border-radius: 25px;">
       <img src="rock.png" alt="rock" style="width:22vw;height:22vh;">
@@ -16,7 +16,7 @@
   </a>
 </div>
 
-<div class="choice">
+<div class="c2">
   <a href="/paper">
     <div class="paper" style="border-radius: 25px;">
       <img src="paper.png" alt="paper" style="width:22vw;height:22vh;">
@@ -24,14 +24,14 @@
   </a>
 </div>
 
-<div>
+<div class="c3">
   <a href="/scissors">
     <div class="scissors" style="border-radius: 25px;">
-      <img src="scissors.png" alt="scissors" style="width:22vw;height:22vh;">
+      <img src="scissors.png" alt="scissors" style="width:18vw;height:18vh;">
     </div>
   </a>
 </div>
 
-</div>
+</section>
 
 </body>

@@ -5,8 +5,15 @@
  
 body {
   background: black;
+  animation: focus_in 7s;
+  animation-fill-mode: forwards;
 }
  
+@keyframes focus_in {
+  0% {filter: opacity(0);}
+  50% {filter: opacity(0.5);}
+  100% {filter: opacity(1);}
+}
 
 .splash {
   position: absolute;
@@ -14,6 +21,79 @@ body {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.circle1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid red;
+  animation: grow_circle 3s;
+  animation-fill-mode: forwards;
+}
+
+.circle2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid white;
+  animation: grow_circle 2s;
+  animation-fill-mode: forwards;
+}
+
+.circle3 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid orange;
+  animation: grow_circle 1s;
+  animation-fill-mode: forwards;
+}
+
+.circle4 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid blue;
+  animation: grow_circle 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.circle5 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid yellow;
+  animation: grow_circle 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes grow_circle {
+  0% {height: 0vh; width: 0vw;}
+  25% {height: 50vh; width: 50vw;}
+  50% {height: 100vh; width: 100vw;}
+  75% {height: 150vh; width: 150vw;}
+  100% {height: 200vh; width: 200vw;}
 }
 
 .reveal {
@@ -26,11 +106,11 @@ body {
 .makers {
   background: url(makers_sliced.png) 0px 150px, url(makers_sliced.png) 0px -225px, black;
   background-repeat: no-repeat;
-  -webkit-transition: background-position 0.5s ease; filter: blur(0px);
-  -moz-transition: background-position 0.5s ease; filter: blur(2px);
-  -o-transition: background-position 0.5s ease; filter: blur(4px);
-  -ms-transition: background-position 0.5s ease; filter: blur(2px);
-  transition: background-position 0.5s ease; filter: blur(0px);
+  -webkit-transition: background-position 1s ease; filter: blur(0px);
+  -moz-transition: background-position 1s ease; filter: blur(2px);
+  -o-transition: background-position 1s ease; filter: blur(4px);
+  -ms-transition: background-position 1s ease; filter: blur(2px);
+  transition: background-position 1s ease; filter: blur(0px);
 }
  
 .makers:hover {
