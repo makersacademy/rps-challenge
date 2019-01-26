@@ -5,11 +5,11 @@ require_relative "./lib/game"
 class RPS < Sinatra::Base
 enable :sessions
 
-get '/welcome' do
+get '/' do
   erb(:splash)
 end
 
-get '/' do
+get '/welcome' do
   erb(:index)
 end
 

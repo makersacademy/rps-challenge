@@ -26,11 +26,11 @@ body {
 .makers {
   background: url(makers_sliced.png) 0px 150px, url(makers_sliced.png) 0px -225px, black;
   background-repeat: no-repeat;
-  -webkit-transition: background-position 0.3s ease;
-  -moz-transition: background-position 0.3s ease;
-  -o-transition: background-position 0.3s ease;
-  -ms-transition: background-position 0.3s ease;
-  transition: background-position 0.3s ease;
+  -webkit-transition: background-position 0.5s ease;
+  -moz-transition: background-position 0.5s ease;
+  -o-transition: background-position 0.5s ease;
+  -ms-transition: background-position 0.5s ease;
+  transition: background-position 0.5s ease;
 }
  
 .makers:hover {
@@ -45,11 +45,11 @@ body {
   filter: alpha(opacity=0);
   opacity: 0;
  
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
  
 .reveal:hover p {
@@ -57,4 +57,12 @@ body {
   filter: alpha(opacity=100);
   opacity: 1;
   cursor: pointer;
+}
+
+.zoom {
+  size: 300px
+}
+
+.zoom:hover {
+  transform: scale(2.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
