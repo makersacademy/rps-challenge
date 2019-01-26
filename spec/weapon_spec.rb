@@ -26,4 +26,18 @@ describe Rock do
   end
 end
 
-desc
+describe Scissors do
+
+  it 'should draw to scissors' do
+    expect(Scissors.compare(Scissors)).to eq(:draw)
+  end
+
+  it 'should win against paper' do
+    expect(Scissors.compare(Paper)).to eq(:win)
+  end
+
+  it 'should lose against rock' do
+    expect(Scissors.compare(Rock)).to eq(:lose)
+  end
+end
+
