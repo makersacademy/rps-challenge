@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require './lib/middle'
 require './lib/computer'
-
+require './lib/player'
 class RockPaperScissors < Sinatra::Base
   
   enable :sessions
@@ -13,16 +13,16 @@ class RockPaperScissors < Sinatra::Base
   get '/' do
     erb :index
   end
-
+  
   post '/name' do
-    # session[:name] = params[:name]
-    @game = Middle.create_game(params[:name], Middle.computer(Computer.new))
+    @game = Middle.create_game(Player.new(params[:name]), Computer.new)
     p @game
     redirect '/game'
   end
 
   get '/game' do
-    @name = @game.players[0]
+    @name = @game.players.first.name
+    @computer = @game.players.last.name
     erb :game
   end
 
