@@ -1,1 +1,20 @@
-<%= @player %> wants to play Rock, Paper, Scissors!
+<html>
+<center>
+
+
+  <h1><%= @player %>, let's play Rock, Paper, Scissors!</h1>
+  <br>
+
+
+  <h2> Choose </h2><br>
+  <form action="/rock" method="post">
+      <input type="submit" value="Rock">
+  </form>
+  <form action="/paper" method="post">
+      <input type="submit" value="Paper">
+  </form>
+  <form action="/scissors" method="post">
+      <input type="submit" value="Scissors">
+  </form>
+</center>
+</html>

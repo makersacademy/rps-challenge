@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'player'
 
 class RPS < Sinatra::Base
 
@@ -11,7 +12,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:player] = params[:player]
+    session[:player] = Player.new(params[:player]).name
     redirect '/play'
   end
 
@@ -19,4 +20,10 @@ class RPS < Sinatra::Base
     @player = session[:player]
     erb(:play)
   end
+
+  post '/rock' do
+    @player = session[:player]
+    erb(:rock)
+  end
+
 end
