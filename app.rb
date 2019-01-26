@@ -23,7 +23,7 @@ class Rps < Sinatra::Base
 
   get '/game' do
     @player = $player.name
-    @game = Game.new(@player,params[:weapon])
+    @game = Game.new(@player, params[:weapon])
     @weapon = @game.weapon
     @machine = @game.machine
 

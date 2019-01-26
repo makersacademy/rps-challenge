@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  subject(:game) {described_class.new(player,weapon)}
+  subject(:game) { described_class.new(player, weapon) }
   let(:player) { double :player }
   let(:weapon) { double :weapon }
 
@@ -12,15 +12,18 @@ describe Game do
   end
 
   describe "#random_rps" do
+    # NOT SURE HOW TO STUB RANDOM FOM ANOTHER CLASS
     it "choose paper" do
       allow(game).to receive(:random_rps).and_return "PAPER"
-      expect(game.computer).to eq "PAPER"
+      expect(game.machine).to eq "PAPER"
     end
   end
 
   describe "#outcomes" do
     it "Player picks ROCK and computer picks PAPER" do
-      expect()
+      game = Game.new("Raymond", "ROCK")
+      allow(game.machine).to receive(:random_rps).and_return "PAPER"
+      expect(game.outcomes).to eq :lose
     end
 
   end
