@@ -5,9 +5,27 @@
   <title>Results</title>
   </head>
   <body style="background-color: #333;">
-    <form action="/results" method="post">
-      <h1 style="color: white;"> <%= @player %> Vs CPU </h1>
-      <h1 style="color: white;"> <%= @player_selected %> </h1>
-    </form>
+    <br>
+    <section class="col-md-6 mx-auto">
+      <form action="/results" method="post">
+        <h1 style="color: white;"> <%= @player %> Vs CPU </h1>
+        <h1 style="color: white;"> <%= @player_selected %> - <%= @computer_selected %></h1>
+        <% if @player_selected == @computer_selected %>
+          <h1 style="color: white;">IT'S A DRAW!</h1>
+        <% elsif @player_selected == 'Rock' && @computer_selected == 'Scissors' %>
+          <h1 style="color: yellow;">YOU WIN!</h1>
+        <% elsif @player_selected == 'Rock' && @computer_selected == 'Paper' %>
+          <h1 style="color: Tomato;">YOU LOOSE!</h1>
+        <% elsif @player_selected == 'Paper' && @computer_selected == 'Rock' %>
+          <h1 style="color: yellow;">YOU WIN!</h1>
+        <% elsif @player_selected == 'Paper' && @computer_selected == 'Scissors' %>
+          <h1 style="color: Tomato;">YOU LOOSE</h1>
+        <% elsif @player_selected == 'Scissors' && @computer_selected == 'Rock' %>
+          <h1 style="color: Tomato;">YOU LOOSE!</h1>
+        <% elsif @player_selected == 'Scissors' && @computer_selected == 'Paper' %>
+          <h1 style="color: yellow;">YOU WIN!</h1>
+        <% end %>
+      </form>
+    </section>
   </body>
 </html>
