@@ -28,8 +28,13 @@ feature 'play rock paper scissors' do
   scenario 'marketeer can make a selection of rock, paper, scissors' do
     sign_in_and_play
     click_button('Rock')
-    expect(page).to have_content('You chose Rock!')
-
+    expect(page).to have_content('has chosen Rock!')
+    sign_in_and_play
+    click_button('Paper')
+    expect(page).to have_content('has chosen Paper!')
+    sign_in_and_play
+    click_button('Scissors')
+    expect(page).to have_content('has chosen Scissors!')
   end
 
   xscenario 'game will select a random option' do

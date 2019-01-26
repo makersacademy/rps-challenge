@@ -9,3 +9,7 @@ Player 1: <%= @player_one_name %>
     <input type="submit" name="weapon" value="Scissors">
   </form>
 </div>
+
+<% if @player_one_weapon %>
+<%= @player_one_name %> has chosen <%= @player_one_weapon %>!
+<% end %>
