@@ -35,6 +35,16 @@ RSpec.describe Rps do
     end
   end
 
-
+  feature 'Testing randomly generated computer response' do
+    scenario 'User sees what computer has selected' do
+      visit('/')
+      name = 'name'
+      fill_in 'your_name', with: name
+      click_button 'Register'
+      select('Rock', from: 'rock_paper_scissors')
+      click_button 'Play'
+      expect(page).to have_content(@computer_selected)
+    end
+  end
 
 end
