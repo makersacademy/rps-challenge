@@ -25,21 +25,24 @@ class RockPaperScissors < Sinatra::Base
 
   post '/rock' do
     Game.instance.player_1.make_move("Rock")
-    redirect '/winner'
+    Game.instance.calculate_winner
+    redirect '/play_one_player'
   end
 
   post '/paper' do
     Game.instance.player_1.make_move("Paper")
-    redirect '/winner'
+    Game.instance.calculate_winner
+    redirect '/play_one_player'
   end
 
-  post '/paper' do
+  post '/scissors' do
     Game.instance.player_1.make_move("Scissors")
-    redirect '/winner'
+    Game.instance.calculate_winner
+    redirect '/play_one_player'
   end
 
   get '/winner' do
-    
+
   end
 
 end

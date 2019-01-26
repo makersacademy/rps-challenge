@@ -3,3 +3,14 @@
 <form action="/rock" method="post">
   <button type="submit" value=Submit>Rock</button>
 </form>
+<form action="/paper" method="post">
+  <button type="submit" value=Submit>Paper</button>
+</form>
+<form action="/scissors" method="post">
+  <button type="submit" value=Submit>Scissors</button>
+</form>
+
+<% if @game.round > 0 %>
+  <%= @game.player_1.name %>: <%= @game.player_1.score %>
+  <%= @game.player_2.name %>: <%= @game.player_2.score %>
+<% end %>

@@ -8,6 +8,10 @@ describe Player do
     it 'Should have a name attribute' do
       expect(player_1.name).to eq "Player 1"
     end
+
+    it 'Should have a score of 0 when initialized' do
+      expect(player_1.score).to eq 0
+    end
   end
 
   describe 'Making a move' do
@@ -16,5 +20,4 @@ describe Player do
       expect(player_1.move).to eq "Rock"
     end
   end
-
 end

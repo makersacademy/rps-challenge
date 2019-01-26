@@ -33,11 +33,9 @@ describe Game do
     end
   end
 
-
-
-  # describe 'Keeping track of rounds' do
-  #   it 'Will be round 0 when the game begins' do
-  #     expect(one_player_game.round).to eq 0
-  #   end
-  # end
+  describe 'Keeping track of rounds' do
+    it 'Will be round 0 when the game begins' do
+      expect(one_player_game.round).to eq 0
+    end
+  end
 end
