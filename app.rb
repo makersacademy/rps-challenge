@@ -18,5 +18,15 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
+  post '/storage2' do
+    session[:players_selection] = params[:rock_paper_scissors]
+    redirect "/results"
+  end
+
+  get '/results' do
+    @player = session[:players_name]
+    @player_selected = session[:players_selection]
+    erb(:results)
+  end
 
 end
