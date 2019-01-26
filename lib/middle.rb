@@ -20,4 +20,8 @@ class Middle
   def self.computer_move
     @game.computer_move
   end
+
+  def self.calculate_winner
+    @game.calculate_winner
+  end
 end
