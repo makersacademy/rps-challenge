@@ -1,20 +1,30 @@
 require 'game'
 
 describe Game do
-  subject(:game) {described_class.new(player)}
+  subject(:game) {described_class.new(player1, player2)}
   let(:player1) { double :player }
-  let(:computer) {double :player }
+  let(:player2) {double :computer }
 
-  describe "#player" do
+  describe "#player1" do
     it "register a player" do
-      expect(game.player).to eq player
+      expect(game.player1).to eq player1
+    end
+  end
+
+  describe "#player2" do
+    it "plays with computer" do
+      expect(game.player2).to eq player2
     end
   end
 
   describe "#random_rps" do
     it "choose paper" do
-      allow(computer).to receive(random_rps).and_return "PAPER"
+      allow(player2).to receive(:random_rps).and_return "PAPER"
     end
+  end
+
+  describe "#result" do
+
   end
 
 end

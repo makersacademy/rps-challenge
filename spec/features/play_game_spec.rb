@@ -7,7 +7,7 @@ feature 'Play RPS' do
     expect(page).to have_content "Raymond chose ROCK"
   end
 
-  scenario "Computer picked scissors" do
+  scenario "Computer picked paper" do
     register_and_play
     click_button 'ROCK'
     expect(page).to have_content "I'm sorry -- you lost"
