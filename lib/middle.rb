@@ -10,7 +10,7 @@ class Middle
     @game
   end
 
-  def self.computer
-    @computer = Computer.new
+  def self.computer(computer)
+    @computer = computer
   end
 end
