@@ -39,7 +39,7 @@ class Game
   end
 
   def loser
-    @players.select { |player| player != @winner }.first
+    @players.reject { |player| player == @winner }.first
   end
   
 end
