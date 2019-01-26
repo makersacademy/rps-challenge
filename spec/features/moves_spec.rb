@@ -6,7 +6,7 @@ feature "Select Move" do
     expect(page).to have_content("You Picked Rock")
   end
   scenario "Computer will make move" do
-    play_rock
+    web_play_rock
     expect(page).to have_content("Computer Picked")
   end
 end
