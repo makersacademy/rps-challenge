@@ -34,6 +34,10 @@ post '/cont_play' do
   erb(:play)
 end
 
+post '/goodbye' do
+  $game
+  erb(:goodbye)
+end
 
 # start the server if ruby file executed directly
 run! if app_file == $0
