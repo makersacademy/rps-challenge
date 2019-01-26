@@ -21,9 +21,18 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  post '/rock' do
-    @player = session[:player]
-    erb(:rock)
+  post '/choice' do
+    session[:choice] = params[:choice]
+    @choice = session[:choice]
+    redirect '/set'
   end
+
+  get '/set' do
+    @player = session[:player]
+    @choice = session[:choice]
+    erb(:choice)
+  end
+
+
 
 end
