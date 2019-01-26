@@ -15,8 +15,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:name]
-    @game = Middle.create_game(session[:name], Middle.computer(Computer.new))
+    # session[:name] = params[:name]
+    @game = Middle.create_game(params[:name], Middle.computer(Computer.new))
     p @game
     redirect '/game'
   end
