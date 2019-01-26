@@ -52,4 +52,15 @@ feature 'User can choose one option' do
     click_button 'Play!'
     expect(page).to have_content 'Archie chose scissors...'
   end
+
+end
+
+feature 'The computer will choose a random option' do
+  scenario 'computer makes random choice' do
+    allow_any_instance_of(Computer).to receive(:weapon).and_return(:rock)
+    sign_in
+    choose('scissors')
+    click_button 'Play!'
+    expect(page).to have_content 'Skynet chose rock...'
+  end
 end

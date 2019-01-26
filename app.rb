@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -15,6 +16,8 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player = session[:player]
+    @computer = Computer.new
+    # @computer_choice = @computer.weapon
     erb :play
   end
 
