@@ -25,8 +25,8 @@ end
 feature 'choose paper' do
   scenario 'should confirm computer choice' do
     enter_name
-    click_button 'Rock'
     srand(3)
+    click_button 'Rock'
     expect(page).to have_content "Computer chose Scissors!"
   end
 end

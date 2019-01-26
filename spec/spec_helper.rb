@@ -7,7 +7,6 @@ ENV["RAILS_ENV"] ||= 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'lib/app.rb')
 
-
 Capybara.app = RPS
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([

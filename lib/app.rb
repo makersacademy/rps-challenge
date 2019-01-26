@@ -35,6 +35,4 @@ class RPS < Sinatra::Base
     erb(:choice)
   end
 
-
-
 end
