@@ -16,6 +16,7 @@ end
 
 get '/play' do
   $game = Game.new(Player.new(session[:p1name]))
+  $game
   erb(:play)
 end
 

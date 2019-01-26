@@ -27,3 +27,7 @@ def web_play_scissors
   select 'Scissors', from: "move"
   click_button 'Submit'
 end
+
+def play_again
+  click_button "YEAH!"
+end
