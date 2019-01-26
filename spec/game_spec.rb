@@ -11,18 +11,18 @@ describe Game do
     end
   end
 
-  describe "#random_rps" do
-    # NOT SURE HOW TO STUB RANDOM FOM ANOTHER CLASS
+  describe "#machine" do
     it "choose paper" do
-      allow(game.machine).to receive(:random_rps).and_return "PAPER"
+      game.instance_variable_set(:@machine, 'PAPER')
       expect(game.machine).to eq "PAPER"
     end
   end
 
   describe "#outcomes" do
+    # NOT SURE HOW TO STUB RANDOM FOM ANOTHER CLASS
     it "Player picks ROCK and computer picks PAPER" do
-      game = Game.new("Raymond", "ROCK")
-      allow(game.machine).to receive(:random_rps).and_return "PAPER"
+      game.instance_variable_set(:@weapon, 'ROCK')
+      game.instance_variable_set(:@machine, 'PAPER')
       expect(game.outcomes).to eq :lose
     end
 
