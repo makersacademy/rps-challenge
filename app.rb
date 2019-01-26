@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer'
 
 class RPSapp < Sinatra::Base
 
@@ -16,6 +17,7 @@ class RPSapp < Sinatra::Base
 
   post '/go' do
     @p1_move = params[:move]
+    @cp_move = Computer.go
     erb :go
   end
 

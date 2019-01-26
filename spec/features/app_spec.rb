@@ -47,4 +47,15 @@ feature 'Gameplay:' do
     click_button 'Scissors'
     expect(page).to have_content 'Dog says Scissors!'
   end
+
+  # the game will choose a random option
+  scenario 'computer picks random move' do
+    allow(Computer).to receive(:go).and_return("Rock")
+    visit('/')
+    fill_in :player_1_name, with: 'Dog'
+    click_button 'Submit'
+    click_button 'Rock'
+    expect(page).to have_content 'Computer says Rock!'
+  end
+
 end
