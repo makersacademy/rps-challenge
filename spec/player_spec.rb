@@ -15,5 +15,4 @@ RSpec.describe Player do
       expect(subject.move).to eq('rock')
     end
   end
-
 end

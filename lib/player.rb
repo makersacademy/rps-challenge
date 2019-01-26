@@ -6,10 +6,6 @@ class Player
     @move = nil
   end
 
-  def name
-    @name 
-  end
-
   def make_move(move)
     @move = move
   end
