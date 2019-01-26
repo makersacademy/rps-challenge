@@ -2,27 +2,19 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Results / Rock / Paper / Scissors</title>
   </head>
   <body>
+
     <div class="container">
       <div class="box">
-      <h1>Results will come here</h1>
-      <% if @computer_choice == @rock || @computer_choice == @paper || @computer_choice == @scissors %>
-        <h1>It's a draw - <a href="/game">Play again?</a></h1>
-      <% elsif @computer_choice == 'rock' && @paper %>
-        <h1>Paper beats rock. You win!</h1>
-      <% elsif @computer_choice == 'rock' && @scissors %>
-        <h1>Rock beats scissors, computer wins</h1>
-      <% elsif @computer_choice == 'paper' && @scissors %>
-        <h1>Scissor beats paper. You win!</h1>
-      <% elsif @computer_choice == 'paper' && @rock %>
-        <h1>Paper beats rock, computer wins</h1>
-      <% elsif @computer_choice == 'scissors' && @rock %>
-        <h1>Rock beats scissors, you win!</h1>
-      <% elsif @computer_choice == 'scissors' && @paper %>
-        <h1>Scissor beats paper, computer wins :(</h1>
-      <% end %>
-       
+        <% if @winner %>
+          <h1><%= @winner.move %> beats <%= @loser.move %></h1>
+          <h2><%= @winner.name %> wins!</h2>
+        <% else %>
+          <h1>It's a draw!</h1>
+        <% end %>  
+        <a href="/game">Play again</a>     
       </div>
     </div>
 
