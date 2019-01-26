@@ -1,2 +1,21 @@
 <h1>Rock Paper Scissors</h1>
 <h2>Welcome to the game <%= @player.name %>!</h2>
+<p>Please choose either Rock, Paper or Scissors</p>
+<ul>
+<li>Rock beats Scissors</li>
+<li>Scissors beats Paper</li>
+<li>Paper beats Rock</li>
+</ul>
+
+<form action="/move" method="post">
+  <div>
+    <div>
+    <input type="submit" value="Rock">
+    </div>
+    <div>
+    <input type="submit" value="Paper">
+    </div>
+    <div>
+    <input type="submit" value="Scissors">
+    </div>
+    </form>

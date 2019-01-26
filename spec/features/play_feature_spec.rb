@@ -7,4 +7,9 @@ feature 'play ' do
     expect(page).to have_content('John')
   end
 
+  scenario "player can choose rock, paper or scissors" do
+    visit('/play')
+    find_button('Paper').click
+  end
+
 end
