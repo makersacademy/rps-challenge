@@ -4,11 +4,27 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
   <body>
-  <div class="container">
-    <div class="box">
-      <h2>Hi <%= @name %> </h2>
+    <div class="container">
+      <div class="box">
+        <h2>Hi <%= @name %> </h2>
+
+        <form action="/play" method="post">
+          <input type="hidden" name="rock" value="rock">
+          <input type="submit" value="Rock">
+        </form>
+
+        <form action="/play" method="post">
+          <input type="hidden" name="paper" value="paper">
+          <input type="submit" value="Paper">
+        </form>
+
+        <form action="/play" method="post">
+          <input type="hidden" name="scissors" value="scissors">
+          <input type="submit" value="Scissors">
+        </form>
+
+      </div>
     </div>
-  </div>
 
   </body>
 
