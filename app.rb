@@ -28,6 +28,16 @@ class RockPaperScissors < Sinatra::Base
     redirect '/winner'
   end
 
+  post '/paper' do
+    Game.instance.player_1.make_move("Paper")
+    redirect '/winner'
+  end
+
+  post '/paper' do
+    Game.instance.player_1.make_move("Scissors")
+    redirect '/winner'
+  end
+
   get '/winner' do
     
   end

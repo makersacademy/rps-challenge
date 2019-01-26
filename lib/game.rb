@@ -18,8 +18,6 @@ class Game
 
   def calculate_winner
     player_2.make_random_move if player_2.name == "Computer"
-    
-
+    WinningLogic.new.winner(player_1, player_2)
   end
-
 end
