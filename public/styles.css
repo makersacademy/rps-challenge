@@ -3,6 +3,7 @@ body {
 }
 
 h1, h2 {
+  font-family: Impact;
   color: white
 }
 
@@ -19,6 +20,7 @@ h1, h2 {
   text-align: center;
 }
 
+
 .index_submit {
   position: relative;
   width: 10%;
@@ -30,16 +32,20 @@ h1, h2 {
 }
 
 @keyframes uparrow {
-  0% {top: 6vh; filter: blur(0.5px);}
+  0% {top: 6vh; filter: blur(1.5px);}
   25% {filter: blur(1px);}
-  50% {top: 7vh; filter: blur(1.5px);}
+  50% {top: 7vh; filter: blur(0.5px);}
   75% {filter: blur(1px);}
-  100% {top: 6vh; filter: blur(0.5px);}
+  100% {top: 6vh; filter: blur(1.5px);}
 }
 
 .index_input {
   position: relative;
   top: 5vh;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  filter: drop-shadow(12px 12px 14px red) invert(85%);
 }
 
 .rock { 

@@ -4,9 +4,9 @@
 </head>
 
 <h1>You Picked <%=$game.player.show%>.</h1>
-<h1>I Picked <%=$game.comp_choice[-1]%>.</h1>
+<h1 style="color: red">I Picked <%=$game.comp_choice[-1]%>.</h1>
 
 <h1><%=$game.result%></h1>
-<h1>Wanna Play Again?</h1>
+<h1 style="color: red">Wanna Play Again?</h1>
 <form action="/cont_play" method="post"><input type="submit" name="YEAH!" value="YEAH!"></form>
 <form action="/goodbye" method="post"><input type="submit" name="NAH!" value="NAH!"></form>
