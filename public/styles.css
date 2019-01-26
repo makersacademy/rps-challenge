@@ -135,21 +135,7 @@ h1, h2 {
     text-align: left;
 }
 
-/*#c1:hover, #c2:hover, #c3:hover{
-  transform: scale(1.15);
-  position: relative; top: -7vh; 
-  filter: drop-shadow(12px 12px 14px red) invert(100%);
-}*/
 
-.rock {
- display: inline-block;
-  background-color: transparent; 
-    width: auto;
-    height: auto;
-    margin: 0 auto;
-    padding: auto;
-    position: relative;
-}
 
 
 #c1 > #rock_reveal {
@@ -173,28 +159,85 @@ h1, h2 {
   visibility: visible;
 }
 
+
 #rock_reveal{
   position:fixed;
   top: 30%;
-  left: 40%;
-  font-size: 500%;
+  left: 25%;
   color: white;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 12em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(140deg, #cc0000, #ff0000, #ff4d4d, #ff8080, #ffb3b3, #ffe6e6);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 2s infinite;
+  animation-timing-function: linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
 #paper_reveal{
   position:fixed;
   top: 30%;
-  left: 40%;
-  font-size: 500%;
+  left: 25%;
   color: white;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 12em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(140deg, #cc0000, #ff0000, #ff4d4d, #ff8080, #ffb3b3, #ffe6e6);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 2s infinite;
+  animation-timing-function: linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
 #scissors_reveal{
   position:fixed;
   top: 30%;
-  left: 40%;
-  font-size: 500%;
+  left: 12%;
   color: white;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 12em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(140deg, #cc0000, #ff0000, #ff4d4d, #ff8080, #ffb3b3, #ffe6e6);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3.5s infinite;
+  animation-timing-function: ease-in;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes blur {
+   0% { filter: blur(1px); filter: drop-shadow(12px 12px 14px red) invert(25%);  background-color: red; transform: scale(1);}
+  50% { filter: blur(1.5px); filter: drop-shadow(12px 12px 14px red) invert(50%); background-color: orange; transform: scale(1.1);}
+  100% { filter: blur(2px); filter: drop-shadow(12px 12px 14px red) invert(75%); background-color: yellow; transform: scale(1.2);} 
+  100% { filter: blur(2px); filter: drop-shadow(12px 12px 14px red) invert(75%); background-color: green; transform: scale(1.3);}
+  50% { filter: blur(1.5px); filter: drop-shadow(12px 12px 14px red) invert(50%); background-color: blue; transform: scale(1.2);}
+  0% { filter: blur(1px); filter: drop-shadow(12px 12px 14px red) invert(25%); background-color: indigo; transform: scale(1.1);} 
+}
+.rock {
+ display: inline-block;
+  background-color: transparent; 
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: auto;
+    position: relative;
+}
+
+.rock:hover {
+  animation: blur 10s infinite
+
 }
 
 .paper { 
@@ -206,6 +249,11 @@ h1, h2 {
     padding: auto;
     position: relative;
 }
+
+.paper:hover {
+  animation: blur 10s infinite
+
+}
 .scissors { 
   display: inline-block;
   background-color: transparent;
@@ -213,9 +261,13 @@ h1, h2 {
     height: auto;
     margin: 0 auto;
     padding: 14px;
-    position: relative;
+    position: relative;    
 }
 
+.scissors:hover {
+  animation: blur 10s infinite
+
+}
 
 
 #c1, #c2, #c3 {
