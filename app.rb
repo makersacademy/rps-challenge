@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'shotgun'
 
 class Rps < Sinatra::Base
   enable :sessions

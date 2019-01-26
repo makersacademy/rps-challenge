@@ -3,7 +3,7 @@
     text-align: center;
     font-family: "Arial";
     background-color: Turquoise ;
-    color: rgb(60,60,60);
+    color: SlateBlue;
     font-size: 20px;
   }
   h1 {
@@ -11,15 +11,17 @@
     margin-top: 50px;
     color: Tomato;
   }
-  input {
-    margin-top: 5px;
-    margin-bottom: 5px;
+  button {
+    font-size: 25px;
+    padding: 14px 40px;
+    background-color: SlateBlue;
+    color: white;
   }
 </style>
 
 <h1><%=@player%>, let's start the game!</h1>
 
-<p>Choose:</p>
+<h2>Choose:</h2>
 <form action="/game">
 <button type="submit" name="choice" value="ROCK">ROCK</button>
 <button type="submit" name="choice" value="PAPER">PAPER</button>
