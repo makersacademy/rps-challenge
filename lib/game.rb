@@ -1,13 +1,11 @@
 require_relative 'player'
 
 class Game
-  attr_reader :name, :result, :player1, :player2
-  DEFAULT_OPPONENT = 'computer'
+  attr_reader :weapon, :player
 
-  def initialize(player1, player2=DEFAULT_OPPONENT)
-    @player1 = player1
-    @player2 = player2
-    @result
+  def initialize(player)
+    @player = player
+    @weapon
   end
 
   def random_rps

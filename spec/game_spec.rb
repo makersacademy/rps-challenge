@@ -20,10 +20,14 @@ describe Game do
   describe "#random_rps" do
     it "choose paper" do
       allow(player2).to receive(:random_rps).and_return "PAPER"
+      expect(game.weapon2).to eq "PAPER"
     end
   end
 
-  describe "#result" do
+  describe "#outcomes" do
+    it "Player picks ROCK and computer picks PAPER" do
+      expect()
+    end
 
   end
 

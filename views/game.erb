@@ -7,8 +7,9 @@
     font-size: 20px;
   }
   h1 {
-    font-size: 50px;
+    font-size: 40px;
     margin-top: 50px;
+    margin-bottom: 50px;
     color: Tomato;
   }
   input {
@@ -17,14 +18,16 @@
   }
   button {
     font-size: 25px;
+    width: 150px;
     padding: 14px 40px;
+    border-radius: 8px;
     background-color: SlateBlue;
     color: white;
   }
 </style>
 
-<h1><%=@game.player1.name%> chose <%=@weapon1%></h1>
-<h1>Computer chose <%=@weapon2%></h1>
+<h1><%=@player%> chose <b><%=@weapon%></b></h1>
+<h1>Computer chose <b><%=@computer%></b></h1>
 
 <form action="/play">
   <button type="submit">Try Again</button>
