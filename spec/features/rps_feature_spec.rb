@@ -20,7 +20,7 @@ feature 'play rock paper scissors' do
 
   scenario 'marketeer gets choice of rock, paper, scissors' do
     sign_in_and_play
-    expect(page).to have_content('Choose your weapon!')
+    expect(page).to have_content('choose your weapon!')
     expect(page).to have_button('Rock')
     expect(page).to have_button('Paper')
     expect(page).to have_button('Scissors')
@@ -38,27 +38,19 @@ feature 'play rock paper scissors' do
     expect(page).to have_content('has chosen Scissors!')
   end
 
-  scenario 'game will select a random option' do
-    sign_in_and_play
-    choose_rock_and_scissors
-    click_button('Resolve')
-    expect(page).to have_content('The computer has chosen Scissors!')
-  end
-
   scenario 'the game will declare a winner' do
     sign_in_and_play
     choose_rock_and_scissors
-    click_button('Resolve')
-    expect(page).to have_content(Game::COMPUTER_LOSE_MESSAGE)
+    expect(page).to have_content(Game::PLAYER_1_WIN_MESSAGE)
   end
 
   scenario 'the game can be reset' do
     sign_in_and_play
     choose_rock_and_scissors
-    click_button('Resolve')
     click_button('Reset')
     expect(page).to have_content('Please sign in to play')
     fill_in('player_one_name', with: 'Jill')
+    fill_in('player_two_name', with: 'Jack')
     click_button('Submit')
     expect(page).to_not have_content('has chosen')
   end

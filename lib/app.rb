@@ -19,31 +19,45 @@ class RPS < Sinatra::Base
   get '/play' do
     @player_one_name = session[:player_one_name]
     @player_two_name = session[:player_two_name]
-    @player_one_weapon = session[:weapon]
+    @player_one_weapon = session[:p1_weapon]
     erb :play
   end
 
   post '/play' do
-    session[:weapon] = params["weapon"]
+    session[:p1_weapon] = params["p1_weapon"]
     redirect '/play'
   end
 
+  get '/player_2' do
+    @player_one_name = session[:player_one_name]
+    @player_two_name = session[:player_two_name]
+    @player_two_weapon = session[:p2_weapon]
+    erb :player_2
+  end
+
+  post '/player_2' do
+    session[:p2_weapon] = params["p2_weapon"]
+    redirect '/player_2'
+  end
+
   post '/resolve' do
-    Game.resolve(session[:weapon])
+    Game.resolve(session[:p1_weapon], session[:p2_weapon])
     redirect '/result'
   end
 
   get '/result' do
     @player_one_name = session[:player_one_name]
-    @player_one_weapon = session[:weapon]
-    @player_two_weapon = Game.player_two_weapon
+    @player_one_weapon = session[:p1_weapon]
+    @player_two_name = session[:player_two_name]
+    @player_two_weapon = session[:p2_weapon]
     @result = Game.print_result
     erb :result
   end
 
   post '/reset' do
     Game.reset
-    session[:player_one_name], session[:weapon] = nil
+    session[:player_one_name], session[:p1_weapon] = nil
+    session[:player_two_name], session[:p2_weapon] = nil
     redirect '/'
   end
 
