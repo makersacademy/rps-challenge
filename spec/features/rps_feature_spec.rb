@@ -25,7 +25,10 @@ feature 'play rock paper scissors' do
     expect(page).to have_button('Scissors')
   end
 
-  xscenario 'marketeer can make a selection of rock, paper, scissors' do
+  scenario 'marketeer can make a selection of rock, paper, scissors' do
+    sign_in_and_play
+    click_button('Rock')
+    expect(page).to have_content('You chose Rock!')
 
   end
 
