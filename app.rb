@@ -27,19 +27,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    # Take player 1's play and set it in game...
-    session[:rock] = params[:rock]
-    session[:paper] = params[:paper]
-    session[:scissors] = params[:scissors]
+    @rock = params[:rock]
+    @paper = params[:paper]
+    @scissors = params[:scissors]
+    @move = @rock || @paper || @scissors
+    @game.make_move(@game.player1, @move)
+    @game.computer_move
+    p @game.player1.move
+    p @game.player2.move
     redirect '/result'
   end
 
   get '/result' do
-    @name = session[:name]
-    @computer_choice = ['rock', 'paper', 'scissors'].sample
-    @rock = session[:rock]
-    @paper = session[:paper]
-    @scissors = session[:scissors]
     erb :result
   end
 
