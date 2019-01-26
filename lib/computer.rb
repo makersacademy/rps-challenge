@@ -1,7 +1,7 @@
 class Computer
 
   def random_move
-    ["rock", "paper", "scissors"].sample
+    ["Rock", "Paper", "Scissors"].sample
   end
 
 end
