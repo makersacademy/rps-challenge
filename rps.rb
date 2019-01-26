@@ -6,4 +6,9 @@ class Rps < Sinatra::Base
     erb(:index)
   end
 
+  post '/choose' do
+    @name = params[:name]
+    erb(:choose)
+  end
+
 end
