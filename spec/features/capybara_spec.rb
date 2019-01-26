@@ -12,7 +12,6 @@ feature 'Capybara tests...' do
     fill_in 'name', with: 'Wilson'
     click_button 'Go!'
     click_button 'Rock'
-    expect(page).to have_content 'beats'
-    expect(page).to have_content 'win'
+    expect(page).to have_content 'Results'
   end
 end

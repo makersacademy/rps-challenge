@@ -6,6 +6,6 @@ RSpec.describe Middle do
     player2 = double('player2')
     game = double('game')
     Middle.create_game(player1, player2)
-    expect(Middle.instance.players).to eq([player1, player2])
+    expect(Middle.game_instance.players).to eq([player1, player2])
   end
 end

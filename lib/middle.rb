@@ -1,5 +1,4 @@
 require_relative './game'
-require_relative './computer'
 
 class Middle
   def self.create_game(player1, player2)
@@ -12,5 +11,13 @@ class Middle
 
   def self.computer(computer)
     @computer = computer
+  end
+
+  def self.make_move(player, move)
+    @game.make_move(player, move)
+  end
+
+  def self.computer_move
+    @game.computer_move
   end
 end

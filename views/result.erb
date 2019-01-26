@@ -6,6 +6,7 @@
   <body>
     <div class="container">
       <div class="box">
+      <h1>Results will come here</h1>
       <% if @computer_choice == @rock || @computer_choice == @paper || @computer_choice == @scissors %>
         <h1>It's a draw - <a href="/game">Play again?</a></h1>
       <% elsif @computer_choice == 'rock' && @paper %>
