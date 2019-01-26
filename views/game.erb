@@ -6,22 +6,27 @@
   <body>
     <div class="container">
       <div class="box">
-        <h2><%= @name %> Vs <%= @computer %></h2>
+        <h1>Hi <%= @name %></h1>
+        <h2>You are playing against '<%= @computer %>'. Good luck!</h2>
+        <div class="buttons">
 
-        <form action="/play" method="post">
-          <input type="hidden" name="rock" value="rock">
-          <input type="submit" value="Rock">
-        </form>
+          <form action="/play" method="post">
+            <input type="hidden" name="rock" value="rock">
+            <input type="submit" value="Rock">
+          </form>
 
-        <form action="/play" method="post">
-          <input type="hidden" name="paper" value="paper">
-          <input type="submit" value="Paper">
-        </form>
+          <form action="/play" method="post">
+            <input type="hidden" name="paper" value="paper">
+            <input type="submit" value="Paper">
+          </form>
 
-        <form action="/play" method="post">
-          <input type="hidden" name="scissors" value="scissors">
-          <input type="submit" value="Scissors">
-        </form>
+          <form action="/play" method="post">
+            <input type="hidden" name="scissors" value="scissors">
+            <input type="submit" value="Scissors">
+          </form>
+
+        </div>
+        
 
       </div>
     </div>
