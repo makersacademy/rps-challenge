@@ -17,11 +17,4 @@
   }
 </style>
 
-<h1><%=@player%>, let's start the game!</h1>
-
-<p>Choose:</p>
-<form action="/game">
-<button type="submit" name="choice" value="ROCK">ROCK</button>
-<button type="submit" name="choice" value="PAPER">PAPER</button>
-<button type="submit" name="choice" value="SCISSORS">SCISSORS</button>
-</form>
+<h1><%=@player%> chose <%=@choice%></h1>
