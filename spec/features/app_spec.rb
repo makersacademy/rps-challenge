@@ -24,7 +24,7 @@ feature 'Gameplay:' do
     expect(page).to have_content 'Rock, Paper or Scissors?'
   end
 
-  xscenario 'user can pick move rock' do
+  scenario 'user can pick move rock' do
     visit('/')
     fill_in :player_1_name, with: 'Dog'
     click_button 'Submit'
@@ -32,7 +32,7 @@ feature 'Gameplay:' do
     expect(page).to have_content 'Dog says Rock!'
   end
 
-  xscenario 'user can pick move paper' do
+  scenario 'user can pick move paper' do
     visit('/')
     fill_in :player_1_name, with: 'Dog'
     click_button 'Submit'
@@ -40,7 +40,7 @@ feature 'Gameplay:' do
     expect(page).to have_content 'Dog says Paper!'
   end
 
-  xscenario 'user can pick move scissors' do
+  scenario 'user can pick move scissors' do
     visit('/')
     fill_in :player_1_name, with: 'Dog'
     click_button 'Submit'

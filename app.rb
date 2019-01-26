@@ -15,7 +15,7 @@ class RPSapp < Sinatra::Base
   end
 
   post '/go' do
-    @p1_go = params[:player_1_name]
+    @p1_move = params[:move]
     erb :go
   end
 

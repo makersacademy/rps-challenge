@@ -1,12 +1,17 @@
 <h1><%= @p1_name %> vs. Computer</h1>
 <h2>Rock, Paper or Scissors?</h2>
 
-<!-- <form action="/rock" method="post">
+<form action="/go" method="post">
+  <input type="hidden" name="move" value="Rock">
   <input type="submit" value="Rock">
-</form> -->
+</form>
 
-<!-- <form action="/go" method="post">
-  <input type="submit" value="Rock">
+<form action="/go" method="post">
+  <input type="hidden" name="move" value="Paper">
   <input type="submit" value="Paper">
+</form>
+
+<form action="/go" method="post">
+  <input type="hidden" name="move" value="Scissors">
   <input type="submit" value="Scissors">
-</form> -->
+</form>
