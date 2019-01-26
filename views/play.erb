@@ -3,38 +3,37 @@
   <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body class="play_body">
 <h1 class="rand_mess"><%=$game.rand_messages%> <%=  $game.player.name%>? </h1>
 
 <section class="parent">
 
 <div id="c1">
-	<div id = "rock_reveal">Rock</div>
+	<div id = "rock_reveal">Rock?</div>
   <a href="/rock">
     <div class="rock" style="border-radius: 25px;">
-      <img src="rock.png" alt="rock" style="width:22vw;height:22vh;">
+      <img src="stone.png" alt="rock" style="width:20vw;height:22vh;">
     </div>
   </a>
 </div>
 
 <div id="c2">
-	<div id = "paper_reveal">Paper</div>
+	<div id = "paper_reveal">Paper?</div>
   <a href="/paper">
-    <div class="paper" style="border-radius: 25px;">
+    <div class="paper" style="border-radius: 0px;">
       <img src="paper.png" alt="paper" style="width:22vw;height:22vh;">
     </div>
   </a>
 </div>
 
 <div id="c3">
-	<div id = "scissors_reveal">Scissors</div>
+	<div id = "scissors_reveal">Scissors?</div>
   <a href="/scissors">
     <div class="scissors" style="border-radius: 25px;">
       <img src="scissors.png" alt="scissors" style="width:18vw;height:18vh;">
     </div>
   </a>
 </div>
-
 </section>
 
 </body>

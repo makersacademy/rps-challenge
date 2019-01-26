@@ -115,10 +115,27 @@ h1, h2 {
 }
 
 .rand_mess {
-  display: flex;
-  align-items: center;
-  justify-content: center
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  text-align: center;
+  /*-webkit-transform: translate(-50%, -50%);*/
+  transform: translate(-50%, -50%);
+  font-size: 250%;
+  animation: fade_in_left 3.4s;
+  animation-fill-mode: forwards;
+  transition-timing-function: ease-in;
 }
+
+@keyframes fade_in_left {
+  0% {transform: translateX(-250%);}
+  80% {transform: translateX(-50%);}
+  90% {transform: scale(2,2);}
+  100% {transform: translateX(-50%);}
+
+
+}
+
 .parent{
     width: 100%;
     text-align: justify;
@@ -163,17 +180,17 @@ h1, h2 {
 #rock_reveal{
   position:fixed;
   top: 30%;
-  left: 25%;
+  left: 22%;
   color: white;
   font-family: sans-serif;
   text-transform: uppercase;
   font-size: 12em;
   letter-spacing: 4px;
   overflow: hidden;
-  background: linear-gradient(140deg, #cc0000, #ff0000, #ff4d4d, #ff8080, #ffb3b3, #ffe6e6);
+  background: linear-gradient(-135deg, #DCDCDC, #D3D3D3, lightblue, #C0C0C0, #A9A9A9 , #808080 , #696969 , #778899 , #708090, #2F4F4F ,#000000 );
   background-repeat: no-repeat;
   background-size: 80%;
-  animation: animate 2s infinite;
+  animation: animate 5s infinite;
   animation-timing-function: linear;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
@@ -182,17 +199,17 @@ h1, h2 {
 #paper_reveal{
   position:fixed;
   top: 30%;
-  left: 25%;
+  left: 21%;
   color: white;
   font-family: sans-serif;
   text-transform: uppercase;
   font-size: 12em;
   letter-spacing: 4px;
   overflow: hidden;
-  background: linear-gradient(140deg, #cc0000, #ff0000, #ff4d4d, #ff8080, #ffb3b3, #ffe6e6);
+  background: linear-gradient(-135deg, #DCDCDC, #D3D3D3, lightblue, #C0C0C0, #A9A9A9 , #808080 , #696969 , #778899 , #708090, #2F4F4F ,#000000 );
   background-repeat: no-repeat;
   background-size: 80%;
-  animation: animate 2s infinite;
+  animation: animate 5s infinite;
   animation-timing-function: linear;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
@@ -201,32 +218,25 @@ h1, h2 {
 #scissors_reveal{
   position:fixed;
   top: 30%;
-  left: 12%;
+  left: 7%;
   color: white;
   font-family: sans-serif;
   text-transform: uppercase;
   font-size: 12em;
   letter-spacing: 4px;
   overflow: hidden;
-  background: linear-gradient(140deg, #cc0000, #ff0000, #ff4d4d, #ff8080, #ffb3b3, #ffe6e6);
+  background: linear-gradient(-135deg, #DCDCDC, #D3D3D3, lightblue, #C0C0C0, #A9A9A9 , #808080 , #696969 , #778899 , #708090, #2F4F4F ,#000000 );
   background-repeat: no-repeat;
   background-size: 80%;
-  animation: animate 3.5s infinite;
+  animation: animate 5s infinite;
   animation-timing-function: ease-in;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
-@keyframes blur {
-   0% { filter: blur(1px); filter: drop-shadow(12px 12px 14px red) invert(25%);  background-color: red; transform: scale(1);}
-  50% { filter: blur(1.5px); filter: drop-shadow(12px 12px 14px red) invert(50%); background-color: orange; transform: scale(1.1);}
-  100% { filter: blur(2px); filter: drop-shadow(12px 12px 14px red) invert(75%); background-color: yellow; transform: scale(1.2);} 
-  100% { filter: blur(2px); filter: drop-shadow(12px 12px 14px red) invert(75%); background-color: green; transform: scale(1.3);}
-  50% { filter: blur(1.5px); filter: drop-shadow(12px 12px 14px red) invert(50%); background-color: blue; transform: scale(1.2);}
-  0% { filter: blur(1px); filter: drop-shadow(12px 12px 14px red) invert(25%); background-color: indigo; transform: scale(1.1);} 
-}
+
 .rock {
- display: inline-block;
+ display: block;
   background-color: transparent; 
     width: auto;
     height: auto;
@@ -236,8 +246,12 @@ h1, h2 {
 }
 
 .rock:hover {
-  animation: blur 10s infinite
+  animation: shrink 10s infinite;
+}
 
+@keyframes shrink{
+  0% {transform: scale3d(1, 1, 1);}
+  100% {transform: scale3d(0, 0, 0);}
 }
 
 .paper { 
@@ -251,7 +265,7 @@ h1, h2 {
 }
 
 .paper:hover {
-  animation: blur 10s infinite
+  animation: shrink 10s infinite;
 
 }
 .scissors { 
@@ -265,19 +279,22 @@ h1, h2 {
 }
 
 .scissors:hover {
-  animation: blur 10s infinite
+  animation: shrink 10s infinite;
 
 }
 
+.play_body{
+
+}
 
 #c1, #c2, #c3 {
   border-radius: 10px;
-  color: #fff;
-  background: linear-gradient(-45deg, rgba(255,0,0,1), rgba(255,0,0,0.2));
+  color: blue;
+  background: linear-gradient(-135deg, #DCDCDC, #D3D3D3, lightblue, #C0C0C0, #A9A9A9 , #808080 , #696969 , #778899 , #708090, #2F4F4F ,#000000 );
   background-size: 400% 400%;
-  -webkit-animation: Gradient 10s ease infinite;
-  -moz-animation: Gradient 10s ease infinite;
-  animation: Gradient 10s ease infinite;
+  -webkit-animation: Gradient 7s linear infinite;
+  -moz-animation: Gradient 7s ease infinite;
+  animation: Gradient 7s ease infinite;
 }
 
 
@@ -319,6 +336,31 @@ h1, h2 {
   }
 }
 
+.smack_talk {
+ font-size: 2em;
+ color: grey;
+ position: absolute;
+ top: -35vh;
+ width: 100%;
+ height: 100%;
+ margin: 10;
+ line-height: 75px;
+ opacity: 0.25;
+ /* Starting position */
+ -webkit-transform:translateX(100%); 
+ transform:translateX(100%);
+ filter: blur(2.5px);
+ /* Apply animation to this element */  
+ -webkit-animation: example1 3.5s linear infinite;
+ animation: example1 3.5s linear infinite;
+}
+/* Move it (define the animation) */
+
+@-webkit-keyframes example1 {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%);}
+}
+
 
 
 
@@ -342,5 +384,6 @@ h1, h2 {
   opacity: 1;
   cursor: pointer;
 }
+
 
 
