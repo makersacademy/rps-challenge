@@ -1,21 +1,64 @@
-<h1>Rock Paper Scissors</h1>
-<h2>Welcome to the game <%= @player.name %>!</h2>
-<p>Please choose either Rock, Paper or Scissors</p>
-<ul>
-<li>Rock beats Scissors</li>
-<li>Scissors beats Paper</li>
-<li>Paper beats Rock</li>
-</ul>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <style type="text/css">
 
-<form action="/move" method="post">
+    html {
+      display: table;
+      margin: auto;
+    }
+
+    body {
+      font-family: 'Helvetica';
+      text-align: center;
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    body  {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    div   {
+      border: 10px solid #78C1B3;
+      padding: 20px;
+      width: 400px;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+    }
+
+    #color {
+      background-color:  #7689D7;
+      font-size: 14px;
+    }
+
+    </style>
+
+</head>
+
+<body>
+
   <div>
-    <div>
-    <input type="submit" name="move" value="Rock">
-    </div>
-    <div>
-    <input type="submit" name="move" value="Paper">
-    </div>
-    <div>
-    <input type="submit" name="move" value="Scissors">
-    </div>
+
+    <h1>Welcome to the game <%= @player.name %>!</h1>
+    <h2>Please choose either Rock, Paper or Scissors</h2>
+
+
+      <b><i><p>Rock beats Scissors</p>
+      <p>Scissors beats Paper</p>
+      <p>Paper beats Rock</p></i></b>
+
+
+    <form action="/move" method="post">
+      <input type="submit" name="move" id="color" value="Rock">
+      <input type="submit" name="move" id="color" value="Paper">
+      <input type="submit" name="move" id="color" value="Scissors">
     </form>
+</div>
+</body>
+</html>

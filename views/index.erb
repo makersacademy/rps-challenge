@@ -1,11 +1,55 @@
-<h1>Rock Paper Scissors</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+    <style type="text/css">
+
+      html {
+        display: table;
+        margin: auto;
+      }
+
+      body {
+        font-family: 'Helvetica';
+        text-align: center;
+      }
+
+      html, body {
+          height: 100%;
+      }
+
+      body  {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      div   {
+        border: 10px solid #78C1B3;
+        padding: 20px;
+        width: 400px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+      }
+
+      #color {
+        background-color: #7689D7;
+        font-size: 14px;
+      }
+
+      </style>
+</head>
+
+<body>
+
+<div>
+<h1>ROCK PAPER SCISSORS</h1>
 <h2>Please enter your name to play</h2>
 <form action="/name" method="post">
-  <div>
     <label for="name">Your name:</label>
     <input type="text" name="name">
-    </div>
-    <div>
-    <input type="submit" value="Submit">
-    </div>
+    <input type="submit" id="color" value="Submit">
     </form>
+
+</body>
+</html>
