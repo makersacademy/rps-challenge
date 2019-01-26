@@ -1,0 +1,53 @@
+body {
+  background-image: url("https://bit.ly/2RPF7v3");
+  background-position: center 10%; // Second value is the vertical position.
+}
+
+#enter_name {
+  font-size: 150%;
+  font-family: "Courier";
+}
+
+.form {
+  text-align: center;
+}
+
+#name_filler {
+  width: 20%;
+}
+
+#name_filler[type="text"] {
+  font-size: 150%;
+  font-family: "Courier";
+}
+
+.submit_button {
+  vertical-align: -100%;
+}
+
+.page_title {
+  font-size: 350%;
+  font-family: "Courier";
+  animation-name: flash;
+  animation: flash 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-play-state: running;
+  text-align: center;
+}
+
+@keyframes flash {
+  0%{     color: 000080;    }
+ 40%{    color: orange; }
+ 60%{    color: pink; }
+ 90%{    color:transparent;  }
+ 100%{   color: green;    }
+}
+
+.players {
+  font-family: 'Futura';
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+  text-align: center;
+}
