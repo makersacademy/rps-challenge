@@ -30,3 +30,12 @@ feature 'computer choice' do
     expect(page).to have_content "Computer played Paper! COMPUTER WON!"
   end
 end
+
+feature 'play again' do
+  scenario 'should confirm computer choice' do
+    enter_name
+    click_button 'Rock'
+    click_button 'Play again'
+    expect(page).to have_content "Debora, let's play Rock, Paper, Scissors!"
+  end
+end
