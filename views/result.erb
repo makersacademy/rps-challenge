@@ -8,13 +8,16 @@
 
     <div class="container">
       <div class="box">
+      
         <% if @winner %>
           <h1><%= @winner.move %> beats <%= @loser.move %></h1>
-          <h2><%= @winner.name %> wins!</h2>
+          <div class="blink_me">
+            <h2><%= @winner.name %> wins!</h2>
+          </div>
         <% else %>
-          <h1>It's a draw!</h1>
+          <h2>It's a draw! :( </h2>
         <% end %>  
-        <a href="/game">Play again</a>     
+        <a href="/game">Play again?</a>     
       </div>
     </div>
 
