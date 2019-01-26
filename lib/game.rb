@@ -2,7 +2,7 @@ require_relative 'weapon'
 
 class Game
 
-  WEAPONS = [Rock, Paper, Scissors]
+  WEAPONS = [Rock, Paper, Scissors, Lizard, Spock]
 
   PLAYER_1_WIN_MESSAGE = "Player 1 has won! Congratulations! Bad luck Player 2."
   DRAW_MESSAGE = "Commiserations to both - it's a draw!"
