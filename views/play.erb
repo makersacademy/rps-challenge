@@ -1,4 +1,18 @@
-<h1> Hello <%= @player  %>! </h1>
+
+
+<h1>Hello <%= @player  %>! </h1>
+<h1> Choose... </h1>
+
+
+<!-- <form action="" method="post">
+    <input type="submit" name="upvote" value="Upvote" />
+</form> -->
+
 <form action="/play" method="get">
-  <input type="submit" value="Play">
+  <input type="submit" name="Rock" value="Rock">
+  <input type="submit" name="Paper" value="Paper">
+    <input type="submit" name="Scissors" value="Scissors">
 </form>
+
+</body>
+</html>
