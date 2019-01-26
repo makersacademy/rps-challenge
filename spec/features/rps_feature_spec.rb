@@ -56,7 +56,9 @@ feature 'play rock paper scissors' do
     click_button('Resolve')
     click_button('Reset')
     expect(page).to have_content('Please sign in to play')
-
+    fill_in('player_one_name', with: 'Jill')
+    click_button('Submit')
+    expect(page).to_not have_content('has chosen')
   end
 
 end
