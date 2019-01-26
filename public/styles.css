@@ -127,7 +127,7 @@ h1, h2 {
     top: 65%;
 }
 
-.c1, .c2, .c3 {
+#c1, #c2, #c3 {
     display: inline-block;
     vertical-align: top;
     width: 20%;
@@ -135,11 +135,11 @@ h1, h2 {
     text-align: left;
 }
 
-.c1:hover, .c2:hover, .c3:hover{
+/*#c1:hover, #c2:hover, #c3:hover{
   transform: scale(1.15);
   position: relative; top: -7vh; 
   filter: drop-shadow(12px 12px 14px red) invert(100%);
-}
+}*/
 
 .rock {
  display: inline-block;
@@ -149,6 +149,52 @@ h1, h2 {
     margin: 0 auto;
     padding: auto;
     position: relative;
+}
+
+
+#c1 > #rock_reveal {
+  visibility: hidden;
+}
+#c1:hover > #rock_reveal{
+  visibility: visible;
+}
+
+#c2 > #paper_reveal {
+  visibility: hidden;
+}
+#c2:hover > #paper_reveal{
+  visibility: visible;
+}
+
+#c3 > #scissors_reveal {
+  visibility: hidden;
+}
+#c3:hover > #scissors_reveal{
+  visibility: visible;
+}
+
+#rock_reveal{
+  position:fixed;
+  top: 30%;
+  left: 40%;
+  font-size: 500%;
+  color: white;
+}
+
+#paper_reveal{
+  position:fixed;
+  top: 30%;
+  left: 40%;
+  font-size: 500%;
+  color: white;
+}
+
+#scissors_reveal{
+  position:fixed;
+  top: 30%;
+  left: 40%;
+  font-size: 500%;
+  color: white;
 }
 
 .paper { 
@@ -172,7 +218,7 @@ h1, h2 {
 
 
 
-.c1, .c2, .c3 {
+#c1, #c2, #c3 {
   border-radius: 10px;
   color: #fff;
   background: linear-gradient(-45deg, rgba(255,0,0,1), rgba(255,0,0,0.2));
@@ -181,6 +227,9 @@ h1, h2 {
   -moz-animation: Gradient 10s ease infinite;
   animation: Gradient 10s ease infinite;
 }
+
+
+
 
 @-webkit-keyframes Gradient {
   0% {
