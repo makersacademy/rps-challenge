@@ -55,5 +55,15 @@ feature 'play rock paper scissors' do
     expect(page).to_not have_content('has chosen')
   end
 
+  scenario 'the game can be partially reset' do
+    sign_in_and_play
+    choose_rock_and_scissors
+    click_button('Reset (Keep Players)')
+    expect(page).to have_content('Jill')
+    expect(page).to have_content('Jack')
+    expect(page).to have_content('choose your weapon!')
+    expect(page).to_not have_content('has chosen')
+  end
+
 end
 

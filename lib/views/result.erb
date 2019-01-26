@@ -1,10 +1,16 @@
-<div><%= @player_one_name %> has chosen <%= @player_one_weapon %>!</div>
-<div><%= @player_two_name %> has chosen <%= @player_two_weapon %>!</div>
+<div>Player 1: <%= @player_one_name %> has chosen <%= @player_one_weapon %>!</div>
+<div>Player 2: <%= @player_two_name %> has chosen <%= @player_two_weapon %>!</div>
 <div><%= @result %></div>
 <div>Would you like to play again?</div>
 <div>
   <form action="/reset" method="post">
     <input type="submit" value="Reset">
+  </form>
+</div>
+
+<div>
+  <form action="/partial_reset" method="post">
+    <input type="submit" value="Reset (Keep Players)">
   </form>
 </div>
 

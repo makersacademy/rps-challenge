@@ -5,7 +5,7 @@ class Game
   WEAPONS = [Rock, Paper, Scissors]
 
   PLAYER_1_WIN_MESSAGE = "Player 1 has won! Congratulations! Bad luck Player 2."
-  DRAW_MESSAGE = "You have drawn with the computer! Almost there..."
+  DRAW_MESSAGE = "Commiserations to both - it's a draw!"
   PLAYER_2_WIN_MESSAGE = "Player 2 has won! Congratulations! Bad luck Player 1."
   ERROR_MESSAGE = "Something has gone wrong with the result calculation (sorry)"
 
