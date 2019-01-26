@@ -11,7 +11,6 @@ feature 'Takes and stores Player 1 username' do
   end
 end
 
-
 # As a marketeer
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
