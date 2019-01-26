@@ -1,0 +1,15 @@
+<html>
+  <% if @winner == true %>
+  <body style="background-color:powderblue;">
+    <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> You have won </h1>
+  </body>
+  <% elsif @winner == :Draw %>
+  <body style="background-color:powderblue;">
+    <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> Its a draw </h1>
+  </body>
+  <% else %>
+  <body style="background-color:grey;">
+    <h1 align="center" style="color:black; font-family:verdana;"> Loser </h1>
+  </body>
+  <% end %>
+</html>
