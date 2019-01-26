@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/middle'
 require './lib/computer'
 require './lib/player'
+
 class RockPaperScissors < Sinatra::Base
   
   enable :sessions
@@ -16,7 +17,6 @@ class RockPaperScissors < Sinatra::Base
   
   post '/name' do
     @game = Middle.create_game(Player.new(params[:name]), Computer.new)
-    p @game
     redirect '/game'
   end
 
@@ -33,12 +33,13 @@ class RockPaperScissors < Sinatra::Base
     @move = @rock || @paper || @scissors
     @game.make_move(@game.player1, @move)
     @game.computer_move
-    p @game.player1.move
-    p @game.player2.move
     redirect '/result'
   end
 
   get '/result' do
+    @game.calculate_winner
+    @winner = @game.winner
+    @loser = @game.loser
     erb :result
   end
 
