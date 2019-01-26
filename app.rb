@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -26,6 +27,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @player = $player
+    @computer = Computer.new
     erb :result
   end
 
