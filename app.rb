@@ -14,6 +14,11 @@ class RPSapp < Sinatra::Base
     erb :play
   end
 
+  post '/go' do
+    @p1_go = params[:player_1_name]
+    erb :go
+  end
+
   run! if app_file == $0
 
 end
