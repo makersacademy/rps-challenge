@@ -46,7 +46,8 @@ feature 'play rock paper scissors' do
   scenario 'the game will declare a winner' do
     sign_in_and_play
     choose_rock_and_scissors
-    expect(page).to have_content('Jill wins!')
+    click_button('Resolve')
+    expect(page).to have_content(Game::COMPUTER_WIN_MESSAGE)
   end
 
 end

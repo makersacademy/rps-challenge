@@ -18,7 +18,9 @@ Player 1: <%= @player_one_name %>
       <input type="submit" value="Resolve">
     </form>
   </div>
+<% end %>
 
-
+<% if @result %>
+<div><%= @result %></div>
 <% end %>
 
