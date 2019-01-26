@@ -1,0 +1,35 @@
+<h1> <%= @player1.name %> V <%= @player2.name %> </h1>
+<% if @winner==nil %>
+Choose your move
+<% end %>
+
+<form action="/1prock" method="post">
+<input type="submit" value=rock>
+</form>
+
+<form action="/1ppaper" method="post">
+<input type="submit" value=paper>
+</form>
+
+<form action="/1pscissors" method="post">
+<input type="submit" value=scissors>
+</form>
+
+
+<form action="/2prock" method="post">
+<input type="submit" value=rock>
+</form>
+
+<form action="/2ppaper" method="post">
+<input type="submit" value=paper>
+</form>
+
+<form action="/2pscissors" method="post">
+<input type="submit" value=scissors>
+</form>
+
+<% if @winner!=nil && @winner!=:draw %>
+<%= @winner.name %> wins!
+<% elsif @winner!=nil && @winner==:draw %>
+It's a draw!
+<% end %>

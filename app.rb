@@ -9,16 +9,27 @@ class RockPaperScissors < Sinatra::Base
     erb(:enterplayer)
   end
   post "/registername" do
-    session['player1name'] = params['player1name']
-    session['player1'] = Player.new(session['player1name'])
-    session['computerplayer'] = Computer.new
-    redirect '/match'
+    session['player1'] = Player.new(params['player1name'])
+    if params['player2name'] == ""
+      session['computerplayer'] = Computer.new
+      redirect '/match'
+    else
+      session['player2'] = Player.new(params['player2name'])
+      redirect '/2pmatch'
+    end
   end
   get "/match" do
     @player2 = session['computerplayer']
     @player1 = session['player1']
     @winner = Battle.new(session['player1'],session['computerplayer']).winner
     erb(:match)
+  end
+
+  get "/2pmatch" do
+    @player2 = session['player2']
+    @player1 = session['player1']
+    @winner = Battle.new(session['player1'],session['player2']).winner
+    erb(:twoplayermatch)
   end
 
   post "/rock" do
