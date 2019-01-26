@@ -21,7 +21,7 @@ class Rps < Sinatra::Base
   end  
 
   post '/in_play' do
-    player = Player.new(params[:choice])
+    player = Player.new(params[:Choice])
     game = Game.new(player)
     game.determine_winner
     session[:result] = game.winner
