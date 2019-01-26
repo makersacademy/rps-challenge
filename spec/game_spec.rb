@@ -36,7 +36,7 @@ RSpec.describe Game do
       game.instance_variable_set(:@player2_move, 'scissors')
       p game.player1_move
       p game.player2_move
-      expect(game.calc_winner).to eq(player1)
+      expect(game.calculate_winner).to eq(player1)
     end
   end
 

@@ -18,7 +18,7 @@ class Game
     @player2_move = @player2.make_move
   end
 
-  def calc_winner
+  def calculate_winner
     if @player2_move == @player1_move
       @winner = nil
     elsif @player1_move == 'rock' && @player2_move == 'paper'
