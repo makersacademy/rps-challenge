@@ -39,6 +39,12 @@ post '/goodbye' do
   erb(:goodbye)
 end
 
+post '/troll' do 
+  $game
+  @name = $game.player.name
+  redirect "https://www.google.com/search?ei=M79LXIOhHIK61fAP5auBuAc&q=Hi%2C+My+Name+Is+""#{@name}""+And+I+Am+A+Buzzkill"
+end
+
 # start the server if ruby file executed directly
 run! if app_file == $0
 end

@@ -15,11 +15,11 @@ class Game
   def run_game 
     @comp_choice.push(@computer.play)
     if @comp_choice[-1] == @player.show
-      @result = "Draw" 
+      @result = "It's A Draw" 
     elsif (@comp_choice[-1] == "Scissors" && @player.show == "Paper") || (@comp_choice[-1] == "Rock" && @player.show == "Scissors") || (@comp_choice[-1] == "Paper" && @player.show == "Rock")
-      @result = "Computer Wins"
+      @result = "I Win."
     else
-      @result = "Player Wins"
+      @result = "You Win."
     end
   end
 
