@@ -8,6 +8,13 @@ describe Computer do
     it "doesn't require arguments" do
       expect {subject.choose_move}.to_not raise_error
     end
-    it "chooses move randomly"
+    it "chooses move randomly" do
+      srand(534)
+      subject.choose_move
+      expect {
+        srand(536)
+        subject.choose_move
+      }.to change(subject, :move)
+    end
   end
 end
