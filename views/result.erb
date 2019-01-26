@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+      <p>Computer choice: <%= @computer_choice %> </p>
+      <p>choice: <%= @rock %> </p>
+      <p>choice: <%= @paper %> </p>
+      <p>choice: <%= @scissors %> </p>
+
+      <% if @computer_choice == @rock || @computer_choice == @paper || @computer_choice == @scissors %>
+        <h1>It's a draw - <a href="/game">Play again?</a></h1>
+      <% elsif @computer_choice == 'rock' && @paper %>
+        <h1>Paper beats rock. You win!</h1>
+      <% elsif @computer_choice == 'rock' && @scissors %>
+        <h1>Rock beats scissors, computer wins</h1>
+      <% elsif @computer_choice == 'paper' && @scissors %>
+        <h1>Scissor beats paper. You win!</h1>
+      <% elsif @computer_choice == 'paper' && @rock %>
+        <h1>Paper beats rock, computer wins</h1>
+      <% elsif @computer_choice == 'scissors' && @rock %>
+        <h1>Rock beats scissors, you win!</h1>
+      <% elsif @computer_choice == 'scissors' && @paper %>
+        <h1>Scissor beats paper, computer wins :(</h1>
+      <% end %>
+       
+      </div>
+    </div>
+
+  </body>
+
+</html>
