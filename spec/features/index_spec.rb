@@ -20,6 +20,7 @@ RSpec.describe Rps do
       click_button 'Register'
       select('Rock', from: 'rock_paper_scissors')
       click_button 'Play'
+      expect(page).to have_content('Rock')
     end
   end
 
@@ -31,7 +32,7 @@ RSpec.describe Rps do
       click_button 'Register'
       select('Rock', from: 'rock_paper_scissors')
       click_button 'Play'
-      expect(page).to have_content('Rock')
+      expect(page).to have_content(name)
     end
   end
 
@@ -47,4 +48,36 @@ RSpec.describe Rps do
     end
   end
 
+  feature 'Testing win, draw or loose' do
+    scenario 'User sees a draw' do
+      visit('/')
+      name = 'name'
+      fill_in 'your_name', with: name
+      click_button 'Register'
+      select('Rock', from: 'rock_paper_scissors')
+      allow_any_instance_of(Engine).to receive(:random).and_return("Rock")
+      click_button 'Play'
+      expect(page).to have_content("IT'S A DRAW!")
+    end
+    scenario 'User sees a win' do
+      visit('/')
+      name = 'name'
+      fill_in 'your_name', with: name
+      click_button 'Register'
+      select('Rock', from: 'rock_paper_scissors')
+      allow_any_instance_of(Engine).to receive(:random).and_return("Scissors")
+      click_button 'Play'
+      expect(page).to have_content("YOU WIN!")
+    end
+    scenario 'User sees a loose' do
+      visit('/')
+      name = 'name'
+      fill_in 'your_name', with: name
+      click_button 'Register'
+      select('Rock', from: 'rock_paper_scissors')
+      allow_any_instance_of(Engine).to receive(:random).and_return("Paper")
+      click_button 'Play'
+      expect(page).to have_content("YOU LOOSE")
+    end
+  end
 end
