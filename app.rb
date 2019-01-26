@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/engine'
 
 class Rps < Sinatra::Base
 
@@ -26,6 +27,8 @@ class Rps < Sinatra::Base
   get '/results' do
     @player = session[:players_name]
     @player_selected = session[:players_selection]
+    engine = Engine.new
+    @computer_selected = engine.random
     erb(:results)
   end
 
