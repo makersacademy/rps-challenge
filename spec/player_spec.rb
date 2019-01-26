@@ -9,4 +9,11 @@ RSpec.describe Player do
     end
   end
 
+  describe '#make_move' do
+    it 'remembers the last move' do
+      subject.make_move('rock')
+      expect(subject.move).to eq('rock')
+    end
+  end
+
 end
