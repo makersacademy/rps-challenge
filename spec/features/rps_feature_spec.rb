@@ -18,15 +18,17 @@ end
 
 feature 'play rock paper scissors' do
 
-  scenario 'marketeer gets choice of rock, paper, scissors' do
+  scenario 'marketeer gets choice of rock, paper, scissors, lizard and spock' do
     sign_in_and_play
     expect(page).to have_content('choose your weapon!')
     expect(page).to have_button('Rock')
     expect(page).to have_button('Paper')
     expect(page).to have_button('Scissors')
+    expect(page).to have_button('Lizard')
+    expect(page).to have_button('Spock')
   end
 
-  scenario 'marketeer can make a selection of rock, paper, scissors' do
+  scenario 'marketeer can make a selection of rock, paper, scissors, lizard and spock' do
     sign_in_and_play
     click_button('Rock')
     expect(page).to have_content('has chosen Rock!')
@@ -36,6 +38,10 @@ feature 'play rock paper scissors' do
     sign_in_and_play
     click_button('Scissors')
     expect(page).to have_content('has chosen Scissors!')
+    click_button('Lizard')
+    expect(page).to have_content('has chosen Lizard!')
+    click_button('Spock')
+    expect(page).to have_content('has chosen Spock!')
   end
 
   scenario 'the game will declare a winner' do
