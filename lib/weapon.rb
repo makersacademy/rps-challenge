@@ -26,22 +26,26 @@ class Weapon
 end
 
 class Scissors < Weapon
-
-  @wins = ['Paper']
-  @loses = ['Rock']
-
+  @wins = %w[Paper Lizard]
+  @loses = %w[Rock Spock]
 end
 
 class Paper < Weapon
-
-  @wins = ['Rock']
-  @loses = ['Scissors']
-
+  @wins = %w[Rock Spock]
+  @loses = %w[Scissors Lizard]
 end
 
 class Rock < Weapon
+  @wins = %w[Scissors Lizard]
+  @loses = %w[Paper Spock]
+end
 
-  @wins = ['Scissors']
-  @loses = ['Paper']
+class Lizard < Weapon
+  @wins = %w[Spock Paper]
+  @loses = %w[Rock Scissors]
+end
 
+class Spock < Weapon
+  @wins = %w[Scissors Rock]
+  @loses = %w[Lizard Paper]
 end
