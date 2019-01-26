@@ -1,5 +1,5 @@
 class Game
-  attr_reader :players, :player1, :player2, :player1_move
+  attr_reader :players, :player1, :player2, :player1_move, :player2_move, :winner
 
   def initialize(player1, player2)
     @player1 = player1
@@ -7,6 +7,7 @@ class Game
     @players = [@player1, @player2]
     @player1_move = nil
     @player2_move = nil
+    @winner = nil
   end
 
   def make_move(player, move)
@@ -15,6 +16,24 @@ class Game
 
   def computer_move      
     @player2_move = @player2.make_move
+  end
+
+  def calc_winner
+    if @player2_move == @player1_move
+      @winner = nil
+    elsif @player1_move == 'rock' && @player2_move == 'paper'
+      @winner = @player2
+    elsif @player1_move == 'rock' && @player2_move == 'scissors'
+      @winner = @player1
+    elsif @player1_move == 'paper' && @player2_move == 'rock'
+      @winner = @player1
+    elsif @player1_move == 'paper' && @player2_move == 'scissors'
+      @winner = @player2
+    elsif @player1_move == 'scissors' && @player2_move == 'rock'
+      @winner = @player2
+    elsif @player1_move == 'scissors' && @player2_move == 'paper'
+      @winner = @player1    
+    end
   end
   
 end

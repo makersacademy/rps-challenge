@@ -26,4 +26,18 @@ RSpec.describe Game do
     game.make_move(player1, 'rock')
     expect(game.player1_move).to eq('rock')
   end
+
+  describe '#winner' do
+    it 'can decide on a winner' do
+      player1 = double('player')
+      player2 = double('player')
+      game = Game.new(player1, player2)
+      game.instance_variable_set(:@player1_move, 'rock')
+      game.instance_variable_set(:@player2_move, 'scissors')
+      p game.player1_move
+      p game.player2_move
+      expect(game.calc_winner).to eq(player1)
+    end
+  end
+
 end
