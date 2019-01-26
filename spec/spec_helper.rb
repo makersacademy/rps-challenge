@@ -5,6 +5,7 @@ require 'simplecov-console'
 ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '../lib/', 'app.rb' )
+require 'features/web_helpers'
 
 Capybara.app = RPS
 
