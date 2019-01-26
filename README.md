@@ -1,4 +1,6 @@
-# RPS Challenge
+# Rock Paper Scissors Challenge
+
+[![rock-paper-scissors2.gif](https://i.postimg.cc/6QQt73qd/rock-paper-scissors2.gif)](https://postimg.cc/v4CpkGWB)
 
 Instructions
 -------
