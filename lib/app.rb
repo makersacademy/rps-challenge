@@ -27,6 +27,10 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
+  post '/resolve' do
+
+  end
+
   run! if app_file == $0
 
 end

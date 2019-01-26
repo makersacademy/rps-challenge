@@ -8,12 +8,23 @@ describe Game do
   end
 
   it 'should return a random weapon' do
-    expect(Game::WEAPONS).to receive(:sample).and_return(:paper)
+    expect(Game::WEAPONS).to receive(:sample).and_return(Paper)
     Game.choose_weapon
   end
 
-  it 'should return a winner' do
+  it 'should return a draw' do
+    expect(Game::WEAPONS).to receive(:sample).and_return(Paper)
+    expect(Game.resolve("Paper")).to eq(:draw)
+  end
 
+  it 'should return a win' do
+    expect(Game::WEAPONS).to receive(:sample).and_return(Paper)
+    expect(Game.resolve("Rock")).to eq(:win)
+  end
+
+  it 'should return a loss' do
+    expect(Game::WEAPONS).to receive(:sample).and_return(Paper)
+    expect(Game.resolve("Scissors")).to eq(:lose)
   end
 
 

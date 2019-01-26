@@ -13,7 +13,6 @@ class Weapon
 
   def self.wins?
     @wins.include?(@opponent)
-
   end
 
   def self.loses?

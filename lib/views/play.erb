@@ -11,6 +11,14 @@ Player 1: <%= @player_one_name %>
 </div>
 
 <% if @player_one_weapon %>
-<%= @player_one_name %> has chosen <%= @player_one_weapon %>!
-The computer has chosen <%= @player_two_weapon %>!
+  <div><%= @player_one_name %> has chosen <%= @player_one_weapon %>!</div>
+  <div>The computer has chosen <%= @player_two_weapon %>!</div>
+  <div>
+    <form action="/resolve" method="post">
+      <input type="submit" value="Resolve">
+    </form>
+  </div>
+
+
 <% end %>
+
