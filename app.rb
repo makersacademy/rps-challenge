@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/middle'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   
@@ -15,7 +16,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     session[:name] = params[:name]
-    @game = Middle.create_game(session[:name], Middle.computer)
+    @game = Middle.create_game(session[:name], Middle.computer(Computer.new))
     p @game
     redirect '/game'
   end
