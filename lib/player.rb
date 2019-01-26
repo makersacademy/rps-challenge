@@ -6,8 +6,4 @@ class Player
     @name = name
   end
 
-  def plays(choice)
-    choice
-  end
-
 end

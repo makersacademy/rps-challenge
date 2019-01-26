@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'player'
+require_relative 'game'
 
 class RPS < Sinatra::Base
 
@@ -28,6 +29,7 @@ class RPS < Sinatra::Base
   end
 
   get '/set' do
+    @game = Game.new
     @player = session[:player]
     @choice = session[:choice]
     erb(:choice)
