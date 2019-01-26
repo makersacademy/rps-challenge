@@ -19,7 +19,8 @@ body {
 }
 
 .box {
-  min-width: 300px;
+  min-width: 50vw;
+  min-height: 30vh;
   margin: 5px;
   text-align: center;
   background-color: #fff;
