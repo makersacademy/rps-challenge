@@ -1,43 +1,28 @@
 class Result
 
-  attr_reader :comp_hand, :weapon, :game_result
+  attr_reader :game_result
 
-  def initialize(weapon)
-    hands_arr = ['👊','🤚','✌️']
-    @comp_hand = hands_arr.sample
+  def initialize(weapon, enemy)
+    @computer_hand = enemy
     @weapon = weapon
-    @game_result = ['Draw']
-    eval
+    evaluation
   end
 
-  def eval
-    if @weapon == @comp_hand
-      draw
-    elsif @weapon == '👊' && @comp_hand == '✌️'
-      playerbeatscomp
-    elsif @weapon == '👊' && @comp_hand == '🤚'
-      compbeatsplayer
-    elsif @weapon == '✌️' && @comp_hand == '🤚'
-      playerbeatscomp
-    elsif @weapon == '✌️' && @comp_hand == '👊'
-      compbeatsplayer
-    elsif @weapon == '🤚' && @comp_hand == '👊'
-      playerbeatscomp
-    elsif @weapon == '🤚' && @comp_hand == '✌️'
-      compbeatsplayer
+  def evaluation
+    if @weapon == @computer_hand
+      'Draw'
+    elsif @weapon == '👊' && @computer_hand == '✌️'
+      'You win'
+    elsif @weapon == '👊' && @computer_hand == '🤚'
+      'You lose'
+    elsif @weapon == '✌️' && @computer_hand == '🤚'
+      'You win'
+    elsif @weapon == '✌️' && @computer_hand == '👊'
+      'You lose'
+    elsif @weapon == '🤚' && @computer_hand == '👊'
+      'You win'
+    elsif @weapon == '🤚' && @computer_hand == '✌️'
+      'You lose' 
     end
   end
-
-  def compbeatsplayer
-    @game_result = ['You lose']
-  end
-
-  def playerbeatscomp
-    @game_result = ['You Win']
-  end
-
-  def draw
-    @game_result
-  end
-
 end

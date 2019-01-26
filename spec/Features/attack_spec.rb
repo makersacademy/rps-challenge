@@ -4,7 +4,12 @@
 
 feature 'winner' do
   scenario 'attack Player 2' do
-    click_button('rock')
-    expect(page).to have_content '👊 beats'
+
+    visit('/')
+    fill_in 'player_name', with: 'Jimmy'
+    fill_in 'name_colour', with: 'red'
+    click_button('Submit')
+    click_button('👊')
+    expect(page).to have_content '👊 v'
   end
 end

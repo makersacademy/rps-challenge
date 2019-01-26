@@ -1,7 +1,11 @@
 <center>
-  <body>
-    1<%= "#{@result_cp}"%>
-    2<%= "#{@weapon}" %><br>
-    3<%= @result %><br>
-  </body>
-</center>
+  <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+  <body id="winner">
+    <font color='<%=@name_colour%>'><%="#{@player_name}"%></font><br>
+    <%= @weapon %> VS <%= @comp_hand %><br>
+    <h3><%= @result %><h3><br>
+    </body>
+    <form action='/' method='get'>
+      <input type=submit value='play again?'>
+    </form>
+  </center>

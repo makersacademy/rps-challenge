@@ -1,0 +1,22 @@
+body {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+  width: 50%;
+  border: 3px;
+  padding: 10px;
+  background-image: linear-gradient(to right, black, white, white, white, black);
+  font-family: "Times New Roman", Georgia, Serif;
+}
+
+#title {
+  font-size: 1em;
+  font-variant-ligatures: normal;
+  font-kerning: normal;
+}
+
+#winner {
+  font-size: 3em;
+  font-variant-ligatures: normal;
+  font-kerning: normal;
+}

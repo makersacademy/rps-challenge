@@ -1,18 +1,15 @@
 <center>
 
-  <h1>Ok, <font color='<%="#{@name_colour}"%>'><%="#{@player_name}"%></font> Choose your weapon</h1>
+<link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
 
-</center>
-
-<center>
-
+  <h1>
+    Ok, <font color='<%=@name_colour%>'><%="#{@player_name}"%></font> Choose your weapon
+  </h1>
 
   <form action='/result' method='post'>
-
     <input name='weapon' type='Submit' value='👊'>
     <input name='weapon' type='Submit' value='🤚'>
     <input name='weapon' type='Submit' value='✌️'>
-
   </form>
 
 </center>
