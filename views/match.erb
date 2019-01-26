@@ -1,22 +1,36 @@
- <h1> <%= @player1.name %> V <%= @player2.name %> </h1>
-<% if @winner==nil %>
-Choose your move
-<% end %>
+<head>
+  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/slate/bootstrap.min.css">
+</head>
 
-<form action="/rock" method="post">
- <input type="submit" value=rock>
-</form>
+<div style="height: 170px;"></div>
+  <div align=center>
+    <h1> <%= @player1.name %> V <%= @player2.name %></h1>
+  </div>
 
-<form action="/paper" method="post">
- <input type="submit" value=paper>
-</form>
-
-<form action="/scissors" method="post">
- <input type="submit" value=scissors>
-</form>
-
-<% if @winner!=nil && @winner!=:draw %>
-<%= @winner.name %> wins!
-<% elsif @winner!=nil && @winner==:draw %>
-It's a draw!
-<% end %>
+  <% if @winner==nil %>
+    <div align=center>
+      <h5>Choose your move</h5>
+    </div>
+  <% end %>
+  <div align=center>
+    <% if @winner!=nil && @winner!=:draw %>
+      <h3><%= @winner.name %> wins!</h3>
+    <% elsif @winner!=nil && @winner==:draw %>
+      <h3>It's a draw!</h3>
+    <% end %>
+  </div>
+  <br><br>
+  <div align=center>
+    <form action="/rock" method="post">
+     <input type="submit" class="btn btn-primary" value=rock style="width:200px;">
+    </form>
+    <br>
+    <form action="/paper" method="post">
+     <input type="submit" class="btn btn-primary" value=paper style="width:200px;">
+    </form>
+    <br>
+    <form action="/scissors" method="post">
+     <input type="submit" class="btn btn-primary" value=scissors style="width:200px;">
+    </form>
+  </div>
+</div>

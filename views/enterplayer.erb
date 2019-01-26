@@ -1,5 +1,19 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/slate/bootstrap.min.css">
+</head>
+<div style="height: 170px;"></div>
+<div align=center>
+  <h1> Rock, Paper, Scissors </h1>
+</div>
 <form action="/registername" method="post">
-<input type="text" name="player1name">
-<input type="text" name="player2name">
-<input type="submit" value=Play!>
+  <div align=center>
+    <h5>Enter player 1's name:</h5><br>
+    <input type="text" class="form-control" style="width: 250px;" name="player1name"><br><br>
+  </div>
+  <div align=center>
+    <h5>Enter player 2's name:</h5>
+    <small class="text-muted">or leave blank for a computer opponent</small>
+    <br><br>
+  <input type="text" class="form-control" style="width: 250px;" name="player2name"><br><br>
+  <input type="submit" class="btn btn-primary" style="width:200px;" value=Play!>
 </form>

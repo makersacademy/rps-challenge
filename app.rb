@@ -18,7 +18,7 @@ class RockPaperScissors < Sinatra::Base
       redirect '/match'
     else
       session['player2'] = Player.new(params['player2name'])
-      session['turn'] = Turn.new(session['player1'],session['player2'])
+      session['turn'] = Turn.new(session['player1'], session['player2'])
       redirect '/2pmatch'
     end
   end
@@ -26,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
   get "/match" do
     @player2 = session['computerplayer']
     @player1 = session['player1']
-    @winner = Battle.new(session['player1'],session['computerplayer']).winner
+    @winner = Battle.new(session['player1'], session['computerplayer']).winner
     erb(:match)
   end
 
@@ -50,7 +50,7 @@ class RockPaperScissors < Sinatra::Base
   get "/2pmatch" do
     @player2 = session['player2']
     @player1 = session['player1']
-    @winner = Battle.new(session['player1'],session['player2']).winner
+    @winner = Battle.new(session['player1'], session['player2']).winner
     @turn = session['turn']
     erb(:twoplayermatch)
   end
@@ -71,7 +71,6 @@ class RockPaperScissors < Sinatra::Base
     session['turn'].change
     redirect '/2pmatch'
   end
-
 
   run! if app_file == $0
 end

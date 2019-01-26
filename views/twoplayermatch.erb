@@ -1,23 +1,34 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/slate/bootstrap.min.css">
+</head>
+<div style="height: 170px;"></div>
+<div align=center>
 <h1> <%= @player1.name %> V <%= @player2.name %> </h1>
-<% if @winner==nil %>
-Choose your move
+
+<h4> <%= @turn.now.name %>'s turn! </h4>
+
+<% if @winner!=nil && @winner!=:draw %>
+<h3><%= @winner.name %> wins!</h3>
+<% elsif @winner!=nil && @winner==:draw %>
+<h3>It's a draw!</h3><br>
 <% end %>
 
-<%= @turn.now.name %>'s turn!
+<% if @winner==nil %>
+<h5>Choose your move<h5><br>
+<% end %>
+
+
 
 <form action="/2prock" method="post">
-<input type="submit" value=rock>
-</form>
+<input type="submit" value=rock class="btn btn-primary" style="width:200px;" >
+</form><br>
 
 <form action="/2ppaper" method="post">
-<input type="submit" value=paper>
-</form>
+<input type="submit" value=paper class="btn btn-primary" style="width:200px;">
+</form><br>
 
 <form action="/2pscissors" method="post">
-<input type="submit" value=scissors>
+<input type="submit" value=scissors class="btn btn-primary" style="width:200px;">
 </form>
-<% if @winner!=nil && @winner!=:draw %>
-<%= @winner.name %> wins!
-<% elsif @winner!=nil && @winner==:draw %>
-It's a draw!
-<% end %>
+
+</div>

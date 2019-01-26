@@ -9,10 +9,11 @@ class Turn
   end
 
   def not_now
-    return @players[@turn_index == 0 ? 1 : 0]
+    return @players[@turn_index.zero? ? 1 : 0]
   end
+
   def change
-    @turn_index =@turn_index == 0 ? 1 : 0
+    @turn_index = @turn_index.zero? ? 1 : 0
   end
 
 end

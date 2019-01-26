@@ -6,7 +6,7 @@ describe Computer do
 
   describe "#choose_move" do
     it "doesn't require arguments" do
-      expect {subject.choose_move}.to_not raise_error
+      expect { subject.choose_move }.to_not raise_error
     end
     it "chooses move randomly" do
       srand(534)
