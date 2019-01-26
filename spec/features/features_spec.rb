@@ -15,13 +15,13 @@ end
 feature 'User can play RPS' do
   scenario 'User can choose from Rock, Paper or Scissors' do
     player1_sign_in
-    expect(page).to have_button("Scissors")
+    expect(page).to have_button("scissors")
   end
   scenario 'User chooses Rock, gets presented with a winning screen' do
     dbl = double
     player1_sign_in
-    click_button 'Rock'
-    allow(dbl).to receive(:result).and_return("Scissors")
+    click_button 'rock'
+    allow(dbl).to receive(:result).and_return("scissors")
     expect(page).to have_content("You win!")
   end
 end

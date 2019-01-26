@@ -5,8 +5,8 @@ feature RPS do
   end
   scenario 'Main game screen shows three buttons for options' do
     player1_sign_in
-    expect(page).to have_button("Rock")
-    expect(page).to have_button("Paper")
-    expect(page).to have_button("Scissors")
+    expect(page).to have_button("rock")
+    expect(page).to have_button("paper")
+    expect(page).to have_button("scissors")
   end
 end
