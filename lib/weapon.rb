@@ -4,7 +4,6 @@ class Weapon
   @loses = []
   @opponent = ""
 
-
   def self.compare(other_weapon)
     @opponent = other_weapon.to_s
     return :draw if draws?
@@ -22,7 +21,7 @@ class Weapon
   end
 
   def self.draws?
-    self.to_s == @opponent
+    name.to_s == @opponent
   end
 
 end
