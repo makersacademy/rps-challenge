@@ -12,5 +12,9 @@ describe Game do
     Game.choose_weapon
   end
 
+  it 'should return a winner' do
+
+  end
+
 
 end

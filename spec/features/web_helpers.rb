@@ -4,3 +4,8 @@ def sign_in_and_play
   click_button('Submit')
 end
 
+def choose_rock_and_scissors
+  allow(Game).to receive(:choose_weapon).and_return(:Scissors)
+  click_button('Rock')
+end
+
