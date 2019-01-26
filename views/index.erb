@@ -1,9 +1,15 @@
 <h1>ROCK, PAPER, SCISSORS!</h1>
 <h2>Who's playing?</h2>
-<form action="/name" method="post">
+<form action="/name_weapon" method="post">
   <label for="player">
-    Name:
+    Your name here:<br>
   <input type="text" name="player">
-  </label>
+  </label><br>
+  <label for="weapon">
+    Choose your weapon:<br>
+  <input type="radio" name="weapon" id="rock" value="rock" checked> ROCK<br>
+  <input type="radio" name="weapon" id="paper" value="paper"> PAPER<br>
+  <input type="radio" name="weapon" id="scissors" value="scissors"> SCISSORS<br>
   <input type="submit" value="Play!">
+  </label>
 </form>

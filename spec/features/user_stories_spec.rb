@@ -18,34 +18,38 @@
 
 feature 'Enter name' do
   scenario 'entering name when starting game' do
-    sign_in_and_play
-    expect(page).to have_content 'Let\'s go, Archie!'
+    sign_in
+    click_button 'Play!'
+    expect(page).to have_content 'Archie'
   end
 end
 
 feature 'Present choices' do
   scenario 'present player with choices' do
-    sign_in_and_play
+    visit('/')
     expect(page).to have_content 'Choose your weapon:'
   end
 end
 
 feature 'User can choose one option' do
   scenario 'user chooses rock' do
-    sign_in_and_play
-    click_button 'ROCK'
+    sign_in
+    choose('rock')
+    click_button 'Play!'
     expect(page).to have_content 'Archie chose rock...'
   end
 
   scenario 'user chooses paper' do
-    sign_in_and_play
-    click_button 'PAPER'
+    sign_in
+    choose('paper')
+    click_button 'Play!'
     expect(page).to have_content 'Archie chose paper...'
   end
 
   scenario 'user chooses scissors' do
-    sign_in_and_play
-    click_button 'SCISSORS'
+    sign_in
+    choose('scissors')
+    click_button 'Play!'
     expect(page).to have_content 'Archie chose scissors...'
-  end 
+  end
 end
