@@ -1,5 +1,55 @@
 # RPS Challenge
 
+Introduction
+------
+
+Welcome to the Rock, Paper, Scissors, Spock, Lizard challenge! Written in Ruby on top of Sinatra. 
+
+Instructions for use
+-----
+
+Either go to [heroku](https://rps-challenge-spock.herokuapp.com/) or do things the hard way:
+- Make sure you have `ruby-2.5.0` installed
+- `bundle install` to ensure you have all the gems
+- `rackup` to launch the page. Default port is 9292, so you can go to `localhost:9292` in your browser to play.
+
+Approach
+--------
+
+Challenge instructions are below. The app was built using strict TDD and the red-green-refactor cycle.
+Both of the bonus extensions have been completed, converting the app to be multiplayer and extending with the 'Spock & Lizard' rules. 
+The key design decisions taken were:
+- To avoid logic in the `app.rb` class, the creation of a `Game` class
+- `Game` has responsibility for orchestrating the game i.e.
+    - instructing the pieces to compare themselves and reach the resolution of a game
+    - generating the appropriate message to the participants on conclusion
+    - resetting the game state when players wish to have another game
+- To avoid the use of a global variable, Game is a static class with class instance methods and variables
+- To keep the `Game` classes responsibilities light, I decided to handle 'weapon' comparisons in their own class:
+    - Mindful of the extensibility required for the Spock and Lizard bonus challenge, I decided to use inheritance to accomplish this
+    - (Also from a desire to play around and get more experience with (singleton?) classes)
+    - There is an abstract class, `Weapon`, which contains all the methods for comparisons with other weapons
+    - Each weapon (`Paper`, `Scissors` etc.) is a subclass of `Weapon` and simply overrides two instance variables showing what weapons they win and lose against
+    - This allows the rules to be extended extremely easily in a couple of lines of code. 
+    - All subclasses are grouped and tested in the main `weapon.rb` file for convenience. 
+- Although this meant completing the bonus challenge was relatively simple, I did encounter many wrinkles when working with class Constants like this
+    - For example, the object comparison has to be done with string representations, to avoid `UninitializedConstant` errors, which was disappointing and not as neat as I was hoping for
+- I considered a separate `Print` class, but ultimately the `Game` class was pretty light as it stood and there was only a single printing requirement which may not justify the additional abstraction.
+- Likewise I considered a `Player` class, but ultimately this would just be a container for `name` and `weapon` instance variables as all the legwork is done in the `Weapon` class
+    - I therefore decided that this functionality could just as readily be accomplished by storing these two variables in a session
+
+Challenges
+----------
+
+- Difficulty in working with class Constants, as described above. Probably not best practice?
+- Returning to the same .erb file (and using `if` statements to show/hide content) caused more trouble than it was worth in the end, so I ended up using more .erb files than originally anticipated. 
+    - Need to ask about what best practice is here - simpler `app.rb` at the price of more html duplication between `erb` files? 
+- During large refactorings (e.g. switching from an AI to a human 2nd player), I still found it difficult to stick to strict TDD given the sheer number of changes. 
+    - Doing the work 'all at once' feels faster, whereas the alternative seems to be multiple refactorings on top of refactorings as a small piece of the changes is moved, everything is refactored, then another small piece is moved etc.
+- Attempted at the beginning to do a UML message diagram and didn't find it that clear to accomplish at all
+    - In the end, structure was dictated by TDD and the user stories, rather than a 'grand plan'
+- Being completely new to CSS, I still find it relatively difficult to make things move where I want. 
+    
 Instructions
 -------
 
