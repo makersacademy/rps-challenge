@@ -1,4 +1,5 @@
 # RPS Challenge
+App can be seen on https://rockpapierscissors.herokuapp.com/
 
 Instructions
 -------
