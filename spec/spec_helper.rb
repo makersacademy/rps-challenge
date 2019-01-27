@@ -16,11 +16,7 @@ ENV['RACK_ENV'] = 'test'
 require 'capybara/rspec'
 require_relative './features/web_helpers'
 
-
 Capybara.app = RockPaperScissors
-
-
-
 
 RSpec.configure do |config|
   config.after(:suite) do
