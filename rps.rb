@@ -11,4 +11,9 @@ class Rps < Sinatra::Base
     erb(:choose)
   end
 
+  post '/result' do
+    p params
+    erb(:result)
+  end
+
 end

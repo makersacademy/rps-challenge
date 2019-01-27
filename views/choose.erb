@@ -11,4 +11,10 @@
 }
   </style>
     <h1> <%= @name %>, please choose your weapon </h1>
+    <form action="/result" method="post">
+      <input type="radio" name="weapon" value="rock"> Rock<br>
+      <input type="radio" name="weapon" value="paper"> Paper<br>
+      <input type="radio" name="weapon" value="scissors"> Scissors
+      <input type="submit" value="Fight!">
+    </form>
 </html>

@@ -14,4 +14,13 @@ RSpec.describe Rps do
     expect(page).to have_content("Bob, please choose your weapon")
   end
 
+  scenario 'confirms we got to results after picking a weapon' do
+    visit('/')
+    fill_in "name", :with => "Bob"
+    click_button "Choose weapon"
+    choose('weapon', option: 'rock')
+    click_button "Fight!"
+    expect(page).to have_content("Bob, you chose rock")
+  end
+
 end
