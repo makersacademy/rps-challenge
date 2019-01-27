@@ -1,8 +1,8 @@
-class Result
+class CheckResult
 
-  def initialize(player, cpu)
-    @player = player
-    @cpu = cpu
+  def initialize(player_choice, cpu_choice)
+    @player_choice = player_choice
+    @cpu_choice = cpu_choice
   end
 
   def determine
@@ -16,13 +16,13 @@ class Result
   end
 
   def win?
-    @player == "✊" && @cpu == "✌️" ||
-    @player == "🤚" && @cpu == "✊" ||
-    @player == "✌️" && @cpu == "🤚"
+    @player_choice == "✊" && @cpu_choice == "✌️" ||
+    @player_choice == "🤚" && @cpu_choice == "✊" ||
+    @player_choice == "✌️" && @cpu_choice == "🤚"
   end
 
   def draw?
-    @player == @cpu
+    @player_name == @cpu_choice
   end
 
 end
