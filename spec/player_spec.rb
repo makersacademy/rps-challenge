@@ -24,4 +24,8 @@ describe Player do
     expect(subject.count_outcome("won")).to eq 1
   end
 
+  it 'hould count the number of each move type' do
+    2.times { subject.store_move("rock") }
+    expect(subject.count_move_type("rock")).to eq 2
+  end
 end

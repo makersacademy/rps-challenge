@@ -69,7 +69,28 @@
       </select>
       <input type= "submit" value="Go!">
       </form>
+    </div>
+<br>
+    <% if @round.complete? == true %>
 
-</div>
+    <div class="row">
+      <h2>Player Preferences</h2>
+
+      <div class="column">
+        <h3><%= @round.current_turn.name%>'s Stats </h3>
+        <b>Rock: <%= @round.current_turn.count_move_type("rock")%> </b><br>
+        Paper: <%= @round.current_turn.count_move_type("paper")%> <br>
+        Scissor: <%= @round.current_turn.count_move_type("scissor")%> <br>
+      </div>
+
+      <div class="column">
+        <h3><%= @round.opponent.name%>'s Stats </h3>
+        <b>Rock: <%= @round.opponent.count_move_type("rock")%> </b><br>
+        Paper: <%= @round.opponent.count_move_type("paper")%> <br>
+        Scissor: <%= @round.opponent.count_move_type("scissor")%> <br>
+      </div>
+    </div>
+    <%end%>
+
   </body>
 </html>
