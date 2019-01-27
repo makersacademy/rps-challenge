@@ -2,7 +2,7 @@ class CPU
 
   attr_reader :option
 
-  def initialize(_option)
+  def initialize(option)
     @option = [🤚, ✌️, ✊].sample
   end
 
