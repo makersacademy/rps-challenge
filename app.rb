@@ -5,13 +5,18 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do
-    erb(:names)
+    erb :names
   end
 
   post '/names' do
     session[:player_name] = params[:player_name]
     @player_name = session[:player_name]
-    erb(:game)
+    redirect '/game'
+  end
+
+  get '/game' do
+    @player_name = session[:player_name]
+    erb :game
   end
 
   run! if app_file == $PROGRAM_NAME

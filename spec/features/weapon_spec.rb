@@ -1,8 +1,8 @@
 feature 'Emoji Options: ' do
-  scenario '2. Player selects rock, paper of scissors emoji' do
+  scenario '1. Player selects rock, paper or scissors emoji' do
     visit '/'
     fill_in :player_name, with: 'Neville'
     click_button 'Submit'
-    find_button('👊').click
+    find_button('✊').click
   end
 end

@@ -1,1 +1,17 @@
-<h1>Welcome to the game, <%= @player_name %>.</h1>
+<center>
+  <head>
+    <meta charset='utf-8'>
+    <h1>Welcome to the game, <%= @player_name %>.</h1>
+  </head>
+  <body>
+    <h2>Choose your weapon...</h2>
+    <br>
+    <div>
+      <form action='/result' method='post'>
+        <input name='weapon' type='submit' value='✊'>
+        <input name='weapon' type='submit' value='🤚'>
+        <input name='weapon' type='submit' value='✌️'>
+      </form>
+    </div>
+  </body>
+</center>
