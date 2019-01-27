@@ -2,8 +2,9 @@ require 'winner'
 require 'player'
 
 describe Winner do
-    player = Player.new('thomas')
-    subject(:winner) {Winner.new(player)}
+    player1 = Player.new('thomas')
+    player2 = Player.new('freddie')
+    subject(:winner) {Winner.new(player1, player2)}
 
     describe '#player1' do
         it 'returns player 1' do
@@ -12,18 +13,19 @@ describe Winner do
         end
     end
 
-    describe '#computer_move' do
-        it 'returns computer move' do
-            expect(winner).to respond_to(:computer_move)
-            winner.computer_move
+    describe '#player2' do
+        it 'returns player 2' do
+            expect(winner).to respond_to(:player2)
+            winner.player2
         end
     end
+
 
     describe '#determine_winner' do
         it 'determines the winner' do
           winner.player1.move = 'Rock'
-          winner.computer_move = 'Paper'
-          expect{print winner.determine_winner}.to output().to_stdout
+          winner.player2.move = 'Paper'
+          expect{print winner.determine_winner}.to output('Player 2').to_stdout
         end
     end
 end

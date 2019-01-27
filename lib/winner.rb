@@ -1,33 +1,33 @@
 class Winner
-    attr_accessor :player1, :computer_move, :winner1
+    attr_accessor :player1, :player2, :winner1 #:computer_move
 
-    def initialize(player1)
+    def initialize(player1, player2)
         @player1 = player1
-        @computer_move = ['Rock', 'Paper', 'Scissors'].sample
+        @player2 = player2
         @winner1
     end
 
 
     def determine_winner
-        if @player1.move == @computer_move
+        if @player1.move == @player2.move
             @winner1 = 'Draw'
         elsif @player1.move == 'Rock'
-            if @computer_move == 'Scissors'
+            if @player2.move == 'Scissors'
                 @winner1 = 'Player 1'
             else
-                @winner1 = 'Computer'
+                @winner1 = 'Player 2'
             end
         elsif @player1.move == 'Paper'
-            if @computer_move == 'Rock'
+            if @player2.move == 'Rock'
                 @winner1 = 'Player 1'
             else
-                @winner1 = 'Computer'
+                @winner1 = 'Player 2'
             end
         else
-            if @computer_move == 'Paper'
+            if @player2.move == 'Paper'
                 @winner1 = 'Player 1'
-            else @computer_move == 'Rock'
-                @winner1 = 'Computer'
+            else @player2.move == 'Rock'
+                @winner1 = 'Player 2'
             end
         end
     end
