@@ -20,4 +20,3 @@ describe Game do
     expect(@game.winner).to eq false
   end
 end
-    

@@ -2,7 +2,7 @@ class Player
   attr_reader :name, :choice
   def initialize(name)
     @name = name
-    @choice
+    @choice = nil
   end
 
   def turn(choice)

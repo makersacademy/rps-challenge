@@ -31,4 +31,3 @@ feature 'Game chooses rock' do
     expect(page).to have_content 'You chose Scissors Computer chose Rock Loser'
   end
 end
-  
