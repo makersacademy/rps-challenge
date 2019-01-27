@@ -37,6 +37,7 @@ The key design decisions taken were:
 - I considered a separate `Print` class, but ultimately the `Game` class was pretty light as it stood and there was only a single printing requirement which may not justify the additional abstraction.
 - Likewise I considered a `Player` class, but ultimately this would just be a container for `name` and `weapon` instance variables as all the legwork is done in the `Weapon` class
     - I therefore decided that this functionality could just as readily be accomplished by storing these two variables in a session
+- All `RSpec` tests pass, as does `Rubocop`
 
 Challenges
 ----------
