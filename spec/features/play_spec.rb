@@ -9,15 +9,15 @@ end
   
 feature 'Game chooses rock' do
   scenario 'player chooses rock' do
-    srand(221563)
+    srand(2)
     sign_in
     click_button 'Rock'
-    expect(page).to have_content 'You chose Rock Computer chose Rock its a draw!'
+    expect(page).to have_content 'You chose Rock Computer chose Rock Its a draw!'
   end
 end  
 feature 'Game chooses rock' do
   scenario 'player chooses paper' do
-    srand(225163)
+    srand(2)
     sign_in
     click_button 'Paper'
     expect(page).to have_content 'You chose Paper Computer chose Rock Winner!'
@@ -25,7 +25,7 @@ feature 'Game chooses rock' do
 end    
 feature 'Game chooses rock' do
   scenario 'player chooses scissors' do
-    srand(221565)
+    srand(2)
     sign_in
     click_button 'Scissors'
     expect(page).to have_content 'You chose Scissors Computer chose Rock Loser'
