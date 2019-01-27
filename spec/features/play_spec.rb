@@ -9,22 +9,45 @@ end
   
 feature 'Game chooses rock' do
   SEED = 2
-  scenario 'player chooses rock' do
+  before(:each) do
     srand(SEED)
     single_sign_in
+  end
+
+  scenario 'player chooses rock' do
     click_button 'Rock'
     expect(page).to have_content 'You chose Rock Computer chose Rock Its a draw!'
   end
+
   scenario 'player chooses paper' do
-    srand(SEED)
-    single_sign_in
     click_button 'Paper'
     expect(page).to have_content 'You chose Paper Computer chose Rock You Win!'
   end
+
   scenario 'player chooses scissors' do
-    srand(SEED)
-    single_sign_in
     click_button 'Scissors'
     expect(page).to have_content 'You chose Scissors Computer chose Rock You lost'
+  end
+end
+
+feature 'Two players' do
+  before(:each) do
+    double_sign_in
+    click_button 'Rock'
+  end
+
+  scenario 'Player1 choses Rock, Player 2 choses Rock' do
+    click_button 'Rock'
+    expect(page).to have_content 'Erin chose Rock Amanda chose Rock Its a draw!'
+  end
+
+  scenario 'Player1 choses Rock, Player 2 choses Paper' do
+    click_button 'Paper'
+    expect(page).to have_content 'Erin chose Rock Amanda chose Paper Amanda wins!'
+  end
+
+  scenario 'Player1 choses Rock, Player 2 choses Scissors' do
+    click_button 'Scissors'
+    expect(page).to have_content 'Erin chose Rock Amanda chose Scissors Erin Wins!'
   end
 end

@@ -1,21 +1,42 @@
 <html>
-  <% if @game.winner == true %>
-  <body style="background-color:powderblue;">
-    <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> You chose <%= @game.players_choice %> </h1>
-    <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> Computer chose <%= @game.computers_choice %> </h1>
-    <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> You Win! </h1>
-  </body>
-  <% elsif @game.winner == :Draw %>
-  <body style="background-color:powderblue;">
-    <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> You chose <%= @game.players_choice %> </h1>
-    <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> Computer chose <%= @game.computers_choice %></h1>
-    <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> Its a draw!</h1>
-  </body>
+  <% if @player2.class == Computer %>
+    <% if @game.winner == true %>
+    <body style="background-color:powderblue;">
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> You chose <%= @game.player1_choice %> </h1>
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> Computer chose <%= @game.player2_choice %> </h1>
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> You Win! </h1>
+    </body>
+    <% elsif @game.winner == :Draw %>
+    <body style="background-color:powderblue;">
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> You chose <%= @game.player1_choice %> </h1>
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> Computer chose <%= @game.player2_choice %></h1>
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> Its a draw!</h1>
+    </body>
+    <% else %>
+    <body style="background-color:grey;">
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> You chose <%= @game.player1_choice %> </h1>
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> Computer chose <%= @game.player2_choice %> </h1>
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> You lost </h1>
+    </body>
+    <% end %>
   <% else %>
-  <body style="background-color:grey;">
-    <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> You chose <%= @game.players_choice %> </h1>
-    <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> Computer chose <%= @game.computers_choice %> </h1>
-    <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> You lost </h1>
-  </body>
-  <% end %>
+    <% if @game.winner == true %>
+    <body style="background-color:powderblue;">
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> <%= @player1.name %> chose <%= @game.player1_choice %> </h1>
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> <%= @player2.name %> chose <%= @game.player2_choice %> </h1>
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> <%= @player1.name %> wins! </h1>
+    </body>
+    <% elsif @game.winner == :Draw %>
+    <body style="background-color:powderblue;">
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> <%= @player1.name %> chose <%= @game.player1_choice %> </h1>
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> <%= @player2.name %> chose <%= @game.player2_choice %> </h1>
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> Its a draw!</h1>
+    </body>
+    <% else %>
+    <body style="background-color:grey;">
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> <%= @player1.name %> chose <%= @game.player1_choice %> </h1>
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> <%= @player2.name %> chose <%= @game.player2_choice %> </h1>
+      <h1 align="center" style="color:rgb(255,51,192); font-family:verdana;"> <%= @player2.name %> wins!</h1>
+    </body>
+  <% else %>
 </html>

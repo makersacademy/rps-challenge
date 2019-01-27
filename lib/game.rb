@@ -13,14 +13,14 @@ class Game
                             :Paper => true,
                             :Scissors => :Draw }
                 }
-  attr_reader :players_choice, :computers_choice
-  def initialize(player, computer = Computer.new)
-    @players_choice = player.choice
-    @computers_choice = computer.choice
+  attr_reader :player1_choice, :player2_choice
+  def initialize(player1, player2)
+    @player1_choice = player1.choice
+    @player2_choice = player2.choice
   end
 
   def winner
-    GAME_RULES[@players_choice][@computers_choice] 
+    GAME_RULES[@player1_choice][@player2_choice] 
   end
 
 end
