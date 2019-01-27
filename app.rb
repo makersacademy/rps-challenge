@@ -40,8 +40,4 @@ class RockPaperScissors < Sinatra::Base
     Game.instance.calculate_winner
     redirect '/play_one_player'
   end
-
-  get '/winner' do
-
-  end
 end

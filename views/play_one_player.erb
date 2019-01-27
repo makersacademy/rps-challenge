@@ -1,23 +1,61 @@
-<h1><%=@game.player_1.name%> vs. Computer!</h1>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-<form action="/rock" method="post">
-  <button type="submit" value=Submit>Rock</button>
-</form>
-<form action="/paper" method="post">
-  <button type="submit" value=Submit>Paper</button>
-</form>
-<form action="/scissors" method="post">
-  <button type="submit" value=Submit>Scissors</button>
-</form>
+<style>
+  .button_div {
+    display: inline-block;
+    padding: 50px;
+  }
 
-<% if @game.round > 0 %>
+  .bottomleft {
+      position: absolute;
+      bottom: 40;
+      left: 50px;
+  }
 
-  <%= @game.player_1.move %> vs. <%= @game.player_2.move %><br>
-  <% if @game.round_winner == "Draw" %>
-    It's a draw!<br>
-  <% else %>
-    <%= @game.round_winner %> wins!<br>
-  <% end %>
-  <%= @game.player_1.name %>: <%= @game.player_1.score %>
-  <%= @game.player_2.name %>: <%= @game.player_2.score %>
-<% end %>
+  .bottomright {
+      position: absolute;
+      bottom: 40;
+      right: 50px;
+  }
+</style>
+
+<center>
+  <h1><%=@game.player_1.name%> vs. Computer!</h1>
+
+  <div class ="button_div">
+    <form action="/rock" method="post">
+      <input type="image" id="image" width="80" height="80" display="inline" src="https://image.flaticon.com/icons/svg/925/925141.svg" alt="rock" value=Submit> </input>
+    </form>
+  </div>
+  <div class ="button_div">
+    <form action="/paper" method="post">
+      <input type="image" id="image" width="80" height="80" display="inline" src="https://image.flaticon.com/icons/svg/941/941565.svg" alt="rock" value=Submit> </input>
+    </form>
+  </div>
+  <div class ="button_div">
+    <form action="/scissors" method="post">
+      <input type="image" id="image" width="80" height="80" display="inline" src="https://image.flaticon.com/icons/svg/1151/1151147.svg" alt="rock" value=Submit> </input>
+    </form>
+  </div>
+
+  <h2>
+    <% if @game.round > 0 %>
+      <%= @game.player_1.move %> vs. <%= @game.player_2.move %><br>
+      <% if @game.round_winner == "Draw" %>
+        It's a draw!<br>
+      <% else %>
+        <%= @game.round_winner %> wins!<br>
+      <% end %>
+      <div class ="bottomleft">
+        <%= @game.player_1.name %>: <%= @game.player_1.score %>
+      </div>
+      <div class ="bottomright">
+        <%= @game.player_2.name %>: <%= @game.player_2.score %>
+      </div>
+    <% end %>
+  </h2>
+</center>
