@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="Public/style_sheets/style.css">
+  </head>
+  <body>
+    <h1 class="page_title">Lets Play Rock,&nbsp; Paper,&nbsp; Scissors!</h1>
+    <h2 class="players"><%= @player_name %>:&nbsp;<%= @player_score %>&nbsp;&nbsp;<b>vs
+    </b>&nbsp;&nbsp;Computer:&nbsp;<%= @computer_score %></h2>
+    <form action="/in-game" method="post">
+      <select name="game_options">
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+      </select>
+      <button id="game_move" name="computer_move" type="submit" value=<%=rand(0..2)%>>Play Hand</button>
+    </form>
+  </body>
+</html>

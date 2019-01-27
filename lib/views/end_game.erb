@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="Public/style_sheets/style.css">
+  </head>
+  <body>
+    <% if @winner == "Player" %>
+      <iframe src="Public/sound/winning_cheering.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+      <audio autoplay id="homepage_music">
+        <source src="Public/sound/winning_cheering.mp3" type="audio/mpeg">
+        </audio>
+      </iframe>
+      <h1 class="page_title">It was only a game of chance!</h1>
+    <% end %>
+    <% if @winner == "Computer" %>
+      <iframe src="Public/sound/losing_laughter.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+      <audio autoplay id="homepage_music">
+        <source src="Public/sound/losing_laughter.mp3" type="audio/mpeg">
+      </audio>
+      </iframe>
+      <h1 class="page_title">Cannot even win a game of chance, pathetic!</h1>
+    <% end %>
+    <form class="form" action="/" method="get">
+      <button id="play_again" name="play_again_button" type="submit">Play Again!</button>
+    </form>
+  </body>
+</html>
