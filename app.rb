@@ -5,6 +5,8 @@ class Rps < Sinatra::Base
 
   get '/' do
     "Starting the app design"
+
+    erb :index
   end
 
 
