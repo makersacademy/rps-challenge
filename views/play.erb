@@ -48,11 +48,9 @@
     <h1>Welcome to the game <%= @player.name %>!</h1>
     <h2>Please choose either Rock, Paper or Scissors</h2>
 
-
       <b><i><p>Rock beats Scissors</p>
       <p>Scissors beats Paper</p>
       <p>Paper beats Rock</p></i></b>
-
 
     <form action="/move" method="post">
       <input type="submit" name="move" id="color" value="Rock">

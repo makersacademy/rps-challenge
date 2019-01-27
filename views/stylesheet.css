@@ -1,16 +1,28 @@
-body  {
-  font-family: 'Helvetica'
-}
 
-div   {
-  border: 5px solid #ee3e80;
-  padding: 20px;
-  width: 275px;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-}
+    html {
+      display: table;
+      margin: auto;
+    }
 
-h1  {
-  font-family: Helvetica;
-}
+    body {
+      font-family: 'Helvetica';
+      text-align: center;
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    body  {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    div   {
+      border: 10px solid #78C1B3;
+      padding: 20px;
+      width: 400px;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+    }
