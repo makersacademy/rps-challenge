@@ -18,6 +18,5 @@ feature 'Basic page layout and functionality' do
     click_link 'Paper'
     sign_in_and_play
     click_link 'Scissors'
-
   end
 end
