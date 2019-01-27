@@ -33,7 +33,7 @@ class Rps < Sinatra::Base
   end
 
   get '/play_again' do
-    redirect "/"
+    redirect "/play"
   end
 
 end
