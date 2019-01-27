@@ -1,16 +1,16 @@
 <% if $game.winner1 == 'Player 1' %>
   <h1>You are the winner!</h1>
   <h2>Your Move: <%=$game.player1.move%>
-  <h2>Player 2's Move: <%=$game.player2.move%>
+  <h2>Computer's Move: <%=$game.computer.move%>
   <h3>PASSING TEST</h3>
-<% elsif $game.winner1 == 'Player 2' %>
-  <h1>You lost to Player 2</h1>
+<% elsif $game.winner1 == 'Computer' %>
+  <h1>You lost to Computer</h1>
   <h2>Your Move: <%=$game.player1.move%>
-  <h2>Player 2's Move: <%=$game.player2.move%>
+  <h2>Computer's Move: <%=$game.computer.move%>
   <h3>PASSING TEST</h3>
 <% else %>
   <h1>It was a draw!</h1>
   <h2>Your Move: <%=$game.player1.move%>
-  <h2>Player 2's Move: <%=$game.player2.move%>
+  <h2>Computer's Move: <%=$game.computer.move%>
   <h3>PASSING TEST</h3>
 <% end %>

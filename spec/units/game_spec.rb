@@ -3,8 +3,8 @@ require 'player'
 
 describe Game do
     player1 = Player.new('thomas')
-    player2 = Player.new('freddie')
-    subject(:game) {Game.new(player1, player2)}
+    computer = Computer.new
+    subject(:game) {Game.new(player1, computer)}
 
     describe '#player1' do
         it 'returns player 1' do
@@ -13,10 +13,10 @@ describe Game do
         end
     end
 
-    describe '#player2' do
-        it 'returns player 2' do
-            expect(game).to respond_to(:player2)
-            game.player2
+    describe '#computer' do
+        it 'returns computer' do
+            expect(game).to respond_to(:computer)
+            game.computer
         end
     end
 
@@ -24,8 +24,8 @@ describe Game do
     describe '#determine_winner' do
         it 'determines the winner' do
           game.player1.move = 'Rock'
-          game.player2.move = 'Paper'
-          expect{print game.determine_winner}.to output('Player 2').to_stdout
+          game.computer.move = 'Paper'
+          expect{print game.determine_winner}.to output('Computer').to_stdout
         end
     end
 end
