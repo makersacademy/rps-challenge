@@ -11,4 +11,3 @@ def choose_rock_and_scissors
   click_button('Scissors')
   click_button('Submit')
 end
-

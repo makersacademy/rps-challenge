@@ -72,4 +72,3 @@ feature 'play rock paper scissors' do
   end
 
 end
-
