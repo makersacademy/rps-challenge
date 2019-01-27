@@ -17,6 +17,7 @@ Approach
 --------
 
 Challenge instructions are below. The app was built using strict TDD and the red-green-refactor cycle.
+- All `RSpec` tests pass, as does `Rubocop` and there is 100% coverage. 
 Both of the bonus extensions have been completed, converting the app to be multiplayer and extending with the 'Spock & Lizard' rules. 
 The key design decisions taken were:
 - To avoid logic in the `app.rb` class, the creation of a `Game` class
@@ -37,7 +38,7 @@ The key design decisions taken were:
 - I considered a separate `Print` class, but ultimately the `Game` class was pretty light as it stood and there was only a single printing requirement which may not justify the additional abstraction.
 - Likewise I considered a `Player` class, but ultimately this would just be a container for `name` and `weapon` instance variables as all the legwork is done in the `Weapon` class
     - I therefore decided that this functionality could just as readily be accomplished by storing these two variables in a session
-- All `RSpec` tests pass, as does `Rubocop`
+
 
 Challenges
 ----------
