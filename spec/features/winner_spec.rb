@@ -7,6 +7,6 @@ feature 'Winner Decider' do
       select 'Rock', from: 'playermove'
       click_on("Confirm Selection")
       click_on("Find Out Winner")
-      expect(page).to have_content "You are the winner!"
+      expect(page).to have_content "You are the winner!" 
     end
 end

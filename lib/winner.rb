@@ -10,7 +10,7 @@ class Winner
 
     def determine_winner
         if @player1.move == @computer_move
-            @winner1 = 'draw'
+            @winner1 = 'Draw'
         elsif @player1.move == 'Rock'
             if @computer_move == 'Scissors'
                 @winner1 = 'Player 1'
