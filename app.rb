@@ -32,4 +32,8 @@ class Rps < Sinatra::Base
     erb(:results)
   end
 
+  get '/play_again' do
+    redirect "/"
+  end
+
 end
