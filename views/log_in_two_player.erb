@@ -4,13 +4,51 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
+<style>
+  .button {
+       display: inline-block;
+       font-family: 'Cabin', Helvetica, Arial, sans-serif;
+       color: black;
+       background: transparent;
+       border: 2px solid #0099CC;
+       border-radius: 6px;
+       border: none;
+       color: white;
+       padding: 16px 32px;
+       text-align: center;
+       display: inline-block;
+       font-size: 30px;
+       margin: 4px 2px;
+       -webkit-transition-duration: 0.4s;
+       transition-duration: 0.4s;
+       cursor: pointer;
+       text-decoration: none;
+       text-transform: uppercase;
+     }
+
+  .button:hover {
+        background-color: black;
+        color: white;
+      }
+
+  .form {
+  border-radius: 0.25em;
+  border-style: solid;
+  border-width: 2px;
+  font-size: 1.2rem;
+  padding: 0.5em 4em 0.5em 2em;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+}
+
+  </style>
+
 <center>
 <body>
   <h1>Please enter your names below:</h1>
   <form action="/player_names" method="post">
-    <input type="text" id="player_1_name" name="player_1_name">
-    <input type="text" id="player_2_name" name="player_2_name">
-    <button type="submit" value=Submit>Submit</button>
+    <input type="text" id="player_1_name" name="player_1_name" class="form" placeholder="Player 1"><br><br>
+    <input type="text" id="player_2_name" name="player_2_name" class="form" placeholder="Player 2"><br>
+    <button type="submit" value=Submit class='button'>Submit</button>
   </form>
 </<body>
 </center>
