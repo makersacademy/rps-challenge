@@ -22,7 +22,7 @@ class CheckResult
   end
 
   def draw?
-    @player_name == @cpu_choice
+    @player_choice == @cpu_choice
   end
 
 end

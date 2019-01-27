@@ -31,11 +31,11 @@ class RockPaperScissors < Sinatra::Base
     session[:player_choice] = params[:player_choice]
     @player_name = session[:player_name]
     @player_choice = session[:player_choice]
+    session[:result] = (CheckResult.new(@player_choice, @cpu_choice)).determine
+    @result = session[:result]
     erb(:result)
   end
 
-  # @result = (CheckResult.new(@player_choice, @cpu_choice)).determine
-  # @result = session[:result]
   run! if app_file == $PROGRAM_NAME
 
 end
