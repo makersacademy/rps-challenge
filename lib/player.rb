@@ -12,9 +12,13 @@ class Player
 end
 
 class Computer
-  attr_reader :move
+  attr_reader :move, :name
 
-  def assign_move
-    @move = ['Rock','Paper','Scissors','Spock','Lizard'].sample
+  def initialize(name = 'Computer')
+    @name = name
+  end
+
+  def assign_move(move)
+    @move = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard'].sample
   end
 end

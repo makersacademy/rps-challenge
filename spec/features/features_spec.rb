@@ -30,10 +30,48 @@ feature 'Testing game page displays' do
     begin_game
     expect(page).to have_button('Scissors')
   end
+end
 
-  scenario 'r/p/s buttons move onto attack screen' do
+feature 'Testing functions of play page' do
+  scenario 'Rock button moves onto attack screen' do
     begin_game
     find_button('Rock').click
     expect(page).to have_content 'Player 1 attacked computer with: Rock'
+  end
+
+  scenario 'Paper button moves onto attack screen' do
+    begin_game
+    find_button('Paper').click
+    expect(page).to have_content 'Player 1 attacked computer with: Paper'
+  end
+
+  scenario 'Scissors button moves onto attack screen' do
+    begin_game
+    find_button('Scissors').click
+    expect(page).to have_content 'Player 1 attacked computer with: Scissors'
+  end
+
+  scenario 'Lizard button moves onto attack screen' do
+    begin_game
+    find_button('Lizard').click
+    expect(page).to have_content 'Player 1 attacked computer with: Lizard'
+  end
+
+  scenario 'Spock button moves onto attack screen' do
+    begin_game
+    find_button('Spock').click
+    expect(page).to have_content 'Player 1 attacked computer with: Spock'
+  end
+
+  scenario 'Computer is shown to attack the player' do
+    begin_game
+    find_button('Rock').click
+    expect(page).to have_content 'Computer attacked Player 1 with:'
+  end
+
+  scenario 'There is an outcome to the game' do
+    begin_game
+    find_button('Rock').click
+    expect(page).to have_content 'is the winner!'
   end
 end

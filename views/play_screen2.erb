@@ -1,0 +1,21 @@
+<%= @game.player1.name %> v <%= @game.player2.name %>
+<div>
+
+<form align="left" action="/attack" method="post">
+  <input type="submit" name="weapon" value="Rock"><br>
+  <input type="submit" name="weapon" value="Paper"><br>
+  <input type="submit" name="weapon" value="Scissors"><br>
+  <input type="submit" name="weapon" value="Lizard"><br>
+  <input type="submit" name="weapon" value="Spock">
+</form>
+
+
+<form align="right" action="/attack2" method="post">
+  <input type="submit" name="weapon2" value="Rock"><br>
+  <input type="submit" name="weapon2" value="Paper"><br>
+  <input type="submit" name="weapon2" value="Scissors"><br>
+  <input type="submit" name="weapon2" value="Lizard"><br>
+  <input type="submit" name="weapon2" value="Spock">
+</form>
+
+</div>

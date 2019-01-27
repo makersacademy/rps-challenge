@@ -1,8 +1,8 @@
 <body>
-<h3> <%= @game.player.name %> attacked computer with: <%= @game.player.move %> </h3>
+<h3> <%= @game.player1.name %> attacked <%= @game.player2.name %> with: <%= @game.player1.move %> </h3>
 
 
-<h3> Computer attacked <%= @game.player.name %> with: <%= @game.computer.move %></h3>
+<h3> <%= @game.player2.name %> attacked <%= @game.player1.name %> with: <%= @game.player2.move %></h3>
 
 <p> <%= @something %> is the winner! </p>
 
