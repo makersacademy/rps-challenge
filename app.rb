@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/computer'
+require './lib/game'
 
 class RPSapp < Sinatra::Base
 
@@ -29,6 +30,7 @@ class RPSapp < Sinatra::Base
     @p1_name = session[:player_1_name]
     @p1_move = session[:player_1_move]
     @cp_move = Computer.go
+    @result = Game.result(@p1_name, @p1_move)
     erb :result
   end
 

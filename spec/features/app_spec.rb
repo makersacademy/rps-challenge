@@ -59,7 +59,7 @@ feature 'Gameplay:' do
   end
 
   # a winner will be declared
-  xscenario 'winner declared' do
+  scenario 'winner declared' do
     allow(Computer).to receive(:go).and_return("Scissors")
     visit('/')
     fill_in :player_1_name, with: 'Dog'

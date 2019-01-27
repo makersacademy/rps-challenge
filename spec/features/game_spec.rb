@@ -1,10 +1,24 @@
 require 'game'
 
 describe Game do
-  xit 'calculates winner' do
+  it 'calculates winner' do
+    allow(Computer).to receive(:go).and_return("Scissors")
+    @p1_name = "Player"
     @p1_move = "Rock"
-    @cp_move = "Paper"
-    # expect(Computer.go).to be_in(["Rock", "Paper", "Scissors"])
-    expect(Game.judge(@p1_move, @cp_move)).to eq(@p1_move)
+    expect(Game.result(@p1_name, @p1_move)).to eq("#{@p1_name} wins!")
+  end
+
+  it 'calculates loser' do
+    allow(Computer).to receive(:go).and_return("Paper")
+    @p1_name = "Player"
+    @p1_move = "Rock"
+    expect(Game.result(@p1_name, @p1_move)).to eq("#{@p1_name} loses!")
+  end
+
+  it 'calculates draw' do
+    allow(Computer).to receive(:go).and_return("Rock")
+    @p1_name = "Player"
+    @p1_move = "Rock"
+    expect(Game.result(@p1_name, @p1_move)).to eq("Draw!")
   end
 end
