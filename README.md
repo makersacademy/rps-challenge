@@ -2,7 +2,7 @@
 
 Installation and How to Run
 ----
-- Clone this repository
+- Clone and download this repository
 - The game requires Ruby 2.5.0 and Sinatra/Rack. Testing requires Capybara and RSpec. Assuming you have Ruby installed, the following step allows you to get all the required components:
 - In your local directory, run ```bundle install```
 - To start the game, run ```rackup config.ru```
