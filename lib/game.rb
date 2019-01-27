@@ -62,15 +62,15 @@ class Game
   end
 
   def paper
-    { Rock: 'Draw',
-    Paper: 'Loose',
-    Scissors: 'Win' }
+    { Rock: 'Win',
+    Paper: 'Draw',
+    Scissors: 'Loose' }
   end
 
   def scissors
-    { Rock: 'Draw',
-    Paper: 'Loose',
-    Scissors: 'Win' }
+    { Rock: 'Loose',
+    Paper: 'Win',
+    Scissors: 'Draw' }
   end
 
   def computer_choice

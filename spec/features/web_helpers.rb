@@ -17,3 +17,13 @@ def select_rock
   enter_one_name
   click_button 'Rock'
 end
+
+def two_player_draw
+  click_button 'Rock'
+  click_button 'Rock'
+end
+
+def two_player_p1_win
+  click_button 'Rock'
+  click_button 'Paper'
+end

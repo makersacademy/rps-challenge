@@ -5,14 +5,20 @@ feature 'two_player' do
   end
   scenario 'both players have made choice' do
     enter_two_names
-    click_button 'Rock'
-    click_button 'Paper'
+    two_player_p1_win
     expect(page).to have_content 'Congratulations Sue, you won! Better luck next time Mel'
   end
   scenario 'both players have made same choice' do
     enter_two_names
-    click_button 'Rock'
-    click_button 'Rock'
+    two_player_draw
+    expect(page).to have_content "It's a draw"
+  end
+
+  scenario 'play more than one game' do
+    enter_two_names
+    two_player_draw
+    click_button 'Play Again'
+    two_player_draw
     expect(page).to have_content "It's a draw"
   end
 end

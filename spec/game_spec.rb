@@ -83,8 +83,8 @@ describe Game do
     end
     context 'two player mode' do
       it 'uses player 2s choice rather than computer' do
-        two_player.make_choice('Rock')
-        two_player.make_choice('Rock')
+        two_player.make_choice('Scissors')
+        two_player.make_choice('Scissors')
         expect(two_player.result).to eq 'Draw'
       end
     end

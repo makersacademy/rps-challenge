@@ -29,6 +29,12 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/play_again' do
+    last_game = Game.instances
+    @game = Game.create(last_game.player1, last_game.mode, last_game.player2)
+    redirect '/play'
+  end
+
   post '/play' do
     @game = Game.instances
     @game.make_choice(params[:choice])
