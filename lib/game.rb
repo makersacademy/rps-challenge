@@ -1,7 +1,7 @@
 class Game
   attr_reader :players, :player1, :player2
   attr_reader :player1_move, :player2_move
-  attr_reader :winner, :loser
+  attr_reader :winner
 
   def initialize(player1, player2)
     @player1 = player1
