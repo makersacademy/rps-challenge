@@ -11,7 +11,8 @@ Functionalities
 - the game will choose a random option
 - a winner will be declared
 
-### My approach
+### My approach 
+[![Build Status](https://travis-ci.org/Debora38/rps-challenge.svg?branch=master)](https://travis-ci.org/Debora38/rps-challenge)
 
 | Noun | Functionality |
 |----|----|
