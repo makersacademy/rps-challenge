@@ -1,4 +1,4 @@
-class Winner
+class Game
     attr_accessor :player1, :player2, :winner1 #:computer_move
 
     def initialize(player1, player2)
