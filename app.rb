@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/judge'
 
 # Handle http requests
 class RPSServer < Sinatra::Base
@@ -18,7 +19,10 @@ class RPSServer < Sinatra::Base
   end
 
   post '/declare_winner' do
-    session[:winner] = session[:name]
+    session[:p1_choice] = params[:p1_choice]
+    judge = Judge.new(session[:name], session[:p1_choice])
+    session[:winner] = judge.winner
+    session[:winning_move] = judge.winning_move
     redirect '/declare_winner'
   end
 

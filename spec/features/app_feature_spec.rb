@@ -14,12 +14,15 @@ feature RPSServer do
     # Use expect(page).to have_css('#player_name') to locate by id
   end
 
-  scenario 'client plays rock' do
+  scenario 'choosing move takes user to page declaring winner' do
     visit_root_sign_in_as_habakkuk
     click_button 'Rock'
-    expect(page).to satisfy { |page|
-      page.has_content? 'Habakkuk' or
-      page.has_content? 'Computer'
-    }
+    expect(page).to have_content(/Habakkuk|Computer/)
+  end
+
+  scenario 'clicking Rock sets session[:p1_move] to "Rock"' do
+    visit_root_sign_in_as_habakkuk
+    click_button 'Rock'
+    expect(page).to have_content('withRock')
   end
 end

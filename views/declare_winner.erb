@@ -7,8 +7,9 @@
 
     <body>
       <center>
-        <span class='name'>Computer</span>
-        <br>wins<br>with
+        <span class='name'><%= session[:winner] %></span><br>
+        wins<br>with<br>
+        <%= session[:winning_move] %>
       </center>
     </body>
   </html>

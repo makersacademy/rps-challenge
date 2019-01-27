@@ -4,20 +4,18 @@
       <title>Rock Paper Scissors</title>
       <link rel="stylesheet" href="app.css">
     </head>
-
+<!-- Have your form control button submit a hidden parameter. In your controller
+action set a variable to equal params from your submission. Then I’m the
+controller action write an if statement to call your method if the variable
+equals what you set the hidden parameter to be. -->
     <body>
       <center>
         <span class='name'><%= session[:name] %></span><br>
         <form action='/declare_winner' method='post'>
-          <input type="submit" value="Rock">
-          <input type="submit" value="Paper">
-          <input type="submit" value="Scissors">
-        </form><br>
-        <img src="/images/goat.jpg" width=250><br>
-        <div class='small_print'>
-          Photographer: Armin Kübelbeck,
-          <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>
-        </div>
+          <input type="submit" value="Rock" name='p1_choice'>
+          <input type="submit" value="Paper" name='p1_choice'>
+          <input type="submit" value="Scissors" name='p1_choice'>
+        </form>
       </center>
     </body>
   </html>
