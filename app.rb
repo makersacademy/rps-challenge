@@ -16,6 +16,7 @@ class RockPaperScissors < Sinatra::Base
   get '/names' do 
     @player_one = session[:player_one]
     @shape_choice = session[:shape_choice]
+    @cpu_choice = "Rock"
     erb(:names)
   end 
 

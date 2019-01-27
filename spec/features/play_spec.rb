@@ -1,7 +1,7 @@
 require_relative '../../app.rb'
 require 'spec_helper.rb'
 
-feature 'Game Options' do
+feature 'GAME Options' do
   scenario "The user can view Rock Paper Scissors Choices" do
     sign_in_and_play
     expect(page).to have_button("Rock")
@@ -13,5 +13,10 @@ feature 'Game Options' do
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content("You Selected Rock")
-  end  
+  end 
+  
+  scenario "The game will choose a Rock as a shape option" do 
+    sign_in_and_play
+    expect(page).to have_content("CPU Selected Rock")
+  end 
 end
