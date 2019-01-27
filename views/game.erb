@@ -4,13 +4,13 @@
     <h1>Welcome to the game, <%= @player_name %>.</h1>
   </head>
   <body>
-    <h2>Choose your weapon...</h2>
+    <h2>Rock, Paper or Scissors?</h2>
     <br>
     <div>
       <form action='/result' method='post'>
-        <input name='weapon' type='submit' value='✊'>
-        <input name='weapon' type='submit' value='🤚'>
-        <input name='weapon' type='submit' value='✌️'>
+        <input name='player_choice' type='submit' value='✊'>
+        <input name='player_choice' type='submit' value='🤚'>
+        <input name='player_choice' type='submit' value='✌️'>
       </form>
     </div>
   </body>
