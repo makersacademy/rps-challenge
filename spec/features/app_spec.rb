@@ -58,4 +58,14 @@ feature 'Gameplay:' do
     expect(page).to have_content 'Computer says Rock!'
   end
 
+  # a winner will be declared
+  xscenario 'winner declared' do
+    allow(Computer).to receive(:go).and_return("Scissors")
+    visit('/')
+    fill_in :player_1_name, with: 'Dog'
+    click_button 'Submit'
+    click_button 'Rock'
+    expect(page).to have_content 'Dog wins!'
+  end
+
 end
