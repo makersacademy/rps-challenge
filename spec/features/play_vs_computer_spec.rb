@@ -8,7 +8,7 @@ feature 'play RPS' do
   scenario 'player selects Rock' do
     srand(9)
     select_rock
-    expect(page).to have_content "Congratulations Adam, you won!"
+    expect(page).to have_content "Congratulations Adam, you won! Better luck next time Computer"
   end
 
   scenario 'player selects Rock' do

@@ -11,10 +11,10 @@ describe Game do
 
   context "on creation, one player mode" do
     it "stores players name" do
-      expect(one_player.player_one_name).to eq "Pete"
+      expect(one_player.player1).to eq "Pete"
     end
     it "player two name is Computer" do
-      expect(one_player.player_two_name).to eq "Computer"
+      expect(one_player.player2).to eq "Computer"
     end
     it "knows it's in one player mode" do
       expect(one_player.mode).to eq "one_player"
@@ -23,10 +23,10 @@ describe Game do
 
   context "on creation, two player mode" do
     it "stores players name" do
-      expect(two_player.player_one_name).to eq "Pete"
+      expect(two_player.player1).to eq "Pete"
     end
     it "player two name is Computer" do
-      expect(two_player.player_two_name).to eq "Tong"
+      expect(two_player.player2).to eq "Tong"
     end
     it "knows it's in one player mode" do
       expect(two_player.mode).to eq "two_player"
@@ -37,15 +37,32 @@ describe Game do
   #   it "stores both names"
   # end
   describe "storing an instance" do
-    it "can store the current game instance as a class instance variable" do
-      Game.create("Pete", 'one_player')
-      expect(Game.instances.player_one_name).to eq "Pete"
+    context "one player mode" do
+      it "can store the current game instance as a class instance variable" do
+        Game.create("Pete", 'one_player')
+        expect(Game.instances.player1).to eq "Pete"
+      end
+    end
+    context 'two player mode' do
+      it 'stores the game' do
+        Game.create("Dave", "two_player", "Jerry")
+        expect(Game.instances.player2).to eq "Jerry"
+      end
     end
   end
 
   describe "#make_choice" do
-    it "stores the choice" do
-      expect(steves_game.player_one_choice).to eq 'Rock'
+    context 'one_player_mode' do
+      it "stores the choice" do
+        expect(steves_game.player1_choice).to eq 'Rock'
+      end
+    end
+    context 'two_player_mode' do
+      it "stores both choices" do
+        two_player.make_choice('Rock')
+        two_player.make_choice('Paper')
+        expect(two_player.player2_choice).to eq 'Paper'
+      end
     end
   end
 
@@ -64,6 +81,13 @@ describe Game do
         expect(steves_game.result).to eq 'Draw'
       end
     end
+    context 'two player mode' do
+      it 'uses player 2s choice rather than computer' do
+        two_player.make_choice('Rock')
+        two_player.make_choice('Rock')
+        expect(two_player.result).to eq 'Draw'
+      end
+    end
   end
 
   describe '#print result' do
@@ -71,6 +95,43 @@ describe Game do
       srand(9)
       expect(printer).to receive(:print_result).with('Win', 'Steve', 'Computer')
       steves_game.show_result(printer_class)
+    end
+  end
+
+  describe 'turns' do
+    context 'two player games' do
+      it 'starts as player 1s turn initially' do
+        expect(two_player.turn).to eq 'Pete'
+      end
+      it 'and player 2 is not on turn' do
+        expect(two_player.not_turn).to eq 'Tong'
+      end
+      it 'swiches once player 1 has made a choice' do
+        two_player.make_choice('Rock')
+        expect(two_player.turn).to eq 'Tong'
+      end
+    end
+  end
+
+  describe '#game_over' do
+    context 'one player mode' do
+      it "starts off as false" do
+        expect(one_player.game_over).to eq false
+      end
+      it "is true after player one makes a choice" do
+        expect(steves_game.game_over).to eq true
+      end
+    end
+    context 'two player mode' do
+      it "isn't over until both players have made a choice" do
+        two_player.make_choice('Rock')
+        expect(two_player.game_over).to eq false
+      end
+      it "is over once both players have made a choice" do
+        two_player.make_choice('Rock')
+        two_player.make_choice('Paper')
+        expect(two_player.game_over).to eq true
+      end
     end
   end
 end
