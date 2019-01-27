@@ -1,15 +1,5 @@
-ENV['RACK_ENV'] = 'test'
-
-require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
-require 'capybara/rspec'
-require 'capybara'
-require 'rspec'
-
-Capybara.app = RockPaperScissors
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -17,6 +7,19 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require 'capybara/rspec'
+require 'capybara'
+require 'rspec'
+ENV['RACK_ENV'] = 'test'
+require 'capybara/rspec'
+
+
+Capybara.app = RockPaperScissors
+
+
+
 
 RSpec.configure do |config|
   config.after(:suite) do
