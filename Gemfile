@@ -13,6 +13,6 @@ group :test do
   gem 'simplecov-console', require: false
 end
 
-group :apis do
-  gem 'geocoder'
+group :extra do
+  gem 'tts'
 end

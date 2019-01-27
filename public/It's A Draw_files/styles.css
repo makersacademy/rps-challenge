@@ -120,19 +120,18 @@ h1, h2, p, .white  {
   top: 10%;
   text-align: center;
   -webkit-transform: translate(-50%);
-  transform: translateX(-200%);
-  filter: blur(58px);
+  transform: translate(-50%);
   font-size: 500%;
-  animation: fade_in_left 30s infinite;
+  animation: fade_in_left 3.4s;
   animation-fill-mode: forwards;
-  animation-timing-function: linear;
+
 }
 
 @keyframes fade_in_left {
-  0% {transform: translateX(-50%);filter: blur(35px)font-size: 50%;transform: scale(2,2);}
-  25% {transform: translateX(-75%);filter: blur(28px)filter: blur(10px)font-size: 50%;}
-  50% {transform: translateX(-100%);filter: blur(40px)font-size: 75%;transform: scale(2,2);}
-  75% {transform: translateX(-75%);filter: blur(20px); font-size: 100%;transform: scale(3,3);}
+  0% {transform: translateX(-50%);font-size: 50%;transform: scale(2,2);}
+  25% {transform: translateX(-75%);font-size: 50%;}
+  50% {transform: translateX(-100%);font-size: 75%;transform: scale(2,2);}
+  75% {transform: translateX(-75%);filter: blur(0.2px); font-size: 100%;transform: scale(3,3);}
   100% {transform: translateX(-50%);filter: blur(50px);font-size: 125%;; }
 }
 
@@ -189,8 +188,6 @@ h1, h2, p, .white  {
   overflow: hidden;
   background: linear-gradient(-135deg, #DCDCDC, #D3D3D3, lightblue, #C0C0C0, #A9A9A9 , #808080 , #696969 , #778899 , #708090, #2F4F4F ,#000000 );
   background-repeat: no-repeat;
-  filter: drop-shadow(12px 12px 14px blue) invert(85%);
-  filter: blur(1.5px);
   background-size: 80%;
   animation: animate 5s infinite;
   animation-timing-function: linear;
@@ -208,10 +205,8 @@ h1, h2, p, .white  {
   font-size: 12em;
   letter-spacing: 4px;
   overflow: hidden;
-  background: linear-gradient(-135deg, #DCDCDC, #D3D3D3, lightblue, crimson, #A9A9A9 , #808080 , #696969 , crimson , #708090, lightblue ,#000000 );
+  background: linear-gradient(-135deg, #DCDCDC, #D3D3D3, lightblue, #C0C0C0, #A9A9A9 , #808080 , #696969 , #778899 , #708090, #2F4F4F ,#000000 );
   background-repeat: no-repeat;
-  filter: drop-shadow(12px 12px 14px crimson) invert(85%);
-  filter: blur(1.5px);
   background-size: 80%;
   animation: animate 5s infinite;
   animation-timing-function: linear;
@@ -229,13 +224,11 @@ h1, h2, p, .white  {
   font-size: 12em;
   letter-spacing: 4px;
   overflow: hidden;
-  background: linear-gradient(-135deg, #DCDCDC, #D3D3D3, lightblue, crimson, #A9A9A9 , #808080 , #696969 , crimson , #708090, lightblue ,#000000 );
+  background: linear-gradient(-135deg, #DCDCDC, #D3D3D3, lightblue, #C0C0C0, #A9A9A9 , #808080 , #696969 , #778899 , #708090, #2F4F4F ,#000000 );
   background-repeat: no-repeat;
-  filter: drop-shadow(24px 24px 28px purple) invert(85%);
-  filter: blur(1.5px);
   background-size: 80%;
   animation: animate 5s infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
@@ -349,15 +342,12 @@ h1, h2, p, .white  {
     margin:10px auto;
     display:flex;
     justify-content:space-between;
-
 }
 
 .play_again{
   float : left;
   margin: 10%;
 }
-
-
 
 .stat_header{
 
@@ -392,55 +382,4 @@ h1, h2, p, .white  {
 }
 
 
-
-.result_buttons{
-  display: flex;
-  justify-content: center;
-  float: left;
-}
-
-.yes_button {
-  border: 2px solid white;
-  background-color: transparent;
-  float: left;
-  margin: auto;
-  color: white;
-  padding: auto;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 15px;
-}
-.yes_button:hover {
-  animation: button_shake 10s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
-@keyframes button_shake{
-  0% {transform: scale(-0.9,-0.9);}
-  25% {transform: scale(3,3);}
-  50% {transform: scale(7.5,7.5); transform: rotate(-45deg);}
-  75% {transform: scale(10,10); transform: rotate(-45deg);}
-  50% {transform: scale(7.5,7.5); }
-  25% {transform: scale(5,5);}
-  0% {transform: scale(2.5,2.5);}
-  10% {transform: scale(-0.8,-0.8);}
-
-}
-.no_button {
-  border: 2px solid white;
-  background-color: transparent;
-  float: left;
-  margin: auto;
-  color: white;
-  padding: auto;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 15px;
-}
-
-.no_button:hover {
-  opacity: 0;
-
-}
 
