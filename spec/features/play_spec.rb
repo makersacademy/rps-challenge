@@ -48,6 +48,6 @@ feature 'Two players' do
 
   scenario 'Player1 choses Rock, Player 2 choses Scissors' do
     click_button 'Scissors'
-    expect(page).to have_content 'Erin chose Rock Amanda chose Scissors Erin Wins!'
+    expect(page).to have_content 'Erin chose Rock Amanda chose Scissors Erin wins!'
   end
 end
