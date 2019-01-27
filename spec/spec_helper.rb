@@ -6,6 +6,12 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
+def sign_in_and_play
+  visit("/")
+  fill_in('player_one', with: 'jake')
+  click_button('Submit')
+end
+
 Capybara.app = RockPaperScissors 
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
