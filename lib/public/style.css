@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Crafty+Girls');
+html, body {
+    padding: 20px;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(43,9,121,0.9359944661458334) 0%, rgba(251,15,190,0.10406169303658963) 0%, rgba(179,23,193,0.37296925606179976) 100%, rgba(179,23,193,0.37296925606179976) 100%);
+}
+
+body {
+    font-family: 'Crafty Girls', cursive;
+    padding-bottom: 50px;
+;
+}
+
+label {
+    font-size: 1.2rem;
+}
+
+input {
+    font-family: 'Crafty Girls', cursive;
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+}
+
+.child {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.left-heading {
+    display: flex;
+    flex-direction: column;
+}
+

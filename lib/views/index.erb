@@ -1,11 +1,26 @@
-<h1>Rock Paper Scissors Deathmatch Challenge</h1>
-<h2>Please sign in to play</h2>
-<form action="/name" method="post">
-  <div>
-    <label for="player_one">Player one:</label>
-    <input type="text" name="player_one_name">
-    <label for="player_two">Player two:</label>
-    <input type="text" name="player_two_name">
-    <input type="submit" value="Submit">
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<div class="parent">
+  <h1>Rock Paper Scissors (Lizard Spock) Challenge with Multiplayer</h1>
+</div>
+  <div class="child">
+  <h2>Please sign in to play</h2>
   </div>
-</form>
+  <div class="child">
+    <form action="/name" method="post">
+    <div>
+      <label for="player_one">Player one:</label>
+      <input type="text" name="player_one_name">
+      <label for="player_two">Player two:</label>
+      <input type="text" name="player_two_name">
+      <div class="child">
+      <input type="submit" value="Submit">
+      </div>
+    </div>
+  </form>
+  </div>
+
+</html>

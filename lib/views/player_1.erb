@@ -1,10 +1,23 @@
-Player 1: <%= @player_one_name %>
-Player 2: <%= @player_two_name %>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
 
+<div>
+  Player 1: <%= @player_one_name %><br>
+  Player 2: <%= @player_two_name %>
+</div>
+
+<div class="left-heading">
 <h2> <%= @player_one_name %>, choose your weapon! </h2>
 <h3>( <%= @player_two_name %>, please look away! )</h3>
 
-<div>
+</div>
+
+
+
+<div class>
   <form action="/player_1" method="post">
     <input type="submit" name="p1_weapon" value="Rock">
     <input type="submit" name="p1_weapon" value="Paper">
@@ -22,4 +35,5 @@ Player 2: <%= @player_two_name %>
     </form>
   </div>
 <% end %>
+</html>
 

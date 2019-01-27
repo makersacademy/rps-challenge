@@ -15,18 +15,12 @@ class Game
     @result = player_1_weapon.compare(player_2_weapon)
   end
 
-  def self.convert_string_to_weapon(string)
-    weapon = []
-    WEAPONS.each { |item| weapon.push(item) if item.name == string }
-    weapon.first
+  def self.reset
+    @result = nil
   end
 
   def self.print_result
     generate_result_string(@result)
-  end
-
-  def self.reset
-    @result = nil
   end
 
   def self.generate_result_string(result)
@@ -40,6 +34,12 @@ class Game
     else
       ERROR_MESSAGE
     end
+  end
+
+  def self.convert_string_to_weapon(string)
+    weapon = []
+    WEAPONS.each { |item| weapon.push(item) if item.name == string }
+    weapon.first
   end
 
 end
