@@ -21,20 +21,15 @@ class Game
   end
 
   def calculate_winner
-    if @player2_move == @player1_move
+    @arr = ['paper', 'rock', 'scissors']
+    @player1_index = @arr.index(@player1_move)
+    @player2_index = @arr.index(@player2_move)
+    if @player1_index == @player2_index
       @winner = nil
-    elsif @player1_move == 'rock' && @player2_move == 'paper'
+    elsif (@player1_index - @player2_index) % 3 == 1
       @winner = @player2
-    elsif @player1_move == 'rock' && @player2_move == 'scissors'
+    else
       @winner = @player1
-    elsif @player1_move == 'paper' && @player2_move == 'rock'
-      @winner = @player1
-    elsif @player1_move == 'paper' && @player2_move == 'scissors'
-      @winner = @player2
-    elsif @player1_move == 'scissors' && @player2_move == 'rock'
-      @winner = @player2
-    elsif @player1_move == 'scissors' && @player2_move == 'paper'
-      @winner = @player1    
     end
   end
 
