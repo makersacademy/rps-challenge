@@ -22,14 +22,18 @@ class Rps < Sinatra::Base
 
   post '/in_play' do
     player = Player.new(params[:Choice])
+    session[:player] = player
     game = Game.new(player)
     game.determine_winner
+    session[:game] = game
     session[:result] = game.winner
     redirect '/result'
   end
 
   get '/result' do
     @winner = session[:result]
+    @game = session[:game]
+    @player = session[:player]
     erb(:result)
   end
 

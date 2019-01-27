@@ -2,7 +2,7 @@ require_relative 'player'
 require_relative 'computer'
 
 class Game
-  attr_reader :winner
+  attr_reader :winner, :computer
   def initialize(player, computer = Computer.new)
     @player = player
     @computer = computer
@@ -16,7 +16,7 @@ class Game
       @winner = true
     elsif @player.choice == :Paper and @computer.choice == :Rock
       @winner = true
-    elsif @player == :Scissors and @computer.choice == :Paper
+    elsif @player.choice == :Scissors and @computer.choice == :Paper
       @winner = true
     else 
       @winner = false
