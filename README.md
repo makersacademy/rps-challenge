@@ -28,7 +28,13 @@ Since I have covered web-app construction in coursework prior to starting this c
 - v1.2 added images on homepage to give it a Tron theme
 Then I implemented a hash for the image URLs to refer to them easily. Next major change was
 - v1.5 set the image links on /names to the /played result page passing the player's choice
-I coded all the above by making small changes and checking behaviour and presentation when I feature tested in the browser. No tests were done in RSpec.
+
+I coded all the above by making small changes and checking behaviour and presentation when I feature tested in the browser. The Sinatra error trace led me to fix the bugs. No tests were done in RSpec.
+I then passed the player and choice in the image links in /names. Again I used the Sinatra error trace to locate and fix the bugs. Next milestone was in v1.7
+- v1.7 populated the results table with player name and images according to choices, and result image - Tron/MCP/football-match for player 1 won/lost/draw
+
+
+
 
 -----------
 Original README content

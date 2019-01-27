@@ -6,20 +6,20 @@
 
 <% @res_text = "" %>
 <% if @player_1_res == "Won" %>
-  <% @res_text = "Player 1 is the Winner!" %>
+  <% @res_text = "@player_1 is the Winner!" %>
 <% elsif @player_1_res == "Lost" %>
   <% @res_text = "MCP is the Winner!" %> 
 <% else %>
   <% @res_text = "It's a Draw!" %>
 <% end %>
 
-<div style="background-color:beige; border:6px outset #F7730E; width: 600px;"><center>
-<table style="width: 600px;"><tr><th><b><%= @player_1 %> chose <%= @player_1_choice %></b></h3></th>
+<div style="background-color:beige; border:6px outset #F7730E; width: 800px;"><center>
+<table style="width: 800px;"><tr><th><b><%= @player_1 %> chose <%= @player_1_choice %></b></h3></th>
 <th><b>MCP chose <%= @mcp_choice %></b></h3></th><th><b><%= @res_text %></b></th></tr>
 <tr>
 <td style="width: 200px;"><center><img src = <%= @rps_hash[@player_1_choice] %> ></center></td>
 <td style="width: 200px;"><center><img src = <%= @rps_hash[@mcp_choice] %> ></center></td>
-<td style="width: 200px;"><center><img src =  ></center></td>
+<td style="width: 200px;"><center><img src = <%= @winner_img[@player_1_res] %> ></center></td>
 </tr>
 </table></center>
 </div>
