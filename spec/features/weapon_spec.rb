@@ -1,8 +1,6 @@
-feature 'Emoji Options: ' do
+feature 'Weapon Options: ' do
   scenario '1. Player selects rock, paper or scissors emoji' do
-    visit '/'
-    fill_in :player_name, with: 'Neville'
-    click_button 'Submit'
+    include sign_in
     find_button('✊').click
   end
 end
