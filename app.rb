@@ -23,7 +23,6 @@ class Rps < Sinatra::Base
   post '/in_play' do
     session[:player].turn(params[:Choice])
     session[:game] = Game.new(session[:player])
-    session[:game].determine_winner
     redirect '/result'
   end
 

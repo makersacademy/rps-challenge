@@ -2,25 +2,19 @@ require_relative 'player'
 require_relative 'computer'
 
 class Game
-  attr_reader :winner, :players_choice, :computers_choice
+
+  GAME_RULES = {:Rock => {:Rock => :Draw, :Paper => false, :Scissors => true},
+                :Paper => {:Rock => true, :Paper => :Draw, :Scissors => false},
+                :Scissors => {:Rock => false, :Paper => true, :Scissors => :Draw }}
+  attr_reader :players_choice, :computers_choice
   def initialize(player, computer = Computer.new)
     @players_choice = player.choice
     @computers_choice = computer.choice
     @winner
   end
 
-  def determine_winner
-    if @players_choice == @computers_choice
-      @winner = :Draw
-    elsif @players_choice == :Rock and @computers_choice == :Scissors
-      @winner = true
-    elsif @players_choice == :Paper and @computers_choice == :Rock
-      @winner = true
-    elsif @players_choice == :Scissors and @computers_choice == :Paper
-      @winner = true
-    else 
-      @winner = false
-    end 
+  def winner
+    GAME_RULES[@players_choice][@computers_choice] 
   end
 
 
