@@ -9,10 +9,6 @@ class Middle
     @game
   end
 
-  def self.computer(computer)
-    @computer = computer
-  end
-
   def self.make_move(player, move)
     @game.make_move(player, move)
   end
