@@ -8,6 +8,6 @@ end
 feature 'Can enter name' do
   scenario 'Check that theres an enter name prompt' do
     visit('/')
-    expect(page).to have_content 'Please put name in here'
+    expect(page).to have_content 'Please put name in here:'
   end
 end
