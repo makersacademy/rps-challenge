@@ -13,9 +13,9 @@ feature 'Actions' do
     fill_in :username, with: 'Ibrahim'
     click_button 'Register'
     
-    expect(page).to have_selector(:link_or_button, 'Rock')
-    expect(page).to have_selector(:link_or_button, 'Paper')
-    expect(page).to have_selector(:link_or_button, 'Scissors')
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissor'
   end
 end
 
