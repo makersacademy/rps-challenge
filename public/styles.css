@@ -2,7 +2,7 @@ body {
   background-color: black
 }
 
-h1, h2 {
+h1, h2, p, .white  {
   font-family: Impact;
   color: white
 }
@@ -283,9 +283,7 @@ h1, h2 {
 
 }
 
-.play_body{
 
-}
 
 #c1, #c2, #c3 {
   border-radius: 10px;
@@ -361,8 +359,28 @@ h1, h2 {
  100% { -webkit-transform: translateX(-100%);}
 }
 
+.result {
+    margin:10px auto;
+    display:flex;
+    justify-content:space-between;
+}
 
+.play_again{
+  float : left;
+  margin: 10%;
+}
 
+.stats {
+  float : left;
+  margin: 10%;
+}
+
+.statskid {
+    width: 100px;
+  display: inline-block; 
+  background-color: pink;
+
+}
 
 .reveal p {
   font: 45px/300px Helvetica, Arial, sans-serif;

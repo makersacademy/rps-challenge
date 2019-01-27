@@ -1,5 +1,4 @@
 require "sinatra/base"
-require "geocoder"
 require_relative "./lib/game"
 
 class RPS < Sinatra::Base
@@ -40,6 +39,7 @@ get '/scissors' do
 end
 
 get '/result' do
+  $game
   $game.run_game
   erb(:result)
 end

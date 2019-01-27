@@ -1,8 +1,11 @@
 <head>
   <title><%=$game.result%></title>
   <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+  <link href="<%= url('/data_viz.css') %>" rel="stylesheet" type="text/css" />
 </head>
 
+<body class="result">
+<div class="play_again">
 <h1>You Picked <%=$game.player.show%>.</h1>
 <h1 style="color: red">I Picked <%=$game.comp_choice[-1]%>.</h1>
 
@@ -10,3 +13,25 @@
 <h1 style="color: red">Wanna Play Again?</h1>
 <form action="/cont_play" method="post"><input type="submit" name="YEAH!" value="YEAH!"></form>
 <form action="/goodbye" method="post"><input type="submit" name="NAH!" value="NAH!"></form>
+</div>
+
+<div class="stats">
+
+<h2>Here's How You've Been Doing So Far:</h2>
+
+
+<div class="chart">
+  <div class="bars">
+    <div class="bar" style="height:<%=$game.comp_wins/$game.divisor%>%;"></div>
+    <div class="bar" style="height:<%=$game.draws/$game.divisor%>%;"></div>
+    <div class="bar" style="height:<%=$game.player_wins/$game.divisor%>%;"></div>
+  </div>
+  <div class="labels">
+    <span class="label">I WIN<br><%= $game.comp_wins %></span>
+    <span class="label">DRAWS<br><%= $game.draws %></span>
+    <span class="label">YOU WIN<br><%= $game.player_wins %></span>
+  </div>
+</div>
+</div>
+
+</body>

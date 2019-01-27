@@ -1,0 +1,47 @@
+.chart {
+  size: 150%;
+  height: 300px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bars {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.labels {
+  display: flex;
+  flex-direction: row;
+}
+.label {
+  flex: 1;
+  padding: 3px;
+  text-align: center;
+  color: white;
+  font-family: Impact;
+}
+
+.bar {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  background: rgba(98, 144, 200, 1);
+  border: 1px solid rgba(55, 105, 150, 1);
+  border-bottom: none;
+  margin: 0 18px;
+  animation: grow-column 1s;
+}
+
+@keyframes grow-column {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+ 
