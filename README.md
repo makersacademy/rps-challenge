@@ -22,9 +22,10 @@ The aim of this challenge was to create a web-app which let the user play the ga
 
 Method of working
 -------------
-Since I have covered web-app construction in coursework prior to starting this challenge I was able to review and re-use that work. This meant I could quickly move forward on the first user story with code that had already been proven. So first test pass and 2nd commit & push : 
-- v1.0 to get the directory structure and all the associated files set up, test that the homepage form accept a name and prints it in the page at /names 
-
+Since I have covered web-app construction in coursework prior to starting this challenge I was able to review and re-use that work. This meant I could quickly move forward on the first user story with code that had already been proven. So first test passed and 2nd commit & push done to make v1.0 
+- v1.0 to get the directory structure and all the associated files set up, test that the homepage form accept a name and prints it in the page at /names
+- v1.1 to put player names in a table and style that - I tested different options with table html, no TDD
+- v1.2 added images on homepage to give it a Tron theme
 -----------
 Original README content
 ========
