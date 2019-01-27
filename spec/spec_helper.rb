@@ -14,6 +14,7 @@ require 'capybara'
 require 'rspec'
 ENV['RACK_ENV'] = 'test'
 require 'capybara/rspec'
+require_relative './features/web_helpers'
 
 
 Capybara.app = RockPaperScissors
