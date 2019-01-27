@@ -11,5 +11,6 @@ WEAPONS = ["rock", "paper", "scissors"]
     return "Computer wins!" if computer == "rock" && player == "scissors"
     return "Computer wins!" if computer == "paper" && player == "rock"
     return "Computer wins!" if computer == "scissors" && player == "paper"
+    "Player wins!"
   end
 end

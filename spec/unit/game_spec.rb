@@ -12,9 +12,15 @@ RSpec.describe Game do
     expect(Game.result("paper", "paper")).to eq "Draw!"
   end
 
-  it 'returns a compouter win when computer wins' do
+  it 'returns a computer win when computer wins' do
     expect(Game.result("scissors", "rock")).to eq "Computer wins!"
     expect(Game.result("paper", "scissors")).to eq "Computer wins!"
     expect(Game.result("rock", "paper")).to eq "Computer wins!"
+  end
+
+  it 'returns a player win when player wins' do
+    expect(Game.result("rock", "scissors")).to eq "Player wins!"
+    expect(Game.result("scissors", "paper")).to eq "Player wins!"
+    expect(Game.result("paper", "rock")).to eq "Player wins!"
   end
 end
