@@ -14,7 +14,7 @@ class Game
 
     def determine_winner
         if @player1.move == @computer.move
-            @outcome = "draw"
+            @outcome = "Draw"
         elsif @rules[@player1.move] == @computer.move
             @outcome = "Player 1"
         else
