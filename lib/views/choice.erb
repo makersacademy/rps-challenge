@@ -1,16 +1,34 @@
+<style>
+
+  input[type=submit] {
+    background-color: #5D3AB5;
+    border: solid black;
+    color: white;
+    font-size: 16px;
+    padding: 15px 32px;
+    text-decoration: bold;
+    cursor: pointer;
+  }
+
+  .container {
+    margin-top: 10%;
+  }
+
+</style>
+
 <html>
 <center>
+  <div class='container'>
   <h1>
-  <%= @player %> chose <%= @choice %>!<br>
+  <%= @player %> played <%= @choice %>!<br>
   <br>
-  </h1>
-  <h2>
   <%= @game %>
-  </h2>
+  </h1>
   <br>
   <br>
   <form action="/play" method="post">
       <input type="submit" name="new_game" value="Play again">
   </form>
+  </div>
 </center>
 </html>

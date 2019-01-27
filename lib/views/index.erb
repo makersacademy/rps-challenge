@@ -1,9 +1,42 @@
+<style>
+
+  input[type=submit] {
+    background-color: #5D3AB5;
+    border: solid black;
+    color: white;
+    font-size: 14px;
+    padding: 12px 32px;
+    text-decoration: bold;
+    cursor: pointer;
+  }
+
+  input[type=text] {
+    border: solid black;
+    color: black;
+    font-size: 18px;
+    padding: 12px 28px;
+    margin: 3px 20px;
+    text-decoration: bold;
+    cursor: pointer;
+  }
+
+  .container {
+    margin-top: 10%;
+  }
+
+</style>
 <html>
 <center>
-  <h1>What's your name?</h1>
+  <div class='container'>
+    <h1>This is<br>
+      ROCK, PAPER, SCISSORS</h1>
+  <br>
+  <h2>What's your name?</h2>
   <form action="/name" method="post">
-      <input type="text" name="player" minlength="3" size="35">
+      <input type="text" name="player" minlength="3" size="35"><br>
+      <br>
       <input type="submit" value="Submit">
   </form>
+  </div>
 </center>
 </html>
