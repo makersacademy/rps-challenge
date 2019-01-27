@@ -2,22 +2,34 @@ require 'sinatra/base'
 require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
-  # enable :sessions
+  enable :sessions
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    $player = Player.new(params[:player_name])
+    session[:player_name] = params[:player_name]
     redirect '/play'
 
   end
 
   get '/play' do
-    @player = $player.name
+    @player_name = session[:player_name]
+    @player_choice = params[:players_choice]
     erb(:play)
   end
-end
+
+  post '/choice' do
+    redirect '/computer'
+  end
+
+  get '/computer' do
+    erb(:computer)
+  end
+
+
+  end
+
 
 #
 # run! if app_file == $0
