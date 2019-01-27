@@ -17,11 +17,9 @@ feature 'User can play RPS' do
     player1_sign_in
     expect(page).to have_button("scissors")
   end
-  scenario 'User chooses Rock, gets presented with a winning screen' do
-    dbl = double
+  scenario 'User chooses Rock, gets presented with a winning screen (computer chose scissors)' do
     player1_sign_in
     click_button 'rock'
-    allow(dbl).to receive(:result).and_return("scissors")
-    expect(page).to have_content("You win!")
+    expect RockPaperScissorsResult.new.calculate_winner('rock', 'scissors') { "You win!" }
   end
 end

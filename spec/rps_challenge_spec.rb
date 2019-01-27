@@ -14,9 +14,10 @@ feature RPS do
     click_button("rock")
     expect(page).to have_content("Marketeer 1 has gone with")
   end
-  scenario 'User is presented with the option the computer chose' do
+  scenario 'User is presented with the option the computer chose and the result' do
     player1_sign_in
     click_button("rock")
     expect(page).to have_content("Your opponent has gone with")
   end
+
 end

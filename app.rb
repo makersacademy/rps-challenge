@@ -1,5 +1,6 @@
 require 'sinatra'
 require './lib/rock_paper_scissors'
+require './lib/opponent_choice'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -19,14 +20,16 @@ class RPS < Sinatra::Base
   end
 
   post '/run_game' do
-   session[:player1_choice] = params[:weapon]
-   redirect 'result'
+    session[:player1_choice] = params[:weapon]
+    redirect 'result'
   end
 
   get '/result' do
-    @computer_choice = RockPaperScissorsResult.new.opponent_pick_rps
+    @computer_choice = OpponentChoice.new.opponent_pick_rps
     @player1_name = session[:player1_name]
     @player1_choice = session[:player1_choice]
+    @result = RockPaperScissorsResult.new.calculate_winner(@player1_choice,
+      @computer_choice)
     erb(:result)
   end
 end

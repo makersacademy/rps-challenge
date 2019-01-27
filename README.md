@@ -1,5 +1,29 @@
 # RPS Challenge
 
+Installation and How to Run
+----
+- Clone this repository
+- The game requires Ruby 2.5.0 and Sinatra/Rack. Testing requires Capybara and RSpec. Assuming you have Ruby installed, the following step allows you to get all the required components:
+- In your local directory, run ```bundle install```
+- To start the game, run ```rackup config.ru```
+- By default, the game will be hosted at http://localhost:9292 but you can change the port by specifying it at runtime: ```rackup config.ru -p [your-port]```
+- Navigate in your browser to the hosted URL, by default ```localhost:9292```.
+
+
+Reflection and learnings
+-----
+Approach:
+- This seemed like a simple enough two user-story driven program. Consequently, I did not diagram this in UML or any other way. Throughout, I tried to keep any logic outside the ```app.rb``` file.
+- I wanted to keep the learnings from the week's challenges close to heart - no global variables, separation of concerns and a Post/Redirect/Get mechanic.
+- To avoid any chance of the user inputting a nonexistent weapon that would lead to the game breaking, I chose immediately to implement buttons with different values rather than allowing the user to input their own choice.
+- I stuck 100% to the user stories and did not implement stylesheets or replayability. These would be fairly trivial to knock together though.
+
+Challenges:
+- I realise that the tests don’t cover every single unit instance possible. They pass, but I have not stubbed in all possible permutations of the computer choosing given any user input. With the logic that I built (an OpponentChoice class and a RockPaperScissorsResult class) I found it difficult to stub in the value for some reason.
+- Rubocop says that my cyclomatic complexity is too high for the logic of determining a winner. I realise that it could be simplified by having a #win? method that looks in a hash based on two user inputs, and that should take this complexity down, but am lacking the time right now to refactor.
+- Refactoring in general is a motivational as well as a practical challenge - sometimes it is hard to see the wood for the trees and an alternative approach to what is currently implemented, if it works.
+
+
 Instructions
 -------
 
