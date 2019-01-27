@@ -15,11 +15,14 @@ class RockPaperScissors < Sinatra::Base
 
   get '/names' do 
     @player_one = session[:player_one]
+    @shape_choice = session[:shape_choice]
     erb(:names)
   end 
 
   post '/game' do 
-    erb(:game)
+    session[:shape_choice] = params[:shape_choice]
+    redirect "/names"
   end 
+
   run! if app_file == $0
 end

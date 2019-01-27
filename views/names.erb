@@ -1,13 +1,15 @@
-Player one's name is <%= @player_one %>
-
-Please Select Rock, Paper or Scissors 
+ <h2> <%= @player_one.capitalize %> Please Select Rock, Paper or Scissors </h2>
+ <br> </br>
 
 <form action="/game" method="post">
   <div>
     <label for="option">Option: </label>
   </div>
   <div>
-    <input type="submit" value="Rock">
+    <input type="submit" name="shape_choice" value="Rock">
+    <input type="submit" name="shape_choice" value="Paper">
+    <input type="submit" name="shape_choice"value="Scissors">
   </div>
 </form>
 
+You Selected <%= @shape_choice %>

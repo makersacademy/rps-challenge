@@ -8,7 +8,7 @@ require 'simplecov-console'
 
 def sign_in_and_play
   visit("/")
-  fill_in('player_one', with: 'jake')
+  fill_in('player_one', with: 'Jake')
   click_button('Submit')
 end
 
