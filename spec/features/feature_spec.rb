@@ -6,11 +6,18 @@ feature 'Basic page layout and functionality' do
     expect(page).to have_content 'Let\'s play Rock, Paper, Scissors!'
   end
 
-    scenario 'You can input your name' do
-    visit('/')
+  scenario 'You can input your name' do
     sign_in_and_play
     expect(page).to have_content 'Choose your weapon, Tim'    
   end
 
-  scent
+  scenario 'you can choose your weapon from 3 buttons' do
+    sign_in_and_play
+    click_link 'Rock'
+    sign_in_and_play
+    click_link 'Paper'
+    sign_in_and_play
+    click_link 'Scissors'
+
+  end
 end
