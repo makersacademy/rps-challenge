@@ -24,12 +24,16 @@ class Game
     @arr = ['paper', 'rock', 'scissors']
     @player1_index = @arr.index(@player1_move)
     @player2_index = @arr.index(@player2_move)
-    if @player1_index == @player2_index
+    winner_logic(@player1_index, @player2_index)
+  end
+
+  def winner_logic(player1_index, player2_index)
+    if player1_index == player2_index
       @winner = nil
-    elsif (@player1_index - @player2_index) % 3 == 1
-      @winner = @player2
+    elsif (player1_index - player2_index) % 3 == 1
+      @winner = player2
     else
-      @winner = @player1
+      @winner = player1
     end
   end
 
