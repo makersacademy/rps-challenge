@@ -1,4 +1,4 @@
-<h2>Get ready to challenge Master Control Program</h2>
+<h2>Ready to challenge Master Control Program</h2>
 <div style="background-color:beige; border:6px outset #F7730E; width: 600px;"><center>
 <table style="width: 600px;"><tr><th><b>Player 1</b></h3></th><th><b>Player 2</b></th></tr>
 <tr>
@@ -22,9 +22,9 @@
 <div style="background-color:beige; border:6px outset #F7730E; width: 600px;"><center>
 <table style="width: 600px;"><tr><th><b>Rock</b></h3></th><th><b>Paper</b></h3></th><th><b>Scissors</b></th></tr>
 <tr>
-<td style="width: 200px;"><center><a href = "/played?player_1_choice=Rock"><img src = <%= @rps_hash["Rock"] %> ></a></center></td>
-<td style="width: 200px;"><center><a href = "/played?player_1_choice=Paper"><img src = <%= @rps_hash["Paper"] %> ></a></center></td>
-<td style="width: 200px;"><center><a href = "/played?player_1_choice=Scissors"><img src = <%= @rps_hash["Scissors"] %> ></a></center></td>
+<td style="width: 200px;"><center><a href = "/played?player_1=<%= @player_1 %>&player_1_choice=Rock"><img src = <%= @rps_hash["Rock"] %> ></a></center></td>
+<td style="width: 200px;"><center><a href = "/played?player_1=<%= @player_1 %>&player_1_choice=Paper"><img src = <%= @rps_hash["Paper"] %> ></a></center></td>
+<td style="width: 200px;"><center><a href = "/played?player_1=<%= @player_1 %>&player_1_choice=Scissors"><img src = <%= @rps_hash["Scissors"] %> ></a></center></td>
 </tr>
 </table></center>
 </div>

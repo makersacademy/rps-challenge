@@ -26,6 +26,10 @@ Since I have covered web-app construction in coursework prior to starting this c
 - v1.0 to get the directory structure and all the associated files set up, test that the homepage form accept a name and prints it in the page at /names
 - v1.1 to put player names in a table and style that - I tested different options with table html, no TDD
 - v1.2 added images on homepage to give it a Tron theme
+Then I implemented a hash for the image URLs to refer to them easily. Next major change was
+- v1.5 set the image links on /names to the /played result page passing the player's choice
+I coded all the above by making small changes and checking behaviour and presentation when I feature tested in the browser. No tests were done in RSpec.
+
 -----------
 Original README content
 ========
