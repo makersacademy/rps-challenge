@@ -17,5 +17,9 @@ class RockPaperScissors < Sinatra::Base
     @player_one = session[:player_one]
     erb(:names)
   end 
+
+  post '/game' do 
+    erb(:game)
+  end 
   run! if app_file == $0
 end
