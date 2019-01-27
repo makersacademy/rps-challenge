@@ -15,6 +15,6 @@ class Computer
   attr_reader :move
 
   def assign_move
-    @move = ['Rock','Paper','Scissors'].sample
+    @move = ['Rock','Paper','Scissors','Spock','Lizard'].sample
   end
 end

@@ -11,7 +11,6 @@ class RPS < Sinatra::Base
       @game = Game.instance
     end
 
-
     get '/' do
       erb(:index)
     end
@@ -35,14 +34,14 @@ class RPS < Sinatra::Base
 
 
      get '/result' do
-
+      @something = @game.round_winner?
        erb(:attack)
      end
 
 
-    # get '/turn_over' do
-    #   redirect '/play_screen'
-    # end
+    post '/turn_over' do
+      erb(:play_screen)
+    end
 
 
   end
