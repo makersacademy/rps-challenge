@@ -1,6 +1,13 @@
 require 'tts'
+require 'player'
+
+module TTS
 
 
-s = "Say something in English"
+
+
+
 repeatTimes = 1
 s.play("en", repeatTimes)
+
+end
