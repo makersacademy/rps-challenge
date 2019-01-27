@@ -24,38 +24,39 @@
 </style>
 
 <center>
-  <h1><%=@game.player_1.name%> vs. Computer!</h1>
+  <h1><%=@game.player_1.name%> vs. <%=@game.player_2.name%>!</h1>
 
   <div class ="button_div">
-    <form action="/rock_1p" method="post">
+    <form action="/rock_2p" method="post">
       <input type="image" width="80" height="80" src="https://image.flaticon.com/icons/svg/925/925141.svg" value=Rock> </input>
     </form>
   </div>
   <div class ="button_div">
-    <form action="/paper_1p" method="post">
+    <form action="/paper_2p" method="post">
       <input type="image" width="80" height="80" src="https://image.flaticon.com/icons/svg/941/941565.svg" value=Paper> </input>
     </form>
   </div>
   <div class ="button_div">
-    <form action="/scissors_1p" method="post">
+    <form action="/scissors_2p" method="post">
       <input type="image" width="80" height="80" src="https://image.flaticon.com/icons/svg/1151/1151147.svg" value=Scissors> </input>
     </form>
   </div>
 
   <h2>
-    <% if @game.round > 0 %>
-      <%= @game.player_1.move %> vs. <%= @game.player_2.move %><br>
+    <% if @game.round > 1 && @game.turn == @game.player_1 %>
+      <%= @game.player_1.name %> played <%= @game.player_1.move %>, <%= @game.player_2.name %> played <%= @game.player_2.move %><br>
       <% if @game.round_winner == "Draw" %>
         It's a draw!<br>
       <% else %>
-        <%= @game.round_winner %> wins!<br>
+        <%= @game.round_winner %> wins!<br><br>
       <% end %>
+    <% end %>
+    <%= @game.turn.name %>, it's your turn.<br>
       <div class ="bottomleft">
         <%= @game.player_1.name %>: <%= @game.player_1.score %>
       </div>
       <div class ="bottomright">
         <%= @game.player_2.name %>: <%= @game.player_2.score %>
       </div>
-    <% end %>
   </h2>
 </center>

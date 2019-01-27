@@ -2,13 +2,15 @@ require_relative 'winning_logic'
 
 class Game
 
-  attr_reader :player_1, :player_2, :round, :round_winner
+  attr_reader :player_1, :player_2, :round, :round_winner, :turn
 
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
     @round = 0
     @round_winner = nil
+    @turn = player_1
+    @not_turn = player_2
   end
 
   def self.create(player_1, player_2 = Player.new("Computer"))
@@ -17,6 +19,16 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def switch_turn
+    if @turn == player_1
+      @not_turn = player_1
+      @turn = player_2
+    else
+      @turn = player_1
+      @not_turn = player_2
+    end
   end
 
   def calculate_winner
