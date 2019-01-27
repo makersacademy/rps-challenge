@@ -6,18 +6,23 @@ class RPSapp < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     'Testing'
     erb :index
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
+    player_1 = params[:player_1_name]
+    player_2 = params[:player_2_name] == "" ? "Computer" : params[:player_2_name]
+    @game = Game.create(player_1, player_2)
     redirect '/play'
   end
 
   get '/play' do
-    @p1_name = session[:player_1_name]
     erb :play
   end
 
