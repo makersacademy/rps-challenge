@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class RPSApp < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
   get '/' do
     'Let\'s play Rock, Paper, Scissors!'
   end

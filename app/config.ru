@@ -1,3 +1,3 @@
-require_relative './rps_app'
+require_relative './app'
 
-run RPSApp
+run RockPaperScissors

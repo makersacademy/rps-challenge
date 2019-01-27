@@ -1,6 +1,6 @@
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', 'app', 'rps_app.rb')
+require File.join(File.dirname(__FILE__), '..', 'app', 'app.rb')
 
 
 require 'rspec'
@@ -9,7 +9,7 @@ require 'capybara/dsl'
 require 'simplecov'
 require 'simplecov-console'
 
-Capybara.app = RPSApp
+Capybara.app = RockPaperScissors
 
 include Capybara::DSL
 
