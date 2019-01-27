@@ -51,3 +51,22 @@ body {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
   text-align: center;
 }
+
+#player_options {
+  text-align: center;
+}
+
+#choose {
+  font-size: 150%;
+  font-family: "Courier";
+}
+
+#play {
+  font-size: 150%;
+  font-family: "Courier";
+}
+
+#play_again {
+  font-size: 150%;
+  font-family: "Courier";
+}
