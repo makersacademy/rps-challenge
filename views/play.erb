@@ -7,6 +7,19 @@
   <br>
 <h1>Rock Paper Scissors</h1>
   <br>
-<h2><%= @player_1 %> Make your choice!</h2>
+<% if @choice == nil %>
+<h2><%= @player_1 %> make your choice!</h2>
   <br>
+  <form action="/choose" method="post">
+    <table width="50%" align="center">
+      <tr>
+      <th><input type="submit" name="choice" value="Rock" height ="50px" width="200px"></th>
+      <th><input type="submit" name="choice" value="Paper" height ="50px" width="200px"></th>
+      <th><input type="submit" name="choice" value="Scissors" height ="50px" width="200px"></th>
+      </tr>
+    </table>
+  </form>
+<% else %>
+<h2><%= @player_1 %> you have chosen <%= @choice %>!</h2>
+<% end %>
 </body>
