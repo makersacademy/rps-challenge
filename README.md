@@ -2,19 +2,8 @@
 
 [![rock-paper-scissors2.gif](https://i.postimg.cc/6QQt73qd/rock-paper-scissors2.gif)](https://postimg.cc/v4CpkGWB)
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
+Brief
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -38,21 +27,6 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
 ## Basic Rules
 
 - Rock beats Scissors
@@ -66,6 +40,19 @@ In code review we'll be hoping to see:
 * The code is elegant: every class has a clear responsibility, methods are short etc.
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+
+Approach
+---------
+Initially, I built this using `session` in order to store state. This was fairly straightforward (and possibly preferable for the size of the project). 
+
+However, as I was looking to understand 'extracting logic into a model layer' part better, I opted to abstract my states out into a model layer. The classes I used were: 
+
+- Game
+- Player
+- Computer
+
+
+
 
 Notes on test coverage
 ----------------------
