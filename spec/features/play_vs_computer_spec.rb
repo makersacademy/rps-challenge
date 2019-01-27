@@ -16,4 +16,12 @@ feature 'play RPS' do
     select_rock
     expect(page).to have_content "It's a draw!"
   end
+
+  scenario 'user plays twice' do
+    select_rock
+    click_button 'Play Again'
+    srand(8)
+    select_rock
+    expect(page).to have_content "It's a draw!"
+  end
 end

@@ -1,6 +1,8 @@
 describe Game do
   let(:printer) { double(:printer, print_result: nil) }
   let(:printer_class) { double(new: printer) }
+  let(:result) { double(:result, calculate: 'Win') }
+  let(:result_class) { double(:result_class, new: result) }
   let(:one_player) { Game.new("Pete", 'one_player') }
   let(:two_player) { Game.new("Pete", 'two_player', 'Tong') }
   let(:steves_game) do
@@ -33,9 +35,6 @@ describe Game do
     end
   end
 
-  # context "on creation, two player mode" do
-  #   it "stores both names"
-  # end
   describe "storing an instance" do
     context "one player mode" do
       it "can store the current game instance as a class instance variable" do
@@ -66,35 +65,41 @@ describe Game do
     end
   end
 
-  describe "#result" do
-    context "one player mode, player enters rock" do
-      it "can randomly return Loose" do
-        srand(9)
-        expect(steves_game.result).to eq 'Win'
+  describe "#player2_choice" do
+    let(:game1) { srand(9); Game.new("Bob", "one_player") }
+    let(:game2) { srand(12_314); Game.new("Bob", "one_player") }
+    let(:game3) { srand(8); Game.new("Bob", "one_player") }
+
+    context "one player" do
+      it "generates a random computer choice, which can be Scissors" do
+        expect(game1.player2_choice).to eq "Scissors"
       end
-      it 'can randomly return Draw' do
-        srand(12_314)
-        expect(steves_game.result).to eq 'Loose'
+      it "generates a random computer choice, which can be Paper" do
+        expect(game2.player2_choice).to eq 'Paper'
       end
-      it 'can randomly return Won' do
-        srand(8)
-        expect(steves_game.result).to eq 'Draw'
+      it "generates a random computer choice, which can be Rock" do
+        expect(game3.player2_choice).to eq 'Rock'
       end
     end
-    context 'two player mode' do
-      it 'uses player 2s choice rather than computer' do
-        two_player.make_choice('Scissors')
-        two_player.make_choice('Scissors')
-        expect(two_player.result).to eq 'Draw'
+    context "Two player mode" do
+      it "stores player 2's choice" do
+        two_player.make_choice('Rock')
+        two_player.make_choice('Paper')
+        expect(two_player.player2_choice).to eq "Paper"
       end
     end
   end
 
-  describe '#print result' do
+  describe '#show_result' do
+    it "tells result class to determine result" do
+      expect(result).to receive(:calculate).with("Rock", "Scissors")
+      srand(9)
+      steves_game.show_result(printer_class, result_class)
+    end
     it "tells printer object to print result" do
       srand(9)
       expect(printer).to receive(:print_result).with('Win', 'Steve', 'Computer')
-      steves_game.show_result(printer_class)
+      steves_game.show_result(printer_class, result_class)
     end
   end
 

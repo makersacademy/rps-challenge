@@ -1,6 +1,7 @@
 require 'sinatra'
 require './lib/game'
 require './lib/printer'
+require './lib/result'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -38,7 +39,6 @@ class Rps < Sinatra::Base
   post '/play' do
     @game = Game.instances
     @game.make_choice(params[:choice])
-    print "here is game over #{@game.game_over}"
     @game.game_over ? redirect('/result') : redirect('/play')
   end
 

@@ -5,6 +5,7 @@ class Game
   def initialize(player1, mode, player2 = 'Computer')
     @player1 = player1
     @player2 = player2
+    @player2_choice = computer_choice
     @players = [player1, player2]
     @mode = mode
   end
@@ -13,16 +14,17 @@ class Game
     @game = Game.new(player1, mode, player2)
   end
 
-  def game_over
-    mode == 'one_player' ? !player1_choice.nil? : !player2_choice.nil?
-  end
-
   def self.instances
     @game
   end
 
-  def show_result(printer = Printer)
-    printer.new.print_result(result, player1, player2)
+  def game_over
+    mode == 'one_player' ? turn != player1 : turn != player2
+  end
+
+  def show_result(printer = Printer, result = Result)
+    outcome = result.new.calculate(player1_choice, player2_choice)
+    printer.new.print_result(outcome, player1, player2)
   end
 
   def make_choice(choice)
@@ -38,39 +40,10 @@ class Game
     @players[1]
   end
 
-  def result
-    @player2_choice = computer_choice if mode == 'one_player'
-    find_outcome[player2_choice.to_sym]
-  end
-
   private
 
   def switch_turns
     @players.rotate!
-  end
-
-  def find_outcome
-    return rock if player1_choice == 'Rock'
-    return paper if player1_choice == 'Paper'
-    return scissors if player1_choice == 'Scissors'
-  end
-
-  def rock
-    { Rock: 'Draw',
-    Paper: 'Loose',
-    Scissors: 'Win' }
-  end
-
-  def paper
-    { Rock: 'Win',
-    Paper: 'Draw',
-    Scissors: 'Loose' }
-  end
-
-  def scissors
-    { Rock: 'Loose',
-    Paper: 'Win',
-    Scissors: 'Draw' }
   end
 
   def computer_choice

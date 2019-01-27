@@ -2,8 +2,6 @@ class Printer
 
   attr_reader :player1, :player2, :result_player1
 
-#  to do split into initialize
-
   def print_result(result_player1, player1, player2)
     @player1 = player1
     @player2 = player2
