@@ -20,11 +20,7 @@ class Game
   end
 
   def self.print_result
-    generate_result_string(@result)
-  end
-
-  def self.generate_result_string(result)
-    case result
+    case @result
     when :win
       PLAYER_1_WIN_MESSAGE
     when :draw
