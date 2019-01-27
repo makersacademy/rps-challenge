@@ -3,14 +3,10 @@
 Task
 ----
 
-The aim of this challenge was to build a web app, using Sinatra and 
-Knowing how to build web applications is getting us almost there as web developers!
+The aim of this challenge was to build a web app, written in Ruby and Sinatra and using capybara testing framework to play a simple rock paper scissors game. 
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
+The user stories given were as follows:
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -20,59 +16,40 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
 ## Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+Instructions for use
+--------------------
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+To view use this application you can either:
+1. View online at [heroku](https://rpschallengesstevenson.herokuapp.com/)
+2. - Fork this repo
+   - Run 'bundle install' on ruby version 2.5.0
+   - run 'rackup config.ru'
+   - open up in your browsers at 'localhost:9292'
 
-## Basic Rules
+Approach
+--------
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+When using this application, there can be either two users who enter their names into the welcome page, or just one when only one person enters their name for player 1.  When there are two players, the first player will select their move, they will then be directed to a second users page for their choice. The winner will then be determined on the results page.
+If there is only one player, they will play against the computer when they hit 'Go!'. If this is the case, after the player chooses their move, they will be directed to the results page where the winner will be revealed.
 
-In code review we'll be hoping to see:
+The construct of the program uses three classes:
+- Game
+- Player
+- Computer
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+The Game class is used to determine which player has won and is agnostic to whether the second player is a Player or is the Computer. 
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+The player class has an instance of 'name' and has one single method which takes the user input as their move.
 
-Notes on test coverage
-----------------------
+The computer class has only one method in which a move is selected randomly fromm the three options.
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+Challenges
+---------
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+Using TDD in this process seemed slightly challenging as the computer move needed to be seeded to have reliable feature tests. 
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+I also have limited experience with HTML and CSS - this could have been utalised more to make my program more attractive.
