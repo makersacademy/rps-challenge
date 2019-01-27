@@ -6,7 +6,7 @@
  /|      :  :  ..      /        \
 | |     ::     ::      \        /
 | |     :|     ||     \ \______/
-| |     ||     ||      |\  /  |
+| |     ||     ||      |\  /  |        ROCK, PAPER, SCISSORS CHALLENGE
  \|     ||     ||      |   / | \
   |     ||     ||      |  / /_\ \
   | ___ || ___ ||      | /  /    \
@@ -16,7 +16,16 @@
               /     \           /
               \______\_________/
 ```
+About this challenge
 -------------
+The aim of this challenge was to create a web-app which let the user play the game Rock, Paper, Scissors. The first version lets you play only against the computer. The second version lets two people play against each other.
+
+Method of working
+-------------
+Since I have covered web-app construction in coursework prior to starting this challenge I was able to review and re-use that work. This meant I could quickly move forward on the first user story with code that had already been proven. So first test pass and 2nd commit & push : 
+- v1.0 to get the directory structure and all the associated files set up, test that the homepage form accept a name and prints it in the page at /names 
+
+-----------
 Original README content
 ========
 Instructions

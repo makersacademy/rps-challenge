@@ -2,6 +2,16 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
+# setting RACK_ENV
+ENV['RACK_ENV'] = 'test'
+# require some files
+require 'capybara'
+require 'rspec'
+require 'features/web_helpers'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+# Tell Capybara about your app class using Capybara.app
+Capybara.app = RockPaperScissors
+
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
