@@ -6,7 +6,7 @@
 
   <body>
     <h1>Rock, paper, scissors</h1>
-    <p> <%= "#{@game.player_one.name}" %> vs. Computer </p>
+    <p> <%= "#{@game.player}" %> vs. Computer </p>
 
     <form action="/rock" method="post" >
       <button type="submit" value="Rock" >ROCK
@@ -15,7 +15,7 @@
     <form action="/paper" method="post" >
       <button type="submit" value="Paper" >PAPER
     </form>
-    
+
     <form action="/scissors" method="post" >
       <button type="submit" value="Scissors" >SCISSORS
     </form>

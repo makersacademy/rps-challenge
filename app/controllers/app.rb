@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require './app/models/player'
 require './app/models/game'
 
 class RockPaperScissors < Sinatra::Base
@@ -18,8 +17,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name_received' do
-    user_name = params[:Player_one]
-    @game = Game.create(user_name, 'computer')
+    @game = Game.create(params[:Player])
     redirect '/play'
   end
 
@@ -48,7 +46,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/computer_choice' do
-    'The computer picked: '
     @game.computer_turn
     erb :computer_choice
   end

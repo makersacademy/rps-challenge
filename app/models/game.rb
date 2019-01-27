@@ -1,20 +1,17 @@
-require_relative 'player'
-
 class Game
 
-  attr_reader :player_one, :player_two, :round, :result
+  attr_reader :player, :round
 
-  def self.create(player_one, player_two)
-    @game = Game.new(player_one, player_two)
+  def self.create(player)
+    @game = Game.new(player)
   end
 
   def self.instance
     @game
   end
 
-  def initialize(player_one , player_two)
-    @player_one = Player.new(player_one)
-    @player_two = player_two
+  def initialize(player)
+    @player = player
     @round = []
   end
 
@@ -49,6 +46,5 @@ class Game
       round[0] > round[1] ? 'YOU WIN!' : 'YOU LOSE!'
     end
   end
-
 
 end

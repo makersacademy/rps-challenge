@@ -8,5 +8,8 @@
     <h1>The computer picked: </h1>
     <p> <%= @game.translate(@game.round[1]) %> </p>
     <p> <%= @game.result %> </p>
+    <form action="/play" method="get">
+      <input type="submit" value="Play again" >
+    </form>
   </body>
 </html>

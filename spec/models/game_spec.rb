@@ -1,12 +1,11 @@
 require './app/models/game'
 
 describe Game do
-  let(:subject) {Game.new('player', 'computer')}
+  let(:subject) {Game.new('player')}
 
   describe '#defaults' do
-    it "initializes with two players" do
-      game = Game.new('one','two')
-      expect(game.player_one.name).to eq 'one'
+    it "initializes with one player" do
+      expect{Game.new('one','two')}.to raise_error ArgumentError
     end
 
     it 'initializes with a new round' do
