@@ -3,7 +3,7 @@ feature 'Rock Paper Scissor options' do
     load_and_play
     select 'rock', from: 'move'
     click_on 'Go!'
-    expect(page).to have_content "You played rock"
+    expect(page).to have_content "played rock"
   end
 
   scenario 'computer random move' do

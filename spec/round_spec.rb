@@ -67,8 +67,8 @@ describe Round do
 
   describe '#winner' do
 
-    let(:computer2) { double(:computer2, moves: ["rock"]) }
-    let(:lily2) { double(:lily2, moves: ["paper"]) }
+    let(:computer2) { double(:computer2, moves: ["rock"], add_outcome: nil) }
+    let(:lily2) { double(:lily2, moves: ["paper"], add_outcome: nil) }
     let(:subject2) { Round.new(lily2, computer2) }
     let(:subject3) { Round.new(lily2, computer) }
 
@@ -81,21 +81,21 @@ describe Round do
     it 'should retreive moves from players' do
       expect(lily).to receive :moves
       expect(computer).to receive :moves
-      subject.calculate_outcome
+      subject.run_outcome
     end
 
     it 'should return winner is computer' do
-      subject.calculate_outcome
+      subject.run_outcome
       expect(subject.winner.last).to eq computer
     end
 
     it 'should return winner is player' do
-      subject2.calculate_outcome
+      subject2.run_outcome
       expect(subject2.winner.last).to eq lily2
     end
 
     it 'should return draw' do
-      subject3.calculate_outcome
+      subject3.run_outcome
       expect(subject3.winner.last).to eq "Draw"
     end
 
@@ -108,6 +108,18 @@ describe Round do
       expect(lily).to receive :add_outcome
       subject.run_outcome
     end
+  end
 
+  describe '#complete?' do
+    it 'should return false if current turn is not first player' do
+      subject.store_and_switch("rock")
+      expect(subject.complete?).to eq false
+    end
+
+    it 'should return complete if current turn has returned to first player' do
+      subject.store_and_switch("rock")
+      subject.store_and_switch("rock")
+      expect(subject.complete?).to eq true
+    end
   end
 end

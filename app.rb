@@ -31,7 +31,7 @@ class Game < Sinatra::Base
 
   post '/store-move' do
     @round.store_and_switch(params[:move])
-    @round.current_turn.name == "Computer" ? (redirect '/computer-move') : (redirect '/play')
+    @round.current_turn.name == "Computer" ? (redirect '/computer-move') : (redirect '/result')
   end
 
   get '/computer-move' do
@@ -40,7 +40,7 @@ class Game < Sinatra::Base
   end
 
   get '/result' do
-    @round.run_outcome
+    @round.run_outcome if @round.complete? == true
     erb :result
   end
 end

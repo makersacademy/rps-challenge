@@ -30,7 +30,8 @@
     </style>
   </head>
   <body>
-    You played <%= @round.current_turn.moves.last%> <br>
+    <% if @round.complete? == true %>
+    <%=@round.current_turn.name%> played <%= @round.current_turn.moves.last%> <br>
     <%=@round.opponent.name%> played <%=@round.opponent.moves.last%> <br>
 
     <div>
@@ -40,12 +41,6 @@
       <h1><%= @round.winner.last.name%> wins! <br></h1>
       <%end%>
     </div>
-
-    <div class="row">
-      <div class="column"></div>
-      <div class="column"></div>
-    </div>
-
 
     <div class="row">
       <div class="column">
@@ -62,9 +57,10 @@
         Draws: <%= @round.opponent.count_outcome("draw")%> <br>
       </div>
     </div>
+    <%end%>
 
     <div>
-      <h2> Your turn <%=@round.current_turn.name%>! </h2>
+      <h2> Your turn, <%=@round.current_turn.name%>! </h2>
       <form action= '/store-move' method='post'>
       <select name = "move">
         <option name = "rock">rock</option>

@@ -32,13 +32,33 @@ class Round
     @players.reject { |player| player == @current_turn }.first
   end
 
+  def run_outcome
+    calculate_outcome
+    record_outcome
+  end
+
+  def complete?
+    @current_turn == @players.first ? true : false
+  end
+
+  private
+
   def switch_turn
     @current_turn = opponent
   end
 
-  def run_outcome
-    calculate_outcome
-    record_outcome
+  def random_move
+    move = generate_random
+    store_move(move)
+  end
+
+  def generate_random
+    options = ["scissors", "rock", "paper"]
+    options[rand(0..2)]
+  end
+
+  def store_move(move)
+    @current_turn.store_move(move)
   end
 
   def calculate_outcome
@@ -53,22 +73,6 @@ class Round
     else
       @winner << opponent
     end
-  end
-
-  private
-
-  def random_move
-    move = generate_random
-    store_move(move)
-  end
-
-  def generate_random
-    options = ["scissors", "rock", "paper"]
-    options[rand(0..2)]
-  end
-
-  def store_move(move)
-    @current_turn.store_move(move)
   end
 
   def record_outcome
