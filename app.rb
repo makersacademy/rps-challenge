@@ -36,7 +36,6 @@ enable :sessions
     get '/winner' do
         $game.determine_winner
         erb (:winner_decider)
-      #  'You are the winner!'
     end
 
     run! if app_file == $0
