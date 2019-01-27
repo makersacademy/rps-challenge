@@ -1,9 +1,11 @@
 require_relative '../../app.rb'
 
-feature 'homepage ' do 
-  scenario "says testing infrastructure working!" do 
+feature 'homepage ' do
+  scenario " Register and see my name" do
     visit("/")
-    expect(page).to have_content "Testing Homepage!"
-  end 
-end 
-
+    fill_in('player_one', with: 'jake')
+    
+    click_button('Submit')
+    expect(page).to have_content("jake")
+  end
+end
