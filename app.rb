@@ -15,25 +15,14 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
-    @players_choice = params[:players_choice]
-  erb(:play)
+    erb(:play)
   end
 
   get '/choice' do
-    @player_name = session[:player_name]
     @players_choice = params[:players_choice]
- erb(:choice)
-end
-
-  get '/computer' do
-
-
- end
-
-
-
-
+    erb(:choice)
   end
+end
 
 #
 # run! if app_file == $0
