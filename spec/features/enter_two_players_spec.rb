@@ -2,7 +2,7 @@ describe "2 Player mode", type: :feature do
   before(:each) do
     sign_in_two_player
   end
-  
+
   it 'starts 2-player mode if two names are given.' do
     expect(page).to have_content("someguy V otherguy")
   end
@@ -20,5 +20,8 @@ describe "2 Player mode", type: :feature do
     click_on "rock"
     click_on "paper"
     expect(page).to have_content("otherguy wins!")
+    click_on "scissors"
+    click_on "paper"
+    expect(page).to have_content("someguy wins!")
   end
 end

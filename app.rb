@@ -67,7 +67,7 @@ class RockPaperScissors < Sinatra::Base
     redirect '/2pmatch'
   end
   post "/2pscissors" do
-    session['player1'].choose_move(:scissors)
+    session['turn'].now.choose_move(:scissors)
     session['turn'].change
     redirect '/2pmatch'
   end
