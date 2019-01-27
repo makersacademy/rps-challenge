@@ -26,6 +26,7 @@ Since I have covered web-app construction in coursework prior to starting this c
 - v1.0 to get the directory structure and all the associated files set up, test that the homepage form accept a name and prints it in the page at /names
 - v1.1 to put player names in a table and style that - I tested different options with table html, no TDD
 - v1.2 added images on homepage to give it a Tron theme
+
 Then I implemented a hash for the image URLs to refer to them easily. Next major change was
 - v1.5 set the image links on /names to the /played result page passing the player's choice
 
@@ -35,6 +36,9 @@ I then passed the player and choice in the image links in /names. Again I used t
 
 I did some fixes after behaviour testing and seeing some errors e.g. Play again link was not passing player name back and variable name was being printed instead of player name in result table. All this was done again not by using RSpec instead I did a sort of TDD with the browser. Finalised the game to make release v2.0 , some styling improvements may be done in a future version e.g. making the images all the same size which would mean the tables would always be the same size.
 - v2.0 release version for one player game 
+
+For the 2 player game, I copied all the routes and code I had done for the one player game. This was a quick solution to get something done, and has led to a lot of duplication which would need to be refactored. New version v2.1 
+- v2.1 has initial set up for the 2 player game, not working yet
 
 
 -----------
