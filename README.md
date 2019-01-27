@@ -33,7 +33,8 @@ I coded all the above by making small changes and checking behaviour and present
 I then passed the player and choice in the image links in /names. Again I used the Sinatra error trace to locate and fix the bugs. Next milestone was in v1.7
 - v1.7 populated the results table with player name and images according to choices, and result image - Tron/MCP/football-match for player 1 won/lost/draw
 
-
+I did some fixes after behaviour testing and seeing some errors e.g. Play again link was not passing player name back and variable name was being printed instead of player name in result table. All this was done again not by using RSpec instead I did a sort of TDD with the browser. Finalised the game to make release v2.0 , some styling improvements may be done in a future version e.g. making the images all the same size which would mean the tables would always be the same size.
+- v2.0 release version for one player game 
 
 
 -----------

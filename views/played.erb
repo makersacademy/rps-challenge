@@ -6,7 +6,7 @@
 
 <% @res_text = "" %>
 <% if @player_1_res == "Won" %>
-  <% @res_text = "@player_1 is the Winner!" %>
+  <% @res_text = @player_1 + " is the Winner!" %>
 <% elsif @player_1_res == "Lost" %>
   <% @res_text = "MCP is the Winner!" %> 
 <% else %>
@@ -33,4 +33,4 @@
 </style>
 
 <br>
-<h3><a href = "/names">Play again</a> or <a href = "/">Quit</a></h3>
+<h3><a href = "/names?player_1=<%= @player_1 %>">Play again</a>  or  <a href = "/">Quit</a></h3>
