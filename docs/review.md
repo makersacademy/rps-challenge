@@ -3,8 +3,6 @@ Welcome to the code review for RPS Challenge!  Again, don't worry - you are not 
 
 If you don't feel comfortable giving technical feedback at this stage, try going through this guide with your reviewee and review the code together.
 
-Please use [this form](https://docs.google.com/a/makersacademy.com/forms/d/1lErwvS0sUh6a9VXR7ZCShCKtG6EHuNgVAm0f2av6Ujg/edit?usp=drive_web) to tick off where your reviewee has successfully has successfully incorporated these guidelines!  This form helps us get an overall picture of how the whole cohort is doing - it's not an assessment of an individual student.
-
 # Step 0: Checkout and Run tests
 
 Please checkout your reviewee's code and run their tests. Read the code and try and play the game through the web interface.  You can also experiment with the engine in IRB. How easy is it to understand the structure of their code? How readable is their code? Did you need to make any cognitive leaps to 'get it'?
