@@ -23,22 +23,29 @@ class Rps < Sinatra::Base
   end
 
   get '/rock' do
-    @player_1 = $game.player_1
+    @game = $game
+    @player_1 = @game.player_1
     @player_1.choice = "Rock"
+
+    # @game.result
     erb :play
   end
 
   get '/paper' do
-    @player_1 = $game.player_1
+    @game = $game
+    @player_1 = @game.player_1
     @player_1.choice = "Paper"
 
+    # @game.result
     erb :play
   end
 
   get '/scissors' do
-    @player_1 = $game.player_1
+    @game = $game
+    @player_1 = @game.player_1
     @player_1.choice = "Scissors"
 
+    # @game.result
     erb :play
   end
 
