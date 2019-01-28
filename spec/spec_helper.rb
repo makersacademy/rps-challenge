@@ -4,13 +4,10 @@ require File.join(File.dirname(__FILE__), '..', 'app', 'app.rb')
 
 require 'rspec'
 require 'capybara/rspec'
-require 'capybara/dsl' 
 require 'simplecov'
 require 'simplecov-console'
 
 Capybara.app = RockPaperScissors
-
-include Capybara::DSL
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

@@ -1,3 +1,5 @@
+require_relative 'weapon'
+
 class Game
   WEAPONS = [:rock, :paper, :scissors]
 

@@ -1,7 +1,13 @@
 <center>
-<h1>Choose your weapon, <%= @name %>!</h1>
-
-<a href="/rock">Rock</a>
-<a href="/paper">Paper</a>
-<a href="/rock">Scissors</a>
+<h1>Choose your weapon, <%= @player %>!</h1>
+<form action="/weapons" method="post">
+  <input type="submit" name="weapon" value="Rock">
+  <input type="submit" name="weapon" value="Paper">
+  <input type="submit" name="weapon" value="Scissors">
+</form>
+<% if @player_weapon %>
+You have chosen <%= @player_weapon %>!
+The computer has chosen <%= @computer_weapon %>!
+<%= @result %>
+<% end %>
 </center>

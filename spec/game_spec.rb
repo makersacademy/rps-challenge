@@ -10,4 +10,8 @@ describe Game do
     expect(Game::WEAPONS).to receive(:sample).and_return(:scissors)
     Game.choose_weapon
   end
+
+  it 'should return a winner' do
+  
+  end
 end
