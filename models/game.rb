@@ -8,7 +8,6 @@ class Game
   def initialize(player, computer = Computer.new)
     @player = player
     @computer = computer
-    @winner
   end
 
   def result

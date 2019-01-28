@@ -30,11 +30,11 @@ class Rps < Sinatra::Base
     redirect '/result'
   end
 
-   get '/result' do
-     @player = session[:player]
-     @winner = session[:result]
-     erb(:result)
-   end
+  get '/result' do
+    @player = session[:player]
+    @winner = session[:result]
+    erb(:result)
+  end
 
 
   run if app_file == $0
