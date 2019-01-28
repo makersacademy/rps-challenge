@@ -1,0 +1,11 @@
+<% case Game.state
+when :player_wins %>
+  <h1><%= Game.player.name %> wins!</h1>
+<% when :game_wins %>
+  <h1>Computer wins!</h1>
+<% else %>
+  <h1>It's a tie!</h1>
+<% end %>
+<% unless Game.state == :draw %>
+<h2><% Game.weapon %> beats <%= [Game.game_choice, Game.player.choice.to_sym].select{ |a| a != Game.weapon } %></h2>
+<% end %>

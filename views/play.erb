@@ -1,0 +1,11 @@
+<h1>WELCOME <%= game.player.name.upcase %>!</h1>
+<p>Make your choice:</p>
+<form action="/choice?choice=rock" method="post">
+  <input type="submit" value="Rock"></input>
+</form>
+<form action="/choice?choice=paper" method="post">
+  <input type="submit" value="Paper"></input>
+</form>
+<form action="/choice?choice=scissors" method="post">
+  <input type="submit" value="Scissors"></input>
+</form>
