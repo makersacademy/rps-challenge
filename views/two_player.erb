@@ -17,25 +17,26 @@
   }
 </style>
 
-
-<h2><%= @player_1 %>: choose Rock, Paper or Scissors</h2>
-<div style="background-color:beige; border:6px outset #F7730E; width: 600px;"><center>
-<table style="width: 600px;"><tr><th><b>Rock</b></h3></th><th><b>Paper</b></h3></th><th><b>Scissors</b></th></tr>
-<tr>
-<td style="width: 200px;"><center><a href = "/played?player_1=<%= @player_1 %>&player_1_choice=Rock"><img src = <%= @rps_hash["Rock"] %> ></a></center></td>
-<td style="width: 200px;"><center><a href = "/played?player_1=<%= @player_1 %>&player_1_choice=Paper"><img src = <%= @rps_hash["Paper"] %> ></a></center></td>
-<td style="width: 200px;"><center><a href = "/played?player_1=<%= @player_1 %>&player_1_choice=Scissors"><img src = <%= @rps_hash["Scissors"] %> ></a></center></td>
-</tr>
-</table></center>
-</div>
-
-<h2><%= @player_2 %>: choose Rock, Paper or Scissors</h2>
-<div style="background-color:beige; border:6px outset #F7730E; width: 600px;"><center>
-<table style="width: 600px;"><tr><th><b>Rock</b></h3></th><th><b>Paper</b></h3></th><th><b>Scissors</b></th></tr>
-<tr>
-<td style="width: 200px;"><center><a href = "/played?player_1=<%= @player_1 %>&player_1_choice=Rock"><img src = <%= @rps_hash["Rock"] %> ></a></center></td>
-<td style="width: 200px;"><center><a href = "/played?player_1=<%= @player_1 %>&player_1_choice=Paper"><img src = <%= @rps_hash["Paper"] %> ></a></center></td>
-<td style="width: 200px;"><center><a href = "/played?player_1=<%= @player_1 %>&player_1_choice=Scissors"><img src = <%= @rps_hash["Scissors"] %> ></a></center></td>
-</tr>
-</table></center>
+<div style="background-color:beige; border:6px outset #F7730E; width: 600px;">
+<table>
+<tr><td>
+<h3><%= @player_1 %>: choose Rock, Paper or Scissors</h3>
+<center>
+<form>
+  <input type="radio" name="player_1_choice" value="Rock" checked> Rock<br>
+  <input type="radio" name="player_1_choice" value="Paper"> Paper<br>
+  <input type="radio" name="player_1_choice" value="Scissors"> Scissors
+</form>
+</center>
+</td>
+<td><h3><%= @player_2 %>: choose Rock, Paper or Scissors</h3>
+<center>
+<form>
+  <input type="radio" name="player_2_choice" value="Rock" checked> Rock<br>
+  <input type="radio" name="player_2_choice" value="Paper"> Paper<br>
+  <input type="radio" name="player_2_choice" value="Scissors"> Scissors
+</form>
+</center>
+</td></tr>
+</table>
 </div>
