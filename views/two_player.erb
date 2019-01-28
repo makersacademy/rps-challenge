@@ -22,21 +22,24 @@
 <tr><td>
 <h3><%= @player_1 %>: choose Rock, Paper or Scissors</h3>
 <center>
-<form>
+<form action = "/two-done-played" method = "get">
+  <input type="hidden" name="player_1" value= <%= @player_1%> >
   <input type="radio" name="player_1_choice" value="Rock" checked> Rock<br>
   <input type="radio" name="player_1_choice" value="Paper"> Paper<br>
   <input type="radio" name="player_1_choice" value="Scissors"> Scissors
-</form>
 </center>
 </td>
 <td><h3><%= @player_2 %>: choose Rock, Paper or Scissors</h3>
 <center>
-<form>
+  <input type="hidden" name="player_2" value= <%= @player_2%> >
   <input type="radio" name="player_2_choice" value="Rock" checked> Rock<br>
   <input type="radio" name="player_2_choice" value="Paper"> Paper<br>
   <input type="radio" name="player_2_choice" value="Scissors"> Scissors
-</form>
 </center>
 </td></tr>
 </table>
 </div>
+
+<h3>Who will win?</h3>
+<input type="submit" value="Find out now!"> 
+</form>

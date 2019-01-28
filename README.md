@@ -40,8 +40,10 @@ I did some fixes after behaviour testing and seeing some errors e.g. Play again 
 For the 2 player game, I copied all the routes and code I had done for the one player game. This was a quick solution to get something done, and has led to a lot of duplication which would need to be refactored. New version v2.1 
 - v2.1 has initial set up for the 2 player game, not working yet
 Next I modified the game page /two-player, as image links could not easily work here. I replaced all that with radio buttons for each player. A link is needed to take them to the result page.
-- v2.2 modified 2 player game page /two-player to allow 2 players to make a choice 
+- v2.2 modified 2 player game page /two-player to allow 2 players each to make a choice
 
+Handling 2 radio button groups in the form in /two-player threw up a few errors which I fixed as usual by checking the Sinatra error logging and stack trace, changing something, checking behaviour in browser or seeing if I got a different error in the Sinatra stack trace.
+- v2.3 Final version for submission, 2 player mode working
 -----------
 Original README content
 ========
