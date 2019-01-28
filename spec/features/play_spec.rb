@@ -32,7 +32,7 @@ feature 'computer choice' do
 end
 
 feature 'play again' do
-  scenario 'should confirm computer choice' do
+  scenario 'should return to the play page' do
     enter_name
     click_button 'Rock'
     click_button 'Play again'
