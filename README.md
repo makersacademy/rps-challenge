@@ -5,7 +5,8 @@ So for now, RSpec just tests the model (lib).
 
 I also got stuck at the point of trying to display e.g. 'Scissor beats Rock' on the end-page. I can't see why Game.weapon returns nil:
 
-```[1] pry(main)> require './lib/game.rb'                                                                                         
+```
+[1] pry(main)> require './lib/game.rb'                                                                                         
 => true
 [2] pry(main)> require './lib/player.rb'                                                                                       
 => true
@@ -22,4 +23,5 @@ I also got stuck at the point of trying to display e.g. 'Scissor beats Rock' on 
 [8] pry(main)> Game                                                                                                            
 => Game
 [9] pry(main)> Game.state                                                                                                      
-=> :player_wins ```
+=> :player_wins
+```
