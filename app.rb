@@ -22,9 +22,20 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
-  get '/battle' do
-
+  post '/battle' do
+    session[:player] = Player.new(params[:weapon])
+    game = Game.new(session[:player])
+    game.result
+    session[:result] = game.winner
+    redirect '/result'
   end
+
+   get '/result' do
+     @player = session[:player]
+     @winner = session[:result]
+     erb(:result)
+   end
+
 
   run if app_file == $0
 

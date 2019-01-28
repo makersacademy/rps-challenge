@@ -2,7 +2,7 @@ class Player
 
   attr_reader :weapon
 
-  def initialize(rps)
-    @weapon = rps.to_s
+  def initialize(weapon)
+    @weapon = weapon
   end
 end
