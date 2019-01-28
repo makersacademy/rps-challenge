@@ -22,13 +22,7 @@ class Game
   end
 
   def switch_turn
-    if @turn == player_1
-      @not_turn = player_1
-      @turn = player_2
-    else
-      @turn = player_1
-      @not_turn = player_2
-    end
+    @turn, @not_turn = @not_turn, @turn
   end
 
   def calculate_winner

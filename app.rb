@@ -36,7 +36,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play_two_player' do
     @game = Game.instance
-    p @game.round
     if @game.turn == @game.player_1
       Game.instance.calculate_winner
     end
