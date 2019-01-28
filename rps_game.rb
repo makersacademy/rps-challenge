@@ -29,7 +29,7 @@ class RPS < Sinatra::Base
   end
 
   post '/2play_names' do
-    @game = Game.create(Player.new(params[:player_one]),Player.new(params[:player_two]))
+    @game = Game.create(Player.new(params[:player_one]), Player.new(params[:player_two]))
     puts params
     redirect '/play_screen2'
   end

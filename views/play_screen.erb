@@ -1,3 +1,6 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css"
+</head>
 <div>
 
   <h3> Hello <%= @game.player1.name %> </h3>
@@ -14,11 +17,11 @@
 
 
   <form align="center" action="/attack" method="post">
-    <input type="submit" name="weapon" value="Rock"><br>
-    <input type="submit" name="weapon" value="Paper"><br>
-    <input type="submit" name="weapon" value="Scissors"><br>
-    <input type="submit" name="weapon" value="Lizard"><br>
-    <input type="submit" name="weapon" value="Spock">
+    <input class="button" type="submit" name="weapon" value="Rock"><br>
+    <input class="button" type="submit" name="weapon" value="Paper"><br>
+    <input class="button" type="submit" name="weapon" value="Scissors"><br>
+    <input class="button" type="submit" name="weapon" value="Lizard"><br>
+    <input class="button"type="submit" name="weapon" value="Spock">
   </form>
 
   </div>

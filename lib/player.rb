@@ -18,7 +18,7 @@ class Computer
     @name = name
   end
 
-  def assign_move(move)
+  def assign_move(*)
     @move = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard'].sample
   end
 end

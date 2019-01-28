@@ -1,3 +1,6 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css"
+</head>
 <body>
 <h3> <%= @game.player1.name %> attacked <%= @game.player2.name %> with: <%= @game.player1.move %> </h3>
 
@@ -8,6 +11,6 @@
 
 
 <form action="/turn_over" method="post">
-<input type="submit" value="OK">
+<button class="button" input type="submit" value="OK">
 </form>
 </body>
