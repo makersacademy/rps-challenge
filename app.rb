@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require "./models/computer"
 require "./models/player"
-require "./models/player"
+require "./models/game"
 
 class Rps < Sinatra::Base
 

@@ -1,3 +1,5 @@
+require "./models/game"
+
 RSpec.describe Game do
   subject(:game) { Game.new(player, computer) }
     let (:player) { double :player, choice: :scissors }
