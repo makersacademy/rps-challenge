@@ -18,8 +18,14 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  get '/choice' do
-    @players_choice = params[:players_choice]
+  post '/choice' do
+    session[:players_choice] = params[:players_choice]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @players_choice = session[:players_choice]
+    @computer_choice = ['Rock', 'Paper', 'Scissors'].sample
     erb(:choice)
   end
 end

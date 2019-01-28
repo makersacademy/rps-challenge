@@ -3,6 +3,23 @@
 
 
 <h1> You chose <%= @players_choice %>! </h1>
+<h1> Computer chose <%= @computer_choice %>! </h1>
+
+<% if @players_choice == @computer_choice %>
+    <h1>Draw</h1>
+<% elsif @players_choice == 'Rock' && @computer_choice == 'Scissors' %>
+    <h1>Player wins</h1>
+<% elsif @players_choice == 'Rock' && @computer_choice == 'Paper' %>
+    <h1>Computer wins</h1>
+<% elsif @players_choice == 'Paper' && @computer_choice == 'Rock' %>
+    <h1>Player wins</h1>
+<% elsif @players_choice == 'Paper' && @computer_choice == 'Scissors' %>
+    <h1>Computer wins</h1>
+<% elsif @players_choice == 'Scissors' && @computer_choice == 'Rock' %>
+    <h1>Computer wins</h1>
+<% elsif @players_choice == 'Scissors' && @computer_choice == 'Paper' %>
+    <h1>Player wins</h1>
+<% end %>
 
 <!-- <form action="" method="post">
     <input type="submit" name="upvote" value="Upvote" />
