@@ -8,7 +8,7 @@ feature "Testing root page content" do
 
   scenario "User should see a title welcoming them to rock, paper, scisssors" do
     visit('/')
-    expect(page).to have_content("Welcome to Rock, Paper, Scissors!\nYour Name:")
+    expect(page).to have_content("Welcome to Rock,  Paper,  Scissors!\nYour Name:")
   end
 
   scenario "User should be able to sign in with their name" do
