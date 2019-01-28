@@ -1,0 +1,13 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="theme.css" />
+</head>
+
+<div align=center>
+<h1><%= @game.print_result %></h1>
+<h3>You chose <%= @game.player_move %></h3>
+<h3>CPU chose <%= @game.cpu_move%></h3>
+
+<form action=/play method="get" id="ready">
+  <input type="submit" value="Back">
+</form>
+</div>
