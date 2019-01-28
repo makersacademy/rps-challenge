@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require "./models/computer"
+require "./models/player"
+require "./models/player"
 
 class Rps < Sinatra::Base
 
@@ -17,6 +20,10 @@ class Rps < Sinatra::Base
   get '/playgame' do
     @name = session[:name]
     erb(:play)
+  end
+
+  get '/battle' do
+
   end
 
   run if app_file == $0
