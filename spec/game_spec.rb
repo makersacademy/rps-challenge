@@ -11,17 +11,17 @@ describe Game do
     it 'computer winns' do
       allow(player_1).to receive(:choice).and_return("Paper")
       game.computer_choice = "Scissors"
-      expect(game.result).to eq "Lose"
+      expect(game.result).to eq "lose"
     end
     it 'player winns' do
       allow(player_1).to receive(:choice).and_return("Paper")
       game.computer_choice = "Rock"
-      expect(game.result).to eq "Win"
+      expect(game.result).to eq "win"
     end
     it 'draw' do
       allow(player_1).to receive(:choice).and_return("Paper")
       game.computer_choice = "Paper"
-      expect(game.result).to eq "Draw"
+      expect(game.result).to eq "draw"
     end
   end
 end

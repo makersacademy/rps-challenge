@@ -20,6 +20,6 @@ feature 'Enter names' do
   scenario 'confirming player\'s choice' do
     start_game
     click_button 'Paper'
-    expect(page).to have_content 'You chose "Paper"'
+    expect(page).to have_content 'Thanks'
   end
 end
