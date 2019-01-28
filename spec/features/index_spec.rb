@@ -33,7 +33,7 @@ RSpec.describe Rps do
     end
   end
 
-  feature 'Testing win, draw or loose' do
+  feature 'Testing win, draw or lose' do
     scenario 'User sees a draw' do
       register
       select('Rock', from: 'rock_paper_scissors')
@@ -48,12 +48,12 @@ RSpec.describe Rps do
       click_button 'Play'
       expect(page).to have_content("YOU WIN!")
     end
-    scenario 'User sees a loose' do
+    scenario 'User sees a lose' do
       register
       select('Rock', from: 'rock_paper_scissors')
       allow_any_instance_of(Engine).to receive(:random).and_return("Paper")
       click_button 'Play'
-      expect(page).to have_content("YOU LOOSE")
+      expect(page).to have_content("YOU LOSE")
     end
   end
 end
