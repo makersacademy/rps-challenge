@@ -20,9 +20,9 @@ class Game
   end
 
   def show_results
-    if self.rule == :win
+    if rule == :win
       "Well done, you win!"
-    elsif self.rule == :lose
+    elsif rule == :lose
       "You lose this time!"
     else
       "It's a draw!"

@@ -5,14 +5,14 @@ require 'spec_helper'
 # I would like to register my name before playing an online game
 
 feature 'Playing a game' do
-  PLAY_SEED = 221563
+  PLAY_SEED = 221_563
   before do
     sign_in_and_play
   end
 
   scenario 'Can see name' do
     expect(page).to have_content('Dan')
-end
+  end
 
 # As a marketeer
 # I want to see the choices(rock, paper, scissors)
