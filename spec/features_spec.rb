@@ -21,6 +21,8 @@ feature 'Game' do
   end
 
   scenario 'Winner is displayed' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Scissor')
+
     visit '/'
     fill_in :username, with: 'Ibrahim'
     click_button 'Register'
