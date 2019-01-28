@@ -9,6 +9,12 @@ class Game
     @game
   end
 
+  BEATS = { 'Rock' => ['Scissors', 'Lizard'],
+            'Paper' => ['Spock', 'Rock'],
+            'Scissors' => ['Lizard', 'Paper'],
+            'Lizard' => ['Spock', 'Paper'],
+            'Spock' => ['Rock', 'Scissors'] }
+
   def initialize(player1, player2, rounds)
     @players = [player1, player2]
     @total_rounds = rounds.to_i
@@ -35,13 +41,8 @@ class Game
   end
 
   def round_winner?
-    beats = { 'Rock' => ['Scissors', 'Lizard'],
-              'Paper' => ['Spock', 'Rock'],
-              'Scissors' => ['Lizard', 'Paper'],
-              'Lizard' => ['Spock', 'Paper'],
-              'Spock' => ['Rock', 'Scissors'] }
     return "Draw!" if player1.move == player2.move
-    return player1 if beats[player1.move].include?(player2.move)
+    return player1 if BEATS[player1.move].include?(player2.move)
     player2
   end
 

@@ -9,7 +9,7 @@ feature 'Testing infrastructure' do
     scenario 'Can load single player page' do
       visit('/')
       single_player
-      expect(page).to have_content 'Player Name :'
+      expect(page).to have_content 'Player 1 Name'
     end
 
     scenario 'Can accept and display names given' do

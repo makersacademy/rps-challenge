@@ -8,11 +8,13 @@
 <div align=center>
   <h1 class="menu"> Rock / Paper / Scissors <br>
     / Lizard / Spock </h1>
-  <form action="/spsetup" method="post">
-    Player Name :<br>
+  <form action="/setup" method="post">
+    Player 1 Name :<br>
     <input type="text" name="player1" required><br>
-    <!-- Player 2 :<br>
-    <input type="text" name="player2"><br> -->
+    <% if @type == "Multi-Player" %>
+    Player 2 Name :<br>
+    <input type="text" name="player2" required><br>
+    <% end %>
     Number of Rounds : <br>
     <input type="text" name="rounds" required><br>
     <input class="play" type="submit" value="Play!">

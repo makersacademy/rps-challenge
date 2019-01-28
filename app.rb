@@ -18,21 +18,19 @@ class RPS < Sinatra::Base
     erb :sp_input
   end
 
-  post '/spsetup' do
-    player1 = Player.new(params[:player1])
-    player2 = Computer.new
-    rounds = params[:rounds]
-    @game = Game.create(player1, player2, rounds)
-    redirect '/play'
-  end
-
   post '/multiplayer' do
     erb :mp_input
   end
 
-  post '/mpsetup' do
+  post '/input' do
+    @type = params[:game_type]
+    erb :input
+  end
+
+  post '/setup' do
     player1 = Player.new(params[:player1])
-    player2 = Player.new(params[:player2])
+    params[:player2].nil? ? player2 = Computer.new
+    : player2 = Player.new(params[:player2])
     rounds = params[:rounds]
     @game = Game.create(player1, player2, rounds)
     redirect '/play'

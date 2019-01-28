@@ -6,9 +6,6 @@ body {
 }
 h1 {
   font-size: 75px;
-  /* text-shadow: -10px 10px 0px #00e6e6,
-                 -20px 20px 0px #01cccc,
-                 -30px 30px 0px #00bdbd; */
 }
 h1.menu {
   text-shadow: -10px 10px 0px #00e6e6,
