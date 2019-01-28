@@ -31,7 +31,7 @@
               </div>
             </form>
           <% elsif @player_selected == 'Rock' && @computer_selected == 'Paper' %>
-            <h1 style="color: red;">YOU LOOSE!</h1>
+            <h1 style="color: red;">YOU LOSE!</h1>
             <form action="/play_again">
               <div style="margin-bottom: 15px;">
               <input type="submit" value="Play again" class="btn btn-outline-danger btn-lg btn-block">
@@ -45,14 +45,14 @@
               </div>
             </form>
           <% elsif @player_selected == 'Paper' && @computer_selected == 'Scissors' %>
-            <h1 style="color: red;">YOU LOOSE</h1>
+            <h1 style="color: red;">YOU LOSE</h1>
             <form action="/play_again">
               <div style="margin-bottom: 15px;">
               <input type="submit" value="Play again" class="btn btn-outline-danger btn-lg btn-block">
               </div>
             </form>
           <% elsif @player_selected == 'Scissors' && @computer_selected == 'Rock' %>
-            <h1 style="color: red;">YOU LOOSE!</h1>
+            <h1 style="color: red;">YOU LOSE!</h1>
             <form action="/play_again">
               <div style="margin-bottom: 15px;">
               <input type="submit" value="Play again" class="btn btn-outline-danger btn-lg btn-block">
