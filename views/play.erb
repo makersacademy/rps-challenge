@@ -7,19 +7,35 @@
   <br>
 <h1>Rock Paper Scissors</h1>
   <br>
-<% if @choice == nil %>
-<h2><%= @player_1 %> make your choice!</h2>
+<% if @player_1.shape == nil %>
+<h2><%= @player_1.name %> make your choice!</h2>
   <br>
   <form action="/choose" method="post">
     <table width="50%" align="center">
       <tr>
-      <th><input type="submit" name="choice" value="Rock" height ="50px" width="200px"></th>
-      <th><input type="submit" name="choice" value="Paper" height ="50px" width="200px"></th>
-      <th><input type="submit" name="choice" value="Scissors" height ="50px" width="200px"></th>
+      <th><input type="submit" name="shape" value="Rock" height ="50px" width="200px"></th>
+      <th><input type="submit" name="shape" value="Paper" height ="50px" width="200px"></th>
+      <th><input type="submit" name="shape" value="Scissors" height ="50px" width="200px"></th>
       </tr>
     </table>
   </form>
 <% else %>
-<h2><%= @player_1 %> you have chosen <%= @choice %>!</h2>
+  <%= @player_1.name %> you have chosen <%= @player_1.shape %>!
+  <br>
+  <br>
+  <br>
+  <% if @winner == "equal shape" %>
+  There is no winner! You have both choosen <%= @player_1.shape %>!
+  <% elsif @winner == @player_1.shape %>
+  Hey! Hey! Bravo! you won against the <%= @player_2.shape %>!
+  <% else %>
+  Olala! Mister Computer won with <%= @player_2.shape %>! So clever!
+  <% end %>
+  <br>
+  <br>
+  <br>
+  <form action="/" method="get">
+    <th><input type="submit" value="Play again">
+  </form>
 <% end %>
 </body>

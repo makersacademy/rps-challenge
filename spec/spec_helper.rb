@@ -1,4 +1,5 @@
 ENV['RACK_ENV'] = 'test'
+require 'features/web_helpers.rb'
 require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
@@ -10,7 +11,7 @@ Capybara.app = RockPaperScissors
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
+   SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
 
