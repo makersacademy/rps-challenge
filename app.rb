@@ -20,6 +20,26 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  get '/rock' do
+    @player_1 = $player_1
+    @player_1.choice = "Rock"
+    erb :play
+  end
+
+  get '/paper' do
+    @player_1 = $player_1
+    @player_1.choice = "Paper"
+
+    erb :play
+  end
+
+  get '/scissors' do
+    @player_1 = $player_1
+    @player_1.choice = "Scissors"
+
+    erb :play
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

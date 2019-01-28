@@ -6,10 +6,20 @@ feature 'Enter names' do
   end
 
   scenario 'submitting names' do
-    visit('/')
-    fill_in :player_1_name, with: 'Sherif'
-    click_button 'Start'
-
+    start_game
     expect(page).to have_content 'Welcome Sherif, let\'s start'
+  end
+
+  scenario 'playing choices available' do
+    start_game
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
+  end
+
+  scenario 'confirming player\'s choice' do
+    start_game
+    click_button 'Paper'
+    expect(page).to have_content 'You chose "Paper"'
   end
 end
