@@ -33,20 +33,11 @@ class Mama < Sinatra::Base
     @game.gaming
 
     if @game.winner == @game.player1
-        p @game.player1
-        p @game.computer
-        p @game.winner
     redirect '/winner'
 
     elsif @game.winner == @game.computer
-        p @game.player1
-        p @game.computer
-        p @game.winner
     redirect '/looser'
     else
-      p @game.player1
-      p @game.computer
-      p @game.winner
     redirect '/try_again'
     end
   end
