@@ -10,6 +10,7 @@ class Game
   end
 
   def winner
+      print "1 #{@player.weapon} #{@computer.weapon}"
       if player.weapon == computer.weapon
         return "Draw!"
       elsif player.weapon == :rock && computer.weapon != :paper
