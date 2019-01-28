@@ -25,7 +25,7 @@ class Player
 
   def count_move_type(type)
     count = 0
-    @moves.each { |move| count +=1 if move == type }
+    @moves.each { |move| count += 1 if move == type }
     count
-  end 
+  end
 end

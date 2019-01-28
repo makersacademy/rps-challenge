@@ -21,7 +21,7 @@ class Game < Sinatra::Base
   post '/name' do
     player = Player.new(params[:name])
     player2 = params[:name2] || "Computer"
-    @round = Round.create(player, Player.new(player2) )
+    @round = Round.create(player, Player.new(player2))
     redirect '/play'
   end
 
@@ -31,7 +31,8 @@ class Game < Sinatra::Base
 
   post '/store-move' do
     @round.store_and_switch(params[:move])
-    @round.current_turn.name == "Computer" ? (redirect '/computer-move') : (redirect '/result')
+    @round.current_turn.name == "Computer" ? (redirect '/computer-move')
+    : (redirect '/result')
   end
 
   get '/computer-move' do

@@ -16,7 +16,7 @@ describe Player do
 
   it 'should store games by win/loss category' do
     subject.add_outcome("won", round)
-    expect(subject.outcomes).to eq ( { "won" => [round], "lost" => [], "draw" => [] } )
+    expect(subject.outcomes["won"]).to include round
   end
 
   it 'should count number of wins' do

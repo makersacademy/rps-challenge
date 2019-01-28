@@ -12,6 +12,12 @@ class Round
 
   attr_reader :players, :current_turn, :winner
 
+  WINS = {
+        "rock" => "scissors",
+        "scissors" => "paper",
+        "paper" => "rock"
+      }
+
   def initialize(player, computer)
     @players = [player, computer]
     @current_turn = player
@@ -38,7 +44,7 @@ class Round
   end
 
   def complete?
-    @current_turn == @players.first ? true : false
+    @current_turn == @players.first
   end
 
   private
@@ -62,13 +68,9 @@ class Round
   end
 
   def calculate_outcome
-    p1_move = @current_turn.moves.last
-    p2_move = opponent.moves.last
-    if p1_move == p2_move
+    if @current_turn.moves.last == opponent.moves.last
       @winner << "Draw"
-    elsif (p1_move == "rock" && p2_move == "scissors" ||
-      p1_move == "scissors" && p2_move == "paper" ||
-      p1_move == "paper" && p2_move == "rock")
+    elsif WINS[@current_turn.moves.last] == opponent.moves.last
       @winner << @current_turn
     else
       @winner << opponent
