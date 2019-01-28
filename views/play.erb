@@ -11,5 +11,15 @@ body {
 </head>
 <body>
 <h1 align="center"> Player: <%= @name %> </h1>
+
+<h5 align="center"> What do you choose?</h5>
+  <form action = "/battle" method="post"><center>
+    <select name="rps">
+     <option value="Rock"selected>Rock</option>
+     <option value="Paper">Paper</option>
+     <option value="Scissors">Scissors</option>
+    </select>
+  <input type="submit" value="Do Battle!">
+</form>
 </body>
 </html>
