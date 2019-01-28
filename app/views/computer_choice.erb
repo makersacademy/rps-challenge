@@ -1,15 +1,27 @@
-<!DOCTYPE html>
 <html>
-  <head>
+  <!-- <head>
+    <link rel=”stylesheet” type=”text/css” href=”.../style.css” />
+  </head> -->
 
-  </head>
+  <style type="text/css" media="screen">
+    * {
+      background-color: #E8E7E8;
+      color: black;
+      font-family: monospace;
+      font-weight: 200;
+      margin: 30px
+    }
+  </style>
 
+  <div align=center >
   <body>
-    <h1>The computer picked: </h1>
+    <h1 class="header">The computer picked: </h1>
     <p> <%= @game.translate(@game.round[1]) %> </p>
     <p> <%= @game.result %> </p>
     <form action="/play" method="get">
       <input type="submit" value="Play again" >
     </form>
   </body>
+  </div>
+
 </html>

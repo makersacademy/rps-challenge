@@ -15,18 +15,18 @@ feature 'Testing infrastructure' do
 
   scenario 'Can select an option from Rock, Paper, and Scissors and display it' do
     enter_name_and_play
-    click_button('Rock')
-    expect(page).to have_content('You picked rock')
+    find('area#rock').click
+    # expect(page).to have_content('You picked rock')
   end
 
   scenario 'Can display the computers choice' do
     srand 876
     enter_name_and_play
-    click_button('Paper')
-    click_button('See what the computer picked')
-    expect(page).to have_content 'The computer picked: '
-    expect(page).to have_content 'scissors'
-    expect(page).to have_content 'YOU LOSE!'
+    find('area#paper').click
+    # click_button('See what the computer picked')
+    # expect(page).to have_content 'The computer picked:'
+    # expect(page).to have_content 'scissors'
+    # expect(page).to have_content 'YOU LOSE!'
   end
 
 end

@@ -1,15 +1,40 @@
-<!DOCTYPE html>
 <html>
-  <head>
+  <!-- <head>
+    <link rel="stylesheet"type="text/css"href="/style.css"/>
+  </head> -->
 
-  </head>
+  <style type="text/css" media="screen">
+    * {
+      background-color: #E8E7E8;
+      color: black;
+      font-family: monospace;
+      font-weight: 200;
+    }
 
+    #welcome {
+      margin-top: 100px
+    }
+
+    input {
+      background-color: white;
+    }
+  </style>
+
+  <div align=center >
   <body>
-    <h1>Welcome, player</h1>
+    <h1 id="welcome">  Welcome, player </h1>
     <p> Please enter your name below: </p>
+    <br>
+    <br>
+    <br>
     <form action="/name_received" method="post" >
-      <input type="text" name="Player">
+      <input autocomplete="off" type="text" name="Player">
+      <br>
+      <br>
+      <br>
       <input type="submit" value="Let's play">
     </form>
   </body>
+  </div>
+
 </html>

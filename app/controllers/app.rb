@@ -26,17 +26,17 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/rock' do
+  get '/rock' do
     @game.player_one_turn(1)
     redirect '/display_choice'
   end
 
-  post '/paper' do
+  get '/paper' do
     @game.player_one_turn(2)
     redirect '/display_choice'
   end
 
-  post '/scissors' do
+  get '/scissors' do
     @game.player_one_turn(3)
     redirect '/display_choice'
   end
