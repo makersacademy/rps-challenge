@@ -1,13 +1,15 @@
+require './app'
+
 feature 'Register' do
   scenario 'Register and see name' do
     visit '/'
     fill_in :username, with: 'Ibrahim'
     click_button 'Register'
-    expect(page).to have_content 'Ibrahim Vs. NPC'
+    expect(page).to have_button 'Scissor'
   end
 end
 
-feature 'Actions' do
+feature 'Game' do
   scenario 'User is presented with options' do
     visit '/'
     fill_in :username, with: 'Ibrahim'
@@ -17,5 +19,12 @@ feature 'Actions' do
     expect(page).to have_button 'Paper'
     expect(page).to have_button 'Scissor'
   end
-end
 
+  scenario 'Winner is displayed' do
+    visit '/'
+    fill_in :username, with: 'Ibrahim'
+    click_button 'Register'
+    click_button 'Rock'
+    expect(page).to have_content 'Ibrahim won!'
+  end
+end

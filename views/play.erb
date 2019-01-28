@@ -1,7 +1,12 @@
 <%= @player %> Vs. NPC
 
+<% if @action %>
+<br>
+<%= @player %> chose <%= @action %>
+<% end %>
+
 <form action="/action" method="POST">
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+  <input name="action" type="submit" value="Rock">
+  <input name="action" type="submit" value="Paper">
+  <input name="action" type="submit" value="Scissor">
 </form>
