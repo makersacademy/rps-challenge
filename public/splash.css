@@ -6,9 +6,6 @@
 body {
   background: black;
 }
- 
-
-
 .splash {
   position: absolute;
   left: 50%;
@@ -17,8 +14,14 @@ body {
   transform: translate(-50%, -50%);
 }
 
+
+
 .circle1 {
-  position: absolute;
+  position: fixed;
+   width: 0;
+  height: 0;
+  padding:0;
+  z-index: 50;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -27,13 +30,17 @@ body {
   background-color: transparent;
   border: 2px solid red;
   animation: grow_circle 3s;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
-  animation-direction: alternate;
 }
 
 .circle2 {
-  position: absolute;
+    position: fixed;
+   width: 0;
+  height: 0;
+  padding:0;
   left: 50%;
+  z-index: 50;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -41,13 +48,18 @@ body {
   background-color: transparent;
   border: 2px solid white;
   animation: grow_circle 2s;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
-  animation-direction: alternate;
+
 }
 
 .circle3 {
-  position: absolute;
+    position: fixed;
+   width: 0;
+  height: 0;
+  padding:0;
   left: 50%;
+  z-index: 50;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -55,13 +67,18 @@ body {
   background-color: transparent;
   border: 2px solid orange;
   animation: grow_circle 1s;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
-  animation-direction: alternate;
+
 }
 
 .circle4 {
-  position: absolute;
+    position: fixed;
+   width: 0;
+  height: 0;
+  padding:0;
   left: 50%;
+  z-index: 50;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -69,12 +86,17 @@ body {
   background-color: transparent;
   border: 2px solid blue;
   animation: grow_circle 1.5s;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
-  animation-direction: alternate;
+
 }
 
 .circle5 {
-  position: absolute;
+    position: fixed;
+   width: 0;
+  height: 0;
+  padding:0;
+  z-index: 50;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -83,13 +105,17 @@ body {
   background-color: transparent;
   border: 2px solid yellow;
   animation: grow_circle 0.5s;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
-  animation-direction: alternate;
 }
 
 
 .circle6 {
-  position: absolute;
+    position: fixed;
+   width: 0;
+  height: 0;
+  padding:0;
+  z-index: 50;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -99,13 +125,18 @@ body {
   background-color: transparent;
   border: 2px solid purple;
   animation: grow_circle 0.8s;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
-  animation-direction: alternate;
+
 }
 
 
 .circle7 {
-  position: absolute;
+    position: fixed;
+   width: 0;
+  height: 0;
+  padding:0;
+  z-index: 50;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -115,13 +146,18 @@ body {
   border: 2px solid green;
   transition-delay: 1.6s;
   animation: grow_circle 0.2s;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
-  animation-direction: alternate;
+
 }
 
 
 .circle8 {
-  position: absolute;
+    position: fixed;
+   width: 0;
+  height: 0;
+  padding:0;
+  z-index: 50;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -130,15 +166,23 @@ body {
   background-color: transparent;
   border: 2.5px dashed blue;
   animation: grow_circle 0.1s;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
-  animation-direction: alternate;
+
 }
+
 @keyframes grow_circle {
-  0% {height: 0vh; width: 0vw;}
-  25% {height: 50vh; width: 50vw;}
-  50% {height: 100vh; width: 100vw;}
-  75% {height: 150vh; width: 150vw;}
-  100% {height: 200vh; width: 200vw;}
+  0% {height: 25vh; width: 25vw; size: -50%%;filter: blur(0.7px);}
+  12.5% {height: 50vh; width: 50vw;filter: blur(0.6px);}
+  25% {height: 75vh; width: 75vw;filter: blur(0.5px);}
+  37.5% {height: 100vh; width: 100vw;filter: blur(0.4px);}
+  50% {height: 125vh; width: 125vw;filter: blur(0.3px);}
+  62.5% {height: 150vh; width: 150vw;filter: blur(0.2px);}
+  75% {height: 175vh; width: 175vw;filter: blur(0.1px);}
+  87.5% {height: 200vh; width: 200vw;filter: blur(0px);}
+  92% {height: 100vh; width: 100vw;filter: blur(0.3px);}
+  97% {height: 160vh; width: 160vw;filter: blur(1px);}
+  100%{opacity: 0};
 }
 
 .reveal {
@@ -148,23 +192,62 @@ body {
   float: left;
 }
  
+.hide{
+  animation: focus_in 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+
+}
+
 .makers {
   background: url(makers_sliced.png) 0px 150px, url(makers_sliced.png) 0px -225px, black;
-  background-repeat: no-repeat;
-  box-shadow: 500px 500px 500px 500px black;
-  -webkit-transition: background-position 1s ease; filter: blur(0px);
+  background-repeat: no-repeat; 
+    -webkit-transition: background-position 1s ease; filter: blur(0px);
   -moz-transition: background-position 1s ease; filter: blur(2px);
   -o-transition: background-position 1s ease; filter: blur(4px);
   -ms-transition: background-position 1s ease; filter: blur(2px);
   transition: background-position 1s ease; filter: blur(0px);
 }
+
+  {
+ width:500px;
+ height:500px;
+ margin:0 auto;
+ background:#f7f7f7;
+ position:absolute;
+ left:50%;
+ top:50%;
+ margin-left:-250px;
+ margin-top:-250px;
+ box-shadow: 500px 500px 500px 500px black;
+ z-index: -100;
+
+
+  
+}
  
 .makers:hover {
+
   background: url(makers_sliced.png) 0px 210px, url(makers_sliced.png) 0px -285px, black;
   background-repeat: no-repeat;
-  box-shadow: 500px 500px 500px 500px black;
-  animation: focus_out 40s infinite;
+  animation: focus_out 20s infinite;}
+  {
+ width:500px;
+ height:500px;
+ margin:0 auto;
+ background:#f7f7f7;
+ position:absolute;
+ left:50%;
+ top:50%;
+ margin-left:-250px;
+ margin-top:-250px;
+ z-index: -100;
+ box-shadow: 500px 500px 500px 500px black;
 }
+  
+  
+  
+
  
 
 @keyframes focus_out{
@@ -199,21 +282,39 @@ body {
   cursor: pointer;
 }
 
-
+@keyframes spin {
+  0% {transform: rotate(0deg)};
+  25% {transform: rotate(90deg)};
+  50% {transform: rotate(180deg)};
+  75% {transform: rotate(270deg)};
+  100% {transform: rotate(360deg)};
+}
 
 .zoom {
   size: 150px;
-  transition-property: scaleX(7);
+  /*transition-property: scaleX(7);*/
+  animation: spin 0.5s infinite;
+  animation-timing-function: linear;
 }
 
 .zoom:hover {
   transform: scale(2.5) 0.5s 0.8s ease;
-  transition-property: scaleX(7);
-  transition-delay: 0.5s;
-  transition-property: scaleX(7);
+  transition-property: scaleX(35);
+  animation: spin 1s infinite;
+  animation-timing-function: linear;
+}
+
+.rotate:hover{
+  animation: spin 1s infinite;
+  animation-timing-function: linear;
+}
+
+.rotate{
+  animation: spin 1s infinite;
+  animation-timing-function: linear;
 }
 @keyframes focus_in {
-  0% {filter: opacity(0);}
-  50% {filter: opacity(0.5);}
-  100% {filter: opacity(1);}
+  0% {filter: opacity(0);size: 5000%; border-radius: 50px}
+  50% {filter: opacity(0.5);border-radius: 35px}
+  100% {filter: opacity(1);border-radius: 5px}
 }

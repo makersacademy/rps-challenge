@@ -150,6 +150,9 @@ h1, h2, p, .white  {
     width: 20%;
     margin: 10px;
     text-align: left;
+    background-color: transparent;
+     border: .1px solid #900;
+    border-bottom: none;
 }
 
 
@@ -357,14 +360,17 @@ h1, h2, p, .white  {
   margin: 10%;
 }
 
-
+.multiplay{
+  float : center;
+  margin: 10%;
+}
 
 .stat_header{
 
 }
 .stats {
   size: 20%;
-  float : left;
+  float : center;
   margin: 10%;
 }
 

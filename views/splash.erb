@@ -1,21 +1,28 @@
 <head>
   <title>Welcome!</title>
   <link href="<%= url('/splash.css') %>" rel="stylesheet" type="text/css"/>
+  <script src="script.js"></script>
 </head>
 
 <body id="splash_bg">
+
 	<div class="circle1"></div>
 	<div class="circle2"></div>
 	<div class="circle3"></div>
 	<div class="circle4"></div>
 	<div class="circle5"></div>
+	<div class="circle6"></div>
+	<div class="circle7"></div>
+	<div class="circle8"></div>
+
 <div class="splash">
-
-
-<a href="/welcome" >
+<div class="rotate">
+<div class='hide'>
+<a onmouseover="splashSound.play()" href="/welcome" >
 <div class="reveal makers">
   <p class="zoom" style="color: white">Let's Go!</p>
 </div>
 </a>
+</div>
 </div>
 </body>

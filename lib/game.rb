@@ -2,20 +2,22 @@ require_relative 'computer'
 require_relative 'player'
 
 class Game
-  attr_reader :result, :player, :computer, :comp_choice, :player_choice, :turn, :rand_message, :smack, :talk_smack
+  attr_reader :result, :player, :computer, :comp_choice, :player_choice, :turns, :rand_message
   attr_accessor :history, :comp_wins, :draws, :player_wins
   def initialize(player, computer = Computer.new)
     @player = player
     @player_choice 
     @computer = computer
     @comp_choice = []
+    @comp_hands = [0,0,0]
+    @player_hands = [0,0,0]
     @rand_message
     @result
-    @smack
     @history = []
     @comp_wins = 0
     @player_wins = 0
     @draws = 0
+    @turns = 0
     @divisor = 1
   end
   
@@ -32,9 +34,11 @@ class Game
       @result = "You Win."
       @player_wins += 1 
     end
-      @history.push(@result)
+      @turns += 1# @history.push(@result)
   end
+  
 
+  # this is really just a design point now. use or trash
   def rand_messages
     msg = ["What Will You Choose, ", "Have You Made Your Pick, ", "Are You Ready To Decide, ", "What Will It Be This Time, ",
     "Are You Ready, ", "Have You Considered Your Choice Carefully, ", "Will This Be Your Victory, ", "Do You Think This Is A Good Move, "]
@@ -43,7 +47,7 @@ class Game
   
   # this is for dataviz, will be refactored later
   def divisor
-    if (@history.length / @divisor) >= 225
+    if (@turns / @divisor) >= 225
       @divisor *= 1.5
       divisor
     else
