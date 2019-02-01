@@ -1,320 +1,85 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
- 
+
 body {
-  background: black;
-}
-.splash {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    background: black;
 }
 
-
+.circle1,
+.circle2,
+.circle3,
+.circle4,
+.circle5,
+.circle6,
+.circle8,
+    {
+    position: fixed;
+    width: 0;
+    height: 0;
+    padding: 0;
+    z-index: 50;
+    border-radius: 20%;
+    opacity: 0;
+    background-color: transparent;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
 
 .circle1 {
-  position: fixed;
-   width: 0;
-  height: 0;
-  padding:0;
-  z-index: 50;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: transparent;
-  border: 2px solid red;
-  animation: grow_circle 3s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
+    border: 2px solid red;
+    animation: grow_circle 3s;}
 
 .circle2 {
-    position: fixed;
-   width: 0;
-  height: 0;
-  padding:0;
-  left: 50%;
-  z-index: 50;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: transparent;
-  border: 2px solid white;
-  animation: grow_circle 2s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-
-}
+    border: 2px solid white;
+    animation: grow_circle 2s;}
 
 .circle3 {
-    position: fixed;
-   width: 0;
-  height: 0;
-  padding:0;
-  left: 50%;
-  z-index: 50;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: transparent;
-  border: 2px solid orange;
-  animation: grow_circle 1s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-
-}
+    border: 2px solid orange;
+    animation: grow_circle 1s;}
 
 .circle4 {
-    position: fixed;
-   width: 0;
-  height: 0;
-  padding:0;
-  left: 50%;
-  z-index: 50;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: transparent;
-  border: 2px solid blue;
-  animation: grow_circle 1.5s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-
-}
+    border: 2px solid blue;
+    animation: grow_circle 1.5s;}
 
 .circle5 {
-    position: fixed;
-   width: 0;
-  height: 0;
-  padding:0;
-  z-index: 50;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: transparent;
-  border: 2px solid yellow;
-  animation: grow_circle 0.5s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
+    border: 2px solid yellow;
+    animation: grow_circle 0.5s;}
 
 .circle6 {
-    position: fixed;
-   width: 0;
-  height: 0;
-  padding:0;
-  z-index: 50;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  transition-delay: 2s;
-  background-color: transparent;
-  border: 2px solid purple;
-  animation: grow_circle 0.8s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-
-}
-
-
-.circle7 {
-    position: fixed;
-   width: 0;
-  height: 0;
-  padding:0;
-  z-index: 50;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: transparent;
-  border: 2px solid green;
-  transition-delay: 1.6s;
-  animation: grow_circle 0.2s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-
-}
-
+    border: 2px solid purple;
+    animation: grow_circle 0.8s;}
 
 .circle8 {
-    position: fixed;
-   width: 0;
-  height: 0;
-  padding:0;
-  z-index: 50;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: transparent;
-  border: 2.5px dashed blue;
-  animation: grow_circle 0.1s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-
-}
+    border: 2.5px solid blue;
+    animation: grow_circle 0.1s;}
 
 @keyframes grow_circle {
-  0% {height: 25vh; width: 25vw; size: -50%%;filter: blur(0.7px);}
-  12.5% {height: 50vh; width: 50vw;filter: blur(0.6px);}
-  25% {height: 75vh; width: 75vw;filter: blur(0.5px);}
-  37.5% {height: 100vh; width: 100vw;filter: blur(0.4px);}
-  50% {height: 125vh; width: 125vw;filter: blur(0.3px);}
-  62.5% {height: 150vh; width: 150vw;filter: blur(0.2px);}
-  75% {height: 175vh; width: 175vw;filter: blur(0.1px);}
-  87.5% {height: 200vh; width: 200vw;filter: blur(0px);}
-  92% {height: 100vh; width: 100vw;filter: blur(0.3px);}
-  97% {height: 160vh; width: 160vw;filter: blur(1px);}
-  100%{opacity: 0};
-}
+    0% {
+        height: 25vh;
+        width: 25vw;
+        size: -50%%;
+        filter: blur(0.7px);
+        opacity: 0};
 
-.reveal {
-  width: 300px;
-  height: 300px;
-  margin: 50px;
-  float: left;
-}
- 
-.hide{
-  animation: focus_in 3s;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
+    10% {
+        opacity: 0};
 
+    97% {
+        height: 160vh;
+        width: 160vw;
+        filter: blur(1px);
+        opacity: 1};
+
+    100% {
+        opacity: 0};
 }
 
 .makers {
-  background: url(makers_sliced.png) 0px 150px, url(makers_sliced.png) 0px -225px, black;
-  background-repeat: no-repeat; 
-    -webkit-transition: background-position 1s ease; filter: blur(0px);
-  -moz-transition: background-position 1s ease; filter: blur(2px);
-  -o-transition: background-position 1s ease; filter: blur(4px);
-  -ms-transition: background-position 1s ease; filter: blur(2px);
-  transition: background-position 1s ease; filter: blur(0px);
+    background: url(makers_sliced1.png) 0px 150px, url(makers_sliced1.png) 0px -225px, black;
 }
 
-  {
- width:500px;
- height:500px;
- margin:0 auto;
- background:#f7f7f7;
- position:absolute;
- left:50%;
- top:50%;
- margin-left:-250px;
- margin-top:-250px;
- box-shadow: 500px 500px 500px 500px black;
- z-index: -100;
-
-
-  
-}
- 
 .makers:hover {
-
-  background: url(makers_sliced.png) 0px 210px, url(makers_sliced.png) 0px -285px, black;
-  background-repeat: no-repeat;
-  animation: focus_out 20s infinite;}
-  {
- width:500px;
- height:500px;
- margin:0 auto;
- background:#f7f7f7;
- position:absolute;
- left:50%;
- top:50%;
- margin-left:-250px;
- margin-top:-250px;
- z-index: -100;
- box-shadow: 500px 500px 500px 500px black;
-}
-  
-  
-  
-
- 
-
-@keyframes focus_out{
-  0% {filter: blur(0px);transform: scale(1,1)}
-  25% {filter: blur(0.5px);transform: scale(1.1,1.1)}
-  50% {filter: blur(3px);transform: scale(1.2,1.2)}
-  75% {filter: blur(4px);transform: scale(1.3,1.3)}
-  100% {filter: blur(5px);transform: scale(1.3,1.3)}
-  75% {filter: blur(7.5px);transform: scale(1.2,1.2)}
-  50% {filter: blur(10px);transform: scale(1.2,1.2)}
-  25% {filter: blur(15px);transform: scale(1.15,1.15)}
-}
-
-.reveal p {
-  font: 45px/300px Helvetica, Arial, sans-serif;
-  text-align: center;
-  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0;
- 
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
- 
-.reveal:hover p {
-  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=100);
-  opacity: 1;
-  cursor: pointer;
-}
-
-@keyframes spin {
-  0% {transform: rotate(0deg)};
-  25% {transform: rotate(90deg)};
-  50% {transform: rotate(180deg)};
-  75% {transform: rotate(270deg)};
-  100% {transform: rotate(360deg)};
-}
-
-.zoom {
-  size: 150px;
-  /*transition-property: scaleX(7);*/
-  animation: spin 0.5s infinite;
-  animation-timing-function: linear;
-}
-
-.zoom:hover {
-  transform: scale(2.5) 0.5s 0.8s ease;
-  transition-property: scaleX(35);
-  animation: spin 1s infinite;
-  animation-timing-function: linear;
-}
-
-.rotate:hover{
-  animation: spin 1s infinite;
-  animation-timing-function: linear;
-}
-
-.rotate{
-  animation: spin 1s infinite;
-  animation-timing-function: linear;
-}
-@keyframes focus_in {
-  0% {filter: opacity(0);size: 5000%; border-radius: 50px}
-  50% {filter: opacity(0.5);border-radius: 35px}
-  100% {filter: opacity(1);border-radius: 5px}
+    background: url(makers_sliced1.png) 0px 420px, url(makers_sliced1.png) 0px -285px, black;
 }
