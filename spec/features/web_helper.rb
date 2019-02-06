@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def one_player_sign_in
   visit('/')
   fill_in(:one, with: 'Rick')

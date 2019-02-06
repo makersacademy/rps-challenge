@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 feature 'Both players' do
@@ -5,7 +7,7 @@ feature 'Both players' do
     weapon_set('rock', 'rock')
     expect(page).to have_content("It's a draw!")
   end
-  
+
   scenario 'chose paper' do
     weapon_set('paper', 'paper')
     expect(page).to have_content("It's a draw!")

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'player'
 
 describe Player do
-
   subject(:player) { described_class.new('Rick') }
 
   describe '#choice' do

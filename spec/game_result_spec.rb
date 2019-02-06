@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'game'
 
 describe Game do
-
   subject(:game) { described_class.new(one, two) }
   let(:one) { double :one }
   let(:two) { double :two }
@@ -11,13 +12,6 @@ describe Game do
     allow(two).to receive(:name) { 'Morty' }
     allow(one).to receive(:weapon) { 'this' }
     allow(two).to receive(:weapon) { 'that' }
-  end
-
-  describe '#fight' do
-    it 'compares weapons' do
-      expect(game).to receive_message_chain(:weapons, :drawn)
-      game.fight
-    end
   end
 
   describe '#win' do
@@ -34,7 +28,7 @@ describe Game do
 
   describe '#draw' do
     it 'declare it a draw' do
-      expect(game.draw()).to eq("It's a draw!")
+      expect(game.draw).to eq("It's a draw!")
     end
   end
 end

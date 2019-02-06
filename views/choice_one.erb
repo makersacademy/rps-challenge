@@ -1,6 +1,7 @@
 <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 
 <div id='container'>
+
   <div id='heading'>Rock, Paper, Scissors, Lizard, Spock.</div>
 
   <div id='sentence-one'>What will it be<% if @game.one.name != 'You' %>, <%= @game.one.name %><% end %>?</div>
@@ -16,7 +17,7 @@
   </div>
   
   <% if @game.two.name != 'Computer' %>
-  <div id='sentence-two'>(<%= @game.two.name %>, you should look away)</div>
+    <div id='sentence-two'>(<%= @game.two.name %>, you should look away)</div>
   <% end %>
   
 </div>

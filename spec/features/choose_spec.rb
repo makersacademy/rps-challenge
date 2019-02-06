@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 feature 'Choose Weapon' do
-
   before(:each) do
     two_player_sign_in
   end

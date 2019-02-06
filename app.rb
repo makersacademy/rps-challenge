@@ -1,19 +1,22 @@
+# frozen_string_literal: true
+
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
 
+# the controller
 class RockPaperScissors < Sinatra::Base
   before do
     @game = Game.instance
   end
-  
+
   get '/' do
     erb(:index)
   end
 
   post '/create_game' do
-    params[:one] == '' ? one = 'You' : one = params[:one]
-    params[:two] == '' ? two = 'Computer' : two = params[:two]
+    one = params[:one] == '' ? 'You' : params[:one]
+    two = params[:two] == '' ? 'Computer' : params[:two]
     @game = Game.create(Player.new(one), Player.new(two))
     redirect '/choice_one'
   end
@@ -31,7 +34,7 @@ class RockPaperScissors < Sinatra::Base
       redirect '/choice_two'
     end
   end
-  
+
   get '/choice_two' do
     erb(:choice_two)
   end

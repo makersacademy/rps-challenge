@@ -63,3 +63,15 @@ The game will show what each player chose and who wins:
 ![result-c](images/j.png)
 
 With the option of playing again. If a one player game was started then a one player game will continue, likewise for a two player game.
+
+## Running tests
+
+In that same location, in Terminal:
+
+`rspec`
+
+## Linting
+
+In that same location, in Terminal:
+
+`rubocop`
