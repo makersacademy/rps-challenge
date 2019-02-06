@@ -38,7 +38,7 @@ Enter no name and the game will address the player accordingly:
 
 ![choose-weapon-a](images/d.png)
 
-Similarly if the player enters one name:
+Similarly, if the player enters one name:
 
 ![choose-weapon-b](images/e.png)
 
