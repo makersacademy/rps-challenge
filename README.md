@@ -1,10 +1,10 @@
 # Rock, Paper, Scissors, Lizard, Spock.
 
-This project is a game for one or two players to play rock, paper, scissors, extended to include lizard, and spock.
+Makers Week 3 (Friday) - This project is a game for one or two players to play rock, paper, scissors, extended to include lizard, and spock.
 
 ## Getting started
 
-In the location of your choice:
+In the location of your choice, in Terminal:
 
 `git@github.com:alittlecross/rps-challenge.git`
 
