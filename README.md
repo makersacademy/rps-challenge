@@ -23,23 +23,33 @@ Functionalities
 - the game will choose a random option
 - a winner will be declared
 
-
-Test coverage
+Cloning the project to your computer
 ----------------------
-COVERAGE: 100.00% -- 50/50 lines in 4 files
+In the terminal: git clone https://github.com/luisatheodoro/rps-challenge.git
+then `cd rps-challenge`
+
+Installing dependencies type in the terminal `bundle install`
+
+Running linting
+----------------------
+In the terminal write `rubocop`
 
 Run tests
 ----------------------
 on terminal type `rspec`
 
+Test coverage
+----------------------
+COVERAGE: 100.00% -- 50/50 lines in 4 files
+
 Start local server and get the url
 ----------------------
 on terminal type `ruby app.rb`
-pay attention to this on terminal `* Listening on tcp://localhost:4567`
+pay attention to this on terminal `* Listening on tcp://localhost:4567` or `port=4567`
 go to web browser and go to http://localhost:4567/ (this will be the url that the server provided)
 
 Playing
 ----------------------
-Write you name and choose your weapon from dropdown and hit PLAY. 
+Write you name and choose your weapon from dropdown and hit PLAY.
 The result page will display your choice, the computer choice, who won the round and the score.
 To be able to play again, `click the browser back button` and choose another weapon and hit PLAY.
