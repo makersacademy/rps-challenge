@@ -31,7 +31,7 @@ As we weren't using a database to store state, I chose a `middleman` class to st
 
 For eg: 
 
-when `Middle.create_game(Player.new('Tom'), Computer.new('HAL')), what is actually happening is: 
+when `Middle.create_game(Player.new('Tom'), Computer.new('HAL'))`, what is actually happening is: 
 
 - a new instance of game is created (let's call this `game`)
 - `game` is passed in 2 player instance objects (named Tom and HAL)
