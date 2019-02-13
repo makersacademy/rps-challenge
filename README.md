@@ -53,3 +53,25 @@ Playing
 Write you name and choose your weapon from dropdown and hit PLAY.
 The result page will display your choice, the computer choice, who won the round and the score.
 To be able to play again, `click the browser back button` and choose another weapon and hit PLAY.
+
+Code Design
+----------------------
+For this project I've followed a MVC(Model, View, Controller) architectural pattern
+commonly used for user interface applications like a web app.
+The interaction between the MVC in this app starts with the user opening the
+web page, inputing the data and clicking button submit, this click even will be
+listened by the View, when View listen to the event it will then send a POST form
+to the Controller, the Controller will communicate with Model and update Model state.
+The Model will get user input and process it according with the code logic, in this case
+compute who's the winner of the game and store the new data. Controller will then
+open View and Ruby will read it, Ruby will identify that the View needs values from the Model
+View will send a GET request from Model and it will return it directly to the View. Once 
+View has everything it needs, it will then show the HTML formatted page to the user
+with game result.
+
+The MVC has many interpretations I followed Mozilla view on it:
+https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Modern_web_app_architecture/MVC_architecture
+
+user flow diagram
+----------------------
+![user flow](public/rps_sequence_flow.png)
