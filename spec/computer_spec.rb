@@ -7,8 +7,10 @@ RSpec.describe Computer do
     expect(computer.name).to eq("HAL")
   end
 
-  it 'chooses a random move from the given options' do
-    expect(['rock', 'paper', 'scissors']).to include(computer.make_move)
+  it 'chooses a random move' do
+    Array.any_instance.stub(:sample).and_return('rock')
+    computer.make_move
+    expect(computer.move).to eq('rock')
   end
   
 end
