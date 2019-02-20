@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game.rb'
 
 class Rps < Sinatra::Base
 
@@ -16,6 +17,7 @@ class Rps < Sinatra::Base
 
   post '/result' do
     @player_move = params[:move_choice]
+    @computer_result = Game.new.computer_choice
     erb :result
   end
 
