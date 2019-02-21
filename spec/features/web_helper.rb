@@ -5,6 +5,6 @@ def sign_in
 end
 
 def player_chooses_rock
-  choose('move_choice', option: 'Rock')
+  choose('move_choice', option: "Rock")
   click_button "Let's play!"
 end

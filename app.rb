@@ -17,7 +17,10 @@ class Rps < Sinatra::Base
 
   post '/result' do
     @player_move = params[:move_choice]
-    @computer_result = Game.new.computer_choice
+    @game = Game.new
+    @computer_result = @game.computer_choice
+    @game.player_choice(@player_move)
+    @game_result = @game.game_result
     erb :result
   end
 
