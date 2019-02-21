@@ -10,7 +10,7 @@ Capybara.app = Rps
 
 RACK_ENV = 'test'
 
-Capybara.default_driver = :selenium
+Capybara.server = :webrick
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
