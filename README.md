@@ -4,7 +4,7 @@ Makers Week 3 (Friday) - This project is a game for one or two players to play r
 
 ## Getting started
 
-Assuming you have 'git' installed, in the location of your choice, in Terminal:
+Assuming you have `git` installed, in the location of your choice, in Terminal:
 
 `git clone git@github.com:alittlecross/rps-challenge.git`
 
