@@ -4,11 +4,13 @@ Makers Week 3 (Friday) - This project is a game for one or two players to play r
 
 ## Getting started
 
-In the location of your choice, in Terminal:
+Assuming you have 'git' installed, in the location of your choice, in Terminal:
 
 `git clone git@github.com:alittlecross/rps-challenge.git`
 
-In that same location, in Terminal:
+`cd` into the `rps-challenge` folder.
+
+Assuming you have `Ruby` and `Bundler` installed, in that same location, in Terminal:
 
 `bundle`
 
@@ -22,11 +24,11 @@ Then in the browser of your choice:
 
 `http://localhost:9292/`
 
-Players should see the page to enter names:
+You should see the page to enter names:
 
 ![enter-names-a](images/a.png)
 
-The player can enter one name (or no name) to play a one player game:
+You can enter one name (or no name) to play a one player game:
 
 ![enter-names-b](images/b.png)
 
@@ -38,15 +40,15 @@ Enter no name and the game will address the player accordingly:
 
 ![choose-weapon-a](images/d.png)
 
-Similarly, if the player enters one name:
+Similarly, if you enter one name:
 
 ![choose-weapon-b](images/e.png)
 
-If the player enters two names the game will ask the second player to look away when player one chooses a weapon:
+If you enter two names the game will ask the second player to look away while the first player chooses a weapon:
 
 ![choose-weapon-c](images/f.png)
 
-And the opposite when player two chooses a weapon:
+And the opposite when the second player chooses a weapon:
 
 ![choose-weapon-d](images/g.png)
 
