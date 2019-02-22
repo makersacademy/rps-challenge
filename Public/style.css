@@ -1,0 +1,42 @@
+//style.css
+h1 {
+   color: blue;
+}
+body {
+  background-color: lightblue;
+}
+
+p {
+  color: black;
+  text-align: center;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 1.5em;
+}
+
+form {
+  text-align:center;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 1em;
+}
+
+input [type="submit"] {
+  text-align: center;
+  width: 30%;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 1em;
+}
+
+input [type="radio"] {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 1em;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Gill Sans", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Gill Sans", sans-serif;
+}
