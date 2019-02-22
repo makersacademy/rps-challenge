@@ -1,3 +1,19 @@
 <div><h1>ROCK, PAPER, SCISSORS</h1></div>
 
 <div><h2> Hello <%= @name %> !</h2></div>
+
+<div>
+  Take your pick...
+  <form action='/play' method='post' >
+    <label for="rock">Rock</label>
+    <input type="radio" name="rps" value="rock" />
+
+    <label for="paper">Paper</label>
+    <input type="radio" name="rps" value="paper" />
+
+    <label for="scissors">Scissors</label>
+    <input type="radio" name="rps" value="scissors" />
+
+    <input type='submit' value='Submit' />
+  </form>
+</div>
