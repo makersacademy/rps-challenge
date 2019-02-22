@@ -1,8 +1,10 @@
 require './app'
 
 feature "Display" do
-  scenario "initial environment test" do
+  scenario "shows player's name after they register" do
     visit '/'
-    expect(page).to have_content("I'm working")
+    fill_in 'name', with: "Mark Eteer"
+    click_button 'Submit'
+    expect(page).to have_content("Mark Eteer")
   end
 end
