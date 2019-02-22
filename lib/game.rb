@@ -18,8 +18,6 @@ class Game
       "Computer wins!"
     elsif ((@computer_move == "Rock" && @player_move == "Rock") || (@computer_move == "Paper" && @player_move == "Paper") || (@computer_move == "Scissors" && @player_move == "Scissors"))
       "It's a draw!"
-    else
-      "something else"
     end
   end
 end
