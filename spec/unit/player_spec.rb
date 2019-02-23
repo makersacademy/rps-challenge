@@ -1,4 +1,4 @@
-describe Player do
+mkdir describe Player do
   let(:player) { Player.new('Ozzy Osbourne') }
 
   it 'knows its own name' do
