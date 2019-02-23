@@ -19,7 +19,7 @@ feature "Display" do
     fill_in 'name', with: "Mark Eteer"
     click_button 'Submit'
     choose 'paper'
-    click_button 'Submit'
+    click_button 'Play'
     expect(page).to have_content("The game chose scissors")
   end
 end
