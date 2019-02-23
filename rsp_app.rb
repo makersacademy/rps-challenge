@@ -12,6 +12,10 @@ class Playing < Sinatra::Base
 
   post "/movement" do
     session[:player_name] = params[:name]
+    redirect "/ask_movement"
+  end
+
+  get "/ask_movement" do
     erb :askMovement
   end
 
