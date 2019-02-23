@@ -19,18 +19,18 @@ feature 'Play game' do
       expect(page.find_by_id('move_options')).to have_content("Scissors") 
     end
 
-    describe 'When player selects an option and the game wins, ' do
+    describe 'When player selects an option and selects to play, ' do
       before(:each) do
-        player_name = 'Simon'
-        register_player(player_name: player_name)
+        choose('rock')
+        click_button("play")
       end
 
-      scenario 'Should inform the player they have lost' do
-        choose('rock')
-
-        click_button("play")
-
+      scenario 'Should, if the player loses, inform the player of the result' do
         expect(page).to have_content("SUCK IT, LOSER!") 
+      end
+
+      scenario 'Should, if the player wins, inform the player of the result' do
+        expect(page).to have_content("Truly, you are the champion.") 
       end
     end
   end

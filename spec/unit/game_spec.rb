@@ -16,4 +16,18 @@ describe 'When new game is created with player name, ' do
   it 'should store new game instance as class instance variable' do
     expect(Game.current_game).to eq(@game)
   end
+
+  describe 'And play is called with a rock options' do
+    it 'should return true if computer selects scissors' do
+      allow(@game).to receive(:rand).and_return(2)
+
+      expect(@game.play('rock')).to be true
+    end
+
+    it 'should return false if computer selects paper' do
+      allow(@game).to receive(:rand).and_return(1)
+
+      expect(@game.play('rock')).to be false
+    end
+  end
 end
