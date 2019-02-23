@@ -2,7 +2,11 @@ class Game
   RPS = ['rock', 'paper', 'scissors']
   WINNERS = { 'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper' }
 
-  attr_reader :game_choice
+  attr_reader :game_choice, :player 
+
+  def initialize(name = "Player")
+    @player = name
+  end
 
   def random_rps
     RPS.sample

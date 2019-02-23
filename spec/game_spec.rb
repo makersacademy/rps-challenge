@@ -37,4 +37,12 @@ describe 'Game' do
     game.play("rock")
     expect(game.game_choice).to eq("scissors")
   end
+  it "knows the player's name" do
+    game = Game.new("Sarah")
+    expect(game.player).to eq("Sarah")
+  end
+  it "has a default player name" do
+    game = Game.new
+    expect(game.player).to eq("Player")
+  end
 end
