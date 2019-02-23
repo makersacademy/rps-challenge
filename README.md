@@ -27,27 +27,22 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
 ## Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-## Process
+## Technologies
+This simple web game was built with Ruby and Sinatra. It used web forms to obtain data and pass this data between views, as part of demonstrating simply the MVC pattern.
 
-## testing
+## Tests
+
+This project was built from the ground-up using the Test-Driven Development methodology, with both feature and unit tests in RSpec/Capybara. There is 100% test coverage.
+
+## Using this Repo
+
+- Clone it: ```git clone https://github.com/acodeguy/rps-challenge```
+- Get inside, install nedded Gems: ```cd rps-challenge``` then ```bundle install```
+- Start the web server: ```ruby app.rb```
+- Visit ```localhost:4567``` in your web browser and play to your heart's content!
