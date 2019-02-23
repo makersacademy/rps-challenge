@@ -1,8 +1,6 @@
 feature "Marketeer can register their name" do
-  scenario "submitting marketeer name" do
-    visit('/')
-    fill_in :marketeer1, with: "Mittens"
-    click_button "Submit"
+  scenario "marketeer types in their name" do
+    sign_in_and_play
     expect(page).to have_content "Hello Mittens!"
   end
 end
