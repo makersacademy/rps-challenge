@@ -16,4 +16,19 @@ describe 'Game' do
     srand(3)
     expect(game.random_rps).to eq('scissors')
   end
+  it "declares player the winner if player has rock and game has scissors" do
+    game = Game.new
+    srand(3)
+    expect(game.play('rock')).to eq("WIN")
+  end
+  it "declares player the loser if player has paper and game has scissors" do
+    game = Game.new
+    srand(3)
+    expect(game.play('paper')).to eq("LOSE")
+  end
+  it "declares a draw if player has scissors and game has scissors" do
+    game = Game.new
+    srand(3)
+    expect(game.play('scissors')).to eq("DRAW")
+  end
 end
