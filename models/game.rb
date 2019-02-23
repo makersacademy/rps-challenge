@@ -1,6 +1,5 @@
 class Game
   attr_reader :player_name
-  GAME_OPTIONS = ['rock', 'paper', 'scissors']
 
   PLAYER_WINS_SCENARIOS = {
     rock: 'scissors',
@@ -12,18 +11,16 @@ class Game
     @current_game
   end
 
-  def self.create(player_name:)
-    @current_game = Game.new(player_name: player_name)
+  def self.create(player_name:, computer:)
+    @current_game = Game.new(player_name: player_name, computer: computer)
   end
 
-  def initialize(player_name:, game_options: GAME_OPTIONS)
+  def initialize(player_name:, computer:)
     @player_name = player_name 
-    @game_options = game_options
+    @computer = computer
   end
 
-  def play(move)
-    computer_move = @game_options[rand(0..2)]
-
-    PLAYER_WINS_SCENARIOS[move.to_sym] == computer_move
+  def player_move_wins?(move)
+    PLAYER_WINS_SCENARIOS[move.to_sym] == @computer.move
   end
 end

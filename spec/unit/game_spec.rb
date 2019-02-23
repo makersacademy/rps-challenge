@@ -2,11 +2,12 @@ require './models/game.rb'
 
 describe 'When new game is created with player name, ' do
   let(:player_name) { 'Simon' }
+  let(:computer_double) { double(:computer) }
 
   # using before each instead of let to create game
   # as had issues with execution order
   before(:each) do
-    @game = Game.create(player_name: player_name)
+    @game = Game.create(player_name: player_name, computer: computer_double)
   end
 
   it 'should store player name' do
@@ -17,17 +18,41 @@ describe 'When new game is created with player name, ' do
     expect(Game.current_game).to eq(@game)
   end
 
-  describe 'And play is called with a rock options' do
-    it 'should return true if computer selects scissors' do
-      allow(@game).to receive(:rand).and_return(2)
-
-      expect(@game.play('rock')).to be true
+  describe 'when player selects to play' do
+    def self.test_game_logic(should_player_win:, player_selection:)
+      it "should return #{should_player_win} if player selected #{player_selection}" do
+        expect(@game.player_move_wins?(player_selection)).to be should_player_win
+      end
     end
 
-    it 'should return false if computer selects paper' do
-      allow(@game).to receive(:rand).and_return(1)
+    describe 'and computer selects scissors,' do
+      before(:each) do
+        allow(computer_double).to receive(:move).and_return('scissors')
+      end
 
-      expect(@game.play('rock')).to be false
+      test_game_logic(should_player_win: true, player_selection: 'rock')
+
+      test_game_logic(should_player_win: false, player_selection: 'paper')
+    end
+
+    describe 'and computer selects paper,' do
+      before(:each) do
+        allow(computer_double).to receive(:move).and_return('paper')
+      end
+
+      test_game_logic(should_player_win: true, player_selection: 'scissors')
+
+      test_game_logic(should_player_win: false, player_selection: 'rock')
+    end
+
+    describe 'and computer selects rock,' do
+      before(:each) do
+        allow(computer_double).to receive(:move).and_return('rock')
+      end
+
+      test_game_logic(should_player_win: true, player_selection: 'paper')
+
+      test_game_logic(should_player_win: false, player_selection: 'scissors')
     end
   end
 end
