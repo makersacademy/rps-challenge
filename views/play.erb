@@ -1,15 +1,26 @@
 <html>
-<body>
-  <h2 align = "center"><%=@player1.name%> Vs. <%=@player2.name%><h2>
+<head></head>
+  <body>
+    <h2 align = "center"><%=@game.player1.name%> Vs. <%=@game.player2.name%><h2>
 
-    <br> Select a weapon</br>
-    <form action="/play" method = "POST">
-      <input type = "radio" name = "weapon" value = "rock">Rock
-      <input type = "radio" name = "weapon" value = "paper">Paper
-      <input type = "radio" name = "weapon" value = "scissors">Scissors
-      <button type = "submit">Play</button>
-    </form>
-  <br >  <%= @play_result_confirmation%> </br>
-</body>
-
+      <br> Select a weapon</br>
+      <br> Player1 </br>
+      <form action="/play" method = "POST">
+        <select name = "player_1_weapon">
+          <option value="rock">rock</option>
+          <option value="paper">paper</option>
+          <option value="scissors">scissors</option>
+        </select>
+        <br> Player2 </br>
+        <select name = "player_2_weapon">
+          <option value="rock">rock</option>
+          <option value="paper">paper</option>
+          <option value="scissors">scissors</option>
+        </select>
+        <br><button type = "submit">Play</button></br>
+      </form>
+      <br >  <%= @player1_selection%> </br>
+      <br >  <%= @player2_selection%> </br>
+      <br> <%=@winning_message%><br>
+  </body>
 </html>

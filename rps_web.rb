@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RPSWeb < Sinatra::Base
 
@@ -12,31 +13,36 @@ class RPSWeb < Sinatra::Base
   end
 
   post "/register" do
-    @player1 = Player.new(params[:player1])
-    @player2 = Player.new(params[:player2])
-    session[:player1] = @player1
-    session[:player2] = @player2
+    @game = Game.new(Player.new(params[:player1]), Player.new(params[:player2]))
+
+    session[:game] = @game
+
 
     redirect "/play"
 
   end
 
   get "/play" do
-    @player1 = session[:player1]
-    @player2 = session[:player2]
-    @play_result_confirmation = ""
-    p "in play GET"
+    @game = session[:game]
+    @player1_selection = ""
+    @player2_selection = ""
+    @winning_message = ""
+
     erb(:play)
 
   end
 
   post "/play" do
-    @player1 = session[:player1]
-    @player2 = session[:player2]
-    p "in play POST"
-    p params
-    @player1.choose_weapon(params[:weapon])
-    @play_result_confirmation = "#{@player1.name} selected #{@player1.weapon}"
+
+    @game = session[:game]
+
+
+    @game.player1.choose_weapon(params[:player_1_weapon].to_sym)
+    @game.player2.choose_weapon(params[:player_2_weapon].to_sym)
+    @player1_selection = "#{@game.player1.name} selected #{@game.player1.weapon}"
+    @player2_selection = "#{@game.player2.name} selected #{@game.player2.weapon}"
+    @game.play
+    @winning_message = @game.winner == nil ? "It's a draw" : "#{@game.winner.name} wins!"
     erb(:play)
 
   end
