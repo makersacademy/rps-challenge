@@ -5,7 +5,7 @@ require "./lib/sp_game"
 class Rps < Sinatra::Base
   
   before do
-  @current_sp_game = Sp_game.current_sp_game
+    @current_sp_game = SpGame.current_sp_game
   end
 
   get '/' do
@@ -13,7 +13,7 @@ class Rps < Sinatra::Base
   end
 
   post '/players' do
-    @current_sp_game = Sp_game.start_an_sp_game(params[:name_one])
+    @current_sp_game = SpGame.start_an_sp_game(params[:name_one])
     redirect '/play'
   end
 
@@ -38,5 +38,4 @@ class Rps < Sinatra::Base
     @computer = @current_sp_game.computer
     erb :sp_result
   end
-
 end

@@ -1,8 +1,8 @@
 require 'sp_game'
 
-describe Sp_game do
+describe SpGame do
   it 'should be able to hold an instance of Sp_game' do
-    Sp_game.start_an_sp_game('James')
-    expect(Sp_game.current_sp_game).not_to be_nil
+    SpGame.start_an_sp_game('James')
+    expect(SpGame.current_sp_game).not_to be_nil
   end
 end
