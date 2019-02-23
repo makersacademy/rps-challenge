@@ -33,7 +33,9 @@ class Rps < Sinatra::Base
   end
 
   get '/sp_result' do
+    @current_sp_game.play_sp
     @player_1 = @current_sp_game.player_1
+    @computer = @current_sp_game.computer
     erb :sp_result
   end
 
