@@ -1,6 +1,6 @@
 class Game
   RPS = ['rock', 'paper', 'scissors']
-  WINNERS = {'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'}
+  WINNERS = { 'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper' }
 
   def random_rps
     RPS.sample
