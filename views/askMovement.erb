@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #FCCCAF;
+    }
+    p {
+      font-size: 30px;
+      text-align: center ;
+    }
+
+    div {
+      text-align : center;
+    }
+ </style>
+</head>
+<body >
+<p>Please select your movement <%= @name %>.</p>
+<div>
+<form action="/showResult" method = "post">
+  <select name="movement">
+    <option value="scissors">scissors</option>
+    <option value="rock">rock</option>
+    <option value="paper">paper</option>
+  </select>
+  <input type = "submit" value = "Submit">
+</form>
+</div>
+</body>
+</html>
