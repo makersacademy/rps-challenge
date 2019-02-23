@@ -16,7 +16,7 @@
  </style>
 </head>
 <body >
-<p>Please select your movement <%= @name %>.</p>
+<p>Please select your movement <%= session[:player_name] %>.</p>
 <div>
 <form action="/showResult" method = "post">
   <select name="movement">
