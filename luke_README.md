@@ -1,4 +1,4 @@
-Initial ideas(npo):
+Initial ideas (npo):
 
  - Computer will pick random move from RNG. Easy enough to implement.
  - Need some nice buttons for the user to click.
