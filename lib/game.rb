@@ -11,6 +11,8 @@ class Game
     result(player_choice)
   end
 
+  private
+  
   def result(player_choice)
     return "WIN" if WINNERS[player_choice] == @game_choice
     return "LOSE" if WINNERS[@game_choice] == player_choice
