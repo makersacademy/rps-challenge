@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -22,6 +23,10 @@ class RockPaperScissors < Sinatra::Base
     @player2 = session[:player2]
     @player1.make_move(params[:player1_move])
     @player2.make_move(['ROCK', 'PAPER', 'SCISSORS'].sample)
+    w = Game.new.result(@player1.move, @player2.move)
+    @winner = @player1.name if w == 1
+    @winner = @player2.name if w == 2
+    @winner = 'A DRAW!' if w == 0
     erb :result
   end
 
