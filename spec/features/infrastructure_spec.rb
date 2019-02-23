@@ -6,10 +6,16 @@ feature 'Testing infrastructure' do
   end
 
   scenario "Adds Luke as player and click register" do
-    visit('/')
-    fill_in :name, with: "Luke"
-    click_button "Click to register"
+    set_up
     expect(page).to have_content 'Luke vs. HAL'
   end
+
+  scenario "Checks page has Rock Paper Scissors buttons" do
+    set_up
+    find_button("Rock")
+    find_button("Paper")
+    find_button("Scissors")
+  end
+
 
 end
