@@ -1,6 +1,35 @@
-<h1>Type: rock, paper or scissors?</h1>
-<form action="/second" method="post">
-  <input type="submit" value="rock">
+
+<html>
+
+  <header>
+    <title>Rock paper scissors!</title>
+  </header>
+
+  <body>
+
+    <p>
+      <%= @name %>: let's play!
+    </p>
+    <form action="/first_play" method="post">
+        <button type="submit" name="choice" value="Rock" id="Rock" />rock
+        <br />
+        <button type="submit" name="choice" value="Paper" id="Paper" />paper
+        <br />
+        <button type="submit" name="choice" value="Scissors" id="Scissors" />scissors 
+    </form>
+  </body>
+
+</html>
+
+  <!-- <select name="response"> -->
+    <!-- <button  type="submit" value="rock">rock</button> -->
+    <!-- <button type="submit" formmethod="get|post">rock</button>
+    <button type="submit" formmethod="get|post">paper</button>
+    <button type="submit" formmethod="get|post">scissors</button> -->
+    <!-- <button  type="submit" value="paper">paper</button>
+    <button  type="submit" value="scissors">scissors</button> -->
+    <!-- </select> -->
+
+  <!-- <input type="submit" value="rock">
   <input type="submit" value="paper">
-  <input type="submit" value="scissors">
-</form>
+  <input type="submit" value="scissors"> -->
