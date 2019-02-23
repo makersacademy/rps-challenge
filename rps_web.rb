@@ -15,7 +15,7 @@ end
 
 get '/play' do
   @name = session[:name]
-  erb(:player) 
+  erb(:player)
 end
 
 run! if app_file == $0

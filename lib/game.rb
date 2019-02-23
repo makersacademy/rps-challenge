@@ -12,28 +12,28 @@ attr_reader :options_arr
   end
 
   def play_game
-
-
     puts "Choose rock, paper or scissors!"
     @player_choice = gets.chomp
     @computer = @options_arr.sample
 
+    # while !@player_choice.empty? do
     if valid_input(@player_choice) == true && @player_choice !=@computer
         if @player_choice == "rock" && @computer == "paper" || @player_choice == "paper" && @computer == "scissors" || @player_choice == "scissors" && @computer == "rock"
-        @result = "You lose!"
-        puts @result
+          puts "You lose!"
         elsif @computer == "rock" && @player_choice == "paper" || @computer == "paper" && @player_choice == "scissors" || @computer == "scissors" && @player_choice == "rock"
-        @result = "You win!"
-        puts @result
+          puts "You win!"
         else
-        raise "Please enter a valid option"
-        # break
+        raise "Invalid option!"
         end
+    elsif valid_input(@player_choice) == true && @player_choice ==@computer
+      puts "Choose again!"
+      @player_choice = gets.chomp
+      @computer = @options_arr.sample
     else
-       puts"Play again!"
     end
   end
 end
+
 
 
 

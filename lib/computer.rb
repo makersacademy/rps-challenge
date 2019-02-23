@@ -1,5 +1,15 @@
-def computer
-  visit("/")
-  fill_in :name, with: "Player"
-  click_button "Play!"
+require 'delegate'
+
+class Computer < SimpleDelegator
+  attr_reader :options_arr, :computer_move
+  OPTIONS_ARR = ["rock", "paper", "scissors"]
+
+  def initialize
+    @computer_move = nil
+  end
+
+  def computer_move_do
+    OPTIONS_ARR.sample
+  end
+
 end
