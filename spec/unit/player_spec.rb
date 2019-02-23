@@ -9,7 +9,7 @@ describe Player do
   end
 
   it 'knows what move it made' do
-    player.set_move('ROCK')
+    player.make_move('ROCK')
     expect(player.move).to eq 'ROCK'
   end
 

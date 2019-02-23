@@ -5,7 +5,7 @@ class Player
     @name = name
   end
 
-  def set_move(move)
+  def make_move(move)
     @move = move
   end
 
