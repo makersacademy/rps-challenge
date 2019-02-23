@@ -14,6 +14,7 @@ class RPS < Sinatra::Base
   post '/play' do
     game = Game.new
     @result = game.play(params[:rps])
+    @game_choice = game.game_choice
     erb :result
   end
 

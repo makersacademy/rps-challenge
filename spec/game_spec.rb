@@ -31,4 +31,10 @@ describe 'Game' do
     srand(3)
     expect(game.play('scissors')).to eq("DRAW")
   end
+  it "knows the game's choice of rps" do
+    game = Game.new
+    srand(3)
+    game.play("rock")
+    expect(game.game_choice).to eq("scissors")
+  end
 end

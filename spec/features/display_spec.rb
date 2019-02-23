@@ -13,4 +13,13 @@ feature "Display" do
     click_button 'Submit'
     expect(page).to have_field("rps")
   end
+  scenario "shows the game's choice of rps" do
+    srand(3)
+    visit '/'
+    fill_in 'name', with: "Mark Eteer"
+    click_button 'Submit'
+    choose 'paper'
+    click_button 'Submit'
+    expect(page).to have_content("The game chose scissors")
+  end
 end
