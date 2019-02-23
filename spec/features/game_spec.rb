@@ -40,6 +40,14 @@ feature 'Play game' do
 
         expect(page).to have_content("Truly, you are the champion.") 
       end
+
+      scenario 'Should, if the player draws, ask the player to play again' do
+        allow(Computer).to receive(:rand).and_return(0) 
+
+        click_button("play")
+
+        expect(page).to have_content("A draw? I THINK NOT! WE WILL BATTLE TILL TIME DOTH END!") 
+      end
     end
   end
 end

@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player_name
+  attr_reader :player_name, :result
 
   PLAYER_WINS_SCENARIOS = {
     rock: 'scissors',
@@ -20,7 +20,15 @@ class Game
     @computer = computer
   end
 
-  def player_move_wins?(move)
-    PLAYER_WINS_SCENARIOS[move.to_sym] == @computer.move
+  def play(move)
+    computer_move = @computer.move
+
+    if PLAYER_WINS_SCENARIOS[move.to_sym] == @computer.move
+      @result = :player_win 
+    elsif move == computer_move
+      @result = :player_draw 
+    else
+      @result = :player_loss
+    end 
   end
 end

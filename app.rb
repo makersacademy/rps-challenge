@@ -10,16 +10,24 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game' do
-    @player_name = Game.current_game.player_name
+    player_name = Game.current_game.player_name
+
+    if  Game.current_game.result == :player_draw
+      @game_message = "A draw? I THINK NOT! WE WILL BATTLE TILL TIME DOTH END!"
+    else
+      @game_message = "PREPARE TO BE DESTROYED, #{player_name}!"
+    end
 
     erb :game
   end
 
   get '/result' do
-    if session[:game_result]
+    if Game.current_game.result == :player_win
       @result_message = 'Truly, you are the champion.'
-    else 
+    elsif Game.current_game.result == :player_loss
       @result_message = 'SUCK IT, LOSER!'
+    else
+      redirect('/game')
     end
     
     erb :result

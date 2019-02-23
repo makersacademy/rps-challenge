@@ -19,9 +19,11 @@ describe 'When new game is created with player name, ' do
   end
 
   describe 'when player selects to play' do
-    def self.test_game_logic(should_player_win:, player_selection:)
-      it "should return #{should_player_win} if player selected #{player_selection}" do
-        expect(@game.player_move_wins?(player_selection)).to be should_player_win
+    def self.test_game_logic(expected_player_result:, player_selection:)
+      it "should return #{expected_player_result} if player selected #{player_selection}" do
+        @game.play(player_selection)
+
+        expect(@game.result).to be expected_player_result
       end
     end
 
@@ -30,9 +32,11 @@ describe 'When new game is created with player name, ' do
         allow(computer_double).to receive(:move).and_return('scissors')
       end
 
-      test_game_logic(should_player_win: true, player_selection: 'rock')
+      test_game_logic(expected_player_result: :player_win, player_selection: 'rock')
 
-      test_game_logic(should_player_win: false, player_selection: 'paper')
+      test_game_logic(expected_player_result: :player_loss, player_selection: 'paper')
+
+      test_game_logic(expected_player_result: :player_draw, player_selection: 'scissors')
     end
 
     describe 'and computer selects paper,' do
@@ -40,9 +44,11 @@ describe 'When new game is created with player name, ' do
         allow(computer_double).to receive(:move).and_return('paper')
       end
 
-      test_game_logic(should_player_win: true, player_selection: 'scissors')
+      test_game_logic(expected_player_result: :player_win, player_selection: 'scissors')
 
-      test_game_logic(should_player_win: false, player_selection: 'rock')
+      test_game_logic(expected_player_result: :player_loss, player_selection: 'rock')
+
+      test_game_logic(expected_player_result: :player_draw, player_selection: 'paper')
     end
 
     describe 'and computer selects rock,' do
@@ -50,9 +56,11 @@ describe 'When new game is created with player name, ' do
         allow(computer_double).to receive(:move).and_return('rock')
       end
 
-      test_game_logic(should_player_win: true, player_selection: 'paper')
+      test_game_logic(expected_player_result: :player_win, player_selection: 'paper')
 
-      test_game_logic(should_player_win: false, player_selection: 'scissors')
+      test_game_logic(expected_player_result: :player_loss, player_selection: 'scissors')
+
+      test_game_logic(expected_player_result: :player_draw, player_selection: 'rock')
     end
   end
 end
