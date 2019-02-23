@@ -7,15 +7,13 @@ class RPS < Sinatra::Base
   end
 
   post '/player' do
-    @name = params[:name]
+    @game = Game.create(params[:name])
     erb :game
   end
 
   post '/play' do
-    @player_choice = params[:rps]
-    game = Game.new
-    @result = game.play(@player_choice)
-    @game_choice = game.game_choice
+    @game = Game.instance
+    @result = @game.play(params[:rps])
     erb :result
   end
 
