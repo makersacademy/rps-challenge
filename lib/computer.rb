@@ -1,4 +1,4 @@
-require 'delegate'
+require "delegate"
 
 class Computer < SimpleDelegator
   attr_reader :options_arr, :computer_move

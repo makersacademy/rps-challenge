@@ -18,5 +18,10 @@ get '/play' do
   erb(:player)
 end
 
+post '/first' do
+  @name = session[:name]
+  erb(:first)
+end
+
 run! if app_file == $0
 end
