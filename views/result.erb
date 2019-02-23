@@ -3,4 +3,8 @@
 <h3><%= @player1.name %> selected: <%= @player1.move %></h3>
 <h3><%= @player2.name %> selected: <%= @player2.move %></h3>
 
-<h2>And the winner is <%= @winner %>
+<h4>And the winner is...</h4>
+
+<%= 'It\'s a tie!' if @winner == 0 %>
+<%= @player1.name if @winner == 1 %>
+<%= @player2.name if @winner == 2 %>

@@ -6,15 +6,7 @@ describe Game do
   let(:player1) { double :player }
   let(:player2) { double :player }
 
-  it 'can tell if player 2 wins' do
-
-    allow(player1).to receive(:move) { 'ROCK' }
-    allow(player2).to receive(:move) { 'PAPER' }
-    expect(game.result(player1.move, player2.move)).to eq 2
-
-  end
-
-  it 'can tell if player 1 wins' do
+  it 'rock beats scissors' do
 
     allow(player1).to receive(:move) { 'ROCK' }
     allow(player2).to receive(:move) { 'SCISSORS' }
@@ -22,7 +14,23 @@ describe Game do
 
   end
 
-  it 'can tell if there is a draw' do
+  it 'paper beats rock' do
+
+    allow(player1).to receive(:move) { 'PAPER' }
+    allow(player2).to receive(:move) { 'ROCK' }
+    expect(game.result(player1.move, player2.move)).to eq 1
+
+  end
+
+  it 'scissors beats paper' do
+
+    allow(player1).to receive(:move) { 'SCISSORS' }
+    allow(player2).to receive(:move) { 'PAPER' }
+    expect(game.result(player1.move, player2.move)).to eq 1
+
+  end
+
+  it 'declares a draw' do
 
     allow(player1).to receive(:move) { 'ROCK' }
     allow(player2).to receive(:move) { 'ROCK' }
