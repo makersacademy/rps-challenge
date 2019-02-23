@@ -22,12 +22,18 @@ class SpGame
 
   def compare_sp
     return 'It was a draw!!!' if @player_1.choice == @computer.choice
-    if @player_1.choice == 'Rock' && @computer.choice == 'Scissors' || \
-      @player_1.choice == 'Paper' && @computer.choice == 'Rock' || \
-      @player_1.choice == 'Scissors' && @computer.choice == 'Paper'
-      return "#{@player_1.name} has won!!!"
-    else 
-      return "Unlucky, #{@computer.name} has beaten you :( !!!"
-    end
+    return "#{@player_1.name} has won!!!" if win?
+
+    return "Unlucky, #{@computer.name} has beaten you :( !!!"
+  end
+
+private
+
+  def win?
+    a = @player_1.choice == 'Rock' && @computer.choice == 'Scissors'
+    b = @player_1.choice == 'Paper' && @computer.choice == 'Rock'
+    c = @player_1.choice == 'Scissors' && @computer.choice == 'Paper'
+    return true if a || b || c
+    return false
   end
 end

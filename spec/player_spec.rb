@@ -11,4 +11,11 @@ describe Player do
     player.choose('Rock')
     expect(player.choice).to eq 'Rock'
   end
+
+  it 'stores a choice when asked to create a new one' do
+    player = Player.new('James')
+    allow(player).to receive(:rand).and_return(2)
+    player.make_choice
+    expect(player.choice).to eq 'Paper'
+  end
 end

@@ -20,4 +20,20 @@ feature 'The players can select an RPS option and see the result' do
     click_button 'Rock'
     expect(page).to have_content 'James has won!!!'
   end
+
+  scenario 'If the player loses then a message is displayed' do
+    sign_into_the_game
+    click_button 'Single Player RPS'
+    allow_any_instance_of(Player).to receive(:rand).and_return(2)
+    click_button 'Rock'
+    expect(page).to have_content 'Unlucky, Computer has beaten you :( !!!'
+  end
+
+  scenario 'If the player draws then a message is displayed' do
+    sign_into_the_game
+    click_button 'Single Player RPS'
+    allow_any_instance_of(Player).to receive(:rand).and_return(1)
+    click_button 'Rock'
+    expect(page).to have_content 'It was a draw!!!'
+  end
 end
