@@ -2,12 +2,19 @@ require 'sinatra/base'
 
 class Rps < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb :welcome
   end
 
-  post '/fight' do
-    @name = params[:name]
+  post '/names' do
+    session[:name] = params[:name]
+    redirect('/fight')
+  end
+
+  get '/fight' do
+    @name = session[:name]
     erb :fight
   end
 
