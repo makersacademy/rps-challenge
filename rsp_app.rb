@@ -1,7 +1,9 @@
 require "sinatra/base"
 
 class Playing < Sinatra::Base
-  
+  get "/" do
+    erb :index
+  end
 
 
 
