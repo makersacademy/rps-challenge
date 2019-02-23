@@ -3,11 +3,16 @@ require './models/game.rb'
 describe 'When new game is created with player name, ' do
   let(:player_name) { 'Simon' }
   let(:computer_double) { double(:computer) }
+  let(:result_class_double) { double(:result_class, new: nil) }
 
   # using before each instead of let to create game
   # as had issues with execution order
   before(:each) do
-    @game = Game.create(player_name: player_name, computer: computer_double)
+    @game = Game.create(
+      player_name: player_name, 
+      computer: computer_double,
+      result_class: result_class_double
+    )
   end
 
   it 'should store player name' do
@@ -23,7 +28,7 @@ describe 'When new game is created with player name, ' do
       it "should return #{expected_player_result} if player selected #{player_selection}" do
         @game.play(player_selection)
 
-        expect(@game.result).to be expected_player_result
+        expect(result_class_double).to have_received(:new).with(expected_player_result)
       end
     end
 

@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './models/game.rb'
 require './models/computer.rb'
+require './models/result.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -10,38 +11,30 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game' do
-    player_name = Game.current_game.player_name
-
-    if  Game.current_game.result == :player_draw
-      @game_message = "A draw? I THINK NOT! WE WILL BATTLE TILL TIME DOTH END!"
-    else
-      @game_message = "PREPARE TO BE DESTROYED, #{player_name}!"
-    end
+    @player_name = Game.current_game.player_name
 
     erb :game
   end
 
   get '/result' do
-    if Game.current_game.result == :player_win
-      @result_message = 'Truly, you are the champion.'
-    elsif Game.current_game.result == :player_loss
-      @result_message = 'SUCK IT, LOSER!'
-    else
-      redirect('/game')
-    end
+    @result_message = Game.current_game.result_message
     
     erb :result
   end
 
   post '/register' do
-    Game.create(player_name: params[:player_name], computer: Computer)
+    Game.create(
+      player_name: params[:player_name], 
+      computer: Computer, 
+      result_class: Result
+    )
 
     redirect('/game')
   end
 
   post '/play' do
     player_move = params.keys[0]
-    session[:game_result] = Game.current_game.player_move_wins?(player_move)
+    Game.current_game.play(player_move)
 
     redirect('/result')
   end
