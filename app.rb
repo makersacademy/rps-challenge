@@ -13,6 +13,8 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
+    @turn = Turn.new
+    # turn will store the players name, his choice, and computer's choice
     @marketeer1 = session[:marketeer1]
     @choice = session[:choice]
     @opponent_choice = session[:opponent_choice]
