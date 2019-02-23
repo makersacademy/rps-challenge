@@ -10,7 +10,7 @@ describe Player do
 
   it 'knows what move it made' do
     player.set_move('ROCK')
-    expect(player.move).to 'ROCK'
+    expect(player.move).to eq 'ROCK'
   end
 
 end
