@@ -16,10 +16,6 @@ class Game
     @player = name
   end
 
-  def random_rps
-    RPS.sample
-  end
-
   def play(player_choice)
     @player_choice = player_choice
     @game_choice = random_rps
@@ -27,6 +23,10 @@ class Game
   end
 
   private
+
+  def random_rps
+    RPS.sample
+  end
 
   def result
     return "WIN" if WINNERS[@player_choice] == @game_choice
