@@ -1,5 +1,5 @@
 feature "Marketeer chooses rock or paper or scissors" do
-  scenario "A button is clicked" do
+  scenario "rock button is clicked" do
     sign_in_and_play
     click_button "rock"
     expect(page). to have_content "You chose rock"
@@ -7,7 +7,7 @@ feature "Marketeer chooses rock or paper or scissors" do
   end
 
   feature "Marketeer chooses rock or paper or scissors" do
-    scenario "A button is clicked" do
+    scenario "paper button is clicked" do
       sign_in_and_play
       click_button "paper"
       expect(page). to have_content "You chose paper"
@@ -15,7 +15,7 @@ feature "Marketeer chooses rock or paper or scissors" do
     end
 
     feature "Marketeer chooses rock or paper or scissors" do
-      scenario "A button is clicked" do
+      scenario "scissors button is clicked" do
         sign_in_and_play
         click_button "scissors"
         expect(page). to have_content "You chose scissors"

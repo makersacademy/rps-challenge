@@ -15,12 +15,14 @@ class Rps < Sinatra::Base
   get '/play' do
     @marketeer1 = session[:marketeer1]
     @choice = session[:choice]
+    @opponent_choice = session[:opponent_choice]
     erb :play
   end
 
   post '/play' do
-      session[:choice] = params[:choice]
-      redirect '/play'
+    session[:choice] = params[:choice]
+    session[:opponent_choice] = "rock"
+    redirect '/play'
    end
 
   # start the server if ruby file executed directly
