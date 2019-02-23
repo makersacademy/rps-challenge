@@ -14,10 +14,19 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
+  get '/result' do
+    @result_message = 'SUCK IT, LOSER!'
+    erb :result
+  end
+
   post '/register' do
     Game.create(player_name: params[:player_name])
 
     redirect('/game')
+  end
+
+  post '/play' do
+    redirect('/result')
   end
 
   run! if app_file == $0

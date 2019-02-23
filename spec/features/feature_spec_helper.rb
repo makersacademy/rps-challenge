@@ -3,5 +3,5 @@ def register_player(player_name:)
 
   fill_in("name_input", with: player_name)
 
-  click_button("play")
+  click_button("start_game")
 end
