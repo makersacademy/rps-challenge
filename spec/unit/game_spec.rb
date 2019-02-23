@@ -11,7 +11,7 @@ describe Game do
     allow(player1).to receive(:move) { 'ROCK' }
     allow(player2).to receive(:move) { 'PAPER' }
     allow(player2).to receive(:name) { 'Ozzy' }
-    expect(game.result).to eq 'Ozzy wins!'
+    expect(game.result(player1.move, player2.move)).to eq "#{player2.name} wins!"
 
   end
 
