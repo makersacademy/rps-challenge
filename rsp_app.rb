@@ -13,7 +13,6 @@ class Playing < Sinatra::Base
 
 
   post '/showResult' do
-    "Hello World"
   end
 
 run! if app_file == $0
