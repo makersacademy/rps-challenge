@@ -6,7 +6,7 @@ require File.join(File.dirname(__FILE__), '..', 'rps_web.rb')
 require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
-#require_relative 'features/web_helpers.rb'
+require_relative 'features/web_helpers.rb'
 Capybara.app = RPSWeb
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([

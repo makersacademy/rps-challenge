@@ -7,4 +7,10 @@ describe Player do
     expect(player.name).to equal name
 
   end
+
+  it 'selects a weapon' do
+    weapon = :scissors
+    player.choose_weapon(weapon)
+    expect(player.weapon).to equal weapon
+  end
 end
