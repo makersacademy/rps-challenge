@@ -4,3 +4,9 @@
 <div><h2>The game chose <%= @game.game_choice %></h2></div>
 
 <div><h1>You <%= @result %>!</h1></div>
+
+<div>
+  <form action="/play" method="get" >
+    <input type="submit" value="Play again" />
+  </form>
+</div>

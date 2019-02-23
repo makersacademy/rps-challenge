@@ -22,4 +22,18 @@ feature 'game play' do
     click_button 'Play'
     expect(page).to have_content("DRAW")
   end
+  scenario 'after getting a result, player is offered chance to play again' do
+    srand(3)
+    register
+    choose 'scissors'
+    click_button 'Play'
+    expect(page).to have_button("Play again")
+  end
+  scenario 'after getting a result, player chooses to play again' do
+    srand(3)
+    register
+    choose 'scissors'
+    click_button 'Play'
+    click_button 'Play again'
+  end
 end

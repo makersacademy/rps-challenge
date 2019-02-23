@@ -17,6 +17,11 @@ class RPS < Sinatra::Base
     erb :result
   end
 
+  get '/play' do
+    @game = Game.instance
+    erb :game
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
