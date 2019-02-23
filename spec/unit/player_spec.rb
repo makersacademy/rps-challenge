@@ -8,4 +8,9 @@ describe Player do
     expect(player.name).to eq 'Ozzy Osbourne'
   end
 
+  it 'knows what move it made' do
+    player.set_move('ROCK')
+    expect(player.move).to 'ROCK'
+  end
+
 end
