@@ -1,6 +1,6 @@
 require './models/game.rb'
 
-describe 'When new game is created with player name, ' do
+describe 'When new game is created with player name,' do
   let(:player_name) { 'Simon' }
   let(:computer_double) { double(:computer) }
   let(:result_class_double) { double(:result_class, new: nil) }
@@ -23,9 +23,9 @@ describe 'When new game is created with player name, ' do
     expect(Game.current_game).to eq(@game)
   end
 
-  describe 'when player selects to play' do
+  describe 'when player selects to play,' do
     def self.test_game_logic(expected_player_result:, player_selection:)
-      it "should return #{expected_player_result} if player selected #{player_selection}" do
+      it "should create new result, passing it #{expected_player_result}, if player selected #{player_selection}" do
         @game.play(player_selection)
 
         expect(result_class_double).to have_received(:new).with(expected_player_result)

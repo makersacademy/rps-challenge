@@ -1,3 +1,5 @@
+# rubocop:disable Style/TrivialAccessors
+
 class Game
   attr_reader :player_name, :result
 
@@ -12,7 +14,11 @@ class Game
   end
 
   def self.create(player_name:, computer:, result_class:)
-    @current_game = Game.new(player_name: player_name, computer: computer, result_class: result_class)
+    @current_game = Game.new(
+      player_name: player_name, 
+      computer: computer, 
+      result_class: result_class
+    )
   end
 
   def initialize(player_name:, computer:, result_class:)
@@ -45,3 +51,5 @@ class Game
     @player_move == @computer_move
   end
 end
+
+# rubocop:enable Style/TrivialAccessors

@@ -20,6 +20,5 @@ RSpec.configure do |config|
   end
 end
 
-
 ENV['RACK_ENV'] = 'test'
 Capybara.app = RockPaperScissors
