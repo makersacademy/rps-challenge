@@ -1,6 +1,6 @@
 require "player"
 describe Player do
-  let(:subject){described_class.new("soroush","scissors")}
+  let(:subject) { described_class.new("soroush", "scissors") }
   it "We can get the name of the player" do
     expect(subject.name).to eq "soroush"
   end

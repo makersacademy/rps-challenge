@@ -19,14 +19,14 @@ class Playing < Sinatra::Base
     erb :askMovement
   end
 
-
   post '/showResult' do
-    @player_1 = Player.new(session[:player_name],params[:movement])
-    @server_player = Player.new("computer",RandomMovement.new().random_movement)
-    @game = Game.new(@player_1,@server_player)
+    @player_1 = Player.new(session[:player_name], params[:movement])
+    @server_player = Player.new("computer",
+      RandomMovement.new().random_movement)
+    @game = Game.new(@player_1, @server_player)
     @message = @game.winner_term
     erb :result
   end
 
-run! if app_file == $0
+  run! if app_file == $0
 end
