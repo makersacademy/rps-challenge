@@ -1,4 +1,4 @@
-feature 'Testing infrastructure' do
+feature 'web pages' do
 
   scenario 'Visits the route to make sure it exists' do
     visit('/')
@@ -17,5 +17,11 @@ feature 'Testing infrastructure' do
     find_button("Scissors")
   end
 
+  scenario "Player move selection actually comes out of the page" do
+    set_up
+    click_button("Rock")
+    expect(:move).to eq("Rock")
+
+  end
 
 end

@@ -18,6 +18,15 @@ class Rps < Sinatra::Base
     erb :fight
   end
 
+  post '/choice' do
+    session[:choice] = params[:choice]
+  end
+
+  get '/result' do
+
+  end
+
+
   !run if app_file == $0
 
 end
