@@ -53,4 +53,7 @@ Now that the game class exists, it needs
 a) to be integrated into the app file
 b) to function as a game
 
-In the interest of separation of concerns, 
+
+REFACTOR - To integrate the game into the app file, I have replaced sessions with class instance variables. This has the added benefit of removing the need for global or class variables.
+
+PASSED, 100% COVERAGE, RUBOCOP WARNS OF TRIVIAL attr_reader USAGE

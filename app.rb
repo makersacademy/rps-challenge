@@ -1,20 +1,23 @@
 require "sinatra"
+require "./lib/game"
 
 class Rps < Sinatra::Base
 
-  enable :sessions
+  before do
+    @game = Game.current_game
+  end
 
   get '/' do
     erb(:index)
   end
 
   post '/game' do
-    session[:your_name] = params[:name]
+    @game = Game.start_game(params[:name])
     redirect('/game')
   end
 
   get '/game' do
-    @your_name = session[:your_name]
+    @player_one = @game.player_one
     erb(:game)
   end
 
