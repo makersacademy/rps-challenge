@@ -1,6 +1,6 @@
 require 'sinatra/base'
 # require './lib/player'
-# require './lib/game'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -20,12 +20,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/save_move' do
-    $player_move = params[:player_move]
+    player_move = params[:player_move]
+    $game = Game.new($player_name, player_move)
     redirect '/result'
   end
 
   get '/result' do
-    
+    @message = $game.msg
+    erb :result
   end
 
   run! if app_file == $0

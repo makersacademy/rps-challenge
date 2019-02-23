@@ -2,17 +2,21 @@ require 'game'
 
 describe Game do
 
-  let(:player_move) { double :player_move }
-  let(:game) { Game.new(player_move) }
+  let(:game) { Game.new('Clare', 'Rock') }
 
-  it 'picks rock, paper, scissors at random' do
-    srand(0)
-    expect(game.play).to eq 'Rock'
+  it 'chooses who wins' do
+    p srand(0) # Rock
+    expect(game.msg).to eq 'Clare played ROCK, computer played ROCK. Clare and computer DRAW!'
   end
 
-  it 'picks rock, paper, scissors at random' do
-    srand(1)
-    expect(game.play).to eq 'Paper'
+  it 'chooses who wins' do
+    p srand(1) # Paper
+    expect(game.msg).to eq 'Clare played ROCK, computer played PAPER. COMPUTER WINS!'
+  end
+
+  it 'chooses who wins' do
+    p srand(3) # Scissors
+    expect(game.msg).to eq 'Clare played ROCK, computer played SCISSORS. CLARE WINS!'
   end
 
 end
