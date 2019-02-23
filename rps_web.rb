@@ -5,7 +5,7 @@ class RPS_web < Sinatra::Base
 enable :sessions
 
 get '/' do
-  erb :index
+  erb(:index)
 end
 
 post '/player' do
@@ -20,7 +20,12 @@ end
 
 post '/first' do
   @name = session[:name]
-  erb(:first)
+  redirect('/second')
+end
+
+get '/second' do
+session[:move] = (Player.new(session[:name])).player_move(params[:move])
+erb(:first)
 end
 
 run! if app_file == $0
