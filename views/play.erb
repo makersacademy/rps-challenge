@@ -1,0 +1,14 @@
+<p>Hi, <span style="color: red;"> <%= @player_name %> </span></p>
+
+<p>
+  Make your move
+  <div>
+    <form action="/move" method="post">
+      <label for="move">
+        <input type="submit" value="Rock">
+        <input type="submit" value="Paper">
+        <input type="submit" value="Scissors">
+      </label>
+    </form>
+  </div>
+</p>
