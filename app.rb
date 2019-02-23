@@ -1,6 +1,9 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
+
+  enable :sessions
 
   get '/' do
     erb :index
@@ -8,11 +11,17 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     @player1 = Player.new(params[:player1_name])
+    @player2 = Player.new(['Dave Mustaine', 'Nick Menza', 'Marty Friedman', 'David Ellefson'].sample)
+    session[:player1] = @player1
+    session[:player2] = @player2
     erb :play
   end
 
   get '/result' do
-    @player1_move = params[:player1_move]
+    @player1 = session[:player1]
+    @player2 = session[:player2]
+    @player1.make_move(params[:player1_move])
+    @player2.make_move(['ROCK', 'PAPER', 'SCISSORS'].sample)
     erb :result
   end
 
