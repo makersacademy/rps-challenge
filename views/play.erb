@@ -1,5 +1,5 @@
 <div style='border: 3px dashed red'>
-  <p>Hello <%= @marketeer1 %>!
+  <p>Hello <%= @game.player_name %>!
   </div>
 
   <p>Choose: rock, paper or scissors?</p>
@@ -9,7 +9,7 @@
       <input type="submit" name="choice" value="scissors">
     </form>
 
-You chose <%= @choice %>!
+You chose <%= @game.player_choice %>!
 <div id="opponent">
-  Your opponent chose <%= @opponent_choice %>!
+  Your opponent chose <%= @game.opponent_choice%>!
 </div>
