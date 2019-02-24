@@ -2,6 +2,54 @@
 
 [Link to original README.md](/README.md)
 
+## Getting started
+
+Either visit the hosted version on Heroku (__TODO__), or `clone` and launch this web app locally:
+
+```sh
+git clone git@github.com:dafuloth/rps-challenge.git
+
+bundle
+
+ruby app.rb
+
+```
+
+## Features
+
+### Player registers their name before playing an online game
+
+```sh
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+```
+
+The feature test:
+
+```ruby
+
+feature 'Registering names' do
+  scenario 'Player name displayed before playing an online game' do
+    visit('/')
+    fill_in :player_name, with: 'Winston'
+    click_button 'Play'
+    expect(page).to have_content 'Winston'
+  end
+end
+
+```
+
+### Player can play *rock, paper, scissors*
+
+```sh
+
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+
+```
 
 ## Issues encountered
 
