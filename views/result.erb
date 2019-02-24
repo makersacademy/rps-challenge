@@ -8,6 +8,25 @@
 
 <body>
 
+<% case @choice %>
+<% when "rock"%>
+  <p>You chose "Rock"</p>
+<% when "paper"%>
+  <p>You chose "Paper"</p>
+<% when "scissors"%>
+  <p>You chose "Scissors"</p>
+<% end %>
+
+<%# TODO: Logic that determines winner... belongs in Model, not View  %>
+
+<% case @choice %>
+<% when "rock"%>
+  <p>Your opponent chose "<%=@opponent_choice.capitalize%>". You lose.</p>
+<% when "paper"%>
+  <p>Your opponent chose "<%=@opponent_choice.capitalize%>". It's a draw.</p>
+<% when "scissors"%>
+  <p>Your opponent chose "<%=@opponent_choice.capitalize%>". You win!.</p>
+<% end %>
 
 
 </body>

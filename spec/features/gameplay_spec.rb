@@ -17,24 +17,24 @@ feature 'Playing the game' do
     expect(page).to have_content 'You chose "Scissors"'
   end  
 
-  scenario 'Player plays "Paper" and wins' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
+  scenario 'Player plays "Rock" and loses' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('paper')
     sign_in_and_play
-    click_on 'paper'
-    expect(page).to have_content 'Your opponent chose "Rock". You win!'
+    click_on 'rock'
+    expect(page).to have_content 'Your opponent chose "Paper". You lose.'
   end
 
   scenario 'Player plays "Paper" and draws' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
+    allow_any_instance_of(Array).to receive(:sample).and_return('paper')
     sign_in_and_play
     click_on 'paper'
-    expect(page).to have_content 'Your opponent chose "Paper" too. It\'s a draw.'
+    expect(page).to have_content 'Your opponent chose "Paper". It\'s a draw.'
   end
 
-  scenario 'Player plays "Paper" and loses' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+  scenario 'Player plays "Scissors" and wins' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('paper')
     sign_in_and_play
-    click_on 'paper'
-    expect(page).to have_content 'Oh no! Your opponent chose "Scissors". You lose.'
+    click_on 'scissors'
+    expect(page).to have_content 'Your opponent chose "Paper". You win!'
   end  
 end

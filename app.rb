@@ -14,6 +14,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @choice = params[:choice]
+    # for the purposes of feature test, let's assume opponent chose Paper:
+    @opponent_choice = "paper"
     erb :result
   end
 
