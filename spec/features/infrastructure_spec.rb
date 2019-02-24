@@ -17,7 +17,7 @@ feature 'web pages' do
     find_button("Scissors")
   end
 
-  scenario "Player move selection actually comes out of the page" do
+  pending "Player move selection actually comes out of the page" do
     set_up
     click_button("Rock")
     expect(:move).to eq("Rock")
