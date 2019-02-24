@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/opponent'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -15,19 +16,14 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @game = Game.new(session)
-    # @marketeer1 = session[:marketeer1]
-    # @choice = session[:choice]
-    # @opponent_choice = session[:opponent_choice]
     erb :play
   end
 
   post '/play' do
     session[:player_choice] = params[:choice]
     session[:opponent_choice] = Opponent.new.choice
-    # session[:opponent_choice] = [:rock, :paper, :scissors].sample
-    # session[:opponent_choice] = :rock
     redirect '/play'
-   end
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
