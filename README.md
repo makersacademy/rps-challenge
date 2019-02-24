@@ -4,7 +4,7 @@
 
 ## Getting started
 
-Either visit the hosted version on Heroku (__TODO__), or `clone` and launch this web app locally:
+Either visit the live [Heroku-hosted version](https://quiet-wildwood-32600.herokuapp.com/), or `clone` and launch this web app locally:
 
 ```sh
 git clone git@github.com:dafuloth/rps-challenge.git
