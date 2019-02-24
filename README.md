@@ -43,7 +43,7 @@ As usual please start by
 * TEST driving development of your app
 
 _______
-I worked on this solo for for the first part, using my notes from the week and my previous work. When it came to implementing turns I referred to the rps challenge exemplar found here: https://www.youtube.com/watch?v=GoHKmartBYo
+I worked on this solo for the first part, using my notes from the week and my previous work. When it came to implementing turns I referred to the rps challenge exemplar found here: https://www.youtube.com/watch?v=GoHKmartBYo
 I saw that I could make the controller more skinny by extracting additional functionality, so I created an Opponent class to handle the random selection.
 
 ## Bonus level 1: Multiplayer
