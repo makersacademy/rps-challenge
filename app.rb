@@ -18,17 +18,17 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
+    @cpu_move = ['Rock', 'Paper', 'Scissors'].sample
     erb(:play)
   end
 
   post '/move' do
-
-    redirect '/win'
+    redirect '/outcome'
     # if win, redirect to '/win'
   end
 
-  get '/win' do
-    'You won'
+  get '/outcome' do
+    erb(:outcome)
   end
 
   run! if app_file == $0
