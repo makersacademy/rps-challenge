@@ -15,11 +15,13 @@ class Game < Sinatra::Base
   get '/play' do
     @name = session[:name]
     @user_choice = session[:user_choice]
+    @computer_choice = session[:computer_choice]
     erb :play
   end
 
   post '/play' do
     session[:user_choice] = params[:user_choice]
+    session[:computer_choice] = :paper
     redirect to('/play')
   end
 
