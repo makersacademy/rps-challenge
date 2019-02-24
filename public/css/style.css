@@ -1,1 +1,52 @@
-h1 { text-align: center; }
+/* reference for centering things:
+http://www.tipue.com/blog/center-a-div/ */
+
+body {
+  background-color: paleturquoise;
+  font-family: fantasy;
+}
+
+.center-element
+{
+     position: absolute;
+     margin: auto;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     width: 700px;
+     height: 350px;
+} 
+
+#main {
+  padding-top: 5em;
+  border-color: cadetblue;
+  border-width: 1em;
+  border-style: double;
+
+}
+
+h1, p { text-align: center; }
+
+input {
+  display: block;
+  margin: auto;
+}
+.name-input {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+#name-submit-button {
+
+  width: 9em;
+  font-weight: bold;
+  font-size: 1.25em;
+  background-color: orange;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
