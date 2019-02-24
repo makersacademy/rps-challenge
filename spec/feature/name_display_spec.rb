@@ -30,8 +30,8 @@ feature "Player chooses R,P or S" do
     visit '/'
     fill_in :name, with: "Bob"
     click_button 'Submit'
-    choose(option:'Paper')
-    click_button 'RPS Submit'
+    choose(option: 'Paper')
+    click_button 'RPS Submit' 
     expect(page).to have_content "BOB WINS" or "Computer Wins..." or "Draw *Cowboy noise in the background*"
   end
 end
