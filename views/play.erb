@@ -9,9 +9,26 @@
 <body>
 
 
-<div id = "main" class="center-element">
+<div>
 
   <h1>Welcome to the game, <%=@player_name%>!</h1>
+
+  <p class = "bodytext">Choose your move:</p>
+
+  <div id = "choices">
+    
+    <div class = "bordered rps-choice" name="rock">
+      <img src="/images/rock.svg" alt="Rock"/>
+    </div>
+
+    <div class = "bordered rps-choice" name="paper">
+      <img src="/images/paper.svg" alt="Paper"/>
+    </div>
+
+    <div class = "bordered rps-choice" name="scissors">
+      <img src="/images/scissors.svg" alt="Scissors"/>
+    </div>
+  </div>
 
 </div>
 

@@ -123,3 +123,7 @@ I even tried uploading my app to Heroku, in case there was something odd happeni
 - Some sites I looked at when I was centering an element: [CSS-Tricks](https://css-tricks.com/centering-css-complete-guide/), [Tipue](http://www.tipue.com/blog/center-a-div/)
 
 - Rock, paper, scissors hand images modified from [this image](https://openclipart.org/detail/63805/rock-scissors-paper) from Openclipart contributor _mazeo_
+
+- I used [Inkscape](https://inkscape.org/) to make the separate Rock/Paper/Scissors images from the original SVG file
+
+- I'm developing a preference for [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
