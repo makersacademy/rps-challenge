@@ -3,8 +3,57 @@
 <head>
 <style>
   body {
-    background-color: #99ccff
+    background-color: #495867
+
   }
+
+  h1 {
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #BBD1EA;
+  }
+
+  h2 {
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #BBD1EA;
+  }
+
+  h3 {
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #BBD1EA;
+    font-style: oblique;
+  }
+
+  .button {
+    background-color: #BBD1EA;
+    border: none;
+    color: white;
+    padding: 16px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+
+  .button1 {width: 250px;}
+
+  .button1 {border-radius: 8px;}
+
+  .button1 {
+    background-color: #BDD5EA;
+    color: #495867;
+    border: 2px solid #495867;
+  }
+
+  .button1:hover {
+    background-color: #507DBC;
+    color: #BBD1EA;
+  }
+
+
+
 </style>
 </head>
 <BODY>
@@ -12,11 +61,9 @@
   <h1> The result of the round </h1>
   <h2><%=@name%> chose <%=@choice%></h2>
   <h2>HAL chose <%=@ai_choice%>
-  <h2><%=@result%></h2>
-  <form action="/fight" >
-    <div class="button">
-      <button type="submit">Play again?</button>
-    </div>
+  <h3><%=@result%></h3>
+  <form action="/fight">
+    <button type="submit" name="choice" value="name" class="button button1">Play again?</button>
   </form>
   </center>
 </BODY>

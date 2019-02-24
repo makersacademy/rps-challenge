@@ -26,10 +26,10 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
-    p @name = session[:name]
-    p @choice = session[:choice]
-    p @ai_choice = AI.new.choice
-    p @result = Game.new(@choice, @ai_choice).winner
+    @name = session[:name]
+    @choice = session[:choice]
+    @ai_choice = AI.new.choice
+    @result = Game.new(@choice, @ai_choice).winner
     erb :result
   end
 
