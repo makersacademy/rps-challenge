@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/ai'
+require './lib/courage'
 
 class Rps < Sinatra::Base
 
@@ -30,6 +31,7 @@ class Rps < Sinatra::Base
     @choice = session[:choice]
     @ai_choice = AI.new.choice
     @result = Game.new(@choice, @ai_choice).winner
+    p @courage = Courage.new("words_of_valour.csv").random
     erb :result
   end
 
