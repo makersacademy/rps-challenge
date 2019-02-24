@@ -12,6 +12,11 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  get '/result' do
+    @choice = params[:choice]
+    erb :result
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
