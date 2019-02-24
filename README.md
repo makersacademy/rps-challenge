@@ -1,3 +1,3 @@
 # RPS Challenge
 
-[Link to original README.md](/README.md)
+[Link to original README.md](/original-README.md)
