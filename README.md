@@ -69,28 +69,30 @@ These lines in `single_player_spec.rb` are replaced by calling the method `sign_
 feature 'Playing the game' do
   scenario 'Player plays "Paper"' do
     sign_in_and_play
-    click_button 'Paper'
+    click_on 'paper'
     expect(page).to have_content 'You chose "Paper"'
   end  
 
+  # There are versions of this scenario to test the Rock and Scissors options
+
   scenario 'Player plays "Paper" and wins' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
+    allow_any_instance_of(Array).to receive(:sample).and_return('rock')
     sign_in_and_play
-    click_button 'Paper'
+    click_on 'paper'
     expect(page).to have_content 'Your opponent chose "Rock". You win!'
   end
 
   scenario 'Player plays "Paper" and draws' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
+    allow_any_instance_of(Array).to receive(:sample).and_return('paper')
     sign_in_and_play
-    click_button 'Paper'
+    click_on 'paper'
     expect(page).to have_content 'Your opponent chose "Paper" too. It\'s a draw.'
   end
 
   scenario 'Player plays "Paper" and loses' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
     sign_in_and_play
-    click_button 'Paper'
+    click_on 'paper'
     expect(page).to have_content 'Oh no! Your opponent chose "Scissors". You lose.'
   end  
 end
