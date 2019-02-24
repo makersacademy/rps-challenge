@@ -7,8 +7,22 @@ body {
   min-width: 1110px;
 }
 
+a {
+  text-decoration: none;
+}
+
+h1 {
+  color: cadetblue;
+}
+
+h1, p {
+  text-align: center;
+}
+
+
 .bodytext {
   font-size: 1.3em;
+  color: darkorchid;
 }
 
 .bordered {
@@ -32,8 +46,6 @@ body {
   width: 700px;
   height: 350px;
 }
-
-h1, p { text-align: center; }
 
 input {
   display: block;
@@ -67,10 +79,13 @@ input {
 
 .rps-choice
 {
-    display: table-cell;
     background-color: white;
     text-align: center;
     padding-top: 45px;
-    min-width: 275px;
+    min-width: 310px;
+    height: 250px;
 }
 
+.choice-text {
+  font-weight: bold;
+}
