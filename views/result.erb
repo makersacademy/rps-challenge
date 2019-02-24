@@ -1,0 +1,22 @@
+<h1>And the winner is...</h1>
+
+<h2>
+<%= @game.player_one.name %> played <%= @game.player_one.choice %>.
+
+<%= @game.player_two.name %> played <%= @game.player_two.choice %>.
+</h2>
+
+<% if @result == "tie" %>
+  <h3>It's a tie!</h3>
+<% else %>
+  <h3><%= @result.name %> wins!</h3>
+<% end %>
+
+
+<form action = "/game">
+  <button type="submit" class="btn btn-success" value="Play Again">Play Again</button>
+</form>
+
+<form action = "/">
+  <button type="submit" class="btn btn-info" value="Back to Start">Back to Start</button>
+</form>

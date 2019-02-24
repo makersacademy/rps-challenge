@@ -1,0 +1,17 @@
+<h1>Please enter your name</h1>
+
+<form action="/name" method="post">
+  <label for="name_one">
+    Player One Name
+    <input type="text" name="name_one">
+  </label>
+
+  <% if @game.mode == "Multiplayer" %>
+    <label for="name_two">
+      Player Two Name
+      <input type="text" name="name_two">
+    </label>
+  <% end %>
+
+  <input type="submit" value="Submit">
+</form>
