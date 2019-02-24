@@ -32,4 +32,6 @@ Run app: `ruby app.rb`
 
 Open up browser and go to localhost:4567 to play
 
+### How to run tests
 
+Run `rspec` when within the repository
