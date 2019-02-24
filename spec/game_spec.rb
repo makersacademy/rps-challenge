@@ -60,8 +60,8 @@ it 'allows player1 to move' do
   player2 = Player.new("Player2")
   game = Game.new(player1, player2)
   game.player_1_turn
-  game.player1_move("rock")
-  expect(game.p1_choice).to eq "rock"
+  game.player1_move("Rock")
+  expect(game.p1_choice).to eq "Rock"
 end
 
 it 'allows player2 to move when multiplayer' do
@@ -69,22 +69,22 @@ it 'allows player2 to move when multiplayer' do
   player2 = Player.new("Player2")
   game = Game.new(player1, player2)
   game.player_1_turn
-  game.player1_move("rock")
+  game.player1_move("Rock")
   game.player_2_turn
-  game.player2_move("paper")
-  expect(game.p2_choice).to eq "paper"
+  game.player2_move("Paper")
+  expect(game.p2_choice).to eq "Paper"
 end
 
 it 'allows player2 to move when computer' do
   player1 = Player.new("Player1")
   game = Game.new(player1)
   game.player_1_turn
-  game.player1_move("rock")
+  game.player1_move("Rock")
   srand(67808)
   game.player_2_turn
   game.player2_move
   game.p2_choice
-  expect(game.p2_choice).to eq "paper"
+  expect(game.p2_choice).to eq "Paper"
 end
 
 it 'returns result of the round' do
@@ -92,10 +92,10 @@ it 'returns result of the round' do
   player2 = Player.new("Player2")
   game = Game.new(player1, player2)
   game.player_1_turn
-  p game.player1_move("rock")
+  p game.player1_move("Rock")
   p game.p1_choice
   game.player_2_turn
-  p game.player2_move("rock")
+  p game.player2_move("Rock")
   p game.p2_choice
   p game.result_game
   # expect(game.result).to eq "draw"

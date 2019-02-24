@@ -10,17 +10,17 @@ describe Computer do
 
   it 'returns "rock" as a move' do
     srand(67807)
-    expect(Computer.new.computer_move_do).to eq "rock"
+    expect(Computer.new.computer_move_do).to eq "Rock"
   end
 
   it 'returns "paper" as a move' do
     srand(67808)
-    expect(Computer.new.computer_move_do).to eq "paper"
+    expect(Computer.new.computer_move_do).to eq "Paper"
   end
 
   it 'returns "scissors" as a move' do
     srand(67809)
-    expect(Computer.new.computer_move_do).to eq "scissors"
+    expect(Computer.new.computer_move_do).to eq "Scissors"
   end
 
 end
