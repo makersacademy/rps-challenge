@@ -37,9 +37,19 @@ attr_reader :p1_choice, :p2_choice, :turn, :players, :players_names
     end
   end
 
-  def result
+  def player1_move(move)
     @p1_choice = @player1.player_move(move)
-    @p2_choice = @player2.computer_move_do
+  end
+
+  def player2_move(move=nil)
+    if @player2.name == "Computer"
+      @p2_choice = @player2.computer_move_do
+    else
+      @p2_choice = @player2.player_move(move)
+    end
+  end
+
+  def result
     if @p1_choice == @p2_choice
       return :draw
     elsif WIN_ARR.include?([@p1_choice, @p2_choice])

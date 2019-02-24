@@ -55,5 +55,36 @@ it 'can switch to player2 turn in multiplayer mode' do
   expect(game.players_turn).to eq player2
 end
 
+it 'allows player1 to move' do
+  player1 = Player.new("Player1")
+  player2 = Player.new("Player2")
+  game = Game.new(player1, player2)
+  game.player_1_turn
+  game.player1_move("rock")
+  expect(game.p1_choice).to eq "rock"
+end
+
+it 'allows player2 to move when multiplayer' do
+  player1 = Player.new("Player1")
+  player2 = Player.new("Player2")
+  game = Game.new(player1, player2)
+  game.player_1_turn
+  game.player1_move("rock")
+  game.player_2_turn
+  game.player2_move("paper")
+  expect(game.p2_choice).to eq "paper"
+end
+
+it 'allows player2 to move when computer' do
+  player1 = Player.new("Player1")
+  game = Game.new(player1)
+  game.player_1_turn
+  game.player1_move("rock")
+  srand(67808)
+  game.player_2_turn
+  game.player2_move
+  game.p2_choice
+  expect(game.p2_choice).to eq "paper"
+end
 
 end

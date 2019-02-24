@@ -11,7 +11,7 @@ class Computer < SimpleDelegator
   end
 
   def computer_move_do
-    Game::OPTIONS_ARR.sample
+     @computer_move = Game::OPTIONS_ARR.sample
   end
 
 end
