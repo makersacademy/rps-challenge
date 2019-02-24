@@ -57,3 +57,6 @@ b) to function as a game
 REFACTOR - To integrate the game into the app file, I have replaced sessions with class instance variables. This has the added benefit of removing the need for global or class variables.
 
 PASSED, 100% COVERAGE, RUBOCOP WARNS OF TRIVIAL attr_reader USAGE
+
+
+Now that the files are integrated, it remains to build a functioning game.
