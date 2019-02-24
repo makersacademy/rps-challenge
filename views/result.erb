@@ -11,6 +11,13 @@
   <center>
   <h1> The result of the round </h1>
   <h2><%=@name%> chose <%=@choice%></h2>
+  <h2>HAL chose <%=@ai_choice%>
+  <h2><%=@result%></h2>
+  <form action="/fight" >
+    <div class="button">
+      <button type="submit">Play again?</button>
+    </div>
+  </form>
   </center>
 </BODY>
 </html>

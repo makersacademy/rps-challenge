@@ -9,9 +9,14 @@ class Game
     win = "You win at this skillful game of chance"
     lose = "HAL wins. Another time, McCloud"
     draw = "This one's a draw"
-    @player_move == "Rock" && @ai_move == "Scissors" ? win : @player_move == "Rock" && @ai_move == "Paper" ? lose : draw
-    @player_move == "Paper" && @ai_move == "Rock" ? win : @player_move == "Paper" && @ai_move == "Scissors" ? lose : draw
-    @player_move == "Scissors" && @ai_move == "Paper" ? win : @player_move == "Scissors" && @ai_move == "Rock" ? lose : draw
+    case @player_move
+      when "Rock"
+        @ai_move == "Scissors" ? win : @ai_move == "Paper" ? lose : draw
+      when "Paper"
+        @ai_move == "Rock" ? win : @ai_move == "Scissors" ? lose : draw
+      when "Scissors"
+        @ai_move == "Paper" ? win : @ai_move == "Rock" ? lose : draw
+    end
   end
 
 end

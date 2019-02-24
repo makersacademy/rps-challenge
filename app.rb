@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/ai'
 
 class Rps < Sinatra::Base
 
@@ -24,8 +26,10 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
-    @name = session[:name]
-    @choice = session[:choice]
+    p @name = session[:name]
+    p @choice = session[:choice]
+    p @ai_choice = AI.new.choice
+    p @result = Game.new(@choice, @ai_choice).winner
     erb :result
   end
 

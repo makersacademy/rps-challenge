@@ -21,7 +21,18 @@ feature 'web pages' do
     set_up
     click_button("Rock")
     expect(page).to have_content 'The result of the round'
+  end
 
+  scenario "Page tells you what everyone chose" do
+    set_up
+    click_button("Paper")
+    expect(page).to have_content "HAL chose"
+  end
+
+  scenario "Page allows you to click again for another round" do
+    set_up
+    click_button("Paper")
+    find_button("Play again?")
   end
 
 end
