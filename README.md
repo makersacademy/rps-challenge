@@ -42,6 +42,9 @@ As usual please start by
 * Forking this repo
 * TEST driving development of your app
 
+_______
+I worked on this solo for for the first day, using my notes from the week and my previous work. When it came to implementing turns I referred to the rps challenge exemplar found here: https://www.youtube.com/watch?v=GoHKmartBYo
+I saw that I could extract some functionality out of the controller into the model, so I created an Opponent class to handle the random selection.
 
 ## Bonus level 1: Multiplayer
 
