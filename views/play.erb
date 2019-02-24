@@ -6,19 +6,18 @@
       <br> Select a weapon</br>
       <br> Player1 </br>
       <form action="/play" method = "POST">
-        <select name = "player_1_weapon">
-          <option value="rock">rock</option>
-          <option value="paper">paper</option>
-          <option value="scissors">scissors</option>
-        </select>
+        <input type = "radio" name = "player_1_weapon" id = "rock1" value="rock">rock
+        <input type = "radio" name = "player_1_weapon" id = "paper1" value="paper">paper
+        <input type = "radio" name = "player_1_weapon" id = "scissors1" value="scissors">scissors
+
         <br> Player2 </br>
-        <select name = "player_2_weapon">
-          <option value="rock">rock</option>
-          <option value="paper">paper</option>
-          <option value="scissors">scissors</option>
-        </select>
+        <input type = "radio" name = "player_2_weapon" id = "rock2" value="rock">rock
+        <input type = "radio" name = "player_2_weapon" id = "paper2" value="paper">paper
+        <input type = "radio" name = "player_2_weapon" id = "scissors2" value="scissors">scissors
+
         <br><button type = "submit">Play</button></br>
       </form>
+      <br> <%=@input_missing_message%> </br>
       <br >  <%= @player1_selection%> </br>
       <br >  <%= @player2_selection%> </br>
       <br> <%=@winning_message%><br>
