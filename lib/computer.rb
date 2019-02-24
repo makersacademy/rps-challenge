@@ -1,15 +1,17 @@
 require "delegate"
+require_relative "./game.rb"
 
 class Computer < SimpleDelegator
-  attr_reader :options_arr, :computer_move
-  OPTIONS_ARR = ["rock", "paper", "scissors"]
+  attr_reader :name, :computer_move
+
 
   def initialize
+    @name = "Computer"
     @computer_move = nil
   end
 
   def computer_move_do
-    OPTIONS_ARR.sample
+    Game::OPTIONS_ARR.sample
   end
 
 end

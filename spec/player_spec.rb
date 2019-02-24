@@ -18,10 +18,5 @@ it "let's the player type in their move" do
   expect(player.player_move("rock")).to eq "rock"
 end
 
-it "displays the status of the last move that the player made" do
-  player = Player.new("Player")
-  p player.player_move("rock")
-  expect(player.player_status).to eq "Player has chosen rock"
-end
 
 end

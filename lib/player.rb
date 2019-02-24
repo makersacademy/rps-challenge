@@ -10,8 +10,5 @@ class Player
     @player_move = move
   end
 
-  def player_status
-    "#{@name} has chosen #{@player_move}"
-  end
 
 end

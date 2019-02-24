@@ -1,3 +1,4 @@
+require "game"
 require "computer"
 require "capybara/rspec"
 
