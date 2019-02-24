@@ -1,13 +1,15 @@
-features 'Enter Name' do
-
-  scenario 'expect form'do
-    visit('/')
-    expect(page).to have_css('form')
-   end
-
-  scenario 'fills in name' do
-    visit('/')
+feature 'Homepage' do
+  scenario 'registers name' do
     sign_in_and_play
-    expect(page).to have_content 'Welcome Ana! Computer vs. Ana'
-    end
- end
+    expect(page).to have_content 'Welcome Socks!'
+  end
+
+  scenario 'play game' do
+    sign_in_and_play
+    expect(page).to have_content 'Choose your attack:'
+    expect(page).to have_content 'Computer vs. Socks'
+    select 'Rock', from: 'user_choice'
+    click_button 'Go'
+  end
+
+end
