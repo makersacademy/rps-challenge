@@ -89,3 +89,11 @@ input {
 .choice-text {
   font-weight: bold;
 }
+
+.winner {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 80px;
+  font-weight: bold;
+  color:magenta;
+  text-align: center;
+}

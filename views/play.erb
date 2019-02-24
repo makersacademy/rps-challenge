@@ -17,21 +17,21 @@
 
   <div id = "choices">
     
-    <a id="rock" href = "/result?choice=rock">
+    <a id="rock" href = "/result?player=<%=@player_name%>&choice=rock">
       <div class = "bordered rps-choice">
         <img src="/images/rock.svg" alt="Rock"/>
       </div>
       <p class = "bodytext choice-text">Rock</p>
     </a>
 
-    <a id="paper" href = "/result?choice=paper">
+    <a id="paper" href = "/result?player=<%=@player_name%>&choice=paper">
       <div class = "bordered rps-choice">
         <img src="/images/paper.svg" alt="Paper"/>
       </div>
       <p class = "bodytext choice-text">Paper</p>
     </a>
 
-    <a id="scissors" href = "/result?choice=scissors">
+    <a id="scissors" href = "/result?player=<%=@player_name%>&choice=scissors">
       <div class = "bordered rps-choice">
         <img src="/images/scissors.svg" alt="Scissors"/>
       </div>
