@@ -25,6 +25,10 @@
 <% when "paper"%>
   <p>Your opponent chose "<%=@opponent_choice.capitalize%>". It's a draw.</p>
 <% when "scissors"%>
+  <p>Congratulations</p>
+
+  <p class="winner"><%=@player%></p>
+
   <p>Your opponent chose "<%=@opponent_choice.capitalize%>". You win!.</p>
 <% end %>
 
