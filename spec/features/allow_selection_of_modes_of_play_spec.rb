@@ -8,5 +8,6 @@ feature 'As a player I can select ' do
     fill_in 'player1', with: "Ant"
     click_button ('Start Game')
     expect(page).to have_content("Ant Vs. Computer")
+    expect(page).to_not have_content("Player2")
   end
 end

@@ -4,8 +4,6 @@ feature 'Play game' do
     choose ("scissors1")
     choose ("paper2")
     click_button('Play')
-    expect(page).to have_content("Ant selected scissors")
-    expect(page).to have_content("Elephant selected paper")
     expect(page).to have_content("Ant wins!")
   end
 
@@ -13,8 +11,6 @@ feature 'Play game' do
     signup_and_play
     choose ("scissors1")
     click_button('Play')
-    expect(page).not_to have_content("Ant selected scissors")
-    expect(page).not_to have_content("Elephant selected paper")
     expect(page).not_to have_content("Ant wins!")
   end
 
@@ -23,8 +19,6 @@ feature 'Play game' do
     choose ("scissors1")
     choose ("scissors2")
     click_button('Play')
-    expect(page).to have_content("Ant selected scissors")
-    expect(page).to have_content("Elephant selected scissors")
     expect(page).to have_content("It's a draw")
   end
 end

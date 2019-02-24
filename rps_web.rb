@@ -60,7 +60,13 @@ class RPSWeb < Sinatra::Base
     session[:play_mode] = @play_mode
     session[:player1] = @player1
     session[:player2] = @player2
-    erb(:play_multi)
+
+    if @play_mode == "solo"
+      erb(:play_solo)
+    else
+      erb(:play_multi)
+    end
+
   end
 
   post "/play" do
@@ -75,8 +81,6 @@ class RPSWeb < Sinatra::Base
 
         @player1.choose_weapon(params[:player_1_weapon].to_sym)
         @player2.choose_weapon(params[:player_2_weapon].to_sym)
-        @player1_selection = "#{@player1.name} selected #{@player1.weapon}"
-        @player2_selection = "#{@player2.name} selected #{@player2.weapon}"
         @winning_weapon = @game.play(@player1.weapon, @player2.weapon)
         case @winning_weapon
           when nil
@@ -92,7 +96,6 @@ class RPSWeb < Sinatra::Base
         @input_missing_message = "You must select a weapon to play. Please try again"
       else
         @player1.choose_weapon(params[:player_1_weapon].to_sym)
-        @player1_selection = "#{@player1.name} selected #{@player1.weapon}"
         @winning_weapon = @game.play(@player1.weapon, @player2.weapon)
 
         case @winning_weapon
@@ -108,7 +111,13 @@ class RPSWeb < Sinatra::Base
     session[:play_mode] = @play_mode
     session[:player1] = @player1
     session[:player2] = @player2
-    erb(:play_multi)
+
+    if @play_mode == "solo"
+      erb(:play_solo)
+    else
+      erb(:play_multi)
+    end
+
   end
 
   run! if app_file == $0
