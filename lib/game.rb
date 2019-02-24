@@ -1,6 +1,6 @@
 class Game
   attr_reader
-  RULES = {scissors: :paper, paper: :rock, rock: :scissors}
+  RULES = { scissors: :paper, paper: :rock, rock: :scissors }
 
   def self.create
     @game = Game.new

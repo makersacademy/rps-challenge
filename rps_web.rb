@@ -13,16 +13,14 @@ class RPSWeb < Sinatra::Base
   end
 
   get "/register" do
+    @play_mode = params[:play_mode]
+    session[:play_mode] = @play_mode
 
-     @play_mode = params[:play_mode]
-     session[:play_mode] = @play_mode
-
-     if @play_mode == "solo"
-       erb(:solo_details)
-     else
-       erb(:multi_details)
-     end
-
+    if @play_mode == "solo"
+      erb(:solo_details)
+    else
+      erb(:multi_details)
+    end
 
   end
 
@@ -45,7 +43,6 @@ class RPSWeb < Sinatra::Base
     session[:player2] = @player2
 
     redirect "/play"
-
 
   end
 

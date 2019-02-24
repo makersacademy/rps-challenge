@@ -3,7 +3,7 @@ describe Game do
 
   it 'Ensures that scissors trumps over paper when playing' do
     game = Game.create
-    expect(game.play(:scissors,:paper)).to eq :scissors
+    expect(game.play(:scissors, :paper)).to eq :scissors
 
   end
 

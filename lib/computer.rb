@@ -1,6 +1,6 @@
 class Computer < Player
   WEAPONS = [:rock, :paper, :scissors]
-  def initialize(name="Computer")
+  def initialize(name = "Computer") 
     @name = name
   end
 

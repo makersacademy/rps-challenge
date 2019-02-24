@@ -2,7 +2,7 @@ module GameResult
   def play_game
     @game = Game.instance
     if @play_mode != "solo"
-      if !params.keys.include?("player_1_weapon") or !params.keys.include?("player_2_weapon")
+      if !params.key?("player_1_weapon") or !params.key?("player_2_weapon")
         @input_missing_message = "Both players must select a weapon each to play. Please try again"
       else
 
@@ -19,7 +19,7 @@ module GameResult
         end
       end
     else
-      if !params.keys.include?("player_1_weapon")
+      if !params.key?("player_1_weapon")
         @input_missing_message = "You must select a weapon to play. Please try again"
       else
         @player1.choose_weapon(params[:player_1_weapon].to_sym)
