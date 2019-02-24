@@ -39,6 +39,7 @@ attr_reader :p1_choice, :p2_choice, :turn, :players, :players_names
 
   def player1_move(move)
     @p1_choice = @player1.player_move(move)
+    # @p1_choice
   end
 
   def player2_move(move=nil)
@@ -47,15 +48,18 @@ attr_reader :p1_choice, :p2_choice, :turn, :players, :players_names
     else
       @p2_choice = @player2.player_move(move)
     end
+    @p2_choice
   end
 
-  def result
+  def result_game
+    p @p1_choice
+    p @p2_choice
     if @p1_choice == @p2_choice
-      return :draw
+      return -1
     elsif WIN_ARR.include?([@p1_choice, @p2_choice])
-      return :win
+      return 1
     else
-      return :lose
+      return 0
     end
   end
 

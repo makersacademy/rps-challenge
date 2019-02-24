@@ -87,4 +87,18 @@ it 'allows player2 to move when computer' do
   expect(game.p2_choice).to eq "paper"
 end
 
+it 'returns result of the round' do
+  player1 = Player.new("Player1")
+  player2 = Player.new("Player2")
+  game = Game.new(player1, player2)
+  game.player_1_turn
+  p game.player1_move("rock")
+  p game.p1_choice
+  game.player_2_turn
+  p game.player2_move("rock")
+  p game.p2_choice
+  p game.result_game
+  # expect(game.result).to eq "draw"
+end
+
 end
