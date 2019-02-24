@@ -40,6 +40,20 @@ it 'resets to player1' do
   expect(game.turn).to eq player1
 end
 
+it 'can reset to player1 turn when not in multiplayer mode' do
+  player1 = Player.new("Player1")
+  game = Game.new(player1)
+  game.player_1_turn
+  expect(game.players_turn).to eq player1
+end
+
+it 'can switch to player2 turn in multiplayer mode' do
+  player1 = Player.new("Player1")
+  player2 = Player.new("Player2")
+  game = Game.new(player1, player2)
+  game.player_1_turn
+  expect(game.players_turn).to eq player2
+end
 
 
 end

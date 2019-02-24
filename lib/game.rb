@@ -1,4 +1,6 @@
 require_relative "./player.rb"
+require_relative "./computer.rb"
+
 class Game
 OPTIONS_ARR = ["rock", "paper", "scissors"]
 WIN_ARR = [["rock", "scissors"], ["paper", "rock"], ["scissors", "paper"]]
@@ -27,6 +29,36 @@ attr_reader :p1_choice, :p2_choice, :turn, :players, :players_names
     @players.last
   end
 
+  def players_turn
+    if player_1_turn == @player1 && multiplayer?
+      player_2_turn
+    else
+      reset_player_1_turn
+    end
+  end
+
+  def result
+    @p1_choice = @player1.player_move(move)
+    @p2_choice = @player2.computer_move_do
+    if @p1_choice == @p2_choice
+      return :draw
+    elsif WIN_ARR.include?([@p1_choice, @p2_choice])
+      return :win
+    else
+      return :lose
+    end
+  end
+
+  def next_play
+    if player_2_turn == @player2
+      return '/play'
+    else
+      '/endgame'
+    end
+  end
+
+  def result
+  end
   # private
 
   def player_1_turn
