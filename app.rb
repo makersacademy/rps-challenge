@@ -9,5 +9,11 @@ class Game < Sinatra::Base
     @player_name = params[:player_name]
     erb :player
   end
+
+  get '/results' do
+    @player_move = params[:player_move]
+    erb :results 
+  end 
+
   run! if app_file == $0
 end

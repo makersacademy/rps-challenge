@@ -1,19 +1,15 @@
 require './app.rb'
 require 'spec_helper.rb'
+require_relative 'web_helpers'
 
 feature 'Player can enter their name' do
   scenario 'player enters the name' do
-    visit('/')
-    fill_in :player_name, with: "Maria"
-    click_button "Start the Game!"
+    sign_in_start_game
     expect(page).to have_content("Maria")
   end
 
   scenario 'display rps options' do
-    visit('/')
-    fill_in :player_name, with: "Maria"
-    click_button "Start the Game!"
+    sign_in_start_game
     expect(page).to have_field("rps")
   end
-
 end
