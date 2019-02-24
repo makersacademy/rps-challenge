@@ -35,7 +35,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post "/play" do
-    
+
     @game = Game.instance
 
     if !params.keys.include?("player_1_weapon") or !params.keys.include?("player_2_weapon")
