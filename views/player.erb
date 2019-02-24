@@ -2,5 +2,19 @@
   <center>
     <h1> Rock Paper Scissors <h1>
      <h2>Hello <%= @player_name %>! </h2>
-  </center>
+  
+   <div> <h1>Please make your choice!</h1>
+   <form action='/game' method='post'> 
+   <h2>Rock</h2><input type='checkbox' name='rps' value= 'rock'>
+
+   <br><h2>Paper</h2><input type='checkbox' name='rps' value= 'paper'>
+
+   <br><h2>Scissors</h2><input type='checkbox' name='rps' value= 'scissors'>
+
+   <br><input type='submit' value='Play!' style='width: 100px; size: 50px;' />
+
+
+   </form>
+   </div>
+</center>
 </body>

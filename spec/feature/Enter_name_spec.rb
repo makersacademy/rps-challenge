@@ -8,4 +8,12 @@ feature 'Player can enter their name' do
     click_button "Start the Game!"
     expect(page).to have_content("Maria")
   end
+
+  scenario 'display rps options' do
+    visit('/')
+    fill_in :player_name, with: "Maria"
+    click_button "Start the Game!"
+    expect(page).to have_field("rps")
+  end
+
 end
