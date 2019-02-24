@@ -4,5 +4,5 @@ class Game < Sinatra::Base
   get '/' do 
     erb :index
   end 
-  run
+  run!
 end
