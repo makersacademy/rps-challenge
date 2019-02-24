@@ -2,13 +2,14 @@ require_relative "./player.rb"
 require_relative "./computer.rb"
 
 class Game
-OPTIONS_ARR = ["rock", "paper", "scissors"]
-WIN_ARR = [["rock", "scissors"], ["paper", "rock"], ["scissors", "paper"]]
+OPTIONS_ARR = ["Rock", "Paper", "Scissors"]
+WIN_ARR = [["Rock", "Scissors"], ["Paper", "Rock"], ["Scissors", "Paper"]]
 
-attr_reader :p1_choice, :p2_choice, :turn, :players, :players_names
+attr_accessor :p1_choice, :p2_choice, :turn, :players, :players_names
+
+
 
   def initialize(player1, player2=nil)
-    # @game = Game.new(player1, player2)
     @player1 = player1
     if player2.nil?
       @player2 = Computer.new
@@ -39,7 +40,6 @@ attr_reader :p1_choice, :p2_choice, :turn, :players, :players_names
 
   def player1_move(move)
     @p1_choice = @player1.player_move(move)
-    # @p1_choice
   end
 
   def player2_move(move=nil)
@@ -52,14 +52,19 @@ attr_reader :p1_choice, :p2_choice, :turn, :players, :players_names
   end
 
   def result_game
-    p @p1_choice
-    p @p2_choice
+    puts "DEBUG"+@p1_choice+@p2_choice
     if @p1_choice == @p2_choice
-      return -1
+      puts "DEBUG"+"draw"
+      return :draw
+
     elsif WIN_ARR.include?([@p1_choice, @p2_choice])
-      return 1
+      puts "DEBUG"+ "win"
+      return :win
+
     else
-      return 0
+      puts "DEBUG"+"lose" 
+      return :lose
+
     end
   end
 
@@ -71,8 +76,7 @@ attr_reader :p1_choice, :p2_choice, :turn, :players, :players_names
     end
   end
 
-  def result
-  end
+
   # private
 
   def player_1_turn
@@ -94,6 +98,4 @@ attr_reader :p1_choice, :p2_choice, :turn, :players, :players_names
   def reset_player_1_turn
     @turn = @player1
   end
-
-
 end
