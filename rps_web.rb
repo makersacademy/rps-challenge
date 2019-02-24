@@ -39,6 +39,7 @@ class RPS_web < Sinatra::Base
     if session[:player_count] == "1 player"
       @name1 = session[:player_1_name]
       @name2 = @@player2.name
+      p @name2
       if @@instance_game.p1_choice.nil?
         @player = session[:player_1_name]
       elsif @@instance_game.p2_choice.nil?
@@ -74,8 +75,13 @@ class RPS_web < Sinatra::Base
   end
 
   get '/endgame' do
-    @name1 = session[:player_1_name]
-    @name2 = session[:player_2_name]
+    if session[:player_count] == "1 player"
+      @name1 = session[:player_1_name]
+      @name2 = @@player2.name
+    else
+      @name1 = session[:player_1_name]
+      @name2 = session[:player_2_name]
+    end 
     erb @@instance_game.result_game
   end
 

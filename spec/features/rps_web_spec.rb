@@ -56,21 +56,21 @@ feature "displays welcome to player" do
     srand(67807)
     singleplayer_sign_in_and_play
     click_button("Rock")
-    expect(page).to have_content "In this round of RPS: Player1 vs. Player2, the result is a DRAW!"
+    expect(page).to have_content "In this round of RPS: Player1 vs. Computer, the result is a DRAW!"
   end
 
   scenario 'displays result of draw for multiplayer' do
     srand(67808)
     singleplayer_sign_in_and_play
     click_button("Rock")
-    expect(page).to have_content "In this round of RPS: Player1 vs. Player2, the result is a DRAW!"
+    expect(page).to have_content "In this round of RPS: Player1 vs. Computer, Player1 is the LOSER!"
   end
 
   scenario 'displays result of draw for multiplayer' do
     srand(67809)
     singleplayer_sign_in_and_play
     click_button("Rock")
-    expect(page).to have_content "In this round of RPS: Player1 vs. Player2, the result is a DRAW!"
+    expect(page).to have_content "In this round of RPS: Player1 vs. Computer, Player1 is the WINNER!"
   end
 
 end
