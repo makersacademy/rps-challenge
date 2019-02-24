@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.5.0'
 
 group :development, :test do
+  gem 'coveralls'
   gem 'rake'
   gem 'sinatra'
   gem 'capybara'
