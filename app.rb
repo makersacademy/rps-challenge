@@ -22,6 +22,7 @@ class Rps < Sinatra::Base
   post '/play' do
     session[:choice] = params[:choice]
     session[:opponent_choice] = [:rock, :paper, :scissors].sample
+    # session[:opponent_choice] = :rock
     redirect '/play'
    end
 
