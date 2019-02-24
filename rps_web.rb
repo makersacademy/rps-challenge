@@ -4,40 +4,43 @@ require './lib/game'
 
 class RPSWeb < Sinatra::Base
 
-  enable :sessions
 
   get "/" do
+    erb(:select_mode)
+  end
 
-    erb(:index)
+  get "/register" do
+     @play_mode = params[:play_mode]
 
+     if @play_mode == "solo"
+       erb(:solo_details)
+     else
+       erb(:multi_details)
+     end
   end
 
   post "/register" do
-    @game = Game.new(Player.new(params[:player1]), Player.new(params[:player2]))
 
-    session[:game] = @game
-
-
+    @game = Game.create(Player.new(params[:player1]), Player.new(params[:player2]))
     redirect "/play"
-
   end
 
   get "/play" do
-    @game = session[:game]
+    @game = Game.instance
     @player1_selection = ""
     @player2_selection = ""
     @winning_message = ""
     @input_missing_message = ""
     erb(:play)
-
   end
 
   post "/play" do
-
-    @game = session[:game]
+    
+    @game = Game.instance
 
     if !params.keys.include?("player_1_weapon") or !params.keys.include?("player_2_weapon")
       @input_missing_message = "Both players must select a weapon each to play. Please try again"
+
     else
 
       @game.player1.choose_weapon(params[:player_1_weapon].to_sym)
@@ -47,12 +50,9 @@ class RPSWeb < Sinatra::Base
       @game.play
       @winning_message = @game.winner == nil ? "It's a draw" : "#{@game.winner.name} wins!"
     end
-    
+
     erb(:play)
-
   end
-
-
 
   run! if app_file == $0
 end
