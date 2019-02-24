@@ -1,32 +1,28 @@
 class Game
-  attr_reader :winner, :player1, :player2
+  attr_reader
   RULES = {scissors: :paper, paper: :rock, rock: :scissors}
 
-  def self.create(player1, player2=Computer.new)
-    @game = Game.new(player1, player2)
+  def self.create
+    @game = Game.new
   end
 
   def self.instance
     @game
   end
 
-  def play
-    @player1.weapon
-    @player2.weapon
-    if @player1.weapon == @player2.weapon
-      @winner = nil
-      "It's a draw"
-    elsif
-      RULES[@player1.weapon] == @player2.weapon
-      @winner = @player1
+  def play(weapon1, weapon2)
+
+    if weapon1 == weapon2
+      nil
+
     else
-      @winner = @player2
+      RULES[weapon1] == weapon2 ? weapon1 : weapon2
+
     end
   end
 
   private
-  def initialize(player1, player2)
-    @player1 = player1
-    p @player2 = player2
+  def initialize
+
   end
 end

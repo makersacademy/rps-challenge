@@ -4,14 +4,16 @@ require './lib/game'
 require './lib/computer'
 
 class RPSWeb < Sinatra::Base
-
+  enable :sessions
 
   get "/" do
     erb(:select_mode)
   end
 
   get "/register" do
+
      @play_mode = params[:play_mode]
+     session[:play_mode] = @play_mode
 
      if @play_mode == "solo"
        erb(:solo_details)
@@ -24,41 +26,89 @@ class RPSWeb < Sinatra::Base
 
   post "/register" do
 
+    @play_mode = session[:play_mode]
 
+    @game = Game.create
+    @player1 = Player.new(params[:player1])
 
+    if @play_mode == "solo"
 
-      @game = Game.create(Player.new(params[:player1]), Player.new(params[:player2]))
+      @player2 = Computer.new
+
+    else
+
+      @player2 = Player.new(params[:player2])
+
+    end
+    session[:play_mode] = @play_mode
+    session[:player1] = @player1
+    session[:player2] = @player2
 
     redirect "/play"
+
+
   end
 
   get "/play" do
-    @game = Game.instance
+    @play_mode = session[:play_mode]
+    @player1 = session[:player1]
+    @player2 = session[:player2]
     @player1_selection = ""
     @player2_selection = ""
     @winning_message = ""
     @input_missing_message = ""
-    erb(:play)
+    session[:play_mode] = @play_mode
+    session[:player1] = @player1
+    session[:player2] = @player2
+    erb(:play_multi)
   end
 
   post "/play" do
+    @play_mode = session[:play_mode]
+    @player1 = session[:player1]
+    @player2 = session[:player2]
+    @game = Game.instance
+    if @play_mode != "solo"
+      if !params.keys.include?("player_1_weapon") or !params.keys.include?("player_2_weapon")
+        @input_missing_message = "Both players must select a weapon each to play. Please try again"
+      else
 
-    p @game = Game.instance
-
-    if !params.keys.include?("player_1_weapon") or !params.keys.include?("player_2_weapon")
-      @input_missing_message = "Both players must select a weapon each to play. Please try again"
-
+        @player1.choose_weapon(params[:player_1_weapon].to_sym)
+        @player2.choose_weapon(params[:player_2_weapon].to_sym)
+        @player1_selection = "#{@player1.name} selected #{@player1.weapon}"
+        @player2_selection = "#{@player2.name} selected #{@player2.weapon}"
+        @winning_weapon = @game.play(@player1.weapon, @player2.weapon)
+        case @winning_weapon
+          when nil
+            @winning_message = "It's a draw"
+          when @player1.weapon
+            @winning_message = "#{@player1.name} wins!"
+          else
+            @winning_message = "#{@player2.name} wins!"
+        end
+      end
     else
+      if !params.keys.include?("player_1_weapon")
+        @input_missing_message = "You must select a weapon to play. Please try again"
+      else
+        @player1.choose_weapon(params[:player_1_weapon].to_sym)
+        @player1_selection = "#{@player1.name} selected #{@player1.weapon}"
+        @winning_weapon = @game.play(@player1.weapon, @player2.weapon)
 
-      @game.player1.choose_weapon(params[:player_1_weapon].to_sym)
-      @game.player2.choose_weapon(params[:player_2_weapon].to_sym)
-      @player1_selection = "#{@game.player1.name} selected #{@game.player1.weapon}"
-      @player2_selection = "#{@game.player2.name} selected #{@game.player2.weapon}"
-      @game.play
-      @winning_message = @game.winner == nil ? "It's a draw" : "#{@game.winner.name} wins!"
+        case @winning_weapon
+          when nil
+            @winning_message = "It's a draw"
+          when @player1.weapon
+            @winning_message = "#{@player1.name} wins!"
+          else
+            @winning_message = "#{@player2.name} wins!"
+        end
+      end
     end
-
-    erb(:play)
+    session[:play_mode] = @play_mode
+    session[:player1] = @player1
+    session[:player2] = @player2
+    erb(:play_multi)
   end
 
   run! if app_file == $0

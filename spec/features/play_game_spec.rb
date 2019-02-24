@@ -17,4 +17,14 @@ feature 'Play game' do
     expect(page).not_to have_content("Elephant selected paper")
     expect(page).not_to have_content("Ant wins!")
   end
+
+  scenario 'allow players to select weapon and play game; for the same weapon a draw should be declared ' do
+    signup_and_play
+    choose ("scissors1")
+    choose ("scissors2")
+    click_button('Play')
+    expect(page).to have_content("Ant selected scissors")
+    expect(page).to have_content("Elephant selected scissors")
+    expect(page).to have_content("It's a draw")
+  end
 end
