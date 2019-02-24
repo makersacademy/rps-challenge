@@ -50,6 +50,53 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 
 ```
+At this point it became clear that it would be a good idea to extract to a test helper the sign-in and clicking Play:
+
+```ruby
+
+def sign_in_and_play
+  visit('/')
+  fill_in :player_name, with: 'Winston'
+  click_button 'Play'
+end
+
+```
+
+These lines in `single_player_spec.rb` are replaced by calling the method `sign_in_and_play`. This method will be used in the gameplay feature tests for the outcomes of Win, Draw, and Loss.
+
+```ruby
+
+feature 'Playing the game' do
+  scenario 'Player plays "Paper"' do
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_content 'You chose "Paper"'
+  end  
+
+  scenario 'Player plays "Paper" and wins' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_content 'Your opponent chose "Rock". You win!'
+  end
+
+  scenario 'Player plays "Paper" and draws' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_content 'Your opponent chose "Paper" too. It\'s a draw.'
+  end
+
+  scenario 'Player plays "Paper" and loses' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_content 'Oh no! Your opponent chose "Scissors". You lose.'
+  end  
+end
+
+```
+
 
 ## Issues encountered
 
