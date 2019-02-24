@@ -19,3 +19,17 @@ I modelled the system based on the two stories, using an MVC pattern - https://p
 I then identified the most appropriate starting feature and wrote a feature test for it using Capybara and rspec. When that test failed, I proceeded to write the model, view, and controller code to pass it, writing unit tests for any business logic first. Finally, after each passing test, I would refactor the code and tests before moving on. 
 
 The system uses Ruby and Sinatra, rendering the HTML using ERB views. 
+
+### How to play
+
+Clone the repository: `git clone git@github.com:simon-norman/rps-challenge.git`
+
+Go into repository: `CD rps-challenge`
+
+Install dependencies: `bundle install`
+
+Run app: `ruby app.rb`
+
+Open up browser and go to localhost:4567 to play
+
+
