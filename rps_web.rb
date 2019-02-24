@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/computer'
 
 class RPSWeb < Sinatra::Base
 
@@ -17,11 +18,17 @@ class RPSWeb < Sinatra::Base
      else
        erb(:multi_details)
      end
+
+
   end
 
   post "/register" do
 
-    @game = Game.create(Player.new(params[:player1]), Player.new(params[:player2]))
+
+
+
+      @game = Game.create(Player.new(params[:player1]), Player.new(params[:player2]))
+
     redirect "/play"
   end
 
@@ -36,7 +43,7 @@ class RPSWeb < Sinatra::Base
 
   post "/play" do
 
-    @game = Game.instance
+    p @game = Game.instance
 
     if !params.keys.include?("player_1_weapon") or !params.keys.include?("player_2_weapon")
       @input_missing_message = "Both players must select a weapon each to play. Please try again"

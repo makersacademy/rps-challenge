@@ -2,7 +2,7 @@ class Game
   attr_reader :winner, :player1, :player2
   RULES = {scissors: :paper, paper: :rock, rock: :scissors}
 
-  def self.create(player1, player2)
+  def self.create(player1, player2=Computer.new)
     @game = Game.new(player1, player2)
   end
 
@@ -27,6 +27,6 @@ class Game
   private
   def initialize(player1, player2)
     @player1 = player1
-    @player2 = player2
+    p @player2 = player2
   end
 end

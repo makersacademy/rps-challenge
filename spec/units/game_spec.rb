@@ -1,12 +1,20 @@
 require 'game'
 describe Game do
 
-  it 'gets created with 2 players' do
+  it 'gets created with 2 players if passed in' do
     player1 =  double :player1, weapon: :scissors
     player2 = double :player2, weapon: :paper
     game = Game.create(player1, player2)
     expect(game.player1).to equal player1
     expect(game.player2).to equal player2
+  end
+
+  it 'gets created with Computer as one player if only one player passed in' do
+    player1 =  double :player1, weapon: :scissors
+    game = Game.create(player1)
+    expect(game.player2).to be_a Computer
+    expect(game.player2.name).to eq "Computer"
+
   end
 
   it 'Ensures that scissors trumps over paper when playing' do
