@@ -1,7 +1,11 @@
-describe Player do
-  it 'stores the player\'s name' do
-    subject(:player) { described_class.new("Winston") }
+require 'player'
 
-    expect(player.name).to eq "Winston"
+describe Player do
+  subject(:winston) { Player.new('Winston') }
+
+  describe '#name' do
+    it 'returns the name' do
+      expect(winston.name).to eq 'Winston'
+    end
   end
 end
