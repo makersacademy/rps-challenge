@@ -5,20 +5,38 @@ require './lib/player'
 class RPS < Sinatra::Base
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
 
   post '/names' do
     player = Player.new(params[:player_name])
-    puts player.name
     Game.create(player)
-    redirect '/play'
+    redirect '/login'
   end
 
-  get '/play' do
-    @game = Game.instance
+  get '/login' do
+    erb :login
+  end
+
+  post '/play' do
     erb :play
+  end
+
+  post '/move' do
+    winner = @game.winner(params[:choice], @game.make_move)
+    if winner == 1
+      @message = "Player wins"
+    elsif winner == 2
+      @message = "Computer wins"
+    else
+      @message = "Draw"
+    end
+    erb :winner
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
