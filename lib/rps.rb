@@ -1,12 +1,15 @@
-class RPS
-  attr_reader :player_name 
-  RPS = ["rock", "paper", "scissors"]
+class Rock_Paper_Scissors
   
+  attr_reader :player_name 
+  
+  Rps = ["rock", "paper", "scissors"]
+
   def initialize(player_name)
     @player_name = Game.new(player_name)
   end
 
+  private
   def rps_rand
-    RPS.sample
+    Rps.sample
   end 
 end
