@@ -1,7 +1,7 @@
 describe Game do
   subject(:rps) { described_class.new }
 
-  it "generates a random choice" do
+  it "returns rock" do
     allow(rps).to receive(:play).and_return "rock"
     expect(rps.play).to eq "rock"
   end

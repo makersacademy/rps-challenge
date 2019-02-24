@@ -18,12 +18,13 @@ class Battle < Sinatra::Base
   end
 
   post '/game_play' do
-    session[:rps_choices] = params[:rps_choices]
+    session[:user_choice] = params[:user_choice]
+    session[:rps_choice] = Game.new(params[:rps_choice])
     redirect to('/results')
   end
 
   get '/results' do
-    @rps_choices = session[:rps_choices]
+    @user_choice = session[:user_choice]
     erb :results
   end
 
