@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class Battle < Sinatra::Base
+class Game < Sinatra::Base
   enable :sessions
 
   get '/' do
@@ -9,23 +9,19 @@ class Battle < Sinatra::Base
 
   post '/name' do
     session[:name] = params[:name]
-    redirect to ('/play')
+    redirect to('/play')
   end
 
   get '/play' do
     @name = session[:name]
+    @user_choice = session[:user_choice]
     erb :play
   end
 
-  post '/game_play' do
+  post '/play' do
     session[:user_choice] = params[:user_choice]
-    session[:rps_choice] = Game.new(params[:rps_choice])
-    redirect to('/results')
+    redirect to('/play')
   end
 
-  get '/results' do
-    @user_choice = session[:user_choice]
-    erb :results
-  end
-
+  run! if app_file == $0
 end

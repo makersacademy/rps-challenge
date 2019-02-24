@@ -1,15 +1,15 @@
-<div style = 'width: 110%; text-align: center;background-color: #6699ff; font-size: 1.2em; height: 120%'>
+<div style = 'width: 100%; text-align: center; background-color: ##6699ff; font-size: 1.3em; height: 100%'>
 <h1>Welcome <%=@name%>!</h1>
 <p>Computer vs. <%=@name%> </p>
 <p>Choose your attack:</p>
 
-<form action="/game_play" method="post">
+<form action="/play" method="post">
   <select name="user_choice">
     <option value="Rock">Rock</option>
     <option value="Paper">Paper</option>
     <option value="Scissors">Scissors</option>
   </select> <br>
-  <input type="submit" name="Go" value="Go" style ='width: 6%; height: 6%; border-radius: 60px; margin-top: 30px'>
+   <input type="submit" name="Go" value="Go" style ='width: 5%; height: 5%; border-radius: 50px; margin-top: 20px'>
 </form>
 
 </div>
