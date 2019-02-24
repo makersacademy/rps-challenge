@@ -4,6 +4,8 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 
+require_relative 'features/web_helpers'
+
 # add this to spec/spec_helper.rb
 
 ENV['RACK_ENV'] = 'test'
