@@ -1,10 +1,9 @@
 <div style = 'width: 110%; text-align: center;background-color: #6699ff; font-size: 1.2em; height: 120%'>
 <h1>Welcome <%=@name%>!</h1>
-<p>Computer vs. <%=@name%> </p>
 <p>Make a selection:</p>
 
 <form action="/game_play" method="post">
-  <select name="user_choice">
+  <select name="rps_choices">
     <option value="Rock">Rock</option>
     <option value="Paper">Paper</option>
     <option value="Scissors">Scissors</option>
