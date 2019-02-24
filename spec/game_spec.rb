@@ -19,7 +19,6 @@ end
 it 'stores player1 as first element and player2 as second element in array of players' do
 player1 = Player.new("Player1")
 player2 = Computer.new
-p player2
 game = Game.new(player1, player2)
 expect(game.player_1_turn).to eq player1
 expect(game.player_2_turn).to eq player2
@@ -92,13 +91,12 @@ it 'returns result of the round' do
   player2 = Player.new("Player2")
   game = Game.new(player1, player2)
   game.player_1_turn
-  p game.player1_move("Rock")
-  p game.p1_choice
+  game.player1_move("Rock")
+  game.p1_choice
   game.player_2_turn
-  p game.player2_move("Rock")
-  p game.p2_choice
-  p game.result_game
-  # expect(game.result).to eq "draw"
+  game.player2_move("Rock")
+  game.p2_choice
+  game.result_game
 end
 
 end
