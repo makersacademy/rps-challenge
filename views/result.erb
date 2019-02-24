@@ -1,0 +1,67 @@
+<center>
+
+  <body style="background: url(https://www.publicdomainpictures.net/pictures/80000/velka/scales-of-justice.jpg);background-repeat:no-repeat; background-size: 500px; background-position: 500 250"
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+<h2 style="font-size:35px">
+Your hand shows: <%= @rps %> <br>
+Their hand shows: <%= comp = ["Rock", "Paper", "Scissors"]
+x = comp.sample
+x%>
+
+</h2>
+<p style="font-family: comic sans ms; font-size:30px; background: url(https://newtonpresbytery.org/wp-content/uploads/sites/34/2017/06/celebration-balloons.jpg); background-size: 100px">
+  <b>
+<%=
+if @rps == "Rock" && x == "Scissors"
+"#{$name.upcase} WINS!"
+
+elsif @rps == "Scissors" && x == "Paper"
+"#{$name.upcase} WINS!"
+
+elsif @rps == "Paper" && x == "Rock"
+"#{$name.upcase} WINS!"
+end
+%>
+</b>
+</p>
+
+<p style="font-family: comic sans ms; font-size:30px; background: url(https://thumbs.dreamstime.com/b/emoji-yellow-sad-face-crying-tear-icon-unhappy-95366354.jpg); background-size:50px">
+<b>
+<%=
+if @rps == "Rock" && x == "Paper"
+"Computer Wins..."
+
+elsif @rps == "Scissors" && x == "Rock"
+"Computer Wins..."
+
+elsif @rps == "Paper" && x == "Scissors"
+"Computer Wins..."
+end
+%>
+</b>
+</p>
+
+<p style="font-size:30px; background: url(https://thumbs.dreamstime.com/b/fat-cartoon-cowboy-ready-to-draw-20713388.jpg); background-repeat: no-repeat; background-size: 35px; background-position: 975 00">
+<%=
+if @rps == x
+"Draw *Cowboy noise in the background*"
+end
+%>
+</p>
+
+<p style="font-size:30px">
+<%=
+if @rps == nil
+"You did not choose /:("
+end
+%>
+</p>
+
+</body>
+
+</center>
