@@ -1,86 +1,67 @@
-# RPS Challenge
+Rock, Paper, Scissors Challenge
+=================
+#### Overview
+A simple web application to play a game of Rock, Paper, Scissors.
+Sinatra is used to power the routing requests. Objects were built in Ruby.
+Capybara was used for testing web functionality, with RSpec powering them and the unit tests.
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+#### Quickstart:
+Use Ruby 2.5.1
+```
+$ git clone https://github.com/andrewwood2/rps-challenge
+$ cd rps-challenge
+$ bundle install
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+#### How to use the application:
+Launch the application in the browser using rackup.
 ```
+$ rackup
+```
+Open the application in your web browser.
+```
+http://localhost:9292/
+```
+Enter player name(s) and select the version of the game.
+The extended version is Rock, Paper, Scissors, Lizard, Spock, which has two extra potential moves.
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+#### How to run the tests:
+1. Spec folder includes feature tests and unit tests
+2. All tests are run via ```rspec```
+3. Code coverage is 100%
+
+#### Approach to solving the challenge:
+1. Review app specification and split into user stories (below)
+2. Diagram a basic structure to fulfil the user requirements
+3. Set up a Ruby file structure
+4. Write feature test for first user story
+5. Follow TDD to write smaller unit tests to drive the code
+6. Start with one class
+7. Consider the Single Responsibility Principle to separate concerns and design an object orientated structure
+
+#### User stories:
+```
+As a player,
+so that I can see my name in lights,
+I would like to register my name before playing an online game.
+
+As a player,
+so that I can participate in the game,
+I would like to select from the possible moves.
+
+As a player,
+so that I can play independently,
+I would like a Computer to select a random move.
+
+As a player,
+so that the game has a purpose,
+I would like it to display the winner.
+
+As a player,
+so that I can play against a friend,
+I would like my friend to be able to select a move.
+
+As an expert player,
+so that the game brings a little more variety,
+I would like the option to select an extended version.
+```
