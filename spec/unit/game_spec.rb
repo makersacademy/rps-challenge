@@ -23,49 +23,40 @@ describe 'When new game is created with player name,' do
     expect(Game.current_game).to eq(@game)
   end
 
-  describe 'when player selects to play,' do
-    def self.test_game_logic(expected_player_result:, player_selection:)
-      it "should create new result, passing it #{expected_player_result}, if player selected #{player_selection}" do
-        @game.play(player_selection)
+  def self.test_game_result(
+    expected_result:, 
+    player_move:,
+    computer_move:)
+    describe "When player plays game, choosing #{player_move}," do
 
-        expect(result_class_double).to have_received(:new).with(expected_player_result)
+      describe "and computer selects #{computer_move}," do
+
+        it "should create new result instance, passing it #{expected_result}" do
+          allow(computer_double).to receive(:move).and_return(computer_move)
+
+          @game.play(player_move)
+
+          expect(result_class_double).to have_received(:new).with(expected_result)
+        end
       end
-    end
-
-    describe 'and computer selects scissors,' do
-      before(:each) do
-        allow(computer_double).to receive(:move).and_return('scissors')
-      end
-
-      test_game_logic(expected_player_result: :player_win, player_selection: 'rock')
-
-      test_game_logic(expected_player_result: :player_loss, player_selection: 'paper')
-
-      test_game_logic(expected_player_result: :player_draw, player_selection: 'scissors')
-    end
-
-    describe 'and computer selects paper,' do
-      before(:each) do
-        allow(computer_double).to receive(:move).and_return('paper')
-      end
-
-      test_game_logic(expected_player_result: :player_win, player_selection: 'scissors')
-
-      test_game_logic(expected_player_result: :player_loss, player_selection: 'rock')
-
-      test_game_logic(expected_player_result: :player_draw, player_selection: 'paper')
-    end
-
-    describe 'and computer selects rock,' do
-      before(:each) do
-        allow(computer_double).to receive(:move).and_return('rock')
-      end
-
-      test_game_logic(expected_player_result: :player_win, player_selection: 'paper')
-
-      test_game_logic(expected_player_result: :player_loss, player_selection: 'scissors')
-
-      test_game_logic(expected_player_result: :player_draw, player_selection: 'rock')
     end
   end
+
+  test_game_result(expected_result: :player_win, player_move: 'rock', computer_move: 'scissors')
+
+  test_game_result(expected_result: :player_loss, player_move: 'paper', computer_move: 'scissors')
+
+  test_game_result(expected_result: :player_draw, player_move: 'scissors', computer_move: 'scissors')
+
+  test_game_result(expected_result: :player_win, player_move: 'scissors', computer_move: 'paper')
+
+  test_game_result(expected_result: :player_loss, player_move: 'rock', computer_move: 'paper')
+
+  test_game_result(expected_result: :player_draw, player_move: 'paper', computer_move: 'paper')
+
+  test_game_result(expected_result: :player_win, player_move: 'paper', computer_move: 'rock')
+
+  test_game_result(expected_result: :player_loss, player_move: 'scissors', computer_move: 'rock')
+
+  test_game_result(expected_result: :player_draw, player_move: 'rock', computer_move: 'rock')
 end
