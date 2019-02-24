@@ -10,5 +10,5 @@ class Game < Sinatra::Base
     @player_name = params[:player_name]
     erb :player
   end
-  run!
+  run! if app_file == $0
 end
