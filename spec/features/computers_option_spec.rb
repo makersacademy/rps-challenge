@@ -9,8 +9,10 @@ feature "It's the computer's turn" do
 
     scenario "the computer makes a random choice" do
       sign_in_and_play
+      srand(6089)
+      # seeds the call to random, so each call will return the same
       click_button "rock"
-      expect(page).to have_content "Your opponent chose paper!"
+      expect(page).to have_content "Your opponent chose scissors!"
     end
   end
 
