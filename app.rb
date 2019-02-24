@@ -30,7 +30,7 @@ class RPS < Sinatra::Base
   post '/move' do
     winner = @game.winner(params[:choice], @game.make_move)
     if winner == 1
-      @message = "Player wins"
+      @message = "#{@game.player.name} wins"
     elsif winner == 2
       @message = "Computer wins"
     else
