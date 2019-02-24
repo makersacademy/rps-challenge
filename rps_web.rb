@@ -7,7 +7,13 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    @player = params[:name]
+    Game.start(params[:name])
+    redirect '/play'
+
+  end
+
+  get '/play' do
+    @player = Game.current_game.name
     erb :play
   end
   run! if app_file == $0
