@@ -28,10 +28,10 @@
     <h1>Prepare for glorious combat</h1>
     <div></div>
     <h2><%= @name %> vs. HAL</h2>
-    <form action="/choice" name="move" method="post">
-      <button class="button button1">Rock</button>
-      <button class="button button1">Paper</button>
-      <button class="button button1">Scissors</button>
+    <form action="/choice" name="choice" method="post">
+      <button type="submit" name="choice" value="Rock" class="button button1">Rock</button>
+      <button type="submit" name="choice" value="Paper" class="button button1">Paper</button>
+      <button type="submit" name="choice" value="Scissors" class="button button1">Scissors</button>
     </form>
     <h2>Fear is a reflex.</h2>
     <h2>Courage is a choice.</h2>

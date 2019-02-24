@@ -17,10 +17,10 @@ feature 'web pages' do
     find_button("Scissors")
   end
 
-  pending "Player move selection actually comes out of the page" do
+  scenario "Page shows the result of the game" do
     set_up
     click_button("Rock")
-    expect(:move).to eq("Rock")
+    expect(page).to have_content 'The result of the round'
 
   end
 

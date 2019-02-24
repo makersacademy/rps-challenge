@@ -20,10 +20,13 @@ class Rps < Sinatra::Base
 
   post '/choice' do
     session[:choice] = params[:choice]
+    redirect('/result')
   end
 
   get '/result' do
-
+    @name = session[:name]
+    @choice = session[:choice]
+    erb :result
   end
 
 
