@@ -5,7 +5,6 @@ require 'simplecov-console'
 require 'capybara'
 require 'rspec'
 
-
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 Capybara.app = Game
 

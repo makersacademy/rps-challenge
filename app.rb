@@ -2,7 +2,6 @@ require 'sinatra/base'
 
 class Game < Sinatra::Base 
   get '/' do 
-    'Hello there!'
     erb :index
   end 
 
