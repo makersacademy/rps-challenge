@@ -9,12 +9,16 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    session[:user_name] = params[:"User_name"]
+    p 'In names'
+    p params
+    session[:user_name] = params[:"user_name"]
+    p session
     redirect '/play'
   end
 
   get '/play' do
-    @user_name = session[:user_name]
+    p 'In play'
+    p @user_name = session[:user_name]
     erb :welcome
   end
 
