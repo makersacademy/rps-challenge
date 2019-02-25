@@ -1,6 +1,22 @@
 # RPS Challenge
 
-[Link to original README.md](/original-README.md)
+([Link to original README.md](/original-README.md))
+
+## Contents:
+[Getting started](#getting-started)
+
+[Features](#features)
+
+[(1) Player registers their name before playing an online game](#player-registers-their-name-before-playing-an-online-game)
+
+[(2) Player can play *rock, paper, scissors*](#player-can-play-rock-paper-scissors)
+
+[Issues encountered](#issues-encountered)
+
+[Web app only renders correctly in Safari](#web-app-only-renders-correctly-in-safari): 
+[`”` vs. `"`](#-vs-)
+
+[Useful Links](#links)
 
 ## Getting started
 
