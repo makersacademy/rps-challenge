@@ -12,8 +12,6 @@ Instructions
 Task
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
-
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
@@ -35,12 +33,6 @@ Hints on functionality
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
 
 _______
 
