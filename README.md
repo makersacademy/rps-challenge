@@ -18,7 +18,7 @@ The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game 
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -43,16 +43,23 @@ As usual please start by
 * TEST driving development of your app
 
 _______
+
+## Project status
+
 I worked on this solo for the first part, using my notes from the week and my previous work. When it came to implementing turns I referred to the rps challenge exemplar found here: https://www.youtube.com/watch?v=GoHKmartBYo
-I saw that I could make the controller more skinny by extracting additional functionality, so I created an Opponent class to handle the random selection.
+I saw that I could make the controller more skinny by extracting additional functionality, so I created an Opponent class to handle the random selection. While implementing the last user-story (a winner is declared) I broke some tests. I ran out of time and haven't completed the final user story. 
 
-## Bonus level 1: Multiplayer
+## To run the game
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+git clone git@github.com:Brendao1/rps-challenge.git
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+cd rps-challenge
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+bundle install
+
+rackup config.ru
+
+Type localhost:9292 into the browser to start!
 
 ## Basic Rules
 
