@@ -1,3 +1,5 @@
+require_relative 'game'
+
 class Computer  
   def initialize
     
