@@ -11,13 +11,16 @@ class Game_rps < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:name])
+    p params
+     $player = Player.new(params[:player])
+
     $computer = Computer.new
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = $player.name
+
+    p @player_name = $player.name
     erb :play
   end
 
