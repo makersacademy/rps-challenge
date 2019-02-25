@@ -3,7 +3,6 @@ feature "play game" do
     visit('/')
     fill_in :name, with: "Spidey"
     click_button("That's my name!")
-    click_button("Rock")
-    expect('/over').to have_content "Game Over"
+    select "Rock", :from => "choose"
   end
 end

@@ -1,5 +1,28 @@
-<%= @player_one %> <%= @game.winner %> Game Over.
+<head>
+  <style>
+    h1 {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      text-color: #000000;
+    }
 
-<form action="/" method="get">
-  <input type="submit" value="Start Again">
-</form>
+    body {
+      display: flex;
+      text-color: white;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      background-image: url('https://inhdw.com/wallpaper/8/skull-and-bones-pirate-battle-814.jpg');
+      background-color: #333fff;
+    }
+  </style>
+</head>
+
+<body>
+  <h1> <%= @player_one %> <%= @game.winner %> Game Over. </h1>
+
+  <form action="/" method="get">
+    <input type="submit" value="Start Again">
+  </form>
+</body>

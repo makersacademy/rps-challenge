@@ -1,10 +1,35 @@
-Te llamas <%= @player_one %>
+<head>
+  <style>
+    h1 {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      text-color: #000000;
+    }
 
-<form action="/end" method="post">
-  <select name="choose">
-    <option value="Rock">Rock</option>
-    <option value="Paper">Paper</option>
-    <option value="Scissors">Scissors</option>
-  </select>
-  <input type="submit" value="Submit">
-</form>
+    body {
+      display: flex;
+      text-color: white;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      background-image: url('https://inhdw.com/wallpaper/8/skull-and-bones-pirate-battle-814.jpg');
+      background-color: #333fff;
+    }
+  </style>
+<link rel="main" type="text/css" href="main.css">
+</head>
+
+<body>
+  <h1> Te llamas <%= @player_one %> </h1>
+  <h3> Choose your weapon!</h3>
+
+  <form action="/end" method="post">
+    <select name="choose">
+      <option value="Rock">Rock</option>
+      <option value="Paper">Paper</option>
+      <option value="Scissors">Scissors</option>
+    </select>
+    <input type="submit" value="Submit">
+  </form>
+</body>
