@@ -1,5 +1,8 @@
 require 'bundler'
 Bundler.require
+require './lib/person.rb'
+require './lib/computer.rb'
+require './lib/game.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -15,6 +18,18 @@ class RPS < Sinatra::Base
 
   get '/select' do
     erb :select
+  end
+
+  post '/compare' do
+    p player_input = Person.new(params[:choice])
+    p computer_input = Computer.new
+    p @game = Rps.new(params[:player_input], params[:computer_input])
+    p @game.compare_choices(player_input, computer_input)
+    redirect to ('/winner')
+  end
+
+  get '/winner' do
+    erb :winner
   end
 
 end

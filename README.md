@@ -12,20 +12,16 @@ I would like to be able to play rock/paper/scissors
 
 Hints on functionality
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+The functionality so far:
+- user can enter their name
+- they are being redirected to the next page where they can see the choices
+- there is a Person class to input the choices
+- there is a Computer class that chooses randomly
+- there is a Ruby program that compares the choices and checks who is the winner
 
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+Things are not working:
+- at user choice we face an error (wrong number of argument error) hence not possible to compare with computer choices
+- no enough tests yet
 
 ## Basic Rules
 
