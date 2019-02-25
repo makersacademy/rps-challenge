@@ -47,11 +47,9 @@ git clone git@github.com:Brendao1/rps-challenge.git
 
 cd rps-challenge
 
-bundle install
+ruby app.rb
 
-rackup config.ru
-
-Type localhost:9292 into the browser to start!
+Type localhost:4567 into the browser to start!
 
 ## Basic Rules
 
