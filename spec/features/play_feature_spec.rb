@@ -4,5 +4,7 @@ feature "play game" do
     fill_in :name, with: "Spidey"
     click_button("That's my name!")
     select "Rock", :from => "choose"
+    click_button 'Submit'
+    expect(page).to have_content 'Game Over'
   end
 end
