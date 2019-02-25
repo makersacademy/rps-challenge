@@ -4,7 +4,7 @@ require './lib/person.rb'
 require './lib/computer.rb'
 require './lib/game.rb'
 
-class RPS < Sinatra::Base
+class Rps < Sinatra::Base
   enable :sessions
 
   get '/' do
