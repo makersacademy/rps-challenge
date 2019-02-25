@@ -1,0 +1,12 @@
+h1, body {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  color: #ffffff;
+  flex-direction: column;
+}
+
+body {
+  background-image: url('https://inhdw.com/wallpaper/8/skull-and-bones-pirate-battle-814.jpg'), url('../battlebackground.jpg'));
+  background-color: #222;
+}

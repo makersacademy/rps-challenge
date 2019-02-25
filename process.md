@@ -60,3 +60,24 @@ PASSED, 100% COVERAGE, RUBOCOP WARNS OF TRIVIAL attr_reader USAGE
 
 
 Now that the files are integrated, it remains to build a functioning game.
+
+TEST - Added feature test expectation that player can choose rock and play the game.
+Works as intended.
+
+REFACTOR - Created feature method, DRY.
+Works as intended.
+
+Added feature tests for paper and scissors.
+Works as intended.
+
+REFACTOR - Grouped the three tests in a single context.
+Works as intended.
+
+
+GAME WORKS
+
+Added CSS to style the pages.
+
+REFACTOR - Moved h1 styling to share with body, DRY.
+
+REFACTOR - Moved CSS to a file required in all pages, DRY.
