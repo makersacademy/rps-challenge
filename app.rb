@@ -24,6 +24,8 @@ class Rps < Sinatra::Base
     erb :result
   end
 
+
+
   post '/play-again' do
     @player_name = session[:player_name]
     erb :play

@@ -12,12 +12,13 @@ class Game
   end
 
   def game_result
-    if ((@player_move == "Rock" && @computer_move == "Scissors") || (@player_move == "Paper" && @computer_move == "Rock") || (@player_move == "Scissors" && @computer_move == "Paper"))
-      "You win!"
-    elsif ((@computer_move == "Rock" && @player_move == "Scissors") || (@computer_move == "Paper" && @player_move == "Rock") || (@computer_move == "Scissors" && @player_move == "Paper"))
-      "Computer wins!"
-    elsif ((@computer_move == "Rock" && @player_move == "Rock") || (@computer_move == "Paper" && @player_move == "Paper") || (@computer_move == "Scissors" && @player_move == "Scissors"))
-      "It's a draw!"
+    case @player_move
+    when "Rock"
+      @computer_move == "Scissors" ? "You win!" : @computer_move == "Paper" ? "Computer wins!" : "It's a draw!"
+    when "Paper"
+      @computer_move == "Rock" ? "You win!" : @computer_move == "Scissors" ? "Computer wins!" :  "It's a draw!"
+    when "Scissors"
+      @computer_move == "Paper" ? "You win!" : @computer_move == "Rock" ? "Computer wins!" : "It's a draw!"
     end
   end
 end
