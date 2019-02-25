@@ -43,13 +43,10 @@ I saw that I could make the controller more skinny by extracting additional func
 
 ## To run the game
 
-git clone git@github.com:Brendao1/rps-challenge.git
-
-cd rps-challenge
-
-ruby app.rb
-
-Type localhost:4567 into the browser to start!
+- git clone git@github.com:Brendao1/rps-challenge.git
+- cd rps-challenge
+- ruby app.rb
+- Type localhost:4567 into the browser to start!
 
 ## Basic Rules
 
