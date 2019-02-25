@@ -1,5 +1,6 @@
 # RPS Challenge
-
+* Author: S.Stoeckigt.
+* 100 % test coverage
 Instructions
 -------
 
@@ -84,3 +85,14 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+## How to Play!
+- In the terminal type "ruby config.ru"
+- Open your browser and type localhost:9292
+- On the first page, select the number of players (1 Player or 2 Players)
+- Enter names of the player(s)
+- Player 1 will go first, (whether you are playing against the computer or another player). Choose your weapon of choice. If you are playing with someone else, it would be wise not to let them see your choice :).
+- Player 2 or the computer will go next.
+- If you are playing against the computer, the next page will automatically display results of the round. If you are playing against another player, you will be redirected to a page where player 2 can make their selection.
+- The next page shows the results for Player 1.
+- To play again, refresh the index page.  
