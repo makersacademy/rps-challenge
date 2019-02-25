@@ -1,7 +1,7 @@
 # RPS Challenge
 * Author: S.Stoeckigt.
 * 100 % test coverage
-Instructions
+
 -------
 
 * Challenge time: rest of the day and weekend, until Monday 9am
