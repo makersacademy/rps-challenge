@@ -8,6 +8,10 @@
 
 <body>
 
+<%# <div id="result-container"> %>
+
+  <div id="result" class="bordered center-element">
+
 <% case @choice %>
 <% when "rock"%>
   <p>You chose "Rock"</p>
@@ -31,6 +35,11 @@
   <p>Your opponent chose "<%=@opponent_choice.capitalize%>". You win!.</p>
 <% end %>
 
+  </div>
+
+  <div id="start-over"><p><a href="/">CLICK TO START OVER</a></p></div>
+
+<%# </div> %>
 
 </body>
 

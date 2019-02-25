@@ -19,6 +19,11 @@ h1, p {
   text-align: center;
 }
 
+#result-container {
+  display: flexbox;
+  flex-direction: column;
+  justify-content: space-between
+}
 
 .bodytext {
   font-size: 1.3em;
@@ -45,6 +50,12 @@ h1, p {
   padding-top: 5em;
   width: 700px;
   height: 350px;
+}
+
+#result {
+  padding-top: 2em;
+  width: 700px;
+  height: 400px;
 }
 
 input {
@@ -96,4 +107,11 @@ input {
   font-weight: bold;
   color:magenta;
   text-align: center;
+}
+
+#start-over {
+  position: absolute;
+  bottom: 1em;
+  margin: auto;
+  left: 42%;
 }
