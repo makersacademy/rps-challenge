@@ -1,34 +1,39 @@
 require 'sinatra'
 require 'sinatra/base'
-
-set :session_secret, 'super secret'
+require './lib/game'
+require './lib/player'
+require './lib/ai_computer'
 
 class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
-    erb(:index)
+    erb :index
   end
 
   post '/names' do
-    session[:player_name] = params[:player_name]
-    redirect '/play'
+    player = Player.new(params[:player_name])
+    @game = Game.create(player)
+    redirect '/dashboard'
   end
 
-  get '/play' do
-    @player_name = session[:player_name]
-    @cpu_move = ['Rock', 'Paper', 'Scissors'].sample
-    erb(:play)
+  get '/dashboard' do
+    erb :dashboard
+  end
+
+  post '/play' do
+    erb :play
   end
 
   post '/move' do
-    redirect '/outcome'
-    # if win, redirect to '/win'
-  end
-
-  get '/outcome' do
-    erb(:outcome)
+    @player_move = params[:choice]
+    @outcome_value = @game.outcome(@player_move, @game.make_random_move)
+    erb :result
   end
 
   run! if app_file == $0

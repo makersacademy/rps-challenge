@@ -1,0 +1,9 @@
+<h1>Hello <%= @game.player.name %> </h1>
+
+<h2>Do you want to play?</h2>
+
+<div>
+  <form action="/play" method="post">
+    <input type="submit" value="Play">
+  </form>
+</div>
