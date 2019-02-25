@@ -17,8 +17,6 @@ class RockPaperScissors < Sinatra::Base
     @choice = params[:choice]
     @player = params[:player]
 
-    # for the purposes of feature test, let's assume opponent chose Paper:
-    # @opponent_choice = "paper"
     @opponent_choice = Computer.choice
 
     @game_result = Game.result(@choice, @opponent_choice)
