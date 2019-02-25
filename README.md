@@ -32,3 +32,20 @@ Paper beats Rock
 8. Generate the random computer option
 9. Write a test to determine a winner
 10. Write the code to determine a winner
+
+
+#########
+
+I have decided to tackle this another way.
+I seem to be unable to write the tests so I have decided to design
+the system and then code it and then learn from that how to write the tests.
+
+The systems design:
+Views -
+There are 3 Views, the initial screen where the name is entered,
+the screen where you play the game and the final screen showing the winner.
+
+The Classes - 
+There is a Player class, and reading through the whole challenge I would say
+that the computer is also a player.
+There is a Game class which contains the methods(rules) and objects to play the game.
