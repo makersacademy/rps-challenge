@@ -3,7 +3,7 @@ require 'simplecov'
 require 'simplecov-console'
 require "capybara"
 require "./app.rb"
-Capybara.app = Game
+Capybara.app = Game_rps
 require "rspec"
 ENV["RACK_ENV"]="test"
 require './spec/features/web_helpers.rb'

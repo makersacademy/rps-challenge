@@ -1,14 +1,14 @@
-<h1><center><%=@player%> Vs Computer</center></h1>
+<body bgcolor="#FCFAF7">
+<h1><center><%=@player_name%> Vs Computer </center></h1>
 <br>
-<h3><%= @player%>, select your choice</h3>
-  <form action="/result" method="get">
-   <input type="submit" value="ROCK">
-  </form>
+<center>
+<h2> <%=@player_name%> select your choice</h2>
+  <form action='/submit' method='post'>
+   <input type='radio' name='option' value='rock' id='rock'>ROCK
+   <input type='radio' name='option' value='paper' id='paper'>PAPER
+   <input type='radio' name='option' value='scissor' id='scissor'>SCISSOR<br>
+   <input type='submit' value='submit'>
+   </form>
+   </center>
 
-  <form action="/result" method="get">
-    <input type="submit" value="PAPER">
-  </form>
-
-  <form action="/result" method="get">
-    <input type="submit" value="SCISSOR">
-  </form>
+   </body>
