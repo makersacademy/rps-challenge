@@ -3,4 +3,4 @@ Bundler.require
 
 require './app'
 
-run RPS
+run Rps

@@ -1,6 +1,6 @@
 require '/Users/Dori/Projects/homework/week3/rps-challenge/lib/person.rb'
 require '/Users/Dori/Projects/homework/week3/rps-challenge/lib/computer.rb'
-class Rps
+class Game
 attr_reader :player_input, :computer_input
 
   def initialize(player_input = Person.new(:choice), computer_input= Computer.new)

@@ -23,7 +23,7 @@ class Rps < Sinatra::Base
   post '/compare' do
     p player_input = Person.new(params[:choice])
     p computer_input = Computer.new
-    p @game = Rps.new(params[:player_input], params[:computer_input])
+    p @game = Game.new(params[:player_input], params[:computer_input])
     p @game.compare_choices(player_input, computer_input)
     redirect to ('/winner')
   end
