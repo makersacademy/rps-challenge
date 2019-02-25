@@ -1,6 +1,7 @@
 # Application RockPaperScissors set up to use Sinatra's Modular Style:
 
 require 'sinatra/base'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -17,8 +18,11 @@ class RockPaperScissors < Sinatra::Base
     @player = params[:player]
 
     # for the purposes of feature test, let's assume opponent chose Paper:
-    @opponent_choice = "paper"
-    
+    # @opponent_choice = "paper"
+    @opponent_choice = Computer.choice
+
+    @game_result = Game.result(@choice, @opponent_choice)
+
     erb :result
   end
 
