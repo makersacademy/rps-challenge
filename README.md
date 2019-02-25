@@ -15,6 +15,14 @@ View are created for each.<br/>
 
 The tests for the 2 classes are passing as the features tests.<br/>
 
+![test](https://user-images.githubusercontent.com/43742795/53308116-d584a280-3896-11e9-8ae7-969d43194387.png)
+
+## Screen shots ## 
+
+![rps1](https://user-images.githubusercontent.com/43742795/53307788-e7187b00-3893-11e9-90f0-3918fd0cd94e.png)
+
+![rps_scissors](https://user-images.githubusercontent.com/43742795/53307789-e97ad500-3893-11e9-8608-a49798693c4c.png)  ![rps_paper](https://user-images.githubusercontent.com/43742795/53307792-ee3f8900-3893-11e9-9c19-490f96b8e2e6.png) ![rps_rock](https://user-images.githubusercontent.com/43742795/53307791-ebdd2f00-3893-11e9-88cb-95029c3425fb.png)
+
 ## How to use ##
 
 1. clone the repo<br/>
@@ -82,4 +90,4 @@ You'll be able to see that the localhost port used is *9292*
 
 3. Enter your name and submit.
 
-4. Just play the game :) 
+4. Just play the game :smile:
