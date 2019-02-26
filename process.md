@@ -78,6 +78,6 @@ GAME WORKS
 
 Added CSS to style the pages.
 
-REFACTOR - Moved h1 styling to share with body, DRY.
+REFACTOR - Moved h1 styling to share with body, DRY, per peer-review with Simon.
 
-REFACTOR - Moved CSS to a file required in all pages, DRY.
+REFACTOR - Moved CSS to a file required in all pages, DRY, per peer-review with Simon.
