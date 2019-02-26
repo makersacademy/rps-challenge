@@ -22,6 +22,7 @@ class Rps < Sinatra::Base
   end
 
   post '/end' do
+    @choose = @game.play(params[:choose])
     redirect('/end')
   end
 

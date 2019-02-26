@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player_one
+  attr_reader :player_one, :choice, :computer
 
   def self.start_game(player1)
     @current_game = Game.new(player1)
