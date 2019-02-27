@@ -156,3 +156,8 @@ I even tried uploading my app to Heroku, in case there was something odd happeni
 - I used [Inkscape](https://inkscape.org/) to make the separate Rock/Paper/Scissors images from the original SVG file
 
 - I'm developing a preference for [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+## To Do
+
+- Use sessions
+- Either delete Player class or actually make use of it
