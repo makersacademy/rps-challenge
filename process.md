@@ -62,7 +62,20 @@ PASSED, 100% COVERAGE, RUBOCOP WARNS OF TRIVIAL attr_reader USAGE
 Now that the files are integrated, it remains to build a functioning game.
 
 TEST - Added feature test expectation that player can choose rock and play the game.
-Works as intended.
+
+RED - See above
+
+(Cannot find field 'rock')
+
+RED - Added rock option.
+
+(Cannot find button 'submit')
+
+RED - Added submit button.
+
+(Expected page to have content 'Game Over')
+
+GREEN - Added post to view so that player choice is passed to '/end'
 
 REFACTOR - Created feature method, DRY.
 Works as intended.
@@ -71,6 +84,12 @@ Added feature tests for paper and scissors.
 Works as intended.
 
 REFACTOR - Grouped the three tests in a single context.
+Works as intended.
+
+TEST - Added unit test checking that the player can choose from rock.
+Works as intended.
+
+REFACTOR - Added further unit tests checking that paper and scissors also work.
 Works as intended.
 
 
