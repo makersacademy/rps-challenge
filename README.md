@@ -22,3 +22,14 @@ Functionalities
 
 I decided to run the program via RPS (Rock, Paper, Scissors) class, storing the values needed in different routes through sessions.<br>
 The Player enters his name and it's stored in his instance variable in `Player` class, while his choice is passed to the `Game` class, where Computer makes his move and the calculations for the winner are stored.
+
+### Sign-up page:
+<img src="https://github.com/Debora38/rps-challenge/blob/master/docs/rps-signup.png?raw=true" alt="rps-signup" width=70%>
+
+### Game:
+<img src="https://github.com/Debora38/rps-challenge/blob/master/docs/rps-play.png?raw=true" alt="rps-game" width=70%>
+
+### Results:
+<img src="https://github.com/Debora38/rps-challenge/blob/master/docs/rps-result-win.png?raw=true" alt="rps-result-win" width=60%>
+<img src="https://github.com/Debora38/rps-challenge/blob/master/docs/rps-result-lost.png?raw=true" alt="rps-result-lost" width=70%>
+<img src="https://github.com/Debora38/rps-challenge/blob/master/docs/rps-result-draw.png?raw=true" alt="rps-result-draw" width=50%>
