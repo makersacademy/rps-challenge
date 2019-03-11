@@ -35,7 +35,11 @@ Add a hard reset method which would take the user back to the homepage
 
 
 
-# RPS Challenge
+
+# Appendix:
+
+
+## RPS Challenge
 
 Instructions
 -------
