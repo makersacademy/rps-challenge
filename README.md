@@ -4,12 +4,14 @@ This is my response to the 'weekend challenge' of Week 3 of Makers Academy. For 
 Getting started
 Instructions are for Terminal on Mac OS
 
+```
 git clone github.com:jaywayawyaj/rps-challenge.git
 gem install bundle
 Navigate to rps-challenge
 ruby app.rb
 Open any web browser
 Enter 'localhost:4567' into the address bar
+```
 
 Running tests
 Run rspec
