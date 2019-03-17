@@ -7,14 +7,16 @@
 
 [Features](#features)
 
-[(1) Player registers their name before playing an online game](#player-registers-their-name-before-playing-an-online-game)
+- [(1) Player registers their name before playing an online game](#player-registers-their-name-before-playing-an-online-game)
 
-[(2) Player can play *rock, paper, scissors*](#player-can-play-rock-paper-scissors)
+- [(2) Player can play *rock, paper, scissors*](#player-can-play-rock-paper-scissors)
 
 [Issues encountered](#issues-encountered)
 
-[Web app only renders correctly in Safari](#web-app-only-renders-correctly-in-safari): 
+- [Web app only renders correctly in Safari](#web-app-only-renders-correctly-in-safari): 
 [`”` vs. `"`](#-vs-)
+
+- [It's not a bug, it's a feature!](#unintentional-feature-aka-its-not-a-bug-its-a-feature)
 
 [Useful Links](#links)
 
