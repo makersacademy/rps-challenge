@@ -147,6 +147,17 @@ It turns out that Safari is more forgiving because it rendered my HTML/CSS perfe
 
 I even tried uploading my app to Heroku, in case there was something odd happening locally - but same thing. Arguably, it was Safari that rendered incorrectly: my incorrect code should not have resulted in a correct rendering. Firefox and Chrome did their jobs.
 
+#### Unintentional feature: a.k.a. It's not a bug, it's a feature!
+Because I used query strings instead of sessions for my data persistence, it's actually possible to play just by supplying the appropriate arguments:
+
+https://quiet-wildwood-32600.herokuapp.com/result?player=Dave&choice=paper
+
+If I wanted to change player name to _David_ and the choice to _rock_, I can just change it in the query string:
+
+https://quiet-wildwood-32600.herokuapp.com/result?player=David&choice=rock
+
+The obvious advantages of my approach is that it simpler and faster to use. Like, if you wanted to make a decision whether to do something, you could play a quick round of rock-paper-scissors with the computer - it'll return a different random result to every invocation.
+
 ## Links
 
 - Some sites I looked at when I was centering an element: [CSS-Tricks](https://css-tricks.com/centering-css-complete-guide/), [Tipue](http://www.tipue.com/blog/center-a-div/)
