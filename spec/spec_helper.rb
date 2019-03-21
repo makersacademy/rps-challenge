@@ -20,3 +20,9 @@ end
 ENV['RACK_ENV'] = 'test'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 Capybara.app = Rps
+
+def sign_in_and_play
+  visit('/')
+  fill_in :player_name, with: 'Batwoman'
+  click_button 'Play!'
+end
