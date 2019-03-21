@@ -18,14 +18,38 @@ The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game 
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
+register name
+button 'Play!'
+redirect to the page 'play'
+
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
+
+Marketeer can choose R, P or Scissors (as buttons) - future function - use emoji
+
+The app says "You chose X"
+The app says "Computer chose Y"
+The app says "Total points = n"
+
+Computer picks RPS on random
+M: R, C: R = draw
+M: R, C: P = win!
+M: R, C: S = lose!
+
+M: S, C: S = draw
+M: S, C: P = win!
+M: S, C: R = lose!
+
+M: R, C: R = draw
+M: R, C: S = win!
+M: R, C: P = lose!
+
 ```
 
 Hints on functionality
