@@ -26,3 +26,5 @@ def sign_in_and_play
   fill_in :player_name, with: 'Batwoman'
   click_button 'Play!'
 end
+
+srand RSpec.configuration.seed
