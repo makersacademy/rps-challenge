@@ -19,4 +19,9 @@ class RockPaperScissors < Sinatra::Base
     erb(:games)
   end
 
+  get '/rock_paper_scissors' do
+    @user = User.instance
+    erb(:rock_paper_scissors)
+  end
+
 end
