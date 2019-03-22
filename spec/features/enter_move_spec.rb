@@ -18,6 +18,7 @@ feature 'Enter move form' do
   end
 end
 
+# temporary infrastructure test
 feature 'Entering move' do
   scenario 'Select move' do
     sign_in_and_play
