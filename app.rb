@@ -2,6 +2,8 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base
   get '/' do
-    "Lets play Rock Paper Scissors!"
+    erb :index
   end
+
+  run! if app_file == $0
 end
