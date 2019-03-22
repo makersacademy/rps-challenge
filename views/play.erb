@@ -1,1 +1,25 @@
-<%= @player_1_name %>
+<html>
+  <center>
+    <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>RPS</title>
+    </head>
+
+    <div class="container-fluid bg-info">
+      <body>
+        <h1 class="display-2"><%= @player_1_name %> it's your turn... make a choice!</h1><br>
+        <form action="/results" method="post">
+          <a href="/results">
+          <img border="0" alt="paper-grey" src="https://www.campcanary.co.uk/uploads/paper-icon-grey.png" width="100" height="100">
+          <a href="/results">
+          <img border="0" alt="rock-grey" src="https://www.campcanary.co.uk/uploads/rock-icon-grey.png" width="100" height="100">
+          <a href="/results">
+          <img border="0" alt="scissors-grey" src="https://www.campcanary.co.uk/uploads/scissors-icon-grey.png" width="100" height="100">
+        </form>
+      </body>
+    </div>
+
+  </center>
+</html>
