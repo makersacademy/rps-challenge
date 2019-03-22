@@ -5,8 +5,13 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/play' do
+  post '/options' do
     @name = params[:name]
+    erb :options
+  end
+
+  post '/play' do
+    @player_choice = params[:choice]
     erb :play
   end
 end
