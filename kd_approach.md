@@ -46,13 +46,18 @@ Type: Text input box
 
 ```
 
+## Test Cases
+
+1. [] Check that the infrastructure works
+2. 
+3.
+
 ### USER STORY 2
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 
 Feature 2:
-- The marketeer will be presented the choices (rock, paper and scissors)
 
 The user will be shown a another screen, they will see the following features:
 
