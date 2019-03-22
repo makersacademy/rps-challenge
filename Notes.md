@@ -50,7 +50,7 @@ I would like to see a clear message with the winner's name
 
 - Marketeer
 - Game - register_name, display_name, choose_option
-- Player - choose, name, human?
+- Player - choose, name, random
 - Game - declare_winner, play
 - Option - name, image
 
@@ -59,19 +59,12 @@ I would like to see a clear message with the winner's name
 This needs some user stories before I can properly extract what the nouns and verbs would be
 - Game - turn
 
-## spec_helper
-
-I might need one or more of these in my spec_helper:
-
-```
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
-require File.join(File.dirname(__FILE__), 'features', 'web_helpers.rb')
-
-require 'capybara'
-require 'capybara/rspec'
-require 'rspec'
-
-ENV['RACK_ENV'] = 'test'
-
-Capybara.app = #whatever my app is called
-```
+## Friday night - current progress
+- User can enter their name and see it displayed back
+- User can play rock, paper, scissors against the computer and find out who wins
+- * TODO * check for single responsibility of classes and methods
+- * TODO * check the tests and code are DRY
+- * TODO * add a stylesheet
+- * TODO * look at how I can mock out randomness - have I already done this?
+- * TODO * extract rules from play class
+- * TODO * do bonus question 1

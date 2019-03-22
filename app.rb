@@ -29,7 +29,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/outcome' do
     @game = session[:game]
-    @game.play
+    @game.play(Rules)
     erb :play
   end
 end

@@ -3,7 +3,7 @@
 <h2> The computer chose <%= @game.player_2.choice %> </h2>
 
 <% if @game.winner != "draw" %>
-The winner is : <%= p @game.winner.name %>
+The winner is : <%= @game.winner.name %>
 <% else %>
 The winner is : We are all winners here! The game was a draw!
 <% end %>

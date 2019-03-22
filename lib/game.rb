@@ -1,3 +1,5 @@
+require './lib/rules'
+
 class Game
   attr_reader :player_1, :player_2, :winner
   def initialize(player_1, player_2)
@@ -6,24 +8,30 @@ class Game
     @winner = nil
   end
 
-  def play
-    player_2.update_choice if @player_2.choice == nil || @player_2.choice == ""
+  def play(rules = Rules.new)
+    player_2.update_choice if @player_2.choice.nil? || @player_2.choice == ""
 
-    results = [{result: @player_1, player_1: "Scissors", player_2: "Paper"},
-              {result: @player_2, player_1: "Scissors", player_2: "Rock"},
-              {result: "draw", player_1: "Scissors", player_2: "Scissors"},
-              {result: @player_1, player_1: "Paper", player_2: "Rock"},
-              {result: @player_2, player_1: "Paper", player_2: "Scissors"},
-              {result: "draw", player_1: "Paper", player_2: "Paper"},
-              {result: @player_1, player_1: "Rock", player_2: "Scissors"},
-              {result: @player_2, player_1: "Rock", player_2: "Paper"},
-              {result: "draw", player_1: "Rock", player_2: "Rock"}]
+    @rules = rules.new.list
 
-    results.each do |outcome|
-      if outcome[:player_1] == @player_1.choice && outcome[:player_2] == player_2.choice
-        @winner = outcome[:result]
+    @rules.each do |outcome|
+      if rule_matched?(outcome, @player_1, @player_2)
+        update_winner(outcome)
       end
     end
     self
+  end
+
+  private
+
+  def rule_matched?(outcome, player_1, player_2)
+    outcome[:player_1] == player_1.choice && outcome[:player_2] == player_2.choice
+  end
+
+  def update_winner(outcome)
+    if outcome[:result] != "draw"
+      @winner = instance_variable_get(outcome[:result])
+    else
+      @winner = outcome[:result]
+    end
   end
 end
