@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/user'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -9,12 +10,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/sign_in' do
-    session[:name]= params[:name]
+    User.create(params[:name])
     redirect '/games'
   end
 
   get '/games' do
-    @name = session[:name]
+    @user = User.instance
     erb(:games)
   end
 
