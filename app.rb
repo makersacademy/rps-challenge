@@ -11,6 +11,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/options' do
     session[:name] = Player.new(params[:name])
+    session[:computer] = Player.new("Computer")
     redirect '/options'
   end
 
@@ -26,6 +27,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/outcome' do
     @player_choice = session[:player_choice]
+    @computer_choice = Player.new("Computer").random_choice
     erb :play
   end
 end

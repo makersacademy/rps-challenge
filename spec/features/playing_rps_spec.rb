@@ -11,9 +11,16 @@ feature 'Presented with options' do
     expect(page).to have_content "You selected Rock"
   end
 
+  scenario 'When player selects an option they can see the computer choice' do
+    fill_in_name_and_submit
+    click_button "Rock"
+    # Can I mock the behaviour of the computer from here?
+    expect(page).to have_content "The computer chose"
+  end
+
   scenario 'When player selects Rock check the computer response' do
     fill_in_name_and_submit
     click_button "Rock"
-    expect(page).to have_content("You win") || have_content("You lose")
+    expect(page).to have_content("The winner is")
   end
 end
