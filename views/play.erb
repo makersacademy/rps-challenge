@@ -1,6 +1,13 @@
 Welcome to the game of Rock/Paper/Scissors, <%= @player_name %>
-<form action="/play">
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
-</form>
+<div class="choice">
+  <form action="/play">
+    <input type="submit" name="move" value="Rock">
+    <input type="submit" name="move" value="Paper">
+    <input type="submit" name="move" value="Scissors">
+  </form>
+</div>
+<div class="game">
+  <% if @move %>
+    <%= @player_name %> chose <%= @move %>
+  <% end %>
+</div>

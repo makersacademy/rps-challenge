@@ -13,6 +13,7 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
+    @move = params[:move]
     erb(:play)
   end
 
