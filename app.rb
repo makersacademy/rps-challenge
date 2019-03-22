@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -9,26 +10,26 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/options' do
-    session[:player] = Player.new(params[:name])
-    session[:computer] = Player.new("Computer")
+    session[:game] = Game.new(Player.new(params[:name]), Player.new("Computer"))
+    # session[:player] = Player.new(params[:name])
+    # session[:computer] = Player.new("Computer")
     redirect '/options'
   end
 
   get '/options' do
-    @player = session[:player]
+    @game = session[:game]
     erb :options
   end
 
   post '/play' do
-    @player = session[:player]
+    @player = session[:game].player_1
     @player.update_choice(params[:choice])
     redirect '/outcome'
   end
 
   get '/outcome' do
-    @player = session[:player]
-    @computer = Player.new("Computer")
-    @computer.update_choice
+    @game = session[:game]
+    @game.play
     erb :play
   end
 end
