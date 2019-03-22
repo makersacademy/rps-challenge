@@ -16,6 +16,28 @@ class RPS < Sinatra::Base;
 
   get '/play' do
     @player_1_name = session[:player_1_name]
+    # session[:id] = params[:id]
+    # p session[:id]
     erb :play
+  end
+
+  get '/choice-paper' do
+    session[:pick] = "paper"
+    redirect '/results'
+  end
+
+  get '/choice-rock' do
+    session[:pick] = "rock"
+    redirect '/results'
+  end
+
+  get '/choice-scissors' do
+    session[:pick] = "scissors"
+    redirect '/results'
+  end
+
+  get '/results' do
+    @pick = session[:pick]
+    erb :results
   end
 end
