@@ -6,4 +6,9 @@ describe Player do
 
   it {is_expected.to respond_to(:pick).with(1).argument }
 
+  it 'checks if the player can choose from rps' do
+    player = Player.new
+    player.pick('paper')
+    expect(player.move).to eq ('paper')
+  end
 end
