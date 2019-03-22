@@ -4,4 +4,8 @@ class Game
     @player = player
     @computer = computer
   end
+
+  def result
+    return :draw if @player.move == @computer.move
+  end
 end

@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/computer.rb'
 class Rps < Sinatra::Base
   enable :sessions
+  configure(:development) { set :session_secret, "something" }
   get '/' do
     erb(:index)
   end

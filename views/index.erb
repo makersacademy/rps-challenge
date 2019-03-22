@@ -1,7 +1,21 @@
-<div>
-  <form action="/names" method="post">
-    <label for="player_name">Type your name to play!</label>
-    <input type="text" name="player_name">
-    <input type="submit" value="Play!">
-  </form>
-</div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Welcome!</title>
+  </head>
+  <body>
+    <div class="name">
+      <form action="/names" method="post">
+        <label for="player_name">Type your name to play!</label>
+        <br>
+        <br>
+        <input id="text_field" type="text" name="player_name">
+        <br>
+        <br>
+        <input id="button_index" type="submit" value="Play!">
+      </form>
+    </div>
+  </body>
+</html>

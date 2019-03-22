@@ -1,14 +1,24 @@
-Welcome to the game of Rock/Paper/Scissors, <%= @player_name %>
-<div class="choice">
-  <form action="/play">
-    <input type="submit" name="move" value="Rock">
-    <input type="submit" name="move" value="Paper">
-    <input type="submit" name="move" value="Scissors">
-  </form>
-</div>
-<div class="game">
-  <% if @move %>
-    <%= @player_name %> chose <%= @move %>
-    Computer chose <%= @computer.move %>
-  <% end %>
-</div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Game!</title>
+  </head>
+  <body>
+    <div class="game">
+      <h2>Ready to play, <span id="player_name"><%= @player_name %></span>?</h2>
+      <div class="buttons">
+        <form action="/play">
+          <input id="button_game" type="submit" name="move" value="Rock">
+          <input id="button_game" type="submit" name="move" value="Paper">
+          <input id="button_game" type="submit" name="move" value="Scissors">
+        </form>
+        <br>
+      </div class="outcome">
+      <% if @move %>
+        You went with <%= @move %> x Computer went with <%= @computer.move %>
+      <% end %>
+    </div>
+  </body>
+</html>
