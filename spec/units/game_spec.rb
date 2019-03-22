@@ -13,14 +13,32 @@ describe Game do
   end
 
   it "Returns :draw when both players did the same move" do
-    allow(player).to receive(:move).and_return("Rock")
-    allow(computer).to receive(:move).and_return("Rock")
-    allow(player).to receive(:move).and_return("Paper")
-    allow(computer).to receive(:move).and_return("Paper")
-    allow(player).to receive(:move).and_return("Scissors")
-    allow(computer).to receive(:move).and_return("Scissors")
-    expect(game.result).to eq(:draw)
+    allow(player).to receive(:choice).and_return("Rock")
+    allow(computer).to receive(:choice).and_return("Rock")
+    allow(player).to receive(:choice).and_return("Paper")
+    allow(computer).to receive(:choice).and_return("Paper")
+    allow(player).to receive(:choice).and_return("Scissors")
+    allow(computer).to receive(:choice).and_return("Scissors")
+    expect(game.result).to eq("It's a draw!")
   end
 
+  it "Player wins" do
+    allow(player).to receive(:choice).and_return("Rock")
+    allow(computer).to receive(:choice).and_return("Scissors")
+    allow(player).to receive(:choice).and_return("Paper")
+    allow(computer).to receive(:choice).and_return("Rock")
+    allow(player).to receive(:choice).and_return("Scissors")
+    allow(computer).to receive(:choice).and_return("Paper")
+    expect(game.result).to eq("You won!")
+  end
 
+  it "Computer wins" do
+    allow(computer).to receive(:choice).and_return("Rock")
+    allow(player).to receive(:choice).and_return("Scissors")
+    allow(computer).to receive(:choice).and_return("Paper")
+    allow(player).to receive(:choice).and_return("Rock")
+    allow(computer).to receive(:choice).and_return("Scissors")
+    allow(player).to receive(:choice).and_return("Paper")
+    expect(game.result).to eq("The computer won :(")
+  end
 end

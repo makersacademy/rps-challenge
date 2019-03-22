@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="game">
-      <h2>Ready to play, <span id="player_name"><%= @player_name %></span>?</h2>
+      <h2>Ready to play, <span id="player_name"><%= @game.player.name %></span>?</h2>
       <div class="buttons">
         <form action="/play">
           <input id="button_game" type="submit" name="move" value="Rock">
@@ -16,8 +16,10 @@
         </form>
         <br>
       </div class="outcome">
-      <% if @move %>
-        You went with <%= @move %> x Computer went with <%= @computer.move %>
+      <% if @game.player.choice %>
+        You went with <%= @game.player.choice %> x Computer went with <%= @game.computer.choice %>
+        <br>
+        <%= @game.result %>
       <% end %>
     </div>
   </body>

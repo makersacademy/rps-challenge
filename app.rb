@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/computer.rb'
+require './lib/player.rb'
+require './lib/game.rb'
 class Rps < Sinatra::Base
   enable :sessions
   configure(:development) { set :session_secret, "something" }
@@ -8,14 +10,14 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_name] = params[:player_name]
+    session[:player_name] = Player.new(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
-    @computer = Computer.new
-    @move = params[:move]
+    @game = Game.new(session[:player_name], Computer.new)
+    @game.player.move(params[:move])
+    @computer_move = @game.computer.choice
     erb(:play)
   end
 

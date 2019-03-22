@@ -4,6 +4,6 @@ feature 'computer makes a move' do
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content("You went with Rock")
-    expect(page).to have_content("Computer went with Rock")
+    expect(page).to have_content("Computer went with Paper")
   end
 end
