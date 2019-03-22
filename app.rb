@@ -20,7 +20,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    @player_choice = params[:choice]
+    session[:player_choice] = params[:choice]
+    redirect '/outcome'
+  end
+
+  get '/outcome' do
+    @player_choice = session[:player_choice]
     erb :play
   end
 end

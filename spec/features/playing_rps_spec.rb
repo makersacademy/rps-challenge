@@ -10,4 +10,10 @@ feature 'Presented with options' do
     click_button "Rock"
     expect(page).to have_content "You selected Rock"
   end
+
+  scenario 'When player selects Rock check the computer response' do
+    fill_in_name_and_submit
+    click_button "Rock"
+    expect(page).to have_content("You win") || have_content("You lose")
+  end
 end
