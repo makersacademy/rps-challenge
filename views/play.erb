@@ -9,5 +9,6 @@ Welcome to the game of Rock/Paper/Scissors, <%= @player_name %>
 <div class="game">
   <% if @move %>
     <%= @player_name %> chose <%= @move %>
+    Computer chose <%= @computer.move %>
   <% end %>
 </div>

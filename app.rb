@@ -1,5 +1,5 @@
 require 'sinatra/base'
-
+require './lib/computer.rb'
 class Rps < Sinatra::Base
   enable :sessions
   get '/' do
@@ -13,6 +13,7 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
+    @computer = Computer.new
     @move = params[:move]
     erb(:play)
   end
