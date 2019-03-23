@@ -4,7 +4,6 @@ class RPS
 
   def initialize(player1, player2)
     @players = [player1, player2]
-
     result
   end
 

@@ -10,16 +10,16 @@ body {
   background-position: center top;
 }
 .PlayerSelect {
-	font-size: 2em;
+	font-size: 3em;
 	font-weight: bold;
 	color: #101210;
   left: 0;
-  line-height: 200px;
-  margin-top: -100px;
+  line-height: 100px;
+  margin-top: -90px;
   position: absolute;
   text-align: center;
   top: 60%;
-  width: 100%;
+  width: 95%;
 }
 .Main {
 
@@ -35,7 +35,7 @@ input#twoplayer    {
 background:url(https://github.com/fo0s/rps-challenge/blob/master/images/player2.jpg?raw=true);
 background-repeat: no-repeat;
 font-size: 0px;
-width:100px;
+width:105px;
 height:100px;
 }
 
@@ -43,23 +43,19 @@ height:100px;
 
 <div class="PlayerSelect">
   <form name="form1" method="post" action="/players">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <table width="100%" border="5" cellspacing="0" cellpadding="0">
       <tr>
-        <td colspan="3" align="center" class="PlayerSelect">Select amount of players</td>
+        <td colspan="0" align="center" class="PlayerSelect">Select a player</td>
       </tr>
       <tr>
         <td align="right"><input type="submit" id="oneplayer" name="players" value="1" /></td>
-        <td width="20">&nbsp;</td>
+        <td width="50">&nbsp;</td>
         <td align="left"><input type="submit" id="twoplayer" name="players" value="2" /></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td width="20">&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td width="20"></td>
+        <td width="80"></td>
+				<td height="150"></td>
         <td>&nbsp;</td>
       </tr>
     </table>
@@ -68,7 +64,7 @@ height:100px;
 <% if @players == "1" %>
 <div class="Main">
 <form action='/names' method="post">
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <table width="100%" border="5" cellspacing="0" cellpadding="0">
     <tr>
       <td>&nbsp;</td>
     </tr>
@@ -77,7 +73,7 @@ height:100px;
         <input name="player1_name" type="text" style="font-size: 16pt" size="15" maxlength="15"></td>
     </tr>
     <tr>
-      <td height="60" align="center" valign="bottom"><input type="submit" id="play" value="Submit"></td>
+      <td height="500" align="center" valign="bottom"><input type="submit" id="play" value="Submit"></td>
     </tr>
   </table>
 </form>
@@ -85,26 +81,26 @@ height:100px;
 <% elsif @players == "2" %>
 <div class="Main">
 <form action='/names' method="post">
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <table width="100%" border="4" cellspacing="12" cellpadding="12">
     <tr>
       <td>&nbsp;</td>
       <td width="20">&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td align="center" valign="top" class="PlayerSelect">Player 1</td>
+      <td align="left" valign="top" class="PlayerSelect">Player 1</td>
       <td width="20" valign="top">&nbsp;</td>
-      <td height="60" align="center" valign="top" class="PlayerSelect">Player 2</td>
+      <td height="60" align="top" valign="bottom" class="PlayerSelect">Player 2</td>
     </tr>
     <tr>
-      <td align="center"><span class="PlayerSelect">Name: <input name="player1_name" type="text" style="font-size: 16pt" size="15" maxlength="15">
+      <td align="left"><span class="PlayerSelect">Name: <input name="player1_name" type="text" style="font-size: 16pt" size="15" maxlength="15">
       </span></td>
       <td width="20">&nbsp;</td>
-      <td align="center"><span class="PlayerSelect">Name: <input name="player2_name" type="text" style="font-size: 16pt" size="15" maxlength="15">
+      <td align="right"><span class="PlayerSelect">Name: <input name="player2_name" type="text" style="font-size: 16pt" size="15" maxlength="15">
       </span></td>
     </tr>
     <tr>
-      <td height="60" colspan="3" align="center" valign="bottom"><input type="submit" id="play" value="Submit"></td>
+      <td height="60" colspan="1" align="center" valign="bottom"><input type="submit" id="play" value="Submit"></td>
       </tr>
   </table>
 </form>
