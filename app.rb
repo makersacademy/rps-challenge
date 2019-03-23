@@ -5,7 +5,7 @@ class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
-   erb :index
+    erb :index
   end
 
   post '/play' do
