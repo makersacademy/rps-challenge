@@ -1,1 +1,13 @@
 <h1>Player 1 is <%= @player1%></h1>
+
+<form action="/selection" method="post">
+
+  <select name="option">
+    <option value="rock">Rock</option>
+    <option value="saab">Paper</option>
+    <option value="mercedes">Scissors</option>
+  </select>
+  
+  <input type="submit" value="Submit">
+
+</form>
