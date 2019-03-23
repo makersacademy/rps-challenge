@@ -24,8 +24,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/score" do
-    game = Score.new(session[:turn])
-    @name = session[:name]
+    # game = Score.new(session[:turn])
+    game = Score.new(session[:turn], session[:name])
+    # @name = session[:name]
     @score = session[:turn]
     @result = game.result
     @computer_score = game.computer_score

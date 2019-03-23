@@ -4,7 +4,7 @@ describe Score do
   it { is_expected.to respond_to(:play_computer) }
   it { is_expected.to respond_to(:result) }
   
-  subject(:score) { Score.new("Rock") }
+  subject(:score) { Score.new("Rock", "Matt") }
 
   it "gives a computer score of 'Paper'" do
     allow(score).to receive(:play_computer) { "Paper" }
@@ -23,7 +23,7 @@ describe Score do
 
   it "displays player as the winner" do
     allow(score).to receive(:play_computer) { "Scissors" }
-    expect(score.result).to eq "Congratulations, you win"
+    expect(score.result).to eq "Congratulations, you win Matt!"
   end
 
   it "displays result as a draw" do
