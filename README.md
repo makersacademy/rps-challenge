@@ -1,4 +1,133 @@
-# RPS Challenge
+Rock Paper Scissors - Matt Thompson
+===================================
+
+## Description
+
+This Ruby web app allows users to regsiter their name and play rock, paper, scissors against the computer.
+
+
+#### Technologies used
+
+- Ruby
+- Rspec (test framework)
+- Sinatra (Ruby web framework)
+- Capybara (web feature test library)
+
+
+#### Personal motivation
+
+- Building a web app
+- Separation of concerns using the MVC model
+- Encapsulation and delegation between classes
+- Test driving using automated feature tests as well as unit test
+- Using test doubles and dependency injection to isolate classes in tests
+- Testing behaviour over state
+
+
+## Steps to download
+
+1. Fork this [repo](https://github.com/mattTea/rps-challenge)
+
+2. `git clone git@github.com:<userName>/rps-challenge.git` onto your local machine
+
+
+## Steps to run
+
+1. **To set up base objects and data**
+
+Run `irb -r ./lib/menu.rb` in root project directory
+
+```ruby
+2.5.0 :001 > m = Menu.new
+ => #<Menu:0x00007fb6d5848148 @dishes=[]> 
+
+```
+
+2. **To run example methods**
+
+`select` dish to add to order
+```ruby
+2.5.0 :001 > m.select_dish(m.dishes[0])
+ => #<Order:0x00007f8d798f62a0 @selected_dishes=[#<Dish:0x00007f8d799068d0 @name="burger", @price=10>], @confirmed=false, 
+```
+
+`view_total` cost of order
+```ruby
+2.5.0 :001 > m.orders[0].view_total
+ => 10
+```
+
+`confirm_order`
+```ruby
+2.5.0 :001 > m.orders[0].confirm_order
+ => <Twilio.Api.V2010.MessageInstance account_sid: **** api_version: 2010-04-01 body: Sent from your Twilio trial account - Thank you! Your order was placed and will be delivered before 14:59 date_created: 2019-03-17 13:59:10 +0000 date_updated: 2019-03-17 13:59:10 +0000 date_sent:  direction: outbound-api error_code: 0 error_message:  from: **** messaging_service_sid:  num_media: 0 num_segments: 1 price: 0.0 price_unit: USD sid: **** status: queued subresource_uris: {"media"=>"/2010-04-01/Accounts/****/Media.json"} to: **** uri: /2010-04-01/Accounts/****.json>
+```
+`orders` to view list of orders
+```ruby
+2.5.0 :001 > m.orders[0]
+ => #<Order:0x00007f817a9062a0 @selected_dishes=[#<Dish:0x00007f817a9168a8 @name="burger", @price=10>, #<Dish:0x00007f817a90e630 @name="chips", @price=5>, #<Dish:0x00007f817a90e630 @name="chips", @price=5>], @confirmed=true, @total=20> 
+```
+
+
+## To run tests
+
+Run `rspec` directly in root of your local project
+
+
+## My approach
+
+1. Break down user stories into an [object model](https://github.com/mattTea/rps-challenge/blob/master/problem/problem_breakdown.md) and simple feature steps
+
+2. Add capybara config requirements into `spec_helper.rb`
+    - `config.include Capybara::DSL`
+    - `require File.join(File.dirname(__FILE__), '..', 'app.rb')`
+
+3. Write first feature test - testing infrastructure on `home (/)` route
+
+4. Make it pass by creating `app.rb` controller file with "/" route
+
+5. Extend by creating `index.erb` view file
+
+6. Check in client by running `ruby app.rb` and visiting `localhost:4567`
+
+7. Continue with second feature test - testing enter name form
+
+
+#### Structure
+
+- Controller: `app.rb`
+- Views: `views/<name>.erb`
+- Models: `lib/<name>.rb`
+
+
+#### User stories
+
+```
+User story 1: Register name
+---------------------------
+As a marketeer,
+So that I can see my name in lights,
+I would like to register my name before playing an online game.
+
+
+User story 2: Play game
+-----------------------
+As a marketeer,
+So that I can enjoy myself away from the daily grind,
+I would like to be able to play rock/paper/scissors.
+```
+
+
+
+
+------
+
+------
+
+
+Original Readme - RPS Challenge
+===============================
+
 
 Instructions
 -------
