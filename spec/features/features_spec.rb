@@ -62,9 +62,68 @@ feature 'playing the game' do
     end
 
     context "and the user chooses 'paper'" do
-      scenario "the computer wins" do
+      scenario "the user wins" do
         click_button 'Paper'
         expect(page).to have_content "You win"
+      end
+    end
+
+    context "and the user chooses 'scissors'" do
+      scenario "the computer wins" do
+        click_button 'Scissors'
+        expect(page).to have_content "You lose"
+      end
+    end
+  end
+
+  context "if the computer chooses 'paper'" do
+    before do
+      allow(Kernel).to receive(:rand).and_return(1)
+    end
+    context "and the user chooses 'rock'" do
+      scenario "the computer wins" do
+        click_button 'Rock'
+        expect(page).to have_content "You lose"
+      end
+    end
+
+    context "and the user chooses 'paper'" do
+      scenario "it's a draw" do
+        click_button 'Paper'
+        expect(page).to have_content "It's a draw"
+      end
+    end
+
+    context "and the user chooses 'scissors'" do
+      scenario "the user wins" do
+        click_button 'Scissors'
+        expect(page).to have_content "You win"
+      end
+    end
+  end
+
+  context "if the computer chooses 'scissors'" do
+    before do
+      allow(Kernel).to receive(:rand).and_return(2)
+    end
+    context "and the user chooses 'rock'" do
+      scenario "the user wins" do
+        click_button 'Rock'
+        expect(page).to have_content "You win"
+      end
+    end
+
+    context "and the user chooses 'paper'" do
+      scenario "the computer wins" do
+        click_button 'Paper'
+        expect(page).to have_content "You lose"
+      end
+    end
+
+    context "and the user chooses 'scissors'" do
+      scenario "it's a draw" do
+        click_button 'Scissors'
+        expect(page).to have_content "It's a draw"
       end
     end
   end
