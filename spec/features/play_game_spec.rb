@@ -31,10 +31,25 @@ feature 'Make choice' do
   end
 end
 
-xfeature 'Computer returns random weapon' do
-  scenario 'computer returns rock, paper or scissors' do
+feature 'Computer returns random weapon' do
+  scenario 'computer returns rock' do
     fill_in_name
+    srand(2)
     click_button 'Paper'
-    expect(page).to have_content('Computer chose rock', 'Computer chose paper', 'Computer chose scissors')
+    expect(page).to have_content('Computer chose rock')
+  end
+
+  scenario 'computer returns paper' do
+    fill_in_name
+    srand(1)
+    click_button 'Paper'
+    expect(page).to have_content('Computer chose paper')
+  end
+
+  scenario 'computer returns scissors' do
+    fill_in_name
+    srand(4)
+    click_button 'Paper'
+    expect(page).to have_content('Computer chose scissors')
   end
 end
