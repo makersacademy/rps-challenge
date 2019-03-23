@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
-    'Hello RockPaperScissors!'
+    'Tests work!'
   end
 
   run! if app_file == $0
