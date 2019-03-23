@@ -9,12 +9,19 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @name = params[:name]
+    $player = Player.new(params[:name])
+    @player = $player.name
+    # @name = params[:name]
     erb :names
   end
 
-  get './play' do
+  get '/play' do
     erb :play
+  end
+
+  post "/game" do
+    @move = params[:move]
+    erb :game
   end
 
   run! if app_file == $0
