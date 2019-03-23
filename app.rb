@@ -10,7 +10,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/options' do
-    session[:game] = Game.new(Player.new(params[:name]), Player.new("Computer"))
+    game = Game.new(Player.new(params[:name]), Player.new("Computer"), Rules)
+    session[:game] = game
     redirect '/options'
   end
 
@@ -27,7 +28,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/outcome' do
     @game = session[:game]
-    @game.play(Rules)
+    @game.play
     erb :play
   end
 end

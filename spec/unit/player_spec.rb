@@ -8,7 +8,7 @@ describe Player do
 
   it 'delivers a random choice of option for a computer player' do
     player = Player.new("Computer")
-    expect(player.update_choice("Rock")).to eq("Rock") | eq("Paper") | eq("Scissors")
+    expect(player.update_choice).to eq("Rock") | eq("Paper") | eq("Scissors")
   end
 
   it 'sets the player choice when not the computer' do

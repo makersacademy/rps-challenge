@@ -7,7 +7,7 @@ class Player
   end
 
   def update_choice(choice = "")
-    return @choice = ["Rock", "Paper", "Scissors"].sample if @name == "Computer"
+    return random_choice if @name == "Computer"
     @choice = choice
   end
 
