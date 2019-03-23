@@ -33,11 +33,18 @@ feature 'playing the game' do
   context 'after the user makes a choice' do
     before do
       register_player1('Billy')
-      click_button 'Rock'
     end
+
     scenario "the computer might choose 'rock'" do
-      allow(Kernel).to receive(:rand).and_return 0
+      allow(Kernel).to receive(:rand).and_return(0)
+      click_button 'Rock'
       expect(page).to have_content 'The computer selected rock'
+    end
+
+    scenario "the computer might choose 'paper'" do
+      allow(Kernel).to receive(:rand).and_return(1)
+      click_button 'Rock'
+      expect(page).to have_content 'The computer selected paper'
     end
   end
 end
