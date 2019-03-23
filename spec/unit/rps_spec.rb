@@ -2,7 +2,7 @@ require 'rps'
 describe RPS do
 
   subject(:game) { described_class.new(player) }
-  let(:player) {double :player}
+  let(:player) {double :player, :user_choice => "Rock"}
 
 
   describe '#play' do

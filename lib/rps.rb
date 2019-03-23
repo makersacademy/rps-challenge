@@ -7,11 +7,8 @@ class RPS
       3 => "Scissors"
     }
 
-    @player= player
-    
-    @player_choice = player.user_choice #this was sent to the game
-
-    @computer_choice = nil #this get's set up here for the moment
+    @player_choice = player.user_choice
+    @computer_choice = nil 
 
   end
 
@@ -26,10 +23,6 @@ class RPS
   def get_computer_choice
     @computer_choice = play
   end
-
-# - Rock beats Scissors
-# - Scissors beats Paper
-# - Paper beats Rock
 
   def compute_winner
     player1 = @player_choice
