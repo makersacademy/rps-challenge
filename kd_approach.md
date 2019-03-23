@@ -147,7 +147,6 @@ The marketeer can choose one option
 
 1. [X] Feature test that user sees RPS Display and Rock, Paper, Scissors selections
 2. [X] Test that user user can select link e.g. rock
-3. [X] 
 
 ## Game Class - Test Cases
 
