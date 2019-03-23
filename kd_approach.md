@@ -95,6 +95,7 @@ Type: Text input box
 1. [X] Feature test that the infrastructure works / project structure works
 2. [X] Test that user views landing page with input form
 3. [X] Test that user enters name to redirect to play view
+4. [X] Further test that user name can be accessed via session to display in `play.erb`
 
 ### USER STORY 2
 As a marketeer
