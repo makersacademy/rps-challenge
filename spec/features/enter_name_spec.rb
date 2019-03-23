@@ -1,4 +1,4 @@
-require_relative '../app.rb'
+require_relative '../../app.rb'
 
 # As a marketeer
 # So that I can see my name in lights
@@ -6,9 +6,7 @@ require_relative '../app.rb'
 
 feature 'Register name before game' do
   scenario 'player enters name and it displays on screen' do
-    visit('/')
-    fill_in :player_name, with: 'Amy'
-    click_button 'Play!'
+    fill_in_name
     expect(page).to have_content 'Make your selection, Amy'
   end
 end

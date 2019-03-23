@@ -1,4 +1,5 @@
 require 'capybara/rspec'
+require 'features/web_helpers'
 require 'simplecov'
 require 'simplecov-console'
 
