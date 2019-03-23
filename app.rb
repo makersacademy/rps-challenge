@@ -22,12 +22,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choose' do
-    session[:choice] = params['choice'].to_i
+    @game.player1.choose(params['choice'].to_i)
     redirect '/result'
   end
 
   get '/result' do
-    @player1_choice = session[:choice]
+    @player1_choice = @game.player1.choice
     @player2_choice = Kernel.rand(0..2)
     @result_index = (@player1_choice - @player2_choice) % 3
     @result = ["It's a draw", "You win", "You lose"][@result_index]
