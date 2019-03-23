@@ -8,4 +8,8 @@ class Player
   def choose(choice)
     @choice = choice
   end
+
+  def choose_random(options)
+    @choice = rand(options - 1)
+  end
 end
