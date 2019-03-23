@@ -5,14 +5,16 @@ describe Game do
 
   describe '.create' do
     it "creates an instance of itself" do
+      game_instance = double(:game_instance)
+      allow(described_class).to receive(:new).with("John").and_return(game_instance)
       Game.create("John")
-      expect(described_class.instance.player1).to eq "John"
+      expect(Game.instance).to eq game_instance
     end
   end
 
   describe '#player1' do
-    it "returns player 1's name" do
-      expect(game.player1).to eq "China"
+    it "contains player 1's name" do
+      expect(game.player1[:name]).to eq "China"
     end
   end
 
