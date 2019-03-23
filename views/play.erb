@@ -1,1 +1,6 @@
 Hello <%= @player1_name %>
+
+<form id="rock-form" action="/choose" method="post">
+  <input type="hidden" name="choice" value="rock">
+  <button type="submit">Rock</button>
+</form>

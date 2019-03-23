@@ -7,3 +7,15 @@ feature 'signing in' do
     expect(page).to have_content 'Philip'
   end
 end
+
+feature 'playing the game' do
+  context 'after registering' do
+    before do
+      register_player1('Philip')
+    end
+    scenario "user can select 'rock'" do
+      click_button 'Rock'
+      expect(page).to have_content 'You selected rock'
+    end
+  end
+end
