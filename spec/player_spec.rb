@@ -28,4 +28,27 @@ describe Player do
       expect(player.choice).to eq 3
     end
   end
+
+  describe '#choice_human' do
+    context 'if choice == 0' do
+      it "returns 'rock'" do
+        player.choose(0)
+        expect(player.choice_human).to eq 'rock'
+      end
+    end
+
+    context 'if choice == 1' do
+      it "returns 'paper'" do
+        player.choose(1)
+        expect(player.choice_human).to eq 'paper'
+      end
+    end
+
+    context 'if choice == 2' do
+      it "returns 'scissors'" do
+        player.choose(2)
+        expect(player.choice_human).to eq 'scissors'
+      end
+    end
+  end
 end
