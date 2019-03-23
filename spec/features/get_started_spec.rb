@@ -9,7 +9,7 @@ feature 'See name' do
   end
 end
 
-# the marketeer will be presented the choices (rock, paper and scissors)
+# The marketeer will be presented the choices (rock, paper and scissors)
 
 feature 'Be able to select rock' do
   scenario 'on the play page' do

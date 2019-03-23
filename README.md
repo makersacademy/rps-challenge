@@ -32,7 +32,7 @@ We were also given the following hints on functionality
 -   `$ git clone https://github.com/saypop/battle`
 -   `$ cd RPS`
 -   `$ bundle`
--   `$ rackup config.ru`
+-   `$ rackup config.ru` do not try to run this app with shotgun, it will not work.
 
 ### Tests
 -   `$ rspec`
