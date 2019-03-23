@@ -11,7 +11,7 @@ feature 'Presented with choices' do
   end
 end
 
-xfeature 'Make choice' do
+feature 'Make choice' do
   scenario 'player chooses rock' do
     fill_in_name
     click_button 'Rock'

@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -9,13 +10,24 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:player_name]
+    session[:player] = Player.new(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:name]
+    @player = session[:player]
     erb :play
+  end
+
+  post '/choice' do
+    @player = session[:player]
+    @player.choice(params[:choice])
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player = session[:player]
+    erb :result
   end
 
   run! if app_file == $0
