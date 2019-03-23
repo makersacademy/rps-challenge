@@ -10,7 +10,7 @@ The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game 
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -35,6 +35,15 @@ Hints on functionality
 3. Set up Travis to follow the rps-challenge repo
 4. Added travis status badge to README
 5. Set up spec_helper to work with capybara
+6. Set up app.rb and config.ru
+7. Create route to root '/'
+8. Test '/' route shows 'Hello' when server is run
+9. Create feature test for first user story
+10. Create Views folder
+11. Add index.erb to views folder
+12. Add form to index.erb with Name field and Start game button
+13. Add play.erb to views folder
+14. Have play.erb display user name
 
 ## Bonus level 1: Multiplayer
 
@@ -57,22 +66,3 @@ In code review we'll be hoping to see:
 - The code is elegant: every class has a clear responsibility, methods are short etc.
 
 Reviewers will potentially be using this [code review rubric](docs/review.md). Referring to this rubric in advance may make the challenge somewhat easier. You should be the judge of how much challenge you want this weekend.
-
-## Notes on test coverage
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
