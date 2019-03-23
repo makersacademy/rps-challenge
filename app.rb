@@ -12,12 +12,14 @@ class RPS < Sinatra::Base
 
   post '/play' do
     # @turn = Turn.new
-
-
     @move = params[:move]
     @computer_move = computer_move
     @result = game
     erb :result
+  end
+
+  get '/result' do
+    redirect '/'
   end
 
 # how can i move these to a ruby file within lib directory? => i can test them
