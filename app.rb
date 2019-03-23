@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/rps'
+require './lib/player'
+
 
 class Game < Sinatra::Base
 
@@ -16,13 +18,13 @@ class Game < Sinatra::Base
 
   post '/play' do
     session[:game] = RPS.new
-    session[:name] = params[:name]
-    @name = session[:name]
+    session[:name] = Player.new(params[:name])
+    @player = session[:name]
     erb :play
   end
 
   get '/play' do
-    @name = session[:name]
+    @player = session[:name]
     erb :play
   end
 

@@ -47,7 +47,10 @@ Hints on functionality
 15. Create game_spec
 16. Create game model
 17. Create play feature
-18. Create tests and pass them
+18. Write and pass game tests
+19. Create player model
+20. Create player_spec test file
+21. Write and pass player tests
 
 ## Bonus level 1: Multiplayer
 

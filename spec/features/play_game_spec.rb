@@ -11,4 +11,14 @@ feature 'Game play' do
     click_button 'Play'
     expect(page).to have_content 'Player1' 
   end
+
+  scenario 'go back to start after game end' do
+    visit '/'
+
+    fill_in "name",	with: "Player1"
+    click_button 'Start game'
+    click_button 'Play'
+    click_link 'Start again'
+    expect(page).to have_content 'Player1'
+  end
 end
