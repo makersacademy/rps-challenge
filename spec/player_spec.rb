@@ -12,4 +12,12 @@ describe Player do
 
   end
 
+  describe '#move' do
+
+    it 'returns the move' do
+      expect(player_1.move("Rock")).to eq "Rock"
+    end
+
+  end
+ 
 end

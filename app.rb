@@ -11,25 +11,26 @@ class RPSGame < Sinatra::Base
   end
 
   post '/play' do
-    player_1 = Player.new(params[:name], nil)
-    session[:game] = Game.new(player_1)
+    session[:name] = params[:name]
     redirect '/play'
   end
 
   get '/play' do
-    game = session[:game]
-    @player_1 = game.player_1
+    session[:player_1] = Player.new(session[:name], nil)
+    @player_1 = session[:player_1]
     erb(:play)
   end
 
-  post '/winner' do
-    @player_1 = game.player_1
-    @player_1.move = params[:move]
-    redirect '/winner'
+  post '/game_over' do
+    session[:move] = params[:move]
+    redirect '/game_over'
   end
 
-  get '/winner' do
-    erb(:winner)
+  get '/game_over' do
+    @player_1 = session[:player_1]
+    @game = Game.create(@player_1, "CPU")
+    @game.set_move(@player_1, session[:move])
+    erb(:game_over)
   end
 
 end

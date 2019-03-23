@@ -46,8 +46,9 @@ I have decided to use `models` to manage the logic of the game. This will make t
   This is the game engine and will handle playing the game.
 
   Has a:
+  - `set_move` method to set the player move
   - `play` method to play the game
-  - `winner` method gives the winner
+  - `game_over` method gives the outcome of the game
 
 ##### VIEWS
 
@@ -127,7 +128,7 @@ Feature 3:
 - The marketeer will be presented the choices (rock, paper and scissors)
 
 ```
-Links to 'Rock', 'Paper', 'Scissors'
+[X] Links to 'Rock', 'Paper', 'Scissors'
 
 ```
 
@@ -138,16 +139,26 @@ Feature 4:
 The marketeer can choose one option
 
 ```
-- User clicks button / link
+[X] User clicks button / link
 
 ```
+
+## Test Cases
+
+1. [X] Feature test that user sees RPS Display and Rock, Paper, Scissors selections
+2. [X] Test that user user can select link e.g. rock
+3. [X] 
+
+## Game Class - Test Cases
+
+1. [X] Game `set_move` sets the player move
+2. [X] Game `game_over` decides the outcome of the game
 
 Feature 5:
 The game will choose a random option
 
 - Server (Pusheen) chooses an option from Rock, Paper, Scissors
 
-```
 
 Feature 6:
 Winner will be declared
@@ -160,7 +171,9 @@ Winner will be declared
 'The winner is [NAME]'
 
 ```
+## Test Cases
 
+1. [X] Feature test when it is game over, the user sees the outcome of the game
 
 *Enhancement:*
 -

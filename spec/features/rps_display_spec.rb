@@ -1,6 +1,6 @@
-feature 'RPS display' do
+feature 'RPS Display' do
 
-  scenario 'RPS display has RPS selections' do
+  scenario 'User sees RPS Display and Rock, Paper, Scissors selections' do
     visit '/'
     enter_name
     expect(page).to have_selector(:link_or_button, 'Rock')
@@ -8,7 +8,7 @@ feature 'RPS display' do
     expect(page).to have_selector(:link_or_button, 'Scissors')
   end
 
-  scenario 'user selects rock' do
+  scenario 'User selects rock' do
     visit '/'
     enter_name
     click_button 'Rock'
