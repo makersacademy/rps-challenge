@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+body {
+  text-align:center;
+  font-family: 'Rubik', sans-serif;
+  font-weight:200;
+  background-color:Honeydew;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+h1, h2 {
+  padding: 5;
+  position: relative;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+input[type=text] {
+  padding:5px;
+  border:2px solid MediumTurquoise;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 25px;
+}
+
+input[type=text]:focus {
+  border-color:MediumTurquoise;
+  font-size: 25px;
+}
+
+input[type=submit] {
+  font-size: 25px;
+  padding:5px 15px;
+  background:MediumTurquoise;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}

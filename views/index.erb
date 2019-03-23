@@ -1,12 +1,20 @@
 <head>
+  <link rel = "stylesheet"
+   type = "text/css"
+   href = "stylesheet.css" />
   <title>Rock, Paper, Scissors!</title>
 </head>
 
 <body>
-  <h1>It's time to play Rock, Paper, Scissors!</h1>
-  <h2>Tell us your name to play</h2>
-  <form action="/name" method="post">
-    <input type="text" name="player_name">
-    <input type="submit" value="Play!">
-  </form>
+  <div class="container">
+    <div class="content">
+      <h1>It's time to play Rock, Paper, Scissors!</h1>
+      <h2>Tell us your name to play</h2><br>
+        <form action="/name" method="post">
+          <input type="text" name="player_name"><br>
+          <br>
+          <input type="submit" value="Play!"><br>
+        </form>
+    </div>
+  </div>
 </body>

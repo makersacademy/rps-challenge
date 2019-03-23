@@ -1,8 +1,15 @@
 <head>
+  <link rel = "stylesheet"
+   type = "text/css"
+   href = "stylesheet.css" />
   <title>Rock, Paper, Scissors!</title>
 </head>
 
 <body>
-  <h1>You chose <%= @player.weapon.downcase %></h1>
-  <h1>Computer chose <%= @computer.random_choice %></h1>
+  <div class="container">
+    <div class="content">
+      <h1>You chose <%= @player.weapon.downcase %></h1>
+      <h1>Computer chose <%= @computer.random_choice %></h1>
+    </div>
+  </div>
 </body>
