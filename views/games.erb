@@ -1,6 +1,11 @@
 <h1> Games </h1>
 <h2>Hi <%= @user.name %>, choose a game below... </h2>
 <br>
-<form action='/rock_paper_scissors'>
+<form action='/games/rock_paper_scissors'>
   <input type="submit" name="rock_paper_scissors" value="Rock Paper Scissors">
 </form>
+
+<div>
+  <br>
+  <a href='/'> Log out </a>
+</div>

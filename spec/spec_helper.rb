@@ -27,5 +27,5 @@ RSpec.configure do |config|
   require 'features/web_helpers.rb'
 
   # tell Capybara about our app class
-  Capybara.app = RockPaperScissors
+  Capybara.app = MarketingGames
 end

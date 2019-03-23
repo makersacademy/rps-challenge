@@ -1,9 +1,8 @@
 require 'sinatra/base'
 require_relative 'lib/user'
+require_relative 'lib/rock_paper_scissors'
 
-class RockPaperScissors < Sinatra::Base
-
-  enable :sessions
+class MarketingGames < Sinatra::Base
 
   get '/' do
     erb(:index)
@@ -19,9 +18,21 @@ class RockPaperScissors < Sinatra::Base
     erb(:games)
   end
 
-  get '/rock_paper_scissors' do
+  get '/games/rock_paper_scissors' do
     @user = User.instance
     erb(:rock_paper_scissors)
   end
 
+  post '/games/rock_paper_scissors_result' do
+    RockPaperScissors.create(params[:choice]).play
+    redirect('/games/rock_paper_scissors_result')
+  end
+
+  get '/games/rock_paper_scissors_result' do
+    @rps = RockPaperScissors.instance
+    @user = User.instance
+    erb(:rock_paper_scissors_result)
+  end
+
+  run! if app_file == $0
 end
