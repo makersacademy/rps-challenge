@@ -9,7 +9,7 @@ class Game
   def initialize(player_1, player_2 = nil, bot_class = Bot)
     @player_1 = player_1
     @player_2 = player_2
-    @player_2 = bot_class.new if @player_2 == nil
+    @player_2 = bot_class.new if @player_2.nil?
   end
 
   def self.create(player_1, player_2 = nil, bot_class = Bot)

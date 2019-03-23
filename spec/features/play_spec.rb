@@ -25,21 +25,21 @@ end
 feature 'The bots move will be noted' do
 
   scenario 'when they choose paper' do
-    srand(1)
+    srand(0)
     enter_name_and_click_go
     click_button 'ROCK!'
     expect(page).to have_content('YOUR OPPONENT CHOSE PAPER!')
   end
 
   scenario 'when they choose rock' do
-    srand(2)
+    srand(1)
     enter_name_and_click_go
     click_button 'PAPER!'
     expect(page).to have_content('YOUR OPPONENT CHOSE ROCK!')
   end
 
   scenario 'when they choose scissors' do
-    srand(3)
+    srand(4)
     enter_name_and_click_go
     click_button 'PAPER!'
     expect(page).to have_content('YOUR OPPONENT CHOSE SCISSORS!')

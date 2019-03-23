@@ -18,8 +18,14 @@ class Result
   end
 
   def player_1_wins?
-    return true if Weapon::RULES[@player_1_choice.to_sym] == @player_2_choice.to_sym
+    return true if Weapon::RULES[sym(@player_1_choice)] == sym(@player_2_choice)
     false
+  end
+
+  private
+
+  def sym(string)
+    string.to_sym
   end
 
 end
