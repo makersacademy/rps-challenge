@@ -1,24 +1,25 @@
 class Score
-  attr_reader :computer_score
+  attr_reader :computer_score, :result
 
   def initialize(player_score)
-    @turn_options = ["Rock", "Paper", "Scissors"]
     @player_score = player_score
   end
 
-  def computer_turn
-    @turn_options.sample
+  def play_computer
+    ["Rock", "Paper", "Scissors"].sample
   end
 
   def result
-    # need full game logic
-    @computer_score = computer_turn
-    if @computer_score == "Scissors"
-      "Congratulations, you win Matt!"
-    elsif @computer_score == "Paper"
-      "Computer wins!"
+    @computer_score = play_computer
+    options = [@player_score, @computer_score]
+
+    if options == ["Rock", "Paper"] || options == ["Paper", "Scissors"] || options == ["Scissors", "Rock"]
+      @result = "Computer wins!"
+    elsif options == ["Paper", "Rock"] || options == ["Scissors", "Paper"] || options == ["Rock", "Scissors"]
+      @result = "Congratulations, you win"
     else
-      "A draw!"
+      @result = "A draw!"
     end
+    return @result
   end
 end

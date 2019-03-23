@@ -19,16 +19,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/turn" do
-    session[:turn] = params[:turn]
+    session[:turn] = params[:turn].capitalize
     redirect("/score")
   end
 
   get "/score" do
     game = Score.new(session[:turn])
     @name = session[:name]
-    @score = session[:turn].capitalize
-    @computer_score = game.computer_turn
+    @score = session[:turn]
     @result = game.result
+    @computer_score = game.computer_score
     erb(:score)
   end
 
