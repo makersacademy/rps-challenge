@@ -24,7 +24,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @player1_choice = session[:choice]
-    @player2_choice = ['rock', 'paper', 'scissors'][Kernel.rand(0..2)]
+    @player2_choice = Kernel.rand(0..2)
     erb :result
   end
 
