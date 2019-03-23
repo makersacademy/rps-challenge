@@ -50,20 +50,21 @@ feature 'playing the game' do
     end
   end
 
-  context "if the user chooses 'rock'" do
-    context "and the computer chooses 'rock'" do
+  context "if the computer chooses 'rock'" do
+    before do
+      allow(Kernel).to receive(:rand).and_return(0)
+    end
+    context "and the user chooses 'rock'" do
       scenario "it's a draw" do
-        allow(Kernel).to receive(:rand).and_return(0)
         click_button 'Rock'
         expect(page).to have_content "It's a draw"
       end
     end
 
-    xcontext "and the computer chooses 'paper'" do
+    context "and the user chooses 'paper'" do
       scenario "the computer wins" do
-        allow(Kernel).to receive(:rand).and_return(1)
-        click_button 'Rock'
-        expect(page).to have_content "The computer wins"
+        click_button 'Paper'
+        expect(page).to have_content "You win"
       end
     end
   end
