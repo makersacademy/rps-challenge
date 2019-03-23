@@ -1,82 +1,27 @@
 <head>
-<style>
-body {
-  text-align: center;
-}
-html, body {
-    height: 100%;
-}
-.main {
-    height: 100%;
-    width: 100%;
-    display: table;
-}
-.wrapper {
-    display: table-cell;
-    height: 100%;
-    vertical-align: middle;
-}
-
-p1{font-size:38px}
-p2{font-size:24px}
-html, body, h1, h2, h3, h4, h5, h6, p1, p2 {
-  font-family: Arial, Helvetica, sans-serif;
-}
-.glow {
-  font-size: 80px;
-  color: #fff;
-  text-align: center;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #dfec12, 0 0 40px #dfec12, 0 0 50px #dfec12, 0 0 60px #dfec12, 0 0 70px #dfec12;
-  }
-  
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #c5d01c, 0 0 40px #c5d01c, 0 0 50px #c5d01c, 0 0 60px #c5d01c, 0 0 70px #c5d01c, 0 0 80px #c5d01c;
-  }
-}
-img{border:solid 1px white; margin:10px;}
-.selected{
-   box-shadow:0px 12px 22px 1px #333;
-}
-.brightness {
-    background-color: white;
-    display: inline-block;
-
-}
-.brightness img:hover {
-    opacity: .5;
-}
-
-</style>
-</head>
-<body>
-</style>
+  <link rel = "stylesheet"
+    type = "text/css"
+    href = "styles.css" />
 </head>
 
-<div class = "main">
-<div class = "wrapper">
 <body>
-<div>
-<p1>Rock, Paper, Scissors</p1>
-</div>
-<p2 class="glow"><%=@name%></p2>
-<br>
-<p2>Choose your move</p2>
-<br>
-<br>
+  <div class = "main">
+    <div class = "wrapper">
+      <div>
+        <p1>Rock, Paper, Scissors</p1>
+      </div>
+      <p2 class="glow"><%=@name%></p2>
+      <br>
+      <p2>Choose your move</p2>
+      <br>
+      <br>
 
-<form action='/result' method='post'>
-<input type="image" src="rock.jpg" name="rock" class="btTxt submit" id="saveForm" />
-<input type="image" src="paper.jpg" name="paper" class="btTxt submit" id="saveForm" />
-<input type="image" src="scissors.jpg" name="scissors" class="btTxt submit" id="saveForm" />
-</form>
+      <form action="/result" method="post" class="brightness">
+        <input type="image" src="rock.jpg" name="rock" class="btTxt submit" id="saveForm" />
+        <input type="image" src="paper.jpg" name="paper" class="btTxt submit" id="saveForm" />
+        <input type="image" src="scissors.jpg" name="scissors" class="btTxt submit" id="saveForm" />
+      </form>
 
-
-</div>
-</div>
+    </div>
+  </div>
+</body>

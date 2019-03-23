@@ -1,54 +1,29 @@
 <head>
-<style>
-body {
-  text-align: center;
-}
-html, body {
-    height: 100%;
-}
-.main {
-    height: 100%;
-    width: 100%;
-    display: table;
-}
-.wrapper {
-    display: table-cell;
-    height: 100%;
-    vertical-align: middle;
-}
-
-p1{font-size:38px}
-p2{font-size:24px}
-html, body, h1, h2, h3, h4, h5, h6, p1, p2 {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-input[type="text"] {
-  width: 15% ;
-}
-
-</style>
+  <link rel = "stylesheet"
+  type = "text/css"
+  href = "styles.css" />
 </head>
 
-<div class = "main">
-<div class = "wrapper">
 <body>
-<div>
-<p1>Rock, Paper, Scissors</p1>
-</div>
-<br>
-<br>
-<img src="rps.jpg" />
-<br>
-<br>
-<br>
-<div>
-<p2>Enter your name to play</p2>
-<form action='/name' method='post'>
-<input type='text' name='name' />
-<input type='submit' value='Play' />
-</form>
-</div>
+  <div class = "main">
+    <div class = "wrapper">
+      <div>
+        <p1>Rock, Paper, Scissors</p1>
+      </div>
+      <br>
+      <br>
+      <img src="rps.jpg" />
+      <br>
+      <br>
+      <br>
+      <div>
+        <p2>Enter your name to play</p2>
+        <form action='/name' method='post'>
+          <input type='text' name='name' />
+          <input type='submit' value='Play' />
+        </form>
+      </div>
+    
+    </div>
+  </div>
 </body>
-</div>
-</div>
