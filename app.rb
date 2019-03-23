@@ -28,8 +28,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    @result_index = (@game.player1.choice - @game.player2.choice) % 3
-    @result = ["It's a draw", "You win", "You lose"][@result_index]
     erb :result
   end
 
