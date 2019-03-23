@@ -46,6 +46,68 @@ describe Game do
           expect(game.result).to eq "It's a draw"
         end
       end
+      context 'player 2 chooses paper' do
+        it 'p2 wins' do
+          allow(player2).to receive('choice').and_return(1)
+          expect(game.result).to eq "You lose"
+        end
+      end
+      context 'player 2 chooses scissors' do
+        it 'p1 wins' do
+          allow(player2).to receive('choice').and_return(2)
+          expect(game.result).to eq "You win"
+        end
+      end
+    end
+
+    context 'player 1 chooses paper' do
+      before do
+        allow(player1).to receive('choice').and_return(1)
+      end
+
+      context 'player 2 chooses rock' do
+        it 'p1 wins' do
+          allow(player2).to receive('choice').and_return(0)
+          expect(game.result).to eq "You win"
+        end
+      end
+      context 'player 2 chooses paper' do
+        it 'draw' do
+          allow(player2).to receive('choice').and_return(1)
+          expect(game.result).to eq "It's a draw"
+        end
+      end
+      context 'player 2 chooses scissors' do
+        it 'p2 wins' do
+          allow(player2).to receive('choice').and_return(2)
+          expect(game.result).to eq "You lose"
+        end
+      end
+    end
+
+    context 'player 1 chooses scissors' do
+      before do
+        allow(player1).to receive('choice').and_return(2)
+      end
+
+      context 'player 2 chooses rock' do
+        it 'p2 wins' do
+          allow(player2).to receive('choice').and_return(0)
+          expect(game.result).to eq "You lose"
+        end
+      end
+      context 'player 2 chooses paper' do
+        it 'p1 wins' do
+          allow(player2).to receive('choice').and_return(1)
+          expect(game.result).to eq "You win"
+        end
+      end
+      context 'player 2 chooses scissors' do
+        it 'draw' do
+          allow(player2).to receive('choice').and_return(2)
+          expect(game.result).to eq "It's a draw"
+        end
+      end
     end
   end
 
