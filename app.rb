@@ -10,8 +10,14 @@ class RPS < Sinatra::Base;
     erb :home
   end
 
-  get '/play' do
+  post '/start' do
     @game = Game.create(Player.new(params[:player_1_name]))
+    @name = @game.player_1.name.upcase
+    erb :play
+  end
+
+  get '/play' do
+    @game = Game.instance
     @name = @game.player_1.name.upcase
     erb :play
   end
@@ -37,8 +43,9 @@ class RPS < Sinatra::Base;
   get '/result' do
     @game = Game.instance
     @player_1_choice = @game.player_1.choice.upcase
-    @player_2_choice = @game.player_2.choice.upcase    
-    erb :result
+    @player_2_choice = @game.player_2.weapon.upcase
+    @result = @game.result
+    erb @result
   end
 
   run! if app_file == $0

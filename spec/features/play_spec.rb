@@ -23,22 +23,50 @@ end
 
 # the game will choose a random option
 feature 'The bots move will be noted' do
-  scenario 'when they choose rock' do
-    enter_name_and_click_go
-    srand(0)
-    click_button 'ROCK!'
-    expect(page).to have_content('YOUR OPPONENT CHOSE ROCK!')
-  end
+
   scenario 'when they choose paper' do
-    enter_name_and_click_go
     srand(1)
-    click_button 'PAPER!'
+    enter_name_and_click_go
+    click_button 'ROCK!'
     expect(page).to have_content('YOUR OPPONENT CHOSE PAPER!')
   end
-  scenario 'when they choose scissors' do
+
+  scenario 'when they choose rock' do
+    srand(2)
     enter_name_and_click_go
-    srand(4)
-    click_button 'SCISSORS!'
+    click_button 'PAPER!'
+    expect(page).to have_content('YOUR OPPONENT CHOSE ROCK!')
+  end
+
+  scenario 'when they choose scissors' do
+    srand(3)
+    enter_name_and_click_go
+    click_button 'PAPER!'
     expect(page).to have_content('YOUR OPPONENT CHOSE SCISSORS!')
+  end
+end
+
+# a winner will be declared
+
+feature 'The result fo the match will be returned' do
+
+  scenario 'when the player wins' do
+    srand(2)
+    enter_name_and_click_go
+    click_button 'SCISSORS!'
+    expect(page).to have_content('YOU WIN!')
+  end
+
+  scenario 'when the player loses' do
+    srand(1)
+    enter_name_and_click_go
+    click_button 'SCISSORS!'
+    expect(page).to have_content('YOU LOSE!')
+  end
+  scenario 'when there is a draw' do
+    srand(4)
+    enter_name_and_click_go
+    click_button 'SCISSORS!'
+    expect(page).to have_content("It's a draw.")
   end
 end

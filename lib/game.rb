@@ -1,5 +1,6 @@
 require_relative 'player'
 require_relative 'bot'
+require_relative 'result'
 
 class Game
 
@@ -12,11 +13,15 @@ class Game
   end
 
   def self.create(player_1, player_2 = nil, bot_class = Bot)
-    @game = Game.new(player_1, player_2 = nil, bot_class = Bot)
+    @game = Game.new(player_1, player_2, bot_class)
   end
 
   def self.instance
     @game
+  end
+
+  def result(result_class = Result)
+    result_class.run(player_1.choice, player_2.choice)
   end
 
 end

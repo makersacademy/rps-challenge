@@ -1,7 +1,17 @@
+require_relative 'weapon'
+
 class Bot
 
+  def initialize
+    @weapon = Weapon::WEAPONS.sample
+  end
+
+  def weapon
+    @weapon = Weapon::WEAPONS.sample
+  end
+
   def choice
-    ['rock', 'paper', 'scissors'].sample
+    @weapon
   end
 
 end
