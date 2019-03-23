@@ -29,10 +29,12 @@ class Game < Sinatra::Base
   end
 
   post '/result' do
+    
     @player = session[:name]
     @player.choice(params[:result])
-
-    @game = RPS.new # will hold choices and result
+  
+    @game = RPS.new(@player) # will hold choices and result
+    p @game
     erb :result
   end
 

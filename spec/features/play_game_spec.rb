@@ -21,4 +21,8 @@ feature 'Game play' do
     click_link 'Start again'
     expect(page).to have_content 'Player1'
   end
+
+  scenario 'player 1 wins' do
+
+  end
 end

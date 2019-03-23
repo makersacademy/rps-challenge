@@ -38,6 +38,15 @@ Hints on functionality
 6. Set up app.rb and config.ru
 7. Create route to root '/'
 8. Test '/' route shows 'Hello' when server is run
+
+---
+
+Process Modelling
+Sequence Modelling
+Class Diagram
+
+---
+
 9. Create feature test for first user story
 10. Create Views folder
 11. Add index.erb to views folder
