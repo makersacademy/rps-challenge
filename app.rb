@@ -1,4 +1,5 @@
-require 'sinatra/base'
+require "sinatra/base"
+require_relative "lib/score"
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -23,9 +24,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/score" do
+    game = Score.new(session[:turn])
     @name = session[:name]
     @score = session[:turn].capitalize
-    @computer_score = ["Rock", "Paper", "Scissors"].sample
+    @computer_score = game.computer_turn
+    @result = game.result
     erb(:score)
   end
 
