@@ -21,5 +21,9 @@ feature 'playing the game' do
       click_button 'Paper'
       expect(page).to have_content 'You selected paper'
     end
+    scenario "user can select 'scissors'" do
+      click_button 'Scissors'
+      expect(page).to have_content 'You selected scissors'
+    end
   end
 end
