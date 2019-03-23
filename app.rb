@@ -9,7 +9,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    erb :register
+    erb :how_many_players
   end
 
   post '/enter-name' do
