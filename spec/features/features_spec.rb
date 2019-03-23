@@ -128,3 +128,13 @@ feature 'playing the game' do
     end
   end
 end
+
+feature "restarting the game" do
+  context "after completing a round" do
+    scenario "the user can choose to play another round" do
+      register_player1('Dougal')
+      click_button 'Rock'
+      expect(page).to have_link('Play again?', :href => '/play')
+    end
+  end
+end
