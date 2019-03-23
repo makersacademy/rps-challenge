@@ -17,7 +17,7 @@ class Game < Sinatra::Base
   end
 
   post '/play' do
-    session[:game] = RPS.new
+    
     session[:name] = Player.new(params[:name])
     @player = session[:name]
     erb :play
@@ -28,8 +28,11 @@ class Game < Sinatra::Base
     erb :play
   end
 
-  get '/result' do
-    @game = session[:game]
+  post '/result' do
+    @player = session[:name]
+    @player.choice(params[:result])
+
+    @game = RPS.new # will hold choices and result
     erb :result
   end
 

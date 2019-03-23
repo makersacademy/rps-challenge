@@ -54,6 +54,7 @@ Hints on functionality
 22. Allow user to choose between rock, paper, scissors
 23. Submit choice to result page
 24. Result page compares user choice with computer random choice
+25. Result page shows winner
 
 ## Bonus level 1: Multiplayer
 

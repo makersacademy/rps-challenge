@@ -1,6 +1,11 @@
-input[type="image"] {
+img {
   height: 100px;
   width: 100px;
+}
+
+button {
+  background-color: white;
+  border: none;
 }
 
 p {
