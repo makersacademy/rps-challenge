@@ -3,7 +3,7 @@ require 'game'
 describe Game do
   let(:player_1) { double :player_1 }
   let(:player_2) { double :player_2 }
-  let(:game) { Game.new(player_1, player_2, Rules) }
+  let(:game) { Game.new(player_1, player_2, RpsRules) }
 
   it 'Creates a new game with multiple players' do
     expect(Game.new(player_1, player_2)).to be_a(described_class)

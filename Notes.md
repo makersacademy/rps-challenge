@@ -59,12 +59,13 @@ I would like to see a clear message with the winner's name
 This needs some user stories before I can properly extract what the nouns and verbs would be
 - Game - turn
 
-## Friday night - current progress
+## Saturday night - current progress
 - User can enter their name and see it displayed back
 - User can play rock, paper, scissors against the computer and find out who wins
-- * TODO * check for single responsibility of classes and methods
-- * TODO * check the tests and code are DRY
-- * TODO * add a stylesheet
-- * TODO * look at how I can mock out randomness - have I already done this?
-- * TODO * look at dependency injection of rules - how can I use this in my test to check results? Do I need to? 
+- Checked for single responsibility of classes and methods
+- Checked the tests and code are DRY
+- Added a stylesheet
+- The game_spec file mocks the randomness of the computer choice
+- Dependency injection of Rules - I want my tests to follow the actual rules so I am not going to do a dependency injection
+- Question - should the checking of rules be done in the game class or the rules class? 
 - * TODO * do bonus question 1

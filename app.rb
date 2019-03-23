@@ -10,7 +10,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/options' do
-    game = Game.new(Player.new(params[:name]), Player.new("Computer"), Rules)
+    game = Game.new(Player.new(params[:name]), Player.new("Computer"), RpsRules)
     session[:game] = game
     redirect '/options'
   end
