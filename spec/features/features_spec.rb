@@ -1,12 +1,20 @@
 require_relative '../../lib/player'
 
 feature 'signing in' do
-  scenario "it asks how many players you want to play with" do
-    visit "/"
-    expect(page).to have_button(value: "one_player")
-    expect(page).to have_button(value: "two_player")
+  scenario 'it asks how many players you want to play with' do
+    visit '/'
+    expect(page).to have_button(value: 'one_player')
+    expect(page).to have_button(value: 'two_player')
   end
 
+  context 'user selects two player game' do
+    scenario 'system asks for two names' do
+      visit '/'
+      click_button(value: 'two_player')
+      expect(page).to have_css("input[name='player1_name']")
+      expect(page).to have_css("input[name='player2_name']")
+    end
+  end
   xscenario 'user can sign in with their name' do
     register_player1('Philip')
     expect(page).to have_content 'Philip'

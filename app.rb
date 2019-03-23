@@ -12,6 +12,14 @@ class RockPaperScissors < Sinatra::Base
     erb :how_many_players
   end
 
+  post '/choose-players' do
+    redirect @params["players"] == 'one_player' ? '/one-player' : '/two-players'
+  end
+
+  get '/two-players' do
+    erb :two_players
+  end
+
   post '/enter-name' do
     Game.create(params['player1_name'], "T-800")
     redirect '/play'
