@@ -1,8 +1,8 @@
 <div>
-  You selected <%= ['rock', 'paper', 'scissors'][@player1_choice] %>
+  You selected <%= ['rock', 'paper', 'scissors'][@game.player1.choice] %>
 </div>
 <div>
-  The computer selected <%= ['rock', 'paper', 'scissors'][@player2_choice] %>
+  The computer selected <%= ['rock', 'paper', 'scissors'][@game.player2.choice] %>
 </div>
 <div id="result">
   <%= @result %>
