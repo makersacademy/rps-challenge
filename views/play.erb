@@ -1,1 +1,7 @@
-<h3>Let's Play <%= @name %>!</h3>
+<h3>Let's Play <%= @player_1.name %>!</h3>
+
+<form action="/winner">
+  <input name = "move" type="submit" value="Rock">
+  <input name = "move" type="submit" value="Paper">
+  <input name = "move" type="submit" value="Scissors">
+</form>

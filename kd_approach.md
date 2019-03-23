@@ -115,7 +115,7 @@ Feature 2:
 The user will be shown a another screen, they will see the following features:
 
 ```
-Let's Play [NAME]!
+[X] Let's Play [NAME]!
 
 ```
 

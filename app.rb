@@ -16,8 +16,18 @@ class RPSGame < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
-    player_1 = Player.new(@name)
+    @player_1 = Player.new(@name)
     erb(:play)
+  end
+
+  post '/winner' do
+    session[:move] = params[:move]
+    redirect '/winner'
+  end
+
+  get '/winner' do
+    @name = session[:name]
+    erb(:winner)
   end
 
 end
