@@ -1,6 +1,10 @@
-<p>
-  You selected <%= @player1_choice %>
-</p>
-<p>
+<div>
+  You selected <%= ['rock', 'paper', 'scissors'][@player1_choice] %>
+</div>
+<div>
   The computer selected <%= @player2_choice %>
-</p>
+</div>
+<div id="result">
+  It's a draw
+</div>
+

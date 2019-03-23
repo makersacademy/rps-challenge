@@ -18,7 +18,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choose' do
-    session[:choice] = params['choice']
+    session[:choice] = params['choice'].to_i
     redirect '/result'
   end
 
