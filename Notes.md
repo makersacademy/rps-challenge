@@ -67,5 +67,4 @@ This needs some user stories before I can properly extract what the nouns and ve
 - Added a stylesheet
 - The game_spec file mocks the randomness of the computer choice
 - Dependency injection of Rules - I want my tests to follow the actual rules so I am not going to do a dependency injection
-- Question - should the checking of rules be done in the game class or the rules class? 
 - * TODO * do bonus question 1
