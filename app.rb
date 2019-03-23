@@ -17,6 +17,15 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  post "/turn" do
+    session[:turn] = ["Rock", "Paper", "Scissors"].sample
+    redirect("/score")
+  end
+
+  get "/score" do
+    @score = session[:turn]
+  end
+
   run! if app_file == $0
 end
 

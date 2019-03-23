@@ -15,7 +15,7 @@ describe "Homepage" do
 
   context "when name submitted" do
     it "displays user's name" do
-      sign_in_and_play
+      sign_in
       expect(page).to have_content "Let's play, Matt Tea!"
     end
   end
