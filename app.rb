@@ -23,7 +23,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/score" do
+    @name = session[:name]
     @score = session[:turn].capitalize
+    @computer_score = ["Rock", "Paper", "Scissors"].sample
     erb(:score)
   end
 

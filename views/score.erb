@@ -1,5 +1,7 @@
 <h2>Your turn was... <%= @score %></h2>
 
-<form action="/computer-turn">
-  <button type="submit" value="computer-play">Click for computer's turn</button>
+<h2>Computer's turn was... <%= @computer_score %></h2>
+
+<form action="/play">
+  <button value="play-again">Play again</button>
 </form>

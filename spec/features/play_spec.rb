@@ -3,7 +3,7 @@
 # I would like to be able to play rock/paper/scissors.
 
 describe "Play" do
-  it "displays button" do
+  it "displays turn submit button" do
     sign_in
     expect(page).to have_selector "button"
   end
@@ -19,8 +19,14 @@ describe "Play" do
       expect(page).to have_content "Paper"
     end
   
-    it "displays button to start computer's turn" do
-      expect(page).to have_selector "button"
+    it "displays outcome of computer's turn" do
+      expect(page).to have_content "Computer's turn was"
     end
+
+    it "displays 'play again' button" do
+      expect(page).to have_selector "form button[value='play-again']"
+    end
+
+    # displays winner/loser/draw
   end
 end
