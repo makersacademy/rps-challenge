@@ -8,7 +8,7 @@ require 'rspec'
 
 Capybara.app = RPS
 
-
+require './spec/web_helpers.rb'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
