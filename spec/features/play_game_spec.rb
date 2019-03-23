@@ -15,18 +15,26 @@ feature 'Make choice' do
   scenario 'player chooses rock' do
     fill_in_name
     click_button 'Rock'
-    expect(page).to have_content "You chose rock!"
+    expect(page).to have_content "You chose rock"
   end
 
   scenario 'player chooses paper' do
     fill_in_name
     click_button 'Paper'
-    expect(page).to have_content "You chose paper!"
+    expect(page).to have_content "You chose paper"
   end
 
   scenario 'player chooses scissors' do
     fill_in_name
     click_button 'Scissors'
-    expect(page).to have_content "You chose scissors!"
+    expect(page).to have_content "You chose scissors"
+  end
+end
+
+xfeature 'Computer returns random weapon' do
+  scenario 'computer returns rock, paper or scissors' do
+    fill_in_name
+    click_button 'Paper'
+    expect(page).to have_content('Computer chose rock', 'Computer chose paper', 'Computer chose scissors')
   end
 end
