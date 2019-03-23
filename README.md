@@ -44,6 +44,10 @@ Hints on functionality
 12. Add form to index.erb with Name field and Start game button
 13. Add play.erb to views folder
 14. Have play.erb display user name
+15. Create game_spec
+16. Create game model
+17. Create play feature
+18. Create tests and pass them
 
 ## Bonus level 1: Multiplayer
 
