@@ -13,10 +13,10 @@ describe "Homepage" do
     expect(page).to have_selector "form input[name='name']"
   end
 
-  it "displays user's name" do
-    visit("/")
-    fill_in "name", with: "Matt Tea"
-    click_button "Submit"
-    expect(page).to have_content "Let's play, Matt Tea!"
+  context "when name submitted" do
+    it "displays user's name" do
+      sign_in_and_play
+      expect(page).to have_content "Let's play, Matt Tea!"
+    end
   end
 end
