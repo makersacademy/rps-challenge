@@ -93,8 +93,8 @@ Type: Text input box
 ## Test Cases
 
 1. [X] Feature test that the infrastructure works / project structure works
-2. [] Test that 
-3. 
+2. [X] Test that user views landing page with input form
+3. [X] Test that user enters name to redirect to play view
 
 ### USER STORY 2
 As a marketeer

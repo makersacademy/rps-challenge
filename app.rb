@@ -8,4 +8,13 @@ class RPSGame < Sinatra::Base
     erb(:index)
   end
 
+  post '/play' do
+    session[:name] = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    erb(:play)
+  end
+
 end
