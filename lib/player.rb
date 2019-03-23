@@ -12,6 +12,6 @@ class Player
   end
 
   def random_choice
-    @choice = ["Rock", "Paper", "Scissors"].sample
+    @choice = RpsRules::WEAPONS.sample
   end
 end

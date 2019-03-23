@@ -68,4 +68,6 @@ This needs some user stories before I can properly extract what the nouns and ve
 - The game_spec file mocks the randomness of the computer choice
 - Dependency injection of Rules - I want my tests to follow the actual rules so I am not going to do a dependency injection
 - * TODO * do bonus question 1
-- * TODO * do bonus question 2 - ask user which game they would prefer to play and then build a second set of files that care about that (including the random setting of the computer choice) - should the array to sample from delegate to the rules class? 
+- * TODO * do bonus question 2 - ask user which game they would prefer to play and then build a second set of files that care about that (including the random setting of the computer choice). Check whether this could be done better
+- * TODO * improve feature tests to check 3 scenarios - stub out random behaviour - allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
+- * TODO * improve unit tests to test all outcomes

@@ -1,5 +1,7 @@
 class RpsRules
   attr_reader :list
+  WEAPONS = ["Rock", "Paper", "Scissors"]
+
   def initialize
     @list = [{ result: "@player_1", player_1: "Scissors", player_2: "Paper" },
             { result: "@player_2", player_1: "Scissors", player_2: "Rock" },
