@@ -7,10 +7,6 @@ class Game
     @player_2 = player_2
   end
 
-  def set_move(player, choice)
-    player.move(choice)
-  end
-
   def game_over
     "Winner"
   end

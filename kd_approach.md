@@ -148,10 +148,13 @@ The marketeer can choose one option
 1. [X] Feature test that user sees RPS Display and Rock, Paper, Scissors selections
 2. [X] Test that user user can select link e.g. rock
 
+## Player Class - Test Cases
+
+1. [X] Player `set_move` sets the player move
+
 ## Game Class - Test Cases
 
-1. [X] Game `set_move` sets the player move
-2. [X] Game `game_over` decides the outcome of the game
+1. [X] Game `game_over` decides the outcome of the game
 
 Feature 5:
 The game will choose a random option

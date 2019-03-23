@@ -28,8 +28,8 @@ class RPSGame < Sinatra::Base
 
   get '/game_over' do
     @player_1 = session[:player_1]
+    @player_1.set_move(session[:move])
     @game = Game.create(@player_1, "CPU")
-    @game.set_move(@player_1, session[:move])
     erb(:game_over)
   end
 

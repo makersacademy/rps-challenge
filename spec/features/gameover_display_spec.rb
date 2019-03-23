@@ -4,7 +4,7 @@ feature 'Game Over Display' do
     visit '/'
     enter_name
     click_button 'Rock'
-    expect(page).to have_text("The winner is winner!")
+    expect(page).to have_text("The winner is Winner!")
   end
 
 end

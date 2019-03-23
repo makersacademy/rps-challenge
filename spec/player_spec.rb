@@ -12,10 +12,10 @@ describe Player do
 
   end
 
-  describe '#move' do
+  describe '#set_move' do
 
     it 'returns the move' do
-      expect(player_1.move("Rock")).to eq "Rock"
+      expect(player_1.set_move("Rock")).to eq "Rock"
     end
 
   end
