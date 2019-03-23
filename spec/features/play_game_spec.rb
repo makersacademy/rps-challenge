@@ -3,6 +3,7 @@
 # I would like to be able to play rock/paper/scissors
 
 feature 'Game play' do
+
   scenario 'user sees result' do
     visit '/'
 
@@ -20,9 +21,5 @@ feature 'Game play' do
     click_button 'Rock'
     click_link 'Start again'
     expect(page).to have_content 'Player1'
-  end
-
-  scenario 'player 1 wins' do
-
   end
 end

@@ -17,24 +17,19 @@ class Game < Sinatra::Base
   end
 
   post '/play' do
-    
-    session[:name] = Player.new(params[:name])
-    @player = session[:name]
+    player1 = Player.new(params[:name])
+    @game = RPS.create(player1)
     erb :play
   end
 
   get '/play' do
-    @player = session[:name]
+    @game = RPS.instance 
     erb :play
   end
 
   post '/result' do
-    
-    @player = session[:name]
-    @player.choice(params[:result])
-  
-    @game = RPS.new(@player) # will hold choices and result
-    p @game
+    @game = RPS.instance 
+    @game.player1.choice(params[:result])
     erb :result
   end
 

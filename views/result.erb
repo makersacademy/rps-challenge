@@ -1,9 +1,9 @@
 
-<h2><%= @player.name%>: <%= @game.get_player_choice%></h2>
+<h2><%= @game.player1.name%>: <%= @game.get_player_choice%></h2>
 
 <h2>Computer: <%= @game.get_computer_choice%></h2>
 
-<h2>Winner: <%= @game.compute_winner%></h2>
+<h2>Winner: <%= @game.winner%></h2>
 
 <a href="/play">Start again</a>
 
