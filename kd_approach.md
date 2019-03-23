@@ -97,6 +97,14 @@ Type: Text input box
 3. [X] Test that user enters name to redirect to play view
 4. [X] Further test that user name can be accessed via session to display in `play.erb`
 
+## Player Class - Test Cases
+
+Refactor to use player class to handle the player.
+
+1. [X] Player class returns a name of the player
+2. [X] Confirm feature tests still work
+
+
 ### USER STORY 2
 As a marketeer
 So that I can enjoy myself away from the daily grind
