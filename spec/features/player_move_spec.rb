@@ -4,8 +4,8 @@ feature 'Player move' do
     fill_in(:name, with: 'Yoyo')
     click_button 'Register'
     click_button 'Lets Play'
-    fill_in(:move, with: 'rock')
+    find("option[value='Rock']").select_option
     click_button 'Confirm'
-    expect(page).to have_content "Player chose 'rock' as their move!"
+    expect(page).to have_content "Player chose 'Rock' as their move!"
   end
 end
