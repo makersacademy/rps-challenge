@@ -6,9 +6,7 @@ feature 'Name' do
   end
 
   scenario 'show name in lights' do
-    visit '/'
-    fill_in :name, with: 'Riya'
-    click_button 'Go'
+    sign_in_and_play
     expect(page).to have_content "Are you ready Riya?"
   end
 end
