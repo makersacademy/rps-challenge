@@ -46,5 +46,11 @@ feature 'playing the game' do
       click_button 'Rock'
       expect(page).to have_content 'The computer selected paper'
     end
+
+    scenario "the computer might choose 'scissors'" do
+      allow(Kernel).to receive(:rand).and_return(2)
+      click_button 'Rock'
+      expect(page).to have_content 'The computer selected scissors'
+    end
   end
 end
