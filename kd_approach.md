@@ -159,7 +159,7 @@ The marketeer can choose one option
 Feature 5:
 The game will choose a random option
 
-- Server (Pusheen) chooses an option from Rock, Paper, Scissors
+- CPU chooses an option from Rock, Paper, Scissors
 
 
 Feature 6:
