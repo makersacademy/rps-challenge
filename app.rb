@@ -13,7 +13,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/enter-name' do
-    Game.create(params['player1_name'])
+    Game.create(params['player1_name'], "T-800")
     redirect '/play'
   end
 
