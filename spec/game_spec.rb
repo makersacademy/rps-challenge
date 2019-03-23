@@ -34,4 +34,19 @@ describe Game do
     end
   end
 
+  describe '#result' do
+    context 'player 1 chooses rock' do
+      before do
+        allow(player1).to receive('choice').and_return(0)
+      end
+
+      context 'player 2 chooses rock' do
+        it 'draw' do
+          allow(player2).to receive('choice').and_return(0)
+          expect(game.result).to eq "It's a draw"
+        end
+      end
+    end
+  end
+
 end

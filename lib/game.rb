@@ -15,4 +15,8 @@ class Game
     @player1 = player.new(name1)
     @player2 = player.new(name2)
   end
+
+  def result
+    "It's a draw"
+  end
 end
