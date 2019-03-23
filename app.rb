@@ -11,8 +11,6 @@ class RockPaperScissors < Sinatra::Base
 
   post '/options' do
     session[:game] = Game.new(Player.new(params[:name]), Player.new("Computer"))
-    # session[:player] = Player.new(params[:name])
-    # session[:computer] = Player.new("Computer")
     redirect '/options'
   end
 

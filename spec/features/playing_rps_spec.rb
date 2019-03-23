@@ -8,7 +8,7 @@ feature 'Presented with options' do
   scenario 'When player selects Rock they see that in the response' do
     fill_in_name_and_submit
     click_button "Rock"
-    expect(page).to have_content "You selected Rock"
+    expect(page).to have_content "You selected: Rock"
   end
 
   scenario 'When player selects an option they can see the computer choice' do

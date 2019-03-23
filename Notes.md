@@ -66,5 +66,5 @@ This needs some user stories before I can properly extract what the nouns and ve
 - * TODO * check the tests and code are DRY
 - * TODO * add a stylesheet
 - * TODO * look at how I can mock out randomness - have I already done this?
-- * TODO * extract rules from play class
+- * TODO * look at dependency injection of rules - how can I use this in my test to check results? Do I need to? 
 - * TODO * do bonus question 1
