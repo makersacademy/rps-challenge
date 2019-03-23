@@ -12,10 +12,21 @@ feature 'Presented with choices' do
 end
 
 xfeature 'Make choice' do
-  scenario 'player chooses Rock, computer gets Rock' do
+  scenario 'player chooses rock' do
     fill_in_name
     click_button 'Rock'
-    allow(Kernel).to receive(:rand).and_return 0
-    expect(page).to have_content "It's a draw!"
+    expect(page).to have_content "You chose rock!"
+  end
+
+  scenario 'player chooses paper' do
+    fill_in_name
+    click_button 'Paper'
+    expect(page).to have_content "You chose paper!"
+  end
+
+  scenario 'player chooses scissors' do
+    fill_in_name
+    click_button 'Scissors'
+    expect(page).to have_content "You chose scissors!"
   end
 end
