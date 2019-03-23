@@ -1,3 +1,5 @@
+require_relative '../../lib/player'
+
 feature 'signing in' do
   # As a marketeer
   # So that I can see my name in lights

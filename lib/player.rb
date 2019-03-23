@@ -10,6 +10,6 @@ class Player
   end
 
   def choose_random(options)
-    @choice = rand(options - 1)
+    @choice = Kernel.rand(options - 1)
   end
 end
