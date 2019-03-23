@@ -20,6 +20,50 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
+##### CLASSES/OBJECTS
+
+I have decided to use `models` to manage the logic of the game. This will make the app easier to change in the future.
+
+- `Player` class:
+  This will handle the player.
+  Version 1 will have a human and CPU player
+  The player class is useful so that players can be created for the enhanced multiplayer game
+
+  `Player` has a:
+  - Name
+  - Move
+
+  - CPU, Player 1, Player 2 etc. are all be `player`s
+
+- `CPU` class:
+  This will handle the underlying CPU logic.
+  
+  `CPU` has a:
+  - List of choices
+  - Move
+
+- `Game` class:
+  This is the game engine and will handle playing the game.
+
+  Has a:
+  - `play` method to play the game
+  - `winner` method gives the winner
+
+##### VIEWS
+
+- Landing Page
+- Enhancement: How to Play?
+- Let's Play Rock, Paper, Scissors / Winner message!
+
+
+With my notes, I will go through the TDD process.
+
+- USER STORY
+- FEATURE TEST
+- UNIT TEST
+- CODE IMPLEMENTATION
+- FEATURE TEST
+
 
 #### TECHNICAL IMPLEMENTATION
 
@@ -48,9 +92,9 @@ Type: Text input box
 
 ## Test Cases
 
-1. [] Check that the infrastructure works
-2. 
-3.
+1. [X] Feature test that the infrastructure works / project structure works
+2. [] Test that 
+3. 
 
 ### USER STORY 2
 As a marketeer
