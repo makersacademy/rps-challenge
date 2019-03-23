@@ -18,12 +18,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/turn" do
-    session[:turn] = ["Rock", "Paper", "Scissors"].sample
+    session[:turn] = params[:turn]
     redirect("/score")
   end
 
   get "/score" do
-    @score = session[:turn]
+    @score = session[:turn].capitalize
+    erb(:score)
   end
 
   run! if app_file == $0

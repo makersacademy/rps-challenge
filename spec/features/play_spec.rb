@@ -8,17 +8,19 @@ describe "Play" do
     expect(page).to have_selector "button"
   end
 
-  it "displays outcome of 'Rock' for player's turn" do
-    sign_in
-    click_button "play"
-    expect(page).to have_content "Rock"
-  end
+  context "when in game" do
+    before do
+      sign_in
+      select "Paper", from: "turn"
+      click_button "play"
+    end
 
-  it "displays outcome of 'Paper' for player's turn" do
-    # let(:turn) { double :turn }
-    # allow(turn).to_receive(:result) { "Rock" }
-    sign_in
-    click_button "play"
-    expect(page).to have_content "Paper"
+    it "displays outcome of 'Paper' for player's turn" do
+      expect(page).to have_content "Paper"
+    end
+  
+    it "displays button to start computer's turn" do
+      expect(page).to have_selector "button"
+    end
   end
 end

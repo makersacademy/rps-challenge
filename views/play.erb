@@ -1,5 +1,10 @@
 <h2>Let's play, <%= @name %>!</h2>
 
 <form action="/turn" method="post">
+  <select name="turn">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
   <button type="submit" value="play">Play</button>
 </form>
