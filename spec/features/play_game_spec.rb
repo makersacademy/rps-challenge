@@ -8,7 +8,7 @@ feature 'Game play' do
 
     fill_in "name",	with: "Player1"
     click_button 'Start game'
-    click_button 'Play'
+    click_button 'rock'
     expect(page).to have_content 'Player1' 
   end
 
@@ -17,7 +17,7 @@ feature 'Game play' do
 
     fill_in "name",	with: "Player1"
     click_button 'Start game'
-    click_button 'Play'
+    click_button 'rock'
     click_link 'Start again'
     expect(page).to have_content 'Player1'
   end

@@ -1,0 +1,8 @@
+input[type="image"] {
+  height: 100px;
+  width: 100px;
+}
+
+p {
+  font: 2em "Calibri";
+}

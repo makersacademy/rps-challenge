@@ -51,6 +51,9 @@ Hints on functionality
 19. Create player model
 20. Create player_spec test file
 21. Write and pass player tests
+22. Allow user to choose between rock, paper, scissors
+23. Submit choice to result page
+24. Result page compares user choice with computer random choice
 
 ## Bonus level 1: Multiplayer
 
