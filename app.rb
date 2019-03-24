@@ -25,13 +25,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/save-names-1' do
-    Game.create(params['player1_name'], "RPSBot::9000")
-    redirect '/play'
+    game = Game.create(params['player1_name'], "RPSBot::9000")
+    game.player2.set_computer
+    redirect '/player-1'
   end
 
   post '/save-names-2' do
     Game.create(params['player1_name'], params['player2_name'])
-    redirect '/play'
+    redirect '/player-1'
   end
 
   post '/enter-name' do
@@ -39,14 +40,22 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
-  get '/play' do
-    erb :play
+  get '/player-1' do
+    erb :player_1
   end
 
-  post '/choose' do
+  post '/choose-1' do
     @game.player1.choose(params['choice'].to_i)
-    @game.player2.choose_random(3)
-    redirect '/result'
+    if @game.player2.computer?
+      @game.player2.choose_random(3)
+      redirect '/result'
+    else
+      redirect '/player-2'
+    end
+  end
+
+  get '/player-2' do
+    erb :player_2
   end
 
   get '/result' do

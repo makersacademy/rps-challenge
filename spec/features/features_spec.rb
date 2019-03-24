@@ -10,11 +10,20 @@ feature 'signing in' do
   context 'user selects two player game' do
     scenario 'system asks for two names' do
       visit '/'
-      click_button(value: 'two_player')
+      click_button value: 'two_player'
       fill_in "player1_name", with: "Flatt"
       fill_in "player2_name", with: "Scruggs"
-      click_button("Let's do this")
+      click_button "Let's do this"
       expect(page).to have_content("Flatt vs. Scruggs")
+    end
+    scenario 'second player gets a go' do
+      visit '/'
+      click_button value: 'two_player'
+      fill_in "player1_name", with: "Flatt"
+      fill_in "player2_name", with: "Scruggs"
+      click_button "Let's do this"
+      click_button 'Rock'
+      expect(page).to have_content("Scruggs, choose your weapon")
     end
   end
 
@@ -25,6 +34,14 @@ feature 'signing in' do
       fill_in "player1_name", with: "Dave Bowman"
       click_button("Let's do this")
       expect(page).to have_content("Dave Bowman vs. RPSBot::9000")
+    end
+    scenario 'computer takes go for second player' do
+      visit '/'
+      click_button(value: 'one_player')
+      fill_in "player1_name", with: "Dave Bowman"
+      click_button("Let's do this")
+      click_button 'Rock'
+      expect(page).to have_content "The results are in"
     end
   end
 end

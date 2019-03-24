@@ -26,7 +26,7 @@ class Player
     @computer_player
   end
 
-  def is_computer
+  def set_computer
     @computer_player = true
   end
 end

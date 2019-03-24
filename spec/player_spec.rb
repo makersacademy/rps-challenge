@@ -58,9 +58,9 @@ describe Player do
     end
   end
 
-  describe '#is_computer' do
+  describe '#set_computer' do
     it 'sets #computer? to true' do
-      player.is_computer
+      player.set_computer
       expect(player).to be_computer
     end
   end
