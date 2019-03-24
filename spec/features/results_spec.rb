@@ -10,7 +10,7 @@ feature 'Winner is declared' do
 
   scenario 'computer chooses paper and player chooses rock' do
     fill_in_name
-    srand(2)
+    srand(1)
     click_button 'Rock'
     expect(page).to have_content('Computer wins!')
   end

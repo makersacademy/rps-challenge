@@ -18,7 +18,10 @@ class Game
   end
 
   def winner
-    if @computer.weapon == WINNER[@player.weapon.downcase]
+    if @computer.weapon == @player.weapon.downcase
+      "It's a draw!"
+    elsif
+      @computer.weapon == WINNER[@player.weapon.downcase]
       'You win!'
     else
       'Computer wins!'
