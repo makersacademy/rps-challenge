@@ -16,8 +16,17 @@ class RockPaperScissors < Sinatra::Base
     redirect @params["players"] == 'one_player' ? '/one-player' : '/two-players'
   end
 
+  get '/one-player' do
+    erb :one_player
+  end
+
   get '/two-players' do
     erb :two_players
+  end
+
+  post '/save-names-1' do
+    Game.create(params['player1_name'], "RPSBot::9000")
+    redirect '/play'
   end
 
   post '/save-names-2' do

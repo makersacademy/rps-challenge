@@ -17,9 +17,15 @@ feature 'signing in' do
       expect(page).to have_content("Flatt vs. Scruggs")
     end
   end
-  xscenario 'user can sign in with their name' do
-    register_player1('Philip')
-    expect(page).to have_content 'Philip'
+
+  context 'user selects one player game' do
+    scenario 'system asks for one name' do
+      visit '/'
+      click_button(value: 'one_player')
+      fill_in "player1_name", with: "Dave Bowman"
+      click_button("Let's do this")
+      expect(page).to have_content("Dave Bowman vs. RPSBot::9000")
+    end
   end
 end
 
