@@ -18,14 +18,23 @@ describe Game do
   end
 
   describe '.create' do
-    it "creates an instance of itself" do
-      game_instance = double(:game_instance)
-      # is it a good idea to stub out the game instance?
-      allow(described_class).to receive(:new)
-        .with("John", "HAL9000", player_class).and_return(game_instance)
-      Game.create("John", "HAL9000", player_class)
-      expect(Game.instance).to eq game_instance
+    context 'when given two names' do
+      it "creates an instance of itself with two players" do
+        Game.create(player1_name, player2_name, player_class)
+        expect(Game.instance.player1).to eq player1
+        expect(Game.instance.player2).to eq player2
+        expect(player2).not_to receive(:set_computer)
+      end
     end
+
+    # it "sets up a computer opponent if only one name given" do
+    #   game_instance = double(:game_instance)
+    #   # is it a good idea to stub out the game instance?
+    #   allow(described_class).to receive(:new)
+    #     .with("John", "HAL9000", player_class).and_return(game_instance)
+    #   Game.create("John", "HAL9000", player_class)
+    #   expect(Game.instance).to eq game_instance
+    # end
   end
 
   describe '#player1' do
