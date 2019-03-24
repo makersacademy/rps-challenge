@@ -12,15 +12,31 @@ feature 'Presented with options' do
   end
 
   scenario 'When player selects an option they can see the computer choice' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
     fill_in_name_and_submit
     click_button "Rock"
     # Can I mock the behaviour of the computer from here?
-    expect(page).to have_content "The computer chose"
+    expect(page).to have_content "The computer chose: Scissors"
   end
 
-  scenario 'When player selects Rock check the computer response' do
+  scenario 'When player 1 should win' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
     fill_in_name_and_submit
     click_button "Rock"
-    expect(page).to have_content("The winner is")
+    expect(page).to have_content("The winner is : Sam")
+  end
+
+  scenario 'When player 2 should win' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
+    fill_in_name_and_submit
+    click_button "Scissors"
+    expect(page).to have_content("The winner is : Computer")
+  end
+
+  scenario 'When there should be a drawer' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
+    fill_in_name_and_submit
+    click_button "Paper"
+    expect(page).to have_content("The winner is : We are all winners here! The game was a draw!")
   end
 end
