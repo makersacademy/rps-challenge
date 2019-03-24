@@ -3,6 +3,6 @@ feature 'Turn selection' do
     add_suzy
     select("Rock")
     click_on "Attack!"
-    expect(page).to have_content "Winner"
+    expect(page).to have_content "The winner is: "
   end
 end
