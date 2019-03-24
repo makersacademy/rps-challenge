@@ -7,6 +7,6 @@ feature 'Random move' do
     click_button 'Confirm'
     auto = Auto.new
     allow(auto).to receive(:random_pick).and_return('Paper')
-    expect(auto.random_pick).to eq ('Paper')
+    expect(auto.random_pick).to eq 'Paper'
   end
 end
