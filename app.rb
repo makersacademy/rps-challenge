@@ -5,13 +5,11 @@ class RPS < Sinatra::Base
 
   get '/' do
     erb :index
-    session[:name] = params[:name]
   end
 
-  post 'entered' do
+  post '/entered' do
+    session[:name] = params[:name]
     erb :entered
+  
 end
-
-  # start the server if ruby file executed directly
-  # run! if app_file == $0
-end 
+end
