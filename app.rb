@@ -1,4 +1,5 @@
 require "sinatra/base"
+require "./randomchoice.rb"
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -12,9 +13,10 @@ class RPS < Sinatra::Base
     erb :entered
   end
 
-  post 'chosen' do
-    session[:chosen] = params[:chosen]
+  post '/response' do
     erb :chosen
-
-  end
+    session[:chosen] = params[:chosen]
+    @computer = RandomChoice.new
+    erb :chosen
+    end
 end
