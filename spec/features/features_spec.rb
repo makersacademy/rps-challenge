@@ -183,4 +183,12 @@ feature "restarting the game" do
       expect(page).to have_link('Play again?', :href => '/player-1')
     end
   end
+
+  context "after completing a round" do
+    scenario "the user has the option of picking new players" do
+      register_one_player('Dougal')
+      click_button 'Rock'
+      expect(page).to have_link('Change players?', :href => '/')
+    end
+  end
 end
