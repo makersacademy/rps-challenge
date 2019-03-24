@@ -4,105 +4,118 @@ body,td,th {
 	font-size: 20px;
 }
 body {
-	margin-top: 5px;
+	background-color: #ffffff
+}
+
+.Title {
 	background-image: url(https://github.com/fo0s/rps-challenge/blob/master/images/login_background.jpg?raw=true);
 	background-repeat: no-repeat;
-  background-position: center top;
+	background-position: center top;
+	background-attachment: fixed;
+	table-layout: fixed;
+	display: block;
 }
 .PlayerSelect {
-	font-size: 3em;
+	font-size: 2em;
 	font-weight: bold;
-	color: #101210;
-  left: 0;
-  line-height: 100px;
-  margin-top: -90px;
-  position: absolute;
-  text-align: center;
-  top: 60%;
-  width: 95%;
+	color: #222222;
 }
-.Main {
-
+input[type=submit] {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
 }
 input#oneplayer    {
 background:url(https://github.com/fo0s/rps-challenge/blob/master/images/player1.jpg?raw=true);
 background-repeat: no-repeat;
 font-size: 0px;
-width:100px;
+width:105px;
 height:100px;
 }
 input#twoplayer    {
 background:url(https://github.com/fo0s/rps-challenge/blob/master/images/player2.jpg?raw=true);
 background-repeat: no-repeat;
 font-size: 0px;
-width:105px;
-height:100px;
+width: 105px;
+height: 100px;
+}
+table#playerselection {
+	width: 100%;
+	table-layout: fixed;
 }
 
 </style>
-
+<div class="Title">
+  <table width="100%" border="0">
+    <tr>
+      <td height="400">&nbsp;</td>
+    </tr>
+  </table>
+</div>
 <div class="PlayerSelect">
   <form name="form1" method="post" action="/players">
-    <table width="100%" border="5" cellspacing="0" cellpadding="0">
-      <tr>
-        <td colspan="0" align="center" class="PlayerSelect">Select a player</td>
-      </tr>
+    <table id="playerselection" border="0">
       <tr>
         <td align="right"><input type="submit" id="oneplayer" name="players" value="1" /></td>
-        <td width="50">&nbsp;</td>
+        <td align="center" class="PlayerSelect">{  Choose amount of players  }</td>
         <td align="left"><input type="submit" id="twoplayer" name="players" value="2" /></td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td width="80"></td>
-				<td height="150"></td>
-        <td>&nbsp;</td>
       </tr>
     </table>
   </form>
 </div>
-<% if @players == "1" %>
-<div class="Main">
-<form action='/names' method="post">
-  <table width="100%" border="5" cellspacing="0" cellpadding="0">
-    <tr>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td align="center" class="PlayerSelect">Enter Player name:
-        <input name="player1_name" type="text" style="font-size: 16pt" size="15" maxlength="15"></td>
-    </tr>
-    <tr>
-      <td height="500" align="center" valign="bottom"><input type="submit" id="play" value="Submit"></td>
-    </tr>
-  </table>
-</form>
+<div class="submit"
+	<% if @players == "1" %>
+	<form action='/names' method="post">
+	  <table width="100%" border="0">
+	    <tr>
+	      <td align="center" class="PlayerSelect">Enter Player name:
+	        <input name="player1_name" type="text" style="font-size: 16pt" size="15" maxlength="15"></td>
+	    </tr>
+	    <tr>
+				<td align="center" align="bottom"><input type="submit" id="play" value="Submit"></td>
+	    </tr>
+	  </table>
+	</form>
 </div>
+
 <% elsif @players == "2" %>
-<div class="Main">
-<form action='/names' method="post">
-  <table width="100%" border="4" cellspacing="12" cellpadding="12">
-    <tr>
-      <td>&nbsp;</td>
-      <td width="20">&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td align="left" valign="top" class="PlayerSelect">Player 1</td>
-      <td width="20" valign="top">&nbsp;</td>
-      <td height="60" align="top" valign="bottom" class="PlayerSelect">Player 2</td>
-    </tr>
-    <tr>
-      <td align="left"><span class="PlayerSelect">Name: <input name="player1_name" type="text" style="font-size: 16pt" size="15" maxlength="15">
-      </span></td>
-      <td width="20">&nbsp;</td>
-      <td align="right"><span class="PlayerSelect">Name: <input name="player2_name" type="text" style="font-size: 16pt" size="15" maxlength="15">
-      </span></td>
-    </tr>
-    <tr>
-      <td height="60" colspan="1" align="center" valign="bottom"><input type="submit" id="play" value="Submit"></td>
-      </tr>
-  </table>
-</form>
+<div class="submit">
+	<form action='/names' method="post">
+	  <table width="100%" border="4" cellspacing="12" cellpadding="12">
+	    <tr>
+	      <td>&nbsp;</td>
+	      <td width="20">&nbsp;</td>
+	      <td>&nbsp;</td>
+	    </tr>
+	    <tr>
+	      <td align="left" valign="top" class="PlayerSelect">Player 1</td>
+	      <td width="20" valign="top">&nbsp;</td>
+	      <td height="60" align="top" valign="bottom" class="PlayerSelect">Player 2</td>
+	    </tr>
+	    <tr>
+	      <td align="left"><span class="PlayerSelect">Name: <input name="player1_name" type="text" style="font-size: 16pt" size="15" maxlength="15">
+	      </span></td>
+	      <td width="20">&nbsp;</td>
+	      <td align="right"><span class="PlayerSelect">Name: <input name="player2_name" type="text" style="font-size: 16pt" size="15" maxlength="15">
+	      </span></td>
+	    </tr>
+	    <tr>
+
+	      <td height="60" colspan="1" align="center" valign="bottom"><button class="SubmitButton"><input type="submit" id="play" value="Submit"></button></td>
+	      </tr>
+	  </table>
+	</form>
 </div>
 <% end %>
