@@ -52,14 +52,17 @@ class Game < Sinatra::Base
 
   get '/result' do
     @result = Winner.run(@game.player1, @game.player2)
-    
     erb :result
   end
 
   post '/reset_game' do
     @game.reset_game
-  
+    
     redirect '/play'
   end
 
+  post '/exit_game' do
+    @game.exit
+    redirect '/'
+  end
 end

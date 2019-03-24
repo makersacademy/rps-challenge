@@ -32,4 +32,10 @@ class Player
     @score
   end
 
+  def exit
+    @score = nil
+    @choice = nil
+    @name = nil
+  end
+
 end

@@ -78,6 +78,10 @@ class RPS
     @game_options[rand(1..@game_options.size)]
   end
 
+  def exit
+    @players.map {|player| player.exit}
+  end
+
 
 end
 
