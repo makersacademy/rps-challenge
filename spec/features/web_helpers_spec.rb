@@ -12,3 +12,10 @@ def register_1_player_against_computer
   check('computer2')
   click_button 'Start game'
 end
+
+def register_computer_against_1_player
+  visit '/'
+  check('computer1')
+  fill_in "player2",	with: "Player2"
+  click_button 'Start game'
+end

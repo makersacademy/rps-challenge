@@ -72,6 +72,10 @@ Class Diagram
 31. Create new erb view to support the turn changing option and ask player 2 for his choice before result page
 32. Creates Restart button to reset player choices and restart the game
 33. Refactor feature test repetitive code into helper methods
+34. TDD option to play against computer
+35. Implement the feature - randomness in feature tests issue
+36. TDD keeping score and implementing feature
+37. Restart game to login point
 
 ## Bonus level 1: Multiplayer
 

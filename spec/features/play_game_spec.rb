@@ -13,22 +13,15 @@ feature 'Game play' do
   end
 
   scenario 'player 1 wins game' do
-    pending "Can't stub randomness in feature test"
-    game = RPS.instance
-    allow(game).to receive(:rand).and_return(1)
-    
+    allow_any_instance_of(RPS).to receive(:rand).and_return(1)    
     register_1_player_against_computer
     click_button 'Paper'
     click_link 'OK'
-   
-    expect(page).to have_content 'Winner: Player1' #how to stub the randomness of computer?
+    expect(page).to have_content 'Winner: Player1'
   end
 
   scenario 'player 2 wins game' do
-    pending "Can't stub randomness in feature test"
-    game = RPS.instance
-    allow(game).to receive(:rand).and_return(3) 
-
+    allow_any_instance_of(RPS).to receive(:rand).and_return(2)
     register_1_player_against_computer
     click_button 'Rock'
     click_link 'OK' 
@@ -36,20 +29,22 @@ feature 'Game play' do
   end
 
   scenario 'computer as first player' do
-    visit '/'
-    check('computer1')
-    fill_in "player2",	with: "Player2"
-    click_button 'Start game'
+    register_computer_against_1_player
     expect(page).to have_content 'Computer has chosen'
   end
 
   scenario 'computer as second player' do
-    visit '/'
-    fill_in "player1",	with: "Player1"
-    check('computer2')
-    click_button 'Start game'
+    register_1_player_against_computer
     click_button 'Paper'
     expect(page).to have_content 'Computer has chosen'
   end
+
+  # scenario 'player score changes after first round' do
+  #   visit '/'
+  #   fill_in "player1",	with: "Player1"
+  #   check('computer2')
+  #   click_button 'Start game'
+  #   click_button 'Paper'
+  # end
 
 end
