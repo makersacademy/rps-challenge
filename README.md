@@ -10,6 +10,9 @@
 - Enter this into your web URL 'localhost:9292'
 - Start the game by entering your name
 
+## Alternative 
+You can play the game here https://rps-game1.herokuapp.com/
+
 ## Basic Rules
 - Rock beats Scissors
 - Scissors beats Paper
