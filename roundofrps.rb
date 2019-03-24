@@ -1,13 +1,10 @@
 require "./app.rb"
-require "./randomchoice.rb"
 class RoundofRPS
   attr_accessor :name, :choice
 
-  def initialize(player_choice, computer_choice)
-    # @name = name
-    # @choice = choice
-    # @computer = []
-    # @result = []
+  def initialize(player_choice)
+    @player_choice = player_choice
+    @computer_choice = ["rock", "paper", "scissors"].sample
   end
 
 if player_choice == computer_choice
@@ -36,9 +33,9 @@ if result == 1
   return "You win, darling!"
 
 elsif result == 2
-  return 2
+  return "Computer wins!"
 
 else
-  return 0
+  return "It's a draw!"
 end
 end

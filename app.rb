@@ -15,6 +15,8 @@ class RPS < Sinatra::Base
 
   post "/response" do
     session[:chosen] = params[:chosen]
+    player_choice = session[:chosen]
+    round_of_RPS = RoundofRPS.new(player_choice)
     erb :chosen
     end
 end

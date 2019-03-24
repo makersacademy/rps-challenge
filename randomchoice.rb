@@ -1,6 +1,6 @@
 class RandomChoice
-  attr_reader :initialize
-def initialize
-  @result = ["rock", "paper", "scissors"].sample
+  attr_reader :random
+def new
+  @random = ["rock", "scissors", "paper"].sample
 end
 end
