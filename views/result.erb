@@ -1,12 +1,12 @@
 <h1>The results are in</h1>
 <div>
-  You selected <%= @game.player1.choice_human %>
+  <%= @game.player1.name %> selected <%= @game.player1.choice_human %>
 </div>
 <div>
-  The computer selected <%= @game.player2.choice_human %>
+  <%= @game.player2.name %> selected <%= @game.player2.choice_human %>
 </div>
 <div id="result">
   <%= @game.result %>
 </div>
-<a href="/play">Play again?</a>
+<a href="/player-1">Play again?</a>
 

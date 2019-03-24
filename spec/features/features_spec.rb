@@ -1,6 +1,10 @@
 require_relative '../../lib/player'
 
 feature 'signing in' do
+  let(:computer_name) { "RPSBot::9000" }
+  let(:player1_name) { "Lester Flatt" }
+  let(:player2_name) { "Earl Scruggs" }
+
   scenario 'it asks how many players you want to play with' do
     visit '/'
     expect(page).to have_button(value: 'one_player')
@@ -11,19 +15,19 @@ feature 'signing in' do
     scenario 'system asks for two names' do
       visit '/'
       click_button value: 'two_player'
-      fill_in "player1_name", with: "Flatt"
-      fill_in "player2_name", with: "Scruggs"
+      fill_in "player1_name", with: player1_name
+      fill_in "player2_name", with: player2_name
       click_button "Let's do this"
-      expect(page).to have_content("Flatt vs. Scruggs")
+      expect(page).to have_content("#{player1_name} vs. #{player2_name}")
     end
     scenario 'second player gets a go' do
       visit '/'
       click_button value: 'two_player'
-      fill_in "player1_name", with: "Flatt"
-      fill_in "player2_name", with: "Scruggs"
+      fill_in "player1_name", with: player1_name
+      fill_in "player2_name", with: player2_name
       click_button "Let's do this"
       click_button 'Rock'
-      expect(page).to have_content("Scruggs, choose your weapon")
+      expect(page).to have_content("#{player2_name}, choose your weapon")
     end
   end
 
@@ -31,14 +35,14 @@ feature 'signing in' do
     scenario 'system asks for one name' do
       visit '/'
       click_button(value: 'one_player')
-      fill_in "player1_name", with: "Dave Bowman"
+      fill_in "player1_name", with: player1_name
       click_button("Let's do this")
-      expect(page).to have_content("Dave Bowman vs. RPSBot::9000")
+      expect(page).to have_content("#{player1_name} vs. #{computer_name}")
     end
     scenario 'computer takes go for second player' do
       visit '/'
       click_button(value: 'one_player')
-      fill_in "player1_name", with: "Dave Bowman"
+      fill_in "player1_name", with: player1_name
       click_button("Let's do this")
       click_button 'Rock'
       expect(page).to have_content "The results are in"
@@ -46,25 +50,29 @@ feature 'signing in' do
   end
 end
 
-xfeature 'playing the game' do
+feature 'playing the game' do
+  let(:computer_name) { "RPSBot::9000" }
+  let(:player1_name) { "Lester Flatt" }
+  let(:player2_name) { "Earl Scruggs" }
+
   before do
-    register_one_player('Sandra')
+    register_one_player(player1_name)
   end
 
   context 'after registering' do
     scenario "user can select 'rock'" do
       click_button 'Rock'
-      expect(page).to have_content 'You selected rock'
+      expect(page).to have_content "#{player1_name} selected rock"
     end
 
     scenario "user can select 'paper'" do
       click_button 'Paper'
-      expect(page).to have_content 'You selected paper'
+      expect(page).to have_content "#{player1_name} selected paper"
     end
 
     scenario "user can select 'scissors'" do
       click_button 'Scissors'
-      expect(page).to have_content 'You selected scissors'
+      expect(page).to have_content "#{player1_name} selected scissors"
     end
   end
 
@@ -72,19 +80,19 @@ xfeature 'playing the game' do
     scenario "the computer might choose 'rock'" do
       allow(Kernel).to receive(:rand).and_return(0)
       click_button 'Rock'
-      expect(page).to have_content 'The computer selected rock'
+      expect(page).to have_content "#{computer_name} selected rock"
     end
 
     scenario "the computer might choose 'paper'" do
       allow(Kernel).to receive(:rand).and_return(1)
       click_button 'Rock'
-      expect(page).to have_content 'The computer selected paper'
+      expect(page).to have_content "#{computer_name} selected paper"
     end
 
     scenario "the computer might choose 'scissors'" do
       allow(Kernel).to receive(:rand).and_return(2)
       click_button 'Rock'
-      expect(page).to have_content 'The computer selected scissors'
+      expect(page).to have_content "#{computer_name} selected scissors"
     end
   end
 
@@ -167,12 +175,12 @@ xfeature 'playing the game' do
   end
 end
 
-xfeature "restarting the game" do
+feature "restarting the game" do
   context "after completing a round" do
     scenario "the user can choose to play another round" do
-      register_player1('Dougal')
+      register_one_player('Dougal')
       click_button 'Rock'
-      expect(page).to have_link('Play again?', :href => '/play')
+      expect(page).to have_link('Play again?', :href => '/player-1')
     end
   end
 end

@@ -46,6 +46,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choose-1' do
     @game.player1.choose(params['choice'].to_i)
+
     if @game.player2.computer?
       @game.player2.choose_random(3)
       redirect '/result'
@@ -56,6 +57,11 @@ class RockPaperScissors < Sinatra::Base
 
   get '/player-2' do
     erb :player_2
+  end
+
+  post '/choose-2' do
+    @game.player2.choose(params['choice'].to_i)
+    redirect '/result'
   end
 
   get '/result' do
