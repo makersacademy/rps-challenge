@@ -37,11 +37,6 @@ class RockPaperScissors < Sinatra::Base
     redirect '/player-1'
   end
 
-  post '/enter-name' do
-    Game.create(params['player1_name'], "T-800")
-    redirect '/play'
-  end
-
   get '/player-1' do
     @warning = @game.player2.computer? ? "" : "#{@game.player2.name}, look away"
     erb :player_1
