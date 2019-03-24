@@ -35,7 +35,6 @@ feature 'signing in' do
       expect(page).to have_content("#{player1_name} vs. #{computer_name}")
     end
 
-
     scenario 'computer takes go for second player' do
       click_button 'Rock'
       expect(page).to have_content "The results are in"
