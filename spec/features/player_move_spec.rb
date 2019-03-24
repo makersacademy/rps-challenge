@@ -1,8 +1,6 @@
 feature 'Player move' do
   scenario 'displays the chosen move of the player' do
-    visit('/')
-    fill_in(:name, with: 'Yoyo')
-    click_button 'Register'
+    sign_in_and_play
     click_button 'Lets Play'
     find("option[value='Rock']").select_option
     click_button 'Confirm'

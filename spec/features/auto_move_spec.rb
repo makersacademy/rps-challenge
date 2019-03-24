@@ -2,9 +2,7 @@ require './model/auto.rb'
 
 feature 'Random move' do
   scenario 'displayes the randomly chosen move by the game' do
-    visit('/')
-    fill_in(:name, with: 'Yoyo')
-    click_button 'Register'
+    sign_in_and_play
     click_button 'Lets Play'
     click_button 'Confirm'
     auto = Auto.new
