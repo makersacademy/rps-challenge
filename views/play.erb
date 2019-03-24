@@ -1,20 +1,25 @@
-<h1>Round <%= @game.get_round %></h1>
+<h1>Round <%= @game.retrieve_round %></h1>
+<h2>Game type <%= @game.game_type%></h2>
 
-<h1>Score: <%=@game.player1.name%> - <%=@game.player1.get_score%> : <%=@game.player2.name%> - <%=@game.player2.get_score%></h1>
+<h1>Score: <%=@game.player1.name%> - <%=@game.player1.retrieve_score%> : <%=@game.player2.name%> - <%=@game.player2.retrieve_score%></h1>
 <p>Player 1: <%=@game.player1.name%></p> 
 <p>Player 2: <%=@game.player2.name%></p> 
 
 
-<p>Turn: <%=@game.get_turn.name%></p> 
-
+<p>Turn: <%=@game.retrieve_turn.name%></p> 
 
 
 <img src="rock.png" alt="">
 
 <form action="/turn" method="post" >
 
-<button type="submit" name="result" value="Rock"><img src="/images/rock.png"></button>
-<button type="submit" name="result" value="Paper"><img src="/images/paper.png"></button>
-<button type="submit" name="result" value="Scissors"><img src="/images/scissors.png"></button>
+<button type="submit" name="result" value="rock"><img src="/images/rock.png"></button>
+<button type="submit" name="result" value="paper"><img src="/images/paper.png"></button>
+<button type="submit" name="result" value="scissors"><img src="/images/scissors.png"></button>
+
+<%if @game.game_type == :spock%>
+<button type="submit" name="result" value="spock"><img src="/images/spock.png"></button>
+<button type="submit" name="result" value="lizard"><img src="/images/lizard.png"></button>
+<%end%>
 
 </form>

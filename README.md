@@ -76,6 +76,8 @@ Class Diagram
 35. Implement the feature - randomness in feature tests issue
 36. TDD keeping score and implementing feature
 37. Restart game to login point
+38. Extracting Computer to its own class
+39. Refactor out game_options
 
 ## Bonus level 1: Multiplayer
 

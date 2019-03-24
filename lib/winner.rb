@@ -1,40 +1,51 @@
 class Winner
   
-  def initialize(p1, p2)
-    @p1 = p1
-    @p2 = p2
+  def initialize(player1, player2)
+    @p1 = player1
+    @p2 = player2
   end
 
-  def self.run(p1, p2)
-    Winner.new(p1, p2).declare_winner
+  def self.run(player1, player2)
+    Winner.new(player1, player2).declare_winner
   end
 
   def declare_winner
-    p1 = @p1.user_choice
-    p2 = @p2.user_choice
-    compute_winner(p1,p2)
+    p1_choice = @p1.user_choice.to_sym
+    p2_choice = @p2.user_choice.to_sym
+    compute_winner(p1_choice, p2_choice)
   end
 
   private
-  def compute_winner(player1,player2)
-    result = nil
-    if player1 == player2
-      result = "Draw"
-    elsif player1 == "Rock" && player2 == "Scissors"
-      @p1.increase_score #increases winner score
-      result = @p1.name #assigns name to result
-    elsif player1 == "Scissors" && player2 == "Paper"
-      @p1.increase_score
-      result = @p1.name
-    elsif player1 == "Paper" && player2 == "Rock"
-      @p1.increase_score
-      result = @p1.name
-    else
-      @p2.increase_score
-      result = @p2.name
-    end
-    
-    result
-  end
 
+  def compute_winner(p1_choice, p2_choice)
+    winner = nil
+    players_options = { p1: p1_choice, p2: p2_choice }
+    p players_options
+  
+    winning_options = {
+      p1: [
+        { p1: :rock, p2: :lizard },
+        { p1: :rock, p2: :scissors },
+        { p1: :lizard, p2: :spock },
+        { p1: :lizard, p2: :paper },
+        { p1: :spock, p2: :scissors },
+        { p1: :spock, p2: :rock },
+        { p1: :scissors, p2: :lizard },
+        { p1: :scissors, p2: :paper },
+        { p1: :paper, p2: :spock },
+        { p1: :paper, p2: :rock }
+      ]
+    }
+  
+    winning_options.each do |_key, value|
+      value.select do |option|
+        winner = option == players_options ? @p1 : @p2
+        break if option == players_options
+      end
+    end
+
+    winner.increase_score
+    winner.name
+  end
+  
 end

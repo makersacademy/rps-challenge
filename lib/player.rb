@@ -1,6 +1,7 @@
 class Player
 
   attr_reader :name
+  attr_writer :choice
 
   def initialize(name)
     @name = name
@@ -8,8 +9,8 @@ class Player
     @score = 0
   end
 
-  def choice=(selection)
-    @choice = selection
+  def win
+    @name
   end
 
   def user_choice
@@ -28,7 +29,7 @@ class Player
     @score += 1
   end
 
-  def get_score
+  def retrieve_score
     @score
   end
 
