@@ -14,7 +14,7 @@ feature 'Game Results' do
 end
 
 feature 'Game Results' do
-  scenario 'checks if player wins by having Scissors chosen against Rock' do
+  scenario 'checks if player loses by having Scissors chosen against Rock' do
     allow_any_instance_of(Auto).to receive(:random_pick).and_return('Rock')
     visit '/'
     fill_in('name', with: 'Yoyo')
