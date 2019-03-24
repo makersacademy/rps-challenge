@@ -1,6 +1,6 @@
 require_relative '../../lib/player'
 
-feature 'playing the game' do
+feature 'playing the game with one player' do
   let(:computer_name) { "RPSBot::9000" }
   let(:player1_name) { "Lester Flatt" }
   let(:player2_name) { "Earl Scruggs" }
@@ -126,9 +126,11 @@ feature 'playing the game' do
 end
 
 feature "restarting the game" do
+  let(:player1_name) { "Lester Flatt" }
+
   context "after completing a round" do
     scenario "the user can choose to play another round" do
-      register_one_player('Dougal')
+      register_one_player(player1_name)
       click_button 'Rock'
       expect(page).to have_link('Play again?', :href => '/player-1')
     end
@@ -136,7 +138,7 @@ feature "restarting the game" do
 
   context "after completing a round" do
     scenario "the user has the option of picking new players" do
-      register_one_player('Dougal')
+      register_one_player(player1_name)
       click_button 'Rock'
       expect(page).to have_link('Change players?', :href => '/')
     end
