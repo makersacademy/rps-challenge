@@ -21,18 +21,10 @@ class Rps < Sinatra::Base
     @winner = ""
     if @selection == @server_selection
       @winner = "This is a draw"
-    elsif @selection == "rock" && @server_selection == "paper"
+    elsif (@selection == "rock" && @server_selection == "paper") || (@selection == "scissors" && @server_selection == "rock") || (@selection == "paper" && @server_selection == "scissors")
       @winner = "The computer"
-    elsif @selection == "rock" && @server_selection == "scissors"
+    else
       @winner = @player_name
-    elsif @selection == "scissors" && @server_selection == "paper"
-      @winner = @player_name
-    elsif @selection == "scissors" && @server_selection == "rock"
-      @winner = "The computer"
-    elsif @selection == "paper" && @server_selection == "rock"
-      @winner = @player_name
-    elsif @selection == "paper" && @server_selection == "scissors"
-      @winner = "The computer"
     end
 
     erb(:selection)
