@@ -72,6 +72,8 @@ I used a test-driven development approach to create the simple web app with a fo
 
 For each user story, I sketched out the features and then wrote some feature tests to capture the end-to-end user flow. I used Capybara for feature testing the user flow, with extensions for RSpec.
 
+For technical implementation, I decided to use models `game.rb`, `cpu.rb` and `player.rb` to analyse manage the logic.
+
 
 ### USER STORY 1
 > As a marketeer
@@ -183,18 +185,12 @@ Winner will be declared
 ## Test Cases
 
 1. [X] Feature test when it is game over, the user sees the move they played
-2. [] Feature test when the game is over, the user sees the outcome of the game - the winner is declared 
+2. [X] Feature test when the game is over, the user sees the outcome of the game - the winner is declared 
 
 *Enhancement:*
 -
 -
 -
-
-For technical implementation, I decided to use a model to `xxxxxxxx.rb` to analyse the user's input.
-
-```
-
-```
 
 
 ## Improvements/enhancements:

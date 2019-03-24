@@ -17,7 +17,7 @@ describe Game do
     end
 
     it 'decides the outcome of the game - draw' do
-      expect(game.game_over("Scissors", "Scissor")).to eq "It's a draw"
+      expect(game.game_over("Scissors", "Scissors")).to eq "It's a draw"
     end
 
   end

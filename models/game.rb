@@ -8,21 +8,11 @@ class Game
   end
 
   def game_over(player_1, player_2)
-    if player_1 == "Rock" && player_2 == "Scissors"
-      "#{@player_1.name} wins"
-    elsif player_1 == "Rock" && player_2 == "Paper"
-      "#{@player_2.name} wins"
-    elsif player_1 == "Paper" && player_2 == "Rock"
-      "#{@player_1.name} wins"
-    elsif player_1 == "Paper" && player_2 == "Scissors"
-      "#{@player_2.name} wins"
-    elsif player_1 == "Scissors" && player_2 == "Paper"
-      "#{@player_1.name} wins"
-    elsif player_1 == "Scissors" && player_2 == "Rock"
-      "#{@player_2.name} wins"
-    else
-      "It's a draw"
-    end
+    return "#{@player_1.name} wins" if player_1 == 'Scissors' && player_2 == 'Paper'
+    return "#{@player_1.name} wins" if player_1 == 'Paper' && player_2 == 'Rock'
+    return "#{@player_1.name} wins" if player_1 == 'Rock' && player_2 == 'Scissors'
+    return "It's a draw" if player_1 == player_2
+    "#{@player_2.name} wins"
   end
 
   def self.create(player_1, player_2)
