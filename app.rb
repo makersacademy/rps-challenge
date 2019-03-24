@@ -26,7 +26,10 @@ class RockPaperScissors < Sinatra::Base
     erb :register_two_players
   end
 
-  post '/save-names' do
+  # is it a good idea it handle two situations here in one route?
+  # or would it be better to split these out? splitting it into
+  # two routes seems messier
+  post '/start-game' do
     if params['computer_opponent'] == 'true'
       Game.create(params['player1_name'])
     else
