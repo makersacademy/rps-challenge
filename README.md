@@ -54,6 +54,8 @@ An apple macbook was used to write code using VSCode as an editor and;
 
 * Ruby was used as the main language.
 * RSpec used for testing.
+* Coverall used to check test coverage.
+* Sinatra used for the server framework.
 
 ### Code style
 
