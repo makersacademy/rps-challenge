@@ -1,14 +1,20 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new("Paul", "HAL9000", player_class) }
+  subject(:game) do
+    described_class.new(player1_name, player2_name, player_class)
+  end
   let(:player_class) { double(:player_class) }
   let(:player1) { double(:player1) }
+  let(:player1_name) { double(:player1_name) }
   let(:player2) { double(:player2) }
+  let(:player2_name) { double(:player2_name) }
 
   before do
-    allow(player_class).to receive(:new).with('Paul').and_return(player1)
-    allow(player_class).to receive(:new).with('HAL9000').and_return(player2)
+    allow(player_class).to receive(:new).with(player1_name).and_return(player1)
+    allow(player1).to receive(:name).and_return(player1_name)
+    allow(player_class).to receive(:new).with(player2_name).and_return(player2)
+    allow(player2).to receive(:name).and_return(player2_name)
   end
 
   describe '.create' do
@@ -49,13 +55,13 @@ describe Game do
       context 'player 2 chooses paper' do
         it 'p2 wins' do
           allow(player2).to receive('choice').and_return(1)
-          expect(game.result).to eq "You lose"
+          expect(game.result).to eq "#{player2_name} wins"
         end
       end
       context 'player 2 chooses scissors' do
         it 'p1 wins' do
           allow(player2).to receive('choice').and_return(2)
-          expect(game.result).to eq "You win"
+          expect(game.result).to eq "#{player1_name} wins"
         end
       end
     end
@@ -68,7 +74,7 @@ describe Game do
       context 'player 2 chooses rock' do
         it 'p1 wins' do
           allow(player2).to receive('choice').and_return(0)
-          expect(game.result).to eq "You win"
+          expect(game.result).to eq "#{player1_name} wins"
         end
       end
       context 'player 2 chooses paper' do
@@ -80,7 +86,7 @@ describe Game do
       context 'player 2 chooses scissors' do
         it 'p2 wins' do
           allow(player2).to receive('choice').and_return(2)
-          expect(game.result).to eq "You lose"
+          expect(game.result).to eq "#{player2_name} wins"
         end
       end
     end
@@ -93,13 +99,13 @@ describe Game do
       context 'player 2 chooses rock' do
         it 'p2 wins' do
           allow(player2).to receive('choice').and_return(0)
-          expect(game.result).to eq "You lose"
+          expect(game.result).to eq "#{player2_name} wins"
         end
       end
       context 'player 2 chooses paper' do
         it 'p1 wins' do
           allow(player2).to receive('choice').and_return(1)
-          expect(game.result).to eq "You win"
+          expect(game.result).to eq "#{player1_name} wins"
         end
       end
       context 'player 2 chooses scissors' do

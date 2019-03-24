@@ -18,6 +18,10 @@ class Game
 
   def result
     score = (player1.choice - player2.choice) % 3
-    ["It's a draw", "You win", "You lose"][score]
+    [
+      "It's a draw",
+      "#{player1.name} wins",
+      "#{player2.name} wins"
+    ][score]
   end
 end
