@@ -28,7 +28,7 @@ describe "Play" do
     end
 
     it "displays the result" do
-      expect(page).to have_selector("h2", :id => "result")
+      expect(page).to have_selector("h1", :id => "result")
     end
   end
 end

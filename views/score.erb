@@ -1,9 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<h1 id="result"><%= @result %></h1>
+
 <h3>Your turn was... <%= @score %></h3>
 
 <h3>Computer's turn was... <%= @computer_score %></h3>
 
-<h2 id="result"><%= @result %></h2>
 
-<form action="/play">
-  <button value="play-again">Play again</button>
+
+<form class="container" action="/play">
+  <button class="submit-button" value="play-again">Play again</button>
 </form>
+
+</html>

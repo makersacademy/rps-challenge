@@ -1,10 +1,20 @@
-<h2>Let's play, <%= @name %>!</h2>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
 
-<form action="/turn" method="post">
-  <select name="turn">
+<h1>Let's play, <%= @name %>!</h1>
+
+<p>Choose your move</p>
+
+<form class="container" action="/turn" method="post">
+  <select class="custom-select" name="turn">
     <option value="rock">Rock</option>
     <option value="paper">Paper</option>
     <option value="scissors">Scissors</option>
   </select>
-  <button type="submit" value="play">Play</button>
+  <button class="submit-button" type="submit" value="play">Play</button>
 </form>
+
+</html>

@@ -1,0 +1,71 @@
+html, body {
+  background-color: rgb(68, 95, 129);
+  font-family: Verdana
+}
+
+h1 {
+  color: rgb(188, 213, 248);
+  margin-bottom: 2.5rem;
+  margin-top: 2.5rem;
+  text-align: center
+}
+
+h3 {
+  color: rgb(167, 201, 247);
+  font-size: 20px;
+  text-align: center
+}
+
+p {
+  color: rgb(167, 201, 247);
+  font-size: 18px;
+  text-align: center
+}
+
+.container {
+  justify-content: center;
+  margin: auto;
+  max-width: 600px;
+  text-align: center
+}
+
+.input {
+  border: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 300;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 10px;
+  width: 15rem;
+}
+
+.custom-select {
+  border: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 300;
+  height: 43px;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 10px;
+  vertical-align: top;
+  width: 15rem;
+}
+
+.submit-button {
+  background: rgb(0, 132, 255);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 300;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 10px;
+  width: 7.5rem;
+}
