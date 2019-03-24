@@ -6,9 +6,10 @@ describe Player do
     expect(player.name).to eq "Sam"
   end
 
-  it 'delivers a random choice of option for a computer player' do
+  it 'delivers scissors when running random_choice for a computer player' do
     player = Player.new("Computer")
-    expect(player.update_choice).to eq("Rock") | eq("Paper") | eq("Scissors")
+    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+    expect(player.update_choice).to eq("Scissors")
   end
 
   it 'sets the player choice when not the computer' do

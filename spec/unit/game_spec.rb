@@ -9,23 +9,65 @@ describe Game do
     expect(Game.new(player_1, player_2)).to be_a(described_class)
   end
 
-  it 'Plays a game and specifies player 1 as the winner' do
+  it 'Scissors beats Paper - Player 1 wins' do
     allow(player_1).to receive(:choice) { "Scissors" }
     allow(player_2).to receive(:choice) { "Paper" }
     game.play
     expect(game.winner).to eq player_1
   end
 
-  it 'Plays a game and specifies player 2 as the winner' do
+  it 'Rock beats Scissors - Player 1 wins' do
+    allow(player_1).to receive(:choice) { "Rock" }
+    allow(player_2).to receive(:choice) { "Scissors" }
+    game.play
+    expect(game.winner).to eq player_1
+  end
+
+  it 'Paper beats Rock - Player 1 wins' do
+    allow(player_1).to receive(:choice) { "Paper" }
+    allow(player_2).to receive(:choice) { "Rock" }
+    game.play
+    expect(game.winner).to eq player_1
+  end
+
+  it 'Paper beats Rock - Player 2 wins' do
     allow(player_1).to receive(:choice) { "Rock" }
     allow(player_2).to receive(:choice) { "Paper" }
     game.play
     expect(game.winner).to eq player_2
   end
 
-  it 'Plays a game and specifies a drawer' do
+  it 'Rock beats Scissors - Player 2 wins' do
+    allow(player_1).to receive(:choice) { "Scissors" }
+    allow(player_2).to receive(:choice) { "Rock" }
+    game.play
+    expect(game.winner).to eq player_2
+  end
+
+  it 'Paper beats Paper - Player 2 wins' do
+    allow(player_1).to receive(:choice) { "Paper" }
+    allow(player_2).to receive(:choice) { "Scissors" }
+    game.play
+    expect(game.winner).to eq player_2
+  end
+
+  it 'Rock - Rock - specifies a draw' do
     allow(player_1).to receive(:choice) { "Rock" }
     allow(player_2).to receive(:choice) { "Rock" }
+    game.play
+    expect(game.winner).to eq "draw"
+  end
+
+  it 'Paper - Paper - specifies a draw' do
+    allow(player_1).to receive(:choice) { "Paper" }
+    allow(player_2).to receive(:choice) { "Paper" }
+    game.play
+    expect(game.winner).to eq "draw"
+  end
+
+  it 'Scissors - Scissors - specifies a draw' do
+    allow(player_1).to receive(:choice) { "Scissors" }
+    allow(player_2).to receive(:choice) { "Scissors" }
     game.play
     expect(game.winner).to eq "draw"
   end
