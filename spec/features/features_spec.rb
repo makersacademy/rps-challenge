@@ -31,7 +31,7 @@ end
 
 xfeature 'playing the game' do
   before do
-    register_player1('Sandra')
+    register_one_player('Sandra')
   end
 
   context 'after registering' do

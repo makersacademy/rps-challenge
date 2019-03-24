@@ -1,7 +1,6 @@
-def register_player1(name)
+def register_one_player(name)
   visit '/'
-  within('#registration-form') do
-    fill_in 'player1_name', with: name
-  end
-  click_button "Let's go"
+  click_button(value: 'one_player')
+  fill_in 'player1_name', with: name
+  click_button "Let's do this"
 end
