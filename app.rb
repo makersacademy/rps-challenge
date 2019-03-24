@@ -28,8 +28,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/save-names' do
     if params['computer_opponent'] == 'true'
-      game = Game.create(params['player1_name'], "RPSBot::9000")
-      game.player2.set_computer
+      Game.create(params['player1_name'])
     else
       Game.create(params['player1_name'], params['player2_name'])
     end
