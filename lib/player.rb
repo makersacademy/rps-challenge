@@ -7,12 +7,20 @@ class Player
     @choice = nil
   end
 
-  def choice(selection)
+  def choice=(selection)
     @choice = selection
   end
 
   def user_choice
     @choice
+  end
+
+  def assigned_choice?
+    @choice != nil
+  end
+
+  def reset
+    @choice = nil
   end
 
 end

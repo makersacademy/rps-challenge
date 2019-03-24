@@ -6,8 +6,10 @@ require './app'
 feature 'Start game' do
   scenario 'user can register his name' do
     visit '/'
-    fill_in "name",	with: "User1" 
+    fill_in "player1",	with: "User1" 
+    fill_in "player2",	with: "User2" 
     click_button 'Start game'
-    expect(page).to have_content("User: User1")
+    expect(page).to have_content("Player 1: User1")
+    expect(page).to have_content("Player 2: User2")
   end
 end

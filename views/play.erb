@@ -1,9 +1,16 @@
 
-<p>User: <%=@game.player1.name%></p> 
+<h1>Players:</h1>
+<p>Player 1: <%=@game.player1.name%></p> 
+<p>Player 2: <%=@game.player2.name%></p> 
+
+
+<p>Turn: <%=@game.get_turn.name%></p> 
+
+
 
 <img src="rock.png" alt="">
 
-<form action="/result" method="post" >
+<form action="/turn" method="post" >
 
 <button type="submit" name="result" value="Rock"><img src="/images/rock.png"></button>
 <button type="submit" name="result" value="Paper"><img src="/images/paper.png"></button>

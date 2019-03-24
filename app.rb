@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/rps'
 require './lib/player'
+require './lib/winner'
 
 
 class Game < Sinatra::Base
@@ -10,27 +11,44 @@ class Game < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  before do
+    @game = RPS.instance 
+  end
+
   enable :sessions
 
   get '/' do
     erb :index
   end
 
-  post '/play' do
-    player1 = Player.new(params[:name])
-    @game = RPS.create(player1)
-    erb :play
+  post '/create_game' do
+    player1 = params[:player1] == "" ? Player.new(params[:computer1]) : Player.new(params[:player1])
+    player2 = params[:player2] == "" ? Player.new(params[:computer2]) : Player.new(params[:player2])
+    @game = RPS.create(player1,player2)
+    redirect '/play'
   end
 
   get '/play' do
-    @game = RPS.instance 
     erb :play
   end
 
-  post '/result' do
-    @game = RPS.instance 
-    @game.player1.choice(params[:result])
+  post '/turn' do
+    player = @game.get_turn
+    player.choice = params[:result]
+    @game.change_turn
+  
+    @game.completed_run.count == 2 ? redirect('/result') : redirect('/play')
+  end
+
+  get '/result' do
+    @result = Winner.run(@game.player1, @game.player2)
     erb :result
+  end
+
+  post '/reset_game' do
+    @game.reset_game
+  
+    redirect '/play'
   end
 
 end

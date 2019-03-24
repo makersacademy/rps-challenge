@@ -8,7 +8,7 @@ describe Player do
   end
 
   it 'assigns a choice to itself' do
-    player.choice("Rock")
+    player.choice = "Rock"
     expect(player.user_choice).to eq 'Rock'
   end
 end

@@ -1,9 +1,12 @@
 
-<h2><%= @game.player1.name%>: <%= @game.get_player_choice%></h2>
+<h2><%= @game.player1.name%>: <%= @game.player1.user_choice%></h2>
 
-<h2>Computer: <%= @game.get_computer_choice%></h2>
+<h2><%= @game.player2.name%>: <%= @game.player2.user_choice%></h2>
 
-<h2>Winner: <%= @game.winner%></h2>
+<h2>Winner: <%= @result%></h2>
 
-<a href="/play">Start again</a>
+<form action="/reset_game" method = 'post'>
+<input type="submit" name="submit" value="Start again" id="">
+</form>
+
 

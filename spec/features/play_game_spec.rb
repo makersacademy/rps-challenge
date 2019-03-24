@@ -7,7 +7,7 @@ feature 'Game play' do
   scenario 'user sees result' do
     visit '/'
 
-    fill_in "name",	with: "Player1"
+    fill_in "player1",	with: "Player1"
     click_button 'Start game'
     click_button 'Rock'
     expect(page).to have_content 'Player1' 
@@ -16,10 +16,20 @@ feature 'Game play' do
   scenario 'go back to start after game end' do
     visit '/'
 
-    fill_in "name",	with: "Player1"
+    fill_in "player1",	with: "Player1"
     click_button 'Start game'
     click_button 'Rock'
-    click_link 'Start again'
-    expect(page).to have_content 'Player1'
+    click_button 'Rock'
+    click_button 'Start again'
+    expect(page).to have_content 'Player 1: Player1'
   end
+
+  scenario 'player 1 wins game' do
+
+  end
+
+  scenario 'player 2 wins game' do
+
+  end
+
 end
