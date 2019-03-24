@@ -29,7 +29,17 @@ class Game < Sinatra::Base
   end
 
   get '/play' do
-    erb :play
+    @game.computer_turn? ? redirect('/computer_turn') : erb(:play)
+  end
+
+  get '/computer_turn' do
+    
+    player = @game.get_turn
+    player.choice = @game.get_computer_choice
+    @game.change_turn
+
+    @game.completed_run.count == 2 ? erb(:computer_message_turn2) : erb(:computer_message_turn1)
+
   end
 
   post '/turn' do

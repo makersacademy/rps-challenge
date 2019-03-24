@@ -34,21 +34,25 @@ class RPS
     @player2
   end
 
-  def get_turn #this is not picking the change - its always player 1
+  def get_turn 
     @players.first
   end
 
-  def change_turn #this is changing
+  def change_turn 
     @players.reverse!
+  end
+
+  def computer_turn?
+    @players.first.name == 'Computer'
   end
 
   # def get_player_choice
   #   @players.first.user_choice
   # end
 
-  # def get_computer_choice
-  #   @computer_choice = play
-  # end
+  def get_computer_choice
+    @computer_choice = play
+  end
 
   def completed_run
     result = @players.select { |player| player.assigned_choice? == true }
