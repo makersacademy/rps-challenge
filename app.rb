@@ -20,6 +20,11 @@ class RockPaperScissors < Sinatra::Base
     erb :two_players
   end
 
+  post '/save-names-2' do
+    Game.create(params['player1_name'], params['player2_name'])
+    redirect '/play'
+  end
+
   post '/enter-name' do
     Game.create(params['player1_name'], "T-800")
     redirect '/play'

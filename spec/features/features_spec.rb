@@ -11,8 +11,10 @@ feature 'signing in' do
     scenario 'system asks for two names' do
       visit '/'
       click_button(value: 'two_player')
-      expect(page).to have_css("input[name='player1_name']")
-      expect(page).to have_css("input[name='player2_name']")
+      fill_in "player1_name", with: "Flatt"
+      fill_in "player2_name", with: "Scruggs"
+      click_button("Let's do this")
+      expect(page).to have_content("Flatt vs. Scruggs")
     end
   end
   xscenario 'user can sign in with their name' do
