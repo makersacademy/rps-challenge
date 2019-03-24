@@ -51,4 +51,17 @@ describe Player do
       end
     end
   end
+
+  describe '#computer?' do
+    it 'returns false by default' do
+      expect(player).not_to be_computer
+    end
+  end
+
+  describe '#is_computer' do
+    it 'sets #computer? to true' do
+      player.is_computer
+      expect(player).to be_computer
+    end
+  end
 end
