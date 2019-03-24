@@ -5,6 +5,8 @@ Rock Paper Scissors - Matt Thompson
 
 This Ruby web app allows users to regsiter their name and play rock, paper, scissors against the computer.
 
+![demo gif](https://github.com/mattTea/rps-challenge/blob/master/problem/rps.gif)
+
 
 #### Technologies used
 
