@@ -6,6 +6,9 @@ RPS Challenge
 ## I documented my approach in 'kd_approach.md' <---- Please read me! :)
 - I documented and explained the processes and approaches I used for this challenge
 
+The app is available here:
+https://rps-pusheen.herokuapp.com/
+
 **To improve my project, next time I would like to:**
 
 - Maintain 100% test coverage for RSpec
@@ -87,7 +90,7 @@ I used `rubocop` as a guide.
 ## How to use the app
 
 The app is available here:
-XXXXXXXXX
+https://rps-pusheen.herokuapp.com/
 
 I decided to host the app using Heroku. The app was deployed using the Heroku CLI.
 https://www.heroku.com/home
