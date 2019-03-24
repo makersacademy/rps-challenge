@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/m-budryte/rps-challenge.svg?branch=master)](https://travis-ci.com/m-budryte/rps-challenge)
 ## Rock, Paper, Scissors
 This is an application built for MAMA team that allows them to play classic Rock, Paper, Scissors.
 
