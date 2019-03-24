@@ -6,7 +6,7 @@ This application is built to allow MAMA team to
 
 ## Tech/framework used
 <b>Built with</b>
-- Ruby 2.6.0
+- Ruby 2.5.0
 - Sinatra
 - rubocop
 - RSpec
