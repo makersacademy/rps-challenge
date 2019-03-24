@@ -43,13 +43,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choose' do
-    @game.players[@game.turn].choose(params['choice'].to_i)
+    @game.current_player.choose(params['choice'].to_i)
     @game.next_turn
 
     if @game.turn >= 2
       redirect '/result'
-    elsif @game.players[@game.turn].computer?
-      @game.players[@game.turn].choose_random(3)
+    elsif @game.current_player.computer?
+      @game.current_player.choose_random(3)
       redirect '/result'
     else
       redirect '/play'
