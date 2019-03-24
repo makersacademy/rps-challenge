@@ -61,6 +61,14 @@ I would like to be able to play rock/paper/scissors
 
 5. I have started to build out a new rules class for the rock-paper-scissors-spock-lizard class. This needs a bit more brain power to understand the rules but I should be able to switch one set of rules out for another
 
+
+### Improvements that could be made
+
+- Bonus question 1 - I created my program in a way that should be easy to update to 2 players - computer is just another player as well. However, I like my one player game so I haven't done this.
+- Bonus question 2 - ask user which game they would prefer to play and then build a second set of files that care about that (including the random setting of the computer choice).
+- Add error handling
+- Check whether my implementation of the checking the rules could be done in a neater way
+
 # The other details of the challenge
 
 Hints on functionality

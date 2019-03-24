@@ -59,7 +59,7 @@ I would like to see a clear message with the winner's name
 This needs some user stories before I can properly extract what the nouns and verbs would be
 - Game - turn
 
-## Saturday night - current progress
+## Sunday - current progress
 - User can enter their name and see it displayed back
 - User can play rock, paper, scissors against the computer and find out who wins
 - Checked for single responsibility of classes and methods
