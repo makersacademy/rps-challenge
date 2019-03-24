@@ -12,7 +12,8 @@ class Rps < Sinatra::Base
   end
 
   post '/selection' do
-    'Rock'
+    @selection = params[:option]
+    erb(:selection)
   end
 
   run! if app_file == $0

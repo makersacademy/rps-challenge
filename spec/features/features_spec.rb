@@ -4,13 +4,13 @@ feature 'Player enter name' do
     expect(page).to have_content 'player 1'
   end
 
-  scenario 'Shows the options to the player Evelyn and the player selects rock' do
+  scenario 'Shows options for player to select one and shows selected option on screen' do
     visit('/')
     fill_in 'player1', with: 'Evelyn'
     click_button 'Submit'
     expect(page).to have_content 'Evelyn'
-    select 'Rock', from: 'option'
+    select 'Scissors', from: 'option'
     click_button 'Submit'
-    expect(page).to have_content 'Rock'
+    expect(page).to have_content 'scissors'
   end
 end
