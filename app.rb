@@ -35,33 +35,25 @@ class RockPaperScissors < Sinatra::Base
     else
       Game.create(params['player1_name'], params['player2_name'])
     end
-    redirect '/player-1'
-  end
-  
-  get '/player-1' do
-    @warning = @game.players[1].computer? ? "" : "#{@game.players[1].name}, look away"
-    erb :player_1
+    redirect '/play'
   end
 
-  post '/choose-1' do
-    @game.players[0].choose(params['choice'].to_i)
+  get '/play' do
+    erb :play
+  end
 
-    if @game.players[1].computer?
-      @game.players[1].choose_random(3)
+  post '/choose' do
+    @game.players[@game.turn].choose(params['choice'].to_i)
+    @game.next_turn
+
+    if @game.turn >= 2
+      redirect '/result'
+    elsif @game.players[@game.turn].computer?
+      @game.players[@game.turn].choose_random(3)
       redirect '/result'
     else
-      redirect '/player-2'
+      redirect '/play'
     end
-  end
-
-  get '/player-2' do
-    @warning = "#{@game.players[0].name}, look away"
-    erb :player_2
-  end
-
-  post '/choose-2' do
-    @game.players[1].choose(params['choice'].to_i)
-    redirect '/result'
   end
 
   get '/result' do

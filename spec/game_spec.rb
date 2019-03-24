@@ -19,6 +19,9 @@ describe Game do
     allow(player_class).to receive(:new)
       .with(described_class::COMPUTER_NAME).and_return(computer_player)
     allow(computer_player).to receive(:set_computer)
+    allow(computer_player).to receive(:computer?).and_return(true)
+    allow(player1).to receive(:computer?).and_return(false)
+    allow(player2).to receive(:computer?).and_return(false)
   end
 
   describe '.create' do
@@ -57,10 +60,70 @@ describe Game do
     it 'is set to 0 by default' do
       expect(game.turn).to eq 0
     end
+  end
 
-    it 'can be set to 1' do
-      game.next_turn("1")
-      expect(game.turn).to eq 1
+  describe '#next_turn' do
+    it 'increases #turn' do
+      game.next_turn
+      expect { game.next_turn }.to change { game.turn }.by 1
+    end
+  end
+
+  describe '#current_player' do
+    context "player 1's go" do
+      it 'returns player 1' do
+        expect(game.current_player).to eq player1
+      end
+    end
+
+    context "player 2's go" do
+      it 'returns player 2' do
+        game.next_turn
+        expect(game.current_player).to eq player2
+      end
+    end
+  end
+
+  describe '#other_player' do
+    context "player 1's go" do
+      it 'returns player 2' do
+        expect(game.other_player).to eq player2
+      end
+    end
+
+    context "player 2's go" do
+      it 'returns player 1' do
+        game.next_turn
+        expect(game.other_player).to eq player1
+      end
+    end
+  end
+
+  describe '#warning' do
+    context 'player 2 is computerised' do
+      it 'returns an empty string' do
+        Game.create(player1_name, nil, player_class)
+        expect(Game.instance.warning).to eq ""
+      end
+    end
+
+    context 'player 2 is a human' do
+      before do
+        game = Game.create(player1_name, player2_name)
+      end
+
+      context "it's player 1's go" do
+        it 'tells player 2 not to look' do
+          expect(game.warning).to eq "#{player2_name}, look away"
+        end
+      end
+      
+      context "it's player 2's go" do
+        it 'tells player 1 not to look' do
+          game.next_turn
+          expect(game.warning).to eq "#{player1_name}, look away"
+        end
+      end
     end
   end
 

@@ -25,7 +25,7 @@ class Game
     @turn = 0
   end
 
-  def next_turn(turn)
+  def next_turn
     @turn += 1
   end
 
@@ -36,6 +36,19 @@ class Game
       "#{players[0].name} wins",
       "#{players[1].name} wins"
     ][score]
+  end
+
+  def current_player
+    players[turn % 2]
+  end
+
+  def other_player
+    players[(turn + 1) % 2]
+  end
+
+  def warning
+    return "" if players[1].computer?
+    "#{other_player.name}, look away"
   end
 
 end
