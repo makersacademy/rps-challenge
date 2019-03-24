@@ -10,12 +10,12 @@ class RPS < Sinatra::Base
   end
 
   post '/info' do
-    $player_name = Player.new(params[:name])
+    $player = Player.new(params[:name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = $player_name.name
+    @player_name = $player.name
     erb :play
   end
 
