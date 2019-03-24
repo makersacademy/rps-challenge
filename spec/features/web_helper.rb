@@ -1,5 +1,5 @@
 def add_suzy
   visit('/')
   fill_in 'p1name', with: 'Suzy'
-  click_button "Submit"
+  click_on "Submit"
 end
