@@ -18,11 +18,16 @@ class Game
     @game
   end
 
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :turn
 
   def initialize(name1, name2, player = Player)
     @player1 = player.new(name1)
     @player2 = player.new(name2)
+    @turn = 0
+  end
+
+  def next_turn(turn)
+    @turn += 1
   end
 
   def result

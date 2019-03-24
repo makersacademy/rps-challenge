@@ -53,6 +53,17 @@ describe Game do
     end
   end
 
+  describe '#turn' do
+    it 'is set to 0 by default' do
+      expect(game.turn).to eq 0
+    end
+
+    it 'can be set to 1' do
+      game.next_turn("1")
+      expect(game.turn).to eq 1
+    end
+  end
+
   describe '#result' do
     context 'player 1 chooses rock' do
       before do
