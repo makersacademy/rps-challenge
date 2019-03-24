@@ -15,3 +15,12 @@ feature 'Winner is declared' do
     expect(page).to have_content('Computer wins!')
   end
 end
+
+feature 'Players draw' do
+  scenario 'player and computer both choose rock' do
+    fill_in_name
+    srand(2)
+    click_button 'Rock'
+    expect(page).to have_content("It's a draw!")
+  end
+end
