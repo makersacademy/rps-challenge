@@ -20,7 +20,6 @@ class Winner
   def compute_winner(p1_choice, p2_choice)
     winner = nil
     players_options = { p1: p1_choice, p2: p2_choice }
-    p players_options
   
     winning_options = {
       p1: [

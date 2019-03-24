@@ -22,6 +22,14 @@ def register_1_player_against_computer
   click_button 'normal'
 end
 
+def register_1_player_against_computer_spock
+  visit '/'
+  fill_in "player1",	with: "Player1"
+  check('computer2')
+  click_button 'Start game'
+  click_button 'spock'
+end
+
 def register_computer_against_1_player
   visit '/'
   check('computer1')

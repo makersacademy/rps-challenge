@@ -78,6 +78,10 @@ Class Diagram
 37. Restart game to login point
 38. Extracting Computer to its own class
 39. Refactor out game_options
+40. Test drive development of RSPLS
+41. Extract computer in a separate class
+42. Implement RPSLS option
+43. Allow user to select between normal RPS and the better RPSLS
 
 ## Bonus level 1: Multiplayer
 
