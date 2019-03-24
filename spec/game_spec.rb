@@ -107,34 +107,6 @@ describe Game do
     end
   end
 
-  describe '#warning' do
-    context 'player 2 is computerised' do
-      it 'returns an empty string' do
-        Game.create(player1_name, nil, player_class)
-        expect(Game.instance.warning).to eq ""
-      end
-    end
-
-    context 'player 2 is a human' do
-      before do
-        game = Game.create(player1_name, player2_name)
-      end
-
-      context "it's player 1's go" do
-        it 'tells player 2 not to look' do
-          expect(game.warning).to eq "#{player2_name}, look away"
-        end
-      end
-      
-      context "it's player 2's go" do
-        it 'tells player 1 not to look' do
-          game.next_turn
-          expect(game.warning).to eq "#{player1_name}, look away"
-        end
-      end
-    end
-  end
-
   describe '#result' do
     context 'player 1 chooses rock' do
       before do

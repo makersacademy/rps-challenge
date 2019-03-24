@@ -42,13 +42,6 @@ class Game
     players[(turn + 1) % 2]
   end
 
-  # I feel like this really belongs in the view, since it's
-  # content, but I can't work out a good way to do it :-/
-  def warning
-    return "" if players[1].computer?
-    "#{other_player.name}, look away"
-  end
-
   def reset
     @turn = 0
   end
