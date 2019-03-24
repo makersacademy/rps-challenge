@@ -1,7 +1,7 @@
 require_relative '../../app.rb'
 
-xfeature 'Winner is declared' do
-  scenario 'player wins' do
+feature 'Winner is declared' do
+  scenario 'player choses paper and computer chooses rock' do
     fill_in_name
     srand(2)
     click_button 'Paper'

@@ -8,7 +8,7 @@
 <body>
   <div class="container">
     <div class="content">
-      <h1>Make your selection, <%= @player.name %></h1>
+      <h1>Make your selection, <%= @game.player.name %></h1>
         <form action="choice" method="post">
           <input type="submit" name="choice" value="Rock">
           <input type="submit" name="choice" value="Paper">

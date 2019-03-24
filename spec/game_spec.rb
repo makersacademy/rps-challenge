@@ -10,20 +10,20 @@ describe Game do
   context 'player wins' do
     it 'player wins if they chose paper and computer choses rock' do
       allow(player).to receive(:weapon).and_return('Paper')
-      allow(computer).to receive(:random_choice).and_return('rock')
-      expect(subject.winner).to eq player
+      allow(computer).to receive(:weapon).and_return('rock')
+      expect(subject.winner).to eq 'You win!'
     end
 
     it 'player wins if they chose rock and computer choses scissors' do
       allow(player).to receive(:weapon).and_return('Rock')
-      allow(computer).to receive(:random_choice).and_return('scissors')
-      expect(subject.winner).to eq player
+      allow(computer).to receive(:weapon).and_return('scissors')
+      expect(subject.winner).to eq 'You win!'
     end
 
     it 'player wins if they chose scissors and computer choses paper' do
       allow(player).to receive(:weapon).and_return('Scissors')
-      allow(computer).to receive(:random_choice).and_return('paper')
-      expect(subject.winner).to eq player
+      allow(computer).to receive(:weapon).and_return('paper')
+      expect(subject.winner).to eq 'You win!'
     end
   end
 

@@ -8,8 +8,9 @@
 <body>
   <div class="container">
     <div class="content">
-      <h1>You chose <%= @player.weapon.downcase %></h1>
-      <h1>Computer chose <%= @computer.random_choice %></h1>
+      <h1>You chose <%= @game.player.weapon.downcase %></h1>
+      <h1>Computer chose <%= @game.computer.random_choice %></h1>
+      <h1><%= @game.winner %></h1>
     </div>
   </div>
 </body>

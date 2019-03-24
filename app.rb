@@ -1,34 +1,36 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/computer.rb'
+require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
 
   enable :sessions
+
+  before do
+    @game = Game.get
+  end
 
   get '/' do
     erb :index
   end
 
   post '/name' do
-    session[:player] = Player.new(params[:player_name])
+    player = Player.new(params[:player_name])
+    Game.create_game(player, Computer.new)
     redirect '/play'
   end
 
   get '/play' do
-    @player = session[:player]
     erb :play
   end
 
   post '/choice' do
-    @player = session[:player]
-    @player.choice(params[:choice])
+    @game.player.choice(params[:choice])
     redirect '/result'
   end
 
   get '/result' do
-    @player = session[:player]
-    @computer = Computer.new
     erb :result
   end
 

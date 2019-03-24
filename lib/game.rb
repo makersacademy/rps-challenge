@@ -1,6 +1,16 @@
 class Game
 
+  attr_reader :player, :computer
+
   WINNER = { 'rock' => 'scissors', 'scissors' => 'paper', 'paper' => 'rock' }
+
+  def self.create_game(player, computer)
+    @game = self.new(player, computer)
+  end
+
+  def self.get
+    @game
+  end
 
   def initialize(player = Player.new, computer = Computer.new)
     @player = player
@@ -8,8 +18,10 @@ class Game
   end
 
   def winner
-    if @computer.random_choice == WINNER[@player.weapon.downcase]
-      @player
+    if @computer.weapon == WINNER[@player.weapon.downcase]
+      'You win!'
+    else
+      'Something!'
     end
   end
 
