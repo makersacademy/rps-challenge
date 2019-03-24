@@ -1,0 +1,13 @@
+body {
+  background-color: lightblue;
+}
+
+input[type=text] {
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  border: 2px solid red;
+  border-radius: 4px;
+  padding-left: 40px;
+}

@@ -30,3 +30,8 @@ At this point, the page simply returns what move the user entered.
 ###### Ideas
 
 - a 'play again' link returning the user to the /names page
+
+###### Difficulties
+
+- need to talk to a coach about MVC, moving methods into ruby classes
+- need to talk to a coach about testing doubles in capybara
