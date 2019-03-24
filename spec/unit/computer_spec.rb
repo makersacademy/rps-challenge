@@ -8,7 +8,7 @@ describe Computer do
   end
 
   it 'should return a random move' do
-    srand(678909)
+    srand(678_909)
     expect(computer.computer_move).to eq 'Rock'
   end
 end
