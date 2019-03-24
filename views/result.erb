@@ -1,9 +1,9 @@
 <h1>The results are in</h1>
 <div>
-  <%= @game.player1.name %> selected <%= @game.player1.choice_human %>
+  <%= @game.players[0].name %> selected <%= @game.players[0].choice_human %>
 </div>
 <div>
-  <%= @game.player2.name %> selected <%= @game.player2.choice_human %>
+  <%= @game.players[1].name %> selected <%= @game.players[1].choice_human %>
 </div>
 <div id="result">
   <%= @game.result %>

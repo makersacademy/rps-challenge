@@ -7,7 +7,7 @@ class Game
   def self.create(name1, name2 = nil, player = Player)
     if name2.nil?
       @game = new(name1, COMPUTER_NAME, player)
-      @game.player2.set_computer
+      @game.players[1].set_computer
     else
       @game = new(name1, name2, player)
     end
@@ -18,11 +18,10 @@ class Game
     @game
   end
 
-  attr_reader :player1, :player2, :turn
+  attr_reader :turn, :players
 
   def initialize(name1, name2, player = Player)
-    @player1 = player.new(name1)
-    @player2 = player.new(name2)
+    @players = [player.new(name1), player.new(name2)]
     @turn = 0
   end
 
@@ -31,11 +30,12 @@ class Game
   end
 
   def result
-    score = (player1.choice - player2.choice) % 3
+    score = (players[0].choice - players[1].choice) % 3
     [
       "It's a draw",
-      "#{player1.name} wins",
-      "#{player2.name} wins"
+      "#{players[0].name} wins",
+      "#{players[1].name} wins"
     ][score]
   end
+
 end

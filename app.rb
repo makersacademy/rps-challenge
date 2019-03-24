@@ -39,15 +39,15 @@ class RockPaperScissors < Sinatra::Base
   end
   
   get '/player-1' do
-    @warning = @game.player2.computer? ? "" : "#{@game.player2.name}, look away"
+    @warning = @game.players[1].computer? ? "" : "#{@game.players[1].name}, look away"
     erb :player_1
   end
 
   post '/choose-1' do
-    @game.player1.choose(params['choice'].to_i)
+    @game.players[0].choose(params['choice'].to_i)
 
-    if @game.player2.computer?
-      @game.player2.choose_random(3)
+    if @game.players[1].computer?
+      @game.players[1].choose_random(3)
       redirect '/result'
     else
       redirect '/player-2'
@@ -55,12 +55,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/player-2' do
-    @warning = "#{@game.player1.name}, look away"
+    @warning = "#{@game.players[0].name}, look away"
     erb :player_2
   end
 
   post '/choose-2' do
-    @game.player2.choose(params['choice'].to_i)
+    @game.players[1].choose(params['choice'].to_i)
     redirect '/result'
   end
 

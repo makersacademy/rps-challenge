@@ -25,8 +25,8 @@ describe Game do
     context 'when given two names' do
       it "creates an instance of itself with two players" do
         Game.create(player1_name, player2_name, player_class)
-        expect(Game.instance.player1).to eq player1
-        expect(Game.instance.player2).to eq player2
+        expect(Game.instance.players[0]).to eq player1
+        expect(Game.instance.players[1]).to eq player2
         expect(player2).not_to receive(:set_computer)
       end
     end
@@ -35,21 +35,21 @@ describe Game do
       it "creates an instance of itself with a computer opponent" do
         expect(computer_player).to receive(:set_computer)
         Game.create(player1_name, nil, player_class)
-        expect(Game.instance.player1).to eq player1
-        expect(Game.instance.player2).to eq computer_player
+        expect(Game.instance.players[0]).to eq player1
+        expect(Game.instance.players[1]).to eq computer_player
       end
     end
   end
 
   describe '#player1' do
     it "returns player1" do
-      expect(game.player1).to eq player1
+      expect(game.players[0]).to eq player1
     end
   end
 
   describe '#player2' do
     it "returns player2" do
-      expect(game.player2).to eq player2
+      expect(game.players[1]).to eq player2
     end
   end
 
