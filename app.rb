@@ -13,15 +13,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choose-players' do
-    redirect @params["players"] == 'one_player' ? '/one-player' : '/two-players'
+    redirect @params["players"] == 'one_player' ?
+      '/register-one-player' :
+      '/register-two-players'
   end
 
-  get '/one-player' do
-    erb :one_player
+  get '/register-one-player' do
+    erb :register_one_player
   end
 
-  get '/two-players' do
-    erb :two_players
+  get '/register-two-players' do
+    erb :register_two_players
   end
 
   post '/save-names-1' do
