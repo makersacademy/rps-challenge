@@ -10,6 +10,11 @@ class RPS < Sinatra::Base
   post '/entered' do
     session[:name] = params[:name]
     erb :entered
-  
-end
+  end
+
+  post 'chosen' do
+    session[:chosen] = params[:chosen]
+    erb :chosen
+
+  end
 end
