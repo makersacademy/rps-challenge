@@ -1,4 +1,4 @@
-require './model/auto.rb'
+require './lib/auto.rb'
 
 feature 'Random move' do
   scenario 'displayes the randomly chosen move by the game' do

@@ -1,6 +1,6 @@
 require 'sinatra/base'
-require './model/player.rb'
-require './model/auto.rb'
+require './lib/player.rb'
+require './lib/auto.rb'
 
 class RPS < Sinatra::Base
 

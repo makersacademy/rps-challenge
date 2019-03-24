@@ -1,4 +1,4 @@
-require './model/player.rb'
+require './lib/player.rb'
 
 describe Player do
   subject(:jon) { Player.new('Jon Snow') }

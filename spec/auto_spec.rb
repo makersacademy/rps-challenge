@@ -1,4 +1,4 @@
-require './model/auto.rb'
+require './lib/auto.rb'
 
 describe Auto do
   it "checks the existence of class" do

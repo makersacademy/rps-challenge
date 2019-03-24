@@ -1,4 +1,4 @@
-require './model/auto.rb'
+require './lib/auto.rb'
 
 feature 'Game Results' do
   scenario 'checks if player wins by having Paper chosen against Rock' do
