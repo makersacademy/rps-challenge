@@ -26,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
     erb :register_two_players
   end
 
-  # is it a good idea it handle two situations here in one route?
+  # is it a good idea to handle two situations here in one route?
   # or would it be better to split these out? splitting it into
   # two routes seems messier
   post '/start-game' do
