@@ -1,4 +1,4 @@
 # config.ru (run with rackup)
 require './app.rb'
 
-run Battle
+run Game

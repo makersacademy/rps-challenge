@@ -5,7 +5,8 @@ require 'simplecov-console'
 require 'rspec'
 require 'capybara'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
-Capybara.app = Battle
+require_relative './features/web_helpers.rb'
+Capybara.app = Game
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
