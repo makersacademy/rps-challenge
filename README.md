@@ -1,6 +1,8 @@
 RPS Challenge
 ==================
 
+[![Build Status](https://travis-ci.org/kimdiep/rps-challenge.svg?branch=master)](https://travis-ci.org/kimdiep/rps-challenge)
+
 ## I documented my approach in 'kd_approach.md' <---- Please read me! :)
 - I documented and explained the processes and approaches I used for this challenge
 
