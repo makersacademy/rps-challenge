@@ -11,7 +11,6 @@ class RPS < Sinatra::Base
   post '/name' do
     $player = Player.new(params[:name])
     @player = $player.name
-    # @name = params[:name]
     erb :names
   end
 

@@ -1,6 +1,21 @@
 <center>
-<h2> Player chose '<%=@move%>' as their move! </h2>
+<h2> You chose '<%=@move%>' as your move! </h2>
 
 <h2> Game chose '<%=@auto_move%>' as a random move! </h3>
+
+<br>
+<br>
+
+<% if @move=="Rock" && @auto_move=="Scissors" %>
+  <h1> You WON! </h1>
+<% elsif @move=='Scissors' && @auto_move=='Paper' %>
+  <h1> You WON! </h1>
+<% elsif @move=='Paper' && @auto_move=='Rock' %>
+  <h1> You WON! </h1>
+<% elsif @move==@auto_move %>
+  <h1> It's a draw! </h1>
+<% else%>
+  <h1> You Lost! </h1>
+<% end %>
 
 <center>
