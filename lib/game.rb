@@ -31,11 +31,6 @@ class Game
 
   def result
     score = (players[0].choice - players[1].choice) % 3
-    # [
-    #   "It's a draw",
-    #   "#{players[0].name} wins",
-    #   "#{players[1].name} wins"
-    # ][score]
     [:draw, :player1_win, :player2_win][score]
   end
 
