@@ -15,6 +15,7 @@ describe Player do
   describe '#set_move' do
 
     it 'returns the move' do
+      player_1.move
       expect(player_1.set_move("Rock")).to eq "Rock"
     end
 

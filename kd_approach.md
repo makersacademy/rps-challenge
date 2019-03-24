@@ -161,6 +161,12 @@ The game will choose a random option
 
 - CPU chooses an option from Rock, Paper, Scissors
 
+## Game Class - Test Cases
+
+1. [X] decides the outcome of the game - player 1 wins
+2. [X] decides the outcome of the game - player 2 wins
+3. [X] decides the outcome of the game - draw
+
 
 Feature 6:
 Winner will be declared
@@ -170,12 +176,14 @@ Winner will be declared
 ```
 
 'Pusheen chooses 'Rock'
-'The winner is [NAME]'
+'Computer chooses 'Scissors'
+'The winner is Pusheen'
 
 ```
 ## Test Cases
 
-1. [X] Feature test when it is game over, the user sees the outcome of the game
+1. [X] Feature test when it is game over, the user sees the move they played
+2. [] Feature test when the game is over, the user sees the outcome of the game - the winner is declared 
 
 *Enhancement:*
 -

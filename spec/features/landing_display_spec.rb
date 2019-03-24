@@ -8,7 +8,8 @@ feature 'Landing Page Display' do
   scenario 'User enters name' do
     visit '/'
     enter_name
-    expect(page).to have_text("Let's Play Pusheen!")
+    expect(page).to have_text("Let's Play")
+    expect(page).to have_text("Kirby vs. Pusheen Computer!")
   end
 
 end
