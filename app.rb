@@ -4,7 +4,6 @@ require './lib/rps'
 require './lib/player'
 require './lib/winner'
 
-
 class Game < Sinatra::Base
 
   configure :development do
@@ -21,10 +20,33 @@ class Game < Sinatra::Base
     erb :index
   end
 
+  post '/save_names' do
+    if params[:player1] == "" 
+      session[:player1] = Computer.new(params[:computer1])
+    else 
+      session[:player1] = Player.new(params[:player1])
+    end
+
+    if params[:player2] == "" 
+      session[:player2] = Computer.new(params[:computer2])
+    else
+      session[:player2] = Player.new(params[:player2])
+    end
+
+    redirect '/chose_game_type'
+  end
+
+  get '/chose_game_type' do
+    erb :chose_game_type
+  end
+  
   post '/create_game' do
-    player1 = params[:player1] == "" ? Player.new(params[:computer1]) : Player.new(params[:player1])
-    player2 = params[:player2] == "" ? Player.new(params[:computer2]) : Player.new(params[:player2])
-    @game = RPS.create(player1,player2)
+    player1 = session[:player1]
+    player2 = session[:player2]
+    game_type = params[:game_type].to_sym
+
+    @game = RPS.create(player1, player2, game_type)
+
     redirect '/play'
   end
 
@@ -33,23 +55,26 @@ class Game < Sinatra::Base
   end
 
   get '/computer_turn' do
-    
-    player = @game.get_turn
-    player.choice = @game.get_computer_choice
+    player = @game.retrieve_turn
+    player.generate_computer_choice(@game.game_options)
     @game.change_turn
 
-    @game.completed_run.count == 2 ? erb(:computer_message_turn2) : erb(:computer_message_turn1)
+    if @game.completed_run.count == 2 
+      erb(:computer_message_turn2)
+    else
+      erb(:computer_message_turn1)
+    end
 
   end
 
   post '/turn' do
-    player = @game.get_turn
-    player.choice = params[:result]
+    player = @game.retrieve_turn
+    player.choice = params[:result].downcase
     @game.change_turn
   
     @game.completed_run.count == 2 ? redirect('/result') : redirect('/play')
   end
-
+  
   get '/result' do
     @result = Winner.run(@game.player1, @game.player2)
     erb :result
