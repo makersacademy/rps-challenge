@@ -71,6 +71,7 @@ Class Diagram
 30. Add changes to rps class to support turn changing between 2 players
 31. Create new erb view to support the turn changing option and ask player 2 for his choice before result page
 32. Creates Restart button to reset player choices and restart the game
+33. Refactor feature test repetitive code into helper methods
 
 ## Bonus level 1: Multiplayer
 

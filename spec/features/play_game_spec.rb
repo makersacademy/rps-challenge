@@ -5,31 +5,32 @@
 feature 'Game play' do
 
   scenario 'user sees result' do
-    visit '/'
-
-    fill_in "player1",	with: "Player1"
-    click_button 'Start game'
+    register_1_player_against_computer
     click_button 'Rock'
-    expect(page).to have_content 'Player1' 
+    click_button 'Rock' ##this should be automatic
+    expect(page).to have_content 'Winner: Draw'
   end
 
   scenario 'go back to start after game end' do
-    visit '/'
-
-    fill_in "player1",	with: "Player1"
-    click_button 'Start game'
+    register_1_player_against_computer
     click_button 'Rock'
     click_button 'Rock'
     click_button 'Start again'
-    expect(page).to have_content 'Player 1: Player1'
+    expect(page).to have_content 'Players:'
   end
 
   scenario 'player 1 wins game' do
-
+    register_1_player_against_computer
+    click_button 'Paper' 
+    click_button 'Rock' ##this should be automatic
+    expect(page).to have_content 'Winner: Player1'
   end
 
   scenario 'player 2 wins game' do
-
+    register_1_player_against_computer
+    click_button 'Rock' 
+    click_button 'Paper' ##this should be automatic
+    expect(page).to have_content 'Winner: Computer'
   end
 
 end
