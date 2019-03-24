@@ -1,20 +1,7 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
+TASK SUMMARY
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
@@ -36,51 +23,55 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
 ## Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+As usual please start by
+* TEST driving development of your app
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+APPROACH
+----
 
-Notes on test coverage
-----------------------
+## Summary
+I split the user flow into 3 sections: before game, during game, and after game. 
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+## user flow:
+### before game 
+#### tests
+- user needs to see an erb with a form where they can register for the game by entering name. Hence require a get '/'
+- user enters name on the form (post)
+- after, user needs to see their name displayed and confirmed that they are registered (to play) on a page 
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+### during game
+#### tests
+- user needs to do an action(e.g. press a button) to start playing the game
+- user needs to see list of options to choose (e.g. paper, rock etc ) 
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
+- user can choose the option (leads onto next phase)
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+
+### after game
+#### tests:
+- user needs to see who won after choosing the option (e.g. server calculates who won in a 'box', where there is some code which determines who won, and where server randomly assigns computer a choice
+
+#### code:
+- player class was created here to generate a new player for user and computer, and assigning an attribute of choice to it
+- player1's choice was stored in params when he entered it in the dropdown option at post '/result'
+
+calculation of who won:
+- taking the choice 'which is a string' to get the index value of the options array, where it is ordered in a particular sequence for this game
+- with the index value, a if statement to determine who is the winner: it gets the value inside the array according to index value and sets who wins by comparing the corresponding values of each player inside the array. The if statement returns the @winner variable which is used in the erb for display
+
+
+## what i didn't do 
+- Made a class for the game itself where it will return a random choice 
+- shorten the calculation for winner step by server (if possible, as already the value is given, might not need index value)
+
+- refactor the feature test where you create a new user in the tests#
+
+- unit test on Player class
