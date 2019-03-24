@@ -13,15 +13,15 @@ describe Game do
 
   before do
     allow(player_class).to receive(:new).with(player1_name).and_return(player1)
-    allow(player1).to receive(:name).and_return(player1_name)
     allow(player_class).to receive(:new).with(player2_name).and_return(player2)
-    allow(player2).to receive(:name).and_return(player2_name)
     allow(player_class).to receive(:new)
       .with(described_class::COMPUTER_NAME).and_return(computer_player)
+    allow(player1).to receive(:name).and_return(player1_name)
+    allow(player2).to receive(:name).and_return(player2_name)
     allow(computer_player).to receive(:set_computer)
-    allow(computer_player).to receive(:computer?).and_return(true)
     allow(player1).to receive(:computer?).and_return(false)
     allow(player2).to receive(:computer?).and_return(false)
+    allow(computer_player).to receive(:computer?).and_return(true)
   end
 
   describe '.create' do
@@ -144,19 +144,19 @@ describe Game do
       context 'player 2 chooses rock' do
         it 'draw' do
           allow(player2).to receive('choice').and_return(0)
-          expect(game.result).to eq "It's a draw"
+          expect(game.result).to eq :draw
         end
       end
       context 'player 2 chooses paper' do
         it 'p2 wins' do
           allow(player2).to receive('choice').and_return(1)
-          expect(game.result).to eq "#{player2_name} wins"
+          expect(game.result).to eq :player2_win
         end
       end
       context 'player 2 chooses scissors' do
         it 'p1 wins' do
           allow(player2).to receive('choice').and_return(2)
-          expect(game.result).to eq "#{player1_name} wins"
+          expect(game.result).to eq :player1_win
         end
       end
     end
@@ -169,19 +169,19 @@ describe Game do
       context 'player 2 chooses rock' do
         it 'p1 wins' do
           allow(player2).to receive('choice').and_return(0)
-          expect(game.result).to eq "#{player1_name} wins"
+          expect(game.result).to eq :player1_win
         end
       end
       context 'player 2 chooses paper' do
         it 'draw' do
           allow(player2).to receive('choice').and_return(1)
-          expect(game.result).to eq "It's a draw"
+          expect(game.result).to eq :draw
         end
       end
       context 'player 2 chooses scissors' do
         it 'p2 wins' do
           allow(player2).to receive('choice').and_return(2)
-          expect(game.result).to eq "#{player2_name} wins"
+          expect(game.result).to eq :player2_win
         end
       end
     end
@@ -194,19 +194,19 @@ describe Game do
       context 'player 2 chooses rock' do
         it 'p2 wins' do
           allow(player2).to receive('choice').and_return(0)
-          expect(game.result).to eq "#{player2_name} wins"
+          expect(game.result).to eq :player2_win
         end
       end
       context 'player 2 chooses paper' do
         it 'p1 wins' do
           allow(player2).to receive('choice').and_return(1)
-          expect(game.result).to eq "#{player1_name} wins"
+          expect(game.result).to eq :player1_win
         end
       end
       context 'player 2 chooses scissors' do
         it 'draw' do
           allow(player2).to receive('choice').and_return(2)
-          expect(game.result).to eq "It's a draw"
+          expect(game.result).to eq :draw
         end
       end
     end
