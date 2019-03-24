@@ -99,6 +99,14 @@ describe Game do
     end
   end
 
+  describe "#reset" do
+    it 'sets #turn to 0' do
+      3.times { game.next_turn }
+      game.reset
+      expect(game.turn).to eq 0
+    end
+  end
+
   describe '#warning' do
     context 'player 2 is computerised' do
       it 'returns an empty string' do

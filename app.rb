@@ -60,4 +60,9 @@ class RockPaperScissors < Sinatra::Base
     erb :result
   end
 
+  get '/play-again' do
+    @game.reset
+    redirect '/play'
+  end
+
 end

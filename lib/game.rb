@@ -51,4 +51,8 @@ class Game
     "#{other_player.name}, look away"
   end
 
+  def reset
+    @turn = 0
+  end
+
 end
