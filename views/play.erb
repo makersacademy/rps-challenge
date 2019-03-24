@@ -1,4 +1,4 @@
-<h1> Are you ready <%=@player_name.capitalize%>? </h1>
+<h1> Are you ready <%=@game.player.name.capitalize%>? </h1>
 
 <form action='/play'>
   <p> Choose one option from the following: </p>
@@ -7,4 +7,10 @@
   <button name="option" type="submit" value="Scissors">Scissors</button>
 </form>
 
-<p> Your move: Rock </p>
+
+<% if @player_move %>
+    Your move: <%=@player_move%>
+    Computer's move: <%=@computer_choice%>
+    <br>
+    <%=@game.winner%>
+<% end %>
