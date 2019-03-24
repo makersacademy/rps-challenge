@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -8,8 +9,8 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
-    player1 = Player.new(params[:p1name])
+  post '/set_player' do
+    $player1 = Player.new(params[:p1name])
     redirect '/play'
   end
 

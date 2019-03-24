@@ -1,0 +1,36 @@
+<form action="/attack">
+
+  <style>
+    body {
+    color: white;
+    padding-top: 80px;
+    text-align: center;
+    font-family: monaco, monospace;
+    background: url(https://media.giphy.com/media/xUA7bg3drmZkvgsZCo/giphy.gif) 50%;
+    background-size: cover;
+  }
+  h1, 
+  h2 {
+    display: block;
+    background: #ff;
+    }
+  h1 {font-size: 30px}
+  h2 {font-size: 20px;}
+  span {background: #fd0;}
+  </style>
+
+  <h1>Welcome <%= $player1.name %>!!! Have a shiney light!!!</h1>
+  <br>
+
+  <h2>Take a turn at RPS!</h3>
+  <br>
+
+  <select>
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  <br>
+
+    <input type="submit" value="Attack!">
+</form> 

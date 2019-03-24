@@ -1,11 +1,10 @@
 # This is the spec file for player class
-require 'player'
+require './lib/player'
 
 describe Player do
   subject(:dave) { Player.new('Dave') }
-  subject(:suzy) { Player.new('Dave') }
 
-  it 'creates a player called Suzy' do
-    
+  it 'creates a player called Dave' do
+    expect(dave.name).to eq 'Dave'
   end
 end
