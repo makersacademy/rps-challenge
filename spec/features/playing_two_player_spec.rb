@@ -1,6 +1,6 @@
 require_relative '../../lib/player'
 
-feature 'playing the game with two player' do
+feature 'playing the game with two player:' do
   let(:player1_name) { "Lester Flatt" }
   let(:player2_name) { "Earl Scruggs" }
 

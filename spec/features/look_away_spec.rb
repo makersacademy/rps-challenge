@@ -1,6 +1,6 @@
 require_relative '../../lib/player'
 
-feature 'other player is told to look away in 2 player game' do
+feature 'other player is told to look away in 2 player game:' do
   let(:computer_name) { "RPSBot::9000" }
   let(:player1_name) { "Lester Flatt" }
   let(:player2_name) { "Earl Scruggs" }

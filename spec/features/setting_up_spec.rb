@@ -1,6 +1,6 @@
 require_relative '../../lib/player'
 
-feature 'signing in' do
+feature 'signing in:' do
   let(:computer_name) { "RPSBot::9000" }
   let(:player1_name) { "Lester Flatt" }
   let(:player2_name) { "Earl Scruggs" }

@@ -1,6 +1,6 @@
 require_relative '../../lib/player'
 
-feature "restarting the game" do
+feature "restarting the game:" do
   let(:player1_name) { "Lester Flatt" }
   let(:player2_name) { "Earl Scruggs" }
 

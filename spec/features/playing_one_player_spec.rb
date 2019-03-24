@@ -1,6 +1,6 @@
 require_relative '../../lib/player'
 
-feature 'playing the game with one player' do
+feature 'playing the game with one player:' do
   let(:computer_name) { "RPSBot::9000" }
   let(:player1_name) { "Dave Bowman" }
 
