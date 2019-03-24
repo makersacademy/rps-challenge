@@ -11,19 +11,19 @@
         <p1>Rock, Paper, Scissors</p1>
       </div>
       <br>
+      <p2 class="glow"><%=@game.player.name%></p2>
       <br>
       <img src="rps.jpg" />
       <br>
       <br>
+      <p2>You chose <%=@game.player.weapon%></p2>
       <br>
-      <div>
-        <p2>Enter your name to play</p2>
-        <form action='/name' method='post'>
-          <input type='text' name='name' />
-          <input type='submit' value='Play' />
-        </form>
-      </div>
-    
+      <br>
+      <br>
+      <p2>Your opponent chose <%=@game.computer.random_choice%></p2><br>
+      <br>
+      <br>
+      <p1><%= @game.winner%></p1>
     </div>
   </div>
 </body>
