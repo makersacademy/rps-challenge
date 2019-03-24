@@ -1,8 +1,17 @@
 require_relative './player'
 
 class Game
-  def self.create(name1, name2, player = Player)
-    @game = new(name1, name2, player)
+
+  COMPUTER_NAME = "RPSBot::9000"
+
+  def self.create(name1, name2 = nil, player = Player)
+    if name2.nil?
+      @game = new(name1, COMPUTER_NAME, player)
+      @game.player2.set_computer
+    else
+      @game = new(name1, name2, player)
+    end
+    @game
   end
 
   def self.instance

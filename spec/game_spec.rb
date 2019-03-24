@@ -9,12 +9,16 @@ describe Game do
   let(:player1_name) { double(:player1_name) }
   let(:player2) { double(:player2) }
   let(:player2_name) { double(:player2_name) }
+  let(:computer_player) { double(:computer_player) }
 
   before do
     allow(player_class).to receive(:new).with(player1_name).and_return(player1)
     allow(player1).to receive(:name).and_return(player1_name)
     allow(player_class).to receive(:new).with(player2_name).and_return(player2)
     allow(player2).to receive(:name).and_return(player2_name)
+    allow(player_class).to receive(:new)
+      .with(described_class::COMPUTER_NAME).and_return(computer_player)
+    allow(computer_player).to receive(:set_computer)
   end
 
   describe '.create' do
@@ -27,14 +31,14 @@ describe Game do
       end
     end
 
-    # it "sets up a computer opponent if only one name given" do
-    #   game_instance = double(:game_instance)
-    #   # is it a good idea to stub out the game instance?
-    #   allow(described_class).to receive(:new)
-    #     .with("John", "HAL9000", player_class).and_return(game_instance)
-    #   Game.create("John", "HAL9000", player_class)
-    #   expect(Game.instance).to eq game_instance
-    # end
+    context 'when given one name' do
+      it "creates an instance of itself with a computer opponent" do
+        expect(computer_player).to receive(:set_computer)
+        Game.create(player1_name, nil, player_class)
+        expect(Game.instance.player1).to eq player1
+        expect(Game.instance.player2).to eq computer_player
+      end
+    end
   end
 
   describe '#player1' do
