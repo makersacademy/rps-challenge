@@ -197,7 +197,9 @@ Winner will be declared
 
 Here are the improvements/enhancements I identified for my project:
 
--
--
--
--
+- Maintain 100% test coverage for RSpec
+- Apply enhancements to front-end views for a more engaging user interface
+- Try out ## Bonus level 1: Multiplayer now that I have the Player class and Game class as starting points
+- Apply stubbing to stub out random behaviour more confidently
+- Refactor some code in Game class to make the selection of winning moves cleaner
+- Try out `self.instance` for classes

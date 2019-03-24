@@ -8,10 +8,12 @@ RPS Challenge
 
 **To improve my project, next time I would like to:**
 
-- 
-- 
-- 
-- 
+- Maintain 100% test coverage for RSpec
+- Apply enhancements to front-end views for a more engaging user interface
+- Try out ## Bonus level 1: Multiplayer now that I have the Player class and Game class as starting points
+- Apply stubbing to stub out random behaviour more confidently
+- Refactor some code in Game class to make the selection of winning moves cleaner
+- Try out `self.instance` for classes
 
 ## Introduction to the project
 
@@ -80,6 +82,7 @@ As a final step, I explored options for hosting my web app.
 
 ## Code Style
 
+I used `rubocop` as a guide.
 
 ## How to use the app
 
