@@ -68,6 +68,7 @@ I would like to be able to play rock/paper/scissors
 - Bonus question 2 - ask user which game they would prefer to play and then build a second set of files that care about that (including the random setting of the computer choice).
 - Add error handling
 - Check whether my implementation of the checking the rules could be done in a neater way
+- When the player selects "Play again", store the player so that it is not lost
 
 # The other details of the challenge
 

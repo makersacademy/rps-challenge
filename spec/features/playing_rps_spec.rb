@@ -37,6 +37,6 @@ feature 'Presented with options' do
     allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
     fill_in_name_and_submit
     click_button "Paper"
-    expect(page).to have_content("The winner is : We are all winners here! The game was a draw!")
+    expect(page).to have_content("We are all winners here! The game was a draw!")
   end
 end
