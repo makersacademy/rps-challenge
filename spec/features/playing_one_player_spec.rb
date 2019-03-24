@@ -8,43 +8,6 @@ feature 'playing the game with one player' do
     register_one_player(player1_name)
   end
 
-  context 'after registering' do
-    scenario "user can select 'rock'" do
-      click_button 'Rock'
-      expect(page).to have_content "#{player1_name} selected rock"
-    end
-
-    scenario "user can select 'paper'" do
-      click_button 'Paper'
-      expect(page).to have_content "#{player1_name} selected paper"
-    end
-
-    scenario "user can select 'scissors'" do
-      click_button 'Scissors'
-      expect(page).to have_content "#{player1_name} selected scissors"
-    end
-  end
-
-  context 'after the user makes a choice' do
-    scenario "the computer might choose 'rock'" do
-      allow(Kernel).to receive(:rand).and_return(0)
-      click_button 'Rock'
-      expect(page).to have_content "#{computer_name} selected rock"
-    end
-
-    scenario "the computer might choose 'paper'" do
-      allow(Kernel).to receive(:rand).and_return(1)
-      click_button 'Rock'
-      expect(page).to have_content "#{computer_name} selected paper"
-    end
-
-    scenario "the computer might choose 'scissors'" do
-      allow(Kernel).to receive(:rand).and_return(2)
-      click_button 'Rock'
-      expect(page).to have_content "#{computer_name} selected scissors"
-    end
-  end
-
   context "let the computer choose 'rock'" do
     before do
       allow(Kernel).to receive(:rand).and_return(0)
