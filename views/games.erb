@@ -1,5 +1,5 @@
 <h1> Games </h1>
-<h2>Hi <%= @user.name %>, choose a game below... </h2>
+<h2>Hi <%= @user_mgmt.users[-1].name %>, choose a game below... </h2>
 <br>
 <form action='/games/rock_paper_scissors'>
   <input type="submit" name="rock_paper_scissors" value="Rock Paper Scissors">
@@ -7,5 +7,12 @@
 
 <div>
   <br>
-  <a href='/'> Log out </a>
+  List of players currently online:
+  <br>
+  <%= @user_mgmt.print_user_list_html %>
+</div>
+
+<div>
+  <br>
+  <a href='/'> Home </a>
 </div>
