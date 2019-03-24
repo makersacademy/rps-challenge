@@ -21,7 +21,7 @@ class Game
     if @computer.weapon == WINNER[@player.weapon.downcase]
       'You win!'
     else
-      'Something!'
+      'Computer wins!'
     end
   end
 
