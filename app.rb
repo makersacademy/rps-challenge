@@ -21,6 +21,8 @@ class RPS < Sinatra::Base
 
   post "/game" do
     @move = params[:move]
+    $auto_move = Auto.new
+    @auto_move = $auto_move.random_pick
     erb :game
   end
 

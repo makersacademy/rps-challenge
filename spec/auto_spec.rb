@@ -8,8 +8,8 @@ describe Auto do
 
   it "checks if it can return a random pick" do
     auto = Auto.new
-    allow(auto).to receive(:random_pick).and_return('rock')
-    expect(auto.random_pick).to eq ('rock')
+    allow(auto).to receive(:random_pick).and_return('Rock')
+    expect(auto.random_pick).to eq ('Rock')
   end
 end
 

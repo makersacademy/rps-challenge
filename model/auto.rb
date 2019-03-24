@@ -2,6 +2,6 @@ class Auto
   attr_reader :random
 
   def random_pick
-    @random = ['rock','paper','scissors'].sample
+    @random = ['Rock','Paper','Scissors'].sample
   end
 end
