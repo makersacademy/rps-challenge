@@ -20,7 +20,6 @@ This Ruby web app allows users to regsiter their name and play rock, paper, scis
 - Separation of concerns using the MVC model
 - Encapsulation and delegation between classes
 - Test driving using automated feature tests as well as unit test
-- Using test doubles and dependency injection to isolate classes in tests
 - Testing behaviour over state
 
 
@@ -33,40 +32,9 @@ This Ruby web app allows users to regsiter their name and play rock, paper, scis
 
 ## Steps to run
 
-1. **To set up base objects and data**
+1. Run `ruby app.rb` in root project directory
 
-Run `irb -r ./lib/menu.rb` in root project directory
-
-```ruby
-2.5.0 :001 > m = Menu.new
- => #<Menu:0x00007fb6d5848148 @dishes=[]> 
-
-```
-
-2. **To run example methods**
-
-`select` dish to add to order
-```ruby
-2.5.0 :001 > m.select_dish(m.dishes[0])
- => #<Order:0x00007f8d798f62a0 @selected_dishes=[#<Dish:0x00007f8d799068d0 @name="burger", @price=10>], @confirmed=false, 
-```
-
-`view_total` cost of order
-```ruby
-2.5.0 :001 > m.orders[0].view_total
- => 10
-```
-
-`confirm_order`
-```ruby
-2.5.0 :001 > m.orders[0].confirm_order
- => <Twilio.Api.V2010.MessageInstance account_sid: **** api_version: 2010-04-01 body: Sent from your Twilio trial account - Thank you! Your order was placed and will be delivered before 14:59 date_created: 2019-03-17 13:59:10 +0000 date_updated: 2019-03-17 13:59:10 +0000 date_sent:  direction: outbound-api error_code: 0 error_message:  from: **** messaging_service_sid:  num_media: 0 num_segments: 1 price: 0.0 price_unit: USD sid: **** status: queued subresource_uris: {"media"=>"/2010-04-01/Accounts/****/Media.json"} to: **** uri: /2010-04-01/Accounts/****.json>
-```
-`orders` to view list of orders
-```ruby
-2.5.0 :001 > m.orders[0]
- => #<Order:0x00007f817a9062a0 @selected_dishes=[#<Dish:0x00007f817a9168a8 @name="burger", @price=10>, #<Dish:0x00007f817a90e630 @name="chips", @price=5>, #<Dish:0x00007f817a90e630 @name="chips", @price=5>], @confirmed=true, @total=20> 
-```
+2. Visit `http://localhost:4567/`
 
 
 ## To run tests
@@ -91,6 +59,12 @@ Run `rspec` directly in root of your local project
 6. Check in client by running `ruby app.rb` and visiting `localhost:4567`
 
 7. Continue with second feature test - testing enter name form
+
+8. Follow red, green, refactor cycle for each feature test
+
+9. Repeat until basic user story functionality is covered
+
+10. Test-drive extracting `Score` class from the controller code into the model, using units tests, ensuring features tests don't break
 
 
 #### Structure

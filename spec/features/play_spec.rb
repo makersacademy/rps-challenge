@@ -27,6 +27,8 @@ describe "Play" do
       expect(page).to have_selector "form button[value='play-again']"
     end
 
-    # displays winner/loser/draw
+    it "displays the result" do
+      expect(page).to have_selector("h2", :id => "result")
+    end
   end
 end

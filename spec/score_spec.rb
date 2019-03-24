@@ -1,9 +1,6 @@
 require "score"
 
 describe Score do
-  it { is_expected.to respond_to(:play_computer) }
-  it { is_expected.to respond_to(:result) }
-  
   subject(:score) { Score.new("Rock", "Matt") }
 
   it "gives a computer score of 'Paper'" do
