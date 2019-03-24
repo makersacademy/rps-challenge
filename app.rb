@@ -52,6 +52,7 @@ class Game < Sinatra::Base
 
   get '/result' do
     @result = Winner.run(@game.player1, @game.player2)
+    
     erb :result
   end
 

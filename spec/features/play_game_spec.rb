@@ -4,12 +4,21 @@
 
 feature 'Game play' do
 
-  scenario 'go back to start after game end' do
+  scenario 'go back to play screen after start again button is clicked' do
     register_1_player_against_computer
     click_button 'Rock'
     click_link 'OK'
     click_button 'Start again'
-    expect(page).to have_content 'Players:'
+    expect(page).to have_content 'Round 2'
+  end
+
+  scenario 'shows score increase for player 1' do
+    allow_any_instance_of(RPS).to receive(:rand).and_return(2)  
+    register_1_player_against_computer
+    click_button 'Rock'
+    click_link 'OK'
+    click_button 'Start again'
+    expect(page).to have_content 'Score: Player1 - 0 : Computer - 1'
   end
 
   scenario 'player 1 wins game' do
@@ -38,13 +47,5 @@ feature 'Game play' do
     click_button 'Paper'
     expect(page).to have_content 'Computer has chosen'
   end
-
-  # scenario 'player score changes after first round' do
-  #   visit '/'
-  #   fill_in "player1",	with: "Player1"
-  #   check('computer2')
-  #   click_button 'Start game'
-  #   click_button 'Paper'
-  # end
 
 end

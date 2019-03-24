@@ -1,7 +1,7 @@
 require './lib/player'
 
 class RPS
-
+  
   def initialize(player1, player2 = Player.new('Computer'))
     @game_options = {
       1 => "Rock",
@@ -12,7 +12,7 @@ class RPS
     @player2 = player2
     @players = [player1, player2]
 
-    @computer_choice = nil
+    @round = 1
   end
 
   #--- Class methods and variables
@@ -46,12 +46,16 @@ class RPS
     @players.first.name == 'Computer'
   end
 
+  def get_round
+    @round
+  end
+
   # def get_player_choice
   #   @players.first.user_choice
   # end
 
   def get_computer_choice
-    @computer_choice = play
+    computer_choice = play
   end
 
   def completed_run
@@ -60,6 +64,7 @@ class RPS
 
   def reset_game
     @players.map {|player| player.reset}
+    @round += 1
   end
 
   # def assign_choices

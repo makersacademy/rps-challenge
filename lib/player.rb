@@ -5,6 +5,7 @@ class Player
   def initialize(name)
     @name = name
     @choice = nil
+    @score = 0
   end
 
   def choice=(selection)
@@ -21,6 +22,14 @@ class Player
 
   def reset
     @choice = nil
+  end
+  
+  def increase_score
+    @score += 1
+  end
+
+  def get_score
+    @score
   end
 
 end

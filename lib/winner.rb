@@ -21,12 +21,16 @@ class Winner
     if player1 == player2
       result = "Draw"
     elsif player1 == "Rock" && player2 == "Scissors"
-      result = @p1.name
+      @p1.increase_score #increases winner score
+      result = @p1.name #assigns name to result
     elsif player1 == "Scissors" && player2 == "Paper"
+      @p1.increase_score
       result = @p1.name
     elsif player1 == "Paper" && player2 == "Rock"
+      @p1.increase_score
       result = @p1.name
     else
+      @p2.increase_score
       result = @p2.name
     end
     

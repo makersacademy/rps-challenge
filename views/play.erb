@@ -1,5 +1,6 @@
+<h1>Round <%= @game.get_round %></h1>
 
-<h1>Players:</h1>
+<h1>Score: <%=@game.player1.name%> - <%=@game.player1.get_score%> : <%=@game.player2.name%> - <%=@game.player2.get_score%></h1>
 <p>Player 1: <%=@game.player1.name%></p> 
 <p>Player 2: <%=@game.player2.name%></p> 
 

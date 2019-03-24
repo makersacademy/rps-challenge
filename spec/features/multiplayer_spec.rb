@@ -3,7 +3,7 @@ feature 'Multiplayer' do
   scenario 'two player can register and play the game' do
 
     register_2_players_and_start_game
- 
+    save_and_open_page
     click_button 'Rock'
     
     click_button 'Paper'
