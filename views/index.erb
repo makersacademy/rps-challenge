@@ -93,28 +93,25 @@ table#playerselection {
 <% elsif @players == "2" %>
 <div class="submit">
 	<form action='/names' method="post">
-	  <table width="100%" border="4" cellspacing="12" cellpadding="12">
+	  <table width="100%" border="0">
 	    <tr>
-	      <td>&nbsp;</td>
-	      <td width="20">&nbsp;</td>
-	      <td>&nbsp;</td>
+				<td width="300">&nbsp;</td>
+	      <td align="center" valign="top" class="PlayerSelect">Player 1</td>
+        <td width="100">&nbsp;</td>
+	      <td height="60" align="center" valign="top" class="PlayerSelect">Player 2</td>
+				<td width="300">&nbsp;</td>
+			</tr>
+	    <tr>
+				<td>&nbsp;</td>
+	      <td align="center"><span class="PlayerSelect">Name: <input name="player1_name" type="text" style="font-size: 16pt" size="15" maxlength="15"></span></td>
+				<td>&nbsp;</td>
+	      <td align="center"><span class="PlayerSelect">Name: <input name="player2_name" type="text" style="font-size: 16pt" size="15" maxlength="15"></span></td>
 	    </tr>
 	    <tr>
-	      <td align="left" valign="top" class="PlayerSelect">Player 1</td>
-	      <td width="20" valign="top">&nbsp;</td>
-	      <td height="60" align="top" valign="bottom" class="PlayerSelect">Player 2</td>
-	    </tr>
-	    <tr>
-	      <td align="left"><span class="PlayerSelect">Name: <input name="player1_name" type="text" style="font-size: 16pt" size="15" maxlength="15">
-	      </span></td>
-	      <td width="20">&nbsp;</td>
-	      <td align="right"><span class="PlayerSelect">Name: <input name="player2_name" type="text" style="font-size: 16pt" size="15" maxlength="15">
-	      </span></td>
-	    </tr>
-	    <tr>
-
-	      <td height="60" colspan="1" align="center" valign="bottom"><button class="SubmitButton"><input type="submit" id="play" value="Submit"></button></td>
-	      </tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td align="center" align="bottom"><input type="submit" id="play" value="Submit"></td>
+			</tr>
 	  </table>
 	</form>
 </div>
