@@ -26,17 +26,16 @@ class RockPaperScissors < Sinatra::Base
     erb :register_two_players
   end
 
-  post '/save-names-1' do
-    game = Game.create(params['player1_name'], "RPSBot::9000")
-    game.player2.set_computer
+  post '/save-names' do
+    if params['computer_opponent'] == 'true'
+      game = Game.create(params['player1_name'], "RPSBot::9000")
+      game.player2.set_computer
+    else
+      Game.create(params['player1_name'], params['player2_name'])
+    end
     redirect '/player-1'
   end
-
-  post '/save-names-2' do
-    Game.create(params['player1_name'], params['player2_name'])
-    redirect '/player-1'
-  end
-
+  
   get '/player-1' do
     @warning = @game.player2.computer? ? "" : "#{@game.player2.name}, look away"
     erb :player_1
