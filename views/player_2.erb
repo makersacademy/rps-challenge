@@ -1,4 +1,7 @@
 <h1>It's <%= @game.player1.name %> vs. <%= @game.player2.name %></h1>
+<div class="warning">
+  <%= @warning %>
+</div>
 <%= @game.player2.name %>, choose your weapon
 <form id="rock-form" action="/choose-2" method="post">
   <button type="submit" name="choice" value="0">Rock</button>

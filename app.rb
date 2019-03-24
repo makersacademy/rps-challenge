@@ -41,6 +41,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/player-1' do
+    @warning = @game.player2.computer? ? "" : "#{@game.player2.name}, look away"
     erb :player_1
   end
 
@@ -56,6 +57,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/player-2' do
+    @warning = "#{@game.player1.name}, look away"
     erb :player_2
   end
 
