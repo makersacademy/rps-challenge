@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'Player'
+# require 'Player'
 
 feature 'when user selects a choice, it shows result' do
   scenario 'when user selects one of the 3 options, it displays winner' do
