@@ -20,7 +20,7 @@ ________  ________  ________           ________  ___  ___  ________  ___       _
                         │                │    │              │       │           │
                         ┴───────────────┘   └──────────────┘      ┴───────────┘
 ```                                     
-RPS challenge is a program run in REPL. It is a web app that allows a player to play rock, paper, scissors against the computer. Reference has been made to the following repository: [Takeaway-Challenge](https://github.com/amyj0rdan/rps-challenge)
+RPS challenge is a program run in REPL. It is a web app that allows a player to play rock, paper, scissors against the computer. Reference has been made to the following repository: [RPS-Challenge](https://github.com/amyj0rdan/rps-challenge)
 
 [See here](https://github.com/makersacademy/rps-challenge) for Makers' original repo.
 
