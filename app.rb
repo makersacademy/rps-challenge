@@ -5,8 +5,6 @@ require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
 
-  enable :sessions
-
   before do
     @game = Game.instance
   end
@@ -26,7 +24,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    @game.player.choice(params[:choice])
+    @game.player.choice(params[:choice].downcase.to_sym)
     redirect '/result'
   end
 

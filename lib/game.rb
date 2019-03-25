@@ -2,7 +2,8 @@ class Game
 
   attr_reader :player, :computer
 
-  WINNER = { 'rock' => 'scissors', 'scissors' => 'paper', 'paper' => 'rock' }
+  WINNER = { :rock => :scissors, :scissors => :paper, :paper => :rock }
+  OPTIONS = [ :rock, :paper, :scissors ]
 
   def self.create_game(player, computer)
     @game = self.new(player, computer)
@@ -13,10 +14,10 @@ class Game
   end
 
   def winner
-    if @computer.weapon == @player.weapon.downcase
+    if @computer.weapon == @player.weapon
       "It's a draw!"
     elsif
-      @computer.weapon == WINNER[@player.weapon.downcase]
+      @computer.weapon == WINNER[@player.weapon]
       'You win!'
     else
       'Computer wins!'
@@ -24,7 +25,7 @@ class Game
   end
 
   private
-  
+
   def initialize(player = Player.new, computer = Computer.new)
     @player = player
     @computer = computer
