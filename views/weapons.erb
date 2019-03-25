@@ -1,0 +1,105 @@
+<style type="text/css">
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+body {
+	background-color: #ffffff
+}
+.Title {
+	background-image: url(https://github.com/fo0s/rps-challenge/blob/master/images/login_background.jpg?raw=true);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-attachment: fixed;
+	table-layout: fixed;
+	display: block;
+}
+.PlayerInfo {
+	font-size: 2em;
+	font-weight: bold;
+	color: #222222;
+	text-align: center
+}
+.PlayerAssign {
+  font-size: 4em;
+  font-weight: bold;
+  color: #363636;
+  text-align: center
+}
+input#rock    {
+background:url(https://github.com/fo0s/rps-challenge/blob/master/images/char_rock.jpg?raw=true);
+background-repeat: no-repeat;
+font-size: 0em;
+width:265px;
+height:300px;
+color: #FFF;
+border: 0;
+}
+input#paper    {
+background:url(https://github.com/fo0s/rps-challenge/blob/master/images/char_paper.jpg?raw=true);
+background-repeat: no-repeat;
+font-size: 0em;
+width:265px;
+height:300px;
+color: #FFF;
+border: 0;
+}
+input#scissors    {
+background:url(https://github.com/fo0s/rps-challenge/blob/master/images/char_scissors.jpg?raw=true);
+background-repeat: no-repeat;
+font-size: 0em;
+width:285px;
+height:300px;
+color: #FFF;
+border: 0;
+}
+input[type=submit] {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+</style>
+<div class="Title">
+  <table width="100%" border="0">
+    <tr>
+      <td height="120">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+<div class="PlayerInfo">
+  <table width="100%" border="0">
+    <tr>
+      <td height="50">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+<div class="PlayerAssign">
+  <table width="100%" border="0">
+    <tr>
+      <td height="50" width="100" align="left" class="PlayerAssign">Choose your weapon <%= @rps.player1.name %></td>
+    </tr>
+  </table>
+</div>
+<div>
+  <td><form id="weapon" name="weapon" method="post" action="/fight">
+    <table width="100%" border="0" cellspacing="20" cellpadding="5">
+      <tr>
+        <td width="200" align="center"><input type="submit" id="Rock" name="weapon" value="Rock" /></td>
+        <td width="200" align="center"><input type="submit" id="Paper" name="weapon" value="Paper" /></td>
+        <td width="200" align="center"><input type="submit" id="Scissors" name="weapon" value="Scissors" /></td>
+      </tr>
+    </table>
+  </form></td>
+</div>
