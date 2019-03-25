@@ -31,29 +31,29 @@ describe Game do
   end
 
   it 'Paper beats Rock - Player 2 wins' do
-    allow(player_1).to receive(:choice) { "Rock" }
-    allow(player_2).to receive(:choice) { "Paper" }
+    allow(player_1).to receive(:choice) { :Rock }
+    allow(player_2).to receive(:choice) { :Paper }
     game.play
     expect(game.winner).to eq player_2
   end
 
   it 'Rock beats Scissors - Player 2 wins' do
-    allow(player_1).to receive(:choice) { "Scissors" }
-    allow(player_2).to receive(:choice) { "Rock" }
+    allow(player_1).to receive(:choice) { :Scissors }
+    allow(player_2).to receive(:choice) { :Rock }
     game.play
     expect(game.winner).to eq player_2
   end
 
   it 'Paper beats Paper - Player 2 wins' do
-    allow(player_1).to receive(:choice) { "Paper" }
-    allow(player_2).to receive(:choice) { "Scissors" }
+    allow(player_1).to receive(:choice) { :Paper }
+    allow(player_2).to receive(:choice) { :Scissors }
     game.play
     expect(game.winner).to eq player_2
   end
 
   it 'Rock - Rock - specifies a draw' do
-    allow(player_1).to receive(:choice) { "Rock" }
-    allow(player_2).to receive(:choice) { "Rock" }
+    allow(player_1).to receive(:choice) { :Rock }
+    allow(player_2).to receive(:choice) { :Rock }
     game.play
     expect(game.winner).to eq "draw"
   end

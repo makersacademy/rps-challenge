@@ -1,11 +1,11 @@
 class RpsslRules
   attr_reader :list
 
-  RULES = { rock: [scissors, lizard],
-            paper: [:rock, :spock],
-            scissors: [:paper, :lizard],
-            lizard: [:paper, :spock],
-            spock: [:rock, :scissors] }
+  # RULES = { rock: [scissors, lizard],
+  #           paper: [:rock, :spock],
+  #           scissors: [:paper, :lizard],
+  #           lizard: [:paper, :spock],
+  #           spock: [:rock, :scissors] }
 
   # def initialize
   #   @list = [{ result: "@player_1", player_1: "Lizard", player_2: "Paper" },
