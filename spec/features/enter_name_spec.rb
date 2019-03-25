@@ -1,4 +1,4 @@
-require_relative '../../app.rb'
+require './app'
 
 # As a marketeer
 # So that I can see my name in lights

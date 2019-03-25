@@ -1,4 +1,4 @@
-require_relative '../../app.rb'
+require './app'
 
 feature 'Winner is declared' do
   scenario 'player chooses paper and computer chooses rock' do

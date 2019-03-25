@@ -8,13 +8,8 @@ class Game
     @game = self.new(player, computer)
   end
 
-  def self.get
+  def self.instance
     @game
-  end
-
-  def initialize(player = Player.new, computer = Computer.new)
-    @player = player
-    @computer = computer
   end
 
   def winner
@@ -26,6 +21,13 @@ class Game
     else
       'Computer wins!'
     end
+  end
+
+  private
+  
+  def initialize(player = Player.new, computer = Computer.new)
+    @player = player
+    @computer = computer
   end
 
 end
