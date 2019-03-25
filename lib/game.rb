@@ -1,5 +1,0 @@
-class Game
-
-  
-
-end

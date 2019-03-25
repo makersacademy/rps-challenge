@@ -16,7 +16,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
-
+    
     erb :play
   end
 
