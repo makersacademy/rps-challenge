@@ -3,7 +3,8 @@ feature 'computer makes a move after player' do
     srand(678_910)
     sign_in_and_play
     click_button 'Rock'
+    visit '/result'
     expect(page).to have_content "Your move: Rock"
-    expect(page).to have_content "Computer's move: Scissors"
+    expect(page).to have_content "Computer's move: Paper"
   end
 end
