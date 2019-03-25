@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require './lib/player.rb'
-require './lib/computer.rb'
 require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
@@ -15,7 +14,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:player_name])
-    Game.create_game(player, Computer.new)
+    computer = Player.new('Computer')
+    Game.create_game(player, computer)
     redirect '/play'
   end
 

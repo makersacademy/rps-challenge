@@ -10,4 +10,8 @@ class Player
     @weapon = weapon
   end
 
+  def random_choice
+    @weapon = Game::WEAPONS.sample
+  end
+
 end

@@ -3,7 +3,7 @@ class Game
   attr_reader :player, :computer
 
   WINNER = { :rock => :scissors, :scissors => :paper, :paper => :rock }
-  OPTIONS = [:rock, :paper, :scissors]
+  WEAPONS = [:rock, :paper, :scissors]
 
   def self.create_game(player, computer)
     @game = self.new(player, computer)

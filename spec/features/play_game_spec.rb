@@ -34,21 +34,21 @@ end
 feature 'Computer returns random weapon' do
   scenario 'computer returns rock' do
     fill_in_name
-    allow_any_instance_of(Array).to receive(:sample).and_return('rock')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
     click_button 'Paper'
     expect(page).to have_content('Computer chose rock')
   end
 
   scenario 'computer returns paper' do
     fill_in_name
-    allow_any_instance_of(Array).to receive(:sample).and_return('paper')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
     click_button 'Paper'
     expect(page).to have_content('Computer chose paper')
   end
 
   scenario 'computer returns scissors' do
     fill_in_name
-    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     click_button 'Paper'
     expect(page).to have_content('Computer chose scissors')
   end
