@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/player.rb'
-require './lib/auto.rb'
+require './lib/computer.rb'
 
 class RPS < Sinatra::Base
 
@@ -20,8 +20,7 @@ class RPS < Sinatra::Base
 
   post "/game" do
     @move = params[:move]
-    $auto_move = Auto.new
-    @auto_move = $auto_move.random_pick
+    @random_move = (Computer.new).random_move
     erb :game
   end
 

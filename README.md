@@ -11,7 +11,7 @@
 - Start the game by entering your name
 
 ## Alternative 
-You can play the game here https://rps-game1.herokuapp.com/
+You can play the game [here](https://rps-game1.herokuapp.com/)
 
 ## Basic Rules
 - Rock beats Scissors
