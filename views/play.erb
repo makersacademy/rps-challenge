@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<center>
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <div style="color:White;">
+      <strong></strong> Hi <%= @name %>, lets play Rock Paper Scissors!</strong>
+    </div>
+    <div>
+      <form action="/play" method="post">
+        <select id="move" name="move">
+          <option value="Rock">Rock</option>
+          <option value="Paper">Paper</option>
+          <option value="Scissors">Scissors</option>
+        </select>
+        <input type="submit" value="3..2..1">
+      </form>
+
+    </div>
+  </body>
+  <center>
+</html>
