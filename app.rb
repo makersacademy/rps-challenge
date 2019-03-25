@@ -19,7 +19,7 @@ class RPS < Sinatra::Base
   end
 
   post '/new_game' do
-    new_rps = Game.new($player1)
+    new_rps = Game.new($player)
     redirect '/results'
   end
 

@@ -1,3 +1,4 @@
+#just rock paper scissors at the moment, but its expandable for spock lizard later.
 class Game 
   attr_reader :player1, :player2
 
@@ -18,7 +19,6 @@ class Game
     random_pick
   end
   
-  #just rock paper scissors at the moment, but its expandable for spock lizard later.
   def calculating
     if p1_pick == @options[0] && p2_pick == options[0]
       'Its a draw!'
