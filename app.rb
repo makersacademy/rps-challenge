@@ -21,18 +21,10 @@ class Game < Sinatra::Base
   end
 
   post '/save_names' do
-    if params[:player1] == "" 
-      session[:player1] = Computer.new(params[:computer1])
-    else 
-      session[:player1] = Player.new(params[:player1])
-    end
-
-    if params[:player2] == "" 
-      session[:player2] = Computer.new(params[:computer2])
-    else
-      session[:player2] = Player.new(params[:player2])
-    end
-
+    #comment  validation
+    params[:player1] == "" ? session[:player1] = Computer.new(params[:computer1]) : session[:player1] = Player.new(params[:player1])
+    params[:player2] == "" ? session[:player2] = Computer.new(params[:computer2]) : session[:player2] = Player.new(params[:player2])
+    
     redirect '/chose_game_type'
   end
 
@@ -59,12 +51,8 @@ class Game < Sinatra::Base
     player.generate_computer_choice(@game.game_options)
     @game.change_turn
 
-    if @game.completed_run.count == 2 
-      erb(:computer_message_turn2)
-    else
-      erb(:computer_message_turn1)
-    end
-
+    @game.completed_run.count == 2 ? erb(:computer_message_turn2) : erb(:computer_message_turn1)
+   
   end
 
   post '/turn' do

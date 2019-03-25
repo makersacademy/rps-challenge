@@ -28,6 +28,15 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
+## How to run app:
+
+$ git clone git@github.com:micosmin/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup -p 4567
+
+Visit: localhost:4567 and play
+
 ## Approach to solving the challenge
 
 1. Forked repo

@@ -22,7 +22,7 @@ class Winner
     players_options = { p1: p1_choice, p2: p2_choice }
   
     winning_options = {
-      p1: [
+      win: [
         { p1: :rock, p2: :lizard },
         { p1: :rock, p2: :scissors },
         { p1: :lizard, p2: :spock },
@@ -34,17 +34,25 @@ class Winner
         { p1: :paper, p2: :spock },
         { p1: :paper, p2: :rock }
       ]
+      
     }
-  
-    winning_options.each do |_key, value|
-      value.select do |option|
-        winner = option == players_options ? @p1 : @p2
-        break if option == players_options
+
+    if players_options[:p1] == players_options[:p2]
+      winner = "Draw"
+    else
+      player = nil
+      winning_options.each do |key, value|
+        value.select do |option|
+          player = option == players_options ? @p1 : @p2
+          break if option == players_options
+        end
       end
+      player.increase_score
+      winner = player.name
     end
 
-    winner.increase_score
-    winner.name
+    winner
+
   end
   
 end
