@@ -65,3 +65,12 @@ I was hoping to give the user the option to choose between *Rock, Paper, Scissor
 ### Presentation
 
 The CSS aspect wasn't a high priority for me this weekend, but it would have been nice to snazz it up a bit!
+
+## Coach feedback
+
+I asked Katerina for some feedback
+- Not very RESTful route names - should be more specific, e.g. `game/choose-move` rather than just `/choose` (choose what?)
+- Game counter seems a bit hacky...
+- Re-using e.g. the same route for player 1 and 2 to make their choice is fine in principle
+- It might be better to use the `session` for some of this stuff... storing whose turn it is maybe..?
+- Check the [exemplar](https://github.com/makersacademy/rps-exemplar/blob/master/app.rb)
