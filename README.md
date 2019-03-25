@@ -1,9 +1,9 @@
 # RPS Challenge
 
-![RPS](https://imgur.com/gallery/t3WT4)
+<img src="https://github.com/WardahTarar/rps-challenge/blob/master/images/t3WT4.jpg?raw=true" >
 
 ## How to set up
-- git clone https://github.com/WardahTarar/rps-challenge
+- git clone 'https://github.com/WardahTarar/rps-challenge'
 - cd rps-challenge
 - bundle
 - rackup
