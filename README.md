@@ -34,13 +34,13 @@ Fork or clone this repo:
 ### Usage
 
 Run server 
-```sh
+`
 ruby app.rb
-```
+`
 or
-```sh
+`
 rackup
-```
+`
 
 ### Testing
 
