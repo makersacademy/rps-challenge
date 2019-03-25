@@ -70,4 +70,4 @@ This needs some user stories before I can properly extract what the nouns and ve
 - * TODO * do bonus question 1
 - * TODO * do bonus question 2 - ask user which game they would prefer to play and then build a second set of files that care about that (including the random setting of the computer choice). Check whether this could be done better
 - * TODO * add error handling
-- * TODO * check whether rules could be done in a neater way
+- * TODO * check whether rules could be done in a neater way - refactored after peer review with Masha

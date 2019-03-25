@@ -8,7 +8,7 @@ class Player
 
   def update_choice(choice = "")
     return random_choice if @name == "Computer"
-    @choice = choice
+    @choice = choice.to_sym
   end
 
   def random_choice

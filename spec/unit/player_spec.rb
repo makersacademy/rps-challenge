@@ -8,12 +8,12 @@ describe Player do
 
   it 'delivers scissors when running random_choice for a computer player' do
     player = Player.new("Computer")
-    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
-    expect(player.update_choice).to eq("Scissors")
+    allow_any_instance_of(Array).to receive(:sample).and_return(:Scissors)
+    expect(player.update_choice).to eq :Scissors
   end
 
   it 'sets the player choice when not the computer' do
     player = Player.new("Sam")
-    expect(player.update_choice("Rock")).to eq("Rock")
+    expect(player.update_choice("Rock")).to eq :Rock
   end
 end

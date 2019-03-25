@@ -2,6 +2,7 @@ require './lib/rps_rules'
 
 class Game
   attr_reader :player_1, :player_2, :winner
+  WEAPONS =
 
   def initialize(player_1, player_2, rules = RpsRules)
     @player_1 = player_1
@@ -18,9 +19,9 @@ class Game
   end
 
   private
-  
+
   def update_winner(result)
-    return @winner = instance_variable_get(result) if result != "draw"
-    @winner = result
+    return @winner = result if result == "draw"
+    return result == "win" ? @winner = @player_1 : @winner = @player_2
   end
 end

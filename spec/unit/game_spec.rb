@@ -10,22 +10,22 @@ describe Game do
   end
 
   it 'Scissors beats Paper - Player 1 wins' do
-    allow(player_1).to receive(:choice) { "Scissors" }
-    allow(player_2).to receive(:choice) { "Paper" }
+    allow(player_1).to receive(:choice) { :Scissors }
+    allow(player_2).to receive(:choice) { :Paper }
     game.play
     expect(game.winner).to eq player_1
   end
 
   it 'Rock beats Scissors - Player 1 wins' do
-    allow(player_1).to receive(:choice) { "Rock" }
-    allow(player_2).to receive(:choice) { "Scissors" }
+    allow(player_1).to receive(:choice) { :Rock }
+    allow(player_2).to receive(:choice) { :Scissors }
     game.play
     expect(game.winner).to eq player_1
   end
 
   it 'Paper beats Rock - Player 1 wins' do
-    allow(player_1).to receive(:choice) { "Paper" }
-    allow(player_2).to receive(:choice) { "Rock" }
+    allow(player_1).to receive(:choice) { :Paper }
+    allow(player_2).to receive(:choice) { :Rock }
     game.play
     expect(game.winner).to eq player_1
   end
