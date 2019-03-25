@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/user'
 require_relative 'lib/user_management'
+require_relative 'lib/user_management_to_html'
 require_relative 'lib/rock_paper_scissors'
 
 class MarketingGames < Sinatra::Base
@@ -17,6 +18,7 @@ class MarketingGames < Sinatra::Base
 
   get '/games' do
     @user_mgmt = UserManagement.instance
+    @user_list_html = UserManagementToHTML.users_to_html_list(@user_mgmt)
     erb(:games)
   end
 

@@ -1,6 +1,4 @@
 class UserManagement
-  require_relative 'html_builder'
-  include HTMLBuilder
 
   attr_reader :users
 
@@ -24,8 +22,8 @@ class UserManagement
     @users.delete(user)
   end
 
-  def print_user_list_html
-    user_names_array = @users.map { |user| user.name}
-    HTMLBuilder.array_to_list(user_names_array)
-  end
+  # def print_user_list_html
+  #   user_names_array = @users.map { |user| user.name}
+  #   HTMLBuilder.array_to_list(user_names_array)
+  # end
 end
