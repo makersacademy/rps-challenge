@@ -42,6 +42,10 @@ In code review we'll be hoping to see:
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
+## My Take
+
+Read my [process file](process.md) for greater detail on my interpretation of the challenge.
+
 ## Author
 
 James Palmer
