@@ -19,3 +19,10 @@ Capybara
 
 ## How to use?
 Launch the app on your local server and play!
+
+```
+git clone git@github.com:m-budryte/rps-challenge.git
+cd rps-challenge
+bundle
+rackup
+```

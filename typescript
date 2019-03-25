@@ -1,2 +1,21 @@
 Script started on Sun Mar 24 12:50:53 2019
+[1m[7m%[27m[1m[0m                                                                                ]2;budros@Marijas-MacBook-Pro: ~/Projects/MAKERS/RPS/rps-challenge]1;..rps-challenge[0m[27m[24m[J[[37m[1mbudros[0m[00m:[31m...ts/MAKERS/RPS/rps-challenge[00m]$ [K[28C([22;33m[1mmaster[01;31m✱[0m)[00m [38D[?1h=[?2004h[32mg[39m[1m[31mg[1m[31mi[0m[39m[0m[32mg[0m[32mi[32mt[39m [4ma[24m[24madd [4m.[24m[?1l>[?2004l
+]2;git add .]1;git[1m[7m%[27m[1m[0m                                                                                ]2;budros@Marijas-MacBook-Pro: ~/Projects/MAKERS/RPS/rps-challenge]1;..rps-challenge[0m[27m[24m[J[[37m[1mbudros[0m[00m:[31m...ts/MAKERS/RPS/rps-challenge[00m]$ [K[28C([22;33m[1mmaster[01;31m✱[0m)[00m [38D[?1h=[?2004h[32mg[39m[1m[31mg[1m[31mi[0m[39m[0m[32mg[0m[32mi[32mt[39m [4mc[24m[24mcpm [4mc[24m [4mc[4mo[24m[24mc[24momi mit - m  m [33m"[39m[33m"[33mb[39m[33mb[33ma[39m[33ma[33mn[39m[33mn[33mg[39m[33mn[39m[39m [33ma[39m[39m [33ma[33md[39m[33md[33mg[39m[33mg[33me[39m[33me[33m [39m[33m [33ma[39m[33ma[33md[39m[33md[33md[39m[33md[33me[39m[33me[33md[39m[33md[33m"[39m[?1l>[?2004l
+]2;git commit -m "badge added"]1;git[master 9ed7404] badge added
+ 2 files changed, 3 insertions(+)
+ create mode 100644 typescript
+[1m[7m%[27m[1m[0m                                                                                ]2;budros@Marijas-MacBook-Pro: ~/Projects/MAKERS/RPS/rps-challenge]1;..rps-challenge[0m[27m[24m[J[[37m[1mbudros[0m[00m:[31m...ts/MAKERS/RPS/rps-challenge[00m]$ [K[29C([22;33m[1mmaster[0m)[00m [38D[?1h=[?2004h[1m[31mf[0m[39m[0m[39m [32mg[39m[1m[31mg[1m[31mi[0m[39m[0m[32mg[0m[32mi[32mt[39m [4mp[24m[4mp[4mu[24m[24mp[24mush[?1l>[?2004l
+]2;git push]1;gitCounting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)   Writing objects:  50% (2/4)   Writing objects:  75% (3/4)   Writing objects: 100% (4/4)   Writing objects: 100% (4/4), 657 bytes | 657.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)   [Kremote: Resolving deltas:  50% (1/2)   [Kremote: Resolving deltas: 100% (2/2)   [Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To github.com:m-budryte/rps-challenge.git
+   aedd183..9ed7404  master -> master
+[1m[7m%[27m[1m[0m                                                                                ]2;budros@Marijas-MacBook-Pro: ~/Projects/MAKERS/RPS/rps-challenge]1;..rps-challenge[0m[27m[24m[J[[37m[1mbudros[0m[00m:[31m...ts/MAKERS/RPS/rps-challenge[00m]$ [K[29C([22;33m[1mmaster[0m)[00m [38D[?1h=[?2004h[32mr[39m[1m[31mr[1m[31mu[0m[39m[1m[31mr[1m[31mu[1m[31mb[0m[39m[1m[31mb[1m[31mo[0m[39m[1m[31mo[1m[31mc[0m[39m[1m[31mc[1m[31mo[0m[39m[0m[32mr[0m[32mu[0m[32mb[0m[32mo[0m[32mc[0m[32mo[32mp[39m[?1l>[?2004l
+]2;rubocop]1;rubocopInspecting 16 files
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m
+
+16 files inspected, [32mno offenses[0m detected
 [1m[7m%[27m[1m[0m                                                                                ]2;budros@Marijas-MacBook-Pro: ~/Projects/MAKERS/RPS/rps-challenge]1;..rps-challenge[0m[27m[24m[J[[37m[1mbudros[0m[00m:[31m...ts/MAKERS/RPS/rps-challenge[00m]$ [K[28C([22;33m[1mmaster[01;31m✱[0m)[00m [38D[?1h=[?2004h
