@@ -11,7 +11,7 @@ class Player
   end
 
   def choose(choice)
-    @choice = choice
+    @choice = choice.to_i
   end
 
   def choose_random(options)

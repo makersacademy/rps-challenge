@@ -41,7 +41,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choose' do
-    @game.current_player.choose(params['choice'].to_i)
+    @game.current_player.choose(params['choice'])
     @game.next_turn
 
     if @game.turn >= 2
