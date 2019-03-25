@@ -10,10 +10,6 @@ This project was made to develop my ability to construct a web application, anot
 
 The project is currently under construction, it may not be completed as this is a practice exercise to build myskills.  
 
-### Screenshots
-
-XXXXXXXXXXXXXXXXX I maybe want to include photos of the class diagrams and system diagrams here? Or a screenshot of the landing page?
-
 ### Task / User Stories
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
