@@ -74,3 +74,18 @@ I asked Katerina for some feedback
 - Re-using e.g. the same route for player 1 and 2 to make their choice is fine in principle
 - It might be better to use the `session` for some of this stuff... storing whose turn it is maybe..?
 - Check the [exemplar](https://github.com/makersacademy/rps-exemplar/blob/master/app.rb)
+
+## Mentor feedback
+
+Luca thought I could make my routes more RESTful - e.g. use:
+
+- `POST '/resource'` to create something
+- `GET '/resource` to get something
+- `PUT '/resource` to update something
+- etc
+
+Think about how the route paths map onto how you're manipulating your game objects. e.g. you could do something like `GET '/turn/new'` to get a new turn or something? Would be good to read up on this. I think this is the same thing Katerina was saying about my routes not being very RESTful...
+
+He thought the amount of logic in the `/choose` route was OK, but suggested a [slight refactoring](https://github.com/Hives/rps-challenge/commit/6fd8d2010441c063d813b93efcbf42fa3634719c), as my `if..elsif..else` wasn't running in parallel.
+
+He also said I should extract the logic on [this line](https://github.com/Hives/rps-challenge/blob/6fd8d2010441c063d813b93efcbf42fa3634719c/app.rb#L47) into the Game class (e.g. `@game.over?` or something), that would be a quick win.
