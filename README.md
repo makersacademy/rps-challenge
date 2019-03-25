@@ -36,7 +36,9 @@ I was trying to achieve this as I was working, but I knew I had some presentatio
 
 When I read the rubric after completing the project it described a way to have the model tell the view layer to load different `.erb` files depending on logic in the model, so I implemented something along those lines, e.g. in [this commit](https://github.com/Hives/rps-challenge/commit/cabc7749dce595cb955a85e14a61d8101d607b74).
 
-I did something similar for a 'warning' message I refactored in [this commit](https://github.com/Hives/rps-challenge/commit/1ef6aacd83112253a7d0de5f98dac3cbc04beee0), but that refactoring still left some logic in the view - [line 2 on this commit](https://github.com/Hives/rps-challenge/blob/1ef6aacd83112253a7d0de5f98dac3cbc04beee0/views/play.erb#L2). If I'd been displaying either one template or another there I could have done something like:
+There are a few other places where I need to go back and separate content out of the model layer. E.g. there's no way the names of the choices should be [stored in the player class](https://github.com/Hives/rps-challenge/blob/1ef6aacd83112253a7d0de5f98dac3cbc04beee0/lib/player.rb#L4), what was I thinking?!
+
+I'm not sure what I should do about this 'warning' message that I refactored [in this commit](https://github.com/Hives/rps-challenge/commit/1ef6aacd83112253a7d0de5f98dac3cbc04beee0) - I've still left some logic in the view - [see line 2 here](https://github.com/Hives/rps-challenge/blob/1ef6aacd83112253a7d0de5f98dac3cbc04beee0/views/play.erb#L2). If I'd been displaying either one template or another there I could have done something like:
 ```ruby
 class Game
   def choose_template
