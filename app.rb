@@ -46,12 +46,15 @@ class RockPaperScissors < Sinatra::Base
 
     if @game.turn >= 2
       redirect '/result'
-    elsif @game.current_player.computer?
-      @game.current_player.choose_random(3)
-      redirect '/result'
     else
-      redirect '/play'
+      if @game.current_player.computer?
+        @game.current_player.choose_random(3)
+        redirect '/result'
+      else
+        redirect '/play'
+      end
     end
+
   end
 
   get '/result' do
