@@ -1,6 +1,6 @@
 # RPS Challenge
 
-<img src="https://github.com/WardahTarar/rps-challenge/blob/master/images/t3WT4.jpg?raw=true" width=500>
+<img src="https://github.com/WardahTarar/rps-challenge/blob/master/images/thumb_6917_rockpaperscissors-580.jpg?raw=true" width=450>
 
 ## How to set up
 - git clone 'https://github.com/WardahTarar/rps-challenge'
