@@ -2,16 +2,10 @@ require_relative 'weapon'
 
 class Bot
 
-  def initialize
-    @weapon = Weapon::WEAPONS.sample
-  end
+  attr_reader :weapon
 
-  def weapon
+  def play
     @weapon = Weapon::WEAPONS.sample
-  end
-
-  def choice
-    @weapon
   end
 
 end

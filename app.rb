@@ -25,24 +25,27 @@ class RPS < Sinatra::Base;
   post '/rock' do
     @game = Game.instance
     @game.player_1.play('rock')
+    @game.player_2.play
     redirect '/result'
   end
 
   post '/paper' do
     @game = Game.instance
     @game.player_1.play('paper')
+    @game.player_2.play
     redirect '/result'
   end
 
   post '/scissors' do
     @game = Game.instance
     @game.player_1.play('scissors')
+    @game.player_2.play
     redirect '/result'
   end
 
   get '/result' do
     @game = Game.instance
-    @player_1_choice = @game.player_1.choice.upcase
+    @player_1_choice = @game.player_1.weapon.upcase
     @player_2_choice = @game.player_2.weapon.upcase
     @result = @game.result
     erb @result

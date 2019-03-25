@@ -21,7 +21,7 @@ class Game
   end
 
   def result(result_class = Result)
-    result_class.run(player_1.choice, player_2.choice)
+    result_class.run(player_1.weapon, player_2.weapon)
   end
 
 end

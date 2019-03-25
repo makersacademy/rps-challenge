@@ -29,9 +29,8 @@ describe Game do
     end
 
     it 'returns a result' do
-      allow(player_1).to receive(:choice).and_return('this')
-      allow(bot).to receive(:choice).and_return('that')
-      allow(bot).to receive(:weapon)
+      allow(player_1).to receive(:weapon).and_return('this')
+      allow(bot).to receive(:weapon).and_return('that')
       game = Game.create(player_1, nil, bot_class)
       expect(result_class).to receive(:run)
       game.result(result_class)

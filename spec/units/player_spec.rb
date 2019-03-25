@@ -9,7 +9,7 @@ describe Player do
   end
 
   it 'can make a choice' do
-    expect { player_1.play("choice") }.to change { player_1.choice }.from("").to("choice")
+    expect { player_1.play("choice") }.to change { player_1.weapon }.from(nil).to("choice")
   end
 
 end
