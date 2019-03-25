@@ -14,9 +14,8 @@ require 'capybara/rspec'
 require 'rspec'
 require 'capybara'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
-require_relative './features/web_helpers.rb'
 Capybara.app = Game
-
+require_relative './features/web_helpers.rb'
 
 
 RSpec.configure do |config|

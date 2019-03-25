@@ -74,4 +74,15 @@ calculation of who won:
 
 - refactor the feature test where you create a new user in the tests#
 
-- unit test on Player class
+- 'play again button' at the end 
+
+- further tests on Player class
+
+
+
+
+## things to better
+- write smaller feature tests
+
+- not fat controller (refactor it into model, add in unit tests)
+
