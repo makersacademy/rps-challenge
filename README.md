@@ -4,11 +4,11 @@ Rock, Paper Scissors (RPS) is the week 3, weekend project from Makers Academy. U
 
 ### Motivation
 
-This project was made to develop my ability to construct a web application, another progression in my journey to become a developer.
+This project was made to develop my ability to construct a web application, another progression in my journey to become a developer. It introduces multiple new concepts and languages which i have never previously used. 
 
 ### Build status
 
-The project is currently under construction, it may not be completed as this is a practice exercise to build myskills.  
+The project is currently under construction, it may not be completed as this is a practice exercise to build myskills. 
 
 ### Task / User Stories
 
@@ -52,6 +52,9 @@ An apple macbook was used to write code using VSCode as an editor and;
 * RSpec used for testing.
 * Coverall used to check test coverage.
 * Sinatra used for the server framework.
+* HTML was used. 
+* erb was used. 
+* Capybara testing was used. 
 
 ### Code style
 
@@ -59,7 +62,7 @@ Rubocop 0.65.0 was used for linting and stylying the Ruby code.
 
 ### Tests
 
-A TDD process was used in the development of this project, please see the attached RSpec files for details of the testing that was carried out.
+A loose TDD process was used in the development of this project, please see the attached RSpec files for details of the testing that was carried out. Currently there is 100% test coverage. 
 
 ## Installation
 
@@ -71,7 +74,7 @@ No API used in this project.
 
 ## How to use
 
-You should be able to run the code via irb.
+You should be able to run the code via irb, which will open a port that can be navigated to in a web browser via 'local host'.
 
 ## Credits
 
