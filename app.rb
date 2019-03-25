@@ -18,7 +18,7 @@ class MarketingGames < Sinatra::Base
 
   get '/games' do
     @user_mgmt = UserManagement.instance
-    @user_list_html = UserManagementToHTML.users_to_html_list(@user_mgmt)
+    @user_mgmt_html = UserManagementToHTML.new(@user_mgmt)
     erb(:games)
   end
 
