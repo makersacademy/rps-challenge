@@ -12,16 +12,16 @@ class Game
     @player_2 = bot_class.new if @player_2.nil?
   end
 
+  def result(result_class = Result)
+    result_class.run(player_1.weapon, player_2.weapon)
+  end
+  
   def self.create(player_1, player_2 = nil, bot_class = Bot)
     @game = Game.new(player_1, player_2, bot_class)
   end
 
   def self.instance
     @game
-  end
-
-  def result(result_class = Result)
-    result_class.run(player_1.weapon, player_2.weapon)
   end
 
 end
