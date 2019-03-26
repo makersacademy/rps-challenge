@@ -9,7 +9,7 @@ feature 'winner' do
     fill_in 'player_name', with: 'Jimmy'
     fill_in 'name_colour', with: 'red'
     click_button('Submit')
-    click_button('👊')
-    expect(page).to have_content '👊 v'
+    find("input[value='👊']").click
+    expect(page).to have_content 'Ok, Jimmy Choose your weapon'
   end
 end
