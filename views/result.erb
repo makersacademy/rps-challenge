@@ -5,11 +5,11 @@
 
 <h2>Winner: <%= @result%></h2>
 
-<form action="/reset_game" method = 'post'>
+<form action="/game/reset_game" method = 'post'>
 <input type="submit" name="submit" value="Start again" id="">
 </form>
 
-<form action="/exit_game" method = 'post'>
+<form action="/game/exit_game" method = 'post'>
 <input type="submit" name="submit" value="Exit" id="">
 </form>
 

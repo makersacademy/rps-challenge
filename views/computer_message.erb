@@ -1,0 +1,17 @@
+<% count = @game.completed_run.count %>
+
+<h1> Computer has chosen:</h1>
+
+<% if count == 1 %>
+  <h2><%= @game.player1.user_choice%></h2>
+  <br>
+  <br>
+  <a href="/game/play">OK</a>
+<% else %> 
+  <h2><%= @game.player2.user_choice %></h2>
+  <br>
+  <br>
+  <a href="/game/result">OK</a> 
+<%end%> 
+
+

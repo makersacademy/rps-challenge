@@ -9,6 +9,10 @@ class Player
     @score = 0
   end
 
+  def self.validate(input)
+    Player.new(input) if input != ""
+  end
+
   def win
     @name
   end

@@ -16,66 +16,69 @@ class Game < Sinatra::Base
 
   enable :sessions
 
-  get '/' do
+  get '/' do 
     erb :index
   end
 
-  post '/save_names' do
+  post '/game/save_names' do 
     #comment  validation
-    params[:player1] == "" ? session[:player1] = Computer.new(params[:computer1]) : session[:player1] = Player.new(params[:player1])
-    params[:player2] == "" ? session[:player2] = Computer.new(params[:computer2]) : session[:player2] = Player.new(params[:player2])
     
-    redirect '/chose_game_type'
-  end
+    # test = Player.validate(params[:player1]) || Computer.validate(params[:computer1]) # a player instance or nil
+    # p test
 
-  get '/chose_game_type' do
-    erb :chose_game_type
+    session[:player1] = Player.validate(params[:player1]) || Computer.validate(params[:computer1]) 
+    session[:player2] = Player.validate(params[:player2]) || Computer.validate(params[:computer2]) 
+    
+    redirect '/game/type'
   end
   
-  post '/create_game' do
+  get '/game/type' do 
+    erb :game_type
+  end
+
+  post '/game/create_game' do 
     player1 = session[:player1]
     player2 = session[:player2]
     game_type = params[:game_type].to_sym
 
     @game = RPS.create(player1, player2, game_type)
 
-    redirect '/play'
+    redirect '/game/play'
   end
 
-  get '/play' do
-    @game.computer_turn? ? redirect('/computer_turn') : erb(:play)
+  get '/game/play' do 
+    @game.computer_turn? ? redirect('/game/computer_turn') : erb(:play)
   end
 
-  get '/computer_turn' do
+  get '/game/computer_turn' do 
     player = @game.retrieve_turn
     player.generate_computer_choice(@game.game_options)
     @game.change_turn
 
-    @game.completed_run.count == 2 ? erb(:computer_message_turn2) : erb(:computer_message_turn1)
-   
+    erb :computer_message
   end
 
-  post '/turn' do
+  post '/game/turn' do 
     player = @game.retrieve_turn
     player.choice = params[:result].downcase
     @game.change_turn
   
-    @game.completed_run.count == 2 ? redirect('/result') : redirect('/play')
+    @game.completed_run.count == 2 ? redirect('/game/result') : redirect('/game/play')
   end
   
-  get '/result' do
+  get '/game/result' do 
     @result = Winner.run(@game.player1, @game.player2)
     
     erb :result
   end
 
-  post '/reset_game' do
+  post '/game/reset_game' do 
     @game.reset_game
     
-    redirect '/play'
+    redirect '/game/play'
   end
 
-  post '/exit_game' do
+  post '/game/exit_game' do 
     @game.exit
     redirect '/'
   end
