@@ -89,3 +89,8 @@ I asked Katerina for some feedback
 - [x] He thought the amount of logic in the `/choose` route was OK, but suggested a [slight refactoring](https://github.com/Hives/rps-challenge/commit/6fd8d2010441c063d813b93efcbf42fa3634719c), as my `if..elsif..else` wasn't running in parallel.
 
 - [x] He also said I should extract the logic on [this line](https://github.com/Hives/rps-challenge/blob/6fd8d2010441c063d813b93efcbf42fa3634719c/app.rb#L47) into the Game class (e.g. `@game.over?` or something), that would be a quick win.
+
+# TODO
+
+- [ ] Extract the rock-paper-scissors logic into its own class
+- [ ] and write an alternative rock-paper-scissors-Spock-lizard class
