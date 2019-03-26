@@ -1,4 +1,3 @@
-
 class RPS
 
 attr_reader :player_1

@@ -34,7 +34,7 @@ class Game < Sinatra::Base
     @player_1 = Player.new(session[:player_1_choice], session[:player_1_name])
     # p @player_1
     @player_2 = Player.new
-    # p @player_2
+    # @player_2 is computer
     # get index of both players
     # p player1.choice
     @rps = RPS.new(@player_1, @player_2)
