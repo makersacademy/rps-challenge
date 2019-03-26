@@ -29,6 +29,10 @@ class Game
     @turn += 1
   end
 
+  def over?
+    @turn >= 2
+  end
+
   def result
     score = (players[0].choice - players[1].choice) % 3
     [:draw, :player1_win, :player2_win][score]

@@ -69,6 +69,22 @@ describe Game do
     end
   end
 
+  describe '#over?' do
+    context 'at beginning of game' do
+      it { is_expected.not_to be_over }
+    end
+
+    context 'after player one has had their turn' do
+      before { game.next_turn }
+      it { is_expected.not_to be_over }
+    end
+
+    context 'after player two has had their turn' do
+      before { 2.times { game.next_turn } }
+      it { is_expected.to be_over }
+    end
+  end
+
   describe '#current_player' do
     context "player 1's go" do
       it 'returns player 1' do

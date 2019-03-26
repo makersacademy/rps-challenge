@@ -44,7 +44,7 @@ class RockPaperScissors < Sinatra::Base
     @game.current_player.choose(params['choice'])
     @game.next_turn
 
-    if @game.turn >= 2
+    if @game.over?
       redirect '/result'
     else
       if @game.current_player.computer?
