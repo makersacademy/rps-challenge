@@ -68,6 +68,8 @@ calculation of who won:
 - with the index value, a if statement to determine who is the winner: it gets the value inside the array according to index value and sets who wins by comparing the corresponding values of each player inside the array. The if statement returns the @winner variable which is used in the erb for display
 
 
+
+
 ## what i didn't do 
 
 - shorten the calculation for winner step by server (if possible, as already the value is given, might not need index value)
@@ -80,15 +82,12 @@ calculation of who won:
 
 ## what i did later on (after monday)
 - Made a class for the game itself where it will return a random choice 
+- refactored the player class to extract RPS class where it calculates winner, and changed get '/result' page to use these new classes.
 
 
 ## problems encountered
-p- When 
 
-p- test not passing due to argument (fixed choice for computer) not passed into the game in feature test
-
-
-p- how to fix the computer choice in game_spec so that feature tests are passing
+p- not sure how to fix the choice for computer, feature test not passing due to argument (fixed choice for computer) not passed into the game in feature test
 
 
 
