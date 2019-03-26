@@ -69,20 +69,32 @@ calculation of who won:
 
 
 ## what i didn't do 
-- Made a class for the game itself where it will return a random choice 
+
 - shorten the calculation for winner step by server (if possible, as already the value is given, might not need index value)
 
 - refactor the feature test where you create a new user in the tests#
 
 - 'play again button' at the end 
 
-- further tests on Player class
+- further tests on Player class(if needed?)
+
+## what i did later on (after monday)
+- Made a class for the game itself where it will return a random choice 
+
+
+## problems encountered
+p- When 
+
+p- test not passing due to argument (fixed choice for computer) not passed into the game in feature test
+
+
+p- how to fix the computer choice in game_spec so that feature tests are passing
 
 
 
-
-## things to better
-- write smaller feature tests
+## things to better and further work afterwards
+- write smaller feature tests (i had to amend this)
 
 - not fat controller (refactor it into model, add in unit tests)
+(refactored this later- commit: 'fixed game_spec temporarily')
 
