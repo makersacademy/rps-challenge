@@ -1,9 +1,11 @@
 ## RPS Challenge
 
 Online Rock Paper Scissors App.
+
 Built using TDD for features and using capybara to emulate user interaction.
+
 Specifications made from user stories below, built with Ruby using Sinatra.
-I also used this project to experiment with CSS.
+
 [Deployed on heroku](https://infinite-beach-27560.herokuapp.com/?)
 
 
