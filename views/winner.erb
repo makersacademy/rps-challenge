@@ -15,10 +15,14 @@
       </font> <br>
       <%= @weapon %> VS <%= @comp_hand %>
     </p>
-    <h2><%= @result %></h2><hr>
-    <form action='/weapon_select' method='get'>
-      <input type=submit value='play again?'>
+    <h2><%= @result %></h2>
+
+    <form action='/weapon_select' method='post' >
+      <input type=submit value='play again?' >
+      <input name='name_colour' value='<%=@name_colour%>' type='hidden'>
+      <input name='player_name' value='<%=@player_name%>' type='hidden'>
     </form>
+
   </center>
 </body>
 </html>
