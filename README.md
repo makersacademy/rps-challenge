@@ -1,4 +1,11 @@
-# RPS Challenge
+## RPS Challenge
+
+Online Rock Paper Scissors App.
+Built using TDD for features and using capybara to emulate user interaction.
+Specifications made from user stories below, built with Ruby using Sinatra.
+I also used this project to experiment with CSS.
+[Deployed on heroku](https://infinite-beach-27560.herokuapp.com/?)
+
 
 Instructions
 -------
@@ -43,15 +50,15 @@ As usual please start by
 * TEST driving development of your app
 
 
-## Bonus level 1: Multiplayer
+### Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+### Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
-## Basic Rules
+### Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
@@ -77,8 +84,8 @@ require 'simplecov-console'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
+  ## Want a nice code coverage website? Uncomment this next line!
+  ## SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
 ```

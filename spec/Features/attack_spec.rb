@@ -4,7 +4,6 @@
 
 feature 'winner' do
   scenario 'attack Player 2' do
-
     visit('/')
     fill_in 'player_name', with: 'Jimmy'
     fill_in 'name_colour', with: 'red'

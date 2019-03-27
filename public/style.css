@@ -1,22 +1,58 @@
 body {
   max-width: 500px;
+  max-height: 500px;
+  vertical-align: middle;
   position: relative;
   margin: auto;
   width: 50%;
   border: 3px;
   padding: 10px;
-  background-image: linear-gradient(to right, black, white, white, white, black);
-  font-family: "Times New Roman", Georgia, Serif;
 }
 
-#title {
-  font-size: 1em;
-  font-variant-ligatures: normal;
-  font-kerning: normal;
+@keyframes wurble {
+  0%  {transform: matrix3d(1,0,0.00,0.001,0.00,1,0.00,0,0,0,1,0,0,0,0,1);}
+  100% {transform: matrix3d(1,0,0.00,-0,0.0001,1,0.00,0,0,0,1,0,0,0,0,1);}
 }
 
-#winner {
+@keyframes wobble {
+  0%  {transform: rotateZ(-20deg);}
+  100% {transform: rotateZ(20deg);}
+}
+
+@keyframes snip {
+  0%  {transform: translateY(-5%);}
+  100% {transform: translateY(5%);}
+}
+
+h1 {
+  display:inline-block;
   font-size: 3em;
-  font-variant-ligatures: normal;
-  font-kerning: normal;
+  vertical-align: middle;
+  align-content: middle;
+  line-height: 2;
+  letter-spacing: 0.2em;
+}
+
+#rock {
+  display:inline-block;
+  animation: wurble 2s linear 0.2s infinite alternate;
+}
+#paper {
+  display:inline-block;
+  animation: wobble 2s infinite 0.2s alternate;
+}
+#scissors {
+  display:inline-block;
+  animation: snip 0.5s linear 0.2s infinite alternate;
+}
+
+.item {
+  display:inline-block;
+  font-size: 3em;
+  vertical-align: middle;
+  align-content: middle;
+  line-height: 2;
+  letter-spacing: 0.2em;
+  border: none;
+  cursor: pointer;
 }

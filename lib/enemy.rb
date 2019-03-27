@@ -3,7 +3,7 @@ class Enemy
   attr_reader :choice
 
   def initialize
-    @choice = ['👊','🤚','✌️'].sample
+    @choice = ['👊', '🤚', '✌️'].sample
   end
 
 end

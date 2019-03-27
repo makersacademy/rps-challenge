@@ -1,28 +1,22 @@
 class Result
 
-  attr_reader :game_result
-
   def initialize(weapon, enemy)
-    @computer_hand = enemy
+    @enemy = enemy
     @weapon = weapon
-    evaluation
+    eval
   end
 
-  def evaluation
-    if @weapon == @computer_hand
+  def eval
+    if @weapon == @enemy
       'Draw'
-    elsif @weapon == '👊' && @computer_hand == '✌️'
+    elsif @weapon == '👊' && @enemy == '✌️'
       'You win'
-    elsif @weapon == '👊' && @computer_hand == '🤚'
+    elsif @weapon == '✌️' && @enemy == '🤚'
+      'You win'
+    elsif @weapon == '🤚' && @enemy == '👊'
+      'You win'
+    else
       'You lose'
-    elsif @weapon == '✌️' && @computer_hand == '🤚'
-      'You win'
-    elsif @weapon == '✌️' && @computer_hand == '👊'
-      'You lose'
-    elsif @weapon == '🤚' && @computer_hand == '👊'
-      'You win'
-    elsif @weapon == '🤚' && @computer_hand == '✌️'
-      'You lose' 
     end
   end
 end

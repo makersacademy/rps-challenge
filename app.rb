@@ -2,7 +2,6 @@ require 'sinatra/base'
 require_relative './lib/result'
 require_relative './lib/enemy'
 
-
 class RockPaperScissors < Sinatra::Base
 
   enable :sessions
@@ -24,12 +23,12 @@ class RockPaperScissors < Sinatra::Base
     @weapon = session[:weapon]
     @comp = Enemy.new
     session[:comp_hand] = @comp.choice
-    session[:result] = (Result.new(@weapon, @comp.choice)).evaluation
+    session[:result] = Result.new(@weapon, @comp.choice).eval
     redirect '/winner'
   end
 
   get '/winner' do
-    @comp_hand= session[:comp_hand]
+    @comp_hand = session[:comp_hand]
     @weapon = session[:weapon]
     @result = session[:result]
     # @winner = @result.game_result

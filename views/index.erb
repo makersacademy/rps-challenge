@@ -1,31 +1,29 @@
-<center>
-  <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
-  <meta charset='utf-8'>
-  <h1 id="title">
-    ROCK<br>
-    👊<br>
-    PAPER<br>
-    🤚<br>
-    SCISSORS<br>
-    ✌️<br>
-    BATTLE
-  </h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <center>
+    <h1 class='Item'><span id='rock'>👊</span><span id='paper'>🤚</span><span id='scissors'>✌️</span></h1>
 
+    <form action='/weapon_select' method='post'>
+      <label for='player_name'>
+        Enter Your Name<br>
+        <input type='text' name='player_name'><br>
+      </label>
 
-  <form action='/weapon_select' method='post'>
+      <label for='name_colour'><br>
+        Pick A Color<br>
+        <input type='color' id='name_colour' name='name_colour'value='#1010102'><br>
+      </label><br>
 
-    <label for='player_name'>
-      Enter Player Name<br>
-      <input type='text' name='player_name'><br>
-    </label>
-
-    <label for='name_colour'><br>
-      Name Colour<br>
-      <input type='color' id='name_colour' name='name_colour'value='#1010102'><br>
-    </label><br>
-
-    <input type='submit' value='Submit'><br>
-
-  </form>
-
-</center>
+      <input type='submit' value='Submit'><br>
+    </form>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+    <meta charset='utf-8'>
+    
+  </center>
+</body>
+</html>
