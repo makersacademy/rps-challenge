@@ -8,27 +8,27 @@ class RockPaperScissors < Sinatra::Base
     @game = Game.instance
   end
 
-  get '/' do
+  get '/rps' do
     erb :index
   end
 
-  post '/name' do
+  post '/rps/name' do
     player = Player.new(params[:player_name])
     computer = Player.new('Computer')
     Game.create_game(player, computer)
-    redirect '/play'
+    redirect '/rps/play'
   end
 
-  get '/play' do
+  get '/rps/play' do
     erb :play
   end
 
-  post '/choice' do
+  post '/rps/choice' do
     @game.player.choice(params[:choice].downcase.to_sym)
-    redirect '/result'
+    redirect '/rps/result'
   end
 
-  get '/result' do
+  get '/rps/result' do
     erb :result
   end
 
