@@ -5,8 +5,7 @@
 [Code Status](#Code-Status)
 
 This weekend challenge is for submission to Makers Academy. The code creates a
-programme which allows the user to control outgoing and incoming aircraft,
-dependent on airport capacity and flying conditions.
+programme which allows the user to play Rock, Paper, Scissors against a computer. 
 
 ### Getting Started
 1. Clone to your local machine using
