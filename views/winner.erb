@@ -5,3 +5,7 @@
   <h2>Computer chose: </h2><%= @compare.computer %><br>
 </div><br>
 <%= @compare.winner? %>
+
+<form method="get" action="/play">
+    <button type="submit">Play Again</button>
+</form>
