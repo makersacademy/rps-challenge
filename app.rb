@@ -1,17 +1,15 @@
 require 'sinatra/base'
+require './lib/rock_paper_scissors'
 
 class Game < Sinatra::Base
 
   post '/result' do
-    #@date = Birthday.new(params[:Day], params[:Month])
-    #@name = params[:Name]
-    @name = params[:Name]
-    @weapon = params[:Weapon_choice]
+    @name = params[:name]
+    @game = Rock_Paper_Scissors.new(params[:weapon_choice])
     erb :result
   end
 
   get '/' do
     erb :pick_option
   end
-
 end
