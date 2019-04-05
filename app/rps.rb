@@ -27,6 +27,8 @@ class Rps < Sinatra::Base
     @name = session[:name]
     @choice = session[:choice]
     @comp = ComputerPlayer.new.random_weapon
+    game = Game.new(@choice, @comp)
+    @result = game.result
     erb :result
   end
 end
