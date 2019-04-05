@@ -20,6 +20,14 @@ After saving the name in the session variable we will redirect to the play view 
 
 To be able to play RPS we need to give the chance to choose rock, paper or scissors, to do this we will use three button over a select for a better graphical design.
 
+The las view will be the result one, giving the description an output of the fight.
+
+### Controllers
+
+In the name post we will store the name of the player as a session variable and call to the play view
+
+In the check post we will get a selection from the pc_player and check the result, saving everything in session variables. Then it will redirect to the result view.
+
 ### Model
 
 pc_player will take the role of another player, choosing a random option for RPS
