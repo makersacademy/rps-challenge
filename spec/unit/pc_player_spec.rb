@@ -1,7 +1,7 @@
 require "pc_player.rb"
 
 describe PcPlayer do
-  describe "#play" do
+  describe ".play" do
     it "gives rock back" do
       srand(67_810)
       expect(described_class.play).to eq "rock"
