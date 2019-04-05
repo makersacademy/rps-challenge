@@ -38,6 +38,4 @@ class Game
     @scores.scores(result)
   end
 
-
-
 end
