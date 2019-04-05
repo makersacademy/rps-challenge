@@ -4,9 +4,9 @@
   <h1>Computer picked <%= @game.computer_choice %></h1>
 
   <% if @game.who_wins? == "user" %>
-    <h1><%= "You Win" %></h1>
+    <h1><font color="green"><%= "You Win" %></font></h1>
   <% elsif @game.who_wins? == "computer" %>
-    <h1><%= "Computer Wins" %></h1>
+    <h1><font color="red"><%= "Computer Wins" %></font></h1>
   <% else %>
     <h1><%= "Tie" %></h1>
   <% end %>
