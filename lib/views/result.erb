@@ -1,9 +1,9 @@
-<%= @selection.capitalize %> vs <%= @pc_selection.capitalize %> <br>
+<%= @game.player_1.play.capitalize %> vs <%= @game.player_2.play.capitalize %> <br>
 
 <% if @result == 0 %>
 Draw
 <% elsif  @result == 1 %>
-<%= @player_name %> wins
+<%= @game.player_1.name %> wins
 <% else %>
-PC wins
+<%= @game.player_2.name %> wins
 <% end %>
