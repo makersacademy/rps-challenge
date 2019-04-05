@@ -1,8 +1,16 @@
 <h1 style="text-align:center; font-size:100px"><%= @name %> picked <%= @choice %> </h1>
-<h1 style="text-align:center; font-size:100px">Computer picked <%= @comp %> </h1>
+<h1 style="text-align:center; font-size:100px"> Computer picked <%= @comp %> </h1>
 
 <% if @result == "Player 1 Wins" %>
-<h1 style="text-align:center; font-size:100px"><%= @name %> Wins!</h1>
+<h1 style="text-align:center; font-size:100px"> <%= @name %> Wins! </h1>
+<% elsif @result == "Draw" %>
+<h1 style="text-align:center; font-size:100px">It's a Draw!</h1>
 <% else %>
 <h1 style="text-align:center; font-size:100px">Computer Wins!</h1>
 <% end %>
+
+<h2 style="text-align:center">
+<form action="/play">
+  <button name="play_again" type="submit" value="Play Again?" style="text-align:center; font-size:30px;">Play Again?</button>
+</form>
+</h2>
