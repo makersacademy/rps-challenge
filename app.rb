@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/compare'
+require './lib/computer'
 
 class Game < Sinatra::Base
   get '/' do
@@ -17,16 +18,21 @@ class Game < Sinatra::Base
   end
 
   get '/rock' do
-    @compare = Compare.new("rock", "paper")
+    computer = Computer.new
+    @compare = Compare.new("rock", computer.action)
     erb :winner
   end
 
   get '/paper' do
-    'Paper'
+    computer = Computer.new
+    @compare = Compare.new("paper", computer.action)
+    erb :winner
   end
 
   get '/scissors' do
-    'Scissors'
+    computer = Computer.new
+    @compare = Compare.new("scissors", computer.action)
+    erb :winner
   end
 
   run! if app_file == $0
