@@ -18,6 +18,16 @@ describe ResultChecker do
         option2 = option1
         expect(described_class.check(option1, option2)).to eq 0
       end
+      it "lizzard vs lizzard" do
+        option1 = "lizzard"
+        option2 = option1
+        expect(described_class.check(option1, option2)).to eq 0
+      end
+      it "spock vs spock" do
+        option1 = "spock"
+        option2 = option1
+        expect(described_class.check(option1, option2)).to eq 0
+      end
     end
 
     context "gives 1 if player 1 wins" do
