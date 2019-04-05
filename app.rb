@@ -15,5 +15,17 @@ class Game < Sinatra::Base
     erb :play
   end
 
+  get '/rock' do
+    'Rock'
+  end
+
+  get '/paper' do
+    'Paper'
+  end
+
+  get '/scissors' do
+    'Scissors'
+  end
+
   run! if app_file == $0
 end
