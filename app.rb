@@ -17,7 +17,6 @@ class Game < Sinatra::Base
   end
 
   get '/rock' do
-    'Rock'
     @compare = Compare.new("rock", "paper")
     erb :winner
   end

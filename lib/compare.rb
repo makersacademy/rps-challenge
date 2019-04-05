@@ -10,13 +10,13 @@ class Compare
     if @player == @computer
       "DRAW"
     elsif @player == "rock" && @computer == "scissors"
-    	"Rock beats scissors - you won!"
+      "Rock beats scissors - you won!"
     elsif @player == "scissors" && @computer == "paper"
-    	"Scissors beats paper - you won!"
+      "Scissors beats paper - you won!"
     elsif @player == "paper" && @computer == "rock"
-    	"Paper beats rock - you won!"
+      "Paper beats rock - you won!"
     else
-    	"Unlucky! You lost!"
+      "Unlucky! You lost!"
     end
   end
 end
