@@ -25,4 +25,12 @@ feature 'can play single player' do
     click_button "Rock"
     expect(page).to have_content "Wins!"
   end
+
+  scenario 'lets you play again' do
+    visit ('/')
+    sign_in_and_play
+    click_button "Rock"
+    click_button "Play Again?"
+    expect(page).to have_content "Josh vs. Computer"
+  end
 end
