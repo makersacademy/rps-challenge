@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/computer_player'
 require './lib/game'
+require './lib/scores'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -12,6 +13,7 @@ class Rps < Sinatra::Base
   post '/play' do
     session[:player_1_name] = params[:player_1_name]
     session[:player_2_name] = params[:player_2_name]
+    session[:game] = Game.new
     redirect '/player_1_choice'
   end
 
@@ -51,8 +53,8 @@ class Rps < Sinatra::Base
     @player_2_name = session[:player_2_name]
     @choice_1 = session[:choice_1]
     @choice_2 = session[:choice_2]
-    game = Game.new(@choice_1, @choice_2)
-    @result = game.game_result
+    @result = session[:game].game_result(@choice_1, @choice_2)
+    @scores = session[:game].score_keeper(@result)
     erb :result
   end
 end

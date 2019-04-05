@@ -22,12 +22,14 @@
 <h1 style="text-align:center; font-size:75px; color:red;"><%= @player_2_name %> picked <%= @choice_2 %> </h1>
 
 <% if @result == "Player 1 Wins" %>
-<h1 style="text-align:center; font-size:150px"><span class="blinking"> <%= @player_1_name %> Wins!</span></h1>
+<h1 style="text-align:center; font-size:100px"><span class="blinking"> <%= @player_1_name %> Wins!</span></h1>
 <% elsif @result == "Draw" %>
-<h1 style="text-align:center; font-size:150px">It's a Draw!</h1>
+<h1 style="text-align:center; font-size:100px">It's a Draw!</h1>
 <% else %>
-<h1 style="text-align:center; font-size:150px"><span class="blinking"><%= @player_2_name %> Wins!</span></h1>
+<h1 style="text-align:center; font-size:100px"><span class="blinking"><%= @player_2_name %> Wins!</span></h1>
 <% end %>
+
+<h1 style="text-align:center; font-size:75px;;">Current Score: <%= @player_1_name %> <%= @scores %> <%= @player_2_name %> </h1>
 
 <h2 style="text-align:center">
 <form action="/player_1_choice">
