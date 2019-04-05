@@ -15,4 +15,7 @@ I would like to be able to play rock/paper/scissors
 
 ### Views
 
-First we need a main view were we will ask for the player name
+First we need a main view were we will ask for the player name with a Play button to start the game.
+After saving the name in the session variable we will redirect to the play view were we will Welcome the player.
+
+To be able to play RPS we need to give the chance to choose rock, paper or scissors, to do this we will use three button over a select for a better graphical design. 
