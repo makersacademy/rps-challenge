@@ -11,11 +11,7 @@ class Rps < Sinatra::Base
 
   post '/play' do
     session[:player_1_name] = params[:player_1_name]
-    if params[:player_2_name] == ""
-      session[:player_2_name] = "Computer"
-    else
-      session[:player_2_name] = params[:player_2_name]
-    end
+    session[:player_2_name] = params[:player_2_name]
     redirect '/player-1-choice'
   end
 
