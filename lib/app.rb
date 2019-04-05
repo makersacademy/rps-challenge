@@ -27,7 +27,7 @@ class Rps < Sinatra::Base
   end
 
   get "/play" do
-    if @game.current_turn.name == "PC"
+    if @game.current_turn.class.name == "PcPlayer"
       redirect("/check")
     else
       erb :play
