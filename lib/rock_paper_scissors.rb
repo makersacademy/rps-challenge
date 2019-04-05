@@ -1,4 +1,4 @@
-class Rock_Paper_Scissors
+class RockPaperScissors
   attr_reader :user_choice, :computer_choice
 
   def initialize(user_choice)

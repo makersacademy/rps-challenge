@@ -5,7 +5,7 @@ class Game < Sinatra::Base
 
   post '/result' do
     @name = params[:name]
-    @game = Rock_Paper_Scissors.new(params[:weapon_choice])
+    @game = RockPaperScissors.new(params[:weapon_choice])
     erb :result
   end
 
