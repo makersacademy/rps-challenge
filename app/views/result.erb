@@ -18,19 +18,19 @@
 
 
 <body style=" background:powderblue"><center>
-<h1 style="text-align:center; font-size:100px"><%= @player_1_name %> picked <%= @choice_1 %> </h1>
-<h1 style="text-align:center; font-size:100px"><%= @player_2_name %> picked <%= @choice_2 %> </h1>
+<h1 style="text-align:center; font-size:75px; color:blue;"><%= @player_1_name %> picked <%= @choice_1 %> </h1>
+<h1 style="text-align:center; font-size:75px; color:red;"><%= @player_2_name %> picked <%= @choice_2 %> </h1>
 
 <% if @result == "Player 1 Wins" %>
-<h1 style="text-align:center; font-size:100px"><span class="blinking"> <%= @player_1_name %> Wins!</span></h1>
+<h1 style="text-align:center; font-size:150px"><span class="blinking"> <%= @player_1_name %> Wins!</span></h1>
 <% elsif @result == "Draw" %>
-<h1 style="text-align:center; font-size:100px">It's a Draw!</h1>
+<h1 style="text-align:center; font-size:150px">It's a Draw!</h1>
 <% else %>
-<h1 style="text-align:center; font-size:100px"><span class="blinking"><%= @player_2_name %> Wins!</span></h1>
+<h1 style="text-align:center; font-size:150px"><span class="blinking"><%= @player_2_name %> Wins!</span></h1>
 <% end %>
 
 <h2 style="text-align:center">
-<form action="/player-1-choice">
+<form action="/player_1_choice">
   <button name="play_again" type="submit" value="Play Again?" style="text-align:center; font-size:30px;">Play Again?</button>
 </form>
 <form action="/">

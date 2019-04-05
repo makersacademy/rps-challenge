@@ -12,14 +12,14 @@ class Rps < Sinatra::Base
   post '/play' do
     session[:player_1_name] = params[:player_1_name]
     session[:player_2_name] = params[:player_2_name]
-    redirect '/player-1-choice'
+    redirect '/player_1_choice'
   end
 
-  post '/player-1-choice' do
-    redirect '/player-1-choice'
+  post '/player_1_choice' do
+    redirect '/player_1_choice'
   end
 
-  get '/player-1-choice' do
+  get '/player_1_choice' do
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
     if session[:player_2_name] == "Computer"
@@ -29,8 +29,9 @@ class Rps < Sinatra::Base
     end
   end
 
-  post '/player-2-choice' do
+  post '/player_2_choice' do
     session[:choice_1] = params[:weapon_1]
+    @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
     erb :player_2_choice
   end
