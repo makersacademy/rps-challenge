@@ -55,7 +55,7 @@ class Rps < Sinatra::Base
     @choice_1 = session[:choice_1]
     @choice_2 = session[:choice_2]
     game = Game.new(@choice_1, @choice_2)
-    @result = game.result
+    @result = game.game_result
     erb :result
   end
 end

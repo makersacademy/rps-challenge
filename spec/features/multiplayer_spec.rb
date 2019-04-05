@@ -1,12 +1,12 @@
 feature 'can play multiplayer' do
   scenario 'can play on your own' do
-    visit ('/')
+    visit '/'
     sign_in_and_play_multi
     expect(page).to have_content "Josh vs. Sam"
   end
 
   scenario 'can both pick options' do
-    visit ('/')
+    visit '/'
     sign_in_and_play_multi
     click_button "Rock"
     click_button "Paper"
@@ -14,7 +14,7 @@ feature 'can play multiplayer' do
   end
 
   scenario 'player 1 wins' do
-    visit ('/')
+    visit '/'
     sign_in_and_play_multi
     click_button "Rock"
     click_button "Scissors"
@@ -22,7 +22,7 @@ feature 'can play multiplayer' do
   end
 
   scenario 'player 2 wins' do
-    visit ('/')
+    visit '/'
     sign_in_and_play_multi
     click_button "Rock"
     click_button "Paper"
@@ -30,7 +30,7 @@ feature 'can play multiplayer' do
   end
 
   scenario 'lets you play again' do
-    visit ('/')
+    visit '/'
     sign_in_and_play_multi
     click_button "Rock"
     click_button "Paper"

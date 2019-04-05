@@ -5,7 +5,7 @@ class Game
     @player2 = player_2
   end
 
-  def result
+  def game_result
     if @player1 == @player2
       return "Draw"
     elsif @player1 == "Rock" and @player2 == "Scissors"
