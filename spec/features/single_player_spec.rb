@@ -11,4 +11,11 @@ feature 'can play single player' do
     click_button "Rock"
     expect(page).to have_content "Josh picked Rock"
   end
+
+  scenario 'computer picks an option' do
+    visit ('/')
+    sign_in_and_play
+    click_button "Rock"
+    expect(page).to have_content "Computer picked"
+  end
 end

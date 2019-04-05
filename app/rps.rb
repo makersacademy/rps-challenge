@@ -25,6 +25,7 @@ class Rps < Sinatra::Base
   get '/result' do
     @name = session[:name]
     @choice = session[:choice]
+    @comp = ComputerPlayer.new.random_weapon
     erb :result
   end
 end
