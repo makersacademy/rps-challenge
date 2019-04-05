@@ -1,4 +1,5 @@
-Welcome <%= @game.player_1.name %>
+<%= @game.player_1.name %> vs <%= @game.player_2.name %> <br>
+Welcome <%= @game.current_turn.name %>
 
 <form action="/check" method="post">
     <button name="selection" value="rock" type="submit">Rock</button>
