@@ -3,6 +3,7 @@ require './lib/compare'
 require './lib/computer'
 
 class Game < Sinatra::Base
+  enable :sessions
 
   before do
     @computer = Computer.new
@@ -13,12 +14,13 @@ class Game < Sinatra::Base
   end
 
   post '/name' do
-    $name = params[:name]
+    @name = params[:name]
+    session[:name] = @name
     redirect('/play')
   end
 
   get '/play' do
-    @player_name = $name
+    @player_name = session[:name]
     erb :play
   end
 
