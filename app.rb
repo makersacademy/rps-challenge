@@ -3,6 +3,11 @@ require './lib/compare'
 require './lib/computer'
 
 class Game < Sinatra::Base
+
+  before do
+    @computer = Computer.new
+  end
+
   get '/' do
     erb :index
   end
@@ -18,20 +23,17 @@ class Game < Sinatra::Base
   end
 
   get '/rock' do
-    computer = Computer.new
-    @compare = Compare.new("rock", computer.action)
+    @compare = Compare.new("rock", @computer.action)
     erb :winner
   end
 
   get '/paper' do
-    computer = Computer.new
-    @compare = Compare.new("paper", computer.action)
+    @compare = Compare.new("paper", @computer.action)
     erb :winner
   end
 
   get '/scissors' do
-    computer = Computer.new
-    @compare = Compare.new("scissors", computer.action)
+    @compare = Compare.new("scissors", @computer.action)
     erb :winner
   end
 

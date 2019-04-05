@@ -1,10 +1,14 @@
-<%= @player_name %><br>
-<form action='/rock'>
-  <input type="submit" value="Rock">
-</form>
-<form action='/paper'>
-  <input type="submit" value="Paper">
-</form>
-<form action='/scissors'>
-  <input type="submit" value="Scissors">
-</form>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div style="text-align:center">
+  <%= @player_name %><h2>Choose Your Action: </h2><br>
+  <form action='/rock'>
+    <button type="submit" class="btn btn-secondary">Rock</button>
+  </form>
+  <form action='/paper'>
+    <button type="submit" class="btn btn-secondary">Paper</button>
+  </form>
+  <form action='/scissors'>
+    <button type="submit" class="btn btn-secondary">Scissors</button>
+  </form>
+</div>

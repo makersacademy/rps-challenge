@@ -1,11 +1,17 @@
-<div>
-  <h2>You chose: </h2><%= @compare.player %><br>
-</div>
-<div>
-  <h2>Computer chose: </h2><%= @compare.computer %><br>
-</div><br>
-<%= @compare.winner? %>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<form method="get" action="/play">
-    <button type="submit">Play Again</button>
-</form>
+<div style="text-align:center">
+  <div>
+    <h2>You chose: </h2><%= @compare.player %><br>
+  </div>
+  <div>
+    <h2>Computer chose: </h2><%= @compare.computer %><br>
+  </div><br>
+  <%= @compare.winner? %><br>
+
+  <br><img src="https://media.giphy.com/media/3ohzdGnD5vAud1NCZW/giphy.gif">
+
+  <form method="get" action="/play">
+      <br><button type="submit" class="btn btn-secondary">Play Again</button>
+  </form>
+</div>
