@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require_relative "./pc_player.rb"
+require_relative "./result_checker.rb"
+
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -19,11 +22,16 @@ class Rps < Sinatra::Base
 
   post "/check" do
     session[:selection] = params[:selection]
+    session[:pc_selection] = PcPlayer.play
+    session[:result] = ResultChecker.check(session[:selection], session[:pc_selection])
     redirect("/result")
   end
 
   get "/result" do
     @selection = session[:selection]
+    @pc_selection = session[:pc_selection]
+    @result = session[:result]
+    @player_name = session[:player_name]
     erb :result
   end
 end

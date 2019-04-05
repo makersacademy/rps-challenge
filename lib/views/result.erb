@@ -1,1 +1,9 @@
-<%= @selection.capitalize %> vs Rock
+<%= @selection.capitalize %> vs <%= @pc_selection.capitalize %> <br>
+
+<% if @result == 0 %>
+Draw
+<% elsif  @result == 1 %>
+<%= @player_name %> wins
+<% else %>
+PC wins
+<% end %>
