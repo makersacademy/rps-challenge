@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/computer'
+require './lib/game'
 
 class RPSBattle < Sinatra::Base
   enable :sessions
@@ -23,12 +25,15 @@ class RPSBattle < Sinatra::Base
 
   post '/selection' do
     session[:selection] = params[:weapon]
-    redirect 'selection'
+    redirect '/selection'
   end
 
   get '/selection' do
     @player_name = session[:player_name]
     @selection = session[:selection]
+    @computer = Computer.new.random_selection
+    game = Game.new(@selection, @computer)
+    @result = game.check_result
     erb :selection
   end
 
