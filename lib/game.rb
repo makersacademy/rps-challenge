@@ -9,7 +9,7 @@ class Game
 
   def check_result
     if @human_player == @computer_player
-      return "Draw"
+      return "Stalemate... Victory eludes you both"
     elsif @human_player == "Rock" && @computer_player == "Scissors"
       return "You are Victorious!"
     elsif @human_player == "Paper" && @computer_player == "Rock"

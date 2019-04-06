@@ -5,3 +5,4 @@ feature 'Computer makes choice' do
     expect(page).to have_content "The Dark Web o.0 selected #{@computer}"
   end
 end
+# #{@computer} returns nil, is this possible to ever use? research to be done.
