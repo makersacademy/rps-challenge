@@ -18,16 +18,19 @@ class RPSBattle < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
-    session[:move] = params[:move]
     erb :play
   end
 
+  post '/selection' do
+    session[:selection] = params[:weapon]
+    redirect 'selection'
+  end
 
-  # get '/selection' do
-  #   @player_name = session[:player_name]
-  #   @value = session[:move]
-  #   erb :selection
-  # end
+  get '/selection' do
+    @player_name = session[:player_name]
+    @selection = session[:selection]
+    erb :selection
+  end
 
   run! if app_file == $0
 end
