@@ -1,6 +1,6 @@
 class Computer
 
   def random_selection
-    return ["Rock", "Paper", "Scissors"].sample
+    return ["Rock", "Paper", "Scissors", "Spock", "Lizard"].sample
   end
 end
