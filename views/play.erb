@@ -1,1 +1,15 @@
-<%= @player_1_name %> Sol vs Mike <%= @player_2_name %> 
+<center>
+
+<%= @player_1_name %> Sol vs Mike <%= @player_2_name %>
+
+<h1 id="awesome"> Awesome! Let's play!</h1>
+
+<h2 id="options"> Select one of the options below! </h2>
+
+<form id="choice" name="input" action="/result" method="post">
+<input type="submit" name="weapon" id ="rock" class="choices" value="rock"/>
+<input type="submit" name="weapon" id ="paper" class="choices" value="paper"/>
+<input type="submit" name="weapon" id ="scissors" class="choices" value="scissors"/>
+
+
+</center>
