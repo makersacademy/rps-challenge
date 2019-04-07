@@ -1,5 +1,9 @@
-<%= @game.player_1.play.capitalize %> vs <%= @game.player_2.play.capitalize %> <br>
-
+<head>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<h1><%= @game.player_1.play.capitalize %> vs <%= @game.player_2.play.capitalize %> </h1><br>
+<h2>
 <% if @result == 0 %>
 Draw
 <% elsif  @result == 1 %>
@@ -7,3 +11,4 @@ Draw
 <% else %>
 <%= @game.player_2.name %> wins
 <% end %>
+</h2>

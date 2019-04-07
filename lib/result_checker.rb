@@ -25,95 +25,45 @@ end
 
 class Rock
   def self.vs(versus)
-    case versus
-    when "paper"
-      return 2
-    when "scissors"
-      return 1
-    when "rock"
-      return 0
-    when "spock"
-      return 2
-    when "lizzard"
-      return 1
-    else
-      return nil
-    end
+    result = {
+      "paper" => 2, "spock" => 2, "scissors" => 1, "lizzard" => 1, "rock"=> 0
+    }
+    result[versus]
   end
 end
 
 class Paper
   def self.vs(versus)
-    case versus
-    when "paper"
-      return 0
-    when "scissors"
-      return 2
-    when "rock"
-      return 1
-    when "spock"
-      return 1
-    when "lizzard"
-      return 2
-    else
-      return nil
-    end
+    result = {
+      "paper" => 0, "spock" => 1, "scissors" => 2, "lizzard" => 2, "rock"=> 1
+    }
+    result[versus]
   end
 end
 
 class Scissors
   def self.vs(versus)
-    case versus
-    when "paper"
-      return 1
-    when "scissors"
-      return 0
-    when "rock"
-      return 2
-    when "spock"
-      return 2
-    when "lizzard"
-      return 1
-    else
-      return nil
-    end
+    result = {
+      "paper" => 1, "spock" => 2, "scissors" => 0, "lizzard" => 1, "rock"=> 2
+    }
+    result[versus]
   end
 end
 
 class Spock
   def self.vs(versus)
-    case versus
-    when "paper"
-      return 2
-    when "scissors"
-      return 1
-    when "rock"
-      return 1
-    when "spock"
-      return 0
-    when "lizzard"
-      return 2
-    else
-      return nil
-    end
+    result = {
+      "paper" => 2, "spock" => 0, "scissors" => 1, "lizzard" => 2, "rock"=> 1
+    }
+    result[versus]
   end
 end
 
 class Lizzard
   def self.vs(versus)
-    case versus
-    when "paper"
-      return 1
-    when "scissors"
-      return 2
-    when "rock"
-      return 2
-    when "spock"
-      return 1
-    when "lizzard"
-      return 0
-    else
-      return nil
-    end
+    result = {
+      "paper" => 1, "spock" => 1, "scissors" => 2, "lizzard" => 0, "rock"=> 2
+    }
+    result[versus]
   end
 end
