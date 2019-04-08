@@ -16,7 +16,7 @@ feature 'Enter name/pick weapon' do
   scenario 'computer picking weapon' do
     visit('/')
     select 'Rock', :from => "weapon_choice"
-    allow_any_instance_of(RockPaperScissors).to receive(:computer_choice).and_return("Scissors")
+    allow_any_instance_of(Randomiser).to receive(:computer_choice).and_return("Scissors")
     click_button 'Play'
     expect(page).to have_content 'Computer picked Scissors'
   end
