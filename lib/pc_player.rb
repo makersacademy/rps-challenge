@@ -6,7 +6,8 @@ class PcPlayer
     @name = name
     @play = ""
   end
-  def set_play(useless = "")
+
+  def choose_play(*)
     @play = OPTIONS.sample
   end
 end

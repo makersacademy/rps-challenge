@@ -6,7 +6,7 @@ class Player
     @play = ""
   end
 
-  def set_play(selection)
-    @play = selection 
+  def choose_play(selection)
+    @play = selection
   end
 end

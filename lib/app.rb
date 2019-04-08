@@ -12,7 +12,7 @@ class Rps < Sinatra::Base
   end
 
   get "/" do
-      erb :index
+    erb :index
   end
 
   post "/name" do
@@ -35,7 +35,7 @@ class Rps < Sinatra::Base
   end
 
   post "/check" do
-    @game.current_turn.set_play(params[:selection])
+    @game.current_turn.choose_play(params[:selection])
     if @game.current_turn == @game.player_1
       @game.switch_turn
       redirect("/play")
@@ -45,7 +45,7 @@ class Rps < Sinatra::Base
   end
 
   get "/check" do
-    @game.current_turn.set_play
+    @game.current_turn.choose_play
     redirect("/result")
   end
 

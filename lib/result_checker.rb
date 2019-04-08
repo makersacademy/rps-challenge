@@ -3,8 +3,6 @@ class ResultChecker
     to_obj(player_1).vs(player_2)
   end
 
-  private
-
   def self.to_obj(player_1)
     case player_1
     when "rock"
@@ -26,7 +24,7 @@ end
 class Rock
   def self.vs(versus)
     result = {
-      "paper" => 2, "spock" => 2, "scissors" => 1, "lizzard" => 1, "rock"=> 0
+      "paper" => 2, "spock" => 2, "scissors" => 1, "lizzard" => 1, "rock" => 0
     }
     result[versus]
   end
@@ -35,7 +33,7 @@ end
 class Paper
   def self.vs(versus)
     result = {
-      "paper" => 0, "spock" => 1, "scissors" => 2, "lizzard" => 2, "rock"=> 1
+      "paper" => 0, "spock" => 1, "scissors" => 2, "lizzard" => 2, "rock" => 1
     }
     result[versus]
   end
@@ -44,7 +42,7 @@ end
 class Scissors
   def self.vs(versus)
     result = {
-      "paper" => 1, "spock" => 2, "scissors" => 0, "lizzard" => 1, "rock"=> 2
+      "paper" => 1, "spock" => 2, "scissors" => 0, "lizzard" => 1, "rock" => 2
     }
     result[versus]
   end
@@ -53,7 +51,7 @@ end
 class Spock
   def self.vs(versus)
     result = {
-      "paper" => 2, "spock" => 0, "scissors" => 1, "lizzard" => 2, "rock"=> 1
+      "paper" => 2, "spock" => 0, "scissors" => 1, "lizzard" => 2, "rock" => 1
     }
     result[versus]
   end
@@ -62,7 +60,7 @@ end
 class Lizzard
   def self.vs(versus)
     result = {
-      "paper" => 1, "spock" => 1, "scissors" => 2, "lizzard" => 0, "rock"=> 2
+      "paper" => 1, "spock" => 1, "scissors" => 2, "lizzard" => 0, "rock" => 2
     }
     result[versus]
   end
