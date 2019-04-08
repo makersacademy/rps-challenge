@@ -1,5 +1,6 @@
 <body style=" background:powderblue"><center>
 <h1 style="font-size:100px; text-align:center; color:green;">Rock Paper Scissors!</h1>
+<h1 style="font-size:75px; text-align:center; color:purple;"><%= @gametype %></h1>
 
 <form action="/play" method="post" style="text-align:center">
   <h2>
@@ -18,5 +19,7 @@
       <button name="play" type="submit" value="Play" style="text-align:center; width:500px; font-size:50px;">Play</button>
     </h3>
 </form>
-
+<form action="/">
+  <button name="change_game" type="submit" value="Change Game?" style="text-align:center; width:500px; font-size:50px;">Change Game?</button>
+</form>
 </center></body>

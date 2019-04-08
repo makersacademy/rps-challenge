@@ -16,6 +16,7 @@ class Rps < Sinatra::Base
   end
 
   get '/names' do
+    @gametype = session[:gametype]
     erb :index
   end
 
@@ -34,13 +35,13 @@ class Rps < Sinatra::Base
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
     if session[:player_2_name] == "Computer"
-      if session[:gametype] == "PlayClassic"
+      if session[:gametype] == "Classic"
         erb :single_player_choice_classic
       else
         erb :single_player_choice_ls
       end
     else
-      if session[:gametype] == "PlayClassic"
+      if session[:gametype] == "Classic"
         erb :player_1_choice_classic
       else
         erb :player_1_choice_ls
@@ -52,7 +53,7 @@ class Rps < Sinatra::Base
     session[:choice_1] = params[:weapon_1]
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
-    if session[:gametype] == "PlayClassic"
+    if session[:gametype] == "Classic"
       erb :player_2_choice_classic
     else
       erb :player_2_choice_ls
@@ -62,7 +63,7 @@ class Rps < Sinatra::Base
   post '/result' do
     if session[:player_2_name] == "Computer"
       session[:choice_1] = params[:weapon_1]
-      if session[:gametype] == "PlayClassic"
+      if session[:gametype] == "Classic"
         session[:choice_2] = ComputerPlayer.new.random_weapon_classic
       else
         session[:choice_2] = ComputerPlayer.new.random_weapon_ls
