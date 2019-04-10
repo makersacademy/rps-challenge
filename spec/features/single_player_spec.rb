@@ -13,17 +13,35 @@ feature 'can play single player' do
   end
 
   scenario 'computer picks an option' do
+    srand(67811)
     visit '/'
     sign_in_and_play
     click_button "Rock"
-    expect(page).to have_content "Computer picked"
+    expect(page).to have_content "Computer picked Rock"
   end
 
-  scenario 'shows who won' do
+  scenario 'shows player winning' do
+    srand(9999999)
+    visit '/'
+    sign_in_and_play
+    click_button "Scissors"
+    expect(page).to have_content "Josh Wins!"
+  end
+
+  scenario 'shows computer winning' do
+    srand(9999999)
     visit '/'
     sign_in_and_play
     click_button "Rock"
-    expect(page).to have_content "Wins!"
+    expect(page).to have_content "Computer Wins!"
+  end
+
+  scenario 'can show a draw' do
+    srand(67811)
+    visit '/'
+    sign_in_and_play
+    click_button "Rock"
+    expect(page).to have_content "Draw"
   end
 
   scenario 'lets you play again' do
