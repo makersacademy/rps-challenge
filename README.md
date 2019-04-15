@@ -9,22 +9,11 @@ This is a web app for rock paper scissors, where the player plays against the co
 
 ## Model, View, Controller
 
-|### Controller           |### View                    |### Model              |
+| Controller           | View                    | Model              |
 |-------------------------|----------------------------|-----------------------|
-|get to '/'               |form to enter name          |                       |
-|                         |redirects to '/save_name'   |                       |
-|-------------------------|----------------------------|-----------------------|
-|post to '/save_name'     |                            |                       |
-|saves player_name as parameter  |                     |                       |
-|redirects to '/play'     |                            |                       |
-|-------------------------|----------------------------|-----------------------|
-|get to '/play'           |drop down menu for player_move |                    |
-|                         |redirects to '/save_move'      |                    |             
-|-------------------------|----------------------------|-----------------------|
-|post to '/save_move'                              |    |Game class choses computer move at random,   |
-|starts new Game with player_name and player_move  |    |calculates who has won and creates a message |
-|redirects to '/result'                            |    |for player.                                  |
-|-------------------------|----------------------------|-----------------------|
-|get to '/result'                           | shows message |                  |
-|takes instance of Game and returns message |               |                  |
-|-------------------------|----------------------------|-----------------------|
+|- get to '/'             |- form to enter name<br>- redirects to '/save_name'||
+|- post to '/save_name'<br>- saves player_name as parameter<br>- redirects to '/play'  | | |
+|- get to '/play'           |- drop down menu for player_move<br>- redirects to '/save_move' | |
+|post to '/save_move' starts new Game with player_name and player_move redirects to '/result' |  |Game class choses computer move at random, calculates who has won and creates a message for player. |
+|- get to '/result'<br>- takes instance of Game and returns message | shows message |  |
+
