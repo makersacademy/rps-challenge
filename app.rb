@@ -25,24 +25,12 @@ class Game < Sinatra::Base
   end 
 
   get '/result' do
-    # p session[:player_1_choice]
-    # calculation below:
-    # p session[:player_1_choice]
-    # define and create players
-    # p session[:player_1_name]
-    # p session[:player_1_choice]
     @player_1 = Player.new(session[:player_1_choice], session[:player_1_name])
     # p @player_1
     @player_2 = Player.new
-    # @player_2 is computer
-    # get index of both players
-    # p player1.choice
     @rps = RPS.new(@player_1, @player_2)
     @winner = @rps.winner
-    p @winner
-    # @rps.winner
-    # p @winner
-    # @winner = 
+
     erb(:result)
   end
 
