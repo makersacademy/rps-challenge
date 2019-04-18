@@ -1,3 +1,5 @@
+require_relative './web_helpers'
+
 feature 'Homepage' do
   scenario 'Show homepage of rock, paper, scissors' do
     visit '/'
@@ -11,15 +13,13 @@ feature 'Homepage' do
 end
 
 feature 'New game' do
-  scenario 'player is asked to choose R, P or S' do
-    visit '/'
-    click_button 'Play'
+  scenario 'Player is asked to choose R, P or S' do
+    sign_in_and_play
     expect(page).to have_content 'Choose Rock, Paper or Scissors'
   end
 
-  scenario 'player can choose choice' do
-    visit '/'
-    click_button 'Play'
+  scenario 'Player can choose choice' do
+    sign_in_and_play
     expect(page).to have_button 'Rock'
     expect(page).to have_button 'Paper'
     expect(page).to have_button 'Scissors'
