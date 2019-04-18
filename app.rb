@@ -7,9 +7,14 @@ enable :sessions
     erb :index
   end
 
-  get '/name' do
+  post '/name' do
     @player = params[:name]
     redirect '/game'
   end
 
+  get '/game' do
+    erb :game
+  end
+
+  run! if app_file == $0
 end
