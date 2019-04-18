@@ -1,9 +1,12 @@
 # RPS Challenge
+## Objective
+This is a simple sinatra app where user chooses either Rock, Paper, or Scissors, and computer chooses randomly an option and at the end a winner is declared.
+
 
 TASK SUMMARY
 ----
+The task is to provide a Rock, Paper, Scissors game for users so they can play on the web with the following user stories:
 
-The task is to provide a _Rock, Paper, Scissors_ game for users so they can play on the web with the following user stories:
 
 ```sh
 As a marketeer
@@ -22,6 +25,19 @@ Hints on functionality
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
+
+## Technologies used
+- ruby sinatra
+- rspec
+- capybara
+
+
+## Setup and running
+- bundle
+- ruby app.rb or rackup
+- run tests: rspec
+
+
 
 ## Basic Rules
 
@@ -66,7 +82,7 @@ calculation of who won:
 
 
 
-## what i didn't do 
+## What i didn't do 
 
 - shorten the calculation for winner step by server (if possible, as already the value is given, might not need index value)
 
@@ -76,18 +92,18 @@ calculation of who won:
 
 - further tests on Player class(if needed?)
 
-## what i did later on (after monday)
+## What i did later on (after monday)
 - Made a class for the game itself where it will return a random choice 
 - refactored the player class to extract RPS class where it calculates winner, and changed get '/result' page to use these new classes.
 
 
-## problems encountered
+## Problems encountered
 
 - not sure how to fix the choice for computer, feature test not passing due to argument (fixed choice for computer) not passed into the game in feature test
 
 
 
-## things to better and further work afterwards
+## Things to better and further work afterwards
 - write smaller feature tests (i had to amend this)
 
 - not fat controller (refactor it into model, add in unit tests)
