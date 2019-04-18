@@ -8,11 +8,12 @@ enable :sessions
   end
 
   post '/name' do
-    @player = params[:name]
+    session[:player_name] = params[:player_name]
     redirect '/game'
   end
 
   get '/game' do
+    @player_name = session[:player_name]
     erb :game
   end
 
