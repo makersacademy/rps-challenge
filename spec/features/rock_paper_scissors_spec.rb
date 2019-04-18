@@ -16,4 +16,12 @@ feature 'New game' do
     click_button 'Play'
     expect(page).to have_content 'Choose Rock, Paper or Scissors'
   end
+
+  scenario 'player can choose choice' do
+    visit '/'
+    click_button 'Play'
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
+  end
 end
