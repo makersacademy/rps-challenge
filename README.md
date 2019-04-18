@@ -3,7 +3,7 @@
 TASK SUMMARY
 ----
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+The task is to provide a _Rock, Paper, Scissors_ game for users so they can play on the web with the following user stories:
 
 ```sh
 As a marketeer
@@ -29,15 +29,11 @@ Hints on functionality
 - Scissors beats Paper
 - Paper beats Rock
 
-As usual please start by
-* TEST driving development of your app
-
-
 APPROACH
 ----
 
 ## Summary
-I split the user flow into 3 sections: before game, during game, and after game. 
+I split the user flow into 3 sections: before game, during game, and after game. App is developed test driven.
 
 ## user flow:
 ### before game 
@@ -87,7 +83,7 @@ calculation of who won:
 
 ## problems encountered
 
-p- not sure how to fix the choice for computer, feature test not passing due to argument (fixed choice for computer) not passed into the game in feature test
+- not sure how to fix the choice for computer, feature test not passing due to argument (fixed choice for computer) not passed into the game in feature test
 
 
 
