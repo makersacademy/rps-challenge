@@ -8,5 +8,4 @@ describe Player do
     expect(jordan.name).to eq 'jordan'
     end
   end
-
 end
