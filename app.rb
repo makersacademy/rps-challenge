@@ -24,7 +24,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/selected_choice' do
     @choice = session[:choice]
-  	@player = session[:player]
+    @player = session[:player]
     erb(:selected_choices)
   end
 
