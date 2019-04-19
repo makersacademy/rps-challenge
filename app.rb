@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/player'
 
 class RPS < Sinatra::Base
   
@@ -10,17 +11,17 @@ class RPS < Sinatra::Base
   
 
   post '/name' do
-    session[:name] = params[:name]
+    $player = Player.new(params[:name])
     redirect('play')
   end
 
   get '/play' do
-    @name = session[:name]
+    @player = $player 
     erb(:play)
   end
 
   get '/choice' do
-    @name = session[:name]
+    @player = $player
     erb(:choice)
   end
 
