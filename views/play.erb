@@ -1,9 +1,15 @@
+<head>
+  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
+<center><br>
 <% if @player %>
-<h1>Hello, <%= @player%>!</h1>
+<h1>Hello, <%= @player%>!</h1><br>
 <h2>3...2....1!</h2>
 <% end %>
+
 <% unless @player %>
-<h2>Want to play again?</h2>
+<br><h2>Want to play again?</h2><br>
 <% end %>
 
 <form action = "/names" method = "post"><div>
@@ -11,3 +17,8 @@
 <input type = "submit" value = "Paper">
 <input type = "submit" value = "Scissors">
 </div></form>
+
+<%unless @player %>
+<br><br><h6><a href="/">Go back to main</a></h6>
+<% end %>
+</center>
