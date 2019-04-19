@@ -4,6 +4,10 @@ require './lib/player'
 class RPS < Sinatra::Base
   enable :sessions
 
+  before do
+    @computer = Computer.new
+  end
+
   get '/' do
     erb :index
   end
@@ -19,6 +23,7 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
+
   end
 
   run! if app_file == $0
