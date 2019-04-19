@@ -25,3 +25,23 @@ feature 'New game' do
     expect(page).to have_button 'Scissors'
   end
 end
+
+feature 'During game' do
+  scenario 'Selecting rock' do
+    sign_in_and_play
+    click_button 'Rock'
+	  expect(page).to have_content 'Rock selected'
+  end
+
+  scenario 'Selecting Paper' do
+    sign_in_and_play
+    click_button 'Paper'
+	  expect(page).to have_content 'Paper selected'
+  end
+
+  scenario 'Selecting scissors' do
+    sign_in_and_play
+    click_button 'Scissors'
+	  expect(page).to have_content 'Scissors selected'
+  end
+end
