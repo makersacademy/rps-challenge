@@ -1,12 +1,12 @@
 class Player
-  attr_reader :name, :chosen
+  attr_reader :name, :choice
 
   def initialize(name)
     @name = name
   end
 
-  def make_decision(choice)
-    @chosen = choice
+  def make_decision(chosen)
+    @choice = chosen
   end
 
 end
