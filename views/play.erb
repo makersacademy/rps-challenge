@@ -1,1 +1,13 @@
+<% if @player %>
 <h1>Hello, <%= @player%>!</h1>
+<h2>3...2....1!</h2>
+<% end %>
+<% unless @player %>
+<h2>Want to play again?</h2>
+<% end %>
+
+<form action = "/names" method = "post"><div>
+<input type = "submit" value = "Rock">
+<input type = "submit" value = "Paper">
+<input type = "submit" value = "Scissors">
+</div></form>

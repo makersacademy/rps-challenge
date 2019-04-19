@@ -13,3 +13,13 @@ feature 'Players names' do
     expect(page).to have_content "Hello, Spock!"
   end
 end
+
+feature 'Player can play Rock/Paper/Scissors' do
+  scenario 'asks if the player want to play again' do
+    visit('/')
+    fill_in('player', with: 'Spock')
+    click_button('Submit')
+    click_button('Rock')
+    expect(page).to have_content "Want to play again?"
+  end
+end
