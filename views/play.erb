@@ -1,1 +1,13 @@
 <h2><%= @game.player.name %>, please choose:</h2>
+<form action="/choice" method="post">
+  <input type="radio" id="Rock" name="choice" value="Rock">
+  <label>Rock</label>
+  <br>
+  <input type="radio" id="Paper" name="choice" value="Paper">
+  <label>Paper</label>
+  <br>
+  <input type="radio" id="Scissors" name="choice" value="Scissors">
+  <label>Scissors</label>
+  <br>
+  <input type="submit" value="Submit">
+</form>
