@@ -1,30 +1,23 @@
 require 'game'
-require 'computer'
-require 'player'
 
 describe Game do
-  subject(:jordan) { Player.new('jordan') }
+  subject(:game) { Game.new("rock", "scissors") }
 
-  describe '#randomise_weapon' do
-    it 'computer selects a random weapon' do
-      computer = Computer.new
-      srand(102)
-      expect(computer.randomise_weapon).to eq "Rock"
+  describe '#player' do
+    it 'shows the player hand' do
+      expect(game.player).to eq "rock"
     end
-
   end
 
-  # describe '#winner?' do
-  #   it 'informs winner' do
-  #     game = Game.new
-  #     computer = Computer.new
-  #     player = Player.new('jordan')
-  #     expect(computer.randomise_weapon).to eq "Rock"
-  #     srand(7)
-  #     computer.randomise_weapon
-  #     jordan.randomise_weapon
-  #     expect(jordan.randomise_weapon).to eq "Scissors"
-  #     expect(game.winner?).to eq "You chose scissors and the computer chose rock - you win! Well done!"
-  #
-
+  describe '#computer' do
+    it 'shows computer hand' do
+      expect(game.computer).to eq "scissors"
     end
+  end
+
+  describe 'winner?' do
+    it 'shows winner' do
+    expect(game.winner?).to eq "You chose rock and the computer chose scissors! Well done!"
+  end
+end
+end

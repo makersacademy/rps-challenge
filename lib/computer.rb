@@ -1,10 +1,13 @@
 require_relative 'game'
-require_relative 'player'
 
 class Computer
+  attr_reader :choice
+  def initialize
 
+    @choice = randomise_weapon
+  end
   def randomise_weapon
-    ["Rock", "Paper", "Scissors"].sample
+    ["rock", "paper", "scissors"].sample
   end
 
 end

@@ -1,18 +1,16 @@
-require_relative 'player'
-require_relative 'computer'
 
 class Game
 
   attr_reader :player, :computer
 
-  def initialize
-    @computer = Computer.new
-    @player = Player.new
+  def initialize(player, computer)
+    @player = player
+    @computer = computer
   end
 
   def winner?
     if @player == @computer
-      "DRAW"
+      "Draw!"
     elsif @player == "rock" && @computer == "paper"
       "You chose rock and the computer chose paper - you lost! Better luck next time!"
     elsif @player == "paper" && @computer == "scissors"
