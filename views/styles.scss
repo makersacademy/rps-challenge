@@ -14,10 +14,12 @@ $opensans: 'Open Sans', sans-serif;
 nav{
   width: 100%;
   background-color: $navBgColour;
+  height: 50px;
   ul{
     li{
         list-style: none;
         color: #F5EAEA;
+        line-height: 50px;
     }
   }
 }
@@ -26,8 +28,9 @@ nav{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 10px;
   .userImgContainer{
-    margin-right: 10px;
+    margin-right: 20px;
     .igcontainer{
       width: $iconContainerWidth;
     }

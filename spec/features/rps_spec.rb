@@ -23,18 +23,22 @@ end
 
 RSpec.feature 'Form' do
   scenario 'user should be able to fill in form' do
-    visit('./name')
-    fill_in 'name', with: 'chris'
-    click_button('submit')
+    filing_form
     expect(page).to have_content('chris')
   end
 end
 
 RSpec.feature 'Form' do
   scenario 'user should be able to fill in form' do
-    visit('./name')
-    fill_in 'name', with: 'chris'
-    click_button('submit')
+    filing_form
     expect(page).to have_content('Score')
   end
 end
+
+RSpec.feature 'Form' do
+  scenario 'user should be able to fill in form' do
+    filing_form
+    expect(page).to have_content('Bot')
+  end
+end
+

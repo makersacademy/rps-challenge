@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sass'
 require_relative 'lib/player'
+require_relative 'lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -18,7 +19,8 @@ class Rps < Sinatra::Base
   end
 
   get '/start' do
-    @player_one = Player.new(session[:player_name])
+    player_one = Player.new(session[:player_name])
+    @game = Game.new(player_one)
     erb :start
   end
 

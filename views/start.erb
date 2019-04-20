@@ -4,8 +4,8 @@
        <img src='images/boy.svg' alt='avatar' id='user_avatar'>
      </div>
      <div class='name_score'>
-       <h3 class='badge badge-dark'> Score <%=@player_one.score%> <h3>
-       <h4><%=@player_one.name%> </h4>
+       <h3 class='badge badge-dark'> Score <%=@game.player.score%> <h3>
+       <h4><%=@game.player.name%> </h4>
      </div>
   </div>
 
@@ -14,8 +14,8 @@
       <img src='images/robot.svg' alt='avatar' id='computer_avatar'>
     </div>
     <div class='robot_info'>
-      <h3 class='badge badge-dark'> Score <%=@player_one.score%> <h3>
-      <h4><%=@player_one.name%> </h4>
+      <h3 class='badge badge-dark'> Score <%=@game.score%> <h3>
+      <h4><%=@game.name%> </h4>
     </div>
   </div>
 </div>
