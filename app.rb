@@ -25,10 +25,12 @@ class RPS < Sinatra::Base
   post '/choice' do
     @player = $player
     $choice = Choice.new(params[:shape])
+    session[:computer_shape] = :rock
     redirect to('/result')
   end
 
   get '/result' do
+    @computer_shape = session[:computer_shape]
     @player = $player
     @choice = $choice
     erb(:result)
