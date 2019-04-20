@@ -18,6 +18,7 @@ class Rps < Sinatra::Base
   end
 
   post '/choice' do
+    @player_selection = params[:player_selection]
     erb :choice
   end
 
