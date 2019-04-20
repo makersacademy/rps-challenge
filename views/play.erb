@@ -1,2 +1,9 @@
-<h1>Rock, Paper, Scissors</h1>
-<h2><%=@player_name%> turn </h2>
+<div>
+  <h1>Rock, Paper, Scissors</h1>
+  <h2><%=@player_name%>'s turn</h2>
+  <form action='/choice' method='post'>
+    <input name="choice" type="submit" value="Rock">
+    <input name="choice" type="submit" value="Paper">
+    <input name="choice" type="submit" value="Scissors">
+  </form>
+</div>
