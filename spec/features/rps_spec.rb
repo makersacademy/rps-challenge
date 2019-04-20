@@ -31,10 +31,10 @@ RSpec.feature 'Form' do
 end
 
 RSpec.feature 'Form' do
-    scenario 'user should be able to fill in form' do
-      visit('./name')
-      fill_in 'name', with: 'chris'
-      click_button('submit')
-      expect(page).to have_content('Score')
-    end
+  scenario 'user should be able to fill in form' do
+    visit('./name')
+    fill_in 'name', with: 'chris'
+    click_button('submit')
+    expect(page).to have_content('Score')
   end
+end
