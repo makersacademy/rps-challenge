@@ -23,3 +23,13 @@ feature 'having choices' do
     expect(page).to have_button 'SCISSORS'
   end
 end
+
+# the marketeer can choose one option
+
+feature 'making choices' do
+  scenario 'making a choice' do
+    sign_in
+    click_button 'ROCK'
+    expect(page).to have_content 'You chose ROCK!'
+  end
+end
