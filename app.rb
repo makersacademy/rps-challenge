@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './game.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -25,6 +26,9 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @choice = session[:choice]
+    @game = Game.new(@choice)
+    @cpu_choice = @game.cpu_choice
+    @result = @game.result
     erb :result
   end
 
