@@ -1,5 +1,8 @@
 
 class Game
+  DEFAULT_SCORE = 0
+  DEFAULT_NAME = 'Bot'
+  
   attr_accessor :score
   attr_reader :player, :name
 
@@ -10,11 +13,6 @@ class Game
   end
 
   def random_choice
-    ['Rock','Paper','Scissors'].sample
+    ['Rock', 'Paper', 'Scissors'].sample
   end
-
-
-  protected 
-  DEFAULT_SCORE = 0
-  DEFAULT_NAME = 'Bot'
 end

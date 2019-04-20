@@ -50,4 +50,3 @@ RSpec.feature 'Select' do
     expect(page).to have_content('Rock')
   end
 end
-

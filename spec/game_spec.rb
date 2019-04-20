@@ -1,7 +1,7 @@
 require 'game'
 
 RSpec.describe Game do
-  let(:game) { described_class.new(player)}
+  let(:game) { described_class.new(player) }
   let(:player) { double :Player }
 
   describe '#initialize' do
@@ -23,9 +23,4 @@ RSpec.describe Game do
       expect(game.random_choice).to eq('Scissors')
     end
   end
-
-  describe '#win' do
-  end
 end
-
-
