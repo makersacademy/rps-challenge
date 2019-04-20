@@ -1,3 +1,14 @@
 <div>
   <h1>Welcome <%= @name %>! Choose your move!</h1>
 </div>
+
+<div>
+  <h2>Type Rock, Paper or Scissors into the box and click submit</h2>
+</div>
+
+<div>
+  <form action="/result" method="post">
+    <input type="text" name="player_choice">
+    <input type="submit" value="Submit!">
+  </form>
+</div>
