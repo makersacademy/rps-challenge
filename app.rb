@@ -21,11 +21,17 @@ class Rps < Sinatra::Base
   get '/start' do
     player_one = Player.new(session[:player_name])
     @game = Game.new(player_one)
+    @user_choice = session[:user_choice]
     erb :start
   end
 
   post '/play' do
     session[:player_name] = params[:name]
+    redirect '/start'
+  end
+
+  post '/user_choice' do
+    session[:user_choice] = params[:user_select]
     redirect '/start'
   end
 end

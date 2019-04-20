@@ -19,3 +19,25 @@
     </div>
   </div>
 </div>
+
+<div class='container submit_choice'>
+  <form method='post' action='/user_choice' id='selector'>
+  <div class='form-group select_container'>
+    <select name='user_select' class='form-control select' required>
+      <option value="" selected disabled hidden>Choose here</option>
+      <option value='Rock'>Rock</option>
+      <option value='Paper'>Paper</option>
+      <option value='Scissors'>Scissors</option>
+    </select>
+    <input type='submit' id='submit' class='mt-4 btn btn-block btn-outline-danger'>
+  </div>
+  </form>
+<div>
+
+<hr>
+<div class='result_container'>
+  <% if @user_choice %>
+    <h5> You choose <span><%=@user_choice%><span>
+    computer choose <%=@game.random_choice%> </h5>
+  <% end %>
+<div>

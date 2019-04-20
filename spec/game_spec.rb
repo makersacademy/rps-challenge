@@ -16,4 +16,16 @@ RSpec.describe Game do
       expect(game.name).to eq(described_class::DEFAULT_NAME)
     end
   end
+
+  describe '#random_choice' do
+    it 'gives a random choice' do
+      srand(4)
+      expect(game.random_choice).to eq('Scissors')
+    end
+  end
+
+  describe '#win' do
+  end
 end
+
+

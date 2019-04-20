@@ -67,3 +67,23 @@ nav{
     }
   }
 }
+
+.submit_choice{
+  padding: 10px;
+  #selector{
+    .select_container{
+      .select{
+        font-family:$roboto;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.result_container{
+  h5{
+    font-family:$opensans;
+    font-size: 14px;
+    text-align: center;
+  }
+}

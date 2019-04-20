@@ -42,3 +42,12 @@ RSpec.feature 'Form' do
   end
 end
 
+RSpec.feature 'Select' do
+  scenario 'user should be able to select a choice' do
+    filing_form
+    page.select('Rock', :from => 'user_select')
+    click_button('submit')
+    expect(page).to have_content('Rock')
+  end
+end
+

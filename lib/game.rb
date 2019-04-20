@@ -9,6 +9,11 @@ class Game
     @name = DEFAULT_NAME
   end
 
+  def random_choice
+    ['Rock','Paper','Scissors'].sample
+  end
+
+
   protected 
   DEFAULT_SCORE = 0
   DEFAULT_NAME = 'Bot'
