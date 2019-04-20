@@ -1,2 +1,21 @@
+<div class='container start_container'>
+  <div class='userImgContainer'>
+     <div class='igcontainer'>
+       <img src='images/boy.svg' alt='avatar' id='user_avatar'>
+     </div>
+     <div class='name_score'>
+       <h3 class='badge badge-dark'> Score <%=@player_one.score%> <h3>
+       <h4><%=@player_one.name%> </h4>
+     </div>
+  </div>
 
-<h1><%=@player_one.name%> </h1>
+  <div class='computerImageContainer'>
+    <div class='igcontainer'>
+      <img src='images/robot.svg' alt='avatar' id='computer_avatar'>
+    </div>
+    <div class='robot_info'>
+      <h3 class='badge badge-dark'> Score <%=@player_one.score%> <h3>
+      <h4><%=@player_one.name%> </h4>
+    </div>
+  </div>
+</div>

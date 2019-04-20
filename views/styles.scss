@@ -1,4 +1,9 @@
 $navBgColour :#1F1F1F;
+$iconContainerWidth : 100px;
+$fontColor: #F5EAEA;
+$roboto: 'Roboto', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
+$opensans: 'Open Sans', sans-serif;
 
 *{
   margin:0;
@@ -13,6 +18,49 @@ nav{
     li{
         list-style: none;
         color: #F5EAEA;
+    }
+  }
+}
+    
+.start_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .userImgContainer{
+    margin-right: 10px;
+    .igcontainer{
+      width: $iconContainerWidth;
+    }
+    #user_avatar{
+      width: 100%;
+    }
+  .name_score{
+     text-align: center;
+     h3{
+       color: $fontColor;
+       font-family: $opensans;
+     }
+     h4{
+       font-family: $opensans;
+     }
+    }
+  }
+  .computerImageContainer{
+    .igcontainer{
+      width: $iconContainerWidth;
+    }
+    #computer_avatar{
+      width: 100%;
+    }
+    .robot_info{
+      text-align: center;
+      h3{
+        color: $fontColor;
+        font-family: $opensans;
+      }
+      h4{
+        font-family: $opensans;
+      }
     }
   }
 }
