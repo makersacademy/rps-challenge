@@ -1,1 +1,7 @@
 <h1>Welcome to Rock, Paper, Scissors, <%= @player_name %>!</h1>
+<h2>Please choose an option.</h2>
+<form action="/choice" method="post">
+  <input type="submit" value="Rock">
+  <input type="submit" value="Paper">
+  <input type="submit" value="Scissors">
+</form>
