@@ -37,7 +37,7 @@
 <hr>
 <div class='result_container'>
   <% if @user_choice %>
-    <h5> You choose <span><%=@user_choice%><span>
+    <h5><%=@game.player.name%> chose <span><%=@user_choice%><span>
     computer choose <%=@game.random_choice%> </h5>
   <% end %>
 <div>

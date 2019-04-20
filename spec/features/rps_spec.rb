@@ -9,7 +9,7 @@ end
 RSpec.feature 'Welcome message' do
   scenario 'user can see a welcome message' do
     visit('/')
-    expect(page).to have_content('Welcome to the Treasure Land  press start to begin.')
+    expect(page).to have_content('Welcome to the Treasure Land.')
   end
 end
 
