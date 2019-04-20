@@ -17,5 +17,9 @@ class Rps < Sinatra::Base
     erb :game
   end
 
+  post '/choice' do
+    erb :choice
+  end
+
   run! if app_file == $0
 end
