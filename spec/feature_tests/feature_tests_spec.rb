@@ -4,9 +4,22 @@
 
 feature 'entering names' do
   scenario 'submitting names' do
-    visit('/')
-    fill_in :name, with: 'Callum'
-    click_button 'Submit'
+    sign_in
     expect(page).to have_content 'Callum'
+  end
+end
+
+# As a marketeer
+# So that I can enjoy myself away from the daily grind
+# I would like to be able to play rock/paper/scissors
+
+# the marketeer will be presented the choices (rock, paper and scissors)
+
+feature 'having choices' do
+  scenario 'being given 3 choices (rock, paper and scissors)' do
+    sign_in
+    expect(page).to have_button 'ROCK'
+    expect(page).to have_button 'PAPER'
+    expect(page).to have_button 'SCISSORS'
   end
 end
