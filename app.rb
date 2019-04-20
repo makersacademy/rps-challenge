@@ -8,7 +8,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/names" do
-    @player_name = params[:player_name]
+    $player = Player.new(params[:player])
+    redirect '/play'
+  end
+
+  get "/play" do
+    @player = $player
     erb :play
   end
 
