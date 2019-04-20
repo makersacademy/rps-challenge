@@ -1,18 +1,12 @@
 require_relative 'player'
+require_relative 'computer'
 
 class Game
 
   attr_reader :player, :computer
 
-
-
-  def initialize(player = Player.new, computer = Computer.new)
-    @player = player
+  def initialize(computer = Computer.new)
     @computer = computer
-  end
-
-  def randomise_weapon
-    ["Rock", "Paper", "Scissors"].sample 
   end
 
   def winner?
