@@ -1,4 +1,15 @@
+
+<% @game.computer.rand_choice %>
 <h2><%= @game.player.name %> has chosen <%= @game.player.choice %></h2>
 <h2> VS. </h2>
 <h2><%= @game.computer.name %> has chosen <%= @game.computer.choice %></h2>
 <br>
+
+<h1>
+    <% @game.complete %>
+    <% if @game.winner.nil? %>
+    Draw!
+    <% else %>
+    <%= @game.winner.name + ' Wins!' %>
+    <% end %>
+</h1>

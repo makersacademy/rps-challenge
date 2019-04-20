@@ -1,17 +1,13 @@
 class Computer < Player
   CHOICES = ['Rock', 'Paper', 'Scissors']
+  attr_reader :choice
 
   def initialize
     @name = 'Computer'
   end
 
-  def choice
-    rand_choice
-  end
-
-private
   def rand_choice
-    CHOICES.sample
+    @choice = CHOICES.sample
   end
 
 end
