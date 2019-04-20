@@ -25,10 +25,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    @choice = session[:choice]
-    @game = Game.new(@choice)
-    @cpu_choice = @game.cpu_choice
-    @result = @game.result
+    @game = Game.new(session[:choice])
     erb :result
   end
 
