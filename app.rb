@@ -23,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/computer_choice' do
-    @computer_choice = ["Rock","Paper","Scissors"].sample
+    @computer_choice = ["Rock", "Paper", "Scissors"].sample
     erb :computer_choice
   end
 
