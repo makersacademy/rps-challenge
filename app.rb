@@ -9,6 +9,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/names' do
     @player_name = params[:player_name]
+    erb :play
   end
 
 end
