@@ -12,11 +12,6 @@ describe Game do
       expect(computer.randomise_weapon).to eq "Rock"
     end
 
-    it 'player selects a random weapon' do
-      srand(555)
-      expect(jordan.randomise_weapon).to eq "Scissors"
-    end
-
   end
 
   # describe '#winner?' do

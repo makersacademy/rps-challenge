@@ -5,8 +5,9 @@ class Game
 
   attr_reader :player, :computer
 
-  def initialize(computer = Computer.new)
-    @computer = computer
+  def initialize
+    @computer = Computer.new
+    @player = Player.new
   end
 
   def winner?

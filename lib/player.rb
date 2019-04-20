@@ -9,10 +9,4 @@ class Player
     @name = name
   end
 
-
-    def randomise_weapon
-      ["Rock", "Paper", "Scissors"].sample
-    end
-
-
 end
