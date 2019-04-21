@@ -1,12 +1,12 @@
 <h1>Rock! Paper! Scissors!</h1>
 <br>
 <br>
-<h3><%= @player1.name.upcase %> selected: <%= @player1.move %></h3>
-<h3><%= @player2.name.upcase %> selected: <%= @player2.move %></h3>
+<h3><%= @player1.name %> selected: <%= @player1.move %></h3>
+<h3><%= @player2.name %> selected: <%= @player2.move %></h3>
 <br>
 <br>
 <h3><%= 'DRAW!' if @declare_winner == 0 %></h3>
-<h3><%= @player1.name.upcase if @declare_winner == 1 %></h3>
+<h3><%= @player1.name if @declare_winner == 1 %></h3>
 <h3><%= 'IS THE WINNER!' if @declare_winner == 1 %></h3>
-<h3><%= @player2.name.upcase if @declare_winner == 2 %></h3>
+<h3><%= @player2.name if @declare_winner == 2 %></h3>
 <h3><%= 'IS THE WINNER!' if @declare_winner == 2 %></h3>
