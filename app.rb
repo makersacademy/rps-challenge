@@ -9,7 +9,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @player_name = params[:player_name]
+    @player_name = params[:player_one]
     @game = Game.create(@player_name)
     erb :play
   end
