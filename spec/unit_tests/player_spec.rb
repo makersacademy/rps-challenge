@@ -9,4 +9,12 @@ describe Player do
       expect(player.name).to eq 'Dominic White'
     end
   end
+
+  describe '#select_move' do
+    it 'recognises move selection' do
+      player.select_move('ROCK')
+      expect(player.move).to eq 'ROCK'
+    end
+  end
+
 end
