@@ -2,7 +2,7 @@
 RSpec.feature 'Nav bar logo' do
   scenario 'user can see nav bar logo' do
     visit('/')
-    expect(page).to have_content('RPS')
+    expect(page).to have_content('Get Started')
   end
 end
 
