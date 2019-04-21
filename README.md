@@ -68,7 +68,7 @@ The method ``random_choice`` returns a random object from the array anytime it i
 - RSPEC.
 - Capybara.
 
-# Basic Game Rules
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+# Basic Game Rules.
+- Rock beats Scissors.
+- Scissors beats Paper.
+- Paper beats Rock.
