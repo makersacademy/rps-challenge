@@ -1,3 +1,5 @@
+
+
 <h1 style="text-align:center;">RESULTS!</h1><br><br>
 
 <h2 style="text-align:center;"> You chose: <%= @game.player %></h2><br><br>
@@ -5,4 +7,8 @@
 
 <h2 style="text-align:center;"><%= @game.winner?%></h2><br>
 
-<center><a href="/play">PLAY AGAIN?</a></center>
+
+<center><form action="/play">
+  <input type="submit" value="PLAY AGAIN?"/>
+  </form>
+</center>

@@ -1,4 +1,4 @@
-<p style="text-align:center;">
+
 
 <h1><%= @player_name %> vs. Computer</h1>
 <h2>Ready to play!</h2>
@@ -6,8 +6,17 @@
 <h3><%= @player_name %>, please select your weapon of choice!</h3>
 <br />
 
-<a href="/rock">Rock</a>
-<a href="/paper">Paper</a>
-<a href="/scissors">Scissors</a>
+<form action="/rock">
+  <input type="submit" value="Rock"/>
+  </form>
 
-</p>
+  <form action="/paper">
+    <input type="submit" value="Paper"/>
+    </form>
+
+    <form action="/scissors">
+      <input type="submit" value="Scissors"/>
+      </form>
+<!-- <a href="/rock">Rock</a>
+<a href="/paper">Paper</a>
+<a href="/scissors">Scissors</a> -->
