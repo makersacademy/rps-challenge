@@ -10,6 +10,12 @@ class RockPaperScissors < Sinatra::Base
     @player1_name = params[:player1_name]
     erb :play
   end
-  # start the server if ruby file executed directly
+
+  get '/selection' do
+   @player1_name = params[:player1_name]
+   @player1_move = params[:player1_move]
+   erb :selection
+ end
+
   run! if app_file == $0
 end

@@ -1,4 +1,19 @@
 <h1>Rock! Paper! Scissors!</h1>
 <br>
 <br>
-<h3><%= @player1_name %></h3>
+<h3><%= @player1_name %>, make your selection!</h3>
+
+<form action="/selection" method="get">
+  <input type="hidden" name="player1_move" value="ROCK">
+  <input type="submit" value="ROCK">
+</form>
+
+<form action="/selection" method="get">
+  <input type="hidden" name="player1_move" value="PAPER">
+  <input type="submit" value="PAPER">
+</form>
+
+<form action="/selection" method="get">
+  <input type="hidden" name="player1_move" value="SCISSORS">
+  <input type="submit" value="SCISSORS">
+</form>
