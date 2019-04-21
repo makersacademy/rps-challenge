@@ -5,8 +5,8 @@
 <h3><%= @player2.name %> selected: <%= @player2.move %></h3>
 <br>
 <br>
-<h3><%= 'DRAW!' if @declare_winner == 0 %></h3>
+<h3><%= 'DRAW! NO ONE WINS!' if @declare_winner == 0 %></h3>
 <h3><%= @player1.name if @declare_winner == 1 %></h3>
-<h3><%= 'IS THE WINNER!' if @declare_winner == 1 %></h3>
+<h3><%= 'WINS!' if @declare_winner == 1 %></h3>
 <h3><%= @player2.name if @declare_winner == 2 %></h3>
-<h3><%= 'IS THE WINNER!' if @declare_winner == 2 %></h3>
+<h3><%= 'WINS!' if @declare_winner == 2 %></h3>
