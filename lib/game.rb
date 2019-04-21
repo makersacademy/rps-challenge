@@ -37,6 +37,8 @@ class Game
       "Sorry #{@name} won! Better luck next time"
     when 'draw'
       'It was a Draw'
+    else
+      'Make a move'
     end
   end
 
