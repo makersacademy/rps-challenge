@@ -3,18 +3,6 @@ require 'simplecov'
 require 'simplecov-console'
 require 'features/web_helpers'
 
-# to slowr doen 
-require 'selenium-webdriver'
-module ::Selenium::WebDriver::Remote
-  class Bridge
-    alias_method :old_execute, :execute
-    def execute(*args)
-      sleep(0.1)
-      old_execute(*args)
-    end
-  end
-end
-
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 ENV['RACK_ENV'] = 'test'
 Capybara.app = Rps
