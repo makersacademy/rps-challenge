@@ -14,11 +14,14 @@ class RockPaperScissors < Sinatra::Base
     @player2 = Player.new(['Harry Potter', 'Sticky Fingers', 'Judge Dredd', 'Eric Cartman', 'Bart Simpson'].sample)
     session[:player1] = @player1
     session[:player2] = @player2
+    erb :play
   end
 
   get '/selection' do
-    @player1_name = params[:player1_name]
-    @player1_move = params[:player1_move]
+    @player1 = session[:player1]
+    @player2 = session[:player2]
+    @player1.select_move(params[:player1_move])
+    @player2.select_move(['ROCK', 'PAPER', 'SCISSORS'].sample)
     erb :selection
   end
 
