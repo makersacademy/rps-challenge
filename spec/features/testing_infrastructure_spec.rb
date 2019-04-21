@@ -1,6 +1,6 @@
-feature 'testing infrastructure' do
-  xscenario 'can run app and test page content' do
+feature 'Welcome page' do
+  scenario 'can run app and load index content' do
     visit('/')
-    expect(page).to have_content 'Testing infrastructure working!'
+    expect(page).to have_content 'Welcome to Rock, Paper, Scissors!'
   end
 end
