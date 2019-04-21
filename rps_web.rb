@@ -3,7 +3,15 @@ require 'sinatra/base'
 class RPSWeb < Sinatra::Base
 
   get '/' do
-    'Testing infrastructure working! Gumbie!'
+    erb :index
+  end
+
+  post '/names' do
+    redirect '/play'
+  end
+
+  get '/play' do
+    erb :play
   end
 
 end

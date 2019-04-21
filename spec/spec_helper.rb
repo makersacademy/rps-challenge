@@ -21,6 +21,6 @@ end
 
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirnaem(__FILE__), '..', 'rps_web.rb')
+require File.join(File.dirname(__FILE__), '..', 'rps_web.rb')
 
-Capybara.app = RPS 
+Capybara.app = RPSWeb
