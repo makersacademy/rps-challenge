@@ -11,7 +11,7 @@ class RockPaperScissors < Sinatra::Base
   post '/names' do
     @player_one = params[:player_one]
     @player_two = params[:player_two]
-    @game = Game.create(@player_one)
+    @game = Game.create(@player_one, @player_two)
     erb :play
   end
 
@@ -25,7 +25,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/computer_choice' do
-    @computer_choice = @game.player_two_move(["Rock", "Paper", "Scissors"].sample)
+    computer_choice = ["Rock", "Paper", "Scissors"].sample
+    @computer_choice = @game.player_two_move(computer_choice)
     erb :computer_choice
   end
 

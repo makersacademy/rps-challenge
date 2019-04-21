@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  let(:subject) { described_class.create("Ayelisha","Elliott") }
+  let(:subject) { described_class.create("Ayelisha", "Elliott") }
 
   it 'stores a players name' do
     expect(subject.player_one).to eq "Ayelisha"
@@ -29,7 +29,7 @@ describe Game do
     it 'Scissors beats Paper' do
       subject.player_one_move("Paper")
       subject.player_two_move("Scissors")
-      expect(subject.winner).to eq "The Computer"
+      expect(subject.winner).to eq "Elliott"
     end
   end
 
@@ -40,7 +40,5 @@ describe Game do
       expect(subject.winner).to eq "Draw"
     end
   end
-
-
 
 end
