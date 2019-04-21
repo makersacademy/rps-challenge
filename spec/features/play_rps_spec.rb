@@ -12,9 +12,9 @@ feature 'Player can select a RPS option' do
     visit('/')
     fill_in('player_name', with: 'Rick')
     click_button('Submit')
-    choose('Rock')
+    choose('Paper')
     click_button('Submit')
-    expect(page).to have_content('Rock')
+    expect(page).to have_content('Paper')
   end
 
   feature 'Game selects an RPS option' do
@@ -26,6 +26,18 @@ feature 'Player can select a RPS option' do
       choose('Rock')
       click_button('Submit')
       expect(page).to have_content('Game plays Paper')
+    end
+  end
+
+  feature 'A winner is declared' do
+    scenario 'displays winner based on rps rules' do
+      srand(1)
+      visit('/')
+      fill_in('player_name', with: 'Rick')
+      click_button('Submit')
+      choose('Scissors')
+      click_button('Submit')
+      expect(page).to have_content('The player is a Winner!')
     end
   end
 end

@@ -26,6 +26,16 @@ class Rps < Sinatra::Base
   get '/result' do
     @player_choice = session[:player_choice]
     @game_choice = ['Rock', 'Paper', 'Scissors'].sample
+    @game_decision = {
+      'Rock' => { 'Scissors' => 'Winner', 'Paper' => 'Loser' },
+      'Scissors' => { 'Paper' => 'Winner', 'Rock' => 'Loser' },
+      'Paper' => { 'Rock' => 'Winner', 'Scissors' => 'Loser' }
+      }
+    if @player_choice == @game_choice
+      @winner = 'Draw'
+    else
+      @winner = @game_decision[@player_choice][@game_choice]
+    end
     erb(:result)
   end
 
