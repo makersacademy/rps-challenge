@@ -7,16 +7,22 @@ describe Game do
   let(:player2) { double :player }
 
   describe '#result' do
-    it 'determines if player 1 wins' do
+    it 'determines if player 1 wins with ROCK' do
       allow(player1).to receive(:move) { 'ROCK' }
       allow(player2).to receive(:move) { 'SCISSORS' }
       expect(game.result(player1.move, player2.move)).to eq 1
     end
 
-    it 'determines if player 2 wins' do
-      allow(player1).to receive(:move) { 'ROCK' }
+    it 'determines if player 1 wins with PAPER' do
+      allow(player1).to receive(:move) { 'PAPER' }
+      allow(player2).to receive(:move) { 'ROCK' }
+      expect(game.result(player1.move, player2.move)).to eq 1
+    end
+
+    it 'determines if player 1 wins with SCISSORS'do
+      allow(player1).to receive(:move) { 'SCISSORS' }
       allow(player2).to receive(:move) { 'PAPER' }
-      expect(game.result(player1.move, player2.move)).to eq 2
+      expect(game.result(player1.move, player2.move)).to eq 1
     end
 
     it 'determines if there is a draw' do
