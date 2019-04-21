@@ -1,2 +1,9 @@
+<% if @game.draw? %>
+<center><h1>It's a <span style="color: orange">draw!</span></h1></center>
+<% elsif @game.lose? %>
+<center><h1>You <span style="color: red">lost!</span></h1></center>
+<% elsif @game.win? %>
+<center><h1>You <span style="color: green">won!</span></h1></center>
+<% end %>
 <center><h2>You chose: <%= @player_decision %>.</h2>
 <h2>Computer chose: <%= @computer_decision %>.</h2></center>

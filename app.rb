@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 enable :sessions
@@ -22,8 +23,10 @@ enable :sessions
   end
 
   post '/outcome' do
+    @player_name = session[:player_name]
     @player_decision = params[:decision]
     @computer_decision = ["Rock", "Paper", "Scissors"].sample
+    @game = Game.new(@player_decision, @computer_decision)
     erb :outcome
   end
 
