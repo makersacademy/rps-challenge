@@ -25,7 +25,7 @@ def result
     "Paper beats Rock...you win!"
   elsif @player_move == "Paper" && @computer_move == 'Scissors'
     "Scissors beat Paper...you lose!"
-end
+  end
 
 end
 end
