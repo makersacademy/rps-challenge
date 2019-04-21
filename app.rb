@@ -25,6 +25,7 @@ class Rps < Sinatra::Base
 
   get '/result' do
     @player_choice = session[:player_choice]
+    @game_choice = ['Rock', 'Paper', 'Scissors'].sample
     erb(:result)
   end
 
