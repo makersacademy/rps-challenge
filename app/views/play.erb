@@ -6,6 +6,17 @@
   </head>
   <body>
     <h1>Welcome <%= @player.name %>!</h1>
-    <h2>How will you decide?</h2>
+    <h2>Select your weapon: </h2>
+    <form action="/weapon" method="post">
+      <label for="weapon">
+        Move Choice
+        <select name="weapon">
+          <option value="rock">Rock</option>
+          <option value="paper">Paper</option>
+          <option value="scissors">Scissor</option>
+        </select>
+      </label>
+      <input type="submit" value="Play">
+    </form>
   </body>
 </html>
