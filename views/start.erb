@@ -36,8 +36,8 @@
 
 <hr>
 <div class='result_container'>
-  <% if @user_choice %>
-    <h5><%=@game.player.name%> chose <span><%=@user_choice%><span>
-    computer choose <%=@game.random_choice%> </h5>
-  <% end %>
+  <h5><%= @choices%></h5>
+  <div>
+    <h5 class="badge badge-info"><%=@game_result%> </h5>
+  </div>
 <div>

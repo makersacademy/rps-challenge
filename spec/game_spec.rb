@@ -1,8 +1,8 @@
 require 'game'
 
 RSpec.describe Game do
-  let(:game) { described_class.new(player) }
-  let(:player) { double :Player }
+  let(:game) { described_class.new(player, 'Rock') }
+  let(:player) { double :Player, :name => 'Chris' }
 
   describe '#initialize' do
     it 'has a default score' do
@@ -20,7 +20,13 @@ RSpec.describe Game do
   describe '#random_choice' do
     it 'gives a random choice' do
       srand(4)
-      expect(game.random_choice).to eq('Scissors')
+      expect(game.random_choice).to eq(:Scissors)
+    end
+  end
+
+  describe '#results' do
+    it 'tells who won' do
+      expect(game.choice).to eq('Chris chose Rock Bot chose Scissors')
     end
   end
 end
