@@ -47,7 +47,7 @@
 
 <img width="616" alt="Screen Shot 2019-04-21 at 14 17 01" src="https://user-images.githubusercontent.com/37377831/56472984-3c6ca500-645d-11e9-85d3-f9e67e53dbd8.png">
 
-The method ``random_choice`` returns a random object from the array anytime it is called. This means the object being return by ``random_choice`` in the ``choice method`` is different from the object being returned by ``random_choice`` in the results method. The returend value of these two methods are being used in the view to show the shape that the computer and the user chose and the winner of the game, but since they all have different random choice the real winner of game is sometimes wrong as inllustrated ihe image below.
+The method ``random_choice`` returns a random object from the array anytime it is called. This means the object being return by ``random_choice`` in the ``choice method`` is different from the object being returned by ``random_choice`` in the ``results method``. The returend value of these two methods are being used in the view to show the shape that the computer and the user chose and the winner of the game, but since they all have different random choice the real winner of game is sometimes wrong as inllustrated ihe image below.
 
 <img width="404" alt="Screen Shot 2019-04-21 at 13 30 34" src="https://user-images.githubusercontent.com/37377831/56473077-21e6fb80-645e-11e9-8e0a-aac308a368ef.png">
 
@@ -55,9 +55,17 @@ The method ``random_choice`` returns a random object from the array anytime it i
 
 # Improvements.
 - Improve application logic.
-- Fix the current bug in the application.
+- Fix the current bug in the application. `` Problem solved ``
 - Incolporate multiplayer.
 - Host app on Heroku.
+
+# How The Bug Was Solved.
+
+The problem was solved just by adding the line of code below (Got help from my friend simon).
+<img width="606" alt="Screen Shot 2019-04-21 at 17 17 35" src="https://user-images.githubusercontent.com/37377831/56473178-37105a00-645f-11e9-8c42-722adcbbd171.png">
+
+Basically I was right! I was calling two different object anything I called the
+``random_choice`` method in the application. After an advice from **[Chembo](https://github.com/SimonChenboYi)**, a new method ``computerchose`` was used to store the  computers choice and then later used in the ``choice method `` and ``results method ``.
 
 # Technologies Used.
 - Sinatra.
