@@ -21,6 +21,12 @@ enable :sessions
     erb :game
   end
 
+  post '/outcome' do
+    @player_decision = params[:decision]
+    @computer_decision = ["Rock", "Paper", "Scissors"].sample
+    erb :outcome
+  end
+
   run! if app_file == $0
 
 end
