@@ -1,2 +1,5 @@
 <center><%= @player.name %> chose <%= @choice.shape %></center>
 <center>Computer chose <%= @computer_shape.to_s.capitalize %></center>
+<center><% if @game.win? %>
+You win!
+<% end %></center>

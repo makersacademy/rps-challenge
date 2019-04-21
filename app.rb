@@ -2,6 +2,7 @@ require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/choice'
 require_relative 'lib/computer'
+require_relative 'lib/game'
 
 class RPS < Sinatra::Base
   
@@ -34,6 +35,7 @@ class RPS < Sinatra::Base
     @computer_shape = session[:computer_shape]
     @player = $player
     @choice = $choice
+    @game = Game.new(session)
     erb(:result)
   end
 
