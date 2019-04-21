@@ -14,7 +14,7 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    @name = (params[:player_name])
+    @name = params[:player_name]
     session[:player_name] = @name
     redirect '/play'
   end
@@ -32,13 +32,11 @@ class RPS < Sinatra::Base
   get '/paper' do
     @game = Game.new("paper", @computer.randomise_weapon)
     erb :choice
-
   end
 
   get '/scissors' do
     @game = Game.new("scissors", @computer.randomise_weapon)
     erb :choice
-
   end
 
   run! if app_file == $0

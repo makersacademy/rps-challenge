@@ -15,9 +15,9 @@ describe Game do
     end
   end
 
-  describe '#winner?' do
+  describe '#winner' do
     it 'shows the winner' do
-    expect(game.winner?).to eq "You chose rock and the computer chose scissors! Well done!"
+      expect(game.winner?).to eq "You chose rock and the computer chose scissors! Well done!"
+    end
   end
-end
 end

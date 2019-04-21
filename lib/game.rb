@@ -1,4 +1,3 @@
-
 class Game
 
   attr_reader :player, :computer
@@ -12,11 +11,11 @@ class Game
     if @player == @computer
       "Draw!"
     elsif @player == "rock" && @computer == "paper"
-      "You chose rock and the computer chose paper - you lost! Better luck next time!"
+      "You chose rock and the computer chose paper - you lost! :("
     elsif @player == "paper" && @computer == "scissors"
-      "You chose paper and the computer chose scissors - you win! Congratulations!"
+      "You chose paper and the computer chose scissors - you win! :D"
     elsif @player == "scissors" && @computer == "rock"
-      "You chose scissors and the computer chose rock - you win! Well done!"
+      "You chose scissors and the computer chose rock - you win! :D"
     elsif @computer == "rock" && @player == "paper"
       "You chose paper and the computer chose rock! You win! Well done!"
     elsif @computer == "paper" && @player == "scissors"

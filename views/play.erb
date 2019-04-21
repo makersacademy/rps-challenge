@@ -1,21 +1,32 @@
-
-<h1><font size="8" color="red" font face="arial"><%= @player_name %> vs. Computer</font></h1>
-<h2><font size="6" color="red" font face="arial">Ready to play!</font></h2>
-<br />
-<h3><font size="5" color="red" font face="arial"><%= @player_name %>, please select your weapon of choice!</font></h3>
-<br />
-
+<head>
+  <style>
+    .button {
+  background-color: #1A34D8;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button:hover {
+  background-color: #707EDB;
+  color: white;
+}
+</style>
+</head>
+<h1><font size="8" color="blue" font face="geneva"><%= @player_name %> vs. Computer</font></h1>
+<h2><font size="6" color="blue" font face="geneva">Ready to play!</font></h2>
+<h3><font size="5" color="blue" font face="geneva"><%= @player_name %>, please select your weapon of choice!</font></h3>
 <form action="/rock">
-  <input type="submit" value="Rock"/>
-  </form>
+  <input class="button" type="submit" value="Rock"/>
+
 
   <form action="/paper">
-    <input type="submit" value="Paper"/>
-    </form>
+    <input class="button" type="submit" value="Paper"/>
+
 
     <form action="/scissors">
-      <input type="submit" value="Scissors"/>
+      <input class= "button" type="submit" value="Scissors"/>
       </form>
-<!-- <a href="/rock">Rock</a>
-<a href="/paper">Paper</a>
-<a href="/scissors">Scissors</a> -->
