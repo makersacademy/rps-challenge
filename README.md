@@ -27,6 +27,16 @@ Basic Rules
 # Approach
 I designed a process model, following the same guidelines from a previous challenge Battle_Project, by extracting the objects and methods from the user stories. For example visit '/', fill_in 'player1_name', with: 'Dominic White', click_button 'PLAY'. This enabled me to move forward using a TDD approach, adding feature tests to picture the behaviour of the program. Following the Red-Green-Refactor cycle I have been able to move from User Stories to an end product which is a functiong, simple, web app.
 
+Resources used to assist with my approach on the challenge:
+* I followed the same structure as a previous challenge Battle_Project.
+* Notes made from my studying at Makers Academy.
+* For CSS information 
+
+- https://www.w3schools.com/css/default.asp
+- https://github.com/webdevjeffus/css-for-sinatra#putting-it-in-place
+
+* To work out the correct ruby code for Rock, Paper, Scissors result method, I took the code from a previous challenge which also involved getting the result of Rock, Paper, Scissors.
+
 # Progress/Status of Project
 The functionality of the web app fulfils the requirements of the user stories with all tests passing at 100% coverage. I was able to complete this in a timely manner, however, I was unable to finish styling each of the views due to lack of time, however, I am very pleased with the stage I have reached and will aim to work on some of the styling in due course. 
 
