@@ -19,7 +19,7 @@ class Rps_app < Sinatra::Base
   end
 
   post '/name' do
-    @game = Game.create(Player.new(params[:player_name]))
+    @game = Game.create(Player.new(params[:player_name]), params[:game_type])
     redirect '/play'
   end
 
@@ -37,6 +37,6 @@ class Rps_app < Sinatra::Base
   get '/result' do
     @game = Game.instance
     erb :result
-  end 
+  end
 
 end

@@ -1,19 +1,21 @@
 class Game
 
-  RPS_LOSSES = {
-    "rock" => "paper",
-    "paper" => "scissors",
-    "scissors" => "rock"
-  }
+  RPS_WINS = {
+    'rock' => ['scissors', 'lizard'], 'paper' => ['rock', 'spock'],
+           'scissors' => ['paper', 'lizard'], 'lizard' => ['spock', 'paper'],
+           'spock' => ['rock', 'scissors']
+         }
 
-  attr_reader :player, :computer_choice, :result, :player_choice
 
-  def initialize(player)
+  attr_reader :player, :computer_choice, :result, :player_choice, :game_type
+
+  def initialize(player, game_type)
     @player = player
+    @game_type = game_type
   end
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player, game_type)
+    @game = Game.new(player, game_type)
   end
 
   def self.instance
@@ -31,14 +33,18 @@ class Game
   def is_player_winner(player_choice, computer_choice)
     if player_choice == computer_choice
       "Draw"
-    elsif RPS_LOSSES[player_choice] == computer_choice
-      "Lose"
-    else
+    elsif RPS_WINS[player_choice].include? computer_choice
       "Win"
+    else
+      "Lose"
     end
   end
 
   def random_result
+    if @game_type == "classic"
     ["rock", "paper", "scissors"].sample
+    else
+    ["rock", "paper", "scissors", "spock", "lizard"].sample
+    end
   end
 end

@@ -9,7 +9,7 @@ def computer_choice(choice)
 end
 
 describe Game do
-  subject(:game_mittens) { Game.new('mittens') }
+  subject(:game_mittens) { Game.new('mittens', 'classic') }
 
   it 'initializes with a player' do
     expect(game_mittens.player).to eq 'mittens'
@@ -17,7 +17,7 @@ describe Game do
 
   describe '#create' do
     it 'stores an instance of game' do
-      Game.create('mittens')
+      Game.create('mittens', 'classic')
       expect(Game.instance.player).to eq 'mittens'
     end
   end

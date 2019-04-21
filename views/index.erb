@@ -1,7 +1,10 @@
 <h1>Rock Paper Scissors</h1>
 <h2>Sign in to play</h2>
 <form action="/name" method="post">
+    <input type="radio" name="game_type" value="classic">Classic</input><br/>
+    <input type="radio" name="game_type" value="special" id="special_game">Special</input><br/>
+    <br/>
     <label>Enter name:</label>
-    <input type="text" name="player_name">
-    <input type="submit" value="Submit">
+    <input type="text" name="player_name"/>
+    <input type="submit" value="Submit"/>
 </form>
