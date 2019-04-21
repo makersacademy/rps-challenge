@@ -2,7 +2,7 @@
 
 Task
 ----
-This challenge was given to us as our third weekend challenge at Makers Academy. It enabled me to practice building simple web applications and follow an effective debugging process for web applications. The instructions were as follows:
+This challenge was given to us as our third weekend challenge at Makers Academy. It enabled me to practice building simple web applications and follow an effective debugging process for web applications. I managed to successfully complete all the User Stories but if given more time I would like to practice with CSS and HTML to style the game better. The instructions were as follows:
 
 "Knowing how to build web applications is getting us almost there as web developers!
 
