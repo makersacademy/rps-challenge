@@ -1,86 +1,57 @@
-# RPS Challenge
+# Rock Paper Scissors Challenge(Makers Week3)
 
-Instructions
--------
+# To Use Application
+- Fork this repo.
+- Clone the repo to your computer.
+- cd into rsp-challenge directory.
+- run bundle install
+- run rspec to test application.
+- run rackup in terminal to run server.
+- visit this [url](http://localhost:9292/).
+- You should see this image below.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+<img width="400" alt="Screen Shot 2019-04-21 at 13 27 57" src="https://user-images.githubusercontent.com/37377831/56472795-10e8bb00-645b-11e9-8a56-2311b7055023.png">
 
-Task
-----
+- Click on get started.
+- This should take you to a page that looks like this.
 
-Knowing how to build web applications is getting us almost there as web developers!
+<img width="400" alt="Screen Shot 2019-04-21 at 13 28 42" src="https://user-images.githubusercontent.com/37377831/56472808-49889480-645b-11e9-849a-70026a288ad2.png">
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+- Enter your name as instructed the click on submit.
+<img width="400" alt="Screen Shot 2019-04-21 at 13 28 57" src="https://user-images.githubusercontent.com/37377831/56472827-6329dc00-645b-11e9-916e-0ec6e21afe5c.png">
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+- This will take you to the start page.
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+<img width="401" alt="Screen Shot 2019-04-21 at 13 29 08" src="https://user-images.githubusercontent.com/37377831/56472878-08dd4b00-645c-11e9-9edc-862b89df8a2d.png">
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+- Now make a move by selecting a shape.
 
-Hints on functionality
+<img width="399" alt="Screen Shot 2019-04-21 at 13 29 27" src="https://user-images.githubusercontent.com/37377831/56472883-1a265780-645c-11e9-95b7-87f888816480.png">
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+- Click on submit.
+- You should see the result on the game. (Draw, win , Lose )
 
+# Flaws of the Application.
 
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
+The method random_choice returns a random object from the array anytime it is called. This means the object being return by random_choice in the choice method is different from the object being returned by random_choice in the results method. The returend value of these two methods are being used in the view to show the shape that the computer and the user chose and the winner of the game, but since they all have different random choice the real winner of game is sometimes wrong as inllustrated ihe image below.
 
 
-## Bonus level 1: Multiplayer
+# Improvements.
+- Improve application logic.
+- Fix the current bug in the application.
+- Incolporate multiplayer.
+- Host app on Heroku.
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+# Technologies Used.
+- Sinatra.
+- CSS3.
+- Sass.
+- Twitter Bootstrap.
+- HTML5.
+- RSPEC.
+- Capybara.
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
+# Basic Game Rules
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
