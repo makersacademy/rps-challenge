@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -22,6 +23,7 @@ class RockPaperScissors < Sinatra::Base
     @player2 = session[:player2]
     @player1.select_move(params[:player1_move])
     @player2.select_move(['ROCK', 'PAPER', 'SCISSORS'].sample)
+    @declare_winner = Game.new.result(@player1.move, @player2.move)
     erb :selection
   end
 
