@@ -64,8 +64,8 @@ The method ``random_choice`` returns a random object from the array anytime it i
 The problem was solved just by adding the line of code below (Got help from my friend simon).
 <img width="606" alt="Screen Shot 2019-04-21 at 17 17 35" src="https://user-images.githubusercontent.com/37377831/56473178-37105a00-645f-11e9-8c42-722adcbbd171.png">
 
-Basically I was right! I was calling two different object anything I called the
-``random_choice`` method in the application. After an advice from **[Chembo](https://github.com/SimonChenboYi)**, a new method ``computerchose`` was used to store the  computers choice and then later used in the ``choice method `` and ``results method ``.
+Basically I was right! I was calling two different object anytime the
+``random_choice`` method was called in the application. After an advice from **[Chembo](https://github.com/SimonChenboYi)**, a new method ``computerchose`` was used to store the  computers choice and then later used in the ``choice method `` and ``results method ``.
 
 # Technologies Used.
 - Sinatra.
