@@ -10,8 +10,7 @@ class RPSWeb < Sinatra::Base
 
   post '/names' do
     player_1 = Player.new(params[:player_1_name])
-    player_2 = Player.new(params[:player_2_name])
-    Game.create(player_1, player_2)
+    Game.create(player_1)
     redirect '/play'
   end
 
