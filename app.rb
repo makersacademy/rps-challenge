@@ -7,7 +7,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post 'names' do
-
+    
   end
 
 end
