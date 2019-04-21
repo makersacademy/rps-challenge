@@ -3,13 +3,17 @@ require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   post '/play' do
     @player1 = Player.new(params[:player1_name])
-    erb :play
+    @player2 = Player.new(['Harry Potter', 'Sticky Fingers', 'Judge Dredd', 'Eric Cartman', 'Bart Simpson'].sample)
+    session[:player1] = @player1
+    session[:player2] = @player2
   end
 
   get '/selection' do
