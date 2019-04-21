@@ -1,23 +1,37 @@
-feature 'choose randomly' do
-  scenario 'Computer win with option of Scissors when player choose Paper ' do
+feature 'declare winner' do
+
+  scenario 'player1 wins' do
+    # Change the driver to selenium to show dynamic
+    Capybara.current_driver = :selenium
+    visit('/')
+    fill_in('player_name', with: 'Pikachu')
+    click_button('Submit')
+    chose_rock
+
+    new_window = open_new_window
+    within_window new_window do
+      visit('/')
+      fill_in('player_name', with: 'Snorlax')
+      click_button('Submit')
+      chose_scissors
+      expect(page).to have_content 'Pikachu Wins!'
+    end
+    Capybara.use_default_driver
+  end
+
+  scenario 'player2 wins' do
     register
     chose_paper
-    srand(678_09)
-    expect(page).to have_content 'Computer Wins!'
+    register_2
+    chose_scissors
+    expect(page).to have_content 'Snorlax Wins!'
   end
 
-  scenario 'Computer win with option of Paper when Computer choose Scissors' do
-    register
-    chose_rock
-    srand(4)
-    expect(page).to have_content 'Pikachu Wins!'
-  end
-
-  scenario 'Draw when both player and computer choose Scissors ' do
+  scenario 'draw' do
     register
     chose_scissors
-    srand(4)
+    register_2
+    chose_scissors
     expect(page).to have_content 'Draw!'
   end
-
 end

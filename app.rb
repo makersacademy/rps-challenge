@@ -1,17 +1,18 @@
 require 'sinatra/base'
 require './lib/player'
-require './lib/computer'
 require './lib/referee'
 require './lib/game'
 
 class Rps < Sinatra::Base
+  # Game.create
+
   get '/' do
+    @game = Game.instance || Game.create
     erb :index
   end
 
   post '/name' do
-    params[:player_name]
-    Game.create(Player.new(params[:player_name]))
+    Game.instance.add_player(Player.new(params[:player_name]))
     redirect '/play'
   end
 
@@ -22,7 +23,7 @@ class Rps < Sinatra::Base
 
   post '/choice' do
     @game = Game.instance
-    @game.chose(params[:choice])
+    @game.chose(@game.players[params[:player_id].to_i], params[:choice])
     redirect '/result'
   end
 

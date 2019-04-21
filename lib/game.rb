@@ -1,18 +1,26 @@
 class Game
-  attr_reader :player, :computer, :winner
-  # attr_accessor :choice
+  attr_reader :players, :winner, :player1, :player2, :referee
 
-  def initialize(player, computer = Computer.new, referee_class = Referee)
-    @player = player
-    @computer = computer
-    @referee = referee_class.new(player, computer)
+  def initialize(players = [], referee_class = Referee)
+    @players = players
+    @referee_class = referee_class
   end
 
-  def chose(choice)
-    @player.make_decision(choice)
+  def add_player(player)
+    if players.size.zero?
+      add_player1(player)
+    elsif players.size == 1
+      add_player2(player)
+    else
+    end
+  end
+
+  def chose(player, choice)
+    player.make_decision(choice)
   end
 
   def complete
+    assign_referee
     @winner = @referee.declare_winner
   end
 
@@ -20,33 +28,24 @@ class Game
     @game
   end
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create
+    @game = Game.new
   end
 
-# private
-#
-#   def draw?
-#     player.choice == computer.choice
-#   end
-#
-#   def player_win?
-#
-#     win_condisiton1 || win_condisiton2 || win_condisiton3
-#
-#   end
-#
-#   def win_condisiton1
-#
-#     player.choice == 'Paper' && computer.choice == 'Rock'
-#
-#   end
-#
-#   def win_condisiton2
-#     player.choice == 'Scissors' && computer.choice == 'Paper'
-#   end
-#
-#   def win_condisiton3
-#     player.choice == 'Rock' && computer.choice == 'Scissors'
-#   end
+  private
+
+  def add_player1(player1)
+    @player1 = player1
+    players << @player1 if players.size < 1
+  end
+
+  def add_player2(player2)
+    @player2 = player2
+    players << @player2 if players.size == 1
+  end
+
+  def assign_referee
+    @referee = @referee_class.new(player1, player2)
+  end
+
 end
