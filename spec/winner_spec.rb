@@ -32,9 +32,13 @@ feature 'Winner' do
     srand(3)
     expect(page).to have_content "You win!"
   end
-  # scenario 'shows there is a draw' do
-  #
-  # end
-
-
+  scenario 'shows there is a draw' do
+    visit ('/')
+    fill_in :name, :with => "Tara"
+    click_button "Submit"
+    click_button "Scissors"
+    Computer.new.move
+    srand(2)
+    expect(page).to have_content "It's a draw!"
+  end
 end
