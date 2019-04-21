@@ -12,6 +12,7 @@ describe User do
 
   describe '#choice' do #there is something weird happening here... ask a coach
     it "adds a choice to a history of choices" do
+      User.reset_choices
       User.set_choice("paper")
       expect(User.get_choice).to eq ["paper"]
     end
