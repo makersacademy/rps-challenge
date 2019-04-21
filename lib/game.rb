@@ -1,8 +1,9 @@
 class Game
-  attr_reader :player_name, :player_one_choice, :player_two_choice
+  attr_reader :player_one, :player_two, :player_one_choice, :player_two_choice
 
-  def initialize(player)
-    @player_name = player
+  def initialize(player_one, player_two = "The Computer")
+    @player_one = player_one
+    @player_two = player_two
     @player_one_choice = ""
     @player_two_choice = ""
     @winner = nil
@@ -24,9 +25,9 @@ class Game
   def winner
     @rules.each { |key, value|
       if @player_one_choice == key && @player_two_choice == value
-        @winner = @player_name
+        @winner = @player_one
       elsif @player_two_choice == key && @player_one_choice == value
-        @winner = "The Computer"
+        @winner = @player_two
       elsif @player_one_choice == @player_two_choice
         @winner = "Draw"
       end
@@ -34,8 +35,8 @@ class Game
     @winner
   end
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player_one, player_two)
+    @game = Game.new(player_one, player_two)
   end
 
   def self.instance
