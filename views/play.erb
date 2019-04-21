@@ -1,13 +1,18 @@
-<h1>Rock Paper Scissors</h1>
+<link rel="stylesheet" href="/stylesheets/bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="/stylesheets/bootstrap-theme.css" type="text/css" />
+<div style="display: flex; align-items: center; flex-direction: column;">
+<h1 class='page-header bg-alert'>Rock Paper Scissors</h1>
 <h2>RPS: <%= @game.player.name %> vs. Computer</h2>
 <h3>Pick one of the below:</h3>
-
+<div style="display: flex; align-items: center; flex-direction: column; border: 1px solid grey; padding: 10px;">
 <form action="/result" method="post">
-  <button name="choice" type="submit" value="rock">Rock</button>
-  <button name="choice" type="submit" value="paper">Paper</button>
-  <button name="choice" type="submit" value="scissors">Scissors</button>
+  <button class="btn-success" name="choice" type="submit" value="rock">Rock</button>
+  <button class="btn-success" name="choice" type="submit" value="paper">Paper</button>
+  <button class="btn-success" name="choice" type="submit" value="scissors">Scissors</button>
   <% if @game.game_type == 'special' %>
-  <button name="choice" type="submit" value="spock">Spock</button>
-  <button name="choice" type="submit" value="lizard">Lizard</button>
+  <button class="btn-success" name="choice" type="submit" value="spock">Spock</button>
+  <button class="btn-success" name="choice" type="submit" value="lizard">Lizard</button>
   <% end %>
 </form>
+</div>
+</div>

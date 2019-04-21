@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="/stylesheets/bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="/stylesheets/bootstrap-theme.css" type="text/css" />
+<div style="display: flex; align-items: center; flex-direction: column;">
 <h1>You chose <%= @game.player_choice %></h1>
 <h1>The computer chose <%= @game.computer_choice %></h1>
-<h2>You <%= @game.result %></h2>
+<h3 class='bg-info'>You <%= @game.result %></h3>
+</div>
