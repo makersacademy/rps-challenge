@@ -3,6 +3,7 @@ require 'simplecov'
 require 'simplecov-console'
 require 'capybara/rspec'
 require 'rspec'
+require 'web_helpers'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
