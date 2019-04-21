@@ -12,7 +12,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     @player1 = Player.new(params[:player1_name])
-    @player2 = Player.new(['Harry Potter', 'Sticky Fingers', 'Judge Dredd', 'Eric Cartman', 'Bart Simpson'].sample)
+    @player2 = Player.new(['Harry Potter', 'Sticky Fingers', 'Judge Dredd',
+    'Eric Cartman', 'Bart Simpson'].sample)
     session[:player1] = @player1
     session[:player2] = @player2
     erb :play

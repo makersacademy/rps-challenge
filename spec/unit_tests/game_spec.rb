@@ -19,7 +19,7 @@ describe Game do
       expect(game.result(player1.move, player2.move)).to eq 1
     end
 
-    it 'determines if player 1 wins with SCISSORS'do
+    it 'determines if player 1 wins with SCISSORS' do
       allow(player1).to receive(:move) { 'SCISSORS' }
       allow(player2).to receive(:move) { 'PAPER' }
       expect(game.result(player1.move, player2.move)).to eq 1
