@@ -4,7 +4,7 @@ feature 'Players enter their names' do
     expect(page).to have_content 'Sheldon vs. Penny'
   end
 
-  xscenario 'Submitting alternate names' do
+  scenario 'Submitting alternate names' do
     visit('/')
     fill_in('player_1_name', with: 'Frank')
     fill_in('player_2_name', with: 'Borris')
