@@ -33,6 +33,7 @@ Resources used to assist with my approach on the challenge:
 * For CSS information 
 
  https://www.w3schools.com/css/default.asp
+ 
  https://github.com/webdevjeffus/css-for-sinatra#putting-it-in-place
 
 * To work out the correct ruby code for Rock, Paper, Scissors result method, I took the code from a previous challenge which also involved getting the result of Rock, Paper, Scissors.
