@@ -1,14 +1,14 @@
-require 'game'
+# require 'game'
 
 
 
-describe Game do
+# describe Game do
 
-  let(:game) { described_class.new }
+#   let(:game) { described_class.new }
 
-  describe '#win?' do
-    it 'returns win if player chooses Paper and computer chooses Rock' do
-      expect(game.win?).to eq true 
-    end 
-  end
-end
+#   describe '#win?' do
+#     it 'returns win if player chooses Paper and computer chooses Rock' do
+#       expect(game.win?).to eq true 
+#     end 
+#   end
+# end

@@ -1,10 +1,11 @@
-require_relative 'choice'
-require_relative 'computer'
-
-
-
-
 class Game 
+
+  attr_reader :player, :computer
+  
+  def initialize(player, computer)
+    @player = player
+    @computer = computer
+  end
   
 
   RULES = {
@@ -14,7 +15,13 @@ class Game
   }
   
   def win?
-    RULES[:paper][:rock] == :win
+    RULES[@player.choice.shape][@computer.choice.shape] == :win
+  end
+  def draw?
+    RULES[@player.choice.shape][@computer.choice.shape] == :draw
+  end
+  def lose?
+    RULES[@player.choice.shape][@computer.choice.shape] == :lose
   end
 
 

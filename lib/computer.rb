@@ -1,5 +1,9 @@
 class Computer
-  def shape
-    ["Rock", "Paper", "Scissors"].sample
+  
+  attr_reader :choice
+  
+  def initialize(choice)
+    @choice = choice 
   end
+  
 end

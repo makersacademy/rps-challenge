@@ -20,22 +20,17 @@ class RPS < Sinatra::Base
 
   
   get '/play' do
-    @player = $player
     erb(:play)
   end
 
   post '/choice' do
-    @player = $player
-    $choice = Choice.new(params[:shape])
-    session[:computer_shape] = Computer.new.shape 
+    $player.choice = Choice.new(params[:shape].downcase.to_sym)
+    $computer = Computer.new(Choice.random)
     redirect to('/result')
   end
 
   get '/result' do
-    @computer_shape = session[:computer_shape]
-    @player = $player
-    @choice = $choice
-    @game = Game.new(session)
+    @game = Game.new($player, $computer)
     erb(:result)
   end
 
