@@ -24,9 +24,18 @@ RSpec.describe Game do
     end
   end
 
-  describe '#results' do
-    it 'tells who won' do
-      expect(game.choice).to eq('Chris chose Rock Bot chose Scissors')
+  describe '#computerchose' do
+    it 'tells you computers choice' do
+      srand(4)
+      expect(game.computerchose).to eq(:Scissors)
+    end
+  end
+
+  describe '#choice' do
+    it ' shows' do
+      srand(4)
+      game.computerchose
+      expect(game.choice).to eq("Chris chose Rock Bot chose Scissors");
     end
   end
 end
