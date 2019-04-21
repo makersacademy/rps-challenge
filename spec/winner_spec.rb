@@ -14,11 +14,15 @@ feature 'Winner' do
     expect(page).to have_content "Computer move: #{ @computer_move }"
   end
 
-  # scenario "displays winner when computer wins" do
-  #
-  #   allow(computer).to receive(:move).and_return(@computer_move)
-  #   expect(page).to have_content "And the winner is: Player!"
-  # end
+  scenario "displays winner when computer wins" do
+    visit ('/')
+    fill_in :name, :with => "Tara"
+    click_button "Submit"
+    click_button "Paper"
+    Computer.new.move
+    srand(2)
+    expect(page).to have_content "Computer wins!"
+  end
   # scenario 'shows there is a draw' do
   #
   # end
