@@ -1,5 +1,6 @@
 class Game
-  attr_reader :player_one, :player_two, :player_one_choice, :player_two_choice
+
+  attr_reader :player, :player_one, :player_two, :winner
 
   def initialize(player_one, player_two = "The Computer")
     @player_one = player_one
@@ -14,7 +15,11 @@ class Game
   end
 
   def switch_turns(current_player)
-    @player == @player_one ? @player = @player_two : @player = @player_one
+    if current_player == @player_one
+      @player = @player_two
+    else
+      @player = @player_one
+    end
   end
 
   def winner
@@ -30,11 +35,12 @@ class Game
     @winner
   end
 
-  def self.create(player_one, player_two)
-    @game = Game.new(player_one, player_two)
-  end
+    def self.create(player_one, player_two)
+      @game = Game.new(player_one, player_two)
+    end
 
-  def self.instance
-    @game
-  end
+    def self.instance
+      @game
+    end
+
 end

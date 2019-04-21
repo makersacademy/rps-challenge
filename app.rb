@@ -10,9 +10,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @player_one = Player.new(params[:player_one])
-    @player_two = Player.new(params[:player_two])
-    @game = Game.create(@player_one, @player_two)
+    player_one = Player.new(params[:player_one])
+    player_two = Player.new(params[:player_two])
+    @game = Game.create(player_one, player_two)
     redirect '/play'
   end
 
@@ -21,13 +21,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player_one = @game.player_one
+    @current_player = @game.player
     erb :play
   end
 
   post '/choice' do
-    @choice = @game.player_one_move(params[:choice])
+    @choice = @game.player_one.move(params[:choice])
     erb :choice
+  end
+
+  post '/switch_turns' do
+    @game.switch_turns(@game.player)
+    redirect '/play'
   end
 
   get '/computer_choice' do
