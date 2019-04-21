@@ -21,6 +21,7 @@ class Rps < Sinatra::Base
   get '/start' do
     player_one = Player.new(session[:player_name])
     @game = Game.new(player_one, session[:user_choice])
+    @game.computerchose
     @choices = @game.choice
     @game_result = @game.message
     erb :start

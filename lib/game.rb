@@ -8,7 +8,7 @@ class Game
     Scissors: { Rock: :lose, Paper: :win, Scissors: :draw }
   ]
   attr_accessor :score
-  attr_reader :player, :name
+  attr_reader :player, :name, :computerchose
 
   def initialize(player, player_choice = nil)
     @score = DEFAULT_SCORE
@@ -21,9 +21,13 @@ class Game
     [:Rock, :Paper, :Scissors].sample
   end
 
+  def computerchose
+    @computer_choice = random_choice
+  end
+
   def choice
     if @player_choice
-      "#{@player.name} chose #{@player_choice} #{@name} chose #{random_choice}"
+      "#{@player.name} chose #{@player_choice} #{@name} chose #{@computer_choice}"
     end
   end
 
@@ -46,7 +50,7 @@ class Game
     new_array = []
     if @player_choice
       RULES.each do |each_choice|
-        new_array << each_choice[@player_choice.to_sym][random_choice].to_s
+        new_array << each_choice[@player_choice.to_sym][@computer_choice].to_s
       end
     end
     new_array[0]
