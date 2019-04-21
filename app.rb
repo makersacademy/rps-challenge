@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/judge'
+require_relative 'lib/player_bot'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -17,15 +18,9 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  post '/choice' do
-    #store params and redirect to a get
-  end
-
   post '/results' do
     session[:p1_choice] = params[:p1_choice]
-    #session[:p2_choice] = params[:p2_choice]
-    # Random.new.choice
-    @judge = Judge.new(session[:p1_choice], "Paper")
+    @judge = Judge.new(session[:p1_choice], PlayerBot.new.choice)
     session[:outcome] = @judge.outcome
     erb :results
   end

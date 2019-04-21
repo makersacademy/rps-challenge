@@ -1,13 +1,15 @@
 require 'spec_helper'
 
 feature 'return the outcome' do
-  scenario "It's a tie!" do
+  scenario "has message" do
     add_name_and_play
     click_button('Rock')
-    #stub random output to be Rock
-    # player_2 = double :player_2, choice: "Rock"
-    # player_2.choice
-    #p2_choice = "Rock"
-    expect(page).to have_content("It's a tie!")
+    expect(page).to have_content("The winner is...")
+  end
+  scenario "" do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
+    add_name_and_play
+    click_button('Scissors')
+    expect(page).to have_content("Player 1")
   end
 end
