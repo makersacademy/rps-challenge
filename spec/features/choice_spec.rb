@@ -14,9 +14,12 @@ feature 'Choose rock paper or scissors' do
     click_button('Scissors')
     expect(page).to have_content('Scissors')
   end
-  scenario 'Computer chooses rock' do
+  scenario 'Computer chooses a random option' do
     sign_in_and_play  
+    srand(2215)
     click_button('Rock')
     expect(page).to have_content('Computer chose Rock')
   end
+
+
 end

@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/choice'
+require_relative 'lib/computer'
 
 class RPS < Sinatra::Base
   
@@ -25,7 +26,7 @@ class RPS < Sinatra::Base
   post '/choice' do
     @player = $player
     $choice = Choice.new(params[:shape])
-    session[:computer_shape] = :rock
+    session[:computer_shape] = Computer.new.shape 
     redirect to('/result')
   end
 
