@@ -1,6 +1,7 @@
 require 'sinatra/base'
-require_relative 'lib/computer_move'
+require_relative 'lib/game'
 require_relative 'lib/player'
+require_relative 'lib/computer_move'
 
 class RPS < Sinatra::Base
 
@@ -9,15 +10,19 @@ get '/' do
 end
 
 post '/play' do
-  $player = Player.new(params[:name])
-  @name = $player.name
+
+
+  @name = params[:name]
   erb :play
 end
 
 post '/result' do
+
   $computer = ComputerMove.new
-  @player_choice = params[:player_choice]
+  @player_move = params[:player_move]
   @computer_move = $computer.random_move
+  $game = Game.new(@player_move, @computer_move)
+
   erb :result
 end
 
