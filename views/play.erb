@@ -1,1 +1,7 @@
 <%= @player_name %>
+<form action="/decide-winner" method="post">
+  Rock <input type="radio" name="rps-options" value="Rock">
+  Paper <input type="radio" name="rps-options" value="Paper">
+  Scissors <input type="radio" name="rps-options" value="Scissors">
+  <input type="submit" value="Submit">
+</form>
