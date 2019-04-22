@@ -5,7 +5,11 @@ describe Game do
   let(:player) { double(:player) }
   let(:console) { double(:console) }
 
-   it 'gives player' do
+   it 'returns player' do
      expect(game.player).to eq player
    end
+
+   it 'returns console' do
+     expect(game.console).to eq console
+   end 
 end
