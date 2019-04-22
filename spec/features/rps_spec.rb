@@ -24,7 +24,7 @@ end
 RSpec.feature 'Form' do
   scenario 'user should be able to fill in form' do
     filing_form
-    expect(page).to have_content('chris')
+    expect(page).to have_content('Chris')
   end
 end
 
