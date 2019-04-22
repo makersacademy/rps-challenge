@@ -1,7 +1,16 @@
-# RPS Challenge
+# Rock, Paper, Scissors Challenge
 
-Task
+How to run
 ----
+```sh
+Clone this repo
+Run bundle install
+Run 'ruby app.rb' then visit 'http://localhost:4567/'
+
+```
+
+
+### Task
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
