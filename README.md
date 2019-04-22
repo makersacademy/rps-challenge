@@ -23,7 +23,7 @@ I would like to be able to play rock/paper/scissors
 ```
 
 
-## Hints on functionality
+## Hints on Functionality
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
