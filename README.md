@@ -59,6 +59,6 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 Issues to fix
 ----
 
-1. Unable to access the winner attribute from the winner route
-2. Implement Rock, Paper, Scissors, Spock, Lizard
-3. Add in error handling
+1. Implement Rock, Paper, Scissors, Spock, Lizard
+2. Add in error handling
+3. Add menu to choose which mode the user would like to play e.g vs Computer or RPSPL
