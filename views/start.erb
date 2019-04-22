@@ -5,7 +5,7 @@
      </div>
      <div class='name_score'>
        <h3 class='badge badge-dark'> Score <%=@game.player.score%> <h3>
-       <h4><%=@game.player.name%> </h4>
+       <h4><%=@game.player.name.capitalize%> </h4>
      </div>
   </div>
 
@@ -24,7 +24,7 @@
   <form method='post' action='/user_choice' id='selector'>
   <div class='form-group select_container'>
     <select name='user_select' class='form-control select' required>
-      <option value="" selected disabled hidden>Choose here</option>
+      <option value="" selected disabled hidden>Select a shape <%=@game.player.name.capitalize%></option>
       <option value='Rock'>Rock</option>
       <option value='Paper'>Paper</option>
       <option value='Scissors'>Scissors</option>

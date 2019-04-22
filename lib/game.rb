@@ -27,7 +27,7 @@ class Game
 
   def choice
     if @player_choice
-      "#{@player.name} chose #{@player_choice} #{@name} chose #{@computer_choice}"
+      "#{@player.name.capitalize} chose #{@player_choice} #{@name} chose #{@computer_choice}"
     end
   end
 
@@ -35,7 +35,7 @@ class Game
     case result
     when 'win'
       @player.score += 10
-      "Congratulation #{player.name} won!!"
+      "Congratulation #{player.name.capitalize} won!!"
     when 'lose'
       @score += 10
       "Sorry #{@name} won! Better luck next time"
