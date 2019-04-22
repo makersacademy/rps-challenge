@@ -20,11 +20,11 @@ class Game < Sinatra::Base
     erb :play
   end
 
-  get '/game' do
+  get '/result' do
     @opponent = Opponent.new
     @move = params[:move]
     @referee = Referee.new(@move, @opponent.choose)
-    erb :game
+    erb :result
   end
 
   run! if app_file == $0
