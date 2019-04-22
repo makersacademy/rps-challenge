@@ -7,12 +7,11 @@ describe Player do
       expect(player.name). to eq 'Yadira'
     end
   end
-end 
 
-#   describe '#player_move' do
-#    let(:choice) { double :choice }
-#     it 'gives player move' do
-#       expect(player.player_move).to include(player.player_move(choice))
-#     end
-#   end
-# end
+  describe '#player_move' do
+   let(:choice) { double :choice }
+    it 'gives player move' do
+      expect(player.player_move(choice)).to eq choice
+    end
+  end
+end
