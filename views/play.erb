@@ -1,9 +1,21 @@
-<h1>Welcome <%= @name %></h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Londrina+Sketch|Quicksand');
+    body {background-color: #A3B0E4; text-align: center; font-family: 'Quicksand'; padding-top: 200px;}
+    h2 {padding-top: 30px;}
+    </style>
+  </head>
+  <body>
+    <h1>Welcome <%= @name %></h1>
 
-<h2>Please select one of the following options:</h2>
+    <h2>Please select one of the following options:</h2>
 
-<form action="/winner" method="post">
-	<button name="player_move" type="submit" value="Rock">Rock</button>
-	<button name="player_move" type="submit" value="Paper">Paper</button>
-	<button name="player_move" type="submit" value="Scissors">Scissors</button>
-	</form>
+    <form action="/winner" method="post">
+	     <button name="player_move" type="submit" value="Rock">Rock</button>
+	     <button name="player_move" type="submit" value="Paper">Paper</button>
+	     <button name="player_move" type="submit" value="Scissors">Scissors</button>
+    </form>
+  </body>
+</html>

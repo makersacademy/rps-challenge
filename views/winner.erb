@@ -1,7 +1,20 @@
-<h2><div>You have selected <%= @player_move %>.</div>
-	<div>Computer move: <%= @computer_move %>.</div></h2>
-	<% if @result == "Draw" %>
-	<h2>It's a draw!</h2>
-	<% else %>
-	<h2><%= @result %>!</h2>
-	<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Londrina+Sketch|Quicksand');
+      body {background-color: #A3B0E4; text-align: center; font-family: 'Quicksand'; padding-top: 200px;}
+      h2 {padding-top: 30px;}
+      h1   {color: #D13EA9; font-family: 'Londrina Sketch', cursive; font-size: 50px;}
+    </style>
+  </head>
+  <body>
+    <h2><div>You have selected <%= @player_move %>.</div>
+	  <div>Computer move: <%= @computer_move %>.</div></h2>
+	  <% if @result == "Draw" %>
+	  <h1>It's a draw!</h1>
+	  <% else %>
+	  <h1><%= @result %>!</h1>
+	  <% end %>
+  </body>
+</html>
