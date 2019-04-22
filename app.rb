@@ -14,8 +14,7 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    @name = params[:player_name]
-    session[:player_name] = @name
+    session[:player_name] = params[:player_name]
     redirect '/play'
   end
 
