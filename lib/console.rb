@@ -2,10 +2,10 @@ class Console
   attr_reader :move
 
   def initialize
-    @move = random_move
+    @move = random_option
   end
 
-  def random_move
-    ['Paper', 'Rock', 'Scissors'].sample
+  def random_option
+    ['Rock', 'Paper', 'Scissors'].sample
   end
 end
