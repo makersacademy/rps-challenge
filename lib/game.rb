@@ -30,11 +30,11 @@ class Game
 
   def result
     if @status == -1
-      "lost!"
+      "lost"
     elsif @status == 0
-      "drawed!"
+      "drawed"
     elsif @status == 1
-      "win!"
+      "win"
     end
   end
 
