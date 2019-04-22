@@ -50,8 +50,10 @@ body {
 }
 
 .form-content {
-  margin: 20px auto;
-  text-align: center
+  margin: 10px 0px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .form-field {
@@ -69,4 +71,15 @@ body {
   border-radius: 5px;
   padding: 5px 0px;
   width: 100px;
+}
+
+.choice-image {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.choice {
+  width: 100px;
+  margin: 0px 15px;
 }

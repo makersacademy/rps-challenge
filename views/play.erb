@@ -12,9 +12,18 @@
       <section class="content-wrapper">
         <h2 class="section-title"><%=@current_player.name%>'s turn</h2>
         <form class="form-content" action='/choice' method='post'>
-          <input class="submit-button" name="choice" type="submit" value="Rock">
-          <input class="submit-button" name="choice" type="submit" value="Paper">
-          <input class="submit-button" name="choice" type="submit" value="Scissors">
+          <div class="choice">
+            <img class="choice-image" src="/images/stone.png">
+            <input class="submit-button" name="choice" type="submit" value="Rock">
+          </div>
+          <div class="choice">
+            <img class="choice-image" src="/images/paper.png">
+            <input class="submit-button" name="choice" type="submit" value="Paper">
+          </div>
+          <div class="choice">
+            <img class="choice-image" src="/images/scissors.png">
+            <input class="submit-button" name="choice" type="submit" value="Scissors">
+          </div>
         </form>
       </section>
     </div>
