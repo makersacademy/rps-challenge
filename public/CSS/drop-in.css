@@ -6,3 +6,9 @@ body {
   text-align: center;
   background-color: LightSkyBlue;
 }
+
+.player_choice {
+  height: 300px;
+  width: 300px;
+  object-fit: scale-down;
+}

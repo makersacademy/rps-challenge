@@ -10,6 +10,15 @@
       <h1>You selected <%= @player_move %></h1>
     </div>
     <div>
+      <% if @player_move == 'Rock' %>
+      <img class='player_choice' src="/images/therock.jpg">
+      <% elsif @player_move == 'Paper' %>
+      <img class='player_choice' src="/images/FDFMLVVFMMD0G34.LARGE.jpg">
+      <% elsif @player_move == 'Scissors' %>
+      <img class='player_choice' src="/images/edward-scissorhands.jpg">
+      <% end %>
+    </div>
+    <div>
       <h1>The computer selected <%= @computer_move %></h1>
     </div>
     <div>
