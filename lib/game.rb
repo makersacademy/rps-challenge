@@ -8,9 +8,13 @@ class Game
     @game = Game.new(player_name)
   end
 
-  attr_reader :player_name
+  attr_reader :player_name, :player_choice
 
   def initialize(player_name)
     @player_name = player_name
+  end
+
+  def player_picks(option)
+    @player_choice = option
   end
 end

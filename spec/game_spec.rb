@@ -16,4 +16,11 @@ describe Game do
       expect(Game.instance).to eq subject
     end
   end
+
+  describe '#player_choice' do
+    it 'returns the players rps choice' do
+      subject.player_picks('Rock')
+      expect(subject.player_choice).to eq 'Rock'
+    end
+  end
 end
