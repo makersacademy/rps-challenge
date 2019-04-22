@@ -1,6 +1,7 @@
 require 'sinatra'
 require_relative './lib/player.rb'
 require_relative './lib/opponent.rb'
+require_relative './lib/referee.rb'
 
 class Game < Sinatra::Base
   enable :sessions
@@ -20,9 +21,9 @@ class Game < Sinatra::Base
   end
 
   get '/game' do
-    @move = params[:move]
     @opponent = Opponent.new
-    @opponent.choose
+    @move = params[:move]
+    @referee = Referee.new(@move, @opponent.choose)
     erb :game
   end
 

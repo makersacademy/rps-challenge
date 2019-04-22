@@ -1,3 +1,22 @@
-You chose: <%= @move %>
+<!DOCTYPE html>
+<html>
+<body>
 
-Your opponent chose: <%= @opponent.move %>
+<p>You chose: <%= @referee.player_move %> </p>
+
+<p>Your opponent chose: <%= @referee.opponent_move %> </p>
+
+<p> <%= @referee.announce %> </p>
+
+<p> Would you like to play again, <%= session[:name] %>? </p>
+
+<form action="/play" method="get">
+    <input type="submit" value="Yes">
+</form>
+
+<form action="/" method="get">
+    <input type="submit" value="No">
+</form>
+
+</body>
+</html>
