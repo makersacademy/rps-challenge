@@ -24,16 +24,19 @@ describe Game do
     end
   end
 
-  describe '#decide_winner' do
+  describe '#winner' do
     it 'uses rps rules to assign a game winner' do
       allow(subject.player_1).to receive(:choice).and_return 'Rock'
       allow(subject.player_2).to receive(:choice).and_return 'Paper'
-      expect(subject.decide_winner).to eq 'Loser'
+      expect(subject.winner).to eq player_2
     end
-    it 'uses rps rules to assign a game draw' do
+  end
+
+  describe '#draw?' do
+    it 'returns true if game draw' do
       allow(subject.player_1).to receive(:choice).and_return 'Rock'
       allow(subject.player_2).to receive(:choice).and_return 'Rock'
-      expect(subject.decide_winner).to eq 'Draw'
+      expect(subject.draw?).to eq true
     end
   end
 end

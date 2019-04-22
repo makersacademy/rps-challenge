@@ -23,7 +23,6 @@ class Rps < Sinatra::Base
 
   post '/decide-winner' do
     @game.player_1.picks(params[:choice])
-    @game.decide_winner
     redirect '/result'
   end
 

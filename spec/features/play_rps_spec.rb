@@ -24,12 +24,19 @@ feature 'Game selects an RPS option' do
   end
 end
 
-feature 'A winner is declared' do
+feature 'The result is declared' do
   scenario 'displays winner based on rps rules' do
     srand(1)
     enter_name_and_submit
     choose('Scissors')
     click_button('Submit')
-    expect(page).to have_content('The player is a Winner!')
+    expect(page).to have_content('Rick wins!')
+  end
+  scenario 'displays a draw based on rps rules' do
+    srand(1)
+    enter_name_and_submit
+    choose('Paper')
+    click_button('Submit')
+    expect(page).to have_content('Its a draw!')
   end
 end

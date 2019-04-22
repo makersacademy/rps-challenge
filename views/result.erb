@@ -1,3 +1,7 @@
 <%= @game.player_1.choice %>
 Game plays <%= @game.player_2.choice %>
-The player is a <%= @game.winner %>!
+<% if @game.draw? %>
+Its a draw!
+<% else %>
+<%= @game.winner.name %> wins!
+<% end %>
