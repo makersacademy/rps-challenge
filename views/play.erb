@@ -1,23 +1,47 @@
-<form action="/choice" method="post">
+<!DOCTYPE html>
+<html>
 
-  <h2>
-    <% if @game.players.size == 1 %>
-      <input type="hidden" name="player_id" value="0">
-      <%= @game.player1.name %>, please choose:
-      <% elsif @game.players.size == 2 %>
-        <input type="hidden" name="player_id" value="1">
-        <%= @game.player2.name %>, please choose:
-      <% end %>
-    </h2>
+<head>
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+  
+  <body>
+    <header class="header">
+      <h2>
+        <% if @game.players.size == 1 %>
+          <%= @game.player1.name %> --- Please Choose One
+        <% elsif @game.players.size == 2 %>
+          <%= @game.player2.name %>, please choose:
+        <% end %>
+      </h2>
+    </header>
+    <br>
+    <br>
+    
+  <div class="formcontainer">
+    <form class="radio-toolbar" action="/choice" method="post">
+     
+        <input type="hidden" name="player_id" value="<%=@game.players.size - 1 %>">
 
-    <input type="radio" id="Rock" name="choice" value="Rock">
-    <label>Rock</label>
+        <input type="radio" id="Rock" name="choice" value="Rock" checked>
+        <label for="Rock" >Rock</label>
+  
+        <input type="radio" id="Paper" name="choice" value="Paper">
+        <label for="Paper">Paper</label>
+        
+        <input type="radio" id="Scissors" name="choice" value="Scissors">
+        <label for="Scissors">Scissors</label>
+        <br>
+        <br>
+        <input class="submit" type="submit" value="Submit">
+    </form>
+  </div>
     <br>
-    <input type="radio" id="Paper" name="choice" value="Paper">
-    <label>Paper</label>
-    <br>
-    <input type="radio" id="Scissors" name="choice" value="Scissors">
-    <label>Scissors</label>
-    <br>
-    <input type="submit" value="Submit">
-  </form>
+  <div class="img">
+      <img class="playimg" src="/images/rps.png">
+  </div>
+
+
+</body>
+
+</html>

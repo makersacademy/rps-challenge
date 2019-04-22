@@ -1,0 +1,110 @@
+body {
+  background-color:beige;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: aquamarine;
+  text-align: center;
+  color:orange;
+}
+
+.register {
+  color:rgb(42, 165, 97);
+}
+
+
+.submit{
+  background-color:lightblue;
+  font-size: large;
+  color:rgb(42, 165, 97);
+  
+}
+
+.submit:hover {
+  background-color:lawngreen;
+  color: brown;
+}
+
+.field {
+  width: 200px;
+  height: 20px;
+  font-size: large
+
+}
+
+#namelabel {
+  font-size: large;
+}
+
+.radio-toolbar {
+  /* margin: 10px; */
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.radio-toolbar input[type="radio"] {
+    display:none; 
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color:#ddd;
+    padding: 10px 20px;
+    font-family:Arial;
+    font-size:16px;
+    border: 2px solid #444;
+    border-radius: 4px;  
+    width: 10%  
+}
+
+.radio-toolbar label:hover {
+  background-color: #dfd;
+}
+
+.radio-toolbar input[type="radio"]:checked + label { 
+    background-color:#bfb;
+    border-color: #4c4;
+}
+
+.img {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.playimg {
+  width: 40%;
+  height: 40%;
+}
+
+.incomplete {
+  color: brown;
+}
+
+.playerschoices {
+  background-color: aquamarine;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.declare{
+  display: inline-block;
+  text-align: center;
+  margin-inline-end: 1em;
+  color:steelblue; 
+}
+
+.winner {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  color:orange;
+}

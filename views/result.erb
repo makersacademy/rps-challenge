@@ -1,26 +1,47 @@
+<!DOCTYPE html>
+<html>
 
-<% if @game.player1.nil?||@game.player2.nil? %>
-  <h2> The other player has not registered yet, please refresh this page to see update
-  </h2>
+<head>
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
 
-<% else %>
-  <% if @game.player1.choice && @game.player2.choice %>
-    <h2><%= @game.player1.name %> has chosen <%= @game.player1.choice %></h2>
-    <h2> VS. </h2>
-    <h2><%= @game.player2.name %> has chosen <%= @game.player2.choice %></h2>
-    <br>
+<body>
+  <% if @game.player1.nil?||@game.player2.nil? %>
+    <h2 class="incomplete">The other player has not registered yet</h2>
+    <a href="http://localhost:4567/result">please refresh this page to see update</a>
 
-    <h1>
-      <% @game.complete %>
-      <% if @game.winner.nil? %>
-        Draw!
-      <% else %>
-      <%= @game.winner.name + ' Wins!' %>
-      <% end %>
-    </h1>
+  <% else %>
+    <% if @game.player1.choice && @game.player2.choice %>
+    <div class="playerschoices">
+      <h2 class="declare"><%= @game.player1.name %> : <%= @game.player1.choice %></h2>
+      <h2 class="declare"> VS. </h2>
+      <h2 class="declare"><%= @game.player2.name %> : <%= @game.player2.choice %></h2>
+    </div>
+      <br>
+
+      <h1>
+        <% @game.complete %>
+
+        <div class="winner">
+          <% if @game.winner.nil? %>
+            <div class="img">
+              <img class="playimg" src="/images/draw.png">
+            </div>
+            It's a Draw!
+          <% else %>
+            <div class="img">
+              <img class="playimg" src="/images/timg.png">
+            </div>
+            <%= @game.winner.name + ' Wins!' %>
+          <% end %>
+          </div>
+      </h1>
 
     <% else %>
-    <h2> The other player has not submitted the choice yet, please refresh this page to see update
-    </h2>
+      <h2 class="incomplete"> The other player has not submitted the choice yet</h2>
+      <a href="http://localhost:4567/result">please refresh this page to see update</a>    
     <% end %>
-<% end %>
+  <% end %>
+</body>
+
+</html>
