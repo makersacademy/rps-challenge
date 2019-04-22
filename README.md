@@ -54,6 +54,7 @@ The method ``random_choice`` returns a random object from the array anytime it i
 > Rock should beat Scissors but instead Scissors won.
 
 # Improvements.
+- Fix the issue with the score returing back to ``0`` after redirect.
 - Improve application logic.
 - Fix the current bug in the application. `` Problem solved ``
 - Incolporate multiplayer.
