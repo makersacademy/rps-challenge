@@ -1,8 +1,6 @@
 feature 'sign-in process' do
   scenario 'form is filled in by player' do
-    visit '/'
-    fill_in :player_name, with: "Hannah"
-    click_button "Submit"
+    sign_in_and_submit
     expect(page).to have_content "Welcome to RPS, Hannah!"
   end
   scenario 'pressing button redirects to the game' do
