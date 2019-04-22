@@ -63,12 +63,10 @@ To install and run the game:
 ```
 bundle
 rackup -p 4567
-
 ```
-visit localhost:4567
+visit localhost:4567 
 
 To run tests:
 ```
 rspec
-
 ```
