@@ -23,7 +23,7 @@ describe Game do
     it 'Rock beats scissors' do
       subject.player_one.move("Rock")
       subject.player_two.move("Scissors")
-      expect(subject.winner).to eq "Ayelisha"
+      expect(subject.set_winner).to eq "Ayelisha"
     end
   end
 
@@ -31,7 +31,7 @@ describe Game do
     it 'Scissors beats Paper' do
       subject.player_one.move("Paper")
       subject.player_two.move("Scissors")
-      expect(subject.winner).to eq "Elliott"
+      expect(subject.set_winner).to eq "Elliott"
     end
   end
 
@@ -39,7 +39,7 @@ describe Game do
     it 'The same choice means a draw' do
       subject.player_one.move("Paper")
       subject.player_two.move("Paper")
-      expect(subject.winner).to eq "Draw"
+      expect(subject.set_winner).to eq "Draw"
     end
   end
 

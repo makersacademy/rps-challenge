@@ -1,17 +1,28 @@
 class Game
-
-  attr_reader :player, :player_one, :player_two, :winner
+  attr_reader :player, :player_one, :player_two, :turns
 
   def initialize(player_one, player_two = "The Computer")
     @player_one = player_one
     @player_two = player_two
     @player = player_one
-    @winner = nil
+    @turns = 0
     @rules = {
       "Rock" => "Scissors",
       "Paper" => "Rock",
       "Scissors" => "Paper"
     }
+  end
+
+  def self.create(player_one, player_two)
+    @game = Game.new(player_one, player_two)
+  end
+
+  def self.instance
+    @game
+  end
+
+  def increase_turn
+    @turns += 1
   end
 
   def switch_turns(current_player)
@@ -22,7 +33,7 @@ class Game
     end
   end
 
-  def winner
+  def set_winner
     @rules.each { |key, value|
       if @player_one.choice == key && @player_two.choice == value
         @winner = @player_one.name
@@ -34,13 +45,5 @@ class Game
     }
     @winner
   end
-
-    def self.create(player_one, player_two)
-      @game = Game.new(player_one, player_two)
-    end
-
-    def self.instance
-      @game
-    end
 
 end

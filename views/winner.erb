@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="content-wrapper">
-      <%if @winner == "Draw" %>
+      <%if @winner== "Draw" %>
       <header class="header">
        <h2 class="header-text">It's a draw</h2>
       </header>
@@ -15,8 +15,8 @@
        <h2 class="header-text"><%= @winner %> Wins!</h2>
       </header>
       <% end %>
-      <form class="form-content" action='/play'method='get'>
-        <input class="submit-button" type="submit" value="Play again">
+      <form class="form-content" action='/'method='get'>
+        <input class="submit-button" type="submit" value="New Game">
       </form>
     </div>
   </body>

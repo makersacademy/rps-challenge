@@ -3,8 +3,6 @@ require_relative './lib/game'
 require_relative './lib/player'
 
 class RockPaperScissors < Sinatra::Base
-  enable :sessions
-
   get '/' do
     erb :index
   end
@@ -22,11 +20,13 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @current_player = @game.player
+    @game.increase_turn
     erb :play
   end
 
   post '/choice' do
-    @choice = @game.player_one.move(params[:choice])
+    @choice = @game.player.move(params[:choice])
+    @turns = @game.turns
     erb :choice
   end
 
@@ -41,8 +41,8 @@ class RockPaperScissors < Sinatra::Base
     erb :computer_choice
   end
 
-  get '/winner' do
-    @winner = @game.winner
+  post '/winner' do
+    @winner= @game.set_winner
     erb :winner
   end
 
