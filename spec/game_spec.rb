@@ -1,4 +1,4 @@
-require './game'
+require 'game'
 
 # As a marketeer
 # So that I can enjoy myself away from the daily grind

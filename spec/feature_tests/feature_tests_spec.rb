@@ -33,13 +33,3 @@ feature 'making choices' do
     expect(page).to have_content 'You chose ROCK'
   end
 end
-
-# a winner will be declared
-
-# feature 'a winner will be declared' do
-  # scenario 'a winner is declared' do
-  #   sign_in
-  #   click_button 'ROCK'
-  #   expect(page).to have_content('YOU WON!')||('CPU WON!')||('IT WAS A DRAW!')
-  # end
-# end
