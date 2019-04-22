@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -20,6 +21,11 @@ class Rps < Sinatra::Base
   post '/choice' do
     @player_selection = params[:player_selection]
     erb :choice
+  end
+
+  post '/result' do
+    
+    erb :result
   end
 
   run! if app_file == $0
