@@ -1,1 +1,9 @@
-<h1>Hi, <%=@player%>!</h1>
+<h1>Ready to play, <%=@player%>?</h1>
+
+<form action="/play">
+  <p> Choose a move: </p>
+  <button name="option" type="submit" value="Paper">Paper</button>
+  <button name="option" type="submit" value="Rock">Rock</button>
+  <button name="option" type="submit" value="Scissors">Scissors</button>
+</form>
+<p> Choice: Paper </p>
