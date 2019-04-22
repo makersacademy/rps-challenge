@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/random_move'
 
 class RockPaperScissors < Sinatra::Base
   set :session_secret, 'super secret'
@@ -15,6 +16,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
+    @opponent = RandomMove.new
+    @opponent_move = @opponent.random_move
     @move = params[:move]
     erb :move
   end
