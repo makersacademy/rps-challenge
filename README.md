@@ -41,13 +41,6 @@ As usual please start by
 * Forking this repo
 * TEST driving development of your app
 
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
 ## Steps
 
 1. Write a test so the user can enter their name.
@@ -64,7 +57,7 @@ To install and run the game:
 bundle
 rackup -p 4567
 ```
-visit localhost:4567 
+visit localhost:4567
 
 To run tests:
 ```
