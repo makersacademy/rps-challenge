@@ -11,8 +11,9 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:player_name])
-    @game = Game.create(player)
+    player_1 = Player.new(params[:player_name])
+    player_2 = ComputerPlayer.new
+    @game = Game.create(player_1, player_2)
     redirect '/play'
   end
 
@@ -21,7 +22,7 @@ class Rps < Sinatra::Base
   end
 
   post '/decide-winner' do
-    @game.player.picks(params[:choice])
+    @game.player_1.picks(params[:choice])
     @game.decide_winner
     redirect '/result'
   end

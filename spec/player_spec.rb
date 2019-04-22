@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  let(:subject) { described_class.new('Rick')}
+  let(:subject) { described_class.new('Rick') }
 
   describe '#initialize' do
     it 'sets the players name' do

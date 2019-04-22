@@ -4,32 +4,30 @@ class Game
     @game
   end
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
   end
 
-  attr_reader :player, :game_choice, :winner
+  attr_reader :player_1, :player_2, :winner
 
-  def initialize(player)
-    @player = player
-    @game_choice = random_game_choice
+  def initialize(player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
   def decide_winner
-    @winner = OUTCOMES[player.choice][game_choice]
+    @winner = OUTCOMES[player_1.choice][player_2.choice]
   end
 
-  private
-
-  OPTIONS = ['Rock', 'Paper', 'Scissors']
   OUTCOMES = {
-    'Rock' => { 'Scissors' => 'Winner', 'Paper' => 'Loser', 'Rock' => 'Draw' },
-    'Scissors' => { 'Paper' => 'Winner', 'Rock' => 'Loser', 'Scissors' => 'Draw'  },
-    'Paper' => { 'Rock' => 'Winner', 'Scissors' => 'Loser', 'Paper' => 'Draw'  }
+    'Rock' => {
+      'Scissors' => 'Winner', 'Paper' => 'Loser', 'Rock' => 'Draw'
+      },
+    'Scissors' => {
+      'Paper' => 'Winner', 'Rock' => 'Loser', 'Scissors' => 'Draw'
+      },
+    'Paper' => {
+      'Rock' => 'Winner', 'Scissors' => 'Loser', 'Paper' => 'Draw'
+      }
     }
-
-  def random_game_choice
-    OPTIONS.sample
-  end
-
 end
