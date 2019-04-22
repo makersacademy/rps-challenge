@@ -1,7 +1,7 @@
 # RPS Weekend Challenge
 
 ## Task
-----
+
 
 Knowing how to build web applications is getting us almost there as web developers!
 
@@ -10,7 +10,7 @@ The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ## User Stories
-----
+
 ```
 As a marketeer
 So that I can see my name in lights
