@@ -18,5 +18,10 @@ class Game < Sinatra::Base
     erb :play
   end
 
+  get '/game' do
+    @move = params[:move]
+    erb :game
+  end
+
   run! if app_file == $0
 end
