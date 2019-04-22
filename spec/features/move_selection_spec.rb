@@ -1,5 +1,5 @@
 feature 'move select' do
-  subject (:x) {ComputerMove.new}
+  subject (:x) {Game.new("Rock", "Paper")}
   scenario 'player chooses a move and it is saved' do
     visit('/')
     fill_in('name', with: 'Jake')
