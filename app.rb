@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require_relative './lib/winner'
 
 class Rps < Sinatra::Base
   enable :sessions
