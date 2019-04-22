@@ -54,3 +54,5 @@ This challenge has helped me work towards the learning objectives for week 3 at 
 
 I would have like to complete the bonus levels and also been able to refactor the code
 further. I would have also wanted to add more specified tests for each feature.
+
+In this README I would have liked to add screenshots of the game and tests.
