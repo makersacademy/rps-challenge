@@ -18,7 +18,7 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    session[:player_option] = params[:option]
+    session[:player_option] = params[:option].to_sym
     session[:opponent_option] = Opponent.new.option
     redirect '/play'
   end

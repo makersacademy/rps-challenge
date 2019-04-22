@@ -31,6 +31,27 @@ feature 'playing a game' do
     expect(possible_messages).to have_content 'The opponent chose Scissors!'
   end
 
+  context 'the game ends' do
+    before do
+      rand(PLAY_SEED)
+    end
+
+    scenario 'Player wins a game' do
+      click_button 'Rock'
+      expect(page).to have_content 'You win!'
+    end
+
+    scenario 'Player loses a game' do
+      click_button 'Paper'
+      expect(page).to have_content 'You lose!'
+    end
+
+    scenario 'Player draws a game' do
+      click_button 'Scissors'
+      expect(page).to have_content 'Its a draw!'
+    end
+  end
+
 
   def possible_messages
     [:Rock, :Paper, :Scissors].map { |option| "The opponent chose #{option.to_s}!"}
