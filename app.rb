@@ -14,11 +14,8 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  get '/move' do
-    @player = $player
-    @player.move
+  post '/move' do
     erb :move
-    redirect '/results'
   end
 
   get '/secret' do
