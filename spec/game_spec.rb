@@ -1,26 +1,19 @@
 require 'game'
 
 describe Game do
-  let(:player_name) { double :player_name }
-  let(:subject) { described_class.new(player_name) }
-
-  describe '#player_name' do
-    it 'returns the players name' do
-      expect(subject.player_name).to eq player_name
-    end
-  end
+  let(:player) { double :player }
+  let(:subject) { described_class.new(player) }
 
   describe '#self.get' do
     it 'returns an instance of class' do
-      subject = Game.create(player_name)
+      subject = Game.create(player)
       expect(Game.instance).to eq subject
     end
   end
 
-  describe '#player_choice' do
-    it 'returns the players rps choice' do
-      subject.player_picks('Rock')
-      expect(subject.player_choice).to eq 'Rock'
+  describe '#player' do
+    it 'returns the player' do
+      expect(subject.player).to eq player
     end
   end
 
@@ -34,12 +27,12 @@ describe Game do
   describe '#decide_winner' do
     it 'uses rps rules to assign a game winner' do
       srand(1)
-      subject.player_picks('Rock')
+      allow(subject.player).to receive(:choice).and_return ('Rock')
       expect(subject.decide_winner).to eq 'Loser'
     end
     it 'uses rps rules to assign a game draw' do
       srand(2)
-      subject.player_picks('Rock')
+      allow(subject.player).to receive(:choice).and_return ('Rock')
       expect(subject.decide_winner).to eq 'Draw'
     end
   end
