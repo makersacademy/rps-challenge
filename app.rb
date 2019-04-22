@@ -15,6 +15,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
+    @move = params[:move]
     erb :move
   end
 
