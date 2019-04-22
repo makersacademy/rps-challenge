@@ -44,3 +44,13 @@ Plan of action:
 * Test if there is a draw
 * Refactor code
 * Add CSS
+
+Learnings:
+------
+
+This challenge has helped me work towards the learning objectives for week 3 at Makers.
+1. Build a simple web app
+2. Follow an effective debugging process for web applications
+
+I would have like to complete the bonus levels and also been able to refactor the code
+further. I would have also wanted to add more specified tests for each feature.
