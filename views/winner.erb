@@ -1,8 +1,23 @@
-<%if @winner == "Draw"%>
- <h2>It's a draw</h2>
-<%else%>
- <h2><%=@winner%> Wins!</h2>
-<%end%>
-<form action='/play'method='get'>
-  <input type="submit" value="Play again">
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="/style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <%if @winner == "Draw" %>
+      <header class="header">
+       <h2 class="header-text">It's a draw</h2>
+      </header>
+      <% else %>
+      <header class="header">
+       <h2 class="header-text"><%= @winner %> Wins!</h2>
+      </header>
+      <% end %>
+      <form class="form-content" action='/play'method='get'>
+        <input class="submit-button" type="submit" value="Play again">
+      </form>
+    </div>
+  </body>
+</html>

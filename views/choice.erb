@@ -1,4 +1,28 @@
-<h2>You chose <%=@choice%></h2>
-<form action='/switch_turns' method='post'>
-  <input type="submit" value="Next Player">
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="header">
+        <h1 class="header-text">Rock, Paper, Scissors</h1>
+      </header>
+      <section class="content-wrapper">
+       <h2 class="section-title">You chose <%= @choice %> </h2>
+      <% if @turns == 2 %>
+      <div class="form-content">
+        <form action='/winner' method='get'>
+          <input class="submit-button" type="submit" value="Result">
+        </form>
+      <%else%>
+        <form class="form-content" action='/switch_turns' method='post'>
+          <input class="submit-button" type="submit" value="Next Player">
+        </form>
+        </div>
+      <%end%>
+  </section>
+  <div>
+  </body>
+</html>
