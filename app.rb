@@ -21,22 +21,12 @@ class Rps < Sinatra::Base
   post '/decide-winner' do
     @game = Game.instance
     @game.player_picks(params[:choice])
+    @game.decide_winner
     redirect '/result'
   end
 
   get '/result' do
     @game = Game.instance
-    @game_choice = ['Rock', 'Paper', 'Scissors'].sample
-    @game_decision = {
-      'Rock' => { 'Scissors' => 'Winner', 'Paper' => 'Loser' },
-      'Scissors' => { 'Paper' => 'Winner', 'Rock' => 'Loser' },
-      'Paper' => { 'Rock' => 'Winner', 'Scissors' => 'Loser' }
-      }
-    if @game.player_choice == @game_choice
-      @winner = 'Draw'
-    else
-      @winner = @game_decision[@game.player_choice][@game_choice]
-    end
     erb(:result)
   end
 
