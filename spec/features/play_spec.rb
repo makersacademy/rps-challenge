@@ -1,5 +1,7 @@
 
 feature 'playing a game' do
+  PLAY_SEED = 200000
+
   before do
     visit '/'
     fill_in :name, with: 'Mike'
@@ -22,6 +24,13 @@ feature 'playing a game' do
     message = find(:css, "#opponent").text
     expect(possible_messages).to include message
   end
+
+  scenario 'game chooses a random option' do
+    click_button 'Rock'
+    srand(PLAY_SEED)
+    expect(possible_messages).to have_content 'The opponent chose Scissors!'
+  end
+
 
   def possible_messages
     [:Rock, :Paper, :Scissors].map { |option| "The opponent chose #{option.to_s}!"}
