@@ -56,3 +56,19 @@ Change the game so that two marketeers can play against each other ( _yes there 
 4. Write test and code for displaying which button was selected.
 5. Create a computer option which generates a button at random.
 6. Write test and code to decide winner.
+
+## How to Use
+
+To install and run the game:
+```
+bundle
+rackup -p 4567
+
+```
+visit localhost:4567
+
+To run tests:
+```
+rspec
+
+```
