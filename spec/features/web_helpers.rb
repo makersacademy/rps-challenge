@@ -5,6 +5,6 @@ def register_and_play
 end
 
 def enter_player_move
-  fill_in('move', with: 'Rock')
+  fill_in :player_move, with: 'Rock'
   click_button('Play')
 end
