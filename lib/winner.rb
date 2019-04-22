@@ -1,14 +1,10 @@
-class Computer
+class Winner
 
 attr_reader :player_selection, :computer_selection
 
   def initialize
     @player_selection = player_selection
     @computer_selection = computer_selection
-  end
-
-  def computer_selection
-    computer_selection = ['rock', 'paper', 'scissors'].sample
   end
 
   def winner(computer_selection, player_selection)
