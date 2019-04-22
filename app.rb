@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -16,6 +17,16 @@ class RPS < Sinatra::Base
   post '/play' do
     $player = Player.new(params[:player])
     @player = $player.name
+    erb(:play)
+  end
+
+  post '/result' do
+    $player = Player.new(params[:player])
+    @player = $player.name
+    $play = Game.new(params[:Rock] || params[:Paper] || params[:Scissors])
+    $play.win_calculator
+    @play_result = $play.result
+    @opponent_pick = $play.opponent_choice
     erb(:play)
   end
 

@@ -9,13 +9,15 @@
 <% end %>
 
 <% unless @player %>
+<br><h1>You <%= @play_result%>!</h1>
+<h2>Your opponent's pick : <%= @opponent_pick %></h2><br>
 <br><h2>Want to play again?</h2><br>
 <% end %>
 
-<form action = "/play" method = "post"><div>
-<input type = "submit" value = "Rock">
-<input type = "submit" value = "Paper">
-<input type = "submit" value = "Scissors">
+<form action = "/result" method = "post"><div>
+<input type = "submit" name = "Rock" value = "Rock">
+<input type = "submit" name = "Paper" value = "Paper">
+<input type = "submit" name = "Scissors" value = "Scissors">
 </div></form>
 
 <%unless @player %>
