@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/computer'
+require_relative './lib/computer'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -24,7 +24,7 @@ class Rps < Sinatra::Base
   end
 
   post '/result' do
-    
+    @computer_selection
     erb :result
   end
 

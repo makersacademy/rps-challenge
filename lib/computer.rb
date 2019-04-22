@@ -1,24 +1,24 @@
 class Computer
 
-attr_reader :player_selection, :computer
+attr_reader :player_selection, :computer_selection
 
   def initialize
     @player_selection = player_selection
-    @computer = computer
+    @computer_selection = computer_selection
   end
 
-  def computer
-    @computer = ['rock', 'paper', 'scissors'].sample
+  def computer_selection
+    computer_selection = ['rock', 'paper', 'scissors'].sample
   end
 
-  def winner(computer, player_selection)
-    if @computer == @player_selection
+  def winner(computer_selection, player_selection)
+    if @computer_selection == @player_selection
       "Draw!"
-    elsif @computer == "rock" && @player_selection == "Scissors"
+    elsif @computer_selection == "rock" && @player_selection == "Scissors"
       "You lose!"
-    elsif @computer == "paper" && @player_selection == "Rock"
+    elsif @computer_selection == "paper" && @player_selection == "Rock"
       "You lose!"
-    elsif @computer == "scissors" && @player_selection == "Paper"
+    elsif @computer_selection == "scissors" && @player_selection == "Paper"
       "You lose!"
     else
       "You win!"
