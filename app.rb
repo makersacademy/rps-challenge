@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/game'
+# I'm planning of killing global variables here
 
 class RPS < Sinatra::Base
   enable :sessions

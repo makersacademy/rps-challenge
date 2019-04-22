@@ -4,12 +4,10 @@
 
 How to run
 ----
-```sh
+
 Clone this repo
 Run bundle install
-Run `ruby app.rb` then visit `http://localhost:4567/`
-
-```
+Run `ruby app.rb` and visit `http://localhost:4567/`
 
 
 
