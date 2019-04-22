@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
