@@ -24,8 +24,8 @@ Steps to run this program:
 
 1. Clone this repo
 2. Run 'gem install bundle'
-3. When the installation completes, run 'bundle'
-4. From the command line, run ```ruby app.rb``` and visit 'http://localhost:4567'
+3. Run 'bundle'
+4. From the command line, run ```rackup -p 4567``` and visit 'http://localhost:4567'
 
 Plan of action:
 -------
