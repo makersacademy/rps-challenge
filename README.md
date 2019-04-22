@@ -23,7 +23,7 @@ To do list:
 Test all permutations of the "Special" game-type (although confident it performs as desired, uses same hash and method as classic which is fully tested.)
 
 # How to use
--------
+
 * Clone this repo
 * Direct your terminal to the repo and:
 
