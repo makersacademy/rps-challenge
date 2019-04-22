@@ -42,7 +42,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/winner' do
-    @winner= @game.set_winner
+    @winner = @game.set_winner
     erb :winner
   end
 

@@ -35,15 +35,24 @@ class Game
 
   def set_winner
     @rules.each { |key, value|
-      if @player_one.choice == key && @player_two.choice == value
-        @winner = @player_one.name
-      elsif @player_two.choice == key && @player_one.choice == value
-        @winner = @player_two.name
-      elsif @player_one.choice == @player_two.choice
-        @winner = "Draw"
-      end
+      @winner = @player_one.name if player_one_wins(key, value)
+      @winner = @player_two.name if player_two_wins(key, value)
+      @winner = "Draw" if draw(key, value)
     }
     @winner
+  end
+
+  private
+  def player_one_wins(key, value)
+    @player_one.choice == key && @player_two.choice == value
+  end
+
+  def player_two_wins(key, value)
+    @player_two.choice == key && @player_one.choice == value
+  end
+
+  def draw(key, value)
+    @player_one.choice == @player_two.choice
   end
 
 end
