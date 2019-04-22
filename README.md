@@ -1,10 +1,12 @@
 # RPS Challenge
 ------
 ## Getting Started
-Fork, then clone the repo
+Fork, then clone the repo:
+```sh
 git clone https://github.com/yadlra/rps-challenge.git
 gem install bundle
 bundle
+```
 
 ## Running the tests
 using rspec
