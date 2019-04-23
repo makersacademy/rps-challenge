@@ -7,7 +7,7 @@ class Game
   end
 
   def draw?
-    @player_decision == @computer_decision
+    @player == @computer
   end
 
   def win?

@@ -20,11 +20,11 @@ describe Game do
       game = Game.new("Rock", "Scissors")
       expect(game.win?).to eq true
     end
-    describe '#lose?' do
-      it 'returns true if player loses against computer' do
-        game = Game.new("Rock", "Paper")
-        expect(game.lose?).to eq true
-      end
+  end
+  describe '#lose?' do
+    it 'returns true if player loses against computer' do
+      game = Game.new("Rock", "Paper")
+      expect(game.lose?).to eq true
     end
   end
 end
