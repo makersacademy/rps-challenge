@@ -14,6 +14,18 @@
 
 ## Basic Rules
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+- Rock beats Scissors.
+- Scissors beats Paper.
+- Paper beats Rock.
+
+## How to run
+
+  Run using the following in the command line:
+```shell
+rackup -p 4567
+```
+
+  This is the url of the server used:
+```shell
+http://localhost:4567
+```
