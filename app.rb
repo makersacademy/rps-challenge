@@ -6,6 +6,8 @@ require './lib/game'
 class Rps < Sinatra::Base
   # Game.create
 
+  set :bind, '192.168.50.167'
+
   get '/' do
     @game = Game.instance || Game.create
     erb :index
