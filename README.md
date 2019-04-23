@@ -39,7 +39,22 @@ I would like to be able to play rock/paper/scissors
 3. When the installation completes, run 'bundle'
 4. From the command line, run ```ruby app.rb``` and visit 'http://localhost:4567'
 
+## Skills I used / learnt
+
+* How to debug a web app
+* Using a framework (Sinatra) which is something I have not done yet
+* Structuring the code for apps that have user interaction and visual output
+* Testing apps that have user interaction and visual output
+* Tracing data between the browser and server
+
+## What I would like to improve/fix
+
+If I spent more time on this challenge I would like to:
+* Implement multi-player mode so that the user does not have to play against the computer
+* Refactor some elements of my code I am not happy with, such as the long conditional statement. Instead I would use a hash to map over the rules of the game
+* Improve the visual output
+
 ## Acknowledgments
 
-Jordan Roberts
+Jordan Roberts |
 Makers Academy Challenge
