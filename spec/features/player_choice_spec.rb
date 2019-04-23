@@ -9,7 +9,7 @@ feature 'Given options for RPS' do
   scenario 'player chooses rock' do
     sign_in_and_play
     click_button 'Rock'
-    expect(page).to have_content 'rock' 
+    expect(page).to have_content 'rock'
   end
 
   scenario 'player chooses paper' do

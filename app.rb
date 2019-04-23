@@ -4,11 +4,7 @@ require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
-
-  before do
-    @computer = Computer.new
-  end
-
+  
   get '/' do
     erb :index
   end
@@ -24,16 +20,19 @@ class RPS < Sinatra::Base
   end
 
   get '/rock' do
+    @computer = Computer.new
     @game = Game.new("rock", @computer.randomise_weapon)
     erb :choice
   end
 
   get '/paper' do
+    @computer = Computer.new # could do 'before do 'computer = Computer.new at start'
     @game = Game.new("paper", @computer.randomise_weapon)
     erb :choice
   end
 
   get '/scissors' do
+    @computer = Computer.new
     @game = Game.new("scissors", @computer.randomise_weapon)
     erb :choice
   end
