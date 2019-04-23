@@ -1,4 +1,4 @@
-require 'cpu.rb'
+require_relative 'cpu'
 
 class Game
 

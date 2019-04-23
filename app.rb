@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'game.rb'
+require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
 
