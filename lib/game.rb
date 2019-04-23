@@ -1,9 +1,9 @@
 class Game
   attr_reader :player, :computer
 
-  def initialize(player, computer)
-    @player = player
-    @computer = computer
+  def initialize(player_decision, computer_decision)
+    @player = player_decision
+    @computer = computer_computer
   end
 
   def draw?
