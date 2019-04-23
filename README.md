@@ -29,3 +29,9 @@ rackup -p 4567
 ```shell
 http://localhost:4567
 ```
+
+## My Process
+
+  I started by creating a domain model to help outline what it was that I wanted to create, referring to the requirements of the game to ensure they were all being met within the model. I then implemented this model, editing when necessary.
+
+  Rspec and Capybara tests were created alongside the features that were added. I used the server to test each new feature as they were added to make sure the code was not broken by new implementations.
