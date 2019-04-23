@@ -3,7 +3,7 @@ class Game
 
   def initialize(player_decision, computer_decision)
     @player = player_decision
-    @computer = computer_computer
+    @computer = computer_decision
   end
 
   def draw?
