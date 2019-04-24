@@ -3,7 +3,11 @@
 
 In this repository, a rps application has been written.
 
-In order to play the game, fork or clone the repository. Then run the following command in terminal:
+In order to play the game, fork or clone the repository.
+
+https://github.com/soroushh/rps-challenge.git
+
+Then run the following command in terminal:
 
 ``` bundle install ```
 
@@ -27,7 +31,7 @@ and after that, it will show you that you have lost or won the game.
 ## Two player game
 
 If you want to play the game as two players, you can change your branch to
-the ```new``` and after that, follow the same instructions for starting the game. 
+the ```new``` and after that, follow the same instructions for starting the game.
 
 
 
