@@ -1,10 +1,34 @@
 # RPS Challenge
 
+
+In this repository, a rps application has been written.
+
+In order to play the game, fork or clone the repository. Then run the following command in terminal:
+
+``` bundle install ```
+
+After installing all the gems, you can run the following command and the game starts.
+
+``` rackup -p 1234 ```
+
+Then, you can open your browser and play the game.
+
+Technologies used:
+
+sinatra
+
+rspec/capybara as test frameworks
+
+# How to play the game:
+
+after opening the game in browser, you will be asked for your name, then you choose your movement
+and after that, it will show you that you have lost or won the game. 
+
 Instructions
 -------
 
 The model of the exercise is shown in the following picture:
-<img src="./Model_of_practice.png" /> 
+<img src="./Model_of_practice.png" />
 
 * Challenge time: rest of the day and weekend, until Monday 9am
 * Feel free to use google, your notes, books, etc. but work on your own
