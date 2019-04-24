@@ -22,7 +22,14 @@ rspec/capybara as test frameworks
 # How to play the game:
 
 after opening the game in browser, you will be asked for your name, then you choose your movement
-and after that, it will show you that you have lost or won the game. 
+and after that, it will show you that you have lost or won the game.
+
+## Two player game
+
+If you want to play the game as two players, you can change your branch to
+the ```new``` and after that, follow the same instructions for starting the game. 
+
+
 
 Instructions
 -------
