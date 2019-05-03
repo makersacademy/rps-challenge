@@ -32,9 +32,15 @@ RSpec and Capybara as test frameworks
 after opening the game in browser, you will be asked for your name, then you choose your movement
 and after that, it will show you that you have lost or won the game.
 
+1 . Asking your name
+
 <img src="./first.png" />
 
+2 . Asking your movement
+
 <img src="./second.png" />
+
+3. Expressing the winner
 
 <img src="./third.png" />
 
