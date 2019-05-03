@@ -11,22 +11,32 @@ Then run the following command in terminal:
 
 ``` bundle install ```
 
-After installing all the gems, you can run the following command and the game starts.
+After installing all the gems, you can run the following command in your terminal.
 
 ``` rackup -p 1234 ```
 
-Then, you can open your browser and play the game.
+Then, you can open your browser and play the game by opening the URL:
+
+``` localhost:1234 ```
 
 Technologies used:
 
-sinatra
+Ruby
 
-rspec/capybara as test frameworks
+Sinatra
+
+RSpec and Capybara as test frameworks
 
 # How to play the game:
 
 after opening the game in browser, you will be asked for your name, then you choose your movement
 and after that, it will show you that you have lost or won the game.
+
+<img src="./first.png" />
+
+<img src="./second.png" />
+
+<img src="./third.png" />
 
 ## Two player game
 
