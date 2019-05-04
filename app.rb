@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/player'
-require_relative './lib/RPS'
-
+require_relative './lib/rps'
 # game class? to give random choices of computer.
 
 class Game < Sinatra::Base
