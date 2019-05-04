@@ -1,4 +1,4 @@
-require 'RPS'
+
 # had to change to capital letters here
 # using double 
 
