@@ -1,4 +1,4 @@
-# require 'spec_helper'
+require 'spec_helper'
 
 feature 'when user signs up for the game' do
   scenario 'expects player to fill in name in a form and displays name after submitted' do
