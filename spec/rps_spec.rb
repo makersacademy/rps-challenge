@@ -1,6 +1,6 @@
-require 'rps'
-#using double 
-
+require 'RPS'
+# had to change to capital letters here
+# using double 
 
 describe RPS do 
   let (:player_1) { double(:player_1) } 
@@ -14,21 +14,27 @@ describe RPS do
     player_1 = Player.new('Scissors', 'Alex')
     player_2 = Player.new('Rock')
     rps = described_class.new(player_1, player_2)
-    winner = rps.winner
-    expect(winner).to eq 'Computer'
+    expect(rps.winner).to eq 'Computer'
   end 
 
   it 'calculates winner correctly' do 
     player_1 = Player.new('Rock', 'Alex')
     player_2 = Player.new('Scissors')
     rps = described_class.new(player_1, player_2)
-    winner = rps.winner
-    expect(winner).to eq 'Alex'
+    expect(rps.winner).to eq 'Alex'
   end 
 
+  it 'calculates winner correctly' do 
+    player_1 = Player.new('Paper', 'Alex')
+    player_2 = Player.new('Scissors')
+    rps = described_class.new(player_1, player_2)
+    expect(rps.winner).to eq 'Computer'
+  end 
 
-
-
-end 
-
-
+  it 'calculates winner correctly' do 
+    player_1 = Player.new('Paper', 'Alex')
+    player_2 = Player.new('Paper')
+    rps = described_class.new(player_1, player_2)
+    expect(rps.winner).to eq "It's a draw"
+  end 
+end

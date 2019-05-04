@@ -51,6 +51,8 @@ APPROACH
 ## Summary
 I split the user flow into 3 sections: before game, during game, and after game. App is developed test driven.
 
+![](images/flow.png)
+
 ## user flow:
 ### before game 
 #### tests

@@ -3,7 +3,7 @@ class Player
   attr_reader :name
 
   OPTIONS = ["Rock", "Scissors", "Paper"]
-
+  
   def initialize(choice = nil, name = 'Computer')
     @choice = choice || ["Rock", "Scissors", "Paper"].sample 
     # explaination- if nothing is pased in, its random, 
@@ -12,8 +12,5 @@ class Player
   end 
 
   
-
-
-
 
 end
