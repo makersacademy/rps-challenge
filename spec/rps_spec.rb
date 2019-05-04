@@ -3,8 +3,8 @@ require 'RPS'
 # using double 
 
 describe RPS do 
-  let (:player_1) { double(:player_1) } 
-  let (:player_2) { double(:player_2) } 
+  # let (:player_1) { double(:player, choice: 'Scissors', name: 'Alex') } 
+  # let (:player_2) { double(:player, choice: 'Rock') } 
   
   it 'initates with 2 players' do  
     expect(RPS).to respond_to(:new).with(2).arguments    
