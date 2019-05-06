@@ -21,11 +21,6 @@ class Game < Sinatra::Base
   end
 
   post '/game/save_names' do 
-    #comment  validation
-    
-    # test = Player.validate(params[:player1]) || Computer.validate(params[:computer1]) # a player instance or nil
-    # p test
-
     session[:player1] = Player.validate(params[:player1]) || Computer.validate(params[:computer1]) 
     session[:player2] = Player.validate(params[:player2]) || Computer.validate(params[:computer2]) 
     

@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/micosmin/rps-challenge.svg?branch=master)](https://travis-ci.org/micosmin/rps-challenge)
 
-## Task
+![Coverage](badge.svg)
+
+## Objective
 
 Knowing how to build web applications is getting us almost there as web developers!
 
