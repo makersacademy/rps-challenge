@@ -21,10 +21,11 @@ feature 'Player can play Rock/Paper/Scissors' do
 end
 
 # update it to check win/lose status too.
-# feature 'Player can see if they drawed' do
-#   scenario 'shows win status' do
-#     sign_in_play
-#     click_button('Rock')
-#     expect(page).to have_content "You drawed!"
-#   end
-# end
+feature 'Player can see if they drawed' do
+  scenario 'shows win status' do
+    sign_in_play
+    srand(1231)
+    click_button('Rock')
+    expect(page).to have_content "You draw!"
+  end
+end

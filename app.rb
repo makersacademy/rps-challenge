@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/game'
-# I'm planning of killing global variables here
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -11,23 +10,22 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    # $player = Player.new(params[:player])
     redirect to('/play')
   end
 
   post '/play' do
-    $player = Player.new(params[:player])
-    @player = $player.name
+    session[:player] = Player.new(params[:player])
+    @player = session[:player].name
     erb(:play)
   end
 
   post '/result' do
-    $player = Player.new(params[:player])
-    @player = $player.name
-    $play = Game.new(params[:Rock] || params[:Paper] || params[:Scissors])
-    $play.win_calculator
-    @play_result = $play.result
-    @opponent_pick = $play.opponent_choice
+    session[:player] = Player.new(params[:player])
+    @player = session[:player].name
+    session[:play] = Game.new(params[:Rock] || params[:Paper] || params[:Scissors])
+    session[:play].win_calculator
+    @play_result = session[:play].result
+    @opponent_pick = session[:play].opponent_choice
     erb(:play)
   end
 
