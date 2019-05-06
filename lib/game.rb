@@ -12,7 +12,8 @@ class Game
     @options.sample
   end
 
-  def p1_pick
+  def p1_pick 
+    @weapon
   end
 
   def p2_pick 
@@ -21,23 +22,23 @@ class Game
   
   def calculating
     if p1_pick == @options[0] && p2_pick == options[0]
-      'Its a draw!'
+      :draw
     elsif p1_pick == @options[1] && p2_pick == options[1]
-      'Its a draw!'
+      :draw
     elsif p1_pick == @options[2] && p2_pick == options[2]
-      'Its a draw!'
+      :draw
     elsif p1_pick == @options[0] && p2_pick == options[1]
-      'Player 2!'
+      :player2
     elsif p1_pick == @options[0] && p2_pick == options[2]
-      'Player 1!'
+      :player1
     elsif p1_pick == @options[1] && p2_pick == options[0]
-      'Player 1!'
+      :player1
     elsif p1_pick == @options[1] && p2_pick == options[2]
-      'Player 2!'
+      :player2
     elsif p1_pick == @options[2] && p2_pick == options[0]
-      'Player 2!'
+      :player2
     elsif p1_pick == @options[2] && p2_pick == options[1]
-      'Player 1!'
+      :player1
     end
   end
 end

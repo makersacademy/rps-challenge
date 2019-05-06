@@ -10,16 +10,18 @@ class RPS < Sinatra::Base
   end
 
   post '/set_player' do
-    $player1 = Player.new(params[:p1name])
+    @player1 = Player.new(params[:p1name])
+    #this isnt currently passing the @player1 to /play, need to use sessions.
     redirect '/play'
   end
 
   get '/play' do
+    @weapon = params[:weapon]
     erb :play
   end
 
   post '/new_game' do
-    new_rps = Game.new($player)
+    new_rps = Game.new(@player)
     redirect '/results'
   end
 

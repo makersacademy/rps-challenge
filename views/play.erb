@@ -12,20 +12,20 @@
   h1, 
   h2 {
     display: block;
-    background: #fff;
+    background: #f47742;
     }
   h1 {font-size: 30px}
   h2 {font-size: 20px;}
   span {background: #fd0;}
   </style>
 
-  <h1>Welcome <%= $player1.name %>!!! Have a shiney light!!!</h1>
+  <h1>Welcome <%= @player1.name %>!!! Have a shiney light!!!</h1>
   <br>
 
   <h2>Take a turn at RPS!</h2>
   <br>
 
-  <select>
+  <select name="weapon">
     <option value="rock">Rock</option>
     <option value="paper">Paper</option>
     <option value="scissors">Scissors</option>
