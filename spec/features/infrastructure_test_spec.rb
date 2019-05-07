@@ -20,7 +20,6 @@ feature 'Player can play Rock/Paper/Scissors' do
   end
 end
 
-# update it to check win/lose status too.
 feature 'Player can see if they drawed' do
   scenario 'shows win status' do
     sign_in_play
