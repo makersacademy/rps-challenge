@@ -1,13 +1,19 @@
-<head>
-  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
-</head>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+    <title>RPS</title>
+  </head>
+  <body>
+    <center><br>
+    <h1>"Rock, paper, scissors!"</h1><br>
 
-<center><br>
-<h1>"Rock, paper, scissors!"</h1><br>
-
-<form action = "/play" method = "post"><div>
-<h3>What's your name?</h3>
-<input type = "text" name = "player" style="border:none">
-<input type = "submit" value = "Submit" class="button" style="border:none">
-</div></form>
-</center>
+    <form action = "/play" method = "post"><div>
+    <h3>What's your name?</h3>
+    <input type = "text" name = "player" style="border:none">
+    <input type = "submit" value = "Submit" class="button" style="border:none">
+    </div></form>
+    </center>
+  </body>
+</html>
