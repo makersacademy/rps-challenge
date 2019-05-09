@@ -27,3 +27,6 @@ class Rps < Sinatra::Base
 
   run! if app_file == $0
 end
+
+
+"Making some changes to the file so I can test Github's public private functionality"
