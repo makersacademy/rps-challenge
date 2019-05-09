@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class Game < Sinatra::Base
+class Rps < Sinatra::Base
   enable :sessions
 
   get '/' do
@@ -9,7 +9,7 @@ class Game < Sinatra::Base
 
   post '/name' do
     session[:name] = params[:name]
-    redirect to('/play')
+    redirect '/play'
   end
 
   get '/play' do
@@ -22,7 +22,7 @@ class Game < Sinatra::Base
   post '/play' do
     session[:user_choice] = params[:user_choice]
     session[:computer_choice] = :paper
-    redirect to('/play')
+    redirect '/play'
   end
 
   run! if app_file == $0

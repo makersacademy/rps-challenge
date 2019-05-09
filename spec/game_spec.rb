@@ -1,4 +1,4 @@
-describe Game do
+describe Rps do
   subject(:rps) { described_class.new }
 
   it "returns rock" do
