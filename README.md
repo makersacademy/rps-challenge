@@ -53,3 +53,4 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 ## Diagram of model
 I used this diagram to help me plan my modelling. 
 
+![](img/IMG_8745.jpg)
