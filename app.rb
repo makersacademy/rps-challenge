@@ -2,6 +2,11 @@ require 'sinatra/base'
 
 class Rps < Sinatra::Base
   get '/' do
-    'hello world'
+    erb(:index)
+  end
+
+  post '/name' do
+    @name = params[:name]
+    "What is your selection #{@name}?"
   end
 end
