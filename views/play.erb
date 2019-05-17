@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    h2 {
+      text-align: center;
+    }
+    form {
+      display: inline-block;
+    }
+    </style>
+  </head>
+  <body>
+
+    <h1> <%= @player_name %> Welcombe to Rock, Paper, Scissors! </h1>
+
+    <div>
+      <h2> Please click one of thhe buttons below - </h2>
+      </div>
+
+    <form action='/result' method='post'>
+      <div class='button'>
+        <button type='submit'>Rock</button>
+        <button type='submit'>Paper</button>
+        <button type='submit'>Scissors</button>
+        </div>
+      </form>
+
+    </html>
+
+   </body>
+ </html>
