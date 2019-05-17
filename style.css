@@ -1,0 +1,13 @@
+@charset "UTF-8";
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+
+h1, h2 {
+    text-align: center;
+  }
+
+form {
+    display: inline-block;
+  }

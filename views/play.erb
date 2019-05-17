@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <style>
-    h1 {
-      text-align: center;
-    }
-    h2 {
-      text-align: center;
-    }
-    form {
-      display: inline-block;
-    }
-    </style>
-  </head>
+  <head>
+    <link rel="stylesheet" href="../style.css">
+     </head>
   <body>
 
     <h1> <%= @player_name %> Welcombe to Rock, Paper, Scissors! </h1>
 
     <div>
-      <h2> Please click one of thhe buttons below - </h2>
+      <h2> Please click one of the buttons below - </h2>
       </div>
-
+      <div>
     <form action='/result' method='post'>
       <div class='button'>
         <button type='submit'>Rock</button>
@@ -29,6 +18,7 @@
         <button type='submit'>Scissors</button>
         </div>
       </form>
+      </div>
 
     </html>
 
