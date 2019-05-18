@@ -1,13 +1,6 @@
-# RPS Weekend Challenge
+# RPS Challenge
 
-## Task
-
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+The task at hand was to create a Web App that represents the game of Rock, Paper, Scissors. The features that were created were accompanied by Rspec and Capybara tests. As each new feature was added I used the server to make sure the code didn't break. 
 
 ## User Stories
 
@@ -23,7 +16,7 @@ I would like to be able to play rock/paper/scissors
 ```
 
 
-## Hints on Functionality
+## Functionality
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
@@ -37,11 +30,12 @@ I would like to be able to play rock/paper/scissors
 - Scissors beats Paper
 - Paper beats Rock
 
+## How to Use:
 
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
+1. Clone this repo
+2. Run 'gem install bundle'
+3. Run 'bundle'
+4. From the command line, run rackup -p 4567 and visit 'http://localhost:4567'
 
 ## Steps
 
@@ -52,16 +46,11 @@ As usual please start by
 5. Create a computer option which generates a button at random.
 6. Write test and code to decide winner.
 
-## How to Use
+## Learnings
 
-To install and run the game:
-```
-bundle
-rackup -p 4567
-```
-visit localhost:4567
+This challenge enabled me to further build on the week3 objectives:
 
-To run tests:
-```
-rspec
-```
+1. Build a simple web app
+2. Follow an effective debugging process for web applications
+
+I would have liked to complete the computer option, and deciding a winner, as well as being able to implement some CSS.
