@@ -2,11 +2,11 @@ require 'game'
 
 describe Game do
   subject { described_class.new(computer, player) }
-  let(:player) { double(:player) }
   let(:computer) { double(:computer) }
+  let(:player) { double(:player) }
 
   it "holds two players" do
-    expect(subject.computer).to eq(computer)
+    expect(subject.player).to eq(player)
   end
 
   describe "#weapons" do
