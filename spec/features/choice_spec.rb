@@ -1,8 +1,6 @@
 feature 'Choice' do
   scenario 'rock, paper, scissors buttons are displayed' do
-    visit('/')
-    fill_in 'player_name', with: 'Alice'
-    click_button 'Submit'
+    sign_in_and_play
 
     expect(page).to have_selector(:button, 'Rock')
     expect(page).to have_selector(:button, 'Paper')
@@ -10,27 +8,21 @@ feature 'Choice' do
   end
 
   scenario 'player select rock' do
-    visit('/')
-    fill_in 'player_name', with: 'Alice'
-    click_button 'Submit'
+    sign_in_and_play
     click_button 'Rock'
 
     expect(page).to have_content("Alice's choice: Rock")
   end
 
   scenario 'player select paper' do
-    visit('/')
-    fill_in 'player_name', with: 'Alice'
-    click_button 'Submit'
+    sign_in_and_play
     click_button 'Paper'
 
     expect(page).to have_content("Alice's choice: Paper")
   end
 
   scenario 'player select scissors' do
-    visit('/')
-    fill_in 'player_name', with: 'Alice'
-    click_button 'Submit'
+    sign_in_and_play
     click_button 'Scissors'
 
     expect(page).to have_content("Alice's choice: Scissors")
