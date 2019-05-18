@@ -15,4 +15,9 @@ describe Game do
     end
   end
 
+  describe '#result' do
+    # it compares player's and computer's weapon to see outcome
+  end
+
+
 end

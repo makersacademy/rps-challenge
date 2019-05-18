@@ -9,5 +9,13 @@ describe Player do
     end
   end
 
+  describe '#weapons' do
+    it 'shows the choice of weapons' do
+      expect(francesca.weapons).to eq(Game::WEAPONS.sample)
+    end
+  end
+
+  # selects weapon option
+  # compares against computers weapon
 
 end

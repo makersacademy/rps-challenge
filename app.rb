@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 
 class Rps < Sinatra::Base
 
@@ -7,13 +9,21 @@ class Rps < Sinatra::Base
     erb :index
   end
 
-  post '/play' do
+  post '/names' do
     p params
-    @name = params[:name]
+    player = Player.new(params[:player])
+    $game = Game.new(player)
+    redirect '/play'
+  end
+
+  get '/play' do
+    @game = $game
     erb :play
   end
 
-  post '/result' do
+  get '/players_choice' do
+    @game = $game
+    @game.player_choice($game.computer)
     erb :result
   end
 
