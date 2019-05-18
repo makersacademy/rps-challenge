@@ -8,13 +8,17 @@
       padding: 150px 0;
     }
     </style>
+
      </head>
 
   <body>
+  <h2> Your move was <%= @player_move %> </h2>
+  <h2> Computer's move was <%= @computer_move %> </h2>
+
 <div>
-<h1> You Win! :) </h1>
+<h1> <%= @result %> </h1>
 </div>
-<h1> You Lost! :( </h1>
+
 
 <form action='/play' method='get'>
   <div class='button'>
