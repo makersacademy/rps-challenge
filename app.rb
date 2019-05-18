@@ -12,6 +12,24 @@ class RPS < Sinatra::Base
   end
 
   get '/game' do
+    @rock = params[:rock]
+    @paper = params[:paper]
+    @scissors = params[:scissors]
     erb :game
+  end
+
+  get '/rock' do
+
+    erb :result
+  end
+
+  get '/paper' do
+
+    erb :result
+  end
+
+  get '/scissors' do
+
+    erb :result
   end
 end
