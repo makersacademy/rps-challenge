@@ -18,9 +18,9 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-## Instructions for running the app.
+## Instructions for running the app :point_down:
 
-* Clone this repo
+Clone this repo
 ```
 git clone https://github.com/VladC24/rps-challenge.git
 ```
