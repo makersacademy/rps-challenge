@@ -13,7 +13,6 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    print session[:playername]
     @player_name = session[:playername]
     erb :play
   end
@@ -24,7 +23,6 @@ class Rps < Sinatra::Base
   end
 
   get '/make_move' do
-    print session[:selection]
     @player_name = session[:playername]
     @player_move = session[:selection]
     erb :make_move
