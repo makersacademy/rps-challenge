@@ -20,24 +20,24 @@ I would like to be able to play rock/paper/scissors
 
 ## Instructions for running the app :point_down:
 
-Clone this repo
+Clone this repo:
 ```
-git clone https://github.com/VladC24/rps-challenge.git
+$ git clone https://github.com/VladC24/rps-challenge.git
 ```
 
 In the terminal, do the following:
 
 ```
-cd rps-challenge
+$ cd rps-challenge
 ```
 ```
-bundle
+$ bundle
 ```
 ```
-rackup
+$ rackup
 ```
 
-Go to your browser and enter in the address bar
+Go to your browser and enter in the address bar:
 ```
 localhost:9292
 ```
