@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -24,6 +25,9 @@ class Rps < Sinatra::Base
 
   get '/result' do
     @pick = session[:pick]
+    computer = Computer.new
+    computer.pick
+    @computer_pick = computer.result
     erb(:result)
   end
 end
