@@ -7,24 +7,33 @@ body {background-image: url("https://www.dropbox.com/s/2ct0i6kc61vp0bh/wall.jpg?
   background-color: #141414
 }
 
-h1 {color: red; text-align: center; margin-top: 100px; font-size: 50}
+h1 {color: red; text-align: center; margin-top: 50px; font-size: 50}
 
 h2 {color: white; text-align: center; font-size: 35}
+
+p {color: white; text-align: center; font-size: 20}
 
 form {text-align: center; color: white}
 
 </style>
 
 <body>
-<h1> Welcome to <br>
-	<i>ROCK PAPER SCISSORS</i></h1>
-<h2> Enter you name:</h2>
-<form class='form' action='/names' method='post'>
-  <label for='player'>
-  	<input class='textbox' type='text' name='player'>
-  </label>
-  <br>
-  <br>
-  <input class='submit' type='submit' value='Submit'>
-</form>
+  <h1> Welcome to
+    <br>
+    <i>ROCK PAPER SCISSORS</i>
+  </h1>
+  <h2>Rules of the game:</h2>
+  <p>Rock beats Scissors
+    <br>Paper beats Rock
+    <br>Scissors beats Paper
+  </p>
+  <h2> Enter you name to start:</h2>
+  <form action='/names' method='post'>
+    <label for='player'>
+  	  <input type='text' name='player'>
+    </label>
+    <br>
+    <br>
+    <input style='font-size: 20'type='submit' value='Submit'>
+  </form>
 </body>

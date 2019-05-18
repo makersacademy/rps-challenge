@@ -7,15 +7,16 @@ body {
   background-repeat: no-repeat;
   background-color: #141414;
 }
+
 h2 {color: white; text-align: center}
-p {color: white; text-align: center}
-form {text-align: center; height: 1em}
+
+form {text-align: center; height: 1em; color: white}
 
 .glow {
   min-height: 30%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   font-family: "Vibur", cursive;
   font-size: 5rem;
   line-height: 1;
@@ -46,10 +47,19 @@ form {text-align: center; height: 1em}
     <span>Hi <%= @player %>!</span>
   </div>
   <br>
-  <h2>Rules of the game:</h2>
-  <p>Rock beats Scissors<br>Paper beats Rock<br>Scissors beats Paper</p>
-  <h2>To start the game, press 'Start game'</h2>
-  <form action='/game' method='get'>
-    <input type='submit' value='Start game'>
+  <h2>Select an option and press 'Play'</h2>
+  <br>
+  <form action='/play' method='get'>
+    <label for="option"><h3>What would you like to play with?</h3>
+      <br>
+      <select style='font-size: 15; width: 100px'>
+        <option label="rock">Rock</option>
+        <option label="paper">Paper</option>
+        <option label="scissors">Scissors</option>
+      </select>
+    </label>
+    <br>
+    <br>
+    <input style='font-size: 20; width: 50px' type='submit' value='Play'>
   </form>
 </body>

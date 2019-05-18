@@ -1,0 +1,22 @@
+<style>
+  body {
+  	background-image: url("https://www.dropbox.com/s/2ct0i6kc61vp0bh/wall.jpg?raw=1");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #141414;
+  }
+
+  h1 {color: white; text-align: center; margin-top: 10%; font-size: 70}
+
+  form {text-align: center; height: 1em; color: white}
+
+</style>
+
+<body>
+<h1><%= @player %> vs. A.I. </h1>
+<br>
+<form action="/play">
+  <input type='submit' value='Play again'>
+</form>
+</body>
