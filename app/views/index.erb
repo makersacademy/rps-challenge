@@ -1,9 +1,30 @@
 
-<h1> Welcome to <i>ROCK PAPER SCISSORS</i> game!</h1>
+<style>
+body {background-image: url("https://www.dropbox.com/s/2ct0i6kc61vp0bh/wall.jpg?raw=1");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #141414
+}
+
+h1 {color: red; text-align: center; margin-top: 100px; font-size: 50}
+
+h2 {color: white; text-align: center; font-size: 35}
+
+form {text-align: center; color: white}
+
+</style>
+
+<body>
+<h1> Welcome to <br>
+	<i>ROCK PAPER SCISSORS</i></h1>
 <h2> Enter you name:</h2>
-<form action='/names' method='post'>
-  <label for='player'>Player:
-  	<input type='text' name='player'>
+<form class='form' action='/names' method='post'>
+  <label for='player'>
+  	<input class='textbox' type='text' name='player'>
   </label>
-  <input type='submit' value='Submit'>
+  <br>
+  <br>
+  <input class='submit' type='submit' value='Submit'>
 </form>
+</body>

@@ -1,8 +1,55 @@
-<h1>Hi <%= @player %>!</h1>
-<br>
-<h2>Rules of the game:</h2>
-<p>Rock beats Scissors<br>Paper beats Rock<br>Scissors beats Paper</p>
-<h2>To start the game, press 'Start game'</h2>
-<form action='/game' method='get'>
-	<input type='submit' value='Start game'>
-</form>
+<style>
+
+body {
+  background-image: url("https://www.dropbox.com/s/2ct0i6kc61vp0bh/wall.jpg?raw=1");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #141414;
+}
+h2 {color: white; text-align: center}
+p {color: white; text-align: center}
+form {text-align: center; height: 1em}
+
+.glow {
+  min-height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Vibur", cursive;
+  font-size: 5rem;
+  line-height: 1;
+  color: #c6e2ff;
+  animation: neon 0.08s ease-in-out infinite alternate;
+
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
+      0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52),
+      0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78),
+      0 0 54px rgba(30, 132, 242, 0.92);
+  }
+  to {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.98),
+      0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58),
+      0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88),
+      0 0 60px rgba(30, 132, 242, 1);
+  }
+}
+
+</style>
+
+<body>
+  <div class='glow'>
+    <span>Hi <%= @player %>!</span>
+  </div>
+  <br>
+  <h2>Rules of the game:</h2>
+  <p>Rock beats Scissors<br>Paper beats Rock<br>Scissors beats Paper</p>
+  <h2>To start the game, press 'Start game'</h2>
+  <form action='/game' method='get'>
+    <input type='submit' value='Start game'>
+  </form>
+</body>
