@@ -1,4 +1,4 @@
-<%= @player.name %> vs. Computer
+<%= @game.player.name %> vs. <%= @game.computer.name%>
 <br>
 <form action="/choice" method="post">
   <input name="choice" type="submit" value="Rock">

@@ -1,35 +1,36 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
-  enable :sessions
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    session[:player_name] = params[:player_name]
+    player = Player.new(params[:player_name])
+    computer = Player.new("Computer")
+    Game.create(player, computer)
 
     redirect :play
   end
 
   get '/play' do
-    session[:player] = Player.new(session[:player_name])
-    @player = session[:player]
-
     erb(:play)
   end
 
   post '/choice' do
-    session[:player].choose(params[:choice])
+    @game.player.choose(params[:choice])
 
     redirect :result
   end
 
   get '/result' do
-    @player = session[:player]
-
     erb(:result)
   end
 end
