@@ -1,3 +1,9 @@
+require_relative 'game'
+
 class Computer
 
-end 
+  def play
+    Game::WEAPONS.sample
+  end
+
+end

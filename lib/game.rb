@@ -12,4 +12,7 @@ class Game
     @player = player
   end
 
+  def results
+  end
+
 end
