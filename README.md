@@ -25,23 +25,19 @@ I would like to be able to play rock/paper/scissors
 git clone https://github.com/VladC24/rps-challenge.git
 ```
 
-> In the terminal, do the following:
-
-* Go to the folder
+In the terminal, do the following:
 
 ```
 cd rps-challenge
 ```
-
-* ```
+```
 bundle
 ```
-
-* ```
+```
 rackup
 ```
 
-* Go to your browser and enter in the address bar
+Go to your browser and enter in the address bar
 ```
 localhost:9292
 ```
