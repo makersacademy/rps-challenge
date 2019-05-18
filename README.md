@@ -21,23 +21,27 @@ I would like to be able to play rock/paper/scissors
 ## Instructions for running the app.
 
 * Clone this repo
-
 ```
 git clone https://github.com/VladC24/rps-challenge.git
 ```
 
-> cIn the terminal, do the following:
+> In the terminal, do the following:
 
-Go to the folder
+* Go to the folder
 
-![Screenshot](https://www.dropbox.com/s/migmr3x2awbyhmj/cd%20rps-challenge.png?dl=0)
+```
+cd rps-challenge
+```
 
-![Screenshot](https://www.dropbox.com/s/vvyj4dvwv1g0h37/bundle.png?dl=0)
+* ```
+bundle
+```
 
-![Screenshot](https://www.dropbox.com/s/7mtgpv00vmvuui6/rackup.png?dl=0)
+* ```
+rackup
+```
 
-Go to your browser and enter in the address bar
-
+* Go to your browser and enter in the address bar
 ```
 localhost:9292
 ```
