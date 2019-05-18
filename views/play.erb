@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="../style.css">
+    <style>
+    body {
+      background-color: lightblue;
+      text-align: center;
+      padding: 150px 0;
+    }
+    </style>
      </head>
   <body>
+    <div>
+      <h1> Hey <%= @player_name %> <h1>
+        </div>
 
-    <h1> <%= @player_name %> Welcombe to Rock, Paper, Scissors! </h1>
+    <h1>  Welcombe to Rock, Paper, Scissors! </h1>
 
     <div>
-      <h2> Please click one of the buttons below - </h2>
+      <h2> Please select one of the options - </h2>
       </div>
       <div>
     <form action='/result' method='post'>
