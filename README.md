@@ -1,5 +1,10 @@
 # RPS Challenge
 
+## My Approach
+For this challenge I again used a TDD approach, firstly focusing on how the app would work and mapping out the MVC pattern of the app. I then would implement a feature test (and an rspec unit test when appropriate) for each step of the app and each user story.
+
+
+
 Instructions
 -------
 
