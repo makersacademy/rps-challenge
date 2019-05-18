@@ -1,9 +1,12 @@
 class Game
 
-  attr_reader :player
+  WEAPONS = [:rock, :paper, :scissors]
+  attr_reader :weapons, :computer, :player
 
-  def initialize(player)
+  def initialize(weapons = WEAPONS, computer, player)
+    @computer = computer
+    @weapons = weapons
     @player = player
-  end 
+  end
 
 end
