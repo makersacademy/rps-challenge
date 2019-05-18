@@ -5,4 +5,8 @@ class Player
     @name = name
     @choice = nil
   end
+
+  def choose(choice)
+    @choice = choice
+  end
 end
