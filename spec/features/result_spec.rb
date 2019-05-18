@@ -18,7 +18,6 @@ feature 'Result' do
     expect(page).to have_content "You win! :)"
   end
 
-
   scenario "You can play again" do
     sign_in_and_play
     expect(page).to have_button('Play again!')

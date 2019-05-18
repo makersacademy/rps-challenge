@@ -8,17 +8,14 @@ class Game
   end
 
   def result
-    if @player_move == "Rock" && @computer_move == "Scissors"
-      return "You win! :)"
-    elsif @player_move == "Paper" && @computer_move == "Rock"
-      return "You win! :)"
-    elsif @player_move == "Scissors" && @computer_move == "Paper"
-      return "You win! :)"
-    elsif @player_move == @computer_move
-      return "Draw"
-    else
-      return "Computer Wins :("
+    return "Draw" if @player_move == @computer_move
+      outcomes = [
+        ["Rock", "Scissors"],
+        ["Paper", "Rock"],
+        ["Scissors", "Paper"]]
+      outcomes.include?([@player_move, @computer_move])
+    return "You win! :)" if outcomes = true
+    return "Computer wins :(" if outcomes = false
+
     end
   end
-
-end
