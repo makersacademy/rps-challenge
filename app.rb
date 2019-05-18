@@ -17,7 +17,13 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
-  post '/result' do
-    "You picked #{params[:rps]}."
+  post '/pick' do
+    session[:pick] = params[:pick]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @pick = session[:pick]
+    erb(:result)
   end
 end
