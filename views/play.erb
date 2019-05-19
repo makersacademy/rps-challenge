@@ -1,1 +1,10 @@
 <h2>Hello there <%= @player_name %>!
+<p>
+<p>
+<h3>What do you choose?</h3>
+<br>
+<form action="/choice" method="post">
+  <input type="submit" value="Rock">
+  <input type="submit" value="Paper">
+  <input type="submit" value="Scissors">
+</form>

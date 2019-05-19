@@ -14,4 +14,8 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/choice' do
+    
+  end
+
 end
