@@ -1,15 +1,15 @@
-# _Rock, Paper, Scissors_ 
+# Rock, Paper, Scissors
 
 How to use this repository
 --------------------------
 
-Clone the repository.
-Change directory to the project root: `cd ./rps-challenge`
-Run `bundle install`
-Type `rackup -p 9292` from the command line.
-Visit your local host in a web browser: `http://localhost:9292`
+Clone the repository.  
+Change directory to the project root: `cd ./rps-challenge`  
+Run `bundle install`  
+Type `rackup -p 9292` from the command line.  
+Visit your local host in a web browser: `http://localhost:9292`  
 
-Enter your name and click through the UI.
+Enter your name and click through the UI.  
 
 User Stories
 ------------
@@ -45,6 +45,6 @@ Functionality:
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
-### Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+### Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
