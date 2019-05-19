@@ -2,7 +2,7 @@
 
 ## Description
 
-This is the result of the third weekend challenge for submission to Makers Academy. It is a web app that allows a player to play [rock, paper, scissors](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors) against the computer.
+This is the result of the third weekend challenge for submission to Makers Academy. It is a web application that allows a player to play [rock, paper, scissors](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors) against the computer.
 
 ## User Stories
 
@@ -24,7 +24,7 @@ I would like to be able to play rock/paper/scissors
 
 ## Usage
 
-Run `ruby app.rb` or `rackup`in the terminal
+Run `ruby app.rb` or `rackup` in the terminal
 
 ## Dependencies
 
@@ -37,7 +37,6 @@ ruby '2.5.0'
 
 gem 'rake'
 gem 'sinatra'
-
 gem 'capybara'
 gem 'rspec'
 gem 'rubocop', '0.56.0'
