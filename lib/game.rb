@@ -13,4 +13,8 @@ class Game
     @player = player
     @computer = computer
   end
+
+  def random_choice
+    ["Rock", "Paper", "Scissors"].sample
+  end
 end

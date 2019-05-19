@@ -16,4 +16,12 @@ describe Game do
       expect(subject.computer).to eq(computer)
     end
   end
+
+  describe '#random_choice' do
+    it 'returns random choice' do
+      allow_any_instance_of(Array).to receive(:sample).and_return("rock")
+
+      expect(subject.random_choice).to eq("rock")
+    end
+  end
 end

@@ -26,6 +26,7 @@ class RPS < Sinatra::Base
 
   post '/choice' do
     @game.player.choose(params[:choice])
+    @game.computer.choose(@game.random_choice)
 
     redirect :result
   end

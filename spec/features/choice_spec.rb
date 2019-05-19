@@ -7,24 +7,48 @@ feature 'Choice' do
     expect(page).to have_selector(:button, 'Scissors')
   end
 
-  scenario 'player select rock' do
+  scenario 'player selects rock' do
     sign_in_and_play
     click_button 'Rock'
 
     expect(page).to have_content("Alice's choice: Rock")
   end
 
-  scenario 'player select paper' do
+  scenario 'player selects paper' do
     sign_in_and_play
     click_button 'Paper'
 
     expect(page).to have_content("Alice's choice: Paper")
   end
 
-  scenario 'player select scissors' do
+  scenario 'player selects scissors' do
     sign_in_and_play
     click_button 'Scissors'
 
     expect(page).to have_content("Alice's choice: Scissors")
+  end
+
+  scenario 'computer selects rock' do
+    sign_in_and_play
+    computer_choice("Rock")
+    click_button 'Scissors'
+
+    expect(page).to have_content("Computer's choice: Rock")
+  end
+
+  scenario 'computer selects paper' do
+    sign_in_and_play
+    computer_choice("Paper")
+    click_button 'Rock'
+
+    expect(page).to have_content("Computer's choice: Paper")
+  end
+
+  scenario 'computer selects scissors' do
+    sign_in_and_play
+    computer_choice("Scissors")
+    click_button 'Paper'
+
+    expect(page).to have_content("Computer's choice: Scissors")
   end
 end
