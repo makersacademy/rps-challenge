@@ -1,24 +1,12 @@
 # RPS Challenge
 
-Instructions
--------
+## Description
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+This is the result of the third weekend challenge for submission to Makers Academy. It is a web app that allows a player to play [rock, paper, scissors](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors) against the computer.
 
-Task
-----
+## User Stories
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -28,59 +16,45 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+## Getting Started
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+1. Clone this repo to your local machine using `git@github.com:EdinaBMakers/rps-challenge.git`
+2. Run `gem install bundle` (if it is not installed already)
+3. Run `bundle`
 
+## Usage
 
-As usual please start by
+Run `ruby app.rb` or `rackup`in the terminal
 
-* Forking this repo
-* TEST driving development of your app
+## Dependencies
 
+This program uses the following gems:
 
-## Bonus level 1: Multiplayer
+```
+source 'https://rubygems.org'
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+ruby '2.5.0'
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+gem 'rake'
+gem 'sinatra'
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+gem 'capybara'
+gem 'rspec'
+gem 'rubocop', '0.56.0'
+gem 'simplecov', require: false
+gem 'simplecov-console', require: false
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+## Testing
+
+#### Running Tests
+
+Tests can be run from the root directory using the `rspec` command.
+
+#### Test Results and Coverage
+
+All tests pass and `simplecov` reported a test coverage of `100%`.
+
+## Code Style
+
+I used [Rubocop](https://rubocop.readthedocs.io/en/latest/) to ensure that Ruby coding standards are followed.
