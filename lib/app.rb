@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require 'game'
+require 'weapon'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -18,7 +20,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    session[:player_1_name]
-    erb(:result)
+    @weapon = params[:player_choice]
+
+    @game = Game.new
+    erb(@game.result)
   end
 end
