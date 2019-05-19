@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/play'
 
 class RPS < Sinatra::Base
 
@@ -12,24 +14,27 @@ class RPS < Sinatra::Base
   end
 
   get '/game' do
-    @rock = params[:rock]
-    @paper = params[:paper]
-    @scissors = params[:scissors]
     erb :game
   end
 
   get '/rock' do
-
-    erb :result
+    rock = Play.new(:rock)
+    @game = Game.new(rock)
+    @num = @game.random
+    erb :rock
   end
 
   get '/paper' do
-
-    erb :result
+    paper = Play.new(:paper)
+    @game = Game.new(paper)
+    @num = @game.random
+    erb :paper
   end
 
   get '/scissors' do
-
-    erb :result
+    scissors = Play.new(:scissors)
+    @game = Game.new(scissors)
+    @num = @game.random
+    erb :scissors
   end
 end
