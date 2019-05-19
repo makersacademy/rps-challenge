@@ -1,18 +1,6 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
+## Task
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -28,28 +16,20 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+## Approach
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+* Used a TDD approach, writing feature tests which drove the production of the
+app.rb file and views.
 
+* Wrote comprehensive unit tests for the game class, which tested every
+possible game outcome.
 
-As usual please start by
+* Started with the user playing against the computer, with the computer
+randomly selecting one of rock, paper, or scissors (see earlier commits).
 
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+* Replaced this functionality to make it a two-player game, however would like
+to add back in the option to play against a computer for times when there is no
+second player available :(
 
 ## Basic Rules
 
@@ -57,30 +37,35 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+## How to use
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+* Clone this directory and run bundle install.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+* Run rackup and visit localhost in a browser.
 
-Notes on test coverage
-----------------------
+* Enter player names and click 'Submit'.
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+![Screenshot](https://i.imgur.com/SLS2SDp.png)
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+* Each player chooses 'rock', 'paper', or 'scissors'.
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
+![Screenshot](https://i.imgur.com/LqgXQwx.png)
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+* The winner is shown! (if there is one)
+
+![Screenshot](https://i.imgur.com/XNmSgfT.png)
+
+* To run tests run rspec from the root directory.
+
+## Thoughts
+
+* As mentioned before, it would be nice to re-include the option to play
+against a computer.
+
+* There is a more elaborate version of rock paper scissors with 'spock' and
+'lizard' added as options. This could be added.
+
+* The use of sessions is limiting, ideally there would be better ways of
+saving objects which are more versatile (e.g. using a database, which I
+believe will be covered next week). With this in mind player objects could be
+created/ saved/ accessed later on.
