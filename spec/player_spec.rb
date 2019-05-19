@@ -8,4 +8,10 @@ describe Player do
       expect(subject.name).to eq("Sam")
     end
   end
+
+  describe '#choice' do
+    it "returns players choice" do
+      expect(subject.choice(:rock)).to eq(:rock)
+    end
+  end
 end
