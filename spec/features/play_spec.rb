@@ -1,36 +1,41 @@
 feature 'selecting rock, paper or scissors' do
-  scenario 'should show your pick' do
+  scenario "should show Player 1's pick" do
     sign_in_and_play
+    click_button 'Submit'
     expect(page).to have_content 'Laurence picked rock.'
   end
 
-  scenario "should show the computer's pick" do
-    allow_any_instance_of(Computer).to receive(:result).and_return(:rock)
+  scenario "should show Player 2's pick" do
     sign_in_and_play
-    expect(page).to have_content 'The computer picked rock.'
+    select 'Paper', from: 'pick2'
+    click_button 'Submit'
+    expect(page).to have_content 'Bob picked paper.'
   end
 end
 
-feature 'losing' do
-  scenario 'should display a message saying the computer wins' do
-    allow_any_instance_of(Computer).to receive(:result).and_return(:paper)
+feature 'player 1 losing' do
+  scenario 'should display a message saying Player 2 wins' do
     sign_in_and_play
-    expect(page).to have_content 'The computer wins!'
+    select 'Paper', from: 'pick2'
+    click_button 'Submit'
+    expect(page).to have_content 'Bob wins!'
   end
 end
 
-feature 'winning' do
-  scenario 'should display a message saying the user wins' do
-    allow_any_instance_of(Computer).to receive(:result).and_return(:scissors)
+feature 'player 1 winning' do
+  scenario 'should display a message saying Player 1 wins' do
     sign_in_and_play
+    select 'Scissors', from: 'pick2'
+    click_button 'Submit'
     expect(page).to have_content 'Laurence wins!'
   end
 end
 
 feature 'drawing' do
   scenario "should display a message saying it's a draw" do
-    allow_any_instance_of(Computer).to receive(:result).and_return(:rock)
     sign_in_and_play
+    select 'Rock', from: 'pick2'
+    click_button 'Submit'
     expect(page).to have_content "It's a draw!"
   end
 end

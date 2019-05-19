@@ -2,13 +2,18 @@
 <br>
 <style>
   h1 { font-family:helvetica,sans-serif;color:white }
+  p  { font-family:helvetica,sans-serif;color:white }
 </style>
 <center>
 <h1>Let's play Rock, Paper, Scissors</h1>
 
-<p style='font-family:helvetica,sans-serif;color:white'>Please enter your name:</p>
 <form action='/name' method='post'>
-  <input type='text' name='name'/>
+  <p>Please enter Player 1's name:</p>
+  <input type='text' name='name1'/>
+  <p>Please enter Player 2's name:</p>
+  <input type='text' name='name2'/>
+  <br>
+  <br>
   <input type='submit' value='Submit'/>
 </form>
 

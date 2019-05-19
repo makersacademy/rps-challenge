@@ -6,8 +6,13 @@ feature 'showing a welcome message' do
 end
 
 feature 'entering your name' do
-  scenario 'should take you to the game page with a personalised message' do
+  scenario 'should show message for player 1' do
     sign_in
     expect(page).to have_content("What is your selection, Laurence?")
+  end
+
+  scenario 'should show message for player 2' do
+    sign_in
+    expect(page).to have_content("What is your selection, Bob?")
   end
 end
