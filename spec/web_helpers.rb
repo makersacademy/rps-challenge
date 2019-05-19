@@ -8,7 +8,6 @@ end
 
 def sign_in_and_play
   sign_in
-  #click_button('rock')
   select('Rock', from: 'choice')
   click_button("submit")
 end

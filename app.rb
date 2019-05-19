@@ -25,8 +25,9 @@ class Rps < Sinatra::Base
   post '/result' do
     @name = session[:name]
     @player_choice = params[:choice]
-    @game_choice = Game.new(@player_choice).game_choice
-    p "choice is #{@choice}"
+    @game = Game.new(@player_choice)
+    @game_choice = @game.game_choice
+    @result = @game.judge
     erb (:result)
   end
 end

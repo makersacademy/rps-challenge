@@ -4,6 +4,7 @@ require 'simplecov-console'
 
 require './app'
 require './spec/web_helpers'
+require './spec/unit_helpers'
 require './lib/player'
 require './lib/game'
 
