@@ -11,8 +11,8 @@ describe Game do
         expect(subject.winner(:scissors, :rock)).to eq(:player2)
       end
 
-      it "should return nil if both players pick rock" do
-        expect(subject.winner(:rock, :rock).nil?).to eq(true)
+      it "should return :draw if both players pick rock" do
+        expect(subject.winner(:rock, :rock)).to eq(:draw)
       end
     end
   end
@@ -28,7 +28,7 @@ describe Game do
       end
 
       it "should return nil if both players pick paper" do
-        expect(subject.winner(:paper, :paper).nil?).to eq(true)
+        expect(subject.winner(:paper, :paper)).to eq(:draw)
       end
     end
   end
@@ -44,7 +44,7 @@ describe Game do
       end
 
       it "should return nil if both players pick scissors" do
-        expect(subject.winner(:scissors, :scissors).nil?).to eq(true)
+        expect(subject.winner(:scissors, :scissors)).to eq(:draw)
       end
     end
   end

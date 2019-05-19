@@ -36,6 +36,6 @@ class Rps < Sinatra::Base
     game = Game.new
 
     @winner = game.winner(@pick1, @pick2)
-    erb(:result)
+    erb(@winner)
   end
 end

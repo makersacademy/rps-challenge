@@ -12,6 +12,8 @@ class Game
       :player1
     elsif @pairs[player2] == player1
       :player2
+    else
+      :draw
     end
   end
 end
