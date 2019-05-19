@@ -25,33 +25,54 @@ describe Game do
     end
   end
 
-  describe '#set_winner' do
-    def self.test_player_wins(player_choice, computer_choice)
-      it "sets player as winner" do
-        allow(player).to receive(:choice).and_return(player_choice)
-        allow(computer).to receive(:choice).and_return(computer_choice)
-        subject.set_winner(player, computer)
+  describe '#winner' do
+    it "returns player as winner if player choice's 'Rock' and computer's choice 'Scissors'" do
+      allow(player).to receive(:choice).and_return("Rock")
+      allow(computer).to receive(:choice).and_return("Scissors")
 
-        expect(subject.winner).to eq(player)
-      end
+      expect(subject.winner).to eq(player)
     end
 
-    test_player_wins("Rock", "Scissors")
-    test_player_wins("Scissors", "Paper")
-    test_player_wins("Paper", "Rock")
+    it "returns player as winner if player's choice 'Scissors' and computer's choice 'Paper'" do
+      allow(player).to receive(:choice).and_return("Scissors")
+      allow(computer).to receive(:choice).and_return("Paper")
 
-    def self.test_computer_wins(player_choice, computer_choice)
-      it "sets computer as winner" do
-        allow(player).to receive(:choice).and_return(player_choice)
-        allow(computer).to receive(:choice).and_return(computer_choice)
-        subject.set_winner(player, computer)
-
-        expect(subject.winner).to eq(computer)
-      end
+      expect(subject.winner).to eq(player)
     end
 
-    test_computer_wins("Scissors", "Rock")
-    test_computer_wins("Paper", "Scissors")
-    test_computer_wins("Rock", "Paper")
+    it "returns player as winner if player's choice 'Paper' and computer's choice 'Rock'" do
+      allow(player).to receive(:choice).and_return("Paper")
+      allow(computer).to receive(:choice).and_return("Rock")
+
+      expect(subject.winner).to eq(player)
+    end
+
+    it "returns computer as winner if computer's choice 'Paper' and player's choice 'Rock'" do
+      allow(computer).to receive(:choice).and_return("Paper")
+      allow(player).to receive(:choice).and_return("Rock")
+
+      expect(subject.winner).to eq(computer)
+    end
+
+    it "returns computer as winner if computer's choice 'Scissors' and player's choice 'Paper'" do
+      allow(computer).to receive(:choice).and_return("Scissors")
+      allow(player).to receive(:choice).and_return("Paper")
+
+      expect(subject.winner).to eq(computer)
+    end
+
+    it "returns computer as winner if computer's choice 'Rock' and player's choice 'Scissors'" do
+      allow(computer).to receive(:choice).and_return("Rock")
+      allow(player).to receive(:choice).and_return("Scissors")
+
+      expect(subject.winner).to eq(computer)
+    end
+
+    it "returns draw if computer's and player's choice the same" do
+      allow(computer).to receive(:choice).and_return("Rock")
+      allow(player).to receive(:choice).and_return("Rock")
+
+      expect(subject.winner).to eq(nil)
+    end
   end
 end
