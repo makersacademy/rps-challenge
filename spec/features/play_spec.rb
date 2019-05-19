@@ -12,7 +12,7 @@ feature 'selecting rock, paper or scissors' do
   end
 end
 
-feature 'player 1 losing' do
+feature 'Player 1 losing' do
   scenario 'should display a message saying Player 2 wins' do
     sign_in_and_play
     submit_paper
@@ -20,7 +20,7 @@ feature 'player 1 losing' do
   end
 end
 
-feature 'player 1 winning' do
+feature 'Player 1 winning' do
   scenario 'should display a message saying Player 1 wins' do
     sign_in_and_play
     submit_scissors
