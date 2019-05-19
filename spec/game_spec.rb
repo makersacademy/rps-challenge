@@ -2,61 +2,49 @@ require 'game'
 
 describe Game do
   context 'Player 2 picks rock' do
-    describe '#validate' do
-      before(:each) do
-        allow(subject).to receive(:result) { :rock }
-      end
-
+    describe '#winner' do
       it "should return :player1 if player 1 picks paper" do
-        expect(subject.validate(:paper, :rock)).to eq(:player1)
+        expect(subject.winner(:paper, :rock)).to eq(:player1)
       end
 
       it "should return :player2 if player 1 picks scissors" do
-        expect(subject.validate(:scissors, :rock)).to eq(:player2)
+        expect(subject.winner(:scissors, :rock)).to eq(:player2)
       end
 
       it "should return nil if both players picks rock" do
-        expect(subject.validate(:rock, :rock).nil?).to eq(true)
+        expect(subject.winner(:rock, :rock).nil?).to eq(true)
       end
     end
   end
 
   context 'Player 2 picks paper' do
-    describe '#validate' do
-      before(:each) do
-        allow(subject).to receive(:result) { :paper }
-      end
-
+    describe '#winner' do
       it "should return :player1 if player 1 picks scissors" do
-        expect(subject.validate(:scissors, :paper)).to eq(:player1)
+        expect(subject.winner(:scissors, :paper)).to eq(:player1)
       end
 
       it "should return :player2 if player 1 picks rock" do
-        expect(subject.validate(:rock, :paper)).to eq(:player2)
+        expect(subject.winner(:rock, :paper)).to eq(:player2)
       end
 
       it "should return nil if both players picks paper" do
-        expect(subject.validate(:paper, :paper).nil?).to eq(true)
+        expect(subject.winner(:paper, :paper).nil?).to eq(true)
       end
     end
   end
 
   context 'Player 2 picks scissors' do
-    describe '#validate' do
-      before(:each) do
-        allow(subject).to receive(:result) { :scissors }
-      end
-
+    describe '#winner' do
       it "should return :player1 if player 1 picks rock" do
-        expect(subject.validate(:rock, :scissors)).to eq(:player1)
+        expect(subject.winner(:rock, :scissors)).to eq(:player1)
       end
 
       it "should return :player2 if player 1 picks paper" do
-        expect(subject.validate(:paper, :scissors)).to eq(:player2)
+        expect(subject.winner(:paper, :scissors)).to eq(:player2)
       end
 
       it "should return nil if both player picks scissors" do
-        expect(subject.validate(:scissors, :scissors).nil?).to eq(true)
+        expect(subject.winner(:scissors, :scissors).nil?).to eq(true)
       end
     end
   end

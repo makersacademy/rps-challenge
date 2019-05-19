@@ -32,8 +32,10 @@ class Rps < Sinatra::Base
 
     @pick1 = session[:pick1]
     @pick2 = session[:pick2]
+
     computer = Game.new
-    @winner = computer.validate(@pick1, @pick2)
+
+    @winner = computer.winner(@pick1, @pick2)
     erb(:result)
   end
 end

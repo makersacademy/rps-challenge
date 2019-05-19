@@ -1,23 +1,22 @@
-<body style="background-color:powderblue;">
-<center>
-<br>
 <style>
   h2 { font-family:helvetica,sans-serif;color:white }
   p { font-family:helvetica,sans-serif;color:white }
 </style>
-
-<h2><%= @name1 %> picked <%= @pick1 %>.</h2>
-<h2><%= @name2 %> picked <%= @pick2 %>.</h2>
-<% if @winner == :player1 %>
-<h2><%= @name1 %> wins!</h2>
-<% elsif @winner == :player2 %>
-<h2><%= @name2 %> wins!</h2>
-<% else %>
-<h2>It's a draw!</h2>
-<% end %>
-<% unless @winner == nil %>
-<h2>&#x1F389 &#x1F389 &#x1F389</h2>
-<% end %>
-<p><a href='/play'>Play again</a></p>
-</center>
+<body style="background-color:powderblue;">
+  <center>
+  <br>
+  <h2><%= @name1 %> picked <%= @pick1 %>.</h2>
+  <h2><%= @name2 %> picked <%= @pick2 %>.</h2>
+  <% if @winner == :player1 %>
+  <h2><%= @name1 %> wins!</h2>
+  <% elsif @winner == :player2 %>
+  <h2><%= @name2 %> wins!</h2>
+  <% else %>
+  <h2>It's a draw!</h2>
+  <% end %>
+  <% unless @winner == nil %>
+  <h1>&#x1F389 &#x1F389 &#x1F389</h1>
+  <% end %>
+  <p><a href='/play'>Play again</a></p>
+  </center>
 </body>
