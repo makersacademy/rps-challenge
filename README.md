@@ -38,6 +38,8 @@ This project follows the RSpec testing framework using capybara. Find out more a
 
 `Sinatra` the ruby web framework will be used to develop this app. It will follow the MVC development pattern. Ruby will be used as the programming language and HTML in Sinatra views for the user interface.
 
+While developing the app I used the Ruby web server interface, Rack. More info can be found at [Rack](https://rack.github.io/).
+
 ## CODE STYLE
 
 [Rubocop](https://github.com/rubocop-hq/rubocop) has been used as a guide.
@@ -129,6 +131,8 @@ There will be a:
 ## TECHNICAL IMPLEMENTATION
 
 I used a test driven development approach to develop a Sinatra MVC based web app.
+
+While developing the app I have been using the Ruby web server interface, Rack. More info can be found at [Rack](https://rack.github.io/).
 
 For each user story, I sketched out the features and then wrote the feature tests (in Capybara) to capture the end-to-end user flow.
 
