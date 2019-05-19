@@ -18,8 +18,6 @@ class Computer
       :player
     elsif @pairs[result] == player_pick
       :computer
-    else
-      :draw
     end
   end
 end

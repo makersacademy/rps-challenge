@@ -26,8 +26,8 @@ describe Computer do
         expect(subject.validate(:scissors)).to eq(:computer)
       end
 
-      it "should return 'draw' if player picks rock" do
-        expect(subject.validate(:rock)).to eq(:draw)
+      it "should return nil if player picks rock" do
+        expect(subject.validate(:rock).nil?).to eq(true)
       end
     end
   end
@@ -46,8 +46,8 @@ describe Computer do
         expect(subject.validate(:rock)).to eq(:computer)
       end
 
-      it "should return 'draw' if player picks paper" do
-        expect(subject.validate(:paper)).to eq(:draw)
+      it "should return nil if player picks paper" do
+        expect(subject.validate(:paper).nil?).to eq(true)
       end
     end
   end
@@ -66,8 +66,8 @@ describe Computer do
         expect(subject.validate(:paper)).to eq(:computer)
       end
 
-      it "should return 'draw' if player picks scissors" do
-        expect(subject.validate(:scissors)).to eq(:draw)
+      it "should return nil if player picks scissors" do
+        expect(subject.validate(:scissors).nil?).to eq(true)
       end
     end
   end
