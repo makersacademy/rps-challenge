@@ -19,5 +19,3 @@ feature "results" do
     expect(page).to have_content "You beat the computer!"
   end
 end
-
-#need more tests here about computer choosing randomly and page letting you know whether youve won, lost or drawn
