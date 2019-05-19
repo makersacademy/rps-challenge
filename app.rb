@@ -27,6 +27,7 @@ class RPS < Sinatra::Base
     @player = $player
     @choice = session[:choice]
     @game = Game.new
+    @result = Game.new.result(@choice,@game.choice)
     erb :result
   end
 end
