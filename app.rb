@@ -1,9 +1,17 @@
 require 'sinatra/base'
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
 
-class RPS < Sinatra::Base
+class Rps < Sinatra::Base
 
   get '/' do
-    "Hello"
+    erb :index
+  end
+
+  post '/names' do
+    @player_name = params[:player_name]
+    erb :play
   end
 
 end
