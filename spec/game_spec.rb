@@ -1,8 +1,8 @@
 describe Game do
   describe '#player_choice' do
     it 'requires chosen weapon' do
-      weapon = 'Rock'
-      expect(subject.player_choice(weapon)).to eq('Rock')
+      weapon = 'rock'
+      expect(subject.player_choice(weapon)).to eq('rock')
     end
   end
 
