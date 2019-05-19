@@ -1,2 +1,12 @@
 <%= @player_1_name %>
-
+<br>
+<form action="/result" method="get">
+  <label>Rock</label>
+  <input type='radio' name='your_choice' value='Rock'>
+  <label>Paper</label>
+  <input type='radio' name='your_choice' value='Paper'>
+  <label>Scissors</label>
+  <input type='radio' name='your_choice' value='Scissors'>
+  <br>
+  <input type='submit' value='Play'>
+</form>

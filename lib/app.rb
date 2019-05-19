@@ -16,4 +16,9 @@ class RockPaperScissors < Sinatra::Base
     @player_1_name = session[:player_1_name]
     erb(:play)
   end
+
+  get '/result' do
+    session[:player_1_name]
+    erb(:result)
+  end
 end
