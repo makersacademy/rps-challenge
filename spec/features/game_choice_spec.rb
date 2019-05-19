@@ -1,27 +1,27 @@
-feature 'choose game' do
+feature 'chooses game' do
 
   scenario 'checks that the players are written on the page' do
-    visit('/')
-    click_button 'Bot'
-    fill_in :marketer_1, with: 'Ollie'
-    click_button 'Choose Game'
+    select_bot
+    enter_player_click_choose_game
     expect(page).to have_content("Ollie vs. Bot")
   end
 
   scenario 'checks that the players are written on the page' do
-    visit('/')
-    click_button 'Marketing Colleague'
-    fill_in :marketer_1, with: 'Ollie'
-    fill_in :marketer_2, with: 'Dave'
-    click_button 'Choose Game'
+    select_live_opponent
+    enter_players_click_choose_game
     expect(page).to have_content("Ollie vs. Dave")
   end
 
   scenario 'checks that there are two game options' do
-    visit('/')
-    click_button 'Bot'
-    fill_in :marketer_1, with: 'Ollie'
-    click_button 'Choose Game'
+    select_bot
+    enter_player_click_choose_game
+    expect(page).to have_selector(:link_or_button, 'Rock Paper Scissors')
+    expect(page).to have_selector(:link_or_button, 'Rock Paper Scissors Spock Lizard')
+  end
+
+  scenario 'checks that there are two game options' do
+    select_live_opponent
+    enter_players_click_choose_game
     expect(page).to have_selector(:link_or_button, 'Rock Paper Scissors')
     expect(page).to have_selector(:link_or_button, 'Rock Paper Scissors Spock Lizard')
   end
