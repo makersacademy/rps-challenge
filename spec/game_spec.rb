@@ -14,11 +14,4 @@ describe Game do
       expect(game.computer).to eq(:computer)
     end
   end
-  # describe "#win?" do
-  #   it "returns true if player has won" do
-  #   srand(2456)
-  #   allow(Player.new("sam")).to receive(:choice) { rock }
-  #   expect(game.win?).to eq(true)
-  #   end
-  # end
 end

@@ -7,7 +7,6 @@ class Rps < Sinatra::Base
   enable :sessions
 
   get "/" do
-    "Welcome to Rock, Paper, Scissors!"
     erb :index
   end
 
