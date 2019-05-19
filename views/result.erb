@@ -1,6 +1,6 @@
-<h2><%= @game.player.name.capitalize %> chose <%= @game.player.choice %> </h2>
+<h2><%= @game.player.name.capitalize %> chose <%= @game.player.choice %>... </h2>
 <br>
-<h3> Computer chose <%= @game.computer.selection.to_s %> </h3>
+<h3> Computer chose <%= @game.computer.selection %>!! </h3>
 <br>
 <% if @game.player.choice == "rock" && @game.computer.selection == "scissors" %>
 <h1>You beat the computer!</h1>
