@@ -7,14 +7,16 @@ feature 'Result' do
   end
 
   scenario "page displays computers move" do
-    sign_in_and_play
-    allow(computer).to receive(:play) { "Scissors" }
+    sign_in
+    computers_move
+    play_rock
     expect(page).to have_content "Computer's move was Scissors"
   end
 
   scenario "page displays who wins" do
-    sign_in_and_play
-    allow(computer).to receive(:play) { "Scissors" }
+    sign_in
+    computers_move
+    play_rock
     expect(page).to have_content "You win! :)"
   end
 

@@ -9,13 +9,12 @@ class Game
 
   def result
     return "Draw" if @player_move == @computer_move
-      outcomes = [
+    outcomes = [
         ["Rock", "Scissors"],
         ["Paper", "Rock"],
         ["Scissors", "Paper"]]
-      outcomes.include?([@player_move, @computer_move])
-    return "You win! :)" if outcomes = true
-    return "Computer wins :(" if outcomes = false
-
-    end
+    outcomes.include?([@player_move, @computer_move]) ?
+    "You win! :)" : "Computer wins :("
   end
+
+end

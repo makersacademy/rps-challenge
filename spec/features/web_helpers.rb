@@ -10,3 +10,12 @@ def sign_in_and_play
   click_button "Play!"
   click_button "Rock"
 end
+
+def computers_move
+  Computer.new.play
+  srand(3)
+end
+
+def play_rock
+  click_button "Rock"
+end
