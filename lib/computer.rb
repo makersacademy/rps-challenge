@@ -3,23 +3,23 @@ class Computer
 
   def initialize
     @result = nil
-    
-    @pairs = { 'rock' => 'scissors',
-               'paper' => 'rock',
-               'scissors' => 'paper' }
+
+    @pairs = { :rock => :scissors,
+               :paper => :rock,
+               :scissors => :paper }
   end
 
   def pick
-    @result = ['rock', 'paper', 'scissors'].sample
+    @result = [:rock, :paper, :scissors].sample
   end
 
   def validate(player_pick)
     if @pairs[player_pick] == result
-      'player'
+      :player
     elsif @pairs[result] == player_pick
-      'computer'
+      :computer
     else
-      'draw'
+      :draw
     end
   end
 end

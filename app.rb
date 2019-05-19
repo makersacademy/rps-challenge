@@ -19,7 +19,7 @@ class Rps < Sinatra::Base
   end
 
   post '/pick' do
-    session[:pick] = params[:pick]
+    session[:pick] = params[:pick].to_sym
     redirect '/result'
   end
 

@@ -8,9 +8,9 @@
 
 <h2><%= @name %> picked <%= @pick %>.</h2>
 <h2>The computer picked <%= @computer_pick %>.</h2>
-<% if @winner == 'computer' %>
+<% if @winner == :computer %>
 <h2>The computer wins!</h2>
-<% elsif @winner == 'player' %>
+<% elsif @winner == :player %>
 <h2><%= @name %> wins!</h2>
 <% else %>
 <h2>It's a draw!</h2>

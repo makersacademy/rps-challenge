@@ -3,30 +3,72 @@ require 'computer'
 describe Computer do
   describe '#pick' do
     it 'should pick rock, paper or scissors' do
-      expect(['rock', 'paper', 'scissors'].include?(subject.pick)).to eq(true)
+      expect([:rock, :paper, :scissors].include?(subject.pick)).to eq(true)
     end
 
     it 'should store the result in a variable' do
       subject.pick
-      expect(['rock', 'paper', 'scissors'].include?(subject.result)).to eq(true)
+      expect([:rock, :paper, :scissors].include?(subject.result)).to eq(true)
     end
   end
 
-  describe '#validate' do
-    before(:each) do
-      allow(subject).to receive(:result) { 'rock' }
-    end
+  context 'computer picks rock' do
+    describe '#validate' do
+      before(:each) do
+        allow(subject).to receive(:result) { :rock }
+      end
 
-    it "should return 'player' if the player wins" do
-      expect(subject.validate('paper')).to eq('player')
-    end
+      it "should return 'player' if player picks paper" do
+        expect(subject.validate(:paper)).to eq(:player)
+      end
 
-    it "should return 'computer' if the computer wins" do
-      expect(subject.validate('scissors')).to eq('computer')
-    end
+      it "should return 'computer' if player picks scissors" do
+        expect(subject.validate(:scissors)).to eq(:computer)
+      end
 
-    it "should return 'draw' if no-one wins" do
-      expect(subject.validate('rock')).to eq('draw')
+      it "should return 'draw' if player picks rock" do
+        expect(subject.validate(:rock)).to eq(:draw)
+      end
+    end
+  end
+
+  context 'computer picks paper' do
+    describe '#validate' do
+      before(:each) do
+        allow(subject).to receive(:result) { :paper }
+      end
+
+      it "should return 'player' if player picks scissors" do
+        expect(subject.validate(:scissors)).to eq(:player)
+      end
+
+      it "should return 'computer' if player picks rock" do
+        expect(subject.validate(:rock)).to eq(:computer)
+      end
+
+      it "should return 'draw' if player picks paper" do
+        expect(subject.validate(:paper)).to eq(:draw)
+      end
+    end
+  end
+
+  context 'computer picks scissors' do
+    describe '#validate' do
+      before(:each) do
+        allow(subject).to receive(:result) { :scissors }
+      end
+
+      it "should return 'player' if player picks rock" do
+        expect(subject.validate(:rock)).to eq(:player)
+      end
+
+      it "should return 'computer' if player picks paper" do
+        expect(subject.validate(:paper)).to eq(:computer)
+      end
+
+      it "should return 'draw' if player picks scissors" do
+        expect(subject.validate(:scissors)).to eq(:draw)
+      end
     end
   end
 end
