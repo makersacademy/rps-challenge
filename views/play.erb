@@ -1,4 +1,7 @@
-<h2>What is your selection, <%= @name %>?</h2>
+<body style="background-color:powderblue;">
+<center>
+<br>
+<h2 style='font-family:helvetica,sans-serif;color:white'>What is your selection, <%= @name %>?</h2>
 
 <form action='/pick' method='post' name='pick'>
   <select name='pick'>
@@ -8,3 +11,5 @@
   </select>
   <input type='submit' value='Submit'/>
 </form>
+</center>
+</body>

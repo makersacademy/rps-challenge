@@ -1,3 +1,11 @@
+<body style="background-color:powderblue;">
+<center>
+<br>
+<style>
+  h2 { font-family:helvetica,sans-serif;color:white }
+  p { font-family:helvetica,sans-serif;color:white }
+</style>
+
 <h2><%= @name %> picked <%= @pick %>.</h2>
 <h2>The computer picked <%= @computer_pick %>.</h2>
 <% if @winner == 'computer' %>
@@ -7,4 +15,6 @@
 <% else %>
 <h2>It's a draw!</h2>
 <% end %>
-<h3><a href='/play'>Play again</a></h3>
+<p><a href='/play'>Play again</a></p>
+</center>
+</body>
