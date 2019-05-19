@@ -1,5 +1,3 @@
-require './lib/computer'
-
 feature "results" do
   scenario "it tells the user what they chose" do
     sign_in_and_play
