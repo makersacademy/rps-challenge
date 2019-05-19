@@ -3,6 +3,6 @@ feature "results" do
     sign_in_and_play
     srand(2200)
     click_button("rock")
-    expect(page).to have_content("Computer chose scissors! You win")
+    expect(page).to have_content "Sam chose rock"
   end
 end
