@@ -12,8 +12,8 @@ feature "entering player name" do
   end
 
   scenario "play stores names" do
-    sign_in_and_play
+    sign_in
     expect(page).to have_content 'Mew'
-    save_and_open_page
+    #save_and_open_page
   end
 end

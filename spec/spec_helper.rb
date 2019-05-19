@@ -5,6 +5,7 @@ require 'simplecov-console'
 require './app'
 require './spec/web_helpers'
 require './lib/player'
+require './lib/game'
 
 Capybara.app = Rps
 

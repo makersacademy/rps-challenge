@@ -61,6 +61,6 @@ chooses move
 outcome is decided
 - new instance of Game is created
 - Game instance random_choice method is called with user choice as argument
-- Game compares to decide winner
+- Game compares moves to decide winner
 - win or lose text is displayed on /result
 ---
