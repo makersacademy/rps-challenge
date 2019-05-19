@@ -21,6 +21,5 @@ feature 'play a round' do
   scenario 'the winner is decided' do
     sign_in_and_play
     expect(page).to have_content{'I win!' || 'You win!' || 'We draw!'}
-    save_and_open_page
   end
 end
