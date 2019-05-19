@@ -11,7 +11,7 @@ describe Player do
 
   describe '#choice' do
     it "returns players choice" do
-      expect(subject.choice(:rock)).to eq(:rock)
+      expect(subject.selection(:rock)).to eq(:rock)
     end
   end
 end

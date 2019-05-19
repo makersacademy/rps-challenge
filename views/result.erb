@@ -1,0 +1,9 @@
+<%= @game.player.name %> chose <%= @game.player.choice %>
+Computer chose <%= @game.computer.selection %>
+<% if @game.win? == true %>
+You beat the computer!
+<% elsif @game.draw? %>
+You drew with the computer!
+<% elsif @game.lose? %>
+You lose to the computer!
+<% end %>
