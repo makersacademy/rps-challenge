@@ -1,5 +1,6 @@
 class Game
-  attr_reader :player, :computer
+  attr_reader :player, :computer, :statistics
+  WINNER = { "Rock" => "Scissors", "Scissors" => "Paper", "Paper" => "Rock" }
 
   def self.create(player, computer)
     @game = Game.new(player, computer)
@@ -19,11 +20,9 @@ class Game
   end
 
   def winner
-    winner = { "Rock" => "Scissors", "Scissors" => "Paper", "Paper" => "Rock" }
-
     if player.choice == computer.choice
       nil
-    elsif computer.choice == winner[player.choice]
+    elsif computer.choice == WINNER[player.choice]
       player
     else
       computer

@@ -27,7 +27,6 @@ class RPS < Sinatra::Base
   post '/choice' do
     @game.player.choose(params[:choice])
     @game.computer.choose(@game.random_choice)
-    @game.winner
 
     redirect :result
   end
