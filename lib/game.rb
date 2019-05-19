@@ -1,14 +1,15 @@
 class Game
+  attr_reader :player_choice
+
   WEAPON = [:rock, :paper, :scissors]
   
   def player_choice(weapon)
     @player_choice = weapon
   end
 
-  def result
-    computer = Computer.new
-    computer_weapon = Weapon.new(computer.choice)
+  def result(opponent_weapon)
     choice = Weapon.new(@player_choice)
-    choice.beats?(computer_weapon) ? :win : :lose
+    return :draw if choice.type == $computer_weapon.type
+    choice.beats?(opponent_weapon) ? :win : :lose
   end
 end

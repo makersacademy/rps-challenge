@@ -1,4 +1,8 @@
-Your weapon choice: <%= @weapon %>
-Against: <%= @opponent_weapon %>
+Your weapon choice: <%= @player_choice %>
+<br>
+Against: <%= @computer_weapon.type.to_s %>
 <br>
 You have won!
+<form action='/play' method='get'>
+<input type='submit' value='Next Turn'>
+</form>

@@ -1,10 +1,9 @@
 class Weapon
+  attr_reader :type
 
   RULES = { rock: :scissors,
             paper: :rock,
             scissors: :paper }
-
-  attr_reader :type
 
   def initialize(type)
     @type = type.to_sym
