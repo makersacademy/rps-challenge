@@ -22,12 +22,11 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @game = Game.new
-    @player_choice = params[:player_choice]
-    @game.player_choice(params[:player_choice])
+    @game.player_choice = params[:player_choice]
 
     @computer = Computer.new
     @computer_weapon = Weapon.new(@computer.choice)
-    
+
     erb(@game.result(@computer_weapon))
   end
 end
