@@ -7,6 +7,7 @@ gem 'sinatra'
 
 group :test do
   gem 'capybara'
+  gem 'coveralls'
   gem 'rspec'
   gem 'rubocop', '0.56.0'
   gem 'simplecov', require: false

@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/hughbric/rps-challenge.svg?branch=master)](https://travis-ci.org/hughbric/rps-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/hughbric/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/hughbric/rps-challenge?branch=master)
+
+
 # Rock, Paper, Scissors
 
 How to use this repository

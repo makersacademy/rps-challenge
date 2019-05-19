@@ -3,9 +3,12 @@ ENV['RACK_ENV'] = 'test'
 require './lib/app.rb'
 
 require 'capybara/rspec'
+require 'coveralls'
 require 'simplecov'
 require 'simplecov-console'
 require 'sinatra'
+
+Coveralls.wear!
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -13,6 +16,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+
 Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|
