@@ -6,7 +6,7 @@ feature 'showing a welcome message' do
 end
 
 feature 'entering your name' do
-  scenario 'should take you to the game page' do
+  scenario 'should take you to the game page with a personalised message' do
     sign_in
     expect(page).to have_content("What is your selection, Laurence?")
   end
