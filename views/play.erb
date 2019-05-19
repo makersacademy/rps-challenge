@@ -1,8 +1,9 @@
-<h1> Welcome to Rock Paper Scissors, <%= @game.player.name %>! </h1>
+<h1> <centre>Welcome to Rock Paper Scissors, <%= @game.player.name %>! </centre></h1>
 <br>
 <br>
-<form action="/choice" method="post">
+<h2><entre>What will your selection be? Can you beat the computer?</centre>
+<centre><form action="/choice" method="post">
   <input type="submit" name="choice" value="rock">
     <input type="submit" name="choice" value="paper">
     <input type="submit" name="choice" value="scissors">
-</form>
+</form></centre>
