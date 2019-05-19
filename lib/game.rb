@@ -9,7 +9,7 @@ class Game
 
   def result(opponent_weapon)
     choice = Weapon.new(@player_choice)
-    return :draw if choice.type == $computer_weapon.type
+    return :draw if choice.type == opponent_weapon.type
     choice.beats?(opponent_weapon) ? :win : :lose
   end
 end

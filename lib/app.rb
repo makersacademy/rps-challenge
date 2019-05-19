@@ -26,8 +26,8 @@ class RockPaperScissors < Sinatra::Base
     @game.player_choice(params[:player_choice])
 
     @computer = Computer.new
-    $computer_weapon = Weapon.new(@computer.choice)
-    @computer_weapon = $computer_weapon
-    erb(@game.result($computer_weapon))
+    @computer_weapon = Weapon.new(@computer.choice)
+    
+    erb(@game.result(@computer_weapon))
   end
 end
