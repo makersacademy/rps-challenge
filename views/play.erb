@@ -1,6 +1,8 @@
 <h1> Welcome to Rock Paper Scissors, <%= @player.name %>! </h1>
 <br>
 <br>
-<button type="rock">Rock</button>
-<button type="paper">Paper</button>
-<button type="scissors">Scissors</button>
+<form action="/choice" method="post">
+<button type="choice">Rock</button>
+<button type="choice">Paper</button>
+<button type="choice">Scissors</button>
+</form>
