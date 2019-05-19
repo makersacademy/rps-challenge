@@ -27,11 +27,13 @@ class RPS < Sinatra::Base
   post '/choice' do
     @game.player.choose(params[:choice])
     @game.computer.choose(@game.random_choice)
+    @game.set_winner(@game.player, @game.computer)
 
     redirect :result
   end
 
   get '/result' do
+    @result = @game.winner == nil ? "It's a draw!" : "#{@game.winner.name} wins!"
     erb(:result)
   end
 end

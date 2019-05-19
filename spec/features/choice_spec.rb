@@ -51,4 +51,20 @@ feature 'Choice' do
 
     expect(page).to have_content("Computer's choice: Scissors")
   end
+
+  scenario 'player wins' do
+    sign_in_and_play
+    computer_choice("Scissors")
+    click_button 'Rock'
+
+    expect(page).to have_content("Alice wins!")
+  end
+
+  scenario 'computer wins' do
+    sign_in_and_play
+    computer_choice("Paper")
+    click_button 'Rock'
+
+    expect(page).to have_content("Computer wins!")
+  end
 end
