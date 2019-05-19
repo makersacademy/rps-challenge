@@ -155,9 +155,9 @@ I would like to register my name before playing an online game
 * The user will directed to a landing page.
 * The user will be shown an onscreen message with a greeting and asking for their name. Text to be displayed:
 ```
-Welcome to the Rock, Paper, Scissors App!!
+ROCK, PAPER, SCISSORS
 
-What is your name? [Text input box]
+Enter your name to play: [Text input box]
 ```
 * When the user clicks the `submit` button he will be redirected to a welcome page displaying the following:
 ```
