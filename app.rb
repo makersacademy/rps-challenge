@@ -24,10 +24,12 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
+    @name = session[:player]
     @pick = session[:pick]
     computer = Computer.new
     computer.pick
     @computer_pick = computer.result
+    @winner = computer.validate(@pick)
     erb(:result)
   end
 end
