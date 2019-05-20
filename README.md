@@ -3,6 +3,37 @@
 ## My Approach
 For this challenge I again used a TDD approach, firstly focusing on how the app would work and mapping out the MVC pattern of the app. I then would implement a feature test (and an rspec unit test when appropriate) for each step of the app and each user story.
 
+I first mapped out how many different classes were needed and the appropriate methods that would interact with each other to satisfy the user story. I then mapped out the request response cycle to see what different pages were needed, and what post/get requests.
+
+I then began writing my first capybara feature test, and implementing the correct code to make this pass. Soon after implementing the first feature:
+
+```
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+```
+
+I set up some unit tests for my player class, that tested that it would store the name given as a parameter when signing into the game. I then attempted to implement the next user story:
+
+```
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+```
+
+For this firstly I implemented capybara feature tests that made sure buttons for 'rock', 'paper' and 'scissors' were available on the play page that the user is redirected to after they have put in their name. I then implemented this feature. Soon after writing the code for these buttons I implemented unit tests for both a computer class (an opponent that picks rock, paper or scissors randomly) and a game class that calculates whether the opponent has won or not. This game class initializes with both a player and a computer.
+
+If I had more time I would have put the if/else statements for win, loss and draw that are contained in the results.erb file within the game class, however this kept breaking all the tests and I didn't have time to fix it. I also would have implemented a lot more CSS styling to make it look prettier.
+
+## Instructions for use
+
+- Fork this repo or clone it to your local Computer
+- Run bundle install
+- Run 'rackup' in your terminal
+- Visit localhost:9292 and follow the instructions on screen
+
+#### Objective
+The objective of the game is to beat the computer at a game of rock, paper, scissors. The computer will select one of these options randomly. At the end, you will be told whether you have won, lost or drawn.
 
 
 Instructions
