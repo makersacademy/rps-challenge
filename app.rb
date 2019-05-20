@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative './lib/game'
+require_relative './lib/player'
 
 class RPS < Sinatra::Base
 
@@ -26,8 +28,8 @@ class RPS < Sinatra::Base
   get '/result' do
     @player = $player
     @choice = session[:choice]
-    @game = Game.new
-    @result = Game.new.result(@choice,@game.choice)
+    @game = Game.new.choice
+    @result = Game.new.result(@choice, @game)
     erb :result
   end
 end
