@@ -20,4 +20,11 @@ feature "MakeMove" do
     click_button 'Submit'
     expect(page).to have_content 'Halsey played Scissors'
   end
+
+  scenario "Computer chooses" do
+    sign_in_and_play
+    choose("Rock")
+    click_button 'Submit'
+    expect(page).to have_content 'Computer played'
+  end
 end

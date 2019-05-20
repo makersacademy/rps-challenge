@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer_move.rb'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -25,6 +26,8 @@ class Rps < Sinatra::Base
   get '/make_move' do
     @player_name = session[:playername]
     @player_move = session[:selection]
+    session[:computer_move] = ComputerMove.new
+    @computer_move = session[:computer_move]
     erb :make_move
   end
 
