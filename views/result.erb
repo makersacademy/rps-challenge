@@ -4,6 +4,7 @@
   <body style="text-align:center">
     <br />
     <% if @game.win? %>
+    <% @game.marketer_1.win_a_point %>
     <h1> <%= @marketer_1 %> won! </h1>
     <% elsif @game.draw? %>
     <h1> You drew! </h1>

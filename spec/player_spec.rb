@@ -31,10 +31,5 @@ describe Player do
       ollie.weapon_choice('rock')
       expect(ollie.weapon).to eq('rock')
     end
-    #
-    # it "returns a random weapon if player is bot" do
-    #   allow(bot).to receive(:weapon_choice) { 'paper' }
-    #   expect(bot.weapon).to eq('paper')
-    # end
   end
 end

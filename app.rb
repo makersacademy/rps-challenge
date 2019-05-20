@@ -90,12 +90,10 @@ class RPS < Sinatra::Base
   get '/results2-rps' do
     @marketer_1 = @game.marketer_1.name
     @marketer_2 = @game.marketer_2.name
-    p @marketer_1_points = @game.marketer_1.points
-    p @marketer_2_points = @game.marketer_2.points
+    @marketer_1_points = @game.marketer_1.points
+    @marketer_2_points = @game.marketer_2.points
     @player_weapon = @game.marketer_1.weapon
     @bot_weapon = @game.marketer_2.weapon
-    @player_1_point = @game.marketer_1.win_a_point
-    @player_2_point = @game.marketer_2.win_a_point
     erb :result
   end
   # run! if app_file == $0
