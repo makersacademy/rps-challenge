@@ -9,7 +9,8 @@ My task was to provide a _Rock, Paper, Scissors_ game for them so they can play 
 
 This project is a Single Player Rock-Paper-Scissors game.
 
-![](images/home-page.png)
+![](images/home_page.png)
+![](images/game_page.png)
 
 ## Instructions for running the app :point_down:
 
