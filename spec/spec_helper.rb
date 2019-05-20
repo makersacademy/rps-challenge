@@ -7,6 +7,7 @@ require File.join(File.dirname(__FILE__), '../app', 'rps.rb')
 
 require 'capybara'
 require 'rspec'
+require './spec/features/web_helper.rb'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

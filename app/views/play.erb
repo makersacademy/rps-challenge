@@ -7,16 +7,38 @@
   background-color: #141414;
   }
 
-  h1 {color: white; text-align: center; margin-top: 10%; font-size: 70}
+  h2 {color: white; text-align: center}
+
+  h1 {color: white; text-align: center; margin-top: 5%; font-size: 70}
+
+  h3 {color: #25BDF4; text-align: center; margin-top: 5%; font-size: 50}
 
   form {text-align: center; height: 1em; color: white}
+
+  div {color: white; text-align: center; font-size: 30}
+  
+  p {text-align: center; color: white; font-size: 30}
 
 </style>
 
 <body>
-<h1><%= @player %> vs. A.I. </h1>
+<h1><%= @game.player.name %> vs. A.I. </h1>
+
+<p><%= @game.player.name %> chose: <b><%= @game.player.weapon.upcase %></b></p>
+
+<p>A.I. chose: <b><%= @game.ai.weapon.upcase %></b></p>
+
+<div class='weapon'>
+  <% if @game.result(@game.player.weapon, @game.ai.weapon) == 'draw' %>
+    <h3>It is a draw.</h1>
+  <% elsif @game.result(@game.player.weapon, @game.ai.weapon) == 'win' %>
+    <h3><%= @game.player.name %> wins!</h1>
+  <% elsif @game.result(@game.player.weapon, @game.ai.weapon) == 'lose' %>
+    <h3>A.I. wins...better luck next time!</h1>
+  <% end %>
+</div">
 <br>
-<form action="/play">
+<form action="/game" method='get'>
   <input type='submit' value='Play again'>
 </form>
 </body>

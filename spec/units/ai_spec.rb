@@ -1,11 +1,14 @@
 require 'ai'
 
 describe 'AI' do
+  let(:subject) { AI.new }
+  let(:weapons) { ['Rock', 'Paper', 'Scissors'] }
 
-  it 'can select a weapon' do
-    ai = AI.new
-    ai.select_weapon
-    expect(ai).not_to eq(nil)
+  describe '#weapon_choice' do
+    it 'can select a weapon' do
+      subject.weapon_choice
+      expect(weapons).to include subject.weapon 
+    end
   end
 
 end

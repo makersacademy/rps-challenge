@@ -1,8 +1,8 @@
 class AI
-  attr_accessor :weapon
-
-  def select_weapon
-    @weapon = [:rock, :paper, :scissors].sample
+  attr_reader :weapon
+  
+  def weapon_choice
+    @weapon = ['Rock', 'Paper', 'Scissors'].sample
   end
 
 end

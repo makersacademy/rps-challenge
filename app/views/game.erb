@@ -44,15 +44,15 @@ form {text-align: center; height: 1em; color: white}
 
 <body>
   <div class='glow'>
-    <span>Hi <%= @player %>!</span>
+    <span>Hi <%= @game.player.name %>!</span>
   </div>
   <br>
   <h2>Select an option and press 'Play'</h2>
   <br>
-  <form action='/play' method='get'>
-    <label for="option"><h3>What would you like to play with?</h3>
+  <form action='/weapon' method='post'>
+    <label for="weapon"><h3>What would you like to play with?</h3>
       <br>
-      <select style='font-size: 15; width: 100px'>
+      <select class='weapon' style='font-size: 15; width: 100px' id='weapon' name='weapon'>
         <option label="rock">Rock</option>
         <option label="paper">Paper</option>
         <option label="scissors">Scissors</option>
