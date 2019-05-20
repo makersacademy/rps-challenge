@@ -8,7 +8,7 @@ class Computer
     @moves = ["Rock", "Paper", "Scissors"]
   end
 
-  def random_play
+  def move
     @moves.sample
   end
 

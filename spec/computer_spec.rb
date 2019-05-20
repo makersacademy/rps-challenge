@@ -7,7 +7,7 @@ describe Computer do
   describe '#random_play' do
 
     it 'returns a random choice' do
-      expect(["Rock", "Paper", "Scissors"]).to include computer.random_play
+      expect(["Rock", "Paper", "Scissors"]).to include computer.move
     end
 
   end
