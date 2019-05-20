@@ -1,8 +1,8 @@
 require './models/player.rb'
 
 describe Player do
-  subject(:mittens) { Player.new('James') }
+  subject(:player_1) { Player.new('James') }
   it 'initializes with a name' do
-    expect(mittens.name).to eq 'James'
+    expect(player_1.name).to eq 'James'
   end
 end

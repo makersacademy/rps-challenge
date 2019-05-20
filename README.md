@@ -205,6 +205,9 @@ Feature:
 
 `game` unit tests:
 
+-[X] Instantiates and creates player_1.
+-[X] Instantiates and creates player_2.
+
 `computer` unit tests:
 
 
