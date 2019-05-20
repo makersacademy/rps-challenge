@@ -21,4 +21,8 @@ class Game
     "#{@player_2.name} wins"
   end
 
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+
 end
