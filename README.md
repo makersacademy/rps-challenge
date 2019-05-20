@@ -23,7 +23,7 @@ I would like to be able to play rock/paper/scissors
 
 For this firstly I implemented capybara feature tests that made sure buttons for 'rock', 'paper' and 'scissors' were available on the play page that the user is redirected to after they have put in their name. I then implemented this feature. Soon after writing the code for these buttons I implemented unit tests for both a computer class (an opponent that picks rock, paper or scissors randomly) and a game class that calculates whether the opponent has won or not. This game class initializes with both a player and a computer.
 
-If I had more time I would have put the if/else statements for win, loss and draw that are contained in the results.erb file within the game class, however this kept breaking all the tests and I didn't have time to fix it. I also would have implemented a lot more CSS styling to make it look prettier.
+If I had more time I would have put the if/else statements for win, loss and draw that are contained in the results.erb file within the game class, however this kept breaking all the tests and I didn't have time to fix it. I also would have implemented a lot more CSS styling to make it look better and more engaging for the user.
 
 ## Instructions for use
 
