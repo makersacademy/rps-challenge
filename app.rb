@@ -26,19 +26,16 @@ class Rps < Sinatra::Base
   end
 
   post '/move' do
-    session[:move] = params[:move]
-    redirect '/move'
+    session[:player_1].choose_move(params[:move])
+    redirect '/result'
   end
   
-  get '/move' do
+  get '/result' do
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
-    @player_1.move(session[:move])
     @game = Game.create(@player_1, @player_2)
     @outcome = @game.result(@player_1.move, @player_2.move)
     erb(:result)
   end
-
-  run! if app_file == $0
 
 end

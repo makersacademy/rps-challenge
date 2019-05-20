@@ -11,7 +11,7 @@ describe Player do
   describe '#move' do
 
     it 'returns the move' do
-      expect(player_1.move("Rock")).to eq "Rock"
+      expect(player_1.choose_move("Rock")).to eq "Rock"
     end
 
 end

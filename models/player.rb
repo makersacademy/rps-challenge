@@ -7,7 +7,7 @@ class Player
     @move = move
   end
 
-  def move(choice)
+  def choose_move(choice)
     @move = choice
   end
 
