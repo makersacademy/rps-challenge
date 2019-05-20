@@ -195,7 +195,7 @@ I would like to be able to play rock/paper/scissors
 
 Feature:
 
--[ ] The user is presented with the `Rock`, `Paper`, `Scissors` options once he has clicked on the button play.
+-[X] The user is presented with the `Rock`, `Paper`, `Scissors` options once he has clicked on the button play.
 -[ ] If the player wins he is redirected to a page with `The winner is [player]`
 -[ ] If the computer wins he is redirected to a page with `The winner is the computer`
 
@@ -208,6 +208,7 @@ Feature:
 
 -[X] Instantiates and creates player_1.
 -[X] Instantiates and creates player_2.
+-[X] Can decide who wins.
 
 `computer` unit tests:
 

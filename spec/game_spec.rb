@@ -15,8 +15,22 @@ describe Game do
       allow(player_1).to receive(:move).with("Scissors")
       game.set_move(player_1, "Scissors")
     end
-    
+  end
 
+  describe '#result' do
+
+    it 'decides the outcome of the game - player 1 wins' do
+      expect(game.result("Scissors", "Paper")).to eq "James wins"
+    end
+
+    it 'decides the outcome of the game - player 2 wins' do
+      expect(game.result("Rock", "Paper")).to eq "Clive the computer wins"
+    end
+
+    it 'decides the outcome of the game - draw' do
+      expect(game.result("Scissors", "Scissors")).to eq "It's a draw"
+    end
+    
   end
   
 end
