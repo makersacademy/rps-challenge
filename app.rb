@@ -21,9 +21,8 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  get '/players_choice' do
+  post '/result' do
     @game = $game
-    @game.player_choice($game.computer)
     erb :result
   end
 

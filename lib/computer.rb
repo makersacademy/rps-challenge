@@ -2,7 +2,7 @@ require_relative 'game'
 
 class Computer
 
-  def play
+  def weapon
     Game::WEAPONS.sample
   end
 

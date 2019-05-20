@@ -13,8 +13,8 @@ class Game
     @player = player
   end
 
-  def weapon(name)
-    name.weapon
+  def result
+    @player.weapon_choice
   end
 
 end

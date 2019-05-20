@@ -1,13 +1,15 @@
+require_relative 'game'
+
 class Player
 
-  attr_reader :name, :player_choice
+  attr_reader :name, :weapon
 
   def initialize(name)
     @name = name
   end
 
-  def player_choice
-
+  def weapon_choice(weapon)
+    @weapon = weapon
   end
 
 end
