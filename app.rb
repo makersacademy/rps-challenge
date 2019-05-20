@@ -15,7 +15,7 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @player_1 = Player.new(session[:player_1], nil)
+    @player_1 = Player.new(session[:player_1])
     erb(:play)
   end
 

@@ -202,6 +202,7 @@ Feature:
 `player` unit tests:
 
 -[X] Player to initialize with a name.
+-[X] Accepts #move and returns the correct move.
 
 `game` unit tests:
 
