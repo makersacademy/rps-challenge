@@ -28,3 +28,5 @@ Hints on functionality
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
+![Alt Text] (https://media.giphy.com/media/JrpOGBaJn5EF94djnR/giphy.gif)
