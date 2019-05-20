@@ -64,3 +64,7 @@ outcome is decided
 - Game compares moves to decide winner
 - win or lose text is displayed on /result
 ---
+
+What I'd change:
+
+Nice formatting, two player over network

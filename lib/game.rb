@@ -1,10 +1,11 @@
 class Game
 
-attr_reader :player_choice, :options, :game_choice
+attr_reader :player_name, :player_choice, :options, :game_choice
 
 OPTIONS = ["rock", "paper", "scissors"]
 
-  def initialize(player_choice)
+  def initialize(player_name = 'name', player_choice)
+    @player_name = player_name
     @player_choice = player_choice
     @options = OPTIONS
     @game_choice = random_move
@@ -37,4 +38,11 @@ OPTIONS = ["rock", "paper", "scissors"]
       end
     end
   end
+
+  def result_message
+    "#{@player_name} chose #{@player_choice}.
+    I chose #{@game_choice}.
+    #{self.judge}"
+  end
+
 end

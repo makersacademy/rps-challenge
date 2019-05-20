@@ -10,7 +10,7 @@ feature 'play a round' do
 
   scenario 'can see choice on results page' do
     sign_in_and_play
-    expect(page).to have_content('You chose rock')
+    expect(page).to have_content('chose rock')
   end
 
   scenario 'game chooses a random move' do

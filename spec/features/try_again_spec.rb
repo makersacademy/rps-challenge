@@ -12,7 +12,6 @@ feature 'try again' do
     expect(page).to have_content('Rock')
     expect(page).to have_content('Paper')
     expect(page).to have_content('Scissors')
-    save_and_open_page
-
+    #save_and_open_page
   end
 end
