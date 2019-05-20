@@ -148,7 +148,7 @@ I would like to register my name before playing an online game
 
 **OBJECTS**
 
-* Player
+* none
 
 **MESSAGES**
 
@@ -161,7 +161,7 @@ Enter your name to play: [Text input box]
 ```
 * When the user clicks the `submit` button he will be redirected to a welcome page displaying the following:
 ```
-Hello [name].
+Welcome [name]!
 
 Are you ready to play?
 ```
@@ -171,6 +171,42 @@ Are you ready to play?
 Feature:
 
 -[X] the player can submit their name and be redirected to a welcome page.
+
+## USER STORY 2
+
+```
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+```
+
+**OBJECTS**
+
+* player
+* computer
+* game
+
+**MESSAGES**
+
+* Player clicks `play` button on `play.erb` view and is presented with a new view with the options `Rock`, `Paper` and `scissors`.
+* The player choose one option by clicking on the relevant button and redirected to another page with the outcome.
+
+**TEST CASES**
+
+Feature:
+
+-[ ] The user is presented with the `Rock`, `Paper`, `Scissors` options once he has clicked on the button play.
+-[ ] If the player wins he is redirected to a page with `The winner is [player]`
+-[ ] If the computer wins he is redirected to a page with `The winner is the computer`
+
+`player` unit tests:
+
+`game` unit tests:
+
+`computer` unit tests:
+
+
+
 
 Instructions
 -------
