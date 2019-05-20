@@ -2,12 +2,14 @@ require './lib/player'
 require './lib/ai'
 
 class Game
-attr_reader :player, :ai
+  
+  attr_reader :player, :ai
 
-  RULES = { 'Rock' => 'Scissors',
+  RULES = { 
+          'Rock' => 'Scissors',
           'Paper' => 'Rock',
           'Scissors' => 'Paper' 
-        }
+          }
 
   def initialize(player, ai = AI.new)
     @player = player
@@ -20,7 +22,7 @@ attr_reader :player, :ai
     'draw'
   end
 
-   def self.create(player)
+  def self.create(player)
     @game = Game.new(player)
   end
 
@@ -37,8 +39,5 @@ attr_reader :player, :ai
   def player_loses(player_weapon, ai_weapon)
     RULES[ai_weapon] == player_weapon
   end
-
-
-
 
 end
