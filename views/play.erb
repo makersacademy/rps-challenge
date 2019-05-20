@@ -1,3 +1,7 @@
-Welcome <%= @player_1 %>!<br>
+Welcome <%= @player_1.name %>!<br>
 <br>
-Are you ready to play?
+<form action="/move">
+  <input name = "move" type="submit" value="Rock">
+  <input name = "move" type="submit" value="Paper">
+  <input name = "move" type="submit" value="Scissors">
+</form> 

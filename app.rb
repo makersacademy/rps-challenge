@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'models/player.rb'
 
 class Rps < Sinatra::Base
 
@@ -14,8 +15,14 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @player_1 = session[:player_1]
+    @name = session[:player_1]
+    @player_1 = Player.new(@name)
     erb(:play)
+  end
+
+  post '/move' do
+    session[:move] = params[:move]
+    redirect '/winner'
   end
 
   run! if app_file == $0
