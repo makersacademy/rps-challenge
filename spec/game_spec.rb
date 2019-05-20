@@ -2,7 +2,7 @@ require './models/game.rb'
 
 describe Game do
 
-  let(:player_1) { Player.new('James') }
+  let(:player_1) { Player.new('James', 'scissors') }
 
   subject(:game) { Game.new(player_1) }
   

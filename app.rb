@@ -15,14 +15,12 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @name = session[:player_1]
-    @player_1 = Player.new(@name)
+    @player_1 = Player.new(session[:player_1], nil)
     erb(:play)
   end
 
   post '/move' do
     session[:move] = params[:move]
-    redirect '/winner'
   end
 
   run! if app_file == $0
