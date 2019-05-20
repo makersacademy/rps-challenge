@@ -1,3 +1,5 @@
+require_relative 'game'
+
 class Player
 
   attr_reader :name
@@ -5,5 +7,9 @@ class Player
   def initialize(name)
     @name = name
   end
+
+  # def player_play
+  #
+  # end
 
 end
