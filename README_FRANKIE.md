@@ -1,9 +1,9 @@
-Challenge not complete: 
+## Challenge not complete: 
 
 - Need to work on result page so when player clicks rock, the computer plays a move also.
 - Will complete by Wednesday 22 May 2019. 
 
-To play the game: 
+## To play the game: 
 
 - Fork/clone this project
 - In the terminal, run bundle to install all the dev dependencies
@@ -12,7 +12,7 @@ To play the game:
 
 ![Alt Text](https://media.giphy.com/media/lMgbi9TFjIsx9hPhCk/giphy.gif)
 
-Approach: 
+## Approach: 
 
 I seperated the programme into three classes: 
 - Game
@@ -31,7 +31,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+## Hints on functionality
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
