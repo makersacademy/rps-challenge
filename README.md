@@ -11,6 +11,8 @@ This project is a Single Player Rock-Paper-Scissors game.
 
 ![](images/home_page.png)
 ![](images/game_page.png)
+![](images/play_page.png)
+
 
 ## Instructions for running the app :point_down:
 
