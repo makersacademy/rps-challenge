@@ -25,6 +25,8 @@ For this firstly I implemented capybara feature tests that made sure buttons for
 
 If I had more time I would have put the if/else statements for win, loss and draw that are contained in the results.erb file within the game class, however this kept breaking all the tests and I didn't have time to fix it. I also would have implemented a lot more CSS styling to make it look better and more engaging for the user.
 
+The game is fully functioning and all the tests pass, although it needs refactoring as said in the above paragraph!
+
 ## Instructions for use
 
 - Fork this repo or clone it to your local Computer
