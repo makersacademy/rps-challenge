@@ -1,7 +1,10 @@
 require 'player'
+require 'game'
+
 
 describe Player do
   subject(:francesca) { Player.new('Francesca') }
+
 
   describe '#name' do
     it 'returns name of player' do
@@ -9,9 +12,9 @@ describe Player do
     end
   end
 
-  describe '#weapon' do
+  describe '#weapon_choice' do
     it 'selects weapon' do
-      expect(subject.weapon).to eq('rock')
+      expect(subject.weapon_choice('rock')).to eq('rock')
     end
   end
   # selects weapon option

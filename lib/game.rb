@@ -17,4 +17,8 @@ class Game
     @player.weapon_choice
   end
 
+  def weapons
+    WEAPONS 
+  end
+
 end
