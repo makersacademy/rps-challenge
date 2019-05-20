@@ -201,6 +201,8 @@ Feature:
 
 `player` unit tests:
 
+-[X] Player to initialize with a name.
+
 `game` unit tests:
 
 `computer` unit tests:
