@@ -12,9 +12,9 @@ describe Player do
     end
   end
 
-  describe '#weapon_choice' do
+  describe '#make_move' do
     it 'selects weapon' do
-      expect(subject.weapon_choice('rock')).to eq('rock')
+      expect(subject.make_move('rock')).to eq('rock')
     end
   end
   # selects weapon option

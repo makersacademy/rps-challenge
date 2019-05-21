@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/computer'
+require './lib/result_calculator'
 
 class Rps < Sinatra::Base
 
@@ -10,9 +12,14 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    p params
+    # p params
+    # @player = Player.new(params[:player])
+    # @computer = Computer.new
+    # @game = Game.new(@player, @computer)
+    # redirect '/play'
     player = Player.new(params[:player])
-    $game = Game.new(player)
+    computer = Computer.new
+    $game = Game.new(player, computer)
     redirect '/play'
   end
 
@@ -23,6 +30,12 @@ class Rps < Sinatra::Base
 
   post '/result' do
     @game = $game
+  #  @game.player.player_move($game.computer)
+    @computer = Computer.new
+    @computer_move = @computer.move
+    @player_move = params[:player_move]
+    @final_result = ResultCalculator.new(@player_move, @computer_move)
+    @final_result.who_won
     erb :result
   end
 

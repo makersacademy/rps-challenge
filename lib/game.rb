@@ -1,5 +1,6 @@
 require_relative 'computer'
 require_relative 'player'
+require_relative 'result_calculator'
 
 class Game
 
@@ -7,18 +8,15 @@ class Game
 
   attr_reader :weapons, :computer, :player
 
-  def initialize(weapons = WEAPONS, computer = Computer.new, player)
-    @weapons = weapons
-    @computer = computer
+  def initialize(player, computer)
     @player = player
+    @computer = computer
+  #  @result_calculator = ResultCalculator.new
   end
 
-  def result
-    @player.weapon_choice
-  end
+  # def final_result(player_move, computer_move)
+  #   @result_calculator(player_move, computer_move).who_won
+  # end
 
-  def weapons
-    WEAPONS 
-  end
 
 end
