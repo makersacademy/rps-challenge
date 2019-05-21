@@ -46,6 +46,11 @@ While developing the app I used the Ruby web server interface, Rack. More info c
 
 ## GETTING STARTED
 
+* Fork/clone this project
+* In the terminal, run bundle to install all the dev dependencies
+* In the terminal, type `rackup` to start the server (served on localhost:9292 by default)
+* Load up http://localhost:9292/ in your browser of choice
+
 ## HOW TO USE THE APP
 
 ## IMAGES/SCREENSHOTS
@@ -196,8 +201,8 @@ I would like to be able to play rock/paper/scissors
 Feature:
 
 -[X] The user is presented with the `Rock`, `Paper`, `Scissors` options once he has clicked on the button play.
--[ ] If the player wins he is redirected to a page with `The winner is [player]`
--[ ] If the computer wins he is redirected to a page with `The winner is the computer`
+-[X] If the player wins he is redirected to a page with `The winner is [player]`
+-[X] If the computer wins he is redirected to a page with `The winner is the computer`
 
 `player` unit tests:
 
@@ -212,7 +217,7 @@ Feature:
 
 `computer` unit tests:
 
-
+-[X] Returns a random value.
 
 
 Instructions

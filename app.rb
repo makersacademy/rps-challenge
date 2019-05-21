@@ -27,15 +27,14 @@ class Rps < Sinatra::Base
 
   post '/move' do
     session[:player_1].choose_move(params[:move])
-    redirect '/result'
+    redirect '/move'
   end
   
-  get '/result' do
+  get '/move' do
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
     @game = Game.create(@player_1, @player_2)
     @outcome = @game.result(@player_1.move, @player_2.move)
     erb(:result)
   end
-
 end

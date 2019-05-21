@@ -9,6 +9,5 @@ feature 'results view' do
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_text("James wins!")
-
   end
 end

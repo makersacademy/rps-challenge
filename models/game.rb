@@ -9,10 +9,6 @@ class Game
     @player_2 = player_2
   end
 
-  def set_move(player, choice)
-    player.move(choice)
-  end
-
   def result(player_1, player_2)
     return "#{@player_1.name} wins" if player_1 == 'Scissors' && player_2 == 'Paper'
     return "#{@player_1.name} wins" if player_1 == 'Paper' && player_2 == 'Rock'

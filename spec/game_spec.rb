@@ -10,13 +10,6 @@ describe Game do
     expect(game.player_1).to eq(player_1)
   end
 
-  describe '#set_move' do
-    it "sets the player move" do
-      allow(player_1).to receive(:move).with("Scissors")
-      game.set_move(player_1, "Scissors")
-    end
-  end
-
   describe '#result' do
 
     it 'decides the outcome of the game - player 1 wins' do
