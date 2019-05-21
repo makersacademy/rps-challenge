@@ -1,5 +1,16 @@
-<h2>Game Over!</h2>
-
-  <h4><%= @player_1.name %> played <%= @player_1.move %></h4>
-  <h4><%= @player_2.name %> played <%= @player_2.move %></h4>
-  <h4><%= @outcome %>!</h4>         
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>RESULTS</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h4><%= @player_1.name %> played <%= @player_1.move %></h4>
+        <h4><%= @player_2.name %> played <%= @player_2.move %></h4>
+        <h4><%= @outcome %>!</h4>     
+      </div>
+    </div>  
+  </body> 
+</html>    
