@@ -1,7 +1,20 @@
-Welcome <%= @player_1.name %>!<br>
-<br>
-<form action="/move" method="post">
-  <input name="move" type="submit" value="Rock">
-  <input name="move" type="submit" value="Paper">
-  <input name="move" type="submit" value="Scissors">
-</form> 
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+  <body>
+    <div class="container">
+      Welcome <%= @player_1.name %>!<br>
+      <br>
+      <form action="/move" method="post">
+        <input name="move" type="submit" value="Rock">
+        <input name="move" type="submit" value="Paper">
+        <input name="move" type="submit" value="Scissors">
+      </form> 
+    </div>
+   </div>
+  
+  </body>
+  
+</html>
