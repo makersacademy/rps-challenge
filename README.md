@@ -52,7 +52,9 @@ As stated above, improvements are needed with methods that are too large. In add
 
 ## Using this Code
 Clone this repo to your local machine.
+
 Run bundle install to install necessary gems.
+
 Enter the following into the terminal to run and visit 'http://localhost:4567'.
 
 ```
