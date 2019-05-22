@@ -58,3 +58,8 @@ Enter the following into the terminal to run and visit 'http://localhost:4567'.
 ```
 ruby app.rb
 ```
+
+## Acknowledgments
+
+Dominic White |
+Makers Academy Challenge
