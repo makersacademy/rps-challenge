@@ -29,4 +29,4 @@ Hints on functionality
 - Scissors beats Paper
 - Paper beats Rock
 
-![] (https://media.giphy.com/media/JrpOGBaJn5EF94djnR/giphy.gif)
+![Alt Text](https://media.giphy.com/media/JrpOGBaJn5EF94djnR/giphy.gif)
