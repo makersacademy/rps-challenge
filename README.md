@@ -174,3 +174,15 @@ The obvious advantages of my approach is that it simpler and faster to use. Like
 
 - Use sessions
 - Either delete Player class or actually make use of it
+
+
+## Addendum
+
+- Added Travis CI so that I can add the badge showing that tests are passing
+- Now working with a Ruby environment on Windows so Gemfile.lock that results from running `bundle` records platform as `x64-mingw32` which is incompatible with Travis CI. To fix this, I added the following to `.travis.yml`:
+
+        before_install:
+        - bundle lock --add-platform ruby
+        - bundle lock --add-platform x86_64-linux
+
+- Heroku set to auto-deploy after CI passing, so this push should trigger the deployment
