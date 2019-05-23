@@ -4,7 +4,9 @@
 
 ([Link to original README.md](/original-README.md))
 
-## Contents:
+<details><summary><i>click for table of contents</i></summary>
+<br>
+  
 [Getting started](#getting-started)
 
 [Features](#features)
@@ -21,6 +23,8 @@
 - [It's not a bug, it's a feature!](#unintentional-feature-aka-its-not-a-bug-its-a-feature)
 
 [Useful Links](#links)
+
+</details>
 
 ## Getting started
 
