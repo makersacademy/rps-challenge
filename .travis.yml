@@ -1,3 +1,7 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=76fd913e903bda5db7a1bb4d0533ab9c811426939a33f999b6cb169029f1b384
+
 language: ruby
 
 rvm:
@@ -7,5 +11,14 @@ before_install:
   - bundle lock --add-platform ruby
   - bundle lock --add-platform x86_64-linux
 
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
   - bundle exec rspec spec
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  
