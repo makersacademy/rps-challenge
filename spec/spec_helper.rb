@@ -1,6 +1,4 @@
 require 'coveralls'
-Coveralls.wear!
-
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
@@ -8,6 +6,8 @@ require 'simplecov'
 require 'simplecov-console'
 
 require_relative 'features/web_helpers'
+
+Coveralls.wear!
 
 # add this to spec/spec_helper.rb
 

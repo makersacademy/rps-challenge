@@ -20,5 +20,5 @@ script:
   - bundle exec rspec spec
 
 after_script:
+  - bundle exec rake coveralls:push
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-  
