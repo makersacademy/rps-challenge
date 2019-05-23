@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/dafuloth/rps-challenge.svg?branch=master)](https://travis-ci.org/dafuloth/rps-challenge) [![Maintainability](https://api.codeclimate.com/v1/badges/4570d29633ad66d61ba4/maintainability)](https://codeclimate.com/github/dafuloth/rps-challenge/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/4570d29633ad66d61ba4/test_coverage)](https://codeclimate.com/github/dafuloth/rps-challenge/test_coverage)
+[![Build Status](https://travis-ci.org/dafuloth/rps-challenge.svg?branch=master)](https://travis-ci.org/dafuloth/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/dafuloth/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/dafuloth/rps-challenge?branch=master)
 
 # RPS Challenge
 
