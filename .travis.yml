@@ -1,4 +1,11 @@
+language: ruby
+
 rvm:
   - 2.5.0
+
+before_install:
+  - bundle lock --add-platform ruby
+  - bundle lock --add-platform x86_64-linux
+
 script:
   - bundle exec rspec spec
