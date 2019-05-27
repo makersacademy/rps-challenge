@@ -33,8 +33,8 @@ class Playing < Sinatra::Base
   end
 
   post "/askMovementOfTwoPlayers" do
-    session[:player_1_name]= params[:player_1_name]
-    session[:player_2_name]= params[:player_2_name]
+    session[:player_1_name] = params[:player_1_name]
+    session[:player_2_name] = params[:player_2_name]
     redirect "/ask_player_1_movement"
   end
 
