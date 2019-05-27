@@ -5,6 +5,8 @@ Useful links:
 - *[Exercise instructions](instructions.md)*
 - *[Contribution guidelines](CONTRIBUTING.md)*
 - *[Rubric](https://github.com/makersacademy/rps-challenge/blob/master/docs/review.md)*
+- *[Exemplar vid](https://www.youtube.com/watch?v=GoHKmartBYo)*
+- *[Exemplar repo](https://github.com/makersacademy/rps-exemplar)*
 
 ## Installation
 
@@ -26,7 +28,7 @@ I think I could have made my life easier by refactoring earlier, or even incorpo
 
 This is a question in my mind - how early should you do stuff like creating classes? Too early and it seems like you're breaking the TDD principle of writing the least code to pass your tests, but the later you leave it the more time-consuming it becomes.
 
-Maybe the principle of writing the least code applies to the GREEN->RED part of the cycle, but not so much for the refactoring part? In which case you can start on e.g. adding your classes as soon as they might become useful?
+Maybe the principle of writing the least code applies to the RED->GREEN part of the cycle, but not so much for the refactoring part? In which case you can start on e.g. adding your classes as soon as they might become useful?
 
 In future I want to try and be more conscious of the 'refactor' part of the red->green->refactor cycle as I'm going along, so I'm not left with a massive refactoring task at the end.
 
