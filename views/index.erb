@@ -16,12 +16,16 @@
  </style>
 </head>
 <body >
-<p> Please enter your name. </p>
-<div>
-<form action="/movement" method="post">
-  <input type = "text" name="name">
-  <input type ="submit" value = "Submit">
-</form>
+  <p> Please enter your name. </p>
+  <div>
+    <form action="/movement" method="post">
+      <input type = "text" name="name">
+      <input type ="submit" value = "Submit">
+    </form>
+    <p> If you want to play s two players, select the button below. </p>
+    <form action="/two_player_game_names" method="get">
+      <input type="submit" value="Two_player_game" >
+    </form>
 </div>
 </body>
 </html>

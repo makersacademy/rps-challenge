@@ -7,7 +7,7 @@ feature "The player can select the movement" do
     select "rock", from: "movement"
     srand(15)
     click_button "Submit"
-    expect(page).to have_content "soroush won the game"
+    expect(page).to have_content "soroush won the game."
   end
 
   scenario "When the player selects scissors and the computer selection
@@ -29,6 +29,6 @@ feature "The player can select the movement" do
     select "paper", from: "movement"
     srand(15)
     click_button "Submit"
-    expect(page).to have_content "computer won the game"
+    expect(page).to have_content "computer won the game."
   end
 end

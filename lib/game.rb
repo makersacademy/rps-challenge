@@ -9,7 +9,7 @@ class Game
 
   def winner_term
     return "The game is equal" if @game_movements.uniq.size == 1
-    return "#{@game_hash[the_winner_movement]} won the game"
+    return "#{@game_hash[the_winner_movement]} won the game."
   end
 
   private
