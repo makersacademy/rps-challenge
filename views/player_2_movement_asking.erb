@@ -3,18 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style>
+      body {
+        background-color: #FCCCAF;
+      }
+      p {
+        font-size: 30px;
+        text-align: center ;
+      }
+
+      div {
+        text-align : center;
+      }
+    </style>
   </head>
   <body>
+    <div>
     <h2> Please choose the player_2 movement? </h2>
-    <form action="/game_result" method="post">
-      <select name="player_2_movement">
-        <option value="scissors">scissors</option>
-        <option value="rock">rock</option>
-        <option value="paper">paper</option>
-      </select>
-      <br><br>
-      <input type="submit" value="Submit">
-    </form>
+      <form action="/game_result" method="post">
+        <select name="player_2_movement">
+          <option value="scissors">scissors</option>
+          <option value="rock">rock</option>
+          <option value="paper">paper</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
 
   </body>
 </html>
