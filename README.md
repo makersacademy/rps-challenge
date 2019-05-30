@@ -1,4 +1,4 @@
-### RPS Challenge
+## RPS Challenge
 
 Week: 5 - Intro to Web
 
@@ -13,12 +13,12 @@ Self-assessment: XYZ
 Link to challenge instructions: https://github.com/makersacademy/rps-challenge
 
 -----------------
-#### Approach to challenge
+### Approach to challenge
 
 -  
 
 -----------------
-#### User story requirements
+### User story requirements
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
@@ -43,15 +43,15 @@ Hints on functionality
 
 -----------------
 
-## Bonus level 1: Multiplayer
+### Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+### Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
-## Basic Rules
+### Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
