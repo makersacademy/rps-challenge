@@ -1,4 +1,5 @@
 ## RPS Challenge
+----------------------
 
 Week: 5 - Intro to Web
 
@@ -14,11 +15,13 @@ Link to challenge instructions: https://github.com/makersacademy/rps-challenge
 
 -----------------
 ### Approach to challenge
+----------------------
 
 -  
 
 -----------------
 ### User story requirements
+----------------------
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
