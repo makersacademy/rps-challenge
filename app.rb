@@ -6,10 +6,7 @@ class RPS < Sinatra::Application
   # before do
   #   @game = Game.instance
   # end
-  before do
-    @game = Game.instance
-  end
-
+  
   get ('/') do
     erb :home
   end
@@ -17,6 +14,10 @@ class RPS < Sinatra::Application
   post ('/players') do
     @game = Game.create(params[:name])
     redirect('/game')
+  end
+  
+  before do
+    @game = Game.instance
   end
   
   get ('/game') do
