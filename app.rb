@@ -23,4 +23,11 @@ class MyApp < Sinatra::Base
     @things = ["rock", "paper", "scissors"].sample
     erb :play
   end
+
+
+  # next steps
+  # a game class that initializes a new sample 
+  # each time
+
+  
 end
