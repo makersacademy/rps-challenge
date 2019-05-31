@@ -17,6 +17,6 @@ feature 'Homepage' do
   scenario 'clicking button takes you to game page' do
     visit('/')
     click_button('Start the game')
-    expect(page).to have_xpath("//game")
+    expect(page).to have_content("Choose your weapon")
   end
 end
