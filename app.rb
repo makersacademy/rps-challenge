@@ -3,14 +3,14 @@ require './lib/game.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
-
+  $game = Game.new
   get '/' do
     erb(:index)
   end
 
   post '/startup-game' do
 
-    $player = Player.new(params[:user_name])
+    $game.add_player(Player.new(params[:user_name]))
     redirect '/play'
   end
 
@@ -23,7 +23,7 @@ class RPS < Sinatra::Base
   end
 
   post '/move-handler' do
-    session[:move] = params[:move]
+    $game.move = params[:move]
     redirect '/result'
   end
 
