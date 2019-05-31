@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
-require './lib/game'
+require './lib/game_one_player'
 
 class RPS < Sinatra::Base
 
@@ -13,19 +13,19 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player_name = @@game.player.name
+    @player_name = @@game.player1.name
     erb :play
   end
 
   get '/result' do
     @win = @@game.win
-    @player_choice = @@game.players_choice
-    @computer_choice = @@game.computers_choice
+    @player1s_choice = @@game.player1s_choice
+    @player2s_choice = @@game.player2s_choice
     erb :result
   end
 
-  post '/save_names' do
-    @@game = Game.new(params[:player_name])
+  post '/save_name' do
+    @@game = GameOnePlayer.new(params[:player_name])
     redirect to('/play')
   end
 

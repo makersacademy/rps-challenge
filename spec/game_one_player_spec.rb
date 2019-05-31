@@ -1,13 +1,17 @@
-require 'game'
+require 'game_one_player'
 
-describe Game do
+describe GameOnePlayer do
 
-  let(:game)          { Game.new('Kelvin', player_class) }
+  let(:game)          { GameOnePlayer.new('Kelvin', player_class) }
   let(:player_class)  { double(:player_class, new: player) }
   let(:player)        { double(:player, name: 'Kelvin') }
 
   it 'can store a player and return it' do
-    expect(game.player).to eq(player)
+    expect(game.player1).to eq(player)
+  end
+
+  it 'can tell you if its a 1 player game or 2 player' do
+    expect(game.players).to eq(1)
   end
 
   it 'can randomly pick a weapon' do
@@ -84,17 +88,17 @@ describe Game do
 
   it 'can store the players choice' do
     game.save_choices('rock', 'paper')
-    expect(game.players_choice).to eq('rock')
+    expect(game.player1s_choice).to eq('rock')
   end
 
   it 'can store the computers choice' do
     game.save_choices('rock', 'paper')
-    expect(game.computers_choice).to eq('paper')
+    expect(game.player2s_choice).to eq('paper')
   end
 
   it 'can reset the play and computers choice' do
     game.game_reset
-    expect(game.computers_choice).to eq(nil)
+    expect(game.player2s_choice).to eq(nil)
   end
 
 end
