@@ -1,6 +1,10 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require './game'
+
+ENV['RACK_ENV'] = "test"
+Capybara.app = Game
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
