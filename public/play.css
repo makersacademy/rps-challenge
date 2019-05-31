@@ -1,0 +1,16 @@
+.rockImg, .paperImg, .scissorsImg {
+  padding-left: 80px;
+}
+
+.choicesContainer {
+  padding: 50px;
+}
+
+figure {
+  display: inline-block;
+}
+
+figcaption {
+  padding-left: 80px;
+  padding-top: 20px;
+}
