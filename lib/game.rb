@@ -10,6 +10,15 @@ class Game
   end
 
   def play
+    # w1 = @player1.weapon
+    # w2 = @player2.choose_weapon
+    # player_index = GAME_OPTIONS.index(w1)
+    # winning_choice = options[player_index - 1]
+    # @winner = 'no-one... It\'s a draw!' if w1 == w2
+    # if w2 == winning_choice
+    #   @winner = @player2
+    # else @winner = @player1
+    # end
     w1 = @player1.weapon
     w2 = @player2.choose_weapon
     if w1 == w2
