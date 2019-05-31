@@ -2,7 +2,7 @@ require 'sinatra/base'
 require './lib/game'
 
 class App < Sinatra::Base
-  $game = Game.new 
+  
   get '/' do
     erb(:welcome)
   end
