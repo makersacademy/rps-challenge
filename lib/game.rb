@@ -14,11 +14,6 @@ class ComputerGame
   end
 
   def outcome
-    puts "*******"
-    puts choice
-    puts "*****"
-    puts user_choice
-    puts "^^^^^"
 
     if choice == 'rock' && user_choice == 'scissor'
       then result
