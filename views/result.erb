@@ -3,7 +3,7 @@
 <h1>Rock, Paper, Scissors</h1>
 <link rel="stylesheet" type="text/css" href="/style.css"/>
 <div>
-<body>Computer played <%= @move2 %></div>
+<body><%= @game.player_name(2)%> played <%= @move2%></div>
 <br>
 <div>
 <%= @game.player_name(1) %> played <%= @move %>

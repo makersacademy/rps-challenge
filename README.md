@@ -1,3 +1,7 @@
+#My approach 
+
+* Initially started with computer generating random. 
+
 # RPS Challenge
 
 Instructions

@@ -32,10 +32,4 @@ feature 'Game' do
     click_button('Rock')
     expect(page).to have_content('Make your move')
   end 
-  
-  scenario 'displays what the computer played' do 
-    sign_in_and_play
-    click_button 'Rock'
-    expect(page).to have_content('Computer played')
-  end 
 end 
