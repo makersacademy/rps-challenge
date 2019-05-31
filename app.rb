@@ -2,13 +2,16 @@ require 'sinatra/base'
 require './lib/game'
 
 class App < Sinatra::Base
+
+  before do
+    @game = Game.instance
+  end
   
   get '/' do
     erb(:welcome)
   end
 
   post '/' do
-    @game = Game.instance
     @game.add_player(params[:name])
     @game.add_player(params[:name2])
     erb(:play) 
@@ -16,7 +19,7 @@ class App < Sinatra::Base
   
   post '/result' do 
     @move = params[:move]
-    @computer_move = $game.computer_move
+    @computer_move = @game.computer_move
     erb(:result)
   end 
 

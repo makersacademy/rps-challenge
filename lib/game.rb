@@ -4,6 +4,7 @@ class Game
   attr_reader :players
   def initialize
     @players = []
+    @turn = 1
   end 
 
   def self.instance
@@ -20,6 +21,14 @@ class Game
 
   def computer_move
     ["Rock", "Paper", "Scissors"].sample
+  end 
+
+  def swap_turns 
+    if @turn == 1
+      @turn += 1
+    else
+      @turn -= 1
+    end
   end 
 
   def check_winner(player_move, computer_move)

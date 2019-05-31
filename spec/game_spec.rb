@@ -43,4 +43,10 @@ describe Game do
     game.add_player("Lauren", player_class)
     expect(game.check_winner("Rock","Paper")).to eq("Computer wins!")
   end 
+
+  it 'swaps turns from player 1 to player 2' do 
+    game.add_player("Lauren")
+    game.add_player("Nino")
+    expect(game.swap_turns).to eq(2)
+  end 
 end 
