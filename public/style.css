@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: gold
+}
+
+div {
+  font-family: 'Permanent Marker', cursive;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: middle;
+  flex-direction: column
+}
+
+form {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  align-items: middle;
+}
+
+input {
+  font-size: 15px;
+}
