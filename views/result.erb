@@ -1,2 +1,3 @@
 <%=  $game.playername %> chose <%= $game.move %> <br>
-AI chose <%= $game.ai_move %>
+AI chose <%= $game.ai_move %> <br>
+<%= "It's a draw" if $game.who_wins? == 0 %>

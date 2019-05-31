@@ -19,4 +19,10 @@ feature 'RPS' do
     expect(page).to have_content('AI chose scissors') 
   end
 
+  scenario 'AI move is displayed' do
+    srand(4)
+    play_game('scissors')
+    expect(page).to have_content('draw') 
+  end
+
 end
