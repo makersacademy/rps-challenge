@@ -5,7 +5,7 @@ feature 'Results Page' do
     expect(page).to have_content('Aaaand the winner is')
   end
 
-  pending 'your choice of weapon is displayed' do
+  scenario 'your choice of weapon is displayed' do
     game_played
     expect(page).to have_content('Ed played rock')
   end
