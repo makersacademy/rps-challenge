@@ -7,6 +7,7 @@ describe Game do
   end
 
   it 'returns player username' do
+    subject.add_player(player1)
     subject.playername
     expect(player1).to have_received(:username)
   end
