@@ -1,5 +1,6 @@
 .rockImg, .paperImg, .scissorsImg {
-  padding-left: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .choicesContainer {
@@ -11,6 +12,7 @@ figure {
 }
 
 figcaption {
-  padding-left: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
   padding-top: 20px;
 }
