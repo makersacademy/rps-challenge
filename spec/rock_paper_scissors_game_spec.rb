@@ -1,7 +1,7 @@
 require 'rock_paper_scissors_game'
 
 describe RockPaperScissorsGame do
-  let(:player_double){double('player_double')}
+  let(:player_double) { double('player_double') }
   it 'can store an instance of itself' do
     RockPaperScissorsGame.create(player_double)
 

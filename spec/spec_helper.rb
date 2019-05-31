@@ -14,6 +14,6 @@ SimpleCov.start
 RSpec.configure do |config|
 end
 
-RACK_ENV='test'
+RACK_ENV = 'test'
 
 Capybara.app = RockPaperScissors
