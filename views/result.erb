@@ -5,9 +5,11 @@
   <link rel=stylesheet type=text/css href=/result.css />
 </head>
 <body>
-  <h1>Hi, <%= @name%>!</h1>
-    <img src="<%= @imgLink%>" class="playerChoiceImage" />
+  <h1>Hi <%= @name%>!</h1>
+    <img src="<%= @img_link%>" class="playerChoiceImage" />
     <h2>Your choice: <%= @choice%></h2>
-
+    <img src="<%= @cpu_img_link%>" class="cpuChoiceImage" />
     <h2>Computer's choice: <%= @cpu_choice%></h2>
 </body>
+
+<!-- Css animation for result in div with opacity background and clear result on top -->

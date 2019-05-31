@@ -29,7 +29,8 @@ class Rps < Sinatra::Base
     @name = $game.player.name
     @choice = $game.player.player_choice
     @cpu_choice = $game.cpu_choice
-    @imgLink = $game.imageSelector(@choice)
+    @img_link = $game.image_selector(@choice)
+    @cpu_img_link = $game.image_selector(@cpu_choice)
     erb(:result)
   end
 end

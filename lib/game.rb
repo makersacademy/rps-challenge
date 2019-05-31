@@ -6,10 +6,6 @@ class Game
     @player = player
   end
 
-  def player
-    @player
-  end
-
   def move(move)
     @player.choice(move)
   end
@@ -18,7 +14,7 @@ class Game
     @cpu_choice = @cpu_choices.sample
   end
 
-  def imageSelector(choice)
+  def image_selector(choice)
     case choice.downcase
       when 'rock'
         return '/images/rock.png'
