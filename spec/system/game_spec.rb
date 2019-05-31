@@ -1,8 +1,9 @@
 require './lib/game.rb'
 describe Game do
-
+  
   let(:player1) {spy(:player1, name: 'Anthony')}
   it 'returns player username' do
+    srand (7)
     subject.add_player(player1)
     subject.playername
     expect(player1).to have_received(:username)
@@ -19,7 +20,7 @@ describe Game do
 
   it 'returns AI won the game' do
     subject.add_player(player1)
-    subject.move = 'scissors'
+    subject.move = 'paper'
     expect(subject.who_wins?).to eq(Game::AI_WINS)
   end
 
@@ -29,9 +30,9 @@ describe Game do
     expect(subject.who_wins?).to eq(Game::PLAYER_1_WINS)
   end
 
-  it 'returns Player1 won the game' do
+  it 'returns DRAW' do
     subject.add_player(player1)
-    subject.move = 'scissors'
+    subject.move = 'paper'
     expect(subject.who_wins?).to eq(Game::DRAW)
   end
 end
