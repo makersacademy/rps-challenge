@@ -27,6 +27,7 @@ class Rps < Sinatra::Base
   get '/result' do
     @name = $game.player.name
     @choice = $game.player.player_choice
+    @imgLink = $game.imageSelector(@choice)
     erb(:result)
   end
 end

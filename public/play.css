@@ -3,8 +3,9 @@
   padding-right: 40px;
 }
 
-.choicesContainer {
-  padding: 50px;
+.choices {
+  padding-top: 20px;
+  display: inline-block !important;
 }
 
 figure {

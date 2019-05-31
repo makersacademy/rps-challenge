@@ -9,9 +9,8 @@
   <body>
     <h1>Hi, <%= @name%>!</h1>
     <h3>What's your play?</h3>
-    <p class="choicesContainer">
 
-      <form action="/check" method="post">
+      <form class="choices" action="/check" method="post">
         <input type="hidden" name="choice" value="Rock" />
         <figure>
           <input id="rock" type="image" class="rockImg" src=/images/rock.png />
@@ -19,7 +18,7 @@
         </figure>
       </form>
 
-      <form action="/check" method="post">
+      <form class="choices" action="/check" method="post">
         <input type="hidden" name="choice" value="Paper" />
         <figure>
           <input id="paper" type="image" class="paperImg" src=/images/paper.png />
@@ -27,14 +26,13 @@
         </figure>
       </form>
 
-      <form action="/check" method="post">
+      <form class="choices" action="/check" method="post">
         <input type="hidden" name="choice" value="Scissors" />
         <figure>
           <input id="scissors" type="image" class="scissorsImg" src=/images/scissors.png />
           <figcaption>Scissors</figcaption>
         </figure>
       </form>
-      
-    </p>
+
   </body>
 </html>

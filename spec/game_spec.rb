@@ -15,5 +15,21 @@ describe Game do
     it 'gets the player\'s choice' do
       expect(game.move('rock')).to eq(player.choice)
     end
+
+    it 'gets the correct image relating to the choice \'rock\'' do
+      expect(game.imageSelector('rock')).to eq('/images/rock.png')
+    end
+
+    it 'gets the correct image relating to the choice \'paper\'' do
+      expect(game.imageSelector('paper')).to eq('/images/paper.png')
+    end
+
+    it 'gets the correct image relating to the choice \'scissors\'' do
+      expect(game.imageSelector('scissors')).to eq('/images/scissors.png')
+    end
+
+    it 'gets the correct image relating to a choice other than the suggested three' do
+      expect(game.imageSelector('anythingElse')).to eq('/images/confused.png')
+    end
   end
 end
