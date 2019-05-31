@@ -9,7 +9,8 @@ class RPS < Sinatra::Base
   end
 
   post '/startup-game' do
-    session[:username] = params[:user_name]
+
+    $player = Player.new(params[:user_name])
     redirect '/play'
   end
 
