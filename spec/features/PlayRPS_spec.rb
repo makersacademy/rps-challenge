@@ -16,6 +16,6 @@ feature 'RPS' do
     find_button('Start the game').click
     choose('scissors')
     find_button('Submit move').click
-    expect(page).to have_content('You chose scissors') 
+    expect(page).to have_content('Anthony chose scissors') 
   end
 end
