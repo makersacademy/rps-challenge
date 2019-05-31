@@ -4,11 +4,16 @@ module GameLogic
     ['rock', 'paper', 'scissors', 'lizard', 'spock'].sample
   end
 
-  def determine_result(player1_choice, player2_choice = pick_weapon)
-    save_choices(player1_choice, player2_choice)
-    return @win = 'draw' if player1_choice == player2_choice
+  def determine_result
+    if players == 1
+      player2_choice = pick_weapon
+    else
+      player2_choice = @player2.choice
+    end
 
-    case player1_choice
+    return @win = 'draw' if @player1.choice == player2_choice
+
+    case @player1.choice
     when 'rock'
       return @win = true if player2_choice == 'scissors'
       return @win = true if player2_choice == 'lizard'
@@ -28,15 +33,10 @@ module GameLogic
     @win = false
   end
 
-  def save_choices(player1, player2)
-    @player1s_choice = player1
-    @player2s_choice = player2
-  end
-
   def game_reset
     @win = nil
-    @players_choice = nil
-    @computers_choice = nil
+    @player2.wipe_choice if players == 2
+    @player1.wipe_choice
   end
 
 end

@@ -6,10 +6,12 @@
 </head>
 <body>
   <h1>Welcome to Rock, Paper, Scissors</h1>
-  <p>Please enter your name:</p>
-  <form action="/save_name" method="post">
-    <input type="text" name="player_name">
-    <input type="submit" value="Play!">
+  <p>One player vs a computer or 2 players?:</p>
+  <form action="/one_player" method="get">
+    <input type="submit" value="One Player">
+  </form><br>
+  <form action="/two_player" method="get">
+    <input type="submit" value="Two Players">
   </form>
 </body>
 </html>
