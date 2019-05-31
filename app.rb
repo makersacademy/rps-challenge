@@ -14,12 +14,21 @@ class App < Sinatra::Base
   post '/' do
     @game.add_player(params[:name])
     @game.add_player(params[:name2])
-    erb(:play) 
+    redirect '/turn'
   end
+
+  get '/turn' do 
+    erb(:play) 
+  end 
+
+  post '/swap-turns' do
+    @move = params[:move]
+    @game.swap_turns
+    redirect '/turn'
+  end 
   
   post '/result' do 
-    @move = params[:move]
-    @computer_move = @game.computer_move
+    @move2 = params[:move2]
     erb(:result)
   end 
 

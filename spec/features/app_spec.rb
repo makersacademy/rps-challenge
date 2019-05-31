@@ -22,7 +22,8 @@ feature 'Game' do
   scenario 'says what you played' do 
     sign_in_and_play
     click_button 'Rock'
-    expect(page).to have_content('Rock')
+    click_button 'Rock'
+    expect(page).to have_content('played Rock')
   end
 
   scenario 'displays what the computer played' do 
@@ -31,4 +32,9 @@ feature 'Game' do
     expect(page).to have_content('Computer played')
   end 
 
+  scenario 'redirects to select game with player 2 name' do 
+    sign_in_and_play
+    click_button('Rock1')
+    expect(page).to have_content('Make your move')
+  end 
 end 

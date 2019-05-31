@@ -3,18 +3,34 @@
 <link rel="stylesheet" type="text/css" href="/style.css"/>
 
 <body>
+<% if @game.turn == 1%>
 <div id="move"> Make your move <%= @game.player_name(1) %>!</div>
 <br>
-<form action='/result' method='post'> 
+<form action='/swap-turns' method='post'> 
 <input type="hidden" name="move" value="Rock">
-<button for="move" type="submit">Rock</button>
+<button id="Rock1" for="move" type="submit">Rock</button>
 </form>
-<form action='/result' method='post'> 
+<form action='/swap-turns' method='post'> 
 <input type="hidden" name="move" value="Paper">
-<button for="move" type="submit">Paper</button>
+<button id="Paper1" for="move" type="submit">Paper</button>
+</form>
+<form action='/swap-turns' method='post'> 
+<input type="hidden" name="move" value="Scissors">
+<button id="Scissors1" for="move" type="submit">Scissors</button>
+<% else %>
+<div id="move"> Make your move <%= @game.player_name(2) %>!</div>
+<br>
+<form action='/result' method='post'> 
+<input type="hidden" name="move2" value="Rock">
+<button id="Rock2" for="move2" type="submit">Rock</button>
 </form>
 <form action='/result' method='post'> 
-<input type="hidden" name="move" value="Scissors">
-<button for="move" type="submit">Scissors</button>
+<input type="hidden" name="move2" value="Paper">
+<button id = "Paper2" for="move2" type="submit">Paper</button>
+</form>
+<form action='/result' method='post'> 
+<input type="hidden" name="move2" value="Scissors">
+<button id="Scissors2" for="move2" type="submit">Scissors</button>
+<% end %>
 </form>
 </body>

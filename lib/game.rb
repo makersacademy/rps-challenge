@@ -1,7 +1,7 @@
 require './lib/player'
 
 class Game 
-  attr_reader :players
+  attr_reader :players, :turn
   def initialize
     @players = []
     @turn = 1
@@ -24,23 +24,18 @@ class Game
   end 
 
   def swap_turns 
-    if @turn == 1
-      @turn += 1
-    else
-      @turn -= 1
-    end
+    @turn == 1 ? @turn = 2 : @turn = 1
   end 
 
   def check_winner(player_move, computer_move)
     winning_combo = {"Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper"}
-
     if player_move == computer_move 
       "It's a draw!"
     elsif 
       computer_move == winning_combo[player_move]
       "#{player_name(1)} wins!"
     else 
-      "Computer wins!"
+      "#{player_name(2)} wins!"
     end
   end
 end 

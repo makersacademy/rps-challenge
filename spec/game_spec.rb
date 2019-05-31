@@ -41,12 +41,14 @@ describe Game do
 
   it 'should know that paper beats rock' do
     game.add_player("Lauren", player_class)
-    expect(game.check_winner("Rock","Paper")).to eq("Computer wins!")
+    expect(game.check_winner("Rock","Paper")).to eq("Nino wins!")
   end 
 
-  it 'swaps turns from player 1 to player 2' do 
+  it 'swaps turns from player 1 to player 2' do
+    game = Game.new
     game.add_player("Lauren")
     game.add_player("Nino")
-    expect(game.swap_turns).to eq(2)
+    game.swap_turns
+    expect(game.turn).to eq(2)
   end 
 end 
