@@ -13,11 +13,11 @@ class Game
   def play
     w1 = @player1.weapon
     w2 = @player2.choose_weapon
-    player_index = GAME_OPTIONS.index(w1)
-    winning_choice = GAME_OPTIONS[player_index + 1]
     if w1 == w2
-      @winner = 'no-one... It\'s a draw!'
-    elsif w2 == winning_choice
+      @winner = 'no-one... it\'s a draw'
+    elsif (w1 == 'rock' && w2 == 'paper') ||
+          (w1 == 'paper' && w2 == 'scissors') ||
+          (w1 == 'scissors' && w2 == 'rock')
       @winner = @player2.name
     else @winner = @player1.name
     end

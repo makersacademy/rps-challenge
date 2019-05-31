@@ -11,4 +11,3 @@ describe Game do
     expect(game.player2.name).to eq('RPS-Bot')
   end
 end
-
