@@ -1,13 +1,14 @@
 # creates named players who can select random weapons
 class Player
-  attr_reader :name 
-  DEFAULT_NAME = 'RPS Bot'
+  attr_reader :name, :weapon
+  DEFAULT_NAME = 'RPS-Bot'
 
   def initialize(name = DEFAULT_NAME)
     @name = name
+    @weapon = nil
   end
 
-  def random_weapon
-    ['rock', 'paper', 'scissors'].sample
+  def choose_weapon(weapon = ['rock', 'paper', 'scissors'].sample)
+    @weapon = weapon
   end
 end

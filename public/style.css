@@ -1,0 +1,27 @@
+html, body {
+    margin: 20px;
+    padding: 20px;
+    border: 0px;
+    color: #fff;
+    background: #000;
+    align-content: center;
+  }
+
+  html, body, p, th, td, li, dd, dt {
+    font: 1em Arial, Helvetica, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  h1 { font-size: 4em; }
+  h2 { font-size: 2em; }
+  h3 { font-size: 1.5em ; }
+  p {font-size: 1.0em; }
+  button-style {
+    font-size: 2em;
+  }
+  a:link { color: #00f; }
+  a:visited { color: #009; }
+  a:hover { color: #06f; }
+  a:active { color: #0cf; }

@@ -9,7 +9,7 @@ class RPS < Sinatra::Application
   before do
     @game = Game.instance
   end
-  
+
   get ('/') do
     erb :home
   end
@@ -24,7 +24,8 @@ class RPS < Sinatra::Application
   end
   
   post ('/choice') do
-    @game.play(params[:weapon])
+    @game.player1.choose_weapon(params[:weapon])
+    @game.play
     redirect('/results')
   end
   

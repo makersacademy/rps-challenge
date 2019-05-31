@@ -9,9 +9,11 @@ class Game
     @winner = nil
   end
 
-  def play(w1, w2 = @player2.random_weapon)
+  def play
+    w1 = @player1.weapon
+    w2 = @player2.choose_weapon
     if w1 == w2
-      'It\'s a draw'
+      @winner = 'no-one... It\'s a draw'
     elsif (w1 == 'rock' && w2 == 'scissors') || 
           (w1 == 'scissors' && w2 == 'paper') ||
           (w1 == 'paper' && w2 == 'rock')
