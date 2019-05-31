@@ -13,4 +13,10 @@ describe Game do
     # random is Paper and users is Scissors so the user has won
     expect(game.score).to eq("You actually won!")
   end
+
+  it "can recognize a draw" do
+    game1 = Game.new("Paper")
+    srand(344)
+    expect(game1.score).to eq("It is a draw")
+  end
 end

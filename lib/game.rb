@@ -11,19 +11,25 @@ class Game
   end
 
   def score
-    winner = ""
     @option = random_item
-    # select is probably not the best choice here but what is?
-    @template.select { |configuration|
-      if configuration[:pair].include?(@users_choice) && configuration[:pair].include?(@option)
-        configuration[:win] == option ? winner = "You lost Ha Ha" : winner = "You actually won!"
-      end
-    }
-    winner 
+    @option == @users_choice ? winner = "It is a draw"  : winner = calculate
   end
 
   def random_item 
     choice = rand(3)
     @options[choice]
+  end
+
+  private
+
+  def calculate
+    winner = ""
+       # select is probably not the best choice here but what is?
+    @template.select { |configuration|
+      if configuration[:pair].include?(@users_choice) && configuration[:pair].include?(@option)
+        configuration[:win] == option ? winner = "You lost Ha Ha" : winner = "You actually won!"
+      end
+      }
+      winner 
   end
 end
