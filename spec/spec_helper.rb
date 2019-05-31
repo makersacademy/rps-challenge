@@ -4,7 +4,7 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
-require File.join(File.dirname(__FILE__),'..', './lib/app')
+require File.join(File.dirname(__FILE__),'..', './app')
 require 'capybara'
 Capybara.app = Game
 

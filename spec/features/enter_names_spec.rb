@@ -1,6 +1,6 @@
 require 'capybara/rspec'
 require 'spec_helper'
-require './lib/app'
+require './app'
 
 feature 'In Homepage,' do
 
@@ -13,7 +13,6 @@ feature 'In Homepage,' do
     visit('/')
     fill_in :player_name, with: 'Bob'
     click_on 'Submit'
-    save_and_open_page
     expect(page).to have_content 'Bob vs. The undefeated RPS Champion'
   end
 
