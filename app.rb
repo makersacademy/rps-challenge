@@ -11,7 +11,10 @@ post '/name' do
   erb(:welcome)
 end
 post '/game' do
- @user_choice = params[:rock, :paper, :scissor].sample
+p params
+ 
+ game.player(params[:user_input])
+ @userinput = game.user_choice
  
 end
 end
