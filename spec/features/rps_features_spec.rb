@@ -55,4 +55,33 @@ feature 'Testing rock paper scissors game page' do
 
     expect(page).to have_content 'Jamiroquai, the time has come to choose your weapon:'
   end
+
+  scenario 'can see option to pick rock' do
+    enter_name_submit
+
+    choose 'Rock'
+  end
+
+  scenario 'can see option to pick paper' do
+    enter_name_submit
+
+    choose 'Paper'
+  end
+
+  scenario 'can see option to pick scissors' do
+    enter_name_submit
+
+    choose 'scissors'
+  end
+end
+
+feature 'winner/loser pager' do
+  scenario 'click on rock takes you to winner page' do
+    enter_name_submit
+    choose 'rock'
+
+    click_button 'Confirm weapon!'
+
+    expect(page).to have_content('Jamiroquai played rock!')
+  end
 end

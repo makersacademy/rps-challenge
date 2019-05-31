@@ -6,6 +6,17 @@
 <body>
 <div>
   <h1>Rock Paper Scissors Showdown</h1>
-  <div><%= @game.player.name %>, the time has come to choose your weapon:</div>
+  <div style='padding:10px;'><%= @game.player.name %>, the time has come to choose your weapon:</div>
+  <span style='padding:10px;'>
+    <form method='post' action='/winner'>
+      <input type='radio' name='weapon' id='rock' value='rock'>
+      <label for='rock'>Rock</label>
+      <input type='radio' name='weapon' id='paper' value='paper'>
+      <label for='paper'>Paper</label>
+      <input type='radio' name='weapon' id='scissors' value='scissors'>
+      <label for='scissors'>Scissors</label>
+      <button>Confirm weapon!</button>
+    </form>
+  </span>
 </div>
 </body>
