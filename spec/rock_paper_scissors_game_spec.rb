@@ -34,4 +34,11 @@ describe RockPaperScissorsGame do
 
     expect(my_rpsg.player).to eq(player_double)
   end
+
+  it 'can play a game' do
+    my_rpsg = RockPaperScissorsGame.new(player_double)
+
+    my_rpsg.play
+    expect(my_rpsg.computer_weapon).to eq('rock')
+  end
 end

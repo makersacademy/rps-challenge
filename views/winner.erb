@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='/style.css' />
+</head>
+<body>
+<div>
+  <h1>Rock Paper Scissors Showdown</h1>
+  <span style='padding:10px;'>
+    <%= @game.player.name %> played <%= @game.player.weapon %>!
+  </span>
+
+  <span style='padding:10px;'>
+    Computer played <%= @game.computer_weapon %>!
+  </span>
+</div>
+</body>

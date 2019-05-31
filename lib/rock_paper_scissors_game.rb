@@ -1,5 +1,5 @@
 class RockPaperScissorsGame
-  attr_accessor :player
+  attr_accessor :player, :computer_weapon
 
   def initialize(player)
     @player = player
@@ -11,5 +11,9 @@ class RockPaperScissorsGame
 
   def self.create(player)
     @game = RockPaperScissorsGame.new(player)
+  end
+
+  def play
+    @computer_weapon = 'rock'
   end
 end

@@ -21,8 +21,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/winner' do
-    print params
-    'hello'
+    @game = RockPaperScissorsGame.instance
+    @game.player.pick_weapon(params['weapon'])
+    @game.play
+    erb :winner
   end
 
   run! if app_file == $0

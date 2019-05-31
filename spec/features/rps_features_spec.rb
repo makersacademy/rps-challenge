@@ -76,12 +76,30 @@ feature 'Testing rock paper scissors game page' do
 end
 
 feature 'winner/loser pager' do
-  scenario 'click on rock takes you to winner page' do
+  scenario 'click on paper takes you to winner page which shows player move' do
     enter_name_submit
     choose 'rock'
 
     click_button 'Confirm weapon!'
 
     expect(page).to have_content('Jamiroquai played rock!')
+  end
+
+  scenario 'click on paper takes you to winner page which shows player move' do
+    enter_name_submit
+    choose 'paper'
+
+    click_button 'Confirm weapon!'
+
+    expect(page).to have_content('Jamiroquai played paper!')
+  end
+
+  scenario 'click on paper takes you to winner page which shows computer move' do
+    enter_name_submit
+    choose 'paper'
+
+    click_button 'Confirm weapon!'
+
+    expect(page).to have_content('Computer played ')
   end
 end
