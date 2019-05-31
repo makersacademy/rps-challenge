@@ -1,1 +1,9 @@
 <h2>Hi <%=@name%>!</h2>
+
+<form action="/move" method="post">
+<select name="move" multiple>
+  <option value="rock">Rock</option>
+  <option value="paper">Paper</option>
+  <option value="scissors">Scissors</option>
+</select>
+<input type="submit">

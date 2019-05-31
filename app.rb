@@ -15,7 +15,12 @@ class RPS < Sinatra::Base
     get '/play' do
       @name = session[:name_message]
 	    erb :play
-	  end
+    end
+    
+    post '/move' do
+      session[:move_message] = params[:name]
+      redirect '/play'
+    end
 	  # start the server if ruby file executed directly
 	  run! if app_file == $0
 end
