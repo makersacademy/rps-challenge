@@ -1,2 +1,2 @@
-require './lib/app'
+require_relative 'app'
 run Game
