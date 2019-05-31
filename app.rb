@@ -21,12 +21,14 @@ class Rps < Sinatra::Base
 
   post '/check' do
     $game.move(params[:choice])
+    $game.cpu_move
     redirect('/result')
   end
 
   get '/result' do
     @name = $game.player.name
     @choice = $game.player.player_choice
+    @cpu_choice = $game.cpu_choice
     @imgLink = $game.imageSelector(@choice)
     erb(:result)
   end

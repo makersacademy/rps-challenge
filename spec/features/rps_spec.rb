@@ -30,6 +30,11 @@ feature 'Player selects choice' do
   end
 end
 
+feature '' do
+  scenario '' do
+  end
+end
+
 # Test template:
 
 # feature '' do

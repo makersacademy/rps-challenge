@@ -1,7 +1,8 @@
 class Game
-  attr_reader :player, :choice
+  attr_reader :player, :choice, :cpu_choice
 
   def initialize(player)
+    @cpu_choices = ['Rock', 'Paper', 'Scissors']
     @player = player
   end
 
@@ -11,6 +12,10 @@ class Game
 
   def move(move)
     @player.choice(move)
+  end
+
+  def cpu_move
+    @cpu_choice = @cpu_choices.sample
   end
 
   def imageSelector(choice)
