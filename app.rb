@@ -6,4 +6,9 @@ class RPS < Sinatra::Base
     erb :index
   end
 
+  post '/names' do
+    @player1 = params[:name1]
+    erb :play
+  end
+
 end
