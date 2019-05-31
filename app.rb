@@ -16,19 +16,13 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player1 = session[:player1]
-
-    # # game.player_1_choice = 'rock'
-    # # game.player_2_choice = 'rock'
-    # # @result = @game.outcome
-    # p @game.player_1_choice
     erb :play
   end
 
-  post '/result' do
+  post '/player_choice' do
     @game = Game.new
     @player_1_move = params[:choice]
-    
-    erb :result
+    erb :player_choice
   end
 
 end
