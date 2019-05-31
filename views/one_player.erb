@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>RPSLS</title>
-</head>
+<%= erb :header_partial %>
 <body>
-<h1>Welcome to Rock, Paper, Scissors</h1>
-<p>Please enter your name:</p>
-<form action="/one_player_name_save" method="post">
-  <input type="text" name="player_name">
-  <input type="submit" value="Play!">
-</form>
+  <div class="w3-center">
+    <h1>Welcome to Rock, Paper, Scissors</h1>
+    <p>Please enter your name:</p>
+    <form action="/one_player_name_save" method="post">
+      <ul class="w3-ul">
+        <li>
+          <input type="text" name="player_name">
+        </li>
+        <li>
+          <button class="w3-button w3-round-large w3-light-blue w3-medium" style="width:10%" value="play">Play!</button>
+        </li>
+      </ul>
+    </form>
+  </div>
 </body>
 </html>

@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>RPSLS</title>
-</head>
-<body>
-  <% if @win == 'draw' %>
-    <h1>It was a Draw!</h1>
-  <% elsif @win %>
-    <h1>Congratulation! You won!</h1>
-  <% else %>
-    <h1>You lost! Oh no!</h1>
-  <% end %>
-  <p>You picked <%= @player1s_choice %>, the computer picked <%= @player2s_choice %></p>
-  <br>
-  <h2>Play again?</h2>
-  <form action="/play_again" method="get">
-    <input type="submit" value="Play!">
-  </form>
-</body>
+  <%= erb :header_partial %>
+  <body>
+    <div class="w3-center">
+      <% if @win == 'draw' %>
+        <h1>It was a Draw!</h1>
+      <% elsif @win %>
+        <h1>Congratulation! You won!</h1>
+      <% else %>
+        <h1>You lost! Oh no!</h1>
+      <% end %>
+      <p>You picked <%= @player1s_choice %>, the computer picked <%= @player2s_choice %></p>
+      <br>
+      <h2>Play again?</h2>
+      <form action="/play_again" method="get">
+        <button class="w3-button w3-round-large w3-light-blue w3-medium" style="width:10%" value="play">Play!</button>
+      </form>
+    </div>
+  </body>
 </html>

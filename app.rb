@@ -52,7 +52,7 @@ class RPS < Sinatra::Base
   end
 
   post '/save_p1_pick' do
-    @@game.player1.store_choice(params[:choice].downcase)
+    @@game.player1.store_choice(params[:choice])
     redirect to('/p2_play')
   end
 
@@ -62,9 +62,10 @@ class RPS < Sinatra::Base
   end
 
   post '/choose_weapon' do
+    p params
     if @@game.players == 1
-      @@game.player1.store_choice(params[:choice].downcase!)
-    elsif @@game.player2.store_choice(params[:choice].downcase!)
+      @@game.player1.store_choice(params[:choice])
+    elsif @@game.player2.store_choice(params[:choice])
     end
     @@game.determine_result
     p @@game.players

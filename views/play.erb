@@ -1,31 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>RPSLS</title>
-</head>
-<body>
-  <h1>Welcome <%= @player_name %>!</h1>
-  <h2>Choose your weapon:</h2><br>
-  <form action="/choose_weapon" method="post">
-    <ul>
-      <li>
-        <input type="submit" name="choice" value="Rock">
-      </li>
-      <li>
-        <input type="submit" name="choice" value="Paper">
-      </li>
-      <li>
-        <input type="submit" name="choice" value="Scissors">
-      </li>
-      <li>
-        <input type="submit" name="choice" value="Lizard">
-      </li>
-      <li>
-        <input type="submit" name="choice" value="Spock">
-      </li>
-    </ul>
-  </form>
-
-</body>
+  <%= erb :header_partial %>
+  <body>
+    <div class="w3-center">
+      <h1>Welcome <%= @player_name %>!</h1>
+      <h2>Choose your weapon:</h2><br>
+      <form action="/choose_weapon" method="post">
+        <%= erb :choice_partial %>
+      </form>
+    </div>
+  </body>
 </html>

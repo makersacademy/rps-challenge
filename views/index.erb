@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>RPSLS</title>
-</head>
-<body>
-  <h1>Welcome to Rock, Paper, Scissors</h1>
-  <p>One player vs a computer or 2 players?:</p>
-  <form action="/one_player" method="get">
-    <input type="submit" value="One Player">
-  </form><br>
-  <form action="/two_player" method="get">
-    <input type="submit" value="Two Players">
-  </form>
-</body>
+  <%= erb :header_partial %>
+  <body>
+    <div class="w3-center">
+      <h1>Welcome to Rock, Paper, Scissors</h1>
+      <p>One player vs a computer or 2 players?</p>
+      <form action="/one_player" method="get">
+        <button class="w3-button w3-round-large w3-light-blue w3-medium" style="width:10%" name="choice" value="One Player">One Player</button>
+      </form><br>
+      <form action="/two_player" method="get">
+        <button class="w3-button w3-round-large w3-light-blue w3-medium" style="width:10%" name="choice" value="Two Player">Two Players</button>
+      </form>
+    </div>
+  </body>
 </html>
