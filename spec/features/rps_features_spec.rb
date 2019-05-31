@@ -94,12 +94,21 @@ feature 'winner/loser pager' do
     expect(page).to have_content('Jamiroquai played paper!')
   end
 
-  scenario 'click on paper takes you to winner page which shows computer move' do
+  scenario 'click on option takes you to winner page which shows computer move' do
+    enter_name_submit
+    choose 'scissors'
+
+    click_button 'Confirm weapon!'
+
+    expect(page).to have_content('Computer played ')
+  end
+
+  scenario 'click on option takes you to winner page which shows who won' do
     enter_name_submit
     choose 'paper'
 
     click_button 'Confirm weapon!'
 
-    expect(page).to have_content('Computer played ')
+    expect(page).to have_content('The winner is ')
   end
 end
