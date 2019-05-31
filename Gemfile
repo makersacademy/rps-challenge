@@ -14,4 +14,5 @@ group :test do
 end
 group :dev do
   gem 'solargraph'
+  gem 'pry-byebug'
 end
