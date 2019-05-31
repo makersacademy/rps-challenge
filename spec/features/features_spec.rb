@@ -63,6 +63,7 @@ feature '2 Player game' do
 
     scenario 'when submitting it on the website' do
       two_player_setup
+      click_button('Rock')
       expect(page).to have_content 'Tom'
     end
   end
@@ -90,7 +91,6 @@ feature '2 Player game' do
 
     scenario 'P1 should be able to pick spock' do
       two_player_setup
-      click_button('Play!')
       expect(page).to have_selector(:link_or_button,'Spock')
     end
 
@@ -127,12 +127,13 @@ feature '2 Player game' do
     scenario 'Can win / lose / draw' do
       two_player_setup
       click_button('Rock')
-      click_button('scissors')
-      expect(page).to have_content 'Kelvin, you have won'
+      click_button('Scissors')
+      expect(page).to have_content 'Kelvin, you won!'
     end
 
     scenario 'has a button to play again' do
       two_player_setup
+      click_button('Rock')
       click_button('Rock')
       expect(page).to have_selector(:link_or_button,'Play!')
     end
@@ -142,7 +143,7 @@ feature '2 Player game' do
       click_button('Rock')
       click_button('Rock')
       click_button('Play!')
-      expect(page).to have_content 'Welcome Kelvin and Tom'
+      expect(page).to have_content 'Choose your weapon'
     end
   end
 end

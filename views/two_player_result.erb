@@ -8,9 +8,9 @@
   <% if @win == 'draw' %>
     <h1>It was a Draw!</h1>
   <% elsif @win %>
-    <h1>Congratulation! <%= @player1_name %> You won!</h1>
+    <h1>Congratulation! <%= @player1_name %>, you won!</h1>
   <% else %>
-    <h1>Congratulation! <%= @player2_name %> You won!</h1>
+    <h1>Congratulation! <%= @player2_name %>, you won!</h1>
   <% end %>
   <p><%= @player1_name %> picked <%= @player1s_choice %>, <%= @player2_name %> <%= @player2s_choice %></p>
   <br>
