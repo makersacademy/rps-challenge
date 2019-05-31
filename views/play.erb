@@ -1,1 +1,25 @@
+<style>
+  img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+  }
+
+</style>
+
 <%= @player1 %>
+<br>
+<br>
+
+<form action='/result' method='post'>
+Take your pick:
+<br>
+<button name="choice" value="rock" ><img src='https://outdoordesignbylucas.files.wordpress.com/2011/01/1-10-11-charcter-rocks.jpg'></button>
+<button name="choice" value="paper" ><img src='https://thumbs.dreamstime.com/z/white-lined-paper-push-nail-clipping-path-1710822.jpg'> </button>
+<button name="choice" value="scissors" ><img src='https://www.hobbycraft.co.uk/supplyimages/573849_1000_1_800.jpg'></button>
+</form>
+<br><br>
+
+
+<!-- <%= @result %> -->
