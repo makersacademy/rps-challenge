@@ -13,6 +13,14 @@ class GameTwoPlayer
     @player2 = player_class.new(name2)
   end
 
+  def self.create(player_1, player_2)
+    @game = GameTwoPlayer.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
+  end
+
   def players
     PLAYERS
   end

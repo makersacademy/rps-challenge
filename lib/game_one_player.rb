@@ -12,6 +12,14 @@ class GameOnePlayer
     @player1 = player_class.new(name)
   end
 
+  def self.create(player_1)
+    @game = GameOnePlayer.new(player_1)
+  end
+
+  def self.instance
+    @game
+  end
+
   def players
     PLAYERS
   end

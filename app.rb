@@ -18,20 +18,35 @@ class RPS < Sinatra::Base
   end
 
   post '/one_player_name_save' do
-    @@game = GameOnePlayer.new(params[:player_name])
+    @game = GameOnePlayer.create(params[:player_name])
     redirect to('/play')
   end
 
   get '/play' do
-    @player_name = @@game.player1.name
+    @game = GameOnePlayer.instance
+    @player_name = @game.player1.name
     erb :play
   end
 
+  post '/choose_weapon' do
+    @game = GameOnePlayer.instance
+    @game.player1.store_choice(params[:choice])
+    @game.determine_result
+    redirect to('/result')
+  end
+
   get '/result' do
-    @win = @@game.win
-    @player1s_choice = @@game.player1.choice
-    @player2s_choice = @@game.pc_choice
+    @game = GameOnePlayer.instance
+    @win = @game.win
+    @player1s_choice = @game.player1.choice
+    @player2s_choice = @game.pc_choice
     erb :result
+  end
+
+  get '/play_again' do
+    @game = GameOnePlayer.instance
+    @game.game_reset
+    redirect to('/play')
   end
 
 
@@ -42,52 +57,49 @@ class RPS < Sinatra::Base
   end
 
   post '/two_player_name_save' do
-    @@game = GameTwoPlayer.new(params[:player1_name], params[:player2_name])
+    @game = GameTwoPlayer.create(params[:player1_name], params[:player2_name])
     redirect to('/p1_play')
   end
 
   get '/p1_play' do
-    @player_name = @@game.player1.name
+    @game = GameTwoPlayer.instance
+    @player_name = @game.player1.name
     erb :p1_pick
   end
 
   post '/save_p1_pick' do
-    @@game.player1.store_choice(params[:choice])
+    @game = GameTwoPlayer.instance
+    @game.player1.store_choice(params[:choice])
     redirect to('/p2_play')
   end
 
   get '/p2_play' do
-    @player_name = @@game.player2.name
+    @game = GameTwoPlayer.instance
+    @player_name = @game.player2.name
     erb :p2_pick
   end
 
-  post '/choose_weapon' do
-    p params
-    if @@game.players == 1
-      @@game.player1.store_choice(params[:choice])
-    elsif @@game.player2.store_choice(params[:choice])
-    end
-    @@game.determine_result
-    p @@game.players
-    redirect to('/result') if @@game.players == 1
-    redirect to('/2player_result') if @@game.players == 2
+  post '/choose_weapon_two_player' do
+    @game = GameTwoPlayer.instance
+    @game.player2.store_choice(params[:choice])
+    @game.determine_result
+    redirect to('/2player_result')
   end
 
   get '/2player_result' do
-    @win = @@game.win
-    @player1_name = @@game.player1.name
-    @player2_name = @@game.player2.name
-    @player1s_choice = @@game.player1.choice
-    @player2s_choice = @@game.player2.choice
+    @game = GameTwoPlayer.instance
+    @win = @game.win
+    @player1_name = @game.player1.name
+    @player2_name = @game.player2.name
+    @player1s_choice = @game.player1.choice
+    @player2s_choice = @game.player2.choice
     erb :two_player_result
   end
 
-
-  get '/play_again' do
-    @@game.game_reset
-    session[:p1_choice] = nil
-    redirect to('/play') if @@game.players == 1
-    redirect to('/p1_play') if @@game.players == 2
+  get '/two_player_play_again' do
+    @game = GameTwoPlayer.instance
+    @game.game_reset
+    redirect to('/p1_play')
   end
 
 end
