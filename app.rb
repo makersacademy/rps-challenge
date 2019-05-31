@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/base'
+require './lib/game'
 	
 class RPS < Sinatra::Base
 	enable :sessions
@@ -18,8 +19,15 @@ class RPS < Sinatra::Base
     end
     
     post '/move' do
-      session[:move_message] = params[:name]
-      redirect '/play'
+      game = Game.new(params[:movee])
+      message = game.score
+      session[:win_message] = message
+      redirect '/score'
+    end
+
+    get '/score' do
+      @message = session[:win_message]
+      erb :score
     end
 	  # start the server if ruby file executed directly
 	  run! if app_file == $0
