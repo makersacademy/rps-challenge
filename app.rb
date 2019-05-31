@@ -43,6 +43,10 @@ class App < Sinatra::Base
     erb(:result)
   end
 
+  post '/new-game' do 
+    session.clear
+    redirect '/'
+  end
   run! if app_file == $0
 
 end

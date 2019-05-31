@@ -32,4 +32,19 @@ feature 'Game' do
     click_button('Rock')
     expect(page).to have_content('Make your move')
   end 
+
+  it 'goes back to the beginning after full game' do 
+    sign_in_and_play
+    click_button('Rock')
+    click_button('Play again')
+    expect(page).to have_content("Enter player one's name")
+  end 
+
+  it 'goes back to the play screen when press rematch' do 
+    sign_in_and_play
+    click_button('Rock')
+    click_button('Rock')
+    click_button('Rematch')
+    expect(page).to have_content("Make your move")
+  end
 end 

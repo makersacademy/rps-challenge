@@ -12,4 +12,11 @@
 <div>
 <%= @game.check_winner(@move, @move2)%>
 </div>
+<span><form action='/new-game' method='post'> 
+<button type="submit">Play again</button>
+</form>
+<form action='/turn' method='get'> 
+<button type="submit">Rematch</button>
+</form>
+</span>
 </body>
