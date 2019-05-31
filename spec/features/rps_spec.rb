@@ -22,6 +22,14 @@ feature 'Player presented with choices' do
   end
 end
 
+feature 'Player selects choice' do
+  scenario 'can submit player\'s choice' do
+    sign_in_and_play
+    click_button(id='scissors')
+    expect(page).to have_content("Your choice: Scissors")
+  end
+end
+
 # Test template:
 
 # feature '' do
