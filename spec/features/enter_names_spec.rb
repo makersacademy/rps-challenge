@@ -2,19 +2,19 @@ require 'capybara/rspec'
 require 'spec_helper'
 require './lib/app'
 
-feature 'testing homepage' do
+feature 'In Homepage,' do
 
-  scenario 'Testing infrastructure works' do
+  scenario 'testing infrastructure works' do
     visit("/")
     # save_and_open_page
     expect(page).to have_content('Testing infrastructure working!')
   end
 
-  scenario 'users inputs name game' do
+  scenario 'user can input name at start of the game' do
     visit('/')
     fill_in :player_name, with: 'Bob'
     click_on 'Submit'
-    expect(page).to have_content 'Bob vs. The RPS Champion'
+    expect(page).to have_content 'Bob vs. The undefeated RPS Champion'
   end
 
 end
