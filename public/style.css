@@ -3,7 +3,7 @@ html, body {
     padding: 20px;
     border: 0px;
     color: #fff;
-    background: #000;
+    background: rgb(23, 97, 207);
     align-content: center;
   }
 
@@ -17,10 +17,68 @@ html, body {
   h1 { font-size: 4em; }
   h2 { font-size: 2em; }
   h3 { font-size: 1.5em ; }
-  p {font-size: 1.0em; }
-  button-style {
+  p {font-size: 2em; }
+  /* button-style {
     font-size: 2em;
-  }
+  } */
+button {
+    display: inline-block;
+    border: solid;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+    background: #ec2603d2;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 2rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: #97554c;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px #000000;
+}
+.centered {
+  position: absolute;
+  top: 22%;
+  left: 49%;
+  transform: translate(-47%, -50%);
+}
+
+ form {
+ width:100%;
+ height:450px;
+ margin:auto;
+ position:relative;
+ font-size: x-large;
+ }
+   input {
+ width:10%;
+ height: 25px;
+   }
   a:link { color: #00f; }
   a:visited { color: #009; }
   a:hover { color: #06f; }

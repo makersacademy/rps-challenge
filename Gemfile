@@ -6,6 +6,7 @@ gem 'rake'
 gem 'sinatra'
 
 group :test do
+  gem 'bootstrap', '~> 4.3', '>= 4.3.1'
   gem 'capybara'
   gem 'pry'
   gem 'rspec'

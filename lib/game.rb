@@ -1,7 +1,6 @@
 # does the RPS business
 class Game
   attr_reader :player1, :player2, :winner
-  GAME_OPTIONS = ['rock', 'paper', 'scissors']
 
   def initialize(player1, player_class = Player)
     @player_class = player_class
@@ -14,7 +13,7 @@ class Game
     w1 = @player1.weapon
     w2 = @player2.choose_weapon
     if w1 == w2
-      @winner = 'no-one... it\'s a draw'
+      @winner = 'No-one... it\'s a draw'
     elsif (w1 == 'rock' && w2 == 'paper') ||
           (w1 == 'paper' && w2 == 'scissors') ||
           (w1 == 'scissors' && w2 == 'rock')
