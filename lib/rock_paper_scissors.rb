@@ -1,3 +1,4 @@
+require './lib/random_selection.rb'
 
 class Game
   attr_reader :win_conditions
@@ -9,6 +10,7 @@ class Game
       'paper' => 'rock',
       'scissors' => 'paper'
     }
+    @player_2_choice = RandomSelection.new.computer_choice
   end
 
   def outcome
