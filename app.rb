@@ -20,6 +20,7 @@ class MyApp < Sinatra::Base
   get '/play' do
     @Player_1 = session[:Player_1]
     @Player_2 = session[:Player_2]
+    @things = ["rock", "paper", "scissors"].sample
     erb :play
   end
 end
