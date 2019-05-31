@@ -1,5 +1,7 @@
 # RPS Challenge
 
+🤘📰✂️
+
 Rock, Paper, Scissors game for The Maker's Academy Marketing Array. 
 
 User stories
@@ -14,6 +16,21 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+
+Special rules
+--------
+
+Bonus level 1: Multiplayer
+Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+
+Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+
+Basic Rules
+
+- Rock beats Scissors
+- Scissors beats Paper
+- Paper beats Rock
 
 
 Instructions
