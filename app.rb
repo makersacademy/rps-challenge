@@ -8,7 +8,9 @@ class App < Sinatra::Base
   end
 
   post '/' do
-    $game.add_player(params[:name])
+    @game = Game.instance
+    @game.add_player(params[:name])
+    @game.add_player(params[:name2])
     erb(:play) 
   end
   

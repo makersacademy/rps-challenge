@@ -2,7 +2,7 @@
 require 'game'
 
 describe Game do 
-  let(:game) { Game.create }
+  let(:game) { Game.instance}
   let(:player_class) { spy(:player_class, :new => player) }
   let(:player) { spy(:player, :name => "Lauren") } 
   
@@ -16,6 +16,14 @@ describe Game do
     game.player_name(1)
     expect(player).to have_received(:name)
   end
+  it 'can return player2 name' do 
+    game = Game.new 
+    game.add_player("Player1", player_class)
+    game.add_player("Player2", player_class)
+    game.player_name(2)
+    expect(player).to have_received(:name)
+  end
+
 
   it 'should recognise check_winner method' do 
     expect(game).to respond_to(:check_winner).with(2)

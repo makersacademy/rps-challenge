@@ -6,14 +6,9 @@ class Game
     @players = []
   end 
 
-  def self.create 
-    @game || Game.new
-  end
-
   def self.instance
-    @game
-
-  end 
+    @game ||= Game.new
+  end
 
   def add_player(name, player = Player)
     @players << player.new(name)

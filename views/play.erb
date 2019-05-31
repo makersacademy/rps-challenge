@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="/style.css"/>
 
 <body>
-<div id="move"> Make your move <%= $game.player_name(1) %>!</div>
+<div id="move"> Make your move <%= @game.player_name(1) %>!</div>
 <br>
 <form action='/result' method='post'> 
 <input type="hidden" name="move" value="Rock">
