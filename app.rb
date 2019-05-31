@@ -17,6 +17,15 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/result' do
+    erb(:result)
+  end
+
+  post '/move-handler' do
+    session[:move] = params[:move]
+    redirect '/result'
+  end
+
   run! if app_file == $0
 
 end

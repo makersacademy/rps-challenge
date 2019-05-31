@@ -1,1 +1,26 @@
-<%= session[:username] %>
+
+
+Player Name:<%= session[:username] %> <br>
+Chose your move: <br>
+<form action="/move-handler" method="post">
+  <div>
+  <input type="radio" id="rock" name="move" value="rock"
+         checked>
+  <label for="rock">Rock</label>
+  </div>
+
+  <div>
+    <input type="radio" id="paper" name="move" value="paper">
+    <label for="paper">Paper</label>
+  </div>
+
+  <div>
+    <input type="radio" id="scissors" name="move" value="scissors">
+    <label for="scissors">Scissors</label>
+  </div>
+
+  <div class="button">
+    <button type="submit">Submit move</button>
+  </div>
+</form>
+
