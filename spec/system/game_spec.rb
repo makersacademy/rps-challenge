@@ -13,4 +13,8 @@ describe Game do
     subject.move = 'rock'
     expect(subject.move).to eq('rock')
   end
+
+  it 'returns a random turn for the computer' do
+    expect( %w[rock paper scissors] ).to include(subject.ai_move)
+  end
 end

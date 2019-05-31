@@ -8,4 +8,8 @@ class Game
   def playername
     @player.username
   end
+
+  def ai_move
+    %w[rock paper scissors].sample
+  end
 end
