@@ -1,1 +1,16 @@
-<%= @name %>
+<html>
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<body> Make your move <%= $game.player_name(1) %>!
+<form action='/result' method='post'> 
+<input type="hidden" name="move" value="Rock">
+<button for="move" type="submit">Rock</button>
+</form>
+<form action='/result' method='post'> 
+<input type="hidden" name="move" value="Paper">
+<button for="move" type="submit">Paper</button>
+</form>
+<form action='/result' method='post'> 
+<input type="hidden" name="move" value="Scissors">
+<button for="move" type="submit">Scissors</button>
+</form>
+</body>

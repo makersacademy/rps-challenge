@@ -1,0 +1,9 @@
+
+<html> 
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<body>Computer played <%= @computer_move %>
+<br>
+<%= $game.player_name(1) %> played <%= @move %>
+<br>
+<%= $game.check_winner(@computer_move, @move)%>
+</body>

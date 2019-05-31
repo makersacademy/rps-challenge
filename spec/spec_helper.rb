@@ -2,6 +2,7 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require './app'
+require './spec/features/web_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -20,4 +21,4 @@ end
 
 RACK_ENV='test'
 
-Capybara.app = Game
+Capybara.app = App
