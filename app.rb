@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require './lib/game.rb'
 
-
 class RPS < Sinatra::Base
   enable :sessions
 

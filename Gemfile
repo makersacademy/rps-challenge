@@ -15,4 +15,3 @@ end
 group :dev do
   gem 'solargraph'
 end
-
