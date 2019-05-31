@@ -39,6 +39,6 @@ describe RockPaperScissorsGame do
     my_rpsg = RockPaperScissorsGame.new(player_double)
 
     my_rpsg.play
-    expect(my_rpsg.computer_weapon).to eq('rock')
+    expect(my_rpsg.computer_weapon).to_not be_nil
   end
 end

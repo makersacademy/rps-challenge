@@ -14,6 +14,12 @@ class RockPaperScissorsGame
   end
 
   def play
-    @computer_weapon = 'rock'
+    @computer_weapon = random_weapon
+  end
+
+  private
+
+  def random_weapon
+    ['rock','paper','scissors'].sample
   end
 end
