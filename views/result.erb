@@ -1,9 +1,15 @@
 
 <html> 
+<h1>Rock, Paper, Scissors</h1>
 <link rel="stylesheet" type="text/css" href="/style.css"/>
-<body>Computer played <%= @computer_move %>
+<div>
+<body>Computer played <%= @computer_move %></div>
 <br>
+<div>
 <%= $game.player_name(1) %> played <%= @move %>
+</div>
 <br>
-<%= $game.check_winner(@computer_move, @move)%>
+<div>
+<%= $game.check_winner(@move, @computer_move)%>
+</div>
 </body>

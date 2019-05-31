@@ -1,3 +1,47 @@
-body { 
-  backgound-color: #FFE8E9;
- }
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #FFE8E9; 
+  font-size:20px;
+  text-shadow: 2px 2px #C0C0C0;
+  text-align: center; 
+}
+
+h1 { 
+  font-family: 'Roboto', sans-serif;
+  font-size:50px;
+  text-align: center;
+  text-shadow: 1px 1px #C0C0C0;
+}
+
+button { 
+  background-color: #C0C0C0; 
+  color: white; 
+  text-align: center; 
+  padding-top: 15px;
+  padding: 15px 32px; 
+  font-size: 16px; 
+  border-radius: 12px;
+}
+
+button:hover {
+  
+  background-color: #A9A9A9; 
+}
+
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+label { 
+  font-size:20px;
+  text-align: center; 
+}
+
+#move {
+
+}

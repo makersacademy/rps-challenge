@@ -33,7 +33,7 @@ class Game
     if player_move == computer_move 
       "It's a draw!"
     elsif 
-      player_move == winning_combo[computer_move]
+      computer_move == winning_combo[player_move]
       "#{player_name(1)} wins!"
     else 
       "Computer wins!"
