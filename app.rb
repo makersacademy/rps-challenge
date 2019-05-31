@@ -22,7 +22,11 @@ class RPS < Sinatra::Base
   post '/player_choice' do
     @game = Game.new
     @player_1_move = params[:choice]
-    erb :player_choice
+    redirect '/result'
+  end
+
+  get '/result' do
+    reb :result
   end
 
 end
