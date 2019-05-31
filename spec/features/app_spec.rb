@@ -1,4 +1,5 @@
 feature 'Game' do 
+  
   scenario 'enter player name in form and see name displayed' do 
     sign_in_and_play
     expect(page).to have_content('Lauren') 
@@ -26,15 +27,15 @@ feature 'Game' do
     expect(page).to have_content('played Rock')
   end
 
+  scenario 'redirects to select game with player 2 name' do 
+    sign_in_and_play
+    click_button('Rock')
+    expect(page).to have_content('Make your move')
+  end 
+  
   scenario 'displays what the computer played' do 
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content('Computer played')
-  end 
-
-  scenario 'redirects to select game with player 2 name' do 
-    sign_in_and_play
-    click_button('Rock1')
-    expect(page).to have_content('Make your move')
   end 
 end 

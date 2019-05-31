@@ -8,6 +8,7 @@ class App < Sinatra::Base
   end
   
   get '/' do
+    @game = Game.instance
     erb(:welcome)
   end
 
@@ -28,6 +29,7 @@ class App < Sinatra::Base
   end 
   
   post '/result' do 
+    @game.swap_turns
     @move2 = params[:move2]
     erb(:result)
   end 
