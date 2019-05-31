@@ -1,5 +1,5 @@
 class Game
-  
+  attr_reader :option
   def initialize(users_choice)
     @options = ["Rock", "Paper", "Scissors"]
     @users_choice = users_choice
@@ -12,10 +12,10 @@ class Game
 
   def score
     winner = ""
-    option = random_item
+    @option = random_item
     # select is probably not the best choice here but what is?
     @template.select { |configuration|
-      if configuration[:pair].include?(@users_choice) && configuration[:pair].include?(option)
+      if configuration[:pair].include?(@users_choice) && configuration[:pair].include?(@option)
         configuration[:win] == option ? winner = "You lost Ha Ha" : winner = "You actually won!"
       end
     }

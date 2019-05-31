@@ -20,14 +20,19 @@ class RPS < Sinatra::Base
     
     post '/move' do
       game = Game.new(params[:movee])
-      message = game.score
-      session[:win_message] = message
+      session[:win_message] = game.score
+      session[:option] = game.option
       redirect '/score'
     end
 
     get '/score' do
       @message = session[:win_message]
+      @option = session[:option]
       erb :score
+    end
+
+    get '/end' do
+ "Thanks for playing"
     end
 	  # start the server if ruby file executed directly
 	  run! if app_file == $0

@@ -1,1 +1,11 @@
-<h1>That was fun! <%=@message%></h1>
+<h1>Your opponent played <%=@option%></h1><br>
+<h1><%=@message%></h1><br>
+<h1>That was fun! </h1>
+
+Do you wanna play again?
+<form action="/play" method="get">
+<input type="submit" name="Yes" value="Yes"> 
+</form>
+<form action="/end" method="get">
+<input type="submit" name="No" value="No"> 
+</form>
