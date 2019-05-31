@@ -16,6 +16,7 @@ class Game < Sinatra::Base
   get '/play' do
     @player_name = session[:player_name]
     @player_weapon = params[:player_weapon]
+    # params[:player_weapon] HOW DO I PRINT OFF THE PLAYER'S SELECTED WEAPON/BUTTON
     erb(:play)
   end
 

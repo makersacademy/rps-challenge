@@ -4,13 +4,22 @@
 
   <body>
     <h2> <%= @player_name %> vs. The Champion </h2> 
-    <h3> Hi <%= @player_name %>, choose rock, paper or scissors! </h2> 
+    <h3> Hi <%= @player_name %>, choose rock, paper or scissors? </h2> 
 
-    <a href> Rock </a>
-    <br>
-    <a href> Paper </a>
-    <br>
-    <a href> Scissors </a>
-    
+    <form action='/result' method='post'>  
+      <button type="submit"> Rock </button>
+      <button type="submit"> Paper </button>
+      <button type="submit"> Scissors </button>
+    </form>
+
   </body>
 </html>
+
+
+
+ <!--#testing how to send the button data to another page as a post method and store as a position 
+# <form action='/result' method='post'>  
+# <button type="submit" formaction="URL..."> Rock </button>
+# <button type="submit" formaction="URL..."> Paper </button>
+# <button type="submit" formaction="URL..."> Scissors </button>
+# </form>-->
