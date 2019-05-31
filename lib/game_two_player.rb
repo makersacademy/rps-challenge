@@ -6,7 +6,7 @@ class GameTwoPlayer
 
   PLAYERS = 2
 
-  attr_reader :player1, :player2, :win, :player1s_choice, :player2s_choice
+  attr_reader :player1, :player2, :win
 
   def initialize(name1, name2, player_class = Player)
     @player1 = player_class.new(name1)

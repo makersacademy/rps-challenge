@@ -7,6 +7,7 @@ module GameLogic
   def determine_result
     if players == 1
       player2_choice = pick_weapon
+      @pc_choice = player2_choice
     else
       player2_choice = @player2.choice
     end
