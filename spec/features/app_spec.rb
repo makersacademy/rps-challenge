@@ -36,7 +36,7 @@ feature 'Game' do
   it 'goes back to the beginning after full game' do 
     sign_in_and_play
     click_button('Rock')
-    click_button('Play again')
+    click_button('New game')
     expect(page).to have_content("Enter player one's name")
   end 
 

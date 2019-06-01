@@ -2,21 +2,24 @@
 <html> 
 <h1>Rock, Paper, Scissors</h1>
 <link rel="stylesheet" type="text/css" href="/style.css"/>
-<div>
-<body><%= @game.player_name(2)%> played <%= @move2%></div>
+<body>
+<div class="display-inline">
+<%= @game.player_name(2)%> played <%= @move2%>
 <br>
-<div>
 <%= @game.player_name(1) %> played <%= @move %>
 </div>
 <br>
 <div>
 <%= @game.check_winner(@move, @move2)%>
+<br>
 </div>
-<span><form action='/new-game' method='post'> 
-<button type="submit">Play again</button>
+<div class="button-container">
+<br>
+<form action='/new-game' method='post'> 
+<div><button type="submit">New game</button></div>
 </form>
 <form action='/turn' method='get'> 
-<button type="submit">Rematch</button>
+<div><button type="submit">Rematch</button></div>
 </form>
-</span>
+</div>
 </body>

@@ -6,12 +6,14 @@ body {
   font-size:20px;
   text-shadow: 2px 2px #C0C0C0;
   text-align: center; 
+  vertical-align: middle;
 }
 
 h1 { 
   font-family: 'Roboto', sans-serif;
   font-size:50px;
   text-align: center;
+  vertical-align: middle;
   text-shadow: 1px 1px #C0C0C0;
 }
 
@@ -30,11 +32,24 @@ button:hover {
   background-color: #A9A9A9; 
 }
 
+.button-container form,
+.button-container form div {
+  display: inline;
+}
+
+.button-container button {
+  display: inline;
+}
+
 input[type=text] {
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+}
+
+.display-inline {
+  display: inline;
 }
 
 label { 
