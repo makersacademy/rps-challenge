@@ -10,8 +10,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    player = Player.new(params['enter-name'])
-    @game = RockPaperScissorsGame.create(player)
+    player_one = Player.new(params['enter-name-one'])
+    player_two = Player.new(params['enter-name-two'])
+    @game = RockPaperScissorsGame.create(player_one, player_two)
     redirect '/rps'
   end
 
@@ -22,8 +23,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/winner' do
     @game = RockPaperScissorsGame.instance
-    @game.player.pick_weapon(params['weapon'])
-    @game.play
+    @game.player_one.pick_weapon(params['weapon_one'])
+    @game.player_two.pick_weapon(params['weapon_two'])
     erb :winner
   end
 

@@ -1,51 +1,39 @@
 class RockPaperScissorsGame
-  attr_accessor :player, :computer_weapon
+  attr_reader :player_one, :player_two
 
-  def initialize(player)
-    @player = player
+  def initialize(player_one, player_two)
+    @player_one, @player_two = player_one , player_two
   end
 
   def self.instance
     @game
   end
 
-  def self.create(player)
-    @game = RockPaperScissorsGame.new(player)
-  end
-
-  def play
-    @computer_weapon = random_weapon
+  def self.create(player_one, player_two)
+    @game = RockPaperScissorsGame.new(player_one, player_two)
   end
 
   def winner_message
-    if player.weapon == computer_weapon
+    if player_one.weapon == player_two.weapon
       "It's a draw!"
-    elsif player_has_won?
-      "The winner is #{player.name}"
+    elsif player_one_has_won?
+      "The winner is #{player_one.name}!"
     else
-      "The winner is the computer."
+      "The winner is #{player_two.name}!"
     end
   end
 
   private
 
-  def player_has_won?
-    if player.weapon == 'rock' && computer_weapon == 'scissors'
-      return true
-    elsif player.weapon == 'rock' && computer_weapon == 'paper'
-      return false
-    elsif player.weapon == 'paper' && computer_weapon == 'scissors'
-      return false
-    elsif player.weapon == 'paper' && computer_weapon == 'rock'
-      return true
-    elsif player.weapon == 'scissors' && computer_weapon == 'rock'
-      return false
-    elsif player.weapon == 'scissors' && computer_weapon == 'paper'
-      return true
-    end
-  end
+  def player_one_has_won?
+    play_dictionary = {
+      'rock' => ['scissors', 'lizard'],
+      'paper' => ['rock', 'spock'],
+      'scissors' => ['paper', 'lizard'],
+      'lizard' => ['spock', 'paper'],
+      'spock' => ['rock', 'scissors']
+      }
 
-  def random_weapon
-    ['rock','paper','scissors'].sample
+    play_dictionary[player_one.weapon].include?(player_two.weapon)
   end
 end
