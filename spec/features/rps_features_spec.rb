@@ -103,6 +103,20 @@ feature 'Testing rock paper scissors game page' do
     end
   end
 
+  scenario 'can see second option to pick lizard' do
+    enter_name_submit
+    within 'div .first' do
+      choose 'Lizard'
+    end
+  end
+
+  scenario 'can see second option to pick lizard' do
+    enter_name_submit
+    within 'div .first' do
+      choose 'Spock'
+    end
+  end
+
   scenario 'can see second option to pick rock' do
     enter_name_submit
 
@@ -122,6 +136,20 @@ feature 'Testing rock paper scissors game page' do
     enter_name_submit
     within 'div .second' do
       choose 'Scissors'
+    end
+  end
+
+  scenario 'can see option to pick lizard' do
+    enter_name_submit
+    within 'div .second' do
+      choose 'Lizard'
+    end
+  end
+
+  scenario 'can see option to pick spock' do
+    enter_name_submit
+    within 'div .second' do
+      choose 'Spock'
     end
   end
 end
@@ -161,5 +189,53 @@ feature 'winner/loser pager' do
     click_button 'Confirm weapon!'
 
     expect(page).to have_content('Sting played paper!')
+  end
+
+  scenario 'shows a draw' do
+    enter_name_submit
+
+    within 'div .second' do
+      choose 'paper'
+    end
+
+    within 'div .first' do
+      choose 'paper'
+    end
+
+    click_button 'Confirm weapon!'
+
+    expect(page).to have_content("It's a draw!")
+  end
+
+  scenario 'shows a winner player 1' do
+    enter_name_submit
+
+    within 'div .second' do
+      choose 'rock'
+    end
+
+    within 'div .first' do
+      choose 'paper'
+    end
+
+    click_button 'Confirm weapon!'
+
+    expect(page).to have_content("The winner is Jamiroquai!")
+  end
+
+  scenario 'shows a winner player 2' do
+    enter_name_submit
+
+    within 'div .second' do
+      choose 'rock'
+    end
+
+    within 'div .first' do
+      choose 'scissors'
+    end
+
+    click_button 'Confirm weapon!'
+
+    expect(page).to have_content("The winner is Sting!")
   end
 end
