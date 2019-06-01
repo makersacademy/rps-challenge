@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gps2601/rps-challenge.svg?branch=master)](https://travis-ci.org/gps2601/rps-challenge)
+
 # RPS Challenge
 
 Instructions
