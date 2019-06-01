@@ -19,6 +19,6 @@ RSpec.configure do |config|
   end
 end
 
-RACK_ENV='test'
+RACK_ENV = 'test'
 
 Capybara.app = App

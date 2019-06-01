@@ -4,7 +4,6 @@ require './lib/game'
 class App < Sinatra::Base
   enable :sessions 
 
-
   before do
     @game = Game.instance
   end

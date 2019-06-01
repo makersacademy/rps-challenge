@@ -16,7 +16,7 @@ class Game
   end
 
   def player_name(player_no)
-    @players[player_no-1].name
+    @players[player_no - 1].name
   end 
 
   def computer_move
@@ -28,14 +28,13 @@ class Game
   end 
 
   def check_winner(player_move, computer_move)
-    winning_combo = {"Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper"}
+    winning_combo = { "Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper" }
     if player_move == computer_move 
       "It's a draw!"
-    elsif 
-      computer_move == winning_combo[player_move]
+    elsif computer_move == winning_combo[player_move]
       "#{player_name(1)} wins!"
     else 
       "#{player_name(2)} wins!"
     end
   end
-end 
+end

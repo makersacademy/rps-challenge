@@ -46,4 +46,4 @@ feature 'Game' do
     click_button('Rematch')
     expect(page).to have_content("Make your move")
   end
-end 
+end
