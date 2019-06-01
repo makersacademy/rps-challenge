@@ -1,7 +1,7 @@
 require 'rock_paper_scissors_game'
 
 describe RockPaperScissorsGame do
-  let(:my_rpsg){RockPaperScissorsGame.create(player_double_1, player_double_2)}
+  let(:my_rpsg) { RockPaperScissorsGame.create(player_double_1, player_double_2) }
   let(:player_double_1) { double('player_double_1', name: 'Peter') }
   let(:player_double_2) { double('player_double_2', name: 'Paul') }
 
