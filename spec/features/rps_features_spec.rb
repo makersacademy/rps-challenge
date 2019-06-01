@@ -186,6 +186,10 @@ feature 'winner/loser pager' do
       choose 'paper'
     end
 
+    within 'div .first' do
+      choose 'paper'
+    end
+
     click_button 'Confirm weapon!'
 
     expect(page).to have_content('Sting played paper!')
