@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/leaderboard'
 
 
 class MyApp < Sinatra::Base
@@ -12,23 +14,25 @@ class MyApp < Sinatra::Base
   end
 
   post '/names' do
-    session[:Player_1] = params[:Player_1]
-    session[:Player_2] = params[:Player_2]
+    p1, p2 = Player.new(params[:Player_1_name]), Player.new(params[:Player_2_name])
+    Leaderboard.build
     redirect '/play'
   end
 
   get '/play' do
-    @Player_1 = session[:Player_1]
-    @Player_2 = session[:Player_2]
-    @things1 = ["rock", "paper", "scissors"].sample
-    @things2 = ["rock", "paper", "scissors"].sample
     erb :play
   end
 
+  post '/weapon_choice' do
+    @game.select_player_1_weapon(params[:player_1_weapon])
+    @game.select_player_2_weapon(params[:player_2_weapon])
+    @leaderboard.add(@game.result)
+    redirect :result
+  end
 
-  # next steps
-  # a game class that initializes a new sample 
-  # each time
+  get '/result' do
+    erb :result
+  end
 
 
 end
