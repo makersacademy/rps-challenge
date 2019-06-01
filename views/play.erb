@@ -1,6 +1,16 @@
 <link rel="stylesheet" type="text/css" href="/style.css">
 <div align="center">
   <h1>🥇<%=@Player_1%> vs. 🥈<%=@Player_2%></h1>
-  <h3><%=@Player_1%> gets <%=@things%></h3>
-  <h3><%=@Player_2%> gets <%=@things%></h3>
+  <h3><%=@Player_1%> gets <%=@things1%></h3>
+  <h3><%=@Player_2%> gets <%=@things2%></h3>
+  <h1>     
+  <% if @things1 = "rock" && @things2 = "paper" %>       
+  <blink><%=@Player_1%> wins</blink>
+  <% elsif @things1 = "paper" && @things2 = "paper" %> 
+  A draw
+  <% end %>
+  </h1>
 </div>
+
+
+<%# can only use ? with true or false, not string  %>
