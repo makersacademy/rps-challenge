@@ -7,8 +7,12 @@ class RPS < Sinatra::Application
   get '/' do
     erb :home
   end
+
+  get '/1player' do
+    erb :one_player
+  end
   
-  post '/players' do
+  post '/single_player' do
     @game = Game.create(params[:name])
     redirect '/game'
   end

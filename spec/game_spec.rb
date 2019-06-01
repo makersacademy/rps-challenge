@@ -23,10 +23,10 @@ describe Game do
     game.player1.choose_weapon('scissors')
     expect(game.play).to eq('Ed')
   end
-  
+
   it 'should let the players draw' do
     srand(1)
     game.player1.choose_weapon('paper')
-    expect(game.play).to eq('no-one... it\'s a draw')
+    expect(game.play).to eq('No-one... it\'s a draw')
   end
 end

@@ -1,3 +1,8 @@
+def one_player_game
+  visit('/')
+  click_button('One Player Game') 
+end 
+
 def start_game
   visit('/')
   fill_in('Enter your name', with: 'Ed')
