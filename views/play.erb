@@ -1,0 +1,10 @@
+<h1><%= @name %> is playing Rock Paper Scissors</h1>
+
+<div>
+  <%= @choice_options %>
+</div>
+
+<form action="/player_move" method="post">
+  <input type="text" name="player_move">
+  <input type="submit" value="Submit">
+</form>
