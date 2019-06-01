@@ -3,15 +3,13 @@ def one_player_game
   click_button('One Player Game') 
 end 
 
-def start_game
-  visit('/')
+def start_one_player_game
+  one_player_game
   fill_in('Enter your name', with: 'Ed')
   click_button('Start the game')  
 end
 
-def game_played
-  visit('/')
-  fill_in('Enter your name', with: 'Ed')
-  click_button('Start the game')  
+def one_player_game_played
+  start_one_player_game 
   click_button('ROCK')
 end
