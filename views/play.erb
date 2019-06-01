@@ -7,30 +7,24 @@
 <div id="move"> Make your move <%= @game.player_name(1) %>!</div>
 <br>
 <form action='/swap-turns' method='post'> 
-<input type="hidden" name="move" value="Rock">
-<button id="Rock1" for="move" type="submit">Rock</button>
+<button id="Rock1" name="move" value="Rock" type="submit">Rock</button>
 </form>
 <form action='/swap-turns' method='post'> 
-<input type="hidden" name="move" value="Paper">
-<button id="Paper1" for="move" type="submit">Paper</button>
+<button id="Paper1" name="move" value="Paper" type="submit">Paper</button>
 </form>
 <form action='/swap-turns' method='post'> 
-<input type="hidden" name="move" value="Scissors">
-<button id="Scissors1" for="move" type="submit">Scissors</button>
+<button id="Scissors1" name="move" value="Scissors" type="submit">Scissors</button>
 <% else %>
 <div id="move"> Make your move <%= @game.player_name(2) %>!</div>
 <br>
 <form action='/result' method='post'> 
-<input type="hidden" name="move2" value="Rock">
-<button id="Rock2" for="move2" type="submit">Rock</button>
+<button id="Rock2" name="move2" value="Rock" type="submit">Rock</button>
 </form>
 <form action='/result' method='post'> 
-<input type="hidden" name="move2" value="Paper">
-<button id = "Paper2" for="move2" type="submit">Paper</button>
+<button id = "Paper2" name="move2" value="Paper" type="submit">Paper</button>
 </form>
 <form action='/result' method='post'> 
-<input type="hidden" name="move2" value="Scissors">
-<button id="Scissors2" for="move2" type="submit">Scissors</button>
+<button id="Scissors2" name="move2" value="Scissors" type="submit">Scissors</button>
 <% end %>
 </form>
 </body>

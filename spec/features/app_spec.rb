@@ -1,5 +1,4 @@
 feature 'Game' do 
-  
   scenario 'enter player name in form and see name displayed' do 
     sign_in_and_play
     expect(page).to have_content('Lauren') 
