@@ -1,2 +1,2 @@
-require_relative './game'
-run Game
+require_relative './rps'
+run Rps

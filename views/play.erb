@@ -1,12 +1,26 @@
-<form action="/play">
-  <font size="7">Thank you for registering to play <%= @registeredplayer%>!<br><br></font>
+<form action="/play" method="get">
+  <font size="7">Thank you for registering to play <%= @game.registeredplayer1.name %> and <%= @game.registeredplayer2.name %>!<br><br></font>
   <font size="5">Lets play Rock, Paper, Scissors!<br><br></font>
-  <font size="4">Please select your choice below, and see if you're a winner...<br></font>
+  <font size="4">Please select your choices below, and see who will be the winner...<br></font>
   <br><br>
-<select name = "dropdown">
-            <option value = "rock">Rock</option>
-            <option value = "paper">Paper</option>
-            <option value = "scissors">Scissors</option>
-         </select>
-         <input type = "submit" value = "Are you ready?" />
+  </form>
+
+<form action="/result" method="post">
+  <font size="6"><%= @game.registeredplayer1.name %><br></font>
+  <select name = "dropdown1">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+      </select>
+      <br>
+      <br>
+  <font size="6"><%= @game.registeredplayer2.name %><br></font>
+    <select name = "dropdown2">
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+      </select>
+      <br>
+      <br>
+    <input type="submit" value="Are you ready?" />
 </form>
