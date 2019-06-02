@@ -20,6 +20,11 @@ class RPS < Sinatra::Application
     @game = Game.create(params[:name])
     redirect '/game'
   end
+
+  post '/two_player' do
+    @game = Game.create(params[:name1], params[:name2])
+    redirect '/game'
+  end
   
   before do
     @game = Game.instance

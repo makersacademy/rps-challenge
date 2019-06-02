@@ -2,10 +2,10 @@
 class Game
   attr_reader :player1, :player2, :winner
 
-  def initialize(player1, player_class = Player)
+  def initialize(player1, player2 = 'RPS-Bot', player_class = Player)
     @player_class = player_class
     @player1 = @player_class.new(player1)
-    @player2 = @player_class.new
+    @player2 = @player_class.new(player2)
     @winner = nil
   end
 
@@ -22,8 +22,8 @@ class Game
     end
   end
 
-  def self.create(player1)
-    @game = Game.new(player1)
+  def self.create(player1, player2 = 'RPS-Bot')
+    @game = Game.new(player1, player2)
   end
 
   def self.instance
