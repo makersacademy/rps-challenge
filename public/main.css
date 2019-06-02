@@ -1,0 +1,65 @@
+h1 {
+  text-align: center;
+  color: navy;
+  font: Verdana;
+}
+
+body {
+}
+
+form {
+  text-align: center;
+}
+
+input[type="submit" i] {
+  text-align: center;
+  color: lavender;
+  background-color: palevioletred;
+  box-sizing: border-box;
+  padding: 4px 8px 5px;
+  border-width: 3px;
+  font-size: 20px;
+}
+label {
+  font-size: 200%;
+  padding: 40px;
+}
+
+input[type="text"] {
+padding: 8px;
+font-size: 130%
+}
+
+br {
+  line-height:50px;
+}
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 25px;
+}
+/* .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+  /* grid-column-gap: ;
+grid-row-gap: ;
+grid-gap: ; 
+}
+/* .grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.item1 {
+  grid-row-start: 3;
+  grid-row-end: 4;
+
+} */
