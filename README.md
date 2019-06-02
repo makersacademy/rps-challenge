@@ -13,5 +13,7 @@ rackup
 ```
  - Visit [http://localhost:9292](http://localhost:9292) to play the game!
 
+ - Alternatively, you can play the game [here!](https://rplss-game.herokuapp.com/)
+
 
 ![Alt text](/rpsls.png?raw=true "Optional Title")
