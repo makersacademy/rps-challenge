@@ -1,20 +1,40 @@
 <style>
   img {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    width: 150px;
+    border-radius: 50%;
+    width: 45vh;
+  }
+
+  main {
+    text-align: justify;
+    font-family: helvetica;
+    font-size: 2.5vw;
+    padding: 1vh 10vw;
+    color: white;
+    background: grey;
+  }
+  button {
+    border-radius: 50%;
+  }
+
+  div {
+    border-style: dashed;
+    border-color: silver;
+    font-size: 4vw;
+    text-align: center;
   }
 
 </style>
 
+<main>
+<div>
 <%= @player1 %>
+</div>
 <br>
 <br>
 
 <form action='/player_choice' method='post'>
 Take your pick:
-<br>
+<br><br>
 <button name="choice" value="rock" ><img src='https://outdoordesignbylucas.files.wordpress.com/2011/01/1-10-11-charcter-rocks.jpg'></button>
 <button name="choice" value="paper" ><img src='https://thumbs.dreamstime.com/z/white-lined-paper-push-nail-clipping-path-1710822.jpg'> </button>
 <button name="choice" value="scissors" ><img src='https://www.hobbycraft.co.uk/supplyimages/573849_1000_1_800.jpg'></button>
@@ -23,3 +43,4 @@ Take your pick:
 
 
 <!-- <%= @result %> -->
+</main>

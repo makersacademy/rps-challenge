@@ -17,9 +17,9 @@ class Game
     if @player_1_choice == @player_2_choice
       "It's a draw"
     elsif @win_conditions[@player_1_choice] == @player_2_choice
-      "Player 1 wins"
+      "Congatulations, you win!"
     else
-      "Player 2 wins"
+      "You lose!"
     end
   end
 
