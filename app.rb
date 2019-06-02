@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './models/game'
 
 class RockPaperScissors < Sinatra::Application
   enable :sessions
@@ -23,7 +24,16 @@ class RockPaperScissors < Sinatra::Application
   end
 
   post ('/result') do
-    @chosen_move = params[:move]
+    session[:move] = params[:move]
+    session[:game] = Game.new
+    redirect('result')
+  end
+
+  get ('/result') do
+    @player_choice = session[:move]
+    game = session[:game]
+    @computer_choice = game.computer
+    @result = game.outcome(@chosen_move)
     erb :result
   end
 end

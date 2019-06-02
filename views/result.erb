@@ -1,6 +1,10 @@
 <head>
-<link rel="stylesheet" href="/css/result.css">
+<link rel="stylesheet" href="/css/game_view.css">
 </head>
 <body>
-  You have chosen: <%= @chosen_move%>
+  Computer chose <%= @computer_choice%><br>
+  <%= @result%>
+  <form action='/start-game'>
+  <button name='start_over' value='Start_over'>Start over</button>
+  </form>
 </body>

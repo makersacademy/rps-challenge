@@ -2,6 +2,12 @@ body {
   background-color: rgb(223, 226, 233);
 }
 
+.heading {
+  width: 100%;
+  font-size: 40px;
+  text-align: center;
+}
+
 .choice_buttons {
   width: 10%;
   text-align: center;
