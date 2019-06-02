@@ -25,3 +25,9 @@ def one_player_game_played
   start_one_player_game 
   click_button('ROCK')
 end
+
+def two_player_game_played
+  start_two_player_game 
+  click_button('ROCK')
+  click_button('SCISSORS')
+end

@@ -11,7 +11,9 @@ class Game
 
   def play
     w1 = @player1.weapon
-    w2 = @player2.choose_weapon
+    if @player2.weapon.nil?
+      w2 = @player2.choose_weapon
+    end
     if w1 == w2
       @winner = 'No-one... it\'s a draw'
     elsif (w1 == 'rock' && w2 == 'paper') ||
