@@ -11,7 +11,7 @@ cd rps-challenge
 bundle
 rackup
 ```
- - Visit [localhost:9292] to play the game!
+ - Visit [localhost:9292](localhost:9292) to play the game!
 
 
 ![Alt text](/rpsls.png?raw=true "Optional Title")
