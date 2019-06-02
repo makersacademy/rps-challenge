@@ -1,5 +1,5 @@
 class Game
-  attr_reader :option
+  attr_reader :option, :users_choice
   def initialize(users_choice)
     @options = ["Rock", "Paper", "Scissors"]
     @users_choice = users_choice
@@ -7,6 +7,11 @@ class Game
       { :pair => ["Rock", "Scissors"], :win => "Rock" },
       { :pair => ["Rock", "Paper"], :win => "Paper" },
       { :pair => ["Paper", "Scissors"], :win => "Scissors" }
+    ]
+    @images = [
+      {:item => "Rock", :img => "/images/rock.jpg"},
+      {:item => "Paper", :img => "/images/paper.jpg"},
+      {:item => "Scissors", :img => "/images/scissors.jpg"}
     ]
   end
 
@@ -19,6 +24,20 @@ class Game
     choice = rand(3)
     @options[choice]
   end
+
+  def give_my_image
+    image_hash = @images.select { |image|
+       image[:item] == @users_choice
+     }
+     image_hash.first[:img]
+   end
+
+   def give_random_image
+     image_hash = @images.select { |image|
+        image[:item] == @option
+      }
+      image_hash.first[:img]
+    end
 
   private
 

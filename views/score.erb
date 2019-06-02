@@ -3,7 +3,9 @@
     <title>Results</title>
   </head>
 
-<h1>Your opponent played <%=@option%></h1><br>
+  <link rel=stylesheet type=text/css href=/main.css/>
+  <body>
+<h1>You played <%=@choice%> and your opponent played <%=@option%></h1><br>
 <h1><%=@message%></h1><br>
 <h1>That was fun! </h1>
 
@@ -11,6 +13,6 @@ Do you wanna play again?
 <form action="/play" method="get">
 <input type="submit" name="wanna-Play" value="Yes"> 
 </form>
-<form action="/end" method="get">
-<input type="submit" name="this-is-the-end" value="No"> 
-</form>
+
+</body>
+</html>

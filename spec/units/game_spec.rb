@@ -19,4 +19,14 @@ describe Game do
     srand(344)
     expect(game1.score).to eq("It is a draw")
   end
+
+  it "can give me image back" do
+    expect(game.give_my_image).to eq("/images/scissors.jpg")
+  end
+
+  it "can give me random image back" do
+    srand(344)
+    game.score
+    expect(game.give_random_image).to eq("/images/paper.jpg")
+  end
 end
