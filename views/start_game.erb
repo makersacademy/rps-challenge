@@ -1,0 +1,16 @@
+<head>
+  <link rel="stylesheet" href="/css/start_game.css">
+</head>
+
+<body>
+  <div class=heading>
+    Welcome <%= @player_name%>!
+  </div>
+
+  <div class=play_game>
+    <form action='/result' method='post'>
+      <button name='move' value='Rock' class='choice_buttons'>Rock</button><br>
+      <button name='move' value='Paper' class='choice_buttons'>Paper</button><br>
+      <button name='move' value='Scissors' class='choice_buttons'>Scissors</button>
+    </form>
+</body>

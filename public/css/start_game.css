@@ -1,0 +1,13 @@
+body {
+  background-color: rgb(223, 226, 233);
+}
+
+.choice_buttons {
+  width: 10%;
+  text-align: center;
+  padding: 5px;
+  font-size: 30px;
+  height: 40px;
+  margin-top: 10px;
+}
+
