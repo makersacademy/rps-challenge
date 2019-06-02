@@ -14,7 +14,9 @@ class RockPaperScissors < Sinatra::Application
   end
 
   post ('/start-game') do
+    if session[:player_name] == nil
     session[:player_name] = params[:player_name]
+    end
     redirect('/start-game')
   end
 
@@ -30,13 +32,12 @@ class RockPaperScissors < Sinatra::Application
   end
 
   get ('/result') do
+    @player_name = session[:player_name]
     @player_choice = session[:move]
-    p @player_choice
     @game = session[:game]
     @computer_choice = @game.computer
-    p @computer_choice
-    @result = @game.outcome(@chosen_move)
-    p @result
+    @game.outcome(@player_choice)
+    @result = @game.result
     erb :result
   end
 end

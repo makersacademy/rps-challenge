@@ -1,19 +1,19 @@
 class Game 
-  attr_reader :outcome, :computer
+  attr_reader :result, :computer
 
   def initialize
-    @outcome = nil
+    @result = nil
     @winning_combinations = {"Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper"}
     @computer = ["Rock", "Paper", "Scissors"].sample
   end
 
   def outcome(p_1)
     if p_1 == @computer
-      "It's a tie"
+      @result = "It's a tie"
     elsif @winning_combinations[p_1] == @computer
-      "Player 1 wins"
+      @result = "Player 1 wins"
     else
-      "Computer wins"
+      @result = "Computer wins"
     end
   end
 end
