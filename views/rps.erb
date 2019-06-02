@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='/style.css' />
+</head>
+<body>
+<div>
+  <h1>Rock Paper Scissors Showdown</h1>
+  <span style='padding:10px;'>
+    <form method='post' action='/winner'>
+      <div class='first' style='padding:10px;'><%= @game.player_one.name %>, the time has come to choose your weapon:
+        <span style='font-size:12px'>
+          <input type='radio' name='weapon_one' id='rock' value='rock'>
+          <label for='rock'>Rock</label>
+          <input type='radio' name='weapon_one' id='paper' value='paper'>
+          <label for='paper'>Paper</label>
+          <input type='radio' name='weapon_one' id='scissors' value='scissors'>
+          <label for='scissors'>Scissors</label>
+          <input type='radio' name='weapon_one' id='lizard' value='lizard'>
+          <label for='lizard'>Lizard</label>
+          <input type='radio' name='weapon_one' id='spock' value='spock'>
+          <label for='spock'>Spock</label>
+        </span>
+      </div>
+      <div class='second' style='padding:10px;'> <%= @game.player_two.name %>, the time has come to choose your weapon:
+        <span style='font-size:12px'>
+          <input type='radio' name='weapon_two' id='rock' value='rock'>
+          <label for='rock'>Rock</label>
+          <input type='radio' name='weapon_two' id='paper' value='paper'>
+          <label for='paper'>Paper</label>
+          <input type='radio' name='weapon_two' id='scissors' value='scissors'>
+          <label for='scissors'>Scissors</label>
+          <input type='radio' name='weapon_two' id='lizard' value='lizard'>
+          <label for='lizard'>Lizard</label>
+          <input type='radio' name='weapon_two' id='spock' value='spock'>
+          <label for='spock'>Spock</label><br>
+        </span>
+      </div>
+      <button>Confirm weapon!</button>
+    </form>
+  </span>
+</div>
+</body>
