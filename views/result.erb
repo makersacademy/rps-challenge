@@ -1,10 +1,22 @@
-<style>
-#grad {
-  background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); 
-}
-</style>
-<div class="grad"><h1>ROCK PAPER SCISSORS what what?</h1></grad>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+
+
+
+<div id="grad1" style="text-align:center;margin:auto;color:#888888;font-size:40px;font-weight:bold">
+ROCK PAPER SCISSORS what what?
+</div>
+
+<div class="grad"><h1></h1></grad>
 <%=  $game.playername %> chose <%= $game.move %> <br>
 AI chose <%= $game.ai_move %> <br>
 Result: <%= @results[$game.who_wins?] %> <br>
+
+</body>
+</html>
 

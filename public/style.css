@@ -1,0 +1,33 @@
+
+#grad1 {
+  height: 55px;
+  background-color: red; 
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+
+body {
+  background-image: url("200.gif");
+  background-repeat: repeat;
+
+} 
+div {
+  background: rgba(240, 208, 201, 0.872);
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: Large;
+
+}
+
+button {
+	position: relative;
+	display: inline-block;
+	padding: 15px 25px;
+	background-color: green; 
+	background-image: linear-gradient(green,lightgreen);
+
+
+	text-decoration: none;
+	color: #fff;
+	font-size: 25px;
+	font-family: sans-serif;
+	font-weight: 100;
+}

@@ -36,7 +36,7 @@ describe Game do
     expect(subject.who_wins?).to eq(Game::DRAW)
   end
 
-  pending 'plays with two players if selected' do
-    subject.playmode('two player')
+  it 'plays with two players if selected' do
+    expect(subject).to respond_to(:game_move)
   end
 end
