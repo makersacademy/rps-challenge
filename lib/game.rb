@@ -16,7 +16,7 @@ class Game
   end
 
   def play(p1_move)
-    @player_one.move = p1_move.to_sym
+    @player_one.move = p1_move.downcase.to_sym
     @player_two.move
     @winner = @winner_calculator.calculate(@player_one, @player_two)
   end

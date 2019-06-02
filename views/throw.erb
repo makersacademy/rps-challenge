@@ -1,2 +1,9 @@
-<h1><%= @game.last_game_text %></h1>
-<form action="/play"><button type="submit">Go back</button></form>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
+</head>
+
+<div class='app'>
+  <h1><%= @game.last_game_text %></h1>
+  <form action="/play"><input class='go' type='submit' name='move' value='Go back'></form>
+</div>

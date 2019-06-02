@@ -17,5 +17,24 @@ feature 'RockPaperScissors' do
       click_button('Paper')
       expect(page).to have_content('Filbert won!').or have_content('Computer won!').or have_content('It was a draw!')
     end
+    scenario 'real player can choose the winning move and be told that they won, with fixed seed' do
+      sign_in_single_player
+      srand(12345)
+      click_button('Rock')
+      expect(page).to have_content('Filbert won!')
+    end
+    scenario 'real player can choose the drawing move and be told that they drew, with fixed seed' do
+      sign_in_single_player
+      srand(12345)
+      click_button('Scissors')
+      expect(page).to have_content('It was a draw!')
+    end
+    scenario 'real player can choose the drawing move and be told that they drew, with fixed seed' do
+      sign_in_single_player
+      srand(12345)
+      click_button('Paper')
+      expect(page).to have_content('Computer won!')
+    end
+
   end
 end
