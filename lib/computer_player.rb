@@ -6,7 +6,7 @@ class ComputerPlayer
     @name = name
   end
 
-  def get_move
+  def move
     [:rock, :paper, :scissors].sample
   end
 

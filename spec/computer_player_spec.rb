@@ -10,18 +10,18 @@ describe 'ComputerPlayer' do
     end
   end
 
-  describe '#get_move' do
+  describe '#gmove' do
     let(:valid_moves) { [:rock, :paper, :scissors] }
 
     it "returns one of the expected symbols each time when run multiple times" do
       50.times do 
-        expect(computer_player.get_move).to satisfy { |value| valid_moves.include?(value) }
+        expect(computer_player.move).to satisfy { |value| valid_moves.include?(value) }
       end
     end
 
     it "returns the same move each time when seed fixed with srand" do
       srand(12345)
-      expect(computer_player.get_move).to eq(:scissors)
+      expect(computer_player.move).to eq(:scissors)
     end
   end
 end

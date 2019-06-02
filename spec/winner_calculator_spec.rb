@@ -2,40 +2,60 @@ require 'winner_calculator'
 
 describe 'WinnerCalculator' do
   let(:winner_calculator) { WinnerCalculator.new }
+  let(:player_one) { double(:player) }
+  let(:player_two) { double(:player) }
 
   describe '#calculate' do
     context 'when player 1 wins' do
       it 'returns :player_one for rock > scissors' do
-        expect(winner_calculator.calculate('rock', 'scissors')).to be(:player_one)
+        allow(player_one).to receive(:move).and_return(:rock)
+        allow(player_two).to receive(:move).and_return(:scissors)
+        expect(winner_calculator.calculate(player_one, player_two)).to be(player_one)
       end
       it 'returns :player_one for paper > rock' do
-        expect(winner_calculator.calculate('paper', 'rock')).to be(:player_one)
+        allow(player_one).to receive(:move).and_return(:paper)
+        allow(player_two).to receive(:move).and_return(:rock)
+        expect(winner_calculator.calculate(player_one, player_two)).to be(player_one)
       end
       it 'returns :player_one for scissors > paper' do
-        expect(winner_calculator.calculate('scissors', 'paper')).to be(:player_one)
+        allow(player_one).to receive(:move).and_return(:scissors)
+        allow(player_two).to receive(:move).and_return(:paper)
+        expect(winner_calculator.calculate(player_one, player_two)).to be(player_one)
       end
     end
     context 'when player 2 wins' do
       it 'returns :player_two for rock < paper'do
-      expect(winner_calculator.calculate('rock', 'paper')).to be(:player_two)
-    end
+      allow(player_one).to receive(:move).and_return(:rock)
+      allow(player_two).to receive(:move).and_return(:paper)
+      expect(winner_calculator.calculate(player_one, player_two)).to be(player_two)
+  end
       it 'returns :player_two for paper < scissors'do
-      expect(winner_calculator.calculate('paper', 'scissors')).to be(:player_two)
-    end
+      allow(player_one).to receive(:move).and_return(:paper)
+      allow(player_two).to receive(:move).and_return(:scissors)
+      expect(winner_calculator.calculate(player_one, player_two)).to be(player_two)
+  end
       it 'returns :player_two for scissors < rock'do
-      expect(winner_calculator.calculate('scissors', 'rock')).to be(:player_two)
-    end
+      allow(player_one).to receive(:move).and_return(:scissors)
+      allow(player_two).to receive(:move).and_return(:rock)
+      expect(winner_calculator.calculate(player_one, player_two)).to be(player_two)
+  end
     end
 
     context "when it's a draw" do
       it 'returns :draw for rock == rock'do
-      expect(winner_calculator.calculate('rock', 'rock')).to be(:draw)
+      allow(player_one).to receive(:move).and_return(:rock)
+      allow(player_two).to receive(:move).and_return(:rock)
+      expect(winner_calculator.calculate(player_one, player_two)).to be(:draw)
     end
       it 'returns :draw for paper == paper'do
-      expect(winner_calculator.calculate('paper', 'paper')).to be(:draw)
+      allow(player_one).to receive(:move).and_return(:paper)
+      allow(player_two).to receive(:move).and_return(:paper)
+      expect(winner_calculator.calculate(player_one, player_two)).to be(:draw)
     end
       it 'returns :draw for scissors == scissors'do
-      expect(winner_calculator.calculate('scissors', 'scissors')).to be(:draw)
+      allow(player_one).to receive(:move).and_return(:scissors)
+      allow(player_two).to receive(:move).and_return(:scissors)
+      expect(winner_calculator.calculate(player_one, player_two)).to be(:draw)
     end
     end
   end

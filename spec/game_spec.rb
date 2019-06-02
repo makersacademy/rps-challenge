@@ -19,6 +19,24 @@ describe 'Game' do
   end
 
   describe '#play' do
-    it 'returns the player who won' 
+    context 'when real player vs computer' do
+      context 'when real player wins' do
+        it 'sets the move for the real player' do
+          allow(winner_calculator).to receive(:calculate).with(real_player, computer_player)
+          expect(real_player).to receive(:move=).with(:rock)
+          game.play('rock')
+        end
+        it 'calls calculate on winner_calculator with the two players' do
+          expect(winner_calculator).to receive(:calculate).with(real_player, computer_player)
+          allow(real_player).to receive(:move=).with(:rock)
+          game.play('rock')
+        end
+        it 'returns the result of winner_calculate.calculate' do
+          allow(winner_calculator).to receive(:calculate).with(real_player, computer_player).and_return(real_player)
+          allow(real_player).to receive(:move=).with(:rock)
+          expect(game.play('rock')).to be real_player
+        end
+      end
+    end
   end
 end
