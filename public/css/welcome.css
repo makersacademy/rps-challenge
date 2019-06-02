@@ -2,27 +2,31 @@ body {
   background-color: rgb(223, 226, 233);
 }
 
-.welcome_container {
-  border: 1px solid black;
+div {
+  width: 60%;
+  height: 60%;
+  margin-top: 10%;
+  margin-left: 20%;
+  border: 1px solid rgb(75, 75, 75);
+  border-radius: 15px;
   background-color: white;
+  z-index: -1000;
 }
 
-.heading {
-  position: absolute;
+h1 {
+  position: relative;
   left: 0;
-  top: 25%;
+  top: 15%;
   width: 100%;
   text-align: center;
-  font-size: 40px;
-  color: green;
+  font-size: 60px;
+  color: rgb(16, 6, 77);
   font-family: 'Courier New', Courier, monospace;
 }
 
-.name_form {
-  position: absolute;
-  left: 0;
-  top: 45%;
-  width: 100%;
+form {
+  position: relative;
+  top: 10%;
   text-align: center;
 }
 
@@ -38,7 +42,8 @@ input[type=text] {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.start_game {
+input[type=submit] {
+  position: relative;
   width: 25%;
   background-color: rgb(248, 250, 98);
   color: rgb(16, 6, 77);

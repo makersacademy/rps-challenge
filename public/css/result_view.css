@@ -95,4 +95,18 @@ button {
   color: rgb(248, 250, 98);
 }
 
+button:disabled, button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.start-over-button {
+  position: relative;
+  top: 30%;
+  width: 50%;
+  text-align: center;
+  left: 25%;
+}
+
 

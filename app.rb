@@ -31,9 +31,12 @@ class RockPaperScissors < Sinatra::Application
 
   get ('/result') do
     @player_choice = session[:move]
-    game = session[:game]
-    @computer_choice = game.computer
-    @result = game.outcome(@chosen_move)
+    p @player_choice
+    @game = session[:game]
+    @computer_choice = @game.computer
+    p @computer_choice
+    @result = @game.outcome(@chosen_move)
+    p @result
     erb :result
   end
 end
