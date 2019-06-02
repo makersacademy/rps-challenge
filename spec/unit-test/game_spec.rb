@@ -10,38 +10,30 @@ describe 'Game' do
     end
   end
 
-  # describe '#fight' do
-  #   it 'game can pick a random weapon' do
-  #     srand(0)
-  #     game.fight
-  #     expect(game.computer_move).to eq('scissors')
-  #   end
-  # end
-  #
-  # describe '#result' do
-  #   it 'game can allow player to win' do
-  #     game.attack("rock")
-  #     srand(0)
-  #     game.generate_move
-  #     game.fight
-  #     expect(game.result).to eq("You have won!")
-  #   end
-  #
-  #   it 'game can draw' do
-  #     game.attack("scissors")
-  #     srand(0)
-  #     game.generate_move
-  #     game.fight
-  #     expect(game.result).to eq("It's a draw!")
-  #   end
-  #
-  #   it 'game can win' do
-  #     game.attack("paper")
-  #     srand(0)
-  #     game.generate_move
-  #     game.fight
-  #     expect(game.result).to eq("You have lost")
-  #   end
-  # end
+  describe '#fight' do
+    it 'game can pick a random weapon' do
+      srand(0)
+      game.computer_move
+      expect(game.computer_move).to eq('scissors')
+    end
+  end
 
-end
+  describe '#fight' do
+    it 'game can allow player to win' do
+      srand(0)
+      game.computer_move
+      expect(game.fight).to eq("You have won!")
+    end
+  end
+
+    it 'game can draw' do
+      srand(3)
+      game.computer_move
+      expect(game.fight).to eq("It's a draw!")
+    end
+
+    it 'game can win' do
+      srand(1)
+      expect(game.fight).to eq("You have lost")
+    end
+  end
