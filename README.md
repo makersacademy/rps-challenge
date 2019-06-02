@@ -33,7 +33,7 @@ A winner will be declared.<br>
  
 Fork Makers Repo and git clone to local terminal.<br>
 cd to rps-challenge.<br>
-The `Gemfile.lock` contains “BUNDLED WITH 1.16.1” - therefore, you need to run `gem install bundler -v '< 2.0', then `bundle install` to install Gems.<br>
+The `Gemfile.lock` contains “BUNDLED WITH 1.16.1” - therefore, you need to run `gem install bundler -v '< 2.0'`, then `bundle install` to install Gems.<br>
 Create rps.rb file, and test using `Ruby rps.rb` - Navigate to http://localhost:4567 to test.<br>
 Add `require ‘sinatra’` to the rps.rb - This is where we will add our routes.<br>
 Add test to check the users can register their names. Make this test pass.<br>
@@ -41,7 +41,7 @@ Define the link get '/register'.<br>
 Create `index.erb` file and add `erb :index` into the get /register.<br>
 Add your text to the index.erb file, along with a text box and submit button for the users to submit their names.<br>
 Ensure test is now passing.<br>
-We then need to create a POST, called `play, with `erb :play`, and with the @registeredpPlayer1 and @registeredpPlayer1 -  where the users will be greeted and allowed to play Rock,Paper,Scissors. Using the @instance variable, we’ll be able to see the user input name. Ensure in `erb :play`, action points towards `/play’, whilst the method is ‘get’ - as we’re retrieving our value input from index.erb<br>
+We then need to create a POST, called play, with `erb :play`, and with the @registeredpPlayer1 and @registeredpPlayer1 -  where the users will be greeted and allowed to play Rock,Paper,Scissors. Using the @instance variable, we’ll be able to see the user input name. Ensure in `erb :play`, action points towards `/play’, whilst the method is ‘get’ - as we’re retrieving our value input from index.erb<br>
 Define in `play/erb` - 1. Thank user for registering, 2. Ask user to select input from dropdown, 3. Get user to submit answer.<br>
 Set up a POST /result route, and add to a new result.erb - action points towards `/play’, whilst the method is ‘get’, as we’ll want to receive the input the user entered form the dropdown.<br><br>
  
