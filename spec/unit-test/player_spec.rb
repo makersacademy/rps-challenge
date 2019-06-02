@@ -7,13 +7,15 @@ describe 'Player' do
     expect(player.name).to eql("Jackie Chan")
   end
 
-  describe 'move' do
+  describe '#move' do
+
     it 'player can make a move' do
       game_double = double("game")
       player = Player.new("james",game_double)
       expect(game_double).to receive(:move).with("scissors")
       player.move("scissors")
     end
+
   end
 
   # describe '#rock' do
