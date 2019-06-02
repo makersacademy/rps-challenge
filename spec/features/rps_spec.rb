@@ -38,6 +38,15 @@ feature 'Player wins or loses' do
   end
 end
 
+feature 'Player plays again' do
+  scenario 'Player can play again' do
+    sign_in_and_play
+    click_button('paper')
+    click_link('Play again?')
+    expect(page).to have_content("What\'s your play?")
+  end
+end
+
 # Test template:
 
 # feature '' do

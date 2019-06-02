@@ -3,6 +3,15 @@
   padding-right: 40px;
 }
 
+h1 {
+  color: teal;
+}
+
+figcaption {
+  color: teal;
+  font-weight: 600;
+}
+
 .choices {
   padding-top: 20px;
   display: inline-block !important;
