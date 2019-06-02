@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player, :choice, :cpu_choice
+  attr_reader :player, :cpu_choice, :player_choice
 
   def initialize(player)
     @cpu_choices = ['Rock', 'Paper', 'Scissors']
@@ -7,7 +7,7 @@ class Game
   end
 
   def move(move)
-    @player.choice(move)
+    @player_choice = @player.choice(move)
   end
 
   def cpu_move
@@ -24,6 +24,18 @@ class Game
         return '/images/scissors.png'
       else
         return '/images/confused.png'
+    end
+  end
+
+  def result(player, cpu)
+    return 'DRAW' if player == cpu
+
+    if (player == 'Rock' && cpu == 'Scissors') ||
+      (player == 'Paper' && cpu == 'Rock') ||
+      (player == 'Scissors' && cpu == 'Paper')
+      return 'WIN'
+    else
+      return 'LOSE'
     end
   end
 end

@@ -30,8 +30,11 @@ feature 'Player selects choice' do
   end
 end
 
-feature '' do
-  scenario '' do
+feature 'Player wins or loses' do
+  scenario 'Player can win, lose or draw' do
+    sign_in_and_play
+    click_button('paper')
+    expect(page).to have_content(@result)
   end
 end
 

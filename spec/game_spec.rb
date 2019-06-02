@@ -32,4 +32,18 @@ describe Game do
       expect(game.image_selector('anythingElse')).to eq('/images/confused.png')
     end
   end
+
+  context '#result' do
+    it 'can give the correct result \'WIN\'' do
+      expect(game.result('Paper', 'Rock')).to eq("WIN")
+    end
+
+    it 'can give the correct result \'DRAW\'' do
+      expect(game.result('Paper', 'Paper')).to eq("DRAW")
+    end
+
+    it 'can give the correct result \'LOSE\'' do
+      expect(game.result('Paper', 'Scissors')).to eq("LOSE")
+    end
+  end
 end
