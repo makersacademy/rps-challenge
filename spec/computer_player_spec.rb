@@ -10,7 +10,7 @@ describe 'ComputerPlayer' do
     end
   end
 
-  describe '#gmove' do
+  describe '#move' do
     let(:valid_moves) { [:rock, :paper, :scissors] }
 
     it "returns one of the expected symbols each time when run multiple times" do
@@ -22,6 +22,14 @@ describe 'ComputerPlayer' do
     it "returns the same move each time when seed fixed with srand" do
       srand(12345)
       expect(computer_player.move).to eq(:scissors)
+    end
+  end
+
+  describe '#last_move' do
+    it 'returns the last move when fixed with srand' do
+      srand(12345)
+      computer_player.move
+      expect(computer_player.last_move).to eq(:scissors)
     end
   end
 end

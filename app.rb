@@ -29,7 +29,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/throw' do
-    @game.last_game_text
+    erb(:throw)
   end
 
   run! if app_file == $0

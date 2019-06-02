@@ -1,5 +1,5 @@
 class ComputerPlayer
-  attr_reader :name
+  attr_reader :name, :last_move
   DEFAULT_NAME = 'Computer'
 
   def initialize(name = DEFAULT_NAME)
@@ -7,7 +7,8 @@ class ComputerPlayer
   end
 
   def move
-    [:rock, :paper, :scissors].sample
+    @last_move = [:rock, :paper, :scissors].sample
+    return @last_move
   end
 
 end

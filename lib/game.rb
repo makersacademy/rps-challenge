@@ -17,15 +17,25 @@ class Game
 
   def play(p1_move)
     @player_one.move = p1_move.to_sym
+    @player_two.move
     @winner = @winner_calculator.calculate(@player_one, @player_two)
   end
 
   def last_game_text
     if @winner == :draw
-      return 'It was a draw!'
+      return "#{chosen_moves} It was a draw!"
     else
-      "#{@winner.name} won!"
+      "#{chosen_moves} #{@winner.name} won!"
     end
   end
 
+  private
+
+  def chosen_moves
+    "#{chosen_move(player_one)} #{chosen_move(player_two)}"
+  end
+
+  def chosen_move(player)
+    "#{player.name} chose #{player.last_move}."
+  end
 end

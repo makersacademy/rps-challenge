@@ -11,4 +11,9 @@ describe 'Player' do
     player.move = 'rock'
     expect(player.move).to eq('rock')
   end
+
+  it 'will show the last move' do
+    player.move = 'rock'
+    expect(player.last_move).to eq('rock')
+  end
 end

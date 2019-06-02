@@ -21,7 +21,7 @@ describe 'Rock Paper Scissors game' do
 
   describe 'two player game test' do
     let(:player) { Player.new('Filbert') }
-    let(:player_two) { double(:player, move: :rock, name: 'Stormy') }
+    let(:player_two) { double(:player, move: :rock, name: 'Stormy', last_move: :rock) }
     let(:game) { Game.new(player, player_two) }
     context 'single player' do
       it 'works (to be refactored into separate tests)' do

@@ -13,10 +13,9 @@ feature 'RockPaperScissors' do
   
   feature 'choosing a move' do
     scenario 'real player can choose a move and be told whether they won' do
-      50.times do 
-        click_button('Paper')
-        expect(page).to have_content('Filbert won!').or have_content('Computer won!').or have_content('It was a draw!')
-      end
+      sign_in_single_player
+      click_button('Paper')
+      expect(page).to have_content('Filbert won!').or have_content('Computer won!').or have_content('It was a draw!')
     end
   end
 end

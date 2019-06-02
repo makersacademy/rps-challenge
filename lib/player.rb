@@ -5,4 +5,8 @@ class Player
   def initialize(name)
     @name = name
   end
+
+  def last_move
+    @move
+  end
 end
