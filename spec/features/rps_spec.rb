@@ -47,6 +47,15 @@ feature 'Player plays again' do
   end
 end
 
+feature 'Play again as a new game and new player' do
+  scenario 'Start new game as new player' do
+    sign_in_and_play
+    click_button('paper')
+    click_link('New game')
+    expect(page).to have_content("What\'s your name?")
+  end
+end
+
 # Test template:
 
 # feature '' do
