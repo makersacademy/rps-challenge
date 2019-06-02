@@ -11,6 +11,10 @@ class RPS < Sinatra::Application
   get '/1player' do
     erb :one_player
   end
+
+  get '/2players' do
+    erb :two_player
+  end
   
   post '/single_player' do
     @game = Game.create(params[:name])

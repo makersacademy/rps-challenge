@@ -3,7 +3,7 @@ html, body {
     padding: 20px;
     border: 0px;
     color: #fff;
-    background: rgb(23, 97, 207);
+    background: #3aa9e9;
     align-content: center;
   }
 
@@ -27,9 +27,9 @@ button {
     padding: 1rem 2rem;
     margin: 0;
     text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
-    background: #ec2603d2;
-    color: #ffffff;
+    /* text-shadow: 2px 2px 4px #ffffff; */
+    background: hsla(49, 98%, 49%, 0.824);
+    color: hsl(0, 0%, 0%);
     font-family: sans-serif;
     font-size: 2rem;
     cursor: pointer;
