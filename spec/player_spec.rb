@@ -19,5 +19,4 @@ describe Player do
     expect(player.choice).to eq(nil)
   end
 
-
 end

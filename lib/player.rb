@@ -14,5 +14,4 @@ class Player
     @choice = nil
   end
 
-
 end

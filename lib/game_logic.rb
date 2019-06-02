@@ -1,14 +1,13 @@
 module GameLogic
 
   def pick_weapon
-    ['rock', 'paper', 'scissors', 'lizard', 'spock'].sample
+    [:rock, :paper, :scissors, :lizard, :spock].sample
   end
 
   def determine_result(choices = [])
     if choices.empty?
       if players == 1
-        player2_choice = pick_weapon
-        @pc_choice = player2_choice
+        @pc_choice = pick_weapon.to_s
       else
         player2_choice = @player2.choice
       end

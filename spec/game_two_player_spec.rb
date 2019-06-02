@@ -15,7 +15,7 @@ describe GameTwoPlayer do
   end
 
   it 'can randomly pick a weapon' do
-    expect(['rock','paper','scissors','lizard','spock']).to include(game.pick_weapon)
+    expect([:rock, :paper, :scissors, :lizard, :spock]).to include(game.pick_weapon)
   end
 
   it 'can determine a draw' do
@@ -81,6 +81,5 @@ describe GameTwoPlayer do
     expect(player).to receive(:wipe_choice)
     game.game_reset
   end
-
 
 end

@@ -6,7 +6,6 @@ describe GameOnePlayer do
   let(:player_class)  { double(:player_class, new: player) }
   let(:player)        { double(:player, name: 'Kelvin') }
 
-
   it 'can store a player and return it' do
     expect(game.player1).to eq(player)
   end
@@ -16,7 +15,7 @@ describe GameOnePlayer do
   end
 
   it 'can randomly pick a weapon' do
-    expect(['rock','paper','scissors','lizard','spock']).to include(game.pick_weapon)
+    expect([:rock, :paper, :scissors, :lizard, :spock]).to include(game.pick_weapon)
   end
 
   it 'can determine a draw' do
@@ -86,6 +85,5 @@ describe GameOnePlayer do
     expect(player).to receive(:wipe_choice)
     game.game_reset
   end
-
 
 end
