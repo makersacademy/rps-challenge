@@ -4,6 +4,13 @@ h1 {
   font: Verdana;
 }
 
+h2 {
+  text-align: center;
+  color: purple;
+  font: Verdana;
+  font-size: 28;
+}
+
 body {
 }
 
@@ -31,7 +38,7 @@ font-size: 130%
 }
 
 br {
-  line-height:50px;
+  line-height:30px;
 }
 .image {
     display: block;
@@ -48,6 +55,12 @@ select {
     font-size: 20px;
     padding: 8px; /* If you add too much padding here, the options won't show in IE */
     width: 268px;
+}
+
+.result {
+  vertical-align: middle;
+  width: 25%;
+  height: 25%;
 }
 /* .grid-container {
   display: grid;

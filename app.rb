@@ -21,8 +21,8 @@ class RPS < Sinatra::Base
     post '/move' do
       game = Game.new(params[:movee])
       session[:win_message] = game.score
-      session[:option] = game.option
-      session[:user] = game.users_choice
+      session[:option] = game.give_random_image
+      session[:user] = game.give_my_image
       redirect '/score'
     end
 
