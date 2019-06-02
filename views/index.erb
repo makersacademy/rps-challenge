@@ -1,4 +1,26 @@
-<form action='/name' method="POST">
-<input type='text' name='player_name'>
-<input type='submit' value='Sign in'>
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    div {
+      border: 1px solid black;
+      margin: 75px 300px 75px;
+      padding: 50px 75px 75px 50px;    
+      background-color: lightblue;
+      font-family:    Arial, Helvetica, sans-serif
+      font-size:      40px;
+      font-weight:    bold;          
+    }
+    </style>
+  </head>
+  <body>
+    <div>
+    <p>Please enter your name to play</p>
+    <form action='/name' method="POST">
+    <input type='text' name='player_name'>
+    <input type='submit' value='Sign in'>
+    </form>
+    </div>
+  </body>
+</html>
+

@@ -8,12 +8,6 @@ class ComputerGame
   def player(user_choice)
     @user_choice = user_choice
   end
-  def prints_output
-    puts @choice
-    puts "*******"
-    puts @user_choice
-    puts "£££££££"    
-  end
 
   def outcome
 

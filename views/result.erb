@@ -1,3 +1,22 @@
-<p>Player entered :<%= @userinput %></p>
-<p>Computer selected :<%= @output %></p>
-<p>The <b>result</b> is <%= @result %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    div {
+      border: 1px solid black;
+      margin: 75px 300px 75px;
+      padding: 50px 75px 75px 50px;    
+      background-color: lightblue;
+      font-family:    Arial, Helvetica, sans-serif
+      font-size:      40px;         
+    }
+    </style>
+  </head>
+  <body>
+  <div>
+  <p>Player entered ===> <%= @userinput %></p>
+  <p>Computer selected ===> <%= @output %></p>
+  <p>The <b>result</b> is ===> <%= @result %></p>
+  </div>
+  </body>
+</html>
