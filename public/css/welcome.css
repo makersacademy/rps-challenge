@@ -1,0 +1,58 @@
+body {
+  background-color: rgb(223, 226, 233);
+}
+
+div {
+  width: 60%;
+  height: 60%;
+  margin-top: 10%;
+  margin-left: 20%;
+  border: 1px solid rgb(75, 75, 75);
+  border-radius: 15px;
+  background-color: white;
+  z-index: -1000;
+}
+
+h1 {
+  position: relative;
+  left: 0;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  color: rgb(16, 6, 77);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+form {
+  position: relative;
+  top: 10%;
+  text-align: center;
+}
+
+input[type=text] {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input[type=submit] {
+  position: relative;
+  width: 25%;
+  background-color: rgb(248, 250, 98);
+  color: rgb(16, 6, 77);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}

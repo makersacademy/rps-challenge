@@ -1,0 +1,33 @@
+<head>
+<link rel="stylesheet" href="/css/result_view.css">
+</head>
+
+<body>
+
+  <div class='player1'>
+    <h1>Player 1: <%= @player_name%></h1>
+    <h2>Make a choice:</h2>
+    <form action='/result' method='post'>
+      <button disabled>Rock</button><br>
+      <button disabled>Paper</button><br>
+      <button disabled>Scissors</button>
+    </form>
+    <div class=player-choice>You chose: <%= @player_choice%></div>
+  </div>
+
+  <div class='player2'>
+    <h1>Player 2: Computer</h1>
+    <div class=computer-choice>Computer chose: <%= @computer_choice%></div>
+  </div>
+
+  <div class ='vs'>vs.</div>
+
+  <div class=result><%= @result%><div>
+
+  <div class=start-over-button>
+    <form action='/start-game'>
+      <button name='start_over' value='Start_over'>Start over</button>
+    </form>
+  </div>
+
+</body>

@@ -1,0 +1,21 @@
+<head>
+  <link rel="stylesheet" href="/css/game_view.css">
+</head>
+
+<body>
+  <div class='player1'>
+    <h1>Player 1: <%= @player_name%></h1>
+    <h2>Make a choice:</h2>
+    <form action='/result' method='post'>
+      <button name='move' value='Rock' class='choice-buttons'>Rock</button><br>
+      <button name='move' value='Paper' class='choice-buttons'>Paper</button><br>
+      <button name='move' value='Scissors' class='choice-buttons'>Scissors</button>
+    </form>
+  </div>
+
+  <div class='player2'>
+    <h1>Player 2: Computer</h1>
+  </div>
+
+  <div class ='vs'>vs.</div>
+</body>
