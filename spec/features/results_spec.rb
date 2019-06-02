@@ -10,8 +10,14 @@ feature 'Results Page' do
     expect(page).to have_content('Ed played rock')
   end
 
-  pending 'RPS-Bot has their choice displayed (single player)' do
+  scenario 'RPS-Bot has their choice displayed (single player)' do
+    srand(1)
     one_player_game_played
-    expect
+    expect(page).to have_content('RPS-Bot played paper')
+  end
+
+  scenario 'Both players have their choices displayed (two player)' do
+    two_player_game_played
+    expect(page).to have_content('Ed played rock, and Judith played scissors')
   end
 end
