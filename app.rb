@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
-require 'pp'
+
 
 class Rpschallenge < Sinatra::Application
 
@@ -15,14 +15,15 @@ end
 
 post '/game' do
 
- game=ComputerGame.new
- @input = game.player(params[:user_input])
- @output = game.choice
- @result = game.outcome
- p @input
- p @output
- p @result
- erb(:result)
+  @game = ComputerGame.new
+  @game.player(params[:user_input])
+  @userinput = @game.user_choice
+  @output = @game.choice
+  @result = @game.outcome
+  p @userinput
+  p @output
+  p @result
+  erb(:result)
  
 end
 end
