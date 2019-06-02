@@ -62,6 +62,14 @@ describe 'Game' do
           expect(game.last_game_text).to eq("Filbert won!")
         end
       end
+      context 'when it was a draw' do
+        it 'returns a friendly string' do
+          allow(winner_calculator).to receive(:calculate).with(real_player, computer_player).and_return(:draw)
+          allow(real_player).to receive(:move=).with(:rock)
+          game.play('rock')
+          expect(game.last_game_text).to eq("It was a draw!")
+        end
+      end
     end
   end
 end

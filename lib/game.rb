@@ -21,7 +21,11 @@ class Game
   end
 
   def last_game_text
-    "#{@winner.name} won!"
+    if @winner == :draw
+      return 'It was a draw!'
+    else
+      "#{@winner.name} won!"
+    end
   end
 
 end
