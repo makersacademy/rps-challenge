@@ -17,8 +17,12 @@ class RPG < Sinatra::Base
       erb :play
     end
 
-    get '/Scissors' do
-      erb :scissors
+    get '/game' do
+      $game = Game.new(params[:weapon])
+      @player_move = $game.player_move
+      @computer_move = $game.computer_move
+      @who_won = $game.fight
+      erb :game
     end
 
     run! if app_file == $0
