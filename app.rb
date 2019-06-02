@@ -19,6 +19,11 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+      @results = {
+        0  => "It's a draw",
+        1 => "#{$game.playername} wins",
+        2 => "AI Wins"
+      }
     erb(:result)
   end
 

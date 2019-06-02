@@ -35,4 +35,8 @@ describe Game do
     subject.move = 'paper'
     expect(subject.who_wins?).to eq(Game::DRAW)
   end
+
+  pending 'plays with two players if selected' do
+    subject.playmode('two player')
+  end
 end
