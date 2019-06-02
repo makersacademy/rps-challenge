@@ -15,7 +15,7 @@ class RockPaperScissors < Sinatra::Application
 
   post ('/start-game') do
     if session[:player_name] == nil
-    session[:player_name] = params[:player_name]
+      session[:player_name] = params[:player_name]
     end
     redirect('/start-game')
   end

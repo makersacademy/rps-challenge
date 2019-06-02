@@ -3,6 +3,6 @@ feature 'marketeer can enter their name before the game begins' do
     visit('/')
     fill_in :player_name, with: "Egle" 
     click_on "Start game" 
-    expect(page).to have_content("Welcome Egle!")
+    expect(page).to have_content "Egle"
   end
 end
