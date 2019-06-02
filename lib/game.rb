@@ -1,5 +1,6 @@
-require 'winner_calculator'
+require_relative 'winner_calculator'
 class Game
+  attr_reader :player_one, :player_two
   def initialize(player_one, player_two, winner_calculator = WinnerCalculator.new)
     @player_one = player_one
     @player_two = player_two
@@ -16,7 +17,11 @@ class Game
 
   def play(p1_move)
     @player_one.move = p1_move.to_sym
-    @winner_calculator.calculate(@player_one, @player_two)
+    @winner = @winner_calculator.calculate(@player_one, @player_two)
+  end
+
+  def last_game_text
+    "#{@winner.name} won!"
   end
 
 end

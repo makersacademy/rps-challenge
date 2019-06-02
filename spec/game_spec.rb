@@ -39,4 +39,29 @@ describe 'Game' do
       end
     end
   end
+
+  describe '#last_game_text' do
+    before(:each) do
+
+    end
+
+    context 'when real player vs computer' do
+      context 'when real player wins' do
+        it 'calls name on the player who won' do
+          allow(winner_calculator).to receive(:calculate).with(real_player, computer_player).and_return(real_player)
+          allow(real_player).to receive(:move=).with(:rock)
+          expect(real_player).to receive(:name)
+          game.play('rock')
+          game.last_game_text
+        end
+        it 'returns a friendly string' do
+          allow(winner_calculator).to receive(:calculate).with(real_player, computer_player).and_return(real_player)
+          allow(real_player).to receive(:move=).with(:rock)
+          allow(real_player).to receive(:name).and_return('Filbert')
+          game.play('rock')
+          expect(game.last_game_text).to eq("Filbert won!")
+        end
+      end
+    end
+  end
 end
