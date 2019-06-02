@@ -103,10 +103,21 @@ button:disabled, button[disabled]{
 
 .start-over-button {
   position: relative;
-  top: 30%;
+  top: 40%;
   width: 50%;
   text-align: center;
   left: 25%;
+}
+
+.result {
+  position: relative;
+  top: 15%;
+  width: 100%;
+  font-size: 40px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgb(248, 250, 98);
+  color: rgb(16, 6, 77);
 }
 
 
