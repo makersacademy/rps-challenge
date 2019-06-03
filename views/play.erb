@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Rock, Paper, Scissors: Play!</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+
+
+<div>
+
+  <h1>Welcome to the game, <%=@player_name%>!</h1>
+
+  <p class = "bodytext">Choose your move:</p>
+
+  <div id = "choices">
+    
+    <a id="rock" href = "/result?player=<%=@player_name%>&choice=rock">
+      <div class = "bordered rps-choice">
+        <img src="/images/rock.svg" alt="Rock"/>
+      </div>
+      <p class = "bodytext choice-text">Rock</p>
+    </a>
+
+    <a id="paper" href = "/result?player=<%=@player_name%>&choice=paper">
+      <div class = "bordered rps-choice">
+        <img src="/images/paper.svg" alt="Paper"/>
+      </div>
+      <p class = "bodytext choice-text">Paper</p>
+    </a>
+
+    <a id="scissors" href = "/result?player=<%=@player_name%>&choice=scissors">
+      <div class = "bordered rps-choice">
+        <img src="/images/scissors.svg" alt="Scissors"/>
+      </div>
+      <p class = "bodytext choice-text">Scissors</p>
+    </a>
+  </div>
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Rock, Paper, Scissors: Result</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+
+<%# <div id="result-container"> %>
+
+  <div id="result" class="bordered center-element">
+
+<% case @choice %>
+<% when "rock"%>
+  <p>You chose "Rock"</p>
+<% when "paper"%>
+  <p>You chose "Paper"</p>
+<% when "scissors"%>
+  <p>You chose "Scissors"</p>
+<% end %>
+
+
+<% case @game_result %>
+<% when :draw %>
+  <p>Your opponent chose "<%=@opponent_choice.capitalize%>". It's a draw.</p>
+<% when :lose %>
+  <p>Your opponent chose "<%=@opponent_choice.capitalize%>". You lose.</p>
+<% when :win %>
+  <p>Congratulations</p>
+
+  <p class="winner"><%=@player%></p>
+
+  <p>Your opponent chose "<%=@opponent_choice.capitalize%>". You win!.</p>
+<% end %>
+
+  </div>
+
+  <div id="start-over"><p><a href="/">CLICK TO START OVER</a></p></div>
+
+<%# </div> %>
+
+</body>
+
+</html>

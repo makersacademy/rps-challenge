@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
-ruby '2.5.0'
+ruby '>=2.5.0'
 
 gem 'rake'
+gem 'shotgun'
 gem 'sinatra'
 
 group :test do
   gem 'capybara'
+  gem 'coveralls', require: false
   gem 'rspec'
   gem 'rubocop', '0.56.0'
   gem 'simplecov', require: false
