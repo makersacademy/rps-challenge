@@ -5,14 +5,14 @@ describe Game do
     g = Game.new
     g.player_1_choice = 'rock'
     g.player_2_choice = 'scissors'
-    expect(g.outcome).to eq("Player 1 wins")
+    expect(g.outcome).to eq("Congatulations, you win!")
   end
 
   it 'can display player 2 winning the game' do
     g = Game.new
     g.player_1_choice = 'paper'
     g.player_2_choice = 'scissors'
-    expect(g.outcome).to eq("Player 2 wins")
+    expect(g.outcome).to eq("You lose!")
   end
 
   it 'can display a draw' do
