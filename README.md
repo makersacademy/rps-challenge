@@ -4,9 +4,38 @@
 
 ([Link to original README.md](/original-README.md))
 
+This is a web app offering a game of Rock, Paper, Scissors. Written in Ruby using the Sinatra framework, with ERB for templating.
+
+TDD/BDD with RSpec, using Capybara for BDD feature tests, and SimpleCov test coverage tool.
+
+<p align = "center">
+  <img src="readme/start.png" alt="Start page" title="Starting a new game"><br>
+  <em>Starting a new game</em>
+</p>
+
+<br>
+
+<p align = "center">
+  <img src="readme/play.png" alt="Player moves" title="Making a move"><br>
+  <em>Making a move</em>
+</p>
+
+<br>
+
+<p align = "center">
+  <img src="readme/win.png" alt="Player wins" title="Player won">
+  <img src="readme/lose.png" alt="Player loses" title="Player lost">
+  <img src="readme/draw.png" alt="Player draws" title="Player draws">
+  <br>
+  <em>Result: Win, Lose, or Draw</em>
+</p>
+
+---
+
+
 <details><summary><i>click for table of contents</i></summary>
 <br>
-  
+
 [Getting started](#getting-started)
 
 [Features](#features)
@@ -38,6 +67,8 @@ bundle
 ruby app.rb
 
 ```
+
+After `bundle`, run tests with `rspec` or `rake spec`.
 
 ## Features
 
