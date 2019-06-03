@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta charset="utf-8"/>
+      <meta name="description" content="Rock Paper Scissors">
+      <meta name="author" content="Adrian Raisin">
+      <meta name="keywords" content="RPS Game">
+
+      <title>Rock Paper Scissors | Play</title>
+
+      <link href="./playstyles.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+
+  <body class="body">
+    <h1> <%= @game.player_1.name %>  vs. <%= @game.player_2.name %> </h1>
+    <a href="/player_1_move">Begin!</a>
+  </body>
+</html>

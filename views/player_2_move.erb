@@ -1,0 +1,8 @@
+
+<h1> <%= @game.player_2.name %>, pick a move: </h1>
+
+<form class="choose_move" action="/player_2_moved" method="post">
+  <input class="move_button" type="submit" name="player_2_move" value="Rock">
+  <input class="move_button" type="submit" name="player_2_move" value="Paper">
+  <input class="move_button" type="submit" name="player_2_move" value="Scissors">
+</form>

@@ -1,4 +1,17 @@
 # RPS Challenge
+To do
+-------
+* Refactor tests to make cleaner.
+* Add in many more feature tests to ensure test coverage of all features.
+* Make sure to remove double expect in choosing a move spec.
+* Continue with refactoring to remove global variable reliance.
+* Add in styling in all css files
+* Potentially add scoring for multiple game functionality
+* Add in 1 player functionality/logic (game.rb to provide computer generated move)
+* Complete html in all erb files (see index file for example for good html)
+* Refactor private method in game.rb to be smarter allowing for expansion in lizard spock territory.
+  (convert to numbers and take modulus to only end up with 1,2,3 instead of rock, paper, scissors.
+    Potentially take winning status out as hash or something similar.)
 
 Instructions
 -------

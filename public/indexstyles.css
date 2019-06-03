@@ -1,0 +1,64 @@
+body{
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+html{
+  height: 100%;
+  margin: 0;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  width: 100%;
+}
+
+h1{
+  font-size: 1.5em;
+  line-height: 100%;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.try_hand{
+  font-size: 1em;
+  font-weight: 500;
+  margin-top: 2.5%;
+  text-align: center;
+  width: 100%;
+}
+
+.input_name{
+  width: 100%;
+}
+
+.player_names_section{
+  display: flex;
+  justify-content: center;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.input_box{
+  margin: 1%;
+}
+
+.submit_section{
+  display: flex;
+  justify-content: center;
+}
+
+.submit_button{
+ /* Do something here */
+}
+
+.rps_picture{
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5%;
+}
