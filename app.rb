@@ -20,9 +20,6 @@ post '/game' do
   @userinput = @game.user_choice
   @output = @game.choice
   @result = @game.outcome
-  p @userinput
-  p @output
-  p @result
   erb(:result)
  
 end
