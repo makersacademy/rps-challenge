@@ -8,7 +8,7 @@ class Player
     @weapon = nil
   end
 
-  def choose_weapon(weapon = ['rock', 'paper', 'scissors'].sample)
+  def choose_weapon(weapon = ['rock', 'paper', 'scissors', 'spock', 'lizard'].sample)
     @weapon = weapon
   end
 end
