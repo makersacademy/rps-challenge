@@ -33,7 +33,10 @@ class Rps < Sinatra::Base
 
   get '/game_results' do
     @player_move = $player_move.make_move
-    @computer_move = ComputerMove.new.make_move
+    #@computer_move = ComputerMove.new.make_move
+    @making_a_move = ComputerMove.new
+    @computer_move = @making_a_move.make_move
+    @game_outcome = Game.new(@making_a_move,$player_move).outcome
     erb(:game_results)
   end
 

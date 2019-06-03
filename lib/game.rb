@@ -7,8 +7,25 @@ class Game
     @player_move = player_move
   end
 
-  # Currently trying to get computer_move to display move using encapsulation with a method?
+  def outcome
+    if @computer_move.make_move == @player_move.make_move
+      "It is a draw"
+    elsif @computer_move.make_move == 'rock' && @player_move.make_move == 'scissors'
+      "Computer has won"
+    elsif @computer_move.make_move == 'rock' && @player_move.make_move == 'paper'
+      "You have won"
+    elsif @computer_move.make_move == 'scissors' && @player_move.make_move == 'paper'
+      "Computer has won"
+    elsif @computer_move.make_move == 'paper' && @player_move.make_move == 'scissors'
+      "You have won"
+    elsif @computer_move.make_move == 'scissors' && @player_move.make_move == 'rock'
+      "You have won"
+    elsif @computer_move.make_move == 'paper' && @player_move.make_move == 'rock'
+      "Computer has won"
+    end
+  end
 
+  # Currently trying to get computer_move to display move using encapsulation with a method?
 end
 
 # player_1_count = 0
