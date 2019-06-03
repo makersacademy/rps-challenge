@@ -20,3 +20,4 @@ ruby app.rb
 * CSS could be polished a bit
 * Didn't spend much time trying to make classes DRY, so more could almost certainly be done there
 * Could I make the ComputerPlayer class extend the Player class?
+* Move #last_game_text out of Game into the view
