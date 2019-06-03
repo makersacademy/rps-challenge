@@ -15,10 +15,11 @@ class Game
   end
 
   def play(p1, computer)
-    RULES[p1][computer]
+    puts RULES[p1][computer]
   end
 end
 
-# puts play(:rock, :paper)        # :paper
-# puts play(:scissors, :rock)     # :rock
-# puts play(:scissors, :scissors) # :draw
+# g = Game.new
+# puts g.play(:rock, :paper)        
+# puts g.play(:scissors, :rock)     
+# puts g.play(:scissors, :scissors) 
