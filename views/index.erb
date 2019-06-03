@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta charset="utf-8"/>
+      <meta name="description" content="Rock Paper Scissors">
+      <meta name="author" content="Adrian Raisin">
+      <meta name="keywords" content="RPS Game">
+
+      <title> Rock Paper Scissors | Home </title>
+
+      <link href="/indexstyles.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+
+  <body class="body">
+    <header>
+      <h1> Rock, Paper, Scissors </h1>
+    </header>
+    <h2 class="try_hand"> Try your hand! </h2>
+    <div class="form">
+      <form class="input_name" action="/names" method="post">
+        <section class="player_names_section">
+          <input class="input_box" type="text" name="player_1" placeholder="Player 1 Name">
+          <input class="input_box" type="text" name="player_2" placeholder="Player 2 Name">
+        </section>
+        <section class="submit_section">
+          <input class="submit_button" type="submit" value="Let's Play!">
+        </section>
+      </form>
+    </div>
+    <div class="rps_picture">
+      <img src="/rps.png" alt="Rock, Paper and Scissors">
+    </div>
+  </body>
+</html>
