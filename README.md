@@ -37,6 +37,9 @@ TDD/BDD with RSpec, using Capybara for BDD feature tests, and SimpleCov test cov
 <br>
 
 [Getting started](#getting-started)
+- [Running the tests](#running-the-tests)
+
+[My approach](#my-approach)
 
 [Features](#features)
 
@@ -68,7 +71,21 @@ ruby app.rb
 
 ```
 
-After `bundle`, run tests with `rspec` or `rake spec`.
+### Running the tests
+
+After `bundle`, tests can be run with `rspec` or `rake spec`. Here is a screenshot of tests passing from the Travis CI build:
+
+![Travis CI: tests passing](readme/tests-passing.png)
+
+## My Approach
+
+I use a TDD approach and I will start by looking at user stories so that I can write feature tests. In this case, user stories were provide so I did not have to write them myself. The feature tests are written from the perspective of the user. The user interacts with the application via their browser, so the feature tests are likewise front-end tests that test the application via the browser. 
+
+As I begin to implement new classes to satisfy the feature test, I first write the unit tests for what I will be implementing.
+
+There are many features that this Rock, Paper, Scissors game could support but I will not attempt to implement all of them, e.g. this game should ultimately allow two human players to play against each other, and perhaps give an option to play an expanded version of the game (["Rock, Paper, Scissors, Spock, Lizard"](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)).
+
+Instead, for my MVP I will begin by focusing on allowing a single player to play against the the computer
 
 ## Features
 
@@ -210,8 +227,7 @@ The obvious advantages of my approach is that it simpler and faster to use. Like
 ## To Do
 
 - Use sessions
-- Either delete Player class or actually make use of it
-
+- Either delete Player class or actually make use of it: it will be necessary when there is more than one human player but as the game is currently single-player against the computer, the Player class is not used.
 
 ## Addendum
 
