@@ -1,5 +1,7 @@
 require 'sinatra'
 require './lib/player_move.rb'
+require './lib/computer_move.rb'
+require './lib/game.rb'
 
 class Rps < Sinatra::Base
 
@@ -31,6 +33,7 @@ class Rps < Sinatra::Base
 
   get '/game_results' do
     @player_move = $player_move.make_move
+    @computer_move = ComputerMove.new.make_move
     erb(:game_results)
   end
 
