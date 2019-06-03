@@ -13,7 +13,7 @@ feature 'Results Page' do
   scenario 'RPS-Bot has their choice displayed (single player)' do
     srand(1)
     one_player_game_played
-    expect(page).to have_content('RPS-Bot played paper')
+    expect(page).to have_content('RPS-Bot played spock')
   end
 
   scenario 'Both players have their choices displayed (two player)' do

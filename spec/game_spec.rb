@@ -21,12 +21,12 @@ describe Game do
   it 'should let the player win' do
     srand(1)
     game.player1.choose_weapon('scissors')
-    expect(game.play).to eq('Ed')
+    expect(game.play).to eq('RPS-Bot')
   end
 
   it 'should let the players draw' do
     srand(1)
-    game.player1.choose_weapon('paper')
+    game.player1.choose_weapon('spock')
     expect(game.play).to eq('No-one... it\'s a draw')
   end
 end
