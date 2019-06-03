@@ -1,6 +1,6 @@
-class Leaderboard
+class LeaderBoard
   def self.build
-    @leaderboard = Leaderboard.new
+    @leaderboard = LeaderBoard.new
   end
   
   def self.instance

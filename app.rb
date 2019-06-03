@@ -1,21 +1,22 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/leaderboard'
+require './lib/player'
 
 
 class MyApp < Sinatra::Base
+  before do
+    @game = Game.instance
+    @leaderboard = LeaderBoard.instance
+  end
 
-  set :session_secret, 'super'
-
-  enable :sessions
-  
   get '/' do
     erb(:index)
   end
 
-  post '/names' do
-    p1, p2 = Player.new(params[:Player_1_name]), Player.new(params[:Player_2_name])
-    Leaderboard.build
+  post '/name' do
+    p1, p2 = Player.new(params[:player_1_name]), Player.new(params[:player_2_name])
+    LeaderBoard.build
     redirect '/play'
   end
 
