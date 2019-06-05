@@ -74,6 +74,4 @@ In code review we'll be hoping to see:
 *   All tests passing - CHECK
 *   High test coverage - CHECK
 *   Travis badge [![Build Status](https://travis-ci.org/saypop/rps-challenge.svg?branch=master)](https://travis-ci.org/saypop/rps-challenge)
-*   The code is elegant: every class has a clear responsibility, methods are short etc. - Please provide feedback on this.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+*   The code is elegant: every class has a clear responsibility, methods are short etc. 
