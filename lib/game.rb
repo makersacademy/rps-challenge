@@ -27,7 +27,7 @@ class Game
   end
 
   def a_draw?
-   true if @move == @ai_move
+   @move == @ai_move
   end
 
   def calculate_choices
