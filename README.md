@@ -1,6 +1,6 @@
 # ROCK PAPER SCISSORS! A Basic Web-App
 
-## Week 3 Pairing Challenge @ Makers Academy
+## Week 3 Challenge @ Makers Academy
 
 ### Design
 We were challenged to build a rock paper scissors game. We worked alone.
