@@ -19,7 +19,7 @@ class Game
     if registeredplayer1.tool == registeredplayer2.tool
       "It's a draw this time #{registeredplayer1.name} & #{registeredplayer2.name} - it seems you're just as good as each other. Great mind think alike!!"
     else
-      if (win_results[registeredplayer1.tool] == registeredplayer2.tool) == true
+      if win_results[registeredplayer1.tool] == registeredplayer2.tool
         "Congratulations #{registeredplayer1.name} - you won and should be proud of how amazing you are! I'm sorry #{registeredplayer2.name} - you lost this time, but never give up!"
       else
         "Congratulations #{registeredplayer2.name} - you won and should be proud of how amazing you are! I'm sorry #{registeredplayer1.name} - you lost this time, but never give up!"
