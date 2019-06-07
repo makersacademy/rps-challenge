@@ -27,9 +27,6 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    # @player_move = @game.player.option
-    # @computer_choice = @game.computer.computer_move
     erb :result
   end
-  # run! if app_file == $PROGRAM_NAME
 end
