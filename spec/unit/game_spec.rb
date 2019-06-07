@@ -16,21 +16,21 @@ describe Game do
 
   describe "#winner" do
     it 'draw' do
-      allow(computer).to receive(:computer_move).and_return('Rock')
-      allow(player).to receive(:option).and_return('Rock')
-      expect(game.winner).to eq "Draw!"
+      allow(computer).to receive(:option).and_return(:rock)
+      allow(player).to receive(:option).and_return(:rock)
+      expect(game.winner).to eq :draw
     end
 
     it 'player wins' do
-      allow(computer).to receive(:computer_move).and_return('Rock')
-      allow(player).to receive(:option).and_return('Paper')
-      expect(game.winner).to eq "You win!"
+      allow(computer).to receive(:option).and_return(:rock)
+      allow(player).to receive(:option).and_return(:paper)
+      expect(game.winner).to eq player
     end
 
     it 'computer wins' do
-      allow(computer).to receive(:computer_move).and_return('Rock')
-      allow(player).to receive(:option).and_return('Scissors')
-      expect(game.winner).to eq "The computer wins!"
+      allow(computer).to receive(:option).and_return(:rock)
+      allow(player).to receive(:option).and_return(:scissors)
+      expect(game.winner).to eq computer
     end
   end
 end

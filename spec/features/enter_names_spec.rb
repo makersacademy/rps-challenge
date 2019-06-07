@@ -1,6 +1,7 @@
+require './app'
 
-feature 'Name' do
-  scenario 'ask for name' do
+feature 'Register name before game' do
+  scenario 'player enters their name' do
     visit '/'
     expect(page).to have_content "Enter your name:"
   end

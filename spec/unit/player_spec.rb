@@ -1,16 +1,23 @@
 require 'player'
 
 describe Player do
-  subject(:player) { described_class.new("Riya") }
+
+  let(:name) { double :name }
+  let(:option) { double :option }
+
+  subject { described_class.new(name) }
 
   it 'returns a name' do
-    expect(player.name).to eq 'Riya'
+    expect(subject.name).to eq name
   end
 
   describe '#move' do
-    let(:option) { double :option }
-    it 'stores the players move' do
-      expect(player.move(option)).to eq option
+    it 'can choose and option' do
+      expect{ subject.move(option) }.to change { subject.option }.from(nil).to option
+    end
+
+    it 'returns either rock , paper or scissors' do
+      expect(subject.random_move).to eq(:rock).or eq(:paper).or eq(:scissors)
     end
   end
 end

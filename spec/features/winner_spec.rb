@@ -5,7 +5,7 @@ feature 'winner' do
     click_button 'Rock'
     expect(page).to have_content "Your move: Rock"
     expect(page).to have_content "Computer's move: Paper"
-    expect(page).to have_content "The computer wins!"
+    expect(page).to have_content "Computer wins!"
   end
 
   scenario 'display the winner if player chooses paper and computer is stubbed at paper' do

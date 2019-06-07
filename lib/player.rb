@@ -8,4 +8,8 @@ class Player
   def move(option)
     @option = option
   end
+
+  def random_move
+    @option = Game::OPTIONS.sample
+  end
 end

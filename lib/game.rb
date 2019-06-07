@@ -1,33 +1,32 @@
-require_relative 'player'
-require_relative 'computer'
-
 class Game
   attr_reader :player, :computer
 
-  def initialize(player = Player.new, computer = Computer.new)
-    @player = player
-    @computer = computer
-  end
+  OPTIONS = [:rock, :paper, :scissors]
+  BEATMAP = { :rock => :scissors, :scissors => :paper, :paper => :rock }
 
-  def self.create(player = Player.new, computer = Computer.new)
-    @game = Game.new(player, computer)
+  def self.create(player, computer)
+    @game = self.new(player, computer)
   end
 
   def self.instance
     @game
   end
 
-  # this can be extracted to a different class.
-
-  BEATMAP = { "Rock" => "Scissors", "Scissors" => "Paper", "Paper" => "Rock" }
-
   def winner
-    if @player.option == @computer.computer_move
-      "Draw!"
-    elsif BEATMAP[@player.option] == @computer.computer_move
-      "You win!"
+    if @computer.option == BEATMAP[@player.option]
+      @player
+    elsif @player.option == BEATMAP[@computer.option]
+      @computer
     else
-      "The computer wins!"
+      :draw
     end
   end
+
+  private
+
+  def initialize(player = Player.new, computer = Computer.new)
+    @player = player
+    @computer = computer
+  end
+
 end
