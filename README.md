@@ -1,7 +1,8 @@
 # RPS Challenge
 
-Instructions
--------
+***
+
+[![Build status](https://travis-ci.org/riyadattani/rps-challenge.svg?branch=master)](https://travis-ci.org/riyadattani/rps-challenge)
 
 [Getting started](#getting-started) | [Play the game](#Play-the-game) | [Tests](#tests) | [User stories](#user-stories)
 
