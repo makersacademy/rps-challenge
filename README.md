@@ -7,7 +7,6 @@ TASK SUMMARY
 ----
 The task is to provide a Rock, Paper, Scissors game for users so they can play on the web with the following user stories:
 
-
 ```sh
 As a marketeer
 So that I can see my name in lights
@@ -38,7 +37,6 @@ Hints on functionality
 - run tests: rspec
 
 
-
 ## Basic Rules
 
 - Rock beats Scissors
@@ -53,27 +51,24 @@ I split the user flow into 3 sections: before game, during game, and after game.
 
 ![](images/flow.png)
 
-## user flow:
-### before game 
-#### tests
+## User flow:
+### Before game 
+#### Tests
 - user needs to see an erb with a form where they can register for the game by entering name. Hence require a get '/'
 - user enters name on the form (post)
 - after, user needs to see their name displayed and confirmed that they are registered (to play) on a page 
 
-### during game
-#### tests
+### During game
+#### Tests
 - user needs to do an action(e.g. press a button) to start playing the game
 - user needs to see list of options to choose (e.g. paper, rock etc ) 
-
 - user can choose the option (leads onto next phase)
 
-
-
-### after game
-#### tests:
+### After game
+#### Tests:
 - user needs to see who won after choosing the option (e.g. server calculates who won in a 'box', where there is some code which determines who won, and where server randomly assigns computer a choice
 
-#### code:
+#### Code:
 - player class was created here to generate a new player for user and computer, and assigning an attribute of choice to it
 - player1's choice was stored in params when he entered it in the dropdown option at post '/result'
 
@@ -88,18 +83,23 @@ calculation of who won:
 
 - shorten the calculation for winner step by server (if possible, as already the value is given, might not need index value)
 
-- refactor the feature test where you create a new user in the tests#
+- refactor the feature test where you create a new user in the tests
 
 - 'play again button' at the end 
 
 - further tests on Player class(if needed?)
 
 ## What i did later on (after monday)
+- not fat controller (refactor it into model, add in unit tests, - commit: 'fixed game_spec temporarily')
+
 - Made a class for the game itself where it will return a random choice 
+
 - refactored the player class to extract RPS class where it calculates winner, and changed get '/result' page to use these new classes.
 
 
-## Problems encountered
+
+
+## Problems encountered (not yet solved)
 
 - not sure how to fix the choice for computer, feature test not passing due to argument (fixed choice for computer) not passed into the game in feature test
 
@@ -108,6 +108,5 @@ calculation of who won:
 ## Things to better and further work afterwards
 - write smaller feature tests (i had to amend this)
 
-- not fat controller (refactor it into model, add in unit tests)
-(refactored this later- commit: 'fixed game_spec temporarily')
+
 
