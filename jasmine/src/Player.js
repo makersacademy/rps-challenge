@@ -1,7 +1,7 @@
 function Player() {
-  this.turn = ['Scissors','Paper','Rock'];
+  this.turn = "";
 }
 
-Player.prototype.makeTurn = function() {
-  return this.turn;
+Player.prototype.makeTurn = function(playerTurn) {
+  return this.turn = playerTurn
 };

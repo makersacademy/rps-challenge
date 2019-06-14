@@ -1,12 +1,18 @@
+<!DOCTYPE html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="Game.js"></script>
-<script src="Player.js"></script>
 <script src="Player.js"></script>
 <script src="Computer.js"></script>
 <script src="game-controller.js"></script>
 </head>
 
 <body>
-  <p>This is some text.</p>
+  <p id="game-display"></p>
+  <form action="game.html" method="post" id="myForm">
+    <input id="player-turn" type="text" name="player-turn">
+    <button type="button" id="submitBtn">Go</button>
+  </form>
+  <p id="game-outcome"></p>
 </body>
