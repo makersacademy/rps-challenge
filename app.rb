@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require './lib/selection.rb'
+require './lib/user.rb'
+require './lib/cpu.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -14,16 +15,18 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    selection = Selection.new
-    session[:rock] = selection.user_input(params[:rock])
-    session[:paper] = selection.user_input(params[:paper])
-    session[:scissor] = selection.user_input(params[:scissor])
+    user = User.new
+    session[:rock] = user.input(params[:rock])
+    session[:paper] = user.input(params[:paper])
+    session[:scissor] = user.input(params[:scissor])
+    session[:cpu_input] = CPU.new.random
     redirect '/play'
   end
 
   get '/play' do
     @player = session[:player]
     @user_input = [session[:rock],session[:paper],session[:scissor]].join
+    @cpu_input = session[:cpu_input]
     erb(:play)
   end
 
