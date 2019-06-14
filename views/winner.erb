@@ -1,0 +1,11 @@
+<font size="5" face="courier" color="blue">
+
+<h1> <%= @game.winner %> won! </h1>
+
+<h2> <%= @game.player.name.capitalize %> attacked with
+<%= @game.player.move.capitalize %> </h2>
+<h2> <%= @game.computer.name.capitalize %> attacked with
+<%= @game.computer.move.capitalize %> </h2>
+
+<form action="/" method="get">
+<input type='submit' value='Play again?'>
