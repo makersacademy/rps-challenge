@@ -11,7 +11,8 @@ class Rps << Sinatra::Base
     redirect :play
   end
 
-  egt '/play' do
+  get '/play' do
+
     erb :play
   end
 

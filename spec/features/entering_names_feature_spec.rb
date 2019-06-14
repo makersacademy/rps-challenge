@@ -5,6 +5,7 @@ feature 'Be able to enter player name.' do
   scenario 'Enter name as fred' do
     visit('/')
     fill_in :player_1_name, with: 'Dave'
+    click_button 'Submit'
     expect(page).to have_content 'Dave'
   end
 end
