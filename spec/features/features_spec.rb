@@ -3,6 +3,16 @@ feature 'Game is setup properly' do
     visit '/'
     fill_in('Name:', with: 'MAMA')
     click_button("Let's Play")
-    expect(page).to have_content('MAMA')
+    #expect(page).to have_content('MAMA')
+  end
+end
+
+feature 'As a player I can enter my name and pick a move' do
+  scenario 'Player enters their name chooses to play rock' do
+    visit '/'
+    fill_in('Name:', with: 'MAMA')
+    click_button("Let's Play")
+    click_button("Rock")
+    expect(page).to have_content('MAMA','Rock')
   end
 end
