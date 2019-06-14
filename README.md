@@ -22,6 +22,10 @@ I would like to be able to play rock/paper/scissors
 Approach
 ----
 
-1) Write a draft of this approach, so that I don't rush into development!
-2) Read the requirements carefully, so that I don't miss anything.
-3) Create a basic working environment based on a simple "Hello World" feature test.
+* Write a draft of this approach, so that I don't rush into development!
+* Read the requirements carefully, so that I don't miss anything.
+* Create a basic working environment based on a simple feature test.
+  * Bundle; Pull request; first commit; run rspec (no examples), rack config etc.
+  * Create feature test for "Hello Player!"
+  * Create app, view to implement "Hello Player!"
+  
