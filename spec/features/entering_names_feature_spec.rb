@@ -2,7 +2,7 @@
 # So that I can see my name in lights
 # I would like to register my name before playing an online game
 feature 'Be able to enter player name.' do
-  scenario 'Enter name as fred' do
+  scenario 'Enter name as Dave' do
     visit('/')
     fill_in :player_1_name, with: 'Dave'
     click_button 'Submit'

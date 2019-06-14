@@ -14,7 +14,7 @@ describe Game do
     it 'can return win' do
       srand(5432)
       game.decide('Rock')
-      expect(game.result).to eq 'Win'
+      expect(game.result).to eq 'Lose'
     end
   end
 end
