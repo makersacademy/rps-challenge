@@ -1,7 +1,5 @@
 # RPS Challenge
 
-AJ solution to challenge
-
 Instructions
 -------
 
