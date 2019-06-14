@@ -20,7 +20,8 @@ class RPS < Sinatra::Base
   end
 
   post '/move' do
-    "#{$game.player.name} played #{params[:move]}"
+    $game.player.save_move(params[:move])
+    "#{$game.player.name} played #{$game.player.move}"
     
   end
 
