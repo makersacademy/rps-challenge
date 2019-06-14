@@ -17,5 +17,5 @@ class RPS < Sinatra::Base
     @player_name = $player_name
     erb(:start_page)
   end
-
+  run! if app_file == $0
 end
