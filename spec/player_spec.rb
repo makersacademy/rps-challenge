@@ -10,4 +10,11 @@ describe Player do
     end
   end
 
+  describe '#save_move' do
+    it "saves the player's choice as an instance variable" do
+      player.save_move('Rock')
+      expect(player.move).to eq('Rock')
+    end 
+  end
+
 end
