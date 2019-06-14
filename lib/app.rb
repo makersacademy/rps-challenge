@@ -21,5 +21,10 @@ class Rps << Sinatra::Base
     redirect :result
   end
 
+  get '/result' do
+    @game = $game
+    erb :result
+  end
+
   run! if app_file == $0
 end
