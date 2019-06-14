@@ -13,7 +13,8 @@ describe Game do
   describe '#decide' do
     it 'can return win' do
       srand(5432)
-      expect(game.decide).to eq 'Win'
+      game.decide('Rock')
+      expect(game.result).to eq 'Win'
     end
   end
 end
