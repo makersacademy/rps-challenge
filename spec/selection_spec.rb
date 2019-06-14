@@ -1,9 +1,9 @@
-require 'selection'
+require 'user'
 
-RSpec.describe Selection do
+RSpec.describe User do
   let(:selection) { double :selection }
 
   it 'returns the selected attribute' do
-    expect(subject.user_input(selection)).to eq(selection)
+    expect(subject.input(selection)).to eq(selection)
   end
 end

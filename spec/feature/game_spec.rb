@@ -21,4 +21,10 @@ RSpec.feature 'RPS game' do
     expect(page).to have_text("Scissor!")
   end
 
+  scenario 'cpu choose a random option' do
+    insert_user_name
+    click_button 'Scissor!'
+    expect(page).to have_text("Scissor!","")
+  end
+
 end
