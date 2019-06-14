@@ -1,9 +1,10 @@
 <div>
   <h1> Rock - Paper - Scissor</h1>
   <h1> <%= @player %></h1>
-   <form action='/play' method='post'>
-    <button type='text' name='rock'>Rock</button>
-    <button type='text' name='paper'>Paper</button>
-    <button type='text' name='scissor'>Scissor</button>
+   <form action='/game' method='post'>
+    <input type='submit' name='rock' value="Rock!"></input>
+    <input type='submit' name='paper' value="Paper!"></input>
+    <input type='submit' name='scissor' value="Scissor!"></input>
   </form>
+  <h2 align='center'> <%= @user_input %> </h2>
 </div>
