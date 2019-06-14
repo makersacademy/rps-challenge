@@ -6,7 +6,7 @@ describe Game do
 
   describe 'stores instance of player' do
     it 'can store and return a players name' do
-      expect(game.name).to eq 'Dave'
+      expect(game.player_name).to eq 'Dave'
     end
   end
 end
