@@ -9,4 +9,11 @@ describe Game do
       expect(game.player_name).to eq 'Dave'
     end
   end
+
+  describe '#decide' do
+    it 'can return win' do
+      srand(5432)
+      expect(game.decide).to eq 'Win'
+    end
+  end
 end

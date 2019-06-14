@@ -9,6 +9,7 @@ feature 'be able to play rock, paper, scissors with computer' do
     fill_in :player_1_name, with: 'Dave'
     click_button 'Submit'
     fill_in :selection, with: 'Rock'
+    click_button 'Throw!'
     expect(page).to have_content 'You win Dave!'
   end
 end
