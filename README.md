@@ -23,9 +23,10 @@ Approach
 ----
 
 * Write a draft of this approach, so that I don't rush into development!
-* Read the requirements carefully, so that I don't miss anything.
 * Create a basic working environment based on a simple feature test.
-  * Bundle; Pull request; first commit; run rspec (no examples), rack config etc.
+  * Bundle; Pull request; first commit
+  * Configure rspec (no examples), rack config, coverage tool.
   * Create feature test for "Hello Player!"
   * Create app, view to implement "Hello Player!"
+* Read the requirements carefully, so that I don't miss anything.
   
