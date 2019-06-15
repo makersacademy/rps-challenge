@@ -25,7 +25,7 @@ class Rps < Sinatra:: Base
   end
 
   post '/result' do
-    @game.play(params[:type])
+    @game.play_control(params[:type])
     erb :results
   end
 

@@ -1,4 +1,5 @@
-require './lib/result_generator'
+require './lib/results'
+require './lib/comp_randomiser'
 
 class Game
 
@@ -8,20 +9,20 @@ class Game
     @player = player
     @turns = 0
     @round = 1
-    @results = []
   end
 
-  def play(play_type)
+  def play_control(play_type)
     @player_play = play_type
-    @computer_play = comp_choice
-    @turns += 1
-    turn_input = Hash[@player.name => @player_play, :computer => @computer_play]
-    @results << Result_generator.new.generate(turn_input)
+
+    @computer_play = CompRandomiser.new.result
+    new_round
   end
 
-  def comp_choice
-    types = ['ROCK', 'PAPER', 'SCISSORS']
-    types.sample
+  def new_round
+    turn_input = { :player => @player_play, :computer => @computer_play}
+    round_result = results.generate(turn_input)
+    results.store(round_result)
+    @round += 1
   end
 
   def self.create(player)
@@ -32,4 +33,7 @@ class Game
     @instance
   end
 
+  def results
+    @results ||= Results.new
+  end
 end
