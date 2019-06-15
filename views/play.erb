@@ -1,1 +1,14 @@
-<h1> Welcome <%= @game.player.name %> </h1>
+<html>
+  <body>
+  <h1> Welcome <%= @game.player.name %> </h1>
+  <br>
+      <form action='/result' method="post">
+        <br>
+        <button type="submit" id="play_type" value='ROCK' name='type'>ROCK</button>
+        <br>
+        <button type="submit" id="play_type" value='PAPER' name='type'>PAPER</button>
+        <br>
+        <button type="submit" id="play_type" value='SCISSORS' name='type'>SCISSORS</button>
+      </form>
+    </body>
+  </html>
