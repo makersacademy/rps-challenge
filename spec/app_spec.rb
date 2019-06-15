@@ -1,0 +1,2 @@
+describe RPS do
+end 
