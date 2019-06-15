@@ -29,4 +29,14 @@ Approach
   * Create feature test for "Hello Player!"
   * Create app, view to implement "Hello Player!"
 * Read the requirements carefully, so that I don't miss anything.
-  
+
+
+ Testing
+---- 
+
+The tests can be run using the command rspec
+
+ Credits
+---- 
+
+* I used the Makers Battle challenge, for reference
