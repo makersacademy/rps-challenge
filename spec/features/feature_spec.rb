@@ -19,5 +19,11 @@ describe "Play an online game of Rock Paper Scissors", type: :feature do
       sign_in_and_play
       expect(page).to have_content 'Rock Paper Scissors'
     end
+
+    it "makes a choice" do
+      sign_in_and_play
+      click_link('Rock')
+      expect(page).to have_content 'Dwayne Johnson selected Rock'
+    end
   end
 end

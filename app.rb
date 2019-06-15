@@ -17,6 +17,11 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  get '/result' do
+    @player_1 = session[:player_1]
+    erb(:result)
+  end
+
   # this will start the server automatically if the app.rb file is run in the
   # command line with `ruby app.rb` :)
   run! if app_file == $0
