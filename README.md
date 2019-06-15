@@ -1,34 +1,6 @@
-# RPS Challenge
+# README_Rock, Paper, Scissors Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
+## Desired Functionality
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
@@ -36,51 +8,85 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
+## Notes on model structure
 
-As usual please start by
+- The model has two classes:
+  - a player class which have name and choice attributes
+  - a game class which can ascertain the winner based on the two player's choices
 
-* Forking this repo
-* TEST driving development of your app
+## Future Changes
+- I would make a multiplayer version of this game
+  - although I have not done this, as my computer is an instance of the player class which simply takes the default arguments for the choose method `(@list.sample)` and the default name passed in on initialization `the computer`, I think that only the following changes would have to be made:
+    - add a second button on the index name for them to enter their name
+    - pass `param[:player_2_name]` into a new instance of the player class
+    - make an erb page when player 2 gets to choose between rock, paper and scissors
+    - pass `param[:player_2_choice]` into `player_2.choose()`
+- Implement further game options like 'Lizard' and 'Spock'
+  - e.g.
+    - Scissors beats Paper and Lizard
+    - Paper beats Rock and Spock
+    - Rock beats Lizard and Scissors
+    - Lizard beats Spock and Paper
+    - Spock beats Scissors and Rock
+  - having one choice beat multiple other ones would not be a problem with my code.
 
+  ```
+  def winning_scenarios
+    {"rock" => "scissors",
+     "scissors" => "paper",
+     "paper" => "rock"
+    }
+  end
 
-## Bonus level 1: Multiplayer
+  def first_beats_second?
+    winning_scenarios[@player_1.choice].include?(@player_2.choice)
+  end
+  ```
+  - I would just change the values in the winning_scenarios hash to an array of options.
+- I would like to make the name field on the index page a required field so someone cannot submit an empty name, I have done some research and I think it would work if I did the following...
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+  ```
+  <form action="/" method="post">
+    <label for='Name'> <h2> Name:</h2> </label>
+    <input type='text', name='name' required>
+    <button type='submit', value="submit">submit</button>
+  </form>
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+
+## An example user interaction:
+-------
+1) The user runs the app in the terminal...
+
+![Running_Program](images/2019/06/Screenshot 2019-06-15 at 19.29.42.png)
+
+2) The user enters their name, and clicks submit...
+
+![Entering_name](images/2019/06/Screenshot 2019-06-15 at 19.30.12.png)
+
+3) The user is asked if they want to play the game...
+
+![Clicking_play](images/2019/06/Screenshot 2019-06-15 at 19.30.22.png)
+
+4) The user chooses between Rock, Paper and Scissors...
+
+![Choose](images/2019/06/Screenshot 2019-06-15 at 19.30.30.png)
+
+5) The user has their choice confirmed, and can now find out what the computer chose...
+
+![Confirmation](images/2019/06/Screenshot 2019-06-15 at 19.30.48.png)
+
+6) The computer's choice is randomly assigned, and the result of the game is printed, here are the three variations of the results screens:
+
+If both the player and the computer have the same choice...
+
+![Result_A](images/2019/06/Screenshot 2019-06-15 at 19.31.00.png)
+
+If the computer's choice beats the players...
+
+![Result_B](images/2019/06/Screenshot 2019-06-15 at 19.31.17.png)
+
+If the player's choice beats the computers...
+
+![Result_C](images/2019/06/Screenshot 2019-06-15 at 19.38.55.png)
