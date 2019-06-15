@@ -28,8 +28,11 @@ Approach
   * Configure rspec (no examples), rack config, coverage tool.
   * Create feature test for "Hello Player!"
   * Create app, view to implement "Hello Player!"
-* Read the requirements carefully, so that I don't miss anything.
+* Read the use cases carefully, so that I don't miss anything.
+* Create a sketch of the screens and classes.
 
+![Classes](/images/classes.jpg)
+![Screens](/images/screens.jpg)
 
  Testing
 ---- 
