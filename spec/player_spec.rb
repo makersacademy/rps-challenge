@@ -2,9 +2,14 @@ require "player"
 
 describe "Player" do
 
-  subject(:player_name) {Player.new("player_name")}
+  subject(:rachel) {Player.new("rachel")}
+  let(:choice) {double( :choice)}
 
   it "Returns name of player" do
-    expect(player_name.name).to eq "player_name"
+    expect(rachel.name).to eq "rachel"
+  end
+
+  it "Returns player's move choice" do
+    expect(rachel.player_move(choice)).to eq choice
   end
 end

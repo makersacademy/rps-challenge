@@ -1,31 +1,31 @@
 require 'sinatra/base'
 
-class RPS < Sinatra::Base
+require_relative './lib/player.rb'
 
-  enable :sessions
+class RPS < Sinatra::Base
 
   get '/' do
     erb :index
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
+    $player_1 = Player.new(params[:player_1_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
+    @player_1_name = $player_1.name
     erb :play
   end
 
   post '/choice' do
-    session[:player_1_choice] = params[:player_1_choice]
+    $player_1.player_move(params[:player_1_choice])
     redirect '/winner'
   end
 
   get '/winner' do
-    @player_1_name = session[:player_1_name]
-    @player_1_choice = session[:player_1_choice]
+    @player_1_name = $player_1.name
+    @player_1_choice = $player_1.choice
     erb :winner
   end
 
