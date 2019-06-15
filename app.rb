@@ -27,13 +27,20 @@ class RPS < Sinatra::Base
 
   post '/play' do
     $choice = params[:choice]
-    p params
     redirect '/confirmation'
   end
 
   get '/confirmation' do
     @choice = $choice
     erb(:confirmation)
+  end
+
+  post '/confirmation' do
+    redirect 'results'
+  end
+
+  get '/results' do
+    erb(:results)
   end
 
   run! if app_file == $0
