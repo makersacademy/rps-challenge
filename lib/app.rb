@@ -16,13 +16,19 @@ class RPS < Sinatra::Base
   end
 
   get '/choose-move' do
+    @game = $game
     erb(:choose_move)
   end
 
   post '/move' do
     $game.player.save_move(params[:move])
-    "#{$game.player.name} played #{$game.player.move}"
-    
+    redirect '/results'
+  end
+
+  get '/results' do
+    $game.winner_is
+    @game = $game
+    erb(:results)
   end
 
 
