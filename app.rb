@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require_relative './lib/player'
+require_relative './lib/game'
+require_relative './lib/random_weapon'
 
 class RPSGame < Sinatra::Base
 
@@ -16,6 +19,21 @@ class RPSGame < Sinatra::Base
   get '/turn' do
     @player_name = session[:player].name
     erb :turn
+  end
+
+  post '/play' do
+    @choice = params[:choice]
+    @player = session[:player]
+    @player.choice = @choice
+    redirect "/result"
+  end
+
+  get '/result' do
+    @player_name = session[:player].name
+    @player = session[:player]
+    @game = Game.new(@player, RandomWeapon.new)
+    @result = @game.result
+    erb :result
   end
 
 end

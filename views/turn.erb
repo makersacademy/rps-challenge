@@ -1,3 +1,15 @@
 <h1>
   <%= "#{@player_name}" %>
 </h1>
+<h2>
+  Please choose an option
+</h2>
+<form action="/play" method="post">
+  Paper:
+  <input type="radio" id="Paper" name="choice" value="paper">
+  Scissors:
+  <input type="radio" id="Scissors" name="choice" value="scissors">
+  Rock:
+  <input type="radio" id="Rock" name="choice" value="rock">
+  <input type="submit" value="submit">
+</form>
