@@ -1,3 +1,5 @@
+# RACHEL GRIFFITHS
+
 # RPS Challenge
 
 Instructions
