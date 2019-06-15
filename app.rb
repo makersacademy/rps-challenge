@@ -5,8 +5,7 @@ require './lib/player.rb'
 class RPS < Sinatra::Base
 
   before do
-      @player_1 = $player_1
-      @computer = $computer
+      @game = $game
   end
 
   enable :sessions
@@ -16,7 +15,10 @@ class RPS < Sinatra::Base
   end
 
   post '/' do
-    $player_1 = Player.new(params[:name])
+    @player_1= Player.new(params[:name])
+    @computer= Player.new("the computer")
+    $game = Game.new(@player_1, @computer)
+    @game = $game
     redirect '/start'
   end
 
@@ -33,7 +35,7 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    @player_1.choose(params[:choice])
+    @game.player_1.choose(params[:choice])
     redirect '/confirmation'
   end
 
@@ -42,13 +44,14 @@ class RPS < Sinatra::Base
   end
 
   post '/confirmation' do
-    $computer = Player.new
-    @computer = $computer
-    @computer.choose
-    redirect 'results'
+    p "Player 2 choice"
+    @game.player_2.choose
+    p @game.player_2.choice
+    redirect '/results'
   end
 
   get '/results' do
+    @winner = @game.winner
     erb(:results)
   end
 

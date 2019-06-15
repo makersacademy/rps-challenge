@@ -1,21 +1,26 @@
 class Game
 
-attr_reader :result
+attr_reader :result, :player_1, :player_2
 
-  def winner(player_1, player_2)
-    if draw?(player_1, player_2)
+  def initialize(player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
+  end
+
+  def winner
+    if draw?
       nil
-    elsif first_beats_second?(player_1, player_2)
-      player_1
+    elsif first_beats_second?
+      @player_1
     else
-      player_2
+      @player_2
     end
   end
 
   private
 
-  def draw?(player_1, player_2)
-    player_1.choice== player_2.choice
+  def draw?
+    @player_1.choice== @player_2.choice
   end
 
   def winning_scenarios
@@ -25,8 +30,8 @@ attr_reader :result
     }
   end
 
-  def first_beats_second?(player_1, player_2)
-    self.winning_scenarios[player_1.choice].include?(player_2.choice)
+  def first_beats_second?
+    winning_scenarios[@player_1.choice].include?(@player_2.choice)
   end
 
 
