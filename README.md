@@ -5,7 +5,7 @@ _in progress!_
 Play the simple game _rock, paper, scissors_ online using this webapp.
 This is a Makers Academy week 3 challenge.
 
-**Rules**
+### Rules
 
  - Rock beats Scissors
  - Scissors beats Paper
@@ -35,7 +35,7 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 **Bonus level 2: Rock, Paper, Scissors, Spock, Lizard**
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+Use the _special_ rules ( [you can find them on wikipedia](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_) )
 
 ## Run The Game
 
