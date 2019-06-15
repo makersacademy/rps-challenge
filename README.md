@@ -42,3 +42,7 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+
+### Version 3 - making it look good!
+
+The first 2 versions implement the desired functionality, but our marketeers want to see their name 'in lights' and be transported from the daily grind, so this version makes our web app look good!
