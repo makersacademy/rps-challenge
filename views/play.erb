@@ -1,6 +1,6 @@
 <html>
   <body>
-  <h1> Welcome <%= @game.player.name %> </h1>
+  <h1> Hey <%= @game.player.name %> </h1>
   <br>
       <form action='/result' method="post">
         <br>
@@ -10,5 +10,7 @@
         <br>
         <button type="submit" id="play_type" value='SCISSORS' name='type'>SCISSORS</button>
       </form>
+      <br>
+      <h4> Round: <%= @game.round %> out of 3 </h4>
     </body>
   </html>

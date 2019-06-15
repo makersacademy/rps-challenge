@@ -1,14 +1,16 @@
 describe Game do
 
-  let(:game) { described_class.new('Henry') }
+  let(:player) { double(:player) }
+  let(:game) { described_class.new(player) }
 
   it 'counts the number of turns played' do
-    expect { game.play('ROCK') }.to change { game.turns }.by 1
+    allow(player).to receive(:name)
+    expect { game.play('ROCK') }.to change { game.round }.by 1
   end
 
-  it 'gives random return of weapon play' do
+  it 'gives random return of computer play' do
     srand(10)
-    expect(game.get_weapon).to eq('PAPER')
+    expect(game.comp_choice).to eq('PAPER')
   end
-  
+
 end
