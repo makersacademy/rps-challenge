@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player, :turns
+  attr_reader :player, :turns, :player_play, :get_weapon
 
   def initialize(player)
     @player = player
@@ -9,7 +9,7 @@ class Game
 
   def play(play_type)
     @player_play = play_type
-    get_weapon
+    @get_weapon = get_weapon
     @turns += 1
   end
 

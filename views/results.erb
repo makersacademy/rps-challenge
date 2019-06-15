@@ -1,5 +1,7 @@
 <html>
 <body>
-<h1>Welcome <%= @game.player.name %> You Played ROCK</h1>
+<h1>Woah <%= @game.player.name %> you have played <%= @game.player_play %></h1>
+<br>
+<h2> The machine has played <%= @game.get_weapon %></h2>
 </body>
 </html>
