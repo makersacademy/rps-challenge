@@ -1,6 +1,7 @@
 ENV['RACK_ENV'] = 'test' # set deployment environment  
 
 require 'capybara/rspec'
+require 'pry'
 require 'simplecov'
 require 'simplecov-console'
 require 'features/web_helpers'
