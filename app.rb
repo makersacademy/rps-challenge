@@ -12,6 +12,14 @@ class RPS < Sinatra::Base
     erb :names
   end
 
+  post '/choice1' do
+  end
+
+  post '/choice2' do
+  end
+
+  post '/choice3' do
+  end
 
 
 

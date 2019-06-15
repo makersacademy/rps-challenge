@@ -8,6 +8,11 @@ feature 'RPS' do
     visit('/')
     fill_in :names, with: "Jane"
     click_button 'Submit'
-    expect(page).to have_content "Hi, Jane! Excited to have you here!"
+    expect(page).to have_content "Hi, Jane! Excited to have you here! Choose one of the options:"
   end
+
+  # scenario 'player has to choose one option' do
+  #   visit '/names'
+  #   click_
+  # 
 end
