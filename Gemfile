@@ -2,11 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.5.0'
 
-# gem 'rack', '~> 2.0.1'
-# gem 'rake'
+gem 'rack', '~> 2.0.1'
+gem 'rake'
 gem 'shotgun'
 gem 'sinatra'
-gem 'thin'
 
 group :test do
   gem 'capybara'
