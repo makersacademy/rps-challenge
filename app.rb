@@ -9,13 +9,21 @@ class RPS < Sinatra::Base
 
   post '/' do
     $player_name = params[:name]
-    @player_name = $player_name
     redirect '/start'
   end
 
   get '/start' do
     @player_name = $player_name
-    erb(:start_page)
+    erb(:start)
   end
+
+  post '/start' do
+    redirect '/play'
+  end
+
+  get '/play' do
+    erb(:play)
+  end
+
   run! if app_file == $0
 end
