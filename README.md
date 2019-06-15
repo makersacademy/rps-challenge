@@ -58,34 +58,34 @@
 
 1) The user runs the app in the terminal...
 
-![Running_Program](images/2019/06/Screenshot 2019-06-15 at 19.29.42.png)
+![Running_Program](images/2019/06/Screenshot_19.29.42.png)
 
 2) The user enters their name, and clicks submit...
 
-![Entering_name](images/2019/06/Screenshot 2019-06-15 at 19.30.12.png)
+![Entering_name](images/2019/06/Screenshot_19.30.12.png)
 
 3) The user is asked if they want to play the game...
 
-![Clicking_play](images/2019/06/Screenshot 2019-06-15 at 19.30.22.png)
+![Clicking_play](images/2019/06/Screenshot_19.30.22.png)
 
 4) The user chooses between Rock, Paper and Scissors...
 
-![Choose](images/2019/06/Screenshot 2019-06-15 at 19.30.30.png)
+![Choose](images/2019/06/Screenshot_19.30.30.png)
 
 5) The user has their choice confirmed, and can now find out what the computer chose...
 
-![Confirmation](images/2019/06/Screenshot 2019-06-15 at 19.30.48.png)
+![Confirmation](images/2019/06/Screenshot_19.30.48.png)
 
 6) The computer's choice is randomly assigned, and the result of the game is printed, here are the three variations of the results screens:
 
 If both the player and the computer have the same choice...
 
-![Result_A](images/2019/06/Screenshot 2019-06-15 at 19.31.00.png)
+![Result_A](images/2019/06/Screenshot_19.31.00.png)
 
 If the computer's choice beats the players...
 
-![Result_B](images/2019/06/Screenshot 2019-06-15 at 19.31.17.png)
+![Result_B](images/2019/06/Screenshot_19.31.17.png)
 
 If the player's choice beats the computers...
 
-![Result_C](images/2019/06/Screenshot 2019-06-15 at 19.38.55.png)
+![Result_C](images/2019/06/Screenshot_19.38.55.png)
