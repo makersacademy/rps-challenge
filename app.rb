@@ -18,6 +18,11 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/winner' do
+    @player_1_name = session[:player_1_name]
+    erb :winner
+  end
+
   run! if app_file == $0
 
 end
