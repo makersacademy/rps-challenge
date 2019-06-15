@@ -4,7 +4,7 @@ The Makers Academy Marketing Array ( **MAMA** ) want a game provided for them. T
 
 The aim of this challenge is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web.
 
-Full instructions can be found in old_readme.md
+Full instructions can be found in challenge_instructions.md
 
 ## Approach
 
