@@ -1,6 +1,7 @@
 require 'sinatra/base'
 
 require_relative './lib/player.rb'
+require_relative './lib/computer.rb'
 
 class RPS < Sinatra::Base
 
@@ -26,6 +27,7 @@ class RPS < Sinatra::Base
   get '/winner' do
     @player_1_name = $player_1.name
     @player_1_choice = $player_1.choice
+    @computer_choice = Computer.new.computer_move
     erb :winner
   end
 
