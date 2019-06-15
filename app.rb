@@ -13,8 +13,7 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do    
-    @player = session[:player] 
-    p "PLAYER: #{@player}"
+    @player = session[:player]     
     erb :play
   end
 end
