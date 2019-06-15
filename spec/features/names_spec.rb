@@ -1,10 +1,6 @@
-require 'spec_helper'
-
-feature 'Player sign-in' do
-  scenario 'Player can sign in and see their name' do
-    visit('/')
-    fill_in :player_1_name, with: 'Leon'
-    click_button 'Submit Name'
-    expect(page).to have_content 'Leon'
+feature 'Display Name' do
+  scenario 'Player sees their name after login' do
+    sign_in_and_play
+    expect(page).to have_content('Welcome Leon')
   end
 end

@@ -1,24 +1,28 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game.rb'
 
-class RPS < Sinatra::Base
+class Rps < Sinatra:: Base
   enable :sessions
-
-  attr_reader :player_1_name
+  set :session_secret, 'super secret'
 
   get '/' do
-    erb :index
+    erb :start
   end
 
-  post '/name' do
-    session[:player_1_name] = params[player_1_name]
-    redirect '/play'
+  post '/' do
+    player = Player.new(params[:player_name])
+    @game = Game.create(player)
+    redirect '/game'
   end
 
-  get '/play' do
-    @player_1_name = session[:player_1_name]
+  before do
+    @game = Game.load
+  end
+
+  get '/game' do
     erb :play
   end
 
-# starts the server if ruby file is executed directly
-  run if app_file == $0
+  run! if app_file ==$0
 end
