@@ -6,4 +6,7 @@
   <input type="submit" name="option" value='Scissors'/>
 </form>
 
-You choose <%= @option %>
+You chose <%= @option %>
+<div id="opponent">
+Opponent chose <%= @game_option.to_s.capitalize %>
+</div>
