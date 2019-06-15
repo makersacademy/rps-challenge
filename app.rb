@@ -33,6 +33,7 @@ class RPSGame < Sinatra::Base
     @player = session[:player]
     @game = Game.new(@player, RandomWeapon.new)
     @result = @game.result
+    @game_choice = @game.game_choice
     erb :result
   end
 

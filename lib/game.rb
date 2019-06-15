@@ -15,25 +15,26 @@ class Game
     { :player => SCISSORS, :game => PAPER, :result => "win" },
     { :player => SCISSORS, :game => ROCK, :result => "lose" }
   ]
+
+  attr_reader :game_choice
   
   def initialize(player, random_weapon)
     @player = player
     @random_weapon = random_weapon
+    @game_choice = @random_weapon.weapon
   end
 
   def result
-    game_choice = @random_weapon.weapon
     player_choice = @player.choice
-
-    calculate_result(player_choice, game_choice)
+    calculate_result(player_choice)
   end
 
   private
 
-  def calculate_result(player_choice, game_choice)
+  def calculate_result(player_choice)
 
     RULES.each do |rule|
-      if rule[:player] == player_choice && rule[:game] == game_choice
+      if rule[:player] == player_choice && rule[:game] == @game_choice
         return rule[:result]
       end
     end

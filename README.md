@@ -4,6 +4,8 @@ Description
 -------
 
 * Solution to the Makers Academy weekend challenge.
+* I did not manage to get the travis badge in this README.
+* The screens are very basic, but functional.
 
 Requirements
 ----
@@ -26,10 +28,10 @@ Approach
 * Create a basic working environment based on a simple feature test.
   * Bundle; Pull request; first commit
   * Configure rspec (no examples), rack config, coverage tool.
-  * Create feature test for "Hello Player!"
-  * Create app, view to implement "Hello Player!"
+  * Create feature test for "Hello Player!" and get to pass.
 * Read the use cases carefully, so that I don't miss anything.
-* Create a sketch of the screens and classes.
+* Create a sketch of the screens and classes (see below)
+* Implement the use cases, following a red, green, refactor approach
 
 ![Classes](/images/classes.jpg)
 ![Screens](/images/screens.jpg)
@@ -38,6 +40,7 @@ Approach
 ---- 
 
 The tests can be run using the command rspec
+
 
  Credits
 ---- 
