@@ -1,2 +1,0 @@
-describe RPS do
-end 

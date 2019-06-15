@@ -11,8 +11,5 @@ feature 'RPS' do
     expect(page).to have_content "Hi, Jane! Excited to have you here! Choose one of the options:"
   end
 
-  # scenario 'player has to choose one option' do
-  #   visit '/names'
-  #   click_
-  # 
+#
 end
