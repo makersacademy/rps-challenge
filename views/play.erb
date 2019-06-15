@@ -1,7 +1,18 @@
-<h1>Welcome to the game <%= @player %></h1>
+<div style="text-align:center;">
+  <h1 style="padding:20px;">Welcome to the game <%= @player %></h1>
+  <h2>Choose your weapon</h2>  
 
-<h2>Choose your weapon</h2>
+  <button type="button" name="Rock">
+    <a href="#">Rock</a>
+  </button>
+  <button type="button" name="Paper">
+  <a href="#">Paper</a>
+  </button>
+  <button type="button" name="Scissors">
+    <a href="#">Scissors</a>
+  </button> 
+</div>
 
-<button type="button" name="Rock">Rock</button>
-<button type="button" name="Paper">Paper</button>
-<button type="button" name="Scissors">Scissors</button>
+<%# ROCK &#x1F44A;&#x1F3FE; %>
+<%# PAPER &#x1F590;&#x1F3FE; %>
+<%# SCISSORS &#x270C;&#x1F3FE; %>

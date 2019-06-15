@@ -3,8 +3,9 @@ feature "Player can choose option" do
     visit "/"
     fill_in(:name, with: "Tolu")
     click_button "Play"
-    expect(page).to have_button("Rock")
-    expect(page).to have_button("Paper")
-    expect(page).to have_button("Scissors")
+    
+    page.has_link?("Rock")
+    page.has_link?("Paper")
+    page.has_link?("Scissors")
   end
 end
