@@ -1,3 +1,4 @@
+require 'spec_helper'
 
 feature 'register name' do
   scenario 'register and see my name' do

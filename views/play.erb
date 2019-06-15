@@ -1,4 +1,9 @@
-  <h1> Welcome <%= @player_1_name %></h1>
-Rock
-Paper
-Scissors
+<%= @player_1_name %>
+
+<form action='/play' method='POST'>
+  <input type="submit" name="option" value='Rock'/>
+  <input type="submit" name="option" value='Paper'/>
+  <input type="submit" name="option" value='Scissors'/>
+</form>
+
+You choose <%= @option %>
