@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class RPS < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
 
   get '/' do
     "Hello, World!"
