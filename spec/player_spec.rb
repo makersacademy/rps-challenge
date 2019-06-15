@@ -14,7 +14,11 @@ describe Player do
     it "saves the player's choice as an instance variable" do
       player.save_move('Rock')
       expect(player.move).to eq('Rock')
-    end 
+    end
+    
+    it 'raises and error if user move not a valid option' do
+      expect { player.save_move('Fire') }.to raise_error('Not a valid choice')
+    end
   end
 
 end
