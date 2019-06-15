@@ -1,6 +1,14 @@
 require 'sinatra/base'
+require './lib/player.rb'
+
 
 class RPS < Sinatra::Base
+
+  before do
+      @player_1 = $player_1
+      @computer = $computer
+  end
+
   enable :sessions
 
   get '/' do
@@ -8,12 +16,11 @@ class RPS < Sinatra::Base
   end
 
   post '/' do
-    $player_name = params[:name]
+    $player_1 = Player.new(params[:name])
     redirect '/start'
   end
 
   get '/start' do
-    @player_name = $player_name
     erb(:start)
   end
 
@@ -26,23 +33,22 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    $choice = params[:choice]
+    @player_1.choose(params[:choice])
     redirect '/confirmation'
   end
 
   get '/confirmation' do
-    @choice = $choice
     erb(:confirmation)
   end
 
   post '/confirmation' do
+    $computer = Player.new
+    @computer = $computer
+    @computer.choose
     redirect 'results'
   end
 
   get '/results' do
-    computer = Computer.new
-    computer.random_selector
-    @computer_choice = computer.choice
     erb(:results)
   end
 
