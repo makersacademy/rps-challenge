@@ -18,8 +18,14 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/winner' do
+  post '/choice' do
+    session[:player_1_choice] = params[:player_1_choice]
+    redirect '/winner'
+  end
+
+  get '/winner' do
     @player_1_name = session[:player_1_name]
+    @player_1_choice = session[:player_1_choice]
     erb :winner
   end
 
