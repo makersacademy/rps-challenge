@@ -17,17 +17,17 @@ RSpec.describe Game do
 
   describe '#calculate_winner' do
     it 'sets result to declare player 2 winner if not a draw and player 1 does not win' do
-      allow(@game).to receive(:draw?) {false}
-      allow(@game).to receive(:first_beats_second?) {false}
+      allow(@game).to receive(:draw?) { false }
+      allow(@game).to receive(:first_beats_second?) { false }
       expect(@game.winner).to eq(@player_2)
     end
     it 'sets result to draw if draw? is true' do
-      allow(@game).to receive(:draw?) {true}
+      allow(@game).to receive(:draw?) { true }
       expect(@game.winner).to eq(nil)
     end
     it 'sets result to declare player 1 winner if not a draw and player 1 wins' do
-      allow(@game).to receive(:draw?) {false}
-      allow(@game).to receive(:first_beats_second?) {true}
+      allow(@game).to receive(:draw?) { false }
+      allow(@game).to receive(:first_beats_second?) { true }
       expect(@game.winner).to eq(@player_1)
     end
   end

@@ -1,6 +1,6 @@
 class Game
 
-attr_reader :result, :player_1, :player_2
+  attr_reader :result, :player_1, :player_2
 
   def initialize(player_1, player_2)
     @player_1 = player_1
@@ -20,11 +20,11 @@ attr_reader :result, :player_1, :player_2
   private
 
   def draw?
-    @player_1.choice== @player_2.choice
+    @player_1.choice == @player_2.choice
   end
 
   def winning_scenarios
-    {"rock" => "scissors",
+    { "rock" => "scissors",
      "scissors" => "paper",
      "paper" => "rock"
     }
@@ -33,7 +33,5 @@ attr_reader :result, :player_1, :player_2
   def first_beats_second?
     winning_scenarios[@player_1.choice].include?(@player_2.choice)
   end
-
-
 
 end
