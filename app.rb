@@ -40,6 +40,9 @@ class RPS < Sinatra::Base
   end
 
   get '/results' do
+    computer = Computer.new
+    computer.random_selector
+    @computer_choice = computer.choice
     erb(:results)
   end
 
