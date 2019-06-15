@@ -42,7 +42,7 @@
     winning_scenarios[@player_1.choice].include?(@player_2.choice)
   end
   ```
-  
+
   - I would just change the values in the winning_scenarios hash to an array of options.
 - I would like to make the name field on the index page a required field so someone cannot submit an empty name, I have done some research and I think it would work if I did the following...
 
