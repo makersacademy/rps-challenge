@@ -15,5 +15,9 @@ describe Ai do
     it 'is initialised with a random move' do
       expect(['Rock','Paper','Scissors']).to include(ai.move)
     end
+
+    it 'is initialised with a name WOPR (War Games)' do
+      expect(ai.name).to eq('WOPR')
+    end
   end
 end

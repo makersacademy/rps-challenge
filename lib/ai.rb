@@ -1,9 +1,10 @@
 class Ai
 
-  attr_reader :move
+  attr_reader :name,:move
 
   def initialize
     @move = self.random_move
+    @name = 'WOPR'
   end
 
   def random_move
