@@ -39,7 +39,8 @@ Use the _special_ rules ( [you can find them on wikipedia](http://en.wikipedia.o
 
 ## Run The Game
 
-tbc
+ - In the command line run `bundle` to install the required gems
+ - ...
 
 ## Testing
 
