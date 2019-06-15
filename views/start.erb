@@ -1,5 +1,11 @@
-<h1> Hello <%= @game.player_1.name %> </h1>
-
+<h1> Hello <%= @game.player_1.name %>, are you ready? </h1>
+<h2> Remember: </h2>
+<ul>
+  <li> Rock beats Scissors </li>
+  <li> Scissors beats Paper </li>
+  <li> Paper beats Rock </li>
+</ul>
+  <br>
 <form action="/start" method="post">
-  <button type='submit', value="play_game"> Play Game? </button>
+  <button type='submit', value="play_game"><h1> Play Game? </h1></button>
 </form>

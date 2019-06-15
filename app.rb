@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player.rb'
+require './lib/game.rb'
 
 
 class RPS < Sinatra::Base
@@ -44,7 +45,6 @@ class RPS < Sinatra::Base
   end
 
   post '/confirmation' do
-    p "Player 2 choice"
     @game.player_2.choose
     p @game.player_2.choice
     redirect '/results'
