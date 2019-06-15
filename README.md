@@ -42,6 +42,7 @@
     winning_scenarios[@player_1.choice].include?(@player_2.choice)
   end
   ```
+  
   - I would just change the values in the winning_scenarios hash to an array of options.
 - I would like to make the name field on the index page a required field so someone cannot submit an empty name, I have done some research and I think it would work if I did the following...
 
@@ -50,13 +51,11 @@
     <label for='Name'> <h2> Name:</h2> </label>
     <input type='text', name='name' required>
     <button type='submit', value="submit">submit</button>
-  </form>
-```
-
+  </form> ```
 
 
 ## An example user interaction:
--------
+
 1) The user runs the app in the terminal...
 
 ![Running_Program](images/2019/06/Screenshot 2019-06-15 at 19.29.42.png)
