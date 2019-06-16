@@ -1,4 +1,5 @@
 require 'sinatra/base'
+#require_relative './lib/player.rb'
 
 class Game < Sinatra::Base
 
@@ -17,6 +18,10 @@ class Game < Sinatra::Base
 
   get '/play' do
     erb :play
+  end
+
+  post '/result' do
+    erb :result
   end
 
   run! if app_file == $0
