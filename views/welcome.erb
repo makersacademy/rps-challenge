@@ -1,5 +1,25 @@
-<h1>Welcome <%=@player_name.capitalize%>! </h1>
+<h1>Welcome<%=@player_name.capitalize%>! </h1>
 
 <form action="/play">
   <input type="submit" value="Click here to play!">
 </form>
+
+<style type="text/css">
+  h1 { color: red;
+    font-size: 50px;
+    font-family: "helvetica";
+    text-align: center;
+    padding: 20px;
+  }
+  form {
+    text-align: center;
+  }
+  input[type="submit" i]{
+    background-color: #f44336;
+    color: white;/* Red */
+    font-family: "helvetica";
+    font-size: 13px;
+    border-radius: 0px;
+    border: 0px;
+  }
+</style>
