@@ -14,13 +14,15 @@
 
     get '/play' do
       @name = session[:name]
+      @choice = session[:choice]
       erb :play
     end
 
     post '/play' do
-      erb :play
+      session[:choice] = params[:choice]
+      redirect '/play'
     end
 
   
-  run! if app_file == $0
+    run! if app_file == $0
   end
