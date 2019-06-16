@@ -16,7 +16,7 @@ feature 'playing a game' do
 
   scenario 'computer chooses Rock' do
     click_button 'Rock'
-    message = find(:css, "#computer").text.strip
+    message = find(:css, "#computer").text
     expect(messages).to include message
   end
 
