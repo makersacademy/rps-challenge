@@ -1,4 +1,4 @@
-feature "Player can choose option" do
+feature "Player can choose a weapon" do
   scenario "Player can choose between Rock, Paper or Scissors" do
     register_name_and_play    
     page.has_link?("Rock")
@@ -7,7 +7,7 @@ feature "Player can choose option" do
   end
 end
 
-feature "Computer can choose an option" do 
+feature "Computer can choose a weapon" do 
   scenario "Computer chooses Rock" do
     allow_any_instance_of(Computer).to receive(:weapon).and_return(:Rock)
     register_name_and_play
