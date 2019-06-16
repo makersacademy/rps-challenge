@@ -2,6 +2,7 @@ require 'sinatra/base'
 
 require_relative './lib/player.rb'
 require_relative './lib/computer.rb'
+require_relative './lib/game.rb'
 
 class RPS < Sinatra::Base
 
@@ -11,6 +12,7 @@ class RPS < Sinatra::Base
 
   post '/names' do
     $player = Player.new(params[:player_name])
+    $computer = Computer.new
     redirect '/play'
   end
 
@@ -27,7 +29,9 @@ class RPS < Sinatra::Base
   get '/winner' do
     @player_name = $player.name
     @player_choice = $player.player_choice
-    @computer_choice = Computer.new.computer_move
+    @computer_choice = $computer.computer_move
+    $game = Game.new($player, $computer)
+    @game_winner = $game.winner
     erb :winner
   end
 
