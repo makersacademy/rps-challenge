@@ -20,15 +20,18 @@
 
     post '/play' do
       session[:choice] = params[:choice]
-      session[:computer_choice] = params[:computer_choice]
+      @computer_choice = session[:computer_choice]
+      #session[:computer_choice] = params[:computer_choice]
       redirect '/game'
     end
 
     get '/game' do
       @choice = session[:choice]
+      @computer_choice = :rock
+      #session[:computer_choice]
+      #session[:choice] = params[:choice]
       erb :game
     end
-
 
   
     run! if app_file == $0

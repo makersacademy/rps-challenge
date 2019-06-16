@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'playing a game' do
+feature 'start a game' do
 
   before do
     visit '/'
