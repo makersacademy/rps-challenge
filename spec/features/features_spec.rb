@@ -33,12 +33,12 @@ feature 'Player can play RPS' do
   #     expect(page).to have_content('Round 1: Leon')
   #   end
 
-  scenario 'Player will win the match' do
-    srand(10)
-    sign_in_and_play
-    click_button('ROCK')
-      click_button('ROCK')
-        click_button('ROCK')
-    expect(page).to have_content('You have won')
-  end
+  # scenario 'Player will win the match' do
+  #   srand(10)
+  #   sign_in_and_play
+  #   click_button('ROCK')
+  #     click_button('ROCK')
+  #       click_button('ROCK')
+  #   expect(page).to have_content('You have won')
+  # end
 end
