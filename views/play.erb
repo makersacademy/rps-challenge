@@ -7,3 +7,7 @@ What move will you choose <%= @player_name %>?
     <input type="submit" name="move" value="Scissors">
   </form>
 </div>
+<br>
+<% if @player_move %>
+  <%= @player_name %> went with <%= @player_move %>
+<% end %>
