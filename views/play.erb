@@ -1,1 +1,9 @@
 <%= "Player: #{@player_name}" %>
+<br>
+<form action="/result" type="post">
+  <input type="radio" name="move" id="rock" value="rock" checked> Rock<br>
+  <input type="radio" name="move" id="paper" value="paper"> Paper<br>
+  <input type="radio" name="move" id="scissors" value="scissors"> Scissors<br>
+  <br>
+  <input type="submit" value="Submit">
+</form>
