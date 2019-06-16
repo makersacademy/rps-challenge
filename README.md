@@ -1,8 +1,14 @@
-Rock, Paper, Scissors Challenge
+# Rock, Paper, Scissors Challenge
 
 Makers Academy week three weekend project: build a web app to let users play a game o Rock, Paper, Scissors.
 
-Installation & Testing
+# Incomplete submission.
+
+# Notes
+
+- The computer is using random behaviour to select RPS - the test for this is working properly.
+
+# Installation & Testing
 
 - Fork or clone this repo, and run bundle install.
 ```
@@ -12,13 +18,14 @@ $ git@github.com:josephtownshend/rps-challenge.git
 - Navigate to localhost:9292 in a web browser.
 - Tests can be run with rspec from the command line in the main project directory.
 
-Features
+# Features
 
 - Player enters their name.
-- The user plays against the computer, which chooses its move at random.
-- The app determines the winner based on the player's move, and declares the result.
+- Player's name is returned at welcome screen.
+- Button to play game.
+- Game is reloaded on request.
 
-Technologies
+# Technologies
 
 - Ruby
 - Sinatra
@@ -27,10 +34,13 @@ Technologies
 - CSS
 - HTML
 
-Further development
+# Further development
 
 - The user can play in multiplayer mode.
+- The user plays against the computer.
+- The app determines the winner based on the player's move, and declares the result.
 
+---------------------------------------------------------------------------------------------------
 
 
 
