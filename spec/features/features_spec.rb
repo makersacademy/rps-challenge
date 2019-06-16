@@ -13,7 +13,7 @@ feature 'As a player I can enter my name and pick a move' do
     fill_in('Name:', with: 'Mama')
     click_button("Let's Play")
     click_button("Rock")
-    expect(page).to have_content('Mama','Rock')
+    expect(page).to have_content('Mama', 'Rock')
   end
 end
 

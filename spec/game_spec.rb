@@ -2,11 +2,11 @@ require 'game'
 
 describe Game do
 
-  let(:player_double) { double:'player' }
-  let(:player_class_double) { double:'player_class' }
-  let(:ai_double) { double:'ai' }
-  let(:ai_class_double) { double:'ai_class', new: ai_double }
-  let(:winner_double) {double :winner, who_wins: player_double}
+  let(:player_double) { double:player }
+  let(:player_class_double) { double :player_class }
+  let(:ai_double) { double:ai }
+  let(:ai_class_double) { double :ai_class, new: ai_double }
+  let(:winner_double) { double :winner, who_wins: player_double }
   subject(:game) { Game.new(player_class_double, ai_class_double) }
 
   describe '#create_player' do

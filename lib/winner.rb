@@ -1,5 +1,5 @@
 class Winner
-  WINS = {:rock => :scissors, :paper => :rock, :scissors => :paper}
+  WINS = { :rock => :scissors, :paper => :rock, :scissors => :paper }
 
   def who_wins(player1, player2)
     if move_to_sym(player1) == move_to_sym(player2)
@@ -16,7 +16,5 @@ class Winner
   def move_to_sym(player)
     player.move.downcase.to_sym
   end
-
-
 
 end

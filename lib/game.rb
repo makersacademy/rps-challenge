@@ -6,7 +6,7 @@ class Game
 
   attr_reader :player, :player2, :winner
 
-  def initialize(player_class= Player, player2 = Ai)
+  def initialize(player_class = Player, player2 = Ai)
     @player_class = player_class
     @player2 = player2.new
   end
