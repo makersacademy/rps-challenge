@@ -1,2 +1,9 @@
 <h1> Rock! Paper! Scissors!</h1>
-Playing against the computer today is: <%= @player_name %>
+What move will you choose <%= @player_name %>?
+<div>
+  <form action="/move" method="post">
+    <input type="submit" name="move" value="Rock">
+    <input type="submit" name="move" value="Paper">
+    <input type="submit" name="move" value="Scissors">
+  </form>
+</div>

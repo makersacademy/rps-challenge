@@ -18,5 +18,12 @@ class RpsApp < Sinatra::Base
     erb :play
   end
 
+  post '/move' do
+    session[:move] = params[:move]
+    @player_name = session[:player_name]
+    @player_move = session[:move]
+    erb :move
+  end
+
   run! if app_file == $0
 end
