@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
-require './lib/game.rb'
+require './lib/game'
 
 class Rps < Sinatra:: Base
 
@@ -35,5 +35,5 @@ class Rps < Sinatra:: Base
     erb :results
   end
 
-  run! if app_file ==$0
+  run! if app_file == $0
 end

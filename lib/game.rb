@@ -18,7 +18,7 @@ class Game
   end
 
   def new_round
-    turn_input = { :player => @player_play, :computer => @computer_play}
+    turn_input = { :player => @player_play, :computer => @computer_play }
     results.generate(turn_input)
     @round_with_result += 1 if results.results_store[@round - 1][:winner] != 'Draw'
     @round += 1
