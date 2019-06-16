@@ -1,5 +1,8 @@
 class Computer
+
+RPS = ["Rock", "Paper", "Scissors"]
+
   def move
-    ["Rock", "Paper", "Scissors"].sample
+    RPS.sample
   end
 end
