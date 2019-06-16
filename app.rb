@@ -10,8 +10,12 @@ class Game < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
+  post '/welcome' do
     @player_name = params[:player_name]
+    erb :welcome
+  end
+
+  get '/play' do
     erb :play
   end
 
