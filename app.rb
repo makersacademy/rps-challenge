@@ -5,12 +5,12 @@ require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
-
+  
   get '/' do
     erb :index
   end
 
-  post '/name' do    
+  post '/name' do      
     session[:player] = Player.new(params[:player])
     redirect '/choose_weapon'
   end
