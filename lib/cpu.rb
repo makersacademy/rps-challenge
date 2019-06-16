@@ -1,10 +1,12 @@
 class CPU
 
   def initialize
-    @RPS = ["Rock!", "Paper!", "Scissor!"]
+    @rps = ["Rock", "Paper", "Scissors"]
+    @score = 10
   end
 
   def random
-    @RPS.sample
+    @rps.sample
   end
+
 end
