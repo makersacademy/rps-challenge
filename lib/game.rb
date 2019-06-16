@@ -1,27 +1,26 @@
 require './lib/results'
-require './lib/comp_randomiser'
+require './lib/computer'
 
 class Game
 
-  attr_reader :player, :round, :player_play, :computer_play, :results
+  attr_reader :player, :round_with_result, :player_play, :computer_play, :round
 
   def initialize(player)
     @player = player
-    @turns = 0
     @round = 1
+    @round_with_result = 0
   end
 
   def play_control(play_type)
     @player_play = play_type
-
-    @computer_play = CompRandomiser.new.result
+    @computer_play = Computer.new.result
     new_round
   end
 
   def new_round
     turn_input = { :player => @player_play, :computer => @computer_play}
-    round_result = results.generate(turn_input)
-    results.store(round_result)
+    results.generate(turn_input)
+    @round_with_result += 1 if results.results_store[@round - 1][:winner] != 'Draw'
     @round += 1
   end
 

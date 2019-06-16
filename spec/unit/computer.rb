@@ -1,4 +1,4 @@
-describe CompRandomiser do
+describe Computer do
 
   it '#Gives random return of Computer play' do
     srand(10)
