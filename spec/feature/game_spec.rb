@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'playing a game' do
-  SEED = 98_765
+  SEED = 98765
 
   before do
     visit '/'
