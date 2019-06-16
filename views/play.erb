@@ -9,5 +9,7 @@ What move will you choose <%= @player_name %>?
 </div>
 <br>
 <% if @player_move %>
-  <%= @player_name %> went with <%= @player_move %>
+  You went with <%= @player_move %><br>
+  Computer chose <%= @computer_move %> <br>
+  <%= @outcome %>
 <% end %>
