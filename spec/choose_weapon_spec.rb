@@ -7,7 +7,8 @@ feature 'choose weapon' do
     visit('/')
     fill_in "player_1", with: 'Carl'
     click_button 'Submit'
-    click_button 'Rock'
+    choose('rock')
+    click_button 'Submit'
     expect(page).to have_content "You selected Rock"
   end
 end
