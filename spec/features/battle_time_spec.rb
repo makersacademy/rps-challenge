@@ -8,4 +8,15 @@ feature 'Play a round of RPS' do
 
     expect(page).to have_content("Rocky went with Rock")
   end
+
+  let(:computer) { double :player }
+
+  scenario 'lose if computer chooses Paper' do
+    allow(computer).to receive(:move).and_return("Paper")
+    choose_rock
+    computer.move
+
+    expect(page).to have_content("Computer chose Paper")
+    expect(page).to have_content("You lose!")
+  end
 end

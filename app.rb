@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/player'
 
 class RpsApp < Sinatra::Base
 
@@ -9,18 +10,18 @@ class RpsApp < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_name] = params[:player_name]
+    $player = Player.new(params[:player_name])
     redirect to('/play')
   end
 
   get '/play' do
-    @player_name = session[:player_name]
-    @player_move = session[:move]
+    @player_name = $player.name
+    @player_move = $player.move
     erb :play
   end
 
   post '/move' do
-    session[:move] = params[:move]
+    $player.choose(params[:move])
     redirect to('/play')
   end
 
