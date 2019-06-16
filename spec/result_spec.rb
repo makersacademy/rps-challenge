@@ -3,7 +3,7 @@ require 'result'
 describe Result do
   subject(:result) { described_class.new(options) }
 
-  let(:options) { { name: "Jane", choice: :paper, computer_choice: :scissors } }
+  let(:options) { { name: "Jane", choice: :rock, computer_choice: :scissors } }
 
   describe '#name' do
     it 'returns player name' do
@@ -13,7 +13,7 @@ describe Result do
 
   describe '#choice' do
     it 'returns player choice' do
-      expect(result.choice).to eq :paper
+      expect(result.choice).to eq :rock
     end
   end
 
@@ -29,11 +29,11 @@ describe Result do
     subject(:draw) { described_class.new(draw_game) }
 
     let(:win_game) { { name: "Jane", choice: :scissors, computer_choice: :paper } }
-    let(:lose_game) { { name: "Jane", choice: :scissors, computer_choice: :rock } }
-    let(:draw_game) { { name: "Jane", choice: :scissors, computer_choice: :scissors } }
+    let(:lose_game) { { name: "Jane", choice: :rock, computer_choice: :paper } }
+    let(:draw_game) { { name: "Jane", choice: :paper, computer_choice: :paper } }
 
     describe '#win?' do
-      it 'returns true if Player chose Rock and Computer chose Scissors' do
+      it 'returns true if Player chose Scissors and Computer chose Paper' do
         expect(win.win?).to eq true
       end
     end
@@ -45,7 +45,7 @@ describe Result do
     end
 
     describe '#draw?' do
-      it 'returns true if Player chose Rock and Computer chose Rock' do
+      it 'returns true if Player chose Paper and Computer chose Paper' do
         expect(draw.draw?).to eq true
       end
     end

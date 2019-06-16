@@ -15,20 +15,20 @@ class Result
   end
 
   def win?
-    result == :win
+    results == :win
   end
 
   def lose?
-    result == :lose
+    results == :lose
   end
 
   def draw?
-    result == :draw
+    results == :draw
   end
 
   private
 
-  def result
+  def results
     return if @computer_choice.nil?
     RULES[@choice][@computer_choice]
   end

@@ -21,17 +21,20 @@
     end
 
     post '/play' do
-      session[:choice] = params[:choice]
+      session[:choice] = params[:choice].downcase.to_sym
       session[:computer_choice] = Computer.new.choice 
       redirect '/game'
     end
 
     get '/game' do
-      # @name = session[:name]
-      # @choice = session[:choice]
-      # @computer_choice = session[:computer_choice]
       @result = Result.new(session)
       erb :game
+    end
+
+    post '/game' do
+      @choice = session[:choice]
+      @computer_choice = session[:computer_choice]
+      redirect '/game'
     end
 
     run! if app_file == $0
