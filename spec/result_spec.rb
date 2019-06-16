@@ -18,7 +18,7 @@ describe Result do
   end
 
   describe '#computer_choice' do
-    it 'return opponent choice' do
+    it 'return computer choice' do
       expect(result.computer_choice).to eq :scissors
     end
   end
