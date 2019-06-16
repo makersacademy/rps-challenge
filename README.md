@@ -1,4 +1,47 @@
 # RACHEL GRIFFITHS
+-------
+### GAME: ROCK, PAPER, SCISSORS
+-------
+* Play Rock, Paper, Scissors against the Computer
+* Enter your name
+* Select your weapon choice from the list
+* See if you've won
+
+### GETTING STARTED
+-------
+* Ruby 2.5.0
+* Access: git clone git@github.com:rachjgriff/rps-challenge.git
+* Install dependencies: bundle
+
+### USAGE
+-------
+* Start command: Rackup
+* URL: http://localhost:9292/
+
+### TESTING
+-------
+* rspec (via capybara)
+* 100% test coverage achieved
+* Linter: Rubocop (no offenses)
+
+### APPROACH
+-------
+* Process model including get and post requests, and possible paths required
+* Diagram of MVC (Model, View, Controller) and how they interact
+
+### FOLLOW UP
+-------
+* Refactor based on Single Responsibility Principle
+* Refactor based on 'Skinny Controller' Principle
+* Make Player name appear when winner is declared
+* Make it look a lot prettier!
+* Add a play again link
+* Add in functionality to add an additional player to replace computer
+* Refactor if statement in game.rb to read and look better
+* Possibly add in another web_helper method to refactor some of the feature tests
+* Remove global variables
+* Remove strings from game.rb if statement - look into how to do this
+* Understand srand method further
 
 # RPS Challenge
 

@@ -13,6 +13,7 @@ class RPS < Sinatra::Base
   post '/names' do
     $player = Player.new(params[:player_name])
     $computer = Computer.new
+    $game = Game.new($player, $computer)
     redirect '/play'
   end
 
@@ -30,7 +31,6 @@ class RPS < Sinatra::Base
     @player_name = $player.name
     @player_choice = $player.player_choice
     @computer_choice = $computer.computer_move
-    $game = Game.new($player, $computer)
     @game_winner = $game.winner
     erb :winner
   end
