@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 feature 'playing a game' do
+  SEED = 98765
 
   before do
     visit '/'
@@ -23,5 +24,9 @@ feature 'playing a game' do
     [:rock, :paper, :scissors].map { |choice| "Computer chose #{choice.to_s.capitalize}!" }
   end
 
-
+  scenario 'computer chooses a random option' do
+    srand(SEED)
+    click_button 'Rock'
+    expect(page).to have_content 'Computer chose Paper!'
+  end
 end
