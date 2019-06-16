@@ -7,7 +7,7 @@ describe Comp do
 end
 
 describe Rules do
-  it 'selects random' do
+  it 'Will equal win, lose or draw according to selections' do
     rules = Rules.new
     expect(Rules::RULES[:Paper][:Rock]).to eq('win')
   end
