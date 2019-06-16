@@ -4,9 +4,7 @@
 
 feature 'Register player name' do
   scenario 'submit name' do
-    visit('/')
-    fill_in "player_name", with: "Rocky"
-    click_button "Let's go!"
+    enter_name_and_start
 
     expect(page).to have_content("Rocky")
   end

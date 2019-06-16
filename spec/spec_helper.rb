@@ -3,6 +3,7 @@ ENV['RACK_ENV'] = 'test'
 require 'capybara'
 require 'capybara/rspec'
 require_relative '../app.rb'
+require_relative './features/web_helpers'
 
 Capybara.app = RpsApp
 
