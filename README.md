@@ -1,13 +1,35 @@
-ReadMe RPS
+Rock, Paper, Scissors Challenge
 
-Started on Sunday.
+Makers Academy week three weekend project: build a web app to let users play a game o Rock, Paper, Scissors.
 
+Installation & Testing
+
+- Fork or clone this repo, and run bundle install.
 ```
 $ git@github.com:josephtownshend/rps-challenge.git
-$ cd rps-challenge
-$ bundle
-$ rackup
 ```
+- Type rackup on the command line to start the server.
+- Navigate to localhost:9292 in a web browser.
+- Tests can be run with rspec from the command line in the main project directory.
+
+Features
+
+- Player enters their name.
+- The user plays against the computer, which chooses its move at random.
+- The app determines the winner based on the player's move, and declares the result.
+
+Technologies
+
+- Ruby
+- Sinatra
+- RSpec
+- Capybara
+- CSS
+- HTML
+
+Further development
+
+- The user can play in multiplayer mode.
 
 
 
