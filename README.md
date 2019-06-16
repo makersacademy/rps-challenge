@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/petraartep/rps-challenge.svg?branch=master)](https://travis-ci.com/petraartep/rps-challenge)
 
-Simple Rock, Paper, Scissors game
+
 ---
 
 ## Approach
@@ -20,7 +20,6 @@ Simple Rock, Paper, Scissors game
 - adding CSS to `.erb` files
 - implement a result class and tests to return the right value
 - app running on localhost but tests are failing 
-
 
 ---
 
@@ -42,9 +41,15 @@ Simple Rock, Paper, Scissors game
 
 <img width="426" src="https://user-images.githubusercontent.com/23095774/59566978-1fb8ac00-905f-11e9-91ab-5ac2f40b9d34.png">
 
+Enter your name
+
 <img width="422" src="https://user-images.githubusercontent.com/23095774/59566979-221b0600-905f-11e9-83f3-843eff312d80.png">
 
+Select an option
+
 <img width="428" src="https://user-images.githubusercontent.com/23095774/59566981-2515f680-905f-11e9-8141-a247855a9c01.png">
+
+It's show the result
 
 ---
 
