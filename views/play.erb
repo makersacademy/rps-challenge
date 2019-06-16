@@ -1,11 +1,57 @@
+
+  <h1 align='center'> Rock - Paper - Scissor</h1>
+
+<div class='SameLine'>
+  <h1 style="float: left"> <%= @player %> </h1>
+  <h1 style="float: right"> CPU </h1>
+</div>
+<div style="clear: both;"></div>
+
+<style> 
+input[type='submit'] {
+  /* background-image: 'http://bit.ly/2XaDXfR'; */
+  background-color:whitesmoke;
+  border:black;
+  color: rgb(3, 0, 0);
+  padding: 250px 159px;
+  text-decoration: none;
+  margin: 1px 1px;
+  cursor: pointer;
+  font-size: 50px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  font-family: Arial, Helvetica, sans-serif
+  /* border: 2px solid slategrey */
+}
+
+input:hover {
+  background-color: rgb(207, 201, 179);
+  color: white;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif
+}
+</style>
+
 <div>
-  <h1> Rock - Paper - Scissor</h1>
-  <h1> <%= @player %></h1>
+  <h2 style="float: left"> <%= @user_input %> </h2>
+  <h2 style="float: right"> <%= @cpu %> </h2>
+  <h2 align='center'> <%= @result %> </h2>
+</div>
+<div style="clear: both;"></div>
+
    <form action='/game' method='post'>
-    <input type='submit' name='rock' value="Rock!"></input>
-    <input type='submit' name='paper' value="Paper!"></input>
-    <input type='submit' name='scissor' value="Scissor!"></input>
+    <input type='submit' name='rock' value="Rock"></input>
+    <input type='submit' name='paper' value="Paper"></input>
+    <input type='submit' name='scissor' value="Scissors"></input>
   </form> 
-  <h2 align='center'> <%= @user_input %> </h2>
-  <h2 align='center'> <%= @cpu_input %> </h2>
+  <!-- <h2 align='center'> <%= @user_input %> </h2>
+  <h2 align='center'> <%= @cpu %> </h2>
+  <h2 align='center'> <%= @result %> </h2> -->
+
 </div>
