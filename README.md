@@ -1,3 +1,2 @@
 ### Resources
-(Making emoji accessible)
-[https://dev.to/finallynero/accessible-emojis--1pjh]
+[Making emoji's accessible](https://dev.to/finallynero/accessible-emojis--1pjh)
