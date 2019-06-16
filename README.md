@@ -2,6 +2,12 @@ ReadMe RPS
 
 Started on Sunday.
 
+```
+$ git@github.com:josephtownshend/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
 
 
 
