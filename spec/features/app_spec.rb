@@ -1,3 +1,4 @@
+require './spec/features/helper'
 feature 'RPS' do
   scenario 'welcome player on the homepage' do
     visit('/')
@@ -5,11 +6,31 @@ feature 'RPS' do
   end
 
   scenario 'player fills in the name form' do
-    visit('/')
-    fill_in :names, with: "Jane"
-    click_button 'Submit'
-    expect(page).to have_content "Hi, Jane! Excited to have you here! Choose one of the options:"
+    repetetive_method
   end
 
-#
+  scenario 'player clicks a button"' do
+    repetetive_method
+    expect(page).to have_selector(:button, 'paper')
+    expect(page).to have_selector(:button, 'rock')
+    expect(page).to have_selector(:button, 'scissors')
+  end
+
+  scenario "player chooses paper" do
+    repetetive_method
+    click_button 'paper'
+    expect(page).to have_content "paper"
+  end
+
+    scenario "player chooses rock" do
+      repetetive_method
+      click_button 'rock'
+    expect(page).to have_content "rock"
+  end
+
+  scenario "player chooses scissors" do
+    repetetive_method
+    click_button 'scissors'
+  expect(page).to have_content "scissors"
 end
+end 

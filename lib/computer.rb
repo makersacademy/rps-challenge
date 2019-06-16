@@ -1,11 +1,14 @@
+require_relative 'game'
  class Computer
 
+   attr_reader :choice
+
    def initialize
-     @arr = ["paper", "rock", "scissors"]
+     @choice = random
    end
 
    def random
-     @arr.sample
+     ["paper", "rock", "scissors"].sample
    end
 
   end

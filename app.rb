@@ -1,5 +1,6 @@
 require 'sinatra/base'
-
+require_relative './lib/computer'
+require_relative './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -12,16 +13,23 @@ class RPS < Sinatra::Base
     erb :names
   end
 
-  post '/choice1' do
+  post '/rock' do
+    @computer_player = Computer.new
+    @game = Game.new("rock", @computer_player.random)
+    erb :rock
   end
 
-  post '/choice2' do
+  post '/paper' do
+    @computer_player = Computer.new
+    @game = Game.new("paper", @computer_player.random)
+    erb :paper
   end
 
-  post '/choice3' do
+  post '/scissors' do
+    @computer_player = Computer.new
+    @game = Game.new("scissors", @computer_player.random)
+    erb :scissors
   end
-
-
 
   run! if app_file == $0
 

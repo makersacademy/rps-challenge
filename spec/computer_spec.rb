@@ -1,7 +1,8 @@
 require 'computer'
 
 describe Computer do
-  it 'responds to a method random' do
+  it 'responds to #random' do
+    subject = Computer.new
     expect(subject).to respond_to(:random)
   end
 end
