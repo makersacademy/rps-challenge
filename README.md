@@ -56,4 +56,4 @@ The steps I'll test drive to build this version are:
 
 The first 2 versions implement the desired functionality, but our marketeers want to see their name 'in lights' and be transported from the daily grind, so this version makes our web app look good!
 
-*I didn't manage to get to this step, but would have used CSS to spice play.erb up*
+**I didn't manage to get to this step, but would have used CSS to spice play.erb up**
