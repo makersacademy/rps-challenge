@@ -1,6 +1,7 @@
 require 'sinatra'
 require './lib/computer'
 
+
 class Rps < Sinatra::Base
   enable :sessions
 
