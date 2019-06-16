@@ -1,7 +1,6 @@
   require 'sinatra/base'
   require './lib/computer'
 
-
   class RPS < Sinatra::Base
     enable :sessions
 
@@ -22,20 +21,17 @@
 
     post '/play' do
       session[:choice] = params[:choice]
-     # @computer_choice = session[:computer_choice]
       session[:computer_choice] = Computer.new.choice 
-#      params[:computer_choice]
       redirect '/game'
     end
 
     get '/game' do
+      @name = session[:name]
       @choice = session[:choice]
       @computer_choice = session[:computer_choice]
-      #session[:computer_choice]
-      #session[:choice] = params[:choice]
       erb :game
     end
 
-  
     run! if app_file == $0
   end
+  
