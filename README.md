@@ -1,17 +1,25 @@
 # :fist: :hand: :v: Rock Paper Scissors :fist: :hand: :v: 
 
+[![Build Status](https://travis-ci.com/petraartep/rps-challenge.svg?branch=master)](https://travis-ci.com/petraartep/rps-challenge)
 
 Simple Rock, Paper, Scissors game
 ---
 
 ## Approach
 
-
+- build domain model
+- build the landing page
+- add functionalites
+- keep testing the site on localhost while building 
 
 --- 
 
 ## Challenges
 
+- testing randomness
+- adding CSS to `.erb` files
+- implement a result class and tests to return the right value
+- app running on localhost but tests are failing 
 
 
 ---
@@ -28,9 +36,9 @@ Simple Rock, Paper, Scissors game
 ## Run the program
 
 - Clone this repo to your local machine
-- Run the command gem install bundle (if you don't have bundle already)
-- When the installation completes, run `bundle` to install all the required gems
-- Start `rackup` and open `localhost:9292` in your browser
+- Run `bundle install` (if you don't have bundle already)
+- Run `rackup` in terminal to start the server and visit `localhost:9292` in your browser
+- Run `rspec` to test the application
 
 <img width="426" src="https://user-images.githubusercontent.com/23095774/59566978-1fb8ac00-905f-11e9-91ab-5ac2f40b9d34.png">
 
@@ -79,9 +87,10 @@ I would like to be able to play rock/paper/scissors
 
 ## Yet to complete
 
+- Implement a counter for the score
 - Multiplayer mode
   -  Two marketeers can play against each other
-- Rock, Paper, Scissors, Spock, Lizard
+- Extension to Rock, Paper, Scissors, Spock, Lizard
 
 ---
 
