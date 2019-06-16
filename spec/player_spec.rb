@@ -1,6 +1,6 @@
 require 'player'
 
-describe 'Player' do
+describe Player do
   subject(:rocky) { Player.new('Rocky') }
 
   describe '#name' do

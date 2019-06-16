@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/player'
+require_relative './lib/game'
 
 class RpsApp < Sinatra::Base
 
@@ -19,27 +20,7 @@ class RpsApp < Sinatra::Base
     @player_name = $player.name
     @player_move = $player.move
     @computer_move = $computer.move
-    if @player_move == @computer_move
-      @outcome = "It's a draw!"
-    elsif @player_move == "Rock"
-      if @computer_move == "Paper"
-        @outcome = "You lose!"
-      else
-        @outcome = "You win!"
-      end
-    elsif @player_move == "Paper"
-      if @computer_move == "Scissors"
-        @outcome = "You lose!"
-      else
-        @outcome = "You win!"
-      end
-    elsif @player_move == "Scissors"
-      if @computer_move == "Rock"
-        @outcome = "You lose!"
-      else
-        @outcome = "You win!"
-      end
-    end
+    @outcome = Game.new.outcome(@player_move, @computer_move)
     erb :play
   end
 
