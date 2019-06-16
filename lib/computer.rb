@@ -1,11 +1,13 @@
 class Computer
-  def weapon
-    choose_random_weapon
-  end
+  attr_reader :weapon
 
+  def initialize
+    @weapon = random_weapon
+  end  
+ 
   private
 
-  def choose_random_weapon
+  def random_weapon
     ["Rock", "Paper", "Scissors"].sample
   end
 end

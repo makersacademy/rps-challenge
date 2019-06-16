@@ -1,6 +1,7 @@
 require 'sinatra'
 require './lib/computer'
 require './lib/player'
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -21,8 +22,9 @@ class Rps < Sinatra::Base
 
   get '/play/:weapon' do  
     @player = session[:player]   
-    @player.choose_weapon(params[:weapon])    
-    @computer_weapon = Computer.new.weapon
+    @player.choose_weapon(params[:weapon]) 
+    @computer = Computer.new       
+    @game = Game.new(@player, @computer)    
     erb :play
   end  
 end
