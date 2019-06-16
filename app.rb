@@ -10,23 +10,23 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    $player_1 = Player.new(params[:player_1_name])
+    $player = Player.new(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = $player_1.name
+    @player_name = $player.name
     erb :play
   end
 
   post '/choice' do
-    $player_1.player_move(params[:player_1_choice])
+    $player.player_move(params[:player_choice])
     redirect '/winner'
   end
 
   get '/winner' do
-    @player_1_name = $player_1.name
-    @player_1_choice = $player_1.choice
+    @player_name = $player.name
+    @player_choice = $player.player_choice
     @computer_choice = Computer.new.computer_move
     erb :winner
   end

@@ -2,17 +2,32 @@ require 'game'
 
 describe 'Game' do
 
-  subject(:game) { Game.new(player_1_name, player_1_choice, computer_choice) }
-  let(:player_1_name) { double :player_1_name }
-  let(:player_1_choice) { double :player_1_choice }
-  let(:computer_choice) { double :computer_choice }
+  subject(:game) { Game.new(player, computer) }
+  let(:player) { double :player }
+  let(:computer) { double :computer }
 
-  it 'Starts the game with player name' do
-    expect(game.player_1_name).to eq player_1_name
+  it 'Starts with a player and a computer' do
+    expect(game.player).to eq player
+    expect(game.computer).to eq computer
   end
 
-  it 'Commences with player and computer choices' do
-    expect(game.player_1_choice).to eq player_1_choice
-    expect(game.computer_choice).to eq computer_choice
+  describe '#winner' do
+    it 'Player and computer draw' do
+      allow(player).to receive(:player_choice).and_return "Scissors"
+      allow(computer).to receive(:computer_choice).and_return "Scissors"
+      expect(game.winner).to eq "Draw"
+    end
+
+    it 'Player wins' do
+      allow(player).to receive(:player_choice).and_return "Rock"
+      allow(computer).to receive(:computer_choice).and_return "Scissors"
+      expect(game.winner).to eq "Player wins"
+    end
+
+    it 'Computer wins' do
+      allow(player).to receive(:player_choice).and_return "Scissors"
+      allow(computer).to receive(:computer_choice).and_return "Rock"
+      expect(game.winner).to eq "Computer wins"
+    end
   end
 end

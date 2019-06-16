@@ -1,10 +1,28 @@
+require_relative 'player'
+require_relative 'computer'
+
 class Game
 
-  attr_reader :player_1_name, :player_1_choice, :computer_choice
+  attr_reader :player, :computer
 
-  def initialize(player_1_name, player_1_choice, computer_choice)
-    @player_1_name = player_1_name
-    @player_1_choice = player_1_choice
-    @computer_choice = computer_choice
+  def initialize(player, computer)
+    @player = player
+    @computer = computer
+  end
+
+  def winner
+    if @player.player_choice == @computer.computer_choice
+      "Draw"
+    elsif winning_combo[@player.player_choice] == @computer.computer_choice
+      "Player wins"
+    else
+      "Computer wins"
+    end
+  end
+
+  private
+
+  def winning_combo
+    { "Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper" }
   end
 end
