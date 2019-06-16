@@ -1,5 +1,8 @@
 <h1><%= @player_1 %> V Computer</h1>
 
-<a href="/result">Rock</a>
-Paper
-Scissors
+
+<form action="/referee" method="post">
+  <input type="submit" name="player_pick" value="Rock" />
+  <input type="submit" name="player_pick" value="Paper" />
+  <input type="submit" name="player_pick" value="Scissors" />
+</form>

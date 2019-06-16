@@ -17,13 +17,17 @@ describe "Play an online game of Rock Paper Scissors", type: :feature do
   context "when in game" do
     it "gives a choice of rock or paper or scissors" do
       sign_in_and_play
-      expect(page).to have_content 'Rock Paper Scissors'
+      find_button('Rock')
+      find_button('Paper')
+      find_button('Scissors')
+
     end
 
-    it "makes a choice" do
-      sign_in_and_play
-      click_link('Rock')
-      expect(page).to have_content 'Dwayne Johnson selected Rock'
-    end
+  end
+
+  it "displays a winner" do
+    sign_in_and_play
+    click_button('Rock')
+    expect(page).to have_content 'player wins!' or 'computer wins!' or "It's a draw!"
   end
 end

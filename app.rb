@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -17,8 +18,15 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  post '/referee' do
+    @game = Game.new(params[:player_pick].downcase.to_sym)
+    p params[:player_pick]
+    session[:winner] = @game.calculate_winner
+    redirect to('/result')
+  end
+
   get '/result' do
-    @player_1 = session[:player_1]
+    @winner = session[:winner]
     erb(:result)
   end
 
