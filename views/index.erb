@@ -1,9 +1,32 @@
-<h1>Rock &#9994; Paper &#9995; Scissors &#9996;</h1>
+<h1 style="color: #01371E;">Rock &#9994; Paper &#9995; Scissors &#9996;</h1>
 
-<h2>Enter your name to play</h2>
+<h2 style="color: #01371E;">Enter your name to play</h2>
 
 <form action="/name" method="post">
-  <label for="name"><h4>Name:</h4></label>
-  <input type="text" name="name"/>
-  <button type="submit" value="Submit">Submit</button> 
+  <input type="text" name="name" style="height:50px; font-size:14pt"/>
+    <style>
+    .button {
+      padding: 15px 25px;
+      font-size: 18px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #3e8e41}
+
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    </style>
+    <button class="button" type="submit" value="Submit">Submit</button>
+  
+
 </form>

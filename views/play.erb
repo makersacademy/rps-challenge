@@ -1,8 +1,36 @@
-<h1>Hello, <%= @name.capitalize %>!</h1>
-<h2>Select an option</h2>
+<h1 style="color: #01371E;">Hello, <%= @name.capitalize %>!</h1>
+<h2 style="color: #01371E;">Select an option</h2>
 <form action="/play" method="post">
-  <h2> &#9994; <button type="submit" name="choice" value="Rock"> Rock </button></h2> 
-  <h2> &#9995; <button type="submit" name="choice" value="paper"> Paper </button></h2> 
-  <h2> &#9996; <button type="submit" name="choice" value="scissors"> Scissors </button></h2> 
+  <style>
+    .button {
+      padding: 15px 25px;
+      font-size: 24px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #3e8e41}
+
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+  </style>
+  <h2> &#9994; 
+    <button class="button" type="submit" name="choice" value="Rock">Rock</button>
+  </h2>
+  <h2> &#9995; 
+    <button class="button" type="submit" name="choice" value="Paper">Paper</button>
+  </h2>
+  <h2> &#9996; 
+    <button class="button" type="submit" name="choice" value="Scissors">Scissors</button>
+  </h2>
 </form> 
 

@@ -1,18 +1,32 @@
-
-<h2>You chose <%= @result.choice.to_s.capitalize %>!</h2>
+<style>
+.label {
+  color: white;
+  padding: 8px;
+  font-family: Helvetica;
+  border-radius: 15px;
+  box-shadow: 0 4px #999;
+}
+.choice {background-color: #4CAF50;} 
+.computer_choice {background-color: #f44336;}
+.result {background-color: #4f1091;}
+</style>
+<br>
+<span class="label choice">You chose <%= @result.choice.to_s.capitalize %>!</span><br>
+<br>
 <br>
 
-<h2>
 <div id="computer">
+<span class="label computer_choice">
 Computer chose <%= @result.computer_choice.to_s.capitalize %>!
-</div>
-</h2>
+</span></div>
+<br>
 <br>
 
-<h1><% if @result.win? %>
+<span class="label result">
+<% if @result.win? %>
   You won!
 <% elsif @result.lose? %>
   You lost!
 <% elsif @result.draw? %>
   It's a draw. 
-<% end %></h1>
+<% end %></span>
