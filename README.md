@@ -51,11 +51,11 @@ $ git@github.com:josephtownshend/rps-challenge.git
 2.5.0 :004 > computer.computer_choice
  => nil
 2.5.0 :005 > computer.computer_move
- => "Scissors"
-2.5.0 :006 > player.player_move("Rock")
- => "Rock"
+ => :scissors
+2.5.0 :006 > player.player_move(:rock)
+ => :rock
 2.5.0 :007 > game
- => #<Game:0x00007fdf0e164780 @player=#<Player:0x00007fdf0e1647d0 @name="Joe", @player_choice="Rock">, @computer=#<Computer:0x00007fdf0e1647a8 @computer_choice="Scissors">>
+ => #<Game:0x00007fdf0e164780 @player=#<Player:0x00007fdf0e1647d0 @name="Joe", @player_choice=:rock>, @computer=#<Computer:0x00007fdf0e1647a8 @computer_choice=:scissors>>
 2.5.0 :008 > game.winner
  => "Player wins"
 2.5.0 :009 >

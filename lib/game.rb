@@ -9,21 +9,18 @@ class Game
   end
 
   def winner
-    if @player.player_choice == "Paper" && @computer.computer_choice == "Rock"
+    if @player.player_choice == @computer.computer_choice
+      "Draw"
+    elsif winning_combo[@player.player_choice] == @computer.computer_choice
        "Player wins"
-     elsif @player.player_choice == "Scissors" && @computer.computer_choice == "Paper"
-       "Player wins"
-    elsif @player.player_choice == "Rock" && @computer.computer_choice == "Scissors"
-       "Player wins"
-    elsif @computer.computer_choice == "Paper" && @player.player_choice == "Rock"
-       "Computer wins"
-    elsif @computer.computer_choice == "Scissors" && @player.player_choice == "Paper"
-       "Computer wins"
-    elsif @computer.computer_choice == "Rock" && @player.player_choice == "Scissors"
-       "Computer wins"
      else
-       "Draw!"
+       "Computer wins"
     end
   end
 
+private
+
+  def winning_combo
+    { rock: :scissors, paper: :rock, scissors: :paper }
+  end
 end

@@ -1,11 +1,6 @@
 require 'sinatra/base'
-#require_relative './lib/player.rb'
 
 class Game < Sinatra::Base
-
-  # get '/' do
-  #   'Hello User!'
-  # end
 
   get '/' do
     erb :index

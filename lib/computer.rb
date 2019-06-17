@@ -1,8 +1,8 @@
 class Computer
 
-RPS = ["Rock", "Paper", "Scissors"]
+  RPS = [:rock, :paper, :scissors]
 
-attr_reader :computer_choice
+  attr_reader :computer_choice
 
   def initialize
     @computer_choice
