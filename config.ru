@@ -1,2 +1,2 @@
-require_relative 'lib/rps-controller.rb'
+require_relative 'rps-controller.rb'
 run Rps

@@ -1,5 +1,3 @@
-require './lib/rps-controller'
-
 feature 'testing setup and entry to game' do
   scenario 'Can run app and check page content' do
     visit('/')

@@ -1,6 +1,6 @@
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', 'lib/rps-controller.rb')
+require File.join(File.dirname(__FILE__), '..', 'rps-controller.rb')
 
 require 'capybara/rspec'
 require 'simplecov'
