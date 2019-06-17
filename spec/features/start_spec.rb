@@ -4,7 +4,7 @@ feature 'start a game' do
 
   before do
     visit '/'
-    fill_in :player_name, with: 'Jane'
+    fill_in :player_name, with: 'Itachi'
     click_button 'Submit'
   end
 

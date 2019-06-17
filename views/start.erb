@@ -1,4 +1,4 @@
-<h1> Hello, <%= @player_name %>!</h1>
+<h1 style="color: #6c0499;">Hello, <%= @player_name %>!</h1>
 
 <form action="/start" method="post">
   <h2> &#9994; <button type="submit" name="choice" value="Rock"> Rock </button></h2>
@@ -6,4 +6,4 @@
   <h2> &#9996; <button type="submit" name="choice" value="Scissors"> Scissors </button></h2>
 </form>
 
-You chose <%= @choice %>!
+Your choice was: <%= @choice %>!
