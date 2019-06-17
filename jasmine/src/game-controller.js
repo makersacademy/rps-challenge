@@ -8,8 +8,8 @@ $(document).ready(function() {
 
   $("#submitBtn").click(function(){
     $("myForm").submit();
-    var userInput = $( "#player-turn" ).val()
-    player.makeTurn(userInput)
+    var userInput = $( "#player-turn" ).val();
+    player.makeTurn(userInput);
   });
 
   $('#game-outcome').text(game.outcome());

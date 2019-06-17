@@ -3,5 +3,6 @@ function Player() {
 }
 
 Player.prototype.makeTurn = function(playerTurn) {
-  return this.turn = playerTurn
+  return this.turn = playerTurn;
+  console.log('tHIS');
 };

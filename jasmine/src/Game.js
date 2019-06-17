@@ -7,10 +7,8 @@ Game.prototype.gameStart = function() {
 };
 
 Game.prototype.outcome = function() {
-  var playerTurn = player.turn
-  console.log(playerTurn)
+  var playerTurn = player.makeTurn();
   var computerTurn = computer.makeTurn();
-  console.log(computerTurn)
   if (playerTurn === 'Rock' && computerTurn === 'Scissors') {
     return 'Player wins!';
   } else if (playerTurn === 'Rock' && computerTurn === 'Rock') {
