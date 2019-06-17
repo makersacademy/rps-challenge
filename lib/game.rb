@@ -1,5 +1,3 @@
-require 'player'
-
 class Game
   def outcome(player_move, computer_move)
     return "It's a draw!" if player_move == computer_move
