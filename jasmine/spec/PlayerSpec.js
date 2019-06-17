@@ -5,8 +5,7 @@ describe("Player", function() {
   });
 
   it("should make a turn", function() {
-    var spy = spyOn(player, 'makeTurn').and.returnValue('Rock');
-    expect(player.makeTurn()).toEqual('Rock');
+    expect(player.makeTurn('Rock')).toEqual('Rock');
   });
 
 });

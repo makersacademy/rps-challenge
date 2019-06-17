@@ -12,27 +12,10 @@ describe("Game", function() {
 
   it("should declare player the winner", function() {
     game.gameStart();
-    var spy = spyOn(player, 'makeTurn').and.returnValue('Rock');
-    player.makeTurn();
+    player.makeTurn('Rock');
     var spy = spyOn(computer, 'makeTurn').and.returnValue('Scissors');
     computer.makeTurn();
     expect(game.outcome()).toEqual('Player wins!');
   });
-
-  // it("should declare a draw", function() {
-  //   game.gameStart();
-  //   player.makeTurn();
-  //   var spy = spyOn(computer, 'makeTurn').and.returnValue('Rock');
-  //   computer.makeTurn();
-  //   expect(game.outcome()).toEqual('It is a draw!');
-  // });
-  //
-  // it("should declare the computer the winner", function() {
-  //   game.gameStart();
-  //   player.makeTurn();
-  //   var spy = spyOn(computer, 'makeTurn').and.returnValue('Scissors');
-  //   computer.makeTurn();
-  //   expect(game.outcome()).toEqual('Computer wins!');
-  // });
 
 });
