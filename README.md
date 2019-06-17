@@ -15,6 +15,7 @@
   - a game class which can ascertain the winner based on the two player's choices
 
 ## Future Changes
+- I would like to get rid of any global variables in my code
 - I would make a multiplayer version of this game
   - although I have not done this, as my computer is an instance of the player class which simply takes the default arguments for the choose method `(@list.sample)` and the default name passed in on initialization `the computer`, I think that only the following changes would have to be made:
     - add a second button on the index name for them to enter their name
