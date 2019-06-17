@@ -1,8 +1,11 @@
 # RPS Challenge
 
-Instructions
+Progress
 -------
-
+1. setup completed  
+2. first user story tests  
+3. test passes. yay!  
+4. tbc  
 
 
 Task
