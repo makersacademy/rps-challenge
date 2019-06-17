@@ -41,8 +41,25 @@ $ git@github.com:josephtownshend/rps-challenge.git
 - The app determines the winner based on the player's move, and declares the result.
 
 ---------------------------------------------------------------------------------------------------
-
-
+```
+2.5.0 :001 > require './lib/game'
+ => true
+2.5.0 :002 > game = Game.new(player=Player.new("Joe"), computer=Computer.new)
+ => #<Game:0x00007fdf0e164780 @player=#<Player:0x00007fdf0e1647d0 @name="Joe">, @computer=#<Computer:0x00007fdf0e1647a8>>
+2.5.0 :003 > game
+ => #<Game:0x00007fdf0e164780 @player=#<Player:0x00007fdf0e1647d0 @name="Joe">, @computer=#<Computer:0x00007fdf0e1647a8>>
+2.5.0 :004 > computer.computer_choice
+ => nil
+2.5.0 :005 > computer.computer_move
+ => "Scissors"
+2.5.0 :006 > player.player_move("Rock")
+ => "Rock"
+2.5.0 :007 > game
+ => #<Game:0x00007fdf0e164780 @player=#<Player:0x00007fdf0e1647d0 @name="Joe", @player_choice="Rock">, @computer=#<Computer:0x00007fdf0e1647a8 @computer_choice="Scissors">>
+2.5.0 :008 > game.winner
+ => "Player wins"
+2.5.0 :009 >
+```
 
 # RPS Challenge
 
