@@ -24,6 +24,5 @@ class RPS < Sinatra::Base
     redirect '/start'
   end
 
-
   run if app_file == $0
 end
