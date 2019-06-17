@@ -56,12 +56,14 @@ I have satisfied the user stories. Though its not so colourful, the game allows 
 
 * Validation if a user doesn't enter their name (make field required)
 
+* Make it look good!!
+
 Technologies
 ------------
 
 Ruby 2.5.0, Sinatra, Capybara, RSpec 3.7, Rubocop, SimpleCov, Pry
 
-### Resources
+#### Resources
 [Making emoji's accessible](https://dev.to/finallynero/accessible-emojis--1pjh)
 
 [Stubbing Array.sample](https://stackoverflow.com/questions/46745184/how-to-stub-sample-with-rspec)
@@ -71,3 +73,5 @@ Ruby 2.5.0, Sinatra, Capybara, RSpec 3.7, Rubocop, SimpleCov, Pry
 [Testing methods run from initialize](https://stackoverflow.com/questions/45681506/best-approach-to-testing-methods-run-from-initialize-with-rspec)
 
 [Rock Paper Scissors inspiration](http://marcelamari.com/blog/2014/03/my-first-javascript-game/)
+
+[Rails Naming Conventions](https://gist.github.com/iangreenleaf/b206d09c587e8fc6399e)
