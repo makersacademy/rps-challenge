@@ -70,4 +70,4 @@ Ruby 2.5.0, Sinatra, Capybara, RSpec 3.7, Rubocop, SimpleCov, Pry
 
 [Testing methods run from initialize](https://stackoverflow.com/questions/45681506/best-approach-to-testing-methods-run-from-initialize-with-rspec)
 
-[Rock Paper Scissors inspiration] (http://marcelamari.com/blog/2014/03/my-first-javascript-game/)
+[Rock Paper Scissors inspiration](http://marcelamari.com/blog/2014/03/my-first-javascript-game/)
