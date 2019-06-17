@@ -3,6 +3,7 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base
   enable :sessions
+  
   get '/' do
     erb :index
   end
@@ -14,7 +15,13 @@ class RPS < Sinatra::Base
 
   get '/start' do
     @player_name = session[:player_name]
-    erb :name
+    @choice = session[:choice]
+    erb :start
+  end
+
+  post '/start' do
+    session[:choice] = params[:choice]
+    redirect '/start'
   end
 
   run! if app_file == $0

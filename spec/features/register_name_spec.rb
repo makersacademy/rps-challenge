@@ -14,4 +14,5 @@ feature 'allows player to register' do
     click_button 'Submit'
     expect(page).to have_content 'Hello, Itachi!'
   end
+
 end
