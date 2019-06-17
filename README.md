@@ -4,7 +4,20 @@ The Makers Academy Marketing Array ( **MAMA** ) want a game provided for them. T
 
 The aim of this challenge is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web.
 
-Full instructions can be found in challenge_instructions.md
+To see the full instructions we were given to complete this challenge, have a look at challenge_instructions.md
+
+## Instructions
+
+From command line, do the following:
+
+```sh
+$ git clone git@github.com:rhysco8/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+
+Then visit [http://localhost:9292](http://localhost:9292) in your browser to play!
 
 ## Approach
 
