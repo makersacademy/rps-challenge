@@ -50,10 +50,11 @@ The steps I'll test drive to build this version are:
 3. Use global variables to store information on names and moves
 4. Describe win/lose/draw conditions for each move option
 5. Extract Player and Game class to model
-6. Use class methods to remove use of global variables
+6. Use class methods to remove use of global variables - **I didn't manage to get to this step, so my controller is all kinds of sinful**
 
 ### Version 3 - making it look good!
 
 
 **I didn't manage to get to this step, but would have used CSS to spice play.erb up**
+
 The first 2 versions implement the desired functionality, but our marketeers want to see their name 'in lights' and be transported from the daily grind, so this version makes our web app look good!
