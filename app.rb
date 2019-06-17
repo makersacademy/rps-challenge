@@ -22,7 +22,7 @@ class RockPaperScissors < Sinatra::Base
 
   post'/play' do
     session[:option] = params[:option]
-    session[:game_option] = :rock
+    session[:game_option] = Opponent.new.option
     redirect '/play'
   end
 
