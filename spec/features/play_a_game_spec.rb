@@ -14,17 +14,16 @@ feature 'playing a game' do
     expect(page).to have_content 'You chose Rock'
   end
 
-  #scenario 'game to choose "Rock"' do
-  #  enter_player
-  ##  click_button 'Rock'
-  #  message = find(:css, "#opponent").text.strip#retrive an element from page and see content
-#    expect(different_options).to include message
-#  end
+  scenario 'game to choose "Rock"' do
+    enter_player
+    click_button 'Rock'
+    message = find(:css, "#opponent").text.strip#retrive an element from page and see content
+    expect(different_options).to include message
+  end
 
-#  def different_options
-#    [:rock, :paper, :scissors].map { |option| "Opponent chose #{option.to_s.capitalize}"}
-#  end
-#end
+ def different_options
+    [:rock, :paper, :scissors].map { |option| "Opponent chose #{option.to_s}"}
+end
 
   scenario 'game to choose random option' do
     enter_player
