@@ -9,12 +9,12 @@ class Game
   end
 
   def winner
-    if @player.player_choice == @computer.computer_choice
-      "Draw"
+    if winning_combo[@computer.computer_choice] == @player.player_choice
+      "Computer wins"
     elsif winning_combo[@player.player_choice] == @computer.computer_choice
-       "Player wins"
+      "Player wins"
      else
-       "Computer wins"
+       "Draw"
     end
   end
 
