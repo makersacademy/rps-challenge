@@ -27,3 +27,25 @@ feature 'As a player I can play Rock, Paper, Scissors against a computer' do
     expect(page).to have_content('The winner is Mama', 'Scissors')
   end
 end
+
+feature 'As a player I can play Rock, Paper, Scissors against a computer' do
+  scenario 'Player picks Rock and the Ai Paper. Ai shall win' do
+    srand(555)
+    visit '/'
+    fill_in('Name:', with: 'Mama')
+    click_button("Let's Play")
+    click_button("Rock")
+    expect(page).to have_content('The winner is Mama', 'Paper')
+  end
+end
+
+feature 'As a player I can play Rock, Paper, Scissors against a computer' do
+  scenario 'Player picks Rock and the Ai Rock. Game will be a tie' do
+    srand(666)
+    visit '/'
+    fill_in('Name:', with: 'Mama')
+    click_button("Let's Play")
+    click_button("Rock")
+    expect(page).to have_content('Tie', 'Rock')
+  end
+end
