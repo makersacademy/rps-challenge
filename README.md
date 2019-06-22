@@ -1,4 +1,4 @@
-# RPS Challenge . 
+# RPS Challenge 
 [![Build Status](https://travis-ci.org/Danielandro/rps-challenge.svg?branch=master)](https://travis-ci.org/Danielandro/rps-challenge)
 
 Introduction 
