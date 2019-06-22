@@ -1,5 +1,6 @@
 class Ai
-
+  
+  VALID_MOVE = ['Rock', 'Paper', 'Scissors']
   attr_reader :name, :move
 
   def initialize
@@ -8,6 +9,6 @@ class Ai
   end
 
   def random_move
-    @move = ['Rock', 'Paper', 'Scissors'].sample
+    @move = VALID_MOVE.sample
   end
 end
