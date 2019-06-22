@@ -7,7 +7,7 @@ class RPS < Sinatra::Base
 
   get '/' do
     session[:game] = Game.new
-    erb(:index)
+    erb :index
   end
 
   post '/name' do
@@ -17,7 +17,7 @@ class RPS < Sinatra::Base
 
   get '/choose-move' do
     @game = session[:game]
-    erb(:choose_move)
+    erb :choose_move
   end
 
   post '/move' do
@@ -28,7 +28,7 @@ class RPS < Sinatra::Base
   get '/results' do
     session[:game].winner_is
     @game = session[:game]
-    erb(:results)
+    erb :results
   end
 
   run! if app_file == $0
