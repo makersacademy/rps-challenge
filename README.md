@@ -25,7 +25,7 @@ Basic Rules
 - Paper beats Rock
 
 ## Approach
-I designed a process model, following the same guidelines from a previous challenge Battle_Project, by extracting the objects and methods from the user stories. For example visit '/', fill_in 'player1_name', with: 'Dominic White', click_button 'PLAY'. This enabled me to move forward using a TDD approach, adding feature tests to picture the behaviour of the program. Following the Red-Green-Refactor cycle I have been able to move from User Stories to an end product which is a functiong, simple, web app.
+I designed a process model, following the same guidelines from a previous challenge Battle_Project, by extracting the objects and methods from the user stories. For example visit '/', fill_in 'player1_name', with: 'Dominic White', click_button 'PLAY'. This enabled me to move forward using a TDD approach, adding feature tests to picture the behaviour of the program. Following the Red-Green-Refactor cycle I have been able to move from User Stories to an end product which is a functioning, simple, web app.
 
 Resources used to assist with my approach on the challenge:
 * I followed the same structure as a previous challenge Battle_Project.
