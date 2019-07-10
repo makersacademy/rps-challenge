@@ -9,7 +9,7 @@ class Game < Sinatra::Base
     erb(:index)
   end
 
-  post '/select' do
+  post '/name' do
     session[:player1] = Player.new(params[:player_1_name])
     redirect '/choose'
   end
@@ -17,6 +17,18 @@ class Game < Sinatra::Base
   get '/choose' do
     @player1 = session[:player1]
     erb(:choose)
+  end
+
+  post '/select' do
+    @player1 = session[:player1]
+    @player1.select_weapon(params[:weaponpicker])
+    session[:player1] = @player1
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player1 = session[:player1]
+    erb(:result)
   end
 
   run! if app_file == $0
