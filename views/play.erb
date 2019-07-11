@@ -1,0 +1,29 @@
+<head>
+  <style>
+    body {
+      background-color: coral;
+    }
+    .button {
+      background-color: #4CAF50;
+      border: pink;
+      color: white;
+      padding: 15px 25px;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2><p>Player name: <%= @player_name %></p></h2>
+
+  <h3><p><%= @player_name %>, pick an option. Rock, paper or scissors.</p></h3>
+
+  <p><center><button class="button" type="button">Rock</button></center></p>
+  <p><center><button class="button" type="button">Paper</button></center></p>
+  <p><center><button class="button" type="button">Scissors</button></center></p>
+</body>
