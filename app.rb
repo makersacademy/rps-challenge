@@ -14,4 +14,13 @@ class RPS < Sinatra::Base
     @name = session['name']
     erb(:battlefield)
   end
+
+  post '/rock' do
+  end
+
+  post '/paper' do
+  end
+
+  post '/scissors' do
+  end
 end
