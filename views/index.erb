@@ -1,9 +1,21 @@
-<h1>ROCK PAPER SISSORS!</h1>
-<h2>Sign in to play...</h2>
-<form action="/name" method="post">
-  <label for="player_name">
-    Player name:
-    <input type="text" name="player_name">
-  </label>
-  <input type="submit" name='Submit' value="Submit">
+<head>
+  <style>
+    body {
+      background-color: #B4EA91 ;
+    }
+    p.sansserif {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1><p class="sansserif"><center>ROCK PAPER SCISSORS!</center></p></h1>
+  <h2><p class="sansserif">Sign in to play...<center></p></h2>
+      <form action="/name" method="post">
+      <p class="sansserif">
+        <label for="player_name">
+        Player name:
+      <input type="text" name="player_name">
+    </label>
+  <input type="submit" name='Submit' value="Submit"></p>
 </form>

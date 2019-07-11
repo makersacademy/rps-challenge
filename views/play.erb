@@ -1,27 +1,49 @@
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      background-color: coral;
+      background-color: #91EADA;
     }
+    p.sansserif {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+    }
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+      }
+      to {
+     text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+   }
+ }
     .button {
-      background-color: #4CAF50;
-      border: pink;
-      color: white;
+      background-color: #5631B9;
+      border: 2px solid #e7e7e7;
+      color: black;
       padding: 15px 25px;
       text-align: center;
-      font-size: 16px;
+      font-size: 40px;
       cursor: pointer;
+      border-radius: 8px;
     }
 
     .button:hover {
-      background-color: green;
+      background-color: #ECE955;
     }
   </style>
 </head>
 <body>
-  <h2><p>Player name: <%= @player_name %></p></h2>
+  <h2><p class="glow"><%= @player_name %></p></h2>
 
-  <h3><p><%= @player_name %>, pick an option. Rock, paper or scissors.</p></h3>
+  <h3><p class="sansserif"><%= @player_name %>, pick an option.</p>
+     <p class="sansserif">Rock, paper or scissors?</p></h3>
 
   <p><center><button class="button" type="button">Rock</button></center></p>
   <p><center><button class="button" type="button">Paper</button></center></p>

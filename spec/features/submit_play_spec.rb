@@ -5,6 +5,7 @@ feature 'submits players move' do
     click_button 'Submit'
     visit '/play'
     click_button 'Rock'
+    visit '/game'
     expect(page).to have_content "Rianne selected Rock"
   end
 end
