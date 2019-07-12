@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPS < Sinatra::Base
 
@@ -7,7 +8,12 @@ get '/' do
 end
 
 post '/name' do
-  @player1 = params[:player1]
+  $player = Player.new(params[:name])
+  redirect '/play'
+end
+
+get '/play' do
+  @name = $player.name
   erb :play
 end
 # start the server if ruby file executed directly
