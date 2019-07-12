@@ -10,12 +10,12 @@ enable :sessions
   end
 
   post '/names' do
-    player_1 = Player.new(params[:player_1])
-    $game = Game.new(player_1)
+    session[:player_1] = Player.new(params[:player_1])
     redirect '/play'
   end
 
   get '/play' do
+    $game = Game.new(session[:player_1])
     @game = $game
     erb :play
   end

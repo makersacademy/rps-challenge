@@ -15,7 +15,6 @@ attr_reader :players, :current_turn
   end
 
   def result(player_move)
-
     @move = player_move.downcase
     if valid_input?
       calculator
