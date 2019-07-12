@@ -8,7 +8,7 @@ feature 'Testing infrastructure' do
   feature 'Enable players to enter names' do
     scenario 'testing name input from form' do
       sign_and_play
-      expect(page).to have_content "Bob choose your move!"
+      expect(page).to have_content "Bob Choose your move!"
     end
   end
 end
@@ -18,7 +18,7 @@ feature 'play game' do
     srand(67810)
     sign_and_play
     fill_in 'move', with: 'rock'
-    click_button 'submit'
+    click_button 'Submit'
     expect(page).to have_content "It's a Draw!"
   end
 end
@@ -27,7 +27,7 @@ end
     scenario 'load draw erb page upon draw result' do
       sign_and_play
       fill_in 'move', with: 'rock'
-      click_button 'submit'
+      click_button 'Submit'
       expect(page).to have_content 'Thanks for playing'
     end
   end
