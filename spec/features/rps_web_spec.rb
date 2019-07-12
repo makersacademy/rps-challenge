@@ -8,7 +8,7 @@ feature 'Testing infrastructure' do
   feature 'Enable players to enter names' do
     scenario 'testing name input from form' do
       sign_and_play
-      expect(page).to have_content "Bob Choose your move!"
+      expect(page).to have_content "Bob choose your move!"
     end
   end
 end
