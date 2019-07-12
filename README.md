@@ -14,13 +14,14 @@ The user is able to:
 
 ### Installation / How to use
 
-To make use of this project clone it from GitHub by doing the following:
+To use this project please follow the instruction below.
 
-1. Clone the repository using `git clone <repo url>` in your terminal.
-2. Then type `bundle` to install gems
-3. launch the local server by typing `rackup -p 4567` (4567 may be changed to any port number you like)
-4. open a your browser and enter the url `http://localhost:4567/` (or your chosen port number)
-5. play the game :)
+**How to clone from GitHub and what to do afterwards:**
+1. Open up your terminal and clone the repository using `git clone <repo url>`
+2. Enter `bundle` to install the necessary gems
+3. Launch the local server by entering `rackup -p 4567` (4567 may be changed to any port number you like)
+4. Next open a your browser and enter the url `http://localhost:4567/` (or your chosen port number)
+5. Play the game :)
 
 ### Tech/framework used
 
