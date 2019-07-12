@@ -1,8 +1,11 @@
-<h1><%= @game.player_1.name %> choose your move!<h1>
-
-<h2>Choose from Rock, Paper or Scissors! Choose Wisely!<h2>
+<center><body style="background-image:url('https://cdn.pixabay.com/photo/2013/07/12/15/02/fingers-149295_960_720.png');background-repeat:no-repeat;background-position:center;background-size:auto;">
+<h1 style=font-size:75px;color:red;><%= @game.player_1.name %> choose your move!<h1>
+  <br>
+  <br>
+  <br>
+<h2 style=font-size:30px;color:red;margin-bottom:-15px;margin-top:50px;>Enter Move Here<h2>
 <form action="/results" method="get">
-  <input type="text" name="move">
-  <input type="submit" value="submit">
+  <input style="height:25px;width:100px;margin-top:-15px;text-align:center;margin-bottom:5px;" type="text" name="move"></button>
+  <br><input type="submit" value="submit">
 </form>
-<h2>Good Luck!<h2>
+<h2 style=color:red;margin-top:-15px;>Good Luck!<h2></center>

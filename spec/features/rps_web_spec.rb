@@ -19,7 +19,7 @@ feature 'play game' do
     sign_and_play
     fill_in 'move', with: 'rock'
     click_button 'submit'
-    expect(page).to have_content "You Drew!"
+    expect(page).to have_content "It's a Draw!"
   end
 end
 
