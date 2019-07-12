@@ -11,3 +11,6 @@
 # the marketeer can choose one option
 # the game will choose a random option
 # a winner will be declared
+
+# rock paper scissors buttons need to be in a form and have the input, push,
+# type= etc Then it should take to the next page, /outcome?

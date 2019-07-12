@@ -9,3 +9,5 @@ feature 'submits players move' do
     expect(page).to have_content "Rianne selected Rock"
   end
 end
+
+feature ''
