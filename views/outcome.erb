@@ -1,6 +1,4 @@
-<%= Game.instance.player1.name %>
-<%= Game.instance.player1.move.to_s %>
-<%= Game.instance.player2.name %>
-<%= Game.instance.player2.move.to_s %>
-<%= Game.instance.winner.name %>
+<h1><%= "#{@instance.player2.name} used #{@instance.player2.move.to_s}" %></h1>
+<h1><%= "#{@instance.winner.name} won by using #{@instance.winner.move.to_s}" %>
+</h1>
 <a href='/'>Play again</a>

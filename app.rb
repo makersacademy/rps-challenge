@@ -22,10 +22,10 @@ class Rps < Sinatra::Base
 
   post '/decide' do
     @player_move = params[:weapon]
-    Game.instance.player1.set_move(@player_move.downcase.to_sym)
-    Game.instance.player2.randomise_move
-    Game.instance.assign_winner
-    if Game.instance.winner == "Draw"
+    @instance.player1.set_move(@player_move.downcase.to_sym)
+    @instance.player2.randomise_move
+    @instance.assign_winner
+    if @instance.winner == "Draw"
       redirect '/draw'
     else
       redirect '/outcome'

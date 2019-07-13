@@ -15,12 +15,13 @@ feature 'user story 1' do
   # I would like to be able to play rock/paper/scissors
 
   scenario 'user can play the game' do
+    srand(200)
     visit('/')
     fill_in 'player_name', with: 'Dan'
     click_button 'Submit'
     choose('weapon', option: 'Rock')
     click_button 'Attack'
-    expect(page).to have_content 'DanRock'
+    expect(page).to have_content 'won by using'
   end
 
   # Hints on functionality

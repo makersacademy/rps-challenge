@@ -1,86 +1,19 @@
-# RPS Challenge
+### Rock Paper Scissors challenge ###
 
-Instructions
--------
+## Application Summary ##
+This is a simple webapp that allows a user to enter their name, and make a selection of weapon to use in a simulated rock, paper scissors match. For some added complexity I added the Spock and Lizard options to the game and multiplayer logic is not enabled, but built in.
+Rather than creating an app that only allowed the player to choose a weapon and to react to that choice, it seemed more logical to instantiate another player class and give it a randomised weapon and the name 'Computer'. In the testing environment this required that I seed the random generator to fix the outcomes and test those scenario's, which was a handy lesson as I'm now across that scenario and can use it to write better tests.
+I've not bothered to style the app using CSS, I've done this in years past and given that it's unlikely i'll find myself looking for work as a UX Designer i'm concerning myself less with the styling.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+## What I learned ##
+- Using the model to handle data and decision making
+- Why skinny controllers are important
+- Isolating the tests
+- Don't ever think you're smarter than tests, you aren't.
+- Rubbish tests mean rubbish code
+- Seeding random numbers for testing purposes using SRAND.
 
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+## Left to complete ##
+- I won't be returning to this project I would say, however I could definitely stand to refactor quite a lot more than I have here.
+- I could handle the logic on win lose more succinctly, but again for a project like this the implementation is easy to read and efficient enough to not warrant a further look in from me.
+- It currently looks only marginally more appealing than a console/terminal version of the app - i.e I've not styled a single element.
