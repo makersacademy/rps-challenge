@@ -1,0 +1,11 @@
+<h2><%= Game.instance.player1.name %> </h2>
+<h2>Please choose your weapon</h2>
+
+<form action="/decide" method="post">
+  <input type="radio" name="weapon" value="Rock"><label for="Rock"> Rock</label><br>
+  <input type="radio" name="weapon" value="Paper"><label for="Paper"> Paper</label><br>
+  <input type="radio" name="weapon" value="Scissors"><label for="Scissors"> Scissors</label><br>
+  <input type="radio" name="weapon" value="Spock"><label for="Spock"> Spock</label><br>
+  <input type="radio" name="weapon" value="Lizard"><label for="Lizard"> Lizard</label><br>
+  <input type="submit" name="attack" value="Attack">
+</form>
