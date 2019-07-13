@@ -9,7 +9,7 @@ class Game
   'paper' => { 'paper' => 'draw', 'rock' => 'win', 'scissors' => 'lose' },
   'scissors' => { 'scissors' => 'draw', 'rock' => 'lose', 'paper' => 'win' } }
 
-  def initialize(player_1_name, computer_weapon = RandomWeapon.new.weapon )
+  def initialize(player_1_name, computer_weapon = RandomWeapon.new.weapon)
     @player_1_name = player_1_name
     @player_1_weapon = 'rock'
     @computer_weapon = computer_weapon
