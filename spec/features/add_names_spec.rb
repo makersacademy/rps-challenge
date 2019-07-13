@@ -1,8 +1,6 @@
 feature 'enter names' do
   scenario "submitting players name" do
-    visit('/')
-    fill_in :player_name, with: 'Rianne'
-    click_button 'Submit'
+    sign_in_and_confirm
     expect(page).to have_content 'Rianne'
   end
 end

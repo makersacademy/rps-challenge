@@ -1,13 +1,7 @@
 feature 'submits players move' do
   scenario "player selects 'rock'" do
-    visit '/'
-    fill_in :player_name, with: 'Rianne'
-    click_button 'Submit'
-    visit '/play'
+    sign_in_and_confirm
     click_button 'Rock'
-    visit '/game'
-    expect(page).to have_content "Rianne selected Rock"
+    expect(page).to have_content "Rianne selected rock"
   end
 end
-
-feature ''

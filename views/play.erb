@@ -40,14 +40,15 @@
   </style>
 </head>
 <body>
-  <h2><p class="glow"><%= @player.name %></p></h2>
-    <h3><p class="sansserif"><%= @player.name %>, pick an option.</p>
+  <h2><p class="glow"><%= @game.player.name %></p></h2>
+    <h3><p class="sansserif"><%= @game.player.name %>, pick an option.</p>
         <p class="sansserif">Rock, paper or scissors?</p></h3>
 
      <form action="/game" method="post">
-     <p class="sansserif">
-       <p><center><button class="button" type="Submit">Rock</button></center><p>
-       <p><center><button class="button" type="Submit">Paper</button></center><p>
-       <p><center><button class="button" type="Submit">Scissors</button></center><p>
+       <p class="sansserif">
+         <p><center><button class="button" type="submit" name="item" value="rock" id="rock-button">Rock</button></center></p>
+         <p><center><button class="button" type="submit" name="item" value="paper" id="paper-button">Paper</button></center></p>
+         <p><center><button class="button" type="submit" name="item" value="scissors" id="scissors-button">Scissors</button></center></p>
+       </p>
      </form>
 </body>
