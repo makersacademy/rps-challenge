@@ -6,7 +6,7 @@ feature 'user story 1' do
   # I would like to register my name before playing an online game
 
   scenario 'user can enter their name before playing' do
-    visit ('/')
+    visit('/')
     expect(page).to have_content 'Enter your name to play'
   end
 
@@ -15,7 +15,7 @@ feature 'user story 1' do
   # I would like to be able to play rock/paper/scissors
 
   scenario 'user can play the game' do
-    visit ('/')
+    visit('/')
     fill_in 'player_name', with: 'Dan'
     click_button 'Submit'
     choose('weapon', option: 'Rock')

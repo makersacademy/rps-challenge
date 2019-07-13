@@ -1,7 +1,8 @@
 require 'player'
 
 describe Player do
-subject(:player_one) { described_class.new("Dan") }
+  subject(:player_one) { described_class.new("Dan") }
+
   it 'should be able to receive a name' do
     expect(player_one.name).to eq "Dan"
   end
