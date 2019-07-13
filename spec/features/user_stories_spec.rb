@@ -14,6 +14,8 @@ end
 feature 'Play a game of rock/paper/scissors' do
   scenario 'Player 1 can play a game of rock/paper/scissors' do
     sign_in_and_play
-    expect(page).to have_content 'Choose rock, paper or scissors'
+    select('Rock', :from => 'selection')
+    click_button('Submit')
+    expect(page).to have_text('Rock')
   end
 end
