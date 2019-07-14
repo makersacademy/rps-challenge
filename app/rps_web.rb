@@ -3,7 +3,7 @@ require_relative '../lib/player'
 require_relative '../lib/game'
 
 class RPSWeb < Sinatra::Application
-enable :sessions
+  enable :sessions
 
   get '/' do
     erb :index

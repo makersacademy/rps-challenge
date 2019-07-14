@@ -15,7 +15,7 @@ end
 
 feature 'play game' do
   scenario 'can enter move' do
-    srand(67810)
+    srand(678_10)
     sign_and_play
     fill_in 'move', with: 'rock'
     click_button 'Submit'
@@ -23,11 +23,11 @@ feature 'play game' do
   end
 end
 
-  feature 'show results' do
-    scenario 'load draw erb page upon draw result' do
-      sign_and_play
-      fill_in 'move', with: 'rock'
-      click_button 'Submit'
-      expect(page).to have_content 'Thanks for playing'
-    end
+feature 'show results' do
+  scenario 'load draw erb page upon draw result' do
+    sign_and_play
+    fill_in 'move', with: 'rock'
+    click_button 'Submit'
+    expect(page).to have_content 'Thanks for playing'
   end
+end
