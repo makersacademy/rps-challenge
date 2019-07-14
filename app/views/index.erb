@@ -1,7 +1,16 @@
-<h1>Play RPS</h1>
+<h2>Choose your game mode</h2>
 
-<form action="/name" method="post">
-  <p>Enter your name</p>
-  <input type="text" name="player1_name">
-  <input type="submit">
-</form>
+<div class="flexbox">
+
+  <div class="flexitem">
+    <form action="/pvp" >
+      <input class="button" type="submit" value="Two Players">
+    </form>
+  </div>
+
+  <div class="flexitem">
+    <form action="/cpu" >
+      <input class="button" type="submit" value="Single Player">
+    </form>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+/* :root {
+  --purple: #C79AD1;
+} */
+
+/* Colors because the root pseudo class isn't working ):
+purple C79AD1
+pink E7CEE3
+dark purple A37FAC
+greyishblue E0E1E9
+*/
+
+body {
+  background-color: #C79AD1;
+}
+
+h1 {
+  color: #C79AD1;
+  font-family: 'Lobster', cursive;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+h2 {
+  color: #C79AD1;
+  font-family: 'Lobster', cursive;
+  font-size: 2.0em;
+  text-align: center;
+}
+
+.main-container{
+  font-family: 'Muli', sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  color: #A37FAC;
+  background-color: #E7CEE3;
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: center;
+}
+
+.flexitem {
+  margin: 20px;
+}
+
+.button {
+  background-color: #E0E1E9
+  border: none;
+  border-radius: 15px;
+  color: A37FAC;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Muli', sans-serif;
+}
