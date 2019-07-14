@@ -1,7 +1,7 @@
 require 'game'
 
 class Game
-  attr_reader :player, :choice, :bot_choice
+  attr_reader :player, :choice
 
   CHOICES = ['rock', 'paper', 'scissors']
 
