@@ -17,15 +17,11 @@ class Game
   end
 
   def outcome(player_1, player_2)
-    if player_1 == player_2
-      "It's a Draw"
-    elsif BEATMAP[player_1] == player_2
-      "Player 1 won"
-    else
-      "Player 2 won"
-    end
+    return "It's a Draw" if player_1 == player_2
+    return "Player 1 won" if BEATMAP[player_1] == player_2
+    "Player 2 won"
   end
-
+  # 
   # def self
   #   @game = Game.new(player_1, player_2)
   # end

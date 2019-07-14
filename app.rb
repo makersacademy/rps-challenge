@@ -33,9 +33,9 @@ class Rps < Sinatra::Base
     redirect '/attack'
   end
 
-  # get '/attack' do
-  #   @player_1_name = @player_1_name
-  #   @player_2_name = @player_2_name
-  #   @outcome = @game.outcome(player_1.weapon, pla
-  # end
+  get '/attack' do
+    @game = Game.new(@player_1_name, @player_2_name)
+    @outcome = @game.outcome(@player_1.weapon, @player_2.move)
+    erb :outcome
+  end
 end
