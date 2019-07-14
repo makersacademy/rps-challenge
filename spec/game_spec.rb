@@ -2,23 +2,23 @@ require 'game'
 
 describe Game do
   let(:name) { 'Will' }
-  let(:computer_weapon) { 'rock' }
+  let(:computer_weapon) { :rock }
   subject(:game) { described_class.new(name, computer_weapon) }
 
   describe '#result' do
     it 'returns draw if weapons the same' do
       game.select_weapon(game.computer_weapon)
-      expect(game.result).to eq('draw')
+      expect(game.result).to eq(:draw)
     end
 
     it 'Confirms player win if their weapon beats the computers' do
-      game.select_weapon('paper')
-      expect(game.result).to eq('win')
+      game.select_weapon(:paper)
+      expect(game.result).to eq(:win)
     end
 
     it 'Confirms computer wins if their weapon beats the players' do
-      game.select_weapon('scissors')
-      expect(game.result).to eq('lose')
+      game.select_weapon(:scissors)
+      expect(game.result).to eq(:lose)
     end
   end
 

@@ -1,6 +1,6 @@
 class RandomWeapon
   def weapon
-    weapons = ['rock', 'paper', 'scissors']
+    weapons = [:rock, :paper, :scissors]
     weapons[random_num]
   end
 
