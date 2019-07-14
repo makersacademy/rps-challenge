@@ -1,4 +1,21 @@
-# RPS Challenge
+# Rianne's RPS Challenge
+
+##A simple web app which allows the user to play a game of rock, paper, scissors against the computer.
+
+To use the app:
+$ git clone git@github.com:riannemcc/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+
+![Screenshot](https://imgur.com/pSI5SBI)
+![Screenshot](https://imgur.com/IWYOQVI)
+![Screenshot](https://imgur.com/MgZuQ6b)
+
+
+
+
+
 
 Instructions
 -------
