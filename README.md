@@ -36,27 +36,6 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
 In code review we'll be hoping to see:
 
 * All tests passing
@@ -65,22 +44,41 @@ In code review we'll be hoping to see:
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
-Notes on test coverage
-----------------------
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+## Expected record got from the test
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+'''
+fjmc8@HP-ProBook-455-G2 MINGW64 /f/makers/rps-challenge (master)
+$ rspec
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
+Game
+  #player
+    initializes a game with a player
+  #result
+    displays the correct result, scissors beats paper
+    declares a draw if it is scissors vs scissors
+    declares a lost result if it is scissors vs rock
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+Player
+  #name
+    returns the name
+
+Have you considered running rubocop? It will help you improve your code!
+Try it now! Just run: rubocop
+
+Finished in 0.01249 seconds (files took 3.81 seconds to load)
+5 examples, 0 failures
+
+
+COVERAGE:  84.00% -- 63/75 lines in 5 files
+
++----------+-------------+-------+--------+------------------------+
+| coverage | file        | lines | missed | missing                |
++----------+-------------+-------+--------+------------------------+
+|  50.00%  | app.rb      | 18    | 9      | 8, 12-14, 18-19, 23-25 |
+|  88.00%  | lib/game.rb | 25    | 3      | 13-14, 33              |
++----------+-------------+-------+--------+------------------------+
+3 file(s) with 100% coverage not shown
+
+'''
+
