@@ -8,12 +8,9 @@ To use the app:
 * $ bundle
 * $ rackup
 
-![Screenshot](https://imgur.com/pSI5SBI)
-Format: ![Alt Text](url)
-![Screenshot](https://imgur.com/IWYOQVI)
-Format: ![Alt Text](url)
-![Screenshot](https://imgur.com/MgZuQ6b)
-Format: ![Alt Text](url)
+![Screenshot]([Imgur](https://i.imgur.com/pSI5SBI.png))
+![Screenshot]([Imgur](https://i.imgur.com/IWYOQVI.png))
+![Screenshot]([Imgur](https://i.imgur.com/MgZuQ6b.png))
 
 
 
