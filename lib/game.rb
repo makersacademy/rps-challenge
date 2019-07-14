@@ -15,6 +15,14 @@ class Game
     @computer = computer
   end
 
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
+  end
+
+  def self.instance
+    @game
+  end
+
   def result
     computer_turn = @computer.computer_turn
     if @player.chosen_item == computer_turn

@@ -11,23 +11,25 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:player_name])
-    $game = Game.new(player)
+    @game = Game.create(player, Computer.new)
     redirect '/play'
   end
 
+  before do
+    @game = Game.instance
+  end
+
   get '/play' do
-    @game = $game
     erb :play
   end
 
   post '/game' do
     item = params[:item].to_sym
-    $game.player.selects(item)
+    @game.player.selects(item)
     redirect '/game'
   end
 
   get '/game' do
-    @game = $game
     erb :game
   end
 
