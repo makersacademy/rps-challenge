@@ -25,12 +25,9 @@ class Game
 
   def result
     computer_turn = @computer.computer_turn
-    if @player.chosen_item == computer_turn
-      return "It's a draw!"
-    elsif RULES[@player.chosen_item] == computer_turn
-      return "#{@player.name} wins!"
-    else
-      return "#{@player.name} loses!"
-    end
+    player_turn = @player.chosen_item
+    return "It's a draw!" if player_turn == computer_turn
+    return "#{@player.name} wins!" if RULES[player_turn] == computer_turn
+    "#{@player.name} loses!"
   end
 end

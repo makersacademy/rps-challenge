@@ -9,7 +9,6 @@ describe Game do
     expect(game.player).to eq player_double
   end
 
-
   describe '#result' do
     it 'returns a draw result' do
       allow(computer_double).to receive(:computer_turn).and_return(:paper)
