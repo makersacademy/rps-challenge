@@ -33,5 +33,4 @@ class Game
       return "#{@player.name} loses!"
     end
   end
-
 end
