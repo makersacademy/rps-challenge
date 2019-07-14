@@ -66,19 +66,12 @@ Player
 Have you considered running rubocop? It will help you improve your code!
 Try it now! Just run: rubocop
 
-Finished in 0.01249 seconds (files took 3.81 seconds to load)
+Finished in 0.01419 seconds (files took 3.7 seconds to load)
 5 examples, 0 failures
 
 
-COVERAGE:  84.00% -- 63/75 lines in 5 files
+COVERAGE: 100.00% -- 28/28 lines in 2 files
 
-+----------+-------------+-------+--------+------------------------+
-| coverage | file        | lines | missed | missing                |
-+----------+-------------+-------+--------+------------------------+
-|  50.00%  | app.rb      | 18    | 9      | 8, 12-14, 18-19, 23-25 |
-|  88.00%  | lib/game.rb | 25    | 3      | 13-14, 33              |
-+----------+-------------+-------+--------+------------------------+
-3 file(s) with 100% coverage not shown
 
 '''
 
