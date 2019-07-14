@@ -1,0 +1,80 @@
+body {
+  /* background-color: #91EADA; */
+background-image: url(https://backgroundcheckall.com/wp-content/uploads/2017/12/plain-blue-green-background.jpg);
+background-size:cover;
+}
+
+p {
+  font-family: Andale Mono, monospace;
+
+}
+
+h1 {
+  font-size: 40px;
+  font-family: Andale Mono, monospace;
+}
+
+.glow {
+font-size: 80px;
+font-family: Jazz LET, fantasy;
+font-style: italic;
+font-color: #F7F5FC;
+color: #fff;
+text-align: center;
+-webkit-animation: glow 1s ease-in-out infinite alternate;
+-moz-animation: glow 1s ease-in-out infinite alternate;
+animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+ text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+}
+}
+.button {
+  background-color: #5631B9;
+  border: 2px solid #e7e7e7;
+  color: black;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 40px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.button:hover {
+  background-color: #ECE955;
+}
+
+.flashit{
+  color:#f2f;
+  font-size: 80px
+  font-family: Andale Mono, monospace;
+	-webkit-animation: flash linear 1s infinite;
+	animation: flash linear 1s infinite;
+}
+@-webkit-keyframes flash {
+	0% { opacity: 1; }
+	50% { opacity: .1; }
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; }
+	50% { opacity: .1; }
+	100% { opacity: 1; }
+}
+
+input {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 8px #7E55EC;
+  border-radius: 4px;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
