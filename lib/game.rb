@@ -8,19 +8,19 @@ class Game
 
   def play(choice)
     if choice == @computer.sample
-      "It's a draw"
+      "It's a draw!"
     elsif choice == "rock" && computer_chose_scissors
-      "you win!"
+      "You win!"
     elsif choice == "scissors" && computer_chose_paper
-      "you win!"
+      "You win!"
     elsif choice == "paper" && computer_chose_rock
-      "you win!"
+      "You win!"
     elsif computer_chose_rock && choice = "scissors"
-      "you lose!"
+      "CPU wins!"
     elsif computer_chose_scissors && choice = "paper"
-      "you lose!"
+      "CPU wins!"
     else computer_chose_paper && choice = "rock"
-      "you lose!"
+      "CPU wins!"
     end
   end
 
