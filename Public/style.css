@@ -1,7 +1,7 @@
 body {
   /* background-color: #91EADA; */
-background-image: url(https://backgroundcheckall.com/wp-content/uploads/2017/12/plain-blue-green-background.jpg);
-background-size:cover;
+  background-image: url(https://backgroundcheckall.com/wp-content/uploads/2017/12/plain-blue-green-background.jpg);
+  background-size: cover;
 }
 
 p {
@@ -15,15 +15,15 @@ h1 {
 }
 
 .glow {
-font-size: 80px;
-font-family: Jazz LET, fantasy;
-font-style: italic;
-font-color: #F7F5FC;
-color: #fff;
-text-align: center;
--webkit-animation: glow 1s ease-in-out infinite alternate;
--moz-animation: glow 1s ease-in-out infinite alternate;
-animation: glow 1s ease-in-out infinite alternate;
+  font-size: 80px;
+  font-family: Jazz LET, fantasy;
+  font-style: italic;
+  font-color: #F7F5FC;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
 }
 @-webkit-keyframes glow {
   from {
