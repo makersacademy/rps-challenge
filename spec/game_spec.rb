@@ -13,19 +13,17 @@ describe Game do
 
     it 'Confirms player win if their weapon beats the computers' do
       game.select_weapon('paper')
-      # expect(game).to receive(:rand).and_return(0)
       expect(game.result).to eq('win')
     end
 
     it 'Confirms computer wins if their weapon beats the players' do
       game.select_weapon('scissors')
-      # expect(game).to receive(:rand).and_return(2)
       expect(game.result).to eq('lose')
     end
   end
 
   describe 'confirm_winner' do
-    it 'confirms who has won the game' do
+    it 'confirms who has won the game or if a draw' do
       game.select_weapon(game.computer_weapon)
       expect(game.confirm_winner).to eq("#{game.computer_weapon.capitalize} is equal to #{game.computer_weapon.capitalize}. Draw")
     end

@@ -3,18 +3,20 @@ require_relative './lib/game.rb'
 
 class RPS < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   post '/names' do
-    $player_1_name = params[:player_1_name]
+    session[:player_name] = params[:player_name]
     redirect('/game')
   end
 
   get '/game' do
-    @player_1_name = $player_1_name
-    $game = Game.new(@player_1_name)
+    @player_name = session[:player_name]
+    $game = Game.new(@player_name)
     erb :game
   end
 
