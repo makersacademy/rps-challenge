@@ -10,6 +10,9 @@ end
 feature 'The battle page' do
   scenario 'Go into battle after choosing weapon' do
     visit('/')
+    # page.select 'Rock', from: 'weapon'
+    find("option[value='Rock']").click
+    # select "Rock", from: "Weapon:", visible: false, :match => :first
     click_button 'Battle'
     expect(page).to have_content 'Scores on the doors'
   end

@@ -50,9 +50,3 @@ class RpsCalculator
     end
 
 end
-#
-# charlie = RpsCalculator.new('Paper', 'Chalie')
-# p charlie.name_gladiator
-#
-# nothing = RpsCalculator.new('Rock', '')
-# p nothing.name_gladiator
