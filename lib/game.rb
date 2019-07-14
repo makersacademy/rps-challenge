@@ -1,20 +1,49 @@
 require 'game'
 
 class Game
-  attr_reader :current_turn
+  attr_reader :player, :choice, :bot_choice
 
-  describe Game do
-    subject(:game) { described_class.new }
-    let(:player_1) { double :player }
-    let(:player_2) { double :player }
+  CHOICES = ['rock', 'paper', 'scissors']
 
-    def initialize(player_1)
-      player_1 player_1
+  def initialize(player)
+    @player = player
+  end
+
+  def self.new_game(player)
+    @game = Game.new(player)
+    @choice = nil
+  end
+
+  def define_choice(choice)
+    @choice = choice
+  end
+
+  def bot_choice(bot_choice = Machine.new.bot_choice)
+    @bot_choice = bot_choice
+  end
+
+  def result
+    if @choice == @bot_choice
+      :draw
+    elsif bot_win?
+      :lose
+    elsif you_win?
+      :win
+    else
+      raise 'Oops, something went wrong'
     end
+  end
 
-    def player_1
-      @player = player_1
-    end
+  def bot_win?
+    @bot_choice == 'rock' && @choice == 'scissors' ||
+    @bot_choice == 'scissors' && @choice == 'paper' ||
+    @bot_choice == 'paper' && @choice == 'rock'
+  end
+
+  def you_win?
+    @choice == 'rock' && @bot_choice == 'scissors' ||
+    @choice == 'scissors' && @bot_choice == 'paper' ||
+    @choice == 'paper' && @bot_choice == 'rock'
   end
 
 end

@@ -8,15 +8,21 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
-    player_1 = Player.new(params[:player_1_name])
-    $game = Game.new(player_1)
+  post '/name' do
+    player_1 = Player.new(params[:player])
+    $game = Game.new_game(player_1)
     redirect '/play'
   end
 
   get '/play' do
     @game = $game
     erb :play
+  end
+
+  get '/result' do
+    @choice = @game.choice
+    @bot_choice = @game.bot_choice
+    erb :result
   end
 
   run! if app_file == $0

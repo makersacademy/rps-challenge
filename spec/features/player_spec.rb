@@ -8,11 +8,4 @@ describe Player do
       expect(dave.name).to eq 'Dave'
     end
   end
-
-  ### init round
-
-  ### play
-
-  ### resolution
-
  end

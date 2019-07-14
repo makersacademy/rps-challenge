@@ -4,8 +4,12 @@
 
   </head>
   <body>
-    <%= @game.player_1.name %>
-
-    <%= @game.current_turn.name %>'s turn
+    <form action='/play' method='post'>
+        Make your choice: </br>
+        <input type='radio' name='choice' value='rock' id='rock'>Rock</br>
+        <input type='radio' name='choice' value='paper' id='paper'>Paper</br>
+        <input type='radio' name='choice' value='scissors' id='scissors'>Scissors</br>
+        <input type='submit' value='Play'>
+    </form>
   </body>
 </html>

@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>RockPaperScissors!</title>
+
+  </head>
+  <body>
+    <% if @game.result == :draw -%>
+      <h1>It was a DRAW! Try again...</h1>
+      <h3>You picked <%=@choice%> and the computer picked <%=@bot_choice%>.</h3>
+    <% end %>
+    <% if @game.result == :win -%>
+      <h1>You WIN! Time to celebrate!</h1>
+      <h3>You picked <%=@choice%> and the computer picked <%=@bot_choice%>.</h3>
+    <% end -%>
+    <% if @game.result == :lose -%>
+      <h1>You LOSE!!</h1>
+      <h3>You picked <%=@choice%> and the computer picked <%=@bot_choice%>.</h3>
+    <% end -%>
+  </body>
+</html>
