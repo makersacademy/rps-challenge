@@ -75,3 +75,5 @@ COVERAGE: 100.00% -- 28/28 lines in 2 files
 
 '''
 
+I have worked on the basis of https://github.com/baileytalks/rps-challenge (another student of Makers).
+Basically I have refactor their code, trying to understand little by little how to she had processed with it.
