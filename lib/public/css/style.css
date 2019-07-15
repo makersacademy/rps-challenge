@@ -1,0 +1,53 @@
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+
+}
+
+img{
+  position: relative;
+  background-size: contain;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.formsection{
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  color: white;
+}
+
+.inputbar{
+  border-radius: 5px;
+  width: 30%;
+  border: none;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+}
+
+.btn{
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  padding: 20px 30px;
+  border: none;
+  font-size: 20px;
+}
+
+.bgoverlay{
+  text-align: center;
+  background-color: white;
+  width: 20%;
+  opacity: 0.5;
+  padding: 20px 30px;
+  margin: auto;
+}
+.txt{
+  opacity: 1.0;
+  color: black;
+}
