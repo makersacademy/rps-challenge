@@ -2,3 +2,7 @@
 <center>You chose <%=@choice%> while your opponent chose <%=@computer_choice%>.
 
 <center><%=@result.result(@choice,@computer_choice)%>
+
+<form action="/choose_RPS" method="post">
+  <input type="submit" value="Play again!">
+</form>
