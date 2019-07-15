@@ -1,0 +1,11 @@
+<h1> Hello <%= @game.player.name %> </h1>
+<p> Please pick rock, paper or scissors from the drop down list below: </p>
+
+<form action="/rock_paper_scissors" method="post">
+  <select name="rps_choice" >
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+    <input type="submit" value="Submit">
+  </select>
+</form>
