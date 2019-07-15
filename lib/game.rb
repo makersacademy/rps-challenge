@@ -23,13 +23,8 @@ private
 
   def calculator
     return 'draw' if @move == @computer
-    return 'lose' if @move == 'rock' && @computer == 'paper'
-    return 'win' if @move == 'paper' && @computer == 'rock'
-    return 'lose' if @move == 'scissors' && @computer == 'rock'
-    return 'win' if @move == 'rock' && @computer == 'scissors'
-    return 'lose' if @move == 'paper' && @computer == 'scissors'
-    return 'win' if @move == 'scissors' && @computer == 'paper'
-    raise "Error, no move entered" if @move.nil?
+    return 'win' if win? == true
+    return 'lose'
   end
 
   def valid_input?
@@ -38,4 +33,9 @@ private
     return true if @move == 'scissors'
   end
 
+  def win?
+    return true if @move == 'rock' && @computer == 'scissors'
+    return true if @move == 'paper' && @computer == 'rock'
+    return true if @move == 'scissors' && @computer == 'paper'
+  end
 end
