@@ -4,7 +4,7 @@ Rock, Paper Scissors is a fun game to play with your workmates
 
 To play:
 
-```sh
+``` sh
  install bundle
     ruby lib/app.rb
 
