@@ -3,8 +3,7 @@ require 'player'
 describe Player do
 
   subject(:tim) { Player.new('Tim') }
-
-  subject(:mittens) { Player.new('Mittens') }
+  subject(:Ian) { Player.new('Ian') }
 
   describe '#name' do
     it 'returns the name' do
@@ -15,14 +14,8 @@ describe Player do
   describe '#select_weapon' do
     it 'sets player weapon' do
       tim.select_weapon('Rock')
-      expect(tim.weapon).to eq 'Rock'
+      expect(tim.weapon).to eq :rock
     end
   end
-  #
-  # describe '#receive_damage' do
-  #   it 'reduces the player hit points' do
-  #     expect { dave.receive_damage }.to change { dave.hp }.by(-10)
-  #   end
-  # end
 
 end
