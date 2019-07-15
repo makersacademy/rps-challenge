@@ -1,1 +1,10 @@
 Welcome to rock paper scissors, <%= @player %>!
+
+<form action="/compare-result" method="post">
+  <select name="player_hand">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Go!">
+</form>
