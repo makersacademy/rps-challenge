@@ -12,6 +12,7 @@ from your command line
 
 then
 
-open browser then type http://localhost:4567/ ```
+open browser then type http://localhost:4567/
+```
 
 ![Image](lib/public/images/bg.jpg)
