@@ -2,7 +2,6 @@ require_relative 'player'
 require_relative 'computer'
 
 class Game
-  attr_reader :players, :current_turn
 
   def initialize(player_1)
     @player = player_1
@@ -31,6 +30,7 @@ private
     return true if @move == 'rock'
     return true if @move == 'paper'
     return true if @move == 'scissors'
+    raise 'Error! Not valid more!'
   end
 
   def win?
