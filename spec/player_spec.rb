@@ -8,4 +8,7 @@ describe Player do
   it 'creates a new player when class is initialized' do
     expect(player.player_1).to eq player_1
   end
+
+  
+
 end
