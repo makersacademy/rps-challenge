@@ -60,3 +60,25 @@ feature "has button to take you back to the game" do
   end
 end
 
+feature 'play game' do
+  scenario 'player draws when they choose rock' do
+  srand(678_10)
+  sign_in_and_play
+  click_button 'Rock'
+  expect(page).to have_content "It's a draw!"
+  end
+
+  scenario 'player looses when they choose paper' do
+    srand(678_9)
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_content "CPU wins with scissors!"
+  end
+
+  scenario 'player wins when they choose paper' do
+    srand(678_07)
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_content "You win with paper!"
+  end
+end
