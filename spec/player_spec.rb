@@ -2,7 +2,7 @@ require './model/player'
 
 describe Player do
 
-subject(:leo) { Player.new("Leo", nil) }
+subject(:leo) { Player.new("Leo") }
 
   describe '#name' do
     it "enters a player's name" do
