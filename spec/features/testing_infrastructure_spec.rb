@@ -1,3 +1,5 @@
+require './lib/game.rb'
+
 feature 'Testing infrastructure' do
   scenario 'Can run app and check page content' do
     visit('/')
@@ -39,17 +41,18 @@ end
 
 end
 end
-#
-#   feature 'Tells the user theyve lost if they loose a game' do
-#   scenario 'player looses against computer' do
+
+#   feature 'Tells the user theyve won if they win a game' do
+#   scenario 'player wins against computer' do
 #
 #     visit('/')
 #     fill_in 'name', with: 'Bob'
 #     click_button 'Go'
 #     fill_in 'move', with: 'Rock'
-#     srand = 3
 #     click_button 'Play!'
-#
+#     game = Game.new("rock")
+#     game.rand_seed = 3
+#     expect(page).to have_content "Your move was: Rock The computer moved: scissors You win Play again"
 #
 #   end
 # end
