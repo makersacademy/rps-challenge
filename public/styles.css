@@ -1,0 +1,9 @@
+body {background-color: powderblue;}
+
+h1 {
+        text-align: center;
+        font-size: 5pt;
+        color: #000099;
+        margin-bottom: 5px;
+        text-decoration: underline;
+    }
