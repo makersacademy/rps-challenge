@@ -1,12 +1,14 @@
-
+require_relative 'player'
 
 class RpsCalculator
 
   attr_reader :choice, :name, :rival
 
-  def initialize(choice, name = "Gladiator")
+  OPTIONS = ['paper', 'rock', 'scissors']
+
+  def initialize(choice, player_one)
     @choice = choice
-    @name = name
+    @player_one = player_one
     @rival
     @rules = {
       'rock/paper' => 'paper',
@@ -23,11 +25,11 @@ class RpsCalculator
 
     def message
       if result == @choice.downcase
-        "Well done, #{name_gladiator}. You won!"
+        "Well done, #{@player_one.no_name}. You won!"
       elsif result == 'draw'
         "The game is a tie!"
       else
-        "Unlucky, #{name_gladiator}. Unfortunately for you, #{opponent} never fails!"
+        "Unlucky, #{@player_one.no_name}. Unfortunately for you, #{opponent} never fails!"
       end
     end
 
@@ -38,15 +40,7 @@ class RpsCalculator
     end
 
     def opponent
-      @rival = ['paper', 'rock', 'scissors'].sample
-    end
-
-    def name_gladiator
-      if @name.empty?
-        "Gladiator"
-      else
-        @name
-      end
+      @rival = OPTIONS.sample
     end
 
 end

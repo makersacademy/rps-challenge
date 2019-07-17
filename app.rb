@@ -16,7 +16,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    @rps = RpsCalculator.new(session[:user_move], session[:user_name])
+    player_one = Player.new(session[:user_name])
+    @player_one = player_one
+    @rps = RpsCalculator.new(session[:user_move], player_one)
     @rps.message
     erb :result
   end
