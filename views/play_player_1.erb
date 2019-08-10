@@ -1,0 +1,18 @@
+<h1 style="color:pink" > <%= @player_one_name %> vs. <%= @player_two_name %> get ready to play! </h1>
+
+<h2> <%= @player_one_name%>, pick a move <h2>
+  <form method="post" action= "/play_player_2">
+
+    <label for="Rock">
+      Rock
+    <button type="submit" name="player_one_move" value ="Rock"> Rock </button>
+    </label>
+    <label for="Paper">
+      Paper
+    <button type="submit" name="player_one_move" value ="Paper"> Paper </button>
+    </label>
+    <label for="Scissors">
+      Scissors
+    <button type="submit" name="player_one_move" value ="Scissors"> Scissors </button>
+    </label>
+  </form>

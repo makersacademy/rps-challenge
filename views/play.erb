@@ -1,0 +1,17 @@
+<h1 style="color:pink" > Hi <%= @player_name %>, get ready to play! </h1>
+
+<h2> Pick a move <h2>
+  <form method="post" action= "/result">
+    <label for="Rock">
+      Rock
+    <button type="submit" name="move" value ="Rock"> Rock </button>
+    </label>
+    <label for="Paper">
+      Paper
+    <button type="submit" name="move" value ="Paper"> Paper </button>
+    </label>
+    <label for="Scissors">
+      Scissors
+    <button type="submit" name="move" value ="Scissors"> Scissors </button>
+    </label>
+  </form>

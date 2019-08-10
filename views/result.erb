@@ -1,0 +1,22 @@
+<h1> I chose <%= @comp_move %> </h1>
+
+<h1 style="color:pink" > You chose <%= @user_move %> </h1>
+
+<% if @user_move == "Rock" && @comp_move  == "Paper" ||
+@user_move == "Paper" && @comp_move  == "Scissors" || @user_move == "Scissors" && @comp_move  == "Rock" %>
+
+<h1> I win!! </h1>
+
+<% elsif @user_move == @comp_move  %>
+<h1> it's a draw... how boring </h1>
+
+<!-- <form method=post action='/names'>
+  <button type="submit" name="replay"> Replay? </button>
+
+  </form> -->
+
+<% else %>
+
+<h1> you win :( <%@player_name%> </h1>
+
+<% end %>

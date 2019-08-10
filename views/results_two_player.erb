@@ -1,0 +1,22 @@
+<h1>  <%= @player_one_name %> chose <%= @player_one_move %> </h1>
+
+<h1 style="color:pink" > <%= @player_two_name %> chose <%= @player_two_move %> </h1>
+
+<% if @player_one_move == "Rock" && @player_two_move  == "Paper" ||
+@player_one_move == "Paper" && @player_two_move  == "Scissors" || @player_one_move == "Scissors" && @player_two_move  == "Rock" %>
+
+<h1> <%= @player_two_name %> wins!! </h1>
+
+<% elsif @player_one_move  == @player_two_move  %>
+<h1> it's a draw... how boring </h1>
+
+<!-- <form method=post action='/play_player_1'>
+  <button type="submit" name="replay"> Replay? </button>
+
+  </form> -->
+
+<% else %>
+
+<h1> <%= @player_one_name %> wins!! </h1>
+
+<% end %>
