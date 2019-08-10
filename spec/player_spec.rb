@@ -1,2 +1,2 @@
-require 'player'
-subject
+#require 'player'
+#subject
