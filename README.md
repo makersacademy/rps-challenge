@@ -20,5 +20,5 @@
   ```bash
   rps-challenge $ rackup
   ```
-- In your browser, go to [localhost:9292](localhost:9292) (or the port specified in the server log when running `rackup`)
+- In your browser, go to *localhost:9292* (or the port specified in the server log when running `rackup`)
 - Have the best time ever!
