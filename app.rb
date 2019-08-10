@@ -7,7 +7,13 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    'Player vs Computer'
+    $player_name = params[:player_name]
+    redirect('/play')
+  end
+
+  get '/play' do
+    @player_name = $player_name
+    erb(:play)
   end
 
   run! if app_file == $0
