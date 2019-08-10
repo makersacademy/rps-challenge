@@ -15,10 +15,14 @@
   ```bash
   git clone https://github.com/Clepsyd/rps-challenge.git
   ```
-
-- Start the server in the rps-challenge directory:
+- Install dependencies:
+    ```bash
+    $ cd rps-challenge
+    rps-challenge> $ bundle install
+    ```
+- Start the server
   ```bash
-  rps-challenge $ rackup
+  rps-challenge> $ rackup
   ```
 - In your browser, go to *localhost:9292* (or the port specified in the server log when running `rackup`)
 - Have the best time ever!
