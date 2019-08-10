@@ -1,7 +1,7 @@
 # Rock, Paper, Scissors
 ## Oldie but Goodie.
 
-![alt](https://pxt.azureedge.net/blob/68f66c3ddc3acfc4c53157abf92eace202d46db2/static/courses/csintro/conditionals/rock-paper-scissors-items.png)
+![alt](https://wp-assets.futurism.com/2014/05/rock-paper-scissors.jpg)
 
 ## How to use
 
