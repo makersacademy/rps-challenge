@@ -29,6 +29,11 @@ describe Player do
         expect(Player).to receive(:new)
         Player.create("Anna")
       end
+      it "rise an error when wrong move passed" do
+        move = 'lay down'
+        player =  Player.create(name)
+        expect{player_move = Player.move(move)}.to raise_error 'Not allowed!'
+      end
 
     end
   end

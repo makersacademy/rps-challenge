@@ -17,6 +17,7 @@ attr_reader :name, :move, :player_name
   end
 
   def self.move(move)
+    raise 'Not allowed!' unless ['rock','paper','scissors'].include? move.to_s
     @move = move
     return @move
   end
