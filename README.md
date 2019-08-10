@@ -8,6 +8,7 @@ Instructions for Tester - How to run the code
 $ git clone https://github.com/HannaAikas/rps-challenge.git
 $ cd rps-challenge
 $ bundle
+$ rackup
 ```
 
 
