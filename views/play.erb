@@ -1,1 +1,15 @@
-<%= @player_name %> vs. Computer
+<h1><%= @player_name %> vs. Computer</h1>
+
+<h2>Choose from either Rock, Paper Or Scissors.</h2>
+
+<form action="/outcome" method="post">
+  <input type="submit" value="Rock">
+</form>
+
+<form action="/outcome" method="post">
+  <input type="submit" value="Paper">
+</form>
+
+<form action="/outcome" method="post">
+  <input type="submit" value="Scissors">
+</form>

@@ -16,5 +16,9 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  post '/outcome' do
+    'Hello World'
+  end
+
   run! if app_file == $0
 end
