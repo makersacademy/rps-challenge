@@ -13,8 +13,7 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/game' do
-    @player = Player.instance
-    @player_name = @player.name
+    @player_name = (Player.instance).name
     erb :game
   end
 
