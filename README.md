@@ -1,5 +1,7 @@
 # Progress Update - as at Saturday 10 Aug 2019
-* Project started, working on 1st user story
+* 1st user story done - user able to register name and play online game.
+* In addition, refactored code per MVC principles and removed global variables.
+* To do next - work on 2nd user story (able to play rock/paper/scissors)
 
 Instructions for Tester - How to run the code
 -------
