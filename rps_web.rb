@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'player'
 
 class RPSWeb < Sinatra::Base
 
@@ -7,7 +8,13 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/name' do
-    @player_name = params[:player_name]
+    @player = Player.create(params[:player_name])
+    redirect '/game'
+  end
+
+  get '/game' do
+    @player = Player.instance
+    @player_name = @player.name
     erb :game
   end
 
