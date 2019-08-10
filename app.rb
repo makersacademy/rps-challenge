@@ -14,7 +14,18 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player1 = session[:Player_1]
+    @move = session[:move]
     erb :play
+  end
+
+  post '/play' do
+    p params
+    session[:move] = params[:move]
+    redirect '/move'
+  end
+
+  get '/move' do
+    erb :move
   end
 
   run! if app_file == $0

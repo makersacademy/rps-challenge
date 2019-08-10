@@ -14,4 +14,9 @@ feature 'RPS' do
     expect(page).to have_selector(:link_or_button, 'Paper')
     expect(page).to have_selector(:link_or_button, 'Scissors')
   end
+  scenario 'Can choose a move' do
+    visit '/play'
+    click_button('Rock')
+    expect(page).to have_content('You chose Rock')
+  end
 end

@@ -1,6 +1,8 @@
-<h1><%= @player1 %></h1>
+<h1>Hello <%= @player1 %></h1>
 <h3>Let's start the Rock, Scissors, Paper</h3>
 <h3>Choose your move</h3>
-<input type= "submit" value= "Rock">
-<input type= "submit" value= "Paper">
-<input type= "submit" value= "Scissors">
+<form method= "POST" action= '/play'>
+  <input type= "submit" name= 'move' value= "Rock">
+  <input type= "submit" name= 'move' value= "Paper">
+  <input type= "submit" name= 'move' value= "Scissors">
+</form>
