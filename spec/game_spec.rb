@@ -34,6 +34,11 @@ describe Game do
       it 'Rock should beat scissors' do
         expect(game.who_won(rock,scissors)).to eq 'You won!'
       end
+
+      it 'Draw if matched' do
+        expect(game.who_won(rock,rock)).to eq 'DRAW!'
+      end
+
     end
 
   end
