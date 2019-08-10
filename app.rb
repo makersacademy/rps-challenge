@@ -3,7 +3,11 @@ require 'sinatra/base'
 class RPS < Sinatra::Base
 
   get '/' do
-    "Hello World!"
+    erb(:index)
+  end
+
+  post '/name' do
+    'Player vs Computer'
   end
 
   run! if app_file == $0
