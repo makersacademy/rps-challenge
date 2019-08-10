@@ -1,11 +1,12 @@
-
 <center>
-<h1>Player: <%= @name.capitalize %></h1>
-<h1>Choice: <%= @user_input.capitalize %></h1>
-<h1>VS.</h1>
-<h1>Player: Computer</h1>
-<h1>Choice: <%= @computer_choice.capitalize %></h1>
-<h1>--------------------------------</h1>
-<h1><%= @user_input.capitalize %> vs. <%= @computer_choice.capitalize %></h1>
-<h1><%= @game.who_won(@user_input,@computer_choice)  %></h1>
+      <h1 style="text-align:left;">Player: <%= @name.capitalize %></h1>
+      <h1 style="text-align:left;">Choice: <%= @user_input.capitalize %></h1>
+  <h1>VS.</h1>
+  <h1 style="text-align:right;">Player: Computer</h1>
+  <h1 style="text-align:right;">Choice: <%= @computer_choice.capitalize %></h1>
+  <h1>--------------------------------</h1>
+  <h1><%= @user_input.capitalize %>
+    vs.
+    <%= @computer_choice.capitalize %></h1>
+  <h1><%= @game.who_won(@user_input,@computer_choice) %></h1>
 </center>
