@@ -5,18 +5,38 @@ feature 'RPS' do
     fill_in("Player_1_name", with: 'Mario')
     click_button("Play!")
   end
-  scenario 'Can enter ther names' do
+  scenario 'Player can enter his name' do
     expect(page).to have_content 'Mario'
   end
-  scenario 'Can see the moves' do
+  scenario 'Player is able to see the moves' do
     visit '/play'
     expect(page).to have_selector(:link_or_button, 'Rock')
     expect(page).to have_selector(:link_or_button, 'Paper')
     expect(page).to have_selector(:link_or_button, 'Scissors')
   end
-  scenario 'Can choose a move' do
+
+  xscenario 'Player can choose a move' do
     visit '/play'
     click_button('Rock')
+    expect(page).to have_content('You chose Rock')
+  end
+
+  xscenario 'Opponent can choose a move' do
+    visit '/play'
+    click_button('Rock')
+    expect(page).to have_content('Opponent chose Rock')
+  end
+
+  scenario 'Players can see their move' do
+    visit '/play'
+    click_button('Rock')
+    expect(page).to have_current_path('/move')
+    #expect(page).to have_content('Opponent chose rock')
+    #expect(page).to have_content('You chose Rock')
+  end
+  scenario 'Players can see their move' do
+    visit '/move'
+    expect(page).to have_content('Opponent chose Rock')
     expect(page).to have_content('You chose Rock')
   end
 end
