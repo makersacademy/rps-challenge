@@ -10,4 +10,4 @@ $ bundle
 $ rackup
 ```
 
-![Screenshot](https://www.dropbox.com/s/7ipfr1ita86fba3/rps_challenge.png?dl=0)
+![Screenshot]('https://www.dropbox.com/s/7ipfr1ita86fba3/rps_challenge.png?dl=0')
