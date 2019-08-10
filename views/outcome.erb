@@ -1,0 +1,14 @@
+<h2>Computer played <em><%= @game.player2.move %></em></h2>
+
+<% if @winner == "Draw!" %>
+<h1>It's a draw!</h1>
+
+<% elsif @winner == @game.player1 %>
+<h1>You won, <%= @game.player1.name %></h1>
+<h1>Congratulations!!</h1>
+
+<% else %>
+<h1>Sorry, <%= @game.player1.name %>, you lost.</h1>
+<h1>Better luck next time!</h1>
+
+<% end %>
