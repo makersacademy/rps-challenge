@@ -1,3 +1,8 @@
+# Progress Update - as at Saturday 10 Aug 2019
+* Project started, working on 1st user story
+
+
+# ORIGINAL INSTRUCTIONS FROM MAKERS:
 # RPS Challenge
 
 Instructions
