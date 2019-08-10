@@ -3,7 +3,7 @@ feature 'RPS' do
   before do
     visit '/'
     fill_in("Player_1_name", with: 'Mario')
-    click_button("Submit")
+    click_button("Play!")
   end
   scenario 'Can enter ther names' do
     expect(page).to have_content 'Mario'
