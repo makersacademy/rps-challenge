@@ -2,7 +2,11 @@ require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
-    'Hello World!'
+    erb :welcome
+  end
+
+  post '/names' do 
+    "Welcome, #{params["player_name"]}!"
   end
 
   # start the server if ruby file executed directly
