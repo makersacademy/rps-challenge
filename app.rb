@@ -14,11 +14,13 @@ class RPS < Sinatra::Base
   end
 
   post "/name" do
-    session[:game] = Game.new(Player.new(params[:name]), Player.new("CPU"))
+    session[:name1] = params[:name]
     redirect "/game"
   end
 
   get "/game" do
+    session[:game] = Game.new(Player.new(session[:name1]), Player.new("CPU"))
+    @game = session[:game]
     erb :game
   end
 
