@@ -18,6 +18,8 @@ class Game
     WINNING_TABLE[player1.move] == player2.move ? player1 : player2 
   end
 
+  private
+  
   def draw?
     player1.move == player2.move
   end
