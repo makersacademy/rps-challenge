@@ -5,10 +5,8 @@ feature "home_page" do
     expect(page).to have_button "Start the game!"
   end
 
-  scenario "user is greeted by their name" do
-    visit "/"
-    fill_in "name", with: "Guillaume"
-    click_on "Start the game!"
-    expect(page).to have_content "Guillaume"
+  scenario "redirects to page /game" do
+    sign_in
+    expect(page.current_path).to eq "/game"
   end
 end
