@@ -20,7 +20,9 @@ class RockPaperScissors < Sinatra::Base
 
   post '/outcome' do
     @game = Game.new
+    @name = session[:name]
     @user_input = params[:user_input]
+    @computer_choice = @game.random_choice
     erb :outcome
   end
 
