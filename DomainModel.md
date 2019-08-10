@@ -1,3 +1,6 @@
+## Rock-Paper-Scissors Model
+----------
+
 |  Objects    |      Methods    |      Behaviours              |
 |-------------|-----------------|------------------------------|
 |**Player**   |name             |=> string name                |
