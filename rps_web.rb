@@ -19,6 +19,10 @@ class RPSWeb < Sinatra::Base
 
   post '/weapon' do
     @game = Game.create(params[:player_weapon])
+    redirect '/showdown'
+  end
+
+  get '/showdown' do
     @player_weapon = (Game.instance).weapon
     erb :showdown
   end
