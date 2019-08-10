@@ -20,6 +20,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/outcome' do
     @game = Game.new
+    @user_input = params[:user_input]
     erb :outcome
   end
 
