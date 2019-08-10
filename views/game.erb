@@ -1,1 +1,7 @@
 <h1>Time to play <%= @player_name %>!</h1>
+
+<<h2>Choose your weapon - input 'rock', 'paper' or 'scissors': </h2>
+<form action="/weapon" method="post">
+  <input type="text" name="player_weapon">
+  <input type="submit" value="Submit">
+</form>

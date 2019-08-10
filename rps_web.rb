@@ -17,6 +17,12 @@ class RPSWeb < Sinatra::Base
     erb :game
   end
 
+  post '/weapon' do
+    @game = Game.create(params[:player_weapon])
+    @player_weapon = (Game.instance).weapon
+    erb :showdown
+  end
+
   # start the server if ruby file executed directly
   run! if app_file ==$0
 
