@@ -3,7 +3,8 @@ require 'sinatra/base'
 class RPSWeb < Sinatra::Base
 
   get '/' do
-    "Hello RPS!"
+    "Welcome to rock, paper, scissors!"
+    "To start the game, please enter your name:"
   end
 
   # start the server if ruby file executed directly
