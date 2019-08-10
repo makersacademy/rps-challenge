@@ -5,7 +5,7 @@ Instructions for Tester - How to run the code
 -------
 * On your terminal, do:
 ```sh
-$ git clone git@github.com:HannaAikas/rps-challenge.git
+$ git clone https://github.com/HannaAikas/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 ```
