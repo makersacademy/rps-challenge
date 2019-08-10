@@ -9,4 +9,7 @@
     vs.
     <%= @computer_choice.capitalize %></h1>
   <h1><%= @game.who_won(@user_input,@computer_choice) %></h1>
+  <form action="/game">
+  <input type="submit" value="Play again" style="height:200; width:200px; font-size:50px">
+  <form>
 </center>
