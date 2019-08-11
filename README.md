@@ -76,9 +76,9 @@ The winner should be displayed.
 
 Creating the tests first definitely helped simplify the process although I did add some extra functionality afterwards with a win count and had some fun with the styling.
 
+I then had some heavy refactoring to do to slim down my classes and controllers.
+
 ## Changes to Implement
-Some of the methods in game.rb are a little long. I would like to find a more elegent solution to finding the winner.
-I could split game.rb into seperate classes.
 Change the game so that two marketeers can play against each other
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
