@@ -1,2 +1,8 @@
 <h3>You chose <%= @move %> </h3> 
 <h3>Opponent chose <%= @Opponent_move.to_s.capitalize %>  </h3> 
+<form method= "GET" action= '/play'>
+  <input type= "submit" value= "Play Again!">
+</form>
+<form method= "GET" action= '/'>
+  <input type= "submit" value= "Exit">
+</form>

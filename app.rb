@@ -1,13 +1,15 @@
 require 'sinatra/base'
-#require 'Player'
+require './lib/player.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
+  
   get '/' do
     erb :names
   end
 
   post '/names' do
+    p params
     session[:Player_1] = params[:Player_1_name]
     redirect '/play'
   end
@@ -22,7 +24,7 @@ class RPS < Sinatra::Base
   post '/play' do
     p params
     session[:move] = params[:move]
-    session[:opponent_move] = :rock
+    session[:opponent_move] = [:rock, :paper, :scissors].sample
     redirect '/move'
   end
 

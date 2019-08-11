@@ -24,8 +24,22 @@ feature 'RPS' do
   scenario 'Opponent can choose a move' do
     visit '/play'
     click_button('Rock')
+    srand(67809)
     expect(page).to have_current_path('/move')
-    expect(page).to have_content('Opponent chose Rock')
+    expect(page).to have_content('Opponent chose')
+    end
+  
+  scenario 'Player can play again' do
+    visit '/move'
+    click_button('Play Again!')
+    expect(page).to have_current_path('/play')
   end
+  
+  scenario 'Player can play again' do
+    visit '/move'
+    click_button('Exit')
+    expect(page).to have_current_path('/')
+  end
+
 
 end
