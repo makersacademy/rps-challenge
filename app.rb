@@ -9,39 +9,41 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @game = Game.create(params[:name])
+    player = Player.new(params[:name])
+    @game = Game.create(player)
     redirect '/play'
   end
 
   get '/play' do
     @game = Game.instance
-    @name = Game.instance.name
+    @name = Game.instance.player.name
     erb :play
   end
 
   post '/rock' do
-    Game.instance.player_choice = :Rock
+    Game.instance.player.choose(:Rock)
+    Game.instance.opponent.choose
     redirect '/game_over'
   end
 
   post '/paper' do
-    Game.instance.player_choice = :Paper
+    Game.instance.player.choose(:Paper)
+    Game.instance.opponent.choose
     redirect '/game_over'
   end
 
   post '/scissors' do
-    Game.instance.player_choice = :Scissors
+    Game.instance.player.choose(:Scissors)
+    Game.instance.opponent.choose
     redirect '/game_over'
   end
 
   get '/game_over' do
-    @player_choice = Game.instance.player_choice
-    @opponent_choice = Game.instance.random_choice
-    @win_or_lose = Game.instance.winner?
-    @total_wins = Game.instance.total_wins
-    @total_draws = Game.instance.total_draws
-    @total_losses = Game.instance.total_losses
-    erb :game_over
+    @player_choice = Game.instance.player.choice.type
+    @opponent_choice = Game.instance.opponent.choice.type
+    @result = Game.instance.result
+    @past_totals = Game.instance.past_totals
+    erb @result
   end
 
   run! if app_file == $0

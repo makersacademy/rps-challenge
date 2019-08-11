@@ -24,21 +24,21 @@ feature 'Rock, Paper, Scissors' do
   
   feature 'Opponent can chose' do
     scenario 'Rock' do
-      srand(120)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:Rock)
       sign_in_and_play
       click_button 'Rock'
       expect(page).to have_content "Your opponent chose Rock!"
     end
 
     scenario 'Paper' do
-      srand(125)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:Paper)
       sign_in_and_play
       click_button 'Paper'
       expect(page).to have_content "Your opponent chose Paper!"
     end
 
     scenario 'Scissors' do
-      srand(123)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:Scissors)
       sign_in_and_play
       click_button 'Scissors'
       expect(page).to have_content "Your opponent chose Scissors!"
@@ -46,25 +46,73 @@ feature 'Rock, Paper, Scissors' do
   end
 
   feature 'Winning and Losing' do
-    scenario 'player can win' do
-      srand(123)
-      sign_in_and_play
-      click_button 'Rock'
-      expect(page).to have_content "You Win!"
+    context 'When picking Rock' do
+      scenario 'player can win' do
+        allow_any_instance_of(Array).to receive(:sample).and_return(:Scissors)
+        sign_in_and_play
+        click_button 'Rock'
+        expect(page).to have_content "You Win!"
+      end
+
+      scenario 'player can draw' do
+        allow_any_instance_of(Array).to receive(:sample).and_return(:Rock)
+        sign_in_and_play
+        click_button 'Rock'
+        expect(page).to have_content "You Draw!"
+      end
+
+      scenario 'player can lose' do
+        allow_any_instance_of(Array).to receive(:sample).and_return(:Paper)
+        sign_in_and_play
+        click_button 'Rock'
+        expect(page).to have_content "You Lose!"
+      end
     end
 
-    scenario 'player can draw' do
-      srand(120)
-      sign_in_and_play
-      click_button 'Rock'
-      expect(page).to have_content "You Draw!"
+    context 'When picking Scissors' do
+      scenario 'player can win' do
+        allow_any_instance_of(Array).to receive(:sample).and_return(:Paper)
+        sign_in_and_play
+        click_button 'Scissors'
+        expect(page).to have_content "You Win!"
+      end
+
+      scenario 'player can draw' do
+        allow_any_instance_of(Array).to receive(:sample).and_return(:Scissors)
+        sign_in_and_play
+        click_button 'Scissors'
+        expect(page).to have_content "You Draw!"
+      end
+
+      scenario 'player can lose' do
+        allow_any_instance_of(Array).to receive(:sample).and_return(:Rock)
+        sign_in_and_play
+        click_button 'Scissors'
+        expect(page).to have_content "You Lose!"
+      end
     end
 
-    scenario 'player can lose' do
-      srand(125)
-      sign_in_and_play
-      click_button 'Rock'
-      expect(page).to have_content "You Lose!"
+    context 'When picking Paper' do
+      scenario 'player can win' do
+        allow_any_instance_of(Array).to receive(:sample).and_return(:Rock)
+        sign_in_and_play
+        click_button 'Paper'
+        expect(page).to have_content "You Win!"
+      end
+
+      scenario 'player can draw' do
+        allow_any_instance_of(Array).to receive(:sample).and_return(:Paper)
+        sign_in_and_play
+        click_button 'Paper'
+        expect(page).to have_content "You Draw!"
+      end
+
+      scenario 'player can lose' do
+        allow_any_instance_of(Array).to receive(:sample).and_return(:Scissors)
+        sign_in_and_play
+        click_button 'Paper'
+        expect(page).to have_content "You Lose!"
+      end
     end
   end
 end

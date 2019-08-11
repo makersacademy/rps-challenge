@@ -1,58 +1,45 @@
-class Game
-  attr_reader :name, :total_wins, :total_draws, :total_losses
-  attr_accessor :player_choice, :opponent_choice
-  SELECTION = [:Rock, :Paper, :Scissors]
+require_relative 'player'
+require_relative 'computer'
 
-  def initialize(name)
-    @name = name
-    @total_wins = 0
-    @total_draws = 0
-    @total_losses = 0
-    @player_choice = nil
-    @opponent_choice = nil
+class Game
+  attr_reader :player, :opponent
+
+  def initialize(player, opponent)
+    @player = player
+    @opponent = opponent
+    @past_totals = { win: 0, draw: 0, lose: 0 }
   end
 
-  def self.create(name)
-    @game = Game.new(name)
+  def self.create(player, opponent = Computer.new)
+    @game = Game.new(player, opponent)
   end
   
   def self.instance
     @game
   end
 
-  def random_choice
-    @opponent_choice = SELECTION.sample
-    @opponent_choice
-  end
-
-  def winner?
+  def result
     if draw?
-      @total_draws += 1
-      "You Draw!"
+      :draw
     elsif win?
-      @total_wins += 1
-      "You Win!"
+      :win
     else
-      @total_losses += 1
-      "You Lose!"
+      :lose
     end
+  end
+  
+  def past_totals
+    @past_totals[result] += 1
+    @past_totals
   end
 
   private
 
   def draw?
-    @player_choice == @opponent_choice
+    @player.choice.type == @opponent.choice.type
   end
 
   def win?
-    if @player_choice == :Rock && @opponent_choice == :Scissors
-      true
-    elsif @player_choice == :Scissors && @opponent_choice == :Paper
-      true
-    elsif @player_choice == :Paper && @opponent_choice == :Rock
-      true
-    else
-      false
-    end
+    @player.choice.beats?(@opponent.choice.type)
   end
 end
