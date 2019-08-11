@@ -1,0 +1,14 @@
+<div>
+  <%= @game.player_name =>'s Turn
+</div>
+<div>
+
+  <form action="/move" method="post">
+    <fieldset title="Pick your move">
+      <label for="rock">Rock:</label><input type="radio" name="move" value="rock">
+      <label for="paper">Paper:</label><input type="radio" name="move" value="paper">
+      <label for="scissors">Scissors:</label><input type="radio" name="move" value="scissors">
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+</div>

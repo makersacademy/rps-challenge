@@ -1,0 +1,5 @@
+<% if @game.player_wins? %>
+Congratulations <%= @game.player_name %>, you have defeated the robot!
+<% else %>
+The AI uprising has begun. Run for cover, learn how to farm.
+<% end %>
