@@ -18,7 +18,7 @@ feature 'RPS' do
   scenario 'Player can choose a move' do
     visit '/play'
     click_button('Rock')
-    expect(page).to have_content('You chose Rock')
+    expect(page).to have_content('Mario chose Rock')
   end
 
   scenario 'Opponent can choose a move' do
@@ -34,7 +34,7 @@ feature 'RPS' do
     click_button('Play Again!')
     expect(page).to have_current_path('/play')
   end
-  
+
   scenario 'Player can play again' do
     visit '/move'
     click_button('Exit')

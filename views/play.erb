@@ -1,9 +1,14 @@
-<h1>Hello <%= @player1 %></h1>
-<h3>Let's start the Rock, Scissors, Paper</h3>
-<h3>Choose your move</h3>
-<form method= "POST" action= '/play'>
-  <input type= "submit" name= 'move' value= "Rock">
-  <input type= "submit" name= 'move' value= "Paper">
-  <input type= "submit" name= 'move' value= "Scissors">
-</form>
-
+<html>
+  <body style = "Background: url(https://wp-assets.futurism.com/2014/05/rock-paper-scissors.jpg); background-size: 100% 100%">
+      <center>
+      <h1>Hello <%= @player1 %></h1>
+      <h3>Let's start the Rock, Scissors, Paper</h3>
+      <h3>Choose your move</h3>
+      <form method= "POST" action= '/play'>
+        <input type= "submit" name= 'move' value= "Rock">
+        <input type= "submit" name= 'move' value= "Paper">
+        <input type= "submit" name= 'move' value= "Scissors">
+      </form>
+      </center>
+  </body>
+</html>
