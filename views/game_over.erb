@@ -1,0 +1,7 @@
+<h1> You picked <%= @player_choice %>! </h1>
+<h1> Your opponent chose <%= @opponent_choice %>! </h1>
+<h1> <%= @win_or_lose %> </h1>
+<h3> Wins: <%= @total_wins %> Draws: <%= @total_draws %> Losses: <%= @total_losses %></h3>
+<form action="/play" method="get">
+  <button type"submit"> Play Again? </button>
+</form>
