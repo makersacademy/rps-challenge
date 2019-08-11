@@ -7,7 +7,7 @@ describe Game do
 
   describe "Game instance" do
 
-    subject {Game.new(player_1, player_2)}
+    subject { Game.new(player_1, player_2) }
 
     context "players" do
       describe "#player1" do
