@@ -13,33 +13,42 @@ class Rochambeau < Sinatra::Base
     erb(:index)
   end
 
-  post '/new_single_player_game' do
-    session[:game] = Game.new(Player.new(params[:player_name]))
-    redirect('/play')
-  end
-
-  post '/new_two_player_game' do
+  post '/new_game' do
     player = Player.new(params[:player_name])
-    opponent = Player.new(params[:opponent_name])
+    params[:opponent_name] ? opponent = Player.new(params[:opponent_name]) : nil
     session[:game] = Game.new(player, opponent)
-    redirect('/play')
+    redirect('/player_move')
   end
 
-  get '/play' do
+  get '/player_move' do
     @game = session[:game]
-    erb(:play)
+    erb(:player_move)
   end
 
-  get '/swap_screen' do
-    erb(:swap_screen)
-  end
-
-  post '/move' do
+  post '/player_move' do
     @game = session[:game]
     @game.player_move(params[:move])
+
     @game.robot_move
     redirect('/tie') if @game.tie?
     redirect('/winner')
+  end
+
+  get '/swap_screen' do
+    @game = session[:game]
+    erb(:swap_screen)
+  end
+
+  get '/opponent_move' do
+    @game = session[:game]
+    erb(:opponent_move)
+  end
+
+  post '/opponent_move' do
+    @game = session[:game]
+    @game.opponent_move(params[:move])
+    @game = session[:game]
+    erb(:swap_screen)
   end
 
   get '/tie' do
@@ -52,7 +61,7 @@ class Rochambeau < Sinatra::Base
     erb(:winner)
   end
 
-  post '/play_again' do
+  post '/player_move' do
     session[:game].reset
     redirect('/play')
   end

@@ -21,7 +21,7 @@
   <br><br>
   <div class="name-forms">
     <h3>A game verses a robot</h3>
-    <form title="Single Player" id="single_player_game" action="/new_single_player_game" method="post">
+    <form title="Single Player" id="single_player_game" action="/new_game" method="post">
       <label for="player_name">Enter name:</label><input type="text" name="player_name">
       <button type="submit" name="start_single_player_game">Start Game</button>
     </form>
@@ -29,7 +29,7 @@
 
   <div class="name-forms">
     <h3>A game for two players</h3>
-    <form title="Two Player" id="two_player_game" action="/new_two_player_game" method="post">
+    <form title="Two Player" id="two_player_game" action="/new_game" method="post">
       <label for="player_name">Enter name:</label><input type="text" name="player_name">
       <label for="opponent_name">Opponent name:</label><input type="text" name="opponent_name">
       <button type="submit" name="start_game">Start Game</button>
