@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/computer.rb'
+require './lib/rules.rb'
+
 class RPS < Sinatra::Base
   enable :sessions
 
@@ -30,13 +32,14 @@ class RPS < Sinatra::Base
 
   get '/move' do
     p params
+    @game = Rules.new
     @player1 = $Player_1.name
     @move = session[:move]
     @Opponent_move = $opponent_move
     erb :move
   end
 
-  
+
 
   run! if app_file == $0
 end

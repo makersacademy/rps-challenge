@@ -9,6 +9,7 @@
       <form method= "GET" action= '/'>
         <input type= "submit" value= "Exit">
       </form>
+      <h1 style= 'color:white'><%= @game.rps_rules(@move, @Opponent_move) %></h1>
     </center>
   </body>
 </html>
