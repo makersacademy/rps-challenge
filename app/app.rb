@@ -28,6 +28,7 @@ class Rochambeau < Sinatra::Base
   end
 
   post '/player_move' do
+    redirect('/player_move') unless params[:move]
     @game = session[:game]
     @game.player_move(params[:move])
 
@@ -50,6 +51,8 @@ class Rochambeau < Sinatra::Base
   end
 
   post '/opponent_move' do
+    redirect('/opponent_move') unless params[:move]
+
     @game = session[:game]
     @game.opponent_move(params[:move])
 
