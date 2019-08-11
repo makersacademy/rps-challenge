@@ -28,6 +28,7 @@ class RPS < Sinatra::Base
 
   get '/move' do
     p params
+    @player1 = session[:Player_1]
     @move = session[:move]
     @Opponent_move = session[:opponent_move]
     erb :move

@@ -15,28 +15,17 @@ feature 'RPS' do
     expect(page).to have_selector(:link_or_button, 'Scissors')
   end
 
-  xscenario 'Player can choose a move' do
+  scenario 'Player can choose a move' do
     visit '/play'
     click_button('Rock')
     expect(page).to have_content('You chose Rock')
   end
 
-  xscenario 'Opponent can choose a move' do
-    visit '/play'
-    click_button('Rock')
-    expect(page).to have_content('Opponent chose Rock')
-  end
-
-  scenario 'Players can see their move' do
+  scenario 'Opponent can choose a move' do
     visit '/play'
     click_button('Rock')
     expect(page).to have_current_path('/move')
-    #expect(page).to have_content('Opponent chose rock')
-    #expect(page).to have_content('You chose Rock')
-  end
-  scenario 'Players can see their move' do
-    visit '/move'
     expect(page).to have_content('Opponent chose Rock')
-    expect(page).to have_content('You chose Rock')
   end
+
 end
