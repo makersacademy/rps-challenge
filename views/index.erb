@@ -1,0 +1,28 @@
+<style>
+div {
+     display: block;
+     margin: 0 auto;
+     text-align: center;
+     width: 100%;
+     background-color: #bfa2bd;
+     color: white;
+     font-family: sans-serif;
+     padding: 20% 0;
+}
+</style>
+
+<div>
+<h1>Let's play Rock Paper Scissor!</h1>
+<h2>Enter your names to start:</h2>
+<form action="/names" method="post">
+  <label for="player_1">
+    Player 1 Name:
+    <input type="text" name="player_1">
+  </label>
+  <label for="player_2">
+    Player 2 Name:
+    <input type="text" name="player_2">
+  </label>
+  <input type="submit" value="Submit">
+</form>
+</div>
