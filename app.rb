@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/player.rb'
-
+require './lib/computer.rb'
 class RPS < Sinatra::Base
   enable :sessions
 
@@ -17,14 +17,14 @@ class RPS < Sinatra::Base
   get '/play' do
     @player1 = $Player_1.name
     @move = session[:move]
-    @Opponent_move = session[:opponent_move]
+    @Opponent_move = $opponent_move
     erb :play
   end
 
   post '/play' do
     p params
     session[:move] = params[:move]
-    session[:opponent_move] = [:rock, :paper, :scissors].sample
+    $opponent_move = Computer.new.move
     redirect '/move'
   end
 
@@ -32,9 +32,11 @@ class RPS < Sinatra::Base
     p params
     @player1 = $Player_1.name
     @move = session[:move]
-    @Opponent_move = session[:opponent_move]
+    @Opponent_move = $opponent_move
     erb :move
   end
+
+  
 
   run! if app_file == $0
 end
