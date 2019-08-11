@@ -3,19 +3,19 @@ require './lib/player.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
-  
+
   get '/' do
     erb :names
   end
 
   post '/names' do
     p params
-    session[:Player_1] = params[:Player_1_name]
+    $Player_1 = Player.new(params[:Player_1_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player1 = session[:Player_1]
+    @player1 = $Player_1.name
     @move = session[:move]
     @Opponent_move = session[:opponent_move]
     erb :play
@@ -30,7 +30,7 @@ class RPS < Sinatra::Base
 
   get '/move' do
     p params
-    @player1 = session[:Player_1]
+    @player1 = $Player_1.name
     @move = session[:move]
     @Opponent_move = session[:opponent_move]
     erb :move
