@@ -9,7 +9,7 @@ class Game
 
   def initialize(player)
     @player = player
-    @moves = [nil,nil]
+    @moves = [nil, nil]
   end
 
   def player_name
@@ -18,12 +18,11 @@ class Game
 
   def player_move(move)
     raise ERR_INVALID_MOVE unless MOVES.include?(move)
-    raise ERR_MOVE_MADE unless @moves[0] == nil
+    raise ERR_MOVE_MADE unless @moves[0].nil?
     @moves[0] = move
   end
 
   def tie?
-    check_moves()
     @moves[0] == @moves[1]
   end
 
@@ -41,6 +40,10 @@ class Game
     else
       return false
     end
+  end
+
+  def reset
+    @moves = [nil,nil]
   end
 
   def robot_move

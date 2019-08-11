@@ -1,3 +1,10 @@
 This game is a tie!
 
-<%= @game.player_name %> chose <%= @game.moves[0] =%> and the robot picked <%= @game.moves[1] =%>
+<%= @game.player_name %> and the robot picked <%= @game.moves[1] %>
+
+<form>
+  <button formaction="/play_again" formmethod="POST" type="submit">Play again</a>
+</form>
+<form>
+  <button formaction="/" formmethod="GET" type="submit">New Game</a>
+</form>

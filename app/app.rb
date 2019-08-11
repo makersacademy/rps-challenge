@@ -19,14 +19,19 @@ class Rochambeau < Sinatra::Base
   end
 
   post '/new_two_player_game' do
-
+    player = Player.new(params[:player_name])
+    opponent = Player.new(params[:opponent_name])
+    session[:game] = Game.new(player, opponent)
     redirect('/play')
   end
 
   get '/play' do
-# display who's turn it is, ask for move
     @game = session[:game]
     erb(:play)
+  end
+
+  get '/swap_screen' do
+    erb(:swap_screen)
   end
 
   post '/move' do
@@ -35,7 +40,6 @@ class Rochambeau < Sinatra::Base
     @game.robot_move
     redirect('/tie') if @game.tie?
     redirect('/winner')
-    # pass player move to game object
   end
 
   get '/tie' do
@@ -46,6 +50,11 @@ class Rochambeau < Sinatra::Base
   get '/winner' do
     @game = session[:game]
     erb(:winner)
+  end
+
+  post '/play_again' do
+    session[:game].reset
+    redirect('/play')
   end
 
   run! if app_file == $PROGRAM_NAME
