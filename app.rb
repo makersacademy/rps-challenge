@@ -10,7 +10,7 @@ class RPS < Sinatra::Base
   end
 
   post '/enter_name' do
-erb :enter_name
+    erb :enter_name
   #   session[:player_name] = params[:player_name]
   # redirect '/play'
   end
@@ -18,7 +18,7 @@ erb :enter_name
   post '/play' do
     session[:player_name] ||= params[:player_name]
 
-  redirect '/choose_move'
+    redirect '/choose_move'
   end
 
   get '/choose_move' do
@@ -28,7 +28,7 @@ erb :enter_name
 
   post '/result' do
     session[:move] = params[:move]
-   redirect '/results'
+    redirect '/results'
   end
 
   get '/results' do
@@ -46,7 +46,7 @@ erb :enter_name
     session[:player_one_name] = params[:player_one_name]
     session[:player_two_name] = params[:player_two_name]
 
-  redirect '/play_player_1'
+    redirect '/play_player_1'
   end
 
   get '/play_player_1' do
@@ -63,7 +63,6 @@ erb :enter_name
     erb :play_player_2
   end
 
-
   post '/results_two_player' do
     session[:player_two_move] = params[:player_two_move]
     @player_one_name = session[:player_one_name]
@@ -74,7 +73,5 @@ erb :enter_name
     erb :results_two_player
   end
 
-
-run! if app_file == $0
-
+  run! if app_file == $0
 end
