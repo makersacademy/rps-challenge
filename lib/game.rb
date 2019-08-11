@@ -12,13 +12,12 @@ class Game
   }
 
   RPSLS = {
-    :rock => [:scissors,:lizard],
-    :scissors => [:paper,:lizard],
-    :paper => [:rock,:spock],
-    :lizard => [:paper,:spock],
-    :spock => [:scissors ,:rock],
+    :rock => [:scissors, :lizard],
+    :scissors => [:paper, :lizard],
+    :paper => [:rock, :spock],
+    :lizard => [:paper, :spock],
+    :spock => [:scissors, :rock],
   }
-
 
   attr_reader :scorecard, :moves, :move_history, :rules
 
@@ -97,6 +96,5 @@ class Game
   def robot?
     !@opponent
   end
-
 
 end

@@ -9,8 +9,6 @@ describe Game do
       expect(subject.player_name).to eq("Cher")
     end
 
-
-
     it 'shows player wins' do
       subject.player_move('rock')
       srand(1)
@@ -18,7 +16,7 @@ describe Game do
       p subject.moves
       expect(subject.result).to eq(:player_win)
       subject.update_scorecard
-      expect(subject.scorecard).to eq({player: 1,opponent:0,draws:0})
+      expect(subject.scorecard).to eq({ player: 1, opponent: 0, draws: 0 })
     end
     it 'shows a tie' do
       subject.player_move('rock')
@@ -27,7 +25,7 @@ describe Game do
       p subject.moves
       expect(subject.result).to eq(:tie)
       subject.update_scorecard
-      expect(subject.scorecard).to eq({player: 0,opponent:0,draws:1})
+      expect(subject.scorecard).to eq({ player: 0, opponent: 0, draws: 1 })
     end
     it 'shows a robot win' do
       subject.player_move('rock')
@@ -36,7 +34,7 @@ describe Game do
       p subject.moves
       expect(subject.result).to eq(:robot_win)
       subject.update_scorecard
-      expect(subject.scorecard).to eq({player: 0,opponent:1,draws:0})
+      expect(subject.scorecard).to eq({ player: 0, opponent: 1, draws: 0 })
 
     end
 
@@ -46,25 +44,24 @@ describe Game do
       subject.robot_move
       subject.update_scorecard
       subject.reset
-      expect(subject.scorecard).to eq({player: 1,opponent:0,draws:0})
-      expect(subject.moves).to eq([nil,nil])
+      expect(subject.scorecard).to eq({ player: 1, opponent: 0, draws: 0 })
+      expect(subject.moves).to eq([nil, nil])
 
     end
 
   end
 
   context 'two player game' do
-    subject {described_class.new(player,opponent)}
+    subject { described_class.new(player, opponent) }
     it 'declares the opponent the winner' do
       subject.player_move('rock')
       subject.opponent_move('paper')
       p subject.moves
       expect(subject.result).to eq(:opponent_win)
       subject.update_scorecard
-      expect(subject.scorecard).to eq({player: 0,opponent:1,draws:0})
+      expect(subject.scorecard).to eq({ player: 0, opponent: 1, draws: 0 })
 
     end
   end
-
 
 end

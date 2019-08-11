@@ -17,10 +17,9 @@ class Rochambeau < Sinatra::Base
     player = Player.new(params[:player_name])
     rules = params[:rule_set] == 'rps' ? Game::RPS : Game::RPSLS
     params[:opponent_name] ? opponent = Player.new(params[:opponent_name]) : nil
-    session[:game] = Game.new(player ,opponent,rules)
+    session[:game] = Game.new(player, opponent, rules)
     redirect('/player_move')
   end
-
 
   get '/player_move' do
     @game = session[:game]
@@ -60,7 +59,6 @@ class Rochambeau < Sinatra::Base
     redirect('/result')
   end
 
-
   get '/result' do
     @game = session[:game]
     @game.update_scorecard
@@ -68,12 +66,10 @@ class Rochambeau < Sinatra::Base
     erb(@game.result)
   end
 
-
   post '/play_again' do
     session[:game].reset
     redirect('/player_move')
   end
-
 
   run! if app_file == $PROGRAM_NAME
 end
