@@ -1,19 +1,31 @@
-<h1> Make your choice <%= @name %> </h1>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css"href="/style.css"/>
+</head>
+<title> RPS </title>
+
+<h1 style="text-align: center;"> Make your choice <%= @name %> </h1>
 
 <div class="row">
   <div class="column">
     <form action="/rock" method="post">
-      <button type="submit" value="Rock">Rock</button>
+      <button class="button" type="submit">Rock</button>
     </form>
+    <img class="resize" src="images/the_rock.jpeg">
   </div>
   <div class="column">
     <form action="/paper" method="post">
-      <button type="submit" value="Paper">Paper</button>
+      <button class="button" type="submit">Paper</button>
     </form>
+    <img class="resize" src="images/paper.jpg">
   </div>
   <div class="column">
     <form action="/scissors" method="post">
-      <button type="submit" value="Scissors">Scissors</button>
+      <button class="button" type="submit">Scissors</button>
     </form>
+    <img class="resize" src="images/scissors.jpg">
   </div>
 </div>
+
+</html>

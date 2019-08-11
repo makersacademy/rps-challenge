@@ -46,11 +46,11 @@ class Game
 
   def win?
     if @player_choice == :Rock && @opponent_choice == :Scissors
-      return true
+      true
     elsif @player_choice == :Scissors && @opponent_choice == :Paper
-      return true
+      true
     elsif @player_choice == :Paper && @opponent_choice == :Rock
-      return true
+      true
     else
       false
     end

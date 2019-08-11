@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   let(:game) { described_class.new("name") }
-  let(:selection) { [:Rock, :Paper, :Scissors ] }
+  let(:selection) { [:Rock, :Paper, :Scissors] }
 
   describe '#random_choice' do
     it 'player can win' do
