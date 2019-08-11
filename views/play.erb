@@ -1,2 +1,15 @@
 Hello <%= @name %>
 
+<form action="/rock" method="get">
+  <button type="submit">Rock</button>
+</form>
+
+<form action="/paper" method="get">
+  <button type="submit">Paper</button>
+</form>
+
+<form action="/scissors" method="get">
+  <button type="submit">Scissors</button>
+</form>
+
+<%= @result %>  
