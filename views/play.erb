@@ -1,14 +1,37 @@
 <html>
-  <body style = "Background: url(https://wp-assets.futurism.com/2014/05/rock-paper-scissors.jpg); background-size: 100% 100%">
+<style>
+.bottomright {
+  position: absolute;
+  bottom: 20px;
+  right: 100px;
+  font-size: 30px;
+}
+.button {
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+  <body style = "Background: url(https://www.firststage.org/images/2019-20%20season/Rock%20Paper%20Scissors/FirstStageTemplate_RockPaperScissors_2019.jpg); background-size: 100% 100%">
+      <div class=  "bottomright">
       <center>
       <h1>Hello <%= @player1 %></h1>
-      <h3>Let's start the Rock, Scissors, Paper</h3>
+      <h3>Let's play Rock, Scissors, Paper!</h3>
       <h3>Choose your move</h3>
       <form method= "POST" action= '/play'>
-        <input type= "submit" name= 'move' value= "Rock">
-        <input type= "submit" name= 'move' value= "Paper">
-        <input type= "submit" name= 'move' value= "Scissors">
+
+        <input type= "submit" name= 'move' value= "Rock" class="button">
+        <input type= "submit" name= 'move' value= "Paper" class="button">
+        <input type= "submit" name= 'move' value= "Scissors" class="button">
       </form>
       </center>
+      </div>
   </body>
 </html>
