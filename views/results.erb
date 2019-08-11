@@ -1,0 +1,13 @@
+<h1>Rock, Paper, Scissors</h1>
+
+<h3>Results</h3>
+
+<%= @game.player_one_answer %> vs <%= @game.player_two_answer %>
+<br>
+<br>
+<h2><%= @game.result %></h2>
+<br>
+<br>
+<form action="/play" method="get">
+  <input type="submit" value="Play again">
+</form>
