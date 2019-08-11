@@ -5,15 +5,24 @@ class Game
   ERR_MOVE_MADE = "Player has already made a move"
   # MOVES = ['rock', 'scissors', 'paper'] # each one defeats the next.
 
-  RULES = {
+  RPS = {
     :rock => [:scissors],
     :scissors => [:paper],
     :paper => [:rock],
   }
 
+  RPSLS = {
+    :rock => [:scissors,:lizard],
+    :scissors => [:paper,:lizard],
+    :paper => [:rock,:spock],
+    :lizard => [:paper,:spock],
+    :spock => [:scissors ,:rock],
+  }
+
+
   attr_reader :scorecard, :moves, :move_history, :rules
 
-  def initialize(player, opponent = nil, rules = RULES)
+  def initialize(player, opponent = nil, rules = RPS)
     @player = player
     @opponent = opponent
     @move_history = []
@@ -25,32 +34,33 @@ class Game
   def player_name
     @player.name
   end
+
   def opponent_name
     @opponent.name
   end
 
   def player_move(move)
-    raise ERR_INVALID_MOVE unless RULES[move.to_sym]
+    raise ERR_INVALID_MOVE unless @rules[move.to_sym]
     raise ERR_MOVE_MADE unless @moves[0].nil?
     @moves[0] = move.to_sym
   end
+
   def opponent_move(move)
-    raise ERR_INVALID_MOVE unless RULES[move.to_sym]
+    raise ERR_INVALID_MOVE unless @rules[move.to_sym]
     raise ERR_MOVE_MADE unless @moves[1].nil?
     @moves[1] = move.to_sym
   end
 
-
   def robot_move
     raise ERR_MOVE_MADE unless @moves[1].nil?
-    @moves[1] = RULES.to_a.sample[0]
+    @moves[1] = @rules.to_a.sample[0]
   end
 
   def result
     check_moves()
 
     return :tie if moves[0] == moves[1]
-    return :player_win if RULES[moves[0]].include?(moves[1])
+    return :player_win if @rules[moves[0]].include?(moves[1])
     return :robot_win if robot?
     return :opponent_win
   end

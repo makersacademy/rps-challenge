@@ -23,6 +23,11 @@
     <h3>A game verses a robot</h3>
     <form title="Single Player" id="single_player_game" action="/new_game" method="post">
       <label for="player_name">Enter name:</label><input type="text" name="player_name">
+      <fieldset title="Pick your Rule Set">
+        <label for="rps">Classic (Rock - Paper - Scissors):</label><input type="radio" name="rule_set" value="rps"><br>
+        <label for="rps;s">Advance (Rock - Paper - Scissors - Lizard - Spock):</label><input type="radio"
+          name="rule_set" value="rpsls">
+      </fieldset>
       <button type="submit" name="start_single_player_game">Start Game</button>
     </form>
   </div>
@@ -32,6 +37,11 @@
     <form title="Two Player" id="two_player_game" action="/new_game" method="post">
       <label for="player_name">Enter name:</label><input type="text" name="player_name">
       <label for="opponent_name">Opponent name:</label><input type="text" name="opponent_name">
+      <fieldset title="Pick your Rule Set">
+        <label for="rps">Classic (Rock - Paper - Scissors):</label><input type="radio" name="rule_set" value="rps"><br>
+        <label for="rps;s">Advance (Rock - Paper - Scissors - Lizard - Spock):</label><input type="radio"
+          name="rule_set" value="rpsls">
+      </fieldset>
       <button type="submit" name="start_game">Start Game</button>
     </form>
   </div>

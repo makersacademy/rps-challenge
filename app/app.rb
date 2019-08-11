@@ -15,8 +15,9 @@ class Rochambeau < Sinatra::Base
 
   post '/new_game' do
     player = Player.new(params[:player_name])
+    rules = params[:rule_set] == 'rps' ? Game::RPS : Game::RPSLS
     params[:opponent_name] ? opponent = Player.new(params[:opponent_name]) : nil
-    session[:game] = Game.new(player ,opponent)
+    session[:game] = Game.new(player ,opponent,rules)
     redirect('/player_move')
   end
 
