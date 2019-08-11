@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer.rb'
 
 class RPS < Sinatra::Base
 
@@ -17,7 +18,7 @@ class RPS < Sinatra::Base
   end
 
   post '/outcome' do
-    'Hello World'
+    "Hello World"
   end
 
   run! if app_file == $0
