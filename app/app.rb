@@ -16,12 +16,14 @@ class Rochambeau < Sinatra::Base
   post '/new_game' do
     player = Player.new(params[:player_name])
     params[:opponent_name] ? opponent = Player.new(params[:opponent_name]) : nil
-    session[:game] = Game.new(player, opponent)
+    session[:game] = Game.new(player ,opponent)
     redirect('/player_move')
   end
 
+
   get '/player_move' do
     @game = session[:game]
+    @user = :p
     erb(:player_move)
   end
 
@@ -29,9 +31,11 @@ class Rochambeau < Sinatra::Base
     @game = session[:game]
     @game.player_move(params[:move])
 
+    redirect('/swap_screen') if @game.two_player?
+
     @game.robot_move
-    redirect('/tie') if @game.tie?
-    redirect('/winner')
+
+    redirect('/result')
   end
 
   get '/swap_screen' do
@@ -41,30 +45,31 @@ class Rochambeau < Sinatra::Base
 
   get '/opponent_move' do
     @game = session[:game]
-    erb(:opponent_move)
+    @user = :o
+    erb(:player_move)
   end
 
   post '/opponent_move' do
     @game = session[:game]
     @game.opponent_move(params[:move])
-    @game = session[:game]
-    erb(:swap_screen)
+
+    redirect('/result')
   end
 
-  get '/tie' do
+
+  get '/result' do
     @game = session[:game]
-    erb(:tie)
+    @game.update_scorecard
+
+    erb(@game.result)
   end
 
-  get '/winner' do
-    @game = session[:game]
-    erb(:winner)
-  end
 
-  post '/player_move' do
+  post '/play_again' do
     session[:game].reset
-    redirect('/play')
+    redirect('/player_move')
   end
+
 
   run! if app_file == $PROGRAM_NAME
 end

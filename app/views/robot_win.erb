@@ -1,0 +1,31 @@
+Bow down to our future robotic masters.
+<br>
+<br>
+<%=  @game.player_name %>, you have a lot to learn.
+<br>
+<br>
+Read a book or something.
+<br>
+<br>
+Actually you should probably learn how to farm.
+<br>
+<br>
+<table>
+  <tr>
+    <th><%= @game.player_name %>'s Wins</th>
+    <th>RNJesus's Wins</th>
+    <th>Draws</th>
+  </tr>
+  <tr>
+    <td><%= @game.scorecard[:player].to_s %></td>
+    <td><%= @game.scorecard[:opponent].to_s %></td>
+    <td><%= @game.scorecard[:draws].to_s %></td>
+  </tr>
+</table>
+<br><br>
+<form>
+  <button style="height:25px" formaction="/play_again" formmethod="POST" type="submit">Play again</a>
+</form>
+<form>
+  <button style="height:25px" formaction="/" formmethod="GET" type="submit">New Game</a>
+</form>

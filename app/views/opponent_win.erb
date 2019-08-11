@@ -1,0 +1,28 @@
+Bow down to <%=@game.opponent_name %>.
+<br>
+<br>
+<%=  @game.player_name %>, you have been defeated and must provide forfeit.
+<br>
+<br>
+Any good at shining shoes?.
+<br>
+<br>
+<table>
+  <tr>
+    <th><%= @game.player_name %>'s Wins</th>
+    <th><%= @game.opponent_name %>'s Wins</th>
+    <th>Draws</th>
+  </tr>
+  <tr>
+    <td><%= @game.scorecard[:player].to_s %></td>
+    <td><%= @game.scorecard[:opponent].to_s %></td>
+    <td><%= @game.scorecard[:draws].to_s %></td>
+  </tr>
+</table>
+<br><br>
+<form>
+  <button style="height:25px" formaction="/play_again" formmethod="POST" type="submit">Play again</a>
+</form>
+<form>
+  <button style="height:25px" formaction="/" formmethod="GET" type="submit">New Game</a>
+</form>

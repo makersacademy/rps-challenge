@@ -25,6 +25,9 @@ class Game
   def player_name
     @player.name
   end
+  def opponent_name
+    @opponent.name
+  end
 
   def player_move(move)
     raise ERR_INVALID_MOVE unless RULES[move.to_sym]
@@ -69,6 +72,10 @@ class Game
       when :robot_win
         scorecard[:opponent] += 1
     end
+  end
+
+  def two_player?
+    !!@opponent
   end
 
   private
