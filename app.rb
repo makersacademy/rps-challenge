@@ -20,20 +20,8 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/rock' do
-    Game.instance.player.choose(:Rock)
-    Game.instance.opponent.choose
-    redirect '/game_over'
-  end
-
-  post '/paper' do
-    Game.instance.player.choose(:Paper)
-    Game.instance.opponent.choose
-    redirect '/game_over'
-  end
-
-  post '/scissors' do
-    Game.instance.player.choose(:Scissors)
+  post '/select/:choice' do
+    Game.instance.player.choose(params[:choice].capitalize.to_sym)
     Game.instance.opponent.choose
     redirect '/game_over'
   end
