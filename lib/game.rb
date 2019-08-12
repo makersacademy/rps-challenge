@@ -19,13 +19,9 @@ class Game
   end
 
   def result
-    if draw?
-      :draw
-    elsif win?
-      :win
-    else
-      :lose
-    end
+    return :draw if draw?
+    
+    win? ? :win : :lose
   end
   
   def past_totals
