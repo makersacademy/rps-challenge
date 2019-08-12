@@ -1,0 +1,2 @@
+describe Game do
+end

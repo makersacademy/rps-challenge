@@ -1,4 +1,6 @@
 require "sinatra/base"
+require "./lib/computer"
+require "./lib/game"
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -20,6 +22,10 @@ class RPS < Sinatra::Base
 
   post "/play" do
     @choice = params[:choice]
+    @computer = Computer.new
+    @computer_choice = @computer.random_weapon
+    @game = Game.new
+    @outcome = @game.play(@choice, @computer_choice)
     erb :game
   end
 
