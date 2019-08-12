@@ -4,10 +4,20 @@ class Game
     ['rock','paper','scissors'].sample
   end
 
-  def who_won(player1, player2)
-    if (player1 == "rock" && player2 == "scissors") || (player1 == "scissors" && player2 == "paper") || (player1 == "paper" && player2 == "rock")
+  def who_won(p1, p2)
+    if (p1 == "scissors" && p2 == "paper") ||
+       (p1 == "paper" && p2 == "rock")     ||
+       (p1 == "paper" && p2 == "rock")     ||
+       (p1 == "rock" && p2 == "lizard")    ||
+       (p1 == "lizard" && p2 == "spock")   ||
+       (p1 == "spock" && p2 == "scissors") ||
+       (p1 == "scissors" && p2 == "lizard")||
+       (p1 == "lizard" && p2 == "paper")   ||
+       (p1 == "rock" && p2 == "scissors")  ||
+       (p1 == "paper" && p2 == "spock")    ||
+       (p1 == "spock" && p2 == "rock")
       "You won!"
-    elsif player1 == player2
+    elsif p1 == p2
       "DRAW!"
     else
       "You lost!"
