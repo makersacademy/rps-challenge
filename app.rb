@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
+require_relative './lib/game'
+
 
 class Rsp < Sinatra::Base
   enable :sessions
@@ -19,13 +21,17 @@ class Rsp < Sinatra::Base
     erb :play
   end 
 
-  # post '/play' do
-  #   params[player_1_choice]
-  # end 
+  post '/play' do
+  $game = Game.new($player_1.name) 
+  $computer_move = $game.generate_move
+  $result = $game.generate_result($computer_move, params[:palyer_1_choice])
+    redirect '/result'
+  end 
 
-  # get '/result'do
-
-  # end
+  get '/result' do
+    @result = $result 
+    erb :result
+  end 
 
  run! if app_file == $0
 end 
