@@ -1,1 +1,48 @@
- <%= @player_1_name%>
+ <h1><%= @player_1_name%>  choose your move</h1>
+
+ <form action=/play method=post >
+ <div>
+  <style scoped>
+
+      .button-xlarge {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+      cursor: pointer;
+      }
+
+  </style>
+
+  <button class="button-xlarge pure-button" name="rock" value="rock" >rock</button>
+</div>
+
+<div>
+  <style scoped>
+
+      .button-xlarge {
+          font-size: 200%;
+      }
+
+  </style>
+
+  <button class="button-xlarge pure-button" name="paper" value="paper">paper</button>
+</div>
+
+<div>
+  <style scoped>
+
+      .button-xlarge {
+          font-size: 200%;
+      }
+
+  </style>
+
+  <button class="button-xlarge pure-button" name="scissors" value="scissors">scissors</button>
+</div>
+</form>
