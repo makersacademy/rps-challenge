@@ -1,5 +1,6 @@
-Task
-----
+# Rock Paper Scissors
+
+### Task
 
 Knowing how to build web applications is getting us almost there as web developers!
 
@@ -17,10 +18,18 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Functionality
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
+
+### Instructions
+
+1. Clone this repo
+2. Run `gem install bundle`
+3. Run `bundle`
+4. Run `ruby app.rb`
+5. Visit 'http://localhost:4567' in your browser
