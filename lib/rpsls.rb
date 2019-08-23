@@ -2,6 +2,7 @@ require_relative './rps'
 
 class RockPaperScissorsLizardSpock < RockPaperScissors
   def initialize(name)
+    super(name)
     @winners = {
       'Rock' => ['Scissors', 'Lizard'],
       'Paper' => ['Rock', 'Spock'],
@@ -9,6 +10,6 @@ class RockPaperScissorsLizardSpock < RockPaperScissors
       'Lizard' => ['Spock', 'Paper'],
       'Spock' => ['Rock', 'Scissors']
     }
-    super(name)
+    @moves = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
   end
 end

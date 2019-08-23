@@ -3,6 +3,7 @@ class RockPaperScissors
 
   def initialize(name)
     @name = name
+    @moves = ['Rock', 'Paper', 'Scissors']
     @winners = { 'Rock' => ['Scissors'], 'Scissors' => ['Paper'], 'Paper' => ['Rock'] }
   end
 
@@ -11,7 +12,7 @@ class RockPaperScissors
   end
 
   def ai_move
-    @p2 = ['Rock', 'Paper', 'Scissors'].sample
+    @p2 = @moves.sample
   end
 
   def results
