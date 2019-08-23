@@ -2,14 +2,13 @@ require 'sinatra/base'
 require_relative 'lib/rps'
 
 class RockPaperScissorsApp < Sinatra::Base
-  @@game
 
   get '/' do
     erb(:index)
   end
 
   post '/enter-name' do
-     @@game = RockPaperScissors.new(params[:name])
+    @@game = RockPaperScissors.new(params[:name])
     redirect '/play'
   end
 
@@ -31,7 +30,6 @@ class RockPaperScissorsApp < Sinatra::Base
     @results = @@game.results
     erb(:results)
   end
-
 
   run! if app_file == $0
 end

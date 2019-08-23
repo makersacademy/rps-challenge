@@ -1,5 +1,5 @@
 class RockPaperScissors
-  attr_reader :p1, :p2, :name, :results
+  attr_reader :p1, :p2, :name
   WINNERS = { 'Rock' => 'Scissors', 'Scissors' => 'Paper', 'Paper' => 'Rock' }
 
   def initialize(name)
