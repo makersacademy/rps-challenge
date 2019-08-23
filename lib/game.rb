@@ -3,10 +3,6 @@ class Game
 
   def initialize(name)
     @name = name
-    @version
-    @p1
-    @p2
-    @results
   end
 
   def set_version(version)
