@@ -1,6 +1,15 @@
-<h1>Welcome, <%= @name %></h1>
-<form name='rps' action='/move' method='POST'>
-  <input type='submit' name='move' value='Rock'>
-  <input type='submit' name='move' value='Paper'>
-  <input type='submit' name='move' value='Scissors'>
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1>You are playing <%= @game_name %></h1>
+    <h2><%= @name %> vs Computer</h2>
+    <form name='rps' action='/move' method='POST'>
+      <input type='submit' name='move' value='Rock'>
+      <input type='submit' name='move' value='Paper'>
+      <input type='submit' name='move' value='Scissors'>
+    </form>
+  </body>
+</html>

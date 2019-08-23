@@ -1,22 +1,21 @@
 class RockPaperScissors
-  attr_reader :p1, :p2, :name
-
-  def initialize(name)
-    @name = name
+  attr_reader :name
+  def initialize
+    @name = 'Rock Paper Scissors'
     @moves = ['Rock', 'Paper', 'Scissors']
     @winners = { 'Rock' => ['Scissors'], 'Scissors' => ['Paper'], 'Paper' => ['Rock'] }
   end
 
   def user_move(move)
-    @p1 = move
+    move
   end
 
   def ai_move
-    @p2 = @moves.sample
+    @moves.sample
   end
 
-  def results
-    return 'Draw!' if @p1 == @p2
-    @winners[@p1].include?(@p2) ? 'You won!' : 'You lost!'
+  def results(p1, p2)
+    return 'Draw!' if p1 == p2
+    @winners[p1].include?(p2) ? 'You won!' : 'You lost!'
   end
 end

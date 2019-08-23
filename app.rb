@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/rps'
 require_relative 'lib/rpsls'
+require_relative 'lib/game'
 
 class RockPaperScissorsApp < Sinatra::Base
 
@@ -9,16 +10,33 @@ class RockPaperScissorsApp < Sinatra::Base
   end
 
   post '/enter-name' do
-    @@game = RockPaperScissorsLizardSpock.new(params[:name])
-    redirect '/play-spock'
+    @@game = Game.new(params[:name])
+    redirect '/choose-game'
+  end
+
+  get '/choose-game' do
+    @name = @@game.name
+    erb(:choose_game)
+  end
+
+  post '/choose-game' do
+    if params[:game] == 'Rock Paper Scissors'
+      @@game.set_version(RockPaperScissors)
+      redirect '/play'
+    elsif params[:game] == 'Rock Paper Scissors Lizard Spock'
+      @@game.set_version(RockPaperScissorsLizardSpock)
+      redirect '/play-spock'
+    end
   end
 
   get '/play' do
+    @game_name = @@game.version.name
     @name = @@game.name
     erb(:play)
   end
 
   get '/play-spock' do
+    @game_name = @@game.version.name
     @name = @@game.name
     erb(:play_spock)
   end
@@ -26,7 +44,7 @@ class RockPaperScissorsApp < Sinatra::Base
   post '/move' do
     @@game.user_move(params[:move])
     @@game.ai_move
-    @@game.results
+    @@game.get_results
     redirect '/results'
   end
 
