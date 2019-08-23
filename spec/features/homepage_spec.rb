@@ -1,5 +1,3 @@
-require 'capybara/rspec'
-
 feature "homepage" do
   it 'allows the user to enter name, displays name' do
     sign_in_and_play
