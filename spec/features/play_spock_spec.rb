@@ -1,4 +1,4 @@
-feature "play" do
+feature "play Rock Paper Scissors Lizard Spock" do
   it 'you can start the game' do
     sign_in_and_play_rpsls
     expect(page).to have_content('You are playing Rock Paper Scissors Lizard Spock')

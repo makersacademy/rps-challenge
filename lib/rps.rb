@@ -3,7 +3,11 @@ class RockPaperScissors
   def initialize
     @name = 'Rock Paper Scissors'
     @moves = ['Rock', 'Paper', 'Scissors']
-    @winners = { 'Rock' => ['Scissors'], 'Scissors' => ['Paper'], 'Paper' => ['Rock'] }
+    @winners = {
+      'Rock' => ['Scissors'],
+      'Scissors' => ['Paper'],
+      'Paper' => ['Rock']
+    }
   end
 
   def user_move(move)
@@ -14,8 +18,8 @@ class RockPaperScissors
     @moves.sample
   end
 
-  def results(p1, p2)
-    return 'Draw!' if p1 == p2
-    @winners[p1].include?(p2) ? 'You won!' : 'You lost!'
+  def results(player_1, player_2)
+    return 'Draw!' if player_1 == player_2
+    @winners[player_1].include?(player_2) ? 'You won!' : 'You lost!'
   end
 end

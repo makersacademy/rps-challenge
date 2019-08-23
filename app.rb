@@ -21,22 +21,22 @@ class RockPaperScissorsApp < Sinatra::Base
 
   post '/choose-game' do
     if params[:game] == 'Rock Paper Scissors'
-      @@game.set_version(RockPaperScissors)
+      @@game.version(RockPaperScissors)
       redirect '/play'
     elsif params[:game] == 'Rock Paper Scissors Lizard Spock'
-      @@game.set_version(RockPaperScissorsLizardSpock)
+      @@game.version(RockPaperScissorsLizardSpock)
       redirect '/play-spock'
     end
   end
 
   get '/play' do
-    @game_name = @@game.version.name
+    @game_name = @@game.version_name
     @name = @@game.name
     erb(:play)
   end
 
   get '/play-spock' do
-    @game_name = @@game.version.name
+    @game_name = @@game.version_name
     @name = @@game.name
     erb(:play_spock)
   end
@@ -44,13 +44,13 @@ class RockPaperScissorsApp < Sinatra::Base
   post '/move' do
     @@game.user_move(params[:move])
     @@game.ai_move
-    @@game.get_results
+    @@game.results
     redirect '/results'
   end
 
   get '/results' do
-    @p1 = @@game.p1
-    @p2 = @@game.p2
+    @p1 = @@game.player_1
+    @p2 = @@game.player_2
     @results = @@game.results
     erb(:results)
   end

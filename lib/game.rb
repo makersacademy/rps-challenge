@@ -1,23 +1,24 @@
 class Game
-  attr_reader :name, :p1, :p2, :version, :results
+  attr_reader :name, :player_1, :player_2, :version_name
 
   def initialize(name)
     @name = name
   end
 
-  def set_version(version)
+  def version(version)
     @version = version.new
+    @version_name = @version.name
   end
 
   def user_move(move)
-    @p1 = @version.user_move(move)
+    @player_1 = @version.user_move(move)
   end
 
   def ai_move
-    @p2 = @version.ai_move
+    @player_2 = @version.ai_move
   end
 
-  def get_results
-    @results = @version.results(p1, p2)
+  def results
+    @results || @version.results(player_1, player_2)
   end
 end
