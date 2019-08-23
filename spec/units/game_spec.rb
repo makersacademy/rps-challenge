@@ -3,7 +3,9 @@ require 'game'
 describe Game do
   let(:version) { double(:version, name: 'Rock Paper Scissors') }
   let(:version_class) { double(:version_class, new: version) }
-  subject(:subject) { described_class.new('Chris') }
+  let(:player) { double(:player, name: 'Chris') }
+  let(:player_class) { double(:player_class, new: player) }
+  subject(:subject) { described_class.new('Chris', player_class) }
   it 'can store a name' do
     expect(subject.name).to eq('Chris')
   end

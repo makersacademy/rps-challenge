@@ -2,6 +2,7 @@ require 'sinatra/base'
 require_relative 'lib/rps'
 require_relative 'lib/rpsls'
 require_relative 'lib/game'
+require_relative 'lib/player'
 
 class RockPaperScissorsApp < Sinatra::Base
 
@@ -10,7 +11,7 @@ class RockPaperScissorsApp < Sinatra::Base
   end
 
   post '/enter-name' do
-    @@game = Game.new(params[:name])
+    @@game = Game.new(params[:name], Player)
     redirect '/choose-game'
   end
 

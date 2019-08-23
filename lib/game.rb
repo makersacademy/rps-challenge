@@ -1,8 +1,9 @@
 class Game
   attr_reader :name, :player_1, :player_2, :version_name
 
-  def initialize(name)
-    @name = name
+  def initialize(name, player_class)
+    @person = player_class.new(name)
+    @name = @person.name
   end
 
   def version(version)
