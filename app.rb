@@ -9,12 +9,17 @@ class RockPaperScissorsApp < Sinatra::Base
 
   post '/enter-name' do
     @@game = RockPaperScissors.new(params[:name])
-    redirect '/play'
+    redirect '/play-spock'
   end
 
   get '/play' do
     @name = @@game.name
     erb(:play)
+  end
+
+  get '/play-spock' do
+    @name = @@game.name
+    erb(:play_spock)
   end
 
   post '/move' do

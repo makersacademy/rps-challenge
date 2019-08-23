@@ -1,9 +1,9 @@
 class RockPaperScissors
   attr_reader :p1, :p2, :name
-  WINNERS = { 'Rock' => 'Scissors', 'Scissors' => 'Paper', 'Paper' => 'Rock' }
 
   def initialize(name)
     @name = name
+    @winners = { 'Rock' => ['Scissors'], 'Scissors' => ['Paper'], 'Paper' => ['Rock'] }
   end
 
   def user_move(move)
@@ -16,6 +16,6 @@ class RockPaperScissors
 
   def results
     return 'Draw!' if @p1 == @p2
-    WINNERS[@p1] == @p2 ? 'You won!' : 'You lost!'
+    @winners[@p1].include?(@p2) ? 'You won!' : 'You lost!'
   end
 end
