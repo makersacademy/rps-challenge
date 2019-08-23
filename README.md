@@ -4,11 +4,11 @@ This is a web app to play the famous hand game RPS on the web!
 
 ## Domain model
 
-Player  --> Enter the domain URL  --> Page
-Page -->  shows -->  Game title, name box, submit button
-Player  -->  Enter -->  name
-Page -->  shows --> Game title, player name, rock paper scissors buttons 
-Player  -->  Click -->  Rock button
+Player  --> Enter the domain URL  --> Page<br>
+Page -->  shows -->  Game title, name box, submit button<br>
+Player  -->  Enter -->  name<br>
+Page -->  shows --> Game title, player name, rock paper scissors buttons<br>
+Player  -->  Click -->  Rock button<br>
 Page  -->  Shows  -->  CPU random choice and winner
 
 ## Getting started
