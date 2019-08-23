@@ -8,4 +8,9 @@ class Play < Sinatra::Base
   get '/thegame' do
     erb :thegame
   end
+
+  post '/thegame' do
+    @name = params(:name)
+    erb :thegame
+  end
 end
