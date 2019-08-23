@@ -4,6 +4,6 @@ class Game
     @choices = ['Rock','Paper','Scissors']
   end
   def play
-    @choices.sample 
+    @mine = @choices.sample
   end
 end
