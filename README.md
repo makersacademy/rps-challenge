@@ -19,13 +19,15 @@ Page  -->  Shows  -->  CPU random choice and winner
 ## How to use the software
 
 * From the folder `RPS-CHALLENGHE` run:
-`> rackup` (check what port the server is listening to)
-* Move to the browser and in the URL line type: 
-`localhost:"#portnumber"`
+
+`$ rackup` (check what port the server is listening to)
+* Move to the browser and in the URL line type:
+
+`http://localhost:"#portnumber"/`
 * if show a message error `Address already in use` type: 
 `rackup -p 9393` (-p specifies the port number)
 * To run tests:
-`> rspec`
+`$ rspec`
 
 ### Example of usage
 
