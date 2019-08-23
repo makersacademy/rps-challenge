@@ -5,7 +5,7 @@ feature 'homepage' do
 
   scenario 'it should greet player and ask for name' do
     visit '/'
-    expect(page).to have_content 'Welcome to Rock Paper Scissors Please enter your name player1:'
+    expect(page).to have_content 'Welcome to Rock Paper Scissors Please enter your name Player1:'
   end
 
   scenario 'it should redirect to play' do
@@ -14,4 +14,5 @@ feature 'homepage' do
     click_button 'Submit'
     expect(page).to have_content "Take your action Eloise"
   end
+
 end
