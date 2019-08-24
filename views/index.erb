@@ -1,36 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel=stylesheet type=text/css href=/stylesheet/index.css />
+<%# <link rel=stylesheet type=text/css href=/stylesheet/play.css /> %>
+</head>
+<body>
 <div>
-<h1> Rock - Paper - Scissor</h1>
+<%# <h1> Rock - Paper - Scissor</h1>
 
 <form action='/name' method='post'>
-<input type='text' name='player' value='Insert player name'> 
-<button type='submit' value='submit'> Start Game
-</form>
+<input id='name' type='text' name='player' value='Insert player name'> 
+<button id='name-submit' type='submit' value='submit'> Start Game
+</form> %>
 </div>
 
-<style> 
-button {
-  background-color:whitesmoke;
-  color: rgb(3, 0, 0);
-  padding: 7px 50px;
-  margin: 1px 1px;
-  cursor: pointer;
-  font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif
-}
+<div class='container'>
 
-input[type='text'] {
-  background-color:whitesmoke;
-  color: rgb(3, 0, 0);
-  padding: 7px 30px;
-  margin: 1px 1px;
-  cursor: pointer;
-  font-size: 15px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  font-family: Arial, Helvetica, sans-serif
-}
+  <div class='cell cell-1'></div> 
+  <div class='cell cell-2'></div>
+  <div class='cell cell-3'></div>
+  <div class='cell cell-4'></div> 
+  <div class='cell cell-5'>
+  <div class='nested'>
+  <h1 class='title'> Rock - Paper - Scissor</h1>
+  <br>
+  <form action='/name' method='post'>
+    <input class='name' type='text' name='player' placeholder='....Insert player name....'> 
+    <br>
+    <button class='name-submit' type='submit' value='submit'> Start Game
+  </form>
+  </div>
+  </div>
+    <div class='cell cell-6'></div>
+    <div class='cell cell-7'></div>
+    <div class='cell cell-8'></div>
+    <div class='cell cell-9'></div>
+  <div>
+</body>
 
-h1 {
-  font-family: Arial, Helvetica, sans-serif
-}
-</style>

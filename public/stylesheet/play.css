@@ -1,0 +1,101 @@
+html { 
+  font-size: calc(0.8em + 0.8vw);
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.container {
+  color: rgb(32, 32, 32);
+  min-height: 100vh;
+  object-fit: cover;
+  display: grid;
+  grid-template-columns: 0.15fr 1fr 1fr 1fr 0.15fr;
+  grid-template-rows: 0.15fr 0.15fr 0.15fr 1fr 0.3fr;
+}
+
+.cell {
+  /* display: flex; 
+  justify-content: center;
+  align-items: center; */
+}
+
+.cell-left {
+  grid-column: 1/1;
+  grid-row: 1/6;
+  background: transparent;
+}
+
+.cell-1 {
+  grid-column: 2/5;
+  grid-row: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 35px;
+  margin: 0%;
+  background: transparent;
+}
+.cell-2 {
+  background: transparent;
+}
+.cell-3 {
+  background: transparent;
+}
+.cell-4 {
+  background: transparent;
+}
+.cell-5 {
+  background: transparent;
+}
+
+.cell-6 {
+  background: transparent;
+}
+.cell-7 {
+  background: transparent;
+}
+
+.space{
+  grid-column: 2/5;
+  grid-row: 4/4;
+  background: transparent;
+}
+
+.cell-8, .cell-9, .cell-10  {
+  background: whitesmoke;
+}
+
+.player-name, .user-input,.result {
+  line-height: 40px;
+  margin: 0%;
+}
+
+.cpu-name, .cpu-input {
+  text-align: right;
+  line-height: 40px;
+  margin: 0%;
+}
+
+.scissor, .paper, .rock {
+  width: 100%;
+  /* height: 15rem; */
+  margin: 0%;
+  border: 0ch;
+  background: whitesmoke;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 50px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.scissor:hover, .paper:hover, .rock:hover {
+  background-color: rgb(207, 201, 179);
+  color: white;
+}
+
+.cell-right {
+  grid-column: 5/5;
+  grid-row: 1/6;
+  background: transparent;
+}

@@ -1,57 +1,47 @@
-
-  <h1 align='center'> Rock - Paper - Scissor</h1>
-
-<div class='SameLine'>
-  <h1 style="float: left"> <%= @player %> </h1>
-  <h1 style="float: right"> CPU </h1>
-</div>
-<div style="clear: both;"></div>
-
-<style> 
-input[type='submit'] {
-  /* background-image: 'http://bit.ly/2XaDXfR'; */
-  background-color:whitesmoke;
-  border:black;
-  color: rgb(3, 0, 0);
-  padding: 250px 159px;
-  text-decoration: none;
-  margin: 1px 1px;
-  cursor: pointer;
-  font-size: 50px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  font-family: Arial, Helvetica, sans-serif
-  /* border: 2px solid slategrey */
-}
-
-input:hover {
-  background-color: rgb(207, 201, 179);
-  color: white;
-}
-
-h1 {
-  font-family: Arial, Helvetica, sans-serif
-}
-
-h2 {
-  font-family: Arial, Helvetica, sans-serif
-}
-</style>
-
+<!DOCTYPE html>
+<html>
+<head>
+<link rel=stylesheet type=text/css href=/stylesheet/play.css />
+</head>
+<body>
+<div class='container'>
+  <div class='cell cell-left'></div>
+  <div class='cell cell-1'>
+    <h1 align='center'> Rock - Paper - Scissor</h1>
+  </div> 
+  <div class='cell cell-2'>
+    <h2 class='player-name'> <%= @player %> </h1>
+  </div>
+  <div class='cell cell-3'> score </div>
+  <div class='cell cell-4'>
+    <h2 class='cpu-name'> CPU </h1>
+  </div> 
+  <div class='cell cell-5'>
+    <h2 class='user-input'> <%= @user_input %> </h2>
+  </div>
+  <div class='cell cell-6'>
+    <h2 class='result' align='center'> <%= @result %> </h2>
+    <h2 class='result' align='center'> <%= "Draw!" if @user_input != nil and @user_input == @cpu %> </h2>
+  </div>
+  <div class='cell cell-7'>
+    <h2 class='cpu-input'> <%= @cpu %> </h2>
+  </div>
+  <div class='cell space'></div>
+  <div class='cell cell-8'>
+    <form action='/game' method='post'>
+      <input class='cell rock' type='submit' name='rock' value="Rock"></input>
+    </form>
+  </div>
+  <div class='cell cell-9'>
+    <form action='/game' method='post'>
+      <input class='cell paper' type='submit' name='paper' value="Paper"></input>
+    </form> 
+  </div>
+  <div class='cell cell-10'>
+    <form action='/game' method='post'>
+      <input class='cell scissor' type='submit' name='scissor' value="Scissors"></input>
+    </form> 
+  </div>
+  <div class='cell cell-right'></div>
 <div>
-  <h2 style="float: left"> <%= @user_input %> </h2>
-  <h2 style="float: right"> <%= @cpu %> </h2>
-  <h2 align='center'> <%= @result %> </h2>
-</div>
-<div style="clear: both;"></div>
-
-   <form action='/game' method='post'>
-    <input type='submit' name='rock' value="Rock"></input>
-    <input type='submit' name='paper' value="Paper"></input>
-    <input type='submit' name='scissor' value="Scissors"></input>
-  </form> 
-  <!-- <h2 align='center'> <%= @user_input %> </h2>
-  <h2 align='center'> <%= @cpu %> </h2>
-  <h2 align='center'> <%= @result %> </h2> -->
-
-</div>
+</body>

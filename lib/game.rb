@@ -4,31 +4,33 @@ require './lib/user.rb'
 class Game
   attr_reader :user, :cpu
 
-  def initialize(user, cpu = CPU.new)
+  def initialize(user, cpu)
     @user = user
     @cpu = cpu
+    @combo = [['rock', 'scissor'], ['paper', 'rock'], ['scissor', 'paper']]
   end
 
-  def result(cpu)
-    @cpu_input = cpu
-    return "Pair!" if @user.input == @cpu_input
-    return paper_scissor if @user.input == "Rock"
-    return scissor_rock if @user.input == "Paper"
-    return paper_rock if @user.input == "Scissors"
+  def user_input
+    @user.input
   end
 
-  def paper_scissor
-    return 'You Loose!' if @cpu_input == "Paper"
-    return 'You Win!' if @cpu_input == "Scissors"
+  def result(user_input, cpu)
+    return 'Draw!' if user_input == cpu
+    return 'You win!' if @combo.include?(hand(user_input, cpu))
+    return 'You loose!' if !@combo.include?(hand(user_input, cpu))
   end
 
-  def scissor_rock
-    return 'You Loose!' if @cpu_input == "Scissors"
-    return 'You Win!' if @cpu_input == "Rock"
+  def self.instance
+    @game
   end
 
-  def paper_rock
-    return 'You Loose!' if @cpu_input == "Rock"
-    return 'You Win!' if @cpu_input == "Paper"
+  private
+
+  def hand(user_input, cpu)
+    @hand = [user_input, cpu]
+  end
+
+  def self.create(user, cpu)
+    @game = Game.new(user, cpu)
   end
 end
