@@ -30,7 +30,7 @@ class Game
   private
 
   def reset
-    if @cpu.score.zero? || @user.score.zero?
+    if @cpu.score == 0 || @user.score == 0
       @cpu.reset_score
       @user.reset_score
     end
