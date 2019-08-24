@@ -2,11 +2,9 @@ require 'sinatra/base'
 require './lib/user.rb'
 require './lib/cpu.rb'
 require './lib/game.rb'
-# require "rack_session_access/capybara"
 
 class RPS < Sinatra::Base
   enable :sessions
-  # use RackSessionAccess::Middleware if environment == :test
 
   get '/' do 
     erb(:index)
@@ -14,24 +12,25 @@ class RPS < Sinatra::Base
 
   post '/name' do
     user = User.new(params[:player])
-    session[:game] = Game.new(user)
-    session[:player] = session[:game].user.name
+    cpu = CPU.new
+    game = Game.create(user, cpu)
     redirect '/play'
   end
 
   post '/game' do
-    session[:selection] = [params[:rock], params[:paper], params[:scissor]].join
-    session[:user_input] = session[:game].user.get_input(session[:selection])
-    session[:cpu_input] = session[:game].cpu.random
-    session[:result] = session[:game].result(session[:cpu_input])
+    @game = Game.instance
+    input = [params[:rock], params[:paper], params[:scissor]].join
+    user_input = @game.user.get_input(input)
+    session[:cpu_input] = @game.cpu.random
     redirect '/play'
   end
 
   get '/play' do
-    @player = session[:player]
-    @user_input = session[:user_input]
-    @result = session[:result]
+    @game = Game.instance
+    @player = @game.user.name
+    @user_input = @game.user_input
     @cpu = session[:cpu_input]
+    @result =  @game.result(@user_input, @cpu)
     erb(:play)
   end
 
