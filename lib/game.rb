@@ -20,18 +20,17 @@ class Game
 
   def result
     reset
-    if !user_input.nil?
+    unless user_input.nil?
       return 'Draw!' if user_input == @cpu.input
       return winner if @combo.include?(hand())
-      return looser if !@combo.include?(hand())
+      return looser unless @combo.include?(hand())
     end
   end
 
   private
 
   def reset
-    p @cpu.score
-    if @cpu.score == 0 || @user.score == 0
+    if @cpu.score.zero? || @user.score.zero?
       @cpu.reset_score
       @user.reset_score
     end
@@ -44,7 +43,7 @@ class Game
 
   def looser
     user_score
-    return'You loose!' 
+    return 'You loose!' 
   end
 
   def cpu_score
