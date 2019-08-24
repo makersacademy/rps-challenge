@@ -1,3 +1,7 @@
+@-ms-viewport{
+  width: device-width;
+}
+
 html { 
   font-size: calc(0.8em + 0.8vw);
   font-family: Arial, Helvetica, sans-serif
