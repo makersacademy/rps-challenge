@@ -76,6 +76,7 @@ html {
 }
 
 .name:hover {
+  width: 100%;
   background-color: rgb(207, 201, 179);
   color: rgb(255, 255, 255);   
 }
