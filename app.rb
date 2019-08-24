@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './computer.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -19,17 +20,20 @@ class RockPaperScissors < Sinatra::Base
 
   post '/rock' do
     @choice = 'Rock'
-    erb(:home)
+    @computer_choice = (Computer.new).computer_choice
+    erb(:option)
   end
 
   post '/paper' do
     @choice = 'Paper'
-    erb(:home)
+    @computer_choice = (Computer.new).computer_choice
+    erb(:option)
   end
 
   post '/scissors' do
     @choice = 'Scissors'
-    erb(:home)
+    @computer_choice = (Computer.new).computer_choice
+    erb(:option)
   end
 
  run! if app_file == $0
