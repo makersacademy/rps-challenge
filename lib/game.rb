@@ -20,7 +20,7 @@ class Game
 
   def result
     reset
-    return unless user_input.nil?
+    return if user_input.nil?
     return 'Draw!' if user_input == @cpu.input
     return winner if @combo.include?(hand())
     return looser unless @combo.include?(hand())
