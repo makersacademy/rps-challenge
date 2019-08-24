@@ -18,19 +18,20 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    @game = Game.instance
+    game = Game.instance
     input = [params[:rock], params[:paper], params[:scissor]].join
-    user_input = @game.user.get_input(input)
-    session[:cpu_input] = @game.cpu.random
+    game.user.get_input(input)
     redirect '/play'
   end
 
   get '/play' do
-    @game = Game.instance
-    @player = @game.user.name
-    @user_input = @game.user_input
-    @cpu = session[:cpu_input]
-    @result =  @game.result(@user_input, @cpu)
+    game = Game.instance
+    @player = game.user.name
+    @user_input = game.user_input
+    @cpu = game.cpu_input
+    @result = game.result
+    @player_score = game.user.score
+    @cpu_score = game.cpu.score
     erb(:play)
   end
 

@@ -8,8 +8,8 @@ html {
   min-height: 100vh;
   object-fit: cover;
   display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-columns: 0.5fr 5fr 0.5fr;
+  grid-template-rows: 0.5fr 5fr 0.5fr;
 }
 .cell {
   display: flex;
@@ -49,22 +49,17 @@ html {
   border-radius: 5%;
   border: 20rem;
   border-color: black;
-  width: 500px;
-  height: 500px;
-}
-
-.nested:hover {
-  background-color: rgb(207, 201, 179);
-  color: rgb(255, 255, 255);  
+  width: 600px;
+  height: 600px;
 }
 
 .title {
   color: rgb(136, 136, 136);
-  line-height: 166px;
+  line-height: 120px;
   height: 100px;
   text-align: center;
   font-size: 1.8rem;
-  margin-top: 10px;
+  margin-top: 43px;
 }
 
 .name {
@@ -74,15 +69,15 @@ html {
   border-radius: 23px;
   color: rgb(136, 136, 136);
   width: 100%;
-  height: 166.66px;
+  height: 200px;
   cursor: pointer;
   text-align: center;
   font-size: 1.8rem;
 }
 
 .name:hover {
-  background-color: rgba(90, 90, 89, 0.247);
-  color: rgb(255, 255, 255);  
+  background-color: rgb(207, 201, 179);
+  color: rgb(255, 255, 255);   
 }
 
 .name-submit {
@@ -91,7 +86,7 @@ html {
   border: none;
   color: rgb(136, 136, 136);
   width: 100%;
-  height: 166.66px;
+  height: 200px;
   text-align: center;
   font-size: 1.8rem;
   cursor: pointer;
@@ -101,6 +96,6 @@ html {
 }
 
 .name-submit:hover {
-  background-color: rgba(90, 90, 89, 0.247);
-  color: white;
+  background-color: rgb(207, 201, 179);
+  color: rgb(255, 255, 255);  
 }

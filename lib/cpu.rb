@@ -1,11 +1,21 @@
 class CPU
+  attr_reader :input, :score
 
   def initialize
     @rps = ["Rock", "Paper", "Scissors"]
-    # @score = 10
+    @input
+    @score = 10
   end
 
   def random
-    @rps.sample
+    @input = @rps.sample
+  end
+
+  def calc_score
+    @score -= 1
+  end
+
+  def reset_score
+    @score = 10
   end
 end
