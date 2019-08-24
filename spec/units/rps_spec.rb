@@ -1,5 +1,4 @@
 require 'rps'
-require 'rps'
 
 describe RockPaperScissors do
   it 'has a name' do

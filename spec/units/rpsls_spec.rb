@@ -1,4 +1,4 @@
-require 'rps'
+require 'rpsls'
 
 describe RockPaperScissorsLizardSpock do
   it 'has a name' do

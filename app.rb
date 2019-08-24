@@ -3,6 +3,8 @@ require_relative 'lib/rps'
 require_relative 'lib/rpsls'
 require_relative 'lib/game'
 require_relative 'lib/player'
+require_relative 'lib/cpu'
+require_relative 'lib/move'
 
 class RockPaperScissorsApp < Sinatra::Base
 
@@ -11,7 +13,7 @@ class RockPaperScissorsApp < Sinatra::Base
   end
 
   post '/enter-name' do
-    @@game = Game.new(params[:name], Player)
+    @@game = Game.new(params[:name], Player, Computer)
     redirect '/choose-game'
   end
 
@@ -43,15 +45,17 @@ class RockPaperScissorsApp < Sinatra::Base
   end
 
   post '/move' do
-    @@game.user_move(params[:move])
-    @@game.ai_move
+    Move.run(@@game.player_1, @@game.version, params[:move])
+    # @@game.user_move(params[:move])
+    # @@game.ai_move
+    Move.run(@@game.player_2, @@game.version, params[:move])
     @@game.results
     redirect '/results'
   end
 
   get '/results' do
-    @p1 = @@game.player_1
-    @p2 = @@game.player_2
+    @player_1 = @@game.player_1
+    @player_2 = @@game.player_2
     @results = @@game.results
     erb(:results)
   end

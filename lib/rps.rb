@@ -1,5 +1,5 @@
 class RockPaperScissors
-  attr_reader :name
+  attr_reader :name, :moves
   def initialize
     @name = 'Rock Paper Scissors'
     @moves = ['Rock', 'Paper', 'Scissors']

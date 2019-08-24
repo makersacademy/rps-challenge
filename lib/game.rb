@@ -1,25 +1,23 @@
 class Game
-  attr_reader :name, :player_1, :player_2, :version_name
+  attr_reader :name, :player_1, :player_2, :current_player
 
-  def initialize(name, player_class)
-    @person = player_class.new(name)
-    @name = @person.name
+  def initialize(name, player_class = Player, cpu_class = Computer)
+    @players = [player_class.new(name)]
+    @current_player = @players.first
+    @name = @players.first.name
+    @player_1 = player_class.new(name)
+    @player_2 = cpu_class.new
   end
 
-  def version(version)
-    @version = version.new
-    @version_name = @version.name
+  def version(version = RockPaperScissors)
+    @version || @version = version.new
   end
 
-  def user_move(move)
-    @player_1 = @version.user_move(move)
-  end
-
-  def ai_move
-    @player_2 = @version.ai_move
+  def version_name
+    @version_name || @version_name = @version.name
   end
 
   def results
-    @results || @version.results(player_1, player_2)
+    @results || @version.results(@player_1.move, @player_2.move)
   end
 end
