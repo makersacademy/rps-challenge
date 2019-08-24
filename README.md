@@ -4,11 +4,11 @@ This is a web app to play the famous hand game RPS on the web!
 
 ## Domain model
 
-Player  --> Enter the domain URL  --> Page
-Page -->  shows -->  Game title, name box, submit button
-Player  -->  Enter -->  name
-Page -->  shows --> Game title, player name, rock paper scissors buttons 
-Player  -->  Click -->  Rock button
+Player  --> Enter the domain URL  --> Page<br>
+Page -->  shows -->  Game title, name box, submit button<br>
+Player  -->  Enter -->  name<br>
+Page -->  shows --> Game title, player name, rock paper scissors buttons<br>
+Player  -->  Click -->  Rock button<br>
 Page  -->  Shows  -->  CPU random choice and winner
 
 ## Getting started
@@ -18,8 +18,10 @@ Page  -->  Shows  -->  CPU random choice and winner
 
 ## How to use the software
 
-* From the folder `RPS-CHALLENGHE` run `rackup config.ru` then move to the browser and in the URL line type `localhost:"#portnumber"`
-* if show a message error `Address already in use` type `rackup config.ru -p 9393` where -p specifies the port number.
+* From the folder `RPS-CHALLENGHE` run on the cmd line:`$ rackup` (check what port the server is listening to)
+* Move to the browser and in the URL line type: `http://localhost:"#portnumber"/`
+* if show a message error `Address already in use` type: `rackup -p 9393` (-p specifies the port number)
+* To run tests: `$ rspec`
 
 ### Example of usage
 
