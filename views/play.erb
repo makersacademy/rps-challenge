@@ -5,43 +5,59 @@
 </head>
 <body>
 <div class='container'>
-  <div class='cell cell-left'></div>
-  <div class='cell cell-1'>
-    <h1 align='center'> Rock - Paper - Scissor</h1>
-  </div> 
-  <div class='cell cell-2'>
-    <h2 class='player-name'> <%= @player %> </h1>
-  </div>
-  <div class='cell cell-3'> score </div>
-  <div class='cell cell-4'>
-    <h2 class='cpu-name'> CPU </h1>
-  </div> 
+  <div class='cell cell-1'></div> 
+  <div class='cell cell-2'></div>
+  <div class='cell cell-3'></div> 
+  <div class='cell cell-4'></div>
   <div class='cell cell-5'>
-    <h2 class='user-input'> <%= @user_input %> </h2>
+    <div class='nested'>
+      <div class='title'>
+        <h2 align='center'> Rock - Paper - Scissor</h2> 
+      </div>
+      <div class='player'>
+        <h3 class='player-name'><%= @player %></h3>
+        <h4 class='player-score'>Score:<%=@player_score%>/10</h4>
+      </div>
+      <div class='cpu'>
+        <h3 class='cpu-name'> CPU </h3>
+        <h4 class='cpu-score'>Score:<%=@cpu_score%>/10</h4>
+      </div>
+      <div class='void'></div>
+      <div class='player-hand'>
+        <h3 class='user-input'><%= @user_input %></h3>
+      </div>
+      <div class='result'>
+        <% if @cpu_score == 0 %>
+        <h3 class='-result'><%= @player %> win!</h3>
+        <% elsif @player_score == 0%>
+        <h3 class='-result'>CPU win!</h3>
+        <% else %>
+        <h3 class='-result'><%= @result %></h3>
+        <% end %>
+      </div>
+      <div class='cpu-hand'>
+        <h3 class='cpu-input'> <%= @cpu %> </h3>
+      </div>
+      <div class='cell-rock'>
+        <form action='/game' method='post'>
+          <input class='rock' type='submit' name='rock' value="Rock"></input>
+        </form>
+      </div>
+      <div class='cell-paper'>
+        <form action='/game' method='post'>
+         <input class='paper' type='submit' name='paper' value="Paper"></input>
+        </form> 
+      </div>
+      <div class='cell-scissors'>
+        <form action='/game' method='post'>
+          <input class='scissors' type='submit' name='scissor' value="Scissors"></input>
+        </form> 
+      </div>
+    </div>
   </div>
-  <div class='cell cell-6'>
-    <h2 class='result' align='center'> <%= @result %> </h2>
-    <h2 class='result' align='center'> <%= "Draw!" if @user_input != nil and @user_input == @cpu %> </h2>
-  </div>
-  <div class='cell cell-7'>
-    <h2 class='cpu-input'> <%= @cpu %> </h2>
-  </div>
-  <div class='cell space'></div>
-  <div class='cell cell-8'>
-    <form action='/game' method='post'>
-      <input class='cell rock' type='submit' name='rock' value="Rock"></input>
-    </form>
-  </div>
-  <div class='cell cell-9'>
-    <form action='/game' method='post'>
-      <input class='cell paper' type='submit' name='paper' value="Paper"></input>
-    </form> 
-  </div>
-  <div class='cell cell-10'>
-    <form action='/game' method='post'>
-      <input class='cell scissor' type='submit' name='scissor' value="Scissors"></input>
-    </form> 
-  </div>
-  <div class='cell cell-right'></div>
+  <div class='cell cell-6'></div>
+  <div class='cell cell-7'></div>
+  <div class='cell cell-8'></div>
+  <div class='cell cell-9'></div>
 <div>
 </body>
