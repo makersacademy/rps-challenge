@@ -23,13 +23,10 @@ class RockPaperScissorsApp < Sinatra::Base
   end
 
   post '/choose-game' do
-    if params[:game] == 'Rock Paper Scissors'
-      @@game.version(RockPaperScissors)
-      redirect '/play'
-    elsif params[:game] == 'Rock Paper Scissors Lizard Spock'
-      @@game.version(RockPaperScissorsLizardSpock)
-      redirect '/play-spock'
-    end
+    version = params[:game].gsub(/\s+/, "")
+    @@game.version(Object.const_get(version))
+    redirect '/play' if version == 'RockPaperScissors'
+    redirect '/play-spock' if version == 'RockPaperScissorsLizardSpock'
   end
 
   get '/play' do
