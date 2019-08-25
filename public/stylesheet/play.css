@@ -97,7 +97,8 @@ html {
   color: rgb(136, 136, 136);
   padding-top: 50%;
   padding-bottom: 50%;
-  font-size: 2rem;
+  font-size: 4vw;
+  /* font-size: 2rem; */
 }
 .cell-scissors {
   display: flex;
