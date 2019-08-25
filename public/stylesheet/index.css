@@ -1,3 +1,6 @@
+@-ms-viewport{
+  width: device-width;
+}
 html { 
   font-size: calc(0.8em + 0.8vw);
   font-family: Arial, Helvetica, sans-serif
@@ -59,7 +62,8 @@ html {
   height: 100px;
   text-align: center;
   font-size: 1.8rem;
-  margin-top: 43px;
+  margin-left: 0;
+  margin-top: 50px;
 }
 
 .name {
@@ -73,6 +77,10 @@ html {
   cursor: pointer;
   text-align: center;
   font-size: 1.8rem;
+}
+
+.name::placeholder {
+  font-size: 1.6rem;
 }
 
 .name:hover {
