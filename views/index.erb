@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <!-- <link href="/stylesheets/style.css" rel="stylesheet" type="text/css"> -->
   </head>
   <body>
-    <h1>Enter your name:</h1>
-    <form name='input' action='/enter-name' method='POST'>
+    <h1>One player</h1>
+    <h2>Enter your name:</h2>
+    <form name='one_player' id='one_player' action='/enter-name-one-player' method='POST'>
       <input type='text', name='name'>
+      <input type='submit' value='Submit' class='name'>
+    </form>
+    <h1>Two player</h1>
+    <h2>Enter your names:</h2>
+    <form name='two_player' action='/enter-name-2-player' method='POST'>
+      Player 1: <input type='text', name='name-1'>
+      Player 2: <input type='text', name='name-2'>
       <input type='submit' value='Submit' class='name'>
     </form>
   </body>

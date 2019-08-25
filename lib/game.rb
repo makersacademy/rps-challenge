@@ -1,12 +1,11 @@
 class Game
   attr_reader :name, :player_1, :player_2, :current_player
 
-  def initialize(name, player_class = Player, cpu_class = Computer)
-    @players = [player_class.new(name)]
+  def initialize(player_1_name, player_class = Player, oponent_class = Computer, opponent_name = 'Computer')
+    @player_1 = player_class.new(player_1_name)
+    @player_2 = oponent_class.new(opponent_name)
+    @players = [@player_1, @player_2]
     @current_player = @players.first
-    @name = @players.first.name
-    @player_1 = player_class.new(name)
-    @player_2 = cpu_class.new
   end
 
   def version(version = RockPaperScissors)
@@ -19,5 +18,9 @@ class Game
 
   def results
     @results || @version.results(@player_1.move, @player_2.move)
+  end
+
+  def switch_player
+    @current_player = @players.select { |player| player != @current_player}.first
   end
 end

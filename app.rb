@@ -12,40 +12,52 @@ class RockPaperScissorsApp < Sinatra::Base
     erb(:index)
   end
 
-  post '/enter-name' do
+  post '/enter-name-one-player' do
+    p params[:name]
     @@game = Game.new(params[:name], Player, Computer)
     redirect '/choose-game'
   end
 
+  post '/enter-name-2-player' do
+    @@game = Game.new(params['name-1'], Player, Computer, params['name-2'])
+    redirect '/choose-game'
+  end
+
   get '/choose-game' do
-    @name = @@game.name
+    @name = @@game.player_1.name
     erb(:choose_game)
   end
 
   post '/choose-game' do
     version = params[:game].gsub(/\s+/, "")
     @@game.version(Object.const_get(version))
-    redirect '/play' if version == 'RockPaperScissors'
-    redirect '/play-spock' if version == 'RockPaperScissorsLizardSpock'
+    redirect "/play-#{route}"
   end
 
-  get '/play' do
+  get '/play-rock-paper-scissors' do
     @game_name = @@game.version_name
-    @name = @@game.name
-    erb(:play)
+    @player_1 = @@game.player_1
+    @player_2 = @@game.player_2
+    @current_player = @@game.current_player
+    erb(:play_rock_paper_scissors)
   end
 
-  get '/play-spock' do
+  get '/play-rock-paper-scissors-lizard-spock' do
     @game_name = @@game.version_name
-    @name = @@game.name
-    erb(:play_spock)
+    @player_1 = @@game.player_1
+    @player_2 = @@game.player_2
+    @current_player = @@game.current_player
+    erb(:play_rock_paper_scissors_lizard_spock)
   end
 
   post '/move' do
-    Move.run(@@game.player_1, @@game.version, params[:move])
-    # @@game.user_move(params[:move])
-    # @@game.ai_move
-    Move.run(@@game.player_2, @@game.version, params[:move])
+    Move.run(@@game.current_player, @@game.version, params[:move])
+    @@game.switch_player
+    if @@game.current_player == @@game.player_2 && @@game.current_player.name != 'Computer'
+      redirect "/play-#{@@game.route}"
+    else
+      Move.run(@@game.current_player, @@game.version, params[:move])
+    end
     @@game.results
     redirect '/results'
   end
@@ -55,6 +67,17 @@ class RockPaperScissorsApp < Sinatra::Base
     @player_2 = @@game.player_2
     @results = @@game.results
     erb(:results)
+  end
+
+  post '/play-again' do
+    version = @@game.version_name.gsub(/\s+/, "")
+    @@game = Game.new(@@game.player_1.name, Player, Computer)
+    @@game.version(Object.const_get(version))
+    redirect "/play-#{route}"
+  end
+
+  def route
+    @@game.version_name.downcase.split.join('-')
   end
 
   run! if app_file == $0

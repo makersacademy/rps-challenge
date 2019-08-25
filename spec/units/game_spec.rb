@@ -9,7 +9,7 @@ describe Game do
   let(:computer_class) { double(:computer_class, new: computer) }
   subject(:subject) { described_class.new('Chris', player_class, computer_class) }
   it 'can store a name' do
-    expect(subject.name).to eq('Chris')
+    expect(subject.player_1.name).to eq('Chris')
   end
   it 'can set version' do
     subject.version(version_class)

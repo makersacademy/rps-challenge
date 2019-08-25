@@ -5,7 +5,8 @@
   </head>
   <body>
     <h1>You are playing <%= @game_name %></h1>
-    <h2><%= @name %> vs Computer</h2>
+    <h2><%= @player_1.name %> vs <%= @player_2.name %></h2>
+    <h3><%= @current_player.name %>, make your move:</h3>
     <form name='rps' action='/move' method='POST'>
       <input type='submit' name='move' value='Rock'>
       <input type='submit' name='move' value='Paper'>
