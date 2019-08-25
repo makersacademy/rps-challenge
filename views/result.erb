@@ -1,3 +1,9 @@
-<h1><%= $player_1.name %> vs. Computer</h1>
-<p><%= @player1_weapon %>     --     <%= @computer_weapon %></p>
+<h1><%= $player_1.name %> vs. <%= $player_2.name %></h1>
+<p><%= $player1_weapon %>     --     <%= $player2_weapon %></p>
 <p><%= @message %></p>
+<form action='/player1' method='get'>
+  <input type='submit' value='Play again'>
+</form>
+<form action='/' method='get'>
+  <input type='submit' value='Start from the beginning'>
+</form>

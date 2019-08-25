@@ -1,6 +1,10 @@
 <h1>Welcome to the Rock-Paper-Scissors game!</h1>
-<form action='/names' method='post'>
-  <p>Please enter your name to start playing:</p>
-  <input type='text' name='player_1' required>
-  <input type='submit' value='Start'>
+
+Please choose one of the following options to begin:
+<p></p>
+<form action='/1-player' method='get'>
+  <input type='submit' value='1 player'>
+</form>
+<form action='/2-players' method='get'>
+  <input type='submit' value='2 players'>
 </form>
