@@ -64,7 +64,7 @@ html {
   text-align: center;
   font-size: 1.8rem;
   margin-left: 0;
-  margin-top: 43px;
+  margin-top: 50px;
 }
 
 .name {
@@ -79,6 +79,10 @@ html {
   cursor: pointer;
   text-align: center;
   font-size: 1.8rem;
+}
+
+.name::placeholder {
+  font-size: 1.6rem;
 }
 
 .name:hover {
