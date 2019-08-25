@@ -22,11 +22,12 @@ Page  -->  Shows  -->  CPU random choice and winner
 * Move to the browser and in the URL line type: `http://localhost:"#portnumber"/`
 * if show a message error `Address already in use` type: `rackup -p 9393` (-p specifies the port number)
 * To run tests: `$ rspec`
+** Test coverage 100%
 
 ### Example of usage
 
-![](images/ScreenShot1.png)
-![](images/ScreenShot2.png)
-![](images/ScreenShot3.png)
+![](images/SS1.png)
+![](images/SS2.png)
+![](images/SS3.png)
 
 
