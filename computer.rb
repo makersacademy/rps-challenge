@@ -1,5 +1,4 @@
 class Computer
-  
   attr_reader :computer_choice
 
   def initialize
