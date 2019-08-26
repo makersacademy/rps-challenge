@@ -17,7 +17,7 @@ class Game
   end
 
   def results
-    @results || @version.results(@player_1.move, @player_2.move)
+    @results || parse_results(@version.results(@player_1.move, @player_2.move))
   end
 
   def switch_player
@@ -28,5 +28,11 @@ class Game
     @player_1.reset_move
     @player_2.reset_move
     @results = nil
+  end
+
+  private
+
+  def parse_results(result)
+    result == 'Draw!' ? 'Draw!' : "#{send(result).name} wins!"
   end
 end

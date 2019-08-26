@@ -5,7 +5,7 @@ describe Game do
   let(:version_class) { double(:version_class, new: version) }
   let(:player) { double(:player, name: 'Chris') }
   let(:player_class) { double(:player_class, new: player) }
-  let(:computer) { double(:compuer, name: 'Computer') }
+  let(:computer) { double(:computer, name: 'Computer') }
   let(:computer_class) { double(:computer_class, new: computer) }
   subject(:subject) { described_class.new('Chris', player_class, computer_class) }
   it 'can store a name' do
@@ -18,10 +18,10 @@ describe Game do
   it 'can return results' do
     allow(subject.player_1).to receive(:move).and_return('Rock')
     allow(subject.player_2).to receive(:move).and_return('Scissors')
-    allow(version).to receive(:results).with('Rock', 'Scissors').and_return('You win!')
-    expect(version).to receive(:results).with('Rock', 'Scissors').and_return('You win!')
+    allow(version).to receive(:results).with('Rock', 'Scissors').and_return('player_1')
+    expect(version).to receive(:results).with('Rock', 'Scissors').and_return('player_1')
 
     subject.version(version_class)
-    expect(subject.results).to eq('You win!')
+    expect(subject.results).to eq('Chris wins!')
   end
 end

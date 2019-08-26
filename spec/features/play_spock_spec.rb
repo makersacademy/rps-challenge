@@ -35,13 +35,13 @@ feature "play Rock Paper Scissors Lizard Spock" do
       sign_in_and_play_rpsls("one_player")
       allow_any_instance_of(Array).to receive(:sample).and_return("Scissors")
       click_button(:Rock)
-      expect(page).to have_content('You won!')
+      expect(page).to have_content('Chris wins!')
     end
     it 'computer can win' do
       sign_in_and_play_rpsls("one_player")
       allow_any_instance_of(Array).to receive(:sample).and_return("Paper")
       click_button(:Rock)
-      expect(page).to have_content('You lost!')
+      expect(page).to have_content('Computer wins!')
     end
     it 'can draw' do
       sign_in_and_play_rpsls("one_player")

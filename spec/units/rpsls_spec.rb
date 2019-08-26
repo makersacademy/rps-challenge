@@ -14,42 +14,42 @@ describe RockPaperScissorsLizardSpock do
   context 'winning/losing' do
     context 'when Rock' do
       it 'beats Scissors' do
-        expect(subject.results('Rock', 'Scissors')).to eq('You won!')
+        expect(subject.results('Rock', 'Scissors')).to eq('player_1')
       end
       it 'beats Lizard' do
-        expect(subject.results('Rock', 'Lizard')).to eq('You won!')
+        expect(subject.results('Rock', 'Lizard')).to eq('player_1')
       end
     end
     context 'when Paper' do
       it 'beats Rock' do
-        expect(subject.results('Paper', 'Rock')).to eq('You won!')
+        expect(subject.results('Paper', 'Rock')).to eq('player_1')
       end
       it 'beats Spock' do
-        expect(subject.results('Paper', 'Spock')).to eq('You won!')
+        expect(subject.results('Paper', 'Spock')).to eq('player_1')
       end
     end
     context 'when Scissors' do
       it 'beats Paper' do
-        expect(subject.results('Scissors', 'Paper')).to eq('You won!')
+        expect(subject.results('Scissors', 'Paper')).to eq('player_1')
       end
       it 'beats Lizard' do
-        expect(subject.results('Scissors', 'Lizard')).to eq('You won!')
+        expect(subject.results('Scissors', 'Lizard')).to eq('player_1')
       end
     end
     context 'when Lizard' do
       it 'beats Spock' do
-        expect(subject.results('Lizard', 'Spock')).to eq('You won!')
+        expect(subject.results('Lizard', 'Spock')).to eq('player_1')
       end
       it 'beats Paper' do
-        expect(subject.results('Lizard', 'Paper')).to eq('You won!')
+        expect(subject.results('Lizard', 'Paper')).to eq('player_1')
       end
     end
     context 'when Spock' do
       it 'beats Rock' do
-        expect(subject.results('Spock', 'Rock')).to eq('You won!')
+        expect(subject.results('Spock', 'Rock')).to eq('player_1')
       end
       it 'beats Scissors' do
-        expect(subject.results('Spock', 'Scissors')).to eq('You won!')
+        expect(subject.results('Spock', 'Scissors')).to eq('player_1')
       end
     end
   end

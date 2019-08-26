@@ -20,6 +20,6 @@ class RockPaperScissors
 
   def results(player_1, player_2)
     return 'Draw!' if player_1 == player_2
-    @winners[player_1].include?(player_2) ? 'You won!' : 'You lost!'
+    @winners[player_1].include?(player_2) ? 'player_1' : 'player_2'
   end
 end

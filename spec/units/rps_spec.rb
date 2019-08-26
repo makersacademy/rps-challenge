@@ -13,13 +13,13 @@ describe RockPaperScissors do
   end
   context 'winning/losing' do
     it 'Rock beats Scissors' do
-      expect(subject.results('Rock', 'Scissors')).to eq('You won!')
+      expect(subject.results('Rock', 'Scissors')).to eq('player_1')
     end
     it 'Scissors beats Paper' do
-      expect(subject.results('Scissors', 'Paper')).to eq('You won!')
+      expect(subject.results('Scissors', 'Paper')).to eq('player_1')
     end
     it 'Paper beats Rock' do
-      expect(subject.results('Paper', 'Rock')).to eq('You won!')
+      expect(subject.results('Paper', 'Rock')).to eq('player_1')
     end
   end
 end

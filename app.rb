@@ -13,7 +13,6 @@ class RockPaperScissorsApp < Sinatra::Base
   end
 
   post '/enter-name-one-player' do
-    p params[:name]
     @@game = Game.new(params[:name], Player, Computer)
     redirect '/choose-game'
   end

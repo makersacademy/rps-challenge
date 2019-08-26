@@ -19,13 +19,13 @@ feature "play Rock Paper Scissors multiplayer" do
       sign_in_and_play_rps("two_player")
       click_button(:Rock)
       click_button(:Scissors)
-      expect(page).to have_content('You won!')
+      expect(page).to have_content('Chris wins!')
     end
     it 'player 2 can win' do
       sign_in_and_play_rps("two_player")
       click_button(:Rock)
       click_button(:Paper)
-      expect(page).to have_content('You lost!')
+      expect(page).to have_content('Opponent wins!')
     end
     it 'can draw' do
       sign_in_and_play_rps("two_player")
