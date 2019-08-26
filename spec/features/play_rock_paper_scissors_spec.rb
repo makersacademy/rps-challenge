@@ -7,17 +7,17 @@ feature "play Rock Paper Scissors" do
     it 'can select Rock' do
       sign_in_and_play_rps("one_player")
       click_button(:Rock)
-      expect(page).to have_content('You chose Rock')
+      expect(page).to have_content('Chris chose Rock')
     end
     it 'can select Paper' do
       sign_in_and_play_rps("one_player")
       click_button(:Paper)
-      expect(page).to have_content('You chose Paper')
+      expect(page).to have_content('Chris chose Paper')
     end
     it 'can select Scissors' do
       sign_in_and_play_rps("one_player")
       click_button(:Scissors)
-      expect(page).to have_content('You chose Scissors')
+      expect(page).to have_content('Chris chose Scissors')
     end
   end
   context 'results' do
@@ -44,12 +44,12 @@ feature "play Rock Paper Scissors" do
     sign_in_and_play_rps("one_player")
     allow_any_instance_of(Array).to receive(:sample).and_return("Scissors")
     click_button(:Rock)
-    expect(page).to have_content('You chose Rock')
+    expect(page).to have_content('Chris chose Rock')
     expect(page).to have_content('Computer chose Scissors')
     click_button('Play Again')
     allow_any_instance_of(Array).to receive(:sample).and_return("Paper")
     click_button(:Paper)
-    expect(page).to have_content('You chose Paper')
+    expect(page).to have_content('Chris chose Paper')
     expect(page).to have_content('Computer chose Paper')
   end
 end

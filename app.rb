@@ -19,7 +19,7 @@ class RockPaperScissorsApp < Sinatra::Base
   end
 
   post '/enter-name-2-player' do
-    @@game = Game.new(params['name-1'], Player, Computer, params['name-2'])
+    @@game = Game.new(params['name-1'], Player, Player, params['name-2'])
     redirect '/choose-game'
   end
 
@@ -54,7 +54,7 @@ class RockPaperScissorsApp < Sinatra::Base
     Move.run(@@game.current_player, @@game.version, params[:move])
     @@game.switch_player
     if @@game.current_player == @@game.player_2 && @@game.current_player.name != 'Computer'
-      redirect "/play-#{@@game.route}"
+      redirect "/play-#{route}"
     else
       Move.run(@@game.current_player, @@game.version, params[:move])
     end
@@ -70,9 +70,7 @@ class RockPaperScissorsApp < Sinatra::Base
   end
 
   post '/play-again' do
-    version = @@game.version_name.gsub(/\s+/, "")
-    @@game = Game.new(@@game.player_1.name, Player, Computer)
-    @@game.version(Object.const_get(version))
+    @@game.reset
     redirect "/play-#{route}"
   end
 

@@ -5,8 +5,8 @@
   </head>
   <body>
     <h1><%= @results %></h1>
-    <h3>You chose <%= @player_1.move %></h3>
-    <h3>Computer chose <%= @player_2.move %></h3>
+    <h3><%= @player_1.name %> chose <%= @player_1.move %></h3>
+    <h3><%= @player_2.name %> chose <%= @player_2.move %></h3>
     <form name='play_again' action='/play-again' method='POST'>
       <input type='submit' name='play_again' value='Play Again'>
     </form>

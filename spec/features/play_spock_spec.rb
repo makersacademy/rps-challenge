@@ -7,27 +7,27 @@ feature "play Rock Paper Scissors Lizard Spock" do
     it 'can select Rock' do
       sign_in_and_play_rpsls("one_player")
       click_button(:Rock)
-      expect(page).to have_content('You chose Rock')
+      expect(page).to have_content('Chris chose Rock')
     end
     it 'can select Paper' do
       sign_in_and_play_rpsls("one_player")
       click_button(:Paper)
-      expect(page).to have_content('You chose Paper')
+      expect(page).to have_content('Chris chose Paper')
     end
     it 'can select Scissors' do
       sign_in_and_play_rpsls("one_player")
       click_button(:Scissors)
-      expect(page).to have_content('You chose Scissors')
+      expect(page).to have_content('Chris chose Scissors')
     end
     it 'can select Lizard' do
       sign_in_and_play_rpsls("one_player")
       click_button(:Lizard)
-      expect(page).to have_content('You chose Lizard')
+      expect(page).to have_content('Chris chose Lizard')
     end
     it 'can select Spock' do
       sign_in_and_play_rpsls("one_player")
       click_button(:Spock)
-      expect(page).to have_content('You chose Spock')
+      expect(page).to have_content('Chris chose Spock')
     end
   end
   context 'results' do
