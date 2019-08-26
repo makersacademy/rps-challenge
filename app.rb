@@ -1,10 +1,4 @@
 require 'sinatra/base'
-require_relative 'lib/rps'
-require_relative 'lib/rpsls'
-require_relative 'lib/game'
-require_relative 'lib/player'
-require_relative 'lib/cpu'
-require_relative 'lib/move'
 
 class RockPaperScissorsApp < Sinatra::Base
 
@@ -34,29 +28,20 @@ class RockPaperScissorsApp < Sinatra::Base
   end
 
   get '/play-rock-paper-scissors' do
-    @game_name = @@game.version_name
-    @player_1 = @@game.player_1
-    @player_2 = @@game.player_2
-    @current_player = @@game.current_player
+    setup_game
     erb(:play_rock_paper_scissors)
   end
 
   get '/play-rock-paper-scissors-lizard-spock' do
-    @game_name = @@game.version_name
-    @player_1 = @@game.player_1
-    @player_2 = @@game.player_2
-    @current_player = @@game.current_player
+    setup_game
     erb(:play_rock_paper_scissors_lizard_spock)
   end
 
   post '/move' do
     Move.run(@@game.current_player, @@game.version, params[:move])
     @@game.switch_player
-    if @@game.current_player == @@game.player_2 && @@game.current_player.name != 'Computer'
-      redirect "/play-#{route}"
-    else
-      Move.run(@@game.current_player, @@game.version, params[:move])
-    end
+    redirect "/play-#{route}" if user_turn?
+    Move.run(@@game.current_player, @@game.version, params[:move]) unless user_turn?
     @@game.results
     redirect '/results'
   end
@@ -75,6 +60,17 @@ class RockPaperScissorsApp < Sinatra::Base
 
   def route
     @@game.version_name.downcase.split.join('-')
+  end
+
+  def user_turn?
+    @@game.current_player == @@game.player_2 && @@game.current_player.name != 'Computer'
+  end
+
+  def setup_game
+    @game_name = @@game.version_name
+    @player_1 = @@game.player_1
+    @player_2 = @@game.player_2
+    @current_player = @@game.current_player
   end
 
   run! if app_file == $0
