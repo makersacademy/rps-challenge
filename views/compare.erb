@@ -4,7 +4,12 @@
 <% options = ["ROCK","SCISSORS","PAPER"] %>
 <% p_index = options.index(@mychoice)%>
 <% c_index = options.index(@computer)%>
+
 <%if p_index - 1 == c_index %>
+<p>
+"Computer wins!"
+</p>
+<%elsif p_index == 0 && c_index==2 %>
 <p>
 "Computer wins!"
 </p>
