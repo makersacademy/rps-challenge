@@ -1,21 +1,11 @@
-Welcome <%=@name%>! Let's play Rock, Paper & Scissors today!
+Welcome <%=session[:name]%>! Let's play Rock, Paper & Scissors today!
 
 <p> Your choice: </p>
 <p> </p>
 <p> </p>
 
-<form action = '/compare' method = 'post' name = 'rock'>
-  <input type ="submit" value = "Rock"/>
+<form action = '/compare' method = 'POST'>
+  <input type ="submit" value = "ROCK" name ='mychoice[]'/>
+  <input type ="submit" value = "PAPER" name ='mychoice[]'/>
+  <input type ="submit" value = "SCISSORS" name ='mychoice[]'/>
 </form>
-<form action = '/compare' method = 'post' name = 'paper'>
-  <input type ="submit" value = "Paper"/>
-</form>
-<form action = '/compare' method = 'post' name = 'scissors'>
-  <input type ="submit" value = "Scissors"/>
-</form>
-
-<!-- <p>
-<a href=#>
-<img href="https://images.app.goo.gl/vsqWZ6pamdzoyuJx6"border="0" alt="rock" src="" width="100" height="100">
-</a>
-</p> -->

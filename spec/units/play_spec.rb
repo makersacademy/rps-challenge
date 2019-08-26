@@ -13,6 +13,6 @@ describe Game do
 
   it 'can give a random output' do
   game = Game.new
-  expect(['Rock','Paper','Scissors']).to include(game.play)
+  expect(['ROCK','PAPER','SCISSORS']).to include(game.play)
   end
 end

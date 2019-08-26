@@ -1,9 +1,9 @@
 class Game
-  attr_reader :choices
+  attr_reader :choices, :mine
   def initialize
-    @choices = ['Rock','Paper','Scissors']
+    @choices = ['ROCK','SCISSORS','PAPER']
   end
   def play
-    @mine = @choices.sample
-  end
+    @choices.sample
+  end 
 end

@@ -1,6 +1,9 @@
 require 'sinatra/base'
 require './lib/game'
 class Play < Sinatra::Base
+
+  enable :sessions
+
   get '/' do
     erb :getname
   end
@@ -10,7 +13,7 @@ class Play < Sinatra::Base
   end
 
   post '/thegame' do
-    @name = params[:name]
+    session[:name] = params[:name]
     erb :thegame
 
   end
@@ -20,8 +23,10 @@ class Play < Sinatra::Base
   end
 
   post '/compare' do
-
-
+    game = Game.new
+    @computer=game.choices.sample
+    @player1 = session[:name]
+    @mychoice = params[:mychoice].first
     erb :compare
   end
 end

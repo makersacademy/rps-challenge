@@ -1,1 +1,20 @@
-<%=@player1%> vs. <%=@player2%> 
+<%=@player1%> vs. Computer
+<p> </p>
+<%=@mychoice%> vs. <%=@computer%>
+<% options = ["ROCK","SCISSORS","PAPER"] %>
+<% p_index = options.index(@mychoice)%>
+<% c_index = options.index(@computer)%>
+<%if p_index - 1 == c_index %>
+<p>
+"Computer wins!"
+</p>
+<%elsif p_index == c_index  %>
+<p>
+"Tie!"
+</p>
+<%else %>
+<p>
+"You win!"
+</p>
+
+<%end%>
