@@ -1,20 +1,23 @@
 body {
-  background-color: powderblue;
+  background-color: lightcyan;
+  text-align: center;
 }
 h1  {
   color: blue;
+  text-align: center;
 }
 p  {
   color: red;
+  text-align: center;
 }
-input.name {
+input.rps {
   border: 1px outset blue;
   background-color: lightBlue;
   height:50px;
-  width:50px;
+  width:75px;
   cursor:pointer;
 }
-input.name:hover {
+input.rps:hover {
   background-color: blue;
   color:white;
 }
