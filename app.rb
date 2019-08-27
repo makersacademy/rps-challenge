@@ -1,6 +1,4 @@
 require 'sinatra/base'
-require 'JSON'
-
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
@@ -18,6 +16,9 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  get '/outcome' do
+    erb(:outcome)
+  end
   run! if app_file == $0
 
 end

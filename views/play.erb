@@ -1,48 +1,54 @@
 <!DOCTYPE html>
-
-<%= "Prepare to fight #{ @player1 }!" %><br>
+<html>
+<body>
+<%= "Please work... #{ @player1 }!" %><br>
 <form action="/" method="post">
-<button onclick="myFunctionRock()" id="r" >Rock!</button>
-<button onclick="myFunctionPaper()" id="p" >Paper!</button>
-<button onclick="myFunctionScissors()" id="s" >Scissors!</button>
+<button onclick ="myFunctionRock()"">Rock!</button>
+<button onclick ="myFunctionPaper()"">Paper!</button>
+<button onclick ="myFunctionScissors()"">Scissors!</button>
+
+<p id="outcome"></p>
+
 <script>
-let choice
-let botArray = ["Rock" , "Paper" , "Scissors"]
-let outcome
-let rand = botArray[Math.floor(Math.random() * botArray.length)]
+
+var choice = " ";
+var botArray = ["Rock" , "Paper" , "Scissors"];
+var rand = botArray[Math.floor(Math.random() * botArray.length)];
+
 function myFunctionRock() {
   choice = "Rock";
-  jsLogic()
+  jsLogic(choice);
 }
 
 function myFunctionPaper() {
-  choice = "Paper"
-  jsLogic()
+  choice = "Paper";
+  jsLogic();
 }
 
 function myFunctionScissors() {
   choice = "Scissors";
-  jsLogic()
+  jsLogic();
 }
 
 function jsLogic() {
-  if choice == rand
-    document.write("No One Wins!");
-  } else if choice == "Rock" && rand == "Paper"
-    outcome = "You Lose!";
-  } else if choice == "Rock" && rand == "Scissors"
-    outcome = "You Win!";
-  } else if choice == "Paper" && rand = "Rock"
-    outcome = ("You Win!";
-  } else if choice == "Paper" && rand = "Scissors"
-    outcome = "You Lose!";
-  } else if choice == "Scissors" && rand = "Rock"
-    outcome = "You Lose!";
-  } else if choice == "Scissors" && rand = "Paper"
-    outcome = "You Win!";
+  if (choice == rand) {
+    document.getElementById("outcome").innerHTML = "No One Wins!";
+  } else if (choice == "Rock" && rand == "Paper") {
+    document.getElementById("outcome").innerHTML = "You Lose!";
+  } else if (choice == "Rock" && rand == "Scissors") {
+    document.getElementById("outcome").innerHTML = "You Win!";
+  } else if (choice == "Paper" && rand == "Rock") {
+    document.getElementById("outcome").innerHTML = "You Win!";
+  } else if (choice == "Paper" && rand == "Scissors") {
+    document.getElementById("outcome").innerHTML = "You Lose!";
+  } else if (choice == "Scissors" && rand == "Rock") {
+    document.getElementById("outcome").innerHTML = "You Lose!";
+  } else if (choice == "Scissors" && rand == "Paper") {
+    document.getElementById("outcome").innerHTML = "You Win!";
   }
-  alert(outcome)
 }
-  </script>
 
- </form>
+</script>
+</form>
+</body>
+</html>
