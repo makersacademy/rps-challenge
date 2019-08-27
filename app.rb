@@ -17,7 +17,8 @@ class RockPaperScissorsApp < Sinatra::Base
   end
 
   get '/choose-game' do
-    @name = @@game.player_1.name
+    @player_1 = @@game.player_1.name
+    @player_2 = @@game.player_2.name
     erb(:choose_game)
   end
 

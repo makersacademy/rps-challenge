@@ -10,11 +10,25 @@ p  {
   color: red;
   text-align: center;
 }
+input.choose_game {
+  border: 1px outset blue;
+  background-color: steelBlue;
+  border-radius:5px;
+  cursor:pointer;
+  font-size:13px;
+  color:white;
+  padding:13px 20px;
+}
+.choose_game:hover {
+  font-weight: bold;
+}
 input.rps {
   border: 1px outset blue;
   background-color: lightBlue;
   height:50px;
   width:75px;
+  font-size:13px;
+  border-radius:10px;
   cursor:pointer;
 }
 input.rps:hover {

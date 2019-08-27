@@ -4,10 +4,11 @@
     <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Welcome, <%= @name %></h1>
+    <h1>Welcome, <%= @player_1 %> <%= "and #{@player_2}" if @player_2 != 'Computer' %></h1>
+    <h3>Choose game:</h3>
     <form name='choose-game' action='/choose-game' method='POST'>
-      <input type='submit' name='game' value='Rock Paper Scissors'>
-      <input type='submit' name='game' value='Rock Paper Scissors Lizard Spock'>
+      <input type='submit' name='game' value='Rock Paper Scissors' class='choose_game'><br>
+      <input type='submit' name='game' value='Rock Paper Scissors Lizard Spock' class='choose_game'>
     </form>
   </body>
 </html>
