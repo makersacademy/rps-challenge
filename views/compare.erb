@@ -1,9 +1,9 @@
 <%=@player1%> vs. Computer
 <p> </p>
 <%=@mychoice%> vs. <%=@computer%>
-<% options = ["ROCK","SCISSORS","PAPER"] %>
-<% p_index = options.index(@mychoice)%>
-<% c_index = options.index(@computer)%>
+<%# <% options = ["ROCK","SCISSORS","PAPER"] %> 
+<% p_index = @choices.index(@mychoice)%>
+<% c_index = @choices.index(@computer)%>
 
 <%if p_index - 1 == c_index %>
 <p>

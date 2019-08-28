@@ -1,6 +1,10 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+require 'features/web_helpers.rb'
 # require 'rack/test'
 # require 'rspec'
 # ENV['RACK_ENV'] = 'test'
@@ -19,10 +23,7 @@ SimpleCov.start
 RSpec.configure do |config|
   ENV['RACK_ENV'] = 'test'
   require File.join(File.dirname(__FILE__),'..','app.rb')
-  require 'capybara'
-  require 'capybara/rspec'
-  require 'rspec'
-  require 'features/web_helpers.rb'
+
   Capybara.app = Play
   config.after(:suite) do
     puts
