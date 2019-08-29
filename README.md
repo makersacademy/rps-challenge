@@ -1,6 +1,6 @@
 # ROCK - PAPER - SCISSORS
 
-This is a web app to play the famous hand game RPS on the web!
+'Rock,Paper,Scissor' is a small back-end app part of the Makers Academy weekend challenges. It's written in Ruby that uses the game to explore the Model, View, Controller architecture. 
 
 ## Domain model
 
@@ -15,14 +15,17 @@ Page  -->  Shows  -->  CPU random choice and winner
 
 * Please clone the repository typing on your terminal: `git@github.com:l-palermo/rps-challenge.git`
 * Then run `bundle` to install dependecies
+* To run tests: `$ rspec`
+** Test coverage 100%
 
 ## How to use the software
 
-* From the folder `RPS-CHALLENGHE` run on the cmd line:`$ rackup` (check what port the server is listening to)
-* Move to the browser and in the URL line type: `http://localhost:"#portnumber"/`
-* if show a message error `Address already in use` type: `rackup -p 9393` (-p specifies the port number)
-* To run tests: `$ rspec`
-** Test coverage 100%
+* This app is deployed to Heroku. `https://rps-g.herokuapp.com`
+* To run this app locally:
+** Clone the repository typing on your terminal: `git@github.com:l-palermo/rps-challenge.git`
+** Run `bundle` to install dependecies
+** To run tests: `$ rspec` (Test coverage 100%)
+** From the folder `RPS-CHALLENGHE` run on the cmd line:`$ rackup`, move to the browser and in the URL line type: `http://localhost:9292/`
 
 ### Example of usage
 
