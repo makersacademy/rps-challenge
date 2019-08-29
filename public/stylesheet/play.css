@@ -1,0 +1,112 @@
+html { 
+  font-size: calc(1em + 1vw);
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.container {
+  color: rgb(136, 136, 136);
+  min-height: 100vh;
+  object-fit: cover;
+  display: grid;
+  grid-template-columns: 0.05fr 3fr 0.05fr;
+  grid-template-rows: 0.05fr 3fr 0.05fr;
+}
+
+.cell-5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nested {
+  background: whitesmoke;
+  border-color: rgb(136, 136, 136);
+  border-radius: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 0.3fr 0.3fr 1fr;
+  height: 700px;
+  width: 700px;
+}
+.title {
+  grid-column: 1/4;
+  grid-row: 1/1;
+}
+.player {
+  grid-column: 1/2;
+  grid-row: 2/2;
+}
+
+.cpu {
+  grid-column: 3/4;
+  grid-row: 2/2;
+}
+.player-name, .player-score, .user-input {
+  font-weight: 500;
+  line-height: 40px;
+  margin-left: 10%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+.cpu-name, .cpu-score, .cpu-input {
+  font-weight: 500;
+  text-align: right;
+  line-height: 40px;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  margin-right: 10%;
+}
+.-result {
+  text-align: center;
+  margin: 0%;
+}
+.cell-rock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
+  border-bottom-left-radius: 30px;
+}
+.rock{
+  border: none;
+  background: transparent;
+  color: rgb(136, 136, 136);
+  font-size: 4.5vw;
+  padding-top: 50%;
+  padding-bottom: 50%;
+}
+.cell-paper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
+}
+.paper {
+  border: none;
+  background: transparent;
+  color: rgb(136, 136, 136);
+  font-size: 4.5vw;
+  padding-top: 50%;
+  padding-bottom: 50%;
+}
+.scissors {
+  border: none;
+  background: transparent;
+  margin-right: 10%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  color: rgb(136, 136, 136);
+  padding-top: 50%;
+  padding-bottom: 50%;
+  font-size: 4.5vw;
+}
+.cell-scissors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
+  border-bottom-right-radius: 30px;
+}
+.cell-scissors:hover, .cell-paper:hover, .cell-rock:hover {
+  background-color: rgb(207, 201, 179);
+  color: white;
+}

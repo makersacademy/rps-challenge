@@ -7,6 +7,7 @@ gem 'sinatra'
 
 group :test do
   gem 'capybara'
+  gem 'rack_session_access'
   gem 'rspec'
   gem 'rubocop', '0.56.0'
   gem 'simplecov', require: false

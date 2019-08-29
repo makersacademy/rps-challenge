@@ -1,4 +1,11 @@
 rvm:
-  - 2.5.0
+- 2.5.0
 script:
-  - bundle exec rspec spec
+- bundle exec rspec spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: WYfSW29rLjjmysAnlgzBiRX4p636vcGcEEzApzzz+xMcQ658f3yri4e39TNM7U0/Xq3V6Jc16ncLSbgKpAYgSo3TsbdCEgukmOi9PrEKZ52/VyTQjJcs2zqVQklVm9yUkddHCmgm0FCvVFJpfnfKOCawBxLLMvNb0/B1p+8j5YeCpKw2ee8QaVEW1oz2fSWAzbQBSKd6WmuKU31G9aJLqkhtYgP1z3rr2n0KdkuWhOKo0EIbzShmLDkLgsqLD3FikmaN+9W7LmQf7dG39ErgbRJLW7n7GIkSSSRVPL5MvU09bzyKxRwlNpkKeCxL/Dhc1PgTFRCJrZ1zMYV35fA5I4+KT8PhJWcT+OopwLqd4r0n0V4gc8D3zsdoJI+hff6ORlzQVrhSmVmMq73fTl8qmJungjx2vi9YKl8hEePx6M4o1WwsdzUgyAafrIsBQPvAdFQmw61oCSdLi4f7s06l+c0NXH/0SEiADxbqK58Zh+NjHmwrhxQMN1Ba71Z4Evq9rxxgAfaKx9sHZHTCZ7lfxO2eI5nKbPL/6PPa983rk4m4ZETGaGuvS4qY2jNdQGQRp4pbB0THUiA4e2UyvamiUrPM54N/04uET3uY6nzIeVtHlmjZFdT0eg4lrqxDa4aLX7pWM6EQF7GXyUlQLWo7TY97F+8yJEFvRG4MnYZauTQ=
+  app: rps-g
+  on:
+    repo: l-palermo/rps-challenge
