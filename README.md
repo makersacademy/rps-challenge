@@ -35,7 +35,7 @@
 ## Run the program
 
 - Clone this repo to your local machine
-- Run `bundle install` (if you don't have bundle already)
+- Run `bundle install`
 - Run `rackup` in terminal to start the server and visit `localhost:9292` in your browser
 - Run `rspec` to test the application
 
