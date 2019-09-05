@@ -2,10 +2,13 @@
 
 <h2> <%= @turn_player %>'s turn </h2>
 
-<h3> Select Rock, Paper, or Scissors below <h3>
+<h3> Select Rock, Paper, or Scissors <h3>
 
 <form action='/rps' method='post'>
-  <input type='submit' value='Rock'>
-  <input type='submit' value='Paper'>
-  <input type='submit' value='Scissors'>
+  <select name="RPS">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <input type='submit' value="Submit Choice">
 </form>

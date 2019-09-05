@@ -7,7 +7,8 @@ feature "selecting R P or S" do
   
   scenario "player 1 selects rock" do
     sign_in_and_play
-    click_button "Rock"
+    select('Rock', :from => 'RPS')
+    click_button "Submit Choice"
     expect(page).to have_content("Millie's turn")
   end
 

@@ -1,12 +1,13 @@
 class Game
 
-  attr_reader :player1, :player2, :current_turn, :off_turn
+  attr_reader :player1, :player2, :current_turn, :off_turn, :choices
 
   def initialize(player1, player2)
     @player1 = Player.new(player1)
     @player2 = Player.new(player2)
     @current_turn = @player1
     @off_turn = @player2
+    @choices = [nil,nil]
   end
 
   def self.create(player1,player2)
@@ -27,6 +28,8 @@ class Game
     end
   end
 
-
+  def both_turns_complete?
+    @choices.length == 2
+  end
 
 end
