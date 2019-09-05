@@ -1,6 +1,7 @@
 class Game
 
-  attr_reader :player1, :player2, :current_turn, :off_turn, :choices
+  attr_reader :player1, :player2, :current_turn, :off_turn
+  attr_accessor :choices
 
   def initialize(player1, player2)
     @player1 = Player.new(player1)
@@ -33,24 +34,20 @@ class Game
   end
 
   def winner
-    if @choices[0] == "Rock" && @choices[1] == "Rock"
-      "Draw, click to play again"
+    if @choices[0] == @choices[1]
+      "Draw, both players chose #{@choices[0]}... click to play again!"
     elsif @choices[0] == "Rock" && @choices[1] == "Paper"
-      "#{@player2.name} wins!"
+      "#{@choices[1]} beats #{@choices[0]}...#{@player2.name} wins!"
     elsif @choices[0] == "Rock" && @choices[1] == "Scissors"
-      "#{@player1.name} wins!"
-    elsif @choices[0] == "Paper" && @choices[1] == "Paper"
-      "Draw, click to play again"
+      "#{@choices[0]} beats #{@choices[1]}...#{@player1.name} wins!"
     elsif @choices[0] == "Paper" && @choices[1] == "Scissors"
-      "#{@player2.name} wins!"
+      "#{@choices[1]} beats #{@choices[0]}...#{@player2.name} wins!"
     elsif @choices[0] == "Paper" && @choices[1] == "Rock"
-      "#{@player1.name} wins!"
-    elsif @choices[0] == "Scissors" && @choices[1] == "Scissors"
-      "Draw, click to play again"
+      "#{@choices[0]} beats #{@choices[1]}...#{@player1.name} wins!"
     elsif @choices[0] == "Scissors" && @choices[1] == "Rock"
-      "#{@player2.name} wins!"
+      "#{@choices[1]} beats #{@choices[0]}...#{@player2.name} wins!"
     elsif @choices[0] == "Scissors" && @choices[1] == "Paper"
-      "#{@player1.name} wins!"
+      "#{@choices[0]} beats #{@choices[1]}...#{@player1.name} wins!"
     end
   end
 

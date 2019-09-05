@@ -18,7 +18,7 @@ feature "selecting R P or S" do
     click_button "Submit Choice"
     select('Scissors', :from => 'RPS')
     click_button "Submit Choice"
-    expect(page).to have_content("Dan wins!")
+    expect(page).to have_content("Rock beats Scissors...Dan wins!")
   end
 
   scenario "player 1 selects paper, player 2 selects scissors" do
@@ -27,7 +27,7 @@ feature "selecting R P or S" do
     click_button "Submit Choice"
     select('Scissors', :from => 'RPS')
     click_button "Submit Choice"
-    expect(page).to have_content("Millie wins!")
+    expect(page).to have_content("Scissors beats Paper...Millie wins!")
   end
 
 end

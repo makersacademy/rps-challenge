@@ -27,6 +27,7 @@ class RockPaperScissorsApp < Sinatra::Base
     @game = Game.instance
     @game.choices << params[:RPS]
     if @game.both_turns_complete?
+      @game.choices.clear
       redirect ('/winner')
     else
       redirect ('/selection')
