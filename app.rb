@@ -26,6 +26,8 @@ class RockPaperScissorsApp < Sinatra::Base
   post '/rps' do
     @game = Game.instance
     @game.choices << params[:RPS]
+    #### params appear to be saving. Need to find a way to clear params.
+    #### try running game a few times
     if @game.both_turns_complete?
       @game.choices.clear
       redirect ('/winner')
