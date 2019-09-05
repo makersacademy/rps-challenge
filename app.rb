@@ -10,8 +10,15 @@ class RockPaperScissorsApp < Sinatra::Base
     erb(:index)
   end
 
-  post '/selection' do
+  post '/names' do
     @game = Game.create(params[:Player1], params[:Player2])
+    redirect('/selection')
+  end
+
+  get '/selection' do
+    @game = Game.instance
+    @turn_player = @game.current_turn.name
+    @non_turn_player = @game.off_turn.name
     erb(:selection)
   end
 
