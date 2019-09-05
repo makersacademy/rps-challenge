@@ -33,5 +33,11 @@ class RockPaperScissorsApp < Sinatra::Base
     end
   end
 
+  get '/winner' do
+    @game = Game.instance
+    @winner = @game.winner
+    erb(:winner)
+  end
+
   run! if app_file == $PROGRAM_NAME
 end
