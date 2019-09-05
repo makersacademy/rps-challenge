@@ -1,23 +1,23 @@
 Requirements based on user stories:
 
 Pages:
-Index: Both players enter their name before the game starts, submit
-Selection: Player 1 enters their choice, clicks submit. Saves as param. Redirects to selection.
-Selection: Player 2 enters their choice, clicks submit. Saves as param. Redirects to result.
-Result: Evaluates who has won - P1 or P2.
+    Index: Both players enter their name before the game starts, submit
+    Selection: Player 1 enters their choice, clicks submit. Saves as param. Redirects to selection.
+    Selection: Player 2 enters their choice, clicks submit. Saves as param. Redirects to result.
+    Result: Evaluates who has won - P1 or P2.
 
 Lib:
-Game class (players, RPS selections, results method)
-Player class (name)
+    Game class (players, RPS selections, results method)
+    Player class (name)
 
 Tests:
-Feature:
-    Enter 2 names and click submit - next page.
-    Enter 1 name and click submit - error, need both names. (if statement in view)
-    P1 select something and it redirects to selection
-    P2 select something and it redirects to result
-    P1 select rock and P2 select scissors, p1 win
-    P1 select paper and P2 select scissors, p2 win
+    Feature:
+        Enter 2 names and click submit - next page.
+        Enter 1 name and click submit - error, need both names. (if statement in view)
+        P1 select something and it redirects to selection
+        P2 select something and it redirects to result
+        P1 select rock and P2 select scissors, p1 win
+        P1 select paper and P2 select scissors, p2 win
 
-Unit:
-    Methods in Game and Player classes
+    Unit:
+        Methods in Game and Player classes
