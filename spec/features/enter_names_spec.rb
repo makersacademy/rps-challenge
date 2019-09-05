@@ -6,5 +6,7 @@ feature 'Enter Names' do
     fill_in 'Player1', with: "Dan"
     fill_in 'Player2', with: "Millie"
     click_button "Submit"
+    expect(page).to have_content("Dan vs. Millie")
   end
+  
 end

@@ -13,7 +13,6 @@ Lib:
 Tests:
     Feature:
         Enter 2 names and click submit - next page.
-        Enter 1 name and click submit - error, need both names. (if statement in view)
         P1 select something and it redirects to selection
         P2 select something and it redirects to result
         P1 select rock and P2 select scissors, p1 win
