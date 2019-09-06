@@ -25,3 +25,12 @@ feature 'displayes a prompt to chose a button' do
     expect(page).to have_content('Choose wisely.')
   end
 end
+
+feature 'displayes 3 buttons' do
+  scenario 'displays rock,paper,scissors buttons' do
+    visit('/')
+    fill_in('name', with: 'Boris')
+    click_button('Obey')
+    find_button('Rock').click
+  end
+end
