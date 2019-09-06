@@ -1,9 +1,21 @@
-<h1> <%= @p1 %> vs. <%= @p2 %> </h1>
+<a href="https://github.com/DanGyi23/rps-challenge">
+  <img align ='right' height='50' width='50' style='margin:1.5rem;float:right' src='https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg'>
+</a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 style='font-family: Georgia, serif;font-size:36px;text-align:center'> <%= @p1 %> vs. <%= @p2 %> </h1>
+<br>
+<h2 style='font-family: Georgia, serif;font-size:24px;text-align:center'> <%= @turn_player %>'s turn </h2>
+<br>
 
-<h2> <%= @turn_player %>'s turn </h2>
+<h3 style='font-family: Georgia, serif;font-size:18px;text-align:center'> Select Rock, Paper, or Scissors <h3>
+<br>
+<br>
 
-<h3> Select Rock, Paper, or Scissors <h3>
-
+<div align='center'>
 <form action='/rps' method='post'>
   <select style='font-size:20px' name="RPS">
     <option value="Rock">Rock</option>
@@ -12,5 +24,11 @@
     <option value="Spock">Spock</option>
     <option value="Lizard">Lizard</option>
   </select>
+  <br>
+  <br>
   <input style='font-size:20px' type='submit' value="Submit Choice">
 </form>
+</div>
+<div align='center'>
+<img height='299px' width='393px' src='https://cdn.instructables.com/FIU/AIWE/I7Q0TCUT/FIUAIWEI7Q0TCUT.LARGE.jpg?auto=webp&fit=bounds'>
+</div>

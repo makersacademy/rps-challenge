@@ -1,3 +1,6 @@
+<a href="https://github.com/DanGyi23/rps-challenge">
+  <img align ='right' height='50' width='50' style='margin:1.5rem' src='https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg'>
+</a>
 <h1> <%= @winner %> </h1>
 
 <form action='/selection'>
@@ -5,11 +8,11 @@
 </form>
 
 <% if @winner.include? @game.player1.name %>
-  <img style='border:3px solid black;border_radius:8px;margin:12rem' src='https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/04/The-Rock-920x584.jpg'>
+  <img align='center' style='border:3px solid black;border_radius:8px;margin:1.5rem' src='https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/04/The-Rock-920x584.jpg'>
 <% elsif @winner.include? @game.player2.name %>
-  <img style='border:3px solid black;border_radius:8px;margin:12rem' src='https://bloggingdoesntgettougherthanthis.files.wordpress.com/2012/10/man-v-food-glut-3.jpg'>
+  <img align='center' style='border:3px solid black;border_radius:8px;margin:1.5rem' src='https://bloggingdoesntgettougherthanthis.files.wordpress.com/2012/10/man-v-food-glut-3.jpg'>
 <% else %>
-  <img style='border:3px solid black;border_radius:8px;margin:12rem' src='https://i.imgur.com/s4dTtBy.jpg'>
+  <img align='center' style='border:3px solid black;border_radius:8px;margin:1.5rem' src='https://i.imgur.com/s4dTtBy.jpg'>
 <% end %>
 
 
