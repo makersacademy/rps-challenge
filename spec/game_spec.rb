@@ -1,8 +1,8 @@
 describe Game do
-  let(:p1) { double :p1}
-  let(:p2) { double :p2}
-  let(:choice) {double :choice}
-  let(:game) { described_class.create(p1, p2)}
+  let(:p1) { double :p1 }
+  let(:p2) { double :p2 }
+  let(:choice) { double :choice }
+  let(:game) { described_class.create(p1, p2) }
   
   it 'initializes with 2 new players' do
     expect(game.player1.name).to eq(p1)
@@ -36,7 +36,7 @@ describe Game do
 
   describe '#create' do
     it 'creates a new Game instance' do
-      expect(game).not_to eq(Game.create(p1,p2))
+      expect(game).not_to eq(Game.create(p1, p2))
     end
   end
 

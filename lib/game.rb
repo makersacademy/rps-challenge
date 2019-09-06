@@ -8,17 +8,12 @@ class Game
     @current_turn = @player1
     @off_turn = @player2
     @choices = []
-    @choice_hash = {
-      "Rock" => 1,
-      "Paper" => 2,
-      "Scissors" => 3,
-      "Spock" => 4,
-      "Lizard" => 5
-    }
+    @choice_hash = { "Rock" => 1, "Paper" => 2, "Scissors" => 3,
+     "Spock" => 4, "Lizard" => 5 }
   end
 
-  def self.create(player1,player2)
-    @game = Game.new(player1,player2)
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
   end
 
   def self.instance

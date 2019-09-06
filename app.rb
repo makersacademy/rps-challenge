@@ -12,7 +12,7 @@ class RockPaperScissorsApp < Sinatra::Base
 
   post '/names' do
     @game = Game.create(params[:Player1], params[:Player2])
-    redirect('/selection')
+    redirect '/selection'
   end
 
   get '/selection' do
@@ -27,9 +27,9 @@ class RockPaperScissorsApp < Sinatra::Base
     @game = Game.instance
     @game.choices << params[:RPS]
     if @game.both_turns_complete?
-      redirect ('/winner')
+      redirect '/winner'
     else
-      redirect ('/selection')
+      redirect '/selection'
     end
   end
 
