@@ -20,3 +20,7 @@ Tests:
 
     Unit:
         Methods in Game and Player classes
+
+ToDo:
+    Add unit tests for game_spec
+    Improve HTML look (Optional)

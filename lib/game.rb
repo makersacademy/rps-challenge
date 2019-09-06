@@ -36,7 +36,7 @@ class Game
   end
 
   def both_turns_complete?
-    @choices.length.even?
+    @choices.length.even? && @choices != 0
   end
 
   def winner
