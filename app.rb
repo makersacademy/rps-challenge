@@ -7,10 +7,10 @@ get '/' do
   erb(:index)
 end
 
-post '/game' do
+post '/initialise' do
   @player1 = params[:player1]
   @player2 = params[:player2]
-  erb(:game)
+  erb(:initialise)
 end
 
 run! if app_file == $0
