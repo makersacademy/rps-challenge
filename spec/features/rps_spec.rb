@@ -16,3 +16,12 @@ feature 'displays player name given during registration' do
     expect(page).to have_content('Boris')
   end
 end
+
+feature 'displayes a prompt to chose a button' do
+  scenario 'player is prompted to choose' do
+    visit('/')
+    fill_in('name', with: 'Boris')
+    click_button('Obey')
+    expect(page).to have_content('Choose wisely.')
+  end
+end
