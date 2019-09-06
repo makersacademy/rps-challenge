@@ -1,0 +1,7 @@
+feature "selecting a move" do
+  scenario "selecting rock" do
+    sign_in()
+    click_button 'Rock'
+    expect(page).to have_content 'LOSER!'
+  end
+end
