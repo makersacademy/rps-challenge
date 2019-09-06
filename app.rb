@@ -6,4 +6,8 @@ class RPS < Sinatra::Base
   get '/' do
     erb(:index)
   end
+  post '/match' do
+    @player_name = params[:Player1]
+    "Welcome " + @player_name
+  end
 end

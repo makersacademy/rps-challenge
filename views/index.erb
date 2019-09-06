@@ -34,11 +34,13 @@
   </header>
   <maintext>
     <h2> Please enter your name </h2>
-    <textarea rows="1" cols="25" placeholder="Enter name here"></textarea>
-    </br>
-    </br>
-    <button type="submit" style='font-size: 35px;width:200px; height:50px; color:red'>Lets Play</button>
-    </br>
+    <form action="/match" method="post">
+      <textarea rows="1" cols="25" placeholder="Enter name here" name="Player1"></textarea>
+      </br>
+      </br>
+      <button type="submit" value="Submit" style='font-size: 35px;width:200px; height:50px; color:red'>Lets Play</button>
+      </br>
+    </form>
     <img src="https://cdn4.vectorstock.com/i/1000x1000/37/43/rock-paper-scissors-vector-5953743.jpg"/>
   </maintext>
 </body>
