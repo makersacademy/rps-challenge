@@ -9,7 +9,6 @@ end
 
 post '/initialise' do
   @player1 = params[:player1]
-  @player2 = params[:player2]
   erb(:initialise)
 end
 
