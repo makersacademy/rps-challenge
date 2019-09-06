@@ -1,15 +1,15 @@
 $(document).ready(function() {
 
-$('#Rock').click(function() {
+$('#rock').click(function() {
+  rockPaperScissors.play();
   console.log("rock");
+});
+
+$('#paper').click(function() {
   rockPaperScissors.play();
 });
 
-$('#Paper').click(function() {
-  rockPaperScissors.play();
-});
-
-$('#Scissors').click(function() {
+$('#scissors').click(function() {
   rockPaperScissors.play();
 });
 });

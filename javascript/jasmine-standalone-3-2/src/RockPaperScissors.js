@@ -2,12 +2,15 @@
 
 function RockPaperScissors() {
   this.player2 = "Computer"
+  this.player1
 }
+var player1 = prompt("Choose rock, paper or scissors?");
+var player2 = prompt("Choose rock, paper or scissors?");
 // RockPaperScissors.prototype.getPlayer1 = function() {
 //   return this.Player1;
 // };
-RockPaperScissors.prototype.play = function() {
-var compare = function(player1,player2){
+RockPaperScissors.prototype.play = function(player1, player2) {
+var compare = function(player1, player2){
     if(player1===player2){
         return "No one wins";
       }
@@ -37,3 +40,6 @@ if(player1==="Rock") {
 }
 }
 };
+console.log("Player 1: " + player1);
+console.log("Player 2: " + player2);
+compare(player1, player2);
