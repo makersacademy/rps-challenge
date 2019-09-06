@@ -8,6 +8,13 @@ class Game
     @current_turn = @player1
     @off_turn = @player2
     @choices = []
+    @choice_hash = {
+      "Rock" => 1,
+      "Paper" => 2,
+      "Scissors" => 3,
+      "Spock" => 4,
+      "Lizard" => 5
+    }
   end
 
   def self.create(player1,player2)
@@ -33,19 +40,12 @@ class Game
   end
 
   def winner
-    if @choices[-2] == @choices[-1]
+    case (@choice_hash[@choices[-1]] - @choice_hash[@choices[-2]]) % 5
+    when 0
       "Draw, both players chose #{@choices[-1]}... click to play again!"
-    elsif @choices[-2] == "Rock" && @choices[-1] == "Paper"
+    when 1, 3
       "#{@choices[-1]} beats #{@choices[-2]}...#{@player2.name} wins!"
-    elsif @choices[-2] == "Rock" && @choices[-1] == "Scissors"
-      "#{@choices[-2]} beats #{@choices[-1]}...#{@player1.name} wins!"
-    elsif @choices[-2] == "Paper" && @choices[-1] == "Scissors"
-      "#{@choices[-1]} beats #{@choices[-2]}...#{@player2.name} wins!"
-    elsif @choices[-2] == "Paper" && @choices[-1] == "Rock"
-      "#{@choices[-2]} beats #{@choices[-1]}...#{@player1.name} wins!"
-    elsif @choices[-2] == "Scissors" && @choices[-1] == "Rock"
-      "#{@choices[-1]} beats #{@choices[-2]}...#{@player2.name} wins!"
-    elsif @choices[-2] == "Scissors" && @choices[-1] == "Paper"
+    when 2, 4
       "#{@choices[-2]} beats #{@choices[-1]}...#{@player1.name} wins!"
     end
   end

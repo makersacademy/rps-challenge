@@ -1,7 +1,11 @@
 <h1> <%= @winner %> </h1>
 
+<form action='/selection'>
+  <button style='font-size:60px' type='submit' name='Play Again'>Play Again</button>
+</form>
+
 <% if @winner.include? @game.player1.name %>
-  <img style='border:3px solid black;border_radius:8px;margin:12rem' src='https://cbsnews1.cbsistatic.com/hub/i/2015/07/24/37c039e4-6cda-479d-a38d-2fcea10f780e/gettyimages-471820400.jpg'>
+  <img style='border:3px solid black;border_radius:8px;margin:12rem' src='https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/04/The-Rock-920x584.jpg'>
 <% elsif @winner.include? @game.player2.name %>
   <img style='border:3px solid black;border_radius:8px;margin:12rem' src='https://bloggingdoesntgettougherthanthis.files.wordpress.com/2012/10/man-v-food-glut-3.jpg'>
 <% else %>
@@ -9,7 +13,3 @@
 <% end %>
 
 
-
-<form action='/selection'>
-  <button style='font-size:60px' type='submit' name='Play Again'>Play Again</button>
-</form>
