@@ -17,6 +17,8 @@ class RockPaperScissorsApp < Sinatra::Base
 
   get '/selection' do
     @game = Game.instance
+    @p1 = @game.player1.name
+    @p2 = @game.player2.name
     @turn_player = @game.current_turn.name
     @non_turn_player = @game.off_turn.name
     @game.switch_turn
