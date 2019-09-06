@@ -1,7 +1,6 @@
 class Game
 
-  attr_reader :player1, :player2, :current_turn, :off_turn
-  attr_accessor :choices
+  attr_reader :player1, :player2, :current_turn, :off_turn, :choices
 
   def initialize(player1, player2)
     @player1 = Player.new(player1)
@@ -30,24 +29,24 @@ class Game
   end
 
   def both_turns_complete?
-    @choices.length == 2
+    @choices.length.even?
   end
 
   def winner
-    if @choices[0] == @choices[1]
-      "Draw, both players chose #{@choices[0]}... click to play again!"
-    elsif @choices[0] == "Rock" && @choices[1] == "Paper"
-      "#{@choices[1]} beats #{@choices[0]}...#{@player2.name} wins!"
-    elsif @choices[0] == "Rock" && @choices[1] == "Scissors"
-      "#{@choices[0]} beats #{@choices[1]}...#{@player1.name} wins!"
-    elsif @choices[0] == "Paper" && @choices[1] == "Scissors"
-      "#{@choices[1]} beats #{@choices[0]}...#{@player2.name} wins!"
-    elsif @choices[0] == "Paper" && @choices[1] == "Rock"
-      "#{@choices[0]} beats #{@choices[1]}...#{@player1.name} wins!"
-    elsif @choices[0] == "Scissors" && @choices[1] == "Rock"
-      "#{@choices[1]} beats #{@choices[0]}...#{@player2.name} wins!"
-    elsif @choices[0] == "Scissors" && @choices[1] == "Paper"
-      "#{@choices[0]} beats #{@choices[1]}...#{@player1.name} wins!"
+    if @choices[-2] == @choices[-1]
+      "Draw, both players chose #{@choices[-1]}... click to play again!"
+    elsif @choices[-2] == "Rock" && @choices[-1] == "Paper"
+      "#{@choices[-1]} beats #{@choices[-2]}...#{@player2.name} wins!"
+    elsif @choices[-2] == "Rock" && @choices[-1] == "Scissors"
+      "#{@choices[-2]} beats #{@choices[-1]}...#{@player1.name} wins!"
+    elsif @choices[-2] == "Paper" && @choices[-1] == "Scissors"
+      "#{@choices[-1]} beats #{@choices[-2]}...#{@player2.name} wins!"
+    elsif @choices[-2] == "Paper" && @choices[-1] == "Rock"
+      "#{@choices[-2]} beats #{@choices[-1]}...#{@player1.name} wins!"
+    elsif @choices[-2] == "Scissors" && @choices[-1] == "Rock"
+      "#{@choices[-1]} beats #{@choices[-2]}...#{@player2.name} wins!"
+    elsif @choices[-2] == "Scissors" && @choices[-1] == "Paper"
+      "#{@choices[-2]} beats #{@choices[-1]}...#{@player1.name} wins!"
     end
   end
 
