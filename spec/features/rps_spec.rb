@@ -7,3 +7,12 @@ feature 'signs in the player' do
     find_button('Obey').click
   end
 end
+
+feature 'displays player name given during registration' do
+  scenario 'displays name' do
+    visit('/')
+    fill_in('name', with: 'Boris')
+    click_button('Obey')
+    expect(page).to have_content('Boris')
+  end
+end
