@@ -4,7 +4,12 @@ class Fight < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Hello World'
+    erb :index
+  end
+
+  post '/names' do
+    @player_1_name = params[:player_1_name]
+    erb :play
   end
 
     run! if __FILE__ == $PROGRAM_NAME
