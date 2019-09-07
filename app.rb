@@ -25,6 +25,7 @@ class Fight < Sinatra::Base
   end
 
   post '/game-result' do
+    @game.computer_guess
     @game.player1.tool = params[:choice]
     erb :result
   end

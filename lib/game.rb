@@ -4,7 +4,7 @@ class Game
 RULES = { rock: 'scissors', paper: 'rock', scissors: 'paper'}
 
 attr_reader :player1
-attr_accessor :opponent_choice
+
   def initialize(player1)
     @player1 = player1
     @opponent_choice = nil
@@ -36,6 +36,10 @@ attr_accessor :opponent_choice
     else
       'Tie! Try again'
     end
+  end
+
+  def opponent_choice
+    @opponent_choice
   end
 
 end
