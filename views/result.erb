@@ -1,2 +1,6 @@
 <h3>Player <%= @game.player1.name %> chose <%=@game.player1.tool%> and the computer chose <%=@game.opponent_choice%></h3>
 <%=@game.winner_is%>
+
+<form action='/'>
+  <input type='submit' value=' Play again? &#129488'>
+</form>
