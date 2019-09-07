@@ -2,8 +2,12 @@ class Game
   attr_reader :player, :computer_choice
   def initialize(player = nil)
     @player = player
-    @computer_choice = ['Rock', 'Paper','Scissors'].sample
-    @logic = [ {'Rock' => 'Scissors'}, {'Paper' => 'Rock'}, {'Scissors' => 'Paper'} ]
+    @computer_choice = ['Rock', 'Paper', 'Scissors'].sample
+    @logic = [
+      { 'Rock' => 'Scissors' },
+      { 'Paper' => 'Rock' },
+      { 'Scissors' => 'Paper' }
+    ]
   end
 
   def self.create(player)
@@ -20,8 +24,10 @@ class Game
     return 'LOSER!'
   end
 
+private
+
   def result
-    {@player.choice => @computer_choice}
+    { @player.choice => @computer_choice }
   end
 
   def draw?

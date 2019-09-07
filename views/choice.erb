@@ -1,6 +1,38 @@
+<head>
+<style>
+/* form {
+  float: center;
+} */
+div.wrapper {
+    text-align: center;
+}
+button {
+  background-color: #2F4F4F;
+  border-style: outset;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  font-size: 60px;
+  float: centre;
+  width: 15%;
+  padding: 40px;
+  border-radius: 30%;
+}
+h1 {
+  color: green;
+  text-align: center;
+  font-size: 50px;
+  float: centre;
+}
+</style>
+</head>
+<body>
 <h1>Welcome <%=@game.player.name%>! Please select a move...</h1>
+<div class='wrapper'>
 <form action='/selection' method='post'>
-  <button name='choice' type='submit' value='Rock'>ROCK</button>
-  <button name='choice' type='submit' value='Paper'>PAPER</button>
-  <button name='choice' type='submit' value='Scissors'>SCISSORS</button>
+  <button name='choice' type='submit' value='Rock'>&#9994;</button>
+  <button name='choice' type='submit' value='Paper'>&#9995;</button>
+  <button name='choice' type='submit' value='Scissors'>&#9996;</button>
 </form>
+</div>
+</body>

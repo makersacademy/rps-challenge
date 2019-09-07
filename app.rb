@@ -7,6 +7,7 @@ class RPS < Sinatra::Base
   before do
     @game = Game.instance
   end
+
   get '/' do
     erb :sign_in
   end
@@ -18,7 +19,6 @@ class RPS < Sinatra::Base
   end
 
   get '/choice' do
-    # @player = @game.player.name
     erb :choice
   end
 
@@ -28,8 +28,6 @@ class RPS < Sinatra::Base
   end
 
   get '/outcome' do
-    # @player = @game.player.name
-    # @player_choice = @game.player.choice
     erb :result
   end
 
