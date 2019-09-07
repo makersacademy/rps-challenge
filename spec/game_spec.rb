@@ -2,15 +2,17 @@ require './lib/game.rb'
 
 describe Game do
   it 'generates a computer rps choice' do
-    players_choice = 'Rock'
+    player = Player.new('Dave')
+    player.rps_choice = 'Rock'
     srand(1)
-    game = Game.new(players_choice)
-    expect(game.computer_choice).to eq 'Scissors'
+    game = Game.new(player)
+    expect(game.computer_choice).to eq("Scissors")
   end
   it 'calculates the winner' do
-    players_choice = 'Rock'
+    player = Player.new('Dave')
+    player.rps_choice = 'Rock'
     srand(1)
-    game = Game.new(players_choice)
+    game = Game.new(player)
     expect(game.winner).to eq 'Player'
   end
 end
