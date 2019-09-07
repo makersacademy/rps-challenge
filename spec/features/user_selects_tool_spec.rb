@@ -13,3 +13,11 @@ feature 'Player selects a tool' do
     expect(page).to have_text('paper')
   end
 end
+
+feature 'Player selects a tool' do
+  scenario 'player selects paper and gets paper' do
+    sign_in_and_play
+    click_on 'scissors'
+    expect(page).to have_text('scissors')
+  end
+end

@@ -1,9 +1,10 @@
+require_relative './player'
 class Game
 
 RULES = { rock: 'scissors', paper: 'rock', scissors: 'paper'}
 
 attr_reader :player1
-attr_accessor :rand_seed
+# attr_accessor :rand_seed
   def initialize(player1)
     @player1 = player1
   end
@@ -20,19 +21,19 @@ attr_accessor :rand_seed
   #   rand 2345678
   # end
   #
-  # def computer_guess
+  def computer_guess
   #   srand(@rand_seed || randomization_algorithm)
-  #   [:scissor, :rock, :paper].sample
-  # end
+    [:scissors, :rock, :paper].sample
+  end
   #
-  # def winner_is
-  #   if RULES[computer_guess].include? @player1.choice
-  #     'Computer wins'
-  #   elsif RULES[@player1.choice.to_sym].include? computer_guess
-  #     'Player wins'
-  #   else
-  #     'Tie! Tray again'
-  #   end
-  # end
+  def winner_is
+    if RULES[computer_guess].include?(@player1.tool)
+      'Computer wins'
+    elsif RULES[(@player1.tool).to_sym].include?(computer_guess.to_s)
+      'Player wins'
+    else
+      'Tie! Try again'
+    end
+  end
 
 end
