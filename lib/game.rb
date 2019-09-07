@@ -4,9 +4,10 @@ class Game
 RULES = { rock: 'scissors', paper: 'rock', scissors: 'paper'}
 
 attr_reader :player1
-# attr_accessor :rand_seed
+attr_accessor :opponent_choice
   def initialize(player1)
     @player1 = player1
+    @opponent_choice = nil
   end
 
   def self.create(player1)
@@ -23,13 +24,14 @@ attr_reader :player1
   #
   def computer_guess
   #   srand(@rand_seed || randomization_algorithm)
-    [:scissors, :rock, :paper].sample
+    choice = [:scissors, :rock, :paper].sample
+    @opponent_choice = choice
   end
   #
   def winner_is
-    if RULES[computer_guess].include?(@player1.tool)
+    if RULES[@opponent_choice].include?(@player1.tool)
       'Computer wins'
-    elsif RULES[(@player1.tool).to_sym].include?(computer_guess.to_s)
+    elsif RULES[(@player1.tool).to_sym].include?(@opponent_choice.to_s)
       'Player wins'
     else
       'Tie! Try again'

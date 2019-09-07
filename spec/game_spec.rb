@@ -30,20 +30,23 @@ describe Game do
 
   describe '#winner_is' do
     it 'ties if both players choose the same' do
+      srand 1
       allow(alpha).to receive(:tool).and_return('rock')
-      allow(game).to receive(:computer_guess).and_return(:rock)
+      game.computer_guess
       expect(game.winner_is).to eq 'Tie! Try again'
     end
 
     it 'player1 wins if chooses the stronger match' do
+      srand 2
       allow(alpha).to receive(:tool).and_return('rock')
-      allow(game).to receive(:computer_guess).and_return(:scissors)
+      game.computer_guess
       expect(game.winner_is).to eq 'Player wins'
     end
 
     it 'player1 loses if chooses the weaker match' do
-      allow(alpha).to receive(:tool).and_return('paper')
-      allow(game).to receive(:computer_guess).and_return(:scissors)
+      srand 3
+      allow(alpha).to receive(:tool).and_return('rock')
+      game.computer_guess
       expect(game.winner_is).to eq 'Computer wins'
     end
 
