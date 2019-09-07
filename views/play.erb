@@ -1,9 +1,20 @@
-<h3>Player name is:</h3><font color="red"><%= @player_1_name%></font>
-<div></div>
-<input type="submit" value='Paper'> <input type="submit" value='Scissors'>
-<input type="submit" value='Rock'>
+<h3>Player name is:</h3><font color="red"><%= @game.player1.name%></font>
 
-<!-- <form action="/selection" method="post">
+<form action="/game-result" method='post'>
+  <input type="submit" name="choice" value="rock">
+  <input type="submit" name="choice" value="paper">
+  <input type="submit" name="choice" value="scissors">
+</form>
+
+<!-- <div></div>
+<form action="/game-result" method="post">
+<input type="button" name="selection" value='Paper'> <input type="submit" name="selection" value='Scissors'>
+<input type="submit" id="selection" name="selection" value='Rock'>
+</form> -->
+
+<!-- THIS ONE WORKS!!!!! -->
+
+<!-- <form action="/game-result" method="post">
   <select id="selection" name="selection">
       <option value="rock">Rock</option>
       <option value="paper">Paper</option>
@@ -12,8 +23,20 @@
   </select>
 </form> -->
 
-<form action='/rps' method='post'>
+<!-- <form action='/rps' method='post'>
 			<input type='submit' value='Rock'>
 			<input type='submit' value='Paper'>
 			<input type='submit' value='Scissors'>
-			</form>
+			</form> -->
+
+      <!-- <form action='/rps' method='post'>
+  <select style='font-size:20px' name="RPS">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+    <option value="Spock">Spock</option>
+    <option value="Lizard">Lizard</option>
+  </select>
+
+
+  @game.choices << params[:RPS] -->
