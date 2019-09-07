@@ -1,7 +1,13 @@
 require 'sinatra/base'
+require_relative 'lib/player'
+require_relative 'lib/game'
 
 class Fight < Sinatra::Base
   enable :sessions
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb :index
