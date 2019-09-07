@@ -1,0 +1,24 @@
+<html>
+<body bgcolor="#F5F4F0">
+  <center>
+    <h1> <%=@player%>!!<br>
+      Choose Your Move... </br></h1>
+      <style>
+        .box{
+          height:100%;
+          widht:100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .btnimage:focus {
+          outline:0
+        }
+      </style>
+
+      <div class="box">
+        <input class="btnimage" type="image" height="250" src="./rock.jpeg" alt="Rock" />
+        <input class="btnimage" type="image" height="250" src="./paper.jpeg" alt="Paper" />
+        <input class="btnimage" type="image" height="250" src="./scissor.jpeg" alt="Scissor" />
+      </div>
+    </body>

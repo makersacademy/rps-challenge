@@ -1,1 +1,21 @@
-<h1> <%= "Rock, Paper and Scissor!" %> </h1>
+<html>
+<body bgcolor="#F5F4F0">
+  <center>
+    <h1><font face="Garamound"</font>
+      <%="Welcome to Rock, Paper and Scissor!"%></h1>
+      <h2><%= "Enter your name to play:" %></h2>
+    </center>
+
+    <center>
+      <form action="/name" method="post">
+        <label for="player">
+          <h3> Player
+          <input type="text" name="player">
+          </h3>
+        </label>
+        <input type="submit" value="Play">
+      </form>
+    </center>
+
+  </body>
+  </html>
