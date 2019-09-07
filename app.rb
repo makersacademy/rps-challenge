@@ -25,7 +25,7 @@ class Fight < Sinatra::Base
   end
 
   post '/game-result' do
-    @tool = params[:choice]
+    @game.player1.tool = params[:choice]
     erb :result
   end
 

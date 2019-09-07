@@ -8,5 +8,11 @@ describe Player do
       expect(alpha.name).to eq 'Alpha'
     end
   end
-  
+
+  describe '#choice' do
+    it 'returns the stored player choice' do
+      expect(alpha.tool).to eq 'rock'
+    end
+  end
+
 end
