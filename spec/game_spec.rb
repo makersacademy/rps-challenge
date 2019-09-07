@@ -13,6 +13,10 @@ describe Game do
     player.rps_choice = 'Rock'
     srand(1)
     game = Game.new(player)
-    expect(game.winner).to eq 'Player'
+    expect(game.winner).to eq 'Dave'
+
+    srand(2)
+    game = Game.new(player)
+    expect(game.winner).to eq 'Computer'
   end
 end
