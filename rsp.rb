@@ -17,6 +17,17 @@ class RPS < Sinatra::Base
     @human_player = session[:name]
     erb :game_on
   end
+  
+  post '/users_choise' do
+    session[:value] = params[:subject]
+    redirect '/game_over'
+  end
+
+  get '/game_over' do
+    @human_player = session[:name]
+    @player_picks = session[:value]
+    erb :game_over
+  end
 
   run! if __FILE__ == $0
 

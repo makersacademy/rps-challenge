@@ -28,3 +28,11 @@ feature 'displayes 3 buttons' do
     find_button('Rock').click
   end
 end
+
+feature 'displayes user choice' do
+  scenario 'displays rock if user pickes rock' do
+    registers_a_name
+    click_button('Rock')
+    expect(page).to have_content('Boris goes for rock')
+  end
+end
