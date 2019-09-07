@@ -1,2 +1,2 @@
-require_relative './app'
-run Rps 
+require_relative 'app.rb'
+run Rps
