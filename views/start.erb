@@ -1,0 +1,14 @@
+<table style="height: 100%; left: 0; position: absolute; text-align: center; width: 100%;">
+ <tr>
+  <td>
+   <div style="text-align: left; display: inline-block;">
+     <form action='/play' method='get'>
+       <%= "Hi #{params[:name]} - Click to play?" %><br>
+       <button type="submit" name=rps_choice value='Rock'>Rock</button>
+       <button type="submit" name=rps_choice value='Paper'>Paper</button>
+       <button type="submit" name=rps_choice value='Scissors'>Scissors</button>
+     </form>
+   </div>
+  </td>
+ </tr>
+</table>

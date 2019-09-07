@@ -6,8 +6,14 @@ class RockPaperScissors < Sinatra::Base
     erb :register
   end
 
-  post '/play' do
-    'Welcome Maria - Ready to play?'
+  post '/start_game' do
+    erb :start
+  end
+
+  get '/play' do
+    # rps_random = game.computer_choice
+    # winner = 
+    'The winner is Maria'
   end
 
 end
