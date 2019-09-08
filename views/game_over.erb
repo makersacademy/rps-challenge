@@ -1,1 +1,10 @@
 <h1>You chose <%= @play %></h1>
+<h1>Opponent chose <%= @opponent %></h1>
+
+<% if @result == :draw %>
+  <h1>DRAW</h1>
+<% elsif @result == :win %>
+  <h1><%= @player_name %> WINS</h1>
+<% else %>
+  <h1><%= @player_name %> LOSES</h1>
+<% end %>
