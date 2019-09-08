@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/opponent'
+require './lib/decide'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -19,9 +20,9 @@ class Rps < Sinatra::Base
   end
 
   post '/play' do
-    session[:hand] = params[:hand]
-    @opponent = Opponent.new
-    session[:opponent_hand] = @opponent.hand
+    @player_hand = params[:hand]
+    @opponent_hand = Opponent.new.hand
+    @result = Decide.new(@player_hand, @opponent_hand).result
     erb :result
   end
 

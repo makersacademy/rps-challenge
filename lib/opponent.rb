@@ -4,7 +4,7 @@ class Opponent
   WEAPON = ['Rock', 'Paper', 'Scissors']
 
   def initialize
-    @hand = self.weapon
+    @hand = weapon
   end
 
   def weapon

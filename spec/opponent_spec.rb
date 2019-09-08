@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'opponent'
 
 describe Opponent do
   let(:opponent) { described_class.new }
