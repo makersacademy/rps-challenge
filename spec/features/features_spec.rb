@@ -18,3 +18,12 @@ describe 'add player name', type: :feature do
     expect(page).to have_content 'player'
   end
 end
+
+# describe 'selecting options', type: :feature do
+#   scenario 'player choose an option to start the game' do
+#     visit('/')
+#     fill_in "player", with: 'player'
+#     click_button ''
+#
+#   end
+# end

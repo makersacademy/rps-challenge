@@ -17,8 +17,10 @@
       </style>
 
       <div class="box">
-        <input class="btnimage" type="image" height="250" src="./rock.jpeg" alt="Rock" />
-        <input class="btnimage" type="image" height="250" src="./paper.jpeg" alt="Paper" />
-        <input class="btnimage" type="image" height="250" src="./scissor.jpeg" alt="Scissor" />
+        <form action="/result" method="post">
+        <input name="move" type="image" class="btnimage" type="image" height="250" src="./rock.jpeg" alt="Rock" value="Rock"/>
+        <input name="move" type="image" class="btnimage" type="image" height="250" src="./paper.jpeg" alt="Paper" value="Paper" />
+        <input name="move" type="image" class="btnimage" type="image" height="250" src="./scissor.jpeg" alt="Scissor" value="Scissor" />
+        </form
       </div>
     </body>

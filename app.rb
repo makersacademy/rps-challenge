@@ -10,13 +10,15 @@ class RPSGame < Sinatra::Base
   end
 
   post '/name' do
-   @player = params[:player]
+    @player = params[:player]
+    session[:player] = @player
     erb(:play)
   end
 
-  get '/play' do
-    @player = session[:player]
-    erb(:play)
+  get '/result' do
+      @game = Game.new(params[:move])
+      @player = session[:player]
+      erb(:result)
   end
 
   run! if app_file == $0
