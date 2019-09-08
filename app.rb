@@ -33,7 +33,6 @@ post '/attack' do
 end
 
 get '/result' do
-
   erb(:result)
 end
 
