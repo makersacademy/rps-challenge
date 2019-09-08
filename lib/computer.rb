@@ -1,5 +1,5 @@
 class Computer
-  attr_reader :attack, :possible_attacks
+  attr_reader :attack, :possible_attacks, :name
 
   def initialize
     @name = "Computer"
