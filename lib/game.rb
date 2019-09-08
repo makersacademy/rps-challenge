@@ -13,22 +13,25 @@ class Game
 
   def initialize(player_1)
     @player_1 = player_1
-    @rules = { 'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper' }
+    @rules = { :rock => :scissors, :paper => :rock, :scissors => :paper }
   end
 
   def computer
-    @comp_choice = ['rock', 'paper', 'scissors'].sample
+    @comp_choice = [:rock, :paper, :scissors].sample
   end
 
-  def result(player_choice, computer_choice)
-    if beats?(player_choice, computer_choice)
-      'win' 
-    elsif
-      player_choice == computer_choice
-      'draw'
+  def result(player_choice, computer_choice) 
+    if player_choice == computer_choice
+      :draw
+    elsif beats?(player_choice, computer_choice)
+      :win
     else
-      'loss'
+      :loss
     end
+  end
+
+  def test
+    :loss
   end
 
   private

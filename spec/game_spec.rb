@@ -16,21 +16,21 @@ describe Game do
 
   context '#computer_choice' do
     it 'provides a computer choice' do
-      expect(subject.computer).to eq('scissors')
+      expect(subject.computer).to eq(:scissors)
     end
   end 
 
   context 'returning correct result' do 
     it 'returns correct result for rock vs paper' do
-      expect(game.result('rock', 'paper')).to eq('loss')
+      expect(game.result(:rock, :paper)).to eq(:loss)
     end 
 
     it 'returns correct result for rock vs rock' do
-      expect(game.result('rock', 'rock')).to eq('draw')
+      expect(game.result(:rock, :rock)).to eq(:draw)
     end 
 
     it 'returns correct result for rock vs scissors' do
-      expect(game.result('rock', 'scissors')).to eq('win')
+      expect(game.result(:rock, :scissors)).to eq(:win)
     end 
   end 
 end

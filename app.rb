@@ -26,7 +26,7 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    @player.store_choice(params[:choice])
+    @player.store_choice(params[:choice].to_sym)
     @choice = @player.choice
     @player_name = @player.name
     erb(:choice)
@@ -35,8 +35,10 @@ class RPS < Sinatra::Base
   post '/result' do
     @player_name = @player.name
     @choice = @player.choice
-    @game.result
-    erb(:result)
+    @comp_choice = @game.computer
+    @result = @game.result(@choice, @comp_choice)
+    p @result
+    erb @result
   end
 
   run! if app_file == $0
