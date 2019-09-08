@@ -1,20 +1,55 @@
 require './lib/game.rb'
 
 describe Game do
-  before(:each) do
-    player = Player.new('Dave')
-    player.rps_choice = 'Rock'
-    srand(1)
-    @game = Game.new(player)
+  describe 'player selects rock' do
+    before(:each) do
+      player = Player.new('Dave')
+      @game = Game.new(player)
+      srand(1)
+      @game.play('Scissors')
+    end
+    it 'updates player choice' do
+      expect(@game.player_choice).to eq('Scissors')
+    end
+    it 'generates a computer rps choice' do
+      expect(@game.computer_choice).to eq('Paper')
+    end
+    it 'calculates the winner' do
+      expect(@game.winner).to eq 'Dave'
+    end
   end
-  it 'generates a computer rps choice' do
-    expect(@game.computer_choice).to eq('Paper')
+  describe 'player selects paper' do
+    before(:each) do
+      player = Player.new('Dave')
+      @game = Game.new(player)
+      srand(1)
+      @game.play('Paper')
+    end
+    it 'updates player choice' do
+      expect(@game.player_choice).to eq('Paper')
+    end
+    it 'generates a computer rps choice' do
+      expect(@game.computer_choice).to eq('Scissors')
+    end
+    it 'calculates the winner' do
+      expect(@game.winner).to eq 'Computer'
+    end
   end
-  it 'calculates the winner' do
-    expect(@game.winner).to eq 'Computer'
-  end
-  it 'updates player choice' do
-    @game.update_player_choice('Scissors')
-    expect(@game.player_choice).to eq('Scissors')
+  describe 'player selects scissors' do
+    before(:each) do
+      player = Player.new('Dave')
+      @game = Game.new(player)
+      srand(1)
+      @game.play('Scissors')
+    end
+    it 'updates player choice' do
+      expect(@game.player_choice).to eq('Scissors')
+    end
+    it 'generates a computer rps choice' do
+      expect(@game.computer_choice).to eq('Paper')
+    end
+    it 'calculates the winner' do
+      expect(@game.winner).to eq 'Dave'
+    end
   end
 end

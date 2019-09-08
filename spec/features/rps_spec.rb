@@ -34,11 +34,4 @@ feature 'so I can start a games' do
       expect(page).to have_content 'Computer chose'
     end
   end
-  feature 'so I can play again' do
-    scenario 'link to play again will show on screen' do
-      register_to_play
-      click_button 'Rock'
-      expect(page).to have_link(href: '/play_again')
-    end
-  end
 end

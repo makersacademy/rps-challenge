@@ -9,18 +9,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/start_game' do
-    $player = Player.new(params[:name])
+    player = Player.new(params[:name])
+    $game = Game.new(player)
     erb :start
   end
 
   get '/play' do
-    $player.rps_choice = params[:rps_choice]
-    $game = Game.new($player)
+    $game.play(params[:rps_choice])
     erb :play
-  end
-
-  get '/play_again' do
-    erb :start
   end
 
 end

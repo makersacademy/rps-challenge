@@ -6,34 +6,34 @@ class Game
 
   def initialize(player)
     store_player_details(player)
-    @winner = calculate_winner(player.rps_choice, rps_random)
   end
 
-  def update_player_choice(choice)
+  def play(choice)
+    update_player(choice)
+    @winner = calculate_winner
+  end
+
+  private
+  def store_player_details(player)
+    @player = player
+  end
+
+  def update_player(choice)
     @player.rps_choice = choice
     @player_choice = @player.rps_choice
   end
 
-  private
-  def calculate_winner(rps_player, rps_random)
-    player_wins?(rps_player, rps_random) ? @player.name : 'Computer'
+  def calculate_winner
+    create_random_choice
+    player_wins? ? @player.name : 'Computer'
   end
 
-  def player_wins?(players_choice, random_choice)
-    RPS_BEATS[players_choice] == random_choice
+  def player_wins?
+    RPS_BEATS[@player_choice] == @computer_choice
   end
 
-  def store_player_details(player)
-    @player = player
-    @player_choice = player.rps_choice
-  end
-
-  def rps_random
-    @computer_choice = remove_players_choice.sample
-  end
-
-  def remove_players_choice
-    ['Rock', 'Paper', 'Scissors'] - [@players_choice]
+  def create_random_choice
+    @computer_choice = (['Rock', 'Paper', 'Scissors'] - [@player_choice]).sample
   end
 
 end
