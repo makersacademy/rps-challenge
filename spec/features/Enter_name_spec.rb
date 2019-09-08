@@ -7,6 +7,6 @@ feature 'Enter name' do
     visit('/') # player visits home page
     fill_in :player_name, with: 'jgeorgex' # player enters name
     click_button 'PLAY RPS!'
-    expect(page).to have_content 'jgeorgex'
+    expect(page).to have_content 'jgeorgex' # need to add 'in red' for in lights requirement. 
   end
 end
