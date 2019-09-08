@@ -22,9 +22,9 @@ class Game
 
   def who_won?
     if @player1.attack == @player2.attack
-      "It's a draw!"
+      "No winner"
     else
-      @logic[@player1.attack] == @player2.attack ? "#{@player1.name} won!" : "#{@player2.name} won!"
+      @logic[@player1.attack] == @player2.attack ? @player1.name : @player2.name
     end
   end
 end

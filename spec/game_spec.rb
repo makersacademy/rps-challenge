@@ -26,21 +26,21 @@ describe Game do
     it 'returns no one if draw' do
       allow(player1).to receive(:attack).and_return(:Rock)
       allow(player2).to receive(:attack).and_return(:Rock)
-      expect(game.who_won?).to eq("It's a draw!")
+      expect(game.who_won?).to eq("No winner")
     end
 
     it 'returns @player1 if player1 wins (p1 rock p2 scissor)' do
       allow(player1).to receive(:attack).and_return(:Rock)
       allow(player1).to receive(:name).and_return('Bob')
       allow(player2).to receive(:attack).and_return(:Scissors)
-      expect(game.who_won?).to eq('Bob won!')
+      expect(game.who_won?).to eq('Bob')
     end
 
     it 'returns @player2 if player2 wins (p1 rock p2 paper)' do
       allow(player1).to receive(:attack).and_return(:Rock)
       allow(player2).to receive(:attack).and_return(:Paper)
       allow(player2).to receive(:name).and_return('Computer')
-      expect(game.who_won?).to eq('Computer won!')
+      expect(game.who_won?).to eq('Computer')
     end
 
   end
