@@ -1,6 +1,6 @@
 <html>
 <head>
-<title> RRPS - Match </title>
+<title> RRPS - Result </title>
 <style>
   body {
     font-family: Arial, Helvetica, sans-serif;
@@ -37,17 +37,18 @@
 </head>
 <body>
   <header>
-    <h1> Lets Play Rock Paper Sissors </h1>
+    <h1>
+      You played <%= @player_move %>
+      </br>
+      The Computer played <%= @computer_move %>
+      </br>
+    </h1>
   </header>
   <maintext>
-    <h3> Welcome <%= @player_name %> what would you like to play?</h3>
-    <form action="/result" method="post">
+    <h3> You <%= @result %> the game</h3>
+    <form action="/match" method="post">
       </br>
-      <button type="submit" value="rock" name="player">ROCK</button>
-      </br>
-      <button type="submit" value="paper" name="player">PAPER</button>
-      </br>
-      <button type="submit" value="sissors" name="player">SISSORS</button>
+      <button type="submit">Play Again?</button>
     </form>
   </maintext>
 </body>
