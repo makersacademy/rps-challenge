@@ -1,7 +1,7 @@
 <div style="text-align: center">
   <H1>Welcome to the RPS Lobby!</H1>
     <br>
-  <form action="/new", method="post">
+  <form action="/new" method="post">
     <label for="game_name">
       Please enter a name for your game:
       <input type="text" name="game_name">
@@ -10,17 +10,15 @@
     <label><input type="checkbox" name="ai" value="true">AI opponent?</label>
   </form>
   <H3>Or alternatively...</H3>
-  <table style="margin-left:auto; margin-right:auto;" border="1">
+  <table style="margin-left:auto; margin-right:auto;padding:15px;" border="1">
     <tr>
       <th scope="column">Game Name</th>
       <th scope="column">Still Open?</th>
     </tr>
-    <% for @game in @games %>
-      <%= @game.to_table_row %>
-    <% end %>
+    <% @games.each { |g| g.to_table_row } %>
   </table>
   <br>
-  <form action="/join", method="post">
+  <form action="/join" method="post">
     <label for="game_name">
       Please enter the name of the game you'd like to join:
       <input type="text" name="game_name">

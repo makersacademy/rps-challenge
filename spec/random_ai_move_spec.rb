@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/random_ai_move'
 
 describe RandomAiMove do

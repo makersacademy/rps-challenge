@@ -306,4 +306,3 @@ describe 'Acceptance Tests' do
     end
   end
 end
-

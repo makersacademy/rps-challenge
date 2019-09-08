@@ -1,4 +1,4 @@
-require 'securerandom'
+# frozen_string_literal: true
 
 class Player
   attr_reader :name, :id, :decision_delegate, :chosen_move

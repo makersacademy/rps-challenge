@@ -9,14 +9,19 @@ describe Game do
   let(:player2) { instance_double('Player', id: '2') }
   let(:player3) { instance_double('Player', id: '3') }
 
-  let(:rules)   { instance_double('Rules', valid_moves: [:rock, :paper, :scissors]) }
+  let(:rules)   { instance_double('Rules', valid_moves: %i[rock paper scissors]) }
 
   GAME_NAME = 'Test Game'
-  
+
   subject { init_subject }
 
   def init_subject
     Game.new(GAME_NAME, rules)
+  end
+
+  def add_players
+    subject.add_player(player1)
+    subject.add_player(player2)
   end
 
   describe '#initialize' do
@@ -32,15 +37,13 @@ describe Game do
 
   describe '#add_player' do
     it 'can add two players' do
-      subject.add_player(player1)
-      subject.add_player(player2)
+      add_players
       expect(subject.player1).to be player1
       expect(subject.player2).to be player2
     end
 
     it 'can only add two players' do
-      subject.add_player(player1)
-      subject.add_player(player2)
+      add_players
       expect { subject.add_player(player3) }.to raise_error Game::Full
     end
 
@@ -55,19 +58,14 @@ describe Game do
     PAPER = :paper
 
     before :each do
-      subject.add_player(player1)
-      subject.add_player(player2)
-
-      allow(player1).to receive(:request_move).and_return(ROCK)
-      allow(player2).to receive(:request_move).and_return(PAPER)
+      [player1, player2].each do |p|
+        subject.add_player(p)
+        allow(p).to receive(:request_move).and_return(ROCK)
+        allow(p).to receive(:chosen_move)
+        allow(p).to receive(:new_turn)
+      end
 
       allow(subject).to receive(:finished?).and_return(false, false, true)
-
-      allow(player1).to receive(:chosen_move)
-      allow(player2).to receive(:chosen_move)
-
-      allow(player1).to receive(:new_turn)
-      allow(player2).to receive(:new_turn)
     end
 
     it 'asks players for their moves until game is finished' do
@@ -90,8 +88,7 @@ describe Game do
 
   describe '#winner' do
     it 'asks its rules for a winner' do
-      subject.add_player(player1)
-      subject.add_player(player2)
+      add_players
       expect(rules).to receive(:winner).with(player1, player2)
       subject.winner
     end
@@ -103,19 +100,17 @@ describe Game do
     end
 
     it 'is ready when both player slots are occupied' do
-      subject.add_player(player1)
-      subject.add_player(player2)
+      add_players
       expect(subject.ready?).to eq true
     end
   end
 
   describe '#finished' do
+    before(:each) { add_players }
+
     it 'is false when a player is yet to play' do
       allow(player1).to receive(:chosen_move).and_return(:rock)
       allow(player2).to receive(:chosen_move).and_return(nil)
-
-      subject.add_player(player1)
-      subject.add_player(player2)
 
       expect(subject.finished?).to be false
     end
@@ -123,9 +118,6 @@ describe Game do
     it 'is true when both players have played' do
       allow(player1).to receive(:chosen_move).and_return(:rock)
       allow(player2).to receive(:chosen_move).and_return(:paper)
-
-      subject.add_player(player1)
-      subject.add_player(player2)
 
       expect(subject.finished?).to be true
     end

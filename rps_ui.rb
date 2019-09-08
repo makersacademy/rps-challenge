@@ -134,7 +134,7 @@ class RpsUi < Sinatra::Base
     back_to_lobby
   end
 
-  def choose_move(player_id, moves)
+  def choose_move(player_id, _)
     @repository.move(player_id)&.to_sym
   end
 
@@ -174,6 +174,6 @@ class Game
         <td><%= !ready? %></td>
         </tr>
     )
-    output = ERB.new(template).result(binding)
+    ERB.new(template).result(binding)
   end
 end

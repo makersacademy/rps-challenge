@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/rules'
 require './lib/player'
 
@@ -7,7 +9,7 @@ describe Rules do
   end
 
   it 'has a list of valid moves' do
-    expect(subject.valid_moves).to eq [:rock, :paper, :scissors]
+    expect(subject.valid_moves).to eq %i[rock paper scissors]
   end
 
   context 'rock beats scissors' do

@@ -1,8 +1,10 @@
-class Game
-  class Full < RuntimeError; end;
-  class DuplicatePlayer < RuntimeError; end;
+# frozen_string_literal: true
 
-  attr_reader :player1, :player2, :name
+class Game
+  class Full < RuntimeError; end
+  class DuplicatePlayer < RuntimeError; end
+
+  attr_reader :name
 
   def initialize(name, rules)
     @name = name
@@ -31,18 +33,18 @@ class Game
   end
 
   def play
-    unless @in_play
-      @players.each(&:new_turn)
-      @in_play = true
+    return if @in_play
 
-      until finished?
-        @players
-          .select { |p| p.chosen_move.nil? }
-          .each { |p| p.request_move(@rules.valid_moves) }
-      end
+    @players.each(&:new_turn)
+    @in_play = true
 
-      @in_play = false
+    until finished?
+      @players
+        .select { |p| p.chosen_move.nil? }
+        .each   { |p| p.request_move(@rules.valid_moves) }
     end
+
+    @in_play = false
   end
 
   def winner

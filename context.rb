@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './lib/repository'
 require_relative './lib/random_ai_move'
 require_relative './lib/rules'
