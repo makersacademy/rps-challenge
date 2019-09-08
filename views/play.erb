@@ -3,8 +3,10 @@
  <tr>
   <td>
    <div style="text-align: left; display: inline-block;">
-     <%= "The winner is #{$game.winner}" %>"
-     <a href='/play_again' id='play'>play again?</a>"
+     <%= "You chose #{$player.rps_choice}" %><br>
+     <%= "Computer chose #{$game.computer_choice}" %><br>
+     <%= "The winner is #{$game.winner}" %><br>
+     <a href='/play_again' id='play'>play again?</a>
    </div>
   </td>
  </tr>
