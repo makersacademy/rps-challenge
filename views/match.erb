@@ -1,6 +1,6 @@
 <html>
 <head>
-<title> RPS - Login </title>
+<title> RRPS - Match </title>
 <style>
   body {
     font-family: Arial, Helvetica, sans-serif;
@@ -26,22 +26,29 @@
     font-size: 35px;
   }
 
+  button {
+    font-size: 35px;
+    width:200px;
+    height:50px;
+    color:red
+  }
+
 </style>
 </head>
 <body>
   <header>
-    <h1> Welcome to Rock Paper Sissor </h1>
+    <h1> Lets Play Rock Paper Sissors </h1>
   </header>
   <maintext>
-    <h2> Please enter your name </h2>
+    <h3> Welcome <%= @player_name %> what would you like to play?</h3> 
     <form action="/match" method="post">
-      <textarea rows="1" cols="25" placeholder="Enter name here" name="Player1"></textarea>
       </br>
+      <button type="submit" value="Submit">ROCK</button>
       </br>
-      <button type="submit" value="Submit" style='font-size: 35px;width:200px; height:50px; color:red'>Lets Play</button>
+      <button type="submit" value="Submit">PAPER</button>
       </br>
+      <button type="submit" value="Submit">SISSORS</button>
     </form>
-    <img src="https://cdn4.vectorstock.com/i/1000x1000/37/43/rock-paper-scissors-vector-5953743.jpg"/>
   </maintext>
 </body>
 </html>
