@@ -30,5 +30,5 @@ class Fight < Sinatra::Base
     erb :result
   end
 
-    run! if __FILE__ == $PROGRAM_NAME
-  end
+  run! if $PROGRAM_NAME == __FILE__
+end
