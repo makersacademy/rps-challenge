@@ -1,0 +1,14 @@
+<h1>It's your move, <%= Player.name %>!</h1>
+<form action='play' method='post'>
+  <button type='submit' name='choice' value='rock'><img style='width:200px; height:200px;'
+  src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Logan_Rock_Treen_closeup.jpg"
+  alt='rock'></button>
+  <button type='submit' name='choice' value='paper'><img style='width:200px; height:200px;'
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/United_States_Declaration_of_Independence.jpg/440px-United_States_Declaration_of_Independence.jpg"
+  alt='paper'></button>
+  <button type='submit' name='choice' value='scissors'><img style='width:200px; height:200px;'
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg/1920px-Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg"
+  alt='scissors'></button>
+</form>
+<h3><%= @message %></h3>
+<h4>Wins: <%= Player.win_total %> </br>Losses: <%= Player.loss_total %></h4>
