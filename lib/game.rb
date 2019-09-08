@@ -4,7 +4,7 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-    @logic = { rock: :paper, paper: :scissors, scissors: :rock }
+    @logic = { rock: :scissors, paper: :rock, scissors: :paper }
   end
 
   def attack(player, attack=nil)
@@ -13,9 +13,9 @@ class Game
 
   def who_won?
     if @player1.attack == @player2.attack
-      "no one"
-    elsif
-      @logic[@player1.attack] == @player2.attack ? @player1 : @player2
+      "It's a draw!"
+    else
+      @logic[@player1.attack] == @player2.attack ? @player1.name : @player2.name
     end
   end
 end
