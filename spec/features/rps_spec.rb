@@ -36,3 +36,12 @@ feature 'displayes user choice' do
     expect(page).to have_content('Boris goes for rock')
   end
 end
+
+feature 'ai picks something' do
+  scenario 'ai picks rock' do
+    registers_a_name
+    click_button('Rock')
+    allow_any_instance_of(AI).to receive(:radom).and_return('rock')
+    expect(page).to have_content('AI goes for')
+  end
+end

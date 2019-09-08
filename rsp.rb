@@ -1,4 +1,5 @@
 require 'sinatra'
+require './lib/ai.rb'
 
 class RPS < Sinatra::Base
 
@@ -17,7 +18,7 @@ class RPS < Sinatra::Base
     @human_player = session[:name]
     erb :game_on
   end
-  
+
   post '/users_choise' do
     session[:value] = params[:subject]
     redirect '/game_over'
@@ -26,6 +27,7 @@ class RPS < Sinatra::Base
   get '/game_over' do
     @human_player = session[:name]
     @player_picks = session[:value]
+    @ai_picks = AI.new.random
     erb :game_over
   end
 
