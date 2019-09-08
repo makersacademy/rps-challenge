@@ -131,8 +131,6 @@ describe 'Acceptance Tests' do
       register_player
       post_new_game
       delete_session_game
-
-      register_player PLAYER2_NAME
     end
 
     it "redirects to game-not-found if game doesn't exist" do
@@ -140,13 +138,20 @@ describe 'Acceptance Tests' do
       expect_redirect_to '/game-not-found'
     end
 
+    it 'does not try to add player to game if player already in game' do
+      register_player PLAYER1_NAME
+      join_game
+    end
+
     it 'adds player to requested game' do
+      register_player PLAYER2_NAME
       join_game
       game = repository.game(GAME_NAME)
       expect(game.player2).not_to be_nil
     end
 
     it 'redirects to play' do
+      register_player PLAYER2_NAME
       join_game
       expect_redirect_to '/play'
     end

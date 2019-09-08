@@ -50,10 +50,10 @@ class RpsUi < Sinatra::Base
     redirect '/game-not-found' unless @repository.game(game_name)
 
     game = @repository.game(game_name)
-    add_current_player(game)
+    add_current_player(game) unless player_already_in_game?(game)
 
     session[GAME_KEY] = game.name
-    redirect '/play'
+    redirect_if_ready(game)
   end
 
   get '/game-not-found' do
@@ -138,8 +138,15 @@ class RpsUi < Sinatra::Base
 
   private
 
+  def player_already_in_game?(game)
+    game.player1 == current_player || game.player2 == current_player
+  end
+
+  def current_player
+    @repository.player(session_player_id)
+  end
+
   def add_current_player(game)
-    current_player = @repository.player(session_player_id)
     game.add_player(current_player)
   end
 
