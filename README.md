@@ -1,3 +1,57 @@
+# RPS Challenge - week 3
+
+This is the third weekend challenge at Makers Academy where I've been tasked to create a basic web application, that registers your name and lets you playe Rock, Paper Scissors.
+
+Learning objectives
+-------
+- Use Capybara for feature tests
+- MVC pattern
+- HTML and Ruby integration
+- HTTP GET/POST methods
+- Encapsulation
+- Method Delegation
+
+
+Instructions
+-------
+* Fork this repo
+* Run the command 'bundle' in the project directory to ensure you have all the gems installed.
+
+```
+$ git clone git@github.com:gabokappa/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+
+Ensure your Gemfile has the following content:
+
+```
+source 'https://rubygems.org'
+
+ruby '2.5.0'
+
+gem 'rake'
+gem 'sinatra'
+
+group :test do
+  gem 'capybara'
+  gem 'rspec'
+  gem 'rubocop', '0.56.0'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+end
+```
+
+## Note to reviewer
+At the time of writing(Sunday evening) core user stories had been met with no bonus functionality added (Multiplayer and further rules). No global variables created.
+
+## Approach
+I took the two main user stories and dealt with each one in turn, writing bother feature tests and Rspec tests.
+
+
+## ORIGINAL INSTRUCTIONS BELOW
+
 # RPS Challenge
 
 Instructions
