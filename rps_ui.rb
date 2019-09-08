@@ -117,8 +117,8 @@ class RpsUi < Sinatra::Base
     winner = [p1, p2].select(&is_winner).first
     loser = [p1, p2].reject(&is_winner).first
 
-    @player1_moves = "#{p1.name} chose #{p1.chosen_move}"
-    @player2_moves = "#{p2.name} chose #{p2.chosen_move}"
+    @player1_moves = p1.moves
+    @player2_moves = p2.moves
 
     @winning_move = game.winner ? "#{winner.chosen_move} beats #{loser.chosen_move}" : nil
     @winner_text = game.winner ? "#{game.winner.name} Wins!" : "It's a draw!"
@@ -138,12 +138,20 @@ class RpsUi < Sinatra::Base
 
   private
 
-  def player_already_in_game?(game)
-    game.player1 == current_player || game.player2 == current_player
+  def session_player_id
+    session[PLAYER_ID_KEY]
+  end
+
+  def game
+    @repository.game(session[GAME_KEY])
   end
 
   def current_player
     @repository.player(session_player_id)
+  end
+
+  def player_already_in_game?(game)
+    game.player1 == current_player || game.player2 == current_player
   end
 
   def add_current_player(game)
@@ -153,6 +161,10 @@ class RpsUi < Sinatra::Base
   def add_ai_player(game)
     ai_player = Player.new(COMPUTER_NAME, @context.ai_instance, @context.id_generator)
     game.add_player(ai_player)
+  end
+
+  def redirect_if_ready(game)
+    redirect game.ready? ? '/play' : '/waiting-for-opponent'
   end
 
   def back_to_lobby_if_nil_game
@@ -167,18 +179,6 @@ class RpsUi < Sinatra::Base
     @repository.delete_game(game) if game
     @repository.delete_move(session_player_id) if session_player_id
   end
-
-  def session_player_id
-    session[PLAYER_ID_KEY]
-  end
-
-  def game
-    @repository.game(session[GAME_KEY])
-  end
-
-  def redirect_if_ready(game)
-    redirect game.ready? ? '/play' : '/waiting-for-opponent'
-  end
 end
 
 class Game
@@ -190,5 +190,11 @@ class Game
         </tr>
     )
     ERB.new(template).result(binding)
+  end
+end
+
+class Player
+  def moves
+    "#{name} chose #{chosen_move}"
   end
 end
