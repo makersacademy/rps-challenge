@@ -1,6 +1,24 @@
-<h1>
-Pick your move, <%= @game.player_1.name.upcase %> 
-</h1>
+<head>
+  <style>
+    body {
+      font-family: "Lucida Sans Unicode";
+      font-size: 35px;
+    }
+
+    input {
+      font-family: "Lucida Sans Unicode";
+      font-size: 35px;
+      padding: 8px 32px;
+      display: inline-block;
+      font-size: 25px;
+    }
+  </style>
+</head>
+
+<center>
+<h2>
+Pick your move, <%= @game.player_1.name %> 
+</h2>
 
 <form action='/choice' method="post">
   <input type='submit' name='choice' value='rock'>
@@ -9,3 +27,4 @@ Pick your move, <%= @game.player_1.name.upcase %>
 
   <input type='submit' name='choice' value='scissors'>
 </form>
+</center>
