@@ -18,10 +18,17 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    @choice = params[:choice]
+    session[:choice] = params[:choice]
+    @choice = session[:choice]
     @player_name = session[:player_name]
     erb(:choice)
   end 
+
+  post '/result' do
+    @player_name = session[:player_name]
+    @choice = session[:choice]
+    erb(:result)
+  end
 
   run! if app_file == $0
 end
