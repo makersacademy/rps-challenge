@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 feature 'play RPS' do
-  let(:opponent_hand) { ['Rock', 'Paper', 'Scissors'].sample }
-
   scenario 'display options, Rock Paper Scissors' do
     register_and_play
     expect(page).to have_button 'Rock'

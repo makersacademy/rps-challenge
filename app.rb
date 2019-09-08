@@ -20,8 +20,8 @@ class Rps < Sinatra::Base
 
   post '/play' do
     session[:hand] = params[:hand]
-    @opponent_hand = Opponent.new.hand
-    session[:opponent_hand] = @opponent_hand
+    @opponent = Opponent.new
+    session[:opponent_hand] = @opponent.hand
     erb :result
   end
 

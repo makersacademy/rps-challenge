@@ -1,17 +1,19 @@
 class Opponent
+  attr_reader :hand
+
   WEAPON = ['Rock', 'Paper', 'Scissors']
 
   def initialize
-    @hand = self.hand
+    @hand = self.weapon
   end
 
-  def hand
-    random_choice(WEAPON)
+  def weapon
+    random(WEAPON)
   end
 
   private
 
-  def random_choice(weapon)
+  def random(weapon)
     weapon.sample
   end
 end
