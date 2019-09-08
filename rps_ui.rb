@@ -50,8 +50,7 @@ class RpsUi < Sinatra::Base
     redirect '/game-not-found' unless @repository.game(game_name)
 
     game = @repository.game(game_name)
-    player = @repository.player(session_player_id)
-    game.add_player(player)
+    add_current_player(game)
 
     session[GAME_KEY] = game.name
     redirect '/play'
@@ -69,11 +68,9 @@ class RpsUi < Sinatra::Base
     back_to_lobby if game_name.nil? || game_name.empty?
 
     game = Game.new(game_name, @context.rules)
-    current_player = @repository.player(session[PLAYER_ID_KEY])
-    game.add_player(current_player)
+    add_current_player(game)
     unless params[AI_KEY].nil?
-      ai_player = Player.new(COMPUTER_NAME, @context.ai_instance, @context.id_generator)
-      game.add_player(ai_player)
+      add_ai_player(game)
     end
 
     @repository.add_game(game)
@@ -116,8 +113,9 @@ class RpsUi < Sinatra::Base
     p1 = game.player1
     p2 = game.player2
 
-    winner = [p1, p2].select { |p| p.equal?(game.winner) }.first
-    loser = [p1, p2].reject { |p| p.equal?(game.winner) }.first
+    is_winner = proc { |p| p.equal?(game.winner) }
+    winner = [p1, p2].select(&is_winner).first
+    loser = [p1, p2].reject(&is_winner).first
 
     @player1_moves = "#{p1.name} chose #{p1.chosen_move}"
     @player2_moves = "#{p2.name} chose #{p2.chosen_move}"
@@ -139,6 +137,16 @@ class RpsUi < Sinatra::Base
   end
 
   private
+
+  def add_current_player(game)
+    current_player = @repository.player(session_player_id)
+    game.add_player(current_player)
+  end
+
+  def add_ai_player(game)
+    ai_player = Player.new(COMPUTER_NAME, @context.ai_instance, @context.id_generator)
+    game.add_player(ai_player)
+  end
 
   def back_to_lobby_if_nil_game
     back_to_lobby if game.nil?
