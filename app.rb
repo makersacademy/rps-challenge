@@ -5,10 +5,13 @@ class Rps < Sinatra::Base
     erb :index
   end
 
-  post '/name' do
+  post '/play' do
     @player_name = params[:player_name]
-    erb :name
+
+    erb :play
   end
+
+  
 
   run! if app_file == $0
 end
