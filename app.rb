@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'sinatra/base'
+require './lib/game'
+require './lib/random_result'
 
 class RPSGame < Sinatra::Base
 
@@ -15,10 +17,13 @@ class RPSGame < Sinatra::Base
     erb(:play)
   end
 
-  get '/result' do
-      @game = Game.new(params[:move])
-      @player = session[:player]
-      erb(:result)
+  post '/result' do
+    random_generator = RandomResult.new
+    opponent_move = random_generator.random_move
+
+    @player_move = params[:move]
+    @game = Game.new(@player_move, opponent_move)
+    erb(:result)
   end
 
   run! if app_file == $0

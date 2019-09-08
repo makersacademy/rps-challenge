@@ -1,8 +1,6 @@
 <html>
 <body bgcolor="#F5F4F0">
-  <center>
-    <h1> <%=@player%>!!<br>
-      Choose Your Move... </br></h1>
+
       <style>
         .box{
           height:100%;
@@ -15,12 +13,17 @@
           outline:0
         }
       </style>
+      <center>
 
+      <h1><%=@player%><br>
+        choose Your Move... </br></h1>
+      </center>
       <div class="box">
+
         <form action="/result" method="post">
-        <input name="move" type="image" class="btnimage" type="image" height="250" src="./rock.jpeg" alt="Rock" value="Rock"/>
-        <input name="move" type="image" class="btnimage" type="image" height="250" src="./paper.jpeg" alt="Paper" value="Paper" />
-        <input name="move" type="image" class="btnimage" type="image" height="250" src="./scissor.jpeg" alt="Scissor" value="Scissor" />
-        </form
+          <button type="submit" name="move" value="Rock"><img height="250" src="./rock.jpeg"/></button>
+          <button type="submit" name="move" value="Paper"><img height="250" src="./paper.jpeg"/></button>
+          <button type="submit" name="move" value="Scissor"><img height="250" src="./scissor.jpeg"/></button>
+        </form>
       </div>
     </body>

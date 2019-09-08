@@ -19,11 +19,22 @@ describe 'add player name', type: :feature do
   end
 end
 
-# describe 'selecting options', type: :feature do
-#   scenario 'player choose an option to start the game' do
-#     visit('/')
-#     fill_in "player", with: 'player'
-#     click_button ''
-#
-#   end
-# end
+describe 'selecting options', type: :feature do
+  scenario 'player choose an option to start the game' do
+    visit('/')
+    fill_in "player", with: 'player'
+    click_button 'Play'
+    click_button 'Rock'
+    expect(page).to have_content 'You chose Rock!'
+  end
+end
+
+describe 'starting a new game', type: :feature do
+  scenario 'player choose an option to start the game' do
+    visit('/')
+    fill_in "player", with: 'player'
+    click_button 'Play'
+    click_button 'Rock'
+    expect(page).to have_content 'You chose Rock!'
+  end
+end
