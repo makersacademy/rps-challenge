@@ -8,3 +8,8 @@
 <% else %>
   <h1><%= @player_name %> LOSES</h1>
 <% end %>
+
+<form action="/play" method="post">
+  <input name="player_name" value="<%= @player_name %>" type="hidden">
+  <button type="submit">Play Again</button>
+</form>
