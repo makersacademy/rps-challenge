@@ -1,7 +1,7 @@
 # RPS Challenge
 Introduction
 
-This application allows a human player to play 'Rock, Paper, Scissors' game with
+This application allows a human player to play 'Rock, Paper, Scissors' game
 against a computer.
 
 Instructions

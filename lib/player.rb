@@ -1,3 +1,5 @@
+require './lib/game'
+
 class Player
   attr_reader :weapon
 

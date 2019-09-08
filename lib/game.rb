@@ -21,9 +21,12 @@ class Game
     @player_b = player_b
   end
 
-  def result
+  def choose_weapons
     player_a.choose_weapon
     player_b.choose_weapon
+  end
+  
+  def result 
     # win or lose means player_a's win or lose
     return :win if player_b.weapon == RULES[player_a.weapon]
     return :draw if player_b.weapon == player_a.weapon

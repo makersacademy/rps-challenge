@@ -26,6 +26,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/choose' do
+    @game.choose_weapons
     @game.player_a.weapon = params[:option].to_sym
     redirect '/result'
   end
