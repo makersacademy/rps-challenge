@@ -4,3 +4,7 @@
 <h4> You have chosen <%= @game.player_a.weapon%> </h4>
 <h4> The computer has chosen <%= @game.player_b.weapon%> </h4>
 <br>
+
+<form action="/play_again" method="get">
+ <input type="submit" class="btn btn-default" value="Play again">
+</form>

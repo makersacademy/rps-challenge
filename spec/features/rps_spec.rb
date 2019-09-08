@@ -6,6 +6,14 @@ feature 'Enter names' do
     sign_in_and_play
     expect(page).to have_content 'Welcome to the game, Arya!'
   end
+
+  scenario 'play again' do
+    sign_in_and_play
+    choose('Rock')
+    click_button 'Play'
+    click_button 'Play again'
+    expect(page).to have_content 'Welcome to the game, Arya!'
+  end
 end
 
 feature 'Game result' do
