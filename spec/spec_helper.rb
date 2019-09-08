@@ -9,6 +9,14 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
+ENV['RACK_ENV'] = 'test'
+
+# require sinatra app file
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+# tell Capybara about our app class
+Capybara.app = Rps
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts
