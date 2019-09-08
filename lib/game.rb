@@ -24,7 +24,7 @@ class Game
     if @player1.attack == @player2.attack
       "It's a draw!"
     else
-      @logic[@player1.attack] == @player2.attack ? @player1.name : @player2.name
+      @logic[@player1.attack] == @player2.attack ? "#{@player1.name} won!" : "#{@player2.name} won!"
     end
   end
 end
