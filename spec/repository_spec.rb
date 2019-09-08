@@ -23,33 +23,36 @@ describe Repository do
   end
 
   context 'moves' do
-    it 'can add a move' do
-      move = double('Move')
+    let(:move) { double('Move') }
+
+    before :each do
       subject.add_move('player id', move)
+    end
+
+    it 'can add a move' do
       expect(subject.move('player id')).to be move
     end
 
     it 'can delete a move' do
-      move = double('Move')
-      subject.add_move('player id', move)
       subject.delete_move('player id')
       expect(subject.move('player id')).to be_nil
     end
   end
 
   context 'games' do
-    it 'can add a game' do
+    before :each do
       subject.add_game(game)
+    end
+
+    it 'can add a game' do
       expect(subject.game('game name')).to be game
     end
 
     it 'can return all games' do
-      subject.add_game(game)
       expect(subject.all_games).to eq([game])
     end
 
     it 'can delete a game' do
-      subject.add_game(game)
       subject.delete_game(game)
       expect(subject.all_games).to be_empty
     end

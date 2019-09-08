@@ -163,15 +163,17 @@ describe 'Acceptance Tests' do
   end
 
   describe '/play-if-ready' do
-    it 'redirects to /waiting-for-opponent if game is not ready' do
+    before :each do
       register_player
+    end
+
+    it 'redirects to /waiting-for-opponent if game is not ready' do
       post_new_game
       post 'play-if-ready'
       expect_redirect_to('/waiting-for-opponent')
     end
 
     it 'redirects to /play if game is ready' do
-      register_player
       post_new_ai_game
       post 'play-if-ready'
       expect_redirect_to('/play')
@@ -254,21 +256,25 @@ describe 'Acceptance Tests' do
         join_game
       end
 
+      def player_2_rock_attack
+        post '/attack', move: 'rock'
+      end
+
       it 'player 2 can beat player 1' do
         move_player_1_after_delay
-        post '/attack', move: 'rock'
+        player_2_rock_attack
         expect(game.winner.name).to eq PLAYER2_NAME
       end
 
       it 'players can draw' do
         move_player_1_after_delay(:rock)
-        post '/attack', move: 'rock'
+        player_2_rock_attack
         expect(game.winner).to be_nil
       end
 
       it 'redirects to /game over' do
         move_player_1_after_delay
-        post '/attack', move: 'rock'
+        player_2_rock_attack
         expect_redirect_to '/game-over'
       end
     end
