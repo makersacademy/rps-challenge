@@ -4,8 +4,8 @@ describe Game do
   subject(:game) { described_class.new(player_1) }
   let(:player_1) { double :player_1 }
   
-  before (:each) do 
-    srand(67809)
+  before do 
+    srand(678_09)
   end
 
   context '#initialize' do

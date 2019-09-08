@@ -30,10 +30,6 @@ class Game
     end
   end
 
-  def test
-    :loss
-  end
-
   private
 
   def beats?(player_choice, computer_choice)
