@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/player'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -9,17 +10,22 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    $player = Player.new(params[:name])
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:name]
+    @player = $player
     erb :play
   end
 
   post '/result' do
-    @player_choice = params[:player_choice]
+    $player_choice = $player.make_choice(params[:player_choice])
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player_choice = $player_choice
     erb :result
   end
 
