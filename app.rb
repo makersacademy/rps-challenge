@@ -26,7 +26,7 @@ get '/game' do
 end
 
 post '/attack' do
-  @game.attack(@game.player1, @attacked.to_sym)
+  @game.attack(@game.player1, params[:attack].to_sym)
   @game.attack(@game.player2)
   redirect '/result'
   #
