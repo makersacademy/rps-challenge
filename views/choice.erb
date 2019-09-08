@@ -1,0 +1,16 @@
+<h1>
+Pick your move, <%= @player_name.upcase %> 
+</h1>
+
+<form action='/choice' method="post">
+  <input type='submit' name='choice' value='ROCK'>
+
+  <input type='submit' name='choice' value='PAPER'>
+
+  <input type='submit' name='choice' value='SCISSORS'>
+</form>
+
+Your choice: <%= @choice %>
+<form action='/result' method="post">
+  <input type='submit' name='confirm' value='CONFIRM'>
+</form>
