@@ -1,7 +1,9 @@
-<h3>Player name is:</h3><font color="red"><%= @game.player1.name%></font>
+<body style="background-color:powderblue;">
+<h3>Player name is: <font color="red"><%= @game.player1.name%></font></h3>
 
 <form action="/game-result" method='post'>
   <input type="submit" name="choice" value="rock">
   <input type="submit" name="choice" value="paper">
   <input type="submit" name="choice" value="scissors">
 </form>
+</body>
