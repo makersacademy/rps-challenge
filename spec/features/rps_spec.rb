@@ -7,3 +7,31 @@ feature 'Enter names' do
     expect(page).to have_content 'Welcome to the game, Arya!'
   end
 end
+
+feature 'Game result' do
+  before :each do
+    srand(67809)
+    p [:rock, :paper, :scissors].sample
+  end
+
+  scenario 'draw' do  
+    sign_in_and_play
+    choose('Paper')
+    click_button 'Play'
+    expect(page).to have_content 'It\'s a draw!'
+  end
+
+  scenario 'hunman player wins a game' do
+    sign_in_and_play
+    choose('Scissors')
+    click_button 'Play'
+    expect(page).to have_content 'Congratulations, you won!'
+  end
+
+  scenario 'hunman player loses a game' do
+    sign_in_and_play
+    choose('Rock')
+    click_button 'Play'
+    expect(page).to have_content 'Sorry, you lost'
+  end
+end
