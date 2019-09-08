@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-require_relative './app'
-run Battle
+require_relative './rps_ui'
+run RpsUi
