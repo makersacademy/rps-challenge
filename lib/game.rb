@@ -13,7 +13,7 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-    @logic = { rock: :scissors, paper: :rock, scissors: :paper }
+    @logic = { Rock: :Scissors, Paper: :Rock, Scissors: :Paper }
   end
 
   def attack(player, attack=nil)

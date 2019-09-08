@@ -4,7 +4,7 @@ class Computer
   def initialize
     @name = "Computer"
     @attack = nil
-    @possible_attacks = [:rock, :paper, :scissors]
+    @possible_attacks = [:Rock, :Paper, :Scissors]
   end
 
   def attack_with(*)

@@ -4,7 +4,7 @@ class Player
   def initialize(name)
     @name = name
     @attack = nil
-    @possible_attacks = [:rock, :paper, :scissors]
+    @possible_attacks = [:Rock, :Paper, :Scissors]
   end
 
   def attack_with(attack)
