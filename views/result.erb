@@ -1,3 +1,6 @@
 <h1><%=@game.player1.name%>: <%=@game.player1.attack%></h1>
 <h1><%=@game.player2.name%>: <%=@game.player2.attack%></h1>
 <h1>Result: <%=@game.who_won?%></h1>
+<form action="/game">
+  <input type="submit" value="Play again!">
+</form>
