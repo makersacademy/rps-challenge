@@ -1,6 +1,7 @@
 require 'sinatra/base'
 
 class Rps < Sinatra::Base
+  enable :sessions
 
   get '/' do
     # "Testing infrastructure working!"
@@ -8,8 +9,13 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    @player = params[:player]
-    erb :name
+    session[:name] = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @name = session[:name]
+    erb :play
   end
 
   run! if app_file == $0
