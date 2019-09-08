@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Rock Paper Scissors Game</title>
+</head>
+
+<body>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <div class="score-board">
+        <div id="user-label" class="badge">User</div>
+        <div id="computer-label" class="badge">Comp</div>
+        <span id="user-score"><%= @user_score %></span>:<span id="computer-score"><%= @computer_score %></span>
+    </div>
+    <div class="result">
+        <p> <%= @player_name %> - click below to start playing the game!</p>
+        <br>
+        <p> You are playing to <%= @winning_score %>
+
+    </div>
+
+    <div class="choices">
+        <div class="choice">
+            <a href="/user_chooses_rock">
+            <img src="images/rock.png" id="rock" alt="">
+            </a>
+        </div>
+        <div class="choice">
+            <a href="/user_chooses_paper">
+            <img src="images/paper.png" id="paper" alt="">
+            </a>
+        </div>
+        <div class="choice">
+            <a href="/user_chooses_scissors">
+            <img src="images/scissors.png" id="scissors" alt="">
+            </a>
+        </div>
+    </div>
+    <p id="action-message"><%= @statement %></p>
+</body>
+
+</html>
