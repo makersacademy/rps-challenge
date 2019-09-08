@@ -3,19 +3,19 @@ class RockPaperSissors
     ["rock", "paper", "sissors"].sample
   end
 
-  def play(player_move, computer_move)
-    if player_move == "rock"
-      return "win" if computer_move == "sissors"
-      return "lose" if computer_move == "paper"
-      return "draw" if computer_move == "rock"
-    elsif player_move == "paper"
-      return "win" if computer_move == "rock"
-      return "lose" if computer_move == "sissors"
-      return "draw" if computer_move == "paper"
-    elsif player_move == "sissors"
-      return "win" if computer_move == "paper"
-      return "lose" if computer_move == "rock"
-      return "draw" if computer_move == "sissors"
+  def play(player, computer)
+    if player == "rock"
+      return "win" if computer == "sissors"
+      return "lose" if computer == "paper"
+      return "draw" if computer == "rock"
+    elsif player == "paper"
+      return "win" if computer == "rock"
+      return "lose" if computer == "sissors"
+      return "draw" if computer == "paper"
+    elsif player == "sissors"
+      return "win" if computer == "paper"
+      return "lose" if computer == "rock"
+      return "draw" if computer == "sissors"
     end
   end
 end

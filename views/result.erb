@@ -45,8 +45,15 @@
     </h1>
   </header>
   <maintext>
+    <% if @result == "win" %>
+      <h3> Yay <%= @player_name %> </h3>
+    <% elsif @result == "lose"%>
+      <h3> Boo <%= @player_name %> </h3>
+    <% else %>
+      <h3> ooOOOoo <%= @player_name %> </h3>
+    <% end %>
     <h3> You <%= @result %> the game</h3>
-    <form action="/match" method="post">
+    <form action="/match" method="get">
       </br>
       <button type="submit">Play Again?</button>
     </form>
