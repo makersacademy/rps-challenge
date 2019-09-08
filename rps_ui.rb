@@ -38,6 +38,8 @@ class RpsUi < Sinatra::Base
   end
 
   get '/lobby' do
+    redirect '/' if session_player_id.nil?
+
     @games = @repository.all_games
     @player_names = @repository.all_players.map(&:name).join(', ')
     erb :lobby

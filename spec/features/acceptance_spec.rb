@@ -181,6 +181,11 @@ describe 'Acceptance Tests' do
       end
     end
 
+    it '/lobby redirects to / if play name is empty' do
+      get '/lobby'
+      expect_redirect_to '/'
+    end
+
     it_redirects_to_lobby from: '/play'
     it_redirects_to_lobby from: '/waiting-for-opponent'
     it_redirects_to_lobby from: '/game-already-exists'
