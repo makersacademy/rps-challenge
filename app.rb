@@ -21,23 +21,17 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player_name = @player.name
     erb(:play)
   end
 
   post '/choice' do
-    @player.store_choice(params[:choice].to_sym)
-    @choice = @player.choice
-    @player_name = @player.name
+    @game.player_1.store_choice(params[:choice].to_sym)
     erb(:choice)
   end 
 
   post '/result' do
-    @player_name = @player.name
-    @choice = @player.choice
     @comp_choice = @game.computer
-    @result = @game.result(@choice, @comp_choice)
-    p @result
+    @result = @game.result(@game.player_1.choice, @comp_choice)
     erb @result
   end
 

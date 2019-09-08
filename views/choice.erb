@@ -1,5 +1,5 @@
 <h1>
-Pick your move, <%= @player_name.upcase %> 
+Pick your move, <%= @game.player_1.name.upcase %> 
 </h1>
 
 <form action='/choice' method="post">
@@ -10,7 +10,7 @@ Pick your move, <%= @player_name.upcase %>
   <input type='submit' name='choice' value='scissors'>
 </form>
 
-Your choice: <%= @choice %>
+Your choice: <%= @game.player_1.choice %>
 <form action='/result' method="post">
   <input type='submit' name='confirm' value='CONFIRM'>
 </form>
