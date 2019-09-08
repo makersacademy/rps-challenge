@@ -1,7 +1,6 @@
 <h1>Welcome <%= @player_name %></h1>
 <h1>Choose your move!</h1>
-<form action="/game_over" method="post">
-  <input name="player_name" value="<%= @player_name %>" type="hidden">
+<form action="/user_choice" method="post">
   <button id="rock" type="submit" name="play" value="ROCK"> ROCK </button>
   <button id="paper" type="submit" name="play" value="PAPER"> PAPER </button>
   <button id="scissors" type="submit" name="play" value="SCISSORS"> SCISSORS </button>
