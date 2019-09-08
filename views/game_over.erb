@@ -1,2 +1,10 @@
 <h1> <%= @human_player%> goes for <%= @player_picks%> </h1>
 <h1> AI goes for <%= @ai_picks%> </h1>
+
+<% if @winner == @player_picks %>
+     <%= @human_player %> is victorious!!!
+    <% elsif @winner == @ai_picks %>
+    AI is victorious!!!
+    <% else %>
+    It is a draw, try again!
+    <% end %>
