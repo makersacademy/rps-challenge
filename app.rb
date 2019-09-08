@@ -22,15 +22,15 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    session[:choice] = params[:choice]
-    @choice = session[:choice]
+    @player.store_choice(params[:choice])
+    @choice = @player.choice
     @player_name = @player.name
     erb(:choice)
   end 
 
   post '/result' do
     @player_name = @player.name
-    @choice = session[:choice]
+    @choice = @player.choice
     erb(:result)
   end
 
