@@ -11,8 +11,8 @@ describe Player do
 
   describe '#attack_with' do
     it 'sets @attack to rock when attacking with rock' do
-      bob.attack_with(:rock)
-      expect(bob.attack).to eq(:rock)
+      bob.attack_with(:Rock)
+      expect(bob.attack).to eq(:Rock)
     end
 
     it 'raises an error when attacking with un unavailable attack' do
