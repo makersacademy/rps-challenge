@@ -28,7 +28,10 @@ class RpsUi < Sinatra::Base
   end
 
   post '/register' do
-    player = Player.new(params[PLAYER_NAME_KEY], self, @context.id_generator)
+    name = params[PLAYER_NAME_KEY]
+    redirect '/' if name.nil? || name.empty?
+
+    player = Player.new(name, self, @context.id_generator)
     @repository.add_player(player)
     session[PLAYER_ID_KEY] = player.id
     redirect '/lobby'

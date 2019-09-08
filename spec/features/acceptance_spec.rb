@@ -53,6 +53,11 @@ describe 'Acceptance Tests' do
       allow_any_instance_of(Player).to receive(:id).and_return(PLAYER1_ID)
     end
 
+    it 'redirects to the index if the player name is empty' do
+      post '/register'
+      expect_redirect_to '/'
+    end
+
     it 'adds a new player to the repository' do
       register_player
       expect(repository.player(PLAYER1_ID)).not_to be_nil
