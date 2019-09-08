@@ -3,6 +3,8 @@ require './lib/player'
 class Game
   attr_reader :player_1, :comp_choice
 
+  RULES = { :rock => :scissors, :paper => :rock, :scissors => :paper }
+
   def self.instance
     @game
   end
@@ -13,7 +15,6 @@ class Game
 
   def initialize(player_1)
     @player_1 = player_1
-    @rules = { :rock => :scissors, :paper => :rock, :scissors => :paper }
   end
 
   def computer
@@ -33,6 +34,6 @@ class Game
   private
 
   def beats?(player_choice, computer_choice)
-    @rules[player_choice] == computer_choice
+    RULES[player_choice] == computer_choice
   end 
 end
