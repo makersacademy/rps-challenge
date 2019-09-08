@@ -1,8 +1,7 @@
 <h1><%=@game.player1.name%> vs Computer</h1>
 <h2>Rock Paper Scissors, FIGHT!!</h2>
-<form action="/result" method="post">
-  Enter name: <br>
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+<form action="/attack" method="post">
+  <input type="submit" name="attack" value="rock">
+  <input type="submit" name="attack" value="paper">
+  <input type="submit" name="attack" value="scissors">
 </form>

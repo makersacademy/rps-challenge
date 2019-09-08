@@ -22,11 +22,18 @@ post '/initialise' do
 end
 
 get '/game' do
-
   erb(:game)
 end
 
-post '/result' do
+post '/attack' do
+  @game.attack(@game.player1, @attacked.to_sym)
+  @game.attack(@game.player2)
+  redirect '/result'
+  #
+end
+
+get '/result' do
+
   erb(:result)
 end
 
