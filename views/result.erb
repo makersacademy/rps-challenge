@@ -2,6 +2,8 @@
 
 <h1>You have <%= @result %>!!<h1>
 
+<h1>Current scores at the door... <%=@player_name%>'s score: <%=@player_score%>. Computer score: <%= @computer_score %>.<h1>
+
   <form action='/play'>
     <button style='font-size:80px'  type='submit'>PLAY AGAIN</button>
   </form>
