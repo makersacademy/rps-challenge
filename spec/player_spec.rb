@@ -9,4 +9,11 @@ describe Player do
     end
   end
 
-end 
+  describe '#select_move' do
+    it 'returns a move' do
+      bobo.select_move('rock')
+      expect(bobo.move).to eq 'rock'
+    end
+  end
+
+end

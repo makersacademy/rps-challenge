@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -15,6 +16,10 @@ class RPS < Sinatra::Base
   get '/play' do
     @player_1_name = $player_1.name
     erb :play
+  end
+
+  post '/play' do
+
   end
 
   run! if app_file == $0
