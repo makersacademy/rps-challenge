@@ -6,8 +6,8 @@ class Game
   end
 
   def compete(player_choice)
-     choice = player_choice.to_sym
-     @message = outcome(choice, computer_response)
+    choice = player_choice.to_sym
+    @message = outcome(choice, computer_response)
   end
 
   private
@@ -17,7 +17,7 @@ class Game
   end
 
   def outcome(p1, p2)
-    if p1 == :rock && p2== :scissors
+    if p1 == :rock && p2 == :scissors
       Player.win
       "You beat scissors with rock!"
     elsif p1 == :paper && p2 == :rock
