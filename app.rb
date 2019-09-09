@@ -10,4 +10,9 @@ class Rps < Sinatra::Base
     @player_name = params[:player_name]
     erb :play
   end
+
+  post '/result' do
+    erb :game
+  end
+
 end

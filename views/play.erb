@@ -1,1 +1,10 @@
-<font color="red"> <%= @player_name %> 
+<font color="red"> <%= @player_name %>
+
+<form action="/result" method="post">
+  <label for="player_name">
+    <h3> Select weapon
+      <input type="text" name="rock">
+    </h3>
+  </label>
+<input type="submit" value="Play">
+</form>
