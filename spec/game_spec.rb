@@ -31,6 +31,14 @@ describe Game do
       srand(3)
       expect(game.outcome).to eq('WINNER!')
     end
+    it 'returns loser if player has lost' do
+      srand(1)
+      expect(game.outcome).to eq ('LOSER!')
+    end
+    it "returns draw if it's a draw" do
+      srand(2)
+      expect(game.outcome).to eq('Draw...')
+    end
   end
 
   # describe '.result' do
