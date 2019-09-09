@@ -9,7 +9,6 @@ class RPS < Sinatra::Base
   post '/match' do
     @player_name = params[:Player1]
     session[:Player] = @player_name
-    p session
     erb(:match)
   end
 
