@@ -5,14 +5,17 @@
 If you are reviewing this code, please note that the rspec tests used in this project will not run unless you use ruby 2.6.3 and install capybara 3.29.0 (for explanation, see below).
 
 If you have ruby version manager, this can be done by running the following commands:
-$rvm use 2.6.3
-$bundle
+
+# $rvm use 2.6.3
+
+# $bundle
 
 Reasons this project requires ruby 2.6.3 and capybara 3.29.0:
 
 When forked from the Makers repo, this project specified ruby 2.5.0 and capybara 2.17.0, but it became clear that capybara 2.17.0 was not working properly. Specifically, The feature test ‘Input player name’ was failing despite the feature working in Chrome, because submit buttons were not being recognised.
 
 The rspec error read:
+
 Failure/Error: click_on 'Submit'
 
      Capybara::ElementNotFound:
@@ -27,10 +30,15 @@ I noted that the “battle” project used ruby 2.6.3 with capybara 3.29.0, with
 After making the following updates, the ‘Submit’ button was recognised, and the test passed:
 
 Gemfile: specify ruby 2.6.3 instead of 2.5.0
+
 spec_helper: add require ‘capybara’
+
 delete Gemfile.lock
+
 $rvm use 2.6.3
+
 $bundle => This installs capybara 3.29.0
+
 
 Elsie Ashworth, 9/9/19
 
