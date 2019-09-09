@@ -35,5 +35,9 @@ class Rps < Sinatra::Base
     erb :result
   end
 
+  get '/goodbye' do
+    erb :goodbye
+  end
+
   run! if app_file == $0
 end

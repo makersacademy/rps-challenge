@@ -1,3 +1,9 @@
 <h1>You chose <%=@player_choice%>!</h1>
 <h1>Rivalbot chose <%=@robo_choice%>!</h1>
 <h1><%=$game.select_winner%></h1>
+<form action='/play' method='get'>
+  <input type='submit' name='Submit' value='Play again'>
+</form>
+<form action='/goodbye' method='get'>
+  <input type='submit' name='Submit' value='Finish playing'>
+</form>
