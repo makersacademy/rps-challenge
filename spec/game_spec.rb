@@ -32,5 +32,29 @@ describe Game do
     it 'returns correct result for rock vs scissors' do
       expect(game.result(:rock, :scissors)).to eq(:win)
     end 
+
+    it 'returns correct result for paper vs rock' do
+      expect(game.result(:paper, :rock)).to eq(:win)
+    end 
+
+    it 'returns correct result for paper vs paper' do
+      expect(game.result(:paper, :paper)).to eq(:draw)
+    end 
+
+    it 'returns correct result for paper vs scissors' do
+      expect(game.result(:paper, :scissors)).to eq(:loss)
+    end 
+
+    it 'returns correct result for scissors vs rock' do
+      expect(game.result(:scissors, :rock)).to eq(:loss)
+    end 
+
+    it 'returns correct result for scissors vs paper' do
+      expect(game.result(:scissors, :paper)).to eq(:win)
+    end 
+
+    it 'returns correct result for scissors vs scissors' do
+      expect(game.result(:scissors, :scissors)).to eq(:draw)
+    end 
   end 
 end
