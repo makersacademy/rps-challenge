@@ -1,15 +1,14 @@
 require 'sinatra/base'
-require_relative 'lib/player'
+require './lib/player'
 
 class Rps < Sinatra::Base
   get '/' do
-    'Rock Paper Scissors, Lets start!!'
     erb :index
   end
 
   post '/names' do
     @player_name = params[:player_name]
-    # $player = Player.new(params[:player_name])
+    $player = Player.new(params[:player_name])
     redirect '/play'
   end
 
