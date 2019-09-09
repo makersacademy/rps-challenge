@@ -6,7 +6,6 @@ class RPS < Sinatra::Base
   enable :sessions
 
   before do
-    @player = Player.instance
     @game = Game.instance
   end
 
@@ -15,8 +14,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @player = Player.create(params[:player_name])
-    @game = Game.create(@player)
+    @game = Game.create(Player.new(params[:player_name]))
     redirect to('/play')
   end
 
