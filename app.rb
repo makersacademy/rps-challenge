@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
 require_relative './lib/rivalbot'
+require_relative './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -11,18 +12,20 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:name])
+    player = Player.new(params[:name])
+    rivalbot = Rivalbot.new
+    $game = Game.new(player, rivalbot)
     redirect '/play'
   end
 
   get '/play' do
-    @player = $player
+    @player = $game.player
     erb :play
   end
 
   post '/result' do
-    $player_choice = $player.make_choice(params[:player_choice])
-    $robo_choice = Rivalbot.new.make_choice
+    $player_choice = $game.player.make_choice(params[:player_choice])
+    $robo_choice = $game.rivalbot.make_choice
     redirect '/result'
   end
 
