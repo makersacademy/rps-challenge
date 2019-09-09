@@ -5,9 +5,10 @@ Play Instructions
 * Fork & clone this repo
 * Navigate to cloned directory and `bundle install` to install all dependencies
 * In the cloned directory, type `rackup`, this will initialize shotgun, allowing you to send and receive HTTP requests
-* Enter your names
-* Each player, enter your choice
-* Winner is revealed
+* Open your browser, and go to localhost:(insert port here, shown in your CMD when rackup is run)
+* Enter your names, click submit
+* Each player, enter your choice, click submit
+* Winner is revealed, click play again
 * Keep playing forever
 
 Challenge Instructions

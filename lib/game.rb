@@ -6,7 +6,6 @@ class Game
     @player1 = Player.new(player1)
     @player2 = Player.new(player2)
     @current_turn = @player1
-    @off_turn = @player2
     @choices = []
     @choice_hash = { "Rock" => 1, "Paper" => 2, "Scissors" => 3,
      "Spock" => 4, "Lizard" => 5 }
@@ -23,10 +22,8 @@ class Game
   def switch_turn
     if @current_turn == @player1
       @current_turn = @player2
-      @off_turn = @player1
     else
       @current_turn = @player1
-      @off_turn = @player2
     end
   end
 

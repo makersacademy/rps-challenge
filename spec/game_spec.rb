@@ -52,12 +52,4 @@ describe Game do
     end
   end
 
-  describe '#off_turn' do
-    it 'describes whose turn it is not' do
-      expect(game.off_turn).to eq(game.player2)
-      game.switch_turn
-      expect(game.off_turn).to eq(game.player1)
-    end
-  end
-
 end
