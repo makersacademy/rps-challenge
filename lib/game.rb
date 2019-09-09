@@ -19,7 +19,7 @@ class Game
   end
 
   def outcome
-    return 'Draw' if draw?()
+    return 'Draw...' if draw?()
     return 'WINNER!' if winner?()
     return 'LOSER!'
   end

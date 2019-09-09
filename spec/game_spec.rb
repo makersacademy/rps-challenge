@@ -28,6 +28,8 @@ describe Game do
 
   describe '.outcome' do
     it 'returns winner if player has won' do
+      srand(3)
+      expect(game.outcome).to eq('WINNER!')
     end
   end
 
