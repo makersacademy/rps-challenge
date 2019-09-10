@@ -1,86 +1,48 @@
-# RPS Challenge
+## RPS Challenge
 
-Instructions
--------
+[![Build Status](https://travis-ci.com/mikjw/rps-challenge.svg?branch=master)](https://travis-ci.com/mikjw/rps-challenge)
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+The third weekend challenge at Makers Academy: Build a Rock Paper Scissors (RPS) web app using MVC and the Sinatra library. User stories and full task instructions [here](https://github.com/mikjw/rps-challenge/blob/master/Instructions.md).
+<br>
 
-Task
-----
+### To run
 
-Knowing how to build web applications is getting us almost there as web developers!
+* Clone this repo and navigate to root folder
+* Run `bundle install` to install dependencies
+* Run `rackup` to start webserver
+* Open browser and go to localhost:9292 (default Rack port)
+<br>
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+### Approach to the problem
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+* I first considerd what a MVP would look like from the user stories: a single round of RPS against a computer opponent, with a front end limited to basic defaults.
+* Set up the Sinatra controller using an `RPS` class; then worked in a cycle of writing a feature test in Capybara, then RPsec unit tests to drive the development of controller, model and view elements to pass each feature test.
+* Initially used the session to store player information between requests, but later used `Game` class methods. This let to a DRYer controller using Sinatra filters and seemed preferable to storing entire player instances in the session.
+* Stubbed random behaviour by setting `srand` to a known value when tests are run. 
+* Added 'play again' button and minor font styling
+<br>
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+### To do / improvements
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+* Extract a `Computer` class - `Game` doesn't need to know what type of player it is receiving inputs from
+* Add multiplayer
+* Develop front end 
 
 
-As usual please start by
+<br>
 
-* Forking this repo
-* TEST driving development of your app
+#### Sign-in 
 
+<img src="https://github.com/mikjw/rps-challenge/blob/master/docs/sign_in.png" width=65%>
 
-## Bonus level 1: Multiplayer
+#### Play
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+<img src="https://github.com/mikjw/rps-challenge/blob/master/docs/play.png" width=65%>
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+#### Confirm choice
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+<img src="https://github.com/mikjw/rps-challenge/blob/master/docs/confirm.png" width=65%>
 
-## Basic Rules
+#### Result  
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+<img src="https://github.com/mikjw/rps-challenge/blob/master/docs/result.png" width=65%>
