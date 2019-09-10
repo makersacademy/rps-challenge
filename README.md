@@ -17,16 +17,16 @@ The third weekend challenge at Makers Academy: Build a Rock Paper Scissors (RPS)
 
 * I first considerd what a MVP would look like from the user stories: a single round of RPS against a computer opponent, with a front end limited to basic defaults.
 * Set up the Sinatra controller using an `RPS` class; then worked in a cycle of writing a feature test in Capybara, then RPsec unit tests to drive the development of controller, model and view elements to pass each feature test.
-* Initially used the session to store player information between requests, but later used `Game` class methods. This let to a DRYer controller using Sinatra filters and seemed preferable to storing entire player instances in the session.
+* Initially used the session to store player information between requests, but later used `Game` class methods. This led to a DRYer controller using Sinatra filters and seemed preferable to storing entire player instances in the session.
 * Stubbed random behaviour by setting `srand` to a known value when tests are run. 
-* Added 'play again' button and minor font styling
+* Added 'play again' button and minor font styling.
 <br>
 
 ### To do / improvements
 
-* Extract a `Computer` class - `Game` doesn't need to know what type of player it is receiving inputs from
-* Add multiplayer
-* Develop front end 
+* Extract a `Computer` class - `Game` doesn't need to know what type of player it is receiving inputs from.
+* Add multiplayer.
+* Develop front end.
 
 
 <br>
