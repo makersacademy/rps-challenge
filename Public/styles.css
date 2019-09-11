@@ -1,0 +1,18 @@
+body {
+  font-family: "Lucida Sans Unicode";
+  font-size: 35px;
+}
+
+input {
+  font-family: "Lucida Sans Unicode";
+  font-size: 35px;
+  padding: 8px 32px;
+  display: inline-block;
+  font-size: 25px;
+  /* background-color:  #99ebff; */
+  /* border-style: solid; */
+}
+
+button {
+  border-style: solid;
+}

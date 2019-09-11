@@ -1,0 +1,21 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<center>
+
+<h2>
+  <%= @game.player_1.name.upcase %> chose: <%= @game.player_1.choice.upcase %>
+</h2>
+<h2>
+COMPUTER chose: <%= @comp_choice.upcase %>
+</h2>
+<h2>
+<%= @game.player_1.name.upcase %> LOST
+</h2>
+
+<form action='/play' method="get">
+  <input type='submit' name='rematch' value='PLAY AGAIN'>
+</form>
+
+</center>

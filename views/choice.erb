@@ -1,0 +1,25 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<center>
+<h2>
+Pick your move, <%= @game.player_1.name %> 
+</h2>
+
+<form action='/choice' method="post">
+  <input type='submit' name='choice' value='rock'>
+
+  <input type='submit' name='choice' value='paper'>
+
+  <input type='submit' name='choice' value='scissors'>
+</form>
+
+<h2>
+Your choice: <%= @game.player_1.choice %>
+</h2>
+<br>
+<form action='/result' method="post">
+  <input type='submit' name='confirm' value='CONFIRM'>
+</form>
+</center>
