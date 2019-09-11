@@ -3,7 +3,6 @@ class Player
 
   def initialize(name)
     @name = name
-    @move = nil
   end
 
   def select_move(move)

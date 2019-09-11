@@ -7,18 +7,14 @@ end
 
 feature 'Enter name' do
   scenario 'will see name in lights' do
-    visit('/')
-    fill_in :player_1_name, with: 'Bobo'
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_content 'Bobo get ready for Rock Paper Scissors!'
   end
 end
 
 feature 'Choose an option' do
   scenario 'can pick from rock, paper or scissors' do
-    visit('/')
-    fill_in :player_1_name, with: 'Bobo'
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_all_of_selectors('#rock', '#paper', '#scissors')
   end
 end
