@@ -8,5 +8,6 @@ class Player
   def select_move(move)
     @move = move
   end
+  
 
 end

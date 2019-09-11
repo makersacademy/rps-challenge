@@ -18,6 +18,10 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  # get 'results' do
+  #   erb :results
+  # end
+
   run! if app_file == $0
 
 end

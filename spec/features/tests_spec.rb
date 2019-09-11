@@ -18,3 +18,10 @@ feature 'Choose an option' do
     expect(page).to have_all_of_selectors('#rock', '#paper', '#scissors')
   end
 end
+
+feature 'Display result' do
+  scenario 'new page will display the winner' do
+    sign_in_and_play
+    expect(page).to have_content 'You won!'
+  end
+end
