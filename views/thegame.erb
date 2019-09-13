@@ -1,0 +1,11 @@
+Welcome <%=session[:name]%>! Let's play Rock, Paper & Scissors today!
+
+<p> Your choice: </p>
+<p> </p>
+<p> </p>
+
+<form action = '/vscomputer' method = 'POST'>
+  <input type ="submit" value = "ROCK" name ='mychoice[]'/>
+  <input type ="submit" value = "PAPER" name ='mychoice[]'/>
+  <input type ="submit" value = "SCISSORS" name ='mychoice[]'/>
+</form>
