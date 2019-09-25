@@ -1,0 +1,47 @@
+<html>
+<head>
+<title> RPS - Login </title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+  }
+
+  maintext {
+    float: left;
+    padding: 20px;
+    width: 100%;
+    background-color: #f1f1f1;
+    font-size: 30px;
+  }
+
+  textarea {
+    font-size: 35px;
+  }
+
+</style>
+</head>
+<body>
+  <header>
+    <h1> Welcome to Rock Paper Sissor </h1>
+  </header>
+  <maintext>
+    <h2> Please enter your name </h2>
+    <form action="/match" method="post">
+      <textarea rows="1" cols="25" placeholder="Enter name here" name="Player1"></textarea>
+      </br>
+      </br>
+      <button type="submit" value="Submit" style='font-size: 35px;width:200px; height:50px; color:red'>Lets Play</button>
+      </br>
+    </form>
+    <img src="rps.jpg"/>
+  </maintext>
+</body>
+</html>
