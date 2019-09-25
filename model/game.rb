@@ -18,12 +18,9 @@ class Game
 
   def outcome(player_1)
     computer_move = @player_2.move
-    return "#{@player_1.name}: #{@player_1} & #{@player_2.name}: #{@player_2.move}. It's a Draw" if player_1 == computer_move
-    return "#{@player_1.name}: #{@player_1} & #{@player_2.name}: #{@player_2.move}. #{@player_1.name} won" if BEATMAP[player_1] == computer_move
-    "#{@player_1.name}: #{@player_1} & #{@player_2.name}: #{@player_2.move}. #{@player_2.name} won"
+    return "It's a Draw" if player_1 == computer_move
+    return "You won" if BEATMAP[player_1] == computer_move
+    "CPU won"
   end
-  #
-  # def self
-  #   @game = Game.new(player_1, player_2)
-  # end
+
 end
