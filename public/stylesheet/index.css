@@ -24,18 +24,18 @@ html {
   font-size:24px
 }
 .name-submit {
-position:relative;
-top: 60px;
-left: 50%
-border-radius: 23px;
-background-color: transparent;
-border: none;
-color: gold;
-width: 15%;
-height: 100px;
-text-align: center;
-font-size: 1.8rem;
-font-family: Arial, Helvetica, sans-serif
+  position:relative;
+  top: 60px;
+  left: 50%
+  border-radius: 23px;
+  background-color: transparent;
+  border: none;
+  color: gold;
+  width: 15%;
+  height: 100px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 .h1 {

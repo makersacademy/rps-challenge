@@ -1,7 +1,24 @@
-<%= @player_1_name %> vs CPU
-<br>
-<form action="/attack" method="post">
-  <input name="attack" type="submit" value="Rock">
-  <input name="attack" type="submit" value="Paper">
-  <input name="attack" type="submit" value="Scissor">
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, , initial-scale=0.5">
+<link <link rel=stylesheet type=text/css href=/stylesheet/play.css />
+</head>
+
+  <body class='body'>
+    <p class='p'>
+      Hi <%= @player_1_name %>
+    </p>
+
+    <p class='p'>
+    Select your weapon:
+    </p>
+    <form class='p' action="/attack" method="post">
+      <input class='btn-selection' name="attack" type="submit" value="Rock">
+      <input class='btn-selection' name="attack" type="submit" value="Paper">
+      <input class='btn-selection' name="attack" type="submit" value="Scissor">
+    </form>
+
+  </body>
+
+</html>
