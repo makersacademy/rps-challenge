@@ -1,6 +1,9 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require './app.rb'
+
+require File.join(File.dirname(__FILE__), 'features', 'web_helpers.rb')
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -8,6 +11,8 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+
+Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|
   config.after(:suite) do

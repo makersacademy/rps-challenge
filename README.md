@@ -1,14 +1,5 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
 Task
 ----
 
@@ -27,6 +18,59 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+
+# My Challenge
+--------
+### Getting started
+`git clone git@github.com:samanthaixer/rps-challenge.git`
+
+`bundle` to install the gems required
+
+### Usage
+
+`rackup -p 4567` to run the app
+
+`localhost:4567` to access the app from a browser
+
+**note** this has currently only been tested in Google Chrome
+
+
+### Running tests
+
+`rspec` in the root directory to run all test files except the feature tests
+`rubocop` in the root directory to check the linter
+
+
+### My approach
+1. I added some of my own user stories - see Notes.md
+
+2. Capture the verbs and nouns
+  - Marketeer
+  - Game - register_name, display_name, choose_option
+  - Player - choose, name, random
+  - Game - declare_winner, play
+  - Option - name, image
+
+
+3. Start building tests
+  - I started by building feature tests which then drove out the app.rb and various views. It was only when I started to need to use anything in the Model layer that I wrote unit tests for the classes.
+
+    `Feature tests` > pass > refactor to use model? `unit tests` > write model layer code
+
+4. Repeatedly look to refactor, DRY up code and tests and check for responsibility. This is the reason I ended up with a rules class which hopefully allows any set of rules to be used (with a few minor changes to the code)
+
+5. I have started to build out a new rules class for the rock-paper-scissors-spock-lizard class. This needs a bit more brain power to understand the rules but I should be able to switch one set of rules out for another
+
+
+### Improvements that could be made
+
+- Bonus question 1 - I created my program in a way that should be easy to update to 2 players - computer is just another player as well. However, I like my one player game so I haven't done this.
+- Bonus question 2 - ask user which game they would prefer to play and then build a second set of files that care about that (including the random setting of the computer choice).
+- Add error handling
+- Check whether my implementation of the checking the rules could be done in a neater way - **this has now been implemented following peer review with Masha**
+- When the player selects "Play again", store the player so that it is not lost
+
+# The other details of the challenge
 
 Hints on functionality
 

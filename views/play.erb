@@ -1,0 +1,18 @@
+<h2> You selected: </h2><br/>
+
+<h2><%= @game.player_1.choice %> </h2><br/>
+
+<h2> The computer chose: </h2><br/>
+
+<h2><%= @game.player_2.choice %> </h2><br/>
+
+
+<% if @game.winner != "draw" %>
+<h1>The winner is : <b><%= @game.winner.name %></b></h1>
+<% else %>
+<h1>We are all winners here! The game was a <b>draw!</b></h1>
+<% end %>
+
+<form action="/" method="get">
+  <input type="submit" value="Play Again">
+</form>
