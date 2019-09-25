@@ -26,7 +26,7 @@ class Rps < Sinatra::Base
 
   post '/attack' do
     $result = $game.outcome(params[:attack])
-    redirect '/play'
+    erb :outcome
   end
 
 end
