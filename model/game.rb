@@ -18,9 +18,9 @@ class Game
 
   def outcome(player_1)
     computer_move = @player_2.move
-    return "It's a Draw" if player_1 == computer_move
-    return "You won" if BEATMAP[player_1] == computer_move
-    "CPU won"
+    return "#{@player_1.name}'s move: #{@player_1.attack}\nCPU's move: #{@player_2.move}\nIt's a Draw".gsub(/\n/, '<br/>') if player_1 == computer_move
+    return "#{@player_1.name}'s move: #{@player_1.attack}\nCPU's move: #{@player_2.move}\nYou won".gsub(/\n/, '<br/>') if BEATMAP[player_1] == computer_move
+    "#{@player_1.name}'s move: #{@player_1.attack}\nCPU's move: #{@player_2.move}\nCPU won".gsub(/\n/, '<br/>')
   end
 
 end

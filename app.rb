@@ -25,7 +25,8 @@ class Rps < Sinatra::Base
   end
 
   post '/attack' do
-    $result = $game.outcome(params[:attack])
+    $player_1 = $game.player_1.select(params[:attack])
+    $result = $game.outcome($player_1)
     erb :outcome
   end
 

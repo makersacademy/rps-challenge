@@ -1,13 +1,13 @@
 class Player
 
-    attr_reader :name, :weapon
+    attr_reader :name, :attack
 
-    def initialize(name, weapon = nil)
+    def initialize(name, attack = nil)
       @name = name
-      @weapon = weapon
+      @attack = attack
     end
 
     def select(attack)
-      @weapon = attack
+      @attack = attack
     end
 end
