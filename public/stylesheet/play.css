@@ -27,17 +27,59 @@ html {
   font-weight: bold;
 }
 
-.btn-selection {
+/* height: 37px;
+width: 37px;
+background-image:url('http://www.w3.org/html/logo/downloads/HTML5_Logo_32.png');
+background-repeat:no-repeat; */
+.btn-rock {
   position:relative;
   top: 10px;
   left: 50%
   border-radius: 23px;
+  background-image:url('/image/rock.png');
+  background-repeat:no-repeat;
   background-color: transparent;
-  text-shadow: 7px 6px 3px black;
+  text-shadow: 7px 6px 3px grey;
   border: none;
-  color: white;
-  width: 15%;
-  height: 100px;
+  color: black;
+  width: 150px;
+  height: 90px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.btn-paper {
+  position:relative;
+  top: 10px;
+  left: 50%
+  border-radius: 23px;
+  background-image:url('/image/paper.png');
+  background-repeat:no-repeat;
+  background-color: transparent;
+  text-shadow: 7px 6px 3px grey;
+  border: none;
+  color: black;
+  width: 150px;
+  height: 90px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.btn-scissor {
+  position:relative;
+  top: 10px;
+  left: 50%
+  border-radius: 23px;
+  background-image:url('/image/scissor.png');
+  background-repeat:no-repeat;
+  background-color: transparent;
+  text-shadow: 7px 6px 3px grey;
+  border: none;
+  color: black;
+  width: 150px;
+  height: 90px;
   text-align: center;
   font-size: 1.8rem;
   font-family: Arial, Helvetica, sans-serif
