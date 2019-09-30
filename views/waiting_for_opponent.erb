@@ -1,0 +1,13 @@
+<script type="text/javascript">
+    function refresh() {
+        document.getElementById('retry').submit();
+    }
+    setInterval(refresh, 2000)
+</script>
+
+<div style="text-align: center">
+  <H1>Waiting for opponent...</H1>
+  <form action="/play-if-ready" method="post" id="retry">
+    <input type="submit" value="Refresh...">
+  </form>
+</div>
