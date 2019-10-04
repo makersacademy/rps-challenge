@@ -11,16 +11,34 @@ describe Game do
   end
 
   describe '#winner' do
-
-    it 'p1 selects rock, p2 selects scissors, p1 wins' do
-      allow(game.player1).to receive(:move).with("Rock")
-      allow(game.player2).to receive(:move).with("Scissors")
-      expect(game.winner).to eq player1
+    context 'P1 wins' do
+      let(:player1) { double :player, name: 'Finn', move: 'Rock'}
+      let(:player2) { double :player, name: 'Jake', move: 'Scissors' }
+  
+      it 'p1 selects rock, p2 selects scissors' do
+        expect(game.winner(game.player1.move, game.player2.move)).to eq player1.name
+      end
     end
-  end
 
-  describe '#winning_move' do
-    
+    context 'P2 wins' do
+      let(:player1) { double :player, name: 'Finn', move: 'Rock'}
+      let(:player2) { double :player, name: 'Jake', move: 'Paper' }
+  
+      it 'p1 selects rock, p2 selects paper' do
+        expect(game.winner(game.player1.move, game.player2.move)).to eq player2.name
+      end
+    end
+
+    context 'It\'s a tie' do
+      let(:player1) { double :player, name: 'Finn', move: 'Rock'}
+      let(:player2) { double :player, name: 'Jake', move: 'Rock' }
+  
+      it 'p1 selects rock, p2 selects rock' do
+        expect(game.winner(game.player1.move, game.player2.move)).to eq "tie"
+      end
+    end
+
+
   end
 
 end

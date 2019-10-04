@@ -24,6 +24,7 @@ class RPS < Sinatra::Base
     @player2 = @game.player2
     @player1.move = params[:player_move]
     @player2.random_move
+    @winner = @game.winner(@player1.move, @player2.move)
     erb :winner
   end
 

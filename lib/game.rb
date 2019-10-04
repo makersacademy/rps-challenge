@@ -19,9 +19,14 @@ class Game
     @game
   end
 
-  # def winner
-  #   p1_move = MOVES.index(player1.move)
-  #   p2_move = MOVES.index(player2.move)
-  #   if (p1_move - p2_move).abs
-  # end
+  def winner(player1_move, player2_move)
+    winning_move = winning_move(player1_move, player2_move)
+    if player1_move == winning_move
+      player1.name
+    elsif player2_move == winning_move
+      player2.name
+    else
+      "tie"
+    end
+  end
 end

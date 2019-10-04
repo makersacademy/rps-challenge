@@ -1,5 +1,12 @@
 <%= @game.player1.name %> and Finn selected <%= @game.player1.move %>  
 <%= @game.player2.name %> selected <%= @game.player2.move %>
+
+<% if @winner == "tie" %>
+It's a tie!
+<% else %>
+<%= @winner %> wins!
+<% end %>
+
 <form action="/play" method="get">
   <input type="submit" value="Play again">
 </form>
