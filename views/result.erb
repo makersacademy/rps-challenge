@@ -1,0 +1,11 @@
+<font size=25><center>
+
+  <%= $humanplayer.name %>'s move: <%= $humanplayer.move %>
+  <p>
+  <%= $computerplayer.name %>'s move: <%= $computerplayer.move %>
+  <p>
+  <%= game($humanplayer.move,$computerplayer.move) %>
+
+  <form action="/playagain" method="post">
+  <input type="submit" value="Play again">
+  </form>
