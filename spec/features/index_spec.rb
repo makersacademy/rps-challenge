@@ -1,7 +1,5 @@
 feature 'enter a player name' do
   scenario 'player enter name in form' do
-    visit '/'
-    fill_in :player_name, with: 'Player'
-    click_button 'Submit'
+    sign_in_and_play
   end
 end
