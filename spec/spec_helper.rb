@@ -11,7 +11,7 @@ SimpleCov.start
 
 require File.join(File.dirname(__FILE__), '..', 'app/rps_web.rb')
 require 'capybara/rspec'
-# require 'features/web_helpers'
+require 'features/web_helpers'
 
 Capybara.app = RPS
 
