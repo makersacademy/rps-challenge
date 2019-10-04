@@ -1,0 +1,9 @@
+
+<h1>Greetings <%= @player_name %>!</h1>
+<h2>Choose your weapon!</h2>
+<form action="/choice" method="post">
+  <label for="weapon">
+    Your weapon
+    <input type="text" name="weapon">
+  </label>
+</form>
