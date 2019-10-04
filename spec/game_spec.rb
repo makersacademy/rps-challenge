@@ -10,6 +10,17 @@ describe Game do
     expect(game.player2.name).to eq 'Jake'
   end
 
-  
+  describe '#winner' do
+
+    it 'p1 selects rock, p2 selects scissors, p1 wins' do
+      allow(game.player1).to receive(:move).with("Rock")
+      allow(game.player2).to receive(:move).with("Scissors")
+      expect(game.winner).to eq player1
+    end
+  end
+
+  describe '#winning_move' do
+    
+  end
 
 end
