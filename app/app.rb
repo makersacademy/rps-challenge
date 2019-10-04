@@ -17,12 +17,20 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @player1 = params[:player1]
-    erb :name
+    session[:player1] = params[:player1]
+    redirect '/play'
   end
-
 
   get '/multi' do
     'coming soon'
   end
+
+  get '/play' do
+    @player1 = session[:player1]
+    erb :play
+  end
+
+  # add /names directory for multiplayer
+
+
 end
