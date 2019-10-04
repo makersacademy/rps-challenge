@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.6.0'
 
 gem 'rake'
 gem 'sinatra'
+gem 'pry'
+gem 'rails'
+
 
 group :test do
   gem 'capybara'
