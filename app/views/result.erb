@@ -6,12 +6,23 @@
   </head>
   <body>
     <center>
-      <%=@game.player1.name%> chose <%=@choice%>
+      <%=@game.player1.name%> chose <%=@game.player1.weapon%>
       <br>
+      <%=@game.player2.name%> chose <%=@game.player2.weapon%>
       <br>
-      <%=@game.player1.name%> wins round
+      <% if @game.winner == @game.player1 %>
+      <%=@game.player1.weapon%> beats <%=@game.player2.weapon%>
       <br>
+      <%=@game.player1.name%> wins this round
+      <% elsif @game.winner == @game.player2 %>
+      <%=@game.player2.weapon%> beats <%=@game.player1.weapon%>
       <br>
+      <%=@game.player2.name%> wins this round
+      <% else %>
+      <%=@game.player1.weapon%> cancels out <%=@game.player2.weapon%>
+      <br>
+      'It's a draw!'
+      <%end%>
     </center>
 
   </body>

@@ -22,9 +22,8 @@ class Game
   def play_round(choice)
     puts @player1.move(choice)
     puts @player2.move
-    winner
+    @winner = winner
   end
-
 
   def winner
     if (@player1.weapon == "Rock" && @player2.weapon == "Scissors") || (@player1.weapon == "Scissors" && @player2.weapon == "Paper") || (@player1.weapon == "Paper" && @player2.weapon == "Rock")

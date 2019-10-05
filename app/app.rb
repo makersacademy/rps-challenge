@@ -10,7 +10,6 @@ class RPS < Sinatra::Base
     'Testing infrastructure working!'
   end
 
-
   get '/' do
     erb :index
   end
@@ -42,7 +41,7 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @game = $game
-    @choice = session[:choice]
+    @game.play_round(session[:choice])
     erb :result
   end
 

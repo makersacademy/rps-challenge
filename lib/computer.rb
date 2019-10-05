@@ -3,6 +3,10 @@ class Computer
   attr_reader :weapon
 
   def move
-    @weapon = ['rock','paper','scissors'].sample
+    @weapon = ['Rock','Paper','Scissors'].sample
+  end
+
+  def name
+    'Computer'
   end
 end
