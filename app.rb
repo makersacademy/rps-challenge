@@ -6,6 +6,7 @@ set :session_secret, "supersecret"
 # require lib files
 
 class RPS < Sinatra::Base
+
   enable :sessions
   set :public_folder, File.dirname(__FILE__) + "/static"
 
@@ -22,6 +23,16 @@ class RPS < Sinatra::Base
     p session[:player_name]
     @player_name = session[:player_name]
     erb(:play)
+  end
+
+  post "/move" do
+    @player_move = session[:player_move]
+    # process computer's move
+    redirect "/winner"
+  end
+
+  get "/winner" do
+    erb(:winner)
   end
 
   # start the server only if the ruby file is executed directly

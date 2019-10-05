@@ -11,6 +11,16 @@
 <body>
   <div class="container">
     <h1><%= @player_name %></h1>
+
+    <form action="/move" method="post">
+      <table>
+        <tr>
+          <td width="33%"><input type="submit" name="player_move" value="Rock"></td>
+          <td width="34%"><input type="submit" name="player_move" value="Paper"></td>
+          <td width="33%"><input type="submit" name="player_move" value="Scissors"></td>
+        </tr>
+      </table>
+    </form>
   </div>
 </body>
 </html>
