@@ -20,11 +20,11 @@ class MultiplayerGame < Game
   end
 
   def ready?
-    return true if @player1 && @player2
+    return true unless @player1.move.nil? || @player2.move.nil?
 
     false
   end
-
+  
   def set_player_move(move, session)
     move = move.downcase.to_sym
     if player1.session == session
@@ -32,5 +32,12 @@ class MultiplayerGame < Game
     else
       player2.move = move
     end
+    ready?
+  end
+  
+  def two_players?
+    return true if @player1 && @player2
+
+    false
   end
 end
