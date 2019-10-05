@@ -1,6 +1,17 @@
 require 'game'
 
 describe Game do
+  let(:player) { 'player' }
+  let(:subject) { described_class.new(player) }
+
+  describe '#random_choice' do
+    before do
+      allow(subject).to receive(:random_choice).and_return('Paper')
+    end
+    it 'choose randomly' do
+      expect(subject.random_choice).to eq 'Paper'
+    end
+  end
 
   describe '#match' do
     it 'checks if the match is a tie' do

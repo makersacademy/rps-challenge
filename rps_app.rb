@@ -4,30 +4,33 @@ require './lib/game'
 class RPS < Sinatra::Base
   set :session_secret, 'super secret'
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
 
   post '/name' do
-    $player = Player.new(params[:player_name])
+    # @player_2 = Player.new(params[:player_2_name])
+    @game = Game.create(params[:player_name])
     redirect '/start_game'
   end
 
   get '/start_game' do
-    @player_name = $player.name
+    @player_name = @game.player.name
     erb :start_game
   end
 
   post '/choice' do
-    $player_choice = params[:choice]
-    $computer_choice = Player.new('Computer').random
+    @game.choice(params[:choice])
     redirect '/result'
   end
 
   get '/result' do
-    @player_choice = $player_choice
-    @computer_choice = $computer_choice
-    @game = Game.new
+    @computer_choice = @game.random_choice
+    @player_choice = @game.player_choice
     @game_match = @game.match(@player_choice, @computer_choice)
     erb :result
   end
