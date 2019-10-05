@@ -11,7 +11,8 @@ class RPS < Sinatra::Base
   set :public_folder, File.dirname(__FILE__) + "/static"
 
   get "/" do
-    erb(:index)
+    @content = erb(:index)
+    erb(:template)
   end
 
   post "/startgame" do
@@ -20,9 +21,9 @@ class RPS < Sinatra::Base
   end
 
   get "/play" do
-    p session[:player_name]
     @player_name = session[:player_name]
-    erb(:play)
+    @content = erb(:play)
+    erb(:template)
   end
 
   post "/move" do
@@ -32,7 +33,8 @@ class RPS < Sinatra::Base
   end
 
   get "/winner" do
-    erb(:winner)
+    @content = erb(:winner)
+    erb(:template)
   end
 
   # start the server only if the ruby file is executed directly
