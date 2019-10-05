@@ -2,12 +2,12 @@ require 'player'
 
 describe Player do
 
-  subject(:player) { Player.new(player1)}
-  let(:player1) { double :player1}
+  subject(:player) { Player.new(name1)}
+  let(:name1) { double :player1 }
   let(:choice) {double 'move selection'}
 
   it "initializes with a player name" do
-    expect(player.player1).to eq player1
+    expect(player.name).to eq name1
   end
 
   describe '#turn' do

@@ -1,9 +1,9 @@
 class Player
 
-  attr_reader :player1
+  attr_reader :name
 
   def initialize(player1)
-    @player1 = player1
+    @name = player1
   end
 
   def turn(choice)
