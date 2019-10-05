@@ -28,7 +28,7 @@ class RPS < Sinatra::Base
   end
 
   post '/first_selection' do
-    @game.first_player.choice = params[:player_1_choice]
+    @game.player_1.choice = params[:player_1_choice]
     redirect '/second_play'
   end
 
@@ -37,17 +37,13 @@ class RPS < Sinatra::Base
   end
 
   post '/second_selection' do
-    @game.second_player.choice = params[:player_2_choice]
+    @game.player_2.choice = params[:player_2_choice]
     redirect '/game_over'
   end
 
   get '/game_over' do
     erb :game_over
   end
-
-  # @game.switch_turn
-  # redirect '/play' if @game.game_over? == true
-  # redirect '/game_over' if @game.game_over? == false
 
   run! if app_file == $0
 end

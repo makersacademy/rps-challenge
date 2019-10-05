@@ -5,4 +5,11 @@ feature 'Game over' do
     click_button 'Submit'
     expect(page).to have_content 'Game over'
   end
+
+  scenario 'when player 1 wins' do
+    sign_in_start_game
+    click_button 'Submit'
+    click_button 'Submit'
+    expect(page).to have_content 'Jess is the winner!'
+  end
 end
