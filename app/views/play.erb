@@ -1,1 +1,7 @@
 <%= @player_name %>
+
+<form action='/move' method='post'>
+  <input type='submit' name='choice' value="Rock">
+</form>
+
+<%= erb :result %>

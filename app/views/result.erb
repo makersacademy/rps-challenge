@@ -1,0 +1,7 @@
+<div>
+  Computer chose <%= @ai_move %>
+</div>
+<div>
+  <%= "You won!" if @result == :win %>
+  <%= "You lost!" if @result == :lose %>
+</div>
