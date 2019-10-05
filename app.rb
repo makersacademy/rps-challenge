@@ -38,12 +38,12 @@ class RPS < Sinatra::Base
 
   post '/second_selection' do
     @game.second_player.choice = params[:player_2_choice]
+    redirect '/game_over'
   end
 
-  #
-  # get '/game_over' do
-  #   erb :game_over
-  # end
+  get '/game_over' do
+    erb :game_over
+  end
 
   # @game.switch_turn
   # redirect '/play' if @game.game_over? == true
