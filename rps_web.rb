@@ -16,7 +16,7 @@ class RPSWeb < Sinatra::Base
   post '/name' do
     mode = params[:players]
     redirect('/mpname', 307) if mode == "Multiplayer"
-    Game.create(name: params[:player_name])
+    Game.create(params[:player_name])
     redirect '/play' if mode == "Single Player"
   end
   
@@ -37,7 +37,7 @@ class RPSWeb < Sinatra::Base
 # Multiplayer starts here _________________________
 
   post '/mpname' do
-    MultiplayerGameCreator.instance.new_player(name: params[:player_name], session: session.id)
+    MultiplayerGameCreator.instance.new_player(params[:player_name], session.id)
     if MultiplayerGame.instance.ready?
       @redirect = '/mpplay'
     else

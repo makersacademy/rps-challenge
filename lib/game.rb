@@ -8,11 +8,11 @@ class Game
     @game
   end
   
-  def self.create(name: name)
-    @game = Game.new(name: name)
+  def self.create(player_name)
+    @game = Game.new(name: player_name)
   end
   
-  def initialize(name: name, ai_class: AI, battle_class: Battle)
+  def initialize(name: player_name, ai_class: AI, battle_class: Battle)
     @player_name = name
     @opponent = ai_class.new
     @battle = battle_class.new

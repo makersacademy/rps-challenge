@@ -10,11 +10,11 @@ class MultiplayerGameCreator
     @multiplayer_game_class = multiplayer_game_class
   end
 
-  def new_player(params)
+  def new_player(name, session)
     unless @multiplayer_game_class.instance
-      @multiplayer_game_class.create(params)
+      @multiplayer_game_class.create(name, session)
     else
-      @multiplayer_game_class.instance.add_second(params)
+      @multiplayer_game_class.instance.add_second(name, session)
     end
   end
 end

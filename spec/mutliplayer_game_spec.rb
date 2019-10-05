@@ -5,7 +5,7 @@ describe MultiplayerGame do
 
   context 'when ready' do
     it 'knows both players names' do
-      subject.add_second(name: "Steve", session: "another session")
+      subject.add_second("Steve", "another session")
       expect(mpgame.player1_name).to eq "Kevin"
       expect(mpgame.player2_name).to eq "Steve"
     end
@@ -13,7 +13,7 @@ describe MultiplayerGame do
 
   describe "#add_second" do
     it 'adds a second player to the game' do
-      mpgame.add_second(name: "Steve", session: "another session")
+      mpgame.add_second("Steve", "another session")
       expect(mpgame).to be_ready
     end
   end
@@ -27,7 +27,7 @@ describe MultiplayerGame do
     
     context 'when both players have joined' do
       it 'returns true' do
-        mpgame.add_second(name: "Steve", session: "another session")
+        mpgame.add_second("Steve", "another session")
         expect(mpgame).to be_ready
       end
     end
