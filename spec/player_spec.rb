@@ -10,4 +10,11 @@ describe Player do
     end
   end
 
+  # describe "#move" do
+  #   it "returns the player's move" do
+  #     possible_moves = ["Rock", "Paper", "Scissors"]
+  #     expect(possible_moves).to include player.move
+  #   end
+  # end
+
 end

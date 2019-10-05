@@ -3,12 +3,17 @@ require "sinatra/base"
 
 set :session_secret, "supersecret"
 
-# require lib files
+require_relative "./lib/game"
+require_relative "./lib/player"
 
 class RPS < Sinatra::Base
 
   enable :sessions
   set :public_folder, File.dirname(__FILE__) + "/static"
+
+  before do
+    @game = Game.instance
+  end
 
   get "/" do
     @content = erb(:index)
@@ -16,24 +21,24 @@ class RPS < Sinatra::Base
   end
 
   post "/startgame" do
-    session[:player_name] = params[:player_name]
+    Game.create(Player.new(params[:player_name]))
     redirect "/play"
   end
 
   get "/play" do
-    @player_name = session[:player_name]
     @content = erb(:play)
     erb(:template)
   end
 
   post "/move" do
-    @player_move = session[:player_move]
+    @game.player.move = params[:player_move]
     # process computer's move
-    redirect "/winner"
+    redirect "/result"
   end
 
-  get "/winner" do
-    @content = erb(:winner)
+  get "/result" do
+    @player_move = session[:player_move]
+    @content = erb(:result)
     erb(:template)
   end
 

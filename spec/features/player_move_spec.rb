@@ -6,9 +6,21 @@ feature "Player move" do
     expect(page).to have_button "Scissors"
   end
 
-  scenario "player chooses rock, paper or scissors" do
+  scenario "when player chooses Rock, page displays Rock" do
     sign_in
     click_button "Rock"
     expect(page).to have_content "Rock"
+  end
+
+  scenario "when player chooses Paper, page displays Paper" do
+    sign_in
+    click_button "Paper"
+    expect(page).to have_content "Paper"
+  end
+
+  scenario "when player chooses Scissors, page displays Scissors" do
+    sign_in
+    click_button "Scissors"
+    expect(page).to have_content "Scissors"
   end
 end
