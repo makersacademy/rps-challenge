@@ -7,17 +7,18 @@ class MultiplayerGame < Game
     @game
   end
   
-  def self.create(player1_name, player2_name=nil)
-    @game = self.new(player1_name: player1_name, player2_name: player2_name)
+  def self.create(name: player1_name, session: session)
+    @game = self.new(name: player1_name, session: session)
   end
 
-  def initialize(player1_name: player1_name, player2_name: player2_name)
-    @player1_name = player1_name
-    @player2_name = player2_name
+  def initialize(name: name, session: session)
+    @player1_name = name
+    @player1_session = session
   end
 
-  def add_second(name)
+  def add_second(name: name, session: session)
     @player2_name = name
+    @player2_session = session
   end
 
   def ready?

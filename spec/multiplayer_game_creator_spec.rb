@@ -11,10 +11,11 @@ describe MultiplayerGameCreator do
       expect(mpgame_class).to receive(:instance)
       mpgame_creator.new_player("Kevin")
     end
+
     context 'when no Multiplayer game exists' do
       it 'creates a new game with a given name' do
-        expect(mpgame_class).to receive(:create).with("Kevin")
-        expect(subject.new_player("Kevin")).to eq mpgame
+        expect(mpgame_class).to receive(:create).with(name: "Kevin", session: "a session")
+        subject.new_player(name: "Kevin", session: "a session")
       end
     end
 
@@ -22,8 +23,8 @@ describe MultiplayerGameCreator do
       it 'adds a second player' do
         name = "Steve"
         allow(mpgame_class).to receive(:instance) { mpgame }
-        expect(mpgame).to receive(:add_second).with(name)
-        mpgame_creator.new_player(name)
+        expect(mpgame).to receive(:add_second).with(name: name, session: "another session")
+        mpgame_creator.new_player(name: name, session: "another session")
       end
     end
   end

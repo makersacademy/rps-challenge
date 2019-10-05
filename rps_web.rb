@@ -12,7 +12,7 @@ class RPSWeb < Sinatra::Base
     @page = :index
     erb :template
   end
-
+  
   post '/name' do
     mode = params[:players]
     redirect('/mpname', 307) if mode == "Multiplayer"
@@ -29,20 +29,31 @@ class RPSWeb < Sinatra::Base
     erb :template
   end
 
-  post '/mpname' do
-    MultiplayerGameCreator.instance.new_player(params[:player_name])
-    redirect '/mpwaiting'
-  end
-
-  get '/mpwaiting' do
-    # @redirect = MultiplayerGameCreator.instance.ready?
-    erb :mp_waiting
-    sleep 2
-    redirect @redirect
-  end
-
   post '/move' do
     Game.instance.play(params[:choice])
     redirect '/play'
+  end
+
+# Multiplayer starts here _________________________
+
+  post '/mpname' do
+    MultiplayerGameCreator.instance.new_player(name: params[:player_name], session: session.id)
+    if MultiplayerGame.instance.ready?
+      @redirect = '/mpplay'
+    else
+      @redirect = '/mpwaiting'
+    end
+    redirect @redirect
+  end
+
+  get '/mpwaiting' do
+    @page = :mp_waiting
+    erb :template
+  end
+
+  get '/mpplay' do
+    @game = MultiplayerGame.instance
+    @player1_name = @game.player1_name
+    @player2_name = @game.player2_name
   end
 end
