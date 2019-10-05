@@ -3,8 +3,10 @@ require 'game'
 describe Game do
   let(:ai) { double(:cpu, get_move: :scissors) }
   let(:ai_class) { double(:ai_class, new: ai) }
+  let(:battle) { double(:battle, outcome: :win) }
+  let(:battle_class) { double(:battle_class, new: battle) }
 
-  subject(:game) { described_class.new(name: "Kevin", ai_class: ai_class) }
+  subject(:game) { described_class.new(name: "Kevin", ai_class: ai_class, battle_class: battle_class) }
 
   context 'when instantiated' do
     it 'knows the players name' do
@@ -37,70 +39,9 @@ describe Game do
       end
     end
 
-    context 'when the user picks Rock' do
-      context 'and the AI picks scissors' do
-        it 'returns :win' do
-          expect(game.play('Rock')).to eq :win
-        end
-      end
-
-      context 'and the AI picks Paper' do
-        it 'returns :lose' do
-          allow(ai).to receive(:get_move) { :paper }
-          expect(game.play('Rock')).to eq :lose
-        end
-      end
-      
-      context 'and the AI picks Rock' do
-        it 'returns :draw' do
-          allow(ai).to receive(:get_move) { :rock }
-          expect(game.play('Rock')).to eq :draw
-        end
-      end
-    end
-
-    context 'when the user picks Scissors' do
-      context 'and the AI picks scissors' do
-        it 'returns :win' do
-          expect(game.play('Scissors')).to eq :draw
-        end
-      end
-
-      context 'and the AI picks Paper' do
-        it 'returns :lose' do
-          allow(ai).to receive(:get_move) { :paper }
-          expect(game.play('Scissors')).to eq :win
-        end
-      end
-      
-      context 'and the AI picks Rock' do
-        it 'returns :draw' do
-          allow(ai).to receive(:get_move) { :rock }
-          expect(game.play('Scissors')).to eq :lose
-        end
-      end
-    end
-
-    context 'when the user picks Paper' do
-      context 'and the AI picks scissors' do
-        it 'returns :win' do
-          expect(game.play('Paper')).to eq :lose
-        end
-      end
-
-      context 'and the AI picks Paper' do
-        it 'returns :lose' do
-          allow(ai).to receive(:get_move) { :paper }
-          expect(game.play('Paper')).to eq :draw
-        end
-      end
-      
-      context 'and the AI picks Rock' do
-        it 'returns :draw' do
-          allow(ai).to receive(:get_move) { :rock }
-          expect(game.play('Paper')).to eq :win
-        end
-      end
+    it 'gets the result from the Battle class' do
+      expect(battle).to receive(:outcome).with(:rock, :scissors)
+      game.play('Rock')
     end
   end
 end

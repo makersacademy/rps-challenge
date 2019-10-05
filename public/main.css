@@ -20,6 +20,14 @@ h2 {
   border-radius: 7%;
 }
 
+.selector {
+  background: salmon;
+  padding: 4%;
+  width: 40%;
+  border: salmon;
+  border-radius: 7%;
+}
+
 .action:hover {
   background: orangered;
 }
