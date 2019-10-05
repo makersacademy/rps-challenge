@@ -4,6 +4,7 @@ require File.join(File.dirname(__FILE__), '..', 'rps_app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'features/web_helpers.rb'
 
 
 Capybara.app = RPS

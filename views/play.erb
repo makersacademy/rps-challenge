@@ -1,7 +1,17 @@
-Player: <%= @player_1 %>
+<h1>Player: <%= @player_1 %><h1>
+
+<form action='/play' method='post'>
+  <input type='submit' name='move' value='rock!'>
+  <input type='submit' name='move' value='paper...'>
+  <input type='submit' name='move' value='scissors?'>
+  </form>
+
+<h1><%=@player_1%>'s move is <%=@move%></h1>
+<h1>The computer's move is...<%=@comp_move%></h1>
 
 <style>
 body {
      background-image: url("https://making-the-web.com/sites/default/files/clipart/131088/cartoon-fight-131088-2477306.png");
 }
+
 </style>
