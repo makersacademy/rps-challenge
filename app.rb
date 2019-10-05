@@ -13,5 +13,13 @@ class RpsApp < Sinatra::Base
     erb :index
   end
 
+  get '/single_player' do
+
+  end
+
+  get '/multiplayer' do
+
+  end
+
   run! if app_file == $0
 end
