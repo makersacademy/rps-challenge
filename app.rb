@@ -1,3 +1,5 @@
+require_relative "lib/player"
+
 require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
@@ -12,6 +14,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/sp_game' do
+    @player1 = Player.new(params[:player1])
     redirect '/play'
   end
 
