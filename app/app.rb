@@ -30,7 +30,17 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/selection' do
+    session[:choice] = params[:choice]
+    redirect '/result'
+  end
+
+  get '/result' do
+
+    @player1 = session[:player1]
+    @choice = session[:choice]
+    erb :result
+  end
+
   # add /names directory for multiplayer
-
-
 end

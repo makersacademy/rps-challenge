@@ -7,12 +7,14 @@
   <body>
     <center>
       <%=@player1%> VS Computer
-      <form action="/result">
-        <button name="Rock">Rock</button>
-        <button name="Paper">Paper</button>
-        <button name="Scissors">Scissors</button>
+      <form action="/selection" method='post'>
+        <p>Pick your move:</p>
+        <input type="radio" name="choice" value="Rock">Rock<br>
+        <input type="radio" name="choice" value="Paper"> Paper<br>
+        <input type="radio" name="choice" value="Scissors"> Scissors<br>
+        <input type="submit" value="Play">
       </form>
-      </center>
+    </center>
   </body>
 </html>
 
