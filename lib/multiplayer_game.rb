@@ -1,29 +1,36 @@
 require_relative 'game'
 
 class MultiplayerGame < Game
-  attr_accessor :player1_name, :player2_name
+  attr_accessor :player1, :player2
 
   def self.instance
     @game
   end
   
-  def self.create(p1name, p1session)
-    @game = self.new(name: p1name, session: p1session)
+  def self.create(player)
+    @game = self.new(player)
   end
 
-  def initialize(name: player_name, session: player_session)
-    @player1_name = name
-    @player1_session = session
+  def initialize(player)
+    @player1 = player
   end
 
-  def add_second(p2name, p2session)
-    @player2_name = p2name
-    @player2_session = p2session
+  def add_second(player)
+    @player2 = player
   end
 
   def ready?
-    return true if @player1_name && @player2_name
+    return true if @player1 && @player2
 
     false
+  end
+
+  def set_player_move(move, session)
+    move = move.downcase.to_sym
+    if player1.session == session
+      player1.move = move
+    else
+      player2.move = move
+    end
   end
 end

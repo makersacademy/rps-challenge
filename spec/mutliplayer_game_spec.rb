@@ -1,19 +1,22 @@
 require 'multiplayer_game'
 
 describe MultiplayerGame do
-  subject(:mpgame) { described_class.new(name: "Kevin", session: "a session") }
+  let(:player1) { double(:player1, name: "Kevin", session: "a session") }
+  let(:player2) { double(:player2, name: "Steve", session: "another session") }
+
+  subject(:mpgame) { described_class.new(player1) }
 
   context 'when ready' do
-    it 'knows both players names' do
-      subject.add_second("Steve", "another session")
-      expect(mpgame.player1_name).to eq "Kevin"
-      expect(mpgame.player2_name).to eq "Steve"
+    it 'knows both players' do
+      mpgame.add_second(player2)
+      expect(mpgame.player1).to eq(player1)
+      expect(mpgame.player2).to eq(player2)
     end
   end
 
   describe "#add_second" do
     it 'adds a second player to the game' do
-      mpgame.add_second("Steve", "another session")
+      mpgame.add_second(player2)
       expect(mpgame).to be_ready
     end
   end
@@ -27,8 +30,17 @@ describe MultiplayerGame do
     
     context 'when both players have joined' do
       it 'returns true' do
-        mpgame.add_second("Steve", "another session")
+        mpgame.add_second(player2)
         expect(mpgame).to be_ready
+      end
+    end
+  end
+
+  describe '#set_player move' do
+    context 'given a move an a session' do
+      it 'assigns a move to the relevant player' do
+        expect(player1).to receive(:move=).with(:rock)
+        mpgame.set_player_move('Rock', 'a session')
       end
     end
   end

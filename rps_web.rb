@@ -36,6 +36,10 @@ class RPSWeb < Sinatra::Base
 
 # Multiplayer starts here _________________________
 
+  get '/mpmove' do
+
+  end
+
   post '/mpname' do
     MultiplayerGameCreator.instance.new_player(params[:player_name], session.id)
     if MultiplayerGame.instance.ready?
@@ -45,15 +49,17 @@ class RPSWeb < Sinatra::Base
     end
     redirect @redirect
   end
+  
+  get '/mpplay' do
+    @game = MultiplayerGame.instance
+    @player1_name = @game.player1.name
+    @player2_name = @game.player2.name
+    @page = :multiplayer_play
+    erb :template
+  end
 
   get '/mpwaiting' do
     @page = :mp_waiting
     erb :template
-  end
-
-  get '/mpplay' do
-    @game = MultiplayerGame.instance
-    @player1_name = @game.player1_name
-    @player2_name = @game.player2_name
   end
 end

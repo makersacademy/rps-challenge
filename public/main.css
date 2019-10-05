@@ -21,6 +21,7 @@ h2 {
 }
 
 .selector {
+  text-align: center;
   background: salmon;
   padding: 4%;
   width: 40%;
