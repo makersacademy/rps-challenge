@@ -5,6 +5,8 @@ set :session_secret, "supersecret"
 
 require_relative "./lib/game"
 require_relative "./lib/player"
+require_relative "./lib/computer"
+
 
 class RPS < Sinatra::Base
 
@@ -21,7 +23,7 @@ class RPS < Sinatra::Base
   end
 
   post "/startgame" do
-    Game.create(Player.new(params[:player_name]))
+    Game.create(Player.new(params[:player_name]), Computer.new)
     redirect "/play"
   end
 
@@ -32,12 +34,11 @@ class RPS < Sinatra::Base
 
   post "/move" do
     @game.player.move = params[:player_move]
-    # process computer's move
+    # Computer's random move already decided on game initialization
     redirect "/result"
   end
 
   get "/result" do
-    @player_move = session[:player_move]
     @content = erb(:result)
     erb(:template)
   end
