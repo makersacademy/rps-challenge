@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
-# require './lib/game'
+require './lib/game'
 class RPS < Sinatra::Base
   set :session_secret, 'super secret'
 
@@ -27,6 +27,8 @@ class RPS < Sinatra::Base
   get '/result' do
     @player_choice = $player_choice
     @computer_choice = $computer_choice
+    @game = Game.new
+    @game_match = @game.match(@player_choice, @computer_choice)
     erb :result
   end
 
