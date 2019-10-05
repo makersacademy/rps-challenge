@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
-require './lib/mutiplayer_game'
+require './lib/multiplayer_game'
+require './lib/multiplayer_game_creator'
 
 class RPSWeb < Sinatra::Base
   enable :sessions
@@ -29,12 +30,12 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/mpname' do
-    MultiplayerGame.create(name: params[:player_name])
-    redirect '/play'
+    MultiplayerGameCreator.instance.new_player(params[:player_name])
+    redirect '/mpwaiting'
   end
 
   get '/mpwaiting' do
-    @redirect = multiplayer_route
+    # @redirect = MultiplayerGameCreator.instance.ready?
     erb :mp_waiting
     sleep 2
     redirect @redirect
