@@ -3,3 +3,7 @@ def sign_in_and_play
   fill_in :player_name, with: 'Player'
   click_button 'Submit'
 end
+
+# def choose_rock
+#
+# end
