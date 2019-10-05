@@ -37,10 +37,68 @@ describe Game do
       end
     end
 
-    context 'when the user picks rock' do
+    context 'when the user picks Rock' do
       context 'and the AI picks scissors' do
         it 'returns :win' do
           expect(game.play('Rock')).to eq :win
+        end
+      end
+
+      context 'and the AI picks Paper' do
+        it 'returns :lose' do
+          allow(ai).to receive(:get_move) { :paper }
+          expect(game.play('Rock')).to eq :lose
+        end
+      end
+      
+      context 'and the AI picks Rock' do
+        it 'returns :draw' do
+          allow(ai).to receive(:get_move) { :rock }
+          expect(game.play('Rock')).to eq :draw
+        end
+      end
+    end
+
+    context 'when the user picks Scissors' do
+      context 'and the AI picks scissors' do
+        it 'returns :win' do
+          expect(game.play('Scissors')).to eq :draw
+        end
+      end
+
+      context 'and the AI picks Paper' do
+        it 'returns :lose' do
+          allow(ai).to receive(:get_move) { :paper }
+          expect(game.play('Scissors')).to eq :win
+        end
+      end
+      
+      context 'and the AI picks Rock' do
+        it 'returns :draw' do
+          allow(ai).to receive(:get_move) { :rock }
+          expect(game.play('Scissors')).to eq :lose
+        end
+      end
+    end
+
+    context 'when the user picks Paper' do
+      context 'and the AI picks scissors' do
+        it 'returns :win' do
+          expect(game.play('Paper')).to eq :lose
+        end
+      end
+
+      context 'and the AI picks Paper' do
+        it 'returns :lose' do
+          allow(ai).to receive(:get_move) { :paper }
+          expect(game.play('Paper')).to eq :draw
+        end
+      end
+      
+      context 'and the AI picks Rock' do
+        it 'returns :draw' do
+          allow(ai).to receive(:get_move) { :rock }
+          expect(game.play('Paper')).to eq :win
         end
       end
     end

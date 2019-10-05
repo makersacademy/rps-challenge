@@ -11,13 +11,22 @@ feature 'Play Rock Paper Scissors' do
       expect(page).to have_content("You won!")
     end
     
-    scenario 'player loses with Rock' do
+    scenario 'player loses with Scissors' do
       name = "Kevin"
-      allow_any_instance_of(Array).to receive(:sample) { :paper }
-      click_button("Rock")
-      expect(page).to have_content("Computer chose Paper")
+      allow_any_instance_of(Array).to receive(:sample) { :rock }
+      click_button("Scissors")
+      expect(page).to have_content("Computer chose Rock")
       expect(page).not_to have_content("You won!")
       expect(page).to have_content("You lost!")
+    end
+    scenario 'player draws with paper' do
+      name = "Kevin"
+      allow_any_instance_of(Array).to receive(:sample) { :paper }
+      click_button("Paper")
+      expect(page).to have_content("Computer chose Paper")
+      expect(page).to have_content("Draw!")
+      expect(page).not_to have_content("You won!")
+      expect(page).not_to have_content("You lost!")
     end
   end
 end
