@@ -1,0 +1,36 @@
+body {
+  background: lightblue;
+  padding-top: 5%;
+  text-align: center;
+}
+
+h1 {
+  padding: 4%;
+}
+
+h2 {
+  padding: 4%;
+}
+
+.action {
+  background: salmon;
+  padding: 5%;
+  width: 50%;
+  border: salmon;
+  border-radius: 7%;
+}
+
+.action:hover {
+  background: orangered;
+}
+
+.name_field {
+  padding: 3%;
+  width: 100%;
+  text-align: center;
+  text
+}
+
+.buffer {
+  padding: 2.5%;
+}

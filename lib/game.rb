@@ -26,16 +26,22 @@ class Game
 
   def battle(player_move)
     moves = {
-      [:rock, :scissors] => :win,
-      [:rock, :paper] => :lose,
-      [:rock, :rock] => :draw,
-      [:paper, :rock] => :win,
-      [:paper, :scissors] => :lose,
-      [:paper, :paper] => :draw,
-      [:scissors, :paper] => :win,
-      [:scissors, :rock] => :lose,
-      [:scissors, :scissors] => :draw
+      :rock => {
+        :scissors => :win,
+        :paper => :lose,
+        :rock => :draw
+      },
+      :paper => {
+        :rock => :win,
+        :scissors => :lose,
+        :paper => :draw,
+      },
+      :scissors => {
+        :paper => :win,
+        :rock => :lose,
+        :scissors => :draw
      }
-    moves[[player_move, @ai_move]]
+    }
+    moves[player_move][@ai_move]
   end
 end

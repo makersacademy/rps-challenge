@@ -2,8 +2,11 @@ require 'sinatra/base'
 require './lib/game'
 
 class RPSWeb < Sinatra::Base
+  enable :sessions
+  
   get '/' do
-    erb :index
+    @page = :index
+    erb :template
   end
 
   post '/name' do
@@ -16,7 +19,8 @@ class RPSWeb < Sinatra::Base
     @result = @game.result
     @ai_move = @game.ai_move.to_s.capitalize
     @player_name = @game.player_name
-    erb :play
+    @page = :play
+    erb :template
   end
 
   post '/move' do

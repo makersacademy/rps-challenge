@@ -1,0 +1,24 @@
+<h1>Alright, go get 'em <%= @player_name %>!</h1>
+<%= erb :result if @result %>
+<% unless @result %>
+<div class='buffer'><h2>Who will win...</h2></div>
+<% end %>
+<div class="row">
+  <div class="col-sm"></div>
+  <div class="col-sm">
+    <form action='/move' method='post'>
+      <input class='action' type='submit' name='choice' value="Rock">
+    </form>
+  </div>
+  <div class="col-sm">
+    <form action='/move' method='post'>
+      <input class='action' type='submit' name='choice' value="Paper">
+    </form>
+  </div>
+  <div class="col-sm">
+    <form action='/move' method='post'>
+      <input class='action' type='submit' name='choice' value="Scissors">
+    </form>
+  </div>
+  <div class="col-sm"></div>
+</div>

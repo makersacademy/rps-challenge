@@ -1,6 +1,6 @@
 ENV["RACK_ENV"] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', 'app/rps_web.rb')
+require File.join(File.dirname(__FILE__), '..', 'rps_web.rb')
 require_relative './features/web_helper'
 
 require 'capybara/rspec'
