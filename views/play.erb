@@ -1,1 +1,9 @@
-Welcome, <%= @player_1 %>
+Welcome, <%= @player_1 %> <br/>
+
+What do you choose: rock... paper... or scissors? <br/>
+
+<form action="/choice" method="post">
+  <input type="submit" value="Rock" name="move">
+  <input type="submit" value="Paper" name="move">
+  <input type="submit" value="Scissors" name="move">
+</form>
