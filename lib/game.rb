@@ -1,3 +1,7 @@
+require_relative 'player'
+require_relative 'computer'
+
+
 class Game
 
   def initialize(player1, player2)
@@ -6,11 +10,26 @@ class Game
     @player2 = player2
   end
 
+  def p1_weapon
+    @player1.weapon
+  end
+
+  def p2_weapon
+    @player2.weapon
+  end
+
+  def play_round(choice)
+    puts @player1.move(choice)
+    puts @player2.move
+    winner
+  end
+
+
   def winner
-    if (@player1.turn == "rock" && @player2.turn == "scissors") || (@player1.turn == "scissors" && @player2.turn == "paper") || (@player1.turn == "paper" && @player2.turn == "rock")
+    if (@player1.weapon == "Rock" && @player2.weapon == "Scissors") || (@player1.weapon == "Scissors" && @player2.weapon == "Paper") || (@player1.weapon == "Paper" && @player2.weapon == "Rock")
       @player1
-    elsif @player1.turn == @player2.turn
-      'Draw'
+    elsif @player1.weapon == @player2.weapon
+      "Draw"
     else @player2
     end
   end

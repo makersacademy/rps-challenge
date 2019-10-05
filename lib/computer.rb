@@ -1,6 +1,8 @@
 class Computer
 
-  def turn
-    ['rock','paper','scissors'].sample
+  attr_reader :weapon
+
+  def move
+    @weapon = ['rock','paper','scissors'].sample
   end
 end

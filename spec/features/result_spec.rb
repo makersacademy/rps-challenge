@@ -1,8 +1,9 @@
-feature "Display results of the round" do
-  scenario "Winner is displayed" do
+feature "Display player selection" do
+  scenario "Player 1 result shown" do
     play_single
+    choose(option: "Rock")
     click_button('Play')
-    expect(page).to have_content "Sid wins round"
+    expect(page).to have_content "Sid chose Rock"
   end
 
   # scenario "Winning move shown" do

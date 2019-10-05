@@ -12,7 +12,14 @@ describe Player do
 
   describe '#turn' do
     it "returns users move selection" do
-      expect(player.turn(choice)).to eq choice
+      expect(player.move(choice)).to eq choice
+    end
+  end
+
+  describe '#weapon' do
+    it "returns player weapon of choice" do
+      subject.move(choice)
+      expect(subject.weapon).to eq choice
     end
   end
 end

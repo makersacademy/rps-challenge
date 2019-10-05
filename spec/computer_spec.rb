@@ -7,7 +7,7 @@ describe Computer do
   describe '#turn' do
     it "randomly selects a move" do
       srand(4)
-      expect(subject.turn).to eq('scissors')
+      expect(subject.move).to eq('scissors')
     end
   end
 end

@@ -37,7 +37,6 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-
     @player1 = $player1
     @choice = session[:choice]
     erb :result
