@@ -22,4 +22,10 @@ describe Player do
       expect(subject.weapon).to eq choice
     end
   end
+
+  describe '#points' do
+    it "returns players points" do
+      expect(subject.points).to eq 0
+    end
+  end
 end

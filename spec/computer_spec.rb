@@ -16,4 +16,10 @@ describe Computer do
       expect(subject.name).to eq 'Computer'
     end
   end
+
+  describe '#points' do
+    it "returns players points" do
+      expect(subject.points).to eq 0
+    end
+  end
 end

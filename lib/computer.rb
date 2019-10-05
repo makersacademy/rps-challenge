@@ -1,6 +1,10 @@
 class Computer
 
-  attr_reader :weapon
+  attr_reader :weapon, :points
+
+  def initialize
+    @points = 0
+  end
 
   def move
     @weapon = ['Rock','Paper','Scissors'].sample
