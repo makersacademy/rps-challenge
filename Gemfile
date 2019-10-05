@@ -4,6 +4,8 @@ ruby '2.6.0'
 
 gem 'rake'
 gem 'sinatra'
+gem 'rack'
+gem 'selenium-webdriver'
 
 group :test do
   gem 'capybara'
@@ -11,4 +13,7 @@ group :test do
   gem 'rubocop', '0.56.0'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+
+
+
 end

@@ -1,0 +1,22 @@
+<center>
+  <body>
+    <p>Welcome <%= @game.player_1.name %>!</p>
+    <br>
+    <br>
+    <p>Rock, Paper or Scissors. Pick your move <%= @game.player_1.name %></p>
+    <br>
+
+    <form action="/move" method="post">
+      <input type="submit" name="Rock" value="Rock">
+    </form>
+    
+    <form action="/move" method="post">
+      <input type="submit" name="Paper" value="Paper">
+    </form>
+
+    <form action="/move" method="post">
+      <input type="submit" name="Scissors" value="Scissors">
+    </form>
+
+  </body>
+</center>
