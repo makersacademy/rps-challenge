@@ -51,18 +51,18 @@
       button:focus {
         outline: none;
       }
-      
+
     </style>
   </head>
   <body>
     <h1>Rock Paper Scissors App</h1>
 
     <img src="images/rps.png" alt="Rock, Paper Scissors">
-    <form class="form1" action="index.html" method="post">
-      <button type="button" name="single_player">Single Player Mode</button>
+    <form class="form1" action="/single_player" method="get">
+      <button type="submit" name="single_player">Single Player Mode</button>
     </form>
-    <form class="form2" action="index.html" method="post">
-      <button type="button" name="multiplayer">Multiplayer Mode</button>
+    <form class="form2" action="/multiplayer" method="get">
+      <button type="submit" name="multiplayer">Multiplayer Mode</button>
     </form>
   </body>
 </html>
