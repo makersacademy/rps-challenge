@@ -9,5 +9,9 @@ describe Player do
     it 'returns player name' do
       expect(player_1.name).to eq "Jess"
     end
+
+    it 'has a choice equal to nil' do
+      expect(player_1.choice).to eq nil 
+    end
   end
 end

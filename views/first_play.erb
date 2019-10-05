@@ -1,0 +1,17 @@
+<%= @game.first_player.name %>, it's your turn to select rock, paper or scissors.
+<div>
+  No peeping <%= @game.second_player.name %>!
+</div>
+<div>
+  <form action="/first_selection" method="post">
+    <label for="player_1_choice">
+    <%= @game.first_player.name %>'s choice
+      <select name="player_1_choice">
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+      </select>
+    </label>
+    <input type="submit" value="Submit">
+  </form>
+</div>

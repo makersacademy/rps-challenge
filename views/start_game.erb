@@ -32,7 +32,12 @@
   </head>
   <body>
     <h1 class="glow">
-    <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+    <%= @game.first_player.name %> vs. <%= @game.second_player.name %>
     </h1>
+    <div>
+      <form action="/first_play">
+        <input type="submit" value="Start game">
+      </form>
+    </div>
   </body>
 </html>

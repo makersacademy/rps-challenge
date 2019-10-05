@@ -16,5 +16,14 @@ class Game
 
   def self.instance
     @game
-  end 
+  end
+
+  def first_player
+    @players.first
+  end
+
+  def second_player
+    @players.last
+  end
+
 end
