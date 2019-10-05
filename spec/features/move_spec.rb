@@ -22,5 +22,4 @@ feature 'submitting move' do
 
     expect(page).to have_text("Boris chooses Scissors")
   end
-
 end

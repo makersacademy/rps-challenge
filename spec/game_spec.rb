@@ -1,8 +1,9 @@
 require_relative '../lib/game'
 
 describe Game do
-  subject(:game) { described_class.new(player)}
-  let(:player) { double :player, move: "Rock"}
+  subject(:game) { described_class.new(player, move)}
+  let(:player) { double :player }
+  let(:move) { double :move, player_move: "Rock" }
 
   describe '#player_move' do
     it 'player chooses rock' do

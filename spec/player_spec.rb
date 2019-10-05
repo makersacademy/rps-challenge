@@ -11,17 +11,17 @@ describe Player do
     end
   end
 
-  describe '#move' do
-    it 'player chooses rock' do
-      expect(player.move("Rock")).to eq "Rock"
-    end
-
-    it 'player chooses paper' do
-      expect(player.move("Paper")).to eq "Paper"
-    end
-
-    it 'player chooses scissors' do
-      expect(player.move('Scissors')).to eq "Scissors"
-    end
-  end
+  # describe '#player_move' do
+  #   it 'player chooses rock' do
+  #     expect(player.move("Rock")).to eq "Rock"
+  #   end
+  #
+  #   it 'player chooses paper' do
+  #     expect(player.move("Paper")).to eq "Paper"
+  #   end
+  #
+  #   it 'player chooses scissors' do
+  #     expect(player.move('Scissors')).to eq "Scissors"
+  #   end
+  # end
 end
