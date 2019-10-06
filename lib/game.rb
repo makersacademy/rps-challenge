@@ -27,8 +27,8 @@ class Game
   end
 
   def play_round(choice)
-    puts @player1.move(choice)
-    puts @player2.move
+    @player1.move(choice)
+    @player2.move
     keep_score
     winner
   end
