@@ -6,4 +6,12 @@ class Player
     @name = name
     @session = session
   end
+
+  def ready?
+    !!@move
+  end
+
+  def reset_move
+    @move = nil
+  end
 end

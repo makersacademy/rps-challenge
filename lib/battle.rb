@@ -17,7 +17,19 @@ class Battle
    }
   }
 
+  def multiplayer_outcome(player1, player2)
+    puts "#{player1.move} player1, #{player2.move} player2"
+    outcome(player1.move, player2.move)
+  end
+
   def outcome(player1_move, player2_move)
     MOVES[player1_move][player2_move]
+  end
+
+  private 
+
+  def reset_player_moves(player1, player2)
+    player1.reset_move
+    player2.reset_move
   end
 end

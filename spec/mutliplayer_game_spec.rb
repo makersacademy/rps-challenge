@@ -1,11 +1,11 @@
 require 'multiplayer_game'
 
 describe MultiplayerGame do
-  let(:player1) { double(:player1, name: "Kevin", session: "a session", :move= => :rock, move: :rock) }
-  let(:player2) { double(:player2, name: "Steve", session: "another session", :move= => :paper, move: :paper) }
-  let(:battle) { double(:battle) }
+  let(:player1) { double(:player1, name: "Kevin", session: "a session", :move= => :rock, move: :rock, reset_move: nil) }
+  let(:player2) { double(:player2, name: "Steve", session: "another session", :move= => :paper, move: :paper, reset_move: nil) }
+  let(:battle) { double(:battle, multiplayer_outcome: :player1_win) }
   let(:battle_class) { double(:battle_class, new: battle) }
-  let(:messager) { double(:messager) }
+  let(:messager) { double(:messager, messages: nil) }
   let(:messager_class) { double(:messager_class, new: messager) }
 
   subject(:mpgame) { described_class.new(player1, battle_class: battle_class, messager_class: messager_class) }
@@ -39,48 +39,22 @@ describe MultiplayerGame do
       end
     end
   end
-
-  describe 'ready?' do
-    context 'when none or one player has selected a move' do
-      before :each do
-        mpgame.add_second(player2)
-        allow(player1).to receive(:move) { nil }
-        allow(player2).to receive(:move) { nil }
-      end
-
-      it 'returns false' do
-        expect(mpgame.ready?).to eq false
-      end
-      
-      it 'returns false' do
-        allow(player1).to receive(:move) { :rock }
-        expect(mpgame.ready?).to eq false
-      end
-    end
-    
-    context 'when both players have selected a move' do
-      it 'returns true' do
-        mpgame.add_second(player2)
-        allow(player1).to receive(:move) { :rock }
-        allow(player2).to receive(:move) { :paper }
-        expect(mpgame.ready?).to eq true
-      end
-    end
-  end
   
-  describe 'result' do
-    it 'forwards the player moves to the Battle class' do
+  describe '#result' do
+    before :each do
       mpgame.add_second(player2)
-      expect(battle).to receive(:outcome).with(:rock, :paper)
+    end
+    it 'forwards the players to the Battle class' do
+      expect(battle).to receive(:multiplayer_outcome).with(player1, player2)
       mpgame.result
     end
   end
-
+  
   describe 'player_messages' do
     before :each do
       mpgame.add_second(player2)
     end
-
+    
     context 'before the first move' do
       it 'returns nil' do
         allow(player1).to receive(:move) { nil }
@@ -88,16 +62,16 @@ describe MultiplayerGame do
         expect(mpgame.player_messages("a session")).to be_nil
       end
     end
-
+    
     context 'when player 1 wins' do
       before :each do
-        allow(battle).to receive(:outcome) { :player1_win }
+        allow(battle).to receive(:multiplayer_outcome) { :player1_win }
       end
       it 'gets the winning messages from the messager' do
         expect(messager).to receive(:messages).with(player1, player2, :win)
         mpgame.player_messages("a session")
       end
-
+      
       it 'gets the losing messages from the messager' do
         expect(messager).to receive(:messages).with(player2, player1, :lose)
         mpgame.player_messages("another session")
@@ -106,39 +80,70 @@ describe MultiplayerGame do
 
     context 'when player 2 wins' do
       before :each do
-        allow(battle).to receive(:outcome) { :player2_win }
+        allow(battle).to receive(:multiplayer_outcome) { :player2_win }
       end
       it 'gets the losing messages from the messager' do
         expect(messager).to receive(:messages).with(player1, player2, :lose)
         mpgame.player_messages("a session")
       end
-
+      
       it 'gets the winning messages from the messager' do
         expect(messager).to receive(:messages).with(player2, player1, :win)
         mpgame.player_messages("another session")
       end
     end
-
+    
     context 'when result is a draw' do
       before :each do
-        allow(battle).to receive(:outcome) { :draw }
+        allow(battle).to receive(:multiplayer_outcome) { :draw }
       end
       it 'gets the draw messages from the messager' do
         expect(messager).to receive(:messages).with(player1, player2, :draw)
         mpgame.player_messages("a session")
       end
     end
+    
+    context 'when both players have retrieved messages' do
+      it 'resets player moves' do
+        expect(player1).to receive(:reset_move)
+        expect(player2).to receive(:reset_move)
+        mpgame.player_messages("a session")
+        mpgame.player_messages("another session")
+      end
+    end
   end
-
+    
+  describe 'players_ready?' do
+    before :each do
+      mpgame.add_second(player2)
+    end
+    it 'checks ready status of both players' do
+      expect(player1).to receive(:ready?) { true }
+      expect(player2).to receive(:ready?)
+      mpgame.players_ready?
+    end
+    context 'when none or one player ready' do
+      it 'returns false' do
+        allow(player1).to receive(:ready?) { true }
+        allow(player2).to receive(:ready?) { false }
+        expect(mpgame.players_ready?).to eq false
+      end
+    end
+    
+    context 'when both players ready' do
+      it 'returns true' do
+        allow(player1).to receive(:ready?) { true }
+        allow(player2).to receive(:ready?) { true }
+        expect(mpgame.players_ready?).to eq true
+      end
+    end
+  end
+  
   describe '#set_player_move' do
     context 'given a move and a session' do
       it 'assigns a move to the relevant player' do
         expect(player1).to receive(:move=).with(:rock)
         mpgame.set_player_move('Rock', 'a session')
-      end
-      
-      it 'returns the ready status of the game' do
-        expect(mpgame.set_player_move('Rock', 'a session')).to eq false
       end
     end
   end

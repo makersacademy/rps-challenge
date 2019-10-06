@@ -23,24 +23,26 @@ class MultiplayerGame
   end
 
   def player_messages(session)
-    return nil unless ready?
-    
-    player, opponent = get_players(session)
-    return @messager.messages(player, opponent, :draw) if result == :draw
+    return nil unless @player1.move && player2.move
 
-    @messager.messages(player, opponent, player_result(result, player))
+    player, opponent = get_players(session)
+    if result == :draw
+      messages = @messager.messages(player, opponent, :draw) 
+    else
+      messages = @messager.messages(player, opponent, player_result(result, player))
+    end
+    check_and_reset_result
+    messages
   end
 
-  def ready?
-    if player1 && player2
-      return true if player1.move && player2.move
-    end
+  def players_ready?
+    return true if @player1.ready? && player2.ready?
 
     false
   end
 
   def result
-    @result ||= @battle.outcome(player1.move, player2.move)
+    @result ||= @battle.multiplayer_outcome(player1, player2)
   end
   
   def set_player_move(move, session)
@@ -50,7 +52,6 @@ class MultiplayerGame
     else
       player2.move = move
     end
-    ready?
   end
   
   def two_players?
@@ -60,6 +61,17 @@ class MultiplayerGame
   end
 
   private
+
+  def check_and_reset_result
+    puts "can reset = #{@can_reset}"
+    if @can_reset
+      puts "resetting..."
+      @result = nil
+      @player1.reset_move
+      @player2.reset_move
+    end
+    @can_reset = !@can_reset
+  end
 
   def get_players(session)
     return [player1, player2] if player1.session == session

@@ -20,4 +20,26 @@ describe Player do
       expect(player.move).to eq(:rock)
     end
   end
+
+  describe 'ready?' do
+    context 'when no move chosen' do
+      it 'returns false' do
+        expect(player).to_not be_ready
+      end
+    end
+
+    context 'after a move is chosen' do
+      it 'returns true' do
+        player.move = :rock
+        expect(player).to be_ready
+      end
+    end
+  end
+
+  describe '#reset_move' do
+    it 'sets @move to nil' do
+      player.move = :rock
+      expect{ player.reset_move }.to change{ player.move }.to nil
+    end
+  end
 end
