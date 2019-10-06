@@ -1,6 +1,5 @@
 # app.rb
 require 'sinatra/base'
-require './lib/computer'
 require './lib/winner'
 # require_relative './lib/game'
 
@@ -14,21 +13,22 @@ enable :sessions
   end
 
   post '/names' do
-    winner = Winner.new
-    winner.player_1.name = params[:Name]
+    $winner = Winner.new(Player.new(params[:Name]))
     redirect '/play'
   end
 
   get '/play' do
-    @player = session[:Name]
+    @player = $winner.player_1.name
     erb(:play)
   end
 
   post '/fight' do
-    @player = winner.player_1.name
-    @player_choice = winner.player_1.choice
-    @computer_choice = winner.player_2.choice
-    @winner = winner.winner
+    @player = $winner.player_1.name
+    $winner.player_1.choose(params[:RPS])
+    @player_choice = $winner.player_1.choice
+    $winner.player_2.choose
+    @computer_choice = $winner.player_2.choice
+    @winner = $winner.winner
     erb(:fight)
   end
 

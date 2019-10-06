@@ -1,23 +1,17 @@
 require 'player'
 
-describe Winner do
+describe Player do
 
-  let (:player_1) { double :player }
-  let (:player_2) { double :player }
-  subject { described_class.new(player_1, player_2) }
+  let (:name) { :name }
+  subject { described_class.new(name) }
 
-  it 'initializes with two players' do
-    expect(Winner).to respond_to(:new).with(2).arguments
+  it 'initializes with the name of the player' do
+    expect(subject.name).to eq name
   end
 
-  it 'outputs the name of the winner if there is one' do
-    # allow(subject.moves).to receive(:sample).and_return("Rock")
-    expect(subject.winner).to eq 'The winner is player_1'
-  end
-
-  it 'outputs the draw if draw' do
-    # allow(subject.moves).to receive(:sample).and_return("Rock")
-    expect(subject.winner).to eq "It's a draw!"
+  it 'allows the player to store their choice' do
+    subject.choose("Rock")
+    expect(subject.choice).to eq "Rock"
   end
 
 end
