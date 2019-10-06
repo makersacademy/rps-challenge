@@ -10,6 +10,12 @@
         color: #8a0303;
       }
 
+      h2 {
+        font-family: 'Permanent Marker', cursive;
+        color: #8a0303;
+        font-size: 20px;
+      }
+
       .radio-inline {
         position: relative;
         display: inline-block;
@@ -26,7 +32,7 @@
   <body>
     <center>
       <h1><%=@game.player1.name%> VS Computer</h1>
-      <br>
+      <h2>Best of 3</h2>
       <h1><%=@game.player1.points%>-<%=@game.player2.points%></h1>
       <img src="images/trio.jpg" width="300" height="350" alt="rock paper scissors">
       <div class="buttons">
