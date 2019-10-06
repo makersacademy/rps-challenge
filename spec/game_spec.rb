@@ -3,19 +3,26 @@ require_relative '../lib/game'
 describe Game do
   subject(:game) { described_class.new(player, move)}
   let(:player) { double :player }
-  let(:move) { double :move, player_move: "Rock" }
-
-  describe '#player_move' do
-    it 'player chooses rock' do
-      expect(game.player_move("Rock")).to include "Rock"
-    end
-  end
+  let(:move) { double :move, player_turns: ["Rock"], computer_turns: ["Paper"] }
 
   describe '#last_action' do
     it 'returns rock as the last action' do
-      game.player_move("Rock")
+      expect(game.player_last_action).to eq "Rock"
+    end
+  end
 
-      expect(game.last_action).to eq "Rock"
+  describe '#computer_last_action' do
+    it 'returns paper' do
+      expect(game.computer_last_action).to eq "Paper"
+    end
+  end
+
+  describe '#outcome' do
+    xit 'declares Boris the Winner' do
+      game.player_last_action("Rock")
+      allow(Kernel).to receive(:rand).and_return(2)
+
+      expect(game.outcome).to eq "wins"
     end
   end
 end

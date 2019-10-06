@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
+require './lib/move'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -26,12 +27,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
-    @game.player_move(params.values[0])
+    # @move = Move.new
+    @game
+    @game.move.player_move(params.values[0])
+    @game.move.computer_move
 
     redirect '/game'
   end
 
   get '/game' do
+    # @move
     @game
     erb :game
   end

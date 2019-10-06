@@ -7,6 +7,6 @@ feature 'opponent move' do
 
     allow(Kernel).to receive(:rand).and_return(0)
 
-    expect(page).to have_text("Computer chooses Rock")
+    expect(page).to have_content("Computer chooses Rock")
   end
 end

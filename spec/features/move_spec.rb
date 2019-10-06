@@ -15,7 +15,6 @@ feature 'submitting move' do
     expect(page).to have_text("Boris chooses Paper")
   end
 
-
   scenario 'Boris chooses paper' do
     sign_in_and_play
     click_button 'Scissors'
