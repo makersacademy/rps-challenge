@@ -23,30 +23,24 @@ class MultiplayerGame
   end
 
   def player_messages(session)
+    return nil unless ready?
+    
     player, opponent = get_players(session)
-    case result
-    when :player1_win
-      return @messager.messages(player, opponent, :win) if player == @player1
+    return @messager.messages(player, opponent, :draw) if result == :draw
 
-      @messager.messages(player, opponent, :lose)
-    when :player2_win
-      return @messager.messages(player, opponent, :win) if player == @player2
-
-      @messager.messages(player, opponent, :lose)
-    else
-      @messager.messages(player, opponent, :draw)
-    end
+    @messager.messages(player, opponent, player_result(result, player))
   end
 
   def ready?
-    if @player1 && @player2
-      return true if @player1.move && @player2.move
+    if player1 && player2
+      return true if player1.move && player2.move
     end
+
     false
   end
 
   def result
-    @result ||= @battle.result(player1.move, player2.move)
+    @result ||= @battle.outcome(player1.move, player2.move)
   end
   
   def set_player_move(move, session)
@@ -60,7 +54,7 @@ class MultiplayerGame
   end
   
   def two_players?
-    return true if @player1 && @player2
+    return true if player1 && player2
 
     false
   end
@@ -68,8 +62,22 @@ class MultiplayerGame
   private
 
   def get_players(session)
-    return [@player1, player2] if @player1.session == session
+    return [player1, player2] if player1.session == session
 
-    [@player2, @player1]
+    [player2, player1]
   end 
+
+  def player_result(battle_result, player)
+    player_result_cases = {
+      player1_win: {
+        @player1 => :win,
+        @player2 => :lose
+      },
+      player2_win: {
+        @player1 => :lose,
+        @player2 => :win
+      }
+    }
+    player_result_cases[battle_result][player]
+  end
 end

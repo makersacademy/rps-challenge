@@ -71,7 +71,7 @@ describe MultiplayerGame do
   describe 'result' do
     it 'forwards the player moves to the Battle class' do
       mpgame.add_second(player2)
-      expect(battle).to receive(:result).with(:rock, :paper)
+      expect(battle).to receive(:outcome).with(:rock, :paper)
       mpgame.result
     end
   end
@@ -81,9 +81,17 @@ describe MultiplayerGame do
       mpgame.add_second(player2)
     end
 
+    context 'before the first move' do
+      it 'returns nil' do
+        allow(player1).to receive(:move) { nil }
+        allow(player2).to receive(:move) { nil }
+        expect(mpgame.player_messages("a session")).to be_nil
+      end
+    end
+
     context 'when player 1 wins' do
       before :each do
-        allow(battle).to receive(:result) { :player1_win }
+        allow(battle).to receive(:outcome) { :player1_win }
       end
       it 'gets the winning messages from the messager' do
         expect(messager).to receive(:messages).with(player1, player2, :win)
@@ -98,7 +106,7 @@ describe MultiplayerGame do
 
     context 'when player 2 wins' do
       before :each do
-        allow(battle).to receive(:result) { :player2_win }
+        allow(battle).to receive(:outcome) { :player2_win }
       end
       it 'gets the losing messages from the messager' do
         expect(messager).to receive(:messages).with(player1, player2, :lose)
@@ -113,7 +121,7 @@ describe MultiplayerGame do
 
     context 'when result is a draw' do
       before :each do
-        allow(battle).to receive(:result) { :draw }
+        allow(battle).to receive(:outcome) { :draw }
       end
       it 'gets the draw messages from the messager' do
         expect(messager).to receive(:messages).with(player1, player2, :draw)
