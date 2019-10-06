@@ -9,7 +9,7 @@ describe Game do
 
   describe '#add' do
     it 'can add players' do
-      (game.add(player1, player2))
+      game.add(player1, player2)
       expect(game.players).to eq [player1, player2]
     end
   end

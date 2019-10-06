@@ -34,20 +34,19 @@ class Game
     p1_move == p2_move
   end
 
-
   def win
     return "It's a draw, everyone wins." if tie?
 
     case @player1.current_move
     when 'Paper'
-      return print_winner(@player1)  if p2_move == 'Rock'
+      return print_winner(@player1) if p2_move == 'Rock'
       print_winner(@player2) if p2_move == 'Scissors'
     when 'Rock'
-      return print_winner(@player1)  if p2_move == 'Scissors'
-      print_winner(@player2)  if p2_move == 'Paper'
+      return print_winner(@player1) if p2_move == 'Scissors'
+      print_winner(@player2) if p2_move == 'Paper'
     when 'Scissors'
-      return print_winner(@player1)  if p2_move == 'Paper'
-      print_winner(@player2)  if p2_move == 'Rock'
+      return print_winner(@player1) if p2_move == 'Paper'
+      print_winner(@player2) if p2_move == 'Rock'
     end
   end
 
