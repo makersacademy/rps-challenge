@@ -1,4 +1,12 @@
 feature 'Winner is selected' do
+  # scenario 'Single player: Computer wins' do
+  #   sign_in_and_play
+  #   fill_in(:player_1_move, with: 'Paper')
+  #   click_button("Play!")
+  #   allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+  #   expect(page).to have_content("COMPUTER wins this round!")
+  # end
+
   scenario 'Multiplayer: Winner is selected' do
     multiplay_sign_in_and_play
     fill_in(:player_1_move, with: 'Paper')

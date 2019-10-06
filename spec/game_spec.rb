@@ -35,10 +35,52 @@ describe Game do
       expect(game.winner).to eq "It's a tie"
     end
 
-    it 'returns the winner of the round' do
-      allow(player_1).to receive(:move).and_return("Paper")
-      allow(player_2).to receive(:move).and_return("Rock")
-      expect(game.winner).to eq player_1
+    context 'player 1 selects Rock' do
+
+      it 'then player 2 selects Paper and wins' do
+        allow(player_1).to receive(:move).and_return("Rock")
+        allow(player_2).to receive(:move).and_return("Paper")
+        expect(game.winner).to eq player_2
+      end
+
+      it 'then player 2 selects Scissors and loses' do
+        allow(player_1).to receive(:move).and_return("Rock")
+        allow(player_2).to receive(:move).and_return("Scissors")
+        expect(game.winner).to eq player_1
+      end
+
+    end
+
+    context 'player 1 selects Paper' do
+
+      it 'then player 2 selects Scissors and wins' do
+        allow(player_1).to receive(:move).and_return("Paper")
+        allow(player_2).to receive(:move).and_return("Scissors")
+        expect(game.winner).to eq player_2
+      end
+
+      it 'then player 2 selects Rock and loses' do
+        allow(player_1).to receive(:move).and_return("Paper")
+        allow(player_2).to receive(:move).and_return("Rock")
+        expect(game.winner).to eq player_1
+      end
+
+    end
+
+    context 'player 1 selects Scissors' do
+
+      it 'then player 2 selects Rock and wins' do
+        allow(player_1).to receive(:move).and_return("Scissors")
+        allow(player_2).to receive(:move).and_return("Rock")
+        expect(game.winner).to eq player_2
+      end
+
+      it 'then player 2 selects Paper and loses' do
+        allow(player_1).to receive(:move).and_return("Scissors")
+        allow(player_2).to receive(:move).and_return("Paper")
+        expect(game.winner).to eq player_1
+      end
+
     end
   end
 
