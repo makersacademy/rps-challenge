@@ -32,6 +32,9 @@
     <div id="Winner">
       <h1><%=@game.outcome%></h1>
       <h1><%="#{@game.player2.name} choose #{@game.player2_move}"%></h1>
+      <form class="form1" action="/play" method="get">
+        <button type="submit" name="single_player">Play again?</button>
+      </form>
     </div>
 
   </body>
