@@ -44,9 +44,10 @@ img { width: 22%; }
 </div>
 
 <div style="font-family: 'Bungee'; font-size: 1vw">
+  <br>
   <% if @game.winner.nil? %>
     <h1 align="center"> Play again </h1>
   <% else %>
-    <h1 align="center"> <%= @game.winner.weapon %> beats <%= @game.loser.weapon %>  </h1>
+    <h1 align="center"> <%= @game.reason %>  </h1>
   <% end %>
 </div>

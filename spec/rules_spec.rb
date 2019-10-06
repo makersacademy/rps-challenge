@@ -19,4 +19,8 @@ describe Rules do
       expect(subject.defeats?(:lizard, :spock)).to eq true
     end
   end
+
+  describe '#reason_finder' do
+    it { expect(subject.reason_finder(:spock, :paper)).to eq "paper disproves spock" }
+  end
 end

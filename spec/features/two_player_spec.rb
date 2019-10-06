@@ -16,6 +16,6 @@ feature 'Setting up game' do
     click_button("Let's Play")
     click_button('rock')
     click_button('paper')
-    expect(page).to have_content "paper beats rock"
+    expect(page).to have_content "paper covers rock"
   end
 end

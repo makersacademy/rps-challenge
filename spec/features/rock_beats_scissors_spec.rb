@@ -4,7 +4,7 @@ feature 'Playing RPS' do
       allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
       sign_in_single
       click_button('rock')
-      expect(page).to have_content "rock beats scissors"
+      expect(page).to have_content "rock crushes scissors"
       expect(page).to have_content "James wins!"
     end
   end

@@ -22,6 +22,10 @@ class Game
     @winner, @loser = @player_2, @player_1 if p2_wins
   end
 
+  def reason
+    @rules_instance.new.reason_finder(@winner.weapon, @loser.weapon)
+  end
+
   def track_scores
     @p1_score += 1 if p1_wins
     @p2_score += 1 if p2_wins
