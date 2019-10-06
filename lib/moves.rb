@@ -12,5 +12,4 @@ module Moves
       MOVES[[p1_move, p2_move].min]
     end
   end
-  
 end

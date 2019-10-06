@@ -2,7 +2,7 @@ require 'player'
 
 describe Player do
 
-  subject(:player) { described_class.new}
+  subject(:player) { described_class.new }
 
   it 'initializes with a name' do
     bob = described_class.new('Bob')
@@ -16,22 +16,21 @@ describe Player do
 
   describe '#random_move' do
     it 'randomly selects rock move' do
-      srand(67811)
+      srand(67_811)
       player.random_move
       expect(player.move).to eq "Rock"
     end
 
     it 'randomly selects paper move' do
-      srand(67808)
+      srand(67_808)
       player.random_move
       expect(player.move).to eq "Paper"
     end
 
     it 'randomly selects scissors move' do
-      srand(67809)
+      srand(67_809)
       player.random_move
       expect(player.move).to eq "Scissors"
     end
   end
-
 end

@@ -12,7 +12,7 @@ describe Game do
 
   describe '#winner' do
     context 'P1 wins' do
-      let(:player1) { double :player, name: 'Olly', move: 'Rock'}
+      let(:player1) { double :player, name: 'Olly', move: 'Rock' }
       let(:player2) { double :player, name: 'monster', move: 'Scissors' }
   
       it 'p1 selects rock, p2 selects scissors' do
@@ -21,7 +21,7 @@ describe Game do
     end
 
     context 'P2 wins' do
-      let(:player1) { double :player, name: 'Olly', move: 'Rock'}
+      let(:player1) { double :player, name: 'Olly', move: 'Rock' }
       let(:player2) { double :player, name: 'monster', move: 'Paper' }
   
       it 'p1 selects rock, p2 selects paper' do
@@ -30,15 +30,12 @@ describe Game do
     end
 
     context 'It\'s a tie' do
-      let(:player1) { double :player, name: 'Olly', move: 'Rock'}
+      let(:player1) { double :player, name: 'Olly', move: 'Rock' }
       let(:player2) { double :player, name: 'monster', move: 'Rock' }
   
       it 'p1 selects rock, p2 selects rock' do
         expect(game.winner(game.player1.move, game.player2.move)).to eq "tie"
       end
     end
-
-
   end
-
 end

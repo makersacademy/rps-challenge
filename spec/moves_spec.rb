@@ -37,5 +37,4 @@ describe MovesTest do
       expect(game.winning_move("Rock", "Rock")).to eq nil
     end
   end
-
 end

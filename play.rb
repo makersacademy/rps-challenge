@@ -1,1 +1,0 @@
-<%= @player_1_name %> & Finn vs. Jake
