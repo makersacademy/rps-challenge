@@ -39,14 +39,25 @@ class RpsApp < Sinatra::Base
     erb :play
   end
 
-  get '/mp-play' do
-    erb :mp_play
-  end
-
   post '/move' do
     @game.single_player(params[:move])
     redirect '/end'
   end
+
+  get '/mp-play' do
+    erb :mp_play
+  end
+
+  post '/p1_move' do
+    @game.p1_move(params[:move])
+    redirect '/mp-play'
+  end
+
+  post '/p2_move' do
+    @game.p2_move(params[:move])
+    redirect '/end'
+  end
+
 
   get '/end' do
     @game.outcome

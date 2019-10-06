@@ -45,4 +45,9 @@ class Game
 
     "#{player2.name} won"
   end
+
+  def reset
+    @player1_move = nil
+    @player2_move = nil
+  end
 end

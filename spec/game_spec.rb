@@ -94,4 +94,15 @@ describe Game do
       expect(game.outcome).to eq "#{player2.name} won"
     end
   end
+
+  describe '#rest' do
+    it 'resets player1_move' do
+      game.reset
+      expect(game.player1_move).to eq nil
+    end
+    it 'resets player2_move' do
+      game.reset
+      expect(game.player2_move).to eq nil
+    end
+  end
 end

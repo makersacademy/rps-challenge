@@ -3,8 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>End Game</title>
-
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <style>
+      body {
+        font-family: 'Indie Flower', cursive;
+      }
+      
       #Winner {
         padding: 50px 0;
         text-align: center;
@@ -25,13 +29,13 @@
     </script>
   </head>
   <body>
-    <h2><%="#{@game.player1.name} choose #{@game.player1_move}"%></h2>
+    <h2><%="#{@game.player1.name} made the move: #{@game.player1_move}"%></h2>
 
     <button onclick="reveal()">Reveal Winner</button>
 
     <div id="Winner">
       <h1><%=@game.outcome%></h1>
-      <h1><%="#{@game.player2.name} choose #{@game.player2_move}"%></h1>
+      <h1><%="#{@game.player2.name} made the move: #{@game.player2_move}"%></h1>
       <form class="form1" action="/play" method="get">
         <button type="submit" name="single_player">Play again?</button>
       </form>
