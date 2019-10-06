@@ -8,6 +8,7 @@ class Player
 
   def move(rps)
     @move = rps
+    @move
   end
 
   def random_move
