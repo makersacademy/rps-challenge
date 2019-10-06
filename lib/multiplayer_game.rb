@@ -21,7 +21,13 @@ class MultiplayerGame
   def add_second(player)
     @player2 = player
   end
+  
+  def get_players(session)
+    return [player1, player2] if player1.session == session
 
+    [player2, player1]
+  end 
+  
   def player_messages(session)
     return nil unless @player1.move && player2.move
 
@@ -61,9 +67,7 @@ class MultiplayerGame
   private
 
   def check_and_reset_result
-    puts "can reset = #{@can_reset}"
     if @can_reset
-      puts "resetting..."
       @result = nil
       @player1.reset_move
       @player2.reset_move
@@ -71,11 +75,6 @@ class MultiplayerGame
     @can_reset = !@can_reset
   end
 
-  def get_players(session)
-    return [player1, player2] if player1.session == session
-
-    [player2, player1]
-  end 
 
   def get_player_result(battle_result, player)
     player_result_cases = {

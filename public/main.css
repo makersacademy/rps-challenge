@@ -2,6 +2,7 @@ body {
   background: lightblue;
   padding-top: 5%;
   text-align: center;
+  font-size: 100%;
 }
 
 h1 {
@@ -12,21 +13,24 @@ h2 {
   padding: 4%;
 }
 
+.player_name {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+  font-size: 4em;
+}
+
+.vs_sign {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+  font-size: 3em;
+}
+
 .action {
   background: salmon;
   padding: 5%;
-  width: 50%;
+  width: 80%;
   border: salmon;
-  border-radius: 7%;
-}
-
-.selector {
-  text-align: center;
-  background: salmon;
-  padding: 4%;
-  width: 40%;
-  border: salmon;
-  border-radius: 7%;
+  border-radius: 2%;
 }
 
 .action:hover {
@@ -34,10 +38,9 @@ h2 {
 }
 
 .name_field {
-  padding: 3%;
-  width: 100%;
+  width: 70%;
+  font-size: 2em;
   text-align: center;
-  text
 }
 
 .buffer {

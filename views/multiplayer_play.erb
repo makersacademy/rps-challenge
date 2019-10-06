@@ -1,5 +1,13 @@
-<h1><%= @player1.name %> VS <%= @player2.name %></h1>
+<div class='row'>
+    <div class='col-sm'></div>
+    <div class='col-sm'><div class='player_name'><%= @player.name %></div></div>
+    <div class='col-sm'><div class='vs_sign'>VS</div></div>
+    <div class='col-sm'><div class='player_name'><%= @opponent.name %></div></div>
+    <div class='col-sm'></div>
+</div>
+<span class="buffer"></span>
 <%= erb :mp_result %>
+<span class="buffer"></span>
 <div class="row">
   <div class="col-sm"></div>
   <div class="col-sm">

@@ -57,8 +57,7 @@ class RPSWeb < Sinatra::Base
   
   get '/mpplay' do
     @game = MultiplayerGame.instance
-    @player1 = @game.player1
-    @player2 = @game.player2
+    @player, @opponent = @game.get_players(session.id)
     @player_messages = @game.player_messages(session.id)
     @page = :multiplayer_play
     erb :template

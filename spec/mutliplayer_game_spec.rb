@@ -27,6 +27,15 @@ describe MultiplayerGame do
     end
   end
   
+  describe '#get_players' do
+    context 'when given a session' do
+      it 'returns the player and opponent' do
+        mpgame.add_second(player2)
+        expect(mpgame.get_players("a session")).to eq [player1, player2]
+      end
+    end
+  end
+  
   describe '#two_players?' do
     context 'when only one player joined' do
       it 'returns false' do

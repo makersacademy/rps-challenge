@@ -18,7 +18,6 @@ class Battle
   }
 
   def multiplayer_outcome(player1, player2)
-    puts "#{player1.move} player1, #{player2.move} player2"
     outcome(player1.move, player2.move)
   end
 
