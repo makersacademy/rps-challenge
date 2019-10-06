@@ -1,4 +1,16 @@
 <h1><%= @game.result %></h1>
 
-<%= @game.player.name %>'s move: <%= @game.player.move %>
-Computer's move: <%= @game.computer.move %>
+<table>
+  <tr width="100%">
+    <td width="50%">
+      <%= @game.player.name %>'s move: <%= @game.player.move %>
+    </td>
+    <td width="50%">
+      Computer's move: <%= @game.computer.move %>
+    </td>
+  </tr>
+</table>
+
+<form action="/">
+  <input type="submit" value="Play again">
+</form>

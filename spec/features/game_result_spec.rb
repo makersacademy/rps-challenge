@@ -21,4 +21,11 @@ feature "Game result" do
     expect(page).to have_content "It's a draw!"
   end
 
+  scenario "Player is allowed to play again" do
+    allow_any_instance_of(Array).to receive(:sample) { "Rock" }
+    sign_in
+    click_button "Rock"
+    expect(page).to have_button "Play again"
+  end
+
 end
