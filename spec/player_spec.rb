@@ -9,9 +9,9 @@ describe Player do
     expect(bob.name).to eq 'Bob'
   end
 
-  it 'initializes with a default name of Jake' do
+  it 'initializes with a default name of monster' do
     bob = described_class.new
-    expect(bob.name).to eq 'Jake'
+    expect(bob.name).to eq 'monster'
   end
 
   describe '#random_move' do
