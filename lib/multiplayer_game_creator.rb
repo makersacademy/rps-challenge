@@ -4,7 +4,7 @@ require_relative 'player'
 class MultiplayerGameCreator
 
   def self.instance
-    @minstance ||= MultiplayerGameCreator.new
+    @instance ||= MultiplayerGameCreator.new
   end
 
   def initialize(multiplayer_game_class: MultiplayerGame, player_class: Player)

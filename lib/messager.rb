@@ -1,5 +1,6 @@
 class Messager
-  def messages(player, opponent, result)
+  def messages(args)
+    player, opponent, result = args
     player_move = move_converter(player.move)
     opponent_move = move_converter(opponent.move)
     result = result_converter(result)

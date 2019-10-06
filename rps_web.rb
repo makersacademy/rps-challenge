@@ -40,7 +40,7 @@ class RPSWeb < Sinatra::Base
     @game = MultiplayerGame.instance
     @move = params[:choice]
     @session = session.id
-    MultiplayerGame.instance.set_player_move(@move, @session)
+    @game.set_player_move(@move, @session)
     redirect '/mpplay' if @game.players_ready?
     redirect '/mpwaiting'
   end

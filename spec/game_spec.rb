@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  let(:ai) { double(:cpu, get_move: :scissors) }
+  let(:ai) { double(:cpu, move: :scissors) }
   let(:ai_class) { double(:ai_class, new: ai) }
   let(:battle) { double(:battle, outcome: :win) }
   let(:battle_class) { double(:battle_class, new: battle) }
@@ -34,7 +34,7 @@ describe Game do
   describe '#play' do
     context 'given a user move' do
       it 'gets a move from the computer opponent' do
-        expect(ai).to receive(:get_move)
+        expect(ai).to receive(:move)
         game.play('Rock')
       end
     end

@@ -3,8 +3,10 @@ require 'multiplayer_game'
 describe MultiplayerGame do
   let(:player1) { double(:player1, name: "Kevin", session: "a session", :move= => :rock, move: :rock, reset_move: nil) }
   let(:player2) { double(:player2, name: "Steve", session: "another session", :move= => :paper, move: :paper, reset_move: nil) }
+
   let(:battle) { double(:battle, multiplayer_outcome: :player1_win) }
   let(:battle_class) { double(:battle_class, new: battle) }
+  
   let(:messager) { double(:messager, messages: nil) }
   let(:messager_class) { double(:messager_class, new: messager) }
 
@@ -68,12 +70,12 @@ describe MultiplayerGame do
         allow(battle).to receive(:multiplayer_outcome) { :player1_win }
       end
       it 'gets the winning messages from the messager' do
-        expect(messager).to receive(:messages).with(player1, player2, :win)
+        expect(messager).to receive(:messages).with([player1, player2, :win])
         mpgame.player_messages("a session")
       end
       
       it 'gets the losing messages from the messager' do
-        expect(messager).to receive(:messages).with(player2, player1, :lose)
+        expect(messager).to receive(:messages).with([player2, player1, :lose])
         mpgame.player_messages("another session")
       end
     end
@@ -83,12 +85,12 @@ describe MultiplayerGame do
         allow(battle).to receive(:multiplayer_outcome) { :player2_win }
       end
       it 'gets the losing messages from the messager' do
-        expect(messager).to receive(:messages).with(player1, player2, :lose)
+        expect(messager).to receive(:messages).with([player1, player2, :lose])
         mpgame.player_messages("a session")
       end
       
       it 'gets the winning messages from the messager' do
-        expect(messager).to receive(:messages).with(player2, player1, :win)
+        expect(messager).to receive(:messages).with([player2, player1, :win])
         mpgame.player_messages("another session")
       end
     end
@@ -98,7 +100,7 @@ describe MultiplayerGame do
         allow(battle).to receive(:multiplayer_outcome) { :draw }
       end
       it 'gets the draw messages from the messager' do
-        expect(messager).to receive(:messages).with(player1, player2, :draw)
+        expect(messager).to receive(:messages).with([player1, player2, :draw])
         mpgame.player_messages("a session")
       end
     end

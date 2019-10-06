@@ -1,5 +1,5 @@
 class AI
-  def get_move
+  def move
     [:rock, :paper, :scissors].sample
   end
 end

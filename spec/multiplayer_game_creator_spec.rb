@@ -5,7 +5,7 @@ describe MultiplayerGameCreator do
   let(:mpgame_class) { double(:multiplayer_game_class, instance: nil, create: mpgame) }
   let(:player1) { double(:player1) }
   let(:player2) { double(:player2) }
-  let(:player_class) { double(:player_class, new: player1 ) }
+  let(:player_class) { double(:player_class, new: player1) }
 
   subject(:mpgame_creator) { described_class.new(multiplayer_game_class: mpgame_class, player_class: player_class) }
 

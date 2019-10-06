@@ -25,11 +25,4 @@ class Battle
   def outcome(player1_move, player2_move)
     MOVES[player1_move][player2_move]
   end
-
-  private 
-
-  def reset_player_moves(player1, player2)
-    player1.reset_move
-    player2.reset_move
-  end
 end

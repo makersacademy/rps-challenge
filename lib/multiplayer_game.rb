@@ -9,7 +9,7 @@ class MultiplayerGame
   end
   
   def self.create(player)
-    @game = self.new(player)
+    @game = new(player)
   end
 
   def initialize(player, battle_class: Battle, messager_class: Messager)
@@ -26,11 +26,9 @@ class MultiplayerGame
     return nil unless @player1.move && player2.move
 
     player, opponent = get_players(session)
-    if result == :draw
-      messages = @messager.messages(player, opponent, :draw) 
-    else
-      messages = @messager.messages(player, opponent, player_result(result, player))
-    end
+    args = player, opponent
+    result == :draw ? args << :draw : args << get_player_result(result, player)
+    messages = @messager.messages(args)
     check_and_reset_result
     messages
   end
@@ -79,7 +77,7 @@ class MultiplayerGame
     [player2, player1]
   end 
 
-  def player_result(battle_result, player)
+  def get_player_result(battle_result, player)
     player_result_cases = {
       player1_win: {
         @player1 => :win,

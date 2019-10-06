@@ -20,7 +20,7 @@ class Game
 
   def play(move)
     player_move = move.downcase.to_sym
-    @ai_move = @opponent.get_move
+    @ai_move = @opponent.move
     @result = @battle.outcome(player_move, @ai_move)
   end
 end

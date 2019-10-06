@@ -8,7 +8,7 @@ describe Messager do
       it 'gets the moves from the given players' do
         expect(player1).to receive(:move)
         expect(player2).to receive(:move)
-        subject.messages(player1, player2, :win)
+        subject.messages([player1, player2, :win])
       end
 
       it 'returns a hash of messages' do
@@ -17,7 +17,7 @@ describe Messager do
           opponent_move: "Steve chose Paper",
           result: "You win!"
         }
-        expect(subject.messages(player1, player2, :win)).to eq messages
+        expect(subject.messages([player1, player2, :win])).to eq messages
       end
 
       it 'returns a hash of messages' do
@@ -26,7 +26,7 @@ describe Messager do
           opponent_move: "Kevin chose Rock",
           result: "You lose!"
         }
-        expect(subject.messages(player2, player1, :lose)).to eq messages
+        expect(subject.messages([player2, player1, :lose])).to eq messages
       end
     end
   end

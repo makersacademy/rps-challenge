@@ -39,7 +39,7 @@ describe Player do
   describe '#reset_move' do
     it 'sets @move to nil' do
       player.move = :rock
-      expect{ player.reset_move }.to change{ player.move }.to nil
+      expect { player.reset_move }.to change { player.move }.to nil
     end
   end
 end

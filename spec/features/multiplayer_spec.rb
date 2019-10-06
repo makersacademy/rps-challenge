@@ -7,15 +7,3 @@ feature 'Multiplayer sign up' do
     expect(page).not_to have_content("Kevin")
   end
 end
-
-# feature 'Multiplayer play screen' do
-#   scenario 'see two player names on the play screen' do
-#     visit '/'
-#     fill_in 'player_name', with: "Steve"
-#     click_button "Multiplayer"
-#     visit '/'
-#     fill_in "player_name", with: "Kevin"
-#     click_button "Multiplayer"
-#     expect(page).to have_content("Steve VS Kevin")
-#   end
-# end
