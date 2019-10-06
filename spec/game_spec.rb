@@ -24,13 +24,13 @@ describe Game do
       it 'should return player1 wins' do
         allow(player1).to receive(:final_move).and_return('rock')
         allow(player2).to receive(:final_move).and_return('scissors')
-        expect(subject.winner).to eq("#{player1.name} wins")
+        expect(subject.winner).to eq("#{player1.name} wins!")
       end
 
       it 'should return player2 wins' do
         allow(player1).to receive(:final_move).and_return('paper')
         allow(player2).to receive(:final_move).and_return('scissors')
-        expect(subject.winner).to eq("#{player1.name} wins")
+        expect(subject.winner).to eq("#{player2.name} wins!")
       end
 
     end
@@ -40,7 +40,7 @@ describe Game do
         it 'should return draw' do
           allow(player1).to receive(:final_move).and_return('rock')
           allow(player2).to receive(:final_move).and_return('rock')
-          expect(subject.winner).to eq("Draw")
+          expect(subject.winner).to eq("Draw!")
         end
 
       end
