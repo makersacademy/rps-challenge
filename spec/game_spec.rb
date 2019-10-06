@@ -14,7 +14,7 @@ describe Game do
   describe 'tests that need players' do
 
     before do
-      game.add_player(player1,player2)
+      game.add_player(player1, player2)
     end
 
     it 'knows p1 current move' do
@@ -32,7 +32,7 @@ describe Game do
       end
 
       it 'returns true for a tie' do
-        game.add_player(player2,player2)
+        game.add_player(player2, player2)
         expect(game.tie?).to eq true
       end
 
@@ -51,17 +51,17 @@ describe Game do
       end
 
       it 'can define winner when p1 plays paper' do
-        game.add_player(player2,player3)
+        game.add_player(player2, player3)
         expect(game.winner).to eq "WINNER IS #{game.player2.name}!!"
       end
 
       it 'can define winner when p1 plays scissors' do
-        game.add_player(player3,player1)
+        game.add_player(player3, player1)
         expect(game.winner).to eq "WINNER IS #{game.player2.name}!!"
       end
 
       it 'can define a tie' do
-        game.add_player(player2,player2)
+        game.add_player(player2, player2)
         expect(game.winner).to eq "NO WINNER, BOTH PLAYED: #{player2.current_move}"
       end
     end
@@ -73,9 +73,6 @@ describe Game do
         game.reset
       end
     end
-
-
-
 
   end
 end

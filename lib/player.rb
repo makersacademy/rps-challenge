@@ -19,7 +19,7 @@ class Player
     when 2
       @current_move = 'PAPER'
     when 3
-      @current_move ='SCISSORS'
+      @current_move = 'SCISSORS'
     end
   end
 

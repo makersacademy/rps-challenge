@@ -10,7 +10,7 @@ class Game
     @game
   end
 
-  def add_player(player1,player2)
+  def add_player(player1, player2)
     @player1 = player1
     @player2 = player2
   end
@@ -36,7 +36,6 @@ class Game
     return "WINNER IS #{player.name}!!"
   end
 
-
   def winner
     return "NO WINNER, BOTH PLAYED: #{p1move}" if tie?
     case @player1.current_move
@@ -56,6 +55,5 @@ class Game
     @player1.reset
     @player2.reset
   end
-
 
 end

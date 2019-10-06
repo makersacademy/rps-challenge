@@ -3,7 +3,7 @@ feature 'make a move' do
 
     select_sp_and_sign_in
     click_button 'ROCK'
-    expect(page).to have_content ("JESS MOVE WAS: ROCK")
+    expect(page).to have_content "JESS MADE THE MOVE : ROCK"
 
   end
 end

@@ -2,7 +2,7 @@ require 'player'
 
 describe Player do
 
-  subject(:player) {described_class.new("Jess")}
+  subject(:player) { described_class.new("Jess") }
 
   it "knows it's name" do
     expect(player.name).to eq "Jess".upcase

@@ -2,7 +2,6 @@ require 'sinatra/base'
 require_relative "./../lib/player"
 require_relative "./../lib/game"
 
-
 class RPS < Sinatra::Base
 
   enable :sessions
@@ -23,7 +22,7 @@ class RPS < Sinatra::Base
     @game = Game.create
     @player1 = Player.new(params[:name])
     @player2 = Player.new("COMPUTER")
-    @game.add_player(@player1,@player2)
+    @game.add_player(@player1, @player2)
     redirect '/play'
   end
 
@@ -31,7 +30,7 @@ class RPS < Sinatra::Base
     @game = Game.create
     @player1 = Player.new(params[:name1])
     @player2 = Player.new(params[:name2])
-    @game.add_player(@player1,@player2)
+    @game.add_player(@player1, @player2)
     redirect '/mp_play'
   end
 
@@ -62,7 +61,6 @@ class RPS < Sinatra::Base
     @game = Game.instance
     erb :conclusion
   end
-
 
   run! if app_file == $0
 
