@@ -3,7 +3,7 @@ class Player
 
   MOVES = ["Rock", "Paper", "Scissors"]
 
-  def initialize(name = 'Jake')
+  def initialize(name = 'monster')
     @name = name
   end
 

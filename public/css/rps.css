@@ -61,7 +61,7 @@
   display: -ms-flexbox;
   display: flex;
   margin-top: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -82,6 +82,7 @@
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin-top: 0px;
 }
 
 .h2 {
@@ -127,10 +128,6 @@
 }
 
 .fighter-block {
-  width: 50%;
-}
-
-.monster-block {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -147,17 +144,33 @@
   align-items: flex-end;
 }
 
+.monster-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
 .fighter-text {
-  padding: 5px 5px 5px 10px;
+  padding: 25px 20px 5px 5px;
   font-family: 'Patrick Hand SC', sans-serif;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .monster-text {
-  padding: 5px 10px;
+  padding: 25px 5px 5px 20px;
   font-family: 'Patrick Hand SC', sans-serif;
-  font-size: 20px;
-  text-align: right;
+  font-size: 24px;
 }
 
 .image {
