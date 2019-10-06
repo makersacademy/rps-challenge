@@ -7,6 +7,6 @@ feature 'declare winner' do
 
     allow(Kernel).to receive(:rand).and_return(2)
 
-    expect(page).to have_content("You are the Winner!")
+    expect(page).to have_content("You won!")
   end
 end

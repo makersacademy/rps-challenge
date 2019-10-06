@@ -3,7 +3,7 @@ require_relative '../lib/game'
 describe Game do
   subject(:game) { described_class.new(player, move)}
   let(:player) { double :player }
-  let(:move) { double :move, player_turns: ["Rock"], computer_turns: ["Paper"] }
+  let(:move) { double :move, player_turns: ["Rock"], computer_turns: ["Scissors"] }
 
   describe '#last_action' do
     it 'returns rock as the last action' do
@@ -12,17 +12,17 @@ describe Game do
   end
 
   describe '#computer_last_action' do
-    it 'returns paper' do
-      expect(game.computer_last_action).to eq "Paper"
+    it 'returns scissors' do
+      expect(game.computer_last_action).to eq "Scissors"
     end
   end
 
   describe '#outcome' do
-    xit 'declares Boris the Winner' do
-      game.player_last_action("Rock")
-      allow(Kernel).to receive(:rand).and_return(2)
+    it 'declares Boris the Winner' do
+      game.player_last_action
+      # allow(Kernel).to receive(:rand).and_return(2)
 
-      expect(game.outcome).to eq "wins"
+      expect(game.outcome).to eq "You won!"
     end
   end
 end
