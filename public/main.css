@@ -37,6 +37,18 @@ h2 {
   background: orangered;
 }
 
+.action_row2 {
+  background: salmon;
+  padding: 4.5%;
+  width: 65%;
+  border: salmon;
+  border-radius: 2%;
+}
+
+.action_row2:hover {
+  background: orangered;
+}
+
 .name_field {
   width: 70%;
   font-size: 2em;

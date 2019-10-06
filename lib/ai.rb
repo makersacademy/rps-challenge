@@ -1,5 +1,5 @@
 class AI
   def move
-    [:rock, :paper, :scissors].sample
+    [:rock, :paper, :scissors, :lizard, :spock].sample
   end
 end
