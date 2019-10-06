@@ -3,6 +3,7 @@ require_relative 'player'
 class Game
 
   attr_reader :player_1, :player_2
+  WINS = {"Rock" => "Scissors", "Scissors" => "Paper", "Paper" => "Rock"}
 
   def initialize(player_1, player_2)
     @player_1 = player_1
@@ -18,17 +19,13 @@ class Game
   end
 
   def winner
-    if @player_2.move == @player_1.move
-      return "It's a tie" 
-    elsif (@player_2.move == "Rock" && @player_1.move == "Scissors") || (@player_2.move == "Scissors" && @player_1.move == "Paper") || (@player_2.move == "Paper" && @player_1.move == "Rock")
-      return @player_2
-    else
-      return @player_1
-    end
+    return "It's a tie" if tie?   
+    return @player_2 if WINS[@player_2.move] == @player_1.move
+    return @player_1
   end
-
+  
   def tie?
-    
+    @player_2.move == @player_1.move
   end
 
 end

@@ -13,6 +13,12 @@ describe Game do
   end
 
   describe '#winner' do
+    it 'returns a tie if same players select the same move' do
+      allow(player_1).to receive(:move).and_return("Paper")
+      allow(player_2).to receive(:move).and_return("Paper")
+      expect(game.winner).to eq "It's a tie"
+    end
+
     it 'returns the winner of the round' do
       allow(player_1).to receive(:move).and_return("Paper")
       allow(player_2).to receive(:move).and_return("Rock")
