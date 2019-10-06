@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Welcove to Rock, Paper, Scissors game!</title>
+</head>
+<body>
+
+  <h1>Welcove to Rock, Paper, Scissors game!</h1>
+  <h2>Enter your name to play</h2>
+
+  <form action="/name" method="POST">
+    <label for="player_1_name">
+      <input type="text" name="player_1_name">
+      <!-- <%# <input type="text" name="player_2_name"> %> -->
+    </label>
+    <input type="submit" value="Submit">
+  </form>
+
+<form action="/winner" method="post">
+  <input type="submit" name="player_move" value="Rock">
+  <input type="submit" name="player_move" value="Paper">
+  <input type="submit" name="player_move" value="Scissors">
+</form>
+
+</body>
+</html>
