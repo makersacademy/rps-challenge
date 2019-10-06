@@ -23,11 +23,11 @@ class Game
   end
 
   def p1_move
-    player1.current_move
+    @player1.current_move
   end
 
   def p2_move
-    player2.current_move
+    @player2.current_move
   end
 
   def tie?
@@ -52,7 +52,7 @@ class Game
   end
 
   private
-  
+
   def print_winner(player)
     "#{player.name} is the victor!"
   end

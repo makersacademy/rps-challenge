@@ -54,6 +54,11 @@ class RockPaperScissors < Sinatra::Base
     redirect '/end'
   end
 
+  post '/multi_move' do
+    @game.player1.move(params[:move1])
+    @game.player2.move(params[:move2])
+    redirect '/end'
+  end
   run! if app_file == $0
 
 end
