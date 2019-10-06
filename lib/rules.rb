@@ -8,7 +8,7 @@ class Rules
              'lizard poisons spock', 'lizard eats paper',
              'rock smashes scissors', 'rock crushes lizard',
              'paper covers rock', 'paper disproves spock',
-             'scissors cut paper', 'scissors decapitate lizard']
+             'scissors cuts paper', 'scissors decapitates lizard']
 
   def defeats?(p1_choice, p2_choice)
     RULES[p1_choice].include? p2_choice
