@@ -6,7 +6,7 @@ describe Computer do
 
   describe "#move" do
     it "returns a random choice between Rock, Paper or Scissors" do
-      allow_any_instance_of(Object).to receive(:rand) { 0 }
+      allow_any_instance_of(Array).to receive(:sample) { "Rock" }
       expect(computer.move).to eq "Rock"
     end
   end
