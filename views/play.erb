@@ -10,7 +10,11 @@
 <h1>The computer's move is...<%=@game.comp_move%></h1>
 
 <%if @game.win?%>
-You won!
+  You won!
+<%elsif @game.lose?%>
+  Sorry...you lost!
+<%elsif @game.draw?%>
+  Hmm...that's a draw.
 <%end%>
 
 <style>

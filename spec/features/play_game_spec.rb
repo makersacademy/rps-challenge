@@ -18,11 +18,22 @@ COMP_MOVE = 2
     click_button 'rock'
     expect(page).to have_content "The computer's move is...rock"
   end
-
+  
+  context 'game over' do
+    before do
+      srand(COMP_MOVE)
+    end
+    
     scenario 'Player wins' do
       sign_in_player
-      srand(COMP_MOVE)
       click_button 'paper'
       expect(page).to have_content "You won!"
     end
+
+    scenario 'Player loses' do
+      sign_in_player
+      click_button 'scissors'
+      expect(page).to have_content 'Sorry...you lost!'
+    end
+  end
 end
