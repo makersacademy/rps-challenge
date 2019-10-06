@@ -16,14 +16,22 @@ img { width: 30%; }
   <% end %>
 </div>
 
+<div style="font-family: 'Bungee'; font-size: 1.5vw">
+  <% if @game.winner.nil? %>
+    <h1 align="center"> Play again </h1>
+  <% else %>
+    <h1 align="center"> <%= @game.winner.weapon %> beats <%= @game.loser.weapon %>  </h1>
+  <% end %>
+</div>
+
 <div align="center">
-  <%= @game.player_1.name %>: <img src= <%=@p1_pic%> >
-  <img src= <%=@p2_pic%> > :<%= @game.player_2.name %>
+  <%= @game.player_1.name %>: <%= @game.p1_score%>  <img src= <%=@p1_pic%> >
+  <img src= <%=@p2_pic%> > <%= @game.p2_score%> :<%= @game.player_2.name %>
 </div>
 
 <div align="center">
   <br>
   <form action="/weapon_choice">
-    <input type="submit" value="Next Round">
+    <input type="submit" value="Next">
   </form>
 </div>

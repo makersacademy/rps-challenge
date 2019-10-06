@@ -29,6 +29,7 @@ class RPSWeb < Sinatra::Base
   post '/play' do
     @game.player_1.weapon_choice(params[:weapon])
     @game.player_2.weapon_choice
+    @game.track_scores
     redirect '/result'
   end
 
