@@ -1,8 +1,18 @@
 <h1> Rock ~ Paper ~ Scissors </h1>
-<h2>Sign in to play</h2>
-  <form action='/names' method='post'>
+<h2>Do you want to play single or multiplayer?</h2>
+
+<h2>Single player:</h2>
+  <form action='/name' method='post'>
+
   <label for="player_1">
   Player 1 Name:
   <input type='text' name='player_1'>
   <input type="submit" name="Ready!" value="Ready!">
+  </form>
 </h1>
+
+<h2>Multiplayer:</h2>
+<h2>
+  <form action='/multiplayer'>
+  <input type="submit" value="Multiplayer">
+</h2>

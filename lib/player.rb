@@ -11,4 +11,5 @@ class Player
   def play_move
     @move = ["Rock", "Paper", "Scissors"].sample
   end
+
 end

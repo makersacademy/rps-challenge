@@ -7,7 +7,7 @@ class Game
 
   def initialize(player_1, player_2)
     @player_1 = player_1
-    @player_2 = player_2
+    @player_2 = player_2 
   end
 
   def self.create(player_1, player_2)
@@ -24,6 +24,8 @@ class Game
     return @player_1
   end
   
+  private 
+
   def tie?
     @player_2.move == @player_1.move
   end
