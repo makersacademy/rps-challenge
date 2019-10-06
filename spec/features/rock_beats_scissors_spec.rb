@@ -9,7 +9,7 @@ feature 'Playing RPS' do
     end
   end
 
-  context 'Computer once, player will win once' do
+  context 'Computer wins once, player will win once' do
     scenario "After two rounds the score will be one to one" do
       allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
       sign_in_single

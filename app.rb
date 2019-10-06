@@ -71,7 +71,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/next' do
-    redirect '/champion' if @game.p1_score >= 2 || @game.p2_score >= 2
+    redirect '/champion' if @game.p1_score >= 3 || @game.p2_score >= 3
     redirect '/weapon-choice'
   end
 
