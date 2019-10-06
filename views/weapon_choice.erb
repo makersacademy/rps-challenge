@@ -1,21 +1,28 @@
 <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Hairline|Bungee+Shade&display=swap" rel="stylesheet">
-
 <style>
-  img { width: 15%; }
-  div { width: 100%; }
-}
+  input { width: 15%; }
+  form { display: inline; }
 </style>
 
-<div align="center" style="font-family: 'Bungee Shade'; font-size: 40px">
+<div align="center" style="font-family: 'Bungee Shade'; font-size: 3vw;">
   <h1> <%= @game.player_1.name %> vs <%= @game.player_2.name %> </h1>
 </div>
 
-<div align="center" style="font-family: 'Bungee'; font-size: 30px">
+<div align="center" style="font-family: 'Bungee'; font-size: 2vw">
   <h2> Please choose your weapon: </h2>
 </div>
 
-<div align="center">
-  <img src="images/rock.jpg">
-  <img src="images/paper.jpg">
-  <img src="images/scissors.jpg">
+<div align="center" >
+  <form action="/play" method="post">
+    <input type="hidden" name="weapon" value="rock">
+    <input type="image" src="images/rock.jpg" alt="rock">
+  </form>
+  <form action="/play" method="post">
+    <input type="hidden" name="weapon" value="paper">
+    <input type="image" src="images/paper.jpg" alt="paper">
+  </form>
+  <form action="/play" method="post">
+    <input type="hidden" name="weapon" value="scissors">
+    <input type="image" src="images/scissors.jpg" alt="scissors">
+  </form>
 </div>
