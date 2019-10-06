@@ -8,6 +8,16 @@
 
 <h2> <%= @game.winner %> </h2>
 
+<%= @game.player1.name %>: <%= @game.player1_score %>
+
+<br>
+
+<%= @game.player2.name %>: <%= @game.player2_score %>
+
+<br>
+<br>
+
+
 <form action="/play">
   <input type="submit" value="Retry">
 </form>
