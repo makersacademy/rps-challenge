@@ -1,5 +1,5 @@
-def sign_in_p1
+def sign_in_player
   visit('/')
-  fill_in 'player_1', with: 'One'
+  fill_in 'player', with: 'One'
   click_button 'Go!'
 end

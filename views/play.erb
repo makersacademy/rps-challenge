@@ -1,13 +1,17 @@
-<h1>Player: <%= @player_1 %><h1>
+<h1>Player: <%= @game.player %><h1>
 
 <form action='/play' method='post'>
-  <input type='submit' name='move' value='rock!'>
-  <input type='submit' name='move' value='paper...'>
-  <input type='submit' name='move' value='scissors?'>
+  <input type='submit' name='move' value='rock'>
+  <input type='submit' name='move' value='paper'>
+  <input type='submit' name='move' value='scissors'>
   </form>
 
-<h1><%=@player_1%>'s move is <%=@move%></h1>
-<h1>The computer's move is...<%=@comp_move%></h1>
+<h1><%=@game.player%>'s move is <%=@game.move%></h1>
+<h1>The computer's move is...<%=@game.comp_move%></h1>
+
+<%if @game.win?%>
+You won!
+<%end%>
 
 <style>
 body {

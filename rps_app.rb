@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/computer'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -10,19 +11,20 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_1] = params[:player_1]
+    session[:player] = params[:player].intern
     redirect '/play'
   end
 
   get '/play' do
-    @player_1 = session[:player_1]
-    @move = session[:move]
-    @comp_move = session[:comp_move]
+    @game = Game.new(session)
+    # @player = session[:player]
+    # @move = session[:move]
+    # @comp_move = session[:comp_move]
     erb(:play)
   end
 
   post '/play' do
-    session[:move] = params[:move]
+    session[:move] = params[:move].intern
     session[:comp_move] = Computer.new.move
     redirect '/play'
   end
