@@ -20,7 +20,6 @@ class Rps < Sinatra::Base
 
   get '/game_result' do
     @chosen_move = params[:player_1_move]
-    @robot_move = ["Rock", "Paper", "scissors"].sample
     erb :game_result
   end
 
