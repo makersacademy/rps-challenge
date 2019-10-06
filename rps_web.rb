@@ -21,19 +21,20 @@ class RPSWeb < Sinatra::Base
   end
   
   get '/play' do
+    @action = '/move'
     @game = Game.instance
-    @result = @game.result
-    @ai_move = @game.ai_move.to_s.capitalize
     @player_name = @game.player_name
+    @opponent_name = "Computer"
+    @player_move, @opponent_move, @result = @game.player_messages
     @page = :play
     erb :template
   end
-
+  
   post '/move' do
     Game.instance.play(params[:choice])
     redirect '/play'
   end
-
+  
 # Multiplayer starts here _________________________
 
   post '/mpmove' do
@@ -56,10 +57,12 @@ class RPSWeb < Sinatra::Base
   end
   
   get '/mpplay' do
+    @action = '/mpmove'
     @game = MultiplayerGame.instance
     @player, @opponent = @game.get_players(session.id)
-    @player_messages = @game.player_messages(session.id)
-    @page = :multiplayer_play
+    @player_name, @opponent_name = @player.name, @opponent.name
+    @player_move, @opponent_move, @result = @game.player_messages(session.id)
+    @page = :play
     erb :template
   end
 

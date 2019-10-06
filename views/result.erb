@@ -1,0 +1,17 @@
+<div class='row'>
+    <div class="col-sm">
+      <h3><%= @player_move %></h3>
+    </div>
+    <div class="col-sm">
+      <h2>
+        <% unless @result %>
+          Who will win...
+        <% else %>
+          <%= @result %>
+        <% end %>
+      </h2>
+    </div>
+    <div class="col-sm">
+      <h3><%= @opponent_move %></h3>
+    </div>
+  </div>

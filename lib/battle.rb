@@ -37,10 +37,6 @@ class Battle
     }
   }
 
-  def multiplayer_outcome(player1, player2)
-    outcome(player1.move, player2.move)
-  end
-
   def outcome(player1_move, player2_move)
     MOVES[player1_move][player2_move]
   end

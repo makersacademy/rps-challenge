@@ -33,8 +33,8 @@ class MultiplayerGame
 
     player, opponent = get_players(session)
     args = player, opponent
-    result == :draw ? args << :draw : args << get_player_result(result, player)
-    messages = @messager.messages(args)
+    result == :draw ? args << :draw : args << player_result(result, player)
+    messages = @messager.multiplayer_messages(args)
     check_and_reset_result
     messages
   end
@@ -46,7 +46,7 @@ class MultiplayerGame
   end
 
   def result
-    @result ||= @battle.multiplayer_outcome(player1, player2)
+    @result ||= @battle.outcome(player1.move, player2.move)
   end
   
   def set_player_move(move, session)
@@ -75,8 +75,7 @@ class MultiplayerGame
     @can_reset = !@can_reset
   end
 
-
-  def get_player_result(battle_result, player)
+  def player_result(battle_result, player)
     player_result_cases = {
       player1_win: {
         @player1 => :win,
