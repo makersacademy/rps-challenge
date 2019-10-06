@@ -9,7 +9,11 @@
 </div>
 
 <div align="center" style="font-family: 'Bungee'; font-size: 1.5vw">
-  <h2> Please choose your weapon: </h2>
+  <% if @p2_turn == true %>
+    <h2> <%= @game.player_2.name %>, please choose your weapon: </h2>
+  <% else %>
+    <h2> <%= @game.player_1.name %>, please choose your weapon: </h2>
+  <% end %>
 </div>
 
 <% if @p2_turn == true %>
