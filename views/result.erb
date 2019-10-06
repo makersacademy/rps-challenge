@@ -2,10 +2,10 @@
 
 <style>
 body {
-  font-family: 'Bungee';
+  font-family: "Bungee";
   font-size: 2vw;
 }
-img { width: 22%; }
+img { width: 20%; }
 </style>
 
 <div style="font-family: 'Bungee'; font-size: 1.5vw">
@@ -14,12 +14,6 @@ img { width: 22%; }
   <% else %>
     <h1 align="center"> <%= @game.winner.name %> wins! </h1>
   <% end %>
-</div>
-
-<div align="center">
-  <form action="/next" method="post">
-    <input type="submit" value="Next">
-  </form>
 </div>
 
 <% if @game.winner == @game.player_1 %>
@@ -50,4 +44,10 @@ img { width: 22%; }
   <% else %>
     <h1 align="center"> <%= @game.reason %>  </h1>
   <% end %>
+</div>
+
+<div align="center">
+  <form action="/next" method="post">
+    <input type="submit" value="Next">
+  </form>
 </div>

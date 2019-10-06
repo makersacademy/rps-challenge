@@ -17,18 +17,13 @@ class Game
   end
 
   def result
-    @winner, @loser = nil
-    @winner, @loser = @player_1, @player_2 if p1_wins
-    @winner, @loser = @player_2, @player_1 if p2_wins
+    reset
+    find_winner
+    track_scores
   end
 
   def reason
     @rules_instance.new.reason_finder(@winner.weapon, @loser.weapon)
-  end
-
-  def track_scores
-    @p1_score += 1 if p1_wins
-    @p2_score += 1 if p2_wins
   end
 
   private
@@ -41,4 +36,17 @@ class Game
     @rules_instance.new.defeats?(@player_2.weapon, @player_1.weapon)
   end
 
+  def track_scores
+    @p1_score += 1 if p1_wins
+    @p2_score += 1 if p2_wins
+  end
+
+  def reset
+    @winner, @loser = nil
+  end
+
+  def find_winner
+    @winner, @loser = @player_1, @player_2 if p1_wins
+    @winner, @loser = @player_2, @player_1 if p2_wins
+  end
 end

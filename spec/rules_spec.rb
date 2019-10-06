@@ -21,6 +21,6 @@ describe Rules do
   end
 
   describe '#reason_finder' do
-    it { expect(subject.reason_finder(:spock, :paper)).to eq "paper disproves spock" }
+    it { expect(subject.reason_finder(:spock, :paper)).to eq 'paper disproves spock' }
   end
 end

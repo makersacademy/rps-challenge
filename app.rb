@@ -60,7 +60,6 @@ class RPSWeb < Sinatra::Base
   get '/check-results' do
     @game.player_2.weapon_choice if @game.player_2.is_a? Computer
     @game.result
-    @game.track_scores
     redirect '/result'
   end
 
