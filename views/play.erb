@@ -1,1 +1,13 @@
-<h1> <%= @player_1.name %> VS. COMPUTER </h1>
+<h1> <%= @game.player_1.name %> VS. <%= @game.player_2.name %> </h1>
+
+<h2>Select a move:</h2>
+  <form action='/round' method='post'>
+  <input type="text" list="RPS" name="player_1_move">
+  <datalist id = "RPS">
+    <option value="Rock">
+    <option value="Paper">
+    <option value="Scissors">
+  </datalist>
+  <input type="submit" value="Play">
+  </form>  
+</h1>
