@@ -6,7 +6,6 @@ body {
   font-size: 18px;
 }
 img { width: 35%; }
-form { display: inline; }
 </style>
 
 <div style="font-family: 'Bungee Shade'; font-size: 2.5vw">
@@ -14,13 +13,17 @@ form { display: inline; }
 </div>
 
 <div align='center'>
-  <form action="/single">
-    <input type="submit" value="Single Player">
+  <form action="/start-multi" method="post">
+    <label for="player_1_name">
+      <b>Player 1:
+      <input type="text" name="player_1_name">
+    </label>
+    <label for="player_2_name">
+      <b>Player 2:
+      <input type="text" name="player_2_name">
+    </label>
+    <input type="submit" value="Let's Play">
   </form>
-  <form action="/multi">
-    <input type="submit" value="Multi Player">
-  </form>
-  <br>
 </div>
 
 <div>

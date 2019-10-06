@@ -12,17 +12,34 @@
   <h2> Please choose your weapon: </h2>
 </div>
 
+<% if @p2_turn == true %>
 <div align="center" >
-  <form action="/play" method="post">
+  <form action="/play2" method="post">
     <input type="hidden" name="weapon" value="rock">
     <input type="image" src="images/rock.jpg" alt="rock">
   </form>
-  <form action="/play" method="post">
+  <form action="/play2" method="post">
     <input type="hidden" name="weapon" value="paper">
     <input type="image" src="images/paper.jpg" alt="paper">
   </form>
-  <form action="/play" method="post">
+  <form action="/play2" method="post">
     <input type="hidden" name="weapon" value="scissors">
     <input type="image" src="images/scissors.jpg" alt="scissors">
   </form>
 </div>
+<% else %>
+  <div align="center" >
+    <form action="/play" method="post">
+      <input type="hidden" name="weapon" value="rock">
+      <input type="image" src="images/rock.jpg" alt="rock">
+    </form>
+    <form action="/play" method="post">
+      <input type="hidden" name="weapon" value="paper">
+      <input type="image" src="images/paper.jpg" alt="paper">
+    </form>
+    <form action="/play" method="post">
+      <input type="hidden" name="weapon" value="scissors">
+      <input type="image" src="images/scissors.jpg" alt="scissors">
+    </form>
+  </div>
+<% end %>
