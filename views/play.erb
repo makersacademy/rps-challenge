@@ -1,7 +1,8 @@
 <h1>Alright, go get 'em <%= @player_name %>!</h1>
-<%= erb :result if @result %>
 <% unless @result %>
-<div class='buffer'><h2>Who will win...</h2></div>
+  <div class='buffer'><h2>Who will win...</h2></div>
+<% else %>
+  <%= erb :sp_result if @result %>
 <% end %>
 <div class="row">
   <div class="col-sm"></div>

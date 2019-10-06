@@ -56,13 +56,15 @@ class RPSWeb < Sinatra::Base
   
   get '/mpplay' do
     @game = MultiplayerGame.instance
-    @player1_name = @game.player1.name
-    @player2_name = @game.player2.name
+    @player1 = @game.player1
+    @player2 = @game.player2
+    @player_messages = @game.player_messages(session.id)
     @page = :multiplayer_play
     erb :template
   end
 
   get '/mpwaiting' do
+    @two_players = MultiplayerGame.instance.two_players?
     @page = :mp_waiting
     erb :template
   end

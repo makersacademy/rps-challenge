@@ -1,4 +1,8 @@
-<h1>Click OK when your partner has logged in</h1>
+<% if @two_players %>
+  <h1>Click OK when your partner has made their move</h1>
+<% else %>
+  <h1>Click OK when your partner has logged in</h1>
+<% end %>
 <div class='buffer'></div>
 <div class='row'>
   <div class='col-sm'></div>

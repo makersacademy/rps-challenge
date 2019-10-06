@@ -1,8 +1,5 @@
-<h1><%= @player1_name %> VS <%= @player2_name %></h1>
-<%= erb :result if @result %>
-<% unless @result %>
-<div class='buffer'><h2>Who will win...</h2></div>
-<% end %>
+<h1><%= @player1.name %> VS <%= @player2.name %></h1>
+<%= erb :mp_result %>
 <div class="row">
   <div class="col-sm"></div>
   <div class="col-sm">

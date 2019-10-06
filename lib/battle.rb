@@ -1,18 +1,18 @@
 class Battle
   MOVES = {
     :rock => {
-      :scissors => :win,
-      :paper => :lose,
+      :scissors => :player1_win,
+      :paper => :player2_win,
       :rock => :draw
     },
     :paper => {
-      :rock => :win,
-      :scissors => :lose,
-      :paper => :draw,
+      :rock => :player1_win,
+      :scissors => :player2_win,
+      :paper => :draw
     },
     :scissors => {
-      :paper => :win,
-      :rock => :lose,
+      :paper => :player1_win,
+      :rock => :player2_win,
       :scissors => :draw
    }
   }

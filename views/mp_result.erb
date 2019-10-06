@@ -1,0 +1,15 @@
+<div class='row'>
+    <div class="col-sm">
+      <%= @player_messages[:player_move] %>
+    </div>
+    <div class="col-sm">
+      <% unless @player_messages %>
+        <div class='buffer'><h2>Who will win...</h2></div>
+      <% else %>
+        <%= @player_messages[:result] %>
+      <% end %>
+    </div>
+    <div class="col-sm">
+      <%= @player_messages[:opponent_move] %>
+    </div>
+  </div>
