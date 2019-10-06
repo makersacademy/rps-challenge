@@ -1,7 +1,6 @@
 require 'rules'
 
 describe Rules do
-
   describe '#defeats?' do
     it 'paper defeats rock' do
       expect(subject.defeats?(:paper, :rock)).to eq true

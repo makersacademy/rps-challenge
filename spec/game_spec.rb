@@ -1,7 +1,6 @@
 require 'game'
 
 describe Game do
-
   let(:player_1) { double :player, weapon: :rock }
   let(:player_2) { double :player, weapon: :paper }
 

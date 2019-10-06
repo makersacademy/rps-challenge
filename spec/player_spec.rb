@@ -1,7 +1,6 @@
 require 'player'
 
 describe Player do
-
   subject { described_class.new('Example Name') }
   describe '#weapon_choice' do
     it 'weapon_choice will assign the weapon at to the weapon variable' do
