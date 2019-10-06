@@ -10,5 +10,13 @@ describe Rules do
     it 'paper does not defeat scissors' do
       expect(subject.defeats?(:paper, :scissors)).to eq false
     end
+
+    it 'spock does not defeat paper' do
+      expect(subject.defeats?(:spock, :paper)).to eq false
+    end
+
+    it 'lizard defeats spock' do
+      expect(subject.defeats?(:lizard, :spock)).to eq true
+    end
   end
 end

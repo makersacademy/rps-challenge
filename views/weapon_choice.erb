@@ -30,6 +30,15 @@
     <input type="hidden" name="weapon" value="scissors">
     <input type="image" src="images/scissors.jpg" alt="scissors">
   </form>
+  <br>
+  <form action="/play2" method="post">
+    <input type="hidden" name="weapon" value="lizard">
+    <input type="image" src="images/lizard.jpg" alt="lizard">
+  </form>
+  <form action="/play2" method="post">
+    <input type="hidden" name="weapon" value="spock">
+    <input type="image" src="images/spock.jpg" alt="spock">
+  </form>
 </div>
 <% else %>
   <div align="center" >
@@ -44,6 +53,15 @@
     <form action="/play" method="post">
       <input type="hidden" name="weapon" value="scissors">
       <input type="image" src="images/scissors.jpg" alt="scissors">
+    </form>
+    <br>
+    <form action="/play" method="post">
+      <input type="hidden" name="weapon" value="lizard">
+      <input type="image" src="images/lizard.jpg" alt="lizard">
+    </form>
+    <form action="/play" method="post">
+      <input type="hidden" name="weapon" value="spock">
+      <input type="image" src="images/spock.jpg" alt="spock">
     </form>
   </div>
 <% end %>
