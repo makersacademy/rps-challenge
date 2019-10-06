@@ -80,7 +80,7 @@ DEPENDENCIES
   capybara
   rake
   rspec
-  rubocop (= 0.71.0)
+  rubocop
   simplecov
   simplecov-console
   sinatra
