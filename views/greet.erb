@@ -1,0 +1,66 @@
+<style>
+
+#vcontainer {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+#hcontainer {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#content {
+  display: inline-block;
+  border: lightGray 1px solid;
+  background-color: #EE82EE;
+  text-align: left;
+}
+
+h1,h2,h3,h4,h5,h6,button {
+  color: black;
+  font-family: 'Acme', sans-serif;
+}
+
+.border-button {
+  border: solid 5px #FC5185;
+  transition: border-width 0.6s linear;
+}
+
+.border-button:hover { border-width: 10px; }
+
+.button {
+  background-color: #ffffff;
+  border: solid 3px #000000;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button5 {border-radius: 50%;}
+
+</style>
+<body>
+<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+  <div id="vcontainer"><div id="hcontainer">
+    <div id="content">
+    <div class="border-button">
+      <br>
+      <h1>Hiya, <%= @game.player1 %>!</h1> <br>
+      <br>
+      </div>
+    </div>  
+    <br>
+      <br>
+      <br>
+      <br>
+      <h2><%= @game.player1 %> vs. The Computer</h2>
+      <button class="button button5"><a href="/play">Play</a></button>
+  </div></div>
+</body>
+
