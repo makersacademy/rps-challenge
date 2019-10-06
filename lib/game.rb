@@ -1,5 +1,5 @@
 class Game
-attr_reader :player1, :player2, :single_player
+attr_reader :player1, :player2, :single_player, :winning_choice
 
   def self.create(player1, player2 = Player.new('The Computer'))
     @game = Game.new(player1, player2)
@@ -26,14 +26,16 @@ attr_reader :player1, :player2, :single_player
   def calculate_winner(player_choice)
     choices = %w(rock paper scissors).reverse
     index = choices.index(player_choice)
-    winning_choice = choices[index -1]
+    @winning_choice = choices[index -1]
+    winner
+  end
+
+  def winner
     if @player1.choice == winning_choice
       "#{@player1.name} wins!"
-    end
-    if @player1.choice == @player2.choice
+    elsif @player1.choice == @player2.choice
       "Draw!"
-    end
-    if @player2.choice == winning_choice
+    elsif @player2.choice == winning_choice
       "#{@player2.name} wins!"
     end
   end
