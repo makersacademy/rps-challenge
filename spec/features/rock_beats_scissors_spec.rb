@@ -7,7 +7,7 @@ feature 'Playing RPS' do
       click_button('Submit')
       click_button('rock')
       expect(page).to have_content "Rock beats Scissors"
-      expect(page).to have_content "James wins this round!"
+      expect(page).to have_content "James wins!"
     end
   end
 end

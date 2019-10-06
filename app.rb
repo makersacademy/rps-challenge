@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 require './lib/computer'
+require './lib/rules'
 
 class RPSWeb < Sinatra::Base
   enable :sesisons
@@ -26,13 +27,15 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/play' do
-    p params[:weapon]
     @game.player_1.weapon_choice(params[:weapon])
     @game.player_2.weapon_choice
     redirect '/result'
   end
 
   get '/result' do
+    @game.result
+    @p1_pic = "images/#{@game.player_1.weapon}.jpg"
+    @p2_pic = "images/#{@game.player_2.weapon}.jpg"
     erb :result
   end
 
