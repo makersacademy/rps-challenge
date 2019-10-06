@@ -1,6 +1,7 @@
 # app.rb
 require 'sinatra/base'
 require './lib/computer'
+require './lib/winner'
 # require_relative './lib/game'
 
 class RPS < Sinatra::Base
@@ -13,7 +14,8 @@ enable :sessions
   end
 
   post '/names' do
-    session[:Name] = params[:Name]
+    winner = Winner.new
+    winner.player_1.name = params[:Name]
     redirect '/play'
   end
 
@@ -23,11 +25,10 @@ enable :sessions
   end
 
   post '/fight' do
-    session[:RPS] = params[:RPS]
-    @player = session[:Name]
-    @player_choice = session[:RPS]
-    @computer_choice = Computer.new.choice
-    # @winner = winner.choice
+    @player = winner.player_1.name
+    @player_choice = winner.player_1.choice
+    @computer_choice = winner.player_2.choice
+    @winner = winner.winner
     erb(:fight)
   end
 

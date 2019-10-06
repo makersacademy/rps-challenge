@@ -1,4 +1,4 @@
-require 'winner'
+require 'player'
 
 describe Winner do
 
