@@ -14,7 +14,6 @@ class Game
   end
 
   def initialize(player1, player2)
-    @players = [player1, player2]
     @player1 = player1
     @player2 = player2
   end
@@ -36,6 +35,10 @@ class Game
 
   def keep_score
     winner.add_points if winner != "Draw"
+  end
+
+  def champion?
+    true if @player1.points == 2 || @player2.points == 2
   end
 
   def winner

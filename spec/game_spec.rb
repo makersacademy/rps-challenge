@@ -12,11 +12,19 @@ describe Game do
         subject.p1_weapon
       end
 
-      it "reweapons player 2's weapon" do
+      it "returns player 2's weapon" do
         expect(computer).to receive(:weapon) {'Paper'}
         subject.p2_weapon
       end
   end
+
+  describe '#champion?' do
+    it "checks if player has won the match" do
+      allow(player).to receive(:points) {2}
+      expect(game.champion?). to eq true
+    end
+  end
+
 
   describe '#winner' do
 

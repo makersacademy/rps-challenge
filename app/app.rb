@@ -38,7 +38,6 @@ class RPS < Sinatra::Base
   get '/result' do
     @game = Game.instance
     @game.play_round(session[:choice])
-    # @game.keep_score
     erb :result
   end
 
