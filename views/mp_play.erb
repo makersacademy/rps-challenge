@@ -8,24 +8,31 @@
       body {
         font-family: 'Indie Flower', cursive;
       }
+
+      img {
+        height: 80px;
+      }
+
+      button {
+        margin-right: 48px;
+      }
     </style>
   </head>
   <body>
       <h1><%="#{@game.player1.name} vs #{@game.player2.name} - FIGHT!"%></h1>
-
       <% if @game.player1_move.nil?%>
         <h2>Player 1 select your move:</h2>
         <form class="" action="/p1_move" method="post">
-          <button name="move" type="submit" value="Rock">Rock</button>
-          <button name="move" type="submit" value="Paper">Paper</button>
-          <button name="move" type="submit" value="Scissors">Scissors</button>
+          <button name="move" type="submit" value="Rock"><img src="images/rock.png" alt="rock"></button>
+          <button name="move" type="submit" value="Paper"><img src="images/paper.png" alt="paper"></button>
+          <button name="move" type="submit" value="Scissors"><img src="images/scissors.png" alt="scissors"></button>
         </form>
       <% else %>
         <h2>Player 2 select your move:</h2>
         <form class="" action="/p2_move" method="post">
-          <button name="move" type="submit" value="Rock">Rock</button>
-          <button name="move" type="submit" value="Paper">Paper</button>
-          <button name="move" type="submit" value="Scissors">Scissors</button>
+          <button name="move" type="submit" value="Rock"><img src="images/rock2.png" alt="rock"></button>
+          <button name="move" type="submit" value="Paper"><img src="images/paper2.png" alt="paper"></button>
+          <button name="move" type="submit" value="Scissors"><img src="images/scissors2.png" alt="scissors"></button>
         </form>
         <% end %>
   </body>
