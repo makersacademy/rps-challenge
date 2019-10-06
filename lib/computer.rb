@@ -1,6 +1,6 @@
 class Computer
 
-  MOVES = [:rock, :paper, :scissors]
+  MOVES = [:rock, :paper, :scissors, :spock, :lizard]
 
   def move
     MOVES.sample
