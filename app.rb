@@ -64,5 +64,10 @@ class RpsApp < Sinatra::Base
     erb :end
   end
 
+  post '/mp_reset' do
+    @game.reset
+    redirect '/mp-play'
+  end
+
   run! if app_file == $0
 end
