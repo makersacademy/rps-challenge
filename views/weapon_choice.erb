@@ -1,9 +1,21 @@
 <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Hairline|Bungee+Shade&display=swap" rel="stylesheet">
 
-<div style="font-family: 'Bungee Shade'; font-size: 40px">
+<style>
+  img { width: 15%; }
+  div { width: 100%; }
+}
+</style>
+
+<div align="center" style="font-family: 'Bungee Shade'; font-size: 40px">
   <h1> <%= @game.player_1.name %> vs <%= @game.player_2.name %> </h1>
 </div>
 
-<div style="font-family: 'Bungee'; font-size: 30px">
+<div align="center" style="font-family: 'Bungee'; font-size: 30px">
   <h2> Please choose your weapon: </h2>
+</div>
+
+<div align="center">
+  <img src="images/rock.jpg">
+  <img src="images/paper.jpg">
+  <img src="images/scissors.jpg">
 </div>
