@@ -3,4 +3,4 @@
 require 'rack'
 
 require_relative './app'
-run RPS
+run Rps
