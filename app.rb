@@ -29,6 +29,18 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
+  post '/multi_game' do
+    @game = Game.create
+    player1 = Player.new(params[:player1])
+    player2 = Player.new(params[:player2])
+    @game.add(player1, player2)
+    redirect '/multi_play'
+  end
+
+  get '/multi_play' do
+    erb :multi_play
+  end
+
   get '/play' do
     erb :play
   end

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <h1>  <%= @game.player1.name %> vs <%= @game.player2.name %> </h1>
+  </body>
+  <form action="/multi_move" method="post">
+    <select name="Move 1">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+    </select>
+  <br>
+  <select name="Move 2">
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+  </select>
+  <br>
+  <input type="submit" value="Submit">
+  </form>
+</html>
