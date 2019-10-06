@@ -1,1 +1,17 @@
-<%=$name1%> vs. <%=$name2%>
+<center>
+<br>
+<br>
+<h1><%=$name1%> vs. <%=$name2%></h1>
+    <form action ="/move" method ="post">
+  <label for="move1">
+    Enter move:
+    <select>
+  <option value="Rock" selected>Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+</select>
+  </label>
+  <br>
+  <br>
+  <input type="submit" value="Shoot!">
+</center>
