@@ -1,4 +1,10 @@
 Game over
 <div>
-<%= @game.player_1.name %> is the winner!
+<% if Game.outcome == 'WINNER' %>
+  <%= @game.player_1.name %> is the winner!
+<% elsif Game.outcome == 'DRAW' %>
+  It's a draw!
+<% elsif Game.outcome == 'LOSE' %>
+  <%= @game.player_2.name %> is the winner!
+<% end %>
 </div>

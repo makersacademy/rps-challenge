@@ -42,6 +42,7 @@ class RPS < Sinatra::Base
   end
 
   get '/game_over' do
+    Game.outcome 
     erb :game_over
   end
 

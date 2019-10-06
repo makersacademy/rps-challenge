@@ -4,14 +4,15 @@ class Game
 
   attr_reader :player_1, :player_2
 
+  LOGIC = [
+    { "Paper" => "Rock"},
+    { "Rock" => "Scissors"},
+    { "Scissors" => "Paper"},
+  ]
+
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
-    @logic = [
-      { "Paper" => "Rock"},
-      { "Rock" => "Scissors"},
-      { "Scissors" => "Paper"},
-    ]
   end
 
   def self.create(player_1, player_2)
@@ -22,22 +23,28 @@ class Game
     @game
   end
 
-  def winner
-    return 'WINNER' if winner?
+  def self.outcome
+    return "WINNER" if winner?
+    return "DRAW" if draw?
+    return "LOSE" if lost?
   end
 
   private
 
-  def result
+  def self.result
     { @game.player_1.choice => @game.player_2.choice }
   end
 
-  def winner?
-    @logic.include?(result)
+  def self.winner?
+    LOGIC.include?(self.result)
   end
 
-  def draw?
+  def self.draw?
     @game.player_1.choice == @game.player_2.choice
+  end
+
+  def self.lost?
+    LOGIC.include?( { @game.player_2.choice => @game.player_1.choice } )
   end
 
 end
