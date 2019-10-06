@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Ubuntu&display=swap" rel="stylesheet">
+    <style >
+      .player1 {
+        position: absolute;
+        left: 20%;
+        top: 75%
+
+      }
+      .player2 {
+        position: absolute;
+        right: 20%;
+        top: 75%
+      }
+      .weapons {
+        font-family: 'Permanent Marker', cursive;
+        color: #8a0303;
+      }
+      .button {
+        text-align: center
+      }
+      .winner {
+        font-family: 'Permanent Marker', cursive;
+        color: #8a0303;
+        font-size: 50px;
+        top: 25%
+        text-align: center
+      }
+      .round_result {
+        font-family: 'Permanent Marker', cursive;
+        color: #8a0303;
+        font-size: 30px;
+        top: 75%
+        text-align: center
+      }
+      .result {
+        font-family: 'Permanent Marker', cursive;
+        color: #8a0303;
+        font-size: 30px;
+        top: 75%
+        text-align: center
+      }
+      .rps1 {
+        position: absolute; /* or absolute */
+        top: 25%;
+        left: 15%;
+      }
+      .rps2 {
+        position: absolute; /* or absolute */
+        top: 25%;
+        right: 15%;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <center>
+      <%if @game.player1.weapon == 'Rock' %>
+        <img class="rps1" src="images/rock.jpg" alt="A rock" width="300" height="300">
+      <%elsif @game.player1.weapon == 'Paper' %>
+        <img class="rps1" src="images/paper.jpg" alt="Paper" width="300" height="300">
+      <%elsif @game.player1.weapon == 'Scissors' %>
+        <img class="rps1" src="images/scissors.jpg" alt="Scissors" width="300" height="300">
+      <%end%>
+
+      <div class="player1">
+        <%=@game.player1.name%> chose <%=@game.player1.weapon%>
+      </div>
+
+      <%if @game.player2.weapon == 'Rock' %>
+        <img class="rps2" src="images/rock.jpg" alt="A rock" width="300" height="300">
+      <%elsif @game.player2.weapon == 'Paper' %>
+        <img class="rps2" src="images/paper.jpg" alt="Paper" width="300" height="300">
+      <%elsif @game.player2.weapon == 'Scissors' %>
+        <img class="rps2" src="images/scissors.jpg" alt="Scissors" width="300" height="300">
+      <%end%>
+
+      <div class="player2">
+        <%=@game.player2.name%> chose <%=@game.player2.weapon%>
+      </div>
+
+      <% if @game.winner == @game.player1 %>
+        <div class="weapons">
+          <%=@game.player1.weapon%> beats <%=@game.player2.weapon%>
+        </div>
+
+        <div class="round_result">
+          <%=@game.player1.name%> wins this round
+        </div>
+
+      <% elsif @game.winner == @game.player2 %>
+        <div class="result">
+          <%=@game.player2.weapon%> beats <%=@game.player1.weapon%>
+        </div>
+
+        <div class="round_result">
+          <%=@game.player2.name%> wins this round
+        </div>
+
+      <% else %>
+        <div class="round_result">
+          <%=@game.player1.weapon%> cancels out <%=@game.player2.weapon%>
+          <br>
+          It's a draw!
+        </div>
+      <%end%>
+      <br>
+
+      <% if @game.champion? == true %>
+      <div class="winner">
+        <%= @game.winner.name%> is the Champion
+      </div>
+      <form class= "button" action="/">
+        <button name="Play Again">Play Again</button>
+      </form>
+      <% else%>
+      <form class= "button" action="/play">
+        <button name="Next Round">Next Round</button>
+      </form>
+      <%end%>
+    </center>
+
+  </body>
+</html>

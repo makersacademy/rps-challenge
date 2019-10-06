@@ -14,7 +14,7 @@ Please checkout your reviewee's code and run their tests. Read the code and try 
 As we have seen previously, the README is a great place to show the full story of how your app is used (from a user's perspective).  For a web app, include instructions for how to download and run the app, e.g.:
 
 ```sh
-$ git clone git@github.com:[USERNAME]/rps-challenge.git
+$ git clone https://github.com/smasonmalik/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup
@@ -93,7 +93,7 @@ In `spec/spec_helper.rb`, don't forget to add `Capybara.app = MyRackApp` or simi
 Old code should be deleted before you commit - it is distracting and makes your code hard to read. There is no reason to keep commented-out code - if you are commiting regularly, all your code will be in git so you can easily look back at how it looked before you made changes.
 
 
-# Step 2: Tests and \*\_spec.rb files  
+# Step 2: Tests and \*\_spec.rb files
 
 ## \*\_spec.rb files (unit tests)
 
