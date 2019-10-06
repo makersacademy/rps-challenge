@@ -24,9 +24,17 @@
       'It's a draw!'
       <%end%>
       <br>
+
+      <% if @game.champion? == true %>
+      <%= @game.winner.name%> is the Champion
+      <form action="/">
+        <button name="Play Again">Play Again</button>
+      </form>
+      <% else%>
       <form action="/play">
         <button name="Next Round">Next Round</button>
       </form>
+      <%end%>
     </center>
 
   </body>
