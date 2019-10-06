@@ -18,6 +18,7 @@ class Rps < Sinatra::Base
   end
 
   get '/game_result' do
+    @chosen_move = params[:player_1_move]
     erb :game_result
   end
 
