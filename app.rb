@@ -23,8 +23,8 @@ class Rps < Sinatra::Base
 
   get '/move' do
     @game = $game
-    @player1_move = @game.player1.move(params[:move])
-    @player2_move = @game.player2.random_move
+    @game.player1.move(params[:move])
+    @game.player2.random_move
     erb(:move)
   end
 
