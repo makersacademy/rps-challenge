@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/weapon'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -9,49 +10,47 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:player_name])
+    player = Player.new(params[:player_name])
+    computer = Player.new("Computer")
+    $game = Game.new(player, computer)
     redirect '/play'
     # erb :play
   end
 
   get '/play' do
-    @player_name = $player.name
+    @player_name = $game.player.name
     erb :play
   end
 
   post '/rock' do
-    $weapon = Weapon.new
-    $weapon.choose_rock
+    $game.player.choose_rock
     redirect '/choice'
   end
 
   post '/paper' do
-    $weapon = Weapon.new
-    $weapon.choose_paper
+    $game.player.choose_paper
     redirect '/choice'
   end
 
   post '/scissors' do
-    $weapon = Weapon.new
-    $weapon.choose_scissors
+    $game.player.choose_scissors
     redirect '/choice'
   end
 
   get '/choice' do
-    @player_name = $player.name
-    @weapon = $weapon.choice
+    @player_name = $game.player.name
+    @player_weapon = $game.player.player_weapon
     erb :choice
   end
 
   post '/computers_turn' do
-    $weapon_comp = Weapon.new
-    $weapon_comp.random_weapon
+    $game.computer.choose_weapon
     redirect '/result'
   end
 
   get '/result' do
-    @player_name = $player.name
-    @weapon_comp = $weapon_comp.choice
+    @player_name = $game.player.name
+    @weapon_comp = $game.computer.comp_weapon
     erb :result
   end
 
