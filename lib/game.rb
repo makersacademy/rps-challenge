@@ -1,11 +1,13 @@
 class Game
 
   OUTCOME = { 
-    rock: { rock: :draw, paper: :lose, scissors: :win, lizard: :win, spock: :lose },
-    scissors: { scissors: :draw, rock: :lose, paper: :win, lizard: :win, spock: :lose },
-    paper: { paper: :draw, scissors: :lose, rock: :win, spock: :win, lizard: :lose },
-    lizard: { lizard: :draw, paper: :win, spock: :win, rock: :lose, scissors: :lose },
-    spock:  { spock: :draw, scissors: :win, rock: :win, paper: :lose, lizard: :lose },
+    rock: { rock: :draw, paper: :lose, scissors: :win, fire: :win, sponge: :win, water: :lose, air: :lose },
+    scissors: { scissors: :draw, rock: :lose, paper: :win, sponge: :win, air: :win, fire: :lose, water: :lose },
+    paper: { paper: :draw, scissors: :lose, rock: :win, air: :win, water: :win, fire: :lose, sponge: :lose },
+    fire: { fire: :draw, scissors: :win, sponge: :win, paper: :win, rock: :lose, water: :lose, air: :lose },
+    sponge: { sponge: :draw, paper: :win, air: :win, water: :win, rock: :lose, fire: :lose, scissors: :lose },
+    water: { water: :draw, rock: :win, scissors: :win, fire: :win, air: :lose, paper: :lose, sponge: :lose },
+    air: { air: :draw, water: :win, rock: :win, fire: :win, scissors: :lose, sponge: :lose, paper: :lose }
   }
 
   attr_reader :player, :move, :comp_move

@@ -1,15 +1,5 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-
 Task
 ----
 
@@ -19,15 +9,14 @@ The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game 
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
 
-As a marketeer
+*As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game*
+
+*As a marketeer
 So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+I would like to be able to play rock/paper/scissors*
 
 Hints on functionality
 
@@ -40,17 +29,22 @@ Hints on functionality
 
 # Installing the app
 
-```sh
-$ git clone git@github.com:bradjp/rps-challenge.git
-$ cd rps-challenge
-$ bundle
-$ rackup
 ```
+$ git clone git@github.com:bradjp/rps-challenge.git```
+
+```
+$ cd rps-challenge```
+
+```$ bundle```
+
+```$ rackup
+```
+
 Then navigate to localhost:9292 in your web browser
 
 
 # Spock paper scissors...
 
-This app is the rock, paper, scissors, Spock, Lizard variant.
+This app is the RPS7 variant of the game, with 7 moves.
 
-![Screenshot](https://upload.wikimedia.org/wikipedia/en/c/cc/Rock_paper_scissors_lizard_spock.png)
+![Screenshot](http://www.umop.com/images/hands.jpg)
