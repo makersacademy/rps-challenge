@@ -4,10 +4,10 @@ class Computer
 
   def initialize
     @moves = ['Rock', 'Paper', 'Scissors']
-    @name = "THE CHAMPION"
+    @name = "Computer Genius"
   end
 
-  def choose
+  def choose(holder)
     @choice = @moves.sample
   end
 

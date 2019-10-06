@@ -4,7 +4,7 @@ feature 'Testing names' do
     visit('/')
     fill_in('Name', with: 'Dom')
     click_button "Submit"
-    expect(page).to have_content 'Dom vs THE CHAMPION'
+    expect(page).to have_content 'Dom vs Computer Genius'
   end
 
 end

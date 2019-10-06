@@ -34,10 +34,16 @@
 
   <div class="center"><h1>The Rock, The Paper and The Scissors</h1></div>
 
-  <div class="nav"><form action="/names" method="post">
-    <input type="text" name="Name">
-    <input type="submit" value="Submit">
-  </form></div>
+  <div class="nav">
+    <form action="/names" method="post">
+      <input type="text" name="player_1">
+      <input type="text" name="player_2" list="player_2"/>
+      <datalist id="player_2">
+        <option>Computer</option>
+      </datalist>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 
 </body>
 </html>

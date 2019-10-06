@@ -8,28 +8,50 @@ class RPS < Sinatra::Base
 
 enable :sessions
 
+  before do
+    @winner = Winner.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
   post '/names' do
-    $winner = Winner.new(Player.new(params[:Name]))
-    redirect '/play'
+    if (params[:player_2]) == 'Computer'
+      Winner.create(Player.new(params[:player_1]))
+      redirect '/play_1'
+    else Winner.create(Player.new(params[:player_1]), Player.new(params[:player_2]))
+      redirect '/play_1'
+    end
   end
 
-  get '/play' do
-    @player = $winner.player_1.name
-    erb(:play)
+  get '/play_1' do
+    erb(:play_1)
+  end
+
+  get '/play_2' do
+    erb(:play_2)
   end
 
   post '/fight' do
-    @player = $winner.player_1.name
-    $winner.player_1.choose(params[:RPS])
-    @player_choice = $winner.player_1.choice
-    $winner.player_2.choose
-    @computer_choice = $winner.player_2.choice
-    @winner = $winner.winner
-    erb(:fight)
+    @winner.player_2.choose(params[:RPS2])
+    if @winner.player_2.name == 'Computer Genius'
+      @winner.player_1.choose(params[:RPS1])
+      redirect '/winner'
+    elsif @winner.player_2.choice == nil
+      redirect '/play_2'
+    else redirect '/winner'
+    end
+  end
+
+  get '/winner' do
+    @winner.player_2.choose(params[:RPS2])
+    erb(:winner)
+  end
+
+  get '/redirect' do
+    redirect '/play_1' if @winner.player_2.name == 'Computer Genius'
+    redirect '/play_2'
   end
 
   # start the server if ruby file executed directly

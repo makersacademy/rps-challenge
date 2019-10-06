@@ -3,6 +3,14 @@ require_relative 'player'
 
 class Winner
 
+  def self.create(player_1, player_2 = Computer.new)
+    @winner = Winner.new(player_1, player_2)
+  end
+
+  def self.instance
+    @winner
+  end
+
   attr_reader :player_1, :player_2
 
   def initialize(player_1, player_2 = Computer.new)
