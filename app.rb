@@ -21,6 +21,15 @@ enable :sessions
     erb(:play)
   end
 
+  post '/fight' do
+    session[:RPS] = params[:RPS]
+    @player = session[:Name]
+    @player_choice = session[:RPS]
+    @computer_choice = computer.choice
+    @winner = winner.choice
+    erb(:fight)
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 

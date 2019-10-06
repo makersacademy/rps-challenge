@@ -9,19 +9,19 @@
 
   <style>
   body {
-    background-image: url(https://www.laserfiche.com/wp-content/uploads/2016/01/shutterstock_284660570-rs.jpg);
+    background-image: url('https://www.laserfiche.com/wp-content/uploads/2016/01/shutterstock_284660570-rs.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
     margin-top: 10px;
-    margin-left: 37.5%;
-    width: 25%;
+    margin-left: 25%;
+    width: 50%;
   }
-  h1, h2, h3 { color: black;
+  h1, h2, h3 { color: white;
   }
   .center {
     text-align: center;
-    background-color: gold;
+    background-color: brown;
   }
   </style>
 
@@ -29,9 +29,21 @@
 
 <body>
 
-  <div class="center"><h1>The Ultimate Battle</h1>
+  <div class="center"><h1>The Rock, The Paper and The Scissors</h1>
 
   <h1> <%= @player %> vs THE CHAMPION </h1>
+
+  <form action="/fight" method="post">
+
+    <select name="RPS" id="RPS">
+      <option value="Rock">Rock</option>
+      <option value="Paper">Paper</option>
+      <option value="Scissors">Scissors</option>
+    </select>
+
+    <input type="submit" value="Submit">
+
+  </form>
 
   </div>
 
