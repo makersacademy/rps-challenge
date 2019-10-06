@@ -1,3 +1,8 @@
 <h1 style="text-align:center;">Rock, Paper, Scissors!</h1>
 <h2><%= @player_1_name %> vs. The Computer</h2>
 Choose your move:
+<form action= "/game_result" >
+  <input type="submit" name='player_1_move' value="Rock">
+  <input type="submit" name='player_1_move' value="Paper">
+  <input type="submit" name='player_1_move' value="Scissors">
+</form>
