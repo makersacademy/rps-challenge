@@ -1,5 +1,16 @@
 # RPS Challenge
 
+## How to install and play Rock, Paper, Scissors
+
+1. Clone this repository.
+2. In your command line, `cd` into the `rps-challenge` directory.
+3. Run `bundle install` to install dependencies.
+4. Run local server using `ruby app.rb`
+5. Open a browser window and go to [http://localhost:4567](http://localhost:4567)
+6. Enjoy a game (or a few)!
+
+---
+
 Instructions
 -------
 
