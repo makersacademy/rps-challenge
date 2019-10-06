@@ -1,12 +1,12 @@
 <h1><%= @game.result %></h1>
 
-<table>
-  <tr width="100%">
-    <td width="50%">
-      <%= @game.player.name %>'s move: <%= @game.player.move %>
+<table style="width: 100%;">
+  <tr>
+    <td style="padding: 50px;">
+      <h2><%= @game.player.name %>'s move: <%= @game.player.move %></h2>
     </td>
-    <td width="50%">
-      Computer's move: <%= @game.computer.move %>
+    <td style="padding: 50px;">
+      <h2>Computer's move: <%= @game.computer.move %></h2>
     </td>
   </tr>
 </table>
