@@ -1,0 +1,280 @@
+.header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.heading {
+  margin-top: 0px;
+  font-family: 'Patrick Hand', sans-serif;
+  color: #222;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: normal;
+}
+
+.form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.field-label {
+  margin-bottom: 10px;
+  font-family: 'Patrick Hand SC', sans-serif;
+  color: #222;
+  font-size: 22px;
+}
+
+.submit-button {
+  margin-top: 5px;
+  background-color: #222;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 16px;
+}
+
+.weapons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.move {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.fighters {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.h2 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-family: 'Patrick Hand SC', sans-serif;
+  color: #222;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.fighter {
+  width: 100%;
+  padding: 10px;
+}
+
+.monster {
+  width: 100%;
+  padding: 10px;
+}
+
+.text-block {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  font-family: 'Patrick Hand', sans-serif;
+  color: #555;
+}
+
+.link {
+  color: #222;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.text-field {
+  width: 300px;
+}
+
+.fighter-block {
+  width: 50%;
+}
+
+.monster-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.fighter-text {
+  padding: 5px 5px 5px 10px;
+  font-family: 'Patrick Hand SC', sans-serif;
+  font-size: 20px;
+}
+
+.monster-text {
+  padding: 5px 10px;
+  font-family: 'Patrick Hand SC', sans-serif;
+  font-size: 20px;
+  text-align: right;
+}
+
+.image {
+  margin-bottom: 10px;
+}
+
+.button {
+  width: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #222;
+  font-family: 'Patrick Hand SC', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding-bottom: 10px;
+  }
+  .fighter {
+    width: 100%;
+  }
+  .monster {
+    width: 100%;
+  }
+  .text-block {
+    padding-left: 10px;
+  }
+  .fighter-block {
+    width: 50%;
+  }
+  .monster-block {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fighter {
+    width: 100%;
+  }
+  .monster {
+    width: 100%;
+  }
+  .text-block {
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+  .fighter-block {
+    width: 50%;
+  }
+  .monster-block {
+    width: 50%;
+  }
+  .button {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 479px) {
+  .header {
+    padding-bottom: 20px;
+  }
+  .fighter {
+    display: block;
+    padding-left: 0px;
+  }
+  .monster {
+    padding-right: 0px;
+  }
+  .text-block {
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+  .fighter-block {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .monster-block {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+  .fighter-text {
+    font-size: 15px;
+  }
+  .monster-text {
+    font-size: 15px;
+  }
+}
+
