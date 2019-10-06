@@ -1,0 +1,23 @@
+<h1>Your move, <%= @game.player.name %>!</h1>
+
+<form action="/move" method="post">
+  <table style="width:100%">
+    <tr>
+      <td width="33%">
+        <img src="img/rock_left.png" alt="Rock">
+        <br />
+        <input type="submit" name="player_move" value="Rock">
+      </td>
+      <td width="34%">
+        <img src="img/paper_left.png" alt="Paper">
+        <br />
+        <input type="submit" name="player_move" value="Paper">
+      </td>
+      <td width="33%">
+        <img src="img/scissors_left.png" alt="Scissors">
+        <br />
+        <input type="submit" name="player_move" value="Scissors">
+      </td>
+    </tr>
+  </table>
+</form>
