@@ -1,9 +1,13 @@
 require_relative "lib/player"
-
+require_relative "lib/game"
 require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb :index
@@ -13,8 +17,15 @@ class RockPaperScissors < Sinatra::Base
     erb :single_name
   end
 
+  get '/multi_name' do
+    erb :multi_name
+  end
+
   post '/sp_game' do
-    @player1 = Player.new(params[:player1])
+    @game = Game.create
+    player1 = Player.new(params[:name])
+    player2 = Player.new("Computer")
+    @game.add(player1, player2)
     redirect '/play'
   end
 
@@ -27,7 +38,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
+    @game.play_vs_comp(params[:move])
     redirect '/end'
   end
+
   run! if app_file == $0
+
 end

@@ -5,6 +5,12 @@
     <title></title>
   </head>
   <body>
-    Player1 chose paper.
+  <%= @game.player1.name %> chose <%= @game.player1.current_move %>.
+  <br>
+  <%= @game.player2.name %> chose <%= @game.player2.rand_move %>.
+  <br>
+
+  <%= @game.win %>
+
   </body>
 </html>
