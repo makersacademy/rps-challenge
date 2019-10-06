@@ -1,4 +1,4 @@
-require './lib/weapon'
+require_relative 'weapon'
 
 class Player
 

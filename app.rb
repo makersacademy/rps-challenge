@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require './lib/player'
-require './lib/weapon'
 require './lib/game'
 
 class RPS < Sinatra::Base
@@ -14,7 +13,6 @@ class RPS < Sinatra::Base
     computer = Player.new("Computer")
     $game = Game.new(player, computer)
     redirect '/play'
-    # erb :play
   end
 
   get '/play' do
@@ -50,7 +48,10 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @player_name = $game.player.name
-    @weapon_comp = $game.computer.comp_weapon
+    @comp_name = $game.computer.name
+    @player_weapon = $game.player.player_weapon
+    @comp_weapon = $game.computer.comp_weapon
+    @winner = $game.winner(@player_weapon, @comp_weapon)
     erb :result
   end
 
