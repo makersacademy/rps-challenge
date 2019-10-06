@@ -3,7 +3,7 @@
  _Rock, Paper, Scissors_
  -THE ONLINE GAME-
 
- user stories:
+ User Stories:
 ```sh
 As a player
 So that I can see my name in lights
@@ -42,6 +42,6 @@ Sequence Diagram
 - _____ wins!
 
 Class Diagram
-Game : player1, player2(CPU), pick_move, player_wins?
-Player : name
-Random_generator
+- Game : player1, player2(CPU), pick_move, player_wins?
+- Player : name
+- Random_generator : random_move (rock || paper || scissors)
