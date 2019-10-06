@@ -1,5 +1,6 @@
 # app.rb
 require 'sinatra/base'
+require './lib/computer'
 # require_relative './lib/game'
 
 class RPS < Sinatra::Base
@@ -25,8 +26,8 @@ enable :sessions
     session[:RPS] = params[:RPS]
     @player = session[:Name]
     @player_choice = session[:RPS]
-    @computer_choice = computer.choice
-    @winner = winner.choice
+    @computer_choice = Computer.new.choice
+    # @winner = winner.choice
     erb(:fight)
   end
 
