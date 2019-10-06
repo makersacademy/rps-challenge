@@ -51,7 +51,7 @@ h1,h2,h3,h4,h5,h6,button {
     <div id="content">
     <div class="border-button">
       <br>
-      <h1>Hiya, <%= @game.player1 %>!</h1> <br>
+      <h1>Hiya, <%= @game.player1.name %>!</h1> <br>
       <br>
       </div>
     </div>  
@@ -59,7 +59,7 @@ h1,h2,h3,h4,h5,h6,button {
       <br>
       <br>
       <br>
-      <h2><%= @game.player1 %> vs. The Computer</h2>
+      <h2><%= @game.player1.name %> vs. The Computer</h2>
       <button class="button button5"><a href="/play">Play</a></button>
   </div></div>
 </body>

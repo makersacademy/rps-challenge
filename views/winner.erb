@@ -1,0 +1,36 @@
+<style>
+#vcontainer {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+#hcontainer {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+#content {
+  display: inline-block;
+  border: lightGray 1px solid;
+  background-color: #EE82EE;
+  text-align: left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: black;
+  font-family: 'Acme', sans-serif;
+}
+
+</style>
+<body>
+<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+  <div id="vcontainer"><div id="hcontainer">
+    <div id="content">
+      <br>
+      <h1>And the winner is...</h1> <br>
+      <br>
+    </div>
+    <h3><%= @game.player1.name %>: <%= @game.player1.choice %> </h3>
+    <h3><%= @game.player2.name %>: <%= @game.player2.choice %></h3>  
+  </div></div>
+</body>
