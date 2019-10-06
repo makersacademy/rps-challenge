@@ -7,12 +7,16 @@
   <body>
   <h1>  <%= @game.player1.name %> vs <%= @game.player2.name %> </h1>
   </body>
+  <br>
+  <%= @game.player1.name %>  what you gonna do?
   <form action="/multi_move" method="post">
     <select name="move1">
     <option value="Rock">Rock</option>
     <option value="Paper">Paper</option>
     <option value="Scissors">Scissors</option>
     </select>
+  <br>
+  <%= @game.player2.name %> how you gonna play it?
   <br>
   <select name="move2">
   <option value="Rock">Rock</option>
