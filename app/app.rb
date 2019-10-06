@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
   post '/name' do
     player1 = Player.new(params[:player1])
     player2 = Computer.new
-    $game = Game.new(player1, player2)
+    Game.create(player1, player2)
     redirect '/play'
   end
 
@@ -30,7 +30,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
     erb :play
   end
 
@@ -40,7 +40,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @game = $game
+    @game = Game.instance
     @game.play_round(session[:choice])
     erb :result
   end
