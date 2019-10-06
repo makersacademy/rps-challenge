@@ -1,11 +1,11 @@
 <center>
 <br>
 <br>
-<h1><%=$name1%> vs. <%=$name2%></h1>
-    <form action ="/move" method ="post">
+<h1><%= @game.player1.name %> vs. Computer</h1>
+    <form action ="/winner" method ="post">
   <label for="move1">
     Enter move:
-    <select>
+    <select name="moves">
   <option value="Rock" selected>Rock</option>
   <option value="Paper">Paper</option>
   <option value="Scissors">Scissors</option>
