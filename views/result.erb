@@ -3,12 +3,12 @@
 <style>
 body {
   font-family: 'Bungee';
-  font-size: 2.5vw;
+  font-size: 2vw;
 }
-img { width: 30%; }
+img { width: 22%; }
 </style>
 
-<div style="font-family: 'Bungee Shade'; font-size: 3vw">
+<div style="font-family: 'Bungee'; font-size: 1.5vw">
   <% if @game.winner.nil? %>
     <h1 align="center"> It's a draw! </h1>
   <% else %>
@@ -16,22 +16,37 @@ img { width: 30%; }
   <% end %>
 </div>
 
-<div style="font-family: 'Bungee'; font-size: 1.5vw">
+<div align="center">
+  <form action="/next" method="post">
+    <input type="submit" value="Next">
+  </form>
+</div>
+
+<% if @game.winner == @game.player_1 %>
+  <div align="center">
+    <img style='border: 3px solid lime' src= <%=@p1_pic%> >
+    <img img style='border: 3px solid red' src= <%=@p2_pic%> >
+  </div>
+<% elsif @game.winner == @game.player_2 %>
+  <div align="center">
+    <img style='border: 3px solid red' src= <%=@p1_pic%> >
+    <img img style='border: 3px solid lime' src= <%=@p2_pic%> >
+  </div>
+<% else %>
+  <div align="center">
+    <img style='border: 3px solid gold' src= <%=@p1_pic%> >
+    <img img style='border: 3px solid gold' src= <%=@p2_pic%> >
+  </div>
+<% end %>
+
+<div align="center" style="font-family: 'Bungee HairLine'; font-size: 2.2vw">
+  <b> <%= @game.player_1.name %>: <%= @game.p1_score%> / <%= @game.p2_score%> :<%= @game.player_2.name %> </b>
+</div>
+
+<div style="font-family: 'Bungee'; font-size: 1vw">
   <% if @game.winner.nil? %>
     <h1 align="center"> Play again </h1>
   <% else %>
     <h1 align="center"> <%= @game.winner.weapon %> beats <%= @game.loser.weapon %>  </h1>
   <% end %>
-</div>
-
-<div align="center">
-  <%= @game.player_1.name %>: <%= @game.p1_score%>  <img src= <%=@p1_pic%> >
-  <img src= <%=@p2_pic%> > <%= @game.p2_score%> :<%= @game.player_2.name %>
-</div>
-
-<div align="center">
-  <br>
-  <form action="/weapon_choice">
-    <input type="submit" value="Next">
-  </form>
 </div>

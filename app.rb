@@ -40,4 +40,12 @@ class RPSWeb < Sinatra::Base
     erb :result
   end
 
+  post '/next' do
+    redirect '/champion' if @game.p1_score >= 2 || @game.p2_score >= 2
+    redirect '/weapon_choice'
+  end
+
+  get '/champion' do
+    erb :champion
+  end
 end
