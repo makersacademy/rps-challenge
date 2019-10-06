@@ -10,12 +10,20 @@ class Rps < Sinatra::Base
 
   post '/name' do
     $player = Player.new(params[:player_name])
+    $computer = Player.new("Computer")
     redirect '/play'
   end
 
   get '/play' do
     @player = $player
+    @computer = $computer
     erb(:play)
+  end
+
+  get '/move' do
+    @player = $player
+    @computer = $computer
+    erb(:move)
   end
 
 
