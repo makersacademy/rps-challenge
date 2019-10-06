@@ -3,19 +3,49 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Ubuntu&display=swap" rel="stylesheet">
+    <style>
+      h1 {
+        font-family: 'Permanent Marker', cursive;
+        color: #8a0303;
+      }
+
+      .radio-inline {
+        position: relative;
+        display: inline-block;
+        padding-left: 20px;
+        margin-bottom: 0;
+        font-weight: 400;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+
+    </style>
   </head>
+
   <body>
     <center>
-      <%=@game.player1.name%> VS Computer
-      <form action="/selection" method='post'>
-        <p>Pick your move:</p>
-        <input type="radio" name="choice" value="Rock">Rock<br>
-        <input type="radio" name="choice" value="Paper"> Paper<br>
-        <input type="radio" name="choice" value="Scissors"> Scissors<br>
-        <input type="submit" value="Play">
-      </form>
+      <h1><%=@game.player1.name%> VS Computer</h1>
       <br>
-      <%=@game.player1.points%>-<%=@game.player2.points%>
+      <h1><%=@game.player1.points%>-<%=@game.player2.points%></h1>
+      <img src="images/trio.jpg" width="300" height="350" alt="rock paper scissors">
+      <div class="buttons">
+        <h2>Pick your move:</h2>
+        <form action="/selection" method='post'>
+          <label class="radio-inline">
+            <input type="radio" name="choice" value="Rock">Rock<br>
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="choice" value="Paper"> Paper<br>
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="choice" value="Scissors"> Scissors<br>
+          </label>
+          <br>
+          <br>
+            <input type="submit" value="Play">
+        </form>
+      </div>
     </center>
 
 
