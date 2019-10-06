@@ -3,7 +3,6 @@ attr_reader :name , :move
 
   def initialize(name)
     @name = name
-    @move = nil
   end
 
   def chosen_move(choice)
