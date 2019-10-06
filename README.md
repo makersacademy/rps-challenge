@@ -19,6 +19,7 @@ The engine for the game is handled by two classes: Player and Game. The Player h
 
 As of 6th October 2019, both user stories had been implemented. However, I would like to add in a feature to give the option for one person to play against the computer, rather than always needing two people.
 I also need to update the view files with some CSS to make each page look more visually pleasing.
+I need to update my Travis CI status badge too.  
 
 ## How to Use
 
