@@ -5,6 +5,13 @@
     <title>Single Player Game</title>
   </head>
   <body>
-    <h1><h1><%="#{@game.player1.name} vs #{@game.player2.name} - FIGHT!"%></h1></h1>
+    <h1>
+      <h1><%="#{@game.player1.name} vs #{@game.player2.name} - FIGHT!"%></h1>
+    </h1>
+    <form class="" action="/move" method="post">
+      <button name="move" type="submit" value="Rock">Rock</button>
+      <button name="move" type="submit" value="Paper">Paper</button>
+      <button name="move" type="submit" value="Scissors">Scissors</button>
+    </form>
   </body>
 </html>

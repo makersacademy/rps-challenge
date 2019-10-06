@@ -13,23 +13,44 @@ class RpsApp < Sinatra::Base
     erb :index
   end
 
-  get '/single_player' do
+  get '/single-player' do
     erb :single_player
   end
 
-  post '/sp_game' do
+  get '/multiplayer' do
+    erb :multiplayer
+  end
+
+  post '/sp-game' do
     @player1 = Player.new(params[:player1])
     @player2 = Player.new("COMPUTER")
     @game = Game.create(@player1, @player2)
     redirect '/play'
   end
 
+  post '/mp-game' do
+    @player1 = Player.new(params[:player1])
+    @player2 = Player.new(params[:player2])
+    @game = Game.create(@player1, @player2)
+    redirect '/mp-play'
+  end
+
   get '/play' do
     erb :play
   end
 
-  get '/multiplayer' do
-    erb :multiplayer
+  get '/mp-play' do
+    erb :mp_play
+  end
+
+  post '/move' do
+    @game.single_player(params[:move])
+    redirect '/end'
+  end
+
+  get '/end' do
+    @game.outcome
+    erb :end
   end
 
   run! if app_file == $0

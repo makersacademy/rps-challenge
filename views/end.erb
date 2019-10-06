@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>End Game</title>
+
+    <style>
+      #Winner {
+        padding: 50px 0;
+        text-align: center;
+        margin-top: 20px;
+        display: none;
+      }
+    </style>
+
+    <script>
+      function reveal() {
+        var winner = document.getElementById("Winner");
+        if (winner.style.display === "none") {
+          winner.style.display = "block";
+        } else {
+          winner.style.display = "none";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2><%="#{@game.player1.name} choose #{@game.player1_move}"%></h2>
+
+    <button onclick="reveal()">Reveal Winner</button>
+
+    <div id="Winner">
+      <h1><%=@game.outcome%></h1>
+      <h1><%="#{@game.player2.name} choose #{@game.player2_move}"%></h1>
+    </div>
+
+  </body>
+</html>
