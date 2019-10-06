@@ -30,7 +30,12 @@ class Game
   def play_round(choice)
     puts @player1.move(choice)
     puts @player2.move
-    @winner = winner
+    keep_score
+    winner
+  end
+
+  def keep_score
+    winner.add_points if winner != "Draw"
   end
 
   def winner

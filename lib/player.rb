@@ -11,4 +11,8 @@ class Player
     @weapon = choice
   end
 
+  def add_points
+    @points += 1
+  end
+
 end

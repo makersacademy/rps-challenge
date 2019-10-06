@@ -6,10 +6,6 @@ require_relative '../lib/game'
 class RPS < Sinatra::Base
   enable :sessions
 
-  get '/test' do
-    'Testing infrastructure working!'
-  end
-
   get '/' do
     erb :index
   end
@@ -42,6 +38,7 @@ class RPS < Sinatra::Base
   get '/result' do
     @game = Game.instance
     @game.play_round(session[:choice])
+    # @game.keep_score
     erb :result
   end
 

@@ -27,5 +27,9 @@ describe Player do
     it "returns players points" do
       expect(subject.points).to eq 0
     end
+
+    # it "add points to score" do
+    #   expect { subject.point}.to eq 1
+    # end
   end
 end

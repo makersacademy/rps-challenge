@@ -13,4 +13,8 @@ class Computer
   def name
     'Computer'
   end
+
+  def add_points
+    @points += 1
+  end
 end
