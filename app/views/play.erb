@@ -1,0 +1,18 @@
+<center>
+<h1>
+
+Welcome, <%= @game.player1.name %>...
+
+<br>
+<br>
+
+What's your move?
+
+<form action="/move" method="post">
+
+  <button name="move" type="submit" value="ROCK">ROCK</button>
+  <button name="move" type="submit" value="PAPER">PAPER</button>
+  <button name="move" type="submit" value="SCISSORS">SCISSORS</button>
+
+</center>
+</h1>

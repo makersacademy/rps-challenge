@@ -1,0 +1,17 @@
+<center>
+<h1>
+
+<%= @game.player1.name %> MADE THE MOVE : <%= @game.player1.current_move %>
+<br>
+<%= @game.player2.name %> MADE THE MOVE : <%= @game.player2.current_move %>
+<br>
+<br>
+
+<%= @game.winner %>
+
+<form action="/" method="get">
+  <input type="submit" value="Go back">
+</form>
+
+</h1>
+</center>
