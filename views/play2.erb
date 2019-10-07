@@ -1,0 +1,27 @@
+<html>
+  <head>
+  </head>
+  <body style="text-align:center">
+    <br />
+    <h1> <%= @marketer_2 %> </h1>
+    <h1> Rock, paper or scissors? </h1>
+    <h2 align="right" > <%= @marketer_1 %> <%= @marketer_1_points %> <%= @marketer_2 %> <%= @marketer_2_points %> </h2>
+    <hr width="75%" style="border: 1px dashed black;" />
+    <hr style="height:30px; visibility:hidden;" />
+    <div>
+
+      <form action="/results2-rps" method="post">
+        <input style="width: 200px; height: 100px;" name="weapon" type="submit" value="Rock">
+      </form>
+
+      <form action="/results2-rps" method="post">
+        <input style="width: 200px; height: 100px;" name="weapon" type="submit" value="Paper">
+      </form>
+
+      <form action="/results2-rps" method="post">
+        <input style="width: 200px; height: 100px;" name="weapon" type="submit" value="Scissors">
+      </form>
+
+    </div>
+  </body>
+  </html>

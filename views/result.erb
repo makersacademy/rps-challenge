@@ -1,0 +1,27 @@
+<html>
+  <head>
+  </head>
+  <body style="text-align:center">
+    <br />
+    <% if @game.win? %>
+    <% @game.marketer_1.win_a_point %>
+    <h1> <%= @marketer_1 %> won! </h1>
+    <% elsif @game.draw? %>
+    <h1> You drew! </h1>
+    <% elsif @game.lose? %>
+    <% @game.marketer_2.win_a_point %>
+    <h1> <%= @marketer_2 %> won! </h1>
+    <% end %>
+
+    <h2 align="right" > <%= @marketer_1 %> <%= @game.marketer_1.points %> <%= @marketer_2 %> <%= @game.marketer_2.points %> </h2>
+    <hr width="75%" style="border: 1px dashed black;" />
+    <hr style="height:30px; visibility:hidden;" />
+    <h2> <%= @marketer_1 %> chose <%= @player_weapon %> </h2>
+    <h2> <%= @marketer_2 %> chose <%= @bot_weapon %> </h2>
+
+    <form action="/play-rps" method="get">
+      <input style="width: 200px; " type="submit" value="Play again">
+    </form>
+
+  </body>
+</html>

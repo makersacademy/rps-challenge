@@ -1,0 +1,23 @@
+<html>
+  <head>
+  </head>
+  <body style="text-align:center">
+    <br />
+    <h1> <%= @marketer_1 %> vs. <%= @marketer_2 %> </h1>
+    <br />
+    <hr width="75%" style="border: 1px dashed black;" />
+    <hr style="height:30px; visibility:hidden;" />
+    <div>
+
+      <form action="/play-rps" method="get">
+        <input style="width: 200px; height: 100px;" type="submit" value="Rock Paper Scissors">
+      </form>
+
+      <form action="/play-rpssl" method="get">
+        <input style="width: 200px; height: 100px;" type="submit" value="Rock Paper Scissors Spock Lizard">
+      </form>
+
+    </div>
+
+  </body>
+</html>

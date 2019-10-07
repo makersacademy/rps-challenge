@@ -1,0 +1,54 @@
+<html>
+  <% if @marketer_2 == "Bot" %>
+  <head>
+  </head>
+  <body style="text-align:center">
+    <br />
+    <h1> Rock, paper or scissors? </h1>
+    <h2 align="right" > <%= @marketer_1 %> <%= @game.marketer_1.points %> <%= @marketer_2 %> <%= @game.marketer_2.points %> </h2>
+    <hr width="75%" style="border: 1px dashed black;" />
+    <hr style="height:30px; visibility:hidden;" />
+    <div>
+
+      <form action="/results-rps" method="post">
+        <input style="width: 200px; height: 100px;" name="weapon" type="submit" value="Rock">
+      </form>
+
+      <form action="/results-rps" method="post">
+        <input style="width: 200px; height: 100px;" name="weapon" type="submit" value="Paper">
+      </form>
+
+      <form action="/results-rps" method="post">
+        <input style="width: 200px; height: 100px;" name="weapon" type="submit" value="Scissors">
+      </form>
+
+    </div>
+  </body>
+  <% else %>
+  <head>
+  </head>
+  <body style="text-align:center">
+    <br />
+    <h1> <%= @marketer_1 %></h1>
+    <h1> Rock, paper or scissors? </h1>
+    <h2 align="right" > <%= @marketer_1 %> <%= @game.marketer_1.points %> <%= @marketer_2 %> <%= @game.marketer_2.points %> </h2>
+    <hr width="75%" style="border: 1px dashed black;" />
+    <hr style="height:30px; visibility:hidden;" />
+    <div>
+
+      <form action="/results-2p-rps" method="post">
+        <input style="width: 200px; height: 100px;" name="weapon" type="submit" value="Rock">
+      </form>
+
+      <form action="/results-2p-rps" method="post">
+        <input style="width: 200px; height: 100px;" name="weapon" type="submit" value="Paper">
+      </form>
+
+      <form action="/results-2p-rps" method="post">
+        <input style="width: 200px; height: 100px;" name="weapon" type="submit" value="Scissors">
+      </form>
+
+    </div>
+  </body>
+  <% end %>
+</html>
