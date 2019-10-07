@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  let(:ai) { double(:cpu, move: :scissors) }
+  let(:ai) { double(:BobsFriend, move: :scissors) }
   let(:ai_class) { double(:ai_class, new: ai) }
 
   let(:battle) { double(:battle, outcome: nil) }

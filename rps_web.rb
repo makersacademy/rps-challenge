@@ -7,14 +7,16 @@ class RPSWeb < Sinatra::Base
   enable :sessions
   
   get '/' do
-
-    puts session[:player]
+    puts "index"
+    # puts session[:player]
     @page = :index
     erb :template
   end
   
   post '/name' do
+    puts "name"
     mode = params[:players]
+    puts mode
     redirect('/mpname', 307) if mode == "Multiplayer"
     Game.create(params[:player_name])
     redirect '/play' if mode == "Single Player"
@@ -47,6 +49,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/mpname' do
+    puts "mpname"
     MultiplayerGameCreator.instance.new_player(params[:player_name], session.id)
     if MultiplayerGame.instance.two_players?
       @redirect = '/mpplay'
@@ -57,6 +60,7 @@ class RPSWeb < Sinatra::Base
   end
   
   get '/mpplay' do
+    puts "mpplay"
     @action = '/mpmove'
     @game = MultiplayerGame.instance
     @player, @opponent = @game.get_players(session.id)
