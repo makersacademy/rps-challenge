@@ -1,0 +1,83 @@
+html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+form {
+    display: inline-block;
+    padding-top: 30px;
+}
+
+.main-heading {
+  background-color: black;
+  color: #FFE4E1;
+  font-family: 'Exo', sans-serif;
+  font-size: 140px;
+  font-style: italic;
+  opacity: 0.8;
+  text-align: center;
+  word-spacing: 20px;
+}
+
+.off-main {
+  color: #FFE4E1;
+  font-family: 'Exo', sans-serif;
+  font-size: 10px;
+  font-style: italic;
+  opacity: 0.8;
+  position: relative;
+  bottom: 120px;
+  left: 20px;
+  text-align: center;
+  letter-spacing: 8px;
+}
+
+.form-heading {
+  background-color: black;
+  color: #FFE4E1;
+  font-family: 'Exo', sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  opacity: 0.7;
+  text-align: center;
+  word-spacing: 20px;
+}
+
+.selection-heading {
+  background-color: black;
+  color: #FFE4E1;
+  font-family: 'Exo', sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  opacity: 0.7;
+  text-align: center;
+  word-spacing: 20px;
+}
+
+.background-image {
+  background-image: url("https://images.pexels.com/photos/1249214/pexels-photo-1249214.jpeg?cs=srgb&dl=close-up-duel-fingers-1249214.jpg&fm=jpg");
+  opacity: 0.8;
+  min-height: 380px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.button {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  font-size: 20px;
+}
+.button:hover {
+  background-color: black;
+  color: #FFE4E1;
+  opacity: 0.8;
+  font-size: 20px;
+}

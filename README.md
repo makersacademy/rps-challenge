@@ -1,16 +1,6 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
+## Task
 
 Knowing how to build web applications is getting us almost there as web developers!
 
@@ -18,7 +8,7 @@ The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game 
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -28,59 +18,50 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
+Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+## Approach
+I designed a process model, following the same guidelines from a previous challenge Battle_Project, by extracting the objects and methods from the user stories. For example visit '/', fill_in 'player1_name', with: 'Dominic White', click_button 'PLAY'. This enabled me to move forward using a TDD approach, adding feature tests to picture the behaviour of the program. Following the Red-Green-Refactor cycle I have been able to move from User Stories to an end product which is a functioning, simple, web app.
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+Resources used to assist with my approach on the challenge:
+* I followed the same structure as a previous challenge Battle_Project.
+* Notes made from my studying at Makers Academy.
+* For CSS information 
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+ https://www.w3schools.com/css/default.asp
+ 
+ https://github.com/webdevjeffus/css-for-sinatra#putting-it-in-place
 
-Notes on test coverage
-----------------------
+* To work out the correct ruby code for Rock, Paper, Scissors result method, I took the code from a previous challenge which also involved getting the result of Rock, Paper, Scissors.
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+## Progress/Status of Project
+The functionality of the web app fulfils the requirements of the user stories with all tests passing at 100% coverage. I was able to complete this in a timely manner, however, I was unable to finish styling each of the views due to lack of time, however, I am very pleased with the stage I have reached and will aim to work on some of the styling in due course. 
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+## Technologies
+This project is built with Ruby, HTML, CSS, Sinatra, Cabybara, RSpec and Rubocop.
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+## Code Quality/Problems
+I've used Rubocop to keep the code quality in-line with expected standards. However, the method I have created in the Game class does not pass rubocops requirments due to the size of the method being too large. This is something that I would like to be able to improve on future tasks.
+
+## Improvements
+As stated above, improvements are needed with methods that are too large. In addition, I would have liked to spend more time on the styling diving deeper into CSS, this is something that I will attempt to build on during my free time.
+
+## Using this Code
+Clone this repo to your local machine.
+
+Run bundle install to install necessary gems.
+
+Enter the following into the terminal to run and visit 'http://localhost:4567'.
+
+```
+ruby app.rb
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+### Acknowledgements
+
+Dominic White |
+Makers Academy Challenge

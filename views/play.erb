@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Exo:200" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/drop-in.css">
+
+  <title>Rock, Paper, Scissors</title>
+</head>
+
+<header>
+  <h1 class="main-heading">R P S</h1>
+  <h4 class="off-main">Rock   - Paper -   Scissors</h4>
+</header>
+
+<body class='background-image'>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h3 class='selection-heading'><%= @player1.name %>, MAKE YOUR SELECTION!</h3>
+
+  <form action="/selection" method="get">
+    <input type="hidden" name="player1_move" value="ROCK">
+    <input class="button" type="submit" value="ROCK">
+  </form>
+
+  <form action="/selection" method="get">
+    <input type="hidden" name="player1_move" value="PAPER">
+    <input class="button" type="submit" value="PAPER">
+  </form>
+
+  <form action="/selection" method="get">
+    <input type="hidden" name="player1_move" value="SCISSORS">
+    <input class="button" type="submit" value="SCISSORS">
+  </form>
+
+</body>
+</html>

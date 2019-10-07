@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Exo:200" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/drop-in.css">
+
+  <title>Rock, Paper, Scissors</title>
+</head>
+
+<body class='background-image'>
+  <h1 class="main-heading">R P S</h1>
+  <h4 class="off-main">Rock   - Paper -   Scissors</h4>
+  <br>
+  <br>
+  <br>
+  <h3 class='selection-heading'><%= @player1.name %> selected: <%= @player1.move %></h3>
+  <h3 class='selection-heading'><%= @player2.name %> selected: <%= @player2.move %></h3>
+  <br>
+  <br>
+  <h3 class='selection-heading'><%= 'DRAW! NO ONE WINS!' if @declare_winner == 0 %></h3>
+  <h3 class='selection-heading'><%= @player1.name if @declare_winner == 1 %></h3>
+  <h3 class='selection-heading'><%= 'WINS!' if @declare_winner == 1 %></h3>
+  <h3 class='selection-heading'><%= @player2.name if @declare_winner == 2 %></h3>
+  <h3 class='selection-heading'><%= 'WINS!' if @declare_winner == 2 %></h3>
+
+  <form action="/" method="get">
+    <input class="button" type="submit" value="Replay">
+  </form>
+</body>
+</html>
