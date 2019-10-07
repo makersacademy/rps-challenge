@@ -1,0 +1,28 @@
+<%= "#{@player_1.name} is a #{@player_1.type} player" %>
+<br />
+<%= "#{@player_2.name} is a #{@player_2.type} player" %>
+
+<form action="/make-move" method="post">
+<% if @current_player.type == :human %>
+  <div>
+    <label for="move"><%= @current_player.name %>'s move:</label>
+    <% @game.possible_moves.each do |move| %>
+      <% name = @game.moves_hash[move].name %>
+      <% value = @game.moves_hash[move].symbol.to_s %>
+      <input type="radio" name="move" value="<%= value %>" /><%= name %>
+    <% end %>
+  </div>
+<% else %>
+  <div>
+    <%= @current_player.name %> is making its move 🤖
+  </div>
+<% end %>
+  <input type="submit">
+</form>
+<ul>
+<% @game.moves_hash.each do |k, v| %>
+  <% v.beats.each do |beats| %>
+    <%= "<li> #{v.name} beats #{@game.moves_hash[beats].name}" %>
+  <% end %>
+<% end %>
+</ul>

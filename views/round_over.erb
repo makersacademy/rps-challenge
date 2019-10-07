@@ -1,0 +1,14 @@
+<p><%= "#{@game.player_1.name} chose #{@player_1_item_name}" %></p>
+<p><%= "#{@game.player_2.name} chose #{@player_2_item_name}" %></p>
+<% if @game.winner == :draw %>
+<p>It's a draw!</p>
+<% else %>
+<p>The winner is <%= @game.winner.name %></p>
+<% end %>
+<p><%= "#{@game.player_1.name} score: #{@game.player_1.score}" %></p>
+<p><%= "#{@game.player_2.name} score: #{@game.player_2.score}" %></p>
+<p>This is a best of <%= @game.best_of %> game!</p>
+
+<form action="/play-screen">
+  <input type="submit">
+</form>

@@ -1,0 +1,44 @@
+<h1>WELCOME TO ROCK PAPER ETC.</h1>
+
+<form action="/start-game" method="post">
+  <div>
+    <label for="p1name">Player 1 name:</label>
+    <input type="text" id="p1name" name="player_1_name">
+  </div>
+  <div>
+    <label for="p1type">Player 1 type:</label>
+    <select id="p1type" name="player_1_type">
+      <option value="human">Human</option>
+      <option value="cpu">CPU</option>
+    </select>
+  </div>
+  <div>
+    <label for="name">Player 2 name:</label>
+    <input type="text" id="p2name" name="player_2_name">
+  </div>
+  <div>
+    <label for="p2type">Player 2 type:</label>
+    <select id="p2type" name="player_2_type">
+      <option value="human">Human</option>
+      <option value="cpu">CPU</option>
+    </select>
+  </div>
+  <div>
+    <label for="gametype">Do you want to play:</label>
+    <select id="gametype" name="gametype">
+      <option value="rps">Rock, Paper, Scissors</option>
+      <option value="lizardspock">Rock, Paper, Scissors, Lizard, Spock</option>
+      <option value="friends">Rock, Paper, Scissors, Fire, Water Balloon</option>
+    </select>
+  </div>
+  <div>
+    <label for="bestof">Best of:</label>
+    <select id="bestof" name="bestof">
+      <option vaue=3>3</option>
+      <option vaue=3>5</option>
+      <option vaue=3>7</option>
+      <option vaue=3>9</option>
+    </select>
+  </div>
+  <input type="submit">
+</form>
