@@ -1,0 +1,31 @@
+<br>
+<br>
+<br>
+<center><h1 style="color:green;"><%= @game.player.name %> chose <%= @game.player.player_weapon.to_s %></h1></center>
+<br>
+<center><h1 style="color:red;"><%= @game.computer.name %> chose <%= @game.computer.comp_weapon.to_s %></h1></center>
+<br>
+<br>
+<% if @game.winner == :draw %>
+<center><h1 style="color:purple;">It's a draw!</h1></center>
+<% else %>
+<center><h1><%= @game.winner %> wins!</h1></center>
+<% end %><br>
+<center><form action="/again" method="post">
+  <input type="submit" class="button" value="Play again">
+</form>
+
+<style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
