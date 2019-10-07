@@ -1,7 +1,7 @@
 require_relative 'player'
 
 class Game
-    attr_accessor :player1, :player2
+
   def self.create(player_1, player_2)
     @game = Game.new(player_1, player_2)
   end

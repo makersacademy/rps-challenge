@@ -19,8 +19,14 @@ describe Game do
   end
 
   describe '#winner' do
-    it 'returns who is the winner' do
+    it 'returns Player as the winner' do
       expect(game.winner("Rock", "Scissors")).to eq "Player"
+    end
+    it 'returns Robot as the winner' do
+      expect(game.winner("Rock", "Paper")).to eq "Robot"
+    end
+    it 'returns a draw' do
+      expect(game.winner("Rock", "Rock")).to eq "Draw"
     end
   end
 end

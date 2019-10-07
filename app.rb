@@ -19,6 +19,11 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  get '/play' do
+    @game.player_1.move = nil
+    erb :play
+  end
+
   get '/game_result' do
     @game.player_1.move ||= params[:player_1_move]
     p1move = @game.player_1.move
