@@ -1,0 +1,15 @@
+<h3><%= Game.see_player_1 %> is playing Rock, Paper, Scissors against <%= Game.see_player_2 %></h3>
+<br>
+<%= Game.current_player %>: Select one of Rock, Paper or Scissors:
+<form action=move method=post>
+  <input type=radio name=move value='Rock' id='rock' checked=true>
+  <label for='rock'>Rock</label>
+
+  <input type=radio name=move value='Paper' id='paper'>
+  <label for='paper'>Paper</label>
+
+  <input type=radio name=move value='Scissors' id='scissors'>
+  <label for='scissors'>Scissors</label>
+
+  <input type=submit value="Submit">
+</form>
