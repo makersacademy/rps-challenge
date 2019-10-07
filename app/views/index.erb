@@ -1,0 +1,27 @@
+<body style=" background:powderblue"><center>
+<h1 style="font-size:100px; text-align:center; color:green;">Rock Paper Scissors!</h1>
+<h2 style="font-size:75px; text-align:center; color:purple;"><%= @gametype %>
+<form action="/">
+  <button name="change_game" type="submit" value="Change Game?" style="text-align:center; width:400px; font-size:50px;">Change Game?</button>
+</form>
+</h2>
+
+<form action="/play" method="post" style="text-align:center">
+  <h2>
+    <label for="player_1_name" style="font-size:75px;color:blue;">
+      Player 1 Name?
+    </label>
+  </h2>
+    <input type="text" name="player_1_name" required="required" style="font-size:40px; width:500px; height:50px; text-align:center">
+  <h2>
+    <label for="player_2_name" style="font-size:75px;color:red;">
+      Player 2 Name?
+    </label>
+  </h2>
+    <input type="text" name="player_2_name" required="required" value="Computer" style="font-size:40px; height:50px; width:500px; text-align:center">
+    <h3>
+      <button name="play" type="submit" value="Play" style="text-align:center; width:500px; font-size:50px;">Play</button>
+    </h3>
+</form>
+
+</center></body>

@@ -1,0 +1,15 @@
+<body style=" background:powderblue"><center>
+<h1 style="text-align:center; color:green; font-size:100px"><%= @player_1_name %> vs. <%= @player_2_name %></h1>
+
+<h1 style="text-align:center; color:blue; font-size:75px"><%= @player_1_name %>: Pick Your Weapon</h1>
+
+<h2>
+<form action="/player_2_choice" method="post" style="text-align:center">
+  <button name="weapon_1" type="submit" value="Rock" style="text-align:center; width:125px;font-size:30px;">Rock</button>
+  <button name="weapon_1" type="submit" value="Paper" style="text-align:center; width:125px;font-size:30px;">Paper</button>
+  <button name="weapon_1" type="submit" value="Scissors" style="text-align:center; width:125px; font-size:30px;">Scissors</button>
+  <button name="weapon_1" type="submit" value="Spock" style="text-align:center; width:125px;font-size:30px;">Spock</button>
+  <button name="weapon_1" type="submit" value="Lizard" style="text-align:center; width:125px;font-size:30px;">Lizard</button>
+</form>
+</h2>
+</center></body>

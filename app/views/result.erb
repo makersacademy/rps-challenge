@@ -1,0 +1,45 @@
+<style>
+.blinking{
+    animation:blinkingText 5s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: blue;    }
+    10%{     color: pink;    }
+    20%{    color: green; }
+    30%{    color: red; }
+    40%{    color: white; }
+    50%{    color: brown; }
+    60%{    color:yellow;  }
+    70%{    color:black;  }
+    80%{   color: purple;    }
+    90%{    color: beige;  }
+}
+</style>
+
+
+<body style=" background:powderblue"><center>
+<h1 style="text-align:center; font-size:75px; color:blue;"><%= @player_1_name %> picked <%= @choice_1 %> </h1>
+<h1 style="text-align:center; font-size:75px; color:red;"><%= @player_2_name %> picked <%= @choice_2 %> </h1>
+
+<% if @result == "Player 1 Wins" %>
+<h1 style="text-align:center; font-size:100px"><span class="blinking"> <%= @player_1_name %> Wins!</span></h1>
+<% elsif @result == "Draw" %>
+<h1 style="text-align:center; font-size:100px">It's a Draw!</h1>
+<% else %>
+<h1 style="text-align:center; font-size:100px"><span class="blinking"><%= @player_2_name %> Wins!</span></h1>
+<% end %>
+
+<h1 style="text-align:center; font-size:75px;;">Current Score: <%= @player_1_name %> <%= @scores %> <%= @player_2_name %> </h1>
+
+<h2 style="text-align:center">
+<form action="/player_1_choice">
+  <button name="play_again" type="submit" value="Play Again?" style="text-align:center; font-size:30px;">Play Again?</button>
+</form>
+<form action="/names">
+  <button name="change_names" type="submit" value="Change Names?" style="text-align:center; font-size:30px;">Change Names?</button>
+</form>
+<form action="/">
+  <button name="change_game" type="submit" value="Change Game?" style="text-align:center; font-size:30px;">Change Game?</button>
+</form>
+</h2>
+</center></body>
