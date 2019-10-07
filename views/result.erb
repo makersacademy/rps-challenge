@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    body {
+      background-color: lightblue;
+      text-align: center;
+      padding: 150px 0;
+    }
+    </style>
+
+     </head>
+
+  <body>
+  <h2> Your move was <%= @player_move %> </h2>
+  <h2> Computer's move was <%= @computer_move %> </h2>
+
+<div>
+<h1> <%= @result %> </h1>
+</div>
+
+
+<form action='/play' method='get'>
+  <div class='button'>
+    <button type='submit'>Play again!</button>
+    </div>
+  </form>
+
+  <form action='/' method='get'>
+    <div class='button'>
+      <button type='submit'>New game</button>
+      </div>
+    </form>
+
+  </body>
+</html>

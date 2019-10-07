@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    body {
+      background-color: lightblue;
+      text-align: center;
+      padding: 150px 0;
+    }
+    </style>
+     </head>
+  <body>
+    <div>
+      <h1> Hey <%= @player_name %> <h1>
+        </div>
+
+    <h1>  Welcombe to Rock, Paper, Scissors! </h1>
+
+    <div>
+      <h2> Please select one of the options - </h2>
+      </div>
+      <div>
+    <form action='/result' method='post'>
+      <div class='button'>
+        <button name='player_move' type='submit' value='Rock'>Rock</button>
+        <button name='player_move' type='submit' value='Paper'>Paper</button>
+        <button name='player_move' type='submit' value='Scissors'>Scissors</button>
+        </div>
+      </form>
+      </div>
+
+    </html>
+
+   </body>
+ </html>
