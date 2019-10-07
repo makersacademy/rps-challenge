@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-image: url("white_bed_sheet.png");
+  background-repeat: repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+.game-container {
+  margin: 100px 0;
+}
+
+.form-container {
+  margin: 50px;
+  display: inline-flex;
+}
