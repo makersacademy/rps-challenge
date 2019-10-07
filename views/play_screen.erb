@@ -1,0 +1,27 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css"
+</head>
+<div>
+
+  <h3> Hello <%= @game.player1.name %> </h3>
+
+  <p>The rules of the game:<br>
+    You select an option and hit the make choice button.
+    The computer will make a choice simultanteously and you will either win/ lose or draw.
+    <br>Rock beats Scissors and Lizard
+    <br>Paper beats Rock and Spock
+    <br>Scissors beats Paper Lizard
+    <br>Lizard beats Spock and Paper
+    <br>Spock beats Rock and Scissors
+  </p>
+
+
+  <form align="center" action="/attack" method="post">
+    <input class="button" type="submit" name="weapon" value="Rock"><br>
+    <input class="button" type="submit" name="weapon" value="Paper"><br>
+    <input class="button" type="submit" name="weapon" value="Scissors"><br>
+    <input class="button" type="submit" name="weapon" value="Lizard"><br>
+    <input class="button"type="submit" name="weapon" value="Spock">
+  </form>
+
+  </div>

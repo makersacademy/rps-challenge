@@ -1,11 +1,18 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'sinatra'
+require 'rspec'
+require_relative './../rps_game'
+require_relative './features/web_helpers.rb'
+Capybara.app = RPS
+
+ENV['RACK_ENV'] = 'test'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
+   SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
 
