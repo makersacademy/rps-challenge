@@ -1,0 +1,9 @@
+<center>
+	<% if @result == :lose %>
+	<h1>You Lose! Computer win! it's choice was: <%= @game.computer_weapon %></h1>
+	<% elsif @result == :win %>
+	<h1>You Win! Computer lose! it's choice was: <%= @game.computer_weapon %></h1>
+	<% elsif @result == :tie %>
+	<h1>It's a tie! both choice was: <%= @game.computer_weapon %></h1>
+	<% end %>
+</center>
