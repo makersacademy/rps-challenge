@@ -1,0 +1,28 @@
+<head>
+  <meta charset="utf-8">
+  <title>Rock, Paper, Scissors</title>
+  <link rel=stylesheet type=text/css href=/site.css />
+  <link rel=stylesheet type=text/css href=/result.css />
+</head>
+<body>
+
+  <div class="resultBlock">
+    <div class="resultBlockInnerHeader">
+      <p><a href="/play" >Play again?</a></p>
+      <p>or</p>
+      <p><a href="/">New game?</a></p>
+    </div>
+    <div class="resultBlockInner">
+      <h3><%= @result%></h3>
+    </div>
+  </div>
+
+  <div class="resultContainer">
+    <h1>Hi <%= @name%>!</h1>
+    <img src="<%= @img_link%>" class="playerChoiceImage" />
+    <h2>Your choice: <span class="choices"><%= @choice%></span></h2>
+    <img src="<%= @cpu_img_link%>" class="cpuChoiceImage" />
+    <h2>Computer's choice: <span class="choices"><%= @cpu_choice%></span></h2>
+  </div>
+
+</body>

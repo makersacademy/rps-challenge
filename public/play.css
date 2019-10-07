@@ -1,0 +1,28 @@
+.rockImg, .paperImg, .scissorsImg {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+h1 {
+  color: teal;
+}
+
+figcaption {
+  color: teal;
+  font-weight: 600;
+}
+
+.choices {
+  padding-top: 20px;
+  display: inline-block !important;
+}
+
+figure {
+  display: inline-block;
+}
+
+figcaption {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+}

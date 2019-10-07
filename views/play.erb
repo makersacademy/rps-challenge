@@ -1,0 +1,35 @@
+<head>
+  <meta charset="utf-8">
+  <title>Rock, Paper, Scissors</title>
+  <link rel=stylesheet type=text/css href=/site.css />
+  <link rel=stylesheet type=text/css href=/play.css />
+</head>
+<body>
+  <h1>Hi <%= @name%>!</h1>
+  <h3>What's your play?</h3>
+
+    <form class="choices" action="/check" method="post">
+      <input type="hidden" name="choice" value="Rock" />
+      <figure>
+        <input id="rock" type="image" class="rockImg" src=/images/rock.png />
+        <figcaption>Rock</figcaption>
+      </figure>
+    </form>
+
+    <form class="choices" action="/check" method="post">
+      <input type="hidden" name="choice" value="Paper" />
+      <figure>
+        <input id="paper" type="image" class="paperImg" src=/images/paper.png />
+        <figcaption>Paper</figcaption>
+      </figure>
+    </form>
+
+    <form class="choices" action="/check" method="post">
+      <input type="hidden" name="choice" value="Scissors" />
+      <figure>
+        <input id="scissors" type="image" class="scissorsImg" src=/images/scissors.png />
+        <figcaption>Scissors</figcaption>
+      </figure>
+    </form>
+
+</body>
