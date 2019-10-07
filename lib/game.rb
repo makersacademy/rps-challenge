@@ -1,6 +1,12 @@
 require_relative 'player'
 class Game
   attr_reader :player1, :move
+  WEAPONS = ["Rock", "Paper", "Scissors"]
+  RULES= {
+      "Rock" => "Scissors",
+      "Scissors" => "Paper",
+      "Paper" => "Rock"
+    }
 
   def initialize(player1, move)
     @player1 = player1
@@ -12,31 +18,22 @@ class Game
   end
 
   def shoot
-    @shoot = ["Rock", "Paper", "Scissors"].sample
+    @shoot = WEAPONS.sample
   end
 
   def message
     win?
   end
 
-    private
+ private
 
   def win?
-    case 
-    when @move == "Rock" && @shoot == "Paper"
-      "Computer wins!"
-    when @move == "Paper" && @shoot == "Scissors"
-      "Computer wins!"
-    when @move == "Scissors" && @shoot == "Rock"
-      "Computer wins!"
-    when @move == "Paper" && @shoot == "Rock"
-      "#{player1.name} wins!"
-    when @move == "Rock" && @shoot == "Scissors"
-      "#{player1.name} wins!"
-    when @move == "Scissors" && @shoot == "Paper"
-      "#{player1.name} wins!"
-    else
-      "No one wins and everyone is sad."
-    end
+    return  "No one wins and everyone is sad." if tie?
+    return "#{player1.name} wins!" if RULES[@move] == @shoot
+    return "Computer wins!"
+  end
+
+  def tie?
+   @move == @shoot 
   end
 end
