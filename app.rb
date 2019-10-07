@@ -13,14 +13,14 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    player_1 = Player.new(params[:player_1_name], "move")
+    player_1 = Player.new(params[:player_1_name], nil )
     player_2 = Player.new
     @game = Game.create(player_1, player_2)
     erb :play
   end
 
   get '/game_result' do
-    @chosen_move = params[:player_1_move]
+    @game.player_1.move ||= params[:player_1_move]
     erb :game_result
   end
 
