@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Playing now</title>
+  </head>
+  <link rel=stylesheet type=text/css href=/main.css/>
+  <body>
+<h2>Hi <%=@name%>!</h2>
+<form action="/move" method="post">
+<select name="movee" multiple>
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+</select>
+<br><input type="submit" value="Submit my choice">
+</form>
+</body>
+</html>

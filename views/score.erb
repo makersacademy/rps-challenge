@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Results</title>
+  </head>
+
+  <link rel=stylesheet type=text/css href=/main.css/>
+  <body>
+<h2>You played: 
+<img src="<%=@choice%>" class="result">
+and your opponent played 
+<img src="<%=@option%>" class="result"></h2>
+<h1><%=@message%></h1><br>
+<h1>That was fun! </h1>
+
+<h2>Do you wanna play again?</h2>
+<form action="/play" method="get">
+<input type="submit" name="wanna-Play" value="Yes"> 
+</form>
+
+</body>
+</html>
