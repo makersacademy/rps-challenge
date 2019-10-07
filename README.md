@@ -1,86 +1,42 @@
 # RPS Challenge
 
-Instructions
--------
+For this challenge we will develop a web application using sinatra on ruby. To TDD the process we will use capybara with rspec and selenium over firefox.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
+## User Stories
+>As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
-As a marketeer
+>As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
-```
 
-Hints on functionality
+## Approach
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+### Views
 
+First we need a main view were we will ask for the player name with a Play button to start the game.
+After initialising the players and game we will redirect to the play view were we will Welcome the player.
 
-As usual please start by
+To be able to play RPS we need to give the chance to choose rock, paper or scissors, to do this we will use three button over a select for a better graphical design. If the players chose a multiplayer game it will return to this page so the second player can choose his choice.
 
-* Forking this repo
-* TEST driving development of your app
+The las view will be the result one, giving the description an output of the fight.
 
+### Controllers
 
-## Bonus level 1: Multiplayer
+In the name post we will store the name of the player as a session variable and call to the play view
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+In the play controller we will check if the player is the computer to skip this part and ask for the play if it's a person.
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+In the check post we will store the selection from the player, change the current player and go back to the play view. If both players chose their play it will redirect to the result.
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+In result we will calculate the result and display it in the view.
 
-## Basic Rules
+### Model
+game will store the players and make them accessible.
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+player class will store the name and set the option chose by the player.
 
-In code review we'll be hoping to see:
+pc_player will take the role of another player, choosing a random option for RPS.
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+check_result will give a winner from two entries.

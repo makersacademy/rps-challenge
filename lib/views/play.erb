@@ -1,0 +1,12 @@
+<head>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<h1><%= @game.player_1.name %> vs <%= @game.player_2.name %> </h1><br>
+<h2>Welcome <%= @game.current_turn.name %>, It's your turn.</h2>
+
+<form action="/check" method="post">
+    <button name="selection" value="rock" type="submit"><img src="images/rock.jpeg" alt="Rock"></button>
+    <button name="selection" value="paper" type="submit"><img src="images/paper.jpeg" alt="Paper"></button>
+    <button name="selection" value="scissors" type="submit"><img src="images/scissors.jpeg" alt="Scissors"></button>
+</form>

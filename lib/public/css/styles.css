@@ -1,0 +1,13 @@
+body {
+background-color: lightblue;
+text-align: center;
+}
+h1 {
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 3px;
+}
+h2 {
+  color: yellow;
+  text-shadow: 2px 1px grey;
+}
