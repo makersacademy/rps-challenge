@@ -10,10 +10,10 @@ describe Player do
     end
   end
 
-  describe '#move' do
-    it 'creates a random move if it is a robot' do
-      allow(robot).to receive(:random_move) { "Rock" }
-      expect(robot.move).to eq "Rock"
+  describe '#player_2_move' do
+    it 'delegates player 2 move to Move class' do
+      allow(robot.move).to receive(:player_2_move) { "Rock" }.with("Robot")
+      expect(robot.player_2_move).to eq "Rock"
     end
   end
 

@@ -2,21 +2,13 @@ class Player
 
   attr_reader :name, :move
 
-  def initialize(name = "Robot")
+  def initialize(name = "Robot", move = Move.new)
     @name = name
-    @move = nil
+    @move = move
   end
 
-  def move
-    if @name == "Robot"
-      random_move
-    end
-  end
-
- private
-
-  def random_move
-    @move = ["Rock", "Paper", "Scissors"].sample
+  def player_2_move
+    @move.player_2_move(@name)
   end
 
 end
