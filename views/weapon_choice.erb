@@ -1,0 +1,41 @@
+<link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Hairline|Bungee+Shade&display=swap" rel="stylesheet">
+<style>
+  input { width: 20%; }
+  form { display: inline; }
+</style>
+
+<div align="center" style="font-family: 'Bungee'; font-size: 2vw;">
+  <h1> <%= @game.p1_name %> vs <%= @game.p2_name %> </h1>
+</div>
+
+<div align="center" style="font-family: 'Bungee'; font-size: 1.5vw">
+  <% if @link == '/play2' %>
+    <h2> <%= @game.p2_name %>, please choose your weapon: </h2>
+  <% else %>
+    <h2> <%= @game.p1_name %>, please choose your weapon: </h2>
+  <% end %>
+</div>
+
+<div align="center" >
+  <form action= <%= @link %> method="post">
+    <input type="hidden" name="weapon" value="rock">
+    <input type="image" src="images/rock.jpg" alt="rock">
+  </form>
+  <form action= <%= @link %> method="post">
+    <input type="hidden" name="weapon" value="paper">
+    <input type="image" src="images/paper.jpg" alt="paper">
+  </form>
+  <form action= <%= @link %> method="post">
+    <input type="hidden" name="weapon" value="scissors">
+    <input type="image" src="images/scissors.jpg" alt="scissors">
+  </form>
+  <br>
+  <form action= <%= @link %> method="post">
+    <input type="hidden" name="weapon" value="lizard">
+    <input type="image" src="images/lizard.jpg" alt="lizard">
+  </form>
+  <form action= <%= @link %> method="post">
+    <input type="hidden" name="weapon" value="spock">
+    <input type="image" src="images/spock.jpg" alt="spock">
+  </form>
+</div>
