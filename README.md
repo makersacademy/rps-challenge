@@ -1,20 +1,7 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
 Task
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
@@ -28,7 +15,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Functionalities
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
@@ -36,51 +23,44 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
+Cloning the project to your computer
 ----------------------
+In the terminal: git clone https://github.com/luisatheodoro/rps-challenge.git
+then `cd rps-challenge`
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+Installing dependencies type in the terminal `bundle install`
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+Running linting
+----------------------
+In the terminal write `rubocop`
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
+Run tests
+----------------------
+on terminal type `rspec`
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+Test coverage
+----------------------
+COVERAGE: 100.00% -- 50/50 lines in 4 files
+
+Start local server and get the url
+----------------------
+on terminal type `ruby app.rb`
+pay attention to this on terminal `* Listening on tcp://localhost:4567` or `port=4567`
+go to web browser and go to http://localhost:4567/ (this will be the url that the server provided)
+
+Playing
+----------------------
+Write you name and choose your weapon from dropdown and hit PLAY.
+The result page will display your choice, the computer choice, who won the round and the score.
+To be able to play again, `click the browser back button` and choose another weapon and hit PLAY.
+
+Code Design
+----------------------
+For this project I've followed a MVC(Model, View, Controller) architectural pattern commonly used for user interface applications like a web app. The interaction between the MVC in this app starts with the user opening the web page, inputting the data and clicking button submit, this click event will be listened by the View, when View listen to the event it will then send a POST form to the Controller, the Controller will communicate with Model and update Model state. The Model will get user input and process it according with the code logic, in this case compute who's the winner of the game and store the new data. Controller will then open View and Ruby will read it, Ruby will identify that the View needs values from the Model View will send a GET request from Model and it will return it directly to the View. Once View has everything it needs, it will then show the HTML formatted page to the user with game result.
+
+The MVC has many interpretations I followed Mozilla view on it:
+https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Modern_web_app_architecture/MVC_architecture
+
+user flow diagram
+----------------------
+![user flow](public/rps_sequence_flow.png)
