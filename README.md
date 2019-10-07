@@ -18,14 +18,28 @@ The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game 
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
+```
 ```sh
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
+Objects | Messages
+player_name | add/register_name(in lights)
+
+Interaction --> ??
+
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
+
+Objects | Messages
+        | play_game --> should output given (rock, paper or scissors)
+Computer| should output randomly rock or paper or scissors
+Result  | should then say "Computer won or player won based on logic implemented in the logic layer"
+
+Interaction -->`
+
 ```
 
 Hints on functionality
