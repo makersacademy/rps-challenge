@@ -1,0 +1,21 @@
+<center>
+<body style="background-color:powderblue;">
+<br>
+<br>
+<h1 style="color:white;font-size:45px"">🥊 <%= @player1.name %> vs. Computer 🥊</h1>
+    <form action ="/winner" method ="post">
+  <label for="move1" style="color:white;font-size:25px">
+    Enter move:
+    <select name="moves">
+  <option value="Rock" selected>Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+</select>
+</label>
+  <br>
+  <br>
+<iframe src="https://giphy.com/embed/127k5FkjWXzsTC" width="480" height="268" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+  <br>
+  <br>
+  <input type="submit" value="Shoot!">
+</center>
