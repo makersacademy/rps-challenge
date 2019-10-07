@@ -1,0 +1,12 @@
+<h1 style="text-align:center; font-size:45px; font-family: Arial"> <%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+<h2 style="text-align:center; font-size:35px; font-family: Arial">Hello <%= @game.player_1.name %>!</h2>
+
+<div style="text-align:center; font-size:30px; font-family: Arial">
+Choose your shape ...
+</div>
+
+<form style="text-align:center; font-size:15px; font-family: Arial" action="/shape" method="post">
+  <input type="submit" name="shape" value="Rock">
+  <input type="submit" name="shape" value="Paper">
+  <input type="submit" name="shape" value="Scissors">
+</form>
