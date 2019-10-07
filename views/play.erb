@@ -1,0 +1,10 @@
+<h1><%= @game.player.player_name %> vs. Computer</h1>
+
+
+<h2> Choose wisely...</h2>
+<form action="/choice" method="post">
+  <input type="checkbox" value="Rock" id="rock" name="choice">Rock
+  <input type="checkbox" value="Paper" id="paper" name="choice">Paper
+  <input type="checkbox" value="Scissors" id="scissors" name="choice">Scissors
+  <input type="submit" value="Submit">
+</form>

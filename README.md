@@ -1,5 +1,29 @@
 # RPS Challenge
 
+My Approach
+-------
+
+1. Create tests for a computer class
+2. Create a computer class
+3. Create tests for a player class
+4. create a player class
+5. Create tests for a game class
+6. Create a game class, that takes info from both other classes
+7. Create an App.rb file, and start alternatively writing a feature test, then writing erb files, and eventually putting it in the app controller, routinely testing both on irb, and on localhost
+
+How to play
+-------
+
+    Chloes-MBP:rps-challenge chloeverity$ ruby app.rb
+    [2018-10-21 20:10:54] INFO  WEBrick 1.4.2
+    [2018-10-21 20:10:54] INFO  ruby 2.5.0 (2017-12-25) [x86_64-darwin16]
+    == Sinatra (v2.0.0) has taken the stage on 4567 for development with backup from WEBrick
+    [2018-10-21 20:10:54] INFO  WEBrick::HTTPServer#start: pid=1531 port=4567
+    
+    visit http://localhost:4567/
+    
+enjoy :)
+
 Instructions
 -------
 
