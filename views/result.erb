@@ -1,0 +1,18 @@
+<div style = 'background-color: lightblue'>
+  <h2>Well, well, well <%=@player%>, interesting choice - you chose <%=@move%></h2>
+</div>
+<div style = 'background-color: red'>
+  <h2> The computer chose...
+    <br>
+    <br>
+    <%=@compmove%>
+  </h2>
+</div>
+
+<div style = 'border: 10px groove teal; width:500px'>
+  <h1><%=@winner%></h1>
+</div>
+
+<form action="/" method="get">
+  <input type="submit" value="Play Again">
+</form>
