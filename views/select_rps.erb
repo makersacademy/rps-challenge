@@ -1,0 +1,10 @@
+<div>
+  <h2>Welcome <%= @game.player_1.name %>!</h2>
+  <p>Please make your choice </p>
+</div>
+
+<form action="/select_rps" method="post"> 
+  <input type="submit" name="selected" value="Rock">
+  <input type="submit" name="selected" value="Paper">
+  <input type="submit" name="selected" value="Scissors">
+</form>
