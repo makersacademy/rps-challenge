@@ -1,4 +1,3 @@
-require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
@@ -16,3 +15,13 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+
+require 'capybara/rspec'
+require 'rspec'
+require_relative '../app.rb'
+require_relative '../spec/features/web_helpers'
+
+Capybara.app = RPS
+
+ENV['RACK_ENV'] = 'test'
