@@ -55,4 +55,8 @@ class RPS < Sinatra::Base
     erb :result
   end
 
+  post '/again' do
+    redirect '/play'
+  end
+
 end
