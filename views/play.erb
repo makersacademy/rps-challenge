@@ -1,0 +1,12 @@
+<!-- # Part of refactoring - show player_1_name -->
+<%= @player_1_name %>
+
+<!-- # the marketeer will be presented the choices (rock, paper and scissors) -->
+Player choices: rock, paper, scissors
+
+<!-- # the marketeer can choose one option -->
+<form action="/make_choice" method="post">
+  <input type="submit" name="choice" value="rock">
+  <input type="submit" name="choice" value="paper">
+  <input type="submit" name="choice" value="scissors">
+</form>
