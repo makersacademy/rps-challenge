@@ -1,8 +1,11 @@
+
 source 'https://rubygems.org'
 
 ruby '2.6.0'
 
+gem 'pry'
 gem 'rake'
+gem 'shotgun'
 gem 'sinatra'
 
 group :test do
