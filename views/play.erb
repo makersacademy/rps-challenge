@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
+  <style type="text/css">
+
+    html {
+      display: table;
+      margin: auto;
+    }
+
+    body {
+      font-family: 'Poppins';
+      text-align: center;
+      background-color: #BEB5FD;
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    body  {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    div   {
+      padding: 20px;
+      width: 500px;
+    }
+
+    #color {
+      background-color: #FD5547;;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-weight: 900;
+      font-size: 50px;
+      color: #FD5547;
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+  <div>
+
+    <h1>Welcome to the game <%= @player.name %>!</h1>
+    <h2>Please choose either Rock, Paper or Scissors</h2>
+
+      <b><i><p>Rock beats Scissors</p>
+      <p>Scissors beats Paper</p>
+      <p>Paper beats Rock</p></i></b>
+
+    <form action="/move" method="post">
+      <input type="submit" name="move" id="color" value="Rock">
+      <input type="submit" name="move" id="color" value="Paper">
+      <input type="submit" name="move" id="color" value="Scissors">
+    </form>
+</div>
+</body>
+</html>

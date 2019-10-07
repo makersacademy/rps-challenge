@@ -1,0 +1,28 @@
+
+    html {
+      display: table;
+      margin: auto;
+    }
+
+    body {
+      font-family: 'Helvetica';
+      text-align: center;
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    body  {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    div   {
+      border: 10px solid #78C1B3;
+      padding: 20px;
+      width: 400px;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+    }

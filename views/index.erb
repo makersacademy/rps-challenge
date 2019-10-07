@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
+    <style type="text/css">
+
+      html {
+        display: table;
+        margin: auto;
+      }
+
+      body {
+        font-family: 'Poppins';
+        font-weight: 400;
+        text-align: center;
+        background-color: #BEB5FD;
+      }
+
+      html, body {
+          height: 100%;
+      }
+
+      body  {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      div   {
+        padding: 20px;
+        width: 500px;
+      }
+
+      #color {
+        background-color: #FD5547;
+        font-size: 14px;
+      }
+
+      h1 {
+        font-weight: 900;
+        font-size: 70px;
+        color: #FD5547;
+      }
+
+      </style>
+</head>
+
+<body>
+
+<div>
+<h1>ROCK PAPER SCISSORS</h1>
+<h2>Please enter your name to play</h2>
+<form action="/name" method="post">
+    <label for="name">Your name:</label>
+    <input type="text" name="name">
+    <input type="submit" id="color" value="Submit">
+    </form>
+
+</body>
+</html>
