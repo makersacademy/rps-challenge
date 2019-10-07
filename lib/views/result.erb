@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style media="screen">
+    h1   {color: purple;}
+  </style>
+</head>
+<body bgcolor="#C0DCFF">
+  <div align="center">
+    <br>
+    <br>
+    <h1><%= @game.p1.name %> picked <%= @game.p1.choice %>!</h1>
+    <h1><%= @game.p2.name %> picked <%= @game.p2.choice %>!</h1>
+    <h1><%= @game.result %></h1>
+    <br>
+    <br>
+    <br>
+    <form action="/" method="get">
+      <button type="submit" value="submit">Restart!</button>
+    </form>
+
+  </div>
+</body>
+</html>

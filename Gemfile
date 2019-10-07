@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.6.0'
 
+gem 'jquery-rails'
 gem 'rake'
 gem 'sinatra'
 

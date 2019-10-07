@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!-- <script type="text/javascript" src="multi.js"></script> -->
+</head>
+
+<body bgcolor="#C0DCFF">
+  <div align="center">
+    <br>
+    <br>
+    <h1>Welcome <%= @game.p1.name %>'s enemy! Pick your poison!</h1>
+    <form action="/add-enemy" method="post">
+      <h3>Please enter your name!</h3>
+      <input type="text" name="name_2" placeholder="e.g. Henry">
+      <br>
+      <br>
+      <br>
+      <input type="radio" name="choice_2" value="rock"> Rock
+      <input type="radio" name="choice_2" value="paper"> Paper
+      <input type="radio" name="choice_2" value="scissors"> Scissors
+      <input type="radio" name="choice_2" value="lizard"> Lizard
+      <input type="radio" name="choice_2" value="spock"> Spock
+      <button type="submit" value="submit">Fight!</button>
+    </form>
+  </div>
+</body>
+</html>

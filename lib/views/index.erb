@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style media="screen">
+    h1   {color: pink;}
+  </style>
+</head>
+
+<body bgcolor="#C0DCFF">
+  <div align="center">
+    <br>
+    <br>
+    <h1 style="color:">Welcome! Pick your poison!</h1>
+    <form action="/choice" method="post">
+      <h3>Please enter your name!</h3>
+      <input type="text" name="name_1" placeholder="e.g. Henry">
+      <br>
+      <br>
+      <br>
+      <input type="radio" name="opponent" value="computer"> Computer
+      <input type="radio" name="opponent" value="human"> Human
+      <br>
+      <br>
+      <br>
+      <input type="radio" name="choice_1" value="rock"> Rock
+      <input type="radio" name="choice_1" value="paper"> Paper
+      <input type="radio" name="choice_1" value="scissors"> Scissors
+      <input type="radio" name="choice_1" value="lizard"> Lizard
+      <input type="radio" name="choice_1" value="spock"> Spock
+      <button type="submit" value="submit" >Fight!</button>
+    </form>
+  </div>
+</body>
+</html>
