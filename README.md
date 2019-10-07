@@ -1,18 +1,13 @@
-# RPS Challenge
+# RPS Challenge 
+[![Build Status](https://travis-ci.org/Danielandro/rps-challenge.svg?branch=master)](https://travis-ci.org/Danielandro/rps-challenge)
 
-Instructions
--------
+Introduction 
+------------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Week 3 Challenge from Makers Academy
 
 Task
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -36,51 +31,47 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
 ## Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+Instructions
+------------
+* Fork this repo
+* Run the command `bundle` in the project directory to ensure you have all the gems
+* Type the command `rackup` to start the server
+* Go to `localhost:9292` in your browser to play the game
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+Progress + Challenges
+--------
+I have satisfied the user stories. Though its not so colourful, the game allows one player to challenge a "computer". The result is displayed on the screen & the user can play again.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+* Slimming down the controller, the `play/:weapon` route in particular
 
-Notes on test coverage
-----------------------
+* Getting rid of session and using class instance variables to persist state between routes
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+* Wanted to use emojis instead of the buttons, but had trouble positioning them. Also wanted to make sure they were accessible to screen readers. Something to be implemented.
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+* Validation if a user doesn't enter their name (make field required)
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
+* Make it look good!!
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+Technologies
+------------
+
+Ruby 2.5.0, Sinatra, Capybara, RSpec 3.7, Rubocop, SimpleCov, Pry
+
+#### Resources
+[Making emoji's accessible](https://dev.to/finallynero/accessible-emojis--1pjh)
+
+[Stubbing Array.sample](https://stackoverflow.com/questions/46745184/how-to-stub-sample-with-rspec)
+
+[Replace nested conditionals with guard clauses](https://www.refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html)
+
+[Testing methods run from initialize](https://stackoverflow.com/questions/45681506/best-approach-to-testing-methods-run-from-initialize-with-rspec)
+
+[Rock Paper Scissors inspiration](http://marcelamari.com/blog/2014/03/my-first-javascript-game/)
+
+[Rails Naming Conventions](https://gist.github.com/iangreenleaf/b206d09c587e8fc6399e)
