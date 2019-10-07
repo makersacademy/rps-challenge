@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+</head>
+<center>
+  <div>
+    <% if @config.mode == "Regular" %>
+    <img src="/images/rps.png">
+    <% else %>
+  <img src="/images/rpsls.png">
+    <% end %>
+
+  </div>
+   <font face="courier" ><%= @game.player_1.name %> choose your weapon!</font>
+
+<form method="post" action="/store">
+<div class="rock">
+<INPUT type="submit" name="player_1_choice" value="Rock">
+</div>
+<div>
+<img src="/images/Rock.png">
+</div>
+<div class="paper">
+<INPUT type="submit" name="player_1_choice" value="Paper">
+</div>
+<div>
+<img src="/images/Paper.png">
+</div>
+<!--images here on hard mode  -->
+<div class="scissors">
+<INPUT type="submit" name="player_1_choice" value="Scissors">
+</div>
+<div>
+<img src="/images/Scissors.png">
+<% if @config.mode == "Hard" %>
+<div class="lizard">
+
+<INPUT type="submit" name="player_1_choice" value="Lizard">
+</div>
+<img src="/images/Lizard.png">
+<div class="Spock">
+
+<INPUT type="submit" name="player_1_choice" value="Spock">
+</div>
+<img src="/images/Spock.png">
+
+<% end %>
+
+</div>
+<!-- <div>
+  <button type="submit">Submit</button>
+</div> -->
+</form>
+
+</center>
