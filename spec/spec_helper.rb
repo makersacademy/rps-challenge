@@ -1,6 +1,8 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require './app'
+require './spec/features/web_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -16,3 +18,7 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+RACK_ENV = 'test'
+
+Capybara.app = App

@@ -1,3 +1,11 @@
+#My approach 
+
+* Initially started with computer generating random which was quite quick to implement so I moved to 2 player.  I approached it as a page per user selection to try and make it as 'realistic' as possible. 
+I've used some basic CSS to practice linking it and styling different elements but didn't push further to images or animation.
+Added the ability to replay with same players or start again with new players. 
+
+In my app_spec the session continues throughout the whole tests and when I researched alternatives there were suggestions that you'd want to keep the same session to test the whole journey - would like feedback on best practice (if relevant outside of sinatra/capybara/rspec combo)
+
 # RPS Challenge
 
 Instructions

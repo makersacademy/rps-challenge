@@ -1,0 +1,30 @@
+<html>
+<h1>Rock, Paper, Scissors</h1>
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+
+<body>
+<% if @game.turn == 1%>
+<div id="move"> Make your move <%= @game.player_name(1) %>!</div>
+<br>
+<form action='/swap-turns' method='post'> 
+<button id="Rock1" name="move" value="Rock" type="submit">Rock</button>
+</form>
+<form action='/swap-turns' method='post'> 
+<button id="Paper1" name="move" value="Paper" type="submit">Paper</button>
+</form>
+<form action='/swap-turns' method='post'> 
+<button id="Scissors1" name="move" value="Scissors" type="submit">Scissors</button>
+<% else %>
+<div id="move"> Make your move <%= @game.player_name(2) %>!</div>
+<br>
+<form action='/result' method='post'> 
+<button id="Rock2" name="move2" value="Rock" type="submit">Rock</button>
+</form>
+<form action='/result' method='post'> 
+<button id = "Paper2" name="move2" value="Paper" type="submit">Paper</button>
+</form>
+<form action='/result' method='post'> 
+<button id="Scissors2" name="move2" value="Scissors" type="submit">Scissors</button>
+<% end %>
+</form>
+</body>
