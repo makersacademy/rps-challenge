@@ -1,0 +1,7 @@
+<%= @game.player1.name %> VS <%= @game.player2.name %>
+<br>
+<form action="/conflict" method="post">
+  <input type="submit" value="Rock" name="choice">
+  <input type="submit" value="Paper" name="choice">
+  <input type="submit" value="Scissors" name="choice">
+</form>
