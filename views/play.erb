@@ -1,0 +1,9 @@
+Welcome <%= @player.name %>!
+<br>
+<br>
+<h1> Please choose your inanimate object </h1>
+
+<form action='/choice' method='post'>
+   <input type='text' name='player_choice'>
+   <input type='submit' value="Submit">
+</form>
