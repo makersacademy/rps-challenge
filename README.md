@@ -31,6 +31,7 @@ Hints on functionality
 
 ```
 $ git clone git@github.com:bradjp/rps-challenge.git
+
 $ cd rps-challenge
 
 $ bundle
