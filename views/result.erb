@@ -1,0 +1,19 @@
+<h1>The results are in</h1>
+<div>
+  <%= @game.players[0].name %> selected <%= @game.players[0].choice_human %>
+</div>
+<div>
+  <%= @game.players[1].name %> selected <%= @game.players[1].choice_human %>
+</div>
+<div id="result">
+  <%= erb @game.result %>
+</div>
+<ul>
+  <li>
+    <a href="/play-again">Play again?</a>
+  </li>
+  <li>
+    <a href="/">Change players?</a>
+  </li>
+</ul>
+

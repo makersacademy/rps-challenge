@@ -1,0 +1,8 @@
+<h1>It's <%= @game.players[0].name %> vs. <%= @game.players[1].name %></h1>
+<%= erb :warning unless @game.players[1].computer? %>
+<p><%= @game.current_player.name %>, choose your weapon</p>
+<form id="rock-form" action="/choose" method="post">
+  <button type="submit" name="choice" value="0">Rock</button>
+  <button type="submit" name="choice" value="1">Paper</button>
+  <button type="submit" name="choice" value="2">Scissors</button>
+</form>
