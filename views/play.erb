@@ -1,0 +1,14 @@
+<body bgcolor="#FCFAF7">
+<h1><center><%=@player_name%> Vs Computer </center></h1>
+<br>
+<center>
+<h2> <%=@player_name%> select your choice</h2>
+  <form action='/submit' method='post'>
+   <input type='radio' name='option' value='rock' id='rock'>ROCK
+   <input type='radio' name='option' value='paper' id='paper'>PAPER
+   <input type='radio' name='option' value='scissor' id='scissor'>SCISSOR<br>
+   <input type='submit' value='submit'>
+   </form>
+   </center>
+
+   </body>
