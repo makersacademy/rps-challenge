@@ -12,13 +12,11 @@ Instructions
 Task
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
-
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -36,20 +34,19 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
+_______
 
-As usual please start by
+## Project status
 
-* Forking this repo
-* TEST driving development of your app
+I worked on this solo for the first part, using my notes from the week and my previous work. When it came to implementing turns I referred to the rps challenge exemplar found here: https://www.youtube.com/watch?v=GoHKmartBYo
+I saw that I could make the controller more skinny by extracting additional functionality, so I created an Opponent class to handle the random selection. While implementing the last user-story (a winner is declared) I broke some tests. I ran out of time and haven't completed the final user story. 
 
+## To run the game
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+- git clone git@github.com:Brendao1/rps-challenge.git
+- cd rps-challenge
+- ruby app.rb
+- Type localhost:4567 into the browser to start!
 
 ## Basic Rules
 
