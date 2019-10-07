@@ -5,7 +5,7 @@ class Computer
     @name = 'Computer'
   end
 
-  def weapon_choice
-    @weapon = [:rock, :paper, :scissors, :lizard, :spock].sample #logic keys sample
+  def weapon_choice(moves)
+    @weapon = moves.map { |k, _v|  k }.sample
   end
 end

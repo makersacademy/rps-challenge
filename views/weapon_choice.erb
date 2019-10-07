@@ -5,14 +5,14 @@
 </style>
 
 <div align="center" style="font-family: 'Bungee'; font-size: 2vw;">
-  <h1> <%= @game.player_1.name %> vs <%= @game.player_2.name %> </h1>
+  <h1> <%= @game.p1_name %> vs <%= @game.p2_name %> </h1>
 </div>
 
 <div align="center" style="font-family: 'Bungee'; font-size: 1.5vw">
-  <% if @p2_turn == true %>
-    <h2> <%= @game.player_2.name %>, please choose your weapon: </h2>
+  <% if @link == '/play2' %>
+    <h2> <%= @game.p2_name %>, please choose your weapon: </h2>
   <% else %>
-    <h2> <%= @game.player_1.name %>, please choose your weapon: </h2>
+    <h2> <%= @game.p1_name %>, please choose your weapon: </h2>
   <% end %>
 </div>
 

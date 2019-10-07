@@ -1,5 +1,5 @@
 class Rules
-  RULES = { rock: [:scissors, :lizard],
+  MOVES = { rock: [:scissors, :lizard],
             paper: [:rock, :spock],
             scissors: [:paper, :lizard],
             lizard: [:spock, :paper],
@@ -11,7 +11,7 @@ class Rules
              'scissors cuts paper', 'scissors decapitates lizard']
 
   def defeats?(p1_choice, p2_choice)
-    RULES[p1_choice].include? p2_choice
+    MOVES[p1_choice].include? p2_choice
   end
 
   def reason_finder(p1_choice, p2_choice)

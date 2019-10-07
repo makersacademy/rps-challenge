@@ -12,29 +12,29 @@ img { width: 20%; }
   <% if @game.winner.nil? %>
     <h1 align="center"> It's a draw! </h1>
   <% else %>
-    <h1 align="center"> <%= @game.winner.name %> wins! </h1>
+    <h1 align="center"> <%= @game.winner_name %> wins! </h1>
   <% end %>
 </div>
 
 <% if @game.winner == @game.player_1 %>
   <div align="center">
-    <img style='border: 3px solid lime' src= <%=@p1_pic%> >
-    <img img style='border: 3px solid red' src= <%=@p2_pic%> >
+    <img style='border: 3px solid lime' src=<%=@p1_pic%> >
+    <img img style='border: 3px solid red' src=<%=@p2_pic%> >
   </div>
 <% elsif @game.winner == @game.player_2 %>
   <div align="center">
-    <img style='border: 3px solid red' src= <%=@p1_pic%> >
-    <img img style='border: 3px solid lime' src= <%=@p2_pic%> >
+    <img style='border: 3px solid red' src=<%=@p1_pic%> >
+    <img img style='border: 3px solid lime' src=<%=@p2_pic%> >
   </div>
 <% else %>
   <div align="center">
-    <img style='border: 3px solid gold' src= <%=@p1_pic%> >
-    <img img style='border: 3px solid gold' src= <%=@p2_pic%> >
+    <img style='border: 3px solid gold' src=<%=@p1_pic%> >
+    <img img style='border: 3px solid gold' src=<%=@p2_pic%> >
   </div>
 <% end %>
 
 <div align="center" style="font-family: 'Bungee HairLine'; font-size: 2.2vw">
-  <b> <%= @game.player_1.name %>: <%= @game.p1_score%> / <%= @game.p2_score%> :<%= @game.player_2.name %> </b>
+  <b> <%= @game.p1_name %>: <%= @game.p1_score%> / <%= @game.p2_score%> :<%= @game.p2_name %> </b>
 </div>
 
 <div style="font-family: 'Bungee'; font-size: 1vw">

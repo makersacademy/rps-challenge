@@ -15,24 +15,14 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
-  get '/single' do
-    erb :index_single
+  get '/names' do
+    erb params[:no_players].downcase.tr(' ', '_').to_sym
   end
 
-  get '/multi' do
-    erb :index_multi
-  end
-
-  post '/start-single' do
+  post '/start' do
     player_1 = Player.new(params[:player_1_name])
-    player_2 = Computer.new
-    @game = Game.create(player_1, player_2)
-    redirect '/weapon-choice'
-  end
-
-  post '/start-multi' do
-    player_1 = Player.new(params[:player_1_name])
-    player_2 = Player.new(params[:player_2_name])
+    player_2 = Player.new(params[:player_2_name]) if params[:player_2_name]
+    player_2 = Computer.new unless params[:player_2_name]
     @game = Game.create(player_1, player_2)
     redirect '/weapon-choice'
   end
@@ -43,9 +33,8 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/play' do
-    @game.player_1.weapon_choice(params[:weapon])
-    redirect '/check-results' if @game.player_2.is_a? Computer
-    redirect '/p2-weapon'
+    @game.p1_choice(params[:weapon])
+    redirect @game.computers_move?
   end
 
   get '/p2-weapon' do
@@ -54,25 +43,19 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/play2' do
-    @game.player_2.weapon_choice(params[:weapon])
-    redirect '/check-results'
-  end
-
-  get '/check-results' do
-    @game.player_2.weapon_choice if @game.player_2.is_a? Computer
-    @game.result
+    @game.p2_choice(params[:weapon])
     redirect '/result'
   end
 
   get '/result' do
-    @p1_pic = "images/#{@game.player_1.weapon}.jpg"
-    @p2_pic = "images/#{@game.player_2.weapon}.jpg"
+    @game.result
+    @p1_pic = "images/#{@game.p1_weapon}.jpg"
+    @p2_pic = "images/#{@game.p2_weapon}.jpg"
     erb :result
   end
 
   post '/next' do
-    redirect '/champion' if @game.p1_score >= 3 || @game.p2_score >= 3
-    redirect '/weapon-choice'
+    redirect @game.complete?
   end
 
   get '/champion' do

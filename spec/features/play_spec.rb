@@ -1,6 +1,6 @@
 feature 'Playing RPS' do
   context 'Computer will choose scissors for this test' do
-    scenario 'When I submit "Rock" I am receive confirmation that if I have won' do
+    scenario 'When player submits rock receive confirmation that player has won' do
       allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
       sign_in_single
       click_button('rock')
