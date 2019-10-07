@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player, :computer
+  attr_reader :player, :computer, :winner
 
   RULES = { rock: :scissors,
             paper: :rock,
@@ -20,7 +20,7 @@ class Game
     @game
   end
 
-  def winner(player_weapon, comp_weapon)
+  def who_won(player_weapon, comp_weapon)
     @winner = check_winner(player_weapon, comp_weapon)
   end
 

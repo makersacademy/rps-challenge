@@ -5,21 +5,21 @@ describe Game do
   let(:player) { double :player, name: "Nabille" }
   let(:computer) { double :player, name: "Computer" }
 
-  describe '#winner' do
+  describe '#who_won' do
     it 'should return player as the winner' do
-      expect(game.winner(:paper, :rock)).to eq "Nabille"
+      expect(game.who_won(:paper, :rock)).to eq "Nabille"
     end
   end
 
-  describe '#winner' do
+  describe '#who_won' do
     it 'should return computer as the winner' do
-      expect(game.winner(:scissors, :rock)).to eq "Computer"
+      expect(game.who_won(:scissors, :rock)).to eq "Computer"
     end
   end
 
-  describe '#winner' do
+  describe '#who_won' do
     it 'should return a draw' do
-      expect(game.winner(:rock, :rock)).to eq :draw
+      expect(game.who_won(:rock, :rock)).to eq :draw
     end
   end
 
