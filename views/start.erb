@@ -1,0 +1,43 @@
+<div class='container start_container'>
+  <div class='userImgContainer'>
+     <div class='igcontainer'>
+       <img src='images/boy.svg' alt='avatar' id='user_avatar'>
+     </div>
+     <div class='name_score'>
+       <h3 class='badge badge-dark'> Score <%=@game.player.score%> <h3>
+       <h4><%=@game.player.name.capitalize%> </h4>
+     </div>
+  </div>
+
+  <div class='computerImageContainer'>
+    <div class='igcontainer'>
+      <img src='images/robot.svg' alt='avatar' id='computer_avatar'>
+    </div>
+    <div class='robot_info'>
+      <h3 class='badge badge-dark'> Score <%=@game.score%> <h3>
+      <h4><%=@game.name%> </h4>
+    </div>
+  </div>
+</div>
+
+<div class='container submit_choice'>
+  <form method='post' action='/user_choice' id='selector'>
+  <div class='form-group select_container'>
+    <select name='user_select' class='form-control select' required>
+      <option value="" selected disabled hidden>Select a shape <%=@game.player.name.capitalize%></option>
+      <option value='Rock'>Rock</option>
+      <option value='Paper'>Paper</option>
+      <option value='Scissors'>Scissors</option>
+    </select>
+    <input type='submit' id='submit' class='mt-4 btn btn-block btn-outline-danger'>
+  </div>
+  </form>
+<div>
+
+<hr>
+<div class='result_container'>
+  <h5><%= @choices%></h5>
+  <div>
+    <h5 class="badge badge-info"><%=@game_result%> </h5>
+  </div>
+<div>

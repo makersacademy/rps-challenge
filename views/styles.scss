@@ -1,0 +1,150 @@
+$navBgColour :#1F1F1F;
+$iconContainerWidth : 100px;
+$fontColor: #F5EAEA;
+$roboto: 'Roboto', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
+$opensans: 'Open Sans', sans-serif;
+
+*{
+  margin:0;
+  outline: 0;
+  padding: 0;
+}
+
+nav{
+  width: 100%;
+  background-color: $navBgColour;
+  height: 50px;
+  ul{
+    li{
+        list-style: none;
+        color: #F5EAEA;
+        line-height: 50px;
+      a{
+        text-decoration: none;
+        color:$fontColor;
+        i{
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+/*Style for Index page*/
+.welcome{
+  padding: 30px;
+  text-align: center;
+  h1{
+    font-family:$montserrat;
+  }
+}
+.start_link_container{
+  text-align: center;
+  a{
+    text-decoration: none;
+    color: $fontColor;
+    background-color: $navBgColour;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: $roboto;
+  }
+}
+
+.start_link_container{
+  a:hover{
+    opacity: 0.9;
+  }
+}
+
+/*style for name form*/
+.enter_name{
+  padding: 30px;
+  h1{
+    font-family: $montserrat;
+    font-size: 35px;
+  }
+}
+.form_container{
+  form{
+    input::placeholder{
+      font-family:$roboto;
+      font-size: 14px;
+    }
+    .sub{
+      margin-top: 5px;
+      font-family: $roboto;
+    }
+  }
+}
+
+.start_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  .userImgContainer{
+    margin-right: 20px;
+    .igcontainer{
+      width: $iconContainerWidth;
+    }
+    #user_avatar{
+      width: 100%;
+    }
+  .name_score{
+     text-align: center;
+     h3{
+       color: $fontColor;
+       font-family: $opensans;
+     }
+     h4{
+       font-family: $opensans;
+     }
+    }
+  }
+  .computerImageContainer{
+    .igcontainer{
+      width: $iconContainerWidth;
+    }
+    #computer_avatar{
+      width: 100%;
+    }
+    .robot_info{
+      text-align: center;
+      h3{
+        color: $fontColor;
+        font-family: $opensans;
+      }
+      h4{
+        font-family: $opensans;
+      }
+    }
+  }
+}
+
+.submit_choice{
+  padding: 10px;
+  #selector{
+    .select_container{
+      .select{
+        font-family:$roboto;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.result_container{
+  h5{
+    font-family:$opensans;
+    font-size: 14px;
+    text-align: center;
+  }
+  div{
+    text-align: center;
+    h5{
+      font-family:$opensans;
+      background-color: red;
+    }
+  }
+}
