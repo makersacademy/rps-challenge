@@ -1,0 +1,33 @@
+<h1>Player: <%= @game.player %><h1>
+
+<form action='/play' method='post'>
+  <input type='submit' name='move' value='rock'>
+  <input type='submit' name='move' value='paper'>
+  <input type='submit' name='move' value='scissors'>
+  <input type='submit' name='move' value='sponge'>
+  <input type='submit' name='move' value='fire'>
+  <input type='submit' name='move' value='water'>
+  <input type='submit' name='move' value='air'>
+  </form>
+
+<h1><%=@game.player%>'s move is <%=@game.move%></h1>
+<h1>The computer's move is...<%=@game.comp_move%></h1>
+
+<%if @game.win?%>
+  You won!
+<%elsif @game.lose?%>
+  Sorry...you lost!
+<%elsif @game.draw?%>
+  Hmm...that's a draw.
+<%end%>
+
+<style>
+body {
+     background-image: url("https://making-the-web.com/sites/default/files/clipart/131088/cartoon-fight-131088-2477306.png");
+}
+
+</style>
+
+<form action='/reset'>
+<input type='submit' value='Quit'>
+</form>
