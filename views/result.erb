@@ -1,0 +1,11 @@
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<h1><%= @msg_generator[0] %></h1>
+<h2><%= @msg_generator[1] %></h2>
+
+<form class="buttons" action="/play_again" method="post">
+  <input type="submit" name="game_choice" value="Play Again">
+  <input type="submit" name="game_choice" value="New Game">
+</form>
