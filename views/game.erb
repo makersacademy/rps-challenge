@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<p>You have chosen <%=@player_move %><p>
+<p>Computer has chosen <%=@computer_move %><p>
+
+<h1>Result: <%=@who_won %><h1>
+
+<form class="" action="/play" method="get">
+    <button type="submit" value="play again">play again</button>
+</form>
+
+</body>
+</html>
