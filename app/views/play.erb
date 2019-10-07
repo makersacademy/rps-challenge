@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <link rel=”stylesheet” type=”text/css” href=”.../style.css” />
+  </head>
+
+  <style type="text/css" media="screen">
+    * {
+      background-color: #E8E7E8;
+      color: black;
+      font-family: monospace;
+      font-weight: 200;
+      margin: 30px
+      margin-top: 100px
+    }
+
+    #header {
+      margin-top: 100px
+    }
+
+    #rps {
+      margin: auto;
+    }
+
+  </style>
+
+  <div align=center >
+  <body>
+    <h1 id="header">Rock, paper, scissors</h1>
+    <p> <%= "#{@game.player}" %> vs. Computer </p>
+    <br>
+    <br>
+    <br>
+
+    <img id="rps" align=center src="https://cdn3.imggmi.com/uploads/2019/1/27/bcb01f7ce54a518e8a66a639ac8a80ea-full.jpg" alt="rock, paper, scissors" height="342" width="662" usemap="#map">
+
+    <map name="map">
+      <area id="rock" shape="rect" coords="0,0,220,342" alt="Rock" href="/rock" method="get">
+      <area id="paper" shape="rect" coords="220,0,440,342" alt="Paper" href="/paper" method="get">
+      <area shape="rect" coords="440,0,660,342" alt="Scissors" href="/scissors" method="get">
+    </map>
+
+<!--
+    <form action="/rock" method="get" >
+      <button type="submit" value="Rock" >ROCK
+    </form>
+
+    <br>
+
+    <form action="/paper" method="get" >
+      <button type="submit" value="Paper" >PAPER
+    </form>
+
+    <br>
+
+    <form action="/scissors" method="get" >
+      <button type="submit" value="Scissors" >SCISSORS
+    </form> -->
+
+  </body>
+  </div>
+</html>

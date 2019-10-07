@@ -1,0 +1,26 @@
+<html>
+  <!-- <head>
+    <link rel=”stylesheet” type=”text/css” href=”.../style.css” />
+  </head> -->
+
+  <style type="text/css" media="screen">
+    * {
+      background-color: #E8E7E8;
+      color: black;
+      font-family: monospace;
+      font-weight: 200;
+      margin: 30px
+    }
+  </style>
+
+  <div align=center >
+  <body>
+    <h1 class="header">You picked</h1>
+    <p> <%= @game.translate(@game.round[0]) %> </p>
+    <form action="/computer_choice" method="get" >
+      <input type="submit" value="See what the computer picked.">
+    </form>
+  </body>
+  </div>
+
+</html>
