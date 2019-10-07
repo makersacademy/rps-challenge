@@ -16,6 +16,8 @@ GEM
     docile (1.1.5)
     hirb (0.7.3)
     json (2.1.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     mustermann (1.0.1)
@@ -54,6 +56,8 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.9.0)
+    shotgun (0.9.2)
+      rack (>= 1.0)
     simplecov (0.15.1)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -78,9 +82,11 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  launchy
   rake
   rspec
   rubocop (= 0.56.0)
+  shotgun
   simplecov
   simplecov-console
   sinatra
@@ -89,4 +95,4 @@ RUBY VERSION
    ruby 2.5.0p0
 
 BUNDLED WITH
-   1.16.1
+   1.17.3
