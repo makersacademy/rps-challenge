@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock-Paper-Scissors-Lizard-Spock</title>
+
+    <style>
+      body {
+        background-color: #20242A;
+        text-align: center;
+        color: white;
+        font-family: "Verdana", Geneva, sans-serif;
+        font-size: 1.2em;
+      }
+      input {
+        padding: 2px;
+      }
+      button {
+        background-color: orange;
+        font-size: 0.8em;
+        color: white;
+      }
+      textarea, input, select {
+        font-family: inherit;
+        font-size: inherit; }
+      span {
+        color: orange;
+      }
+      .head1 {
+        font-size: 2em;
+        letter-spacing: 8px;
+      }
+      .head2 {
+        font-size: 1.2em;
+        letter-spacing: 5px;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+      <p class="head2"><span>ROCK</span>-<span>PAPER</span>-<span>SCISSORS</span>-<span>LIZARD</span>-<span>SPOCK</span></p>
+      <form action="/name" method="post">
+        <label for="player_name">
+        Enter your name:
+        <input type="text" name="player_name" required>
+      </label>
+      <button id="play" type="submit">PLAY</button>
+    </form>
+    <br><br>
+    <img src="/rules.png" alt="RPSLS Rules">
+
+  </body>
+</html>
