@@ -12,6 +12,14 @@ class Game
     @winner = nil
   end
 
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
+  end
+
+  def self.instance
+    @game
+  end
+
   def winner(player_weapon, comp_weapon)
     @winner = check_winner(player_weapon, comp_weapon)
   end
