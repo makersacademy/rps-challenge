@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  h1, h2, h3, body {
+    text-align: center;
+  }
+  p.a {
+    font-family: "Times New Roman", Times, serif;
+  }
+  label {
+      font-size: 20px;
+      font-family: sans-serif;
+  }
+  input[type="submit"] {
+      font-size: 20px;
+      padding: 1em;
+      margin: 20px;
+  }
+  </style>
+</head>
+<body>
+<h1><%= @game.player_1.name %> vs <%= @game.player_2.name %></h1>
+
+<% unless @game.player_1.choice.nil? %>
+
+<h2><%= @game.player_1.name %> chose <%= @game.player_1.choice %>!</h2>
+<h2><%= @game.player_2.name %> chose <%= @game.player_2.choice %>!</h2>
+
+<h2><%= @game.result(@game.player_1.choice, @game.player_2.choice) %></h2>
+
+<% end %>
+<br>
+<br>
+  <form action="/play" method="get">
+    <input type="submit" value="Let's play again!" />
+  </form>
+<br>
+<br>
+  <form action="/logout" method="get">
+    <input type="submit" value="Log out" />
+  </form>
+<br>
+</body>
+</html>

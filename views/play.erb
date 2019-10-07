@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1, h2, h3, body {
+  text-align: center;
+}
+p.a {
+  font-family: "Times New Roman", Times, serif;
+}
+label {
+    font-size: 20px;
+    font-family: sans-serif;
+}
+input[type="submit"] {
+    font-size: 20px;
+    padding: 1em;
+    margin: 20px;
+}
+</style>
+</head>
+<body>
+<h1>ROCK PAPER SCISSORS GAME</h1>
+<h2>Hi <%= @game.player_1.name %>!</h2>
+
+<h3>Let's play!</h3>
+
+<form action="/do_play" method="POST">
+  <input type="radio" name="move" id="move_rock" value="rock" />
+  <label for="move_rock">Rock</label>
+
+  <input type="radio" name="move" id="move_paper" value="paper" />
+  <label for="move_paper">Paper</label>
+
+  <input type="radio" name="move" id="move_scissors" value="scissors" />
+  <label for="move_scissors">Scissors</label>
+
+  <br>
+    <input type="submit" value="Make your move!" />
+  <br>
+</form>
+
+<br>
+  <form action="/logout" method="get">
+    <input type="submit" value="Log out" />
+  </form>
+<br>
+
+</body>
+</html>
