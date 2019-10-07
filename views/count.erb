@@ -1,0 +1,18 @@
+<% if @player_count == "1 player" %>
+  <form action="/names" method="post">
+    Player1 name: <input type="text" name="player_1_name">
+    <input type="submit" value="Start">
+  </form>
+<% end %>
+
+<% if @player_count == "2 players" %>
+  <form action="/names" method="post" >
+    Player1 name: <input type="text" name="player_1_name">
+    Player2 name: <input type="text" name="player_2_name">
+    <input type="submit" value="Start">
+  </form>
+<% end %>
+
+<br>
+
+<img class="front-picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiD28ZDHGKLChXWyQP6uuyeja8Oo6WZzkpI1tQeknuCWYB7Nd">
