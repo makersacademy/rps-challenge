@@ -7,5 +7,13 @@ class Player
     @name = name
     @choice = nil
   end
+
+  def choose_choice(choice)
+    @choice = choice
+  end
+
+  def random_move
+    @choice = ["rock", "paper", "scissors"].sample
+  end
 end
 

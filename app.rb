@@ -33,13 +33,12 @@ end
 post '/move' do
   @game = Game.instance
   @game.player1.choice = params[:move]
-  @game.player2.choice = @game.random_move
+  @game.player2.random_move
   redirect '/winner'
 end
 
 get '/winner' do
   @game = Game.instance
-  
   erb :winner
 end
 
