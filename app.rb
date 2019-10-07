@@ -46,17 +46,20 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/end' do
+    @play_again = session[:page]
     erb :end
   end
 
   post '/move' do
     @game.play_vs_comp(params[:move])
+    session[:page]= '/play'
     redirect '/end'
   end
 
   post '/multi_move' do
     @game.player1.move(params[:move1])
     @game.player2.move(params[:move2])
+    session[:page]= '/multi_play'
     redirect '/end'
   end
   run! if app_file == $0
