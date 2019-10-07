@@ -12,17 +12,17 @@ class Rps < Sinatra::Base
   post '/name' do
     player = Player.new(params[:player_name])
     computer = Player.new("Computer")
-    $game = Game.new(player, computer)
+    @game = Game.create(player, computer)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
     erb(:play)
   end
 
   get '/move' do
-    @game = $game
+    @game = Game.instance
     @game.player1.move(params[:move])
     @game.player2.random_move
     erb(:move)
