@@ -1,0 +1,59 @@
+body {
+    background:#fcfcfc;
+    font-size: 10px;
+    font-family: 'Concert One', cursive;
+}
+
+.background{
+    margin:0 auto;
+    background:url('../assets/background.jpg') center no-repeat fixed;
+    height:60vh;
+    width:100vw;
+}
+
+.container{
+    text-align:center;
+    width:100vw;
+    height: 50vh;
+    padding: 2em 4em;
+}
+
+form{
+    display:inline-block;
+}
+
+form div{
+    display:inline-block;
+    height:30vh;
+}
+
+form div div, form div label, form div input{
+    display: block;
+}
+
+
+#garnet_pic, #amythyst_pic, #pearl_pic, #steven_pic, #lapiz_pic{
+    height:20vh;
+    width: 10vw;
+}
+
+#garnet_pic{
+    background:url('../assets/garnet.png') no-repeat center;
+    background-size:contain;
+}
+#amythyst_pic{
+    background: url('../assets/amethyst.png') no-repeat center;
+    background-size:contain;
+} 
+#pearl_pic{
+    background:url('../assets/pearl.png') no-repeat center;
+    background-size:contain;
+}
+#steven_pic{
+    background:url('../assets/steven.png') no-repeat center;
+    background-size:contain;
+} 
+#lapiz_pic{
+    background: url('../assets/lapis.png') no-repeat center;
+    background-size:contain;
+}

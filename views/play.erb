@@ -1,0 +1,33 @@
+
+<div class = 'container'>
+  <h1> Welcome <%= name %>!! Choose your champion! </h1>
+  <form action ='/move' method='POST'>
+      <div>
+        <div id='garnet_pic'></div> 
+        <label for='garnet'>Garnet</label>
+        <input type = 'radio' name='char' value ='garnet' id='garnet'>
+      </div>
+      <div>
+        <div id='amythyst_pic'></div> 
+        <label for='amythyst'>Amythyst</label>
+        <input type = 'radio' name='char' value ='amysthyst' id='amythyst'>
+      </div>
+      <div> 
+        <div id='pearl_pic'></div> 
+        <label for='pearl'>Pearl</label>
+        <input type = 'radio' name='char' value ='pearl' id='pearl'>
+      </div>
+      <div> 
+        <div id='steven_pic'></div> 
+        <label for='steven'>Steven</label>
+        <input type = 'radio' name='char' value ='steven' id='steven'>
+      </div>
+      <div> 
+        <div id='lapiz_pic'></div> 
+        <label for='lapiz'>Lapiz</label>
+        <input type = 'radio' name='char' value ='lapiz' id='lapiz'>
+      </div>
+      </br>
+      <input type = 'submit' onclick='which_character()' value = 'Submit'>
+  </form>
+</div>

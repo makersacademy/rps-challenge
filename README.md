@@ -1,5 +1,55 @@
 # RPS Challenge
 
+## My Approach 
+
+This is not finished. 
+
+I set out to build a a version of rock, paper, scissors, spock & lizard game using the beloved Crystal Gems : Garnet, Amythyst, Pearl, Steven and Lapiz. The game follows the same mechanic that the selected move beats the first and third along from it etc.
+
+# Learning Objectives
+
+Starting out on this challenges i wanted to build my understanding with the following concepts: 
+
+  - Use of the Singlton class sucessfully
+  - Use of the Sinatra routing system that would allow my views to also include CSS
+  - Correct use of method stubbing and doubling in RSPEC
+  - Actually testing the correct things in RSPEC (not the end result of a change but just that first step)
+
+# Unforseen Challenges
+
+  - Ran into a merge conflict when my github had fallen behind my local repo, what a fun time. 
+
+  - Learnt that HTML5 checkbox and radio buttons do not send query strings on submit, that they must be told by JavaScript to do so.
+
+  - CSS took longer then expected as was using rackup wonder if could use shotgun. 
+
+# Reflection of L.O.
+
+  - I wanted to create a singlton of the player class. As the game involved a preliminary stage of entering a players name and then entering a move on a seperate form. I thought that the use of a singlton class for Player as well as a before filter in sinartra would mean i'd be free from global variables. Whilst i was able to set up the singlton class, i was unable to add values on to it in the way i wanted. 
+
+  - i breifly read through layout and templating files with erb. I've managed to change page titles using local variables and create a basic style sheet for everything.
+
+  - I think i was able to effectively use stubbing and doubles with this projects until it came to the singleton part, i wasnt sure how to test wether this was set up working.....
+
+ 
+
+ # still to do
+
+  - I'm unsure if i've sused the singleton correctly, id like to beable to make a player and then add the move. I have stored the players name then made player when also had the move.
+
+  - refactor everything -> css, spelling mistake, code repetition, check wording of rspec test. I will try to spend 30 mins refactoring the code to ensure all reads ok.
+
+# mechanics of battle 
+
+ - I actually thought of two ways to solve this: 
+
+    using an array and checking value of the indecies next to and third along from selected. Using a method to find that indecies if it was greater then the array length. Whilst this works i felt it wasnt that readable. 
+
+    So I went for a hash array matched to arrays. i tried to seperate concerns of checking for draw, checking for win etc. only thing could have been clearer is the outcome message.
+
+  
+
+
 Instructions
 -------
 
