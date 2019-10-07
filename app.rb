@@ -59,8 +59,7 @@ class RpsApp < Sinatra::Base
   end
 
   get '/end' do
-    @game.outcome
-    erb :end
+    erb @game.outcome
   end
 
   post '/mp_reset' do

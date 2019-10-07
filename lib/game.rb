@@ -40,10 +40,10 @@ class Game
   end
 
   def outcome
-    return "its a tie, both players played #{player1_move}" if draw?
-    return "#{player1.name} won" if player1_move == WIN[player2_move]
+    return :tie if draw?
+    return :win if player1_move == WIN[player2_move]
 
-    "#{player2.name} won"
+    :lose
   end
 
   def reset

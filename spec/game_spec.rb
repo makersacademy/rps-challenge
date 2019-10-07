@@ -74,7 +74,7 @@ describe Game do
       allow(player1).to receive(:choose_move) { move1 }
       allow(player2).to receive(:random_move) { move2 }
       game.single_player(move1)
-      expect(game.outcome).to eq "its a tie, both players played #{game.player1_move}"
+      expect(game.outcome).to eq :tie
     end
     it 'confirms player one won' do
       move1 = 'Rock'
@@ -82,7 +82,7 @@ describe Game do
       allow(player1).to receive(:choose_move) { move1 }
       allow(player2).to receive(:random_move) { move2 }
       game.single_player(move1)
-      expect(game.outcome).to eq "#{player1.name} won"
+      expect(game.outcome).to eq :win
     end
 
     it 'confirms player two won' do
@@ -91,7 +91,7 @@ describe Game do
       allow(player1).to receive(:choose_move) { move2 }
       allow(player2).to receive(:random_move) { move1 }
       game.single_player(move2)
-      expect(game.outcome).to eq "#{player2.name} won"
+      expect(game.outcome).to eq :lose
     end
   end
 

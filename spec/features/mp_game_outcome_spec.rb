@@ -3,8 +3,7 @@ feature 'Multiplayer game outcome' do
     multiplayer_sign_in
     click_button 'Rock'
     click_button 'Scissors'
-    click_button 'Reveal Winner'
-    click_button 'Reveal Winner'
+    reveal_winner
     expect(page).to have_content 'Nathan won'
   end
 
@@ -12,8 +11,7 @@ feature 'Multiplayer game outcome' do
     multiplayer_sign_in
     click_button 'Rock'
     click_button 'Paper'
-    click_button 'Reveal Winner'
-    click_button 'Reveal Winner'
+    reveal_winner
     expect(page).to have_content 'Rachel won'
   end
 
@@ -21,8 +19,7 @@ feature 'Multiplayer game outcome' do
     multiplayer_sign_in
     click_button 'Rock'
     click_button 'Rock'
-    click_button 'Reveal Winner'
-    click_button 'Reveal Winner'
+    reveal_winner
     expect(page).to have_content 'its a tie, both players played Rock'
   end
 end

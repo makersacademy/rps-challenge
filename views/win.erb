@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>End Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Indie Flower', cursive;
+      }
+
+      #Winner {
+        padding: 50px 0;
+        text-align: center;
+        margin-top: 20px;
+        display: none;
+      }
+    </style>
+
+    <script>
+      function reveal() {
+        var winner = document.getElementById("Winner");
+        if (winner.style.display === "none") {
+          winner.style.display = "block";
+        } else {
+          winner.style.display = "none";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2><%="#{@game.player1.name} made the move: #{@game.player1_move}"%></h2>
+
+    <button onclick="reveal()">Reveal Winner</button>
+
+    <div id="Winner">
+      <h1><%="#{@game.player1.name} won"%></h1>
+      <h1><%="#{@game.player2.name} made the move: #{@game.player2_move}"%></h1>
+      <% if @game.player2.name == 'COMPUTER' %>
+        <form class="form1" action="/play" method="get">
+          <button type="submit" name="single_player">Play again?</button>
+        </form>
+      <%else%>
+        <form class="form1" action="/mp_reset" method="post">
+          <button type="submit" name="multiplayer">Play again?</button>
+        </form>
+      <%end%>
+    </div>
+  </body>
+</html>
