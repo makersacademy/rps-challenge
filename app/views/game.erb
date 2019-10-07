@@ -1,0 +1,65 @@
+<style>
+
+body {
+  background-image: url("https://www.dropbox.com/s/2ct0i6kc61vp0bh/wall.jpg?raw=1");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #141414;
+}
+
+h2 {color: white; text-align: center}
+
+form {text-align: center; height: 1em; color: white}
+
+.glow {
+  min-height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  font-family: "Vibur", cursive;
+  font-size: 5rem;
+  line-height: 1;
+  color: #c6e2ff;
+  animation: neon 0.08s ease-in-out infinite alternate;
+
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
+      0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52),
+      0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78),
+      0 0 54px rgba(30, 132, 242, 0.92);
+  }
+  to {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.98),
+      0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58),
+      0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88),
+      0 0 60px rgba(30, 132, 242, 1);
+  }
+}
+
+</style>
+
+<body>
+  <div class='glow'>
+    <span>Hi <%= @game.player.name %>!</span>
+  </div>
+  <br>
+  <h2>Select an option and press 'Play'</h2>
+  <br>
+  <form action='/weapon' method='post'>
+    <label for="weapon"><h3>What would you like to play with?</h3>
+      <br>
+      <select class='weapon' style='font-size: 15; width: 100px' id='weapon' name='weapon'>
+        <option label="rock">Rock</option>
+        <option label="paper">Paper</option>
+        <option label="scissors">Scissors</option>
+      </select>
+    </label>
+    <br>
+    <br>
+    <input style='font-size: 20; width: 50px' type='submit' value='Play'>
+  </form>
+</body>
