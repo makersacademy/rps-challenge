@@ -2,7 +2,7 @@ feature 'result shown' do
   context 'user is the winner' do
     subject { Result.new("Rock") }
     scenario '-computer shows choice and outputs result' do
-      allow_any_instance_of(Result).to receive(:outcome).and_return(:user_wins)
+      allow_any_instance_of(Array).to receive(:sample).and_return("Scissors")
       visit '/'
       fill_in :player_1, with: 'Sarah'
       click_button 'Submit'

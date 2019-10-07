@@ -1,5 +1,4 @@
 require 'sinatra/base'
-# require 'pry'
 require './lib/result'
 
 class Game < Sinatra::Base
