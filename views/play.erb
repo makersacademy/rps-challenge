@@ -1,0 +1,17 @@
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
+</head>
+
+<div class='app'>
+  <h1>Player 1: <%= @game.player_one.name %></h2>
+  <h1>Player 2: <%= @game.player_two.name %></h2>
+
+  <div class='buttons'>
+    <form action='/throw' method='post'>
+      <input class='go' type='submit' name='move' value='Rock'>
+      <input class='go' type='submit' name='move' value='Paper'>
+      <input class='go' type='submit' name='move' value='Scissors'>
+    </form>
+  </div>
+</div>
