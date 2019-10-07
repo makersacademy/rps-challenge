@@ -9,21 +9,22 @@ class RPSApp < Sinatra::Base
   end
 
   post '/info' do
-    player1 = Player.new(params[:player1])
-    @game = Game.create(player1)
+    session[:player1] = Player.new(params[:player1])
     redirect '/play'
   end
 
   get '/play' do
-    session[:moves] = params[:moves]
-    @game = Game.instance
+    @player1 = session[:player1]
     erb :play
   end
 
   post '/winner' do
-    @move = params[:moves]
-    @game = Game.instance
-    @game.shoot
+    player1 = session[:player1]
+    move = params[:moves]
+    @game = Game.create(player1, move)
+    @shoot = @game.shoot
     erb :winner
   end
+
+  run! if app_file == $0
 end

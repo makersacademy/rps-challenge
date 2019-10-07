@@ -1,3 +1,12 @@
-<h2> <%= @game.player1.name %> plays <%= @move%> </h2>
-<h2> Computer plays <%= @game.shoot%> </h2>
-<%# <p><%= @game.message %> 
+<center>
+<body style="background-color:powderblue;">
+<h2 style="color:white;font-size:35px"> <%= @game.player1.name %> plays <%= @game.move%> </h2>
+<h2 style="color:white;font-size:35px"> Computer plays <%= @shoot%> </h2>
+<br>
+<h1 style="color:red;"> <%= @game.message%></h1>
+<br>
+<form>
+  <input type="button" value="Play again?" onclick="history.back()">
+</form>
+<iframe src="https://giphy.com/embed/7MezEc0TOaMlW" width="480" height="311" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+</center>
