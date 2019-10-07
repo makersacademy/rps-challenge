@@ -1,0 +1,22 @@
+<link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
+
+<style>
+body {font-family: 'Rancho';font-size: 40px;}
+</style>
+
+<body style="background-color: #C0C0C0;">
+<div align="center">
+<br>
+<br>
+
+<h1>Player 1 - <%= @player1_name %></h1>
+<p>Choose your weapon!</p>
+<form method="GET" action='/game'>
+  <input type='submit' name='weapon' value='Rock'/>
+  <input type='submit' name='weapon' value='Paper'/>
+  <input type='submit' name='weapon' value='Scissors'/>
+</form>
+
+</div>
+
+</body>
