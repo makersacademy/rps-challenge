@@ -1,86 +1,23 @@
-# RPS Challenge
+# Rock, Paper, Scissors, Lizard, Spock
+This is a program that let's you play rock, paper, scissors, lizard, & spock, with either one or two players.
 
-Instructions
--------
+### How do I Use it?
+Clone this repo. Run the ruby file `app.rb`, this will start your server. Then in your browser go to localhost:4567.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+This game is suitable for either one or two players:
 
-Task
-----
+#### Single Player
+To start the game, enter your name under the heading single-player, and click "Let's Play". You will play against the computer. You can pick your weapon on the following page: rock, paper, scissors, spock or lizard.
 
-Knowing how to build web applications is getting us almost there as web developers!
+Once your weapon is submitted, you will then be redirected to a page that confirms your move and the computer's move. This page will also tell you who won.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+#### Two Players
+To start the game, please enter both names under the heading multi-player, and click "Let's Battle". You will play each other. Player 1 can pick their weapon on the next page: rock, paper, scissors, spock or lizard. Player 2 picks their weapon the following page.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Once both weapons are submitted, the players will be redirected to a page that confirms player1 and player2's move. This page will also tell you who won.
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+### Running the tests
+The tests for this program use rspec and capybara, so simply run rspec from within this directory. You can also run Rubocop from the same place.
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+### Known Issues
+* Rubocop indicates that the player1_win? method is too complex. I have been unable to refactor it further to date, but I will continue to work on this issue.

@@ -1,0 +1,19 @@
+<h1> Welcome <%= @game.player1.name %>! </h1>
+<div> <p> </p> </div>
+<div> <p> Pick your poison... </p>
+
+<form action="/single_player_move" method="post">
+<input type="submit" value="Rock" name="choice">
+
+<form action="/single_player_move" method="post">
+<input type="submit" value="Paper" name="choice">
+
+<form action="/single_player_move" method="post">
+<input type="submit" value="Scissors" name="choice">
+
+<form action="/single_player_move" method="post">
+<input type="submit" value="Spock" name="choice">
+
+<form action="/single_player_move" method="post">
+<input type="submit" value="Lizard" name="choice">
+</form>
