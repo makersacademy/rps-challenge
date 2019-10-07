@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+
   <title>The Rock, The Paper and The Scissors</title>
   <meta name="description" content="The Rock, The Paper and The Scissors">
 
@@ -17,7 +19,7 @@
     margin-left: 25%;
     width: 50%;
   }
-  h1 { color: white;
+  h1, h2 { color: white;
   }
   .center {
     text-align: center;
@@ -36,10 +38,8 @@
 
   <div class="nav">
     <form action="/names" method="post">
-      Player 1:<br>
-      <input type="text" name="player_1">
-      Player 2:<br>
-      <input type="text" name="player_2" list="player_2"/>
+      <input type="text" name="player_1"placeholder="Player 1">
+      <input type="text" name="player_2" list="player_2"placeholder="Player 2"/>
       <datalist id="player_2">
         <option>Computer</option>
       </datalist>

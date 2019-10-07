@@ -34,7 +34,6 @@ enable :sessions
   end
 
   post '/fight' do
-    @winner.player_2.choose(params[:RPS2])
     if @winner.player_2.name == 'Computer Genius'
       @winner.player_1.choose(params[:RPS1])
       redirect '/winner'
@@ -42,17 +41,13 @@ enable :sessions
       @winner.player_1.choose(params[:RPS1])
       redirect '/play_2'
     else
+      @winner.player_2.choose(params[:RPS2])
       redirect '/winner'
     end
   end
 
   get '/winner' do
     erb(:winner)
-  end
-
-  get '/redirect' do
-    redirect '/play_1' if @winner.player_2.name == 'Computer Genius'
-    redirect '/play_2'
   end
 
   # start the server if ruby file executed directly
