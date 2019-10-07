@@ -1,0 +1,24 @@
+<center>
+
+<link rel="stylesheet" type="text/css" href="/style.css">
+
+<h2> You chose '<%=@move%>' as your move! </h2>
+<br>
+<h2> Game chose '<%=@random_move%>' as a random move! </h2>
+
+<br>
+<br>
+
+<% if @move=="Rock" && @random_move=="Scissors" %>
+  <h1> You WON! <p> &#x1F603; &#x1F389; &#x1F929; </p> </h1>
+<% elsif @move=='Scissors' && @random_move=='Paper' %>
+  <h1> You WON! <p> &#x1F603; &#x1F389; &#x1F929; </p> </h1>
+<% elsif @move=='Paper' && @random_move=='Rock' %>
+  <h1> You WON! <p> &#x1F603; &#x1F389; &#x1F929; </p> </h1>
+<% elsif @move==@random_move %>
+  <h1> It's a draw! <p> &#x1F610; </p> </h1>
+<% else%>
+  <h1> You Lost! <p> &#x1F641; </p> </h1>
+<% end %>
+
+</center>
