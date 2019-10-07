@@ -1,0 +1,9 @@
+You chose <%= @player_hand %></br>
+Opponent chose <%= @opponent_hand %></br>
+<% if @result == :win %>
+You win!
+<% elsif @result == :lose %>
+You lose!
+<% elsif @result == :draw %>
+Tie game!
+<% end %>
