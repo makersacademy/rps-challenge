@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Rock, Scissors and Paper </title>
+  <h2> Hey <%= @user.name %> please make your next move.</h2>
+  <style type="text/css">
+    body
+    {
+      padding : 0;
+      margin: 0;
+      background: #ffd200;
+      font-size: 1.5em;
+      text-align: center;
+      font-family: 'arial';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+
+  <form action="/move" method="post">
+    <p> Choose from this menu: <select name="move">
+      <option value="rock">ROCK</option>
+      <option value="paper">PAPER</option>
+      <option value="scissors">SCISSORS</option>
+    </select>
+    <input type="submit" value="Play"> </p>
+  </form>
+
+</body>
+</html>
