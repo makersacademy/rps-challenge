@@ -1,0 +1,38 @@
+<div class= "outer">
+  <div class = "inner">
+    <h1>Rock, Paper, Scissors!</h1>
+    <h2>Enter your name to play</h2>
+    <form action="/names" method="post">
+      <label for="player_1_name">
+        Player One Name:
+        <input type="text" name="player_1_name">
+      </label>
+      <br>
+      <br>
+      <label for="player_2_name">
+        Player Two Name:
+        <input type="text" name="player_2_name">
+      </label>
+      <br>
+      <br>
+      <input class ="button" type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+<style>
+  .button {
+    background-color: green;
+    color: white;
+    margin-left: 20px;
+  }
+  .outer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .inner {
+    margin-top: 100px;
+    width: 400px;
+    text-align: center;
+  }
+</style>
