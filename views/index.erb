@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pusheen RPS Game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Pusheen wants to play Rock, Paper, Scissors!</h2>
+  <h4>Let's get you setup. What's your name?</h4>            
+  <img src="https://media.giphy.com/media/L3nWlmgyqCeU8/giphy.gif" class="rounded" alt="Pusheen" width="304" height="236"> 
+</div>
+
+<div class="container">
+<form action="/play" method="post">
+  <h4>Enter name:</h4> 
+  <input type="text" name="name" required = "required"><br>
+  <input type="submit" value="Go">
+</form>
+</div>
+
+</body>
+</html>
