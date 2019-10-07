@@ -1,22 +1,11 @@
-# RPS Challenge
+# ROCK PAPER SCISSORS! A Basic Web-App
 
-Instructions
--------
+## Week 3 Challenge @ Makers Academy
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+### Design
+We were challenged to build a rock paper scissors game. We worked alone.
 
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+We were given two user stories to satisfy:
 
 ```sh
 As a marketeer
@@ -28,59 +17,61 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+We were also given the following hints on functionality
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+-   the marketeer should be able to enter their name before the game
+-   the marketeer will be presented the choices (rock, paper and scissors)
+-   the marketeer can choose one option
+-   the game will choose a random option
+-   a winner will be declared
 
+### Learning Objectives
+-   Demonstrate that I can write easy to edit code.
 
-As usual please start by
+### Instructions
+-   `$ git clone https://github.com/saypop/battle`
+-   `$ cd RPS`
+-   `$ bundle`
+-   `$ rackup config.ru` do not try to run this app with shotgun, it will not work.
 
-* Forking this repo
-* TEST driving development of your app
+### Tests
+-   `$ rspec`
 
+### Tech
+-   Written in Ruby 2.5.0
+-   Using the Sinatra web framework
+-   Server is set up using Rackup
+-   Tests are done with RSpec and Capybara
 
-## Bonus level 1: Multiplayer
+### Learnings
+-   I feel comfortable working with Capybara and Sinatra
+-   I have learned how little I know about HTML and CSS
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+### Acknowledgements
+Shoutout to my reliable and ever present comrades Tenacity, Patience and Persistence.
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+### Set-up hints (for Makers students)
+1.  `touch app.rb`
+2.  In app.rb `require 'sinatra/base'`
+3.  Create class `class RPS < Sinatra::Base;`
+4.  Finish with `run! if app_file == $0`
+5.  `touch config.ru`
+6.  `require_relative "./app"` then `run RPS`
+7.  `bundle`
+8.  Add the following to spec-helper
+    ```sh
+    ENV['RACK_ENV'] = 'test'
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+    require File.join(File.dirname(__FILE__), '..', 'app.rb')
+    require 'capybara'
+    require 'capybara/rspec'
+    require 'rspec'
+    Capybara.app = RPS
+    ```
 
 In code review we'll be hoping to see:
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+*   All tests passing - CHECK
+*   High test coverage - CHECK
+*   Travis badge [![Build Status](https://travis-ci.org/saypop/rps-challenge.svg?branch=master)](https://travis-ci.org/saypop/rps-challenge)
+*   The code is elegant: every class has a clear responsibility, methods are short etc. 
