@@ -23,4 +23,8 @@ class Game
     @player_2
   end
 
+  def winner?
+    @player_1
+  end
+
 end
