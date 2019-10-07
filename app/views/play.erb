@@ -1,0 +1,25 @@
+<style>
+  h2 { font-family:helvetica,sans-serif;color:white }
+</style>
+<body style="background-color:powderblue;">
+  <center>
+  <br>
+  <form action='/pick' method='post' name='pick'>
+    <h2>What is your selection, <%= @name1 %>? &#x1F914</h2>
+    <select name='pick1'>
+      <option value='rock'>Rock</option>
+      <option value='paper'>Paper</option>
+      <option value='scissors'>Scissors</option>
+    </select>
+    <h2>What is your selection, <%= @name2 %>? &#x1f928</h2>
+    <select name='pick2'>
+      <option value='rock'>Rock</option>
+      <option value='paper'>Paper</option>
+      <option value='scissors'>Scissors</option>
+    </select>
+    <br>
+    <br>
+    <input type='submit' value='Submit'/>
+  </form>
+  </center>
+</body>
