@@ -1,0 +1,66 @@
+h1 {
+ font-family: 'Lobster', Georgia, Times, serif;
+ font-size: 70px;
+ font-weight:500;
+ line-height: 75px;
+ color: white
+}
+
+h2 {
+ font-family: 'Cabin', Helvetica, Arial, sans-serif;
+ font-size: 30px;
+ font-weight:200;
+ line-height: 40px;
+ color: white
+}
+
+body {
+  background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/04/Dark-teal-canvas-fabric-texture-wallpapers-HD.jpg);
+}
+
+body {
+	width: 100wh;
+	height: 90vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
