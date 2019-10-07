@@ -32,13 +32,11 @@ Hints on functionality
 ```
 $ git clone git@github.com:bradjp/rps-challenge.git```
 
-```
-$ cd rps-challenge```
+```$ cd rps-challenge```
 
 ```$ bundle```
 
-```$ rackup
-```
+```$ rackup```
 
 Then navigate to localhost:9292 in your web browser
 
