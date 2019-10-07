@@ -1,0 +1,9 @@
+<% if @outcome_value == 0 %>
+  <h1>Draw</h1>
+<% elsif @outcome_value == 1 %>
+  <h1><%= @game.player.name %>, you win!</h1>
+<% else %>
+  <h1>Computer wins</h1>
+<% end %>
+
+<a href="/dashboard">Play again?</a>
