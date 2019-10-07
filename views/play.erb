@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <h1>Welcome, <%=@game.player_1.name%>!</h1>
+    <h2>Please make your move...</h2>
+    <form action="/weapon" method="post">
+      <label for="weapon">Select your weapon
+        <select name="weapon">
+          <option value="rock">Rock</option>
+          <option value="paper">Paper</option>
+          <option value="scissor">Scissor</option>
+        </select>
+      </label>
+      <input type="submit" value="Play!">
+    </form>
+  </body>
+</html>
