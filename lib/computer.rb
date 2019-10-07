@@ -1,14 +1,14 @@
 class Computer
 
-  attr_reader :choice, :name
-  MOVES = ['Rock', 'Paper', 'Scissors']
+  attr_reader :moves, :choice, :name
 
   def initialize
+    @moves = ['Rock', 'Paper', 'Scissors']
     @name = "Computer Genius"
   end
 
   def choose(holder)
-    @choice = MOVES.sample
+    @choice = @moves.sample
   end
 
 end

@@ -35,9 +35,10 @@ enable :sessions
 
   post '/fight' do
     if @winner.player_2.name == 'Computer Genius'
+      @winner.player_2.choose(params[:RPS2])
       @winner.player_1.choose(params[:RPS1])
       redirect '/winner'
-    elsif @winner.player_2.choice == nil
+    elsif params[:RPS2] == nil
       @winner.player_1.choose(params[:RPS1])
       redirect '/play_2'
     else
