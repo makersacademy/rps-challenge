@@ -1,6 +1,17 @@
 # RPS Challenge
 
-Instructions
+Play Instructions
+-------
+* Fork & clone this repo
+* Navigate to cloned directory and `bundle install` to install all dependencies
+* In the cloned directory, type `rackup`, this will initialize shotgun, allowing you to send and receive HTTP requests
+* Open your browser, and go to localhost:(insert port here, shown in your CMD when rackup is run)
+* Enter your names, click submit
+* Each player, enter your choice, click submit
+* Winner is revealed, click play again
+* Keep playing forever
+
+Challenge Instructions
 -------
 
 * Challenge time: rest of the day and weekend, until Monday 9am

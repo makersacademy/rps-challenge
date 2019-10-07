@@ -1,0 +1,23 @@
+<a href="https://github.com/DanGyi23/rps-challenge">
+  <img align ='right' height='50' width='50' style='margin:10px;margin-left: -60px' src='https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg'>
+</a>
+
+<div align='center'>
+<br>
+<h1 style='font-family: Georgia, serif;font-size:36px'> <%= @winner %> </h1>
+<br>
+<br>
+<form action='/selection'>
+  <button style='font-family: Georgia, serif;color:white;background-color:#555555;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);font-size:36px;padding:8px' type='submit' name='Play Again'>Play Again</button>
+</form>
+
+<% if @winner.include? @game.player1.name %>
+  <img align='center' height='384px' width='720px' style='margin:3rem' src='https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/04/The-Rock-920x584.jpg'>
+<% elsif @winner.include? @game.player2.name %>
+  <img align='center' style='margin:3rem' src='https://bloggingdoesntgettougherthanthis.files.wordpress.com/2012/10/man-v-food-glut-3.jpg'>
+<% else %>
+  <img align='center' style='margin:3rem' src='https://i.imgur.com/s4dTtBy.jpg'>
+<% end %>
+</div>
+
+
