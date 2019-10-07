@@ -1,0 +1,23 @@
+<h2><%= @game.player.name.capitalize %> chose <%= @game.player.choice %>... </h2>
+<br>
+<h3> Computer chose <%= @game.computer.selection %>!! </h3>
+<br>
+<% if @game.player.choice == "rock" && @game.computer.selection == "scissors" %>
+<h1>You beat the computer!</h1>
+<% elsif @game.player.choice == "rock" && @game.computer.selection == "rock" %>
+<h1>You drew with the computer!</h1>
+<% elsif @game.player.choice == "rock" && @game.computer.selection == "paper" %>
+<h1>You lose to the computer!</h1>
+<% elsif @game.player.choice == "paper" && @game.computer.selection == "rock" %>
+<h1>You beat the computer!</h1>
+<% elsif @game.player.choice == "paper" && @game.computer.selection == "paper" %>
+<h1>You drew with the computer!</h1>
+<% elsif @game.player.choice == "paper" && @game.computer.selection == "scissors" %>
+<h1>You lose to the computer!</h1>
+<% elsif @game.player.choice == "scissors" && @game.computer.selection == "paper" %>
+<h1>You beat the computer!</h1>
+<% elsif @game.player.choice == "scissors" && @game.computer.selection == "scissors" %>
+<h1>You drew with the computer!</h1>
+<% elsif @game.player.choice == "scissors" && @game.computer.selection == "rock" %>
+<h1>You lose to the computer!</h1>
+<% end %>
