@@ -1,0 +1,25 @@
+<%= @player_1_name %>  get ready for Rock Paper Scissors!
+
+<form action="/play" method="post">
+  <p>Select your move:</p>
+
+  <div>
+    <input type="radio" id="rock" name="move" value="rock"
+           checked>
+    <label for="rock">Rock</label>
+  </div>
+
+  <div>
+    <input type="radio" id="paper" name="move" value="paper">
+    <label for="paper">Paper</label>
+  </div>
+
+  <div>
+    <input type="radio" id="scissors" name="move" value="scissors">
+    <label for="scissors">Scissors</label>
+  </div>
+
+  <input type="submit" value="Submit">
+</form>
+
+You won!
