@@ -1,0 +1,13 @@
+body {
+  background-color: #c7e0a3;
+  font-family: helvetica;
+}
+
+div {
+  margin: auto;
+  text-align: center;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+}

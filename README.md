@@ -1,86 +1,44 @@
-# RPS Challenge
+# Rock, Paper, Scissors, Lizard, Spock
+This is a game that let's you play a game of rock paper scissors lizard spock, you can play single player against the computer or multiplayer. The app is written in Ruby using Sinatra as the framework.
 
-Instructions
--------
+### How do I Use it?
+1. Clone this repo `https://github.com/Caitlin-cooling/rps-challenge.git`
+2. Run `bundle` to install all gems
+2. Run the ruby file `app.rb`, this will start your server. Then in your browser go to `localhost:4567`, where you will see the index page of the app
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+![alt text](./public/homepage.png)
 
-Task
-----
+This game is suitable for either one or two players:
 
-Knowing how to build web applications is getting us almost there as web developers!
+#### Single Player
+You will be asked for your name, and you will be playing against the computer. You will be able to pick the move that you would like to make; rock, paper or scissors.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+You will then be redirected to a page that confirms both your and the computers moves, and let's you know you who won. Click try again to restart the game.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+#### Two Players
+You will be asked for the names of the two players. Once these has been entered you will be told who's turn it is and they will get to choose the move that they would like to make; rock, paper or scissors. Then it will be the next persons turn to do the same.
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+You will then be redirected to a page that confirms both moves and let's you know you who won. Click try again to restart the game.
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+### Running the tests
+The tests for this program use rspec and capybara, so simply run `rspec` from within this directory. Simplecov is used to check test coverage.
 
-Hints on functionality
+All tests are passing and test coverage is 100%.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+![alt text](./public/tests.png)
 
+### Linting
+The code is linted with Rubocop, run `rubocop` from within the directory to see offences. Linter is currently passing.
 
-As usual please start by
+### My Approach to Solving this Problem
+I took an iterative approach when solving this problem. I first implemented single player with only choices of rock, paper and scissors. Then I implemented multiplayer. After this I implemented the extra moves; lizard and spock and brought single player and multiplayer in a single app.
 
-* Forking this repo
-* TEST driving development of your app
+I TDD'd the app using OOP principles. For example I refactored to ensure separation of concerns for example using the `messages` module to handle display messages.
 
+I have used Travis as CI tool
 
-## Bonus level 1: Multiplayer
+### Structure
+The model (classes and modules) is held in the `lib` folder. Views for the pages are held in the `views` folder. `App.rb` is the controller for the app. All tests are in the `spec` folder, these are split into `features` and `units` folders. The `public` folder contains style sheets and images.
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+### Known Issues
+* I am aware that setting the moves conditionally in the post /results route could perhaps be done more effectively
