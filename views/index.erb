@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style media="screen">
+
+      body {
+        font-family: 'Indie Flower', cursive;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 50px;
+        margin-bottom: 100px;
+      }
+
+      img {
+        margin-bottom: 32px;
+        display: flex;
+        margin: auto;
+        padding-bottom: 83px;
+      }
+
+      .form1 {
+        display: flex;
+        margin: auto;
+        text-align: center;
+        width: 50%;
+        padding-left: 20px;
+      }
+
+      .form2 {
+        display: flex;
+        margin: auto;
+        text-align: center;
+        width: 50%;
+        float: right;
+        bottom: 50px;
+        left: 15%;
+        position: relative;
+      }
+
+      button {
+        height: 49px;
+        width: 147px;
+        border-radius: 25px;
+      }
+
+      button:focus {
+        outline: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Rock Paper Scissors App</h1>
+
+    <img src="images/rps.png" alt="Rock, Paper Scissors">
+    <form class="form1" action="/single-player" method="get">
+      <button type="submit" name="single_player">Single Player Mode</button>
+    </form>
+    <form class="form2" action="/multiplayer" method="get">
+      <button type="submit" name="multiplayer">Multiplayer Mode</button>
+    </form>
+  </body>
+</html>
