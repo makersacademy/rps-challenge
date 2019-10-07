@@ -1,0 +1,24 @@
+body {
+  text-align: center;
+  background-color: #559E54;
+  font-family: Arial, Gadget, sans-serif;
+  color: #341109;
+  line-height: 1.5;
+}
+
+
+h1 {
+  font-family: "Arial Black", Gadget, sans-serif;
+  color: #341109;
+}
+
+input[type=text] {
+  width: 200px;
+  padding: 10px;
+  border: 2px solid #B83214;
+  border-radius: 4px;
+}
+
+input[type=submit] {
+  width: 200px;
+}
