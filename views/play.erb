@@ -1,0 +1,35 @@
+<head>
+  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
+<center><br>
+<% if @player %>
+<h1>Hello, <%= @player%>!</h1><br>
+<h2>3...2....1!</h2>
+<% end %>
+
+<% unless @player %>
+<% if @play_result == "win" %>
+<img src = "https://media.giphy.com/media/l49JHLpRSLhecYEmI/giphy.gif" height= "200" width="300">
+<% end %>
+<% if @play_result == "draw" %>
+<img src = "https://media.giphy.com/media/pCytDP27ewPde/giphy.gif" height= "180" width="300">
+<% end %>
+<% if @play_result == "lose" %>
+<img src = "https://media.giphy.com/media/10TChms09MZfUY/giphy.gif" height= "180" width="300">
+<% end %>
+<h1>You <%= @play_result%>!</h1>
+<h2>Your opponent's pick : <%= @opponent_pick %></h2><br>
+<h2>Want to play again?</h2><br>
+<% end %>
+
+<form action = "/result" method = "post"><div>
+<input type = "submit" name = "Rock" value = "Rock" class="button" style="border:none">
+<input type = "submit" name = "Paper" value = "Paper" class="button" style="border:none">
+<input type = "submit" name = "Scissors" value = "Scissors" class="button" style="border:none">
+</div></form>
+
+<%unless @player %>
+<br><h6><a href="/">Go back to main</a></h6>
+<% end %>
+</center>
