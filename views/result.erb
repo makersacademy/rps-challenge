@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/css/drop-in.css">
+    </head>
+  <body>
+    <div>
+      <h1>You selected <%= @player_move %></h1>
+    </div>
+    <div>
+      <% if @player_move == 'Rock' %>
+      <img class='player_choice' src="/images/therock.jpg">
+      <% elsif @player_move == 'Paper' %>
+      <img class='player_choice' src="/images/FDFMLVVFMMD0G34.LARGE.jpg">
+      <% elsif @player_move == 'Scissors' %>
+      <img class='player_choice' src="/images/edward-scissorhands.jpg">
+      <% end %>
+    </div>
+    <div>
+      <h1>The computer selected <%= @computer_move %></h1>
+    </div>
+    <div>
+      <h1><%= $game.result %></h1>
+    </div>
+    <div>
+    <form action="/" method="get">
+    <input type="submit" value="Play again?">
+    </form>
+    </div>
+  </body>
+</html>
