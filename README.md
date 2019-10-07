@@ -1,24 +1,6 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
+# The user stories
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -26,61 +8,44 @@ I would like to register my name before playing an online game
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
-```
 
-Hints on functionality
+# The required functionality
+the marketeer should be able to enter their name before the game
+the marketeer will be presented the choices (rock, paper and scissors)
+the marketeer can choose one option
+the game will choose a random option
+a winner will be declared
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+# The rules of the game
+Rock beats Scissors
+Scissors beats Paper
+Paper beats Rock
+
+# The plan
+1. Write a test for a marketeer to enter their name
+2. Write the code to enter and display that name
+3. Write the test for 3 buttons
+4. Write the code for 3 buttons
+5. Write the test to confirm that the buttons return the correct values when pressed
+6. Write the button code to return Rock, Paper or scissors
+7. Write a test for the random generation... ?
+8. Generate the random computer option
+9. Write a test to determine a winner
+10. Write the code to determine a winner
 
 
-As usual please start by
+#########
 
-* Forking this repo
-* TEST driving development of your app
+I have decided to tackle this another way.
+I seem to be unable to write the tests so I have decided to design
+the system and then code it and then learn from that how to write the tests.
 
+The systems design:
+Views -
+There are 3 Views, the initial screen where the name is entered,
+the screen where you play the game and the final screen showing the winner.
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+The Classes - 
+There is a Player class, and reading through the whole challenge I would say
+that the computer is also a player.
+There is a Game class which contains the methods(rules) and objects to play the game.
