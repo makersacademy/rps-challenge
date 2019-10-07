@@ -1,0 +1,37 @@
+<style>
+  body {
+    text-align: center;
+    font-family: "Arial";
+    background-color: Turquoise ;
+    color: rgb(60,60,60);
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: Tomato;
+  }
+  h2 {
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: DeepPink;
+  }
+  button {
+    font-size: 25px;
+    width: 150px;
+    padding: 14px 40px;
+    border-radius: 8px;
+    background-color: SlateBlue;
+    color: white;
+  }
+</style>
+
+<h1><%=@player%> chose <b><%=@weapon%></b></h1>
+<h1>Computer chose <b><%=@machine%></b></h1>
+<h2><%=@outcome%></h2>
+
+<form action="/play">
+  <button type="submit">Try Again</button>
+  </form>
