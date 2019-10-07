@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="rps.css" type='text/css'>
+</head>
+<body>
+  <h1> <%= @game.player1.name %> vs <%= @game.player2.name %> !</h1>
+  <div class="options_form_container">
+    <form action="/selection" method="post">
+      <label for="player_1_option"> <%= @game.player1.name %>, choose from these different options: </label><br><br>
+      <input type="radio" name="option1" value="rock" id="rock_1" > rock<br>
+      <input type="radio" name="option1" value="paper" id="paper_1" > paper<br>
+      <input type="radio" name="option1" value="scissors" id="scissors_1"> scissors<br><br>
+      <label for="player_2_option"> <%= @game.player2.name %>, choose from these different options: </label><br><br>
+      <input type="radio" name="option2" value="rock" id="rock_2" > rock<br>
+      <input type="radio" name="option2" value="paper" id="paper_2" > paper<br>
+      <input type="radio" name="option2" value="scissors" id="scissors_2"> scissors<br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+body {
+  background-color: #40E0D0;
+  margin-top: 150px;
+}
+
+h1, h2, .name_form, .options_form_container, .introduction {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+}
+
+.introduction {
+  font-size: 50px;
+}
+#final_result {
+  font-size: 100px;
+}
