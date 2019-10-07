@@ -1,0 +1,15 @@
+<div>
+  <%= @user == :p ? @game.player_name : @game.opponent_name %>'s Turn
+</div>
+<div>
+
+  <form style="padding:10px;min-width:250px" action="/<%= @user == :p ? "player_move" : "opponent_move" %>"
+    method="post">
+    <fieldset title="Pick your move">
+      <% @game.rules.each_key do |move| %>
+      <label for="<%= move %>"><%= move.capitalize %>:</label><input type="radio" name="move" value="<%= move %>"><br>
+      <% end %>
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+</div>

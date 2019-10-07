@@ -1,0 +1,5 @@
+Please pass the game to <%= @game.opponent_name %>.<br>
+No peaking!<br>
+<form>
+  <button formaction="/opponent_move" formmethod="GET" type="submit">Only <%= @game.opponent_name %> can click this!</a>
+</form>

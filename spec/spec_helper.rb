@@ -1,3 +1,5 @@
+
+
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
@@ -8,6 +10,10 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+
+require_relative '../app/app.rb'
+require_relative './features/web_helpers.rb'
+Capybara.app = Rochambeau
 
 RSpec.configure do |config|
   config.after(:suite) do
