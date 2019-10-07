@@ -1,0 +1,9 @@
+<html>
+<body>
+<h1><%= @game.player.name %> you have played <%= @game.player_play %></h1>
+<br>
+<h2> The Computer has played <%= @game.computer_play %></h2>
+  <br>
+    <h3> The winner is <%= @game.results.results_store[(@game.round - 2)][:winner] %></h3>
+</body>
+</html>

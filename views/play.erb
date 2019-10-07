@@ -1,0 +1,25 @@
+<html>
+  <body>
+  <h1> Hey <%= @game.player.name %> </h1>
+  <br>
+      <form action='/result' method="post">
+        <br>
+        <button type="submit" id="play_type" value='ROCK' name='type'>ROCK</button>
+        <br>
+        <button type="submit" id="play_type" value='PAPER' name='type'>PAPER</button>
+        <br>
+        <button type="submit" id="play_type" value='SCISSORS' name='type'>SCISSORS</button>
+      </form>
+      <br>
+  <div style="text-align:center;">
+    <h4> Round <%= @game.round %> in a game of 3 </h4>
+  </div>
+  <div style="text-align:center;">
+    <h4> Previous round results are:</h4>
+    <br>
+
+    <h4> This is round <%= @game.round %>. There have been <%= @game.round_with_result %> rounds in the best of 3 </h4>
+  </div>
+
+</body>
+</html>
