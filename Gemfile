@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.6.0'
 
+gem 'flog'
+gem 'launchy'
 gem 'rake'
 gem 'sinatra'
 

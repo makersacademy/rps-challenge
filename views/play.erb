@@ -1,0 +1,11 @@
+<h1>
+  It's <%=@game.player1%> vs <%=@game.player2%>!
+</h1>
+<% if @game.mode == 'two_player' %>
+It's <%=@game.turn%>'s turn - make your choice (<%=@game.not_turn%> no looking!)
+<%end%>
+<form action='/play' method=post>
+<input type='submit' value='Rock' name=choice>
+<input type='submit' value='Paper' name=choice>
+<input type='submit' value='Scissors' name=choice>
+</form>
