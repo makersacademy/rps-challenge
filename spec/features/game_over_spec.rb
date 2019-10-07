@@ -6,6 +6,13 @@ feature 'Game over' do
     expect(page).to have_content 'Game over'
   end
 
+  scenario 'shows what move both players played' do
+    sign_in_start_game
+    click_button 'Submit'
+    click_button 'Submit'
+    expect(page).to have_content 'Jess chose Rock and James chose Rock'
+  end
+
   # scenario 'when player 1 wins' do
   #   sign_in_start_game
   #   click_button 'Submit'
@@ -31,6 +38,6 @@ feature 'Game over' do
     sign_in_start_game
     click_button 'Submit'
     click_button 'Submit'
-    expect(page).to have_button 'Play again' 
+    expect(page).to have_button 'Play again'
   end
 end

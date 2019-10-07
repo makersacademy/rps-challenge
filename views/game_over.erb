@@ -1,5 +1,8 @@
 Game over
 <div>
+  <%= @game.player_1.name %> chose <%= @game.player_1.choice %> and <%= @game.player_2.name %> chose <%= @game.player_2.choice %>
+</div> 
+<div>
 <% if Game.outcome == 'WINNER' %>
   <%= @game.player_1.name %> is the winner!
 <% elsif Game.outcome == 'DRAW' %>
