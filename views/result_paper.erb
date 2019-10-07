@@ -1,0 +1,10 @@
+<h1>Game selection is <%=@game.choice%></h1>
+
+
+<%if @game.choice == "Scissors"%>
+<h1>You Lose</h1>
+<%elsif @game.choice == "Rock"%>
+<h1>You Win</h1>
+<%else%>
+<h1>It's a draw</h1>
+<%end%>
