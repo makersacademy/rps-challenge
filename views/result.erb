@@ -1,0 +1,18 @@
+<center>
+  <h1>Hello <%= @name %></h1>
+  <h1>You picked <%= @game.user_choice %></h1>
+  <h1>Computer picked <%= @game.computer_choice %></h1>
+
+  <% if @game.who_wins? == "user" %>
+    <h1><font color="green"><%= "You Win" %></font></h1>
+  <% elsif @game.who_wins? == "computer" %>
+    <h1><font color="red"><%= "Computer Wins" %></font></h1>
+  <% else %>
+    <h1><%= "Tie" %></h1>
+  <% end %>
+
+  <form action="/" method="get">
+    <input type="submit" value="Play Again">
+  </form>
+
+</center>
