@@ -10,8 +10,20 @@ class Roshambo < Sinatra::Base
 
   post "/name" do
     $humanplayer = Player.new(params[:playername])
+    erb :playerselection
+  end
+
+  get "/2player" do
+    erb :player2nameentry
+  end
+
+  post "2playernameentry" do
+    $humanplayer2 = Player.new(params[:playername])
+  end
+
+  get "/bender" do
     $computerplayer = Player.new("Bender")
-    redirect '/play'
+    erb :play
   end
 
   get "/play" do
@@ -19,6 +31,7 @@ class Roshambo < Sinatra::Base
   end
 
   post "/move" do
+    puts params["move"]
     $humanplayer.mymove(params["move"])
     erb :result
   end

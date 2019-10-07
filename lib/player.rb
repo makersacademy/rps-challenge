@@ -12,6 +12,4 @@ attr_accessor :name, :move
     @move = mymove
   end
 
-  
-
 end
