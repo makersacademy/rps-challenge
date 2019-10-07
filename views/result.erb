@@ -1,0 +1,12 @@
+<%= @game.player.name %>'s choice: <%= @game.player.choice %>
+<br>
+<%= @game.computer.name %>'s choice: <%= @game.computer.choice %>
+<br>
+<%= @result %>
+<br>
+<form action="/play">
+  <button>Let's play again</button>
+</form>
+<form action="/">
+  <button>Home page</button>
+</form>
