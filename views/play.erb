@@ -1,0 +1,52 @@
+<style>
+#vcontainer {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+#hcontainer {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+#content {
+  display: inline-block;
+  border: lightGray 1px solid;
+  background-color: #EE82EE;
+  text-align: left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: black;
+  font-family: 'Acme', sans-serif;
+}
+
+.button {
+  background-color: #ffffff;
+  border: solid 3px #000000;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button5 {border-radius: 50%;}
+
+</style>
+<body>
+<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+  <div id="vcontainer"><div id="hcontainer">
+    <div id="content">
+    </div>
+    <h2>Which wonky button tickles ye?</h2>
+    <form action="/move" method="post">
+    <button class="button button5"><input type="submit" name="move" value="rock"></button>
+    <button class="button button5"><input type="submit" name="move" value="paper"></button>
+    <button class="button button5"><input type="submit" name="move" value="scissors"></button>
+  </form> 
+  </div></div>
+</body>
+
