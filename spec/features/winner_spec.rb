@@ -3,7 +3,7 @@ feature 'Winner is selected' do
   #   sign_in_and_play
   #   fill_in(:player_1_move, with: 'Paper')
   #   click_button("Play!")
-  #   allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+  #   allow_any_instance_of(Player).to receive(:play_move) {'Scissors'}
   #   expect(page).to have_content("COMPUTER wins this round!")
   # end
 

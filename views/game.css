@@ -1,0 +1,13 @@
+body {
+  font-family: 'Roboto', serif;
+  margin: 0;
+  background-color: #D7EBF0;
+}
+h1 {
+  color: steelblue;
+  text-align: center;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1.1;
+  padding: 20px 0;
+}

@@ -1,7 +1,40 @@
-<h1> Rock ~ Paper ~ Scissors </h1>
-<h2>Do you want to play single or multiplayer?</h2>
+<head>
 
-<h2>Single player:</h2>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Roboto', serif;
+    margin: 0;
+    background-color: #D7EBF0;
+  }
+  h1 {
+    color: steelblue;
+    text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1.1;
+    padding: 20px 0;
+  }
+  h3 {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+</style>
+
+</head>
+
+<body>
+<h1> Rock ~ Paper ~ Scissors </h1>
+<h3>Do you want to play single or multiplayer?</h3>
+
+<p>
+  <form action='/multiplayer'>
+  <input type="submit" value="Multiplayer">
+  </form>
+</p>
+
   <form action='/name' method='post'>
 
   <label for="player_1">
@@ -9,10 +42,7 @@
   <input type='text' name='player_1'>
   <input type="submit" name="Ready!" value="Ready!">
   </form>
-</h1>
 
-<h2>Multiplayer:</h2>
-<h2>
-  <form action='/multiplayer'>
-  <input type="submit" value="Multiplayer">
-</h2>
+
+
+</body>
