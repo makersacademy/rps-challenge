@@ -1,0 +1,16 @@
+<head>
+  <title>RPSLS</title>
+  <link rel="stylesheet" type = "text/css" href="/stylesheet.css">
+</head>
+
+<body>
+  <div>
+    <img src="rock-paper-scissors.png" alt="Rock, Paper, Scissors, Lizard, Spock">
+    <p><%= @player1_name %>'s move was <%= @player1_move %></p>
+    <p><%= @player2_name %>'s move was <%= @player2_move %></p>
+    <h1><%= @winner %></h1>
+    <form action="/" method="get">
+      <input type="submit" value="Try Again">
+    </form>
+  </div>
+</body>
