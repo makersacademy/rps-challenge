@@ -1,0 +1,36 @@
+<style>
+body {background-color: powderblue;
+  text-align: center;
+  vertical-align: middle;
+  font-family: sans-serif}
+.tg  {border-collapse:collapse;border-spacing:0;align:center}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+ <body>
+<h1>Rock, Paper, Scissors game</h1>
+<br>
+<form action='/gameoptions' method='post'>
+<h2>What version of the game do you want to play?</h2>
+<table class="tg" align="center">
+  <tr>
+    <th class="tg-0lax"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/600px-Rock-paper-scissors.svg.png" alt="standard" height="200"></th>
+    <th class="tg-0lax"><br>
+      <input type="radio" name="version" value="standard" id="standard">Rock, Paper, Scissors<br>
+      <input type="radio" name="version" value="extended" id="extended">Rock, Paper, Scissors, Spock, Lizard<br>
+    </th>
+    <th class="tg-0lax"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Pierre_ciseaux_feuille_l%C3%A9zard_spock_aligned.svg/350px-Pierre_ciseaux_feuille_l%C3%A9zard_spock_aligned.svg.png" alt="extended" height="200"></th>
+  </tr>
+</table>
+<br>
+<h2>Who do you want to play against?</h2>
+<section class='singleplayer'>
+<input type="radio" name="mode" value="singleplayer" id="singleplayer"> Computer<br>
+</section>
+<input type="radio" name="mode" value="multiplayer" id="multiplayer"> Another player<br>
+<br>
+  <input type='submit' value='Submit'>
+</form>
+</label>
+</body>

@@ -1,0 +1,23 @@
+<style>
+body {background-color: powderblue;
+  text-align: center;
+  vertical-align: middle;
+  font-family: sans-serif}
+</style>
+ <body>
+ <%if session[:version] == 'standard' %>
+ <h1>Rock, Paper, Scissors game</h1>
+ <% end %>
+ <%if session[:version] == 'extended' %>
+ <h1>Rock, Paper, Scissors, Spock, Lizard game</h1>
+ <% end %>
+
+<br>
+   <h2>Enter your names</h2>
+<form action="/names" method="post">
+  <input type="text" name="player_1_name" />
+  <input type="text" name="player_2_name" />
+  <input type="submit" value="Submit" />
+</form>
+
+</body>
