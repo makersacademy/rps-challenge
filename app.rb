@@ -21,6 +21,10 @@ class Rps < Sinatra::Base
 
   get '/game_result' do
     @game.player_1.move ||= params[:player_1_move]
+    p1move = @game.player_1.move
+    p2move = @game.player_2.player_2_move
+    @winner = @game.winner(p1move, p2move)
+    @p2move = p2move
     erb :game_result
   end
 

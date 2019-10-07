@@ -18,9 +18,9 @@ describe Game do
     end
   end
 
-  describe '#winner?' do
-    it 'announces the winner' do
-      expect(game.winner?).to eq player_1
+  describe '#winner' do
+    it 'returns who is the winner' do
+      expect(game.winner("Rock", "Scissors")).to eq "Player"
     end
   end
 end

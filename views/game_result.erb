@@ -1,4 +1,10 @@
 <h1 style="text-align:center;">Rock, Paper, Scissors!</h1>
 <h2><%= @game.player_1.name %> picked: <%= @game.player_1.move %></h2>
-<h2><%= @game.player_2.name %> picked: <%= @game.player_2.player_2_move %></h2>
-<h2><%= @game.winner? %> Wins!</h2>
+<h2><%= @game.player_2.name %> picked: <%= @p2move %></h2>
+<h2>
+<% if @winner == "Draw" %> No One Wins!
+<% elsif @winner == "Robot" %> Robot Wins!
+<% elsif @winner == "Player" %> <%= @game.player_1.name %> Wins!
+<% else %> "error"
+<% end %>
+</h2>
