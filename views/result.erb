@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <style>
+    form {
+  text-align: center;
+  }
+  div {
+    background-color: #e2bb85;
+    color: #0a0a0a;
+    padding: 22px;
+  }
+  </style>
+</head>
+<body>
+    <div>
+      <h2>Time to reveal weapons!
+      </h2>
+      <br>
+      <h2>
+        <%= @name %> has chosen <%= @weapon_1.type.capitalize %>!
+        <br>
+        <br>
+        <%= @computer_name %> has chosen <%= @weapon_2.type.capitalize %>!
+        <br>
+        <% if @result == "YOU HAVE WON!" %>
+        <img src="http://www.powaydaysparade.org/wp-content/uploads/2015/09/winner.jpeg">
+        <% end %>
+        <br>
+        <%= @name %>, <%= @result %>
+      </h2>
+    </div>
+</body>
+</html>
