@@ -33,6 +33,8 @@
 
     <h1> <%= @winner.player_1.name %> vs <%= @winner.player_2.name %> </h1>
 
+    <h2> <%= @winner.player_1.name %>'s turn!</h2>
+
     <form action="/fight" method="post">
 
       <select name="RPS1" id="RPS1">

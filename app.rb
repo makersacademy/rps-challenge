@@ -39,13 +39,14 @@ enable :sessions
       @winner.player_1.choose(params[:RPS1])
       redirect '/winner'
     elsif @winner.player_2.choice == nil
+      @winner.player_1.choose(params[:RPS1])
       redirect '/play_2'
-    else redirect '/winner'
+    else
+      redirect '/winner'
     end
   end
 
   get '/winner' do
-    @winner.player_2.choose(params[:RPS2])
     erb(:winner)
   end
 
