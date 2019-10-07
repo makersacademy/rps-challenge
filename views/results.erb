@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+  <title>Results</title>
+  </head>
+  <body style="background-color: #333;">
+    <br>
+    <br>
+    <br>
+    <section class="col-md-8 mx-auto card">
+      <form action="/results" method="post">
+        <h1 style="color: black; text-align: center; margin-top: 15px;"> <%= @player %> Vs Ruby </h1>
+        <hr>
+          <h1 style="color: black; text-align: center;"> <%= @player_selected %> - <%= @computer_selected %></h1>
+        <hr>
+      </form>
+        <div style="text-align: center;">
+          <% if @player_selected == @computer_selected %>
+            <h1 style="color: black;">IT'S A DRAW!</h1>
+            <form action="/play_again">
+              <div style="margin-bottom: 15px;">
+              <input type="submit" value="Play again" class="btn btn-outline-warning btn-lg btn-block">
+              </div>
+            </form>
+          <% elsif @player_selected == 'Rock' && @computer_selected == 'Scissors' %>
+            <h1 style="color: green;">YOU WIN!</h1>
+            <form action="/play_again">
+              <div style="margin-bottom: 15px;">
+              <input type="submit" value="Play again" class="btn btn-outline-success btn-lg btn-block">
+              </div>
+            </form>
+          <% elsif @player_selected == 'Rock' && @computer_selected == 'Paper' %>
+            <h1 style="color: red;">YOU LOSE!</h1>
+            <form action="/play_again">
+              <div style="margin-bottom: 15px;">
+              <input type="submit" value="Play again" class="btn btn-outline-danger btn-lg btn-block">
+              </div>
+            </form>
+          <% elsif @player_selected == 'Paper' && @computer_selected == 'Rock' %>
+            <h1 style="color: green;">YOU WIN!</h1>
+            <form action="/play_again">
+              <div style="margin-bottom: 15px;">
+              <input type="submit" value="Play again" class="btn btn-outline-success btn-lg btn-block">
+              </div>
+            </form>
+          <% elsif @player_selected == 'Paper' && @computer_selected == 'Scissors' %>
+            <h1 style="color: red;">YOU LOSE</h1>
+            <form action="/play_again">
+              <div style="margin-bottom: 15px;">
+              <input type="submit" value="Play again" class="btn btn-outline-danger btn-lg btn-block">
+              </div>
+            </form>
+          <% elsif @player_selected == 'Scissors' && @computer_selected == 'Rock' %>
+            <h1 style="color: red;">YOU LOSE!</h1>
+            <form action="/play_again">
+              <div style="margin-bottom: 15px;">
+              <input type="submit" value="Play again" class="btn btn-outline-danger btn-lg btn-block">
+              </div>
+            </form>
+          <% elsif @player_selected == 'Scissors' && @computer_selected == 'Paper' %>
+            <h1 style="color: green;">YOU WIN!</h1>
+            <form action="/play_again">
+              <div style="margin-bottom: 15px;">
+              <input type="submit" value="Play again" class="btn btn-outline-success btn-lg btn-block">
+              </div>
+            </form>
+          <% end %>
+      </div>
+    </section>
+  </body>
+</html>

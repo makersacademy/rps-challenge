@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+  <title>Selectors</title>
+  </head>
+  <body style="background-color: #333;">
+    <br>
+    <br>
+    <br>
+    <section class="col-md-6 mx-auto card">
+      <br>
+      <div>
+        <h1>Welcome <%= @player %> </h1>
+        <p>Please select rock, paper or scissors</p>
+      </div>
+      <form action="/storage2" method="post">
+        <div class="form-group">
+          <select name="rock_paper_scissors" class="form-control">
+            <option value="Rock">Rock</option>
+            <option value="Paper">Paper</option>
+            <option value="Scissors">Scissors</option>
+          </select>
+        </div>
+        <br>
+          <input type="submit" value="Play" class="btn btn-outline-success btn-lg btn-block">
+        <br>
+      </form>
+    </section>
+  </body>
+</html>
