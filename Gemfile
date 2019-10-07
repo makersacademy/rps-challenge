@@ -4,6 +4,7 @@ ruby '2.6.0'
 
 gem 'rake'
 gem 'sinatra'
+gem 'javascript', '~> 0.0.2'
 
 group :test do
   gem 'capybara'

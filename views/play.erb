@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+<%= "Please work... #{ @player1 }!" %><br>
+<form action="/" method="post">
+<button onclick ="myFunctionRock()"">Rock!</button>
+<button onclick ="myFunctionPaper()"">Paper!</button>
+<button onclick ="myFunctionScissors()"">Scissors!</button>
+
+<p id="outcome"></p>
+
+<script>
+
+var choice = " ";
+var botArray = ["Rock" , "Paper" , "Scissors"];
+var rand = botArray[Math.floor(Math.random() * botArray.length)];
+
+function myFunctionRock() {
+  choice = "Rock";
+  jsLogic(choice);
+}
+
+function myFunctionPaper() {
+  choice = "Paper";
+  jsLogic();
+}
+
+function myFunctionScissors() {
+  choice = "Scissors";
+  jsLogic();
+}
+
+function jsLogic() {
+  if (choice == rand) {
+    document.getElementById("outcome").innerHTML = "No One Wins!";
+  } else if (choice == "Rock" && rand == "Paper") {
+    document.getElementById("outcome").innerHTML = "You Lose!";
+  } else if (choice == "Rock" && rand == "Scissors") {
+    document.getElementById("outcome").innerHTML = "You Win!";
+  } else if (choice == "Paper" && rand == "Rock") {
+    document.getElementById("outcome").innerHTML = "You Win!";
+  } else if (choice == "Paper" && rand == "Scissors") {
+    document.getElementById("outcome").innerHTML = "You Lose!";
+  } else if (choice == "Scissors" && rand == "Rock") {
+    document.getElementById("outcome").innerHTML = "You Lose!";
+  } else if (choice == "Scissors" && rand == "Paper") {
+    document.getElementById("outcome").innerHTML = "You Win!";
+  }
+}
+
+</script>
+</form>
+</body>
+</html>
