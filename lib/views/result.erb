@@ -1,0 +1,17 @@
+<body style="background-color:powderblue;">
+<center>
+<h1>
+You chose <%= @game.user %> and the computer chose <%= @game.computer %>
+  </h1>
+
+<h2>
+  <%= @result %>
+</h2>
+
+<form action="/play" method="get">
+  <input type="submit" value="Play again!" >
+</form>
+
+<img src="https://www.959chfm.com/wp-content/uploads/sites/12/2018/02/sansome.jpg">
+</center>
+</body>
