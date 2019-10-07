@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/style.css"/>
+<title>Rock Paper Scissors - Results</title>
+</head>
+<body>
+
+  <div class="grid-container-result">
+    <div class="item1"><h1>... and the winner is ...</h1></div>
+    <div class="item3"><button class="<%=@game.player1.choice%>_btn"></button><h2><%=@game.player1.name%> played <%=@game.player1.choice%></h2></div>
+    <div class="item5"><button class="<%=@game.player2.choice%>_btn"></button><h2><%=@game.player2.name%> played <%=@game.player2.choice%></h2></div>
+    <div class="item4">
+<%if @game.win_logic == "draw"%>
+<h2>It's a draw</a></h2>
+<%else%>
+<h1 class="flashit"><%=@game.win_logic.name%> wins</h1>
+
+<%end%>
+<p><button type="button" class="restart_btn" value="Play" onclick="location.href='/';"></button><!--<a href="/" class="restart_btn">play again?</a>--></p>
+</div>
+
+</div>
+
+</body></html>
