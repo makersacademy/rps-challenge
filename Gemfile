@@ -12,3 +12,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
+group :dev do
+  gem 'solargraph'
+  gem 'pry-byebug'
+end
