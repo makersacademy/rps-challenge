@@ -1,0 +1,17 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<p>
+<br>
+<br>
+You chose <%= @player_move %>
+<br>
+The computer chose <%= @computer_result %>!
+<br>
+</p>
+<h1><%= @game_result %></h1>
+<br>
+<form action="/play-again" method="post">
+  <input type="submit" value="Play again">
+</form>
