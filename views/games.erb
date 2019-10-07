@@ -1,0 +1,18 @@
+<h1> Games </h1>
+<h2>Hi <%= @user_mgmt.users[-1].name %>, choose a game below... </h2>
+<br>
+<form action='/games/rock_paper_scissors'>
+  <input type="submit" name="rock_paper_scissors" value="Rock Paper Scissors">
+</form>
+
+<div>
+  <br>
+  List of players currently online:
+  <br>
+  <%= @user_mgmt_html.users_to_html_list %>
+</div>
+
+<div>
+  <br>
+  <a href='/'> Sign in more players </a>
+</div>
