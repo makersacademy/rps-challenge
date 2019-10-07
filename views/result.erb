@@ -1,0 +1,22 @@
+<head>
+  <link rel = "stylesheet"
+   type = "text/css"
+   href = "/stylesheet.css" />
+  <title>Rock, Paper, Scissors!</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>You chose <%= @game.player.weapon %></h1>
+      <h1>Computer chose <%= @game.computer.random_choice %></h1>
+      <h1><% if @game.winner == @game.player %>
+        You win!
+        <% elsif @game.winner == @game.computer %>
+        Computer wins!
+        <% elsif @game.winner == :draw %>
+        It's a draw!
+        <% end %></h1>
+    </div>
+  </div>
+</body>

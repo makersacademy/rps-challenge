@@ -1,0 +1,19 @@
+<head>
+  <link rel = "stylesheet"
+   type = "text/css"
+   href = "/stylesheet.css" />
+  <title>Rock, Paper, Scissors!</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Make your selection, <%= @game.player.name %></h1>
+        <form action="choice" method="post">
+          <input type="submit" name="choice" value="Rock">
+          <input type="submit" name="choice" value="Paper">
+          <input type="submit" name="choice" value="Scissors">
+        </form>
+    </div>
+  </div>
+</body>
