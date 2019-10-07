@@ -1,0 +1,34 @@
+<body style = ' background: url("https://pixabay.com/get/54e8d74b4855ad14f6d1867dda6d3e79133ddeec5a4c704c732a7fd69e4ecd5a/rehilete-2828271_1920.jpg")no-repeat  center center fixed;background-color: #cccccc;'>
+<div style ='text-align: center; margin: 0 auto; color: white; letter-spacing: 5px;margin-top: 150px; padding: 20px; width: 20vw; height: 20vh; border: 1px solid white' >
+<p> Your move: <%= @player_move %> </p>
+<p> Computer move: <%= @computer_move %> </p>
+
+
+  <%if @result == 'draw'%>
+  <strong style = 'color:white'> DRAW! </strong>
+  <p> Try again <%= Player.name %> </p>
+  <img src ='https://pixabay.com/get/50e1d34b4a51b10ff3d89938b977692b083edbe35655754b772c78/bird-616803_640.png'
+  style ='width: 210px; height: 250px; margin-top: 70px
+  '
+  >
+  <%elsif @result == false %>
+      <strong style = 'color:white'> LOSE! </strong>
+      <p> Sorry <%= Player.name %> </p>
+      <img src ='https://pixabay.com/get/52e3d34a4352a814f1dc8460825668204022dfe05554754a702a72d5/birds-4369904_640.png'
+  style ='width: 310px; height: 250px; margin-top: 70px
+  '
+  >
+<%elsif @result %>
+  <strong style = 'color:white'> WON! </strong>
+  <p> Congratulation <%= Player.name %> </p>
+  <img src ='https://pixabay.com/get/55e0d0424b53b10ff3d89938b977692b083edbe35655724c772772/wreath-305111_640.png'
+  style ='width: 310px; height: 250px; margin-top: 70px
+  '
+  >
+
+
+<%end%>
+</div>
+<body>
+
+
