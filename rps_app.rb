@@ -10,6 +10,12 @@ class RPS < Sinatra::Base
     erb(:home)
   end
 
+  get '/reset' do
+    session[:move] = nil
+    session[:comp_move] = nil
+     redirect '/'
+  end
+
   post '/name' do
     session[:player] = params[:player].intern
     redirect '/play'
