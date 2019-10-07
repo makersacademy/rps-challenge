@@ -38,6 +38,7 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/weapon-choice' do
+    @link = '/play'
     erb :weapon_choice
   end
 
@@ -48,7 +49,7 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/p2-weapon' do
-    @p2_turn = true
+    @link = '/play2'
     erb :weapon_choice
   end
 
