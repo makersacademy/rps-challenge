@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.6.0'
 
+gem 'rack', '~> 2.0.1'
 gem 'rake'
+gem 'shotgun'
 gem 'sinatra'
 
 group :test do
