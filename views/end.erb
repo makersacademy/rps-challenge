@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <%= @game.player1.name %> chose <%= @game.player1.current_move %>.
+  <br>
+  <%= @game.player2.name %> chose <%= @game.player2.current_move %>.
+  <br>
+
+  <%= @game.win %>
+
+  <form action= <%= @play_again %> >
+  <button name="play_again" type="submit" value="Play again?">Play Again?</button>
+  </form>
+  </body>
+</html>

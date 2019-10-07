@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <h1>  Welcome, <%= @game.player1.name %>! </h1>
+  <br>
+  Ok, what's your move?
+  <br>
+  <form action="/move" method="post">
+  <button name="move" type="submit" value="Rock">Rock</button>
+  <button name="move" type="submit" value="Paper">Paper</button>
+  <button name="move" type="submit" value="Scissors">Scissors</button>
+  </form>
+  </br>
+  </body>
+</html>
