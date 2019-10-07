@@ -84,3 +84,25 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+## Challenge log
+
+Start by modelling on paper how the game will look.
+Fork + Clone Repo
+Check spec_helper.rb for simplecov
+For feature test 1 - create a features subdirectory in the Spec directory.
+Run ‘bundle install’ to install all gem file dependencies
+Write first feature test for a player visiting the home page and entering their name.
+Get the 1st test to pass with functional code.  Also works through a browser.
+Test missing ‘name in lights’ component Add this by googling how to change text colour but to not TDD this part.
+Run rubocop - no offences detected.
+Run rspec - 100% coverage and no failing tests.
+Git push.
+Update Readme and submit a pull request.
+
+## What next
+
+To complete the final user story I would plan to do the following:
+
+On the ‘name’ page add a ‘form’ which gives the player the chance to chose rock, paper or scissors.
+Send the players choice to a new component in app.rb that will run a  game of RPS.  The 2nd player (the computer) will use a random method to generate a choice.  After that, the game will run through the method using if/else. The method will return a string with the result to a result page routed through the app.rb file
