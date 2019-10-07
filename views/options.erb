@@ -1,0 +1,43 @@
+<html>
+<head>
+  <style>
+  body, input, select {
+    background-color: #f9f509;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px
+  }
+
+  select, input {
+    width: 500px;
+    height: 50px;
+    background-color:#fff;
+    border-bottom: 2px solid
+  }
+
+  h1 {
+    color: #000;
+    margin-top: 50px;
+    text-align: center
+  }
+  </style>
+</head>
+<body>
+
+  <h1> Your turn, <%=@round.current_turn.name%>! </h1>
+
+  <form action= '/store-move' method='post'>
+  <select name = "move">
+    <option name = "rock">rock</option>
+    <option name = "paper">paper</option>
+    <option name = "scissors">scissors</option>
+  </select>
+  <input type= "submit" value="Go!">
+  </form>
+
+  <h4><%=@round.current_turn.name%> vs. <%=@round.opponent.name%> </h4>
+
+</body>
+
+</html>
