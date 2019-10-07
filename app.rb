@@ -58,7 +58,6 @@ class RpsApp < Sinatra::Base
     redirect '/end'
   end
 
-
   get '/end' do
     @game.outcome
     erb :end
