@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="/style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="header">
+        <h1 class="header-text">Rock, Paper, Scissors</h1>
+      </header>
+      <section class="content-wrapper">
+        <h2 class="form-title">Please enter player names</h2>
+        <div class="form-content">
+          <form action='/names' method='post'>
+            <label for="player_one">Player One:</label><br>
+             <input class="form-field" type='text' name='player_one'><br>
+            <label for="player_two">Player Two:</label><br>
+              <input class="form-field" type='text' name='player_two'><br>
+            <input class="submit-button" type="submit" value="Submit">
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
