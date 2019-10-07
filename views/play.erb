@@ -1,0 +1,15 @@
+<style media="screen">
+  body{
+    background-color: #9999ff;
+    margin-top: 150px;
+  }
+  h1, h2{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+</style>
+
+<h1><%= @player.name %> chose <%= @player.weapon %>...</h1>
+<h1><%= @game.computer.name %> chose <%= @game.computer.weapon %>...</h1>
+<h2><%= @game.winner %></h2>
