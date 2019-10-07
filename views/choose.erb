@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>RPS: A game of skill</title>
+  </head>
+  <body>
+  <style>
+    body {
+    background-color: #66ff99
+}
+  </style>
+    <h1> <%= @name %>, please choose your weapon </h1>
+    <form action="/result" method="post">
+      <input type="radio" name="weapon" value="rock"> Rock<br>
+      <input type="radio" name="weapon" value="paper"> Paper<br>
+      <input type="radio" name="weapon" value="scissors"> Scissors<br>
+      <br>
+      <input type="submit" value="Fight!">
+    </form>
+  </body>
+</html>
