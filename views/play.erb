@@ -1,0 +1,18 @@
+
+
+<h1>Hello <%= @player_name  %>! </h1>
+<h1> Choose... </h1>
+
+
+<!-- <form action="" method="post">
+    <input type="submit" name="upvote" value="Upvote" />
+</form> -->
+
+<form action="/choice" method="post">
+  <button type="submit" name="players_choice" value="Rock">Rock</button>
+  <button type="submit" name="players_choice" value="Paper">Paper</button>
+  <button type="submit" name="players_choice" value="Scissors">Scissors</button>
+</form>
+
+</body>
+</html>
