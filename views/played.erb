@@ -1,0 +1,36 @@
+<h2>The Result</h2>
+<% @mcp_choice = ["Rock", "Paper", "Scissors"].sample %>
+<% @player_1_res = "Lost" %>
+<% @player_1_res = "Won" if ( (@player_1_choice == "Rock" && @mcp_choice == "Scissors") || (@player_1_choice == "Paper" && @mcp_choice == "Rock") || (@player_1_choice == "Scissors" && @mcp_choice == "Paper") ) %>
+<% @player_1_res = "Draw" if (@player_1_choice == @mcp_choice) %>
+
+<% @res_text = "" %>
+<% if @player_1_res == "Won" %>
+  <% @res_text = @player_1 + " is the Winner!" %>
+<% elsif @player_1_res == "Lost" %>
+  <% @res_text = "MCP is the Winner!" %> 
+<% else %>
+  <% @res_text = "It's a Draw!" %>
+<% end %>
+
+<div style="background-color:beige; border:6px outset #F7730E; width: 800px;"><center>
+<table style="width: 800px;"><tr><th><b><%= @player_1 %> chose <%= @player_1_choice %></b></h3></th>
+<th><b>MCP chose <%= @mcp_choice %></b></h3></th><th><b><%= @res_text %></b></th></tr>
+<tr>
+<td style="width: 200px;"><center><img src = <%= @rps_hash[@player_1_choice] %> ></center></td>
+<td style="width: 200px;"><center><img src = <%= @rps_hash[@mcp_choice] %> ></center></td>
+<td style="width: 200px;"><center><img src = <%= @winner_img[@player_1_res] %> ></center></td>
+</tr>
+</table></center>
+</div>
+<style>
+  table, th, td {
+    border: 1px solid orange;
+  }
+  th, td {
+    padding: 10px;
+  }
+</style>
+
+<br>
+<h3><a href = "/names?player_1=<%= @player_1 %>">Play again</a>  or  <a href = "/">Quit</a></h3>

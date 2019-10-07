@@ -1,0 +1,35 @@
+<h2>The Result</h2>
+<% @player_1_res = "Lost" %>
+<% @player_1_res = "Won" if ( (@player_1_choice == "Rock" && @player_2_choice == "Scissors") || (@player_1_choice == "Paper" && @player_2_choice == "Rock") || (@player_1_choice == "Scissors" && @player_2_choice == "Paper") ) %>
+<% @player_1_res = "Draw" if (@player_1_choice == @player_2_choice) %>
+
+<% @res_text = "" %>
+<% if @player_1_res == "Won" %>
+  <% @res_text = @player_1 + " is the Winner!" %>
+<% elsif @player_1_res == "Lost" %>
+  <% @res_text = @player_2 + " is the Winner!" %> 
+<% else %>
+  <% @res_text = "It's a Draw!" %>
+<% end %>
+
+<div style="background-color:beige; border:6px outset #F7730E; width: 800px;"><center>
+<table style="width: 800px;"><tr><th><b><%= @player_1 %> chose <%= @player_1_choice %></b></h3></th>
+<th><b><%= @player_2 %> chose <%= @player_2_choice %></b></h3></th><th><b><%= @res_text %></b></th></tr>
+<tr>
+<td style="width: 200px;"><center><img src = <%= @rps_hash[@player_1_choice] %> ></center></td>
+<td style="width: 200px;"><center><img src = <%= @rps_hash[@player_2_choice] %> ></center></td>
+<td style="width: 200px;"><center><h3><%= @res_text %></h3></center></td>
+</tr>
+</table></center>
+</div>
+<style>
+  table, th, td {
+    border: 1px solid orange;
+  }
+  th, td {
+    padding: 10px;
+  }
+</style>
+
+<br>
+<h3><a href = "/two-player?player_1=<%= @player_1 %>&player_2=<%= @player_2 %>">Play again</a>  or  <a href = "/">Quit</a></h3>

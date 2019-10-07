@@ -1,0 +1,45 @@
+<h2>Now play against each other humans!</h2>
+<div style="background-color:beige; border:6px outset #F7730E; width: 600px;"><center>
+<table style="width: 600px;"><tr><th><b>Player 1</b></h3></th><th><b>Player 2</b></th></tr>
+<tr>
+<td style="width: 200px;"><center><h3><font color = "blue"><%= @player_1 %></font></h3></center></td>
+<td style="width: 200px;"><center><h3><font color = "blue"><%= @player_2 %></font></h3></center></td>
+</tr>
+</table></center>
+</div>
+<br>
+<style>
+  table, th, td {
+    border: 1px solid orange;
+  }
+  th, td {
+    padding: 10px;
+  }
+</style>
+
+<div style="background-color:beige; border:6px outset #F7730E; width: 600px;">
+<table>
+<tr><td>
+<h3><%= @player_1 %>: choose Rock, Paper or Scissors</h3>
+<center>
+<form action = "/two-done-played" method = "get">
+  <input type="hidden" name="player_1" value= <%= @player_1%> >
+  <input type="radio" name="player_1_choice" value="Rock" checked> Rock<br>
+  <input type="radio" name="player_1_choice" value="Paper"> Paper<br>
+  <input type="radio" name="player_1_choice" value="Scissors"> Scissors
+</center>
+</td>
+<td><h3><%= @player_2 %>: choose Rock, Paper or Scissors</h3>
+<center>
+  <input type="hidden" name="player_2" value= <%= @player_2%> >
+  <input type="radio" name="player_2_choice" value="Rock" checked> Rock<br>
+  <input type="radio" name="player_2_choice" value="Paper"> Paper<br>
+  <input type="radio" name="player_2_choice" value="Scissors"> Scissors
+</center>
+</td></tr>
+</table>
+</div>
+
+<h3>Who will win?</h3>
+<input type="submit" value="Find out now!"> 
+</form>
