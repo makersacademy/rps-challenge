@@ -1,0 +1,29 @@
+<head>
+  <link rel = "stylesheet"
+  type = "text/css"
+  href = "styles.css" />
+</head>
+
+<body>
+  <div class = "main">
+    <div class = "wrapper">
+      <div>
+        <p1>Rock, Paper, Scissors</p1>
+      </div>
+      <br>
+      <p2 class="glow"><%=@game.player.name%></p2>
+      <br>
+      <img src="rps.jpg" />
+      <br>
+      <br>
+      <p2>You chose <%=@game.player.weapon%></p2>
+      <br>
+      <br>
+      <br>
+      <p2>Your opponent chose <%=@game.computer.random_choice%></p2><br>
+      <br>
+      <br>
+      <p1><%= @game.winner%></p1>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,25 @@
+<head>
+  <link rel = "stylesheet"
+    type = "text/css"
+    href = "styles.css" />
+</head>
+
+<body>
+  <div class = "main">
+    <div class = "wrapper">
+      <div>
+        <p1>Rock, Paper, Scissors</p1>
+      </div>
+      <p2 class="glow"><%=@game.player.name%></p2>
+      <br>
+      <p2>Choose your move</p2>
+      <br>
+      <br>
+      <form action="choice" method="post">
+        <input type="submit" class="invisible" name="choice" value="rock" id="rock-CSS" >
+        <input type="submit" class="invisible" name="choice" value="paper" id="paper-CSS" >
+        <input type="submit" class="invisible" name="choice" value="scissors" id="scissors-CSS" >
+      </form>
+    </div>
+  </div>
+</body>

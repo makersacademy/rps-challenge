@@ -1,0 +1,79 @@
+body {
+  text-align: center;
+}
+html, body {
+    height: 100%;
+}
+.main {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+.wrapper {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+.invisible {
+  font-size: 0%
+}
+
+p1{font-size:38px}
+p2{font-size:24px}
+html, body, h1, h2, h3, h4, h5, h6, p1, p2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #dfec12, 0 0 40px #dfec12, 0 0 50px #dfec12, 0 0 60px #dfec12, 0 0 70px #dfec12;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #c5d01c, 0 0 40px #c5d01c, 0 0 50px #c5d01c, 0 0 60px #c5d01c, 0 0 70px #c5d01c, 0 0 80px #c5d01c;
+  }
+}
+
+input[type="text"] {
+  width: 15% ;
+}
+
+button {
+  display: inline-block;
+  height: 304px;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+  width: 304px;
+  border: none
+}
+
+#rock-CSS {
+  background-image: url( /rock.jpg );
+  background-size: 300px 300px;
+  height: 304px;  
+  width: 304px;
+}
+
+#paper-CSS {
+  background-image: url( /paper.jpg );
+  background-size: 300px 300px;
+  height: 304px;  
+  width: 304px;
+}
+
+#scissors-CSS {
+  background-image: url( /scissors.jpg  );
+  background-size: 300px 300px;
+  height: 304px;  
+  width: 304px;
+}
