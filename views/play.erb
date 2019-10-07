@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
+    <title>Game!</title>
+  </head>
+  <body>
+    <div class="game">
+
+      <% unless @game.player.choice %>
+        <h2>Ready to play, <span id="player_name"><%= @game.player.name %></span>?</h2>
+      <% end %>
+
+      <div class="buttons">
+        <form action="/play">
+          <input id="button_game" type="submit" name="move" value="Rock">
+          <input id="button_game" type="submit" name="move" value="Paper">
+          <input id="button_game" type="submit" name="move" value="Scissors">
+        </form>
+        <br>
+      </div>
+
+      <% if @game.player.choice %>
+        You went with <%= @game.player.choice %>
+        <br>
+        Computer went with <%= @game.computer.choice %>
+        <br>
+        <%= @game.result %>
+      <% end %>
+
+  </body>
+</html>
