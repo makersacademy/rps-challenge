@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>You are one step closer to the action!</title>
+</head>
+
+
+<body>
+<center>
+
+<h1>Oh hello, <%=session[:name]%>!</h1>
+<h2>We'd been hoping you'd drop by...</h2>
+<h3>Now... Rock, paper or scissors?</h3>
+<form action="/response" method="post">
+<select name="chosen" method="post">
+  <option value="rock">rock</option>
+  <option value="paper">paper</option>
+  <option value="scissors">scissors</option>
+</select>
+<input type="submit" value="Submit">
+</form>
+
+
+
+
+
+</center>
+</body>
+</html>
