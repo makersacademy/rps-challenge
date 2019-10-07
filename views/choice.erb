@@ -1,0 +1,16 @@
+<head>
+ <link rel="stylesheet" href="style2.css">
+</head>
+
+<h1 style="text-align:center;"><font size="5" color="orange" font face="arial"RESULTS!</font></h1><br><br>
+
+<h2 style="text-align:center;"> You chose: <%= @game.player %></h2><br><br>
+<h2 style="text-align:center;"> Computer chose: <%= @game.computer %> </h2><br><br>
+
+<h2 style="text-align:center;"><%= @game.winner?%></h2><br>
+
+
+<center><form action="/play">
+  <input class="button" type="submit" value="PLAY AGAIN?"/>
+  </form>
+</center>
