@@ -1,0 +1,15 @@
+<%= erb :game_header %>
+<br><br><br>
+<div>
+  <h3><%= @game.player_1.name %> chose <%= @game.player_1.weapon %>.</h3>
+  <h2 class="ellipsis"><i>...</i></h2>
+  <h3><%= @game.player_2.name %> chose <%= @game.player_2.weapon %>!<br></h3><br>
+</div>
+<div>
+  <h2 style="font-family: 'Bungee', cursive;">It's a draw!</i></h2>
+</div>
+<br>
+<form action='/results' method='post'>
+  <input class="choice_button" type='submit' name='mode' value="Play again!">
+</form>
+<%= erb :footer %>

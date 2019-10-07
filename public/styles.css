@@ -1,0 +1,97 @@
+body {
+  font-family: 'K2D', cursive;
+  background-color: #E3D4FF;
+  background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.header {
+  background-color: #9F4EDD;
+  text-align: center;
+  height: 120;
+}
+div#footer {
+  position: fixed;
+  bottom: 0;
+  height: 5;
+  width: 100%;
+  background-color: #671391;
+}
+div#separator {
+  height: 5;
+  background-color: #671391;
+}
+h1#title {
+  font-family: 'Bungee Shade', cursive;
+  color: white;
+  font-size: 80px;
+}
+h1#title:hover {
+  color: #671391;
+}
+h3#bottom_text {
+  font-family: 'Bungee', cursive;
+}
+h4#subtitle {
+  position: relative;
+  bottom: 70;
+  right: 33;
+  color: white;
+  font-size: 16px;
+  white-space: pre;
+  word-spacing: 3.6;
+}
+.choice_button {
+  background-color: #9F4EDD;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 32px 16px;
+  border-radius: 10%;
+  box-shadow: 0 9px #999;
+  width: 200;
+  font-family: 'Bungee', cursive;
+}
+.choice_button:hover {
+  color: #671391;
+}
+.choice_button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.action_button {
+  background-color: #9F4EDD;
+  color: white;
+  border: none;
+  font-size: 14px;
+  padding: 32px 16px;
+  border-radius: 10%;
+  box-shadow: 0 9px #999;
+  width: 150;
+  font-family: 'Bungee', cursive;
+}
+.action_button:hover {
+  color: #671391;
+}
+.action_button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.ellipsis {
+  position: relative;
+  bottom: 8;
+}
+.text_form {
+  font-size: 16px;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid #9F4EDD;
+}
