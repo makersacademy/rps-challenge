@@ -1,0 +1,49 @@
+<head>
+  <title><%=$game.result%></title>
+  <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+  <link href="<%= url('/data_viz.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="result">
+<div class="play_again">
+<h1>You Picked <%=$game.player.show%>.</h1>
+<h1 style="color: red">I Picked <%=$game.comp_choice[-1]%>.</h1>
+
+<h1><%=$game.result%></h1>
+<h1 style="color: red">Wanna Play Again?</h1>
+<div class="result_buttons">
+<form action="/cont_play" method="post"><input class="yes_button" type="submit" name="HECK YEAH!" value="HECK YEAH!"></form>
+<form action="/goodbye" method="post"><input class="no_button"  type="submit" name="NAH BRUH!" value="NAH BRUH!"></form>
+</div>
+</div>
+<div class="multiplay">
+<h1 style="text-align: center;">Wanna Let The Game Play Itself?</h1>
+
+<form action="/play"></form>
+<label  style="color: white" >Number Of Turns? (5-1000):</label>
+<input style="color: purple; font-weight: bold; " id"auto_turns" type="number"  name="number" min="5" max"1000">
+
+
+</div>
+<div class="stats">
+
+<h2 id="stat_header">Here's How You've Been Doing So Far</h2>
+
+
+<div class="chart">
+  <div class="bars">
+    <div class="bar" style="height:<%=$game.comp_wins/$game.divisor%>%;"></div>
+    <div class="bar" style="height:<%=$game.draws/$game.divisor%>%;"></div>
+    <div class="bar" style="height:<%=$game.player_wins/$game.divisor%>%;"></div>
+  </div>
+
+  <div class="labels">
+    <span class="label">I WON<br><%= $game.comp_wins %></span>
+    <span class="label">DRAW<br><%= $game.draws %></span>
+    <span class="label">YOU WON<br><%= $game.player_wins %></span>
+  </div>
+
+</div>
+
+</div>
+</body>

@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+}
+
+.circle1,
+.circle2,
+.circle3,
+.circle4,
+.circle5,
+.circle6,
+.circle8,
+    {
+    position: fixed;
+    width: 0;
+    height: 0;
+    padding: 0;
+    z-index: 50;
+    border-radius: 20%;
+    opacity: 0;
+    background-color: transparent;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.circle1 {
+    border: 2px solid red;
+    animation: grow_circle 3s;}
+
+.circle2 {
+    border: 2px solid white;
+    animation: grow_circle 2s;}
+
+.circle3 {
+    border: 2px solid orange;
+    animation: grow_circle 1s;}
+
+.circle4 {
+    border: 2px solid blue;
+    animation: grow_circle 1.5s;}
+
+.circle5 {
+    border: 2px solid yellow;
+    animation: grow_circle 0.5s;}
+
+.circle6 {
+    border: 2px solid purple;
+    animation: grow_circle 0.8s;}
+
+.circle8 {
+    border: 2.5px solid blue;
+    animation: grow_circle 0.1s;}
+
+@keyframes grow_circle {
+    0% {
+        height: 25vh;
+        width: 25vw;
+        size: -50%%;
+        filter: blur(0.7px);
+        opacity: 0};
+
+    10% {
+        opacity: 0};
+
+    97% {
+        height: 160vh;
+        width: 160vw;
+        filter: blur(1px);
+        opacity: 1};
+
+    100% {
+        opacity: 0};
+}
+
+.makers {
+    background: url(makers_sliced1.png) 0px 150px, url(makers_sliced1.png) 0px -225px, black;
+}
+
+.makers:hover {
+    background: url(makers_sliced1.png) 0px 420px, url(makers_sliced1.png) 0px -285px, black;
+}
