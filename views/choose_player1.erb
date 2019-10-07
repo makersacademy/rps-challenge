@@ -1,0 +1,12 @@
+<center><h1>Welcome <%= @player1.name %> and <%= @player2.name %>!</h1>
+
+<center><h2><%= @player1.name %>, please pick your weapon:</h2>
+
+<center><form action="/select_player1" method="post">
+  <select name="weaponpicker" id="weaponpicker">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <input type="submit" value='Submit'>
+</form>
