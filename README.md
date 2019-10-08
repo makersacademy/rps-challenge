@@ -17,8 +17,8 @@ The engine for the game is handled by three classes: Player, Robot and Game. The
 
 ## Status
 
-As of 8th October 2019, both user stories had been implemented. However, I would also like to total up each player's scores.
-I also need to update the view files with some CSS to make each page look more visually pleasing.
+As of 8th October 2019, both user stories had been implemented. However, I would like to add a feature which gives the player a point if they win and the game is best out of 5.
+I would like to update the basic CSS currently implemented and add some images to the game. I will need to move my CSS into a separate file and call the relevant file within the relevant views files.
 I need to update my Travis CI status badge too.  
 
 ## How to Use
@@ -27,7 +27,7 @@ To play the game first clone this repository.
 ```
 git clone https://github.com/jessmar94/rps-challenge
 ```
-To run the tests move to the directory the repository has been cloned to and run rspec.
+To run the tests, move to the directory the repository has been cloned to and run RSpec.
 
 There are 20 tests, which are all passing, with 100% coverage of the lib files and feature tests for the web features.
 

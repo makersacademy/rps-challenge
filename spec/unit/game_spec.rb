@@ -34,12 +34,4 @@ describe Game do
     end
   end
 
-  describe '#random_computer' do
-    it 'responds to the #random_computer method' do
-      Game.create(first_play, computer_player)
-      Game.instance
-      expect(Game).to respond_to(:random_computer)
-    end
-  end
-
 end

@@ -51,7 +51,7 @@ class RPS < Sinatra::Base
 
   post '/first_selection' do
     @game.player_1.choice = params[:player_1_choice]
-    if @game.player_2.name == 'Robot'
+    if @game.player_2.class == Robot 
       @game.player_2.choice = Robot.new.choice
       redirect '/game_over'
     else

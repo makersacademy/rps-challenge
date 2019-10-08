@@ -11,6 +11,7 @@ class Game
     { "Scissors" => "Paper"},
   ]
 
+
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
@@ -28,10 +29,6 @@ class Game
     return "WINNER" if winner?
     return "DRAW" if draw?
     return "LOSE" if lost?
-  end
-
-  def self.random_computer
-    ["Rock", "Paper", "Scissors"].sample # Could have used (LOGIC.keys).sample here instead 
   end
 
   private
