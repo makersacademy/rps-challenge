@@ -1,0 +1,36 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body { background-color: black;
+            color: #e60073;
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Verdana';
+        }
+
+    </style>
+    <title>Player 1</title>
+  </head>
+  <body>
+
+  </body>
+</html>
+
+<h2> <%= @game.player_1.name %>, it's your turn to select rock, paper or scissors.
+<div>
+  No peeping <%= @game.player_2.name %>!
+</div></h2>
+<div>
+  <form action="/first_selection" method="post">
+    <label for="player_1_choice">
+    <%= @game.player_1.name %>'s choice:
+      <select name="player_1_choice">
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+      </select>
+    </label>
+    <input type="submit" value="Submit">
+  </form>
+</div>

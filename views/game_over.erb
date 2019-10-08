@@ -1,0 +1,36 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body { background-color: black;
+            color: #e60073;
+            text-align: center;
+            font-size: 40px;
+            font-family: 'Verdana';
+        }
+
+    </style>
+    <title>Enter Name</title>
+  </head>
+  <body>
+
+  </body>
+</html>
+
+<h1> Game over </h1>
+<h2><div>
+  <%= @game.player_1.name %> chose <%= @game.player_1.choice %> and <%= @game.player_2.name %> chose <%= @game.player_2.choice %>
+</div>
+<div>
+<% if Game.outcome == 'WINNER' %>
+  <%= @game.player_1.name %> is the winner!
+<% elsif Game.outcome == 'DRAW' %>
+  It's a draw!
+<% elsif Game.outcome == 'LOSE' %>
+  <%= @game.player_2.name %> is the winner!
+<% end %>
+</div>
+<div>
+  <form action="/first_play">
+  <input type="submit" value="Play again">
+</div></h2>
