@@ -77,7 +77,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler
   capybara
   rake
   rspec

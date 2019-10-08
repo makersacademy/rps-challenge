@@ -4,7 +4,6 @@ gem 'rake'
 gem 'sinatra'
 
 group :test do
-  gem "bundler"
   gem 'capybara'
   gem 'rspec'
   gem 'rubocop', '0.56.0'
