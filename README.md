@@ -13,7 +13,7 @@ I would like to be able to play Rock/Paper/Scissors
 ```
 This implementation supports two player games.
 
-The engine for the game is handled by two classes: Player and Game. The Player holds a players name and choice of move, and the Game stores two players and interfaces with the app.
+The engine for the game is handled by three classes: Player, Robot and Game. The Player holds a players name and choice of move, the Robot holds a default name and a choice of a random move and the Game stores two players and interfaces with the app.
 
 ## Status
 
@@ -31,7 +31,7 @@ To run the tests move to the directory the repository has been cloned to and run
 
 There are 20 tests, which are all passing, with 100% coverage of the lib files and feature tests for the web features.
 
-To see the repository in action first install the dependencies (just Sinatra for actually running the app) by running:
+To see the repository in action first install the dependencies by running
 ```
 bundle install
 ```
