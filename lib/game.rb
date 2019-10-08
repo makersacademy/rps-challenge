@@ -4,6 +4,7 @@ class Game
 
   attr_reader :player_1, :player_2
 
+# Keys represent the weapon and the values are the objects the weapon can defeat.
   LOGIC = [
     { "Paper" => "Rock"},
     { "Rock" => "Scissors"},
@@ -27,6 +28,10 @@ class Game
     return "WINNER" if winner?
     return "DRAW" if draw?
     return "LOSE" if lost?
+  end
+
+  def self.random_computer
+    ["Rock", "Paper", "Scissors"].sample # Could have used (LOGIC.keys).sample here instead 
   end
 
   private

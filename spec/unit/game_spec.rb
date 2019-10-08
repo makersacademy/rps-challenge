@@ -7,9 +7,12 @@ describe Game do
 
   let(:play_1) { double :player, :choice => "Rock" }
   let(:play_2) { double :player, :choice => "Rock" }
-  
+
   let(:first_player) { double :player, :choice => "Scissors" }
   let(:second_player) { double :player, :choice => "Rock" }
+
+  let(:first_play) { double :player, :choice => "Scissors" }
+  let(:computer_player) { double :player, :choice => "Rock" }
 
   describe '#outcome' do
     it 'returns winning message if player 1 wins' do
@@ -28,6 +31,14 @@ describe Game do
       Game.create(first_player, second_player)
       Game.instance
       expect(Game.outcome).to eq "LOSE"
+    end
+  end
+
+  describe '#random_computer' do
+    it 'responds to the #random_computer method' do
+      Game.create(first_play, computer_player)
+      Game.instance
+      expect(Game).to respond_to(:random_computer)
     end
   end
 

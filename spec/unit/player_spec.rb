@@ -11,7 +11,7 @@ describe Player do
     end
 
     it 'has a choice equal to nil' do
-      expect(player_1.choice).to eq nil 
+      expect(player_1.choice).to eq nil
     end
   end
 end

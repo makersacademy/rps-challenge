@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/robot'
 
 class RPS < Sinatra::Base
 
@@ -12,9 +13,30 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
+  post '/number_players' do
+    players = params[:number_players]
+    redirect '/mp_names' if params[:number_players] == "Two Players"
+    redirect '/sp_name' if params[:number_players] == "One Player"
+  end
+
+  get '/mp_names' do
+    erb :mp_names
+  end
+
+  get '/sp_name' do
+    erb :sp_name
+  end
+
+  post '/mp_names' do
     player_1 = Player.new(params[:player_1_name])
     player_2 = Player.new(params[:player_2_name])
+    @game = Game.create(player_1, player_2)
+    redirect '/start_game'
+  end
+
+  post '/sp_name' do
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Robot.new('Robot')
     @game = Game.create(player_1, player_2)
     redirect '/start_game'
   end
@@ -29,7 +51,12 @@ class RPS < Sinatra::Base
 
   post '/first_selection' do
     @game.player_1.choice = params[:player_1_choice]
-    redirect '/second_play'
+    if @game.player_2.name == 'Robot'
+      @game.player_2.choice = Robot.new.choice
+      redirect '/game_over'
+    else
+      redirect '/second_play'
+    end
   end
 
   get '/second_play' do
@@ -42,7 +69,7 @@ class RPS < Sinatra::Base
   end
 
   get '/game_over' do
-    Game.outcome 
+    Game.outcome
     erb :game_over
   end
 

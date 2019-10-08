@@ -1,13 +1,11 @@
 <h1>Rock, Paper, Scissors</h1>
-<h2>Enter your names before starting the game</h2>
-<form action="/names" method="post">
-  <label for="player_1_name">
-    Player 1
-    <input type="text" name="player_1_name">
-  </label>
-  <label for="player_2_name">
-    Player 2
-    <input type="text" name="player_2_name">
+<h2>How many people are playing this game?</h2>
+<form action="/number_players" method="post">
+  <label for="number_players">
+    <select name="number_players">
+      <option value="One Player">One Player</option>
+      <option value="Two Players">Two Players</option>
+    </select>
   </label>
   <input type="submit" value="Submit">
 </form>

@@ -1,4 +1,4 @@
-<h1> Game over </h1> 
+Game over
 <div>
   <%= @game.player_1.name %> chose <%= @game.player_1.choice %> and <%= @game.player_2.name %> chose <%= @game.player_2.choice %>
 </div>
@@ -12,6 +12,6 @@
 <% end %>
 </div>
 <div>
-  <form action="/first_play">
+  <form action="/sp_first_play">
   <input type="submit" value="Play again">
 </div>
