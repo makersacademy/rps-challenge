@@ -17,7 +17,7 @@ The engine for the game is handled by two classes: Player and Game. The Player h
 
 ## Status
 
-As of 6th October 2019, both user stories had been implemented. However, I would like to add in a feature to give the option for one person to play against the computer using a .sample method, rather than always needing two people. I would also like to total up each player's scores.
+As of 8th October 2019, both user stories had been implemented. However, I would also like to total up each player's scores.
 I also need to update the view files with some CSS to make each page look more visually pleasing.
 I need to update my Travis CI status badge too.  
 
@@ -29,7 +29,7 @@ git clone https://github.com/jessmar94/rps-challenge
 ```
 To run the tests move to the directory the repository has been cloned to and run rspec.
 
-There are 14 tests, which are all passing, with 100% coverage of the lib files and feature tests for the web features.
+There are 20 tests, which are all passing, with 100% coverage of the lib files and feature tests for the web features.
 
 To see the repository in action first install the dependencies (just Sinatra for actually running the app) by running:
 ```
