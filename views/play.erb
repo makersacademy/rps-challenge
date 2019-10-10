@@ -1,0 +1,94 @@
+
+<style >
+body {
+     background-color: #abd4ce;
+}
+ button{
+    padding: 20px;
+     font-size: 16px;
+     letter-spacing: 2px;
+     background-color: #7ea8af;
+     color: white;
+     text-transform: uppercase;
+}
+ button:hover {
+    background-color: #4e7075
+}
+ .choice_buttons {
+     width: 100%;
+     margin: 0 auto;
+     text-align: center;
+}
+ .choice_buttons input {
+    margin: auto 2%;
+     border: 2px solid #808080;
+     border-radius: 10%;
+     padding: 2%;
+     font-size: 25px;
+     text-transform: uppercase;
+     letter-spacing: 0.1em;
+}
+ .enter_button {
+     width: 100%;
+     margin: 5% auto;
+     text-align: center;
+}
+ .enter_button input {
+     margin: auto 2%;
+     border-radius: 10%;
+     padding: 2%;
+     font-size: 25px;
+     text-transform: uppercase;
+     letter-spacing: 0.1em;
+     background-color: #000;
+     color: #fff;
+}
+ div{
+    width: 100%;
+     margin: 0 auto;
+     display: inline-block;
+     text-align: center;
+}
+ p {
+     font-size: 20px;
+}
+ h2 {
+    float: left;
+     width: 50%;
+}
+ h2 span {
+     text-transform: capitalize;
+}
+ h3{
+     text-align : center;
+     font-size: 25px;
+}
+ h3 span {
+    text-transform: capitalize;
+}
+  </style>
+
+<div>
+<p>Pick one each, then press enter to reduce opponent's points</p>
+<div>
+<h2>Player 1: <span><%= @game.player_1.name %></span></h2>
+<h2>Player 2: <span><%= @game.player_2.name %></span></h2>
+</div>
+<div>
+<h2>Points: <%= @game.player_1.points %></h2>
+<h2>Points: <%= @game.player_2.points %></h2>
+</div>
+<h3>Now its <span><%= @game.current_turn.name %>'s</span> turn</h3>
+<form class="choice_buttons" action="/choice" method="post">
+  <input type="submit" name="player_choice" value="rock">
+  <input type="submit" name="player_choice" value="paper">
+  <input type="submit" name="player_choice" value="scissor">
+</form>
+
+<form class="enter_button" action="/hit" method="get">
+  <input type="submit" value="enter">
+</form>
+
+
+</div>
+
