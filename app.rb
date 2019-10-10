@@ -2,7 +2,7 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 class Rps < Sinatra::Base
-  enable :sessions
+ 
   get '/' do
     erb :index
   end
@@ -24,15 +24,17 @@ class Rps < Sinatra::Base
     choice = params[:player_choice]
     @game.current_turn.choice.replace(choice)
     @game.switch_turns
+    
+
     redirect '/play'
   end
 
   get '/hit' do
     @game = $game
-    @game.hit(@game.player_1, @game.player_2)
+
     redirect '/play'
   end
 
-  run! if app_file == $PROGRAM_NAME
+  run! if app_file == $0
 
 end
