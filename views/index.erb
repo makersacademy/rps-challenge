@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+
+  <title>The Rock, The Paper and The Scissors</title>
+  <meta name="description" content="The Rock, The Paper and The Scissors">
+
+  <style>
+  body {
+    background-image: url(https://www.laserfiche.com/wp-content/uploads/2016/01/shutterstock_284660570-rs.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 25%;
+    width: 50%;
+  }
+  h1, h2 { color: white;
+  }
+  .center {
+    text-align: center;
+    background-color: brown;
+  }
+  .nav {
+    text-align: center;
+  }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="center"><h1>The Rock, The Paper and The Scissors</h1></div>
+
+  <div class="nav">
+    <form action="/names" method="post">
+      <input type="text" name="player_1"placeholder="Player 1">
+      <input type="text" name="player_2" list="player_2"placeholder="Player 2"/>
+      <datalist id="player_2">
+        <option>Computer</option>
+      </datalist>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+</body>
+</html>

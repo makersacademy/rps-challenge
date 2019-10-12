@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+
+  <title>The Rock, The Paper and The Scissors</title>
+  <meta name="description" content="The Rock, The Paper and The Scissors">
+
+  <style>
+    body {
+      background-image: url('https://www.laserfiche.com/wp-content/uploads/2016/01/shutterstock_284660570-rs.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      margin-top: 3%;
+      margin-left: 25%;
+      width: 50%;
+    }
+    h1, h2, h3 { color: white;
+    }
+    .center {
+      text-align: center;
+      background-color: brown;
+    }
+  </style>
+
+</head><
+
+<body>
+
+  <div class="center"><h1>The Rock, The Paper and The Scissors</h1>
+
+    <h1> <%= @winner.player_1.name %> vs <%= @winner.player_2.name %> </h1>
+
+    <h2> <%= @winner.player_1.name %>'s turn!</h2>
+
+    <form action="/moves_player_1" method="post">
+
+      <select name="RPS1" id="RPS1">
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+      </select>
+
+      <input type="submit" value="Submit">
+
+    </form>
+
+  </div>
+
+</body>
+
+</html>
