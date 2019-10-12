@@ -19,32 +19,29 @@ enable :sessions
   post '/names' do
     if (params[:player_2]) == 'Computer'
       Winner.create(Player.new(params[:player_1]))
-      redirect '/play_1'
     else Winner.create(Player.new(params[:player_1]), Player.new(params[:player_2]))
-      redirect '/play_1'
     end
+    redirect '/player_1_choice'
   end
 
-  get '/play_1' do
-    erb(:play_1)
+  get '/player_1_choice' do
+    erb(:player_1_choice)
   end
 
-  get '/play_2' do
-    erb(:play_2)
+  get '/player_2_choice' do
+    redirect '/winner' if @winner.player_2.name == 'Computer Genius'
+    erb(:player_2_choice)
   end
 
-  post '/fight' do
-    if @winner.player_2.name == 'Computer Genius'
-      @winner.player_2.choose(params[:RPS2])
-      @winner.player_1.choose(params[:RPS1])
+  post '/moves_player_1' do
+      @winner.player_1_choice(params[:RPS1])
+      @winner.player_2_choice(params[:RPS2])
+      redirect '/player_2_choice'
+  end
+
+  post '/moves_player_2' do
+      @winner.player_2_choice(params[:RPS2])
       redirect '/winner'
-    elsif params[:RPS2] == nil
-      @winner.player_1.choose(params[:RPS1])
-      redirect '/play_2'
-    else
-      @winner.player_2.choose(params[:RPS2])
-      redirect '/winner'
-    end
   end
 
   get '/winner' do

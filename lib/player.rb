@@ -6,7 +6,7 @@ class Player
     @name = name
   end
 
-  def choose(choice)
+  def choose(choice, moves)
     @choice = choice
   end
 
