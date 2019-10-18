@@ -1,0 +1,7 @@
+<h1>Welcome to the fight, <%=@player_name%>!</h1>
+<h3>Please select your weapon - Rock, Paper, or Scissors:</h3>
+<form action='/play_game' method='post'>
+  <input type='radio' name = 'player_weapon' value ='rock'> Rock<br>
+  <input type='radio' name = 'player_weapon' value ='paper'> Paper<br>
+  <input type='radio' name = 'player_weapon' value ='scissors'> Scissors<br>
+  <input type='submit' value='Submit'>
