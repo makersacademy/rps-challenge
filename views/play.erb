@@ -1,0 +1,7 @@
+Enter your move <%= @game.player_name %>
+
+<form action="/play-game" method="post">
+  <input type="submit" name="player_move" value="rock">
+  <input type="submit" name="player_move" value="paper">
+  <input type="submit" name="player_move" value="scissors">
+</form>
