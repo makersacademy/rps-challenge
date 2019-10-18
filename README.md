@@ -13,6 +13,11 @@ Task
 ----
 ```
 completed stories
+
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
 ```
 Knowing how to build web applications is getting us almost there as web developers!
 
