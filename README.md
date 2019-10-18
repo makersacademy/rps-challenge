@@ -1,5 +1,6 @@
 # RPS Challenge
 
+completed 
 Instructions
 -------
 
