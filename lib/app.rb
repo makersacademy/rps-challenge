@@ -15,5 +15,4 @@ class Rps < Sinatra::Base
     erb :display
   end
 
-
 end
