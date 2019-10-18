@@ -1,0 +1,18 @@
+U choose scissors
+
+<%cp_option = @game.computer_decision %>
+
+<br>The computer chose <%= cp_option %>
+
+<br><% if cp_option == "Rock" %>
+<%="You LOSE!"%>
+<% elsif cp_option == "Paper" %>
+<%="You WIN!"%>
+<% elsif cp_option == "Scissors" %>
+<%="It's a DRAW!"%>
+<% end %>
+
+
+<form action="/name" method="post">
+  <input type="submit" value="Click to play again">
+</form>
