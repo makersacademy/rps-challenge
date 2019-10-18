@@ -1,0 +1,69 @@
+Inspecting 10 files
+....CWCCCC
+
+Offenses:
+
+spec/spec_helper.rb:18:1: C: Layout/TrailingBlankLines: 1 trailing blank lines detected.
+spec/login_help.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    visit('/')
+^^^^
+spec/login_help.rb:5:3: W: Layout/DefEndAlignment: end at 5, 2 is not aligned with def at 1, 0.
+  end
+  ^^^
+spec/login_help.rb:6:1: C: Layout/TrailingBlankLines: 1 trailing blank lines detected.
+spec/features/output_spec.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    scenario 'Checking each button outputs the correct move - Rock' do 
+^^^^
+spec/features/output_spec.rb:3:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        log_in
+    ^^^^
+spec/features/output_spec.rb:8:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        log_in
+    ^^^^
+spec/features/output_spec.rb:13:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        log_in
+    ^^^^
+spec/features/output_spec.rb:17:4: C: Layout/TrailingBlankLines: Final newline missing.
+end
+   
+spec/features/input_spec.rb:11:4: C: Layout/TrailingBlankLines: Final newline missing.
+end
+   
+spec/game_spec.rb:4:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    subject(:game) { described_class.new("Josh") }
+^^^^
+spec/game_spec.rb:6:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        it 'returns the player_name' do
+    ^^^^
+spec/game_spec.rb:7:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            expect(game.player_name).to eq "Josh"
+        ^^^^
+spec/game_spec.rb:11:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        it 'returns result as a draw' do 
+    ^^^^
+spec/game_spec.rb:12:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            expect(game.calculate_winner('rock', 'rock')).to eq "It was a draw"
+        ^^^^
+spec/game_spec.rb:15:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            expect(game.calculate_winner('rock', 'scissors')).to eq "Josh Wins"
+        ^^^^
+spec/game_spec.rb:18:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            expect(game.calculate_winner('scissors', 'rock')).to eq "Computer Wins"
+        ^^^^
+spec/game_spec.rb:21:5: C: Layout/TrailingBlankLines: Final newline missing.
+end 
+    
+lib/game.rb:11:3: C: Metrics/CyclomaticComplexity: Cyclomatic complexity for calculate_winner is too high. [8/6]
+  def calculate_winner(player_input, computer_input) ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/game.rb:11:3: C: Metrics/MethodLength: Method has too many lines. [11/10]
+  def calculate_winner(player_input, computer_input) ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/game.rb:11:3: C: Metrics/PerceivedComplexity: Perceived complexity for calculate_winner is too high. [9/7]
+  def calculate_winner(player_input, computer_input) ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/game.rb:12:5: C: Style/GuardClause: Use a guard clause instead of wrapping the code inside a conditional expression.
+    if player_input == computer_input 
+    ^^
+
+10 files inspected, 22 offenses detected
