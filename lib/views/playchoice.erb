@@ -1,4 +1,3 @@
-
 <html>
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +26,6 @@
         }
       }
       </style>
-
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
       .block {
@@ -49,14 +47,17 @@
       </style>
     </head>
     <body>
-      <h1 class="glow">>are you ready to play <%= @game.player.name%></h1>
-      <form action="'/play-choice" method="post">
-        <label for="player_1_name">
-          <h2 class="glow">Choose: Rock, paper or scissors</h2>
-        </label>
-        <input class="block" name="choice" type="submit" value="rock">
-        <input class="block" name="choice" type="submit" value="paper">
-        <input class="block" name="choice" type="submit" value="scissors">
+      <h1 class="glow">Player: <%= @game.player.name%></h1>
+      <h2 class="glow"><%= @play.match %></h2>
+      <h3 class="glow">Play again? <%= @game.player.name%></h3>
+      <button class="block" onclick="goBack()">Yes!</button>
+      <form action="/end">
+      <input class="block" name="choice" type="submit" value="NO">
       </form>
+      <script>
+      function goBack() {
+        window.history.back();
+      }
+      </script>
     </body>
 </html>

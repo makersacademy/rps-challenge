@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'capybara'
 require_relative 'player'
 require_relative 'game'
-
+require_relative 'rps'
 class RPS < Sinatra::Base
   enable :sessions
 
@@ -17,22 +17,22 @@ class RPS < Sinatra::Base
   end
 
   get '/display' do
-    p "hello"
     @game = $game
-    p @game.player
     erb :display
+  end
+
+  post '/\'/play-choice' do
+    $play = Rps.new(params[:choice])
+    @play = $play
+    @game = $game
+    erb :playchoice
+  end
+
+  get '/end' do
+    @play = $play
+    @game = $game
+    erb :end
   end
 
   run! if app_file == $0
 end
-
-# <%= @game.current_turn.name %>'s turn
-#
-# <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
-#
-# <%= @game.player_1.name %>: <%= @game.player_1.hit_points %>HP
-# <%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP
-#
-# <form action="/attack" method="post">
-#   <input type="submit" value="Attack">
-# </form>
