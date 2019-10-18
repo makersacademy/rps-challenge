@@ -30,7 +30,9 @@ I would like to be able to play rock/paper/scissors
 
 **Stories Completed**
 
-
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
 
 Hints on functionality
 
