@@ -28,6 +28,10 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
+**Stories Completed**
+
+
+
 Hints on functionality
 
 - the marketeer should be able to enter their name before the game
