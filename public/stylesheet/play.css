@@ -9,7 +9,7 @@ html {
 .body {
  background-image: url("https://d7hftxdivxxvm.cloudfront.net/?resize_to=width&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FSMpKgat6YoGwWHvsizdi-g%2Flarger.jpg&width=1200&quality=80");
  background-size: auto;
- background-position: 100px 0px;
+ background-position: center;
  background-repeat: no-repeat;
 }
 
@@ -71,7 +71,7 @@ html {
   text-shadow: 7px 6px 3px grey;
   border: none;
   color: black;
-  width: 150px;
+  width: 180px;
   height: 90px;
   text-align: center;
   font-size: 1.8rem;
