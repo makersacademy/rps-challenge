@@ -1,0 +1,4 @@
+<h1> Your move: <%= @player_move%></h1>
+<h2> Computers move: <%= @computer_move%></h2>
+
+<label> Winner: <%=@game.check_winner(@player_move, @computer_move)%> </label>
