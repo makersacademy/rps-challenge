@@ -9,6 +9,10 @@ git clone https://github.com/LeoRoma/rps-challenge.git.
 cd rps-challenge
 rackup 
 ```
+Open your browser
+```
+localhost:9292
+```
 
 ## Basic Rules
 
