@@ -27,18 +27,13 @@ html {
   font-weight: bold;
 }
 
-/* height: 37px;
-width: 37px;
-background-image:url('http://www.w3.org/html/logo/downloads/HTML5_Logo_32.png');
-background-repeat:no-repeat; */
 .btn-rock {
   position:relative;
   top: 10px;
   left: 50%
   border-radius: 23px;
-  background-image:url('/image/rock.png');
   background-repeat:no-repeat;
-  background-color: transparent;
+  background-color: white;
   text-shadow: 7px 6px 3px grey;
   border: none;
   color: black;
@@ -54,9 +49,8 @@ background-repeat:no-repeat; */
   top: 10px;
   left: 50%
   border-radius: 23px;
-  background-image:url('/image/paper.png');
   background-repeat:no-repeat;
-  background-color: transparent;
+  background-color: white;
   text-shadow: 7px 6px 3px grey;
   border: none;
   color: black;
@@ -72,9 +66,8 @@ background-repeat:no-repeat; */
   top: 10px;
   left: 50%
   border-radius: 23px;
-  background-image:url('/image/scissor.png');
   background-repeat:no-repeat;
-  background-color: transparent;
+  background-color: white;
   text-shadow: 7px 6px 3px grey;
   border: none;
   color: black;
