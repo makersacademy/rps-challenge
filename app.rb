@@ -44,7 +44,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/p1_choice' do
-    p @game.current_turn
     @game.switch_turns
     p 'i got here'
     redirect '/battle'

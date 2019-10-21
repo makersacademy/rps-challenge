@@ -52,7 +52,7 @@ class Game < Log
   attr_reader :players
 
   def opposite_of(current_player)
-    players.reject { current_player }.first
+    players.reject {|player| player == current_player }.first
   end
 
   def losing_players
