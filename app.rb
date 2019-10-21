@@ -19,16 +19,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/p1_choice_comp' do
-    p params[:choice]
-    # @game.player1.choice(params[:choice])
-    redirect '/battle'
+    @game.player1.make_choice(params[:choice])
+    @game.player2.make_choice
+    redirect '/game_over'
   end
 
   post '/battle_comp' do
     player = Player.new(params[:name1])
     comp = Computer.new(params[:name2])
     @game = Game.create(player, comp)
-    # p @game
     redirect '/battle'
   end
 
@@ -44,17 +43,23 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/p1_choice' do
+    @game.player1.make_choice(params[:choice])
     @game.switch_turns
-    p 'i got here'
     redirect '/battle'
   end
 
   post '/p2_choice' do
+    @game.player2.make_choice(params[:choice])
     @game.switch_turns
-    redirect '/battle'
+    redirect '/game_over'
   end
 
   get '/battle' do
     erb(:battle)
+  end
+
+  get '/game_over' do
+    @winner_message = @game.winner
+    erb(:game_over)
   end
 end

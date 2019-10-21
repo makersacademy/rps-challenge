@@ -4,10 +4,13 @@ class Game < Log
 
   attr_reader :current_turn, :battle_status
 
+  RESULTS_HASH = { 'Rock' => 'Paper', 'Paper'=>'Scissors', 'Scissors'=>'Rock'}
+
   def initialize(player1, player2)
     @players = [player1, player2]
     @current_turn = player1
     @log = ['The Battle Begins!']
+    @hash = RESULTS_HASH
   end
 
   def self.create(player1, player2)
@@ -27,35 +30,32 @@ class Game < Log
   end
 
   def switch_turns
-    p current_turn
     @current_turn = opposite_of(current_turn)
   end
 
-  # def game_over?
-  #   losing_players.any?
-  # end
-
-  # def loser
-  #   losing_players.first
-  # end
+  def winner
+    if @hash[player1.choice] == player2.choice then
+      "#{player2.name} wins"
+    elsif player1.choice == player2.choice then
+      "It's a tie"
+    else
+      "#{player1.name} wins"
+    end
+  end
 
   def single_player_game?
     player2.class != Player
-  end
-
-  def retaliate(player)
-    # attack(player)
   end
 
   private
 
   attr_reader :players
 
-  def opposite_of(current_player)
-    players.reject {|player| player == current_player }.first
+  def can_play?(player)
+    player != current_turn
   end
 
-  def losing_players
-    players.select { |player| player.hp <= 0 }
+  def opposite_of(current_player)
+    players.reject {|player| player == current_player }.first
   end
 end
