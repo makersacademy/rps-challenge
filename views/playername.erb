@@ -1,0 +1,18 @@
+
+<h1>Hello <%= @name %> </h1>
+
+<div>
+  <h2><%= @match.Player.name %> pick Rock, Paper or Scissors! </h2>
+</div>
+
+<div>
+    <form method="post">
+      <input formaction="/rock" type="submit" value="Rock"/>
+      <input formaction="/paper" type="submit" value="Paper"/>
+      <input formaction="/scissors" type="submit" value="Scissors"/>
+    </form>
+</div>
+
+<div>
+  <h2> <%= @match.winner %> </h2>
+</div>
