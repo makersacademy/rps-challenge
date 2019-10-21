@@ -24,7 +24,7 @@ class Rps < Sinatra::Base
     if player_2_card == ''
       player_2_card = ['rock', 'paper', 'scissors'][rand(4)]
     end
-    # didnt quite finish the single player
+
     @options = { 'rock' => 'paper', 'paper' => 'scissors', 'scissors' => 'rock' }
     test = Check.new(player_1_card, player_2_card, $player_1_name, $player_2_name, @options)
     $score = test.confirm
