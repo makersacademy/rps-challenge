@@ -3,6 +3,8 @@
 Instructions
 -------
 
+From terminal clone the repository in a folder
+
 ## Basic Rules
 
 - Rock beats Scissors
