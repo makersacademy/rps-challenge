@@ -21,9 +21,7 @@ class Rps < Sinatra::Base
   post '/game' do
     player_1_card = params[:player_1_card].downcase
     player_2_card = params[:player_2_card].downcase
-    if player_2_card == ''
-      player_2_card = ['rock', 'paper', 'scissors'][rand(4)]
-    end
+    player_2_card = ['rock', 'paper', 'scissors'][rand(4)] if player_2_card == ''
 
     @options = { 'rock' => 'paper', 'paper' => 'scissors', 'scissors' => 'rock' }
     test = Check.new(player_1_card, player_2_card, $player_1_name, $player_2_name, @options)
