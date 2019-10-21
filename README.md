@@ -4,10 +4,10 @@ Instructions
 -------
 
 From terminal clone the repository in a folder git clone https://github.com/LeoRoma/rps-challenge.git.
-'''
+```
 cd rps-challenge
 rackup 
-'''
+```
 
 ## Basic Rules
 
