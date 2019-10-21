@@ -21,9 +21,12 @@ class Rps < Sinatra::Base
   post '/game' do
     player_1_card = params[:player_1_card].downcase
     player_2_card = params[:player_2_card].downcase
-    #player_2_card = ['rock', 'paper', 'scissors'][rand(4)] if player_2_card == nil || player_2_card == ''
+    if player_2_card == ''
+      player_2_card = ['rock', 'paper', 'scissors'][rand(4)]
+    end
     # didnt quite finish the single player
-    test = Check.new(player_1_card, player_2_card, $player_1_name, $player_2_name)
+    @options = { 'rock' => 'paper', 'paper' => 'scissors', 'scissors' => 'rock' }
+    test = Check.new(player_1_card, player_2_card, $player_1_name, $player_2_name, @options)
     $score = test.confirm
     redirect '/score'
   end
