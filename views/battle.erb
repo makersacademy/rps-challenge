@@ -1,0 +1,34 @@
+
+<p>Player1: <%= @game.player1.name %></p>
+<% if @game.single_player_game? %>
+<form method='post' action="/p1_choice_comp">
+<input type='submit' value='Rock' id='P1_Rock' name='choice'>
+<input type='submit' value='Paper' id='P1_Paper' name='choice'>
+<input type='submit' value='Scissors' id='P1_Paper' name='choice'>
+</form>
+<% else %>
+<form method='post' action="/p1_choice">
+<input type='submit' value='Rock' id='P1_Rock' name='choice'>
+<input type='submit' value='Paper' id='P1_Paper' name='choice'>
+<input type='submit' value='Scissors' id='P1_Scissors' name='choice'>
+</form>
+<% end %>
+
+
+<% if @game.single_player_game? %>
+<p>Computer: <%= @game.player2.name %></p>
+<% else %>
+<p>Player2: <%= @game.player2.name %></p>
+<form method='post' action="/p2_choice">
+<input type='submit' value='Rock' id='P2_Rock' name='choice'>
+<input type='submit' value='Paper' id='P2_Paper' name='choice'>
+<input type='submit' value='Scissors' id='P1_Scissors' name='choice'>
+</form>
+<% end %>
+
+<%= @game.current_turn.name %>'s turn
+
+<h2>Battle Status</h2>
+<% @game.log.reverse.each do |item| %>
+<%= item %></br>
+<% end %>
