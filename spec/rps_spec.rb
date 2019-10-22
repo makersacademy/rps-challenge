@@ -43,15 +43,15 @@ describe Rps do
   end
   describe '#match' do
     it 'when "rock" entered goes to rock method' do
-      allow(rock).to receive(:choice).and_return "rock"
+      expect(rock).to receive(:rock).and_return('Tie! no one wins')
       rock.rock
     end
     it 'when "paper" entered goes to paper method' do
-      allow(paper).to receive(:choice).and_return "paper"
+      expect(paper).to receive(:paper).and_return "Tie! no one wins"
       paper.paper
     end
     it 'when "scissors" entered goes to scissors method' do
-      allow(scissors).to receive(:choice).and_return "scissors"
+      allow(scissors).to receive(:scissors).and_return "Tie! no one wins"
       scissors.scissors
     end
   end

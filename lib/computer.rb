@@ -1,5 +1,6 @@
 class Computer
+  SHAPES = ["rock", "paper", "scissors"]
   def weapon
-    ["rock", "paper", "scissors"].sample
+    SHAPES.sample
   end
 end
