@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'shotgun'
+
 require './lib/game'
 
 class RPS_Game < Sinatra::Base

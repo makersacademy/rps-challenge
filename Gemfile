@@ -8,7 +8,6 @@ gem 'capybara', '~> 2.7', '>= 2.7.1'
 
 
 group :test do
-  gem 'capybara'
   gem 'rspec'
   gem 'rubocop', '0.56.0'
   gem 'simplecov', require: false
