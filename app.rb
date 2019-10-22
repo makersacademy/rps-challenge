@@ -15,9 +15,9 @@ class Battle < Sinatra::Base
   post '/play_game' do
     @player_weapon = params[:player_weapon]
     opponent = Opponent.new
+    opponent.player_weapon(@player_weapon)
     @opponent_move = opponent.choose_random_move
-    @who_wins = opponent.who_wins?
-    p @who_wins
+    @who_wins = opponent.who_wins
     erb :play_game
   end
 end
