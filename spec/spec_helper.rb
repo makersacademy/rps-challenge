@@ -2,12 +2,25 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
+ENV['RACK_ENV'] = 'test'
+
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+require 'features/web_helpers'
+
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+
+# require our Sinatra app file
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+# tell Capybara about our app class
+Capybara.app = Battle
 
 RSpec.configure do |config|
   config.after(:suite) do
