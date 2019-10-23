@@ -33,26 +33,15 @@ class Opponent
   def who_wins
     if @player_weapon == @opponent_move
       @who_wins = "It's a tie!"
-      return @who_wins
-    elsif @player_weapon == 'rock' && @opponent_move == 'paper'
-      @who_wins = 'You lose!'
-      return @who_wins
     elsif @player_weapon == 'rock' && @opponent_move == 'scissors'
       @who_wins = 'You win!'
-      return @who_wins
     elsif @player_weapon == 'paper' && @opponent_move == 'rock'
       @who_wins = 'You win!'
-      return @who_wins
-    elsif @player_weapon == 'paper' && @opponent_move == 'scissors'
-      @who_wins = 'You lose!'
-      return @who_wins
-    elsif @player_weapon == 'scissors' && @opponent_move == 'rock'
-      @who_wins = 'You lose!'
-      return @who_wins
     elsif @player_weapon == 'scissors' && @opponent_move == 'paper'
       @who_wins = 'You win!'
-      return @who_wins
+    else
+      @who_wins = 'You lose!'
     end
-
+    return @who_wins
   end
 end
