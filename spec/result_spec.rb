@@ -1,4 +1,3 @@
-require 'result'
 
 describe 'who_wins' do
   it "Announces it's a tie when both moves are the same" do

@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require './lib/opponent'
-require './lib/result'
 
 class Battle < Sinatra::Base
   get '/' do
