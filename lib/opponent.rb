@@ -11,17 +11,6 @@ class Opponent
     @opponent_move = move
   end
 
-  # def choose_random_move
-  #   random_number = rand(3)
-  #   if random_number == 0
-  #     @opponent_move = 'rock'
-  #   elsif random_number == 1
-  #     @opponent_move = 'paper'
-  #   elsif random_number == 2
-  #     @opponent_move = 'scissors'
-  #   end
-  # end
-
   def choose_random_move
     @opponent_move = ['rock', 'paper', 'scissors'].sample
   end

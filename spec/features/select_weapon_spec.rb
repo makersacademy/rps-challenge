@@ -11,10 +11,3 @@ feature 'Select weapon' do
     expect(page).to have_content 'You have chosen: rock'
   end
 end
-
-# feature '#Opponent' do
-#   scenario 'Computer can pick a move' do
-#     opponent = Opponent.new
-#     opponent.choose_move('rock')
-#     expect { opponent.move }.not_to eq(nil)
-#   end
