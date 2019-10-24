@@ -17,6 +17,8 @@ GEM
     docile (1.1.5)
     hirb (0.7.3)
     json (2.1.0)
+    mail (2.7.1)
+      mini_mime (>= 0.1.1)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     mustermann (1.0.1)
@@ -25,6 +27,8 @@ GEM
     parallel (1.12.1)
     parser (2.5.1.0)
       ast (~> 2.4.0)
+    pony (1.13.1)
+      mail (>= 2.0)
     powerpack (0.1.1)
     public_suffix (3.0.1)
     rack (2.0.4)
@@ -83,6 +87,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  pony
   rack
   rake
   rspec

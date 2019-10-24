@@ -4,6 +4,12 @@ require_relative 'player'
 class Game
   attr_reader :player_1, :move
 
+  WIN = {
+    "Rock" => "Paper",
+    "Paper" => "Scissors",
+    "Scissors" => "Rock"
+  }.freeze
+
   def initialize(player_1, move)
     @player_1 = player_1
     @move = move
@@ -19,28 +25,26 @@ class Game
 
   def outcome
     if tie
-      "It's a draw!"
+      :tie
     elsif lose
-      "You lost!"
+      :lose
     elsif win
-      "You won!"
+      :win
     end
   end
 
-  private
+
 
   def tie
     player_last_action == computer_last_action
   end
 
   def lose
-    player_last_action == "Rock" && computer_last_action == "Paper" ||
-    player_last_action == "Paper" && computer_last_action == "Scissors" ||
-    player_last_action == "Scissors" && computer_last_action == "Rock"
+    !win && !tie
   end
 
   def win
-    !tie && !lose
+    player_last_action == WIN[computer_last_action]
   end
 
   def self.create(player_1, move)

@@ -6,6 +6,7 @@ gem 'rake'
 gem 'sinatra'
 gem 'rack'
 gem 'selenium-webdriver'
+gem 'pony'
 
 group :test do
   gem 'capybara'

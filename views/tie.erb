@@ -1,0 +1,16 @@
+<center>
+  <body>
+    <h1 style="font-family:verdana; font-size:35px">Battleground!</h1>
+    <hr>
+    <br>
+    <p style="font-family:verdana; font-size:30px"><%= @game.player_1.name %> chooses <%= @game.player_last_action %></p>
+    <br>
+    <p style="font-family:verdana; font-size:30px">Computer chooses <%= @game.computer_last_action %></p>
+    <br>
+    <p style="font-family:verdana; font-size:30px"><b>It's a tie!</b></p>
+
+    <form action="/play">
+      <input type="submit" style="font-size:35px" value="Play again">
+    </form>
+  </body>
+</center>

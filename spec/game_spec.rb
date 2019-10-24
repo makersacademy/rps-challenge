@@ -19,10 +19,11 @@ describe Game do
 
   describe '#outcome' do
     it 'declares Boris the Winner' do
+      allow(Kernel).to receive(:rand).and_return(2)
       game.player_last_action
-      # allow(Kernel).to receive(:rand).and_return(2)
 
-      expect(game.outcome).to eq "You won!"
+
+      expect(game.outcome).to eq :win
     end
   end
 end
