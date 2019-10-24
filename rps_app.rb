@@ -1,6 +1,6 @@
 require 'sinatra'
-require 'game'
-require 'player'
+require './lib/game'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
   attr_reader :player
