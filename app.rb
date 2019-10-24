@@ -23,6 +23,10 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/play' do 
+    erb :play
+  end
+
   post '/rock' do
     erb :rock
   end
