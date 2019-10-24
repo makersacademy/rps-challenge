@@ -2,16 +2,12 @@ require 'sinatra'
 require 'game'
 require 'player'
 
-class Rock_paper_scissors < Sinatra::Base
-
+class RockPaperScissors < Sinatra::Base
+  attr_reader :player
   enable :sessions
 
   get '/' do
     erb :main_page
-  end
-
-  get '/infra' do
-    'Testing infrastructure working!'
   end
 
   post '/register-names' do
@@ -25,12 +21,20 @@ class Rock_paper_scissors < Sinatra::Base
   end
 
   get '/game' do
-    game = Game.new
-    $player.players_move('rock')
-    game.workout_winner($player.move, 'paper')
+    game = Game.new($player)
+    $player.players_move("rock")
+    game.workout_winner($player.move, "scissors")
     @winner = game.winner
     @loser = game.loser
     erb :game
+  end
+
+  get '/draw' do
+    game = Game.new($player)
+    @player = $player.player_name
+    $player.players_move("rock")
+    game.workout_winner($player.move, "rock")
+    erb :draw
   end
 
 end
