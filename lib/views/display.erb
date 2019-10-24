@@ -1,6 +1,17 @@
-<!DOCTYPE html>
 <html>
   <body>
     <h1>Hello,  <%= @name %></h1>
+    <h2>Choose an option:</h2>
+    <form action="/rock" method="post">
+      <input type="submit" value="Rock">
+    </form>
+
+    <form action="/paper" method="post">
+      <input type="submit" value="Paper">
+    </form>
+
+    <form action="/scissors" method="post">
+      <input type="submit" value="Scissors">
+    </form>
   </body>
 </html>
