@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './src/Player'
 
 class Game < Sinatra::Base
     enable :sessions
@@ -8,11 +9,12 @@ class Game < Sinatra::Base
     end
     
     post "/game_setup" do
-        session[:game] = Game.new(params[:player1], params[:player2])
+        session[:player] = Player.new(params[:name])
         redirect '/play'
     end
 
-    post '/play' do
+    get '/play' do
+        @player = session[:player]
         erb(:play)
     end
 
