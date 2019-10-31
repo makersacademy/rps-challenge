@@ -5,7 +5,6 @@ require './src/Computer'
 
 class Game < Sinatra::Base
     enable :sessions
-    @computer = Computer.new
 
     get '/' do 
         erb(:home)
@@ -22,9 +21,18 @@ class Game < Sinatra::Base
     end
 
     post '/result' do
+        @result = nil
         @player = session[:player]
         @player.MakeMove(params[:move])
-        @player.HasWon(@computer.GenerateMove)
+        @computer = Computer.new
+        case @player.CheckWon(@computer.Move)
+            when true
+                @result = "You have won!"
+            when false 
+                "You have lost"
+            when "Draw"
+                "It was a draw"
+        end
         erb(:result)
     end
 

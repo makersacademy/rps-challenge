@@ -5,6 +5,6 @@ class Computer
     end
     
     def Move()
-        return "Rock", "Paper", "Scissors"].sample
+        return ["Rock", "Paper", "Scissors"].sample
     end
 end
