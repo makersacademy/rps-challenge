@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -22,6 +24,17 @@ class Rps < Sinatra::Base
     erb :choose
   end
 
-  run! if app_file == $0
+  post '/weapon' do
+    $player.choice(@choice) == $player.choice(params[:choice])
+    if $player.choice("rock")
+      redirect '/rock'
+    end
+  end
 
+  get '/rock' do
+    @player_name = $player.name
+    erb :rock
+  end
+
+  run! if app_file == $0
 end
