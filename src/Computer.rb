@@ -1,10 +1,10 @@
 class Computer
-    attr_reader :name, :move
+    attr_reader :name
     def initialize
         @name = "Computer"
     end
     
-    def GenerateMove()
-        @move = ["Rock", "Paper", "Scissors"].sample
+    def Move()
+        return "Rock", "Paper", "Scissors"].sample
     end
 end

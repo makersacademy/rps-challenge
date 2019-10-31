@@ -1,7 +1,5 @@
-<h2> <%= @player.name %>, pick an option </h2>
+<h2> <%= @player.name %>, enter your hand!</h2>
 
 <form method="POST" action="/result">
-    <button name="attack" type="submit" value="Attack">Rock</button>
-    <button name="attack" type="submit" value="Attack">Paper </button>
-    <button name="attack" type="submit" value="Attack">Scissors</button>
+    <input type="text" name="move">
 </form>

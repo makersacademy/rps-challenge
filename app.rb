@@ -1,8 +1,11 @@
 require 'sinatra/base'
 require './src/Player'
+require './src/Computer'
+
 
 class Game < Sinatra::Base
     enable :sessions
+    @computer = Computer.new
 
     get '/' do 
         erb(:home)
@@ -19,6 +22,9 @@ class Game < Sinatra::Base
     end
 
     post '/result' do
+        @player = session[:player]
+        @player.MakeMove(params[:move])
+        @player.HasWon(@computer.GenerateMove)
         erb(:result)
     end
 
