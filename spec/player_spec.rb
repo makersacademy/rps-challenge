@@ -12,4 +12,9 @@ describe Player do
         subject.MakeMove("Rock")
         expect(subject.move).not_to eq nil
     end
+
+    it "should allow the player to decide whether they have won or not" do
+        subject.MakeMove("Rock")
+        expect(subject.CheckWon("Scissors")).to eq true
+    end
 end
