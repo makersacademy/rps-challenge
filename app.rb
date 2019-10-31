@@ -17,6 +17,11 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  get '/choose' do
+    @player_name = session[:player_name]
+    erb :choose
+  end
+
   run! if app_file == $0
 
 end
