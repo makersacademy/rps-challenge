@@ -9,6 +9,7 @@ describe Player do
     end
 
     it 'should allow the player to make a move' do
+        subject.MakeMove("Rock")
         expect(subject.move).not_to eq nil
     end
 end
