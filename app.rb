@@ -28,6 +28,7 @@ class RPS < Sinatra::Base
   get "/result" do
     @player_1_name = session[:player_1_name]
     @player_1_choice = session[:player_1_choice]
+    erb :result
   end
 
   # start the server if ruby file executed directly
