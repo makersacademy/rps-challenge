@@ -1,15 +1,7 @@
 <%= @player_1_name %> vs. CPU
 
 <div class="container">
-    <form action="/rock">
-        <input type="submit" value="Rock">
-    </form>
-
-    <form action="/paper">
-        <input type="submit" value="Paper">
-    </form>
-
-    <form action="/scissors">
-        <input type="submit" value="Scissors">
+    <form action=<%=@player_option%> method="post">
+        <input type="submit" value="Lock in <%=@player_option%>">
     </form>
 </div>
