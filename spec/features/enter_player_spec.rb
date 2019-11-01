@@ -9,5 +9,4 @@ feature 'enter player name' do
     sign_in
     expect(page).to have_content 'To play, please enter Rock, Paper, or Scissors!'
   end
-  
 end
