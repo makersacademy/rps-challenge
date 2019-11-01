@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  subject { Game.new("Dave")}
+  subject { Game.new("Dave", "Computer")}
 
   it 'creates an instance of game' do
     expect(subject).to be_an_instance_of Game
