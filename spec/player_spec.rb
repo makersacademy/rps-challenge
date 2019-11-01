@@ -9,6 +9,7 @@ describe Player do
   it "allows the player to make a choice between R, P & S" do
     player = Player.new("Marc")
     player.weapon("Rock")
-    expect(@choice).to eq "Rock"
+    p @choice
+    expect(player.choice).to eq "Rock"
   end
 end

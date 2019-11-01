@@ -4,4 +4,8 @@ class Player
   def initialize(name)
     @name = name
   end
+
+  def weapon(choice)
+    @choice = choice
+  end
 end
