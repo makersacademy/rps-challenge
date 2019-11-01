@@ -14,4 +14,9 @@ describe Game do
         subject.take_go("rock")
         expect(subject.player_move).to eq "rock"
     end
+
+    it 'computer should be able to take their move' do 
+        subject.computer_take_go
+        expect(subject.computer_move).to be_within ["rock", "paper", "scissors"]
+    end
 end
