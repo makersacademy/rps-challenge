@@ -18,4 +18,15 @@ class Player
   def games_played
     @wins + @losses
   end
+
+  def make_random_choice
+    case Kernel.rand(3)
+    when 0
+      :paper
+    when 1
+      :scissors
+    else
+      :rock
+    end
+  end
 end
