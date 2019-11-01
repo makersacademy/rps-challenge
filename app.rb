@@ -16,5 +16,9 @@ class RPS < Sinatra::Base
     @player_name = session[:player_1_name]
     erb :play
   end
+
+  get "/player1_move" do
+    "Player1 made a choice"
+  end
   run! if app_file == $0
 end

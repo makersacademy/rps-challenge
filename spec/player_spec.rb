@@ -5,4 +5,10 @@ describe Player do
     player = Player.new("Marc")
     expect(player.name).to eq "Marc"
   end
+
+  it "allows the player to make a choice between R, P & S" do
+    player = Player.new("Marc")
+    player.weapon("Rock")
+    expect(@choice).to eq "Rock"
+  end
 end
