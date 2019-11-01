@@ -7,8 +7,8 @@ feature 'Choose option' do
 
   scenario 'choose an option' do
     sign_in_to_play
-    click_button 'Click here to continue'
-    select('Rock', from: 'dropdown')
+    click_button "Click here to continue"
+    fill_in :player_choice, with: "rock"
     click_button 'Submit'
     expect(page).to have_content 'Dave you chose rock'
   end

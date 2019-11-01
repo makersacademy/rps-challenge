@@ -15,25 +15,23 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @player_name = $player.name
+    @player = $player
     erb :play
   end
 
   get '/choose' do
-    @player_name = $player.name
+    @player = $player
     erb :choose
   end
 
   post '/weapon' do
-    $player.choice(@choice) == $player.choice(params[:choice])
-    if $player.choice("rock")
-      redirect '/rock'
-    end
+    $player.choice(params[:player_choice])
+    redirect '/show-choice'
   end
 
-  get '/rock' do
-    @player_name = $player.name
-    erb :rock
+  get '/show-choice' do
+    @player = $player
+    erb :choice
   end
 
   run! if app_file == $0
