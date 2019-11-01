@@ -14,11 +14,11 @@ class Game
 
     def result 
         if player_rock_win? || player_paper_win? || player_scissors_win?
-            "#{@player_name} wins"
+            "Player"
         elsif computer_rock_win? || computer_rock_win? || computer_rock_win?
-            "Computer wins"
+            "Computer"
         else
-            "It's a draw"
+            "Draw"
         end
     end
 
