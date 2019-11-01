@@ -37,4 +37,21 @@ describe Player do
   it 'has number of games played' do
     expect(subject.games_played).to eq(subject.wins + subject.losses)
   end
+
+  describe 'random choices' do
+    it 'can make a random choice to paper' do
+      allow(Kernel).to receive(:rand).and_return 0
+      expect(subject.make_random_choice).to eq :paper
+    end
+
+    it 'can make a random choice to scissors' do
+      allow(Kernel).to receive(:rand).and_return 1
+      expect(subject.make_random_choice).to eq :scissors
+    end
+
+    it 'can make a random choice to rock' do
+      allow(Kernel).to receive(:rand).and_return 2
+      expect(subject.make_random_choice).to eq :rock
+    end
+  end
 end
