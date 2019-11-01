@@ -16,13 +16,18 @@ class Rps < Sinatra::Base
     @player_1_name = session[:player_1_name]
     erb :play
   end
+
   get "/play_move" do
     erb :moves
   end
+
   post "/move" do
     session[:move] = params[:move]
     @move = session[:move]
+    Game.activate(@move)
   end
 
   run! if app_file == $0
 end
+
+#next need to get choices from move and act accordingly ...
