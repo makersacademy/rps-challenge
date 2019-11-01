@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -19,6 +20,10 @@ class Rps < Sinatra::Base
   end
 
   post '/results' do
-    "Game over"
+    @player_1_move = params[:move]
+    @player_2_move = ["Rock","Paper","Scissors"].sample
+    game =Game.new(session[:player_1_name], "Computer")
+    game.results(@player_1_move, @player_2_move)
+    erb :results
   end
 end
