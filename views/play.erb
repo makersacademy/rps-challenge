@@ -23,7 +23,7 @@
       <button class="choice paper-button">Paper</button>
       <button class="choice scissors-button">Scissors</button>
     <% else %>
-      <p id="waiting-for-other-player-message">Waiting for other player to choose...</p>
+      <p id="waiting-for-other-player-message">Waiting for <%= @other_player.name %> to choose...</p>
     <% end %>
   </div>
 </div>
