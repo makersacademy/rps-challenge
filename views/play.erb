@@ -1,7 +1,15 @@
 <%= @player_1_name %> vs. CPU
 
 <div class="container">
-    <button class="pick-option-button">Rock</button>
-    <button class="pick-option-button">Paper</button>
-    <button class="pick-option-button">Scissors</button>
+    <form action="/rock">
+        <input type="submit" value="Rock">
+    </form>
+
+    <form action="/paper">
+        <input type="submit" value="Paper">
+    </form>
+
+    <form action="/scissors">
+        <input type="submit" value="Scissors">
+    </form>
 </div>
