@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class RockPaperScissort < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
     get '/' do
         erb :index
     end
