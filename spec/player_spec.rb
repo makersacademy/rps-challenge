@@ -10,4 +10,8 @@ describe Player do
     it 'allows user to enter their name' do
         expect(subject.name).to eq 'player'    
     end
+
+    it 'allows user to select an option' do
+        expect(player.option).to eq 'rock'
+    end
 end
