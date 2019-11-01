@@ -2,6 +2,8 @@
 
 
 User stories completed : 
+- I would like to register my name before playing an online game
+
 
 
 Reffered to :
