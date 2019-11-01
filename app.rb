@@ -1,6 +1,7 @@
 require 'sinatra/base'
 
 class Rps < Sinatra::Base
+  enable :sessions
 
   get '/' do
     erb :index
@@ -8,7 +9,9 @@ class Rps < Sinatra::Base
 
   post '/names' do
     "Registered!"
+    redirect '/play'
   end
 
-
-end
+  get '/play' do
+    erb :play
+  end
