@@ -23,7 +23,7 @@ class Rps < Sinatra::Base
     @player_1_move = params[:move]
     @player_2_move = ["Rock","Paper","Scissors"].sample
     game =Game.new(session[:player_1_name], "Computer")
-    game.results(@player_1_move, @player_2_move)
+    @result = game.results(@player_1_move, @player_2_move)
     erb :results
   end
 end
