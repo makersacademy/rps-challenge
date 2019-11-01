@@ -9,7 +9,7 @@ feature 'action' do
     end
   end
 
-  scenario 'displays correct response', driver: :selenium do
+  scenario 'displays correct response' do
     enter_name_and_start('Test')
     computer_choices = Array.new
     until computer_choices.length == 3 do

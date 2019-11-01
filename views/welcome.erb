@@ -1,0 +1,25 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container text-center mt-4">
+  <h1>Welcome to Rock Paper Scissors</h1>
+  <div class="row mt-2 mt-md-4">
+    <div class="col-12 col-md-6">
+      <img src="images/noun_rps.svg" class="w-75">
+    </div>
+    <div class="col-12 col-md-6 text-left align-self-center">
+      <h3 class="text-center mt-3">Start playing</h3>
+      <form action="/start" method="POST">
+        <div class="form-group">
+          <label htmlFor="name">Enter your name</label>
+          <input class="form-control" name="name" id="name" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Start!</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
