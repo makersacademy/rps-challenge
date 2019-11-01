@@ -7,6 +7,6 @@ describe Game do
     end
 
     it 'should have a player name attached to it' do 
-        expect(subject.player).to eq "Rob"
+        expect(subject.player_name).to eq "Rob"
     end
 end
