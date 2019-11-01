@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/cpu'
 
 class RockPaperScissors < Sinatra::Base
     enable :sessions
@@ -10,6 +11,7 @@ class RockPaperScissors < Sinatra::Base
 
     post '/enter_names' do
         $player_1 = Player.new(params[:player_1], params[:player_option])
+        $player_2 = Cpu.new
         redirect :play
     end
 
@@ -36,6 +38,7 @@ class RockPaperScissors < Sinatra::Base
 
     get '/game' do
         @player_option = $player_1.option
+        @cpu_option = $player_2.pick_random_option
         erb :game
     end
 

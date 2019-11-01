@@ -3,7 +3,12 @@
     <input class="form_input" type="text" name="player_1">
 
     <label class="form_label" for="player_option">Type rock, paper or scissors</label>
-    <input class="form_input" type="text" name="player_option">
+    <%# <input class="form_input" type="text" name="player_option"> %>
+    <select class="form_input" name="player_option">
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+    </select>
 
     <input type="submit" value="Submit">
 </form>
