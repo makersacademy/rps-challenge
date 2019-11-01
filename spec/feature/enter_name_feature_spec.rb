@@ -10,4 +10,12 @@ feature "Rock, Paper, Scissors enter name" do
         click_on 'play'
         expect(page).to have_content "Rob vs. computer"
     end
+
+    scenario 'Can enter name and get name displayed on screen' do 
+        visit('/')
+        fill_in 'name',  :with => "Rob"
+        click_on 'play'
+        click_on 'scissors'
+        expect(page).to have_content "You played: scissors"
+    end
 end

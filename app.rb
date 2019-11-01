@@ -18,4 +18,13 @@ class RockPaperScissors < Sinatra::Base
         @name = session[:name]
         erb(:game)
     end
+
+    post '/take_go' do 
+        session[:player_move] = params[:go_choice]
+        redirect('/result')
+    end
+
+    get '/result' do 
+        "You played: #{session[:player_move]}"
+    end
 end
