@@ -24,8 +24,8 @@ class RPS < Sinatra::Base
   end
 
   post '/scores' do
-    $game.player1.move(params[:pick_move])
-    $game.player2.move(["rock","paper","scissors"].sample)
+    $game.player1.pick_move(params[:pick_move])
+    $game.player2.pick_move(["Rock","Paper","Scissors"].sample)
     redirect '/results'
   end
 
