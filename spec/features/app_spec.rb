@@ -15,3 +15,14 @@ feature "Start Window" do
     expect(page).to have_content "Bradley"
   end
 end
+
+feature "Player" do
+  scenario "Player can choose a move" do
+    visit '/'
+    fill_in('player', :with => 'Bradley')
+    click_button("submit")
+    select("Rock")
+    click_button("submit")
+    expect(page).to have_content "Rock"
+  end
+end

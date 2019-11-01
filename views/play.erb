@@ -1,0 +1,11 @@
+<html>
+  <h1><%= "#{@player} Vs Computer" %></h1>
+  <form action="/scores" method="Post">
+    <select name="pick_move">
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+    </select>
+    <input type="submit" name="submit">
+  </form>
+</html>

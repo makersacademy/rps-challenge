@@ -19,4 +19,16 @@ class RPS < Sinatra::Base
     @player = $player
     erb :play
   end
+
+  post '/scores' do
+    $player_move = params[:pick_move]
+    $computer_move = ["rock","paper","scissors"].sample
+    redirect '/results'
+  end
+
+  get '/results' do
+    @player_move = $player_move
+    @computer_move = $computer_move
+    erb :results
+  end  
 end
