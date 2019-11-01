@@ -1,5 +1,15 @@
 # RPS Challenge
 
+STORIES COMPLETED:
+=================
+
+* User story 1 -  As a marketeer
+                  So that I can see my name in lights
+                  I would like to register my name before playing an online game
+
+I completed this step by setting up the relevant view.erb files and creating routes in app.rb to utilise input and output of data. I also added some minor style formatting to the sign in page and user name page.
+
+
 Instructions
 -------
 

@@ -8,9 +8,13 @@ class RPS < Sinatra::Base
   end
 
   post "/name" do
-    @player_name = params[:player_1]
-    erb :play
+    session[:player_1_name] = params[:player_1]
+    redirect "/play"
   end
 
+  get "/play" do
+    @player_name = session[:player_1_name]
+    erb :play
+  end
   run! if app_file == $0
 end
