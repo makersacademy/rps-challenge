@@ -24,6 +24,16 @@ class RockPaperScissors < Sinatra::Base
         redirect :game
     end
 
+    post '/paper' do
+        @player_option = $player_1.option
+        redirect :game
+    end
+
+    post '/scissors' do
+        @player_option = $player_1.option
+        redirect :game
+    end
+
     get '/game' do
         @player_option = $player_1.option
         erb :game
