@@ -17,6 +17,7 @@ describe Game do
 
     it 'computer should be able to take their move' do 
         subject.computer_take_go
-        expect(subject.computer_move).to be_within ["rock", "paper", "scissors"]
+        subject.computer_move
+        expect(["rock", "paper", "scissors"].select{ |item| item == subject.computer_move}.length).to eq 1 
     end
 end
