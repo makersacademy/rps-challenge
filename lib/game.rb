@@ -1,9 +1,7 @@
 class Game
-  def activate(entry)
-    if entry == "rock"
-      "yay"
-    else
-      "dammit"
-    end
+  attr_reader :input
+
+  def initialize(move)
+    @input = move
   end
 end
