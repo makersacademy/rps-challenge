@@ -84,3 +84,13 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+Sara Rancati - 2 November 2019
+----------------------
+Development process:
+
+1. First user story:
+
+
+
+2. Second user story:
