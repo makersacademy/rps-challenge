@@ -20,4 +20,10 @@ describe Game do
         subject.computer_move
         expect(["rock", "paper", "scissors"].select{ |item| item == subject.computer_move}.length).to eq 1 
     end
+
+    it 'should get the result of the game' do 
+        subject.take_go("rock")
+        subject.computer_take_go
+        expect(subject.result).to eq "Rob wins"
+    end
 end
