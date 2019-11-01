@@ -1,4 +1,4 @@
-class Game
+class Computer
   attr_reader :computer_choice
 
   def choice
