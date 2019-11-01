@@ -24,7 +24,6 @@ class Rps < Sinatra::Base
   post "/move" do
     session[:move] = params[:move]
     @move = session[:move]
-    Game.activate(@move)
   end
 
   run! if app_file == $0
