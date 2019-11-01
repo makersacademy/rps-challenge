@@ -23,10 +23,15 @@
     font-size: 3em;
 }
 
-.choice {
+button.choice {
     border: 2px solid black;
     padding: 40px;
     font-size: 2em;
+    background-color: white;
+}
+
+button.choice.selected {
+    background-color: coral;
 }
 
 #this-player .choice:hover {

@@ -19,9 +19,9 @@
   <div id="other-player" class="player">
     <p class="name"><%= @other_player.name %></p>
     <% if @other_player_choice != nil %>
-      <button class="choice rock-button">Rock</button>
-      <button class="choice paper-button">Paper</button>
-      <button class="choice scissors-button">Scissors</button>
+      <button class="choice rock-button" disabled>Rock</button>
+      <button class="choice paper-button" disabled>Paper</button>
+      <button class="choice scissors-button" disabled>Scissors</button>
     <% else %>
       <p id="waiting-for-other-player-message">Waiting for <%= @other_player.name %> to choose...</p>
     <% end %>
@@ -42,13 +42,13 @@
   function indicateChoices() {
     switch (thisPlayerChoice) {
         case "paper":
-            $("#this-player .choice.paper-button").css("background-color", "coral");
+            $("#this-player .choice.paper-button").addClass("selected");
             break;
         case "scissors":
-            $("#this-player .choice.scissors-button").css("background-color", "coral");
+            $("#this-player .choice.scissors-button").addClass("selected");
             break;
         case "rock":
-            $("#this-player .choice.rock-button").css("background-color", "coral");
+            $("#this-player .choice.rock-button").addClass("selected");
             break;
         default:
             console.log("None chosen");
