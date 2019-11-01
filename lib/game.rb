@@ -24,6 +24,7 @@ class Game
   end
 
   def winner
+    return nil if @player_one_choice == nil or @player_two_choice == nil
     result = CHOICES[@player_one_choice] - CHOICES[@player_two_choice]
 
     if (@player_one_choice == :rock and @player_two_choice == :paper) or (@player_two_choice == :rock and @player_one_choice == :paper)
@@ -31,7 +32,7 @@ class Game
     end
 
     if result == 0
-      nil
+      "Draw"
     elsif result < 0
       @player_two
     else
