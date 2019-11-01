@@ -1,11 +1,11 @@
 <html>
 
 <body>
-    <h1> Welcome to the game <b style="color:rgb(236, 36, 1);"><%= @player_name %></b>!</h1>
+    <h1> Welcome to the game <b style="color:rgb(236, 36, 1);"><%= @player.name %></b>!</h1>
     <br>
     <br>
     <br>
-    <h2><%= @player_name %> choose your weapon:</h2>
+    <h2><%= @player.name %> choose your weapon:</h2>
     <br>
     <form action="/player1_move" method="post">
         <div>
