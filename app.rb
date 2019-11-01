@@ -2,8 +2,14 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base
   get '/' do
-    'Hello Rock Paper Scissors!'
+    erb :index
   end
-  
+
   run! if app_file == $0
+
+  post '/names' do
+    @player_1_name = params[:player_1_name]
+    erb :play
+  end
+
 end
