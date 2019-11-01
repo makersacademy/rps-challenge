@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+  <title>RPS | Play</title>
+  <link rel="stylesheet" type="text/css" href="/main.css" />
+  <link rel="stylesheet" type="text/css" href="/play.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+  <div id="this-player" class="player">
+    <p class="name"><%= @this_player.name %></p>
+    <button id="rock-button" class="choice">Rock</button>
+    <button id="paper-button" class="choice">Paper</button>
+    <button id="scissors-button" class="choice">Scissors</button>
+  </div>
+  <div id="other-player" class="player">
+    <p class="name"><%= @other_player.name %></p>
+    <button id="rock-button" class="choice">Rock</button>
+    <button id="paper-button" class="choice">Paper</button>
+    <button id="scissors-button" class="choice">Scissors</button>
+  </div>
+</div>
+</body>
+</html>
