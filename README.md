@@ -1,5 +1,11 @@
 # RPS Challenge
 
+
+User stories completed : 
+
+
+Reffered to :
+- > https://github.com/makersacademy/course/blob/master/intro_to_the_web/walkthroughs/entering_players.md
 Instructions
 -------
 

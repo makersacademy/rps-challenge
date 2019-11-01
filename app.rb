@@ -1,7 +1,9 @@
-require "sinatra"
-get "/" do
-  "Hello World"
-end
-get "/secret" do
-  "this is a secret"
+require "sinatra/base"
+
+class Rps < Sinatra::Base
+  get "/" do
+    "Testing infrastructure working!"
+  end
+
+  run! if app_file == $0
 end
