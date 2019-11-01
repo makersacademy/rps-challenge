@@ -1,0 +1,27 @@
+body {
+    background-image: url(https://dmxg5wxfqgb4u.cloudfront.net/2018-10/GettyImages-1046863788_1.jpg?JzngoF2P1aHp2i9NSx8eRtHDLfd1GaC.);
+    background-position: center center;
+    background-size: cover;
+}
+
+.text {
+    text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+    margin: 220 0 0 0;
+        
+}
+
+.textbox {
+    width: 150px;
+}
+
+h1{
+   font-size: 50px;
+}
+
+h2{
+  font-size: 40px;
+}
