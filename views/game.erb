@@ -1,8 +1,59 @@
-<h1>Rock, Paper, Scissors</h1>
-<h2><%= @name %> vs. computer</h2>
 
-<form method="post" action="/take_go">
-    <input name="go_choice" type="submit" value="rock">
-    <input name="go_choice" type="submit" value="paper">
-    <input name="go_choice" type="submit" value="scissors">
-</form>
+<div class="main-card">
+    <h1 class="main-heading">Rock, Paper, Scissors</h1>
+    <h2 class="sub-heading"><%= @name %> vs. computer</h2>
+
+    <form method="post" action="/take_go">
+        <div class="button-container">
+            <label for="go_choice">Please pick which option you would like</label>
+            <input name="go_choice" type="submit" value="rock">
+            <input name="go_choice" type="submit" value="paper">
+            <input name="go_choice" type="submit" value="scissors">
+        </div>
+    </form>
+</div>
+
+
+<style>
+    body {
+        background-color: #AEC5EB;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #545454;
+    }
+
+    input {
+        margin-top: 20px;
+        border: 2px solid #545454;
+        border-radius: 5px;
+        padding: 5px 20px;
+        font-size: 18px;
+    }
+
+    input:hover {
+        background-color: #EEEEEE;
+        cursor: pointer;
+    }
+
+    .main-heading, .sub-heading {
+        text-align: center;
+    }
+
+    .main-card {
+        background-color: #FFFFFF;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        max-width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .button-container {
+        width: 90%;
+        margin: 50px auto;
+    }
+</style>

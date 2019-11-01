@@ -1,3 +1,70 @@
-<p>You played: <%= @player_move %></p>
-<p>The computer played: <%= @computer_move %></p>
-<p>The result is: <%= @result %></p>
+<div class="main-card">
+    <h1 class="main-heading">The Results!</h1>
+    <p>You played: <strong><%= @player_move %></strong></p>
+    <p>The computer played: <strong><%= @computer_move %></strong></p>
+    <p>The result is: <strong><%= @result %><strong></p>
+    <a href='/play'>Play again</a>
+</div>
+
+<style>
+    body {
+        background-color: #AEC5EB;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #545454;
+    }
+
+    input {
+        display: block;
+        border: none;
+        border-bottom: 2px #545454 solid;
+        margin-top: 15px;
+        width: 200px;
+    }
+
+    button {
+        margin-top: 20px;
+        border: 2px solid #545454;
+        border-radius: 5px;
+        padding: 5px 20px;
+        font-size: 18px;
+    }
+
+    button:hover {
+        background-color: #EEEEEE;
+        cursor: pointer;
+    }
+
+    .main-heading {
+        text-align: center;
+    }
+
+    .main-card {
+        background-color: #FFFFFF;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        max-width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding: 20px;
+    }
+
+    a {
+        font-size: 18px;
+        position: absolute;
+        bottom: 20px;
+        text-align: center; 
+        color: #545454;
+        text-decoration: none;
+        margin: 0 auto;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+
+</style>
