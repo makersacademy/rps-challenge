@@ -1,2 +1,2 @@
-require_relative '_routes.rb'
+require_relative 'app.rb'
 run Rps
