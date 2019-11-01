@@ -1,6 +1,7 @@
 require 'sinatra/base'
+require './lib/game'
 
-class Login < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
     
     enable :sessions
 
