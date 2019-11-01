@@ -1,0 +1,15 @@
+<html>
+
+<div align="center" class="text">
+    <form action="/result" method="post">
+        <%= @game.players[0].player_name %> vs. <%= @game.players[1].player_name %>
+        <br>
+
+        <label for="player_1_choice" style="font-size: 30px;"> Rock, paper, or scissors </label>
+        <br>
+        <input type="text" name="player_1_choice" id="player_1_choice" class="textbox" />
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</html>
