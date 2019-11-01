@@ -21,10 +21,13 @@ class RockPaperScissors < Sinatra::Base
 
     post '/take_go' do 
         session[:player_move] = params[:go_choice]
+        session[:computer_move] = ["rock", "paper", "scissors"].sample
         redirect('/result')
     end
 
     get '/result' do 
-        "You played: #{session[:player_move]}"
+        @player_move = session[:player_move]
+        @computer_move = session[:computer_move]
+        erb(:result)
     end
 end
