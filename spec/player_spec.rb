@@ -27,4 +27,19 @@ describe Player do
         subject.MakeMove("Scissors")
         expect(subject.CheckWon("Scissors")).to eq "Draw"
     end
+
+    it "test more win conditions" do
+        subject.MakeMove("Paper")
+        expect(subject.CheckWon("Rock")).to eq false
+    end
+
+    it "test more win conditions" do
+        subject.MakeMove("Scissors")
+        expect(subject.CheckWon("Rock")).to eq false
+    end
+
+    it "test more win conditions" do
+        subject.MakeMove("Paper")
+        expect(subject.CheckWon("Paper")).to eq "Draw"
+    end
 end
