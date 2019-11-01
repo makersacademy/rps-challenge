@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
-
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -32,6 +32,18 @@ class Rps < Sinatra::Base
   get '/show-choice' do
     @player = $player
     erb :choice
+  end
+
+  post '/computer' do
+    @player = $player
+    $game = Game.new
+    redirect '/final'
+  end
+
+  get '/final' do
+    @player = $player
+    @game = $game
+    erb :final
   end
 
   run! if app_file == $0

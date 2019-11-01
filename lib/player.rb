@@ -12,5 +12,4 @@ class Player
   def choice(player_choice)
     @player_choice = player_choice
   end
-
 end

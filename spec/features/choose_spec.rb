@@ -13,5 +13,4 @@ feature 'Choose option' do
     expect(page).to have_content 'Dave you chose rock'
   end
 
-
 end
