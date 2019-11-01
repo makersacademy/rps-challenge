@@ -1,0 +1,3 @@
+class Cpu
+    
+end
