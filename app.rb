@@ -30,8 +30,11 @@ class RPS < Sinatra::Base
   end
 
   get '/results' do
-    @player_move = $game.player1.move
-    @computer_move = $game.player2.move
+    @player1 = $game.player1
+    @player2 = $game.player2
+    @result = $game.check_winner(@player1,@player2)
+    @player1_move = $game.player1.move
+    @player2_move = $game.player2.move
     erb :results
   end  
 end
