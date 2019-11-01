@@ -1,0 +1,31 @@
+* {
+    font-family: 'Roboto';
+}
+
+body {
+    background-color: coral;
+}
+
+#app {
+    margin-top: 100px;
+    text-align: center;
+}
+
+#title {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+input#name {
+    font-size: 1.7em;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid lightgray;
+}
+
+button#go-button {
+    font-size: 1.7em;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}

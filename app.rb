@@ -4,6 +4,6 @@ class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Hello boss'
+    erb :index
   end
 end
