@@ -6,8 +6,7 @@ feature 'Confirm' do
   end
   scenario 'Weapon is chosen and confirmed on screen' do
     sign_in_and_play
-    click_button('Choose weapon')
-    click_button('rock')
+    rock_chosen
     expect(page).to have_content 'Amy chose rock'
   end
 end
