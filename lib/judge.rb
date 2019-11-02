@@ -1,15 +1,15 @@
 class Judge
-  def compare(p: player, c: computer)
-    if p == c
+  def compare(person: player, computer: computer)
+    if person == computer
       :neither
     else
-      case p
+      case person
       when 'ROCK'
-        c == 'PAPER' ? :comp : :pers
+        computer == 'PAPER' ? :comp : :pers
       when 'PAPER'
-        c == 'SCISSORS' ? :comp : :pers
+        computer == 'SCISSORS' ? :comp : :pers
       when 'SCISSORS'
-        c == 'ROCK' ? :comp : :pers
+        computer == 'ROCK' ? :comp : :pers
       end
     end
   end

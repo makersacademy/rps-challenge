@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/randomizer'
+require_relative 'lib/judge'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -18,6 +19,14 @@ class RPS < Sinatra::Base
     @name = session[:name]
     @move = params[:move]
     @computer_move = Randomizer.new.move
+    outcome = Judge.new.compare(person: @move, computer: @computer_move)
+    if outcome == :pers
+      @winner = @name
+    elsif outcome == :comp
+      @winner = 'Computer'
+    else
+      @winner = 'Nobody'
+    end
     erb(:play)
   end
 
