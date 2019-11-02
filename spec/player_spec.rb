@@ -34,7 +34,7 @@ describe Player do
       expect(amy.computer_weapons("scissors")).to eq 'scissors'
     end
 
-    it 'computer has a choice' do
+    it 'computer has selected a choice' do
       amy = double("amy")
       allow(amy).to receive(:computer_choice).and_return 'scissors'
       expect(amy.computer_choice).to eq 'scissors'
