@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/computer'
 require './lib/game'
 
 class RPS < Sinatra::Base
@@ -11,7 +12,8 @@ class RPS < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:player_name])
-    $game = Game.new(player)
+    computer = Computer.new
+    $game = Game.new(player, computer)
     redirect '/play'
   end
 
