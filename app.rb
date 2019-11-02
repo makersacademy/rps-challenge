@@ -23,6 +23,12 @@ class RPS < Sinatra::Base
     erb :choose
   end
 
+  post '/chosen' do
+    @player_name = $player_1.name
+    $player_1.weapons(params[:weapon])
+    redirect '/chosen'
+  end
+
   get '/chosen' do
     @player_name = $player_1.name
     erb :chosen
