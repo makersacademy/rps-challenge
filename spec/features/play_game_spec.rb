@@ -1,4 +1,5 @@
 feature 'playing the game' do
+
   scenario 'player move is displayed' do
     sign_in
     click_button('ROCK')
@@ -6,6 +7,7 @@ feature 'playing the game' do
   end
 
   scenario 'computer move is displayed' do
+    allow_any_instance_of(Randomizer).to receive(:move).and_return('ROCK')
     sign_in
     click_button('ROCK')
     expect(page).to have_content('Computer played ROCK')

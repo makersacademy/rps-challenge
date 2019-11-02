@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/randomizer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -14,8 +15,9 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    @move = params[:move]
     @name = session[:name]
+    @move = params[:move]
+    @computer_move = Randomizer.new.move
     erb(:play)
   end
 
