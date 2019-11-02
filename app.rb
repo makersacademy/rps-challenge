@@ -2,7 +2,12 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base
   get '/' do
-    'Welcome'
+    erb(:index)
+  end
+
+  post '/welcome' do
+    @name = params[:name]
+    erb(:welcome)
   end
 
   # start the server if ruby file executed directly
