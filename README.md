@@ -13,21 +13,21 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+How to play the game:
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+- player enters their name before the game begins
+- player is presented with the choices (rock, paper and scissors)
+- player chooses one option
+- the game chooses a random option
+- a winner is declared
 
 ## Bonus level 1: Multiplayer
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+Two players can play against each other
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+_special_ rules apply ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
 ## Basic Rules
 
@@ -37,5 +37,5 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 
 Confirmation for code review:
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (Simplecov >100%)
+* All tests are passing
+* [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (Simplecov >100%)
