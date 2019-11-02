@@ -1,5 +1,6 @@
 class Player
-  attr_reader :name, :choice
+
+attr_reader :name, :choice
 
   def initialize(name)
     @name = name
@@ -7,7 +8,7 @@ class Player
   end
 
   def weapons(weapon)
-    ["rock", "paper", "scissors"].select { |w| @choice = weapon if weapon == w }.join("")
+    Game::WEAPONS.select { |w| @choice = weapon if weapon == w }.join("")
   end
 
 end
