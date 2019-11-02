@@ -1,5 +1,21 @@
-require 'sinatra'
+require 'sinatra/base'
 
-get '/' do
-  "Rock, paper, scissors!"
+class Game < Sinatra::Base
+  enable :sessions
+
+  get '/' do
+    erb(:index)
+  end
+
+  post '/name' do
+    session['player'] = params[:playername]
+    redirect '/startgame'
+  end
+
+  get '/startgame' do
+    @player = session['player']
+    erb(:startgame)
+  end
+
+  run! if app_file == $0
 end
