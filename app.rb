@@ -38,6 +38,12 @@ class RPS < Sinatra::Base
     erb :chosen
   end
 
+  post '/result' do
+    @game = $game
+    @game.computer.weapons
+    redirect '/result'
+  end
+
   get '/result' do
     @game = $game
     erb :result

@@ -6,7 +6,7 @@ attr_reader :choice
     @choice = nil
   end
 
-  def weapons(weapon)
+  def weapons
     @choice = Game::WEAPONS.sample
   end
 
