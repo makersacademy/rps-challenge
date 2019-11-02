@@ -17,5 +17,10 @@ class Game < Sinatra::Base
     erb(:startgame)
   end
 
+  get '/play' do
+    @player = session['player']
+    erb(:play)
+  end
+
   run! if app_file == $0
 end
