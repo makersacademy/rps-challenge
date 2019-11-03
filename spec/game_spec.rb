@@ -17,6 +17,10 @@ describe Game do
     let(:sheldon_paper) { double('Player', selection: :paper) } 
     let(:sheldon_scissors) { double('Player', selection: :scissors) }
 
+    it 'returns draw when both select same' do
+      game = Game.new(:andy_rock, :sheldon_rock)
+      expect(game.result).to eq("draw")
+    end
   end
 
 end

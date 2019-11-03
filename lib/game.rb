@@ -6,4 +6,7 @@ class Game
     @player_2 = player_2
   end
 
+  def result
+    "draw"
+  end
 end
