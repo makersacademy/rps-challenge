@@ -6,6 +6,7 @@ feature 'setting up game' do
 
   scenario '2 players can both enter their names and see it on screen' do
     visit '/'
+    click_button("Friend")
     fill_in :player1, with: "Ellie"
     fill_in :player2, with: "Jack"
     click_button("Submit")

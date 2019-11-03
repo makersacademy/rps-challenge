@@ -8,17 +8,14 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  get '/multi' do
-    erb(:multinames)
-  end
-
-  get '/single' do
-    erb(:singlename)
+  post '/forms' do
+    @version = params[:version]
+    erb(:nameforms)
   end
 
   post '/names' do
     session['player1'] = params[:player1]
-    params[:player2] == nil ? session['player2'] = "The Computer" : session['player2'] = params[:player2]
+    params[:player2].nil? ? session['player2'] = "The Computer" : session['player2'] = params[:player2]
     redirect '/startgame'
   end
 
@@ -59,7 +56,7 @@ class RPS < Sinatra::Base
     @player2 = session['player2']
     @game = Game.new(@player1, @player2)
     @player1move = session['player1move']
-    session['player2move'] == nil ? @player2move = @game.computer_move : @player2move = session['player2move']
+    session['player2move'].nil? ? @player2move = @game.computer_move : @player2move = session['player2move']
     @winner = @game.winner(@player1move, @player2move)
     erb(:results)
   end
