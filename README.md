@@ -1,3 +1,17 @@
+How to download and run
+-----------------------
+
+```
+
+$ git clone https://github.com/natyeo/rps-challenge.git
+$ cd rps-challenge
+$ bundle install
+$ rackup config.ru 
+
+Visit https://localhost:9292 and play!
+
+```
+
 # RPS Challenge
 
 Instructions
