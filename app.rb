@@ -24,9 +24,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @selection = params[:selection]
-    @player_name = session[:player_name]
-    @player = Player.new(@player_name, @selection)
+    @player = Player.new(params[:selection], session[:player_name])
     erb(:result)
   end
 
