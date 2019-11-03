@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/player.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -23,9 +24,8 @@ class RPS < Sinatra::Base
   end
 
   get '/fight' do
-    @player = session[:player]
-    @weapon = session[:player_weapon].to_sym
-    erb(@weapon)
+    @player = Player.new(session[:player], session[:player_weapon].to_sym)
+    erb(@player.selection)
   end
 
   # start the server if ruby file executed directly
