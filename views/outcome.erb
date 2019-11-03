@@ -1,0 +1,11 @@
+<p><%= @game.player_1.name %> chose: <%= @game.player_1.move %>!</p>
+
+<p><%= @game.player_2.name %> chose: <%= @game.player_2.move %>!</p>
+
+<p>
+<% if @game.winner.is_a?(String) %>
+  <%= @game.winner %>
+<% else %>
+  <%= @game.winner.name %> wins this round!
+<% end %>
+</p>

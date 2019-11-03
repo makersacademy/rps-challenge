@@ -1,8 +1,19 @@
-<h1><center> ~~ Welcome to ~~</center></h1>
-<h1><center> Rock! Paper! Scissors! </center></h1>
+<h1><center> ~~ Welcome to RPS ~~</center></h1>
 
 <div style='border: 25px dotted gold'>
-  <% if @player_1 %>
-  <h1><center> <%= @player_1.name %></center></h1>
-  <% end %>
+  <h1><center> <%= @game.player_1.name %></center></h1>
 </div>
+
+<h2><center> Rules:</center></h2>
+<h3><center> Rock > Scissors || Scissors > Paper || Paper > Rock</center></h3>
+
+<center><h2><center> Please choose a move:</center></h2>
+<form action='/outcome' method='post'>
+  <input type="text" list="RPS" name="player_1_move">
+  <datalist id = "RPS">
+    <option value="Rock">
+    <option value="Paper">
+    <option value="Scissors">
+  </datalist>
+  <input type="submit" value="Lets GO!">
+  </form><center>
