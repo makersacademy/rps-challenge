@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class Game < Sinatra::Base
   enable :sessions
-  
+
   get '/' do
     erb(:index)
   end
@@ -14,7 +14,13 @@ class Game < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
+    @choice = session[:choice]
     erb(:play)
+  end
+
+  post '/play' do
+    session[:choice] = params[:choice]
+    redirect '/play'
   end
 
   run! if app_file == $0

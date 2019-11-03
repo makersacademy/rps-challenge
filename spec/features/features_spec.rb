@@ -26,8 +26,12 @@ feature 'Playing the Game' do
     click_button 'Submit'
   end
   scenario '1. Is presented with the choices' do
-    expect(page).to have_content 'Rock'
-    expect(page).to have_content 'Paper'
-    expect(page).to have_content 'Scissors'
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
+  end
+  scenario '2. Can choose an option' do
+    click_button 'Rock'
+    expect(page).to have_content 'You chose Rock!'
   end
 end
