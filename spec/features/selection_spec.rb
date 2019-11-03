@@ -1,9 +1,9 @@
-feature 'Making a Selection' do
-  scenario 'Selecting Rock' do
+require 'web_helpers'
+
+feature 'Playing the Game' do
+  scenario 'making a selection' do
     enter_name
-    selection = "rock"
-    find("option[value='#{selection}']").click
-    click_button('Submit')
-    expect(page).to have_content("You chose Rock!")
+    choose_selection("scissors")
+    expect(page).to have_content("You Chose Scissors")
   end
 end
