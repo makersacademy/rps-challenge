@@ -40,7 +40,24 @@ describe Game do
       end
     end
 
-    
+    context 'player loses' do
+      
+      it 'player rock loses computer paper' do
+        game = Game.new(andy_rock, sheldon_paper)
+        expect(game.result).to eq(:lose)
+      end
+
+      it 'player scissors loses computer rock' do
+        game = Game.new(andy_scissors, sheldon_rock)
+        expect(game.result).to eq(:lose)
+      end
+
+      it 'player paper loses computer scissors' do
+        game = Game.new(andy_paper, sheldon_scissors)
+        expect(game.result).to eq(:lose)
+      end
+    end
+
   end
 
 end
