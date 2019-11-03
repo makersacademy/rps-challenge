@@ -2,6 +2,7 @@ body {
   background: #0B3640;
   color: #f2f2f2;
   text-align: center;
+  height: 100%
 }
 
 #rock {
@@ -16,6 +17,25 @@ body {
   color: #F2C744;
 }
 
+h1 {
+  font-size: 5rem;
+  color: #F2C744;
+}
+
+h2 {
+  font-size: 3rem;
+  color: #F2C744;
+}
+
+p {
+  font-size: 16px;
+}
+
 form{
-  margin: auto
+  margin: auto;
+  height: 300px;
+}
+
+form div {
+  margin-top: 25px;
 }
