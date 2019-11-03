@@ -1,6 +1,6 @@
 def name_and_play
   visit('/')
-  fill_in :playerName, with: "Andy"
+  fill_in :player_name, with: "Andy"
   click_button 'Submit'
 end
 
