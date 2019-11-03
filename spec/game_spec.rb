@@ -18,4 +18,30 @@ describe Game do
     end
   end
 
+  describe 'player wins' do
+
+    before do
+      allow(player).to receive(:choice).and_return 'rock'
+      allow(computer).to receive(:choice).and_return 'scissors'
+    end
+
+    it 'checks if player won' do
+      expect(game.result).to eq 'winner'
+    end
+
+  end
+
+  describe 'computer wins' do
+
+    before do
+      allow(player).to receive(:choice).and_return 'scissors'
+      allow(computer).to receive(:choice).and_return 'rock'
+    end
+
+    it 'checks if computer won' do
+      expect(game.result).to eq 'loser'
+    end
+
+  end
+
 end

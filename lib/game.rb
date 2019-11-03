@@ -13,6 +13,12 @@ class Game
     @computer = computer
   end
 
-
+  def result
+    if RULES[@player.choice] == @computer.choice
+      return 'winner'
+    else RULES[@computer.choice] == @player.choice
+      return 'loser'
+    end
+  end
 
 end
