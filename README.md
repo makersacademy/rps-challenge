@@ -121,3 +121,4 @@ I slightly changed the style in the two erb templates.
 *8th commit*
 
 TRAVIS CI
+[![Build Status](https://travis-ci.org/sarar0/rps-challenge.svg?branch=master)](https://travis-ci.org/sarar0/rps-challenge)
