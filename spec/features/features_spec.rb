@@ -34,4 +34,13 @@ feature 'Playing the Game' do
     click_button 'Rock'
     expect(page).to have_content 'You chose Rock!'
   end
+  scenario '3. Computer chooses random option' do
+    click_button 'Rock'
+    message = find(:css, "#computer").text
+    expect(choices).to include message
+  end
+
+  def choices
+    [:rock, :paper, :scissors].map { |choice| "The computer chose #{choice.to_s.capitalize}!" }
+  end
 end
