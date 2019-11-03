@@ -3,3 +3,8 @@ def register_and_play
   fill_in :player, with: 'player_name'
   click_button('Submit')
 end
+
+def enter_player_move
+  fill_in :player_move, with: 'Rock'
+  click_button('Play')
+end
