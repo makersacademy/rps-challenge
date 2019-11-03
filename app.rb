@@ -18,5 +18,15 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  post 'selection' do
+    redirect('/result')
+  end
+
+  get '/result' do
+    @selection = params[:selection]
+    p @selection
+    erb(:result)
+  end
+
   run! if app_file == $0
 end
