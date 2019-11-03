@@ -1,22 +1,27 @@
-# RPS Challenge
+# Rock Paper Scissors Challenge
 
-Instructions
--------
+The Makers Academy Marketing Array ( **MAMA** ) want a game provided for them. Their daily grind is pretty tough and they need time to let off a little steam.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+The aim of this challenge is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web.
 
-Task
-----
+To see the full instructions we were given to complete this challenge, have a look at challenge_instructions.md
 
-Knowing how to build web applications is getting us almost there as web developers!
+## Instructions
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+From command line, do the following:
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+```sh
+$ git clone git@github.com:rhysco8/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+
+Then visit [http://localhost:9292](http://localhost:9292) in your browser to play!
+
+## Approach
+
+We were given two user stories to guide us on functionality:
 
 ```sh
 As a marketeer
@@ -28,59 +33,41 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+I'm going to implement the user stories in the order above. The first version of the web app allows a user to submit their name and have it displayed and the second version will allow them to play a game of _Rock, Paper, Scissors_ against the computer.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+### Version 1 - registering names
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+```sh
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+The steps I'll test drive to build this version are:
+
+1. create an index page with a name submission form
+2. POST that information to a battle page displaying the player's name
+
+### Version 2 - playing a game of _rock, paper, scissors_
+
+```sh
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+```
+
+The steps I'll test drive to build this version are:
+
+1. create an form that allows user to select a move
+2. POST that information to a move page displaying the player's name
+3. Use global variables to store information on names and moves
+4. Describe win/lose/draw conditions for each move option
+5. Extract Player and Game class to model
+6. Use class methods to remove use of global variables - **I didn't manage to get to this step, so my controller is all kinds of sinful**
+
+### Version 3 - making it look good!
+
+
+**I didn't manage to get to this step, but would have used CSS to spice play.erb up**
+
+The first 2 versions implement the desired functionality, but our marketeers want to see their name 'in lights' and be transported from the daily grind, so this version makes our web app look good!
