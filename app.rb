@@ -24,10 +24,10 @@ class RPS < Sinatra::Base
 
   get '/fight' do
     @player = session[:player]
-    @weapon = session[:player_weapon]
-    erb(:fight)
+    @weapon = session[:player_weapon].to_sym
+    erb(@weapon)
   end
-  
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
