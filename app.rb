@@ -1,9 +1,8 @@
 require 'sinatra/base'
 require './lib/game'
 
-
 class RockPaperScissors < Sinatra::Base
-    enable :sessions
+  enable :sessions
 
   get '/'  do
     'Hello world'

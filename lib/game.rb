@@ -7,16 +7,15 @@ class Game
   def result(player_choice)
     computer_choice = random_move
     if player_choice == computer_choice
-        :draw
+      :draw
     elsif player_choice == :rock and computer_choice == :scissors
-          :win
+      :win
     elsif player_choice == :paper and computer_choice == :rock
-          :win
+      :win
     elsif player_choice == :scissors and computer_choice == :paper
-          :win
+      :win
     else
-          :lose
+      :lose
     end
   end
-
 end

@@ -21,7 +21,6 @@ describe Game do
     end
   end
 
-
   describe "#result" do
     it 'player paper beats computer rock' do
       allow(Kernel).to receive(:rand).and_return(0)
