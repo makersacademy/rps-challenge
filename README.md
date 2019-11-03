@@ -66,4 +66,4 @@ I would like to be able to play rock/paper/scissors
 ![alt text](https://github.com/jonesandy/learning-goals/blob/master/week3/_imgs/rps-1.png "Input name")    
 ![alt text](https://github.com/jonesandy/learning-goals/blob/master/week3/_imgs/rps-2.png "Select weapon")    
 ![alt text](https://github.com/jonesandy/learning-goals/blob/master/week3/_imgs/rps-3.png "Fight")    
-![alt text](https://github.com/jonesandy/learning-goals/blob/master/week3/_imgs/rps-5.png "Outcome")    
+![alt text](https://github.com/jonesandy/learning-goals/blob/master/week3/_imgs/rps-4.png "Outcome")    
