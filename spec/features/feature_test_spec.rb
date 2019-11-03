@@ -7,9 +7,17 @@ end
 
 feature 'entering names' do
   scenario 'player can submit name' do
-    visit('/')
-    fill_in :player_name, with: 'Nat'
-    click_button 'Submit'
+    sign_in
     expect(page).to have_text 'Nat'
+  end
+end
+
+feature 'winner declared' do
+  it 'when player submits "rock" told they have won' do
+    allow_any_instance_of(Computer).to receive(:weapon).and_return(:scissors)
+    sign_in
+    fill_in :player_choice, with: 'rock'
+    click_button 'Play'
+    expect(page).to have_text 'Hurrah, you won!'
   end
 end

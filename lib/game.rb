@@ -1,4 +1,3 @@
-require_relative 'player'
 require_relative 'computer'
 
 class Game
@@ -9,9 +8,27 @@ class Game
 
   WEAPONS = [:rock, :paper, :scissors]
 
-  def result(player, computer)
-    player.player_choice == computer.comp_choice ? :draw :
-    RULES[player.player_choice] == computer.comp_choice ? :win : :lose
+  attr_reader :player_choice, :computer
+
+  def initialize(computer = Computer.new)
+    @computer = computer
   end
 
+  def player_choice(weapon)
+    raise "Please select again" unless Game::WEAPONS.include? weapon.to_sym
+    @player_choice = weapon.to_sym
+  end
+
+  def result
+    @player_choice == @computer.weapon ? :draw :
+    RULES[@player_choice] == @computer.weapon ? :win : :lose
+  end
+
+  def self.create(computer = Computer.new)
+    @game = Game.new(computer = Computer.new)
+  end
+
+  def self.instance
+    @game
+  end
 end

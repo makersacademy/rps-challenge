@@ -1,2 +1,7 @@
-<h2 style="color:powderblue"> Hi <%= @player_name %> </h2>
-<h3 style="color:violet"> Please select your weapon: </h3> 
+<h2 style="color:slateblue"> Hi <%= @player.name %>, </h2>
+<h3 style="color:violet"> enter your weapon of choice (rock, paper, or scissors): </h3>
+<br>
+<form action='/weapon' method='post'>
+  <input type='text' name='player_choice'>
+  <input type='submit' value='Play'>
+</form>

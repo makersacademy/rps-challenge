@@ -1,13 +1,20 @@
 require 'game'
 
 describe Game do
-  let(:game) { described_class.new }
-  let(:player) { double :player }
-  let(:comp) { double :computer }
+  let(:computer) { double :computer }
+  let(:game) { described_class.new(computer) }
+
+  it 'returns player choice of weapon' do
+    expect(game.player_choice("paper")).to eq :paper
+  end
+
+  it 'raises error if player selects weapon that is not rock, paper or scissors' do
+    expect { game.player_choice("sword") }.to raise_error "Please select again"
+  end
 
   it 'decides result' do
-    allow(player).to receive(:player_choice).and_return :paper
-    allow(comp).to receive(:comp_choice).and_return :paper
-    expect(game.result(player, comp)).to eq :draw
+    allow(computer).to receive(:weapon).and_return(:paper)
+    game.player_choice("paper")
+    expect(game.result).to eq :draw
   end
 end
