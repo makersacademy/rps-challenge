@@ -1,6 +1,7 @@
 class Game
   def random_move
-    [:rock, :paper, :scissors].sample
+    moves = [:rock, :paper, :scissors]
+    moves[Kernel.rand(3)]
   end
 
   def result(player_choice)
