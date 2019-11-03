@@ -21,32 +21,56 @@ end
 # 4. a winner will be declared
 feature 'Playing the Game' do
   TEST_SEED = 123
+  def choices
+    [:rock, :paper, :scissors].map { |choice| "The computer chose #{choice.to_s.capitalize}!" }
+  end
   before do
     visit '/'
     fill_in 'name', with: 'Muna'
     click_button 'Submit'
   end
-  scenario '1. Is presented with the choices' do
+
+  scenario '1. Player is presented with the choices' do
     expect(page).to have_button 'Rock'
     expect(page).to have_button 'Paper'
     expect(page).to have_button 'Scissors'
   end
-  scenario '2. Can choose an option' do
+
+  scenario '2. Player can choose an option' do
     click_button 'Rock'
     expect(page).to have_content 'You chose Rock!'
   end
+
   scenario '3.1 Computer chooses an option' do
     click_button 'Rock'
     message = find(:css, "#computer").text
     expect(choices).to include message
   end
+
   scenario '3.2 Computer chooses a random option' do
     srand(TEST_SEED)
     click_button 'Rock'
     expect(page).to have_content 'The computer chose Scissors!'
   end
 
-  def choices
-    [:rock, :paper, :scissors].map { |choice| "The computer chose #{choice.to_s.capitalize}!" }
+  context 'game ends' do
+    before do
+      srand(TEST_SEED)
+    end
+
+    scenario '4.1 Player wins' do
+      click_button 'Rock'
+      expect(page).to have_content 'You win!'
+    end
+
+    scenario '4.2 Player loses' do
+      click_button 'Paper'
+      expect(page).to have_content 'You lose!'
+    end
+
+    scenario '4.3 Draw' do
+      click_button 'Scissors'
+      expect(page).to have_content 'It is a draw!'
+    end
   end
 end

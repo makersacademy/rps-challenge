@@ -18,7 +18,7 @@ class Game < Sinatra::Base
   end
 
   post '/play' do
-    session[:choice] = params[:choice]
+    session[:choice] = params[:choice].downcase.to_sym
     session[:computer_choice] = Computer.new.choice
     redirect '/play'
   end
