@@ -1,6 +1,6 @@
-describe "initialize"
-context 
-it 
-end 
+# describe "initialize"
+# context 
+# it 
+# end 
 
-describe "chooses Rock Paper Scissor"
+# describe "chooses Rock Paper Scissor"

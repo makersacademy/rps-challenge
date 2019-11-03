@@ -1,4 +1,4 @@
-require 'sinatra/base'
+ require 'sinatra/base'
 
 
 class RPS < Sinatra::Base
@@ -20,11 +20,5 @@ class RPS < Sinatra::Base
         erb :choice
     end 
 
-
-    # get '/rock'
-
-
 end 
 
-# @choice = params[:choice]
-# erb: choice 
