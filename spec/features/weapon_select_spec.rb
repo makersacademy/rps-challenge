@@ -15,9 +15,9 @@ feature 'select weapon' do
 
   scenario 'player selects scissors for scissor view' do
     name_and_play
-    select 'Paper', from: 'weapon'
+    select 'Scissors', from: 'weapon'
     click_button 'Submit'
-    expect(page).to have_content "Andy, you have selected paper."
+    expect(page).to have_content "Andy, you have selected scissors."
   end
 
 end
