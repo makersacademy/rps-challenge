@@ -20,21 +20,21 @@ class RPS < Sinatra::Base
   get '/rock' do
     @player_weapon = "Rock"
     random_weapon
-    compare_weapons(@player_weapon, @computer_weapon)
+    @outcome = compare_weapons(@player_weapon, @computer_weapon)
     erb :outcome
   end
 
   get '/paper' do
     @player_weapon = "Paper"
     random_weapon
-    compare_weapons(@player_weapon, @computer_weapon)
+    @outcome = compare_weapons(@player_weapon, @computer_weapon)
     erb :outcome
   end
 
   get '/scissors' do
     @player_weapon = "Scissors"
     random_weapon
-    compare_weapons(@player_weapon, @computer_weapon)
+    @outcome = compare_weapons(@player_weapon, @computer_weapon)
     erb :outcome
   end
 
@@ -43,20 +43,11 @@ class RPS < Sinatra::Base
   end
 
   def compare_weapons(player_weapon, computer_weapon)
+    return "It's a tie." if player_weapon == computer_weapon
+    return "You win." if player_weapon == "Scissors" && computer_weapon == "Paper"
+    return "You win." if player_weapon < computer_weapon
 
-    if player_weapon == computer_weapon
-      @outcome = "It's a tie." 
-      return
-    end
-
-    if player_weapon == "Scissors" && computer_weapon == "Paper"
-      @outcome = "You win."
-    elsif player_weapon < computer_weapon
-      @outcome = "You win."
-    else
-      @outcome = "I win."
-    end
-
+    "I win."
   end
 
   run! if app_file == $0
