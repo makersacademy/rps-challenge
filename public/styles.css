@@ -1,0 +1,21 @@
+body {
+  background: #0B3640;
+  color: #f2f2f2;
+  text-align: center;
+}
+
+#rock {
+  color: #F2505D;
+}
+
+#paper {
+  color: #7A77D9;
+}
+
+#scissors {
+  color: #F2C744;
+}
+
+form{
+  margin: auto
+}

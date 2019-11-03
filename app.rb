@@ -17,6 +17,16 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  post '/weapon' do
+    session[:player_weapon] = params[:weapon]
+    redirect '/fight'
+  end
+
+  get '/fight' do
+    @player = session[:player]
+    @weapon = session[:player_weapon]
+    erb(:fight)
+  end
   
   # start the server if ruby file executed directly
   run! if app_file == $0
