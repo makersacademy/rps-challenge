@@ -1,5 +1,17 @@
-<body bgcolor="seashell">
+<!-- <body bgcolor="seashell">
 <center>
 <h2 style="color:lightpink">Computer chose <%= @game.computer.choice %></h2>
 <h2 style="color:lightpink"><%= @game.player.name %> wins!</h2>
+</center> -->
+
+<body bgcolor="seashell">
+<center>
+
+<h2 style="color:lightpink">Computer chose <%= @game.computer.choice %></h2>
+
+<% if @game.result == 'winner' %>
+<h2 style="color:lightpink"><%= @game.player.name %> wins!</h2>
+<% else %>
+<h2 style="color:lightpink">Computer wins!</h2>
+<% end %>
 </center>
