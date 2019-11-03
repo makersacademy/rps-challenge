@@ -1,17 +1,25 @@
 class Game
   attr_reader :outcome
 
-  def winner(p1, p2)
-    if p1 == 'Paper' && p2 == 'Rock'
-      @outcome = 'Player 1'
-    elsif p1 == 'Scissors' && p2 == 'Paper'
-      @outcome = 'Player 1'
-    elsif p1 == 'Rock' && p2 == 'Scissors'
-      @outcome = 'Player 1'
-    elsif p1 == p2
+  def self.create
+    @game = Game.new
+  end
+
+  def self.instance
+    @game
+  end
+
+  def winner(p_1, p_2)
+    if p_1 == 'Paper' && p_2 == 'Rock'
+      @outcome = 'You win!'
+    elsif p_1 == 'Scissors' && p_2 == 'Paper'
+      @outcome = 'You win!'
+    elsif p_1 == 'Rock' && p_2 == 'Scissors'
+      @outcome = 'You win!'
+    elsif p_1 == p_2
       @outcome = 'Draw'
     else
-      @outcome = 'Player 2'
+      @outcome = 'You lose'
     end
     @outcome
   end

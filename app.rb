@@ -1,7 +1,12 @@
 require 'sinatra/base'
+require_relative './lib/game.rb'
 
 class Rps < Sinatra::Base
   enable :sessions
+  
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb :index
@@ -14,14 +19,18 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @player_1 = session[:player_1]
+    session[:move] = params[:move]
     erb :play
   end
 
   post '/move' do
-    @game = true
+    @player_1 = session[:player_1]
+    @game = Game.create
+    @playing = true
     session[:move] = params[:move]
     @move = session[:move]
-    p params
+    @random = @game.randomizer
+    @winner = @game.winner(@move, @random)
     erb :play
   end
 

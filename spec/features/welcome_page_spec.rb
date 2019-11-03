@@ -8,6 +8,6 @@ feature 'Welcome page' do
     visit('/')
     fill_in :player_1, with: "test player"
     click_button 'Submit'
-    expect(page). to have_content 'test player is playing'
+    expect(page).to have_content 'test player is playing'
   end
 end

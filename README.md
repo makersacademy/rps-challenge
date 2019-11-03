@@ -51,7 +51,7 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
-## Basic Rules ##
+## Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
@@ -103,3 +103,7 @@ the user would like to register their name before playing. I created a feature t
 At this point I worked on the "logic" of the game, starting from simple unit tests (e.g. returning a random choice from the computer, rock beats scissors etc).
 
 *4th commit*
+
+Then I updated the commander to store the session variable (user's input) to be used as first argument in the method "winner" (the second argument is the computer-generated choice). I did some manual tests as well at this point, and fixed errors.
+
+*5th commit*

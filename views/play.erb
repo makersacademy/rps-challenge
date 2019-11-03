@@ -7,17 +7,20 @@
   </head>
   <body>
       <p style= 'color: green'> <%= @player_1 %> is playing. </p>
-      <p style= 'color: blue'> <%= Click on the button to play: </p>
+      <p style= 'color: blue'> Click on the button to play: </p>
       <form action='/move' method='post'>
-        <input type="radio" name="move" value="Rock">Rock
-        <input type="radio" name="move" value="Paper">Paper
-        <input type="radio" name="move" value="Scissors">Scissors
+        <input type="radio" name="move" id="Rock" value="Rock">Rock
+        <input type="radio" name="move" id="Paper" value="Paper">Paper
+        <input type="radio" name="move" id="Scissors" value="Scissors">Scissors
         <br>
-        <input type="submit"/>
+        <br>
+        <button type= 'submit'>Submit </button>
       </form>
         <br>
-        <p style= 'color: green'> Your choice is XXX </p>
-        <p style= 'color: blue'> The computer's choice is XXX </p>
-        <p style= 'color: red'> The winner is: XXX </p>
+        <% if @playing %>
+          <p style= 'color: green'> Your choice is: <%= @move %> </p>
+          <p style= 'color: blue'> The computer's choice is: <%= @random %> </p>
+          <p style= 'color: red'> <%= @winner %> </p>
+        <% end %>
     </body>
 </html>
