@@ -24,8 +24,8 @@ class RPS < Sinatra::Base
   end
 
   post '/moves' do
-  session['playermove'] = params[:move]
-  redirect '/results'
+    session['playermove'] = params[:move]
+    redirect '/results'
   end
 
   get '/results' do

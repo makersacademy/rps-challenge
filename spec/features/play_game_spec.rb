@@ -16,6 +16,6 @@ feature 'play game' do
     click_button("Let's go!")
     select 'Rock', from: 'move'
     click_button("Submit")
-    expect(page).to have_content("Computer has chosen: Paper")
+    expect(page).to have_content("Computer has chosen: ")
   end
 end
