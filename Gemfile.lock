@@ -91,7 +91,7 @@ PLATFORMS
 DEPENDENCIES
   capybara!
   rack
-  rspec!
+  rspec
   rubocop (= 0.71.0)
   rubocop-rails
   selenium-webdriver!
