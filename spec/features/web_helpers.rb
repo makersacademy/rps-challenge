@@ -18,6 +18,6 @@ end
 
 def choose_scissors
   name_and_play
-  select 'Paper', from: 'weapon'
+  select 'Scissors', from: 'weapon'
   click_button 'Submit'
 end
