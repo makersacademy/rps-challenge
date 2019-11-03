@@ -18,4 +18,5 @@ class Game
       :lose
     end
   end
+  
 end
