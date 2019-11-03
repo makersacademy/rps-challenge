@@ -115,3 +115,7 @@ I refactored the model and shortened some methods.
 3. Extension: adding 'Spock', 'Lizard'. I updated the game.rb controller to include the two extra options, and included some extra tests.
 
 *7th commit*
+
+I slightly changed the style in the two erb templates.
+
+*8th commit*

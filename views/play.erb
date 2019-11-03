@@ -2,7 +2,12 @@
 <html>
   <head>
     <style type="text/css">
-      body { font-family: "Arial" }
+      body { font-family: "Arial"; font-size: 16px;}
+      .btn {
+        background-color: #99CCFF;
+        font-size: 16px;
+        cursor:pointer;
+      }
     </style>
   </head>
   <body>
@@ -10,13 +15,17 @@
       <p style= 'color: blue'> Click on the button to play: </p>
       <form action='/move' method='post'>
         <input type="radio" name="move" id="Rock" value="Rock">Rock
+        <br>
         <input type="radio" name="move" id="Paper" value="Paper">Paper
+        <br>
         <input type="radio" name="move" id="Scissors" value="Scissors">Scissors
+        <br>
         <input type="radio" name="move" id="Lizard" value="Lizard">Lizard
+        <br>
         <input type="radio" name="move" id="Spock" value="Spock">Spock
         <br>
         <br>
-        <button type= 'submit'>Submit </button>
+        <button class="btn" type= 'submit'>Submit </button>
       </form>
         <br>
         <% if @playing %>
