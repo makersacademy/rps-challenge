@@ -19,9 +19,9 @@ class Rps < Sinatra::Base
 
   post '/move' do
     @random_generator = RandomMove.new
-    @opponent_move = @random_generator.random_move
+    @computer_move = @random_generator.random_move
     @player_move = params[:player_move]
-    @game = Game.new(@player_move, @opponent_move)
+    @game = Game.new(@player_move, @computer_move)
     erb :move
   end
 

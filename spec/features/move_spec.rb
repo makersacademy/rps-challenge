@@ -12,7 +12,7 @@ feature "random move is generated and returned" do
   scenario "player has submitted move" do
     register_and_play
     enter_player_move
-    @opponent_move = 'Paper'
+    @computer_move = 'Paper'
     expect(page).to have_content 'Your opponent chose Paper!'
   end
 end
