@@ -1,0 +1,7 @@
+<h1>Hello <span style="color: darkturquoise"><%= @player %></span></h1>
+<h2>Your move...Rock, Paper or Scissors?</h2>
+
+<form action='/move' method='post'>
+  <input type='text' name='player_move'>
+  <input type='submit' value='Play'>
+</form>

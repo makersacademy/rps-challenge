@@ -1,6 +1,9 @@
 require 'sinatra/base'
+require_relative 'lib/player'
 
 class Rps < Sinatra::Base
+
+  enable :session
 
   get "/" do
     erb :index
