@@ -2,8 +2,10 @@ require_relative 'game'
 
 class Computer
 
+attr_reader :comp_choice
+
   def choose_weapon
-    Game::WEAPONS.sample
+    @comp_choice = Game::WEAPONS.sample
   end
-  
+
 end
