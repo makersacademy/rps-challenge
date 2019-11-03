@@ -2,12 +2,12 @@
 <img src="https://3.bp.blogspot.com/-jM8VLTbuILY/WoGwBP937sI/AAAAAAATXIA/WS0xj8SFGKcn5gaQcQuA7t371EOn8NlJACLcBGAs/s1600/AW785125_00.gif">
 <br>
 
-<form action="/name" method="post">
-  <label for="player1">Player 1, enter your name:</label>
-  <input type="text" name="player1">
-  <br><br>
-  <label for="player2">Player 2, enter your name:</label>
-  <input type="text" name="player2">
-  <br><br>
-  <button type="submit">Submit</button>
+<h2> Do you want to play against a friend or the computer? </h2>
+<br><br>
+<form action="/multi" method="get">
+  <input type="submit" value="Friend">
+</form>
+
+<form action="/single" method="get">
+  <input type="submit" value="Computer">
 </form>
