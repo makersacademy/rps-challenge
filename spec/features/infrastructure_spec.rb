@@ -34,6 +34,35 @@ feature "local output tests" do
     expect(page).to have_text "You Lose!"
   end
 
+  context "player selected rock"do
+    scenario "If player want another go they can select go again" do
+      submit_player_info
+      click_on "Rock"
+      click_on "Go Again?"
+      expect(page).to have_text "Lets play Bea!"
+
+    end
+  end
+
+  context "player selected paper"do
+    scenario "If player want another go they can select go again" do
+      submit_player_info
+      click_on "Paper"
+      click_on "Go Again?"
+      expect(page).to have_text "Lets play Bea!"
+
+    end
+  end
+
+  context "player selected scissors"do
+    scenario "If player want another go they can select go again" do
+      submit_player_info
+      click_on "Scissors"
+      click_on "Go Again?"
+      expect(page).to have_text "Lets play Bea!"
+
+    end
+  end
 
 
 end
