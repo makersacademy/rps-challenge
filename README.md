@@ -112,10 +112,12 @@ I refactored the model and shortened some methods.
 
 *6th commit*
 
-3. Extension: adding 'Spock', 'Lizard'. I updated the game.rb controller to include the two extra options, and included some extra tests. RUBOCOP: I was not able to shorten/simplify the method with the complex if statement. 
+3. Extension: adding 'Spock', 'Lizard'. I updated the game.rb controller to include the two extra options, and included some extra tests. RUBOCOP: I was not able to shorten/simplify the method with the complex if statement.
 
 *7th commit*
 
 I slightly changed the style in the two erb templates.
 
 *8th commit*
+
+TRAVIS CI
