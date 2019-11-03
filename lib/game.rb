@@ -9,20 +9,15 @@ class Game
   end
 
   def winner(p_1, p_2)
-    beatmap = {  'Scissors' => 'Paper',
-      'Paper' => 'Rock',
-      'Rock' => 'Scissors' }
-    if beatmap[p_1] == p_2
-      'You win!'
-    elsif p_1 == p_2
-      'Draw'
-    else
-      'You lose'
-    end
+    p_1 == p_2 ? 'Draw' :
+    (p_1 == 'Scissors' && ['Paper', 'Lizard'].include?(p_2)) ||
+    (p_1 == 'Paper' && ['Rock', 'Spock'].include?(p_2)) ||
+    (p_1 == 'Rock' && ['Scissors', 'Lizard'].include?(p_2)) ?
+    'You win!' : 'You lose'
   end
 
   def randomizer
-    ['Rock', 'Paper', 'Scissors'].sample
+    ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'].sample
   end
 
 end

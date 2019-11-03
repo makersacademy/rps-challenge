@@ -108,6 +108,10 @@ Then I updated the commander to store the session variable (user's input) to be 
 
 *5th commit*
 
-I refactored the model to make some methods shorter.
+I refactored the model and shortened some methods.
 
 *6th commit*
+
+3. Extension: adding 'Spock', 'Lizard'. I updated the game.rb controller to include the two extra options, and included some extra tests.
+
+*7th commit*

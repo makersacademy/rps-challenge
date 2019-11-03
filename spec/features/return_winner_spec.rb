@@ -1,4 +1,4 @@
-feature 'Returns winner' do
+feature 'Play' do
   let(:choice) { 'Rock' }
   scenario "returns the user's input" do
     intro_steps
@@ -18,4 +18,19 @@ feature 'Returns winner' do
     test
     expect(page).to have_content("You win!")
   end
+
+  scenario 'returns the outcome' do
+    allow_any_instance_of(Game).to receive(:randomizer).and_return("Lizard")
+    test
+    expect(page).to have_content("You lose")
+  end
+
+  scenario 'returns the outcome' do
+    allow_any_instance_of(Game).to receive(:randomizer).and_return("Spock")
+    intro_steps
+    choose('Spock')
+    click_button "Submit"
+    expect(page).to have_content("Draw")
+  end
+
 end
