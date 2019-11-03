@@ -1,5 +1,5 @@
  require 'sinatra/base'
-
+require './lib/game'
 
 class RPS < Sinatra::Base
     enable :sessions
@@ -18,13 +18,20 @@ class RPS < Sinatra::Base
         session[:player1_choice] = session[:player_1] 
         session[:player2_choice] = session[:player_2]
         erb :choice
-        redirect '/confirm'
     end 
 
     get '/confirm' do
+       session[:score] = session[:player1_choice] 
+       @rock = Game.new("shubs")
+       erb :play 
 
-        "hello"
+
+     get '/player move' do 
+     
+    end   
 
     end 
+    # start the server if ruby file executed directory 
+     run! if app_file == $0
 end 
 

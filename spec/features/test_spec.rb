@@ -24,4 +24,12 @@ feature 'Player 1 Chose RPS' do
     end 
 end 
 
+feature " " do
+    scenario " "do 
+        visit('/')
+        fill_in :player_1, with: 'Shubs'
+        fill_in :player1_choice, with: 'Rock'
+        expect(page).to have_content 'Shubs chose Rock'
+    end
+end 
  

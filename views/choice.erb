@@ -1,20 +1,22 @@
 <h1>Players attack</h1>
 
-<h2>Next players Turn</h2>
+<%# <h2>Next players Turn</h2> %>
 
 
 
-<%=session[:player1_choice]%> vs <%=session[:player2_choice]%>
+<h2><%=session[:player1_choice]%> vs <%=session[:player2_choice]%></h2>
+
+
+<form action='/confirm' method='get'>
 
 <label for="player_1">
-   Player choice </label>
+   Player1 choice </label>
   <input type="text" name="player_1">
 
 <label for="player_2">
-   Player choice </label>
+   Player2 choice </label>
   <input type="text" name="player_2">
 
-<form action='/confirm'>
 
 <button type="submit">Choice</button>
 

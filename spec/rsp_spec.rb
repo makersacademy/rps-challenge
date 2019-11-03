@@ -1,10 +1,3 @@
-# describe "initialize"
-# context 
-# it 
-# end 
-
-
-
 # if player1 chooses rock && player 2 chooses paper 
 # then player 2 wins the round 
 
@@ -14,12 +7,22 @@
 # total number of rounds 3
 
 # let (subject) {Rockps.new}
+
+
 describe "chooses Rock Paper Scissor" do
 
     it "expects Player 1 to choose rock & Player 2 chooses paper then player 2 wins the round" do 
-        rps = Rockps.new(player1)
+        game = Game.new
 
-        expect(rps.choice).to eq("Rock")
+        expect(game.choice).to eq("Rock")
     end 
 
 end 
+
+describe "rps_condition" do
+    it "checks if player1 won" do 
+
+    end 
+end 
+
+
