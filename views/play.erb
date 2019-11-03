@@ -1,0 +1,17 @@
+<h1> Welcome to the game, <%= @game.player_a.name %>! </h1>
+<h3> You are playing against the computer </h3>
+
+<h4> Please choose from below: </h4>
+
+<form action="/choose" method="post">
+  <div class="radio">
+    <label><input type="radio" name="option" value="rock">Rock</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="option" value="paper">Paper</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="option" value="scissors">Scissors</label>
+  </div>
+  <button class="btn btn-primary" type="submit">Play</button>
+</form>
