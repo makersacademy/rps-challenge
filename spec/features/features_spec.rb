@@ -20,6 +20,7 @@ end
 # 3. the game will choose a random option
 # 4. a winner will be declared
 feature 'Playing the Game' do
+  TEST_SEED = 123
   before do
     visit '/'
     fill_in 'name', with: 'Muna'
@@ -34,10 +35,15 @@ feature 'Playing the Game' do
     click_button 'Rock'
     expect(page).to have_content 'You chose Rock!'
   end
-  scenario '3. Computer chooses random option' do
+  scenario '3.1 Computer chooses an option' do
     click_button 'Rock'
     message = find(:css, "#computer").text
     expect(choices).to include message
+  end
+  scenario '3.2 Computer chooses a random option' do
+    srand(TEST_SEED)
+    click_button 'Rock'
+    expect(page).to have_content 'The computer chose Scissors!'
   end
 
   def choices

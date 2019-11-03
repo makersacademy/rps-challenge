@@ -1,4 +1,4 @@
-Hello, <%= @name %>!
+Hello, <%= @move.name %>!
 
 <form method="post" action="/play">
   <input type="submit" name="choice" value="Rock" />
@@ -6,7 +6,7 @@ Hello, <%= @name %>!
   <input type="submit" name="choice" value="Scissors" />
 </form>
 
-You chose <%= @choice %>!
+You chose <%= @move.choice %>!
 <div id="computer">
-  The computer chose <%= @computer_choice.to_s.capitalize %>!
+  The computer chose <%= @move.computer_choice.to_s.capitalize %>!
 </div>
