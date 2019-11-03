@@ -1,6 +1,10 @@
 feature "local output tests" do
-  scenario "page contains text" do
+
+
+  scenario "player can input name into form and it is displayed" do
     visit '/'
-    expect(page).to have_text("Hello!")
+    fill_in :player_name,with: "Bea"
+    click_on "Submit"
+    expect(page).to have_text "Lets play Bea!"
   end
 end
