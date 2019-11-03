@@ -15,10 +15,16 @@ class RPS < Sinatra::Base
     end 
 
     get'/choice' do
-        @player1_choice = session[:player_1] 
-        @player2_choice = session[:player_2]
+        session[:player1_choice] = session[:player_1] 
+        session[:player2_choice] = session[:player_2]
         erb :choice
+        redirect '/confirm'
     end 
 
+    get '/confirm' do
+
+        "hello"
+
+    end 
 end 
 
