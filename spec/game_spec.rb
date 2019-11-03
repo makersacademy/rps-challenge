@@ -18,9 +18,29 @@ describe Game do
     let(:sheldon_scissors) { double('Player', selection: :scissors) }
 
     it 'returns draw when both select same' do
-      game = Game.new(:andy_rock, :sheldon_rock)
-      expect(game.result).to eq("draw")
+      game = Game.new(andy_rock, sheldon_rock)
+      expect(game.result).to eq(:draw)
     end
+
+    context 'player wins' do
+      
+      it 'player rock beats computer scissors' do
+        game = Game.new(andy_rock, sheldon_scissors)
+        expect(game.result).to eq(:win)
+      end
+
+      it 'player scissors beats computer paper' do
+        game = Game.new(andy_scissors, sheldon_paper)
+        expect(game.result).to eq(:win)
+      end
+
+      it 'player paper beats computer rock' do
+        game = Game.new(andy_paper, sheldon_rock)
+        expect(game.result).to eq(:win)
+      end
+    end
+
+    
   end
 
 end
