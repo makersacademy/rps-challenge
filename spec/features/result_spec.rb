@@ -37,3 +37,15 @@ feature 'Result of game, computer wins' do
   end
 
 end
+
+feature 'Result of game, it is a draw' do
+
+  scenario 'Player has won' do
+    allow_any_instance_of(Computer).to receive(:choice).and_return('rock')
+    sign_in_and_play
+    rock_chosen
+    click_button('See result')
+    expect(page).to have_content 'It is a draw!'
+  end
+
+end

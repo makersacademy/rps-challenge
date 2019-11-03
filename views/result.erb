@@ -1,9 +1,3 @@
-<!-- <body bgcolor="seashell">
-<center>
-<h2 style="color:lightpink">Computer chose <%= @game.computer.choice %></h2>
-<h2 style="color:lightpink"><%= @game.player.name %> wins!</h2>
-</center> -->
-
 <body bgcolor="seashell">
 <center>
 
@@ -11,7 +5,10 @@
 
 <% if @game.result == 'winner' %>
 <h2 style="color:lightpink"><%= @game.player.name %> wins!</h2>
-<% else %>
+<% elsif @game.result == 'loser' %>
 <h2 style="color:lightpink">Computer wins!</h2>
+<% else %>
+<h2 style="color:lightpink">It is a draw!</h2>
 <% end %>
+
 </center>

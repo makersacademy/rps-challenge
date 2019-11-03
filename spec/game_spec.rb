@@ -44,4 +44,17 @@ describe Game do
 
   end
 
+  describe 'a draw' do
+
+    before do
+      allow(player).to receive(:choice).and_return 'rock'
+      allow(computer).to receive(:choice).and_return 'rock'
+    end
+
+    it 'checks who won' do
+      expect(game.result).to eq 'draw'
+    end
+
+  end
+
 end
