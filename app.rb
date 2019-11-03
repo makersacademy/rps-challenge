@@ -1,6 +1,8 @@
 require 'sinatra/base'
 
 class Game < Sinatra::Base
+  enable :sessions
+  
   get '/' do
     erb(:index)
   end
@@ -11,6 +13,7 @@ class Game < Sinatra::Base
   end
 
   get '/play' do
+    @name = session[:name]
     erb(:play)
   end
 
