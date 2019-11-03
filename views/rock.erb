@@ -1,2 +1,5 @@
 <h1>Let the battle begin</h1>
-<p><%= @game.player_1.name %>, you have selected rock.</p>
+<p><%= $game.player_1.name %>, you have selected rock.</p>
+<form method='get' action='/result'>
+  <input type='submit' value='FIGHT'>
+</form>

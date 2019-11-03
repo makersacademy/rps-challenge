@@ -26,8 +26,13 @@ class RPS < Sinatra::Base
   end
 
   get '/fight' do
-    @game = Game.new(Player.new(session[:player], session[:player_weapon].to_sym), Computer.new)
-    erb(@game.player_1.selection)
+    $game = Game.new(Player.new(session[:player], session[:player_weapon].to_sym), Computer.new)
+    erb($game.player_1.selection)
+  end
+
+  get '/result' do
+    @outcome = $game.result
+    erb(@outcome)
   end
 
   # start the server if ruby file executed directly
