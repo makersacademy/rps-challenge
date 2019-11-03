@@ -107,3 +107,7 @@ At this point I worked on the "logic" of the game, starting from simple unit tes
 Then I updated the commander to store the session variable (user's input) to be used as first argument in the method "winner" (the second argument is the computer-generated choice). I did some manual tests as well at this point, and fixed errors.
 
 *5th commit*
+
+I refactored the model to make some methods shorter.
+
+*6th commit*
