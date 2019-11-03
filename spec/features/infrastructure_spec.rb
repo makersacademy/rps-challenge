@@ -15,7 +15,6 @@ feature "local output tests" do
     click_on "Rock"
     expect(page).to have_text "AI hand: Scissors"
     expect(page).to have_text "You Win!"
-
   end
 
   scenario "player selects Scissors and draws" do
@@ -34,7 +33,7 @@ feature "local output tests" do
     expect(page).to have_text "You Lose!"
   end
 
-  context "player selected rock"do
+  context "player selected rock" do
     scenario "If player want another go they can select go again" do
       submit_player_info
       click_on "Rock"
@@ -44,25 +43,21 @@ feature "local output tests" do
     end
   end
 
-  context "player selected paper"do
+  context "player selected paper" do
     scenario "If player want another go they can select go again" do
       submit_player_info
       click_on "Paper"
       click_on "Go Again?"
       expect(page).to have_text "Lets play Bea!"
-
     end
   end
 
-  context "player selected scissors"do
+  context "player selected scissors" do
     scenario "If player want another go they can select go again" do
       submit_player_info
       click_on "Scissors"
       click_on "Go Again?"
       expect(page).to have_text "Lets play Bea!"
-
     end
   end
-
-
 end
