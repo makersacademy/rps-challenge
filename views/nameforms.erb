@@ -1,15 +1,26 @@
-<form action="/names" method="post">
-  <% if @version == "multi" %>
-    <label for="player1">Player 1, enter your name:</label>
-  <% else %>
-    <label for="player1">Enter your name:</label>
-  <% end %>
-  <input type="text" name="player1">
-  <br><br>
-  <% if @version == "multi" %>
-    <label for="player2">Player 2, enter your name:</label>
-    <input type="text" name="player2">
-    <br><br>
-  <% end %>
-  <button type="submit">Submit</button>
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+  </head>
+
+  <body>
+
+    <form action="/names" method="post">
+      <% if @version == "multi" %>
+        <label for="player1"> <h2> Player 1, enter your name: </h2></label>
+      <% else %>
+        <label for="player1"><h2>Enter your name: </h2></label>
+      <% end %>
+      <input type="text" name="player1">
+      <br><br>
+      <% if @version == "multi" %>
+        <label for="player2"><h2> Player 2, enter your name: </h2></label>
+        <input type="text" name="player2">
+        <br><br>
+      <% end %>
+      <button class="button" type="submit">Submit</button>
+    </form>
+
+  </body>
+</html>
