@@ -9,7 +9,7 @@ describe Game do
     let(:game) { Game.new('Andy', 'Sheldon') }
 
     it 'should have a list of weapons' do
-    expect(Game::WEAPONS).to eq [:rock, :paper, :scissors] 
+      expect(Game::WEAPONS).to eq [:rock, :paper, :scissors] 
     end
 
     it 'player 1 should be Andy' do
