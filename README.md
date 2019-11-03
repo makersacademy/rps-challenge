@@ -1,24 +1,16 @@
-# RPS Challenge
+# RPS Challenge - Week 3 Makers Academy
 
-Instructions
--------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task
-----
+### Task
+This is the  third weekend challenge at Makers Academy. It allowed  me to practice building simple web applications and follow an effective debugging process for web applications. For this challenge I managed to successfully complete all the User Stories,
+but given more time I would like to improve the HTML and CSS functionality of this application.
 
-Knowing how to build web applications is getting us almost there as web developers!
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+#### User Stories
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -26,61 +18,26 @@ I would like to register my name before playing an online game
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
+
 ```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+* The marketeer should be able to enter their name before the game
+* The marketeer will be presented the choices (rock, paper and scissors)
+* The marketeer can choose one option
+* The game will choose a random option
+* A winner will be declared
 
 
-As usual please start by
+### How to run this program
 
-* Forking this repo
-* TEST driving development of your app
+• Clone this repo
+• Run 'gem install bundle'
+• When the installation completes, run 'bundle'
+• From the command line, run ruby app.rb and visit 'http://localhost:4567'
 
 
-## Bonus level 1: Multiplayer
+### Skills I learned from this Challenge
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+• Structuring the code for apps that have user interaction and visual output
+• Using Sinatra
+• Testing apps that have user interaction and visual output
+• Tracing data between the browser and server
