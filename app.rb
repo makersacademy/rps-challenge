@@ -18,7 +18,11 @@ class Rps < Sinatra::Base
   end
 
   post '/move' do
-    
+    @game = true
+    session[:move] = params[:move]
+    @move = session[:move]
+    p params
+    erb :play
   end
 
   run! if app_file == $0

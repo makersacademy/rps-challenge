@@ -99,3 +99,7 @@ the user would like to register their name before playing. I created a feature t
 2. Second user story: on the second page, the player will play rock, paper, scissors. I'd like to implement this using buttons instead of text for the user's input. I wrote a feature test for the three buttons then implemented in the play.erb template.
 
 *3rd commit*
+
+At this point I worked on the "logic" of the game, starting from simple unit tests (e.g. returning a random choice from the computer, rock beats scissors etc).
+
+*4th commit*
