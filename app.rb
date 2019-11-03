@@ -17,25 +17,11 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
-  get '/rock' do
+  get '/result' do
     @game = session[:game]
-    @game.player.select_hand(:rock)
+    @game.player.select_hand(params[:hand].downcase.to_sym)
     @result = @game.play_rps
-    erb(:rock)
-  end
-
-  get '/paper' do
-    @game = session[:game]
-    @game.player.select_hand(:paper)
-    @result = @game.play_rps
-    erb(:paper)
-  end
-
-  get '/scissors' do
-    @game = session[:game]
-    @game.player.select_hand(:scissors)
-    @result = @game.play_rps
-    erb(:scissors)
+    erb(:result)
   end
 
 end
