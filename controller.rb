@@ -1,6 +1,7 @@
 require 'sinatra/base'
+require_relative 'lib/game'
 
-class Game < Sinatra::Base
+class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
@@ -20,6 +21,20 @@ class Game < Sinatra::Base
   get '/play' do
     @player = session['player']
     erb(:play)
+  end
+
+  post '/moves' do
+  session['playermove'] = params[:move]
+  redirect '/results'
+  end
+
+  get '/results' do
+    @player = session['player']
+    @playermove = session['playermove']
+    @game = Game.new(@player)
+    @computermove = @game.computer_move
+    @winner = @game.winner(@playermove, @computermove)
+    erb(:results)
   end
 
   run! if app_file == $0

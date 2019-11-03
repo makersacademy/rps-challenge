@@ -1,11 +1,11 @@
 <h1> <%= @player %>, make your move! </h1>
 <br>
-<form>
+<form action="/moves" method="post">
   <label for="move">Choose your move:</label>
   <select name="move">
-    <option value="rock">Rock</option>
-    <option value="paper">Paper</option>
-    <option value="scissors">Scissors</option>
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
   </select>
   <button type="submit">Submit</button>
 </form>
