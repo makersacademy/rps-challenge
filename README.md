@@ -51,7 +51,7 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
-## Basic Rules
+## Basic Rules ##
 
 - Rock beats Scissors
 - Scissors beats Paper
@@ -92,8 +92,10 @@ Development process:
 I have first set up folders and initial files.
 
 1. First user story:
-the user would like to register their name before playing. I created a feature test to check that the home page displays a welcome message. I then implemented this in my index.erb and starting adding routes to my app.rb files. Second feature test was to check that, after entering names, some text with the name would be displayed on the page. For this I had to include a simple form in index.erb with both a text field (for the name) and a submit button. The form would 'post' to a different page (/names), where I would be able to take the name param from the previous step and store it in a session. From the /names page I redirected to another page (/play) where the session variable would be assigned to an instance variable. This page would use the play.erb template to display the text with the name. Tests passed.
+the user would like to register their name before playing. I created a feature test to check that the home page displays a welcome message. I then implemented this in my index.erb and starting adding routes to my app.rb file. Second feature test was to check that, after entering names, some text with the name would be displayed on the page. For this I had to include a simple form in index.erb with both a text field (for the name) and a submit button. The form would 'post' to a different page (/names), where I would be able to take the name param from the previous step and store it in a session. From the /names page I redirected to another page (/play) where the session variable would be assigned to an instance variable. This page would use the play.erb template to display the text with the name. Tests passed.
 
-*Second commit*
+*2nd commit*
 
-2. Second user story:
+2. Second user story: on the second page, the player will play rock, paper, scissors. I'd like to implement this using buttons instead of text for the user's input. I wrote a feature test for the three buttons then implemented in the play.erb template.
+
+*3rd commit*
