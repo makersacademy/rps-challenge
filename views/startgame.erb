@@ -1,7 +1,11 @@
-<div style='text-align: center; border: 15px dotted yellow'>
-  <h1 text-align='center'><%= @player %> has entered the arena!</h1>
+<div style='text-align: center; border: 15px dotted red'>
+  <h1 text-align='center'> In the red corner, we have <%= @player1 %> </h1>
 </div>
-<br>
-<form action='/play'>
+<br><br><br>
+<div style='text-align: center; border: 15px dotted blue'>
+  <h1 text-align='center'> In the blue corner, we have <%= @player2 %> </h1>
+</div>
+<br><br><br>
+<form action='/play1'>
   <input type='submit' value="Let's go!">
 </form>

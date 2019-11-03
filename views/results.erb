@@ -1,10 +1,14 @@
-<h2> <%= @player %> has chosen <%= @playermove %> </h2>
+<h2> <%= @player1 %> has chosen <%= @player1move %> </h2>
 
-<h2> Computer has chosen: <%= @computermove %> </h2>
+<h2> <%= @player2 %> has chosen: <%= @player2move %> </h2>
 
 <h2> The winner is: <%= @winner %> </h2>
 <br><br>
 
-<form action='/play'>
+<form action='/play1'>
   <input type='submit' value="Play again!">
+</form>
+
+<form action='/'>
+  <input type='submit' value="New game!">
 </form>

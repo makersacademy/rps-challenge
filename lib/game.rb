@@ -1,24 +1,25 @@
 class Game
 
-  def initialize(player)
-    @player = player
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
   end
 
   def computer_move
     ["Paper", "Rock", "Scissors"].sample
   end
 
-  def winner(playermove, computermove)
-    if playermove == computermove
+  def winner(player1move, player2move)
+    if player1move == player2move
       "...there is no winner, it's a draw!"
     else
-      case playermove
+      case player1move
         when "Rock"
-          computermove == "Scissors" ? @player : "The Computer!"
+          player2move == "Scissors" ? @player1 : @player2
         when "Scissors"
-          computermove == "Rock" ? "The Computer!" : @player
+          player2move == "Rock" ? @player2 : @player1
         when "Paper"
-          computermove == "Rock" ? @player : "The Computer!"
+          player2move == "Rock" ? @player1 : @player2
       end
     end
   end
