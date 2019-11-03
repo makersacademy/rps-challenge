@@ -1,0 +1,11 @@
+<h2>Player 1: <%= @player_name %></h2>
+<br></br>
+<h3>Choose rock, paper or scissors</h3>
+<form action="/selection" method="post">
+  <select id="selection" name="selection">
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+      <input type="submit" value="Submit">
+  </select>
+</form>
