@@ -18,6 +18,21 @@ feature "local output tests" do
 
   end
 
+  scenario "player selects Scissors and draws" do
+    srand(3)
+    submit_player_info
+    click_on "Scissors"
+    expect(page).to have_text "AI hand: Scissors"
+    expect(page).to have_text "Draw!"
+  end
+
+  scenario "player selects Paper you lose" do
+    srand(3)
+    submit_player_info
+    click_on "Paper"
+    expect(page).to have_text "AI hand: Scissors"
+    expect(page).to have_text "You Lose!"
+  end
 
 
 
