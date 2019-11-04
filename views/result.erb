@@ -1,0 +1,34 @@
+<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+<br>
+<br>
+<%= @game.player_1.name %>  played <%= @game.player_1.move %>
+<br>
+<br>
+<%= @game.player_2.name %>  played <%= @game.player_2.move %>
+<br>
+<br>
+
+<% if @result == 0 %>
+Draw! - No points.
+<% elsif @result == 1%>
+<%= @game.player_1.name %> beats <%= @game.player_2.name %>
+<br>
+One point to <%= @game.player_1.name %>
+<% else %>
+<%= @game.player_2.name %> beats <%= @game.player_1.name %>
+<br>One point to <%= @game.player_2.name %>
+<% end %>
+<br>
+<br>
+<br>
+
+<%= @game.player_1.name %>: <%= @game.player_1.player_score %> points
+<br>
+<%= @game.player_2.name %>: <%= @game.player_2.player_score %> points
+
+
+<form action="/select"  method ="post">
+  <input type="submit" name="play" value="Rock">
+  <input type="submit" name="play" value="Paper">
+  <input type="submit" name="play" value="Scissors">
+</form>
