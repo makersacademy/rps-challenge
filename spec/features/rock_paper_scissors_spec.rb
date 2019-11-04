@@ -18,16 +18,20 @@ feature 'Rock Paper Scissors' do
     expect(page).to have_content 'Error: Please specify player name!'
   end
 
-  # As a marketeer
-  # So that I can enjoy myself away from the daily grind
-  # I would like to be able to play rock/paper/scissors
-
   scenario 'player-one plays rock' do
     visit('/')
     fill_in :player_1_name, with: 'Jez'
     click_button 'Register'
     click_button 'Rock'
     expect(page).to have_content 'Jez played: ROCK!'
+  end
+
+  scenario 'player-one plays paper' do
+    visit('/')
+    fill_in :player_1_name, with: 'Jez'
+    click_button 'Register'
+    click_button 'Paper'
+    expect(page).to have_content 'Jez played: PAPER!'
   end
 
 end
