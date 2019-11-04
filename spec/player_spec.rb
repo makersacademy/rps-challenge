@@ -30,7 +30,7 @@ describe Player do
 
     it "test more win conditions" do
         subject.MakeMove("Paper")
-        expect(subject.CheckWon("Rock")).to eq false
+        expect(subject.CheckWon("Rock")).to eq true
     end
 
     it "test more win conditions" do
