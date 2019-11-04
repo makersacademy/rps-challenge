@@ -47,3 +47,7 @@ Confirmation for code review:
 
 ## Test Plan
 ![game_test_plan](https://user-images.githubusercontent.com/33905131/68100310-4c127f00-febf-11e9-960f-4725e2392178.jpg)
+
+### References:
+- Splash page image: https://cults3d.com/en/3d-model/game/rock-paper-scissors-dice
+- Makers Intro to the web (walkthroughs): https://github.com/makersacademy/course/tree/master/intro_to_the_web 
