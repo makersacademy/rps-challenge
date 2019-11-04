@@ -23,6 +23,9 @@ class RPS < Sinatra::Base
   end
 
   post '/select' do
+    if params[:play] == 'Quit'
+      redirect '/'
+    end
     @game.player_1.last_move(params[:play])
     draw = Draw.new
     @game.player_2.last_move(draw.draw)
