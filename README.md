@@ -1,22 +1,7 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
+User stories completed:
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ```sh
 As a marketeer
@@ -27,29 +12,24 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+## Screenshot
+<img width="706" alt="Screenshot 2019-11-04 at 05 03 56" src="https://user-images.githubusercontent.com/33905131/68100585-b0820e00-fec0-11e9-84b1-bfe9ab94f7c3.png">
 
-Hints on functionality
+How to play the game:
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
+- player enters their name before the game begins
+- player is presented with the choices (rock, paper and scissors)
+- player chooses one option
+- the game chooses a random option
+- a winner is declared
 
 ## Bonus level 1: Multiplayer
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+Two players can play against each other
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+_special_ rules apply ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
 ## Basic Rules
 
@@ -57,30 +37,17 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+Confirmation for code review:
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+* All tests are passing
+* [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (Simplecov >100%)
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+## Intended Game Outline
+![splash_page_mockup](https://user-images.githubusercontent.com/33905131/68100266-048bf300-febf-11e9-9e97-40ff868e4920.jpg)
 
-Notes on test coverage
-----------------------
+## Test Plan
+![game_test_plan](https://user-images.githubusercontent.com/33905131/68100310-4c127f00-febf-11e9-960f-4725e2392178.jpg)
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+### References:
+- Splash page image: https://cults3d.com/en/3d-model/game/rock-paper-scissors-dice
+- Makers Intro to the web (walkthroughs): https://github.com/makersacademy/course/tree/master/intro_to_the_web 
