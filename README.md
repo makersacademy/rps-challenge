@@ -12,6 +12,8 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+## Screenshot
+<img width="706" alt="Screenshot 2019-11-04 at 05 03 56" src="https://user-images.githubusercontent.com/33905131/68100585-b0820e00-fec0-11e9-84b1-bfe9ab94f7c3.png">
 
 How to play the game:
 
