@@ -1,2 +1,2 @@
 require_relative 'controller'
-run Game
+run RPS
