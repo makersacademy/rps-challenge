@@ -39,3 +39,11 @@ Confirmation for code review:
 
 * All tests are passing
 * [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (Simplecov >100%)
+
+## Intended Game Outline
+![Game outline lockup]
+(https://github.com/KOlofinmoyin/rps-challenge/blob/master/images/splash_page_mockup.jpg)
+
+## Test Plan
+![Project Test plan]
+(https://github.com/KOlofinmoyin/rps-challenge/blob/master/images/game_test_plan.jpg)
