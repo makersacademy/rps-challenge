@@ -1,0 +1,14 @@
+<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+<br>
+<br>
+<br>
+
+Ready to play?
+<br>
+<br>
+
+<form action="/select"  method ="post">
+  <input type="submit" name="play" value="Rock">
+  <input type="submit" name="play" value="Paper">
+  <input type="submit" name="play" value="Scissors">
+</form>
