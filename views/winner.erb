@@ -1,0 +1,5 @@
+<% if @game.winner == 'Draw' %>
+  It's a draw! <%= @game.player_1.choice %> is the same as <%= @game.player_2.choice %>!
+<% else %>
+  <%= @game.winner.name %> wins! <%= @game.winner.choice %> beats <%= @game.loser.choice %>!
+<% end %>
