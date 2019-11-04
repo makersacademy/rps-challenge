@@ -16,6 +16,8 @@ class RPS < Sinatra::Base
     player_2 = Player.new('Computer')
     @game = Game.create(player_1, player_2)
     redirect '/play'
+    @draw = Draw.new # created here so we only have one instance
+
   end
 
   before do
@@ -27,8 +29,8 @@ class RPS < Sinatra::Base
       redirect '/'
     end
     @game.player_1.last_move(params[:play])
-    draw = Draw.new
-    @game.player_2.last_move(draw.draw)
+    @draw = Draw.new
+    @game.player_2.last_move(@draw.draw)
     redirect '/result'
   end
 
