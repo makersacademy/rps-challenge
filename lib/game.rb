@@ -19,7 +19,7 @@ class Game
 
   def winner
     if @player_1.move == @player_2.move
-      return "It's a tie"
+      return "It's a draw!"
     elsif (@player_1.move == "Rock" && @player_2.move == "Scissors") || (@player_1.move == "Scissors" && @player_2.move == "Paper") || (@player_1.move == "Paper" && @player_2.move == "Rock")
       return @player_1
     else
