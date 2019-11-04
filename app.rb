@@ -32,6 +32,26 @@ class RPS < Sinatra::Base
 
     # start the server if ruby file executed directory 
      run! if app_file == $0
+
+
+   get 'player_chooses_rock' do
+
+    redirect '/play'
+
+   end 
+   
+   get 'player_chooses_paper' do
+   
+    redirect '/play'
+
+  end 
+
+  get 'player_chooses_scissors' do
+
+    redirect '/play'
+
+  end 
+
 end 
 end 
 
