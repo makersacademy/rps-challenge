@@ -3,7 +3,6 @@ require_relative 'lib/player'
 require_relative 'lib/random_move'
 require_relative 'lib/game'
 
-
 class Rps < Sinatra::Base
 
   enable :sessions
