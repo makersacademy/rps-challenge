@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+  </head>
+
+  <body>
+
+    <h1> <%= @player1 %> has chosen: <%= @player1move %> </h1>
+
+    <h1> <%= @player2 %> has chosen: <%= @player2move %> </h1>
+
+    <h1> The winner is: </h1>
+    <h1> <%= @winner %>! </h1>
+    <br><br>
+
+    <form action='/play1'>
+      <button class="button" type='submit'>Play again!</button>
+    </form>
+
+    <form action='/'>
+      <button class="button" type='submit'>New game!</button>
+    </form>
+
+  </body>
+</html>

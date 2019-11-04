@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+  </head>
+
+  <body>
+
+    <div style='text-align: center; border: 15px dotted red'>
+      <h1 text-align='center'> In the red corner, we have <%= @player1 %> </h1>
+    </div>
+    <br><br><br>
+    <div style='text-align: center; border: 15px dotted blue'>
+      <h1 text-align='center'> In the blue corner, we have <%= @player2 %> </h1>
+    </div>
+    <br><br><br>
+    <form action='/play1'>
+      <button class="button" type='submit'>Let's go!</button>
+    </form>
+
+  </body>
+</html>

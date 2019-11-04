@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+  </head>
+
+  <body>
+
+    <h1>Let's play Rock, Paper, Scissors!</h1>
+    <img src="https://3.bp.blogspot.com/-jM8VLTbuILY/WoGwBP937sI/AAAAAAATXIA/WS0xj8SFGKcn5gaQcQuA7t371EOn8NlJACLcBGAs/s1600/AW785125_00.gif">
+    <br>
+
+    <h2> Do you want to play against a friend or the computer? </h2>
+    <br>
+    <form action="/forms" method="post">
+      <button class="button" type="submit" name="version" value="multi">Friend</button>
+    </form>
+    <form action="/forms" method="post">
+      <button class="button" type="submit" name="version" value="single">Computer</button>
+    </form>
+
+  </body>
+</html>

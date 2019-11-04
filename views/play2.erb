@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+  </head>
+
+  <body>
+
+    <h1> <%= @player2 %>, make your move! </h1>
+    <br>
+    <form action="/move2" method="post">
+      <label for="player2move"><h1> Player 2, choose your move: </h1></label>
+      <select name="player2move">
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+      </select>
+      <br><br><br>
+      <button class="button" type="submit">Submit</button>
+    </form>
+
+  </body>
+</html>
