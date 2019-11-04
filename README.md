@@ -41,9 +41,7 @@ Confirmation for code review:
 * [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (Simplecov >100%)
 
 ## Intended Game Outline
-![Game outline lockup]
-(https://github.com/KOlofinmoyin/rps-challenge/blob/master/images/splash_page_mockup.jpg)
+![splash_page_mockup](https://user-images.githubusercontent.com/33905131/68100266-048bf300-febf-11e9-9e97-40ff868e4920.jpg)
 
 ## Test Plan
-![Project Test plan]
-(https://github.com/KOlofinmoyin/rps-challenge/blob/master/images/game_test_plan.jpg)
+![game_test_plan](https://user-images.githubusercontent.com/33905131/68100310-4c127f00-febf-11e9-960f-4725e2392178.jpg)
