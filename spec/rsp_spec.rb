@@ -1,3 +1,5 @@
+
+require 'game'
 # if player1 chooses rock && player 2 chooses paper 
 # then player 2 wins the round 
 
@@ -7,7 +9,7 @@
 # total number of rounds 3
 
 # let (subject) {Rockps.new}
-
+# subject(:dave) { Player.new('Dave') }
 
 describe "chooses Rock Paper Scissor" do
 

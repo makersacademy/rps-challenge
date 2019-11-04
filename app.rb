@@ -9,8 +9,8 @@ class RPS < Sinatra::Base
     end 
 
     get '/names' do
-        session[:player_1] = params[:player_1]
-        session[:player_2] = params[:player_2]
+        session[:player_1] = Game.new(params[:player_1])
+        session[:player_2] = Game.new(params[:player_2])
         redirect '/choice'
     end 
 
@@ -21,17 +21,17 @@ class RPS < Sinatra::Base
     end 
 
     get '/confirm' do
-       session[:score] = session[:player1_choice] 
-       @rock = Game.new("shubs")
-       erb :play 
+       session[:score] = Game.new(session[:player1_choice]) 
+       erb :confirm
 
 
-     get '/player move' do 
-     
-    end   
-
+   get '/choose' do 
+    @game.palyer1_choice(params[:choice])
+    erb @game.result
     end 
+
     # start the server if ruby file executed directory 
      run! if app_file == $0
+end 
 end 
 
