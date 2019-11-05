@@ -3,7 +3,8 @@ require_relative './lib/game.rb'
 
 class Rps < Sinatra::Base
   enable :sessions
-  
+  set :session_secret, 'super super secret'
+
   before do
     @game = Game.instance
   end
@@ -26,12 +27,17 @@ class Rps < Sinatra::Base
   post '/move' do
     @player_1 = session[:player_1]
     @game = Game.create
-    @playing = true
     session[:move] = params[:move]
+    redirect '/play_2'
+  end
+
+  get '/play_2' do
+    @player_1 = session[:player_1]
+    # session[:move] = params[:move]
     @move = session[:move]
     @random = @game.randomizer
     @winner = @game.winner(@move, @random)
-    erb :play
+    erb :play_2
   end
 
   run! if app_file == $0
