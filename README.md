@@ -1,5 +1,29 @@
 # RPS Challenge
 
+##Stories Completed
+
+Task
+----------
+To provide a _Rock, Paper, Scissors_ game for The Makers Academy Marketing Array ( **MAMA**) so they can play on the web with the following user stories:
+
+```sh
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+```
+
+
+Set Up
+---------------
+Initially I set up the MVC environment.
+
+I tested  that my app.rb file was running and configured correctly. I also tested my testing infrastructure, before addressing to the user stories.
+
+
 Instructions
 -------
 

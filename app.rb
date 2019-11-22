@@ -1,9 +1,10 @@
 require 'sinatra/base'
 
-class Player < Sinatra::Base
+class Rps < Sinatra::Base
   get '/' do
     #'Hello Rps!'
-    'Testing infrastructure working!'
+    #'Testing infrastructure working!'
+    erb :index
   end
 
   # start the server if ruby file executed directly
