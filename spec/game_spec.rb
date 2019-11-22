@@ -3,6 +3,7 @@ require './lib/game'
 describe Game do
 
   let (:player) { double "game player" }
+  subject(:game) { described_class.new("Player 1") }
 
   it { should be_an_instance_of(Game) }
 

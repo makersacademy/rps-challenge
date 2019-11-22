@@ -6,8 +6,8 @@ class RockPaperScissors < Sinatra::Base
       erb :index
     end
 
-    post '/registered' do
-      
+    post '/play' do
+      @game = Game.new_game(params[:player_name])
     end
 
     run! if app_file == $0
