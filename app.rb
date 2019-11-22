@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require './lib/player'
+require_relative './lib/player'
+require_relative './lib/game'
 
 class Rockpaperscissors < Sinatra::Base
   # get '/' do

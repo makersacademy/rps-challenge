@@ -2,13 +2,8 @@
 
 Stories Completed
 -------
-
-
-
-
-
-
-
+User story 1 complete.
+In the middle of user story 2 but not currently working.
 
 
 Instructions
