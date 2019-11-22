@@ -1,7 +1,7 @@
 # RPS Challenge
 
 
-STORIES COMPLETED
+Stories Completed
 -----------------
 
 
