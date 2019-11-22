@@ -17,4 +17,14 @@ describe Game do
       end
     end
   end
+
+  context 'a draw' do
+    let(:player_1) { double :player_1, :name => "Sam", :move => "Rock" }
+    let(:player_2) { double :player_2, :name => "Charlie", :move => "Rock"}
+    describe '#play' do
+      it 'should return draw' do
+        expect(game.play).to eq("draw")
+      end
+    end
+  end
 end
