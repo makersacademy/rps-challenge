@@ -21,4 +21,11 @@ feature "Play rock, paper scissors:" do
     expect(page).to have_content "Choose Rock, Paper or Scissors"
     expect(page).to have_select('rps_select', options: ['Rock', 'Paper', 'Scissors'])
   end
+
+  scenario "user is shown their choice after submitting" do
+    sign_in_and_play
+    select "Rock", from: "rps_select"
+    click_button "Submit"
+    expect(page).to have_content "Rock"
+  end
 end

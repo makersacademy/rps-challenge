@@ -18,6 +18,11 @@ class RPSController < Sinatra::Base
 
   post '/get_play' do
     session[:user_choice] = params[:rps_select]
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
   end
 
 end
