@@ -35,6 +35,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/move' do
     $game.player_1.make_move(params[:move])
+    $game.player_2.random_move
     redirect '/result'
   end
 
