@@ -3,7 +3,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 
-class Game < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
   configure :development, :test do
     register Sinatra::Reloader
   end

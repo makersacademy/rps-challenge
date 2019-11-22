@@ -16,4 +16,4 @@ SimpleCov.start
 
 require_relative './features/web_helper.rb'
 require_relative '../app'
-Capybara.app = Game
+Capybara.app = RockPaperScissors
