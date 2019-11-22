@@ -1,5 +1,12 @@
 # RPS Challenge
 
+
+STORIES COMPLETED
+-----------------
+
+
+
+
 Instructions
 -------
 
