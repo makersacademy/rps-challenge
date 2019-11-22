@@ -1,0 +1,37 @@
+<html>
+<style>
+.bottomright {
+  position: absolute;
+  bottom: 0px;
+  right: 180px;
+  font-size: 30px;
+}
+.button {
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+  <body style = "Background: url(https://www.firststage.org/images/2019-20%20season/Rock%20Paper%20Scissors/FirstStageTemplate_RockPaperScissors_2019.jpg); background-size: 100% 100%">
+    <div class=  "bottomright">
+    <center>
+      <h3><%=@player1%> chose <%= @move %> </h3> 
+      <h3>Opponent chose <%= @Opponent_move.to_s.capitalize %>  </h3> 
+      <form method= "GET" action= '/play' >
+        <input type= "submit" value= "Play Again!" class="button">
+      </form>
+      <form method= "GET" action= '/'>
+        <input type= "submit" value= "Exit" class="button">
+      </form>
+      <h3 style= 'color:black'><%= @game.rps_rules(@move, @Opponent_move) %></h3>
+    </center>
+    </div>
+  </body>
+</html>
