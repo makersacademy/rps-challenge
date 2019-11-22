@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -11,12 +13,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    $name = params[:name]
+    player_1 = Player.new(params[:name])
+    player_2 = Player.new("Computer")
+    $game = Game.new(player_1, player_2)
     redirect '/confirm'
   end
 
   get '/confirm' do
-    @name = $name
+    @game = $game
     erb :confirm
   end
 
@@ -25,17 +29,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @name = $name
+    @game = $game
     erb :play
   end
 
   post '/move' do
-    $move = params[:move]
+    $game.player_1.make_move(params[:move])
     redirect '/result'
   end
 
   get '/result' do
-    @move = $move
+    @game = $game
     erb :result
   end
 
