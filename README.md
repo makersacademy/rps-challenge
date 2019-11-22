@@ -1,5 +1,14 @@
 #Stories Completed
 
+Created file structures under '/lib' and '/spec' folders.
+Created file 'spec/features/enter_player_spec.rb' to feature test creating player(s) in a ''/welcome' page
+app.rb creates RPSApp in sinatra/base
+RSPEC gives one error + a 'rack-test requires a rack application, but none was given'
+Added config.ru file for RPSApp
+Created index.erb to establish a form to enter player detail
+Updated bottom of 'spec_helper.rb' with RACK_ENV
+created play.erb
+
 # RPS Challenge
 
 Instructions
