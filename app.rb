@@ -29,4 +29,14 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
+  post '/move' do
+    $move = params[:move]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @move = $move
+    erb :result
+  end
+
 end
