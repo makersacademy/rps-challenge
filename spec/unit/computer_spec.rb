@@ -3,9 +3,14 @@ require "./lib/computer.rb"
 describe Computer do
 
   subject { Computer.new("Computer") }
-  
+
   it "can return it's name" do
     expect(subject.name).to eq "Computer"
+  end
+
+  it "returns a random choice when #enter_choice is called" do
+    subject.enter_choice("argument")
+    expect(["Rock", "Paper", "Scissors"]).to include(subject.choice)
   end
 
   context "can randomly return" do

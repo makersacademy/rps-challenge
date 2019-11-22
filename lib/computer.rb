@@ -1,5 +1,5 @@
 class Computer
-  attr_reader :name
+  attr_reader :name, :choice
 
   def initialize(name)
     @name = name
@@ -10,6 +10,11 @@ class Computer
     choice = rand(0..2)
     choices = ["Rock", "Paper", "Scissors"]
     choices[choice]
+  end
+
+  def enter_choice(not_used)
+    # The argument here is for compatibility with Player class
+    @choice = choose
   end
 
 end
