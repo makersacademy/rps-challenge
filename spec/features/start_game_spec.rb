@@ -1,6 +1,6 @@
-feature 'Start game' do
-  scenario 'player start game' do
-    enter_name_and_start_game
-    expect(page).to have_content "Players,Are you ready!"
-  end
-end
+# feature 'Start game' do
+#   scenario 'players enter name and start game' do
+#     sign_in_and_play
+#     expect(page).to have_content "Players,Are you ready!"
+#   end
+# end
