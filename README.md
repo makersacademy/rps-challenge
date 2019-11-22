@@ -1,4 +1,10 @@
-# RPS Challenge
+# STORIES COMPLETED 
+
+
+No stories completed yet
+
+
+#RPS Challenge
 
 Instructions
 -------
