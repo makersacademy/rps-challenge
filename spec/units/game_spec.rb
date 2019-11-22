@@ -26,5 +26,11 @@ describe Game do
         expect(game.play).to eq("draw")
       end
     end
+
+    describe '#draw?' do
+      it 'should be true' do
+        expect(game.draw?).to be true
+      end
+    end
   end
 end
