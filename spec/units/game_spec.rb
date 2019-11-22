@@ -11,6 +11,12 @@ describe Game do
       expect(game.players).to eq [player_1, player_2]
     end
 
+    describe '#player_1' do
+      it 'returns player_1' do
+        expect(game.player_1).to eq(player_1)
+      end
+    end
+
     describe '#play' do
       it 'should return the winning player' do
         expect(game.play).to eq(player_2)
