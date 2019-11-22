@@ -67,6 +67,26 @@ class RockPaperScissors < Sinatra::Base
       erb :second_play
     end
 
+    post '/second-player-rock' do
+      @game.player2.rock_move
+      redirect '/two-player-result'
+    end
+
+    post '/second-player-paper' do
+      @game.player2.paper_move
+      redirect '/two-player-result'
+    end
+
+    post '/second-player-scissors' do
+      @game.player2.scissors_move
+      redirect '/two-player-result'
+    end
+
+    get '/two-player-result' do
+      @game.who_wins
+      erb :second_play_result
+    end
+
     run! if app_file == $0
 
 end

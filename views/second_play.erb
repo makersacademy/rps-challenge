@@ -1,1 +1,17 @@
-TEST!!
+<%= @game.player1.name %> VS <%= @game.player2.name %>
+<br>
+<br>
+<%= @game.player2.name %>'s turn:
+<br>
+<br>
+<form action = /second-player-rock method = post>
+  <input type = "submit" value = "ROCK">
+</form>
+
+<form action = /second-player-paper method = post>
+  <input type = "submit" value = "PAPER">
+</form>
+
+<form action = /second-player-scissors method = post>
+  <input type = "submit" value = "SCISSORS">
+</form>
