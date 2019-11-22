@@ -1,24 +1,7 @@
 # RPS Challenge
+This web app allows users to play an online game of Rock, Paper, Scissors. The user enters their name and then chooses rock, paper or scissors on the next page. When they click play, they are matched with the computer and a winner is announced.
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
+## Stories Completed
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -26,61 +9,22 @@ I would like to register my name before playing an online game
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
-```
 
-Hints on functionality
+## Build Status
+The project is currently complete and working for the above user stories. Future enhancements would be to add the ability for multiple human players, and the addition of the 'lizard / spock' extension of the game.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+## Tests
+Tests are run using rpec, rspec/capybara and rubocop. Currently all tests for rspec are passing. There are a few outstanding offenses in rubocop but these mostly refer to long lines, which I have not been able to reduce without major refactoring. Unit tests make use of doubles where necessary.
 
+## Construction
+The model for the game makes use of three classes: player, computer and game.
 
-As usual please start by
+Player stores the name and choice of a human player. 
 
-* Forking this repo
-* TEST driving development of your app
+Computer stores it's name, a choice variable, and a method for randomly choosing a play of rock, paper or scissors.
 
+The computer class is designed to work in the same manner as the player class (taking the same arguments and having the same methods), which makes it easier to swap out a computer for a live player in future enhancements.
 
-## Bonus level 1: Multiplayer
+The game class takes two instances of players as arguments and uses their attributes when running a game. Edge case of trying to play a game when the players have not made a choice has been covered.
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+output from the game is stored in a session hash for output to the views, which consist of the landing page (index), play page where the user enters a choice and initates a game, and results page (result) where the result of the game is shown.

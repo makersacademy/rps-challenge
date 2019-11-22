@@ -1,0 +1,18 @@
+<div style="margin-bottom: 30px">
+<h1>Rock, Paper, Scissors</h1>
+</div>
+<div style="margin-bottom: 15px">
+Thanks, <%= session[:game].player1 %>. Let's play!
+</div>
+<div style="margin-bottom: 15px">
+Choose Rock, Paper or Scissors:
+</div>
+<form action="/get_play" id="rps" method="post">
+    <select name="rps_select" form="rps">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
