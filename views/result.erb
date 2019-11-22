@@ -2,4 +2,10 @@
 <br>
 <p> Computer selected <%=@game.player_2.move%>! </p>
 <br>
-<p> <%=@game.play.name%> wins! </p>
+<p>
+  <% if @game.draw? %>
+    Draw!
+  <% else %>
+    <%=@game.play.name%> wins!
+  <% end %>
+</p>
