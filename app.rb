@@ -38,6 +38,7 @@ class RockPaperScissors < Sinatra::Base
 
     get '/computer-play' do
       @game.player2.computer_move
+      @game.who_wins
       erb :computer_play
     end
 
