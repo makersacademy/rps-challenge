@@ -5,6 +5,6 @@ feature 'Play' do
     click_button 'Enter'
     expect(page).to have_content 'Anh vs. Robot'
     click_button 'Rock'
-    expect(page).to have_content 'Rock beats scissors. You win!'
+    expect(page).to have_content 'Rock beats scissors. Anh wins!'
   end
 end
