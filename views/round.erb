@@ -15,16 +15,19 @@
       align-items: center;
       text-align: center;
     }
+    choice {
+      border-color: black;
+      border-width: 3px;
+    }
   </style>
 <head>
 <body>
   <div class="inner_border">
-    <h1>Welcome to Rock Paper Scissors!</h1>
-    <hr class="medium_hr">
-    <h2 class="center">Please enter your name:</h2>
-    <form action="/round" method="post">
-      <input type="text" name="user_name">
-      <input type="submit" value="Submit">
-    </form>
+    <h3><%= @user_name %> please choose one of the options below</h3>
+    <div>
+      <a class="choice" href="/result">Rock</a>
+      <a class="choice" href="/result">Paper</a>
+      <a class="choice" href="/result">Scissors</a>
+    </div>
   </div>
 <body>
