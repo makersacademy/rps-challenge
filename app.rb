@@ -20,4 +20,13 @@ class RockPaperScissors < Sinatra::Base
     erb :confirm
   end
 
+  post '/start-game' do
+    redirect '/game'
+  end
+
+  get '/game' do
+    @name = $name
+    erb :game
+  end
+
 end
