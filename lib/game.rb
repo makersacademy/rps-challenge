@@ -23,4 +23,8 @@ class Game
   def draw?
     play == "draw"
   end
+
+  def player_1
+    players.first
+  end
 end
