@@ -37,6 +37,7 @@ class RockPaperScissors < Sinatra::Base
     end
 
     get '/computer-play' do
+      @game.player2.computer_move
       erb :computer_play
     end
 

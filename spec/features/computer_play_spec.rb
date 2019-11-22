@@ -19,18 +19,21 @@ feature 'Computer play' do
   end
 
   scenario "Should display the computers move regardless of players choice (player chooses rock)" do
+    allow(Kernel).to receive(:rand).and_return(1)
     sign_in_and_play
     click_button "ROCK"
     expect(page).to have_content("Computer's move: rock")
   end
 
   scenario "Should display the computers move regardless of players choice (player chooses paper)" do
+    allow(Kernel).to receive(:rand).and_return(1)
     sign_in_and_play
     click_button "PAPER"
     expect(page).to have_content("Computer's move: rock")
   end
 
   scenario "Should display the computers move regardless of players choice (player chooses scissors)" do
+    allow(Kernel).to receive(:rand).and_return(1)
     sign_in_and_play
     click_button "SCISSORS"
     expect(page).to have_content("Computer's move: rock")
