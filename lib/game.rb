@@ -6,9 +6,18 @@ class Game
 
     # Sets the rules for which player wins for each combination
     @game_rules = {
-      rock: { rock: "It's a draw", paper: "#{@players[1].name} wins", scissors: "#{@players[0].name} wins" },
-      paper: { rock: "#{@players[0].name} wins", paper: "It's a draw", scissors: "#{@players[1].name} wins" },
-      scissors: { rock: "#{@players[1].name} wins", paper: "#{@players[0].name} wins", scissors: "It's a draw" }
+      rock: { rock: "It's a draw", 
+              paper: "#{@players[1].name} wins", 
+              scissors: "#{@players[0].name} wins" 
+      },
+      paper: { rock: "#{@players[0].name} wins", 
+               paper: "It's a draw", 
+               scissors: "#{@players[1].name} wins" 
+      },
+      scissors: { rock: "#{@players[1].name} wins", 
+                  paper: "#{@players[0].name} wins", 
+                  scissors: "It's a draw" 
+      }
     }
   end
 
