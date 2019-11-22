@@ -1,0 +1,11 @@
+Welcome to the game <%=@player_1_name%></br></br>
+
+
+To play, please enter ROCK, PAPER or SCISSORS</br></br>
+
+<form action="/winner" method="post">
+  <label for="player_1_choice">
+    Enter choice
+    <input type="text" name="player_1_choice">
+  <input type="submit" value="Submit">
+</form>
