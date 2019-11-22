@@ -5,4 +5,11 @@ feature 'Result' do
     click_button("Rock")
     expect(page).to have_content "Computer selected Scissors!"
   end
+
+  scenario 'result view shows winner' do
+    enter_name_and_start_game
+    srand(4)
+    click_button("Rock")
+    expect(page).to have_content "Sam wins!"
+  end
 end
