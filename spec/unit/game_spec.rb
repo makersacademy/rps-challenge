@@ -52,6 +52,9 @@ describe Game do
     it 'Scissors - Scissors: Draw' do
       expect(subject.compare("Scissors", "Scissors")).to eq "It's a draw"
     end
+  end
 
+  it "can start and process a game and output a result" do
+    expect(subject.play).to eq "It's a draw"
   end
 end
