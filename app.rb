@@ -12,6 +12,9 @@ post '/names' do
 end
 
 post '/winner' do
+  @choice = params[:choice]
   
+  erb :winners_page
+end
 
 end
