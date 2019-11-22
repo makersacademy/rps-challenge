@@ -2,7 +2,8 @@ require 'sinatra/base'
 
 class Player < Sinatra::Base
   get '/' do
-    'Hello Rps!'
+    #'Hello Rps!'
+    'Testing infrastructure working!'
   end
 
   # start the server if ruby file executed directly
