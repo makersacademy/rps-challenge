@@ -18,25 +18,80 @@ feature 'Computer play' do
     expect(page).to have_content("You played scissors !!!")
   end
 
-  scenario "Should display the computers move regardless of players choice (player chooses rock)" do
-    allow(Kernel).to receive(:rand).and_return(1)
-    sign_in_and_play
-    click_button "ROCK"
-    expect(page).to have_content("Computer's move: rock")
+
+  context "Computer chooses rock" do
+
+    scenario "player chooses rock - displays computer choice" do
+      allow(Kernel).to receive(:rand).and_return(1)
+      sign_in_and_play
+      click_button "ROCK"
+      expect(page).to have_content("Computer's move: rock")
+    end
+
+    scenario "player chooses paper - displays computer choice" do
+      allow(Kernel).to receive(:rand).and_return(1)
+      sign_in_and_play
+      click_button "PAPER"
+      expect(page).to have_content("Computer's move: rock")
+    end
+
+    scenario "player chooses scissors - displays computer choice" do
+      allow(Kernel).to receive(:rand).and_return(1)
+      sign_in_and_play
+      click_button "SCISSORS"
+      expect(page).to have_content("Computer's move: rock")
+    end
+
   end
 
-  scenario "Should display the computers move regardless of players choice (player chooses paper)" do
-    allow(Kernel).to receive(:rand).and_return(1)
-    sign_in_and_play
-    click_button "PAPER"
-    expect(page).to have_content("Computer's move: rock")
+  context "Computer chooses paper" do
+
+    scenario "player chooses rock - displays computer choice" do
+      allow(Kernel).to receive(:rand).and_return(2)
+      sign_in_and_play
+      click_button "ROCK"
+      expect(page).to have_content("Computer's move: paper")
+    end
+
+    scenario "player chooses paper - displays computer choice" do
+      allow(Kernel).to receive(:rand).and_return(2)
+      sign_in_and_play
+      click_button "PAPER"
+      expect(page).to have_content("Computer's move: paper")
+    end
+
+    scenario "player chooses scissors - displays computer choice" do
+      allow(Kernel).to receive(:rand).and_return(2)
+      sign_in_and_play
+      click_button "SCISSORS"
+      expect(page).to have_content("Computer's move: paper")
+    end
+
   end
 
-  scenario "Should display the computers move regardless of players choice (player chooses scissors)" do
-    allow(Kernel).to receive(:rand).and_return(1)
-    sign_in_and_play
-    click_button "SCISSORS"
-    expect(page).to have_content("Computer's move: rock")
+  context "Computer chooses scissors" do
+
+    scenario "player chooses rock - displays computer choice" do
+      allow(Kernel).to receive(:rand).and_return(3)
+      sign_in_and_play
+      click_button "ROCK"
+      expect(page).to have_content("Computer's move: scissors")
+    end
+
+    scenario "player chooses paper - displays computer choice" do
+      allow(Kernel).to receive(:rand).and_return(3)
+      sign_in_and_play
+      click_button "PAPER"
+      expect(page).to have_content("Computer's move: scissors")
+    end
+
+    scenario "player chooses scissors - displays computer choice" do
+      allow(Kernel).to receive(:rand).and_return(3)
+      sign_in_and_play
+      click_button "SCISSORS"
+      expect(page).to have_content("Computer's move: scissors")
+    end
+
   end
 
 end
