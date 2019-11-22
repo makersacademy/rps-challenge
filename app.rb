@@ -2,6 +2,6 @@ require 'sinatra'
 class Game < Sinatra::Base
 
   get '/' do
-    'Testing infrastructure working!'
+    erb :index
   end
 end
