@@ -25,6 +25,10 @@ class Game
   end
 
   def play
+    errorhash = []
+    errorhash << @players[0].name if @players[0].choice == nil
+    errorhash << @players[1].name if @players[1].choice == nil
+    raise "No choice(s) for: #{errorhash}" if errorhash != []
     compare(@players[0].choice, @players[1].choice)
   end
 

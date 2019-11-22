@@ -68,7 +68,7 @@ describe Game do
     allow(@player4).to receive(:name).and_return "Player4"
     allow(@player4).to receive(:choice).and_return nil
     game2 = Game.new(@player3, @player4)
-    expect(game2.play).to raise_error "No choice(s) for: Player3 Player4"
+    expect { game2.play }.to raise_error 'No choice(s) for: ["Player3", "Player4"]'
   end
 
 end
