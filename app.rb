@@ -16,15 +16,15 @@ class RockPaperScissors < Sinatra::Base
     end
 
     post '/play-rock' do
-
     end
 
     post '/play-paper' do
-
     end
 
     post '/play-scissors' do
+    end
 
+    post '/computer-play' do
     end
 
     run! if app_file == $0

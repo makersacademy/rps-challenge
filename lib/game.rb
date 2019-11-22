@@ -10,4 +10,6 @@ class Game
     @game = Game.new(player)
   end
 
+
+
 end

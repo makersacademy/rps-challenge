@@ -7,8 +7,13 @@ describe Game do
 
   it { should be_an_instance_of(Game) }
 
-  it "should have a class instance variable which can store the current game" do
+  it "should be able to store a game" do
     expect(Game.new_game(player)).to be_an_instance_of(Game)
+  end
+
+  it "should be able to access the current game" do
+    game = Game.new_game(player)
+    expect(Game.current_game).to eq game
   end
 
 end
