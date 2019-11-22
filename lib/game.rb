@@ -19,4 +19,8 @@ class Game
     }
     combinations[[players.first.move, players.last.move]]
   end
+
+  def draw?
+    play == "draw"
+  end
 end
