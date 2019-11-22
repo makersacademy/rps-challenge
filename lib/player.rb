@@ -7,4 +7,16 @@ class Player
     @move = 0
   end
 
+  def rock_move
+    @move = :rock
+  end
+
+  def paper_move
+    @move = :paper
+  end
+
+  def scissors_move
+    @move = :scissors
+  end
+
 end
