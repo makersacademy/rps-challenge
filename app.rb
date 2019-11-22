@@ -2,6 +2,7 @@ require 'sinatra'
 
 require './lib/game'
 require './lib/player'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -11,7 +12,8 @@ class RockPaperScissors < Sinatra::Base
 
     post '/play' do
       @player = Player.new(params[:player_name])
-      @game = Game.new_game(@player)
+      @computer = Computer.new
+      @game = Game.new_game(@player, @computer)
       erb :play
     end
 
@@ -20,17 +22,17 @@ class RockPaperScissors < Sinatra::Base
     end
 
     post '/play-rock' do
-      @game.player.rock_move
+      @game.player1.rock_move
       redirect '/computer-play'
     end
 
     post '/play-paper' do
-      @game.player.paper_move
+      @game.player1.paper_move
       redirect '/computer-play'
     end
 
     post '/play-scissors' do
-      @game.player.scissors_move
+      @game.player1.scissors_move
       redirect '/computer-play'
     end
 

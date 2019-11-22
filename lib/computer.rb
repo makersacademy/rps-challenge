@@ -8,6 +8,8 @@ class Computer
     move_generator(MOVE_HASH)
   end
 
+  private
+
   def move_generator(store)
     @move = store[Kernel.rand(1..3)]
   end
