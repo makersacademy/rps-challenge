@@ -16,6 +16,12 @@ describe Game do
         expect(game.play).to eq(player_2)
       end
     end
+
+    describe '#draw?' do
+      it 'should be false' do
+        expect(game.draw?).to be false
+      end
+    end
   end
 
   context 'a draw' do
