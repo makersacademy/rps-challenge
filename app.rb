@@ -10,7 +10,7 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/confirm' do
+  post '/names' do
     @name = params[:name]
     erb :confirm
   end
