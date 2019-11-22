@@ -4,8 +4,10 @@ describe Game do
   before(:each) do
     @player1 = double("Player 1")
     allow(@player1).to receive(:name).and_return "Player1"
+    allow(@player1).to receive(:choice).and_return "Rock"
     @player2 = double("Player 1")
     allow(@player2).to receive(:name).and_return "Player2"
+    allow(@player2).to receive(:choice).and_return "Rock"
   end
 
   subject { Game.new(@player1, @player2)}
@@ -57,4 +59,16 @@ describe Game do
   it "can start and process a game and output a result" do
     expect(subject.play).to eq "It's a draw"
   end
+
+  it "raises error if choices haven't yet been made for both players" do
+    @player3 = double("Player 3")
+    allow(@player3).to receive(:name).and_return "Player3"
+    allow(@player3).to receive(:choice).and_return nil
+    @player4 = double("Player 4")
+    allow(@player4).to receive(:name).and_return "Player4"
+    allow(@player4).to receive(:choice).and_return nil
+    game2 = Game.new(@player3, @player4)
+    expect(game2.play).to raise_error "No choice(s) for: Player3 Player4"
+  end
+
 end

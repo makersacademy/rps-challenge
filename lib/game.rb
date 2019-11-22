@@ -1,4 +1,5 @@
 class Game
+  attr_reader :players
 
   def initialize(player1, player2)
     @players = [player1, player2]
@@ -22,5 +23,18 @@ class Game
   def player2
     @players[1].name
   end
+
+  def play
+    compare(@players[0].choice, @players[1].choice)
+  end
+
+  def player1_enter_choice(choice)
+    @players[0].enter_choice(choice)
+  end
+
+  def player2_enter_choice(choice)
+    @players[1].enter_choice(choice)
+  end
+
 
 end
