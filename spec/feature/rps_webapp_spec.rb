@@ -33,6 +33,6 @@ feature "Play rock, paper scissors:" do
     choose_rock_and_submit
     expect(page).to have_content "Computer chose"
     expect(page).to have_content "wins!"
-
   end
+  
 end

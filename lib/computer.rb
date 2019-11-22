@@ -1,4 +1,9 @@
 class Computer
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
 
   def choose
     # Randomly chooses Rock, Paper or Scissors

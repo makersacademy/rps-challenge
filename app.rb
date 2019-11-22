@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/computer.rb'
 require './lib/game.rb'
+require './lib/player.rb'
 
 class RPSController < Sinatra::Base
 
@@ -11,7 +12,7 @@ class RPSController < Sinatra::Base
   end
 
   post '/get_name' do
-    session[:name] = params[:name]
+    game = Game.new(Player.new(params[:name]), Computer.new("Computer"))
     redirect '/play'
   end
 
@@ -21,6 +22,8 @@ class RPSController < Sinatra::Base
 
   post '/get_play' do
     session[:user_choice] = params[:rps_select]
+    session[:computer_choice] = computer.choose
+    session[:result] = game.compare(session[:user_choice], session[:computer_choice])
     redirect '/result'
   end
 

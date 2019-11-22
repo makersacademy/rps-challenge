@@ -2,6 +2,12 @@ require "./lib/computer.rb"
 
 describe Computer do
 
+  subject { Computer.new("Computer") }
+  
+  it "can return it's name" do
+    expect(subject.name).to eq "Computer"
+  end
+
   context "can randomly return" do
     it "'Rock' approximately 1/3 of the time" do
       choices = []
