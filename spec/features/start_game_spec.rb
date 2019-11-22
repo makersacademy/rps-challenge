@@ -4,6 +4,6 @@ feature 'Start game' do
     fill_in :name, with: "Sam"
     click_button("Enter name")
     click_button("Start game")
-    expect(page).to have_content "Welcome to Rock Paper Scissors Game!"
+    expect(page).to have_content "Sam, Welcome to Rock Paper Scissors Game!"
   end
 end
