@@ -2,7 +2,7 @@ class Game
 
   RULES = { :rock => { :rock => "It's a draw", :paper => "Player 2 wins", :scissors => "Player 1 wins" },
             :paper => { :paper => "It's a draw", :rock => "Player 1 wins", :scissors => "Player 2 wins" },
-            :scissors => { :scissors => "It's a draw", :rock => "Player 1 wins", :paper => "Player 2 wins" }
+            :scissors => { :scissors => "It's a draw", :rock => "Player 2 wins", :paper => "Player 1 wins" }
           }
 
   attr_reader :player1, :player2, :winner
