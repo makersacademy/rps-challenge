@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  subject(:player) {Player.new('Anh')}
+  subject(:player) { Player.new('Anh') }
 
   describe '#names' do
     it 'returns player name' do
@@ -9,4 +9,4 @@ describe Player do
     end
   end
 
-  end
+end
