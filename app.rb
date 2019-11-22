@@ -1,6 +1,7 @@
 require 'sinatra'
 
 require './lib/game'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -9,8 +10,21 @@ class RockPaperScissors < Sinatra::Base
     end
 
     post '/play' do
-      @game = Game.new_game(params[:player_name])
+      @player = Player.new(params[:player_name])
+      @game = Game.new_game(@player)
       erb :play
+    end
+
+    post '/play-rock' do
+
+    end
+
+    post '/play-paper' do
+
+    end
+
+    post '/play-scissors' do
+
     end
 
     run! if app_file == $0
