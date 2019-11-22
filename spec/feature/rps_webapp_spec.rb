@@ -18,7 +18,7 @@ end
 feature "Play rock, paper scissors:" do
   scenario "A new game is presented after sign in" do
     sign_in_and_play
-    expect(page).to have_content "Choose rock, paper or scissors"
-    expect(page).to have_select('Choice', options: ['Rock', 'Paper', 'Scissors'])
+    expect(page).to have_content "Choose Rock, Paper or Scissors"
+    expect(page).to have_select('rps_select', options: ['Rock', 'Paper', 'Scissors'])
   end
 end
