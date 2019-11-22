@@ -1,11 +1,16 @@
 require 'sinatra/base'
 
 class Rps < Sinatra::Base
-  #get '/' do
+  get '/' do
     #'Hello Rps!'
     #'Testing infrastructure working!'
-    #erb :index
-  #end
+    erb :index
+  end
+
+  post '/name' do
+  @player_name = params[:player_name]  
+    erb :play
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
