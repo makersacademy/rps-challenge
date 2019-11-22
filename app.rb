@@ -16,12 +16,18 @@ class RockPaperScissors < Sinatra::Base
     end
 
     post '/play-rock' do
+      @game = Game.current_game
+      @game.player.rock_move
     end
 
     post '/play-paper' do
+      @game = Game.current_game
+      @game.player.paper_move
     end
 
     post '/play-scissors' do
+      @game = Game.current_game
+      @game.player.scissors_move
     end
 
     post '/computer-play' do

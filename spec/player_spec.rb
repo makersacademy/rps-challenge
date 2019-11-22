@@ -10,4 +10,8 @@ describe Player do
     expect(subject.name).to eq "test name"
   end
 
+  it "has a default move of 0" do
+    expect(subject.move).to eq 0
+  end
+
 end
