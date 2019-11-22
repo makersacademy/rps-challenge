@@ -42,6 +42,13 @@ As usual please start by
 * Forking this repo
 * TEST driving development of your app
 
+Stories completed
+-------
+
+```sh
+No stories completed yet
+```
+
 
 ## Bonus level 1: Multiplayer
 
