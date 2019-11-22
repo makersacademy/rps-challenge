@@ -15,22 +15,27 @@ class RockPaperScissors < Sinatra::Base
       erb :play
     end
 
-    post '/play-rock' do
+    before do
       @game = Game.current_game
+    end
+
+    post '/play-rock' do
       @game.player.rock_move
+      redirect '/computer-play'
     end
 
     post '/play-paper' do
-      @game = Game.current_game
       @game.player.paper_move
+      redirect '/computer-play'
     end
 
     post '/play-scissors' do
-      @game = Game.current_game
       @game.player.scissors_move
+      redirect '/computer-play'
     end
 
-    post '/computer-play' do
+    get '/computer-play' do
+      erb :computer_play
     end
 
     run! if app_file == $0
