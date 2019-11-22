@@ -19,7 +19,9 @@ Tests are run using rpec, rspec/capybara and rubocop. Currently all tests for rs
 ## Construction
 The model for the game makes use of three classes: player, computer and game.
 
-Player stores the name and choice of a human player, computer stores it's name, as well as a method for randomly choosing a play of rock, paper or scissors.
+Player stores the name and choice of a human player. 
+
+Computer stores it's name, a choice variable, and a method for randomly choosing a play of rock, paper or scissors.
 
 The computer class is designed to work in the same manner as the player class (taking the same arguments and having the same methods), which makes it easier to swap out a computer for a live player in future enhancements.
 
