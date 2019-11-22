@@ -25,6 +25,7 @@
                                                            
 
 ```
+[![Build Status](https://travis-ci.org/jonesandy/rps-challenge.png?branch=master)](https://travis-ci.org/jonesandy/rps-challenge)
 ## Setup instructions
 
 To install and run:
