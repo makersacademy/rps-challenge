@@ -1,4 +1,4 @@
-require "./lib/rps.rb"
+require "./lib/computer.rb"
 
 describe Computer do
 

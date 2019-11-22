@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/computer.rb'
+require './lib/game.rb'
+
 class RPSController < Sinatra::Base
 
   enable :sessions # Enables use of session[:hash] for storing data
