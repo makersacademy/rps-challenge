@@ -31,7 +31,7 @@ describe Game do
       expect(subject.compare("Scissors", "Paper")).to eq "Player 1 wins"
     end
 
-    it 'Scissors - Rock: Player2 Wins' do
+    it 'Scissors - Rock: Player2 wins' do
       expect(subject.compare("Scissors", "Rock")).to eq "Player 2 wins"
     end
 

@@ -25,6 +25,14 @@ feature "Play rock, paper scissors:" do
   scenario "User is shown their choice after submitting" do
     sign_in_and_play
     choose_rock_and_submit
-    expect(page).to have_content "Rock"
+    expect(page).to have_content "You chose Rock"
+  end
+
+  scenario "Result of the game is shown after submitting" do
+    sign_in_and_play
+    choose_rock_and_submit
+    expect(page).to have_content "Computer chose"
+    expect(page).to have_content "wins!"
+
   end
 end
