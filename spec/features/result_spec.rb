@@ -1,7 +1,8 @@
 feature 'Result' do
   scenario 'result screen shows computers move' do
     enter_name_and_start_game
+    srand(4)
     click_button("Rock")
-    expect(page).to have_content "Computer selected Paper!"
+    expect(page).to have_content "Computer selected Scissors!"
   end
 end
