@@ -8,4 +8,10 @@ describe Player do
       expect(sam.name).to eq("Sam")
     end
   end
+
+  describe '#make_move' do
+    it 'should set the player move' do
+      expect { sam.make_move("Rock") }.to change { sam.move }.to("Rock")
+    end
+  end
 end
