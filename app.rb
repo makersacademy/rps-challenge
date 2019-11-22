@@ -21,12 +21,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/start-game' do
-    redirect '/game'
+    redirect '/play'
   end
 
-  get '/game' do
+  get '/play' do
     @name = $name
-    erb :game
+    erb :play
   end
 
   post '/move' do

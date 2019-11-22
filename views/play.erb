@@ -1,0 +1,16 @@
+<p> <%= @name %>, Welcome to Rock Paper Scissors Game!</p>
+
+<form action="/move" method="post">
+  <input type="hidden" name="move" value="Rock">
+  <input type="submit" value="Rock">
+</form>
+
+<form action="/move" method="post">
+  <input type="hidden" name="move" value="Paper">
+  <input type="submit" value="Paper">
+</form>
+
+<form action="/move" method="post">
+  <input type="hidden" name="move" value="Scissors">
+  <input type="submit" value="Scissors">
+</form>
