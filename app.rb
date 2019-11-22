@@ -13,6 +13,7 @@ class RPSController < Sinatra::Base
 
   post '/get_name' do
     game = Game.new(Player.new(params[:name]), Computer.new("Computer"))
+    session[:game] = game
     redirect '/play'
   end
 
@@ -21,9 +22,7 @@ class RPSController < Sinatra::Base
   end
 
   post '/get_play' do
-    session[:user_choice] = params[:rps_select]
-    session[:computer_choice] = computer.choose
-    session[:result] = game.compare(session[:user_choice], session[:computer_choice])
+    session[:game].player1_enter_choice(params[:rps_select])
     redirect '/result'
   end
 
