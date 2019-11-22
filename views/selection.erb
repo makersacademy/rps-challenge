@@ -1,0 +1,19 @@
+<style>
+body {
+  background-color: Blue;
+}
+</style>
+<h1 style = "color: silver;">
+  It's your move! </h1>
+<h2 style = "colour: grey;">
+  Choose an action! </h2>
+
+<form action="/result" method="post">
+  <label for="selection">
+    <input type="radio" name="move" value="Rock"> I choose Rock! <br>
+    <input type="radio" name="move" value="Paper"> I choose Paper!<br>
+    <input type="radio" name="move" value="Scissors" checked> I choose Scissors!<br>
+    <br>
+    <input type="submit" value="I'm ready!">
+  </label>
+</form>
