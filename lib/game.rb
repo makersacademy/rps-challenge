@@ -27,4 +27,8 @@ class Game
   def player_1
     players.first
   end
+
+  def player_2
+    players.last
+  end
 end
