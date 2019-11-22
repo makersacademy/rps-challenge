@@ -4,6 +4,11 @@ require 'sinatra'
 class RPSWeb < Sinatra::Base
 
   get '/' do
-    'Testing infrastructure working!'
+    erb :index
   end
-end  
+
+  post '/name' do
+    @player_name = params[:player_name]
+  erb :play
+end
+end
