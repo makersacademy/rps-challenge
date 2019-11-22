@@ -2,7 +2,7 @@ feature 'Play page' do
 
   scenario "Can enter a name and see it displayed" do
     sign_in_and_play
-    expect(page).to have_content("Marianne VS COMPUTER")
+    expect(page).to have_content("Marianne")
   end
 
   scenario "Can see the option to play ROCK" do

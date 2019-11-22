@@ -1,14 +1,31 @@
-<%= @game.player1.name %> VS COMPUTER
+<%= @game.player1.name %> VS <%= @game.player2.name %>
 <br>
 <br>
-<form action = /play-rock method = post>
-  <input type = "submit" value = "ROCK">
-</form>
+<%= @game.player1.name %>'s turn:
+<br>
+<br>
+<% if @game.player2.name == "COMPUTER" %>
+  <form action = /play-rock method = post>
+    <input type = "submit" value = "ROCK">
+  </form>
 
-<form action = /play-paper method = post>
-  <input type = "submit" value = "PAPER">
-</form>
+  <form action = /play-paper method = post>
+    <input type = "submit" value = "PAPER">
+  </form>
 
-<form action = /play-scissors method = post>
-  <input type = "submit" value = "SCISSORS">
-</form>
+  <form action = /play-scissors method = post>
+    <input type = "submit" value = "SCISSORS">
+  </form>
+<% else %>
+  <form action = /first-player-rock method = post>
+    <input type = "submit" value = "ROCK">
+  </form>
+
+  <form action = /first-player-paper method = post>
+    <input type = "submit" value = "PAPER">
+  </form>
+
+  <form action = /first-player-scissors method = post>
+    <input type = "submit" value = "SCISSORS">
+  </form>
+<% end %>

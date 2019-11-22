@@ -7,7 +7,7 @@ feature 'Homepage' do
 
   scenario "Can visit homepage which shows a form" do
     visit("/")
-    expect(page).to have_content("To play, enter your name:")
+    expect(page).to have_content("To play, enter your names")
   end
 
 end
