@@ -1,33 +1,50 @@
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Oswald', sans-serif;
       text-align: center;
       padding-top: 200px;
-    }
-    inner_border {
       border: 1px solid black;
     }
-    medium_hr {
-      padding: 50px;
+    .medium_hr {
+      padding-right: 150px;
+      padding-left: 150px;
     }
-    center {
-      align-items: center;
+    .box-option {
+      text-decoration: none;
+      background-color: #ffcc99;
+      font-size: 40px;
+      color: #737373;
+      border: dotted #737373;
+      width: 250px;
+      height: 250px;
+      padding: 10px;
+      margin: 100px;
       text-align: center;
+      align-items: center;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
     }
-    choice {
-      border-color: black;
-      border-width: 3px;
+
+    .box-option:hover {
+      background-color: #ffa64d;
+      color: #000;
+      border: dotted #000;
     }
   </style>
-<head>
+</head>
 <body>
-  <div class="inner_border">
-    <h3><%= @user_name %> please choose one of the options below</h3>
-    <div>
-      <a class="choice" href="/result">Rock</a>
-      <a class="choice" href="/result">Paper</a>
-      <a class="choice" href="/result">Scissors</a>
-    </div>
-  </div>
-<body>
+  <h2><%= @user_name %> please choose one of the options below</h2>
+  <a href="/result" class="box-option">
+    Rock
+  </a>
+  <a href="/result" class="box-option">
+    Paper
+  </a>
+  <a href="/result" class="box-option">
+    Scissors
+  </a>
+</body>
