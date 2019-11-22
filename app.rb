@@ -11,7 +11,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @name = params[:name]
+    $name = params[:name]
+    redirect '/confirm'
+  end
+
+  get '/confirm' do
+    @name = $name
     erb :confirm
   end
 
