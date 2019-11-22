@@ -14,4 +14,11 @@ describe Player do
       expect { sam.make_move("Rock") }.to change { sam.move }.to("Rock")
     end
   end
+
+  describe '#random_move' do
+    it 'should update the player move to a random move' do
+      srand(4)
+      expect { sam.random_move }.to change { sam.move }.to("Scissors")
+    end
+  end
 end
