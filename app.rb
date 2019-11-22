@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -6,15 +7,14 @@ get '/' do
   erb :index
 end
 
-post '/names' do
-  @player_1_name = params[:player_1_name]
-  erb :play
-end
 
-post '/winner' do
+post '/winners' do
+  @player_1_name = params[:player_1_name]
   @choice = params[:choice]
-  
-  erb :winners_page
+  @game = Game.new(@choice, @player_1_name)
+  @game.compare
+
+  erb :winners
 end
 
 end
