@@ -6,6 +6,10 @@ class RockPaperScissors < Sinatra::Base
       erb :index
     end
 
+    post '/registered' do
+      
+    end
+
     run! if app_file == $0
 
 end
