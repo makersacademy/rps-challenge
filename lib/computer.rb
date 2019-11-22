@@ -12,7 +12,7 @@ class Computer
     choices[choice]
   end
 
-  def enter_choice(not_used)
+  def enter_choice(_not_used)
     # The argument here is for compatibility with Player class
     @choice = choose
   end

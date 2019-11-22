@@ -23,6 +23,7 @@ class RPSController < Sinatra::Base
 
   post '/get_play' do
     session[:game].player1_enter_choice(params[:rps_select])
+    session[:game].player2_enter_choice("blank")
     redirect '/result'
   end
 

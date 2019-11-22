@@ -3,5 +3,11 @@
 </div>
 <div style="margin-bottom: 15px">
 You chose <%= session[:game].players[0].choice %> <br>
-
+Computer chose <%= session[:game].players[1].choice %>
 </div>
+<div style="margin-bottom: 15px">
+<%= session[:game].play %>!
+</div>
+<form action="/play">
+  <input type="submit" value="Play again!">
+</form>

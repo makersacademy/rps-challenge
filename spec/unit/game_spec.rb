@@ -10,7 +10,7 @@ describe Game do
     allow(@player2).to receive(:choice).and_return "Rock"
   end
 
-  subject { Game.new(@player1, @player2)}
+  subject { Game.new(@player1, @player2) }
 
   it 'can accept players as arguments and return names' do
     expect(subject.player1).to eq "Player1"
