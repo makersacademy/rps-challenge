@@ -2,6 +2,7 @@
 
 class WebHelper
   PLAYER_1_NAME = 'Rahul'
+  PLAYER_2_NAME = 'Computer'
 
   def self.click_to_submit_player_names
     Capybara.click_button 'Play!'
