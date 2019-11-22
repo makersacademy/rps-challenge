@@ -1,1 +1,7 @@
-<h2>Player is <%= @player %> </h2>
+<h2>Player is <%= @player %>. Please make your move. </h2>
+
+<form action="/play" method="post">
+  <label for="Player move">
+  <input type="text" id="Player move" name="move">
+  <input type="submit" value="Submit">
+</form>

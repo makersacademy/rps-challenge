@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 enable :sessions
@@ -13,9 +14,12 @@ enable :sessions
     erb(:play)
   end
 
-  # get '/play' do
-  #   @player = session[:name]
-  # will dev. later
-  # end
+  post '/play' do
+    session[:move] = params[:move]
+    @player1_choice = session[:move]
+    $game = Game.new(session[:name], @player1_choice)
+    @result = $game.play
+    erb(:result)
+  end
 
 end

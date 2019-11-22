@@ -86,3 +86,7 @@ SimpleCov.start
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
 
 <h1>Stories completed</h1>
+
+As a marketeer
+So that I can see my name ( not yet in lights)
+I would like to register my name before playing an online game
