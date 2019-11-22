@@ -24,5 +24,11 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
+  get '/pick' do
+    @player_1_name = session[:player_1_name]
+    @player_2_name = session[:player_2_name]
+    erb(:pick)
+  end
+
   run! if app_file == $0
 end
