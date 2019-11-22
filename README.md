@@ -9,7 +9,7 @@ Instructions
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Stories Completed
+Stories Completed - 5hr 15 minutes
 -------
 
 As a marketeer
@@ -19,6 +19,11 @@ I would like to register my name before playing an online game
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
+
+Change the game so that two marketeers can play against each other
+
+-- working? but not fully tested
+Need to add feature tests for all the possible outcomes - to second_play_result.spec and computer_play_spec.
 
 -------
 
