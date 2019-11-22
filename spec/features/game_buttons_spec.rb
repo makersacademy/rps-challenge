@@ -10,4 +10,10 @@ feature 'Game buttons' do
     click_button("Paper")
     expect(page).to have_content "You selected Paper!"
   end
+
+  scenario 'scissors button pressed' do
+    enter_name_and_start_game
+    click_button("Scissors")
+    expect(page).to have_content "You selected Scissors!"
+  end
 end
