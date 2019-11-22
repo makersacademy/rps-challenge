@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class Rps < Sinatra::Base
   # get '/' do
@@ -6,7 +7,7 @@ class Rps < Sinatra::Base
   # end
 
   enable :sessions
-  set :session_secret, "super secret"
+  set :session_secret, "super secrets"
 
   get '/' do
       erb(:index)
