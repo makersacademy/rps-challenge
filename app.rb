@@ -16,8 +16,6 @@ get '/two-player' do
   erb :index_multiple
 end
 
-
-
 post '/winners' do
   @player_1_name = params[:player_1_name]
   @choice = params[:choice]

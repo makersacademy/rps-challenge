@@ -8,12 +8,12 @@ a {
 }
 </style>
 
-<h2>Welcome to the game <%= @player_1_name %> and <%= @player_2_name %> </h2>
+<h2>Welcome to the game <%= @player_1_name %> and <%= @player_2_name %> </h2></br>
 
-<h2><%= @player_1_name %> chose <%= @choice %></h2></br></br>
+<h2><%= @player_1_name %> chose <%= @choice %></h2></br>
 
-<h2> <%= @player_2_name %> chose <%= @choice2 %></h2>
+<h2> <%= @player_2_name %> chose <%= @choice2 %></h2></br>
 
-<h1>Winner is <%= @gamemultiple.winner %></h1>
+<h1><%= @gamemultiple.winner %> WINS!</h1></br>
 
 <h2><a href = "/two-player">Play Again?</a></h2>
