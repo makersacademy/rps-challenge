@@ -16,12 +16,11 @@ class Game < Sinatra::Base
   post '/names' do
     session[:p1_name] = params[:p1_name]
     @p1_name = session[:p1_name]
-    # @p1_name = RPSGame.new(session[:p1_name])
     erb :names
   end
 
   post '/play' do
-    @game = RPSGame.new
+    # @game = RPSGame.new
     erb :play
 
   end
