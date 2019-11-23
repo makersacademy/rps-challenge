@@ -9,5 +9,10 @@ scenario 'expect choices to be passed to the new game' do
  expect(page).to have_content "Rebecca chose ROCK"
 end
 
+scenario 'expect multiple players to be passed to the new game' do
+  sign_in_and_play_multiple
+  expect(page).to have_content "Lily chose PAPER"
+end
+
 
 end
