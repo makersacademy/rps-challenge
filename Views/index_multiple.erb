@@ -16,6 +16,7 @@ input[type=password]{
   font-size:20px;
   padding: 6px 10px;
   border-radius: 5px;
+  font-color: #fffff;
 }
 input[type=text]{
   font-size:20px;
@@ -27,20 +28,22 @@ input[type=text]{
 </br><h1>Welcome to Rock - Paper - Scissors</h1></br></br>
 
 
-<h2>To play - please enter your name and ROCK, PAPER or SCISSORS</h2></br></br>
+<h2>To play - please enter your name and ROCK, PAPER or SCISSORS</br></br>
 
-<form action="/winners-2" method="post">
+Player 1's turn</h2></br>
+
+<form action='/winners-2' method="post">
   <label for="player_1_name">
     Player 1 name&nbsp&nbsp</label>
     <input type="text" name="player_1_name">
     <label for="player_2_name">
-      Player 2 name &nbsp </label>
-      <input type="text" name="player_2_name"></br>
-  <label for="choice">
+      Player 2 name&nbsp&nbsp</label>
+      <input type="text" name="player_2_name">
+  <label for="choice"></br>
     Player 1 choice </label>
     <input type="password" name="choice">
     <label for="choice_2">
       Player 2 choice </label>
-      <input type="password" name="choice_2"></br></br></br>
+      <input type="password" name="choice_2"></br></br>
   <input type="submit" value="Submit">
 </form>
