@@ -1,7 +1,10 @@
-Welcome to the game <%= @player_1_name %>
+<style>
+body {background-color: powderblue; text-align: center}</style>
 
-You chose <%= @choice %></br></br>
+<h2>Welcome to the game <%= @player_1_name %></h2>
 
-Computer chose <%= @game.cchoice %>
+<h2><%= @player_1_name %> chose <%= @choice %></h2></br></br>
 
-Winner is <%= @game.winner %>
+<h2>Computer chose <%= @game.cchoice %></h2>
+
+<h1>Winner is <%= @game.winner %></h1>

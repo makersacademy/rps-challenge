@@ -6,10 +6,51 @@ describe Game do
   end
 
 
+  it 'should return a random choice' do
+    game = Game.new("ROCK", "Rebecca")
+    game.choice_set
+    expect(game.cchoice).not_to eq(nil)
+  end
+
+  it 'should recognise the input and put it in a variable' do
+    game = Game.new("ROCK", "Rebecca")
+    expect(game.rpschoice).to eq "ROCK"
+  end
+
+  it 'should expect there to be a winner' do
+    game = Game.new("ROCK", "Rebecca")
+    game.compare
+    expect(game.winner).not_to eq(nil)
+  end
+
+  it 'should find a generated computer choice' do
+    game = Game.new("ROCK", "Rebecca")
+    game.compare
+    expect(game.cchoice).not_to eq(nil)
+
+  end
 
 
-it 'should return a random choice' do
+
+it 'should return the correct result' do
   game = Game.new("ROCK", "Rebecca")
-  expect(game.computers_choice).to eq("ROCK").or eq("PAPER").or eq("STONE")
+  allow(game).to receive(:computers_choice) { "ROCK" }
+  game.compare
+  expect(game.winner).to eq "Nobody"
 end
+
+it 'should return the correct result' do
+  game = Game.new("ROCK", "Rebecca")
+  allow(game).to receive(:computers_choice) { "SCISSORS" }
+  game.compare
+  expect(game.winner).to eq "Rebecca"
+end
+
+it 'should realise when the computer wins' do
+  game = Game.new("PAPER", "Rebecca")
+  allow(game).to receive(:computers_choice) {"SCISSORS"}
+  game.compare
+  expect(game.winner).to eq "Computer"
+end
+
 end

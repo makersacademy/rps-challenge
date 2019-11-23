@@ -2,7 +2,7 @@
 
 class Game
 
-attr_reader :cchoice, :rpschoice, :player, :winner
+  attr_reader :cchoice, :rpschoice, :player, :winner
 
 
   def initialize(rpschoice, player)
@@ -10,27 +10,26 @@ attr_reader :cchoice, :rpschoice, :player, :winner
     @player = player
   end
 
-  def computers_choice
-  @cchoice = ["ROCK", "PAPER", "SCISSORS"].sample
-end
 
-def compare
-computers_choice
-  if @rpschoice == @cchoice
-    @winner = "Nobody"
-elsif @rpschoice == "ROCK" && @cchoice == "SCISSORS"
-    @winner = @player
-elsif @rpschoice == "ROCK" && @cchoice == "PAPER"
-  @winner = "Computer"
-elsif @rpschoice == "SCISSORS" && @cchoice == "PAPER"
-@winner = @player
-elsif @rpschoice == "SCISSORS" && @cchoice == "ROCK"
-  @winner = "Computer"
-elsif @rpschoice == "PAPER" && @cchoice == "ROCK"
-  @winner = @player_1_name
-elsif @rpschoice == "PAPER" && @cchoice == "SCISSORS"
-  @winner = "Computer"
+
+  def computers_choice
+    ["SCISSORS", "ROCK", "PAPER"].sample
   end
-end
+
+  def choice_set
+    @cchoice = computers_choice
+  end
+
+
+  def compare
+    choice_set
+    if @rpschoice == @cchoice
+      @winner = "Nobody"
+    elsif (@rpschoice == "ROCK" && @cchoice  == "SCISSORS") || (@rpschoice == "SCISSORS" && @cchoice == "PAPER") || (@rpschoice == "PAPER" && @cchoice == "ROCK")
+      @winner = @player
+    elsif (@rpschoice == "ROCK" && @cchoice == "PAPER") || (@rpschoice == "SCISSORS" && @cchoice == "ROCK") || (@rpschoice == "PAPER" && @cchoice == "SCISSORS")
+      @winner = "Computer"
+    end
+  end
 
 end
