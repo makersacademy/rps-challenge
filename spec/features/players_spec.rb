@@ -10,5 +10,4 @@ scenario 'expect choices to be passed to the new game' do
 end
 
 
-
 end

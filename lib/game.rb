@@ -6,15 +6,15 @@ class Game
 
 
   def initialize(rpschoice, player)
-    @rpschoice = rpschoice
+    @rpschoice = rpschoice.upcase
     @player = player
   end
-
 
 
   def computers_choice
     ["SCISSORS", "ROCK", "PAPER"].sample
   end
+
 
   def choice_set
     @cchoice = computers_choice
