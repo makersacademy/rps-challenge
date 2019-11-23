@@ -10,10 +10,6 @@ class Gamemultiple
     @player = player
   end
 
-
-
-
-
   def compare
     if @choice == @choice_2
       @winner = "Nobody"

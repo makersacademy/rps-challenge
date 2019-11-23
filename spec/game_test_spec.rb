@@ -30,8 +30,6 @@ describe Game do
 
   end
 
-
-
 it 'should return the correct result' do
   game = Game.new("ROCK", "Rebecca")
   allow(game).to receive(:computers_choice) { "ROCK" }
@@ -52,5 +50,18 @@ it 'should realise when the computer wins' do
   game.compare
   expect(game.winner).to eq "Computer"
 end
+end
 
+describe Gamemultiple do
+  it 'should recognise a draw' do
+  game = Gamemultiple.new("ROCK", "ROCK", "Rebecca", "Adam")
+  game.compare
+  expect(game.winner).to eq "Nobody"
+end
+
+it 'should pick the correct winner' do
+game = Gamemultiple.new("ROCK", "SCISSORS", "Rebecca", "Adam")
+game.compare
+expect(game.winner).to eq "Rebecca"
+end
 end
