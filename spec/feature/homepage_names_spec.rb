@@ -7,8 +7,7 @@ feature 'Testing the homepage name form and redirect' do
 
   scenario 'Displays the name on a new page' do
     visit('/')
-    fill_in :p1_name, with: 'Jo'
-    click_button 'Submit'
+    click_button 'OK'
     expect(page).to have_content 'Jo'
   end
 end

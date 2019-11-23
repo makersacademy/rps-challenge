@@ -3,10 +3,17 @@ body {
   background-color: Blue;
 }
 </style>
-
 <h1 style = "color: silver;">
-   <%= @p1_name %> vs. The Computer
+  It's your move! </h1>
+<h2 style = "colour: grey;">
+  Choose an action! </h2>
 
-<form action="/play" method="get">
-  <input type="submit" value="OK">
+<form action="/result" method="post">
+  <label for="p1_move">
+    <input type="radio" name="p1_move" value="Rock"> I choose Rock! <br>
+    <input type="radio" name="p1_move" value="Paper"> I choose Paper!<br>
+    <input type="radio" name="p1_move" value="Scissors" checked> I choose Scissors!<br>
+    <br>
+    <input type="submit" value="I'm ready!">
+  </label>
 </form>
