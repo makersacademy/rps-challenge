@@ -28,24 +28,12 @@
       -o-transition: all 0.3s;
       transition: all 0.3s;
     }
-
-    .box-option:hover {
-      background-color: #ffa64d;
-      cursor: pointer;
-      color: #000;
-      border: dotted #000;
-    }
   </style>
 </head>
 <body>
-  <% if @user_name %>
-    <h2><%= @user_name %> please choose one of the options below</h2>
-  <% else %>
-    <h2>Rock, Paper or Scissors?</h2>
-  <% end %>
-  <form method="post" action="/result">
-    <input type="submit" class="box-option" name="options" value="Rock">
-    <input type="submit" class="box-option" name="options" value="Paper">
-    <input type="submit" class="box-option" name="options" value="Scissors">
-  </form>
+  <h1><%= @result %></h1>
+  <a class="box-option">
+    Game chose:
+    <%= @game_choice %>
+  </a>
 </body>
