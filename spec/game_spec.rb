@@ -1,4 +1,3 @@
-
 feature 'RPS' do
   scenario 'can track something on the first page' do
     visit '/'

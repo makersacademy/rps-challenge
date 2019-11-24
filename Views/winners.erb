@@ -1,11 +1,11 @@
 <head><script src="https://kit.fontawesome.com/bf47482c68.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <style>
-body {background-color: powderblue; text-align: center; font-family: 'Montserrat', sans-serif;}
-a {
-  color: #609096;
-}
+  body {background-color: powderblue; text-align: center; font-family: 'Montserrat', sans-serif;}
+  a {
+    color: #609096;
+  }
 </style>
 
 <h2>Welcome to the game <%= @player_1_name %>!</h2></br>
@@ -14,6 +14,6 @@ a {
 
 <h2>Computer chose <%= @game.cchoice %></h2></br>
 
-<h1 style = "font-size: 50px;"><%= @game.winner %> WINS! </h1> 
+<h1 style = "font-size: 50px;"><%= @game.winner %> WINS! </h1>
 
 <h2><a href = "/one-player">Play Again?</a></h2>
