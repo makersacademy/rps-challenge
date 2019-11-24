@@ -4,6 +4,10 @@ require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
 
+  before do
+    @game = Game.instance
+  end
+
   get '/test-infrastructure' do
     "Test infrastructure correctly functioning"
   end
@@ -15,12 +19,11 @@ class RockPaperScissors < Sinatra::Base
   post '/names' do
     player_1 = Player.new(params[:name])
     player_2 = Player.new("Computer")
-    $game = Game.new(player_1, player_2)
+    @game = Game.create(player_1, player_2)
     redirect '/confirm'
   end
 
   get '/confirm' do
-    @game = $game
     erb :confirm
   end
 
@@ -29,18 +32,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @game = $game
     erb :play
   end
 
   post '/move' do
-    $game.player_1.make_move(params[:move])
-    $game.player_2.random_move
+    @game.player_1.make_move(params[:move])
+    @game.player_2.random_move
     redirect '/result'
   end
 
   get '/result' do
-    @game = $game
     erb :result
   end
 
