@@ -6,3 +6,11 @@ feature 'Enter and submit name, show name on screen' do
     expect(page).to have_content 'Sel please choose one of the options below'
   end
 end
+
+feature "User selects an option and the game's selection is displayed" do
+  scenario 'User selects Rock vs game selection' do
+    visit('/round')
+    click_button 'Rock'
+    expect(page).to have_content 'Game chose:'
+  end
+end
