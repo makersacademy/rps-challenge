@@ -1,3 +1,20 @@
+#Stories Completed
+
+Created file structures under '/lib' and '/spec' folders.
+Created file 'spec/features/enter_player_spec.rb' to feature test creating player(s) in a ''/welcome' page
+app.rb creates RPSApp in sinatra/base
+RSPEC gives one error + a 'rack-test requires a rack application, but none was given'
+Added config.ru file for RPSApp
+Created index.erb to establish a form to enter player detail
+Updated bottom of 'spec_helper.rb' with RACK_ENV
+created play.erb
+First test passed and rafactored with rubocop
+
+2nd feature test "user selects item = Rock"
+
+WIP - I've brought in radio buttons to handle selection of items, but cannot pass tests. This appears to ba an issue with the session retaining the name input AND evidencing the radio button select.
+
+
 # RPS Challenge
 
 Instructions
