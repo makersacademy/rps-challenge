@@ -8,7 +8,10 @@ feature 'Enter and submit name, show name on screen' do
 end
 
 feature "User selects an option and the game's selection is displayed" do
-  scenario 'User selects Rock vs game selection' do
+  scenario 'Game selection displayed' do
+    visit('/')
+    fill_in :user_name, with: 'Sel'
+    click_button 'Submit'
     visit('/round')
     click_button 'Rock'
     expect(page).to have_content 'Game chose:'
