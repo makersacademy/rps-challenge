@@ -1,0 +1,11 @@
+<p> <%=@game.player_1.name%> selected <%=@game.player_1.move%>!</p>
+<br>
+<p> <%=@game.player_2.name%> selected <%=@game.player_2.move%>! </p>
+<br>
+<p>
+  <% if @game.draw? %>
+    Draw!
+  <% else %>
+    <%=@game.play.name%> wins!
+  <% end %>
+</p>
