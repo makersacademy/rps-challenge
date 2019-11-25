@@ -1,5 +1,9 @@
 # RPS Challenge
 
+Running the App
+-----------------
+http://localhost:9292
+
 
 Story Functionality Completed / WIP
 -----------------
