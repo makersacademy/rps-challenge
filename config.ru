@@ -1,3 +1,3 @@
 require "./rps.rb"
-#run Sinatra::Application
+# run Sinatra::Application
 run Rps
