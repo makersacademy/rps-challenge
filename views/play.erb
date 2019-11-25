@@ -1,0 +1,9 @@
+<h2> Hi <%= @player_name %> are you ready to play Rock, Paper, Scissors?</h2>
+<br>
+<p>Please select rock, paper, or scissors from the list below:</p>
+<form action = "/game_redirect" method = "post">
+  <input type="radio" name="rbs_value" value="r">Rock<br>
+  <input type="radio" name="rbs_value" value="p">Paper<br>
+  <input type="radio" name="rbs_value" value="s"> Scissors<br><br>
+  <input type="Submit">
+</form>
