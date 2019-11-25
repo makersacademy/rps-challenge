@@ -11,14 +11,15 @@ class RPSApp < Sinatra::Base
 
   post '/names' do
     session[:names] = params[:names]
-    session[:item] = params[:item]
     erb :play
   end
 
   post '/play' do
+# should this be 'get' for @names ?
     @names = session[:names]
-    @item = session[:item]
-    redirect '/player_move'
+# should @item be defined for the session in a post 'player_move' 
+    session[:item] = params[:item]
+    erb :in_game
   end
 
   get '/player_move' do
