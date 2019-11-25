@@ -1,0 +1,14 @@
+<!-- in view/rps_choice.erb -->
+<%= @player_name %>
+<div>
+<h2>Here is your choice list</h2>
+<form action="/choice" method="post">
+<input list="player_choice" name="choice">
+<datalist id="player_choice">
+  <option value="rock">
+  <option value="paper">
+  <option value="scissor">
+</datalist>
+<input type="submit" value="Play">
+</form>
+</div>

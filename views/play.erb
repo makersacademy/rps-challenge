@@ -1,0 +1,8 @@
+<h1>
+<% @game.player1_choice(@player1_choice) %>
+<% if @game.result == :win %>
+  Congratulations - you won
+<% else %>
+  Sorry - you lost
+<% end %>
+</h1>
