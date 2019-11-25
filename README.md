@@ -1,5 +1,11 @@
 # RPS Challenge
 
+Stories Completed
+-----------
+User story 1: completed
+
+User story 2: in progress; added Game class to pass unit test
+
 Instructions
 -------
 
