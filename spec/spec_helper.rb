@@ -8,6 +8,7 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'rspec'
+require 'feature/web_helpers'
 
 
 

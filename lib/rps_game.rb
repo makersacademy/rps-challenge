@@ -3,7 +3,7 @@ class RPSGame
   attr_reader :p2_move, :p1_move, :p1_name
 
 # name wasn't displaying in the browser because it wasn't in parameter list ()
-  def initialize(p1_name, p1_move)
+  def initialize(p1_move)
     @p2_move = ["Rock", "Paper", "Scissors"].sample
     @p1_move = p1_move
     @p1_name = p1_name

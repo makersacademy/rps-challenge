@@ -6,8 +6,7 @@ feature 'Testing the homepage name form and redirect' do
   end
 
   scenario 'Displays the name on a new page' do
-    visit('/')
-    click_button 'OK'
-    expect(page).to have_content 'Jo'
+    sign_in_and_play
+    expect(page).to have_content 'Player 1 is Jo'
   end
 end

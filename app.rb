@@ -20,16 +20,18 @@ class Game < Sinatra::Base
   end
 
   post '/play' do
-    # @game = RPSGame.new
-    erb :play
 
+    erb :play
   end
 
+  #  need to get the controller and the model layer communicating
+  #  form input is posting
   get '/result' do
-    @p1_move = session[:p1_move]
     session[:p1_move] = params[:p1_move]
-    @game.results(params[:p1_move], @p2_move)
-    erb :results
+    @p1_move = session[:p1_move]
+    @game = RPSGame.new
+    @game.results(params[:p1_move])
+    erb :result
   end
 
   run! if app_file == $0
