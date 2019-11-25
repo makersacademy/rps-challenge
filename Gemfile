@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rake'
+gem 'rubocop-rails'
 gem 'sinatra'
-
 group :test do
   gem 'capybara'
   gem 'rspec'
