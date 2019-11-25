@@ -6,7 +6,9 @@ Task
 ----------
 To provide a _Rock, Paper, Scissors_ game for The Makers Academy Marketing Array ( **MAMA**) so they can play on the web with the following user stories:
 
-```sh
+
+User Story
+------------------
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game

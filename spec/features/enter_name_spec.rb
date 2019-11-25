@@ -1,3 +1,5 @@
+require 'player'
+
 feature 'Enter name' do
   scenario 'submitting name' do
     visit('/')
