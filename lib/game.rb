@@ -5,7 +5,6 @@ class Game
     @name = name
     @player1_choice = player_choice
     @player2_choice = %w(paper rock scissors).sample
-
   end
 
 
