@@ -9,6 +9,13 @@ class RPSWeb < Sinatra::Base
 
   post '/name' do
     @player_name = params[:player_name]
-  erb :play
+  erb :player
 end
+
+
+
+
+
+
+run! if app_file == $0
 end
