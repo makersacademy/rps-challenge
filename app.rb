@@ -33,5 +33,12 @@ class RPS < Sinatra::Base
     @gamemultiple.compare
     erb :winners_multiple
   end
+=begin
+I want to use the params from one page on another page but can't make that work
+=end
 
+=begin
+I want to make the images embedded in my local site but they weren't showing up. Not sure why.
+=end
+  
 end
