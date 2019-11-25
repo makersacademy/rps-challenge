@@ -12,6 +12,8 @@ First test passed and rafactored with rubocop
 
 2nd feature test "user selects item = Rock"
 
+WIP - I've brought in radio buttons to handle selection of items, but cannot pass tests. This appears to ba an issue with the session retaining the name input AND evidencing the radio button select.
+
 
 # RPS Challenge
 
