@@ -1,5 +1,14 @@
 # RPS Challenge
 
+## Stories Completed
+- [x] User Story 1: "As a marketeer, So that I can see my name in lights,
+I would like to register my name before playing an online game"
+
+- [x] User Story 2: "As a marketeer, So that I can enjoy myself away from the daily grind,
+I would like to be able to play rock/paper/scissors"
+
+
+
 Instructions
 -------
 
