@@ -1,7 +1,7 @@
 # RPS Challenge
 
 
-Storiy Functionality Completed / WIP
+Story Functionality Completed / WIP
 -----------------
 * I would like to register my name before playing an online game
 * Player is redirected to game page
