@@ -1,11 +1,14 @@
 # RPS Challenge
 
 
-Stories Completed
+Storiy Functionality Completed / WIP
 -----------------
-* As a marketeer
-* So that I can see my name in lights
 * I would like to register my name before playing an online game
+* Player is redirected to game page
+* Player is presented with choices: Rock, Paper, Scissors buttons
+* Player can choose one option: (WIP - when selection made, will return to registration page)
+
+
 
 
 
