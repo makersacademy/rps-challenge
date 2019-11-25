@@ -2,11 +2,9 @@
 
 Stories Completed
 -----------
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-```
+User story 1: completed
+
+User story 2: in progress; added Game class to pass unit test
 
 Instructions
 -------
