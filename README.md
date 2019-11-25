@@ -8,6 +8,10 @@ Added config.ru file for RPSApp
 Created index.erb to establish a form to enter player detail
 Updated bottom of 'spec_helper.rb' with RACK_ENV
 created play.erb
+First test passed and rafactored with rubocop
+
+2nd feature test "user selects item = Rock"
+
 
 # RPS Challenge
 

@@ -11,8 +11,6 @@ SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
-
-
 RSpec.configure do |config|
   config.after(:suite) do
     puts
