@@ -42,6 +42,15 @@ As usual please start by
 * Forking this repo
 * TEST driving development of your app
 
+Stories completed
+-------
+
+```sh
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+```
+
 
 ## Bonus level 1: Multiplayer
 
