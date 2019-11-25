@@ -1,0 +1,26 @@
+<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button1 {padding: 14px 40px;}
+</style>
+
+<h1 style="color:Tomato;">Welcome to the Game</h1>
+
+<h2>Sign in to play</h2>
+<br>
+
+<h3>Choose how many players are playing: 1player or 2 players</h3>
+
+<form action="/player_count" method="post">
+	<input class= "button button1" type="submit" name="player_count" value="1player">
+	<input class= "button button1" type="submit" name="player_count" value="2players">
+</form>

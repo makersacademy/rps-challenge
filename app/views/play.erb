@@ -1,0 +1,25 @@
+<style>
+h1 {
+    font-size: 30px;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button1 {padding: 14px 40px;}
+</style>
+
+<h1 style="font-weight: bold; color:Blue;"><%= @game.player_1.name %> has selected <%= @game.player_1.weapon %></h1>
+<h1 style= "font-weight: bold; color:Green;"><%= @game.player_2.name %> has selected <%= @game.player_2.weapon %></h1>
+<% if @game.result(@game.player_1.weapon, @game.player_2.weapon) == :win %>
+ <font color="Red">Congratulations - <%= @game.player_1.name %> you won</font>
+<% else %>
+<font color="Red">Sorry - <%= @game.player_1.name %> you lost</font>
+<% end %>

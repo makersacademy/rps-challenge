@@ -1,0 +1,22 @@
+<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button1 {padding: 14px 40px;}
+</style>
+
+<h1>Welcome <%= @game.player_1.name%> and Welcome <%= @game.player_2.name%> </h1>
+<h3>Please pick which game you want to play: rock paper scissors OR rock paper scissors lizard spock</h3>
+
+<form action="/select_game" method="post">
+	<input class= "button button1" type="submit" name="game_mode" value="rps">
+	<input class= "button button1" type="submit" name="game_mode" value="rpsls">
+</form>

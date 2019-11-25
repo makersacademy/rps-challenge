@@ -42,6 +42,39 @@ As usual please start by
 * Forking this repo
 * TEST driving development of your app
 
+HOW TO DOWNLOAD AND RUN THE APP:
+$ git clone git@github.com: nazzkadri/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+
+NOTES:
+I have implemented all the bonus levels.
+
+TO DO LIST:
+
+I have not yet used helpers but I intend to use it if this is extended.
+I intend to refactor my code more. I want to make my controller more thinner.
+
+SCREENSHOTS:
+
+Screenshots of game with rps and rpsls options
+https://www.dropbox.com/s/x2sy3f6pnem4u6q/Screen%20Shot%202018-09-23%20at%2019.24.32.png?dl=0
+https://www.dropbox.com/s/te5nse9jkyitw40/Screen%20Shot%202018-09-23%20at%2019.24.46.png?dl=0
+https://www.dropbox.com/s/ua8senisl81649y/Screen%20Shot%202018-09-23%20at%2019.24.55.png?dl=0
+https://www.dropbox.com/s/pamic1zqi0f9jam/Screen%20Shot%202018-09-23%20at%2019.26.02.png?dl=0
+https://www.dropbox.com/s/whmxaaa3le6am55/Screen%20Shot%202018-09-23%20at%2019.26.09.png?dl=0
+https://www.dropbox.com/s/7yx6gvfzozwpxeo/Screen%20Shot%202018-09-23%20at%2019.26.20.png?dl=0
+
+https://www.dropbox.com/s/1tkw8h7j0dr8hs8/Screen%20Shot%202018-09-22%20at%2020.17.14.png?dl=0
+https://www.dropbox.com/s/e25c0vrzyq1kn40/Screen%20Shot%202018-09-22%20at%2020.17.29.png?dl=0
+https://www.dropbox.com/s/ahee1gxlikqho88/Screen%20Shot%202018-09-22%20at%2020.17.45.png?dl=0
+https://www.dropbox.com/s/w6ajl6zp557k7m1/Screen%20Shot%202018-09-22%20at%2020.17.54.png?dl=0
+https://www.dropbox.com/s/b9iwmmjgepjc844/Screen%20Shot%202018-09-22%20at%2009.12.33.png?dl=0
+https://www.dropbox.com/s/vd9ghxfs2647fq0/Screen%20Shot%202018-09-22%20at%2009.11.57.png?dl=0
+https://www.dropbox.com/s/1tkw8h7j0dr8hs8/Screen%20Shot%202018-09-22%20at%2020.17.14.png?dl=0
+https://www.dropbox.com/s/rvrn7mk62pmwabh/Screen%20Shot%202018-09-22%20at%2009.12.53.png?dl=0
+
 
 ## Bonus level 1: Multiplayer
 
@@ -68,19 +101,6 @@ Reviewers will potentially be using this [code review rubric](docs/review.md).  
 Notes on test coverage
 ----------------------
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+I have got 100% test coverage and all my tests are passing.
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+AUTHOR: Naziya Kadri
