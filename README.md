@@ -3,7 +3,7 @@
 Stories Completed
 -------
 User story 1 complete.
-In the middle of user story 2 but not currently working.
+In the middle of user story 2 but not currently working - still to fix Game class and Game class tests.
 
 
 Instructions
