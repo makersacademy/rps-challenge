@@ -1,0 +1,51 @@
+<style >
+<!-- body {
+     background-color: #FFD700;
+} -->
+
+button{
+    padding: 30px;
+     font-size: 18px;
+     letter-spacing: 2px;
+     background-color: #7ea8af;
+     color: black;
+     text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #4e7075
+}
+ .option_buttons {
+     width: 100%;
+     margin: 0 auto;
+     text-align: center;
+}
+ .option_buttons input {
+    margin: auto 2%;
+     border: 2px solid #808080;
+     border-radius: 10%;
+     padding: 5%;
+     font-size: 25px;
+     text-transform: uppercase;
+     letter-spacing: 0.1em;
+}
+</style>
+<h1>Hi to  <%= @player_1%> and <%= @player_2%> </h1>
+<h2> Welcome to Rock Paper Scissors</h2>
+
+<p>
+  <!-- <b>Please select one option to win or to lose :-)</b><br />
+  <br>
+    <input type="radio" name="option" value="rock"> Rock<br>
+    <input type="radio" name="option" value="paper"> Paper<br>
+    <input type="radio" name="option" value="scissors"> Scissors<br> -->
+
+    <form class="option_buttons" action="/options" method="post">
+      <input type="submit" name="option" value="Rock">
+      <input type="submit" name="option" value="Paper">
+      <input type="submit" name="option" value="Scissors">
+    </form>
+
+    <form class="enter_button" action="/hit" method="get">
+      <input type="submit" value="Play">
+    </form>

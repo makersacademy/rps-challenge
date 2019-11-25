@@ -7,6 +7,7 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'features/web_helpers' # we added this after making the web_helper file 
 
 # tell Capybara about our app class
 Capybara.app = Game
