@@ -1,6 +1,7 @@
 require 'sinatra'
 require './lib/players'
-class RoPaSc < Sinatra::Base
+require './lib/game'
+class RoPaSc  < Sinatra::Base
   enable :sessions
 
   get '/' do
@@ -8,18 +9,26 @@ class RoPaSc < Sinatra::Base
   end
 
   post '/registration' do
-    session[:player_1] = params[:player_1]
-    session[:player_2] = params[:player_2]
+    player_1 = Players.new(params[:player_1])
+    player_2 = Players.new(params[:player_2])
+    $game = Game.new(player_1, player_2)
     redirect '/play'
   end
 
   get '/play' do
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
+    @game = $game
     erb :play
   end
 
-  get '/options' do
-
+  post '/options' do
+    @game = $game
+    choice = params[:player_choice]
+    redirect '/play'
   end
+
+  get '/hit' do
+    @game = $game
+    redirect '/play'
+  end
+
 end

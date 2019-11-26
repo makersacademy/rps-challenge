@@ -28,24 +28,45 @@ button:hover {
      font-size: 25px;
      text-transform: uppercase;
      letter-spacing: 0.1em;
-}
-</style>
-<h1>Hi <%= @player_1%> and <%= @player_2 !!%> </h1>
-<h2> Welcome to Rock Paper Scissors</h2>
 
-<p>
+
+}
+
+.play_button {
+    width: 20%;
+    margin: 0 auto;
+    text-align: centre;
+}
+.play_button input {
+   margin: auto 60%;
+    border: 2px solid #7366bd;
+    border-radius: 5%;
+    padding: 5%;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+</style>
+
+<h2> Hi, Welcome to Rock Paper Scissors</h2>
+<h3>Choose one option and press enter</h3>
+
+<div>
+<h2>Player 1: <span><%= @game.player_1.name %></span></h2>
+<h2>Player 2: <span><%= @game.player_2.name %></span></h2>
+</div>
+
   <!-- <b>Please select one option to win or to lose :-)</b><br />
   <br>
     <input type="radio" name="option" value="rock"> Rock<br>
     <input type="radio" name="option" value="paper"> Paper<br>
     <input type="radio" name="option" value="scissors"> Scissors<br> -->
 
-    <form class="option_buttons" action="/options" method="post">
-      <input type="submit" name="option" value="Rock">
-      <input type="submit" name="option" value="Paper">
-      <input type="submit" name="option" value="Scissors">
-    </form>
+  <form class="option_buttons" action="/options" method="post">
+  <input type="submit" name="player_choice" value="rock">
+  <input type="submit" name="player_choice" value="paper">
+  <input type="submit" name="player_choice" value="scissor">
+</form>
 
-    <form class="enter_button" action="/hit" method="get">
-      <input type="submit" value="Play">
-    </form>
+<form class="enter_button" action="/hit" method="get">
+  <input type="submit" value="enter">
+</form>

@@ -7,10 +7,10 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require 'features/web_helpers' # we added this after making the web_helper file 
+require 'features/web_helpers' # we added this after making the web_helper file
 
 # tell Capybara about our app class
-Capybara.app = Game
+Capybara.app = RoPaSc
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
