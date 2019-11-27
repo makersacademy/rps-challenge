@@ -1,6 +1,7 @@
 describe 'A homepage', type: :feature do
-  specify 'that it has a title' do
-    visit '/'
-    expect(page).to have_content("Rock Paper Scissors")
+  before { visit '/' }
+
+  specify 'it has a title' do
+    expect(page).to have_selector('h1', text: "Rock Paper Scissors")
   end
 end
