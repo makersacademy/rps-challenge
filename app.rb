@@ -4,7 +4,7 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do
-    erb :name_form
+    erb :name_form, layout: :layout
   end
 
   post '/enter-name' do
@@ -14,6 +14,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/game' do
     @name = session[:player_name]
-    erb :game
+    erb :game, layout: :layout
   end
 end
