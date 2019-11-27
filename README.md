@@ -2,6 +2,7 @@
 This web app allows users to play an online game of Rock, Paper, Scissors. The user enters their name and then chooses rock, paper or scissors on the next page. When they click play, they are matched with the computer and a winner is announced.
 
 ## Stories Completed
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -9,6 +10,7 @@ I would like to register my name before playing an online game
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
+```
 
 ## Build Status
 The project is currently complete and working for the above user stories. Future enhancements would be to add the ability for multiple human players, and the addition of the 'lizard / spock' extension of the game.
