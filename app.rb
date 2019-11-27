@@ -14,6 +14,11 @@ class RockPaperScissors < Sinatra::Base
 
   get '/game' do
     @name = session[:player_name]
+    @message = session.delete(:message)
     erb :game, layout: :layout
+  end
+
+  post '/move' do
+    session[:message] = "You selected: Rock"
   end
 end
