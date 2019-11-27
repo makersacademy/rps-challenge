@@ -5,6 +5,12 @@ describe Hierarchy do
 
   subject { described_class.new hash }
 
+  describe '#moves' do
+    it "should return all possible moves in an array" do
+      expect(subject.moves).to include :rock, :scissors, :paper
+    end
+  end
+
   describe '#wins' do
     it "should return nil if it's a draw" do
       expect(subject.wins(:rock, :rock)).to be_nil
