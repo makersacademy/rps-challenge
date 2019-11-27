@@ -22,5 +22,10 @@ describe "Game page", type: :feature do
       click_button 'Rock'
       expect(page).to have_content 'You selected: Rock'
     end
+
+    specify "you can select paper and get confirmation" do
+      click_button 'Paper'
+      expect(page).to have_content 'You selected: Paper'
+    end
   end
 end

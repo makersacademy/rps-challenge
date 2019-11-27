@@ -19,6 +19,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
-    session[:message] = "You selected: Rock"
+    session[:message] = "You selected: " + params['move']
   end
 end
