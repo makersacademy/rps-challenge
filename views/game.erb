@@ -1,6 +1,10 @@
 <h2><%=@name%></h2>
 
-<p><%= @message %></p>
+<% unless @message.nil? %>
+<p>You selected: <%= @message %></p>
+<p>Computer chose: <%= @computer_choice %></p>
+<p>Marketeer wins!</p>
+<% end %>
 
 <form action='/move' method='post'>
   <input type='submit' name='move' value='Rock'>
