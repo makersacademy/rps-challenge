@@ -20,5 +20,6 @@ class RockPaperScissors < Sinatra::Base
 
   post '/move' do
     session[:message] = "You selected: " + params['move']
+    redirect to '/game'
   end
 end
