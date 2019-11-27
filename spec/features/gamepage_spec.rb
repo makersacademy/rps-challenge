@@ -40,4 +40,14 @@ describe "Game page", type: :feature do
       expect(page).to have_content 'You selected: Paper'
     end
   end
+
+  context "choosing Scissors" do
+    before { click_button 'Scissors' }
+
+    include_examples "headings"
+
+    specify "you can select scissors and get confirmation" do
+      expect(page).to have_content 'You selected: Scissors'
+    end
+  end
 end
