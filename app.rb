@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative 'lib/game'
+require_relative 'lib/hierarchy'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -9,19 +11,19 @@ class RockPaperScissors < Sinatra::Base
 
   post '/enter-name' do
     session[:player_name] = params['name']
+    hierarchy = Hierarchy.new({ rock: :scissors, paper: :rock, scissors: :paper })
+    session[:game] = Game.new hierarchy
     redirect to '/game'
   end
 
   get '/game' do
     @name = session[:player_name]
-    @message = session.delete(:message)
-    @computer_choice = session.delete(:computer_choice)
+    @game = session[:game]
     erb :game, layout: :layout
   end
 
   post '/move' do
-    session[:message] = params['move']
-    session[:computer_choice] = 'Rock'
+    session[:game].play(params['move'].downcase.to_sym)
     redirect to '/game'
   end
 end

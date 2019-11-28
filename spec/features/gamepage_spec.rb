@@ -29,11 +29,11 @@ describe "Game page", type: :feature do
   include_examples "headings"
 
   specify "there is no notification about the move before moving" do
-    expect(page).not_to have_content 'You selected: '
+    expect(page).not_to have_content 'You selected:'
   end
 
   specify "there is no notification about the computer's choice" do
-    expect(page).not_to have_content 'Computer chose: '
+    expect(page).not_to have_content 'Computer chose:'
   end
 
   specify "there is no declaration of the result" do

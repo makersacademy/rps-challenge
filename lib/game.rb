@@ -1,5 +1,7 @@
+require_relative 'computer_player'
+
 class Game
-  attr_reader :player1_move, :player2_move
+  attr_reader :player1_move, :player2_move, :result
 
   def initialize hierarchy, computer = nil
     @hierarchy = hierarchy
@@ -9,7 +11,7 @@ class Game
   def play player1_move
     @player1_move = player1_move
     @player2_move = @player2.move
-    find_winner
+    @result = find_winner
   end
 
   def find_winner
