@@ -12,18 +12,18 @@ class RockPaperScissors < Sinatra::Base
   post '/enter-name' do
     session[:player_name] = params['name']
     hierarchy = Hierarchy.new({ rock: :scissors, paper: :rock, scissors: :paper })
-    session[:game] = Game.new hierarchy
+    @@game = Game.new hierarchy
     redirect to '/game'
   end
 
   get '/game' do
     @name = session[:player_name]
-    @game = session[:game]
+    @game = @@game
     erb :game, layout: :layout
   end
 
   post '/move' do
-    session[:game].play(params['move'].downcase.to_sym)
+    @@game.play(params['move'].downcase.to_sym)
     redirect to '/game'
   end
 end
