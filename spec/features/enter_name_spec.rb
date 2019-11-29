@@ -9,6 +9,6 @@ feature 'Enter name' do
     visit("/")
     fill_in(:name, with: "John")
     click_on('Submit')
-    expect(page).to have_content("welcome John")
-  end 
+    expect(page).to have_content("Welcome John")
+  end
 end
