@@ -4,4 +4,11 @@ feature 'Enter name' do
     visit("/")
     expect(page).to have_content("Welcome to RPS game")
   end
+
+  scenario "Display player's name after input" do
+    visit("/")
+    fill_in(:name, with: "John")
+    click_on('Submit')
+    expect(page).to have_content("welcome John")
+  end 
 end
