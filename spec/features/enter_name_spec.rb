@@ -5,5 +5,4 @@ feature "enter name" do
     click_button "Submit"
     expect(page).to have_content("Welcome Harrison")
   end
-
 end
