@@ -1,4 +1,3 @@
-
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
@@ -19,5 +18,5 @@ class RPS < Sinatra::Base
     erb(:saved_name)
   end
 
-run! if app_file == $0
+  run! if app_file == $0
 end

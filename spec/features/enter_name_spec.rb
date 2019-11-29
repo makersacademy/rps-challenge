@@ -1,4 +1,3 @@
-
 feature 'Enter name' do
   scenario 'player enters their name to the game' do
     visit("/")
