@@ -2,6 +2,11 @@ require 'sinatra/base'
 
 class Rps < Sinatra::Base
   get '/' do
-    'Rock, Paper, Scissors'
+    erb(:home)
+  end
+
+  post '/game' do
+    @player = params[:player]
+    erb(:game)
   end
 end
