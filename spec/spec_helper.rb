@@ -11,7 +11,9 @@ SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
+require './app.rb'
 
+Capybara.app = RPS
 
 RSpec.configure do |config|
   config.after(:suite) do
