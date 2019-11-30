@@ -6,6 +6,6 @@ class Player
   end
 
   def play_hand(hand)
-    @hand = hand.capitalize!
+    @hand = hand.capitalize
   end
 end
