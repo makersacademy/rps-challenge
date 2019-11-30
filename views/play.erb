@@ -1,1 +1,9 @@
-Welcome <%= @player %>
+<h1>Welcome <%= @player.name %></h1>
+
+Please pick an option:
+<form action='/choice' method='post' name="option">
+  <input type="radio" name="rock"> Rock <br>
+  <input type="radio" name="paper"> Paper <br>
+  <input type="radio" name="scissors"> Scissors <br>
+  <input type="submit" name="Submit" value="Submit">
+</form>

@@ -1,20 +1,25 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPS < Sinatra::Base
-  enable :sessions
 
   get '/' do
     erb :index
   end
 
   post '/details' do
-    session[:player_name] = params[:player_name]
+    $player = Player.new(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player = session[:player_name]
+    @player = $player
     erb :play
+  end
+
+  post '/choice' do
+    @player = $player
+    @player.choice(params[:option])
   end
 
   run! if app_file == $0
