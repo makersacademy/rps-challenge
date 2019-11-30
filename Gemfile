@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'sinatra'
+gem 'rspec'
+gem 'capybara'
 
 group :test do
   gem 'capybara'
