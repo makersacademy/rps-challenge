@@ -4,18 +4,22 @@ require './lib/game.rb'
 
 class RPS < Sinatra::Base
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :name_form
   end
 
   post '/name' do
-    $player = Player.new(params[:name])
+    @player = Player.new(params[:name])
+    @game = Game.create(@player.name)
     redirect '/choice'
   end
 
   get '/choice' do
-    $game = Game.new($player.name)
-    @name = $player.name
+    @name = @game.name
     erb :choice
   end
 
@@ -25,10 +29,10 @@ class RPS < Sinatra::Base
   end
 
   get '/game' do
-    @name = $player.name
+    @name = @game.name
     @choice = $choice
     @bot_choice = ['Rock', 'Paper', 'Scissors'].sample
-    @outcome = $game.outcome($choice, @bot_choice)
+    @outcome = @game.outcome($choice, @bot_choice)
     erb :game
   end
 
