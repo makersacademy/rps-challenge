@@ -1,5 +1,13 @@
 # RPS Challenge
 
+
+User stories completed : 
+- I would like to register my name before playing an online game
+
+
+
+Reffered to :
+- > https://github.com/makersacademy/course/blob/master/intro_to_the_web/walkthroughs/entering_players.md
 Instructions
 -------
 
