@@ -6,7 +6,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/play" do
-    @player_name = params[:player_name]
+    player = Player.new(params[:player_name])
+    @player_name = player.name
     erb :play
   end
 
