@@ -3,8 +3,14 @@ require_relative 'computer'
 class Game
   attr_reader :current_player, :opponent
 
-  IS_BEATEN_BY = { 'Rock' => 'Scissors', 'Paper' => 'Rock', 'Scissors' => 'Paper' }
-  
+  IS_BEATEN_BY = { 
+    'Rock' => ['Scissors', 'Lizard'], 
+    'Paper' => ['Rock', 'Spock'], 
+    'Scissors' => ['Lizard', 'Paper'],
+    'Lizard' => ['Paper', 'Spock'],
+    'Spock' => ['Rock', 'Scissors']
+  }
+
   def initialize(opponent = Computer.new)
     @opponent = opponent
   end
@@ -20,7 +26,7 @@ class Game
 
   def verdict
     return 'DRAW' if opponent.hand == current_player.hand
-    return 'YOU WIN' if opponent.hand == IS_BEATEN_BY[current_player.hand]
+    return 'YOU WIN' if IS_BEATEN_BY[current_player.hand].include? opponent.hand
     
     'YOU LOSE'
   end
