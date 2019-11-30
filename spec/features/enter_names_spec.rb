@@ -6,6 +6,6 @@ RSpec.feature 'entering a name', type: :feature do
 
   scenario 'it starts a new game of rock-paper-scissors' do
     enter_name_and_play
-    expect(page).to have_content 'Sam vs T-RPS3000'
+    expect(page).to have_content 'Sam vs MA-RPS3000'
   end
 end

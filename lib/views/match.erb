@@ -7,7 +7,8 @@
     <title>Match Results</title>
   </head>
   <body>
-    <p><%= @player_1.name %> played <%= @player_1.hand %></p>
-    <h1>YOU LOSE</h1>
+    <p><%= @game.current_player.name %> played <%= @game.current_player.hand %></p>
+    <p>MA-RPS3000 played <%= @game.opponent.hand %></p>
+    <h1><%= @game.verdict %></h1>
   </body>
 </html>

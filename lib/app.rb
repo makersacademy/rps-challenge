@@ -1,29 +1,32 @@
 require 'sinatra/base'
 require_relative 'player'
 require_relative 'game'
+require_relative 'computer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
   
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
 
   post "/play" do
-    session[:player_1] = Player.new(params['player-name'])
-    @player_1 = session[:player_1]
+    @game.assign_player(Player.new(params['player-name']))
     erb :play
   end
 
   post '/match' do
-    session[:player_1].play_hand(params[:choice])
-    @player_1 = session[:player_1]
+    @game.play_round(params[:choice])
     redirect '/match'
   end
 
   get '/match' do
-    @player_1 = session[:player_1]
     erb :match
   end
+
   run! if app_file == $0
 end
