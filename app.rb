@@ -8,7 +8,7 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post "/play" do
+  post "/submit_name" do
     player = Player.new(params[:player_name])
     computer = Computer.new
     game = Game.create(player, computer)
@@ -20,13 +20,13 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post "/choose" do
+  post "/choose_weapon" do
     @game = Game.instance
     @game.update_player_choice(params[:player_choice])
-    redirect "/choose"
+    redirect "/result"
   end
 
-  get "/choose" do
+  get "/result" do
     @game = Game.instance
     erb @game.result
   end
