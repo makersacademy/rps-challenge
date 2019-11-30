@@ -23,23 +23,21 @@ class Rock_Paper_Scissors < Sinatra::Base
   get '/rock' do
     @game = $game
     @game.player_1.chooses("Rock")
-    erb(:outcome)
-  end
-
-  get '/player_rock' do
-    @game = $game
+    @game.computer_move(Computer.new.randomly_choose)
     erb(:outcome)
   end
 
   get '/paper' do
     @game = $game
-    @game.player_chooses(paper)
+    @game.player_1.chooses("Paper")
+    @game.computer_move(Computer.new.randomly_choose)
     erb(:outcome)
   end
 
   get '/scissors' do
     @game = $game
-    @game.player_chooses(scissors)
+    @game.player_chooses("Scissors")
+    @game.computer_chooses(Computer.new.randomly_choose)
     erb(:outcome)
   end
 

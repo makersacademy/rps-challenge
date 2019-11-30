@@ -1,7 +1,7 @@
 class Player
 
   attr_reader :name
-  attr_accessor :chooses
+  attr_accessor :choice
   
   def initialize(name)
     @name = name
@@ -11,5 +11,4 @@ class Player
   def chooses(choice)
     @choice = choice
   end
-  
 end 
