@@ -9,11 +9,13 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-     redirect '/play'
+    session[:player1] = params["player"]
+    redirect '/play'
   end
 
   get '/play' do
-    "Welcome to the game Henlo"
+    @name = session[:player1]
+    erb(:play)
   end
 
   # start server if ruby file executed directly
