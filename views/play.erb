@@ -1,3 +1,8 @@
-<center><%= @player_name %>, what's your choice?
+<center><%=@name%>, what's your choice?
+<form action='/play' method='post'>
+  <input type="submit" name="shape" value="Rock">
+  <input type="submit" name="shape" value="Paper">
+  <input type="submit" name="shape" value="Scissors">
+</form>
 
 </center>

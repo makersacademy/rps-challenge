@@ -7,8 +7,13 @@ class Game < Sinatra::Base
     erb :index
   end
 
-  get '/name' do
-    @player_name = params[:player_name]
+  post '/name' do
+    session[:name] = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @name = session[:name]
     erb :play
   end
 
