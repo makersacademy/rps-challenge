@@ -25,6 +25,7 @@ class RPS < Sinatra::Base
 
   get '/outcome' do
     @player = $player
+    @computer_move = Game.new.generate_move
     erb :outcome
   end
 
