@@ -3,6 +3,7 @@ class Player
 
   def initialize(name)
     @name = name
+    @option = ''
   end
 
   def choice(option)

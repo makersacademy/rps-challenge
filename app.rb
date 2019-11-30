@@ -20,6 +20,12 @@ class RPS < Sinatra::Base
   post '/choice' do
     @player = $player
     @player.choice(params[:option])
+    redirect '/outcome'
+  end
+
+  get '/outcome' do
+    @player = $player
+    erb :outcome
   end
 
   run! if app_file == $0
