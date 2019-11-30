@@ -20,15 +20,15 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post "/result" do
+  post "/choose" do
     @game = Game.instance
     @game.update_player_choice(params[:player_choice])
-    redirect "/result"
+    redirect "/choose"
   end
 
-  get "/result" do
+  get "/choose" do
     @game = Game.instance
-    erb :result
+    erb @game.result
   end
 
   run! if app_file == $0

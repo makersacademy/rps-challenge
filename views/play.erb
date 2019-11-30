@@ -1,19 +1,19 @@
 <h2>Welcome <%= @game.player_name %>, let's start the game!</h2>
 
-<form action="/result" method="post">
-  <label for="Rock">
+<form action="/choose" method="post">
+  <label for="rock">
     Rock
-    <input type="radio" name="player_choice" id="Rock" value="Rock">
+    <input type="radio" name="player_choice" id="rock" value="rock">
   </label>
 
-  <label for="Paper">
+  <label for="paper">
     Paper
-    <input type="radio" name="player_choice" id="Paper" value="Paper">
+    <input type="radio" name="player_choice" id="paper" value="paper">
   </label>
 
-  <label for="Scissors">
+  <label for="scissors">
     Scissors
-    <input type="radio" name="player_choice" id="Scissors" value="Scissors">
+    <input type="radio" name="player_choice" id="scissors" value="scissors">
   </label>
 
   <input type="submit" value="OK">

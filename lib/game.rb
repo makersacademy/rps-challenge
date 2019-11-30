@@ -1,5 +1,5 @@
 class Game
-  WIN_COMBINATIONS = { "Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper" }
+  WIN_COMBINATIONS = { :rock => :scissors, :paper => :rock, :scissors => :paper }
   def self.instance
     @game
   end
@@ -15,11 +15,11 @@ class Game
     @computer = computer
   end
 
-  def calculate_result
-    return "You tie!" if player_choice == computer_choice
-    return "You win!" if WIN_COMBINATIONS[player_choice] == computer_choice
-    
-    "You lose!"
+  def result
+    return :tie if player_choice == computer_choice
+    return :win if WIN_COMBINATIONS[player_choice] == computer_choice
+
+    :lose
   end
 
   def player_name
@@ -31,7 +31,7 @@ class Game
   end
 
   def update_player_choice(choice)
-    @player.update_choice(choice)
+    @player.update_choice(choice.to_sym)
   end
 
   def computer_choice

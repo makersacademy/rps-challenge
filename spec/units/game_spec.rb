@@ -18,59 +18,59 @@ describe Game do
     end
   end
 
-  describe "#calculate_result" do
-    it "should return 'You tie!' if player chooses 'Rock' and computer chooses 'Rock'" do
-      allow(player).to receive(:choice).and_return "Rock"
-      allow(computer).to receive(:random_choice).and_return "Rock"
-      expect(game.calculate_result).to eq "You tie!"
+  describe "#result" do
+    it "should return :tie if player chooses :rock and computer chooses :rock" do
+      allow(player).to receive(:choice).and_return :rock
+      allow(computer).to receive(:random_choice).and_return :rock
+      expect(game.result).to eq :tie
     end
 
-    it "should return 'You win!' if player chooses 'Rock' and computer chooses 'Scissors'" do
-      allow(player).to receive(:choice).and_return "Rock"
-      allow(computer).to receive(:random_choice).and_return "Scissors"
-      expect(game.calculate_result).to eq "You win!"
+    it "should return :win if player chooses :rock and computer chooses :scissors" do
+      allow(player).to receive(:choice).and_return :rock
+      allow(computer).to receive(:random_choice).and_return :scissors
+      expect(game.result).to eq :win
     end
 
-    it "should return 'You lose!' if player chooses 'Rock' and computer chooses 'Paper'" do
-      allow(player).to receive(:choice).and_return "Rock"
-      allow(computer).to receive(:random_choice).and_return "Paper"
-      expect(game.calculate_result).to eq "You lose!"
+    it "should return :lose if player chooses :rock and computer chooses :paper" do
+      allow(player).to receive(:choice).and_return :rock
+      allow(computer).to receive(:random_choice).and_return :paper
+      expect(game.result).to eq :lose
     end
 
-    it "should return 'You tie!' if player chooses 'Paper' and computer chooses 'Paper'" do
-      allow(player).to receive(:choice).and_return "Paper"
-      allow(computer).to receive(:random_choice).and_return "Paper"
-      expect(game.calculate_result).to eq "You tie!"
+    it "should return :tie if player chooses :paper and computer chooses :paper" do
+      allow(player).to receive(:choice).and_return :paper
+      allow(computer).to receive(:random_choice).and_return :paper
+      expect(game.result).to eq :tie
     end
 
-    it "should return 'You win!' if player chooses 'Paper' and computer chooses 'Rock'" do
-      allow(player).to receive(:choice).and_return "Paper"
-      allow(computer).to receive(:random_choice).and_return "Rock"
-      expect(game.calculate_result).to eq "You win!"
+    it "should return :win if player chooses :paper and computer chooses :rock" do
+      allow(player).to receive(:choice).and_return :paper
+      allow(computer).to receive(:random_choice).and_return :rock
+      expect(game.result).to eq :win
     end
 
-    it "should return 'You lose!' if player chooses 'Paper' and computer chooses 'Scissors'" do
-      allow(player).to receive(:choice).and_return "Paper"
-      allow(computer).to receive(:random_choice).and_return "Scissors"
-      expect(game.calculate_result).to eq "You lose!"
+    it "should return :lose if player chooses :paper and computer chooses :scissors" do
+      allow(player).to receive(:choice).and_return :paper
+      allow(computer).to receive(:random_choice).and_return :scissors
+      expect(game.result).to eq :lose
     end
 
-    it "should return 'You tie!' if player chooses 'Scissors' and computer chooses 'Scissors'" do
-      allow(player).to receive(:choice).and_return "Scissors"
-      allow(computer).to receive(:random_choice).and_return "Scissors"
-      expect(game.calculate_result).to eq "You tie!"
+    it "should return :tie if player chooses :scissors and computer chooses :scissors" do
+      allow(player).to receive(:choice).and_return :scissors
+      allow(computer).to receive(:random_choice).and_return :scissors
+      expect(game.result).to eq :tie
     end
 
-    it "should return 'You win!' if player chooses 'Scissors' and computer chooses 'Paper'" do
-      allow(player).to receive(:choice).and_return "Scissors"
-      allow(computer).to receive(:random_choice).and_return "Paper"
-      expect(game.calculate_result).to eq "You win!"
+    it "should return :win if player chooses :scissors and computer chooses :paper" do
+      allow(player).to receive(:choice).and_return :scissors
+      allow(computer).to receive(:random_choice).and_return :paper
+      expect(game.result).to eq :win
     end
 
-    it "should return 'You lose!' if player chooses 'Scissors' and computer chooses 'Rock'" do
-      allow(player).to receive(:choice).and_return "Scissors"
-      allow(computer).to receive(:random_choice).and_return "Rock"
-      expect(game.calculate_result).to eq "You lose!"
+    it "should return :lose if player chooses :scissors and computer chooses :rock" do
+      allow(player).to receive(:choice).and_return :scissors
+      allow(computer).to receive(:random_choice).and_return :rock
+      expect(game.result).to eq :lose
     end
   end
 

@@ -1,7 +1,7 @@
 class Computer
-  CHOICES = ["Rock", "Paper", "Scissors"]
+  WEAPONS = [:rock, :paper, :scissors]
 
   def random_choice
-    CHOICES.sample
+    WEAPONS.sample
   end
 end
