@@ -1,4 +1,5 @@
 require_relative '../app'
+require_relative './features/web_helpers'
 require 'rspec'
 require 'capybara'
 require 'capybara/rspec'
