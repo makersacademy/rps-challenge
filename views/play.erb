@@ -1,1 +1,20 @@
-<h2>Welcome <%= @player_name %>, let's start the game!</h2>
+<h2>Welcome <%= @game.player_name %>, let's start the game!</h2>
+
+<form action="/result" method="post">
+  <label for="Rock">
+    Rock
+    <input type="radio" name="player_choice" id="Rock" value="Rock">
+  </label>
+
+  <label for="Paper">
+    Paper
+    <input type="radio" name="player_choice" id="Paper" value="Paper">
+  </label>
+
+  <label for="Scissors">
+    Scissors
+    <input type="radio" name="player_choice" id="Scissors" value="Scissors">
+  </label>
+
+  <input type="submit" value="OK">
+</form>
