@@ -23,17 +23,21 @@ describe 'Game' do
     end
   end
 
-  describe '#player_chooses' do
-    it "accepts the players choice as an argument and stores it to determine the winner" do
-      game.player_chooses("Rock")
-      expect(game.player_move).to eq "Rock"
-    end 
-  end
-
   describe '#computer_chooses' do
     it "accepts the computers choice as an argument and stores it to determine the winner" do
       game.computer_chooses("Paper")
       expect(game.computer_move).to eq "Paper"
     end 
   end
+
+
+  describe '#decide_winner' do
+    it "uses the players move and the computers move to determine the winner" do
+      game.player_1.chooses("Rock")
+      game.computer_chooses("Paper")
+      game.decide_winner
+      expect(game.winner).to eq "Computer"
+    end
+  end
 end
+

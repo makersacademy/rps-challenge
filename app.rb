@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
+require './lib/computer.rb'
 
 class Rock_Paper_Scissors < Sinatra::Base
 
@@ -23,14 +24,16 @@ class Rock_Paper_Scissors < Sinatra::Base
   get '/rock' do
     @game = $game
     @game.player_1.chooses("Rock")
-    @game.computer_move(Computer.new.randomly_choose)
+    @game.computer_chooses(Computer.new.randomly_choose)
+    @game.decide_winner
     erb(:outcome)
   end
 
   get '/paper' do
     @game = $game
     @game.player_1.chooses("Paper")
-    @game.computer_move(Computer.new.randomly_choose)
+    @game.computer_chooses(Computer.new.randomly_choose)
+    @game.decide_winner
     erb(:outcome)
   end
 
@@ -38,6 +41,7 @@ class Rock_Paper_Scissors < Sinatra::Base
     @game = $game
     @game.player_chooses("Scissors")
     @game.computer_chooses(Computer.new.randomly_choose)
+    @game.decide_winner
     erb(:outcome)
   end
 

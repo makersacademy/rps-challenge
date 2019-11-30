@@ -6,6 +6,7 @@ class Computer
 
   def initialize
     @choice = nil
+
   end 
 
   def randomly_choose(move = MOVE)
