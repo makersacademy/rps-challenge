@@ -5,9 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="css/play.css" type="text/css" rel="stylesheet">
-  <title>Document</title>
+  <title>Choose A Move</title>
 </head>
 <body>
   <h1><%= @player_1.name %> vs T-RPS3000</h1>
+  <p>choose a move</p>
+  <div>
+    <form action="/match" method="POST">
+      <input type="submit" name="choice" value="ROCK">
+    </form>
+
+    <form action="/match" method="POST">
+      <input type="submit" name="choice" value="PAPER">
+    </form>
+
+    <form action="/match" method="POST">
+      <input type="submit" name="choice" value="SCISSORS">
+    </form>
+  </div>
 </body>
 </html>
