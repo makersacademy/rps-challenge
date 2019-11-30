@@ -1,1 +1,16 @@
 <h2>Welcome <%= @name %></h2>
+
+<div>
+  <h3>Pick an option:</h3>
+  <form action="/choice" method="POST">
+    <select name="choice">
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+    </select>
+    <br>
+    <input type="submit" name="Submit">
+  </form>
+</div>
+
+<p>You chose <%= @choice %></p>

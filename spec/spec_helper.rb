@@ -12,6 +12,7 @@ SimpleCov.start
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
 require './app.rb'
+require './spec/features/web_helpers.rb' 
 
 Capybara.app = RPS
 
