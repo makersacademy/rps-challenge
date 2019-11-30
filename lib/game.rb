@@ -1,5 +1,7 @@
 class Game
+  WEAPONS = [:rock, :paper, :scissors]
   WIN_COMBINATIONS = { :rock => :scissors, :paper => :rock, :scissors => :paper }
+  
   def self.instance
     @game
   end

@@ -1,7 +1,6 @@
 class Computer
-  WEAPONS = [:rock, :paper, :scissors]
 
   def random_choice
-    WEAPONS.sample
+    Game::WEAPONS.sample
   end
 end
