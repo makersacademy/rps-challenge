@@ -3,7 +3,6 @@ class Player
 
   def initialize(name = '')
     @name = name == '' ? 'Guest' : name.capitalize
-    @hand = nil
   end
 
   def play_hand(hand)
