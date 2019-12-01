@@ -5,7 +5,7 @@ Details
 Rock-Paper-Scissors-Lizard-Spock weekend challenge while attending Makers Academy. 
 While the logic was fully mapped out and tested, the web app was only partially built. This is a work in progress.
 
-Rules for RPSLS can be found here (http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_)
+Rules for RPSLS can be found here (http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)
 
 User Stories
 ----
