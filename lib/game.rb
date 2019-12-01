@@ -15,12 +15,21 @@ class Game
 
   def get_result
     @computer.random_select
-    return @player1.name if @computer.choice == WIN_HAND[@player1.choice.to_sym]
-    return @computer.name if @player1.choice == WIN_HAND[@computer.choice.to_sym]
-    "Draw"
+    result = winner
+    message(result)
   end
 
-  def result
+  private
 
+  def winner
+    return @player1 if @computer.choice == WIN_HAND[@player1.choice.to_sym]
+    return @computer if @player1.choice == WIN_HAND[@computer.choice.to_sym]
+    return "Draw" if @player1.choice == @computer.choice
   end
+
+  def message(result)
+    return "It's a Draw!" if result == "Draw"
+    "#{result.name} Wins!!"
+  end
+
 end
