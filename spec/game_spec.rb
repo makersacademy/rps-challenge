@@ -11,12 +11,13 @@ describe Game do
     end
   end
 
-  # describe '#outcome' do
-  #   it "should return a win or loss depending on what was picked" do
-  #     allow(game).to receive(:move) { 'Scissors' }
-  #     allow(player).to receive(:show_choice) { 'Paper' }
-  #     expect(game.outcome).to eq 'You lose!'
-  #   end
-  # end
+  describe '#outcome' do
+    it "should return a win or loss depending on what was picked" do
+      srand(3)
+      game.generate_move
+      allow(player).to receive(:show_choice).and_return 'Paper'
+      expect(game.outcome(game.player.show_choice)).to eq 'You lose!'
+    end
+  end
 
 end

@@ -27,9 +27,9 @@ class RPS < Sinatra::Base
 
   get '/outcome' do
     @game = $game
-    p @game.generate_move
-    p @game.player.show_choice
-    p @game.outcome
+    @game.generate_move
+    @game.player.show_choice
+    @outcome = @game.outcome(@game.player.show_choice)
     erb :outcome
   end
 

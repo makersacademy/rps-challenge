@@ -26,6 +26,7 @@ While the game is intended to be played on the web, it can be played in IRB as w
 - Bootstrap
 - HTML
 - CSS
+- RSpec
 
 ## Project Status
 
