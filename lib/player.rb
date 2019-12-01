@@ -1,7 +1,7 @@
 class Player
   attr_reader :name, :choice
 
-  def initialize(name)
+  def initialize(name = "Computer")
     @name = name
     @choice = nil
   end
