@@ -1,6 +1,7 @@
 require 'sinatra/base'
+require './lib/game'
 
-class Game < Sinatra::Base
+class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
@@ -24,7 +25,9 @@ class Game < Sinatra::Base
   end
 
   get '/result' do
-    erb :result
+    @result = Game.new.result(@player_move)
+    @player_move = session[:shape]
+    erb :@result
   end
 
   run! if app_file == $0
