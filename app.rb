@@ -8,9 +8,19 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  post '/play' do
+    session[:player1] = params[:player1]
+    redirect '/play'
+  end
+
   get '/play' do
-    @player1 = params[:player1]
+    @player1 = session[:player1]
     erb(:play)
+  end
+
+  get '/result' do
+    @choice = params[:choice]
+    erb(:result)
   end
 
 

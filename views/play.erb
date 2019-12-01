@@ -15,5 +15,11 @@
 <body>
   <h1>ROCK. PAPER. SCISSORS.</h1>
   <h2>Welcome, <%=@player1%></h2>  
+  <form action="/result" action="get">
+    <button type="submit" name="choice" value="rock">ROCK</button>
+    <button type="submit" name="choice" value="paper">PAPER</button>
+    <button type="submit" name="choice" value="scissors">SCISSORS</button>
+  </form>
+  
 </body>
 </html>
