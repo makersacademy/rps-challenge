@@ -8,7 +8,7 @@ class Rps < Sinatra::Base
     erb(:index)
   end
 
-  post '/names' do
+  post '/name' do
     session[:player1] = params["player"]
     redirect '/play'
   end
@@ -16,6 +16,16 @@ class Rps < Sinatra::Base
   get '/play' do
     @name = session[:player1]
     erb(:play)
+  end
+
+  post '/move' do
+    session[:move] = params["move"]
+    redirect '/move_page'
+  end
+
+  get '/move_page' do
+    @move = session[:move]
+    erb(:move_page)
   end
 
   # start server if ruby file executed directly
