@@ -3,7 +3,7 @@ require_relative 'computer'
 require_relative 'rules'
 
 class Game
-
+  attr_reader :player, :computer
   def initialize(player, computer, rules = Rules.new)
     @player = player
     @computer = computer

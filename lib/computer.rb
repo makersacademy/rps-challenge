@@ -6,7 +6,7 @@ class Computer
 
   attr_reader :name
 
-  def initialize(name = COMP_NAMES.sample, choices)
+  def initialize(name = COMP_NAMES.sample, choices = [:rock, :paper, :scissors, :lizard, :spock])
     @name = name
     @choices = choices
   end

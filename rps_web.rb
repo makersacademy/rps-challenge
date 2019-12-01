@@ -11,13 +11,14 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/name' do
-    player_1 = Player.new(params[:Player_1])
+    player = Player.new(params[:player])
     computer = Computer.new
-    $game = Game.new(player_1, computer.name)
+    $game = Game.new(player, computer)
     redirect :play
   end
 
   get '/play' do
+    @game = $game
     erb :play
   end
 
