@@ -47,7 +47,8 @@ rackup
 Navigate to localhost:9292 in your web browser to play the game.
 
 ## How to Run the Tests 
-1. Run the command rspec in the terminal.
+1. Run the command `rspec` in the terminal.
+2. Run the command `rubocop` in the terminal to see code quality. 
 
 ## Project Status 
 As of 8th October 2019, all user stories have been implemented. 
