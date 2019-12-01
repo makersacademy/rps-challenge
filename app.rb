@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
+require './lib/computer'
 
 class RPS < Sinatra::Base
 
@@ -9,19 +12,29 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    session[:player1] = params[:player1]
+    session[:player1] = Player.new(params[:player1])
+    session[:computer] = Computer.new
+    session[:game] = Game.new(session[:player1], session[:computer])
     redirect '/play'
   end
 
   get '/play' do
-    @player1 = session[:player1]
+    @game = session[:game]
     erb(:play)
   end
 
-  get '/result' do
-    @choice = params[:choice]
+ get '/result' do
+    @game = session[:game]
+    @game.player1.choice=params[:choice]
+    @result = @game.get_result
     erb(:result)
   end
+
+  # get '/result' do
+  #   @game = session[:game]
+  #   # result = @game.get_result
+  #   erb(:result)
+  # end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

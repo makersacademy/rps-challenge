@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player1, :computer
+  attr_accessor :player1, :computer
 
   WIN_HAND = {
     Rock: "Scissors",
@@ -13,9 +13,14 @@ class Game
     @computer = computer
   end
 
-  def result
+  def get_result
+    @computer.random_select
     return @player1.name if @computer.choice == WIN_HAND[@player1.choice.to_sym]
     return @computer.name if @player1.choice == WIN_HAND[@computer.choice.to_sym]
     "Draw"
+  end
+
+  def result
+
   end
 end

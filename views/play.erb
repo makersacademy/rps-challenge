@@ -14,11 +14,11 @@
 </head>
 <body>
   <h1>ROCK. PAPER. SCISSORS.</h1>
-  <h2>Welcome, <%=@player1%></h2>  
+  <h2><%=@game.player1.name%> - vs - <%=@game.computer.name%></h2>  
   <form action="/result" action="get">
-    <button type="submit" name="choice" value="rock">ROCK</button>
-    <button type="submit" name="choice" value="paper">PAPER</button>
-    <button type="submit" name="choice" value="scissors">SCISSORS</button>
+    <button type="submit" name="choice" value="Rock">ROCK</button>
+    <button type="submit" name="choice" value="Paper">PAPER</button>
+    <button type="submit" name="choice" value="Scissors">SCISSORS</button>
   </form>
 
 </body>
