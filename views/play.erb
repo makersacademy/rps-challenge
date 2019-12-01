@@ -4,22 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="css/play.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
   <title>RPS - Play!</title>
-  <style>
-    * {
-      font-family: 'Orbitron', sans-serif;
-    }
-  </style>
 </head>
 <body>
   <h1>ROCK. PAPER. SCISSORS.</h1>
-  <h2><%=@game.player1.name%> - vs - <%=@game.computer.name%></h2>  
-  <form action="/result" action="get">
-    <button type="submit" name="choice" value="Rock">ROCK</button>
-    <button type="submit" name="choice" value="Paper">PAPER</button>
-    <button type="submit" name="choice" value="Scissors">SCISSORS</button>
-  </form>
+  <h2><%=@game.player1.name%> - vs - <%=@game.computer.name%></h2> 
+  <div class="container">
+    <div class="item1"></div>
+    <form class="item2" action="/result" action="get">
+      <button class='choice-btn' type="submit" name="choice" value="Rock">ROCK</button>
+      <button class='choice-btn' type="submit" name="choice" value="Paper">PAPER</button>
+      <button class='choice-btn' type="submit" name="choice" value="Scissors">SCISSORS</button>
+    </form>
+    <div class="item3"></div>
+  </div>
+
+  
 
 </body>
 </html>
