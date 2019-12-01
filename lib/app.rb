@@ -16,6 +16,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
+    @game.score.reset
     erb :index
   end
 
@@ -29,7 +30,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play-again' do
-    redirect '/play'
+    erb :play
   end
 
   get '/play' do
@@ -38,10 +39,10 @@ class RockPaperScissors < Sinatra::Base
 
   post '/match' do
     @game.play_round(params[:choice])
-    redirect '/match'
+    redirect '/results'
   end
 
-  get '/match' do
+  get '/results' do
     erb :match
   end
 

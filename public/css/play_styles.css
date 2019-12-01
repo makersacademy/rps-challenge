@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #ffd000;
+  cursor: default;
+}
+
+::selection { 
+  background: transparent; 
+}
+
+::-moz-selection {
+  background: transparent;
+}
+
+body {
+  background: black;
+}
+
+#content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.moves {
+  margin: 0 auto;
+  height: 100px;
+  width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#match-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 8vw;
+  font-family: 'Bebas Neue', cursive;
+  width: 100%;
+}
+
+#small-vs {
+  font-size: 6vw;
+}
+
+#choose-a-move {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 1.3px;
+}
+
+input[type='submit'] {
+  font-size: 40px;
+  font-family: 'Bebas Neue', cursive;
+  color: white;
+  background-color: transparent;
+  border: 3px solid #ffd000;
+  padding: 4px 10px 0 10px;
+}
+
+input:focus {
+  outline: none;
+  transition: 0.1s ease;
+}
+
+input[type='submit']:hover {
+  background-color: #ffd000;
+  transition: 0.1s ease;
+}
+
+.visuals {
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+  height: 100%;
+  width: 60%;
+}
+
+#player-hand {
+
+  width: 30%;
+  margin-right: 10%;
+}
+
+#opponent-hand {
+  width: 30%;
+  margin-left: 10%;
+  transform: scaleX(-1)
+}

@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+::selection { 
+  background: transparent; 
+}
+
+::-moz-selection {
+  background: transparent;
+}
+
+input[type="text"]::selection {
+  background: #6f5b00; 
+}
+
+::placeholder {
+  color: #ffd000;
+  opacity: 0.2;
+  transition: 0.2s;
+}
+
+input:hover::placeholder{
+  opacity: 0.4;
+  transition: 0.2s;
+}
+
+input:focus::placeholder{
+  color:transparent;
+  transition: 0s;
+}
+
+body {
+  background: black;
+}
+
+#content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+#homepage-header {
+  display: flex;
+  flex-direction: column;
+  color: #ffd000;
+  font-size: 50px;
+  font-family: 'Bebas Neue', cursive;
+  align-items: center;
+  justify-content: center;
+  height: 368px;
+  width: 200px;
+  border: 3px solid #ffd000;
+  cursor: default;
+}
+
+#rock {
+  font-size: 120px;
+  margin-top: 5px;
+}
+
+#paper {
+  font-size: 100.5px;
+  margin-top: -51px;
+}
+
+#scissors {
+  font-size: 66px;
+  margin-top: -38px;
+}
+
+#lizard {
+  font-size: 90.5px;
+  margin-top: -33px;
+}
+
+#spock {
+  font-size: 97px;
+  margin-top: -41px;
+}
+
+p {
+  height: auto;
+}
+
+p:hover {
+  color: white;
+}
+
+#form-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#enter-name {
+  color: #ffd000;
+  caret-color: #ffd000;
+  padding: 5px;
+  width: 200px;
+  margin: 20px 0;
+  border: none;
+  border-bottom: 3px solid #ffd000;
+  background-color: transparent;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1.3px;
+}
+
+#enter-name:focus {
+  letter-spacing: 1.3px;
+}
+
+#play {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  padding: 30px 30px;
+  background-color: #ffd000;
+  transition: 0.3s
+}
+
+#play:hover {
+  padding: 30px 100px;
+  transition: 0.3s
+}
+
+#play-icon {
+  position: relative;
+  left: 3px;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-left: 26px solid white;
+  border-right: 0px solid transparent;
+}
+
+#play-button {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  font-family: 'Nunito';
+  font-size: 30px;
+  color: transparent;
+  height: 60px;
+  width: 60px;
+  transition: 0.6s;
+}
+
+#play-button:hover {
+  width: 150px;
+  transition: 0.6s;
+}

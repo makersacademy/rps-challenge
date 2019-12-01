@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #ffd000;
+  cursor: default;
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  letter-spacing: 1.3px;
+}
+
+.scores {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 30px;
+  letter-spacing: 1.3px;
+}
+
+::selection { 
+  background: transparent; 
+}
+
+::-moz-selection {
+  background: transparent;
+}
+
+body {
+  background: black;
+}
+
+#content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+#choices {
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#player-choice {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 8vw;
+  width: 40%;
+}
+
+#computer-choice {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 8vw;
+  width: 40%;
+}
+
+.small-played {
+  font-size: 2.5vw;
+  height: 30px;
+  line-height: 0.9;
+   word-wrap: normal;
+  margin: 0;
+}
+
+.move {
+  line-height: 0.9;
+  margin: 0;
+}
+
+.visuals {
+  display: flex;
+  justify-content: center;
+  margin: -20px auto -10px auto;
+  padding: 5%;
+  height: 100%;
+  width: 60%;
+}
+
+#player-hand {
+  width: 30%;
+  margin-right: 10%;
+}
+
+#opponent-hand {
+  width: 30%;
+  margin-left: 10%;
+  transform: scaleX(-1);
+}
+
+.navigation {
+  margin: 0 auto;
+  width: 40vw;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu {
+  font-size: 26.5px;
+}
+
+input[type='submit'] {
+  font-size: 40px;
+  font-family: 'Bebas Neue', cursive;
+  color: white;
+  background-color: transparent;
+  border: 3px solid #ffd000;
+  padding: 4px 10px 0 10px;
+}
+
+input[type='submit']:hover {
+  background-color: #ffd000;
+  transition: 0.1s ease;
+}
+
+input:focus {
+  outline: none;
+  transition: 0.1s ease;
+}

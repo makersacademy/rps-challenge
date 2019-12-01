@@ -47,7 +47,7 @@ RSpec.describe Game do
     before(:each) do
       allow(test_opponent).to receive(:hand).and_return 'Rock'
     end
-    
+
     after(:each) do
       subject.instance.verdict
     end

@@ -35,7 +35,7 @@ class Game
 
   @current_game = new
 
-  def self.new_game(player, opponent = nil)
+  def self.new_game(player = nil, opponent = nil)
     @current_game = new(opponent)
     @current_game.assign_player(player)
   end
