@@ -1,22 +1,22 @@
 
 <center><% arry = ["Scissors", "Rock", "Paper"] %>
-<h3><%= $player.name.capitalize %> Used: <%= $move.value %></h3>
+<h3><%= $player.name.capitalize %> used: <%= $move.value %></h3>
 
 <h3>Computer used : <%= x = arry.sample %></h3>
-
+<h1>RESULT<h1>
 <% if x == $move.value %>
 Its a draw
 <% elsif $move.value == "Scissors" && x == "Paper" %>
-<%= $player.name.capitalize %> Wins!
+<%= $player.name.capitalize %> wins!
 <% elsif $move.value == "Paper" && x == "Rock" %>
-<%= $player.name.capitalize %> Wins!
+<%= $player.name.capitalize %> wins!
 <% elsif $move.value == "Rock" && x == "Scissors" %>
-<%= $player.name.capitalize %> Wins!
+<%= $player.name.capitalize %> wins!
 <% else %>
 Computer wins!
 <% end %>
 <% $move = nil %>
 <form action='/play'>
-    <input type="submit" value="Try Again">
+  <input type="submit" value="Try Again">
 </form></center>
     
