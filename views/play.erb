@@ -2,7 +2,7 @@
 
 <div>
   <h3>Pick an option:</h3>
-  <form action="/choice" method="POST">
+  <form action="/result" method="POST">
     <select name="choice">
       <option value="rock">Rock</option>
       <option value="paper">Paper</option>
@@ -12,7 +12,3 @@
     <input type="submit" name="Submit">
   </form>
 </div>
-
-<% if @choice != nil %>
-<p>You chose <%= @choice %></p>
-<% end %>

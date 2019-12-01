@@ -25,13 +25,12 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  post '/choice' do
-    @game.player_1.choose(params[:choice])
-    redirect '/play'
-  end
-
   post '/result' do
-    @game.player_1.choose(params[:choice])
+    @name = @game.player_1.name
+    @cpu = @game.player_2.name
+    @choice = @game.player_1.choose(params[:choice])
+    @cpu_choice = @game.player_2.random_choice
+    @message = @game.outcome
     erb(:result)
   end
 

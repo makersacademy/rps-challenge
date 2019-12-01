@@ -18,7 +18,7 @@ class Game
     @game
   end
 
-  def self.outcome
+  def outcome
     result = @result_class.new(player_1, player_2)
     result.message
   end

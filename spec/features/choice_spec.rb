@@ -4,7 +4,7 @@ feature "player can choose an option" do
     sign_in_and_play
     select("Rock", from: "choice")
     click_button "Submit"
-    expect(page).to have_content("You chose rock")
+    expect(page).to have_content("Harrison chose rock")
   end
   
 end
