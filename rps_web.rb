@@ -3,7 +3,6 @@ require './lib/game'
 require './lib/player'
 require './lib/computer'
 
-
 class RPSWeb < Sinatra::Base
 
   get '/' do
