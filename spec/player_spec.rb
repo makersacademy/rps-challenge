@@ -1,4 +1,4 @@
-require './lib/player'
+require 'player'
 
 describe Player do
 
@@ -11,9 +11,14 @@ describe Player do
       expect(subject.name).to eq(name)
     end
 
+  end
+
+  describe "#choice" do
+
     it "should return the player's choice" do
       expect(player.choice("Paper")).to eq(:paper)
     end
 
   end
+
 end
