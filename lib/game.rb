@@ -1,8 +1,11 @@
-class Player
-  attr_reader :name, :points, :latest_comp_move
-  def initialize(name)
-    @name = name
-    @points = 0
+class Game
+  START = 0
+
+  attr_reader :player, :player_points, :comp_points, :latest_comp_move
+  def initialize(player)
+    @player = player
+    @player_points = START
+    @comp_points = START
   end
 
   def computer_move
@@ -25,22 +28,22 @@ class Player
   def result(choice)
     if choice == latest_comp_move then "It is a draw."
     elsif choice == play_rock && latest_comp_move == play_paper
-      "#{name} you lost."
+      loose_round; "#{player} you lost."
     elsif choice == play_paper && latest_comp_move == play_scissors
-      "#{name} you lost."
+      loose_round; "#{player} you lost."
     elsif choice == play_scissors && latest_comp_move == play_rock
-      "#{name} you lost."
-    else win_round; "#{name} you won!"
+      loose_round; "#{player} you lost."
+    else win_round; "#{player} you won!"
     end
-  end
-
-  def display_points
-    points
   end
 
 private
 
   def win_round
-    @points += 1
+    @player_points += 1
+  end
+
+  def loose_round
+    @comp_points += 1
   end
 end

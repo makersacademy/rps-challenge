@@ -1,38 +1,38 @@
 require 'game'
 
-describe Player do
-  subject(:player) { described_class.new(name) }
-  let(:name) { double :name }
-  let(:points) { double :points}
+describe Game do
+  subject(:game) { described_class.new(player) }
+  let(:player) { double :player }
+  let(:start_point) { Game::START }
 
   it 'inputs a name player' do
-    expect(player.name).to eq name
+    expect(game.player).to eq player
   end
 
-  it 'displays the points' do
-    expect(player.display_points).to eq 0
+  it 'displays your starting points' do
+    expect(game.player_points).to eq start_point
   end
 
   it 'computer choosing rocks' do
-    allow(player).to receive(:latest_comp_move).and_return('rock')
-    expect(player.latest_comp_move).to eq 'rock'
+    allow(game).to receive(:latest_comp_move).and_return('rock')
+    expect(game.latest_comp_move).to eq 'rock'
   end
 
   it 'expects a draw' do
-    a = player.play_rock
-    allow(player).to receive(:latest_comp_move).and_return("rock")
-    expect(player.result(a)).to eq "It is a draw."
+    player_move = game.play_rock
+    allow(game).to receive(:latest_comp_move).and_return("rock")
+    expect(game.result(player_move)).to eq "It is a draw."
   end
 
   it 'expects user to win' do
-    a = player.play_rock
-    allow(player).to receive(:latest_comp_move).and_return("scissors")
-    expect(player.result(a)).to eq "#{name} you won!"
+    player_move = game.play_rock
+    allow(game).to receive(:latest_comp_move).and_return("scissors")
+    expect(game.result(player_move)).to eq "#{player} you won!"
   end
 
   it 'expects user to loose' do
-    a = player.play_rock
-    allow(player).to receive(:latest_comp_move).and_return("paper")
-    expect(player.result(a)).to eq "#{name} you lost."
+    player_move = game.play_rock
+    allow(game).to receive(:latest_comp_move).and_return("paper")
+    expect(game.result(player_move)).to eq "#{player} you lost."
   end
 end
