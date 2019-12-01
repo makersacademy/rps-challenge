@@ -26,6 +26,10 @@ input[type="text"]::selection {
   transition: 0.2s;
 }
 
+input[type="submit"] {
+  background: transparent;
+}
+
 input:hover::placeholder{
   opacity: 0.4;
   transition: 0.2s;
