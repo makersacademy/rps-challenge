@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-  <title>Rock Papper Sciccors!</title>
+  <title>Rock Papper Scissors!</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/main.css">
 </head>
@@ -12,6 +12,15 @@
     <div class="jumbotron">
       <h1><strong><%= @player_1 %></strong> vs. <strong><%= @player_2 %></strong></h1>
     </div>
+      <form action="/play">
+        <button type="submit" class="btn btn-outline-primary">Scissors</button>
+      </form>
+      <form action="/play">
+        <button type="submit" class="btn btn-outline-primary">Paper</button>
+      </form>
+      <form action="/play">
+        <button type="submit" class="btn btn-outline-primary">Rock</button>
+      </form>
   </div>
 </body>
 </html>
