@@ -20,4 +20,11 @@ feature "result page" do
     end
   end
 
+  context "player has selected Scissors" do
+    scenario "player has selected to Scissors" do
+      click_on "Scissors"
+      expect(page).to have_content "You have selected Scissors"
+    end
+  end
+
 end
