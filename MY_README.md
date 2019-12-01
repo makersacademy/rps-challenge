@@ -32,6 +32,8 @@ Class Diagrams
 Feature Test
 -------
 
-```ruby app.rb```
-open in the browser: http://localhost:4567/result
+Run from the terminal: ```ruby app.rb```
+
+Open in the browser: http://localhost:4567/result
+
 ![Homapage](./images/1_home_page.png)
