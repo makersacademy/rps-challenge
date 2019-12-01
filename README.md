@@ -12,18 +12,58 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+<br/>
 
 Running the site locally
 -------
-run `bundle` to acquire the relevant gems.<br/>
+Run `bundle install` in your terminal to acquire the relevant gems.<br/>
 
-Open a terminal and run `rackup`.  This usually settles on `port 9292`, though you can append `-p [NUMBER]` to choose your own – for instance:
+Once all gems are installed, run `rackup`.  This usually settles on `port 9292`, though you can append `-p [NUMBER]` to choose your own – for instance:
 ```
 $ rackup -p 4567
 ```
 
-once the local server is running, open the site in your browser.  For `port 9292` you would need:
+Once the local server is running, open the site in your browser.  For `port 9292` you would need:
 ```
 http://localhost:9292
 ```
-All should be in order!
+All should be in order!<br/>
+
+Running the tests
+-------
+Run RSpec in your terminal to run all unit and feature tests.<br/>
+Tests are written with `RSpec` and `Capybara`
+```
+$ rspec
+```
+
+Feel free to also run `Rubocop` – a ruby code-quality checker
+```
+$ rubocop
+```
+
+Playing the game
+-------
+### Home Screen
+<p align="center">
+  <img src="/README images/Home.png" width="100%" title="Home page image">
+</p>
+
+Enter a name to begin; the name will persist until the player presses `Return To Menu`
+
+### Player Choice
+<p align="center">
+  <img src="/README images/Player Choice.png" width="100%" title="Home page image">
+</p>
+
+The CPU opponent, `MA-3RPS3000` will make random moves in response to a players choices.<br/>
+Each game results in a win, a loss or a draw.
+
+### Keeping score
+<p align="center">
+  <img src="/README images/Mid-Game.png" width="100%" title="Home page image">
+</p>
+
+The game will also keep track of the score so long as the player wishes to continue.<br/>
+To start a new game, simply return to the home page and enter in a new name.<br/>
+Feel free to play to infinity!
