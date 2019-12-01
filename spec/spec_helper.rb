@@ -6,6 +6,7 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 require './app.rb'
+require './spec/features/web_helper'
 
 Capybara.app = RPS
 

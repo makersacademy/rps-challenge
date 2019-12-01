@@ -1,0 +1,10 @@
+body {
+  background-image: url("background.jpg");
+  background-size: cover;
+}
+
+#main_body {
+  text-align: center;
+  padding: 3rem;
+  background-color: white;
+}
