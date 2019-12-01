@@ -7,7 +7,6 @@ class Game
   def initialize(player_class = Player, computer_class = Computer)
     @player = player_class.new
     @computer = computer_class.new
-    @game = ""
     @computer_turn = ""
   end
 
