@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="/stylesheets/outcome.css">
 
 <div class="container">
-  <h1 id="result"><%= @outcome %></h1>
-  <h3 id="explanation">You chose <%= @game.player.show_choice %> and we chose <%= @game.move %> </h2>
+  <h1><%= @outcome %></h1>
+  <h3>You chose <%= @game.player.show_choice %> and we chose <%= @game.move %> </h3>
   <form action='/' method="post">
     <input type="submit" class="btn btn-sm btn-light" value='Play Again'>
   </form>
