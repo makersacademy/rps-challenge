@@ -1,4 +1,4 @@
-feature 'Game' do
+feature 'Choice' do
 
   scenario "new game greets player" do
     visit "/"
