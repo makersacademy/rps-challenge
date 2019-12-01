@@ -4,6 +4,10 @@ require './lib/game'
 
 class RPS < Sinatra::Base
 
+  post '/' do
+    redirect '/'
+  end
+
   get '/' do
     erb :index
   end
