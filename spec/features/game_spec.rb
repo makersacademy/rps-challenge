@@ -28,5 +28,4 @@ feature 'Game' do
     expect(page).to have_button("SCISSORS")
   end
 
-
 end
