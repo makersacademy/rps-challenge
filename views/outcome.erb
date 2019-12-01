@@ -1,0 +1,7 @@
+<% if @outcome == "draw" %>
+  <h1>It's a <%= @outcome %>!</h1>
+<% else %>
+  <h1><%= session[:player_1] %> <%= @outcome %>s!</h1>
+<% end %><br>
+<%= session[:player_1] %> chose <%= session[:player_1_choice] %><br>
+<%= session[:player_2] %> chose <%= session[:player_2_choice] %>
