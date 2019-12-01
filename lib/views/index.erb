@@ -4,14 +4,190 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="css/index.css" type="text/css" rel="stylesheet">
-  <title>Rock Paper Scissors</title>
+  <base href="/">
+  <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    input:focus, button:focus {
+      outline: none;
+    }
+
+    input:focus::placeholder{
+       color:transparent;
+    }
+
+    ::selection { 
+      background: transparent; 
+    }
+    
+    ::-moz-selection {
+      background: transparent;
+    }
+
+    input[type="text"]::selection {
+      background: #6f5b00; 
+    }
+
+    ::placeholder {
+      color: #ffd000;
+      opacity: 0.2;
+    }
+
+    body {
+      background: black;
+    }
+
+    #content {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 50%;
+      height: 50%;
+      margin: auto;
+    }
+
+    #homepage-header {
+      display: flex;
+      flex-direction: column;
+      color: #ffd000;
+      font-size: 50px;
+      font-family: 'Bebas Neue', cursive;
+      align-items: center;
+      justify-content: center;
+      height: 270px;
+      width: 150px;
+      border: 3px solid #ffd000;
+      cursor: default;
+    }
+
+    #rock {
+      font-size: 80px;
+    }
+
+    #paper {
+      font-size: 67px;
+      margin-top: -32px;
+    }
+
+    #scissors {
+      font-size: 44.5px;
+      margin-top: -24px;
+    }
+
+    #lizard {
+      font-size: 61px;
+      margin-top: -21px;
+    }
+
+    #spock {
+      font-size: 65px;
+      margin-top: -27px;
+    }
+
+    p {
+      height: auto;
+    }
+
+    #form-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #enter-name {
+      color: #ffd000;
+      caret-color: #ffd000;
+      padding: 5px;
+      width: 150px;
+      margin: 20px 0;
+      border: none;
+      border-bottom: 3px solid #ffd000;
+      background-color: transparent;
+      font-size: 16px;
+      text-align: center;
+      letter-spacing: 1.3px;
+    }
+
+    #enter-name:focus {
+      letter-spacing: 1.3px;
+    }
+
+    #play {
+      display: flex;
+      margin-top: 10px;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      border-radius: 40px;
+      padding: 30px 30px;
+      background-color: #ffd000;
+      transition: 0.6s
+    }
+
+    #play:hover {
+      padding: 30px 75px;
+      transition: 0.6s
+    }
+
+    #play-icon {
+      position: relative;
+      left: 3px;
+      border-top: 13px solid transparent;
+      border-bottom: 13px solid transparent;
+      border-left: 26px solid white;
+      border-right: 0px solid transparent;
+    }
+
+    #play-button {
+      position: absolute;
+      border: none;
+      background-color: transparent;
+      font-family: 'Arial';
+      font-size: 30px;
+      color: transparent;
+      height: 60px;
+      width: 60px;
+      transition: 0.6s;
+    }
+
+    #play-button:hover {
+      width: 150px;
+      transition: 0.6s;
+    }
+  </style>
+  <title>Rock Paper Scissors Lizard Spock</title>
 </head>
 <body>
-  <h1>Rock Paper Scissors</h1>
-  <form action="/play" method="POST">
-  <input type="text" name="player-name" placeholder="Enter your name">
-  <input type="submit" value="PLAY">
-  </form>
+  <div id="content">
+    <div id='homepage-header'>
+      <p id="rock">Rock</p>
+      <p id="paper">Paper</p>
+      <p id="scissors">Scissors</p>
+      <p id="lizard">Lizard</p>
+      <p id="spock">Spock</p>
+    </div>
+    <form action="/play" method="POST">
+    <div id="form-content">
+      <input id="enter-name" type="text" name="player-name" placeholder="enter your name" autocomplete="off">
+      <div id="play">
+        <div id="play-icon"></div>
+        <input id="play-button" type="submit" value="PLAY">
+      </div>
+    </div>
+    </form>
+  </div>
 </body>
 </html>

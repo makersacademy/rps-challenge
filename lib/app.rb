@@ -5,6 +5,11 @@ require_relative 'computer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
+  configure do
+    set :static, true
+  set :root, File.dirname(__FILE__)
+  set :public, 'public'
+  end
   
   before do
     @game = Game.instance
