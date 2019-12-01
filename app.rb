@@ -2,17 +2,31 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base 
   enable :sessions
- 
 
-get '/' do
-  erb :index
+  get '/' do
+    erb :index
 end
 
 
 post '/names' do
-  @player_1_name = params[:player_1_name]
+  session[:player_1_name] = params[:player_1_name]
+   redirect '/play'
+end
+
+
+get '/play' do 
+  @player_1_name = session[:player_1_name]
+  @rock_paper_scissor = session[:rock_paper_scissor]
+
   erb :play
 end
+
+
+post '/play' do
+  session[:rock_paper_scissor] = params[:rock_paper_scissor]
+  redirect '/play'
+end
+
 
 
   run! if app_file == $0
