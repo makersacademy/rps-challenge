@@ -18,6 +18,4 @@ class Game
     return @computer.name if @player1.choice == WIN_HAND[@computer.choice.to_sym]
     "Draw"
   end
-
-
 end

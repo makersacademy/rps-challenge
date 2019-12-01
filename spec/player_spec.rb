@@ -8,7 +8,7 @@ describe Player do
     expect(subject.name).to eq("Andrew")
   end
 
-  it "should initialize with a score of 0, and return it to the user when hp is called" do 
+  it "should initialize with a score of 0, and return it to the user when score is called" do 
     expect(subject.score).to eq(0)
   end
 

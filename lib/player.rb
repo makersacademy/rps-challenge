@@ -8,6 +8,4 @@ class Player
     @score = 0
     @choice = nil
   end
-
-
 end
