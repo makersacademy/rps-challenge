@@ -42,4 +42,29 @@ RSpec.describe Game do
       expect(subject.instance.verdict).to eq 'DRAW'
     end
   end
+
+  describe '#score' do
+    before(:each) do
+      allow(test_opponent).to receive(:hand).and_return 'Rock'
+    end
+    
+    after(:each) do
+      subject.instance.verdict
+    end
+
+    it 'awards a point to the player on winning a round' do
+      allow(sam).to receive(:hand).and_return 'Paper'
+      expect(subject.instance.score).to receive(:one_to_player).once
+    end
+
+    it 'awards a point to the computer on winning a round' do
+      allow(sam).to receive(:hand).and_return 'Scissors'
+      expect(subject.instance.score).to receive(:one_to_opponent).once
+    end
+
+    it 'awards points to both on a drawn round' do
+      allow(sam).to receive(:hand).and_return 'Rock'
+      expect(subject.instance.score).to receive(:points_for_both).once
+    end
+  end
 end

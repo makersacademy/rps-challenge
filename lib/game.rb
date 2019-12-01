@@ -1,9 +1,10 @@
 require_relative 'computer'
+require_relative 'score'
 
 class Game
-  attr_reader :current_player, :opponent
+  attr_reader :current_player, :opponent, :score
 
-  IS_BEATEN_BY = { 
+  HANDS_BEATEN_BY = { 
     'Rock' => ['Scissors', 'Lizard'], 
     'Paper' => ['Rock', 'Spock'], 
     'Scissors' => ['Lizard', 'Paper'],
@@ -11,8 +12,9 @@ class Game
     'Spock' => ['Rock', 'Scissors']
   }
 
-  def initialize(opponent = Computer.new)
+  def initialize(opponent = Computer.new, score = Score.new)
     @opponent = opponent
+    @score = score
   end
 
   def assign_player(current_player)
@@ -25,10 +27,10 @@ class Game
   end
 
   def verdict
-    return 'DRAW' if opponent.hand == current_player.hand
-    return 'YOU WIN' if IS_BEATEN_BY[current_player.hand].include? opponent.hand
-    
-    'YOU LOSE'
+    return draw if opponent.hand == current_player.hand
+    return player_wins if HANDS_BEATEN_BY[current_player.hand].include? opponent.hand
+
+    player_loses
   end
 
   @current_game = new
@@ -40,5 +42,22 @@ class Game
 
   def self.instance
     @current_game
+  end
+
+  private
+
+  def draw
+    score.points_for_both 
+    'DRAW' 
+  end
+
+  def player_wins
+    score.one_to_player
+    'YOU WIN'
+  end
+
+  def player_loses
+    score.one_to_opponent
+    'YOU LOSE'
   end
 end
