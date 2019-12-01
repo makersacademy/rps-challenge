@@ -4,18 +4,13 @@ require_relative 'rules'
 
 class Game
 
-  def initialize (player, computer, rules = rules.new)
+  def initialize (player, computer, rules = Rules.new)
     @player = player
     @computer = computer
     @rules = rules
   end
 
   def winner
-
-    if @rules[@player.choice].include? @computer.comp_choice
-      :player
-    else
-    end
-
+    @rules.winner(@player.choice, @computer.comp_choice)
   end
 end
