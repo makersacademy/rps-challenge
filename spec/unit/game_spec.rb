@@ -20,7 +20,6 @@ describe Game do
   end
 
   it 'should generate Scissors' do
-    allow(player_1)
     srand(3)
     expect(subject.random_move).to eq "Scissors"
   end
@@ -30,6 +29,6 @@ describe Game do
   #     srand(2)
   #     subject.random_move
   #   end
-  end
+  # end
 
 end
