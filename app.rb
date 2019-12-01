@@ -7,29 +7,34 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :homepage
   end
 
+  post '/form' do
+    @game = Game.create
+    @game.player.name = params["Player name"]
+    redirect '/play'
+  end
+
   get '/play' do
-    @player_name = session[:player]
-    @player_turn = session[:player_turn]
-    if @player_turn
-      @game = Game.new(@player_name, @player_turn, Player, Computer)
-      @computer_turn = @game.computers_turn
-      @winner = @game.winner
-    end
+    @player_name = @game.player.name
     erb :play
   end
 
-  post '/form' do
-    session[:player] = params["Player name"]
-    redirect '/play'
+  post '/play' do
+    @game.player.turn = params["player_turn"]
+    redirect '/result'
   end
 
-  post '/player_turn' do
-    session[:player_turn] = params["player_turn"]
-    redirect '/play'
+  get '/result' do
+    @player_turn = @game.player.turn
+    @player_name = @game.player.name
+    erb @game.result
   end
 
   run! if app_file == $0

@@ -1,6 +1,6 @@
 <h2> Good luck <%=@player_name%>! </h2>
 
-<form action="/player_turn" method="post">
+<form action="/play" method="post">
   Rock
   <input type="radio" id="rock" name="player_turn" value="rock"> <br>
   Paper
@@ -9,15 +9,3 @@
   <input type="radio" id="scissors" name="player_turn" value="scissors"> <br>
   <input type="submit" value="GO!" <br>
 </form>
-
-<% if @player_turn %>
-  <h3> You chose <%= @player_turn %>! </h3>
-  <h3> Computer chose <%= @computer_turn %>! </h3>
-  <% if @winner == :win %>
-    <h1> <%=@player_name%> wins! </h1>
-  <% elsif @winner == :lose %>
-    <h1> Computer wins! Better luck next time, <%=@player_name%>! </h1>
-  <% else %>
-    <h1> It's a draw! </h1>
-  <% end %>
-<% end %>

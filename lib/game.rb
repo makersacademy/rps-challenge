@@ -2,31 +2,37 @@ class Game
 
   RULES = { rock: :scissors, paper: :rock, scissors: :paper }
 
-  # [
-  #   { player: :Rock, computer: :Scissors, winner: :Player },
-  #   { player: :Rock, computer: :Paper, winner: :Computer },
-  #   { player: :Paper, computer: :Rock, winner: :Player },
-  #   { player: :Paper, computer: :Scissors, winner: :Computer },
-  #   { player: :Scissors, computer: :Paper, winner: :Player },
-  #   { player: :Scissors, computer: :Rock, winner: :Computer },
-  # ]
+  attr_reader :computer_turn, :player
 
-  attr_reader :computers_turn
-
-  def initialize(player_name, player_turn, player_class = Player, computer_class = Computer)
-    @player = player_class.new(player_name, player_turn)
+  def initialize(player_class = Player, computer_class = Computer)
+    @player = player_class.new
     @computer = computer_class.new
-    @computers_turn = @computer.turn
-    @players_turn = @player.turn.to_sym
+    @game = ""
+    @computer_turn = ""
   end
 
-  def winner
-    if @players_turn == @computers_turn
+  def self.create(player_1 = Player, player_2 = Computer)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
+  end
+
+  def result
+    @player_turn = @player.turn.to_sym
+    computers_turn
+    if @player_turn == @computer_turn
       :draw
-    elsif RULES[@players_turn] == @computers_turn
+    elsif RULES[@player_turn] == @computer_turn
       :win
     else :lose
     end
   end
 
+  private
+
+  def computers_turn
+    @computer_turn = @computer.turn
+  end
 end
