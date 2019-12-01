@@ -1,0 +1,9 @@
+<h1>Begin Duelling!</h1>
+<h2><%= session[:player_1] %> vs <%= session[:player_2] %></h2>
+<form action="/player-1-choice" method="post">
+<p><%= session[:player_1] %>, please choose rock, paper or scissors</p>
+  <input id="rock" type="radio" name="player_1_choice" value="rock"> Rock<br>
+  <input id="paper" type="radio" name="player_1_choice" value="paper"> Paper<br>
+  <input id="scissors" type="radio" name="player_1_choice" value="scissors"> Scissors<br>
+  <input id="submit" type="submit" value="Submit">
+</form>
