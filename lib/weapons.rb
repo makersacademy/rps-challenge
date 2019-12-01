@@ -1,8 +1,8 @@
 class Weapons
 
-  attr_reader :weapons, :rules
+  attr_reader :rules
 
-  WEAPONS = [:rock, :paper, :scissors, :lizard, :spock]
+  # WEAPONS = [:rock, :paper, :scissors, :lizard, :spock]
 
   RULES = { rock: [:scissors, :lizard],
     paper: [:rock, :spock],
@@ -10,8 +10,7 @@ class Weapons
     lizard: [:paper, :spock],
     spock: [:rock, :scissors] }
       
-  def initialize(weapons = WEAPONS, rules = RULES)
-    @weapons = weapons
+  def initialize(rules = RULES)
     @rules = rules
   end
 
