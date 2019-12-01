@@ -1,4 +1,4 @@
-class Weapons
+class Rules
 
   attr_reader :rules
 
@@ -13,10 +13,20 @@ class Weapons
     @rules = rules
   end
 
-  def randomize
-    @rules.keys.sample
+  def choices
+    @rules.keys
   end
-  
-  # Use a `Weapon` class with a `beats?` or similar method that takes ¢# another weapon instance as a parameter.
+
+  def winner(choice, comp_choice)
+    
+    if @rules[choice].include?comp_choice
+      :player
+    elsif choice == comp_choice
+      :draw
+    else
+      :computer
+    end
+
+  end
 
 end

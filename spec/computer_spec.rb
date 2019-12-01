@@ -1,14 +1,14 @@
 require 'computer'
-require 'weapons'
+require 'rules'
 
 describe Computer do
 
   let(:name) { double :name }
-  let(:weapons) { double :weapons } 
-  subject(:computer) { Computer.new(name, weapons) }
+  let(:choices) { double :choices } 
+  subject(:computer) { Computer.new(name, choices) }
 
   before do
-    allow(weapons).to receive(:randomize).and_return(:rock)
+    allow(choices).to receive(:sample).and_return(:rock)
   end
 
   describe "#name" do 

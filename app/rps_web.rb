@@ -1,4 +1,4 @@
 require 'sinatra/base'
 
-class RPS < Sinatra::Base
+class RPSWeb < Sinatra::Base
 end

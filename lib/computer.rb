@@ -1,19 +1,19 @@
-require_relative 'weapons'
+require_relative 'rules'
 
 class Computer
 
   COMP_NAMES = [:Cerebro, :Duotronics, :HAL_9000, :Skynet, :The_Matrix]
 
-  attr_reader :name
+  attr_reader :name, :comp_choice
 
-  def initialize(name = COMP_NAMES.sample, weapons = Weapons.new)
+  def initialize(name = COMP_NAMES.sample, choices)
     @name = name
-    @weapons = weapons
+    @choices = choices
   end
 
   def comp_choice
 
-    @comp_choice = @weapons.randomize
+    @comp_choice = @choices.sample
 
   end
 
