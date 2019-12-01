@@ -1,6 +1,12 @@
 class Game
-  WEAPONS = [:rock, :paper, :scissors]
-  WIN_COMBINATIONS = { :rock => :scissors, :paper => :rock, :scissors => :paper }
+  WEAPONS = [:rock, :paper, :scissors, :spock, :lizard]
+
+  WIN_COMBINATIONS = { :rock => [:scissors, :lizard],
+                       :paper => [:spock, :rock],
+                       :scissors => [:lizard, :paper],
+                       :spock =>  [:rock, :scissors],
+                       :lizard => [:paper, :spock]
+                      }
   
   def self.instance
     @game
@@ -19,7 +25,7 @@ class Game
 
   def result
     return :tie if player_choice == computer_choice
-    return :win if WIN_COMBINATIONS[player_choice] == computer_choice
+    return :win if WIN_COMBINATIONS[player_choice].include? computer_choice
 
     :lose
   end
