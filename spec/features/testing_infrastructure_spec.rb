@@ -1,3 +1,6 @@
+require 'game'
+game = Game.new
+
 feature 'testing infrastructure' do
   scenario 'Can run app and check page content' do
     visit('/')
@@ -32,11 +35,11 @@ feature 'submit rps' do
     click_button 'Submit'
     fill_in :rps, with: 'Rock'
     click_button 'Submit'
-    expect(page). to have_content 'You have chosen: Rock!'
+    expect(page). to have_content 'You have chosen: Rock'
   end
 end
 
-feature 'machin rps' do
+feature 'machine rps' do
   scenario 'machine selects its rock paper or scissors choice' do
     visit ('/')
     fill_in :player_1_name, with: 'Juan'
@@ -44,5 +47,17 @@ feature 'machin rps' do
     fill_in :rps, with: 'Rock'
     click_button 'Submit'
     expect(page). to have_content 'The machine has chosen:'
+  end
+end
+
+feature 'Result testing' do
+  scenario 'Rock paper scissors winner is worked out and visable on page' do
+    visit ('/')
+    fill_in :player_1_name, with: 'Juan'
+    click_button 'Submit'
+    fill_in :rps, with: 'Rock'
+    click_button 'Submit'
+    allow(game).to receive(:generate) { "Scissors" }
+    expect(page). to have_content 'Yehays, you win!'
   end
 end
