@@ -7,9 +7,15 @@ feature "result page" do
   end
 
   context "player has selected Rock" do
-    scenario "player has selected to Rock" do
+    before do
       click_on "Rock"
+    end
+    scenario "player has selected to Rock" do
       expect(page).to have_content "You have selected Rock"
+    end
+
+    scenario "show msg for what has been selected by opponent" do
+      expect(page).to have_content "Your opponent has selected"
     end
   end
 

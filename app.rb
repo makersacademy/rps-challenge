@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative 'lib/player'
+require_relative 'lib/game'
 
 class Rps < Sinatra::Base
 
@@ -27,7 +29,11 @@ class Rps < Sinatra::Base
   get '/move_page' do
     @move = session[:move]
     # This sets the move for the player object
-    session[:player1].send @move.downcase.to_sym
+    @player1 = session[:player1]
+    @player1.send @move.downcase.to_sym
+    session[:game] = Game.new(@player1)
+    @game = session[:game]
+    @game.random_move
     erb(:move_page)
   end
 
