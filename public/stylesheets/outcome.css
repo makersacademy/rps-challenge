@@ -1,0 +1,18 @@
+body {
+  background-color: rgb(159, 216, 237);
+  font-family: Lato;
+}
+
+.container {
+	width: 365px;
+	margin: 80px auto;
+	text-align: center;
+}
+
+#result {
+  color: rgb(3, 95, 115);
+}
+
+#explanation {
+  color: white;
+}

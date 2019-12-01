@@ -6,13 +6,13 @@
 <div class="container">
   <h1>Welcome <%= @game.player.name %></h1>
 
-  <p>Please pick an option:</p>
+  <h4>Please pick an option:</h4>
   <form action='/choice' method='post'>
     <select name="option">
       <option>Rock</option>
       <option>Paper</option>
       <option>Scissors</option>
-    </select> 
+    </select>
     <input class="btn btn-md btn-default btn-light" type="submit" name="Submit" value="Submit">
   </form>
   </div>
