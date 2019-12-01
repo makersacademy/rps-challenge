@@ -23,6 +23,7 @@ class RockPaperScissors < Sinatra::Base
   post "/choose_weapon" do
     @game = Game.instance
     @game.update_player_choice(params[:player_choice])
+    @game.update_computer_choice
     redirect "/result"
   end
 

@@ -1,4 +1,4 @@
-<h1>It is a tie!</h1>
+<h1>It is a tie! <%= @game.player.choice.capitalize %> matches <%= @game.computer.choice.capitalize %>!</h1>
 
 <form action="/play" type="get">
   <input type="submit" value="Start a new game">

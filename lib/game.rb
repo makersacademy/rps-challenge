@@ -16,7 +16,7 @@ class Game
     @game = Game.new(player, computer)
   end
 
-  attr_reader :player
+  attr_reader :player, :computer
 
   def initialize(player, computer)
     @player = player
@@ -24,25 +24,17 @@ class Game
   end
 
   def result
-    return :tie if player_choice == computer_choice
-    return :win if WIN_COMBINATIONS[player_choice].include? computer_choice
+    return :tie if @player.choice == @computer.choice
+    return :win if WIN_COMBINATIONS[@player.choice].include? @computer.choice
 
     :lose
-  end
-
-  def player_name
-    @player.name
-  end
-
-  def player_choice
-    @player.choice
   end
 
   def update_player_choice(choice)
     @player.update_choice(choice.to_sym)
   end
 
-  def computer_choice
+  def update_computer_choice
     @computer.random_choice
   end
 end

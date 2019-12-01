@@ -1,4 +1,4 @@
-<h1>Congratulations, you won!</h1>
+<h1>Congratulations, you won! <%= @game.player.choice.capitalize %> beats <%= @game.computer.choice.capitalize %>!</h1>
 
 <form action="/play" type="get">
   <input type="submit" value="Start a new game">

@@ -1,6 +1,7 @@
 class Computer
+  attr_reader :choice
 
   def random_choice
-    Game::WEAPONS.sample
+    @choice = Game::WEAPONS.sample
   end
 end

@@ -1,4 +1,4 @@
-<h1>Bad luck, you lost!</h1>
+<h1>Bad luck, you lost! <%= @game.player.choice.capitalize %> loses to <%= @game.computer.choice.capitalize %>!</h1>
 
 <form action="/play" type="get">
   <input type="submit" value="Start a new game">
