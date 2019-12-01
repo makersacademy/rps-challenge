@@ -7,8 +7,8 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
   configure do
     set :static, true
-  set :root, File.dirname(__FILE__)
-  set :public, 'public'
+    set :root, File.dirname(__FILE__)
+    set :public, 'public'
   end
   
   before do
@@ -19,8 +19,20 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
+  post '/menu' do
+    redirect '/'
+  end
+
   post "/play" do
     @game.assign_player(Player.new(params['player-name']))
+    redirect '/play'
+  end
+
+  post '/play-again' do
+    redirect '/play'
+  end
+
+  get '/play' do
     erb :play
   end
 
