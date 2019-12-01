@@ -1,0 +1,23 @@
+body {
+  background-color: rgb(159, 216, 237);
+  font-family: Lato;
+  color: rgb(3, 95, 115);
+}
+
+.container {
+	width: 365px;
+	margin: 80px auto;
+	text-align: center;
+}
+
+h1 {
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4),
+				       0px 1px 1px rgba(0, 0, 0, 0.1),
+				       0px 5px 7px rgba(0, 0, 0, 0.4);
+  font-weight: 400;
+  font-size: 3em;
+}
+
+h4 {
+  color: white;
+}

@@ -1,0 +1,18 @@
+<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheets/play.css">
+
+
+<div class="container">
+  <h1 >Welcome <%= @game.player.name %></h1>
+
+  <h4>Please pick an option:</h4>
+  <form action='/choice' method='post'>
+    <select name="option">
+      <option>Rock</option>
+      <option>Paper</option>
+      <option>Scissors</option>
+    </select>
+    <input class="btn btn-md btn-default btn-light" type="submit" name="Submit" value="Submit">
+  </form>
+  </div>
