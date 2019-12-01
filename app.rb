@@ -9,12 +9,13 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:player1] = params["player"]
+    session[:player1_name] = params["player"]
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:player1]
+    session[:player1] = Player.new(session[:player1_name])
+    @player1 = session[:player1]
     erb(:play)
   end
 
@@ -25,6 +26,8 @@ class Rps < Sinatra::Base
 
   get '/move_page' do
     @move = session[:move]
+    # This sets the move for the player object
+    session[:player1].send @move.downcase.to_sym
     erb(:move_page)
   end
 
