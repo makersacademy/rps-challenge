@@ -1,6 +1,6 @@
 # RPS Challenge
 
-User Stories
+User stories
 -------
 
 ```
@@ -28,6 +28,7 @@ Once the local server is running, open the site in your browser.  For `port 9292
 http://localhost:9292
 ```
 All should be in order!<br/>
+<br/>
 
 Running the tests
 -------
@@ -41,23 +42,26 @@ Feel free to also run `Rubocop` – a ruby code-quality checker
 ```
 $ rubocop
 ```
+<br/>
 
-Playing the game
+Playing the game 
 -------
-### Home Screen
+### Home screen
 <p align="center">
   <img src="/README images/Home.png" width="100%" title="Home page image">
 </p>
 
 Enter a name to begin; the name will persist until the player presses `Return To Menu`
+<br/>
 
-### Player Choice
+### Player choice
 <p align="center">
   <img src="/README images/Player Choice.png" width="100%" title="Home page image">
 </p>
 
 The CPU opponent, `MA-3RPS3000` will make random moves in response to a players choices.<br/>
 Each game results in a win, a loss or a draw.
+<br/>
 
 ### Keeping score
 <p align="center">
