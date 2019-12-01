@@ -3,6 +3,18 @@ require "computer"
 describe Computer do
   let(:computer) { Computer.new }
 
+  describe "#choice" do
+    it "should return nil for an initialized object" do
+      expect(computer.choice).to eq nil
+    end
+
+    it "should return the computer's choice" do
+      srand(2)
+      computer.random_choice
+      expect(computer.choice).to eq :rock
+    end
+  end
+
   describe "#random_choice" do
     it "should return :rock for random seed 2" do
       srand(2)

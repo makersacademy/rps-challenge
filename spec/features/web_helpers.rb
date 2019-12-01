@@ -6,5 +6,5 @@ end
 
 def play_a_game
   choose "Rock"
-  click_button "OK"
+  click_button "Play"
 end

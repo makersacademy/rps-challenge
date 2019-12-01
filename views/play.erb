@@ -1,4 +1,4 @@
-<h2>Welcome <%= @game.player.name %>, let's start a game!</h2>
+<h1>Welcome <%= @game.player.name %>, let's start a game!</h1>
 
 <form action="/choose_weapon" method="post">
   <label for="rock">
@@ -26,5 +26,5 @@
     <input type="radio" name="player_choice" id="lizard" value="lizard">
   </label>
 
-  <input type="submit" value="OK">
+  <input type="submit" value="Play">
 </form>

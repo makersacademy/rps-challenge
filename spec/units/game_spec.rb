@@ -11,6 +11,12 @@ describe Game do
     end
   end
 
+  describe "#computer" do
+    it "should return the computer" do
+      expect(game.computer).to eq computer
+    end
+  end
+
   describe "#result" do
     context "when player choses :rock" do
       let(:player) { double :player, choice: :rock }
@@ -160,8 +166,15 @@ describe Game do
 
   describe "#update_player_choice" do
     it "should return the updated player's choice" do
-      allow(player).to receive(:update_choice).and_return "Rock"
-      expect(game.update_player_choice("Rock")).to eq "Rock"
+      allow(player).to receive(:update_choice).and_return :rock
+      expect(game.update_player_choice(:rock)).to eq :rock
+    end
+  end
+
+  describe "#update_computer_choice" do
+    it "should return the updated computer's choice" do
+      allow(computer).to receive(:random_choice).and_return :rock
+      expect(game.update_computer_choice).to eq :rock
     end
   end
 end
