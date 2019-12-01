@@ -13,6 +13,10 @@ class Weapons
     @rules = rules
   end
 
+  def randomize
+    @rules.keys.sample
+  end
+  
   # Use a `Weapon` class with a `beats?` or similar method that takes ¢# another weapon instance as a parameter.
 
 end

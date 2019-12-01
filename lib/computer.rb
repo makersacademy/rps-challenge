@@ -13,7 +13,7 @@ class Computer
 
   def comp_choice
 
-    @comp_choice = @weapons.rules.keys.sample
+    @comp_choice = @weapons.randomize
 
   end
 
