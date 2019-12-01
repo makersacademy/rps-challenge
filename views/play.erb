@@ -1,4 +1,4 @@
-<h2> Good luck <%=@player%>! </h2>
+<h2> Good luck <%=@player_name%>! </h2>
 
 <form action="/player_turn" method="post">
   Rock
@@ -14,9 +14,9 @@
   <h3> You chose <%= @player_turn %>! </h3>
   <h3> Computer chose <%= @computer_turn %>! </h3>
   <% if @winner == "Computer" %>
-    <h1> Computer wins! </h1>
+    <h1> Computer wins! Better luck next time, <%=@player_name%>! </h1>
   <% elsif @winner == "Player" %>
-    <h1> <%=@player%> wins! </h1>
+    <h1> <%=@player_name%> wins! </h1>
   <% else %>
     <h1> It's a draw! </h1>
   <% end %>

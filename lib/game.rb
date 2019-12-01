@@ -9,17 +9,17 @@ class Game
     { player: :Scissors, computer: :Rock, winner: :Computer },
   ]
 
-  attr_reader :players_turn, :computers_turn
+  attr_reader :computers_turn
 
-  def initialize(players_turn, computer_class = Computer)
-    @players_turn = players_turn
+  def initialize(player_name, player_turn, player_class = Player, computer_class = Computer)
+    @player = player_class.new(player_name, player_turn)
     @computer = computer_class.new
     @computers_turn = @computer.turn
-    @play = { player: @players_turn.to_sym, computer: @computers_turn.to_sym }
+    @play = { player: @player.turn.to_sym, computer: @computers_turn.to_sym }
   end
 
   def winner
-    if @players_turn == @computers_turn
+    if @player.turn == @computers_turn
       "Draw"
     else
       RULES.each { |game|

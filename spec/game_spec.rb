@@ -2,16 +2,11 @@ require 'game'
 
 describe Game do
 
-  subject(:game) { Game.new(player, computer_class) }
-  let(:player) { "Paper" }
+  subject(:game) { Game.new("Hannah", "Paper", player_class, computer_class) }
+  let(:player_class) { double :player_class, new: player }
+  let(:player) { double :player, turn: "Paper" }
   let(:computer_class) { double :computer_class, new: computer }
   let(:computer) { double :computer, turn: "Rock" }
-
-  describe "#players_turn" do
-    it "returns the player's turn" do
-      expect(subject.players_turn).to eq "Paper"
-    end
-  end
 
   describe "#computers_turn" do
     it "returns the computer's turn" do

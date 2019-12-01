@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/computer'
 require_relative 'lib/game'
+require_relative 'lib/player'
 
 class RPS < Sinatra::Base
 
@@ -11,10 +12,10 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player = session[:player]
+    @player_name = session[:player]
     @player_turn = session[:player_turn]
     if @player_turn
-      @game = Game.new(@player_turn, Computer)
+      @game = Game.new(@player_name, @player_turn, Player, Computer)
       @computer_turn = @game.computers_turn
       @winner = @game.winner
     end
