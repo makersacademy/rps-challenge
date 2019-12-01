@@ -8,7 +8,7 @@ describe Computer do
   subject(:computer) { Computer.new(name, weapons) }
 
   before do
-    allow(weapons).to receive(:rules).and_return({rock: [:scissors, :lizard]})
+    allow(weapons).to receive(:rules).and_return({ rock: [:scissors, :lizard] })
     allow(computer).to receive(:sample).and_return(:rock)
   end
 

@@ -13,7 +13,6 @@ class Weapons
     @rules = rules
   end
 
-
   # Use a `Weapon` class with a `beats?` or similar method that takes ¢# another weapon instance as a parameter.
 
 end
