@@ -34,6 +34,30 @@ Feature Test
 
 Run from the terminal: ```ruby app.rb```
 
-Open in the browser: http://localhost:4567/result
+Open in the browser the following URL: http://localhost:4567/result
 
 ![Homapage](./images/1_home_page.png)
+
+Enter your name inside the form and press the "Enter your name" button
+
+![Enter Name](./images/2_enter_name.png)
+
+Welcome page to a new round of the Rock Paper Scissors game with additional Spock and Lizard weapons
+
+![Start a Game](./images/3_start_a_game.png)
+
+Choose a weapon and press the button "play"
+
+![Start a Game](./images/4_player_choice.png)
+
+A lost result!
+
+![Lost Result](./images/5_result_lost.png)
+
+A tie result!
+
+![Tie Result](./images/6_result_tie.png)
+
+A win result!
+
+![Win Result](./images/7_result_win.png)
