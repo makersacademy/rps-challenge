@@ -1,8 +1,13 @@
-<center><%=@name%>, what's your choice?
+<br><center><h1><%=@name%>, what's your choice?</h1>
 <form action='/play' method='post'>
   <input type="submit" name="shape" value="Rock">
   <input type="submit" name="shape" value="Paper">
   <input type="submit" name="shape" value="Scissors">
 </form>
 You chose <%=@shape%>!
+<style>
+body {
+  background-color: #19A6A6;
+}
+</style>
 </center>

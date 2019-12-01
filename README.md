@@ -1,13 +1,17 @@
-# RPS Challenge
+# RPS Challenge - Rock, Paper, Scissors Application
 
 Instructions
 -------
+An application that provides a "Rock, Paper, Scissors" game for the user to play on the website.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+
+To run
+-------
+1. Clone the repo
+2. Run bundle
+3. Run the controller (app.rb)
+4. Visit the local host - http://localhost:4567/
+5. Enjoy the game! :)
 
 Task
 ----

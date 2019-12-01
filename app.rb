@@ -16,11 +16,13 @@ class RPS < Sinatra::Base
   get '/play' do
     @name = session[:name]
     @shape = session[:shape]
+    session[:shape] = params[:shape]
     erb :play
   end
 
   post '/play' do
     session[:shape] = params[:shape]
+    @shape = session[:shape]
     redirect '/result'
   end
 
@@ -29,7 +31,6 @@ class RPS < Sinatra::Base
     @player_move = session[:shape]
     erb @result
   end
-
   run! if app_file == $0
 
 end

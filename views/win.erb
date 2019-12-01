@@ -1,4 +1,12 @@
-<center><h1>Congradulations!</h1>
+<br><center><h1>Congradulations!</h1>
 <h1>You won!</h1>
-You chose <%= @player_move%>
+You chose <%= @player_move%><br>
+<br><form action='/play'>
+  <input type='submit' value='Try again'>
+</form>
+<style>
+body {
+  background-color: lightpink;
+}
+</style>
 </center>
