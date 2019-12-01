@@ -24,10 +24,10 @@ How to get it
 ----
 Run the following commands in your terminal:
 ```
-* git clone git@github.com:IngramCapa/rps-challenge.git
-* cd rps-challenge
-* bundle install
-* ruby rps_web.rb
+git clone git@github.com:IngramCapa/rps-challenge.git
+cd rps-challenge
+bundle install
+ruby rps_web.rb
 ```
 
 How to play it
