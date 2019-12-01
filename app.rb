@@ -20,7 +20,11 @@ class Game < Sinatra::Base
 
   post '/play' do
     session[:shape] = params[:shape]
-    redirect '/play'
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
   end
 
   run! if app_file == $0
