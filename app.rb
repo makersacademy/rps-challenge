@@ -31,7 +31,7 @@ class RPS < Sinatra::Base
   get '/game' do
     @choice = @game.choice
     @name = @game.name
-    @bot_choice = ['Rock', 'Paper', 'Scissors'].sample
+    @bot_choice = @game.bot_choice
     @outcome = @game.outcome(@choice, @bot_choice)
     erb :game
   end

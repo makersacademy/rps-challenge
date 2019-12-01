@@ -1,11 +1,12 @@
 class Game
   
-  attr_reader :name
+  attr_reader :name, :bot_choice
   attr_accessor :choice
 
   def initialize(name = name)
     @name = name
     @choice = ""
+    @bot_choice = ['Rock', 'Paper', 'Scissors'].sample
   end
 
   def self.create(name)
