@@ -19,19 +19,19 @@ describe Game do
   it "should give player1 as winner when selecting rock and computer scissors" do
     allow(player1).to receive(:choice).and_return("Rock")
     allow(computer).to receive(:choice).and_return("Scissors")
-    expect(subject.get_result).to eq(player1.name)
+    expect(subject.get_result).to eq("Andrew Wins!!")
   end
 
   it "should give computer as and winner when selecting paper and player1 scissors" do
     allow(player1).to receive(:choice).and_return("Rock")
     allow(computer).to receive(:choice).and_return("Paper")
-    expect(subject.get_result).to eq(computer.name)
+    expect(subject.get_result).to eq("Computer Wins!!")
   end
 
   it "should give draw when player and computer select rock" do
     allow(player1).to receive(:choice).and_return("Rock")
     allow(computer).to receive(:choice).and_return("Rock")
-    expect(subject.get_result).to eq("Draw")
+    expect(subject.get_result).to eq("It's a Draw!")
   end
 
   
