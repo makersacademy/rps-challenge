@@ -34,7 +34,7 @@ Feature Test
 
 Run from the terminal: ```ruby app.rb```
 
-Open in the browser the following URL: http://localhost:4567/result
+Open in the browser the following URL: http://localhost:4567/
 
 ![Homapage](./images/1_home_page.png)
 
@@ -54,10 +54,10 @@ A lost result!
 
 ![Lost Result](./images/5_result_lost.png)
 
-A tie result!
+Press the button "Start a new game" and play again. A tie result!
 
 ![Tie Result](./images/6_result_tie.png)
 
-A win result!
+Press the button "Start a new game" and play again. A win result!
 
 ![Win Result](./images/7_result_win.png)
