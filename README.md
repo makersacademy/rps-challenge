@@ -13,6 +13,11 @@ To run
 4. Visit the local host - http://localhost:4567/
 5. Enjoy the game! :)
 
+![Sign in to start the game](https://github.com/jj49411/rps-challenge/blob/master/1.png)
+![What's your move?](https://github.com/jj49411/rps-challenge/blob/master/2.png)
+![Game result](https://github.com/jj49411/rps-challenge/blob/master/3.png)
+
+
 Task
 ----
 
