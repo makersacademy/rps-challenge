@@ -302,20 +302,20 @@ class RPSWeb < Sinatra::Application
 end
 ```
 
-## Not storing the weapons in a constant
+## Not storing the rules in a constant
 
 If you have something like this:
 
 ```ruby
-def weapons
+def rules
   ['Rock', 'Paper', 'Scissors']
 end
 ```
 
-Then *four* new objects will be created *every time you call `weapons`*  (what are the four objects?).  Use a constant with symbols instead:
+Then *four* new objects will be created *every time you call `rules`*  (what are the four objects?).  Use a constant with symbols instead:
 
 ```ruby
-WEAPONS = [:rock, :paper, :scissors]
+rules = [:rock, :paper, :scissors]
 ```
 
 ## Inconsistent routing and route naming
@@ -341,20 +341,20 @@ end
 
 In the above example the first route GETs the form that allows a user to create a new game.  This action does not change any state on the server so it's important that we use the GET action, and not POST.  The second route corresponds to the POSTed submission of the new game form.  This action does create some state on the server, i.e. the creation of a particular game, so it makes sense to use the active verb POST here.
 
-## Defining weapons in more than one place
+## Defining rules in more than one place
 
-Don't Repeat Yourself (DRY)!  The list of available weapons should be defined in only one place.  It can be passed around or referenced or injected, but not duplicated!
+Don't Repeat Yourself (DRY)!  The list of available rules should be defined in only one place.  It can be passed around or referenced or injected, but not duplicated!
 
 Let's DRY the code from the encapsulation example above:
 
 ```ruby
 class Game
-  WEAPONS = [:rock, :paper, :scissors]
+  rules = [:rock, :paper, :scissors]
 end
 
 class Computer
   def weapon
-    Game::WEAPONS.sample
+    Game::rules.sample
   end
 end
 
@@ -362,7 +362,7 @@ class Player
   attr_reader :weapon
 
   def weapon=(weapon)
-    fail 'not a possible weapon' unless Game::WEAPONS.includes? weapon
+    fail 'not a possible weapon' unless Game::rules.includes? weapon
     @weapon = weapon
   end
 end
@@ -452,9 +452,9 @@ end
 
 ```ruby
 class Game
-  WEAPONS = [:rock, :paper, :scissors]
+  rules = [:rock, :paper, :scissors]
   def player_choice=(weapon)
-    fail 'not a possible weapon' unless WEAPONS.includes? weapon
+    fail 'not a possible weapon' unless rules.includes? weapon
     @player_choice = weapon
   end
   def result
