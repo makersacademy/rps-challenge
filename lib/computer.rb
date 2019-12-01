@@ -4,7 +4,7 @@ class Computer
 
   COMP_NAMES = [:Cerebro, :Duotronics, :HAL_9000, :Skynet, :The_Matrix]
 
-  attr_reader :name, :comp_choice
+  attr_reader :name
 
   def initialize(name = COMP_NAMES.sample, choices)
     @name = name

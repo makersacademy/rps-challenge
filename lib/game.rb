@@ -4,7 +4,7 @@ require_relative 'rules'
 
 class Game
 
-  def initialize (player, computer, rules = Rules.new)
+  def initialize(player, computer, rules = Rules.new)
     @player = player
     @computer = computer
     @rules = rules
