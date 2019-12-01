@@ -24,15 +24,15 @@ class RPS < Sinatra::Base
   end
 
   post '/player_choice' do
-    $choice = params[:choice]
+    @game.choice = params[:choice]
     redirect '/game'
   end
 
   get '/game' do
+    @choice = @game.choice
     @name = @game.name
-    @choice = $choice
     @bot_choice = ['Rock', 'Paper', 'Scissors'].sample
-    @outcome = @game.outcome($choice, @bot_choice)
+    @outcome = @game.outcome(@choice, @bot_choice)
     erb :game
   end
 

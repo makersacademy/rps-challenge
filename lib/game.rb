@@ -1,9 +1,11 @@
 class Game
   
   attr_reader :name
+  attr_accessor :choice
 
   def initialize(name = name)
     @name = name
+    @choice = ""
   end
 
   def self.create(name)
