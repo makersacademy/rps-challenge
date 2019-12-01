@@ -17,13 +17,14 @@ end
 get '/play' do 
   @player_1_name = session[:player_1_name]
   @rock_paper_scissor = session[:rock_paper_scissor]
-
+  @opponent_selects = session[:opponent_selects]
   erb :play
 end
 
 
 post '/play' do
   session[:rock_paper_scissor] = params[:rock_paper_scissor]
+  session[:opponent_selects] = :paper
   redirect '/play'
 end
 
