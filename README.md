@@ -1,7 +1,5 @@
 # RPS Challenge
 
-[Description](#Description) | [Installation](#Installation) | [How to play in IRB](#How to play in IRB) | [Project Status](#Project Status)
-
 ## Description
 
 This is a web app that allows the user to choose enter their name and then pick either rock, paper, or scissors, while playing against the computer. The user will then either win, lose or draw depending on what the computer plays.
@@ -16,7 +14,7 @@ This is a web app that allows the user to choose enter their name and then pick 
 
 ## How to play in IRB
 
-While the game is intended to be played on the web, it can be played in IRB as well. 
+While the game is intended to be played on the web, it can be played in IRB as well.
 
 <img width="974" alt="Screenshot 2019-12-01 at 13 28 10" src="https://user-images.githubusercontent.com/53044792/69914687-a8c17500-143e-11ea-9ec0-71e217207e45.png">
 
