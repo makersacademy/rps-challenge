@@ -1,10 +1,52 @@
-<div>
-<h2><%= @name %> chose <%= @choice %></h2>
+<style>
+div.title { font-size: 200% }
+div.left { 
+  float: left;
+  padding-top: 20px;
+  padding-left: 300px;
+}
+div.right { 
+  float: right;
+  padding-top: 20px;
+  padding-right: 250px;
+}
+body { 
+  text-align: center;
+  background-color: #152642;
+  color: #FFFFFF;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+ }
+ .button {
+  background-color: #4CAF50;
+  border: 2px solid #4CAF50;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s
+}
+
+.button:hover {
+  background-color: #152642;
+  color: white;
+  border: 2px solid #4CAF50;
+}
+</style>
+
+<div class="left">
+  <h2><%= @name %> chose <%= @choice %></h2>
 </div>
-<div>
-<h2><%= @cpu %> chose <%= @cpu_choice %></h2>
+<div class ="right">
+  <h2><%= @cpu %> chose <%= @cpu_choice %></h2>
 </div>
-<div>
-<h2><%= @message %></h2>
+
+<div style="padding-top: 100px">
+  <h2><%= @message %></h2>
 </div>
-<a href="/play">Play again</a>
+
+<div style="padding-top: 25px">
+  <a href="/play" class="button">Play again</a>
+</div>

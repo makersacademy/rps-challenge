@@ -1,8 +1,48 @@
-<h1>Do you want to play Rock Paper Scissors?</h1>
-<form action="/name" method="POST">
-<div>
-  <label>Enter your name:</label>
-  <input type="text" name="name">
-  <input type="submit" name="Submit">
-</div>
-</form>
+<style>
+div.title { font-size: 200% }
+body { 
+  text-align: center;
+  background-color: #152642;
+  color: #FFFFFF;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+ }
+.button {
+  background-color: #4CAF50;
+  border: 2px solid #4CAF50;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s
+}
+
+.button:hover {
+  background-color: #152642;
+  color: white;
+  border: 2px solid #4CAF50;
+}
+</style>
+
+<body>
+  <div class = "title" style="padding-top: 150px;">
+    Rock Paper Scissors!
+  </div>
+
+  <form action="/name" method="POST">
+    <div style="padding-top: 40px;">
+      <label>Enter your name</label>
+    </div>
+
+    <div style="padding-top: 25px;">
+      <input type="text" name="name" style="text-align: center;">
+    </div>
+
+    <div style="padding-top: 15px;">
+      <button type="submit" id="Submit" class="button">Submit</button>
+    </div>
+  </form>
+
+</body>

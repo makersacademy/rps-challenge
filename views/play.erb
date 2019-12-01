@@ -1,14 +1,38 @@
-<h2>Welcome <%= @name %></h2>
+<style>
+div.title { font-size: 200% }
+body { 
+  text-align: center;
+  background-color: #152642;
+  color: #FFFFFF;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+ }
+ select {
+   width: 100px;
+   margin: 10px;
+ }
+</style>
 
-<div>
-  <h3>Pick an option:</h3>
-  <form action="/result" method="POST">
-    <select name="choice">
-      <option value="rock">Rock</option>
-      <option value="paper">Paper</option>
-      <option value="scissors">Scissors</option>
-    </select>
-    <br>
-    <input type="submit" name="Submit">
-  </form>
+<body>
+
+<div class = "title" style="padding-top: 100px;">
+    Welcome <%= @name %>
 </div>
+
+<div style="padding-top: 30px;">
+  Pick an option
+</div>
+
+  <form action="/result" method="POST">
+    <div style="padding-top: 25px;">
+      <select name="choice">
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+      </select>
+    </div>
+    <div style="padding-top: 15px;">
+      <button type="submit" id="Submit" class="button">Play!</button>
+    </div>
+  </form>
+
+</body>
