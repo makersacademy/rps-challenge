@@ -16,4 +16,11 @@ feature 'play', type: :feature do
     click_on 'Scissors'
     expect(page).to have_content 'Steve played Scissors!'
   end
+
+  # scenario 'player wins' do
+  #   log_in_and_start
+  #   click_on 'Rock'
+  #   click_on 'Next move'
+  #   expect(page).to have_content 'Steve: 1 points'
+  # end
 end

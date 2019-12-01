@@ -3,4 +3,3 @@ def log_in_and_start
   fill_in 'player', with: 'Steve'
   click_on 'Start'
 end
-

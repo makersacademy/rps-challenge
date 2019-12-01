@@ -1,0 +1,16 @@
+<center>
+<h2><%= @player%>: <%= @points%> points</h2>
+<h1>Rock, Paper... Scissors!</h1>
+<form action = '/play_rock'>
+<input value = 'Rock' type = 'submit'></form>
+<form action = '/play_paper'>
+<input value = 'Paper' type = 'submit'></form>
+<form action = '/play_scissors'>
+<input value = 'Scissors' type = 'submit'></form>
+</center>
+
+<style>
+input[type=submit] {
+    width: 18em;  height: 3em;
+}
+</style>

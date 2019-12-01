@@ -3,6 +3,6 @@ require_relative '../../app'
 feature 'homepage', type: :feature do
   scenario 'log in and start' do
     log_in_and_start
-    expect(page).to have_content 'Welcome Steve'
+    expect(page).to have_content 'Steve: 0 points'
   end
 end

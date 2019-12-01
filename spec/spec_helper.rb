@@ -16,7 +16,6 @@ SimpleCov.start
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 Capybara.app = Rps
 
-
 RSpec.configure do |config|
   config.after(:suite) do
     puts
