@@ -13,3 +13,36 @@ feature 'register name' do
   expect(page). to have_content 'Feeling pumped Juan?'
   end
 end
+
+game_choice = 'Choose rock paper or scissors and press submit to play'
+
+feature 'input choice' do
+  scenario 'player can enter their rps choice' do
+    visit ('/')
+    fill_in :player_1_name, with: 'Juan'
+    click_button 'Submit'
+    expect(page). to have_content game_choice
+  end
+end
+
+feature 'submit rps' do
+  scenario 'player can submit their rps choice' do
+    visit ('/')
+    fill_in :player_1_name, with: 'Juan'
+    click_button 'Submit'
+    fill_in :rps, with: 'Rock'
+    click_button 'Submit'
+    expect(page). to have_content 'You have chosen: Rock!'
+  end
+end
+
+feature 'machin rps' do
+  scenario 'machine selects its rock paper or scissors choice' do
+    visit ('/')
+    fill_in :player_1_name, with: 'Juan'
+    click_button 'Submit'
+    fill_in :rps, with: 'Rock'
+    click_button 'Submit'
+    expect(page). to have_content 'The machine has chosen:'
+  end
+end
