@@ -1,0 +1,14 @@
+<h1>Feeling pumped <%= @player_1_name %>?</h1>
+<h2>Choose rock paper or scissors and press play to play</h2>
+<form action="/rps" method="post">
+<div style= "padding-top: 25px;">
+  <select name="rps">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+</div>
+<div style="padding-top: 15px;">
+  <button type="submit" id="Submit" class="button">Play!</button>
+</div>
+</form>
