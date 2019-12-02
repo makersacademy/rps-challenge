@@ -8,3 +8,8 @@ body {
   padding: 3rem;
   background-color: white;
 }
+
+.button {
+  margin: 2.5px;
+  width: 50%;
+}

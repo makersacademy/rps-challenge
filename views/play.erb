@@ -10,16 +10,21 @@
 <body>
   <div class="container" id="main_body">
     <div class="jumbotron">
-      <h1><strong><%= @player_1 %></strong> vs. <strong><%= @player_2 %></strong></h1>
+      <h1><strong><%= @game.player_1.name %></strong> vs. <strong><%= @game.player_2.name %></strong></h1>
     </div>
-      <form action="/play">
-        <button type="submit" class="btn btn-outline-primary">Scissors</button>
+      <% if @game.result %>
+        <h2><%= @game.result %></h2>
+      <% else %>
+        <h2><%= @game.active_player.name %> make your move!</h2>
+      <% end %>
+      <form action="/scissors" method="post">
+        <button type="submit" class="button btn btn-outline-primary">Scissors</button>
       </form>
-      <form action="/play">
-        <button type="submit" class="btn btn-outline-primary">Paper</button>
+      <form action="/paper" method="post">
+        <button type="submit" class="button btn btn-outline-primary">Paper</button>
       </form>
-      <form action="/play">
-        <button type="submit" class="btn btn-outline-primary">Rock</button>
+      <form action="/rock" method="post">
+        <button type="submit" class="button btn btn-outline-primary">Rock</button>
       </form>
   </div>
 </body>

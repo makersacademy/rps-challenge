@@ -8,7 +8,12 @@ describe Game do
   describe "#initialize" do
     it "should store a name when one is passed as an argument" do
       game = Game.new(player_1, player_2)
-      expect(game.player_1).to eq("Kealan")
+      expect(game.player_1).to eq(player_1)
+    end
+
+    it "should make player 1 the active player on initialize" do
+      game = Game.new(player_1, player_2)
+      expect(game.active_player).to eq(player_1)
     end
   end
 
