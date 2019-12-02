@@ -8,7 +8,6 @@ MOVE = [:rock, :paper, :scissors]
 
   def result(player_move)
     puts "----------- #{player_move} ----------"
-    
     @computer_move = random_move
     rule = { rock: :scissors, scissors: :paper, paper: :rock}
 
