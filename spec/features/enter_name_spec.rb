@@ -5,9 +5,7 @@ feature 'Enter name' do
   end
 
   scenario "Display player's name after input" do
-    visit("/")
-    fill_in(:name, with: "John")
-    click_on('Submit')
+    sign_in_and_play
     expect(page).to have_content("Welcome John")
   end
 end
