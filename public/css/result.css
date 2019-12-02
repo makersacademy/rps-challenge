@@ -59,6 +59,10 @@ h2 {
   border-radius: 20px;
   font-size: 40px;
   font-weight: bolder;
+  animation-name: spin;
+  animation-duration: 500ms;
+  animation-iteration-count: 10;
+  animation-timing-function: linear; 
 }
 
 .result-message {
@@ -74,4 +78,13 @@ h2 {
   display: inline-block;
   text-align: center;
   margin: 5px;
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
 }
