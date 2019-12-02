@@ -28,9 +28,10 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @player_move = session[:shape].downcase.to_sym
-    @result = Game.new.result(@player_move)
-    # @computer_move = @result.computer_move.to_s
-    erb @result
+    @result = Game.new
+    @view = @result.result(@player_move)
+    @computer_move = @result.computer_move.to_s
+    erb @view
   end
   run! if app_file == $0
 

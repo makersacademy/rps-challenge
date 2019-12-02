@@ -1,6 +1,7 @@
 class Game 
-
+attr_reader :computer_move
 MOVE = [:rock, :paper, :scissors]
+
 
   def random_move 
     MOVE.sample
