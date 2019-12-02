@@ -13,15 +13,12 @@
   <h2><%=@game.player1.name%> - vs - <%=@game.computer.name%></h2> 
   <div class="container">
     <div class="item1"></div>
-    <form class="item2" action="/result" action="get">
+    <form class="item2" action="/result" method="post">
       <button class='choice-btn' type="submit" name="choice" value="Rock">ROCK</button>
       <button class='choice-btn' type="submit" name="choice" value="Paper">PAPER</button>
       <button class='choice-btn' type="submit" name="choice" value="Scissors">SCISSORS</button>
     </form>
     <div class="item3"></div>
   </div>
-
-  
-
 </body>
 </html>

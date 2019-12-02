@@ -23,18 +23,18 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
- get '/result' do
-    @game = session[:game]
-    @game.player1.choice=params[:choice]
-    @result = @game.get_result
-    erb(:result)
+  post '/result' do
+    session[:game].player1.choice=params[:choice]
+    # @result = @game.get_result
+    redirect '/result'
   end
 
-  # get '/result' do
-  #   @game = session[:game]
-  #   # result = @game.get_result
-  #   erb(:result)
-  # end
+  get '/result' do
+    @game = session[:game]
+    @result = @game.get_result
+    # result = @game.get_result
+    erb(:result)
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

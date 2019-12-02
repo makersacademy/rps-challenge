@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="css/result.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
   <title>RPS - Play!</title>
   <style>
@@ -12,18 +13,19 @@
     }
   </style>
 </head>
+
 <body>
   <h1>ROCK. PAPER. SCISSORS.</h1>
-  <h2><%=@game.player1.name%> - vs - <%=@game.computer.name%></h2>  
-  <div>
-    <p><%=@game.player1.name%>: <%=@game.player1.choice%></p>
+  <h2><%=@game.player1.name%> - vs - <%=@game.computer.name%></h2> 
+  <div class="container">
+    <div class="item1">
+      <p><%=@game.player1.choice%></p>
+    </div>
+    <div class='item2'>
+      <p><%=@result%></p>
+    </div>
+    <div class='item3'>
+      <p><%=@game.computer.choice%></p>
+    </div>
   </div>
-  <div>
-    <p><%=@game.computer.name%>: <%=@game.computer.choice%></p>
-  </div>
-  <div>
-    <p><%=@result%></p>
-  </div>
-
 </body>
-</html>
