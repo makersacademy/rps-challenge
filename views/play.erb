@@ -1,0 +1,8 @@
+<h2>Welcome to the game <%=@player1.name%></h2>
+<h2>Please select a move</h2>
+
+<form action="/move" method="POST">
+  <input type="submit" name="move" value="Rock">
+  <input type="submit" name="move" value="Paper">
+  <input type="submit" name="move" value="Scissors">
+</form>
