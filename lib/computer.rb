@@ -16,5 +16,4 @@ class Computer
   def random_select
     @choice = CHOICES.sample
   end
-
 end

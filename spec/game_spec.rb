@@ -1,7 +1,5 @@
 require 'game'
 
-
-
 describe Game do
 
   subject(:game) { Game.new(player1, computer) }
@@ -33,7 +31,4 @@ describe Game do
     allow(computer).to receive(:choice).and_return("Rock")
     expect(subject.get_result).to eq("It's a Draw!")
   end
-
-  
-
 end

@@ -9,5 +9,4 @@ feature 'home page' do
     visit("/")
     expect(page).to have_content "Sign in to Play"
   end
-  
 end

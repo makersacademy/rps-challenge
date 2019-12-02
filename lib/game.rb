@@ -37,6 +37,7 @@ class Game
 
   def message(result)
     return "It's a Draw!" if result == "Draw"
+    
     "#{result.name} Wins!!"
   end
 

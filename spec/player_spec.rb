@@ -13,7 +13,7 @@ describe Player do
   end
 
   it "should allow the hand choice to be updated" do
-    subject.choice="Rock"
+    subject.choice = "Rock"
     expect(subject.choice).to eq("Rock")
   end
 end

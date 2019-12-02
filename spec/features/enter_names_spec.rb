@@ -6,5 +6,4 @@ feature 'enter name' do
     click_button 'PLAY!'
     expect(page).to have_content("Andrew - vs - Computer")
   end
-
 end

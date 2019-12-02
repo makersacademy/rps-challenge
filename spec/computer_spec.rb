@@ -14,6 +14,4 @@ describe Computer do
     srand(1)
     expect(subject.random_select).to eq "Paper"
   end
-
-
 end
