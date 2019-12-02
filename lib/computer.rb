@@ -1,16 +1,17 @@
 class Computer
 
-  MOVE = ["Rock", "Paper", "Scissors"]
-
-  attr_reader :choice
+  SIGNS = ["Rock", "Paper", "Scissors"]
 
   def initialize
     @choice = nil
-
   end 
 
-  def randomly_choose(move = MOVE)
-    @choice = move if move.is_a? String
-    @choice = move.sample if move.is_a? Array
+  def randomly_choose(sign = SIGNS)
+    @choice = sign if sign.is_a? String
+    @choice = sign.sample if sign.is_a? Array
+  end
+
+  def move
+    @choice
   end
 end

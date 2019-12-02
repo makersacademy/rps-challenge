@@ -14,7 +14,7 @@ describe 'Player' do
 
     it "their choice should be shown by calling :choice on that player's class object" do
       game.player_1.chooses("Rock")
-      expect(game.player_1.choice).to eq "Rock"
+      expect(game.player_1.move).to eq "Rock"
     end
 
   end

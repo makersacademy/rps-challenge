@@ -1,12 +1,13 @@
 require_relative './player'
+require_relative './computer'
+
 class Game
 
-attr_reader :players, :player_move, :computer_move, :winner
+attr_reader :players, :computer, :winner
 
   def initialize(*players)
     @players = [players]
-    @player_move = nil
-    @computer_move = nil
+    @computer = Computer.new
     @winner = nil
     @draw = false
   end
@@ -19,31 +20,25 @@ attr_reader :players, :player_move, :computer_move, :winner
     @players.flatten[1]
   end
 
-  def computer_chooses(sign)
-    @computer_move = sign
+  def computer_choose(sign)
+    @computer.randomly_choose(sign)
   end
 
   def decide_winner
-    player_move = player_1.choice
-    @winner = player_1.name if beat_computer?
-    @winner = "Computer" if !beat_computer?
+    @draw = true && @winner = "It's a draw, no one " if player_1.move == @computer.move
+    @winner = player_1.name if beat_computer? && !draw?
+    @winner = "Computer" if !beat_computer? && !draw?
   end 
-
-  def outcome
-   print "#{player_1.name} wins!" if @winner == player_1.name
-   print "Computer wins!" if @winner == "Computer"
-   print "It's a draw" if @draw
-  end
 
   private 
 
   def beat_computer?
-    case @player_move
-    when "Rock" && computer_move == "Scissors"
+    case player_1.move
+    when "Rock" && @computer.move == "Scissors"
       true
-    when "Paper" && computer_move == "Rock"
+    when "Paper" && @computer.move == "Rock"
       true
-    when "Scissors" && computer_move == "Paper"
+    when "Scissors" && @computer.move == "Paper"
       true
     else
       false
