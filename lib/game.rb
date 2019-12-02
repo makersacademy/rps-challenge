@@ -25,10 +25,15 @@ attr_reader :players, :player_move, :computer_move, :winner
 
   def decide_winner
     player_move = player_1.choice
-    @draw = true && @winner = none if player_move == computer_move
-    @winner = player_1.name if beat_computer? && !draw?
-    @winner = "Computer" if !beat_computer? && !draw?
+    @winner = player_1.name if beat_computer?
+    @winner = "Computer" if !beat_computer?
   end 
+
+  def outcome
+   print "#{player_1.name} wins!" if @winner == player_1.name
+   print "Computer wins!" if @winner == "Computer"
+   print "It's a draw" if @draw
+  end
 
   private 
 
@@ -48,6 +53,4 @@ attr_reader :players, :player_move, :computer_move, :winner
   def draw?
     @draw
   end
-
-
 end

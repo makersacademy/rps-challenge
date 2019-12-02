@@ -6,7 +6,6 @@ require './lib/computer.rb'
 class Rock_Paper_Scissors < Sinatra::Base
 
   get '/' do
-    "Hello"
     erb(:index)
   end
 
@@ -39,7 +38,7 @@ class Rock_Paper_Scissors < Sinatra::Base
 
   get '/scissors' do
     @game = $game
-    @game.player_chooses("Scissors")
+    @game.player_1.chooses("Scissors")
     @game.computer_chooses(Computer.new.randomly_choose)
     @game.decide_winner
     erb(:outcome)

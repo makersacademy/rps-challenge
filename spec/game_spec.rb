@@ -32,7 +32,7 @@ describe 'Game' do
 
 
   describe '#decide_winner' do
-    it "uses the players move and the computers move to determine the winner" do
+    it "uses the player's move and the computer's move to determine the winner" do
       game.player_1.chooses("Rock")
       game.computer_chooses("Paper")
       game.decide_winner
