@@ -24,17 +24,10 @@ h2 {
   grid-template-columns: 3fr 6fr 3fr;
 }
 
-.item1 {
-  /* background-color: cadetblue; */
-}
 
 .item2 {
   /* background-color: salmon; */
   justify-self: center;
-}
-
-.item3 {
-  /* background-color: royalblue; */
 }
 
 .item4 {
@@ -60,4 +53,3 @@ h2 {
   margin: 5px;
 }
 
-  
