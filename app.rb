@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/weapon'
 require './lib/game'
+require './lib/computer'
 
 class RPS < Sinatra::Base
 
@@ -27,7 +28,7 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @player = session[:option]
-    @generator = (Weapon.new).weapons
+    @generator = (Computer.new).weapon
     @results = (Game.new).result
     erb(:next)
   end
