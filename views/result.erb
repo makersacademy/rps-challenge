@@ -18,14 +18,14 @@
       <%# <img src="/images/rock.png" alt="ROCK"> %>
     </div>
     <div class='item2'>
-      <p class="result-message"><%=@result%></p>
+      <p class="result-message" id="showMe"><%=@result%></p>
       <br>
       <form action="/play">
         <button class="play-again-btn" type="submit">Play Again</button>
       </form>
     </div>
     <div class='item3'>
-      <p><%=@game.computer.choice%></p>
+      <p id="showMe"><%=@game.computer.choice%></p>
     </div>
   </div>
 </body>

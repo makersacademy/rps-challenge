@@ -61,8 +61,14 @@ h2 {
   font-weight: bolder;
   animation-name: spin;
   animation-duration: 500ms;
-  animation-iteration-count: 10;
-  animation-timing-function: linear; 
+  animation-iteration-count: 4;
+  animation-timing-function: linear;
+}
+
+
+#showMe {
+  animation: cssAnimation 0s 2s forwards;
+  visibility: hidden;
 }
 
 .result-message {
@@ -88,6 +94,11 @@ h2 {
       transform:rotate(360deg);
   }
 }
+
+@keyframes cssAnimation {
+  to   { visibility: visible; }
+}
+
 
 img {
   width: 90%;
