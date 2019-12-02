@@ -13,6 +13,7 @@ Possible improvements
 * Implement multiplayer functionality
 * Allow user to choose between playing RPS and Rock, Paper, Scissors, Lizard, Spock
 * Improve the look of the webpage
+* Split views into win, loss, draw
 
 Task
 ----
