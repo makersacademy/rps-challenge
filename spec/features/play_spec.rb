@@ -20,7 +20,8 @@ feature 'let play a game' do
   end
 
   scenario 'opponent chooses' do
-    click_button 'Rock'
+    click_button 'Paper'
     expect(page).to have_text('selected Paper')
   end
+  
 end
