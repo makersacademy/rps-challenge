@@ -1,0 +1,21 @@
+<h2><%=@name%></h2>
+
+<% p1_move = @game.player1_move.to_s.capitalize %>
+<% p2_move = @game.player2_move.to_s.capitalize %>
+<% winning_message = case @game.result
+                     when :player1 then @name + " wins!"
+                     when :player2 then "Computer wins!"
+                     else "It's a draw"
+                     end %>
+
+<% unless p1_move == "" %>
+<p>You selected: <%= p1_move %></p>
+<p>Computer chose: <%= p2_move %></p>
+<p><%= winning_message %></p>
+<% end %>
+
+<form action='/move' method='post'>
+  <input type='submit' name='move' value='Rock'>
+  <input type='submit' name='move' value='Paper'>
+  <input type='submit' name='move' value='Scissors'>
+</form>
