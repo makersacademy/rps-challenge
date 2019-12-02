@@ -41,8 +41,10 @@ h2 {
 }
 
 .item2 {
-  /* background-color: salmon; */
-  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
 .item3 {
@@ -59,19 +61,11 @@ h2 {
   font-weight: bolder;
 }
 
-.item4 {
-  background-color: orange;
+.result-message {
+  font-size: 25px;
 }
 
-.item5 {
-  background-color: cadetblue;
-}
-
-.item6 {
-  background-color: cadetblue;
-}
-
-.choice-btn {
+.play-again-btn {
   font-size: 20px;
   width: 200px;
   height: 50px;
