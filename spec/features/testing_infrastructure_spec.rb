@@ -1,4 +1,5 @@
 require 'game'
+require_relative 'web_helpers'
 game = Game.new
 
 feature 'testing infrastructure' do
@@ -10,54 +11,41 @@ end
 
 feature 'register name' do
   scenario 'players can enter and submit their names' do
-    visit('/')
-    fill_in :player_1_name, with: 'Juan'
-    click_button 'Submit'
+    sign_in_and_play
   expect(page). to have_content 'Feeling pumped Juan?'
   end
 end
 
-game_choice = 'Choose rock paper or scissors and press submit to play'
+game_choice = 'Choose rock paper or scissors and press play to play'
 
 feature 'input choice' do
   scenario 'player can enter their rps choice' do
-    visit ('/')
-    fill_in :player_1_name, with: 'Juan'
-    click_button 'Submit'
+    sign_in_and_play
     expect(page). to have_content game_choice
   end
 end
 
 feature 'submit rps' do
   scenario 'player can submit their rps choice' do
-    visit ('/')
-    fill_in :player_1_name, with: 'Juan'
-    click_button 'Submit'
-    fill_in :rps, with: 'Rock'
-    click_button 'Submit'
+    sign_in_and_play
+    selecting_rock
     expect(page). to have_content 'You have chosen: Rock'
   end
 end
 
 feature 'machine rps' do
   scenario 'machine selects its rock paper or scissors choice' do
-    visit ('/')
-    fill_in :player_1_name, with: 'Juan'
-    click_button 'Submit'
-    fill_in :rps, with: 'Rock'
-    click_button 'Submit'
+    sign_in_and_play
+    selecting_rock
     expect(page). to have_content 'The machine has chosen:'
   end
 end
 
 feature 'Result testing' do
   scenario 'Rock paper scissors winner is worked out and visable on page' do
-    visit ('/')
-    fill_in :player_1_name, with: 'Juan'
-    click_button 'Submit'
-    fill_in :rps, with: 'Rock'
-    click_button 'Submit'
-    allow(game).to receive(:generate) { "Scissors" }
+    srand(3)
+    sign_in_and_play
+    selecting_rock
     expect(page). to have_content 'Yehays, you win!'
   end
 end
