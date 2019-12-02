@@ -1,5 +1,37 @@
 # RPS Challenge
 
+## My Solution so far
+
+This is a simple webapp that allows you to unwind with a relaxing game of Rock Paper Scissors
+against a random computer.
+
+### Installation
+
+To install, clone the repo from git hub and in the root folder of the project run
+```
+bundle install
+```
+Once the gems are installed the server can be started by using
+```
+rackup
+```
+The website should then be available on port 9292 of of you local host. Try
+`localhost:9292` in your browser.
+
+### Tests
+
+All tests can be run by running `rspec` in the root project folder.
+
+### Usage
+
+Once the server is up and running and you can open the page in your browser,
+you can begin by entering your name and clicking 'Enter'. You should see a screen
+with the title at the top and your name "in lights". Pick one of the options
+and see if you can beat the world-class level RPS AI.
+
+
+# Original Readme:
+
 Instructions
 -------
 
