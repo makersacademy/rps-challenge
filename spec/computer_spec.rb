@@ -11,7 +11,9 @@ describe Computer do
   end
 
   it "should select Rock, Paper or Scissors at random" do
-    
+    srand(1)
+    expect(subject.random_select).to eq "Paper"
   end
+
 
 end
