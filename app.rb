@@ -7,32 +7,32 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
   post '/play' do
-    session[:player1] = Player.new(params[:player1])
-    session[:computer] = Computer.new
-    session[:game] = Game.new(session[:player1], session[:computer])
+    player1 = Player.new(params[:player1])
+    computer = Computer.new
+    @game = Game.create(player1, computer) 
     redirect '/play'
   end
 
   get '/play' do
-    @game = session[:game]
     erb(:play)
   end
 
   post '/result' do
-    session[:game].player1.choice=params[:choice]
-    # @result = @game.get_result
+    @game.player1.choice=params[:choice]
     redirect '/result'
   end
 
   get '/result' do
-    @game = session[:game]
     @result = @game.get_result
-    # result = @game.get_result
     erb(:result)
   end
 

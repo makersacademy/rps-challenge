@@ -88,3 +88,8 @@ h2 {
       transform:rotate(360deg);
   }
 }
+
+img {
+  width: 90%;
+  height: auto;
+}

@@ -13,6 +13,14 @@ class Game
     @computer = computer
   end
 
+  def self.create(player1, computer)
+    @game = Game.new(player1, computer)
+  end
+
+  def self.instance
+    @game
+  end
+
   def get_result
     @computer.random_select
     result = winner
