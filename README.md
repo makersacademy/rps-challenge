@@ -1,13 +1,9 @@
-# RPS Challenge
+# RPS APP
 
 Task
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+To provide a Rock, Paper, Scissors game on the web with the following user stories:
 
 ```
 As a marketeer
@@ -19,7 +15,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Functionality
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
@@ -27,24 +23,25 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
 ## Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+## Instructions
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+Clone the repository from GitHub to your directory.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+rackup to check the Website. In the rackup informations the ```port``` should be ```9292```.
+Insert ```localhost:9292``` in the URL browser to run the Webapp.
+
+## Screenshots
+
+<img width="636" alt="Screenshot 2019-12-02 at 11 53 46" src="https://user-images.githubusercontent.com/55409351/70066542-cd575180-15e4-11ea-9752-d2fbd462cc12.png">
+<img width="531" alt="Screenshot 2019-12-02 at 11 54 13" src="https://user-images.githubusercontent.com/55409351/70066544-cd575180-15e4-11ea-8edf-9edd69ec64c5.png">
+<img width="406" alt="Screenshot 2019-12-02 at 11 54 30" src="https://user-images.githubusercontent.com/55409351/70066545-cdefe800-15e4-11ea-9e91-605b9c90f6e0.png">
+<img width="433" alt="Screenshot 2019-12-02 at 11 54 44" src="https://user-images.githubusercontent.com/55409351/70066548-cdefe800-15e4-11ea-8942-13ffa6d9e57b.png">
+<img width="529" alt="Screenshot 2019-12-02 at 11 54 57" src="https://user-images.githubusercontent.com/55409351/70066549-ce887e80-15e4-11ea-849e-f99f82bd0161.png">
+
+...
