@@ -7,6 +7,7 @@
   <a href="#user-content-technologies">Technologies</a> 
 </p>
 
+[![Build Status](https://travis-ci.com/Mezela/rps-challenge.svg?branch=master)](https://travis-ci.com/Mezela/rps-challenge)
 The basic rules of the game are:
 - Rock beats Scissors
 - Scissors beats Paper
