@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'sinatra'
+gem 'pg'
+gem 'shotgun'
 
 
 group :test do
