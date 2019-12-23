@@ -50,6 +50,17 @@ Navigate to localhost:9292 in your web browser to play the game.
 1. Run the command `rspec` in the terminal.
 2. Run the command `rubocop` in the terminal to see code quality. 
 
+## Rock, Paper, Scissors 
+![Homepage](Homepage.png)
+
+![Name](Name.png)
+
+![Players](Players.png)
+
+![Turn](Turn.png)
+
+![Finish](Finish.png)
+
 ## Project Status 
 As of 8th October 2019, all user stories have been implemented. 
 Next, I would like to add a feature which gives the player a point if they win and the game is best out of 5. I would like to update the basic CSS currently implemented and add some images to the game. I will need to move my CSS into a separate file and call the relevant file within the relevant views files.
