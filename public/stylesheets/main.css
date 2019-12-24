@@ -11,6 +11,16 @@ body {
   background-color: black;
 }
 
+iframe {
+  border-radius: 50%;
+  position: relative;
+  margin-top: 1em;
+}
+
+.giphy {
+  color: green;
+}
+
 [type=radio] {
   position: absolute;
   opacity: 0;
@@ -34,6 +44,7 @@ body {
   width: auto;
   padding-left: 2em;
   padding-right: 2em;
+  text-align: center;
 }
 
 .btn {
