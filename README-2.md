@@ -2,6 +2,8 @@
 
 A single player _Rock, Paper, Scissors_ game written in Ruby.
 
+<img width="410" alt="Homepage" src="https://user-images.githubusercontent.com/49643736/71422939-9d4c1d00-267d-11ea-9856-fd1b6e4bcd9b.png"> <img width="400" alt="Player's turn" src="https://user-images.githubusercontent.com/49643736/71422893-49413880-267d-11ea-864e-cb4f35cb0be6.png">
+
 ## Contents
 - [User stories](#user-stories)
 - [Features](#features)
