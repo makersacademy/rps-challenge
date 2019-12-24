@@ -1,0 +1,57 @@
+h1 {
+  font-family: 'Hanalei Fill', cursive;
+  font-size: 6em;
+}
+
+body {
+  margin-top: 2em;
+  font-family: 'Special Elite', cursive;
+  color: white;
+  text-align: center;
+  background-color: black;
+}
+
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=radio] + img {
+  cursor: pointer;
+}
+
+[type=radio]:checked + img {
+  outline: 3px solid green;
+}
+
+.form-control-lg {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  width: auto;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.btn {
+  font-size: 2em;
+  position: relative;
+  margin-top: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.win {
+  color: green;
+}
+
+.lose {
+  color: orange;
+}
+
+.draw {
+  color: purple;
+}

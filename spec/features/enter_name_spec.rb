@@ -1,7 +1,7 @@
 feature "Enter player name" do
   scenario "there is a welcoming message for the user" do
     visit '/'
-    message = "Crack your knuckles and get ready to play Rock, Paper, Scissors"
+    message = "Crack your knuckles and get ready to play...\nRock, Paper, Scissors"
     expect(page).to have_content message
   end
 

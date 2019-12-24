@@ -1,11 +1,24 @@
-<h2> Good luck <%=@game.player.name%>! </h2>
+<h1> Smash it <%=@game.player.name%>! </h1>
 
 <form action="/play" method="post">
-  Rock
-  <input type="radio" id="rock" name="player_turn" value="rock"> <br>
-  Paper
-  <input type="radio" id="paper" name="player_turn" value="paper"> <br>
-  Scissors
-  <input type="radio" id="scissors" name="player_turn" value="scissors"> <br>
-  <input type="submit" value="GO!" <br>
+
+  <label>
+    <input type="radio" id="rock" name="player_turn" value="rock" checked>
+    <img src="/rock.png">
+  </label>
+
+  <label>
+    <input type="radio" id="paper" name="player_turn" value="paper">
+    <img src="/paper.png">
+  </label>
+
+  <label>
+    <input type="radio" id="scissors" name="player_turn" value="scissors">
+    <img src="/scissors.png">
+  </label>
+
+  <div>
+    <button type="submit" class="btn btn-success">GO!</button>
+  </div>
+
 </form>

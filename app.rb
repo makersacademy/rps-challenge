@@ -5,14 +5,14 @@ require_relative 'lib/player'
 
 class RPS < Sinatra::Base
 
-  enable :sessions
+  # enable :sessions
 
   before do
     @game = Game.instance
   end
 
   get '/' do
-    erb :homepage
+    erb :homepage, { :layout => :layout }
   end
 
   post '/form' do
@@ -22,7 +22,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    erb :play
+    erb :play, { :layout => :layout }
   end
 
   post '/play' do
@@ -31,7 +31,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    erb @game.result
+    erb @game.result, { :layout => :layout }
   end
 
   run! if app_file == $0

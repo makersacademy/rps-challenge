@@ -4,6 +4,6 @@ feature "Once the game is over" do
     choose "paper"
     click_button "GO!"
     click_button "Play again"
-    expect(page).to have_content "Good luck Hannah!"
+    expect(page).to have_content "Smash it Hannah!"
   end
 end

@@ -1,6 +1,6 @@
-<h3> You chose <%= @game.player.turn %>! </h3>
-<h3> Computer chose <%= @game.computer_turn %>! </h3>
-<h1> <%=@game.player.name%> wins! </h1>
+<h3> You chose <%= @game.player.turn %>. </h3>
+<h3> Sweet... Computer chose <%= @game.computer_turn %>. </h3>
+<h1 class="win"> <%=@game.player.name%> wins! </h1>
 <form action="/play">
-  <input type="submit" value="Play again">
+  <button type="submit" class="btn btn-outline-dark">Play again</button>
 </form>

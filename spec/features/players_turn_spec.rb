@@ -3,6 +3,6 @@ feature "Player can choose Rock, Paper or Scissors" do
     sign_in_and_play
     choose "paper"
     click_button "GO!"
-    expect(page).to have_content "You chose paper!"
+    expect(page).to have_content "You chose paper"
   end
 end

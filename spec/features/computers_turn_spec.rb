@@ -4,6 +4,6 @@ feature "It is the computer's turn" do
     sign_in_and_play
     choose "paper"
     click_button "GO!"
-    expect(page).to have_content "Computer chose rock!"
+    expect(page).to have_content "Computer chose rock"
   end
 end
