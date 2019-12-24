@@ -48,7 +48,7 @@ I would like to be able to play rock/paper/scissors
 Run the below in the terminal in your rps-challenge directory:
 - To install all necessary gems, run ```bundle```
 - To open in web browser run ```ruby app.rb```
-- Open http://localhost:4567/chitter
+- Open http://localhost:4567/
 
 ## Running the tests  
 
