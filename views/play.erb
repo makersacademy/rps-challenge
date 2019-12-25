@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+  <title>RPS | Play</title>
+  <link rel="stylesheet" type="text/css" href="/main.css" />
+  <link rel="stylesheet" type="text/css" href="/play.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+  <% if @winner != nil %>
+    <p id="result">Winner is <%= @winner.name %></p>
+  <% end %>
+  <div id="this-player" class="player">
+    <p class="name"><%= @this_player.name %></p>
+    <button onclick="chooseRock()" class="choice rock-button">Rock</button>
+    <button onclick="choosePaper()" class="choice paper-button">Paper</button>
+    <button onclick="chooseScissors()" class="choice scissors-button">Scissors</button>
+  </div>
+  <div id="other-player" class="player">
+    <p class="name"><%= @other_player.name %></p>
+    <% if @other_player_choice != nil %>
+      <button class="choice rock-button" disabled>Rock</button>
+      <button class="choice paper-button" disabled>Paper</button>
+      <button class="choice scissors-button" disabled>Scissors</button>
+    <% else %>
+      <p id="waiting-for-other-player-message">Waiting for <%= @other_player.name %> to choose...</p>
+    <% end %>
+  </div>
+</div>
+<form id="choose-paper" action="/play/choose_paper" method="post"></form>
+<form id="choose-scissors" action="/play/choose_scissors" method="post"></form>
+<form id="choose-rock" action="/play/choose_rock" method="post"></form>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+  const thisPlayerChoice = "<%= @this_player_choice %>";
+  const otherPlayerChoice = "<%= @other_player_choice %>";
+
+  $(document).ready(function() {
+    indicateChoices();
+  });
+
+  function indicateChoices() {
+    switch (thisPlayerChoice) {
+        case "paper":
+            $("#this-player .choice.paper-button").addClass("selected");
+            break;
+        case "scissors":
+            $("#this-player .choice.scissors-button").addClass("selected");
+            break;
+        case "rock":
+            $("#this-player .choice.rock-button").addClass("selected");
+            break;
+        default:
+            console.log("None chosen");
+    }
+  }
+
+  function chooseRock() {
+      $("#choose-rock").submit();
+  }
+
+  function choosePaper() {
+      $("#choose-paper").submit();
+  }
+
+  function chooseScissors() {
+      $("#choose-scissors").submit();
+  }
+</script>
+</body>
+</html>
