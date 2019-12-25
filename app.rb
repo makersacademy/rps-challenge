@@ -9,7 +9,7 @@ class RPS < Sinatra::Base
   end
 
   get '/' do
-    erb :name_form
+    erb :name_form, { :layout => :layout }
   end
 
   post '/name' do

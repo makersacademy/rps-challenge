@@ -1,0 +1,94 @@
+* {
+  font-family: 'Girassol', cursive;
+}
+
+body {
+  background-image: linear-gradient(to right, red, yellow);
+}
+
+h1 {
+  
+  font-family: 'Hanalei Fill', cursive;
+  font-size: 6em;
+}
+
+h2 {
+  font-size: 4em;
+}
+
+h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.main {
+  margin-top: 10%;
+}
+
+.btn {
+  background-color: rgb(0, 250, 0);
+  padding: 10px 15px;
+  margin-top: 1%;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  color: white;
+  background-color: green;
+  cursor: pointer;
+}
+
+.choice {
+  font-family: 'Girassol', cursive;
+  font-size: 2em;
+  border: 1px solid black;
+  height: 35%;
+  width: 20%;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-radius: 10px;
+}
+
+.choice:hover {
+  box-shadow: 10px 10px 10px black;
+}
+
+.rock {
+  display: inline-block;
+  background-image: url("../Images/rock.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 100%;
+}
+
+.paper {
+  display: inline-block;
+  background-image: url("../Images/paper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.scissors {
+  display: inline-block;
+  background-image: url("../Images/scissors.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@-webkit-keyframes fadein {
+  0% { opacity: 0; }
+  66% { opacity: 0; }
+  100%  { opacity: 1; }
+}
+
+.player-choice {
+  -webkit-animation: 2s ease 0s normal forwards 1 fadein;
+}
+
+.bot-choice {
+  -webkit-animation: 5s ease 0s normal forwards 1 fadein;
+}
+
+#outcome {
+  -webkit-animation: 7s ease 0s normal forwards 1 fadein;
+}

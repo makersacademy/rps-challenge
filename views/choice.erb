@@ -1,6 +1,9 @@
-<center>Make your choice <%= @name %>!
-<form name='choice' action='/player_choice' method='post'>
-  <input type='submit' value='Rock' name='choice'><br>
-  <input type='submit' value='Paper' name='choice'><br>
-  <input type='submit' value='Scissors' name='choice'>
-</form>
+<center>
+<h3>Make your choice <%= @name %>!</h3>
+<div>
+  <form name='choice' action='/player_choice' method='post'>
+      <input type='submit' value='Rock' name='choice' class='btn choice rock'>
+      <input type='submit' value='Paper' name='choice' class='btn choice paper'>
+      <input type='submit' value='Scissors' name='choice' class='btn choice scissors'>
+  </form>
+</div>
