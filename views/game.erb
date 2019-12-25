@@ -1,9 +1,9 @@
 <center>
 <h3>
-  <%= @name %> plays: <span class='player-choice'><%= @choice %></span> <> Botman plays: <span class='bot-choice'><%= @bot_choice %></span>
+  <%= @game.player_name %> plays: <span class='player-choice'><%= @game.choice %></span> <> Botman plays: <span class='bot-choice'><%= @game.bot_choice %></span>
 </h3>
 
-<h2 id='outcome'><%= @outcome %></h2>
+<h2 id='outcome'><%= @game.outcome(@game.choice, @game.bot_choice) %></h2>
 <form name='again?' action='/choice'>
   <input type='submit' value='Play again?' class='btn'>
 </form>

@@ -47,10 +47,12 @@ h3 {
   margin-left: 1%;
   margin-right: 1%;
   border-radius: 10px;
+  transition: transform 2s;
 }
 
 .choice:hover {
   box-shadow: 10px 10px 10px black;
+  transform: rotate(-90deg)
 }
 
 .rock {
@@ -60,6 +62,7 @@ h3 {
   background-repeat: no-repeat;
   max-width: 100%;
 }
+
 
 .paper {
   display: inline-block;
