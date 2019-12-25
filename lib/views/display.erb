@@ -1,0 +1,62 @@
+
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+      body {
+        background-color: black;
+        font-family: cursive;
+      }
+
+      .glow {
+        font-size: 80px;
+        color: #fff;
+        text-align: center;
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+        }
+
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        }
+      }
+      </style>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+      .block {
+        display: block;
+        width: 100%;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .block:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      </style>
+    </head>
+    <body>
+      <h1 class="glow">>are you ready to play <%= @game.player.name%></h1>
+      <form action="'/play-choice" method="post">
+        <label for="player_1_name">
+          <h2 class="glow">Choose: Rock, paper or scissors</h2>
+        </label>
+        <input class="block" name="choice" type="submit" value="rock">
+        <input class="block" name="choice" type="submit" value="paper">
+        <input class="block" name="choice" type="submit" value="scissors">
+      </form>
+    </body>
+</html>
