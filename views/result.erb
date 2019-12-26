@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Result - Rock Paper Scissors</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container text-center mt-4">
+  <h1>Result - Rock Paper Scissors</h1>
+  <div class="row my-4 justify-content-center">
+    <div class="col">
+      <h5 class="text-secondary" id="player-choice"><%= @player_name %>: <%= @player_choice %></h5>
+      <!-- Should probably use more robust way to get image names e.g. case, instead of relying on image name -->
+      <img class="w-75" src="images/noun_<%= @player_choice %>.svg">
+    </div>
+    <div class="col">
+      <h5 class="text-secondary" id="computer-choice">Computer: <%= @computer_choice %></h5>
+      <img class="w-75" src="images/noun_<%= @computer_choice %>.svg">
+    </div>
+  </div>
+  <h2 id="result">
+    <% case @result; when 0 %>
+      Draw!
+    <% when 1 %>
+      <%= @player_name %> wins!
+    <% else %>
+      Computer wins!
+    <% end %>
+  </h2>
+  <a class="btn btn-outline-primary mt-2" href="/play">Play again</a>
+</div>
+</body>
+</html>

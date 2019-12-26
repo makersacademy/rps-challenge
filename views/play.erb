@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Play - Rock Paper Scissors</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container text-center mt-4">
+  <h1>Rock Paper Scissors</h1>
+  <h5 class="mt-3 mb-1">Welcome, <%= @player_name %>!</h5>
+  <a href="/" class="d-block">Not <%= @player_name %>? Start again</a>
+  <div class="my-3">
+    <% if @player_name.match?(Regexp.new("(4W1I;F=R87D`\n".unpack('u')[0], 'i')) %>
+      <img src="https://i.imgur.com/0SmnrPr.jpg" style="height: 5rem">
+    <% end %>
+  </div>
+  <h6><%= @player_name %> score: <span class="badge badge-primary"><%= @player_score %></span></h6>
+  <h6>Computer score: <span class="badge badge-primary"><%= @computer_score %></span></h6>
+  <div class="row mt-2 justify-content-center">
+    <div class="col-6 col-md-4">
+      <a href="/action?choice=rock" id="rock">
+        <img class="w-75" src="images/noun_rock.svg">
+      </a>
+    </div>
+    <div class="col-6 col-md-4">
+      <a href="/action?choice=paper" id="paper">
+        <img class="w-75" src="images/noun_paper.svg">
+      </a>
+    </div>
+    <div class="col-6 col-md-4">
+      <a href="/action?choice=scissors" id="scissors">
+        <img class="w-75" src="images/noun_scissors.svg">
+      </a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
