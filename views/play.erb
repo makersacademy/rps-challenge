@@ -1,0 +1,21 @@
+Hello, <%= @move.name %>!
+
+<form method="post" action="/play">
+  <input type="submit" name="choice" value="Rock" />
+  <input type="submit" name="choice" value="Paper" />
+  <input type="submit" name="choice" value="Scissors" />
+</form>
+
+You chose <%= @move.choice.to_s.capitalize %>!
+
+<div id="computer">
+  The computer chose <%= @move.computer_choice.to_s.capitalize %>!
+</div>
+
+<% if @move.win? %>
+  You win!
+<% elsif @move.lose? %>
+  You lose!
+<% else @move.draw? %>
+  It is a draw!
+<% end %>
