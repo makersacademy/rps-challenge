@@ -81,6 +81,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  rack-test
   rake
   rspec
   rubocop (= 0.71.0)

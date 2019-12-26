@@ -1,0 +1,15 @@
+<h1><center>
+  Welcome <emp><%= @player_name %>!</emp>
+</center></h1>
+<h2><center>Enter your move:</center>
+  <center><form action="/action_page.php">
+    <select name="rps_moves">
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+    </select>
+    <br><br>
+  </form></center>
+<center><form action="/choice">
+  <input type="submit" value="Submit">
+</center></form>
