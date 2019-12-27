@@ -3,7 +3,7 @@
 Description
 -------
 
-This is the weekend challenge at the end of my third week at Makers Academy, a 16-week software developer bootcamp. For the main instructions, please refer [here](https://github.com/makersacademy/rps-challenge/blob/master/INSTRUCTIONS.md).
+This is the weekend challenge at the end of my third week at Makers Academy, a 16-week software developer bootcamp. For the main instructions, please refer [here](https://github.com/AndreaDiotallevi/rps-challenge/blob/master/INSTRUCTIONS.md).
 
 Prerequisites
 -------
