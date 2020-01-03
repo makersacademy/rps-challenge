@@ -32,6 +32,12 @@ class Game
     end
   end
 
+  def u_lost?(choice)
+    choice == play_rock && latest_comp_move == play_paper ||
+    choice == play_paper && latest_comp_move == play_scissors ||
+    choice == play_scissors && latest_comp_move == play_rock
+  end
+
 private
 
   def win_round
