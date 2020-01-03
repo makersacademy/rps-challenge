@@ -27,13 +27,8 @@ class Game
 
   def result(choice)
     if choice == latest_comp_move then "It is a draw."
-    elsif choice == play_rock && latest_comp_move == play_paper
-      loose_round; "#{player} you lost."
-    elsif choice == play_paper && latest_comp_move == play_scissors
-      loose_round; "#{player} you lost."
-    elsif choice == play_scissors && latest_comp_move == play_rock
-      loose_round; "#{player} you lost."
-    else win_round; "#{player} you won!"
+    elsif u_lost?(choice) then loose_round; "#{player} you lost."
+    else "#{player} you won!"
     end
   end
 
@@ -45,5 +40,11 @@ private
 
   def loose_round
     @comp_points += 1
+  end
+
+  def u_lost?(choice)
+    choice == play_rock && latest_comp_move == play_paper ||
+    choice == play_paper && latest_comp_move == play_scissors ||
+    choice == play_scissors && latest_comp_move == play_rock
   end
 end
