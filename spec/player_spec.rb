@@ -9,4 +9,4 @@ describe 'Player' do
       expect(player.name).to eq "Ben"
     end
   end
-end 
+end

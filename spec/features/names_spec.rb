@@ -5,4 +5,3 @@ feature "Get user input for a player's name, and incorporate it into the game" d
     expect(page).to have_content "Welcome Ben to Rock, Paper, Scissors!"
   end
 end
-

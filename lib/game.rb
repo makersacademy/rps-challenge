@@ -3,7 +3,7 @@ require_relative './computer'
 
 class Game
 
-  attr_reader :players
+  attr_reader :players, :player_move, :computer_move
 
   def initialize(*players)
     @players = [players]
@@ -27,14 +27,6 @@ class Game
   def computer_choose(sign = nil)
     @computer.randomly_choose(sign)
     @computer_move = @computer.move
-  end
-
-  def player_move
-    @player_move
-  end
-
-  def computer_move
-    @computer_move
   end
 
   def winner

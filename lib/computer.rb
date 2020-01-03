@@ -2,13 +2,11 @@ class Computer
 
   SIGNS = ["rock", "paper", "scissors"]
 
+  attr_reader :move
+
   def initialize
     @move = nil
   end 
-
-  def move
-    @move
-  end
 
   def randomly_choose(sign = nil)
     @move = sign 
