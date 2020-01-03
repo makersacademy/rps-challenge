@@ -2,16 +2,19 @@ require 'computer'
 
 describe 'Computer' do
 
-let(:computer) { Computer.new }
+  let(:computer) { Computer.new }
   
-  it "should initialize with it's move choice as nil" do
-    expect(computer.move).to eq nil
+  describe '.move' do
+    it "returns the computers move" do
+      computer.randomly_choose("rock")
+      expect(computer.move).to eq "rock"
+    end
   end
 
-  describe '#randomly_choose' do 
+  describe '.randomly_choose' do 
     it "randomly chooses between Rock, Paper, or Scissors" do
       computer.randomly_choose
-      expect(["Rock", "Paper", "Scissors"]).to include(computer.move)
+      expect(["rock", "paper", "scissors"]).to include(computer.move)
     end
   end
 end

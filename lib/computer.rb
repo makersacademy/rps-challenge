@@ -1,17 +1,23 @@
 class Computer
 
-  SIGNS = ["Rock", "Paper", "Scissors"]
+  SIGNS = ["rock", "paper", "scissors"]
 
   def initialize
-    @choice = nil
+    @move = nil
   end 
 
-  def randomly_choose(sign = SIGNS)
-    @choice = sign if sign.is_a? String
-    @choice = sign.sample if sign.is_a? Array
+  def move
+    @move
   end
 
-  def move
-    @choice
+  def randomly_choose(sign = nil)
+    @move = sign 
+    @move = random_sign if sign.nil?
+  end
+
+  private
+
+  def random_sign
+    SIGNS.sample
   end
 end
