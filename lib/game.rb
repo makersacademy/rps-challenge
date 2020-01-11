@@ -4,11 +4,28 @@ class Game
     @player = player
   end
 
+  def player_name
+    @player.name
+  end
+
   def rock_paper_scissors
     ["Rock", "Paper", "Scissors"].sample
   end
 
-  def player_name
-    @player.name
+  def result(player_selection, game_selection)
+    if player_selection == game_selection
+      return "Draw!!" 
+    elsif player_selection == "Rock" && game_selection == "Scissors"
+      return "You won!!"
+    elsif player_selection == "Scissors" && game_selection == "Paper"
+      return "You won!!"
+    elsif player_selection == "Paper" && game_selection == "Rock"
+      return "You won!!"
+    else
+      return "Game wins"
+    end
   end
+
+
+  
 end

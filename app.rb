@@ -20,19 +20,22 @@ class RPS < Sinatra::Base
 
   get '/rock' do
     @game = $game
-    @game.rock_paper_scissors
+    # game_selection = @game.rock_paper_scissors
+    @result = @game.result(params[:rock], @game.rock_paper_scissors)
     erb(:rock)
   end
   
   get '/paper' do
     @game = $game
-    @game.rock_paper_scissors
+    # game_selection = @game.rock_paper_scissors
+    @result = @game.result(params[:paper], @game.rock_paper_scissors)
     erb(:paper)
   end
 
   get '/scissors' do
     @game = $game
-    @game.rock_paper_scissors
+    # game_selection = @game.rock_paper_scissors
+    @result = @game.result(params[:scissors], @game.rock_paper_scissors)
     erb(:scissors)
   end
 

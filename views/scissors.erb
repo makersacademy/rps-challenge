@@ -1,17 +1,25 @@
 <center><h1><%=@game.player_name%> chose Scissors</h1>
 Vs.
 
-<%= @game.rock_paper_scissors%>
+<h1><%= @game.rock_paper_scissors%></h1>
+
+<br>
+<br>
+
+<h1><%=@result%></h1>
 
 <br>
 <br>
 <form action="/rock" method="get">
-<input type= "submit" value = "Rock">
+<input type= "submit" name= rock value = "Rock">
+</form>
 <br>
 <br>
 <form action="/paper" method="get">
-<input type="submit" value = "Paper">
+<input type="submit" name= paper value = "Paper">
+</form>
 <br>
 <br>
 <form action="/scissors" method="get">
-<input type= "submit" value = "Scissors"></center>
+<input type= "submit" name= scissors value = "Scissors">
+</form></center>
