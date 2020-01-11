@@ -1,15 +1,75 @@
 
-<h1>Are you ready to play Rock Paper Scissors!</h1>
- <h2>Enter your names to begin the game</h2> 
+  
+  <h1>Are you ready to play Rock Paper Scissors!</h1>
+  <h2>Enter your names to begin the game</h2> 
 
-<form action="/names" method="post">
-<label for="player_1_name">
-  Player 1
-<input type="text" name="player_1_name">
-</label>
-<label for="player_2_name">
-  Player 2
-<input type="text" name="player_2_name">
-</label>
-<input type="submit" value="Submit">
-</form>
+  
+  <div style="border: 30px sold pink">
+  <form action="/names" method="post">
+  <label for="player_1_name">
+    Player 1
+  <input type="text" name="player_1_name" id="player1">
+  </label>
+  <label for="player_2_name">
+    Player 2
+  <input type="text" name="player_2_name" id="player2">
+  </label>
+  <input type="submit" value="Click me!" id="submit">
+ </form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<img id="rockpaperscissors" src="http://localhost:4567/Images/rockpaperscissorspink.jpg" alt="Cute rock paper scissors">
+</body>
+</html>
+<style>
+
+h1 {
+    text-align: center;
+    color : #ab0f7c;
+}
+
+h2 {
+    text-align: center;
+    color: #945681;
+}
+
+form {
+    text-align: center;
+    color: #945681;
+}
+
+div {
+    text-align: center;
+    background_colour: pink;
+}
+
+body {
+  background_color: pink;
+}
+
+#submit {
+  border: 3px pink solid;
+}
+
+#player1 {
+  border: 3px pink solid;
+}
+
+#player2 {
+  border: 3px pink solid;
+}
+
+#rockpaperscissors {
+  border: 10px #ff80ff solid;
+  width: 500px;
+  height: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
