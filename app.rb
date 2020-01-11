@@ -4,7 +4,12 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do
-    "Rock, Paper, Scissors!"
+    erb :index
+  end
+
+  post '/names' do
+    @player_1_name = params[:player_1_name]
+    erb :play
   end
 
 end
