@@ -1,4 +1,8 @@
-<center><h1><%=@player.name%> chose Paper</h1>
+<center><h1><%=@game.player_name%> chose Paper</h1>
+
+Vs.
+
+<%= @game.rock_paper_scissors%>
 
 <br>
 <form action= "/rock" method="get">
