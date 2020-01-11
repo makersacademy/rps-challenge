@@ -1,12 +1,11 @@
-<center>Welcome, <%= @player.name %>, please select your move:
+<center><h1><%=@player.name%> chose Paper</h1>
+
 <br>
 <form action= "/rock" method="get">
 <input type= "submit" value = "Rock">
 <br>
-<br>
 <form action= "/paper" method="get">
 <input type= "submit" value = "Paper">
-<br>
 <br>
 <form action= "/scissors" method="get">
 <input type= "submit" value = "Scissors"></center>

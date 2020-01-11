@@ -17,5 +17,20 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/rock' do
+    @player = $player
+    erb(:rock)
+  end
+  
+  get '/paper' do
+    @player = $player
+    erb(:paper)
+  end
+
+  get '/scissors' do
+    @player = $player
+    erb(:scissors)
+  end
+
   run! if app_file == $0
 end
