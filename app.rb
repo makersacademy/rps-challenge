@@ -1,8 +1,8 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/rpsgame'
 
 class RPS < Sinatra::Base 
- 
  
   get '/' do
     erb(:index) 
@@ -47,10 +47,10 @@ class RPS < Sinatra::Base
   get '/result' do 
     @player_1_selection = $player_1_selection
     @lucy_the_computer_selection = $lucy_the_computer_selection
+    @rps_game = RPSGame.new
+    @result = @rps_game.play(@player_1_selection, @lucy_the_computer_selection)
     erb(:result)  
   end
-
-
 
   run! if app_file == $0
 end
