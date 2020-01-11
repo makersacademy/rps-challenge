@@ -12,4 +12,7 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  get '/outcome' do
+  end
+
 end
