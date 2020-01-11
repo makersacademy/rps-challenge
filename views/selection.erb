@@ -1,0 +1,217 @@
+ <!DOCTYPE html>
+ <head>
+   <title>Options</title>
+</head>
+ <body>
+ <div class="main">
+ <h1 class="glowing_text">
+   <%= @player_1_name %> Select an option
+  </h1>
+ <div class="buttons">
+ <form action = '/result' method='post'>
+   <input type="submit" name="selection" value='Rock' id="rockbutton">
+ </form>
+ <br>
+ <br>
+ <br>
+ <form action = '/result' method='post'>
+   <input type="submit" name="selection" value="Paper" id="paperbutton">
+ </form>
+ <br>
+ <br>
+ <br>
+
+ <form action = '/result' method='post'>
+   <input type="submit" name='selection' value='Scissors' id="scissorsbutton">
+ </form>
+ </div>
+  </body>
+ </html>
+ <style>
+
+  body {
+       background-color: pink;
+       font-family: cursive;
+     }
+
+   .glowing_text {
+       color: #b3ffff;
+       font-size: 70px;
+       text-align: center;
+       -webkit-animation: glow 1s ease-in-out infinite alternate;
+       -moz-animation: glow 1s ease-in-out infinite alternate;
+       animation: glow 1s ease-in-out infinite alternate;
+     }
+
+
+     @-webkit-keyframes glow {
+       from {
+         text-shadow: 0 0 10px #b3ffff, 0 0 20px #b3ffff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+       }
+
+       to {
+         text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+       }
+     }
+
+     #rockbutton {
+        background-color: #ff66cc;
+        display: inline-block;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#rockbutton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#rockbutton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#rockbutton:hover span {
+  padding-right: 25px;
+}
+
+#rockbutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#paperbutton {
+        background-color: #ff66cc;
+        display: inline-block;
+        border-radius: 4px;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 16px;
+        display: block;
+
+     }
+
+     #paperbutton {
+        background-color: #ff66cc;
+        display: inline-block;
+  border-radius: 4px;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#paperbutton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#paperbutton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#paperbutton:hover span {
+  padding-right: 25px;
+}
+
+#paperbutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+     #scissorsbutton {
+        background-color: #ff66cc;
+       display: inline-block;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#scissorsbutton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#scissorsbutton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#scissorsbutton:hover span {
+  padding-right: 25px;
+}
+
+#scissorsbutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+ #scissorsbutton:hover {
+      background-color: #b3ffff ;
+      color: white;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    #paperbutton:hover {
+      background-color: #b3ffff ;
+      color: white;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    #rockbutton:hover {
+      background-color: #b3ffff ;
+      color: white;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+  .main {
+    text-align: center;
+  }
+   
+   
+
+ </style>

@@ -18,6 +18,15 @@
        animation: glow 1s ease-in-out infinite alternate;
      }
 
+     #femalecoder {
+       border: 10px #ff80ff solid;
+       width: 500px;
+      height: 400px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+     }
+
 
      @-webkit-keyframes glow {
        from {
@@ -28,37 +37,21 @@
          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
        }
      }
-
-     .form {
-       text-align: center;
-     }
      </style>
      <title>Players entered</title>
    </head>
    <body>
      <h1 class="glowing_text">
-       <%= @player_1_name %> vs. Lucy the Computer
+
+     You selected <%= @player_1_selection %>!
+     <br>
+     <br>
+     Lucy The Computer selected <%= @lucy_the_computer_selection %>!
      </h1>
      <br>
-     <h2 class="glowing_text" text_align="center">
-     Let's go!
-     </h2>
      <br>
-     <h2 class="glowing_text" text_align="center">
-     Click to see your options!
-     </h2>
-     <div class="form">
-     <form action = '/option' method='post'>
-       <input type="submit" name='selection' value='Click to see your options' id="rockbutton">
-     </form>
-     </div>
-   </body>
- </html>
+     <img id="femalecoder" src="http://localhost:4567/Images/pink_coder.jpg" alt="Female coder">
 
-
-
-
-
-
-
-
+     </body>
+     </html>
+     
