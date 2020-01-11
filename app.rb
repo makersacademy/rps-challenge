@@ -13,6 +13,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/outcome' do
+    
   end
 
 end
