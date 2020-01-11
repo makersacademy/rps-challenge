@@ -2,7 +2,6 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 
-
 class Rps < Sinatra::Base
   enable :sessions
   set :session_store, Rack::Session::Pool
