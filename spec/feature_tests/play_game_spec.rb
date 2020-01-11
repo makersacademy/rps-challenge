@@ -1,6 +1,3 @@
-
-require 'rspec/expectations'
-
 feature 'play game' do
   scenario 'user can select rock' do
     register_name
@@ -24,6 +21,12 @@ feature 'play game' do
     register_name
     click_on 'Rock'
     expect(page).to have_content "Computer chose"
+  end
+
+  scenario 'user selects rock, computer selects paper. Display You win!' do
+    register_name
+    click_on 'Rock'
+    expect(page).to have_content "!"
   end
 end
 
