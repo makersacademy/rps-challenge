@@ -1,0 +1,20 @@
+<html>
+<head>
+  <link type='text/css' rel='stylesheet' href='/css/styles.css'>
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class='play'>
+    <h1> Welcome <%= @player_1.name %> </h1>
+    <h2>Select Rock, Papers or Scissors.</h2>
+
+    <form action="/runMethod", method="get">
+      <button class='button', name="choice", type="submit", value="Rock">Rock</button>
+      <button class='button', name="choice", type="submit", value="Paper">Paper</button>
+      <button class='button', name="choice", type="submit", value="Scissors">Scissors</button>
+    </form>
+  </div>
+
+</body>
+</html>
