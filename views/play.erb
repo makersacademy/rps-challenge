@@ -9,9 +9,14 @@
   <h2> Welcome <%= @game.player_1.name %> </h2>
   <h3>Select Rock, Papers or Scissors.</h3>
 
-  <form action="/runMethod", method = "post">
-    <input type = "hidden", name="Rock", value="whatever">
-    <input type="button" value="Rock"/>
+  <form action="/runMethod">
+    <input type = "hidden", name="choice", value="whatever">
+    <input type="button" onclick="location.href = '/runMethod'" value="Rock"/>
+  </form>
+
+  <form action="/runMethod">
+    <input type = "hidden", name="choice", value="whatever">
+    <input type="button" onclick="location.href = '/runMethod'" value="Paper"/>
   </form>
 
 </body>
