@@ -9,11 +9,6 @@ describe Game do
       srand(4)
       expect(subject.rock_paper_scissors).to eq "Scissors"
     end
-
-    # it "lets the game select paper" do
-    #   srand()
-    #   expect(subject.rock_paper_scissors).to eq "Paper"
-    # end
   end
 
   describe "#player_name" do
