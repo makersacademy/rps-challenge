@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<h1>It's your turn, <%= @player_name %>!</h1>
-<body>Choose one of the options below...</body>
-<form action="/turn">
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+<h1>It's your turn, <%= @player_name %></h1>
+<body>Pick your move</body>
+<form action="/shoot" method="post">
+  <input type="radio" id="Rock" name="action" value="Rock">Rock<br>
+  <input type="radio" id="Paper" name="action" value="Paper">Paper<br>
+  <input type="radio" id="Scissors" name="action" value="Scissors">Scissors
+  <input type="submit" value="Submit">
 </form>
-</html>

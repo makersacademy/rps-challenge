@@ -17,7 +17,13 @@ class Game < Sinatra::Base
     erb :play
   end
 
+  post '/shoot' do
+    session[:action] = params[:action]
+    redirect '/turn'
+  end
+
   get '/turn' do
+    @action = session[:action]
     erb :turn
   end
 
