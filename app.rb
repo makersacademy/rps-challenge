@@ -11,15 +11,15 @@ class Rps < Sinatra::Base
 
   post '/play' do
     session[:name] = params[:name]
-    @opponent = "COMPUTER"
+    @opponent = Game.new.name
     erb :play
   end
 
   post '/result' do 
     @name = session[:name]
     session[:move] = params[:move]
-    @opponent = "COMPUTER"
-    @computer_move = [:Rock, :Paper, :Scissors].sample
+    @opponent = Game.new.name
+    @computer_move = Game.new.computer_move
     erb :result
   end
 
