@@ -1,0 +1,65 @@
+<style>
+body {
+  color: white;
+  background-image: url('http://hdwpro.com/wp-content/uploads/2015/12/Texture-Background-1620x1080.jpg');
+  background-size: 100% 100%
+}
+
+.btn1 {
+height: 87px; 
+width: 87px;
+margin-left: auto;
+margin-right: auto;
+background-image:url('https://img.icons8.com/officel/80/000000/rock.png');
+background-repeat:no-repeat;
+border-radius: 12px;
+color: red;
+background-color: #4CAF50;
+}
+.btn2 {
+height: 87px; 
+width: 87px;
+margin-left: auto;
+margin-right: auto;
+background-image:url('https://img.icons8.com/dusk/80/000000/paper.png');
+background-repeat:no-repeat;
+border-radius: 12px;
+color: red;
+background-color: #4CAF50;
+}
+.btn3 {
+height: 87px; 
+width: 87px;
+margin-left: auto;
+margin-right: auto;
+background-image:url('https://img.icons8.com/officel/80/000000/scissors.png');
+background-repeat:no-repeat;
+border-radius: 12px;
+color: red;
+background-color: #4CAF50;
+}
+</style>
+
+
+<br>
+<h1><center>Welcome <%= @username %>! Choose your weapon.</center></h1>
+<br>
+<br>
+<br>
+<br>
+
+<div style="text-align:center;">
+
+<form action='/attack'>
+  <button class='btn1' type='submit', name="weapon", value="rock">Rock</button>
+</form>
+
+<form action='/attack'>
+  <button class='btn2' type='submit', name="weapon", value="paper">Paper</button>
+</form>
+
+<form action='/attack'>
+  <button class='btn3' type='submit', name="weapon", value="scissors">Scissors</button>
+</form>
+
+</div>
