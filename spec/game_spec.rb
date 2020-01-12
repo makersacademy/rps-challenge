@@ -13,7 +13,7 @@ describe Game do
 
   describe '#make_move' do 
     before do 
-      allow_doubles_to_receive_moves
+      allow_doubles_to_receive_moves_win
     end
     it 'makes player moves and stores them' do 
       subject.make_move('rock')
@@ -23,24 +23,61 @@ describe Game do
 
   describe '#switch_turns' do
     before do 
-      allow_doubles_to_receive_moves
+      allow_doubles_to_receive_moves_win
     end
     it 'switches turns when called' do 
       subject.switch_turns
       expect(subject.players.first).to eq player_2
     end
     it "makes player_2 move after player_1's turn" do 
-      subject.make_move('rock')
-      subject.switch_turns
-      subject.make_move('scissors')
+      simulate_round_with_win
       expect(subject.player_2.move).to eq 'scissors'
     end
   end
 
-  def allow_doubles_to_receive_moves
+  describe '#draw' do 
+    before do
+      allow_doubles_to_receive_moves_draw
+    end
+    it 'checks if same moves result in a draw' do 
+      simulate_round_with_draw
+      expect(subject.draw?).to eq true
+    end
+  end
+
+  describe '#check_win' do 
+    before do
+      allow_doubles_to_receive_moves_win
+    end
+    it 'checks player_1 wins' do 
+      simulate_round_with_win
+      expect(subject.check_win).to eq player_1
+    end
+  end
+
+  def allow_doubles_to_receive_moves_win
     allow(player_1).to receive(:make_move).with(any_args).and_return('rock')
     allow(player_1).to receive(:move).and_return('rock')
     allow(player_2).to receive(:make_move).with(any_args).and_return('scissors')
     allow(player_2).to receive(:move).and_return('scissors')
+  end
+
+  def allow_doubles_to_receive_moves_draw
+    allow(player_1).to receive(:make_move).with(any_args).and_return('paper')
+    allow(player_1).to receive(:move).and_return('paper')
+    allow(player_2).to receive(:make_move).with(any_args).and_return('paper')
+    allow(player_2).to receive(:move).and_return('paper')
+  end
+
+  def simulate_round_with_win
+    subject.make_move('rock')
+    subject.switch_turns
+    subject.make_move('scissors')
+  end
+
+  def simulate_round_with_draw
+    subject.make_move('paper')
+    subject.switch_turns
+    subject.make_move('paper')
   end
 end

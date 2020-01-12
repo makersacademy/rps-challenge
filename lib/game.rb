@@ -18,4 +18,12 @@ class Game
     @players.rotate!
   end
 
+  def check_win(move_1, move_2)
+    
+  end
+
+  def draw?
+    @player_1.move == @player_2.move
+  end
+
 end
