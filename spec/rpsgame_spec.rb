@@ -15,13 +15,6 @@ describe RpsGame do
     end
   end
 
-  describe '#select' do
-    it 'select the move for player 1' do
-      expect(subject.player1).to receive(:move=).with('rock')
-      subject.select(player1, 'rock')
-    end
-  end
-
   describe '#random_move' do
     it 'select a random move' do
       expect(subject.player1).to receive(:move=).with('rock')

@@ -23,7 +23,7 @@ class Rps < Sinatra::Base
   end
 
   post '/move' do
-    @game.select(@game.player1, params[:move])
+    @game.player1.move = params[:move]
     @game.random_move(@game.player2)
     redirect '/result'
   end

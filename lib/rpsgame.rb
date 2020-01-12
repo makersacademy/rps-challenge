@@ -15,10 +15,6 @@ class RpsGame
     @game
   end
 
-  def select(player, move)
-    player.move = move
-  end
-
   def random_move(player)
     player.move = MOVES.sample
   end
