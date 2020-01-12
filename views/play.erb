@@ -1,3 +1,30 @@
-<br>
-<center><h1>Let's Play <%=@player1%>!</h1></center>
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link type='text/css' rel='stylesheet' href='/css/style.css'>
+</head>
+<body>
 
+<h1>Let's Play, <%=@game.player1.name%>!</h1>
+<h3>MAKE YOUR MOVE:</h3>
+
+<div id="move-forms" class="move-forms">
+  <form action = '/move' method = 'post'>
+    <input type="hidden" name="move" value="rock" />
+    <input type="submit" value = "Rock">
+  </form>
+
+  <form action = '/move' method = 'post'>
+    <input type="hidden" name="move" value="paper" />
+    <input type="submit" value = "Paper">
+  </form>
+
+  <form action = '/move' method = 'post'>
+    <input type="hidden" name="move" value="scissors" />
+    <input type="submit" value = "Scissors">
+  </form>
+</div>
+
+</body>
+</html>

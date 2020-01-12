@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
@@ -6,10 +5,15 @@
   <link type='text/css' rel='stylesheet' href='/css/style.css'>
 </head>
 <body>
-
-  <svg viewBox="0 0 960 300">
+  <div class="player1-name-choice">
+    <%= @game.player1.name.upcase%>: <%= @game.player1.choice.upcase%>
+  </div>
+  <div class="computer-choice">
+    COMPUTER: <%= @game.computer.choice.upcase%>
+  </div>
+<svg viewBox="0 0 960 300">
     <symbol id="s-text">
-      <text text-anchor="middle" x="50%" y="80%">Rock | Paper | Scissors</text>
+      <text text-anchor="middle" x="50%" y="50%"><%= @game.outcome %></text>
     </symbol>
 
     <g class = "g-ants">
@@ -21,18 +25,6 @@
     </g>
   </svg>
 
-    <h2> SIGN IN TO PLAY </h2>
-<div id="input-form">
-    <form action = '/player-form' method = 'post'>
-      <label for="player1">
-        NAME: 
-        <input type="text" name = 'player1'>
-      </label>
-      <br>
-      <br>
-      <input type="submit" value = "LET'S PLAY">
-    </form>
-</div>
-
+<a href="/play">Play Again</a>
 </body>
 </html>

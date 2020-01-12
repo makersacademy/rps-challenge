@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative './lib/game'
+require_relative './lib/player'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -6,12 +8,24 @@ class RPS < Sinatra::Base
   end
 
   post '/player-form' do
-    $player1 = params[:player1]
+    $game = Game.new(Player.new(params[:player1]))
     redirect '/play'
   end
 
   get '/play' do
-    @player1 = $player1
+    @game = $game
     erb(:play)
+  end
+
+  post '/move' do
+    @game = $game
+    @game.player1_chooses(params[:move].to_sym)
+    @game.computer_chooses(@game.computer.move)
+    redirect '/outcome'
+  end
+
+  get '/outcome' do
+    @game = $game
+    erb(:outcome)
   end
 end
