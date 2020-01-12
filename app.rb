@@ -6,5 +6,10 @@ class RPS < Sinatra::Base
     erb :home
   end
 
+  post '/enter_name' do
+    @user = params[:name]
+    erb :play
+  end
+
   run! if app_file == $0
 end
