@@ -1,1 +1,10 @@
-<%= @player_name %>
+<h2> <%= @game.name.to_s.capitalize %> pick your move</h2>
+<form action="/play" method="post">
+  <input type="submit" name="choice" value="Rock">
+  <input type="submit" name="choice" value="Paper">
+  <input type="submit" name="choice" value="Scissors">
+</form>
+
+<%# <h2>@game.winner</h2> %>
+
+You picked <%= @game.player_move.to_s.downcase %>, the computer picked <%= @game.random_move %>.
