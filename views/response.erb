@@ -7,9 +7,9 @@ body {
     }
 </style>
 
-<h2>Opponent used <%= $game.response.capitalize %></h2>
+<h2>Opponent used <%= @game.response.capitalize %></h2>
 
-<h2> <%= $evaluator.message %> </h2>
+<h2> <%= @evaluator.message %> </h2>
 
 <form action='/game'>
   <button type='submit'>Start Over</button>

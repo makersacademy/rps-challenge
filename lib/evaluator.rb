@@ -10,6 +10,14 @@ class Evaluator
     @result = result
   end
 
+  def self.instance
+    @evaluator
+  end
+
+  def self.create(game)
+    @evaluator = Evaluator.new(game)
+  end
+
   def evaluate
     move = game.move
     response = game.response

@@ -11,26 +11,30 @@ class Rps < Sinatra::Base
   end
 
   post '/play' do
-    $game = Game.new( User.new (params[:credentials]) )
+    user = User.new(params[:credentials])
+    @game = Game.create(user)
     redirect '/game'
   end
 
   get '/game' do
-    @username = $game.user.name
+    @game = Game.instance
+    @username = @game.user.name
     erb(:start)
   end
 
   get '/attack' do
-    @username = $game.user.name
+    @game = Game.instance
+    @username = @game.user.name
     @your_weapon = params[:weapon]
-    $game.attack(@your_weapon)
+    @game.attack(@your_weapon)
     erb(:attack)
   end
 
   get'/response' do
-    $game.receive_attack
-    $evaluator = Evaluator.new($game)
-    $evaluator.evaluate
+    @game = Game.instance
+    @game.receive_attack
+    @evaluator = Evaluator.create(@game)
+    @evaluator.evaluate
     erb(:response)
   end
 

@@ -10,6 +10,14 @@ class Game
     @response = nil
   end
 
+  def self.create(user)
+    @game = Game.new(user)
+  end
+
+  def self.instance
+    @game
+  end
+
   def attack(weapon)
     weapon
     @move = weapon
