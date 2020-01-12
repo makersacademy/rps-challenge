@@ -1,6 +1,7 @@
 require 'simplecov'
 require 'simplecov-console'
 require './spec/spec_helper'
+require './spec/feature/web_helpers'
 
 
 
