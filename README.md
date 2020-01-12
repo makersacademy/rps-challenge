@@ -1,5 +1,22 @@
 # RPS Challenge
 
+A simple Rock, Paper, Scissors web app. The user enters their name then is prompted to select rock, paper or scissors. The computer generates a random answer and the winner is declared.
+
+There are 4 classes, player (initialized with a name), computer (to generate a random answer), weapon class to determine the outcome of the game and a game class to declare a winner, loser or tie game.
+
+
+To run the web app follow these instructions:
+$ git clone https://github.com/acmerlino1/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+
+
+
+
+
+
+
 Instructions
 -------
 
