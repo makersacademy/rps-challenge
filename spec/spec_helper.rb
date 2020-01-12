@@ -1,3 +1,8 @@
+
+require 'capybara'
+require './app'
+require 'rspec'
+
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
@@ -12,6 +17,7 @@ SimpleCov.start
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
 
+Capybara.app = RPS
 
 RSpec.configure do |config|
   config.after(:suite) do
