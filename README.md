@@ -152,4 +152,13 @@ some CSS and styling)
 
 I have also removed the infrastructure tests as we are no longer returning a string, but HTML with content making that test redundant.
 
+To keep my routes clear as to their purpose, any post routes will be prefixed with /api/some_route_here, an example of this is the
+submit names route, which will have an address of /api/submit_names, any other post routes in the application will follow this convention
 
+in app.rb I change the root '/' path to the following
+
+```ruby 
+  get '/' do
+    erb :index
+  end
+```
