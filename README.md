@@ -107,4 +107,49 @@ infer from this that the user would want some sort of confirmation that their da
 us to create a post route where the data can be submitted and stored for the duration of the game and then return the player
 back to a screen that contains their name as confirmation it was stored and accessible.
 
-The first test I created 
+The first test I created will visit the home page, expect a field where the player can enter their name and will then
+click on a button called "Submit", it will then expect to find the relevant content on the page as shown below.
+
+```ruby
+feature 'Enter Player name' do
+  scenario 'Submit a name' do
+    visit('/')
+    fill_in :player_1_name, with: "Kittens"
+    click_button 'Submit'
+    expect(page).to have_content 'It\s Kittens Vs Computer'
+  end
+end
+```
+
+When running rspec, we get the following error
+
+```ruby
+ailures:
+
+  1) Enter Player name Submit a name
+     Failure/Error: fill_in :player_1_name, with: "Kittens"
+
+     Capybara::ElementNotFound:
+       Unable to find field :player_1_name that is not disabled
+```
+
+Now its time to write up some code. I came up with the following solution to this that allows the test to pass. We are going
+to need to create an html page in the views folder, add a form for the user to enter their name, A button to submit the form
+and some sort of confirmation that it completed successfully.
+
+In the terminal I ran the following commands (In the root of the project directory)
+
+```bash
+mkdir views
+touch views/index.erb
+mkdir -p public/css (Note this is for later use)
+```
+
+in index.erb, I added HTML boilerplate, and within the body tag created a basic layout with a form to submit.
+
+The user is then redirected to another page where they can see their names in lights (note, the lights will come later when we add 
+some CSS and styling)
+
+I have also removed the infrastructure tests as we are no longer returning a string, but HTML with content making that test redundant.
+
+

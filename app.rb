@@ -3,7 +3,7 @@ require 'sinatra/base'
 class RPSO < Sinatra::Base
 
   get '/' do
-    "Hello World"
+    erb :index
   end
 
 
