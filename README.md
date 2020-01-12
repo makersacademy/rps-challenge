@@ -13,6 +13,8 @@ $ bundle
 $ rackup
 ```
 
+![homepage](images/homepage.png)
+
 
 
 
