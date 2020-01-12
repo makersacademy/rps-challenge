@@ -1,5 +1,17 @@
 # RPS Challenge
 
+A project to create a web app that can be deployed on a localhost. 
+
+Built in Ruby and HTML and tested using Capybara and rspec.
+
+To access run rackup in the directory (/rps-challenge) and then go to http://localhost:9292.
+
+Enter a name and follow the instructions.
+
+Have a good time!
+
+
+
 Instructions
 -------
 

@@ -13,7 +13,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/decision' do
-    p params[:move]
     @move = params[:move]
     @name = params[:name]
     erb(:decision)
@@ -22,6 +21,6 @@ class RockPaperScissors < Sinatra::Base
   post '/decision' do
     @move = params[:move]
     @name = params[:name]
-    redirect 'decision'
+    redirect '/decision'
   end
 end
