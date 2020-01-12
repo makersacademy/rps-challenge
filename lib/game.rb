@@ -7,7 +7,7 @@ class Game
   end
 
   def computer_move
-    [:Rock, :Paper, :Scissors].sample
+    ["Rock", "Paper", "Scissors"].sample
   end
 
 end

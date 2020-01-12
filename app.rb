@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/rules'
 
 class Rps < Sinatra::Base
 
@@ -20,6 +21,7 @@ class Rps < Sinatra::Base
     session[:move] = params[:move]
     @opponent = Game.new.name
     @computer_move = Game.new.computer_move
+    @result = Rules.new.result(session[:move], @computer_move).to_s
     erb :result
   end
 
