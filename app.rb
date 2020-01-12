@@ -19,6 +19,11 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/fight' do
+    @game = $game
+    message = @game.fight(params[:choice])
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0 
 end

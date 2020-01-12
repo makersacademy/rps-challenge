@@ -16,7 +16,7 @@ class Game
   def check_winner(choice_by_the_player, choice_by_the_pc)
     return "You win" if @to_win_logic[choice_by_the_player] == choice_by_the_pc
     return "You lose" if @to_win_logic[choice_by_the_pc] == choice_by_the_player
-    "Tie"
+    "It is a draw"
   end
 
   def rand_pick
