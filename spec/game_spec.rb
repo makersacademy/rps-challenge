@@ -1,10 +1,11 @@
-require_relative '../lib/game'
-describe 'Game' do
+require 'game'
+
+describe Game do
 
   let(:player_one) { double :player_one, name: "player_one" }
   let(:computer) { double :computer, name: "Computer" }
 
-  subject(:game) { Game.new(player_one, computer) }
+  subject(:game) { described_class.new(player_one, computer) }
 
   describe '#player1_chooses' do
     it 'sets player1 choice' do
