@@ -13,7 +13,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/outcome' do
-    
+    @player_1_name = params[:player_1_name]
+    erb :outcome
   end
 
 end
