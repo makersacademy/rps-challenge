@@ -15,10 +15,10 @@ class RPSGame
     ['Paper', 'Rock', 'Scissors'].sample 
   end
 
-  def player_selection(players_answer) # takes player's selection and saves it to the instance variable @players_answer
+  def player_selection(players_answer) 
     @players_answer = players_answer
   end
-  
+
   def play(player_1_selection, lucy_the_computer_selection) 
     if player_1_selection == lucy_the_computer_selection
       return "Hmm. It's a tie this time"

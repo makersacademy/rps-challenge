@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%#<!DOCTYPE html> %>
  <html lang="en" dir="ltr">
    <head>
      <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +25,49 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
+     }
+
+     #playagain {
+       {
+        background-color: #ff66cc;
+        display: inline-block;
+        border-radius: 4px;
+        border: none;
+        color: white;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+  #playagain span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  #playagain span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+#rockbutton:hover span {
+  padding-right: 25px;
+}
+
+#rockbutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
      }
 
 
@@ -54,7 +97,14 @@
      <br>
      <img id="femalecoder" src="http://localhost:4567/Images/pink_coder.jpg" alt="Female coder">
 
+    <form action ="/">
+    <input type="submit" value='Click here to play again!' id="playagain">
+    </form>
+    <br>
+    <br>
 
-     </body>
-     </html>
+
+    </form>
+    </body>
+    </html>
      

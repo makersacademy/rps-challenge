@@ -21,14 +21,9 @@ describe RPSGame do
       allow(player_1).to receive(:computer_selection).and_return 'Scissors'
       expect(subject.play('Scissors', 'Rock')).to eq "Bad luck! You were beaten this time"
      end
-   end
+   
 
 
-   describe '#computer_selection' do
-    it 'the computer generates a random move' do
-      allow(player_1).to receive(:computer_selection).and_return('Rock')
-      expect(subject.computer_selection).to eq 'Rock'
-    end
   end
 
 end 
