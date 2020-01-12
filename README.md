@@ -11,7 +11,7 @@ the game with the win conditions hard coded in to the game, meaning it would be 
 This time around, I will create the game with this expandability in mind.
 
 
-### Step 1
+### Setup
 
 Setting up the testing infrastructure and confirming everything works, this was achieved by adding the following to the spec_helper.rb file
 ```ruby
@@ -93,3 +93,17 @@ COVERAGE: 100.00% -- 9/9 lines in 2 files
 ```
 
 With the infrastructure tested and working its time to start building the website.
+
+### User story 1
+
+```ruby
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+```
+
+This will require us to render a page with a form where a user is able to submit their desired name, we can also
+infer from this that the user would want some sort of confirmation that their data was correctly submitted. That will require
+us to create a post route where the data can be submitted and stored for the duration of the game and then return the player
+back to a screen that contains their name as confirmation it was stored and accessible.
+
