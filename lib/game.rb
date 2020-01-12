@@ -10,6 +10,14 @@ class Game
     @players = [@player_1, @player_2]
   end
 
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
+  end
+  
   def make_move(move)
     @players.first.make_move(move)
   end
@@ -18,7 +26,7 @@ class Game
     @players.rotate!
   end
 
-  def check_win
+  def winner
     # moves = [player_1.move, player_2.move]
     # moves.each { |move|
     # if moves.include?('rock') && moves.include?('scissors')

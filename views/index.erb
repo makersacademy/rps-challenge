@@ -1,16 +1,14 @@
-<table>
-  <th>
-    Welcome! Choose game mode
-  </th>
+<table style='width:100%; text-align:center'>
+  <th> Welcome to Rock, Paper, Scissors! </th>
+  <br><br>
+  <tr> <td> Enter your name: </td></tr>
   <tr>
     <td>
-      <form action='/single-player'>
-      <input type='submit' value='Single Player'>
-      </form>
-    </td>
-    <td>
-      <form action='/multiplayer'>
-      <input type='submit' value='Multiplayer'>
+      <form>
+        <input type='text' name='player_1_name'>
+        <br><br>
+        <button type="submit" formaction="/single_player">Single Player</button>
+        <button type="submit" formaction="/player_2_name">Multiplayer</button>
       </form>
     </td>
   </tr>

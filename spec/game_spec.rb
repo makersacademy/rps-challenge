@@ -45,13 +45,13 @@ describe Game do
     end
   end
 
-  describe '#check_win' do 
+  describe '#winner' do 
     before do
       allow_doubles_to_receive_moves_win
     end
     it 'checks player_1 wins' do 
       simulate_round_with_win
-      expect(subject.check_win).to eq player_1
+      expect(subject.winner).to eq player_1
     end
   end
 
