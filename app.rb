@@ -3,9 +3,7 @@ require './lib/player'
 require './lib/computer'
 require './lib/game_engine'
 
-
 class RPSO < Sinatra::Base
-
   enable :sessions
 
   get '/' do
@@ -35,7 +33,7 @@ class RPSO < Sinatra::Base
   end
 
   get '/play' do
-    erb :play, :locals => {:player => Player.instance.name}
+    erb :play, :locals => { :player => Player.instance.name }
   end
 
   run! if app_file == $0
