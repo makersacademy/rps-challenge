@@ -18,8 +18,25 @@ class Game
     @players.rotate!
   end
 
-  def check_win(move_1, move_2)
-    
+  def check_win
+    # moves = [player_1.move, player_2.move]
+    # moves.each { |move|
+    # if moves.include?('rock') && moves.include?('scissors')
+    #   move if move == 'rock'
+    # elsif moves.include?('rock') && moves.include?('paper')
+    #   'paper'
+    # elsif moves.include?('scissors') && moves.include?('paper')
+    #   'scissors'
+    # end
+
+    if @player_1.move == 'rock' && @player_2.move == 'scissors' ||
+      @player_1.move == 'paper' && @player_2.move == 'rock' ||
+      @player_1.move == 'scissors' && @player_2.move == 'paper'
+      
+      @player_1
+    else
+      @player_2
+    end
   end
 
   def draw?
