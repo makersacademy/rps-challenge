@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class Game < Sinatra::Base
   enable :sessions
-  
+
   get '/' do
     erb :index
   end
@@ -15,6 +15,10 @@ class Game < Sinatra::Base
   get '/play' do
     @player_name = session[:player_name]
     erb :play
+  end
+
+  get '/turn' do
+    erb :turn
   end
 
   run! if app_file == $0
