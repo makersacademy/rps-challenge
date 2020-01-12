@@ -1,9 +1,9 @@
 require 'computer'
 
-xdescribe Computer do
+describe Computer do
 
   it 'returns a random weapon' do
-    allow(subject).to receive(:sample) { :scissors }
+    expect(Game::WEAPONS).to receive(:sample) { :scissors }
     expect(subject.weapon).to eq :scissors
   end
 end

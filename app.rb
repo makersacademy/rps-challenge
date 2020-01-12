@@ -12,14 +12,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    player_1 = Player.new(params[:player_1_name])
-    computer = Computer.new
-    $game = Game.new(player_1, computer)
+    $player_1 = Player.new(params[:player_1_name])
+    $game = Game.new
     redirect '/play'
   end
 
   get'/play' do
     @game = $game
+    @player_1 = $player_1
     erb :play
   end
 
@@ -33,14 +33,15 @@ class RockPaperScissors < Sinatra::Base
   get '/outcome' do
     @player_choice = $player_choice
     @game = $game
-    @computer_choice = @game.computer.weapon
+    @player_1 = $player_1
+    @computer_choice = Computer.new.weapon
     p "your choice #{$player_choice}"
     p "computer choice #{@computer_choice}"
+    p $player_1
     player_weapon = Weapon.new($player_choice)
     computer_weapon = Weapon.new(@computer_choice)
-    @game.outcome
-    @result = @game.who_won
+    @player_1.weapon = player_weapon
+    @result = @game.who_won(@player_1, computer_weapon)
     erb :outcome
   end
-
 end

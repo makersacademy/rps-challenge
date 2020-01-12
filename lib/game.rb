@@ -4,34 +4,23 @@ class Game
 
   WEAPONS = [:rock, :paper, :scissors]
 
-  attr_reader :player_1, :computer
-
-  def initialize(player_1, computer)
-    @player_1 = player_1
-    @computer= computer
-  end
-  
-  def outcome
-    @player_1.weapon.beats(computer.weapon)
-  end
-
-  def who_won
-    outcome
-    if :Winner
-      winner
-    elsif :Loser
-      loser
-    else :Tie
+  def who_won(player, computer_weapon)
+    result = player.weapon.beats(computer_weapon)
+    if result == :Winner
+      winner(player.name)
+    elsif result == :Loser
+      loser(player.name)
+    else 
       tie
     end
   end
 
-  def winner
-    "#{@player_1.name} wins!"
+  def winner(name)
+    "#{name} wins!"
   end
 
-  def loser
-    "The computer won and #{@player_1.name} lost."
+  def loser(name)
+    "The computer won and #{name} lost."
   end
 
   def tie
