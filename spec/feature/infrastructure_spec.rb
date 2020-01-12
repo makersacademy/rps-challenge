@@ -1,5 +1,3 @@
-require './spec/spec_helper'
-
 feature 'Visits root of site' do
   scenario 'returns content' do
     visit('/')
