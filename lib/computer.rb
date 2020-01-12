@@ -8,7 +8,7 @@ class Computer
 
   def guess
     srand(@random_seed || random_seed_gen)
-    guesses = %w{ Rock Paper Scissors}
+    guesses = %w{Rock Paper Scissors}
     guesses.sample
   end
 end
