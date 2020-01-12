@@ -1,4 +1,7 @@
-<h2><%= @game.player1.name %> wins count: <%= @game.player1.wins %></h2>
+<h2><%= @game.player1.name %> wins count: <%= @game.player1.wins %>
+<br>
+<%= @game.player2.name %> wins count: <%= @game.player2.wins %></h2>
+
 <h3>Choose your move:</h3>
 
 <form action='/move' method='POST'>
