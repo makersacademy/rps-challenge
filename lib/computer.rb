@@ -10,7 +10,7 @@ class Computer
     [:rock, :paper, :scissors].sample
   end
 
-  def make_choice(move=self.move)
+  def make_choice(move = self.move)
     @choice = move
   end
   

@@ -19,8 +19,8 @@ class RPS < Sinatra::Base
 
   post '/move' do
     @game = $game
-    @game.player1_chooses(params[:move].to_sym)
-    @game.computer_chooses(@game.computer.move)
+    @game.player1_chooses(params[:move].downcase.to_sym)
+    @game.computer_chooses
     redirect '/outcome'
   end
 

@@ -18,7 +18,7 @@ class Game
     @player1.make_choice(move)
   end
 
-  def computer_chooses(move)
+  def computer_chooses(move = @computer.move)
     @computer.make_choice(move)
   end
 
