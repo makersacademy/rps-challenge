@@ -7,6 +7,17 @@ class RPSApp < Sinatra::Base
   set :views, Proc.new { File.join(root, "views") }
   set :public_folder, Proc.new { File.join(root, "../public") }
 
+  get '/' do
+    erb :homepage
+  end
+
+  get '/singleplayer-names' do
+    erb :singleplayer_names
+  end
+
+  get '/multiplayer-names' do
+    erb :multiplayer_names
+  end
 
 
   # # before filters

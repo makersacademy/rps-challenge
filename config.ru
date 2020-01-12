@@ -4,4 +4,4 @@ $LOAD_PATH << './app/models'
 
 require 'app_controller'
 
-run RPS
+run RPSApp

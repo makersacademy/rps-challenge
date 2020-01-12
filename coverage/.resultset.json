@@ -1,8 +1,88 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/cpcwood/OneDrive/Documents/Coding/Projects/rps-challenge/spec/feature/enter_names_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/cpcwood/OneDrive/Documents/Coding/Projects/rps-challenge/spec/feature/homepage_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/cpcwood/OneDrive/Documents/Coding/Projects/rps-challenge/spec/unit/game_spec.rb": [
-
+        1,
+        null,
+        1,
+        null,
+        5,
+        null,
+        5,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/cpcwood/OneDrive/Documents/Coding/Projects/rps-challenge/app/models/game.rb": [
+        1,
+        1,
+        null,
+        1,
+        4,
+        4,
+        4,
+        4,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
       ],
       "/Users/cpcwood/OneDrive/Documents/Coding/Projects/rps-challenge/spec/unit/rps_extended_spec.rb": [
         1,
@@ -65,6 +145,6 @@
         null
       ]
     },
-    "timestamp": 1578858818
+    "timestamp": 1578862726
   }
 }
