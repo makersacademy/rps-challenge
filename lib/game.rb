@@ -1,5 +1,3 @@
-require './lib/computer'
-
 class Game 
   attr_reader :player1, :computer_choice, :computer
 
@@ -9,9 +7,17 @@ class Game
     :paper => :rock
   }
 
-  def initialize(player1, computer = Computer.new)
+  def initialize(player1, computer)
     @player1 = player1
     @computer = computer
+  end
+
+  def self.create(player1, computer)
+    @game = Game.new(player1, computer)
+  end
+
+  def self.instance
+    @game
   end
 
   def player1_chooses(move)
@@ -24,14 +30,11 @@ class Game
 
   def outcome
     if OUTCOMES[@player1.choice] == @computer.choice
-      # "#{@player1.name} Wins!"
       @player1.name
     elsif OUTCOMES[@computer.choice] == @player1.choice
-      # "The Computer Wins!"
       @computer.name
     else
       :draw
-      # "It's a draw!"
     end
   end
 
