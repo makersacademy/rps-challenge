@@ -8,6 +8,14 @@
 </head>
 <body>
 <h1>Lets play Rock Paper Scissors</h1>
-It's <%= player %> Vs Computer
+<p>It's <%= player %> Vs Computer</p><br>
+<p>Please choose an attack type to begin</p>
+
+<form action="/attack">
+  <input type="submit" value="Rock">
+  <input type="submit" value="Paper">
+  <input type="submit" value="Scissors">
+</form>
+
 </body>
 </html>
