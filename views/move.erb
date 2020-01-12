@@ -7,20 +7,24 @@
   <title>Move</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/materialize.css">
+  <link rel="stylesheet" href="/css/custom.css">
 </head>
 <body>
-<section class="center-align">
-  <h4>You picked <%= player_move %>, the Computer picked <%= computer_move %></h4>
-  <hr>
+  <div class="container">
+    <section class="center-align">
+      <h4>You picked <%= player_move %>, the Computer picked <%= computer_move %></h4>
+      <hr>
 
-  <h6><strong><%= outcome %></strong></h6>
+      <h6><strong><%= outcome %></strong></h6>
 
-  <p><i>To play another game, click Restart Game</i></p>
-</section>
+      <p><i>To play another game, click Restart Game</i></p>
+    </section>
 
-<form action="/" class="center-align">
-  <button type="submit">Restart Game</button>
-</form>
-<script src="/js/materialize.js"></script>
+    <form action="/" class="center-align">
+      <button type="submit">Restart Game</button>
+    </form>
+  </div>
+
+  <script src="/js/materialize.js"></script>
 </body>
 </html>

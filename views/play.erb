@@ -7,24 +7,26 @@
   <title>Play page</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/materialize.css">
+  <link rel="stylesheet" href="/css/custom.css">
 </head>
 <body>
-<section class="center-align">
-  <h4>It's <%= player %> Vs Computer</h4>
-  <hr>
-  <br>
-  <h5>Choose an attack type to begin</h5><br>
-</section>
+  <div class="container">
+    <section class="center-align">
+      <h4>It's <%= player %> Vs Computer</h4>
+      <hr>
+      <br>
+      <h5>Choose an Move to begin</h5><br>
+    </section>
 
-<section class="center-align">
-  <form action="/api/attack" method="post">
-    <input type="submit" name="move" value="Rock">
-    <input type="submit" name="move" value="Paper">
-    <input type="submit" name="move" value="Scissors">
-  </form>
-</section>
+    <section class="center-align">
+      <form action="/api/attack" method="post">
+        <input type="submit" name="move" value="Rock">
+        <input type="submit" name="move" value="Paper">
+        <input type="submit" name="move" value="Scissors">
+      </form>
+    </section>
+  </div>
 
-
-<script src="/js/materialize.js"></script>
+  <script src="/js/materialize.js"></script>
 </body>
 </html>

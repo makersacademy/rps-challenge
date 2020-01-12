@@ -7,6 +7,7 @@
   <title>Document</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/materialize.css">
+  <link rel="stylesheet" href="/css/custom.css">
 </head>
 <body class="center-align">
 <!--<form action="/api/submit_names" method="post">-->
@@ -14,27 +15,27 @@
 <!--  <input type="text" name="player_1_name" id="player_1_name" value="<%#= player_1_name %>">-->
 <!--  <button type="submit">Submit</button>-->
 <!--</form>-->
-<section>
-  <h4>To begin, Enter your name and hit submit</h4>
-  <hr>
-</section>
+<div class="container">
+  <section>
+    <h4>To begin, Enter your name and hit submit</h4>
+    <hr>
+  </section>
 
-<section>
-  <div class="row">
-    <form class="col s6 offset-s4" action="/api/submit_names" method="post" >
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
-          <label for="player_1_name">Enter your name:</label>
-          <input type="text" id="icon_prefix" class="validate" name="player_1_name" id="player_1_name" value="<%= player_1_name %>">
-          <button type="submit">Submit</button>
+  <section class="center-align">
+    <div class="row">
+      <form class="col s6 offset-s4" action="/api/submit_names" method="post" >
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <label for="player_1_name">Enter your name:</label>
+            <input type="text" id="icon_prefix" class="validate" name="player_1_name" id="player_1_name" required="true" value="<%= player_1_name %>">
+            <button type="submit">Submit</button>
+          </div>
         </div>
-      </div>
-    </form>
-  </div>
-</section>
-
-
+      </form>
+    </div>
+  </section>
+</div>
 
 <script src="/js/materialize.js"></script>
 </body>
