@@ -1,4 +1,0 @@
-class RPSExtended
-
-
-end

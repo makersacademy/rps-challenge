@@ -63,4 +63,4 @@ Using customer requirements and
 
 
 #### Create RSpec for basic object functions and implement TDD
-- RPSExtended.result(name_1:, name_2:, move_1:, move_2:)
+- RPSExtended.result(name_1:, name_2:, move_1:, move_2:, num_weapons:)

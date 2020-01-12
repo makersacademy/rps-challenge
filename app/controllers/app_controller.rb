@@ -1,7 +1,7 @@
 require 'sinatra/base'
 
 
-class Battle < Sinatra::Base
+class RPSApp < Sinatra::Base
   # sets root as the parent-directory of the current file
   set :root, File.join(File.dirname(__FILE__), '..')
   set :views, Proc.new { File.join(root, "views") }

@@ -1,0 +1,70 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/cpcwood/OneDrive/Documents/Coding/Projects/rps-challenge/spec/unit/game_spec.rb": [
+
+      ],
+      "/Users/cpcwood/OneDrive/Documents/Coding/Projects/rps-challenge/spec/unit/rps_extended_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/cpcwood/OneDrive/Documents/Coding/Projects/rps-challenge/lib/rps_extended.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        8,
+        null,
+        7,
+        null,
+        6,
+        5,
+        null,
+        null,
+        1,
+        null,
+        1,
+        13,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1578858818
+  }
+}
