@@ -1,6 +1,29 @@
 <h1> <%=session[:game].return_player(1).name%> vs <%=session[:game].return_player(2).name%> </h1>
 
-<h1>
+<h2>
   <%=session[:game].return_player(1).name%>: <%=session[:game].return_player(1).score%>
   <%=session[:game].return_player(2).name%>: <%=session[:game].return_player(2).score%>
-</h1>
+</h2>
+<h3>
+  <%=session[:game].message%>
+</h3>
+
+<br>
+<form action="/choice" method="post">
+  <input type=hidden name=choice value="Rock">
+  <input type="submit" value="Rock">
+</form>
+<br>
+<br>
+<form action="/choice" method="post">
+  <input type=hidden name=choice value="Paper">
+  <input type="submit" value="Paper">
+</form>
+<br>
+<br>
+<form action="/choice" method="post">
+  <input type=hidden name=choice value="Scissors">
+  <input type="submit" value="Scissors">
+</form>
+<br>
+

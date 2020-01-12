@@ -9,15 +9,20 @@ class Rps < Sinatra::Base
   get '/' do
     erb :index
   end
-
+  # First Screen allows input of name
   post '/name' do
     session[:game] = Game.new(Player.new(params[:player_name]))
     redirect '/play'
   end
-
+  # Second screen and main game screen
   get '/play' do
-    p session[:game]
     erb :play
+  end
+  # Action on hittng any of buttons
+  post '/choice' do
+    session[:game].move(params[:choice])
+    # redirect '/game_over' if session[:game].game_over?
+    redirect '/play'
   end
 
   run! if app_file == $0
