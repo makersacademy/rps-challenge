@@ -1,0 +1,27 @@
+<head>
+
+   <!-- <style>
+      button[type="submit"]{
+        /* add css */
+      }
+   </style> -->
+
+</head>
+
+<body>
+
+  <h1>Rock Paper Scissors Spock Lizard</h1>
+  <h3>It's <%="#{@player}"%>'s Turn!</h4>
+
+  <h4> Pick your move:</h4><br>
+
+  <form action="/<%=@action%>" method='post'>
+    <input type="radio" name=move value=1 id='scissors' checked> Scissors<br>
+    <input type="radio" name=move value=2 id='paper'> Paper<br>
+    <input type="radio" name=move value=3 id='rock'> Rock<br>
+    <input type="radio" name=move value=4 id='lizard'> Lizard<br>
+    <input type="radio" name=move value=5 id='spock'> Spock<br>
+    <input type="submit" name='Play Move!'>
+  </form>
+
+</body>

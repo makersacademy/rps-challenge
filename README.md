@@ -61,8 +61,16 @@ Using customer requirements and
 - model: RPSExtended - returns string with winner of RPS game
 - model: Game - stores player names and implements logic for game
 
-
 #### Create RSpec for basic object functions and implement TDD
-- RPSExtended.result(name_1:, name_2:, move_1:, move_2:, num_weapons:) - String result
-- Game.new(name_1:, name_2:, game:) - Inject game module which returns result
-- Game.result(move_1:, move_2:) - String result from game module
+- RPSExtended::result(name_1:, name_2:, move_1:, move_2:, num_weapons:) - String result
+- Game.new(name_1:, name_2:, num_weapons:, game_module:) - Inject game module which returns result
+- Game.new.result(move_1:, move_2:) - String result from game module
+- Game.create(name_1:, name_2:, num_weapons:, game_module:) - Stores game in class variable for persistence
+- Game.game_instance - Returns stored game instance
+
+#### Create RSpec for webpages and features
+- Homepage - Displays game title and singleplayer/multiplayer options
+- Enter names - Allows entering of names
+- Single player game - Shows name and buttons for each move
+- Mutliplayer game - Shows name and buttons for each move, switches player after first move
+- End screen - Shows winner, offers for game to be restarted 

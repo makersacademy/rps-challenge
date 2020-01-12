@@ -11,6 +11,7 @@ require 'capybara/rspec'
 require 'capybara'
 require 'capybara/dsl'
 require 'app_controller'
+require 'web_helpers'
 
 Capybara.app = RPSApp
 
