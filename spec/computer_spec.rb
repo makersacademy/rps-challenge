@@ -3,10 +3,6 @@ require 'computer'
 describe Computer do
   subject(:computer) { described_class.new }
 
-  it 'has name "The Computer"' do
-    expect(computer.name).to eq "The Computer"
-  end
-
   describe '#move' do
     it 'chooses rock' do
       allow(computer).to receive(:move) { :rock }

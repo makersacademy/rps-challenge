@@ -2,7 +2,7 @@ class Computer
   attr_reader :choice, :name
 
   def initialize
-    @name = "The Computer"
+    @name = "Computer"
     @choice = nil
   end
 

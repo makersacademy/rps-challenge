@@ -10,7 +10,7 @@ feature 'Check Outcomes' do
     allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     sign_in_and_play
     click_button 'PAPER'
-    expect(page).to have_content 'The Computer Wins!'
+    expect(page).to have_content 'Computer Wins!'
   end
 
   scenario 'Its a draw' do
