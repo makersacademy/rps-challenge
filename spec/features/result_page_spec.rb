@@ -71,3 +71,13 @@ feature 'shows result' do
     expect(page).to have_content 'Computer wins!'
   end
 end
+
+feature 'play again' do
+  scenario 'after a game you can choose to play again' do
+    log_in
+    choose(option: 'rock')
+    click_button 'Play'
+    click_button 'Play again'
+    expect(page).to have_content 'choose your move'
+  end
+end
