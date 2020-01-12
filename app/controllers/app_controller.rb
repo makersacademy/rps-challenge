@@ -61,8 +61,8 @@ class RPSApp < Sinatra::Base
     erb :game_view
   end
 
-  post '/mutliplayer-game-p1-turn' do
-    @game.add_move_1(params[:move].to_i)
+  post '/mutliplayer-game-p2-turn' do
+    @game.add_move_2(params[:move].to_i)
     redirect('/result')
   end
 
