@@ -13,11 +13,9 @@ class Rps < Sinatra::Base
     session[:name] = params[:name]
     @opponent = "COMPUTER"
     erb :play
-   
   end
 
   post '/result' do 
-    p params
     @name = session[:name]
     session[:move] = params[:move]
     @opponent = "COMPUTER"
