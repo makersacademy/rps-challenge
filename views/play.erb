@@ -1,2 +1,9 @@
-<h1>Player 1: <%= @game.player_1.name %></h1>
-<h1>Player 2: <%= @game.player_2.name %></h1>
+<h1>Welcome!</h1>
+<h2>Player 1: <%= @game.player_1.name %></h2>
+<h3>Which of these would you like to pick?</h3>
+<h3>Note that you're against the computer. It'll soon be updated to multiple players. Thanks for your cooperation. :)</h3>
+<form action="/fight" method="post">
+  <input type="submit" value="Rock">
+  <input type="submit" value="Paper">
+  <input type="submit" value="Scissors">
+</form>

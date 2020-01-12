@@ -1,6 +1,5 @@
-def sign_in_and_play
+def sign_in_1_player
   visit('/')
   fill_in :player_1, with: "Shaun"
-  fill_in :player_2, with: "Low"
   click_button "Submit"
 end

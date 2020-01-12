@@ -1,18 +1,10 @@
 require_relative 'game'
 
 class Player 
-  attr_reader :name, :hp 
+  attr_reader :name
 
-  DEFAULT_HP = 100 
-  DMG = 10
-
-  def initialize(name, hp = DEFAULT_HP)
+  def initialize(name)
     @name = name 
-    @hp = hp
-  end 
-
-  def damage
-    @hp -= DMG 
   end 
 
 end 
