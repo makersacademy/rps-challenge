@@ -4,12 +4,13 @@ A project to create a web app that can be deployed on a localhost.
 
 Built in Ruby and HTML and tested using Capybara and rspec.
 
+The app itself is split into an MVC model and so if anything needs to be changed in the logic then please go to rps.rb.
+
 To access run rackup in the directory (/rps-challenge) and then go to http://localhost:9292.
 
 Enter a name and follow the instructions.
 
 Have a good time!
-
 
 
 Instructions

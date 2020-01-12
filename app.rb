@@ -3,24 +3,26 @@ require './lib/rps'
 
 class RockPaperScissors < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb(:index)
   end
 
   post '/start' do
-    @name = params[:name]
+    $player_name = params[:name]
+    @name = $player_name
     erb(:start)
   end
 
-  get '/decision' do
-    @move = params[:move]
-    @name = params[:name]
+  post '/decision' do
+    @name = $name
+    $game = RPS.new("Butts", move)
+    @game = $game
     erb(:decision)
   end
 
-  post '/decision' do
-    @move = params[:move]
-    @name = params[:name]
-    redirect '/decision'
+  get '/end' do
+    erb(:erb)
   end
 end

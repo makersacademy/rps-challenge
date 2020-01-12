@@ -1,10 +1,10 @@
 class RPS
 
   # K == Spock
-  def initialize(name, move)
+  def initialize(name, move, rival = ["R", "S", "P", "L", "K"].sample)
     @name = name
     @move = move
-    @rival = ["R","S","P","L","K"].sample
+    @rival = rival
   end
 
   def rival
@@ -23,7 +23,9 @@ class RPS
     end
   end
 # Method to long but kept 11 lines to ensure clarity (i.e not nested ternary statements)
+  
   def not_draw
+
     if @move == "S"
       scissors 
     elsif @move == "R"
