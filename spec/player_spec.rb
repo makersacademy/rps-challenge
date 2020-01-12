@@ -1,8 +1,9 @@
 require 'player'
+
 describe Player do
   let(:subject) { described_class.new('goku') }
 
-  describe '#initialize' do 
+  describe '#initialization' do 
     it { expect(subject.name).to eq 'goku' }
   end
 
