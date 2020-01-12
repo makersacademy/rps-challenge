@@ -24,11 +24,14 @@ class Game
 
   def outcome
     if OUTCOMES[@player1.choice] == @computer.choice
-      "#{@player1.name} Wins!"
+      # "#{@player1.name} Wins!"
+      @player1.name
     elsif OUTCOMES[@computer.choice] == @player1.choice
-      "The Computer Wins!"
+      # "The Computer Wins!"
+      @computer.name
     else
-      "It's a draw!"
+      :draw
+      # "It's a draw!"
     end
   end
 

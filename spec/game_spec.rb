@@ -2,7 +2,7 @@ require_relative '../lib/game'
 describe 'Game' do
 
   let(:player_one) { double :player_one, name: "player_one" }
-  let(:computer) { double :computer }
+  let(:computer) { double :computer, name: "Computer" }
 
   subject(:game) { Game.new(player_one, computer) }
 
@@ -25,7 +25,7 @@ describe 'Game' do
       it 'shows "player_one wins"' do
         allow(computer).to receive(:choice).and_return(:scissors)
         allow(player_one).to receive(:choice).and_return(:rock)
-        expect(game.outcome).to eq "player_one Wins!"
+        expect(game.outcome).to eq "player_one"
       end
     end
 
@@ -33,7 +33,7 @@ describe 'Game' do
       it 'shows "The Computer wins"' do
         allow(computer).to receive(:choice).and_return(:paper)
         allow(player_one).to receive(:choice).and_return(:rock)
-        expect(game.outcome).to eq "The Computer Wins!"
+        expect(game.outcome).to eq "Computer"
       end
     end
   end

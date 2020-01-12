@@ -26,6 +26,7 @@ class RPS < Sinatra::Base
 
   get '/outcome' do
     @game = $game
+    (@game.outcome != :draw) ? @outcome = "#{@game.outcome} Wins!" : @outcome = "It's a draw"
     erb(:outcome)
   end
 end
