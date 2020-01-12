@@ -1,6 +1,6 @@
 feature 'Selecting rock paper or scissors' do
   scenario 'player_1 selects Rock and lucy_the_computer selects Rock' do
-    enter_name_and_play
+    visit('/selection')
     click_button("Rock")
     expect(page).to have_content("You selected Rock!")
     expect(page).to have_content("Lucy the Computer selected Rock!")
@@ -8,7 +8,7 @@ feature 'Selecting rock paper or scissors' do
   end
 
   scenario 'player_1 selects Paper and lucy_the_computer selects Paper' do
-    enter_name_and_play
+    visit('/selection')
     click_button("Paper")
     expect(page).to have_content "You selected Paper!"
     expect(page).to have_content "Lucy the Computer selected Paper!"
@@ -16,7 +16,7 @@ feature 'Selecting rock paper or scissors' do
   end
 
   scenario 'player_1 selects Scissors and lucy_the_computer selects Scissors' do
-    enter_name_and_play
+    visit('/selection')
     click_button("Scissors")
     expect(page).to have_content "You selected Scissors!"
     expect(page).to have_content "Lucy the Computer selected Scissors!"
@@ -24,7 +24,7 @@ feature 'Selecting rock paper or scissors' do
   end
   
 scenario 'player_1 selects Rock and lucy_the_computer selects Paper' do
-  enter_name_and_play
+  visit('/selection')
   click_button("Rock")
   expect(page).to have_content "You selected Rock!"
   expect(page).to have_content "Lucy the Computer selected Paper!"
@@ -33,7 +33,7 @@ end
 
 
 scenario 'player_1 selects Paper and lucy_the_computer selects Rock' do
-  enter_name_and_play
+  visit('/selection')
   click_button("Paper")
   expect(page).to have_content "You selected Paper!"
   expect(page).to have_content "Lucy the Computer selected Rock!"
@@ -43,7 +43,7 @@ end
 
 
 scenario 'player_1 selects Rock and lucy_the_computer selects Scissors' do
-  enter_name_and_play
+  visit('/selection')
   click_button("Rock")
   expect(page).to have_content "You selected Rock!"
   expect(page).to have_content "Lucy the Computer selected Scissors!"
@@ -53,7 +53,7 @@ end
 
 
 scenario 'player_1 selects Paper and lucy_the_computer selects Scissors' do
-  enter_name_and_play
+  visit('/selection')
   click_button("Paper")
   expect(page).to have_content "You selected Paper!"
   expect(page).to have_content "Lucy the Computer selected Scissors!"
@@ -63,7 +63,7 @@ end
 
 
 scenario 'player_1 selects Scissors and lucy_the_computer selects Paper' do
-  enter_name_and_play
+  visit('/selection')
   click_button("Scissors")
   expect(page).to have_content "You selected Scissors!"
   expect(page).to have_content "Lucy the Computer selected Paper!"
@@ -73,7 +73,7 @@ end
 
 
 scenario 'player_1 selects Scissors and lucy_the_computer selects Rock' do
-  enter_name_and_play
+  visit('/selection')
   click_button("Scissors")
   expect(page).to have_content "You selected Scissors!"
   expect(page).to have_content "Lucy the Computer selected Rock!"
