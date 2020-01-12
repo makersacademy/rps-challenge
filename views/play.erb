@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link type='text/css' rel='stylesheet' href='/css/style.css'>
+</head>
+<body>
+
+<h1>Let's Play, <%=@game.player1.name%>!</h1>
+<h3>MAKE YOUR MOVE:</h3>
+
+<div id="move-forms" class="move-forms">
+  <form action = '/move' method = 'post'>
+    <input type="submit" name="move" value = "ROCK">
+    <input type="submit" name="move" value = "PAPER">
+    <input type="submit" name="move" value = "SCISSORS">
+  </form>
+</div>
+
+</body>
+</html>

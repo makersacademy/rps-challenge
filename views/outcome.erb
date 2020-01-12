@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link type='text/css' rel='stylesheet' href='/css/style.css'>
+</head>
+<body>
+  <div class="player1-name-choice">
+    <%= @game.player1.name.upcase%>: <%= @game.player1.choice.upcase%>
+  </div>
+  <div class="computer-choice">
+    COMPUTER: <%= @game.computer.choice.upcase%>
+  </div>
+<svg viewBox="0 0 960 300">
+    <symbol id="s-text">
+      <text text-anchor="middle" x="50%" y="50%"><%= @outcome %></text>
+    </symbol>
+
+    <g class = "g-ants">
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+    </g>
+  </svg>
+
+<a href="/play">Play Again</a>
+</body>
+</html>

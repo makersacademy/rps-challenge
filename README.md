@@ -1,5 +1,55 @@
 # RPS Challenge
 
+Build a single-player Rock, Paper, Scissors web-app. Allows the user to enter their name, chose a move, and compete against the computer.
+
+## Getting Started
+
+### Run Bundle Install
+
+Before you run the program, make sure your gems are up to date by running:
+
+```
+$ bundle install
+```
+
+## Running the program
+
+### Start Server
+
+```sh
+$ rackup -p 4567
+```
+
+### View in Browser
+
+```
+localhost:4567
+```
+
+![Homepage](https://i.imgur.com/PLpHvnx.png)
+![Play](https://i.imgur.com/lrEe3uL.png)
+![Outcome](https://i.imgur.com/Z9PRxco.png)
+
+## Running the tests
+
+To run tests for this program, run:
+
+```
+$ rspec
+```
+
+## User Stories
+
+```
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+```
+
 Instructions
 -------
 
