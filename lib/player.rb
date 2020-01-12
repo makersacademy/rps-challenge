@@ -5,9 +5,7 @@ class Player
     @name = name
   end 
 
-  def random_selection
-    ['Paper', 'Rock', 'Scissors'].sample
-  end
+ 
 
 
 

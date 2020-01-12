@@ -1,6 +1,6 @@
-feature 'Selecting moves' do
+feature 'Selecting rock paper or scissors' do
   scenario 'player_1 selects Rock and lucy_the_computer selects Rock' do
-    allow_any_instance_of(Player).to receive(:random_choice).and_return('Rock')
+    allow_any_instance_of(RPSame).to receive(:random_choice).and_return('Rock')
     enter_name_and_play
     click_button 'Rock'
     expect(page).to have_content "You selected Rock!"
@@ -9,7 +9,7 @@ feature 'Selecting moves' do
   end
 
   scenario 'player_1 selects Paper and lucy_the_computer selects Paper' do
-    allow_any_instance_of(Player).to receive(:random_choice).and_return('Paper')
+    allow_any_instance_of(RPSGame).to receive(:random_choice).and_return('Paper')
     enter_name_and_play
     click_button 'Paper'
     expect(page).to have_content "You selected Paper!"
@@ -18,7 +18,7 @@ feature 'Selecting moves' do
   end
 
   scenario 'player_1 selects Scissors and lucy_the_computer selects Scissors' do
-    allow_any_instance_of(Player).to receive(:random_choice).and_return('Scissors')
+    allow_any_instance_of(RPSGame).to receive(:random_choice).and_return('Scissors')
     enter_name_and_play
     click_button 'Scissors'
     expect(page).to have_content "You selected Scissors!"
@@ -27,7 +27,7 @@ feature 'Selecting moves' do
   end
   
 scenario 'player_1 selects Rock and lucy_the_computer selects Paper' do
-  allow_any_instance_of(Player).to receive(:random_choice).and_return('Paper')
+  allow_any_instance_of(RPSGame).to receive(:random_choice).and_return('Paper')
   enter_name_and_play
   click_button 'Rock'
   expect(page).to have_content "You selected Rock!"
@@ -37,7 +37,7 @@ end
 
 
 scenario 'player_1 selects Paper and lucy_the_computer selects Rock' do
-  allow_any_instance_of(Player).to receive(:random_choice).and_return('Rock')
+  allow_any_instance_of(RPSGame).to receive(:random_choice).and_return('Rock')
   enter_name_and_play
   click_button 'Paper'
   expect(page).to have_content "You selected Paper!"
@@ -48,7 +48,7 @@ end
 
 
 scenario 'player_1 selects Rock and lucy_the_computer selects Scissors' do
-  allow_any_instance_of(Player).to receive(:random_choice).and_return('Scissors')
+  allow_any_instance_of(RPSGame).to receive(:random_choice).and_return('Scissors')
   enter_name_and_play
   click_button 'Rock'
   expect(page).to have_content "You selected Rock!"
@@ -59,7 +59,7 @@ end
 
 
 scenario 'player_1 selects Paper and lucy_the_computer selects Scissors' do
-  allow_any_instance_of(Player).to receive(:random_choice).and_return('Scissors')
+  allow_any_instance_of(RPSGame).to receive(:random_choice).and_return('Scissors')
   enter_name_and_play
   click_button 'Paper'
   expect(page).to have_content "You selected Paper!"
@@ -70,7 +70,7 @@ end
 
 
 scenario 'player_1 selects Scissors and lucy_the_computer selects Paper' do
-  allow_any_instance_of(Player).to receive(:random_choice).and_return('Paper')
+  allow_any_instance_of(RPSGame).to receive(:random_choice).and_return('Paper')
   enter_name_and_play
   click_button 'Scissors'
   expect(page).to have_content "You selected Scissors!"
@@ -81,7 +81,7 @@ end
 
 
 scenario 'player_1 selects Scissors and lucy_the_computer selects Rock' do
-  allow_any_instance_of(Player).to receive(:random_choice).and_return('Rock')
+  allow_any_instance_of(RPSGame).to receive(:random_choice).and_return('Rock')
   enter_name_and_play
   click_button 'Scissors'
   expect(page).to have_content "You selected Scissors!"
