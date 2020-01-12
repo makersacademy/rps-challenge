@@ -14,4 +14,11 @@ describe Player do
     end
   end
 
+  describe '#move' do
+    it 'updates move' do
+      subject.move = 'rock'
+      expect(subject.move).to eq 'rock'
+    end
+  end
+
 end

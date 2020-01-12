@@ -1,0 +1,11 @@
+<h2><%= @game.player1.name + ': ' + @game.player1.move %></h2>
+<br>
+<h2>Vs</h2>
+<br>
+<h2><%= @game.player2.name + ': ' + @game.random_move(@game.player2) %></h2>
+<br>
+<% if @game.winner == 'draw' %>
+<h2>No winners, you draw!</h2>
+<% else %>
+<h2><%= @game.winner.name %> wins!</h2>
+<% end %>

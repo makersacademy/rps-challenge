@@ -1,0 +1,9 @@
+<h2><%= @game.player1.name %> choose your move:</h2>
+
+<form action='/move' method='POST'>
+  <label><input type='radio' name='move' value='rock'>Rock</label>
+  <label><input type='radio' name='move' value='paper'>Paper</label>
+  <label><input type='radio' name='move' value='scissor'>Scissor</label>
+  <br>
+  <input type='submit' value='Play!'>
+</form>
