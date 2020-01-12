@@ -7,17 +7,18 @@
 
 
 <body>
-
+  
   <h1>Rock, Paper, Scissors!</h1>
   <h2>Please enter your name to play.</h2>
 
-  <form action="/names" method="post">
-    <label for="player_1_name">
-      Player Name: 
-      <input type="text" name="player_1_name"> 
-    </label>
-    <input type="submit" value="Submit">
-  </form>
-
+  <div class='input'>
+    <form action="/names" method="post">
+      <label for="player_1_name">
+        Player Name: 
+        <input class="name", type="text", name="player_1_name"> 
+      </label>
+      <input class='button', type="submit", value="Submit">
+    </form>
+  </div>
 </body>
 </html>
