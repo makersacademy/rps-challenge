@@ -14,4 +14,8 @@ class Player
     "Paper"
   end
 
+  def scissors
+    "Scissors"
+  end
+
 end
