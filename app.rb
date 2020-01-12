@@ -41,7 +41,7 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do 
-    @player_1_selection = @rpsgame.player_selection(params[:selection]) 
+    @player_1_selection = @rpsgame.player_selection (params[:selection]) 
     @lucy_the_computer_selection = @rpsgame.computer_selection 
     redirect '/result'
   end 
@@ -50,7 +50,8 @@ class RPS < Sinatra::Base
     @player_1_selection = @rpsgame.player_selection(params[:selection])  
     @lucy_the_computer_selection = @rpsgame.computer_selection 
     @determine_winner = @rpsgame.play(@player_1_selection, @lucy_the_computer_selection) 
-    erb(:result)  
+    erb(:result) 
+  end 
 
 
   run! if app_file == $0
