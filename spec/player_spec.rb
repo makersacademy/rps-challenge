@@ -10,22 +10,22 @@ describe Player do
     end
   end
 
-  describe '#rock' do
-    it 'allows player to choose a move' do
-      expect(subject.rock).to eq "Rock"
-    end
-  end
+  # describe '#rock' do
+  #   it 'allows player to choose a move' do
+  #     expect(subject.rock).to eq "Rock"
+  #   end
+  # end
 
-  describe '#rock' do
-    it 'allows player to choose a move' do
-      expect(subject.paper).to eq "Paper"
-    end
-  end
+  # describe '#rock' do
+  #   it 'allows player to choose a move' do
+  #     expect(subject.paper).to eq "Paper"
+  #   end
+  # end
 
-  describe '#scissors' do
-    it 'allows player to choose a move' do
-      expect(subject.scissors).to eq "Scissors"
-    end
-  end
+  # describe '#scissors' do
+  #   it 'allows player to choose a move' do
+  #     expect(subject.scissors).to eq "Scissors"
+  #   end
+  # end
 
 end

@@ -6,16 +6,16 @@ class Player
     @name = name
   end
 
-  def rock
-    "Rock"
-  end
+  # def rock
+  #   "Rock"
+  # end
 
-  def paper
-    "Paper"
-  end
+  # def paper
+  #   "Paper"
+  # end
 
-  def scissors
-    "Scissors"
-  end
+  # def scissors
+  #   "Scissors"
+  # end
 
 end
