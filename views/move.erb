@@ -5,14 +5,22 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Move</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/css/materialize.css">
 </head>
 <body>
-<p>You picked <%= player_move %>, the Computer picked <%= computer_move %></p>
-<p><%= outcome %></p>
+<section class="center-align">
+  <h4>You picked <%= player_move %>, the Computer picked <%= computer_move %></h4>
+  <hr>
 
-<p>To play another game, click Restart Game</p>
-<form action="/">
+  <h6><strong><%= outcome %></strong></h6>
+
+  <p><i>To play another game, click Restart Game</i></p>
+</section>
+
+<form action="/" class="center-align">
   <button type="submit">Restart Game</button>
 </form>
+<script src="/js/materialize.js"></script>
 </body>
 </html>

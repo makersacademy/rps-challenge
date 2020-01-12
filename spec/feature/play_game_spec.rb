@@ -1,7 +1,7 @@
 feature 'Start Game' do
   scenario 'choose an attack' do
     visit_submit_name
-    expect(page).to have_content "Please choose an attack type to begin"
+    expect(page).to have_content "Choose an attack type to begin"
     expect(page).to have_button "Rock"
     expect(page).to have_button "Paper"
     expect(page).to have_button "Scissors"

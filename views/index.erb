@@ -5,12 +5,37 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/css/materialize.css">
 </head>
-<body>
-<form action="/api/submit_names" method="post">
-  <label for="player_1_name">Enter your name:</label>
-  <input type="text" name="player_1_name" id="player_1_name" value="<%= player_1_name %>">
-  <button type="submit">Submit</button>
-</form>
+<body class="center-align">
+<!--<form action="/api/submit_names" method="post">-->
+<!--  <label for="player_1_name">Enter your name:</label>-->
+<!--  <input type="text" name="player_1_name" id="player_1_name" value="<%#= player_1_name %>">-->
+<!--  <button type="submit">Submit</button>-->
+<!--</form>-->
+<section>
+  <h4>To begin, Enter your name and hit submit</h4>
+  <hr>
+</section>
+
+<section>
+  <div class="row">
+    <form class="col s12 offset-s3" action="/api/submit_names" method="post" >
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <label for="player_1_name">Enter your name:</label>
+          <input type="text" id="icon_prefix" class="validate" name="player_1_name" id="player_1_name" value="<%= player_1_name %>">
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+<script src="/js/materialize.js"></script>
 </body>
 </html>

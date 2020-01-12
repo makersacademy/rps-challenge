@@ -5,17 +5,26 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Play page</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/css/materialize.css">
 </head>
 <body>
-<h1>Lets play Rock Paper Scissors</h1>
-<p>It's <%= player %> Vs Computer</p><br>
-<p>Please choose an attack type to begin</p>
+<section class="center-align">
+  <h4>It's <%= player %> Vs Computer</h4>
+  <hr>
+  <br>
+  <h5>Choose an attack type to begin</h5><br>
+</section>
 
-<form action="/api/attack" method="post">
-  <input type="submit" name="move" value="Rock">
-  <input type="submit" name="move" value="Paper">
-  <input type="submit" name="move" value="Scissors">
-</form>
+<section class="center-align">
+  <form action="/api/attack" method="post">
+    <input type="submit" name="move" value="Rock">
+    <input type="submit" name="move" value="Paper">
+    <input type="submit" name="move" value="Scissors">
+  </form>
+</section>
 
+
+<script src="/js/materialize.js"></script>
 </body>
 </html>
