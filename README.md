@@ -6,10 +6,12 @@ There are 4 classes, player (initialized with a name), computer (to generate a r
 
 
 To run the web app follow these instructions:
+```
 $ git clone https://github.com/acmerlino1/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup
+```
 
 
 
