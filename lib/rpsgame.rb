@@ -21,6 +21,7 @@ class RpsGame
 
   def winner
     return draw if draw
+    
     case @player1.move
     when 'rock'
       @player2.move == 'scissor' ? @player1 : @player2

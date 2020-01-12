@@ -1,4 +1,3 @@
-
 feature 'display name' do
   before { log_in }
 
