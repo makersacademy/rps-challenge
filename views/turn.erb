@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
-<h1>Your move: <%= @action %></h1>
-<h1>Your opponent's move: <%= @computer %></h1>
+<h2>Your move: <%= @move.player %></h2>
+<h2>Your opponent's move: <%= @move.computer_weapon %></h2>
+<h1><%= @move.calculate_result %></h1>
 </html>

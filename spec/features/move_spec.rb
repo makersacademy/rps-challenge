@@ -1,5 +1,5 @@
 feature 'Pick move' do
-  scenario 'Player chooses Rock' do
+  scenario 'Player chooses Rock and sees computer move and result' do
     sign_in_and_play
     choose 'Rock'
     click_button 'Submit'

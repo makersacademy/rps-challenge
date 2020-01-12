@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/moves'
 
 class Game < Sinatra::Base
   enable :sessions
@@ -18,12 +19,12 @@ class Game < Sinatra::Base
   end
 
   post '/shoot' do
-    session[:action] = params[:action]
+    @move = Move.create(params[:action])
     redirect '/turn'
   end
 
   get '/turn' do
-    @action = session[:action]
+    @move = Move.instance
     erb :turn
   end
 

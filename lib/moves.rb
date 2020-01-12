@@ -1,8 +1,17 @@
 class Move
-  attr_reader :computer_weapon
+  attr_reader :computer_weapon, :player
 
-  def initialize
+  def initialize(player_weapon)
+    @player = player_weapon
     @computer_weapon = computer_weapon
+  end
+
+  def self.create(player_weapon)
+    @move = Move.new(player_weapon)
+  end
+
+  def self.instance
+    @move
   end
 
   def computer_weapon
@@ -14,7 +23,7 @@ class Move
     options[weapon]
   end
 
-  def calculate_result(player, computer = @computer_weapon)
+  def calculate_result(player = @player, computer = @computer_weapon)
     if player == computer
       "You tied"
     elsif beats(player) == computer

@@ -1,6 +1,8 @@
-require 'game'
+require 'moves'
 
 describe Move do
+  let(:move) { double("Rock") }
+  subject(:game) { Move.new(move) }
   describe '#computer_weapon' do
     it 'randomly chooses an option' do
       srand(4)
