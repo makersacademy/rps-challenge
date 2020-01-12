@@ -1,3 +1,3 @@
-describe Game do
+describe GameEngine do
 
 end
