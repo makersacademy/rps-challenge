@@ -12,7 +12,7 @@ describe Player do
 
   describe '#move' do
     it 'allows player to choose a move' do
-      expect(subject.move).to eq "Rock"
+      expect(subject.move("Rock")).to eq "Rock"
     end
   end
   

@@ -6,8 +6,8 @@ class Player
     @name = name
   end
 
-  def move
-    "Rock"
+  def move(choice)
+    choice = "Rock"
   end
 
 end

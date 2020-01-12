@@ -20,8 +20,12 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/runMethod' do
+    redirect '/play'
+  end
+
   get '/outcome' do
-    @player_1_name = params[:player_1_name]
+    @game = $game
     erb :outcome
   end
 
