@@ -4,7 +4,10 @@ class Player
 
   def initialize(name)
     @name = name
-    
+  end
+
+  def move
+    "Rock"
   end
 
 end
