@@ -155,10 +155,13 @@ I have also removed the infrastructure tests as we are no longer returning a str
 To keep my routes clear as to their purpose, any post routes will be prefixed with /api/some_route_here, an example of this is the
 submit names route, which will have an address of /api/submit_names, any other post routes in the application will follow this convention
 
-in app.rb I change the root '/' path to the following
+in app.rb I changed the root '/' path to the following
 
 ```ruby 
   get '/' do
     erb :index
   end
 ```
+
+At this stage, I am going to continue the development along the same TDD process, but to save time and this readme from 
+becomming a novel, I will no document each step, instead, this can be seen in the commit history for this project.
