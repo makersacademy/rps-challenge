@@ -3,7 +3,7 @@ feature 'End Game' do
     scenario "Human Wins" do
       visit_submit_name
       click_button 'Rock'
-      expect(page).to have_content "Human Wins"
+      expect(page).to have_content "human Wins"
     end
   end
 

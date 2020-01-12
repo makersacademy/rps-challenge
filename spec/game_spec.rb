@@ -13,7 +13,7 @@ describe GameEngine do
 
   it 'returns player 2 as winner' do
     p_2_winner = GameEngine.new(guess1: 'Paper', computer: 'Rock')
-    expect(p_2_winner.winner_is).to include('Human Wins')
+    expect(p_2_winner.winner_is).to include('human Wins')
   end
 
   it 'returns a tie' do
