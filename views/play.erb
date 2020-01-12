@@ -1,0 +1,11 @@
+<center><h1>Welcome <%= session[:name] %><br></h1>
+        <h2>You will be playing: <%= @opponent %></h2>
+        <h3>Please pick your move:</h3></center>
+
+
+<center><form action="/result" method="post">
+  <input type="radio" name=move value="Rock">Rock<br>
+  <input type="radio" name=move value="Paper">Paper<br>
+  <input type="radio" name=move value="Scissors">Scissors<br>
+  <input type="submit" value="Submit!">
+</form></center>

@@ -3,6 +3,7 @@ require 'simplecov'
 require 'simplecov-console'
 require './app'
 require 'capybara'
+require 'features/web_helpers'
 
 ENV['RACK_ENV'] = 'test'
 
