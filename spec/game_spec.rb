@@ -3,7 +3,7 @@ require 'player'
 
 describe Game do
   subject(:game){ described_class.new(shaun) }
-    let(:shaun) { double("Shaun") }
+    let(:shaun) { Player.new("Shaun") }
 
   it 'retrieves player' do
     expect(game.player_1).to eq shaun
