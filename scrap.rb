@@ -1,16 +1,15 @@
-puts "Player 1 - enter 'rock', 'paper' or 'scissors'"
-p_1 = gets.chomp
 
-puts "Player 2 - enter 'rock', 'paper' or 'scissors'"
-p_2 = gets.chomp
 
-if (p_1 == "Rock" && p_2 == "Scissors") || (p_1 == "Paper" && p_2 == "Rock") ||
-  (p_1 == "Scissors" && p_2 == "Paper")
-  puts "Player 1 wins"
 
-elsif p_1 == p_2
-  puts "It's a draw"
+# @name if session[:move] == "Paper"
 
-else
-  puts "Player 2 wins"
-end
+if (session[:move] == "Rock" && @computer_move == "Scissors") || 
+   (session[:move] == "Paper" && @computer_move == "Rock") ||
+   (session[:move] == "Scissors" && @computer_move == "Paper") 
+  @name + "Wins"
+
+elsif session[:move] == @computer_move
+  "It's a draw"
+ 
+else 
+  @opponent + "Wins"

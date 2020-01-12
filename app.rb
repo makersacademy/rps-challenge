@@ -19,7 +19,7 @@ class Rps < Sinatra::Base
     @name = session[:name]
     session[:move] = params[:move]
     @opponent = "COMPUTER"
-    @computer_move = "Rock"
+    @computer_move = [:Rock, :Paper, :Scissors].sample
     erb :result
   end
 
