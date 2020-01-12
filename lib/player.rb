@@ -7,4 +7,8 @@ class Player
     @move = move
     @wins = 0
   end
+
+  def add_win
+    @wins += 1
+  end
 end

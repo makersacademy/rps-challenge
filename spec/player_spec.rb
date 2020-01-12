@@ -21,4 +21,15 @@ describe Player do
     end
   end
 
+  describe '#add_win' do
+    it 'add a win to the player' do
+      expect(subject.add_win).to eq 1
+    end
+
+    it 'add 5 win to the player' do
+      5.times { subject.add_win }
+      expect(subject.wins).to eq 5
+    end
+  end
+
 end

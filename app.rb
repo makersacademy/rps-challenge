@@ -24,11 +24,17 @@ class Rps < Sinatra::Base
 
   post '/move' do
     @game.select(@game.player1, params[:move])
+    @game.random_move(@game.player2)
     redirect '/result'
   end
 
   get '/result' do
     erb(:result)
+  end
+
+  post '/add-win' do
+    @game.winner == @game.player1 ? @game.player1.add_win : @game.player2.add_win
+    redirect '/play'
   end
 
   run! if app_file == $0

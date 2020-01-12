@@ -1,4 +1,5 @@
-<h2><%= @game.player1.name %> choose your move:</h2>
+<h2><%= @game.player1.name %> wins count: <%= @game.player1.wins %></h2>
+<h3>Choose your move:</h3>
 
 <form action='/move' method='POST'>
   <label><input type='radio' name='move' value='rock' required>Rock</label>

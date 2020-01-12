@@ -78,6 +78,6 @@ feature 'play again' do
     choose(option: 'rock')
     click_button 'Play'
     click_button 'Play again'
-    expect(page).to have_content 'choose your move'
+    expect(page).to have_content 'Choose your move'
   end
 end

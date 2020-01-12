@@ -2,13 +2,16 @@
 <br>
 <h2>Vs</h2>
 <br>
-<h2><%= @game.player2.name + ': ' + @game.random_move(@game.player2) %></h2>
+<h2><%= @game.player2.name + ': ' + @game.player2.move %></h2>
 <br>
 <% if @game.winner == 'draw' %>
 <h2>No winners, you draw!</h2>
-<% else %>
-<h2><%= @game.winner.name %> wins!</h2>
-<% end %>
 <form action='/play'>
   <input type='submit' value='Play again'>
 </form>
+<% else %>
+<h2><%= @game.winner.name %> wins!</h2>
+<form action='/add-win' method='POST'>
+  <input type='submit' value='Play again'>
+</form>
+<% end %>
