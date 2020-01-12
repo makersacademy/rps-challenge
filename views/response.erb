@@ -1,0 +1,16 @@
+<style>
+body {
+        text-align: center;
+        color: white;
+        background-image: url('http://hdwpro.com/wp-content/uploads/2015/12/Texture-Background-1620x1080.jpg');
+        background-size: 100% 100%
+    }
+</style>
+
+<h2>Opponent used <%= $game.response.capitalize %></h2>
+
+<h2> <%= $evaluator.message %> </h2>
+
+<form action='/game'>
+  <button type='submit'>Start Over</button>
+</form>
