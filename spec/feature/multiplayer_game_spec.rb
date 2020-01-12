@@ -17,4 +17,13 @@ feature 'Multiplayer Game' do
     click_button('Play Move!')
     expect(page).to have_content("It's James's Turn!")
   end
+  scenario 'Default name used if form left empty' do
+    visit("/")
+    click_button('Multiplayer')
+    click_button('Start Game!')
+    expect(page).to have_content("It's Player 1's Turn!")
+    choose('lizard')
+    click_button('Play Move!')
+    expect(page).to have_content("It's Player 2's Turn!")
+  end
 end

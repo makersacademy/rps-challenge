@@ -68,6 +68,15 @@
         1,
         1,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/cpcwood/OneDrive/Documents/Coding/Projects/rps-challenge/spec/feature/singleplayer_game_spec.rb": [
@@ -91,7 +100,7 @@
         null,
         1,
         null,
-        10,
+        12,
         null,
         8,
         null,
@@ -99,7 +108,15 @@
         1,
         1,
         null,
+        1,
+        1,
+        1,
         null,
+        null,
+        null,
+        1,
+        1,
+        1,
         null,
         1,
         1,
@@ -188,6 +205,6 @@
         null
       ]
     },
-    "timestamp": 1578869224
+    "timestamp": 1578869854
   }
 }

@@ -10,11 +10,19 @@ describe Game do
     it 'returns player 1 name' do
       expect(subject.player_1_name).to eq 'Chris'
     end
+    it 'uses defualt name if none given' do
+      game = Game.new(name_1: '', name_2: 'James', num_weapons: 5, game_module: rps_mock)
+      expect(game.player_1_name).to eq 'Player 1'
+    end
   end
 
   describe '#player_2_name' do
     it 'returns player 2 name' do
       expect(subject.player_2_name).to eq 'James'
+    end
+    it 'uses defualt name if none given' do
+      game = Game.new(name_1: 'Chris', name_2: '', num_weapons: 5, game_module: rps_mock)
+      expect(game.player_2_name).to eq 'Player 2'
     end
   end
 
