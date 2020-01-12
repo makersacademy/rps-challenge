@@ -2,10 +2,12 @@ require 'weapon'
 
 describe Weapon do
 
-  subject(:weapon) { Weapon.new('rock') }
+  # subject(:rock) { Weapon.new('rock') }
 
   it 'a weapon can beat another' do
-    expect(weapon.beats?('scissors')).to be true
+    rock = Weapon.new('rock')
+    scissors = Weapon.new('scissors')
+    expect(rock.beats(scissors)).to be :Winner
   end 
 
 end

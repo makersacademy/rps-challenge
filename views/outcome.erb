@@ -4,8 +4,8 @@
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
 </head>
 
-<h3> <%= @game.player_1.name%> chose <%= @game.player_1.<%=(@choice.downcase)%> %> </h3>
-<h3> Computer chose xxx </h3>
+<h3> <%= @game.player_1.name%> chose <%= @game.player_1.weapon=$choice.downcase%> </h3>
+<h3> Computer chose <%= @computer_choice %> </h3>
 
 <h2> Player xxx wins! </h2>
 
