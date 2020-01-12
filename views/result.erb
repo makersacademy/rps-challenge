@@ -1,17 +1,30 @@
-<h2><%= @game.player1.name + ': ' + @game.player1.move %></h2>
-<br>
-<h2>Vs</h2>
-<br>
-<h2><%= @game.player2.name + ': ' + @game.player2.move %></h2>
-<br>
-<% if @game.winner == 'draw' %>
-<h2>No winners, you draw!</h2>
-<form action='/play'>
-  <input type='submit' value='Play again'>
-</form>
-<% else %>
-<h2><%= @game.winner.name %> wins!</h2>
-<form action='/add-win' method='POST'>
-  <input type='submit' value='Play again'>
-</form>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="rps.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,400,400i,700&display=swap" rel="stylesheet">
+    <title>Maker's RPS</title>
+  </head>
+  <main>
+    <div class='name-count'>
+      <h2 class='name-count'><%= @game.player1.name + ': ' + @game.player1.move %>
+      <br>
+      Vs
+      <br>
+      <%= @game.player2.name + ': ' + @game.player2.move %></h2>
+      <br>
+      <% if @game.winner == 'draw' %>
+      <h2 class='winner'>No winners, you draw!</h2>
+      <form class='name-count' action='/play'>
+        <input class='button' type='submit' value='Play again'>
+      </form>
+      <% else %>
+      <h2 class='winner'><%= @game.winner.name %> wins!</h2>
+      <form class='name-count' action='/add-win' method='POST'>
+        <input class='button' type='submit' value='Play again'>
+      </form>
+      <% end %>
+    </div>
+  </main>
+</html>

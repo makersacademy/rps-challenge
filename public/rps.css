@@ -1,0 +1,81 @@
+html {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  background-color: hsla(0, 0%, 90%, 1);
+}
+
+main {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  min-height: 50vh;
+  margin: auto;
+  margin-top: 25vh;
+  background-color: hsla(0, 0%, 100%, 1);
+  box-shadow: -7px 20px 20px rgba(0, 0, 0, 0.18), 7px 20px 20px rgba(0, 0, 0, 0.18);
+}
+
+h1.name-submit {
+  font-size: 3rem;
+  font-weight: 700;
+  padding: 6rem 0 3rem 0;
+}
+h2.name-submit {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.name-submit {
+  text-align: center;
+}
+
+.button {
+  border: rgb(180, 183, 185) 1px solid;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  background-color: white;
+  color: black;
+}
+
+h2.name-count {
+  font-size: 1.5rem;
+  padding: 1rem;
+  line-height: 2rem;
+}
+
+h3.name-count {
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-top: 7rem;
+  font-style: italic;
+}
+
+form.name-count {
+  padding: 0.3rem 1rem;
+}
+
+label.name-count {
+  padding-right: 0.4rem;
+}
+
+input.name-count {
+  vertical-align: text-top;
+}
+
+input.button {
+  margin-top: 1rem;
+}
+
+div.name-count {
+  padding: 2rem;
+}
+
+.winner {
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-top: 5rem;
+  font-style: italic;
+}

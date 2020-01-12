@@ -1,6 +1,19 @@
-<h1>Welcome to Maker's RPS!</h1>
-<label for='name'><h2>Please, insert your name!</h2></label>
-<form action='/names' method='POST'>
-  <input type='text' id='name' name='name' required>
-  <input type='submit' value='Submit'>
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="rps.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,400,400i,700&display=swap" rel="stylesheet">
+    <title>Maker's RPS</title>
+  </head>
+  <main>
+    <div class='name-submit'>
+      <h1 class='name-submit'>Welcome to Maker's RPS!</h1>
+      <label for='name'><h2 class='name-submit'>Please, insert your name!</h2></label>
+      <form action='/names' method='POST'>
+        <input type='text' id='name' name='name' required>
+        <input type='submit' value='Submit' class='button'>
+      </form>
+    </div>
+  </main>
+</html>

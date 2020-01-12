@@ -1,13 +1,25 @@
-<h2><%= @game.player1.name %> wins count: <%= @game.player1.wins %>
-<br>
-<%= @game.player2.name %> wins count: <%= @game.player2.wins %></h2>
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="reset.css">
+      <link rel="stylesheet" type="text/css" href="rps.css">
+      <link href="https://fonts.googleapis.com/css?family=Raleway:200,400,400i,700&display=swap" rel="stylesheet">
+      <title>Maker's RPS</title>
+  </head>
+  <main>
+    <div class='name-count'>
+      <h2 class='name-count'><%= @game.player1.name %> wins count: <%= @game.player1.wins %>
+      <br>
+      <%= @game.player2.name %> wins count: <%= @game.player2.wins %></h2>
+    <h3 class='name-count'>Choose your move:</h3>
 
-<h3>Choose your move:</h3>
-
-<form action='/move' method='POST'>
-  <label><input type='radio' name='move' value='rock' required>Rock</label>
-  <label><input type='radio' name='move' value='paper'>Paper</label>
-  <label><input type='radio' name='move' value='scissor'>Scissor</label>
-  <br>
-  <input type='submit' value='Play!'>
-</form>
+    <form action='/move' method='POST' class='name-count'>
+      <label class='name-count'><input class='name-count' type='radio' name='move' value='rock' required> Rock</label>
+      <label class='name-count'><input class='name-count' type='radio' name='move' value='paper'> Paper</label>
+      <label class='name-count'><input class='name-count' type='radio' name='move' value='scissor'> Scissor</label>
+      <br>
+      <input type='submit' value='Play!' class='button'>
+    </form>
+    </div>
+  </main>
+</html>
