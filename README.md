@@ -84,3 +84,10 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+# Goals
+
+* Aim to start with a splash page with two options, single player vs cpu or multiplayer
+* Use a class for Game containing the win conditions and a class for Player logging the moves to set up the environment
+* Each game lasts one round, then a winner is declared
+* CSS with images if there is time
