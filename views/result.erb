@@ -1,4 +1,13 @@
-<center><h1><%= @name %> vs <%= @opponent %></h2><br>
-        <h2><%= @name %> picked <%= session[:move] %><h2><br>
-        <h2><%= @opponent %> picked <%= @computer_move %><h2><br></center>
+<center><h3><%= @name %> picked <%= session[:move] %><h3><br>
+        <h3><%= @opponent %> picked <%= @computer_move %><h3><br>
+        <h1><%= "INPUT" %> wins! <h1><br>
+        </center>
+<br>
+<br>
 
+
+<%# <center><h3> Again? </h3>
+        <form action='/play' method='post'>
+        <input type='submit' value="Let's Play!">
+        </form>
+        </center> %>

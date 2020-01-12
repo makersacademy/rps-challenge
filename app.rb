@@ -1,5 +1,5 @@
 require 'sinatra/base'
-
+require './lib/game'
 
 class Rps < Sinatra::Base
 
