@@ -15,7 +15,6 @@ class RPSO < Sinatra::Base
   end
 
   get '/play' do
-    puts Player.instance.name
     erb :play, :locals => {:player => Player.instance.name}
   end
 
