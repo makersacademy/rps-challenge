@@ -10,9 +10,9 @@ class GameEngine
   def winner_is
     puts guess1
     if game_rules[guess1.to_sym].include? @computer
-      'Player 1 Wins'
-    elsif game_rules[computer.to_sym].include? @guess1
       'Player 2 Wins'
+    elsif game_rules[computer.to_sym].include? @guess1
+      'Player 1 Wins'
     else
       "Sorry it was a Tie!"
     end
