@@ -4,6 +4,7 @@ class Player
 
   def initialize(name)
     @name = name || Player.new(name)
+    @wins = 2
   end
 
   def self.create(name)
@@ -13,5 +14,4 @@ class Player
   def self.instance
     @name
   end
-
 end

@@ -25,10 +25,10 @@ class RPSO < Sinatra::Base
 
   get '/move' do
 
+    puts @player_1_name
     @player_move = session[:move]
     @computer_move = Computer.new.guess
     @outcome = GameEngine.new(guess1: @player_move, computer: @computer_move)
-
     erb :move, :locals => { :player => Player.instance.name,
                             :player_move => @player_move,
                             :computer_move => @computer_move,

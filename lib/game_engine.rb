@@ -9,9 +9,9 @@ class GameEngine
 
   def winner_is
     if game_rules[guess1.to_sym].include? @computer
-      'Human Wins'
+      "#{Player.instance.name} the Human Wins"
     elsif game_rules[computer.to_sym].include? @guess1
-      'Computer Wins'
+      "Computer Wins"
     else
       "Sorry it was a Tie!"
     end
