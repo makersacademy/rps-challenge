@@ -1,5 +1,7 @@
 # RPS Challenge
 
+This is my attempt at the rock, paper, scissors app. At the moment it does not have functionality to play but I am glad that I have got to practice the different technologies that we were introduced to this week.
+
 Instructions
 -------
 
