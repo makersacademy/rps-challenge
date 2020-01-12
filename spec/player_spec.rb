@@ -1,16 +1,14 @@
-require 'player'
-
 describe Player do
   subject(:Kitten) { Player.create('Kitten') }
 
   describe '#self.create' do
-    it 'returns a player object' do
+    it 'creates a player object' do
       expect(subject).to be_an_instance_of(Player)
     end
   end
 
   describe '#self.instance' do
-    it 'creates a player object' do
+    it 'returns the player object' do
       expect(Player.instance).to be_an_instance_of(Player)
     end
   end

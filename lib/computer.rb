@@ -12,3 +12,4 @@ class Computer
     guesses.sample
   end
 end
+

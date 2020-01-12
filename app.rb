@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/computer'
+
 
 class RPSO < Sinatra::Base
 
@@ -20,7 +22,10 @@ class RPSO < Sinatra::Base
   end
 
   get '/move' do
-    erb :move, :locals => {:player => Player.instance.name, :player_move => session[:move]}
+
+    puts Computer.new.guess
+    erb :move, :locals => { :player => Player.instance.name, :player_move => session[:move],
+                           :computer_move => Computer.new.guess }
   end
 
   get '/play' do

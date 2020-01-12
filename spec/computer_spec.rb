@@ -1,5 +1,3 @@
-require 'computer'
-
 describe "Computer" do
   subject(:computer) { Computer.new }
 
@@ -9,12 +7,12 @@ describe "Computer" do
       expect(computer.guess).to eq 'Rock'
     end
 
-    it 'returns rock' do
+    it 'returns Paper' do
       computer.random_seed = 1
       expect(computer.guess).to eq 'Paper'
     end
 
-    it 'returns rock' do
+    it 'returns Scissors' do
       computer.random_seed = 3
       expect(computer.guess).to eq 'Scissors'
     end
