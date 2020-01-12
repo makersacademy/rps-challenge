@@ -25,16 +25,21 @@ class RockPaperScissors < Sinatra::Base
 
   get '/runMethod' do
     @game = $game
-    $choice = (params[:choice])
-    @weapon = Weapon.new($choice)
+    $player_choice = (params[:choice])
+    p "your choice #{$player_choice}"
     redirect '/outcome'
   end
 
   get '/outcome' do
-    @choice = $choice
+    @player_choice = $player_choice
     @game = $game
-    @game.computer = Computer.new
-    @computer_choice = @computer.weapon
+    @computer_choice = @game.computer.weapon
+    p "your choice #{$player_choice}"
+    p "computer choice #{@computer_choice}"
+    player_weapon = Weapon.new($player_choice)
+    computer_weapon = Weapon.new(@computer_choice)
+    @game.outcome
+    @result = @game.who_won
     erb :outcome
   end
 

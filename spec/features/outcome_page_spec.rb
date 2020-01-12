@@ -4,6 +4,6 @@ feature 'user choice printed' do
     fill_in :player_1_name, with: 'Alicia'
     click_button 'Submit'
     click_button 'Rock'
-    expect(page).to have_content 'Alicia chose Rock'
+    expect(page).to have_content 'Alicia chose rock'
   end
 end

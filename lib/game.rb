@@ -1,12 +1,8 @@
+# require './player'
+
 class Game
 
   WEAPONS = [:rock, :paper, :scissors]
-
-  RULES = {
-    rock: { rock: :Tie, paper: :Loser, scissors: :Winner},
-    paper: { rock: :Winner, paper: :Tie, scissors: :Loser},
-    scissors: { rock: :Loser, paper: :Winner, scissors: :Tie}
-  }
 
   attr_reader :player_1, :computer
 
@@ -16,6 +12,30 @@ class Game
   end
   
   def outcome
-    "Alicia"
+    @player_1.weapon.beats(computer.weapon)
   end
+
+  def who_won
+    outcome
+    if :Winner
+      winner
+    elsif :Loser
+      loser
+    else :Tie
+      tie
+    end
+  end
+
+  def winner
+    "#{@player_1.name} wins!"
+  end
+
+  def loser
+    "The computer won and #{@player_1.name} lost."
+  end
+
+  def tie
+    "It's a tie!"
+  end
+
 end
