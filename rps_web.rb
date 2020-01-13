@@ -17,5 +17,10 @@ class RPSWeb < Sinatra::Base
     erb :play
   end
 
+  post '/result' do
+    @player_1 = session['player_1']
+    erb :result
+  end
+
   run! if app_file == $0
 end
