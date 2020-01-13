@@ -1,17 +1,17 @@
-feature 'result page' do
-  scenario 'The page asks the user to enter their name' do
+feature 'Result page' do
+  scenario 'When player submits rock, rock shows on page' do
     submit_name
     click_button 'Rock'
     expect(page).to have_content 'Rock'
   end
 
-  scenario 'The page asks the user to enter their name' do
+  scenario 'When player submits Paper, Paper shows on page' do
     submit_name
     click_button 'Paper'
     expect(page).to have_content 'Paper'
   end
 
-  scenario 'The page asks the user to enter their name' do
+  scenario 'When player submits Scissors, Scissors shows on page' do
     submit_name
     click_button 'Scissors'
     expect(page).to have_content 'Scissors'
