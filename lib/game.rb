@@ -41,4 +41,8 @@ class Game
     @player_1.move == @player_2.move
   end
 
+  def complete?
+    !!@player_1.move && !!@player_2.move
+  end
+
 end

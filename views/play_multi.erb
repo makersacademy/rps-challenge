@@ -6,11 +6,7 @@
   <tr>
     <td><br></td>
     <td>
-    <% if @game.player_1.move.nil? %>
-      <form action='/in_game_multi'>
-      <% else %>
-      <form action='/result_multi'>
-      <% end %>
+      <form action='/next_move'>
         <input name='move' type='submit' value='Rock'>
         <input name='move' type='submit' value='Scissors'>
         <input name='move' type='submit' value='Paper'>
