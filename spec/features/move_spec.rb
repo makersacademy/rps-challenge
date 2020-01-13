@@ -3,9 +3,9 @@ feature 'Choosing a move in the game' do
     visit '/'
     fill_in :player_name, with: 'Masha'
     click_button 'Submit'
-    choose 'Rock'
+    choose("move", with: 'Rock')
     click_button 'Submit'
-    expect(page).to have_content "Your chosen move: Rock"
-    expect(page).not_to have_content "Your chosen move: Paper"
+    expect(page).to have_content "Your move: Rock"
+    expect(page).not_to have_content "Your move: Paper"
   end
 end
