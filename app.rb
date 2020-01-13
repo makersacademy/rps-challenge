@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RPSGame < Sinatra::Base
   enable :sessions
@@ -11,7 +12,7 @@ class RPSGame < Sinatra::Base
   post '/name' do
     $player_1 = Player.new(params[:player_1_name])
     $player_2 = Player.new
-    redirect to ('/play')
+    redirect to '/play'
   end
 
   get '/play' do
@@ -21,14 +22,16 @@ class RPSGame < Sinatra::Base
   end
 
   post '/choice' do
-    session[:player_1_choise] = params[:player_choice]
-    redirect to ('/end-game')
+    session[:player_1_choice] = params[:player_choice]
+    redirect to '/end-game'
   end
 
   get '/end-game' do
+    @game = Game.new
     @player_1 = $player_1
     @player_2 = $player_2
-    @player_1_choise = session[:player_1_choise]
+    @player_1_choice = session[:player_1_choice]
+    @player_2_choice = @game.random_choice
     erb :end_game
   end
 
