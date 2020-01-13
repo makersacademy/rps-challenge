@@ -1,9 +1,5 @@
 feature 'End Game' do
 
-
-  subject(:computer) { Computer.new }
-
-
   context 'Player 1 beats Computer' do
 
     scenario "Human Wins" do

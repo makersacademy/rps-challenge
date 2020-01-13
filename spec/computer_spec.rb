@@ -26,8 +26,6 @@ describe "Computer" do
       computer.random_seed = 0
       expect(computer.guess).to eq 'Lizard'
     end
-
-
   end
 
   describe "#radom_seed_gen" do
