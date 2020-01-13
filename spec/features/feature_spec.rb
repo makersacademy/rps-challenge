@@ -1,8 +1,10 @@
 feature 'testing features' do
 
-  scenario 'user should see Rock Paper Scissors when they load the web page' do
+  scenario 'user should be able to enter their name before starting a game' do
     visit('/')
-    expect(page).to have_content 'Rock Paper Scissors!'
+    fill_in 'name', with: 'Max'
+    click_button 'Start game'
+    expect(page).to have_contect 'Max'
   end
 
 end
