@@ -32,6 +32,22 @@ Steps taken:
 
    Result: Feature test passed and my web home page is displaying the message.
 
+
+Sub Goal: To keep my code clean and create views in separate erb files
+
+Steps taken:
+
+1) Created a Views folder in my project folder and created index.erb files
+2) Wrote down my HTML code to render the view of homepage.
+3) Updated my app.rb file to embed the link for index.erb files
+
+
+Validate: Refreshed the homepage again and got the desired output(Homepage with the welcoming message)
+
+Sub Goal: Completing the User Story 1
+
+
+
 Instructions
 -------
 
