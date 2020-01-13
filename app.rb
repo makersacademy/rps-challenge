@@ -12,13 +12,21 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:game] = Game.new(Player.new(params[:player_name]))
+    session[:game] = Game.new(Player.new(params[:player_name]),Player.new("Computer"))
     redirect '/play'
   end
 
   get '/play' do
-    p session[:game]
+    session[:game].play(session[:choice])
+    @game = session[:game]
+    @choice = session[:choice]
     erb :play
+  end
+
+  post '/player_choice' do
+    session[:choice] = params[:choice]
+    session[:game].random_choice
+    redirect '/play'
   end
 
   run! if app_file == $0

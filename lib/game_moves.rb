@@ -1,74 +1,31 @@
-class GameLogic
-  attr_reader :menu
-  def intialize
-    @menu = []
-  end
-
-  def load(filename = './RPSscores.json')
-    data = JSON.parse(
-      '{"RPS": [
-        {
-          "play1": "Rock",
-          "play2": "Rock",
-          "play1_score": 0,
-          "play2_score": 0
-        },
-        {
-          "play1": "Rock",
-          "play2": "Paper",
-          "play1_score": 0,
-          "play2_score": 1
-        },
-        {
-          "play1": "Rock",
-          "play2": "Scissors",
-          "play1_score": 1,
-          "play2_score": 0
-        },
-        {
-          "play1": "Paper",
-          "play2": "Rock",
-          "play1_score": 1,
-          "play2_score": 0
-        },
-        {
-          "play1": "Paper",
-          "play2": "Paper",
-          "play1_score": 0,
-          "play2_score": 0
-        },
-        {
-          "play1": "Paper",
-          "play2": "Scissors",
-          "play1_score": 0,
-          "play2_score": 1
-        },
-        {
-          "play1": "Scissors",
-          "play2": "Rock",
-          "play1_score": 0,
-          "play2_score": 1
-        },
-        {
-          "play1": "Scissors",
-          "play2": "Paper",
-          "play1_score": 1,
-          "play2_score": 0
-        },
-        {
-          "play1": "Scissors",
-          "play2": "Scissors",
-          "play1_score": 0,
-          "play2_score": 0
-        }
-      ]
-    }')
-    @menu = data["RPS"]
-  end
-
-  def find_the_hash(play1, play2)
-    @menu.each do |hash|
-      play1 == hash[play1] && play2 == hash[play2] 
-    end
-  end
-end
+# class GameLogic
+#   attr_reader :menu
+#   def intialize
+#     @menu = []
+#   end
+#
+# # think about passing in a roller where if the roller is negative in total
+# # then the computer wins, where it is positive in total the player wins
+#
+#
+#
+#
+#   def find_the_hash(play1, play2)
+#     p @menu
+#     @menu.each do |hash|
+#       play1 == hash[play1] && play2 == hash[play2]
+#     end
+#   end
+# end
+#
+# def who_wins?(player = nil, computer = nil)
+#   if player == computer
+#     0
+#   elsif
+#
+#   else
+#     "Good Luck!"
+#   end
+#
+#
+# end

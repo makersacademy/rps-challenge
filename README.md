@@ -1,5 +1,16 @@
 # RPS Challenge
 
+For the game logic testing there are two pending tests. I couldn't get the expectation
+that an object should receive a method to work. I put a lot of time into playing around
+stubs and mocks but couldn't get it to work. So i feature tested in irb to make sure everything was working and then decided
+to move on. I will spend more time working on mocks, doubles and stubs.
+
+On Reflection: I only wrote a few feature tests to begin with and then began writing all the back end logic of the app instead of wrting just enough to pass the feature test that I just wrote. 
+
+
+
+
+
 Instructions
 -------
 
