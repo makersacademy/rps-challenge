@@ -9,7 +9,7 @@ class Game
     @move = move
     @comp_move = @moves.sample
     @session = [@move, @comp_move]
-    "#{message}. #{result}"
+    "#{message}.\n#{result}"
   end
 
   private
@@ -31,6 +31,6 @@ class Game
   end
 
   def message
-    "Your move: #{@move}; opponent's move: #{@session[1]}"
+    "Your move: #{@move}.\nOpponent's move: #{@session[1]}"
   end
 end

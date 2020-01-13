@@ -1,3 +1,8 @@
-Your chosen move: <%= $move %>
-<br>
-<%= @game.play($move) %>
+<pre><%= @game.play($move) %><pre>
+<br>Do you want to play again?
+<form action="/play">
+<input type="submit" value="Yes">
+</form>
+<form action="/">
+<input type="submit" value="No">
+</form>
