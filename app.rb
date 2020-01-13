@@ -14,7 +14,6 @@ class Rps < Sinatra::Base
     session[:name] = params[:name]
     session[:game] = Game.new.name
     redirect to('/play')
-    # erb :play
   end
 
   get '/play' do
@@ -30,7 +29,6 @@ class Rps < Sinatra::Base
   get '/result' do 
     @name = session[:name]
     @player_move = session[:move]
-    # session[:move] = params[:move]
     @opponent = Game.new.name
     @computer_move = Game.new.computer_move
     @result = Rules.new.result(@player_move, @computer_move).to_s
