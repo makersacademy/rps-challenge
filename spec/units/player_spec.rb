@@ -10,6 +10,12 @@ describe Player do
     end
   end
 
-  describe ''
+  describe 'results' do
+    it 'evaluates results and returns who won' do
+      player_move = double('Scissors')
+      computer_move = double('Paper')
+      expect(daisy.compare_moves(player_move, computer_move)).to eq 'player'
+    end
+  end
 
 end
