@@ -3,7 +3,7 @@ require 'sinatra/base'
 class Rps < Sinatra::Base
 
   get '/' do
-    'initial page'
+    erb :index
   end
 
   run! if app_file == $0
