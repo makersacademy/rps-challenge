@@ -85,9 +85,9 @@ SimpleCov.start
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
 
-# Goals
+# Personal Goals
 
-* Aim to start with a splash page with two options, single player vs cpu or multiplayer
-* Use a class for Game containing the win conditions and a class for Player logging the moves to set up the environment
-* Each game lasts one round, then a winner is declared
-* CSS with images if there is time
+* Aim to start with a splash page with two options, single player vs cpu or multiplayer - complete, I would have prefered to have an invisible text box that only appears when the multiplayer option is selected, however, the amount of research necessary was not worth it considering the time restraint
+* Use a class for Game containing the win conditions and a class for Player logging the moves to set up the environment - complete, the CPU is an instance of the player class which makes a move randomly from an array of possible moves.
+* Each game lasts one round, then a winner is declared - complete, after struggling with the multiplayer functionality, I decided the best method was to have an invisible page make the moves based on the parameters and redirect back to the play screen after storing them in the game class - after creating a boolean method in the game class telling us if the game is complete or not that same screen can then decide whether or not to show the play screen again or forward onto a result page.
+* CSS with images if there is time - unfortunately there was no time.
