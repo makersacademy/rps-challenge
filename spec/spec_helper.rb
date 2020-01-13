@@ -12,7 +12,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
-Capybara.app = RockPaperScissors
+Capybara.app = RPS
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 

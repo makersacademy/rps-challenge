@@ -8,11 +8,35 @@ class RPS
   end
 
   def rival
-    @rival
+    if @rival == "R"
+      "Rock"
+    elsif @rival == "S"
+      "Scissors"
+    elsif @rival == "P"
+      "Paper"
+    elsif @rival == "L"
+      "Lizard"
+    elsif @rival == "K"
+      "Spock"
+    end
   end
 
   def name
     @name
+  end
+
+  def move
+    if @move == "R"
+      "Rock"
+    elsif @move == "S"
+      "Scissors"
+    elsif @move == "P"
+      "Paper"
+    elsif @move == "L"
+      "Lizard"
+    elsif @move == "K"
+      "Spock"
+    end
   end
 
   def logic
@@ -25,7 +49,6 @@ class RPS
 # Method to long but kept 11 lines to ensure clarity (i.e not nested ternary statements)
   
   def not_draw
-
     if @move == "S"
       scissors 
     elsif @move == "R"

@@ -10,19 +10,20 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/start' do
-    $player_name = params[:name]
+    session[:name] = params[:name]
     @name = $player_name
     erb(:start)
   end
 
   post '/decision' do
-    @name = $name
-    $game = RPS.new("Butts", move)
-    @game = $game
+    @name = session[:name]
+    session[:game] = RPS.new(@name, params[:move])
     erb(:decision)
   end
 
   get '/end' do
     erb(:erb)
   end
+
 end
+
