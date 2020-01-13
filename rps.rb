@@ -18,7 +18,9 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  get  '/move' do
+  post  '/move' do
+    @move = params[:move]
+    p @move
     erb :move
   end
 

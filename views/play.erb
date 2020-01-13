@@ -1,5 +1,8 @@
 Welcome to Rock-Paper-Scissors, <%= @player %>!
 <br>You can choose between the following options:
-<br><form action="/move">
-  <input type="submit" value="Paper">
+<br><br><form action="/move" method='post'>
+  <input type="radio" name="move" value="Rock">Rock</input>
+  <input type="radio" name="move" value="Paper">Paper</input>
+  <input type="radio" name="move" value="Scissors">Scissors</input>
+  <input type="submit" value="Submit">
 </form>
