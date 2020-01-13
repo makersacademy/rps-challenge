@@ -3,12 +3,12 @@ describe "Computer" do
 
   describe '#guess' do
     it 'returns rock' do
-      computer.random_seed = 0
+      computer.random_seed = 2
       expect(computer.guess).to eq 'Rock'
     end
 
     it 'returns Paper' do
-      computer.random_seed = 1
+      computer.random_seed = 10
       expect(computer.guess).to eq 'Paper'
     end
 
@@ -16,6 +16,18 @@ describe "Computer" do
       computer.random_seed = 3
       expect(computer.guess).to eq 'Scissors'
     end
+
+    it 'returns Spock' do
+      computer.random_seed = 1
+      expect(computer.guess).to eq 'Spock'
+    end
+
+    it 'returns Lizard' do
+      computer.random_seed = 0
+      expect(computer.guess).to eq 'Lizard'
+    end
+
+
   end
 
   describe "#radom_seed_gen" do

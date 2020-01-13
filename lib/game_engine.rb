@@ -19,9 +19,11 @@ class GameEngine
 
   def game_rules
     {
-        'Paper': ['Rock'],
-        'Rock': ['Scissors'],
-        'Scissors': ['Paper']
+        'Paper': %w(Rock Spock),
+        'Rock': %w(Scissors Lizard),
+        'Scissors': %w(Paper Lizard),
+        'Lizard': %w(Spock Paper),
+        'Spock': %w(Scissors Rock)
     }
   end
 end

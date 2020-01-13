@@ -1,8 +1,14 @@
 feature 'End Game' do
+
+
+  subject(:computer) { Computer.new }
+
+
   context 'Player 1 beats Computer' do
+
     scenario "Human Wins" do
       visit_submit_name
-      click_button 'Rock'
+      click_button 'Lizard'
       expect(page).to have_content "human Wins"
     end
   end
@@ -18,7 +24,7 @@ feature 'End Game' do
   context 'PLayer 1 and Player 2 Tie' do
     scenario "Game ends in a Tie" do
       visit_submit_name
-      click_button 'Rock'
+      click_button 'Scissors'
       expect(page).to have_content "Tie"
     end
   end

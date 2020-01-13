@@ -1,6 +1,5 @@
 require 'simplecov'
 require 'simplecov-console'
-require './spec/spec_helper'
 require './spec/feature/web_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
