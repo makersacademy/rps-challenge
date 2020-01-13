@@ -19,8 +19,13 @@ class Rps < Sinatra::Base
   end
 
   post  '/move' do
-    @move = params[:move]
-    p @move
+    $move = params[:move]
+    p params
+    redirect '/chosen_move'
+  end
+
+  get '/chosen_move' do
+    p $move
     erb :move
   end
 
