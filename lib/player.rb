@@ -7,7 +7,4 @@ class Player
 
  
 
-
-
-
 end

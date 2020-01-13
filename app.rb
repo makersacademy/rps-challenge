@@ -19,6 +19,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    #session[:name] = params[:name]
     @player_1_name = @rpsgame.player_1.name
     erb (:play) 
   end
