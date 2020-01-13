@@ -1,0 +1,15 @@
+<table style='width:100%; position: fixed; text-align: center'>
+  <th> <%= @game.player_1.name %> </th>
+  <th> vs. </th>
+  <th>  <%= @game.player_2.name %> </th>
+  <br><br>
+  <tr>
+    <td><br></td>
+    <td>
+      <form action='/result'>
+        <input name='move' type='submit' value='Rock'>
+        <input name='move' type='submit' value='Scissors'>
+        <input name='move' type='submit' value='Paper'>
+      </form>
+    </td>
+</table>
