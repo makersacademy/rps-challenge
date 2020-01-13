@@ -17,7 +17,7 @@ class RPSO < Sinatra::Base
 
   post '/api/submit_names' do
     @player_1_name = Player.create(params[:player_1_name])
-    session[:player_1_name] = params[:player_1_name]
+    # session[:player_1_name] = params[:player_1_name]
     redirect '/play'
   end
 
