@@ -1,5 +1,8 @@
 # RPS Challenge
 
+Approach
+--------
+
 Instructions
 -------
 
