@@ -1,5 +1,83 @@
 # RPS Challenge
 
+Goal: To be able to develop a web app for playing rock/paper/scissors game.
+
+Sub Goal 1 : Be able to execute a feature test which displays a web page that say 'Welcome to Rock/Paper/Scissors'(Creating the home page, displaying the name of the game)
+
+Steps taken:
+1) run the bundle install
+   validate: Bundle runs successfully
+2) Created a features folder inside the spec folder then created a homepage_spec.rb file inside features folder
+3) wrote down a feature test for accessing the homepage
+4) Run the rspec with following errors
+
+    Error 1       Failure/Error: visit '/'
+
+          ArgumentError:
+            rack-test requires a rack application, but none was given
+  Fix:
+
+  * one update here, I forgot to mention that I also created the app.rb file inside the project folder to store my code to run the server.
+   created a config.ru inside the project folder and then added the following code inside the file
+        require './app.rb'
+        run MyApp
+
+     Also added the following lines inside the spec_helper.rb
+        capybara.app = MyApp
+        require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+  validate: When I ran the rspec above mentioned error removed.
+
+     When I ran rackup command it started the server.
+
+   Result: Feature test passed and my web home page is displaying the message.
+
+
+Sub Goal 2 : To keep my code clean and create views in separate erb files
+
+Steps taken:
+
+1) Created a Views folder in my project folder and created index.erb files
+2) Wrote down my HTML code to render the view of homepage.
+3) Updated my app.rb file to embed the link for index.erb files
+
+
+Validate: Refreshed the homepage again and got the desired output(Homepage with the welcoming message)
+
+Sub Goal 3: Completing the User Story 1
+
+Steps taken:
+
+1) wrote a feature test for registering the player name.
+2) Ran rspec got following error
+
+Error 1:
+Failure/Error: fill_in :player_name, with: 'sarita'
+
+     Capybara::ElementNotFound:
+       Unable to find field :player_name that is not disabled
+
+Fix:
+
+1) I updated HTML code in the index.erb file
+2) Wrote the following route in my app.rb file
+      post '/name' do
+        @player_name = params[:player_name]
+        erb :play
+      end
+3) Created a play.erb file in Views folder
+4)Wrote the following code in  play.rb
+      <%= @player_name %>
+
+Validate: I ran the rspec and my feature test passed. I can see my homepage as required and can register a player name which can be seen on the
+          screen after submission.
+
+Result: Completed first user story
+
+
+
+
+
 Instructions
 -------
 
