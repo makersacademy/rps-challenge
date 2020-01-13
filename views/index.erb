@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RPS Homepage</title>
+  <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+
+</head>
+<body style="text-align:center;" >
+<p> <img src='https://miro.medium.com/max/2000/1*FEcr9_owB5KplrClDpRenA.png' ></p>
+<h1>Enter name to play!</h1>
+<form action="/names" method="post">
+  <label for="player_1_name">
+    Name
+  <input style="text-transform: capitalize;" type="text" required name="player_1_name">
+  </label>
+  <input type="submit" value="Let's Play!" class="waves-effect waves-light btn">
+</form>
+</body>
+</html>
+
