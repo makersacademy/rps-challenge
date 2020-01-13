@@ -1,0 +1,15 @@
+<center><h3><%= @name %> picked <%= @player_move %><h3><br>
+        <h3><%= @opponent %> picked <%= @computer_move %><h3><br>
+        <h1><%= @name %>  <%= @result%><h1><br>
+<center><img src= 'images/Rock-paper-scissors.svg.png' alt="Image" height="200" width="200"></center>
+        
+<center><h4>Rematch? </h4>
+        <form action='/play' method='get'>
+        <input type='submit' value="Play Again!">
+        </form> </center>
+
+<center><h4> New Player? </h4>
+        <form action='/' method='get'>
+        <input type='submit' value="Start Again!">
+        </form>
+        </center> 

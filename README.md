@@ -1,3 +1,23 @@
+This weekend i had family event which required most of my time unfortunatly. I still managed 4 hours and enjoyed the task.
+
+I followed the basic steps of:
+
+ - the marketeer should be able to enter their name before the game
+- the marketeer will be presented the choices (rock, paper and scissors)
+- the marketeer can choose one option
+- the game will choose a random option
+- a winner will be declared
+
+The user is able to select a name, it then welcomes them onto the next page with their name displayed, and the name of the computer they are playing against. You are then given options (via a radio form) to select Rock, Paper, or Scissors, after which you submit your choice. It then tells you what you selected, what the computer selected, and finally if you won, lot or drew. It then has an option to return to the start and play again. 
+
+Of which i comleted, i am sorry to say i did not manage any of the bonus challenges. If i had more time, i would have used a similar syntax as used in the battle to cycle through the two players (after adding an additional page for a 2 player option if this was selected on the homepage - via a new button.)
+
+For the second challenge, I would then also have used the same logic as in the 'Rules' class, but with the extra 'spock' and 'lizard' options added, after adding two more buttons for these options.
+
+I enjoyed this task and was glad i managed to finish the basic option in the time given, it was a great learning exercise.
+
+
+
 # RPS Challenge
 
 Instructions
