@@ -1,28 +1,22 @@
 
-<h1><%= @game.player1.name %> VS <%= @game.player2.name %></h1>
+Hello, <%= @turn.player_name %>!
 
-<form action="/player1_move" method="post">
-<div>
-  <label for="Rock">Rock</label>
-  <input type="radio" name="move" value="Rock">
-  <label for="Paper">Paper</label>
-  <input type="radio" name="move" value="Paper">
-  <label for="Scissor">Scissor</label>
-  <input type="radio" name="move" value="Scissors">
-  <button type="submit" value="submit"><%= @game.player1.name %>'s move</button>
-</div>
+<form method="POST" action="/play">
+  <input type="submit" name="shape" value="Rock" />
+  <input type="submit" name="shape" value="Paper" />
+  <input type="submit" name="shape" value="Scissors" />
 </form>
 
-<% if @game_mode == 'multiplayer' && !@game.player2.move %>
-<form action="/player2_move" method="post">
-<div>
-  <label for="Rock">Rock</label>
-  <input type="radio" name="move" value="Rock">
-  <label for="Paper">Paper</label>
-  <input type="radio" name="move" value="Paper">
-  <label for="Scissor">Scissor</label>
-  <input type="radio" name="move" value="Scissors">
-  <button type="submit" value="submit"><%= @game.player2.name %>'s move</button>
+You chose <%= @turn.player_shape.to_s.capitalize %>!
+
+<div id="opponent">
+  Opponent chose <%= @turn.opponent_shape.to_s.capitalize %>!
 </div>
-</form>
+
+<% if @turn.win? %>
+  You win!
+<% elsif @turn.lose? %>
+  You lose!
+<% elsif @turn.draw? %>
+  You draw!
 <% end %>
