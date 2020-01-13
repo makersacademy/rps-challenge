@@ -1,8 +1,9 @@
 require 'sinatra/base'
+require 'app_spec'
 
-class RPS_WEB < Sinatra::Base
+class RPS < Sinatra::Base
   get '/' do
-    # 'Hello Battle!'
+    'Welcome to rock, paper & scissors!'
   end
 
   # start the server if ruby file executed directly
