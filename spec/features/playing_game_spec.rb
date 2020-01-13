@@ -4,6 +4,7 @@ feature 'Playing RPS game' do
     fill_in :player_name, with: 'Masha'
     click_button 'Submit'
     choose "Paper"
+    click_button 'Submit'
     expect(page).to have_content "Your chosen move: Paper"
   end
 end

@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 
 class Rps < Sinatra::Base
@@ -26,6 +27,7 @@ class Rps < Sinatra::Base
 
   get '/chosen_move' do
     p $move
+    @game = Game.new
     erb :move
   end
 
