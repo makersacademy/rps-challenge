@@ -20,7 +20,7 @@ require 'capybara'
 require 'rspec'
 
 # tell Capybara about our app class
-Capybara.app = Game
+Capybara.app = RPSGame
 
 RSpec.configure do |config|
   config.after(:suite) do
