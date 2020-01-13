@@ -6,7 +6,7 @@ describe RpsResult do
   end
 
   it 'Gives the win message when you pick rock and computer picks scissors' do
-      expect(RpsResult.new.result("Rock", "Scissors")).to eq "You win!"
+    expect(RpsResult.new.result("Rock", "Scissors")).to eq "You win!"
   end
 
   it 'Gives the lose message when you pick rock and computer picks paper' do

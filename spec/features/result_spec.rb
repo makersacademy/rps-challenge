@@ -4,7 +4,7 @@ feature 'Result page' do
     click_button 'Rock'
     expect(page).to have_content 'Rock'
   end
-
+  
   scenario 'When player submits Paper, Paper shows on page' do
     submit_name
     click_button 'Paper'
