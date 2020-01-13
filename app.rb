@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/player'
+require './lib/player.rb'
 
 class RPS < Sinatra::Base
 
@@ -8,8 +8,19 @@ class RPS < Sinatra::Base
   end
 
   post '/enter_name' do
-    @user = Player.new(params[:name])
+    $user = Player.new(params[:name], params[:choice])
+    p $user
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player = $user
     erb :play
+  end
+    
+
+  get '/selection' do
+    erb :out_come
   end
 
 end
