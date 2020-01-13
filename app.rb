@@ -20,7 +20,7 @@ class MyRPS < Sinatra:: Base
     @player_name = @player_name
     @move = params[:move]
     @compmove = Computer.new.computer_move
-    @game = Game.new.game
+    @game = Game.new.game(@move, @compmove)
     erb :move
   end
 
