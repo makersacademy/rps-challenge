@@ -6,6 +6,5 @@ feature '/result' do
     click_button('Single Player')
     click_button('Rock')
     expect(page).to have_content "goku wins!"
-
   end
 end

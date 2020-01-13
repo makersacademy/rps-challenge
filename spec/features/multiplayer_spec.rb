@@ -8,4 +8,3 @@ feature '/multiplayer' do
     expect(page).to have_content 'goku vs. vegeta'
   end
 end
-
