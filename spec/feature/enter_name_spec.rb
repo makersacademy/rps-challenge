@@ -10,6 +10,6 @@ feature 'name form' do
     fill_in 'name', with: "Luke"
     click_button 'Play'
 
-    expect(page).to have_content "Welcome Luke"
+    expect(page).to have_content "Luke"
   end
 end 
