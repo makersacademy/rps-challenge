@@ -2,8 +2,9 @@ require 'game'
 
 describe Game do
   it 'can play rps game' do
-    game = Game.new(:rock)
-    allow(game).to_receive(:computer_move).and_return(:paper)
-    expect(game.play).to eq "You have lost!"
+    game = Game.new
+    allow(game.moves).to receive(:sample).and_return("Paper")
+    expect(game.play("Rock")).to include "You have lost!"
   end
+
 end
