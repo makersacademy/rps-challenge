@@ -3,6 +3,7 @@ require './lib/player'
 require './lib/rpsgame'
 
 class RPS < Sinatra::Base 
+  enable :sessions
 
   before do
     @rpsgame = RPSGame.instance 
@@ -31,7 +32,7 @@ class RPS < Sinatra::Base
 
   post '/selection' do 
     @lucy_the_computer_selection = @rpsgame.computer_selection 
-    @rpsgame.player_selection(params[:selection])
+    @player_1_selection = @rpsgame.player_selection(params[:selection])
     redirect '/result'  
   end 
 
@@ -40,14 +41,16 @@ class RPS < Sinatra::Base
     erb(:selection)
   end
 
-  post '/result' do 
-    @player_1_selection = @rpsgame.player_selection (params[:selection]) 
+  post '/result' do
+    session[:selection] = params[:selection] 
+    #p 'session: ', session[:selection]
     @lucy_the_computer_selection = @rpsgame.computer_selection 
     redirect '/result'
   end 
 
   get '/result' do 
-    @player_1_selection = @rpsgame.player_selection(params[:selection])  
+    #p 'session after: ', session[:session]
+    @player_1_selection = session[:selection] 
     @lucy_the_computer_selection = @rpsgame.computer_selection 
     @determine_winner = @rpsgame.play(@player_1_selection, @lucy_the_computer_selection) 
     erb(:result) 
