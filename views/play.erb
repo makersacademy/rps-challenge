@@ -1,0 +1,9 @@
+
+<center><h1>Welcome <%= @player.name %> </h1></center>
+<center><h2>Please Choose one of the options below</h2></center>
+
+<form action="/enter_name" method="post">
+  <center><input type="checkbox" name="rock" value="Rock"> Rock</center>
+  <center><input type="checkbox" name="paper" value="Paper"> Paper</center>
+  <center><input type="checkbox" name="scissors" value="Scissor"> Scissors</center>
+</form>

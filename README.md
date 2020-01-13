@@ -1,3 +1,16 @@
+#Additions 
+
+
+
+feature tests 
+1. test text on home page
+2. test name entered prints on next page
+3. test chosen option takes to correct page
+
+
+
+
+
 # RPS Challenge
 
 Instructions
