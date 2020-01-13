@@ -1,0 +1,19 @@
+<table style='width:100%; position: fixed; text-align: center'>
+  <th> <%= @game.player_1.name %> </th>
+  <th> vs. </th>
+  <th>  <%= @game.player_2.name %> </th>
+  <br><br>
+  <tr>
+    <td><br></td>
+    <td>
+    <% if @game.player_1.move.nil? %>
+      <form action='/in_game_multi'>
+      <% else %>
+      <form action='/result_multi'>
+      <% end %>
+        <input name='move' type='submit' value='Rock'>
+        <input name='move' type='submit' value='Scissors'>
+        <input name='move' type='submit' value='Paper'>
+      </form>
+    </td>
+</table>

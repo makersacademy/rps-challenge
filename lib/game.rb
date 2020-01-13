@@ -27,16 +27,6 @@ class Game
   end
 
   def winner
-    # moves = [player_1.move, player_2.move]
-    # moves.each { |move|
-    # if moves.include?('rock') && moves.include?('scissors')
-    #   move if move == 'rock'
-    # elsif moves.include?('rock') && moves.include?('paper')
-    #   'paper'
-    # elsif moves.include?('scissors') && moves.include?('paper')
-    #   'scissors'
-    # end
-
     if @player_1.move == 'Rock' && @player_2.move == 'Scissors' ||
       @player_1.move == 'Paper' && @player_2.move == 'Rock' ||
       @player_1.move == 'Scissors' && @player_2.move == 'Paper'

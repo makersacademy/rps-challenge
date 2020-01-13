@@ -39,26 +39,43 @@ class RPS < Sinatra::Base
   end
 
     #multiplayer pages
-  get '/in_game_multi' do
-    @game.make_move(params[:move])
-    @game.switch_turns
-    @game.make_move(params[:move])
-    erb :play
-  end
+
+    get '/player_2_name' do
+      @player_1 = Player.create(params[:player_1_name])
+      erb :player_2_name
+    end
+
+    get '/multiplayer' do
+      @player_2 = Player.create(params[:player_2_name])
+      @game = Game.create(@player_1, @player_2)
+      p @game
+      erb :play_multi
+    end
+
+    get '/in_game_multi' do
+      @game.make_move(params[:move])
+      @game.switch_turns
+      erb :play_multi
+      p @game
+    end
+
+    get '/result_multi' do 
+      @game.make_move(params[:move])
+      p @game
+      if @game.tie?
+        redirect '/tie'
+      else
+        erb :win
+      end
+    end
 
 
 
-  get '/player_2_name' do
-    @player_1 = Player.create(params[:player_1_name])
-    erb :player_2_name
-  end
 
-  get '/multiplayer' do
-    @player_2 = Player.create(params[:player_2_name])
-    @game = Game.create(@player_1, @player_2)
-    p @game
-    erb :play
-  end
+
+
+
+
   run! if app_file == $0
 
 end
