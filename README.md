@@ -1,5 +1,21 @@
 # RPS Challenge
 
+Goal: To be able to develop a web app for playing rock/paper/scissors game.
+
+Sub Goal: Be able to execute a feature test which displays a web page that say 'Welcome to Rock/Paper/Scissors'(Creating the home page, displaying the name of the game)
+
+Steps taken:
+1) run the bundle install
+   validate: Bundle runs successfully
+2) Created a features folder inside the spec folder then created a homepage_spec.rb file inside features folder
+3) wrote down a feature test for accessing the homepage
+4) Run the rspec with following errors
+
+           Failure/Error: visit '/'
+
+          ArgumentError:
+            rack-test requires a rack application, but none was given
+
 Instructions
 -------
 
