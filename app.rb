@@ -17,8 +17,14 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/rps' do
+    session[:rps] = params[:rps]
+    redirect '/choose_rps'
+  end
+
   get '/choose_rps' do
     @player_1_name = session[:player_1_name]
+    @rps = session[:rps]
     erb :choose_rps
   end
   # start the server if ruby file executed directly

@@ -1,3 +1,10 @@
 Hi <%= @player_1_name %>!
 <br><br>
-<%= @player_1_name %>'s Score: 1 point
+
+<form action="/rps" method = "post">
+    <label for="rps">
+      <%= @player_1_name %>, choose - rock, paper or scissors:
+      <input type="text" name="rps">
+    </label>
+  <input type="submit" value="OK">
+</form>
