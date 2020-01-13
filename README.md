@@ -73,4 +73,10 @@ Using customer requirements and
 - Enter names - Allows entering of names
 - Single player game - Shows name and buttons for each move
 - Mutliplayer game - Shows name and buttons for each move, switches player after first move
-- End screen - Shows winner, offers for game to be restarted 
+- End screen - Shows winner, offers for game to be restarted
+
+#### Refactor & Cleanup
+- Refactor views to be abstract which controller fills in
+- Refactor multiplayer to use standard views
+- Refactor result to return each players move
+- Cleanup tests (make sure each feature is tested)
