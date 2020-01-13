@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+ <html lang="en" dir="ltr">
+   <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+   <style>
+
+     body {
+       background-color: pink;
+       font-family: cursive;
+     }
+
+     .glowing_text {
+       color: #b3ffff;
+       font-size: 70px;
+       text-align: center;
+       -webkit-animation: glow 1s ease-in-out infinite alternate;
+       -moz-animation: glow 1s ease-in-out infinite alternate;
+       animation: glow 1s ease-in-out infinite alternate;
+     }
+
+     #femalecoder {
+       border: 10px #ff80ff solid;
+       width: 500px;
+      height: 400px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+     }
+
+     #playagain {
+       {
+        background-color: #ff66cc;
+        display: inline-block;
+        border-radius: 4px;
+        border: none;
+        color: white;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+  #playagain span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  #playagain span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+#rockbutton:hover span {
+  padding-right: 25px;
+}
+
+#rockbutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+     }
+
+
+     @-webkit-keyframes glow {
+       from {
+         text-shadow: 0 0 10px #b3ffff, 0 0 20px #b3ffff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+       }
+
+       to {
+         text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+       }
+     }
+     </style>
+     <title>Players entered</title>
+   </head>
+   <body>
+     <h1 class="glowing_text">
+
+     You selected <%= @player_1_selection %>!
+     <br>
+     <br>
+     Lucy The Computer selected <%= @lucy_the_computer_selection %>!
+     </h1>
+     <br>
+
+     <h1 class="glowing_text">
+     <%=@determine_winner%>!
+     </h1>
+     
+     <br>
+     <img id="femalecoder" src="http://localhost:4567/Images/pink_coder.jpg" alt="Female coder">
+
+    <form action ="/">
+    <input type="submit" value='Click here to play again!' id="playagain">
+    </form>
+    <br>
+    <br>
+
+
+    </form>
+    </body>
+    </html>
+     

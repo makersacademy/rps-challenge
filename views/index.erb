@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+   <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+   <style>
+
+     body {
+       background-color: pink;
+       font-family: cursive;
+     }
+
+     .glowing_text {
+       color: #b3ffff;
+       font-size: 70px;
+       text-align: center;
+       -webkit-animation: glow 1s ease-in-out infinite alternate;
+       -moz-animation: glow 1s ease-in-out infinite alternate;
+       animation: glow 1s ease-in-out infinite alternate;
+     }
+
+
+     @-webkit-keyframes glow {
+       from {
+         text-shadow: 0 0 10px #b3ffff, 0 0 20px #b3ffff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+       }
+
+       to {
+         text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+       }
+     }
+
+     .form {
+       text-align: center;
+     }
+
+     h1 {
+    text-align: center;
+    color : #ab0f7c;
+}
+
+h2 {
+    text-align: center;
+    color: #945681;
+}
+
+form {
+    text-align: center;
+    color: #945681;
+}
+
+div {
+    text-align: center;
+    background_colour: pink;
+}
+
+body {
+  background_color: pink;
+}
+
+#submit {
+  border: 3px pink solid;
+}
+
+#player1 {
+  border: 3px pink solid;
+}
+
+#player2 {
+  border: 3px pink solid;
+}
+
+#rockpaperscissors {
+  border: 10px #ff80ff solid;
+  width: 500px;
+  height: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
+  <body>
+  <h1>Are you ready to play Rock Paper Scissors?</h1>
+  <h2>Enter your name to begin the game</h2> 
+  <div style="border: 30px sold pink">
+  <form action="/name" method="post">
+  <label for="player_1_name">
+    Player 1
+  <input type="text" name="player_1_name" id="player1">
+  </label>
+  <label for="player_2_name">
+    Player 2
+  <input type="text" name="lucy_the_computer" id="lucythecomputer" placeholder="Lucy the Computer" disabled>
+  </label>
+  <input type="submit" value="Click me!" id="submit">
+ </form>
+</div>
+
+<img id="rockpaperscissors" src="http://localhost:4567/Images/rockpaperscissorspink.jpg" alt="Cute rock paper scissors">
+</body>
+</html>
+<style>
+
