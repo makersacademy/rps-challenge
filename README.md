@@ -2,7 +2,7 @@
 
 Goal: To be able to develop a web app for playing rock/paper/scissors game.
 
-Sub Goal: Be able to execute a feature test which displays a web page that say 'Welcome to Rock/Paper/Scissors'(Creating the home page, displaying the name of the game)
+Sub Goal 1 : Be able to execute a feature test which displays a web page that say 'Welcome to Rock/Paper/Scissors'(Creating the home page, displaying the name of the game)
 
 Steps taken:
 1) run the bundle install
@@ -33,7 +33,7 @@ Steps taken:
    Result: Feature test passed and my web home page is displaying the message.
 
 
-Sub Goal: To keep my code clean and create views in separate erb files
+Sub Goal 2 : To keep my code clean and create views in separate erb files
 
 Steps taken:
 
@@ -44,7 +44,37 @@ Steps taken:
 
 Validate: Refreshed the homepage again and got the desired output(Homepage with the welcoming message)
 
-Sub Goal: Completing the User Story 1
+Sub Goal 3: Completing the User Story 1
+
+Steps taken:
+
+1) wrote a feature test for registering the player name.
+2) Ran rspec got following error
+
+Error 1:
+Failure/Error: fill_in :player_name, with: 'sarita'
+
+     Capybara::ElementNotFound:
+       Unable to find field :player_name that is not disabled
+
+Fix:
+
+1) I updated HTML code in the index.erb file
+2) Wrote the following route in my app.rb file
+      post '/name' do
+        @player_name = params[:player_name]
+        erb :play
+      end
+3) Created a play.erb file in Views folder
+4)Wrote the following code in  play.rb
+      <%= @player_name %>
+
+Validate: I ran the rspec and my feature test passed. I can see my homepage as required and can register a player name which can be seen on the
+          screen after submission.
+
+Result: Completed first user story
+
+
 
 
 
