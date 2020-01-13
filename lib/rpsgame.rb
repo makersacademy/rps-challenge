@@ -25,7 +25,7 @@ class RPSGame
     else
       @player_1_wins.each do | option |
         return "Congratulations! You beat Lucy the Computer!!!" if player_1_selection == option[:player_1] && lucy_the_computer_selection == option[:lucy_the_computer]
-      end
+    end
      "Bad luck! You were beaten this time"
     end
   end
