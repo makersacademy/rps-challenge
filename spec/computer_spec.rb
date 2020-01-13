@@ -1,3 +1,4 @@
+require 'computer'
 describe Computer do
   let(:computer) { described_class.new }
 
