@@ -12,11 +12,14 @@ class Rps < Sinatra::Base
   end
 
   post '/game' do
-    @rock = Rock
-    @paper = Paper
-    @scissors = Scissors
+    @move = params[:move]
+    redirect '/result'
   end
 
+  post '/result' do
+    @move = params[:move]
+    erb :result
+  end
 
   run! if app_file == $0
 end
