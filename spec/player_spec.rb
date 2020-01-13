@@ -12,5 +12,4 @@ describe Player do
   it 'has a default value if not passed a name' do
     expect(Player.new.name).to eq "Computer"
   end
-
 end

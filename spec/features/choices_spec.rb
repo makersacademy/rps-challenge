@@ -17,4 +17,13 @@ feature 'Choices' do
     click_button "Rock"
     expect(page).to have_content "Carmen chose Rock"
   end
+
+  scenario 'game chooses a random option' do
+    srand(1)
+    visit '/'
+    fill_in :player_1_name, with: "Carmen"
+    click_button "Register"
+    click_button "Rock"
+    expect(page).to have_content "Computer chose Paper"
+  end
 end
