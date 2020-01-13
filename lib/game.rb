@@ -21,14 +21,9 @@ class Game
   end
 
   def result(player_selection, game_selection)
-    if player_selection == game_selection
-      return "Draw!!" 
-    elsif player_selection == "Rock" && game_selection == "Scissors"
-      return "You won!!"
-    elsif player_selection == "Scissors" && game_selection == "Paper"
-      return "You won!!"
-    elsif player_selection == "Paper" && game_selection == "Rock"
-      return "You won!!"
+    return "Draw!!" if player_selection == game_selection
+    if (player_selection == "Rock" && game_selection == "Scissors" || player_selection == "Scissors" && game_selection == "Paper" || player_selection == "Paper" && game_selection == "Rock")
+      return "You won!!" 
     else
       return "Game wins"
     end

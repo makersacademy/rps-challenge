@@ -3,6 +3,7 @@ require './lib/player'
 require './lib/game'
 
 class RPS < Sinatra::Base
+  enable :sessions
 
   before do
     @game = Game.instance
@@ -13,37 +14,26 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.create(Player.new(params[:name]))
+    session[:name] = params[:name]
+    session[:game] = Game.create(Player.new(session[:name]))
     redirect '/play'
   end
 
   get '/play' do
-    # @game = $game
     erb(:play)
   end
 
-  get '/rock' do
-    # @game = $game
-    @game_selection = @game.rock_paper_scissors
-    result = @game.result(params[:rock], @game_selection)
-    @result = result
-    erb(:rock)
+  post '/move' do
+    session[:move] = params[:move]
+    redirect '/result'
   end
   
-  get '/paper' do
-    # @game = $game
-    @game_selection = @game.rock_paper_scissors
-    result = @game.result(params[:paper], @game_selection)
-    @result = result
-    erb(:paper)
-  end
-
-  get '/scissors' do
-    # @game = $game
-    @game_selection = @game.rock_paper_scissors
-    result = @game.result(params[:scissors], @game_selection)
-    @result = result
-    erb(:scissors)
+  get '/result' do
+    @game = session[:game]
+    @player_move = session[:move]
+    @game_move = @game.rock_paper_scissors
+    @result = @game.result(@player_move, @game_move)
+    erb(:result)
   end
 
   run! if app_file == $0
