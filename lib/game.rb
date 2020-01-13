@@ -1,12 +1,20 @@
 class Game
   attr_reader :moves
 
-  def initialize
+  def self. instance
+    @game
+  end
+
+  def self.create(move)
+    @game = Game.new(move)
+  end
+
+  def initialize(move)
+    @move = move
     @moves = ["Rock", "Paper", "Scissors"]
   end
 
-  def play(move)
-    @move = move
+  def play
     @comp_move = @moves.sample
     @session = [@move, @comp_move]
     "#{message}.\n#{result}"

@@ -20,14 +20,14 @@ class Rps < Sinatra::Base
   end
 
   post  '/move' do
-    $move = params[:move]
+    @game = Game.create(params[:move])
     p params
     redirect '/chosen_move'
   end
 
   get '/chosen_move' do
     p $move
-    @game = Game.new
+    @game = Game.instance
     erb :move
   end
 
