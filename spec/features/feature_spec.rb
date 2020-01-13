@@ -4,7 +4,7 @@ feature 'testing features' do
     visit('/')
     fill_in 'name', with: 'Max'
     click_button 'Start game'
-    expect(page).to have_contect 'Max'
+    expect(page).to have_content 'Max'
   end
 
 end

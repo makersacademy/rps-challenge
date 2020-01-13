@@ -2,8 +2,20 @@ require 'sinatra'
 
 class RPS < Sinatra::Base
 
+attr_reader :player
+
 get '/' do
-  'Rock Paper Scissors!'
+  erb :index
+end
+
+post '/play' do
+  $player = params[:name]
+  redirect '/play'
+end
+
+get '/play' do
+  @player = $player
+  erb :play
 end
 
 end
