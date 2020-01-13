@@ -4,20 +4,20 @@ require_relative '../app.rb'
 
   def game(move, compmove)
 
-    if @move == @compmove
-       p 'You tied with the computer'
-     elsif @move == "Rock" && @compmove == "Paper"
+    if @move == "Rock" && @compmove == "Paper"
          p 'Paper covers rock you loose'
        elsif @move == "Paper" && @compmove == "Rock"
            p 'Paper covers rock you win'
         elsif @move == "Rock" && @compmove == "Scissors"
-            p 'Rock smashes Scissors you win'
+            p 'Rock smashes scissors you win'
           elsif @move == "Scissors" && @compmove == "Rock"
-              p 'Rock smashes Scissors you loose'
+              p 'Rock smashes scissors you loose'
             elsif @move == "Scissors" && @compmove == "Paper"
-                p 'Scissors cut Paper you win'
-              else @move == "Paper" && @compmove == "Scissors"
-                  p 'Scissors cut Paper you loose'
+                p 'Scissors cut paper you win'
+              elsif @move == "Paper" && @compmove == "Scissors"
+                  p 'Scissors cut paper you loose'
+                else  @move == @compmove
+                     p 'You tied with the computer'
     end
   end
 end
