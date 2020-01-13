@@ -9,4 +9,12 @@ feature 'Choices' do
       expect(page).to have_button "Scissors"
     end
   end
+
+  scenario 'player can choose one option' do
+    visit '/'
+    fill_in :player_1_name, with: "Carmen"
+    click_button "Register"
+    click_button "Rock"
+    expect(page).to have_content "Carmen chose Rock"
+  end
 end
