@@ -1,10 +1,5 @@
 class RpsResult
 attr_reader :result
-  #
-  # def initialize(move, computer_move)
-  #   @move = move
-  #   @computer_move = computer_move
-  # end
 
   def result(move, computer_move)
     if move == computer_move
