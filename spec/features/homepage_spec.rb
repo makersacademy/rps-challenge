@@ -1,3 +1,5 @@
+require 'capybara/rspec'
+
 feature 'testing homepage' do
   scenario 'it can call the homepage' do
     visit '/'

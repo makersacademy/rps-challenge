@@ -11,10 +11,26 @@ Steps taken:
 3) wrote down a feature test for accessing the homepage
 4) Run the rspec with following errors
 
-           Failure/Error: visit '/'
+    Error 1       Failure/Error: visit '/'
 
           ArgumentError:
             rack-test requires a rack application, but none was given
+  Fix:
+
+  * one update here, I forgot to mention that I also created the app.rb file inside the project folder to store my code to run the server.
+   created a config.ru inside the project folder and then added the following code inside the file
+        require './app.rb'
+        run MyApp
+
+     Also added the following lines inside the spec_helper.rb
+        capybara.app = MyApp
+        require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+  validate: When I ran the rspec above mentioned error removed.
+
+     When I ran rackup command it started the server.
+
+   Result: Feature test passed and my web home page is displaying the message.
 
 Instructions
 -------
