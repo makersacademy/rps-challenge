@@ -37,9 +37,9 @@ class Game
     #   'scissors'
     # end
 
-    if @player_1.move == 'rock' && @player_2.move == 'scissors' ||
-      @player_1.move == 'paper' && @player_2.move == 'rock' ||
-      @player_1.move == 'scissors' && @player_2.move == 'paper'
+    if @player_1.move == 'Rock' && @player_2.move == 'Scissors' ||
+      @player_1.move == 'Paper' && @player_2.move == 'Rock' ||
+      @player_1.move == 'Scissors' && @player_2.move == 'Paper'
       
       @player_1
     else
@@ -47,7 +47,7 @@ class Game
     end
   end
 
-  def draw?
+  def tie?
     @player_1.move == @player_2.move
   end
 

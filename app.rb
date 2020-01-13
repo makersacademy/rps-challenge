@@ -13,6 +13,8 @@ class RPS < Sinatra::Base
   get '/' do 
     erb :index
   end
+  
+  #single player pages
 
   get '/single_player' do
     @player_1 = Player.create(params[:player_1_name])
@@ -20,6 +22,31 @@ class RPS < Sinatra::Base
     @game = Game.create(@player_1, @player_2)
     erb :play
   end
+
+  get '/result' do 
+    @game.make_move(params[:move])
+    @game.switch_turns
+    @game.make_move(['Rock', 'Paper', 'Scissors'].sample)
+    if @game.tie?
+      redirect '/tie'
+    else
+      erb :win
+    end
+  end
+
+  get '/tie' do 
+    erb :tie
+  end
+
+    #multiplayer pages
+  get '/in_game_multi' do
+    @game.make_move(params[:move])
+    @game.switch_turns
+    @game.make_move(params[:move])
+    erb :play
+  end
+
+
 
   get '/player_2_name' do
     @player_1 = Player.create(params[:player_1_name])
@@ -32,7 +59,6 @@ class RPS < Sinatra::Base
     p @game
     erb :play
   end
-
   run! if app_file == $0
 
 end

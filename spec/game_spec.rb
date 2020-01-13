@@ -16,8 +16,8 @@ describe Game do
       allow_doubles_to_receive_moves_win
     end
     it 'makes player moves and stores them' do 
-      subject.make_move('rock')
-      expect(subject.player_1.move).to eq 'rock'
+      subject.make_move('Rock')
+      expect(subject.player_1.move).to eq 'Rock'
     end
   end
 
@@ -31,17 +31,17 @@ describe Game do
     end
     it "makes player_2 move after player_1's turn" do 
       simulate_round_with_win
-      expect(subject.player_2.move).to eq 'scissors'
+      expect(subject.player_2.move).to eq 'Scissors'
     end
   end
 
-  describe '#draw' do 
+  describe '#tie?' do 
     before do
       allow_doubles_to_receive_moves_draw
     end
     it 'checks if same moves result in a draw' do 
       simulate_round_with_draw
-      expect(subject.draw?).to eq true
+      expect(subject.tie?).to eq true
     end
   end
 
@@ -56,28 +56,28 @@ describe Game do
   end
 
   def allow_doubles_to_receive_moves_win
-    allow(player_1).to receive(:make_move).with(any_args).and_return('rock')
-    allow(player_1).to receive(:move).and_return('rock')
-    allow(player_2).to receive(:make_move).with(any_args).and_return('scissors')
-    allow(player_2).to receive(:move).and_return('scissors')
+    allow(player_1).to receive(:make_move).with(any_args).and_return('Rock')
+    allow(player_1).to receive(:move).and_return('Rock')
+    allow(player_2).to receive(:make_move).with(any_args).and_return('Scissors')
+    allow(player_2).to receive(:move).and_return('Scissors')
   end
 
   def allow_doubles_to_receive_moves_draw
-    allow(player_1).to receive(:make_move).with(any_args).and_return('paper')
-    allow(player_1).to receive(:move).and_return('paper')
-    allow(player_2).to receive(:make_move).with(any_args).and_return('paper')
-    allow(player_2).to receive(:move).and_return('paper')
+    allow(player_1).to receive(:make_move).with(any_args).and_return('Paper')
+    allow(player_1).to receive(:move).and_return('Paper')
+    allow(player_2).to receive(:make_move).with(any_args).and_return('Paper')
+    allow(player_2).to receive(:move).and_return('Paper')
   end
 
   def simulate_round_with_win
-    subject.make_move('rock')
+    subject.make_move('Rock')
     subject.switch_turns
-    subject.make_move('scissors')
+    subject.make_move('Scissors')
   end
 
   def simulate_round_with_draw
-    subject.make_move('paper')
+    subject.make_move('Paper')
     subject.switch_turns
-    subject.make_move('paper')
+    subject.make_move('Paper')
   end
 end
