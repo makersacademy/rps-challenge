@@ -15,7 +15,7 @@
 
   <h4> Pick your move:</h4><br>
 
-  <form action="/<%=@action%>" method='post'>
+  <form action=<%=@action%> method='post'>
     <input type="radio" name=move value=1 id='scissors' checked> Scissors<br>
     <input type="radio" name=move value=2 id='paper'> Paper<br>
     <input type="radio" name=move value=3 id='rock'> Rock<br>

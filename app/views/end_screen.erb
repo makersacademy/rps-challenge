@@ -21,7 +21,10 @@
 
   <h1>Rock Paper Scissors Spock Lizard</h1>
   <br>
-  <h2><%="#{@result}"%></h2>
+  <h3><%="#{@player_1_name} Played: #{@result[:player_1_move]}"%></h2>
+  <h3><%="#{@player_2_name} Played: #{@result[:player_2_move]}"%></h2>
+  <br>
+  <h2><%="#{@result[:result]}"%></h2>
   <br>
   <form action='/'>
     <button type="submit" name='Play Again?'>Play Again?</button>

@@ -5,13 +5,15 @@
         opacity: 0;
         max-height: 0;
         overflow: hidden;
+        transform: scale(0.8);
+        transition: 0.5s;
       }
       input[id="Multiplayer"]:checked ~ .reveal-if-active{
         opacity: 1;
         max-height: 100px; /* little bit of a magic number :( */
         overflow: visible;
+        transform: scale(1);
       }
-
    </style>
 
 </head>
@@ -21,18 +23,17 @@
   <h1>Rock Paper Scissors Spock Lizard</h1>
   <br>
 
-  <form action="/multiplayer-names" method='post'>
+  <form action="/start-game" method='post'>
     <h3>Select Game Mode:</h3>
-    <input type="radio" name=game_mode id="Single Player" value=false>
+    <input type="radio" name=multiplayer id="Single Player" value="false">
     <label for="Single Player">Single Player</label><br>
-    <input type="radio" name=game_mode id="Multiplayer" value=true>
+    <input type="radio" name=multiplayer id="Multiplayer" value="true">
     <label for="Multiplayer">Multiplayer</label>
 
     <h3>Enter Player Names:</h3>
     Player 1 Name: <input type="text" name=name_1 id="Name 1"><br>
     <div class="reveal-if-active">
       Player 2 Name: <input type="text" name=name_2 id="Name 2"><br>
-      <label for="Name 2"></label>
     </div>
 
     <br>
