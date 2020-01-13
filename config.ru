@@ -1,3 +1,3 @@
 require_relative "./rps"
 
-run RPS
+run Rps
