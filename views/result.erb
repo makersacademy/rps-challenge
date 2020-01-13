@@ -1,11 +1,11 @@
-<center><h3><%= @name %> picked <%= session[:move] %><h3><br>
+<center><h3><%= @name %> picked <%= @player_move %><h3><br>
         <h3><%= @opponent %> picked <%= @computer_move %><h3><br>
         <h1><%= @name %>  <%= @result%><h1><br>
         </center>
 <br>
 <br>
 <center><h3> Again? </h3>
-        <form action='/' method='get'>
+        <form action='/play' method='get'>
         <input type='submit' value="Let's Play!">
         </form>
         </center> 

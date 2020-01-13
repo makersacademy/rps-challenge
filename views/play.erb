@@ -1,9 +1,9 @@
 <center><h1>Welcome <%= session[:name] %><br></h1>
-        <h2>You will be playing: <%= @opponent %></h2>
+        <h2>You will be playing: <%= @game %></h2>
         <h3>Please pick your move:</h3></center>
 
 
-<center><form action="/result" method="post">
+<center><form action="/move" method="post">
   <input type="radio" name=move value="Rock" required>Rock <br>
   <input type="radio" name=move value="Paper">Paper<br>
   <input type="radio" name=move value="Scissors">Scissors<br>
