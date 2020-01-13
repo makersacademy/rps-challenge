@@ -1,0 +1,16 @@
+You played <%= @player_move %>
+<br>
+Computer played <%= @computer_move %>
+<br>
+<br>
+<% if @winner == "draw" %>
+  It's a draw!
+
+<% elsif @winner == "player" %>
+  You win!
+
+<% elsif @winner == "computer" %>
+
+  You lost!
+
+<% end %>

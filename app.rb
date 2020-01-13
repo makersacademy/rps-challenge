@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -8,13 +9,22 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_name] = params[:player_name]
+    @player = Player.create(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
+    @player = Player.instance
     erb :play
+  end
+
+  get '/result' do
+    @player = Player.instance
+    @player_move = params[:player_move]
+    @computer_move = ["Rock", "Paper", "Scissors"].sample
+
+    @winner = @player.compare_moves(@player_move, @computer_move)
+    erb :result
   end
 
   run! if app_file == $0
