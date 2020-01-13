@@ -55,6 +55,13 @@ describe Game do
     end
   end
 
+  describe '#complete?' do 
+    before do 
+      allow_doubles_to_receive_moves_draw
+    end
+    it { expect(subject.complete?).to eq true }
+  end
+
   def allow_doubles_to_receive_moves_win
     allow(player_1).to receive(:make_move).with(any_args).and_return('Rock')
     allow(player_1).to receive(:move).and_return('Rock')
