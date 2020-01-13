@@ -54,7 +54,8 @@ PAGES
 2- Passed by adding a post request to the controler to store attributes of like name given. form added to take text name and a submit button to move on to the next page. 
 
 ###Problems 
-I stumbled at the start to set up the enviroment. I was comfortable setting up from scratch but when I was given a partialy set up directory as from the GIT clone I was constantly worried about creating conflictions in the spec_helpers,gemfiles and config.ru.
+I stumbled at the start to set up the enviroment. I was comfortable setting up from scratch but when I was given a partialy set up directory as from the GIT clone I was constantly worried about creating conflictions in the spec_helpers,gemfiles and config.ru. There were 
 
 Once I was setup it was building well, I understand the priciples behind the MVC comunication and how they interface with the different languages and data.
+
 
