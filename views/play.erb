@@ -1,0 +1,9 @@
+<h2>Player: <%= @player_name %></h2>
+
+<form action="/game" method="post">
+  <label for="player_move">
+    Player Move(Rock, Paper or Scissors):
+    <input type="text" name="player_move">
+  </label>
+  <input type="submit" value="Submit">
+</form>
