@@ -1,7 +1,9 @@
 class Computer
 
-def compmove
-  [:Rock, :Paper, :Scissors].sample
+OUTCOMES = [:Rock, :Paper, :Scissors]
+
+def computer_move
+  OUTCOMES.sample
 end
 
 end
