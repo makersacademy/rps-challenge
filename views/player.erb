@@ -1,0 +1,24 @@
+<head>
+<style>
+body {
+  text-align: center;
+  font-family: helvetica;
+  color:#888;
+  margin:20px
+}
+  </style>
+</head>
+
+<body>
+<h2> <%= @player_name %>  you are ready to play! </h2>
+
+<br>
+Please enter your move, of either Rock, Paper or Scissors:
+<br>
+
+<form action='/move' method='post'>
+  <input type='text' name='move'>
+  <input type='submit' value='Submit'>
+  </form>
+
+</body>
