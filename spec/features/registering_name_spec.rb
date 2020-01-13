@@ -5,9 +5,7 @@ feature 'Registering name' do
   end
 
   scenario 'Entering a name on a form returns a page containing name' do
-    visit('/')
-    fill_in :name, with: 'Andy'
-    click_button 'Submit'
+    submit_name
     expect(page).to have_content 'Andy'
   end
 
