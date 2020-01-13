@@ -1,18 +1,17 @@
 <head>
 
    <style>
-      button[type="submit"]{
-      background-color: #1c87c9;
-      border: none;
-      color: white;
-      padding: 20px 34px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 20px;
-      margin: 4px 2px;
-      cursor: pointer;
+      .reveal-if-active {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
       }
+      input[id="Multiplayer"]:checked ~ .reveal-if-active{
+        opacity: 1;
+        max-height: 100px; /* little bit of a magic number :( */
+        overflow: visible;
+      }
+
    </style>
 
 </head>
@@ -21,12 +20,24 @@
 
   <h1>Rock Paper Scissors Spock Lizard</h1>
   <br>
-  <h4>Select Game Mode:</h4>
-  <form action="/singleplayer-names">
-    <button type="submit" name='Single Player'>Single Player</button>
-  </form>
-  <form action="/multiplayer-names">
-    <button type="submit" name='Multilayer'>Multiplayer</button>
+
+  <form action="/multiplayer-names" method='post'>
+    <h3>Select Game Mode:</h3>
+    <input type="radio" name=game_mode id="Single Player" value=false>
+    <label for="Single Player">Single Player</label><br>
+    <input type="radio" name=game_mode id="Multiplayer" value=true>
+    <label for="Multiplayer">Multiplayer</label>
+
+    <h3>Enter Player Names:</h3>
+    Player 1 Name: <input type="text" name=name_1 id="Name 1"><br>
+    <div class="reveal-if-active">
+      Player 2 Name: <input type="text" name=name_2 id="Name 2"><br>
+      <label for="Name 2"></label>
+    </div>
+
+    <br>
+    <input type="submit" name='Play Game!'>
+
   </form>
 
 </body>

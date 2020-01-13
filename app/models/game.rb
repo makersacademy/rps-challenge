@@ -4,11 +4,12 @@ class Game
   DEFAULT_NAME_1 = 'Player 1'
   DEFAULT_NAME_2 = 'Player 2'
 
-  def initialize(name_1:, name_2:, num_weapons:, game_module:)
+  def initialize(name_1:, name_2:, num_weapons:, game_module:, multiplayer: false)
     name_1.empty? ? (@player_1_name = DEFAULT_NAME_1) : (@player_1_name = name_1)
     name_2.empty? ? (@player_2_name = DEFAULT_NAME_2) : (@player_2_name = name_2)
     @num_weapons = num_weapons
     @game_module = game_module
+    @multiplayer = multiplayer
   end
 
   def add_move_1(move)

@@ -9,11 +9,11 @@
   <h1>Rock Paper Scissors Spock Lizard</h1>
   <br>
   <h4>Enter Names:</h4>
-  <form action='/singleplayer-names' method='post'>
-    Player 1 Name:<br>
-    <input type="text" name=name_1><br>
-    <br>
-    <input type="submit" value="Start Game!">
+
+  <form action="/<%=@action%>" method='post'>
+    <input type="radio" name=game_mode value=false id='Single Player' checked> Single Player<br>
+    <input type="radio" name=game_mode value=true id='Multiplayer'> Multiplayer<br>
+    <input type="submit" name='Play Move!'>
   </form>
 
 
