@@ -11,5 +11,12 @@ class Rps < Sinatra::Base
     erb :name
   end
 
+  post '/game' do
+    @rock = Rock
+    @paper = Paper
+    @scissors = Scissors
+  end
+
+
   run! if app_file == $0
 end
