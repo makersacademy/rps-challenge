@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<title> The Rages On! </title>
+<head>
+    <meta charset="utf-8">
+</head>
+<link rel="stylesheet" href="/css/styles.css">
+</html>
+
+<body>
+
+<br>
+<br>
+
+
+<h1><%= @game.player1.name %> it's is your turn!</h1>
+
+<h4><%= @game.player1.name%>: <%= @game.player1.num_turns%> turns left </h4> 
+<br>
+
+<br>
+<br>
+<form action="/rock" method='POST'>
+<button type="submit" value="Rock"> Rock </button> 
+</form> 
+
+<form action="/paper" method='POST'>
+<button type="submit" value="Paper"> Paper </button> 
+</form> 
+
+<form action="/scissors" method='POST'>
+<button type="submit" value="Scissiors"> Scissiors </button> 
+</form> 
+<br>
+
+</body>

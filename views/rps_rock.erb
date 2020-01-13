@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<title> You Selected Rock </title>
+<head>
+    <meta charset="utf-8">
+</head>
+<link rel="stylesheet" href="/css/styles.css">
+</html>
+
+<body>
+
+<br>
+<br>
+<h1><%= @game.player1.name %> you selected Rock </h1>
+
+<% splayer1 = :rock %>
+
+<br>
+<h2> The Computer Selected : 
+<%= splayer2 = @game.computer_option %> </h2>
+
+<br>
+<h5><%= @game.moves(splayer1.to_s, splayer2.to_s) %><h5>
+
+
+<h4><%= @game.player1.name %>: you have <%= @game.player1.num_turns%> turns left </h4> <br>
+<h4>Computer: you have <%= @game.player2.num_turns%> turns left </h4> <br>
+
+
+
+</body>
