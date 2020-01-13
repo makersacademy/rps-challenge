@@ -17,4 +17,10 @@ feature 'Result page' do
     expect(page).to have_content 'Scissors'
   end
 
+  scenario 'Result page shows computers move' do
+    submit_name
+    click_button 'Scissors'
+    expect(page).to have_content "Computer's move:"
+  end
+
 end

@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/rps_calculation'
 
 class Rps < Sinatra::Base
 
@@ -18,6 +19,7 @@ class Rps < Sinatra::Base
 
   post '/result' do
     @move = params[:move]
+    @computer_move = RpsCalculation.new.computer_rps
     erb :result
   end
 
