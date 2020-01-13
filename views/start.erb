@@ -1,0 +1,22 @@
+<head>
+  <style>
+body{
+  text-align: center;
+  background: url(https://pa1.narvii.com/6638/70052d6ec516b499fe810c3d6de304ebacac0c70_hq.gif); width: 100%
+}
+  </style>
+</head>
+
+<h1> Hello <%= session[:name]%> <h1>
+<h2> What Move Do You Choose? <h2>
+
+<form name="input" action="/decision" method="post">
+  <select style="height:40px;width:100px" name=move>
+    <option value="R">Rock!</option>
+    <option value="P">Paper?</option>
+    <option value="S">Scissors...</option>
+    <option value="L">Lizard<--</option>
+    <option value="K">Spock--></option>
+  </select>
+  <input type="submit">
+</form>
