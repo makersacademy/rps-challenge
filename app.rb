@@ -7,8 +7,12 @@ class RPS < Sinatra::Base
   end
 
   post '/enter_name' do
-    @user = params[:name]
+    @user = Player.new(params[:name], param[:choice])
     erb :play
+  end
+
+  get '/rock' do
+    erb :rock
   end
 
   run! if app_file == $0
