@@ -1,6 +1,9 @@
 class Computer
 
+  attr_reader :move
+
   def move
-    ["rock","paper","scissors"].sample
+    ["Rock","Paper","Scissors"].sample
   end
-end 
+
+end

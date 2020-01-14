@@ -1,7 +1,22 @@
 feature 'Select move' do
-  scenario 'Player 1 selects move' do
+  scenario 'User select move' do
     sign_in_and_play
-    check('scissors')
-    expect(page).to have_field('scissors', checked:true)
+    click_button "Scissors"
+    expect(page).not_to have_content "Dave vs. Computer Game"
+    expect(page).to have_content "You selected\nScissors"
+  end
+
+  scenario 'User select move' do
+    sign_in_and_play
+    click_button "Rock"
+    expect(page).not_to have_content "Dave vs. Computer Game"
+    expect(page).to have_content "You selected\nRock"
+  end
+
+  scenario 'User select move' do
+    sign_in_and_play
+    click_button "Paper"
+    expect(page).not_to have_content "Dave vs. Computer Game"
+    expect(page).to have_content "You selected\nPaper"
   end
 end

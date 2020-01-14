@@ -1,14 +1,9 @@
-<%= @game.player_1.name %> vs. Computer Game
+<%= @game.player_1.name %> vs. Computer
 
 <h1> Please select your move </h1>
 
-<input type="checkbox" id="scissors" value="scissors"
-<label for="scissors">scissors</label>
-<input type="checkbox" id="rock" value="rock"
-<label for="rock">rock</label>
-<input type="checkbox" id="paper" value="paper"
-<label for="paper">paper</label>
-
-<form action="/result">
-  <input type="submit" value="OK">
+<form action="/result" method= "post">
+    <input type= "submit" name= "move" value="Rock" >
+    <input type= "submit" name= "move" value="Paper" >
+    <input type= "submit" name= "move" value="Scissors">
 </form>
