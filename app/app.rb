@@ -2,9 +2,15 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base
   get '/' do
-    'Welcome to rock, paper & scissors!'
+    erb :index
   end
 
-  # start the server if ruby file executed directly
+  post '/name' do
+    p params
+    @name = params[:name]
+    erb :index
+  end
+
   run! if app_file == $0
+
 end
