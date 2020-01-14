@@ -21,11 +21,11 @@ class Game
     elsif (player_move == "Rock"&& computer_move == "Scissors") ||
       (player_move  == "Paper" && computer_move  == "Rock") ||
       (player_move == "Scissors" && computer_move == "Paper")
-      return "player"
+      return "player wins"
     elsif (player_move == "Scissors" && computer_move == "Rock") ||
       (player_move == "Rock" && computer_move == "Paper") ||
       (player_move == "Paper" && computer_move == "Scissors")
-      return "computer"
+      return "computer wins"
     end
   end
 end
