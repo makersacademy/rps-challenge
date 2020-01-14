@@ -30,8 +30,12 @@ class Rps < Sinatra::Base
   get '/choose_rps' do
     @rps = session[:rps]
     @game = $game
-    
     erb :choose_rps
+  end
+
+  post '/play_again' do
+    @game = $game
+    redirect '/'
   end
   # start the server if ruby file executed directly
   run! if app_file == $0

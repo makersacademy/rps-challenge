@@ -1,32 +1,37 @@
-<div style = "background-color: pink; position: relative; center: 50px; padding: 50px; font-family: 'Comic Sans MS';"> <%= @game.player_1.name %> chose <%= @rps %>
+<div style = "background-color: pink; position: relative; center: 50px; padding: 50px; font-family: 'Comic Sans MS';">
+  <%= @game.player_1.name %> chose <%= @rps %>
 
-<br> <br>
+  <br> <br>
 
-<% @computer = ["rock", "paper","scissors"].sample %>
-<%= @game.computer.name %> chose <%= @computer %>
+  <% @computer = ["rock", "paper","scissors"].sample %>
+  <%= @game.computer.name %> chose <%= @computer %>
 
-<br><br>
-<% if @rps == 'rock' && @computer == 'scissors' %>
-<h2><%= "#{@game.player_1.name} wins!" %> </h2>
-<% elsif @rps == 'scissor' && @computer == 'paper' %>
-<h2><%= "#{@game.player_1.name} wins!" %> </h2>
-<% elsif @rps == 'paper' && @computer == 'rock' %>
-<h2><%= "#{@game.player_1.name} wins!" %> </h2>
+  <br><br>
+  <% if @rps == 'rock' && @computer == 'scissors' %>
+  <h2><%= "#{@game.player_1.name} wins!" %> </h2>
+  <% elsif @rps == 'scissor' && @computer == 'paper' %>
+  <h2><%= "#{@game.player_1.name} wins!" %> </h2>
+  <% elsif @rps == 'paper' && @computer == 'rock' %>
+  <h2><%= "#{@game.player_1.name} wins!" %> </h2>
 
-<% elsif @computer == 'rock' && @rps == 'scissors' %>
-<h2><%= "#{@game.computer.name} wins!" %> </h2>
-<% elsif @computer == 'scissors' && @rps == 'paper' %>
-<h2><%= "#{@game.computer.name} wins!" %> </h2>
-<% elsif @computer == 'paper' && @rps == 'rock' %>
-<h2><%= "#{@game.computer.name} wins!" %> </h2>
-<% elsif @rps == 'scissors' && @computer == 'paper' %>
-<h2><%= "#{@game.player_1.name} wins!" %> </h2>
+  <% elsif @computer == 'rock' && @rps == 'scissors' %>
+  <h2><%= "#{@game.computer.name} wins!" %> </h2>
+  <% elsif @computer == 'scissors' && @rps == 'paper' %>
+  <h2><%= "#{@game.computer.name} wins!" %> </h2>
+  <% elsif @computer == 'paper' && @rps == 'rock' %>
+  <h2><%= "#{@game.computer.name} wins!" %> </h2>
+  <% elsif @rps == 'scissors' && @computer == 'paper' %>
+  <h2><%= "#{@game.player_1.name} wins!" %> </h2>
 
-<% elsif @rps == 'rock' && @computer == 'rock' %>
-<h2><%= "It's a draw" %> </h2>
-<% elsif @rps == 'paper' && @computer == 'paper' %>
-<h2><%= "It's a draw" %> </h2>
-<% elsif @rps == 'scissors' && @computer == 'scissors' %>
-<h2><%= "It's a draw" %> </h2>
-<% end %>
+  <% elsif @rps == 'rock' && @computer == 'rock' %>
+  <h2><%= "It's a draw" %> </h2>
+  <% elsif @rps == 'paper' && @computer == 'paper' %>
+  <h2><%= "It's a draw" %> </h2>
+  <% elsif @rps == 'scissors' && @computer == 'scissors' %>
+  <h2><%= "It's a draw" %> </h2>
+  <% end %>
+
+  <form action="/play_again" method="post">
+    <input type="submit" value="Play again">
+  </form>
 </div>
