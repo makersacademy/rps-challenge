@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  Name: <%= @player %><br><br><br>
+  <h3> Please pick your move: <h3>
+  <form action="/result" method="post">
+    <input type="radio" name="choice" value="rock"> Rock
+    <input type="radio" name="choice" value="paper"> Paper
+    <input type="radio" name="choice" value="scissors"> Scissors
+    <button type="submit"> Play!</form>
+
+
+</body>
+
+</html>
