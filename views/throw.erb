@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Throw</title>
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+</head>
+<body>
+  <h1 style="text-align:center;"> <%= @game.player_1.name.capitalize %> vs. <%= @game.player_2.name %> </h1>
+  <p style="text-align:center;"> WIN: <%= @game.wld[:p1]%> LOSS: <%= @game.wld[:p2]%> DRAW: <%= @game.wld[:draw]%> </p>
+  <h2 style="text-align:center;"> <%= @game.player_1.name.capitalize %>: Rock, Paper, Scissors ? </h2>
+  <p style="text-align:center;">
+  <a href="/rock"><img alt="Rock" src="/imgs/rock.png"></a>
+  <a href="/paper"><img alt="Paper" src="/imgs/paper.png"></a>
+  <a href="/scissors"><img alt="Scissors" src="/imgs/scissors.png"></a>
+  </p>
+</body>
+</html>
+
+
+
+
+
+
+      <!-- <a href="/rock" style="text-decoration: none;" >Rock</a> -->
