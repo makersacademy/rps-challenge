@@ -1,11 +1,32 @@
-<%= @player_1_name %> chose <%= @rps %>
+<div style = "background-color: pink; position: relative; center: 50px; padding: 50px; font-family: 'Comic Sans MS';"> <%= @game.player_1.name %> chose <%= @rps %>
 
 <br> <br>
 
 <% @computer = ["rock", "paper","scissors"].sample %>
-Computer chose <%= @computer %>
+<%= @game.computer.name %> chose <%= @computer %>
 
-<br> <br>
+<br><br>
+<% if @rps == 'rock' && @computer == 'scissors' %>
+<h2><%= "#{@game.player_1.name} wins!" %> </h2>
+<% elsif @rps == 'scissor' && @computer == 'paper' %>
+<h2><%= "#{@game.player_1.name} wins!" %> </h2>
+<% elsif @rps == 'paper' && @computer == 'rock' %>
+<h2><%= "#{@game.player_1.name} wins!" %> </h2>
 
+<% elsif @computer == 'rock' && @rps == 'scissors' %>
+<h2><%= "#{@game.computer.name} wins!" %> </h2>
+<% elsif @computer == 'scissors' && @rps == 'paper' %>
+<h2><%= "#{@game.computer.name} wins!" %> </h2>
+<% elsif @computer == 'paper' && @rps == 'rock' %>
+<h2><%= "#{@game.computer.name} wins!" %> </h2>
+<% elsif @rps == 'scissors' && @computer == 'paper' %>
+<h2><%= "#{@game.player_1.name} wins!" %> </h2>
 
-<%= @player_1_name %>'s Score: 1 point
+<% elsif @rps == 'rock' && @computer == 'rock' %>
+<h2><%= "It's a draw" %> </h2>
+<% elsif @rps == 'paper' && @computer == 'paper' %>
+<h2><%= "It's a draw" %> </h2>
+<% elsif @rps == 'scissors' && @computer == 'scissors' %>
+<h2><%= "It's a draw" %> </h2>
+<% end %>
+</div>

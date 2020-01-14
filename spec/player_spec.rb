@@ -9,9 +9,4 @@ describe Player do
       expect(dave.name).to eq 'Dave'
     end
   end
-  describe '#scoring points' do
-    it 'shows points' do
-      expect(dave.points).to eq described_class::DEFAULT_POINTS
-    end
-  end
 end

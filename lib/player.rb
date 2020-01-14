@@ -1,9 +1,7 @@
 class Player
-  DEFAULT_POINTS = 0
-  attr_reader :name, :points, :move
+  attr_reader :name
 
-  def initialize(name, points = DEFAULT_POINTS)
+  def initialize(name)
     @name = name
-    @points = points
   end
 end

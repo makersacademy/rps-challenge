@@ -1,13 +1,16 @@
-<%= @player_1_name %> vs <%= @computer %>!
+<div style = "background-color: pink; position: relative; center: 50px; padding: 50px;font-family: 'Comic Sans MS';">
+
+  <h1><%= @game.player_1.name %> vs <%= @game.computer.name %>!</h1>
 <br><br>
 
 <form action="/rps" method = "post">
 
-      <%= @player_1_name %>, choose - rock, paper or scissors:
+      <%= @game.player_1.name %>, choose - rock, paper or scissors:
       <br>
       <input type="radio" name="rps" value="rock"> rock<br>
       <input type="radio" name="rps" value="paper"> paper<br>
       <input type="radio" name="rps" value="scissors"> scissors<br>
-  
+
   <input type="submit" value="OK">
 </form>
+</div>
