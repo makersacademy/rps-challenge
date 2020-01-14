@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require 'app_spec'
 
 class RPS < Sinatra::Base
   get '/' do
