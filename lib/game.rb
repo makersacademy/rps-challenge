@@ -7,8 +7,6 @@ attr_reader :move1, :move2
 
   def game
     @move2 = ["rock", "paper", "scissors"].sample
-    p @move1
-    p @move2
 
     if @move1 == @move2
       "It's a draw!"

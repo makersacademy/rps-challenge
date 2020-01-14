@@ -27,12 +27,8 @@ end
 get '/result' do
   $game = Game.new($choice)
   @choice = $choice
-  p @choice
-  p @choice2
   @result = $game.game
   @choice2 = $game.move2
-  p @result
-
   erb :result
 end
 
