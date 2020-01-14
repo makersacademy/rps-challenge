@@ -1,0 +1,9 @@
+<%= @game.player_1.name %> vs. Computer
+
+<h1> Please select your move </h1>
+
+<form action="/result" method= "post">
+    <input type= "submit" name= "move" value="Rock" >
+    <input type= "submit" name= "move" value="Paper" >
+    <input type= "submit" name= "move" value="Scissors">
+</form>
