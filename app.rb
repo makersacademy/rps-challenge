@@ -3,10 +3,10 @@ require_relative 'lib/computer'
 require_relative 'lib/game'
 require_relative "lib/player"
 
-class RPS < Sinatra::Base
+class Rps < Sinatra::Base
 
   before do
-    @game = Game.new.instance
+    @game = Game
   end
 
   get "/" do
