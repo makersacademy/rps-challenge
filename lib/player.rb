@@ -12,23 +12,23 @@ class Player
 
   def result
     if @move == 'Rock' && computer_move == 'Rock'
-    puts "It's a draw"
+    "It's a draw"
     elsif @move == 'Paper' && computer_move == 'Paper'
-      puts "It's a draw"
+      "It's a draw"
     elsif @move == 'Scissors' && computer_move == 'Scissors'
-      puts "It's a draw"
+      "It's a draw"
     elsif @move == 'Rock' && computer_move == 'Scissors'
-      puts "#{@name} Wins"
+      "#{@name} Wins"
     elsif @move == 'Paper' && computer_move == 'Rock'
-      puts "#{@name} Wins"
+      "#{@name} Wins"
     elsif @move == 'Scissors' && computer_move == 'Paper'
-      puts "#{@name} Wins"
+      "#{@name} Wins"
     elsif @move == 'Rock' && computer_move == 'Paper'
-      puts "Computer wins"
+      "Computer wins"
     elsif @move == 'Paper' && computer_move == 'Scissors'
-      puts "Computer wins"
+      "Computer wins"
     elsif @move == 'Scissors' && computer_move == 'Rock'
-      puts "Computer wins"
+      "Computer wins"
     end
   end
 end

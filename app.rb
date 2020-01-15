@@ -9,19 +9,20 @@ class Play < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:player_name, :player_move])
+    $name = params[:player_name]
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = $player.name
+    @player_name = $name
     erb :play
   end
 
   post '/game' do
+    $player = Player.new($name, params[:player_move])
     @computer_move = $player.computer_move
     @player_move = $player.move
-    @player_name = $player.name
+    @player_name = $name
     @result = $player.result
     erb :game
   end
