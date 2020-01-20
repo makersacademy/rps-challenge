@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+<p><%= @name %> Vs. Computer </p>
+<form action="/results" method="post">
+  <label for="rock">
+    Rock
+  <input type="radio" id="rock" name="choice" value="Rock">
+</label>
+<label for="paper">
+  Paper
+<input type="radio" id="paper" name="choice" value="Paper">
+</label>
+<label for="scissorsr">
+  Scissors
+<input type="radio" id="scissors" name="choice" value="Scissors">
+</label>
+  <button type="submit" >Submit</button>
+</form>
+</body>
+</html>
