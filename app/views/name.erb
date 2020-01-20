@@ -5,12 +5,21 @@
   <title></title>
 </head>
 <body>
-  <%= @name %>
+<p><%= @name %> Vs. Computer </p>
+<form action="/results" method="post">
+  <label for="rock">
+    Rock
+  <input type="radio" id="rock" name="choice" value="Rock">
+</label>
+<label for="paper">
+  Paper
+<input type="radio" id="paper" name="choice" value="Paper">
+</label>
+<label for="scissorsr">
+  Scissors
+<input type="radio" id="scissors" name="choice" value="Scissors">
+</label>
+  <button type="submit" >Submit</button>
+</form>
 </body>
 </html>
-
-
-<!-- <form action="/name" method="post">
-  <input type="text" name="name">
-  <<input type="submit" value="Submit">
-</form> -->
