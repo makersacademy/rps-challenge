@@ -32,6 +32,10 @@ I would like to be able to play rock/paper/scissors
 * From the command line, run ruby app.rb and visit 'http://localhost:4567'
 
 
+### Demo
+![Alt Text](https://gph.is/g/46nO2Nd)
+
+
 ### Skills I learned from this Challenge
 * Structuring the code for apps that have user interaction and visual output
 * Using Sinatra
