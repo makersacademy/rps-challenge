@@ -33,7 +33,7 @@ I would like to be able to play rock/paper/scissors
 
 
 ### Demo
-![Alt Text](https://gph.is/g/46nO2Nd)
+![demo](https://media.giphy.com/media/WQxruiOo8NN6bGxVbI/giphy.gif)
 
 
 ### Skills I learned from this Challenge
