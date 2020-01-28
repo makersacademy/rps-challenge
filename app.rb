@@ -21,8 +21,7 @@ class RPSWeb < Sinatra::Base
 
   post '/start' do
     player_1 = Player.new(params[:player_1_name])
-    player_2 = Player.new(params[:player_2_name]) if params[:player_2_name]
-    player_2 = Computer.new unless params[:player_2_name]
+    player_2 = params[:player_2_name] ? Player.new(params[:player_2_name]) : Computer.new
     @game = Game.create(player_1, player_2)
     redirect '/weapon-choice'
   end
@@ -34,7 +33,7 @@ class RPSWeb < Sinatra::Base
 
   post '/play' do
     @game.p1_choice(params[:weapon])
-    redirect @game.computers_move?
+    redirect @game.computers_move
   end
 
   get '/p2-weapon' do
@@ -55,7 +54,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/next' do
-    redirect @game.complete?
+    redirect @game.complete
   end
 
   get '/champion' do

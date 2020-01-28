@@ -1,5 +1,3 @@
-require_relative 'computer'
-
 class Game
   def self.instance
     @game
@@ -10,10 +8,10 @@ class Game
   end
 
   attr_reader :player_1, :player_2, :winner, :p1_score, :p2_score
-  def initialize(player_1, player_2, rules_class = Rules)
+  def initialize(player_1, player_2, rules_class = Rules, computer_class = Computer)
     @player_1 = player_1
     @player_2 = player_2
-    @rules_class = rules_class
+    @computer_class = computer_class
     @rules = rules_class.new
     @p1_score = 0
     @p2_score = 0
@@ -27,7 +25,7 @@ class Game
     @player_2.weapon_choice(weapon)
   end
 
-  def computers_move?
+  def computers_move
     return computer_weapon_selector if against_computer?
     '/p2-weapon'
   end
@@ -42,7 +40,7 @@ class Game
     @rules.reason_finder(p1_weapon, p2_weapon)
   end
 
-  def complete?
+  def complete
     return '/champion' if @p1_score >= 3 || @p2_score >= 3
     '/weapon-choice'
   end
@@ -65,11 +63,11 @@ class Game
 
   private
 
-  def p1_wins
+  def p1_wins?
     @rules.defeats?(p1_weapon, p2_weapon)
   end
 
-  def p2_wins
+  def p2_wins?
     @rules.defeats?(p2_weapon, p1_weapon)
   end
 
@@ -78,21 +76,21 @@ class Game
   end
 
   def find_winner
-    @winner = @player_1 if p1_wins
-    @winner = @player_2 if p2_wins
+    @winner = @player_1 if p1_wins?
+    @winner = @player_2 if p2_wins?
   end
 
   def track_scores
-    @p1_score += 1 if p1_wins
-    @p2_score += 1 if p2_wins
+    @p1_score += 1 if p1_wins?
+    @p2_score += 1 if p2_wins?
   end
 
   def against_computer?
-    player_2.is_a? Computer
+    player_2.is_a? @computer_class
   end
 
   def computer_weapon_selector
-    @player_2.weapon_choice(@rules_class::MOVES)
+    @player_2.weapon_choice(Rules::MOVES)
     '/result'
   end
 end
