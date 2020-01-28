@@ -10,7 +10,7 @@ First, clone this repository. Then:
 ```bash
 > bundle install
 
-> bundle exec rspec #to run unit and feature tests (run in Firefox)
+> bundle exec rspec #to run unit and feature tests
 > rackup #to interact with program on localhost:9292
 ```
 #### Gemfile ####
