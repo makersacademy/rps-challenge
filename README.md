@@ -1,8 +1,9 @@
 ### [Makers Academy](http://www.makersacademy.com) - Week 3 Weekend Project 
 
-# Boris-bikes 🚲
+# RPS Challenge ✊✋✌️
 [Task](#Task) | [Installation Instructions](#Installation) | [Functional Description](#Functional_Description) | [Feature Tests](#Feature_Tests) | [User Stories](#Story) | [Objects & Methods](#Methods) | [Testing](#Testing) | [Further improvements](#Further_Improvements)
 
+![rps](rps.jpg)
 
 ## <a name="Task">The Task</a>
 
