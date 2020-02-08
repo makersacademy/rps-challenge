@@ -20,10 +20,12 @@
 <%= @player_1_name %> vs. <%= @player_2_name %>
 </h2>
 
-<form action='/players_move' method='post'>
-  <li class='button'>
-    <button type='button'>Rock</button>
-    <button type='button'>Paper</button>
-    <button type='button'>Scissors</button>    
+<form action='/arena' method='post'>
+  <li class='submit'>
+    <input type='submit' name='shape' value='Rock'/>
+    <input type='submit' name='shape' value='Paper'/>
+    <input type='submit' name='shape' value='Scissors'/>
   </li>
 </form>
+
+Paulo chose <%= @shape %>!

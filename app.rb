@@ -4,7 +4,7 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do
-    erb :home
+    erb :index
   end
 
   post '/players' do
@@ -16,7 +16,13 @@ class RockPaperScissors < Sinatra::Base
   get '/arena' do
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
+    @shape = session[:shape]
     erb :arena
+  end
+
+  post '/arena' do
+    session[:shape] = params[:shape]
+    redirect '/arena'
   end
 
   run! if app_file == $0
