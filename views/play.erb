@@ -14,10 +14,12 @@
   }
 </style>
 
-<h1>Pick your choice</h1>
+<h1>
+Welcome <%= @turn.player_name %>
+</h1>
 
 <h2>
-<%= @player_1_name %> vs. <%= @player_2_name %>
+Pick your choice
 </h2>
 
 <form action='/play' method='post'>
@@ -28,9 +30,9 @@
   </li>
 </form>
 
-Paulo chose <%= @shape %>!
+Paulo chose <%= @turn.player_shape.to_s.capitalize %>!
 
 <div id="opponent">
-  Opponent chose <%= @opponent_shape.to_s.capitalize %>!
+  Opponent chose <%= @turn.opponent_shape.to_s.capitalize %>!
 </div>
 
