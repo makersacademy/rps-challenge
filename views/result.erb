@@ -1,0 +1,19 @@
+<%= @game.player_1.name %> vs <%= @game.player_2.name %>
+</br>
+</br>
+<%= @game.player_1.name %> chose <%= @game.player_1.option %> and <%= @game.player_2.name %> chose <%= @game.player_2.option %>
+</br>
+</br>
+
+<% if !@game.winner.nil? %>
+<%= @game.winner.option %> beats <%= @game.loser.option %>
+</br>
+Therefore <%= @game.winner.name %> wins!!
+<% else %>
+Therefore it's a draw!
+<% end %>
+
+</br>
+</br>
+<a href="/">Play again?</a>
+

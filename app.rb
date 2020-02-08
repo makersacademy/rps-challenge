@@ -23,8 +23,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player_2_turn' do
-    @choice = params[:commit]
+    @game.player_1.choice(params[:player_1_option])
     erb(:player_2_turn)
+  end
+
+  post '/result' do
+    @game.player_2.choice(params[:player_2_option])
+    erb(:result)
   end
 
   # start the server if ruby file executed directly
