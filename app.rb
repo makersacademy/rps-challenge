@@ -1,9 +1,9 @@
 require 'sinatra/base'
 
-class RockPaperScissors <Sinatra::Base
+class RockPaperScissors < Sinatra::Base
 
   get '/' do
-    'Rock, Paper, Scissors!!!'
+    erb :home
   end
 
   run! if app_file == $0
