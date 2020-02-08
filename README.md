@@ -6,8 +6,8 @@ A web browser game, built with Ruby, based on HTTP and response-request mechanis
 
 ###### Game capabilities:
 
-As a Player I can:
-- [x] register my name before playing an online game
+A Player can:
+- [x] register their name before playing an online game
 - [x] play rock/paper/scissors
 
 _functionality:_
