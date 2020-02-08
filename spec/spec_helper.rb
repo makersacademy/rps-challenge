@@ -1,11 +1,7 @@
 ENV['RACK_ENV'] = 'test'
 
-require 'capybara'
-require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-require 'rspec'
-require 'rack/test'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -15,6 +11,10 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+require 'rack/test'
 
 require_relative '../app.rb'
 
