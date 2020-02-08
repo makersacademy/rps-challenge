@@ -15,7 +15,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player = session[:name]
+    @player = Player.new(session[:name])
     erb :play
   end
 

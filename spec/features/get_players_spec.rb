@@ -4,6 +4,6 @@ feature 'get players' do
     fill_in 'name', with: 'Liz'
     click_on 'Submit'
 
-    expect(page).to have_content "Player: Liz"
+    expect(page).to have_content "Player Name: Liz"
   end
 end
