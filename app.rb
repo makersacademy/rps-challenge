@@ -12,6 +12,12 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  post '/player_2_turn' do
+    @player_1_name = params[:player_1_name]
+    @player_2_name = params[:player_2_name]
+    erb(:player_2_turn)
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
