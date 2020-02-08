@@ -1,4 +1,4 @@
-Hey <%= @turn.name %>
+Hey <%= @game.name %>
 
 <form method="POST" action="/play">
     <input type="submit" name="choice" value="Rock"/>
@@ -6,8 +6,16 @@ Hey <%= @turn.name %>
     <input type="submit" name="choice" value="Scissors"/>
 </form>
 
-You chose <%= @turn.choice.to_s.capitalize %>!
+You chose <%= @game.choice.to_s.capitalize %>!
 
 <div id="opponent">
-Opponent chose <%= @turn.opp_choice.to_s.capitalize %>!
+Opponent chose <%= @game.opp_choice.to_s.capitalize %>!
 </div>
+
+<% if @game.win? %>
+You win!
+<% elsif @game.lose? %>
+You lose!
+<% elsif @game.draw? %>
+It's a draw!
+<% end %>

@@ -1,5 +1,5 @@
 require "sinatra/base"
-require "./lib/turn"
+require "./lib/game"
 require "./lib/opponent"
 
 class RPSgame < Sinatra::Base
@@ -15,12 +15,12 @@ class RPSgame < Sinatra::Base
   end
 
   get "/play" do
-    @turn = Turn.new(session)
+    @game = Game.new(session)
     erb :play
   end
 
   post "/play" do
-    session[:choice] = params[:choice]
+    session[:choice] = params[:choice].downcase.to_sym
     session[:opp_choice] = Opponent.new.choice
     redirect "/play"
   end

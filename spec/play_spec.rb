@@ -34,6 +34,28 @@ feature "play RPS" do
     expect(page).to have_content "Scissors!"
   end
 
+  # I want to see who wins
+  context "end game" do
+    before do
+      srand(123)
+    end
+
+    scenario "player wins" do
+      click_button "Rock"
+      expect(page).to have_content "You win!"
+    end
+
+    scenario "player loses" do
+      click_button "Paper"
+      expect(page).to have_content "You lose!"
+    end
+
+    scenario "It's a draw" do
+      click_button "Scissors"
+      expect(page).to have_content "It's a draw!"
+    end
+  end
+
   def possible_choices
     [:rock, :paper, :scissors].map { |choice| "Opponent chose #{choice.to_s.capitalize}!" }
   end
