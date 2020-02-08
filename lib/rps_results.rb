@@ -7,7 +7,7 @@ class Rps_Results
       ["Rock", "Scissors"] => "win",
       ["Rock", "Paper"] => "loose",
       ["Scissors", "Rock"] => "loose",
-      ["Rock", "Paper"] => "loose" }
+      ["Paper", "Scissors"] => "loose" }
     possiblities.each do |k, v|
       if k[0] == player && k[1] == computer
         return "You #{v}!"
