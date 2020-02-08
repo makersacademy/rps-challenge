@@ -1,10 +1,16 @@
 <h1><%= @player_name %> is playing!</h1>
 <h2>Pick an option: </h2>
-<form action="/choice" method="post">
-  <select name="option">
-    <option>Rock</option>
-    <option>Paper</option>
-    <option>Scissors</option>
-  </select>
-  <input type="submit" name="Submit" value="Submit">
+<form action="/choice/Scissors" method="post">
+  <input type="submit" value="Scissors">
 </form>
+<form action="/choice/Paper" method="post">
+  <input type="submit" value="Paper">
+</form>
+<form action="/choice/Rock" method="post">
+  <input type="submit" value="Rock">
+</form>
+
+<% if @choice %>
+You chose <%= @choice %>
+<% end %>
+
