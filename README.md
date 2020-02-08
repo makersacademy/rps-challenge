@@ -1,4 +1,4 @@
-# Repo title #
+# Rock Paper Scissors Challenge #
 
 
 *This programme does...this (programme description)*
