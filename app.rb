@@ -2,8 +2,21 @@ require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
-    'test'
+    erb :index
   end
+
+  post '/players' do
+    session[:name] = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player = session[:name]
+    erb :play
+  end
+
   run! if app_file == $0
 end
