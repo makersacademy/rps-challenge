@@ -1,2 +1,2 @@
-require_relative "./app.rb"
+require "./app/app.rb"
 run RockPaperScissors
