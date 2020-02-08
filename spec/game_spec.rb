@@ -4,6 +4,9 @@ describe Game do
   subject(:game) { described_class.new(player_1, player_2) }
   let(:player_1) { double :player_1 }
   let(:player_2) { double :player_2 }
+  subject(:second_game) { described_class.new(player_one, player_two) }
+  let(:player_one) { Player.new("Tango") }
+  let(:player_two) { Player.new("Cash") }
 
   describe "#new" do
     it 'initializes with instances of player' do
@@ -12,22 +15,27 @@ describe Game do
   end
 
   context "results" do
-    player_1 = Player.new("Jason")
-    player_2 = Player.new("Rob")
-    game = Game.new(player_1, player_2)
-    game.player_1.choice("Paper")
-    game.player_2.choice("Rock")
-    
-    describe "#winner" do
-      it 'returns the winner' do
-        expect(game.winner).to eq player_1
-      end
+    def automator(player_1_option, player_2_option)
+      second_game.player_1.choice(player_1_option)
+      second_game.player_2.choice(player_2_option)
     end
-
-    describe "#loser" do
-      it 'returns the loser' do
-        expect(game.loser).to eq player_2
-      end
+  
+    it 'shows Paper beats Rock' do
+      automator("Paper", "Rock")
+      expect(second_game.winner).to eq player_one
+      expect(second_game.loser).to eq player_two
+    end
+  
+    it 'shows Lizard beats Spock' do
+      automator("Lizard", "Spock")
+      expect(second_game.winner).to eq player_one
+      expect(second_game.loser).to eq player_two
+    end
+  
+    it 'shows Paper beats Rock' do
+      automator("Spock", "Scissors")
+      expect(second_game.winner).to eq player_one
+      expect(second_game.loser).to eq player_two
     end
   end
 end

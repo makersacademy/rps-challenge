@@ -12,7 +12,7 @@ class Player
   private
 
   def computer_option
-    %w(Rock Paper Scissors).sample
+    %w(Rock Paper Scissors Spock Lizard).sample
   end
   
 end

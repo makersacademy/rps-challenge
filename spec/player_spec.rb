@@ -14,7 +14,7 @@ describe Player do
     end
 
     it 'records the computer option' do
-      expect(%w(Rock Paper Scissors)).to include(Player.new("").choice(""))
+      expect(%w(Rock Paper Scissors Lizard Spock)).to include(Player.new("").choice(""))
     end
   end
 

@@ -15,12 +15,14 @@ class Game
   end
 
   def winner
-    if [["Paper", "Rock"], ["Rock", "Scissors"], ["Scissors", "Paper"]]
-        .include?([player_1.option, player_2.option])
+    if player_1.option == "Rock" && ["Scissors", "Lizard"].include?(player_2.option) ||
+        player_1.option == "Paper" && ["Rock", "Spock"].include?(player_2.option) ||
+        player_1.option == "Scissors" && ["Paper", "Lizard"].include?(player_2.option) ||
+        player_1.option == "Spock" && ["Scissors", "Rock"].include?(player_2.option) ||
+        player_1.option == "Lizard" && ["Spock", "Paper"].include?(player_2.option) 
       player_1
-    elsif [["Scissors", "Rock"], ["Paper", "Scissors"], ["Rock", "Paper"]]
-        .include?([player_1.option, player_2.option])
-      player_2
+    elsif player_1.option == player_2.option; nil
+    else; player_2
     end
   end    
 
