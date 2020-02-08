@@ -1,0 +1,40 @@
+
+#page-container {
+color: white;
+font-size: 2.4em;
+    }
+    .wrapper {
+        display:grid;
+        grid-template-columns: 2fr ;
+        grid-template-rows: 200px;
+        grid-row-gap: 30px;
+      }
+    
+      .box1 { 
+        grid-row-start: 1; 
+        grid-row-end: 1; 
+      }
+      
+      .box2 { 
+        grid-row-start: 2.3; 
+        grid-row-end: 4; 
+      }
+      
+      .box3 {
+        grid-row-start: 6; 
+        grid-row-end: 6; 
+      }
+    
+      .box2  input {
+          font-size: 2.1em;
+      }
+
+      #win {
+        font-size: 1.6em;
+
+      }
+
+      #footer {
+        padding: 30px;
+        height: 3rem; 
+      }

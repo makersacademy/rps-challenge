@@ -1,21 +1,34 @@
-Hey <%= @game.name %>
+<div class="wrapper">
+    <div class="box1" >
+        <h2>Hey <%= @game.name %>,</h2>
+        <h3> let's play!</h3>
+        <br> <img src="rocks.png" alt="fighting rocks" height="150">
+    </div>
 
-<form method="POST" action="/play">
-    <input type="submit" name="choice" value="Rock"/>
-    <input type="submit" name="choice" value="Paper"/>
-    <input type="submit" name="choice" value="Scissors"/>
-</form>
+    <div class="box2">
+    <h3> choose your hand:</h3><br>
+        <form method="POST" action="/play">
+         <input type="submit" name="choice" value="Rock"/>
+         <input type="submit" name="choice" value="Paper"/>
+         <input type="submit" name="choice" value="Scissors"/>
+        </form>
+        <br><br>
+        <h2> You chose <%= @game.choice.to_s.capitalize %>! </h2>
+        <br>
+        <div id="opponent"><h2>
+            Computer chose <%= @game.opp_choice.to_s.capitalize %>! </h2>
+        </div>
+    </div>
 
-You chose <%= @game.choice.to_s.capitalize %>!
-
-<div id="opponent">
-Opponent chose <%= @game.opp_choice.to_s.capitalize %>!
+    <div class="box3" id="win">
+        <h1>
+        <% if @game.win? %>
+            You win! &#129395;
+        <% elsif @game.lose? %>
+            You lose! &#128565;
+        <% elsif @game.draw? %>
+            It's a draw! &#128580;
+        <% end %>
+        </h1>
+    </div>
 </div>
-
-<% if @game.win? %>
-You win!
-<% elsif @game.lose? %>
-You lose!
-<% elsif @game.draw? %>
-It's a draw!
-<% end %>
