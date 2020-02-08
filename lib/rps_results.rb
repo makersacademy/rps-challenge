@@ -1,4 +1,4 @@
-class Rps_results
+class Rps_Results
 
   def winner(player, computer)
     possiblities =
@@ -16,5 +16,4 @@ class Rps_results
       end
     end
   end
-
 end 

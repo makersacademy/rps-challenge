@@ -1,6 +1,6 @@
 require 'rps_results'
 
-describe Rps_results do 
+describe Rps_Results do 
 
   let (:player) { "Scissors" }
   let (:computer) { "Paper" }
@@ -16,5 +16,4 @@ describe Rps_results do
   it "should have returned a draw" do 
     expect(subject.winner("Paper", "Paper")).to eq "Its a draw"
   end
-
 end 

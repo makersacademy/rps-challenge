@@ -5,5 +5,4 @@ class Computer
     @name = "computer"
     @move = ["Rock", "Paper", "Scissors"].sample
   end 
-
 end 

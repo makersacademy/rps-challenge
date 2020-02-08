@@ -5,13 +5,18 @@ require './lib/computer'
 require './lib/rps_results'
 
 class RPS < Sinatra::Base
+  enable :sessions
   get '/' do
     erb :index
   end
 
-  post '/play' do 
-    $name = params[:name]
-    
+  post '/name' do 
+    session[:name] = params[:name]
+    redirect '/play'
+  end 
+
+  get '/play' do 
+    $name = session[:name]
     erb :play
   end 
 
@@ -19,7 +24,7 @@ class RPS < Sinatra::Base
     player = Player.new($name, params[:move])
     computer = Computer.new
     @game = Game.new(player, computer)
-    @result = Rps_results.new.winner(@game.player.move, @game.computer.move)
+    @result = Rps_Results.new.winner(@game.player.move, @game.computer.move)
     erb :result
   end 
 

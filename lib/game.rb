@@ -1,4 +1,3 @@
-
 class Game 
 
   attr_reader :player, :computer
