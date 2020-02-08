@@ -89,20 +89,21 @@ Class models:
 
 **Feature tests**
 
-1. Get player name
-2. Get player move
-3. Select winner
+1. Player enters name
+2. Player chooses move
+3. Get computer move
+4. Show winner
 
 **Unit tests**
 1. Player: player has a name
 2. Game: can create a game with a player
-3. Game: accepts a move from player
+3. Player: can choose a move
 4. Game: runs a random computer move
 5. Game: compares user move against computer
 6. Game: declares a winner
 
 **Edge cases**
-1. Player selects wrong move
+1. Player doesn't enter a name
 
 ## Credits ##
 
