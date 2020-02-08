@@ -23,6 +23,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player_2_turn' do
+    
     erb(:player_2_turn)
   end
 
