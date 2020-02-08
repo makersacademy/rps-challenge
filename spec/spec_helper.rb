@@ -16,6 +16,7 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'player'
 require 'computer'
 require 'game'
+require 'features/web_helpers'
 
 Capybara.app = Rpsgame
 
