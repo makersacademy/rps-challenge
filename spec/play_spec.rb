@@ -4,7 +4,7 @@ feature "play RPS" do
   before do
     visit "/"
     fill_in "name", with: "Mrtl"
-    click_button "Submit"
+    click_button "Play"
   end
 
   # player can see rps options
@@ -57,6 +57,6 @@ feature "play RPS" do
   end
 
   def possible_choices
-    [:rock, :paper, :scissors].map { |choice| "Opponent chose #{choice.to_s.capitalize}!" }
+    [:rock, :paper, :scissors].map { |choice| "Computer chose #{choice.to_s.capitalize}!" }
   end
 end

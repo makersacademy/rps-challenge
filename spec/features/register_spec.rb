@@ -4,7 +4,7 @@ feature "registering player name" do
   scenario "player can register and see their name" do
     visit "/"
     fill_in "name", with: "Mrtl"
-    click_button "Submit"
+    click_button "Play"
     expect(page).to have_content "Mrtl"
   end
 end
