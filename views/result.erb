@@ -1,1 +1,9 @@
-<%= @game.player.name %> chose <%= @game.player.move %>
+<h2><%= @game.player.name %> chose <%= @game.player.move %><br></h2>
+<h2><%= @game.computer.name %> chose <%= @game.computer.move %><br></h2>
+
+<h1><%= @result %></h1><br>
+<form action="/play" method="post">
+  <input type="submit" name=replay value="Replay">
+</form>
+
+

@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 require './lib/computer'
+require './lib/rps_results'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -18,6 +19,7 @@ class RPS < Sinatra::Base
     player = Player.new($name, params[:move])
     computer = Computer.new
     @game = Game.new(player, computer)
+    @result = Rps_results.new.winner(@game.player.move, @game.computer.move)
     erb :result
   end 
 
