@@ -1,7 +1,10 @@
 <br>
 
-<h2> Welcome Joe, Lets play!</h1>
+<h2> Welcome <%= $name %>, Lets play!</h1>
 <h3> It's time to choose...</h3>
-<button type="button">Rock</button>
-<button type="button">Paper</button>
-<button type="button">Scissors</button>
+
+<form action="/result" method="post">
+  <input type="submit" name=move value="Rock">
+  <input type="submit" name=move value="Paper">
+  <input type="submit" name=move value="Scissors">
+</form>

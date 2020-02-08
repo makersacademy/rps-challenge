@@ -6,7 +6,13 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do 
+    $name = params[:name]
     erb :play
+  end 
+
+  post '/result' do 
+    @move = params[:move]
+    erb :result
   end 
 
   run! if app_file == $0
