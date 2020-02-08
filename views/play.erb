@@ -1,7 +1,8 @@
-<%= @player_1_name %> vs
-<%= @player_2_name %>
+<%= @game.player_1.name %> vs
+<%= @game.player_2.name %>
+
 
 <form action="/player_2_turn" method="post">
-    <button type="text">Rock</button>
-    <button type="text">Paper</button>
+    <button type="submit">Rock</button>
+    <button type="submit">Paper</button>
 </form>
