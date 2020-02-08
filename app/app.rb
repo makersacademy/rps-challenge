@@ -23,12 +23,16 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice/:id' do
     p params
-    @choice = params["id"]
-    erb :play
+    @choice = @game.player.set_choice(params["id"])
+    redirect '/result'
   end
 
   get '/play' do
     erb :play
+  end
+
+  get '/result' do
+    erb :result
   end
   
   run! if app_file == $0
