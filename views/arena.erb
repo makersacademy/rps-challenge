@@ -1,3 +1,29 @@
-<h1>You entered the arena</h1>
+<style>
+  h1 {
+    text-align: center;
+    margin-top: 1em;
+  }
 
+    h2 {
+    text-align: center;
+  }
+
+  li {
+    list-style: none;
+    text-align: center;
+  }
+</style>
+
+<h1>Pick your choice</h1>
+
+<h2>
 <%= @player_1_name %> vs. <%= @player_2_name %>
+</h2>
+
+<form action='/players_move' method='post'>
+  <li class='button'>
+    <button type='button'>Rock</button>
+    <button type='button'>Paper</button>
+    <button type='button'>Scissors</button>    
+  </li>
+</form>
