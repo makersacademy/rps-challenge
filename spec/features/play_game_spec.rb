@@ -7,7 +7,7 @@ feature 'playing a game' do
     expect(page).to have_button "Rock"
   end
 
-  scenario 'player has chosen an options and pressed submit' do
+  scenario 'player has chosen an option and pressed submit' do
     sign_in
     click_on 'Scissors'
     expect(page).to have_content 'You chose Scissors'
