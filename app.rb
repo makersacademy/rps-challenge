@@ -1,9 +1,15 @@
 
 require 'sinatra/base'
 
+require "sinatra/reloader"
+
 class RPS < Sinatra::Base
+  configure :development do
+    register Sinatra::Reloader
+  end
+
   get '/' do
-    'Hello RPS!!'
+    erb(:index)
   end
 
   # start the server if ruby file executed directly
