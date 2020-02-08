@@ -8,5 +8,4 @@ class Player
   def set_choice(choice)
     @choice = choice
   end
-
 end
