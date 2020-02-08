@@ -62,11 +62,11 @@ I would like to be able to play rock/paper/scissors
 
 User story 1 model: 
 
-![sequence diagram](lib/assets/images/sequence-diagram-1.png)
+![sequence diagram](assets/images/sequence-diagram-1.png)
 
 User story 2 model: 
 
-![sequence diagram](lib/assets/images/sequence-diagram-2.png)
+![sequence diagram](assets/images/sequence-diagram-2.png)
 
 Class models:
 
