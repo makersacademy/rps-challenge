@@ -19,5 +19,11 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/move' do
+    @player = Player.new(session[:name])
+    @move = params[:move]
+    erb :move
+  end
+
   run! if app_file == $0
 end

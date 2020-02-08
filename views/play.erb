@@ -1,1 +1,22 @@
 <p>Player Name: <%= @player.name %></p>
+
+<form action="/move" method="post">
+  <fieldset>
+    <legend>Enter your move</legend>
+    <div>
+      <input type="radio" name="move" id="Rock" value="Rock">
+      <label for="Rock">Rock</label>
+    </div>
+    <div>
+      <input type="radio" name="move" id="Paper" value="Paper">
+      <label for="Paper">Paper</label>
+    </div>
+    <div>
+      <input type="radio" name="move" id="Scissors" value="Paper">
+      <label for="Scissors">Scissors</label>
+    </div>
+    <div>
+      <input type="submit" value="Play">
+    </div>
+  </fieldset>
+</form>
