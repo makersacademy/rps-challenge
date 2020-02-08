@@ -6,6 +6,7 @@ require 'simplecov'
 require 'simplecov-console'
 require 'game'
 require 'player'
+require_relative './features/web_helpers.rb'
 
 Capybara.app = RockPaperScissors
 
