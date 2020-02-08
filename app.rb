@@ -6,4 +6,8 @@ class Rpsgame < Sinatra::Base
     set :session_secret, "awonkywillawentaway"
   end
 
+  get '/' do
+    erb(:index)
+  end
+
 end
