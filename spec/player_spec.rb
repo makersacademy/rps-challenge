@@ -12,5 +12,15 @@ describe Player do
     it "it records the player's choice" do
       expect(jason.choice("Paper")).to eq "Paper"
     end
+
+    it 'records the computer option' do
+      expect(%w(Rock Paper Scissors)).to include(Player.new("").choice(""))
+    end
+  end
+
+  context "computer as player" do
+    it 'defaults name as computer upon no input' do
+      expect(Player.new("").name).to eq "Computer"
+    end
   end
 end

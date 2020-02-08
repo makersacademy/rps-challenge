@@ -28,6 +28,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/result' do
+    @game.player_1.choice(params[:player_1_option]) if @game.player_2.name == "Computer"
     @game.player_2.choice(params[:player_2_option])
     erb(:result)
   end
