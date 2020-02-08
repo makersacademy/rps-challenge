@@ -7,4 +7,10 @@ describe Player do
       expect(jason.name).to eq "Jason"
     end
   end
+
+  describe "#choice" do
+    it "it records the player's choice" do
+      expect(jason.choice("Paper")).to eq "Paper"
+    end
+  end
 end

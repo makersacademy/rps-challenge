@@ -1,8 +1,9 @@
 <%= @game.player_1.name %> vs
 <%= @game.player_2.name %>
 
-
+Player 1, make your choice:
 <form action="/player_2_turn" method="post">
-    <button type="submit">Rock</button>
-    <button type="submit">Paper</button>
+  <input type="submit" name="commit" value="Rock">
+  <input type="submit" name="commit" value="Paper">
+  <input type="submit" name="commit" value="Scissors">
 </form>

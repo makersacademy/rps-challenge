@@ -23,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player_2_turn' do
-    
+    @choice = params[:commit]
     erb(:player_2_turn)
   end
 

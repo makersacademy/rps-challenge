@@ -10,4 +10,31 @@ describe Game do
       expect(game.player_1).to eq player_1
     end
   end
+
+#   describe "#results" do
+#     it 'displays the results' do
+#       game.player_1.choice("Paper")
+#       game.player_2.choice("Rock")
+#       expect(game.results).to eq "Paper beats Rock"
+#     end
+#   end
+  context "results" do
+    player_1 = Player.new("Jason")
+    player_2 = Player.new("Rob")
+    game = Game.new(player_1, player_2)
+    game.player_1.choice("Paper")
+    game.player_2.choice("Rock")
+    
+    describe "#winner" do
+        it 'returns the winner' do
+            expect(game.winner).to eq player_1
+        end
+    end
+
+      describe "#loser" do
+        it 'returns the loser' do
+          expect(game.loser).to eq player_2
+        end
+      end
+    end
 end
