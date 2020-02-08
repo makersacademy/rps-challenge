@@ -15,6 +15,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'rack/test'
+require 'features/web_helpers'
 
 require_relative '../app.rb'
 
