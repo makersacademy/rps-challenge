@@ -28,4 +28,8 @@ class Rpsgame < Sinatra::Base
     erb(:play)
   end
 
+  post '/result' do
+    erb(:result)
+  end
+
 end
