@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'sinatra'
 gem 'selenium-webdriver'
+gem 'sinatra'
 gem 'sinatra-contrib'
 
 group :test do
@@ -12,4 +12,3 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
-
