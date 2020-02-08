@@ -22,9 +22,17 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/move' do
+  post '/player_moves' do
     @game.player.choose(params[:move])
+    redirect '/move'
+  end
+        
+  get '/move' do
     erb :move
+  end
+
+  get '/winner' do
+    erb :winner
   end
 
   run! if app_file == $0
