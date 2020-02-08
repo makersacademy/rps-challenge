@@ -23,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
-    @move = params[:move]
+    @game.player.choose(params[:move])
     erb :move
   end
 
