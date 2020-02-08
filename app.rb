@@ -10,19 +10,21 @@ class RockPaperScissors < Sinatra::Base
   post '/players' do
     session[:player_1_name] = params[:player_1_name]
     session[:player_2_name] = params[:player_2_name]
-    redirect '/arena'
+    redirect '/play'
   end
 
-  get '/arena' do
+  get '/play' do
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
     @shape = session[:shape]
-    erb :arena
+    @opponent_shape = session[:opponent_shape]
+    erb :play
   end
 
-  post '/arena' do
+  post '/play' do
     session[:shape] = params[:shape]
-    redirect '/arena'
+    session[:opponent_shape] = :rock
+    redirect '/play'
   end
 
   run! if app_file == $0
