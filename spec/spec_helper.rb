@@ -14,6 +14,7 @@ SimpleCov.start
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'player'
+require 'computer'
 
 Capybara.app = Rpsgame
 

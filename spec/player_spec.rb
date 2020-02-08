@@ -16,6 +16,8 @@ describe Player do
     end
     it 'returns choice as symbol if it is an allowed weapon' do 
       expect(josh.choose("rock")).to eq(:rock)
+      expect(josh.choose("paper")).to eq(:paper)
+      expect(josh.choose("scissors")).to eq(:scissors)
     end
   end
 end
