@@ -27,6 +27,13 @@ feature "play RPS" do
     expect(possible_choices).to include message
   end
 
+  # the game chooses a random option
+  scenario "game chooses a random option" do
+    srand(123)
+    click_button "Rock"
+    expect(page).to have_content "Scissors!"
+  end
+
   def possible_choices
     [:rock, :paper, :scissors].map { |choice| "Opponent chose #{choice.to_s.capitalize}!" }
   end

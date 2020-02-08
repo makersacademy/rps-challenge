@@ -1,8 +1,6 @@
 require "sinatra/base"
-require "./lib/game"
-require "./lib/player"
 require "./lib/turn"
-
+require "./lib/opponent"
 
 class RPSgame < Sinatra::Base
   enable :sessions
@@ -23,7 +21,7 @@ class RPSgame < Sinatra::Base
 
   post "/play" do
     session[:choice] = params[:choice]
-    session[:opp_choice] = :rock
+    session[:opp_choice] = Opponent.new.choice
     redirect "/play"
   end
 end
