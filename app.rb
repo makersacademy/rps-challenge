@@ -21,7 +21,7 @@ class Rsp < Sinatra::Base
 
   post '/play' do  
     session[:player_shape] = params[:shape]
-    session[:opponent_shape]= :rock#Opponent.new.shape
+    session[:opponent_shape]= Opponent.new.shape
     redirect '/play'
   end
   run! if app_file == $0
