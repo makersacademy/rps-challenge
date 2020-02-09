@@ -19,10 +19,10 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  get '/first_player_option' do
+  get '/player_options' do
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
-    erb :first_player_option
+    erb :player_options
   end
 
   run! if app_file == $0
