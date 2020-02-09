@@ -1,25 +1,94 @@
-body {
-  background-color:#a4fbcf;
-  
+* {
+  margin: 0;
+  padding: 0;
 }
 
-p {
-  font-family: 'arvo', serif;
+body {
+  background-color:#f5f5f5;
+  font-family: 'Quicksand', sans-serif;
+  color: #37474f;
+  font-size: 1.5rem; 
+  font-weight: 100;
+  line-height: 2;
 }
 
 h1 {
-  font-family: 'arvo', serif;
-  font-size: 60px
-  color: #red;
+  font-family: 'Zilla Slab', serif;
+  font-weight: 100;
+  font-size: 4.5rem;
+  padding: 2rem;
 }
 
-input {
-  font-size: 30px
+h3 {
+  font-weight: 100;
+  font-size: 2.5rem;
+  padding: 2rem;
+  color: #6d6d6d;
 }
 
-#test {
-  font-family: 'arvo', serif;
-  font-size: 60px
-  color: #red;
+p {
+  
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+button, label, input[type="text"], input[type="submit"] {
+  display: flex;
+  font-family: inherit;
+  font-size: 100%;
+  border-radius: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  height: 50px;
+  outline: none;
+}
+
+input[type="radio"] {
+  /* -webkit-appearance: none;
+  appearance: none; */
+  position: absolute; 
+  margin: .5rem;
+  display: flex;
+}
+
+input[type="radio"]:checked {
+  margin: .5rem;
+  display: flex;
+  color: #1b8ec7;
+}
+
+/* .form-container {
+  width: 800 px;
+  margin: 0;
+  padding: 100px;
+} */
+.text-field {
+  text-align: center;
+}
+
+.help {
+  display: block;
+  margin: 5px;
+  padding: 20px;
+  width: 100%;
+}
+
+.radio {
+  display: block;
+  width: 100%;
+}
+
+label {
+  display: block;
+  position: relative;
+  z-index: 9;
+}

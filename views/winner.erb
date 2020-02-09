@@ -1,5 +1,7 @@
-<p><%= @game.player.name.capitalize %> plays <%= @game.player.move.capitalize %></p>
-<p><%= @game.opponent.name.capitalize %> plays <%= @game.opponent.move.capitalize %></p>
-<p> <%= @game.winner.is_a?(String) ? @game.winner : @game.winner.name.capitalize %> wins!</p>
+<div class="container">
+  <p><%= @game.player.name.capitalize %> plays <%= @game.player.move.capitalize %> / <%= @game.opponent.name.capitalize %> plays <%= @game.opponent.move.capitalize %></p>
 
-<a href="/">Play again?</a>
+  <h3> <%= @game.winner.is_a?(String) ? @game.winner : @game.winner.name.capitalize %> wins!</h3>
+
+  <a href="/">Play again?</a>
+</div>
