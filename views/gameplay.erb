@@ -12,3 +12,11 @@ body {background-color: orange;}
 <h2> <%= $game.current_player?.name %>, it's your turn! </h2>
 
 
+<form action="/calc" method="post">
+<input type="radio" name="rock" value="rock">Rock!<br> 
+<input type="radio" name="paper" value="paper">Paper!<br>
+<input type="radio" name="scissors" value="scissors">Scissors!<br>
+<div>
+<button type="submit">Submit</button>
+</div>
+</form>
