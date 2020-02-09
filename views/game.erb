@@ -1,0 +1,14 @@
+<center>
+<body style="background-color:grey;">
+<h1>You picked <%=@player_weapon%>!</h1>
+<h1>Your opponent picked <%=@computer_weapon%>!</h1>
+
+<h2>And the result is...</h2>
+<marquee><h1><strong><%= @result %></strong> </h1></marquee>
+<img src="https://media3.giphy.com/media/JQAXhJMw2WbKWYjn8g/giphy.gif">
+<br>
+<form action="/play">
+<input type="submit" value="Play again?">
+</center>
+
+
