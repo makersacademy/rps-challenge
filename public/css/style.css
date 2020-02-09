@@ -1,0 +1,25 @@
+body {
+  background-color:#a4fbcf;
+  
+}
+
+p {
+  font-family: 'arvo', serif;
+}
+
+h1 {
+  font-family: 'arvo', serif;
+  font-size: 60px
+  color: #red;
+}
+
+input {
+  font-size: 30px
+}
+
+#test {
+  font-family: 'arvo', serif;
+  font-size: 60px
+  color: #red;
+}
+
