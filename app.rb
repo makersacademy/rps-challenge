@@ -11,7 +11,8 @@ class RockPaperScissors < Sinatra::Base
 
     post '/challenger' do
         $player_name = params[:player1]
-        $player_choice = params[:choice]
+        player_choice = params[:choice]
+        $player_choice = player_choice.capitalize
         $ai_choice = Computer.new.make_choice
         $result = Result.new($ai_choice, $player_choice, $player_name).run_game
         redirect '/preparation'

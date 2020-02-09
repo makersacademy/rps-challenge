@@ -4,15 +4,15 @@ feature 'User' do
 
     subject(:game) { Computer.new }
 
-    scenario 'takes a choice' do
+    scenario 'makes a choice' do
         visit('/')
         fill_in "player1", with: "Toby"
         fill_in :choice, with: "Rock"
         click_button "3...2....1....SHOW!"
-        expect(page).to have_content("you used Rock")
+        expect(page).to have_content("You used Rock")
     end
 
-    scenario 'takes a name' do
+    scenario 'saves a name' do
         visit('/')
         fill_in :player1, with: "Toby"
         fill_in :choice, with: "Rock"
