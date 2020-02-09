@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'shotgun'
 gem 'sinatra'
 
 group :test do
