@@ -1,7 +1,10 @@
 class Game
     attr_reader :weapon, :computer_choice
+
+    RPS = ["Rock", "Paper", "Scissors"]
+    
     def computer_choice
-        @computer_choice = ["Rock", "Paper", "Scissors"].sample
+        @computer_choice = RPS.sample
     end
 
     def player_choice(weapon)
