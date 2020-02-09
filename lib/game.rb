@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player_1, :player_2, :current_player
+  attr_reader :current_player
 
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
@@ -44,6 +44,6 @@ class Game
   private
 
   def opponent_of(the_player)
-    @players.select { |player| player != the_player}.first
+    @players.select { |player| player != the_player }.first
   end
 end
