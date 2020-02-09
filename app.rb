@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/game'
+require_relative 'lib/computer'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -14,7 +15,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/players' do
     player = Player.new(params[:name])
-    @game = Game.create(player)
+    opponent = Computer.new
+    @game = Game.create(player, opponent)
     redirect '/play'
   end
 
@@ -32,7 +34,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/winner' do
-    @game.computer_generator
     @game.select_winner
     erb :winner
   end
