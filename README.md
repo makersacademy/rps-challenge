@@ -1,7 +1,7 @@
 ### [Makers Academy](http://www.makersacademy.com) - Week 3 Weekend Project 
 
 # RPS Challenge ✊✋✌️
-[Task](#Task) | [Installation Instructions](#Installation) | [Functional Description](#Functional_Description) | [Feature Tests](#Feature_Tests) | [User Stories](#Story) | [Objects & Methods](#Methods) | [Testing](#Testing) | [Further improvements](#Further_Improvements)
+[Task](#Task) | [Installation Instructions](#Installation) | [Functional Description](#Functional_Description) | [User Stories](#User_Stories) | [Objects & Methods](#Methods) | [Testing](#Testing) | [Further improvements](#Further_Improvements) |
 
 ![rps](rps.jpg)
 
@@ -34,7 +34,7 @@ $ rubocop
 $ rackup config.ru -p 4567
 ```
 
-## <a name="Functional_Descriptions">Functional Descriptions</a>
+## <a name="Functional_Description">Functional Description</a>
 
 As part of the system's functionality:
 
