@@ -1,8 +1,8 @@
 require './app/controllers/1_player_rps_controller'
 
-describe Game do
+describe RPS do
 
-  it 'expect Game class' do
+  it 'expect RPS' do
 
   end
 
