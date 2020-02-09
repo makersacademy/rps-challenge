@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player_1, :player_1_choice
+  attr_reader :player_1, :player_1_choice, :computer_choice
 
   def initialize(player_1)
     @player_1 = player_1
@@ -10,8 +10,8 @@ class Game
     @player_1_choice = choice
   end
 
-  def computer_choice
+  def create_computer_choice
     choices = ["Rock", "Paper", "Scissors"]
-    choices[rand(3)]
+    @computer_choice = choices[rand(3)]
   end
 end
