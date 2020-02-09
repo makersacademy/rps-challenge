@@ -14,4 +14,8 @@ class RPS < Sinatra::Base
     redirect '/'
   end
 
+  get '/play' do
+    erb :play
+  end
+
 end

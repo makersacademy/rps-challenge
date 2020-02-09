@@ -22,7 +22,34 @@ feature '/' do
   end
 
   scenario 'expect play button' do
-    expect(page). to have_button('Play')
+    expect(page).to have_button('Play')
   end
-  
+
+end
+
+feature '/play' do
+
+  before(:each) do
+    visit('/')
+    fill_in('player', with: 'Bob')
+    click_button('Submit')
+    click_button('Play')
+  end
+
+  scenario 'expect click play button to redirect to /play' do
+    expect(page).to have_content('Whats Your Move?')
+  end
+
+  scenario 'expect rock button' do
+    expect(page).to have_button('Rock')
+  end
+
+  scenario 'expect rock button' do
+    expect(page).to have_button('Paper')
+  end
+
+  scenario 'expect rock button' do
+    expect(page).to have_button('Scissors')
+  end
+
 end
