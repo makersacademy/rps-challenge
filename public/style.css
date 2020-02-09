@@ -25,10 +25,7 @@ padding: 100px;
   align-items: end;
   grid-auto-rows: 200px;
 }
-.box1 {
-  align-self: stretch;
-}
-.box2 {
+.box1, .box2{ 
   align-self: start;
 }
 
