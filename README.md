@@ -61,15 +61,15 @@ I would like to be able to play rock/paper/scissors
 
 ## How I built it ##
 
-User story 1 model: 
+**User story 1 model:** 
 
 ![sequence diagram](public/images/sequence-diagram-1.png)
 
-User story 2 model: 
+**User story 2 model:**
 
 ![sequence diagram](public/images/sequence-diagram-2.png)
 
-Class models:
+**Class models:**
 
 1.
 
