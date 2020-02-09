@@ -23,10 +23,16 @@ feature 'Play the game' do
   scenario ' game choose "Rock' do
     click_button 'Rock'
 
-    message = find(:css, "#opponent").text.strip
+    message = find(:css, "#opponent").text
 
     expect(possible_messages).to include message
   end
+  # i want the game to choose a random option
+  # scenario 'game choose a random option' do
+  #   srand(PLAY_SEED)
+  #   click_button "Rock"
+  #   expect(page).to have_content "Opponent chose Scissors!"
+  # end
   # we now set possible messages  for the computer to choose
   def possible_messages
     [:rock, :paper, :scissors].map { |shape| "Opponent chose #{shape.to_s.capitalize}!" }

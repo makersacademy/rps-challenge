@@ -10,20 +10,18 @@ class Rsp < Sinatra::Base
   end
 
   post '/name' do #we put name params to session so we can retrive it later
-    session[:name] = params[:name]
+    session[:player_name] = params[:name]
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:name]
-    @shape = session[:shape]
-    @opponent_shape = session[:opponent_shape]
+    @turn = Turn.new(session)
     erb :play
   end
 
   post '/play' do  
-    session[:shape] = params[:shape]
-    session[:opponent_shape]= :rock
+    session[:player_shape] = params[:shape]
+    session[:opponent_shape]= :rock#Opponent.new.shape
     redirect '/play'
   end
   run! if app_file == $0
