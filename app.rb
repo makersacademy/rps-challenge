@@ -11,7 +11,6 @@ class Rps < Sinatra::Base
 
   post '/names' do
     $player_1 = Player.new(params[:player_1_name])
-    $info = params
     redirect '/play'
   end
 
