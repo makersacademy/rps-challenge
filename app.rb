@@ -28,8 +28,10 @@ class Rpsgame < Sinatra::Base
     erb(:play)
   end
 
-  post '/result' do
-    erb(:result)
+  post '/results' do
+    @player_1_weapon = @game.player_1.choose(params[:weapon])
+    @player_2_weapon = @game.player_2.choose
+    erb(:results)
   end
 
 end

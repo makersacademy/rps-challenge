@@ -7,9 +7,9 @@ feature "Player can choose a move" do
     expect(page).to have_content("Paper")
     expect(page).to have_content("Scissors")
   end
-  scenario "Shows 'result is'" do
+  scenario "Submmit takes to results page, shows 'result is'" do
     sign_in_and_begin
-    click_button("Submit")
+    choose_scissors_and_submit
     expect(page).to have_content("The winner is...")
   end
 end
