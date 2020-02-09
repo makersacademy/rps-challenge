@@ -14,4 +14,16 @@ describe Game do
     expect(subject.player_1).to eq player_1
   end
 
+
+  describe " #store_player_1_choice" do
+    it "exists" do
+      expect(subject).to respond_to(:store_player_1_choice).with(1).arguments
+    end
+
+    it "can store player 1's choice" do
+      subject.store_player_1_choice("Apple")
+      expect(subject.player_1_choice).to eq("Apple")
+    end
+  end
+
 end
