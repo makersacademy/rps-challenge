@@ -1,5 +1,6 @@
 feature 'player_options' do
 
+  
   scenario 'first_player_picks_a_weapon' do
     visit('/')
     fill_in :player_1_name, with: 'Mario'
