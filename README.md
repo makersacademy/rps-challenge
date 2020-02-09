@@ -1,5 +1,5 @@
 ### Rock Paper Scissors
-========================
+<hr>
  
 ###### The idea
 A web browser game, built with Ruby, based on HTTP and response-request mechanisms, using the Sinatra library, and Capybara/Rspec for testing.
@@ -22,17 +22,25 @@ _functionality:_
 
 Ruby, Sinatra, HTML, CSS
 
-###### How to run
-[]()
+###### Visit
+_[rock-ps.herokuapp.com](https://rock-ps.herokuapp.com/)_
+
+###### Views
+<img src="public/rps.png" width="500"> &nbsp;  &nbsp; <img src="public/rpsmobile.png" width="200">
 
 ###### Testing
 * Feature testing with Capybara: `git clone`, `bundle`, and `rackup`
 * Unit testing with Rspec on command line: `rspec` to see the test results
-* Browser testing on : _tba_
+* Browser view/test [here](https://rock-ps.herokuapp.com/)
 
 ###### notes
-This was the 3rd weekend exercise. Completed, but can always improve! <br>
-_I watched Sam Morgan's video walkthrough to help navigate the exercise._
+This was the 3rd weekend exercise; completed, but will revisit to improve. 
+* I watched Sam Morgan's video walkthrough to help navigate the game building exercise.
+<br>
+
+To revisit for:
+- [ ] better layouts / media queries
+- [ ] custom font for emojis
 
 ###### Collaborators
-[Myrtle](https://github.com/Mrtly) _solo_
+_solo_ [Myrtle](https://github.com/Mrtly) ☺
