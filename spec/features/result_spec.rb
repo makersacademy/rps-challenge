@@ -1,28 +1,22 @@
-feature "winning, losing, and drawing" do
-  scenario "if player chooses rock and computer chooses scissors, player wins" do
-    allow_any_instance_of(Array).to receive(:sample).and_return("Scissors")
+feature "result is a win, lose or draw" do
+  scenario "if player 1 chooses rock and player 2 chooses scissors, player 1 wins" do
     sign_in
     click_on "Rock"
-    expect(page).to have_content "dave chose Rock"
-    expect(page).to have_content "Computer chose Scissors"
-    expect(page).to have_content "You win!"
+    click_on "Scissors"
+    expect(page).to have_content "diana wins!"
   end
 
-  scenario "if player chooses rock and computer chooses paper, player loses" do
-    allow_any_instance_of(Array).to receive(:sample).and_return("Paper")
+  scenario "if player 1 chooses rock and player 2 chooses paper, player 1 loses" do
     sign_in
     click_on "Rock"
-    expect(page).to have_content "dave chose Rock"
-    expect(page).to have_content "Computer chose Paper"
-    expect(page).to have_content "You lose!"
+    click_on "Paper"
+    expect(page).to have_content "dave wins!"
   end
 
-  scenario "if player chooses rock and computer chooses rock, it's a draw" do
-    allow_any_instance_of(Array).to receive(:sample).and_return("Rock")
+  scenario "if player 1 chooses rock and player 2 chooses rock, it's a draw" do
     sign_in
     click_on "Rock"
-    expect(page).to have_content "dave chose Rock"
-    expect(page).to have_content "Computer chose Rock"
+    click_on "Rock"
     expect(page).to have_content "It's a draw!"
   end
 end

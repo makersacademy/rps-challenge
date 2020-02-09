@@ -9,7 +9,7 @@ describe Player do
     end
   end
 
-  describe '#choice' do
+  describe '#show_choice' do
     it 'returns the name' do
       dave.set_choice("Scissors")
       expect(dave).to respond_to(:show_choice)

@@ -1,44 +1,40 @@
 require_relative 'player'
 
 class Game
-  attr_reader :player, :move
+  attr_reader :player_1, :player_2
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
   end
 
   def self.instance
     @game
   end
 
-  def initialize(player)
-    @player = (player)
-    @outcome = ""
+  def initialize(player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
-  def computer_move
-    @move = ["Scissors", "Paper", "Rock"].sample
-  end
-
-  def outcome(player_choice)
-    if player_choice == "Scissors" && @move == "Scissors"
+  def outcome
+    if player_1.choice == "Scissors" && player_2.choice == "Scissors"
       "It's a draw!"
-    elsif player_choice == "Scissors" && @move == "Rock"
-      "You lose!"
-    elsif player_choice == "Scissors" && @move == "Paper"
-      "You win!"
-    elsif player_choice == "Rock" && @move == "Rock"
+    elsif player_1.choice == "Scissors" && player_2.choice == "Rock"
+      "#{player_2.name} wins!"
+    elsif player_1.choice == "Scissors" && player_2.choice == "Paper"
+      "#{player_1.name} wins!"
+    elsif player_1.choice == "Rock" && player_2.choice == "Rock"
       "It's a draw!"
-    elsif player_choice == "Rock" && @move == "Paper"
-      "You lose!"
-    elsif player_choice == "Rock" && @move == "Scissors"
-      "You win!"
-    elsif player_choice == "Paper" && @move == "Rock"
-      "You win!"
-    elsif player_choice == "Paper" && @move == "Paper"
+    elsif player_1.choice == "Rock" && player_2.choice == "Paper"
+      "#{player_2.name} wins!"
+    elsif player_1.choice == "Rock" && player_2.choice == "Scissors"
+      "#{player_1.name} wins!"
+    elsif player_1.choice == "Paper" && player_2.choice == "Rock"
+      "#{player_1.name} wins!"
+    elsif player_1.choice == "Paper" && player_2.choice == "Paper"
       "It's a draw!"
-    elsif player_choice == "Paper" && @move == "Scissors"
-      "You lose!"
+    elsif player_1.choice == "Paper" && player_2.choice == "Scissors"
+      "#{player_2.name} wins!"
     end
   end
 end

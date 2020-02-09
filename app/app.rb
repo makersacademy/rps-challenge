@@ -15,28 +15,38 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     p params
-    player = Player.new(params[:player])
-    @game = Game.create(player)
-    redirect '/play'
+    player_1 = Player.new(params[:player_1])
+    player_2 = Player.new(params[:player_2])
+    @game = Game.create(player_1, player_2)
+    redirect '/player_1'
   end
 
-  post '/choice/:id' do
-    @game.player.set_choice(params["id"])
+  post '/player_1_choice/:id' do
+    p params
+    @game.player_1.set_choice(params["id"])
+    redirect '/player_2'
+  end
+
+  post '/player_2_choice/:id' do
+    p params
+    @game.player_2.set_choice(params["id"])
     redirect '/result'
   end
-
-  post '/play' do
-    erb :play
-  end
   
-  get '/play' do
-    erb :play
+  get '/player_1' do
+    erb :player_1
+  end
+
+  post '/player_1' do
+    erb :player_1
+  end
+
+  get '/player_2' do
+    erb :player_2
   end
 
   get '/result' do
-    @game.computer_move
-    @game.player.show_choice
-    @outcome = @game.outcome(@game.player.show_choice)
+    @outcome = @game.outcome
     erb :result
   end
   

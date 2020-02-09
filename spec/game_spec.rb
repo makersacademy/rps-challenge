@@ -1,28 +1,22 @@
 require 'game'
 
 describe Game do
-  let(:player) { double :player }
-  subject(:game) { described_class.new(player) }
+  let(:player_1) { double :player_1 }
+  let(:player_2) { double :player_2 }
+  subject(:game) { described_class.new(player_1, player_2) }
 
   describe '#player' do
     it 'retrieves the player' do
-      expect(game.player).to eq player
-    end
-  end
-
-  describe '#computer_move' do
-    it 'returns scissors, paper or rock' do
-      srand(4)
-      expect(game.computer_move).to eq "Rock"
+      expect(game.player_1).to eq player_1
     end
   end
 
   describe '#outcome' do
-    it 'should return a win, draw or loss' do
-      srand(4)
-      game.computer_move
-      allow(player).to receive(:show_choice).and_return "Paper"
-      expect(game.outcome(game.player.show_choice)).to eq "You win!"
+    it 'should return a win, loss or draw' do
+      allow(player_1).to receive(:name).and_return "diana"
+      allow(player_1).to receive(:choice).and_return "Rock"
+      allow(player_2).to receive(:choice).and_return "Scissors"
+      expect(game.outcome).to eq "diana wins!"
     end
   end
 end
