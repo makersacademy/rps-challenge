@@ -17,6 +17,17 @@ class Game
 
   def result
     name = @player_1.name
-    "#{name} wins!"
+    string = "#{name} wins!"
+    if player_1_choice == "Rock" && computer_choice == "Scissors"
+      string
+    elsif player_1_choice == "Scissors" && computer_choice == "Paper"
+      string
+    elsif player_1_choice == "Paper" && computer_choice == "Rock"
+      string
+    elsif player_1_choice == computer_choice
+      "It's a draw!"
+    else
+      "Computer wins!"
+    end
   end
 end

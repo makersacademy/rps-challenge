@@ -41,12 +41,29 @@ describe Game do
     end
   end
 
-  describe " #Determine winner" do
-    it "should return name of winning player" do
+  describe " #result" do
+    it "should return name of winning player gruntilda" do
+      srand(67809)
       allow(player_1).to receive(:name) {"Gruntilda"}
-      allow(player_1).to receive(:choice) {"Rock"}
+      subject.store_player_1_choice("Rock")
       subject.create_computer_choice
       expect(subject.result).to eq "Gruntilda wins!"
+    end
+
+    it "should no winner if choices are the same" do
+      srand(67810)
+      allow(player_1).to receive(:name) {"Gruntilda"}
+      subject.store_player_1_choice("Rock")
+      subject.create_computer_choice
+      expect(subject.result).to eq "It's a draw!"
+    end
+
+    it "should return name of winning player computer" do
+      srand(67810)
+      allow(player_1).to receive(:name) {"Gruntilda"}
+      subject.store_player_1_choice("Scissors")
+      subject.create_computer_choice
+      expect(subject.result).to eq "Computer wins!"
     end
   end
 end
