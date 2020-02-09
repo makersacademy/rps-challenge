@@ -17,7 +17,7 @@ describe Game do
     end
   end
 
-    describe '#player_2' do
+  describe '#player_2' do
     it 'returns player_2' do
       expect(game.player_2).to eq(player_2)
     end
