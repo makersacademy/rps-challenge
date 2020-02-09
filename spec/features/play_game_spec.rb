@@ -5,11 +5,13 @@ feature 'playing a game' do
     expect(page).to have_button "Scissors"
     expect(page).to have_button "Paper"
     expect(page).to have_button "Rock"
+    expect(page).to have_button "Lizard"
+    expect(page).to have_button "Spock"
   end
 
   scenario 'player 2 has a turn' do
     sign_in
-    click_on "Rock"
+    click_on "Lizard"
     expect(page).to have_content("dave's turn")
   end
 end
