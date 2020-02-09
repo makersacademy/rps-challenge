@@ -1,0 +1,41 @@
+<style>
+* {
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+ color: white; 
+ text-align: center;
+}
+
+body {background-color: orange;}
+
+input[type=text] {
+  color: orange;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+
+input[type=submit] {
+  background-color: red;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1pt;
+  border-radius: 4px;
+  cursor: pointer;
+}
+</style>
+
+
+
+<h1>Welcome to Rock Paper Scissors! </h1>
+<h2>Enter your player names</h2>
+
+<form action='/names' method='post'>
+<p>Player 1:<br>
+<input type="text" name="player_1" placeholder="Player 1">
+<br>
+Player 2: <br>
+<input type="text" name="player_2" placeholder="Player 2"></p>
+<p><input type="submit" id="submit" value="Submit Names"></p>
