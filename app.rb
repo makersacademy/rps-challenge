@@ -2,7 +2,7 @@ require 'sinatra/base'
 require './lib/player'
 
 class Rsp < Sinatra::Base
-  
+
   enable :sessions
   
   get '/' do
