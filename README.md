@@ -44,8 +44,6 @@ As part of the system's functionality:
 * The game chooses a random option
 * A winner is declared
 
-## <a name="Feature_Tests">Feature Tests (How it works)</a>
-
 ### Basic Rules
 
 ![rules](rules.jpg)
@@ -63,21 +61,36 @@ I would like to be able to play rock/paper/scissors
 ```
 ## <a name="Methods">Objects & Methods</a>
 
+For the user stories I created a domain model for each object, including attributes and behaviour:
+
+### Game
+
+| Methods | Description |
+| --- | --- |
+| self.create(player_1, player_2) | Class method that creates a game with two players |
+| .self.instance | Class method that returns the game class instance variable |
+| initialize(player_1, player_2) | Sets two player instance variables |
+| outcome | Returns a win, loss or draw depening on player_1 and player_2 choice |
+
+### Player
+
+| Methods | Description |
+| --- | --- |
+| initialize(name) |  Sets instance vaiables name with argument and choice as an empty string | 
+| set_choice(choice) |  Sets the choice variable using argument | 
+| show_choice |  Returns the choice variable | 
+
 ## <a name="Testing">Testing</a>
 
 Tests were written with RSpec and Capybara. To run the tests in terminal: 
 
 ```bash
-$> cd rps-challenge
-$> rspec
+$ cd rps-challenge
+$ rspec
 ```
 ## <a name="Further_Improvements">Further Improvements</a>
 
-### Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-### Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
 * Add styling
+* Continue to refactor
+* Add a score tally
 
