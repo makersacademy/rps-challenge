@@ -4,7 +4,7 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do
-    erb :index
+    erb :entering_names
   end
 
   post '/names' do
@@ -18,6 +18,12 @@ class RockPaperScissors < Sinatra::Base
     @player_2_name = session[:player_2_name]
     erb :play
   end
+
+  get '/first_player_option' do
+    puts 'here'
+    erb :first_player_option
+  end
+
 
   run! if app_file == $0
 end
