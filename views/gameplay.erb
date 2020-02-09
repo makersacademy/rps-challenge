@@ -1,7 +1,7 @@
 <style>
 * {
  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
- color: white; 
+ color: red; 
  text-align: center;
 }
 
@@ -9,13 +9,13 @@ body {background-color: orange;}
 </style>
 
 <h1> <%= @name1 %> vs <%= @name2 %>! </h1>
-<h2> <%= $game.current_player?.name %>, it's your turn! </h2>
+<h2> <%= $current_player.name %>, it's your turn! </h2>
 
 
 <form action="/calc" method="post">
-<input type="radio" name="rock" value="rock">Rock!<br> 
-<input type="radio" name="paper" value="paper">Paper!<br>
-<input type="radio" name="scissors" value="scissors">Scissors!<br>
+<input type="radio" id="r" name="choice" value="rock">Rock!<br> 
+<input type="radio" id="p" name="choice" value="paper">Paper!<br>
+<input type="radio" id="s" name="choice" value="scissors">Scissors!<br>
 <div>
 <button type="submit">Submit</button>
 </div>

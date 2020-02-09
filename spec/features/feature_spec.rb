@@ -16,7 +16,7 @@ end
 feature "player can choose from rock paper scissors" do
   scenario "user chooses rock" do
     sign_in_with_names
-    choose("rock")
+    choose("r")
     click_on("Submit")
   end
 end

@@ -23,6 +23,11 @@ class App < Sinatra::Base
     $game =  Game.new($player_1, $player_2)
     @name1 = $player_1.name
     @name2 = $player_2.name
+    $current_player = $game.current_player?
     erb(:gameplay)
+  end
+
+  post '/calc' do
+    $current_player.store_move(params[:choice])
   end
 end
