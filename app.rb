@@ -23,8 +23,11 @@ class RPS < Sinatra::Base
   post '/result' do 
     player = Player.new($name, params[:move])
     computer = Computer.new
+    
     @game = Game.new(player, computer)
     @result = Rps_Results.new.winner(@game.player.move, @game.computer.move)
+    player.icon(player.move)
+    computer.icon(computer.move)
     erb :result
   end 
 
