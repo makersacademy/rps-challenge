@@ -6,6 +6,6 @@ feature 'first_player_options' do
     fill_in :player_2_name, with: 'Bowser'
     click_button 'Submit'
     click_button 'Lets Play!'
-    expect(page).to have_content 'Pick Your Weapon'
+    expect(page).to have_content 'Mario, Pick Your Weapon'
   end
 end
