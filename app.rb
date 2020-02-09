@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
-
+require './lib/turn'
+require './lib/opponent'
 class Rsp < Sinatra::Base
 
   enable :sessions
