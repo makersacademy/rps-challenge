@@ -1,33 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>ROCK PAPER SCISSORS GAME</title>
-<style>
-body {
-	background-image: url("https://www.sciencealert.com/images/articles/processed/RockPaper_web_1024.jpg");
-        background-repeat:no-repeat;
-       background-size:fit;
-} 
-p {
-  font: bold 20px arial, sans-serif;
-  text-align: center;
-  color : white;
-}
-form {
-  font: bold 20px arial, sans-serif;
-  text-align: center;
-  color : white;
-}
-</style>
+<%= @name %>
 
-</head>
-  <body>
-    <header>
-    <p>you are</p><br><p><%= @name %></p>
-    </header>
-    Rock
-    Paper
-    Scissors
-    
-  </body>
-</html>
+<form method="POST" action="/play">
+  <input type="submit" name="shape" value="Rock" />
+  <input type="submit" name="shape" value="Paper" />
+  <input type="submit" name="shape" value="Scissors" />
+  </form>
+  You chose <%= @shape%>!

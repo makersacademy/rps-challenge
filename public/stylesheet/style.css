@@ -14,3 +14,20 @@ body {
   text-align: center;
    color : white;
  }
+ <style>
+ body {
+   background-image: url("https://www.sciencealert.com/images/articles/processed/RockPaper_web_1024.jpg");
+         background-repeat:no-repeat;
+        background-size:fit;
+ } 
+ p {
+   font: bold 20px arial, sans-serif;
+   text-align: center;
+   color : white;
+ }
+ form {
+   font: bold 20px arial, sans-serif;
+   text-align: center;
+   color : white;
+ }
+ </style>
