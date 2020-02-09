@@ -1,4 +1,4 @@
-<p>Player Name: <%= @game.player.name %></p>
+<p><%= @game.player.name.capitalize %> vs <%= @game.opponent.name.capitalize %> </p>
 
 <form action="/player_moves" method="post">
   <fieldset>

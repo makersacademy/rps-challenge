@@ -21,17 +21,17 @@ class Game
     if player == opponent
       @winner = "No one"
     elsif player == 'rock' && opponent == 'paper'
-      @winner = 'Player 2'
+      @winner = @opponent
     elsif player == 'rock' && opponent == 'scissors'
-      @winner = 'Player 1'
+      @winner = @player
     elsif player == 'scissors' && opponent == 'rock'
-      @winner = 'Player 2'
+      @winner = @opponent
     elsif player == 'scissors' && opponent == 'paper'
-      @winner = 'Player 1'
+      @winner = @player
     elsif player == 'paper' && opponent == 'scissors'
-      @winner = 'Player 2'
+      @winner = @opponent
     elsif player == 'paper' && opponent == 'rock'
-      @winner = 'Player 1'
+      @winner = @player
     end
   end
 

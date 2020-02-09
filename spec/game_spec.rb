@@ -24,7 +24,7 @@ describe Game do
   describe '#select_winner' do 
     it 'accepts two moves and returns a winner' do
       subject.select_winner(player: 'rock', opponent: 'scissors')
-      expect(subject.winner).to eq 'Player 1'
+      expect(subject.winner).to eq player
     end
 
     it 'returns a draw if both players choose the same' do
@@ -34,17 +34,17 @@ describe Game do
 
     it 'compares player move against opponent move by default' do
       subject.select_winner
-      expect(subject.winner).to eq 'Player 1'
+      expect(subject.winner).to eq player
     end
 
     it 'can pick the computer as a winner' do
       subject.select_winner(player: 'rock', opponent: 'paper')
-      expect(subject.winner).to eq 'Player 2'
+      expect(subject.winner).to eq computer
     end 
 
     it 'can compare any possible outcome' do
       subject.select_winner(player: 'scissors', opponent: 'paper')
-      expect(subject.winner).to eq 'Player 1'
+      expect(subject.winner).to eq player
     end
   end
 end
