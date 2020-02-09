@@ -11,6 +11,7 @@ class Rps < Sinatra::Base
 
   post '/names' do
     $player_1 = Player.new(params[:player_1_name])
+    $info = params
     redirect '/play'
   end
 
@@ -19,13 +20,15 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  get '/choice' do
-    erb :choice
+  post '/choice' do
+    $choice = params[:choice_made]
+    redirect '/result'
   end
 
-  # get '/result' do
-
-  # end
+  get '/result' do
+    @choice = $choice
+    erb :result
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
