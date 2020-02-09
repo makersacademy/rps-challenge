@@ -1,4 +1,4 @@
-require './app/models/game'
+require './app/controllers/1_player_rps_controller'
 
 describe Game do
 
