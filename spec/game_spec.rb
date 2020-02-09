@@ -23,10 +23,22 @@ describe Game do
     end
   end
 
-  # describe '#compute_result' do
-  #   it "computes a winner" do
-  #     expect(game.compute_result).to eq(player_1)
-  #   end
-  # end
+  describe '#compute_result' do
+    it "player 1 can win" do
+      allow(player_1).to receive(:weapon).and_return(:scissors)
+      allow(player_2).to receive(:weapon).and_return(:paper)
+      expect(game.compute_result).to eq(player_1)
+    end
+    it "player 2 can win" do
+      allow(player_1).to receive(:weapon).and_return(:rock)
+      allow(player_2).to receive(:weapon).and_return(:paper)
+      expect(game.compute_result).to eq(player_2)
+    end
+    it "can be a draw" do
+      allow(player_1).to receive(:weapon).and_return(:rock)
+      allow(player_2).to receive(:weapon).and_return(:rock)
+      expect(game.compute_result).to eq("It's a draw!")
+    end
+  end
 
 end

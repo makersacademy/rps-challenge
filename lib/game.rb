@@ -1,6 +1,7 @@
 class Game
 
   WEAPONS = [:rock, :paper, :scissors]
+  RESULTS = {:scissors => :paper, :rock => :scissors, :paper => :rock}
 
   attr_reader :player_1, :player_2, :players
 
@@ -17,5 +18,11 @@ class Game
   def self.instance
     @game
   end
-  
+
+  def compute_result
+    return "It's a draw!" if @player_1.weapon == @player_2.weapon
+    return @player_1 if RESULTS[@player_1.weapon] == @player_2.weapon
+    return @player_2 if RESULTS[@player_2.weapon] == @player_1.weapon
+  end
+
 end
