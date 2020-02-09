@@ -5,8 +5,7 @@ feature 'Selecting move' do
   end
   scenario 'submitting shows move' do
     start_playing
-    select('Rock', from: 'move')
-    click_button 'Do it!'
+    choose_rock
     expect(page).to have_content "rock"
   end
 end

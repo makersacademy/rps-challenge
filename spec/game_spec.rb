@@ -16,10 +16,19 @@ describe Game do
   end
 
   describe '#player_move' do
-    it 'should return the player move' do
-      game.move("rock")
+    it 'should default to rock' do
       expect(game.player_move).to eq("rock")
+    end
+    it 'should return the player move' do
+      game.move("scissors")
+      expect(game.player_move).to eq("scissors")
     end
   end
 
+  describe '#computer_move' do
+    it 'should return a random move' do
+      allow(game).to receive(:rand).and_return(1)
+      expect(game.computer_move).to eq("paper")
+    end
+  end
 end
