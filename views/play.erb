@@ -1,44 +1,34 @@
 <div class="wrapper">
     <div class="box1" >
         <h2>Hey <%= @game.name %>,</h2>
-<<<<<<< HEAD
         <h3> let's play!</h3>
         <br> <img src="rocks.png" alt="fighting rocks" height="150">
     </div>
-
     <div class="box2">
-=======
         <br><h3> let's play!</h3>
         <br> <img src="rocks.png" alt="fighting rocks" height="150">
     </div>
 
     <div class="box2" >
->>>>>>> 6dc4ab9fd710b9059c457c328cd05f369aba3772
     <h3> choose your hand:</h3><br>
         <form method="POST" action="/play">
          <input type="submit" name="choice" value="Rock"/>
          <input type="submit" name="choice" value="Paper"/>
          <input type="submit" name="choice" value="Scissors"/>
         </form>
-<<<<<<< HEAD
         <br><br>
         <h2> You chose <%= @game.choice.to_s.capitalize %>! </h2>
         <br>
-=======
         <br><br><br>
         <h2> You chose <%= @game.choice.to_s.capitalize %>! </h2>
         <br><br>
->>>>>>> 6dc4ab9fd710b9059c457c328cd05f369aba3772
         <div id="opponent"><h2>
             Computer chose <%= @game.opp_choice.to_s.capitalize %>! </h2>
         </div>
     </div>
 
-<<<<<<< HEAD
     <div class="box3" id="win">
-=======
     <div id="win">
->>>>>>> 6dc4ab9fd710b9059c457c328cd05f369aba3772
         <h1>
         <% if @game.win? %>
             You win! &#129395;
