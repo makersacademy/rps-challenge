@@ -21,8 +21,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice/:id' do
-    p params
-    @choice = @game.player.set_choice(params["id"])
+    @game.player.set_choice(params["id"])
     redirect '/result'
   end
 
@@ -31,6 +30,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    @game.computer_move
+    @game.player.show_choice
+    @outcome = @game.outcome(@game.player.show_choice)
     erb :result
   end
   
