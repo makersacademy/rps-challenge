@@ -26,10 +26,6 @@ h3 {
   color: #6d6d6d;
 }
 
-p {
-  
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -66,11 +62,6 @@ input[type="radio"]:checked {
   color: #1b8ec7;
 }
 
-/* .form-container {
-  width: 800 px;
-  margin: 0;
-  padding: 100px;
-} */
 .text-field {
   text-align: center;
 }
