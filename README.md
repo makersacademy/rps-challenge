@@ -6,8 +6,8 @@ A web browser game, built with Ruby, based on HTTP and response-request mechanis
 
 ###### Game capabilities:
 
-As a Player I can:
-- [x] register my name before playing an online game
+A Player can:
+- [x] register their name before playing an online game
 - [x] play rock/paper/scissors
 
 _functionality:_
@@ -26,11 +26,12 @@ Ruby, Sinatra, HTML, CSS
 []()
 
 ###### Testing
-* Feature/browser testing with Capybara: `rackup`
-* Unit testing with Rspec : `rspec`
+* Feature testing with Capybara: `git clone`, `bundle`, and `rackup`
+* Unit testing with Rspec on command line: `rspec` to see the test results
+* Browser testing on : _tba_
 
 ###### notes
-This was the 3rd weekend exercise. Completed, but can always improve!
+This was the 3rd weekend exercise. Completed, but can always improve! <br>
 _I watched Sam Morgan's video walkthrough to help navigate the exercise._
 
 ###### Collaborators

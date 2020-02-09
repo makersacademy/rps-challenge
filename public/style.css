@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6dc4ab9fd710b9059c457c328cd05f369aba3772
 #page-container {
   position: relative;
   min-height: 100vh;
@@ -10,7 +13,10 @@
 }
 
 *{
+<<<<<<< HEAD
   overscroll-behavior: none;
+=======
+>>>>>>> 6dc4ab9fd710b9059c457c328cd05f369aba3772
   margin: 0;
   padding: 0;
 }
@@ -47,8 +53,13 @@ padding: 100px;
     right: 0;
     font-style: italic;
     width: 100%;
+<<<<<<< HEAD
     padding: 20px;
     height: 2rem; 
+=======
+    padding: 15px;
+    height: 1.5rem; 
+>>>>>>> 6dc4ab9fd710b9059c457c328cd05f369aba3772
     font-family: 'Simonetta', Georgia, serif;
     text-align: right;
   }
@@ -75,4 +86,8 @@ input {
     text-decoration: none;
   }
 
+<<<<<<< HEAD
  
+=======
+  
+>>>>>>> 6dc4ab9fd710b9059c457c328cd05f369aba3772
