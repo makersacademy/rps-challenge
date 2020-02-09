@@ -40,4 +40,13 @@ describe Game do
       expect(subject.computer_choice).to eq("Rock")
     end
   end
+
+  describe " #Determine winner" do
+    it "should return name of winning player" do
+      allow(player_1).to receive(:name) {"Gruntilda"}
+      allow(player_1).to receive(:choice) {"Rock"}
+      subject.create_computer_choice
+      expect(subject.result).to eq "Gruntilda wins!"
+    end
+  end
 end

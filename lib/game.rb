@@ -14,4 +14,9 @@ class Game
     choices = ["Rock", "Paper", "Scissors"]
     @computer_choice = choices[rand(3)]
   end
+
+  def result
+    name = @player_1.name
+    "#{name} wins!"
+  end
 end
