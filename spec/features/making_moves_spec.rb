@@ -13,7 +13,7 @@ feature 'making moves' do
     player_chooses_rock
     click_on 'See computer\'s move'
     
-    expect(page).to have_content('Computer chooses Scissors')
-    # expect(page).to have_content('Player 1 wins!')
+    expect(page).to have_content('Computer plays Scissors')
+    expect(page).to have_content('Liz wins!')
   end
 end

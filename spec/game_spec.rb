@@ -22,29 +22,31 @@ describe Game do
   end
 
   describe '#select_winner' do 
-    it 'accepts two moves and returns a winner' do
-      subject.select_winner(player: 'rock', opponent: 'scissors')
-      expect(subject.winner).to eq player
-    end
-
-    it 'returns a draw if both players choose the same' do
-      subject.select_winner(player: 'rock', opponent: 'rock')
-      expect(subject.winner).to eq 'No one'
-    end
-
-    it 'compares player move against opponent move by default' do
+    it 'compares player moves and returns a winner' do
       subject.select_winner
       expect(subject.winner).to eq player
     end
 
+    it 'returns a draw if both players choose the same' do
+      computer_2 = double :computer_2, name: 'computer', move: 'rock' 
+      game = described_class.new(player, computer_2)
+      game.select_winner
+      expect(game.winner).to eq 'No one'
+    end
+
     it 'can pick the computer as a winner' do
-      subject.select_winner(player: 'rock', opponent: 'paper')
-      expect(subject.winner).to eq computer
+      computer_2 = double :computer_2, name: 'computer', move: 'paper'
+      game = described_class.new(player, computer_2)
+      game.select_winner
+      expect(game.winner).to eq computer_2
     end 
 
     it 'can compare any possible outcome' do
-      subject.select_winner(player: 'scissors', opponent: 'paper')
-      expect(subject.winner).to eq player
+      player_2 = double :player_2, name: 'Liz', move: 'scissors' 
+      computer_2 = double :computer_2, name: 'computer', move: 'paper' 
+      game = described_class.new(player_2, computer_2)
+      game.select_winner
+      expect(game.winner).to eq player_2
     end
   end
 end

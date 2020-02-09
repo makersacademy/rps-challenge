@@ -17,20 +17,23 @@ class Game
     @opponent = opponent
   end
 
-  def select_winner(player: @player.move, opponent: @opponent.move)
-    if player == opponent
+  def select_winner
+    player_move = @player.move
+    opponent_move = @opponent.move
+
+    if player_move == opponent.move
       @winner = "No one"
-    elsif player == 'rock' && opponent == 'paper'
+    elsif player_move == 'rock' && opponent_move == 'paper'
       @winner = @opponent
-    elsif player == 'rock' && opponent == 'scissors'
+    elsif player_move == 'rock' && opponent_move == 'scissors'
       @winner = @player
-    elsif player == 'scissors' && opponent == 'rock'
+    elsif player_move == 'scissors' && opponent_move == 'rock'
       @winner = @opponent
-    elsif player == 'scissors' && opponent == 'paper'
+    elsif player_move == 'scissors' && opponent_move == 'paper'
       @winner = @player
-    elsif player == 'paper' && opponent == 'scissors'
+    elsif player_move == 'paper' && opponent_move == 'scissors'
       @winner = @opponent
-    elsif player == 'paper' && opponent == 'rock'
+    elsif player_move == 'paper' && opponent_move == 'rock'
       @winner = @player
     end
   end
