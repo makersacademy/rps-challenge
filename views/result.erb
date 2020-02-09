@@ -1,3 +1,6 @@
 <%= @game.player_name %> chooses <%= @game.player_move %><br>
 Computer chooses <%= @game.computer_move %><br>
 <%= @game.print_winner %>
+<form action="/rps" method="get">
+  <input type="submit" value="Go again?">
+</form>

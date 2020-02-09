@@ -7,8 +7,12 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  get '/rps' do
+  post '/start_game' do
     $game = Game.new(params[:player_name])
+    redirect '/rps'
+  end
+
+  get '/rps' do
     @game = $game
     erb :rps
   end
