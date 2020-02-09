@@ -4,7 +4,7 @@ feature 'Player chooses move' do
     fill_in :player_1_name, with: 'Gruntilda'
     click_button 'Submit'
     click_button 'Rock'
-    expect(page).to have_content 'Player picked: Rock'
+    expect(page).to have_content 'Gruntilda picked: Rock'
   end
 
   scenario "player chooses paper" do
@@ -12,7 +12,7 @@ feature 'Player chooses move' do
     fill_in :player_1_name, with: 'Gruntilda'
     click_button 'Submit'
     click_button 'Paper'
-    expect(page).to have_content 'Player picked: Paper'
+    expect(page).to have_content 'Gruntilda picked: Paper'
   end
 
   scenario "player chooses between scissors" do
@@ -20,6 +20,6 @@ feature 'Player chooses move' do
     fill_in :player_1_name, with: 'Gruntilda'
     click_button 'Submit'
     click_button 'Scissors'
-    expect(page).to have_content 'Player picked: Scissors'
+    expect(page).to have_content 'Gruntilda picked: Scissors'
   end
 end
