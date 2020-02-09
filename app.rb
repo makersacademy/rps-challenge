@@ -23,6 +23,7 @@ class Rps < Sinatra::Base
 
   post '/choice' do
     $game.store_player_1_choice(params[:choice_made])
+    $game.create_computer_choice
     redirect '/result'
   end
 
