@@ -11,6 +11,7 @@ form {text-align:center;}
 <h2>The winner is...</h2>
 <h1><%= @result.is_a?(String)? @result : @result.name %>!</h1>
 <br><br>
+
 <form action="/">
   <input type="submit" value="Play again">
 </form>

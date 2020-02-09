@@ -1,7 +1,7 @@
 class Game
 
   WEAPONS = [:rock, :paper, :scissors]
-  RESULTS = {:scissors => :paper, :rock => :scissors, :paper => :rock}
+  RESULTS = { :scissors => :paper, :rock => :scissors, :paper => :rock }
 
   attr_reader :player_1, :player_2, :players
 
