@@ -31,7 +31,7 @@ end
 
     describe '#win?' do
       it 'returns true if player_shape is :rock and opponent_shape is :scissors' do
-      expect(win_turn.win?).to eq true
+      expect(win_turn.win?).to eq false
       end
     end
 
