@@ -43,11 +43,11 @@ $ rackup config.ru -p 4567
 ```
 Then go to the relevant port in your browser of choice, eg using the url http://localhost:4567/.
 
-Rspec and Capybara have been used for testing purposes.
+RSpec and Capybara have been used for testing purposes.
 
 ## Further objectives ##
 
-The following is a list of objectives I achieved, in addition to the user requirements:
+The following is a list of objectives I aimed to achieve, in addition to the user requirements:
 
   * Follow the TDD process, and have all tests passing
   * High test coverage (>99%)
@@ -57,4 +57,4 @@ The following is a list of objectives I achieved, in addition to the user requir
 
 In the future, I would like to implement the following features:
 - Score tracking
-- Ability to switch between just Rock, Paper, Scissors, and having the additional Spock and Lizard options
+- Ability to switch between using just Rock, Paper, Scissors, and having the additional Spock and Lizard options
