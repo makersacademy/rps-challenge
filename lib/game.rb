@@ -8,7 +8,7 @@ class Game
     @game 
   end
 
-  attr_reader :player, :opponent, :winner, :computer_move
+  attr_reader :player, :opponent, :winner
 
   MOVES = ['rock', 'paper', 'scissors']
 
@@ -16,10 +16,6 @@ class Game
     @player = player
     @opponent = opponent
   end
-
-  # def computer_generator
-  #   @computer_move = MOVES.sample
-  # end
 
   def select_winner(player: @player.move, opponent: @opponent.move)
     if player == opponent
