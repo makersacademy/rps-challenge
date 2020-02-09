@@ -104,6 +104,7 @@ Class models:
 
 **Edge cases**
 1. Player doesn't enter a name
+2. No one wins - can player play again?
 
 ## Credits ##
 
