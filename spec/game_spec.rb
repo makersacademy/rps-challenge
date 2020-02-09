@@ -21,8 +21,8 @@ describe Game do
     end
 
     it "can store player 1's choice" do
-      subject.store_player_1_choice("Apple")
-      expect(subject.player_1_choice).to eq("Apple")
+      subject.store_player_1_choice("Rock")
+      expect(subject.player_1_choice).to eq("Rock")
     end
   end
 

@@ -22,12 +22,12 @@ class Rps < Sinatra::Base
   end
 
   post '/choice' do
-    $choice = params[:choice_made]
+    $game.store_player_1_choice(params[:choice_made])
     redirect '/result'
   end
 
   get '/result' do
-    @choice = $choice
+    @game = $game
     erb :result
   end
 
