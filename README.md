@@ -116,7 +116,8 @@ I would like to be able to play rock/paper/scissors
 
 **Edge cases**
 1. Player doesn't enter a name
-2. No one wins - can player play again?
+2. Player doesn't enter a move
+2. No one wins - ruby can't render name of winner
 
 ## Credits ##
 
