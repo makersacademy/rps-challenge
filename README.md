@@ -69,14 +69,14 @@ For the user stories I created a domain model for each object, including attribu
 | --- | --- |
 | self.create(player_1, player_2) | Class method that creates a game with two players |
 | .self.instance | Class method that returns the game class instance variable |
-| initialize(player_1, player_2) | Sets two player instance variables |
-| outcome | Returns a win, loss or draw depening on player_1 and player_2 choice |
+| initialize(player_1, player_2) | | initialize(name) |  Sets name instance vairbles taken as two arguments, and score instance variables set to 0 | 
+| outcome | Returns a win, loss or draw depending on player_1 and player_2 choice. Increments a score if a win result |
 
 ### Player
 
 | Methods | Description |
 | --- | --- |
-| initialize(name) |  Sets instance vaiables name with argument and choice as an empty string | 
+| initialize(name) |  Sets name and score instance variables name with argument and choice as an empty string | 
 | set_choice(choice) |  Sets the choice variable using argument | 
 | show_choice |  Returns the choice variable | 
 
