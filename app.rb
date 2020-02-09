@@ -11,5 +11,10 @@ class RockPaperScissors < Sinatra::Base
     erb :rps
   end
 
+  get '/result' do
+    @move_choice = params[:move]
+    erb :result
+  end
+
   run! if app_file == $0
 end
