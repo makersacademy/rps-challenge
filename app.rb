@@ -33,7 +33,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/action' do
-    $game.current_player.set_action(params[:weapon])
+    $game.current_player.allocate(params[:weapon])
     $game.switch_turns
     redirect '/play'
   end

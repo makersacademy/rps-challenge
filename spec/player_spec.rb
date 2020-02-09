@@ -12,7 +12,7 @@ describe Player do
 
   describe '#action' do
     it 'sets an action for the player' do
-      ryan.set_action("scissors")
+      ryan.allocate("scissors")
       expect(ryan.action).to eq "scissors"
     end
   end

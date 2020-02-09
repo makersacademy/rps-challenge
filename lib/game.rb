@@ -20,11 +20,8 @@ class Game
   end
 
   def winner(player_1, player_2)
-    p player_1
-    p player_2
     if player_1.action == "Rock" && player_2.action == "Scissors"
       return "#{player_1.name} Wins!"
-      puts 'here'
     elsif player_1.action == "Scissors" && player_2.action == "Paper"
       return "#{player_1.name} Wins!"
     elsif player_1.action == "Paper" && player_2.action == "Rock"

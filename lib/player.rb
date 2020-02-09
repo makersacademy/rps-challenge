@@ -4,10 +4,10 @@ class Player
 
   def initialize(name)
     @name = name
-    @action
+    @action = nil
   end
 
-  def set_action(move)
+  def allocate(move)
     @action = move
   end
 end
