@@ -32,8 +32,6 @@ class Game
       @winner = 'Player 2'
     elsif player == 'paper' && opponent == 'rock'
       @winner = 'Player 1'
-    else 
-      "this isn't working"
     end
   end
 
