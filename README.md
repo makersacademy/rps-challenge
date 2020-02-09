@@ -119,6 +119,12 @@ I would like to be able to play rock/paper/scissors
 2. Player doesn't enter a move
 2. No one wins - ruby can't render name of winner
 
+## Further improvements ##
+
+1. Fix styling, particularly on forms and links
+2. Add exception if player doesn't select a move
+3. Add option for a second player
+
 ## Credits ##
 
 View original challenge instructions from [Makers Academy](https://makers.tech/) [here](Challenge-instructions.md).
