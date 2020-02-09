@@ -91,6 +91,4 @@ $ rspec
 ## <a name="Further_Improvements">Further Improvements</a>
 
 * Add styling
-* Continue to refactor
-* Add a score tally
-
+* Refactor the outcome method using a hash: [Example 1](https://stackoverflow.com/questions/39460707/ruby-how-do-i-shorten-my-method), [Example 2](https://stackoverflow.com/questions/10923486/hw-impossibility-create-a-rock-paper-scissors-program-in-ruby-without-using-c) 
