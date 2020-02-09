@@ -8,7 +8,7 @@ describe Game do
   end
 
   it 'Game.new(player)' do
-    subject = Game.new(Player_1)
+    subject.add_player(Player_1)
     expect(subject.player).to eq(Player_1)
   end
 
