@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -7,12 +8,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rps' do
-    @player_name = params[:player_name]
+    $game = Game.new(params[:player_name])
+    @game = $game
     erb :rps
   end
 
+  post '/move_choice' do
+    $game.move(params[:move].to_s)
+    redirect '/result'
+  end
+
   get '/result' do
-    @move_choice = params[:move]
+    @game = $game
     erb :result
   end
 
