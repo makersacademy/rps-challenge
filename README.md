@@ -1,7 +1,6 @@
-# RPS Challenge
+# Rock Paper Scissors (Spock Lizard) Challenge
 
 This programme is based on the Makers Academy weekend challenge 3. [Click here for the original README.md](ORIGINAL_README.md).
-
 
 Task
 ----
@@ -21,53 +20,41 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+As the marketeers want something more extensive than just the usual rock, paper & scissors game, I have extended functionality to include the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ ), which adds the Spock and lizard options.
 
 
-## Bonus level 1: Multiplayer
+How to use the program
+-----
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+### Installing ###
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+1. Clone this repo to your local computer
+2. Run the command gem install bundle (if you don't have bundle already)
+3. Run the command 'bundle' in the project directory to ensure you have all the necessary gems
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+### Running ###
 
-## Basic Rules
+This programme is run on a web browser using Ruby and the Sinatra library in the back end.
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+To run the programme, execute the following in terminal:
 
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
 ```
+$ rackup config.ru -p 4567
+```
+Then go to the relevant port in your browser of choice, eg using the url http://localhost:4567/.
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+Rspec and Capybara have been used for testing purposes.
+
+## Further objectives ##
+
+The following is a list of objectives I achieved, in addition to the user requirements:
+
+  * Follow the TDD process, and have all tests passing
+  * High test coverage (>99%)
+  * Elegant code: every class has a clear responsibility, methods are short etc.
+
+## Features to be added ##
+
+In the future, I would like to implement the following features:
+- Score tracking
+- Ability to switch between just Rock, Paper, Scissors, and having the additional Spock and Lizard options
