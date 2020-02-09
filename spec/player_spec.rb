@@ -9,4 +9,11 @@ describe Player do
       expect(ryan.name).to eq 'Ryan'
     end
   end
+
+  describe '#action' do
+    it 'sets an action for the player' do
+      ryan.set_action("scissors")
+      expect(ryan.action).to eq "scissors"
+    end
+  end
 end 
