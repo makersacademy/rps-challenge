@@ -1,9 +1,15 @@
 require './app/models/game'
+require './app/models/player'
 
 describe Game do
 
-  it 'Game class' do
+  before(:each) do
+    Player_1 = double(Player)
+  end
 
+  it 'Game.new(player)' do
+    subject = Game.new(Player_1)
+    expect(subject.player).to eq(Player_1)
   end
 
 end

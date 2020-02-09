@@ -1,9 +1,11 @@
+require 'spec_helper'
 require './app/controllers/1_player_rps_controller'
 
-describe RPS do
+feature 'RPS' do
 
-  it 'expect RPS' do
-
+  scenario 'expect home page to have content (Enter Player 1)' do
+    visit('/')
+    expect(page).to have_content('Enter Player 1')
   end
 
 end
