@@ -7,13 +7,13 @@ Rock, Paper, Scissors Ruby Challenge - original README [here](https://github.com
 
 ## <a name="Outline">Outline</a>
 
-Build a small Rock, Paper, Scissors webapp in Ruby.
+A Rock, Paper, Scissors game web app, built in Ruby.
 
 ## <a name="Task">The Task</a>
 
-This challenge starts with going over the foundational skills from this week's Battle challenge and then allowed me to play around with formatting options like background images.
+This challenge starts with going over the foundational skills from this week's Battle challenge, such as GET and POST HTTP requests and MVC approach to web apps. It also allowed me to play around with some more advanced formatting such as with background images.
 
-## <a name="User Stories">User Stories</a>
+## <a name="User_Stories">User Stories</a>
 
 ```
 As a marketeer
@@ -27,7 +27,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-## <a name="Installation Instructions">Installation Instructions</a>
+## <a name="Installation_Instructions">Installation Instructions</a>
 
 1. Clone this repo to your local machine and cd into it
 2. Run the command `gem install bundle` (if you don't have bundle already)
@@ -36,7 +36,7 @@ I would like to be able to play rock/paper/scissors
 5. Visit `localhost:9292` in your browser and play away!
 6. Tests can be run using Rspec. Run command: `rspec`
 
-## <a name="Example run">Example run</a>
+## <a name="Example_run">Example run</a>
 
 Here is a functional example of how the webapp runs:
 
@@ -54,6 +54,6 @@ The game will then tell you who won, you or the computer.
 Or it could be a draw. In either case, click 'Play again' to start another game. 
 ![Draw](https://imgur.com/eBUGSZq)
 
-## <a name="Future work">Future work</a>
+## <a name="Future_work">Future work</a>
 
-I was able to complete the program to specification, using RSpec and Capybara to test drive it. In future, I will work on allowing a second player so that two humans can play against eachother. I would also like to make the userface more graphical, perhaps animating the win and loss. 
+I was able to complete the program to specification, using RSpec and Capybara to test drive it. In future, I will work on allowing a second player so that two humans can play against eachother. I would also like to make the user interface more graphical, perhaps by animating the win and loss. 
