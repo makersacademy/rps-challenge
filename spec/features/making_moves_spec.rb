@@ -5,7 +5,7 @@ feature 'making moves' do
   scenario 'player chooses move' do
     player_chooses_rock
 
-    expect(page).to have_content('Liz chooses Rock')
+    expect(page).to have_content('Liz chooses rock')
   end
 
   scenario 'player asks for computer move' do

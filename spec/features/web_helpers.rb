@@ -5,6 +5,6 @@ def sign_in_and_play
 end
 
 def player_chooses_rock
-  choose 'Rock'
+  choose 'rock'
   click_on 'Play'
 end

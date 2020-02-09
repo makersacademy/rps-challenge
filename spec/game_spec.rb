@@ -14,7 +14,7 @@ describe Game do
 
   describe '#select_winner' do 
     it 'accepts two moves and returns a winner' do
-      subject.select_winner(player_1: 'rock', opponent: 'scissors')
+      subject.select_winner(player: 'rock', opponent: 'scissors')
       expect(subject.winner).to eq 'Player 1'
     end
 

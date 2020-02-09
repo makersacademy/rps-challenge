@@ -21,21 +21,23 @@ class Game
   #   @computer_move = MOVES.sample
   # end
 
-  def select_winner(player_1: @player.move, opponent: @opponent.move)
-    if player_1 == opponent
+  def select_winner(player: @player.move, opponent: @opponent.move)
+    if player == opponent
       @winner = "No one"
-    elsif player_1 == 'rock' && opponent == 'paper'
+    elsif player == 'rock' && opponent == 'paper'
       @winner = 'Player 2'
-    elsif player_1 == 'rock' && opponent == 'scissors'
+    elsif player == 'rock' && opponent == 'scissors'
       @winner = 'Player 1'
-    elsif player_1 == 'scissors' && opponent == 'rock'
+    elsif player == 'scissors' && opponent == 'rock'
       @winner = 'Player 2'
-    elsif player_1 == 'scissors' && opponent == 'paper'
+    elsif player == 'scissors' && opponent == 'paper'
       @winner = 'Player 1'
-    elsif player_1 == 'paper' && opponent == 'scissors'
+    elsif player == 'paper' && opponent == 'scissors'
       @winner = 'Player 2'
-    elsif player_1 == 'paper' && opponent == 'rock'
+    elsif player == 'paper' && opponent == 'rock'
       @winner = 'Player 1'
+    else 
+      "this isn't working"
     end
   end
 

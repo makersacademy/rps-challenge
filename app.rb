@@ -34,7 +34,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/winner' do
-    @game.select_winner
+    p @game.select_winner
+    p @game.winner
     erb :winner
   end
 
