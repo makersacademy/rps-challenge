@@ -19,4 +19,8 @@ class Game
   def computer_move
     POSSIBLE_MOVES[rand(POSSIBLE_MOVES.count)]
   end
+
+  def winner
+    "Computer"
+  end
 end

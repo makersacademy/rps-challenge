@@ -31,4 +31,11 @@ describe Game do
       expect(game.computer_move).to eq("paper")
     end
   end
+
+  describe '#winner' do
+    it 'should return the winner' do
+      allow(game).to receive(:rand).and_return(1)
+      expect(game.winner).to eq "Computer"
+    end
+  end
 end
