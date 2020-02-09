@@ -1,6 +1,6 @@
 feature 'Selecting move' do
-  scenario 'select rock' do
+  scenario 'three moves show' do
     start_playing
-    expect(page).to have_button :rock
+    expect(page).to have_select('move', :options => ['Rock', 'Paper','Scissors'])
   end
 end
