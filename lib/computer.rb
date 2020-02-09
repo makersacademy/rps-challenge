@@ -1,4 +1,4 @@
-# require 'game'
+require 'game'
 
 class Computer 
 
@@ -9,7 +9,7 @@ class Computer
   end
 
   def choose
-    @weapon = [:rock, :paper, :scissors].sample
+    @weapon = Game::WEAPONS.sample
   end
 
 end

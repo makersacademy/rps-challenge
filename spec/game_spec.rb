@@ -23,4 +23,10 @@ describe Game do
     end
   end
 
+  # describe '#compute_result' do
+  #   it "computes a winner" do
+  #     expect(game.compute_result).to eq(player_1)
+  #   end
+  # end
+
 end
