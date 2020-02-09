@@ -21,4 +21,8 @@ feature '/' do
     expect($game.player.name).to eq('Bob')
   end
 
+  scenario 'expect play button' do
+    expect(page). to have_button('Play')
+  end
+  
 end
