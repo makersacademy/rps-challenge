@@ -72,18 +72,27 @@ Class models:
 
 1.
 
-| Object: |**Player**| | | |
-|:------:|:------------:|:-:|:-:|:-:|
-|**Attributes:**|Name|| | |
-|**Methods:**|||||
+| Object: |**Player**| | 
+|:------:|:------------:|:-:|
+|**Attributes:**|Name|Move|
+|**Methods:**|Choose(move)||
+
+2. 
+
+| Object: |**Computer**| | 
+|:------:|:------------:|:-:|
+|**Attributes:**|Name|Move|
+|**Methods:**|generate_move||
 
 2.
 
 | Object: |**Game**| | | 
 |:------:|:------------:|:-:|:-:|
 |**Class methods:**|Create|Instance | 
-|**Attributes:**|Player| Player_move | 
-|**Methods:**|Computer_move| select_winner | move |
+|**Attributes:**|Player| Opponent | Winner |
+|**Methods:**|select_winner | | |
+
+
 
 ### Tests ###
 
@@ -98,9 +107,11 @@ Class models:
 1. Player: player has a name
 2. Game: can create a game with a player
 3. Player: can choose a move
-4. Game: runs a random computer move
-5. Game: compares user move against computer
-6. Game: declares a winner
+4. Game: can create a game with a player and a computer
+4. Computer: has same pattern as player
+5. Computer: selects a random move
+6. Game: compares user move against computer
+7. Game: declares a winner
 
 **Edge cases**
 1. Player doesn't enter a name
