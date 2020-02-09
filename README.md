@@ -43,15 +43,19 @@ Here is a functional example of how the webapp runs:
 Run `rackup` in your command line, and visit `localhost:9292` in your browser
 
 Enter your name and click 'Begin game' to start
+
 ![Homepage](https://i.imgur.com/metIxZ2.png)
 
 That will take you here. Select your move:
+
 ![Move](https://i.imgur.com/HnR5Vep.png)
 
 The game will then tell you who won, you or the computer.
+
 ![Win](https://i.imgur.com/2RyZmo2.png)
 
-Or it could be a draw. In either case, click 'Play again' to start another game. 
+Or it could be a draw. In either case, click 'Play again' to start another game.
+
 ![Draw](https://i.imgur.com/eBUGSZq.png)
 
 ## <a name="Future_work">Future work</a>
