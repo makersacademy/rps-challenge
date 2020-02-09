@@ -3,7 +3,7 @@ feature 'testing computer as player' do
     visit('/')
     fill_in('player_1_name', with: "Tango")
     click_button("Submit")
-    expect(page).to have_content("Tango vs Computer")
+    expect(page).to have_content("Tango versus Computer")
   end
 
   scenario 'computer can make a move' do

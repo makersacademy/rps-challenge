@@ -41,27 +41,49 @@ h1 {
   border-radius: 15px;
   font-size: 50px;
   text-align:center;
+  display : flex;
+  flex-direction: column;
+  justify-content : space-between;
+  padding: 50px;
 }
 
-.inputs {
+.spacing {
 	display : flex;
 	justify-content : space-between;
 }
 
-button {
-  background-color: #cc99ff;
-  font-size: 40px;
-  color: #6600cc;
-  padding: 10px;
-  border-radius: 15px;
-  margin: auto;
-  display: block;
-  width: 80%;
+input {
+    border-radius: 50%;
+    padding: 30px;
+    border-color: white;
+    color: transparent;
 }
 
-button:hover{
-  background: #3B5C76;
+input[value="Rock"] {
+    background: url("https://cdn.shopify.com/s/files/1/1061/1924/products/61_large.png?v=1571606118") no-repeat center;
+    background-size: 70%;
+}
+input[value="Paper"] {
+    background: url("https://cdn.shopify.com/s/files/1/1061/1924/products/Raised_Hand_With_Fingers_Splayed_Emoji_Icon_ios10_large.png?v=1571606092") no-repeat center;
+    background-size: 60%;
+}
+input[value="Scissors"] {
+    background: url("https://cdn.shopify.com/s/files/1/1061/1924/products/Victory_Hand_Emoji_Icon_ios10_large.png?v=1571606113") no-repeat center;
+    background-size: 30%;
+}
+input[value="Spock"] {
+    background: url("https://cdn.shopify.com/s/files/1/1061/1924/products/Vulcan_Salute_Emoji_Icon_ios10_large.png?v=1571606113") no-repeat center;
+    background-size: 60%;
+}
+input[value="Lizard"] {
+    background: url("https://cdn.shopify.com/s/files/1/1061/1924/products/Lizard_Iphone_Emoji_JPG_large.png?v=1571606114") no-repeat center;
+    background-size: 60%;
+}
+
+input:hover{
+  background: #cc99ff;
   color: white;
+  cursor: pointer;
 }
 
 </style>
@@ -71,24 +93,27 @@ button:hover{
 
   <body>
     <h1>Rock, Paper, Scissors, (Spock, Lizard)</h1>
-
-<%= @game.player_1.name %> vs
-<%= @game.player_2.name %>
-</br>
-</br>
-<%= @game.player_1.name %>, make your choice:
-<% if @game.player_2.name == "Computer" %>
-<form action="/result" method="post">
-<% else %>
-<form action="/player_2_turn" method="post">
-<% end %>
-  <input type="submit" name="player_1_option" value="Rock">
-  <input type="submit" name="player_1_option" value="Paper">
-  <input type="submit" name="player_1_option" value="Scissors">
-  <input type="submit" name="player_1_option" value="Spock">
-  <input type="submit" name="player_1_option" value="Lizard">
-</form>
-
+    <div id="content">  
+      <div class="spacing">
+        <div><%= @game.player_1.name %> versus <%= @game.player_2.name %></div>
+      </div>
+      <div>
+        <%= @game.player_1.name %>, make your choice:
+      </div>
+      <div>
+        <% if @game.player_2.name == "Computer" %>
+        <form action="/result" method="post">
+        <% else %>
+        <form action="/player_2_turn" method="post">
+        <% end %>
+          <input type="submit" name="player_1_option" value="Rock">
+          <input type="submit" name="player_1_option" value="Paper">
+          <input type="submit" name="player_1_option" value="Scissors">
+          <input type="submit" name="player_1_option" value="Spock">
+          <input type="submit" name="player_1_option" value="Lizard">
+        </form>
+      </div>
+    </div>
 
 </body>
 
