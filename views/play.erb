@@ -1,3 +1,77 @@
+<html>
+<head>
+
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+* {
+  font-family: 'Indie Flower', cursive;
+  margin: 0px auto;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body { background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%); }
+
+h1 { 
+  font-family: 'Indie Flower', cursive;
+  background-color: #cc99ff;
+  padding: 10px;
+  text-align: center;
+  width: 80%;
+  height: 15%;
+  color: white;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  border-radius: 15px;
+  font-size: 70px;
+  margin: auto;
+}
+
+#content {
+  background-color: white;
+  color: #9933ff;
+  position: fixed;
+  width: 80%;
+  height: 60%;
+  top: 30%;
+  left: 10%;
+  border-radius: 15px;
+  font-size: 50px;
+  text-align:center;
+}
+
+.inputs {
+	display : flex;
+	justify-content : space-between;
+}
+
+button {
+  background-color: #cc99ff;
+  font-size: 40px;
+  color: #6600cc;
+  padding: 10px;
+  border-radius: 15px;
+  margin: auto;
+  display: block;
+  width: 80%;
+}
+
+button:hover{
+  background: #3B5C76;
+  color: white;
+}
+
+</style>
+
+
+</head>
+
+  <body>
+    <h1>Rock, Paper, Scissors, (Spock, Lizard)</h1>
+
 <%= @game.player_1.name %> vs
 <%= @game.player_2.name %>
 </br>
@@ -14,3 +88,10 @@
   <input type="submit" name="player_1_option" value="Spock">
   <input type="submit" name="player_1_option" value="Lizard">
 </form>
+
+
+</body>
+
+
+
+</html>

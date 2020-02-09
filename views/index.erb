@@ -1,16 +1,96 @@
-Rock Paper Scissors (Spock Lizard)
-</br>
-</br>
-<form action="/names" method="post">
-  <label for="player_1_name">Player 1 name:</label>
-  <input type="text" name="player_1_name" required/>
-  </br>
-  </br>
-  <label for="player_2_name">Player 2 name:</label>
-  <input type="text" name="player_2_name">
-  </br>
-  (Leave blank to play the computer!)
-  </br>
-  </br>
-  <button type="submit">Submit</button>
-</form>
+<html>
+<head>
+
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+* {
+  font-family: 'Indie Flower', cursive;
+  margin: 0px auto;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body { background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%); }
+
+h1 { 
+  font-family: 'Indie Flower', cursive;
+  background-color: #cc99ff;
+  padding: 10px;
+  text-align: center;
+  width: 80%;
+  height: 15%;
+  color: white;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  border-radius: 15px;
+  font-size: 70px;
+  margin: auto;
+}
+
+#content {
+  background-color: white;
+  color: #9933ff;
+  position: fixed;
+  width: 80%;
+  height: 60%;
+  top: 30%;
+  left: 10%;
+  border-radius: 15px;
+  font-size: 50px;
+  text-align:center;
+}
+
+.inputs {
+	display : flex;
+	justify-content : space-between;
+}
+
+button {
+  background-color: #cc99ff;
+  font-size: 40px;
+  color: #6600cc;
+  padding: 10px;
+  border-radius: 15px;
+  margin: auto;
+  display: block;
+  width: 80%;
+}
+
+button:hover{
+  background: #3B5C76;
+  color: white;
+}
+
+</style>
+
+
+</head>
+
+  <body>
+    <h1>Rock, Paper, Scissors, (Spock, Lizard)</h1>
+
+    <div id="content">
+      <form action="/names" method="post">
+        <div class="inputs">
+          <div class="input">
+            <label for="player_1_name">Player 1 name:</label></br>
+            <input class="w3-input" type="text" name="player_1_name" required/>
+          </div>
+          <div class="input">
+            <label for="player_2_name">Player 2 name:</label></br>
+            <input class="w3-input" type="text" name="player_2_name">
+            <p style="font-size: 30px; color: #cc99ff;">(Leave blank to play the computer!)</p>
+          </div>
+        </div>
+        </br>
+        <button type="submit">Submit</button>
+      </form>
+    <div>
+  </body>
+
+
+
+</html>
