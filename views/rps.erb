@@ -1,1 +1,4 @@
-<%= @player_name %>
+<p>Are you feeling lucky <%= @player_name %>?</p>
+<form action="/result" method="get">
+  <input type="submit" name="rock">
+</form>
