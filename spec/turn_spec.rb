@@ -20,4 +20,31 @@ end
     expect(turn.opponent_shape).to eq :rock
     end
   end
+
+  context 'end game' do
+    subject(:win_turn) {turn}
+    subject(:lose_turn) {described_class.new(lose_options) }
+    subject(:draw_turn) {described_class.new(draw_options) }
+
+    let(:lose_options) { {"player_name"=> "Barri", "player_shape" => :rock, "opponent_shape" => :paper } }
+    let(:draw_options) { {"player_name"=> "Barri", "player_shape" => :rock, "opponent_shape" => :rock }}
+
+    describe '#win?' do
+      it 'returns true if player_shape is :rock and opponent_shape is :scissors' do
+      expect(win_turn.win?).to eq true
+      end
+    end
+
+    describe '#lose?' do
+      it 'returns true if player_shape is :rock and opponent_shape is :paper' do
+      expect(lose_turn.lose?).to eq true
+      end
+    end
+    
+    describe '#draw?' do
+      it 'returns true if player_shape is :rock and opponent_shape is :rock' do
+      expect(draw_turn.draw?).to eq true
+      end
+    end
+  end
 end

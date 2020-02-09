@@ -20,7 +20,7 @@ class Rsp < Sinatra::Base
   end
 
   post '/play' do  
-    session[:player_shape] = params[:shape]
+    session[:player_shape] = params[:shape].downcase.to_sym
     session[:opponent_shape]= Opponent.new.shape
     redirect '/play'
   end

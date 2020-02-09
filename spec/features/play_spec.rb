@@ -3,7 +3,7 @@ require 'spec_helper'
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
 feature 'Play the game' do
-  PLAY_SEED = 221563
+  PLAY_SEED = 221563 # This is a option for scissors
   before do
     visit('/')
     fill_in 'name', with: 'Barri'
@@ -34,6 +34,30 @@ feature 'Play the game' do
     click_button "Rock"
     expect(page).to have_content "Opponent chose Scissors!"
   end
+  # I want to see if I win
+context 'end game' do
+  before do 
+    srand(PLAY_SEED)
+  end
+
+  scenario 'I win' do
+     # we make this seed so the computer always get scissors 
+    click_button "Rock"
+    expect(page).to have_content 'You win!'
+  end
+
+  scenario 'I lose' do
+     # we make this seed so the computer always get scissors 
+    click_button "Paper"
+    expect(page).to have_content 'You lose!'
+  end
+
+  scenario 'I draw' do
+    # we make this seed so the computer always get scissors 
+   click_button "Scissors"
+   expect(page).to have_content 'You draw!'
+ end
+end
   # we now set possible messages  for the computer to choose
   def possible_messages
     [:rock, :paper, :scissors].map { |shape| "Opponent chose #{shape.to_s.capitalize}!" }
