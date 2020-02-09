@@ -1,3 +1,11 @@
-<p><%= @game.player.name.capitalize %> chooses <%= @game.player.move.capitalize %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel=”stylesheet” type=”text/css” href=”/style.css” />
+  </head>
+  <body>
+    <p><%= @game.player.name.capitalize %> chooses <%= @game.player.move.capitalize %></p>
 
-<a href="/winner">See computer's move</a>
+    <a href="/winner">See computer's move</a>
+  </body>
+</html>

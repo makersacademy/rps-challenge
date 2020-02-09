@@ -1,22 +1,30 @@
-<p><%= @game.player.name.capitalize %> vs <%= @game.opponent.name.capitalize %> </p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel=”stylesheet” type=”text/css” href=”/style.css” />
+  </head>
+  <body>
+    <p><%= @game.player.name.capitalize %> vs <%= @game.opponent.name.capitalize %> </p>
 
-<form action="/player_moves" method="post">
-  <fieldset>
-    <legend>Enter your move</legend>
-    <div>
-      <input type="radio" name="move" id="rock" value="rock">
-      <label for="pock">rock</label>
-    </div>
-    <div>
-      <input type="radio" name="move" id="paper" value="paper">
-      <label for="paper">paper</label>
-    </div>
-    <div>
-      <input type="radio" name="move" id="scissors" value="paper">
-      <label for="scissors">scissors</label>
-    </div>
-    <div>
-      <input type="submit" value="Play">
-    </div>
-  </fieldset>
-</form>
+    <form action="/player_moves" method="post">
+      <fieldset>
+        <legend>Enter your move</legend>
+        <div>
+          <input type="radio" name="move" id="rock" value="rock">
+          <label for="pock">rock</label>
+        </div>
+        <div>
+          <input type="radio" name="move" id="paper" value="paper">
+          <label for="paper">paper</label>
+        </div>
+        <div>
+          <input type="radio" name="move" id="scissors" value="paper">
+          <label for="scissors">scissors</label>
+        </div>
+        <div>
+          <input type="submit" value="Play">
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
