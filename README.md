@@ -1,7 +1,6 @@
 # Rock Paper Scissors Challenge #
 
-
-*This programme does...this (programme description)*
+This programme allows a user to play rock paper scissors against the computer.
 
 I created this programme as part of a challenge at [Makers Academy](https://makers.tech/). See [Requirements](#Requirements) for more information on the programme's requirements.
 
@@ -20,6 +19,8 @@ I created this programme as part of a challenge at [Makers Academy](https://make
 3. When the installation completes, run `bundle`
 
 ## Useage ##
+
+This is a web app which you can run on your local server. You will need to use the command line and a browser. In the command line type:
 
 ```shell
 $ rackup config.ru -p 9292
