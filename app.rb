@@ -20,13 +20,20 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
+    redirect '/result' if $game.current_player.action
+
     @current_player = $game.current_player
     erb :play
   end
 
+  get '/result' do
+    @winner = $game.winner($game.player_1, $game.player_2)
+      
+    erb :result
+  end
+
   post '/action' do
-    # puts params
-    $game.current_player.set_action(params[:weapon].to_sym)
+    $game.current_player.set_action(params[:weapon])
     $game.switch_turns
     redirect '/play'
   end

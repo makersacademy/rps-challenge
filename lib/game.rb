@@ -19,20 +19,34 @@ class Game
     @current_player = opponent_of(current_player)
   end
 
+  def winner(player_1, player_2)
+    p player_1
+    p player_2
+    if player_1.action == "Rock" && player_2.action == "Scissors"
+      return "#{player_1.name} Wins!"
+      puts 'here'
+    elsif player_1.action == "Scissors" && player_2.action == "Paper"
+      return "#{player_1.name} Wins!"
+    elsif player_1.action == "Paper" && player_2.action == "Rock"
+      return "#{player_1.name} Wins!"
+    elsif player_1.action == "Rock" && player_2.action == "Paper"
+      return "#{player_2.name} Wins!"
+    elsif player_1.action == "Paper" && player_2.action == "Scissors"
+      return "#{player_2.name} Wins!"
+    elsif player_1.action == "Scissors" && player_2.action == "Rock"
+      return "#{player_2.name} Wins!"
+    elsif player_1.action == "Paper" && player_2.action == "Paper"
+      return "It's a DRAW!"
+    elsif player_1.action == "Rock" && player_2.action == "Rock"
+      return "It's a DRAW!"
+    elsif player_1.action == "Scissors" && player_2.action == "Scissors" 
+      return "It's a DRAW!"
+    end
+  end 
+  
   private
 
   def opponent_of(the_player)
     @players.select { |player| player != the_player}.first
   end
-  
-
-  # def winner(player_1, player_2)
-  #   if player_1.option == scissors && player_2.option == paper ? player_1 wins : player_2 wins
-  #   if player_1.option == rock && player_2.option == paper ? player_2 wins : player_1 wins 
-  #   if player_1.option == scissors && player_2.option == rock ? player_1 wins : player_2 wins
-  #   if player_1.option == player_2.option
-  #     return 
-  #     "It's a DRAW!"
-  # end
-  
 end
