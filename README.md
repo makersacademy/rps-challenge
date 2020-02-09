@@ -22,11 +22,16 @@ _functionality:_
 
 Ruby, Sinatra, HTML, CSS
 
+<<<<<<< HEAD
 ###### Visit
 _[rock-ps.herokuapp.com](https://rock-ps.herokuapp.com/)_
 
 ###### Views
 <img src="public/rps.png" width="500"> &nbsp;  &nbsp; <img src="public/rpsmobile.png" width="200">
+=======
+###### How to run
+[link tba](link)
+>>>>>>> 7aca4d3ae9cb527cf87b4f882f0d2f72e275e21f
 
 ###### Testing
 * Feature testing with Capybara: `git clone`, `bundle`, and `rackup`
@@ -34,6 +39,7 @@ _[rock-ps.herokuapp.com](https://rock-ps.herokuapp.com/)_
 * Browser view/test [here](https://rock-ps.herokuapp.com/)
 
 ###### notes
+<<<<<<< HEAD
 This was the 3rd weekend exercise; completed, but will revisit to improve. 
 * I watched Sam Morgan's video walkthrough to help navigate the game building exercise.
 <br>
@@ -44,3 +50,15 @@ To revisit for:
 
 ###### Collaborators
 _solo_ [Myrtle](https://github.com/Mrtly) ☺
+=======
+This was the 3rd weekend exercise; completed but will revisit to improve! 
+* I watched Sam Morgan's video walkthrough to help navigate the exercise.
+<br>
+To revisit:<br>
+
+- [ ] For better layouts / media queries
+- [ ] Custom font for emojis
+
+###### Collaborators
+_solo_ [Myrtle](https://github.com/Mrtly) 
+>>>>>>> 7aca4d3ae9cb527cf87b4f882f0d2f72e275e21f
