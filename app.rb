@@ -14,7 +14,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move_choice' do
-    $game.move(params[:move].to_s)
+    $game.choose(params[:move].to_s)
     redirect '/result'
   end
 

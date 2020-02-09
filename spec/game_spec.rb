@@ -9,9 +9,9 @@ describe Game do
     end
   end
   
-  describe '#move(selection)' do
+  describe '#choose(move)' do
     it 'should set the player move' do
-      expect(game).to respond_to(:move).with(1).argument
+      expect(game).to respond_to(:choose).with(1).argument
     end
   end
 
@@ -20,7 +20,7 @@ describe Game do
       expect(game.player_move).to eq("rock")
     end
     it 'should return the player move' do
-      game.move("scissors")
+      game.choose("scissors")
       expect(game.player_move).to eq("scissors")
     end
   end
@@ -32,10 +32,11 @@ describe Game do
     end
   end
 
-  describe '#winner' do
-    it 'should return the winner' do
+  describe '#print_winner' do
+    it 'should return who wins' do
+      game.choose("scissors")
       allow(game).to receive(:rand).and_return(1)
-      expect(game.winner).to eq "Computer"
+      expect(game.print_winner).to eq "Computer wins!"
     end
   end
 end
