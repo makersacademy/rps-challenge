@@ -43,7 +43,7 @@ $ rackup config.ru -p 4567
 ```
 Then go to the relevant port in your browser of choice, eg using the url http://localhost:4567/.
 
-RSpec and Capybara have been used for testing purposes.
+RSpec and Capybara have been used for testing purposes. Feature and unit tests can be found in the spec directory.
 
 ## Further objectives ##
 
@@ -52,9 +52,11 @@ The following is a list of objectives I aimed to achieve, in addition to the use
   * Follow the TDD process, and have all tests passing
   * High test coverage (>99%)
   * Elegant code: every class has a clear responsibility, methods are short etc.
+  * An option to play again after a game has finished
+  * Incorporation of both single and multiplayer options
 
 ## Features to be added ##
 
 In the future, I would like to implement the following features:
 - Score tracking
-- Ability to switch between using just Rock, Paper, Scissors, and having the additional Spock and Lizard options
+- Ability to switch between a game using just Rock, Paper, Scissors, and having the additional Spock and Lizard options
