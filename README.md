@@ -23,12 +23,17 @@ $ cd rps-challenge
 $ gem install bundle
 $ bundle
 ```
-3. Run the app in the terminal:
+3. Run Rspec for tests and coverage, then rubocop for linting
+```
+$ rspec
+$ rubocop
+```
+4. Run the app on a local server and play on the broswer: http://localhost:4567/
 
 ```Shell
-$ irb
-> require './lib/boris_bikes.rb'
+$ rackup config.ru -p 4567
 ```
+
 ## <a name="Functional_Descriptions">Functional Descriptions</a>
 
 As part of the system's functionality:
@@ -43,9 +48,7 @@ As part of the system's functionality:
 
 ### Basic Rules
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+![rules](rules.jpg)
 
 ## <a name="User_Stories">User Stories</a>
 ```
@@ -76,5 +79,5 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 ### Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+* Add styling
 
