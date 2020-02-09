@@ -26,4 +26,10 @@ describe Game do
     end
   end
 
+  describe " #computer_choice" do
+    it "the computer can return it's own given value" do
+      srand(67809)
+      expect(subject.computer_choice).to eq("Scissors")
+    end
+  end 
 end
