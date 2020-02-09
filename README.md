@@ -1,5 +1,5 @@
 ### Rock Paper Scissors
-========================
+<hr>
  
 ###### The idea
 A web browser game, built with Ruby, based on HTTP and response-request mechanisms, using the Sinatra library, and Capybara/Rspec for testing.
@@ -23,7 +23,7 @@ _functionality:_
 Ruby, Sinatra, HTML, CSS
 
 ###### How to run
-[]()
+[link tba](link)
 
 ###### Testing
 * Feature testing with Capybara: `git clone`, `bundle`, and `rackup`
@@ -31,8 +31,13 @@ Ruby, Sinatra, HTML, CSS
 * Browser testing on : _tba_
 
 ###### notes
-This was the 3rd weekend exercise. Completed, but can always improve! <br>
-_I watched Sam Morgan's video walkthrough to help navigate the exercise._
+This was the 3rd weekend exercise; completed but will revisit to improve! 
+* I watched Sam Morgan's video walkthrough to help navigate the exercise.
+<br>
+To revisit:<br>
+
+- [ ] For better layouts / media queries
+- [ ] Custom font for emojis
 
 ###### Collaborators
-[Myrtle](https://github.com/Mrtly) _solo_
+_solo_ [Myrtle](https://github.com/Mrtly) 
