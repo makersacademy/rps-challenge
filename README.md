@@ -85,4 +85,10 @@ SimpleCov.start
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
 
-![flow diagram](https://raw.githubusercontent.com/DavidStewartLDN/rps_challenge/master/img/index.jpg)
+![index](https://raw.githubusercontent.com/DavidStewartLDN/rps_challenge/master/img/index.png)
+
+
+![choice](https://raw.githubusercontent.com/DavidStewartLDN/rps_challenge/master/img/choice.png)
+
+
+![result](https://raw.githubusercontent.com/DavidStewartLDN/rps_challenge/master/img/result.png)
