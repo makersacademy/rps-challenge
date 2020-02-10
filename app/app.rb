@@ -14,7 +14,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    p params
     player_1 = Player.new(params[:player_1])
     player_2 = Player.new(params[:player_2])
     @game = Game.create(player_1, player_2)
@@ -22,13 +21,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player_1_choice/:id' do
-    p params
     @game.player_1.set_choice(params["id"])
     redirect '/player_2'
   end
 
   post '/player_2_choice/:id' do
-    p params
     @game.player_2.set_choice(params["id"])
     redirect '/result'
   end
@@ -46,7 +43,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    @outcome = @game.outcome
+    p @game.player_1.show_choice
+    p @game.player_2.show_choice
+    p @game.result
+    p @game.outcome
+    @game.score_change
     erb :result
   end
   

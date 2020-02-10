@@ -1,6 +1,14 @@
 require_relative 'player'
 
 class Game
+  GAME_RULES = {
+    Scissors: {Scissors: :draw, Paper: :win, Rock: :lose, Lizard: :win, Spock: :lose},
+    Paper: {Scissors: :lose, Paper: :draw, Rock: :win, Lizard: :lose, Spock: :lose},
+    Rock: {Scissors: :win, Paper: :lose, Rock: :draw, Lizard: :win, Spock: :lose},
+    Lizard: {Scissors: :lose, Paper: :win, Rock: :lose, Lizard: :draw, Spock: :win},
+    Spock: {Scissors: :win, Paper: :lose, Rock: :win, Lizard: :lose, Spock: :draw}
+  }
+  
   attr_reader :player_1, :player_2, :score_1, :score_2
 
   def self.create(player_1, player_2)
@@ -19,80 +27,24 @@ class Game
   end
 
   def outcome
-    if player_1.choice == "Scissors" && player_2.choice == "Scissors"
-      "It's a draw!"
-    elsif player_1.choice == "Scissors" && player_2.choice == "Rock"
-      @score_2 += 1
-      "#{player_2.name} wins!"
-    elsif player_1.choice == "Scissors" && player_2.choice == "Paper"
-      @score_1 += 1
+    if @result == :win
       "#{player_1.name} wins!"
-    elsif player_1.choice == "Scissors" && player_2.choice == "Lizard"
-      @score_1 += 1
-      "#{player_1.name} wins!"
-    elsif player_1.choice == "Scissors" && player_2.choice == "Spock"
-      @score_2 += 1
+    elsif @result == :lose
       "#{player_2.name} wins!"
-    ###
-    elsif player_1.choice == "Rock" && player_2.choice == "Rock"
-      "It's a draw!"
-    elsif player_1.choice == "Rock" && player_2.choice == "Paper"
-      @score_2 += 1
-      "#{player_2.name} wins!"
-    elsif player_1.choice == "Rock" && player_2.choice == "Scissors"
-      @score_1 += 1
-      "#{player_1.name} wins!"
-    elsif player_1.choice == "Rock" && player_2.choice == "Lizard"
-      @score_1 += 1
-      "#{player_1.name} wins!"
-    elsif player_1.choice == "Rock" && player_2.choice == "Spock"
-      @score_2 += 1
-      "#{player_2.name} wins!"
-    ###
-    elsif player_1.choice == "Paper" && player_2.choice == "Rock"
-      @score_1 += 1
-      "#{player_1.name} wins!"
-    elsif player_1.choice == "Paper" && player_2.choice == "Paper"
-      "It's a draw!"
-    elsif player_1.choice == "Paper" && player_2.choice == "Scissors"
-      @score_2 += 1
-      "#{player_2.name} wins!"
-    elsif player_1.choice == "Paper" && player_2.choice == "Lizard"
-      @score_2 += 1
-      "#{player_2.name} wins!"
-    elsif player_1.choice == "Paper" && player_2.choice == "Spock"
-      @score_1 += 1
-      "#{player_1.name} wins!"
-    ###
-    elsif player_1.choice == "Lizard" && player_2.choice == "Rock"
-      @score_2 += 1
-      "#{player_2.name} wins!"
-    elsif player_1.choice == "Lizard" && player_2.choice == "Paper"
-      @score_1 += 1
-      "#{player_1.name} wins!"
-    elsif player_1.choice == "Lizard" && player_2.choice == "Scissors"
-      @score_2 += 1
-      "#{player_2.name} wins!"
-    elsif player_1.choice == "Lizard" && player_2.choice == "Lizard"
-      "It's a draw!"
-    elsif player_1.choice == "Lizard" && player_2.choice == "Spock"
-      @score_1 += 1
-      "#{player_1.name} wins!"
-    ###
-    elsif player_1.choice == "Spock" && player_2.choice == "Rock"
-      @score_1 += 1
-      "#{player_1.name} wins!"
-    elsif player_1.choice == "Spock" && player_2.choice == "Paper"
-      @score_2 += 1
-      "#{player_2.name} wins!"
-    elsif player_1.choice == "Spock" && player_2.choice == "Scissors"
-      @score_1 += 1
-      "#{player_1.name} wins!"
-    elsif player_1.choice == "Spock" && player_2.choice == "Lizard"
-      @score_2 += 1
-      "#{player_2.name} wins!"
-    elsif player_1.choice == "Spock" && player_2.choice == "Spock"
+    elsif @result == :draw
       "It's a draw!"
     end
+  end
+
+  def score_change
+    if @result == :win
+      @score_1 += 1
+    elsif @result == :lose
+      @score_2 += 1
+    end
+  end
+
+  def result
+     @result = GAME_RULES[player_1.choice][player_2.choice]
   end
 end

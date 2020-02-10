@@ -90,5 +90,6 @@ $ rspec
 ```
 ## <a name="Further_Improvements">Further Improvements</a>
 
-* Add styling
-* Refactor the outcome method using a hash: [Example 1](https://stackoverflow.com/questions/39460707/ruby-how-do-i-shorten-my-method), [Example 2](https://stackoverflow.com/questions/10923486/hw-impossibility-create-a-rock-paper-scissors-program-in-ruby-without-using-c) 
+* Add styling - either inline with a div style tag, at the top of each erb or connecting css
+* Update README to include all methods
+* Ensure tests are complete
