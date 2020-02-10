@@ -1,4 +1,3 @@
-require 'Capybara'
 feature "Entering Moves" do 
     scenario 'enter player 1 move' do
         visit('/')
