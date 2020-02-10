@@ -9,7 +9,8 @@ class RockPaperScissors < Sinatra::Base
   end
   
   post '/names' do
-    $game = Game.new(Player.new(params[:player_1_name]), Player.new(params[:player_2_name]))
+    $game = Game.new(Player.new(params[:player_1_name]), 
+                     Player.new(params[:player_2_name]))
     redirect '/lets-play'
   end
 
@@ -21,7 +22,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     redirect '/result' if $game.current_player.action
-
     @current_player = $game.current_player
     erb :play
   end
