@@ -20,7 +20,7 @@ class Game
   end
 
   def compute_result
-    return "It's a draw!" if @player_1.weapon == @player_2.weapon
+    return "No one, it's a draw!" if @player_1.weapon == @player_2.weapon
     return @player_1 if RESULTS[@player_1.weapon] == @player_2.weapon
     return @player_2 if RESULTS[@player_2.weapon] == @player_1.weapon
   end

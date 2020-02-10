@@ -37,7 +37,7 @@ describe Game do
     it "can be a draw" do
       allow(player_1).to receive(:weapon).and_return(:rock)
       allow(player_2).to receive(:weapon).and_return(:rock)
-      expect(game.compute_result).to eq("It's a draw!")
+      expect(game.compute_result).to eq("No one, it's a draw!")
     end
   end
 
