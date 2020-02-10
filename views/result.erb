@@ -1,0 +1,9 @@
+<h2><%=@game.player1.name%> vs. <%=@game.luigi.name%></h2> 
+    <p><%=@game.player1.choice%></p>
+
+    <%=@result%>
+    <br>
+    <form action="/play">
+      <button class="play-again-btn" type="submit">Play Again</button>
+    </form>
+    <%=@game.luigi.choice%></p>
