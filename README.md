@@ -1,5 +1,18 @@
 # RPS Challenge
 
+Progress
+can enter names for both modes 
+gives computer output (basic)
+
+finish off against the computer first needs rules for both modes
+no /mutiplayer_play 
+make that with names and players choices 
+write tests for them both 
+needs to to look better on the eye 
+
+
+
+
 Instructions
 -------
 
