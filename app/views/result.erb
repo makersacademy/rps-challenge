@@ -1,0 +1,11 @@
+<h1><%= @game.player_1.name %>'s score: <%= @game.score_1 %> ||
+<%= @game.player_2.name %>'s score: <%= @game.score_2 %>
+</h1>
+<br>
+<h1><%= @game.outcome %></h1>
+<h2><%= @game.player_1.name %> chose <%= @game.player_1.show_choice %></h2>
+<h2><%= @game.player_2.name %> chose <%= @game.player_2.show_choice %></h2>
+<br>
+<form action="/player_1" method="post">
+  <input type="submit" value="Play again?">
+</form>

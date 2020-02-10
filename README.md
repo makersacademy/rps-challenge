@@ -1,86 +1,95 @@
-# RPS Challenge
+### [Makers Academy](http://www.makersacademy.com) - Week 3 Weekend Project 
 
-Instructions
--------
+# RPS Challenge ✊✋✌️
+[Task](#Task) | [Installation Instructions](#Installation) | [Functional Description](#Functional_Description) | [User Stories](#User_Stories) | [Objects & Methods](#Methods) | [Testing](#Testing) | [Further improvements](#Further_Improvements) |
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+![rps](rps.jpg)
 
-Task
-----
+## <a name="Task">The Task</a>
 
-Knowing how to build web applications is getting us almost there as web developers!
+The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little. Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the below user stories.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+This challenge is the third weeked challenge at [Makers Academy](https://github.com/makersacademy).
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+## <a name="Installation">Installation Instructions</a>
 
+1. Fork this repository, clone to your local machine then change into the directory:
+```
+$ git clone git@github.com:davmcgregor/rps-challenge.git
+$ cd rps-challenge
+```
+2. Load dependencies with bundle:
+```
+$ gem install bundle
+$ bundle
+```
+3. Run Rspec for tests and coverage, then rubocop for linting
+```
+$ rspec
+$ rubocop
+```
+4. Run the app on a local server and play on the broswer: http://localhost:4567/
+
+```Shell
+$ rackup config.ru -p 4567
+```
+
+## <a name="Functional_Description">Functional Description</a>
+
+As part of the system's functionality:
+
+* The marketeer can enter their name before the game
+* The marketeer is presented the choices (rock, paper and scissors)
+* The marketeer can choose one option
+* The game chooses a random option
+* A winner is declared
+
+### Basic Rules
+
+![rules](rules.jpg)
+
+## <a name="User_Stories">User Stories</a>
 ```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
-
+```
+```
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+## <a name="Methods">Objects & Methods</a>
 
-Hints on functionality
+For the user stories I created a domain model for each object, including attributes and behaviour:
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+### Game
 
+| Methods | Description |
+| --- | --- |
+| self.create(player_1, player_2) | Class method that creates a game with two players |
+| .self.instance | Class method that returns the game class instance variable |
+| initialize(player_1, player_2) | | initialize(name) |  Sets name instance vairbles taken as two arguments, and score instance variables set to 0 | 
+| outcome | Returns a win, loss or draw depending on player_1 and player_2 choice. Increments a score if a win result |
 
-As usual please start by
+### Player
 
-* Forking this repo
-* TEST driving development of your app
+| Methods | Description |
+| --- | --- |
+| initialize(name) |  Sets name and score instance variables name with argument and choice as an empty string | 
+| set_choice(choice) |  Sets the choice variable using argument | 
+| show_choice |  Returns the choice variable | 
 
+## <a name="Testing">Testing</a>
 
-## Bonus level 1: Multiplayer
+Tests were written with RSpec and Capybara. To run the tests in terminal: 
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+```bash
+$ cd rps-challenge
+$ rspec
 ```
+## <a name="Further_Improvements">Further Improvements</a>
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+* Add styling - either inline with a div style tag, at the top of each erb or connecting css
+* Update README to include all methods
+* Ensure tests are complete

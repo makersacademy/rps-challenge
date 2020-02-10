@@ -1,0 +1,21 @@
+<h1><%= @game.player_1.name %>'s score: <%= @game.score_1 %> ||
+<%= @game.player_2.name %>'s score: <%= @game.score_2 %>
+</h1>
+<br>
+<h1><%= @game.player_2.name %>'s turn: </h1>
+<h2>Pick an option: </h2>
+<form action="/player_2_choice/Scissors" method="post">
+  <input type="submit" value="Scissors">
+</form>
+<form action="/player_2_choice/Paper" method="post">
+  <input type="submit" value="Paper">
+</form>
+<form action="/player_2_choice/Rock" method="post">
+  <input type="submit" value="Rock">
+</form>
+<form action="/player_2_choice/Lizard" method="post">
+  <input type="submit" value="Lizard">
+</form>
+<form action="/player_2_choice/Spock" method="post">
+  <input type="submit" value="Spock">
+</form>
