@@ -39,9 +39,18 @@ This programme is run on a web browser using Ruby and the Sinatra library in the
 To run the programme, execute the following in terminal:
 
 ```
-$ rackup config.ru -p 4567
+$ rackup
 ```
-Then go to the relevant port in your browser of choice, eg using the url http://localhost:4567/.
+Then go to the relevant url in your browser of choice, ie http://localhost:9292/.
+
+```sh
+$ git clone git@github.com:jasylwong/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+
+![homepage](rps-challenge_homepage.png)
 
 RSpec and Capybara have been used for testing purposes. Feature and unit tests can be found in the spec directory.
 
