@@ -1,0 +1,38 @@
+<style>
+  h1 {
+    text-align: center;
+    margin-top: 1em;
+  }
+
+    h2 {
+    text-align: center;
+  }
+
+  li {
+    list-style: none;
+    text-align: center;
+  }
+</style>
+
+<h1>
+Welcome <%= @turn.player_name %>
+</h1>
+
+<h2>
+Pick your choice
+</h2>
+
+<form action='/play' method='post'>
+  <li class='submit'>
+    <input type='submit' name='shape' value='Rock'/>
+    <input type='submit' name='shape' value='Paper'/>
+    <input type='submit' name='shape' value='Scissors'/>
+  </li>
+</form>
+
+Paulo chose <%= @turn.player_shape.to_s.capitalize %>!
+
+<div id="opponent">
+  Opponent chose <%= @turn.opponent_shape.to_s.capitalize %>!
+</div>
+
