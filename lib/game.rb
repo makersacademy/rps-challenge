@@ -35,6 +35,8 @@ class Game
       @winner = @opponent
     elsif player_move == 'paper' && opponent_move == 'rock'
       @winner = @player
+    else
+      "not sure who"
     end
   end
 
