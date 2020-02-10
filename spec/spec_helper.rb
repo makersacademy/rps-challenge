@@ -1,6 +1,10 @@
+ENV['RACK_ENV'] = 'test'
+
+require 'capybara'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'web_helper'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -11,7 +15,11 @@ SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
+# require our Sinatra app file
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
+# tell Capybara about our app class
+Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|
   config.after(:suite) do

@@ -1,0 +1,9 @@
+<p>Are you feeling lucky <%= @game.player_name %>?</p>
+<form action="/move_choice" method="post">
+  <select id="move" name="move">
+    <option value="rock">Rock </option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  <input type="submit" value="3 2 1...">
+</form>
