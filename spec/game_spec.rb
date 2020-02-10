@@ -13,6 +13,18 @@ describe Game do
       expect(game.player_1).to eq player_1
     end
   end
+  
+  describe "#create" do
+    it 'creates an instance of itself' do
+      expect(described_class.create(player_1, player_2)).to be_an_instance_of(described_class)
+    end
+  end
+
+  describe "#instance" do
+    it 'creates an instance of itself' do
+      expect(described_class.instance).to be_an_instance_of(described_class)
+    end
+  end
 
   context "results" do
     def automator(player_1_option, player_2_option)
