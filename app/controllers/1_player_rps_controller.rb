@@ -1,5 +1,9 @@
 require 'sinatra/base'
 require './app/models/game'
+require './app/models/item'
+require './app/models/player'
+require './app/models/results'
+require './app/models/random'
 
 class RPS < Sinatra::Base
 
@@ -20,6 +24,11 @@ class RPS < Sinatra::Base
 
   post '/item' do
     $game.player.make_move(Item.new(params[:move]))
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :results
   end
 
 end
