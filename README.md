@@ -1,14 +1,5 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
 Task
 ----
 
@@ -28,67 +19,42 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+## Instructions
+
+#### Install ####
+
+1. Fork this repo, and clone to your local machine
+2. Run the command gem install bundle (if you don't have bundle already)
+3. When the installation completes, run bundle
+
+#### Run ####
+
+1. To start the server type `ruby app.rb` in the root folder
+2. Open your browser and connect to 'http://localhost:4567/'
+
+#### Opening page ####
+
+Here is the base page that you can enter your name into:
+
+![index](https://raw.githubusercontent.com/DavidStewartLDN/rps-challenge/master/img/index.png)
 
 
-As usual please start by
+#### Player move ####
 
-* Forking this repo
-* TEST driving development of your app
+This is where you choose your move: Rock, Paper or Scissors?
+
+![choice](https://raw.githubusercontent.com/DavidStewartLDN/rps-challenge/master/img/choice.png)
 
 
-## Bonus level 1: Multiplayer
+#### Results ####
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+Once you have made yuor chopice you will find out your results
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+![result](https://raw.githubusercontent.com/DavidStewartLDN/rps-challenge/master/img/result.png)
 
 ## Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
-
-![index](https://raw.githubusercontent.com/DavidStewartLDN/rps-challenge/master/img/index)
-
-
-![choice](https://raw.githubusercontent.com/DavidStewartLDN/rps-challenge/master/img/choice.png)
-
-
-![result](https://raw.githubusercontent.com/DavidStewartLDN/rps-challenge/master/img/result.png)
