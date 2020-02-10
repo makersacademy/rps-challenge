@@ -56,7 +56,7 @@ The game will then tell you who won, you or the computer.
 
 Or it could be a draw. In either case, click 'Play again' to start another game.
 
-![Draw](https://i.imgur.com/eBUGSZq.png)
+![Draw](https://i.imgur.com/mwujz7J.png)
 
 ## <a name="Future_work">Future work</a>
 
