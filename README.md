@@ -1,18 +1,9 @@
-# RPS Challenge
+# Rock Paper Scissors (Spock Lizard) Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+This programme is based on the Makers Academy weekend challenge 3. [Click here for the original README.md](ORIGINAL_README.md).
 
 Task
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -22,65 +13,59 @@ Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
-
+```
+```
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+As the marketeers want something more extensive than just the usual rock, paper & scissors game, I have extended functionality to include the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ ), which adds the Spock and lizard options.
 
 
-As usual please start by
+How to use the program
+-----
 
-* Forking this repo
-* TEST driving development of your app
+### Installing ###
 
+1. Clone this repo to your local computer
+2. Run the command gem install bundle (if you don't have bundle already)
+3. Run the command 'bundle' in the project directory to ensure you have all the necessary gems
 
-## Bonus level 1: Multiplayer
+### Running ###
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+This programme is run on a web browser using Ruby and the Sinatra library in the back end.
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+To run the programme, execute the following in terminal:
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+```
+$ rackup
+```
+Then go to the relevant url in your browser of choice, ie http://localhost:9292/.
 
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+```sh
+$ git clone git@github.com:jasylwong/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+![homepage](rps-challenge_homepage.png)
+
+RSpec and Capybara have been used for testing purposes. Feature and unit tests can be found in the spec directory.
+
+## Further objectives ##
+
+The following is a list of objectives I aimed to achieve, in addition to the user requirements:
+
+  * Follow the TDD process, and have all tests passing
+  * High test coverage (>99%)
+  * Elegant code: every class has a clear responsibility, methods are short etc.
+  * An option to play again after a game has finished
+  * Incorporation of both single and multiplayer options
+
+## Features to be added ##
+
+In the future, I would like to implement the following features:
+- Score tracking
+- Ability to switch between a game using just Rock, Paper, Scissors, and having the additional Spock and Lizard options

@@ -1,0 +1,130 @@
+<html>
+<head>
+
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+* {
+  font-family: 'Indie Flower', cursive;
+  margin: 0px auto;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body { background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%); }
+
+h1 { 
+  font-family: 'Indie Flower', cursive;
+  background-color: #cc99ff;
+  padding: 10px;
+  text-align: center;
+  width: 80%;
+  height: 15%;
+  color: white;
+  position: fixed;
+  top: 8%;
+  left: 10%;
+  border-radius: 15px;
+  font-size: 70px;
+}
+
+#content {
+  background-color: white;
+  color: #9933ff;
+  position: fixed;
+  width: 80%;
+  height: 60%;
+  top: 30%;
+  left: 10%;
+  border-radius: 15px;
+  font-size: 50px;
+  text-align: center;
+  display : flex;
+  flex-direction: column;
+  justify-content : space-between;
+  padding: 50px;
+}
+
+.spacing {
+	display : flex;
+	justify-content : space-between;
+}
+
+input {
+    border-radius: 50%;
+    padding: 30px;
+    border-color: white;
+    color: transparent;
+}
+
+input[value="Rock"] {
+    background: url("https://cdn.shopify.com/s/files/1/1061/1924/products/61_large.png?v=1571606118") no-repeat center;
+    background-size: 70%;
+}
+input[value="Paper"] {
+    background: url("https://cdn.shopify.com/s/files/1/1061/1924/products/Raised_Hand_With_Fingers_Splayed_Emoji_Icon_ios10_large.png?v=1571606092") no-repeat center;
+    background-size: 60%;
+}
+input[value="Scissors"] {
+    background: url("https://cdn.shopify.com/s/files/1/1061/1924/products/Victory_Hand_Emoji_Icon_ios10_large.png?v=1571606113") no-repeat center;
+    background-size: 30%;
+}
+input[value="Spock"] {
+    background: url("https://cdn.shopify.com/s/files/1/1061/1924/products/Vulcan_Salute_Emoji_Icon_ios10_large.png?v=1571606113") no-repeat center;
+    background-size: 60%;
+}
+input[value="Lizard"] {
+    background: url("https://cdn.shopify.com/s/files/1/1061/1924/products/Lizard_Iphone_Emoji_JPG_large.png?v=1571606114") no-repeat center;
+    background-size: 60%;
+}
+
+input:hover{
+  background: #cc99ff;
+  color: white;
+  cursor: pointer;
+}
+
+.rules {
+  font-size: 20px;
+  position: absolute;
+  bottom: 2vh;
+  left: 2vw;
+  color: #6600cc;
+}
+
+.author {
+  font-size: 20px;
+  position: absolute;
+  bottom: 2vh;
+  right: 2vw;
+  color: #6600cc;
+}
+</style>
+
+
+</head>
+
+  <body>
+    <h1>Rock, Paper, Scissors, (Spock, Lizard)</h1>
+    <div id="content">  
+      <div class="spacing">
+        <div><%= @game.player_1.name %> versus <%= @game.player_2.name %></div>
+      </div>
+      <div>
+        <%= @game.player_1.name %> has made his choice. <%= @game.player_2.name %>, make yours:
+      </div>
+      <div>
+        <form action="/result" method="post">
+          <input type="submit" name="player_2_option" value="Rock">
+          <input type="submit" name="player_2_option" value="Paper">
+          <input type="submit" name="player_2_option" value="Scissors">
+          <input type="submit" name="player_2_option" value="Spock">
+          <input type="submit" name="player_2_option" value="Lizard">
+        </form>
+      </div>
+    </div>
+    <div><a class="rules" target="_blank" href="https://en.wikipedia.org/wiki/Rock_paper_scissors#Additional_weapons">Read the rules here</a></div>
+    <div><a class="author" target="_blank" href="https://github.com/jasylwong/">App created by Jason Wong</a></div>
+</body>
+</html>

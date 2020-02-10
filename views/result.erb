@@ -1,0 +1,95 @@
+<html>
+<head>
+
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+* {
+  font-family: 'Indie Flower', cursive;
+  margin: 0px auto;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body { background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%); }
+
+h1 { 
+  font-family: 'Indie Flower', cursive;
+  background-color: #cc99ff;
+  padding: 10px;
+  text-align: center;
+  width: 80%;
+  height: 15%;
+  color: white;
+  position: fixed;
+  top: 8%;
+  left: 10%;
+  border-radius: 15px;
+  font-size: 70px;
+}
+
+#content {
+  background-color: white;
+  color: #9933ff;
+  position: fixed;
+  width: 80%;
+  height: 60%;
+  top: 30%;
+  left: 10%;
+  border-radius: 15px;
+  font-size: 50px;
+  text-align: center;
+  display : flex;
+  flex-direction: column;
+  justify-content : space-between;
+  padding: 50px;
+}
+
+.spacing {
+	display : flex;
+	justify-content : space-between;
+}
+
+.rules {
+  font-size: 20px;
+  position: absolute;
+  bottom: 2vh;
+  left: 2vw;
+  color: #6600cc;
+}
+
+.author {
+  font-size: 20px;
+  position: absolute;
+  bottom: 2vh;
+  right: 2vw;
+  color: #6600cc;
+}
+</style>
+
+</head>
+
+  <body>
+    <h1>Rock, Paper, Scissors, (Spock, Lizard)</h1>
+    <div id="content" class="spacing">  
+      <div>
+        <%= @game.player_1.name %> chose <%= @game.player_1.option %> and <%= @game.player_2.name %> chose <%= @game.player_2.option %>.
+      </div>
+      <div>
+        <% if !@game.winner.nil? %>
+          <%= @game.winner.option %> beats <%= @game.loser.option %>; therefore <%= @game.winner.name %> wins!!
+        <% else %>
+          Therefore it's a draw!
+        <% end %>
+      </div>
+      <div>
+        <a href="/">Play again?</a>
+      </div>
+    </div>
+    <div><a class="rules" target="_blank" href="https://en.wikipedia.org/wiki/Rock_paper_scissors#Additional_weapons">Read the rules here</a></div>
+    <div><a class="author" target="_blank" href="https://github.com/jasylwong/">App created by Jason Wong</a></div>
+</body>
+</html>
+
+
