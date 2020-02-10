@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+#the marketeer should be able to enter their name before the game
 feature 'registration' do
     scenario 'register and see the name' do
         visit '/'

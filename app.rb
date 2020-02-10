@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/round.rb'
 class Rps < Sinatra::Base
     enable :sessions
     get '/' do
@@ -11,8 +12,17 @@ class Rps < Sinatra::Base
     end
 
     get '/play' do
-        @player_1_name = session[:player_1_name]
+        @round = Round.new(session)
+        # @player_1_name = session[:player_1_name]
+        # @shape = session[:shape]
+        # @computer_shape = session[:computer_shape]
         erb :play
+    end
+
+    post '/play' do
+        session[:player_1_shape] = params[:shape]
+        session[:computer_shape] = :Rock
+        redirect '/play'
     end
 
     run! if app_file ==$0
