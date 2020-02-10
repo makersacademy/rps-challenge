@@ -41,15 +41,8 @@ feature '/play' do
   end
 
   scenario 'expect rock button' do
-    expect(page).to have_button('Rock')
-  end
-
-  scenario 'expect rock button' do
-    expect(page).to have_button('Paper')
-  end
-
-  scenario 'expect rock button' do
-    expect(page).to have_button('Scissors')
+    click_button('Submit')
+    expect($game.player.move).to eq('rock')
   end
 
 end
