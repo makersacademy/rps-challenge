@@ -1,0 +1,11 @@
+<h1>Welcome to the Arena brave Warriors</h2>
+<h1><%=$game.player1.name%> vs <%=$game.player2.name%></h1>
+<h2>Choose Your Weapon</h2>
+<form action="/player_2_turn" method="post">
+  <label for="player_1_name">
+    <h2><%=$game.player1.name%> pick your move</h2>
+    <input type="submit" name="submit_button" value ="Rock">
+    <input type="submit" name="submit_button" value ="Paper">
+    <input type="submit" name="submit_button" value ="Scissors">
+  </label>
+</form>
