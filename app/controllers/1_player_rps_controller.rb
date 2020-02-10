@@ -19,7 +19,7 @@ class RPS < Sinatra::Base
   end
 
   post '/item' do
-    $game.player.make_move((params[:move]))
+    $game.player.make_move(Item.new(params[:move]))
   end
 
 end

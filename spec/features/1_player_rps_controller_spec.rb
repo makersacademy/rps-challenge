@@ -42,7 +42,7 @@ feature '/play' do
 
   scenario 'expect rock button' do
     click_button('Submit')
-    expect($game.player.move).to eq('rock')
+    expect($game.player.move.item).to eq('rock')
   end
 
 end
