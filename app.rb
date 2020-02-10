@@ -32,7 +32,4 @@ class RockPaperScissors < Sinatra::Base
     @game.player_2.choice(params[:player_2_option])
     erb(:result)
   end
-
-  # start the server if ruby file executed directly
-  run! if app_file == $0
 end

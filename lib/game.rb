@@ -1,6 +1,12 @@
 class Game
   attr_reader :player_1, :player_2
 
+  RULES = { "Rock" => ["Scissors", "Lizard"],
+            "Paper" => ["Rock", "Spock"],
+            "Scissors" => ["Paper", "Lizard"],
+            "Spock" => ["Scissors", "Rock"],
+            "Lizard" => ["Spock", "Paper"] }
+
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
@@ -15,14 +21,10 @@ class Game
   end
 
   def winner
-    if player_1.option == "Rock" && ["Scissors", "Lizard"].include?(player_2.option) ||
-        player_1.option == "Paper" && ["Rock", "Spock"].include?(player_2.option) ||
-        player_1.option == "Scissors" && ["Paper", "Lizard"].include?(player_2.option) ||
-        player_1.option == "Spock" && ["Scissors", "Rock"].include?(player_2.option) ||
-        player_1.option == "Lizard" && ["Spock", "Paper"].include?(player_2.option) 
+    if RULES[player_1.option].include?(player_2.option)
       player_1
-    elsif player_1.option == player_2.option; nil
-    else; player_2
+    elsif RULES[player_2.option].include?(player_1.option)
+      player_2
     end
   end    
 
