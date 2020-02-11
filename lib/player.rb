@@ -1,10 +1,13 @@
 class Player 
 
   attr_reader :name, :move, :icon
-  def initialize(name, move) 
+  def initialize(name) 
     @name = name
-    @move = move
     @icon
+  end 
+  
+  def make_move(move)
+    @move = move
   end 
 
   def icon(move)

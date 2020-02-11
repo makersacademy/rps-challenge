@@ -1,6 +1,6 @@
 <div style = "background-color: lightsalmon; position: relative; center: 50px; padding: 50px; font-family: 'Comic Sans MS';">
 
-  <h1> Welcome <%= $name %>,  Lets play!</h1>
+  <h1> Welcome <%= @game.player.name%>,  Lets play!</h1>
   <h2> It's time to choose...</h3>
   <h3> 
   <form action="/result" method="post">
