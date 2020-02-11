@@ -1,0 +1,22 @@
+<div class="container">
+  <p><%= @game.player.name.capitalize %> vs <%= @game.opponent.name.capitalize %> </p>
+
+  <div class=form-container>
+    <form class="help" action="/player_moves" method="post">
+      <p>Enter your move</p>
+      <div class="radio">
+        <input type="radio" name="move" id="rock" value="rock" required>
+        <label for="rock" class="label">rock</label>
+      
+        <input type="radio" name="move" id="paper" value="paper">
+        <label for="paper" class="label">paper</label>
+      
+        <input type="radio" name="move" id="scissors" value="paper">
+        <label for="scissors" class="label">scissors</label>
+      </div>
+      <div>
+        <input type="submit" value="Play">
+      </div>
+    </form>
+  </div>
+</div>

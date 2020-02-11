@@ -1,22 +1,46 @@
-# RPS Challenge
+# Rock Paper Scissors Challenge #
 
-Instructions
--------
+This programme allows a user to play rock paper scissors against the computer.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+I created this programme as part of a challenge at [Makers Academy](https://makers.tech/). See [Requirements](#Requirements) for more information on the programme's requirements.
 
-Task
-----
+* [Getting started](#Getting-Started)
+* [Useage](#useage)
+* [Running tests](#Running-tests)
+* [Requirements](#Requirements)
+* [How I built it](#How-i-built-it)
+* [Credits](#credits)
 
-Knowing how to build web applications is getting us almost there as web developers!
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+## Getting Started ##
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+1. Fork this repo, and clone to your local machine. Navigate into the folder.
+2. Run the command `gem install bundle` (if you don't have bundle already)
+3. When the installation completes, run `bundle`
+
+## Useage ##
+
+This is a web app which you can run on your local server. You will need to use the command line and a browser. In the command line type:
+
+```shell
+$ rackup config.ru -p 9292
+```
+
+Open your browser and visit [localhost:9292](http://localhost:9292/).
+Enter your name and start playing!
+
+## Running tests ##
+
+1. Navigate to top level of project directory
+2. In your command line type:
+
+```shell
+$ rspec
+```
+
+## Requirements ##
+
+### User Stories ###
 
 ```
 As a marketeer
@@ -27,60 +51,80 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+### Functionality ###
 
-Hints on functionality
+* the marketeer should be able to enter their name before the game
+* the marketeer will be presented the choices (rock, paper and scissors)
+* the marketeer can choose one option
+* the game will choose a random option
+* a winner will be declared
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+## How I built it ##
+
+**User story 1 model:** 
+
+![sequence diagram](public/images/sequence-diagram-1.png)
+
+**User story 2 model:**
+
+![sequence diagram](public/images/sequence-diagram-2.png)
+
+**Class models:**
+
+1.
+
+| Object: |**Player**| | 
+|:------:|:------------:|:-:|
+|**Attributes:**|Name|Move|
+|**Methods:**|Choose(move)||
+
+2. 
+
+| Object: |**Computer**| | 
+|:------:|:------------:|:-:|
+|**Attributes:**|Name|Move|
+|**Methods:**|generate_move||
+
+2.
+
+| Object: |**Game**| | | 
+|:------:|:------------:|:-:|:-:|
+|**Class methods:**|Create|Instance | 
+|**Attributes:**|Player| Opponent | Winner |
+|**Methods:**|select_winner | | |
 
 
-As usual please start by
 
-* Forking this repo
-* TEST driving development of your app
+### Tests ###
 
+**Feature tests**
 
-## Bonus level 1: Multiplayer
+1. Player enters name
+2. Player chooses move
+3. Get computer move
+4. Show winner
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+**Unit tests**
+1. Player: player has a name
+2. Game: can create a game with a player
+3. Player: can choose a move
+4. Game: can create a game with a player and a computer
+4. Computer: has same pattern as player
+5. Computer: selects a random move
+6. Game: compares user move against computer
+7. Game: declares a winner
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+**Edge cases**
+1. Player doesn't enter a name
+2. Player doesn't enter a move
+2. No one wins - ruby can't render name of winner
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+## Further improvements ##
 
-## Basic Rules
+1. Fix styling, particularly on forms and links
+2. Add exception if player doesn't select a move
+3. Add option for a second player
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+## Credits ##
 
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+View original challenge instructions from [Makers Academy](https://makers.tech/) [here](Challenge-instructions.md).
