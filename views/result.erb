@@ -1,0 +1,9 @@
+<div style = "background-color: lightsalmon; position: relative; center: 50px; padding: 50px; font-family: 'Comic Sans MS';">
+  <h2><%= @game.player.name %> chose <%= @game.player.move %> <%= @game.player.icon(@game.player.move) %><br></h2>
+  <h2><%= @game.computer.name %> chose <%= @game.computer.move %> <%= @game.computer.icon(@game.computer.move) %><br></h2>
+
+  <h1><%= @result %></h1><br>
+  <form action="/play">
+    <input type="submit" name=replay value="Replay">
+  </form>
+</div>

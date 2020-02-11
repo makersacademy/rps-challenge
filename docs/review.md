@@ -5,8 +5,8 @@ If you don't feel comfortable giving technical feedback at this stage, try going
 
 # Step 0: Checkout and Run tests
 
-Please checkout your reviewee's code and run their tests. Read the code and try and play the game through the web interface.  You can also experiment with the engine in IRB. How easy is it to understand the structure of their code? How readable is their code? Did you need to make any cognitive leaps to 'get it'?
-
+`Please checkout your reviewee's code and run their tests. Read the code and try and play the game through the web interface.  You can also experiment with the engine in IRB. How easy is it to understand the structure of their code? How readable is their code? Did you need to make any cognitive leaps to 'get it'?
+`
 # Step 1: Structure and supporting files
 
 ## Instructions in README

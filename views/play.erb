@@ -1,0 +1,14 @@
+<div style = "background-color: lightsalmon; position: relative; center: 50px; padding: 50px; font-family: 'Comic Sans MS';">
+
+  <h1> Welcome <%= @game.player.name%>,  Lets play!</h1>
+  <h2> It's time to choose...</h3>
+  <h3> 
+  <form action="/result" method="post">
+    <input type="submit" name=move value="Rock">👊<br>
+    <input type="submit" name=move value="Paper">📜<br>
+    <input type="submit" name=move value="Scissors">✂<br>
+  </form>
+  </h3>
+</div>
+
+
