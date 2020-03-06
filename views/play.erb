@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" type="text/css" href="/rps_style.css" />
   </head>
   <body>
     <header>
@@ -9,9 +9,11 @@
     </header>
     <main>
     Which one will you pick?
-    <input type="button" name="Rock" href='/result'>
-    <input type="button" name="Paper" href='/result'>
-    <input type="button" name="Scissors" href='/result'>
+    <form action="/result" method="post">
+    <input type="submit" name="player_move" value="rock">
+    <input type="submit" name="player_move" value="paper">
+    <input type="submit" name="player_move" value="scissors">
+    </form>
 
     </main>
 
