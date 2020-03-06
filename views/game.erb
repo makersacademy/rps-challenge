@@ -1,0 +1,17 @@
+<html>
+   <p>Hello <%= @player1.name %></p>
+
+    <% 
+    if @player1.move != nil
+    %>
+        <p><%= @player1.move %></p>  
+    <% 
+    end
+    %>
+
+   <form action="/move" method="post">
+        <input type="submit" value="Rock" name="player1move">
+        <input type="submit" value="Paper" name="player1move">
+        <input type="submit" value="Scissors" name="player1move">
+   </form>
+</html>
