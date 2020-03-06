@@ -1,15 +1,21 @@
 feature 'selecting player move options' do
 
   scenario 'displays rock move' do
-    expect(page.find_button('Rock'))
+    visit ('/')
+    click_button 'Submit'
+    expect(page.find_button("rock"))
   end
 
   scenario 'displays paper move' do
-    expect(page.find_button('Paper'))
+    visit ('/')
+    click_button 'Submit'
+    expect(page.find_button("paper"))
   end
 
   scenario 'displays scissors move' do
-    expect(page.find_button('Scissors'))
+    visit ('/')
+    click_button 'Submit'
+    expect(page.find_button("scissors"))
   end
 
 end

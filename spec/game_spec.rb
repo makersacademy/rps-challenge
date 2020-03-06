@@ -13,7 +13,7 @@ require 'game'
     end
 
     it "should store the player's move" do
-      expect(game.move(player_move)).to eq player_move
+      expect(game.player_selection(player_move)).to eq player_move
     end
 
 
