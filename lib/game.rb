@@ -10,6 +10,15 @@ class Game
         @computer = Computer.new
     end
 
+
+    def self.create(player1)
+        @game = Game.new(player1)
+    end
+
+    def self.instance
+        @game
+    end
+
     def declare_winner(player1_move, computer_move)
 
         case player1_move
