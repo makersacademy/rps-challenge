@@ -7,12 +7,12 @@ feature 'Playing RPS' do
     click_button 'Submit'
   end
   scenario 'see the RPS options' do
-    expect(page).to have_content 'Rock'
-    expect(page).to have_content 'Scissors'
-    expect(page).to have_content 'Paper'
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Scissors'
+    expect(page).to have_button 'Paper'
   end
   scenario 'making a choice' do
     click_button 'Rock'
-    expect(page).to have_content 'Can you smell what the Rock is cooking?'
+    expect(page).to have_content '...Wise choice'
   end
 end
