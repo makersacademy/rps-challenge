@@ -15,4 +15,13 @@ feature 'Playing RPS' do
     click_button 'Rock'
     expect(page).to have_content '...Wise choice'
   end
+  scenario 'computer chooses' do
+    click_button 'Rock'
+    message = find(:css, "#CPU").text
+    expect(cpu_choice).to include message
+  end
+
+  def cpu_choice
+    [:rock, :paper, :scissors].map { |choice| "Your enemy chose #{choice.to_s.capitalize}" }
+  end
 end
