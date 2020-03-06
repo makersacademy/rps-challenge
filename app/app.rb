@@ -1,6 +1,7 @@
 require 'sinatra/base'
 
 class RPS < Sinatra:: Base
+  enable :sessions
   # get '/' do
   #   'Testing infrastructure working!'
   # end
@@ -13,6 +14,7 @@ class RPS < Sinatra:: Base
   end
 
   get '/play' do
+    @name = session[:name]
     erb :play
   end
 
