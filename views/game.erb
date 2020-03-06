@@ -1,17 +1,23 @@
 <html>
-   <p>Hello <%= @player1.name %></p>
-
-    <% 
-    if @player1.move != nil
-    %>
-        <p><%= @player1.move %></p>  
-    <% 
-    end
-    %>
-
-   <form action="/move" method="post">
+<div>
+    <h2><%= @player1.name %></h2>
+    <h3>Score: <%= @player1.score %></h3>
+    <form action="/move" method="post">
         <input type="submit" value="Rock" name="player1move">
         <input type="submit" value="Paper" name="player1move">
         <input type="submit" value="Scissors" name="player1move">
-   </form>
+    </form>
+    <h4>
+        <%= @player1.move %></p>  
+    </h4>
+</div>
+
+<div>
+    <h2>Computer</h2>
+    <h3>Score: <%= @computer.score %></h3>
+    <h4>
+        <%= @computer_move %></p>  
+    </h4>
+</div>
+
 </html>

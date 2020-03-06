@@ -1,6 +1,14 @@
+require_relative 'move'
+
 class Computer
+    attr_accessor :score
+
+    def initialize
+        @score = 0
+    end
 
     def move
-        return rand(3)
+        move = Move.new
+        return move.moves[rand(move.moves.length)]
     end
 end

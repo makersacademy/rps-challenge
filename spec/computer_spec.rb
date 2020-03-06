@@ -1,8 +1,17 @@
 require 'computer'
 
 describe Computer do
-    it '"move" method returns 1' do
-        srand(1)
-        expect(subject.move).to eq 1
+
+    it 'initialises with a score of 0' do
+        expect(subject.score).to eq 0
     end
+
+    describe "move" do
+        it 'returns paper' do
+            srand(1)
+            expect(subject.move).to eq "Paper"
+        end
+    end
+
+
 end
