@@ -6,9 +6,7 @@ require "spec_helper"
 
 feature "registering name" do
   scenario "register and see player name" do
-    visit ("/")
-    fill_in "name", with: "Kuba"
-    click_button "LET'S ROCK!"
+    sign_and_play
     expect(page).to have_content("Kuba")
   end
 end
