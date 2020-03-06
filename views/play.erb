@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<link rel='stylesheet' href='style.css'>
+<div class="block">
+  <div class="h2">
+   <strong> Hello <%= @game.player %> </strong>
+   <br>
+   <strong>Pick a Move</strong>
+   <form action='/move' method="post">
+    <input class="button" name="move" type="submit" value="Rock">
+    <input class="button" name="move" type="submit" value="Paper">
+    <input class="button" name="move" type="submit" value="Scissors">
+    </form>
+  </div>
+  <br>
+</div>
+</body>
+</html>
