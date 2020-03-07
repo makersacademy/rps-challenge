@@ -39,10 +39,6 @@ describe Player do
         subject.set_hand
         expect(subject.hand).to eq("rock").or eq("paper").or eq("scissors")
       end
-      it "to pick random hand when no arguments are passed through" do
-        subject.set_hand
-        expect(subject.hand).to eq("rock").or eq("paper").or eq("scissors")
-      end
     end
   end
   
