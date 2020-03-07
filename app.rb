@@ -25,7 +25,7 @@ class RPSGame < Sinatra::Base
   end
 
   get '/result' do
-    $game.players.last.random_move
+    $game.player_2.random_move
     $game.calculate_result
     erb(:result)
   end
@@ -36,17 +36,16 @@ class RPSGame < Sinatra::Base
 
   # Would like to remove the below bits
   get '/rock' do
-    $game.players.first.selected('rock')
-    #$game.players.last.random_move
+    $game.player_1.selected('rock')
     redirect '/result'
   end
   get '/paper' do
-    $game.players.first.selected('paper')
+    $game.player_1.selected('paper')
     #$game.players.last.random_move
     redirect '/result'
   end
   get '/scissors' do
-    $game.players.first.selected('scissors')
+    $game.player_1.selected('scissors')
     #$game.players.last.random_move
     redirect '/result'
   end

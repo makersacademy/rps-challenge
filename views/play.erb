@@ -1,10 +1,10 @@
 <div>
 Scoreboard:
-<%= "#{$game.players.first.name}: #{$game.players.first.score}" %>
-<%= "#{$game.players.last.name}: #{$game.players.last.score}" %>
+<%= "#{$game.player_1.name}: #{$game.player_1.score}" %>
+<%= "#{$game.player_2.name}: #{$game.player_2.score}" %>
 </div>
 
-<%= "#{$game.players.first.name}, select your move!" %>
+<%= "#{$game.player_1.name}, select your move!" %>
 <form action='/rock' method='get'>
   <button>rock</button>
 </form>

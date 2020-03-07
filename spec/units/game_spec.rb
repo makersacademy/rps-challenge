@@ -8,10 +8,10 @@ describe Game do
 
   context 'Game initializes with:' do
     it 'a player_1' do
-      expect(game.players.first.name).to eq "Josie"
+      expect(game.player_1.name).to eq "Josie"
     end
     it 'a player_2' do
-      expect(game.players.last.name).to eq "Computer"
+      expect(game.player_2.name).to eq "Computer"
     end
   end
 
