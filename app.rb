@@ -10,20 +10,22 @@ class RPS < Sinatra::Base
   end
 
   post "/name" do
-    session[:name] = params[:name] # stores name sent in form in a session
+    session[:player_name] = params[:player_name] # stores name sent in form in a session
     redirect "/play"
   end
 
   get "/play" do
-    @name = session[:name]
-    @choice = session[:choice]
-    @computer_choice = session[:computer]
+    @turn = Turn.new(session)
+
+    # @player_name = session[:player_name]
+    # @player_choice = session[:player_choice]
+    # @computer_choice = session[:computer_choice]
     erb :play
   end
 
   post "/play" do
-    session[:choice] = params[:choice] # stores our choice (R, P or S)
-    session[:computer] = :rock
+    session[:player_choice] = params[:player_choice] # stores our choice (R, P or S)
+    session[:computer_choice] = :rock
     redirect "/play"
   end
 
