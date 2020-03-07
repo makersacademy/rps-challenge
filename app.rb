@@ -26,7 +26,7 @@ class RPS < Sinatra::Base
 
   post "/play" do
     session[:player_choice] = params[:player_choice] # stores our choice (R, P or S)
-    session[:computer_choice] = :rock
+    session[:computer_choice] = Computer.new.choice
     redirect "/play"
   end
 
