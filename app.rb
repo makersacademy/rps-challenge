@@ -30,8 +30,16 @@ class RPSGame < Sinatra::Base
     erb(:result)
   end
 
-  get '/check_score' do
+  get '/game_over' do
+    erb(:game_over)
+  end
 
+  get '/check_score' do
+    if $game.player_1.score == 3 || $game.player_2.score == 3
+      redirect '/game_over'
+    else
+      redirect '/play'
+    end
   end
 
   # Would like to remove the below bits

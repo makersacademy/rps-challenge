@@ -26,7 +26,7 @@ feature 'Viewing Results' do
   scenario 'Can press button to continue playing' do
     start_game
     click_button 'rock'
-    expect(page).to have_content "Next round"
+    expect(page).to have_content "Ok"
   end
 
 end

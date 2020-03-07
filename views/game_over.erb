@@ -1,0 +1,11 @@
+<% if $game.player_1.score == 3 %>
+<div>You win!! 💥</div>
+<% end %>
+
+<% if $game.player_1.score != 3 %>
+<div>You lose ☹️</div>
+<% end %>
+
+<form action='/'>
+  <button>Play again!</button>
+</form>

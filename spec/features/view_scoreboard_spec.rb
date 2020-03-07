@@ -8,7 +8,7 @@ feature 'Scoreboard' do
     srand(3)
     start_game
     click_button 'rock'
-    click_button 'Next round'
+    click_button 'Ok'
     expect(page).to have_content "Josie: 1"
     expect(page).to have_content "Computer: 0"
   end
@@ -16,7 +16,7 @@ feature 'Scoreboard' do
     srand(1)
     start_game
     click_button 'rock'
-    click_button 'Next round'
+    click_button 'Ok'
     expect(page).to have_content "Josie: 0"
     expect(page).to have_content "Computer: 1"
   end
@@ -24,7 +24,7 @@ feature 'Scoreboard' do
     srand(2)
     start_game
     click_button 'rock'
-    click_button 'Next round'
+    click_button 'Ok'
     expect(page).to have_content "Josie: 0"
     expect(page).to have_content "Computer: 0"
   end

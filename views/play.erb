@@ -1,16 +1,35 @@
-<div>
-Scoreboard:
-<%= "#{$game.player_1.name}: #{$game.player_1.score}" %>
-<%= "#{$game.player_2.name}: #{$game.player_2.score}" %>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='./style.css' />
+  </head>
 
-<%= "#{$game.player_1.name}, select your move!" %>
-<form action='/rock' method='get'>
-  <button>rock</button>
-</form>
-<form action='/paper' method='get'>
-  <button>paper</button>
-</form>
-<form action='/scissors' method='get'>
-  <button>scissors</button>
-</form>
+  <body>
+    <div class='container'>
+      <div class='scoreboard'>
+        Scoreboard:
+        <%= "#{$game.player_1.name}: #{$game.player_1.score}" %>
+        <%= "#{$game.player_2.name}: #{$game.player_2.score}" %>
+      </div>
+
+      <div class='player_2_play'>🖥</div>
+
+      <div class='player_1_play'>
+        <%= "#{$game.player_1.name}, select your move!" %>
+        <div class='moves'>
+          <form action='/rock' method='get'>
+            <button>rock</button>
+          </form>
+          <form action='/paper' method='get'>
+            <button>paper</button>
+          </form>
+          <form action='/scissors' method='get'>
+            <button>scissors</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!- 👊🏼✌🏼✋🦎🏼👽 -->

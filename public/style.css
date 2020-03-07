@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.scoreboard {
+  /* put in left-hand corner */
+  height: 100px;
+  width: 100px;
+}
+
+.player_2_play {
+  margin: auto;
+  text-align: center;
+  font-size: 100px;
+  width: 100%;
+
+}
