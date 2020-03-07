@@ -8,6 +8,18 @@ class Game
   end
 
   def start
+    set_hand
+    result
+  end
+
+  private
+
+  def result
     
+  end
+  
+  def set_hand
+    @human.set_hand
+    @computer.set_hand
   end
 end
