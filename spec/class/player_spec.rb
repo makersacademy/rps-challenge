@@ -9,5 +9,8 @@ describe Player do
     it "human" do
       expect(subject).to have_attributes(human: human)
     end
+    it "computer" do
+      expect(subject).to have_attributes(computer: computer)
+    end
   end
 end
