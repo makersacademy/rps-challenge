@@ -1,6 +1,7 @@
 # RPS
 
 require "sinatra/base"
+require "./lib/turn"
 
 class RPS < Sinatra::Base
   enable :sessions
