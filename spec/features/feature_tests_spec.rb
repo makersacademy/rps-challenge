@@ -28,7 +28,25 @@ feature "See result" do
     expect(page).to have_content 'Your oponent choice is Scissors'
   end
 
-  scenario 'I can see the winner' do
+  scenario 'You win' do
+    sign_in_and_play
+    srand(0)
+    click_button 'Rock'
+    expect(page).to have_content 'You win!'
+  end
+
+  scenario 'You lose' do
+    sign_in_and_play
+    srand(0)
+    click_button 'Paper'
+    expect(page).to have_content 'You lost!'
+  end
+
+  scenario 'Its a draw' do
+    sign_in_and_play
+    srand(0)
+    click_button 'Scissors'
+    expect(page).to have_content "It's a draw!"
   end
 
   scenario 'I can go back and play again' do

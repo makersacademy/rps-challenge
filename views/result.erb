@@ -1,5 +1,13 @@
 <p> Your choice is <%= @player_choice %> </p>
 <p> Your oponent choice is <%= @opponent_choice %></p>
-<p> The winner is: xxxx </p>
+<% if @result.win? %>
+  You win!
+<% elsif @result.lose? %>
+  You lost!
+<% elsif @result.draw? %>
+  It's a draw!
+<% end %>
+
+
 
 <button onclick="window.location.href='/game'">Play Again</button>
