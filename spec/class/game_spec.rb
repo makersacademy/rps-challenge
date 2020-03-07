@@ -19,4 +19,10 @@ describe Game do
       expect(subject).to have_attributes(round_status: "")
     end
   end
+  
+  context "method responds to" do
+    it "#start" do
+      expect(subject).to respond_to(:start)
+    end
+  end
 end

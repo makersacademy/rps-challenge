@@ -6,4 +6,8 @@ class Game
     @finish = false
     @round_status = ""
   end
+
+  def start
+    
+  end
 end
