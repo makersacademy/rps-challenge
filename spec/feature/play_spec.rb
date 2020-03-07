@@ -35,6 +35,15 @@ feature 'playing a game' do
       # expect(possible_messages).to include message
       expect(page).to have_content 'Opponent choose Scissors!'
     end
+    #As a maketeer
+    # so i can play a game
+    # A winner will be declared!!
+   # -----------------------------
+    # scenario 'I will win' do
+    #   srand(PLAYER_OPPONENT_CHOICE)
+    #   click_button 'Rock'
+    #   expect(page).to have_content 'You win!!'
+    # end
 
 end
 
