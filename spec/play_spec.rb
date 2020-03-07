@@ -24,4 +24,12 @@ feature "playing a game" do
     # click_button("Scissors!")
   end
 
+  scenario "computer chose 'Rock'" do
+    click_button("Rock!")
+    message = find(:css, "#computer").text
+    #
+    expect(computer_choice).to include message
+    # computer_choice method defined in web_helpers
+  end
+
 end
