@@ -13,15 +13,19 @@ I would like to register my name before playing an online game
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
+
+As a merketeer
+So that I can check how many times I, or the computer, won
+I would like to have a total score at the end of each turn.
 ```
 
 Functionality
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+- the marketeer should be able to enter his/her name before the game;
+- the marketeer will be presented the choices (rock, paper and scissors);
+- the marketeer can choose one option;
+- the game will choose a random option;
+- a winner will be declared.
 
 ## Basic Rules
 
@@ -33,7 +37,7 @@ Functionality
 
 Clone the repository from GitHub to your directory.
 
-rackup to check the Website. In the rackup informations the ```port``` should be ```9292```.
+Rackup to check the Website. In the rackup informations the ```port``` should be ```9292```.
 Insert ```localhost:9292``` in the URL browser to run the Webapp.
 
 ## Screenshots
