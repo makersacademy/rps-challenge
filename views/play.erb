@@ -1,0 +1,9 @@
+<% if @player_1_name && @player_2_name %>
+  <div> <%=@player_1_name%> vs. <%=@player_2_name%> </div>
+  <div> <%=@current_player%> your turn </div>
+  <form action='/play' method='post'>
+    <input type='submit' value='Rock'>
+    <input type='sumbit' value='Paper'>
+    <input type ='submit' value='Scissors'>
+  </form>
+<% end %>
