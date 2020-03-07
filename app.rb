@@ -19,12 +19,14 @@ class RPSGame < Sinatra::Base
   end
 
   get '/play' do
-    @player_name = $game.players.first.name
+    # @player_1_name = $game.players.first.name
+    # @player_2_name = $game.players.last.name
     erb(:play)
   end
 
   get '/result' do
     $game.players.last.random_move
+    $game.calculate_result
     erb(:result)
   end
 
