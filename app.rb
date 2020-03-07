@@ -28,6 +28,10 @@ class RPSGame < Sinatra::Base
     erb(:result)
   end
 
+  get '/check_score' do
+
+  end
+
   # Would like to remove the below bits
   get '/rock' do
     $game.players.first.selected('rock')

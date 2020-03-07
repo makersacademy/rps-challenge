@@ -1,2 +1,13 @@
 <%= "#{$game.players.first.name} moved: #{$game.players.first.move}"%>
+<br>
 <%= "#{$game.players.last.name} moved: #{$game.players.last.move}"%>
+<br>
+<% if $game.result == 'draw' %> It's a draw!! <% end %>
+
+<% if $game.result != 'draw' %>
+<%= "#{$game.result.name} won this round!"%>
+<% end %>
+
+<form action='/play' method="get">
+  <button>Next round</button>
+</form>
