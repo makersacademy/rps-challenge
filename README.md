@@ -1,22 +1,14 @@
 # RPS Challenge
 
-Instructions
+Task
 -------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+* Create a rock paper scissors game to play on the web
+* Users should be able to register their names, pick an option of rock paper or scissors and then swap turns
+* Players should be able to take turns at picking rock paper or scissors
+* Game should address the following user stories:
 
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+### User Stories
 
 ```
 As a marketeer
@@ -27,25 +19,182 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+## To play the game
 
-Hints on functionality
+```
+config.ru
+```
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+### To run the tests
 
+```
+rspec
+```
 
-As usual please start by
+## Functionality
 
-* Forking this repo
-* TEST driving development of your app
+### Domain model
 
+| Possible Objects            | Methods       |
+| ----------------------------|:-------------:|
+| Player 1                    | register_name |
+| Player 2                    | pick_option   |
+| Game                        | swap_turns    |
+|                             | score         |
 
-## Bonus level 1: Multiplayer
+## Controller
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+We want to keep this as skinny as possible. Possible pages to include are:
+```
+# home page where the user enters their name
+
+get ('/')
+lets names get entered
+
+  before do
+    @game = Game.instance
+  end
+
+# method that posts names and creates the game instance
+  post ('/play')
+  @player_1 = Player.new(params[:name])
+  @player_2 = Player.new(params[:name])
+  @game = Game.create(player_1, player_2
+
+# page with options for the current player to choose from
+get('/play')
+@current_player_name = @game.current_player.name
+
+# method that works out the winner and redirects to other pages depending on the result
+post('/result')
+game.play(params[:choice])
+if @game.game_over == true
+  redirect /results
+else
+  redirect /play
+end
+
+# page with the winner revealed
+get('/result')
+@winner = game.winner
+
+```
+
+## Model
+
+We want our model to do most of the heavy lifting behind the scenes while staying true to the DRY and SRP principles. The singleton principle would also help to ensure that we avoid pesky global variables.
+
+```
+class Game(player_1, player_2)
+
+  def initialize
+    @turn = true
+    @results = Results.new
+    player_1 = player_1
+    player_2 = player_2
+    @current_player =
+    @winner = Results.winner
+    end
+
+# class methods for singleton principle
+
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
+  end
+
+  def play(choice)
+    @current_player.store_choice(choice)
+    results.calculate_results
+    game.over?
+    switch_players
+  end
+
+  def turn?
+    @true = !@true
+  end
+
+  def switch_players
+    @true ? @current_player = player_1 : @current_player = player_2
+    turn?
+  end
+
+  def game_over?
+    if end_game == true
+
+  end
+
+  def end_game
+    if results.winner = something
+      return true
+    else
+    return false
+    end
+  end
+
+end
+
+# calculates who is the winner based on the options they chose
+
+class Result < Game
+
+attr_reader : winner
+
+ def initialize(game.player_1, game.player_2)
+ @player_1 = player_1
+ @player_2 = player_2
+ @winner
+ end
+
+ def calculate_result
+
+ case choice
+
+ when player_1.choice == player_2.choice
+    winner = "It's a draw"
+ when player_1.choice == "Rock" && player_2.choice == "Paper"
+    winner = player_2
+ when player_1.choice == "Scissors" && player_2.choice == "Rock"
+    winner = player_2
+ when player_1.choice == "Paper" && player_2.choice == "Scissors"
+    winner = player_2
+ else
+  @winner = player_1
+ end
+end
+
+# stores and fetches the players name and their selection
+
+class Player(name)
+  def initialize
+    @name = name
+    @choice = choice
+  end
+end
+```
+
+## Views
+
+There will be 3 views in total. The controller will handle the exchange of data between each view and the model will facilitate how and when that data will be stored and evaluated in order to play the game.
+
+View 1 -
+erb :index
+containting a form to input names
+
+View 2 -
+erb :play
+name of the current player
+containing a form and images for rock, paper Scissors
+
+View 3 -
+erb :results
+the name of the winner
+the name of both players and their choices
+button to play again
+
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
@@ -62,25 +211,3 @@ In code review we'll be hoping to see:
 * All tests passing
 * High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
 * The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
