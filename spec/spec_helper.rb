@@ -5,14 +5,11 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-
+require_relative './feature/web_helpers.rb'
 
 Capybara.app = RPS
 
-
-
 # require_relative './features/web_helpers.rb'
-
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
