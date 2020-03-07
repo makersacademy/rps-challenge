@@ -1,0 +1,19 @@
+<center><br><br><br><br><br><br>
+<h2><%= @player%>'s score: <%= @player_points%></h2>
+<h2>Computer's score: <%= @comp_points%></h2><br>
+<h1>Rock, Paper... Scissors!</h1>
+<form action = '/play_rock'>
+<input value = 'Rock' type = 'submit'></form>
+<form action = '/play_paper'>
+<input value = 'Paper' type = 'submit'></form>
+<form action = '/play_scissors'>
+<input value = 'Scissors' type = 'submit'></form>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a href="/">Home</a>
+</center>
+
+<style>
+input[type=submit] {
+    width: 18em;  height: 3em;
+}
+</style>
