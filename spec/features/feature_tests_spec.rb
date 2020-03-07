@@ -1,5 +1,3 @@
-OPPONENT_RAND = 0
-
 feature 'Enter names' do
   scenario 'Player can input and submit a name' do
     sign_in_and_play
@@ -25,7 +23,7 @@ feature "See result" do
 
   scenario 'I can see my oponent choice' do
     sign_in_and_play
-    srand(OPPONENT_RAND) 
+    srand(0)
     click_button 'Rock'
     expect(page).to have_content 'Your oponent choice is Scissors'
   end
