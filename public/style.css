@@ -4,6 +4,7 @@ body {
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -16,7 +17,25 @@ body {
 .player_2_play {
   margin: auto;
   text-align: center;
-  font-size: 100px;
+  font-size: 120px;
   width: 100%;
 
+}
+
+.player_1_play {
+  margin: auto;
+  text-align: center;
+  font-size: 50px;
+  width: 100%;
+
+}
+
+.moves {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.move {
+  font-size: 100px;
 }
