@@ -1,7 +1,7 @@
 def sign_and_play
   visit '/'
   fill_in 'name', with: 'Rafa'
-  click_button 'Hit it Bastard!'
+  click_button 'Hit button!'
 end
 
 def possible_messages

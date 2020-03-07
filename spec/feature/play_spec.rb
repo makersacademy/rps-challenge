@@ -4,6 +4,8 @@ require 'spec_helper'
 # I would like to be able to play rock/paper/scissors
 
 feature 'playing a game' do 
+
+  PLAYER_OPPONENT_CHOICE = 234233
     before do
       sign_and_play
     end
@@ -25,11 +27,13 @@ feature 'playing a game' do
     #As a maketeer
     # so i can play a game
     # i want the game chose a ramdom option.
-    scenario 'game choose option Rock' do
+    scenario 'opponent choose  random option' do
+      srand(PLAYER_OPPONENT_CHOICE)
       click_button 'Rock'
-      message = find(:css, "#opponent").text
+      # message = find(:css, "#opponent").text
       # possible_messages is defined in web_helpers.rb , i am calling it here.
-      expect(possible_messages).to include message
+      # expect(possible_messages).to include message
+      expect(page).to have_content 'Opponent choose Scissors!'
     end
 
 end
