@@ -1,8 +1,6 @@
 feature 'entering name' do
   scenario 'user enters name' do
-    visit('/')
-    fill_in('player_name', with: 'Neha')
-    click_button('Start')
+    sign_in_and_play
     expect(page).to have_content('Neha')
   end
 
