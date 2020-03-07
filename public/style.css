@@ -19,6 +19,7 @@ body {
   text-align: center;
   font-size: 120px;
   width: 100%;
+  padding: 0 0 60px 0;
 
 }
 
@@ -27,6 +28,7 @@ body {
   text-align: center;
   font-size: 50px;
   width: 100%;
+  padding: 60px 0 0 0;
 
 }
 
@@ -34,8 +36,10 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 30px 0 0 0;
 }
 
 .move {
-  font-size: 100px;
+  font-size: 120px;
+  padding: 0 30px 0 30px;
 }
