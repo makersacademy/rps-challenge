@@ -1,9 +1,9 @@
 require "game"
 
 describe Game do
-  let(:human) {double("human")}
-  let(:computer) {double("computer")}
-  subject {described_class.new(human, computer)}
+  let(:human) { double("human") }
+  let(:computer) { double("computer") }
+  subject { described_class.new(human, computer) }
 
   context "has attributes" do
     it "human" do
