@@ -30,4 +30,10 @@ feature "See result" do
 
   scenario 'I can see the winner' do
   end
+
+  scenario 'I can go back and play again' do
+    sign_in_and_play
+    click_button 'Scissors'
+    expect(page).to have_button 'Play Again'
+  end
 end
