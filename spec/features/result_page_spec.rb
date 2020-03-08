@@ -16,4 +16,12 @@ feature 'Playing game' do
     click_button 'Paper'
     expect(page).to have_content 'Win'
   end
+  context 'when game is complete' do
+    scenario 'give option to play again' do
+      sign_in_and_play
+      srand(65)
+      click_button 'Scissors'
+      expect(page).to have_button 'Play Again'
+    end
+  end
 end

@@ -1,3 +1,8 @@
 You chose <%=@move.capitalize%> and your opponent chose <%=@opponent.capitalize%>
 <br>
-<%=@result.capitalize%>
+
+You <%=@result.capitalize%>
+<br>
+<form action='/choose/symbol' method='get'>
+<input type='submit'value='Play Again'>
+</form>
