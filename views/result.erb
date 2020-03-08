@@ -5,8 +5,11 @@
   </head>
   <body>
 
-You selected <%= @game.move %>
+You selected <%= @game.p1_move %>
 
+Computer selects <%= @game.p2_move %>
+
+<%= @game.result(@game.p1_move, @game.p2_move) %>
 
 </body>
 </html>

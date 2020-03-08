@@ -1,6 +1,7 @@
 require 'sinatra'
 require './lib/player.rb'
 require './lib/game.rb'
+require './lib/computer.rb'
 
 class RPS < Sinatra::Base
 
@@ -24,12 +25,13 @@ class RPS < Sinatra::Base
 
   post '/result' do
     @game = @@game
-    @game.player_selection(params[:player_move])
+    @game.player_1_selection(params[:p1_move])
     redirect('/result')
   end
 
   get '/result' do
     @game = @@game
+    @game.player_2_selection
     erb :result
   end
 

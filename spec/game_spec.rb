@@ -4,7 +4,10 @@ require 'game'
 
     subject(:game) { described_class.new(player_1) }
     let(:player_1) { double :player_1 }
-    let(:player_move) { double :player_move}
+    let(:player_2) { double :player_2 }
+    let(:p1_move) { double :p1_move }
+    let(:p2_move) { double :p2_move }
+    
 
     describe "#player_1" do
       it "returns player 1" do
@@ -13,10 +16,8 @@ require 'game'
     end
 
     it "should store the player's move" do
-      expect(game.player_selection(player_move)).to eq player_move
+      expect(game.player_1_selection(p1_move)).to eq p1_move
     end
-
-    
 
 
 end
