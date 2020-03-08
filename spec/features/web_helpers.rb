@@ -13,5 +13,5 @@ end
 
 def rock_rock
   sign_in_and_play
-  2.times { click_button('Rock') }
+  2.times { click_button("Rock") }
 end

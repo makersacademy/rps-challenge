@@ -1,10 +1,10 @@
 
   <div> <%=@player_1_name%> vs. <%=@player_2_name%> </div>
-<% if @winner !=nil %>
-  <div> <%=@winner%> has won! </div>
+<% if @winner != "It's a draw!" %>
+  <div> <%=@winner.name%> has won! </div>
 
-<% elsif @winner == "It's a draw!"%>
-<div> It's a draw </div>
+<% elsif @winner == "It's a draw!" %>
+<div><%=@winner%></div>
 <%end%>
 
   <div> <%=@player_1_name%> played <%=@player_1_choice%> </div>

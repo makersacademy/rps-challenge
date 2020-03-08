@@ -39,7 +39,7 @@ class RockPaperScissors < Sinatra::Base
   get '/results' do
     @player_1_name = @game.player_1.name
     @player_2_name = @game.player_2.name
-    @winner = @game.results.winner.name
+    @winner = @game.results.winner
     @player_1_choice = @game.player_1.choice
     @player_2_choice = @game.player_2.choice
     erb :results
