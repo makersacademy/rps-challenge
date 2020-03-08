@@ -57,11 +57,10 @@ class Game
   end
 
   def draw
-    @round_status = "draw"
+    @round_status = "drew"
   end
 
   def set_hand
-    @human.set_hand
     @computer.set_hand
   end
 

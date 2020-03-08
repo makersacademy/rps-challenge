@@ -27,10 +27,6 @@ describe Game do
   end
 
   context "method functionality" do
-    it "#start delegates to Player.set_hand" do
-      expect(human).to receive(:set_hand).once
-      subject.start
-    end
     it "#start delegates to Computer.set_hand" do
       expect(computer).to receive(:set_hand).once
       subject.start
@@ -43,7 +39,7 @@ describe Game do
       allow(human).to receive(:hand).and_return("scissors")
       allow(computer).to receive(:hand).and_return("scissors")
       subject.start
-      expect(subject.round_status).to eq("draw")
+      expect(subject.round_status).to eq("drew")
     end
     it "round ends in win" do
       allow(human).to receive(:hand).and_return("rock")
