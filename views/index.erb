@@ -1,0 +1,31 @@
+  <div>
+    <style>
+      h1 {
+        border: 6px dotted lightblue;
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+      form {
+        text-align: center;
+      }
+      img {
+        background: url(https://docs.microsoft.com/en-us/samples/microsoft/rockpaperscissorslizardspock/azure-rock-paper-scissors/media/rpsls-title.png) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    </style>
+      <img src='https://docs.microsoft.com/en-us/samples/microsoft/rockpaperscissorslizardspock/azure-rock-paper-scissors/media/rpsls-title.png'>
+  <div>
+<h1>Let the game begin!</h1>
+<h2>Enter your name to start the game</h2>
+<form action="/names" method='post'>
+  <input type="text" name="player_name">
+  <input type="submit" value="Submit">
+</form>
