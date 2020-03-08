@@ -1,0 +1,73 @@
+body {
+  font-family: arial;
+  color: black;
+  background-image: url("https://pxt.azureedge.net/blob/68f66c3ddc3acfc4c53157abf92eace202d46db2/static/courses/csintro/conditionals/rock-paper-scissors-items.png");
+  background-color: #cccccc;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.div-text {
+  background-color: white;
+  opacity: 0.8;
+  text-align: center;
+  width: 40%;
+
+  /* Align vertically and horizontally */
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  border-radius: 10px;
+  padding-top: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  box-shadow: 0px 0px 15px black;
+}
+
+#welcome {
+  font-size: 32;
+  font-weight: bold;
+}
+
+#name {
+  font-size: 28;
+  font-weight: bold;
+}
+
+#input {
+  font-size: 25;
+  text-align: center;
+  width: 50%;
+  border: 3px solid gray;
+}
+
+#input[type=text]:focus {
+  border: none;
+  border-bottom: 3px solid black;
+}
+
+#submit {
+  font-size: 20;
+  color: white;
+  text-align: center;
+  background-color: black;
+  padding-top: 2%;
+  padding-right: 10%;
+  padding-bottom: 2%;
+  padding-left: 10%;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+
+#submit:hover {
+  background-color: gray;
+  color: black;
+}
