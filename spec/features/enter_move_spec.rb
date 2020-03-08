@@ -5,7 +5,7 @@ feature "Enter move" do
       sign_in_and_play
       choose('rock')
       click_button('Play')
-      expect(page).to have_content "Human chose Rock! Computer chose Rock!"
+      expect(page).to have_content "Human chose Rock: Computer chose Rock"
       expect(page).to have_content "It's a draw!"
     end
 
@@ -14,7 +14,7 @@ feature "Enter move" do
       sign_in_and_play
       choose('paper')
       click_button('Play')
-      expect(page).to have_content "Human chose Paper! Computer chose Paper!"
+      expect(page).to have_content "Human chose Paper: Computer chose Paper"
       expect(page).to have_content "It's a draw!"
     end
 
@@ -23,7 +23,7 @@ feature "Enter move" do
       sign_in_and_play
       choose('scissors')
       click_button('Play')
-      expect(page).to have_content "Human chose Scissors! Computer chose Scissors!"
+      expect(page).to have_content "Human chose Scissors: Computer chose Scissors"
       expect(page).to have_content "It's a draw!"
     end
   end
@@ -34,7 +34,7 @@ feature "Enter move" do
       sign_in_and_play
       choose('rock')
       click_button('Play')
-      expect(page).to have_content "Human chose Rock! Computer chose Scissors!"
+      expect(page).to have_content "Human chose Rock: Computer chose Scissors"
       expect(page).to have_content "You win!"
     end
 
@@ -43,7 +43,7 @@ feature "Enter move" do
       sign_in_and_play
       choose('paper')
       click_button('Play')
-      expect(page).to have_content "Human chose Paper! Computer chose Rock!"
+      expect(page).to have_content "Human chose Paper: Computer chose Rock"
       expect(page).to have_content "You win!"
     end
 
@@ -52,7 +52,7 @@ feature "Enter move" do
       sign_in_and_play
       choose('scissors')
       click_button('Play')
-      expect(page).to have_content "Human chose Scissors! Computer chose Paper!"
+      expect(page).to have_content "Human chose Scissors: Computer chose Paper"
       expect(page).to have_content "You win!"
     end
   end
@@ -63,7 +63,7 @@ feature "Enter move" do
       sign_in_and_play
       choose('rock')
       click_button('Play')
-      expect(page).to have_content "Human chose Rock! Computer chose Paper!"
+      expect(page).to have_content "Human chose Rock: Computer chose Paper"
       expect(page).to have_content "You lose!"
     end
 
@@ -72,7 +72,7 @@ feature "Enter move" do
       sign_in_and_play
       choose('paper')
       click_button('Play')
-      expect(page).to have_content "Human chose Paper! Computer chose Scissors!"
+      expect(page).to have_content "Human chose Paper: Computer chose Scissors"
       expect(page).to have_content "You lose!"
     end
 
@@ -81,7 +81,7 @@ feature "Enter move" do
       sign_in_and_play
       choose('scissors')
       click_button('Play')
-      expect(page).to have_content "Human chose Scissors! Computer chose Rock!"
+      expect(page).to have_content "Human chose Scissors: Computer chose Rock"
       expect(page).to have_content "You lose!"
     end
   end

@@ -16,6 +16,7 @@ class Game
   def result
     return :draw if draw?
     return :win if win?
+
     return :lose
   end
 

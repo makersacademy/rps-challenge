@@ -1,6 +1,8 @@
 <html>
   <body>
-    <p><%= @player.name %> chose <%= @player.weapon.capitalize %>! Computer chose <%= @game.computer.weapon.capitalize %>!</p>
-    <p>It's a draw!</p>
+    <h1><%= @player.name %> chose <%= @player.weapon.capitalize %>: Computer chose <%= @game.computer.weapon.capitalize %></h1>
+    <h2>It's a draw!</h2>
+    <br>
+    <a href='/play'><button>Play Again</button></a>
   </body>
 </html>
