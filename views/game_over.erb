@@ -1,4 +1,14 @@
-<h1><%= @human_name %> vs <%= @computer_name %></h1>
-<h3><%= @human_points %>   <%= @computer_points %></h3>
-
-<h1><%= @round_status %></h1>
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+      <div style="display: flex; justify-content: center">
+        <div style="display: flex; flex-direction: column; align-items: center; background-color: #0A79DF;
+    width: 40%; height: 300px; border-radius: 25px">
+          <h1><%= @human_name %> vs <%= @computer_name %></h1>
+          <h3><%= @human_points %>   <%= @computer_points %></h3>
+          <h1><%= @round_status %></h1>
+    </body>
+  </html>
