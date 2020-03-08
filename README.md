@@ -182,12 +182,12 @@ There will be 3 views in total. The controller will handle the exchange of data 
 
 View 1 -
 erb :index
-containting a form to input names
+containing a form to input names
 
 View 2 -
 erb :play
 name of the current player
-containing a form and images for rock, paper Scissors
+containing a form for rock, paper scissors
 
 View 3 -
 erb :results
@@ -195,7 +195,7 @@ the name of the winner
 the name of both players and their choices
 button to play again
 
-##
+## Decisions
 
 On Patrick's advice, I added a different input for my player's options, using the following form input:
 ```
@@ -204,21 +204,14 @@ On Patrick's advice, I added a different input for my player's options, using th
   <input class="button" name="choice" type= "submit" value="Paper">
   <input class="button" name="choice" type= "submit" value="Scissors">
 ```
+This way the input can be stored and saved via the params.
 
+I also added a static css file to style my game and a helper module to help keep the controller skinny.
 
+##Future additions
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+I'd like to add in the option for the same players to be able to play another game, without having to re-enter their names.
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+Currently the 'Play Again' button does not let the users play another full game. But finishes early.
 
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+I'd also like to add in functionality so the users can play Rock, Paper, Scissors, Spock, Lizard.

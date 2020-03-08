@@ -8,12 +8,19 @@
   </head>
   <body>
     <div class ="module">
-  <h1> <%=@player_1_name%> vs. <%=@player_2_name%> </h1>
-    <% if @winner != "It's a draw!"%>
-    <h2> <%=@winner.name%> has won! </h2>
-    <% elsif @winner == "It's a draw!"%>
-    <h2><%=@winner%></h2>
-    <%end%>
+      <h1> <%=@player_1_name%> vs. <%=@player_2_name%> </h1>
+      <% if @winner != "It's a draw!"%>
+        <h2> <%=@winner.name%> has won! </h2>
+          <% if @winner.choice == "Rock" %>
+            <img src="https://img.icons8.com/ios/100/000000/hand-rock.png">
+            <% elsif @winner.choice == "Scissors" %>
+            <img src="https://img.icons8.com/ios/100/000000/hand-scissors.png">
+            <% elsif @winner.choice == "Paper" %>
+            <img src="https://img.icons8.com/carbon-copy/100/000000/paper-plane.png">
+            <%end%>
+      <% elsif @winner == "It's a draw!"%>
+        <h2><%=@winner%></h2>
+      <%end%>
   <h2> <%=@player_1_name%> played <%=@player_1_choice%> </h2>
   <h2> <%=@player_2_name%> played <%=@player_2_choice%> </h2>
   <form action='/newgame' method='post'>
