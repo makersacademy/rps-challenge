@@ -1,8 +1,8 @@
 require "game"
 
 describe Game do
-  let(:human) { double("human", set_hand: "") }
-  let(:computer) { double("computer", set_hand: "") }
+  let(:human) { double("human", set_hand: "", hand: "", add_points: 1) }
+  let(:computer) { double("computer", set_hand: "", hand: "", add_points: 1) }
   subject { described_class.new(human, computer) }
 
   context "has attributes" do
@@ -38,6 +38,24 @@ describe Game do
     it "#start delegates to #result" do
       expect(subject).to receive(:result).once
       subject.start
+    end
+    it "round ends in draw" do
+      allow(human).to receive(:hand).and_return("scissors")
+      allow(computer).to receive(:hand).and_return("scissors")
+      subject.start
+      expect(subject.round_status).to eq("draw")
+    end
+    it "round ends in win" do
+      allow(human).to receive(:hand).and_return("rock")
+      allow(computer).to receive(:hand).and_return("scissors")
+      subject.start
+      expect(subject.round_status).to eq("won")
+    end
+    it "round ends in loss" do
+      allow(human).to receive(:hand).and_return("paper")
+      allow(computer).to receive(:hand).and_return("scissors")
+      subject.start
+      expect(subject.round_status).to eq("lost")
     end
   end
 end
