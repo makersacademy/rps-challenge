@@ -6,6 +6,14 @@ class Game
     @player = player
     @computer = Computer.new
   end
+
+  def self.create(player)
+    @game = Game.new(player)
+  end
+  
+  def self.instance
+    @game
+  end
   
   def result
     if @player.shape == @computer.compchoice
