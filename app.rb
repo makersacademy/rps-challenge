@@ -17,8 +17,22 @@ class Rps  < Sinatra::Base
     erb(:play)
   end
 
-  get '/game' do
-    "scissors"
+  post '/game' do
+    @name = $name
+    @name.choose_weapon(params[:choice])
+    @name.play_game
+    redirect '/outcome'
+  end
+
+  get '/play-again' do
+   @name = $name
+   $name = Player.new(@name.name)
+   redirect '/play'
+ end
+
+  get '/outcome' do
+    @name = $name
+    erb(:outcome)
   end
 
 

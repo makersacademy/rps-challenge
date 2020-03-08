@@ -1,7 +1,21 @@
 <h1>Welcome <%=@name.name%>! </h1>
 
-<a href="/game">Scissors</a>
+<!-- <a href="/game">Scissors</a> -->
 
-<%# <form action="/game" method="get">
-  <button type="button" name="Scissors">Scissors</button>
-</form> %>
+<!-- <form action="/game" method="get">
+  <button type="submit" name="Scissors">Scissors</button>
+  <button type="submit" name="Scissors">Scissors</button>
+  <button type="submit" name="Scissors">Scissors</button>
+</form> -->
+<form method="POST" action="/game">
+  <input type="hidden" name="choice" value="scissors" />
+  <input type="submit" name="submit" value="Scissors" />
+</form>
+<form method="POST" action="/game">
+  <input type="hidden" name="choice" value="rock" />
+  <input type="submit" name="submit" value="Rock" />
+</form>
+<form method="POST" action="/game">
+  <input type="hidden" name="choice" value="paper" />
+  <input type="submit" name="submit" value="Paper" />
+</form>
