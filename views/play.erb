@@ -1,6 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <title>Play</title>
+      <link rel="stylesheet" href="style.css" />
+      <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
 <% if @player_1_name && @player_2_name %>
-  <div> <%=@player_1_name%> vs. <%=@player_2_name%> </div>
-  <div> <%=@current_player%> your turn </div>
+  <h1> <%=@player_1_name%> vs. <%=@player_2_name%> </h1>
+  <h2> <%=@current_player%> your turn </h2>
 
   <form action='/play' method='post'>
     <input class="button" name="choice" type= "submit" value="Rock">
@@ -8,3 +18,5 @@
     <input class="button" name="choice" type= "submit" value="Scissors">
   </form>
 <% end %>
+</body>
+</html>

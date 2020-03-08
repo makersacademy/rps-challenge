@@ -1,19 +1,26 @@
-
-  <div> <%=@player_1_name%> vs. <%=@player_2_name%> </div>
-<% if @winner != "It's a draw!" %>
-  <div> <%=@winner.name%> has won! </div>
-
-<% elsif @winner == "It's a draw!" %>
-<div><%=@winner%></div>
-<%end%>
-
-  <div> <%=@player_1_name%> played <%=@player_1_choice%> </div>
-  <div> <%=@player_2_name%> played <%=@player_2_choice%> </div>
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <title>Results</title>
+      <link rel="stylesheet" href="style.css" />
+      <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  <h1> <%=@player_1_name%> vs. <%=@player_2_name%> </h1>
+    <% if @winner != "It's a draw!" %>
+    <h2> <%=@winner.name%> has won! </h2>
+    <% elsif @winner == "It's a draw!" %>
+    <h2><%=@winner%></h2>
+    <%end%>
+  <h2> <%=@player_1_name%> played <%=@player_1_choice%> </h2>
+  <h2> <%=@player_2_name%> played <%=@player_2_choice%> </h2>
   <form action='/play' method='get'>
     <input class="button" type= "submit" value="Play Again">
   </form>
-
   <form action ='/' method = 'get'>
     <input class="button" type= "submit" value="New game">
   </form>
+
+  </body>
+  </html>

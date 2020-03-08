@@ -1,7 +1,10 @@
 require 'sinatra/base'
 require './lib/game'
+require './helpers/turn_helper'
 
 class RockPaperScissors < Sinatra::Base
+
+ helpers Turn_helper
 
   get '/' do
     erb :index
@@ -26,14 +29,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    @game.turn(params[:choice])
-    p @game.results
-    p @game.results.winner
-    if @game.game_over == true
-      redirect('/results')
-    else
-      redirect('/play')
-    end
+    turn_redirect(@game)
   end
 
   get '/results' do

@@ -24,7 +24,6 @@ class Game
 
   def turn(choice)
     if @player_1.choice != nil && @player_2.choice != nil
-      @results.calculate_results
       end_game
     else
       play(choice)
