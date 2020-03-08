@@ -1,9 +1,12 @@
 feature "game over" do
-  scenario "players displayed" do
-    visit("/")
-    fill_in :human, with: "Nima"
-    click_button("submit")
+  scenario "player" do
+    enter_name_and_submit
     visit("/game_over")
-    expect(page).to have_content("Nima vs computer")
+    expect(page).to have_content("Nima")
+  end
+  scenario "computer displayed" do
+    enter_name_and_submit
+    visit("/game_over")
+    expect(page).to have_content("computer")
   end
 end

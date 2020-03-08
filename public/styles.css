@@ -15,15 +15,15 @@
 }
 
 .player_points {
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .vs {
-  display: flex; 
-  width: 100%; 
-  justify-content: space-evenly
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .button_spacing {
@@ -36,14 +36,11 @@
   justify-content: space-evenly;
 }
 
-/* @media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
   .inner_container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #0a79df;
     width: 470px;
-    height: 300px;
-    border-radius: 25px;
   }
-} */
+}
