@@ -1,4 +1,4 @@
-
+require 'spec_helper'
 
 feature 'Enter name' do
   scenario 'submitting name' do

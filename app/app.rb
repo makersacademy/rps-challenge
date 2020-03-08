@@ -19,7 +19,8 @@ class RPS < Sinatra:: Base
   end
 
   post '/play' do
-    session[:player_shape] = params[:shape]
+    # need to add .downcase.to_sym to convert to downcase symbol 
+    session[:player_shape] = params[:shape].downcase.to_sym
     session[:opponent_shape] = Opponent.new.shape
     redirect '/play'
   end
