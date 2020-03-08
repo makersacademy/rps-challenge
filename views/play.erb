@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="/mystyle.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/mystyle.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap" />
+    <link rel="shortcut icon" href="/poo.png" />
     <meta charset="utf-8">
-    <title>RPS</title>
+    <title>RPS!</title>
   </head>
   <body>
     <div class="main">
-      <h1> <%= @turn.player_name.capitalize %>, welcome to the <h1>
       <div>
+        <h1> <%= @turn.player_name.capitalize %>, welcome to the <h1>
         <h2>ROCK, PAPER, SCISSORS!</h2>
-
-      <div>
-        <p>Choose:</p>
+        <p>Choose your weapon:</p>
         <form action="/play" method="post" id="choice">
           <button class="button button2" name = "player_choice" value="Rock" type="submit" form="choice">Rock!</button>
           <button class="button button3" name = "player_choice" value="Paper" type="submit" form="choice">Paper!</button>
@@ -21,7 +20,7 @@
         </form>
       </div>
       <br>
-      <div>
+      <div id="player">
         You chose <%= @turn.player_choice.to_s.capitalize %>!
       </div>
       <br>
@@ -31,18 +30,24 @@
       <br>
       <div id="result">
         <% if @turn.win == true %>
-          You win!
+          You win! <img src="/win.png" alt="Win" />
         <% end %>
 
         <% if @turn.lose == true %>
-          You lose!
+          You lose! <img src="/lose.png" alt="Lose"
         <% end %>
 
         <% if @turn.draw == true %>
-          It's a draw!
+          It's a draw! <img src="/draw.png" alt="Draw"
         <% end %>
+        <br>
       </div>
       <br>
+      </div>
+    </div>
+    <br>
+    <div class="footer">
+      <img src="/poo.png" alt="Pile of Poo">
     </div>
   </body>
 </html>

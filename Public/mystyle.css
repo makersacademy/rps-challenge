@@ -1,6 +1,6 @@
 * {
     background-color: black;
-    font-family: lato; color: white; font-size: 14px;
+    font-family: lato; color: white; font-size: 16px;
     text-align: center;
 }
 
@@ -10,10 +10,14 @@
   width: 600px;
 }
 
+img {
+  margin: 0 auto;
+  width: 25px;
+  vertical-align: bottom;
+}
+
 #result {
-
   font-size: 22px;
-
 }
 
 
@@ -21,9 +25,12 @@ input::placeholder {
   font-size: 12px;
   color: white;
   text-align: center;
-
 }
+
 input[type=text] {
+  font-size: 14px;
+  color: white;
+  text-align: center;
   width: 160px;
   /* padding: 12px 20px; */
   margin: 5px 0;
@@ -32,21 +39,23 @@ input[type=text] {
 }
 
 input[type=text]:focus {
+  font-size: 14px;
   background-color: white;
   color: black;
+  text-align: center;
 }
 h1 {
-font-family: lato; color: white; font-size: 22px;
+font-family: lato; color: white; font-size: 24px;
 }
 
 h2 {
-font-family: lato; color: white; font-size: 18px;
+font-family: lato; color: white; font-size: 20px;
 
 }
 
 p, div {
 
-font-family: lato; color: white; font-size: 14px;
+font-family: lato; color: white; font-size: 16px;
 
 }
 .button {
