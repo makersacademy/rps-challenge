@@ -5,29 +5,48 @@
   </head>
 
   <body>
-    <div class='container'>
+    <div class='play_header'>
+
       <div class='scoreboard'>
-        Scoreboard:
-        <%= "#{$game.player_1.name}: #{$game.player_1.score}" %>
-        <%= "#{$game.player_2.name}: #{$game.player_2.score}" %>
-      </div>
-
-      <div class='player_2_play'>🖥</div>
-
-      <div class='player_1_play'>
-        <%= "#{$game.player_1.name}, select your move!" %>
-        <div class='moves'>
-          <form action='/rock' method='get'>
-            <button class='move'>👊🏼</button>
-          </form>
-          <form action='/paper' method='get'>
-            <button class='move'>🤚🏼</button>
-          </form>
-          <form action='/scissors' method='get'>
-            <button class='move'>✌🏼</button>
-          </form>
+        <div class='scoreboard_header'>Scoreboard:</div>
+        <div class='scoreboard_content'>
+          <div class='scoreboard_players'>
+            <div><%= "#{$game.player_1.name}" %></div>
+            <div><%= "#{$game.player_2.name}" %></div>
+          </div>
+          <div class='scoreboard_scores'>
+            <div><%= ": #{$game.player_1.score}" %></div>
+            <div><%= ": #{$game.player_2.score}" %></div>
+          </div>
         </div>
+
       </div>
+
+      <div class='player_2_position'>🖥</div>
+
+      <div class='left_space'></div>
+    </div>
+
+    <div class='middle_section'></div>
+
+    <div class='player_1_play'>
+
+      <div class='move_message'>
+        <%= "#{$game.player_1.name}, select your move!" %>
+      </div>
+
+      <div class='moves_container'>
+        <form action='/rock' method='get'>
+          <button class='move'>👊🏼</button>
+        </form>
+        <form action='/paper' method='get'>
+          <button class='move'>🤚🏼</button>
+        </form>
+        <form action='/scissors' method='get'>
+          <button class='move'>✌🏼</button>
+        </form>
+      </div>
+
     </div>
   </body>
 </html>

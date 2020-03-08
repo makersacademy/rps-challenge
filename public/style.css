@@ -1,45 +1,160 @@
-body {
+/* theme 1:
+dark green: 1,64,53
+light green: 91, 166, 153
+skin colour: 242, 213, 196
+grey: 115, 105, 102
+black: 38, 1, 1
+
+theme 2:
+rose pink: 166, 83, 98
+dark blue: 7, 35, 116 #text colour
+light rose pink: 191, 159, 159
+light grey: 217, 217, 217 #background
+dark charcoal: 38, 38, 38 */
+
+html,body {
   font-family: Arial, Helvetica, sans-serif;
+  color: rgb(7, 35, 116);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(217, 217, 217);
+  /* background-image: url('images/wood-texture-background-pine-82256.jpg'); */
+}
+
+button {
+  all: unset;
+}
+
+input[type=text] {
+  color: rgb(7, 35, 116);
 }
 
 .container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-direction: column;
+  justify-content: center; */
+}
+
+.register {
+  margin: auto;
+}
+
+.play_header {
+  display: flex;
+  height: 30%;
 }
 
 .scoreboard {
+  width: 200px;
+  /* height: 150px; */
+  background-image: url('/images/Aibre7p7T.jpg');
+  background-repeat: no-repeat;
+  background-size: 200px, 200px;
+  font-family: "Sheila Crayon";
+  color: white;
+  diplay: flex;
+  /* background-color: rgb(191, 159, 159); */
   /* put in left-hand corner */
-  height: 100px;
-  width: 100px;
+  /* height: 100px;
+  width: 100px; */
 }
 
-.player_2_play {
-  margin: auto;
+.scoreboard_header {
+  flex 1;
+  padding: 8%;
   text-align: center;
-  font-size: 120px;
-  width: 100%;
-  padding: 0 0 60px 0;
+}
 
+.scoreboard_content{
+  flex: 2;
+  display: flex;
+  padding: 8%;
+}
+
+.scoreboard_players {
+  flex: 2;
+  padding: 5%;
+}
+
+.scoreboard_scores {
+  flex: 1;
+  padding: 5%;
+}
+
+.player_2_position {
+  flex: 1;
+  text-align: center;
+  font-size: 18vh;
+  /* font-size:  */
+  /* margin: auto;
+  width: 100%;
+  padding: 0 0 60px 0; */
+
+}
+
+.left_space {
+  width: 200px;
+}
+
+.middle_section {
+  height: 25%;
 }
 
 .player_1_play {
-  margin: auto;
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  height: 45%;
+  font-size: 5vh;
+  /* margin: auto;
   font-size: 50px;
   width: 100%;
-  padding: 60px 0 0 0;
+  padding: 60px 0 0 0; */
 
 }
 
-.moves {
+.move_message {
+  flex: 1;
+  margin: auto;
+}
+
+.moves_container {
+  flex: 2;
   display: flex;
+  justify-content: center;
+  /* display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 30px 0 0 0;
+  padding: 30px 0 0 0; */
 }
 
-.move {
-  font-size: 120px;
-  padding: 0 30px 0 30px;
+.moves_container form {
+  /* flex: 1; */
+  box-sizing: border-box;
+  flex-basis: 20%;
+  /* font-size: 10vh; */
+  /* font-size: 120px;
+  padding: 0 30px 0 30px; */
+}
+
+.moves_container button {
+  width: 80%;
+  height: 80%;
+  font-size: 18vh;
+  background-color: Transparent;
+  border: none;
+}
+
+.moves_container button:hover {
+  text-shadow: 2px 2px 5px rgb(166, 83, 98);
+}
+
+.moves_container button:after {
+  text-shadow: 2px 2px 5px rgb(7, 35, 116);
+  border: none;
 }
