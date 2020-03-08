@@ -18,31 +18,40 @@
           <button class="button button3" name = "player_choice" value="Paper" type="submit" form="choice">Paper!</button>
           <button class="button button4" name = "player_choice" value="Scissors" type="submit" form="choice">Scissors!</button>
         </form>
-      </div>
-      <br>
-      <div id="player">
-        You chose <%= @turn.player_choice.to_s.capitalize %>!
-      </div>
-      <br>
-      <div id="computer">
-        Computer chose <%= @turn.computer_choice.to_s.capitalize %>!
-      </div>
-      <br>
-      <div id="result">
-        <% if @turn.win == true %>
-          You win! <img src="/win.png" alt="Win" />
-        <% end %>
-
-        <% if @turn.lose == true %>
-          You lose! <img src="/lose.png" alt="Lose"
-        <% end %>
-
-        <% if @turn.draw == true %>
-          It's a draw! <img src="/draw.png" alt="Draw"
-        <% end %>
         <br>
       </div>
-      <br>
+
+      <% if @turn.player_choice.is_a?(Symbol) && @turn.computer_choice.is_a?(Symbol) %>
+        <div id="player">
+          You chose <%= @turn.player_choice.to_s.capitalize %>!
+          <br>
+          <br>
+        </div>
+        <div id="computer">
+          Computer chose <%= @turn.computer_choice.to_s.capitalize %>!
+          <br>
+          <br>
+        </div>
+        <div id="result">
+          <% if @turn.win == true %>
+            You win! <img src="/win.png" alt="Win" />
+            <br>
+            <br>
+          <% end %>
+
+          <% if @turn.lose == true %>
+            You lose! <img src="/lose.png" alt="Lose" />
+            <br>
+            <br>
+          <% end %>
+
+          <% if @turn.draw == true %>
+            It's a draw! <img src="/draw.png" alt="Draw" />
+            <br>
+            <br>
+          <% end %>
+        </div>
+      <% end %>
       </div>
     </div>
     <br>
