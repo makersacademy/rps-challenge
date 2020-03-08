@@ -1,0 +1,19 @@
+
+  <div> <%=@player_1_name%> vs. <%=@player_2_name%> </div>
+<% if @winner !=nil %>
+  <div> <%=@winner%> has won! </div>
+
+<% elsif @winner == "It's a draw!"%>
+<div> It's a draw </div>
+<%end%>
+
+  <div> <%=@player_1_name%> played <%=@player_1_choice%> </div>
+  <div> <%=@player_2_name%> played <%=@player_2_choice%> </div>
+
+  <form action='/play' method='get'>
+    <input class="button" type= "submit" value="Play Again">
+  </form>
+
+  <form action ='/' method = 'get'>
+    <input class="button" type= "submit" value="New game">
+  </form>

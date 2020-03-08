@@ -2,23 +2,53 @@ require_relative './results'
 require_relative './player'
 
 class Game
-attr_reader :player_1, :player_2, :current_player
+  attr_reader :player_1, :player_2, :current_player, :game_over, :results
 
-  def initialize(player_1, player_2)
+  def initialize(player_1, player_2, results = Results.new(player_1, player_2))
     @turn = true
     @player_1 = player_1
     @player_2 = player_2
     @current_player = player_1
+    @results = results
+    @game_over
     end
 
 # class methods for singleton principle - lets us only have one game
-
-  def self.create(player_1, player_2)
-    @game = Game.new(player_1, player_2)
+  def self.create(player_1, player_2, results)
+    @game = Game.new(player_1, player_2, results)
   end
 
   def self.instance
     @game
+  end
+
+  def turn(choice)
+    if @player_1.choice != nil && @player_2.choice != nil
+      @results.calculate_results
+      end_game
+    else
+      play(choice)
+    end
+  end
+
+  def play(choice)
+    @current_player.store_choice(choice)
+    @results.calculate_results
+    end_game
+    switch_players
+  end
+
+  def turn?
+    @true = !@true
+  end
+
+  def switch_players
+    @true ? @current_player = player_1 : @current_player = player_2
+    turn?
+  end
+
+  def end_game
+    @game_over = true if @player_1.choice && @player_2.choice != nil
   end
 
 end

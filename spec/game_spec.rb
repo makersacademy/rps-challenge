@@ -20,7 +20,7 @@ describe Game do
     end
 
     it 'should only be initialised via class methods' do
-      expect{Game.new}.to raise_error
+      expect { Game.new }.to raise_error
     end
   end
 
@@ -42,4 +42,4 @@ describe Game do
   #     expect(subject).to receive(:attack).once
   #     subject.turn
   #   end
-  end
+end
