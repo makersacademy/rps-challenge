@@ -8,7 +8,7 @@ feature 'Computer will respond with a choice' do
     fill_in :name, with: 'Stephan'
     click_button 'submit'
     click_button 'ROCK'
-    expect(page).to have_content("Computer's choice: ROCK")
+    expect(page).to have_content("Computer's Choice: ROCK")
   end
 
   scenario 'computer will respond with PAPER' do
@@ -17,7 +17,7 @@ feature 'Computer will respond with a choice' do
     fill_in :name, with: 'Stephan'
     click_button 'submit'
     click_button 'ROCK'
-    expect(page).to have_content("Computer's choice: PAPER")
+    expect(page).to have_content("Computer's Choice: PAPER")
   end
 
   scenario 'computer will respond with SCISSORS' do
@@ -26,6 +26,6 @@ feature 'Computer will respond with a choice' do
     fill_in :name, with: 'Stephan'
     click_button 'submit'
     click_button 'ROCK'
-    expect(page).to have_content("Computer's choice: SCISSORS")
+    expect(page).to have_content("Computer's Choice: SCISSORS")
   end
 end

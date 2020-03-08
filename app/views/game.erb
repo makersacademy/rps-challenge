@@ -1,16 +1,16 @@
 <html>
   <head></head>
   <body>
-    <h1>Good day master <%=@name%></h1>
+    <h1>Good day master <%=@game.player.name%></h1>
     <h2>Welcome to Rock Paper Scissors. May the odds be in your favour</h2>
     <form action="/game" method="post">
       <input type="submit" name="choice" value="ROCK">
       <input type="submit" name="choice" value="PAPER">
       <input type="submit" name="choice" value="SCISSORS">
     </form>
-    <p><%=@name%>'s choice: <%=@choice%></p>
-    <p>Computer's choice: <%=@computer_choice %> </p>
-    <p>Computers Score: <%=@computer_score %></p>
-    <p><%=@name%>'s Score: <%=@player_score %></p>
+    <p><%=@game.player.name%>'s Choice: <%=@game.player.choice%></p>
+    <p>Computer's Choice: <%=@game.computer.choice %></p>
+    <p>Computers Score: <%=@game.computer.score %></p>
+    <p><%=@game.player.name%>'s Score: <%=@game.player.score %></p>
   </body>
 </html>

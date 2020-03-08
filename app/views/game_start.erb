@@ -1,7 +1,7 @@
 <html>
   <head></head>
   <body>
-    <h1>Good day master <%=@name%></h1>
+    <h1>Good day master <%=@game.player.name%></h1>
     <h2>Welcome to Rock Paper Scissors. May the odds be in your favour</h2>
     <form action="/game" method="post">
       <input type="submit" name="choice" value="ROCK">
