@@ -1,0 +1,14 @@
+<html>
+  <head></head>
+  <body>
+    <h1>Good day master <%=@name%></h1>
+    <h2>Welcome to Rock Paper Scissors. May the odds be in your favour</h2>
+    <form action="/game" method="post">
+      <input type="submit" name="choice" value="ROCK">
+      <input type="submit" name="choice" value="PAPER">
+      <input type="submit" name="choice" value="SCISSORS">
+    </form>
+    <p><%=@name%>'s choice: <%=@choice%></p>
+    <p>Computer's choice: <%=@computer_choice.make_choice %> </p>
+  </body>
+</html>
