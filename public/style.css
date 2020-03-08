@@ -162,3 +162,30 @@ input[type=text] {
   text-shadow: 2px 2px 5px rgb(7, 35, 116);
   border: none;
 }
+
+.banner {
+  margin: auto;
+}
+
+.round_result {
+  display: flex;
+  text-align: center;
+  /* margin: auto; */
+}
+
+.player_1_move {
+  flex: 2;
+}
+
+.round_result div {
+  flex: 1;
+  margin: auto;
+}
+
+.player_2_move {
+  flex: 2;
+}
+
+.winner {
+  flex: 2;
+}

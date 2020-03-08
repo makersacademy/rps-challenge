@@ -6,19 +6,38 @@
 
   <body>
 
-    <%= "#{$game.player_1.name} moved: #{$game.player_1.move}"%>
-    <br>
-    <%= "#{$game.player_2.name} moved: #{$game.player_2.move}"%>
-    <br>
-    <% if $game.result == 'draw' %> It's a draw!! <% end %>
+    <div class='container'>
+      <div class='banner'>
 
-    <% if $game.result != 'draw' %>
-    <%= "#{$game.result.name} won this round!"%>
-    <% end %>
+        <div class='round_result'>
 
-    <form action='/check_score' method="get">
-      <button>Ok</button>
-    </form>
+          <div class='player_1_move'>
+            <%= "#{$game.player_1.name} moved: #{$game.player_1.move}"%>
+          </div>
 
+          <div>➕</div>
+
+          <div class='player_2_move'>
+            <%= "#{$game.player_2.name} moved: #{$game.player_2.move}"%>
+          </div>
+
+          <div>=</div>
+
+          <div class='winner'>
+            <% if $game.result == 'draw' %> It's a draw!! <% end %>
+            <% if $game.result != 'draw' %>
+            <%= "#{$game.result.name} won this round!"%>
+            <% end %>
+          </div>
+
+        </div>
+
+        <div>
+          <form action='/check_score' method="get">
+            <button>Ok</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
