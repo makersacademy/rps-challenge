@@ -16,6 +16,14 @@ class Game
     result
   end
 
+  def self.create(human, computer)
+    @game = Game.new(human, computer)
+  end
+
+  def self.instance
+    @game
+  end
+
   private
 
   def result
