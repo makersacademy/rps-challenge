@@ -10,8 +10,13 @@ feature "display choice rock,paper,scissors" do
         click_button "submit"
     end
     scenario "after inputting name view rps choices" do
-        expect(page).to have_content "rock"
-        expect(page).to have_content "paper"
-        expect(page).to have_content "scissors"
+        expect(page).to have_button "rock"
+        expect(page).to have_button "paper"
+        expect(page).to have_button "scissors"
+    end
+
+    scenario "able to choose rock,paper or scissors" do
+        click_button "rock"
+        expect(page).to have_content "you chose rock"
     end
 end
