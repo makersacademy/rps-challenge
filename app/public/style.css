@@ -1,0 +1,54 @@
+body {
+
+  background: cyan;
+
+}
+
+.main {
+  text-align: center;
+  margin-top: 20%
+
+}
+
+h1 {
+  text-align: center;
+  color: purple;
+  font-size: 5em;
+
+}
+h2 {
+  text-align: center;
+  color: orange;
+  font-size: 5em;
+}
+
+form {
+  text-align: center;
+  color: red;
+  font-size: 5em;
+}
+
+input [type=text] {
+  background-color: lime;
+
+}
+input [type=submit] {
+
+ background-color: blue;
+ border: none;
+ color: blue;
+ padding: 16px 32px;
+ text-decoration: none;
+ margin: 4px 2px;
+ cursor: pointer;
+
+}
+p {
+  font-size: 3em;
+  color: green;
+}
+
+div {
+  font-size: 3em;
+  color: black;
+}

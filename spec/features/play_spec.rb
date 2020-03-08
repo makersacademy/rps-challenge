@@ -11,7 +11,7 @@ feature 'playing a game' do
       fill_in :name, with: 'James'
       click_button 'Submit'
   end
-  
+
   # As a marketeer
   # So I can play a game
   # I want to see the shape options

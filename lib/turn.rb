@@ -24,7 +24,7 @@ class Turn
   def draw?
     result == :draw
   end
-  
+
   private
 
   def result

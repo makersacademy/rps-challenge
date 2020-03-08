@@ -42,6 +42,7 @@ describe Turn do
         expect(lose_turn.lose?).to eq true
       end
     end
+
     describe '#draw?' do
       it 'returns true if player_shape is :rock and opponent_shape is :paper' do
         expect(draw_turn.draw?).to eq true
