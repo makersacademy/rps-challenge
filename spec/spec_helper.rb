@@ -11,7 +11,13 @@ SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
+require 'capybara/rspec'
+require_relative './features/web_helpers.rb'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
+ENV['RACK_ENV'] = 'test'
+
+Capybara.app = RPS
 
 RSpec.configure do |config|
   config.after(:suite) do
