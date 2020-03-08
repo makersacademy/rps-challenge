@@ -6,22 +6,15 @@ class RPS < Sinatra::Base
     erb :index
   end
   post '/name' do
-    session[:player_name] = params[:player_name]
-    redirect '/choose/symbol'
+    session[:player_name] ||= params[:player_name]
+    @name = session[:player_name]
+    erb :play
   end
-  
   post '/play' do
     @move = params[:move].downcase.to_sym
     @opponent = Gamehelper.random
     @result = Gamehelper.decision(@move, @opponent)
     erb :result
   end
-
-  get '/choose/symbol' do
-    @name = session[:player_name]
-    erb :play
-  end  
-
   run! if app_file == $0
-  
 end
