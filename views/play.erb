@@ -1,0 +1,11 @@
+<h1>Hello <%=@Your_name%>, welcome to Rock paper scissors.</h1>
+<h1>Choose one of the three shapes.</h1>
+
+<form method="POST" action="/play">
+  <input type="submit" name="shape" value="Rock"/>
+  <input type="submit" name="shape" value="Paper"/>
+  <input type="submit" name="shape" value="Scissors"/>
+
+</form>
+
+You chose <%=@shape%>

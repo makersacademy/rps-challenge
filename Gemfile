@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'sinatra'
+gem 'shotgun'
+gem 'solargraph'
 
 group :test do
   gem 'capybara'
