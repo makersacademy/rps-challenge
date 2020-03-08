@@ -1,5 +1,29 @@
 # RPS Challenge
 
+**Domain Model:**
+
+| OPPONENT       | RESULT           |
+| :------------- |:-----------------|
+| -------------- |------------------|
+|                | @player_choice   | 
+|                | @opponent_choice | 
+|                | GAME_RULES       |
+| -------------- |------------------|
+| #random_move   | #win?            | 
+|                | #lose?           | 
+|                | #draw?           |
+|                | #check_result    |
+
+**Views Plan:**
+```
+get './'         -->  display index.erb (name input form)
+post './name'    -->  redirect to ./game
+get './game'     -->  display game.erb (three buttons to play)
+post './choice'  -->  redirect to ./result
+get './result'   -->  display result.erb (result of the game, and back to './game' button)
+```
+
+
 Instructions
 -------
 
