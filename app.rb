@@ -1,5 +1,7 @@
 require 'sinatra'
 require './lib/player'
+require './lib/game'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -16,6 +18,14 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @player = session[:player]
     erb(:play)
+  end
+
+  get '/result' do
+    @player = session[:player]
+    @player.weapon = params[:weapon]
+    @computer = Computer.new
+    @game = Game.new(@player, @computer)
+    erb(@game.result)
   end
 
   run! if app_file == $0

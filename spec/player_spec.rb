@@ -7,4 +7,6 @@ describe Player do
   it "has a name" do
     expect(player.name).to eq "Human"
   end
+
+  it { is_expected.to respond_to(:weapon) }
 end
