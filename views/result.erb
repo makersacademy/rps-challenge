@@ -1,15 +1,24 @@
 <link rel="stylesheet" href="css/result.css">
 
-<p> Your choice is <%= @player_choice %> </p>
-<p> Your oponent choice is <%= @opponent_choice %></p>
-<% if @result.win? %>
-  You win!
-<% elsif @result.lose? %>
-  You lost!
-<% elsif @result.draw? %>
-  It's a draw!
-<% end %>
+<div class='content'>
 
+  <p id='your-choice'> You chose <%= @player_choice %> </p>
+  <p id='opponent_choice'> and your oponent chose <%= @opponent_choice %></p>
 
+  <div id='result'>
 
-<button onclick="window.location.href='/game'">Play Again</button>
+    <% if @result.win? %>
+      You win!
+    <% elsif @result.lose? %>
+      You lost!
+    <% elsif @result.draw? %>
+      It's a draw!
+    <% end %>
+
+  </div>
+
+  <br>
+
+  <button id='play-again' onclick="window.location.href='/game'">Play Again</button>
+
+</div>

@@ -10,11 +10,12 @@ body {
   position: relative;
 }
 
-.div-text {
+.content {
   background-color: white;
   opacity: 0.8;
   text-align: center;
   width: 40%;
+  height: 40%;
 
   /* Align vertically and horizontally */
   margin: 0;

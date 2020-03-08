@@ -18,14 +18,14 @@ feature "See result" do
   scenario 'I can see my choice' do
     sign_in_and_play
     click_button 'Scissors'
-    expect(page).to have_content 'Your choice is Scissors'
+    expect(page).to have_content 'You chose Scissors'
   end
 
   scenario 'I can see my oponent choice' do
     sign_in_and_play
     srand(0)
     click_button 'Rock'
-    expect(page).to have_content 'Your oponent choice is Scissors'
+    expect(page).to have_content 'and your oponent chose Scissors'
   end
 
   scenario 'You win' do
