@@ -1,17 +1,20 @@
 <!DOCTYPE html>
   <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
   </head>
   <body>
-  <div style="display: flex; justify-content: center">
-    <div style="display: flex; flex-direction: column; align-items: center; background-color: #0A79DF;
-    width: 40%; height: 300px; border-radius: 25px">
-      <h1 class="text">Hi there</h1>
+  <div class="outer_container">
+    <div class="inner_container">
+      <h1>Rock Paper Scissors</h1>
       <h2>Please enter your name</h2>
       <form action="/name" method="post">
         <input type="text" name="human">
-        <input type="submit" value="submit">
+        <input type="submit" value="submit" class="btn btn-default">
       </form>
     </div>
     </div>

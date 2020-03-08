@@ -2,12 +2,14 @@
   <html>
     <head>
       <title>Rock Paper Scissors</title>
+      <link rel="stylesheet" href="/styles.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     </head>
     <body>
-    <div style="display: flex; justify-content: center">
-      <div style="display: flex; flex-direction: column; align-items: center; background-color: #0A79DF; width: 40%; height: 80%; border-radius: 25px">
+    <div class="outer_container">
+      <div class="inner_container">
         <div style="display: flex">
-          <div style="display: flex; flex-direction: column; align-items: center">
+          <div style="display: flex; flex-direction: column; align-items: center; border: 1px solid brown; ">
             <h1><%= @human_name %></h1>
             <h3><%= @human_points %></h3>
           </div>
@@ -20,13 +22,13 @@
         <h2>Choose your hand</h2>
         <div style="display: flex; width: 50%; justify-content: space-evenly">
           <form action="/rock" method="post">
-            <input type="submit" name="rock" value="rock">
+            <input type="submit" name="rock" value="rock" class="btn btn-default">
           </form>
           <form action="/paper" method="post">
-            <input type="submit" name="paper" value="paper">
+            <input type="submit" name="paper" value="paper" class="btn btn-default">
           </form>
           <form action="/scissors" method="post">
-            <input type="submit" name="scissors" value="scissors">
+            <input type="submit" name="scissors" value="scissors" class="btn btn-default">
           </form>
         </div>
         <h1>You chose <%= @human_hand %></h1>
