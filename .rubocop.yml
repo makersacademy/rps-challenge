@@ -69,7 +69,7 @@ Metrics/BlockLength:
 #     inject concretes)
 #   * Egregious non-idiomatic ruby like `def getFilename`
 
-require: rubocop-rails
+# require: rubocop-rails
 
 IndentationConsistency:
   Enabled: true

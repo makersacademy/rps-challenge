@@ -1,4 +1,8 @@
-require 'spec_helper.rb'
+require 'spec_helper'
+
+# As a marketeer
+# So that I can see my name in lights
+# I would like to register my name before playing an online game
 
 feature "register my name" do
   scenario "input and view my name" do
