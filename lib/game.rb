@@ -20,7 +20,7 @@ class Game
   end
 
   def player_1_wins?
-    win = { rock: 'scissors', paper: 'rock', scissors: 'paper' }
+    win = { 👊🏼: '✌🏼', ✋🏼: '👊🏼', ✌🏼: '✋🏼' }
     win[@player_1.move.to_sym] == @player_2.move
   end
 

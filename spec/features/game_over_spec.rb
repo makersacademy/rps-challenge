@@ -4,7 +4,7 @@ feature 'Game ends' do
     start_game
     3.times do
       srand(3)
-      click_button 'rock'
+      click_button '👊🏼'
       click_button 'Ok'
     end
     expect(page).to have_content "You win"
@@ -14,7 +14,7 @@ feature 'Game ends' do
     start_game
     3.times do
       srand(1)
-      click_button 'rock'
+      click_button '👊🏼'
       click_button 'Ok'
     end
     expect(page).to have_content "You lose"

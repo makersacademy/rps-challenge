@@ -1,11 +1,27 @@
-<% if $game.player_1.score == 3 %>
-<div>You win!! 💥</div>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='./style.css' />
+  </head>
 
-<% if $game.player_1.score != 3 %>
-<div>You lose ☹️</div>
-<% end %>
+  <body>
 
-<form action='/'>
-  <button>Play again!</button>
-</form>
+    <div class='container'>
+      <div class='register'>
+        <% if $game.player_1.score == 3 %>
+        <div>You win!! 💥</div>
+        <% end %>
+
+        <% if $game.player_1.score != 3 %>
+        <div>You lose ☹️</div>
+        <% end %>
+
+        <form action='/'>
+          <button>Play again!</button>
+        </form>
+      </div>
+    </div>
+
+
+  </body>
+</html>

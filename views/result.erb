@@ -1,13 +1,24 @@
-<%= "#{$game.player_1.name} moved: #{$game.player_1.move}"%>
-<br>
-<%= "#{$game.player_2.name} moved: #{$game.player_2.move}"%>
-<br>
-<% if $game.result == 'draw' %> It's a draw!! <% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='./style.css' />
+  </head>
 
-<% if $game.result != 'draw' %>
-<%= "#{$game.result.name} won this round!"%>
-<% end %>
+  <body>
 
-<form action='/check_score' method="get">
-  <button>Next round</button>
-</form>
+    <%= "#{$game.player_1.name} moved: #{$game.player_1.move}"%>
+    <br>
+    <%= "#{$game.player_2.name} moved: #{$game.player_2.move}"%>
+    <br>
+    <% if $game.result == 'draw' %> It's a draw!! <% end %>
+
+    <% if $game.result != 'draw' %>
+    <%= "#{$game.result.name} won this round!"%>
+    <% end %>
+
+    <form action='/check_score' method="get">
+      <button>Ok</button>
+    </form>
+
+  </body>
+</html>

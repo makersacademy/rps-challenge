@@ -23,15 +23,15 @@ describe Player do
   describe '.random' do
     it 'randomly selects rock' do
       srand(2)
-      expect(player.random_move).to eq 'rock'
+      expect(player.random_move).to eq '👊🏼'
     end
     it 'randomly selects paper' do
       srand(1)
-      expect(player.random_move).to eq 'paper'
+      expect(player.random_move).to eq '✋🏼'
     end
     it 'randomly selects scissors' do
       srand(3)
-      expect(player.random_move).to eq 'scissors'
+      expect(player.random_move).to eq '✌🏼'
     end
   end
   # add test for selected move

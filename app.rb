@@ -44,16 +44,16 @@ class RPSGame < Sinatra::Base
 
   # Would like to remove the below bits
   get '/rock' do
-    $game.player_1.selected('rock')
+    $game.player_1.selected('👊🏼')
     redirect '/result'
   end
   get '/paper' do
-    $game.player_1.selected('paper')
+    $game.player_1.selected('🤚🏼')
     #$game.players.last.random_move
     redirect '/result'
   end
   get '/scissors' do
-    $game.player_1.selected('scissors')
+    $game.player_1.selected('✌🏼')
     #$game.players.last.random_move
     redirect '/result'
   end

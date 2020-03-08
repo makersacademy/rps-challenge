@@ -6,14 +6,14 @@ feature 'Playing_game' do
 
   scenario 'can select rock' do
     start_game
-    expect(page).to have_content "rock"
+    expect(page).to have_content "👊🏼"
   end
   scenario 'can select paper' do
     start_game
-    expect(page).to have_content "paper"
+    expect(page).to have_content "🤚🏼"
   end
   scenario 'can select scissors' do
     start_game
-    expect(page).to have_content "scissors"
+    expect(page).to have_content "✌🏼"
   end
 end
