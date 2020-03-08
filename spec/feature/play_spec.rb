@@ -19,4 +19,16 @@ feature "display choice rock,paper,scissors" do
         click_button "rock"
         expect(page).to have_content "you chose rock"
     end
+
+    scenario "cpu chooses rock" do
+        click_button "rock"
+
+        message = find(:css, "#cpu").text
+
+        expect(cpu_choices).to include message
+    end
+
+    def cpu_choices
+        [:rock, :paper, :scissors]. map {|choice| "cpu chose #{choice}"}
+    end
 end
