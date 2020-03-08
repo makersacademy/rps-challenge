@@ -22,6 +22,14 @@ describe Game do
         expect(game.result).to eq :win
       end
     end
+
+    context "lose" do
+      it "if computer weapon beats player weapon" do
+        allow(player).to receive(:weapon).and_return(:scissors)
+        allow(computer).to receive(:weapon).and_return(:rock)
+        expect(game.result).to eq :lose
+      end
+    end
   end
 
 end
