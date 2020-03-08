@@ -6,15 +6,15 @@ class Game
     @player = player
     @computer = Computer.new
   end
-
+  
   def result
-    if @player.shape == @computer.choice
+    if @player.shape == @computer.compchoice
       "It is a draw"
-    elsif @player.shape == 'ROCK' && @computer.choice == 'SCISSORS'
+    elsif @player.shape == 'ROCK' && @computer.compchoice == 'SCISSORS'
       "#{@player.name} wins"
-    elsif @player.shape == 'PAPER' && @computer.choice == 'ROCK'
+    elsif @player.shape == 'PAPER' && @computer.compchoice == 'ROCK'
       "#{@player.name} wins"
-    elsif @player.shape == 'SCISSORS' && @computer.choice == 'PAPER'
+    elsif @player.shape == 'SCISSORS' && @computer.compchoice == 'PAPER'
       "#{@player.name} wins"
     else
       "Computer wins"

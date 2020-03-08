@@ -1,6 +1,6 @@
 require 'player'
 describe Player do
-  subject(:daria) {Player.new('Daria')}
+  subject(:daria) { Player.new('Daria') }
 
   describe '#name' do
     it 'stores the name' do

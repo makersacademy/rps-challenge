@@ -26,6 +26,7 @@ class RPS < Sinatra::Base
 
   get '/end' do
     @game = $game
+    @game.computer.choice
     erb :end
   end
 

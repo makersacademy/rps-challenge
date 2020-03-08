@@ -26,15 +26,14 @@ feature 'playing game' do
 
   scenario 'shows computers choice and who wins' do
     sign_in_and_play
-    click_button 'SCISSORS'
-    srand(0)
-    expect(page).to have_content 'Computer chose PAPER'
+    click_button 'PAPER'
+    srand(1)
     expect(page).to have_content 'Daria wins'
   end
 
   scenario 'tells if it is a draw' do
     sign_in_and_play
-    click_button 'ROCK'
+    click_button 'PAPER'
     srand(0)
     expect(page).to have_content 'It is a draw'
   end
@@ -44,6 +43,13 @@ feature 'playing game' do
     click_button 'SCISSORS'
     expect(page).to have_content 'Computer wins'
     
+  end
+
+  scenario 'tells if it is a draw when both are paper' do
+    sign_in_and_play
+    click_button 'PAPER'
+    srand(0)
+    expect(page).to have_content 'It is a draw'
   end
 
   scenario 'tells if player wins' do
