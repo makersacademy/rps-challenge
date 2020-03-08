@@ -20,9 +20,4 @@ feature 'user can enter their name' do
     click_button 'Start game'
     expect(page).to have_content "John, are you ready to play?"
   end
-
-  # scenario 'user can click submit' do
-  #   visit ('/')
-  #   expect(page).to 
 end
-

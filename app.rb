@@ -6,14 +6,10 @@ class RPS < Sinatra::Base
   end
 
   get '/' do
-    "Please enter your name
-    <form action='/game' method='get'>
-    <input type='text' name='player_name'>
-    <input type='submit' name='Start game'>
-    </form>"
+    erb :home
   end
 
-  get '/game' do
+  post '/game' do
     @player_name = params[:player_name]
     erb :game
   end
