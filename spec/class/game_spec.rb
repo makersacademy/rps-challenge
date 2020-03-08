@@ -1,8 +1,8 @@
 require "game"
 
 describe Game do
-  let(:human) { double("human", set_hand: "", hand: "", add_points: 1) }
-  let(:computer) { double("computer", set_hand: "", hand: "", add_points: 1) }
+  let(:human) { double("human", set_hand: "", hand: "", add_points: 1, points: 1) }
+  let(:computer) { double("computer", set_hand: "", hand: "", add_points: 1, points: 1) }
   subject { described_class.new(human, computer) }
 
   context "has attributes" do
@@ -56,6 +56,30 @@ describe Game do
       allow(computer).to receive(:hand).and_return("scissors")
       subject.start
       expect(subject.round_status).to eq("lost")
+    end
+    it "#check_finish triggers finish when 2 points is reached by either computer or human" do
+      allow(human).to receive(:hand).and_return("paper")
+      allow(computer).to receive(:hand).and_return("rock")
+      allow(human).to receive(:points).and_return(2)
+      allow(computer).to receive(:points).and_return(1)
+      subject.start
+      expect(subject.finish).to eq(true)
+    end
+    it "#who_won? sends winning end message" do
+      allow(human).to receive(:hand).and_return("paper")
+      allow(computer).to receive(:hand).and_return("rock")
+      allow(human).to receive(:points).and_return(2)
+      allow(computer).to receive(:points).and_return(1)
+      subject.start
+      expect(subject.round_status).to eq("You won!! Yay!!")
+    end
+    it "#who_won? sends losing end message" do
+      allow(human).to receive(:hand).and_return("rock")
+      allow(computer).to receive(:hand).and_return("paper")
+      allow(human).to receive(:points).and_return(1)
+      allow(computer).to receive(:points).and_return(2)
+      subject.start
+      expect(subject.round_status).to eq("Bad luck! better luck next time")
     end
   end
 end

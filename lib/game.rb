@@ -40,6 +40,7 @@ class Game
     else
       assign_points(@computer, "lost")
     end
+    check_finish
   end
 
   def assign_points(player, status)
@@ -54,5 +55,16 @@ class Game
   def set_hand
     @human.set_hand
     @computer.set_hand
+  end
+
+  def check_finish
+    if @human.points >= 2 || @computer.points >= 2
+      @finish = true
+      who_won?
+    end
+  end
+
+  def who_won?
+    @human.points > @computer.points ? @round_status = "You won!! Yay!!" : @round_status = "Bad luck! better luck next time"
   end
 end
