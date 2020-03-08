@@ -3,19 +3,19 @@ feature 'Viewing Results' do
   scenario 'Player can see their move' do
     start_game
     click_button '👊🏼'
-    expect(page).to have_content "Josie moved: 👊🏼"
+    expect(page).to have_content "Josie moved:\n👊🏼"
   end
   scenario 'Player can see the other players move' do
     srand(3)
     start_game
     click_button '👊🏼'
-    expect(page).to have_content "Computer moved: ✌🏼"
+    expect(page).to have_content "Computer moved:\n✌🏼"
   end
   scenario 'Player can see who won' do
     srand(3)
     start_game
     click_button '👊🏼'
-    expect(page).to have_content "Josie won this round!"
+    expect(page).to have_content "Josie won!"
   end
   scenario 'Player can see if its a draw' do
     srand(2)

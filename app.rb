@@ -2,7 +2,6 @@ require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
 
-
 class RPSGame < Sinatra::Base
   enable :sessions
 
@@ -49,12 +48,18 @@ class RPSGame < Sinatra::Base
   end
   get '/paper' do
     $game.player_1.selected('🤚🏼')
-    #$game.players.last.random_move
     redirect '/result'
   end
   get '/scissors' do
     $game.player_1.selected('✌🏼')
-    #$game.players.last.random_move
+    redirect '/result'
+  end
+  get '/lizard' do
+    $game.player_1.selected('🦎')
+    redirect '/result'
+  end
+  get '/spoke' do
+    $game.player_1.selected('👽')
     redirect '/result'
   end
 

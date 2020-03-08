@@ -22,10 +22,10 @@ describe Game do
       allow(game).to receive(:update_scores)
       game.calculate_result
       expect(game.result).to eq player_1
-  end
+    end
 
     it 'Player 1 loses if they play paper and computer plays scissors' do
-      allow(player_1).to receive(:move).and_return '✋🏼'
+      allow(player_1).to receive(:move).and_return '🤚🏼'
       allow(player_2).to receive(:move).and_return '✌🏼'
       allow(game).to receive(:update_scores)
       game.calculate_result

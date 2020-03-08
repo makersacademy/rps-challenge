@@ -9,6 +9,7 @@ class Game
 
   def calculate_result
     return @result = 'draw' if @player_1.move == @player_2.move
+
     @result = player_1_wins? ? @player_1 : @player_2
     update_scores
   end
@@ -20,8 +21,8 @@ class Game
   end
 
   def player_1_wins?
-    win = { 👊🏼: '✌🏼', ✋🏼: '👊🏼', ✌🏼: '✋🏼' }
-    win[@player_1.move.to_sym] == @player_2.move
+    to_win = { 👊🏼: ['✌🏼', '🦎'], 🤚🏼: ['👊🏼', '👽'], ✌🏼: ['🤚🏼', '🦎'], 🦎: ['👽', '🤚🏼'], 👽: ['✌🏼', '👊🏼'] }
+    to_win[@player_1.move.to_sym].include? @player_2.move
   end
 
 end

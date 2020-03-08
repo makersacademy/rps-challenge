@@ -26,8 +26,8 @@ describe Player do
       expect(player.random_move).to eq '👊🏼'
     end
     it 'randomly selects paper' do
-      srand(1)
-      expect(player.random_move).to eq '✋🏼'
+      srand(10)
+      expect(player.random_move).to eq '🤚🏼'
     end
     it 'randomly selects scissors' do
       srand(3)

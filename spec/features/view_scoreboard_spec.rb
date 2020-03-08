@@ -5,7 +5,7 @@ feature 'Scoreboard' do
     expect(page).to have_content "0\n: 0"
   end
   scenario 'when player 1 wins a round, their score is updated to 1' do
-    srand(1)
+    srand(7)
     play_rock
     expect(page).to have_content "0\n: 1"
   end

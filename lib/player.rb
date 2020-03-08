@@ -13,7 +13,7 @@ class Player
   end
 
   def random_move
-    @move = ['👊🏼', '✋🏼', '✌🏼'].sample
+    @move = ['👊🏼', '🤚🏼', '✌🏼', '🦎', '👽'].sample
   end
 
 end

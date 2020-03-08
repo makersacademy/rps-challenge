@@ -13,7 +13,7 @@ feature 'Game ends' do
   scenario 'if computer wins by reaching a score of 3' do
     start_game
     3.times do
-      srand(1)
+      srand(7)
       click_button '👊🏼'
       click_button 'Ok'
     end

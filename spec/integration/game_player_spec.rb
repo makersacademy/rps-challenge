@@ -3,8 +3,8 @@ require 'player'
 
 describe 'Game and Player' do
 
-  let(:player_1) { Player.new "Josie"}
-  let(:player_2) { Player.new "Computer"}
+  let(:player_1) { Player.new "Josie" }
+  let(:player_2) { Player.new "Computer" }
   let(:game) { Game.new player_1, player_2 }
 
   it 'will update player 1 score by 1' do

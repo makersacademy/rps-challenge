@@ -7,20 +7,25 @@
   <body>
 
     <div class='container'>
-      <div class='register'>
-        <% if $game.player_1.score == 3 %>
-        <div>You win!! 💥</div>
-        <% end %>
+      <div class='banner'>
+        <div class='game_over'>
+          <% if $game.player_1.score == 3 %>
+            <div>You win!! <%= ['💥','🥳','👻','🕺🏼'].sample %></div>
+          <% end %>
 
-        <% if $game.player_1.score != 3 %>
-        <div>You lose ☹️</div>
-        <% end %>
+          <% if $game.player_1.score != 3 %>
+            <div>You lose <%= ['🤧','😢','😭','😱'].sample %></div>
+          <% end %>
+        </div>
 
-        <form action='/'>
-          <button>Play again!</button>
-        </form>
+        <div class='play_again'>
+          <form action='/'>
+            <button>Play again!</button>
+          </form>
+        </div>
       </div>
     </div>
+
 
 
   </body>
