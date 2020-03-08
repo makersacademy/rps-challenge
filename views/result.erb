@@ -11,5 +11,8 @@ Computer selects <%= @game.p2_move %>
 
 <%= @game.result(@game.p1_move, @game.p2_move) %>
 
+<form action="/restart" method="post">
+<input type="submit" name="restart" value="restart">
+
 </body>
 </html>
