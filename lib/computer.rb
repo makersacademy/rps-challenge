@@ -1,7 +1,13 @@
 class Computer
 
   def weapon
-    ['rock', 'paper', 'scissors'].sample
+    @weapon ||= random_weapon
+  end
+
+  private
+
+  def random_weapon
+    @weapon = [:rock, :paper, :scissors].sample
   end
 
 end

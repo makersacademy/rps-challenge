@@ -1,12 +1,31 @@
+require_relative 'computer'
+
 class Game
 
-  def initialize(player, computer)
-    @player_weapon = player.weapon
-    @computer_weapon = computer.weapon
+  attr_reader :computer
+
+  RULES = { rock: :scissors,
+          paper: :rock,
+          scissors: :paper }
+
+  def initialize(player, computer = Computer.new)
+    @player_weapon = player.weapon.to_sym
+    @computer = computer
   end
 
   def result
-    return :draw if @player_weapon == @computer_weapon
+    return :draw if draw?
+    return :win if win?
+  end
+
+  private
+
+  def draw?
+    @player_weapon == @computer.weapon
+  end
+
+  def win?
+    RULES[@player_weapon] == @computer.weapon
   end
 
 end

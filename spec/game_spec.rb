@@ -9,9 +9,17 @@ describe Game do
   describe "#result" do
     context "draw" do
       it "if player weapon is same as computer weapon" do
-        allow(player).to receive(:weapon).and_return('rock')
-        allow(computer).to receive(:weapon).and_return('rock')
+        allow(player).to receive(:weapon).and_return(:rock)
+        allow(computer).to receive(:weapon).and_return(:rock)
         expect(game.result).to eq :draw
+      end
+    end
+
+    context "win" do
+      it "if player weapon beats computer weapon" do
+        allow(player).to receive(:weapon).and_return(:rock)
+        allow(computer).to receive(:weapon).and_return(:scissors)
+        expect(game.result).to eq :win
       end
     end
   end

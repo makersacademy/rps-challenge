@@ -23,8 +23,7 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     @player = session[:player]
     @player.weapon = params[:weapon]
-    @computer = Computer.new
-    @game = Game.new(@player, @computer)
+    @game = Game.new(@player)
     erb(@game.result)
   end
 
