@@ -8,10 +8,11 @@ input {
 }
 
 input[type=button], input[type=submit] {
-  background-color: #4CAF50;
+  background-color: #5F9EA0;
   border: none;
   color: white;
   padding: 16px 32px;
+  font-family: 'PT Mono', monospace;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
@@ -22,15 +23,13 @@ input[type=text]:focus  {
 }
 
 h1 {
-  font-family: 'Indie Flower', cursive;
-  font-size: 20px;
-  color: white;
+  font-family: 'PT Mono', monospace;
+  font-size: 34px;
 }
 
 h2 {
-  font-family: 'Indie Flower', cursive;
-  font-size: 16px;
-  color: white;
+  font-family: 'PT Mono', monospace;
+  font-size: 28px;
 }
 
 body {
@@ -38,19 +37,14 @@ body {
   margin: 0;
   display: grid;
   place-items: center;
-  background: #222;
+  background-image: url("/paper.jpg");
 }
 
 .module {
-  max-width: 250px;
+  max-width: 450px;
   padding: 1rem;
-  color: white;
+  text-align: center;
   border-width: 3px;
   border-style: solid;
-  border-image:
-    linear-gradient(
-      to bottom,
-      red,
-      rgba(0, 0, 0, 0)
-    ) 1 100%;
+  border-image: linear-gradient(to bottom, #5F9EA0, rgba(0, 0, 0, 0)) 1 100%;
 }
