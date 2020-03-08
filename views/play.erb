@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/mystyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <meta charset="utf-8">
     <title>RPS</title>
   </head>
   <body>
+    <div class="main">
+      <h1> <%= @turn.player_name.capitalize %>, welcome to the <h1>
+      <div>
+        <h2>ROCK, PAPER, SCISSORS!</h2>
 
-    <h1> <%= @turn.player_name %>, welcome to the ROCK, PAPER, SCISSORS! </h1>
-    <h2> DO: <h2>
+      <div>
+        <p>Choose:</p>
+        <form action="/play" method="post" id="choice">
+          <button class="button button2" name = "player_choice" value="Rock" type="submit" form="choice">Rock!</button>
+          <button class="button button3" name = "player_choice" value="Paper" type="submit" form="choice">Paper!</button>
+          <button class="button button4" name = "player_choice" value="Scissors" type="submit" form="choice">Scissors!</button>
+        </form>
+      </div>
+      <br>
+      <div>
+        You chose <%= @turn.player_choice.to_s.capitalize %>!
+      </div>
+      <br>
+      <div id="computer">
+        Computer chose <%= @turn.computer_choice.to_s.capitalize %>!
+      </div>
+      <br>
+      <div id="result">
+        <% if @turn.win == true %>
+          You win!
+        <% end %>
 
-    <form action="/play" method="post">
-      <input type="submit" name="player_choice" value="Rock!">
-      <input type="submit" name="player_choice" value="Paper!">
-      <input type="submit" name="player_choice" value="Scissors!">
-    </form>
+        <% if @turn.lose == true %>
+          You lose!
+        <% end %>
 
-    <p> You chose <%= @turn.player_choice.to_s.capitalize %> </p>
-
-    <div id="computer">
-      Computer chose <%= @turn.computer_choice.to_s.capitalize %>!
+        <% if @turn.draw == true %>
+          It's a draw!
+        <% end %>
+      </div>
+      <br>
     </div>
-
-
   </body>
 </html>

@@ -11,9 +11,9 @@ feature "playing a game" do
   end
 # the marketeer will be presented the choices (rock, paper and scissors)
   scenario "player can see the options" do
-    expect(page).to have_button("Rock!")
-    expect(page).to have_button("Paper!")
-    expect(page).to have_button("Scissors!")
+    expect(page).to have_button("Rock")
+    expect(page).to have_button("Paper")
+    expect(page).to have_button("Scissors")
   end
 
 # the marketeer can choose one option
@@ -41,10 +41,21 @@ feature "playing a game" do
   end
 
 
+# a winner will be declared
+  scenario "player wins" do
+  # click_button("Rock!")
+    srand(1234)
+    expect(page).to have_content("You win!")
+  end
 
+  scenario "player loses" do
+    srand(1234)
+    expect(page).to have_content("You lose!")
+  end
 
-
-
-
+  scenario "draw" do
+    srand(1234)
+    expect(page).to have_content("It's a draw!")
+  end
 
 end

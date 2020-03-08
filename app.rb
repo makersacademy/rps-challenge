@@ -1,7 +1,7 @@
 # RPS
-
 require "sinatra/base"
 require "./lib/turn"
+require "./lib/computer"
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -16,8 +16,7 @@ class RPS < Sinatra::Base
   end
 
   get "/play" do
-    @turn = Turn.new(session)
-
+    p @turn = Turn.new(session)
     # @player_name = session[:player_name]
     # @player_choice = session[:player_choice]
     # @computer_choice = session[:computer_choice]
@@ -25,7 +24,7 @@ class RPS < Sinatra::Base
   end
 
   post "/play" do
-    session[:player_choice] = params[:player_choice] # stores our choice (R, P or S)
+    p session[:player_choice] = params[:player_choice].to_sym.downcase # stores our choice (R, P or S)
     session[:computer_choice] = Computer.new.choice
     redirect "/play"
   end

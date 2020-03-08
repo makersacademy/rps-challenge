@@ -2,7 +2,7 @@ def sign_and_play
   visit ("/")
   fill_in "player_name", with: "Kuba"
   click_button("LET'S ROCK!")
-  click_button("Rock!")
+  click_button("Rock")
 end
 
 def computer_choice
