@@ -1,6 +1,8 @@
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet" href="style.css"></head>
   <body>
+    <div class="main">
     <h1>Good day master <%=@game.player.name%></h1>
     <h2>Welcome to Rock Paper Scissors. May the odds be in your favour</h2>
     <form action="/game" method="post">
@@ -8,5 +10,6 @@
       <input type="submit" name="choice" value="PAPER">
       <input type="submit" name="choice" value="SCISSORS">
     </form>
+  </div>
   </body>
 </html>
