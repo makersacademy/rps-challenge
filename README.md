@@ -51,3 +51,4 @@ This will show you the port that you should use in your browser (in this case it
 ### Future planning
 * I would like to have the images and their corresponding buttons to be above each other, and then in a row of 3. This would then be responsive and move into a column as the screen size decreases. At the moment the pictures are in a row next to each other and then the link buttons are in a row below them. It is fine for now but a style issue I would like to sort in the future.
 * I would like this to be one of a few games that can be played against the computer (or an opponent), the score would then be saved across multiple games, potentially with a scoreboard/leaderboard
+* [Code Review Rubric](https://github.com/makersacademy/rps-challenge/blob/master/docs/review.md) for future updating
