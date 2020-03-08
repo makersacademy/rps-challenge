@@ -9,3 +9,11 @@ Whatup <%= @turn.player_name %>
 <div id="CPU">
   Your enemy chose <%= @turn.cpu_choice.to_s.capitalize %>
 </div>
+
+<% if @turn.win? %>
+You win!
+<% elsif @turn.lose? %>
+You lose!
+<% elsif @turn.draw? %>
+You drew!
+<% end %>

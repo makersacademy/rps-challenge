@@ -27,6 +27,27 @@ feature 'Playing RPS' do
     click_button 'Rock'
     expect(page).to have_content 'Your enemy chose Scissors'
   end
+ 
+  context 'end game' do
+    before do
+      srand(SEED)
+    end
+
+    scenario 'You win' do
+      click_button 'Rock'
+      expect(page).to have_content 'You win!'
+    end
+
+    scenario 'You lose' do
+      click_button 'Paper'
+      expect(page).to have_content 'You lose!'
+    end
+
+    scenario 'You drew' do
+      click_button 'Scissors'
+      expect(page).to have_content 'You drew!'
+    end
+  end
 
   def cpu_choice
     [:rock, :paper, :scissors].map { |choice| "Your enemy chose #{choice.to_s.capitalize}" }
