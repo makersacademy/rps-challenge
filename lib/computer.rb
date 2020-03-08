@@ -1,4 +1,3 @@
-
 class Computer
 
   attr_reader :move

@@ -26,5 +26,4 @@ end
 
 ENV['RACK_ENV'] = 'test'
 
-Capybara.app = RPS 
-
+Capybara.app = RPS

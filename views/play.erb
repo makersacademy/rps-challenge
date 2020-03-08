@@ -5,12 +5,12 @@
   </head>
   <body>
     <header>
-    Your score so far: <%= @game.p1_counter %>
-    Computer score so far: <%= @game.p2_counter %>
+    <h1><%= @player_name.name %> vs Computer</h1>
     </header>
     <main>
     <section>
-    <h1><%= @player_name.name %></h1>
+    Your score so far: <%= @game.p1_counter %>
+    Computer score so far: <%= @game.p2_counter %>
     </section>
     Which one will you pick?
     <form action="/result" method="post">

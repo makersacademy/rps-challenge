@@ -18,5 +18,4 @@ feature 'playing rock, paper, scissors' do
     page.has_content?("Sophia wins!") or page.has_content?("Computer wins!") or page.has_content?("It's a draw")
   end
 
-
 end
