@@ -1,5 +1,5 @@
 class Computer
-  attr_reader :choice
+  attr_accessor :choice
   def choice
     ['ROCK', 'PAPER', 'SCISSORS'].sample
   end

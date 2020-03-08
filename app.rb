@@ -1,9 +1,9 @@
 require 'sinatra'
 require './lib/computer'
 require './lib/game'
+require './lib/player'
 
 class RPS < Sinatra::Base
-  enable :sessions
   get '/' do
     erb :index
   end
@@ -15,14 +15,18 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @name = $game.player.name
+    @game = $game
     erb :play
   end
 
-  post '/play' do
-    @name = $game.player.name
-    @shape = params[:shape]
-    erb :play
+  post '/choice' do
+    $game.player.shape = params[:shape]
+    redirect '/end'
+  end
+
+  get '/end' do
+    @game = $game
+    erb :end
   end
 
   run! if app_file == $0
