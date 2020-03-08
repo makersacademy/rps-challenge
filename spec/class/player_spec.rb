@@ -27,7 +27,7 @@ describe Player do
   describe "method functionality" do
     
     it "#add_points adds 1 to points" do
-      expect{subject.add_points}.to change{subject.points}.by(1)
+      expect { subject.add_points }.to change { subject.points }.by(1)
     end
 
     context "#set_hand" do

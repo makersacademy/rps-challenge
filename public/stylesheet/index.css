@@ -1,0 +1,8 @@
+container {
+  display: flex;
+  color: aqua;
+}
+
+.text {
+  color: blueviolet;
+}

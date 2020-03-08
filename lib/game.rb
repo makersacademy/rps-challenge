@@ -1,8 +1,8 @@
 class Game
-  RULES = [ 
-    {hand: "rock", lose: "paper"}, 
-    { hand: "paper", lose: "scissors"},
-    {hand: "scissors", lose: "rock"} ]
+  RULES = [
+    { hand: "rock", lose: "paper" }, 
+    { hand: "paper", lose: "scissors" },
+    { hand: "scissors", lose: "rock" }]
   attr_reader :human, :computer, :finish, :round_status
   def initialize(human, computer)
     @human = human
@@ -35,10 +35,10 @@ class Game
   end
 
   def check_hand
-    RULES.map.with_index { |item, index|
-    if item[:hand] == @computer.hand
-      win?(item, @human.hand)
-    end 
+    RULES.map.with_index { |item, _index|
+      if item[:hand] == @computer.hand
+        win?(item, @human.hand)
+      end 
     }
   end
 
