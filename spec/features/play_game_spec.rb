@@ -5,7 +5,7 @@ feature 'start playing' do
   end
   scenario 'Ask user to choose move' do
     sign_in_and_play
-    expect(page).to have_content 'Choose your move'
+    expect(page).to have_content 'Choose your Move'
   end
   scenario 'Give options to choose' do
     sign_in_and_play
