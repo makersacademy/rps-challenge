@@ -8,6 +8,8 @@ Capybara,
 Rspec,
 Rubocop
 
+[![Build Status](https://travis-ci.com/Kittaru87/rps-challenge.svg?branch=master)](https://travis-ci.com/Kittaru87/rps-challenge)
+
 ## Project aim
 To write software that allows a user to play a game of rock, paper, scissors.
 
