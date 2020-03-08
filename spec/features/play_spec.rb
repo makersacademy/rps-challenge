@@ -1,6 +1,7 @@
 require './spec/spec_helper'
 
 feature 'Playing RPS' do
+  SEED = 12345
   before do
     visit '/'
     fill_in 'name', with: 'George'
@@ -19,6 +20,12 @@ feature 'Playing RPS' do
     click_button 'Rock'
     message = find(:css, "#CPU").text
     expect(cpu_choice).to include message
+  end
+
+  scenario 'CPU is random' do
+    srand(SEED)
+    click_button 'Rock'
+    expect(page).to have_content 'Your enemy chose Scissors'
   end
 
   def cpu_choice
