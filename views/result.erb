@@ -1,0 +1,18 @@
+<div>
+  <%= 
+    cpu_move = { "paper" => "rock", "scissors" => "paper", "rock" => "scissors" } 
+    if @result == (cpu = cpu_move.values.sample)
+      "CPU chose #{cpu} - it's a Tie"
+    elsif cpu_move[@result] == cpu_move[@result] = cpu
+      "Congratulations #{@player1}! CPU chose #{cpu}, which means YOU WIN! ! !"
+    else
+     "welcome L O S E R - the CPU chose #{cpu} ... try again; or not"
+    end
+  %>
+</div>
+<br>
+<div>
+  <form action='/rps-game'>
+    <button type='submit'>Try Again?</button>
+  </form>
+</div>
