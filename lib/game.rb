@@ -28,6 +28,10 @@ class Game
     rps_logic(player_choice, computer)
   end
 
+  def result(choice1, choice2)
+    "#{choice1} beats #{choice2}!"
+  end
+
   def winner
     @player.score == 3 ? 'YOU WIN!' : 'YOU LOSE!'
   end
