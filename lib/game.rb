@@ -1,9 +1,8 @@
 require_relative 'player'
-require_relative 'game'
 
 class Game
 
-  attr_reader :player_1, :player_2, :p1_move, :p2_move, :winner
+  attr_reader :player_1, :player_2, :p1_move, :p2_move, :winner, :p1_counter, :p2_counter
 
   WINNING_MOVES = {"rock" => "scissors", "paper" => "rock", "scissors" => "paper"}
 
@@ -13,6 +12,8 @@ class Game
     @p1_move = nil
     @p2_move = nil
     @winner = nil
+    @p1_counter = 0
+    @p2_counter = 0
   end
 
   def player_1_selection(p1_move)
@@ -31,8 +32,10 @@ class Game
     if p1_move == p2_move
       return "It's a Draw!"
     elsif WINNING_MOVES[p1_move] == p2_move
+      @p1_counter += 1
       return "#{player_1.name} wins!"
     else
+      @p2_counter += 1
       return "Computer wins!"
     end
   end

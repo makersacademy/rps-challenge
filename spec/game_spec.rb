@@ -19,5 +19,8 @@ require 'game'
       expect(game.player_1_selection(p1_move)).to eq p1_move
     end
 
+    # it "should plus 1 to player 1's counter when player 1 wins"
+    #   expect()
+    # end
 
 end

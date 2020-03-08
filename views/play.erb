@@ -5,9 +5,13 @@
   </head>
   <body>
     <header>
-    <h1><%= @player_name.name %></h1>
+    Your score so far: <%= @game.p1_counter %>
+    Computer score so far: <%= @game.p2_counter %>
     </header>
     <main>
+    <section>
+    <h1><%= @player_name.name %></h1>
+    </section>
     Which one will you pick?
     <form action="/result" method="post">
     <input type="submit" name="p1_move" value="rock">
