@@ -7,5 +7,15 @@ class RPS < Sinatra::Base
     @name = params[:player_name]
     erb :play
   end
+  post '/play' do
+    @move = params[:move].to_sym
+    @opponent = random
+    erb :result
+  end
+
+  def random 
+    [:Rock, :Paper, :Scissors].sample  
+  end  
   run! if app_file == $0
+  
 end
