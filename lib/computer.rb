@@ -1,7 +1,7 @@
 
 class Computer
+  CHOICES = ['ROCK', 'PAPER', 'SCISSORS']
   def make_choice
-    'ROCK'
+    CHOICES.sample
   end 
-
 end
