@@ -1,18 +1,31 @@
 feature 'playing rock, paper, scissors' do
 
-  scenario 'picks Rock' do
+  before
+
+  end
+
+  it "should declare player 1 a winner if they have rock and player 2 has scissors" do
+    visit ('/')
+    fill_in :player_name, with: "Sophia"
+    click_button 'Submit'
     click_button 'rock'
-    expect(page).to have_content 'You draw'
+    expect(page).to have_content("player 1 wins!")
   end
 
-  scenario 'picks Scissors' do
+  it "should declare player 2 a winner if they have scissors and player 1 has paper" do
+    visit ('/')
+    fill_in :player_name, with: "Sophia"
+    click_button 'Submit'
     click_button 'scissors'
-    expect(page).to have_content 'You win'
+    expect(page).to have_content("computer wins!")
   end
 
-  scenario 'picks Paper' do
+  it "should declare player 1 a winner if they have paper and player 2 has rock" do
+    visit ('/')
+    fill_in :player_name, with: "Sophia"
+    click_button 'Submit'
     click_button 'paper'
-    expect(page).to have_content 'You lose'
+    expect(page).to have_content("player 1 wins!")
   end
 
 end

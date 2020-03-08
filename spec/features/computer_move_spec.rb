@@ -4,6 +4,6 @@ feature "computer's move" do
     visit ('/')
     click_button 'Submit'
     click_button 'rock'
-    expect(page).to have content "computer selects #{@computer.move}"
+    expect(page).to have_content "Computer selects #{@p2_move}"
   end
 end
