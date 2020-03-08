@@ -1,20 +1,23 @@
 <!DOCTYPE html>
   <html>
     <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
       <title>Rock Paper Scissors</title>
       <link rel="stylesheet" href="/styles.css">
+      <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     </head>
     <body>
     <div class="outer_container">
       <div class="inner_container">
-        <div style="display: flex">
-          <div style="display: flex; flex-direction: column; align-items: center; border: 1px solid brown; ">
+        <div class="vs">
+          <div class="player_points">
             <h1><%= @human_name %></h1>
             <h3><%= @human_points %></h3>
           </div>
           <h1>vs</h1>
-          <div style="display: flex; flex-direction: column; align-items: center">
+          <div class="player_points">
             <h1><%= @computer_name %></h1>
             <h3><%= @computer_points %></h3>
           </div>
@@ -32,8 +35,8 @@
           </form>
         </div>
         <h1>You chose <%= @human_hand %></h1>
-        <h1><%= @computer_name %> chose <%= @computer_hand %></h1>
-        <h1>You <%= @round_status %> the last round</h1>
+        <h1 style="text-align: center"><%= @computer_name %> chose <%= @computer_hand %></h1>
+        <h1 style="text-align: center">You <%= @round_status %> the last round</h1>
       </div>
       </div>
     </body>

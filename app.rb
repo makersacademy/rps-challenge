@@ -71,6 +71,8 @@ class Rps < Sinatra::Base
     @human_name = @game.human.name
     @computer_name = @game.computer.name
     @round_status = @game.round_status
+    @human_points = @game.human.points
+    @computer_points = @game.computer.points
     erb(:game_over)
   end
 

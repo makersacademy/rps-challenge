@@ -1,6 +1,8 @@
 <!DOCTYPE html>
   <html>
     <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
       <title>Rock Paper Scissors</title>
       <link rel="stylesheet" href="/styles.css">
       <!-- Latest compiled and minified CSS -->
@@ -9,7 +11,15 @@
     <body>
       <div class="outer_container">
         <div class="inner_container">
-          <h1><%= @human_name %> vs <%= @computer_name %></h1>
+          <div class="vs">
+          <div style="display: flex; flex-direction: column; align-items: center; ">
+            <h1><%= @human_name %></h1>
+          </div>
+          <h1>vs</h1>
+          <div style="display: flex; flex-direction: column; align-items: center">
+            <h1><%= @computer_name %></h1>
+          </div>
+        </div>
           <h2>Choose your hand</h2>
           <div class="hand_selection">
             <form action="/rock" method="post">
