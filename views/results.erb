@@ -9,20 +9,19 @@
   <body>
     <div class ="module">
   <h1> <%=@player_1_name%> vs. <%=@player_2_name%> </h1>
-    <% if @winner != "It's a draw!" %>
+    <% if @winner != "It's a draw!"%>
     <h2> <%=@winner.name%> has won! </h2>
     <% elsif @winner == "It's a draw!"%>
     <h2><%=@winner%></h2>
     <%end%>
   <h2> <%=@player_1_name%> played <%=@player_1_choice%> </h2>
   <h2> <%=@player_2_name%> played <%=@player_2_choice%> </h2>
-  <form action='/play' method='get'>
+  <form action='/newgame' method='post'>
     <input class="button" type= "submit" value="Play Again">
   </form>
-  <form action ='/' method = 'get'>
-    <input class="button" type= "submit" value="New game">
+  <form action ='/' method ='get'>
+    <input class="button" type= "submit" value="New Game">
   </form>
   </div>
-
   </body>
   </html>

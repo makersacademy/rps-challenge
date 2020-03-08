@@ -50,4 +50,9 @@ class Game
     @game_over = true if @player_1.choice && @player_2.choice != nil
   end
 
+  def reset
+    @player_1.choice = nil 
+    @player_2.choice = nil
+  end
+
 end

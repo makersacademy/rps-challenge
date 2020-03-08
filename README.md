@@ -195,6 +195,17 @@ the name of the winner
 the name of both players and their choices
 button to play again
 
+##
+
+On Patrick's advice, I added a different input for my player's options, using the following form input:
+```
+<form action='/play' method='post'>
+  <input class="button" name="choice" type= "submit" value="Rock">
+  <input class="button" name="choice" type= "submit" value="Paper">
+  <input class="button" name="choice" type= "submit" value="Scissors">
+```
+
+
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 

@@ -22,6 +22,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
+    p @game.player_1.choice
+    p @game.player_2.choice
     @player_1_name = @game.player_1.name
     @player_2_name = @game.player_2.name
     @current_player = @game.current_player.name
@@ -39,6 +41,11 @@ class RockPaperScissors < Sinatra::Base
     @player_1_choice = @game.player_1.choice
     @player_2_choice = @game.player_2.choice
     erb :results
+  end
+
+  post '/newgame' do
+    @game.reset
+    redirect '/play'
   end
 
   run! if app_file == $PROGRAM_NAME
