@@ -7,8 +7,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
-
-
 ENV['RACK_ENV'] = 'test'
 
 require_relative './features/web_helpers'

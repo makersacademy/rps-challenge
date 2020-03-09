@@ -46,7 +46,7 @@ rspec
 | Player 1                    | register_name |
 | Player 2                    | pick_option   |
 | Game                        | swap_turns    |
-|                             | score         |
+| Results                     | score         |
 
 ## Controller
 
@@ -71,14 +71,9 @@ lets names get entered
 get('/play')
 @current_player_name = @game.current_player.name
 
-# method that works out the winner and redirects to other pages depending on the result
+# method that works out the winner and redirects to other pages depending on the result. Use a module to keep it skinny
 post('/result')
-game.play(params[:choice])
-if @game.game_over == true
-  redirect /results
-else
-  redirect /play
-end
+turn_redirect(game)
 
 # page with the winner revealed
 get('/result')
@@ -221,3 +216,5 @@ I'd like to add in the option for the same players to be able to play another ga
 Currently the 'Play Again' button does not let the users play another full game. But finishes early.
 
 I'd also like to add in functionality so the users can play Rock, Paper, Scissors, Spock, Lizard.
+
+The logic for calculating the results could be improved, and would need to be updated especially if I started to develop the logic for Lizard, Spock. Folder organisation could also be improved along with some naming conventions. More unit tests for each possible outcome of the game would be a good idea.  
