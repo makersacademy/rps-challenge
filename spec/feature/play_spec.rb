@@ -6,29 +6,25 @@ require "spec_helper"
 feature "display choice rock,paper,scissors" do
     before do
         visit "/"
-        fill_in "name", with: "Liam"
+        fill_in "player_name", with: "Liam"
         click_button "submit"
     end
     scenario "after inputting name view rps choices" do
-        expect(page).to have_button "rock"
-        expect(page).to have_button "paper"
-        expect(page).to have_button "scissors"
+        expect(page).to have_button "Rock"
+        expect(page).to have_button "Paper"
+        expect(page).to have_button "Scissors"
     end
 
-    scenario "able to choose rock,paper or scissors" do
-        click_button "rock"
-        expect(page).to have_content "you chose rock"
+    scenario "able to choose rock, paper or scissors" do
+        click_button "Rock"
+        expect(page).to have_content "Rock"
     end
 
-    scenario "cpu chooses rock" do
-        click_button "rock"
-
-        message = find(:css, "#cpu").text
-
-        expect(cpu_choices).to include message
+    scenario 'computer can choose' do
+        $computer_choice = nil
+        click_button('Rock')
+        visit('/result')
+        expect($computer_choice).not_to eq nil
     end
 
-    def cpu_choices
-        [:rock, :paper, :scissors]. map {|choice| "cpu chose #{choice}"}
-    end
 end
