@@ -32,15 +32,15 @@ describe Turn do
         expect(win_turn.win?).to eq true
     end
   end
-  describe '#lose' do 
-    it 'lose will be true if player choose rock and opponent choose paper' do
-        expect(lose_turn.lose?).to eq true
-    end
-  end
-  describe '#draw' do 
-    it 'draw will be true if player choose rock and opponent choose rock' do
-        expect(draw_turn.draw?).to eq true
-    end
-  end
+#   describe '#lose' do 
+#     it 'lose will be true if player choose rock and opponent choose paper' do
+#         expect(lose_turn.lose?).to eq true
+#     end
+#   end
+#   describe '#draw' do 
+#     it 'draw will be true if player choose rock and opponent choose rock' do
+#         expect(draw_turn.draw?).to eq true
+#     end
+#   end
 end
 end
