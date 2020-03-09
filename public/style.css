@@ -1,0 +1,49 @@
+body {
+    background-color: black;
+}
+
+.button[type=submit] {
+    display: block;
+    background-color: crimson;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 0 auto;
+    cursor: pointer;
+    border: 2px solid black ;
+}
+
+.block {
+    background-color: lightgrey;
+    width: 300px;
+    border: 15px solid crimson;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.h1 {
+    color: crimson;
+    margin: auto;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.h2 {
+    color: black;
+    margin: 0 auto;
+    text-align: center;
+    font-size: large;
+}
+
+form {
+    text-align: center;
+}
+
+.form_text {
+    color: black;
+}

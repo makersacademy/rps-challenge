@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<link rel='stylesheet' href='style.css'>
+<div class="block">
+  <div class="h2">
+   <strong> <%= @game.player %> chose <%=@move%></strong>
+   <br>
+   <strong> Computer chose <%= @computer %>
+   <br>
+  <% if @computer == @move %>
+    it's a draw! <%@game.computer_win%> <%@game.player_win%>
+  <%elsif @move == 'Rock'%>
+    <%if @computer == 'Paper'%>
+      Computer Wins! <%@game.computer_win%>
+    <% else %>
+      <%=@game.player%> Wins! <%@game.player_win%>
+    <%end%>
+
+  <%elsif @move == 'Paper'%>
+    <%if @computer == 'Scissors'%>
+      Computer Wins! <%@game.computer_win%>
+    <%else%>
+      <%=@game.player%> Wins! <%@game.player_win%>
+    <%end%>
+
+  <%elsif @move == 'Scissors'%>
+    <%if @computer == 'Rock'%>
+      Computer Wins! <%@game.computer_win%>
+    <%else%>
+      <%=@game.player%> Wins! <%@game.player_win%>
+    <% end %>
+  <%end%> 
+  <br>
+    <%=@game.player%>: <%=@game.playerwins%>
+    <br>
+    Computer: <%=@game.compwins%>
+    <br>
+    Turns Remaining: <%=@game.turns_left%>
+  </strong>       
+     <form action='/play' method="get">
+    <input class="button" type="submit" value="Try Again">
+    </form>
+  </div>
+</div>
+</body>
+</html>
