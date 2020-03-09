@@ -14,7 +14,8 @@ end
   end
 
   post '/names' do
-    @games = Game.create(params[:player_1_name])
+    p params
+    @game = Game.create(params[:player_1_name],params[:Mode])
     redirect '/play'
   end
 
@@ -24,10 +25,10 @@ end
 
   post '/move' do
     @move = params[:move]
+    @game.end_of_turn
+    @computer = @game.computer_move
     erb :move
   end
-
-  
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
