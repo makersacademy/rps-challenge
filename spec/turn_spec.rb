@@ -3,6 +3,10 @@ require "turn"
 describe Turn do
   subject(:turn) { described_class.new(options) }
   let(:options) { { "player_name" => "Kuba", "player_choice" => :rock, "computer_choice" => :scissors } }
+  subject(:turn_lose) { described_class.new(options1) }
+  let(:options1) { { "player_name" => "Kuba", "player_choice" => :rock, "computer_choice" => :paper } }
+  subject(:turn_draw) { described_class.new(options2) }
+  let(:options2) { { "player_name" => "Kuba", "player_choice" => :rock, "computer_choice" => :rock } }
 
   describe "#player_name" do
     it "returns player name" do
@@ -30,13 +34,16 @@ describe Turn do
     end
     describe "#lose" do
       it "returns true if player_choice is :rock and computer_choice is :paper" do
-        expect(turn.lose).to eq(true)
+        # allow(turn).to receive(:computer_choice) { :paper }
+        expect(turn_lose.lose).to eq(true)
       end
     end
   end
   describe "#draw" do
     it "returns true if player_choice == computer_choice" do
-      expect(turn.draw).to eq(true)
+      # allow(turn).to receive(:computer_choice) { :rock }
+      expect(turn_draw.draw).to eq(true)
+
     end
   end
 end
