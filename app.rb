@@ -1,31 +1,36 @@
 require 'sinatra/base'
+require './lib/cpu'
+require './lib/outcomes'
 
 class RPS < Sinatra::Base
-  enable :sessions
-
-  get "/" do
+  get '/' do
     erb :index
   end
 
-  post "/name" do
-    session[:name] = params[:name]
-    redirect "/play"
-  end
-
-  get "/play" do
-    @name = session[:name]
-    @choice = session[:choice]
-    @cpu_choice = session[:cpu_choice]
+  post '/play' do
+    $player_name = params[:player_name] unless $player_name
     erb :play
   end
 
-  post "/play" do
-      session[:choice] = params[:choice]
-      session[:cpu_choice] = :rock
-      redirect "/play"
+  post '/store_player_weapon' do
+    $player_choice = params[:player_choice].to_sym
+    redirect '/cpu'
   end
 
+  get '/cpu' do
+    $computer_choice = Computer.new.choose_weapon
+    redirect '/outcomes'
+  end
 
-# start the server if the ruby file is executed directly
+  get '/outcomes' do
+    $winner = Calculator.new.calculate_winner
+    redirect '/results'
+  end
+
+  get '/results' do
+    erb :results
+  end
+
+  # start the server if ruby file executed directly
   run! if app_file == $0
 end
