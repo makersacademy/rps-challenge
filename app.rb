@@ -4,7 +4,7 @@ require './helpers/turn_helper'
 
 class RockPaperScissors < Sinatra::Base
 
- helpers Turn_helper
+  helpers TurnHelper
 
   get '/' do
     erb :index

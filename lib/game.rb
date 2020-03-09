@@ -10,8 +10,7 @@ class Game
     @player_2 = player_2
     @current_player = player_1
     @results = results
-    @game_over
-    end
+  end
 
 # class methods for singleton principle - lets us only have one game
   def self.create(player_1, player_2, results)
@@ -51,7 +50,7 @@ class Game
   end
 
   def reset
-    @player_1.choice = nil 
+    @player_1.choice = nil
     @player_2.choice = nil
   end
 
