@@ -22,13 +22,21 @@ feature "playing a game" do
   # As a marketeer
   # So I can play a game
   # I want the game to choose an option
-  scenario "Opponent picks an option which is random." do
+  scenario "Game chooses Rock as an option." do
     register_name
     click_button "Rock"
     expect(page).to have_content "Hello Peter, welcome to Rock paper scissors.\nChoose one of the three shapes.\nYour move is: Rock"
+    
     message = find("#Opponent").text.strip #Removes text from a string.
     expect(opponent_choices).to include message
   end
+
+  # scenario "Game chooses a random shape for an option" do
+  #   register_name
+  #   click_button "Rock"
+  #   expect(page).to have_content "Opponent chose: Scissors"
+  # end
+
 end
 
 # opponent_choices = "Opponent chose: #{shape.to_s.capitalize}"

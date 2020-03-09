@@ -1,7 +1,7 @@
 require 'opponent.rb'
 describe Opponent do 
   subject(:opponent) { described_class.new }
-  it "expects to create a random move of rock paper scissors each time." do
+  it "expects the oppenent to return a random shape." do
     expect(Opponent::SHAPE).to include opponent.shape 
   end
 end 
