@@ -13,8 +13,8 @@ class Game
   end
 
 # class methods for singleton principle - lets us only have one game
-  def self.create(player_1, player_2, results)
-    @game = Game.new(player_1, player_2, results)
+  def self.create(player_1, player_2, results = Results.new(player_1, player_2))
+    @game = Game.new(player_1, player_2, results = Results.new(player_1, player_2))
   end
 
   def self.instance
@@ -28,6 +28,15 @@ class Game
       play(choice)
     end
   end
+
+  def reset
+    @player_1.choice = nil
+    @player_2.choice = nil
+    @results.winner = nil
+    @game_over = false
+  end
+
+  private
 
   def play(choice)
     @current_player.store_choice(choice)
@@ -48,12 +57,4 @@ class Game
   def end_game
     @game_over = true if @player_1.choice && @player_2.choice != nil
   end
-
-  def reset
-    @player_1.choice = nil
-    @player_2.choice = nil
-    @results.winner = nil
-    @game_over = false
-  end
-
 end

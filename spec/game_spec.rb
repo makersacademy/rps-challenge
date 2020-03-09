@@ -23,4 +23,8 @@ describe Game do
       expect { Game.new }.to raise_error
     end
   end
+
+  describe '#turn' do
+    it 'should '
+  end
 end
