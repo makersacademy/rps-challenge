@@ -12,7 +12,7 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/store_player_weapon' do
+  post '/store_player_choice' do
     $player_choice = params[:player_choice].to_sym
     redirect '/cpu'
   end
