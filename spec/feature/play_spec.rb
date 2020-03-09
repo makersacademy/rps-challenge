@@ -15,7 +15,7 @@ feature "display choice rock,paper,scissors" do
         expect(page).to have_button "Scissors"
     end
 
-    scenario "able to choose rock, paper or scissors" do
+    scenario "player can choose rock, paper or scissors" do
         click_button "Rock"
         expect(page).to have_content "Rock"
     end
