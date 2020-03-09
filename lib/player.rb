@@ -10,7 +10,7 @@ class Player
     @rules = {
   :rock     => { :rock => "draw", :paper => "lose", :scissors => "win" },
   :paper    => { :rock => "win", :paper => "draw", :scissors => "lose" },
-  :scissors => { :rock => "draw", :paper => "win", :scissors => "draw" }
+  :scissors => { :rock => "lose", :paper => "win", :scissors => "draw" }
 }
   end
 
