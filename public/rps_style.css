@@ -60,8 +60,7 @@ img {
     blink-caret .75s step-end infinite;
 }
 
-.fast-type
-{
+.fast-type {
   overflow: hidden;
   border-right: .15em solid orange;
   white-space: nowrap; 
