@@ -28,6 +28,7 @@
   padding: 15px;
 }
 
+
 body{
     /* background-color: cyan; */
     
@@ -35,7 +36,7 @@ body{
 
 .grad1 {
   background-color: grey; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to bottom right, grey, pink); /* Standard syntax (must be last) */
+  background-image: linear-gradient(to bottom right,#99ccc1,#0bdeb0); /* Standard syntax (must be last) */
 }
 
 .centre {
@@ -87,4 +88,18 @@ input[type=submit]{
 ::-webkit-input-placeholder{
   font-style: italic;
   color: #ccc;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  .vs{
+    border-right: none;
+    border-bottom: 3px red ridge;
+  }
+
 }
