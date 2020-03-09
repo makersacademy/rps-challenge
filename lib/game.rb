@@ -3,51 +3,59 @@ require_relative 'computer'
 
 class Game
 
-    attr_accessor :player1, :computer
+    attr_accessor :player1, :player2, :computer
 
-    def initialize(player1)
+    def initialize(player1, player2 = nil)
         @player1 = Player.new(player1)
-        @computer = Computer.new
+        
+        if player2 == nil
+            @computer = Computer.new
+            @player2 = nil
+        else
+            @player2 = Player.new(player2)
+            @computer = nil
+        end
+           
     end
 
 
-    def self.create(player1)
-        @game = Game.new(player1)
+    def self.create(player1, player2 = nil)
+        @game = Game.new(player1, player2)
     end
 
     def self.instance
         @game
     end
 
-    def declare_winner(player1_move, computer_move)
+    def declare_winner(player1_move, opponent_move)
 
         case player1_move
             when "Rock"
-                case computer_move
+                case opponent_move
                     when "Rock"
                         return draw
                     when "Paper"
-                        return computer_win
+                        return opponent_win
                     when "Scissors"
                         return player_win
                 end
             when "Scissors"
-                case computer_move
+                case opponent_move
                     when "Rock"
-                        return computer_win
+                        return opponent_win
                     when "Paper"
                         return player_win
                     when "Scissors"
                         return draw
                 end
             when "Paper"
-                case computer_move
+                case opponent_move
                     when "Rock"
                         return player_win
                     when "Paper"
                         return draw
                     when "Scissors"
-                        return computer_win
+                        return opponent_win
                 end
         end
     end
@@ -60,9 +68,14 @@ class Game
         return "#{@player1.name} wins!"
     end
 
-    def computer_win
-        @computer.score += 1
-        return "Computer wins!"
+    def opponent_win
+        if @player2 == nil
+            @computer.score += 1
+            return "Computer wins!"
+        else
+            @player2.score += 1
+            return "#{@player2.name} wins!"
+        end
     end
 
     def draw

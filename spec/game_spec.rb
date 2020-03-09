@@ -5,15 +5,20 @@ describe Game do
     
     # let (:player1) {double :player}
     subject(:game) {described_class.new("Bob")}
+    subject(:game2) {described_class.new("Bob", "Pob")}
     let (:computer) {double :computer}
 
     it 'creates a Player instance when initialised' do
         expect(game.player1.name).to eq "Bob"
     end
 
-    it 'creates a Computer instance when initialised' do
+    it 'creates a Computer instance when when player2 = nil' do
         game.instance_variable_set(:@computer, computer)
         expect(game.computer).to eq computer
+    end
+
+    it 'create a player 2 when player2 is not nil' do
+        expect(game2.player2.name).to eq "Pob"
     end
 
     context "rock crushes paper" do

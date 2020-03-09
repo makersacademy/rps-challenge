@@ -1,7 +1,58 @@
 <html>
-<p>Who are you?</p>
-    <form action="/name" method="post">
-        <input type="text" name="player1">
-        <input type="submit" value="OK" name="submit">
-    </form>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK &bull; PAPER &bull; SCISSORS</title>
+    <link href="<%= url('/stylesheet.css') %>" rel="stylesheet" type="text/css" />
+    <link href="<%= url('/fontawesome/css/all.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="grad1">
+<h1>ROCK &bull; PAPER &bull; SCISSORS</h1>
+<h1><i class="far fa-hand-rock"></i> &bull; <i class="far fa-hand-paper"></i> &bull; <i class="far fa-hand-scissors"></i></h1>
+
+<form action="/name" method="post" class="centre">
+    <div class="row">
+        <div class="col-1">
+        </div>
+        <div class="col-4">
+            <h2 class="centre">Player 1</h2>
+                
+                <input type="text" name="player1" placeholder="Enter your name" class="centre">
+               
+                
+        </div>
+        <div class="col-2"><h2 class="centre">VS</h2></div>
+        <div class="col-4">
+            <h2 class="centre">Player 2</h2>
+            
+                <input type="text" name="player2" placeholder="Leave blank to play alone" class="centre">
+                
+               
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+
+    <div class = "row">
+        <div class="col-7">
+        </div>
+        <div class="col-4">
+
+        </div>
+        <div class="col-1">
+        </div>
+    </div>   
+
+    <div class="row">
+        <div class="col-3">
+        </div>
+        <div class="col-6">
+            <input type="submit" value="Let battle commence!" name="submit">
+        </div>
+        <div class="col-3">
+        </div>
+    </div>
+
+</form>     
+</body>
 </html>
