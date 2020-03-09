@@ -59,7 +59,7 @@ class RPSGame < Sinatra::Base
     redirect '/result'
   end
   get '/spoke' do
-    $game.player_1.selected('👽')
+    $game.player_1.selected('🖖🏼')
     redirect '/result'
   end
 
