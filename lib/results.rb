@@ -1,6 +1,6 @@
 class Results
 
-  attr_reader :winner
+  attr_accessor :winner
 
   def initialize(player_1, player_2)
     @player_1 = player_1

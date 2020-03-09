@@ -52,6 +52,8 @@ class Game
   def reset
     @player_1.choice = nil
     @player_2.choice = nil
+    @results.winner = nil
+    @game_over = false
   end
 
 end
