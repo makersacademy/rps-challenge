@@ -1,0 +1,20 @@
+body {
+background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSgYSJMfNZw492gzzEgEeA3qYyWFOx1SAiZ_ddEvbVqm_xaW8rg");
+background-size: cover;
+
+}
+
+h1 { 
+color: blue
+text-align: center;
+}
+
+h2 {
+    color: blueviolet
+    text-align: center;
+}
+
+form {
+    color: purple
+    text-align: center
+}
