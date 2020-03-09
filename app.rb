@@ -19,7 +19,7 @@ class Rps  < Sinatra::Base
 
   post '/game' do
     @name = $name
-    @name.choose_weapon(params[:choice])
+    @name.choose_weapon(params[:choice].downcase)
     @name.play_game
     redirect '/outcome'
   end
