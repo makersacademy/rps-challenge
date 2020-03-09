@@ -14,6 +14,10 @@ class RPS < Sinatra::Base
     erb :game
   end
 
+  post '/game-summary' do
+    "CPUs random choice will appear here"
+  end
+
 
   run! if app_file == $0
 end
