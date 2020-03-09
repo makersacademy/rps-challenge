@@ -1,0 +1,9 @@
+Your Move: <%=@move%>
+<br>
+Computers Move: <%=@opponent_move%>
+<br>
+<%=@result.capitalize%>
+<br>
+<form action='/play' method='post'>
+  <input type='submit'value='Play Again?'>
+</form>

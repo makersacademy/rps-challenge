@@ -11,8 +11,6 @@ SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
-
-
 RSpec.configure do |config|
   config.after(:suite) do
     puts
@@ -20,3 +18,11 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+ENV['RACK_ENV'] = 'test'
+require 'capybara/rspec'
+require_relative 'web_helpers.rb'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require('capybara')
+require('rspec')
+Capybara.app = RockPaperScissors
