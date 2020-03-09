@@ -31,6 +31,6 @@ class RPS < Sinatra::Base
     erb :results
   end
 
-  # start the server if ruby file executed directly
+  # start the server if the ruby file is executed directly
   run! if app_file == $0
 end
