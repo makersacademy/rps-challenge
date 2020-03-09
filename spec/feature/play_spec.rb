@@ -44,17 +44,17 @@ feature 'playing a game' do
       srand(PLAYER_OPPONENT_CHOICE)
     end
     scenario 'I will win' do
-      srand(PLAYER_OPPONENT_CHOICE)
+      # srand(PLAYER_OPPONENT_CHOICE)
       click_button 'Rock'
       expect(page).to have_content 'You win!!'
     end
     scenario 'I will draw' do
-      srand(PLAYER_OPPONENT_CHOICE)
+      # srand(PLAYER_OPPONENT_CHOICE)
       click_button 'Scissors'
       expect(page).to have_content 'You draw!!'
     end
     scenario 'I will lose' do
-      srand(PLAYER_OPPONENT_CHOICE)
+      # srand(PLAYER_OPPONENT_CHOICE)
       click_button 'Paper'
       expect(page).to have_content 'You lose!!'
     end

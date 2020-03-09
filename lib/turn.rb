@@ -4,7 +4,6 @@ class Turn
         paper: {rock: :win, paper: :draw,  scissors: :lose},
         scissors: {rock: :lose, paper: :win, scissors: :draw}
     }
-    
     attr_reader :player_name, :player_shape, :opponent_shape
 
   def initialize(options)

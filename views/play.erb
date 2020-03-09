@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body>
+<link rel='stylesheet' type='text/css' href='styles.css'>
+  <div class = 'main'> 
+
 Hello, <%= @turn.player_name %>
 <br><br>
 <form method ="POST" action="/play">
@@ -19,4 +25,6 @@ You chose <%= @turn.player_shape.to_s.capitalize %>!
   You draw!!
 <% end %>
 
- 
+ </div>
+</body>
+</html>

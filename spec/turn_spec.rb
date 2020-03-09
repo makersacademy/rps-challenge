@@ -21,8 +21,8 @@ describe Turn do
   end 
   context do
   subject(:win_turn)  { turn }
-  subject(:lose_turn) { described_class.new(lose_options) }
-  subject(:draw_turn) { described_class.new(draw_options) }
+  subject(:lose_turn) { described_class.new(options) }
+  subject(:draw_turn) { described_class.new(options) }
 
   let(:lose_turn) { { "player_name" => "Rafa", "player_shape" => :rock, "opponent_shape" => :paper } }
   let(:draw_turn) { { "player_name" => "Rafa", "player_shape" => :rock, "opponent_shape" => :rock } }
@@ -32,15 +32,15 @@ describe Turn do
         expect(win_turn.win?).to eq true
     end
   end
-#   describe '#lose' do 
-#     it 'lose will be true if player choose rock and opponent choose paper' do
-#         expect(lose_turn.lose?).to eq true
-#     end
-#   end
-#   describe '#draw' do 
-#     it 'draw will be true if player choose rock and opponent choose rock' do
-#         expect(draw_turn.draw?).to eq true
-#     end
-#   end
+  describe '#lose' do 
+    it 'lose will be true if player choose rock and opponent choose paper' do
+        expect(lose_turn.lose?).to eq true
+    end
   end
+  describe '#draw' do 
+    it 'draw will be true if player choose rock and opponent choose rock' do
+        expect(draw_turn.draw?).to eq true
+    end
+  end
+end
 end
