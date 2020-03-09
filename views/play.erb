@@ -1,0 +1,13 @@
+<head>
+  <title>Rock, paper, scissors</title>
+</head>
+<body>
+  <h1>Welcome, <%= $player_name%> Please choose from below:</h1>
+  <form action="/store_player_choice" method="post">
+    <input type="submit" name="player_choice" value="Rock">
+    <br>
+    <input type="submit" name="player_choice" value="Paper">
+    <br>
+    <input type="submit" name="player_choice" value="Scissors">
+  </form>
+</body>
