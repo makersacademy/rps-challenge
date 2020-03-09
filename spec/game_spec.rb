@@ -23,23 +23,4 @@ describe Game do
       expect { Game.new }.to raise_error
     end
   end
-
-  # describe '#turn' do
-  #   it 'delegates to #attack' do
-  #     expect(subject).to respond_to(:turn)
-  #   end
-  #
-  #   it 'lets #game_over swap from true to false' do
-  #     allow(player_1).to receive(:hp).and_return(0)
-  #     expect { subject.turn }.to change { subject.game_over }.to eq true
-  #   end
-  # end
-  #
-  # context 'lets players take turns' do
-  #   it '#turn swaps between players' do
-  #     allow(player_1).to receive(:hp).and_return(50)
-  #     allow(player_2).to receive(:hp).and_return(50)
-  #     expect(subject).to receive(:attack).once
-  #     subject.turn
-  #   end
 end

@@ -21,11 +21,17 @@ I would like to be able to play rock/paper/scissors
 ```
 ## To play the game
 
+Clone the files and in the parent directory run
+
 ```
-config.ru
+bundle
+rackup config.ru
 ```
+Visit the localhost with the given port number in your terminal to see the game online
 
 ### To run the tests
+
+In the parent directory run
 
 ```
 rspec
@@ -208,7 +214,7 @@ This way the input can be stored and saved via the params.
 
 I also added a static css file to style my game and a helper module to help keep the controller skinny.
 
-##Future additions
+## Future additions
 
 I'd like to add in the option for the same players to be able to play another game, without having to re-enter their names.
 
