@@ -53,3 +53,6 @@ This will show you the port that you should use in your browser (in this case it
 * I would like this to be one of a few games that can be played against the computer (or an opponent), the score would then be saved across multiple games, potentially with a scoreboard/leaderboard
 * [Code Review Rubric](https://github.com/makersacademy/rps-challenge/blob/master/docs/review.md) for future updating
 * I'd like to include options for best out of 3 and best out of 5 games as currently it just goes on forever.
+
+### Most recent update
+* Killed global variable and unnecessary use of class variable via use of @@
