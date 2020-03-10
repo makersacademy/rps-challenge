@@ -13,7 +13,7 @@ class Game
   end
 
 # class methods for singleton principle - lets us only have one game
-  def self.create(player_1, player_2, results = Results.new(player_1, player_2))
+  def self.create(player_1, player_2, _results = Results.new(player_1, player_2))
     @game = Game.new(player_1, player_2, results = Results.new(player_1, player_2))
   end
 
