@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+
+input {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=button], input[type=submit] {
+  background-color: #5F9EA0;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  font-family: 'PT Mono', monospace;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type=text]:focus  {
+  background-color: lightblue;
+}
+
+h1 {
+  font-family: 'PT Mono', monospace;
+  font-size: 34px;
+}
+
+h2 {
+  font-family: 'PT Mono', monospace;
+  font-size: 28px;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background-image: url("/paper.jpg");
+}
+
+.module {
+  max-width: 450px;
+  padding: 1rem;
+  text-align: center;
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, #5F9EA0, rgba(0, 0, 0, 0)) 1 100%;
+}

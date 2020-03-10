@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Results</title>
+      <link rel="stylesheet" href="style.css" />
+      <link href="https://fonts.googleapis.com/css?family=PT+Mono&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class ="module">
+      <h1> <%=@player_1_name%> vs. <%=@player_2_name%> </h1>
+      <% if @winner != "It's a draw!"%>
+        <h2> <%=@winner.name%> has won! </h2>
+          <% if @winner.choice == "Rock" %>
+            <img src="https://img.icons8.com/ios/100/000000/hand-rock.png">
+            <% elsif @winner.choice == "Scissors" %>
+            <img src="https://img.icons8.com/ios/100/000000/hand-scissors.png">
+            <% elsif @winner.choice == "Paper" %>
+            <img src="https://img.icons8.com/carbon-copy/100/000000/paper-plane.png">
+            <%end%>
+      <% elsif @winner == "It's a draw!"%>
+        <h2><%=@winner%></h2>
+      <%end%>
+  <h2> <%=@player_1_name%> played <%=@player_1_choice%> </h2>
+  <h2> <%=@player_2_name%> played <%=@player_2_choice%> </h2>
+  <form action='/newgame' method='post'>
+    <input class="button" type= "submit" value="Play Again">
+  </form>
+  <form action ='/' method ='get'>
+    <input class="button" type= "submit" value="New Game">
+  </form>
+  </div>
+  </body>
+  </html>
