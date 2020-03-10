@@ -15,6 +15,14 @@ class Game
     @p2_counter = 0
   end
 
+  def self.create(player_1)
+    @game = Game.new(player_1)
+  end
+  
+  def self.instance
+    @game
+  end
+
   def player_1_selection(p1_move)
     @p1_move = p1_move
   end
