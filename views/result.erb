@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/rps_style.css" />
+  </head>
+  <body>
+
+<section>
+  <h3>You selected <%= @game.p1_move %></h3>
+</section>
+
+<section>
+  <h3>Computer selects <%= @game.p2_move %></h3>
+</section>
+
+<section>
+  <h2 class="fast-type"><%= @game.result(@game.p1_move, @game.p2_move) %></h2>
+</section>
+
+<form action="/restart" method="post">
+<input type="submit" name="restart" value="Go Again">
+
+</body>
+</html>

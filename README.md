@@ -1,23 +1,28 @@
 # RPS Challenge
+Makers weekend challenge (week 3)
 
-Instructions
--------
+**Tech used**:
+Ruby,
+Sinatra,
+Capybara,
+Rspec,
+Rubocop
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+[![Build Status](https://travis-ci.com/Kittaru87/rps-challenge.svg?branch=master)](https://travis-ci.com/Kittaru87/rps-challenge)
 
-Task
-----
+## Project aim
+To write software that allows a user to play a game of rock, paper, scissors.
 
-Knowing how to build web applications is getting us almost there as web developers!
+### Primary aims
+* Register the player's name
+* Play a game of rock, paper, scissors
+  * This should include the following functionality:
+    - The player is presented with 3 choices (rock, paper and scissors)
+    - The player will choose one option
+    - The computer will choose a random option
+    - A winner will be declared
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
+**User Stories**
 ```
 As a marketeer
 So that I can see my name in lights
@@ -28,59 +33,26 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+## Installation instructions
+1. Requires Ruby. Instructions to install are [here](https://www.ruby-lang.org/en/documentation/installation/).
+2. Fork this repo, and clone to your local machine
+3. Run the command `gem install bundle`
+4. When the installation completes, run `bundle` 
+5. Navigate to the root folder and input 
+```rackup```
+This will show you the port that you should use in your browser (in this case it is `port=9292`).
+6. This program requires Firefox. Input the following into your Firefox brower:
+```http://localhost:9292/```
+7. Enjoy the game!
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+### Additional functionality
+* If you win against the computer then your score goes up by 1, when the computer wins against you then its score goes up by 1. Nothing happens upon a draw.
 
+### Future planning
+* I would like to have the images and their corresponding buttons to be above each other, and then in a row of 3. This would then be responsive and move into a column as the screen size decreases. At the moment the pictures are in a row next to each other and then the link buttons are in a row below them. It is fine for now but a style issue I would like to sort in the future.
+* I would like this to be one of a few games that can be played against the computer (or an opponent), the score would then be saved across multiple games, potentially with a scoreboard/leaderboard
+* [Code Review Rubric](https://github.com/makersacademy/rps-challenge/blob/master/docs/review.md) for future updating
+* I'd like to include options for best out of 3 and best out of 5 games as currently it just goes on forever.
 
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+### Most recent update
+* Killed global variable and unnecessary use of class variable via use of @@

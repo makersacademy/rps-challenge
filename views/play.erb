@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/rps_style.css" />
+  </head>
+  <body>
+    <header>
+    <h1><%= @player_name.name %> vs Computer</h1>
+    </header>
+    <main>
+
+    <section>
+      <h4>Your score: <%= @game.p1_counter %></h4>
+    </section>
+
+    <section>
+      <h4>Computer score: <%= @game.p2_counter %></h4>
+    </section>
+
+    <section>
+      <h1>Which one will you pick?</h1>
+      <div>
+      <img src="images/rock.png">
+      <img src="images/paper.png">
+      <img src="images/scissors.png">
+      <form action="/result" method="post">
+        <input type="submit" name="p1_move" value="rock">  
+        <input type="submit" name="p1_move" value="paper">
+        <input type="submit" name="p1_move" value="scissors">
+      </form>
+    </section>
+
+    <section>
+    </section>
+    </main>
+
+  </body>
+</html>
