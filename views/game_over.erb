@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='./style.css' />
+  </head>
+
+  <body>
+
+    <div class='container'>
+      <div class='banner'>
+        <div class='game_over'>
+          <% if $game.player_1.score == 3 %>
+            <div>You win!! <%= ['💥','🥳','👻','🕺🏼'].sample %></div>
+          <% end %>
+
+          <% if $game.player_1.score != 3 %>
+            <div>You lose <%= ['🤧','😢','😭','😱'].sample %></div>
+          <% end %>
+        </div>
+
+        <div class='play_again'>
+          <form action='/'>
+            <button>Play again!</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>

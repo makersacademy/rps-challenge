@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='./style.css' />
+  </head>
+
+  <body>
+
+    <div class='container'>
+      <div class='banner'>
+
+        <div class='round_result'>
+
+          <div class='player_1_move'>
+            <div><%= "#{$game.player_1.name} moved:" %></div>
+            <div class='move'><%= "#{$game.player_1.move}" %></div>
+          </div>
+
+          <div class='operator'>+</div>
+
+          <div class='player_2_move'>
+            <div><%= "#{$game.player_2.name} moved:" %></div>
+            <div class='move'><%= "#{$game.player_2.move}"%></div>
+          </div>
+
+          <div class='operator'>→</div>
+
+          <div class='winner'>
+            <% if $game.result == 'draw' %> It's a draw!! <% end %>
+            <% if $game.result != 'draw' %>
+            <%= "#{$game.result.name} won!"%>
+            <% end %>
+          </div>
+
+        </div>
+
+        <div class='next_round'>
+          <form action='/check_score' method="get">
+            <button>Ok</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
