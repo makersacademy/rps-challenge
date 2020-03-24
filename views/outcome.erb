@@ -1,13 +1,26 @@
-<h1><center> Result! </center></h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+  </head>
 
-<p><center><%= @game.player_1.name %> chose: <%= @game.player_1.move %>! </center></p>
+  <body>
 
-<p><center><%= @game.player_2.name %> chose: <%= @game.player_2.move %>! </center></p>
+    <h1> <%= @player_1 %> has chosen: <%= @player_1_move %> </h1>
 
-<h1><center>
-<% if @game.winner.is_a?(String) %>
-  <%= @game.winner %>
-<% else %>
-  <%= @game.winner.name %> wins!
-<% end %>
-</center></h1>
+    <h1> <%= @player_2 %> has chosen: <%= @player_2_move %> </h1>
+
+    <h1> The winner is: </h1>
+    <h1> <%= @winner %>! </h1>
+    <br><br>
+
+    <form action='/player_1'>
+      <button class="button" type='submit'>Play again!</button>
+    </form>
+
+    <form action='/'>
+      <button class="button" type='submit'>New game!</button>
+    </form>
+
+  </body>
+</html>

@@ -1,7 +1,12 @@
-# feature 'Winner is selected' do
-#   scenario 'after player 1 selects a move the outcome is decided' do
-#     sign_in_and_play
-#     click_button("Lets GO!")
-#     expect(page).to have_content("wins")
-#   end
-# end
+feature 'Winner is selected' do
+  scenario 'the outcome is decided' do
+    visit '/'
+    click_button("Computer")
+    fill_in :player_1, with: "Odin"
+    click_button("Submit")
+    click_button("Let's go!")
+    select 'Rock', from: 'player_1_move'
+    click_button("Submit")
+    expect(page).to have_content("The winner is:")
+  end
+end

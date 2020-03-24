@@ -16,7 +16,7 @@ describe Game do
   end
 
   it 'recognises when its a draw' do
-    expect(game.winner("Rock", "Rock")). to eq("It's a draw!")
+    expect(game.winner("Rock", "Rock")). to eq("Nobody...... It's a draw!")
   end
 
   it 'can randomly assign a move to the computer' do

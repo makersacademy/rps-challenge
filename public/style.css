@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+2&display=swap');
+
+body {
+  background-color: #96ceb4;
+  font-family: 'Baloo 2', cursive;  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.button {
+  background-color: goldenrod;
+  font-size: 20px;
+  padding: 14px 40px;
+  border-radius: 12px;
+  font-family: 'Baloo 2', cursive;
+}
