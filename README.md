@@ -13,7 +13,7 @@ The user is able to select a name, it then welcomes them onto the next page with
 Clone this repo, navigate to this directory and in the command line type:
 
 ```
-bundle istall
+bundle install
 ```
 
 Once the dependancies are installed, type into the command line:
@@ -36,7 +36,7 @@ This will display 9 passing tests with 100% coverage.
 
 ## Brief
 
-Your task is to provide a _Rock, Paper, Scissors_ game that a user can play on the web. This game will be based onthe following user stories:
+The task is to provide a _Rock, Paper, Scissors_ game that a user can play on the web. This game will be based on the following user stories:
 
 ```
 As a marketeer
