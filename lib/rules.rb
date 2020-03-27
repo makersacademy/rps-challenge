@@ -12,7 +12,8 @@ class Rules
 
     else 
       "Loses!"
-
     end
+
   end
+  
 end
