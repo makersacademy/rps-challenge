@@ -62,9 +62,13 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - run command `rackup -p 4567` in your terminal
 - visit http://localhost:4567/
 
-## Useage 
+## Usage 
 
 - This is a web app which you can run on your local server
+
+![RPS](/images/index.png "home")
+![RPS](/images/player1.png "weapon1")
+![RPS](/images/player2.png "weapon2")
 
 
 ## Projcet Status
