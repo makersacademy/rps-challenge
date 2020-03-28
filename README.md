@@ -74,6 +74,6 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 ## Projcet Status
 
 - Project is fully functioning as an appp for multiplater
-- Implementation of RPS against the computer requrired 
+- Implementation of RPS against the computer required
 - Can also e exampleded into using Lizard and Spock as weapon of choice
 - CSS is not complete 
