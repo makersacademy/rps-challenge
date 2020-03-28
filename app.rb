@@ -38,5 +38,5 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
-  run! if app_file == $0
+  # run! if app_file == $0
 end
