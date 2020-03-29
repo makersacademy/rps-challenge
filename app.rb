@@ -15,7 +15,7 @@ class RPS < Sinatra::Base
 
   post '/names' do
     session[:name] = params[:name]
-    session[:game] = Game.create(Player.new(session[:name]))
+    @game = Game.create(Player.new(session[:name]))
     redirect '/play'
   end
 
@@ -29,7 +29,6 @@ class RPS < Sinatra::Base
   end
   
   get '/result' do
-    @game = session[:game]
     @player_move = session[:move]
     @game_move = @game.rock_paper_scissors
     @result = @game.result(@player_move, @game_move)
