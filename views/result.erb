@@ -1,0 +1,17 @@
+<center><h1><%=@game.player_name%> chose <%=@player_move%> </h1>
+
+Vs.
+
+<h1><%= @game_move%></h1>
+
+<br>
+
+<h1><%=@result%></h1>
+<br>
+<h1> Click to play again?</h1> 
+<body style= background-color:red>
+<br>
+<br>
+<form action= "/play" method="get">
+<input type="submit" name="Play Again" value="Play Again">
+</form>

@@ -1,0 +1,12 @@
+<center><h1>Welcome, <%= @game.player_name %>, please select your move:</h1>
+<body style= background-color:red>
+<br>
+<img src= 'images/rock_paper_scissors.jpeg'>
+<br>
+<br>
+<form action= "/move" method="post">
+<input type="radio" name=move value = "Rock">Rock
+<input type ="radio" name=move value = "Paper">Paper
+<input type="radio" name=move  value = "Scissors">Scissors
+<input type="submit" name="Play">
+</form>
