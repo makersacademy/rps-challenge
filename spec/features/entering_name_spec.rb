@@ -9,4 +9,10 @@ feature ' plays rock paper scissors ' do
     fill_in('player_name', with: 'Edward')
     expect(page).to have_button('Play!')
   end
+  scenario 'Clicking Play! should show the player their name <in lights>' do
+    visit('/')
+    fill_in('player_name', with: 'Edward')
+    click_button('Play!')
+    expect(page).to have_content('Edward')
+  end
 end

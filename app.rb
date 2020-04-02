@@ -8,4 +8,14 @@ class Roshambo < Sinatra::Base
   get '/' do
     erb(:index)
   end
+
+  post '/challenger_approaches' do
+    session[:challenger_name] = params["player_name"]
+    redirect '/warlords_rising'
+  end
+
+  get '/warlords_rising' do
+    @ronin = session[:challenger_name]
+    erb(:challenger)
+  end
 end
