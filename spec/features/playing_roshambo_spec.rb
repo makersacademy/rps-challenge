@@ -30,7 +30,7 @@ feature "User story 2 - Playing Roshambo - Part 2: did I win!?: " do
     named_player
     choose('r')
     click_button('submit')
-    expect(page).to have_current_path('/results')
+    expect(page).to have_current_path('/ROSHAMBO')
   end
 end
 
