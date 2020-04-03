@@ -4,4 +4,8 @@ class Game
     @player_one = first
     @player_two = second
   end
+
+  def self.start_game(one:,two:)
+    @instance = Game.new(first:one, second:two)
+  end
 end
