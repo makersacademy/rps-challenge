@@ -1,4 +1,4 @@
-feature "User Story 2 - Playing Roshamb - Part 1: choose your weapon." do
+feature "User Story 2 - Playing Roshambo - Part 1: choose your weapon: " do
   scenario "after choosing to play should be able to choose rock" do
     named_player
     expect{choose('r')}.to_not raise_error
@@ -24,3 +24,13 @@ feature "User Story 2 - Playing Roshamb - Part 1: choose your weapon." do
     expect(page).to have_content("Rock, an ancient but powerful weapon.")
   end
 end
+
+feature "User story 2 - Playing Roshambo - Part 2: did I win!?: " do
+  scenario "choosing an option and clicking submit should take me to a results page." do
+    named_player
+    choose('r')
+    click_button('submit')
+    expect(page).to have_current_path('/results')
+  end
+end
+
