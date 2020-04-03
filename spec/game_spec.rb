@@ -12,6 +12,13 @@ describe Game do
   it " should be able to hold the two game players Part 2" do
     expect(rps.player_two).to eq(player2)
   end
+
+  it " should be able to determine which of the two players in the game is the winner." do
+    player1.stub(:weapon) { 'rock' }
+    player1.stub(:weapon) { 'paper' }
+    player1.stub(:name) { 'Ed' }
+    expect(rps.janken).to eq('Ed')
+  end
   
   it " should be able to create an instance of itself using a class method" do
     expect { Game.start_game(one:player1, two:player2) }.to_not raise_error
