@@ -8,4 +8,11 @@ feature 'Index page loads' do
     visit '/'
     expect(page).to have_field :name
   end
+
+  scenario 'with option to choose Rock' do
+    visit '/'
+    click_button('Go!')
+    expect(page).to have_content "Pick your Wepon"
+  end
+
 end
