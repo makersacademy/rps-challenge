@@ -9,6 +9,7 @@ describe Player do
     expect(player.name).to eq("Ed")
   end
   it " should be able to store the player's choice" do
-    expect { player.store('rock') }.to_not raise_error
+    player = Player.new("Ed")
+    expect { player.pick('rock') }.to_not raise_error
   end
 end
