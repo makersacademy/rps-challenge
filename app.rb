@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
 
 class Roshambo < Sinatra::Base
 
@@ -10,17 +12,17 @@ class Roshambo < Sinatra::Base
   end
 
   post '/challenger_approaches' do
-    session[:challenger_name] = params["player_name"]
+    @game = Game.start_game(one: Player.new(params["player_name"]), two: Player.new("Computer").pick(["rock","paper","scissors"].sample))
     redirect '/warlords_rising'
   end
 
   get '/warlords_rising' do
-    @ronin = session[:challenger_name]
+    @ronin = Game.instance.player_one.name
     erb(:challenger)
   end
 
   post '/RO-SHAM-BO' do
-    session[:player_choice] = params[:choice]
+    Game.instance.player_one.pick(params[:choice])
     redirect '/results'
   end
 
