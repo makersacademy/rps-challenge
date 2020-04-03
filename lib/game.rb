@@ -8,4 +8,8 @@ class Game
   def self.start_game(one:,two:)
     @instance = Game.new(first:one, second:two)
   end
+
+  def self.current_game
+    @instance
+  end
 end
