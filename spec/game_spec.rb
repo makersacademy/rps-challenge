@@ -13,4 +13,7 @@ describe Game do
     expect(rps.player_two).to eq(player2)
   end
   
+  it " should be able to create an instance of itself using a class method" do
+    expect(Game.start_game(one:player1, two:player2)).to_not raise_error
+  end
 end
