@@ -30,7 +30,7 @@ feature "User story 2 - Playing Roshambo - Part 2: did I win!?: " do
     named_player
     choose('r')
     click_button('submit')
-    expect(page).to have_current_path('/ROSHAMBO')
+    expect(page).to have_current_path('/results')
   end
   scenario "results page should announce the winner" do
     # at this point I'm leaving a placeholder test to see if the page has content

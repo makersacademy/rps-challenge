@@ -18,4 +18,13 @@ class Roshambo < Sinatra::Base
     @ronin = session[:challenger_name]
     erb(:challenger)
   end
+
+  post '/RO-SHAM-BO' do
+    session[:player_choice] = params[:choice]
+    redirect '/results'
+  end
+
+  get '/results' do
+    "The Winner is:"
+  end
 end
