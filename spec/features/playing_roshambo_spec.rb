@@ -1,14 +1,26 @@
 feature "User Story 2 - Playing Roshamb - Part 1: choose your weapon." do
   scenario "after choosing to play should be able to choose rock" do
     named_player
-    expect(page).to have_content('Rock, an ancient but powerful weapon.')
+    expect{choose('r')}.to_not raise_error
   end
   scenario "after choosing to play should be able to choose paper" do
     named_player
-    expect(page).to have_content('Paper, the stuff history books are made of.')
+    expect{choose('p')}.to_not raise_error
   end
   scenario "after choosing to play should be able to choose scissors" do
     named_player
+    expect{choose('s')}.to_not raise_error
+  end
+  scenario "You should be able to tell the paper button is for paper." do
+    named_player
+    expect(page).to have_content('Paper, the stuff history books are made of.')
+  end
+  scenario "You should be able to tell the scissors option is for scissors" do
+    named_player
     expect(page).to have_content('Scissors, sharp yet fragile.')
+  end
+  scenario "You should be able to tell the rock option is for rock." do
+    named_player
+    expect(page).to have_content("Rock, an ancient but powerful weapon.")
   end
 end
