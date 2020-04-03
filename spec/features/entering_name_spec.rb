@@ -1,4 +1,4 @@
-feature ' plays rock paper scissors ' do
+feature ' User story 1 feature test - Entering your name:  ' do
 
   scenario 'should have a landing page where the player can enter their name' do
     visit('/')
@@ -9,7 +9,7 @@ feature ' plays rock paper scissors ' do
     fill_in('player_name', with: 'Edward')
     expect(page).to have_button('Play!')
   end
-  scenario 'Clicking Play! should show the player their name <in lights>' do
+  scenario 'Clicking Play! should show the player their name <in> lights' do
     visit('/')
     fill_in('player_name', with: 'Edward')
     click_button('Play!')
