@@ -13,11 +13,20 @@ describe Game do
     expect(rps.player_two).to eq(player2)
   end
 
-  it " should be able to determine which of the two players in the game is the winner." do
+  it " should be able to determine which of the two players in the game is the winner - Part 1" do
     player1.stub(:weapon) { 'rock' }
-    player1.stub(:weapon) { 'paper' }
+    player2.stub(:weapon) { 'scissors' }
     player1.stub(:name) { 'Ed' }
+    player2.stub(:name) { 'notEd' }
     expect(rps.janken).to eq('Ed')
+  end
+
+  it " should be able to determine which of the two players in the game is the winner - Part 2" do
+    player1.stub(:weapon) { 'scissors' }
+    player2.stub(:weapon) { 'rock' }
+    player1.stub(:name) { 'Ed' }
+    player2.stub(:name) { 'notEd' }
+    expect(rps.janken).to eq('notEd')
   end
   
   it " should be able to create an instance of itself using a class method" do
