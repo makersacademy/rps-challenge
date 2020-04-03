@@ -6,7 +6,7 @@ describe Game do
   let(:rps) { Game.new(first:player1,second:player2) }
 
   it " should be able to hold the two game players" do
-    expect(rps).to respond_to(:player_one).with(player1)
+    expect(rps.player_one).to eq(player1)
   end
 
 end
