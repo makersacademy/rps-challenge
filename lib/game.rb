@@ -18,7 +18,7 @@ class Game
   end
 
   def self.start_game(one:,two:)
-    @instance = Game.new(first:one, second:two)
+    @instance = Game.new(first: one, second: two)
   end
 
   def self.current_game
