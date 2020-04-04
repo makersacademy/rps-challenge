@@ -147,6 +147,28 @@ Tests still green.
 
 Right now the controller (app.rb) is simply returning back user inputs to the view.
 
-In order to play a game vs a computer opponent there needs to be a model that handles that logic, (and can also probably handle the player name and choice rather than using session at some point too).
+In order to play a game vs a computer opponent there needs to be a logic that makes the computer choose an option.
 
-Wrote a feature test that expects 
+Wrote a feature test for Dave to choose Rock and the computer to choose Rock, expect to see 'Computer: Rock'. Test red.
+
+- Hardcoded 'Computer: Rock' in the result view. 
+
+Test green.
+
+Wrote a feature test for Dave to choose Rock and the computer to choose Paper, expect to see 'Computer: Paper'. Test red.
+
+- In post /result added a new key to session, comp_choice, and assigned that by sampling an array containing 'Rock' and 'Paper'.
+
+- Added a new instance variable for comp_choice in get /result, and altered the result view to properly display this
+
+- Needed to control the randomness in the tests so used srand to make sure they behave consistently.
+
+Test green.
+
+Wrote a feature test for Dave to choose Rock and the computer to choose Scissors, expect to see 'Computer: Scissors'. Test red.
+
+- Added 'Scissors' to the sampled array.
+
+- Added an appropriate srand to the test to control randomness.
+
+Test green.

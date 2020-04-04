@@ -19,13 +19,15 @@ class Rps < Sinatra::Base
   end
 
   post '/result' do
-    @session[:choice] = params[:choice]
+    session[:player_choice] = params[:choice]
+    session[:comp_choice] = ['Rock', 'Paper', 'Scissors'].sample
     redirect '/result'
   end
 
   get '/result' do
     @name = session[:name]
-    @choice = session[:choice]
+    @player_choice = session[:player_choice]
+    @comp_choice = session[:comp_choice]
     erb :result
   end
 end
