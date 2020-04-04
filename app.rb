@@ -17,5 +17,10 @@ get '/play' do
   erb :play
 end 
 
+post '/round_1' do 
+  
+  erb :round_1
+end 
+
   run if app_file == $0
 end 
