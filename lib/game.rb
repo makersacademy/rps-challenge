@@ -19,4 +19,8 @@ class Game
   def win?
     WIN.include?([player.weapon, cpu.weapon])
   end
+
+  def new_game
+    @cpu = CPU.new
+  end
 end

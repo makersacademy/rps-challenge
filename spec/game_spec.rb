@@ -21,5 +21,11 @@ describe Game do
     game.player.pick_weapon("Rock")
     expect(game.win?).to be true
   end
+
+  it 'can start a new came' do
+    old_cpu = game.cpu
+    game.new_game
+    expect(game.cpu).not_to eq old_cpu
+  end
   
 end

@@ -23,13 +23,18 @@ class RPS < Sinatra::Base
 
   post '/fight' do
     session[:game].player.pick_weapon([params[:rock], params[:paper], params[:scissors]].join)    
-    redirect '/result'
+    redirect 'result'
   end
 
   get '/result' do
     @player = session[:game].player
     @cpu = session[:game].cpu
     erb :result
+  end
+
+  post '/replay' do 
+    session[:game].new_game
+    redirect 'play'
   end
 
 end

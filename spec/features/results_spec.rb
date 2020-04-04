@@ -13,4 +13,12 @@ feature 'When player picks weapon' do
     expect(page).to have_button 'Play Again'
   end
 
+  scenario 'Can play again' do
+    visit '/'
+    click_button('Go!')
+    click_button('Rock')
+    click_button('Play Again')
+    expect(page).to have_content "Pick your Weapon"
+  end
+
 end
