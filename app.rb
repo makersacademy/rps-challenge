@@ -10,20 +10,22 @@ class RPS < Sinatra::Base
   post '/name' do
     session[:name] = params[:name]
     erb :index
-    redirect ('play')
+    redirect 'play'
   end
 
   get '/play' do
     @name = session[:name]
     @rock = session[:rock]
     @paper = session[:paper]
-    @weapon = @rock || @paper
+    @scissors = session[:scissors]
+    @weapon = @rock || @paper || @scissors
     erb :play
   end
 
   post '/fight' do
     session[:rock] = params[:rock]
     session[:paper] = params[:paper]
+    session[:scissors] = params[:scissors]
     redirect '/play'
   end
 
