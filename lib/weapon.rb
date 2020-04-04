@@ -7,6 +7,7 @@ class Weapon
   ]
 
   attr_reader :type, :combo
+  
   def initialize(type)
     @type = type
   end
