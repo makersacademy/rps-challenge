@@ -1,0 +1,9 @@
+<h1> Game on! it's... </h1>
+<h1> <%= @game.player1_name %> vs. <%= @game.player2_name %>!!</h1>
+<br>
+<form action ='/move' method ="post">
+<input type="radio" name="move" value="Rock" id='rock'> Rock<br>
+<input type="radio" name="move" value="Paper" id='paper'> Paper<br>
+<input type="radio" name="move" value="Scissors" id='scissors'> Scissors<br>
+<input type="submit" value="Submit">
+</form>
