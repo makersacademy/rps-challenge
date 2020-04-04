@@ -27,7 +27,7 @@ class Game
     @instance
   end
 
-  def self.first
-    @instance.player_one.name
-  end
+#  def self.first
+#    @instance.player_one.name
+#  end
 end
