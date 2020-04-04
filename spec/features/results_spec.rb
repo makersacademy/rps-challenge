@@ -1,9 +1,17 @@
 feature 'When player picks weapon' do
+  
   scenario 'CPU weapon is displayed' do
     visit '/'
     click_button('Go!')
     click_button('Rock')
     expect(page).to have_content "Rock vs. Scissors"
+  end
+
+  scenario 'result is displayed' do
+    visit '/'
+    click_button('Go!')
+    click_button('Rock')
+    expect(page).to have_content "You loose!"
   end
 
   scenario 'Can play again' do

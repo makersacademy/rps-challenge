@@ -20,7 +20,7 @@ class Game
     if player.weapon == cpu.weapon
       "draw" 
     else
-      WIN.include?([player.weapon, cpu.weapon]) ? "win" : "false"
+      WIN.include?([player.weapon, cpu.weapon]) ? "win" : "loose"
     end
   end
 

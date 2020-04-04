@@ -29,6 +29,7 @@ class RPS < Sinatra::Base
   get '/result' do
     @player = session[:game].player
     @cpu = session[:game].cpu
+    @result = session[:game].result
     erb :result
   end
 
