@@ -7,21 +7,30 @@ class Rps < Sinatra::Base
     erb :index
   end
 
-  post '/play' do
-    @game = Game.create(params[:name])
-    redirect '/play'
-  end
-
   before do
     @game = Game.instance
   end
 
-  get '/play' do
+  post '/single-player' do
+    @game = Game.create(player_1_name: params[:name])
+    redirect '/single-player'
+  end
+
+  get '/single-player' do
+    erb :play
+  end
+
+  post '/multi-player' do
+    @game = Game.create(player_1_name: params[:player_1_name], player_2_name: params[:player_2_name])
+    redirect '/multi-player'
+  end
+
+  get '/multi-player' do
     erb :play
   end
 
   post '/result' do
-    @game.player.choose(params[:choice])
+    @game.player_1.choose(params[:player_1_choice])
     @game.decide_winner
     redirect '/result'
   end

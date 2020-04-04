@@ -27,7 +27,7 @@ Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play
 
 Advanced:
 
-- Multiplayer - Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+- Multi-player - Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 = Rock, Paper, Scissors, Spock, Lizard - Use the [_special_ rules](http://en.wikipedia.org/wiki/rock-paper-scissors-lizard-spock).
 
 ## Basic Rules
@@ -268,3 +268,16 @@ Test green.
 - Views erb tags use @game and method calls to get values for names and choices.
 
 - Created an instance variable @game assigned with Game.instance in a before block so to DRY up routes.
+
+### Advanced Requirement: Multi-player
+
+Change the game so that two marketeers can play against each other.
+
+Wrote a feature test for Dave and Jim to enter their names then see 'Dave vs Jim'.
+
+- Reworked Game to be able to accept two player name inputs, if only one is given player 2 is constructed as a Comp instance.
+
+- Created a new form on index.erb for multi-player, also reworked the original form to be titled single-player.
+
+- Replaced instances of 'Computer' in the views to use player 2's name (which would be computer if a comp replaces player 2)
+
