@@ -34,6 +34,11 @@ describe Game do
   end
   it " should be able to access an instance of the game using class methods" do
     Game.start_game(one: player1, two: player2)
-    expect(Game.instance).to be_instance_of(Game)
+    expect(Game.current_game).to be_instance_of(Game)
+  end
+  it " should be able to tell me the name of the player from the class level" do
+    expect(player1).to receive(:name)
+    Game.start_game(one: player1, two: player2)
+    Game.first
   end
 end

@@ -17,12 +17,12 @@ class Roshambo < Sinatra::Base
   end
 
   get '/warlords_rising' do
-    @ronin = Game.instance.player_one.name
+    @ronin = Game.current_game.player_one.name
     erb(:challenger)
   end
 
   post '/RO-SHAM-BO' do
-    Game.instance.player_one.pick(params[:choice])
+    Game.current_game.player_one.pick(params[:choice])
     redirect '/results'
   end
 
