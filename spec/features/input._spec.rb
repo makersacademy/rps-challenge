@@ -12,7 +12,7 @@ feature 'Index page loads' do
   scenario 'with option to choose Rock' do
     visit '/'
     click_button('Go!')
-    expect(page).to have_content "Pick your Wepon"
+    expect(page).to have_content "Pick your Weapon"
   end
 
 end

@@ -11,4 +11,10 @@ feature 'Play page loads' do
     click_button('Go!')
     expect(page).to have_button ('Paper!')
   end
+
+  scenario 'with option to choose Scissors' do
+    visit '/'
+    click_button('Go!')
+    expect(page).to have_button ('Scissors!')
+  end
 end
