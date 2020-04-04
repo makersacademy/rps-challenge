@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/css/match_styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Match Results</title>
+  </head>
+
+  <body>
+    <div id="content">
+      <div id="choices">
+        <div id="player-choice">
+          <span class="small-played">
+            <%= @game.current_player.name %> played
+          </span> 
+          <span class="move">
+            <%= @game.current_player.hand %>
+          </span>
+        </div>
+        <div id="computer-choice">
+          <span class="small-played">
+            MA-RPS3000 played
+          </span> 
+          <span class="move">
+            <%= @game.opponent.hand %>
+          </span>
+        </div>
+      </div>
+
+      <h1><%= @game.verdict.downcase %></h1>
+      <h2 class="scores"><%= @game.score.player %> - <%= @game.score.opponent %></h2>
+
+      <div class="visuals">
+        <img id="player-hand" src="svg/<%= @game.current_player.hand.downcase %>.svg">
+        <img id="opponent-hand" src="svg/<%= @game.opponent.hand.downcase %>.svg">
+      </div>
+
+      <div class="navigation">
+        <form action="/menu" method="POST">
+          <input id="menu" type="submit" value="RETURN TO MENU">
+        </form>
+
+        <form action="/play-again" method="POST">
+          <input id="play-again" type="submit" value="PLAY AGAIN">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

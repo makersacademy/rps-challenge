@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/css/index_styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Rock Paper Scissors Lizard Spock</title>
+  </head>
+  
+  <body>
+    <div id="content">
+      <div id='homepage-header'>
+        <p id="rock">Rock</p>
+        <p id="paper">Paper</p>
+        <p id="scissors">Scissors</p>
+        <p id="lizard">Lizard</p>
+        <p id="spock">Spock</p>
+      </div>
+
+      <form action="/play" method="POST">
+      <div id="form-content">
+        <input id="enter-name" type="text" name="player-name" placeholder="enter your name" autocomplete="off">
+        <div id="play">
+          <div id="play-icon"></div>
+          <input id="play-button" type="submit" value="PLAY">
+        </div>
+      </div>
+      </form>
+    </div>
+  </body>
+</html>
