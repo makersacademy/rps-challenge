@@ -16,8 +16,12 @@ class Game
     @cpu = CPU.new
   end
 
-  def win?
-    WIN.include?([player.weapon, cpu.weapon])
+  def result
+    if player.weapon == cpu.weapon
+      "draw" 
+    else
+      WIN.include?([player.weapon, cpu.weapon]) ? "win" : "false"
+    end
   end
 
   def new_game
