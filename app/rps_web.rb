@@ -7,9 +7,9 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
-  post '/name' do
+  post '/choose' do
     @player_name = params[:name]
-    #redirect '/choose'
+
     erb :choose
   end
 
