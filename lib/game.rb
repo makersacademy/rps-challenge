@@ -12,14 +12,8 @@ class Game
   def initialize(player, computer)
     @player = player
     @computer = computer
-    #wins? ? (@result = :win ) : (@result = :lose )
-    if wins? 
-      @result = :win
-    elsif draws?
-      @result = :draw
-    else
-      @result = :lose
-    end
+    wins? ? (@result = :win ) : (@result = :lose )
+    (@result = :draw) if draws?
   end
 
   def wins?
