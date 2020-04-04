@@ -14,6 +14,14 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
+## How does it work?
+ - The user submits their name
+ - Player chooses Rock, Paper or Scissors
+ - Player sees the result of their game
+ - Player is given option to play again or end gaim
+
+![RPS](/supporting/RPS.gif) 
+
 ## Aims
 
 - [X] the marketeer should be able to enter their name before the game
@@ -35,14 +43,6 @@ I would like to be able to play rock/paper/scissors
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
-
-## How does it work?
-The user submits the form, and depending on the current date, the app will either:
-
-* wish the user happy birthday
-* tell them how long they'll have to wait until their next birthday
-
-![RPS](/supporting/RPS.gif) 
 
 ## How to run ##
 
