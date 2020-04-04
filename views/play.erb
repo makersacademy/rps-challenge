@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <head>
+  <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-  <h1><%= @player.name %></h1>
-  <form action="/fight" method="post">
-    <label for="Action">Pick your Weapon</label>
-    <input type="submit" value="Rock" name="rock">
-    <input type="submit" value="Paper" name="paper">
-    <input type="submit" value="Scissors" name="scissors">
-  </form>
+  
+  <span>
+    <h1><%= @player.name %></h1>
+    <form action="/fight" method="post">
+      <div>
+        <label for="Action">Pick your Weapon</label>
+      </div>
+      <div>
+        <input class="button" type="submit" value="Rock" name="rock">
+        <input class="button" type="submit" value="Paper" name="paper">
+        <input class="button" type="submit" value="Scissors" name="scissors">
+      </div>
+    </form>
+  </span>
 </body>
 </html>

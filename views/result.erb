@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <head>
+  <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-  <h1><%= @player.name %></h1>
-  <h2><%= @player.weapon %> vs. <%= @cpu.weapon %> </h2>
-  <h2> You <%= @result %>! </h2>
-  <h2> Score <%= @score %> </h2>
-  <form action="/replay" method="post">
-    <input type="submit" value="Play Again" name="play again">
-  </form>
-  <form action="/quit" method="post">
-    <input type="submit" value="End Game" name="End Game">
-  </form>
+  
+  <span>
+  <h1> Score <%= @score %> </h1>
+    <h2><%= @player.weapon %> vs. <%= @cpu.weapon %> </h2>
+    <h2 class="red-text"> You <%= @result %>! </h2>
+    <form action="/replay" method="post">
+      <input class="button" type="submit" value="Play Again" name="play again">
+    </form>
+    <form action="/quit" method="post">
+      <input class="button" type="submit" value="End Game" name="End Game">
+    </form>
+  </span>
 </body>
 </html>

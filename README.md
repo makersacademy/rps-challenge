@@ -35,3 +35,22 @@ I would like to be able to play rock/paper/scissors
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
+## How does it work?
+The user submits the form, and depending on the current date, the app will either:
+
+* wish the user happy birthday
+* tell them how long they'll have to wait until their next birthday
+
+![RPS](/supporting/RPS.gif) 
+
+## How to run ##
+
+```shell
+# To run the Rock Paper Scissors
+rrackup -p 9393     
+
+# Open in browser
+http://localhost:9393/
+
+```
