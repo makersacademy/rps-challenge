@@ -9,12 +9,12 @@ WIN = [
 
 class Game
 
-  attr_reader :player, :cpu, :score
+  attr_reader :player, :cpu
 
   def initialize(name)
     @player = Player.new(name)
     @cpu = CPU.new
-    @score = { player: 0, cpu: 0}
+    @score = { player: 0, cpu: 0 }
   end
 
   def result

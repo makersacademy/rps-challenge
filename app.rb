@@ -30,6 +30,7 @@ class RPS < Sinatra::Base
     @player = session[:game].player
     @cpu = session[:game].cpu
     @result = session[:game].result
+    @score = session[:game].print_score
     erb :result
   end
 

@@ -14,7 +14,14 @@ feature 'When player picks weapon' do
     expect(page).to have_content "You loose!"
   end
 
-  scenario 'Can play again' do
+  scenario 'score is displayed' do
+    visit '/'
+    click_button('Go!')
+    click_button('Rock')
+    expect(page).to have_content "Score 1:0"
+  end
+
+  scenario 'Button to play again' do
     visit '/'
     click_button('Go!')
     click_button('Rock')
