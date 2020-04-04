@@ -33,13 +33,18 @@ feature "User story 2 - Playing Roshambo - Part 2: did I win!?: " do
     expect(page).to have_current_path('/results')
   end
   scenario "results page should announce the winner" do
-    # at this point I'm leaving a placeholder test to see if the page has content
-    # as I am unsure of the best way of testing this feature without knowing the winner
-    # in advance - I guess the solution is to force the winner, but I'm not gonna worry about
-    # that at the moment.
     named_player
     choose('r')
     click_button('submit')
     expect(page).to have_content("The Winner is: #{Game.current_game.janken}") 
+  end
+end
+
+feature "Can I play more than once?: " do
+  scenario " Should be able to play another game after seeing the results of the current game." do
+    named_player
+    choose('r')
+    click_button('submit')
+    expect(page).to have_button("Play again?")
   end
 end

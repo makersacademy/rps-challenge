@@ -28,6 +28,7 @@ class Roshambo < Sinatra::Base
   end
 
   get '/results' do
-    "The Winner is:"
+    @result = Game.current_game.janken
+    erb(:results)
   end
 end
