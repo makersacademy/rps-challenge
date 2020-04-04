@@ -3,6 +3,7 @@ require 'computer'
 describe Computer do
 
   it 'responds to computer class' do
-    expect(subject.go("Rock")).to eq "Rock"
+    srand(2)
+    expect(subject.computer_turn).to eq "Rock"
   end
 end

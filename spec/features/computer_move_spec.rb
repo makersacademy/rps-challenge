@@ -4,6 +4,6 @@ feature 'computer makes a move' do
     sign_in_and_play
     choose 'Paper'
     click_button 'Submit'
-    expect(page).to have_content "Computer choses Rock"
+    expect(page).to have_content "Computer chose Rock"
   end
 end

@@ -3,6 +3,6 @@ feature 'player makes move' do
     sign_in_and_play
     choose 'Paper'
     click_button 'Submit'
-    expect(page).to have_content "Nigel, you choose Paper"
+    expect(page).to have_content "Nigel, you chose Paper"
   end
 end

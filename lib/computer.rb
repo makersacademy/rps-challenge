@@ -1,13 +1,11 @@
 class Computer
 
-  attr_reader :computer_turn
+  attr_reader :name, :computer_turn
+  COMPUTER = Computer
 
   def initialize
-    @computer_turn = nil
-  end
-
-  def go(move)
-    @computer_turn = move
+    @name = COMPUTER
+    @computer_turn = ["Rock", "Paper", "Scissors"].sample
   end
 
 end
