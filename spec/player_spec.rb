@@ -6,11 +6,13 @@ describe Player do
     expect(player.name).to eq 'Phil'
   end
 
-  it 'the name must be a string' do
-    expect { Player.new(4) }.to raise_error 'name must be a string'  
-  end
+  context 'initialization errors' do
+    it 'the name must be a string' do
+      expect { Player.new(4) }.to raise_error 'name must be a string'  
+    end
 
-  it 'the name must be at least one character in length' do
-    expect { Player.new('') }.to raise_error 'name must not be empty string'
+    it 'the name must be at least one character in length' do
+      expect { Player.new('') }.to raise_error 'name must not be empty string'
+    end
   end
 end
