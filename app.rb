@@ -1,6 +1,7 @@
 require "sinatra/base"
 require './lib/cpu'
 require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -18,13 +19,19 @@ class RPS < Sinatra::Base
   get '/play' do
     session[:player] = Player.new(session[:name])
     @player = session[:player]
-    @weapon = session[:weapon]
+    
     erb :play
   end
 
   post '/fight' do
     session[:weapon] = ([params[:rock], params[:paper], params[:scissors]].join)
-    redirect '/play'
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player = session[:player]
+    @weapon = session[:weapon]
+    erb :result
   end
 
 end
