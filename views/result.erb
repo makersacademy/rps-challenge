@@ -4,11 +4,11 @@
 </head>
 <body>
   <h1><%= @player.name %></h1>
-  <form action="/replay" method="post">
-    <input type="submit" value="Play Again" name="play again">
-  </form>
   <h2><%= @player.weapon %> vs. <%= @cpu.weapon %> </h2>
   <h2> You <%= @result %>! </h2>
   <h2> Score <%= @score %> </h2>
+  <form action="/replay" method="post">
+    <input type="submit" value="Play Again" name="play again">
+  </form>
 </body>
 </html>
