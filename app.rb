@@ -1,6 +1,10 @@
-require 'sinatra'
-set :session_secret, 'super secret'
+require 'sinatra/base'
 
-get '/' do
-  erb :index
+class RockPaperScissor < Sinatra::Base 
+
+  get '/' do
+    erb :index
+  end
+
+  #run! if app_file == $0
 end
