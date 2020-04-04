@@ -51,15 +51,29 @@ bundle
 rspec
 ```
 
+## Playing the game
+
+```bash
+# start the server from the project root directory
+rackup
+
+# go to the url below in your browser
+localhost:9292
+
+# play the game!!!
+```
+
 ## Approach
 
-The first thing I did was to rough out a process model for the name registration user story. Although this changed slightly as I implemented the stories, the fundamental structure stayed the same, which I was very pleased about. Doing this so early helped give me a good general idea of how I wanted to put things together, and once I got going with the challenge I felt it unnecessary to rough out any further process models.
+Looking at the challenge, I decided to focus on the implementation rather than visual aspect of the game. I can always come back to making it look better at a later date.
+
+Ny first task was roughing out a process model for the name registration user story. Although this changed slightly as I implemented the stories, the fundamental structure stayed the same, which I was very pleased about. Doing this early gave me a good, general idea of how I wanted to put things together, and once I got going with the challenge I felt it unnecessary to rough out any further process models.
 
 Implementing the first bonus level was extremely challenging. and I had to revise many of the existing feature tests and expand the model layer of the application code. I eventually ended up with the following class diagram for the model layer. Note that predicate methods are not showing ? at the end of their names. Also, the create and instance methods of the Game class are class rather than instance methods:
 
 ![Class diagram](./class-diagram.svg)
 
-The two most challenging aspects of the implementation were refactoring out the MoveList, and ensuring there were no dependencies between the individual unit tests and classes not being tested. Setting up the doubles and stubs for the Game unit tests was particularly tough, and I spent a lot of time working through how to ensure the tests were meaningful.
+The two most challenging aspects of the implementation were refactoring out the MoveList, and ensuring there were no dependencies between the individual unit tests and classes not being tested. Setting up the doubles and stubs for the Game unit tests to remove its dependency on MoveList was particularly tough, and I spent a lot of time working through how to ensure the tests were meaningful.
 
 I'm still not happy with the extraction of the MoveList class from Game, although it was very necessary given the size the Game class had got to prior to refactoring. I find the separation of make_move and decide_results methods very clunky. I experimented with ways of deciding the result of the game once the second move was passed in rather than calling a method separately, but nothing felt like it made sense semantically. I suspect its a problem with the way I'm naming the methods involved.
 
@@ -72,3 +86,9 @@ I'm still not happy with the extraction of the MoveList class from Game, althoug
 ### Users playing a multi-player game
 
 ![Name registration](./playing-multiplayer.svg)
+
+## Future work
+
+* The visuals obviously need some(any!) work
+* Re-examine the interface between Game and MoveList
+* Do the second bonus level
