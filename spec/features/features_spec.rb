@@ -26,10 +26,10 @@ feature 'I want to be able to choose scissors' do
   end
 end
 
-feature 'I choose scissors and I either win, lose or draw' do
+feature 'I choose scissors and next page returns my choice' do
   scenario 'select name and then scissors' do
     enter_name
     click_button 'Scissors'
-    expect(page).to have_content 'You'
+    expect(page).to have_content 'You chose scissors'
   end
 end

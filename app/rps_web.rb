@@ -29,6 +29,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/result' do
+    @result = @game.result
     erb :result
   end
 
