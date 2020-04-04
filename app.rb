@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
   end
 
   post '/fight' do
-    session[:weapon] = [params[:rock], params[:paper], params[:scissors]].join
+    session[:weapon] = Weapon.new([params[:rock], params[:paper], params[:scissors]].join).type
     redirect '/play'
   end
 
