@@ -1,6 +1,7 @@
 require "sinatra/base"
 require './lib/weapon'
 require './lib/cpu'
+require './lib/player'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -16,8 +17,8 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @name = session[:name]
-    @weapon = session[:weapon]
+    @player = Player.new(session[:name])
+    @weapon = @player.pick_weapon(session[:weapon])
     erb :play
   end
 
