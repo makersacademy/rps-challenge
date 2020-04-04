@@ -44,6 +44,12 @@ class Game
     @first_move.nil? ? player1 : player2
   end
 
+  def reset
+    @result = ''
+    @first_move = nil
+    @second_move = nil
+  end
+
   def self.instance
     @current_game
   end

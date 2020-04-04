@@ -49,6 +49,20 @@ describe Game do
     expect(subject.current_player).to eq player2
   end
 
+  it 'resets the result when you want to replay' do
+    subject.store_move(Game::ROCK)
+    subject.store_move(Game::SCISSORS)
+    subject.resolve_moves
+    expect { subject.reset }.to change { subject.result }.to ''
+  end
+
+  it 'resets the current player when you want to replay' do
+    subject.store_move(Game::ROCK)
+    subject.store_move(Game::SCISSORS)
+    subject.resolve_moves
+    expect { subject.reset }.to change { subject.current_player }.to player1
+  end
+
   context 'player moves' do
     context 'player 1 plays rock' do
       it 'beats scissors' do

@@ -16,4 +16,12 @@ feature 'the game can be played by two players' do
     click_button 'Paper'
     expect(page).to have_content "It's a draw - both players chose paper"
   end
+
+  scenario 'you can play again after a game is complete' do
+    register_and_play
+    click_button 'Paper'
+    click_button 'Paper'
+    click_button 'Play again'
+    expect(page).to have_content 'Choose a move Phil!'
+  end
 end
