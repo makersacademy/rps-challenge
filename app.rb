@@ -15,7 +15,14 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
+    @rock = session[:rock]
+    @weapon = @rock
     erb :play
+  end
+
+  post '/fight' do
+    session[:rock] = params[:rock]
+    redirect '/play'
   end
 
 end

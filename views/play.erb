@@ -3,12 +3,13 @@
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-  <form>
-    <h1><%= @name %></h1>
+  <h1><%= @name %></h1>
+  <form action="/fight" method="post">
     <label for="Action">Pick your Weapon</label>
     <input type="submit" value="Rock!" name="rock">
     <input type="submit" value="Paper!" name="paper">
     <input type="submit" value="Scissors!" name="scissors">
   </form>
+  <h2><%= @weapon %></h2>
 </body>
 </html>
