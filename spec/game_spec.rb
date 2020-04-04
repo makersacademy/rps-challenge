@@ -17,4 +17,9 @@ describe Game do
     expect(game).to respond_to :winner
   end
 
+  it 'can declare a winner' do
+    game.player.pick_weapon("Paper")
+    expect(game.winner).to be true
+  end
+  
 end

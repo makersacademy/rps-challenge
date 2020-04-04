@@ -12,6 +12,7 @@ class Game
   end
 
   def winner
+    @player.weapon.win?(cpu.weapon)
   end
 
 end
