@@ -11,26 +11,24 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    session[:game] = Game.new(params[:name])
     erb :index
     redirect 'play'
   end
 
   get '/play' do
-    session[:player] = Player.new(session[:name])
-    @player = session[:player]
-    
+    @player = session[:game].player
     erb :play
   end
 
   post '/fight' do
-    session[:weapon] = ([params[:rock], params[:paper], params[:scissors]].join)
+    session[:game].player.pick_weapon([params[:rock], params[:paper], params[:scissors]].join)    
     redirect '/result'
   end
 
   get '/result' do
-    @player = session[:player]
-    @weapon = session[:weapon]
+    @player = session[:game].player
+    @weapon = session[:game].player.weapon
     erb :result
   end
 
