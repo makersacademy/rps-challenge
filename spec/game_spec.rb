@@ -13,14 +13,14 @@ describe Game do
     player_double = double :Player, move: :rock
     computer_double = double :Computer, move: :scissors
     game = Game.new(player_double, computer_double)
-    expect(game.result).to eq :win
+    expect(game.wins?).to eq true
   end
 
   it 'player loses with rock against paper' do
     player_double = double :Player, move: :rock
     computer_double = double :Computer, move: :paper
     game = Game.new(player_double, computer_double)
-    expect(game.result).to eq :lose
+    expect(game.wins?).to eq false
   end
   
 end
