@@ -25,3 +25,11 @@ feature 'I want to be able to choose scissors' do
     expect(page).to have_selector(:link_or_button, 'Scissors')
   end
 end
+
+feature 'I choose scissors and I either win, lose or draw' do
+  scenario 'select name and then scissors' do
+    enter_name
+    click_button 'Scissors'
+    expect(page).to have_content 'You'
+  end
+end
