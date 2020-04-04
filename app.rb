@@ -1,8 +1,19 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPS < Sinatra::Base
   get '/' do
-    'Server is working as expected'  
+    erb(:name_registration)
+  end
+
+  post '/name' do
+    Player.create(params['name'])
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player = Player.instance
+    erb(:play)  
   end
 
   # start the server if ruby file executed directly
