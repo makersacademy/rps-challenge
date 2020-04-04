@@ -7,10 +7,23 @@
 </head>
 <body>
   <h1>Rock Paper Scissors</h1>
-  <form action="/play" method="post">
-    <label for="name">Enter your name:</label>
-    <input type="text" name="name">
-    <input type="submit" value="Go!">
-  </form>
+  <section>
+    <h2>Single-player</h2>
+    <form action="/single-player" method="post">
+      <label for="name">Enter your name:</label>
+      <input type="text" name="name">
+      <input type="submit" value="Start Single-player!">
+    </form>
+  </section>
+  <section>
+    <h2>Multi-player</h2>
+    <form action="/multi-player" method="post">
+      <label for="name">Enter player 1's name:</label>
+      <input type="text" name="player_1_name">
+      <label for="name">Enter playe 2's name:</label>
+      <input type="text" name="player_2_name">
+      <input type="submit" value="Start Multi-player!">
+    </form>
+  </section>
 </body>
 </html>
