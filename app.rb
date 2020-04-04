@@ -39,4 +39,8 @@ class RPS < Sinatra::Base
     redirect 'play'
   end
 
+  post '/quit' do
+    redirect '/'
+  end
+
 end

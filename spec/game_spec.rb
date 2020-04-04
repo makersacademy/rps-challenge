@@ -22,18 +22,18 @@ describe Game do
   end
 
   it 'can declare a winner' do
-    game.player.pick_weapon("Scissors")
+    game.player.pick_weapon("Rock")
     expect(game.result).to eq "win"
   end
 
   it 'adds to player score' do
-    game.player.pick_weapon("Rock")
+    game.player.pick_weapon("Scissors")
     game.result
     expect(game.print_score).to eq "1:0"
   end
 
   it 'can declare a draw' do
-    game.player.pick_weapon("Rock")
+    game.player.pick_weapon("Scissors")
     expect(game.result).to eq "draw"
   end
 
