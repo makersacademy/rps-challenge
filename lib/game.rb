@@ -12,7 +12,6 @@ class Game
   end
 
   def winner
-    @player.win?(cpu)
   end
 
 end

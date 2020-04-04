@@ -8,7 +8,7 @@ describe CPU do
 
   it 'weapon is random' do
     srand(3)
-    expect(subject.weapon).to eq "Scissors" 
+    expect(subject.weapon.type).to eq "Scissors" 
   end
 
 end

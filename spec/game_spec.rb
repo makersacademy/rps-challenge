@@ -1,4 +1,5 @@
 require 'game'
+require 'player'
 
 describe Game do
   
@@ -12,8 +13,8 @@ describe Game do
     expect(game.cpu).to be_a CPU
   end
 
-  it 'can determine a winner' do
+  it 'can respond to winner' do
     expect(game).to respond_to :winner
   end
-  
+
 end
