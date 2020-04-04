@@ -4,124 +4,63 @@ describe Game do
   let(:player1) { double(:player, name: 'Phil') }
   let(:player2) { double(:player, name: 'Su') }
   let(:player_class) { double(:player_class) }
-
-  subject do
-    Game.new('Phil', 'Su', player_class)
-  end
+  let(:list) { double(:list) }
+  let(:list_class) { double(:list_class) }
 
   before do
     allow(player_class).to receive(:new).and_return(player1, player2)
+    allow(list_class).to receive(:new).and_return(list)
   end
 
-  it 'has to be created by specifying two player names' do
-    expect(Game).to respond_to(:new).with(3).argument
+  subject do
+    Game.new(['Phil', 'Su'], player_class, list_class)
   end
 
-  it 'tells you who is player 1' do
-    expect(subject.player1).to eq player1
-  end
-
-  it 'tells you who is player 2' do
-    expect(subject.player2).to eq player2
-  end
-
-  it 'only accepts valid moves' do
-    expect { subject.store_move('invalid_move') }.to raise_error(ArgumentError, 'invalid player move')
-  end
-
-  it 'tells you if the moves are complete' do
-    subject.store_move(Game::ROCK)
-    subject.store_move(Game::SCISSORS)
-    expect(subject.moves_complete?).to eq true
-  end
-
-  it 'tells you if the moves are not complete' do
-    subject.store_move(Game::SCISSORS)
-    expect(subject.moves_complete?).to eq false
-  end
-
-  it 'tells you when it is player 1s turn' do
-    expect(subject.current_player).to eq player1
-  end
-
-  it 'tells you when it is player 2s turn' do
-    subject.store_move(Game::ROCK)
-    expect(subject.current_player).to eq player2
-  end
-
-  it 'resets the result when you want to replay' do
-    subject.store_move(Game::ROCK)
-    subject.store_move(Game::SCISSORS)
-    subject.resolve_moves
-    expect { subject.reset }.to change { subject.result }.to ''
-  end
-
-  it 'resets the current player when you want to replay' do
-    subject.store_move(Game::ROCK)
-    subject.store_move(Game::SCISSORS)
-    subject.resolve_moves
-    expect { subject.reset }.to change { subject.current_player }.to player1
-  end
-
-  context 'player moves' do
-    context 'player 1 plays rock' do
-      it 'beats scissors' do
-        subject.store_move(Game::ROCK)
-        subject.store_move(Game::SCISSORS)
-        expect(subject.resolve_moves).to eq 'Phil wins - rock blunts scissors'
-      end
-
-      it 'draws with rock' do
-        subject.store_move(Game::ROCK)
-        subject.store_move(Game::ROCK)
-        expect(subject.resolve_moves).to eq "It's a draw - both players chose rock"
-      end
-
-      it 'loses to paper' do
-        subject.store_move(Game::ROCK)
-        subject.store_move(Game::PAPER)
-        expect(subject.resolve_moves).to eq 'Su wins - paper wraps rock'
-      end
+  describe 'accessing players' do
+    it 'tells you who is player 1' do
+      expect(subject.player1).to eq player1
     end
 
-    context 'player 1 plays paper' do
-      it 'beats rock' do
-        subject.store_move(Game::PAPER)
-        subject.store_move(Game::ROCK)
-        expect(subject.resolve_moves).to eq 'Phil wins - paper wraps rock'
-      end
+    it 'tells you who is player 2' do
+      expect(subject.player2).to eq player2
+    end
+  end
 
-      it 'draws with paper' do
-        subject.store_move(Game::PAPER)
-        subject.store_move(Game::PAPER)
-        expect(subject.resolve_moves).to eq "It's a draw - both players chose paper"
-      end
-
-      it 'loses to scissors' do
-        subject.store_move(Game::PAPER)
-        subject.store_move(Game::SCISSORS)
-        expect(subject.resolve_moves).to eq 'Su wins - scissors cut paper'
-      end
+  describe '#moves_complete?' do
+    it 'tells you if the moves are complete' do
+      allow(list).to receive(:full?).and_return true
+      expect(subject.moves_complete?).to eq true
     end
 
-    context 'player plays scissors' do
-      it 'beats paper' do
-        subject.store_move(Game::SCISSORS)
-        subject.store_move(Game::PAPER)
-        expect(subject.resolve_moves).to eq 'Phil wins - scissors cut paper'
-      end
+    it 'tells you if the moves are not complete' do
+      allow(list).to receive(:full?).and_return false
+      expect(subject.moves_complete?).to eq false
+    end
+  end
 
-      it 'draws with scissors' do
-        subject.store_move(Game::SCISSORS)
-        subject.store_move(Game::SCISSORS)
-        expect(subject.resolve_moves).to eq "It's a draw - both players chose scissors"
-      end
+  describe '#current_player' do
+    it 'tells you when it is player 1s turn' do
+      expect(subject.current_player).to eq player1
+    end
 
-      it 'loses to rock' do
-        subject.store_move(Game::SCISSORS)
-        subject.store_move(Game::ROCK)
-        expect(subject.resolve_moves).to eq 'Su wins - rock blunts scissors'
-      end
+    it 'tells you when it is player 2s turn' do
+      allow(list).to receive(:store_move)
+      subject.store_move("move")
+      expect(subject.current_player).to eq player2
+    end
+  end
+
+  describe '#result' do
+    it 'resets the result when you want to replay' do
+      allow(list).to receive(:reset)
+      allow(list).to receive(:resolve_moves).and_return 'result'
+      subject.resolve_moves
+      expect { subject.reset }.to change { subject.result }.from('result').to('')
+    end
+
+    it 'sets the result when you resolve the game moves' do
+      allow(list).to receive(:resolve_moves).and_return 'result'
+      expect { subject.resolve_moves }.to change { subject.result }.from(nil).to('result')
     end
   end
 end
