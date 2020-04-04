@@ -13,22 +13,28 @@ describe Game do
     expect(game.cpu).to be_a CPU
   end
 
+  it 'starts with a score' do
+    expect(game.print_score).to eq "0:0"
+  end
+
   it 'can respond to win?' do
     expect(game).to respond_to :result
   end
 
   it 'can declare a winner' do
-    game.player.pick_weapon("Paper")
+    game.player.pick_weapon("Scissors")
     expect(game.result).to eq "win"
+  end
+
+  it 'adds to player score' do
+    game.player.pick_weapon("Rock")
+    game.result
+    expect(game.print_score).to eq "1:0"
   end
 
   it 'can declare a draw' do
     game.player.pick_weapon("Rock")
     expect(game.result).to eq "draw"
-  end
-
-  it 'keeps score' do
-    expect(game.score).to eq "0:0"
   end
 
   it 'can start a new game' do

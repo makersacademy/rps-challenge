@@ -14,15 +14,23 @@ class Game
   def initialize(name)
     @player = Player.new(name)
     @cpu = CPU.new
-    @score = "0:0"
+    @score = { player: 0, cpu: 0}
   end
 
   def result
     if player.weapon == cpu.weapon
       "draw" 
+    elsif WIN.include?([player.weapon, cpu.weapon])
+      @score[:player] += 1
+      "win" 
     else
-      WIN.include?([player.weapon, cpu.weapon]) ? "win" : "loose"
+      @score[:cpu] += 1
+      "loose"
     end
+  end
+
+  def print_score
+    "#{@score[:player]}:#{@score[:cpu]}"
   end
 
   def new_game
