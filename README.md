@@ -173,9 +173,23 @@ Wrote a feature test for Dave to choose Rock and the computer to choose Scissors
 
 Test green.
 
-#### Refactoring 2.2
+### User Stories 2.3, 2.4 and 2.5
 
-The logic should probably be extracted to a model at this point.
+> As a marketeer  
+> So that I can draw a game of rock/paper/scissors
+> I would like to see that we draw if my choice matches the computer's choice
+
+> As a marketeer  
+> So that I can win a game of rock/paper/scissors
+> I would like to see that I win if my choice beats the computer's choice
+
+> As a marketeer  
+> So that I can lose a game of rock/paper/scissors
+> I would like to see that the computer wins if my choice loses to the computer's choice
+
+Before going any further the logic should probably be extracted to a model at this point.
+
+#### Refactoring to a Model
 
 Wrote tests for a Player class constructed with the name of the player. Test red.
 
@@ -195,17 +209,45 @@ Wrote test that #choose sets the the choice attribute. Test red.
 
 Test green.
 
-Wrote tests for a Game class constructed with the name of the player. Test red.
+Wrote tests for a Comp class, #name to return 'Computer'. Test red.
 
+- Added comp.rb to lib.
 
+- Comp constructs with @name always assigned as 'Computer'.
 
-### User Stories 2.3 and 2.4
+- Added attr_reader for @name.
 
-> As a marketeer  
-> So that I can win a game of rock/paper/scissors
-> I would like to see that I win if my choice beats the computer's choice
+Test green.
 
-> As a marketeer  
-> So that I can lose a game of rock/paper/scissors
-> I would like to see that the computer wins if my choice loses to the computer's choice
+Wrote tests that #choice attribute can be Rock, Paper or Scissors randomly. Test red.
+
+- Wrote @choice to be initialised with a sample of the Rock Paper Scissors array form app.rb.
+
+- Added attr_reader for @choice.
+
+- Added appropriate srands to control randomness in tests.
+
+Test green.
+
+Wrote tests for a Game class constructed with the name of the player, player_class defaulting to Player, comp_class defaulting to Comp (allows dependency injection for testing).
+
+The tests center around #winner, which returns either the player or comp instances, or nil if it is a draw.
+
+Wrote a suite of tests for each scenario of RPS. Tests red.
+
+- Wrote some logic in a method #decide_winner, a series of guarded clauses checking @player and @comp choices and assigning @winner with either @player or @comp  
+
+- Exposed @winner with an attr_reader
+
+Tests green.
+
+Extracted three helper methods from #decide_winner (#player_chose_rock, #player_chose_paper, #player_chose_scissors). Each contains the logic to assign winner based on @comp.choice. #decide_winner contains a switch statement to call a helper method based on @player.choice.
+
+_There must be a better way that this logic, but I'm going to keep going as it works and isn't too bad._
+
+#### Refactoring Controller to use Model
+
+In order for the view to show the winner or a draw, the controller needs to use the model.
+
+Wrote a feature test where Dave chooses rock, and so does the computer, expecting there to be 'Draw' displayed.
 
