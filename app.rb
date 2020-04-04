@@ -18,7 +18,6 @@ get '/play' do
 end 
 
 post '/round_1' do 
-  
   erb :round_1
 end 
 

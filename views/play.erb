@@ -1,4 +1,12 @@
 <h1><%=@player_1%> VS. Computer </h1>
-<h2> Please choose an attack:</h2>
-<form action="/round_1" method='post'>
-<input type="submit" value="Rock">
+<form action="/round_1" method="post">
+  <label for="Select_Box">Choose rock, paper or scissors:</label>
+  
+
+  <select name="attack" id="Select_Box">
+      <option value="">--Please choose an option--</option>
+      <option value="rock">Rock 
+      <input type="submit"> </option>
+      <option value="paper">Paper</option>
+  </select>
+</form>
