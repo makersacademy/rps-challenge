@@ -13,10 +13,15 @@ class Game
   def initialize(player_1_name:, player_2_name: nil, player_class: Player, comp_class: Comp)
     @player_1 = player_class.new(player_1_name)
     @player_2 = player_2_name.nil? ? comp_class.new : player_class.new(player_2_name)
+    @multiplayer = !player_2_name.nil?
     @winner = nil
   end
 
   attr_reader :winner, :player_1, :player_2
+
+  def multiplayer?
+    @multiplayer
+  end
 
   def decide_winner
     case @player_1.choice

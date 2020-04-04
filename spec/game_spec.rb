@@ -18,12 +18,12 @@ describe Game do
   subject { described_class.new(player_1_name: 'Dave', player_class: player_class, comp_class: comp_class) }
   let(:two_player) { described_class.new(player_1_name: 'Dave', player_2_name: 'Jim', player_class: player_class, comp_class: comp_class) }
 
-  describe 'comp stands in for absent player 2' do
-    it 'when player 2 supplied, player 2 is a player instance' do
-      expect(two_player.player_2).to eq player_inst
+  describe '#multiplayer?' do
+    it 'when player 2 supplied, #multiplayer? true' do
+      expect(two_player.multiplayer?).to eq true
     end
-    it 'when player 2 omitted, player 2 is a comp instance' do
-      expect(subject.player_2).to eq comp_inst
+    it 'when player 2 omitted, #multiplayer? false' do
+      expect(subject.multiplayer?).to eq false
     end
   end
 
