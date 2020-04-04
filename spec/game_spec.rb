@@ -22,5 +22,12 @@ describe Game do
     game = Game.new(player_double, computer_double)
     expect(game.wins?).to eq false
   end
+
+  it 'player draws with rock against rock' do
+    player_double = double :Player, move: :rock
+    computer_double = double :Computer, move: :rock
+    game = Game.new(player_double, computer_double)
+    expect(game.result).to eq :draw
+  end
   
 end
