@@ -18,8 +18,11 @@ get '/play' do
 end 
 
 post '/round_1' do 
+  @attack = params[:attack] 
   erb :round_1
 end 
+
+
 
   run if app_file == $0
 end 
