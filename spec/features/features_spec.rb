@@ -1,8 +1,24 @@
 feature 'I want there to be a form I can fill in and see my name up in lights after' do
   scenario 'fill in form and submit' do
-    visit('/')
-    fill_in :name, with: 'Tom'
-    click_button 'submit'
+    enter_name
     expect(page).to have_content 'Tom'
+  end
+end
+
+feature 'I want to be able to choose rock' do
+  scenario 'select name and then rock' do
+    
+  end
+end
+
+feature 'I want to be able to choose paper' do
+  scenario 'select name and then paper' do
+    
+  end
+end
+
+feature 'I want to be able to choose scissors' do
+  scenario 'select name and then scissors' do
+    
   end
 end
