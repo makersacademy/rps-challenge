@@ -1,5 +1,38 @@
 # RPS Challenge
 
+## Instructions
+
+Run the following from your command line to start using the program:
+```
+git clone git@github.com:tommyrharper/rps-challenge.git
+cd rps-challenge
+bundle
+rackup
+```
+
+
+## File system
+
+```
+├── app
+│   └── rps_web.rb
+│   └── views
+│       └── index.erb
+├── lib
+│   ├── game.rb
+│   ├── computer.rb
+│   └── player.rb
+└── spec
+    └── spec_helper.rb
+```
+
+
+
+
+
+
+
+
 Instructions
 -------
 
