@@ -55,12 +55,28 @@ There aren't very many so I will need to rely on good TDD to drive the behaviour
 > So that I can see my name in lights
 > I would like to register my name before playing an online game
 
+First some set up, configured spec_helper.rb to require app.rb and set the capybara app to Rps.
+
+- Wrote a small Hello World test to make sure the testing is configured correctly. Test Red.
+
+- Added app.rb with Rps inheriting Sinatra::Base.
+
+- Added a route for '/' returning "Hello World". Test Green.
+
+Also added config.ru to be able to rackup for manual testing. 
+
 When the marketeer visits the site, there needs to be a field in order to enter their name, and their name should be displayed.
 
-First some set up, configured spec_helper.rb to require app.rb and set the capybara app to RPS.
+- Wrote a feature test using capybara, that when visiting / and entering Dave into the name field and submitting the form, Dave is displayed on the page. Test red.
 
-- Wrote a feature test using capybara, that when visiting / and entering a name into the name field and submitting the form, then their name is displayed on the page. Test red.
+- Updated get / to return an view, index.erb (in the views dir)
 
-- Created app.rb in the root dir.
+- In index.erb added a form to enter name and submit, posting to /play 
 
-  
+- In app.rb added a post /play route, hardcoded to return 'Dave'. Test green.
+
+- Wrote a feature test entering the name Jim. Test red.
+
+- In post /play instead returned the name parameter of the query string. Test green.
+
+- Refactored post /play to add the params to the session hash, and
