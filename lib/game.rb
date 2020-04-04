@@ -3,7 +3,7 @@ require_relative 'computer'
 
 class Game
 
-  attr_reader :result
+  attr_reader :result, :player, :computer
 
   RULES = { rock: :scissors,
     paper: :rock,
@@ -22,6 +22,14 @@ class Game
 
   def draws?
     @player.move == @computer.move
+  end
+
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
+  end
+
+  def self.instance
+    @game
   end
 
 end
