@@ -273,11 +273,21 @@ Test green.
 
 Change the game so that two marketeers can play against each other.
 
-Wrote a feature test for Dave and Jim to enter their names then see 'Dave vs Jim'.
+Wrote a feature test for Dave and Jim to enter their names then see 'Dave vs Jim'. Test red.
 
 - Reworked Game to be able to accept two player name inputs, if only one is given player 2 is constructed as a Comp instance.
 
 - Created a new form on index.erb for multi-player, also reworked the original form to be titled single-player.
 
 - Replaced instances of 'Computer' in the views to use player 2's name (which would be computer if a comp replaces player 2)
+
+Test green.
+
+Wrote a feature test for Dave and Jim to enter their names then see 'Dave's choice. No peeking Jim!'. Test red.
+
+- Added #multiplayer? to Game, returning true if second player is not a comp.
+
+- Added conditional to play.erb to display hardcoded string if #multiplayer? true.
+
+
 

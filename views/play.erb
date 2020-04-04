@@ -7,6 +7,9 @@
 </head>
 <body>
   <h1><%= @game.player_1.name %> vs <%= @game.player_2.name %></h1>
+  <% if @game.multiplayer? %>
+    <h2>Dave's choice. No peeking Jim!</h2>
+  <% end %>
   <form action="/result" method="post">
     <button type="submit" name="player_1_choice" value='Rock'>Rock</button>
     <button type="submit" name="player_1_choice" value='Paper'>Paper</button>
