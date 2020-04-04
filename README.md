@@ -1,5 +1,33 @@
 # RPS Challenge
 
+Student notes on completion:
+
+This RPS web application has been created as the third weekend challenge of the Makers Academy Coding Mastery Course.
+
+The application is complete and should fulfil all of the required criteria laid out in the user stories:
+
+```sh
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+```
+
+The game has only one Class - a Game class.  This is likely too few and in breach of the Single
+Responsibility principle.  Were I to have more time I would create some additional Classes:
+most notably Player and Computer Classes.  
+
+RSPEC coverage of the code is good, although refactoring of the Game Class and reliance
+on instance variables means that it was difficult to find a way of rigorously testing
+the Game class methods.  It would be interesting to see how else I could have written the game
+class to make it more testable.
+
+In addition to the basic game functionality I also added a scoring mechanism to
+increase gameplay.
+
 Instructions
 -------
 
