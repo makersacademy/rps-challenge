@@ -25,19 +25,19 @@ describe MoveList do
       it 'beats scissors' do
         subject.store_move(MoveList::ROCK)
         subject.store_move(MoveList::SCISSORS)
-        expect(subject.resolve_moves('Phil', 'Su')).to eq 'Phil wins - rock blunts scissors'
+        expect(subject.resolve_moves(['Phil', 'Su'])).to eq 'Phil wins - rock blunts scissors'
       end
 
       it 'draws with rock' do
         subject.store_move(MoveList::ROCK)
         subject.store_move(MoveList::ROCK)
-        expect(subject.resolve_moves('Phil', 'Su')).to eq "It's a draw - both players chose rock"
+        expect(subject.resolve_moves(['Phil', 'Su'])).to eq "It's a draw - both players chose rock"
       end
 
       it 'loses to paper' do
         subject.store_move(MoveList::ROCK)
         subject.store_move(MoveList::PAPER)
-        expect(subject.resolve_moves('Phil', 'Su')).to eq 'Su wins - paper wraps rock'
+        expect(subject.resolve_moves(['Phil', 'Su'])).to eq 'Su wins - paper wraps rock'
       end
     end
 
@@ -45,19 +45,19 @@ describe MoveList do
       it 'beats rock' do
         subject.store_move(MoveList::PAPER)
         subject.store_move(MoveList::ROCK)
-        expect(subject.resolve_moves('Phil', 'Su')).to eq 'Phil wins - paper wraps rock'
+        expect(subject.resolve_moves(['Phil', 'Su'])).to eq 'Phil wins - paper wraps rock'
       end
 
       it 'draws with paper' do
         subject.store_move(MoveList::PAPER)
         subject.store_move(MoveList::PAPER)
-        expect(subject.resolve_moves('Phil', 'Su')).to eq "It's a draw - both players chose paper"
+        expect(subject.resolve_moves(['Phil', 'Su'])).to eq "It's a draw - both players chose paper"
       end
 
       it 'loses to scissors' do
         subject.store_move(MoveList::PAPER)
         subject.store_move(MoveList::SCISSORS)
-        expect(subject.resolve_moves('Phil', 'Su')).to eq 'Su wins - scissors cut paper'
+        expect(subject.resolve_moves(['Phil', 'Su'])).to eq 'Su wins - scissors cut paper'
       end
     end
 
@@ -65,19 +65,19 @@ describe MoveList do
       it 'beats paper' do
         subject.store_move(MoveList::SCISSORS)
         subject.store_move(MoveList::PAPER)
-        expect(subject.resolve_moves('Phil', 'Su')).to eq 'Phil wins - scissors cut paper'
+        expect(subject.resolve_moves(['Phil', 'Su'])).to eq 'Phil wins - scissors cut paper'
       end
 
       it 'draws with scissors' do
         subject.store_move(MoveList::SCISSORS)
         subject.store_move(MoveList::SCISSORS)
-        expect(subject.resolve_moves('Phil', 'Su')).to eq "It's a draw - both players chose scissors"
+        expect(subject.resolve_moves(['Phil', 'Su'])).to eq "It's a draw - both players chose scissors"
       end
 
       it 'loses to rock' do
         subject.store_move(MoveList::SCISSORS)
         subject.store_move(MoveList::ROCK)
-        expect(subject.resolve_moves('Phil', 'Su')).to eq 'Su wins - rock blunts scissors'
+        expect(subject.resolve_moves(['Phil', 'Su'])).to eq 'Su wins - rock blunts scissors'
       end
     end
   end

@@ -21,7 +21,7 @@ class Game
   end
 
   def decide_result
-    @result = @move_list.resolve_moves(player1.name, player2.name)
+    @result = @move_list.resolve_moves([player1.name, player2.name])
   end
 
   def reset

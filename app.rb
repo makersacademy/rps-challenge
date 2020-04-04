@@ -11,7 +11,7 @@ class RPS < Sinatra::Base
     erb(:name_registration)
   end
 
-  post '/name' do
+  post '/names' do
     Game.create([params['player1_name'], params['player2_name']])
     redirect '/play'
   end
