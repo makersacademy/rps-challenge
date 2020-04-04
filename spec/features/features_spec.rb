@@ -21,6 +21,7 @@ end
 
 feature 'I want to be able to choose scissors' do
   scenario 'select name and then scissors' do
-    
+    enter_name
+    expect(page).to have_selector(:link_or_button, 'Scissors')
   end
 end
