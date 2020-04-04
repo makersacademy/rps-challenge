@@ -67,7 +67,7 @@ Also added config.ru to be able to rackup for manual testing.
 
 When the marketeer visits the site, there needs to be a field in order to enter their name, and their name should be displayed.
 
-- Wrote a feature test using capybara, that when visiting / and entering Dave into the name field and submitting the form, Dave is displayed on the page. Test red.
+Wrote a feature test using capybara, that when visiting / and entering Dave into the name field and submitting the form, Dave is displayed on the page. Test red.
 
 - Updated get / to return an view, index.erb (in the views dir)
 
@@ -75,8 +75,15 @@ When the marketeer visits the site, there needs to be a field in order to enter 
 
 - In app.rb added a post /play route, hardcoded to return 'Dave'. Test green.
 
-- Wrote a feature test entering the name Jim. Test red.
+Wrote a feature test entering the name Jim. Test red.
 
 - In post /play instead returned the name parameter of the query string. Test green.
 
-- Refactored post /play to add the params to the session hash, and
+Refactors:
+
+- Enabled sessions
+
+- Changed post /play to add the params to the session hash.
+
+- Added redirect to get /play, where an instance variable is set with the key in the session hash, and displayed in a view: play.erb.
+
