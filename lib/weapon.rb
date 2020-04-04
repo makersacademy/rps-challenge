@@ -1,8 +1,19 @@
 class Weapon
 
+  COMBO = [
+    ['Rock', 'Scissors'], 
+    ['Paper', 'Rock'], 
+    ['Scissors', 'Paper']
+  ]
+
+  attr_reader :type, :combo
   def initialize(type)
     @type = type
   end
 
-  attr_reader :type
+  def win?(cpu)
+    COMBO.include?([type, cpu.type])
+  end
+
 end
+
