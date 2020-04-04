@@ -18,6 +18,17 @@ class Rps < Sinatra::Base
     erb :start_game
   end
 
+  post '/choose_play' do
+    session[:selected_play] = params[:rock_paper_scissor]
+    redirect './results'
+  end
+
+  get '/results' do
+    @selected_play = session[:selected_play]
+    erb :results
+  end
+
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
