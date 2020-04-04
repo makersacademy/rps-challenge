@@ -28,7 +28,7 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @player = session[:game].player
-    @weapon = session[:game].player.weapon
+    @cpu = session[:game].cpu
     erb :result
   end
 
