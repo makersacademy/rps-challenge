@@ -8,12 +8,13 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    Game.create(params['player1_name'])
+    Game.create(params['player1_name'], params['player2_name'])
     redirect '/play'
   end
 
   get '/play' do
-    @player = Game.instance.player
+    @player1 = Game.instance.player1
+    @player2 = Game.instance.player2
     erb(:play)  
   end
 

@@ -33,8 +33,8 @@ class Game
     @current_game
   end
 
-  def self.create(name)
-    @current_game = Game.new(name)
+  def self.create(player1_name, player2_name)
+    @current_game = Game.new(player1_name, player2_name)
   end
 
   private
