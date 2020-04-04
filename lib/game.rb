@@ -16,16 +16,27 @@ class Game
     @player2 = player_class.new(player2_name)
   end
 
-  def resolve_move(player1_move, player2_move)
-    validate_moves(player1_move, player2_move)
+  def store_move(move)
+    validate_move(move)
+    if @first_move.nil?
+      @first_move = move
+    else
+      @second_move = move
+    end
+  end
 
-    case player1_move
+  def moves_complete?
+    !(@first_move.nil? || @second_move.nil?)
+  end
+
+  def resolve_moves
+    case @first_move
     when ROCK
-      @result = resolve_rock_move(player2_move)
+      @result = resolve_rock_move(@second_move)
     when PAPER
-      @result = resolve_paper_move(player2_move)
+      @result = resolve_paper_move(@second_move)
     when SCISSORS
-      @result = resolve_scissors_move(player2_move)
+      @result = resolve_scissors_move(@second_move)
     end
   end
 
@@ -38,10 +49,6 @@ class Game
   end
 
   private
-  def validate_moves(player1_move, player2_move)
-    validate_move(player1_move)
-    validate_move(player2_move)
-  end
 
   def validate_move(move)
     valid_moves = [ROCK, PAPER, SCISSORS]
