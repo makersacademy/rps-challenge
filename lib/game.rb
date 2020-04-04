@@ -11,7 +11,7 @@ class Game
     p1 = @player_one.weapon
     p2 = @player_two.weapon
     if p1 == p2
-      'Draw'
+      "No one, it's a draw"
     elsif p1 == 'rock' && p2 == 'scissors' || p1 == 'scissors' && p2 == 'paper' || p1 == 'paper' && p2 == 'rock'
       @player_one.name
     else

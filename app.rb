@@ -12,7 +12,7 @@ class Roshambo < Sinatra::Base
   end
 
   post '/challenger_approaches' do
-    @game = Game.start_game(one: Player.new(params["player_name"]), two: Player.new("Computer").pick(["rock","paper","scissors"].sample))
+    @game = Game.start_game(one: Player.new(params["player_name"]), two: Player.new("Computer").pick(["rock", "paper", "scissors"].sample))
     redirect '/warlords_rising'
   end
 

@@ -28,6 +28,14 @@ describe Game do
     player2.stub(:name) { 'notEd' }
     expect(rps.janken).to eq('notEd')
   end
+
+  it " should be able to determine which of the two players in the game is the winner - Part 3" do
+    player1.stub(:weapon) { 'scissors' }
+    player2.stub(:weapon) { 'scissors' }
+    player1.stub(:name) { 'Ed' }
+    player2.stub(:name) { 'notEd' }
+    expect(rps.janken).to eq("No one, it's a draw")
+  end
   
   it " should be able to create an instance of itself using a class method" do
     expect { Game.start_game(one: player1, two: player2) }.to_not raise_error
