@@ -8,8 +8,8 @@ describe Player do
   end
 
   it 'accepts a move and returns that move' do
-    tom.move = 'Rock'
-    expect(tom.move).to eq 'Rock'
+    tom.move = :rock
+    expect(tom.move).to eq :rock
   end
   
 end

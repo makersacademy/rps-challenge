@@ -3,7 +3,7 @@ class Computer
   attr_reader :move
 
   def initialize
-    @move = ['Rock', 'Paper', 'Scissors'].sample
+    @move = [:rock, :paper, :scissors].sample
   end
 
 end
