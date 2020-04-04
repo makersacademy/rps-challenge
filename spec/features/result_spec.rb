@@ -1,6 +1,5 @@
 feature 'Results, Winner or Draw' do
   scenario 'If Dave and comp choose rock it will be a draw' do
-    # srand(2)
     allow_any_instance_of(Comp).to receive(:choice).and_return 'Rock'
     dave_sign_in
     click_button('Rock')

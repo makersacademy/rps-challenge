@@ -28,10 +28,8 @@ class Rps < Sinatra::Base
     @game.decide_winner
     redirect '/result'
   end
-
+  
   get '/result' do
-    p @game.winner
-    p @game.winner.name
     erb :result
   end
 end
