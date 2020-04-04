@@ -9,7 +9,7 @@ describe Player do
 
   it 'accepts a move and returns that move' do
     tom.move = 'Rock'
-    expect(tom.move).to eq 'rock'
+    expect(tom.move).to eq 'Rock'
   end
   
 end
