@@ -1,5 +1,6 @@
 require_relative 'cpu'
 require_relative 'player'
+require_relative 'weapon'
 
 class Game
 
@@ -8,6 +9,10 @@ class Game
   def initialize(name)
     @player = Player.new(name)
     @cpu = CPU.new
+  end
+
+  def winner
+    @player.win?(cpu)
   end
 
 end
