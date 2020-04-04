@@ -2,59 +2,59 @@ require_relative 'player'
 require_relative 'comp'
 
 class Game
-  def self.create(player_name)
-    @game = Game.new(player_name)
+  def self.create(player_1_name:, player_2_name: nil)
+    @game = Game.new(player_1_name: player_1_name, player_2_name: player_2_name)
   end
 
   def self.instance
     @game
   end
 
-  def initialize(player_name, player_class = Player, comp_class = Comp)
-    @player = player_class.new(player_name)
-    @comp = comp_class.new
+  def initialize(player_1_name:, player_2_name: nil, player_class: Player, comp_class: Comp)
+    @player_1 = player_class.new(player_1_name)
+    @player_2 = player_2_name.nil? ? comp_class.new : player_class.new(player_2_name)
     @winner = nil
   end
 
-  attr_reader :winner, :player, :comp
+  attr_reader :winner, :player_1, :player_2
 
   def decide_winner
-    case @player.choice
+    case @player_1.choice
     when 'Rock'
-      player_chose_rock
+      player_1_chose_rock
     when 'Paper'
-      player_chose_paper
+      player_1_chose_paper
     when 'Scissors'
-      player_chose_scissors
+      player_1_chose_scissors
     end
   end
 
   private
 
-  def player_chose_rock
-    case @comp.choice
+  def player_1_chose_rock
+    case @player_2.choice
     when 'Paper'
-      @winner = @comp
+      @winner = @player_2
     when 'Scissors'
-      @winner = @player
+      @winner = @player_1
     end
   end
 
-  def player_chose_paper
-    case @comp.choice
+  def player_1_chose_paper
+    case @player_2.choice
     when 'Scissors'
-      @winner = @comp
+      @winner = @player_2
     when 'Rock'
-      @winner = @player
+      @winner = @player_1
     end
   end
 
-  def player_chose_scissors
-    case @comp.choice
+  def player_1_chose_scissors
+    case @player_2.choice
     when 'Rock'
-      @winner = @comp
+      @winner = @player_2
     when 'Paper'
-      @winner = @player
+      @winner = @player_1
     end
   end
 end

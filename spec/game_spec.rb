@@ -15,11 +15,20 @@ describe Game do
   let(:comp_inst) { double(:comp_inst) }
 
   # isolated game instance
-  subject { described_class.new('Dave', player_class, comp_class) }
+  subject { described_class.new(player_1_name: 'Dave', player_class: player_class, comp_class: comp_class) }
+  let(:two_player) { described_class.new(player_1_name: 'Dave', player_2_name: 'Jim', player_class: player_class, comp_class: comp_class) }
+
+  describe 'comp stands in for absent player 2' do
+    it 'when player 2 supplied, player 2 is a player instance' do
+      expect(two_player.player_2).to eq player_inst
+    end
+    it 'when player 2 omitted, player 2 is a comp instance' do
+      expect(subject.player_2).to eq comp_inst
+    end
+  end
 
   describe '#winner' do
-
-    context 'comp and player coose same, draw' do
+    context 'comp and player choose same, draw' do
       it 'comp rock - Draw' do
         allow(comp_inst).to receive(:choice).and_return 'Rock'
         allow(player_inst).to receive(:choice).and_return 'Rock'
