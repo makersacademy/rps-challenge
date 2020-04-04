@@ -79,7 +79,7 @@ Wrote a feature test entering the name Jim. Test red.
 
 - In post /play instead returned the name parameter of the query string. Test green.
 
-Refactoring:
+#### Refactoring 1
 
 - Enabled sessions
 
@@ -129,7 +129,7 @@ Wrote a feature test for Jim to choose Scissors and see Jim: Scissors. Test red.
 
 - Changed post /result to display the name held in session.
 
-Refactoring:
+#### Refactoring 2.1
 
 - Rather than outputting an interpolated string, added the choice to the session hash. and redirected to get /result
 
@@ -172,3 +172,40 @@ Wrote a feature test for Dave to choose Rock and the computer to choose Scissors
 - Added an appropriate srand to the test to control randomness.
 
 Test green.
+
+#### Refactoring 2.2
+
+The logic should probably be extracted to a model at this point.
+
+Wrote tests for a Player class constructed with the name of the player. Test red.
+
+- Added a lib dir, added player.rb
+
+- Player constructs with name as parameter, assigned to @name.
+
+- Added attr_reader for @name.
+
+Test green.
+
+Wrote test that #choose sets the the choice attribute. Test red.
+
+- Wrote custom setter #choose to set @choice.
+
+- Added attr_reader for @choice.
+
+Test green.
+
+Wrote tests for a Game class constructed with the name of the player. Test red.
+
+
+
+### User Stories 2.3 and 2.4
+
+> As a marketeer  
+> So that I can win a game of rock/paper/scissors
+> I would like to see that I win if my choice beats the computer's choice
+
+> As a marketeer  
+> So that I can lose a game of rock/paper/scissors
+> I would like to see that the computer wins if my choice loses to the computer's choice
+
