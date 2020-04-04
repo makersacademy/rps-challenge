@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -7,13 +8,23 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    Player.create(params['name'])
+    Game.create(params['name'])
     redirect '/play'
   end
 
   get '/play' do
-    @player = Player.instance
+    @player = Game.instance.player
     erb(:play)  
+  end
+
+  post '/make-move' do
+    Game.instance.resolve_move(params['move'])
+    redirect '/result'
+  end
+
+  get '/result' do
+    @result = Game.instance.result
+    erb(:result)
   end
 
   # start the server if ruby file executed directly
