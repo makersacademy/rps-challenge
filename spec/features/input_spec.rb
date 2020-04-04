@@ -1,5 +1,3 @@
-require './lib/weapon'
-
 feature 'Index page loads' do
   scenario 'with greeting' do
     visit '/'
