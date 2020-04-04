@@ -11,5 +11,10 @@ class RockPaperScissor < Sinatra::Base
     erb :welcome_player
   end
 
+  post '/game' do
+    @move = params[:Move]
+    erb :who_wins
+  end
+
   run! if app_file == $0
 end

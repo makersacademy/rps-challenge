@@ -1,1 +1,13 @@
 <h1> Welcome <%= @name %>! Let's start the game. </h1>
+
+<h2> What is your move? </h2>
+
+<form action="/game" method="post">
+  <input type="radio" id="Rock" name="Move" value="Rock">
+  <label for="Rock"> Rock</label><br>
+  <input type="radio" id="Paper" name="Move" value="Paper">
+  <label for="Paper"> Paper</label><br>
+  <input type="radio" id="Scissors" name="Move" value="Scissors">
+  <label for="Scissors"> Scissors</label><br>
+  <input type="submit" value="Submit">
+</form>
