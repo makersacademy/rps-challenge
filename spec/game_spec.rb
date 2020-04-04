@@ -27,6 +27,10 @@ describe Game do
     expect(game.result).to eq "draw"
   end
 
+  it 'keeps score' do
+    expect(game.score).to eq "0:0"
+  end
+
   it 'can start a new game' do
     old_cpu = game.cpu
     game.new_game
