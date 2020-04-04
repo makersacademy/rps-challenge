@@ -7,14 +7,18 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
-  post '/choose' do
-    @player_name = params[:name]
-
-    erb :choose
+  post '/name' do
+    session[:user_name] = params[:name]
+    redirect '/choose'
   end
 
   get '/choose' do
+    @player_name = session[:user_name]
     erb :choose
+  end
+
+  post '/choose' do
+    redirect '/choose'
   end
 
 end
