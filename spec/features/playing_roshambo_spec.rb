@@ -41,10 +41,14 @@ feature "User story 2 - Playing Roshambo - Part 2: did I win!?: " do
 end
 
 feature "Can I play more than once?: " do
-  scenario " Should be able to play another game after seeing the results of the current game." do
-    named_player
-    choose('r')
-    click_button('submit')
+  scenario " Should have the option to play another game after seeing the results of the current game." do
+    one_game_later
     expect(page).to have_button("Play again?")
+  end
+
+  scenario " option to play another game should return you to the weapon select screen" do
+    one_game_later
+    click_button("Play again?")
+    expect(page).to have_current_path('/warlords_rising')
   end
 end

@@ -1,4 +1,5 @@
 <div>
+<h2><%="#{Game.current_game.player_one.name} has chosen: #{Game.current_game.player_one.weapon} and #{Game.current_game.player_two.name} has chosen: #{Game.current_game.player_two.weapon}"%></h2>
 <h1>The Winner is: <%=@result%></h1>
 <form action = '/warlords_rising' method = 'get'>
 <input type="submit", value="Play again?">
