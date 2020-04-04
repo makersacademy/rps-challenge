@@ -139,7 +139,7 @@ Refactoring:
 
 Tests still green.
 
-### User Story 2.1
+### User Story 2.2
 
 > As a marketeer  
 > So that I can play a game of rock/paper/scissors
@@ -147,6 +147,6 @@ Tests still green.
 
 Right now the controller (app.rb) is simply returning back user inputs to the view.
 
-In order to play a game vs a computer opponent there needs to be a model that handles that logic, and can also probably handle the player name and choice too rather than using session.
+In order to play a game vs a computer opponent there needs to be a model that handles that logic, (and can also probably handle the player name and choice rather than using session at some point too).
 
-Wrote a feature test that expe
+Wrote a feature test that expects 
