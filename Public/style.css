@@ -1,0 +1,25 @@
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img.resize {
+  width: 80%;
+}
+
+.button {
+  background-color: black;
+  border: none;
+  color: white;
+  width: 80%;
+  align-self: center;
+  text-align: center;
+  display: inline-block;
+  font-size: 1.5em;
+}

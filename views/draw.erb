@@ -1,0 +1,9 @@
+<title> RPS </title>
+
+<h1>You picked <%= @player_choice %>!</h1>
+<h1>Your opponent chose <%= @opponent_choice %>!</h1>
+<h1>You Draw!</h1>
+<h3> Wins: <%= @past_totals[:win] %> Draws: <%= @past_totals[:draw] %> Losses: <%= @past_totals[:lose] %></h3>
+<form action="/play" method="get">
+  <button type"submit"> Play Again? </button>
+</form>
