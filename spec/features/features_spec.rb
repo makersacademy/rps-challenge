@@ -30,6 +30,6 @@ feature 'I choose scissors and next page returns my choice' do
   scenario 'select name and then scissors' do
     enter_name
     click_button 'Scissors'
-    expect(page).to have_content 'You chose scissors'
+    expect(page).to have_content 'You chose Scissors'
   end
 end
