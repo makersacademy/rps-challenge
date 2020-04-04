@@ -1,4 +1,24 @@
-# RPS Challenge
+**Welcome to Rock, Paper, Scissors!**
+
+This repo has been hosted online and can be visited at http://rps.hemser.com
+
+To run this program simply git clone this repo ensure you have all the required
+gems installed, below is a list of all the gems used during its creation:
+
+```  
+  gem 'rake'
+  gem 'sinatra'
+  gem 'capybara'
+  gem 'rspec'
+  gem 'rubocop', '0.56.0'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+
+```
+
+PLEASE ENSURE YOU BUNDLE TO MAKE SURE ALL GEMS ARE INSTALLED AND RUNNING.
+
+Below is the brief for this challenge:
 
 Instructions
 -------
@@ -43,44 +63,9 @@ As usual please start by
 * TEST driving development of your app
 
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
 ## Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
