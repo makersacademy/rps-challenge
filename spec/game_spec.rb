@@ -13,13 +13,13 @@ describe Game do
     expect(game.cpu).to be_a CPU
   end
 
-  it 'can respond to winner' do
-    expect(game).to respond_to :winner
+  it 'can respond to win?' do
+    expect(game).to respond_to :win?
   end
 
   it 'can declare a winner' do
     game.player.pick_weapon("Paper")
-    expect(game.winner).to be true
+    expect(game.win?).to be true
   end
   
 end

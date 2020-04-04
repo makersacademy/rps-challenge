@@ -1,6 +1,11 @@
 require_relative 'cpu'
 require_relative 'player'
-require_relative 'weapon'
+
+WIN = [
+  ['Rock', 'Scissors'], 
+  ['Paper', 'Rock'], 
+  ['Scissors', 'Paper']
+]
 
 class Game
 
@@ -11,8 +16,7 @@ class Game
     @cpu = CPU.new
   end
 
-  def winner
-    @player.weapon.win?(cpu.weapon)
+  def win?
+    WIN.include?([player.weapon, cpu.weapon])
   end
-
 end

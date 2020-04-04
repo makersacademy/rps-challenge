@@ -1,5 +1,4 @@
 require "sinatra/base"
-require './lib/weapon'
 require './lib/cpu'
 require './lib/player'
 

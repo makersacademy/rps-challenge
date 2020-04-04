@@ -12,9 +12,4 @@ describe Player do
     expect(player).to respond_to(:pick_weapon).with(1).argument
   end
 
-  it 'weapon to be a wepon' do
-    player.pick_weapon("Rock")
-    expect(player.weapon).to be_a Weapon
-  end
-
 end
