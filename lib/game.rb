@@ -11,16 +11,16 @@ class Game
     @current_player = player1
   end
 
-  def store_move(move)
+  def make_move(move)
     @move_list.store_move(move)
-    @current_player = @current_player == player1 ? player2 : player1
+    set_current_player
   end
 
   def moves_complete?
     @move_list.full?
   end
 
-  def resolve_moves
+  def decide_result
     @result = @move_list.resolve_moves(player1.name, player2.name)
   end
 
@@ -36,5 +36,11 @@ class Game
 
   def self.create(player_names)
     @current_game = Game.new(player_names)
+  end
+
+  private
+
+  def set_current_player
+    @current_player = @current_player == player1 ? player2 : player1
   end
 end

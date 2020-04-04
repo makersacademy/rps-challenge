@@ -45,7 +45,7 @@ describe Game do
 
     it 'tells you when it is player 2s turn' do
       allow(list).to receive(:store_move)
-      subject.store_move("move")
+      subject.make_move("move")
       expect(subject.current_player).to eq player2
     end
   end
@@ -54,13 +54,13 @@ describe Game do
     it 'resets the result when you want to replay' do
       allow(list).to receive(:reset)
       allow(list).to receive(:resolve_moves).and_return 'result'
-      subject.resolve_moves
+      subject.decide_result
       expect { subject.reset }.to change { subject.result }.from('result').to('')
     end
 
     it 'sets the result when you resolve the game moves' do
       allow(list).to receive(:resolve_moves).and_return 'result'
-      expect { subject.resolve_moves }.to change { subject.result }.from(nil).to('result')
+      expect { subject.decide_result }.to change { subject.result }.from(nil).to('result')
     end
   end
 end

@@ -3,6 +3,10 @@ require './lib/player'
 require './lib/game'
 
 class RPS < Sinatra::Base
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:name_registration)
   end
@@ -13,16 +17,13 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player1 = Game.instance.player1
-    @player2 = Game.instance.player2
-    @current_player = Game.instance.current_player
     erb(:play)  
   end
 
   post '/make-move' do
-    Game.instance.store_move(params['move'])
-    if Game.instance.moves_complete?
-      Game.instance.resolve_moves
+    @game.make_move(params['move'])
+    if @game.moves_complete?
+      @game.decide_result
       redirect '/result'
     else
       redirect '/play'
@@ -30,12 +31,11 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @result = Game.instance.result
     erb(:result)
   end
 
   post '/reset' do
-    Game.instance.reset
+    @game.reset
     redirect '/play'
   end
 
