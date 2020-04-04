@@ -8,12 +8,12 @@ Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play
 
 ## User Stories
 
-> As a marketeer
-> So that I can see my name in lights
+> As a marketeer  
+> So that I can see my name in lights  
 > I would like to register my name before playing an online game
 
-> As a marketeer
-> So that I can enjoy myself away from the daily grind
+> As a marketeer  
+> So that I can enjoy myself away from the daily grind  
 > I would like to be able to play rock/paper/scissors
 
 ## Technical requirements
@@ -51,8 +51,8 @@ There aren't very many so I will need to rely on good TDD to drive the behaviour
 
 ### User Story 1
 
-> As a marketeer
-> So that I can see my name in lights
+> As a marketeer  
+> So that I can see my name in lights  
 > I would like to register my name before playing an online game
 
 First some set up, configured spec_helper.rb to require app.rb and set the capybara app to Rps.
@@ -79,11 +79,59 @@ Wrote a feature test entering the name Jim. Test red.
 
 - In post /play instead returned the name parameter of the query string. Test green.
 
-Refactors:
+Refactoring:
 
 - Enabled sessions
 
 - Changed post /play to add the params to the session hash.
 
 - Added redirect to get /play, where an instance variable is set with the key in the session hash, and displayed in a view: play.erb.
+
+- Removed the now useless Hello World test.
+
+All tests still green.
+
+### User Story 2
+
+> As a marketeer  
+> So that I can enjoy myself away from the daily grind  
+> I would like to be able to play rock/paper/scissors
+
+This is quite a jump forward. Breaking it down:
+
+### User Story 2.1
+
+> As a marketeer  
+> So that I can play a game of rock/paper/scissors
+> I would like to be able to choose which to use rock/paper/scissors
+
+This is more manageable.
+
+Wrote a feature test for Dave to choose Rock and see Dave: Rock. Test red.
+
+- Added button for Rock to submit and post to /result.
+
+- Added route for post /result to display 'Dave: Rock'.
+
+Test Green.
+
+Wrote a feature test for Dave to choose Paper and see Dave: Paper. Test red.
+
+- Added button for Paper to submit and post to /result.
+
+- Changed post /result to display the choice made from the parameters, Dave still hardcoded.
+
+Test Green.
+
+Wrote a feature test for Jim to choose Scissors and see Jim: Scissors. Test red.
+
+- Added button for Scissors to submit and post to /result.
+
+- Changed post /result to display the name held in session.
+
+Refactoring:
+
+- Rather than outputting an interpolated string, added the choice to the session hash. and redirected to get /result
+
+- Added route for get /result assigning instance variables name and choice, and returning view result.erb 
 
