@@ -16,4 +16,3 @@ class Weapon
   end
 
 end
-
