@@ -7,7 +7,8 @@ end
 
 feature 'I want to be able to choose rock' do
   scenario 'select name and then rock' do
-    
+    enter_name
+    expect(page).to have_selector(:link_or_button, 'Rock')
   end
 end
 
