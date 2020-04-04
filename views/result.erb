@@ -4,11 +4,8 @@
 </head>
 <body>
   <h1><%= @player.name %></h1>
-  <form action="/fight" method="post">
-    <label for="Action">Pick your Weapon</label>
-    <input type="submit" value="Rock" name="rock">
-    <input type="submit" value="Paper" name="paper">
-    <input type="submit" value="Scissors" name="scissors">
+  <form action="/play" method="post">
+    <input type="submit" value="Play Again" name="play again">
   </form>
   <h2><%= @player.weapon %> vs. <%= @cpu.weapon %> </h2>
 </body>

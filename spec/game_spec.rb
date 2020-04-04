@@ -18,7 +18,7 @@ describe Game do
   end
 
   it 'can declare a winner' do
-    game.player.pick_weapon("Scissors")
+    game.player.pick_weapon("Rock")
     expect(game.win?).to be true
   end
   
