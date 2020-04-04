@@ -33,7 +33,7 @@ class RockPaperScissor < Sinatra::Base
     if @players_move == @computer_move
       erb :draw
     else
-      @winning_move = @run_game.get_winning_move
+      @winning_move = @run_game.the_winning_move
       if @winning_move == @players_move
         @the_winner = @player_name
       else

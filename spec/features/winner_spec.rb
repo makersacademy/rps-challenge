@@ -10,7 +10,7 @@ feature 'declares winner' do
   scenario 'computer wins' do
     srand(3)
     sign_in_and_play
-    choose 'Rock'
+    choose 'Paper'
     click_button 'Submit'
     expect(page).to have_content "Computer wins!"
   end
