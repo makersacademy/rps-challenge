@@ -3,9 +3,6 @@ require './lib/game'
 
 class Rps < Sinatra::Base
 
-  enable :sessions
-  set :session_secret, 'spooky secret'
-
   get '/' do
     erb :index
   end

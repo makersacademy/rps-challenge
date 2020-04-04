@@ -245,7 +245,7 @@ Extracted three helper methods from #decide_winner (#player_chose_rock, #player_
 
 _There must be a better way that this logic, but I'm going to keep going as it works and isn't too bad._
 
-#### Refactoring Controller to use Model
+### Refactoring Controller to use Model
 
 In order for the view to show the winner or a draw, the controller needs to use the model.
 
@@ -263,8 +263,8 @@ Wrote a feature test for Dave to choose Rock and the computer to choose Paper, e
 
 Test green.
 
+#### Refactoring Controller and Views to use Model well
+
 - Views erb tags use @game and method calls to get values for names and choices.
 
-- Created an instance variable @game assigned to Game.instance in a before block so to DRY up routes.
-
-- 
+- Created an instance variable @game assigned with Game.instance in a before block so to DRY up routes.
