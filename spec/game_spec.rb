@@ -1,78 +1,82 @@
 require 'game'
 
 describe Game do
-  let(:player) { double(:player1, name: 'Phil') }
-  let(:player_class) { double(:player_class, :new => player) }
+  let(:player1) { double(:player, name: 'Phil') }
+  let(:player2) { double(:player, name: 'Su') }
+  let(:player_class) { double(:player_class) }
 
   subject do
-    Game.new("Phil", player_class)
+    Game.new('Phil', 'Su', player_class)
   end
 
-  it 'has to be created by specifying a player name' do
-    expect(Game).to respond_to(:new).with(2).argument
+  before do
+    allow(player_class).to receive(:new).and_return(player1, player2)
   end
 
-  it 'tells you who is playing' do
-    expect(subject.player).to eq(player)
+  it 'has to be created by specifying two player names' do
+    expect(Game).to respond_to(:new).with(3).argument
+  end
+
+  it 'tells you who is player 1' do
+    expect(subject.player1).to eq(player1)
+  end
+
+  it 'tells you who is player 2' do
+    expect(subject.player2).to eq(player2)
   end
 
   it 'resolves a player move' do
-    expect(subject).to respond_to(:resolve_move).with(1).argument
+    expect(subject).to respond_to(:resolve_move).with(2).argument
   end
 
   context 'player moves' do
-    it 'only accepts valid moves' do
-      expect { subject.resolve_move("invalid move") }.to raise_error(ArgumentError, 'invalid player move')
+    it 'only accepts valid moves from player 1' do
+      expect { subject.resolve_move("invalid move", Game::SCISSORS) }.to raise_error(ArgumentError, 'invalid player move')
     end
 
-    context 'player plays rock' do
+    it 'only accepts valid moves from player 2' do
+      expect { subject.resolve_move(Game::SCISSORS, "invalid move") }.to raise_error(ArgumentError, 'invalid player move')
+    end
+
+    context 'player 1 plays rock' do
       it 'beats scissors' do
-        allow(subject).to receive(:opponent_move).and_return(Game::SCISSORS)
-        expect(subject.resolve_move(Game::ROCK)).to eq 'Phil wins - rock blunts scissors'
+        expect(subject.resolve_move(Game::ROCK, Game::SCISSORS)).to eq 'Phil wins - rock blunts scissors'
       end
 
       it 'draws with rock' do
-        allow(subject).to receive(:opponent_move).and_return(Game::ROCK)
-        expect(subject.resolve_move(Game::ROCK)).to eq "It's a draw - both players chose rock"
+        expect(subject.resolve_move(Game::ROCK, Game::ROCK)).to eq "It's a draw - both players chose rock"
       end
 
       it 'loses to paper' do
-        allow(subject).to receive(:opponent_move).and_return(Game::PAPER)
-        expect(subject.resolve_move(Game::ROCK)).to eq 'Phil loses - paper wraps rock'
+        expect(subject.resolve_move(Game::ROCK, Game::PAPER)).to eq 'Su wins - paper wraps rock'
       end
     end
 
-    context 'player plays paper' do
+    context 'player 1 plays paper' do
       it 'beats rock' do
-        allow(subject).to receive(:opponent_move).and_return(Game::ROCK)
-        expect(subject.resolve_move(Game::PAPER)).to eq 'Phil wins - paper wraps rock'
+        expect(subject.resolve_move(Game::PAPER, Game::ROCK)).to eq 'Phil wins - paper wraps rock'
       end
 
       it 'draws with paper' do
-        allow(subject).to receive(:opponent_move).and_return(Game::PAPER)
-        expect(subject.resolve_move(Game::PAPER)).to eq "It's a draw - both players chose paper"
+        expect(subject.resolve_move(Game::PAPER, Game::PAPER)).to eq "It's a draw - both players chose paper"
       end
 
       it 'loses to scissors' do
-        allow(subject).to receive(:opponent_move).and_return(Game::SCISSORS)
-        expect(subject.resolve_move(Game::PAPER)).to eq 'Phil loses - scissors cut paper'
+        expect(subject.resolve_move(Game::PAPER, Game::SCISSORS)).to eq 'Su wins - scissors cut paper'
       end
     end
 
     context 'player plays scissors' do
       it 'beats paper' do
-        allow(subject).to receive(:opponent_move).and_return(Game::PAPER)
-        expect(subject.resolve_move(Game::SCISSORS)).to eq 'Phil wins - scissors cut paper'
+        expect(subject.resolve_move(Game::SCISSORS, Game::PAPER)).to eq 'Phil wins - scissors cut paper'
       end
 
       it 'draws with scissors' do
-        allow(subject).to receive(:opponent_move).and_return(Game::SCISSORS)
-        expect(subject.resolve_move(Game::SCISSORS)).to eq "It's a draw - both players chose scissors"
+        expect(subject.resolve_move(Game::SCISSORS, Game::SCISSORS)).to eq "It's a draw - both players chose scissors"
       end
 
       it 'loses to rock' do
-        allow(subject).to receive(:opponent_move).and_return(Game::ROCK)
-        expect(subject.resolve_move(Game::SCISSORS)).to eq 'Phil loses - rock blunts scissors'
+        expect(subject.resolve_move(Game::SCISSORS, Game::ROCK)).to eq 'Su wins - rock blunts scissors'
       end
     end
   end
