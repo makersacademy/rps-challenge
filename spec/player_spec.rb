@@ -7,6 +7,9 @@ describe Player do
     expect(subject.name).to eq "John"
   end
 
-  # it 'player makes move
+  it 'player makes move' do
+    subject.player_move("Rock")
+    expect(subject.turn).to eq "Rock"
+  end
 
 end

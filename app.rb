@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require 'player'
+require 'computer'
 
 class RockPaperScissor < Sinatra::Base 
   enable :sessions
@@ -9,19 +11,21 @@ class RockPaperScissor < Sinatra::Base
 
   post '/start' do
     p params
-    session[:player_name] = params[:player_name]
+    $player = Player.new(params[:player_name])
     redirect '/play'
   end
   
   get '/play' do 
-    @player_name = session[:player_name]
+    @player_name = $player.name
     erb :welcome_player
   end
 
   post '/game' do
-    @player_name = session[:player_name]
+    @player_name = $player.name
     @move = params[:Move]
-    @computer_move = ["Rock", "Paper", "Scissors"].sample
+    $player.player_move(@move)
+    $computer = Computer.new.go(["Rock", "Paper", "Scissors"].sample)
+    @computer_move = $computer.computer_turn
     erb :who_wins
   end
 
