@@ -7,7 +7,12 @@
 </head>
 <body>
   <h1>Result:</h1>
-  <h2><%= @name %>: <%= @player_choice %></h2>
-  <h2>Computer:  <%= @comp_choice %></h2>
+  <p><%= @game.player.name %>: <%= @game.player.choice %></p>
+  <p>Computer: <%= @game.comp.choice %></p>
+  <% if @game.winner.nil? %>
+    <h2>Draw</h2>
+  <% else %>
+    <h2><%= @game.winner.name %> wins</h2>
+  <% end %>
 </body>
 </html>

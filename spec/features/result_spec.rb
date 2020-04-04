@@ -1,0 +1,24 @@
+feature 'Results, Winner or Draw' do
+  scenario 'If Dave and comp choose rock it will be a draw' do
+    # srand(2)
+    allow_any_instance_of(Comp).to receive(:choice).and_return 'Rock'
+    dave_sign_in
+    click_button('Rock')
+    expect(page).to have_content 'Draw'
+  end
+
+  scenario 'If Dave chooses rock and comp chooses paper, comp wins' do
+    allow_any_instance_of(Comp).to receive(:choice).and_return 'Paper'
+    dave_sign_in
+    click_button('Rock')
+    expect(page).to_not have_content 'Draw'
+    expect(page).to have_content 'Computer wins'
+  end
+  scenario 'If Dave chooses rock and comp chooses scissors, Dave wins' do
+    allow_any_instance_of(Comp).to receive(:choice).and_return 'Scissors'
+    dave_sign_in
+    click_button('Rock')
+    expect(page).to_not have_content 'Draw'
+    expect(page).to have_content 'Dave wins'
+  end
+end

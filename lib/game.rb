@@ -2,13 +2,21 @@ require_relative 'player'
 require_relative 'comp'
 
 class Game
+  def self.create(player_name)
+    @game = Game.new(player_name)
+  end
+
+  def self.instance
+    @game
+  end
+
   def initialize(player_name, player_class = Player, comp_class = Comp)
     @player = player_class.new(player_name)
     @comp = comp_class.new
     @winner = nil
   end
 
-  attr_reader :winner
+  attr_reader :winner, :player, :comp
 
   def decide_winner
     case @player.choice

@@ -14,12 +14,12 @@ Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play
 
 > As a marketeer  
 > So that I can enjoy myself away from the daily grind  
-> I would like to be able to play rock/paper/scissors
+> I would like to be able to play Rock/Paper/Scissors
 
 ## Technical requirements
 
 - the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
+- the marketeer will be presented the choices (Rock, Paper and Scissors)
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
@@ -28,7 +28,7 @@ Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play
 Advanced:
 
 - Multiplayer - Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-= Rock, Paper, Scissors, Spock, Lizard - Use the [_special_ rules](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock).
+= Rock, Paper, Scissors, Spock, Lizard - Use the [_special_ rules](http://en.wikipedia.org/wiki/rock-paper-scissors-lizard-spock).
 
 ## Basic Rules
 
@@ -95,15 +95,15 @@ All tests still green.
 
 > As a marketeer  
 > So that I can enjoy myself away from the daily grind  
-> I would like to be able to play rock/paper/scissors
+> I would like to be able to play Rock/Paper/Scissors
 
 This is quite a jump forward. Breaking it down:
 
 ### User Story 2.1
 
 > As a marketeer  
-> So that I can play a game of rock/paper/scissors
-> I would like to be able to choose which to use rock/paper/scissors
+> So that I can play a game of Rock/Paper/Scissors
+> I would like to be able to choose which to use Rock/Paper/Scissors
 
 This is more manageable.
 
@@ -142,7 +142,7 @@ Tests still green.
 ### User Story 2.2
 
 > As a marketeer  
-> So that I can play a game of rock/paper/scissors
+> So that I can play a game of Rock/Paper/Scissors
 > I would like to see my computer opponent's choice
 
 Right now the controller (app.rb) is simply returning back user inputs to the view.
@@ -176,15 +176,15 @@ Test green.
 ### User Stories 2.3, 2.4 and 2.5
 
 > As a marketeer  
-> So that I can draw a game of rock/paper/scissors
+> So that I can draw a game of Rock/Paper/Scissors
 > I would like to see that we draw if my choice matches the computer's choice
 
 > As a marketeer  
-> So that I can win a game of rock/paper/scissors
+> So that I can win a game of Rock/Paper/Scissors
 > I would like to see that I win if my choice beats the computer's choice
 
 > As a marketeer  
-> So that I can lose a game of rock/paper/scissors
+> So that I can lose a game of Rock/Paper/Scissors
 > I would like to see that the computer wins if my choice loses to the computer's choice
 
 Before going any further the logic should probably be extracted to a model at this point.
@@ -249,5 +249,22 @@ _There must be a better way that this logic, but I'm going to keep going as it w
 
 In order for the view to show the winner or a draw, the controller needs to use the model.
 
-Wrote a feature test where Dave chooses rock, and so does the computer, expecting there to be 'Draw' displayed.
+Wrote a feature test where Dave chooses Rock, and so does the computer, expecting there to be 'Draw' displayed, stubbing instances of Comp #choice to return Rock. Test red.
 
+- Updated the result view to include the word Draw hardcoded
+
+Test green.
+
+Wrote a feature test for Dave to choose Rock and the computer to choose Paper, expecting there to be 'Computer wins' displayed, stubbing instances of Comp #choice to return Paper. Test red.
+
+- Added a new Class method to Game, #create, which stores that game as a Class variable, so it can be accessed across HTTP requests, and a custom getter for the Class variable, #instance.
+
+- Replaced logic in app.rb to instantiate a game and use that instead of session, each route now using Game.instance to assign instance variables.
+
+Test green.
+
+- Views erb tags use @game and method calls to get values for names and choices.
+
+- Created an instance variable @game assigned to Game.instance in a before block so to DRY up routes.
+
+- 
