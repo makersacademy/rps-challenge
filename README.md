@@ -1,5 +1,6 @@
 # RPS Challenge
 
+stories completed 
 Instructions
 -------
 
