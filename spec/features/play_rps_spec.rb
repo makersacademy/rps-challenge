@@ -1,4 +1,4 @@
-feature 'player can play rock paper scissors' do
+xfeature 'player can play rock paper scissors' do
   scenario 'player chooses rock and is told the result' do
     register_and_play
     click_button 'Rock'

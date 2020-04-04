@@ -15,12 +15,18 @@ class RPS < Sinatra::Base
   get '/play' do
     @player1 = Game.instance.player1
     @player2 = Game.instance.player2
+    @current_player = Game.instance.current_player
     erb(:play)  
   end
 
   post '/make-move' do
-    Game.instance.resolve_move(params['move'])
-    redirect '/result'
+    Game.instance.store_move(params['move'])
+    if Game.instance.moves_complete?
+      Game.instance.resolve_moves
+      redirect '/result'
+    else
+      redirect '/play'
+    end
   end
 
   get '/result' do
