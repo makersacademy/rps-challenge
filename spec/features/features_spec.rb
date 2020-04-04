@@ -28,8 +28,14 @@ end
 
 feature 'I choose scissors and next page returns my choice' do
   scenario 'select name and then scissors' do
-    enter_name
-    click_button 'Scissors'
+    choose_scissors
     expect(page).to have_content 'You chose Scissors'
+  end
+end
+
+feature 'Page allows me to ask for a result after my choice' do
+  scenario 'select scissors and then result' do
+    choose_scissors
+    expect(page).to have_selector(:link_or_button, 'Result')
   end
 end

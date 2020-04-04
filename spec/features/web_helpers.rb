@@ -3,3 +3,8 @@ def enter_name
   fill_in :name, with: 'Tom'
   click_button 'Submit'
 end
+
+def choose_scissors
+  enter_name
+  click_button 'Scissors'
+end
