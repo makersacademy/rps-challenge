@@ -12,21 +12,11 @@ class Game
   def initialize(player, computer)
     @player = player
     @computer = computer
-    #beats ? (@result = :win ) : (@result = :lose )
-    p @computer.move
-    if beats == true
-      @result = :win 
-    else
-      @result = :lose
-    end
+    beats? ? (@result = :win ) : (@result = :lose )
   end
 
-  def beats
-    if RULES[@player.move] == @computer.move
-      true
-    else
-      false
-    end
+  def beats?
+    RULES[@player.move] == @computer.move
   end
 
 end
