@@ -16,17 +16,12 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
-    @rock = session[:rock]
-    @paper = session[:paper]
-    @scissors = session[:scissors]
-    @weapon = @rock || @paper || @scissors
+    @weapon = session[:weapon]
     erb :play
   end
 
   post '/fight' do
-    session[:rock] = params[:rock]
-    session[:paper] = params[:paper]
-    session[:scissors] = params[:scissors]
+    session[:weapon] = [params[:rock], params[:paper], params[:scissors]].join
     redirect '/play'
   end
 
