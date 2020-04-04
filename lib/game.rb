@@ -40,6 +40,10 @@ class Game
     end
   end
 
+  def current_player
+    @first_move.nil? ? player1 : player2
+  end
+
   def self.instance
     @current_game
   end

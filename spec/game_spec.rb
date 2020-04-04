@@ -18,11 +18,11 @@ describe Game do
   end
 
   it 'tells you who is player 1' do
-    expect(subject.player1).to eq(player1)
+    expect(subject.player1).to eq player1
   end
 
   it 'tells you who is player 2' do
-    expect(subject.player2).to eq(player2)
+    expect(subject.player2).to eq player2
   end
 
   it 'only accepts valid moves' do
@@ -38,6 +38,15 @@ describe Game do
   it 'tells you if the moves are not complete' do
     subject.store_move(Game::SCISSORS)
     expect(subject.moves_complete?).to eq false
+  end
+
+  it 'tells you when it is player 1s turn' do
+    expect(subject.current_player).to eq player1
+  end
+
+  it 'tells you when it is player 2s turn' do
+    subject.store_move(Game::ROCK)
+    expect(subject.current_player).to eq player2
   end
 
   context 'player moves' do
