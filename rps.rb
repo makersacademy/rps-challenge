@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/ai_player'
 
 class Rps < Sinatra::Base
   enable :sessions

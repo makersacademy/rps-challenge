@@ -15,3 +15,14 @@ feature "User can choose rock/paper/scissors" do
     expect(page).to have_content "You chose rock"
   end
 end
+
+=begin
+feature "AI also 'chooses' a hand" do
+  scenario "outputs the random sample of the AI" do
+    visit "/start_game"
+    fill_in :rock_paper_scissor, with: 'rock'
+    click_button 'RPS'
+    expect(page).to have_content "AI selected paper"
+  end
+end
+=end
