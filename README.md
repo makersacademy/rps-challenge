@@ -38,10 +38,10 @@ Advanced:
 
 ## Domain Model
 
-Objects | Messages
----|---
-Marketeer |
-Online Game | Name, Rock, Paper, Scissors, winner
+| Objects     | Messages                            |
+| ----------- | ----------------------------------- |
+| Marketeer   |
+| Online Game | Name, Rock, Paper, Scissors, winner |
 
 ## Development Journal
 
@@ -329,5 +329,19 @@ To double check, wrote a feature test for Dave and Jim to enter their names, Dav
 
 Tests still green.
 
-### Advanced Requirement: Multi-player
+### Advanced Requirement: Rock Paper Scissors Lizard Spock
+
+Here are the rules as a diagram:
+
+![Rock Paper Scissors Lizard Spock](/images/RPSLS.jpeg)
+
+- Rock beats Scissors and Lizard
+- Paper beats Rock and Spock
+- Scissors beats Paper and Lizard
+- Lizard beats Paper and Spock
+- Spock beats Rock and Scissors
+
+Wrote a feature test to be able to choose Lizard and see that player chose lizard. Test red.
+
+- 
 
