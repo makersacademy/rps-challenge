@@ -7,4 +7,9 @@ attr_reader :player, :computer
     @computer = computer
   end
 
+  def decide_winner
+  end 
+
+
+
 end
