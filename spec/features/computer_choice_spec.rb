@@ -7,7 +7,7 @@ feature 'Computer chooses between Rock, Paper, Scissors' do
   end
 
   scenario 'Computer chooses Paper' do
-    srand(1)
+    srand(10)
     dave_sign_in
     click_button('Rock')
     expect(page).to have_content 'Computer: Paper'
