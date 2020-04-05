@@ -14,10 +14,9 @@ class Game
     @player_1 = player_class.new(player_1_name)
     @player_2 = player_2_name.nil? ? comp_class.new : player_class.new(player_2_name)
     @multiplayer = !player_2_name.nil?
-    @winner = nil
   end
 
-  attr_reader :winner, :player_1, :player_2
+  attr_reader :player_1, :player_2
 
   def multiplayer?
     @multiplayer
@@ -31,43 +30,17 @@ class Game
     @multiplayer && !@player_1.choice.nil?
   end
 
-  def decide_winner
-    case @player_1.choice
-    when 'Rock'
-      player_1_chose_rock
-    when 'Paper'
-      player_1_chose_paper
-    when 'Scissors'
-      player_1_chose_scissors
-    end
-  end
+  OPTIONS = %w[Rock Lizard Spock Scissors Paper]
 
-  private
-
-  def player_1_chose_rock
-    case @player_2.choice
-    when 'Paper'
-      @winner = @player_2
-    when 'Scissors'
-      @winner = @player_1
-    end
-  end
-
-  def player_1_chose_paper
-    case @player_2.choice
-    when 'Scissors'
-      @winner = @player_2
-    when 'Rock'
-      @winner = @player_1
-    end
-  end
-
-  def player_1_chose_scissors
-    case @player_2.choice
-    when 'Rock'
-      @winner = @player_2
-    when 'Paper'
-      @winner = @player_1
+  def winner
+    player_1_position = OPTIONS.index(@player_1.choice)
+    player_1_win_cons = [OPTIONS[player_1_position - 2], OPTIONS[player_1_position - 4]]
+    if @player_1.choice == @player_2.choice
+      nil
+    elsif player_1_win_cons.include?(@player_2.choice)
+      @player_1
+    else
+      @player_2
     end
   end
 end
