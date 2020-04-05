@@ -8,9 +8,10 @@ attr_reader :player, :computer
   end
 
   def decide_winner
-    "computer wins"
+    if @player == @computer
+      "It's a draw"
+    else
+      "computer wins"
+    end
   end
-
-
-
 end

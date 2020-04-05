@@ -25,7 +25,7 @@ describe Game do
 
   describe "#decide winner" do
 
-    let(:game2) { Game.new("rock", "rock")}
+    let(:game2) { Game.new("rock", "rock") }
     it "responds to #decide_winner" do
       expect(game).to respond_to :decide_winner
     end
@@ -35,8 +35,7 @@ describe Game do
     end
 
     it "when player = rock & computer = rock, it's a draw" do
-      expect(game.decide_winner).to eq "It's a draw"
+      expect(game2.decide_winner).to eq "It's a draw"
     end
-
   end
 end
