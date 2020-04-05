@@ -305,11 +305,11 @@ Wrote a feature test for Pete and Steve to enter their names then see 'Pete's ch
 
 Test green.
 
-Wrote a feature test for Pete and Steve to enter their names, Pete to choose rock, then to see 'Steve's choice. No peeking Pete!'. Test red.
+Wrote a feature test for Pete and Steve to enter their names, Pete to choose Rock, then to see 'Steve's choice. No peeking Pete!'. Test red.
 
 - Updated hardcoded string to use player names.
 
-Wrote a feature test for Dave and Jim to enter their names, Dave choose rock,, Jim choose rock, see Draw. Test red.
+Wrote a feature test for Dave and Jim to enter their names, Dave choose rock,, Jim choose Rock, see Draw. Test red.
 
 - Added another form for player 2 to select their choice.
 
@@ -317,7 +317,7 @@ Wrote a feature test for Dave and Jim to enter their names, Dave choose rock,, J
 
 Test green.
 
-To double check, wrote a feature test for Dave and Jim to enter their names, Dave choose rock,, Jim choose Paper, see Jim wins. Test green (phew).
+To double check, wrote a feature test for Dave and Jim to enter their names, Dave choose Rock,, Jim choose Paper, see Jim wins. Test green (phew).
 
 #### Refactoring Multi-player
 
@@ -335,13 +335,60 @@ Here are the rules as a diagram:
 
 ![Rock Paper Scissors Lizard Spock](/images/RPSLS.jpeg)
 
-- Rock beats Scissors and Lizard
-- Paper beats Rock and Spock
-- Scissors beats Paper and Lizard
-- Lizard beats Paper and Spock
-- Spock beats Rock and Scissors
+And a table:
 
-Wrote a feature test to be able to choose Lizard and see that player chose lizard. Test red.
+| Thing    | Beats               | Loses to            |
+|----------|---------------------|---------------------|
+| Rock     | Scissors and Lizard | Paper and Spock     |
+| Paper    | Rock and Spock      | Scissors and Lizard |
+| Scissors | Paper and Lizard    | Rock and Spock      |
+| Lizard   | Paper and Spock     | Rock and Scissors   |
+| Spock    | Rock and Scissors   | Paper and Lizard    |
+
+Wrote a feature test to be able to choose Lizard and see that player chose Lizard. Test red.
+
+- Added button for Lizard.
+
+Test green.
+
+Wrote a feature test to be able to choose Spock and see that player chose Spock. Test red.
+
+- Added button for Spock.
+
+Test green.
+
+Wrote a unit test for comp to be able to choose Lizard. Test red.
+
+- Added 'Lizard' to sample array for comp choice.
+
+- Fiddled with srand to control randomness
+
+Test green.
+
+Wrote a unit test for comp to be able to choose Spock. Test red.
+
+- Added 'Spock' to sample array for comp choice.
+
+- Fiddled with srand to control randomness
+
+Test green.
+
+Wrote a feature test for Dave chooses Lizard and comp chooses Spock, Dave wins. Test red.
+
+- Wrote unit tests for all combos. Tests red.
+
+- Replaced logic in #decide winner use a positional relationship between player 1's choice and player 2's choice. If player 2 is one ahead or 2 behind player 1, player 1 wins.
+
+- General solution works. Unit tests green.
+
+Test green.
+
+#### Refactoring Rock Paper Scissors Lizard Spock
+
+- Removed winner attributed and changed #decide_winner to #winner, returning the winner. There was no need these to be set and accessed separately.
+
+### Adding Style
+
+The current views are rendered as regular unstyled HTML, which doesn't look very nice.
 
 - 
-
