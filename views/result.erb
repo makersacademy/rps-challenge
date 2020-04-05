@@ -6,15 +6,24 @@
   <title>Rock Paper Scissors Lizard Spock</title>
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
   <link href="/main.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/88c2a27665.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <h1>Result:</h1>
-  <p><%= @game.player_1.name %> chose <%= @game.player_1.choice %>!</p>
-  <p><%= @game.player_2.name %> chose <%= @game.player_2.choice %>!</p>
+  <section class="fl-row spaced wrap">
+    <div class="fl-col col-cen pad">
+      <i class="wiggle far fa-3x dark fa-hand-<%= @game.player_1.choice.downcase %>"></i>
+      <p><%= @game.player_1.name %> chose <%= @game.player_1.choice %>!</p>
+    </div>
+    <div class="fl-col col-cen pad">
+      <i class="wiggle far fa-3x dark fa-hand-<%= @game.player_2.choice.downcase %>"></i>
+      <p><%= @game.player_2.name %> chose <%= @game.player_2.choice %>!</p>
+    </div>
+  </section>
   <% if @game.winner.nil? %>
-    <h2>Draw</h2>
+    <h2>Draw!</h2>
   <% else %>
-    <h2><%= @game.winner.name %> wins</h2>
+    <h2><%= @game.winner.name %> wins!</h2>
   <% end %>
   <a href="/">Again?</a>
 </body>
