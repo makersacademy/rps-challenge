@@ -5,6 +5,7 @@ require './lib/player'
 class Roshambo < Sinatra::Base
 
   enable :sessions
+  ARSENAL = ["rock", "paper", "scissors"]
 
   get '/' do
     erb(:index)
@@ -23,7 +24,7 @@ class Roshambo < Sinatra::Base
   end
 
   post '/RO-SHAM-BO' do
-    Game.current_game.player_two.pick(["rock", "paper", "scissors"].sample)
+    Game.current_game.player_two.pick(ARSENAL.sample)
     Game.current_game.player_one.pick(params[:choice])
     redirect '/results'
   end

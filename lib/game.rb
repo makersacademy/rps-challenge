@@ -1,6 +1,6 @@
 class Game
   attr_reader :player_one, :player_two, :instance
-  def initialize(first:, second: 'evil computer class goes here')
+  def initialize(first:, second:)
     @player_one = Player.new(first)
     @player_two = Player.new(second)
   end
