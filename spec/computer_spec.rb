@@ -11,6 +11,6 @@ describe Computer do
   end
   it " Computer should be able to pick a weapon" do
     marvin = Computer.new
-    expect(marvin).to respond_to(:weapon).with(1).argument
+    expect(marvin).to respond_to(:pick).with(1).argument
   end
 end
