@@ -110,7 +110,7 @@ And on name.erb
 ```
 At this point I rspec and the test passed.
 
-Eventually this code became obselete, but this is an example of how I used TDD.
+Eventually this code became obselete, but this is an example of how I used TDD to drive the creation of my application, based on the user needs described in the user stories.
 
 ## MVC
 
