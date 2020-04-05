@@ -32,6 +32,11 @@ class Rps < Sinatra::Base
     erb :results
   end
 
+=begin
+  post './restart_game' do
+    redirect '/'
+  end
+=end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

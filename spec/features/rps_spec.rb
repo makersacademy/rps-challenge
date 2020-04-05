@@ -16,6 +16,7 @@ feature "User can choose rock/paper/scissors" do
   end
 end
 
+
 feature "User can play again" do
   scenario "User can click a button to play another game" do
     visit "/results"
@@ -23,16 +24,3 @@ feature "User can play again" do
     expect(page).to have_content "Hello Alex"
   end
 end
-
-
-## question is whether I need this test or not??
-=begin
-feature "AI also 'chooses' a hand" do
-  scenario "outputs the random sample of the AI" do
-    visit "/start_game"
-    fill_in :rock_paper_scissor, with: 'rock'
-    click_button 'RPS'
-    expect(page).to have_content "AI selected paper"
-  end
-end
-=end

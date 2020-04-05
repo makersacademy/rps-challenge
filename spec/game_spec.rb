@@ -18,19 +18,16 @@ describe Game do
       expect(game).to respond_to :computer_turn
     end
 
-    #think this test is now redundant as the functionality is now superseded by below
-    #however removing it reduces test coverage to under 100%
     it "gives the computer name" do
       expect(game.computer_turn).to eq "paper"
     end
-    #therefore is this doing anything?
+
     it "#computer_turn makes a random selection from rock, paper or scissors" do
       expect(["rock", "paper", "scissors"]).to include(game.computer_turn)
     end
   end
 
   describe "#decide winner" do
-    #how can I refactor this so that I don't have to write out many different scenarios?
     let(:game2) { Game.new("rock", "rock") }
     let(:game3) { Game.new("scissors", "paper") }
     it "responds to #decide_winner" do
@@ -44,7 +41,7 @@ describe Game do
     it "when player = rock & computer = rock, it's a draw" do
       expect(game2.decide_winner).to eq "It's a draw"
     end
-    #remember that I am using scissor with an s
+
     it "when player = scissors & computer = paper, player wins" do
       expect(game3.decide_winner).to eq "player wins"
     end
