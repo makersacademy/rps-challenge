@@ -76,12 +76,6 @@ a:hover {
   color: hsl(39, 100%, 40%);
 }
 
-
-section {
-  display: flex;
-  align-items: center;
-}
-
 h1 {
   font-size: 2rem;
 }
