@@ -2,3 +2,6 @@ The computer chose <%= @game.computer.move %>
 <p>
 You <%= @game.result %>
 </p>
+<form action="/choose" method="get">
+  <input type="submit" value="Play again">
+</form>
