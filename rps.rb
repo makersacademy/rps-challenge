@@ -26,6 +26,9 @@ class Rps < Sinatra::Base
 
   get '/results' do
     @selected_play = session[:selected_play]
+    game = Game.new(@selected_play)
+    @computer_hand = game.computer_turn
+    @result = game.decide_winner
     erb :results
   end
 
