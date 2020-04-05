@@ -39,3 +39,11 @@ feature 'Page allows me to ask for a result after my choice' do
     expect(page).to have_selector(:link_or_button, 'Result')
   end
 end
+
+feature 'page tells me what the computer chose' do
+  scenario 'once i cliked result' do
+    choose_scissors
+    click_button 'Result'
+    expect(page).to have_content 'The computer chose'
+  end
+end

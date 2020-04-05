@@ -12,16 +12,13 @@ class Game
   def initialize(player, computer)
     @player = player
     @computer = computer
+    #wins? ? (@result = :win) : (@result = :lose)
+    #(@result = :draw) if draws?
+  end
+
+  def set_result
     wins? ? (@result = :win) : (@result = :lose)
     (@result = :draw) if draws?
-  end
-
-  def wins?
-    RULES[@player.move] == @computer.move
-  end
-
-  def draws?
-    @player.move == @computer.move
   end
 
   def self.create(player, computer)
@@ -30,6 +27,16 @@ class Game
 
   def self.instance
     @game
+  end
+
+  private
+
+  def wins?
+    RULES[@player.move] == @computer.move
+  end
+
+  def draws?
+    @player.move == @computer.move
   end
 
 end
