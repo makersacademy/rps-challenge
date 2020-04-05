@@ -289,5 +289,8 @@ Wrote a feature test for Dave and Jim to enter their names then see 'Dave's choi
 
 - Added conditional to play.erb to display hardcoded string if #multiplayer? true.
 
+Test green.
 
+Wrote a feature test for Dave and Jim to enter their names, Dave to choose rock, then to see 'Jim's choice. No peeking Dave!'. Test red.
 
+- 
