@@ -24,9 +24,9 @@ describe Game do
   end
 
   describe "#decide winner" do
-
+    #how can I refactor this so that I don't have to write out many different scenarios?
     let(:game2) { Game.new("rock", "rock") }
-    let(:game3) { Game.new("scissors, paper") }
+    let(:game3) { Game.new("scissors", "paper") }
     it "responds to #decide_winner" do
       expect(game).to respond_to :decide_winner
     end
