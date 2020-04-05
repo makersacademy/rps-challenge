@@ -84,3 +84,25 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+```
+2.6.5 :001 > require './lib/game.rb'
+ => true
+2.6.5 :002 > game = Game.new("rock")
+ => #<Game:0x00007fcae3874cd0 @player="rock", @computer_turn="rock">
+
+2.6.5 :003 > game.decide_winner
+ => "It's a draw"
+2.6.5 :004 > game1 = Game.new("rock")
+
+ => #<Game:0x00007fcae388d848 @player="rock", @computer_turn="scisso
+rs">
+2.6.5 :005 > game1.decide_winner
+ => "player wins"
+2.6.5 :006 > game2 = Game.new("paper")
+ => #<Game:0x00007fcae301db68 @player="paper", @computer_turn="sciss
+ors">
+2.6.5 :007 > game2.decide_winner
+ => "computer wins"
+2.6.5 :008 > quit
+```
