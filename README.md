@@ -1,6 +1,6 @@
 # Rock Paper Scissors (Lizard Spock)
 
-[Source](https://github.com/makersacademy/rps-challenge)
+[![Build Status](https://travis-ci.org/hturnbull93/rps-challenge.svg?branch=master)](https://travis-ci.org/hturnbull93/rps-challenge) | [Source](https://github.com/makersacademy/rps-challenge)
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
