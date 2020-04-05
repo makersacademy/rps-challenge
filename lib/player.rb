@@ -1,11 +1,16 @@
 class Player
 
-  attr_reader :opponent_attack, :name
+  attr_reader :opponent_attack, :name, :attack
   def initialize(name)
     @name =name
     @opponent_attack = ['rock'].sample
-    @attack = 'rock'
+    @attack 
   end
+
+  def play(object)
+    @attack = object
+  end 
+
 
 
   def compare
