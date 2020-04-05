@@ -3,6 +3,6 @@ class Computer
     
   end
   def select_object
-    ['rock', 'paper', 'scissors'].sample
+    ['Rock', 'Paper', 'Scissors'].sample
   end 
 end

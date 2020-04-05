@@ -20,8 +20,20 @@ get '/play' do
 end 
 
 post '/round_1' do 
-  @attack = params[:attack] 
+  $player_1.play(params[:attack])
+  @attack = $player_1.attack
+ 
+   @message = $player_1.play(params[:attack])
+  if @message != nil
+    message_array = @message.split("\n")
+    @first_sentence = message_array[0]
+    @second_sentence = message_array[1]
+  end 
+  
+
+  
   erb :round_1
+
 end 
 
 
