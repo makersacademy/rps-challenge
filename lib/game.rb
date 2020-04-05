@@ -27,8 +27,6 @@ class Game
     @game
   end
 
-  private
-
   def wins?
     RULES[@player.move] == @computer.move
   end

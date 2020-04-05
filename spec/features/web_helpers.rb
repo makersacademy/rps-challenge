@@ -6,5 +6,5 @@ end
 
 def choose_scissors
   enter_name
-  click_button 'Scissors'
+  click_button 'scissors'
 end

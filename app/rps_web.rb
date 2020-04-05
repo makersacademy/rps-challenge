@@ -9,9 +9,9 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:name])
+    the_player = Player.new(params[:name])
     computer = Computer.new
-    @game = Game.create(player, computer)
+    @game = Game.create(the_player, computer)
     redirect '/choose'
   end
 
@@ -30,7 +30,7 @@ class RPSWeb < Sinatra::Base
 
   post '/choice' do
     @move = params[:move]
-    @game.player.move = @move
+    @game.player.move = @move.to_sym
     erb :choice
   end
 
