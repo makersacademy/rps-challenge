@@ -9,4 +9,8 @@ describe Computer do
     marvin = Computer.new
     expect(marvin).to respond_to :name
   end
+  it " making a new instance of computer should choose a weapon" do
+    marvin = Computer.new
+    expect(marvin).to respond_to :weapon
+  end
 end
