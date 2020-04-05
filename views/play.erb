@@ -7,26 +7,16 @@
 </head>
 <body>
   <h1><%= @game.player_1.name %> vs <%= @game.player_2.name %></h1>
-  <% if !@game.multiplayer? %>
-    <form action="/single-player-result" method="post">
-      <button type="submit" name="player_1_choice" value='Rock'>Rock</button>
-      <button type="submit" name="player_1_choice" value='Paper'>Paper</button>
-      <button type="submit" name="player_1_choice" value='Scissors'>Scissors</button>
+    <% if @game.multiplayer_turn_1? %>
+      <h2><%= @game.player_1.name %>'s choice. No peeking <%= @game.player_2.name %>!</h2>
+    <% elsif @game.multiplayer_turn_2? %>
+      <h2><%= @game.player_2.name %>'s choice. No peeking <%= @game.player_1.name %>!</h2>
+    <% end %>
+
+    <form <% if @game.multiplayer_turn_2? %>action="/player-2"<% else %>action="/player-1"<% end %> method="post">
+      <button type="submit" name="player_choice" value='Rock'>Rock</button>
+      <button type="submit" name="player_choice" value='Paper'>Paper</button>
+      <button type="submit" name="player_choice" value='Scissors'>Scissors</button>
     </form>
-  <% elsif @game.multiplayer? && @game.player_1.choice.nil? %>
-    <h2><%= @game.player_1.name %>'s choice. No peeking <%= @game.player_2.name %>!</h2>
-    <form action="/player-1" method="post">
-      <button type="submit" name="player_1_choice" value='Rock'>Rock</button>
-      <button type="submit" name="player_1_choice" value='Paper'>Paper</button>
-      <button type="submit" name="player_1_choice" value='Scissors'>Scissors</button>
-    </form>
-  <% else %>
-    <h2><%= @game.player_2.name %>'s choice. No peeking <%= @game.player_1.name %>!</h2>
-    <form action="/multi-player-result" method="post">
-      <button type="submit" name="player_2_choice" value='Rock'>Rock</button>
-      <button type="submit" name="player_2_choice" value='Paper'>Paper</button>
-      <button type="submit" name="player_2_choice" value='Scissors'>Scissors</button>
-    </form>
-  <% end %>
 </body>
 </html>
