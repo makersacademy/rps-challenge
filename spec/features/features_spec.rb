@@ -47,3 +47,11 @@ feature 'page tells me what the computer chose' do
     expect(page).to have_content 'The computer chose'
   end
 end
+
+feature 'page tells me whether I won' do
+  scenario 'once i have clicked result' do
+    choose_scissors
+    click_button 'Result'
+    expect(page).to have_content 'You'
+  end
+end
