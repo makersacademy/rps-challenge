@@ -1,4 +1,4 @@
-feature 'Choose between Rock, Paper, Scissors' do
+feature 'Choose between Rock, Paper, Scissors, Lizard, Spock' do
   scenario 'Dave choose rock, see rock' do
     dave_sign_in
     click_button('Rock')
@@ -15,5 +15,17 @@ feature 'Choose between Rock, Paper, Scissors' do
     jim_sign_in
     click_button('Scissors')
     expect(page).to have_content 'Jim: Scissors'
+  end
+
+  scenario 'Dave choose lizard, see lizard' do
+    dave_sign_in
+    click_button('Lizard')
+    expect(page).to have_content 'Dave: Lizard'
+  end
+
+  scenario 'Dave choose Spock, see spock' do
+    dave_sign_in
+    click_button('Spock')
+    expect(page).to have_content 'Dave: Spock'
   end
 end
