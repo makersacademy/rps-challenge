@@ -2,7 +2,7 @@ class Computer
   def initialize
     
   end
-  def select_attack
+  def select_object
     ['rock', 'paper', 'scissors'].sample
   end 
 end
