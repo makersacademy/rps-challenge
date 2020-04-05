@@ -26,4 +26,17 @@ feature 'Multiplayer' do
     expect(page).to have_content "Steve's choice. No peeking Pete!"
   end
 
+  scenario 'Dave and Jim enter names, Dave picks rock, Jim picks rock, draw' do
+    dave_jim_sign_in
+    click_button('Rock')
+    click_button('Rock')
+    expect(page).to have_content "Draw"
+  end
+
+  scenario 'Dave and Jim enter names, Dave picks rock, Jim picks paper, Jim wins' do
+    dave_jim_sign_in
+    click_button('Rock')
+    click_button('Paper')
+    expect(page).to have_content "Jim wins"
+  end
 end

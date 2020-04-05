@@ -28,7 +28,7 @@ Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play
 Advanced:
 
 - Multi-player - Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-= Rock, Paper, Scissors, Spock, Lizard - Use the [_special_ rules](http://en.wikipedia.org/wiki/rock-paper-scissors-lizard-spock).
+- Rock, Paper, Scissors, Lizard, Spock - Use the [_special_ rules](http://en.wikipedia.org/wiki/rock-paper-scissors-lizard-spock).
 
 ## Basic Rules
 
@@ -293,4 +293,41 @@ Test green.
 
 Wrote a feature test for Dave and Jim to enter their names, Dave to choose rock, then to see 'Jim's choice. No peeking Dave!'. Test red.
 
-- 
+- Added executive ruby statement to play erb to show a different hardcoded string.
+
+- Added to app.rb after posting this form to go back to play and display a different hardcoded string in play.erb with executive ruby statement.
+
+Test green.
+
+Wrote a feature test for Pete and Steve to enter their names then see 'Pete's choice. No peeking Steve!'. Test red.
+
+- Updated hardcoded string to use player names.
+
+Test green.
+
+Wrote a feature test for Pete and Steve to enter their names, Pete to choose rock, then to see 'Steve's choice. No peeking Pete!'. Test red.
+
+- Updated hardcoded string to use player names.
+
+Wrote a feature test for Dave and Jim to enter their names, Dave choose rock,, Jim choose rock, see Draw. Test red.
+
+- Added another form for player 2 to select their choice.
+
+- Added routes for player 2's choice post request and redirected to /results.
+
+Test green.
+
+To double check, wrote a feature test for Dave and Jim to enter their names, Dave choose rock,, Jim choose Paper, see Jim wins. Test green (phew).
+
+#### Refactoring Multi-player
+
+- Created a method in game #player_1_turn? to clean up the logic of checking which form to display in play.erb
+
+- Refactored routing to reuse existing routes and redirect based on if statements (i.e. if game multiplayer, loop back to play to get player 2's choice).
+
+- Simplified play.erb to use only 1 form. executive ruby changes headers and the form action based on the multiplayer player turn.
+
+Tests still green.
+
+### Advanced Requirement: Multi-player
+
