@@ -1,0 +1,100 @@
+html {
+  font-size: calc(12px + 0.75vw);
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 171, 15, 0.25);
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  line-height: 2;
+  max-width: 100w;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.form * {
+  margin: .2rem;
+}
+
+.span {
+  grid-column: span 2;
+}
+
+input, select {
+  font-family: Montserrat, sans-serif;
+  font-size: 1rem;
+  border-radius: .5rem;
+  box-shadow: 0 3px hsl(39, 100%, 40%);
+  border: 1px solid hsl(39, 100%, 40%);
+  padding: .5rem;
+}
+
+.button {
+  margin: 1.5rem;
+  padding: .5rem 2rem;
+  font-weight: 900;
+  background-color: hsl(39, 100%, 53%);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  border-radius: .5rem;
+  box-shadow: 0 9px hsl(39, 100%, 40%);
+  outline: none;
+  transition: ease-in;
+  transition-duration: 100ms;
+}
+
+.button:hover {
+  background: hsl(39, 100%, 48%);
+}
+
+.button:active {
+  background: hsl(39, 100%, 48%);
+  box-shadow: 0 5px hsl(39, 100%, 40%);
+  transform: translateY(4px);
+}
+
+.results {
+  display: grid;
+  place-items: center;
+}
+
+a {
+  color: hsl(39, 100%, 20%);
+}
+
+a:hover {
+  color: hsl(39, 100%, 40%);
+}
+
+
+section {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.wiggle {
+  padding: .5rem;
+  font-size: 2rem;
+  animation: wiggle 2s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(20deg)}
+  50% {transform: rotate(-20deg)}
+  100% {transform: rotate(20deg)}
+}
