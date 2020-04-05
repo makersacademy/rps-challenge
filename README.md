@@ -432,7 +432,7 @@ Wrote a feature test for Dave chooses Lizard and comp chooses Spock, Dave wins. 
 
 - Wrote unit tests for all combos. Tests red.
 
-- Replaced logic in #decide winner use a positional relationship between player 1's choice and player 2's choice. If player 2 is one ahead or 2 behind player 1, player 1 wins.
+- Replaced logic in #decide_winner use a positional relationship between player 1's choice and player 2's choice. If player 2 is one ahead or 2 behind player 1, player 1 wins.
 
 - General solution works. Unit tests green.
 
@@ -450,4 +450,14 @@ The current views are rendered as regular unstyled HTML, which doesn't look very
 
 - Swapped results page ':'s for "chose", which is friendlier (tweaked tests that included that text).
 
-- Styled it all up, added FontAwesome icons
+- Styled it all up, added FontAwesome icons.
+
+## Reflections
+
+I feel that I have done quite well sticking to TDD during this project. 100% of tests pass with 100% coverage.
+
+I tried only to make changes to pass tests (excluding styling with css, which I consider refactoring as it does not change the functionality).
+
+I feel that I observed OO principles reasonably well, flog scores are good.
+
+I'm quite pleased with my solution to determine the winner too.
