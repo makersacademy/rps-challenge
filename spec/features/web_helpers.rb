@@ -8,3 +8,8 @@ def choose_scissors
   enter_name
   click_button 'scissors'
 end
+
+def results_page
+  choose_scissors
+  click_button 'Result'
+end

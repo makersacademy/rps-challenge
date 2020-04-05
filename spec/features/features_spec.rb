@@ -42,16 +42,21 @@ end
 
 feature 'page tells me what the computer chose' do
   scenario 'once i cliked result' do
-    choose_scissors
-    click_button 'Result'
+    results_page
     expect(page).to have_content 'The computer chose'
   end
 end
 
 feature 'page tells me whether I won' do
   scenario 'once i have clicked result' do
-    choose_scissors
-    click_button 'Result'
+    results_page
     expect(page).to have_content 'You'
+  end
+end
+
+feature 'gives me the option to play again' do
+  scenario 'once I have clicked Result' do
+    results_page
+    expect(page).to have_selector(:link_or_button, 'Play again')
   end
 end
