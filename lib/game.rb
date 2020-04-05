@@ -31,16 +31,26 @@ class Game
   end
 
   OPTIONS = %w[Rock Lizard Spock Scissors Paper]
-
+  
   def winner
-    player_1_position = OPTIONS.index(@player_1.choice)
-    player_1_win_cons = [OPTIONS[player_1_position - 2], OPTIONS[player_1_position - 4]]
-    if @player_1.choice == @player_2.choice
-      nil
-    elsif player_1_win_cons.include?(@player_2.choice)
-      @player_1
-    else
-      @player_2
-    end
+    same_choice? ? nil : player_1_wins? ? @player_1 : @player_2
+  end
+  
+  private
+
+  def same_choice?
+    @player_1.choice == @player_2.choice
+  end
+
+  def player_1_position
+    OPTIONS.index(@player_1.choice)
+  end
+
+  def player_1_win_cons
+    [OPTIONS[player_1_position - 2], OPTIONS[player_1_position - 4]]
+  end
+
+  def player_1_wins?
+    player_1_win_cons.include?(@player_2.choice)
   end
 end
