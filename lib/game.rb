@@ -8,16 +8,10 @@ attr_reader :player, :computer
   end
 
   def decide_winner
-    if @player == @computer
-      "It's a draw"
-    elsif @player == "rock" && @computer == "scissors"
-      "player wins"
-    elsif @player == "scissors" && @computer == "paper"
-      "player wins"
-    elsif @player == "paper" && @computer == "rock"
-      "player wins"
-    else
-      "computer wins"
-    end
+    return "It's a draw" if @player == @computer
+    return "player wins" if @player == "rock" && @computer == "scissors"
+    return "player wins" if @player == "scissors" && @computer == "paper"
+    return "player wins" if @player == "paper" && @computer == "rock"
+    return "computer wins"
   end
 end
