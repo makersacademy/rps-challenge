@@ -1,5 +1,36 @@
 # RPS Challenge
 
+## How to run the program
+
+* Clone the project - git clone https://github.com/emilyjspencer/rps-challenge.git
+
+* In the terminal, type: rackup
+* Go to the following address in the browser: localhost:9292
+
+
+### How to run the tests
+
+* Type the following into the terminal: rspec
+
+## Built with
+
+* Ruby
+* Sinatra
+* HTML/CSS
+
+## Tested with
+
+* RSpec
+
+## What it looks like 
+
+![homepage](homepage.png)
+![options](options.png)
+![playerwins](playerwins.png)
+![tie](tie.png)
+![playerloses](playerloses.png)
+![players](players.png)
+
 Instructions
 -------
 
