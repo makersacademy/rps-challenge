@@ -1,0 +1,6 @@
+<p>You chose <%= @selected_play %></p>
+<p>Computer chose <%= @computer_hand %></p>
+<p><%= @result %></p>
+<form action='/restart_game' method="post">
+  <button type="submit" name="Play again">Play again</button>
+</form>
