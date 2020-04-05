@@ -1,10 +1,8 @@
-
-
 class Game
   attr_reader :player_one, :player_two, :instance
   def initialize(first:, second: 'evil computer class goes here')
-    @player_one = first
-    @player_two = second
+    @player_one = Player.new(first)
+    @player_two = Player.new(second)
   end
 
   def janken
@@ -19,7 +17,7 @@ class Game
     end
   end
 
-  def self.start_game(one:,two:)
+  def self.start_game(one:, two:)
     @instance = Game.new(first: one, second: two)
   end
 

@@ -5,14 +5,15 @@ require './lib/player'
 class Roshambo < Sinatra::Base
 
   enable :sessions
-  set :session_secret, "i76t2oivmyoi3nti37n"
 
   get '/' do
     erb(:index)
   end
 
   post '/challenger_approaches' do
-    @game = Game.start_game(one: Player.new(params["player_name"]), two: Player.new("Computer"))
+    me = params["player_name"]
+    you = "Computer"
+    @game = Game.start_game(one: me, two: you)
     @game.player_two.pick(["rock", "paper", "scissors"].sample)
     redirect '/warlords_rising'
   end
