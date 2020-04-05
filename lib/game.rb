@@ -23,6 +23,14 @@ class Game
     @multiplayer
   end
 
+  def multiplayer_turn_1?
+    @multiplayer && @player_1.choice.nil?
+  end
+
+  def multiplayer_turn_2?
+    @multiplayer && !@player_1.choice.nil?
+  end
+
   def decide_winner
     case @player_1.choice
     when 'Rock'
