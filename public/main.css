@@ -15,20 +15,6 @@ body {
   max-width: 100w;
 }
 
-.form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
-
-.form * {
-  margin: .2rem;
-}
-
-.span {
-  grid-column: span 2;
-}
-
 input, select {
   font-family: Montserrat, sans-serif;
   font-size: 1rem;
@@ -61,11 +47,6 @@ input, select {
   background: hsl(39, 100%, 48%);
   box-shadow: 0 5px hsl(39, 100%, 40%);
   transform: translateY(4px);
-}
-
-.results {
-  display: grid;
-  place-items: center;
 }
 
 a {
