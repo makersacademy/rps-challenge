@@ -391,4 +391,8 @@ Test green.
 
 The current views are rendered as regular unstyled HTML, which doesn't look very nice.
 
+- Borrowed the css from the [Birthday Greeter App](https://github.com/hturnbull93/birthday-greeter-app) I made.
+
+- Swapped results page ':'s for "chose", which is friendlier.
+
 - 
