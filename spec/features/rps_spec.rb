@@ -16,6 +16,8 @@ feature "User can choose rock/paper/scissors" do
   end
 end
 
+
+## question is whether I need this test or not??
 =begin
 feature "AI also 'chooses' a hand" do
   scenario "outputs the random sample of the AI" do

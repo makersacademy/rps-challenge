@@ -13,13 +13,19 @@ describe Game do
     end
   end
 
-  describe "#computer" do
+  describe "#computer_turn" do
     it "responds to #computer " do
-      expect(game).to respond_to :computer
+      expect(game).to respond_to :computer_turn
     end
 
+    #think this test is now redundant as the functionality is now superseded by below
+    #however removing it reduces test coverage to under 100%
     it "gives the computer name" do
-      expect(game.computer).to eq "paper"
+      expect(game.computer_turn).to eq "paper"
+    end
+    #therefore is this doing anything?
+    it "#computer_turn makes a random selection from rock, paper or scissors" do
+      expect(["rock", "paper", "scissors"]).to include(game.computer_turn)
     end
   end
 

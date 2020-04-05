@@ -1,17 +1,17 @@
 class Game
 
-attr_reader :player, :computer
+attr_reader :player, :computer_turn
 
-  def initialize(player, computer)
+  def initialize(player, computer=['rock', 'paper', 'scissors'].sample)
     @player = player
-    @computer = computer
+    @computer_turn = computer
   end
 
   def decide_winner
-    return "It's a draw" if @player == @computer
-    return "player wins" if @player == "rock" && @computer == "scissors"
-    return "player wins" if @player == "scissors" && @computer == "paper"
-    return "player wins" if @player == "paper" && @computer == "rock"
+    return "It's a draw" if @player == @computer_turn
+    return "player wins" if @player == "rock" && @computer_turn == "scissors"
+    return "player wins" if @player == "scissors" && @computer_turn == "paper"
+    return "player wins" if @player == "paper" && @computer_turn == "rock"
     return "computer wins"
   end
 end
