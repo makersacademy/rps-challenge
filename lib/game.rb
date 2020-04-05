@@ -8,7 +8,7 @@ attr_reader :player, :computer
   end
 
   def decide_winner
-    
+    "computer wins"
   end
 
 
