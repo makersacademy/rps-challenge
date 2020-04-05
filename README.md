@@ -1,4 +1,4 @@
-# RPS Challenge
+# Rock Paper Scissors (Lizard Spock)
 
 [Source](https://github.com/makersacademy/rps-challenge)
 
@@ -40,8 +40,46 @@ Advanced:
 
 | Objects     | Messages                            |
 | ----------- | ----------------------------------- |
-| Marketeer   |
+| Marketeer   |                                     |
 | Online Game | Name, Rock, Paper, Scissors, winner |
+
+## Instructions
+
+### Setup
+
+- From the root directory install the dependencies:
+
+  ```bash
+  bundle
+  ```
+
+### Running the Server
+
+- From the root directory run the server:
+
+  ```bash
+  rackup
+  ```
+
+### Playing a Game
+
+- Head in your browser to <http://localhost:9292/>
+
+- Follow the onscreen instructions.
+
+## Screen Previews
+
+### Home Page
+
+![Home Page](/images/home_page.png)
+
+### Play Page
+
+![Play Page](/images/play_page.png)
+
+### Result Page
+
+![Result Page](/images/result_page.png)
 
 ## Development Journal
 
