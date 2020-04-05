@@ -16,7 +16,7 @@ feature "User can choose rock/paper/scissors" do
   end
 end
 
-
+=begin
 feature "User can play again" do
   scenario "User can click a button to play another game" do
     visit "/results"
@@ -24,3 +24,4 @@ feature "User can play again" do
     expect(page).to have_content "Hello Alex"
   end
 end
+=end
