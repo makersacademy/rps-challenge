@@ -30,14 +30,12 @@ class Rps < Sinatra::Base
     if @game.multiplayer? 
       redirect '/play' 
     else
-      @game.decide_winner
       redirect '/result'
     end
   end
 
   post '/player-2' do
     @game.player_2.choose(params[:player_choice])
-    @game.decide_winner
     redirect '/result'
   end
 
