@@ -16,6 +16,14 @@ feature "User can choose rock/paper/scissors" do
   end
 end
 
+feature "User can play again" do
+  scenario "User can click a button to play another game" do
+    visit "/results"
+    click_button 'Play again'
+    expect(page).to have_content "Hello Alex"
+  end
+end
+
 
 ## question is whether I need this test or not??
 =begin
