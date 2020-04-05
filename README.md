@@ -83,6 +83,23 @@ Advanced:
 
 ## Development Journal
 
+### Development approach
+
+I approached this project using Test Driven Development strategies:
+
+- Only write the most basic test you need to fail.
+- Only write production code to pass a failing test.
+- Only write the most basic production code to pass the test.
+
+I approached this project with object oriented programming in mind:
+
+- Objects should encapsulate methods that are related to one another in purpose.
+- Methods should have a single responsibility, so they do not do too much, and are concise.
+
+In order to keep code clear and readable, I used rubocop for linting.
+
+### Domain Model
+
 I wrote a short domain model diagram in order to organise my thoughts on the user stories.
 
 There aren't very many so I will need to rely on good TDD to drive the behaviour out of the tests.
