@@ -13,7 +13,7 @@
     <h2>Single-player</h2>
     <form action="/single-player" method="post">
       <label for="name">Enter your name:</label>
-      <input type="text" name="name">
+      <input required type="text" name="name">
       <button class="button" type="submit">Start Single-player!</button>
     </form>
   </section>
@@ -21,9 +21,9 @@
     <h2>Multi-player</h2>
     <form action="/multi-player" method="post">
       <label for="name">Enter player 1's name:</label>
-      <input type="text" name="player_1_name">
+      <input required type="text" name="player_1_name">
       <label for="name">Enter player 2's name:</label>
-      <input type="text" name="player_2_name">
+      <input required type="text" name="player_2_name">
       <button class="button" type="submit">Start Multi-player!</button>
     </form>
   </section>
