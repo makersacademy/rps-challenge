@@ -21,4 +21,12 @@ feature 'Results, Winner or Draw' do
     expect(page).to_not have_content 'Draw'
     expect(page).to have_content 'Dave wins'
   end
+
+  scenario 'If Dave chooses Lizard and comp chooses Spock, Dave wins' do
+    allow_any_instance_of(Comp).to receive(:choice).and_return 'Spock'
+    dave_sign_in
+    click_button('Lizard')
+    expect(page).to_not have_content 'Draw'
+    expect(page).to have_content 'Dave wins'
+  end
 end
