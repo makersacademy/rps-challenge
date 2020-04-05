@@ -36,13 +36,6 @@ Advanced:
 - Scissors beats Paper
 - Paper beats Rock
 
-## Domain Model
-
-| Objects     | Messages                            |
-| ----------- | ----------------------------------- |
-| Marketeer   |                                     |
-| Online Game | Name, Rock, Paper, Scissors, winner |
-
 ## Instructions
 
 ### Setup
@@ -98,9 +91,14 @@ I approached this project with object oriented programming in mind:
 
 In order to keep code clear and readable, I used rubocop for linting.
 
-### Domain Model
+### Domain Modelling
 
 I wrote a short domain model diagram in order to organise my thoughts on the user stories.
+
+| Objects     | Messages                            |
+| ----------- | ----------------------------------- |
+| Marketeer   |                                     |
+| Online Game | Name, Rock, Paper, Scissors, winner |
 
 There aren't very many so I will need to rely on good TDD to drive the behaviour out of the tests.
 
