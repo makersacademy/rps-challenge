@@ -32,7 +32,6 @@ describe Game do
       it 'comp rock - Draw' do
         allow(comp_inst).to receive(:choice).and_return 'Rock'
         allow(player_inst).to receive(:choice).and_return 'Rock'
-        subject.decide_winner
         expect(subject.winner).to eq nil
       end
     end
@@ -42,14 +41,22 @@ describe Game do
 
       it 'comp paper - comp wins' do
         allow(comp_inst).to receive(:choice).and_return 'Paper'
-        subject.decide_winner
         expect(subject.winner).to eq comp_inst
       end
 
       it 'comp scissors - player wins' do
         allow(comp_inst).to receive(:choice).and_return 'Scissors'
-        subject.decide_winner
         expect(subject.winner).to eq player_inst
+      end
+
+      it 'comp lizard - player wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Lizard'
+        expect(subject.winner).to eq player_inst
+      end
+
+      it 'comp spock - comp wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Spock'
+        expect(subject.winner).to eq comp_inst
       end
     end
 
@@ -58,13 +65,21 @@ describe Game do
 
       it 'comp scissors - comp wins' do
         allow(comp_inst).to receive(:choice).and_return 'Scissors'
-        subject.decide_winner
         expect(subject.winner).to eq comp_inst
       end
 
       it 'comp rock - player wins' do
         allow(comp_inst).to receive(:choice).and_return 'Rock'
-        subject.decide_winner
+        expect(subject.winner).to eq player_inst
+      end
+
+      it 'comp lizard - comp wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Lizard'
+        expect(subject.winner).to eq comp_inst
+      end
+
+      it 'comp spock - player wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Spock'
         expect(subject.winner).to eq player_inst
       end
     end
@@ -74,14 +89,71 @@ describe Game do
 
       it 'comp rock - comp wins' do
         allow(comp_inst).to receive(:choice).and_return 'Rock'
-        subject.decide_winner
         expect(subject.winner).to eq comp_inst
       end
 
       it 'comp paper - player wins' do
         allow(comp_inst).to receive(:choice).and_return 'Paper'
-        subject.decide_winner
         expect(subject.winner).to eq player_inst
+      end
+
+      it 'comp lizard - player wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Lizard'
+        expect(subject.winner).to eq player_inst
+      end
+
+      it 'comp spock - comp wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Spock'
+        expect(subject.winner).to eq comp_inst
+      end
+    end
+
+    context 'player always chooses lizard' do
+      before(:each) { allow(player_inst).to receive(:choice).and_return 'Lizard' }
+
+      it 'comp rock - comp wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Rock'
+        expect(subject.winner).to eq comp_inst
+      end
+
+      it 'comp paper - player wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Paper'
+        expect(subject.winner).to eq player_inst
+      end
+
+      it 'comp scissors - comp wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Scissors'
+        expect(subject.winner).to eq comp_inst
+      end
+
+      it 'comp spock - player wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Spock'
+        expect(subject.winner).to eq player_inst
+      end
+
+    end
+
+    context 'player always chooses spock' do
+      before(:each) { allow(player_inst).to receive(:choice).and_return 'Spock' }
+
+      it 'comp rock - player wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Rock'
+        expect(subject.winner).to eq player_inst
+      end
+
+      it 'comp paper - comp wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Paper'
+        expect(subject.winner).to eq comp_inst
+      end
+
+      it 'comp scissors - player wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Scissors'
+        expect(subject.winner).to eq player_inst
+      end
+
+      it 'comp lizard - comp wins' do
+        allow(comp_inst).to receive(:choice).and_return 'Lizard'
+        expect(subject.winner).to eq comp_inst
       end
     end
   end
