@@ -1,8 +1,11 @@
 require 'game'
 
 describe Game do
-describe '.new'
-  it 'instantiates the class with 2 arguments' do
-    expect(subject).to respond_to(:new).with(2).arguments
+  it "responds to #player" do
+    expect(subject).to respond_to :player
+  end
+
+  it "responds to #computer " do
+    expect(subject).to respond_to :computer
   end
 end
