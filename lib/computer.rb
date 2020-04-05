@@ -6,4 +6,8 @@ class Computer
     @move = [:rock, :paper, :scissors].sample
   end
 
+  def change_move
+    @move = [:rock, :paper, :scissors].sample
+  end
+
 end

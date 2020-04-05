@@ -20,6 +20,7 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/choose' do
+    @game.computer.change_move
     @player_name = @game.player.name
     erb :choose
   end
