@@ -14,7 +14,6 @@ class Roshambo < Sinatra::Base
     me = params["player_name"]
     you = "Computer"
     @game = Game.start_game(one: me, two: you)
-    @game.player_two.pick(["rock", "paper", "scissors"].sample)
     redirect '/warlords_rising'
   end
 
