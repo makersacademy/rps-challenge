@@ -27,11 +27,7 @@ class Rps < Sinatra::Base
 
   post '/player-1' do
     @game.player_1.choose(params[:player_choice])
-    if @game.multiplayer? 
-      redirect '/play' 
-    else
-      redirect '/result'
-    end
+    redirect @game.multiplayer? ? '/play' : '/result'
   end
 
   post '/player-2' do
