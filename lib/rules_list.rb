@@ -1,5 +1,6 @@
 class RulesList
   def initialize
+    # the entries in the hash must be in alphabetical order 
     @rules_list = {
       [:lizard, :lizard] => 'both players chose lizard',
       [:lizard, :paper] => 'lizard eats paper',

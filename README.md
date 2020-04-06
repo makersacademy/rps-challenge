@@ -69,13 +69,17 @@ Looking at the challenge, I decided to focus on the implementation rather than v
 
 Ny first task was roughing out a process model for the name registration user story. Although this changed slightly as I implemented the stories, the fundamental structure stayed the same, which I was very pleased about. Doing this early gave me a good, general idea of how I wanted to put things together, and once I got going with the challenge I felt it unnecessary to rough out any further process models.
 
-Implementing the first bonus level was extremely challenging. and I had to revise many of the existing feature tests and expand the model layer of the application code. I eventually ended up with the following class diagram for the model layer. Note that predicate methods are not showing ? at the end of their names. Also, the create and instance methods of the Game class are class rather than instance methods:
+Implementing the first bonus level was tough as I had to revise many of the existing feature tests and expand the model layer of the application code considerably. 
+
+The refactoring into separate move classes took a long time, but I think was worth it, as it made implementation of the second bonus stage relatively trivial to do.
+
+Ensuring unit tests had no dependencies outside of the code they were testing was also very hard. When I refactoring the code to implement separate classes for each move, I found it very difficult to properly set up the tests for the Game class to remove any dependence on the move classes, and am still not sure I got it quite right.
+
+## Class diagram for the model layer
+
+Note that predicate methods are not showing ? at the end of their names. Also, the create and instance methods of the Game class are class rather than instance methods:
 
 ![Class diagram](./class-diagram.svg)
-
-The two most challenging aspects of the implementation were refactoring out the MoveList, and ensuring there were no dependencies between the individual unit tests and classes not being tested. Setting up the doubles and stubs for the Game unit tests to remove its dependency on MoveList was particularly tough, and I spent a lot of time working through how to ensure the tests were meaningful.
-
-I'm still not happy with the extraction of the MoveList class from Game, although it was very necessary given the size the Game class had got to prior to refactoring. I find the separation of make_move and decide_results methods very clunky. I experimented with ways of deciding the result of the game once the second move was passed in rather than calling a method separately, but nothing felt like it made sense semantically. I suspect its a problem with the way I'm naming the methods involved.
 
 ## Process models
 
@@ -90,5 +94,3 @@ I'm still not happy with the extraction of the MoveList class from Game, althoug
 ## Future work
 
 * The visuals obviously need some(any!) work
-* Re-examine the interface between Game and MoveList
-* Do the second bonus level
