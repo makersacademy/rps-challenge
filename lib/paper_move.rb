@@ -5,7 +5,7 @@ class PaperMove
     @type = :paper
   end
 
-  def winner_vs(move)
+  def vs(move)
     case move.type
     when :lizard
       move

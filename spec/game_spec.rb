@@ -66,7 +66,7 @@ describe Game do
 
     it 'sets the result when it is a draw' do
       # returns nil when both moves are the same
-      allow(move1).to receive(:winner_vs).and_return(nil)
+      allow(move1).to receive(:vs).and_return(nil)
       # stub a private method
       allow_any_instance_of(Game).to receive(:create_move).and_return(move1)
       allow(list).to receive(:rule).and_return('both players chose rock')
@@ -78,7 +78,7 @@ describe Game do
     end
 
     it 'sets the result when player one wins' do
-      allow(move1).to receive(:winner_vs).and_return(move1)
+      allow(move1).to receive(:vs).and_return(move1)
       # stub a private method
       allow_any_instance_of(Game).to receive(:create_move).and_return(move1, move2)
 
@@ -89,7 +89,7 @@ describe Game do
     end
 
     it 'sets the result when player two wins' do
-      allow(move1).to receive(:winner_vs).and_return(move2)
+      allow(move1).to receive(:vs).and_return(move2)
       # stub a private method
       allow_any_instance_of(Game).to receive(:create_move).and_return(move1, move2)
 

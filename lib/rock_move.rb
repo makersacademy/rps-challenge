@@ -5,7 +5,7 @@ class RockMove
     @type = :rock
   end
 
-  def winner_vs(move)
+  def vs(move)
     case move.type
     when :lizard
       self

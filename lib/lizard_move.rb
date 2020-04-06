@@ -5,7 +5,7 @@ class LizardMove
     @type = :lizard
   end
 
-  def winner_vs(move)
+  def vs(move)
     case move.type
     when :lizard
       nil

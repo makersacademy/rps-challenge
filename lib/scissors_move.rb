@@ -4,7 +4,7 @@ class ScissorsMove
     @type = :scissors
   end
 
-  def winner_vs(move)
+  def vs(move)
     case move.type
     when :lizard
       self

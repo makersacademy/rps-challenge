@@ -31,7 +31,7 @@ class Game
   end
 
   def decide_result
-    winner_part = winner_message(@move1.winner_vs(@move2))
+    winner_part = winner_message(@move1.vs(@move2))
     rule_part = @rules_list.rule([@move1.type, @move2.type])
     @result = "#{winner_part} - #{rule_part}"
   end
