@@ -6,12 +6,17 @@ class RockMove
   end
 
   def winner_vs(move)
-    if move.type == :rock
-      nil
-    elsif move.type == :paper
-      move
-    else
+    case(move.type)
+    when :lizard
       self
+    when :paper
+      move
+    when :rock
+      nil
+    when :scissors
+      self
+    when :spock
+      move
     end
   end
 end

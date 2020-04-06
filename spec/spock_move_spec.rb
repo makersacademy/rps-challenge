@@ -1,9 +1,9 @@
-require 'rock_move'
+require 'spock_move'
 
-describe RockMove do
-  it 'lizard returns rock' do
+describe SpockMove do
+  it 'lizard returns lizard' do
     lizard = double(:lizard, type: :lizard)
-    expect(subject.winner_vs(lizard)).to eq subject
+    expect(subject.winner_vs(lizard)).to eq lizard
   end
 
   it 'paper returns paper' do
@@ -11,18 +11,18 @@ describe RockMove do
     expect(subject.winner_vs(paper)).to eq paper
   end
 
-  it 'rock returns no result' do
+  it 'rock returns spock' do
     rock = double(:rock, type: :rock)
-    expect(subject.winner_vs(rock)).to eq nil
+    expect(subject.winner_vs(rock)).to eq subject
   end
 
-  it 'scissors returns rock' do
+  it 'scissors returns spock' do
     scissors = double(:scissors, type: :scissors)
     expect(subject.winner_vs(scissors)).to eq subject
   end
 
-  it 'spock returns spock' do
+  it 'spock returns no result' do
     spock = double(:spock, type: :spock)
-    expect(subject.winner_vs(spock)).to eq spock
+    expect(subject.winner_vs(spock)).to eq nil
   end
 end

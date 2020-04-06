@@ -6,13 +6,17 @@ class PaperMove
   end
 
   def winner_vs(move)
-    if move.type == :rock
-      self
-    elsif move.type == :paper
-      p 'here'
-      nil
-    else
+    case(move.type)
+    when :lizard
       move
+    when :paper
+      nil
+    when :rock
+      self
+    when :scissors
+      move
+    when :spock
+      self
     end
   end
 end

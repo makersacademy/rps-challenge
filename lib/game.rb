@@ -1,8 +1,10 @@
 require_relative './player.rb'
 require_relative './rules_list.rb'
+require_relative './lizard_move.rb'
 require_relative './paper_move.rb'
-require_relative './scissors_move.rb'
 require_relative './rock_move.rb'
+require_relative './scissors_move.rb'
+require_relative './spock_move.rb'
 
 class Game
   attr_reader :player1, :player2, :result, :current_player
@@ -56,12 +58,17 @@ class Game
   end
 
   def create_move(move)
-    if move == 'Rock'
-      RockMove.new
-    elsif move == 'Paper'
+    case move
+    when 'Lizard'
+      LizardMove.new
+    when 'Paper'
       PaperMove.new
-    else
+    when 'Rock'
+      RockMove.new
+    when 'Scissors'
       ScissorsMove.new
+    when 'Spock'
+      SpockMove.new
     end
   end
 

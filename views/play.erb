@@ -2,6 +2,9 @@ Welcome to the game <%= @game.player1.name %> and <%= @game.player2.name %>!
 <br>
 Choose a move <%= @game.current_player.name %>!
 <form method="post" action="/make-move">
-<input type="submit" value="Rock" name="move">
-<input type="submit" value="Paper" name="move">
-<input type="submit" value="Scissors" name="move">
+    <input type="submit" value="Lizard" name="move">
+    <input type="submit" value="Rock" name="move">
+    <input type="submit" value="Paper" name="move">
+    <input type="submit" value="Scissors" name="move">
+    <input type="submit" value="Spock" name="move">
+</form>

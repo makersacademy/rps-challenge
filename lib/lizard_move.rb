@@ -1,21 +1,22 @@
-class ScissorsMove
+class LizardMove
   attr_reader :type
+
   def initialize
-    @type = :scissors
+    @type = :lizard
   end
 
   def winner_vs(move)
     case(move.type)
     when :lizard
-      self
+      nil
     when :paper
       self
     when :rock
       move
     when :scissors
-      nil
-    when :spock
       move
+    when :spock
+      self
     end
   end
 end
