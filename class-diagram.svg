@@ -1,0 +1,505 @@
+<svg id="mermaid-1586160054121" width="1219.109375" xmlns="http://www.w3.org/2000/svg" height="366.3125" viewBox="-10 -10 819.40625 346.3125"><style>
+
+
+
+#mermaid-1586160054121 .label {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  color: #333; }
+
+#mermaid-1586160054121 .label text {
+  fill: #333; }
+
+#mermaid-1586160054121 .node rect,
+#mermaid-1586160054121 .node circle,
+#mermaid-1586160054121 .node ellipse,
+#mermaid-1586160054121 .node polygon,
+#mermaid-1586160054121 .node path {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1px; }
+
+#mermaid-1586160054121 .node .label {
+  text-align: center; }
+
+#mermaid-1586160054121 .node.clickable {
+  cursor: pointer; }
+
+#mermaid-1586160054121 .arrowheadPath {
+  fill: #333333; }
+
+#mermaid-1586160054121 .edgePath .path {
+  stroke: #333333;
+  stroke-width: 1.5px; }
+
+#mermaid-1586160054121 .edgeLabel {
+  background-color: #e8e8e8;
+  text-align: center; }
+
+#mermaid-1586160054121 .cluster rect {
+  fill: #ffffde;
+  stroke: #aaaa33;
+  stroke-width: 1px; }
+
+#mermaid-1586160054121 .cluster text {
+  fill: #333; }
+
+#mermaid-1586160054121 div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 12px;
+  background: #ffffde;
+  border: 1px solid #aaaa33;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100; }
+
+#mermaid-1586160054121 .actor {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1586160054121 text.actor {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1586160054121 .actor-line {
+  stroke: grey; }
+
+#mermaid-1586160054121 .messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1586160054121 .messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1586160054121 #arrowhead {
+  fill: #333; }
+
+#mermaid-1586160054121 .sequenceNumber {
+  fill: white; }
+
+#mermaid-1586160054121 #sequencenumber {
+  fill: #333; }
+
+#mermaid-1586160054121 #crosshead path {
+  fill: #333 !important;
+  stroke: #333 !important; }
+
+#mermaid-1586160054121 .messageText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1586160054121 .labelBox {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1586160054121 .labelText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1586160054121 .loopText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1586160054121 .loopLine {
+  stroke-width: 2;
+  stroke-dasharray: '2 2';
+  stroke: #CCCCFF; }
+
+#mermaid-1586160054121 .note {
+  stroke: #aaaa33;
+  fill: #fff5ad; }
+
+#mermaid-1586160054121 .noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 14px; }
+
+#mermaid-1586160054121 .activation0 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1586160054121 .activation1 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1586160054121 .activation2 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+
+#mermaid-1586160054121 .mermaid-main-font {
+  font-family: "trebuchet ms", verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1586160054121 .section {
+  stroke: none;
+  opacity: 0.2; }
+
+#mermaid-1586160054121 .section0 {
+  fill: rgba(102, 102, 255, 0.49); }
+
+#mermaid-1586160054121 .section2 {
+  fill: #fff400; }
+
+#mermaid-1586160054121 .section1,
+#mermaid-1586160054121 .section3 {
+  fill: white;
+  opacity: 0.2; }
+
+#mermaid-1586160054121 .sectionTitle0 {
+  fill: #333; }
+
+#mermaid-1586160054121 .sectionTitle1 {
+  fill: #333; }
+
+#mermaid-1586160054121 .sectionTitle2 {
+  fill: #333; }
+
+#mermaid-1586160054121 .sectionTitle3 {
+  fill: #333; }
+
+#mermaid-1586160054121 .sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+
+#mermaid-1586160054121 .grid .tick {
+  stroke: lightgrey;
+  opacity: 0.8;
+  shape-rendering: crispEdges; }
+#mermaid-1586160054121   .grid .tick text {
+    font-family: 'trebuchet ms', verdana, arial;
+    font-family: var(--mermaid-font-family); }
+
+#mermaid-1586160054121 .grid path {
+  stroke-width: 0; }
+
+
+#mermaid-1586160054121 .today {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px; }
+
+
+
+#mermaid-1586160054121 .task {
+  stroke-width: 2; }
+
+#mermaid-1586160054121 .taskText {
+  text-anchor: middle;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1586160054121 .taskText:not([font-size]) {
+  font-size: 11px; }
+
+#mermaid-1586160054121 .taskTextOutsideRight {
+  fill: black;
+  text-anchor: start;
+  font-size: 11px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1586160054121 .taskTextOutsideLeft {
+  fill: black;
+  text-anchor: end;
+  font-size: 11px; }
+
+
+#mermaid-1586160054121 .task.clickable {
+  cursor: pointer; }
+
+#mermaid-1586160054121 .taskText.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+#mermaid-1586160054121 .taskTextOutsideLeft.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+#mermaid-1586160054121 .taskTextOutsideRight.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+
+#mermaid-1586160054121 .taskText0,
+#mermaid-1586160054121 .taskText1,
+#mermaid-1586160054121 .taskText2,
+#mermaid-1586160054121 .taskText3 {
+  fill: white; }
+
+#mermaid-1586160054121 .task0,
+#mermaid-1586160054121 .task1,
+#mermaid-1586160054121 .task2,
+#mermaid-1586160054121 .task3 {
+  fill: #8a90dd;
+  stroke: #534fbc; }
+
+#mermaid-1586160054121 .taskTextOutside0,
+#mermaid-1586160054121 .taskTextOutside2 {
+  fill: black; }
+
+#mermaid-1586160054121 .taskTextOutside1,
+#mermaid-1586160054121 .taskTextOutside3 {
+  fill: black; }
+
+
+#mermaid-1586160054121 .active0,
+#mermaid-1586160054121 .active1,
+#mermaid-1586160054121 .active2,
+#mermaid-1586160054121 .active3 {
+  fill: #bfc7ff;
+  stroke: #534fbc; }
+
+#mermaid-1586160054121 .activeText0,
+#mermaid-1586160054121 .activeText1,
+#mermaid-1586160054121 .activeText2,
+#mermaid-1586160054121 .activeText3 {
+  fill: black !important; }
+
+
+#mermaid-1586160054121 .done0,
+#mermaid-1586160054121 .done1,
+#mermaid-1586160054121 .done2,
+#mermaid-1586160054121 .done3 {
+  stroke: grey;
+  fill: lightgrey;
+  stroke-width: 2; }
+
+#mermaid-1586160054121 .doneText0,
+#mermaid-1586160054121 .doneText1,
+#mermaid-1586160054121 .doneText2,
+#mermaid-1586160054121 .doneText3 {
+  fill: black !important; }
+
+
+#mermaid-1586160054121 .crit0,
+#mermaid-1586160054121 .crit1,
+#mermaid-1586160054121 .crit2,
+#mermaid-1586160054121 .crit3 {
+  stroke: #ff8888;
+  fill: red;
+  stroke-width: 2; }
+
+#mermaid-1586160054121 .activeCrit0,
+#mermaid-1586160054121 .activeCrit1,
+#mermaid-1586160054121 .activeCrit2,
+#mermaid-1586160054121 .activeCrit3 {
+  stroke: #ff8888;
+  fill: #bfc7ff;
+  stroke-width: 2; }
+
+#mermaid-1586160054121 .doneCrit0,
+#mermaid-1586160054121 .doneCrit1,
+#mermaid-1586160054121 .doneCrit2,
+#mermaid-1586160054121 .doneCrit3 {
+  stroke: #ff8888;
+  fill: lightgrey;
+  stroke-width: 2;
+  cursor: pointer;
+  shape-rendering: crispEdges; }
+
+#mermaid-1586160054121 .milestone {
+  transform: rotate(45deg) scale(0.8, 0.8); }
+
+#mermaid-1586160054121 .milestoneText {
+  font-style: italic; }
+
+#mermaid-1586160054121 .doneCritText0,
+#mermaid-1586160054121 .doneCritText1,
+#mermaid-1586160054121 .doneCritText2,
+#mermaid-1586160054121 .doneCritText3 {
+  fill: black !important; }
+
+#mermaid-1586160054121 .activeCritText0,
+#mermaid-1586160054121 .activeCritText1,
+#mermaid-1586160054121 .activeCritText2,
+#mermaid-1586160054121 .activeCritText3 {
+  fill: black !important; }
+
+#mermaid-1586160054121 .titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: black;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1586160054121 g.classGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 10px; }
+#mermaid-1586160054121   g.classGroup text .title {
+    font-weight: bolder; }
+
+#mermaid-1586160054121 g.clickable {
+  cursor: pointer; }
+
+#mermaid-1586160054121 g.classGroup rect {
+  fill: #ECECFF;
+  stroke: #9370DB; }
+
+#mermaid-1586160054121 g.classGroup line {
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1586160054121 .classLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #ECECFF;
+  opacity: 0.5; }
+
+#mermaid-1586160054121 .classLabel .label {
+  fill: #9370DB;
+  font-size: 10px; }
+
+#mermaid-1586160054121 .relation {
+  stroke: #9370DB;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1586160054121 .dashed-line {
+  stroke-dasharray: 3; }
+
+#mermaid-1586160054121 #compositionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1586160054121 #compositionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1586160054121 #aggregationStart {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1586160054121 #aggregationEnd {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1586160054121 #dependencyStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1586160054121 #dependencyEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1586160054121 #extensionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1586160054121 #extensionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1586160054121 .commit-id,
+#mermaid-1586160054121 .commit-msg,
+#mermaid-1586160054121 .branch-label {
+  fill: lightgrey;
+  color: lightgrey;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1586160054121 .pieTitleText {
+  text-anchor: middle;
+  font-size: 25px;
+  fill: black;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1586160054121 .slice {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1586160054121 g.stateGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-size: 10px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1586160054121 g.stateGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-size: 10px; }
+
+#mermaid-1586160054121 g.stateGroup .state-title {
+  font-weight: bolder;
+  fill: black; }
+
+#mermaid-1586160054121 g.stateGroup rect {
+  fill: #ECECFF;
+  stroke: #9370DB; }
+
+#mermaid-1586160054121 g.stateGroup line {
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1586160054121 .transition {
+  stroke: #9370DB;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1586160054121 .stateGroup .composit {
+  fill: white;
+  border-bottom: 1px; }
+
+#mermaid-1586160054121 .stateGroup .alt-composit {
+  fill: #e0e0e0;
+  border-bottom: 1px; }
+
+#mermaid-1586160054121 .state-note {
+  stroke: #aaaa33;
+  fill: #fff5ad; }
+#mermaid-1586160054121   .state-note text {
+    fill: black;
+    stroke: none;
+    font-size: 10px; }
+
+#mermaid-1586160054121 .stateLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #ECECFF;
+  opacity: 0.5; }
+
+#mermaid-1586160054121 .stateLabel text {
+  fill: black;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+:root {
+  --mermaid-font-family: '"trebuchet ms", verdana, arial';
+  --mermaid-font-family: "Comic Sans MS", "Comic Sans", cursive; }
+
+:root { --mermaid-font-family: "trebuchet ms", verdana, arial;}</style><style>#mermaid-1586160054121 {
+    color: rgb(0, 0, 0);
+    font: 16px "trebuchet ms", verdana, arial;
+  }</style><g></g><defs><marker id="extensionStart" class="extension" refX="0" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 1,7 L18,13 V 1 Z"></path></marker></defs><defs><marker id="extensionEnd" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 1,1 V 13 L18,7 Z"></path></marker></defs><defs><marker id="compositionStart" class="extension" refX="0" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="compositionEnd" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="aggregationStart" class="extension" refX="0" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="aggregationEnd" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="dependencyStart" class="extension" refX="0" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 5,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="dependencyEnd" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g id="classid-RulesList-6831" class="classGroup " transform="translate(15.53515625,5.0625 )"><rect x="0" y="0" width="73.421875" height="58.09375"></rect><text y="15" x="0"><tspan class="title" x="15.8046875">RulesList</tspan></text><line x1="0" y1="21" y2="21" x2="73.421875"></line><text x="5" y="31" fill="white" class="classText"><tspan x="5">-rules</tspan></text><line x1="0" y1="37" y2="37" x2="73.421875"></line><text x="5" y="52" fill="white" class="classText"><tspan x="5">+rule(moves)</tspan></text></g><g id="classid-Game-6832" class="classGroup " transform="translate(0,118.21875 )"><rect x="0" y="0" width="236.859375" height="208.09375"></rect><text y="15" x="0"><tspan class="title" x="105.234375">Game</tspan></text><line x1="0" y1="21" y2="21" x2="236.859375"></line><text x="5" y="31" fill="white" class="classText"><tspan x="5">+Player player1</tspan><tspan x="5" dy="10">+Player player2</tspan><tspan x="5" dy="10">+String result</tspan><tspan x="5" dy="10">+Player current_player</tspan><tspan x="5" dy="10">-rules_list</tspan><tspan x="5" dy="10">-move1</tspan><tspan x="5" dy="10">-move2</tspan></text><line x1="0" y1="97" y2="97" x2="236.859375"></line><text x="5" y="112" fill="white" class="classText"><tspan x="5">+initialize(player_names, player_class, list_class)</tspan><tspan x="5" dy="10">+make_move(move)</tspan><tspan x="5" dy="10">+moves_complete()</tspan><tspan x="5" dy="10">+decide_result()</tspan><tspan x="5" dy="10">+reset()</tspan><tspan x="5" dy="10">+instance()</tspan><tspan x="5" dy="10">+create(player_names)</tspan><tspan x="5" dy="10">-set_current_player()</tspan><tspan x="5" dy="10">-create_move()</tspan><tspan x="5" dy="10">-winner_message()</tspan></text></g><g id="classid-Player-6833" class="classGroup " transform="translate(138.95703125,0 )"><rect x="0" y="0" width="91.3125" height="68.21875"></rect><text y="15" x="0"><tspan class="title" x="30.8984375">Player</tspan></text><line x1="0" y1="21.0625" y2="21.0625" x2="91.3125"></line><text x="5" y="31.0625" fill="white" class="classText"><tspan x="5">-String name</tspan></text><line x1="0" y1="37.125" y2="37.125" x2="91.3125"></line><text x="5" y="52.125" fill="white" class="classText"><tspan x="5">+initialize(name)</tspan><tspan x="5" dy="10">+name()</tspan></text></g><g id="classid-MoveInterface-6834" class="classGroup " transform="translate(436.66015625,5.03125 )"><rect x="0" y="0" width="96.359375" height="58.15625"></rect><text y="15" x="0"><tspan class="title" x="14.828125">MoveInterface</tspan></text><line x1="0" y1="21" y2="21" x2="96.359375"></line><text x="5" y="31" fill="white" class="classText"><tspan x="5">+type</tspan></text><line x1="0" y1="37.0625" y2="37.0625" x2="96.359375"></line><text x="5" y="52.0625" fill="white" class="classText"><tspan x="5">+winner_vs(move)</tspan></text></g><g id="classid-SpockMove-6835" class="classGroup " transform="translate(286.859375,207.234375 )"><rect x="0" y="0" width="61.328125" height="30.0625"></rect><text y="15" x="0"><tspan class="title" x="5">SpockMove</tspan></text><line x1="0" y1="21.0625" y2="21.0625" x2="61.328125"></line><text x="5" y="31.0625" fill="white" class="classText"></text><line x1="0" y1="26.0625" y2="26.0625" x2="61.328125"></line><text x="5" y="41.0625" fill="white" class="classText"></text></g><g id="classid-RockMove-6836" class="classGroup " transform="translate(398.1875,207.265625 )"><rect x="0" y="0" width="56.5" height="30"></rect><text y="15" x="0"><tspan class="title" x="5">RockMove</tspan></text><line x1="0" y1="21" y2="21" x2="56.5"></line><text x="5" y="31" fill="white" class="classText"></text><line x1="0" y1="26" y2="26" x2="56.5"></line><text x="5" y="41" fill="white" class="classText"></text></g><g id="classid-ScissorsMove-6837" class="classGroup " transform="translate(504.6875,207.265625 )"><rect x="0" y="0" width="70.203125" height="30"></rect><text y="15" x="0"><tspan class="title" x="5">ScissorsMove</tspan></text><line x1="0" y1="21" y2="21" x2="70.203125"></line><text x="5" y="31" fill="white" class="classText"></text><line x1="0" y1="26" y2="26" x2="70.203125"></line><text x="5" y="41" fill="white" class="classText"></text></g><g id="classid-LizardMove-6838" class="classGroup " transform="translate(624.890625,207.265625 )"><rect x="0" y="0" width="63.34375" height="30"></rect><text y="15" x="0"><tspan class="title" x="5">LizardMove</tspan></text><line x1="0" y1="21" y2="21" x2="63.34375"></line><text x="5" y="31" fill="white" class="classText"></text><line x1="0" y1="26" y2="26" x2="63.34375"></line><text x="5" y="41" fill="white" class="classText"></text></g><g id="classid-PaperMove-6839" class="classGroup " transform="translate(738.234375,207.234375 )"><rect x="0" y="0" width="61.171875" height="30.0625"></rect><text y="15" x="0"><tspan class="title" x="5">PaperMove</tspan></text><line x1="0" y1="21.0625" y2="21.0625" x2="61.171875"></line><text x="5" y="31.0625" fill="white" class="classText"></text><line x1="0" y1="26.0625" y2="26.0625" x2="61.171875"></line><text x="5" y="41.0625" fill="white" class="classText"></text></g><path d="M52.24609375,63.15625L52.24609375,68.16666666666667C52.24609375,73.17708333333333,52.24609375,83.19791666666667,54.38303022334221,92.375C56.51996669668443,101.55208333333333,60.79383964336885,109.88541666666667,62.93077611671106,114.05208333333333L65.06771259005328,118.21875" id="edge3400" class="relation" marker-start="url(#extensionStart)"></path><path d="M184.61328125,68.21875L184.61328125,72.38541666666667C184.61328125,76.55208333333333,184.61328125,84.88541666666667,182.47634477665778,93.21875C180.3394083033156,101.55208333333333,176.06553535663116,109.88541666666667,173.92859888328894,114.05208333333333L171.79166240994672,118.21875" id="edge3401" class="relation" marker-start="url(#extensionStart)"></path><path d="M436.66015625,51.13024748733453L416.8040364583333,58.14499790611211C396.9479166666667,65.15974832488969,357.2356770833333,79.18924916244485,337.3795572916667,105.2066037478891C317.5234375,131.22395833333334,317.5234375,169.22916666666666,317.5234375,188.23177083333334L317.5234375,207.234375" id="edge3402" class="relation" marker-start="url(#extensionStart)"></path><g class="classLabel"><rect class="box" x="294.65625" y="79.65625" width="57.375" height="16.0625"></rect><text class="label" x="323.33968245489734" y="91.16399271805602" fill="red" text-anchor="middle">implements</text></g><path d="M456.1095340173143,63.1875L451.16419501442857,68.19270833333333C446.2188560115428,73.19791666666667,436.3281780057714,83.20833333333333,431.3828390028857,107.22135416666667C426.4375,131.234375,426.4375,169.25,426.4375,188.2578125L426.4375,207.265625" id="edge3403" class="relation" marker-start="url(#extensionStart)"></path><g class="classLabel"><rect class="box" x="397.75" y="117.625" width="57.375" height="16.0625"></rect><text class="label" x="426.4375" y="129.13350694384516" fill="red" text-anchor="middle">implements</text></g><path d="M511.8714314036479,63.1875L516.5243699197066,68.19270833333333C521.1773084357652,73.19791666666667,530.4831854678827,83.20833333333333,535.1361239839413,107.22135416666667C539.7890625,131.234375,539.7890625,169.25,539.7890625,188.2578125L539.7890625,207.265625" id="edge3404" class="relation" marker-start="url(#extensionStart)"></path><g class="classLabel"><rect class="box" x="511.109375" y="118.234375" width="57.359375" height="16.0625"></rect><text class="label" x="539.7890625" y="129.74054059911356" fill="red" text-anchor="middle">implements</text></g><path d="M533.01953125,50.69350710004322L553.6100260416666,57.78104758336935C574.2005208333334,64.86858806669548,615.3815104166666,79.04366903334774,635.9720052083334,105.13902201667388C656.5625,131.234375,656.5625,169.25,656.5625,188.2578125L656.5625,207.265625" id="edge3405" class="relation" marker-start="url(#extensionStart)"></path><g class="classLabel"><rect class="box" x="620.015625" y="79.015625" width="57.375" height="16.0625"></rect><text class="label" x="648.7096173284644" y="90.51567635322957" fill="red" text-anchor="middle">implements</text></g><path d="M533.01953125,44.137780222217636L572.3196614583334,52.317941851848026C611.6197916666666,60.49810348147842,690.2200520833334,76.8584267407392,729.5201822916666,104.04119253703628C768.8203125,131.22395833333334,768.8203125,169.22916666666666,768.8203125,188.23177083333334L768.8203125,207.234375" id="edge3406" class="relation" marker-start="url(#extensionStart)"></path><g class="classLabel"><rect class="box" x="678.046875" y="68.78125" width="57.375" height="16.078125"></rect><text class="label" x="706.7315417082226" y="80.29522588520922" fill="red" text-anchor="middle">implements</text></g><path d="M436.66015625,44.78102380264063L400.212890625,52.853978168867194C363.765625,60.926932535093755,290.87109375,77.07284126754688,251.20965772503232,89.31246230044012C211.54822170006457,101.55208333333333,205.11988090012915,109.88541666666667,201.90571050016146,114.05208333333333L198.69154010019372,118.21875" id="edge3407" class="relation" marker-start="url(#extensionStart)"></path></svg>

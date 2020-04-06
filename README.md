@@ -1,18 +1,7 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
 Task
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -28,21 +17,6 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
 ## Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
@@ -51,36 +25,72 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
-## Basic Rules
+## Getting started
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+```
+# clone the repository to your local machine with either
 
-In code review we'll be hoping to see:
+# if you're using ssh
+git clone git@github.com:PhilipVigus/rps-challenge.git
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+# if you're using https
+git clone https://github.com/PhilipVigus/rps-challenge.git
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+# Dependencies
+# The repository requires bundle, which can be installed with
+gem install bundle
 
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+# then run bundle from the root project directory to install other dependencies
+bundle
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+## Running tests
+
+```
+# Runs the full test suite from the root project directory
+rspec
+```
+
+## Playing the game
+
+```bash
+# start the server from the project root directory
+rackup
+
+# go to the url below in your browser
+localhost:9292
+
+# play the game!!!
+```
+
+## Approach
+
+Looking at the challenge, I decided to focus on the implementation rather than visual aspect of the game. I can always come back to making it look better at a later date.
+
+Ny first task was roughing out a process model for the name registration user story. Although this changed slightly as I implemented the stories, the fundamental structure stayed the same, which I was very pleased about. Doing this early gave me a good, general idea of how I wanted to put things together, and once I got going with the challenge I felt it unnecessary to rough out any further process models.
+
+Implementing the first bonus level was tough as I had to revise many of the existing feature tests and expand the model layer of the application code considerably. 
+
+The refactoring into separate move classes took a long time, but I think was worth it, as it made implementation of the second bonus stage relatively trivial to do.
+
+Ensuring unit tests had no dependencies outside of the code they were testing was also very hard. When I refactoring the code to implement separate classes for each move, I found it very difficult to properly set up the tests for the Game class to remove any dependence on the move classes, and am still not sure I got it quite right.
+
+## Class diagram for the model layer
+
+Note that predicate methods are not showing ? at the end of their names. Also, the create and instance methods of the Game class are class rather than instance methods:
+
+![Class diagram](./class-diagram.svg)
+
+## Process models
+
+### Users registering their names before starting a game
+
+![Name registration](./name-registration.svg)
+
+### Users playing a multi-player game
+
+![Name registration](./playing-multiplayer.svg)
+
+## Future work
+
+* The visuals obviously need some(any!) work
