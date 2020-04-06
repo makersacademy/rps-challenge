@@ -75,11 +75,11 @@ class Game
   def winner_message(result)
     case result
     when nil
-      winner_message = "It's a draw"
+      "It's a draw"
     when @move1
-      winner_message = "#{player1.name} wins"
+      "#{player1.name} wins"
     else
-      winner_message = "#{player2.name} wins"
+      "#{player2.name} wins"
     end
   end
 end

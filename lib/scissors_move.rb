@@ -5,7 +5,7 @@ class ScissorsMove
   end
 
   def winner_vs(move)
-    case(move.type)
+    case move.type
     when :lizard
       self
     when :paper

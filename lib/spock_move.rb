@@ -5,7 +5,7 @@ class SpockMove
   end
 
   def winner_vs(move)
-    case(move.type)
+    case move.type
     when :lizard
       move
     when :paper

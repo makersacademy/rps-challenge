@@ -6,7 +6,7 @@ class LizardMove
   end
 
   def winner_vs(move)
-    case(move.type)
+    case move.type
     when :lizard
       nil
     when :paper
