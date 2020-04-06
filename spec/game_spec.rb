@@ -4,7 +4,7 @@ describe Game do
   let(:player1) { double(:player, name: 'Phil') }
   let(:player2) { double(:player, name: 'Su') }
   let(:player_class) { double(:player_class) }
-  let(:list) { double(:list) }
+  let(:list) { double(:list, :rule => "") }
   let(:list_class) { double(:list_class) }
 
   before do
@@ -28,12 +28,13 @@ describe Game do
 
   describe '#moves_complete?' do
     it 'tells you if the moves are complete' do
-      allow(list).to receive(:full?).and_return true
+      allow_any_instance_of(Game).to receive(:create_move).and_return(:move)
+      subject.make_move('Rock')
+      subject.make_move('Paper')
       expect(subject.moves_complete?).to eq true
     end
 
     it 'tells you if the moves are not complete' do
-      allow(list).to receive(:full?).and_return false
       expect(subject.moves_complete?).to eq false
     end
   end
@@ -50,17 +51,44 @@ describe Game do
     end
   end
 
-  describe '#result' do
+  describe '#reset' do
     it 'resets the result when you want to replay' do
-      allow(list).to receive(:reset)
-      allow(list).to receive(:resolve_moves).and_return 'result'
+      expect { subject.reset }.to change { subject.result }.from(nil).to('')
+    end
+  end
+
+  describe '#result' do
+    let(:move1) { double(:move, :type => 'Rock') }
+    let(:move2) { double(:move, :type => 'Rock') }
+
+    it 'sets the result when it is a draw' do
+      allow(move1).to receive(:winner_vs).and_return(nil)
+      # stub a private method
+      allow_any_instance_of(Game).to receive(:create_move).and_return(move1)
+      subject.make_move(move1)
+      subject.make_move(move1)
       subject.decide_result
-      expect { subject.reset }.to change { subject.result }.from('result').to('')
+      expect(subject.result).to eq "It's a draw - "
     end
 
-    it 'sets the result when you resolve the game moves' do
-      allow(list).to receive(:resolve_moves).and_return 'result'
-      expect { subject.decide_result }.to change { subject.result }.from(nil).to('result')
+    it 'sets the result when player one wins' do
+      allow(move1).to receive(:winner_vs).and_return(move1)
+      # stub a private method
+      allow_any_instance_of(Game).to receive(:create_move).and_return(move1, move2)
+      subject.make_move(move1)
+      subject.make_move(move2)
+      subject.decide_result
+      expect(subject.result).to eq "Phil wins - "
+    end
+
+    it 'sets the result when player one wins' do
+      allow(move1).to receive(:winner_vs).and_return(move2)
+      # stub a private method
+      allow_any_instance_of(Game).to receive(:create_move).and_return(move1, move2)
+      subject.make_move(move1)
+      subject.make_move(move2)
+      subject.decide_result
+      expect(subject.result).to eq "Su wins - "
     end
   end
 end

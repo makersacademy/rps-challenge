@@ -1,4 +1,5 @@
 class ScissorsMove
+  attr_reader :type
   def initialize
     @type = :scissors
   end

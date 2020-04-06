@@ -1,4 +1,6 @@
 class RockMove
+  attr_reader :type
+
   def initialize
     @type = :rock
   end
