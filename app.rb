@@ -19,6 +19,9 @@ get '/play' do
   erb :play
 end 
 
+# if this is a post it should not have erb :round_1
+# where should it go instead? 
+# or should this be post '/play'
 post '/round_1' do 
   $player_1.play(params[:attack])
   @attack = $player_1.attack
@@ -30,9 +33,8 @@ post '/round_1' do
     @second_sentence = message_array[1]
   end 
   
-
-  
   erb :round_1
+  
 
 end 
 

@@ -1,5 +1,11 @@
 # RPS Challenge
 
+## Domain model 
+Please see domain model - (https://miro.com/app/board/o9J_kux70qo=/)
+
+1. refractor model - player.rb - compare method very clunky
+2. Player plays three games with the computer the winner is the person who wins the most games 
+
 Instructions
 -------
 
