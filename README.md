@@ -2,6 +2,8 @@
 
 This programme is based on the Makers Academy weekend challenge 3. [Click here for the original README.md](ORIGINAL_README.md).
 
+Play now, [click here](https://rockpaperscissors-spocklizard.herokuapp.com/)!
+
 Task
 ----
 
