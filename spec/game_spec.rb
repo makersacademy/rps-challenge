@@ -7,7 +7,7 @@ describe Game do
   subject(:second_game) { described_class.new(player_one, player_two) }
   let(:player_one) { Player.new("Tango") }
   let(:player_two) { Player.new("Cash") }
-  let(:computer) {Player.new("") }
+  let(:computer) { Player.new("") }
   subject(:third_game) { described_class.new(player_one, computer) }
 
   describe "#new" do

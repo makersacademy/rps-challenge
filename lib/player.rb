@@ -5,9 +5,8 @@ class Player
     @name = name.empty? ? "Computer" : name
   end
 
-  def choice(option = computer_option)
-    @option = option
-    # @option = @name == "Computer" ? computer_option : option
+  def choice(option)
+    @option = @name == "Computer" ? computer_option : option
   end
 
   private
