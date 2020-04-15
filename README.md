@@ -1,46 +1,38 @@
-# RPS Challenge
+# Rock Paper Scissors Game
 
-Task
-----
+A game of rock paper scissors to play against the computer. The app is written with the Model, View, Controller design pattern.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+## Technologies used
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+- Ruby
+- RSpec and Capybara for testing
+- Sinatra for serving the app
+
+
+## Quickstart
+
 ```
+# Ensure you have rbenv and ruby installed globally 
 
-Hints on functionality
+# Clone the repository
+git clone https://github.com/cjmontgom/battle-game
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+# Go inside the directory
+cd battle-game
 
-## Bonus level 1: Multiplayer
+# Check your global ruby version
+rbenv global
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+# Change the Ruby version in battle/.ruby-version, and in your Gemfile, to your global version
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+# Install dependencies
+gem install bundler
+bundle install
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+# Start the development server on port 3000
+bundle exec rackup -p 3000
 
-## Basic Rules
+# Go to http://localhost:3000/ in your browser to play
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+```
