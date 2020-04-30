@@ -15,14 +15,18 @@ else
 fi
 
 clear
-echo -e "-- Running rspec --\n"
-rspec $SPEC_FILE
-echo -e "-- Running rubocop --\n"
+CMD=rspec $SPEC_FILE
+echo -e "$HOSTNAME\$ $CMD\n"
+$CMD
+
 if [[ "$1" ]] ; then
   LIB_FILE="./lib/$1.rb"
   if [[ ! -f $LIB_FILE ]] ; then
     $LIB_FILE=""
   fi
 fi
-rubocop $SPEC_FILE $LIB_FILE
-echo -e "\n-- Finished --\n"
+
+
+CMD=rubocop $SPEC_FILE $LIB_FILE
+echo -e "$HOSTNAME\$ $CMD\n"
+$CMD

@@ -1,0 +1,9 @@
+clear
+
+CMD="git status"
+echo -e "$HOSTNAME\$ $CMD\n"
+$CMD
+
+CMD="git log -5 --oneline --color=always"
+echo -e "\n$HOSTNAME\$ $CMD\n"
+$CMD
