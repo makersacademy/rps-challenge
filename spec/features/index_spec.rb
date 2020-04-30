@@ -6,7 +6,7 @@ feature '/' do
   end
   
   scenario 'accepts names' do 
-    play
+    sign_in_and_play
   end
   
 end
