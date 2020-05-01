@@ -1,16 +1,20 @@
+require 'sinatra/base'
+require_relative 'lib/player'
+
 # Global for testing, refactor to use group :test from Gemfile?
 # $manual_test = true
-NUMBER_OF_PLAYERS = 1
-MANUAL_TEST_PLAYER_0_NAME = "PLAYER_0" if $manual_test
-
-require 'sinatra/base'
+# NUMBER_OF_PLAYERS = 1
+# MANUAL_TEST_PLAYER_0_NAME = "PLAYER_0" if $manual_test
+# MANUAL_TEST_PLAYER_0_NAME = "" if $manual_test
 
 class RockPaperScissorsWebGame < Sinatra::Base
-  set    :session_secret, "fix for shotgun"
   enable :sessions
+  set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
 
   get '/' do
     puts "in /" if $manual_test
+
+    session[:players] = Array.new
 
     @input_form_player_0 =  "<label for='player_0'>\n"
     @input_form_player_0 += "    First player name:\n"
@@ -24,12 +28,18 @@ class RockPaperScissorsWebGame < Sinatra::Base
   
   post '/names' do
     puts "in /names" if $manual_test
-    session[:player_0_name] = params[:player_0_name]
+
+    # session[:player_0_name] = "Test"
+    session[:players].push(Player.new(params[:player_0_name]))
+    # puts session[:players][0].name
+
+    # session[:player_0_name] = params[:player_0_name]
     redirect to('/play')
   end
   
   get '/play' do
     puts "in /play" if $manual_test
+    # session[:players][0].name
     erb :play
   end
 

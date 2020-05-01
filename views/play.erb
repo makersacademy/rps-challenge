@@ -1,4 +1,4 @@
-Hi <%= session[:player_0_name] %>, ready to play?
+Hi <%= session[:players][0].name %>, ready to play?
 <br /><br />
 
 <form action="/move" method="post">
