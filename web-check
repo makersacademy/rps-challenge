@@ -1,0 +1,13 @@
+clear
+
+# CMD="open -na \"Google Chrome\" --args --incognito \"http://localhost:9292\""
+# echo -e "$HOSTNAME\$ $CMD\n"
+# $CMD
+open -na "Google Chrome" --args --incognito "http://localhost:9292"
+
+CMD="rackup"
+echo -e "$HOSTNAME\$ $CMD\n"
+$CMD
+
+
+
