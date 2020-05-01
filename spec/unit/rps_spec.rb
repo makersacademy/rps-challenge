@@ -10,7 +10,7 @@ describe Game do
 
   describe '#computer_turn' do
     it 'chooses rock, paper or scisssors for the computer' do
-      allow(subject.computer_turn).to receive(:sample).and_return("Rock")
+      allow(subject.rps).to receive(:sample).and_return("Rock")
       expect(subject.computer_turn).to eq "Rock"
     end
   end
