@@ -50,9 +50,14 @@
       "/Users/Shared/Fixation/Dropbox/Makers Academy/Projects/rps-challenge/lib/player.rb": {
         "lines": [
           1,
-          1,
           null,
           1,
+          5,
+          null,
+          null,
+          1,
+          5,
+          null,
           4,
           null,
           null,
@@ -110,16 +115,24 @@
           null,
           1,
           2,
+          2,
+          null,
+          1,
           null,
           1,
           1,
+          null,
+          null,
           1,
+          1,
+          null,
+          null,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1588332487
+    "timestamp": 1588336197
   }
 }
