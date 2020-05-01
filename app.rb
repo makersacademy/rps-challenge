@@ -5,7 +5,7 @@ MANUAL_TEST_PLAYER_0_NAME = "PLAYER_0" if $manual_test
 
 require 'sinatra/base'
 
-class RockPaperScissors < Sinatra::Base
+class RockPaperScissorsWebGame < Sinatra::Base
   set    :session_secret, "fix for shotgun"
   enable :sessions
 
