@@ -1,10 +1,10 @@
-Hi <%= session[:player_1_name] %>, ready to play?
+Hi <%= session[:player_0_name] %>, ready to play?
 <br /><br />
 
 <form action="/move" method="post">
   <label for="move">
     Enter your move:
-    <input type="text" name="player_1_move" value="Rock">
+    <input type="text" name="player_0_move" value="Rock">
   </label>
   <br /><br />
   <input type="submit" value="Submit">

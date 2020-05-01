@@ -1,7 +1,7 @@
-TEST_PLAYER_1_NAME = "Siegfried"
+RSPEC_TEST_PLAYER_0_NAME = "Siegfried"
 
 def sign_in_and_play
   visit "/"
-  fill_in :player_1_name, with: TEST_PLAYER_1_NAME
+  fill_in :player_0_name, with: RSPEC_TEST_PLAYER_0_NAME
   click_button 'Play'
 end 
