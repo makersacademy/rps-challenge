@@ -27,11 +27,13 @@ class RockPaperScissorsWebGame < Sinatra::Base
     puts "in /names" if $verbose
 
     session[:players].push(Player.new(params[:player_0_name]))
+
     redirect to('/play')
   end
   
   get '/play' do
     puts "in /play" if $verbose
+
     erb :play
   end
 
