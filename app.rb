@@ -29,17 +29,12 @@ class RockPaperScissorsWebGame < Sinatra::Base
   post '/names' do
     puts "in /names" if $manual_test
 
-    # session[:player_0_name] = "Test"
     session[:players].push(Player.new(params[:player_0_name]))
-    # puts session[:players][0].name
-
-    # session[:player_0_name] = params[:player_0_name]
     redirect to('/play')
   end
   
   get '/play' do
     puts "in /play" if $manual_test
-    # session[:players][0].name
     erb :play
   end
 
