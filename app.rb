@@ -10,7 +10,8 @@ class RockPaperScissorsWebGame < Sinatra::Base
   set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
 
   get '/' do
-    puts "in /" if $verbose
+    puts "\nin /" if $verbose
+    p session if $verbose
 
     session[:players] = Array.new
 
@@ -24,7 +25,8 @@ class RockPaperScissorsWebGame < Sinatra::Base
   end
   
   post '/names' do
-    puts "in /names" if $verbose
+    puts "\nin /names" if $verbose
+    p session if $verbose
 
     session[:players].push(Player.new(params[:player_0_name]))
 
@@ -32,7 +34,8 @@ class RockPaperScissorsWebGame < Sinatra::Base
   end
   
   get '/play' do
-    puts "in /play" if $verbose
+    puts "\nin /play" if $verbose
+    p session if $verbose
 
     erb :play
   end
