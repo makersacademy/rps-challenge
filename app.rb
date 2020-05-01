@@ -12,9 +12,12 @@ class RockPaperScissors < Sinatra::Base
   get '/' do
     puts "in /" if $manual_test
 
-    @debug_form_value = "value='#{MANUAL_TEST_PLAYER_0_NAME}'" if $manual_test
-
-    p @debug_form_value if $manual_test
+    @input_form_player_0 =  "<label for='player_0'>\n"
+    @input_form_player_0 += "    First player name:\n"
+    @input_form_player_0 += "    <input type='text' name='player_0_name'"
+    @input_form_player_0 += " value='#{MANUAL_TEST_PLAYER_0_NAME}'" if $manual_test
+    @input_form_player_0 += ">\n"
+    @input_form_player_0 += "  </label>"
 
     erb :index
   end

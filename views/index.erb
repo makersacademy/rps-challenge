@@ -1,10 +1,7 @@
 Hi, please enter your name to play Rock Paper Scissors
 <br /><br />
 <form action='/names' method='post'>
-  <label for='player_1'>
-    Player 1 name:
-    <input type='text' name='player_0_name' <%=@debug_form_value%>>
-  </label>
+  <%=@input_form_player_0%>
   <br /><br />
   <input type='submit' value='Play'>
 </form>
