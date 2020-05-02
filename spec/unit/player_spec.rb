@@ -9,4 +9,10 @@ describe Player do
       expect(subject.name).to eq('Dec')
     end
   end
+
+  describe '#choose' do
+    it 'changes choice to be rock' do
+      expect { subject.choose('rock') }.to change { subject.choice }.to eq('rock')
+    end
+  end
 end
