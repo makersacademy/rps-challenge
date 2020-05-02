@@ -20,11 +20,18 @@ feature '@index' do
     expect(page).to have_button('Scissors')
   end
 
-  scenario 'should able your selection' do
+  scenario 'should able to see selection Rock' do
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content 'Dave picked Rock'
   end
+
+  scenario 'should able to see selection Papper' do
+    sign_in_and_play
+    click_button 'Papper'
+    expect(page).to have_content "Dave picked Papper"
+  end
+
 
 end 
 
