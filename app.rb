@@ -17,6 +17,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player = session[:player]
+    @player2 = session[:player2]
     erb(:play)
   end
 
