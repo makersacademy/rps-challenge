@@ -11,4 +11,14 @@ feature 'Homepage' do
     visit("/")
     expect(page).to have_content("Ready to play Rock, Paper, Scissors?!")
   end
+
+  scenario "Page asks user to enter name to begin" do
+    visit("/")
+    expect(page).to have_field("name")
+  end
+
+  scenario "Page has a begin button" do 
+    visit("/")
+    expect(page).to have_button("begin")
+  end 
 end 
