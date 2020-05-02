@@ -53,6 +53,8 @@ class RockPaperScissorsWebGame < Sinatra::Base
     puts "\nin /result" if $verbose
     p session if $verbose
 
+    @computer_move = ['🗿', '📄', '✂'].sample
+
     erb :result
   end
   # start the server if ruby file executed directly

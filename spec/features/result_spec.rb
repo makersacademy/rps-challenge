@@ -18,9 +18,24 @@ feature 'result' do
     expect(page).to have_content 'You chose: ✂'
   end
 
-  scenario 'shows computer move' do
+  scenario 'shows computer move 🗿' do
     sign_in_and_play
-    click_button '✂'
+    srand(67_803)
+    click_button '🗿'
+    expect(page).to have_content 'Computer chose: 🗿'
+  end
+
+  scenario 'shows computer move 📄' do
+    sign_in_and_play
+    srand(67_804)
+    click_button '🗿'
+    expect(page).to have_content 'Computer chose: 📄'
+  end
+
+  scenario 'shows computer move ✂' do
+    sign_in_and_play
+    srand(67_805)
+    click_button '🗿'
     expect(page).to have_content 'Computer chose: ✂'
   end
 
