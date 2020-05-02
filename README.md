@@ -1,86 +1,42 @@
 # RPS Challenge
 
-Instructions
--------
+For this challenge, I had 2 classes - Game and Person.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+class Game
+	
+	This had 2 private methods
 
-Task
-----
+		- .compare
+			
+			This was a method to compare the two inputs (either rock, paper or scissors), and return either "Draw" in case of a draw, true if input1 was the winner or false if input 2 was.
+		- .random
 
-Knowing how to build web applications is getting us almost there as web developers!
+			This was a method simply to return either rock, paper or scissors if the computer was acting as a player.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+	There was also another method
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+		.play
 
-```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+			This would send the either one player's or both players' choice to the compare private method - it would use .random to choose if the computer was playing. It would then return the winner.
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+class Person
 
-Hints on functionality
+	This just stored the name and move of each player.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+--------------------------------
 
+I had three pages (erb files) - index, play and results. index and play had forms, and the data was saved as session variables, as were the Game and Person objects.
 
-As usual please start by
+------------------------
 
-* Forking this repo
-* TEST driving development of your app
+My tests covered as many situations as I could think. One player, two player, win, draw etc. I tested both the classes using rspec, and using mocks where applicable. I also feature tested using capybara.
 
+As the website used a .sample method to randomly choose a weapon, a couple of the feature tests run 100 times to make sure all tests pass. This is not ideal, but it seemed not to take any time when running the tests and it is enough to cover all possible outcomes almost all the time. However, I am sure there is a better way.
 
-## Bonus level 1: Multiplayer
+---------------------
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+Overall I was pretty happy, although not completely. I could have done it tidier if it weren't for 2 things. Firstly I added multiplayer quite far into building the site, and I also forgot about the possiblity of a draw so had to force it a little. That being said it wouldn't have been much different I dont' think.
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+I added a small amount of CSS. Given more time I would have done more, but this wasn't really the point of the exercise so I kept it simple.
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+--------------------
