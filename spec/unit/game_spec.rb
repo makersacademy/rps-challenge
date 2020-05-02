@@ -53,4 +53,8 @@ describe Game do
       expect(subject.result).to eq([0, nil])
     end
   end
+
+  describe '#switch_turns' do
+    
+  end
 end
