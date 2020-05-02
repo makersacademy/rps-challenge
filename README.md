@@ -1,29 +1,29 @@
-<div style="text-align: justify"> your-text-here 
-
 # RPS Challenge
+-----------------
 
 For this challenge, I had 2 classes - Game and Person.
 
-## class Game
+# class Game
 
-	This had 2 private methods
+This had 2 private methods
 
-		- .compare
-			
-			This was a method to compare the two inputs (either rock, paper or scissors), and return either "Draw" in case of a draw, true if input1 was the winner or false if input 2 was.
-		- .random
+- .compare
 
-			This was a method simply to return either rock, paper or scissors if the computer was acting as a player.
+This was a method to compare the two inputs (either rock, paper or scissors), and return either "Draw" in case of a draw, true if input1 was the winner or false if input 2 was.
+	
+- .random
 
-	There was also another method
+This was a method simply to return either rock, paper or scissors if the computer was acting as a player.
 
-		- .play
+There was also another method
 
-			This would send the either one player's or both players' choice to the compare private method - it would use .random to choose if the computer was playing. It would then return the winner.
+- .play
 
-## class Person
+This would send the either one player's or both players' choice to the compare private method - it would use .random to choose if the computer was playing. It would then return the winner.
 
-	This just stored the name and move of each player.
+# class Person
+
+This just stored the name and move of each player.
 
 --------------------------------
 
@@ -42,5 +42,3 @@ Overall I was pretty happy, although not completely. I could have done it tidier
 I added a small amount of CSS. Given more time I would have done more, but this wasn't really the point of the exercise so I kept it simple.
 
 --------------------
-
-</div>
