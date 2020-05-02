@@ -1,5 +1,5 @@
 class AIPlayer
-  attr_reader :name
+  attr_reader :name, :choice
 
   CHOICES = ['rock', 'paper', 'scissors']
 
@@ -10,5 +10,9 @@ class AIPlayer
 
   def choose_random
     CHOICES[(@random.rand(0.0...3.0).to_i)]
+  end
+
+  def choose
+    @choice = choose_random
   end
 end

@@ -23,12 +23,15 @@ class RPS < Sinatra::Base
 
   post '/choose' do
     @player = session[:player]
+    @player2 = session[:player2]
     @player.choose(params[:choice])
+    @player2.choose
     redirect('/result')
   end
 
   get '/result' do
     @player = session[:player]
+    @player2 = session[:player2]
     erb(:result)
   end
 end

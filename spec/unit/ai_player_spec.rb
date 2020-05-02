@@ -12,4 +12,8 @@ describe AIPlayer do
   it 'makes a random choice' do
     expect(subject.choose_random).to eq('scissors')
   end
+
+  it 'assigns a random choice when choosing' do
+    expect{ subject.choose }.to change { subject.choice }.to eq('scissors')
+  end
 end
