@@ -10,4 +10,8 @@ class Game < Sinatra::Base
   post '/game' do
     erb :play
   end
+
+  get '/result' do
+    erb :result
+  end
 end
