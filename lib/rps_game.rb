@@ -14,6 +14,10 @@ class RPSGame
     @game = RPSGame.new(player1, player2)
   end
 
+  def self.instance
+    @game
+  end
+
   private
 
   LOOKUP_TABLE = {

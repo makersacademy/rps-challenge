@@ -23,4 +23,12 @@ describe RPSGame do
       RPSGame.create(player1, player2)
     end
   end
+
+  describe '.instance' do
+    it 'returns an instance of RPSGame' do
+      game = RPSGame.create(player1, player2)
+
+      expect(RPSGame.instance).to eq game
+    end
+  end
 end
