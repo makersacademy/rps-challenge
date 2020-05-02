@@ -1,6 +1,7 @@
 require 'sinatra'
 require './lib/player'
 require './lib/ai_player'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -31,5 +32,11 @@ class RPS < Sinatra::Base
     @game = session[:game]
     @result = @game.result
     erb(:result)
+  end
+
+  post '/replay' do
+    @game = session[:game]
+    session[:game] = Game.new(Player.new(@game.players[0].name), AIPlayer.new)
+    redirect('/play')
   end
 end

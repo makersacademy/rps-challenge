@@ -5,3 +5,7 @@
 <% else %>
   <h1><%= @result[1].name %> wins.</h1>
 <% end %>
+
+<form class="" action="/replay" method="post">
+  <input type="submit" name="play again" value="Play again!">
+</form>
