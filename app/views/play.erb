@@ -16,4 +16,7 @@
   </form>
 </div>
 
-<h3><%= @name %> picked <%= @rps %>
+<% if @rps != nil %>
+  <h3><%= @name %> picked <%= @rps %></br>
+  <h3>Computer picked <%= @computer.random_pick %></br>
+<% end%>

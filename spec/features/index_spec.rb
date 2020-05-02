@@ -32,6 +32,12 @@ feature '@index' do
     expect(page).to have_content "Dave picked Papper"
   end
 
+  scenario 'should be able to see opponents pick' do
+    sign_in_and_play
+    click_button 'Papper'
+    expect(page).to have_content "Computer picked Rock"
+  end
+
 
 end 
 

@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative '../lib/computer'
 
 class MyRockApp < Sinatra::Base
   enable :sessions
@@ -20,6 +21,7 @@ class MyRockApp < Sinatra::Base
   get '/play' do
     @name = session[:name]
     @rps = session[:rps]
+    @computer = Computer.new
     erb :play
   end
 
