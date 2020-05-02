@@ -1,4 +1,5 @@
 require 'sinatra'
+require './lib/player'
 
 class RPS < Sinatra::Base
 
@@ -10,6 +11,7 @@ class RPS < Sinatra::Base
 
   post '/name' do
     session[:player] = Player.new(params[:name])
+    session[:player2] = AIPlayer.new
     redirect('/play')
   end
 

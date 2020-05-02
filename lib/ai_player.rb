@@ -1,9 +1,11 @@
 class AIPlayer
+  attr_reader :name
 
   CHOICES = ['rock', 'paper', 'scissors']
 
   def initialize(random = Random)
     @random = random
+    @name = '愛'
   end
 
   def choose_random
