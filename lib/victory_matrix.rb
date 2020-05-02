@@ -1,7 +1,7 @@
 class VictoryMatrix
   VICTORY_MATRIX = [[2, 1, 0],[0, 2, 1],[1, 0, 2]]
 
-  CHOICE_MATRIX = ['rock', 'paper', 'scissors']
+  CHOICE_MATRIX = ['rock', 'paper', 'scissors', 'spock', 'lizard']
 
   def result(x, y)
     VICTORY_MATRIX[x][y]
