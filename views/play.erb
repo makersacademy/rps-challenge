@@ -1,10 +1,23 @@
-<div class="container" style="text-align: center">
+<style>
+  .container {
+    text-align: center;
+  }
+  ul {
+    list-style-type: none;
+  }
+  li {
+    display: inline;
+  }
+</style>
+<div class="container">
   <h2>
     Choose your weapon <%= @name %>:
   </h2
-  <div class="weapon" style="text-align: justify">
-    <h3>Rock</h3>
-    <h3>Paper</h3>
-    <h3>Scissors</h3>
+  <div class="weapon-list">
+    <ul>
+      <li>Rock</li>
+      <li>Paper</li>
+      <li>Scissors</li>
+    </ul>
   </div>
 </div>
