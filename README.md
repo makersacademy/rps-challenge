@@ -37,7 +37,7 @@ As the website used a .sample method to randomly choose a weapon, a couple of th
 
 ---------------------
 
-Overall I was pretty happy, although not completely. I could have done it tidier if it weren't for 2 things. Firstly I added multiplayer quite far into building the site, and I also forgot about the possiblity of a draw so had to force it a little. That being said it wouldn't have been much different I dont' think.
+Overall I was pretty happy, although not completely. I could have done it tidier if it weren't for 2 things. Firstly I added multiplayer quite far into building the site, and I also forgot about the possiblity of a draw so had to force it a little. That being said, I don't think I would have done it very differently.
 
 I added a small amount of CSS. Given more time I would have done more, but this wasn't really the point of the exercise so I kept it simple.
 
