@@ -1,11 +1,38 @@
-<h1>Choose an option below:</h1>
+<center><h1>Welcome! <%= "#{@player}" %> Choose an option below:</h1>
 
 <form action="/result" method="get">
-<input type="submit" value="ROCK">
+<input type="submit" name="result" value="ROCK">
 </form>
 <form action="/result" method="get">
-<input type="submit" value="PAPER">
+<input type="submit" name="result" value="PAPER">
 </form>
 <form action="/result" method="get">
-<input type="submit" value="SCISSORS">
+<input type="submit" name="result" value="SCISSORS">
 </form>
+</center>
+
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Averia Gruesa Libre' rel='stylesheet'>
+<style>
+body {
+    padding: 50px;
+    font-family: 'Averia Gruesa Libre';
+    font-size: 30px;
+    color: white;
+    background-color: powderblue;
+}
+input[type=submit] {
+  color: white;
+  box-sizing: border-box; width: 15%;
+  background: #FFB6C1;
+  border: 5px solid #39CCCC;
+  font-family: 'Averia Gruesa Libre';
+  font-size: 30px;
+}
+input[type=submit]:hover {
+  color: black;
+}
+
+</style>
+</head>

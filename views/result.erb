@@ -1,1 +1,39 @@
-<h1>YOU WIN!</h1>
+
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Averia Gruesa Libre' rel='stylesheet'>
+<style>
+body {
+    padding: 50px;
+    font-family: 'Averia Gruesa Libre';
+    font-size: 30px;
+    color: white;
+    background-color: powderblue;
+}
+
+</style>
+</head>
+
+<body>
+<center> <% @x = ["ROCK", "PAPER", "SCISSORS"] %>
+<h1><%= "Your Selection: #{@result}" %></h1>
+<h1>Computer's Selection: <%= @y = @x.sample %></h1>
+<% if @y == "ROCK" && @result == "SCISSORS" %>
+<b><h1>THE COMPUTER WINS!<em><b></h1><b>
+<% elsif @y == "SCISSORS" && @result == "ROCK" %>
+<b><h1>YOU WIN!</h1><b>
+<% elsif @y == "PAPER" && @result == "ROCK" %>
+<b><h1>THE COMPUTER WINS!</h1><b>
+<% elsif @y == "ROCK" && @result == "PAPER" %>
+<b><h1>YOU WIN!</h1><b>
+<% elsif @y == "SCISSORS" && @result == "PAPER" %>
+<b><h1>THE COMPUTER WINS!</h1><b>
+<% elsif @y== "PAPER" && @result == "SCISSORS" %>
+<b><h1>YOU WIN!</h1><b>
+<% else %>
+<b><h1>ITS A TIE!</h1><b>
+<% end %>
+</center>
+
+</body>
+</html>

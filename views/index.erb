@@ -3,7 +3,48 @@
   <form action="/game" method="post">
     <label for="player">
         Name:
-        <input type="text" name="player">
-      </label>
+        <input type="text" name="player" style="text-align:center;">
+      </label><br><br>
   <input type="submit" value="Play">
   </form>
+
+  <html>
+  <head>
+  <link href='https://fonts.googleapis.com/css?family=Averia Gruesa Libre' rel='stylesheet'>
+  <style>
+  body {
+      padding: 50px;
+      font-family: 'Averia Gruesa Libre';
+      font-size: 30px;
+      color: white;
+      background: rgb(238,174,202);
+      background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+  input[type=submit] {
+    color: white;
+    box-sizing: border-box; width: 15%;
+    background: ##FA8072;
+    border: 4px groove white;
+    font-family: 'Averia Gruesa Libre';
+    font-size: 30px;
+  }
+
+ input[type=submit]:hover {
+   color: black;
+ }
+
+  label[for=player] {
+    color: white;
+    font-size: 50px;
+  }
+  input[type=text] {
+    color: white;
+    box-sizing: border-box; width: 15%;
+    background: ##FA8072;
+    border: 5px dotted white;
+    font-family: 'Averia Gruesa Libre';
+    font-size: 30px;
+  }
+
+  </style>
+  </head>
