@@ -1,8 +1,8 @@
 require 'sinatra/base'
 
-class RPS < Sinatra::base
+class RPS < Sinatra::Base
   get '/' do
-    
+    'Welcome to RPS!'
   end
 
   run! if app_file == $0
