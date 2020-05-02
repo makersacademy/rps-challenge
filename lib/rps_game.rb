@@ -10,7 +10,15 @@ class RPSGame
     LOOKUP_TABLE[@player1.weapon][@player2.weapon]
   end
 
+  def self.create(player1, player2)
+    @game = RPSGame.new(player1, player2)
+  end
+
   private
 
-  LOOKUP_TABLE = {rock: {rock: 'draw', paper: 'lose', scissors: 'win'}}
+  LOOKUP_TABLE = {
+    rock: {rock: 'draw', paper: 'lose', scissors: 'win'},
+    paper: {rock: 'win', paper: 'draw', scissors: 'lose'},
+    scissors: {rock: 'lose', paper: 'win', scissors: 'draw'}
+  }
 end

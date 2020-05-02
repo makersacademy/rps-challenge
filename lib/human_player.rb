@@ -1,6 +1,7 @@
 class HumanPlayer
 
-  attr_accessor :weapon, :name
+  attr_accessor :weapon
+  attr_reader :name
 
   def initialize(name)
     @name = name

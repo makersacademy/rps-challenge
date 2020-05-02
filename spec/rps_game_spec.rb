@@ -15,4 +15,12 @@ describe RPSGame do
       game.result
     end
   end
+
+  describe '.create' do
+    it 'saves an instance of RPSGame in a class instance variable' do
+      expect(described_class).to receive(:new).with(player1, player2)
+
+      RPSGame.create(player1, player2)
+    end
+  end
 end
