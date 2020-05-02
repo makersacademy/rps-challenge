@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/mystyle.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap" />
+    <link rel="shortcut icon" href="/hands.png" />
+    <meta charset="utf-8">
+    <title>RPS!</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1> Enter your name to start a game </h1>
+      <div>
+        <form action="/name" method="post" id="name">
+          <input type="text" name="player_name" placeholder="Name: ">
+        </form>
+      </div>
+      <div>
+        <button class="button button1" type="submit" form="name">LET'S ROCK!</button>
+      </div>
+      <br>
+    </div>
+    <br>
+    <div class="footer">
+      <img src="/rock.png" alt="Rock">
+      <img src="/paper.png" alt="Paper">
+      <img src="/scissors.png" alt="Scissors">
+    </div>
+  </body>
+</html>

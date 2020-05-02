@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/mystyle.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap" />
+    <link rel="shortcut icon" href="/hands.png" />
+    <meta charset="utf-8">
+    <title>RPS!</title>
+  </head>
+  <body>
+    <div class="main">
+      <div>
+        <% if @turn.player_name != '' %>
+          <h1> <%= @turn.player_name.capitalize %>, welcome to the <h1>
+        <% else %>
+          <h1> Stranger, welcome to the <h1>
+        <% end %>
+        <h2>ROCK, PAPER, SCISSORS!</h2>
+        <p>Choose your weapon:</p>
+        <form action="/play" method="post" id="choice">
+          <button class="button button2" name = "player_choice" value="Rock" type="submit" form="choice">Rock!</button>
+          <button class="button button3" name = "player_choice" value="Paper" type="submit" form="choice">Paper!</button>
+          <button class="button button4" name = "player_choice" value="Scissors" type="submit" form="choice">Scissors!</button>
+        </form>
+        <br>
+      </div>
+
+      <% if @turn.player_choice.is_a?(Symbol) && @turn.computer_choice.is_a?(Symbol) %>
+        <div id="player">
+          You chose <%= @turn.player_choice.to_s.capitalize %>!
+          <br>
+          <br>
+        </div>
+        <div id="computer">
+          Computer chose <%= @turn.computer_choice.to_s.capitalize %>!
+          <br>
+          <br>
+        </div>
+        <div id="result">
+          <% if @turn.win == true %>
+            You win! <img src="/win.png" alt="Win" />
+            <br>
+            <br>
+          <% end %>
+
+          <% if @turn.lose == true %>
+            You lose! <img src="/lose.png" alt="Lose" />
+            <br>
+            <br>
+          <% end %>
+
+          <% if @turn.draw == true %>
+            It's a draw! <img src="/draw.png" alt="Draw" />
+            <br>
+            <br>
+          <% end %>
+        </div>
+      <% end %>
+      </div>
+    <br>
+    <div class="footer">
+      <img src="/rock.png" alt="Rock">
+      <img src="/paper.png" alt="Paper">
+      <img src="/scissors.png" alt="Scissors">
+    </div>
+  </body>
+</html>

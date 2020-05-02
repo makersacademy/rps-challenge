@@ -1,0 +1,117 @@
+* {
+    background-color: white;
+    font-family: lato; color: white; font-size: 16px;
+    text-align: center;
+}
+
+.main {
+  margin: 0 auto;
+  border: 2px solid silver;
+  width: 600px;
+}
+
+img {
+  margin: 0 auto;
+  width: 25px;
+  vertical-align: bottom;
+}
+
+#result {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+input::placeholder {
+  font-size: 12px;
+  color: white;
+  text-align: center;
+}
+
+input[type=text] {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  width: 160px;
+  /* padding: 12px 20px; */
+  margin: 5px 0;
+  border: 2px solid grey;
+  /* box-sizing: border-box; */
+}
+
+input[type=text]:focus {
+  font-size: 14px;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+h1 {
+font-family: lato; color: white; font-size: 24px;
+}
+
+h2 {
+font-family: lato; color: white; font-size: 20px;
+
+}
+
+p, div {
+
+font-family: lato; color: white; font-size: 16px;
+
+}
+.button {
+  border: none;
+  color: black;
+  padding: 5px 0px;
+  text-align: center;
+  width: 165px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 0;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: black;
+  color: white;
+  border: 2px solid grey;
+}
+
+.button1:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+}
+
+.button2 {
+  background-color: black;
+  color: #615d5a;
+  border: 2px solid #615d5a;
+}
+
+.button2:hover {
+  background-color: #615d5a;
+  color: white;
+}
+
+.button3 {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+}
+
+.button3:hover {
+  background-color: white;
+  color: navy;
+}
+
+.button4 {
+  background-color: black;
+  color: silver;
+  border: 2px solid silver;
+}
+
+.button4:hover {background-color: silver;
+color: black;}
