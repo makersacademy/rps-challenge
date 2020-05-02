@@ -1,3 +1,16 @@
-<h> Welcome <%= @name %> </h> 
+<h1> Welcome <%= @name %> </h> 
 
-<h1> Lets begin! Pick Rock, Paper or Scissors... </h1>
+<h2> Lets begin! Pick Rock, Paper or Scissors... </h1>
+
+
+<form action=/move_input_rock method="post">
+  <input type="submit" value="Rock">
+</form>
+
+<form action=/move_input_paper method="post">
+  <input type="submit" value="Paper">
+</form>
+
+<form action=/move_input_scissors method="post">
+  <input type="submit" value="Scissors">
+</form>
