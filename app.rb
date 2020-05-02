@@ -11,7 +11,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    'Choose an option:'
+    erb :play
   end
 
   run! if app_file == $0
