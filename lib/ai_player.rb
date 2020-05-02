@@ -1,0 +1,2 @@
+class AIPlayer
+end
