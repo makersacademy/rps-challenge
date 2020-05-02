@@ -6,11 +6,8 @@ class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
-  # set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
-
   get '/' do
     erb :index
-    # session[:player2] = nil unless (session[:player2].nil?) 
   end
 
   post '/name' do
@@ -39,6 +36,5 @@ class RockPaperScissors < Sinatra::Base
     erb :results
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
