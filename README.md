@@ -1,4 +1,16 @@
-# RPS Challenge
+# 🗿📄✂ Challenge
+
+## Testing
+
+To run Feature and Unit tests run script:
+./tdd/tdd.test
+
+To test in browser, run script:
+./web.test
+
+
+
+# Original README.md
 
 Instructions
 -------
