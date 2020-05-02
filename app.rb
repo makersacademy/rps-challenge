@@ -17,6 +17,11 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/rps' do
+    @name = session[:name].capitalize
+    erb(:rps)
+  end
+
   run! if app_file == $0
 
 end
