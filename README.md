@@ -47,9 +47,56 @@ Functionality
                    | Redirects to /play
 
 
+----
+
+rand(1..3) returning nil issues:
+
+2.6.5 :001 > def example
+2.6.5 :002?>   return "rock" if rand(1..3) === 1
+2.6.5 :003?>   return "paper" if rand(1..3) === 2
+2.6.5 :004?>   return "scissors" if rand(1..3) === 3
+2.6.5 :005?>   end
+ => :example 
+2.6.5 :006 > example
+ => "rock" 
+2.6.5 :007 > example
+ => "scissors" 
+2.6.5 :008 > example
+ => nil 
+2.6.5 :009 > example
+ => "rock" 
 
 
 
+2.6.5 :010 > def example2
+2.6.5 :011?>   return "rock" if rand(1..3) == 1
+2.6.5 :012?>   return "paper" if rand(1..3) == 2
+2.6.5 :013?>   return "scissors" if rand(1..3) == 3
+2.6.5 :014?>   end
+ => :example2 
+2.6.5 :015 > example2
+ => "rock" 
+2.6.5 :016 > example2
+ => nil 
+
+
+2.6.5 :043 > def example3
+2.6.5 :044?>   answer = [1, 2, 3].sample
+2.6.5 :045?>   if answer == 1
+2.6.5 :046?>     puts "rock"
+2.6.5 :047?>     elsif answer == 2
+2.6.5 :048?>     puts "paper"
+2.6.5 :049?>     elsif answer == 3
+2.6.5 :050?>     puts "scissors"
+2.6.5 :051?>     end 
+2.6.5 :052?>   end 
+ => :example3 
+2.6.5 :053 > example3
+scissors
+ => nil 
+
+
+----
 
 
 
