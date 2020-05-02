@@ -1,12 +1,12 @@
 feature 'Names' do 
-  scenario 'enter player 1 name' do 
+  scenario 'prints player 1 name on play screen' do 
     visit '/'
     click_button '1 Player'
     fill_in :player1, with: 'Ellis'
     click_button 'Submit'
     expect(page).to have_content 'Welcome Ellis!'
   end
-  scenario 'enter player 2 name' do
+  scenario "prints player 2's name on play screen" do
     visit '/'
     click_button '2 Player'
     fill_in :player1, with: 'Ellis'
