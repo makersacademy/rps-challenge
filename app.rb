@@ -24,5 +24,9 @@ class Game < Sinatra::Base
     erb(:choose)
   end
 
+  get '/outcome' do
+    'You chose: Rock'
+  end
+
   run! if app_file == $0
 end
