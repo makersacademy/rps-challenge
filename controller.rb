@@ -1,8 +1,8 @@
 require 'sinatra/base'
 
 class Game < Sinatra::Base
-  attr_reader :player, :result
   enable :sessions
+  attr_reader :player, :result, :sessions
 
   get "/" do
     erb :index

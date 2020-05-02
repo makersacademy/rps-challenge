@@ -16,13 +16,24 @@ body {
 
 <body>
 <center> <% @x = ["ROCK", "PAPER", "SCISSORS"] %>
-<h1>Your Selection:</h1><h1><span><%= @result %><span></h1>
-<h1>Computer's Selection:</h1><h1><span> <%= @y = @x.sample %><span></h1>
+<h1>Your Selection:</h1><h1><div id="result"><%= @result %></div></h1>
+<h1>Computer's Selection:</h1><h1><div id="computer_label"><%= @y = @x.sample %></div></h1>
   <style>
-  span {
-  border: 3px solid;
-  background-color: pink;
-}
+  div[id=computer_label]  {
+    color: white;
+    box-sizing: border-box; width: 20%;
+    background: #b19cd9;
+    border: 4px solid #39CCCC;
+    font-family: 'Averia Gruesa Libre';
+    font-size: 50px;
+  }
+  div[id=result]  {
+    color: white;
+    box-sizing: border-box; width: 20%;
+    background: #ffbcd9;
+    border: 4px solid #39CCCC;
+    font-family: 'Averia Gruesa Libre';
+    font-size: 50px; }
 </style>
 <% if @y == "ROCK" && @result == "SCISSORS" %>
 <b><h1>THE COMPUTER WINS!<em><b></h1><b>
