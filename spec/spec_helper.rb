@@ -7,7 +7,7 @@ require 'simplecov'
 require 'simplecov-console'
 require './lib/rps'
 
-Capybara.app = RPS_game
+Capybara.app = RpsGame
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
