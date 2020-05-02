@@ -15,6 +15,14 @@ feature 'results of the game are displayed' do
     expect(page).to have_content('愛 wins.')
   end
 
+  scenario 'player 1 loses to lizard' do
+    sign_in
+    srand(500)
+    choose('player_1_spock')
+    click_button('play')
+    expect(page).to have_content('愛 wins.')
+  end
+
   scenario 'its a draw' do
     sign_in
     srand(500)
