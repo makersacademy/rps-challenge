@@ -23,8 +23,8 @@ class RPS < Sinatra::Base
 
   post '/choose' do
     @game = session[:game]
-    @game.players[0].choose(params[:choice])
-    @game.players[1].choose
+    @game.players[0].choose(params[:player_1_choice])
+    @game.players[1].choose(params[:player_2_choice])
     redirect('/result')
   end
 

@@ -4,16 +4,18 @@
 <h1><%= @game.current_player.name %>, pick your play.</h1>
 
 <form class="" action="/choose" method="post">
-  <input type="hidden" name="choice" value="rock">
-  <input type="submit" name="rock" value="rock">
-</form>
+  <input type="radio" id="player_1_rock" name="player_1_choice" value="rock">
+  <label for="male">Male</label><br>
+  <input type="radio" id="player_1_paper" name="player_1_choice" value="paper">
+  <label for="female">Female</label><br>
+  <input type="radio" id="player_1_scissors" name="player_1_choice" value="scissors">
+  <label for="other">Other</label>
 
-<form class="" action="/choose" method="post">
-  <input type="hidden" name="choice" value="paper">
-  <input type="submit" name="paper" value="paper">
-</form>
-
-<form class="" action="/choose" method="post">
-  <input type="hidden" name="choice" value="scissors">
-  <input type="submit" name="scissors" value="scissors">
+  <input type="radio" name="player_2_choice" value="rock">
+  <label for="male">Male</label><br>
+  <input type="radio" name="player_2_choice" value="paper">
+  <label for="female">Female</label><br>
+  <input type="radio" name="player_2_choice" value="scissor">
+  <label for="other">Other</label>
+  <input type="submit" name="submit" value="play">
 </form>
