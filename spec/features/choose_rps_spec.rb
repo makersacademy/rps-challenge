@@ -1,4 +1,4 @@
-feature 'player selection of Rock, Paper or Stone' do
+feature 'player selection of Rock, Paper or Scissors' do
   scenario 'player selects Rock' do
     enter_name
     click_button 'Rock'
