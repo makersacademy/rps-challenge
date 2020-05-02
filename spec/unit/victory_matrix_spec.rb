@@ -19,5 +19,13 @@ describe VictoryMatrix do
     it 'converts rock to 0' do
       expect(subject.choice_to_index('rock')).to eq(0)
     end
+
+    it 'converts paper to 1' do
+      expect(subject.choice_to_index('paper')).to eq(1)
+    end
+
+    it 'converts scissors to 2' do
+      expect(subject.choice_to_index('scissors')).to eq(2)
+    end
   end
 end
