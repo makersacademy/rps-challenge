@@ -26,8 +26,8 @@ feature 'two players can play the game' do
 
   scenario 'player 2 can win' do
     two_player_sign_in
-    choose('player_1_rock')
-    choose('player_2_paper')
+    choose('player_1_spock')
+    choose('player_2_lizard')
     click_button('play')
     expect(page).to have_content("Dan wins")
   end
