@@ -31,4 +31,14 @@ feature 'two players can play the game' do
     click_button('play')
     expect(page).to have_content("Dan wins")
   end
+
+  scenario 'two players can play again' do
+    two_player_sign_in
+    choose('player_1_rock')
+    choose('player_2_paper')
+    click_button('play')
+    click_button('play again')
+    expect(page).to have_content('Player 1: Dec')
+    expect(page).to have_content('Player 2: Dan')
+  end
 end

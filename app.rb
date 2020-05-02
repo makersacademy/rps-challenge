@@ -35,8 +35,6 @@ class RPS < Sinatra::Base
   end
 
   post '/replay' do
-    @game = session[:game]
-    session[:game] = Game.new([Player.new(params[:name]), Player.new('')])
     redirect('/play')
   end
 end
