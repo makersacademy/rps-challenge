@@ -1,9 +1,29 @@
 You chose: <%= @user_choice %><br>
 
+<% array = ["Rock", "Paper", "Scissors"] %>
+
 <% if @random_number == 0 %>
 Computer chose: Rock
 <% elsif @random_number == 1 %>
 Computer chose: Paper
 <% elsif @random_number == 2 %>
 Computer chose: Scissors
+<% end %><br>
+
+<% if @user_choice == array[@random_number] %>
+It's a draw!
+<% elsif @user_choice == "Rock" && array[@random_number] == "Scissors" %>
+Human wins!
+<% elsif @user_choice == "Rock" && array[@random_number] == "Paper" %>
+Computer wins!
+<% elsif @user_choice == "Scissors" && array[@random_number] == "Rock" %>
+Computer wins!
+<% elsif @user_choice == "Scissors" && array[@random_number] == "Paper" %>
+Human wins!
+<% elsif @user_choice == "Paper" && array[@random_number] == "Rock" %>
+Human wins!
+<% elsif @user_choice == "Paper" && array[@random_number] == "Scissors" %>
+Computer wins!
+<% else %>
+YOU MADE A MISTAKE!
 <% end %>
