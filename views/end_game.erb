@@ -3,5 +3,9 @@
 <% if @game.winner.nil? %>
   <p>It's a tie!</p>
 <% else %>
-  <p><%= @game.winner.name %> wins!</p>
+  <p><%= @game.winner.name %> wins! <%= @game.loser.name %> loses!</p>
 <% end %>
+
+<%= @game.player_1.name %>: <%= @game.player_1.choice %>
+<br>
+<%= @game.player_2.name %>: <%= @game.player_2.choice %>
