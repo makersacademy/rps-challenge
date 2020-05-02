@@ -55,15 +55,4 @@ describe Game do
       expect(subject.result).to be nil
     end
   end
-
-  describe '#switch_turns' do
-    it 'starts with player 1 as current player' do
-      subject = described_class.new([player1, player3], ai_class, vm_class)
-      expect(subject.current_player).to eq(player1)
-    end
-    it 'switches current players turn' do
-      subject = described_class.new([player1, player3], ai_class, vm_class)
-      expect { subject.switch_turns }.to change { subject.current_player }.to eq(player3)
-    end
-  end
 end
