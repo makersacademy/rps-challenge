@@ -18,6 +18,12 @@ feature 'result' do
     expect(page).to have_content 'You chose: ✂'
   end
 
+  scenario 'shows computer move' do
+    sign_in_and_play
+    click_button '✂'
+    expect(page).to have_content 'Computer chose: ✂'
+  end
+
   scenario 'has play again link' do
     sign_in_and_play
     click_button '🗿'
