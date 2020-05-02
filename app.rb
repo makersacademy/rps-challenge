@@ -18,14 +18,14 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-   post '/choice' do
-     session[:choice] = params[:choice]
+   post '/move' do
+     session[:move] = params[:move]
      redirect '/rps'
    end
 
   get '/rps' do
     @name = session[:name].capitalize
-    @choice = session[:choice]
+    @player_move = session[:move]
     erb(:rps)
   end
 

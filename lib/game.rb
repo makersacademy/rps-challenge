@@ -1,13 +1,15 @@
 class Game
 
-  attr_reader :options
+  attr_reader :move
 
   def initialize
-    @options = ['rock', 'paper', 'scissors']
+    @move = ['rock', 'paper', 'scissors']
   end
 
-  def rps
-    @options.sample
+  def computer_move
+    @move.sample
   end
+
+
 
 end

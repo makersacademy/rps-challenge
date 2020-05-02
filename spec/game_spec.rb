@@ -4,7 +4,7 @@ describe Game do
 
   describe 'computer' do
     it 'selects rock, paper or scissors' do
-      expect(subject.options).to include(subject.rps)
+      expect(subject.move).to include(subject.computer_move)
     end
   end
 
