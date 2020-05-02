@@ -1,4 +1,5 @@
 require "sinatra"
+require "./lib/player"
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -18,13 +19,14 @@ class RPS < Sinatra::Base
   end
 
   post "/result" do
-    $player.choice = params
+    $player.choose(params)
     redirect "/result"
   end
 
   get "/result" do
+    $computer = Computer.new
+    @comp_choice = $computer.choice
     @choice = $player.choice
-    p @choice
     erb(:result)
 end
 
