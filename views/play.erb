@@ -20,17 +20,12 @@
     <h1> Choose Rock, Paper or Scissors. </h1>
   </center>
 
-  <p>
-    <button type="button" class="btn btn-primary btn-lg">Rock</button>
-  </p>
-
-  <p>
-    <button type="button" class="btn btn-primary btn-lg">Paper</button>
-  </p>
-
-  <p>
-    <button type="button" class="btn btn-primary btn-lg">Scissors</button>
-  </p>
+  <form action="/outcome" method="get">
+    <!-- <label for="choice"> -->
+      <input type="text" name="choice">
+    <!-- </label> -->
+    <input type="submit" value="Play!">
+  </form>
 
 </body>
 </html>

@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RpsGame < Sinatra::Base
 
@@ -16,5 +17,15 @@ class RpsGame < Sinatra::Base
   get '/play' do
     @name = session[:name]
     erb(:play)
+  end
+
+  get '/outcome' do
+    session[:choice] = params[:choice]
+    @name = session[:name]
+    @game = Game.new(@name)
+    @game.computer_turn
+    @game.outcome(session[:choice])
+    @game.winner
+    erb(:outcome)
   end
 end

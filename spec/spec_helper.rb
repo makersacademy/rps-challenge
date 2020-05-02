@@ -5,7 +5,8 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
-require './lib/rps'
+require './lib/game'
+require 'features/web_helper'
 
 Capybara.app = RpsGame
 

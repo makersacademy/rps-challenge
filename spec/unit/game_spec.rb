@@ -38,7 +38,7 @@ describe Game do
       it 'does not update winner variable' do
         allow(game.rps).to receive(:sample).and_return("Rock")
         game.computer_turn
-        expect { game.outcome("Rock") }.not_to(change { game.winner })
+        expect { game.outcome("Rock") }.to change { game.winner }.to ("It's a draw!")
       end
     end
   end
