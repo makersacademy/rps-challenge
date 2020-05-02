@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class MyRockApp < Sinatra::Base
   enable :sessions
-  
+
   get '/' do
     erb :index
   end
@@ -11,9 +11,15 @@ class MyRockApp < Sinatra::Base
     session[:name] = params[:name]
     redirect '/play'
   end
+  
+  post '/game' do
+    session[:rps] = params[:rps]
+    redirect '/play'
+  end
 
   get '/play' do
     @name = session[:name]
+    @rps = session[:rps]
     erb :play
   end
 

@@ -13,4 +13,14 @@ feature '@index' do
     expect(page).to have_content "Dave"
   end
 
+  scenario 'should able to pick RPS' do
+    sign_in_and_play
+    expect(page).to have_button('Rock')
+    expect(page).to have_button('Papper')
+    expect(page).to have_button('Scissors')
+  end
+
+  
+
 end 
+
