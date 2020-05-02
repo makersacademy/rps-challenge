@@ -28,6 +28,7 @@ end
   require 'capybara'
   require 'capybara/rspec'
   require 'rspec'
+  require 'features/web_helper.rb'
 
   # tell Capybara about our app class
   Capybara.app = MyRockApp

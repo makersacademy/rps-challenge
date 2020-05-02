@@ -5,16 +5,11 @@ feature '@index' do
   end
 
   scenario 'should able to enter name' do
-    visit('/')
-    fill_in :name, with: "Dave"
-    click_button 'Submit'
+    sign_in_and_play
   end
 
   scenario 'should able to see name' do
-    visit('/')
-    fill_in :name, with: "Dave"
-    click_button "Submit"
-    visit('/play')
+    sign_in_and_play
     expect(page).to have_content "Dave"
   end
 
