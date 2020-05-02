@@ -1,10 +1,11 @@
 require 'sinatra/base'
 
 class Game < Sinatra::Base
+  attr_reader :player, :result
   enable :sessions
 
-  get ""/" do
-  erb :index
+  get "/" do
+    erb :index
   end
 
   post '/game' do
@@ -28,4 +29,4 @@ class Game < Sinatra::Base
     @result = params[:result]
     erb :result
   end
- end
+end

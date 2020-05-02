@@ -10,23 +10,37 @@ feature 'user can register for game' do
 end
 
 feature 'user chooses between rock paper or scissors' do
- scenario 'user clicks on one of the above' do
-   visit('/')
-   game = Game.new
-   fill_in :player, with: 'Lizzie'
-   click_button 'Play'
-   click_button 'ROCK'
-   allow(game).to receive(:click_button) { 'ROCK'}
-   allow(game)
-   expect(page).to have_content 'YOU WIN!'
- end
+  scenario 'user clicks on one of the above' do
+    visit('/')
+    game = Game.new
+    fill_in :player, with: 'Lizzie'
+    click_button 'Play'
+    click_button 'ROCK'
+    allow(game).to receive(:result) { 'ROCK' }
+    expect(page).to have_content 'Your Selection'
+  end
 end
 
-feature 'randomiser chooses between rock, paper or scissors' do
-  scenario 'randomiser selects one of the above' do
-    visi fill_in :player, with: 'Lizzie'
-     click_button 'Play'
-     click_button 'ROCK'
-     expect(page).to have_content 'YOU WIN!'
-   end
- end
+feature 'user chooses between rock paper or scissors' do
+  scenario 'user clicks on one of the above' do
+    visit('/')
+    game = Game.new
+    fill_in :player, with: 'Lizzie'
+    click_button 'Play'
+    click_button 'ROCK'
+    allow(game).to receive(:result) { 'SCISSORS' }
+    expect(page).to have_content 'Your Selection'
+  end
+end
+
+feature 'user chooses between rock paper or scissors' do
+  scenario 'user clicks on one of the above' do
+    visit('/')
+    game = Game.new
+    fill_in :player, with: 'Lizzie'
+    click_button 'Play'
+    click_button 'ROCK'
+    allow(game).to receive(:result) { 'PAPER' }
+    expect(page).to have_content 'Your Selection'
+  end
+end

@@ -16,8 +16,14 @@ body {
 
 <body>
 <center> <% @x = ["ROCK", "PAPER", "SCISSORS"] %>
-<h1><%= "Your Selection: #{@result}" %></h1>
-<h1>Computer's Selection: <%= @y = @x.sample %></h1>
+<h1>Your Selection:</h1><h1><span><%= @result %><span></h1>
+<h1>Computer's Selection:</h1><h1><span> <%= @y = @x.sample %><span></h1>
+  <style>
+  span {
+  border: 3px solid;
+  background-color: pink;
+}
+</style>
 <% if @y == "ROCK" && @result == "SCISSORS" %>
 <b><h1>THE COMPUTER WINS!<em><b></h1><b>
 <% elsif @y == "SCISSORS" && @result == "ROCK" %>
@@ -25,7 +31,7 @@ body {
 <% elsif @y == "PAPER" && @result == "ROCK" %>
 <b><h1>THE COMPUTER WINS!</h1><b>
 <% elsif @y == "ROCK" && @result == "PAPER" %>
-<b><h1>YOU WIN!</h1><b>
+<b><h1><div>YOU WIN!<div></h1><b>
 <% elsif @y == "SCISSORS" && @result == "PAPER" %>
 <b><h1>THE COMPUTER WINS!</h1><b>
 <% elsif @y== "PAPER" && @result == "SCISSORS" %>
