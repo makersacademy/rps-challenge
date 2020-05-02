@@ -16,6 +16,17 @@ class RPS < Sinatra::Base
    @name = session[:name]
    erb(:play)
   end
-  
+
+  post "/result" do
+    session[:choice] = params
+    redirect "/result"
+  end
+
+  get "/result" do
+    @choice = session[:choice]
+    p @choice
+    erb(:result)
+end
+
   run! if app_file == $0
 end
