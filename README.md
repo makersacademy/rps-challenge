@@ -31,17 +31,17 @@ Functionality
                    | Player enters name /
                    | 
 
-/output(post)      | Starts session 
-                   | Redirects to play 
+/output(post)      | Starts session /
+                   | Redirects to play /
 
-/play(get)         | Prints out user_name on screen
-                   | Player inputs rock / paper / scissors 
+/play(get)         | Prints out user_name on screen /
+                   | Player inputs rock / paper / scissors /
 
-/move_output(post) | Stores input
-                   | redirects to outcome
+/move_output(post) | Stores input /
+                   | redirects to outcome /
 
-/outcome(get)      | 
-                   | Play again button 
+/outcome(get)      | Shows who won
+                   | Play again button  
 
 /again(post)       | Stores if they won or not? 
                    | Redirects to /play
