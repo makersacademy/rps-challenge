@@ -1,0 +1,36 @@
+<style>
+  body {
+    background-image: url("https://bit.ly/3d6PrVS");
+    text-align: center;
+  }
+  h1 {
+    color: #ff2613;
+    font-size: 5em;
+  }
+  h2 {
+    color: #ffba00;
+    font-size: 4em;
+  }
+  input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 0.5em;
+  box-sizing: border-box;
+}
+  input[type=submit] {
+   width: 200px;
+   box-sizing: border-box;
+   border: 2px solid #ccc;
+   border-radius: 4px;
+   font-size: 1.2em;
+   background-color: #ffba00;
+  }
+  img {
+    border: 2px solid #ffba00;
+  }
+</style>
+
+<h1> <%= @winner %> wins! </h1>
+<h2> <%= $player1_name %> chose <br> <%= @p1_selection %></h2>
+<h2> Computer chose <br> <%= @comp_selection %> </h2>

@@ -1,0 +1,55 @@
+<style>
+  body {
+    background-image: url("https://bit.ly/3d6PrVS");
+    text-align: center;
+  }
+  h1 {
+    color: #ff2613;
+    font-size: 5em;
+  }
+  h2 {
+    color: #ffba00;
+    font-size: 4em;
+  }
+  input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 0.5em;
+  box-sizing: border-box;
+}
+  input[type=submit] {
+   width: 200px;
+   box-sizing: border-box;
+   border: 2px solid #ccc;
+   border-radius: 4px;
+   font-size: 1.2em;
+   background-color: #ffba00;
+  }
+  img {
+    border: 2px solid #ffba00;
+  }
+</style>
+
+<h1> <%= @player1_name %> vs. Computer </h1>
+<h2> <%= @player1_name %>: make your choice. </h2>
+
+<form action="/results" method="post">
+  <img src="https://bit.ly/3bXtTed" alt="light saber" width="200" height="150">
+  <br> <br>
+  <input type="submit" value="light saber">
+</form>
+
+<form action="/results" method="post">
+  <br>
+  <img src="https://bit.ly/2YpZbGH" alt="blaster cannon" width="200" height="150">
+  <br> <br>
+  <input type="submit" value="Blaster Cannon">
+</form>
+
+<form action="/results" method="post">
+  <br>
+  <img src="https://bit.ly/2z2G8Yp" alt="thermal detonator" width="200" height="150">
+  <br><br>
+  <input type="submit" value="Thermal Detonator">
+</form>
