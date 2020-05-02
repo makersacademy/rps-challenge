@@ -12,4 +12,10 @@ feature 'Player selection of Rock, Paper or Scissors' do
     expect(page).to have_content 'Coco: Paper'
   end
 
+  scenario 'player selects Scissors' do
+    enter_name
+    click_button 'Scissors'
+    expect(page).to have_content 'Coco: Scissors'
+  end
+
 end
