@@ -19,4 +19,18 @@ feature 'player makes a choice between RPS' do
     click_button('play')
     expect(page).to have_content("Dec picked scissors.")
   end
+
+  scenario 'picking spock confirms choice' do
+    sign_in
+    choose('player_1_spock')
+    click_button('play')
+    expect(page).to have_content("Dec picked spock.")
+  end
+
+  scenario 'picking lizard confirms choice' do
+    sign_in
+    choose('player_1_lizard')
+    click_button('play')
+    expect(page).to have_content("Dec picked lizard.")
+  end
 end

@@ -4,6 +4,6 @@ feature 'ai player makes a choice' do
     srand(3943)
     choose('player_1_rock')
     click_button('play')
-    expect(page).to have_content(/愛 picked [rps][a-z]{3,7}./)
+    expect(page).to have_content(/愛 picked [rpsl][a-z]{3,7}./)
   end
 end
