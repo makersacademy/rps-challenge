@@ -10,4 +10,12 @@ feature '@index' do
     click_button 'Submit'
   end
 
+  scenario 'should able to see name' do
+    visit('/')
+    fill_in :name, with: "Dave"
+    click_button "Submit"
+    visit('/play')
+    expect(page).to have_content "Dave"
+  end
+
 end 
