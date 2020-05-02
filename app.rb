@@ -1,5 +1,6 @@
 require 'sinatra'
 require './lib/player'
+require './lib/ai_player'
 
 class RPS < Sinatra::Base
 
