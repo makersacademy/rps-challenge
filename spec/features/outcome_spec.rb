@@ -11,4 +11,10 @@ feature 'Outcome of game' do
     expect(page).to have_content 'You chose: Scissors'
   end
 
+  scenario 'Shows user choice when Paper is chosen' do
+    sign_in_and_play
+    click_button "Paper"
+    expect(page).to have_content 'You chose: Paper'
+  end
+
 end
