@@ -1,0 +1,5 @@
+<% if @game.winner.nil? %>
+  <p>It's a tie!</p>
+<% else %>
+  <p><%= @game.winner.name %> wins!</p>
+<% end %>

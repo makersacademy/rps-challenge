@@ -24,11 +24,12 @@ class Rps < Sinatra::Base
     @game = Game.instance
     @game.player_1.choice = params[:choice]
     @game.player_2.choice = ["rock", "paper", "scissors"].sample
+    @game.round
     redirect '/end_game'
   end
 
   get '/end_game' do
-    @game = Game.instace
+    @game = Game.instance
     erb :end_game
   end
 

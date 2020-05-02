@@ -25,8 +25,15 @@ describe Game do
     it 'rocks beats scissors' do
       player_1.stub(:choice) { "rock" }
       player_2.stub(:choice) { "scissors" }
-      game.round(player_1, player_2)
+      game.round
       expect(game.winner).to eq(player_1)
+    end
+
+    it 'rocks beats scissors' do
+      player_1.stub(:choice) { "scissors" }
+      player_2.stub(:choice) { "rock" }
+      game.round
+      expect(game.loser).to eq(player_1)
     end
   end
 end
