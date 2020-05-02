@@ -1,9 +1,9 @@
 class HumanPlayer
 
-  attr_reader :weapon
+  attr_accessor :weapon, :name
 
-  def initialize(name, weapon)
+  def initialize(name)
     @name = name
-    @weapon = weapon
+    @weapon = nil
   end
 end
