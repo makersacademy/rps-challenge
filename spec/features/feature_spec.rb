@@ -27,13 +27,13 @@ feature 'name form' do
 end
 
 feature 'play single player game' do
-  scenario 'player choses rock' do 
-    sign_in
-    select 'ROCK', :from => "rps"
-    click_button 'submit'
-    expect(page).to have_content 'Congratulations,'
-    expect(page).to have_content 'You are the winner.'
+  scenario 'player choses rock' do
     100.times {
+      sign_in
+      select 'ROCK', :from => "rps"
+      click_button 'submit'
+      expect(page).to have_content 'Congratulations,'
+      expect(page).to have_content 'You are the winner.'
       expect(page).to(satisfy { |page| page.has_content?('Patrick') or page.has_content?('COMPUTER') or page.has_content?("NOBODY (It was a draw)") })
     }
   end
