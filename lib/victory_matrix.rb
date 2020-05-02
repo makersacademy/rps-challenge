@@ -1,5 +1,5 @@
 class VictoryMatrix
-  VICTORY_MATRIX = [[2, 1, 0],[0, 2, 1],[1, 0, 2]]
+  VICTORY_MATRIX = [[5, 1, 0, 1, 0],[0, 5, 1, 0, 1],[1, 0, 5, 1, 0],[0, 1, 0, 5, 1],[1, 0, 1, 0, 5]]
 
   CHOICE_MATRIX = ['rock', 'paper', 'scissors', 'spock', 'lizard']
 

@@ -3,7 +3,7 @@ require 'victory_matrix'
 describe VictoryMatrix do
   describe '#result' do
     it 'returns 2 when the result in a draw' do
-      expect(subject.result(0, 0)).to eq(2)
+      expect(subject.result(0, 0)).to eq(5)
     end
 
     it 'returns 0 when player 1 wins' do
@@ -12,6 +12,10 @@ describe VictoryMatrix do
 
     it 'returns 1 when player 2 wins' do
       expect(subject.result(0, 1)).to eq(1)
+    end
+
+    it 'returns 0 when player 1 wins with spock vs lizard' do
+      expect(subject.result(4, 3)).to eq(0)
     end
   end
 
