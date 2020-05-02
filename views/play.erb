@@ -4,6 +4,7 @@
 <h1><%= @game.current_player.name %>, pick your play.</h1>
 
 <form class="" action="/choose" method="post">
+  <p> Player 1 choice: </p>
   <input type="radio" id="player_1_rock" name="player_1_choice" value="rock">
   <label for="male">Male</label><br>
   <input type="radio" id="player_1_paper" name="player_1_choice" value="paper">
@@ -11,11 +12,14 @@
   <input type="radio" id="player_1_scissors" name="player_1_choice" value="scissors">
   <label for="other">Other</label>
 
-  <input type="radio" id="player_2_rock" name="player_2_choice" value="rock">
-  <label for="male">Male</label><br>
-  <input type="radio" id="player_2_paper" name="player_2_choice" value="paper">
-  <label for="female">Female</label><br>
-  <input type="radio" id="player_2_scissors" name="player_2_choice" value="scissors">
-  <label for="other">Other</label>
-  <input type="submit" name="submit" value="play">
+  <% if !@game.single_player? %>
+    <p> Player 2 choice: </p>
+    <input type="radio" id="player_2_rock" name="player_2_choice" value="rock">
+    <label for="male">Male</label><br>
+    <input type="radio" id="player_2_paper" name="player_2_choice" value="paper">
+    <label for="female">Female</label><br>
+    <input type="radio" id="player_2_scissors" name="player_2_choice" value="scissors">
+    <label for="other">Other</label>
+  <% end %>
+    <input type="submit" name="submit" value="play">
 </form>
