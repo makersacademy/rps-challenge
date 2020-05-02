@@ -12,7 +12,7 @@ class AIPlayer
     CHOICES[(@random.rand(0.0...3.0).to_i)]
   end
 
-  def choose
+  def choose(choice = 'placeholder')
     @choice = choose_random
   end
 end

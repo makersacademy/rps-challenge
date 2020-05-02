@@ -22,4 +22,8 @@ class Game
 
     return [WIN, @players[1]]
   end
+
+  def single_player?
+    true
+  end
 end

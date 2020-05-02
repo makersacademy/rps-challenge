@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
 
-  let(:player1) { double(choice: 'rock') }
-  let(:player2) { double(choice: 'scissors') }
+  let(:player1) { double(choice: 'rock', name: 'Dec') }
+  let(:player2) { double(choice: 'scissors', name: '') }
 
   let(:player3) { double(choice: 'paper') }
   let(:player4) { double(choice: 'scissors') }
@@ -12,6 +12,12 @@ describe Game do
   let(:player6) { double(choice: 'paper') }
 
   let(:subject) { described_class.new(player1, player2) }
+
+  describe '#single_player?' do
+    it 'sets single player mode and adds an AI if player 2 name is empty' do
+      expect(subject.single_player?).to be true
+    end
+  end
 
   describe '#players' do
     it 'has a record of players' do
