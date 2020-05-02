@@ -2,7 +2,7 @@ class Game
   DRAW = 0
   WIN = 1
 
-  attr_reader :players
+  attr_reader :players, :current_player
 
   def initialize(players, ai = AIPlayer)
     @ai_class = ai
@@ -10,6 +10,7 @@ class Game
     if @players[1].name == ''
       @players[1] = @ai_class.new
     end
+    @current_player = @players[0]
   end
 
   def result
@@ -30,5 +31,9 @@ class Game
   def single_player?
     return true if @players[1].class == @ai_class.new.class
     return false
+  end
+
+  def switch_turns
+    @current_player = @current_player == @players[0] ? @players[1] : @players[0]
   end
 end
