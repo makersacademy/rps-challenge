@@ -1,0 +1,36 @@
+<style type="text/css">
+	.center { text-align: center }
+	.container { text-align: center }
+	.inner {
+		display: inline-block; 
+		background: #abd3db; 
+		width: 500px; 
+		border-radius: 10px; 
+		color:#3a585e;
+		font-family: Helvetica, Arial;
+		border: 1px solid #3a585e }
+	.dropdown {
+		background: #c8dade;
+	}
+</style>
+
+<br>
+<div class="container">
+	<div class="inner">
+		<h1 class="center">WELCOME TO ROCK PAPER SCISSORS</h1>
+		<h3 class="center">By Patrick Sawyer</h3>
+		<form class="center" action="/name" method="post">
+			<label for="name">Please enter your name: </label>
+			<br>
+			<input class="dropdown" type="text" name="name">
+			<br>
+			<br>
+			<label for="name2">Add a second name to play multiplayer: </label>
+			<br>
+			<input class="dropdown" type="text" name="name2">
+			<br>
+			<br>
+			<input class="dropdown" type="submit" name="submit" value="GO!">
+		</form>
+	</div>
+</div>

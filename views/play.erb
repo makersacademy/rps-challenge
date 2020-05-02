@@ -1,0 +1,42 @@
+<style type="text/css">
+	.center { text-align: center }
+	.container { text-align: center }
+	.inner {
+		display: inline-block; 
+		background: #abd3db; 
+		width: 500px; 
+		border-radius: 10px; 
+		color:#3a585e;
+		font-family: Helvetica, Arial;
+		border: 1px solid #3a585e }
+	.dropdown {
+		background: #c8dade;
+	}
+</style>
+
+<br>
+
+<div class="container">
+	<div class="inner">
+		<form class="center" action="/game" method="post">
+			<h1 class="center">Choose your weapon, <%= session[:player1].name %></h1>
+			<select class="dropdown" name="rps">
+				<option>ROCK</option>
+				<option>PAPER</option>
+				<option>SCISSORS</option>
+			</select>
+			<br>
+			<% unless (session[:player2].nil?) %>
+				<h1 class="center">Choose your weapon, <%= session[:player2].name %></h1>
+				<select class="dropdown" name="rps2">
+					<option>ROCK</option>
+					<option>PAPER</option>
+					<option>SCISSORS</option>
+				</select>
+				<br>	
+			<% end %>
+			<br>
+			<input class="dropdown" type="submit" name="submit" value="GO!">
+		</form>
+	</div>
+</div>
