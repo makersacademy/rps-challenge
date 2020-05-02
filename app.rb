@@ -17,4 +17,15 @@ class RPS < Sinatra::Base
     @player = session[:player]
     erb(:play)
   end
+
+  post '/choose' do
+    @player = session[:player]
+    @player.choose(params[:choice])
+    redirect('/result')
+  end
+
+  get '/result' do
+    @player = session[:player]
+    erb(:result)
+  end
 end
