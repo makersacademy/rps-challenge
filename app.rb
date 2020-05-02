@@ -2,7 +2,7 @@ require 'sinatra/base'
 require_relative 'lib/player'
 
 # Global for testing, refactor to use group :test from Gemfile?
-$verbose = true
+# $verbose = true
 # NUMBER_OF_PLAYERS = 1
 
 class RockPaperScissorsWebGame < Sinatra::Base
