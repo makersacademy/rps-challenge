@@ -11,28 +11,25 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:player] = Player.new(params[:name])
-    session[:player2] = AIPlayer.new
+    session[:game] = Game.new(Player.new(params[:name]), AIPlayer.new)
     redirect('/play')
   end
 
   get '/play' do
-    @player = session[:player]
-    @player2 = session[:player2]
+    @game = session[:game]
     erb(:play)
   end
 
   post '/choose' do
-    @player = session[:player]
-    @player2 = session[:player2]
-    @player.choose(params[:choice])
-    @player2.choose
+    @game = session[:game]
+    @game.players[0].choose(params[:choice])
+    @game.players[1].choose
     redirect('/result')
   end
 
   get '/result' do
-    @player = session[:player]
-    @player2 = session[:player2]
+    @game = session[:game]
+    @result = @game.result
     erb(:result)
   end
 end
