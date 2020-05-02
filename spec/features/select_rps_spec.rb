@@ -1,9 +1,8 @@
-require './lib/game'
 
 feature 'Select rock, paper or scissors' do
   scenario 'returns a winner' do
     sign_in_and_play
     click_button 'rock'
-    expect(page).to have_content ("Gareth wins!" || "Computer wins!" || "It's a tie")
+    expect(page).to have_content "Result"
   end
 end
