@@ -3,6 +3,7 @@ feature 'play' do
     sign_into_game # see web_helper.rb
     play_page_content
     make_selection_light_saber
+    
   end
 
   scenario 'User selects blaster cannon' do

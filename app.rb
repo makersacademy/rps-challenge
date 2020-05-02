@@ -19,6 +19,8 @@ class RPS < Sinatra::Base
   end
 
   post '/results' do
+    p @player1_name = session[:player1_name]
+    p session[:player1_choice] = params[:player1_choice]
     # show results
     # button - play again? redirect to /play
     # button - reset player? redirect to /homepage

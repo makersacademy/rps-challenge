@@ -15,11 +15,11 @@
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
-  font-size: 0.5em;
+  font-size: 1.5em;
   box-sizing: border-box;
 }
   input[type=submit] {
-   width: 200px;
+   width: 275px;
    box-sizing: border-box;
    border: 2px solid #ccc;
    border-radius: 4px;
@@ -37,19 +37,19 @@
 <form action="/results" method="post">
   <img src="https://bit.ly/3bXtTed" alt="light saber" width="200" height="150">
   <br> <br>
-  <input type="submit" value="light saber">
-</form>
-
-<form action="/results" method="post">
-  <br>
-  <img src="https://bit.ly/2YpZbGH" alt="blaster cannon" width="200" height="150">
-  <br> <br>
-  <input type="submit" value="Blaster Cannon">
+  <input type="submit" name= "p1_choice_LS" value="Light Saber (rock)">
 </form>
 
 <form action="/results" method="post">
   <br>
   <img src="https://bit.ly/2z2G8Yp" alt="thermal detonator" width="200" height="150">
   <br><br>
-  <input type="submit" value="Thermal Detonator">
+  <input type="submit" name= "p1_choice_TD" value="Thermal Detonator (paper)">
+</form>
+
+<form action="/results" method="post">
+  <br>
+  <img src="https://bit.ly/2YpZbGH" alt="blaster cannon" width="200" height="150">
+  <br> <br>
+  <input type="submit" name= "p1_choice_BC" value="Blaster Cannon (scissors)">
 </form>

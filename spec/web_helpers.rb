@@ -13,16 +13,16 @@ def play_page_content
 end
 
 def make_selection_light_saber
-  fill_in :selection, with: 'Light Saber'
-  click_button 'Test my fate'
+  # fill_in :selection, with: 'Light Saber'
+  click_button 'Light Saber'
 end
 
 def make_selection_blaster_cannon
-  fill_in :selection, with: 'Blaster Cannon'
-  click_button 'Test my fate'
+  # fill_in :selection, with: 'Blaster Cannon'
+  click_button 'Blaster Cannon'
 end
 
 def make_selection_thermal_detonator
-  fill_in :selection, with: 'Thermal Detonator'
-  click_button 'Test my fate'
+  # fill_in :selection, with: 'Thermal Detonator'
+  click_button 'Thermal Detonator'
 end
