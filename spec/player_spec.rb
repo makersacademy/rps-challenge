@@ -16,4 +16,13 @@ describe Player do
 
   end
 
+  describe '#move' do
+
+    it 'returns the move' do
+      will.move = '🗿'
+      expect(will.move).to eq '🗿'
+    end
+
+  end
+
 end
