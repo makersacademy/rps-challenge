@@ -1,9 +1,9 @@
 <h1><%= @game.players[0].name %> picked <%= @game.players[0].choice %>.</h1>
 <h1><%= @game.players[1].name %> picked <%= @game.players[1].choice %>.</h1>
-<% if @result[0] == 0 %>
+<% if @result == nil %>
   <h1>It's a draw!</h1>
 <% else %>
-  <h1><%= @result[1].name %> wins.</h1>
+  <h1><%= @result.name %> wins.</h1>
 <% end %>
 
 <form class="" action="/replay" method="post">

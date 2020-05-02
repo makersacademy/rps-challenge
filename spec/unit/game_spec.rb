@@ -13,6 +13,9 @@ describe Game do
   let(:ai_instance) { double(choice: 'scissors', name: '愛', class: RSpec::Mocks::Double) }
   let(:ai_class) { double(new: ai_instance)}
 
+  let(:vm) { double(result: 0, choice_to_index: 0)}
+  let(:vm_class) { double(new: vm)}
+
   let(:subject) { described_class.new([player1, player2], ai_class) }
 
   describe '#single_player?' do
@@ -21,15 +24,14 @@ describe Game do
     end
 
     it 'single player mode is false if player 2 name is not empty' do
-      subject = described_class.new([player1, player3], ai_class)
+      subject = described_class.new([player1, player3], ai_class, vm_class)
       expect(subject.single_player?).to be false
     end
   end
 
   describe '#players' do
     it 'has a record of players' do
-      subject = described_class.new([player1, player3], ai_class
-      )
+      subject = described_class.new([player1, player3], ai_class, vm_class)
       expect(subject.players).to include(player1, player3)
     end
 
@@ -39,28 +41,28 @@ describe Game do
   end
 
   describe '#result' do
-    it 'returns a tuple for player 1 winning' do
-      expect(subject.result).to eq([1, player1])
+    it 'returns a winning player 1' do
+      vm = double(result: 0, choice_to_index: 0)
+      vm_class = double(new: vm)
+      subject = described_class.new([player1, player2], ai_class, vm_class)
+      expect(subject.result).to eq(player1)
     end
 
-    it 'returns a tuple for player 4 winning' do
-      subject = described_class.new([player3, player4], ai_class)
-      expect(subject.result).to eq([1, player4])
-    end
-
-    it 'returns a tuple for a draw' do
-      subject = described_class.new([player1, player5], ai_class)
-      expect(subject.result).to eq([0, nil])
+    it 'returns nil if its a draw' do
+      vm = double(result: 2, choice_to_index: 0)
+      vm_class = double(new: vm)
+      subject = described_class.new([player1, player5], ai_class, vm_class)
+      expect(subject.result).to be nil
     end
   end
 
   describe '#switch_turns' do
     it 'starts with player 1 as current player' do
-      subject = described_class.new([player1, player3], ai_class)
+      subject = described_class.new([player1, player3], ai_class, vm_class)
       expect(subject.current_player).to eq(player1)
     end
     it 'switches current players turn' do
-      subject = described_class.new([player1, player3], ai_class)
+      subject = described_class.new([player1, player3], ai_class, vm_class)
       expect { subject.switch_turns }.to change { subject.current_player }.to eq(player3)
     end
   end
