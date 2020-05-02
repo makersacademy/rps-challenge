@@ -44,6 +44,8 @@ class RockPaperScissorsWebGame < Sinatra::Base
     puts "\nin /move" if $verbose
     p session if $verbose
 
+    session[:players][0].move = params[:commit]
+
     redirect to('result')
   end
 
