@@ -13,20 +13,12 @@ class Game < Sinatra::Base
   end
 
   get '/choose' do
-    # p "Name"
-    # p @name
-    # p "params"
-    # p params
-    # p "session"
-    # p session
-
     @name = session[:player_name]
     erb(:choose)
   end
 
   get '/outcome' do
-    # p "Params"
-    # p params
+    @random_number = rand(3)
     @user_choice = params[:user_choice]
     erb(:outcome)
   end

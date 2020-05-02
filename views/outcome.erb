@@ -1,1 +1,9 @@
-You chose: <%= @user_choice %>
+You chose: <%= @user_choice %><br>
+
+<% if @random_number == 0 %>
+Computer chose: Rock
+<% elsif @random_number == 1 %>
+Computer chose: Paper
+<% elsif @random_number == 2 %>
+Computer chose: Scissors
+<% end %>
