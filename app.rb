@@ -2,7 +2,7 @@ require 'sinatra/base'
 require_relative 'lib/player'
 
 # Global for testing, refactor to use group :test from Gemfile?
-# $verbose = true
+$verbose = true
 # NUMBER_OF_PLAYERS = 1
 
 class RockPaperScissorsWebGame < Sinatra::Base
@@ -40,6 +40,19 @@ class RockPaperScissorsWebGame < Sinatra::Base
     erb :play
   end
 
+  post '/move' do
+    puts "\nin /move" if $verbose
+    p session if $verbose
+
+    redirect to('result')
+  end
+
+  get '/result' do
+    puts "\nin /result" if $verbose
+    p session if $verbose
+
+    erb :result
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
