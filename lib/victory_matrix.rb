@@ -1,0 +1,2 @@
+class VictoryMatrix
+end
