@@ -28,10 +28,10 @@ Functionality
 
 
 /homepage(get) 
-                   | Player enters name 
+                   | Player enters name /
                    | 
 
-/output(post)      | Starts session
+/output(post)      | Starts session 
                    | Redirects to play 
 
 /play(get)         | Prints out user_name on screen
