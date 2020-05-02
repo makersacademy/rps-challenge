@@ -25,6 +25,9 @@ class Game < Sinatra::Base
   end
 
   get '/outcome' do
+    # p "Params"
+    # p params
+    @user_choice = params[:user_choice]
     erb(:outcome)
   end
 
