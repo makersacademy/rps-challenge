@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative "./lib/rps"
 
 class RockPaperScissors < Sinatra::Base
 
