@@ -3,7 +3,12 @@ require 'sinatra/base'
 class RPS < Sinatra::Base
 
   get '/' do
-    'Testing infrastucture working!'
+    erb(:index)
+  end
+
+  post "/name" do
+    @name = params[:name]
+    erb(:name)
   end
 
   run! if app_file == $0
