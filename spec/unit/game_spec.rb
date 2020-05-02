@@ -11,4 +11,10 @@ describe Game do
       expect(subject.players).to include(player1, player2)
     end
   end
+
+  describe '#result' do
+    it 'returns a tuple for player 1 winning' do
+      expect(subject.result).to eq([1, player1])
+    end
+  end
 end

@@ -4,4 +4,8 @@ class Game
   def initialize(*players)
     @players = players
   end
+
+  def result
+    [1, @players[0]]
+  end
 end
