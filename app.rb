@@ -2,6 +2,8 @@ require 'sinatra'
 require './lib/player'
 require './lib/ai_player'
 require './lib/game'
+require './lib/choices'
+require './lib/victory_matrix'
 
 class RPS < Sinatra::Base
 

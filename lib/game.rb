@@ -1,5 +1,3 @@
-require 'victory_matrix'
-
 class Game
   DRAW = 0
   WIN = 1
