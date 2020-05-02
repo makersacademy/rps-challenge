@@ -12,7 +12,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:game] = Game.new([Player.new(params[:name]), Player.new('')])
+    session[:game] = Game.new([Player.new(params[:player_1_name]), Player.new('')])
     redirect('/play')
   end
 
