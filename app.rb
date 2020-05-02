@@ -12,7 +12,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:game] = Game.new(Player.new(params[:name]), AIPlayer.new)
+    session[:game] = Game.new([Player.new(params[:name]), Player.new('')])
     redirect('/play')
   end
 
@@ -36,7 +36,7 @@ class RPS < Sinatra::Base
 
   post '/replay' do
     @game = session[:game]
-    session[:game] = Game.new(Player.new(@game.players[0].name), AIPlayer.new)
+    session[:game] = Game.new([Player.new(params[:name]), Player.new('')])
     redirect('/play')
   end
 end

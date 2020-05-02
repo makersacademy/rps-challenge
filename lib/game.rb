@@ -4,8 +4,12 @@ class Game
 
   attr_reader :players
 
-  def initialize(*players)
+  def initialize(players, ai = AIPlayer)
+    @ai_class = ai
     @players = players
+    if @players[1].name == ''
+      @players[1] = @ai_class.new
+    end
   end
 
   def result
@@ -24,6 +28,7 @@ class Game
   end
 
   def single_player?
-    true
+    return true if @players[1].class == @ai_class.new.class
+    return false
   end
 end
