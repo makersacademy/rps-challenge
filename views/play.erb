@@ -1,12 +1,11 @@
 Hi <%= session[:players][0].name %>, ready to play?
 <br /><br />
-
+Your move:
 <form action="/move" method="post">
-  <label for="move">
-    Enter your move:
-    <input type="text" name="player_0_move" value="Rock">
-  </label>
-  <br /><br />
-  <input type="submit" value="Submit">
+	<ul style="list-style-type:none;font-size:64px">
+		<li><input style="padding: 0;border: none;cursor: pointer;font-family: inherit;font-size: inherit" type="submit" value="🗿"></li>
+		<li><input style="padding: 0;border: none;cursor: pointer;font-family: inherit;font-size: inherit" type="submit" value="📄"></li>
+		<li><input style="padding: 0;border: none;cursor: pointer;font-family: inherit;font-size: inherit" type="submit" value="✂"></li>
+	</ul>
 </form>
 
