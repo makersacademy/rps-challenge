@@ -7,7 +7,17 @@ describe VictoryMatrix do
     end
 
     it 'returns 0 when player 1 wins' do
-      expect(subject.result(0, 2)).to eq(0)   
+      expect(subject.result(0, 2)).to eq(0)
+    end
+
+    it 'returns 1 when player 2 wins' do
+      expect(subject.result(0, 1)).to eq(1)
+    end
+  end
+
+  describe '#chocie_to_index' do
+    it 'converts rock to 0' do
+      expect(subject.choice_to_index('rock')).to eq(0)
     end
   end
 end
