@@ -22,4 +22,4 @@ Simple rock, paper, scissors game test driven developed in Ruby/Sinatra.
 - Run `rspec`
 
 ### Known issues
-Random test failing.
+Failing computers' choice randomness test. 
