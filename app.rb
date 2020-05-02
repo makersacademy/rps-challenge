@@ -1,10 +1,7 @@
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
-  configure do
-    enable :sessions
-    set :session_secret, "secret"
-  end
+  enable :sessions
 
   get '/' do
     erb :index
