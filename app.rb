@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -13,18 +15,32 @@ class RPS < Sinatra::Base
   post '/play' do
     # show player vs computer
     # player submits their choice
-    p session[:player1_name] = params[:player1_name]
-    p @player1_name = session[:player1_name]
+    player1 = Player.new(params[:player1_name], params[:p1_choice])
+    p 1
+    p $game = Game.new(player1)
+    p 2
+    p @game = $game
+    p 3
+    p @game.computer_choice
+    p 4
     erb :play
   end
 
   post '/results' do
-    p @player1_name = session[:player1_name]
-    p session[:p1_choice] = params[:p1_choice]
+    p 5
+    player1 = Player.new(params[:player1_name], params[:p1_choice])
+    
+    p @game.player1.
+    p 6
+    p @game = $game
+    p 7
+    p @game.p1_choice
+    p 8
+    p @game.results
     # show results
     # button - play again? redirect to /play
     # button - reset player? redirect to /homepage
-    erb :results
+    erb :result
   end
 
   # start the server if ruby file executed directly

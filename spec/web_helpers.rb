@@ -12,17 +12,17 @@ def play_page_content
   expect(page).to have_content 'Born2Win: make your choice.'
 end
 
-def make_selection_light_saber
-  # fill_in :selection, with: 'Light Saber'
-  click_button 'Light Saber'
+def make_selection_rock
+  fill_in :p1_choice, with: 'rock'
+  click_button 'Decide your fate'
 end
 
-def make_selection_blaster_cannon
-  # fill_in :selection, with: 'Blaster Cannon'
-  click_button 'Blaster Cannon'
+def make_selection_paper
+  fill_in :p1_choice, with: 'paper'
+  click_button 'Decide your fate'
 end
 
-def make_selection_thermal_detonator
-  # fill_in :selection, with: 'Thermal Detonator'
-  click_button 'Thermal Detonator'
+def make_selection_scissors
+  fill_in :p1_choice, with: 'scissors'
+  click_button 'Decide your fate'
 end
