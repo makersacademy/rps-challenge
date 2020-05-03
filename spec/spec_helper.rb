@@ -4,6 +4,7 @@ require 'rspec'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require './lib/player.rb'
 
 Capybara.app = Rps
 
