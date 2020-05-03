@@ -15,6 +15,6 @@ end
 
 def sign_in_and_play_computer
   sign_in
-  click_button 'Play'
+  click_button 'Play Computer'
 end
 
