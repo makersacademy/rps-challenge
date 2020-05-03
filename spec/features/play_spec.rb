@@ -35,4 +35,14 @@ feature 'Play page' do
 
     expect(page).to have_content "Marius selected Scissors!"
   end
+
+  scenario 'computer_player can choose a random option' do
+    allow_any_instance_of(ComputerPlayer).to receive(:weapon) {'Paper'}
+    visit '/'
+    fill_in :name, with: 'Marius'
+    find_button(value: "Register").click
+    find_button(value: "Rock").click
+
+    expect(page).to have_content "Computer selected Paper!"
+  end
 end
