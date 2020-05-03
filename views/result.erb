@@ -1,8 +1,7 @@
-
-<% if @choice.include?("rock") %>
-<h1>You win!</h1>
+<% if ( $game.who_wins == true )%>
+<h1>It's a draw!</h1>
 <% else %>
-<h1>You lose!</h1>
+<h1><%= $game.winner.name %> wins</h1>
 <% end %>
-
 <h2>Your choice: <%= $player.choice.keys[0] %></h2>
+<h2>Computer's choice: <%= $computer.choice %></h2>

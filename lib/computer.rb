@@ -1,19 +1,23 @@
 class Computer
 
+  attr_reader :name, :choice, :name
+  
   def initialize
     @choices = ["rock", "paper", "scissors"]
+    @name = "Computer"
+    @choice = nil
   end
 
-  def choice
+  def choose
     random = rand()
     if random < 0.3
-      p random
-      @choices[0]
+      random
+      @choice = @choices[0]
     elsif random >= 0.3 && random <= 0.6
-      p random
-      @choices[1]
+      random
+      @choice = @choices[1]
     else
-      @choices[2]
+      @choice = @choices[2]
     end
   end
 end
