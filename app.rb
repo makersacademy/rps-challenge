@@ -15,13 +15,15 @@ class RPS < Sinatra::Base
     redirect "/play"
   end
 
-  get "/play" do
+  before do
     @game = Game.instance
+  end
+
+  get "/play" do
     erb(:play)
   end
 
   post "/result" do
-    @game = Game.instance
     @game.computer.choose
     @game.player.choose(params)
     @game.who_wins
@@ -29,7 +31,6 @@ class RPS < Sinatra::Base
   end
 
   get "/result" do
-    @game = Game.instance
     erb(:result)
 end
 

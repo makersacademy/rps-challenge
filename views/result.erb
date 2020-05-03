@@ -1,7 +1,13 @@
+<head>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand" rel="stylesheet">
+</head>
+
+<h2 class="result">Your choice: <%= @game.player.choice.keys[0] %></h2>
+<h2>Computer's choice: <%= @game.computer.choice %></h2>
+
 <% if ( @game.who_wins == true )%>
 <h1>It's a draw!</h1>
 <% else %>
-<h1><%= @game.winner.name %> wins</h1>
+<h1><%= @game.winner.name %> wins!</h1>
 <% end %>
-<h2>Your choice: <%= @game.player.choice.keys[0] %></h2>
-<h2>Computer's choice: <%= @game.computer.choice %></h2>
