@@ -15,11 +15,11 @@ describe AIPlayer do
   end
 
   it 'assigns a random choice when choosing' do
-    expect{ subject.choose }.to change { subject.choice }.to eq('scissors')
+    expect { subject.choose }.to change { subject.choice }.to eq('scissors')
   end
 
   it 'assigns a different random choice when choosing' do
     subject = described_class.new(rock_random)
-    expect{ subject.choose }.to change { subject.choice }.to eq('rock')
+    expect { subject.choose }.to change { subject.choice }.to eq('rock')
   end
 end

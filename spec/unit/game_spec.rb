@@ -11,10 +11,10 @@ describe Game do
   let(:player5) { double(choice: 'rock', name: 'Pam', class: 'player') }
 
   let(:ai_instance) { double(choice: 'scissors', name: '愛', class: RSpec::Mocks::Double) }
-  let(:ai_class) { double(new: ai_instance)}
+  let(:ai_class) { double(new: ai_instance) }
 
-  let(:vm) { double(result: 0, choice_to_index: 0)}
-  let(:vm_class) { double(new: vm)}
+  let(:vm) { double(result: 0, choice_to_index: 0) }
+  let(:vm_class) { double(new: vm) }
 
   let(:subject) { described_class.new([player1, player2], ai_class) }
 

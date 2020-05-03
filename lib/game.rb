@@ -4,13 +4,11 @@ class Game
 
   attr_reader :players
 
-  def initialize(players, ai = AIPlayer, vm = VictoryMatrix)
-    @ai_class = ai
-    @victory_matrix = vm.new
+  def initialize(players, ai_class = AIPlayer, vm_class = VictoryMatrix)
+    @ai_class = ai_class
+    @victory_matrix = vm_class.new
     @players = players
-    if @players[1].name == ''
-      @players[1] = @ai_class.new
-    end
+    @players[1] = @ai_class.new if @players[1].name == ''
   end
 
   def result
