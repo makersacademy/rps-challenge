@@ -16,7 +16,15 @@
   </form>
 </div>
 
-<% if @rps != nil %>
-  <h3><%= @name %> picked <%= @rps %></br>
-  <h3>Computer picked <%= @computer.random_pick %></br>
+<% if @data.rounds >= 1 %>
+  <h3><%= @name %> picked <%= @game.player_pick %></h3></br>
+  <h3>Computer picked <%= @game.pc %></h3></br>
+  <%= @game.spin %></br>
+  Rounds <%= @data.rounds %></br>
+  Games <%= @data.results %></br>
+  Player wins <%= @data.player_wins.sum %></br>
+  Computer wins <%= @data.computer_wins.sum %></br>
+  tie games <%= @data.tie_games.sum %></br>
 <% end%>
+
+
