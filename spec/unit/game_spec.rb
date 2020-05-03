@@ -55,4 +55,10 @@ describe Game do
       expect(subject.result).to be nil
     end
   end
+
+  describe '#new_game' do
+    it 'creates a instance of a new game' do
+      expect(described_class.new_game([player1, player5])).to be_a_kind_of(Game)
+    end
+  end
 end

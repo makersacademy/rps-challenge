@@ -23,4 +23,8 @@ class Game
     return true if @players[1].class == @ai_class.new.class
     return false
   end
+
+  def self.new_game(players)
+    @game = Game.new(players)
+  end
 end
