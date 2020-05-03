@@ -5,22 +5,22 @@ describe Game do
   let(:player_1) { double :player }
   let(:player_2) { double :player }
 
-  describe 'Class methods' do
+  describe '#self.create' do
     it 'returns instance of game' do
       expect(Game.create(player_1, player_2)).to eq Game.instance
     end
   end
 
   describe '#round' do
-    it 'rocks beats scissors' do
+    it "player_1's rocks beats player_2's scissors" do
       player_1.stub(:choice) { "rock" }
       player_2.stub(:choice) { "scissors" }
       expect { game.round }.to change { game.winner }.to(player_1)
     end
 
-    it 'rocks beats scissors' do
-      player_1.stub(:choice) { "scissors" }
-      player_2.stub(:choice) { "rock" }
+    it "player_1's rocks is beaten by player_2's paper" do
+      player_1.stub(:choice) { "rock" }
+      player_2.stub(:choice) { "paper" }
       expect { game.round }.to change { game.loser }.to(player_1)
     end
   end
