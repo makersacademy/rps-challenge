@@ -24,6 +24,10 @@ class Game
     @current_player = @player_1
   end
 
+  def all_players_selected?
+    (!@player_1.choice.nil? && !@player_2.choice.nil?)
+  end
+
   def round
     return if @player_1.choice == @player_2.choice
 

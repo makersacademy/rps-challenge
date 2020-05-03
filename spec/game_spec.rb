@@ -43,4 +43,15 @@ describe Game do
       expect { game.reset }.to change { game.current_player }.to(player_1)
     end
   end
+
+  describe '#all_players_selected?' do
+    before(:each) do
+      player_1.stub(:choice) { "rock" }
+      player_2.stub(:choice) { "scissors" }
+    end
+
+    it 'Returns true if all players have selected choice' do
+      expect(game.all_players_selected?).to eq true
+    end
+  end
 end
