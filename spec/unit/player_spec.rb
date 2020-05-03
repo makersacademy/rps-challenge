@@ -1,6 +1,7 @@
 require './lib/player'
 
 describe Player do
+
   subject(:player1) {Player.new('tanil')}
   describe 'name' do
     it 'returns the name do' do
@@ -13,4 +14,5 @@ describe Player do
       expect(player1.status).to eq true
     end
   end
+  
 end

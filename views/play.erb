@@ -1,9 +1,13 @@
 <form >
-<%= @player1_name%> vs <%= @player2_name%>
+<%= @player1_name%> vs Computer
 </form>
 
-<form action= '/attack' method='get'>
+<form action= '/play' method='post'>
 <input type='submit' name='button' value='rock'>
 <input type='submit' name='button' value='scissors'>
 <input type='submit' name='button' value='paper'>
 </form>
+
+<%=@player1_name%> attacked with <%=@player1_status%>
+Computer attacked with <%=@computer_status%>
+<%%>
