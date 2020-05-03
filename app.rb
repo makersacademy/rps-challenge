@@ -21,7 +21,7 @@ class RockPaperScissorsWebGame < Sinatra::Base
     verbose_output(request.url) if $verbose
 
     session[:players].push(Player.new(params[:player_0_name]))
-    session[:players].push(Player.new("Computer"))
+    session[:players].push(Player.new("Computer", true))
 
     redirect to('/play')
   end
