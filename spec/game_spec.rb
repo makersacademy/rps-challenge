@@ -34,4 +34,13 @@ describe Game do
       expect { game.switch_player }.to change { game.current_player }.to(player_2)
     end
   end
+
+  describe '#reset' do
+    # Switches current_player to player_2
+    before(:each) { game.switch_player }
+
+    it 'Starts new round with player_1' do
+      expect { game.reset }.to change { game.current_player }.to(player_1)
+    end
+  end
 end
