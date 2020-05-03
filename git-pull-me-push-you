@@ -1,6 +1,11 @@
 #!/bin/bash
 
 clear
+
+CMD="git log -8 --oneline --color=always"
+echo -e "\n$HOSTNAME\$ $CMD\n"
+$CMD
+
 echo "You are about to pull, push, then pull again"
 read -r -p "Are you sure? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
