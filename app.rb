@@ -25,6 +25,7 @@ class RPS < Sinatra::Base
   end
 
   get '/action' do
+    RPSGame.instance.player2 = ComputerPlayer.new
     @game = RPSGame.instance
     erb :action
   end
