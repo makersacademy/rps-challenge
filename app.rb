@@ -50,15 +50,15 @@ class Rps < Sinatra::Base
   end
 
   get '/1results' do 
-    p $player_1
-    p $player_1_move
+    # p $player_1
+    # p $player_1_move
   end
 
   get '/2results' do 
-    p $gametype
-    p $player_1
-    p $player_1_move
-    p $player_2
-    p $player_2_move
+    # p $gametype
+    # p $player_1
+    # p $player_1_move
+    # p $player_2
+    # p $player_2_move
   end
 end

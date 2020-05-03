@@ -4,7 +4,7 @@ describe Move do
 
   subject(:ellis) {Move.new("Rock")}
 
-  it 'returns its name' do
+  it 'returns its move' do
     expect(ellis.move).to eq "Rock"
   end
 
