@@ -1,5 +1,5 @@
 class Game
-  attr_reader :rps, :computer_choice, :player, :winner
+  attr_reader :rps, :computer_choice, :player
   attr_accessor :winner
 
   def initialize(player)
@@ -15,20 +15,11 @@ class Game
 
   def outcome(user_choice)
     user_choice = user_choice.capitalize
-    if user_choice == @computer_choice
-      @winner = "It's a draw!"
-    elsif user_choice == "Paper" && @computer_choice == "Rock"
-      @winner = @player
-    elsif user_choice == "Scissors" && @computer_choice == "Rock"
-      @winner = "Computer"
-    elsif user_choice == "Scissors" && @computer_choice == "Paper"
-      @winner = @player
-    elsif user_choice == "Rock" && @computer_choice == "Paper"
-      @winner = "Computer"
-    elsif user_choice == "Rock" && @computer_choice == "Scissors"
-      @winner = @player
-    elsif user_choice == "Paper" && @computer_choice == "Scissors"
-      @winner = "Computer"
-    end
+    return @winner = "It's a draw!" if user_choice == @computer_choice
+    return @winner = @player if user_choice == "Paper" && @computer_choice == "Rock"
+    return @winner = @player if user_choice == "Scissors" && @computer_choice == "Paper"
+    return @winner = @player if user_choice == "Rock" && @computer_choice == "Scissors"
+
+    @winner = "Computer"
   end
 end

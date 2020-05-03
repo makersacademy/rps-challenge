@@ -30,7 +30,7 @@ describe Game do
       it 'updates winner instance variable to computer' do
         allow(game.rps).to receive(:sample).and_return("Rock")
         game.computer_turn
-        expect { game.outcome("Scissors") }.to change { game.winner }.to("Computer")
+        expect { game.outcome("Scissors") }.to change { game.winner }.to "Computer"
       end
     end
 
@@ -38,7 +38,7 @@ describe Game do
       it 'does not update winner variable' do
         allow(game.rps).to receive(:sample).and_return("Rock")
         game.computer_turn
-        expect { game.outcome("Rock") }.to change { game.winner }.to ("It's a draw!")
+        expect { game.outcome("Rock") }.to change { game.winner }.to "It's a draw!"
       end
     end
   end
