@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/computer'
 
 class Game < Sinatra::Base
   enable :sessions
@@ -23,8 +24,7 @@ class Game < Sinatra::Base
   end
 
   get '/outcome' do
-    array = ["Rock", "Paper", "Scissors"]
-    @random_choice = array.sample
+    @random_choice = Computer.new.choice
 
     @user_choice = session[:user_choice]
     erb(:outcome)
