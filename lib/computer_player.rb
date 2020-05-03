@@ -4,5 +4,6 @@ class ComputerPlayer
   end
 
   def weapon
+    'Rock'
   end
 end
