@@ -9,20 +9,10 @@ Computer chose: Paper
 Computer chose: Scissors
 <% end %><br>
 
-<% if @user_choice == @random_choice %>
+<% if @winner == "Human" %>
+Human wins!
+<% elsif @winner == "Computer" %>
+Computer wins!
+<% elsif @winner == "Draw" %>
 It's a draw!
-<% elsif @user_choice == "Rock" && @random_choice == "Scissors" %>
-Human wins!
-<% elsif @user_choice == "Rock" && @random_choice == "Paper" %>
-Computer wins!
-<% elsif @user_choice == "Scissors" && @random_choice == "Rock" %>
-Computer wins!
-<% elsif @user_choice == "Scissors" && @random_choice == "Paper" %>
-Human wins!
-<% elsif @user_choice == "Paper" && @random_choice == "Rock" %>
-Human wins!
-<% elsif @user_choice == "Paper" && @random_choice == "Scissors" %>
-Computer wins!
-<% else %>
-YOU MADE A MISTAKE!
 <% end %>

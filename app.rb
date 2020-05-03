@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/computer'
+require_relative './lib/winner'
 
 class Game < Sinatra::Base
   enable :sessions
@@ -25,8 +26,9 @@ class Game < Sinatra::Base
 
   get '/outcome' do
     @random_choice = Computer.new.choice
-
     @user_choice = session[:user_choice]
+
+    @winner = Winner.new(@user_choice, @random_choice).outcome
     erb(:outcome)
   end
 
