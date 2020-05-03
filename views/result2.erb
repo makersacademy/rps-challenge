@@ -5,3 +5,10 @@
 <% else %>
 <%= @player_1.name %>, you chose <%= @player_1_move.move %> and <%= @player_2.name %>, you chose <%= @player_2_move.move %>. Therefore, it's a Draw! <%= @player_1_move.move %> cancels out <%= @player_2_move.move%>
 <% end %>
+Would you like to play again?
+<form action="/playagain" method="post">
+  <input type="submit" value="Yes" name="playagain">
+</form>
+<form action="/final_score" method="post">
+  <input type="submit" value="No" name="playagain">
+</form>

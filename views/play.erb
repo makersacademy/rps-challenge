@@ -1,3 +1,8 @@
+<% if @gametype == "1 Player"%>
+The current score is <%= @player_1.name %> - <%= @scoreboard.player_1_score%> vs <%= @scoreboard.player_2_score%> - CPU
+<% else %>
+The current score is <%= @player_1.name %> - <%= @scoreboard.player_1_score%> vs <%= @scoreboard.player_2_score%> - <%= @player_2.name %>
+<% end %>
 Welcome <%= @player_1.name %>!
 Choose your weapon:
 <form action="/player1move" method="post">
@@ -5,4 +10,5 @@ Choose your weapon:
   <input type="submit" value="Paper" name="move">
   <input type="submit" value="Scissors" name="move">
 </form>
+
 
