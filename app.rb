@@ -18,14 +18,16 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-   post '/move' do
-     session[:move] = params[:move]
-     redirect '/rps'
-   end
+  post '/move' do
+    session[:game] = Game.new(params[:move])
+    redirect '/rps'
+  end
 
   get '/rps' do
     @name = session[:name].capitalize
-    @player_move = session[:move]
+    @player_move = session[:game].player_move
+    @computer_move = session[:game].computer_move
+    @result = session[:game].winner
     erb(:rps)
   end
 

@@ -1,15 +1,15 @@
 class Game
 
-  attr_reader :move
+  attr_reader :move, :player_move, :computer_move
 
-  def initialize
-    @move = ['rock', 'paper', 'scissors']
+  def initialize(player_move)
+    @move = ['Rock', 'Paper', 'Scissors']
+    @player_move = player_move
+    @computer_move = @move.sample
   end
 
-  def computer_move
-    @move.sample
+  def winner
+    return 'You win!' if @player_move == 'Rock' && @computer_move == 'Scissors'
   end
-
-
 
 end

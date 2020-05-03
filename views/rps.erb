@@ -1,1 +1,9 @@
-<h1> <%= @name %>: <%= @player_move %>  </h1>
+<h1> <%= @name %>: <%= @player_move %> vs. Computer: <%= @computer_move %> </h1>
+
+<form method="post" action="/move">
+  <input type="submit" name = "move" value= "Rock" >
+  <input type="submit" name = "move" value= "Paper" >
+  <input type="submit" name = "move" value= "Scissors" >
+</form>
+
+<h1> <%= @result %> </h1> 
