@@ -27,4 +27,8 @@ class Game
   def self.new_game(players)
     @game = Game.new(players)
   end
+
+  def self.current_game
+    @game
+  end
 end

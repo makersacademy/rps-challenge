@@ -61,4 +61,11 @@ describe Game do
       expect(described_class.new_game([player1, player5])).to be_a_kind_of(Game)
     end
   end
+
+  describe '#current_game' do
+    it 'has a record of the current_game' do
+      new_game = described_class.new_game([player1, player5])
+      expect(described_class.current_game).to eq(new_game)
+    end
+  end
 end
