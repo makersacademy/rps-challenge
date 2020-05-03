@@ -44,14 +44,9 @@ if there was a victor. Here the values are encoded alphabetically as 'Rock', 'Pa
 
 ```
     R  P  S  V  L
-
 R  │5  1  0  1  0│
-
 P  │0  5  1  0  1│
-
 S  │1  0  5  1  0│
-
 V  │0  1  0  5  1│
-
 L  │1  0  1  0  5│
 ```
