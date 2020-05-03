@@ -12,8 +12,8 @@ class Calculate
   end
 
   def result
-    index = choices.index(@player_1_move)
-    winning_move = choices[index - 1]
+    index_move = choices.index(@player_1_move)
+    winning_move = choices[index_move - 1]
     if @player_2_move == @player_1_move
       "Draw"
     elsif @player_2_move == winning_move

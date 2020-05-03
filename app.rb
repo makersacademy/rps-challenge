@@ -1,6 +1,9 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/move'
+require './lib/cpu'
+require './lib/calculate'
+
 
 class Rps < Sinatra::Base
 
@@ -50,15 +53,22 @@ class Rps < Sinatra::Base
   end
 
   get '/1results' do 
-    # p $player_1
-    # p $player_1_move
+    @player_1 = $player_1
+    @player_1_move = $player_1_move
+    $cpu_move = Cpu.new
+    @cpu_move = $cpu_move
+    $calculate = Calculate.new(@player_1_move.move, @cpu_move.move)
+    @result = $calculate.result
+    erb :result
   end
 
   get '/2results' do 
-    # p $gametype
-    # p $player_1
-    # p $player_1_move
-    # p $player_2
-    # p $player_2_move
+    @player_1 = $player_1
+    @player_2 = $player_2
+    @player_1_move = $player_1_move
+    @player_2_move = $player_2_move
+    $calculate = Calculate.new(@player_1_move.move, @player_2_move.move)
+    @result = $calculate.result
+    erb :result2
   end
 end

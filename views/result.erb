@@ -1,0 +1,7 @@
+<% if @result == "Player 1 Wins" %>
+<%= @player_1.name %>, you chose <%= @player_1_move.move %> and CPU chose <%= @cpu_move.move%>. Therefore, you Win! <%= @player_1_move.move %> beats <%= @cpu_move.move%>
+<% elsif @result == "Player 2 Wins"%>
+<%= @player_1.name %>, you chose <%= @player_1_move.move %> and CPU chose <%= @cpu_move.move%>. Therefore, you Lose! <%= @cpu_move.move %> beats <%= @player_1_move.move %>
+<% else %>
+<%= @player_1.name %>, you chose <%= @player_1_move.move %> and CPU chose <%= @cpu_move.move%>. Therefore, it's a Draw! <%= @player_1_move.move %> and <%= @cpu_move.move %> cancel eachother out!
+<% end %>

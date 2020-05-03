@@ -1,0 +1,7 @@
+<% if @result == "Player 1 Wins" %>
+<%= @player_1.name %>, you chose <%= @player_1_move.move %> and <%= @player_2.name %>, you chose <%= @player_2_move.move %>. Therefore, <%= @player_1.name %> Wins! <%= @player_1_move.move %> beats <%= @player_2_move.move%>
+<% elsif @result == "Player 2 Wins"%>
+<%= @player_1.name %>, you chose <%= @player_1_move.move %> and <%= @player_2.name %>, you chose <%= @player_2_move.move %>. Therefore, <%= @player_2.name %> Wins! <%= @player_2_move.move %> beats <%= @player_1_move.move%>
+<% else %>
+<%= @player_1.name %>, you chose <%= @player_1_move.move %> and <%= @player_2.name %>, you chose <%= @player_2_move.move %>. Therefore, it's a Draw! <%= @player_1_move.move %> cancels out <%= @player_2_move.move%>
+<% end %>
