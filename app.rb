@@ -20,7 +20,7 @@ class RPS < Sinatra::Base
 
   post '/results' do
     p @player1_name = session[:player1_name]
-    p session[:player1_choice] = params[:player1_choice]
+    p session[:p1_choice] = params[:p1_choice]
     # show results
     # button - play again? redirect to /play
     # button - reset player? redirect to /homepage
