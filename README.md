@@ -11,8 +11,9 @@ To test in browser, run script:
 
 ## To do:
 
-* Add computer? method to Player class
 * Add current_player to session
+* Add two stages to player flow so each player makes and stores a move
+
 
 
 # Original README.md
