@@ -9,19 +9,19 @@ describe ComputerPlayer do
     it 'returns Rock' do
       allow(computer).to receive(:rand) {0}
 
-      expect(computer.weapon).to eq 'Rock'
+      expect(computer.weapon).to eq :rock
     end
 
     it 'returns Paper' do
       allow(computer).to receive(:rand) {1}
 
-      expect(computer.weapon).to eq 'Paper'
+      expect(computer.weapon).to eq :paper
     end
 
     it 'returns Scissors' do
       allow(computer).to receive(:rand) {2}
 
-      expect(computer.weapon).to eq 'Scissors'
+      expect(computer.weapon).to eq :scissors
     end
   end
 end
