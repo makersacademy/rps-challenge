@@ -17,9 +17,16 @@ class Game < Sinatra::Base
     erb(:choose)
   end
 
+  post '/choose' do
+    session[:user_choice] = params[:user_choice]
+    redirect '/outcome'
+  end
+
   get '/outcome' do
-    @random_number = rand(3)
-    @user_choice = params[:user_choice]
+    array = ["Rock", "Paper", "Scissors"]
+    @random_choice = array.sample
+
+    @user_choice = session[:user_choice]
     erb(:outcome)
   end
 

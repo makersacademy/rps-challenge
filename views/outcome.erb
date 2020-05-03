@@ -1,28 +1,27 @@
 You chose: <%= @user_choice %><br>
 
-<% array = ["Rock", "Paper", "Scissors"] %>
 
-<% if @random_number == 0 %>
+<% if @random_choice == "Rock" %>
 Computer chose: Rock
-<% elsif @random_number == 1 %>
+<% elsif @random_choice == "Paper" %>
 Computer chose: Paper
-<% elsif @random_number == 2 %>
+<% elsif @random_choice == "Scissors" %>
 Computer chose: Scissors
 <% end %><br>
 
-<% if @user_choice == array[@random_number] %>
+<% if @user_choice == @random_choice %>
 It's a draw!
-<% elsif @user_choice == "Rock" && array[@random_number] == "Scissors" %>
+<% elsif @user_choice == "Rock" && @random_choice == "Scissors" %>
 Human wins!
-<% elsif @user_choice == "Rock" && array[@random_number] == "Paper" %>
+<% elsif @user_choice == "Rock" && @random_choice == "Paper" %>
 Computer wins!
-<% elsif @user_choice == "Scissors" && array[@random_number] == "Rock" %>
+<% elsif @user_choice == "Scissors" && @random_choice == "Rock" %>
 Computer wins!
-<% elsif @user_choice == "Scissors" && array[@random_number] == "Paper" %>
+<% elsif @user_choice == "Scissors" && @random_choice == "Paper" %>
 Human wins!
-<% elsif @user_choice == "Paper" && array[@random_number] == "Rock" %>
+<% elsif @user_choice == "Paper" && @random_choice == "Rock" %>
 Human wins!
-<% elsif @user_choice == "Paper" && array[@random_number] == "Scissors" %>
+<% elsif @user_choice == "Paper" && @random_choice == "Scissors" %>
 Computer wins!
 <% else %>
 YOU MADE A MISTAKE!
