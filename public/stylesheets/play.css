@@ -1,0 +1,12 @@
+#sidebar    {
+  float: left;
+  width: 150px
+}
+
+#page-wrap  {
+  float: left;
+}
+
+#ender {
+  clear: left
+}

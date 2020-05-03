@@ -1,9 +1,13 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/play.css">
+</head>
+
 <h1>Player 1: <%= @game.players[0].name %></h1>
 <h1>Player 2: <%= @game.players[1].name %></h1>
 
 <form class="" action="/choose" method="post">
-  <span>
-    <div>
+  <div>
+    <div id="sidebar">
       <p> Player 1 choice: </p>
       <input type="radio" id="player_1_rock" name="player_1_choice" value="rock">
       <label for="player_1_rock">Rock</label><br>
@@ -18,7 +22,7 @@
     </div>
 
     <% if !@game.single_player? %>
-      <div>
+      <div id="page-wrap">
         <p> Player 2 choice: </p>
         <input type="radio" id="player_2_rock" name="player_2_choice" value="rock">
         <label for="player_2_rock">Rock</label><br>
@@ -32,6 +36,9 @@
         <label for="player_2_lizard">Lizard</label><br>
       </div>
     <% end %>
+    </div>
+    <div id="ender">
+      </br>
       <input type="submit" name="submit" value="play">
-    </span>
+    </div>
 </form>
