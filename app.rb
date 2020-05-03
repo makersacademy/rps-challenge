@@ -23,7 +23,7 @@ class Rps < Sinatra::Base
   post '/choice_selected' do
     @game = Game.instance
     @game.current_player.choice = params[:choice]
-    redirect '/end_game' if @game.current_player == @game.player_2
+    redirect '/end_game' if @game.all_players_selected?
     @game.switch_player
     redirect '/rock_paper_scissors'
   end
