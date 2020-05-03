@@ -1,0 +1,7 @@
+feature 'Attacking' do
+  scenario 'play a hand against The Computer' do
+    sign_in_and_play
+    click_link 'Attack'
+    expect(page).to have_content 'Steve played a hand against the computer'
+  end
+end
