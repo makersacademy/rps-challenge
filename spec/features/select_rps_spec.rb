@@ -1,4 +1,3 @@
-
 feature 'Select rock, paper or scissors' do
   scenario 'returns a winner' do
     sign_in_and_play
