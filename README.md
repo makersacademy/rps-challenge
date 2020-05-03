@@ -30,6 +30,7 @@ Breakdown of my implementation
 * Make all feature tests pass by stubbing out randomness
 * Introduce class variable in Game classes
 * Add CSS to project
+
 ![Login page](/image/rps.png)
 
 What I learnt from the process
