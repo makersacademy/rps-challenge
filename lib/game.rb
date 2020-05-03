@@ -10,6 +10,7 @@ class Game
 
   def winner
     return 'You win!' if @player_move == 'Rock' && @computer_move == 'Scissors'
+    return 'Computer wins.' if @player_move == 'Scissors' && @computer_move == 'Rock'
   end
 
 end
