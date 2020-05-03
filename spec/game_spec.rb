@@ -20,7 +20,6 @@ describe Game do
     before { game2.instance_variable_set(:@computer_move, 'Rock') }
     before { game3.instance_variable_set(:@computer_move, 'Paper') }
 
-
     it 'is able to declare the player as the winner' do
       expect(game.winner).to eq 'You win!'
     end
