@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe Game do
   let(:user) { double :player }
-  let(:game) { described_class.new(user) }
+  let(:user_2) { double :player }
+  let(:game) { described_class.new(user, user_2) }
 
   describe '#rps' do
     it 'initialises with array of choices' do
@@ -40,6 +41,16 @@ describe Game do
         game.computer_turn
         expect { game.outcome("Rock") }.to change { game.winner }.to "It's a draw!"
       end
+    end
+  end
+
+  context 'multiplayer' do
+    it 'returns player_1' do
+      expect(game.player_1).to eq user
+    end
+
+    it 'returns player_2' do
+      expect(game.player_2).to eq user_2
     end
   end
 end
