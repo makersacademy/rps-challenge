@@ -4,6 +4,7 @@ describe Game do
 
   let(:game) { Game.new('Rock') }
   let(:game2) { Game.new('Scissors') }
+  let(:game3) { Game.new('Paper') }
 
   describe 'computer_move' do
 
@@ -17,6 +18,8 @@ describe Game do
 
     before { game.instance_variable_set(:@computer_move, 'Scissors') }
     before { game2.instance_variable_set(:@computer_move, 'Rock') }
+    before { game3.instance_variable_set(:@computer_move, 'Paper') }
+
 
     it 'is able to declare the player as the winner' do
       expect(game.winner).to eq 'You win!'
@@ -24,6 +27,10 @@ describe Game do
 
     it 'is able to declare the computer as the winner' do
       expect(game2.winner).to eq 'Computer wins.'
+    end
+
+    it 'is able to declare a draw' do
+      expect(game3.winner).to eq 'Draw.'
     end
 
   end
