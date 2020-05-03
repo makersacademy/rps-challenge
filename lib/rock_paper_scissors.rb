@@ -1,8 +1,8 @@
 class RockPaperScissors
-  RESULT_DRAW = :🙏
-  RESULT_ROCK = :🗿
-  RESULT_PAPER = :📄
-  RESULT_SCISSORS = :✂
+  RESULT_DRAW = '🙏'
+  RESULT_ROCK = '🗿'
+  RESULT_PAPER = '📄'
+  RESULT_SCISSORS = '✂'
 
   def result(player_1, player_2)
     return RESULT_DRAW if player_1.move == player_2.move
