@@ -42,10 +42,16 @@ or `nil` for draws and the winning players player index inside the game class
 if there was a victor. Here the values are encoded alphabetically as 'Rock', 'Paper',
 'Scissors', 'Vulcan', 'Lizard'.
 
-
+```
     R  P  S  V  L
+
 R  │5  1  0  1  0│
+
 P  │0  5  1  0  1│
+
 S  │1  0  5  1  0│
+
 V  │0  1  0  5  1│
+
 L  │1  0  1  0  5│
+```
