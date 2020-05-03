@@ -5,16 +5,6 @@ describe Game do
   let(:player_1) { double :player }
   let(:player_2) { double :player }
 
-  describe 'Player instances' do
-    it 'returns player_1 instance' do
-      expect(game.player_1).to eq player_1
-    end
-
-    it 'returns player_2 instance' do
-      expect(game.player_2).to eq player_2
-    end
-  end
-
   describe 'Class methods' do
     it 'returns instance of game' do
       expect(Game.create(player_1, player_2)).to eq Game.instance
@@ -34,6 +24,16 @@ describe Game do
       player_2.stub(:choice) { "rock" }
       game.round
       expect(game.loser).to eq(player_1)
+    end
+  end
+
+  describe '#current_player' do
+    it 'returns default current player' do
+      expect(game.current_player).to eq(player_1)
+    end
+
+    it 'switches player' do
+      expect { game.switch_player }.to change { game.current_player }.to(player_2)
     end
   end
 end
