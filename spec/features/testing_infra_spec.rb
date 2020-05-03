@@ -6,11 +6,22 @@ feature 'Setting up game' do
 end
 
 feature 'Setting up game' do
-  scenario 'Player input their names' do
+  scenario 'Player selects move' do
     setup
     click_on :Play!
-    expect(page).to have_button('Rock')
-    expect(page).to have_button('Paper')
-    expect(page).to have_button('Scissors')
+    select('Rock')
+    click_on 'Go'
+    expect(page).to have_content("Jed has chosen Rock")
+  end
+end
+
+feature 'Determining winner' do
+  scenario "player selects rock and computer selects scissors" do
+    srand(4)
+    setup
+    click_on :Play!
+    select('Rock')
+    click_on 'Go'
+    expect(page).to have_content("Jed wins!")
   end
 end

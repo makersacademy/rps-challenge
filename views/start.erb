@@ -1,7 +1,12 @@
 <h1> Make your move! </h1>
 
 <form action="/result" method="post">
-    <input type="submit" value="Rock">
-    <input type="submit" value="Paper">
-    <input type="submit" value="Scissors">
+  <label for="move">
+  Select Move:
+  <select name="move" size="3">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Go">
 </form>

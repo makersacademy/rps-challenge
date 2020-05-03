@@ -1,0 +1,10 @@
+<h2><%= @player.name %> has chosen <%= @player.move %></h2>
+<h2><%= @computer.name %> has chosen <%= @computer.move %></h2>
+
+<% if @game.winner? == 'Draw' %>
+ It's a draw!
+<% else %>
+ <%= "The winner is #{@game.winner?}" %>
+<% end %>
+
+  
