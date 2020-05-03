@@ -9,6 +9,11 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  before do
+    pass if request.path == '/' || request.path == '/name' || request.path == '/replay'
+    @game = Game.current_game
+  end
+
   get '/' do
     erb(:index)
   end
@@ -19,19 +24,16 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @game = Game.current_game
     erb(:play)
   end
 
   post '/choose' do
-    @game = Game.current_game
     @game.players[0].choose(params[:player_1_choice])
     @game.players[1].choose(params[:player_2_choice])
     redirect('/result')
   end
 
   get '/result' do
-    @game = Game.current_game
     @result = @game.result
     erb(:result)
   end
