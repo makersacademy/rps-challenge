@@ -11,24 +11,25 @@ class RPS < Sinatra::Base
   end
 
   post "/play" do
-   $player = Player.new(params[:name])
-   $computer = Computer.new
-   $game = Game.new($player, $computer)
-   redirect "/play"
+    @game = Game.create(Player.new(params[:name]), Computer.new)
+    redirect "/play"
   end
 
   get "/play" do
-   erb(:play)
+    @game = Game.instance
+    erb(:play)
   end
 
   post "/result" do
-    $computer.choose
-    $player.choose(params)
-    $game.who_wins
+    @game = Game.instance
+    @game.computer.choose
+    @game.player.choose(params)
+    @game.who_wins
     redirect "/result"
   end
 
   get "/result" do
+    @game = Game.instance
     erb(:result)
 end
 

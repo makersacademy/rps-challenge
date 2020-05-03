@@ -21,9 +21,6 @@ feature "Instructions" do
 end
 
 feature "Click buttons" do
-  let(:game) { Game.new(player, computer) }
-  let(:player) { double :player, name: "Kitty"}
-  let(:computer) { double :computer, name: "Computer"}
 
   scenario "player can win" do
     allow_any_instance_of(Object).to receive(:rand).and_return(0.8)

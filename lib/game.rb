@@ -1,6 +1,14 @@
 class Game
   attr_reader :player, :computer, :draw, :winner
 
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
+  end
+
+  def self.instance
+    @game
+  end
+
   def initialize(player, computer)
     @player = player
     @computer = computer
