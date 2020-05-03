@@ -8,58 +8,58 @@ describe RockPaperScissors do
 
   describe '#result' do
 
-    it 'returns draw for 🗿 vs 🗿' do
+    it 'returns 🙏 for 🗿 vs 🗿' do
       @player_1.move = '🗿'
       @player_2.move = '🗿'
       expect(subject.result(@player_1, @player_2)).to eq RockPaperScissors::RESULT_DRAW
     end
 
-    it 'returns player_1 wins for 🗿 vs ✂' do
+    it 'returns 🗿 for 🗿 vs ✂' do
       @player_1.move = '🗿'
       @player_2.move = '✂'
-      expect(subject.result(@player_1, @player_2)).to eq "#{@player_1.name} #{RockPaperScissors::RESULT_WINS}"
+      expect(subject.result(@player_1, @player_2)).to eq RockPaperScissors::RESULT_ROCK
     end
 
-    it 'returns player_2 wins for 🗿 vs 📄' do
+    it 'returns 📄 for 🗿 vs 📄' do
       @player_1.move = '🗿'
       @player_2.move = '📄'
-      expect(subject.result(@player_1, @player_2)).to eq "#{@player_2.name} #{RockPaperScissors::RESULT_WINS}"
+      expect(subject.result(@player_1, @player_2)).to eq RockPaperScissors::RESULT_PAPER
     end
 
-    it 'returns draw for 📄 vs 📄' do
+    it 'returns 🙏 for 📄 vs 📄' do
       @player_1.move = '📄'
       @player_2.move = '📄'
       expect(subject.result(@player_1, @player_2)).to eq RockPaperScissors::RESULT_DRAW
     end
 
-    it 'returns player_1 wins for 📄 vs 🗿' do
+    it 'returns 📄 for 📄 vs 🗿' do
       @player_1.move = '📄'
       @player_2.move = '🗿'
-      expect(subject.result(@player_1, @player_2)).to eq "#{@player_1.name} #{RockPaperScissors::RESULT_WINS}"
+      expect(subject.result(@player_1, @player_2)).to eq RockPaperScissors::RESULT_PAPER
     end
 
-    it 'returns player_2 wins for 📄 vs ✂' do
+    it 'returns ✂ for 📄 vs ✂' do
       @player_1.move = '📄'
       @player_2.move = '✂'
-      expect(subject.result(@player_1, @player_2)).to eq "#{@player_2.name} #{RockPaperScissors::RESULT_WINS}"
+      expect(subject.result(@player_1, @player_2)).to eq RockPaperScissors::RESULT_SCISSORS
     end
 
-    it 'returns draw for ✂ vs ✂' do
+    it 'returns 🙏 for ✂ vs ✂' do
       @player_1.move = '✂'
       @player_2.move = '✂'
       expect(subject.result(@player_1, @player_2)).to eq RockPaperScissors::RESULT_DRAW
     end
 
-    it 'returns player_2 wins for ✂ vs 🗿' do
+    it 'returns 🗿 for ✂ vs 🗿' do
       @player_1.move = '✂'
       @player_2.move = '🗿'
-      expect(subject.result(@player_1, @player_2)).to eq "#{@player_2.name} #{RockPaperScissors::RESULT_WINS}"
+      expect(subject.result(@player_1, @player_2)).to eq RockPaperScissors::RESULT_ROCK
     end
 
-    it 'returns player_1 wins for ✂ vs 📄' do
+    it 'returns ✂ for ✂ vs 📄' do
       @player_1.move = '✂'
       @player_2.move = '📄'
-      expect(subject.result(@player_1, @player_2)).to eq "#{@player_1.name} #{RockPaperScissors::RESULT_WINS}"
+      expect(subject.result(@player_1, @player_2)).to eq RockPaperScissors::RESULT_SCISSORS
     end
 
   end
