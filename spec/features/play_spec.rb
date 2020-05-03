@@ -37,12 +37,42 @@ feature 'Play page' do
   end
 
   scenario 'computer_player can choose a random option' do
-    allow_any_instance_of(ComputerPlayer).to receive(:weapon) {'Paper'}
+    allow_any_instance_of(ComputerPlayer).to receive(:weapon) { 'Paper' }
     visit '/'
     fill_in :name, with: 'Marius'
     find_button(value: "Register").click
     find_button(value: "Rock").click
 
     expect(page).to have_content "Computer selected Paper!"
+  end
+
+  scenario 'computer_player wins' do
+    srand(2348)
+    visit '/'
+    fill_in :name, with: 'Marius'
+    find_button(value: 'Register').click
+    find_button(value: 'Paper').click
+
+    expect(page).to have_content 'Computer wins!'
+  end
+
+  scenario 'it\'s a draw' do
+    srand(22238)
+    visit '/'
+    fill_in :name, with: 'Marius'
+    find_button(value: 'Register').click
+    find_button(value: 'Rock').click
+
+    expect(page).to have_content "It's a draw!"
+  end
+
+  scenario 'human_player wins' do
+    srand(32198)
+    visit '/'
+    fill_in :name, with: 'Marius'
+    find_button(value: 'Register').click
+    find_button(value: 'Rock').click
+
+    expect(page).to have_content "Marius wins!"
   end
 end

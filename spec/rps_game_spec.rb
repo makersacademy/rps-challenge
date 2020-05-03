@@ -5,14 +5,14 @@ describe RPSGame do
   let(:player1) { instance_double HumanPlayer }
   let(:player2) { instance_double ComputerPlayer }
 
-  it { is_expected.to respond_to(:result) }
+  it { is_expected.to respond_to(:result).with(2).arguments }
 
   describe '#result' do
     it 'returns the game result' do
       expect(player1).to receive(:weapon) {:rock}
       expect(player2).to receive(:weapon) {:paper}
 
-      game.result
+      game.result(player1.weapon, player2.weapon)
     end
   end
 

@@ -7,8 +7,8 @@ class RPSGame
     @player2 = player2
   end
 
-  def result
-    LOOKUP_TABLE[@player1.weapon][@player2.weapon]
+  def result(player1_weapon, player2_weapon)
+    LOOKUP_TABLE[player1_weapon][player2_weapon]
   end
 
   def self.create(player1, player2)

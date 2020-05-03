@@ -10,7 +10,7 @@ class RPS < Sinatra::Base
 
   post '/name' do
     player1 = HumanPlayer.new(params[:name])
-    RPSGame.create(player1, "")
+    RPSGame.create(player1, ComputerPlayer.new)
     redirect '/play'
   end
 
@@ -20,13 +20,14 @@ class RPS < Sinatra::Base
   end
 
   post '/weapon' do
-    RPSGame.instance.player1.weapon=(params[:weapon])
+    RPSGame.instance.player1.weapon=(params[:weapon].downcase.to_sym)
     redirect '/action'
   end
 
   get '/action' do
-    RPSGame.instance.player2 = ComputerPlayer.new
     @game = RPSGame.instance
+    @weapon1 = @game.player1.weapon
+    @weapon2 = @game.player2.weapon
     erb :action
   end
 
