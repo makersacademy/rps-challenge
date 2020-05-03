@@ -1,7 +1,8 @@
 class RPSGame
-  attr_reader :player1, :player2
+  attr_reader :player1
+  attr_accessor :player2
 
-  def initialize(player1 = HumanPlayer.new, player2 = ComputerPlayer)
+  def initialize(player1 = HumanPlayer.new, player2 = ComputerPlayer.new)
     @player1 = player1
     @player2 = player2
   end

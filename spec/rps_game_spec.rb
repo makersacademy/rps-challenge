@@ -31,4 +31,14 @@ describe RPSGame do
       expect(RPSGame.instance).to eq game
     end
   end
+
+  describe '#player2' do
+    it 'can change the value of player2' do
+      new_player = double :new_player
+      game.player2 = new_player
+      RPSGame.create(player1, new_player)
+
+      expect(RPSGame.instance.player2).to eq new_player
+    end
+  end
 end
