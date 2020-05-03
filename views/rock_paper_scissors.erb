@@ -1,4 +1,4 @@
-<p><%= @game.player_1.name %>, please select rock, paper or scissors</p>
+<p><%= @game.current_player.name %>, please select rock, paper or scissors</p>
 
 <form action="/choice_selected" method="post">
   <input type="hidden" name="choice" value="rock">

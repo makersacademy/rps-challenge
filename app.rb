@@ -10,7 +10,7 @@ class Rps < Sinatra::Base
 
   post '/name' do
     player_1 = Player.new(params[:player_1_name])
-    player_2 = Player.new('Computer')
+    player_2 = Player.new(params[:player_2_name])
     @game = Game.create(player_1, player_2)
     redirect '/rock_paper_scissors'
   end
@@ -21,20 +21,16 @@ class Rps < Sinatra::Base
   end
 
   post '/choice_selected' do
-    # @game.current_player.choice = params[:choice]
-    # redirect '/end_game' if @game.current_player == @game.player_2
-    # @game.switch_player
-    # redirect '/rock_paper_scissors'
     @game = Game.instance
-    @game.player_1.choice = params[:choice]
-    @game.player_2.choice = ["rock", "paper", "scissors"].sample
-    @game.round
-    redirect '/end_game'
+    @game.current_player.choice = params[:choice]
+    redirect '/end_game' if @game.current_player == @game.player_2
+    @game.switch_player
+    redirect '/rock_paper_scissors'
   end
 
   get '/end_game' do
     @game = Game.instance
-    # @game.round
+    @game.round
     erb :end_game
   end
 

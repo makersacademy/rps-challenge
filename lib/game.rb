@@ -1,5 +1,5 @@
 class Game
-  attr_reader :current_player, :winner, :loser
+  attr_reader :current_player, :player_1, :player_2, :winner, :loser
 
   def initialize(player_1, player_2)
     @player_1 = player_1
