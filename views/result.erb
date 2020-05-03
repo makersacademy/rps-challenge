@@ -19,7 +19,5 @@ h2 {
 <% if @game.winner? == 'Draw' %>
  <h1> It's a draw! </h1>
 <% else %>
- <h1><%= "The winner is #{@game.winner?}" %></h1>
+ <h1><%= "#{@game.winner?} wins!" %></h1>
 <% end %>
-
-  
