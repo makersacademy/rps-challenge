@@ -36,10 +36,17 @@ describe Game do
     end
 
     context 'draw' do
-      it 'does not update winner variable' do
+      it 'winner variable to hold draw message' do
         allow(game.rps).to receive(:sample).and_return("Rock")
         game.computer_turn
         expect { game.outcome("Rock") }.to change { game.winner }.to "It's a draw!"
+      end
+
+      context 'multiplayer - player 2 wins' do
+        it 'updates winner instance variable to user_2' do
+          allow(game.rps).to receive(:sample).and_return("Rock")
+          expect { game.outcome("Rock", "Paper") }.to change { game.winner }.to(user_2)
+        end
       end
     end
   end

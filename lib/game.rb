@@ -14,13 +14,27 @@ class Game
     @computer_choice = @rps.sample
   end
 
-  def outcome(user_choice)
-    user_choice = user_choice.capitalize
-    return @winner = "It's a draw!" if user_choice == @computer_choice
-    return @winner = @player_1 if user_choice == "Paper" && @computer_choice == "Rock"
-    return @winner = @player_1 if user_choice == "Scissors" && @computer_choice == "Paper"
-    return @winner = @player_1 if user_choice == "Rock" && @computer_choice == "Scissors"
+  def outcome(player_1_choice, player_2_choice = @computer_choice)
+    choice_formatting(player_1_choice, player_2_choice)
+    
+    return @winner = "It's a draw!" if player_1_choice == player_2_choice
+    return @winner = @player_1 if player_1_choice == "Paper" && player_2_choice == "Rock"
+    return @winner = @player_1 if player_1_choice == "Scissors" && player_2_choice == "Paper"
+    return @winner = @player_1 if player_1_choice == "Rock" && player_2_choice == "Scissors"
 
-    @winner = "Computer"
+    player_2_outcome(player_2_choice)
+  end
+
+  def choice_formatting(player_1_choice, player_2_choice)
+    player_1_choice.capitalize!
+    player_2_choice.capitalize!
+  end
+
+  def player_2_outcome(player_2_choice)
+    if player_2_choice == @computer_choice
+      @winner = "Computer"
+    else
+      @winner = @player_2
+    end
   end
 end
