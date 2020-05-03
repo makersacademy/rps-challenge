@@ -9,6 +9,11 @@ To test in browser, run script:
 ./web.test
 
 
+## To do:
+
+* Add computer? method to Player class
+* Add current_player to session
+
 
 # Original README.md
 
