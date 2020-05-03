@@ -11,21 +11,21 @@ describe RockPaperScissors do
     it 'returns draw for 🗿 vs 🗿' do
       @player_1.move = '🗿'
       @player_2.move = '🗿'
-      expect(subject.result(@player_1, @player_2)).to eq "It's a draw!"
+      expect(subject.result(@player_1, @player_2)).to eq RockPaperScissors::RESULT_DRAW
     end
 
     it 'returns draw for 📄 vs 📄' do
       @player_1.move = '📄'
       @player_2.move = '📄'
-      expect(subject.result(@player_1, @player_2)).to eq "It's a draw!"
+      expect(subject.result(@player_1, @player_2)).to eq RockPaperScissors::RESULT_DRAW
     end
 
     it 'returns draw for ✂ vs ✂' do
       @player_1.move = '✂'
       @player_2.move = '✂'
-      expect(subject.result(@player_1, @player_2)).to eq "It's a draw!"
+      expect(subject.result(@player_1, @player_2)).to eq RockPaperScissors::RESULT_DRAW
     end
-    
+
   end
   
 end
