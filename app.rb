@@ -15,18 +15,13 @@ class RockPaperScissorsWebGame < Sinatra::Base
 
     session[:players] = Array.new
 
-    @input_form_player_0 =  "<label for='player_0'>\n"
-    @input_form_player_0 += "    First player name:\n"
-    @input_form_player_0 += "    <input type='text' name='player_0_name'"
-    @input_form_player_0 += ">\n"
-    @input_form_player_0 += "  </label>"
-
     erb :index
   end
   
   post '/names' do
     puts "\nin /names" if $verbose
     p session if $verbose
+    p params if $verbose
 
     session[:players].push(Player.new(params[:player_0_name]))
     session[:players].push(Player.new("Computer"))
@@ -44,6 +39,7 @@ class RockPaperScissorsWebGame < Sinatra::Base
   post '/move' do
     puts "\nin /move" if $verbose
     p session if $verbose
+    p params if $verbose
 
     session[:players][0].move = params[:commit]
     session[:players][1].move = ['🗿', '📄', '✂'].sample
@@ -54,8 +50,6 @@ class RockPaperScissorsWebGame < Sinatra::Base
   get '/result' do
     puts "\nin /result" if $verbose
     p session if $verbose
-
-    # @computer_move = ['🗿', '📄', '✂'].sample
 
     erb :result
   end

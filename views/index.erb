@@ -1,8 +1,10 @@
-Hi, please enter your name to play Rock Paper Scissors
-<br /><br />
+<h1>Hi, please enter your name to play Rock Paper Scissors</h1>
+<br />
 <form action='/names' method='post'>
-  <%=@input_form_player_0%>
-  <br /><br />
-  <input type='submit' value='Play'>
+  <label for='player_0'>
+    Your name:
+    <input type='text' name='player_0_name'>
+  </label><br />
+  <br />
+  <input type='submit' value='Play Computer' name='commit'>
 </form>
-
