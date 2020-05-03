@@ -17,5 +17,11 @@ describe ComputerPlayer do
 
       expect(computer.weapon).to eq 'Paper'
     end
+
+    it 'returns Scissors' do
+      allow(computer).to receive(:rand) {2}
+
+      expect(computer.weapon).to eq 'Scissors'
+    end
   end
 end

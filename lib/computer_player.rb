@@ -4,6 +4,6 @@ class ComputerPlayer
   end
 
   def weapon
-    ['Rock', 'Paper'][rand(0..1)]
+    ['Rock', 'Paper', 'Scissors'][rand(0..2)]
   end
 end
