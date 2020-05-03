@@ -1,14 +1,17 @@
+<center>
+<body>
 <% if @gametype == "1 Player"%>
-The current score is <%= @player_1.name %> - <%= @scoreboard.player_1_score%> vs <%= @scoreboard.player_2_score%> - CPU
+<h1> The current score is <%= @player_1.name %> - <%= @scoreboard.player_1_score%> vs <%= @scoreboard.player_2_score%> - CPU </h1> 
 <% else %>
-The current score is <%= @player_1.name %> - <%= @scoreboard.player_1_score%> vs <%= @scoreboard.player_2_score%> - <%= @player_2.name %>
+<h1> The current score is <%= @player_1.name %> - <%= @scoreboard.player_1_score%> vs <%= @scoreboard.player_2_score%> - <%= @player_2.name %> </h1> 
 <% end %>
-Welcome <%= @player_1.name %>!
+It's your turn <%= @player_1.name %>!
 Choose your weapon:
 <form action="/player1move" method="post">
   <input type="submit" value="Rock" name="move">
   <input type="submit" value="Paper" name="move">
   <input type="submit" value="Scissors" name="move">
 </form>
-
+</body>
+</center>
 

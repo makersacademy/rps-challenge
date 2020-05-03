@@ -1,3 +1,5 @@
+<center>
+<body>
 <% if @gametype == "1 Player" && @scoreboard.player_1_score > @scoreboard.player_2_score %>
 Congratualations <%= @player_1.name %> you won! The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %> 
 Give yourself a pat on the back :)
@@ -17,4 +19,6 @@ Better luck next time <%= @player_1.name %>
 Good game <%= @player_2.name %> and <%= @player_1.name %>, it was a draw this time! The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %> 
 Should of tried your luck one more time :)
 <% end%>
+</body>
+</center>
 
