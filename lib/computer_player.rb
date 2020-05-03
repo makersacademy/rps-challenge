@@ -1,9 +1,13 @@
 class ComputerPlayer
-
-  def initialize
-  end
+  WEAPONS = ['Rock', 'Paper', 'Scissors']
 
   def weapon
-    ['Rock', 'Paper', 'Scissors'][rand(0..2)]
+    WEAPONS[index_generator]
+  end
+
+  private
+
+  def index_generator
+    rand(0..2)
   end
 end
