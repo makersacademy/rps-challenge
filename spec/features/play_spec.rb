@@ -47,7 +47,7 @@ feature 'Play page' do
   end
 
   scenario 'computer_player wins' do
-    srand(2348)
+    srand(2_348)
     visit '/'
     fill_in :name, with: 'Marius'
     find_button(value: 'Register').click
@@ -57,7 +57,7 @@ feature 'Play page' do
   end
 
   scenario 'it\'s a draw' do
-    srand(22238)
+    srand(22_238)
     visit '/'
     fill_in :name, with: 'Marius'
     find_button(value: 'Register').click
@@ -67,7 +67,7 @@ feature 'Play page' do
   end
 
   scenario 'human_player wins' do
-    srand(32198)
+    srand(32_198)
     visit '/'
     fill_in :name, with: 'Marius'
     find_button(value: 'Register').click

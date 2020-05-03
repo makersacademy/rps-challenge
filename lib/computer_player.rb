@@ -1,5 +1,5 @@
 class ComputerPlayer
-  WEAPONS = [ :rock, :paper, :scissors]
+  WEAPONS = [:rock, :paper, :scissors]
 
   def weapon
     WEAPONS[index_generator]

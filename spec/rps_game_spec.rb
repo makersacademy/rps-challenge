@@ -9,8 +9,8 @@ describe RPSGame do
 
   describe '#result' do
     it 'returns the game result' do
-      expect(player1).to receive(:weapon) {:rock}
-      expect(player2).to receive(:weapon) {:paper}
+      expect(player1).to receive(:weapon) { :rock }
+      expect(player2).to receive(:weapon) { :paper }
 
       game.result(player1.weapon, player2.weapon)
     end

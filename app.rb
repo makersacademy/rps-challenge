@@ -20,7 +20,7 @@ class RPS < Sinatra::Base
   end
 
   post '/weapon' do
-    RPSGame.instance.player1.weapon=(params[:weapon].downcase.to_sym)
+    RPSGame.instance.player1.weapon = params[:weapon].downcase.to_sym
     redirect '/action'
   end
 

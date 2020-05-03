@@ -7,19 +7,19 @@ describe ComputerPlayer do
 
   describe '#weapon' do
     it 'returns Rock' do
-      allow(computer).to receive(:rand) {0}
+      allow(computer).to receive(:rand) { 0 }
 
       expect(computer.weapon).to eq :rock
     end
 
     it 'returns Paper' do
-      allow(computer).to receive(:rand) {1}
+      allow(computer).to receive(:rand) { 1 }
 
       expect(computer.weapon).to eq :paper
     end
 
     it 'returns Scissors' do
-      allow(computer).to receive(:rand) {2}
+      allow(computer).to receive(:rand) { 2 }
 
       expect(computer.weapon).to eq :scissors
     end
