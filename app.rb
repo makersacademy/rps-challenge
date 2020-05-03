@@ -29,6 +29,7 @@ class RockPaperScissorsWebGame < Sinatra::Base
     p session if $verbose
 
     session[:players].push(Player.new(params[:player_0_name]))
+    session[:players].push(Player.new("Computer"))
 
     redirect to('/play')
   end

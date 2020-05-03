@@ -1,4 +1,6 @@
 RSPEC_TEST_PLAYER_0_NAME = "Siegfried"
+RSPEC_TEST_PLAYER_1_NAME = "Roy"
+RSPEC_TEST_COMPUTER_NAME = "Computer"
 
 def sign_in_and_play
   visit "/"
