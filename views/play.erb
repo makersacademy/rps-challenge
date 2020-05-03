@@ -1,0 +1,44 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/play.css">
+</head>
+
+<h1>Player 1: <%= @game.players[0].name %></h1>
+<h1>Player 2: <%= @game.players[1].name %></h1>
+
+<form class="" action="/choose" method="post">
+  <div>
+    <div id="sidebar">
+      <p> Player 1 choice: </p>
+      <input type="radio" id="player_1_rock" name="player_1_choice" value="rock">
+      <label for="player_1_rock">Rock</label><br>
+      <input type="radio" id="player_1_paper" name="player_1_choice" value="paper">
+      <label for="layer_1_paper">Paper</label><br>
+      <input type="radio" id="player_1_scissors" name="player_1_choice" value="scissors">
+      <label for="player_1_scissors">Scissors</label><br>
+      <input type="radio" id="player_1_spock" name="player_1_choice" value="spock">
+      <label for="player_1_spock">Spock</label><br>
+      <input type="radio" id="player_1_lizard" name="player_1_choice" value="lizard">
+      <label for="player_1_lizard">Lizard</label><br>
+    </div>
+
+    <% if !@game.single_player? %>
+      <div id="page-wrap">
+        <p> Player 2 choice: </p>
+        <input type="radio" id="player_2_rock" name="player_2_choice" value="rock">
+        <label for="player_2_rock">Rock</label><br>
+        <input type="radio" id="player_2_paper" name="player_2_choice" value="paper">
+        <label for="player_2_paper">Paper</label><br>
+        <input type="radio" id="player_2_scissors" name="player_2_choice" value="scissors">
+        <label for="player_2_scissors">Scissors</label><br>
+        <input type="radio" id="player_2_spock" name="player_2_choice" value="spock">
+        <label for="player_2_spock">Spock</label><br>
+        <input type="radio" id="player_2_lizard" name="player_2_choice" value="lizard">
+        <label for="player_2_lizard">Lizard</label><br>
+      </div>
+    <% end %>
+    </div>
+    <div id="ender">
+      </br>
+      <input type="submit" name="submit" value="play">
+    </div>
+</form>

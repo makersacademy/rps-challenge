@@ -1,22 +1,11 @@
-# RPS Challenge
+# Rock Paper Scissors Spock Lizard
 
-Instructions
--------
+A small web based game that allows you to input your name and play Rock Paper
+Scissors Spock Lizard against an AI or against another player. To trigger single
+player mode simply do not input a name for player 2 and player 2 will be
+automatically assigned to the resident RPS AI, who's name is 愛.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+## User Stories:
 
 ```
 As a marketeer
@@ -26,61 +15,38 @@ I would like to register my name before playing an online game
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
+
+As a marketeer
+So that I can have more social fun
+I want to be able to play RPS with a colleague when they are around
+
+As a marketeer
+Because I've got too good at RPS
+I want to be able to play a more complex variation like RPSpockLizard
 ```
+## Methodology
 
-Hints on functionality
+This implementations of RPSpockLizard uses a `Player` and `AIPlayer` classes with
+overloaded decision making methods, so that they can be called interchangeably
+whether there is a human player or not within the `app.rb` code. The `Game` class
+manages basic game logic running and stores game state in a `@game` class variable.
+The `choices` class is simply an easily accessible wrapper for classes to get
+the different possible game choice possibilities. The indexes of the `CHOICES`
+constant array also act as a look up table for the numeric values of the choices.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+## Victory Matrix
 
+Win conditions in the game are calculated using a victory matrix class which
+places the different outcomes in a possibility grid and returns an invalid player index
+or `nil` for draws and the winning players player index inside the game class
+if there was a victor. Here the values are encoded alphabetically as 'Rock', 'Paper',
+'Scissors', 'Vulcan', 'Lizard'.
 
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
 ```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+    R  P  S  V  L
+R  │5  1  0  1  0│
+P  │0  5  1  0  1│
+S  │1  0  5  1  0│
+V  │0  1  0  5  1│
+L  │1  0  1  0  5│
+```
