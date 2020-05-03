@@ -10,7 +10,7 @@ class RockPaperScissorsWebGame < Sinatra::Base
   set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
 
   get '/' do
-    (puts "\nin /"; puts "session: "; p session; puts "params: "; p params) if $verbose
+    verbose_output(request.url) if $verbose
 
     session[:players] = Array.new
 
@@ -18,7 +18,7 @@ class RockPaperScissorsWebGame < Sinatra::Base
   end
   
   post '/names' do
-    (puts "\nin /names"; puts "session: "; p session; puts "params: "; p params) if $verbose
+    verbose_output(request.url) if $verbose
 
     session[:players].push(Player.new(params[:player_0_name]))
 
@@ -33,14 +33,14 @@ class RockPaperScissorsWebGame < Sinatra::Base
   end
   
   get '/play' do
-    (puts "\nin /play"; puts "session: "; p session; puts "params: "; p params) if $verbose
-
+    verbose_output(request.url) if $verbose
+ 
     erb :play
   end
 
   post '/move' do
-    (puts "\nin /move"; puts "session: "; p session; puts "params: "; p params) if $verbose
-
+    verbose_output(request.url) if $verbose
+ 
     session[:players][0].move = params[:commit]
     session[:players][1].move = ['🗿', '📄', '✂'].sample
 
@@ -48,10 +48,19 @@ class RockPaperScissorsWebGame < Sinatra::Base
   end
 
   get '/result' do
-    (puts "\nin /result"; puts "session: "; p session; puts "params: "; p params) if $verbose
-
+    verbose_output(request.url) if $verbose
+ 
     erb :result
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
+
+  private
+
+  def verbose_output(where)
+    puts "\n#{where}"
+    puts "session: "; p session
+    puts "params: "; p params
+  end
+
 end
