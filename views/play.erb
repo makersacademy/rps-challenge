@@ -2,3 +2,11 @@
 body { background-color: #99ccff; }
 </style>
 <h2>Welcome <%= @player %>!</h2>
+
+<h3>To play, please click on your choice</h3>
+
+<form action="/result" value="post">
+  <input type="submit" name="move" value="rock">
+  <input type="submit" name="move" value="paper">
+  <input type="submit" name="move" value="scissors">
+</form>
