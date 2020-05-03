@@ -10,8 +10,7 @@ class RockPaperScissorsWebGame < Sinatra::Base
   set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
 
   get '/' do
-    puts "\nin /" if $verbose
-    p session if $verbose
+    (puts "\nin /"; puts "session: "; p session; puts "params: "; p params) if $verbose
 
     session[:players] = Array.new
 
@@ -19,13 +18,14 @@ class RockPaperScissorsWebGame < Sinatra::Base
   end
   
   post '/names' do
-    puts "\nin /names" if $verbose
-    p session if $verbose
-    p params if $verbose
+    (puts "\nin /names"; puts "session: "; p session; puts "params: "; p params) if $verbose
 
     session[:players].push(Player.new(params[:player_0_name]))
 
-    if params[:commit] == "Play Computer"
+    if params[:commit] == "Play Human"
+      # TODO: add add_player flow
+      session[:players].push(Player.new("Computer"))
+    else
       session[:players].push(Player.new("Computer"))
     end
 
@@ -33,16 +33,13 @@ class RockPaperScissorsWebGame < Sinatra::Base
   end
   
   get '/play' do
-    puts "\nin /play" if $verbose
-    p session if $verbose
+    (puts "\nin /play"; puts "session: "; p session; puts "params: "; p params) if $verbose
 
     erb :play
   end
 
   post '/move' do
-    puts "\nin /move" if $verbose
-    p session if $verbose
-    p params if $verbose
+    (puts "\nin /move"; puts "session: "; p session; puts "params: "; p params) if $verbose
 
     session[:players][0].move = params[:commit]
     session[:players][1].move = ['🗿', '📄', '✂'].sample
@@ -51,8 +48,7 @@ class RockPaperScissorsWebGame < Sinatra::Base
   end
 
   get '/result' do
-    puts "\nin /result" if $verbose
-    p session if $verbose
+    (puts "\nin /result"; puts "session: "; p session; puts "params: "; p params) if $verbose
 
     erb :result
   end

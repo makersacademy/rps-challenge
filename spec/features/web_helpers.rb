@@ -18,3 +18,7 @@ def sign_in_and_play_computer
   click_button 'Play Computer'
 end
 
+def sign_in_and_play_human
+  sign_in
+  click_button 'Play Human'
+end
