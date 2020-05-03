@@ -6,8 +6,8 @@ describe ComputerPlayer do
   it { is_expected.to respond_to(:weapon) }
 
   describe '#weapon' do
-    it 'returns a random weapon' do
-      allow(Kernel).to receive(:rand) {1}
+    it 'returns Rock' do
+      allow(computer).to receive(:rand) {0}
 
       expect(computer.weapon).to eq 'Rock'
     end
