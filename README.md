@@ -1,5 +1,50 @@
 # RPS Challenge
 
+This was a weekend challenge to write a Rock-Paper-Scissors game with TDD during Week 3 at Makers Academy.
+
+Technologies used
+-------
+* ruby
+* RSpec
+* Sinatra
+* capybara
+
+To run the app
+-------
+In the command line:
+```
+bundle
+rackup -p 8000
+```
+Then open `localhost:8000` in the browser.
+
+Breakdown of my implementation
+------
+* Set up Sinatra project
+* Set up test infrastructure with RSpec & Capybara
+* Write first feature test for root route
+* Add name form and play route
+* Add result route
+* Create a Player and a Computer class, create unit tests
+* Create a Game class that uses the Player and Computer classes as dependencies, create unit tests
+* Make all feature tests pass by stubbing out randomness
+* Introduce class variable in Game classes
+* Add CSS to project
+* ![Login page](/image/rps.png)
+
+What I learnt from the process
+------
+* improving TDD process
+* using doubles & stubs, before hooks
+* creating classes that work together
+* using Sinatra web framework
+* using Capybara test framework & writing feature tests
+
+What I want to improve
+------
+* further improve TDD process
+* improve OO design
+
 Instructions
 -------
 
@@ -78,7 +123,7 @@ require 'simplecov-console'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
+  #SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
 ```
