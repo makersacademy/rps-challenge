@@ -1,5 +1,4 @@
-You chose: <%= session[:players][0].move %>
-Computer chose: <%= @computer_move %>
-<br />
+<%= session[:players][0].name %> move: <%= session[:players][0].move %><br />
+<%= session[:players][1].name %> move: <%= session[:players][1].move %><br />
 <br />
 <a href="/play">Play again?</a>

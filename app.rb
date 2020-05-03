@@ -46,6 +46,7 @@ class RockPaperScissorsWebGame < Sinatra::Base
     p session if $verbose
 
     session[:players][0].move = params[:commit]
+    session[:players][1].move = ['🗿', '📄', '✂'].sample
 
     redirect to('result')
   end
@@ -54,7 +55,7 @@ class RockPaperScissorsWebGame < Sinatra::Base
     puts "\nin /result" if $verbose
     p session if $verbose
 
-    @computer_move = ['🗿', '📄', '✂'].sample
+    # @computer_move = ['🗿', '📄', '✂'].sample
 
     erb :result
   end
