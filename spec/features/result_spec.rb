@@ -39,10 +39,16 @@ feature 'result' do
     expect(page).to have_content "#{RSPEC_TEST_COMPUTER_NAME} move: ✂"
   end
 
-  scenario 'has play again link' do
+  scenario 'has same players link' do
     sign_in_and_play
     click_button '🗿'
-    expect(page).to have_link('Play again?', :href => '/play')
+    expect(page).to have_link('Same Players', :href => '/play')
+  end
+
+  scenario 'has new players link' do
+    sign_in_and_play
+    click_button '🗿'
+    expect(page).to have_link('New Players', :href => '/')
   end
   
 end
