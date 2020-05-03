@@ -21,13 +21,7 @@ class RockPaperScissorsWebGame < Sinatra::Base
     verbose_output(request.url) if $verbose
 
     session[:players].push(Player.new(params[:player_0_name]))
-
-    if params[:commit] == "Play Human"
-      # TODO: add add_player flow
-      session[:players].push(Player.new("Computer"))
-    else
-      session[:players].push(Player.new("Computer"))
-    end
+    session[:players].push(Player.new("Computer"))
 
     redirect to('/play')
   end
