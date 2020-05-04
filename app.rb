@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/rock_paper_scissors'
 
 # Global for testing, refactor to use group :test from Gemfile?
 # $verbose = true
@@ -43,7 +44,21 @@ class RockPaperScissorsWebGame < Sinatra::Base
 
   get '/result' do
     verbose_output(request.url) if $verbose
- 
+
+    game = RockPaperScissors.new
+    result = game.result(session[:players][0], session[:players][1])
+
+    case result
+    when RockPaperScissors::RESULT_DRAW
+      @message = "🙏 It's a draw! 🙏"
+    else
+      if session[:players][0].move == result
+        @message = "🎉 #{session[:players][0].name} wins! 🎉"
+      else
+        @message = "🎉 #{session[:players][1].name} wins! 🎉"
+      end
+    end
+
     erb :result
   end
   # start the server if ruby file executed directly
