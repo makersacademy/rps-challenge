@@ -1,0 +1,36 @@
+feature 'Goodbye' do 
+  scenario 'Ellis wins 2 - 1 multiplayer' do
+    visit '/'
+    click_button '2 Player'
+    fill_in :player1, with: 'Ellis'
+    fill_in :player2, with: 'Mcnulty'
+    click_button 'Submit'
+    click_button 'Scissors'
+    click_button 'Paper'
+    click_button 'Yes'
+    click_button 'Scissors'
+    click_button 'Paper'
+    click_button 'Yes'
+    click_button 'Paper'
+    click_button 'Scissors'
+    click_button 'No'
+    expect(page).to have_content 'Congratualations Ellis you won! The score was 2 vs 1'
+  end
+  scenario 'Mcnulty wins 2 - 1 multiplayer' do
+    visit '/'
+    click_button '2 Player'
+    fill_in :player1, with: 'Ellis'
+    fill_in :player2, with: 'Mcnulty'
+    click_button 'Submit'
+    click_button 'Paper'
+    click_button 'Scissors'
+    click_button 'Yes'
+    click_button 'Scissors'
+    click_button 'Paper'
+    click_button 'Yes'
+    click_button 'Paper'
+    click_button 'Scissors'
+    click_button 'No'
+    expect(page).to have_content 'Congratualations Mcnulty you won! The score was 1 vs 2'
+  end
+end

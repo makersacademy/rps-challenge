@@ -1,5 +1,3 @@
-require './lib/calculate'
-
 feature 'Result' do 
   scenario 'scissors vs paper' do
     visit '/'

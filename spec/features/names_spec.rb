@@ -4,7 +4,7 @@ feature 'Names' do
     click_button '1 Player'
     fill_in :player1, with: 'Ellis'
     click_button 'Submit'
-    expect(page).to have_content 'Welcome Ellis!'
+    expect(page).to have_content "It's your turn Ellis!"
   end
   scenario "prints player 2's name on play screen" do
     visit '/'
@@ -13,6 +13,6 @@ feature 'Names' do
     fill_in :player2, with: 'Mcnulty'
     click_button 'Submit'
     click_button 'Rock'
-    expect(page).to have_content 'Welcome Mcnulty!'
+    expect(page).to have_content "It's your turn Mcnulty!"
   end
 end   

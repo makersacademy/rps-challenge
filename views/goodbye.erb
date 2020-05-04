@@ -1,22 +1,28 @@
 <center>
 <body>
 <% if @gametype == "1 Player" && @scoreboard.player_1_score > @scoreboard.player_2_score %>
-Congratualations <%= @player_1.name %> you won! The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %> 
+<h1>Congratualations <%= @player_1.name %> you won!</h1>
+The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %>
 Give yourself a pat on the back :)
-<% elsif @gametype == "1 Player" && @scoreboard.player_1_score == @scoreboard.player_2_score %>
-It was draw this time <%= @player_1.name %>! The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %>
+<% elsif @gametype == "1 Player" && @scoreboard.player_1_score == @scoreboard.player_2_score %>!
+<h1>It was draw this time <%= @player_1.name %>!</h1>
+The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %>!
 Should of tried your luck one more time :)
-<% elsif @gametype == "1 Player" && @scoreboard.player_1_score < @scoreboard.player_2_score %>
-Unfortunatley, you lost this time <%= @player_1.name %>! The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %>
+<% elsif @gametype == "1 Player" && @scoreboard.player_1_score < @scoreboard.player_2_score %>!
+<h1>Unfortunatley, you lost this time <%= @player_1.name %>!</h1>
+The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %>!
 I'd suggest practicing your Rock, Paper, Scissors skills more :)
-<% elsif @gametype == "2 Player" && @scoreboard.player_1_score > @scoreboard.player_2_score %>
-Congratualations <%= @player_1.name %> you won! The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %> 
+<% elsif @gametype == "2 Player" && @scoreboard.player_1_score > @scoreboard.player_2_score %>!
+<h1>Congratualations <%= @player_1.name %> you won!</h1>
+The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %>!
 Better luck next time <%= @player_2.name %>
-<% elsif @gametype == "2 Player" && @scoreboard.player_1_score < @scoreboard.player_2_score %>
-Congratualations <%= @player_2.name %> you won! The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %> 
+<% elsif @gametype == "2 Player" && @scoreboard.player_1_score < @scoreboard.player_2_score %>!
+<h1>Congratualations <%= @player_2.name %> you won!</h1>
+The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %>! 
 Better luck next time <%= @player_1.name %>
 <% elsif @gametype == "2 Player" && @scoreboard.player_1_score == @scoreboard.player_2_score %>
-Good game <%= @player_2.name %> and <%= @player_1.name %>, it was a draw this time! The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %> 
+<h1>Good game <%= @player_2.name %> and <%= @player_1.name %>, it was a draw this time!</h1>
+The score was <%= @scoreboard.player_1_score %> vs <%= @scoreboard.player_2_score %>!
 Should of tried your luck one more time :)
 <% end%>
 </body>
