@@ -22,16 +22,28 @@ class RockPaperScissors < Sinatra::Base
 
   get "/outcome_rock" do
     @move = "Rock"
+    testing = Rps.new
+    @result = testing.calculate_result(@move)
+    @comp_move = testing.compmove
     erb(:outcome)
   end 
 
   get "/outcome_paper" do
     @move = "Paper"
+    testing = Rps.new
+    @result = testing.calculate_result(@move)
+    @comp_move = testing.compmove
     erb(:outcome)
   end 
 
+
   get "/outcome_scissors" do
+
     @move = "Scissors"
+    testing = Rps.new 
+    @result = testing.calculate_result(@move)
+    @comp_move = testing.compmove
+
     erb(:outcome)
   end 
 

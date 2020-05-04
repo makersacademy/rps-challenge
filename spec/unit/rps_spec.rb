@@ -18,7 +18,7 @@ describe Rps do
   end 
 
   describe "#random_output" do
-    it "returns a either 'Sunny' or 'Stormy'" do
+    it "returns a either 1, 2 or 3" do
       expect(subject.random_output).to eq(1).or eq(2).or eq(3)
     end
   end 

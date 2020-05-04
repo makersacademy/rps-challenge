@@ -46,8 +46,23 @@ Functionality
 /again(post)       | Stores if they won or not? 
                    | Redirects to /play
 
+ruby doc           | random output r/p/s / 
+                   | calculate winner draw loser /
+
+extras             | running score of how many won / computer won
+                   | CSS
+                   | Show rules 
+                   | Multi player 
+                   | Lizard / spock http://en.wikipedia.org/wiki/ |       Rock-paper-scissors-lizard-Spock_ )
+                   | Have a better way to figure out winner!!!
 
 ----
+
+## Problems ### 
+
+x1 Failing tests: The test for outcome page: I need to test double the outcome.
+
+///
 
 rand(1..3) returning nil issues:
 
@@ -96,29 +111,11 @@ scissors
  => nil 
 
 
-----
+## Bringing forward ## 
 
+- Test doubles 
+- Rand = nil? 
+- Sessions 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
 
