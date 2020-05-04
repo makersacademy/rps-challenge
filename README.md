@@ -1,24 +1,13 @@
 # RPS Challenge
 
-Instructions
--------
+## Basic Rules
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+- Rock beats Scissors
+- Scissors beats Paper
+- Paper beats Rock
 
-Task
-----
+## User Stories ##
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -26,9 +15,8 @@ I would like to register my name before playing an online game
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
-```
 
-Hints on functionality
+Functionality
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
@@ -36,51 +24,98 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
+## Domain Model ##
 
 
-## Bonus level 1: Multiplayer
+/homepage(get) 
+                   | Player enters name /
+                   | 
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+/output(post)      | Starts session /
+                   | Redirects to play /
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+/play(get)         | Prints out user_name on screen /
+                   | Player inputs rock / paper / scissors /
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+/move_output(post) | Stores input /
+                   | redirects to outcome /
 
-## Basic Rules
+/outcome(get)      | Shows who won
+                   | Play again button  
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+/again(post)       | Stores if they won or not? 
+                   | Redirects to /play
 
-In code review we'll be hoping to see:
+ruby doc           | random output r/p/s / 
+                   | calculate winner draw loser /
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+extras             | running score of how many won / computer won
+                   | CSS
+                   | Show rules 
+                   | Multi player 
+                   | Lizard / spock http://en.wikipedia.org/wiki/ |       Rock-paper-scissors-lizard-Spock_ )
+                   | Have a better way to figure out winner!!!
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+----
 
-Notes on test coverage
-----------------------
+## Problems ### 
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+x1 Failing tests: The test for outcome page: I need to test double the outcome.
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+///
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
+rand(1..3) returning nil issues:
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+2.6.5 :001 > def example
+2.6.5 :002?>   return "rock" if rand(1..3) === 1
+2.6.5 :003?>   return "paper" if rand(1..3) === 2
+2.6.5 :004?>   return "scissors" if rand(1..3) === 3
+2.6.5 :005?>   end
+ => :example 
+2.6.5 :006 > example
+ => "rock" 
+2.6.5 :007 > example
+ => "scissors" 
+2.6.5 :008 > example
+ => nil 
+2.6.5 :009 > example
+ => "rock" 
+
+
+
+2.6.5 :010 > def example2
+2.6.5 :011?>   return "rock" if rand(1..3) == 1
+2.6.5 :012?>   return "paper" if rand(1..3) == 2
+2.6.5 :013?>   return "scissors" if rand(1..3) == 3
+2.6.5 :014?>   end
+ => :example2 
+2.6.5 :015 > example2
+ => "rock" 
+2.6.5 :016 > example2
+ => nil 
+
+
+2.6.5 :043 > def example3
+2.6.5 :044?>   answer = [1, 2, 3].sample
+2.6.5 :045?>   if answer == 1
+2.6.5 :046?>     puts "rock"
+2.6.5 :047?>     elsif answer == 2
+2.6.5 :048?>     puts "paper"
+2.6.5 :049?>     elsif answer == 3
+2.6.5 :050?>     puts "scissors"
+2.6.5 :051?>     end 
+2.6.5 :052?>   end 
+ => :example3 
+2.6.5 :053 > example3
+scissors
+ => nil 
+
+
+## Bringing forward ## 
+
+- Test doubles 
+- Rand = nil? 
+- Sessions 
+
+
+
