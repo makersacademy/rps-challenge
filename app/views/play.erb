@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <title>RPS</title>
+  </head>
+  <body>
+    <div>
+      <h1>Let's Play Some Awesome RPS <%= @name == "" ? "Player 1" : @name %></h1>
+      <h2>Pick one of the following</h2>
+    </div>
+    <div class="main_div">
+      <div class="first_div">
+        <form class="form" action="/game" method="post">
+          <input type="submit" value="Rock" name="rps">
+        </form>
+      </div>
+
+      <div class="first_div">
+        <form class="form" action="/game" method="post">
+          <input type="submit" value="Papper" name="rps">
+        </form>
+      </div>
+
+      <div class="first_div">
+        <form class="form" action="/game" method="post">
+          <input type="submit" value="Scissors" name="rps">
+        </form>
+      </div>
+    </div>
+
+    <% if @data.rounds >= 1 %>
+        
+    <div class="main_div">
+      <div class="first_div" class='player'>
+        <h3><%= @name == "" ? "Player 1" : @name %> picked <%= @game.player_pick %></h3>
+      </div>
+      <div class="first_div" class='computer'>
+        <h3>Computer picked <%= @game.pc %></h3>
+      </div>
+    </div>
+
+    <div class="main_div">
+      <div class="first_div" class="player">
+        <h4 class="red"><%= @name == "" ? "Player 1" : @name %></h4>
+        <h3 class="red"><%= @data.player_wins.sum %></h3>
+      </div>
+      <div class="first_div">
+        <h4>Round</h4>
+        <h3><%= @data.rounds %></h3>
+        <h4>Tie Games</h4>
+        <h3><%= @data.tie_games.sum %></h3>
+      </div>
+      <div class="first_div">
+        <h4 class="blue">Computer</h4>
+        <h3 class="blue"><%= @data.computer_wins.sum %></h3>
+      </div>
+    </div>
+
+    <div class="main_div">
+      <div class="first_div">
+        <h3><%= @game.spin %></h3>
+      </div>
+    </div>
+
+    <div class="main_div">
+      <% @data.results.each do |game| %>
+        <%= game %>
+      <% end %>
+    </div>
+
+    <% else %>
+      <div id='RPS-img'>
+        <img id='RPS-img' src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/440px-Rock-paper-scissors.svg.png' alt='RPS'>
+      </div>
+    <% end%>
+
+
+  </body>
+</html>
+
+
