@@ -1,11 +1,11 @@
-# &#x270a Rock &#x270b Paper &#x270c Scissors!
+# * Rock * Paper * Scissors!
 
 
 About
 -------
 Rock Paper Scissors is a TDD web app based on the the well known game children's game.
 
-
+# ![rps_view](img/rps_view.png)
 
 
 Instructions
