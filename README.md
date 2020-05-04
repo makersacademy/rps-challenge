@@ -3,7 +3,7 @@
 
 About
 -------
-Rock Paper Scissors is a TDD web app based on the well known game children's game.
+Rock Paper Scissors is a TDD web app based on the well known children's game.
 
 # ![rps_view](img/rps_view.png)
 
