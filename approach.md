@@ -65,4 +65,4 @@ expected to find text "Born2Win vs. Computer" in "vs. Computer\n: make your choi
 - I am hypothesizing that perhaps this has something to do with not having installed "gem install selenium" and "brew install geckodriver" and the "pry" set up?
 - I wasn't even able to get pry to work, nor in irb.
 - I am not sure what happened but it works now.
-21. 
+21. All tests pass except for the feature tests on the /results page. This is expected as I cannot get player choice to record.
