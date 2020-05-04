@@ -5,6 +5,11 @@ feature '@play' do
     expect(page).to have_content "Dave"
   end
 
+  scenario 'should be able to see title' do
+    sign_in_and_play
+    expect(page).to have_content "Let's Play Some Awesome RPS Dave"
+  end
+
   scenario 'should able to pick RPS' do
     sign_in_and_play
     expect(page).to have_button('Rock')
