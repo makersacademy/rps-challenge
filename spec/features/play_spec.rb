@@ -29,6 +29,12 @@ feature '@play' do
     expect(page).to have_content "Dave picked Papper"
   end
 
+  scenario 'should able to see selection Scissors' do
+    sign_in_and_play
+    click_button 'Scissors'
+    expect(page).to have_content "Dave picked Scissors"
+  end
+
   # scenario 'should be able to see opponents pick' do
   #   allow_any_instance_of(Computer.new).to receive(:random_pick).and_return "Rock"
   #   sign_in_and_play
