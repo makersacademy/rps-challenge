@@ -6,14 +6,15 @@ require './lib/calculate'
 require './lib/scoreboard'
 
 
+
 class Rps < Sinatra::Base
 
   get '/' do 
     erb :index
   end
 
-  post '/gametype' do 
-    $gametype = params[:gametype]
+  post '/game-type' do 
+    $gametype = params[:game_type]
     redirect '/names'
   end
 
@@ -22,7 +23,7 @@ class Rps < Sinatra::Base
     erb :names
   end
 
-  post '/setnames' do 
+  post '/set-names' do 
     @gametype = $gametype
     $player_1 = Player.new(params[:player1])
     $player_2 = Player.new(params[:player2])
@@ -38,28 +39,28 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  post '/player1move' do 
+  post '/player-1-move' do 
     @player_1 = $player_1
     $player_1_move = Move.new(params[:move])
     @gametype = $gametype 
-    redirect '/play2' if @gametype == '2 Player' 
-    redirect '/1results'
+    redirect '/play-2' if @gametype == '2 Player' 
+    redirect '/single-player-results'
   end
 
-  get '/play2' do 
+  get '/play-2' do 
     @scoreboard = $scoreboard
     @player_1 = $player_1
     @player_2 = $player_2
-    erb :play2
+    erb :play_2
   end
 
-  post '/player2move' do 
+  post '/player-2-move' do 
     @player_2 = $player_2
     $player_2_move = Move.new(params[:move])
-    redirect '/2results'
+    redirect '/multiplayer-result'
   end
 
-  get '/1results' do 
+  get '/single-player-results' do 
     @player_1 = $player_1
     @player_1_move = $player_1_move
     $cpu_move = Cpu.new
@@ -70,7 +71,7 @@ class Rps < Sinatra::Base
     erb :result
   end
 
-  get '/2results' do 
+  get '/multiplayer-result' do 
     @player_1 = $player_1
     @player_2 = $player_2
     @player_1_move = $player_1_move
@@ -78,17 +79,17 @@ class Rps < Sinatra::Base
     $calculate = Calculate.new(@player_1_move.move, @player_2_move.move)
     $result = $calculate.result
     @result = $result
-    erb :result2
+    erb :multiplayer_result
   end
 
-  post '/playagain' do 
+  post '/play-again' do 
     @result = $result
     @scoreboard = $scoreboard
     @scoreboard.add_score(@result)
     redirect '/play'
   end
 
-  post '/final_score' do  
+  post '/final-score' do  
     @result = $result   
     @scoreboard = $scoreboard
     @scoreboard.add_score(@result)

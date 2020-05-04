@@ -11,10 +11,10 @@
 <h2>Therefore, it's a Draw! <%= @player_1_move.move %> cancels out <%= @player_2_move.move%>.</h2>
 <% end %>
 Would you like to play again?
-<form action="/playagain" method="post">
+<form action="/play-again" method="post">
   <input type="submit" value="Yes" name="playagain">
 </form>
-<form action="/final_score" method="post">
+<form action="/final-score" method="post">
   <input type="submit" value="No" name="playagain">
 </form>
 </body>

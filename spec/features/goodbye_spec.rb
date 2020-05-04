@@ -14,7 +14,8 @@ feature 'Goodbye' do
     click_button 'Paper'
     click_button 'Scissors'
     click_button 'No'
-    expect(page).to have_content 'Congratualations Ellis you won! The score was 2 vs 1'
+    expect(page).to have_content 'Congratualations Ellis you won!'
+    expect(page).to have_content 'The score was 2 vs 1'
   end
   scenario 'Mcnulty wins 2 - 1 multiplayer' do
     visit '/'
@@ -31,6 +32,7 @@ feature 'Goodbye' do
     click_button 'Paper'
     click_button 'Scissors'
     click_button 'No'
-    expect(page).to have_content 'Congratualations Mcnulty you won! The score was 1 vs 2'
+    expect(page).to have_content 'Congratualations Mcnulty you won!' 
+    expect(page).to have_content 'The score was 1 vs 2'
   end
 end

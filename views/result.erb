@@ -11,10 +11,10 @@ Therefore, you Lose! <%= @cpu_move.move %> beats <%= @player_1_move.move %>
 Therefore, it's a Draw! <%= @player_1_move.move %> and <%= @cpu_move.move %> cancel eachother out!
 <% end %>
 Would you like to play again?
-<form action="/playagain" method="post">
+<form action="/play-again" method="post">
   <input type="submit" value="Yes" name="playagain">
 </form>
-<form action="/final_score" method="post">
+<form action="/final-score" method="post">
   <input type="submit" value="No" name="playagain">
 </form>
 </body>

@@ -1,7 +1,7 @@
 <center>
 <body>
 <% if @gametype == "2 Player"%>
-<form action="/setnames" method="post">
+<form action="/set-names" method="post">
   <label for="player1">
     Player 1 name: 
     <input type="text" name="player1">
@@ -13,7 +13,7 @@
   <input type="submit" value="Submit">
 </form> 
 <% else %>
-<form action="/setnames" method="post">
+<form action="/set-names" method="post">
   <label for="player1">
     Player 1 name: 
     <input type="text" name="player1">
