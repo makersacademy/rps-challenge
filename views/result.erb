@@ -16,7 +16,7 @@ body {
 
 <body>
 <center> <% @x = ["ROCK", "PAPER", "SCISSORS"] %>
-<h1>Your Selection:</h1><h1><div id="result"><%= @result %></div></h1>
+<h1><%= "#{@player}'s" %> Selection:</h1><h1><div id="result"><%= @result %></div></h1>
 <h1>Computer's Selection:</h1><h1><div id="computer_label"><%= @y = @x.sample %></div></h1>
   <style>
   div[id=computer_label]  {
@@ -38,19 +38,38 @@ body {
 <% if @y == "ROCK" && @result == "SCISSORS" %>
 <b><h1>THE COMPUTER WINS!<em><b></h1><b>
 <% elsif @y == "SCISSORS" && @result == "ROCK" %>
-<b><h1>YOU WIN!</h1><b>
+<b><h1><%= @player %> WINS!</h1><b>
 <% elsif @y == "PAPER" && @result == "ROCK" %>
 <b><h1>THE COMPUTER WINS!</h1><b>
 <% elsif @y == "ROCK" && @result == "PAPER" %>
-<b><h1><div>YOU WIN!<div></h1><b>
+<b><h1><div><%= @player %> WINS!<div></h1><b>
 <% elsif @y == "SCISSORS" && @result == "PAPER" %>
 <b><h1>THE COMPUTER WINS!</h1><b>
 <% elsif @y== "PAPER" && @result == "SCISSORS" %>
-<b><h1>YOU WIN!</h1><b>
+<b><h1><%= @player %> WINS!</h1><b>
 <% else %>
 <b><h1>ITS A TIE!</h1><b>
 <% end %>
-</center>
 
+
+<form action="/game" method="get">
+<input type="submit" name="new_game" value="Play Again">
+</form>
+
+<form action="/" method="get">
+<input type="submit" name="new_game" value="Exit Game">
+</form>
+<style>
+
+input[type=submit] {
+  color: white;
+  box-sizing: border-box; width: 15%;
+  background: #FFB6C1;
+  border: 5px solid #39CCCC;
+  font-family: 'Averia Gruesa Libre';
+  font-size: 30px;
+}
+</style>
+</center>
 </body>
 </html>

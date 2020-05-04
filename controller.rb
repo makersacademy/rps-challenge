@@ -2,30 +2,30 @@ require 'sinatra/base'
 
 class Game < Sinatra::Base
   enable :sessions
-  attr_reader :player, :result, :sessions
+  attr_reader :player, :result
 
   get "/" do
     erb :index
   end
 
   post '/game' do
-    @player = params["player"]
+    session[:player] = params["player"]
     redirect "/game?name=#{@player}"
   end
 
   get '/game' do
-    @player = params["player"]
+    @player = session[:player]
     erb :play
   end
 
   post '/result' do
-    @player = params["player"]
+    @player
     @result = params[:result]
     redirect "/result?name=#{result}name=#{@player}"
   end
 
   get '/result' do
-    @player = params[:player]
+    @player = session[:player]
     @result = params[:result]
     erb :result
   end
