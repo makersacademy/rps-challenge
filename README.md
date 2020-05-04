@@ -3,7 +3,7 @@
 
 About
 -------
-Rock Paper Scissors is a TDD web app based on the the well known game children's game.
+Rock Paper Scissors is a TDD web app based on the well known game children's game.
 
 # ![rps_view](img/rps_view.png)
 
@@ -26,7 +26,7 @@ Features
 ----
     User enters their name to play against the computer.
     The user plays against the computer, which chooses its move at random.
-    The app declares the result of the game  based on each player's move.
+    The app declares the result of the game based on each player's move.
 
 
 App Brief
