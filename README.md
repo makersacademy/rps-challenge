@@ -15,7 +15,7 @@ Instructions
 ```
     $ git clone git@github.com:cjm106/rps-challenge.git
     $ cd rps-challenge
-    $ rackup                                              # to run the webserver/access app on http://localhost:9292/
+    $ rackup                                              # to run the webserver http://localhost:9292/
     $ open -a "Google Chrome" http://localhost:9292/      # to open the app in chrome from the mac cmd line.
     $ rspec                                               # to run the tests used to TDD this app.
 
