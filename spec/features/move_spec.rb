@@ -27,17 +27,32 @@ feature '/outcome' do
   end
 
   scenario "Draw" do 
-    sign_in_and_play
-    click_button("Scissors")
+    srand(2)
 
-    testing = Rps.new
-    @result = testing.calculate_result("Scissors", "Scissors")
-    @comp_move = testing.compmove
+
+    sign_in_and_play
+    click_button("Rock")
 
     expect(page).to have_content("Draw")
   end 
 
+  scenario "Winner" do 
+    srand(3)
 
+    sign_in_and_play
+    click_button("Rock")
+
+    expect(page).to have_content("Winner")
+  end 
+
+  scenario "Loser" do 
+    srand(1)
+
+    sign_in_and_play
+    click_button("Rock")
+
+    expect(page).to have_content("Loser")
+  end
 end 
 
 

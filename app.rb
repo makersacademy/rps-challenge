@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative "./lib/rps"
+require_relative "./lib/winner"
 
 class RockPaperScissors < Sinatra::Base
 
@@ -22,7 +22,7 @@ class RockPaperScissors < Sinatra::Base
 
   get "/outcome_rock" do
     @move = "Rock"
-    testing = Rps.new
+    testing = Winner.new
     @result = testing.calculate_result(@move)
     @comp_move = testing.compmove
     erb(:outcome)
@@ -30,7 +30,7 @@ class RockPaperScissors < Sinatra::Base
 
   get "/outcome_paper" do
     @move = "Paper"
-    testing = Rps.new
+    testing = Winner.new
     @result = testing.calculate_result(@move)
     @comp_move = testing.compmove
     erb(:outcome)
@@ -40,7 +40,7 @@ class RockPaperScissors < Sinatra::Base
   get "/outcome_scissors" do
 
     @move = "Scissors"
-    testing = Rps.new 
+    testing = Winner.new
     @result = testing.calculate_result(@move)
     @comp_move = testing.compmove
 

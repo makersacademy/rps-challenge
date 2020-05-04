@@ -1,28 +1,7 @@
-require "./lib/rps"
+require "./lib/winner"
 
-describe Rps do
+describe Winner do
   
-  describe "#random_output" do
-
-    it "generates Rock if rand 1 called" do 
-      expect(subject.move(1)).to eq("Rock")
-    end 
-
-    it "generates Paper if rand 2 called" do 
-      expect(subject.move(2)).to eq("Paper")
-    end 
-
-    it "generates Scissors if rand 3 called" do 
-      expect(subject.move(3)).to eq("Scissors")
-    end 
-  end 
-
-  describe "#random_output" do
-    it "returns a either 1, 2 or 3" do
-      expect(subject.random_output).to eq(1).or eq(2).or eq(3)
-    end
-  end 
-
   describe "#calculate_result" do
 
     it "returns a random output of Rock Paper Scissors" do 
