@@ -25,14 +25,18 @@
 
 <body>
   <center>
+  <div>  <h1> Hi <%= @player_1 %> and <%= @player_2 %>! </h1> </div>
 
-  <div>  <h1> Hi <%= @name %>! </h1> </div>
     <h1> Type Rock, Paper or Scissors to play! </h1>
 
 
-  <form action="/outcome" method="get">
+  <form action="/outcome_multi" method="get">
     <!-- <label for="choice"> -->
-      <input type="text" name="choice">
+      <input type="text" name="choice_1">
+    <!-- </label> -->
+
+    <!-- <label for="choice"> -->
+      <input type="text" name="choice_2">
     <!-- </label> -->
     <input type="submit" value="Play!">
   </form>

@@ -26,16 +26,15 @@
 
 <body>
   <center>
-  <div>  <h1>Welcome to Rock, Paper, Scissors! </h1>   </div>
+  <div>  <h1>Welcome to Singleplayer Mode! </h1>   </div>
 
-    <h1>Choose Singleplayer or Multiplayer to begin: </h1>
+    <h1>Enter your name to begin: </h1>
 
-    <form action="/singleplayer" method="get">
-      <input type="submit" value="Singleplayer">
-    </form>
-
-    <form action="/multiplayer" method="get">
-      <input type="submit" value="Multiplayer">
+    <form action="/name_single" method="post">
+      <label for="name">
+        <input type="text" name="name">
+      </label>
+      <input type="submit" value="Play!">
     </form>
 
     <iframe src="https://giphy.com/embed/elJQRdWlFb8gPN1T9K" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/stickers/rock-paper-scissors-hand-game-stone-elJQRdWlFb8gPN1T9K">via GIPHY</a></p>

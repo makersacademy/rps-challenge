@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Play page' do
-  scenario 'User starts game' do
+  scenario 'Singleplayer start game' do
     sign_in_and_play
     expect(page).to have_content("Type Rock, Paper or Scissors to play!")
   end
