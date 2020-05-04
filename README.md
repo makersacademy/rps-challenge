@@ -1,11 +1,11 @@
-# &#x270a Rock &#x270b Paper &#x270c Scissors!
+# * Rock * Paper * Scissors!
 
 
 About
 -------
 Rock Paper Scissors is a TDD web app based on the the well known game children's game.
 
-
+# ![rps_view](img/rps_view.png)
 
 
 Instructions
@@ -15,7 +15,7 @@ Instructions
 ```
     $ git clone git@github.com:cjm106/rps-challenge.git
     $ cd rps-challenge
-    $ rackup                                              # to run the webserver/access app on http://localhost:9292/
+    $ rackup                                              # to run the webserver http://localhost:9292/
     $ open -a "Google Chrome" http://localhost:9292/      # to open the app in chrome from the mac cmd line.
     $ rspec                                               # to run the tests used to TDD this app.
 
