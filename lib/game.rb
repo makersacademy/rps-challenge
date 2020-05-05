@@ -4,6 +4,7 @@ class Game
 
   def initialize(player1)
     @p1_name = player1.name
+    @p1_choice = player1.choice
   end
 
   def computer_choice
