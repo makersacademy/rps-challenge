@@ -1,5 +1,7 @@
 feature 'Resolve the game' do
 
+  let(:computer_choice) { "Rock" }
+
   scenario 'Player can start a new game once the first one ends' do
     visit('/')
     fill_in :player_1_name, with: 'Alec'

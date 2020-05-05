@@ -23,7 +23,7 @@ class Rps < Sinatra::Base
     p params
     @player_1_name = session[:player_1_name]
     @player_1_choice = params[:player_1_choice]
-    @computer_choice = ["Rock" , "Paper", "Scissors"].sample
+    @computer_choice = ["Rock", "Paper", "Scissors"].sample
     @result = winner(@player_1_choice, @computer_choice)
     erb :resolve
   end
