@@ -11,27 +11,8 @@
     color: #ffba00;
     font-size: 4em;
   }
-  input[type=text] {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  font-size: 0.5em;
-  box-sizing: border-box;
-}
-  input[type=submit] {
-   width: 275px;
-   box-sizing: border-box;
-   border: 2px solid #ccc;
-   border-radius: 4px;
-   font-size: 1.2em;
-   background-color: #ffba00;
-  }
   img {
     border: 2px solid #ffba00;
-  }
-  form {
-    color: silver;
-    font-size: 1.7em;
   }
 </style>
 
@@ -39,23 +20,17 @@
 <h2> <%= $game.p1_name %>: make your choice. </h2>
 
 <form action="/results" method="post">
-  <label for="Light Saber">
-    Light Saber (rock) <br>
-    <img src="https://bit.ly/3bXtTed" alt="light saber" width="200" height="150">
-  </label>
+  <img alt="light saber" src="https://bit.ly/3bXtTed" width="200" height="150">
   <br>
-  <label for="Thermal Detonator (paper)">
-    Thermal Detonator (paper) <br>
-    <img src="https://bit.ly/2z2G8Yp" alt="thermal detonator" width="200" height="150">
-  </label><br>
-  <label for="Blaster Cannon (scissors)">
-    Blaster Cannon (scissors) <br>
-    <img src="https://bit.ly/2YpZbGH" alt="blaster cannon" width="200" height="150">
-    <br>
-  </label> <br>
-  <label for="p1_choice">
-    Choose your destiny: rock, paper, or scissors <br>
-  <input type="text" name="p1_choice">
-  </label> <br>
-  <input type="submit" value="Decide your fate">
+  <input type="submit" name="p1_choice" value="light saber">
+  <br>
+  <br>
+  <img alt="blaster cannon" src="https://bit.ly/2YpZbGH" width="200" height="150">
+  <br>
+  <input type="submit" name="p1_choice" value="blaster cannon">
+  <br>
+  <br>
+  <img alt="thermal detonator" src="https://bit.ly/2z2G8Yp" width="200" height="150">
+  <br>
+  <input type="submit" name="p1_choice" value="thermal detonator">
 </form>
