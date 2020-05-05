@@ -5,7 +5,8 @@ feature 'Resolve the game' do
     fill_in :player_1_name, with: 'Alec'
     click_button 'Ready'
     click_button "Scissors"
+    expect(page).to have_content 'Alec chose Scissors'
     expect(page).to have_button 'Play again'
   end
-  
+
 end

@@ -15,11 +15,14 @@ class Rps < Sinatra::Base
   get '/play' do
     p params
     @player_1_name = session[:player_1_name]
+    session[:player_1_choice] = params[:player_1_choice]
     erb :play
   end
 
   post '/resolve' do
+    p params
     @player_1_name = session[:player_1_name]
+    @player_1_choice = params[:player_1_choice]
     erb :resolve
   end
 

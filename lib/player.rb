@@ -1,5 +1,5 @@
 class Player
-attr_reader :name , :move
+  attr_reader :name, :move
 
   def initialize(name)
     @name = name
@@ -10,6 +10,6 @@ attr_reader :name , :move
   end
 
   def random_move
-    @move = ["Rock" , "Paper" , "Scissors"].sample
+    @move = ["Rock", "Paper", "Scissors"].sample
   end
 end
