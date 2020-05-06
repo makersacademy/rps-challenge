@@ -118,7 +118,7 @@ First some set up, configured spec_helper.rb to require app.rb and set the capyb
 
 - Added a route for '/' returning "Hello World". Test Green.
 
-Also added config.ru to be able to rackup for manual testing. 
+Also added config.ru to be able to rackup for manual testing.
 
 When the marketeer visits the site, there needs to be a field in order to enter their name, and their name should be displayed.
 
@@ -126,7 +126,7 @@ Wrote a feature test using capybara, that when visiting / and entering Dave into
 
 - Updated get / to return an view, index.erb (in the views dir)
 
-- In index.erb added a form to enter name and submit, posting to /play 
+- In index.erb added a form to enter name and submit, posting to /play
 
 - In app.rb added a post /play route, hardcoded to return 'Dave'. Test green.
 
@@ -188,7 +188,7 @@ Wrote a feature test for Jim to choose Scissors and see Jim: Scissors. Test red.
 
 - Rather than outputting an interpolated string, added the choice to the session hash. and redirected to get /result
 
-- Added route for get /result assigning instance variables name and choice, and returning view result.erb 
+- Added route for get /result assigning instance variables name and choice, and returning view result.erb
 
 - Extracted the lengthy enter name process to helper methods in web_helpers.rb and required this in the spec_helper file.
 
@@ -206,7 +206,7 @@ In order to play a game vs a computer opponent there needs to be a logic that ma
 
 Wrote a feature test for Dave to choose Rock and the computer to choose Rock, expect to see 'Computer: Rock'. Test red.
 
-- Hardcoded 'Computer: Rock' in the result view. 
+- Hardcoded 'Computer: Rock' in the result view.
 
 Test green.
 
