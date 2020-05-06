@@ -1,0 +1,121 @@
+html {
+  font-size: calc(12px + 0.75vw);
+  font-family: Montserrat, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 171, 15, 0.25);
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  line-height: 2;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+a {
+  color: hsl(39, 100%, 20%);
+  display: block;
+  text-align: center;
+}
+
+a:hover {
+  color: hsl(39, 100%, 40%);
+}
+
+.dark {
+  color: hsl(39, 100%, 40%);
+}
+
+.fl-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.fl-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-cen {
+  justify-content: center;
+}
+
+.col-cen {
+  align-items: center;
+}
+
+.spaced {
+  justify-content: space-around;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.pad {
+  padding: 1rem;
+}
+
+.padb {
+  padding-bottom: .25rem;
+}
+
+input, select {
+  font-family: Montserrat, sans-serif;
+  border-radius: .5rem;
+  font-size: 1rem;
+  box-shadow: 0 3px hsl(39, 100%, 40%);
+  border: 1px solid hsl(39, 100%, 40%);
+  padding: .5rem;
+}
+
+.button {
+  font-size: 1rem;
+  margin: 1.5rem;
+  padding: .5rem 2rem;
+  font-weight: 900;
+  background-color: hsl(39, 100%, 53%);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  border-radius: .5rem;
+  box-shadow: 0 9px hsl(39, 100%, 40%);
+  outline: none;
+  transition: ease-in;
+  transition-duration: 100ms;
+}
+
+.wide {
+  width: 9rem;
+}
+
+.button:hover {
+  background: hsl(39, 100%, 48%);
+}
+
+.button:active {
+  background: hsl(39, 100%, 48%);
+  box-shadow: 0 5px hsl(39, 100%, 40%);
+  transform: translateY(4px);
+}
+
+.wiggle {
+  padding: .5rem;
+  font-size: 2rem;
+  animation: wiggle 2s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(20deg)}
+  50% {transform: rotate(-20deg)}
+  100% {transform: rotate(20deg)}
+}

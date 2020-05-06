@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors Lizard Spock</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href="/main.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/88c2a27665.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1><%= @game.player_1.name %> vs <%= @game.player_2.name %></h1>
+    <% if @game.multiplayer_turn_1? %>
+      <h2><%= @game.player_1.name %>'s choice. No peeking <%= @game.player_2.name %>!</h2>
+    <% elsif @game.multiplayer_turn_2? %>
+      <h2><%= @game.player_2.name %>'s choice. No peeking <%= @game.player_1.name %>!</h2>
+    <% end %>
+
+    <form class="fl-row wrap row-cen" <% if @game.multiplayer_turn_2? %>action="/player-2"<% else %>action="/player-1"<% end %> method="post">
+      <div>
+        <button class="button fl-col row-cen wide" type="submit" name="player_choice" value='Rock'>
+          <i class="far fa-3x padb fa-hand-rock"></i>
+          Rock
+        </button>
+      </div>
+      <div>
+        <button class="button fl-col row-cen wide" type="submit" name="player_choice" value='Paper'>
+          <i class="far fa-3x padb fa-hand-paper"></i>
+          Paper
+        </button>
+      </div>
+      <div>
+        <button class="button fl-col row-cen wide" type="submit" name="player_choice" value='Scissors'>
+          <i class="far fa-3x padb fa-hand-scissors"></i>
+          Scissors
+        </button>
+      </div>
+      <div>
+        <button class="button fl-col row-cen wide" type="submit" name="player_choice" value='Lizard'>
+          <i class="far fa-3x padb fa-hand-lizard"></i>
+          Lizard
+        </button>
+      </div>
+      <div>
+        <button class="button fl-col row-cen wide" type="submit" name="player_choice" value='Spock'>
+          <i class="far fa-3x padb fa-hand-spock"></i>
+          Spock
+        </button>
+      </div>
+    </form>
+</body>
+</html>

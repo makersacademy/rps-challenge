@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors Lizard Spock</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href="/main.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/88c2a27665.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>Rock Paper Scissors Lizard Spock</h1>
+  <div class="dark fl-row wrap row-cen">
+    <i class="wiggle far fa-3x fa-hand-rock"></i>
+    <i class="wiggle far fa-3x fa-hand-paper"></i>
+    <i class="wiggle far fa-3x fa-hand-scissors"></i>
+    <i class="wiggle far fa-3x fa-hand-lizard"></i>
+    <i class="wiggle far fa-3x fa-hand-spock"></i>
+  </div>
+  <div class="fl-row wrap spaced">
+    <section class="pad">
+      <h2>Single-player</h2>
+      <form class="fl-col" action="/single-player" method="post">
+        <label for="name">Enter your name:</label>
+        <input required type="text" name="name">
+        <button class="button" type="submit">Start Single-player!</button>
+      </form>
+    </section>
+    <section class="pad">
+      <h2>Multi-player</h2>
+      <form class="fl-col" action="/multi-player" method="post">
+        <label for="name">Enter player 1's name:</label>
+        <input required type="text" name="player_1_name">
+        <label for="name">Enter player 2's name:</label>
+        <input required type="text" name="player_2_name">
+        <button class="button" type="submit">Start Multi-player!</button>
+      </form>
+    </section>
+  </div>
+</body>
+</html>
