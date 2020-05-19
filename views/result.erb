@@ -2,18 +2,23 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css" >
   </head>
 
   <body>
+    <div class='container text-center'>
+      <div class="recenter">
   
-    <p> <%= @game.player_1.name %> picked: <%= @game.player_1_choice %> </p>
+        <p> <%= @game.player_1.name %> picked: <%= @game.player_1_choice %> </p>
 
-    <p> Computer picked: <%= @game.computer_choice %> </p>
+        <p> Computer picked: <%= @game.computer_choice %> </p>
 
-    <p> The result is: <%= @game.result %> </p>
+        <p> The result is: <%= @game.result %> </p>
 
-    <a href="/" > Start again! </a>
+        <a href="/" > Start again! </a>
 
+      </div>
+    </div>
   </body>
 
 </html>
