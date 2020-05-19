@@ -8,15 +8,15 @@
   <body>
     <div class='container text-center'>
       <div class="recenter">
-  
-        <p> <%= @game.player_1.name %> picked: <%= @game.player_1_choice %> </p>
+        <div class="row result">
+          <h2 class="col"> <%= @game.player_1.name %> picked: <%= @game.player_1_choice %> </h2>
 
-        <p> Computer picked: <%= @game.computer_choice %> </p>
-
-        <p> The result is: <%= @game.result %> </p>
-        
-        <a class="btn btn-primary" href="/" > Start again! </a>
-
+          <h2 class="col"> Computer picked: <%= @game.computer_choice %> </h2>
+        </div>
+        <div class='result-statement'>
+          <h2> The result is: <%= @game.result %> </h2>
+        </div>  
+          <a class="btn btn-primary" href="/" > Start again! </a>
       </div>
     </div>
   </body>

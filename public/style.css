@@ -7,3 +7,15 @@ body {
 .recenter {
   padding-top: 40%
 }
+
+.magnify {
+  min-height: 35px;
+}
+
+.result {
+  padding-bottom: 10%
+}
+
+.result-statement {
+  padding-bottom: 4%
+}
