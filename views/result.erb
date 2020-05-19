@@ -1,7 +1,24 @@
-<p> <%= @game.player_1.name %> picked: <%= @game.player_1_choice %> </p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css" >
+  </head>
 
-<p> Computer picked: <%= @game.computer_choice %> </p>
+  <body>
+    <div class='container text-center'>
+      <div class="recenter">
+        <div class="row result">
+          <h2 class="col"> <%= @game.player_1.name %> picked: <%= @game.player_1_choice %> </h2>
 
-<p> The result is: <%= @game.result %> </p>
+          <h2 class="col"> Computer picked: <%= @game.computer_choice %> </h2>
+        </div>
+        <div class='result-statement'>
+          <h2> The result is: <%= @game.result %> </h2>
+        </div>  
+          <a class="btn btn-primary" href="/" > Start again! </a>
+      </div>
+    </div>
+  </body>
 
-<a href="/" > Start again! </a>
+</html>

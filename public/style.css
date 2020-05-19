@@ -1,0 +1,21 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css');
+html,
+body {
+  height: 100%;
+}
+
+.recenter {
+  padding-top: 40%
+}
+
+.magnify {
+  min-height: 35px;
+}
+
+.result {
+  padding-bottom: 10%
+}
+
+.result-statement {
+  padding-bottom: 4%
+}
