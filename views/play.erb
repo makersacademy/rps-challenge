@@ -1,11 +1,23 @@
-<h1> Let's play Rock, Paper, Scissors </h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
 
-<p> Player: <%= @game.player_1.name %> </p>
+  <body>
+  
+    <h1> Let's play Rock, Paper, Scissors </h1>
 
-<p> What would you like to pick? </p>
+    <p> Player: <%= @game.player_1.name %> </p>
 
-<form action="/choice" method="post">
-  <input type="submit" name='choice_made' value="Rock">
-  <input type="submit" name='choice_made' value="Paper">
-  <input type="submit" name='choice_made' value="Scissors">
-</form>
+    <p> What would you like to pick? </p>
+
+    <form action="/choice" method="post">
+      <input type="submit" name='choice_made' value="Rock">
+      <input type="submit" name='choice_made' value="Paper">
+      <input type="submit" name='choice_made' value="Scissors">
+    </form>
+
+  </body>
+
+</html>
