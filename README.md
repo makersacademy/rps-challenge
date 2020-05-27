@@ -1,23 +1,53 @@
-# RPS Challenge
+# Rock Paper Scissors Challenge
 
-Instructions
--------
+This is a project created during my time as a student at Makers.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+The requirements were as follows:
 
-Task
-----
+"The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little. Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web."
 
-Knowing how to build web applications is getting us almost there as web developers!
+[Getting Started](#getting-started) | [Running Tests](#running-tests) | [Criteria for Building the Project](#criteria-for-building-the-project)
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+## Getting Started
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Ensure you have the following setup on your machine:
+- Bundler
 
+`git clone` this repository and `cd` into the directory.
+
+Install dependencies:
+
+```
+$ bundle install
+```
+
+To run the project, start up the server:
+
+```
+$ rackup -p 9292
+```
+
+Then navigate to `localhost:9292` in your browser
+
+## Running Tests
+
+This project is setup with:
+- Capybara
+- RSpec
+- SimpleCov
+- Rubocop
+
+To run the tests:
+```
+$ bundle exec rspec
+$ bundle exec rubocop
+```
+
+All tests are passing with 100% test coverage.
+
+## Criteria for Building the Project
+
+#### User Stories
 ```
 As a marketeer
 So that I can see my name in lights
@@ -28,59 +58,18 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+#### Domain Model
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+| Models | Methods | State |
+| :--- |:--- | :--- |
+| Computer | weapon | |
+| Game | result | computer |
+| Player | | name, weapon |
 
+#### Acceptence Criteria
 
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+- [x] the marketeer should be able to enter their name before the game
+- [x] the marketeer will be presented the choices (rock, paper and scissors)
+- [x] the marketeer can choose one option
+- [x] the game will choose a random option
+- [x] a winner will be declared
