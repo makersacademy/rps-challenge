@@ -32,3 +32,6 @@ Change the game so that two players can play against each other.
 - Paper beats Rock
 
 ## Preview
+<img width="400" alt="rock paper scissors-1" src="https://user-images.githubusercontent.com/28805811/83118860-d40fde80-a0c6-11ea-9948-39eb114e3952.png">
+
+<img width="334" alt="rock paper scissors-2" src="https://user-images.githubusercontent.com/28805811/83118895-e0943700-a0c6-11ea-97f2-2c6a3e9c7d90.png">
