@@ -14,7 +14,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Functionality
 - the player should be able to enter their name before the game
 - the player is presented the choices (rock, paper and scissors)
 - the player can choose one option
