@@ -1,5 +1,5 @@
 require 'sinatra'
-
+require_relative './lib/result.rb'
 
 class RPSGame < Sinatra::Base
   enable :sessions
@@ -26,6 +26,7 @@ class RPSGame < Sinatra::Base
   get '/result' do
     @player_move = session[:player_move]
     @name = session[:name]
+    @result = Result.new.result(@player_move)
     erb(:result)
   end
 

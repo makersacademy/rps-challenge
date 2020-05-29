@@ -17,6 +17,7 @@ feature "website" do
 
   feature "get /result" do
     scenario 'output of who won' do
+      allow_any_instance_of(Array).to receive(:sample) {"Scissors"}
       visit '/'
       fill_in 'name', with: 'Rae'
       click_button('Submit')
