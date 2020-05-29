@@ -8,9 +8,7 @@ feature "website" do
 
   feature "get '/move'" do
     scenario 'has selection for RSP choice' do
-      visit '/'
-      fill_in 'name', with: 'Rae'
-      click_button('Submit')
+      submit_name
       expect(page).to have_content('Rae what is your move?')
     end
   end
@@ -18,11 +16,8 @@ feature "website" do
   feature "get /result" do
     scenario 'output of who won' do
       allow_any_instance_of(Array).to receive(:sample) {"Scissors"}
-      visit '/'
-      fill_in 'name', with: 'Rae'
-      click_button('Submit')
-      select("Rock", from: "move")
-      click_button('Submit')
+      submit_name
+      submit_rock
       expect(page).to have_content('Rae won with Rock')
     end
   end
