@@ -2,5 +2,7 @@ require 'sinatra'
 
 class RPS < Sinatra::Base
 
-
-end 
+  get "/" do
+    erb(:index)
+  end
+end
