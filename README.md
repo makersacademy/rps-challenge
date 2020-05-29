@@ -2,8 +2,9 @@
 
 Task
 ----
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Create a _Rock, Paper, Scissors_ game
 
+## User Stories
 ```
 As a game player
 So that I can see who is playing
@@ -14,23 +15,28 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Functionality
+## Functionality
 - the player should be able to enter their name before the game
 - the player is presented the choices (rock, paper and scissors)
 - the player can choose one option
 - the computer will choose a random option
 - a winner is declared
 
-## To do:
+## How to set up the game on your computer
+- Clone this repo with git clone.
+- Run "bundle" from the command line 
+- Run "ruby app.rb" from the command line
+- Open http://localhost:4567 in the browser
+- Play the game! 🎮 
+
+## Items left to do
 - Installation steps
 - Fix computer random choice bug
 
 ## Future improvements
-
-Change the game so that two players can play against each other.
+- Change the game so that two players can play against each other.
 
 ## Basic Rules
-
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
