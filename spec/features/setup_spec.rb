@@ -15,7 +15,7 @@ feature "website" do
 
   feature "get /result" do
     scenario 'output of who won' do
-      allow_any_instance_of(Array).to receive(:sample) {"Scissors"}
+      allow_any_instance_of(Array).to receive(:sample) { "Scissors" }
       submit_name
       submit_rock
       expect(page).to have_content('Rae won with Rock')
