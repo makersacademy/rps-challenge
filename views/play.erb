@@ -1,0 +1,36 @@
+<style>
+  body {
+    background-image: url("https://bit.ly/3d6PrVS");
+    text-align: center;
+  }
+  h1 {
+    color: #ff2613;
+    font-size: 5em;
+  }
+  h2 {
+    color: #ffba00;
+    font-size: 4em;
+  }
+  img {
+    border: 2px solid #ffba00;
+  }
+</style>
+
+<h1> <%= $game.p1_name %> vs. Computer </h1>
+<h2> <%= $game.p1_name %>: make your choice. </h2>
+
+<form action="/results" method="post">
+  <img alt="light saber" src="https://bit.ly/3bXtTed" width="200" height="150">
+  <br>
+  <input type="submit" name="p1_choice" value="light saber">
+  <br>
+  <br>
+  <img alt="blaster cannon" src="https://bit.ly/2YpZbGH" width="200" height="150">
+  <br>
+  <input type="submit" name="p1_choice" value="blaster cannon">
+  <br>
+  <br>
+  <img alt="thermal detonator" src="https://bit.ly/2z2G8Yp" width="200" height="150">
+  <br>
+  <input type="submit" name="p1_choice" value="thermal detonator">
+</form>

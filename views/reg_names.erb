@@ -1,0 +1,49 @@
+<style>
+  body {
+    background-image: url("https://bit.ly/3d6PrVS");
+    text-align: center;
+  }
+  h1 {
+    color: #ff2613;
+    font-size: 5em;
+  }
+  h2 {
+    color: LightGray;
+    font-size: 4em;
+  }
+  h3 {
+    color: #ffba00;
+    font-size: 3em;
+  }
+  form {
+    color: #ffba00;
+    font-size: 2em;
+  }
+  input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 0.5em;
+  box-sizing: border-box;
+}
+  input[type=submit] {
+   width: 200 px;
+   box-sizing: border-box;
+   border: 2px solid #ccc;
+   border-radius: 4px;
+   font-size: 1em;
+   background-color: #ffba00;
+   /* padding: 12px 20px 12px 40px; */
+  }
+</style>
+
+<h1>Rock paper scissors</h1>
+<h1>Star Wars edition!</h1>
+<h3>Sign in to play</h3>
+<form action="/play" method="post">
+  <label for="player1_name">
+    Your name <br>
+  <input type="text" name="player1_name">
+  </label> <br>
+  <input type="submit" value="Game on!">
+</form>
