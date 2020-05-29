@@ -22,4 +22,13 @@ feature "website" do
     end
   end
 
+  feature "get /result" do
+    scenario 'has option to play again' do
+      submit_name
+      submit_rock
+      click_button("play again")
+      expect(page).to have_content('Rae what is your move?')
+    end
+  end
+
 end

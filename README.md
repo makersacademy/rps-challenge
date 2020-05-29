@@ -43,7 +43,7 @@ As usual please start by
 * TEST driving development of your app
 
 --------------
-# plan
+## plan
 
 ### Website Side
 
@@ -64,6 +64,10 @@ get '/result' - interact with code to find out result, shows result
 \#computer move - Array.sample
 winning hash [R: S, P: R, S: P]
 \#result(player move)
+
+## Comments About Used Resources
+
+mostly for checking syntax, I used the repository made for the battle (this weeks afternoon challenge) and also [Tristian's Birthday App one](https://github.com/tristanlangford/birthdaygreeterV2) for the RPS selection HTML syntax.
 
 ## Bonus level 1: Multiplayer
 
