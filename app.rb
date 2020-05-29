@@ -18,6 +18,17 @@ class RPSGame < Sinatra::Base
     erb(:move)
   end
 
+  post '/selected_move' do
+    session[:player_move] = params[:move]
+    redirect('/result')
+  end
+
+  get '/result' do
+    @player_move = session[:player_move]
+    @name = session[:name]
+    erb(:result)
+  end
+
   run! if app_file == $0
 
 end

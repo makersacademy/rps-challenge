@@ -15,4 +15,15 @@ feature "website" do
     end
   end
 
+  feature "get /result" do
+    scenario 'output of who won' do
+      visit '/'
+      fill_in 'name', with: 'Rae'
+      click_button('Submit')
+      select("Rock", from: "move")
+      click_button('Submit')
+      expect(page).to have_content('Rae won with Rock')
+    end
+  end
+
 end
