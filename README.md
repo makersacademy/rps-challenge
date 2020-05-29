@@ -5,9 +5,8 @@ Task
 Create a _Rock, Paper, Scissors_ game
 
 ## Preview
-<img width="400" alt="rock paper scissors-1" src="https://user-images.githubusercontent.com/28805811/83118860-d40fde80-a0c6-11ea-9948-39eb114e3952.png">
-
-<img width="334" alt="rock paper scissors-2" src="https://user-images.githubusercontent.com/28805811/83118895-e0943700-a0c6-11ea-97f2-2c6a3e9c7d90.png">
+<img width="451" alt="RPShomepage" src="https://user-images.githubusercontent.com/28805811/83278390-71543b00-a1cb-11ea-8a6c-67068af37166.png">
+<img width="451" alt="RPS_playpage" src="https://user-images.githubusercontent.com/28805811/83278388-70bba480-a1cb-11ea-8d25-5d2c07f27786.png">
 
 ## How to set up the game on your computer
 - Clone this repo with git clone.
