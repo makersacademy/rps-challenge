@@ -42,6 +42,28 @@ As usual please start by
 * Forking this repo
 * TEST driving development of your app
 
+--------------
+# plan
+
+### Website Side
+
+get '/' - form to enter a name  pointing to post '/name'
+
+post 'name' - save name in a session redirect to get '/move'
+
+get '/move' - option to pick more (R,S,P) pointing to post '/selected_move'
+
+post '/selected_move' - save selected, redirect to get '/result'
+
+get '/result' - interact with code to find out result, shows result
+                option to return to get '/move'
+
+
+### Code Side
+
+\#computer move - Array.sample
+winning hash [R: S, P: R, S: P]
+\#result(player move)
 
 ## Bonus level 1: Multiplayer
 
