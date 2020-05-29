@@ -21,6 +21,10 @@ Functionality
 - the computer will choose a random option
 - a winner is declared
 
+## To do:
+- Installation steps
+- Fix computer random choice bug
+
 ## Future improvements
 
 Change the game so that two players can play against each other.
