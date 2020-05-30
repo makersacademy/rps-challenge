@@ -1,3 +1,6 @@
-<h2> <%= @player_name %> plays: <%= @player_go %>
+<h2> <%= @player_name %> plays: <%= @player_move %> </h2>
+<h2> Computer plays: <%= @random_move %>
 
-<h2> computer plays: <%= @random_move %>
+
+<form action="/play" method="get">
+<p><input type="submit" value="Play Again"></p>

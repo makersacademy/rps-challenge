@@ -6,5 +6,7 @@ describe Game do
       move = ["Rock", "Paper", "Scissors"]
       expect(move).to include(Game.new.computer_move)
     end
+
+    
   end
 end
