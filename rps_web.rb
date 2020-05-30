@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/Computer'
 
 class RPSWeb < Sinatra::Base
   enable :sessions
@@ -14,11 +15,13 @@ class RPSWeb < Sinatra::Base
   get '/play' do
     @player1_name = session[:player1_name]
     @option = session[:option]
+    @computer_option = session[:computer_option]
     erb :play
   end
 
   post '/play' do
     session[:option] = params[:option]
+    session[:computer_option] = Computer.new.random_option
     redirect '/play'
   end
 
