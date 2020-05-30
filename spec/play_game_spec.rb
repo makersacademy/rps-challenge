@@ -14,4 +14,9 @@ describe PlayGame do
   it 'Should accept the player choice as an argument' do 
     expect(subject.player_choice).to eq('Paper')
   end
+
+  it 'Should pick a random choice on initialization' do
+    allow(PlayGame::RPSARRAY).to receive(:sample).and_return('Rock')
+    expect(subject.computer_choice).to eq('Rock')
+  end
 end
