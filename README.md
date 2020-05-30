@@ -86,6 +86,24 @@ SimpleCov.start
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
 
 
-#run 'bundle' to install gems
-#run 'shotgun app.rb -p 4567' to launch server
-# launch in browser: http://localhost:4567/
+
+
+### README additions ###
+
+### Instructions
+
+# run 'bundle' to install gems
+# run 'shotgun app.rb -p 4567' to launch server
+# launch server in browser: http://localhost:4567/
+# kill server with 'Ctrl+C'
+
+### Planning
+
+## Extracting from the user stories and hints on functionality
+
+# Open web page
+# User story 1: register name (user types in name with form)
+# Redirected to page with rock, paper, scissors options (user clicks one button)
+# User story 2: page runs rock, paper, scissors
+# (game will choose either rock, paper, scissors at random. array.sample?
+# "a winner will be declared" (minimal way to implement this is to redirect to a page with "you win" you "you lose" outcome)
