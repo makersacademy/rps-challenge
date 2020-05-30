@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class RPSGame < Sinatra::Base
+class RPSApp < Sinatra::Base
 
   enable :sessions
 
