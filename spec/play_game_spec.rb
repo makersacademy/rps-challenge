@@ -4,6 +4,7 @@ describe PlayGame do
   let(:subject) {described_class.new('Paper')}
   let(:rock) {allow(PlayGame::RPSARRAY).to receive(:sample).and_return('Rock')}
   let(:scissors) {allow(PlayGame::RPSARRAY).to receive(:sample).and_return('Scissors')}
+  let(:paper) {allow(PlayGame::RPSARRAY).to receive(:sample).and_return('Paper')}
 
 
   it 'Should have a PlayGame class' do
@@ -36,6 +37,11 @@ describe PlayGame do
     it 'Should return false when the player loses' do
       scissors
       expect(subject.play).to eq(false)
+    end
+
+    it "Should return 'draw' when it's a draw" do 
+      paper
+      expect(subject.play).to eq('Draw')
     end
   end
 end

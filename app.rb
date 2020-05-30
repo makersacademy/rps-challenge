@@ -15,6 +15,7 @@ end
 
 post '/result' do
   @game = PlayGame.new(params[:choice])
+  @computer = @game.computer_choice
   @result = @game.play
   if @result == true
     erb :win 
