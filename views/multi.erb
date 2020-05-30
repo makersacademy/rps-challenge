@@ -35,9 +35,9 @@ li {
 
 <div>
 
-  <h1>Hey <%= session[:name1] %>, let's play!</h1>
+  <h1>Hey <%= session[:name2] %>, your turn!</h1>
 
-  <form action="/turn" method="post">
+  <form action="/turn_multi" method="post">
     <ul>
       <li>
         <input class=rock type=radio value="Rock" name=move id=rock>Rock

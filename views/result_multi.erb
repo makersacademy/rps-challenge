@@ -35,21 +35,21 @@ li {
 
 <div>
   <ul>
-<% if session[:result] == "Player" %>
+<% if session[:result] == "Player2" %>
     <li>
-      <p><%= session[:name1] %>: <%= session[:player_move] %>  Computer: <%= session[:cpu_move] %></p>
+      <p><%= session[:name1] %>: <%= session[:player_move] %>  <%= session[:name2] %>: <%= session[:cpu_move] %></p>
     <li>
-      <h1>You Won!</h1>
+      <h1><%= session[:name2] %> won!</h1>
     </li>
 
 <% end %>
 
-<% if session[:result] == "cpu" %>
+<% if session[:result] == "Player1" %>
 
     <li>
-      <p><%= session[:name1] %>: <%= session[:player_move] %>  Computer: <%= session[:cpu_move] %></p>
+      <p><%= session[:name1] %>: <%= session[:player_move] %>  <%= session[:name2] %>: <%= session[:cpu_move] %></p>
     <li>
-      <h1>You Lost!</h1>
+      <h1><%= session[:name1] %> won!</h1>
     </li>
 
 <% end %>

@@ -15,4 +15,9 @@ feature 'Homepage welcomes players and requests their name' do
     expect(page).to have_content("Hey Tristan, let's play!")
   end
 
+  scenario 'asks player for name' do
+    visit('/')
+    expect(page).to have_content("Enter another name for multiplayer:")
+  end
+
 end
