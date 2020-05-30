@@ -5,6 +5,6 @@ STEP 1
 
 STEP 2
 - Start creating your rps app
-- First route (/) will welcome the player and ask for their name
-- Create a Capybara test to set the expectations
-- Make the test pass
+- First route (/) will 1) welcome the player, 2) ask for their name, 3) invite to start the game (this button will redirect the player to the next route(/game)
+- Create Capybara tests to set the expectations
+- Make the tests pass
