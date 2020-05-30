@@ -1,6 +1,6 @@
-feature "check homepage tesxt" do
+feature "check homepage text" do
   scenario "asks to enter your name" do
     visit('/')
-    expect(page).to have_content("What's your name?")
+    expect(page).to have_content("Please enter your name")
   end
 end

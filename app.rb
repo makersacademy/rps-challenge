@@ -6,7 +6,7 @@ class Rps < Sinatra::Base
   enable :sessions
 
   get '/' do
-    "testing homespgae, please work!"
+    erb(:index)
   end
 
   run! if app_file == $0
