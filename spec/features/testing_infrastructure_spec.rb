@@ -14,17 +14,17 @@ end
 
 feature 'Should have buttons to play a game' do 
   scenario 'Be able to select rock' do
-    enter_name_and_submit
+    enter_name_and_submit_again
     expect(page).to have_button("Rock")
   end
 
   scenario 'Be able to select paper' do
-    enter_name_and_submit
+    enter_name_and_submit_again
     expect(page).to have_button("Paper")
   end
 
   scenario 'Be able to select scissors' do
-    enter_name_and_submit
+    enter_name_and_submit_again
     expect(page).to have_button("Scissors")
   end
 end
