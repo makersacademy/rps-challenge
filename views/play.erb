@@ -1,1 +1,9 @@
 Welcome to the game <%=@player1_name%>
+
+<form method= "POST" action="/play">
+  <input type="submit" name="option" value="rock"/>
+    <input type="submit" name="option" value="paper"/>
+      <input type="submit" name="option" value="scissors"/>
+</form>
+
+you chose <%= @option %>
