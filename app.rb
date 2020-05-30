@@ -14,7 +14,15 @@ post '/welcome' do
 end
 
 post '/result' do
-  @game = PlayGame.new
+  @game = PlayGame.new(params[:choice])
+  @result = @game.play
+  if @result == true
+    erb :win 
+  elsif @result == false
+    erb :lose
+  else
+    erb :draw
+  end
 end
 
   run! if app_file == $0

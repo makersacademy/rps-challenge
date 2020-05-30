@@ -1,10 +1,6 @@
-
-<body>
-  <h1>Welcome to Rock Paper Scissors <%= session[:name]%>!</h1>
-  <br>  
-  <form action='/result' method='POST'>
+<h1> That game was a draw!! Lets go again</h1>
+<form action='/result' method='POST'>
     <input type='submit' name='choice' value='Rock'>
     <input type='submit' name='choice' value='Paper'>
     <input type='submit' name='choice' value='Scissors'>
   </form>
-</body>
