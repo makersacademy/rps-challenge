@@ -18,4 +18,8 @@ class RPSGame < Sinatra::Base
     erb(:choose_move)
   end
 
+  post '/choice' do
+    "You won with Rock!"
+  end
+
 end

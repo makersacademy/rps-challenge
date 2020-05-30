@@ -6,4 +6,11 @@ feature 'RPS Game' do
     enter_name_and_play
     expect(page).to have_content('Make your choice, Nikita.')
   end
+
+  scenario 'player chooses an option from dropdown' do
+    enter_name_and_play
+    select('Rock', from: 'choice')
+    click_button('Play!')
+    expect(page).to have_content('You won with Rock!')
+  end
 end
