@@ -90,12 +90,20 @@ You can see your test coverage when you run your tests. If you want this in a gr
 
 ### README additions ###
 
+
 ### Instructions
 
 # run 'bundle' to install gems
-# run 'shotgun app.rb -p 4567' to launch server
-# launch server in browser: http://localhost:4567/
+# run 'rackup config.ru' to launch server
+# launch server in browser: http://localhost:9292/
 # kill server with 'Ctrl+C'
+
+
+### How to play Rock, Paper, Scissors
+1.
+2.
+3.
+
 
 ### Planning
 
