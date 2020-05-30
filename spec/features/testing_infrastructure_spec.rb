@@ -7,9 +7,14 @@ end
 
 feature 'Input field for name' do
   scenario 'Be able to register name' do
-    visit('/') 
-    fill_in('name', with: 'Dave')
-    click_button("Let's play!")
+    enter_name_and_submit
     expect(page).to have_content('Dave')
+  end
+end
+
+feature 'Should have buttons to play a game' do 
+  scenario 'Be able to select rock' do
+    enter_name_and_submit
+    expect(page).to have_button("Rock")
   end
 end

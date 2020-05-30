@@ -1,1 +1,8 @@
-<h1>Welcome to Rock Paper Scissors <%= session[:name]%>! I hope you are well</h1>
+
+<body>
+  <h1>Welcome to Rock Paper Scissors <%= session[:name]%>!</h1>
+  <br>  
+  <form action='/result' method='GET'>
+    <input type='submit' name='Rock' value='Rock'>
+  </form>
+</body>
