@@ -1,11 +1,10 @@
 require 'play_game'
 
 describe PlayGame do
-  let(:subject) {described_class.new('Paper')}
-  let(:rock) {allow(PlayGame::RPSARRAY).to receive(:sample).and_return('Rock')}
-  let(:scissors) {allow(PlayGame::RPSARRAY).to receive(:sample).and_return('Scissors')}
-  let(:paper) {allow(PlayGame::RPSARRAY).to receive(:sample).and_return('Paper')}
-
+  let(:subject) { described_class.new('Paper') }
+  let(:rock) { allow(PlayGame::RPSARRAY).to receive(:sample).and_return('Rock') }
+  let(:scissors) { allow(PlayGame::RPSARRAY).to receive(:sample).and_return('Scissors') }
+  let(:paper) { allow(PlayGame::RPSARRAY).to receive(:sample).and_return('Paper') }
 
   it 'Should have a PlayGame class' do
     expect(PlayGame).to respond_to(:new)
