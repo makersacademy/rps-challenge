@@ -17,4 +17,15 @@ class RPS < Sinatra::Base
     @player = session[:player]
     erb(:game_page)
   end
+
+  post "/move" do
+    session[:player] = params[:move]
+    redirect('/result')
+  end
+
+  get "/result" do
+    @player_move = session[:player]
+    'You entered:' + @player_move
+  end
+
 end
