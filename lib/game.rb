@@ -7,7 +7,7 @@ class Game
   end
 
   def outcome
-    cpu_move = cpu_turn
+    @cpu_move = cpu_turn
     if @player_move == "Rock" && cpu_move == "Scissors"
       "Player"
     elsif @player_move == "Paper" && cpu_move == "Rock"

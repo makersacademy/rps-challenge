@@ -1,0 +1,37 @@
+
+  <ul>
+<% if session[:result] == "Player" %>
+    <li>
+      <p><%= session[:name] %>: <%= session[:player_move] %>  Computer: <%= session[:cpu_move] %></p>
+    <li>
+      <h1>You Won!</h1>
+    </li>
+
+<% end %>
+
+<% if session[:result] == "cpu" %>
+
+    <li>
+      <p><%= session[:name] %>: <%= session[:player_move] %>  Computer: <%= session[:cpu_move] %></p>
+    <li>
+      <h1>You Lost!</h1>
+    </li>
+
+<% end %>
+
+<% if session[:result] == "Draw" %>
+
+    <li>
+      <p><%= session[:name] %>: <%= session[:player_move] %>  Computer: <%= session[:cpu_move] %></p>
+    <li>
+      <h1>Draw</h1>
+    </li>
+
+<% end %>
+
+<li>
+  <form action="/game">
+    <input type="submit" value="Play again?" name=playagain>
+  </form>
+</li>
+</ul>
