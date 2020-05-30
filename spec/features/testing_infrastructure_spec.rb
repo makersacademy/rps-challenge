@@ -1,11 +1,9 @@
-feature "check homepage text" do
+feature "check homepage functionality" do
   scenario "asks to enter your name" do
     visit('/')
     expect(page).to have_content("Please enter your name")
   end
-end
 
-feature "check homepage text" do
   scenario "takes you to game page" do
     visit('/')
     fill_in('player_name', with: 'John')
