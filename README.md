@@ -1,3 +1,33 @@
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+plan - to have a sign in page - when user accesess the site they are taken to a web page that has the text 'please enter your name' with a form to fill out (with their name) and a submit button, this will post to the play page.
+
+so whats first? - create a feature test to allow a person to sign in - I have feature tested for a form, a submit button, and to return, welcome to the game (player name).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # RPS Challenge
 
 Instructions
