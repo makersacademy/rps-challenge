@@ -2,7 +2,7 @@
 <body>
   <h1>Welcome to Rock Paper Scissors <%= session[:name]%>!</h1>
   <br>  
-  <form action='/result' method='GET'>
+  <form action='/result' method='POST'>
     <input type='submit' name='Rock' value='Rock'>
     <input type='submit' name='Paper' value='Paper'>
     <input type='submit' name='Scissors' value='Scissors'>
