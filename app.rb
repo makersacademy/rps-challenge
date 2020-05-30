@@ -13,8 +13,13 @@ post '/welcome' do
   erb :welcome
 end
 
+post '/play' do
+  erb :play
+end
+
 post '/result' do
   @game = PlayGame.new(params[:choice])
+  @name = session[:name]
   @computer = @game.computer_choice
   @result = @game.play
   if @result == true
