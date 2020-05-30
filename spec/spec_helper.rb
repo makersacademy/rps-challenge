@@ -5,7 +5,7 @@ require 'simplecov-console'
 ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
-require 'features/rps_game_helpers.rb'
+require 'features/app_helper.rb'
 
 Capybara.app = RPSGame
 
