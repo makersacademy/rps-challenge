@@ -19,6 +19,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/turn' do
+    p params[:move]
     @turn = Game.new(params[:move])
     session[:result] = @turn.outcome
     session[:cpu_move] = @turn.cpu_move
