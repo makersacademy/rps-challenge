@@ -3,7 +3,12 @@ require 'sinatra/base'
 class Rps < Sinatra::Base
 
   get '/' do
-    "Welcome player!"    
+    erb(:index)   
+  end
+
+  post '/name' do
+    @player = params[:player]
+    erb(:play)
   end
 
   run! if app_file == $0
