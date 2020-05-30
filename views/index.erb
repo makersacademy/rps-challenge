@@ -2,11 +2,11 @@
 <html>
 <head>
 <style>
-body {background-color:#6666FF;}
-h1 {text-align:center; font-family:Courier;}
-h2 {text-align:center; font-family:Courier;}
-form {text-align:center;}
-h3 {text-align:center;}
+body { background-color:#6666FF; }
+h1 { text-align:center; font-family:Courier; }
+h2 { text-align:center; font-family:Courier; }
+form { text-align:center; }
+h3 { text-align:center; }
 .glow {
   font-size: 80px;
   color: #fff;
@@ -39,13 +39,13 @@ h3 {text-align:center;}
   <form action='/name' method='post'>
     <label><b>Enter Name</b></label>
     <input type='text' name='name' id='user_input'>
-    <input type='submit' value="Let's go!">
+    <input type='submit' value="Light it up!">
   </form>
-  
+
   <p><span id='display'></span></p>
 
   <% if @name %>
-   <h3 class="glow"><%= @name %></h3>
+   <h3 class="glow">Let's see what you've got <%= @name %></h3>
    <form action='/play' method='get'>
    <input type='submit' value="Let's play!">
   <% end %>
