@@ -1,4 +1,4 @@
-
+<div>
   <ul>
 <% if session[:result] == "Player" %>
     <li>
@@ -29,9 +29,11 @@
 
 <% end %>
 
-<li>
-  <form action="/game">
-    <input type="submit" value="Play again?" name=playagain>
-  </form>
-</li>
-</ul>
+    <li>
+      <form action="/game">
+        <input type="submit" value="Play again?" name=playagain>
+      </form>
+    </li>
+  </ul>
+
+</div>
