@@ -31,19 +31,19 @@ end
 
 feature 'Should let the player know the result of the game' do
   scenario 'Should let the player know they have won' do
-    srand(3) #dont know how to use seed properly 
+    srand(3) # dont know how to use seed properly 
     enter_rock
     expect(page).to have_content('Win')
   end
 
   scenario 'Should let the player know they have Lost' do
-    srand(1) #dont know how to use seed properly 
+    srand(1) # dont know how to use seed properly 
     enter_rock
     expect(page).to have_content('Lose')
   end
 
   scenario 'Should let the player know it was a draw' do
-    srand(2) #dont know how to use seed properly 
+    srand(2) # dont know how to use seed properly 
     enter_rock
     expect(page).to have_content('draw')
   end
