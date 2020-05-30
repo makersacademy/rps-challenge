@@ -9,6 +9,10 @@ class Rps < Sinatra::Base
     erb(:index)
   end
 
+  post '/game' do
+    "Hello world!kkgkhg"
+  end
+
   run! if app_file == $0
 
 end
