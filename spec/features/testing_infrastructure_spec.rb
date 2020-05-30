@@ -17,4 +17,15 @@ feature 'Should have buttons to play a game' do
     enter_name_and_submit
     expect(page).to have_button("Rock")
   end
+
+  scenario 'Be able to select paper' do
+    enter_name_and_submit
+    expect(page).to have_button("Paper")
+  end
+
+  scenario 'Be able to select scissors' do
+    enter_name_and_submit
+    expect(page).to have_button("Scissors")
+  end
 end
+
