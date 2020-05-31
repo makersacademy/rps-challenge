@@ -22,3 +22,8 @@ I would like to be able to play rock/paper/scissors
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
+
+
+## How I attempted this Challenge
+
+Being a very visual person, I was really excited for this challenge, as I could dig out my half forgotten HTML and CSS skills.
