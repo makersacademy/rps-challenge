@@ -1,14 +1,17 @@
 require_relative '../lib/game.rb'
 
 describe Game do
-  let(:subject) { Game.new("Rae") }
+  let(:game) { Game.new("Rae") }
 
   describe '#result_string(player_move)' do
     it "returns won, drew or lost for player" do
-      allow(subject).to receive(:sample) { "Rock" }
-      expect(subject.result_string("Paper")).to eq("Rae won")
-      expect(subject.result_string("Rock")).to eq("draw")
-      expect(subject.result_string("Scissors")).to eq("Computer won")
+      allow_any_instance_of(Array).to receive(:sample) { "Rock" }
+      game.player_1_move = "Paper"
+      expect(game.result_string).to eq("Rae won")
+      game.player_1_move = "Rock"
+      expect(game.result_string).to eq("draw")
+      game.player_1_move = "Scissors"
+      expect(game.result_string).to eq("Computer won")
     end
   end
 end
