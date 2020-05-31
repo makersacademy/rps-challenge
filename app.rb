@@ -10,14 +10,15 @@ class RPSGame < Sinatra::Base
 
   post '/name' do
     if params[:name_2] == ""
-      session[:game] = Game.new(params[:name])
+      session[:game] = Game.new(params[:RPSSL], params[:name])
     else
-      session[:game] = Game.new(params[:name], params[:name_2])
+      session[:game] = Game.new(params[:RPSSL], params[:name], params[:name_2])
     end
     redirect('/move')
   end
 
   get '/move' do
+    @RPSSL = session[:game].rpssl
     @name = session[:game].player1
     erb(:move)
   end
@@ -29,6 +30,7 @@ class RPSGame < Sinatra::Base
   end
 
   get '/move2' do
+    @RPSSL = session[:game].rpssl
     @name_2 = session[:game].player2
     erb(:move2)
   end
@@ -44,6 +46,7 @@ class RPSGame < Sinatra::Base
     @name = session[:game].player1
     @name_2 = session[:game].player2
     @result = session[:game].result_string
+    @player_2_move = session[:game].player_2_move # repeat for computer move
     erb(:result)
   end
 
