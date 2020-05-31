@@ -2,6 +2,7 @@
 This challenge involved meeting the user stories below and implementing the web app game in our own interpretation.
 
 <br><br>
+<p align="center">
 <img src="images/Welcome_page.png" width="50%">
 </p>
 <br><br>
