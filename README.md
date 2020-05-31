@@ -48,5 +48,5 @@ You can find the link at the end of this markdown.
 <br />
 <br />
 
-## **View the design here:**
+## **View the design here (Preview 1st page only):**
 ## https://nadinedelia.github.io/rps-design/
