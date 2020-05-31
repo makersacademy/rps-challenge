@@ -12,7 +12,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @name = params[:name]
+    session[:name] = params[:name]
+    @name = session[:name]
     erb :index
   end
 
@@ -21,9 +22,16 @@ class RPS < Sinatra::Base
   end
 
   post '/first_game' do
+    @name = session[:name]
     @player_move = Player.new(params[:choice])
-    @player = @player_move.choice
-    @computer_move = Computer.new.computers_turn
+    session[:choice] = @player_move.choice
+    @player_move = session[:choice]
+    session[:computer_turn] = Computer.new.computers_turn
+    @computer_move = session[:computer_turn]
+    @player_move = session[:choice]
+    @computer_move = session[:computer_turn]
+    @check_result = Game.new(@name, @player_move, @computer_move)
+    @result = @check_result.check_winner
     erb :first_game
   end
 
