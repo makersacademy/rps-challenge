@@ -30,17 +30,17 @@ I would like to be able to play rock/paper/scissors
 Being a very visual person, I was really excited for this challenge, as I could dig out my half forgotten HTML and CSS skills.
 
 
-### Color Palette for Inspiration:
+### **Color Palette for Inspiration:**
 
 ![](public/img/colorpalette.png)
 
 
-### Buttons:
+### **Buttons:**
 
 ![](public/img/rock.png) ![](public/img/paper.png) ![](public/img/scissors.png) ![](public/img/start.png)
 
 <br />
 <br />
 
-### View the design preview here:
-https://nadinedelia.github.io/rps-design/
+## **View the design here:**
+## https://nadinedelia.github.io/rps-design/
