@@ -1,14 +1,14 @@
 ## Rock, Paper, Scissors Web Application
 
-<img width="500" alt="picture" src="https://raw.githubusercontent.com/RichEwin/rps-challenge/master/Images/Screenshot%202020-05-31%20at%2012.18.38.png">
+<img width="500" alt="picture" src="https://github.com/RichEwin/rps-challenge/blob/master/Images/Screenshot%202020-05-31%20at%2015.31.56.png?raw=true">
 
-<img width="500" alt="picture" src="https://github.com/RichEwin/rps-challenge/blob/master/Images/Screenshot%202020-05-31%20at%2012.18.47.png?raw=true">
+<img width="500" alt="picture" src="https://github.com/RichEwin/rps-challenge/blob/master/Images/Screenshot%202020-05-31%20at%2015.31.28.png?raw=true">
 
-<img width="500" alt="picture" src="https://github.com/RichEwin/rps-challenge/blob/master/Images/Screenshot%202020-05-31%20at%2012.19.09.png?raw=true">
+<img width="500" alt="picture" src="https://github.com/RichEwin/rps-challenge/blob/master/Images/Screenshot%202020-05-31%20at%2015.32.54.png?raw=true">
 
-<img width="500" alt="picture" src="https://github.com/RichEwin/rps-challenge/blob/master/Images/Screenshot%202020-05-31%20at%2012.22.12.png?raw=true">
+<img width="500" alt="picture" src="https://github.com/RichEwin/rps-challenge/blob/master/Images/Screenshot%202020-05-31%20at%2015.33.36.png?raw=true">
 
-<img width="500" alt="picture" src="https://github.com/RichEwin/rps-challenge/blob/master/Images/Screenshot%202020-05-31%20at%2012.22.29.png?raw=true">
+<img width="500" alt="picture" src="https://github.com/RichEwin/rps-challenge/blob/master/Images/Screenshot%202020-05-31%20at%2015.34.11.png?raw=true">
 
 ## User Stories
 
@@ -46,7 +46,7 @@ The Result class understands the behaviours of initialize and run_game.
 
 ## How to run
 
-- Fork or clone this repo, and run bundle install
-- Type rackup on the command line to start the server
-- Navigate to localhost:9292 in a web browser
-- Tests can be run by running rspec on the command line in the main project directory
+- Fork or clone this repo
+- Run bundle install on the command line
+- Navigate to your localhost in a web browser and run the application
+- Tests can be run by running rspec on the command line
