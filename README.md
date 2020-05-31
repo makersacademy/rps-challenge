@@ -22,7 +22,7 @@ The tests were created with RSpec and Capybara. Run `rspec` on the command line 
 
 # How I built RPS Challenge
 
-I began this challenge by creating a HTTP request/response diagram - you can see it [here](). As you can see from the diagram, I used the PRG pattern to redirect
+I began this challenge by creating an HTTP request/response diagram - you can see it [here](https://github.com/NikitaDouglas/rps-challenge/blob/master/Screenshot%202020-05-30%20at%2011.41.32.png). As you can see from the diagram, I used the PRG pattern to redirect
 the client after submitting information with a POST request. The app is built using Sinatra, a light weight web app framework for Ruby.
 
 I wrote the initial tests in Capybara, ensuring that I had set up my server correctly, and I also created the `app_helper.rb` file in order to 'DRY' my tests. I
