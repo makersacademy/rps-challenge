@@ -18,7 +18,7 @@ feature 'game of rock, paper, scissors' do
   scenario 'game chooses a winner' do
     enter_name_start_game
     click_button('Rock')
-    expect(page).to have_content "the game"
+    expect(page).to have_content "game"
   end
 
 end
