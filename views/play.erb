@@ -5,21 +5,24 @@
 body { background-color:#6666FF; }
 h1 { text-align:center; font-family:Courier; }
 form { text-align:center; font-size:16px; }
+button[type='submit'] {
+    width: 8em;  height: 4em; font-size:20px;
+}
 </style>
 </head>
 <body>
   <h1>Choose your weapon!</h1><br><br>
   
   <form action='/player_move' method='post'>
-  <input type='submit' value='Rock'>
+  <button name='move' type="submit" value='rock'>Rock</button>
+  </form><br><br><br><br>
+
+  <form action='/player_move' method='post'>
+  <button name='move' type='submit' value='paper'>Paper</button>
   </form><br><br><br><br>
   
   <form action='/player_move' method='post'>
-  <input type='submit' value='Paper'>
-  </form><br><br><br><br>
-  
-  <form action='/player_move' method='post'>
-  <input type='submit' value='Scissors'>
+  <button name='move' type='submit' value='scissors'>Scissors</button>
   </form>
   
 </body>
