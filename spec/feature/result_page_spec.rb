@@ -5,5 +5,6 @@ feature 'testing the result page' do
     sign_in_process
     click_button 'Start'
     expect(page).to have_content('Do you want to play again?')
+    expect(page).to have_content('you lost' || 'you won' || "it's a draw")
   end
 end
