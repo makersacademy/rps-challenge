@@ -24,7 +24,7 @@ I would like to be able to play rock/paper/scissors
 
 ## Domain and Process Modelling
 
-Rock, Paper, Scissors is split up into various classes that understand the behaviour of various methods. The classes encapsulate these behaviours. 
+The Rock, Paper, Scissors web application is split up into various classes that understands the behaviour of various methods. The classes encapsulate these behaviours. 
 
 The Computer class understands the behaviour of the computer_choice.
 
