@@ -60,8 +60,11 @@ First drafts were selfmade buttons in Photoshop. I then switched during the proc
 **Final design:**
 <br />
 ![](public/img/design.png)
+![](public/img/playview.png)
+![](public/img/resultview.png)
 
-
-**Don't want to git clone the whole repo? View the finished design here:**
+# Don't want to clone the whole repo? View the finished design here:
+<br />
 (1st page HTML only Preview)
+<br />
 ## https://nadinedelia.github.io/rps-design/
