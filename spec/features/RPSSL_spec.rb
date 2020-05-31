@@ -9,7 +9,7 @@ feature 'rpssl' do
     scenario 'be able to pick "Spock"' do
       visit('/')
       fill_in 'name', with: 'Rae'
-      select("RPSSL", from: "RPSSL")
+      select("RPSSL", from: "rpssl")
       submit
       select("Spock", from: 'move')
       submit

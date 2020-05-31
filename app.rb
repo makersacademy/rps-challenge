@@ -10,9 +10,9 @@ class RPSGame < Sinatra::Base
 
   post '/name' do
     if params[:name_2] == ""
-      session[:game] = Game.new(params[:RPSSL], params[:name])
+      session[:game] = Game.new(params[:rpssl], params[:name])
     else
-      session[:game] = Game.new(params[:RPSSL], params[:name], params[:name_2])
+      session[:game] = Game.new(params[:rpssl], params[:name], params[:name_2])
     end
     redirect('/move')
   end

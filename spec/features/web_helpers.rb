@@ -1,12 +1,12 @@
 def p1_name
   visit '/'
   fill_in 'name', with: 'Rae'
-  select('RPS', from: 'RPSSL')
+  select('RPS', from: 'rpssl')
 end
 
 def p2_name
   fill_in 'name_2', with: 'Bob'
-  select('RPS', from: 'RPSSL')
+  select('RPS', from: 'rpssl')
 end
 
 def p1_rock
