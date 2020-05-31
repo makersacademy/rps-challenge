@@ -17,6 +17,6 @@ feature "Player name" do
     visit '/play'
     allow_any_instance_of(Computer).to receive(:move).and_return(:Rock)
     click_button('Paper')
-    expect(page).to have_content("The computer chose: Rock\nAnd you chose: #\nWhich means...\nYou won!")
+    expect(page).to have_content("The computer chose: Rock\nAnd you chose: Paper\nWhich means...")
   end
 end
