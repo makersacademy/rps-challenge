@@ -16,3 +16,7 @@ I would like to be able to play rock/paper/scissors
 ![Imgur](https://i.imgur.com/A4ormi5.png)
 ![Imgur](https://i.imgur.com/XaK1afz.png)
 ![Imgur](https://i.imgur.com/x37MxNn.png)
+
+**Sequence Diagram**
+
+![Imgur](https://i.imgur.com/IIyx8xE.png)
