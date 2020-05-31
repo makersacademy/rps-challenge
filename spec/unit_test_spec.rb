@@ -5,10 +5,11 @@ feature "Player name" do
   visit '/'
   fill_in :player_1, with: 'Sophie'
   click_button("Let's play!")
-  expect(page).to have_content('Welcome, Sophie!')
+  expect(page).to have_content('Welcome, Sophie')
   end
 
   # scenario "redirect info" do
-  #   visit '/info'
+  #   visit '/game'
+  #   fill_in :move, with: 
 
 end
