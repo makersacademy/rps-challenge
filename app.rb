@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/computer'
+require './lib/result'
+require './lib/move'
 
 class Player < Sinatra::Base
   set :session_secret, "something"
@@ -16,9 +18,14 @@ class Player < Sinatra::Base
 
   get '/play' do
     @player_1 = session[:player_1]
-    @move = Computer.new.comp
-    p @move
+    $move = Move.new(params[:move])
     erb :play
   end
-end
 
+  post '/game' do
+    $comp_choice = Computer.new.move
+    p $comp_choice
+    $result = Result.new($comp_choice, $move).results
+    erb :game
+  end
+end

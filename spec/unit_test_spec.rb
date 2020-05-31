@@ -10,13 +10,13 @@ feature "Player name" do
 
   scenario "Move options" do
     visit '/play'
-    expect(page).to have_content("What's your move?\n🤘 Rock 🤘\n📰 Paper 📰\n✂️ Scissors ✂️")
+    expect(page).to have_content("What is your move?\n🤘 Rock 🤘\n📰 Paper 📰\n✂️ Scissors ✂️")
   end
 
   scenario "Player chooses rock, and the computer chooses paper." do
     visit '/play'
-    allow_any_instance_of(Player).to receive(:move).and_return(:paper)
-    click_button('Rock')
-    expect(page).to have_content("The computer chose: Paper\nWhich means you lost!")
+    allow_any_instance_of(Computer).to receive(:move).and_return(:Rock)
+    click_button('Paper')
+    expect(page).to have_content("The computer chose: Rock\nAnd you chose: #\nWhich means...\nYou won!")
   end
 end

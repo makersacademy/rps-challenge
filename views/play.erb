@@ -4,20 +4,24 @@
 <br>
     <div> 
     <h2> Welcome,</h2> 
-    <h1 style="font-family:phosphate,inline; color: #ffcc00">&#128161 <%= @player_1 %> &#128161</h1>
-<br>
-    <h1 name="move">What's your move?</h1>
+    <h1 style="font-family:phosphate,inline; color: #ffcc00">&#128161 <%= @player_1 %> &#128161</h1><br>
+    <h1>What is your move?</h1>
     </div>
     <div>
-    <h2>&#129304 <button name="rock">Rock</a> </button>  &#129304</h2>
-    <h2>&#128240  <button name="paper">Paper </button> &#128240</h2>
-    <h2>&#9986;&#65039  <button name="scissors">Scissors</button> &#9986;&#65039 </h2>
+    <form action='/game' method='post'>
+    <h2>&#129304 <button name="move" type="submit" value ="rock">Rock</a> </button>  &#129304</h2>
+    </form>
+
+    <form action='/game' method='post'>
+    <h2>&#128240  <button name="move" type="submit" value ="paper">Paper </button> &#128240</h2>
+    </form>
+
+
+    <form action='/game' method='post'>
+    <h2>&#9986;&#65039  <button name="move" type="submit" value ="scissors">Scissors</button> &#9986;&#65039 </h2>
+    </form>
     </div>
-    <div>
-    <h2>The computer chose: <%=@move %></h2>
-<br>
-<br>
-    <h1>Which means you lost!</h1> <%= @winner%>
   </body>
 </center>
+
 

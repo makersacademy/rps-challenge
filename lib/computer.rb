@@ -1,5 +1,5 @@
 class Computer
-  def comp
+  def move
     ["Rock","Paper","Scissors"].sample
   end
 end
