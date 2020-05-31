@@ -13,16 +13,40 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-![Imgur](https://i.imgur.com/A4ormi5b.png)
-![Imgur](https://i.imgur.com/XaK1afzb.png)
-![Imgur](https://i.imgur.com/x37MxNnb.png)
+<br>
+<p align="center">
+<img src="images/first_page.png" width="50%">
+<br><br>
+  Top Page.
+</p>
+<br><
+<br>
+<p align="center">
+<img src="images/second_page.png" width="50%">
+<br><br>
+  Returns players choice and FIGHT button.
+</p>
+<br>
+<p align="center">
+<img src="images/player_wins.png" width="50%">
+<br><br>
+  The final page, in this case showing a victory!.
+</p>
 
 **Sequence Diagram**
 
-![Imgur](https://i.imgur.com/IIyx8xE.png)
-
+</p>
+<br>
+<p align="center">
+<img src="images/sequence_diagram.png" width="50%">
+<br><br>
+</p>
 
 **Domain model**
 
-Click here for the Domain model
-[Imgur](https://i.imgur.com/kDoDkej.png)
+</p>
+<br>
+<p align="center">
+<img src="images/domain_model.png" width="50%">
+<br><br>
+</p>
