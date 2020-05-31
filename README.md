@@ -79,6 +79,10 @@ On name page have two names in the form (if player_2 is nil then run single play
 if multiplayer run similar code but on two separate pages ask of a user move.
 Then compare using the same hash to find out the winner, button to play again
 
+### Changes
+
+This went ok, but did refactor the model into a Game class holding the player names and moves.
+
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
@@ -87,6 +91,10 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 
 option on start to play RPSSL
 add the addition options to the winning hash, and in computer move - RPSSL random_move
+
+### Changes
+
+No real changes but was a little stumped about the return value from #random_move bore realising than an if statement also returns a value, so I had to explicitly return a value if rpssl wasn't chosen.
 
 ## Basic Rules
 
