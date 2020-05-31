@@ -1,12 +1,20 @@
 feature 'playing the game rock/paper/scissors' do
-  scenario 'player can select 3 options' do
+  scenario 'player can select rock' do
     sign_in_and_play
+    click_button 'rock'
+  end
+end
 
-    expect(page).to have_content 'please choose one option'
-    choose 'Rock'
-    choose 'Paper'
-    choose 'Scissors'
+feature 'playing the game rock/paper/scissors' do
+  scenario 'player can select paper' do
+    sign_in_and_play
+    click_button 'paper'
+  end
+end
 
-    click_button 'play'
+feature 'playing the game rock/paper/scissors' do
+  scenario 'player can select paper' do
+    sign_in_and_play
+    click_button 'scissors'
   end
 end

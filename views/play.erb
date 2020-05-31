@@ -1,20 +1,12 @@
 <h1>Online Game</h1>
 
-<h3> Welcome <%= @player %>. Below is the game Rock, Paper, Scissors</h3>
+<h3> Welcome <%= @player.name %>. Below is the game Rock, Paper, Scissors</h3>
 
-<form action='/play' method='get'>
-  <p>To start, please choose one option and press play:</p>
+<p>To start, please choose one option and press play:</p>
 
-  <label for="Rock">Rock
-    <input type='radio'  name='rps'>
-  </label><br>
-  <label for="Paper">Paper
-    <input type='radio' name='rps'>
-  </label><br>
-  <label for="Scissors">Scissors
-    <input type='radio' name='rps'>
-  </label>
-  <br>
-  <br>
-    <input type='submit' value='play'>
+<form action='/game' method='post'>
+    <input type='submit' name='rsp' value='rock'>
+    <input type='submit' name='rps' value='paper'>
+    <input type='submit' name='rps' value='scissors'>
 </form>
+
