@@ -1,12 +1,12 @@
-require 'game'
+require 'player'
 
-describe Game do
+describe Player do
 
-  describe '#move' do
+  describe '#initialize' do
     subject(:player) { described_class.new('rock')}
     
     it 'should return the players move' do
-      expect(player.move).to eq 'rock'
+      expect(player.choice).to eq 'rock'
     end
 
   end

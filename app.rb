@@ -1,7 +1,9 @@
 require 'sinatra/base'
-require_relative './lib/game'
+require_relative './lib/player'
 
 class RPS < Sinatra::Base
+  set :session_secret, 'super super secret'
+  enable :sessions
   
   get '/' do
     erb :index
@@ -17,7 +19,8 @@ class RPS < Sinatra::Base
   end
 
   post '/player_move' do
-    @move = params[:move].capitalize
+    @move_1 = Player.new(params[:choice])
+    @move = @move_1.choice
     erb :player_move
   end
 
