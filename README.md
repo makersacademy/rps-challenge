@@ -1,4 +1,5 @@
 # RPS Challenge
+<center>
 
 <img src="images/Welcome_page.png" width="40%">
 
@@ -9,7 +10,7 @@
 ⬇️
 
 <img src="images/Final_page.png" width="40%">
-
+</center>
 
 User Stories
 ----
