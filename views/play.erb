@@ -1,11 +1,8 @@
 <h2> Hi <%= @game.player.name %>, make your move! </h2>
 <body>
-<div class="container">
-  <div class=form-container>
-    <form class="help" action="/player_moves" method="post">
-      <div class="submit">
-        <input type="submit" name="move" id="rock" value="rock" required>
-        <input type="submit" name="move" id="paper" value="paper">
-        <input type="submit" name="move" id="scissors" value="paper">
-    </form>
+   <form class="help" action="/player_moves" method="post">
+       <p> <input type="submit" name="move" id="rock" value="rock" required>
+       <input type="submit" name="move" id="paper" value="paper">
+       <input type="submit" name="move" id="scissors" value="scissors"> </p>
+    </form> 
   </body>

@@ -1,7 +1,9 @@
-<div class="container">
-  <p><%= @game.player.name.capitalize %> plays <%= @game.player.move.capitalize %> / <%= @game.opponent.name.capitalize %> plays <%= @game.opponent.move.capitalize %></p>
 
-  <h3> <%= @game.winner.is_a?(String) ? @game.winner : @game.winner.name.capitalize %> wins!</h3>
+  <h3> <%= @game.player.name.capitalize %> you played <%= @game.player.move.capitalize %> </h3>
+  <h3> The <%= @game.opponent.name.capitalize %> played <%= @game.opponent.move.capitalize %> </h3>
 
-  <a href="/">Play again?</a>
-</div>
+  <h1> <%= @game.winner.is_a?(String) ? @game.winner : @game.winner.name.capitalize %> wins!</h1>
+
+  <form action='/' method='get'> 
+ <p> <input type='submit' id='submit' value='Play Again?'> </p>
+ </form>
