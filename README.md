@@ -28,5 +28,7 @@ I would like to be able to play rock/paper/scissors
 
 Being a very visual person, I was really excited for this challenge, as I could dig out my half forgotten HTML and CSS skills.
 
+![](public/img/colorpalette.png)
+
 View the design here:
-https://codepen.io/nadinedelia-the-typescripter/full/GRpVVwQ
+https://nadinedelia.github.io/rps-design/
