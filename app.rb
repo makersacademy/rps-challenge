@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'sinatra/base'
+require './lib/game.rb'
+require './lib/player.rb'
 
 class Rps < Sinatra::Base
   get '/' do
@@ -8,9 +10,12 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    erb :names
-    # $player1 = Player.new(params[:player1])
-    # $player2 = Player.new(params[:player2])
+    $player = Player.new(params[:player_name])
+    redirect '/game'
+  end
+
+  get '/game' do
+   erb :names
   end
 
   get '/result' do
