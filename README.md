@@ -13,6 +13,6 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-![Screenshot](https://drive.google.com/file/d/1Xr-GHe85ZFv1M5aP3ZHluMt_MsXnq5jc/view?usp=sharing)
-![Screenshot](https://drive.google.com/file/d/1OmwSCL7Nn_z8RG2UhtDit1VFlmzx_1ru/view?usp=sharing)
-![Screenshot](https://drive.google.com/file/d/1pgowF8td57sQGUWntWqXNfB9qeSQ9JuM/view?usp=sharing)
+![Imgur](https://i.imgur.com/A4ormi5.png)
+![Imgur](https://i.imgur.com/XaK1afz.png)
+![Imgur](https://i.imgur.com/x37MxNn.png)
