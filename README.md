@@ -15,14 +15,14 @@ I would like to be able to play rock/paper/scissors
 ```
 <br>
 <p align="center">
-<img src="images/first_page.png" width="50%">
+<img src="images/first_page.png" width="75%">
 <br><br>
   Top Page.
 </p>
-<br><
+<br>
 <br>
 <p align="center">
-<img src="images/second_page.png" width="50%">
+<img src="images/second_page.png" width="75%">
 <br><br>
   Returns players choice and FIGHT button.
 </p>
