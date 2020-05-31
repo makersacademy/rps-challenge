@@ -21,7 +21,8 @@ class Rps < Sinatra::Base
   end
 
   post '/move' do
-    "A step towards the results"
+    results = $player_name.play_rps(params[:move])
+    "#{results} step towards the results"
   end
 
   run! if app_file == $0

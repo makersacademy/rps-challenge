@@ -7,8 +7,7 @@ class Player
   end
 
   def play_rps(move)
-    temp = CompMove.new
-    comp_move = temp.move
+    comp_move = ["rock", "paper", "scissors"].sample
     if move == "rock" && comp_move == "rock"
       @result = "You both chose rock... It's a draw!"
     elsif move == "rock" && comp_move == "paper"
