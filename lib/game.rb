@@ -31,12 +31,12 @@ class Game
 
     elsif (@cp_move == 'Rock') && (@player.move == 'Paper')
       @result = 'Player Won'
-   end
-   end
+    end
+  end
 
   private
 
   def get_cp_move
     @cp_move = %w[Rock Paper Scissors].sample
- end
+  end
 end
