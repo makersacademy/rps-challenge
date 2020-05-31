@@ -10,13 +10,11 @@ class Player < Sinatra::Base
 
   post '/info' do
     session[:player_1] = params[:player_1]
-    p session[:player_1]
     redirect '/play'
   end
 
   get '/play' do
     @player_1 = session[:player_1]
-    p @player_1
     erb :play
   end
 end
