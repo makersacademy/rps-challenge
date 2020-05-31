@@ -24,16 +24,24 @@ describe Game do
     expect(game.random_move).to eq(move)
   end
 
-  context 'play - has a play method that play the game and gives back the final result' do
+  context 'methods #won? and #draw? gives us back the result of the game' do
     it 'makes the player lose' do
       allow(game).to receive(:random).and_return('paper')
+      game.make_random_move
       player.move('rock')
-      expect(game.play).to eq('You lost!')
+      expect(game.won?(game.random_move)).to be false
     end
     it 'makes the player win' do
       allow(game).to receive(:random).and_return('paper')
+      game.make_random_move
       player.move('scissors')
-      expect(game.play).to eq('You won!')
+      expect(game.won?(game.random_move)).to be true
+    end
+    it 'makes the player draw' do
+      allow(game).to receive(:random).and_return('paper')
+      game.make_random_move
+      player.move('paper')
+      expect(game.draw?(game.random_move)).to be true
     end
   end
 

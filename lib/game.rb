@@ -14,20 +14,14 @@ class Game
   def make_random_move
     @random_move = random
   end
-  
-# the following method needs to be refactored, it's too long
-  def play
-    make_random_move
-    if player.player_move == random_move
-      "It's a draw"
-    elsif player.player_move == "scissors" && random_move == "paper"
-      "You won!"
-    elsif player.player_move == "rock" && random_move == "scissors"
-      "You won!"
-    elsif random_move == "rock" && player.player_move == "paper"
-      "You won!"
-    else
-      "You lost!"
-    end
+
+  def draw?(random_move)
+    player.player_move == random_move
+  end
+
+  def won?(random_move)
+    player.player_move == "scissors" && random_move == "paper" ||
+    player.player_move == "rock" && random_move == "scissors" ||
+    random_move == "rock" && player.player_move == "paper"
   end
 end
