@@ -1,4 +1,7 @@
+require 'computer'
+
 feature 'game of rock, paper, scissors' do
+  let(:computer) { Computer.new.computers_turn }
   
   scenario 'player chooses move and is shown what they chose' do
     enter_name_start_game
@@ -10,6 +13,12 @@ feature 'game of rock, paper, scissors' do
     enter_name_start_game
     click_button('Rock')
     expect(page).to have_content "Computer chose"
+  end
+
+  scenario 'game chooses a winner' do
+    enter_name_start_game
+    click_button('Rock')
+    expect(page).to have_content "You", "the game"
   end
 
 end

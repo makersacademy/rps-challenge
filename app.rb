@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
 require_relative './lib/computer'
+require_relative './lib/game'
 
 class RPS < Sinatra::Base
   set :session_secret, 'super super secret'
