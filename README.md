@@ -20,3 +20,8 @@ I would like to be able to play rock/paper/scissors
 **Sequence Diagram**
 
 ![Imgur](https://i.imgur.com/IIyx8xE.png)
+
+
+**Domain model**
+
+[Imgur](https://i.imgur.com/kDoDkej.png)
