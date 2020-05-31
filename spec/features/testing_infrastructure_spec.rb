@@ -17,6 +17,6 @@ feature "Test Rock, Paper, Scissors functionality" do
     visit('/')
     fill_in('player_name', with: 'John')
     click_button('submit')
-    expect(page).to have_content("choose rock, paper, or scissors")
+    expect(page).to have_content("choose rock, paper or scissors")
   end
 end

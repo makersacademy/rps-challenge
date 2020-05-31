@@ -1,2 +1,11 @@
 <h1>Welcome <%= @player_name %>!</h1>
-<h2>Now time to choose your move</h2>
+<h2>Now time to choose rock, paper or scissors/h2>
+<form action='/result' method='POST'>
+  <label for=move>Move:</label>
+  <select id='move' name='move'>
+    <option value='rock'>Rock</option>
+    <option value='paper'>Paper</option>
+    <option value='scissors'>Scissors</option>
+    <input type='submit' value='submit'>
+  </select>
+</form>
