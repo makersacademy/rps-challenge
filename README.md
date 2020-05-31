@@ -28,3 +28,5 @@ Hints on functionality
 - a winner will be declared
 
 # Screenshots of final site:
+
+![First Image](https://github.com/Sumner1185/rps-challenge/blob/master/Image1.png)
