@@ -1,7 +1,7 @@
 class RPSGame
 
   def play_game(choice)
-    @choice = choice
+    @choice = choice.downcase
     @computer_choice = random_choice
     ascertain_winner(choice, @computer_choice)
   end
@@ -27,7 +27,7 @@ class RPSGame
   end
 
   def message(outcome)
-    message = "Computer chose #{@computer_choice.downcase}. You chose #{@choice.downcase}."
+    message = "Computer chose #{@computer_choice.downcase}. You chose #{@choice}."
     if outcome == :win
       "#{message} You win, "
     elsif outcome == :loss
