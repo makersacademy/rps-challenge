@@ -1,4 +1,4 @@
-feature 'RPSSL' do
+feature 'rpssl' do
   feature '/' do
     scenario 'has an option to play RPSSL' do
       visit('/')

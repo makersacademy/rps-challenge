@@ -18,7 +18,7 @@ class RPSGame < Sinatra::Base
   end
 
   get '/move' do
-    @RPSSL = session[:game].rpssl
+    @rpssl = session[:game].rpssl
     @name = session[:game].player1
     erb(:move)
   end
@@ -30,7 +30,7 @@ class RPSGame < Sinatra::Base
   end
 
   get '/move2' do
-    @RPSSL = session[:game].rpssl
+    @rpssl = session[:game].rpssl
     @name_2 = session[:game].player2
     erb(:move2)
   end

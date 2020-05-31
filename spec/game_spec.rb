@@ -1,7 +1,7 @@
 require_relative '../lib/game.rb'
 
 describe Game do
-  let(:game) { Game.new("false","Rae") }
+  let(:game) { Game.new("false", "Rae") }
 
   describe '#result_string(player_move)' do
     it "returns won, drew or lost for player" do

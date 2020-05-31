@@ -12,6 +12,7 @@ end
 def p1_rock
   select("Rock", from: "move")
 end
+
 def p2_rock
   select("Rock", from: "move_2")
 end

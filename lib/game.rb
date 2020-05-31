@@ -25,11 +25,12 @@ class Game
 
   def random_move
     return ["Rock", "Paper", "Scissors"].sample if @rpssl == "false"
+    
     ["Rock", "Paper", "Scissors", "Spock", "Lizard"].sample
   end
 
   def result
-    @player_2_move = random_move unless @player_2_move
+    @player_2_move ||= random_move
     return "none" if @player_1_move == @player_2_move
     return "player1" if @win[@player_1_move].include?(@player_2_move)
     return "player2" if @win[@player_2_move].include?(@player_1_move)
