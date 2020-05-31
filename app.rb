@@ -22,10 +22,10 @@ class RPSApp < Sinatra::Base
 
   post '/choice' do
     session.store(:choice, params[:choice])
-    redirect '/result'
+    redirect '/rps_winner'
   end
 
-  get '/result' do
+  get '/rps_winner' do
     choice = session[:choice]
     @name = session[:name]
     @result = RPSGame.new.play_game(choice)
