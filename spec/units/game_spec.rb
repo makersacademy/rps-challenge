@@ -1,61 +1,69 @@
 require 'game'
 
 describe Game do
-  let(:rock_instance) { Game.new("Rock") }
-  let(:paper_instance) { Game.new("Paper") }
-  let(:scissors_instance) { Game.new("Scissors") }
+  let(:single_instance) { Game.new("Tristan", "") }
+  let(:multi_instance) { Game.new("Tristan", "James") }
 
-  let(:multi_instance) { Game.new("Scissors", "Paper")}
-
-  it 'sets player_move to the argument on initialize' do
-    expect(rock_instance.player_move).to eq("Rock")
+  it 'sets player_name to the argument on initialize' do
+    expect(single_instance.player1_name).to eq("Tristan")
   end
 
   context 'testing single player outcomes' do
 
     it 'player rock, cpu scissors, player wins' do
-      allow(rock_instance).to receive(:cpu_turn) { 'Scissors' }
-      expect(rock_instance.outcome).to eq("Player")
+      allow(single_instance).to receive(:cpu_turn) { 'Scissors' }
+      single_instance.p1_move("Rock")
+      expect(single_instance.outcome).to eq("Player1")
     end
 
     it 'player rock, cpu papaer, cpu wins' do
-      allow(rock_instance).to receive(:cpu_turn) { 'Paper' }
-      expect(rock_instance.outcome).to eq("cpu")
+      allow(single_instance).to receive(:cpu_turn) { 'Paper' }
+      single_instance.p1_move("Rock")
+      expect(single_instance.outcome).to eq("Player2")
     end
 
     it 'player rock, cpu rock, draw' do
-      allow(rock_instance).to receive(:cpu_turn) { 'Rock' }
-      expect(rock_instance.outcome).to eq("Draw")
+      allow(single_instance).to receive(:cpu_turn) { 'Rock' }
+      single_instance.p1_move("Rock")
+      expect(single_instance.outcome).to eq("Draw")
     end
 
-    it 'player scissors, cpu rock, player' do
-      allow(paper_instance).to receive(:cpu_turn) { 'Rock' }
-      expect(paper_instance.outcome).to eq("Player")
+    it 'player paper, cpu rock, player' do
+      allow(single_instance).to receive(:cpu_turn) { 'Rock' }
+      single_instance.p1_move("Paper")
+      expect(single_instance.outcome).to eq("Player1")
     end
 
     it 'evaluates outcome' do
-      allow(scissors_instance).to receive(:cpu_turn) { 'Paper' }
-      expect(scissors_instance.outcome).to eq("Player")
+      allow(single_instance).to receive(:cpu_turn) { 'Paper' }
+      single_instance.p1_move("Scissors")
+      expect(single_instance.outcome).to eq("Player1")
     end
 
   end
 
   context 'multiplayer' do
 
-    it 'sets cpu_move to player 2 input when given a second argument' do
-      expect(multi_instance.cpu_move).to eq("Paper")
+    it 'sets player2 name to player 2 input when given a second argument' do
+      expect(multi_instance.player2_name).to eq("James")
     end
 
     it 'returns player 1 when player 1 wins' do
+      multi_instance.p1_move("Scissors")
+      multi_instance.p2_move("Paper")
       expect(multi_instance.outcome).to eq("Player1")
     end
 
     it 'returns player 2 when player 2 wins' do
-      expect(Game.new("Paper", "Scissors").outcome).to eq("Player2")
+      multi_instance.p1_move("Scissors")
+      multi_instance.p2_move("Rock")
+      expect(multi_instance.outcome).to eq("Player2")
     end
 
     it 'returns draw when player 1 & 2 have the same score' do
-      expect(Game.new("Paper", "Scissors").outcome).to eq("Player2")
+      multi_instance.p1_move("Paper")
+      multi_instance.p2_move("Scissors")
+      expect(multi_instance.outcome).to eq("Player2")
     end
 
   end

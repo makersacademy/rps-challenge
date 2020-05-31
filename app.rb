@@ -6,7 +6,7 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   before do
-  @game = Game.instance
+    @game = Game.instance
   end
 
   get '/' do
@@ -26,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/turn' do
     @game.p1_move(params[:move])
-    redirect '/result' if @game.player2_name == nil
+    redirect '/result' if @game.player2_name.nil?
     redirect "/multi"
   end
 
