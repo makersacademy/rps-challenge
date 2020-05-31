@@ -1,14 +1,14 @@
 # RPS Challenge
 
-![](images/Welcome_page.png)
+<img src="images/Welcome_page.png" width="40%">
 
 ⬇️
 
-![](images/RPS_Move.png)
+<img src="images/RPS_Move.png" width="40%">
 
 ⬇️
 
-![](images/Final_page.png)
+<img src="images/Final_page.png" width="40%">
 
 
 User Stories
