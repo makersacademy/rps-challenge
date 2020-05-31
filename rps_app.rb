@@ -24,12 +24,28 @@ class RPS < Sinatra::Base
   post "/move" do
     @game = $game
     @game.player.move(params[:move])
-    redirect('/result')
+    @game.make_random_move
+    if @game.won?(@game.random_move)
+      redirect('/won')
+    elsif @game.draw?(@game.random_move)
+      redirect('/draw')
+    else
+      redirect('/lost')
+    end
   end
 
-  get "/result" do
+  get "/won" do
     @game = $game
-    'You entered:' + @game.player.player_move
+    erb(:won)
   end
 
+  get "/lost" do
+    @game = $game
+    erb(:lost)
+  end
+
+  get "/draw" do
+    @game = $game
+    erb(:draw)
+  end
 end
