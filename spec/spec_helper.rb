@@ -5,6 +5,7 @@ require 'simplecov'
 require 'simplecov-console'
 require 'rspec'
 require 'player'
+require 'game'
 
 Capybara.app = RPS
 RACK_ENV = 'test'

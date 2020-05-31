@@ -2,8 +2,9 @@ require 'game'
 
 describe Game do
 
-  let(:player) { double :player }
+  let(:player) { Player.new("Bene") }
   let(:move) { double :move }
+
   let(:moves) { ["scissors", "paper", "rock"] }
   subject(:game) { described_class.new(player) }
 
@@ -22,4 +23,18 @@ describe Game do
     game.make_random_move
     expect(game.random_move).to eq(move)
   end
+
+  context 'play - has a play method that play the game and gives back the final result' do
+    it 'makes the player lose' do
+      allow(game).to receive(:random).and_return('paper')
+      player.move('rock')
+      expect(game.play).to eq('You lost!')
+    end
+    it 'makes the player win' do
+      allow(game).to receive(:random).and_return('paper')
+      player.move('scissors')
+      expect(game.play).to eq('You won!')
+    end
+  end
+
 end
