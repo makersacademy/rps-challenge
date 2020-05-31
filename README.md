@@ -6,13 +6,13 @@ This challenge involved meeting the user stories below and implementing the web 
 <br><br>
   The welcome homepage, which prompts the user for their name.
 </p>
-<br><br>
+<br><
 <p align="center">
 <img src="images/RPS_Move.png" width="50%">
 <br><br>
   The landing page asking for a move.
 </p>
-<br><br>
+<br>
 <p align="center">
 <img src="images/Final_page.png" width="50%">
 <br><br>
