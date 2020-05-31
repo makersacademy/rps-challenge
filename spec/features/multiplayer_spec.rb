@@ -29,7 +29,7 @@ feature 'multiplayer' do
       submit
       p2_rock
       submit
-      expect(page).to have_content('Rae drew with Rock')
+      expect(page).to have_content('draw')
     end
   end
 end

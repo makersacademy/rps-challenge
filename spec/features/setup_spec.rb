@@ -21,7 +21,7 @@ feature "website" do
       submit
       p1_rock
       submit
-      expect(page).to have_content('Rae won with Rock')
+      expect(page).to have_content('Rae won')
     end
   end
 
