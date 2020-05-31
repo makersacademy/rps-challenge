@@ -1,5 +1,5 @@
-# RPS Challenge
 <p align="center">
+# RPS Challenge
 <img src="images/Welcome_page.png" width="50%">
 </p>
 <br><br>
