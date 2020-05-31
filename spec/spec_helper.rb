@@ -6,7 +6,7 @@ require 'simplecov-console'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 ENV['RACK_ENV'] = 'test'
-
+require 'features/web_helpers.rb'
 Capybara.app = Rps
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -20,6 +20,5 @@ SimpleCov.start
 
 RSpec.configure do |config|
   config.after(:suite) do
-  
   end
 end

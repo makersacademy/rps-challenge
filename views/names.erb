@@ -1,6 +1,10 @@
-<%= $player.name %> vs Computer Player
 
-<form action='/result' method='GET'>
- 
-  <input type='submit' value='Start Game'>
+
+<link rel="stylesheet" href="style.css">
+
+<h1> <%= $game.player.name %> vs Computer Player <h1>
+<form action='/compute' method='POST'>
+  <input type='submit' name="move" value='Rock'>
+  <input type='submit' name="move" value='Paper'>
+  <input type='submit' name="move" value='Scissors'>
 </form>
