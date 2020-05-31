@@ -3,7 +3,7 @@
 require './lib/player.rb'
 
 class Game
-  attr_reader :result , :player
+  attr_reader :result, :player
   def initialize(player)
     @player = player
     @result = nil
