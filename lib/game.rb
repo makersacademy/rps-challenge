@@ -14,6 +14,7 @@ class Game
   def make_random_move
     @random_move = random
   end
+  
 # the following method needs to be refactored, it's too long
   def play
     make_random_move
@@ -26,7 +27,7 @@ class Game
     elsif random_move == "rock" && player.player_move == "paper"
       "You won!"
     else
-      "You lost"
+      "You lost!"
     end
   end
 end

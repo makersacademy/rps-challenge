@@ -1,7 +1,7 @@
 <html>
   <body>
     <center>
-    <h1> Hello <%= @player %>, what's your move? <h1>
+    <h1> Hello <%= @game.player.name %>, what's your move? <h1>
     <form action='/move' method='post'>
     <input type='text' name='move'>
     <input type='submit' name='Start'>
