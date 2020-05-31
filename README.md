@@ -30,9 +30,9 @@ I would like to be able to play rock/paper/scissors
 
 ## Design Choices
 
-Being a very visual person, I was really excited for this challenge, as I could dig out my half forgotten HTML and CSS skills.
-Unfortunately I haven't managed to make my design visible, therefore I hosted a second repo on Github Pages for anyone who'd like to see it in action.
-You can find the link at the end of this markdown.
+Being a very visual person, I was really excited for this challenge, as I finally could dig out my half forgotten HTML and CSS skills.
+I would write the CSS at the same time as I was writing the code and would change the designs from commit to commit.
+There's a repo on Github Pages for anyone who'd like to see it in action. You can find the link at the end of this markdown.
 
 <br />
 
@@ -43,7 +43,7 @@ You can find the link at the end of this markdown.
 
 **Buttons:**
 
-First drafts were selfmade buttons in Photoshop. I then switched during the process to fully in CSS styled buttons.
+First drafts were buttons I draw in Photoshop. I then switched during the process to fully in CSS styled buttons.
 
 ![](public/img/rock.png) ![](public/img/paper.png) ![](public/img/scissors.png) ![](public/img/start.png)
 
