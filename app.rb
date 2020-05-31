@@ -4,6 +4,10 @@ require_relative './lib/game'
 require_relative './lib/computer'
 
 class RPS < Sinatra::Base 
+  before do
+    @game = Game.instance
+  end
+  
   get '/' do
     erb :index
   end
@@ -16,21 +20,18 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @game = Game.instance
     @player = @game.player_1
     @computer = @game.player_2
     erb :play
   end
 
   post '/move' do
-    @game = Game.instance
     @game.player_1.move = params[:move].to_sym
     @game.player_2.pick_move
     redirect '/result'
   end
 
   get '/result' do
-    @game = Game.instance
     @player = @game.player_1
     @computer = @game.player_2
     erb @game.result(@player)
