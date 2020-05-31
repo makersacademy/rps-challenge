@@ -1,86 +1,36 @@
-# RPS Challenge
+# My RPS Challenge
 
-Instructions
--------
+I developed my web app following the steps listed in the PLAN.md file.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
+# Features
 ```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+Screenshots available in the screenshots directory
 ```
+The user visits the home page ('/') and receives a welcoming message + an invite to enter their name in order to play rps(screenshot: Homepage.png).
 
-Hints on functionality
+When they submit their name, they get redirected to the route '/game', where they are asked for entering their move (screenshot: Gamepage.png).
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+They enter 'rock', 'paper' or 'scissors' to play and they get redirected to a specific route ('/won', '/lost' or '/draw') based on the result of the game that happens in the background (screenshots: Won-page.png, Lost-page.png and Draw-page.png)
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
+In every result pages there is a button that is redirecting the player to the route '/game' where they can play again.
 
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+# Areas of improvement
+I am very satisfied with what I've done because this was my very first solo web app! :)
+However there are so many areas I can/would like to improve and this README won't be enough to list them all!
+```
+The player can actually input different words from the allowed moves. I've tried 2 options without being able to implement them:
+- allowing the choice between 3 buttons (rock, paper or scissors) but I didn't manage to pass a string param value to the controller
+- when the typed input was different from the specific words 'rock', 'paper' or 'scissors' I tried to redirect the player to an '/error' route displaying "This is not a valid move" and a button to redirect to the '/game' route
+```
+```
+I used 2 classes, Player and Game. I could have used more because the Game class has too many responsibilities.
+```
+```
+Capybara unit tests are minimal. I need to learn something more about it in order to make them more relevant
+```
+```
+Using CSS in order to make the app be good looking. I haven't had a chance to look at CSS yet..
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+I'll be more than happy to receive a feedback and, hopefully, some actual suggestions on how to improve my rps-app! :)
