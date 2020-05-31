@@ -1,8 +1,12 @@
 # RPS Challenge
 <p align="center">
 <img src="images/Welcome_page.png" width="50%">
+</p>
+
+<p align="center">
 
 ⬇️
+</p>
 
 <img src="images/RPS_Move.png" width="50%">
 
