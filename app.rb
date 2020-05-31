@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer'
 
 class Player < Sinatra::Base
   set :session_secret, "something"
@@ -15,6 +16,8 @@ class Player < Sinatra::Base
 
   get '/play' do
     @player_1 = session[:player_1]
+    @move = Computer.new.comp
+    p @move
     erb :play
   end
 end
