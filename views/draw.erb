@@ -1,0 +1,8 @@
+It's a draw
+<br>
+<%= @player.name %> picked: <%= @player.move.to_s.capitalize %><br>
+<%= @computer.name %> picked: <%= @computer.move.to_s.capitalize %><br>
+
+<form action="/play">
+  <input type="submit" value="Play Again">
+</form>
