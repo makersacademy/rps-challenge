@@ -10,44 +10,45 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/game' do
-    session[:name1] = params[:name1]
-    session[:name2] = params[:name2]
+    player1name = params[:name1]
+    player2name = params[:name2]
+    Game.create(player1name, player2name)
     redirect '/game'
   end
 
   get '/game' do
+    @game = Game.instance
     erb(:game)
   end
 
   post '/turn' do
-    if session[:name2] == ""
-      @turn = Game.new(params[:move])
-      session[:result] = @turn.outcome
-      session[:cpu_move] = @turn.cpu_move
-      session[:player_move] = params[:move]
-      redirect '/result'
-    else
-      session[:player_move] = params[:move]
-      redirect "/multi"
-    end
+    @game = Game.instance
+    @game.p1_move(params[:move])
+    redirect '/result' if Game.instance.player2_name == nil
+    redirect "/multi"
   end
 
   get '/multi' do
+    @game = Game.instance
+    @result = @game.outcome
     erb(:multi)
   end
 
   post "/turn_multi" do
-    @turn = Game.new(session[:player_move], params[:move])
-    session[:result] = @turn.outcome
-    session[:cpu_move] = @turn.cpu_move
+    @game = Game.instance
+    @game.p2_move(params[:move])
     redirect '/result_multi'
   end
 
   get '/result' do
+    @game = Game.instance
+    @result = @game.outcome
     erb(:result)
   end
 
   get '/result_multi' do
+    @game = Game.instance
+    @result = @game.outcome
     erb(:result_multi)
   end
 

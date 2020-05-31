@@ -35,29 +35,29 @@ li {
 
 <div>
   <ul>
-<% if session[:result] == "Player2" %>
+<% if @result == "Player2" %>
     <li>
-      <p><%= session[:name1] %>: <%= session[:player_move] %>  <%= session[:name2] %>: <%= session[:cpu_move] %></p>
+      <p><%= @game.player1_name %>: <%= @game.player1_move %>  <%= @game.player2_name %>: <%= @game.player2_move %></p>
     <li>
-      <h1><%= session[:name2] %> won!</h1>
+      <h1><%= @game.player2_name %> won!</h1>
     </li>
 
 <% end %>
 
-<% if session[:result] == "Player1" %>
+<% if @result == "Player1" %>
 
     <li>
-      <p><%= session[:name1] %>: <%= session[:player_move] %>  <%= session[:name2] %>: <%= session[:cpu_move] %></p>
+      <p><%= @game.player1_name %>: <%= @game.player1_move %>  <%= @game.player2_name %>: <%= @game.player2_move %></p>
     <li>
-      <h1><%= session[:name1] %> won!</h1>
+      <h1><%= @game.player1_name %> won!</h1>
     </li>
 
 <% end %>
 
-<% if session[:result] == "Draw" %>
+<% if @result == "Draw" %>
 
     <li>
-      <p><%= session[:name1] %>: <%= session[:player_move] %>  Computer: <%= session[:cpu_move] %></p>
+      <p><%= @game.player1_name %>: <%= @game.player1_move %>  <%= @game.player2_name %>: <%= @game.player2_move %></p>
     <li>
       <h1>Draw</h1>
     </li>

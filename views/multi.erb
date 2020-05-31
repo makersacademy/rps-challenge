@@ -35,7 +35,7 @@ li {
 
 <div>
 
-  <h1>Hey <%= session[:name2] %>, your turn!</h1>
+  <h1>Hey <%= @game.player2_name %>, your turn!</h1>
 
   <form action="/turn_multi" method="post">
     <ul>
