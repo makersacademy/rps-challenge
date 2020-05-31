@@ -2,6 +2,9 @@
 
 ![](public/img/RPS.png)
 
+<br />
+<br />
+
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
@@ -24,11 +27,17 @@ I would like to be able to play rock/paper/scissors
 - the game will choose a random option
 - a winner will be declared
 
+<br />
+<br />
 
 ## Design Choices
 
 Being a very visual person, I was really excited for this challenge, as I could dig out my half forgotten HTML and CSS skills.
+Unfortunately I haven't managed to make my design visible, therefore I hosted a second repo on Github Pages for anyone who'd like to see it in action.
+You can find the link at the end of this markdown.
 
+<br />
+<br />
 
 ### **Color Palette for Inspiration:**
 
