@@ -4,19 +4,19 @@ This challenge involved meeting the user stories below and implementing the web 
 <br><br>
 <p align="center">
 <img src="images/Welcome_page.png" width="50%">
-<br>
+<br><br>
   The welcome homepage, which prompts the user for their name.
 </p>
 <br><br>
 <p align="center">
 <img src="images/RPS_Move.png" width="50%">
-<br>
+<br><br>
   The landing page asking for a move.
 </p>
 <br><br>
 <p align="center">
 <img src="images/Final_page.png" width="50%">
-<br>
+<br><br>
   The final decision page that determines whether the user has won or lost.
 </p>
 
