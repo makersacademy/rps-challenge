@@ -13,14 +13,10 @@ class Result
       "You lost!"
     elsif @comp_choice == "Rock" && @move == "Paper"
       "You won!"
-    elsif @comp_choice == "Paper" && @move == "Scissors"
+    elsif (@comp_choice == "Paper" && @move == "Scissors") || (@comp_choice == "Scissors" && @move == "Rock")
       "You won!"
-    elsif @comp_choice == "Paper" && @move == "Rock"
+    elsif (@comp_choice == "Scissors" && @move == "Paper") || (@comp_choice == "Paper" && @move == "Rock")
       "You lost!"
-    elsif @comp_choice == "Scissors" && @move == "Paper"
-      "You lost!"
-    else @comp_choice == "Scissors" && @move == "Rock"
-      "You won!"
     end
   end
 end

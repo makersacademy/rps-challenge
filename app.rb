@@ -18,12 +18,13 @@ class Player < Sinatra::Base
 
   get '/play' do
     @player_1 = session[:player_1]
-    $move = Move.new(params[:move])
     erb :play
   end
 
   post '/game' do
     $comp_choice = Computer.new.move
+    move = Move.new(params[:move])
+    $move= move.move
     p $comp_choice
     $result = Result.new($comp_choice, $move).results
     erb :game
