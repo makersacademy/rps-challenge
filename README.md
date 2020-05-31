@@ -13,9 +13,9 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-![Imgur](https://i.imgur.com/A4ormi5.png)
-![Imgur](https://i.imgur.com/XaK1afz.png)
-![Imgur](https://i.imgur.com/x37MxNn.png)
+![Imgur](https://i.imgur.com/A4ormi5b.png)
+![Imgur](https://i.imgur.com/XaK1afzb.png)
+![Imgur](https://i.imgur.com/x37MxNnb.png)
 
 **Sequence Diagram**
 
@@ -24,4 +24,4 @@ I would like to be able to play rock/paper/scissors
 
 **Domain model**
 
-[Imgur](https://i.imgur.com/kDoDkej.png)
+[Imgur](https://i.imgur.com/kDoDkejm.png)
