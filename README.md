@@ -3,7 +3,6 @@
 ![](public/img/RPS.png)
 
 <br />
-<br />
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -28,7 +27,6 @@ I would like to be able to play rock/paper/scissors
 - a winner will be declared
 
 <br />
-<br />
 
 ## Design Choices
 
@@ -36,7 +34,6 @@ Being a very visual person, I was really excited for this challenge, as I could 
 Unfortunately I haven't managed to make my design visible, therefore I hosted a second repo on Github Pages for anyone who'd like to see it in action.
 You can find the link at the end of this markdown.
 
-<br />
 <br />
 
 ### **Color Palette for Inspiration:**
