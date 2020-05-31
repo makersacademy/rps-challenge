@@ -8,6 +8,15 @@ class Game
     @player2 = player2
   end
 
+  def result_string(player_move, player_2_move = random_move)
+    who = result(player_move, player_2_move)
+    return "draw" if who == "draw"
+    return "#{player1} won" if who == "player1"
+    return "#{player2} won" if who == "player2"
+  end
+
+  private
+
   def random_move
     ["Rock", "Paper", "Scissors"].sample
   end
@@ -20,11 +29,5 @@ class Game
     return "player1" if win[player_move] == @player_2_move
     return "player2" if win[@player_2_move] == player_move
   end
-
-  def result_string(player_move, player_2_move = random_move)
-    who = result(player_move, player_2_move)
-    return "draw" if who == "draw"
-    return "#{player1} won" if who == "player1"
-    return "#{player2} won" if who == "player2"
-  end
+  
 end
