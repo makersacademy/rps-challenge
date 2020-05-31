@@ -23,4 +23,17 @@ feature 'Infrastructure Test' do
     click_button('Rock')
     expect(page).to have_content('Game Over:')
   end
+
+  scenario 'Play Again button present' do
+    sign_in_to_game
+    click_button('Rock')
+    expect(page).to have_selector(:link_or_button, 'Play Again')
+  end
+
+  scenario 'Play Again button links back to names view' do
+    sign_in_to_game
+    click_button('Rock')
+    click_button('Play Again')
+    expect(page).to have_content('Jacko vs Computer Player')
+  end
 end
