@@ -8,8 +8,8 @@ feature "Player name" do
   expect(page).to have_content('Welcome, Sophie')
   end
 
-  # scenario "redirect info" do
-  #   visit '/game'
-  #   fill_in :move, with: 
-
+  scenario "move selection" do
+    visit '/play'
+    expect(page).to have_content("What's your move?\nRock\nPaper\nScissors")
+  end
 end
