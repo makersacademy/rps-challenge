@@ -43,9 +43,9 @@ As usual please start by
 * TEST driving development of your app
 
 --------------
-## plan
+### plan
 
-### Website Side
+#### Website Side
 
 get '/' - form to enter a name  pointing to post '/name'
 
@@ -59,13 +59,13 @@ get '/result' - interact with code to find out result, shows result
                 option to return to get '/move'
 
 
-### Code Side
+#### Code Side
 
 \#computer move - Array.sample
 winning hash [R: S, P: R, S: P]
 \#result(player move)
 
-## Comments About Used Resources
+### Comments About Used Resources
 
 mostly for checking syntax, I used the repository made for the battle (this weeks afternoon challenge) and also [Tristian's Birthday App one](https://github.com/tristanlangford/birthdaygreeterV2) for the RPS selection HTML syntax.
 
@@ -73,9 +73,20 @@ mostly for checking syntax, I used the repository made for the battle (this week
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
+### Plan
+
+On name page have two names in the form (if player_2 is nil then run single player)
+if multiplayer run similar code but on two separate pages ask of a user move.
+Then compare using the same hash to find out the winner, button to play again
+
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+
+### Plan
+
+option on start to play RPSSL
+add the addition options to the winning hash, and in computer move - RPSSL random_move
 
 ## Basic Rules
 
