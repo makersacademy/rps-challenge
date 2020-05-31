@@ -12,7 +12,7 @@ feature 'player choice' do
     visit '/'
     fill_in(:player, with: 'Markus')
     click_button('Register')
-    select(:option, from: 'Choice')
+    select('Paper', from: 'choice')
     expect(page).to have_content 'You chose Paper.'
   end
 end

@@ -18,7 +18,11 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
-
+  post '/player_move' do
+    p params[:choice]
+    @choice = params[:choice]
+    erb(:play)
+  end
 
   run! if app_file == $0
 end
