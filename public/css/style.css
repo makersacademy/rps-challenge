@@ -1,0 +1,70 @@
+* {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("./img/rps.jpg");
+  display: flex;
+  background-size: cover;
+  height: 100%;
+  padding: auto;
+  margin: auto;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  text-align: center;
+  background-color: #ffffff;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #ced6f3;
+  letter-spacing: .03em;
+  font-size: 1em;
+}
+
+
+ul {
+  align-items: center;
+}
+
+
+h1 {
+  font-family: 'times new roman';
+  font-size: 5rem;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 5rem;
+  padding-right: 0rem;
+  text-shadow: -1px 0 #000, 0 3px #000, 1px 0 #000, 0 -1px #000;
+}
+
+h2 {
+  font-family: proxima-nova, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 5rem;
+  padding-right: 0rem;
+}
+
+.container {
+   max-width: 50%;
+   margin-top: 100px;
+   font-size: 2rem;
+   text-align: center;
+   padding-right: 5rem;
+  text-shadow: -1px 0 #555, 0 1px #555, 1px 0     #555, 0 -1px #555;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #F98F45;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type=text] {
+  border: 3px solid #555;
+}
