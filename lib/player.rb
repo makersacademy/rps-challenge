@@ -6,4 +6,6 @@ class Player
     @name = name
   end
 
+  # def play_rps(move)
+
 end
