@@ -30,3 +30,6 @@ Hints on functionality
 # Screenshots of final site:
 
 ![First Image](https://github.com/Sumner1185/rps-challenge/blob/master/Image1.png)
+![Second Image](https://github.com/Sumner1185/rps-challenge/blob/master/Image2.png)
+![Third Image](https://github.com/Sumner1185/rps-challenge/blob/master/Image3.png)
+![Fourth Image](https://github.com/Sumner1185/rps-challenge/blob/master/Image4.png)
