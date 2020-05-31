@@ -1,5 +1,4 @@
 class Game
-
   def self.create(player, opponent)
     @game = Game.new(player, opponent)
   end
@@ -8,30 +7,36 @@ class Game
     @game 
   end
 
-  attr_reader :player, :opponent
+  attr_reader :player, :opponent, :winner
+
+  MOVES = ['rock', 'paper', 'scissors']
 
   def initialize(player, opponent)
     @player = player
     @opponent = opponent
   end
 
-  # def select_winner
-    # if @player_move == @computer_move
-		# 	"It's a tie!"
-    # elsif @player_move = "Rock" && @computer_move == "Scissors" 
-    #   "Rock beats scissors - you won #{@player_name}!"
-    # elsif @player_move  == "Rock" && @computer_move == "Paper"
-    #   "Unlucky #{@player_name}! You lost!"
-    # elsif @player_move  == "Scissors" && @computer_move == "Paper"
-    #   "Scissors beats paper - you won #{@player_name}!"
-    # elsif @player_move  == "Scissors" && @computer_move == "Rock"
-    #   "You Loose #{@player_name}! Rock beats Scissors"
-    # elsif @player_move  == "Paper" && @computer_move == "Rock"
-		# 	"Paper beats rock - you won #{@player_name}!"
-    # elsif @player_move  == "Paper" && @computer_move == "Scissors"
-    #  "Unlucky #{@player_name}! You lost!"
-    # end 
-  # end
+  def select_winner
+    player_move = @player.move
+    opponent_move = @opponent.move
+
+    if player_move == opponent.move
+      @winner = "No one"
+    elsif player_move == 'rock' && opponent_move == 'paper'
+      @winner = @opponent
+    elsif player_move == 'rock' && opponent_move == 'scissors'
+      @winner = @player
+    elsif player_move == 'scissors' && opponent_move == 'rock'
+      @winner = @opponent
+    elsif player_move == 'scissors' && opponent_move == 'paper'
+      @winner = @player
+    elsif player_move == 'paper' && opponent_move == 'scissors'
+      @winner = @opponent
+    elsif player_move == 'paper' && opponent_move == 'rock'
+      @winner = @player
+    else
+      "not sure who"
+    end
+  end
+
 end
-
-
