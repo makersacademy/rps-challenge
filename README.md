@@ -24,4 +24,4 @@ I would like to be able to play rock/paper/scissors
 
 **Domain model**
 
-[Imgur](https://i.imgur.com/kDoDkejm.png)
+[Imgur](https://i.imgur.com/kDoDkej.png)
