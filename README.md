@@ -36,7 +36,7 @@ The Result class understands the behaviours of initialize and run_game.
 - Class ----> result
 - Method (behaviour) ----> initialize and run_game.
 
-[Click Here](www.diagram.codes/d/sequence/alias%20user%20%3D%20%22user%22%0Aalias%20server%20%3D%20%22server%22%0Aalias%20browser%20%3D%20%22browser%22%0A%0Auser%20-%3E%20browser%20%3A%22user%20completes%20form%20and%20clicks%20to%20play%22%0Abrowser%20-%3E%20server%20%3A%22sends%20a%20GET%20request%20for%20%2Fgame%22%0Aserver%20-%3E%20browser%20%3A%20%22sends%20back%20form%20with%20200%20status%20code%22%20%0Abrowser%20-%3E%20user%20%3A%20%22renders%20the%20form%20for%20user%20view%22%20%0A%0A%0A%0A%0A%0A%0A) to view a sequence diagram of the HTTP request/response cycle.
+[Click Here](https://github.com/RichEwin/rps-challenge/blob/master/Images/Screenshot%202020-05-31%20at%2013.05.20.png?raw=true) to view a sequence diagram of the HTTP request/response cycle.
 
 ## Technologies 
 
