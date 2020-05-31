@@ -1,6 +1,10 @@
+require_relative './lib/game.rb'
+
 require 'sinatra/base'
 
 class Rps < Sinatra::Base
+
+  attr_reader :weapon
 
   get '/' do
     erb :index
@@ -13,8 +17,10 @@ class Rps < Sinatra::Base
   end
 
   get '/game' do
+    @result = Game.new.play_game
     erb :result
   end
+
 
   run! if app_file == $0
 

@@ -13,9 +13,9 @@
 <body>
 
 <h1>Rock-Paper-Scissors</h1>
-<h2>Hi <%= @player_1 %>, so you chose <%= @weapon %></h2>
+<h2>Hi <%= @player_1 %>, so you chose <%= $weapon %></h2>
 
-<form action='/play' method='post'>
+<form action='/game'>
   <input type='submit' value='FIGHT!!'>
 </form>
 </body>
