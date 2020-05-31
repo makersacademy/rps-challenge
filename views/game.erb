@@ -1,7 +1,24 @@
-<h1> <%= $player_name %> chose <%= $player_choice %>!</h1>
-<div>
+<html>
+<head>
+<style>
+  h1 {text-align: center;}
+  h2 {text-align: center;}
+  h4 {text-align: center;}
+  h5 {text-align: center;}
+  form {text-align: center;}
+body {
+  font-family: arial;
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+
+<h2> <%= $player_name %> chose <%= $player_choice %>!</h2>
+<h2> The Computer chose <%= $computer_choice %> </h2>
+<h5> The result is.....</h5>
+<h1> <%= $result %> </h1>
+
 </div>
-<h1> The Computer chose <%= $computer_choice %> </h1>
-<div>
-</div>
-<h1> The result is..... <%= $result %> </h1>
+</body>
+</html>

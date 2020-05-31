@@ -1,14 +1,34 @@
+<html>
+<head>
+<style>
+  h1 {text-align: center;}
+  h2 {text-align: center;}
+  h4 {text-align: center;}
+  h5 {text-align: center;}
+  form {text-align: center;}
+body {
+  font-family: arial;
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+
 <h1>Welcome to Rock, Paper, Scissors!</h1>
+<h4>The rules are simple:</h4>
+<h5>If you choose Rock, you will win against Scissors but lose against Paper</h5>
+<h5>If you choose Scissors, you will win against Paper but lose against Rock</h5>
+<h5>If you choose Paper, you will win against Rock but lose against Scissors</h5>
 <h2>Enter your name to play!</h2>
-<div>
-</div>
+
 <form action='/setup' method='post'>
-    <input type="text" placeholder='Name' name = "player_name">
-<h2>Choose your weapon!</h2>
-<div>
-</div>
-    <input type="text" placeholder='Rock, Paper or Scissors' name = "user_choice">
-    <div>
-    </div>
-    <input type="submit" name="submit" value="Click To Play!">
+  <input type="text" placeholder='Name' name = "player_name">
+  <h2>Choose your weapon!</h2>
+  <input type="text" placeholder=' Rock   Paper   Scissors' name = "user_choice">
+  <div>
+  </div>
+  <input type="submit" name="submit" value="Click To Play!">
+
 </form>
+</body>
+</html>

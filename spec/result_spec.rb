@@ -29,6 +29,6 @@ describe Result do
   end
 
   it 'loss' do
-    expect(game5.run_game).to eq "Sorry Rich, You Lost."
+    expect(game5.run_game).to eq "Sorry Rich, You Lost"
   end
 end

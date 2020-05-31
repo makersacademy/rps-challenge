@@ -17,7 +17,7 @@ class Result
     elsif @player_choice == "Paper" && @computer_choice == "Rock"
       "#{@player_name} Wins! - Paper beats Rock!"
     else
-      "Sorry #{@player_name}, You Lost."
+      "Sorry #{@player_name}, You Lost"
     end
   end
 end
