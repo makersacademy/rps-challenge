@@ -21,4 +21,25 @@ feature 'playing the game' do
     click_button 'rock'
     expect(page).to have_content "computer chose scissors"
   end
+
+  scenario 'you win' do
+    sign_in
+    srand(1234)
+    click_button 'rock'
+    expect(page).to have_content "you win!"
+  end
+
+  scenario 'you lose' do
+    sign_in
+    srand(1234)
+    click_button 'paper'
+    expect(page).to have_content "better luck next time :("
+  end
+
+  scenario 'its a draw' do
+    sign_in
+    srand(1234)
+    click_button 'scissors'
+    expect(page).to have_content "its a draw"
+  end
 end

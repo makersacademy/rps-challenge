@@ -1,8 +1,10 @@
 require 'sinatra/base'
 require_relative './lib/Computer'
+require_relative './lib/game'
 
 class RPSWeb < Sinatra::Base
   enable :sessions
+
   get '/' do
     erb :index
   end
@@ -13,14 +15,12 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/play' do
-    @player1_name = session[:player1_name]
-    @option = session[:option]
-    @computer_option = session[:computer_option]
+    @game = Game.new(session)
     erb :play
   end
 
   post '/play' do
-    session[:option] = params[:option]
+    session[:option] = params[:option].to_sym
     session[:computer_option] = Computer.new.random_option
     redirect '/play'
   end

@@ -1,4 +1,4 @@
-Welcome to the game <%=@player1_name%>
+Welcome to the game <%=@game.player1_name%>
 
 <form method= "POST" action="/play">
   <input type="submit" name="option" value="rock"/>
@@ -6,6 +6,15 @@ Welcome to the game <%=@player1_name%>
       <input type="submit" name="option" value="scissors"/>
 </form>
 
-you chose <%= @option %>
+<p>you chose <%= @game.option.to_s %></p>
 
-<p>computer chose <%= @computer_option %></p>
+<p>computer chose <%= @game.computer_option %></p>
+
+
+<% if @game.winner? %>
+you win!
+<% elsif @game.lose? %>
+better luck next time :(
+<% elsif @game.draw? %>
+its a draw
+<% end %>
