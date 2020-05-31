@@ -36,12 +36,12 @@ You can find the link at the end of this markdown.
 
 <br />
 
-### **Color Palette for Inspiration:**
+**Color Palette for Inspiration:**
 
 ![](public/img/colorpalette.png)
 
 
-### **Buttons:**
+**Buttons:**
 
 First drafts were selfmade buttons in Photoshop. I then switched during the process to fully in CSS styled buttons.
 
@@ -53,12 +53,15 @@ First drafts were selfmade buttons in Photoshop. I then switched during the proc
 
 ## **My Webdesign Process**
 
-First draft (Photoshop & Codepen):
+**First draft (Photoshop & Codepen):**
+<br />
 ![](public/img/designdraft.png)
 
-Final design:
+**Final design:**
+<br />
 ![](public/img/design.png)
 
 
-## **View the finished design here (Preview 1st page only):**
+**Don't want to git clone the whole repo? View the finished design here:**
+(1st page HTML only Preview)
 ## https://nadinedelia.github.io/rps-design/
