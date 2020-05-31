@@ -1,6 +1,9 @@
 feature 'Enter Name' do
-  scenario 'Player 1 enters name' do
-    enter_name
+  scenario 'Enter Anna and submit, see Anna' do
+    visit '/'
+    fill_in('name', with: 'Anna')
+    click_button('Start')
     expect(page).to have_content 'Anna'
   end
+
 end
