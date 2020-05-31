@@ -1,5 +1,6 @@
 # RPS Challenge
 
+![](public/img/RPS.png) 
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -24,11 +25,20 @@ I would like to be able to play rock/paper/scissors
 - a winner will be declared
 
 
-## How I attempted this Challenge
+## Design Choices
 
 Being a very visual person, I was really excited for this challenge, as I could dig out my half forgotten HTML and CSS skills.
 
+
+Color Palette for Inspiration:
+
 ![](public/img/colorpalette.png)
 
-View the design here:
+
+Buttons:
+
+![](public/img/rock.png) ![](public/img/paper.png) ![](public/img/scissors.png) ![](public/img/start.png)
+
+
+View the design preview here:
 https://nadinedelia.github.io/rps-design/

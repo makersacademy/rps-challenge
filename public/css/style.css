@@ -4,7 +4,7 @@
 }
 
 body {
-  background: url("./img/rps.jpg");
+  background: url("./img/background.jpg");
   display: flex;
   background-size: cover;
   height: 100%;
