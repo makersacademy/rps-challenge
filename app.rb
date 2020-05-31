@@ -8,7 +8,12 @@ class Rps < Sinatra::Base
 
   post '/name' do
     @player_1 = params[:player_1]
+    $weapon = params[:weapon]
     erb :player_1
+  end
+
+  get '/game' do
+    erb :result
   end
 
   run! if app_file == $0

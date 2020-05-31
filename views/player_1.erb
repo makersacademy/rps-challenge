@@ -1,3 +1,22 @@
-<h1>Rock-Paper-Scissors</h1>
+<html>
+<head>
+<style>
+  h1 {text-align: center;}
+  h2 {text-align: center;}
+  h3 {text-align: centre;}
+  h4 {text-align: center;}
+  h5 {text-align: center;}
+  form {text-align: center;}
+}
+</style>
+</head>
+<body>
 
-<div class="logo"><b> <%= @player_1 %> </b></div>
+<h1>Rock-Paper-Scissors</h1>
+<h2>Hi <%= @player_1 %>, so you chose <%= @weapon %></h2>
+
+<form action='/play' method='post'>
+  <input type='submit' value='FIGHT!!'>
+</form>
+</body>
+</html>
