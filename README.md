@@ -1,17 +1,16 @@
 # RPS Challenge
-<center>
-
-<img src="images/Welcome_page.png" width="40%">
-
-⬇️
-
-<img src="images/RPS_Move.png" width="40%">
+<p align="center">
+<img src="images/Welcome_page.png" width="50%">
 
 ⬇️
 
-<img src="images/Final_page.png" width="40%">
-</center>
+<img src="images/RPS_Move.png" width="50%">
 
+⬇️
+
+<img src="images/Final_page.png" width="50%">
+
+</p>
 User Stories
 ----
 
