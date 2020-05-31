@@ -1,5 +1,13 @@
 # RPS Challenge
 
+![](images/Welcome_page.png)
+
+⬇️
+
+![](images/RPS_Move.png)
+
+⬇️
+
 ![](images/Final_page.png)
 
 
