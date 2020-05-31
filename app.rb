@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/rps_game.rb'
+
 
 class RPSApp < Sinatra::Base
 
@@ -19,7 +21,10 @@ class RPSApp < Sinatra::Base
   end
 
   post '/choice' do
-    "You won with Rock!"
+    choice = params[:choice]
+    @name = session[:name]
+    @result = RPSGame.new.play_game(choice)
+    erb(:result)
   end
 
 end

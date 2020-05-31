@@ -6,6 +6,7 @@ ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'features/app_helper.rb'
+require './lib/rps_game.rb'
 
 Capybara.app = RPSApp
 

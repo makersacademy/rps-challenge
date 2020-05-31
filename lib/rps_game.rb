@@ -29,11 +29,11 @@ class RPSGame
   def message(outcome)
     message = "Computer chose #{@computer_choice.downcase}. You chose #{@choice}."
     if outcome == :win
-      "#{message} You win, "
+      "#{message} You win "
     elsif outcome == :loss
-      "#{message} You lose, "
+      "#{message} You lose "
     elsif outcome == :draw
-      "#{message} You drew, "
+      "#{message} You drew "
     end
   end
 end
