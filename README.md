@@ -28,6 +28,23 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
+Though process
+--------------
+- user->client: "input the name"
+- client->server: "HTTP POST/ request with <form>"
+- server->client: "200 OK HTML"
+- client->user: "Welcome to the game #{user}"
+- user->client: "click start game"
+- client->server: "HTTP GET/ request with <form>"
+- server->client: "200 OK HTML"
+- client->user: "display option to choose 'rock', 'paper' or 'scissors'"
+- user->client: "choose 'rock' "
+- client->server: " HTTP POST/request with <form>"
+- server->client: "200 OK HTML"
+- client->user: "'You chose Rock'"
+----------------------------------
+
+
 Hints on functionality
 
 - the marketeer should be able to enter their name before the game
