@@ -67,4 +67,5 @@ First drafts were selfmade buttons in Photoshop. I then switched during the proc
 <br />
 (1st page HTML only Preview)
 <br />
-## https://nadinedelia.github.io/rps-design/
+
+https://nadinedelia.github.io/rps-design/
