@@ -27,3 +27,7 @@ I would like to be able to play rock/paper/scissors
 ## How I attempted this Challenge
 
 Being a very visual person, I was really excited for this challenge, as I could dig out my half forgotten HTML and CSS skills.
+
+
+View the design here:
+https://nadinedelia.github.io/rps-design/
