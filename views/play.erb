@@ -1,1 +1,24 @@
-Welcome to the game, <%= @player %>!
+
+<html>
+<head>
+<style>
+h1 {text-align: center;}
+form {text-align: center;}
+</style>
+</head>
+<body style="background-color:powderblue;">
+
+<h1>Welcome to the game, <%= @player %>!</h1>
+
+<form action='/player_move' method="post">
+  <label for="move">Choose a move:</label>
+  <select id="move" name="choice">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

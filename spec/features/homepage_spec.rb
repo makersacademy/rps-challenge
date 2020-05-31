@@ -5,11 +5,3 @@ feature 'checking homepage welcome' do
   end
 end
 
-feature 'enter name' do
-  scenario 'player enter their name, click to register, and see their name on screen' do
-    visit '/'
-    fill_in(:player, with: 'Markus')
-    click_button('Register')
-    expect(page).to have_content 'Welcome to the game, Markus!'
-  end
-end
