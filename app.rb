@@ -5,6 +5,10 @@ class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
+  before do
+  @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
@@ -17,37 +21,31 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game' do
-    @game = Game.instance
     erb(:game)
   end
 
   post '/turn' do
-    @game = Game.instance
     @game.p1_move(params[:move])
-    redirect '/result' if Game.instance.player2_name == nil
+    redirect '/result' if @game.player2_name == nil
     redirect "/multi"
   end
 
   get '/multi' do
-    @game = Game.instance
     @result = @game.outcome
     erb(:multi)
   end
 
   post "/turn_multi" do
-    @game = Game.instance
     @game.p2_move(params[:move])
     redirect '/result_multi'
   end
 
   get '/result' do
-    @game = Game.instance
     @result = @game.outcome
     erb(:result)
   end
 
   get '/result_multi' do
-    @game = Game.instance
     @result = @game.outcome
     erb(:result_multi)
   end
