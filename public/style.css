@@ -1,65 +1,43 @@
-* {
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
 body {
-  background: url("./img/background.jpg");
-  display: flex;
-  background-size: cover;
-  height: 100%;
-  padding: auto;
-  margin: auto;
-  font-family: proxima-nova, sans-serif;
-  font-style: normal;
+  font-family: Monospace;
   text-align: center;
-  background-color: #ffffff;
-  font-weight: 300;
-  line-height: 1.8;
-  color: #ced6f3;
-  letter-spacing: .03em;
-  font-size: 1em;
+  font-size: 1rem;
+  background: url("img/background.jpg")
+
 }
-
-
-ul {
-  align-items: center;
-}
-
 
 h1 {
-  font-family: 'times new roman';
-  font-size: 5rem;
+  font-family: 'Chelsea Market', cursive;
+  font-size: 4rem;
   text-align: center;
   color: #ffffff;
-  padding-top: 5rem;
+  padding-top: 7rem;
   padding-right: 0rem;
-  text-shadow: -1px 0 #000, 0 3px #000, 1px 0 #000, 0 -1px #000;
+  -webkit-text-stroke: 0.5px black;
 }
 
-h2 {
-  font-family: proxima-nova, sans-serif;
-  font-size: 2rem;
-  text-align: center;
-  color: #ffffff;
-  padding-top: 5rem;
-  padding-right: 0rem;
+
+
+/*Divs around game*/
+.gamebox {
+  border: 3px solid #000;
+  background-color: white;
+  background-opacity: 0.8;
+  border-radius: 2px;
+  margin: 50px auto;
+  width: 600px;
+  height: 200px;
+  box-shadow: 3px 3px 30px rgba(0,0,0,0.1);
 }
 
-.container {
-   max-width: 50%;
-   margin-top: 100px;
-   font-size: 2rem;
-   text-align: center;
-   padding-right: 5rem;
-  text-shadow: -1px 0 #555, 0 1px #555, 1px 0     #555, 0 -1px #555;
-}
 
 input[type=button], input[type=submit], input[type=reset] {
   background-color: #F98F45;
   border: none;
   color: white;
+  font-family: Monospace;
   padding: 16px 32px;
+  font-size: 1rem;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
@@ -67,4 +45,16 @@ input[type=button], input[type=submit], input[type=reset] {
 
 input[type=text] {
   border: 3px solid #555;
+}
+
+button[type=submit] {
+  background-color: #F98F45;
+  border: none;
+  color: white;
+  font-family: Monospace;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 8px 4px;
+  cursor: pointer;
 }

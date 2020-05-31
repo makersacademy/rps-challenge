@@ -43,10 +43,22 @@ You can find the link at the end of this markdown.
 
 ### **Buttons:**
 
+First drafts were selfmade buttons in Photoshop. I then switched during the process to fully in CSS styled buttons.
+
 ![](public/img/rock.png) ![](public/img/paper.png) ![](public/img/scissors.png) ![](public/img/start.png)
 
 <br />
 <br />
 
-## **View the design here (Preview 1st page only):**
+
+## **My Webdesign Process**
+
+First draft (Photoshop & Codepen):
+![](public/img/designdraft.png)
+
+Final design:
+![](public/img/design.png)
+
+
+## **View the finished design here (Preview 1st page only):**
 ## https://nadinedelia.github.io/rps-design/
