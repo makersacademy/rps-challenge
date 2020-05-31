@@ -26,3 +26,5 @@ Hints on functionality
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
+
+# Screenshots of final site:
