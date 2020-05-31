@@ -8,7 +8,7 @@ feature "website" do
 
   feature "get '/move'" do
     scenario 'has selection for RSP choice' do
-      submit_name
+      p1_name
       submit
       expect(page).to have_content('Rae what is your move?')
     end
@@ -17,9 +17,9 @@ feature "website" do
   feature "get /result" do
     scenario 'output of who won' do
       allow_any_instance_of(Array).to receive(:sample) { "Scissors" }
-      submit_name
+      p1_name
       submit
-      submit_rock
+      p1_rock
       submit
       expect(page).to have_content('Rae won with Rock')
     end
@@ -27,9 +27,9 @@ feature "website" do
 
   feature "get /result" do
     scenario 'has option to play again' do
-      submit_name
+      p1_name
       submit
-      submit_rock
+      p1_rock
       submit
       click_button("play again")
       expect(page).to have_content('Rae what is your move?')

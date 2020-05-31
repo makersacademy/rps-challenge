@@ -21,7 +21,6 @@ class RPSGame < Sinatra::Base
 
   post '/selected_move' do
     session[:player_move] = params[:move]
-    p session[:name_2]
     redirect('/result') if session[:name_2] == ""
     redirect('/move2')
   end
@@ -38,8 +37,16 @@ class RPSGame < Sinatra::Base
 
   get '/result' do
     @player_move = session[:player_move]
+    @player_2_move = session[:player_2_move]
+    p @player_2_move
     @name = session[:name]
-    @result = Result.new.result(@player_move)
+    if session[:name_2] == ""
+      @result = Result.new.result(@player_move)
+      p @result
+    else
+      @result = Result.new.result(@player_move, @player_2_move)
+      p @result
+    end
     erb(:result)
   end
 

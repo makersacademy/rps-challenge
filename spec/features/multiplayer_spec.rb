@@ -2,8 +2,8 @@ feature 'multiplayer' do
 
   feature "get '/move'" do
     scenario 'has selection for RSP choice' do
-      submit_name
-      submit_name_2
+      p1_name
+      p2_name
       submit
       expect(page).to have_content('Rae what is your move?')
     end
@@ -11,10 +11,10 @@ feature 'multiplayer' do
 
   feature "goes to '/move2'" do
     scenario 'has player 2 selection for RSP choice' do
-      submit_name
-      submit_name_2
+      p1_name
+      p2_name
       submit
-      submit_rock
+      p1_rock
       submit
       expect(page).to have_content('Bob what is your move?')
     end
@@ -22,12 +22,12 @@ feature 'multiplayer' do
 
   feature "goes to '/result'" do
     scenario 'has player 2 selection for RSP choice' do
-      submit_name
-      submit_name_2
+      p1_name
+      p2_name
       submit
-      submit_rock
+      p1_rock
       submit
-      submit_rock
+      p2_rock
       submit
       expect(page).to have_content('Rae drew with Rock')
     end
