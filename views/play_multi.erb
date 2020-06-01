@@ -30,6 +30,7 @@ h3 {
 div {
   display: block;
   text-align: center;
+  padding: 20
 }
 
 form {
@@ -42,15 +43,19 @@ button {
 }
 </style>
 <body>
-  <h1>ROCK, PAPER, SCISSORS</h1>
-  <h2> &#9994; &#9995; &#9996;</h2>
-  <h3>SELECT A GAME MODE</h3>
-  <div>
-  <form action="/start" method="get">
-    <button type="submit" name="mode" value="single">Single Player</button>
+<h1><%= @player.name.upcase %>, SELECT YOUR MOVE <br></h1>
+<h3>(AND DON'T LET <%= @opponent.name.upcase %> SEE)</h3>
+<h2>&#129323;</h2>
+<div>
+  <form action="/move-multi" method="post">
+    <button type="submit" name="move" value="rock">Rock</button>
+    <button type="submit" name="move" value="paper">Paper</button>
+    <button type="submit" name="move" value="scissors">Scissors</button>
   </form>
-  <form action="/start" method="get">
-    <button type="submit" name="mode" value="multi">Multiplayer</button>
-  </form>
-  </div>
+</div>
+<div>
+<form action="/">
+  <button type="submit" name="move" value="rock">Main Menu</button>
+</form>
+</div>
 </body>

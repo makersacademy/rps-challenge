@@ -1,6 +1,6 @@
 <style>
 body {
-  background-color: #B9DEED;
+  background-color: #FBFBFB;
   margin: 50px;
   font-family: Helvetica Neue;
 }
@@ -20,6 +20,7 @@ h2 {
 }
 
 h3 {
+  font-family: Helvetica Neue;
   color: #232323;
   font-style: italic;
   font-weight: bold;
@@ -30,7 +31,7 @@ h3 {
 div {
   display: block;
   text-align: center;
-  padding: 20
+  padding: 10
 }
 
 form {
@@ -43,15 +44,19 @@ input {
 }
 </style>
 <body>
-  <h1>IT'S A DRAW</h1>
-  <h2>&#128556;</h2>
-
-  <h3>YOU PICKED <%= @player.move.to_s.upcase %><br></h3>
-  <h3><%= @computer.name.upcase %> PICKED <%= @computer.move.to_s.upcase %></h3>
-
-  <div>
-    <form action="/play-single">
-      <input type="submit" value="Play Again">
-    </form>
-  </div>
+  <h1>WELCOME</h1>
+  <h2>&#128075;</h2>
+  <h3>PLEASE ENTER YOUR NAMES</h3>
+  <form action="/add-multi" method="post">
+    <div>
+      PLAYER 1
+      <input type="text" name="player_1_name">
+      <br>
+      PLAYER 2
+      <input type="text" name="player_2_name" >
+      <br>
+      <br>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
 </body>

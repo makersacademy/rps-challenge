@@ -1,6 +1,6 @@
 <style>
 body {
-  background-color: #B9DEED;
+  background-color: #FBFBFB;
   margin: 50px;
   font-family: Helvetica Neue;
 }
@@ -43,15 +43,24 @@ input {
 }
 </style>
 <body>
+<% if @winner == :draw %>
   <h1>IT'S A DRAW</h1>
   <h2>&#128556;</h2>
-
-  <h3>YOU PICKED <%= @player.move.to_s.upcase %><br></h3>
-  <h3><%= @computer.name.upcase %> PICKED <%= @computer.move.to_s.upcase %></h3>
-
+  <h3><%= @player_1.name.upcase %> & <%= @player_2.name.upcase %> BOTH PICKED <%= @player_1.move.to_s.upcase %><br></h3>
   <div>
-    <form action="/play-single">
+    <form action="/play-multi">
       <input type="submit" value="Play Again">
     </form>
   </div>
+<% else %>
+  <h1><%= @winner.name.upcase %> WON</h1> 
+  <h2>&#129395;</h2>
+  <h3><%= @winner.name.upcase %> PICKED <%= @winner.move.to_s.upcase %></h3>
+  <h3><%= @loser.name.upcase %> PICKED <%= @loser.move.to_s.upcase %><br></h3>
+  <div>
+    <form action="/play-multi">
+      <input type="submit" value="Play Again">
+    </form>
+  <div>
+<% end %>
 </body>
