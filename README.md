@@ -1,86 +1,42 @@
-# RPS Challenge
+Nikita's 'Rock Paper Scissors' Challenge
+========================================
 
-Instructions
--------
+# What is the RPS Challenge?
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+The RPS Challenge app allows a user to play 'Rock Paper Scissors' in a browser of their choice. The user can enter their name, choose one of the three options from a dropdown
+menu, and then see the result.
 
-Task
-----
+I built this app in May 2020 in response to the Makers Academy [RPS Challenge](https://github.com/NikitaDouglas/rps-challenge/blob/master/CHALLENGE.md).
 
-Knowing how to build web applications is getting us almost there as web developers!
+# How to play RPS?
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+You can play RPS in a browser of your choice. Follow the steps below:
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+1. Clone the app using the green **Clone or Download** button above.
+2. Install bundler (take a look [here](https://bundler.io/) if you don't know how to do that)
+and then run `bundle install` to install the dependencies.
+3. In the app's root directory, run `rackup -p 4567` on the command line to start the server.
+4. Visit http://localhost:4567 in your browser  to play the game.
 
-```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+The tests were created with RSpec and Capybara. Run `rspec` on the command line when you're in the root directory to run the tests.
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+# How I built RPS Challenge
 
-Hints on functionality
+I began this challenge by creating an HTTP request/response diagram - you can see it [here](https://github.com/NikitaDouglas/rps-challenge/blob/master/Screenshot%202020-05-30%20at%2011.41.32.png). As you can see from the diagram, I used the PRG pattern to redirect
+the client after submitting information with a POST request. The app is built using Sinatra, a light weight web app framework for Ruby.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+I wrote the initial tests in Capybara, ensuring that I had set up my server correctly, and I also created the `app_helper.rb` file in order to 'DRY' my tests. I
+used strict TDD for this process, but in hindsight I don't think I sufficiently broke down my tests - there are only two in `app_spec.rb`. I haven't quite got the grasp of what I'm supposed to be testing for with Capybara - I feel that feature tests on web apps require a more nuanced understanding of 'behaviour not state' than I currently possess. I built
+the `app.rb` file using Sinatra's modular framework.
 
+I then moved on to writing the game proper, test-driving its functionality with pure RSpec. I feel that here, I failed to commit and push as often as would have been beneficial, and my commit history is a bit threadbare.
 
-As usual please start by
+Finally, I 'joined-up' my game with the app, requiring the `rps_game.rb` file in `app.rb`, creating a new instance of the game when the client (redirected from `/choice` path) makes a GET request for `/rps_winner`.
 
-* Forking this repo
-* TEST driving development of your app
+I ran out of time to create a 'Play again?' button, but I know that I would approach this by using the PRG pattern once again to redirect the user back to the `/choice` path.
 
+# Things to think about going forwards...
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+- Using CSS. I am, admittedly, unenthused by the prospect of decorating, as plain old HTML is fine for me (I feel like I'm drifting towards becoming a back-end dev). In future though, I'd like to use some CSS to centre my text and colour the background. It will also be useful to learn the best file structure for dividing HTML files from stylesheets.
+- Multi-player? It seemed rather extraneous - I could code it, but why would two people use the same computer to play a hand-game they could play in person?
+- File overview in the README - things are getting rather complex now. Time to announce some order to this chaos. 
