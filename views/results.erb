@@ -3,7 +3,7 @@
 <p>Your opponent's move: <%= @opponent_move %></p>
 <div>
 <h3>Results:</h3><br/>
-<%= if @opponent_move == @move %>
+<% if @opponent_move == @move %>
 <h4>It's a draw!</h4>
 <% end %>
 <!-- 
