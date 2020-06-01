@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='/style.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <h1>Welcome <%= session[:name]%>!</h1>
+  <br>
+  <p> Because I like to waste people time, here is another button to push</p>  
+  <form action='/play' method='POST'>
+    <input type='submit' value="let's do this!">
+  </form>
+  <br>
+  <br>
+  <img src='/troll.png' >
+</body>
