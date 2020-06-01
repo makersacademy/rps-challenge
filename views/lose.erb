@@ -1,0 +1,58 @@
+<style>
+body {
+  background-color: #EE968B;
+  margin: 50px;
+  font-family: Helvetica Neue;
+}
+
+h1 {
+  color: #232323;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 60px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 60px;
+  text-align: center;
+  padding: 20
+}
+
+h3 {
+  color: #232323;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+
+div {
+  display: block;
+  text-align: center;
+  padding: 20
+}
+
+form {
+  display: inline; 
+}
+
+input {
+  font-size: 20px;
+  color: #232323;
+}
+</style>
+
+<body>
+  <h1>YOU LOST.</h1>
+  <h2>&#128531;</h2>
+
+  <h3>YOU PICKED <%= @player.move.to_s.upcase %><br></h3>
+  <h3><%= @computer.name.upcase %> PICKED <%= @computer.move.to_s.upcase %></h3>
+
+  <div>
+    <form action="/play-single">
+      <input type="submit" value="Play Again">
+    </form>
+  </div>
+</body>

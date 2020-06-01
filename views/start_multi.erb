@@ -1,0 +1,62 @@
+<style>
+body {
+  background-color: #FBFBFB;
+  margin: 50px;
+  font-family: Helvetica Neue;
+}
+
+h1 {
+  color: #232323;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 60px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 60px;
+  text-align: center;
+  padding: 20
+}
+
+h3 {
+  font-family: Helvetica Neue;
+  color: #232323;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+
+div {
+  display: block;
+  text-align: center;
+  padding: 10
+}
+
+form {
+  display: inline; 
+}
+
+input {
+  font-size: 20px;
+  color: #232323;
+}
+</style>
+<body>
+  <h1>WELCOME</h1>
+  <h2>&#128075;</h2>
+  <h3>PLEASE ENTER YOUR NAMES</h3>
+  <form action="/add-multi" method="post">
+    <div>
+      PLAYER 1
+      <input type="text" name="player_1_name">
+      <br>
+      PLAYER 2
+      <input type="text" name="player_2_name" >
+      <br>
+      <br>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</body>

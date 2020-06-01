@@ -1,0 +1,61 @@
+<style>
+body {
+  background-color: #FBFBFB;
+  margin: 50px;
+  font-family: Helvetica Neue;
+}
+
+h1 {
+  color: #232323;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 60px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 60px;
+  text-align: center;
+  padding: 20
+}
+
+h3 {
+  color: #232323;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 60px;
+  text-align: center;
+}
+
+div {
+  display: block;
+  text-align: center;
+}
+
+form {
+  display: inline; 
+}
+
+button {
+  font-size: 20px;
+  color: #232323;
+}
+</style>
+<body>
+  <h1>ROCK, PAPER, SCISSORS</h1>
+  <h2>&#9994; &#9995; &#9996;</h2>
+  <h3>SELECT A GAME MODE</h3>
+  <div>
+  <form action="/start" method="get">
+    <button type="submit" name="mode" value="single">Single Player</button>
+  </form>
+  <form action="/start" method="get">
+    <button type="submit" name="mode" value="multi">Multiplayer</button>
+  </form>
+  </div>
+</body>

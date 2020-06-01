@@ -1,0 +1,66 @@
+<style>
+body {
+  background-color: #FBFBFB;
+  margin: 50px;
+  font-family: Helvetica Neue;
+}
+
+h1 {
+  color: #232323;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 60px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 60px;
+  text-align: center;
+  padding: 20
+}
+
+h3 {
+  color: #232323;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+
+div {
+  display: block;
+  text-align: center;
+  padding: 20
+}
+
+form {
+  display: inline; 
+}
+
+input {
+  font-size: 20px;
+  color: #232323;
+}
+</style>
+<body>
+<% if @winner == :draw %>
+  <h1>IT'S A DRAW</h1>
+  <h2>&#128556;</h2>
+  <h3><%= @player_1.name.upcase %> & <%= @player_2.name.upcase %> BOTH PICKED <%= @player_1.move.to_s.upcase %><br></h3>
+  <div>
+    <form action="/play-multi">
+      <input type="submit" value="Play Again">
+    </form>
+  </div>
+<% else %>
+  <h1><%= @winner.name.upcase %> WON</h1> 
+  <h2>&#129395;</h2>
+  <h3><%= @winner.name.upcase %> PICKED <%= @winner.move.to_s.upcase %></h3>
+  <h3><%= @loser.name.upcase %> PICKED <%= @loser.move.to_s.upcase %><br></h3>
+  <div>
+    <form action="/play-multi">
+      <input type="submit" value="Play Again">
+    </form>
+  <div>
+<% end %>
+</body>

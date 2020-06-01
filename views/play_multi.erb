@@ -1,0 +1,61 @@
+<style>
+body {
+  background-color: #FBFBFB;
+  margin: 50px;
+  font-family: Helvetica Neue;
+}
+
+h1 {
+  color: #232323;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 60px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 60px;
+  text-align: center;
+  padding: 20
+}
+
+h3 {
+  color: #232323;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+
+div {
+  display: block;
+  text-align: center;
+  padding: 20
+}
+
+form {
+  display: inline; 
+}
+
+button {
+  font-size: 20px;
+  color: #232323;
+}
+</style>
+<body>
+<h1><%= @player.name.upcase %>, SELECT YOUR MOVE <br></h1>
+<h3>(AND DON'T LET <%= @opponent.name.upcase %> SEE)</h3>
+<h2>&#129323;</h2>
+<div>
+  <form action="/move-multi" method="post">
+    <button type="submit" name="move" value="rock">Rock</button>
+    <button type="submit" name="move" value="paper">Paper</button>
+    <button type="submit" name="move" value="scissors">Scissors</button>
+  </form>
+</div>
+<div>
+<form action="/">
+  <button type="submit">Main Menu</button>
+</form>
+</div>
+</body>
