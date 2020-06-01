@@ -24,7 +24,7 @@ class Game < Sinatra::Base
 
   get '/results' do
     @move = session[:move]
-    p @move
+    @moves = ["rock", "paper", "scissors"].sample
     erb :results
   end
 
