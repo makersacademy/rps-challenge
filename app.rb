@@ -4,10 +4,11 @@ class Game < Sinatra::Base
 
   get '/' do
     'Hello Battle!'
+    erb :game
   end
 
   get '/game' do
-    erb :game
+    erb :name
   end
 
   post '/names' do
