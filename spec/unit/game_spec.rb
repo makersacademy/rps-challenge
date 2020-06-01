@@ -9,20 +9,20 @@ describe Game do
       expect(game.player1_name).to eq "Judy"
     end
 
-    describe '#winner?' do
-      it 'returns true when player1 choses rock' do
-        expect(game.winner?).to eq true
-      end
-    end
-    describe '#lose?' do
-      it 'returns true when player1 choses paper' do
-        expect(game.lose?).to eq true
-      end
-    end
-    describe '#draw?' do
-      it 'returns true when player1 choses rock' do
-        expect(game.draw?).to eq true
-      end
-    end
+    # describe '#winner?' do
+    #   it 'returns true when player1 choses rock' do
+    #     expect(game.winner?).to eq true
+    #   end
+    # end
+    # describe '#lose?' do
+    #   it 'returns true when player1 choses paper' do
+    #     expect(game.lose?).to eq true
+    #   end
+    # end
+    # describe '#draw?' do
+    #   it 'returns true when player1 choses rock' do
+    #     expect(game.draw?).to eq true
+    #   end
+    # end
   end
 end
