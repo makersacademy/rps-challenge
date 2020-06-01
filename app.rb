@@ -4,7 +4,7 @@ class Game < Sinatra::Base
   enable :sessions
 
   get '/' do
-    "Hello World"
+    erb :index
   end
 
   # start the server if ruby file executed directly
