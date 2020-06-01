@@ -1,0 +1,27 @@
+input[type=submit] {
+    background-color: rgb(214, 50, 50);
+    border: white;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  input[type=text], select, textarea {
+    width: 120px;
+    height: 2%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  h1 {color: rgb(214, 50, 50)}
+
+  label {
+    text-align: center;
+    clear: both;
+    margin-right:15px;
+    position: center
+}
