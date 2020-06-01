@@ -1,0 +1,11 @@
+<html>
+  <body>
+  <center>
+    <h1> Your opponent selected <%= @game.random_move %>, you lost! </h1>
+      <h2> Do you want to play again? </h2>
+      <form action="/game" method="get">
+      <input type="submit" value="Yes!"
+       name="submit" id="frm1_submit">
+  <center>
+  </body>
+</html>
