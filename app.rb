@@ -12,7 +12,7 @@ class Game < Sinatra::Base
     redirect '/play'
   end
 
-  get 'play' do
+  get '/play' do
     @player_name = session[:name]
     erb :play
   end
