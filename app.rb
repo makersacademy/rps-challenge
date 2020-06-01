@@ -14,6 +14,7 @@ class Game < Sinatra::Base
 
   get 'play' do
     @player_name = session[:name]
+    erb :play
   end
 
   # start the server if ruby file executed directly
