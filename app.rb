@@ -10,8 +10,7 @@ class Rps < Sinatra::Base
 
   post '/setup' do
     $player_name = params[:player_name]
-    player_choice = params[:user_choice]
-    $player_choice = player_choice
+    $player_choice = params[:user_choice]
     $computer_choice = Computer.new.computer_choice
     $result = Result.new($computer_choice, $player_choice, $player_name).run_game
     redirect '/game'

@@ -14,7 +14,7 @@ describe Computer do
     end
 
     it 'allows the computer to make a choice' do
-      expect(subject.computer_choice).to eq("Paper")
+      expect(subject.computer_choice).to eq("Paper" || "Rock" || "Scissors")
     end
   end
-end 
+end
