@@ -20,3 +20,9 @@ end
 def submit
   click_button("Submit")
 end
+
+def names_submit
+  p1_name
+  p2_name
+  submit
+end
