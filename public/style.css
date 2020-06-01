@@ -1,0 +1,60 @@
+body {
+  font-family: Monospace;
+  text-align: center;
+  font-size: 1rem;
+  background: url("img/background.jpg")
+
+}
+
+h1 {
+  font-family: 'Chelsea Market', cursive;
+  font-size: 4rem;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 7rem;
+  padding-right: 0rem;
+  -webkit-text-stroke: 0.5px black;
+}
+
+
+
+/*Divs around game*/
+.gamebox {
+  border: 3px solid #000;
+  background-color: white;
+  background-opacity: 0.8;
+  border-radius: 2px;
+  margin: 50px auto;
+  width: 600px;
+  height: 200px;
+  box-shadow: 3px 3px 30px rgba(0,0,0,0.1);
+}
+
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #F98F45;
+  border: none;
+  color: white;
+  font-family: Monospace;
+  padding: 16px 32px;
+  font-size: 1rem;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type=text] {
+  border: 3px solid #555;
+}
+
+button[type=submit] {
+  background-color: #F98F45;
+  border: none;
+  color: white;
+  font-family: Monospace;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 8px 4px;
+  cursor: pointer;
+}

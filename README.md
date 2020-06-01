@@ -1,18 +1,8 @@
-# RPS Challenge
+# Rock Paper Scissors Challenge
 
-Instructions
--------
+![](public/img/RPS.png)
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
+<br />
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -28,7 +18,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+## Functionality
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
@@ -36,51 +26,46 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
+<br />
 
-As usual please start by
+## Design Choices
 
-* Forking this repo
-* TEST driving development of your app
+Being a very visual person, I was really excited for this challenge, as I finally could dig out my half forgotten HTML and CSS skills.
+I would write the CSS at the same time as I was writing the code and would change the designs from commit to commit.
+There's a repo on Github Pages for anyone who'd like to see it in action. You can find the link at the end of this markdown.
+
+<br />
+
+**Color Palette for Inspiration:**
+
+![](public/img/colorpalette.png)
 
 
-## Bonus level 1: Multiplayer
+**Buttons:**
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+First drafts were buttons I draw in Photoshop. I then switched during the process to fully in CSS styled buttons.
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+![](public/img/rock.png) ![](public/img/paper.png) ![](public/img/scissors.png) ![](public/img/start.png)
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+<br />
+<br />
 
-## Basic Rules
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+## **My Webdesign Process**
 
-In code review we'll be hoping to see:
+**First draft (Photoshop & Codepen):**
+<br />
+![](public/img/designdraft.png)
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+**Final design:**
+<br />
+![](public/img/design.png)
+![](public/img/playview.png)
+![](public/img/resultview.png)
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+# Don't want to clone the whole repo? View the finished design here:
+<br />
+(1st page HTML only Preview)
+<br />
 
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+https://nadinedelia.github.io/rps-design/

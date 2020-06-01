@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Rock, Paper or Scissors?</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<meta content= "width=device-width, height=device-height, initial-scale=1" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<body>
+  <h1><%= @name %></h1>
+  <div class="gamebox">
+  <form action="/result" method="post">
+    <br>
+    <br>
+    <br>
+    <button type="submit" name="choice" value='Rock'>Rock</button>
+    <button type="submit" name="choice" value='Paper'>Paper</button>
+    <button type="submit" name="choice" value='Scissors'>Scissors</button>
+  </form>
+  </div>
+</body>
+</html>
