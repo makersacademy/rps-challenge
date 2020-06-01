@@ -1,6 +1,16 @@
 <div class="game">
 <p>Here is your choice: <%= @move %></p>
-<p>Your opponent's move:<%= @moves %></p>
+<p>Your opponent's move: <%= @opponent_move %></p>
+<div>
+<h3>Results:</h3><br/>
+<%= if @opponent_move == @move %>
+<h4>It's a draw!</h4>
+<% end %>
+<!-- 
+<h4>You won!</h4>
+<h4>You lost!</h4>
+-->
+</div>
 </div>
 
 <style>
