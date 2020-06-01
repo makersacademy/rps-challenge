@@ -10,4 +10,3 @@ class Computer
     @computer_move = Game::MOVES.sample
   end
 end 
-

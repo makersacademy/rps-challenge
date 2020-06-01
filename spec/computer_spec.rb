@@ -16,8 +16,4 @@ describe Computer do
     srand(2)
     expect(subject.move).to eq 'rock'
   end
-
 end
-
-
-
