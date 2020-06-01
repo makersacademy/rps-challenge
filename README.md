@@ -51,7 +51,7 @@ I would like to be able to play rock/paper/scissors
 
 
 
-## Shortcomings
+## Shortcomings:
 - The RSpec tests are patchy and should be more thorough.
 - The styling format should be neater within the erb files.
 
