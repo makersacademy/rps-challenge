@@ -18,19 +18,19 @@ describe Computer do
 
   describe '#move' do
     it 'returns the move :rock' do
-      allow(Game::MOVES).to receive(:sample) { :rock }
+      srand(8)
       computer.pick_move
       expect(computer.move).to eq :rock
     end
 
     it 'returns the move :paper' do
-      allow(Game::MOVES).to receive(:sample) { :paper }
+      srand(10)
       computer.pick_move
       expect(computer.move).to eq :paper
     end
 
     it 'returns the move :paper' do
-      allow(Game::MOVES).to receive(:sample) { :scissors }
+      srand(4)
       computer.pick_move
       expect(computer.move).to eq :scissors
     end
