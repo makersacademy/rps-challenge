@@ -1,12 +1,40 @@
+<div class="game">
 <div>
 <h3>Welcome to our online Game !</h3>
 <p>To continue, please enter your name bellow</p>
 </div>
 
-<div>
+
 <form>
-<input type="text" name="name">
-<input type="submit" value="Play">
+<input type="text" name="name" placeholder="Darth Vader" class="name-field">
+<input type="submit" value="Play" class="btn-play">
 </form>
 
 </div>
+
+<style>
+.game{
+margin: auto;
+width: 50%;
+padding: 10px;
+}
+
+.btn-play{
+background: white;
+color: black;
+border: 2px solid black;
+}
+
+.btn-play:hover{
+    background: black;
+    color:white;
+
+}
+
+.name-field{
+border:none;
+background: #EDF4FF;
+color:#33495D;
+height:30px;
+}
+</style>
