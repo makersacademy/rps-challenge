@@ -1,0 +1,27 @@
+<center>
+  <body style="background-color: #90c9bf; text-shadow: 2px 2px 3px rgba(0,0,0,.2); font-size: 18px; color: #f2f2f2; font-family:rockwell">  
+<br>
+<br>
+    <div> 
+    <h2> Welcome,</h2> 
+    <h1 style="font-family:phosphate,inline; color: #ffcc00">&#128161 <%= @player_1 %> &#128161</h1><br>
+    <h1>What is your move?</h1>
+    </div>
+    <div>
+    <form action='/game' method='post'>
+    <h2>&#129304 <button name="move" type="submit" value ="Rock">Rock</a> </button>  &#129304</h2>
+    </form>
+
+    <form action='/game' method='post'>
+    <h2>&#128240  <button name="move" type="submit" value ="Paper">Paper </button> &#128240</h2>
+    </form>
+
+
+    <form action='/game' method='post'>
+    <h2>&#9986;&#65039  <button name="move" type="submit" value ="Scissors">Scissors</button> &#9986;&#65039 </h2>
+    </form>
+    </div>
+  </body>
+</center>
+
+

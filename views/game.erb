@@ -1,0 +1,19 @@
+<center>
+<body style="background-color: #90c9bf; text-shadow: 2px 2px 3px rgba(0,0,0,.2); font-size: 18px; color: #f2f2f2; font-family:rockwell">  
+<div><br><br>
+
+  <h2>The computer chose: <%= $comp_choice %></h2><br><br>
+
+  <h2>And you chose: <%= $move %></h2><br>
+
+  <h1>Which means...</h1>
+
+  <h1><%= $result %></h1><br><br><br>
+  <style>
+  .button1 {background-color: #339966; font-family: verdana;text-align: center; color:white;}
+</style>
+<form action="/play" method="get">
+  <input class='btn button1' type='submit' value="Play again">
+  </form>    
+</div>
+</center>
