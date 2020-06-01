@@ -38,7 +38,7 @@ Sinatra is not a particularly opinionated framework (unlike Rails).  This means 
 Structure is an important decision in your design as it affects readability.  One of the most important considerations is the *separation of concerns*
 
 Here is a checklist to consider:
-If the structure has an `/app` folder:
+### If the structure has an `/app` folder:
 * Is the server file (e.g rps_web.rb or app.rb) at the top level of the `/app` folder?
 * Is the `/views` folder in `/app`?
 * Is the `/lib` folder in the project root folder?
@@ -56,7 +56,7 @@ If the structure has an `/app` folder:
     └── spec_helper.rb
 ```
 
-If the structure does not have an `/app` folder:
+### If the structure does not have an `/app` folder:
 * Is the server file (e.g rps_web.rb or app.rb) in the project root folder?
 
 ```
