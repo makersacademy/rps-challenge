@@ -24,6 +24,7 @@ class Game < Sinatra::Base
 
   get '/results' do
     @move = session[:move]
+    p @move
     erb :results
   end
 
