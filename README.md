@@ -12,4 +12,6 @@ $ cd some/folder/with/rps/in/it
 
 From here you can use ```rackup``` in the console. you should get a bunch of computer stuff (technical I know) load up, but the most important bit is the port number. By taking the port number and searching ```localhost:*port number*``` the game should load for your enjoyment! 
 
+Once loaded, give the computer your name and be ready to be amazed as you dive into the competative world of human vs machine! You'll not believe just how much fun you can have...*maybe*
+
 
