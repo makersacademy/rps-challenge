@@ -28,6 +28,23 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
+Though process
+--------------
+- user->client: "input the name"
+- client->server: "HTTP POST/ request with <form>"
+- server->client: "200 OK HTML"
+- client->user: "Welcome to the game #{user}"
+- user->client: "click start game"
+- client->server: "HTTP GET/ request with <form>"
+- server->client: "200 OK HTML"
+- client->user: "display option to choose 'rock', 'paper' or 'scissors'"
+- user->client: "choose 'rock' "
+- client->server: " HTTP POST/request with <form>"
+- server->client: "200 OK HTML"
+- client->user: "'You chose Rock'"
+----------------------------------
+
+
 Hints on functionality
 
 - the marketeer should be able to enter their name before the game
@@ -56,31 +73,3 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
