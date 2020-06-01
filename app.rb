@@ -1,46 +1,45 @@
 require 'sinatra/base'
-
 require 'sinatra/reloader'
+require './lib/players.rb'
+require './lib/computer.rb'
+require './lib/game.rb'
 
-require './lib/game'
 
 class RPS < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
-  end
-
+ 
   enable :sessions
 
-  get '/' do
-    erb(:index)
+  before do
+    @game = Game.instance
   end
 
-  post '/player_name' do
-    session[:player_name] = params[:player_name]
+  get '/' do
+    erb :index
+  end
+
+  post '/player' do
+    player = Player.new(params[:name])
+    opponent = Computer.new
+    @game = Game.create(player, opponent)
     redirect '/play'
   end
 
-post '/player_move' do
-    p session[:player_move] = params[:player_move]
-    @player_move = session[:player_move]
-    redirect '/result'
-end
-
   get '/play' do
-    @player_name = session[:player_name]
-    # @player_move = session[:player_move]
-
-    erb(:play) 
+    erb :play
   end
 
-  get '/result' do
-    game = Game.new
-    @player_name = session[:player_name]
-    p "Player move:"
-    p @player_move = session[:player_move]
-    p "Computer move:" 
-    p @random_move = game.computer_move
-    erb(:result)
+  post '/player_moves' do
+    @game.player.choose(params[:move])
+    redirect '/move'
+  end
+        
+  get '/move' do
+    erb :move
+  end
+
+  get '/winner' do
+   @game.select_winner
+    erb :winner
   end
 
   # start the server if ruby file executed directly
