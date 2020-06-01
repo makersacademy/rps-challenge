@@ -1,14 +1,5 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
 Task
 ----
 
@@ -36,51 +27,16 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
+# Screenshots of final site:
 
-As usual please start by
+![First Image](https://github.com/Sumner1185/rps-challenge/blob/master/Image1.png)
+![Second Image](https://github.com/Sumner1185/rps-challenge/blob/master/Image2.png)
+![Third Image](https://github.com/Sumner1185/rps-challenge/blob/master/Image3.png)
+![Fourth Image](https://github.com/Sumner1185/rps-challenge/blob/master/Image4.png)
 
-* Forking this repo
-* TEST driving development of your app
 
+# Thoughts and approach
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+This challenge was designed to build upon what we learnt this week in web week. Capybara and I were not getting on at first but once the correct `Capybara.app = RPS` was added to `spec_helper` we were good to go.
+I found that the building of the site using HTML/CSS was not too difficult, although very time consuming. The issues came when implementing the Ruby classes. What I struggled most with and will be a major part of my goals for the upcoming week, was trying to implement class methods in place of sessions. No matter what I tried, all the tests would break and not return what I was hoping for. Having done some further reading I have a better idea of what I would do in future and will spend some on a test program until I get my head around it.
+This was a great challenge to boost my limited HTML knowledge and get the basics of how to inject some CSS to make things pretty.

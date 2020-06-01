@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { background-color:#6666FF; }
+h1 { text-align:center; font-family:Courier; }
+h2 { text-align:center; font-family:Courier; }
+form { text-align:center; }
+h3 { text-align:center; }
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+</style>
+</head>
+<body>
+
+  <h1>
+  Welcome to my game of Rock, Paper, Scissors!
+  </h1>
+  <h2>
+  Enter your name below:
+  </h2>
+
+  <form action='/name' method='post'>
+    <label><b>Enter Name</b></label>
+    <input type='text' name='name' id='user_input'>
+    <input type='submit' value="Light it up!">
+  </form>
+
+  <p><span id='display'></span></p>
+
+  <% if @name %>
+   <h3 class="glow">Let's see what you've got <%= @name %></h3>
+   <form action='/play' method='get'>
+   <input type='submit' value="Let's play!">
+  <% end %>
+
+</body>
+</html>

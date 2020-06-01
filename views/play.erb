@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { background-color:#6666FF; }
+h1 { text-align:center; font-family:Courier; }
+form { text-align:center; font-size:16px; }
+button[type='submit'] {
+    width: 8em;  height: 4em; font-size:20px;
+}
+</style>
+</head>
+<body>
+  <h1>Choose your weapon!</h1><br><br>
+  
+  <form action='/first_game' method='post'>
+  <button name='choice' type="submit" value='Rock'>Rock</button>
+  </form><br><br><br><br>
+
+  <form action='/first_game' method='post'>
+  <button name='choice' type='submit' value='Paper'>Paper</button>
+  </form><br><br><br><br>
+  
+  <form action='/first_game' method='post'>
+  <button name='choice' type='submit' value='Scissors'>Scissors</button>
+  </form>
+  
+</body>
+</html>
