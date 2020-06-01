@@ -2,14 +2,17 @@
 <p>Here is your choice: <%= @move %></p>
 <p>Your opponent's move: <%= @opponent_move %></p>
 <div>
-<h3>Results:</h3><br/>
+<h3>Results:</h3>
 <% if @opponent_move == @move %>
 <h4>It's a draw!</h4>
-<% end %>
-<!-- 
+<% elsif @move == "scissors" && @opponent_move == "paper" ||
+    @move == "rock" && @opponent_move == "scissors" ||
+    @opponent_move == "rock" && @move == "paper" %> 
 <h4>You won!</h4>
+<% else %>
 <h4>You lost!</h4>
--->
+<% end %>
+
 </div>
 </div>
 
