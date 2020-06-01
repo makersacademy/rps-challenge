@@ -22,7 +22,7 @@ class Game < Sinatra::Base
     redirect '/results'
   end
 
-  get 'results' do
+  get '/results' do
     @move = session[:move]
     erb :results
   end
