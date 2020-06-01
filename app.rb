@@ -25,9 +25,7 @@ class RPS < Sinatra::Base
     @name = session[:name]
     @player_move = Player.new(params[:choice])
     session[:choice] = @player_move.choice
-    @player_move = session[:choice]
     session[:computer_turn] = Computer.new.computers_turn
-    @computer_move = session[:computer_turn]
     @player_move = session[:choice]
     @computer_move = session[:computer_turn]
     @check_result = Game.new(@name, @player_move, @computer_move)
