@@ -43,9 +43,15 @@ I would like to be able to play rock/paper/scissors
 ✅ High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)\
 ✅ The code is elegant: every class has a clear responsibility, methods are short etc.
 
-```
+## Skills used:
+- RSpec testing
+- Capybara testing
+- Class interaction
+- Basic styling
+
+
+
 ## Shortcomings
 - The RSpec tests are patchy and should be more thorough.
 - The styling format should be neater within the erb files.
 
-```
