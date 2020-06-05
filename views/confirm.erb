@@ -1,0 +1,4 @@
+<%= @game.current_turn.name %> chose <%= @game.current_turn.choice %>!
+<form action="/switch-turns" method="post">
+  <input type="submit" value="Return" %>
+</form>

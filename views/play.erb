@@ -1,0 +1,15 @@
+<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+<br>
+<%= @game.current_turn.name %>'s turn
+<br>
+<form action="/rock" method="post">
+  <input type="submit" value="Rock">
+</form>
+
+<form action="/paper" method="post">
+  <input type="submit" value="Paper">
+</form>
+
+<form action="/scissors" method="post">
+  <input type="submit" value="Scissors">
+</form>
