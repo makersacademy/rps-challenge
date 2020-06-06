@@ -1,10 +1,32 @@
-
-
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RPS</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<section>
 
 <h1> <%= $game.player.name %> vs Computer Player <h1>
+</section>
+<section>
 <form action='/compute' method='POST'>
-  <input type='submit' name="move" value='Rock'>
-  <input type='submit' name="move" value='Paper'>
-  <input type='submit' name="move" value='Scissors'>
+  <input class = button type='submit' name="move" value='Rock'>
+  <input class = button type='submit' name="move" value='Paper'>
+  <input class = button type='submit' name="move" value='Scissors'>
 </form>
+</section>
+<section>
+</section>
+ <footer>
+  By Jack Perrin
+  
+</footer>
+
+</body>
+
+</html>

@@ -15,13 +15,13 @@ class Game
       @result = 'Draw'
 
     elsif (@player.move == 'Rock') && (@cp_move == 'Scissors')
-      @result = 'Player Won'
+      @result = "#{player.name} Won"
 
     elsif (@cp_move == 'Rock') && (@player.move == 'Scissors')
       @result = 'Computer Won'
 
     elsif (@player.move == 'Scissors') && (@cp_move == 'Paper')
-      @result = 'Player Won'
+      @result = "#{player.name} Won"
 
     elsif (@cp_move == 'Scissors') && (@player.move == 'Paper')
       @result = 'Computer Won'
@@ -30,7 +30,7 @@ class Game
       @result = 'Computer Won'
 
     elsif (@cp_move == 'Rock') && (@player.move == 'Paper')
-      @result = 'Player Won'
+      @result = "#{player.name} Won"
     end
   end
 

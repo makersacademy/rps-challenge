@@ -1,8 +1,31 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RPS</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
 
-<h1> Game Over: <%= $game.result %><h1>
-
+  <section>
+<h1> Game Over: <%= @result %><h1>
+</section>
+<section>
 <form action='/names' method='GET'>
-  <input type='submit'  value='Play Again'>
 
+  <input class = "button " type='submit'  value='Play Again'>
+ 
 </form>
+</section>
+</body>
+ <footer>
+  By Jack Perrin
+  
+</footer>
+
+</body>
+
+</html>
