@@ -41,10 +41,10 @@ Hints on functionality
 
 ## Screenshots
 
-![Homescreen](images/HomeScreen.png?raw=true)
+![Homescreen](images/rps-homescreen.png?raw=true)
 
-![Homescreen2](images/Birthday.png?raw=true)
+![Homescreen2](images/rps-2.png?raw=true)
 
-![Homescreen3](images/Form_Entry.png?raw=true)
+![Homescreen3](images/rps-3.png?raw=true)
 
-![Homescreen4](images/LongWait.png?raw=true)
+![Homescreen4](images/rps-4.png?raw=true)
