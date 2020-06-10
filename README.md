@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/tommyrharper/rps-challenge.svg?branch=master)](https://travis-ci.com/tommyrharper/rps-challenge)
 # RPS Challenge
 
 Here is a simple rock, paper, scissors game/web app, you can download and play in your browser. 
