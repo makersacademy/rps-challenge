@@ -1,6 +1,6 @@
 # RPS Challenge
 
-Here is a simple rock, paper, scissors game/web app, you can download and play in your browser.
+Here is a simple rock, paper, scissors game/web app, you can download and play in your browser. 
 
 ## Instructions
 
