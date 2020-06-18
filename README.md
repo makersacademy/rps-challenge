@@ -1,5 +1,9 @@
 # RPS Challenge
 
+Deployed
+----
+You can access the project on [heroku now by clicking on this link](https://rock-paper-scissors-time.herokuapp.com/)
+
 Task
 ----
 
