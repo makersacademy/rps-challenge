@@ -25,4 +25,5 @@ class Game
       player1_pick + " vs " + player2_pick + ' You lost'
     end
   end
+  
 end
