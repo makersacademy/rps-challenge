@@ -11,7 +11,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/game' do
-    @move = params[:move]
+    @player_move = params[:player_move]
     erb :play
   end
 end
