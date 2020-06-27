@@ -18,4 +18,9 @@ class Rps < Sinatra::Base
     @player_1_name = session[:player_1_name]
     erb :play
   end
+
+  get "/game" do
+    @player_1_name = session[:player_1_name]
+    erb :game
+  end
 end
