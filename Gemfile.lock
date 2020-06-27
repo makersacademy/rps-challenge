@@ -80,6 +80,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  rack-test
   rspec
   rubocop (= 0.79.0)
   simplecov
