@@ -6,7 +6,7 @@
 ```
 As a marketeer
 So that I can see my name in lights
-I would like to register my name before playing an online game
+I would like to register my name before playing an online game - COMPLETE
 
 As a marketeer
 So that I can enjoy myself away from the daily grind
@@ -28,4 +28,9 @@ $ rackup
 
 ![Homepage to enter name] (screenshots/Screen Shot 2020-06-27 at 12.31.27.png)
 
-![Welcomes you to the game] (screenshots/Screen Shot 2020-06-27 at 12.32.16.png)
+![Welcomes the player] (screenshots/Screen Shot 2020-06-27 at 12.32.16.png)
+
+*User story 2:*
+
+![Welcomes the player and asks to enter a move](screenshots/Screen Shot 2020-06-27 at 15.27.06.png)
+![Prints the player's move](screenshots/Screen Shot 2020-06-27 at 15.27.15.png)

@@ -9,4 +9,9 @@ class RPSWeb < Sinatra::Base
     @name = params[:name]
     erb :game
   end
+
+  post '/game' do
+    @move = params[:move]
+    erb :play
+  end
 end
