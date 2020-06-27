@@ -48,6 +48,19 @@ If Paper -      Scissors: Lose
 If Scissors -   Rock: Lose
                 Paper: Win
 
+
+####Project Progress so far.
+
+Step 1 - Setup gems and installed bundles. Created files such as the App.rb, config and first spec test. I also included the rack env requirement for my tests to pass in the spec helper.
+I've written my first test and created an index.erb to create the page and pass my first test which is a simple test to display the main header for the page.
+
+Step 2 - 
+
+
+Tests created: 1
+Tests passed: 1
+Test Coverage so far: 100%
+
 Instructions
 -------
 
