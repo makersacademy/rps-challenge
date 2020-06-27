@@ -26,6 +26,6 @@ $ rackup
 
 *User story 1:*
 
-![Homepage to enter name] (https://www.dropbox.com/home/Makers?preview=Screen+Shot+2020-06-27+at+12.31.27.png)
+![Homepage to enter name] (file:///Users/dharapatel/Desktop/Screen%20Shot%202020-06-27%20at%2012.31.27.png)
 
-![Welcomes you to the game] (https://www.dropbox.com/home/Makers?preview=Screen+Shot+2020-06-27+at+12.32.16.png)
+![Welcomes you to the game] (file:///Users/dharapatel/Desktop/Screen%20Shot%202020-06-27%20at%2012.32.16.png)
