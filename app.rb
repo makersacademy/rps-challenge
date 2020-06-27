@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/computer'
+require './lib/results'
 
 class Game < Sinatra::Base
   enable :sessions
@@ -19,11 +21,15 @@ class Game < Sinatra::Base
 
   post '/game' do
     session[:move] = params[:move]
+    session[:computer_move] = Computer.new.makes_move
+    # session[:game_results] = Results.new(session[:move], session[:computer_move], params[:player_name]).check_results
     redirect '/game'
   end
 
   get '/game' do
     @move = session[:move]
+    @computer_move = session[:computer_move]
+    # @game_results = session[:game_results]
     erb :game
   end
 

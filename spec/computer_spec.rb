@@ -9,15 +9,15 @@ describe Computer do
 
   describe 'makes_move' do
     it 'selects a move at random' do
-      computer.stub(:makes_move) { 'Scissors' }
+      expect(computer).to receive(:makes_move) { 'Scissors' }
       expect(computer.makes_move).to eq 'Scissors'
     end
     it 'selects a move at random' do
-      computer.stub(:makes_move) { 'Paper' }
+      expect(computer).to receive(:makes_move) { 'Paper' }
       expect(computer.makes_move).to eq 'Paper'
     end
     it 'selects a move at random' do
-      computer.stub(:makes_move) { 'Rock' }
+      expect(computer).to receive(:makes_move) { 'Rock' }
       expect(computer.makes_move).to eq 'Rock'
     end
   end
