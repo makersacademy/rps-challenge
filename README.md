@@ -54,11 +54,11 @@ If Scissors -   Rock: Lose
 Step 1 - Setup gems and installed bundles. Created files such as the App.rb, config and first spec test. I also included the rack env requirement for my tests to pass in the spec helper.
 I've written my first test and created an index.erb to create the page and pass my first test which is a simple test to display the main header for the page.
 
-Step 2 - 
+Step 2 - I've now created the buttons and created a new /play page that will take the contents of the filled form into the following page. I've written a test to expect the user's name to be taken to the next page and passed this.
 
 
-Tests created: 1
-Tests passed: 1
+Tests created: 3
+Tests passed: 3
 Test Coverage so far: 100%
 
 Instructions
