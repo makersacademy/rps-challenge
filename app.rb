@@ -14,6 +14,11 @@ class Game < Sinatra::Base
   get '/play' do
     erb :play
   end
-  
+
+  get '/game' do
+    
+    erb :game
+  end
+
   run! if app_file == $0
 end
