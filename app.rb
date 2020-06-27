@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -14,12 +15,12 @@ class RPS < Sinatra::Base
   end
 
    get '/name' do
+    @computer = Computer.new
     @playerchoice = (params[:choice])
     erb :game
    end
 
   post './game' do
-    #@playerchoice = (params[:choice])
     erb :game
   end
 
