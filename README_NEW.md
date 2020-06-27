@@ -28,15 +28,15 @@ $ rackup
 
 *User story 1:*
 
-![Homepage to enter name] (screenshots/Screen Shot 2020-06-27 at 12.31.27.png)
+![Homepage to enter name](screenshots/Homepage_to_enter_name.png)
 
-![Welcomes the player] (screenshots/Screen Shot 2020-06-27 at 12.32.16.png)
+![Welcomes the player](screenshots/Welcomes_player.png)
 
 *User story 2:*
 
-![Welcomes the player and asks to enter a move](screenshots/Screen Shot 2020-06-27 at 15.27.06.png)
+![Welcomes the player and asks to enter a move](screenshots/Welcomes_player_&_enters_move.png)
 
-![Prints the player's move](screenshots/Screen Shot 2020-06-27 at 15.27.15.png)
+![Prints the player's move](screenshots/Prints_players_move.png)
 
 **What next?**
 ----
