@@ -7,7 +7,10 @@ class RPS < Sinatra::Base
     erb :enter_names
   end
   post '/names' do
-    @name = params[:Name]
+    $name = params[:Name]
+    redirect '/names'
+  end
+  get '/names' do
     erb :letsplay
   end
 end
