@@ -13,16 +13,17 @@ class RPS < Sinatra::Base
   post '/name' do
     @playerone = (params[:player_one_name])
     erb :start
+    #redirect '/start'
+  end
+ 
+  post '/game' do
+    @computer = Computer.new
+    @result = Result.new
+    @playerchoice = (params[:choice])
+    erb :game
   end
 
-   get '/name' do
-    @computer = Computer.new
-    @playerchoice = (params[:choice])
-    @result = Result.new
-    erb :game
-   end
-
-  post './game' do
+  get '/game' do
     erb :game
   end
 

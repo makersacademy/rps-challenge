@@ -1,5 +1,5 @@
 class Computer
-  attr_reader :weapon, :choice
+  attr_reader :weapon
 
   def weapon
     [:Rock, :Paper, :Scissors].sample
