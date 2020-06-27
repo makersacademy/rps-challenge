@@ -1,22 +1,23 @@
 class Results
-  # attr_reader :move, :computer_move, :player
-  #
-  # def initialize(move, computer_move, player)
-  #   @move = move
-  #   @computer_move = computer_move
-  #   @player = player
-  # end
-  #
-  # def check_results
-  #   @winner = player if move == 'Rock' && computer_move == 'Scissor'
-  #   # @winner = "Player 1" if player1_move == 'Scissor' && player2_move == 'Paper'
-  #   # @winner = "Player 1" if player1_move == 'Paper' && player2_move == 'Rock'
-  #   # @winner = "Player 2" if player2_move == 'Rock' && player1_move == 'Scissor'
-  #   # @winner = "Player 2" if player2_move == 'Scissor' && player1_move == 'Paper'
-  #   # @winner = "Player 2" if player2_move == 'Paper' && player1_move == 'Rock'
-  #   # @winner = "Nobody" if player1_move == 'Rock' && player2_move == 'Rock'
-  #   # @winner = "Nobody" if player1_move == 'Scissor' && player2_move == 'Scissor'
-  #   # @winner = "Nobody" if player1_move == 'Paper' && player2_move == 'Paper'
-  #   @winner
-  # end
+  attr_reader :player_name, :player_move, :computer_move
+
+  def initialize(options)
+    @player_name = options['player_name']
+    @player_move = options['player_move']
+    @computer_move = options['computer_move']
+  end
+
+  def check_results(player_move, computer_move)
+   if player_move == computer_move
+     "It's a draw!"
+   elsif (player_move == "Scissors" && computer_move == "Rock") ||
+     (player_move == "Paper" && computer_move == "Scissors") ||
+     (player_move == "Rock" && computer_move == "Paper")
+     "Computer won!"
+   else (player_move == "Scissors" && computer_move == "Paper") ||
+     (player_move == "Rock" && computer_move == "Scissors") ||
+     (player_move == "Paper" && computer_move == "Rock")
+   "You won!"
+   end
+ end
 end

@@ -20,16 +20,16 @@ class Game < Sinatra::Base
   end
 
   post '/game' do
-    session[:move] = params[:move]
+    session[:player_move] = params[:move]
     session[:computer_move] = Computer.new.makes_move
-    # session[:game_results] = Results.new(session[:move], session[:computer_move], params[:player_name]).check_results
+    session[:game_results] = Results.new(session)
     redirect '/game'
   end
 
   get '/game' do
-    @move = session[:move]
+    @player_move = session[:player_move]
     @computer_move = session[:computer_move]
-    # @game_results = session[:game_results]
+    @game_results = session[:game_results]
     erb :game
   end
 
