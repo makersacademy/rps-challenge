@@ -1,5 +1,53 @@
 # RPS Challenge
 
+## Progress
+
+###Planning
+------------
+
+####Part 1 - Name registration page
+
+User Story:
+```
+I would like to register my name before playing an online game
+```
+
+Required elements:
+
+- Welcome headers.
+- "Please enter name" header.
+- Input form
+- Submit button
+
+Input:        Output:
+Name          New page that confirms name
+Submit
+
+####Part 2 - /Play page that will host the options
+```
+I would like to be able to play rock/paper/scissors
+```
+
+Require elements:
+
+- Game description headers
+- Select options for separate rock, paper and scissors options
+
+Input:      Output:
+Rock        Rock,Paper,Scissors - You win or you lose
+Paper
+Scissors
+
+
+Game Logic / Page layout
+
+If Rock -       Paper: Lose
+                Scissors: Win
+If Paper -      Scissors: Lose
+                Rock: Win
+If Scissors -   Rock: Lose
+                Paper: Win
+
 Instructions
 -------
 
