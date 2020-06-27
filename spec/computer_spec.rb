@@ -12,7 +12,6 @@ end
     select 'Rock', from: 'choice'
     click_button "submit"
     computer = Computer.new
-    allow(computer).to receive(:weapon)
     expect(page).to have_content 'Computer has selected Scissors'
   end
 end
