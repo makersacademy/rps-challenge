@@ -33,4 +33,5 @@ $ rackup
 *User story 2:*
 
 ![Welcomes the player and asks to enter a move](screenshots/Screen Shot 2020-06-27 at 15.27.06.png)
+
 ![Prints the player's move](screenshots/Screen Shot 2020-06-27 at 15.27.15.png)
