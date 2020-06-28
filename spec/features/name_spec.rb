@@ -1,4 +1,4 @@
-require '/Users/joannechen/Projects/rps-challenge/app.rb'
+require './app.rb'
 
 feature 'Enter name' do
   scenario 'after name entered' do

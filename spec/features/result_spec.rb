@@ -1,4 +1,4 @@
-require '/Users/joannechen/Projects/rps-challenge/app.rb'
+# require 'result'
 
 
 # feature 'Result!' do
