@@ -13,7 +13,6 @@ class RPS < Sinatra::Base
   post '/name' do
     @playerone = (params[:player_one_name])
     erb :start
-    #redirect '/start'
   end
  
   post '/game' do
@@ -24,6 +23,8 @@ class RPS < Sinatra::Base
   end
 
   get '/game' do
+    #@computer = Computer.new.weapon
+    #@result = Result.new
     erb :game
   end
 

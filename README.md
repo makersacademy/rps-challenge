@@ -84,3 +84,8 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+#
+### Challenge progress
+
+Have built all relevant files, written 5 tests that all pass, have used a stub to test for random output of computer selection. On the result page, the logic is not matching up with user selection and computer selection, all is output but logic does not fucntion properly. Believe it may be due to an additional object being created when computer selection is called.
