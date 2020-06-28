@@ -11,6 +11,8 @@ class Game
     calculate_winner(player_pick, computer_pick)
   end
 
+  private
+
   def computer_pick
     %w[scissors rock paper][rand(3)]
   end
