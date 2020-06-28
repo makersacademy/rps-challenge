@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/computer.rb'
+require './lib/result.rb'
 class RPS < Sinatra::Base 
   enable :sessions
   get '/' do
@@ -13,6 +14,7 @@ class RPS < Sinatra::Base
     @name = session[:name]
     @move = session[:move]
     @computer = session[:computer]
+    @result = Result.new.outcome(@move, @computer)
     erb :letsplay
   end
   post '/RPS' do

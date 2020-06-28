@@ -1,4 +1,3 @@
-
 feature 'play rps' do
   before do 
     sign_in_and_play

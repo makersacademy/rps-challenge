@@ -7,9 +7,9 @@ class Result
       (player == "Rock" && comp == "Paper")
       "The computer wins amigo!"
     elsif (player == "Scissors" && comp == "Paper") ||
-    (player == "Rock" && comp == "Scissors") ||
-    (player == "Paper" && comp == "Rock")
-    "You beat the computer amigo!"
+      (player == "Rock" && comp == "Scissors") ||
+      (player == "Paper" && comp == "Rock")
+      "You beat the computer amigo!"
     end
   end
 end
