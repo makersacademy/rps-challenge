@@ -6,12 +6,12 @@ describe Computer do
       expect(subject.rps).to eq("Scissors")
     end
     it 'should randomly select rock paper or scissors and return the result' do 
-        allow(subject).to receive(:rps).and_return("Paper")
-        expect(subject.rps).to eq("Paper")
+      allow(subject).to receive(:rps).and_return("Paper")
+      expect(subject.rps).to eq("Paper")
     end
-      it 'should randomly select rock paper or scissors and return the result' do 
-        allow(subject).to receive(:rps).and_return("Rock")
-        expect(subject.rps).to eq("Rock")
+    it 'should randomly select rock paper or scissors and return the result' do 
+      allow(subject).to receive(:rps).and_return("Rock")
+      expect(subject.rps).to eq("Rock")
     end
   end
 end

@@ -1,14 +1,14 @@
 class Result 
-  def outcome(player, computer)
-    if player == computer
+  def outcome(player, comp)
+    if player == comp
       "That's a draw!"
-    elsif (player == "Scissors" && computer == "Rock") || 
-      (player == "Paper" && computer == "Scissors") ||
-      (player == "Rock" && computer == "Paper")
+    elsif (player == "Scissors" && comp == "Rock") || 
+      (player == "Paper" && comp == "Scissors") ||
+      (player == "Rock" && comp == "Paper")
       "The computer wins amigo!"
-    else (player == "Scissors" && computer == "Paper") ||
-    (player == "Rock" && computer == "Scissors") ||
-    (player == "Paper" && computer == "Rock")
+    elsif (player == "Scissors" && comp == "Paper") ||
+    (player == "Rock" && comp == "Scissors") ||
+    (player == "Paper" && comp == "Rock")
     "You beat the computer amigo!"
     end
   end
