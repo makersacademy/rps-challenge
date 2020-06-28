@@ -1,0 +1,29 @@
+<head>
+  <style>
+  h1 {
+  border: 0.5rem outset pink;
+  border-radius: 12px;
+  font: bold 1rem sans-serif;
+  margin: 2rem;
+  padding: 1rem;
+  outline-offset: 0.5rem;
+}
+h2 {
+border: 0.5rem outset pink;
+border-radius: 12px;
+font: bold 1rem sans-serif;
+margin: 2rem;
+padding: 1rem;
+outline-offset: 0.5rem;
+}
+</style>
+</head>
+<h1>Rock, Paper, Scissors!</h1>
+<h2>Enter your name to play</h2>
+<form action="/names" method="post">
+  <label for="player_1_name">
+    Player 1 name
+  <input type="text" name="player_1_name">
+  </label>
+<input type="submit" value="Submit">
+</form>
