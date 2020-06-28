@@ -19,4 +19,32 @@ feature 'Testing routing of buttons on play page' do
     click_button "rock"
     expect(page).to have_content("Josh selected Rock")
   end
+  scenario 'User can click on the paper button and see output' do
+    sign_in
+    click_button "paper"
+    expect(page).to have_content("Josh selected Paper")
+  end
+  scenario 'User can click on the scissors button and see output' do
+    sign_in
+    click_button "scissors"
+    expect(page).to have_content("Josh selected Scissors")
+  end
+end
+
+feature 'Testing the outcome of the game for the player to know if they have won or lost' do
+  scenario 'User clicks on the rock button and sees if they have won or lost' do
+    sign_in
+    click_button "rock"
+    expect(page).to have_content("Computer selected Paper: You Lose!", "Computer selected Scissors: You Win!")
+  end
+  scenario 'User clicks on the paper button and sees if they have won or lost' do
+    sign_in
+    click_button "paper"
+    expect(page).to have_content("Computer selected Rock: You Win!", "Computer selected Scissors: You Lose!")
+  end
+  scenario 'User clicks on the scissors button and sees if they have won or lost' do
+    sign_in
+    click_button "scissors"
+    expect(page).to have_content("Computer selected Paper: You Win!", "Computer selected Rock: You Lose!")
+  end
 end

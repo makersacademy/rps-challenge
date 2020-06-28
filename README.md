@@ -63,10 +63,17 @@ Step 2 - I've now created the buttons and created a new /play page that will tak
 
 Step 3 - A test was written to allow the user to see an output on the rock button press. This was written and the functionality of a random win/lose scenario was built in using strings and the .sample to make this functionality work. Whilst this is a static setting, given more time, I would like this to be dynamic and not controlled by strings.
 
+Step 4 - Tried to write tests for win/lose scenarios but ran out of time.
 
-Tests created: 3
-Tests passed: 3
+
+Tests created: 12
+Tests passed: 9
 Test Coverage so far: 100%
+
+###Things I would like to continue to work on
+
+I'd like to continue working on this to make the tests work as well as add in the extra rules and players.
+I would also like to try and learn how to shorten my code in my app.rb so I wouldn't have things like my .sample methods in the main body of app.rb.
 
 Instructions
 -------
