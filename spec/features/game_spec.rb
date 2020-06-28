@@ -5,6 +5,8 @@ feature 'Entering a move' do
     click_button 'Submit'
     fill_in :player_move, with: 'rock'
     click_button 'Submit'
-    expect(page).to have_content 'Your move is rock'
+    expect(page).to have_content "Your move is rock"
+    expect(page).to have_content "Computer move is rock"
+    expect(page).to have_content "It's a draw!"
   end
 end

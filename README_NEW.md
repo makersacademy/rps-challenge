@@ -10,7 +10,7 @@ I would like to register my name before playing an online game - COMPLETE
 
 As a marketeer
 So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors - STARTED BUT NOT COMPLETE
+I would like to be able to play rock/paper/scissors - COMPLETE
 ```
 
 **Running the App**
@@ -19,8 +19,10 @@ I would like to be able to play rock/paper/scissors - STARTED BUT NOT COMPLETE
 $ git clone https://github.com/Dhara-95/rps-challenge
 $ cd rps-challenge
 $ bundle install
-$ rackup 
-- use localhost:9292 in web browser
+$ rackup -p 9292
+- navigate to 'localhost:9292' in web browser
+
+*100% Test Coverage*
 
 **RPS App images**
 ----
@@ -36,9 +38,9 @@ $ rackup
 
 ![Welcomes the player and asks to enter a move](screenshots/Welcomes_player_&_enters_move.png)
 
-![Prints the player's move](screenshots/Prints_players_move.png)
+![Prints the player & comp move then the result](screenshots/Prints_player_&_comp_moves_&result.png)
 
 **What next?**
 ----
 
-I started writing code that selects a computer move at random and stores it in an empty instance variable @comp_move. I would complete this challenge by writing code that prints a result, on another route, of "win", "lose" or "draw" based on the player's move and the randomized computer move. There would then be a button to redirect you back to the homepage to start a new game if you wish. 
+Overall really enjoyed this challenge and helped me to further understand the req/resp cycle. I would like to continue to refactor my code to enable sessions as well as combine some CSS code for formatting the app. An additional functionality could also be added to allow two players to play the game, rather than one player vs the computer. 
