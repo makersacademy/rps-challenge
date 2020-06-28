@@ -1,6 +1,7 @@
 require 'sinatra'
 require './lib/player'
 require './lib/game'
+require './lib/computer'
 class RPS < Sinatra::Base
   enable :sessions
 
@@ -22,18 +23,21 @@ class RPS < Sinatra::Base
     redirect '/rock'
   end
   get '/rock' do
+    @computer_move = Computer.new.random_choice
     erb :rock
   end
   post '/paper' do
     redirect '/paper'
   end
   get '/paper' do
+    @computer_move = Computer.new.random_choice
     erb :paper
   end
   post '/scissors' do
     redirect '/scissors'
   end
   get '/scissors' do
+    @computer_move = Computer.new.random_choice
     erb :scissors
   end
 
