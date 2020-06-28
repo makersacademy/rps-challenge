@@ -5,7 +5,7 @@
 ###Planning
 ------------
 
-####Part 1 - Name registration page
+###Part 1 - Name registration page
 
 User Story:
 ```
@@ -23,7 +23,7 @@ Input:        Output:
 Name          New page that confirms name
 Submit
 
-####Part 2 - /Play page that will host the options
+###Part 2 - /Play page that will host the options
 ```
 I would like to be able to play rock/paper/scissors
 ```
@@ -54,12 +54,14 @@ When a player clicks on a button on the play page, it takes the user to a page s
 On that page, there will be 2 randomized strings using .sample to control them. And the user will see their selection, the computer's selection and the win/lose statment.
 
 
-####Project Progress so far.
+###Project Progress so far.
 
 Step 1 - Setup gems and installed bundles. Created files such as the App.rb, config and first spec test. I also included the rack env requirement for my tests to pass in the spec helper.
 I've written my first test and created an index.erb to create the page and pass my first test which is a simple test to display the main header for the page.
 
 Step 2 - I've now created the buttons and created a new /play page that will take the contents of the filled form into the following page. I've written a test to expect the user's name to be taken to the next page and passed this.
+
+Step 3 - A test was written to allow the user to see an output on the rock button press. This was written and the functionality of a random win/lose scenario was built in using strings and the .sample to make this functionality work. Whilst this is a static setting, given more time, I would like this to be dynamic and not controlled by strings.
 
 
 Tests created: 3
