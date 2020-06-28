@@ -6,15 +6,15 @@ class Game
     @computer = computer
   end
 
-  def result(rps)
-  if @player == "rock" && @computer == "scissors"
-    "You won"
-  elsif @player == "scissors" && @computer == "paper"
-    "You won"
-  elsif @player == "paper" && @computer == "rock"
-    "You won"
-  else
-    "Computer won"
-  end
+  def result
+    if @player == "rock" && @computer == "scissors"
+      "You won"
+    elsif @player == "scissors" && @computer == "paper"
+      "You won"
+    elsif @player == "paper" && @computer == "rock"
+      "You won"
+    else
+      "Computer won"
+    end
   end
 end
