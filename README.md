@@ -1,22 +1,9 @@
 # RPS Challenge
 
-Instructions
--------
+This site delivers a simple Rock, Paper, Scissors game with an interactive prompt for the users name.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Userstories
+-----
 
 ```
 As a marketeer
@@ -28,59 +15,44 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Assumptions
+-------
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+* The site will only display text and buttons (no images) to meet the requirements.
+* There will be three sites, a welcome screen, a game screen and a results screen.
 
 
-As usual please start by
+Site Design
+-------
 
-* Forking this repo
-* TEST driving development of your app
+* Rock, Paper, Scissor buttons will be in spearate forms that will route to a POST for each option.
+* After executing the 'go' the site will redirect to the 'results' page that will display win, lost or draw status.
+* There will be a button to return to the game screen from the result page.
 
+Test Instruction
+-----
+* Tests are implemented using rspec and capybara gems. The tests are located in the spec folder and can be excuted by running the 'rspec' command from terminal within the project directory. 
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+Test Coverage
+-----
+```
+COVERAGE: 100.00% -- 35/35 lines in 2 files
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+Usage Example
+-----
+* Welcome Page - Enter your name and click
+![Welcome Page](images/welcome.png?raw=true "Welcome Page")
+
+* Game Page - Click rock, paper or scissors
+![Game Page](images/game.png?raw=true "Game Page")
+
+* Result Page - Click, 
+![Results Page](images/result.png?raw=true "Results Page")
+
+Follow Up
+-----
+
+* Game class needs to be split, it currently stores the player name and handles the game.  This does not comply with SRP.
+
+
