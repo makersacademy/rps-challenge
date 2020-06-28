@@ -11,12 +11,6 @@ class Game
     calculate_winner(player_pick, computer_pick)
   end
 
-  private
-
-  def computer_pick
-    %w[scissors rock paper][rand(3)]
-  end
-
   def calculate_winner(player1_pick, player2_pick)
     @result = case [player1_pick, player2_pick]  
     when ['rock', 'rock'], ['paper', 'paper'], ['scissors', 'scissors']
@@ -28,4 +22,10 @@ class Game
     end
   end
   
+  private
+
+  def computer_pick
+    %w[scissors rock paper][rand(3)]
+  end
+
 end
