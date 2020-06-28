@@ -42,7 +42,7 @@ $ rackup -p 9292
 
 ![Welcomes the player and asks to enter a move](screenshots/Welcomes_player_&_enters_move.png)
 
-![Prints the player & comp move then the result](screenshots/Prints_player_&_comp_moves_&result.png)
+![Prints the player & comp move then the result](screenshots/Prints_moves_&_winner.png)
 
 **What next?**
 ----
