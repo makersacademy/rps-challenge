@@ -1,10 +1,5 @@
 class Game
 
-#   def computer
-#     @computer = ["rock", "paper", "scissors"].sample
-#   end
-
-
   def play(choice)
 
     computer = ["rock", "paper", "scissors"].sample

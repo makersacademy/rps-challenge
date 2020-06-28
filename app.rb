@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require '/Users/joannechen/Projects/rps-challenge/lib/game.rb'
+require 'lib/game.rb'
 
 class RPS < Sinatra::Base
 enable :sessions
