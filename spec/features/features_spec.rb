@@ -17,4 +17,5 @@ feature 'Enter names' do
     click_button('scissors')
     expect(page).to have_content 'You chose scissors'
   end
+
 end

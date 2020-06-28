@@ -37,5 +37,4 @@ class RPS < Sinatra::Base
     erb :scissors
   end
 
-
 end
