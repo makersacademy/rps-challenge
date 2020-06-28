@@ -16,17 +16,15 @@ class RPS < Sinatra::Base
   end
  
   post '/game' do
-    @computer = Computer.new
-    @result = Result.new
     @playerchoice = (params[:choice])
+    @computer = Computer.new.weapon
+    @result = Result.new.result(@playerone, @computer)
     erb :game
   end
 
-  get '/game' do
-    #@computer = Computer.new.weapon
-    #@result = Result.new
-    erb :game
-  end
+  # get '/game' do
+  #   erb :game
+  # end
 
   run! if app_file == $0
 end
