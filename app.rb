@@ -6,10 +6,16 @@ class RPS < Sinatra::Base
   end
   post '/names' do
     session[:name] = params[:Name]
-    redirect '/names'
+    redirect '/play'
   end
-  get '/names' do
+  get '/play' do
     @name = session[:name]
+    @move = session[:move]
+    p @move
     erb :letsplay
+  end
+  post '/RPS' do
+    session[:move] = params[:move]
+    redirect '/play'
   end
 end
