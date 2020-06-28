@@ -6,7 +6,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/names' do
-    @name = params[:name]
+    @player_name = params[:player_name]
     erb :game
   end
 
