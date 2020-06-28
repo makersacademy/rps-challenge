@@ -17,9 +17,13 @@ I would like to be able to play rock/paper/scissors - COMPLETE
 ----
 
 $ git clone https://github.com/Dhara-95/rps-challenge
+
 $ cd rps-challenge
+
 $ bundle install
+
 $ rackup -p 9292
+
 - navigate to 'localhost:9292' in web browser
 
 *100% Test Coverage*
