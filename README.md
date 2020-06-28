@@ -48,6 +48,11 @@ If Paper -      Scissors: Lose
 If Scissors -   Rock: Lose
                 Paper: Win
 
+Ver.1 Idea
+
+When a player clicks on a button on the play page, it takes the user to a page specific for that play. /rock, /paper, /scissors.
+On that page, there will be 2 randomized strings using .sample to control them. And the user will see their selection, the computer's selection and the win/lose statment.
+
 
 ####Project Progress so far.
 
