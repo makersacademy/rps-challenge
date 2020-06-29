@@ -1,22 +1,34 @@
-# RPS Challenge
+# Rock Paper Scissors
 
-Instructions
--------
+RPS is a well known simple logic game, where two players at the same time choose one of Rock, Paper or Scissors. 
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Rock beats Scissors
+Scissors beats Paper
+Paper beats Rock
 
-Task
-----
+In this game, the user can play against the computer inside a website.
 
-Knowing how to build web applications is getting us almost there as web developers!
+## Website
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+The LocalHost should be used to run this program.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+## Usage
+
+To see the code in action Clone the directory, and perform the following in the terminal:
+
+```bash
+Rackup
+```
+
+Then open your web browser into the resulting terminal. 
+
+The code for Rock Paper Scissors can also be run by going to 
+
+```bash
+irb './lib/rps.rb'
+```
+
+## Userstories
 
 ```
 As a marketeer
@@ -28,59 +40,42 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+## Assumptions
+* Game will be best of of 3
+* That the game will be versus a computer
+* The game will be allowed to restart
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+## Design
+![Design](/images/RPS.png)
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+## Test Coverage
+```
+Test Coverage: 85.62% -- 85/100 lines in 5 files
+```
+## Methods
 
 ```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+game.new("name") # creates a new game with default Player2 as computer
+game.play("Rock") # plays a round of a game with Player1 choice as "Rock" and computer as random
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+## How to Run the Tests
+
+Tests are located within /spec folder. As the website is built out we would expect to have more specific testing on the website.
+
+## Contributing
+As this is a weekend challenge, I have done this alone. 
+
+## Follow Up
+
+We would like to include:
+- An option to play with another player
+- Another game to play (eg. Noughts and Crosses)
+- Store the player so that they can play multiple games
+- Store the scores of each game of three to have an overall leaderboard
+
+<p align="center">
+    <a href="https://https://makers.tech/">
+        <img src="https://img.shields.io/badge/-created%40makers-red"
+            alt="Made @ Makers"></a>
+</p>
