@@ -6,7 +6,6 @@ feature "a winner is announced" do
     select 'Scissors', from: 'choice'
     click_button "submit"
     computer = Computer.new
-    p computer.weapon
-    expect(page).to have_content 'You lose!'
+    expect(page).to have_content "It's a Draw!"
   end
 end
