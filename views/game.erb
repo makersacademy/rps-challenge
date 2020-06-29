@@ -1,0 +1,29 @@
+<% if @game.player_1.points == 2 || @game.player_2.points == 2 %>
+<h1> GAME OVER! </h1>
+<h1><%= @game.winner %></h1>
+<h2><%= @game.player_1.name %>: <%= @game.player_1.points %> </h2>
+<h2><%= @game.player_2.name %>: <%= @game.player_2.points %> </h2>
+<form action="/">
+<input type="submit" value="New Game" id="New Game">
+
+<% else %>
+<h1>Let the battle commence!</h1>
+
+<h1><%= @game.play(@RPS_input) %> </h1>
+
+<h1><%= @game.player_1.name %> vs <%= @game.player_2.name %> </h1>
+<h2><%= @game.player_1.name %>: <%= @game.player_1.points %> </h2>
+<h2><%= @game.player_2.name %>: <%= @game.player_2.points %> </h2>
+
+<iframe src="https://giphy.com/embed/Z7syBJH78V0oo" width="480" height="264" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cheezburger-other-yikes-Z7syBJH78V0oo"></a></p>
+
+<form action="/action" method="post">
+  <label for="Input">Rock, Paper or Scissors?</label>
+    <select name="RPS_input" id="choice">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+    </select>
+  </label>
+  <input type="submit" value="Submit">
+<% end %>
