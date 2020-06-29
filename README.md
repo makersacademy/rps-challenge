@@ -1,86 +1,54 @@
-# RPS Challenge
+# Rock, Paper, Scissors Game
+This challenge forms part of my weekend submission for Week 3 of the Makers Academy program. The game is a single player game that is designed to ease the stress/boredom of the marketing department.
 
-Instructions
--------
+## Features
+The game is a single player game, where a player can play against a computer. The player selects their choice first and then the computer will draw their choice, without reference to the player's choice. The winner is then chosen based upon the well-known rules of Rock, Paper and Scissors. 
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+These rules are:
+* Rock smashes scissors <Rock wins>
+* Scissors cuts paper <Scissors Win>
+* Paper wraps rock -> <Paper wins>
 
-Task
-----
+## Playing the game:
+1. In the terminal, ensure that you are in the <root> directory.
+2. Rackup the application: <rackup -p {enter 4 digit port number}>
+3. Navigate to the localhost page <localhost:{you're 4 digit port number}>
+4. Enter in your name
+5. Play the game
+6. Choose your *weapon* 
+7. Play the game
 
-Knowing how to build web applications is getting us almost there as web developers!
+## Future development
+The game features could be developed further by:
+* creating the ability for multiple players to play against each other
+* allowing for the creation of users to track the score
+* enabling users to set and play multiple rounds of the game in each match
+* creating a tally of the historical scores
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+The usability of the game could be developed by:
+* hosting the program on a server for users to play on different computers
+* enhancing the CSS to include hover buttons, animation, colour styling and a visual design language
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+## Architecture
+The program is built inside a rack-compliant structure. The model is driven by <Ruby> and the application leverages <Sinatra>. 
 
-```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+## Design
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+### System Design
+The game leverages the Model, View, Controller methodology.
 
-Hints on functionality
+<Model> As the game is relatively simple the game was designed using a **domain model** that contains a single Class (Game). This class is responsible for playing the game but holds no other information, therefore it passes the *Single Responsibility Principal*.  
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+<Controller> The controller contains a number of simple routes that redirect the player as they progress through the page. Post methods are used to prevent any sensitive information being made explicitly available.
 
+<Views> The views are built in HTML using CSS. The views have a significant opportunity for improvement through the application of styling; this was not completed at the time but is an opportunity for future development
 
-As usual please start by
+## Testing
+The tests are run through <rSpec> with the Capybara DSL included to run feature tests. 
 
-* Forking this repo
-* TEST driving development of your app
+### Running the tests
+The tests can be run by running the command <rSpec> in the root directory.
 
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+### Test performance
+The tests have achieved 100% passes & 100% coverage.
+Test helpers are used to keep the code <DRY>.

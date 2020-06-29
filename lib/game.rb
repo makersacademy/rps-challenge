@@ -11,12 +11,8 @@ class Game
       "Scissors" => "Paper"
     }
 
-    if player_choice == computer
-      "Result: draw"
-    elsif result_hash[player_choice] == computer
-      "Result: Player wins"
-    elsif result_hash[computer] == player_choice
-      "Result: Computer wins"
-    end
+    return "Result: draw" if player_choice == computer
+    return "Result: Player wins" if result_hash[player_choice] == computer
+    "Result: Computer wins" if result_hash[computer] == player_choice
   end
 end
