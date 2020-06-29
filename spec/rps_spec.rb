@@ -7,7 +7,7 @@ describe 'RPS' do
   end
 
   describe '#result' do
-     it 'returns a string if its a draw' do
+    it 'returns a string if its a draw' do
       expect(subject.result("rock", "rock")).to eq("It's a draw!")
     end
     
@@ -20,4 +20,3 @@ describe 'RPS' do
     end
   end
 end
-

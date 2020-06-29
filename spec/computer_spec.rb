@@ -6,17 +6,17 @@ describe Computer do
   end
 
   it 'randomly selects the move scissors' do
-      srand(4)
-      expect(subject.computer_move).to eq('scissors')
-    end
+    srand(4)
+    expect(subject.computer_move).to eq('scissors')
+  end
 
-    it 'randomly selects the move paper' do
-      rand(3)
-      expect(subject.computer_move).to eq('paper')
-    end
+  it 'randomly selects the move paper' do
+    rand(3)
+    expect(subject.computer_move).to eq('paper')
+  end
 
-    it 'randomly selects the move rock' do
-      rand(2)
-      expect(subject.computer_move).to eq('rock')
-    end
+  it 'randomly selects the move rock' do
+    rand(2)
+    expect(subject.computer_move).to eq('rock')
+  end
 end
