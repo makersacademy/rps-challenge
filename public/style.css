@@ -1,0 +1,12 @@
+body {background-color: rgb(205, 231, 247);
+      margin: middle;}
+h1   {color: #6AB3E7;
+    letter-spacing: 10px;
+    text-align: center;
+    padding: 20px;
+    margin: middle;}
+p   {color: black;
+    padding-top: 20px;
+    letter-spacing: 2px;
+    text-indent: 60px;
+    margin: middle;}
