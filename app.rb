@@ -30,6 +30,7 @@ class Game < Sinatra::Base
     @player_move = session[:player_move]
     @computer_move = session[:computer_move]
     @game_results = session[:game_results]
+    @winner = @game_results.check_results(@player_move, @computer_move)
     erb :game
   end
 
