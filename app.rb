@@ -43,5 +43,9 @@ class RockPaperScissor < Sinatra::Base
     end
   end
 
+  post '/results' do
+    redirect '/'
+  end
+
   run! if app_file == $0
 end
