@@ -1,7 +1,12 @@
 h1 {
   font-family: 'Permanent Marker', cursive;
+  color: #94D1BE;
 }
 
 h2 {
   font-family: 'Permanent Marker', cursive;
+}
+
+body {
+  background-color: #29335c;
 }
