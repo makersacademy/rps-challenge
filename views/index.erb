@@ -6,15 +6,17 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="/style.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="text-center jumbotron">
+  <div class="container">
+    <div class>
+    <div class="text-center">
       <h1> Welcome to Rock Paper Scissors! </h1>
     </div>
-    <div class="text-secondary text-center">
+    <div class="text-secondary text-center alert alert-info">
       <h2> Enter your name to start. </h2>
     </div>
 
@@ -22,7 +24,7 @@
   <form action="/start" method="post" class="text-center">
     <label for="name">Enter name: </label>
     <input type="text" id="name" name="player_name">
-    <input type="submit" value="Go!">
+    <input type="submit" value="Go!" class="btn btn-primary">
   </form>
 
   </div>

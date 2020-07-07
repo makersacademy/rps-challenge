@@ -1,6 +1,6 @@
 h1 {
-  font-family: 'Permanent Marker', cursive;
-  color: #94D1BE;
+  font-family: 'Lemonada', cursive;
+  color: #20BF55;
 }
 
 h2 {
@@ -8,5 +8,9 @@ h2 {
 }
 
 body {
-  background-color: #29335c;
+  background-color: #01BAEF;
+}
+
+font {
+font-family: 'Permanent Marker', cursive;
 }
