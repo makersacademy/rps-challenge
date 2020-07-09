@@ -42,9 +42,7 @@ class RpsGame < Sinatra::Base
   get '/outcome' do
     session[:choice] = params[:choice]
     @name = session[:name]
-    @game = Game.new(@name)
-    @game.computer_turn
-    @game.outcome(session[:choice])
+    @game = Game.new(@name).outcome(session[:choice])
     erb(:outcome)
   end
 
