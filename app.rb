@@ -33,21 +33,30 @@ class RpsGame < Sinatra::Base
     erb(:play)
   end
 
-  get '/play_multi' do
-    @player_1 = session[:player_1_name]
-    @player_2 = session[:player_2_name]
-    erb(:play_multi)
-  end
-
   get '/outcome' do
     session[:choice] = params[:choice]
     @name = session[:name]
-    @game = Game.new(@name).outcome(session[:choice])
+    @game = Game.new(@name)
+    @game.outcome(session[:choice])
+    p @game
     erb(:outcome)
   end
 
-  get '/outcome_multi' do
+  get '/play_multi' do
+    @player_1 = session[:player_1_name]
+    @player_2 = session[:player_2_name]
+    erb(:play_multi_player1)
+  end
+
+  get '/switch_player' do
     session[:choice_1] = params[:choice_1]
+    @player_1 = session[:player_1_name]
+    @player_2 = session[:player_2_name]
+    erb(:play_multi_player2)
+  end
+
+  get '/outcome_multi' do
+    session[:choice_1]
     session[:choice_2] = params[:choice_2]
     @player_1 = session[:player_1_name]
     @player_2 = session[:player_2_name]

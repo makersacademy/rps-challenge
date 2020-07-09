@@ -27,19 +27,16 @@
   <center>
   <div>  <h1> Hi <%= @player_1 %> and <%= @player_2 %>! </h1> </div>
 
-    <h1> Type Rock, Paper or Scissors to play! </h1>
+    <h1> Now it's <%= @player_2 %>'s turn! </h1>
+    <h1> Type Rock, Paper or Scissors! </h1>
 
 
   <form action="/outcome_multi" method="get">
-    <label for="choice_1">
-        Player 1:
-      <input type="text" name="choice_1">
-    </label>
-
     <label for="choice_2">
       Player 2:
       <input type="text" name="choice_2">
     </label>
+
     <input type="submit" value="Play!">
   </form>
 

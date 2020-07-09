@@ -1,6 +1,6 @@
 class Game
-  attr_reader :rps, :computer_choice, :player_1, :player_2
-  attr_accessor :winner
+  attr_reader :rps, :player_1, :player_2
+  attr_accessor :winner, :computer_choice
 
   def initialize(player, player_2 = "Computer")
     @rps = ["Rock", "Paper", "Scissors"]
@@ -11,12 +11,15 @@ class Game
   end
 
   def computer_turn
+    p "called!"
     @computer_choice = @rps.sample
   end
 
   def outcome(player_1_choice, player_2_choice = "")
     computer_turn
+    p @computer_choice
     player_2_choice = @computer_choice if player_2_choice == ""
+    p player_2_choice
     choice_formatting(player_1_choice, player_2_choice)
 
     return @winner = "It's a draw!" if player_1_choice == player_2_choice
