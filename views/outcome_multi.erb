@@ -22,8 +22,8 @@
 </head>
 
 <center>
-  <div>  <h1> <%= @name %>: <%= session[:choice] %></h1> </div>
-  <div>  <h1> Computer: <%= @game.computer_choice %> </h1> </div>
+  <div>  <h1> <%= @player_1 %>: <%= session[:choice_1] %></h1> </div>
+  <div>  <h1><%= @player_2 %>: <%= session[:choice_2] %> </h1> </div>
   <% if @game.winner == "It's a draw!" %>
   <div>  <h1> <%= @game.winner %> </h1> </div>
   <% else %>
