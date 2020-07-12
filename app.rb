@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -19,10 +20,12 @@ class RPS < Sinatra::Base
 
   post '/result' do
     session[:move] = params[:move]
+    @computer = Computer.create
     redirect '/result'
   end
 
   get '/result' do
+    @computer = Computer.instance
     @player = session[:player]
     @move = session[:move]
     erb(:result)

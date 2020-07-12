@@ -10,5 +10,6 @@ feature 'Selection' do
     sign_in
     click_button 'rock'
     expect(page).to have_content 'Catriona chose rock'
+    expect(page).to have_content 'Computer chose '
   end
 end
