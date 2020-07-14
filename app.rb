@@ -17,19 +17,20 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
-  get '/play' do
+  before do
     @game = session[:game]
+  end
+
+  get '/play' do
     erb(:play)
   end
 
   post '/result' do
-    @game = session[:game]
     @game.player.move(params[:move])
     redirect '/result'
   end
 
   get '/result' do
-    @game = session[:game]
     erb(:result)
   end
 
