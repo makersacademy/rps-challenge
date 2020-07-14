@@ -1,13 +1,9 @@
 class Computer
-  def self.create
-    @computer = Computer.new
-  end
+  def selection(seed = nil)
+    if seed != nil
+      srand(seed)
+    end
 
-  def self.instance
-    @computer
-  end
-  
-  def selection
     ['rock', 'paper', 'scissors'].sample
   end
 end
