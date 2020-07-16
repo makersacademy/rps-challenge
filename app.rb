@@ -12,7 +12,7 @@ class RPS < Sinatra::Base
 
   post '/play' do
     player = Player.new(params[:player])
-    computer = Computer.new
+    computer = Computer.new('computer')
     session[:game] = Game.new(player, computer)
     redirect '/play'
   end
