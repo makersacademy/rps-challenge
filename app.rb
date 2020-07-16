@@ -31,6 +31,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+    @game.who_wins
     erb(:result)
   end
 
