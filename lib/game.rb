@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player, :computer, :winner
+  attr_reader :player, :computer, :winner, :draw
 
   def initialize(player, computer)
     @player = player
@@ -12,9 +12,9 @@ class Game
     @player.selection == "scissors" && @computer.selection == "paper" ||
     @player.selection == "paper" && @computer.selection == "rock"
       @winner = @player
-    elsif @computer.selection == "rock" && @player.selection == "scissors" ||
-    @computer.selection == "scissors" && @player.selection == "paper" ||
-    @computer.selection == "paper" && @player.selection == "rock"
+    elsif @player.selection == "scissors" && @computer.selection == "rock" ||
+    @player.selection == "paper" && @computer.selection == "scissors" ||
+    @player.selection == "rock" && @computer.selection == "paper"
       @winner = @computer
     else
       @winner

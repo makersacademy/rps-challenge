@@ -3,5 +3,9 @@ body { background-color: #99ccff; }
 </style>
 
 <h3><%= @game.player.name %> chose <%= @game.player.selection %></h3>
-<h3>Computer chose <%= @game.computer.selection %></h3>
-The winner is <%= @game.winner %>
+<h3><%= @game.computer.name %> chose <%= @game.computer.selection %></h3>
+<% if @game.winner == nil %>
+It's a draw!
+<% else %>
+The winner is <%= @game.winner.name %>
+<% end %>
