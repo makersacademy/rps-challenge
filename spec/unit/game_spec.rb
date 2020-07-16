@@ -36,7 +36,7 @@ describe Game do
       allow(game.player).to receive(:selection) { 'paper' }
       allow(game.computer).to receive(:selection) { 'paper' }
       game.who_wins
-      expect(game.draw).to eq true
+      expect(game.winner).to eq nil
     end
   end
 end
