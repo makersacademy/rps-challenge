@@ -1,0 +1,17 @@
+<style>
+body { background-color: #99ccff; }
+</style>
+
+<h3><%= @game.player.name %> chose <%= @game.player.selection %></h3>
+<h3><%= @game.computer.name %> chose <%= @game.computer.selection %></h3>
+<% if @game.winner == nil %>
+<h3>It's a draw!</h3>
+<% else %>
+<h3>The winner is <%= @game.winner.name %></h3>
+<% end %>
+<form action="/play">
+  <input type="submit" value="Play Again">
+</form>
+<form action="/">
+  <input type="submit" value="Start Again">
+</form>
