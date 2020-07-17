@@ -1,15 +1,16 @@
 class Computer
-  attr_reader :name
+  attr_reader :name, :selection
 
   def initialize(name)
     @name = name
+    @selection = nil
   end
-  
-  def selection(seed = nil)
+
+  def choice(seed = nil)
     if seed != nil
       srand(seed)
     end
 
-    ['rock', 'paper', 'scissors'].sample
+    @selection = ['rock', 'paper', 'scissors'].sample
   end
 end

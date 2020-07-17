@@ -27,6 +27,7 @@ class RPS < Sinatra::Base
 
   post '/result' do
     @game.player.move(params[:move])
+    @game.computer.choice
     redirect '/result'
   end
 

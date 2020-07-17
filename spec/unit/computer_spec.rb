@@ -11,7 +11,8 @@ describe Computer do
 
   describe '#selection' do
     it 'makes a random selection' do
-      expect(computer.selection(1)).to eq 'paper'
+      computer.choice(1)
+      expect(computer.selection).to eq 'paper'
     end
   end
 end
