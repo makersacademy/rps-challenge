@@ -1,14 +1,27 @@
-# RPS Challenge
+[![Build Status](https://travis-ci.org/cmb84scd/rps-challenge.svg?branch=master)](https://travis-ci.org/cmb84scd/rps-challenge)
 
-Instructions
--------
+## This is my RPS challenge!
+This is Makers Academy's week 3 weekend challenge.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+### How to use
+To use clone this repo and then do the following:
+```
+run 'bundle'
+run 'ruby app.rb'
+open browser and go to localhost:XXXX
+nb: XXXX is the port number eg 4567
+```
 
+### User stories and requirements
+These are <a href="#userstories">here</a>
+
+### How it went
+Initially it was going well but I ended up not getting very far due an error. I was calling `post` using `value` instead of `method` in play.erb so of course it wouldn't work. During code review the next day, we located the problem which I corrected and all was good again. However, I don't have time to do anymore work on it right now but will continue with it after the course has finished. Even though I didn't get very far it was a good learning experience and I'll definitely be more careful when calling post routes in the future!
+
+##### Edit: 17/7/2020
+I now have a working single player game and I'm happy with it. I enjoyed going back to this and working on it as I learnt a lot from doing it. Again, I hit a bit of a problem around the winning logic and following a little help from a fellow Maker, we worked out what I'd done wrong which was not calling a method in 2 places! Once I'd sorted this I then needed to do a few minor amendments such as adding an initialize method to the computer class, to ensure it all worked properly. I then discovered through playing that the result was often incorrect and I worked out this was due to the way I was doing the computer selection. Another minor change mostly fixed this though for some reason it doesn't always pick up it's a draw if you play it multiple times. Not sure why so something to look at, at some point. Overall, really pleased I went back to this as I learnt a lot from doing it.
+
+<a name="userstories"></a>
 Task
 ----
 
@@ -35,13 +48,6 @@ Hints on functionality
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
 
 ## Bonus level 1: Multiplayer
 
