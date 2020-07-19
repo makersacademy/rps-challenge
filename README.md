@@ -1,5 +1,7 @@
 # RPS Challenge
 
+[![Build Status](https://travis-ci.org/collier-jo/rps-challenge.svg?branch=master)](https://travis-ci.org/collier-jo/rps-challenge)
+
 ## Basic Rules
 
 - Rock beats Scissors
