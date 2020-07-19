@@ -64,3 +64,4 @@ Functionality
 |choice| random|
 |Winner| calculate|
 || compmove| 
+
