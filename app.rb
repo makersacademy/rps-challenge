@@ -20,33 +20,21 @@ class RockPaperScissors < Sinatra::Base
     erb(:move)
   end 
 
-  get "/outcome_rock" do
-    @move = "Rock"
-    testing = Winner.new
-    @result = testing.calculate_result(@move)
-    @comp_move = testing.compmove
-    erb(:outcome)
+  post "/outcome" do
+    p params
+    session[:user_choice] = params[:user_choice]
+    redirect "/outcome"
   end 
 
-  get "/outcome_paper" do
-    @move = "Paper"
-    testing = Winner.new
-    @result = testing.calculate_result(@move)
-    @comp_move = testing.compmove
-    erb(:outcome)
-  end 
-
-
-  get "/outcome_scissors" do
-
-    @move = "Scissors"
+  get "/outcome" do 
+    @move = session[:user_choice]
     testing = Winner.new
     @result = testing.calculate_result(@move)
     @comp_move = testing.compmove
 
     erb(:outcome)
   end 
-
+  
   run! if app_file == $0
 
 end 

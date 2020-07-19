@@ -29,7 +29,6 @@ feature '/outcome' do
   scenario "Draw" do 
     srand(2)
 
-
     sign_in_and_play
     click_button("Rock")
 
@@ -46,7 +45,7 @@ feature '/outcome' do
   end 
 
   scenario "Loser" do 
-    srand(1)
+    srand(100000)
 
     sign_in_and_play
     click_button("Rock")

@@ -2,14 +2,9 @@
 
 <h2> Lets begin! Pick Rock, Paper or Scissors... </h1>
 
-<form action=/outcome_rock method="get">
-  <input type="submit" value="Rock">
+<form action="/outcome" method="post">
+  <input type="submit"  name="user_choice" value="Rock">
+  <input type="submit" name="user_choice" value="Paper">
+  <input type="submit" name="user_choice" value="Scissors">
 </form>
 
-<form action=/outcome_paper method="get">
-  <input type="submit" value="Paper">
-</form>
-
-<form action=/outcome_scissors method="get">
-  <input type="submit" value="Scissors">
-</form>

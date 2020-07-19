@@ -21,4 +21,11 @@ feature 'Homepage' do
     visit("/")
     expect(page).to have_button("begin")
   end 
+
+
+
+
+
+
+  
 end 
