@@ -1,7 +1,22 @@
-<%= @player_name %>
-<h1> Choose your move! </h1>
-<form action="/choice" method="post">
-  <input type="submit" name="move" value="rock">
-  <input type="submit" name="move" value="paper">
-  <input type="submit" name="move" value="scissors">
-</form>
+<!DOCTYPE html>
+<head>
+  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  
+  <span>
+    <h1><%= @player_name %></h1>
+    <form action="/choice" method="post">
+      <div>
+        <label for="Action">Choose your move!</label>
+      </div>
+      <div>
+        <input class="button" type="submit" value="Rock" name="move">
+        <input class="button" type="submit" value="Paper" name="move">
+        <input class="button" type="submit" value="Scissors" name="move">
+      </div>
+    </form>
+  </span>
+</body>
+</html>
