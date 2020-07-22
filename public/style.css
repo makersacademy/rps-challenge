@@ -1,0 +1,56 @@
+html, body {
+  font-family: Helvetica;
+  margin: 0;
+  height: 100%;
+  color: rgb(49, 49, 49);
+  font-size: 25px;
+}
+
+body {
+  display: table;
+  width: 100%;
+}
+
+label {
+  font-size: 50px;
+}
+
+.input-name {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.choose-move {
+  margin-bottom: 25px;
+}
+
+h1 {
+  text-shadow: 2px 2px rgb(49, 49, 49);
+  color: rgb(20, 216, 183);
+  font-size: 75px;
+  margin: 15px;
+}
+
+body > span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.button {
+  background-color: rgb(20, 216, 183);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-color: rgb(49, 49, 49);
+  border-width: 3px;
+  width: 200px;
+  color: white;
+  padding: 15px 32px;
+  margin: 5px;
+  text-align: center;
+  font-size: 25px;
+}
+
+div {
+  padding: 10px;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  
+  <span>  
+    <h1>Welcome!</h1>
+    <form action='/name' method="post">
+      <div>
+        <label for="name">Enter your name:</label>
+      </div>
+      <div>
+      <input class="input-name" type="text" name="name">
+      </div>
+      <div>
+      <input class="button" type="submit" value="Submit">
+      </div>
+    </form>
+  </span>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <span>
+    <h1>You chose <%= @move %></h1>
+    <form action="/result" method="get">
+      <input class="button" type="submit" value="Result">
+    </form>
+  </span>
+</body>
+</html>

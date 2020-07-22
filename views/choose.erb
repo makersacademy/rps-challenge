@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  
+  <span>
+    <h1><%= @player_name %></h1>
+    <form action="/choice" method="post">
+      <div class="choose-move">
+        <label for="Action">Choose your move!</label>
+      </div>
+      <div>
+        <input class="button" type="submit" value="rock" name="move">
+        <input class="button" type="submit" value="paper" name="move">
+        <input class="button" type="submit" value="scissors" name="move">
+      </div>
+    </form>
+  </span>
+</body>
+</html>
