@@ -1,8 +1,11 @@
 require 'sinatra/base'
 require_relative '../lib/game.rb'
 
+
+
 class RPSWeb < Sinatra::Base 
   enable :sessions
+  set :public_folder, File.dirname(__FILE__) + '/public'
 
   get '/' do
     erb :index
