@@ -117,6 +117,10 @@ Eventually this code became obselete, but this is an example of how I used TDD t
 
 I used the Model-View-Controller setup to structure my application. This meant I kept all the front end visual information such as HTML in a views folder. I kept the controller as skinny as possible, minimising the logic in rsp_web.rb, my controller file. Then I extracted all the logic to the model, which is kept in the lib folder.
 
+### Styling and deployment
+
+I came back to this project after Makers Academy course was completed to style and deploy it so it can have a space on my portfolio.
+
 Below are the instructions I was given to create this application:
 
 -----------------
