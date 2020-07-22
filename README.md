@@ -23,6 +23,8 @@ localhost:9292
 ```
 ├── app
 │   └── rps_web.rb
+│   └── public
+│       └── style.css
 │   └── views
 │       └── index.erb
 |       └── choice.erb
