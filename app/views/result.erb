@@ -6,7 +6,7 @@
 <body>
   
   <span>
-  <h1>You <%= @game.result %></h1>
+  <h1>You <%= @game.result %>!</h1>
     <h2>The computer chose <%= @game.computer.move %></h2>
       <form action="/choose" method="get">
         <input class="button" type="submit" value="Play again">
