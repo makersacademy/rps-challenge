@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.com/tommyrharper/rps-challenge.svg?branch=master)](https://travis-ci.com/tommyrharper/rps-challenge) <img src="https://img.shields.io/badge/coverage-100%25-brightgreen" alt=""> <img src="https://img.shields.io/badge/RuboCop-No%20Offences-brightgreen" alt="">
 # RPS Challenge
 
+Play now at: [https://toms-rock-paper-scissors.herokuapp.com/](https://toms-rock-paper-scissors.herokuapp.com/)
+
 Here is a simple rock, paper, scissors game/web app, you can download and play in your browser. 
 
 ## Instructions
@@ -21,15 +23,14 @@ localhost:9292
 ## File system
 
 ```
-├── app
-│   └── rps_web.rb
-│   └── public
-│   │   └── style.css
-│   └── views
-│       └── index.erb
-|       └── choice.erb
-|       └── choose.erb
-|       └── result.erb
+└── rps_web.rb
+└── public
+│   └── style.css
+└── views
+│   └── index.erb
+│   └── choice.erb
+│   └── choose.erb
+│   └── result.erb
 ├── lib
 │   ├── game.rb
 │   ├── computer.rb
