@@ -12,7 +12,8 @@ body {
 }
 
 .red-text, h1 {
-  color: rgb(223, 19, 70);
+  /* color: rgb(223, 19, 70); */
+  color: rgb(20, 216, 183);
 }
 
 body > span {
@@ -22,7 +23,8 @@ body > span {
 }
 
 .button {
-  background-color: rgb(223, 19, 70);
+  /* background-color: rgb(223, 19, 70); */
+  background-color: rgb(20, 216, 183);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   width: 150px;
   border: none;
