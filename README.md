@@ -21,15 +21,14 @@ localhost:9292
 ## File system
 
 ```
-├── app
-│   └── rps_web.rb
-│   └── public
-│   │   └── style.css
-│   └── views
-│       └── index.erb
-|       └── choice.erb
-|       └── choose.erb
-|       └── result.erb
+└── rps_web.rb
+└── public
+│   └── style.css
+└── views
+│   └── index.erb
+│   └── choice.erb
+│   └── choose.erb
+│   └── result.erb
 ├── lib
 │   ├── game.rb
 │   ├── computer.rb
