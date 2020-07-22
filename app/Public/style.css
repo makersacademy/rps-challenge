@@ -11,9 +11,20 @@ body {
   width: 100%;
 }
 
-.red-text, h1 {
-  /* color: rgb(223, 19, 70); */
+label {
+  font-size: 50px;
+}
+
+.input-name {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+h1 {
   color: rgb(20, 216, 183);
+  font-size: 75px;
+  margin: 20px;
 }
 
 body > span {
@@ -23,15 +34,16 @@ body > span {
 }
 
 .button {
-  /* background-color: rgb(223, 19, 70); */
   background-color: rgb(20, 216, 183);
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  width: 150px;
-  border: none;
+  /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+  border-color: rgb(49, 49, 49);
+  border-width: 3px;
+  width: 200px;
   color: white;
   padding: 15px 32px;
+  margin: 5px;
   text-align: center;
-  font-size: 16px;
+  font-size: 25px;
 }
 
 div {
