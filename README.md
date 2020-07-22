@@ -121,6 +121,8 @@ I used the Model-View-Controller setup to structure my application. This meant I
 
 I came back to this project after Makers Academy course was completed to style and deploy it so it can have a space on my portfolio.
 
+To do this first a made a directory ```public```. Then I created a CSS file ```styles.css``` and imported that into my application pages.
+
 Below are the instructions I was given to create this application:
 
 -----------------
