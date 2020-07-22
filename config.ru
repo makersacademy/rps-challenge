@@ -1,2 +1,2 @@
-require './app/rps_web.rb'
+require './rps_web.rb'
 run RPSWeb 
