@@ -2,7 +2,6 @@ require "sinatra/base"
 require "./lib/player"
 
 class RockPaperScissors < Sinatra::Base
-  enable :sessions
 
   get "/" do
     erb :index
@@ -20,16 +19,22 @@ class RockPaperScissors < Sinatra::Base
 
   get "/rock" do
     @player_1_name = $player_1.name
+    @computer = Player.new("Computer")
+    @computer_move = @computer.random_selection
     erb :rock
   end
 
   get "/paper" do
     @player_1_name = $player_1.name
+    @computer = Player.new("Computer")
+    @computer_move = @computer.random_selection
     erb :paper
   end
 
   get "/scissors" do
     @player_1_name = $player_1.name
+    @computer = Player.new("Computer")
+    @computer_move = @computer.random_selection
     erb :scissors
   end
 
