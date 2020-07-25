@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/opponent'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -10,12 +12,14 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    @player_name = params[:player_name]
+    $player = Player.new(params[:player_name])
     erb(:play)
   end
 
   post '/result' do
-    @option = params[:option]
+    $option = params[:option]
+    $opponent = Opponent.new.opponent_choice
+    $result = 'the method to determine who wins, from game'
     erb(:result)
   end
 
