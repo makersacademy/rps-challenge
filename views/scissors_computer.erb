@@ -1,6 +1,6 @@
-<h2> <%= @player_1_name %> threw scissors! </h2>
+<h2> <%= @game.player_1.name %> threw scissors! </h2>
 
-<h2> <%= @computer_name %> threw <%= @computer_move %>! </h2>
+<h2> <%= @game.player_2.name %> threw <%= @computer_move %>! </h2>
 
 <% if @computer_move == "scissors" %>
 <h1> You and <%= @computer_name %> tied </h1>
