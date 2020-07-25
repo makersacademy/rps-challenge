@@ -9,14 +9,7 @@ feature 'visit webpage' do
        end
     end
 
-    scenario 'enter username' do
-      visit('/form')
-      within('form') do
-      fill_in :player_1_name, with: 'Xozof'
-    end
-    click_button "Submit"
-  end
-
+ 
 #   feature 'homepage' do
 
 end
