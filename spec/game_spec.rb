@@ -1,7 +1,9 @@
-require ".lib/game"
+require "./lib/game"
 
 describe Game do
-  let(:mock_computer) { double :computer }
+  subject(:game) { described_class.new(player_1, player_2) }
+  let(:player_1) { double :player }
+  let(:player_2) { double :player }
 
   describe "#player_1" do
     it "retrieves the first player" do
@@ -17,8 +19,8 @@ describe Game do
 
   describe "#computer_move" do
     it "returns random selection" do
-      allow(mock_computer).to receive(:random_selection).and_return("rock")
-      expect(mock_computer.random_selection).to eq("rock")
+      allow(player_2).to receive(:random_selection).and_return("rock")
+      expect(player_2.random_selection).to eq("rock")
     end
   end
 end
