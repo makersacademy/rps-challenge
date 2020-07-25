@@ -1,9 +1,8 @@
-require './spec/spec_helper'
+require 'spec_helper'
 
-feature "enter name"
+feature "enter name" do
   scenario "player types in name" do
-    visit('/')
-    fill_in :player_name, with: "Lanie"
-    click_button "Submit"
-    expect(page).to have_content "Lanie is playing"
+    sign_in_and_play
+    expect(page).to have_content "Lanie is playing!"
   end
+end
