@@ -14,6 +14,10 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  post '/result' do
+    @option = params[:option]
+    erb(:result)
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

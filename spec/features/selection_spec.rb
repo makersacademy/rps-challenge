@@ -1,10 +1,17 @@
 feature 'make selection' do
-  scenario 'player selects R/P/S and is taken to result page' do
-    visit '/'
-    fill_in :player_name, with: 'Ralph'
-    click_button 'Go!'
-    select('Rock', from: 'select')
+  scenario 'player selects Rock and is taken to result page' do
+    sign_in
+    select('Rock', from: 'option')
     click_button 'Play!'
-    expect(page).to have_content 'You selected Rock'
+    expect(page).to have_content 'You chose: Rock'
+  end
+end
+
+feature 'make selection' do
+  scenario 'player selects Paper and is taken to result page' do
+    sign_in
+    select('Paper', from: 'option')
+    click_button 'Play!'
+    expect(page).to have_content 'You chose: Paper'
   end
 end
