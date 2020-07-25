@@ -10,6 +10,7 @@ class RockPaperScissors < Sinatra::Base
 
   post "/names" do
     $player_1 = Player.new(params[:player_1_name])
+    $computer = Player.new("Computer")
     redirect('/play')
   end
 
@@ -20,7 +21,7 @@ class RockPaperScissors < Sinatra::Base
 
   get "/rock" do
     @player_1_name = $player_1.name
-    @computer = Player.new("Computer")
+    @computer_name = $computer.name
     @game = Game.new
     @computer_move = @game.random_selection
     erb :rock
@@ -28,7 +29,7 @@ class RockPaperScissors < Sinatra::Base
 
   get "/paper" do
     @player_1_name = $player_1.name
-    @computer = Player.new("Computer")
+    @computer_name = $computer.name
     @game = Game.new
     @computer_move = @game.random_selection
     erb :paper
@@ -36,7 +37,7 @@ class RockPaperScissors < Sinatra::Base
 
   get "/scissors" do
     @player_1_name = $player_1.name
-    @computer = Player.new("Computer")
+    @computer_name = $computer.name
     @game = Game.new
     @computer_move = @game.random_selection
     erb :scissors

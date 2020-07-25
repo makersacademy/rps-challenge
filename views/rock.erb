@@ -1,6 +1,15 @@
-<%= @player_1_name %> threw rock!
+<h2> <%= @player_1_name %> threw rock! </h2>
 
-<%= @computer %> threw <%= @computer_move %>
+<h2> <%= @computer_name %> threw <%= @computer_move %> </h2>!
+
+<% if @computer_move == "rock" %>
+<h1> You and <%= @computer_name %> tied </h1>
+<% elsif @computer_move == "paper" %>
+<h1> You lost to <%= @computer_name %>! </h1>
+<% else %>
+<h1> You beat <%= @computer_name %>! </h1>
+<% end %>
+
 
 <form action="/play">
   <input type="submit" value="Play again?">
