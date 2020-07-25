@@ -1,5 +1,6 @@
 require "sinatra/base"
 require "./lib/player"
+require "./lib/game"
 
 class RockPaperScissors < Sinatra::Base
 
@@ -20,21 +21,24 @@ class RockPaperScissors < Sinatra::Base
   get "/rock" do
     @player_1_name = $player_1.name
     @computer = Player.new("Computer")
-    @computer_move = @computer.random_selection
+    @game = Game.new
+    @computer_move = @game.random_selection
     erb :rock
   end
 
   get "/paper" do
     @player_1_name = $player_1.name
     @computer = Player.new("Computer")
-    @computer_move = @computer.random_selection
+    @game = Game.new
+    @computer_move = @game.random_selection
     erb :paper
   end
 
   get "/scissors" do
     @player_1_name = $player_1.name
     @computer = Player.new("Computer")
-    @computer_move = @computer.random_selection
+    @game = Game.new
+    @computer_move = @game.random_selection
     erb :scissors
   end
 
