@@ -1,0 +1,12 @@
+<h2>Welcome <%= @player_name %>!</h2>
+
+<h3>Make your selection:</h3>
+
+<form action="/result" method="post">
+  <select id="select" name="select">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Play!">
+</form>
