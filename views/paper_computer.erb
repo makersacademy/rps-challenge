@@ -1,6 +1,6 @@
 <h2> <%= @player_1_name %> threw paper! </h2>
 
-<h2> <%= @computer_name %> threw <%= @computer_move %> </h2>!
+<h2> <%= @computer_name %> threw <%= @computer_move %>! </h2>
 
 <% if @computer_move == "paper" %>
 <h1> You and <%= @computer_name %> tied </h1>
@@ -10,6 +10,6 @@
 <h1> You beat <%= @computer_name %>! </h1>
 <% end %>
 
-<form action="/play">
+<form action="/play_singleplayer">
   <input type="submit" value="Play again?">
 </form>
