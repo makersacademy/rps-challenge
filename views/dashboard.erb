@@ -1,0 +1,10 @@
+<h1>Welcome to the RPS Dashboard</h1> <br>
+Current match: <%= @game.user_1.name %> vs. <%= @game.user_2.name %>
+
+<form action="/change_turns">
+  <input type='button' value='Rock'>
+</form>
+
+<form action="/change_turns">
+  <input type='button' value='Scissors'>
+</form>
