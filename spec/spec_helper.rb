@@ -1,13 +1,13 @@
 ENV['RACK_ENV'] = 'test'
-
-# require our Sinatra app file
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
-
-Capybara.app = RPS
-
+require 'capybara'
 require 'capybara/rspec'
+require 'features/web_helpers'
+require 'rspec'
+require 'shotgun'
 require 'simplecov'
 require 'simplecov-console'
+Capybara.app = RockPaperScissors
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
