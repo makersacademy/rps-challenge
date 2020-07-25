@@ -1,8 +1,13 @@
+ENV['RACK_ENV'] = 'test'
+
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-require 'rspec'
-require File.expand_path('../app.rb', File.dirname(__File__))
+require './app.rb'
+
+#require File.expand_path('../app.rb', File.dirname(__FILE__))
+
+Capybara.app = Game
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
