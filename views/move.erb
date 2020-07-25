@@ -1,0 +1,60 @@
+<center>
+  <h1> <%= @player_1_name %> chose <%= @player_1_move %> </h1>
+  <h1> The computer chose <%= @computer_move %> </h1>
+  <h1> <%= @who_wins %> </h1>
+
+  <form action='/'>
+    <input type='submit' value='Return'>
+  </form>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+      body {
+        -webkit-animation: colorchange 20s infinite;
+        animation: colorchange 20s infinite;
+      }
+      @-webkit-keyframes colorchange {
+        0% {
+          background: #8ebf42;
+        }
+        25% {
+          background: #e6ebef;
+        }
+        50% {
+          background: #1c87c9;
+        }
+        75% {
+          background: #095484;
+        }
+        100% {
+          background: #d0e2bc;
+        }
+      }
+      @keyframes colorchange {
+        0% {
+          background: #8ebf42;
+        }
+        25% {
+          background: #e6ebef;
+        }
+        50% {
+          background: #1c87c9;
+        }
+        75% {
+          background: #095484;
+        }
+        100% {
+          background: #d0e2bc;
+        }
+      }
+    </style>
