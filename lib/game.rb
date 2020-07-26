@@ -14,16 +14,16 @@ class Game
     player.move 
   end
   
-  def make_computer_move
-    @player2.make_move(computer_move)
-  end
-  
   def computer_move
     ["Rock", "Paper", "Scissors"][rand(3)]
   end
 
   def switch_turns
     @current_turn = opposite_player
+  end
+
+  def make_computer_move
+    @player2.make_move(computer_move)
   end
 
   def tie_game?
@@ -70,5 +70,4 @@ class Game
   def opposite_player(player = @current_turn)
     player == player1 ? player2 : player1
   end
-  
 end
