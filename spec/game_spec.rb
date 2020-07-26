@@ -1,14 +1,15 @@
 require 'game'
 describe Game do
-  let(:player) { double :player, name: "Haz", move: 'Rock'}
-  subject { described_class.new(player) }
+  let(:player1) { double :player, name: "Haz", move: 'Rock', score: 0 }
+  let(:player2) { double :player, name: "John Cena", score: 0}
+  subject { described_class.new(player1, player2) }
 
   it 'accepts player instances' do
-    expect(subject.player).to eq player
+    expect(subject.player1).to eq player1
   end
 
   it 'stores players moves' do
-    expect(subject.player_move).to eq 'Rock'
+    expect(subject.player1.move).to eq 'Rock'
   end
 
   it 'stores computers moves' do
@@ -19,12 +20,12 @@ describe Game do
   describe '#tie_game?' do
     it 'returns false if the moves are equal' do 
       srand(67809)
-      subject.computer_move
+      allow(player2).to receive(:move).and_return(subject.computer_move)
       expect(subject.tie_game?).to eq false
     end
     it 'returns true if the moves are equal' do
       srand(67810)
-      subject.computer_move
+      allow(player2).to receive(:move).and_return(subject.computer_move)
       expect(subject.tie_game?).to eq true
     end
   end
@@ -32,13 +33,13 @@ describe Game do
   describe '#winner' do 
     it 'returns the winner of the game' do 
       srand(67808)
-      subject.computer_move
-      expect(subject.winner).to eq Game::COMPUTER_NAME
+      allow(player2).to receive(:move).and_return(subject.computer_move)
+      expect(subject.winner).to eq "John Cena"
     end
     it 'returns the winner of the game' do 
       srand(67809)
-      subject.computer_move
-      expect(subject.winner).to eq player.name
+      allow(player2).to receive(:move).and_return(subject.computer_move)
+      expect(subject.winner).to eq "Haz"
     end
   end
 end

@@ -10,8 +10,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    player = Player.new(params[:PlayerName])
-    @game = Game.create(player)
+    player1 = Player.new(params[:Player1_Name])
+    player2 = Player.new(Game::COMPUTER_NAME)
+    @game = Game.create(player1, player2)
+    redirect '/play'
+  end
+
+  post '/multiplayer' do
+    player1 = Player.new(params[:Player1_Name])
+    player2 = Player.new(params[:Player2_Name])
+    @game = Game.create(player1, player2, true)
     redirect '/play'
   end
 
@@ -22,13 +30,22 @@ class RockPaperScissors < Sinatra::Base
 
   post '/move' do
     @game = Game.instance
-    @game.player.make_move(params[:move])
-    @game.computer_move
+    @game.current_turn.make_move(params[:move])
+    redirect '/game-over' if (@game.current_turn == @game.player2)
+    redirect '/switch-turns'
+  end
+
+  get '/switch-turns' do
+    @game = Game.instance
+    @game.switch_turns
+    redirect '/play' if (@game.multiplayer)  
+    @game.player2.make_move(@game.computer_move)
     redirect '/game-over'
   end
 
   get '/game-over' do
     @game = Game.instance
+    @game.finish_game
     erb :game_over
   end
 end

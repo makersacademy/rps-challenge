@@ -1,5 +1,5 @@
 def enter_name 
   visit '/'
-  fill_in :PlayerName, with: "Haz"
-  click_button 'Enter Name'
+  fill_in :Player1_Name, with: "Haz"
+  click_button 'Solo Game For Death and Glory!'
 end

@@ -1,11 +1,15 @@
 <h1> HLB's Rock Paper Scissors Showdown </h1>
-<h2> Enter name to play: </h2>
+<h2> Enter name(s) to play: </h2>
 <form action="/names" method="post">
-  <label for="PlayerName">
-    Player name:
-    <input type="text" name="PlayerName">
+  <label for="Player1_Name">
+    Player 1 name:
+    <input type="text" name="Player1_Name">
   </label>
-  
-  <input type='submit' name="Enter Name" value="For Death and Glory"/>
+  <input type='submit' value='Solo Game For Death and Glory!' />
+  <label for="Player2_Name">
+    Player 2 name:
+    <input type="text" name="Player2_Name">
+  </label>
+  <input type='submit' name="Enter Names" value='Multiplayer' formaction="/multiplayer" />
   </form>
   

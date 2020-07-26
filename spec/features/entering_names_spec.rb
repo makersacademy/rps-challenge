@@ -1,7 +1,7 @@
 feature 'enter your name and see it displayed' do
   scenario 'I can fill in my name' do
     visit '/'
-    expect(page).to have_field("PlayerName")
+    expect(page).to have_field("Player1_Name")
   end
   scenario 'I can have my name displayed in lights' do
     enter_name
