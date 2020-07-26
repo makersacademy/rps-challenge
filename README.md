@@ -17,7 +17,7 @@ I would like to be able to play rock/paper/scissors
 
 Functionality present
 - Player(s) can enter their name(s) prior to commencing the game
-- Players will be presented with five choices (Rock, paper, scissors, lizard, spork)
+- Players will be presented with five choices (Rock, paper, scissors, lizard, spock)
 - Player(s) will each choose an option
 - *If against a computerised opponent, the game will choose a random option
 - A winner, or tie, will be declared once each player has selected an option.
