@@ -38,6 +38,6 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Rock_Paper_Scissors_Lizard_Spock_en.svg/400px-Rock_Paper_Scissors_Lizard_Spock_en.svg.png'>
 <br><i>Source: https://en.wiktionary.org/wiki/File:Rock_Paper_Scissors_Lizard_Spock_en.svg</i>
 
-##Future work
+## Future work
 
 - Static resource serving via Rackup (including CSS styles and images)
