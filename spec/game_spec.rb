@@ -62,9 +62,9 @@ describe Game do
       expect(subject.current_turn).to eq player2
     end
     it 'changes the current_turn from player2 to player 1' do
-        subject.switch_turns
-        subject.switch_turns
-        expect(subject.current_turn).to eq player1
+      subject.switch_turns
+      subject.switch_turns
+      expect(subject.current_turn).to eq player1
     end
   end
 end
