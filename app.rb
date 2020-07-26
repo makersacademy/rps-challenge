@@ -7,6 +7,10 @@ class App < Sinatra::Base
     request.path_info[1..-1].capitalize
   end
 
+  def reset_moves
+    @game.reset_player_moves
+  end
+
   get '/' do
     erb :index
   end
@@ -20,26 +24,43 @@ class App < Sinatra::Base
 
   get '/dashboard' do
     @game = Game.play
-    redirect %w[/rock /paper /scissors].sample if @game.current_user.name == 'Computer'
+    redirect %w[/rock /paper /scissors /lizard /spork].sample if @game.current_user.name == 'Computer'
     erb :dashboard
   end
 
   get'/rock' do
     @game = Game.play
+    reset_moves
     @game.current_user.current_move(current_path)
-    erb :rock
+    erb :move
   end
 
   get '/paper' do
     @game = Game.play
+    reset_moves
     @game.current_user.current_move(current_path)
-    erb :paper
+    erb :move
   end
 
   get '/scissors' do
     @game = Game.play
+    reset_moves
     @game.current_user.current_move(current_path)
-    erb :scissors
+    erb :move
+  end
+
+  get '/lizard' do
+    @game = Game.play
+    reset_moves
+    @game.current_user.current_move(current_path)
+    erb :move
+  end
+
+  get '/spork' do
+    @game = Game.play
+    reset_moves
+    @game.current_user.current_move(current_path)
+    erb :move
   end
 
   post '/change_turns' do

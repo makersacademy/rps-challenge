@@ -1,0 +1,5 @@
+<%= @game.current_user.name %> played <%= @game.current_user.move %>!
+
+<form action="/change_turns" method="post">
+  <input type='submit' value='Change turns'>
+</form>

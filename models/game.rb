@@ -1,13 +1,13 @@
 require_relative './user'
 
 class Game
-  attr_reader :game
+  attr_reader :game, :winner, :loser
 
 
   WINNING_MOVES = { 'Rock' => %w[Scissors Lizard],
                     'Paper' => %w[Rock Spock],
                     'Scissors' => %w[Paper Lizard],
-                    'Spock' => %w[Scissors Rock],
+                    'Spork' => %w[Scissors Rock],
                     'Lizard' => %w[Paper Spock] }
 
   def initialize(user_1, user_2)
@@ -43,16 +43,17 @@ class Game
     user_1.move == user_2.move && (!user_1.move.nil? && !user_2.move.nil?)
   end
 
-  def user_1_win?
-    return unless user_1.move && user_2.move
+  def over?
+    return if user_1.move.nil? || user_2.move.nil?
 
-    WINNING_MOVES[user_1.move].include?(user_2.move)
+    select_winner
+    WINNING_MOVES[user_1.move].include?(user_2.move) ||
+        WINNING_MOVES[user_2.move].include?(user_1.move)
   end
 
-  def user_2_win?
-    return unless user_1.move && user_2.move
-
-    WINNING_MOVES[user_2.move].include?(user_1.move)
+  def select_winner
+    @winner = WINNING_MOVES[user_1.move].include?(user_2.move) ? user_1 : user_2
+    @loser = @winner == user_1 ? user_2 : user_1
   end
 
   def reset_player_moves
@@ -61,5 +62,6 @@ class Game
     user_1.reset
     user_2.reset
   end
+
 
 end
