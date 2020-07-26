@@ -1,4 +1,9 @@
+ENV['RACK_ENV'] = 'test'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
+require 'features/web_helpers'
 require 'simplecov'
 require 'simplecov-console'
 
@@ -8,6 +13,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+Capybara.app = RockPaperScissors
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 

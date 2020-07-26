@@ -1,0 +1,15 @@
+<h1> <%= @game.player1.name %> vs. <%= @game.player2.name %> </h1>
+
+<h2> <%= @game.current_turn.name %>, make your move. </h2>
+<form action="/move" method="post">
+<input type='submit' name="move" value="Rock">
+<input type='submit' name="move" value="Paper">
+<input type='submit' name="move" value="Scissors">
+</form>
+
+<% if @game.player1.score > 0 || @game.player2.score > 0 %>
+<h4> Scores: </h4>
+<%= @game.player1.name %> score: <%= @game.player1.score %>   
+
+<%= @game.player2.name %> score: <%= @game.player2.score %>
+<%end%>
