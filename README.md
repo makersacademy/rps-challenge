@@ -15,6 +15,14 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
+Still to be completed
+
+```
+As a marketeer
+So that I can bond with my teammates
+I would like to be able to play against a human opponent
+```
+
 Hints on functionality
 
 Completed
