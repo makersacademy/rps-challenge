@@ -11,4 +11,11 @@ describe Player do
       expect(subject.score).to eq 1
     end
   end
+
+  describe '#make_move' do
+    it 'gives the player a move' do
+      subject.make_move('Rock')
+      expect(subject.move).to eq 'Rock'
+    end
+  end
 end

@@ -1,6 +1,6 @@
 require_relative 'player'
 class Game
-  attr_accessor :player1, :player2, :current_turn, :multiplayer
+  attr_reader :player1, :player2, :current_turn, :multiplayer
   COMPUTER_NAME = "John Cena"
   
   def initialize(player1, player2, multiplayer = false)
