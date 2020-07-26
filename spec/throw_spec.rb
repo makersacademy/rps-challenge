@@ -9,7 +9,7 @@ describe Throw do
   end
 
   describe '#initialize' do
-    it 'with a random default number assigned as an attribute' do
+    it 'with a randomly assigned default value if no choice given' do
       allow(Kernel).to receive(:rand).and_return(1)
       expect(subject.choice).to eq "paper"
     end
