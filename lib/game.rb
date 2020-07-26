@@ -1,13 +1,11 @@
 require_relative 'player'
 class Game
-  attr_accessor :player1, :player2, :player1_score, :player2_score, :current_turn, :multiplayer
+  attr_accessor :player1, :player2, :current_turn, :multiplayer
   COMPUTER_NAME = "John Cena"
   
   def initialize(player1, player2, multiplayer = false)
     @player1 = player1
     @player2 = player2
-    @player1_score = 0
-    @player2_score = 0
     @multiplayer = multiplayer
     @current_turn = player1
   end
@@ -15,7 +13,11 @@ class Game
   def player_move(player)
     player.move 
   end
-
+  
+  def make_computer_move
+    @player2.make_move(computer_move)
+  end
+  
   def computer_move
     ["Rock", "Paper", "Scissors"][rand(3)]
   end
@@ -30,6 +32,10 @@ class Game
 
   def tie_game?
     @player1.move == @player2.move
+  end
+
+  def game_over?
+    @current_move == @player2 && !!@player2.move 
   end
 
   def winner

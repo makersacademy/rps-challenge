@@ -31,15 +31,15 @@ class RockPaperScissors < Sinatra::Base
   post '/move' do
     @game = Game.instance
     @game.current_turn.make_move(params[:move])
-    redirect '/game-over' if (@game.current_turn == @game.player2)
+    redirect '/game-over' if @game.game_over?
     redirect '/switch-turns'
   end
 
   get '/switch-turns' do
     @game = Game.instance
     @game.switch_turns
-    redirect '/play' if (@game.multiplayer)  
-    @game.player2.make_move(@game.computer_move)
+    redirect '/play' if @game.multiplayer  
+    @game.make_computer_move
     redirect '/game-over'
   end
 
