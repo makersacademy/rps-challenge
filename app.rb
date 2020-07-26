@@ -24,6 +24,13 @@ class RPS < Sinatra::Base
 
   post '/throw' do
     @player_1_name = session[:player_1_name]
+    session[:player_1_throw] = params[:rock]
+    redirect '/throw'
+  end
+
+  get '/throw' do
+    @player_1_name = session[:player_1_name]
+    @player_1_throw = session[:player_1_throw]
     erb :throw
   end
 
