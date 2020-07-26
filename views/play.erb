@@ -1,3 +1,15 @@
-<h1> <%= @game.player %> vs. John Cena </h1>
+<h1> <%= @game.player.name %> vs. <%= Game::COMPUTER_NAME %> </h1>
 
-<h2> <%= @game.player %>, make your move. </h2>
+<h2> <%= @game.player.name %>, make your move. </h2>
+<form action="/move" method="post">
+<input type='submit' name="move" value="Rock">
+<input type='submit' name="move" value="Paper">
+<input type='submit' name="move" value="Scissors">
+</form>
+
+<% if @game.player_score > 0 || @game.computer_score > 0 %>
+<h4> Scores: </h4>
+<%= @game.player.name %> score: <%= @game.player_score %>   
+
+<%= Game::COMPUTER_NAME %> score: <%= @game.computer_score %>
+<%end%>

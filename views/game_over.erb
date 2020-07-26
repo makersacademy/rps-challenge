@@ -1,0 +1,12 @@
+<% if @game.tie_game? %>
+<h3> The battle is tied! Click to replay </h3>
+<%else%>
+<h1> GAME OVER! </h1>
+<h3> <%= @game.player.name %> used <%= @game.player.move %>! </h3>
+<h3> <%= Game::COMPUTER_NAME %> used <%= @game.comp_move %>! </h3>
+
+<h2> <%= @game.winner %> has won the game!
+<% end %>
+<form action='/play'>
+<button type='submit' >Rematch >
+</form>
