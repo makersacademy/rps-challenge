@@ -1,7 +1,28 @@
-<h1>Welcome to the RPS Dashboard</h1> <br>
-<h2>Current match: <u> <%= @game.user_1.name %> </u> vs. <u> <%= @game.user_2.name %> </u> </h2>
+<h1>Welcome to the RPS Dashboard</h1>
+<h3>Current match: <u> <%= @game.user_1.name %> </u> vs. <u> <%= @game.user_2.name %> </u> </h3>
+
 <% if @game.over? %>
-  <%= @game.winner.name %> wins with <%= @game.winner.move %>, beating <%= @game.loser.name %>'s <%= @game.loser.move %>
+  <h3><%= @game.winner.name %> wins with <%= @game.winner.move %>, beating <%= @game.loser.name %>'s <%= @game.loser.move %></h3>
+
+  <div id='container' padding-top: 50px;>
+      <% if @game.winner.move == 'Rock' %>
+        <img src='https://i.gyazo.com/5c827302b680ba794cb7c90e64c9e875.png'>
+      <% end %>
+      <% if @game.winner.move == 'Scissors' %>
+        <img src='https://i.gyazo.com/44ca63abded9f86ad50d89e4f8280d63.png'>
+      <% end %>
+      <% if @game.winner.move == 'Paper' %>
+        <img src='https://i.gyazo.com/54bb40ee5477f7693b716c1bd98ed076.png'>
+      <% end %>
+      <% if @game.winner.move == 'Spork' %>
+        <img src='https://i.gyazo.com/788ad9c1bdaebdf6f7c43a2186363f86.png'>
+      <% end %>
+      <% if @game.winner.move == 'Lizard' %>
+        <img src='https://i.gyazo.com/b309a9ba10ac0f842f290e96dcf78043.png'>
+      <% end %>
+  </div>
+
+  <br>
   <form action="/">
     <input type='submit' value='Restart'>
   </form>
@@ -24,5 +45,13 @@
     <form action="/paper">
         <input type='submit' value='Paper'>
     </form>
+
+  <form action="/spork">
+    <input type='submit' value='spork'>
+  </form>
+
+  <form action="/lizard">
+    <input type='submit' value='lizard'>
+  </form>
   <p>
 <% end %>
