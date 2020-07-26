@@ -1,4 +1,9 @@
 class Throw
+  attr_reader :choice
+  
+  def initialize(choice = random_choice)
+    @choice = choice
+  end
 
   def random_choice
     num = Kernel.rand(3)
