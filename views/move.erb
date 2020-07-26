@@ -1,12 +1,32 @@
 <center>
   <h1> <%= @game.player_1.name %> chose <%= @game.player_1.move %> </h1>
-  <h1> The computer chose <%= @computer_move %> </h1>
-  <h1> <%= @who_wins %> </h1>
-
-  <form action='/play'>
-    <input type='submit' value='Return'>
-  </form>
+  <h1> The computer chose <%= @game.computer_move %> </h1>
+  <h1> <%= @who_wins %> this round </h1>
+  <h1> <%= @game.player_1.name %>: <%= @game.player_1.points %> </h1>
+  <h1> Computer: <%= @game.points %> </h1>
 </center>
+
+  <% if @game.player_1.points == 5 %>
+    <center>
+      <h1> <%= @game.player_1.name %> wins! </h1>
+      <form action='/'>
+        <input type='submit' value='Return'>
+      </form>
+    </center>
+  <% elsif @game.points == 5 %>
+      <center>
+        <h1> Computer wins! </h1>
+        <form action='/'>
+          <input type='submit' value='Return'>
+        </form>
+      </center>
+  <% else %>
+    <center>
+      <form action='/play'>
+        <input type='submit' value='Next Round'>
+      </form>
+    </center>
+  <% end %>
 
 
 

@@ -13,6 +13,10 @@ class RPS < Sinatra::Base
     erb :index
   end
 
+  get '/single_player' do
+    erb :single_player
+  end
+
   post '/name' do
     player_1 = Player.new(params[:player_1_name])
     @game = Game.create(player_1)
@@ -29,8 +33,7 @@ class RPS < Sinatra::Base
     @game.random_move
     @who_wins = @game.move_comparison(@game.player_1.move, @game.computer_move)
     @game.player_1.gain_point if @who_wins == 'You Win'
-    @game.gain_point
-    @end = @game.end(@game.player_1, @game)
+    @game.gain_point if @who_wins == 'Computer Wins'
     erb :move
   end
 

@@ -28,18 +28,6 @@ class Game
     @points += ONE_POINT
   end
 
-  def end_game?(player_1, game)
-    return true if player_1.points == 5 || game.points == 5
-    false
-  end
-
-  def end(player_1, game)
-    if end_game?(player_1, game) == true
-      puts 'You got #{player_1.points}'
-      puts 'Computer got #{game.points}'
-    end
-  end
-
 ## Using class methods
   def self.create(player_1)
     @game = Game.new(player_1)
