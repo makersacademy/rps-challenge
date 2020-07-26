@@ -1,27 +1,31 @@
 ##require 'player'
 
 class Game
-  attr_reader :player, :rps, :result
+  attr_reader :player, :rps, :result, :instance, :player_move, :ai_move
 
   WIN = [["Rock", "Scissors"], ["Paper", "Rock"], ["Scissors", "Paper"]]
 
   def initialize(player)
     @player = player
     @rps = ["Rock", "Paper", "Scissors"]
-    @game = []
+    @instance = []
   end
 
   def player_roll(choice)
     @player_move = @player.choice(choice)
-    @game << @player_move
+    @instance << @player_move
   end
 
   def ai_roll
     @ai_move = @rps.sample
-    @game << @ai_move
+    @instance << @ai_move
   end
 
   def result
-    WIN.include?(@game)
+    if @instance[0] == @instance[1]
+      return "draw"
+    else
+    WIN.include?(@instance)
+    end
   end
 end

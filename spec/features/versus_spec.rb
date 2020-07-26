@@ -5,6 +5,6 @@ feature Rps do
   scenario "allows a player to fight a computer" do
     sign_in
     click_button('Throw!')
-    expect(page).to have_content("wins!")
+    expect(page).to have_content("beats")
   end
 end

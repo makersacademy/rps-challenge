@@ -20,6 +20,9 @@ class Rps < Sinatra::Base
 
   post '/result' do
     @game = @@game
+    @game.player_roll(params[:roll])
+    @game.ai_roll
+    erb(:result)
   end
 
 end
