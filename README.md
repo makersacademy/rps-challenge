@@ -23,10 +23,9 @@ Hints on functionality
 
 Completed
 - the marketeer should be able to enter their name before the game
-
-Still to be completed
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
+Still to be completed
 - the game will choose a random option
 - a winner will be declared
 

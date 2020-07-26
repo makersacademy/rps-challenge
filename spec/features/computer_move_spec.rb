@@ -1,8 +1,8 @@
-feature 'The player can select from various moves' do
+feature 'The computer randomly selects from available moves' do
   scenario 'player submits name and can select their move' do
     enter_name_and_submit
     choose('Rock')
     click_button('Submit')
-    expect(page).to have_content('You selected Rock!')
+    page.has_content?("The computer selected #{/"Rock"|"Paper"|"Scissors"/}")
   end
 end
