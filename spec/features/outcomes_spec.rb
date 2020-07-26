@@ -3,7 +3,7 @@ require_relative './web_helpers'
 
 feature 'Victory' do
 
-  context 'Gameplay' do
+  context 'Game-play' do
 
     it 'Victory: Paper vs Rock' do
       homepage_sign_in
@@ -26,8 +26,6 @@ feature 'Victory' do
       expect(page).to have_button('Rock')
       expect(page).to have_content(/the game is a tie/i)
     end
-
-
 
   end
 

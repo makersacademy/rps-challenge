@@ -1,7 +1,25 @@
 <% if @game.user_1.name == 'Computer' || @game.user_2.name == 'Computer' %>
-  <%= @game.current_user.name %> played <%= @game.current_user.move %>!
+  <h2 xmlns:padding-top="http://www.w3.org/1999/xhtml"><%= @game.current_user.name %> played <%= @game.current_user.move %>!</h2>
+  <br>
+  <div id='container' padding-top: 50px;>
+  <% if @game.current_user.move == 'Rock' %>
+    <img src='https://i.gyazo.com/5c827302b680ba794cb7c90e64c9e875.png'>
+  <% end %>
+  <% if @game.current_user.move == 'Scissors' %>
+    <img src='https://i.gyazo.com/44ca63abded9f86ad50d89e4f8280d63.png'>
+      <% end %>
+  <% if @game.current_user.move == 'Paper' %>
+    <img src='https://i.gyazo.com/54bb40ee5477f7693b716c1bd98ed076.png'>
+  <% end %>
+  <% if @game.current_user.move == 'Spork' %>
+    <img src='https://i.gyazo.com/788ad9c1bdaebdf6f7c43a2186363f86.png'>
+  <% end %>
+  <% if @game.current_user.move == 'Lizard' %>
+    <img src='https://i.gyazo.com/b309a9ba10ac0f842f290e96dcf78043.png'>
+  <% end %>
+  </div>
 <% else %>
-  Player moves are hidden until the end of the turn!
+  Player vs Player moves are hidden until the end of the turn!
 <% end %>
 <br>
 <form action="/change_turns" method="post">

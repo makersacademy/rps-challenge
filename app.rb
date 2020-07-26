@@ -3,6 +3,8 @@ require_relative './models/game'
 
 class App < Sinatra::Base
 
+  enable :static
+
   def current_path
     request.path_info[1..-1].capitalize
   end
