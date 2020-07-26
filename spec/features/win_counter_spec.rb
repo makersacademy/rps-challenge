@@ -13,4 +13,12 @@ feature 'win counter' do
     expect(page).to have_content 'Haz score: 0'
     expect(page).to have_content 'John Cena score: 1'
   end
+  scenario 'keeps score in multiplayer' do
+    enter_multiplayer
+    enter_attacks('Rock', 'Paper')
+    click_button 'Rematch'
+    expect(page).to have_content 'Haz score: 0'
+    expect(page).to have_content 'John Cena score: 1'
+  end
 end
+

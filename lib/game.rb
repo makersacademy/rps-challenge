@@ -23,7 +23,7 @@ class Game
   end
 
   def game_over?
-    @current_move == @player2 && !!@player2.move 
+    (@current_turn == @player2) && !!@player2.move
   end
 
   def winner

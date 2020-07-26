@@ -18,5 +18,15 @@ feature 'game over screen' do
     click_button 'Rematch'
     expect(page).to have_content('Haz vs. John Cena')
   end
+  scenario 'displays player 2 move in multiplayer' do
+    enter_multiplayer
+    enter_attacks('Rock', 'Paper')
+    expect(page).to have_content 'John Cena used Paper'
+  end
+  scenario 'displays multiplayer winner' do
+    enter_multiplayer
+    enter_attacks('Rock', 'Paper')
+    expect(page).to have_content 'John Cena has won the game!'
+  end
 end
     
