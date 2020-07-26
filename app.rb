@@ -1,13 +1,15 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
 
-class Rps < Sinatra::base
+class Rps < Sinatra::Base
 
   get '/' do
     erb :index
   end
 
   post '/name' do
-    player = player.new(params[:player_name])
+    player = Player.new(params[:player_name])
     $game = Game.new(player)
     redirect '/play'
   end
@@ -18,7 +20,15 @@ class Rps < Sinatra::base
   end
 
   get '/select' do
-    
+    @game = $game
+    @game.player_selection
+    @game.ia_selection
+    erb :results
+  end
+
+  get '/quit' do
+    @game = $game
+    erb :quit
   end
 
   run! if app_file == $0

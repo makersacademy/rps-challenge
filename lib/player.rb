@@ -1,19 +1,19 @@
 class Player
-  attr_reader :name, :victories, :losses
+  attr_reader :name, :victories, :losses, :ties
   
   def initialize(name)
     @name = name
     @victories = 0
     @losses = 0
-    @ties
+    @ties = 0
   end
 
   def victory_count
-    "Wins: #{@wins}, Losses: #{@losses}, Ties #{@ties}"
+    "Wins: #{@victories}, Losses: #{@losses}, Ties: #{@ties}"
   end
 
   def win
-    @wins += 1
+    @victories += 1
   end
 
   def lose

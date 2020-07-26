@@ -1,0 +1,16 @@
+<h2> Results: </h2>
+
+<h3> <%= @game.player_move.capitalize %> vs <%= @game.ia_move.capitalize %> </h3>
+
+<h3> <%= @game.who_wins? %> </h3>
+
+<h3> Scores: </h3>
+<h4> <%= @game.player.victory_count %> </h4>
+
+<form action='/select'>
+<input type='submit' value='Continue'>
+</form>
+
+<form action='/quit'>
+<input type='submit' value='Quit'>
+</form>
