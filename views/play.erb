@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: paleturquoise;
+
+}
+</style>
+</head>
+
+<h2>Welcome <%= $player.name %>!</h2>
+
+<h3>Make your selection:</h3>
+
+<form action="/result" method="post">
+  <select id="option" name="option">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Play!">
+</form>
+<body>
