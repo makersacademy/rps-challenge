@@ -28,6 +28,9 @@ class RPS < Sinatra::Base
     @game.player_1.get_move(params[:move])
     @game.random_move
     @who_wins = @game.move_comparison(@game.player_1.move, @game.computer_move)
+    @game.player_1.gain_point if @who_wins == 'You Win'
+    @game.gain_point
+    @end = @game.end(@game.player_1, @game)
     erb :move
   end
 
