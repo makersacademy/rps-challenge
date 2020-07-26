@@ -32,7 +32,7 @@ class App < Sinatra::Base
 
   get '/dashboard' do
     @game = Game.play
-    redirect %w[/rock /paper /scissors /lizard /spork].sample if @game.current_user.name == 'Computer'
+    redirect %w[/rock /paper /scissors /lizard /spock].sample if @game.current_user.name == 'Computer'
     erb :dashboard
   end
 
