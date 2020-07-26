@@ -39,28 +39,27 @@ class Game
     ["Rock", "Paper", "Scissors"][rand(3)]
   end
 
-  private
-
-  def self.create(player1, player2, multiplayer=false)
-    @game = Game.new(player1, player2, multiplayer )
+  def self.create(player1, player2, multiplayer = false)
+    @game = Game.new(player1, player2, multiplayer)
   end
   
   def self.instance
     @game
   end
 
+  private
+
   def game_over    
-    if (@player1.move == 'Rock' && @player2.move == 'Scissors') || 
-      (@player1.move == 'Paper' && @player2.move == 'Rock') || 
-      (@player1.move == 'Scissors' && @player2.move == 'Paper')
+    case [@player1.move, @player2.move]
+    when ['Rock', 'Scissors'], ['Paper', 'Rock'], ['Scissors', 'Paper']
       @player1
-    else  
+    when ['Paper', 'Scissors'], ['Scissors', 'Rock'], ['Rock', 'Paper']
       @player2
     end
   end
 
   def add_score
-    game_over.add_point
+    game_over.add_point unless tie_game?
   end
 
   def opposite_player(player = @current_turn)

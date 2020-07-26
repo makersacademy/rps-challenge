@@ -1,7 +1,7 @@
 require 'game'
 describe Game do
   let(:player1) { double :player, name: "Haz", move: 'Rock', score: 0 }
-  let(:player2) { double :player, name: "John Cena", score: 0}
+  let(:player2) { double :player, name: "John Cena", score: 0 }
   subject { described_class.new(player1, player2) }
 
   it 'accepts player instances' do
