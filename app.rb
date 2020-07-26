@@ -8,9 +8,18 @@ class Rps < Sinatra::Base
     erb(:index)
   end
 
-  post '/game' do
-    @game = Game.new(Player.new(params[:player_1_name]))
+  post '/name' do
+    @@game = Game.new(Player.new(params[:player_1_name]))
+    redirect '/game'
+  end
+
+  get '/game' do
+    @game = @@game
     erb(:throw)
+  end
+
+  post '/result' do
+    @game = @@game
   end
 
 end

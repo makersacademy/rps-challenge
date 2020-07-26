@@ -9,4 +9,5 @@ describe Game do
     allow(player_1).to receive(:name).and_return("Jake")
     expect(game.player.name).to eq player_1.name
   end
+
 end
