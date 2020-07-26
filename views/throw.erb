@@ -1,0 +1,11 @@
+<h3> Welcome, <%=@game.player.name%>! </h3>
+
+<form action='/result' method='post'>
+  <input type='radio' value='Rock'>
+  <label for="Rock">Rock</label><br>
+  <input type='radio' value='Paper'>
+  <label for="Paper">Paper</label><br>
+  <input type='radio' value='Scissors'>
+  <label for="Scissors">Scissors</label><br><br><br>
+  <input type='submit' value='Throw!'>
+</form>

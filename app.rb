@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 
 class Rps < Sinatra::Base
 
@@ -7,7 +9,8 @@ class Rps < Sinatra::Base
   end
 
   post '/game' do
-    "Jake"
+    @game = Game.new(Player.new(params[:player_1_name]))
+    erb(:throw)
   end
 
 end
