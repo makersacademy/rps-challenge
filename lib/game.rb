@@ -1,15 +1,26 @@
 class Game
 
-  attr_reader :moves, :player_1, :computer_move, :points
+  attr_reader :moves, :player_1, :player_2, :computer_move, :points, :current_turn
 
   ZERO_POINTS = 0
   ONE_POINT = 1
 
-  def initialize(player_1)
+  def initialize(player_1, player_2 = nil)
     @player_1 = player_1
+    @player_2 = player_2
     @moves = ['rock', 'paper', 'scissors']
     @points = ZERO_POINTS
     @computer_move = nil
+    @players = [@player_1, @player_2]
+    @current_turn = @player_1
+  end
+
+  def self.create(player_1, player_2 = nil)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
   end
 
   def random_move
@@ -26,15 +37,6 @@ class Game
 
   def gain_point
     @points += ONE_POINT
-  end
-
-## Using class methods
-  def self.create(player_1)
-    @game = Game.new(player_1)
-  end
-
-  def self.instance
-    @game
   end
 
 end

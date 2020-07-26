@@ -1,27 +1,16 @@
 <center>
-<h1> WELCOME TO THE BEST ROCK PAPER SCISSORS GAME EVER </h1>
-<h3> Developed by Dillon Barker </h3>
+<h1> OTHER PLAYER COVER YOUR EYES OR YOU ARE A CHEAT </h1>
 
-<form action="/single_player">
-  <label for="single player">
-    Single Player
-    <input type="submit" name="single player" value='Begin!'>
-  </label>
-</form>
+  <h2> <%= @game.player_1.name %>!! CLICK ROCK, PAPER OR SCISSORS TO BEGIN </h2>
 
-<form action="/multiplayer">
-  <label for="multiplayer">
-    Multiplayer
-    <input type="submit" name="multiplayer" value='Begin!'>
-  </label>
-</form>
+  <form action = "/play2">
+    <button name="move1" type='submit' value="rock">Rock</button>
+    <button name="move1" type='submit' value="paper">Paper</button>
+    <button name="move1" type='submit' value="scissors">Scissors</button>
+  </form>
+
+
 </center>
-
-
-
-
-
-
 
 
 

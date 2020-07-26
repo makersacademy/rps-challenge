@@ -1,0 +1,80 @@
+<center>
+  <h1> <%= @game.player_1.name %> chose <%= @game.player_1.move %> </h1>
+  <h1> <%= @game.player_2.name %> chose <%= @game.player_2.move %> </h1>
+  <h1> <%= @who_wins %> this round </h1>
+  <h1> <%= @game.player_1.name %>: <%= @game.player_1.points %> </h1>
+  <h1> <%= @game.player_2.name %>: <%= @game.player_2.points %> </h1>
+</center>
+
+  <% if @game.player_1.points == 5 %>
+    <center>
+      <h1> <%= @game.player_1.name %> wins! </h1>
+      <form action='/'>
+        <input type='submit' value='Return'>
+      </form>
+    </center>
+  <% elsif @game.player_2.points == 5 %>
+      <center>
+          <h1> <%= @game.player_2.name %> wins! </h1>
+        <form action='/'>
+          <input type='submit' value='Return'>
+        </form>
+      </center>
+  <% else %>
+    <center>
+      <form action='/play1'>
+        <input type='submit' value='Next Round'>
+      </form>
+    </center>
+  <% end %>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+      body {
+        -webkit-animation: colorchange 20s infinite;
+        animation: colorchange 20s infinite;
+      }
+      @-webkit-keyframes colorchange {
+        0% {
+          background: #8ebf42;
+        }
+        25% {
+          background: #e6ebef;
+        }
+        50% {
+          background: #1c87c9;
+        }
+        75% {
+          background: #095484;
+        }
+        100% {
+          background: #d0e2bc;
+        }
+      }
+      @keyframes colorchange {
+        0% {
+          background: #8ebf42;
+        }
+        25% {
+          background: #e6ebef;
+        }
+        50% {
+          background: #1c87c9;
+        }
+        75% {
+          background: #095484;
+        }
+        100% {
+          background: #d0e2bc;
+        }
+      }
+    </style>
