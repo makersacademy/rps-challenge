@@ -22,10 +22,6 @@ class Game
     ["Rock", "Paper", "Scissors"][rand(3)]
   end
 
-  def opposite_player(player = @current_turn)
-    player == player1 ? player2 : player1
-  end
-
   def switch_turns
     @current_turn = opposite_player
   end
@@ -70,4 +66,9 @@ class Game
   def add_score
     game_over.add_point
   end
+
+  def opposite_player(player = @current_turn)
+    player == player1 ? player2 : player1
+  end
+  
 end
