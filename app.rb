@@ -1,4 +1,8 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
+require './lib/throw'
+
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -12,25 +16,30 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new("RPS Bot")
+    $game = Game.new(player_1, player_2)
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
-    @player_2_name = "RPS Bot"
+    @game = $game
     erb :play
   end
 
   post '/throw' do
-    @player_1_name = session[:player_1_name]
-    session[:player_1_throw] = params[:rock]
+    @game = $game
+    p params[:rock]
+    $game.player_1.add(Throw.new(params[:rock])) 
+    $game.player_2.add(Throw.new)
+    @game.player_1.throw.choice
+    @game.player_2.throw.choice
     redirect '/throw'
   end
 
   get '/throw' do
-    @player_1_name = session[:player_1_name]
-    @player_1_throw = session[:player_1_throw]
+    @game = $game
+    @game.winner_is
     erb :throw
   end
 

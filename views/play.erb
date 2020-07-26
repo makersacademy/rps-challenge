@@ -1,10 +1,10 @@
 <h1> Get ready to play RPS! </h1>
-<h3> Player 1: <%= @player_1_name %></h3>
-<h3> Player 2: <%= @player_2_name %></h3>
+<h3> Player 1: <%= @game.player_1.name %></h3>
+<h3> Player 2: <%= @game.player_2.name %></h3>
 
-<h4> Make your choice <%= @player_1_name %>! </h4>
+<h4> Make your choice <%= @game.player_1.name %>! </h4>
 
 <form action="/throw" method="post">
-  <input type="hidden" name="rock" value="Rock">
+  <input type="hidden" name="rock" value="rock">
   <input type="submit" value="Rock!">
 </form>

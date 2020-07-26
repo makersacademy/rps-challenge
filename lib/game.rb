@@ -13,17 +13,12 @@ class Game
   end
 
   def winner_is 
-    case 
-      when player_1.throw.choice == player_2.throw.choice
-        return "TIE"
-      when player_1.throw.choice == "rock" && player_2.throw.choice == "scissors" || 
-        player_1.throw.choice == "paper" && player_2.throw.choice == "rock" ||
-        player_1.throw.choice == "scissors" && player_2.throw.choice == "paper"
-        return player_1     
-      when player_1.throw.choice == "rock" && player_2.throw.choice == "paper" || 
-        player_1.throw.choice == "paper" && player_2.throw.choice == "scissors" || 
-        player_1.throw.choice == "scissors" && player_2.throw.choice == "rock"
-        return player_2
+    if player_1.throw.choice == player_2.throw.choice
+      return "TIE"
+    elsif player_1.throw.choice == "rock" && player_2.throw.choice == "scissors" || player_1.throw.choice == "paper" && player_2.throw.choice == "rock" || player_1.throw.choice == "scissors" && player_2.throw.choice == "paper"
+      return player_1     
+    elsif player_1.throw.choice == "rock" && player_2.throw.choice == "paper" || player_1.throw.choice == "paper" && player_2.throw.choice == "scissors" || player_1.throw.choice == "scissors" && @player_2.throw.choice == "rock"
+      return player_2
     end
   end
 

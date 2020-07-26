@@ -1,1 +1,11 @@
-<%= @player_1_name %> chose to throw <%= @player_1_throw %>!
+<h2><%= @game.player_1.name %> chose to throw <%= @game.player_1.throw.choice.capitalize %>!</h2>
+<h2><%= @game.player_2.name %> chose to throw <%= @game.player_2.throw.choice.capitalize %>!</h2>
+<div>
+  <% if @game.winner_is == "TIE"%>
+  <h1> It is a <%= @game.winner_is %>! </h1>
+  <% else %>
+  <h1> <%= @game.winner_is.name %> is the WINNER! </h1> 
+  <% end %> 
+</div>
+
+
