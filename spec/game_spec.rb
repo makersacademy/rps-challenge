@@ -3,13 +3,13 @@ require 'game'
 describe Game do
   describe '#initialize' do
     it 'creates array of all moves' do
-      expect(subject.moves).to eq ['rock','paper','scissors']
+      expect(subject.moves).to eq ['rock', 'paper', 'scissors']
     end
   end
 
   describe '#random_move' do
     it 'returns a random move' do
-      allow(subject).to receive(:random_move) {'rock'}
+      allow(subject).to receive(:random_move) { 'rock' }
       expect(subject.random_move).to eq 'rock'
     end
   end

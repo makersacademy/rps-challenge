@@ -11,16 +11,10 @@ class Game
   end
 
   def move_comparison(player_move, computer_move)
-    if player_move == 'rock' && computer_move == 'scissors'
-      return 'You Win'
-    elsif player_move == 'paper' && computer_move == 'rock'
-      return 'You Win'
-    elsif player_move == 'scissors' && computer_move == 'paper'
-      return 'You Win'
-    elsif player_move == computer_move
-      return 'Draw!'
-    else
-      return 'Computer Wins'
-    end
+    return 'You Win' if player_move == 'rock' && computer_move == 'scissors'
+    return 'You Win' if player_move == 'paper' && computer_move == 'rock'
+    return 'You Win' if player_move == 'scissors' && computer_move == 'paper'
+    return 'Draw!' if player_move == computer_move
+    'Computer Wins'
   end
 end
