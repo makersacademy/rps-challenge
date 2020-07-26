@@ -21,7 +21,19 @@
         <img src='https://i.gyazo.com/b309a9ba10ac0f842f290e96dcf78043.png'>
       <% end %>
   </div>
-
+  <div id='container' padding-top: 50px;>
+  <h4>Moves</h4>
+  <ul style="width:10%; float:left;">
+    <% @game.winner.moves.each do |winner_list| %>
+      <li><%= winner_list %></li>
+    <%end %>
+  </ul>
+  <ul style="width:10%; float:left;">
+    <% @game.loser.moves.each do |loser_list| %>
+      <li><%= loser_list %></li>
+    <% end %>
+  </ul>
+  </div>
   <br>
   <form action="/">
     <input type='submit' value='Restart'>
@@ -29,6 +41,7 @@
 <% else %>
     <% if @game.tie? %>
     <p>The game is a tie, both users played <%= @game.current_user.move %></p>
+    <img src='https://i.gyazo.com/5e54f9bbf837ab8ca98c578ebbb07a0f.png'>
     <% end %>
   <br>
   <h3><b><%= @game.current_user.name %></b>'s turn.</h3>

@@ -12,7 +12,6 @@ class Game
 
   def initialize(user_1, user_2)
     @users = [@user_1 = user_1, @user_2 = user_2]
-    @moves = []
   end
 
   def user_1
