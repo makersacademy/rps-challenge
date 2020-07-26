@@ -1,6 +1,7 @@
 require 'game'
 
 describe Game do
+  let(:subject) { Game.new('Dill') }
   describe '#initialize' do
     it 'creates array of all moves' do
       expect(subject.moves).to eq ['rock', 'paper', 'scissors']
@@ -26,7 +27,7 @@ describe Game do
 
     it 'returns computer wins' do
       expect(subject.move_comparison('rock', 'paper')).to eq "Computer Wins"
-
     end
   end
+
 end

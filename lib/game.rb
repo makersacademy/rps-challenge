@@ -1,13 +1,16 @@
 class Game
 
-  attr_reader :moves
+  attr_reader :moves, :player_1, :computer_move
 
-  def initialize
+
+  def initialize(player_1)
+    @player_1 = player_1
     @moves = ['rock', 'paper', 'scissors']
+    @computer_move = nil
   end
 
   def random_move
-    @moves.sample
+    @computer_move = @moves.sample
   end
 
   def move_comparison(player_move, computer_move)
@@ -17,4 +20,14 @@ class Game
     return 'Draw!' if player_move == computer_move
     'Computer Wins'
   end
+
+## Using class methods
+  def self.create(player_1)
+    @game = Game.new(player_1)
+  end
+
+  def self.instance
+    @game
+  end
+
 end
