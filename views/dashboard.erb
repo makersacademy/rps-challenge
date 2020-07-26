@@ -1,10 +1,33 @@
 <h1>Welcome to the RPS Dashboard</h1> <br>
-Current match: <%= @game.user_1.name %> vs. <%= @game.user_2.name %>
+<h2>Current match: <u> <%= @game.user_1.name %> </u> vs. <u> <%= @game.user_2.name %> </u> </h2>
+<% if @game.user_1_win? %>
+  <%= @game.user_1.name %> wins with <%= @game.user_1.moves.last %> vs
+  <%= @game.user_2.name %> with <%= @game.user_2.moves.last %>
+  <br>
+  <form action="/">
+    <input type="submit" value="Restart">
+  </form>
+<% elsif @game.user_2_win? %>
+  <%= @game.user_2.name %> wins with <%= @game.user_2.moves.last %> vs
+  <%= @game.user_1.name %> with <%= @game.user_1.moves.last %>
+<% else %>
+    <% if @game.tie? %>
+    <p>The game is a tie, both users played <%= @game.current_user.move %></p>
+    <% end %>
+  <br>
+  <h3><b><%= @game.current_user.name %></b>'s turn.</h3>
+  <br> Please select an option below. <br>
+  <p>
+    <form action="/rock">
+      <input type='submit' value='Rock'>
+    </form>
 
-<form action="/change_turns">
-  <input type='button' value='Rock'>
-</form>
+    <form action="/scissors">
+      <input type='submit' value='Scissors'>
+    </form>
 
-<form action="/change_turns">
-  <input type='button' value='Scissors'>
-</form>
+    <form action="/paper">
+        <input type='submit' value='Paper'>
+    </form>
+  <p>
+<% end %>
