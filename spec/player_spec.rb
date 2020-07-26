@@ -12,7 +12,7 @@ describe Player do
   describe '#add(throw)' do
     it 'assigns a Throw object as an attribute' do
       subject.add(rock_throw)
-      expect(subject.show_throw.choice).to eq "rock"
+      expect(subject.throw.choice).to eq "rock"
     end
   end
 end

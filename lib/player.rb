@@ -1,5 +1,5 @@
 class Player
-  attr_reader :name
+  attr_reader :name, :throw
   
   def initialize(name)
     @name = name
@@ -9,7 +9,4 @@ class Player
     @throw = throw
   end
 
-  def show_throw
-    @throw
-  end
 end
