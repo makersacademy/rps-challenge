@@ -10,14 +10,6 @@ class Game
     @current_turn = player1
   end
 
-  def player_move(player)
-    player.move 
-  end
-  
-  def computer_move
-    ["Rock", "Paper", "Scissors"][rand(3)]
-  end
-
   def switch_turns
     @current_turn = opposite_player
   end
@@ -41,6 +33,10 @@ class Game
   def finish_game
     add_score
     switch_turns
+  end
+
+  def computer_move
+    ["Rock", "Paper", "Scissors"][rand(3)]
   end
 
   private
