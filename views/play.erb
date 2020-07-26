@@ -1,4 +1,14 @@
-<h1>Hi <%= @avatar_name %>! Let's smash this game!</h1>
+<h1>Hi <mark><%= @avatar_name %></mark>! Let's smash this game!</h1>
+<br>
 
+<h1>Rock, Paper or Scissors?</h1>
 
- 
+<h3>Please select one of the following:</h3>
+<form action="/result" method="post">
+    <select id="option" name='option'>
+       <option value="rock">Rock</option>
+       <option value="paper">Paper</option>
+       <option value="scissors">Scissors</option>
+    </select>
+    <input type="submit" value="Submit">
+</form>
