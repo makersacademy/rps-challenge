@@ -5,10 +5,10 @@ class Game
 
 
   WINNING_MOVES = { 'Rock' => %w[Scissors Lizard],
-                    'Paper' => %w[Rock Spork],
+                    'Paper' => %w[Rock Spock],
                     'Scissors' => %w[Paper Lizard],
-                    'Spork' => %w[Scissors Rock],
-                    'Lizard' => %w[Paper Spork] }
+                    'Spock' => %w[Scissors Rock],
+                    'Lizard' => %w[Paper Spock] }
 
   def initialize(user_1, user_2)
     @users = [@user_1 = user_1, @user_2 = user_2]

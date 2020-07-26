@@ -56,7 +56,7 @@ class App < Sinatra::Base
     erb :move
   end
 
-  get '/spork' do
+  get '/spock' do
     instantiate
     erb :move
   end
