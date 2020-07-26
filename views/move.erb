@@ -1,5 +1,9 @@
-<%= @game.current_user.name %> played <%= @game.current_user.move %>!
-
+<% if @game.user_1.name == 'Computer' || @game.user_2.name == 'Computer' %>
+  <%= @game.current_user.name %> played <%= @game.current_user.move %>!
+<% else %>
+  Player moves are hidden until the end of the turn!
+<% end %>
+<br>
 <form action="/change_turns" method="post">
   <input type='submit' value='Change turns'>
 </form>

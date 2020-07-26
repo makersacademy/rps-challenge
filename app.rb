@@ -11,6 +11,12 @@ class App < Sinatra::Base
     @game.reset_player_moves
   end
 
+  def instantiate
+    @game = Game.play
+    reset_moves
+    @game.current_user.current_move(current_path)
+  end
+
   get '/' do
     erb :index
   end
@@ -29,37 +35,27 @@ class App < Sinatra::Base
   end
 
   get'/rock' do
-    @game = Game.play
-    reset_moves
-    @game.current_user.current_move(current_path)
+    instantiate
     erb :move
   end
 
   get '/paper' do
-    @game = Game.play
-    reset_moves
-    @game.current_user.current_move(current_path)
+    instantiate
     erb :move
   end
 
   get '/scissors' do
-    @game = Game.play
-    reset_moves
-    @game.current_user.current_move(current_path)
+    instantiate
     erb :move
   end
 
   get '/lizard' do
-    @game = Game.play
-    reset_moves
-    @game.current_user.current_move(current_path)
+    instantiate
     erb :move
   end
 
   get '/spork' do
-    @game = Game.play
-    reset_moves
-    @game.current_user.current_move(current_path)
+    instantiate
     erb :move
   end
 
