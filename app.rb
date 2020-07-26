@@ -18,6 +18,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player_1_name = session[:player_1_name]
+    @player_2_name = "RPS Bot"
     erb :play
   end
 
