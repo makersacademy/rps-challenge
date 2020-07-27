@@ -18,32 +18,33 @@ class RPS < Sinatra::Base
   post '/names' do
     player_1 = Player.new(params[:player_1_name])
     player_2 = Player.new("RPS Bot")
-    $game = Game.new(player_1, player_2)
+    @game = Game.create(player_1, player_2)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
     erb :play
   end
 
   post '/play' do
-    player_1 = Player.new($game.player_1.name)
+    @game = Game.instance
+    player_1 = Player.new(@game.player_1.name)
     player_2 = Player.new("RPS Bot")
-    $game = Game.new(player_1, player_2)
-    @game = $game
+    @game = Game.create(player_1, player_2)
+    @game = Game.instance
     redirect '/play'
   end
 
   post '/throw' do
-    @game = $game
-    $game.player_1.add(Throw.new(params[:choice])) 
-    $game.player_2.add(Throw.new)
+    @game = Game.instance
+    @game.player_1.add(Throw.new(params[:choice])) 
+    @game.player_2.add(Throw.new)
     redirect '/throw'
   end
 
   get '/throw' do
-    @game = $game
+    @game = Game.instance
     erb :throw
   end
 
