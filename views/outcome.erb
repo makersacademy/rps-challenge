@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <body style="background-color:powderblue;">
+    <center>
+      <h1>You chose <%= @game.choice %>!</h1>
+      <br>
+      <h1>Your opponent chose <%= @game.opponent %>!</h1>
+      <br>
+      <h1><%= @game.outcome(@game.weapon(params[:choice])) %></h1>
+    </center>
+  </body>
+</html>
