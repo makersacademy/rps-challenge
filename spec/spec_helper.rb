@@ -12,6 +12,7 @@ SimpleCov.start
 ENV['RACK_ENV'] = 'test'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 Capybara.app = Rps
+require 'feature/web_helper'
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
 RSpec.configure do |config|
