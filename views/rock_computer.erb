@@ -3,11 +3,11 @@
 <h2> <%= @game.player_2.name %> threw <%= @computer_move %>! </h2>
 
 <% if @computer_move == "rock" %>
-<h1> You and <%= @computer_name %> tied </h1>
+<h1> You and <%= @game.player_2.name %> tied </h1>
 <% elsif @computer_move == "paper" %>
-<h1> You lost to <%= @computer_name %>! </h1>
+<h1> You lost to <%= @game.player_2.name %>! </h1>
 <% else %>
-<h1> You beat <%= @computer_name %>! </h1>
+<h1> You beat <%= @game.player_2.name %>! </h1>
 <% end %>
 
 <form action="/play_singleplayer">
