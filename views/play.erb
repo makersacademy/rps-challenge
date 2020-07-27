@@ -5,6 +5,16 @@
 <h4> Make your choice <%= @game.player_1.name %>! </h4>
 
 <form action="/throw" method="post">
-  <input type="hidden" name="rock" value="rock">
+  <input type="hidden" name="choice" value="rock">
   <input type="submit" value="Rock!">
+</form>
+
+<form action="/throw" method="post">
+  <input type="hidden" name="choice" value="paper">
+  <input type="submit" value="Paper!">
+</form>
+
+<form action="/throw" method="post">
+  <input type="hidden" name="choice" value="scissors">
+  <input type="submit" value="Scissors!">
 </form>

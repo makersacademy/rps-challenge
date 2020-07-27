@@ -27,19 +27,24 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/play' do
+    player_1 = Player.new($game.player_1.name)
+    player_2 = Player.new("RPS Bot")
+    $game = Game.new(player_1, player_2)
+    @game = $game
+    redirect '/play'
+  end
+
   post '/throw' do
     @game = $game
-    p params[:rock]
-    $game.player_1.add(Throw.new(params[:rock])) 
+    $game.player_1.add(Throw.new(params[:choice])) 
     $game.player_2.add(Throw.new)
-    @game.player_1.throw.choice
-    @game.player_2.throw.choice
     redirect '/throw'
   end
 
   get '/throw' do
     @game = $game
-    @game.winner_is
+    # @game.winner_is
     erb :throw
   end
 
