@@ -15,7 +15,7 @@ describe Player do
   describe '#gain_point' do
     it 'adds a point to points' do
       player = Player.new('Dill')
-      expect{ player.gain_point }.to change{ player.points }.by(Player::ONE_POINT)
+      expect { player.gain_point }.to change { player.points }.by(Player::ONE_POINT)
     end
   end
 end

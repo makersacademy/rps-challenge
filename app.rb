@@ -9,8 +9,6 @@ class RPS < Sinatra::Base
     @game = Game.instance
   end
 
-  ### HOME PAGE
-
   get '/' do
     erb :index
   end
@@ -66,7 +64,6 @@ class RPS < Sinatra::Base
     @game.player_2.gain_point if @who_wins == 'Computer Wins'
     erb :moves
   end
-
 
   run! if app_file == $0
 end

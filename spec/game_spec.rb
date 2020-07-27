@@ -26,9 +26,7 @@ describe Game do
     end
 
     it 'returns computer wins' do
-      expect(subject.move_comparison('rock', 'paper')).to eq "Computer Wins"
+      expect(subject.move_comparison('rock', 'paper')).to eq "Player 2 wins"
     end
   end
-
-
 end
