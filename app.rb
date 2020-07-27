@@ -3,9 +3,12 @@ require './lib/player'
 require './lib/game'
 require './lib/throw'
 
-
 class RPS < Sinatra::Base
   enable :sessions
+  
+  before do
+    @game = Game.instance
+  end
 
   get '/test' do
     'Testing infrastructure working!'
@@ -23,12 +26,10 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @game = Game.instance
     erb :play
   end
 
   post '/play' do
-    @game = Game.instance
     player_1 = Player.new(@game.player_1.name)
     player_2 = Player.new("RPS Bot")
     @game = Game.create(player_1, player_2)
@@ -37,14 +38,12 @@ class RPS < Sinatra::Base
   end
 
   post '/throw' do
-    @game = Game.instance
     @game.player_1.add(Throw.new(params[:choice])) 
     @game.player_2.add(Throw.new)
     redirect '/throw'
   end
 
   get '/throw' do
-    @game = Game.instance
     erb :throw
   end
 
