@@ -27,8 +27,6 @@ describe Game do
   end
 
   describe '#winner_is' do
-  # let(:player_1).receive(:throw)
-  # let(:player_2).receive(:throw)
     it 'returns the winner given the players throws' do
       allow(player_1).to receive(:throw)
       allow(player_2).to receive(:throw)

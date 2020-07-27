@@ -44,7 +44,6 @@ class RPS < Sinatra::Base
 
   get '/throw' do
     @game = $game
-    # @game.winner_is
     erb :throw
   end
 
