@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <style>
+
+  body {
+      background-image: radial-gradient( circle farthest-corner at -3.3% 48%,  rgba(141,146,239,1) 0%, rgba(99,229,254,1) 90% );
+      font-family: 'Bangers', cursive;
+      font-size: 20px;
+      color: black;
+    }
+
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+  </style>
+</head>
+
+<body>
+  <center>
+
+  <div>  <h1> Hi <%= @name %>! </h1> </div>
+    <h1> Type Rock, Paper or Scissors to play! </h1>
+
+
+  <form action="/outcome" method="get">
+    <!-- <label for="choice"> -->
+      <input type="text" name="choice">
+    <!-- </label> -->
+    <input type="submit" value="Play!">
+  </form>
+
+  <br>
+  </center>
+
+</body>
+</html>
