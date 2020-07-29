@@ -1,10 +1,8 @@
 # Rock, Paper Scissors
 
-[![Build Status](https://travis-ci.org/hiboabd/rps-challenge.svg?branch=master)](https://travis-ci.org/hiboabd/rps-challenge)
-
 Deployed here: https://rps-hibo.herokuapp.com
 
-[RPS Homepage](RPS-homepage.png)
+<img src="RPS-homepage.png" alt="RPS homepage" width="auto" height="500">
 
 ## Description
 
