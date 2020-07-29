@@ -38,7 +38,6 @@ class RpsGame < Sinatra::Base
     @name = session[:name]
     @game = Game.new(@name)
     @game.outcome(session[:choice])
-    p @game
     erb(:outcome)
   end
 

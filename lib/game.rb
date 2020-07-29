@@ -11,15 +11,12 @@ class Game
   end
 
   def computer_turn
-    p "called!"
     @computer_choice = @rps.sample
   end
 
   def outcome(player_1_choice, player_2_choice = "")
     computer_turn
-    p @computer_choice
     player_2_choice = @computer_choice if player_2_choice == ""
-    p player_2_choice
     choice_formatting(player_1_choice, player_2_choice)
 
     return @winner = "It's a draw!" if player_1_choice == player_2_choice
