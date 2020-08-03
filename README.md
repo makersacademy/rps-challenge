@@ -43,7 +43,7 @@ As usual please start by
 * TEST driving development of your app
 
 --------------
-### plan
+# Plan for completeing the task
 
 #### Website Side
 
@@ -94,7 +94,9 @@ add the addition options to the winning hash, and in computer move - RPSSL rando
 
 ### Changes
 
-No real changes but was a little stumped about the return value from #random_move bore realising than an if statement also returns a value, so I had to explicitly return a value if rpssl wasn't chosen.
+No real changes but was a little stumped about the return value from #random_move before realising than an if statement also returns a value, so I had to explicitly return a value if rpssl wasn't chosen.
+
+--------------
 
 ## Basic Rules
 
