@@ -18,6 +18,10 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
+## Deployed App:
+https://makers-rockpaperscissors.herokuapp.com/
+
+
 ## Functionality
 
 - the marketeer should be able to enter their name before the game
@@ -62,10 +66,3 @@ First drafts were buttons I draw in Photoshop. I then switched during the proces
 ![](public/img/design.png)
 ![](public/img/playview.png)
 ![](public/img/resultview.png)
-
-# Don't want to clone the whole repo? View the finished design here:
-<br />
-(1st page HTML only Preview)
-<br />
-
-https://nadinedelia.github.io/rps-design/
