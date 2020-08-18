@@ -1,0 +1,14 @@
+<%= @player_1_name %> vs. <%= @player_2_name %>
+<form action="/game" method="post">
+  <label for="player_1_card">
+    Player 1 card
+    <input type="password" name="player_1_card">
+  </label>
+  <br>
+  <label for="player_2_card">
+    Player 2 card
+    <input type="password" name="player_2_card">
+  </label>
+  <br>
+  <input type="submit" value="Submit">
+</form>
