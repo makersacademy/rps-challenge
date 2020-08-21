@@ -6,6 +6,6 @@ class Game
   }
 
   def result(player_one, player_two)
-    RULES[player_one][player_two]
+    RULES[player_one.to_sym][player_two.to_sym]
   end
 end
