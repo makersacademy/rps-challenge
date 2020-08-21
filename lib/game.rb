@@ -3,6 +3,11 @@ class Game
   def initialize
     @cpu_move = nil
     @player_move = nil
+    @move_list = {
+      'rock' => 'paper',
+      'scizzors' => 'paper',
+      'paper' => 'rock'
+    }
   end
 
   def cpu(move)
@@ -16,7 +21,7 @@ class Game
   def outcome
     if @cpu_move == @player_move
       return 'Draw'
-    elsif movelist.fetch(@cpu_move) == @player_move
+    elsif @movelist.fetch(@cpu_move) == @player_move
       return 'CPU wins!'
     else 
       return 'Player wins!'
