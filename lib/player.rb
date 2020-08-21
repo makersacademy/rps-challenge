@@ -11,6 +11,4 @@ class Player
   def update_choice(choice)
     @choice = choice
   end
-
-
 end

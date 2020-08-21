@@ -1,3 +1,6 @@
+require_relative 'player'
+require_relative 'computer'
+
 class Game
 
   def initialize(player,opponent)
@@ -5,7 +8,7 @@ class Game
     @opponent = opponent
   end
 
-  attr_reader :player_choice, :comp_choice
+  attr_reader :player, :opponent
 
   def draw?
     @player.choice == @opponent.choice
