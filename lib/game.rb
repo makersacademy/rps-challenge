@@ -1,5 +1,6 @@
 require_relative 'player'
 require_relative 'computer'
+require_relative 'weapon'
 
 class Game
 
@@ -9,19 +10,23 @@ class Game
     @player = player
     @weapon = weapon
     @computer = computer
-    @player_choice = nil
-    @computer_choice = nil
+    @player_choice = :none
+    @computer_choice = :none
   end
 
   def player_name
     @player.name
   end
 
-  def player_choice(choice)
+  def players_choice(choice)
     @player_choice = choice.to_sym
   end
 
   def computer_choice
     @computer_choice = @computer.random_weapon
+  end
+
+  def result
+    @weapon.who_wins(player_choice, computer_choice)
   end
 end
