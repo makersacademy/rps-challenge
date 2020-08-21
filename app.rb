@@ -1,12 +1,20 @@
 require "sinatra/base"
 
 class App < Sinatra::Base
-  get "/" do 
+
+  enable :sessions
+
+  get "/" do
     erb :index
   end
 
+  post '/get_name' do 
+    session[:player] = params[:Player]
+    redirect "/options"
+  end
+
   get "/options" do
-    @player_name = params[:Player]
+    @player_name = session[:player]
     erb :options
   end
 
