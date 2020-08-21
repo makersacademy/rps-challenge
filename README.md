@@ -21,6 +21,8 @@ I would like to be able to play rock/paper/scissors
 ```
 
 
+![login screenshot](https://github.com/JR-G/rps-challenge/blob/master/img/screenshot-login.png)
+
 Tech Stack
 ------------------
 
