@@ -25,9 +25,8 @@ describe Game do
     end
 
     it 'returns false if computer has beaten player' do
-      allow(opponent).to receive(:choice) { 'Paper'}
+      allow(opponent).to receive(:choice) { 'Paper' }
       expect(subject.win?).to eq false
     end
   end
-
 end
