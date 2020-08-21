@@ -9,3 +9,9 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
+
+gem "shotgun", "~> 0.9.2"
+
+gem "rack", "~> 2.2"
+
+gem "thin", "~> 1.7"
