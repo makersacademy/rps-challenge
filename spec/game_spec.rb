@@ -22,5 +22,15 @@ describe Game do
       subject.player('rock')
       expect(subject.outcome).to eq 'Draw'
      end
+    it 'expects CPU to win' do
+      subject.cpu('paper')
+      subject.player('rock')
+      expect(subject.outcome).to eq 'CPU wins!'
+    end
+    it 'expects player to win' do
+      subject.cpu('scizzors')
+      subject.player('rock')
+      expect(subject.outcome).to eq 'Player wins!'
+    end
   end
 end
