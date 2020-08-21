@@ -2,7 +2,7 @@ require "sinatra/base"
 
 class App < Sinatra::Base
   get "/" do 
-    "Home page"
+    erb :index
   end
 
   # start the server if ruby file executed directly

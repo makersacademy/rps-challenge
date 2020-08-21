@@ -1,11 +1,11 @@
-#require "capybara"
+# require "capybara"
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
-#require the app
+# require the app
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
-#tell capybara to run the app
+# tell capybara to run the app
 Capybara.app = App
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
