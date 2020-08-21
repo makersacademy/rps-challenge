@@ -2,6 +2,7 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'features/web_helper'
 
 # require the app
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
