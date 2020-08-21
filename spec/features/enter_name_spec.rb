@@ -1,5 +1,5 @@
 feature 'Enter name' do
-    scenario 'player enters name before game starts' do
+    scenario 'player enters name before game and receives welcome' do
         visit('/')
         fill_in :player, with: 'Zish'
         click_button "Submit"
