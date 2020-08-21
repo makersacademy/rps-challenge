@@ -9,12 +9,12 @@ class App < Sinatra::Base
   end
 
   post '/get_name' do 
-    session[:player] = params[:Player]
+    @player = Player.new(params[:Player])
     redirect "/options"
   end
 
   get "/options" do
-    @player_name = session[:player]
+    @player = session[:player]
     erb :options
   end
 
