@@ -19,12 +19,12 @@ class RPSApp < Sinatra::Base
     erb :play
   end
 
-  post '/move' do
+  post '/result' do
     @player_name = session[:player_name]
     @player_move = params[:choice]
     @computer_move = Computer.new.move
-    @match = Game.new.match(@player_move.to_sym, @computer_move.to_sym)
-    erb :move
+    @match = Game.new
+    erb @match.result(@player_move.to_sym, @computer_move.to_sym)
   end
 
   run! if app_file == $0
