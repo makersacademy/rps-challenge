@@ -19,9 +19,19 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+Interface
+------------------
 
-
-![login screenshot](https://github.com/JR-G/rps-challenge/blob/master/img/screenshot-login.png)
+**Entering the player name:**  
+![login screenshot](https://github.com/JR-G/rps-challenge/blob/master/img/screenshot-login.png)  <br></br>
+**Picking a move:**  
+![move screenshot](https://github.com/JR-G/rps-challenge/blob/master/img/screenshot-move.png)  <br></br>
+**If the user wins:**  
+![user wins](https://github.com/JR-G/rps-challenge/blob/master/img/screenshot-win.png)  <br></br>
+**If the user loses:**  
+![user lost](https://github.com/JR-G/rps-challenge/blob/master/img/screenshot-loss.png)  <br></br>
+**If it's a draw:**  
+![a draw](https://github.com/JR-G/rps-challenge/blob/master/img/screenshot-draw.png)  <br></br>
 
 Tech Stack
 ------------------
