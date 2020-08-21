@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   subject(:match) { described_class.new }
-  let(:game)  { match.result(player, computer.move) }
+  let(:game) { match.result(player, computer.move) }
   let(:player) { :rock }
   let(:computer) { double :computer }
   
