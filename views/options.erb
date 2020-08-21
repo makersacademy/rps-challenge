@@ -1,5 +1,9 @@
 <h1>Welcome warrior <%=@player.name%> </h1>
-<button>Rock</button>
-<button>Paper</button>
-<button>Scissors</button>
-<h2>You choose: <%= @player.choice%><h2>
+<form action="/player_choice" method="POST">
+<button name="option" type=submit value="Rock">Rock</button>
+<button name="option" type=submit value="Paper">Paper</button>
+<button name="option" type=submit value="Scissors">Scissors</button>
+<form>
+<div>
+<h2>You choose: <%=@player.choice%><h2>
+</div>
