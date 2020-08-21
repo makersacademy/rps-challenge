@@ -1,3 +1,5 @@
+require 'computer'
+
 describe Computer do
   it 'exists' do
     computer = Computer.new
@@ -5,10 +7,10 @@ describe Computer do
   end
 
   it "returns computer as it's name" do
-    expect(subject.choice).to eq 'Computer'
+    expect(subject.name).to eq 'Computer'
   end
 
   it "returns rock, paper or scissors as it's choice" do
-    expect(subject.choice).to be_in(['Rock','Paper','Scissors'])
+    expect('Rock,Paper,Scissors').to include(subject.choice)
   end
 end
