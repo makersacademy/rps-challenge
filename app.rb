@@ -1,11 +1,25 @@
 require 'sinatra'
 require 'sinatra/base'
 
+
 class RPS < Sinatra::Base
+ 
   get '/' do
-    'Hello RG!'
+    erb :index
   end
 
-  # start the server if ruby file executed directly
+  post '/' do
+  @player = params[:player]
+  erb: play
+  end
+
+
+
+
+
+
+
+
+ 
   run! if app_file == $0
 end
