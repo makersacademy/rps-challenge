@@ -10,4 +10,11 @@ describe Game do
     expect(game).to be_an_instance_of(Game)
   end
 
+  describe '#draw?' do
+    it 'returns true if game is a draw' do
+      allow(subject).to receive(:comp_choice) { rock }
+      expect(subject.draw?).to eq true
+    end
+  end
+
 end
