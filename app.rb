@@ -31,6 +31,7 @@ class App < Sinatra::Base
   end
 
   get "/battle" do 
+    @winner = @game.winner(@game.player_1, @game.player_2)
     erb :battle
   end
 

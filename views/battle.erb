@@ -1,2 +1,8 @@
-<h2><%=@game.player_1.name%> vs <%=@game.player_2.name%> </h2>
-<p><%=@game.player_1.choice%> vs <%=@game.player_2.choice%>  <p>
+<h2><%=@game.player_1.name%> vs <%=@game.player_2.name%></h2>
+<p><%=@game.player_1.choice%> vs <%=@game.player_2.choice%><p>
+<% if @winner == "Draw" %>
+<h2>The game is Daw</h2> 
+<% else %>
+<div style="display: flex; text-align: center"><h2>The winner is:</h2> <h1><%=@winner.name%></h1> </div> 
+<% end %>
+
