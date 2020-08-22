@@ -14,7 +14,13 @@ class Fight < Sinatra::Base
 
   post '/name' do
   	session[:player_name] = params[:player_name]
-    redirect '/arena'
+    redirect '/rules'
+  end
+
+  get '/rules' do
+  	@player_name = session[:player_name]
+  	erb :rules
+
   end
 
   get '/arena' do
@@ -22,5 +28,6 @@ class Fight < Sinatra::Base
   	erb :arena
   end
 
+  run! if app_file == $0
 
 end
