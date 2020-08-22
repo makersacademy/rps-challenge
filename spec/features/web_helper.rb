@@ -7,5 +7,5 @@ end
 def battle 
   sing_n_play
   click_button "Rock"
-  click_button "Confirm Choice"
+  click_link "Confirm Choice"
 end

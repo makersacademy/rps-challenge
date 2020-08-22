@@ -18,4 +18,8 @@ class Game
     @players[0]
   end
 
+  def player_2
+    @players[1]
+  end
+
 end

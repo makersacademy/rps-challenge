@@ -1,5 +1,4 @@
 require "sinatra/base"
-require "./lib/player"
 require "./lib/bot"
 require "./lib/game"
 
@@ -21,14 +20,18 @@ class App < Sinatra::Base
   end
 
   get "/options" do
-    @player = @game.player_1
     erb :options
   end
 
   post "/player_choice" do
-    @player = @game.player_1
-    @player.round_choice(params[:option])
+    @player_1 = @game.player_1
+    @player_1.round_choice(params[:option])
+    @game.player_2.round_choice
     redirect "/options"
+  end
+
+  get "/battle" do 
+    erb :battle
   end
 
   # start the server if ruby file executed directly
