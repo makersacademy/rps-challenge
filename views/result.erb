@@ -1,0 +1,14 @@
+
+
+
+<% if @game.outcome == 'win' %>
+  <%=@game.name %> wins!
+<% elsif @game.outcome == 'lose' %>
+  <%=@game.name %> loses!
+<% elsif @game.outcome == 'draw' %>
+  It's a draw!!
+<%end%>
+
+<form action='/'>
+  <button type="submit" value="submit">Play again?</button>
+</form>

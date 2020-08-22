@@ -14,4 +14,8 @@ class Rps <Sinatra::Base
   get '/move-select' do
     erb(:moveselect)
   end
+
+  get '/result' do
+    erb(:result)
+  end
 end

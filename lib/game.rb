@@ -1,17 +1,19 @@
 class Game 
 
+  attr_reader :player_move, :cpu_move, :move_list
+
   def initialize
     @cpu_move = nil
     @player_move = nil
     @move_list = {
-      'rock' => 'paper',
+      'rock' => 'scissors',
       'scizzors' => 'paper',
       'paper' => 'rock'
     }
   end
 
-  def cpu(move)
-    @cpu_move = move
+  def cpu
+    @cpu_move = ['rock', 'paper', 'scizzors'].sample
   end
 
   def player(move)
@@ -20,11 +22,12 @@ class Game
 
   def outcome
     if @cpu_move == @player_move
-      return 'Draw'
+      return 'draw'
     elsif @move_list.fetch(@cpu_move) == @player_move
-      return 'CPU wins!'
+      return 'lose'
     else 
-      return 'Player wins!'
+      return 'win'
     end
   end
+
 end
