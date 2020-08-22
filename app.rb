@@ -3,8 +3,6 @@ require "./lib/player"
 
 class App < Sinatra::Base
 
-  enable :sessions
-
   before do 
     @player = Player.instance
   end
