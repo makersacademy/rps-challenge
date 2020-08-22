@@ -4,6 +4,6 @@ feature 'Wining the game' do
       srand(20)
       enter_name_and_play
       click_button('Rock')
-      expect(page).to have_content('Rock beats sicssors:')
+      expect(page).to have_content('Rock beats sicssors: JS Wins!')
     end
   end
