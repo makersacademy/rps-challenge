@@ -1,0 +1,11 @@
+<body style='text-align: center;'>
+    <%= @player_1.player %>: Paper vs <%=@game.computers_pick %> :CPU
+    <% if @game.select_winner == 'Wins!' %>
+    <h1> Paper beats Rock: <%=@player_1.player%> Wins!</h1>
+    <% elsif @game.select_winner == 'Lose!' %>
+    <h1> Scissors beats Paper: CPU Wins!</h1>
+    <% else %>
+    <h1> Draw </h1>
+    <%end%>
+    <a href='/play'>play again</a>
+</body>
