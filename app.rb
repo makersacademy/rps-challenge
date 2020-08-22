@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'rspec'
+require './lib/computer'
+require './lib/game'
 
 class Rps < Sinatra::Base
 
@@ -19,6 +21,9 @@ class Rps < Sinatra::Base
 
     post '/rock' do
         @player_1 = $player_1
+        @computer = Computer.new
+        @game = Game.new('Rock', @computer.computer_pick)
+        @game.select_winner
         erb(:rock)
     end
 
