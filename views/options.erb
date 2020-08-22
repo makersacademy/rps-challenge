@@ -14,8 +14,10 @@
 
   <% if @game.player_2.name == "Computer" %>
     <a href='/battle' class="link_like_btn">Confirm Choice</a>
-  <% else %>
+  <% elsif @game.player_2.name != "Computer" &&  @game.player_2.choice == nil %>
     <a href='/switch_turn' class="link_like_btn">Confirm Choice</a>
+  <% else %>
+    <a href='/battle' class="link_like_btn">Confirm Choice</a>
   <% end %>
   
 </div>

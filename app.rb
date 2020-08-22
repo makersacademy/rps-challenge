@@ -62,6 +62,12 @@ class App < Sinatra::Base
     erb :switch_turn
   end
 
+  get "/player_2_option" do 
+    @player_2 = @game.player_2
+    @player_2.round_choice(params[:option])
+    erb :options
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
