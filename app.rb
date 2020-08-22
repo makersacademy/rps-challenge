@@ -35,6 +35,11 @@ class App < Sinatra::Base
     erb :battle
   end
 
+  get "/play_again" do 
+    @game.player_2.round_choice
+    redirect "/options"
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
