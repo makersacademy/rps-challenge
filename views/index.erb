@@ -1,0 +1,46 @@
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+
+<head>
+  <script src="https://kit.fontawesome.com/48e6684c73.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+body {
+  background-color: #F7B15C;
+  color: #1e2020;
+  text-align: center;
+  font-family: 'Bangers', cursive;
+  border: 20px solid black;
+  border-radius: 7px;
+  height: 100vh;
+}
+
+h1 {
+  margin-top: 50px;
+}
+
+form {
+  margin-top: 100px;
+  font-size: 20px;
+}
+
+.btn {
+  background-color: #F7B15C;
+  border: none;
+  color: #1e2020;
+  font-family: 'Bangers', cursive;
+  font-size: 20px;
+</style>
+
+
+<h1>LET'S PLAY ROCK PAPER SCISSORS</h1>
+
+<form action='/player' method='post'>
+<label for='player'>What should we call you?</label>
+<br>
+<br>
+<input type='text' name='player'>
+<br>
+<br>
+<button class="btn"><i class="fas fa-arrow-circle-right"></i> Go</button>
+</form>
