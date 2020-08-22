@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="<%= url('/global.css') %>" rel="stylesheet" type="text/css" />
   <title>RPS GAME</title>
 </head>
 <body>
-  <h1> Rock Paper Scissors Battle APP </h1>  
+<div class="outer_div">
+<div class="inner_div">
+  <h1> Battle APP </h1>  
+  <h3> Rock Paper Scissors </h3> 
   <div>
     <form action="/get_name" method="POST" >
-      <input name="Player" type=text >
+      <input placeholder="Player Name" name="Player" type=text >
       <button type=submit >GO</button>
     </form>
   <div>
+ </div> 
+</div>  
 </body>
 </html>

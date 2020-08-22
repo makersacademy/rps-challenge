@@ -1,11 +1,16 @@
-<h2><%=@game.player_1.name%> vs <%=@game.player_2.name%></h2>
-<p><%=@game.player_1.choice%> vs <%=@game.player_2.choice%><p>
-<% if @winner == "Draw" %>
-<h2>The game is Daw</h2> 
-<% else %>
-<div style="display: flex; text-align: center"><h2>The winner is:</h2> <h1><%=@winner.name%></h1> </div> 
-<% end %>
+<link href="<%= url('/global.css') %>" rel="stylesheet" type="text/css" />
+<div class="outer_div">
+<div>
+  <h2><%=@game.player_1.name%> vs <%=@game.player_2.name%></h2>
+  <p><%=@game.player_1.choice%> vs <%=@game.player_2.choice%><p>
+  <% if @winner == "Draw" %>
+  <h2>The game is Daw</h2> 
+  <% else %>
+  <div style="display: flex; text-align: center"><h3>The winner is:</h3> <h1 style="color: red; position: relative; bottom: 10px "><%=@winner.name%></h1> </div> 
+  <% end %>
 
-<a href='/play_again' style="border: 0.4px solid grey; text-decoration: none; padding: 2.3px; border-radius: 3px; color: black; background: #e8e8e8">Play again</a>
-<a href='/' style="border: 0.4px solid grey; text-decoration: none; padding: 2.3px; border-radius: 3px; color: black; background: #e8e8e8">Back To Home </a>
+  <a href='/play_again' class="link_like_btn">Play again</a>
+  <a href='/' class="link_like_btn">Back To Home </a>
+</div>
+</div>
 

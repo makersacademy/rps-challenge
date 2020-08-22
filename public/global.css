@@ -1,0 +1,26 @@
+body {
+  background: peru;
+}
+
+.link_like_btn {
+  border: 0.4px solid grey;
+  text-decoration: none;
+  padding: 2.3px;
+  border-radius: 3px;
+  color: black;
+  background: #e8e8e8;
+}
+
+.link_like_btn:hover {
+  background: greenyellow;
+}
+
+.outer_div {
+  display: flex;
+  justify-content: center;
+}
+.inner_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,13 +1,17 @@
-<h1>Welcome warrior <%=@game.player_1.name%> </h1>
-  <form action="/player_choice" method="POST">
-  <button name="option" type=submit value="Rock">Rock</button>
-  <button name="option" type=submit value="Paper">Paper</button>
-  <button name="option" type=submit value="Scissors">Scissors</button>
-<form>
-<div >
-<h2>You choose: <%=@game.player_1.choice%><h2>
+<link href="<%= url('/global.css') %>" rel="stylesheet" type="text/css" />
+
+<div class="outer_div">
+<div class="inner_div">
+  <h1>Welcome warrior <%=@game.player_1.name%> </h1>
+    <form action="/player_choice" method="POST">
+    <button name="option" type=submit value="Rock">Rock</button>
+    <button name="option" type=submit value="Paper">Paper</button>
+    <button name="option" type=submit value="Scissors">Scissors</button>
+  <form>
+  <div >
+  <h2>You choose: <%=@game.player_1.choice%><h2>
+  </div>
+
+  <a href='/battle' class="link_like_btn">Confirm Choice</a>
 </div>
-
-<a href='/battle' style="border: 0.4px solid grey; text-decoration: none; padding: 2.3px; border-radius: 3px; color: black; background: #e8e8e8">Confirm Choice</a>
-
-
+</div>
