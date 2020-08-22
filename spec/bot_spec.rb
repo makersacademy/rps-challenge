@@ -1,13 +1,17 @@
 require "bot"
 
 describe Bot do 
-  it { expect(subject).to respond_to(:name) }
+  let(:computer) { Bot.new("Computer") }
+
+  it { expect(computer).to respond_to(:name) }
+
+  it { expect(computer).to respond_to(:choice) }
 
   describe "#round_choice" do 
     it "return random coice" do 
-      allow(subject).to receive(:sample).and_return("Rock")
-      subject.round_choice
-      expect(subject.choice).to eq "Rock"
+      allow(computer).to receive(:random_move).and_return("Rock")
+      computer.round_choice
+      expect(computer.choice).to eq "Rock"
     end
   end
 end
