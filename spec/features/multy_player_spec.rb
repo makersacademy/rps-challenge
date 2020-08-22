@@ -1,10 +1,12 @@
 feature "Game can be played with thwo people" do 
   scenario "Player can choose to play multiplayer" do 
-    visit(/)
-    click_link "Multiplayer"
-    fill_in ('Player', with: "Player_1")
-    fill_in ('Player', with: "Player_2")
-    click_link "Play"
-    expect(page).to have_content "Warrior Player_1 choosing now"
+    multy_sign_n_play
+    expect(page).to have_content "Welcome warrior Player_1"
+  end
+
+  scenario "Give the turn to the second player" do 
+    multy_sign_n_play
+    click_link "Confirm Choice"
+    expect(page).to have_content "Player_2 turn"
   end
 end

@@ -40,6 +40,28 @@ class App < Sinatra::Base
     redirect "/options"
   end
 
+  get "/multyplay" do 
+    erb :multyplay
+  end
+
+  post "/start_multy_game" do 
+    player_1 = Player.new(params[:Player_1])
+    player_2 = Player.new(params[:Player_2])
+    @game = Game.create(player_1,player_2)
+    redirect "/player_1_option"
+  end
+
+  get "/player_1_option" do 
+    @player_1 = @game.player_1
+    @player_1.round_choice(params[:option])
+    erb :options
+  end
+  
+  get "/switch_turn" do
+    @game.switch_turn
+    erb :switch_turn
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

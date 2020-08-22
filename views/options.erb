@@ -2,7 +2,7 @@
 
 <div class="outer_div">
 <div class="inner_div">
-  <h1>Welcome warrior <%=@game.player_1.name%> </h1>
+  <h1>Welcome warrior <%=@game.turn.name%> </h1>
     <form action="/player_choice" method="POST">
     <button name="option" type=submit value="Rock">Rock</button>
     <button name="option" type=submit value="Paper">Paper</button>
@@ -12,6 +12,11 @@
   <h2>You choose: <%=@game.player_1.choice%><h2>
   </div>
 
-  <a href='/battle' class="link_like_btn">Confirm Choice</a>
+  <% if @game.player_2.name == "Computer" %>
+    <a href='/battle' class="link_like_btn">Confirm Choice</a>
+  <% else %>
+    <a href='/switch_turn' class="link_like_btn">Confirm Choice</a>
+  <% end %>
+  
 </div>
 </div>

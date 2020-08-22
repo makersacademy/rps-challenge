@@ -41,4 +41,11 @@ describe Game do
 
   end
 
+  describe "#switch_turn" do 
+    it "switch turns between players" do
+      game.switch_turn
+      expect(game.turn).to eq player_2
+    end
+  end
+
 end

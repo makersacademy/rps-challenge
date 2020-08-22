@@ -1,9 +1,10 @@
 class Game 
 
-  attr_reader :players
+  attr_reader :players, :turn
 
   def initialize(player1, player2)
     @players = [player1, player2]
+    @turn = player1
   end
 
   def self.create(player1, player2)
@@ -39,5 +40,14 @@ class Game
       return "Draw"
     end
   end
+
+  def switch_turn
+    if @turn == player_1
+      @turn = player_2
+    else 
+      @turn = player_1
+    end
+  end
+
 
 end
