@@ -9,7 +9,11 @@
   <div style="display: flex; text-align: center"><h3>The winner is:</h3> <h1 style="color: red; position: relative; bottom: 10px "><%=@winner.name%></h1> </div> 
   <% end %>
 
-  <a href='/play_again' class="link_like_btn">Play again</a>
+  <% if @game.player_2.name == "Computer" %>
+    <a href='/play_again' class="link_like_btn">Play again</a>
+  <% else %>
+    <a href='/play_again_multy' class="link_like_btn">Play again</a>
+  <% end %>
   <a href='/' class="link_like_btn">Back To Home </a>
 </div>
 </div>

@@ -56,6 +56,12 @@ class App < Sinatra::Base
     @player_1.round_choice(params[:option])
     redirect "/options"
   end
+
+  get "/play_again_multy" do 
+    @game.player_1.round_choice(nil)
+    @game.player_2.round_choice(nil)
+    redirect "/switch_turn"
+  end
   
   get "/switch_turn" do
     @game.switch_turn
