@@ -6,6 +6,11 @@ class Fight < Sinatra::Base
 		"Test infrastructure working!"
 	end
 
+  get '/' do
+  	erb :index
+  end
+
+
 
 
 
