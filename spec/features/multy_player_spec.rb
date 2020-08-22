@@ -32,6 +32,14 @@ feature "Game can be played with thwo people" do
     expect(page).to have_content "You choose: Rock"
   end
 
+  scenario "Play another round" do 
+    multy_sign_n_play
+    choose_n_confirm
+    click_button "Ok"
+    choose_n_confirm
+    click_link "Play again"
+    expect(page).to have_content "Welcome warrior Player_1"
+  end
   
 
 end
