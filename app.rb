@@ -48,13 +48,13 @@ class App < Sinatra::Base
     player_1 = Player.new(params[:Player_1])
     player_2 = Player.new(params[:Player_2])
     @game = Game.create(player_1,player_2)
-    redirect "/player_1_option"
+    redirect "/options"
   end
 
-  get "/player_1_option" do 
+  post "/player_1_option" do 
     @player_1 = @game.player_1
     @player_1.round_choice(params[:option])
-    erb :options
+    redirect "/options"
   end
   
   get "/switch_turn" do
@@ -62,10 +62,10 @@ class App < Sinatra::Base
     erb :switch_turn
   end
 
-  get "/player_2_option" do 
+  post "/player_2_option" do 
     @player_2 = @game.player_2
     @player_2.round_choice(params[:option])
-    erb :options
+    redirect "/options"
   end
 
   # start the server if ruby file executed directly

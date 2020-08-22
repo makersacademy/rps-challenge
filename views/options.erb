@@ -3,13 +3,20 @@
 <div class="outer_div">
 <div class="inner_div">
   <h1>Welcome warrior <%=@game.turn.name%> </h1>
-    <form action="/player_choice" method="POST">
+    
+    <% if  @game.player_2.name == "Computer" %>
+      <form action="/player_choice" method="POST">
+    <% elsif @game.turn.name == @game.player_2.name %> 
+      <form action="/player_2_option" method="POST"> 
+    <% else %>
+      <form action="/player_1_option" method="POST">
+    <% end %>
     <button name="option" type=submit value="Rock">Rock</button>
     <button name="option" type=submit value="Paper">Paper</button>
     <button name="option" type=submit value="Scissors">Scissors</button>
   <form>
   <div >
-  <h2>You choose: <%=@game.player_1.choice%><h2>
+  <h2>You choose: <%=@game.turn.choice%><h2>
   </div>
 
   <% if @game.player_2.name == "Computer" %>

@@ -23,4 +23,15 @@ feature "Game can be played with thwo people" do
     expect(page).to have_content "You choose: Paper"
   end
 
+  scenario "The second player choose and option" do 
+    multy_sign_n_play
+    click_button "Paper"
+    click_link "Confirm Choice"
+    click_button "Ok"
+    click_button "Rock"
+    expect(page).to have_content "You choose: Rock"
+  end
+
+  
+
 end
