@@ -2,6 +2,8 @@ require "game"
 
 describe Game do 
   let(:game) { Game.new("player1", "player2") }
+  let(:player_1) { double("player_1", choice:"Rcok") }
+  let(:player_2) { double("player_2", choice:"Paper") }
 
   it { expect(game.players).to match_array(["player1", "player2"]) }
   
@@ -21,6 +23,12 @@ describe Game do
   describe "#player_2" do 
     it "return the instance of the second player in the game" do 
       expect(game.player_2).to eq "player2"
+    end
+  end
+
+  describe "#winner" do 
+    it "return the winer of the game" do 
+      expect(subject.winner(player_1.choice, player_2.choice)).to eq player_2
     end
   end
 
