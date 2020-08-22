@@ -14,4 +14,8 @@ class Game
     @instance_of_game
   end
 
+  def player_1
+    @players[0]
+  end
+
 end

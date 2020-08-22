@@ -21,12 +21,12 @@ class App < Sinatra::Base
   end
 
   get "/options" do
-    @player = @game.players[0]
+    @player = @game.player_1
     erb :options
   end
 
   post "/player_choice" do
-    @player = @game.players[0]
+    @player = @game.player_1
     @player.round_choice(params[:option])
     redirect "/options"
   end

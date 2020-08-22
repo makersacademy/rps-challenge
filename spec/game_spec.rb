@@ -12,4 +12,10 @@ describe Game do
     end 
   end
 
+  describe "#player_1" do 
+    it "return the instance of the first player in the game" do 
+      expect(game.player_1).to eq "player1"
+    end
+  end
+
 end
