@@ -11,11 +11,4 @@ describe Player do
     expect(player.choice).to eq "Rock" 
   end
 
-  describe "#instance" do
-    it "return an instance of the created class" do 
-      second_player = Player.create("Spas")
-      expect(Player.instance).to eq second_player
-    end 
-  end
-
 end
