@@ -1,34 +1,44 @@
 class Game
-  attr_accessor :player_1, :player_2, :game_mode
+  attr_reader :player_1, :player_2
 
-  def initialize(game_mode)
-    @game_mode = game_mode
-    @player_1 = nil
-    @player_2 = nil
-  end
-
-  def self.init(game_mode)
-    @game = Game.new(game_mode)
-  end
-
-  def self.add_players(player_1, player_2 = 'Hal3000')
+  def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
   end
 
-  def self.player_1
-    @player_1
-  end
-  
-  def self.player_2
-    @player_2
-  end
-  
-  def self.game_mode
-    @game.game_mode
+  def self.init(player_1, player_2)
+    @game = Game.new(player_1, player_2)
   end
 
   def self.instance
     @game
+  end
+
+  def winner
+    if Mode.instance == 'single_player'
+      @player_2.move == ['Rock', 'Paper', 'Scissors'].sample
+    end
+    
+    if @player_1.move == @player_2.move
+      return 'draw'
+    elsif @player_1.move == 'Rock'
+      if @player_2.move == 'Paper'
+        @player_2.name
+      else
+        @player_1.name
+      end
+    elsif @player_1.move == 'Paper'
+      if @player_2.move == 'Scissors'
+        @player_2.name
+      else
+        @player_1.name
+      end
+    elsif @player_1.move == 'Scissors'
+      if @player_2.move == 'Rock'
+        @player_2.name
+      else
+        @player_1.name
+      end
+    end
   end
 end
