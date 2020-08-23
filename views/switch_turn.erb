@@ -1,10 +1,11 @@
 <link href="<%= url('/global.css') %>" rel="stylesheet" type="text/css" />
 
 <div class="outer_div">
-<div class="inner_div">
-<h1><%= @game.turn.name%> turn</h1>
-<form action="/options">
-<input id="turn_ok_btn" type=submit value="Ok">
-</form>
-</div>
+  <div class="inner_div">
+    <h1><%= @game.turn.name%> turn</h1>
+
+    <form action="/options">
+      <input id="turn_ok_btn" type=submit value="Ok">
+    </form>
+  </div>
 </div>
