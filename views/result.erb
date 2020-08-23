@@ -1,1 +1,14 @@
-<h1>Congratulations, you have won</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<h1 id="result"><%= @result %></h1>
+
+
+<form class="container" action="/play">
+  <button class="submit-button" value="play-again">Play again</button>
+</form>
+
+</html>
