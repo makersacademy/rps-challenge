@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+.content {
+   height: 200px;
+    width: 400px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+
+}
+.button {
+  background-color: #4B0082; /* Indigo */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+body {background-color: E1B7FF;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif}
+
+</style>
+</head>
+
+<body>
+
+  <div class="content">
+        <%@game.cpu%>
+  <%outcome = @game.outcome%>
+  <% if outcome == 'win' %>
+    <h1><%=@game.name %> wins!</h1>
+  <% elsif outcome == 'lose' %>
+    <h1><%=@game.name %> loses!</h1>
+  <% elsif outcome == 'draw' %>
+    <h1>It's a draw!</h1> 
+  <%end%>
+<br>
+  <form action='/'>
+    <button class='button' type="submit" value="submit">Play again?</button>
+  </form>
+
+  </div>
+
+   </body>
+</html>
+
+
+
