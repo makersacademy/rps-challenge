@@ -11,6 +11,12 @@ describe Weapon do
       end
   end
 
+  describe '#lose' do
+      it 'should return true to determine the game is lost' do
+        expect(weapon.lost(computer, player_choice)).to eq true
+      end
+  end
+
   describe '#draw' do
     it 'should return false to determine a draw' do
       expect(weapon.draw(player_choice, computer)).to eq false
