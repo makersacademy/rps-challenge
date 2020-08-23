@@ -10,4 +10,21 @@ class Rock_paper_scissors < Sinatra::Base
   get '/' do
     erb :index
   end
+
+  post '/1_player_name' do
+    player_1 = Player.new(params[:player_1_name])
+    @game = Game.init(player_1)
+    redirect '/player_1_choice'
+  end
+
+  post '/2_player_name' do
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new(params[:player_2_name])
+    @game = Game.init(player_1, player_2)
+    redirect '/player_1_choice'
+  end
+
+  get '/player_1_choice'
+    erb :player_1_choice
+  end
 end
