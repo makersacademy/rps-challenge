@@ -48,5 +48,3 @@ Functionality
 ![Start page](./img/img1.png)
 ![Move select page](./img/img2.png)
 ![Results page](./img/img3.png)
-
-
