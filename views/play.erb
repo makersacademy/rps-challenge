@@ -43,7 +43,7 @@
   <body>
   <div style="text-align:center">
     <div id="player">
-      <h1 style="padding-top:50px">Hi <%= @game.player_name %>! Choose Rock, Paper or Scissors</h1>
+      <h1 style="padding-top:50px">Hi <%= @game.player_name %>! Choose Rock, Paper or Scissors...</h1>
     </div>
 
     <div class="div_inline" style="text-align:center">
@@ -69,6 +69,7 @@
         <input class="button btn3" id="scissors" type="submit" name="player_choice" value="Scissors">
       </form>
     </div>
+    <form action="/" method="get" style="padding-top:20px"><input class="button" type="submit" value=" < Start again"></form>
   <div>
   </body>
   </html>

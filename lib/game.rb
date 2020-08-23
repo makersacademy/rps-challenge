@@ -6,6 +6,8 @@ class Game
 
   attr_reader :players, :player_choice, :computer_choice
 
+  @instance = nil
+
   def initialize(player = Player.new(:name), weapon = Weapon.new, computer = Computer.new)
     @player = player
     @weapon = weapon
@@ -13,6 +15,15 @@ class Game
     @players  = {player: @player}
     @player_choice = :none
     @computer_choice = :none
+    self.class.instance = self
+  end
+
+  def self.instance
+    @instance
+  end
+
+  def self.instance=(something)
+    @instance = something
   end
 
   def player_name
