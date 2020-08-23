@@ -3,6 +3,7 @@ require File.join(File.dirname(__FILE__), '..', 'rps.rb')
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'features/web_helpers.rb'
 
 Capybara.app = Rps
 
