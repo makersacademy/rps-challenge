@@ -1,8 +1,8 @@
 class Computer
 
-  attr_reader :computer_choice, :name
+  attr_reader :name
 
-CHOICES = ['rock', 'paper', 'scissors']
+  CHOICES = ['rock', 'paper', 'scissors']
 
   def initialize(name)
     @name = name

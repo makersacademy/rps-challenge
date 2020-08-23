@@ -6,5 +6,4 @@ describe Player do
     expect(homer.name).to eq("homer")
   end
 
-
 end

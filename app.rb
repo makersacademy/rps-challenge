@@ -15,7 +15,6 @@ class RockPaperScissors < Sinatra::Base
     @player = Player.new(params[:player])
     @computer = Computer.new("The Computer")
     $game = Game.new(@player, @computer)
-    #@game = Game.create(player, computer)
     redirect '/play'
   end
 
@@ -30,16 +29,13 @@ class RockPaperScissors < Sinatra::Base
     @player_choice = params[:choice]
     $winner = @game.rps(@player_choice, @computer_choice)
     redirect '/result'
-
-    end
+  end
 
   get '/result' do
     @game = $game
     @winner = $winner
     erb(:result)
   end
-
-
 
   post '/try_again' do
     redirect '/play'
