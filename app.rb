@@ -24,7 +24,7 @@ class Rock_paper_scissors < Sinatra::Base
     redirect '/player_1_choice'
   end
 
-  get '/player_1_choice'
+  get '/player_1_choice' do
     erb :player_1_choice
   end
 end
