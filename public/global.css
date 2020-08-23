@@ -1,5 +1,12 @@
 body {
-  background: peru;
+  background: rgb(129, 224, 214);
+  background: linear-gradient(
+    0deg,
+    rgba(129, 224, 214, 1) 0%,
+    rgba(244, 151, 151, 1) 35%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  min-height: 600px;
 }
 
 .link_like_btn {
@@ -23,4 +30,42 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.RPS_form {
+  display: flex;
+  justify-content: center;
+}
+
+.Options_Img {
+  width: 98%;
+  margin-top: 5px;
+}
+.RPS_span {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.opt_btn {
+  width: 100%;
+  position: static;
+  background: #e8e8e8;
+  transition: all 0.8s;
+  border-radius: 4px;
+}
+
+.opt_btn:hover {
+  position: relative;
+  width: 115%;
+  background: plum;
+}
+
+#turn_ok_btn {
+  min-width: 6em;
+  padding: 1.2em;
+  border-radius: 6px;
+}
+#turn_ok_btn:hover {
+  background: lightcoral;
 }

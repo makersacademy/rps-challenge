@@ -3,22 +3,26 @@
 <div class="outer_div">
 <div class="inner_div">
   <h1>Welcome warrior <%=@game.turn.name%> </h1>
-    
-    <% if  @game.player_2.name == "Computer" %>
-      <form action="/player_choice" method="POST">
-    <% elsif @game.turn.name == @game.player_2.name %> 
-      <form action="/player_2_option" method="POST"> 
-    <% else %>
-      <form action="/player_1_option" method="POST">
-    <% end %>
-    <button name="option" type=submit value="Rock">Rock</button>
-    <button name="option" type=submit value="Paper">Paper</button>
-    <button name="option" type=submit value="Scissors">Scissors</button>
-  <form>
+  <% if  @game.player_2.name == "Computer" %>
+    <form class="RPS_form" action="/player_choice" method="POST">
+  <% elsif @game.turn.name == @game.player_2.name %> 
+    <form class="RPS_form" action="/player_2_option" method="POST"> 
+  <% else %>
+    <form class="RPS_form" action="/player_1_option" method="POST">
+  <% end %>
+      <span class="RPS_span" >
+      <button class="opt_btn" name="option" type=submit value="Rock">Rock
+      <img class="Options_Img" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Logan_Rock_Treen_closeup.jpg"></button>
+      </span>
+      <span class="RPS_span">
+      <button class="opt_btn" name="option" type=submit value="Paper">Paper<img class="Options_Img" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Toiletpapier_%28Gobran111%29.jpg"></button>
+      </span>
+      <span class="RPS_span">
+      <button class="opt_btn" name="option" type=submit value="Scissors">Scissors<img class="Options_Img" style="height: 14.9em" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/Running_with_Scissors_logo.png/220px-Running_with_Scissors_logo.png"></button>
+      </span>
+    </form>
   <div >
   <h2>You choose: <%=@game.turn.choice%><h2>
-  </div>
-
   <% if @game.player_2.name == "Computer" %>
     <a href='/battle' class="link_like_btn">Confirm Choice</a>
   <% elsif @game.player_2.name != "Computer" &&  @game.player_2.choice == nil %>
@@ -26,6 +30,6 @@
   <% else %>
     <a href='/battle' class="link_like_btn">Confirm Choice</a>
   <% end %>
-  
+  </div>
 </div>
 </div>

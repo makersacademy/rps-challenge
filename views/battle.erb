@@ -1,12 +1,15 @@
 <link href="<%= url('/global.css') %>" rel="stylesheet" type="text/css" />
+
 <div class="outer_div">
-<div>
+<div class="inner_div">
   <h2><%=@game.player_1.name%> vs <%=@game.player_2.name%></h2>
-  <p><%=@game.player_1.choice%> vs <%=@game.player_2.choice%><p>
+  <h2><%=@game.player_1.choice%> vs <%=@game.player_2.choice%><h2>
   <% if @winner == "Draw" %>
-  <h2>The game is Daw</h2> 
+  <div style="display: flex; text-align: center">
+  <h3>The game is:</h3><h1 style="background: lightgreen; position: relative; bottom: 0.3em " > Draw </h1>
+  </div>
   <% else %>
-  <div style="display: flex; text-align: center"><h3>The winner is:</h3> <h1 style="color: red; position: relative; bottom: 10px "><%=@winner.name%></h1> </div> 
+  <div style="display: flex; text-align: center"><h3>The winner is:</h3> <h1 style="color: red; position: relative; bottom: 0.3em "><%=@winner.name%></h1> </div> 
   <% end %>
 
   <% if @game.player_2.name == "Computer" %>
