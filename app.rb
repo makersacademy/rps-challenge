@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require './lib/game.rb'
 
-class Rps <Sinatra::Base
+class Rps < Sinatra::Base
 
   before do 
     @game = Game.instance

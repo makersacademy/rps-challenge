@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
 
-  let(:subject) {described_class.new('Charlotte')}
+  let(:subject) { described_class.new('Charlotte') }
 
   describe '#cpu' do
     it 'recieves the cpu move' do
@@ -25,7 +25,7 @@ describe Game do
       allow(subject).to receive(:sample).and_return('rock')
       subject.player('rock')
       expect(subject.outcome).to eq 'draw'
-     end
+    end
     it 'expects player to lose' do
       subject.cpu
       srand(0)

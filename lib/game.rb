@@ -24,7 +24,7 @@ class Game
   def outcome
     if @cpu_move == @player_move
       return 'draw'
-    elsif (@move_list.fetch(@cpu_move)) == @player_move
+    elsif @move_list.fetch(@cpu_move) == @player_move
       return 'lose'
     else 
       return 'win'
