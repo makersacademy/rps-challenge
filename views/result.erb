@@ -1,9 +1,40 @@
-<%= @game.player_1.name %> has chosen <%= @game.player_1.choice %><br>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+
+<style>
+  body {
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+    background: #99e6ff;
+  }
+
+  .button {
+    border: solid 2px;
+    border-radius: 15px;
+    color: #000000;
+    background-color: #FFFFFF;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
+    width: 200px;
+    font-weight: bold;
+  }
+</style>
+<body>
+<h2> <%= @game.player_1.name %> has chosen <%= @game.player_1.choice %> ......
 <%= @game.player_2.name %> has chosen <%= @game.player_2.choice %><br>
-<%= @game.result %>
+<%= @game.result %></h2>
+<img src="">
 <form action='/game' method="get">
-  <input type='submit' value="Play again">
+  <input class="button" type='submit' value="Play again">
 </form>
 <form action='/' method="get">
-  <input type='submit' value="Back to home page">
+  <input class="button" type='submit' value="Back to home page">
 </form>
+</body>
+</html>
