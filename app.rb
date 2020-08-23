@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/base'
+require 'shotgun'
 
 
 class RPS < Sinatra::Base
@@ -9,7 +10,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $player = params[:player]
+    $player_1 = params[:player]
+    $player_2 = params[:player]
     redirect '/play'
   end
 
@@ -17,6 +19,12 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  get '/selection' do
+    @rock = params[:rock]
+    @paper = params[:paper]
+    @scissors = params[:scissors]
+    erb :result
+  end
 
 
 
