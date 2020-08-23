@@ -11,13 +11,21 @@ class Rock_paper_scissors < Sinatra::Base
     erb :index
   end
 
-  post '/1_player_name' do
+  get '/single_player_name' do
+    erb :single_player_name
+  end
+
+  post '/single_player_name' do
     player_1 = Player.new(params[:player_1_name])
     @game = Game.init(player_1)
     redirect '/player_1_choice'
   end
 
-  post '/2_player_name' do
+  get '/two_player_names' do
+    erb :two_player_names
+  end
+
+  post '/two_player_names' do
     player_1 = Player.new(params[:player_1_name])
     player_2 = Player.new(params[:player_2_name])
     @game = Game.init(player_1, player_2)
@@ -25,6 +33,12 @@ class Rock_paper_scissors < Sinatra::Base
   end
 
   get '/player_1_choice' do
+    @game = Game.instance
     erb :player_1_choice
+  end
+  
+  get '/player_2_choice' do
+    @game = Game.instance
+    erb :player_2_choice
   end
 end
