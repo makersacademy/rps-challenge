@@ -1,17 +1,34 @@
 class Weapon
-  RULES = { rock: :scissors, paper: :rock, scissors: :paper }
+  RULES = { :Rock => :Rock, :Paper => :Paper, :Scissors => :Scissors }
 
-  def who_wins(player_choice, computer_choice)
-    return :Draw if draw(player_choice, computer_choice)
-    return :Win if winner(player_choice, computer_choice)
-    return :Lost if !winner(player_choice, computer_choice)
+  def who_wins(p_choice, c_choice)
+    return "It's a draw!" if draw(p_choice, c_choice)
+    return "You win!" if winner(p_choice, c_choice)
+    return "You lose!" if lost(p_choice, c_choice)
   end
 
-  def draw(player_choice, computer_choice)
-    player_choice == computer_choice
+  def draw(p_choice, c_choice)
+    p_choice == c_choice
   end
 
-  def winner(player_choice, computer_choice)
-    RULES[player_choice] == computer_choice
+  def winner(p_choice, c_choice)
+    # RULES[p_choice] == c_choice
+    if RULES[p_choice] == :Rock && c_choice == :Scissors
+      true
+    elsif RULES[p_choice] == :Paper && c_choice == :Rock
+      true
+    elsif RULES[p_choice] == :Scissors && c_choice == :Paper
+      true
+    end
+  end
+
+  def lost(p_choice, c_choice)
+    if RULES[p_choice] == :Scissors && c_choice == :Rock
+      true
+    elsif RULES[p_choice] == :Rock && c_choice == :Paper
+      true
+    elsif RULES[p_choice] == :Paper && c_choice == :Scissors
+      true
+    end
   end
 end

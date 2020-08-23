@@ -2,8 +2,8 @@ require 'weapon'
 
 describe Weapon do
   subject(:weapon) {described_class.new}
-  let(:player_choice) {:rock}
-  let(:computer) {:scissors}
+  let(:player_choice) {:Rock}
+  let(:computer) {:Scissors}
 
   describe '#winner' do
       it 'should return true to determine the game is won' do
@@ -19,7 +19,7 @@ describe Weapon do
 
   describe '#who_wins' do
     it 'should display the result' do
-      expect(weapon.who_wins(player_choice, computer)).to eq :Win
+      expect(weapon.who_wins(player_choice, computer)).to eq "You win!"
     end
   end
 end

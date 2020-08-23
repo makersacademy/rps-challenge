@@ -4,18 +4,19 @@ require_relative 'weapon'
 
 class Game
 
-  attr_reader :player, :player_choice, :computer_choice
+  attr_reader :players, :player_choice, :computer_choice
 
   def initialize(player = Player.new(:name), weapon = Weapon.new, computer = Computer.new)
     @player = player
     @weapon = weapon
     @computer = computer
+    @players  = {player: @player}
     @player_choice = :none
     @computer_choice = :none
   end
 
   def player_name
-    @player.name
+    @players[:player].name
   end
 
   def players_choice(choice)

@@ -14,25 +14,25 @@ describe Game do
 
   describe '#player_choice' do
     it 'Should store player weapon choice' do
-      game.players_choice(:rock)
-      expect(game.players_choice(:rock)).to eq :rock
+      game.players_choice(:Rock)
+      expect(game.players_choice(:Rock)).to eq :Rock
     end
   end
 
   describe '#computer_choice' do
     it 'Should store player weapon choice' do
-      allow(computer).to receive(:random_weapon) {:paper}
+      allow(computer).to receive(:random_weapon) {:Paper}
       game.computer_choice
-      expect(game.computer_choice).to eq :paper
+      expect(game.computer_choice).to eq :Paper
     end
   end
 
   describe '#result' do
     it 'Should return the result' do
-      allow(computer).to receive(:random_weapon) {:paper}
-      game.players_choice(:rock)
+      allow(computer).to receive(:random_weapon) {:Paper}
+      game.players_choice(:Rock)
       game.computer_choice
-      allow(weapon).to receive(:who_wins).with(:rock, :paper) { :Lost }
+      allow(weapon).to receive(:who_wins).with(:Rock, :Paper) { :Lost }
       expect(game.result).to eq :Lost
     end
   end

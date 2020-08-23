@@ -1,7 +1,74 @@
-<h1>Hi <%= @name %>! Choose Rock, Paper or Scissors</h1>
+<!DOCTYPE hmtl>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap" rel="stylesheet">
+</head>
 
-<p><a href="#">Rock</a></p>
+<style>
+  body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    background: #e8eeee;
+  }
 
-<p><a href="#">Paper</a></p>
+  .div_inline {
+    display: inline-block;
+  }
 
-<p><a href="#">Scissors</a></p>
+  .button {
+    border: solid 3px;
+    border-radius: 10px;
+    color: #252525;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 200px;
+    font-weight: bold;
+  }
+
+  .btn1 {
+    background-color: #87ffaa;
+  }
+
+  .btn2 {
+    background-color: #fbec18;
+  }
+
+  .btn3 {
+    background-color: #40dcff;
+  }
+</style>
+
+  <body>
+  <div style="text-align:center">
+    <div id="player">
+      <h1 style="padding-top:50px">Hi <%= @game.player_name %>! Choose Rock, Paper or Scissors</h1>
+    </div>
+
+    <div class="div_inline" style="text-align:center">
+      <form action="/result" method="post">
+        <img src="https://i.ibb.co/prhp6R1/rock.png" style="height:300px; width:300px">
+        <br>
+        <input class="button btn1" id="rock" type="submit" name="player_choice" value="Rock">
+      </form>
+    </div>
+
+    <div class="div_inline" style="text-align:center">
+      <form action="/result" method="post">
+        <img src="https://i.ibb.co/NY4DRJX/paper.png" style="height:300px; width:300px">
+        <br>
+        <input class="button btn2" id="paper" type="submit" name="player_choice" value="Paper">
+      </form>
+    </div>
+
+    <div class="div_inline" style="text-align:center">
+      <form action="/result" method="post">
+        <img src="https://i.ibb.co/TMGyKpX/scissors.png" style="height:300px; width:300px">
+        <br>
+        <input class="button btn3" id="scissors" type="submit" name="player_choice" value="Scissors">
+      </form>
+    </div>
+  <div>
+  </body>
+  </html>

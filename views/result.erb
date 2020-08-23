@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap" rel="stylesheet">
+  </head>
+
+  <style>
+    body {
+      font-family: 'Montserrat Alternates', sans-serif;
+      background: #e8eeee;
+    }
+    .div_inline {
+      display: inline-block;
+    }
+  </style>
+
+  <body>
+    <a id="link" href="/play">Back to Play </a>
+    <div style=text-align:center>
+      <div class="div_inline">
+        <% if @game.player_choice == :Rock %>
+        <img src="https://i.ibb.co/prhp6R1/rock.png" style="height:300px; width:300px">
+        <% elsif @game.player_choice == :Paper %>
+        <img src="https://i.ibb.co/NY4DRJX/paper.png" style="height:300px; width:300px">
+        <% elsif @game.player_choice == :Scissors %>
+        <img src="https://i.ibb.co/TMGyKpX/scissors.png" style="height:300px; width:300px">
+        <% end %>
+        <br>
+        <h2> <%= @game.player_name %></h2>
+        <p><%= @game.player_choice %></p>
+      </div>
+      <div class="div_inline">
+        <% if @game.computer_choice == :Rock %>
+        <img src="https://i.ibb.co/prhp6R1/rock.png" style="height:300px; width:300px">
+        <% elsif @game.computer_choice == :Paper %>
+        <img src="https://i.ibb.co/NY4DRJX/paper.png" style="height:300px; width:300px">
+        <% elsif @game.computer_choice == :Scissors %>
+        <img src="https://i.ibb.co/TMGyKpX/scissors.png" style="height:300px; width:300px">
+        <% end %>
+        <br>
+        <h2> Computer</h2>
+        <p><%= @game.computer_choice %></p>
+      </div>
+        <h1> <%= @game.result %></h1>
+    </div>
+  </body>
+</html>
