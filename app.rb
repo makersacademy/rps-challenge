@@ -36,6 +36,11 @@ class Rock_paper_scissors < Sinatra::Base
     @game = Game.instance
     erb :player_1_choice
   end
+
+  post '/player_1_choice' do
+    @game = Game.instance
+    
+  end
   
   get '/player_2_choice' do
     @game = Game.instance
