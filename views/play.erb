@@ -1,10 +1,20 @@
-<h2> Welcome <%= @player %>, please select rock, paper or scissors:</h2>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
 
-<div>
-<form action="/selection" method="get">
-  <input type = "submit" value="rock">
-  <input type = "submit" value="paper">
-  <input type = "submit" value="scissors">
+<h1> <%= @name %> Let's play Rock, Paper, and Scissors</h1>
+
+<p>Choose your move</p>
+
+<form class="container" action="/selection" method="post">
+  <select class="custom-select" name="selection">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  <button class="submit-button" type="submit" value="play">Play</button>
 </form>
-</div>
 
+</html>
