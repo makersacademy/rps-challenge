@@ -1,0 +1,15 @@
+<body style="background-color:beige;font-family:verdana;text-align: center;">
+<h1 style="color:goldenrod">MAMA Rock, Paper, Scissors</h1>
+<br></br>
+<h2 style="color:darkblue"> Hello <%= @player_name %>,</h2>
+<br></br>
+
+<form action="/result" method="post">
+  <label for="move">
+    Pick your move:
+    <input type="submit" name="choice" value="rock"/>
+    <input type="submit" name="choice" value="paper"/>
+    <input type="submit" name="choice" value="scissors"/>
+  </label>
+</form>
+</body>
