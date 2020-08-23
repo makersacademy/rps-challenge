@@ -27,7 +27,7 @@ describe Game do
   end
 
   describe "#winner" do 
-    before (:each) do 
+    before(:each) do 
       allow(player_1).to receive(:choice).and_return("Rock")
     end
     it "return the winer of the game" do

@@ -23,7 +23,7 @@ class Game
     @players[1]
   end
 
-  def winner(player_1,player_2)
+  def winner(player_1, player_2)
     if player_1.choice == "Rock" and player_2.choice == "Paper"
       return player_2
     elsif player_1.choice == "Rock" and player_2.choice == "Scissors"

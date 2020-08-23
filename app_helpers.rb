@@ -18,7 +18,7 @@ end
 def set_multy_play_game
   player_1 = Player.new(params[:Player_1])
   player_2 = Player.new(params[:Player_2])
-  @game = Game.create(player_1,player_2)
+  @game = Game.create(player_1, player_2)
 end
 
 def set_player_move(player)
