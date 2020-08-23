@@ -2,12 +2,12 @@ require 'game'
 
 describe Game do
 
-  let(:subject) {described_class.new}
+  let(:subject) {described_class.new('Charlotte')}
 
   describe '#cpu' do
     it 'recieves the cpu move' do
       srand(1)
-      allow(subject).to receive(:rand).and_return('paper')
+      allow(subject).to receive(:sample).and_return('paper')
       expect(subject.cpu).to eq 'paper'
     end
   end
@@ -26,19 +26,19 @@ describe Game do
       subject.player('rock')
       expect(subject.outcome).to eq 'draw'
      end
-    it 'expects CPU to win' do
+    it 'expects player to lose' do
       subject.cpu
-      srand(1)
-      allow(subject).to receive(:sample).and_return('paper')
-      subject.player('scizzors')
-      expect(subject.outcome).to eq 'win'
+      srand(0)
+      allow(subject).to receive(:sample).and_return('rock')
+      subject.player('scissors')
+      expect(subject.outcome).to eq 'lose'
     end
     it 'expects player to win' do
       subject.cpu
-      srand(2)
-      allow(subject).to receive(:sample).and_return('scizzors')
-      subject.player('rock')
-      expect(subject.outcome).to eq 'lose'
+      srand(0)
+      allow(subject).to receive(:sample).and_return('rock')
+      subject.player('paper')
+      expect(subject.outcome).to eq 'win'
     end
   end
 
