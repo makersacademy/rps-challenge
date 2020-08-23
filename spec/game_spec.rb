@@ -17,10 +17,10 @@ describe Game do
     end
   end
 
-  desribe '#init' do
-    it 'gives a default player_2 name of Hal3000 if no arugment is passed'
-
-    game = subject.init('unicorn')
-    expect(game.player_1.name).to eq 'Hal3000'
+  describe '#init' do
+    it 'gives a default player_2 name of Hal3000 if no arugment is passed' do
+      tester = Game.new('unicorn')
+      expect(tester.player_2.name).to eq 'Hal3000'
+    end
   end
 end
