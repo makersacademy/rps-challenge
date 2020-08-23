@@ -1,3 +1,9 @@
 <%= @game.player_1.name %> has chosen <%= @game.player_1.choice %><br>
 <%= @game.player_2.name %> has chosen <%= @game.player_2.choice %><br>
 <%= @game.result %>
+<form action='/game' method="get">
+  <input type='submit' id='play_again' name="Play again">
+</form>
+<form action='/' method="get">
+  <input type='submit' id='new_player' name="New player">
+</form>
