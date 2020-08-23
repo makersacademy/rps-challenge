@@ -4,18 +4,20 @@ require 'shotgun'
 
 
 class RPS < Sinatra::Base
- 
+ enable :sessions
+
   get '/' do
     erb :index
   end
 
   post '/name' do
-    $player_1 = params[:player]
-    $player_2 = params[:player]
+    session[:player] = params[:player]
+    
     redirect '/play'
   end
 
   get '/play' do
+    @player = session[:player]
     erb :play
   end
 
