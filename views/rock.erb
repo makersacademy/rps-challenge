@@ -1,11 +1,11 @@
-<body style='text-align: center;'>
-    <%= @player_1.player %>: Rock vs <%=@game.computers_pick %> :CPU
+<body style='text-align: center; background-image: linear-gradient(to bottom right, purple, silver);'>
+    <h1 style='margin-bottom: 70px;'><%= @player_1.player %>: Rock vs <%=@game.computers_pick %> :CPU</h1>
     <% if @game.select_winner == 'Wins!' %>
-    <h1> Rock beats sicssors: <%=@player_1.player%> Wins!</h1>
+    <h2> Rock beats sicssors: <%=@player_1.player%> Wins!</h2>
     <% elsif @game.select_winner == 'Lose!' %>
-    <h1> Paper beats Rock: CPU Wins!</h1>
+    <h2> Paper beats Rock: CPU Wins!</h2>
     <% else %>
-    <h1> Draw </h1>
+    <h2> Draw </h2>
 <%end%>
     <a href='/play'>play again</a>
 </body>
