@@ -21,12 +21,12 @@ describe Game do
   describe '#win?' do
     it 'returns true if player has beaten computer' do
       allow(opponent).to receive(:choice) { 'Scissors' }
-      expect(subject.win?).to eq true
+      expect(subject.player_1_win?).to eq true
     end
 
     it 'returns false if computer has beaten player' do
       allow(opponent).to receive(:choice) { 'Paper' }
-      expect(subject.win?).to eq false
+      expect(subject.player_1_win?).to eq false
     end
   end
 end

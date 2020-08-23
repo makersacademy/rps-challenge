@@ -1,4 +1,4 @@
-feature 'choice is made and displayed on next screen' do
+feature 'Player makes choice and it displayed on next screen' do
   scenario 'Rock is chosen' do
     visit '/'
     fill_in :player1, with: 'Yasmin'

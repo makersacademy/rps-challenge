@@ -1,4 +1,14 @@
 Rock beats Scissors<br>
 Scissors beat Paper<br>
 Paper beats Rock<br>
-<%= @player1 %> what is your choice?
+<%= @player_1.name %> what is your choice?
+
+<form action='/choice' method="post">
+  <input type='submit' id='Rock' name="choice" value="Rock">
+</form>
+<form action='/choice' method="post">
+  <input type='submit' id='Paper' name="choice" value="Paper">
+</form>
+<form action='/choice' method="post">
+  <input type='submit' id='Scissors' name="choice" value="Scissors">
+</form>

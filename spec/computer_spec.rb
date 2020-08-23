@@ -11,6 +11,7 @@ describe Computer do
   end
 
   it "returns rock, paper or scissors as it's choice" do
+    subject.update_choice
     expect('Rock,Paper,Scissors').to include(subject.choice)
   end
 end
