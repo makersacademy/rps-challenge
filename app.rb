@@ -1,6 +1,7 @@
 require "sinatra/base"
 require "./lib/bot"
 require "./lib/game"
+require_relative "app_helpers" # contain all helper methods required
 
 class App < Sinatra::Base
 
@@ -13,9 +14,7 @@ class App < Sinatra::Base
   end
 
   post '/get_name' do 
-    player = Player.new(params[:Player])
-    bot = Bot.new("Computer")
-    @game = Game.create(player, bot)
+    set_single_play_game
     redirect "/options"
   end
 
@@ -24,9 +23,7 @@ class App < Sinatra::Base
   end
 
   post "/player_choice" do
-    @player_1 = @game.player_1
-    @player_1.round_choice(params[:option])
-    @game.player_2.round_choice
+    set_single_play_round
     redirect "/options"
   end
 
@@ -45,21 +42,17 @@ class App < Sinatra::Base
   end
 
   post "/start_multy_game" do 
-    player_1 = Player.new(params[:Player_1])
-    player_2 = Player.new(params[:Player_2])
-    @game = Game.create(player_1,player_2)
+    set_multy_play_game
     redirect "/options"
   end
 
   post "/player_1_option" do 
-    @player_1 = @game.player_1
-    @player_1.round_choice(params[:option])
+    set_player_move(@game.player_1)
     redirect "/options"
   end
 
   get "/play_again_multy" do 
-    @game.player_1.round_choice(nil)
-    @game.player_2.round_choice(nil)
+    reset_round
     redirect "/switch_turn"
   end
   
@@ -69,8 +62,7 @@ class App < Sinatra::Base
   end
 
   post "/player_2_option" do 
-    @player_2 = @game.player_2
-    @player_2.round_choice(params[:option])
+    set_player_move(@game.player_2)
     redirect "/options"
   end
 

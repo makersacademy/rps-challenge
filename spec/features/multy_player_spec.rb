@@ -38,6 +38,7 @@ feature "Game can be played with thwo people" do
     click_button "Ok"
     choose_n_confirm
     click_link "Play again"
+    click_button "Ok"
     expect(page).to have_content "Welcome warrior Player_1"
   end
   
