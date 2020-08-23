@@ -8,7 +8,7 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    $game = Game.new(Player.new(params[:player1]),Computer.new)
+    $game = Game.new(Player.new(params[:player1]), Computer.new)
     redirect '/game'
   end
 

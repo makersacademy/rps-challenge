@@ -8,7 +8,7 @@ class Computer
   attr_reader :name, :choice
 
   def update_choice
-    @choice = ['Rock','Paper','Scissors'].sample
+    @choice = ['Rock', 'Paper', 'Scissors'].sample
   end
 
 end

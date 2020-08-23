@@ -5,7 +5,7 @@ describe Game do
   let(:player) { double :player, :choice => 'Rock' }
   let(:opponent) { double :opponent }
 
-  subject { described_class.new(player,opponent) }
+  subject { described_class.new(player, opponent) }
 
   it 'exists' do
     expect(subject).to be_an_instance_of(Game)
