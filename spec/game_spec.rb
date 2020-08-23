@@ -27,14 +27,15 @@ describe Game do
   end
 
   describe "#winner" do 
-    it "return the winer of the game" do
+    before (:each) do 
       allow(player_1).to receive(:choice).and_return("Rock")
+    end
+    it "return the winer of the game" do
       allow(player_2).to receive(:choice).and_return("Scissors")
       expect(game.winner(player_1, player_2)).to eq player_1
     end
 
     it "return the winer of the game" do
-      allow(player_1).to receive(:choice).and_return("Rock")
       allow(player_2).to receive(:choice).and_return("Rock")
       expect(game.winner(player_1, player_2)).to eq "Draw"
     end
