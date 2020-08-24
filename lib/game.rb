@@ -2,6 +2,14 @@ class Game
   attr_reader :player_1, :player_2
   require_relative 'mode'
 
+  POSSIBLE_MOVES = {
+    :rock => { :paper => :lose, :scissors => :win, :spock => :lose, :lizard => :win },
+    :paper => { :rock => :win, :scissors => :win, :spock => :win, :lizard => :lose },
+    :scissors => { :rock => :lose, :paper => :lose, :spock => :lose, :lizard => :win },
+    :spock => { :rock => :draw, :paper => :lose, :scissors => :win, :lizard => :lose },
+    :lizard => { :rock => :lose, :paper => :lose, :scissors => :win, :spock => :win }
+  }
+
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
@@ -19,38 +27,27 @@ class Game
   end
 
   def winner
-    if @player_1.move == @player_2.move
-      return 'draw'
-    elsif @player_1.move == 'Rock'
-      if @player_2.move == 'Paper' || player_2.move == 'Spock'
-        @player_2.name
-      else
-        @player_1.name
-      end
-    elsif @player_1.move == 'Paper'
-      if @player_2.move == 'Scissors' || @player_2.move == 'Lizard'
-        @player_2.name
-      else
-        @player_1.name
-      end
-    elsif @player_1.move == 'Scissors'
-      if @player_2.move == 'Rock' || @player_2.move == 'Spock'
-        @player_2.name
-      else
-        @player_1.name
-      end
-    elsif @player_1.move == 'Spock'
-      if @player_2.move == 'Paper' || @player_2.move == 'Lizard'
-        @player_2.name
-      else
-        @player_1.name
-      end
-    elsif @player_1.move == 'Lizard'
-      if @player_2.move == 'Rock' || @player_2.move == 'Scissors'
-        @player_2.name
-      else
-        @player_1.name
-      end
+    if player_one_wins == :win
+      @player_1.name
+    elsif player_one_wins == :lose
+      @player_2.name
+    else
+      'draw'
     end
+  end
+
+  def loser
+    if player_one_wins == :win
+      @player_2.name
+    elsif player_one_wins == :lose
+      @player_1.name
+    end
+  end
+
+  private
+
+  def player_one_wins
+    return 'draw' if @player_1.move == @player_2.move
+    POSSIBLE_MOVES[@player_1.move.downcase.to_sym][@player_2.move.downcase.to_sym]
   end
 end
