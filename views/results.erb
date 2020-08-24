@@ -4,4 +4,10 @@
 <br>
 <h1><%=@game.player_2.name%> played <%=@game.player_2.move%></h1>
 <br>
-<h1><%=@game.winner%> wins!</h1>
+<h1 style="color:green">
+  <%=@game.winner%> wins!
+</h1>
+<br>
+<form action="/">
+ <input type="submit" value="Play again?">
+</form>

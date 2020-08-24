@@ -4,6 +4,9 @@ class Game
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
+    if Mode.instance == 'single_player'
+      @player_2.move == ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard'].sample
+    end
   end
 
   def self.init(player_1, player_2)
@@ -15,26 +18,34 @@ class Game
   end
 
   def winner
-    if Mode.instance == 'single_player'
-      @player_2.move == ['Rock', 'Paper', 'Scissors'].sample
-    end
-    
     if @player_1.move == @player_2.move
       return 'draw'
     elsif @player_1.move == 'Rock'
-      if @player_2.move == 'Paper'
+      if @player_2.move == 'Paper' || player_2.move == 'Spock'
         @player_2.name
       else
         @player_1.name
       end
     elsif @player_1.move == 'Paper'
-      if @player_2.move == 'Scissors'
+      if @player_2.move == 'Scissors' || @player_2.move == 'Lizard'
         @player_2.name
       else
         @player_1.name
       end
     elsif @player_1.move == 'Scissors'
-      if @player_2.move == 'Rock'
+      if @player_2.move == 'Rock' || @player_2.move == 'Spock'
+        @player_2.name
+      else
+        @player_1.name
+      end
+    elsif @player_1.move == 'Spock'
+      if @player_2.move == 'Paper' || @player_2.move == 'Lizard'
+        @player_2.name
+      else
+        @player_1.name
+      end
+    elsif @player_1.move == 'Lizard'
+      if @player_2.move == 'Rock' || @player_2.move == 'Scissors'
         @player_2.name
       else
         @player_1.name

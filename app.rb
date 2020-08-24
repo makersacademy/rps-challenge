@@ -52,7 +52,7 @@ class Rock_paper_scissors < Sinatra::Base
     @game = Game.instance
     @game.player_1.add_move(params[:move])
     @mode = Mode.instance
-    if @mode.game_mode == 'Single Player Mode' 
+    if @mode.game_mode == 'Single Player Mode'
       redirect '/results'
     else
       redirect '/player_2_choice'
@@ -72,6 +72,10 @@ class Rock_paper_scissors < Sinatra::Base
 
   get '/results' do
     @game = Game.instance
-    erb :results
+    if @game.winner != 'draw'
+      erb :results
+    else
+      erb :draw
+    end
   end
 end
