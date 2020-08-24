@@ -1,0 +1,51 @@
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+
+<style>
+  body {
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+    background: #99e6ff;
+  }
+
+  input[type=text] {
+    border: 2px solid #000;
+    border-radius: 10px;
+    width: 300px;
+    height: 30px;
+  }
+
+  .button {
+    border: solid 2px;
+    border-radius: 10px;
+    color: #000000;
+    background-color: #FFFFFF;
+    padding: 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 16px;
+    font-weight: 50;
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+  }
+</style>
+
+
+<body>
+<h1>Welcome to Rock, Paper, Scissors!</h1>
+<h2> Enter your name to play: </h2>
+<form action='/names' method="post">
+    <input type="text" name="player1">
+  <input class="button" type="submit" name="Submit">
+</form>
+
+<img src="https://rps.academy/themes/rps-2018/assets/img/the-rps-gang.png"
+width=400 height=400>
+
+</body>
+</html>

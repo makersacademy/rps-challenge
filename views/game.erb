@@ -1,0 +1,62 @@
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+
+<style>
+  body {
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+    background: #99e6ff;
+  }
+
+  .inline {
+   display: inline-block;
+  }
+
+  .button {
+    border: solid 2px;
+    border-radius: 15px;
+    color: #000000;
+    background-color: #FFFFFF;
+    padding: 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
+    font-weight: 50;
+    width: 100px;
+    font-weight: bold;
+  }
+</style>
+
+<body>
+<h2>Rock beats Scissors | Scissors beat Paper | Paper beats Rock
+<br>
+<br>
+<%= @player_1.name %> what is your choice?</h2>
+
+<div class="inline" style="text-align:center">
+  <img src="https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-016-512.png"
+  width=300 height=300>
+  <form action='/choice' method="post">
+    <input class ="button" type='submit' id='Rock' name="choice" value="Rock">
+  </form>
+</div>
+<div class="inline" style="text-align:center">
+  <img src="https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-012-512.png"
+  width=300 height=300>
+  <form action='/choice' method="post">
+    <input class ="button" type='submit' id='Paper' name="choice" value="Paper">
+  </form>
+</div>
+<div class="inline" style="text-align:center">
+  <img src="https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-014-512.png"
+  width=300 height=300>
+  <form action='/choice' method="post">
+    <input class ="button" type='submit' id='Scissors' name="choice" value="Scissors">
+  </form>
+</div>
+</body>
+</html>
