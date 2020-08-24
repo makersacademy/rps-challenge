@@ -1,11 +1,12 @@
 class Game
   attr_reader :player_1, :player_2
+  require_relative 'mode'
 
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
-    if Mode.instance == 'single_player'
-      @player_2.move == ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard'].sample
+    if Mode.instance.game_mode == 'Single Player Mode'
+      @player_2.add_move(['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard'].sample)
     end
   end
 
