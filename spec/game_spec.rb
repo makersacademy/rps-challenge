@@ -9,4 +9,11 @@ describe Game do
     expect(game).to be_instance_of Game
   end
 
+  #describe 'attack' do
+
+  #	it ''
+
+
+
+
 end

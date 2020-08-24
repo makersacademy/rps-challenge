@@ -23,7 +23,6 @@ class Fight < Sinatra::Base
   get '/rules' do
   	@game = $game
   	erb :rules
-
   end
 
   get '/arena' do
@@ -32,8 +31,9 @@ class Fight < Sinatra::Base
   end
 
   get '/result' do
-
-
+  	@game = $game
+  	p @game.weapon(params[:weapon_choice])
+  	erb :result
   end
 
   run! if app_file == $0
