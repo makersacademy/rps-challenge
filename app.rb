@@ -34,9 +34,6 @@ class RockPaperScissors < Sinatra::Base
     erb(:result)
   end
 
-  get '/result' do
-  end
-
   post '/try_again' do
     redirect '/play'
   end
