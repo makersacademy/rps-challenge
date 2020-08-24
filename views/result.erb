@@ -36,10 +36,10 @@ h2 {
 </style>
 
 
-<% if $winner == 'player' %>
+<% if  @winner == 'player' %>
 <h1> You beat The Computer! Yay</h1>
 <img src='https://media.giphy.com/media/MEWeqM3BehSDLdghe2/giphy.gif'>
-<% elsif $winner == 'computer' %>
+<% elsif @winner == 'computer' %>
 <h1> The Computer beat you. The bots are taking over.</h1>
 <img src='https://media.giphy.com/media/U8MnmuVDpK264/giphy.gif'>
 <% else %>

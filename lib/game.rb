@@ -10,6 +10,14 @@ class Game
     @computer = computer
   end
 
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
+  end
+
+  def self.instance
+    @game
+  end
+
   def rps(player_choice, computer_choice)
 
     return 'player' if player_choice == 'scissors' && computer_choice == 'paper'
