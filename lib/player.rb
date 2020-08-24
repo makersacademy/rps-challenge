@@ -4,7 +4,6 @@ class Player
 
   def initialize(name)
     @name = name.capitalize
-    @choice
   end
 
   def round_choice(option)
