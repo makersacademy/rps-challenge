@@ -22,27 +22,20 @@ class Rps < Sinatra::Base
     end
 
     get '/play' do
-       # @player_1 = $player_1
         erb(:play)
     end
 
     post '/rock' do
-       # @player_1 = $player_1
-        #@computer = Computer.new
         @game = Game.new('Rock', @computer.computer_pick)  
         erb(:rock)
     end
 
     post '/scissors' do
-      #  @player_1 = $player_1
-      #  @computer = Computer.new
         @game = Game.new('Scissors', @computer.computer_pick)
         erb(:scissors)
     end
 
     post '/paper' do
-       # @player_1 = $player_1
-       # @computer = Computer.new
         @game = Game.new('Paper', @computer.computer_pick)
         erb(:paper)
     end
