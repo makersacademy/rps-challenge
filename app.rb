@@ -6,6 +6,7 @@ require_relative 'lib/player'
 require_relative 'lib/game'
 
 class RockPaperScissors < Sinatra::Base
+  enable :session
 
   before do
     @game = Game.instance
@@ -29,13 +30,11 @@ class RockPaperScissors < Sinatra::Base
   post '/user_makes_choice' do
     @computer_choice = @game.computer.computer_choice
     @player_choice = params[:choice]
-    $winner = @game.rps(@player_choice, @computer_choice)
-    redirect '/result'
+    @winner = @game.rps(@computer_choice, @player_choice)
+    erb(:result)
   end
 
   get '/result' do
-    @winner = $winner
-    erb(:result)
   end
 
   post '/try_again' do
