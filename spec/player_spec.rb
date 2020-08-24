@@ -17,12 +17,9 @@ describe Player do
     end
   end
 
-  describe '#move' do
-    it 'returns nil before move' do
-      expect(horse.move).to eq nil
-    end
-    it 'returns the move after it is chosen' do
-      horse.move = 'Rock'
+  describe '#add_move' do
+    it 'adds a move recallable with .move' do
+      horse.add_move('Rock')
       expect(horse.move).to eq 'Rock'
     end
   end

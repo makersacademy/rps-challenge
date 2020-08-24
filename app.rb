@@ -52,7 +52,7 @@ class Rock_paper_scissors < Sinatra::Base
     @game = Game.instance
     @game.player_1.add_move(params[:move])
     @mode = Mode.instance
-    if @mode.game_mode == 'Single Player Mode'
+    if @mode.game_mode == 'Single Player Mode' 
       redirect '/results'
     else
       redirect '/player_2_choice'
