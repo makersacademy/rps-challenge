@@ -20,7 +20,7 @@ describe Player do
 		end 
 	end 
 
-	describe "#receive points" do
+	descibe "#receive points" do
 		it "adds 1 point to the score" do
 			expect { yas.get_points }.to change{ yas.score}.by(1)
 		end 

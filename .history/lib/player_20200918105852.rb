@@ -7,7 +7,7 @@ class Player
 	end 
 
 	def play(player)
-		player.get_points
+		self.get_points
 	end 
 
 	def get_points

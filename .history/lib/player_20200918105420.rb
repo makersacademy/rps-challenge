@@ -7,10 +7,10 @@ class Player
 	end 
 
 	def play(player)
-		player.get_points
+		player.receive_points
 	end 
 
-	def get_points
+	def revceive_points
 		@score += 1
 	end 
 end 

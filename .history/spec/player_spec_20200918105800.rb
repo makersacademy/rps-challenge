@@ -16,13 +16,7 @@ describe Player do
 	describe "#play" do
 		it "adds points to the player" do 
 			expect(yas).to receive(:get_points)
-			yas.play(yas)
+			subject.play(self)
 		end 
 	end 
-
-	describe "#receive points" do
-		it "adds 1 point to the score" do
-			expect { yas.get_points }.to change{ yas.score}.by(1)
-		end 
-	end
 end 

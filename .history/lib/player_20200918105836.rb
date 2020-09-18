@@ -6,8 +6,8 @@ class Player
 		@score = SCORE
 	end 
 
-	def play(player)
-		player.get_points
+	def play(self)
+		self.get_points
 	end 
 
 	def get_points
