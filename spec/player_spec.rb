@@ -10,6 +10,12 @@ describe Player do
     end
   end
 
+  #describe '#player_choice' do
+  #  it 'returns player choice' do
+
+  #    expect ([ 'rock', 'paper', 'scissors' ].include?
+  #  end
+  #end
   #before showing results, I need to ask to show computer choice""
 
   #describe '#show_results' do
@@ -17,5 +23,9 @@ describe Player do
   #    expect(player.show_results).to eq 'rock'
   #  end
   #end
+
+end
+
+def new_game
 
 end
