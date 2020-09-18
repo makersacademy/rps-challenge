@@ -13,13 +13,7 @@ describe Game do
 
 	describe "#current player" do 
 		it 'has a current player as player 1' do
-			expect(game.current_turn).to eq player1
+			expect(game.current_current).to eq player1
 		end 
-	end
-
-	describe '#switch_turns' do
-		it "changes current player to player 2" do 
-			expect { game.switch_turns}.to change { game.current_turn}.to(player2)
-		end
 	end
 end 

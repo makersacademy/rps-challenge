@@ -6,9 +6,9 @@ class Player
 				@score = SCORE
 		end 
 
-	#	def play(player)
-	#		player.get_points
-	#	end 
+	#def play(player)
+	#	player.get_points
+	#end 
 
 		def get_points
 			@score += 1

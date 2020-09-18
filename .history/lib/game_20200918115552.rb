@@ -24,6 +24,6 @@ class Game
 		end 
 
 		def opponent
-				players.select { |player| player != current_turn }.first
+				players.select{|player| player != current_turn}.first
 		end 
 end 
