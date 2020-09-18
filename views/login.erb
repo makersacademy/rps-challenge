@@ -1,0 +1,41 @@
+
+<style>
+  body {
+    background-color: lightblue
+
+}
+  form {
+    padding: 30px;
+    width: 27%;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+  }
+
+  input {
+    font-style: italic;
+    color: gray;
+    width: 300px;
+    margin: 14px
+     }
+
+  #submit {
+    font-style: bold;
+    color: black;
+    width: 100px;
+    margin: 150px
+  }
+
+</style>
+
+<body>
+  
+  <form action='/names' method='post'>
+    Player 1<input type='text' name="p1" value='Player 1'>
+    Player 2<input type='text' name='p2' value='Player 2 (or leave empty)'>
+    <input id='submit' type='submit' value="Let's play!">
+  </form>
+  
+</body>
+
