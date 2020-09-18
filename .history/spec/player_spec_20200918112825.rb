@@ -4,7 +4,8 @@ describe Player do
 	subject(:ursie) { Player.new('Ursie') }
 	subject(:tom) { Player.new('Tom') }
 	it 'has a name' do 
-		expect(ursie.name).to eq "Ursie"
+		subject = Player.new("Ursie")
+		expect(yas.name).to eq "Yas"
 	end 
 
 	it "has a difined score as 0" do

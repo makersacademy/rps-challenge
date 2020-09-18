@@ -1,14 +1,16 @@
-require './lib/player.rb'
+require 'player'
 
 describe Player do 
-	subject(:ursie) { Player.new('Ursie') }
+	subject(:yas) { Player.new('Yas') }
 	subject(:tom) { Player.new('Tom') }
 	it 'has a name' do 
-		expect(ursie.name).to eq "Ursie"
+		subject = Player.new("Yas")
+		expect(yas.name).to eq "Yas"
 	end 
 
 	it "has a difined score as 0" do
-		expect(ursie.score).to eq 0
+		subject = Player.new("Yas")
+		expect(yas.score).to eq 0
 	end 
 
 	#describe "#play" do
@@ -20,7 +22,7 @@ describe Player do
 
 	describe "#receive points" do
 		it "adds 1 point to the score" do
-			expect { ursie.get_points }.to change{ ursie.score}.by(1)
+			expect { yas.get_points }.to change{ yas.score}.by(1)
 		end 
 	end
 end 

@@ -4,7 +4,8 @@ describe Player do
 	subject(:ursie) { Player.new('Ursie') }
 	subject(:tom) { Player.new('Tom') }
 	it 'has a name' do 
-		expect(ursie.name).to eq "Ursie"
+		subject = Player.new("Ursie")
+		expect(yas.name).to eq "Yas"
 	end 
 
 	it "has a difined score as 0" do
@@ -20,7 +21,7 @@ describe Player do
 
 	describe "#receive points" do
 		it "adds 1 point to the score" do
-			expect { ursie.get_points }.to change{ ursie.score}.by(1)
+			expect { yas.get_points }.to change{ yas.score}.by(1)
 		end 
 	end
 end 

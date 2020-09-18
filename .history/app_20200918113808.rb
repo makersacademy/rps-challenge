@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
 	
 	get '/playing' do 
 		@game = $game
-		@game.play(@game.player1)
+		@game.play(@game.player_1)
 		erb :playing
 	end 
 

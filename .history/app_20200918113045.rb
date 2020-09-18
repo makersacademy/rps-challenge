@@ -15,13 +15,15 @@ class RPS < Sinatra::Base
 	end 
 
 	get '/play' do
-		@game = $game
+		@player1 = $player1
+		@player2 = $player2
 		erb :play
 	end  
 	
 	get '/playing' do 
-		@game = $game
-		@game.play(@game.player1)
+		@player1 =$player1
+		@player2 = $player2
+		Game.new.play(@player1)
 		erb :playing
 	end 
 

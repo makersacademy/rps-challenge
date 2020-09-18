@@ -4,6 +4,7 @@ describe Player do
 	subject(:ursie) { Player.new('Ursie') }
 	subject(:tom) { Player.new('Tom') }
 	it 'has a name' do 
+		subject = Player.new("Ursie")
 		expect(ursie.name).to eq "Ursie"
 	end 
 
