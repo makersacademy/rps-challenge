@@ -10,4 +10,3 @@ describe Player do
 		subject = Player.new("Yas")
 		expect(subject.score).to eq 0
 end 
-end 

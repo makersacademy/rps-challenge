@@ -1,8 +1,8 @@
 class Player 
 	attr_reader :name, :score
 	SCORE = 0
-	def initialize(name)
+	def initialize(name, score = SCORE)
 		@name = name
-		@score = SCORE
+		@score = score
 	end 
 end 

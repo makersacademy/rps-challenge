@@ -13,14 +13,16 @@ class RPS < Sinatra::Base
 	end 
 
 	get '/play' do
-		@player1 = $player1
-		@player2 = $player2
+		@player1 = $player1.name
+		@player2 = $player2.name
+		@player1_score = $player1.score
+		@player2_score = $player2.score
 		erb :play
 	end  
 	
 	get '/playing' do 
-		@player1 =$player1
-		@player2 = $player2
+		@player1 =$player1.name
+		@player2 = $player2.name
 		erb :playing
 	end 
 
