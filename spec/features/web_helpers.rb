@@ -1,9 +1,8 @@
-Resolving dependencies...
 require "spec_helper.rb"
 
 def sign_in_and_play
   visit("/")
-  fill_in :"player_1_name", with: "Charlie"
-  fill_in :"player_2_name", with: "Gary"
+  fill_in :"player_one", with: "Charlotte"
+  fill_in :"player_two", with: "Johan"
   click_button "Submit"
 end
