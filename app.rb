@@ -11,11 +11,9 @@ class Rps < Sinatra::Base
     # create game object, using name input from form
     redirect '/rps'
   end
-
+  
   get '/rps' do
     erb :rps
   end
-
-  
 
 end
