@@ -6,13 +6,13 @@
 - Enter username (login button)
 - 'Play' button
 
-### '/rps'
+### '/play'
 - Allows the user to choose rock, paper, or scissors
 - Big buttons for each? Garish gif.
   - Goes to /winner when clicked
 
 ### '/winner'
-- Displays 'username' wins || username loses 
+- Displays 'username' wins OR username loses 
   - depending on the outcome
 
 
@@ -26,7 +26,7 @@
 ### 'Rps' class
 
 - init w/
-  - @user_input = ""
+  - @user_input = 
   - @bot_choice = [r,p,s].sample <-- tbc method?
 
 - method: shake(user_input)
