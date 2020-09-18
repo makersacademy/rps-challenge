@@ -1,3 +1,8 @@
+require 'simplecov'
+require 'simplecov-console'
+SimpleCov.start
+SimpleCov.formatter = SimpleCov::Formatter::Console
+
 RSpec.configure do |config|
   ENV['RACK_ENV'] = 'test'
   require_relative '../app.rb'
