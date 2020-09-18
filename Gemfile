@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
+gem 'rack'
+gem 'selenium-webdriver'
+
 
 group :test do
   gem 'capybara'
