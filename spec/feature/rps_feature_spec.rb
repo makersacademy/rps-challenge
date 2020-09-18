@@ -5,13 +5,13 @@ feature 'User can enter their name on the / page of the site' do
   end
   
   scenario 'enters name on main page' do
-    visit '/'
-    fill_in('Name', with: "Sam")
+    sign_in_submit
   end
 end
 
 feature 'User can play rock, paper, scissors' do
   scenario 'user enters their name, hits submit, and the next page loads' do
-    
+    sign_in_submit
+    expect(page).to have_content("Rock! Paper! Scissors!")
   end
 end

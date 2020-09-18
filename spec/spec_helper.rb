@@ -4,8 +4,8 @@ RSpec.configure do |config|
   require 'capybara'
   require 'capybara/rspec'
   require 'rspec'
-
-  #require_relative './features/web_helpers.rb'
+  require_relative './feature/web_helpers.rb'
+  
   Capybara.app = Rps
   
   config.expect_with :rspec do |expectations|
