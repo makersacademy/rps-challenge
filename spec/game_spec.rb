@@ -24,4 +24,13 @@ describe Game do
       expect(subject.bot_choice).to eq "scissors"
     end
   end
+
+=begin
+  describe '#self.create' do
+    it 'responds to self.create' do
+      expect(subject).to respond_to(:self.create)
+    end
+  end
+=end
+
 end

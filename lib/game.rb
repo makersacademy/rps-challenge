@@ -13,4 +13,12 @@ class Game
     @bot_choice = arr[rand(0..2)]
   end
 
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
 end
