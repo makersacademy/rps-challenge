@@ -1,14 +1,11 @@
+require 'player'
 
 class Game
 
-  attr_reader :player, :bot_choice, :player_choice
+  attr_reader :player, :bot_choice
 
-  def initialize(player = "")
+  def initialize(player)
     @player = player
-  end
-
-  def shake(arg)
-    @player_choice = "rock"
   end
 
   def bot_shake
