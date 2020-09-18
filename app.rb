@@ -1,7 +1,7 @@
 require 'sinatra/base'
-require './lib/player'
 
-class Player < Sinatra::Base
+
+class RPS < Sinatra::Base
 
   enable :sessions
   run! if app_file == $0
@@ -11,7 +11,6 @@ class Player < Sinatra::Base
   end
 
   post '/name' do
-    @player_name = Player_name.new(params[:player_name])
     session[:player_name] = params[:player_name]
     redirect '/play'
   end
@@ -19,6 +18,16 @@ class Player < Sinatra::Base
   get '/play' do
     @player_name = session[:player_name]
     erb(:play)
+  end
+
+  post '/play' do
+    @player_name = session[:player_name]
+    redirect '/game_running'
+  end
+
+  get '/game_running' do
+    @player_name = session[:player_name]
+    erb(:game_running)
   end
 
 end

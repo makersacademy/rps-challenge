@@ -1,1 +1,18 @@
-<%= @player_name %> vs. Computer
+<%=@player_name%> vs. Computer
+
+<h1>Please choose Rock, Paper or Scissors</h1>
+
+<form action='/play' method="post">
+  <label for="rps">Choose Rock, Paper or Scissors:</label>
+
+  <select name="rps" id="rps">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  <input type='submit' value='Submit'>
+</form>
+
+
+
+

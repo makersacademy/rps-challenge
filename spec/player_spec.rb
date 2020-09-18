@@ -1,13 +1,21 @@
 require 'Player'
 
-describe Player_name do
+describe Player do
 
-  subject(:bob) { Player_name.new('Bob') }
+  subject(:player) { Player.new('Bob') }
 
-  describe '#player_name' do
-    it 'receives player name as input' do
-      expect(bob.player_name).to eq('Bob')
+  describe '#name' do
+    it 'returns player name' do
+      expect(player.name).to eq('Bob')
     end
   end
+
+  #before showing results, I need to ask to show computer choice""
+
+  #describe '#show_results' do
+  #  it 'returns the comparison between PC and Players results' do
+  #    expect(player.show_results).to eq 'rock'
+  #  end
+  #end
 
 end
