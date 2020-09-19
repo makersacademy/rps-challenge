@@ -2,12 +2,16 @@ require "sinatra"
 require "./lib/player.rb"
 
 class RPS < Sinatra::Base
+  before do
+    @game = Game.instance
+  end
+
   get "/" do
     erb :index
   end
 
   post "/players" do
-    $game = Game.new(Player.new(params[:player_one]))
+    @game = Game.create(Player.new(params[:player_one]))
     redirect "/play"
   end
 
@@ -16,7 +20,7 @@ class RPS < Sinatra::Base
   end
 
   post "/rps" do
-    $game.player.store_move(params[:player_choice])
+    @game.player.store_move(params[:player_choice])
     redirect "/game_over"
   end
 

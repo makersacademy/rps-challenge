@@ -3,7 +3,7 @@ require_relative "player"
 class Game
   attr_reader :player, :bot
 
-  def initialize(player)
+  def initialize(player = Player)
     @player = player
   end
 
@@ -36,6 +36,14 @@ class Game
     end
 
     return "It's a draw! Try again!"
+  end
+
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
   end
 
   private
