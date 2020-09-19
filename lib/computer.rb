@@ -3,8 +3,7 @@ class Computer
 
   attr_reader :computer_options
 
-  def initialize(computer_options)
-    computer_options = Game::DEFAULT_OPTIONS
+  def initialize(computer_options = Game::DEFAULT_OPTIONS)
     @computer_options = computer_options
 
   end
@@ -14,10 +13,7 @@ class Computer
   end
 
   def print_computer_choice
-    @computer_options.map do |element|
-      "Computer chose #{element.capitalize}"
-    end
+    "Computer chose #{computer_choice.to_s}"
   end
-
 
 end

@@ -15,15 +15,14 @@ feature 'View player_name input' do
   scenario 'be able to see player_name input' do
     sign_in_and_play
     click_button 'Submit'
-    expect(page).to have_content "Bob chose 'rock'" #player choice is array of options
+    expect(page).to have_content "Bob chose rock"
   end
 end
-#first show computer choice, then compare
 feature 'View computer choice' do
   scenario 'be able to see computer choice and player choice' do
     sign_in_and_play
     click_button 'Submit'
-    expect(page).to have_content "Computer chose 'rock'" #computer choice is array of options
+    expect(page).to have_content "Computer chose rock"
   end
 end
 

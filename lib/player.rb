@@ -13,9 +13,6 @@ class Player
   end
 
   def print_player_choice
-    @player_options.map do |element|
-      "#{@name} chose #{element.to_s.capitalize}"
-    end
+      "#{@name} chose #{player_choice.to_s}"
   end
-
 end
