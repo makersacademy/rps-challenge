@@ -1,0 +1,48 @@
+require 'game'
+
+RSpec.describe Game do 
+
+  let(:game)   { Game.new(player)                  }
+  let(:player) { double('player', :move => 'rock') }
+
+  describe 'class initialization' do 
+
+    it 'instance has hash to store defeat combinations' do 
+      expected = {'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'}
+      expect(game.defeats).to eq expected
+    end 
+
+  end 
+
+  describe 'playing game' do 
+  
+    it 'computer can make a move' do 
+      allow(game).to receive(:throw).and_return('rock')
+      expect(game.throw).to eq 'rock'
+    end 
+
+  end 
+
+  describe 'finding a winner' do 
+
+    it 'evaluates a draw' do 
+      player.move
+      allow(game).to receive(:computer_move).and_return('rock')
+      expect(game.winner?).to eq "Draw"
+    end
+   
+    it 'evalutes player win' do 
+      player.move
+      allow(game).to receive(:computer_move).and_return('scissors')
+      expect(game.winner?).to eq "Player wins" 
+    end 
+
+   it 'evalutes player loss' do 
+      player.move
+      allow(game).to receive(:computer_move).and_return('paper')
+      expect(game.winner?).to eq "Computer wins" 
+    end  
+
+  end 
+
+end 
