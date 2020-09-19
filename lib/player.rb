@@ -12,7 +12,5 @@ class Player
     @player_options.sample
   end
 
-  def print_player_choice
-      "#{@name} chose #{player_choice.to_s}"
-  end
+
 end

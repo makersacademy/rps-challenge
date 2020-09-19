@@ -7,7 +7,9 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'features/web_helpers'
-
+require './lib/computer'
+require './lib/player'
+require './lib/game'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

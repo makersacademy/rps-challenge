@@ -1,7 +1,7 @@
-<%= @player_name %> vs. Computer <br>
+<%= $player.name %> vs. Computer <br>
 
-<%= @player_name %> chose <%=@player_choice%>
-Computer chose <%=@computer_choice%>
+<%= $player.name %> chose <%=$player.player_choice%> <br>
+Computer chose <%=$computer.computer_choice%>
 
 <form action='/show-results'>
   <input type='submit' value='Show results'>

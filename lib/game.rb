@@ -6,7 +6,6 @@ class Game
   DEFAULT_OPTIONS = [ :rock, :paper, :scissors ]
 
   def initialize(options = DEFAULT_OPTIONS)
-
     @options = options
   end
 

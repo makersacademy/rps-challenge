@@ -1,19 +1,17 @@
 require 'Game'
 class Computer
 
-  attr_reader :computer_options
+  attr_reader :computer
 
-  def initialize(computer_options = Game::DEFAULT_OPTIONS)
-    @computer_options = computer_options
-
+  def initialize(computer)
+    @computer = computer
   end
 
   def computer_choice
-    @computer_options.sample
+    computer_options = Game::DEFAULT_OPTIONS
+    computer_options.sample
   end
 
-  def print_computer_choice
-    "Computer chose #{computer_choice.to_s}"
-  end
+
 
 end
