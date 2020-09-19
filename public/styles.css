@@ -1,0 +1,61 @@
+body {
+  background-color: floralwhite;
+  padding: 2em 5em 5em 5em;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
+}
+
+h1 { text-shadow: 2px 1.5px rgb(32, 199, 218), -2px -1.5px red;
+      text-align: center;
+      color: floralwhite;
+      font-size: 4em;
+    }
+
+h2 {  text-align: center;
+  color: rgb(55, 55, 36);  
+}
+
+p { text-align: center;
+  }
+
+.name_form {
+  text-align: center;
+  color: rgb(55, 55, 36);  
+}
+
+.name_enter {
+  text-align: center;
+  color: rgb(55, 55, 36);  
+
+}
+
+.button {
+  background-color: gold;
+  color: rgb(55, 55, 36);  
+
+}
+
+.image {
+  max-width: 50%;
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.throwing_player { 
+  text-align: center;
+}
+
+.throwing_bot {
+  text-align: center;
+}
+
+.winner {
+  font-size: 5em;
+  color: black;
+}

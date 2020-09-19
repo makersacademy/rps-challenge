@@ -1,0 +1,33 @@
+<head>
+  <title>RPS!</title>
+  <link rel="stylesheet" type="text/css" href="<%= url("/styles.css")%>"></head>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+</head>
+
+<h1>Single player</h1>
+<p class="name_enter">Please enter your name to begin</p>
+
+<div class = "name_form">
+<form method="post" action="/play">
+  <label for="Name">Name:</label><br>
+  <input type="text" id="Name" name="name"><br>
+  <input class="button" type="submit" value="Start single player!">
+ </form>
+</div>
+
+<br><hr><br>
+
+<h1>Multiplayer</h1>
+<p class="name_enter">Please enter two names to begin</p>
+
+<div class = "name_form">
+<form method="post" action="/multiplayer">
+  <label for="player_one">Name:</label><br>
+  <input type="text" id="player_one" name="player_one"><br>
+  
+  <label for="player_two">Name:</label><br>
+  <input type="text" id="player_two" name="player_two"><br>
+  
+  <input class="button" type="submit" value="Start multiplayer!">
+ </form>
+</div>
