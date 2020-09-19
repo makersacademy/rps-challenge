@@ -1,0 +1,29 @@
+<style>
+center {
+  padding-top: 10px
+      }
+</style>
+<style>
+.div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+
+<center>
+<head>
+
+<div class="div"><h1>Hi <%=@name%>. Good luck!</h1>
+      <h2>Make your selection:</h2>
+         <form action="/play" method="post">
+  <input type="submit" name="item" value="Rock" />
+  <input type="submit" name="item" value="Paper" />
+  <input type="submit" name="item" value="Scissors" />
+</form>
+
+      
+</div>
+</form>
