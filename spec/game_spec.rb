@@ -2,8 +2,6 @@ require "game"
 require "player"
 
 describe Game do
-  #let(:charlotte) { Player.new("Charlotte") }
-
   describe "#determine_winner" do
     let(:charlotte_rock) { double :player, name: "Charlotte", move: "Rock" }
     let(:charlotte_scissor) { double :player, name: "Charlotte", move: "Scissors" }
