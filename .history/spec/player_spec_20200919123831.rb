@@ -10,8 +10,8 @@ describe Player do
 
 	describe "#choice" do
 		it "returns a chosen move and can store it" do
-			ursie.choice('paper')
-			expect(ursie.move).to eq 'paper'
+
+			expect(ursie.move).to eq("paper")
 		end
 	end 
 end 

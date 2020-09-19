@@ -2,9 +2,7 @@ require './lib/player.rb'
 require './lib/comp.rb'
 
 class Game 
-	attr_accessor :player, :comp
-
-WIN = { 'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'}
+	attr_accesor :player, :comp
 
 	def initialize(player)
 		@player = player
@@ -22,10 +20,15 @@ WIN = { 'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'}
 		def result
 			if player.move == comp.move
 				return "It's a draw"
-			elsif WIN[player.move] == comp.move
-				return "#{player.name} is a winner!!!"
+			elsif win?
+				return "You won!!!"
 			else
-				return "Computer won!"
+				return"Computer won!"
 			end 
 		end
+
+		def win?
+			@player.move == 'rock' && comp.move == 'scissors' || @player.move == 'paper' && comp.move == 'rock' || @player.move == 'scissors' && comp.move == 'paper'
+		end
+
 	end 

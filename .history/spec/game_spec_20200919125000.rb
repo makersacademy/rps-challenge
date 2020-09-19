@@ -19,18 +19,10 @@ describe Game do
 			expect(game.result).to eq "It's a draw"
 		end 
 
-		it "can state when the player lost" do
+		it "can stte if player won" do
 			player.choice('scissors')
 			srand(0)
 			comp.move
-			expect(game.result).to eq "Computer won!"
-		end
-
-		it "can state when the player won" do
-			player.choice('paper')
-			srand(1)
-			comp.move
-			expect(game.result).to eq "Ursie is a winner!!!"
-		end 
+			expect(game.result).to eq "You won!!!"
 	end 
 end 

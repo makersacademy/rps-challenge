@@ -23,7 +23,7 @@ WIN = { 'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'}
 			if player.move == comp.move
 				return "It's a draw"
 			elsif WIN[player.move] == comp.move
-				return "#{player.name} is a winner!!!"
+				return "#{player.name} is a winner!"
 			else
 				return "Computer won!"
 			end 

@@ -27,8 +27,8 @@ describe Game do
 		end
 
 		it "can state when the player won" do
-			player.choice('paper')
-			srand(1)
+			player.choice('rock')
+			srand(0)
 			comp.move
 			expect(game.result).to eq "Ursie is a winner!!!"
 		end 
