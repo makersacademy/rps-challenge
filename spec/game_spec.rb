@@ -15,7 +15,7 @@ describe Game do
         player.shake("rock")
         srand(0)
         bot.bot_shake
-        expect(subject.rules(player, bot)).to eq "Draw"
+        expect(subject.rules(player, bot)).to eq "It's a draw!"
       end
 
       it 'declares the player the winner' do

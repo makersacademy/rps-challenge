@@ -31,6 +31,21 @@ class Rps < Sinatra::Base
     erb :rps
   end
 
+  get '/rock' do
+    @game.active_player.shake("rock")
+    redirect '/result' 
+  end
+
+  get '/paper' do
+    @game.active_player.shake("paper")
+    redirect '/result'
+  end
+
+  get '/scissors' do
+    @game.active_player.shake("scissors")
+    redirect '/result'
+  end
+
   get '/result' do
     erb :result
   end

@@ -5,7 +5,7 @@ class Game
 
   WINNERS = { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
   
-  attr_reader :player, :bot_choice, :active_player
+  attr_accessor :player_one, :player_two, :active_player
   
   def initialize(player1, player2)
     @player_one = player1
@@ -14,7 +14,7 @@ class Game
   end
 
   def rules(player1, player2)
-    if player1.choice == player2.choice then "Draw"
+    if player1.choice == player2.choice then "It's a draw!"
     elsif WINNERS[player1.choice] == player2.choice then "#{player1.name} is the winner!"
     else 
       "#{player2.name} is the winner!"
