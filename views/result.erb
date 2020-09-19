@@ -1,0 +1,33 @@
+<style>
+center {
+  padding-top: 10px
+      }
+</style>
+<style>
+.div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+
+<center>
+<head>
+
+<div class="div">
+<% if @game.win? == "You win!"%>
+<h1>Well done <%= @game.name%>!</h1>
+<% else%>
+<h1>Unlucky <%= @game.name%></h1>
+<%end%>
+<h2> You selected <%=@game.item%> </h2>
+<h2> The computer selected <%=@game.computer_play%>
+
+<h2> <%=@game.win?%>
+<form action="/play">
+<input type="submit" value="Play again?">
+</form>
+
+</div>

@@ -16,14 +16,17 @@ center {
 <center>
 <head>
 
-<div class="div"><h1>Hi <%=@name%>. Good luck!</h1>
+<div class="div"><h1>Good luck <%= @game.name %>.</h1>
       <h2>Make your selection:</h2>
-         <form action="/play" method="post">
+      <br>
+      <br>
+      <br>
+      <br>
+         <form  method="POST" action="/result">
   <input type="submit" name="item" value="Rock" />
   <input type="submit" name="item" value="Paper" />
   <input type="submit" name="item" value="Scissors" />
 </form>
 
-      
+
 </div>
-</form>

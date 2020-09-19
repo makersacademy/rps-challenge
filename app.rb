@@ -1,24 +1,29 @@
 require "sinatra"
+require "./lib/game"
 
 class Rps < Sinatra::Base
   enable :sessions
 
   get '/' do
-    erb(:index)
+    erb :index
   end
 
   post '/name' do
-    session[:name] = params[:name]
-    redirect('/play')
+  $name = params[:name]
+   p 
+    redirect '/play'
   end
 
   get '/play' do
-    @name = params[:name]
-    erb(:play)
+    $game = Game.new($name)
+    @game = $game
+    erb :play
   end 
 
-  post '/play' do
-    redirect('/play')
+  post '/result' do
+    @game = $game
+    @game.item = params[:item]
+    erb :result
   end
 
  
