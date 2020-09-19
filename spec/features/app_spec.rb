@@ -16,7 +16,7 @@ end
 
 feature 'player makes move selection' do 
   scenario 'player can choose a move' do
-   visit '/'
+    visit '/'
     fill_in 'Name', with: 'Bob'
     click_on 'Submit'
     expect(page).to have_content 'Make your move...' 
@@ -25,7 +25,7 @@ end
 
 feature 'play can submit a move' do 
   scenario 'playey makes move and confirmation appears' do 
-   visit '/'
+    visit '/'
     fill_in 'Name', with: 'Bob'
     click_on 'Submit'
     choose 'rock'

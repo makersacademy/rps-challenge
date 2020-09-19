@@ -3,4 +3,4 @@ feature 'test set_up' do
     visit '/'
     expect(page).to have_content('Let\'s play RPS!')
   end 
-end 
+end
