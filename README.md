@@ -2,10 +2,9 @@
 
 Notes
 -------
-* The app.rb needs a refactor to ake the if statements out of the rock, paper and scissors get methods.
-  * I tried to do move it into the game class, but the redirects became an issue.
-  * Even when you create a method that returns something to trigger a redirect in the app.rb, it still needs an if statement and does not slim it down / DRY it very much.
-
+* I tried moving the non get/push methods in the controller into the game class, but the redirects became an issue.
+* Even when you create a method that returns something to trigger a redirect in the app.rb, it still needs an if statement and does not slim it down / DRY it very much.
+* As it stands, at least it is dry, even if the controller is not that skinny.
 
 Task
 ----

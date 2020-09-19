@@ -58,8 +58,8 @@ class Rps < Sinatra::Base
   get '/MPresult' do
     erb :mpresult
   end
-
-# controller methods
+ 
+  # controller methods
   def go_again(shake)
     @game.active_player.shake(shake)
     @game.switch_players(@game.player_one, @game.player_two)
