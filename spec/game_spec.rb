@@ -8,8 +8,6 @@ describe Game do
     bot = Bot.new
     subject = Game.new(player, bot)
 
-    
-
     describe '#rules' do
       it 'says draw if the choices are the same' do
         player.shake("rock")
@@ -32,5 +30,14 @@ describe Game do
         expect(subject.rules(player, bot)).to eq "RPS BOT is the winner!"
       end
     end
+
+    describe '#switch_players' do
+      it 'switches @active_player' do
+        expect { subject.switch_players(player, bot) }.to change { subject.active_player}.from(subject.player_one).to(subject.player_two)
+      end
+    end
+
+
+
   end
 end

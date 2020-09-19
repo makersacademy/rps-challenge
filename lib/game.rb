@@ -30,7 +30,7 @@ class Game
   end
 
   def switch_players(a, b)
-    
+    @active_player == a ? @active_player = b : @active_player = a
   end
 
 end
