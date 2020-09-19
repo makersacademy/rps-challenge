@@ -9,8 +9,7 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-  @game = Game.create(params[:name])
-  # $name = params[:name] 
+    @game = Game.create(params[:name])
     redirect '/play'
   end
 

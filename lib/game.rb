@@ -1,6 +1,6 @@
 require_relative './computer'
 class Game
-attr_accessor :name, :item, :computer_play
+  attr_accessor :name, :item, :computer_play
 
   def initialize(name, item = nil, computer_play = Computer.play)
     @name = name
@@ -25,7 +25,5 @@ attr_accessor :name, :item, :computer_play
     when ["Rock", "Paper"], ["Paper", "Scissors"], ["Scissors", "Rock"]
       "You lose"
     end
-  end
-
- 
+  end 
 end
