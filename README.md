@@ -40,14 +40,14 @@ charlotte@Charlottes-MBP rps-challenge % rackup config.ru
 
 ### Enter your name
 
-![Screenshot](https://imgur.com/w7ZlWLL)
+![Screenshot](https://imgur.com/w7ZlWLL.jpg)
 
 ### Choose your weapon
 
-![Screenshot](https://imgur.com/pJjii3J)
+![Screenshot](https://imgur.com/pJjii3J.jpg)
 
 ### Your fate is determined
 
-![Screenshot](https://imgur.com/hCr41b1)
+![Screenshot](https://imgur.com/hCr41b1.jpg)
 
  Select `Play Again` to have another go or `New Game` to enter a new player!
