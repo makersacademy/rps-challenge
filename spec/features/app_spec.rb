@@ -44,3 +44,14 @@ feature 'game consists of two moves' do
     expect(page).to have_content 'The computer played'
   end
 end 
+
+feature 'playing a full game ' do 
+  scenario 'game played and winner displayed' do 
+   visit '/'
+    fill_in 'Name', with: 'Bob'
+    click_on 'Submit'
+    choose 'rock'
+    click_on 'Play!'
+    expect(page).to have_content 'The result is' 
+  end 
+end 

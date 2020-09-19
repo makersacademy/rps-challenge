@@ -31,8 +31,9 @@ class Rock_paper_scissors < Sinatra::Base
 
   get '/result' do 
     @move = $player.move
-    game = Game.new
+    game = Game.new($player)
     @computer_move = game.computer_move
+    @result = game.winner
     erb(:result)
   end
 
