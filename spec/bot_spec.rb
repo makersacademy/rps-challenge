@@ -2,8 +2,6 @@ require 'bot'
 require 'game'
 
 describe Bot do
-  bot = Bot.new
-
   describe '#bot_shake' do
     it 'sets @choice to "rock" from an array' do
       srand(0)
@@ -23,5 +21,4 @@ describe Bot do
       expect(subject.choice).to eq "scissors"
     end
   end
-
 end

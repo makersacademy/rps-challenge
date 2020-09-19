@@ -33,7 +33,7 @@ describe Game do
 
     describe '#switch_players' do
       it 'switches @active_player' do
-        expect { subject.switch_players(player, bot) }.to change { subject.active_player}.from(subject.player_one).to(subject.player_two)
+        expect { subject.switch_players(player, bot) }.to change { subject.active_player }.from(subject.player_one).to(subject.player_two)
       end
     end
 

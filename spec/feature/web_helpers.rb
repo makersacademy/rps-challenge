@@ -4,7 +4,6 @@ def sign_in_submit
   click_on('Start single player!')
 end
 
-
 def mp_sign_in_submit
   visit '/'
   fill_in('player_one', with: "Aardvark")

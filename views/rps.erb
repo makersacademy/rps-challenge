@@ -1,18 +1,28 @@
 <head>
   <title>RPS!</title>
   <link href="/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
 </head>
 
 <h1>Rock! Paper! Scissors!</h1>
-<h2>The player today is: <%= @game.active_player.name %></h2>
-<br>
-<h2> Choose rock, paper or scissors by clicking an image </h2>
+<p>The player is: <%= @game.active_player.name %><p>
+<p> Choose rock, paper or scissors by clicking an image </p>
 
-<a href="/rock">
-<img alt="rock" src="https://thumbs.gfycat.com/PastelForkedIguanodon-small.gif" </a>
+<div class="images">
+<div class="row">
+  <div class="column">
+    <a href="/rock">
+    <img class="image" alt="rock" src="https://thumbs.gfycat.com/PastelForkedIguanodon-small.gif" </a>
+  </div>
 
-<a href="/paper" <% @game.active_player.shake("paper") %> >
-<img alt="paper" src="https://64.media.tumblr.com/331c99aa666ff157c4b4195e68e91c65/tumblr_oqd9wrhwyj1wq5uwno1_400.gifv" </a>
+  <div class="column">
+    <a href="/paper" <% @game.active_player.shake("paper") %> >
+    <img class="image" alt="paper" src="https://64.media.tumblr.com/331c99aa666ff157c4b4195e68e91c65/tumblr_oqd9wrhwyj1wq5uwno1_400.gifv" </a>
+  </div>
 
-<a href="/scissors" <% @game.active_player.shake("scissors") %> >
-<img alt="scissors" src="https://upload.wikimedia.org/wikipedia/commons/3/35/Scissors_Animation.gif" </a>
+  <div class="column">
+    <a href="/scissors" <% @game.active_player.shake("scissors") %> >
+    <img class="image" alt="scissors" src="https://upload.wikimedia.org/wikipedia/commons/3/35/Scissors_Animation.gif" </a>
+  </div>
+</div>
+</div>

@@ -10,5 +10,4 @@ class Bot
     arr = ["rock", "paper", "scissors"]
     @choice = arr[rand(0..2)]
   end
-
 end
