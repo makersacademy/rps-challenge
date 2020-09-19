@@ -1,5 +1,5 @@
 class Computer
   def self.play
-    ["Rock", "Paper", "Scissors"].sample
+    ["Rock", "Paper", "Scissors", "Spock", "Lizard"].sample
   end
 end

@@ -14,8 +14,8 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    # $game = Game.new($name)
     @game = Game.instance
+    @game.computer_play = Computer.play
     erb :play
   end 
 

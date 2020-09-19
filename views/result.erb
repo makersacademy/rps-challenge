@@ -7,21 +7,26 @@ center {
 .div {
   background-color: lightgrey;
   width: 300px;
-  border: 15px solid green;
+  border: 15px solid grey;
   padding: 50px;
   margin: 20px;
 }
+<%if @game.win?.include?("lose") %>
+  body { background-image : url(https://www.onlygfx.com/wp-content/uploads/2018/10/10-blood-paint-splatter-background-1.jpg);
+
+  }
+  <%else%>
+body {
+    background-image : url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
+}
+<%end%>
 </style>
 
 <center>
 <head>
 
 <div class="div">
-<% if @game.win? == "You win!"%>
-<h1>Well done <%= @game.name%>!</h1>
-<% else%>
-<h1>Unlucky <%= @game.name%></h1>
-<%end%>
+
 <h2> You selected <%=@game.item%> </h2>
 <h2> The computer selected <%=@game.computer_play%>
 

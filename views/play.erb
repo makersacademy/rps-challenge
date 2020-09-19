@@ -7,13 +7,18 @@ center {
 .div {
   background-color: lightgrey;
   width: 300px;
-  border: 15px solid green;
+  border: 15px solid grey;
   padding: 50px;
   margin: 20px;
 }
 </style>
-
+<style>
+body {
+    background-image : url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
+}
+</style>
 <center>
+<body>
 <head>
 
 <div class="div"><h1>Good luck <%= @game.name %>.</h1>
@@ -26,7 +31,9 @@ center {
   <input type="submit" name="item" value="Rock" />
   <input type="submit" name="item" value="Paper" />
   <input type="submit" name="item" value="Scissors" />
+  <input type="submit" name="item" value="Lizard" />
+  <input type="submit" name="item" value="Spock" />
 </form>
-
-
 </div>
+<img src="https://cdn.instructables.com/ORIG/FIU/AIWE/I7Q0TCUT/FIUAIWEI7Q0TCUT.jpg">
+

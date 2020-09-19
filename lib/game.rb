@@ -18,12 +18,19 @@ class Game
 
   def win?
     case [@item, @computer_play] 
-    when ["Rock", "Rock"], ["Paper", "Paper"], ["Scissors", "Scissors"]
+    when ["Rock", "Rock"], ["Paper", "Paper"], ["Scissors", "Scissors"], ["Lizard", "Lizard"], ["Spock", "Spock"]
+      
       "Draw"
-    when ["Rock", "Scissors"], ["Paper", "Rock"], ["Scissors", "Paper"]
-      "You win!"
-    when ["Rock", "Paper"], ["Paper", "Scissors"], ["Scissors", "Rock"]
-      "You lose"
+
+    when ["Spock", "Scissors"], ["Spock", "Rock"], ["Rock", "Scissors"], ["Rock", "Lizard"], ["Paper", "Rock"], ["Paper", "Spock"], ["Scissors", "Paper"], ["Scissors", "Lizard"], ["Lizard", "Paper"], ["Lizard","Spock"]
+      
+      
+      "You win! #{@item} beats #{@computer_play}"
+
+    when ["Rock", "Paper"], ["Rock", "Spock"], ["Paper", "Scissors"], ["Paper", "Lizard"], ["Scissors", "Rock"], ["Scissors", "Spock"], ["Lizard", "Rock"], ["Lizard", "Scissors"], ["Spock", "Paper"], ["Spock", "Lizard"]
+     
+      "You lose, #{@computer_play}, beats #{@item}" 
+   
     end
   end 
 end
