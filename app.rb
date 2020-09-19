@@ -37,7 +37,13 @@ class RPS < Sinatra::Base
 
     get '/result' do
         @game = Game.instance
-    erb :choice
+         @result = @game.get_result     
+        if @result == "Draw"
+            erb :draw
+        else
+            erb :result
+        end
+    
 
     end
 

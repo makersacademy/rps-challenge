@@ -3,13 +3,14 @@ require_relative 'choices'
 
 
 class Game
-    attr_reader :player, :player_choice, :cpu_choice, :choices, :game
+    attr_reader :player, :player_choice, :cpu_choice, :choices, :game, :result
 
     def initialize(player)
         @player = player
         @player_choice = ""
         @cpu_choice = ""
         @choices = Choices.new
+        @result = ""
     end
 
     def show_choices
@@ -27,8 +28,12 @@ class Game
     def set_player_choice(choice)
         @player_choice = choice
         set_cpu_choice
-        #decide winner
+        decide_winner
     end
+
+def get_result
+@result
+end
 
 
     def show_choice
@@ -42,7 +47,9 @@ class Game
     end
 
     def decide_winner
-
+        if @player_choice == @cpu_choice
+            @result ="Draw"
+        end
     end
 
     
