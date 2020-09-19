@@ -32,7 +32,7 @@ WIN = {
 			elsif WIN[@player.move].include?(@comp.move)
 				return "#{@player.name} is a winner!!!"
 			else
-				return "Computer won!"
+				return "Computer won"
 			end 
 		end
 	end 

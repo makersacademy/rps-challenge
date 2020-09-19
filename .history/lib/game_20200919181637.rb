@@ -2,7 +2,6 @@ require './lib/player.rb'
 require './lib/comp.rb'
 
 class Game 
-
 	attr_accessor :player, :comp
 
 WIN = { 
@@ -26,13 +25,13 @@ WIN = {
   		@game
 		end
 
-		def result
-			if @player.move == @comp.move
-				return "It's a draw"
-			elsif WIN[@player.move].include?(@comp.move)
-				return "#{@player.name} is a winner!!!"
-			else
-				return "Computer won!"
+		def result(player, comp)
+			if player.move == comp.move
+				return "It is a draw"
+			elsif WIN[player.move].include?(comp.move)
+				return "#{player.name} is a winner!!!"
+			elsif WIN[comp.move].include?(player.move)
+				return "Computer wins"
 			end 
 		end
 	end 
