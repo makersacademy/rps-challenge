@@ -3,7 +3,6 @@ require "player"
 
 describe "Player" do
   let(:charlotte) { Player.new("Charlotte") }
-  let(:johan) { Player.new("Johan") }
 
   it "expects player to be initalized with a player name" do
     expect(charlotte.name).to eq "Charlotte"
