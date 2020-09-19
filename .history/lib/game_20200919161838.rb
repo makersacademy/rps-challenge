@@ -5,12 +5,12 @@ class Game
 	attr_accessor :player, :comp
 
 WIN = { 
-	'rock' => ['lizard', 'scissors'],
-	'paper' => ['rock', 'spock'],
-	'scissors' => ['lizard', 'paper'],
-	'lizard' => ['paper', 'spock'],
-	'spock' => ['scissors', 'rock']
-	}
+	'rock' => %w(lizard scissors),
+	'paper' => %w(rock spock),
+	'scissors' => %w(lizard paper),
+	'lizard' => %w(paper spock),
+	'spock' => %w(scissors rock)
+	}.freeze
 
 	def initialize(player)
 		@player = player
@@ -26,12 +26,12 @@ WIN = {
 		end
 
 		def result
-			if player.move == comp.move
-				return "It is a draw"
-			elsif WIN[player.move].include?(comp.move)
+			if WIN.has_key?([comp.move, player.move])
+				return "Computer won!"
+			elsif WIN.has_key?([player.move, comp.move]))
 				return "#{player.name} is a winner!!!"
 			else
-				return "Computer wins"
+				return "It's a draw!"
 			end 
 		end
 	end 

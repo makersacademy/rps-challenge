@@ -38,6 +38,12 @@ describe Game do
 			srand(0)
 			comp.move
 			expect(game.result).to eq "Computer won!"
-		end
+		end 
+
+		it 'can state when player wins again' do
+			player.choice('spock')
+			srand(0)
+			comp.move
+			expect(game.result).to eq "Urise is a winner!!!"
 	end 
 end

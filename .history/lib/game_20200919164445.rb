@@ -9,7 +9,7 @@ WIN = {
 	'paper' => ['rock', 'spock'],
 	'scissors' => ['lizard', 'paper'],
 	'lizard' => ['paper', 'spock'],
-	'spock' => ['scissors', 'rock']
+	'spock' => ['scissors', 'rock'])
 	}
 
 	def initialize(player)
@@ -26,12 +26,12 @@ WIN = {
 		end
 
 		def result
-			if player.move == comp.move
-				return "It is a draw"
+			if WIN[comp.move].include?(player.move)
+				return "Computer won"
 			elsif WIN[player.move].include?(comp.move)
-				return "#{player.name} is a winner!!!"
-			else
-				return "Computer wins"
+				"#{player.name} is a winner!!!"
+			elsif player.move == comp.move
+				 "It's a draw"
 			end 
 		end
 	end 

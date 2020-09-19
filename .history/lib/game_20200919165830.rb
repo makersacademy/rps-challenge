@@ -30,7 +30,7 @@ WIN = {
 				return "It is a draw"
 			elsif WIN[player.move].include?(comp.move)
 				return "#{player.name} is a winner!!!"
-			else
+			else 
 				return "Computer wins"
 			end 
 		end

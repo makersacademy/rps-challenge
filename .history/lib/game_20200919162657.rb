@@ -4,13 +4,11 @@ require './lib/comp.rb'
 class Game 
 	attr_accessor :player, :comp
 
-WIN = { 
-	'rock' => ['lizard', 'scissors'],
-	'paper' => ['rock', 'spock'],
-	'scissors' => ['lizard', 'paper'],
-	'lizard' => ['paper', 'spock'],
-	'spock' => ['scissors', 'rock']
-	}
+WIN = { rock: ["lizard", "scissors"],
+                  paper: ["rock", "spock"],
+                  scissors: ["paper", "lizard"],
+                  lizard: ["paper", "spock"],
+                  spock: ["scissors", "rock"] }
 
 	def initialize(player)
 		@player = player
@@ -27,11 +25,11 @@ WIN = {
 
 		def result
 			if player.move == comp.move
-				return "It is a draw"
+				"It's a draw"
 			elsif WIN[player.move].include?(comp.move)
-				return "#{player.name} is a winner!!!"
-			else
-				return "Computer wins"
+				"#{player.name} is a winner!!!"
+			elsif WIN[comp.move].include?(player.move)
+				"Computer won!"
 			end 
 		end
 	end 

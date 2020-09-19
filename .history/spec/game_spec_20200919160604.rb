@@ -38,6 +38,6 @@ describe Game do
 			srand(0)
 			comp.move
 			expect(game.result).to eq "Computer won!"
-		end
+		end 
 	end 
 end

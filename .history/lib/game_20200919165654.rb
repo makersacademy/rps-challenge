@@ -26,12 +26,12 @@ WIN = {
 		end
 
 		def result
-			if player.move == comp.move
-				return "It is a draw"
-			elsif WIN[player.move].include?(comp.move)
-				return "#{player.name} is a winner!!!"
-			else
-				return "Computer wins"
+			if WIN[@player.move].include?(@comp.move)
+				return "#{@player.name} is a winner!!!"
+			elsif @player.move == @comp.move
+				 return "It's a draw"
+			else 
+				return "Computer wins@"
 			end 
 		end
 	end 

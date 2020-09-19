@@ -33,11 +33,11 @@ describe Game do
 			expect(game.result).to eq "It's a draw"
 		end 
 
-		it "can state when the player lost" do 
+		it "can state when a player won" do 
 			player.choice('paper')
 			srand(0)
 			comp.move
-			expect(game.result).to eq "Computer won!"
-		end
+			expect(game.result).to eq "Ursie is a winner!!!"
+		end 
 	end 
 end

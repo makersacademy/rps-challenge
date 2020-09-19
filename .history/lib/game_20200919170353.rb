@@ -5,12 +5,11 @@ class Game
 	attr_accessor :player, :comp
 
 WIN = { 
-	'rock' => ['lizard', 'scissors'],
-	'paper' => ['rock', 'spock'],
-	'scissors' => ['lizard', 'paper'],
-	'lizard' => ['paper', 'spock'],
-	'spock' => ['scissors', 'rock']
-	}
+	"rock" => ["scissor", "lizard"], 
+	"paper" => ["rock", "spock"],
+	"scissor" => ["paper", "lizard"], 
+	"lizard" => ["spock", "paper"],
+	"spock" => ["rock", "scissor"] }
 
 	def initialize(player)
 		@player = player
@@ -25,7 +24,7 @@ WIN = {
   		@game
 		end
 
-		def result
+		def result(player, comp)
 			if player.move == comp.move
 				return "It is a draw"
 			elsif WIN[player.move].include?(comp.move)
