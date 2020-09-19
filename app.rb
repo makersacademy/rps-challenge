@@ -29,7 +29,6 @@ class RPS < Sinatra::Base
     post '/choice' do
         @game = Game.instance
         @game.set_player_choice(params[:choice])
-
         @choice = params[:choice]
         redirect '/result'
         
@@ -37,6 +36,8 @@ class RPS < Sinatra::Base
 
     get '/result' do
         @game = Game.instance
+        @player = session[:name]
+
          @result = @game.get_result     
         if @result == "Draw"
             erb :draw

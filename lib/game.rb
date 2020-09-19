@@ -31,12 +31,15 @@ class Game
         decide_winner
     end
 
-def get_result
-@result
-end
+    def get_result
+    @result
+    end
 
+    def show_player_choice
+        @player_choice
+    end
 
-    def show_choice
+    def show_cpu_choice
         @cpu_choice
     end
 
@@ -49,6 +52,18 @@ end
     def decide_winner
         if @player_choice == @cpu_choice
             @result ="Draw"
+        elsif @player_choice == "Rock" && @cpu_choice == "Scissors"
+            @result = @player
+        elsif @player_choice == "Rock" && @cpu_choice == "Paper"
+            @result = "CPU"
+        elsif @player_choice == "Scissors" && @cpu_choice == "Paper"
+            @result = @player
+        elsif @player_choice == "Scissors" && @cpu_choice == "Rock"
+            @result = "CPU"
+        elsif @player_choice == "Paper" && @cpu_choice == "Rock"
+            @result = @player
+        elsif @player_choice == "Paper" && @cpu_choice == "Scissors"
+            @result = "CPU"
         end
     end
 
