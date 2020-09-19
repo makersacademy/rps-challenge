@@ -5,37 +5,37 @@ class Game
 
   def initialize(player)
     @player = player
-    @bot_move = ["Rock", "Paper", "Scissors"].sample
   end
 
   def determine_winner
     player_move = @player.move
+    @bot_move = ["Rock", "Paper", "Scissors"].sample
 
     case player_move
     when "Rock"
       case @bot_move
       when "Paper"
-        bot_wins()
+        return bot_wins()
       when "Scissors"
-        player_wins()
+        return player_wins()
       end
     when "Paper"
       case @bot_move
       when "Scissors"
-        bot_wins()
+        return bot_wins()
       when "Rock"
-        player_wins()
+        return player_wins()
       end
     when "Scissors"
       case @bot_move
       when "Rock"
-        bot_wins()
+        return bot_wins()
       when "Paper"
-        player_wins()
+        return player_wins()
       end
-    else
-      return "It's a draw! Try again!"
     end
+
+    return "It's a draw! Try again!"
   end
 
   private

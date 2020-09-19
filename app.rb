@@ -7,19 +7,16 @@ class RPS < Sinatra::Base
   end
 
   post "/players" do
-    $player = Player.new(params[:player_one])
-    #session[:player_two] = params[:player_two]
+    $game = Game.new(Player.new(params[:player_one]))
     redirect "/play"
   end
 
   get "/play" do
-    @player_one = $player
-    #@player_two = session[:player_two]
     erb :play
   end
 
   post "/rps" do
-    $player.store_move(params[:player_choice])
+    $game.player.store_move(params[:player_choice])
     redirect "/game_over"
   end
 

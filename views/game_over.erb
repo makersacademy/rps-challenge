@@ -14,20 +14,20 @@
     align-items: center;
   }
 </style>
-
 <body style="background-color: rgba(111, 93, 159, 0.32)">
 
-  <div class="content">
+<div class="content">
 
-  <h1>Rock - Paper - Scissors</h1>
+<h1><%= $game.determine_winner %></h1>
+<br/>
 
-    <form action="/players" method="post">
-      <label for ="player_one">Enter Players Name:</label><br>
-      <input type="text" name="player_one">
-      <br>
-      <input class="btn btn-default" type="submit" value="Submit">
-    </form>
-  </div>
+<a href="/play">
+  <button class="btn btn-default">Play Again</button>
+</a>
+<br></br>
+<a href="/">
+  <button class="btn btn-default">New Game</button>
+</a>
+</div>
+
 </body> 
-
-

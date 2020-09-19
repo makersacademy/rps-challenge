@@ -22,9 +22,9 @@ describe Game do
 
   describe "#determine_winner" do
     it "checks who won the game" do
+      srand(3)
       game = Game.new(charlotte)
       charlotte.store_move("Rock")
-
       expect(game.determine_winner).to eq "Charlotte's Rock beats Bot's Scissors"
     end
   end
