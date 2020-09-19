@@ -6,7 +6,7 @@ feature 'View player_name' do
 
   scenario 'be able to input rock, paper or scissors' do
     sign_in_and_play
-    expect(page).to have_content "Please choose Rock, Paper or Scissors"
+    expect(page).to have_content "Rock, Paper or Scissors"
     click_button 'Submit'
   end
 end
