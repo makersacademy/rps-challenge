@@ -1,0 +1,12 @@
+body {
+  background-color: floralwhite;
+  padding: 2em 10em 10em 10em;
+}
+
+h1 { text-shadow: 1px 1px rgb(32, 199, 218), -1px -1px red;
+      text-align: center;
+}
+
+.name_form {
+  text-align: center;
+}

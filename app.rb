@@ -24,11 +24,15 @@ class Rps < Sinatra::Base
     player1 = Player.new(params[:player_one])
     player2 = Player.new(params[:player_two])
     @game = Game.create(player1, player2)
-    redirect '/rps' 
+    redirect '/rps_mp' 
   end
 
   get '/rps' do
     erb :rps
+  end
+
+  get '/rps_mp' do
+    erb :rps_mp
   end
 
   get '/rock' do
