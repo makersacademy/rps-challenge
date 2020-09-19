@@ -1,4 +1,4 @@
-
+require './features/web_helpers'
 feature "entrting names" do
 	scenario "submitting a name" do
 		sign_in	

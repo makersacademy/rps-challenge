@@ -1,4 +1,4 @@
-
+require './features/web_helpers.rb'
 feature "entrting names" do
 	scenario "submitting a name" do
 		sign_in	
