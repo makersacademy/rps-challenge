@@ -1,6 +1,6 @@
 class Game 
 
-  # attr_reader :defeats, :throw
+  attr_reader :defeats, :throw
 
   def initialize(player, opponent)
     @defeats = {'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'}
@@ -18,9 +18,9 @@ class Game
   # end 
 
   def winner?
-    if @opponent.move == @player.move 
+    if @opponent.throw == @player.move 
       "Draw"
-    elsif @opponent.move == @defeats[@player.move]
+    elsif @opponent.throw == @defeats[@player.move]
       "Player wins"
     else 
       "Computer wins"
