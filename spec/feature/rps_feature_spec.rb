@@ -14,4 +14,10 @@ feature 'User can play rock, paper, scissors' do
     sign_in_submit
     expect(page).to have_content("Rock! Paper! Scissors!")
   end
+
+  scenario "user has signed in, and chooses a 'weapon'" do
+    sign_in_submit
+    find('img[alt="rock"]').click
+  end
+
 end

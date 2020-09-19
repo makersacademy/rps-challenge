@@ -25,4 +25,26 @@ describe Game do
     end
   end
 
+  describe '#rules' do
+    it 'says draw if the choices are the same' do
+      player.shake("rock")
+      srand(0)
+      subject.bot_shake
+      expect(subject.rules).to eq "Draw"
+    end
+
+    it 'declares the player the winner' do
+      player.shake("paper")
+      srand(0)
+      subject.bot_shake
+      expect(subject.rules).to eq "Test player is the winner!"
+    end
+
+    it 'declares the bot the winner' do
+      player.shake("scissors")
+      srand(0)
+      subject.bot_shake
+      expect(subject.rules).to eq "The bot is the winner!"
+    end
+  end
 end
