@@ -25,12 +25,4 @@ describe Game do
     end
   end
 
-=begin
-  describe '#self.create' do
-    it 'responds to self.create' do
-      expect(subject).to respond_to(:self.create)
-    end
-  end
-=end
-
 end
