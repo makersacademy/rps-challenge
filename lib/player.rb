@@ -1,4 +1,4 @@
-require 'Game'
+
 class Player
 
   attr_reader :name, :player_options

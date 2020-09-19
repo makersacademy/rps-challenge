@@ -1,4 +1,4 @@
-require 'Game'
+
 class Computer
 
   attr_reader :computer

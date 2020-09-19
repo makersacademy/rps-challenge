@@ -1,5 +1,4 @@
-require 'player'
-require 'computer'
+
 class Game
 
   attr_reader :options
