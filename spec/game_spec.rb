@@ -1,45 +1,30 @@
 require "game"
+require "player"
 
 describe Game do
   let(:charlotte) { Player.new("Charlotte") }
   let(:johan) { Player.new("Johan") }
 
-=begin
-  let(:charlotte) { double :player, player: "charlotte" }
-  let(:johan) { double :player, player: "johan" }
-  let(:player_class_double) { double :player, new: player_double(player) }
+  # let(:charlotte) { double :player, player: "Charlotte" }
+  #let(:player_class_double) { double :player, new: charlotte }
 
-  let(:game_double) { double :game, player_one: charlotte, player_two: johan }
-  let(:game_class_double) { double :game, new: game_double(player_one, player_two) }
-=end
+  # let(:game_double) { double :game, player_one: charlotte }
+  #let(:game_class_double) { double :game, new: game_double(player) }
 
-  it "expects game to be initated with two players " do
-    expect(Game).to respond_to(:new).with(2).arguments
+  it "expects game to be initated with one player" do
+    expect(Game).to respond_to(:new).with(1).arguments
   end
 
-  describe "#rock" do
-    it "plays rock" do
-      expect(charlotte.rock).to eq "Rock"
-    end
+  it "player to be an instance of Player" do
+    game = Game.new(charlotte)
+    expect(game.player).to be_an_instance_of(Player)
   end
 
-  describe "#sissor" do
-    it "plays sissor" do
-      expect(charlotte.sissor).to eq "Rock"
+  describe "#determine_winner" do
+    it "checks who won the game" do
+      charlotte.move("Rock")
+
+      expect(game.determine_winner(charlotte)).to eq "Charlotte's Rock beats Bot's Scissors"
     end
   end
-
-  describe "#paper" do
-    it "plays paper" do
-      expect(charlotte.paper).to eq "Rock"
-    end
-  end
-
-=begin
-  describe "#attack" do
-    it "attacks a player" do
-      expect(gary).to receive(:take_damage)
-      game.attack(gary)
-    end
-=end
 end
