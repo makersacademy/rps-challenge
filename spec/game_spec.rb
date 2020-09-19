@@ -18,3 +18,17 @@ describe Game do
     expect(game.print).to eq(printed_options)
   end
 end
+
+
+#  it 'returns player choice' do
+
+#    expect ([ 'rock', 'paper', 'scissors' ].include?
+#  end
+#end
+#before showing results, I need to ask to show computer choice""
+
+#describe '#show_results' do
+#  it 'returns the comparison between PC and Players results' do
+#    expect(player.show_results).to eq 'rock'
+#  end
+#end

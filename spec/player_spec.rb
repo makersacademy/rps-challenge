@@ -11,22 +11,9 @@ describe Player do
     end
   end
 
-
-  #  it 'returns player choice' do
-
-  #    expect ([ 'rock', 'paper', 'scissors' ].include?
+  #  describe 'player_choice'
+  #  it 'player makes a choice' do
+  #    expect(computer_options.sample).to match('paper').or match('rock').or match('scissors')
   #  end
-  #end
-  #before showing results, I need to ask to show computer choice""
-
-  #describe '#show_results' do
-  #  it 'returns the comparison between PC and Players results' do
-  #    expect(player.show_results).to eq 'rock'
-  #  end
-  #end
-
-end
-
-def new_game
 
 end
