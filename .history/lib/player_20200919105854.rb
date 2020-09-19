@@ -5,7 +5,6 @@ attr_reader :name, :move
 	end 
 
 	def move(move)
-		@move = move
+		@move
 	end 
-
 end 

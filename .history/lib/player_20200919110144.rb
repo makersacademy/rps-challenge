@@ -4,8 +4,8 @@ attr_reader :name, :move
 		@name = name
 	end 
 
-	def move(move)
-		@move = move
+	def move(choice)
+		@choice
 	end 
 
 end 

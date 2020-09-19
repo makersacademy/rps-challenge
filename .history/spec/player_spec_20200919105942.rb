@@ -1,4 +1,4 @@
-require 'player'
+require './lib/player.rb'
 describe Player do
 	subject(:ursie) { Player.new("Ursie") }
 	
@@ -12,5 +12,4 @@ describe Player do
 		it "returns a chosen move" do
 			expect(ursie.move("scissors")).to eq "scissors"
 		end
-	end
 end 

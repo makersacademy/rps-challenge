@@ -1,9 +1,7 @@
-<h2><%= $player_name.name %> is ready to play! </h2>
-<form action="/play" method="post">
+<h2><%= @player %> is ready to play! </h2>
 <select class='' name='move'>
 <option value='rock'>Rock</option>
 <option value='paper'>Paper</option>
 <option value='scissors'>Scissors</option>
 </select><br>
 <input type="submit" value="GO!">
-</form>
