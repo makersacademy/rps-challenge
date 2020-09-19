@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/player.rb'
-require_relative './lib/rps.rb'
+require_relative './lib/game.rb'
 
 
 class Rock_paper_scissors < Sinatra::Base
@@ -31,6 +31,8 @@ class Rock_paper_scissors < Sinatra::Base
 
   get '/result' do 
     @move = $player.move
+    game = Game.new
+    @computer_move = game.computer_move
     erb(:result)
   end
 

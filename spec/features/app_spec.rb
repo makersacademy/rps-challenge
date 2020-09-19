@@ -32,4 +32,15 @@ feature 'play can submit a move' do
     click_on 'Play!'
     expect(page).to have_content 'You played rock'
   end 
+end
+
+feature 'game consists of two moves' do 
+  scenario 'computer can play a move' do 
+    visit '/'
+    fill_in 'Name', with: 'Bob'
+    click_on 'Submit'
+    choose 'rock'
+    click_on 'Play!'
+    expect(page).to have_content 'The computer played'
+  end
 end 
