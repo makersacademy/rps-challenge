@@ -37,7 +37,7 @@ class Rps < Sinatra::Base
 
   get '/rock' do
     @game.active_player.shake("rock")
-    redirect '/result' 
+    redirect '/result'
   end
 
   get '/paper' do

@@ -6,7 +6,7 @@ describe Game do
   context 'single player game vs. bot' do
     player = Player.new("Test player")
     bot = Bot.new
-    subject = Game.new(player, bot)
+    subject = Game.create(player, bot)
 
     describe '#rules' do
       it 'says draw if the choices are the same' do
@@ -37,6 +37,18 @@ describe Game do
       end
     end
 
+    describe '#player_active?' do
+      game2 = Game.create(player, bot)
+
+      it 'returns true if active_player == player entered' do
+        expect(game2.player_active?(player)).to eq true
+      end
+
+      it 'returns false if active_player != player entered' do
+        game2.switch_players(player, bot)
+        expect(game2.player_active?(player)).to eq false
+      end
+    end
 
 
   end

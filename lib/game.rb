@@ -33,4 +33,8 @@ class Game
     @active_player == a ? @active_player = b : @active_player = a
   end
 
+  def player_active?(player)
+    @active_player == player
+  end
+
 end
