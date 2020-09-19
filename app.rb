@@ -8,6 +8,10 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  post '/name' do
+    @game = Game.create(params[:name])
+  end
+
   run! if app_file == $0
 end
 
