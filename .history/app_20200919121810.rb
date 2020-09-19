@@ -10,7 +10,7 @@ class RPS < Sinatra::Base
 	end 
 
   get '/' do
-    erb (:index)
+    erb :index
 	end
 	
 	post '/name' do

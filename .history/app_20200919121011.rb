@@ -4,13 +4,9 @@ require './lib/player.rb'
 require './lib/comp.rb'
 require './lib/game.rb'
 class RPS < Sinatra::Base
-	enable :sessions
-	before do
-		@game = Game.instance
-	end 
 
   get '/' do
-    erb (:index)
+    erb :index
 	end
 	
 	post '/name' do
@@ -32,7 +28,7 @@ class RPS < Sinatra::Base
 
 	get '/result' do 
 		@game = Game.instance
-		@game.comp.move
+		@game.comp.choice
 		erb :result 
 	end 
 	run! if app_file == $0
