@@ -33,7 +33,7 @@ class Rock_paper_scissors < Sinatra::Base
     @move = $player.move
     game = Game.new($player)
     @computer_move = game.computer_move
-    @result = game.winner
+    @result = game.winner?
     erb(:result)
   end
 

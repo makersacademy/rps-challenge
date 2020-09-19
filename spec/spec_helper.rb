@@ -4,6 +4,7 @@ require 'simplecov'
 require 'simplecov-console'
 
 require_relative '../app.rb'
+require_relative './features/web_helpers.rb'
 
 Capybara.app = Rock_paper_scissors 
 
