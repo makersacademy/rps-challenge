@@ -5,7 +5,7 @@ require 'player'
 describe Game do
 	subject(:game) { Game.new(player) }
 	let(:player) { Player.new("Ursie") }
-	let(:comp) { double :comp }
+	let(:comp) { double :comp}
 	
 	it "initializes with a player" do
 	expect(game.player).to eq player

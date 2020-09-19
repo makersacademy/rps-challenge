@@ -1,8 +1,8 @@
 
 require 'sinatra/base'
-require './lib/player'
-require './lib/comp'
-require './lib/game'
+require './lib/player.rb'
+require './lib/comp.rb'
+require './lib/game.rb'
 class RPS < Sinatra::Base
 	enable :sessions
 	before do

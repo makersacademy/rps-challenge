@@ -5,8 +5,8 @@ body {
 }
 </style>
 <h2> You chose <%= @game.player.move%><h2> <br>
-<h2> Computer chose <%= @game.comp.move%> <br>
-<%= @game.result%>
+<h2> Computer chose <%= @game.comp_move%> <br>
+<%= @game.result(@game.player) %>
 <form action='/newgame' method='post'>
 <input type='submit' value='Play again'>
 </form>
