@@ -10,7 +10,7 @@ describe Player do
 
 	describe "#move" do
 		it "returns a chosen move" do
-			expect(ursie.move).to eq nil
+			expect(ursie.choice("scissors")).to eq "scissors"
 		end
 	end
 end 

@@ -31,4 +31,14 @@ class Game
 			@player.move == 'rock' && comp.move == 'scissors' || @player.move == 'paper' && comp.move == 'rock' || @player.move == 'scissors' && comp.move == 'paper'
 		end
 
+
+
 	end 
+
+
+
+
+
+
+
+end 

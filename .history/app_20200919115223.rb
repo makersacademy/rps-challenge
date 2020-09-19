@@ -6,14 +6,13 @@ require './lib/game.rb'
 class RPS < Sinatra::Base
 
   get '/' do
-    erb :index
+    erb :name
 	end
 	
-	post '/name' do
+	post '/play' do
 		player = Player.new(params[:name])
-		comp = Comp.new
-		@game = Game.create(player)
-  	redirect '/play'
+		@game = Game.create(player, comp)
+  	redirect "/play"
 	end
 
 	get '/play' do
@@ -23,13 +22,9 @@ class RPS < Sinatra::Base
 
 	post '/move' do 
 		@game.player.move = params[:move]
-		redirect '/result'
+		@game.comp.choice
+		erb :result
 	end
 
-	get '/result' do 
-		@game = Game.instance
-		@game.comp.choice
-		erb :result 
-	end 
 	run! if app_file == $0
 	end 

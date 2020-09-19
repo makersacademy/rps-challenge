@@ -12,8 +12,8 @@ class RPS < Sinatra::Base
 	post '/name' do
 		player = Player.new(params[:name])
 		comp = Comp.new
-		@game = Game.create(player)
-  	redirect '/play'
+		@game = Game.create(player, comp)
+  	redirect "/play"
 	end
 
 	get '/play' do
@@ -23,13 +23,9 @@ class RPS < Sinatra::Base
 
 	post '/move' do 
 		@game.player.move = params[:move]
-		redirect '/result'
+		@game.comp.choice
+		erb :result
 	end
 
-	get '/result' do 
-		@game = Game.instance
-		@game.comp.choice
-		erb :result 
-	end 
 	run! if app_file == $0
 	end 
