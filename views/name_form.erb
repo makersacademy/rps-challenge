@@ -1,11 +1,29 @@
 #add CSS stylesheet
 
-<h1>Please enter your name to begin</h1>
+<h1>Singple player</h1>
+<p>Please enter your name to begin</p>
 
 <div class = "name_form">
 <form method="post" action="/play">
   <label for="Name">Name:</label><br>
   <input type="text" id="Name" name="name"><br>
-  <input type="submit" value="Submit">
- </form> 
+  <input type="submit" value="Start single player!">
+ </form>
+</div>
+
+<br><br>
+
+<h1>Multiplayer</h1>
+<p>Please enter two names to begin</p>
+
+<div class = "name_form">
+<form method="post" action="/multiplayer">
+  <label for="player_one">Name:</label><br>
+  <input type="text" id="player_one" name="player_one"><br>
+  
+  <label for="player_two">Name:</label><br>
+  <input type="text" id="player_one" name="player_two"><br>
+  
+  <input type="submit" value="Start multiplayer!">
+ </form>
 </div>

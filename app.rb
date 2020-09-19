@@ -1,6 +1,7 @@
 require 'sinatra'
 require_relative './lib/game.rb'
 require_relative './lib/player.rb'
+require_relative './lib/bot.rb'
 
 class Rps < Sinatra::Base
 
@@ -14,12 +15,24 @@ class Rps < Sinatra::Base
 
   post '/play' do
     player = Player.new(params[:name])
-    @game = Game.create(player)
+    bot = Bot.new
+    @game = Game.create(player, bot)
+    redirect '/rps'
+  end
+  
+  post '/multiplayer' do
+    player1 = Player.new(params[:player_one])
+    player2 = Player.new(params[:player_two])
+    @game = Game.create(player1, player2)
     redirect '/rps'
   end
 
   get '/rps' do
     erb :rps
+  end
+
+  get '/result' do
+    erb :result
   end
 
 end

@@ -23,19 +23,16 @@
 - method: new_game
   - Initialises a new_game in the RPS class
 
+  - @user_input = 
+
+
 ### 'Rps' class
 
 - init w/
-  - @user_input = 
-  - @bot_choice = [r,p,s].sample <-- tbc method?
-
-- method: shake(user_input)
-  - passes the user input from the website of the choice r,p,s to an instance variable  
-- 
+  - @bot_choice
 
 - method: winner
   - case selection if type statements.
 
-private
 - method: bot_choice
   - [r,p,s].sample

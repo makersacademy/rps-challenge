@@ -1,36 +1,36 @@
 require_relative './player.rb'
+require_relative './bot.rb'
 
 class Game
 
   WINNERS = { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
   
-  attr_reader :player, :bot_choice
+  attr_reader :player, :bot_choice, :active_player
   
-
-  def initialize(player)
-    @player = player
-    #@round_winner = nil
+  def initialize(player1, player2)
+    @player_one = player1
+    @player_two = player2
+    @active_player = @player_one
   end
 
-  def bot_shake
-    arr = ["rock", "paper", "scissors"]
-    @bot_choice = arr[rand(0..2)]
-  end
-
-  def rules
-    if @bot_choice == @player.choice then "Draw"
-    elsif WINNERS[@player.choice] == @bot_choice then "#{@player.name} is the winner!"
+  def rules(player1, player2)
+    if player1.choice == player2.choice then "Draw"
+    elsif WINNERS[player1.choice] == player2.choice then "#{player1.name} is the winner!"
     else 
-      "The bot is the winner!"
+      "#{player2.name} is the winner!"
     end
   end
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
   end
 
   def self.instance
     @game
+  end
+
+  def switch_players(a, b)
+    
   end
 
 end
