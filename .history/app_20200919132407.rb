@@ -36,10 +36,9 @@ class RPS < Sinatra::Base
 		erb :result 
 	end 
 
-	post '/newgame' do
-		@game = Game.instance
+	post '/names' do
 		redirect '/play'
 	end 
-
+	
 	run! if app_file == $0
 	end 

@@ -36,7 +36,7 @@ class RPS < Sinatra::Base
 		erb :result 
 	end 
 
-	post '/newgame' do
+	post '/names' do
 		@game = Game.instance
 		redirect '/play'
 	end 
