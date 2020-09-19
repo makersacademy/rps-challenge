@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/player.rb'
+require_relative './lib/rps.rb'
+
 
 class Rock_paper_scissors < Sinatra::Base
 
@@ -9,22 +12,25 @@ class Rock_paper_scissors < Sinatra::Base
   end 
 
   post '/play' do 
-    session['name'] = params[:Name]
+    $player = Player.new(params[:Name])
+    # session['name'] = params[:Name]
     redirect '/play'
   end 
 
   get '/play' do 
-    @player = session['name']
+    @player_name = $player.name
+    # @player = session['name']
     erb(:play)
   end 
 
   post '/result' do
-    session['move'] = params[:move] 
+    $player.choose_move(params[:move]) 
+    # session['move'] = params[:move] 
     redirect '/result'
   end 
 
   get '/result' do 
-    @move = session[:move]
+    @move = $player.move
     erb(:result)
   end
 
