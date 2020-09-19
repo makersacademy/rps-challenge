@@ -1,5 +1,5 @@
 class Comp 
-attr_accessor :move
+attr_accesor :move
 	def move
 		@move = ['rock', 'paper', 'scissors'].sample
 	end

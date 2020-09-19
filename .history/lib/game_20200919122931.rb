@@ -21,7 +21,7 @@ class Game
 			if player.move == comp.move
 				return "It's a draw"
 			elsif win?
-				return "You won!!!"
+				return "#{@player}, you won!"
 			else
 				return"Computer won!"
 			end 
