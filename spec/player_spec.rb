@@ -12,4 +12,12 @@ RSpec.describe Player do
 
   end 
 
+  describe 'playing a move' do 
+  
+    it 'player move is set to argument passed in' do 
+      player.choose_move('Rock')
+      expect(player.move).to eq 'Rock'
+    end 
+  end 
+
 end 
