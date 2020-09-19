@@ -1,30 +1,50 @@
+require_relative "player"
+
 class Game
   attr_reader :player, :bot
 
   def initialize(player)
     @player = player
-    @bot = ["Rock", "Paper", "Sissors"]
+    @bot_move = ["Rock", "Paper", "Scissors"].sample
   end
 
-=begin
-  def turn(player_choice)
-    bot_choice = @bot.sample
+  def determine_winner
+    player_move = @player.move
 
-    case player_choice
-    when player_choice == "Rock" && bot_choice == "Paper"
-      return "Bot Wins!"
-    when player_choice == "Rock" && bot_choice == "Sissors"
-      return "#{player.name} wins!"
-    when player_choice == "Paper" && bot_choice == "Sissors"
-      return "Bot Wins!"
-    when player_choice == "Paper" && bot_choice == "Rock"
-      return "#{player.name} wins!"
-    when player_choice == "Sissors" && bot_choice == "Rock"
-      return "Bot Wins!"
-    when player_choice == "Sissors" && bot_choice == "Paper"
-      return "#{player.name} wins!"
+    case player_move
+    when "Rock"
+      case @bot_move
+      when "Paper"
+        bot_wins()
+      when "Scissors"
+        player_wins()
+      end
+    when "Paper"
+      case @bot_move
+      when "Scissors"
+        bot_wins()
+      when "Rock"
+        player_wins()
+      end
+    when "Scissors"
+      case @bot_move
+      when "Rock"
+        bot_wins()
+      when "Paper"
+        player_wins()
+      end
     else
       return "It's a draw! Try again!"
     end
-=end
+  end
+
+  private
+
+  def bot_wins
+    return "Bot's #{@bot_move} beats #{player.name}'s #{player.move}"
+  end
+
+  def player_wins
+    return "#{player.name}'s #{player.move} beats Bot's #{@bot_move}"
+  end
 end

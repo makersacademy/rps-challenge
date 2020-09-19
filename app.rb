@@ -24,7 +24,7 @@ class RPS < Sinatra::Base
   end
 
   get "/game_over" do
-    "this is being tested"
+    erb :game_over
   end
 
   run! if app_file == $0
