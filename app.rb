@@ -9,19 +9,19 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-  $name = params[:name]
-   p 
+  @game = Game.create(params[:name])
+  # $name = params[:name] 
     redirect '/play'
   end
 
   get '/play' do
-    $game = Game.new($name)
-    @game = $game
+    # $game = Game.new($name)
+    @game = Game.instance
     erb :play
   end 
 
   post '/result' do
-    @game = $game
+    @game = Game.instance
     @game.item = params[:item]
     erb :result
   end

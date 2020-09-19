@@ -8,6 +8,14 @@ attr_accessor :name, :item, :computer_play
     @computer_play = computer_play
   end
 
+  def self.create(name)
+    @game = Game.new(name)
+  end
+
+  def self.instance
+    @game
+  end
+
   def win?
     case [@item, @computer_play] 
     when ["Rock", "Rock"], ["Paper", "Paper"], ["Scissors", "Scissors"]
