@@ -6,14 +6,14 @@
 
 <div>
   <h3>Make your move... </h3>
-  <input type='radio' id='rock' name='options' value='rock'>
+  <form action='/result' method='post'>
+  <input type='radio' id='rock' name='move' value='rock'>
   <label for='rock'>Rock</label>
-  <input type='radio' id='paper' name='options' value='paper'>
+  <input type='radio' id='paper' name='move' value='paper'>
   <label for='Paper'>Paper</label>
-  <input type='radio' id='scissors' name='options' value='scissors'>
+  <input type='radio' id='scissors' name='move' value='scissors'>
   <label for='scissors'>Scissors</label>
+  <input type='submit' value='Play!'>
+  </form>
 </div>
 
-<div>
-  <input type='button' value='Play!'>
-</div>

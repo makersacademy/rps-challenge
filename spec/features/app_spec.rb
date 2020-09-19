@@ -22,3 +22,14 @@ feature 'player makes move selection' do
     expect(page).to have_content 'Make your move...' 
   end
 end
+
+feature 'play can submit a move' do 
+  scenario 'playey makes move and confirmation appears' do 
+   visit '/'
+    fill_in 'Name', with: 'Bob'
+    click_on 'Submit'
+    choose 'rock'
+    click_on 'Play!'
+    expect(page).to have_content 'You played rock'
+  end 
+end 
