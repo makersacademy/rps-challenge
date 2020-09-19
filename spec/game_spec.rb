@@ -50,6 +50,17 @@ describe Game do
       end
     end
 
+    describe '#multi?' do
+      multi_game = Game.create(player, bot)
+      multi_game.mode = "multi"
+      it 'returns true if the game is multiplayer' do
+        expect(multi_game.multi?).to eq true
+      end
+
+      it 'returns false if the game is not multiplayer' do
+        expect(subject.multi?).to eq false
+      end
+    end
 
   end
 end

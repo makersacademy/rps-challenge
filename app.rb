@@ -24,6 +24,7 @@ class Rps < Sinatra::Base
     player1 = Player.new(params[:player_one])
     player2 = Player.new(params[:player_two])
     @game = Game.create(player1, player2)
+    @game.mode = "multi"
     redirect '/rps_mp' 
   end
 
@@ -36,22 +37,53 @@ class Rps < Sinatra::Base
   end
 
   get '/rock' do
-    @game.active_player.shake("rock")
-    redirect '/result'
+    if @game.again?
+      @game.active_player.shake("rock")
+      @game.switch_players(@game.player_one, @game.player_two)
+      redirect '/rps'
+    elsif @game.multi?
+      @game.active_player.shake("rock")
+      redirect '/MPresult'
+    else
+      @game.active_player.shake("rock")
+      redirect '/result'
+    end
   end
 
   get '/paper' do
-    @game.active_player.shake("paper")
-    redirect '/result'
+    if @game.again?
+      @game.active_player.shake("paper")
+      @game.switch_players(@game.player_one, @game.player_two)
+      redirect '/rps'
+    elsif @game.multi?
+      @game.active_player.shake("paper")
+      redirect '/MPresult'
+    else
+      @game.active_player.shake("paper")
+      redirect '/result'
+    end
   end
 
   get '/scissors' do
-    @game.active_player.shake("scissors")
-    redirect '/result'
+    if @game.again?
+      @game.active_player.shake("scissors")
+      @game.switch_players(@game.player_one, @game.player_two)
+      redirect '/rps'
+    elsif @game.multi?
+      @game.active_player.shake("scissors")
+      redirect '/MPresult'
+    else
+      @game.active_player.shake("scissors")
+      redirect '/result'
+    end
   end
 
   get '/result' do
     erb :result
+  end
+
+  get '/MPresult' do
+    erb :mpresult
   end
 
 end

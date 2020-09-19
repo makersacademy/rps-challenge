@@ -5,12 +5,13 @@ class Game
 
   WINNERS = { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
   
-  attr_accessor :player_one, :player_two, :active_player
+  attr_accessor :player_one, :player_two, :active_player, :mode
   
-  def initialize(player1, player2)
+  def initialize(player1, player2, mode = "single")
     @player_one = player1
     @player_two = player2
     @active_player = @player_one
+    @mode = mode
   end
 
   def rules(player1, player2)
@@ -35,6 +36,14 @@ class Game
 
   def player_active?(player)
     @active_player == player
+  end
+
+  def multi?
+    @mode == "multi"
+  end
+
+  def again?
+    @mode == "multi" && player_active?(@player_one)
   end
 
 end

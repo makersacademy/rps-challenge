@@ -1,0 +1,11 @@
+<head>
+  <title>RPS! Results</title>
+  <link href="/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<h1>The results!</h1>
+
+<p><%=@game.player_one.name %> threw: <%= @game.player_one.choice %></p>
+<p><%=@game.player_two.name %> threw: <%= @game.player_two.choice %></p>
+
+<h2><%= @game.rules(@game.player_one, @game.player_two) %></h2>
