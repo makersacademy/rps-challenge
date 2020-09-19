@@ -38,35 +38,17 @@ class Rps < Sinatra::Base
 
   get '/rock' do
     shake = "rock"
-    if @game.again? #checks that it is multiplayer & player2 has not gone yet.
-      go_again(shake)
-    elsif @game.multi? #if p1 has been, but not p2
-      both_gone(shake)
-    else #anything else means it must be single player.
-      sp_only(shake)
-    end
+    take_action(shake)
   end
 
   get '/paper' do
     shake = "paper"
-    if @game.again?
-      go_again(shake)
-    elsif @game.multi?
-      both_gone(shake)
-    else
-      sp_only(shake)
-    end
+    take_action(shake)
   end
 
   get '/scissors' do
     shake = "scissors"
-    if @game.again?
-      go_again(shake)
-    elsif @game.multi?
-      both_gone(shake)
-    else
-      sp_only(shake)
-    end
+    take_action(shake)
   end
 
   get '/result' do
@@ -94,4 +76,13 @@ class Rps < Sinatra::Base
     redirect '/result'
   end
 
+  def take_action(shake)
+    if @game.again?
+      go_again(shake)
+    elsif @game.multi?
+      both_gone(shake)
+    else
+      sp_only(shake)
+    end
+  end
 end
