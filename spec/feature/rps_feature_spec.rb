@@ -19,5 +19,13 @@ feature 'User can play rock, paper, scissors' do
     sign_in_submit
     find('img[alt="rock"]').click
   end
+end
+
+feature 'Multiplayer' do
+  scenario 'two users can enter their name, hit submit and the page loads' do
+    mp_sign_in_submit
+  end
+
+  
 
 end
