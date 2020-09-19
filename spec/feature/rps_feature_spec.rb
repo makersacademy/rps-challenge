@@ -58,12 +58,22 @@ feature 'User can win, lose, or draw a game against a bot' do
 
 end
 
-
 feature 'Multiplayer' do
   scenario 'two users can enter their name, hit submit and the page loads' do
     mp_sign_in_submit
   end
 
-  #scenario 'two users log in, '
+  scenario 'two users log in and can play a game (win)' do
+    mp_sign_in_submit
+    click_on('paper')
+    click_on('rock')
+    expect(page).to have_content("Aardvark is the winner!")
+  end
 
+  scenario 'two users log in and can play a game (draw)' do
+    mp_sign_in_submit
+    click_on('scissors')
+    click_on('scissors')
+    expect(page).to have_content("It's a draw!")
+  end
 end
