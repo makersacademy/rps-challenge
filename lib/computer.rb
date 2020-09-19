@@ -1,8 +1,10 @@
+require 'Game'
 class Computer
 
   attr_reader :computer_options
 
-  def initialize(computer_options = [ :rock, :paper, :scissors ])
+  def initialize(computer_options)
+    computer_options = Game::DEFAULT_OPTIONS
     @computer_options = computer_options
 
   end
@@ -12,7 +14,9 @@ class Computer
   end
 
   def print_computer_choice
-    "Computer chose #{element}"
+    @computer_options.map do |element|
+      "Computer chose #{element.capitalize}"
+    end
   end
 
 

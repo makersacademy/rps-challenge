@@ -3,12 +3,8 @@ require 'computer'
 
 describe Computer do
 
-  let(:computer_options) do [
-      :rock,
-      :paper,
-      :scissors
-  ]
-  end
+  subject(:computer_options) { Game::DEFAULT_OPTIONS }
+
 
   describe 'computer_options' do
     it 'initializes an array of options as default' do
