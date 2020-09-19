@@ -25,10 +25,6 @@ class Rps < Sinatra::Base
     @game.item = params[:item]
     erb :result
   end
-
- 
-
-
-
+  
   run! if app_file == 0
 end
