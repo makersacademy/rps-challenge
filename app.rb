@@ -13,9 +13,9 @@ class RPS < Sinatra::Base
 
 
     post '/name' do
-     session[:name] = params[:name]
-     @game = Game.create(params[:name]) #creating a new Game instance
-     redirect '/play'
+        session[:name] = params[:name]
+        @game = Game.create(params[:name]) #creating a new Game instance
+        redirect '/play'
     end
 
     get '/play' do
@@ -27,10 +27,19 @@ class RPS < Sinatra::Base
     
     
     post '/choice' do
+        @game = Game.instance
+        @game.set_player_choice(params[:choice])
+
         @choice = params[:choice]
-        erb :choice
+        redirect '/result'
+        
     end
 
+    get '/result' do
+        @game = Game.instance
+    erb :choice
+
+    end
 
 
 
