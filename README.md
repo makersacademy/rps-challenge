@@ -11,9 +11,20 @@ RPS is a classic rock, paper, scissors game made for one player, competing again
 - Scissors beats Paper
 - Paper beats Rock
 
+Your win streak will be tallied and available on the results page.
+A draw or a lose will result in your win streak being reset.
+
+## Getting Started
+
+1. Clone this directory
+1. Navigate to the project directory
+1. Run `bundle` to install gem dependencies
+1. Run `rackup` to start the application server
+1. Go to `localhost:9292` in a browser
+
 ## Gameplay
 
-1. Enter your name and click Let's go!
+1. Enter your name
 ![Enter name](https://i.imgur.com/bk1tTTw.png "Enter name")
 
 1. Choose your move - rock, paper or scissors
