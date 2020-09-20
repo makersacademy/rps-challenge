@@ -1,8 +1,17 @@
-<h1>Let's play RPS!</h1>
+<head>
+  <link rel='stylesheet' type='text/css' href='/stylesheets/index.css'>
+</head>
 
-<div>
-  <form action='/play' method='post'>
-    <label>Enter name<input type="text" name="Name"></label>
-    <input type="submit" name="Submit">
-  </form>
+<div class="box">
+    <div class="titles">
+    <h1>Rock</h1>
+    <h1>Paper</h1>
+    <h1>Scissors</h1>
+    </div>
+    <div>
+      <form action='/play' method='post' class='form'>
+        <input type="text" name="Name" placeholder='Enter Name'>
+        <input type="submit" name="Submit">
+      </form>
+    </div>
 </div>

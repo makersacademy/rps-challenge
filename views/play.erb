@@ -1,19 +1,25 @@
-<div>
-  <h2>
-    <%= @player_name %>, are you ready to play?
-   </h2>
-</div>
+<head>
+  <link rel='stylesheet' type='text/css' href='/stylesheets/play.css'>
+</head>
 
-<div>
-  <h3>Make your move... </h3>
-  <form action='/result' method='post'>
-  <input type='radio' id='rock' name='move' value='rock'>
-  <label for='rock'>Rock</label>
-  <input type='radio' id='paper' name='move' value='paper'>
-  <label for='Paper'>Paper</label>
-  <input type='radio' id='scissors' name='move' value='scissors'>
-  <label for='scissors'>Scissors</label>
-  <input type='submit' value='Play!'>
-  </form>
-</div>
+<div class="box">
+  <div>
+    <h2>
+      <%= @player_name %>, are you ready to play?
+    </h2>
+  </div>
+
+  <div>
+    <h3>Make your move... </h3>
+    <form action='/result' method='post'>
+    <input type='radio' id='rock' name='move' value='rock'>
+    <label for='rock'>Rock</label>
+    <input type='radio' id='paper' name='move' value='paper'>
+    <label for='Paper'>Paper</label>
+    <input type='radio' id='scissors' name='move' value='scissors'>
+    <label for='scissors'>Scissors</label>
+    <input type='submit' value='Play!'>
+    </form>
+  </div>
+ </div>
 
