@@ -6,10 +6,11 @@ class Game
 
   OPTION = ["rock", "spock" , "paper", "lizard", "scissors"]
 
-  def initialize(p1, p2 = "Computer", scores = Score.create)
+  def initialize(p1, p2 = "Computer", score1 = Score.create, score2 = Score.create)
     @p1 = p1
     @p2 = p2
-    @p1_score, @p2_score = scores
+    @p1_score = score1
+    @p2_score = score2
   end
 
   def self.create(p1, p2)
@@ -35,8 +36,10 @@ class Game
   def message
     case @result % 5
     when 1,2
+      @p1_score.increase
       'You win'
     when 3,4
+      @p2_score.increase
       "You lose"
     when 0
       "It's a tie"
@@ -50,4 +53,5 @@ class Game
   end 
 
 end
+
 
