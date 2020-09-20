@@ -19,16 +19,12 @@ class Game
   def self.instance
     @game
   end
-  #
-  # def name
-  #   @name
-  # end
 
   def play(move1, move2 = random_move)
     if WINNING_MOVES[move1.to_sym] == move2.to_sym
       'You won!'
     elsif move1 == move2
-      'You tied'
+      'You drew'
     else
       'You lost'
     end

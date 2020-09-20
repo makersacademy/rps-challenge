@@ -5,7 +5,7 @@ describe Game do
   subject(:game) { Game.new(name) }
   let(:name) { 'Veronica' }
   let(:win_msg) { 'You won!' }
-  let(:tie_msg) { 'You tied' }
+  let(:draw_msg) { 'You drew' }
   let(:lose_msg) { 'You lost' }
 
   it 'takes a name argument on initialisation' do
@@ -43,8 +43,8 @@ describe Game do
       expect(game.play('scissors', 'paper')).to eq(win_msg)
     end
 
-    it "returns 'You tied' if P1 move is the same as P2 move" do
-      expect(game.play('rock', 'rock')).to eq(tie_msg)
+    it "returns 'You drew' if P1 move is the same as P2 move" do
+      expect(game.play('rock', 'rock')).to eq(draw_msg)
     end
 
     it "returns 'You lost' if P1 move = rock and P2 move = paper" do
