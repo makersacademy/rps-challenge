@@ -27,7 +27,7 @@ class RPS < Sinatra::Base
     selection = params[:selection]
     @game.player1_choice(selection)
     @game.computer_choice
-    #code for who won 
+    @game.result
     redirect '/splash_screen'
   end
 

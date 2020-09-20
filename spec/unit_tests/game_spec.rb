@@ -35,5 +35,13 @@ describe Game do
       expect(game.player1_choice(input)).to eq "rock"
     end
   end
-  
+
+  # describe '#result' do
+  #   it 'expects to return win or lose' do
+  #     allow(game).to receive(:computer_choice) {'rock'}
+  #     game.player1_choice('rock')
+  #     expect(game.result).to eq 'tie'
+  #   end
+  # end
+
 end

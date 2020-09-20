@@ -1,9 +1,15 @@
 require_relative './player'
 class Game
-  attr_reader :player1, :player2, :game, :player2_selection, :player1_selection
+  attr_reader :player1, :player2, :game, :player2_selection, :player1_selection, :win_matrix, :player1_result
+
   def initialize(player1, player2 = Player.new("Computer"))
     @player1 = player1.name
     @player2 = player2.name
+    @win_matrix = {
+      'paper' => {'scissors' => 'lose', 'paper' => 'tie',  'rock' => 'win'},
+      'rock' => {'scissors' => 'win',  'paper' => 'lose', 'rock' => 'win'},  
+      'scissors' => {'scissors' => 'tie',   'paper' => 'win',  'rock' => 'lose'}
+      }
   end
 
   def self.create(player1, player2 = Player.new("Computer"))
@@ -20,6 +26,11 @@ class Game
 
   def player1_choice(input)
     @player1_selection = input 
+  end
+
+  def result
+    #returns win/tie or lose from player 1 prespective
+    @player1_result = @win_matrix[@player1_selection][@player2_selection]
   end
 
 end
