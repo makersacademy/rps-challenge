@@ -1,6 +1,6 @@
 class Game 
 
-  attr_reader :defeats, :throw
+  attr_reader :defeats, :player, :opponent
 
   def initialize(player, opponent)
     @defeats = {'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'}
