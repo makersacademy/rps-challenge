@@ -31,8 +31,7 @@ class RPSLS < Sinatra::Base
     @game.compare
     redirect '/play'
   end
-
-
+  
   run! if app_file == $0
 
 end

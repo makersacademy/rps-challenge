@@ -1,28 +1,117 @@
+<style>
+  body {
+    color: rgb(29, 82, 70);
+    font-family: Tahoma,Geneva,Kalimati,sans-serif;
+  }
 
+  div { 
+    margin: auto;
+    width: 50%;
+  }
+
+  h1[id='p1'] {
+    margin-left: 200px;
+    width: 40%;
+    float: left
+  }
+
+  h1[id='p2'] {
+    display: inline;
+    width: 40%;
+    float: right 
+  }
+
+  h2[id='p1'] {
+    margin-left: 220px;
+    font-size: 150%;
+    width: 40%;
+    float: left;
+
+  }
+
+  h2[id='p2'] {
+    display: inline;
+    float: right;
+    width: 40%;
+    margin-right: -5%
+  }
+
+  form {
+    display: inline-block;  
+  }
+
+  input[type='submit'] {
+    width: 158px;
+    height: 158px;
+    border: none
+  }
+
+  input[id='spock'] {
+    background: url(spock.jpg);
+    background-size: 158px;
+    height: 157px;
+    margin-left: 10px
+  }
+
+  input[id='scissors'] {
+    background: url(scissors.jpg);
+    background-size: 158px;
+    margin-left: 85px;
+    margin-bottom: 20px
+  }
+
+  input[id='lizard'] {
+    background: url(lizard.jpg);
+    background-size: 158px;
+    height: 157px;
+    margin-left: 30px
+  }
+
+  input[id='paper'] {
+    background: url(paper.jpg);
+    background-size: 158px;
+    margin-bottom: 20px
+  }
+
+  input[id='rock'] {
+    background: url(rock.jpg);
+    background-size: 158px;
+    margin-left: 125px
+  }​
+
+</style>
+
+<body>
+<div>
 <form action='/selection' method='post'>
   <input type='hidden' name='selection' value='rock'>
-  <input type='submit' value='Rock'>
+  <input id='rock' type='submit' value=''>
 </form>
+</div>
 
+<div>
 <form action='/selection' method='post'>
   <input type='hidden' name='selection' value='paper'>
-  <input type='submit' value='Paper'>
+  <input id='paper' type='submit' value=''>
 </form>
 
 <form action='/selection' method='post'>
   <input type='hidden' name='selection' value='scissors'>
-  <input type='submit' value='Scissors'>
+  <input id='scissors' type='submit' value=''>
 </form>
+</div>
 
+<div>
 <form action='/selection' method='post'>
   <input type='hidden' name='selection' value='lizard'>
-  <input type='submit' value='Lizard'>
+  <input id='lizard' type='submit' value=''>
 </form>
 
 <form action='/selection' method='post'>
   <input type='hidden' name='selection' value='spock'>
-  <input type='submit' value='Spock'>
+  <input id='spock' type='submit' value=''>
 </form>
+</div>
 
 <% if @game.p1_selection %>
 <div>
@@ -36,13 +125,21 @@
 </div>
 <% end %>
 
-<h1>
-<%= @game.p1 %> <%= @game.p2 %>
+<h1 id='p1'>
+  <%= @game.p1 %>
+</h1>
+<h1 id='p2'>
+  <%= @game.p2 %>
 </h1>
 
-<h2>
-<%= @game.p1_score.score %> <%= @game.p2_score.score %>
+<h2 id='p1'>
+  <%= @game.p1_score.score %> 
 </h2>
+<h2 id='p2'>
+  <%= @game.p2_score.score %>
+</h2>
+
+</body>
 
 
 
