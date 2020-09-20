@@ -32,6 +32,7 @@ class RPS < Sinatra::Base
 	end
 
 	get '/result' do 
+		@game.comp.move
 		erb :result 
 	end 
 

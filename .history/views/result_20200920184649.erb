@@ -1,0 +1,44 @@
+<style> 
+body {
+  background-image : url("https://i.pinimg.com/originals/ef/48/d2/ef48d217dc8e23a49277afc4dcf403c3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size : cover;
+  color: black;
+  text-shadow: 2px 2px white;
+  text-align : center;
+  font-family: 'Notable', sans-serif;
+  margin-top: 80px;
+}
+input[type="submit"] {
+    -moz-appearance: button;
+    -moz-binding: none;
+    -moz-box-sizing: border-box;
+    -moz-user-select: none;
+    background-color: #AFEEEE;
+    border: 2px outset buttonface;
+    color: buttontext;
+    cursor: default;
+    font-family: 'Notable', sans-serif;;
+    line-height: normal;
+    padding: 0 6px;
+    text-align: center;
+    text-shadow: none;
+    white-space: pre;
+    width: 300px;
+    height: 55px;
+    margin: 50px 10px 10px;
+}
+h1 {
+  margin-top: 20px;
+}
+</style>
+<head>
+  <script src="https://kit.fontawesome.com/95965157ef.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet"></head>
+</head>
+<h2> You chose <%= @game.player.move%> <br> Computer chose <%= @game.comp.move%> </h2><br>
+<h1> <%= @game.result(@game.player.move, @game.comp.move%> <h1>
+<form action='/newgame' method='post'>
+<input type='submit' value='Play again'>
+</form>

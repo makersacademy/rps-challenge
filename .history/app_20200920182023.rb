@@ -26,12 +26,14 @@ class RPS < Sinatra::Base
 	end
 
 	post '/move' do 
+		@game = Game.instance
 		@game.player.move = params[:move]
-		@game.comp.move
 		redirect '/result'
 	end
 
 	get '/result' do 
+		@game = Game.instance
+		@game.comp_move
 		erb :result 
 	end 
 
