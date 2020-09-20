@@ -15,15 +15,6 @@ RSpec.describe Game do
 
   end 
 
-  # describe 'playing game' do 
-  
-  #   it 'computer can make a move' do 
-  #     allow(game).to receive(:throw).and_return('rock')
-  #     expect(game.throw).to eq 'rock'
-  #   end 
-
-  # end 
-
   describe 'finding a winner' do 
 
     it 'evaluates a draw' do 
