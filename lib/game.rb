@@ -7,7 +7,7 @@ class Game
     @player2 = player2.name
     @win_matrix = {
       'paper' => {'scissors' => 'lose', 'paper' => 'tie',  'rock' => 'win'},
-      'rock' => {'scissors' => 'win',  'paper' => 'lose', 'rock' => 'win'},  
+      'rock' => {'scissors' => 'win',  'paper' => 'lose', 'rock' => 'tie'},  
       'scissors' => {'scissors' => 'tie',   'paper' => 'win',  'rock' => 'lose'}
       }
   end
@@ -22,6 +22,10 @@ class Game
 
   def computer_choice
     @player2_selection = ['rock', 'paper', 'scissors'].sample
+  end
+
+  def player2_choice(input)
+    @player2_selection = input
   end
 
   def player1_choice(input)

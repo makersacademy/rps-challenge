@@ -36,12 +36,12 @@ describe Game do
     end
   end
 
-  # describe '#result' do
-  #   it 'expects to return win or lose' do
-  #     allow(game).to receive(:computer_choice) {'rock'}
-  #     game.player1_choice('rock')
-  #     expect(game.result).to eq 'tie'
-  #   end
-  # end
+  describe '#result' do
+    it 'expects to return win/lose or tie' do
+      game.player1_choice('rock')
+      game.player2_choice('rock')
+      expect(game.result).to eq 'tie'
+    end
+  end
 
 end
