@@ -22,18 +22,19 @@ class Game
   end
 
   def img_value(img_hash)
-    @turn = img_hash.first.split(".").first
+    @player1_turn = img_hash.first.split(".").first
   end
 
   def play
     @player2_turn = @player2.play if computer?
+    
     values = get_hand_values
     if values[0] > values [1]
       @player1.winner
       @player2.loser
     elsif values[0] < values[1]
       @player2.winner
-      @player_1.loser
+      @player1.loser
     else 
       @player1.drew
       @player2.drew
@@ -54,7 +55,7 @@ class Game
     elsif @player1.won_last_game 
       @message = "#{@player1.name} wins! #{@player1_turn} beats #{@player2_turn}"
     else
-      @message = "#{@player2.name} wins! #{@player2_turn} beats #{@player2_turn}"
+      @message = "#{@player2.name} wins! #{@player2_turn} beats #{@player1_turn}"
     end
   end
 end
