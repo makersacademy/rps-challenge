@@ -55,7 +55,7 @@ class Game
     elsif @player1.won_last_game 
       @message = "#{@player1.name} wins! #{@player1_turn} beats #{@player2_turn}"
     else
-      @message = "#{@player2.name} wins! #{@player2_turn} beats #{@player1_turn}"
+      @message = "#{@player2.name} wins! \n #{@player2_turn} beats #{@player1_turn}"
     end
   end
 end
