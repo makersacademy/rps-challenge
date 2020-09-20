@@ -1,4 +1,4 @@
-# Welcome to..........................................Web App Edition!
+# Welcome to...ROCK-PAPER-SCISSORS....Web App Edition!
 
 
           Rock              Paper             Scissors
