@@ -71,6 +71,7 @@ class Game
     end
     set_loser
   end
+  
   def set_loser
     @who_is_losing = ([@player1, @player2] - [@who_is_winning] ).first
   end

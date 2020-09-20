@@ -20,4 +20,22 @@ feature "naming capability" do
     expect(page).to have_content "Computer wins! rock beats scissors"
   end
 
+  scenario "I want the scoreboard to keep track of score after 1 game" do
+    sign_in
+    srand(15)
+    click_button "scissors"
+    click_link "Play Again?"
+    expect(page).to have_content ("Contestant: Computer Wins: 1 Losses: 0 Draws: 0\nContestant: Ollie Wins: 0 Losses: 1 Draws: 0")
+  end
+
+  scenario "the winners score should be displayed above the losers score" do
+    sign_in
+    srand(15)
+    click_button "scissors"
+    click_link "Play Again?"
+    click_button "rock"
+    click_linkk "Play Again?"
+    click_button "rock"
+    expect(page).to have_content "Contestant: Ollie Wins: 2 Losses:1 Draws: 0\nContestant: Computer Wins: 1 Losses: 2, Draws: 0"
+  end
 end
