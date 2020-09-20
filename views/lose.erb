@@ -1,6 +1,6 @@
 <h2> <%= @game.player.name %> loses! losing to a computer? ....get a grip on yourself!</h2>
 <br>
-<h3> <%= @game.player.name %> chose <%= @game.player.name %>
+<h3> <%= @game.player.name %>'s <%= @game.player.the_move %> is/are no match for computer's <%= @game.bot.the_move %></h3>
 
 <form action="/play"> 
 <input type="submit" value="Play again?"> 
