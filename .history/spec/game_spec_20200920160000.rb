@@ -16,7 +16,7 @@ describe Game do
 			player.choice('rock')
 			srand(0)
 			comp
-			expect(game.result).to eq "It's a draw"
+			expect(game.result).to eq "It's a draw!"
 		end 
 
 		it "can state when the computer won" do

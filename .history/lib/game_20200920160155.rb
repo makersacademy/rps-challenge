@@ -25,7 +25,7 @@ WIN = { rock: ["lizard", "scissors"],
 	end
 
 	def result
-		if WIN[(@player.move).to_sym].include?(@comp.move)
+		if WIN[(@player.move).to_sym].has_key?(@comp.move)
 			return "#{@player.name} is a winner!!!"
 		elsif  @player.move == @comp.move
 			return "It's a draw"
