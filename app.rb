@@ -1,11 +1,14 @@
 require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/game'
+require_relative 'lib/score'
 
 class RPSLS < Sinatra::Base
 
   before do
     @game = Game.instance
+    @p1_score = Score.instance
+    @p2_score = Score.instance
   end
 
   get '/' do

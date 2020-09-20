@@ -11,6 +11,6 @@ feature 'store names' do
     fill_in 'p1', with: "Pinky"
     fill_in 'p2', with: "The Brain"
     click_button
-    expect(page).to have_content "Pinky v The Brain"
+    expect(page).to have_content "Pinky The Brain"
   end
 end

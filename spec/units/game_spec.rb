@@ -10,7 +10,7 @@ describe Game do
   it 'allows a computer opponent' do
     solo_game = Game.new("Crusoe")
     expect(solo_game.p1).to eq "Crusoe"
-    expect(solo_game.p2).to eq "AI"
+    expect(solo_game.p2).to eq "Computer"
   end
 
   describe '#p1_choice' do

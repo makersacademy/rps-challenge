@@ -1,4 +1,6 @@
-<%=@game.p1 %> v <%= @game.p2 %>
+<%= @game.p1 %> <%= @game.p2 %>
+<%= @p1_score.score %> <%= @p2_score.score %>
+
 
 <form action='/selection' method='post'>
   <input type='hidden' name='selection' value='rock'>

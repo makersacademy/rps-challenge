@@ -1,12 +1,15 @@
+require_relative 'score'
+
 class Game
 
-  attr_reader :p1, :p2, :p1_selection, :comp_selection
+  attr_reader :p1, :p2, :p1_selection, :comp_selection, :p1_score, :p2_score
 
   OPTION = ["rock", "spock" , "paper", "lizard", "scissors"]
 
-  def initialize(p1, p2 = "AI")
+  def initialize(p1, p2 = "Computer", scores = Score.create)
     @p1 = p1
     @p2 = p2
+    @p1_score, @p2_score = scores
   end
 
   def self.create(p1, p2)

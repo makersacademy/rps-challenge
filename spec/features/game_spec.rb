@@ -37,4 +37,11 @@ feature 'random computer choice' do
     expect(page).to have_content "The Brain chose "
   end
 end
+
+feature 'score' do
+  it 'shows the player scores' do
+    enter_names
+    expect(page).to have_content 0
+  end
+end
     
