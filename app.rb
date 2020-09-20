@@ -19,7 +19,12 @@ class RPSLS < Sinatra::Base
   end
 
   get '/play' do
-    "#{@game.p1} v #{@game.p2}"
+    erb :play
+  end
+
+  post '/selection' do
+    @selection = params[:selection]
+    "#{@game.p1} chose #{@selection}"
   end
 
 
