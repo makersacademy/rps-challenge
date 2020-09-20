@@ -1,12 +1,14 @@
 require_relative './player.rb'
 require_relative 'computer.rb'
 class Game 
-  attr_reader :player1, :player1_turn, :player2_turn, :winner, :loser, :message
+  attr_reader :player1, :player1_turn, :player2_turn, :winner, :loser, :message,  :who_is_winning, :who_is_losing
 
   def initialize(player1, player2 = Computer.new)
     @player1 = Player.new(player1)
     @player2 = player2
     @ai_player = computer?
+    @who_is_winning = @player1
+    @who_is_losing = @player2
   end
 
   def computer?
@@ -39,6 +41,8 @@ class Game
       @player1.drew
       @player2.drew
     end
+    @game_played = true
+    set_table_position
     results
   end
 
@@ -58,4 +62,17 @@ class Game
       @message = "#{@player2.name} wins! \n #{@player2_turn} beats #{@player1_turn}"
     end
   end
+
+  def set_table_position
+    if @player1.wins > @player2.wins
+      @who_is_winning = @player1
+    elsif @player2.wins > @player1.wins
+      @who_is_winning = @player2
+    end
+    set_loser
+  end
+  def set_loser
+    @who_is_losing = ([@player1, @player2] - [@who_is_winning] ).first
+  end
+
 end

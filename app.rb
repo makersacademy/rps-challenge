@@ -23,6 +23,7 @@ class RPS < Sinatra::Base
     @game = Game.instance
     @game.img_value(params.keys)
     @game.play
+   
     erb(:result)
   end
 

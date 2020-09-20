@@ -1,3 +1,10 @@
+<style>
+.scoreboard {
+  border-outline: solid;
+  border-width:3px;
+}
+</style>
+
 <h1> Player 1: <%=@game.player1.name%> </h1>
 
 <h2> Choose your fighter! </h2>
@@ -6,3 +13,9 @@
   <input type="image" value="paper" name="paper" src="https://www.pngkit.com/png/full/6-62205_free-hand-on-flat-surface-stock-photo-mao.png" width="200" height="200" alt="Submit">
   <input type="image" value="scissors" name="scissors" src="//upload.wikimedia.org/wikipedia/commons/thumb/7/76/Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg/220px-Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg" width="200" height="200" alt="Submit">
 </form>
+
+<div class="scoreboard">
+<h1> Contestant: <%= @game.who_is_winning.name %> Wins: <%= @game.who_is_winning.wins %> Losses: <%= @game.who_is_winning.losses %> Draws: <%= @game.who_is_winning.draws %> </h1>
+<h1> Contestant: <%= @game.who_is_losing.name %> Wins: <%= @game.who_is_winning.wins %> Losses: <%= @game.who_is_losing.losses %> Draws: <%= @game.who_is_losing.draws %> </h1>
+</div>
+
