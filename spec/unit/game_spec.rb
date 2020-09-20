@@ -34,5 +34,47 @@ describe Game do
         end     
     end
 
+    describe 'CPU wins' do
+        it 'CPU selects Rock and Player has picked Scissors' do
+            allow(game).to receive(:get_cpu_choice).and_return("Rock")
+            game.set_player_choice("Scissors")
+            expect(game.get_result).to eq("CPU")
+        end     
+
+        it 'CPU selects Scissors and Player has picked Paper' do
+            allow(game).to receive(:get_cpu_choice).and_return("Scissors")
+            game.set_player_choice("Paper")
+            expect(game.get_result).to eq("CPU")
+        end     
+
+
+        it 'CPU selects Paper and Player has picked Rock' do
+            allow(game).to receive(:get_cpu_choice).and_return("Paper")
+            game.set_player_choice("Rock")
+            expect(game.get_result).to eq("CPU")
+        end     
+    end
+
+    describe 'Player and CPU draw' do
+        it 'CPU selects Rock and Player has picked Rock' do
+            allow(game).to receive(:get_cpu_choice).and_return("Rock")
+            game.set_player_choice("Rock")
+            expect(game.get_result).to eq("Draw")
+        end     
+
+        it 'CPU selects Scissors and Player has picked Scissors' do
+            allow(game).to receive(:get_cpu_choice).and_return("Scissors")
+            game.set_player_choice("Scissors")
+            expect(game.get_result).to eq("Draw")
+        end     
+
+
+        it 'CPU selects Paper and Player has picked Paper' do
+            allow(game).to receive(:get_cpu_choice).and_return("Paper")
+            game.set_player_choice("Paper")
+            expect(game.get_result).to eq("Draw")
+        end     
+    end
+
 
 end
