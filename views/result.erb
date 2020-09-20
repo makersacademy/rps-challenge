@@ -6,10 +6,10 @@ center {
 <style>
 .div {
   background-color: lightgrey;
-  width: 300px;
-  border: 15px solid grey;
+  width: 400px;
+  border: 5px solid grey;
   padding: 50px;
-  margin: 20px;
+  margin: 1px;
 }
 <%if @game.win?.include?("lose") %>
   body { background-image : url(https://www.onlygfx.com/wp-content/uploads/2018/10/10-blood-paint-splatter-background-1.jpg);
@@ -30,7 +30,7 @@ body {
 <h2> You selected <%=@game.item%> </h2>
 <h2> The computer selected <%=@game.computer_play%>
 
-<h2> <%=@game.win?%>
+<h1> <%=@game.win?%></h1>
 <form action="/play">
 <input type="submit" value="Play again?">
 </form>
