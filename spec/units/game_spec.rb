@@ -13,5 +13,11 @@ describe Game do
     expect(solo_game.p2).to eq "AI"
   end
 
+  describe '#p1_choice' do
+    it 'returns the value of player choice' do
+      expect(game.p1_choice('lizard')).to eq 4
+    end
+  end 
+
 end
     
