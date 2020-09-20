@@ -1,7 +1,11 @@
-<h1><%= @game.p1.move.capitalize %> vs <%= @game.p2.move.capitalize %></h1>
-<br>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="<%= url('/style.css') %>" type="text/css"/>
+</head>
 
-<h2><%=
+<body>
+<h1><%=
   if @result == 'P1'
     'You won!'
   elsif @result == 'P2'
@@ -9,4 +13,9 @@
   else
     'Draw'
   end
-%></h2>
+%></h1>
+
+<h2><%= @game.p1.move.capitalize %> vs <%= @game.p2.move.capitalize %></h2>
+<br>
+</body>
+</html>
