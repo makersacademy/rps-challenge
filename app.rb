@@ -5,10 +5,6 @@ require './lib/player'
 
 class Rps < Sinatra::Base
 
-  before do
-    @game = Game.instance
-  end
-
   get '/' do 
     erb :index
   end
@@ -21,21 +17,32 @@ class Rps < Sinatra::Base
   end
 
   get "/play" do
+    @game = Game.instance
     erb :play
   end
 
-  post "/deciding" do
-    
-    if @game.bot.move == 'scissors' && @game.player.move == 'rock'
+  get "/deciding" do
+    @game = Game.instance  
+    bot_move = @game.bot.move
+    player_move = params[:selection]
+
+    if @game.player_wins?(player_move, bot_move)
       redirect "/win"
+    elsif player_move == bot_move
+      erb :play
     else
-      erb :index
+      redirect "/lose"
     end
   end
 
   get "/win" do
-    @game = Game.instance
+    @game = Game.instance  
     erb :win
+  end
+
+  get "/lose" do
+    @game = Game.instance  
+    erb :lose
   end
 
   run! if app_file == $0

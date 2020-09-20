@@ -1,6 +1,6 @@
 class Bot
   
-  MOVES = [:rock, :paper, :scissors]
+  MOVES = ['rock', 'paper', 'scissors']
 
   def move
     MOVES.sample

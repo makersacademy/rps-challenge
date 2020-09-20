@@ -3,7 +3,7 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player, :bot
+  attr_reader :player, :bot, :game
 
   def initialize(name)
     @player = Player.new(name)
@@ -16,5 +16,9 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def player_wins?(player_move, bot_move)
+    [['rock', 'scissors'], ['scissors', 'paper'], ['paper', 'rock']].include?([player_move, bot_move])
   end
 end
