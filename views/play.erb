@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Choose your weapon</title>
+<link href='https://fonts.googleapis.com/css?family=Paytone One' rel='stylesheet'>
+<link href="/index.css" rel="stylesheet" type="text/css">
+<style>
+.wrapper {
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+<header>
+<%=@player%> is registered as a player
+</header>
+<form action="/choice" method="post">
+<div class="wrapper">
+<input type="submit" value=<%=@choices[0]%>  name='choice'>
+  <input type="submit" value=<%=@choices[1]%> name='choice'>
+  <input type="submit" value=<%=@choices[2]%> name='choice'>
+</div>
+</form>
+<div>
+<img src="https://ih1.redbubble.net/image.904321630.2691/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" class="marginauto"/>
+</div>
+</body>
+
+</html>

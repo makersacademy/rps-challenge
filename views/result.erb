@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>The winner is <%=@result%>!</title>
+<link href="/index.css" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Paytone One' rel='stylesheet'>
+
+</head>
+
+<body>
+<header>
+<%=@player%>'s picked <%=@game.show_player_choice%><br>
+
+CPU picked <%=@game.show_cpu_choice%><br>
+</header>
+
+<section>
+<h1>The winner is <%=@result%>!!!!!</h1> 
+</section>
+<div class="button_position">
+<a href="/play" class="button"> Play again! </a>
+</div>
+
+</body>
+
+</html>

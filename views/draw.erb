@@ -1,0 +1,24 @@
+<html>
+<head>
+<link href="/index.css" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Paytone One' rel='stylesheet'>
+<title>Sorry it was a draw</title>
+<style>
+body {
+    background: url("https://i.pinimg.com/originals/83/70/72/837072ca19e3c5cebea76e2693f3100d.gif");
+}
+</style>
+
+</head>
+<body>
+<header>
+<%=@player%>'s picked <%=@game.show_player_choice%><br>
+CPU picked <%=@game.show_cpu_choice%><br>
+<h1>"It's a draw"</h1>
+</header>
+<div class="button_position">
+<a href="/play" class="button"> Play again! </a>
+</div>
+</body>
+
+</html>
