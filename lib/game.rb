@@ -9,6 +9,10 @@ class Game
     @bot = bot
   end
 
+  def display_opponents
+    return "#{@player.name} vs. #{bot.name}"
+  end
+
   def determine_winner
     player_move = @player.move
     bot_move = @bot.move
