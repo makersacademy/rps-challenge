@@ -3,7 +3,6 @@ require './lib/game'
 
 class RPS < Sinatra::Base
 
-  enable :sessions
   set :session_secret, 'super secret'
 
   before do

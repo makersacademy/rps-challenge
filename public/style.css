@@ -3,7 +3,6 @@ html {
 }
 
 body {
-    padding: 20px;
     text-align: center;
     background: rgb(19,102,204);
     background: linear-gradient(0deg, #00d2ff 0%, #3a47d5 100%);
@@ -23,7 +22,7 @@ h1 {
 }
 
 p {
-    color: red;
+    margin-top: 40px;
 }
 
 .myButton {
@@ -31,11 +30,9 @@ p {
     border-radius: 0px;
     border: none;
     display:inline-block;
-    cursor:pointer;
     color: #3a47d5;
     font-family: 'Josefin Sans', sans-serif;
     font-size:17px;
-
     padding:16px 31px;
     text-decoration:none;
     margin: 20px;
@@ -64,7 +61,7 @@ p {
     border: 0;
     border-bottom: 2px solid whitesmoke;
     outline: 0;
-    font-size: 1.8rem;
+    font-size: 24px;
     color: whitesmoke;
     padding: 7px 0;
     background: transparent;

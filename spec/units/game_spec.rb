@@ -3,8 +3,8 @@ require 'game'
 describe Game do
 
   subject(:game) { Game.new(player_1, player_2) }
-  let(:player_1) { double('player_1', name: 'Veronica') }
-  let(:player_2) { double('player_2', name: 'Bobby the Bot') }
+  let(:player_1) { double('player_1', name: 'Veronica', move: 'rock') }
+  let(:player_2) { double('player_2', name: 'Bobby the Bot', move: 'scissors') }
 
   it 'takes one or two player arguments on initialisation' do
     expect(Game).to respond_to(:new).with(1).argument
@@ -37,9 +37,6 @@ describe Game do
 
   describe '#play' do
     it "returns 'P1' if P1 move = rock and P2 move = scissors" do
-      allow(player_1).to receive(:move).and_return('rock')
-      allow(player_2).to receive(:move).and_return('scissors')
-
       expect(game.play).to eq('P1')
     end
 
@@ -58,14 +55,12 @@ describe Game do
     end
 
     it "returns 'DRAW' if P1 move is the same as P2 move" do
-      allow(player_1).to receive(:move).and_return('rock')
       allow(player_2).to receive(:move).and_return('rock')
 
       expect(game.play).to eq('DRAW')
     end
 
     it "returns 'P2' if P1 move = rock and P2 move = paper" do
-      allow(player_1).to receive(:move).and_return('rock')
       allow(player_2).to receive(:move).and_return('paper')
 
       expect(game.play).to eq('P2')
@@ -73,7 +68,6 @@ describe Game do
 
     it "returns 'P2' if P1 move = paper and P2 move = scissors" do
       allow(player_1).to receive(:move).and_return('paper')
-      allow(player_2).to receive(:move).and_return('scissors')
 
       expect(game.play).to eq('P2')
     end
@@ -83,6 +77,20 @@ describe Game do
       allow(player_2).to receive(:move).and_return('rock')
 
       expect(game.play).to eq('P2')
+    end
+
+    it 'adds 1 to the win_streak if P1 wins' do
+      expect{ game.play }.to change{ game.win_streak }.by(1)
+    end
+
+    it 'sets win_streak to 0 if P1 loses' do
+      game.play
+
+      allow(player_1).to receive(:move).and_return('scissors')
+      allow(player_2).to receive(:move).and_return('rock')
+      game.play
+
+      expect(game.win_streak).to eq(0)
     end
   end
 end

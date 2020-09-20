@@ -1,7 +1,7 @@
 require_relative './cpu_player'
 
 class Game
-  attr_reader :p1, :p2
+  attr_reader :p1, :p2, :win_streak
 
   WINNING_MOVES = {
     rock: :scissors,
@@ -12,6 +12,7 @@ class Game
   def initialize(p1, p2 = CPUPlayer.new)
     @p1 = p1
     @p2 = p2
+    @win_streak = 0
   end
 
   def self.create(p1, p2 = CPUPlayer.new)
@@ -24,6 +25,8 @@ class Game
 
   def play
     @result = determine_result
+    update_win_streak
+    @result
   end
 
   private
@@ -37,5 +40,12 @@ class Game
       'P2'
     end
   end
-end
 
+  def update_win_streak
+    if @result == 'P1'
+      @win_streak += 1
+    else
+      @win_streak = 0
+    end
+  end
+end
