@@ -6,8 +6,6 @@ require './lib/computer_opponent.rb'
 
 class Rock_paper_scissors < Sinatra::Base
 
-  enable :sessions
-
   before do
     @game = Game.instance
   end 
