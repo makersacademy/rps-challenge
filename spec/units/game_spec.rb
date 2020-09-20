@@ -19,5 +19,39 @@ describe Game do
     end
   end 
 
+  describe '#randomiser' do
+    it 'returns a random selection' do
+      srand(4)
+      expect(game.randomiser).to eq 3
+    end
+  end
+
+  describe '#message' do
+    it 'returns a winning message' do
+      game.p1_choice('lizard')
+      srand(4)
+      game.randomiser
+      game.compare
+      expect(game.message).to eq 'You win'
+    end
+
+    it 'returns a losing message' do
+      game.p1_choice('rock')
+      srand(4)
+      game.randomiser
+      game.compare
+      expect(game.message).to eq 'You lose'
+    end
+
+    it 'returns a tie message' do
+      game.p1_choice('paper')
+      srand(4)
+      game.randomiser
+      game.compare
+      expect(game.message).to eq "It's a tie"
+    end
+
+  end
+
 end
     
