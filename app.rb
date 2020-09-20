@@ -24,7 +24,7 @@ class Rps < Sinatra::Base
   get "/deciding" do
     @game = Game.instance  
     bot_move = @game.bot.move
-    player_move = params[:selection]
+    player_move = @game.player.move(params[:selection])
 
     if @game.player_wins?(player_move, bot_move)
       redirect "/win"
@@ -46,6 +46,7 @@ class Rps < Sinatra::Base
   end
 
   get "/draw" do 
+    @game = Game.instance 
     erb :draw
   end
 

@@ -80,3 +80,13 @@ feature 'correct outcome to game' do
     expect(page).to have_content 'It\'s a draw'
   end
 end
+
+feature 'allows user to play again' do
+  scenario 'user plays a game and then clicks play again' do
+    enter_name
+    choose 'scissors'
+    click_button 'Submit'
+    click_button 'Play again?'
+    expect(page).to have_content "Please select your weapon"
+  end
+end
