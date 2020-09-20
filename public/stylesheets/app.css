@@ -1,0 +1,24 @@
+html {
+  font-family: Oswald;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  color: #000000;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 400px;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(230, 224, 224, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+h1{
+  margin: 0;
+}

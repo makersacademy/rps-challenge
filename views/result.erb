@@ -1,0 +1,14 @@
+<head>
+  <link rel='stylesheet' type='text/css' href='/stylesheets/result.css'>
+</head>
+
+<div class='result'>
+  <% if @name.empty? %>
+  <h2> Player, <%= @result %> </h2>
+  <% else %>
+  <h2> <%= @name.capitalize %>, <%= @result %> </h2>
+  <% end %>
+  <h2>You played <%= @move %></h2>
+  <h2>The computer played <%= @computer_move %> </h2>
+  <a href='/play'><input type='button' value='Play again' class ='button'></a>
+</div>
