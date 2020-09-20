@@ -17,5 +17,8 @@
 
 <h2><%= @game.p1.move.capitalize %> vs <%= @game.p2.move.capitalize %></h2>
 <br>
+<form action="/choose-move" method="get">
+  <button class="myButton" type="submit" value="Play again">Play again</button><br>
+</form>
 </body>
 </html>

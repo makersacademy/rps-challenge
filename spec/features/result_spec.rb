@@ -26,4 +26,10 @@ feature 'Result' do
     click_button 'Scissors'
     expect(page).to have_content('Draw')
   end
+
+  scenario 'Displays button to play again' do
+    enter_name_and_start
+    click_button 'Scissors'
+    expect(page).to have_selector(:link_or_button, 'Play again')
+  end
 end
