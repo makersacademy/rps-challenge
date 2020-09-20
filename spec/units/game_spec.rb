@@ -32,7 +32,7 @@ describe Game do
       srand(4)
       game.randomiser
       game.compare
-      expect(game.message).to eq 'You win'
+      expect(game.message).to eq 'Penn wins'
     end
 
     it 'returns a losing message' do
@@ -40,7 +40,7 @@ describe Game do
       srand(4)
       game.randomiser
       game.compare
-      expect(game.message).to eq 'You lose'
+      expect(game.message).to eq 'Teller wins'
     end
 
     it 'returns a tie message' do

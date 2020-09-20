@@ -2,31 +2,31 @@ feature 'clickable buttons' do
   scenario 'choose rock' do
     enter_names
     find("[id='rock']").click
-    expect(page).to have_content "Pinky chose rock"
+    expect(page).to have_content "Pinky chose"
   end
 
   scenario 'choose paper' do
     enter_names
     find("[id='paper']").click
-    expect(page).to have_content "Pinky chose paper"
+    expect(page).to have_content "Pinky chose"
   end
 
   scenario 'choose scissors' do
     enter_names
     find("[id='scissors']").click
-    expect(page).to have_content "Pinky chose scissors"
+    expect(page).to have_content "Pinky chose"
   end
 
   scenario 'choose lizard' do
     enter_names
     find("[id='lizard']").click
-    expect(page).to have_content "Pinky chose lizard"
+    expect(page).to have_content "Pinky chose"
   end
 
   scenario 'choose spock' do
     enter_names
     find("[id='spock']").click
-    expect(page).to have_content "Pinky chose spock"
+    expect(page).to have_content "Pinky chose"
   end
 end
 
@@ -34,7 +34,7 @@ feature 'random computer choice' do
   it 'shows the computer choice' do
     enter_names
     find("[id='spock']").click
-    expect(page).to have_content "The Brain chose "
+    expect(page).to have_content "The Brain chose"
   end
 end
 

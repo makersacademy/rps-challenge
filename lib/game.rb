@@ -37,10 +37,10 @@ class Game
     case @result % 5
     when 1,2
       @p1_score.increase
-      'You win'
+      "#{@p1} wins"
     when 3,4
       @p2_score.increase
-      "You lose"
+      "#{@p2} wins"
     when 0
       "It's a tie"
     end
