@@ -27,12 +27,13 @@ class Game
 
     def set_player_choice(choice)
         @player_choice = choice
-        set_cpu_choice
+        @cpu_choice = get_cpu_choice
         decide_winner
     end
 
+
     def get_result
-    @result
+        @result
     end
 
     def show_player_choice
@@ -43,12 +44,19 @@ class Game
         @cpu_choice
     end
 
+    
+   
+
+    #def set_cpu_choice
+     #   @cpu_choice = @choices.get_choices.sample
+    #end
+    
     private 
 
-    def set_cpu_choice
-        @cpu_choice = @choices.get_choices.sample
+    def get_cpu_choice
+        @choices.get_choices.sample
     end
-
+    
     def decide_winner
         if @player_choice == @cpu_choice
             @result ="Draw"

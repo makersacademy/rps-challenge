@@ -8,25 +8,25 @@ class RPS < Sinatra::Base
     
     get '/' do
     "Hello world!!!"
-    erb :index
+    erb :index #player register name
     end
 
 
-    post '/name' do
+    post '/name' do #sending name to server
         session[:name] = params[:name]
         @game = Game.create(params[:name]) #creating a new Game instance
-        redirect '/play'
+        redirect '/play' 
     end
 
     get '/play' do
         @player = session[:name]
         @game = Game.instance
         @choices = @game.show_choices #create a new varible with the choices
-        erb :play
+        erb :play #player makes choice
     end
     
     
-    post '/choice' do
+    post '/choice' do #send player choice to server
         @game = Game.instance
         @game.set_player_choice(params[:choice])
         @choice = params[:choice]
@@ -37,12 +37,11 @@ class RPS < Sinatra::Base
     get '/result' do
         @game = Game.instance
         @player = session[:name]
-
          @result = @game.get_result     
         if @result == "Draw"
-            erb :draw
+            erb :draw #render draw page
         else
-            erb :result
+            erb :result #render result when someone wins
         end
     
 
