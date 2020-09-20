@@ -1,6 +1,6 @@
 feature 'Result' do
   before do
-    allow_any_instance_of(Game).to receive(:random_move).and_return('scissors')
+    allow_any_instance_of(CPUPlayer).to receive(:move).and_return('scissors')
   end
 
   scenario "Displays both players' moves" do
@@ -24,6 +24,6 @@ feature 'Result' do
   scenario 'Displays draw message if player drew' do
     enter_name_and_start
     click_button 'Scissors'
-    expect(page).to have_content('You drew')
+    expect(page).to have_content('Draw')
   end
 end

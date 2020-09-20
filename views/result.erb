@@ -1,2 +1,12 @@
+<h1><%= @game.p1.move.capitalize %> vs <%= @game.p2.move.capitalize %></h1>
+<br>
 
-<%= @result %>
+<h2><%=
+  if @result == 'P1'
+    'You won!'
+  elsif @result == 'P2'
+    'You lost'
+  else
+    'Draw'
+  end
+%></h2>
