@@ -29,4 +29,12 @@ feature 'clickable buttons' do
     expect(page).to have_content "Pinky chose spock"
   end
 end
+
+feature 'random computer choice' do
+  it 'shows the computer choice' do
+    enter_names
+    click_button 'Spock'
+    expect(page).to have_content "The Brain chose "
+  end
+end
     

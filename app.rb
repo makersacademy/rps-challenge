@@ -24,6 +24,8 @@ class RPSLS < Sinatra::Base
 
   post '/selection' do
     @game.p1_choice(params[:selection])
+    @game.randomiser
+    @game.compare
     redirect '/play'
   end
 
