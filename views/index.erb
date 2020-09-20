@@ -11,10 +11,14 @@
 <br>
 <h2>Enter your name to get started</h2>
 <br>
-<form action="/name" method="post">
-  <input type="text" name="name">
+
+<div class="form__group field">
+  <form action="/name" method="post">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+<!--  <label for="name" class="form__label">Name</label>-->
   <br>
   <button type="submit" class="myButton" value="LET'S GO">LET'S GO</button>
-</form>
+  </form>
+</div>
 </body>
 </html>

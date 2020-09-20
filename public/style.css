@@ -10,6 +10,11 @@ body {
     height: 100%;
     font-family: 'Kumbh Sans', sans-serif;
     color: white;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -42,4 +47,25 @@ p {
 .myButton:active {
     position:relative;
     top:1px;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+}
+
+.form__field {
+    text-align: center;
+    position: center;
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid whitesmoke;
+    outline: 0;
+    font-size: 1.8rem;
+    color: whitesmoke;
+    padding: 7px 0;
+    background: transparent;
 }
