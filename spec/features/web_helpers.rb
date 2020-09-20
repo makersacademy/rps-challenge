@@ -5,6 +5,5 @@ def sign_in
 end 
 
 def make_move
-  choose 'rock'
-  click_on 'Play!'
+  click_on 'rock'
 end 

@@ -1,7 +1,7 @@
 feature 'starting a game of RPS' do 
-  scenario 'page has form' do 
+  scenario 'page has button to play game' do 
     visit '/'
-    expect(page).to have_content "Enter name"
+    expect(page).to have_button "Play!"
   end 
 end 
 
@@ -20,7 +20,7 @@ feature 'player makes move selection' do
 end
 
 feature 'play can submit a move' do 
-  scenario 'playey makes move and confirmation appears' do 
+  scenario 'player makes move and confirmation appears' do 
     sign_in
     make_move
     expect(page).to have_content 'You played rock'
