@@ -4,9 +4,15 @@
 
 <div class='play'>
     <div>
+      <% if @player_name.empty?%>
       <h2>
-        <%= @player_name.capitalize %>, are you ready to play?
+      Player, are you ready?
       </h2>
+      <% else %>
+      <h2>
+        <%= @player_name.capitalize %>, are you ready?
+      </h2>
+      <% end %>
     </div>
     <div class='icons'>
     <img src="https://img.icons8.com/metro/26/000000/rock.png"/>
