@@ -1,0 +1,80 @@
+html {
+    height: 100%
+}
+
+body {
+    text-align: center;
+    background: rgb(19,102,204);
+    background: linear-gradient(0deg, #00d2ff 0%, #3a47d5 100%);
+    height: 100%;
+    font-family: 'Kumbh Sans', sans-serif;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.lose {
+    background: linear-gradient(0deg, #d53369 0%, #daae51 100%);
+}
+
+.win {
+    background: linear-gradient(0deg, #9ebd13 0%, #008552 100%);
+}
+
+.draw {
+    background: linear-gradient(0deg, #4b6cb7 0%, #182848 100%);
+}
+
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: whitesmoke;
+}
+
+p {
+    margin-top: 40px;
+}
+
+.myButton {
+    background-color: white;
+    border-radius: 0px;
+    border: none;
+    display:inline-block;
+    color: #3a47d5;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size:17px;
+    padding:16px 31px;
+    text-decoration:none;
+    margin: 20px;
+}
+.myButton:hover {
+    background-color: #3a47d5;
+    color: white;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+}
+
+.form__field {
+    text-align: center;
+    position: center;
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid whitesmoke;
+    outline: 0;
+    font-size: 24px;
+    color: whitesmoke;
+    padding: 7px 0;
+    background: transparent;
+}

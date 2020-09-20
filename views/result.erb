@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="<%= url('/style.css') %>" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Kumbh+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<%
+  if @game.result == 'P1'
+    @result_msg = 'You won!'
+    @result_class = 'win'
+  elsif @game.result == 'P2'
+    @result_msg = 'You lost'
+    @result_class = 'lose'
+  else
+    @result_msg = 'Draw'
+    @result_class = 'draw'
+  end
+%>
+
+
+<body class="<%= @result_class %>">
+<h1><%= @result_msg %></h1><br>
+
+<h2><%= @game.p1.move.capitalize %> vs <%= @game.p2.move.capitalize %></h2>
+<p><%= @game.p1.name %>'s win streak: <%= @game.win_streak %></p>
+
+<form action="/choose-move" method="get">
+  <button class="myButton" type="submit" value="Play again">Play again</button><br>
+</form>
+</body>
+</html>

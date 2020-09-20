@@ -1,54 +1,9 @@
-# RPS Challenge
+# RPS
 
-Instructions
--------
-
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
+About
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+RPS is a classic rock, paper, scissors game made for one player, competing against Bobby the Bot.
 
 ## Basic Rules
 
@@ -56,30 +11,28 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+Your win streak will be tallied and available on the results page.
+A draw or a lose will result in your win streak being reset.
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+## Getting Started
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
+1. Clone this directory
+1. Navigate to the project directory
+1. Run `bundle` to install gem dependencies
+1. Run `rackup` to start the application server
+1. Go to `localhost:9292` in a browser
 
-Notes on test coverage
-----------------------
+## Gameplay
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+1. Enter your name
+![Enter name](https://i.imgur.com/bk1tTTw.png "Enter name")
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+1. Choose your move - rock, paper or scissors
+![Choose move](https://i.imgur.com/WrQvP7j.png "Choose move")
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
+1. See if you were victorious :)
+The results screen has conditional formatting depending on the outcome.
+![Win](https://i.imgur.com/OLDNJjD.png "Win")
+![Lose](https://i.imgur.com/xa354iW.png "Lose")
+![Draw](https://i.imgur.com/17xEUO3.png "Draw")
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="<%= url('/style.css') %>" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Kumbh+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<h1>Choose your move</h1>
+<br>
+<form action="move" method="post">
+  <button name="p1_move" class="myButton" type="submit" value="rock">Rock</button><br>
+  <button name="p1_move" class="myButton" type="submit" value="paper">Paper</button><br>
+  <button name="p1_move" class="myButton" type="submit" value="scissors">Scissors</button><br>
+</form>
+</body>
+</html>

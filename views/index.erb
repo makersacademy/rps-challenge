@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="<%= url('/style.css') %>" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Kumbh+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<h1>ROCK, PAPER, SCISSORS</h1>
+<br>
+<h2>Enter your name to get started</h2>
+<br>
+
+<div class="form__group field">
+  <form action="/name" method="post">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+<!--  <label for="name" class="form__label">Name</label>-->
+  <br><br>
+  <button type="submit" class="myButton" value="LET'S GO">LET'S GO</button>
+  </form>
+</div>
+</body>
+</html>
