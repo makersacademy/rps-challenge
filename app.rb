@@ -11,7 +11,7 @@ class RPS < Sinatra::Base
   end
 
   post "/players" do
-    @game = Game.create(Player.new(params[:player_one]))
+    @game = Game.create(Player.new(params[:player_one]), Bot.new)
     redirect "/play"
   end
 
@@ -21,6 +21,7 @@ class RPS < Sinatra::Base
 
   post "/rps" do
     @game.player.store_move(params[:player_choice])
+    @game.bot.make_move
     redirect "/game_over"
   end
 

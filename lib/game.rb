@@ -1,32 +1,34 @@
 require_relative "player"
+require_relative "bot"
 
 class Game
   attr_reader :player, :bot
 
-  def initialize(player = Player)
+  def initialize(player = Player, bot = Bot)
     @player = player
+    @bot = bot
   end
 
   def determine_winner
     player_move = @player.move
-    @bot_move = ["Rock", "Paper", "Scissors"].sample
+    bot_move = @bot.move
 
-    if player_move == @bot_move
+    if player_move == bot_move
       return "It's a draw! Try again!"
     end
 
     case player_move
     when "Rock"
-      return rock_beats()
+      return rock_beats(bot_move)
     when "Paper"
-      return paper_beats()
+      return paper_beats(bot_move)
     when "Scissors"
-      return scissors_beats()
+      return scissors_beats(bot_move)
     end
   end
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player, bot)
+    @game = Game.new(player, bot)
   end
 
   def self.instance
@@ -36,31 +38,31 @@ class Game
   private
 
   def bot_wins
-    return "Bot's #{@bot_move} beats #{player.name}'s #{player.move}"
+    return "#{@bot.name}'s #{@bot.move} beats #{@player.name}'s #{@player.move}"
   end
 
   def player_wins
-    return "#{player.name}'s #{player.move} beats Bot's #{@bot_move}"
+    return "#{@player.name}'s #{@player.move} beats #{@bot.name}'s #{@bot.move}"
   end
 
-  def rock_beats
-    if @bot_move == "Paper"
+  def rock_beats(bot_move)
+    if bot_move == "Paper"
       return bot_wins()
     else
       return player_wins()
     end
   end
 
-  def paper_beats
-    if @bot_move == "Scissors"
+  def paper_beats(bot_move)
+    if bot_move == "Scissors"
       return bot_wins()
     else
       return player_wins()
     end
   end
 
-  def scissors_beats
-    if @bot_move == "Rock"
+  def scissors_beats(bot_move)
+    if bot_move == "Rock"
       return bot_wins()
     else
       return player_wins()
