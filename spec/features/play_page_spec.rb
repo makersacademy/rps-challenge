@@ -7,7 +7,7 @@ feature 'allows user to visit play page which should display their name' do
   end
 end
 
-feature 'can win game' do
+feature 'correct outcome to game' do
   scenario 'if player selects rock and bot selects scissors then player wins' do
     allow_any_instance_of(Bot).to receive(:move).and_return('scissors')
     enter_name
@@ -38,5 +38,45 @@ feature 'can win game' do
     choose 'rock'
     click_button 'Submit'
     expect(page).to have_content 'Ollie loses!'
+  end
+
+  scenario 'if player selects paper and bot selects scissors then player loses' do
+    allow_any_instance_of(Bot).to receive(:move).and_return('scissors')
+    enter_name
+    choose 'paper'
+    click_button 'Submit'
+    expect(page).to have_content 'Ollie loses!'
+  end
+
+  scenario 'if player selects scissors and bot selects rock then player loses' do
+    allow_any_instance_of(Bot).to receive(:move).and_return('rock')
+    enter_name
+    choose 'scissors'
+    click_button 'Submit'
+    expect(page).to have_content 'Ollie loses!'
+  end
+
+  scenario 'if player selects rock and bot selects rock then its a draw' do
+    allow_any_instance_of(Bot).to receive(:move).and_return('rock')
+    enter_name
+    choose 'rock'
+    click_button 'Submit'
+    expect(page).to have_content 'It\'s a draw'
+  end
+
+  scenario 'if player selects paper and bot selects paper then its a draw' do
+    allow_any_instance_of(Bot).to receive(:move).and_return('paper')
+    enter_name
+    choose 'paper'
+    click_button 'Submit'
+    expect(page).to have_content 'It\'s a draw'
+  end
+
+  scenario 'if player selects scissors and bot selects scissors then its a draw' do
+    allow_any_instance_of(Bot).to receive(:move).and_return('scissors')
+    enter_name
+    choose 'scissors'
+    click_button 'Submit'
+    expect(page).to have_content 'It\'s a draw'
   end
 end

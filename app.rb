@@ -29,7 +29,7 @@ class Rps < Sinatra::Base
     if @game.player_wins?(player_move, bot_move)
       redirect "/win"
     elsif player_move == bot_move
-      erb :play
+      redirect "/draw"
     else
       redirect "/lose"
     end
@@ -43,6 +43,10 @@ class Rps < Sinatra::Base
   get "/lose" do
     @game = Game.instance  
     erb :lose
+  end
+
+  get "/draw" do 
+    erb :draw
   end
 
   run! if app_file == $0
