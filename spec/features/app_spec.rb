@@ -39,6 +39,7 @@ feature 'playing a full game ' do
   scenario 'game played and winner displayed' do 
     sign_in
     make_move
-    expect(page).to have_content 'The result is' 
+    expect(page).to have_content 'You played' 
+    expect(page).to have_content 'The computer played' 
   end 
 end 

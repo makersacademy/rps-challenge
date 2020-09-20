@@ -3,7 +3,8 @@
 </head>
 
 <div class='result'>
+  <h2> <%= @name.capitalize %>, <%= @result %> </h2>
   <h2>You played <%= @move %></h2>
   <h2>The computer played <%= @computer_move %> </h2>
-  <h2>The result is <%= @result %> </h2>
+  <a href='/play'><input type='button' value='Play again' class ='button'></a>
 </div>

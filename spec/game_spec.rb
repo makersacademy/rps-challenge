@@ -20,19 +20,19 @@ RSpec.describe Game do
     it 'evaluates a draw' do 
       player.move
       allow(computer_opponent).to receive(:throw).and_return('rock')
-      expect(game.winner?).to eq "Draw"
+      expect(game.winner?).to eq "it's a draw!"
     end
    
     it 'evalutes player win' do 
       player.move
       allow(computer_opponent).to receive(:throw).and_return('scissors')
-      expect(game.winner?).to eq "Player wins" 
+      expect(game.winner?).to eq "you win!" 
     end 
 
    it 'evalutes player loss' do 
       player.move
       allow(computer_opponent).to receive(:throw).and_return('paper')
-      expect(game.winner?).to eq "Computer wins" 
+      expect(game.winner?).to eq "you lose!" 
     end  
 
   end 

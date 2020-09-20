@@ -18,11 +18,11 @@ class Game
 
   def winner?
     if @opponent.throw == @player.move 
-      "Draw"
+      "it's a draw!"
     elsif @opponent.throw == @defeats[@player.move]
-      "Player wins"
+      "you win!"
     else 
-      "Computer wins"
+      "you lose!"
     end 
     
   end 

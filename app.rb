@@ -33,7 +33,8 @@ class Rock_paper_scissors < Sinatra::Base
     redirect '/result'
   end 
 
-  get '/result' do 
+  get '/result' do
+    @name = @game.player.name 
     @move = @game.player.move
     @computer_move = @game.opponent.throw
     @result = @game.winner?
