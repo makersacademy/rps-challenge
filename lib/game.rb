@@ -1,7 +1,7 @@
 require_relative './player.rb'
-require 'computer.rb'
+require_relative 'computer.rb'
 class Game 
-  attr_reader :player1, :player1_turn, :player2_turn
+  attr_reader :player1, :player1_turn, :player2_turn, :winner, :loser, :message
 
   def initialize(player1, player2 = Computer.new)
     @player1 = Player.new(player1)
@@ -26,15 +26,19 @@ class Game
   end
 
   def play
-    @player2_turn = computer.sample if computer?
+    @player2_turn = @player2.play if computer?
     values = get_hand_values
     if values[0] > values [1]
-      player1 wins
+      @player1.winner
+      @player2.loser
     elsif values[0] < values[1]
-      player2 wins
+      @player2.winner
+      @player_1.loser
     else 
-      its a draw
+      @player1.drew
+      @player2.drew
     end
+    results
   end
 
   def get_hand_values
@@ -44,4 +48,13 @@ class Game
     [(p1_turn_value/p2_turn_value), (p2_turn_value/p1_turn_value)]
   end
 
+  def results
+    if !@player1.won_last_game && !@player2.won_last_game
+      @message = "It's a draw! You both picked #{@player1_turn}"
+    elsif @player1.won_last_game 
+      @message = "#{@player1.name} wins! #{@player1_turn} beats #{@player2_turn}"
+    else
+      @message = "#{@player2.name} wins! #{@player2_turn} beats #{@player2_turn}"
+    end
+  end
 end
