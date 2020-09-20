@@ -10,16 +10,19 @@ class Game
   end
 
   def display_opponents
-    return "#{@player.name} vs. #{bot.name}"
+    return "#{@player.name} vs. #{@bot.name}"
+  end
+
+  def play(player_move)
+    @player.store_move(player_move)
+    @bot.make_move
   end
 
   def determine_winner
     player_move = @player.move
     bot_move = @bot.move
 
-    if player_move == bot_move
-      return "It's a draw! Try again!"
-    end
+    return "It's a draw! Try again!" if player_move == bot_move
 
     case player_move
     when "Rock"

@@ -20,8 +20,7 @@ class RPS < Sinatra::Base
   end
 
   post "/rps" do
-    @game.player.store_move(params[:player_choice])
-    @game.bot.make_move
+    @game.play(params[:player_choice])
     redirect "/game_over"
   end
 
