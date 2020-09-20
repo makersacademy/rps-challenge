@@ -3,7 +3,6 @@ require './lib/player.rb'
 require_relative './lib/game.rb'
 require './lib/computer_opponent.rb'
 
-
 class Rock_paper_scissors < Sinatra::Base
 
   before do

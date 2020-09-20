@@ -7,4 +7,4 @@ class Computer_Opponent
     @throw = @moves.sample
   end 
 
-end 
+end

@@ -6,4 +6,4 @@ end
 
 def make_move
   click_on 'rock'
-end 
+end

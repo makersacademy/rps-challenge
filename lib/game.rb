@@ -11,7 +11,7 @@ class Game
   end 
 
   def initialize(player, opponent)
-    @defeats = {'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'}
+    @defeats = { 'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper' }
     @player = player
     @opponent = opponent
   end 
@@ -27,4 +27,4 @@ class Game
     
   end 
 
-end 
+end

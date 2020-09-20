@@ -2,14 +2,14 @@ require 'game'
 
 RSpec.describe Game do 
 
-  let(:game)     { Game.new(player, computer_opponent)                  }
+  let(:game)     { Game.new(player, computer_opponent) }
   let(:player)   { double('player', :move => 'rock') }
-  let(:computer_opponent) { double('computer_opponent')} 
+  let(:computer_opponent) { double('computer_opponent') } 
 
   describe 'class initialization' do 
 
     it 'instance has hash to store defeat combinations' do 
-      expected = {'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'}
+      expected = { 'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper' }
       expect(game.defeats).to eq expected
     end 
 
@@ -29,7 +29,7 @@ RSpec.describe Game do
       expect(game.winner?).to eq "you win!" 
     end 
 
-   it 'evalutes player loss' do 
+    it 'evalutes player loss' do 
       player.move
       allow(computer_opponent).to receive(:throw).and_return('paper')
       expect(game.winner?).to eq "you lose!" 
@@ -37,4 +37,4 @@ RSpec.describe Game do
 
   end 
 
-end 
+end

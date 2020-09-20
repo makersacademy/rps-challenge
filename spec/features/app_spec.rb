@@ -42,4 +42,4 @@ feature 'playing a full game ' do
     expect(page).to have_content 'You played' 
     expect(page).to have_content 'The computer played' 
   end 
-end 
+end

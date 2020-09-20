@@ -11,4 +11,4 @@ class Player
     @move = selection
   end 
 
-end 
+end
