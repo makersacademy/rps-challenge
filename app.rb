@@ -22,4 +22,16 @@ class RPS < Sinatra::Base
   get '/play' do
     erb(:play)
   end 
+
+  post '/choice' do
+    selection = params[:selection]
+    @game.player1_choice(selection)
+    @game.computer_choice
+    #code for who won 
+    redirect '/splash_screen'
+  end
+
+  get '/splash_screen' do
+    erb(:splash_screen)
+  end
 end 

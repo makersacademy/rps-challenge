@@ -1,1 +1,6 @@
 <%= @game.player1 %> Playing
+
+<form action='/choice' method='post'>
+  <input type='hidden' name='selection' value='rock'>
+  <input type='submit' value='Rock'>
+</form>

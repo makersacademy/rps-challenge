@@ -5,6 +5,7 @@ describe Game do
   let(:name) {double("name")}
   let(:player_1) {Player.new(name)}
   subject(:game) {Game.new(player_1)}
+  let(:input) {"rock"}
   
   it 'stores the names of the player 1' do
     expect(game.player1).to eq name 
@@ -21,4 +22,18 @@ describe Game do
     end
 
   end 
+
+  describe '#computer_choice' do
+    it 'randomly chooses Rock, paper etc' do
+      allow(game).to receive(:computer_choice) {'rock'} #stub
+      expect(game.computer_choice).to eq "rock"
+    end
+  end
+
+  describe '#player1_choice' do
+    it 'gets the player 1 choice' do 
+      expect(game.player1_choice(input)).to eq "rock"
+    end
+  end
+  
 end
