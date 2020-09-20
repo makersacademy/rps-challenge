@@ -8,8 +8,7 @@ describe Score do
 
   describe '#increase' do
     it 'increases the score by 1' do
-      expect{p1_score.increase}.to change{p1_score.score}.by(1)
+      expect { p1_score.increase }.to change { p1_score.score }.by(1)
     end
   end
 end
-

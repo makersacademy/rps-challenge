@@ -16,8 +16,8 @@ class RPSLS < Sinatra::Base
   end
 
   post '/names' do
-    @p1, @p2 = params[:p1], params[:p2]
-    @game = Game.create(@p1, @p2)
+    @player_1, @player_2 = params[:p1], params[:p2]
+    @game = Game.create(@player_1, @player_2)
     redirect '/play'
   end
 

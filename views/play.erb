@@ -37,8 +37,8 @@
 
 <% if @game.p1_selection %>
 <p>
-  <%= @game.p1 %> chose <img src='<%= @game.p1_selection %>.jpg' >
-  <%= @game.p2 %> chose <img src='<%= @game.comp_selection %>.jpg' >
+  <%= @game.player_1 %> chose <img src='<%= @game.p1_selection %>.jpg' >
+  <%= @game.player_2 %> chose <img src='<%= @game.comp_selection %>.jpg' >
 </p>
 <p id='winner'>
   <%= @game.message %>
@@ -46,10 +46,10 @@
 <% end %>
 
 <h1 id='p1'>
-  <%= @game.p1 %>
+  <%= @game.player_1 %>
 </h1>
 <h1 id='p2'>
-  <%= @game.p2 %>
+  <%= @game.player_2 %>
 </h1>
 
 <h2 id='p1'>

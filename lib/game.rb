@@ -2,19 +2,19 @@ require_relative 'score'
 
 class Game
 
-  attr_reader :p1, :p2, :p1_selection, :comp_selection, :p1_score, :p2_score
+  attr_reader :player_1, :player_2, :p1_selection, :comp_selection, :p1_score, :p2_score
 
-  OPTION = ["rock", "spock" , "paper", "lizard", "scissors"]
+  OPTION = ["rock", "spock", "paper", "lizard", "scissors"]
 
-  def initialize(p1, p2 = "Computer", score1 = Score.create, score2 = Score.create)
-    @p1 = p1
-    @p2 = p2
-    @p1_score = score1
-    @p2_score = score2
+  def initialize(player_1, player_2 = "Computer", score_1 = Score.create, score_2 = Score.create)
+    @player_1 = player_1
+    @player_2 = player_2
+    @p1_score = score_1
+    @p2_score = score_2
   end
 
-  def self.create(p1, p2)
-    @game = Game.new(p1, p2)
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
   end
 
   def self.instance
@@ -30,17 +30,17 @@ class Game
   end
 
   def compare
-    @result = (convert(@p1_selection)) - (convert(@comp_selection))
+    @result = convert(@p1_selection) - convert(@comp_selection)
   end
 
   def message
     case @result % 5
-    when 1,2
+    when 1, 2
       @p1_score.increase
-      "#{@p1} wins"
-    when 3,4
+      "#{@player_1} wins"
+    when 3, 4
       @p2_score.increase
-      "#{@p2} wins"
+      "#{@player_2} wins"
     when 0
       "It's a tie"
     end
@@ -53,5 +53,3 @@ class Game
   end 
 
 end
-
-
