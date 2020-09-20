@@ -1,7 +1,8 @@
-<h2>okay lets play</h2> <%= @game.name %>
+<h2>okay lets play</h2> <%= @game.player.name %>
 
-<h1> Please enter your name </h1>
-<form action="/name" method="post">
-  <input type="text" name="name">
-  <input type="submit" value="Submit">
+<h1> Please select your weapon </h1>
+<form action="/deciding"> 
+<input type="radio" name="rock" value="rock" id="rock">
+<input type="radio" name="rock" value="paper" id="rock">
+<input type="radio" name="rock" value="scissors" id="rock">
 </form>

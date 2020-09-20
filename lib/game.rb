@@ -1,9 +1,13 @@
+require_relative 'bot'
+require_relative 'player'
+
 class Game
 
-  attr_reader :name
+  attr_reader :player, :bot
 
   def initialize(name)
-    @name = name
+    @player = Player.new(name)
+    @bot = Bot.new
   end
 
   def self.create(name)

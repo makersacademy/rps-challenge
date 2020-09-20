@@ -1,7 +1,13 @@
 require 'sinatra'
-require_relative 'lib/game'
+require './lib/game'
+require './lib/bot'
+require './lib/player'
 
 class Rps < Sinatra::Base
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do 
     erb :index
@@ -15,8 +21,21 @@ class Rps < Sinatra::Base
   end
 
   get "/play" do
-    @game = Game.instance
     erb :play
+  end
+
+  post "/deciding" do
+    
+    if @game.bot.move == 'scissors' && @game.player.move == 'rock'
+      redirect "/win"
+    else
+      erb :index
+    end
+  end
+
+  get "/win" do
+    @game = Game.instance
+    erb :win
   end
 
   run! if app_file == $0
