@@ -25,6 +25,9 @@
   <input type='submit' value='Spock'>
 </form>
 
+<% if @game.p1_selection %>
+  <%= @game.p1 %> chose <%= @game.p1_selection %>
+<% end %>
 
 
 

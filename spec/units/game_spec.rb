@@ -15,14 +15,14 @@ describe Game do
 
   describe '#p1_choice' do
     it 'returns the value of player choice' do
-      expect(game.p1_choice('lizard')).to eq 4
+      expect(game.p1_choice('lizard')).to eq 'lizard'
     end
   end 
 
   describe '#randomiser' do
     it 'returns a random selection' do
       srand(4)
-      expect(game.randomiser).to eq 3
+      expect(game.randomiser).to eq 'paper'
     end
   end
 

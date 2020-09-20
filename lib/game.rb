@@ -1,8 +1,8 @@
 class Game
 
-  attr_reader :p1, :p2
-  
-  OPTION = {"rock" => 1, "spock" => 2, "paper" => 3, "lizard" => 4, "scissors" => 5}
+  attr_reader :p1, :p2, :p1_selection, :comp_selection
+
+  OPTION = ["rock", "spock" , "paper", "lizard", "scissors"]
 
   def initialize(p1, p2 = "AI")
     @p1 = p1
@@ -18,15 +18,15 @@ class Game
   end
 
   def p1_choice(selection)
-    @p1_selection = OPTION[selection]
+    @p1_selection = selection
   end
 
   def randomiser
-    @comp_selection = OPTION[OPTION.keys.sample]
+    @comp_selection = OPTION.sample
   end
 
   def compare
-    @result = @p1_selection - @comp_selection
+    @result = (convert(@p1_selection)) - (convert(@comp_selection))
   end
 
   def message
@@ -38,13 +38,13 @@ class Game
     when 0
       "It's a tie"
     end
-  end
-
+  end 
+  
+  private
+  
+  def convert(option)
+    OPTION.find_index(option) + 1
+  end 
 
 end
 
-game = Game.new("pinky", "the brain")
-p game.p1_choice('rock')
-p game.randomiser
-p game.compare
-p game.message

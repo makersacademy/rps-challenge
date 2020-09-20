@@ -23,8 +23,8 @@ class RPSLS < Sinatra::Base
   end
 
   post '/selection' do
-    @selection = params[:selection]
-    "#{@game.p1} chose #{@selection}"
+    @game.p1_choice(params[:selection])
+    redirect '/play'
   end
 
 
