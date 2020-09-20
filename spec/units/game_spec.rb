@@ -37,46 +37,54 @@ describe Game do
 
   describe '#play' do
     it "returns 'P1' if P1 move = rock and P2 move = scissors" do
-      expect(game.play).to eq('P1')
+      game.play
+
+      expect(game.result).to eq('P1')
     end
 
     it "returns 'P1' if P1 move = paper and P2 move = rock" do
       allow(player_1).to receive(:move).and_return('paper')
       allow(player_2).to receive(:move).and_return('rock')
+      game.play
 
-      expect(game.play).to eq('P1')
+      expect(game.result).to eq('P1')
     end
 
     it "returns 'P1' if P1 move = scissors and P2 move = paper" do
       allow(player_1).to receive(:move).and_return('scissors')
       allow(player_2).to receive(:move).and_return('paper')
+      game.play
 
-      expect(game.play).to eq('P1')
+      expect(game.result).to eq('P1')
     end
 
     it "returns 'DRAW' if P1 move is the same as P2 move" do
       allow(player_2).to receive(:move).and_return('rock')
+      game.play
 
-      expect(game.play).to eq('DRAW')
+      expect(game.result).to eq('DRAW')
     end
 
     it "returns 'P2' if P1 move = rock and P2 move = paper" do
       allow(player_2).to receive(:move).and_return('paper')
+      game.play
 
-      expect(game.play).to eq('P2')
+      expect(game.result).to eq('P2')
     end
 
     it "returns 'P2' if P1 move = paper and P2 move = scissors" do
       allow(player_1).to receive(:move).and_return('paper')
+      game.play
 
-      expect(game.play).to eq('P2')
+      expect(game.result).to eq('P2')
     end
 
     it "returns 'P2' if P1 move = scissors and P2 move = rock" do
       allow(player_1).to receive(:move).and_return('scissors')
       allow(player_2).to receive(:move).and_return('rock')
+      game.play
 
-      expect(game.play).to eq('P2')
+      expect(game.result).to eq('P2')
     end
 
     it 'adds 1 to the win_streak if P1 wins' do

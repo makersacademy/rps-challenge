@@ -1,7 +1,7 @@
 require_relative './cpu_player'
 
 class Game
-  attr_reader :p1, :p2, :win_streak
+  attr_reader :p1, :p2, :result, :win_streak
 
   WINNING_MOVES = {
     rock: :scissors,
@@ -26,7 +26,6 @@ class Game
   def play
     @result = determine_result
     update_win_streak
-    @result
   end
 
   private

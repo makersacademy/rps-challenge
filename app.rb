@@ -26,13 +26,12 @@ class RPS < Sinatra::Base
   post '/move' do
     @game.p1.make_move(params[:p1_move])
     @game.p2.make_move('n/a')
+    @game.play
 
     redirect to('/result')
   end
 
   get '/result' do
-    @result = @game.play
-
     erb(:result)
   end
 

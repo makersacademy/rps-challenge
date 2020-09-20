@@ -5,16 +5,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Kumbh+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 
-<body>
-<h1><%=
-  if @result == 'P1'
-    'You won!'
-  elsif @result == 'P2'
-    'You lost'
+<%
+  if @game.result == 'P1'
+    @result_msg = 'You won!'
+    @result_class = 'win'
+  elsif @game.result == 'P2'
+    @result_msg = 'You lost'
+    @result_class = 'lose'
   else
-    'Draw'
+    @result_msg = 'Draw'
+    @result_class = 'draw'
   end
-%></h1><br>
+%>
+
+
+<body class="<%= @result_class %>">
+<h1><%= @result_msg %></h1><br>
 
 <h2><%= @game.p1.move.capitalize %> vs <%= @game.p2.move.capitalize %></h2>
 <p><%= @game.p1.name %>'s win streak: <%= @game.win_streak %></p>

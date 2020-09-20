@@ -16,6 +16,18 @@ body {
     flex-direction: column;
 }
 
+.lose {
+    background: linear-gradient(0deg, #d53369 0%, #daae51 100%);
+}
+
+.win {
+    background: linear-gradient(0deg, #9ebd13 0%, #008552 100%);
+}
+
+.draw {
+    background: linear-gradient(0deg, #4b6cb7 0%, #182848 100%);
+}
+
 h1 {
     font-family: 'Josefin Sans', sans-serif;
     color: whitesmoke;
