@@ -1,5 +1,7 @@
 require "sinatra"
 require "./lib/player.rb"
+require "./lib/game.rb"
+require "./lib/bot.rb"
 
 class RPS < Sinatra::Base
   before do
