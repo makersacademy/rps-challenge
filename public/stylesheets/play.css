@@ -1,0 +1,45 @@
+.play {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.form { 
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.options {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center; 
+}
+
+input[type='submit'] {
+  margin: 10px;
+  font-size: medium;
+  border-radius: 15px;
+  width: 100px;
+  background-color: #fff;
+  font-family: Oswald;
+}
+
+input[type='submit']:hover {
+ background-color: #000;
+ color: #fff; 
+}
+
+h3 {
+  margin: 20px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}

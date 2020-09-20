@@ -1,0 +1,32 @@
+
+.icons {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form input {
+  padding: 10px;
+  margin: 20px;
+}
+
+.form input[type='submit'] {
+  margin: 10px;
+  border-radius: 15px;
+  width: 50%;
+  background-color: #fff;
+  font-family: Oswald;
+}
+
+.form input[type='submit']:hover {
+ background-color: #000;
+ color: #fff; 
+}
