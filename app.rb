@@ -3,6 +3,7 @@ require './lib/game'
 
 class RPS < Sinatra::Base
 
+  enable :sessions
   set :session_secret, 'super secret'
 
   get '/' do
@@ -16,6 +17,7 @@ class RPS < Sinatra::Base
   end
 
   get '/choose-move' do
+    @game = Game.instance
     erb(:choose_move)
   end
 

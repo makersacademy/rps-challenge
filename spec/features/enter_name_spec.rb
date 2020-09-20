@@ -5,9 +5,7 @@ feature 'Enter name' do
   end
 
   scenario 'Submit name takes user to the choose-move page' do
-    visit '/'
-    fill_in 'name', with: 'Veronica'
-    click_button "Let's go"
+    enter_name_and_start
     expect(page).to have_current_path('/choose-move')
   end
 end
