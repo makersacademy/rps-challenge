@@ -21,17 +21,19 @@ WIN = {
 	def self.create(player)
   	@game = Game.new(player)
 	end
-	
-	def self.instance
-		@game
-	end
-	def result
-		if @player.move == @comp.move
-			return "It's a draw"
-		elsif WIN[@player.move].include?(@comp.move)
-			return "#{@player.name} is a winner!!!"
-		else
-			return "Computer won!"
+
+		def self.instance
+  		@game
 		end
-	end
-end 
+
+		def result
+			if @player.move == @comp.move
+				return "It's a draw"
+			elsif @player.move == "rock" && (@comp.move == "lizard" || @camp.move == scissor)
+			elsif WIN[@player.move].include?(@comp.move)
+				return "#{@player.name} is a winner!!!"
+			else
+				return "Computer won!"
+			end 
+		end
+	end 

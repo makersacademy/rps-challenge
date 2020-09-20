@@ -29,8 +29,9 @@ input[type="submit"] {
   <script src="https://kit.fontawesome.com/95965157ef.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet"></head>
 </head>
-<h2> You chose <%= @game.player.move%> <br> Computer chose <%= @game.comp.move%> </h2><br>
-<h1> <%= @game.result%> <h1>
+<h2> You chose <%= @game.player.move%><h2> <br>
+<h2> Computer chose <%= @game.comp.move%> <br>
+<%= @game.result%>
 <form action='/newgame' method='post'>
 <input type='submit' value='Play again'>
 </form>

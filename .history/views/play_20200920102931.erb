@@ -1,36 +1,37 @@
 <style> 
 body {
-  background-color: #FFFAFA;
+  background-color : #FFFAFA;
   text-align : center;
   font-family: 'Notable', sans-serif;
-  margin-top: 70px;
 }
 input[type="submit"] {
     -moz-appearance: button;
     -moz-binding: none;
     -moz-box-sizing: border-box;
     -moz-user-select: none;
-    background-color: #AFEEEE;
+    background-color: buttonface;
     border: 2px outset buttonface;
     color: buttontext;
     cursor: default;
-    font-family: 'Notable', sans-serif;;
+    font: -moz-button;
     line-height: normal;
     padding: 0 6px;
     text-align: center;
     text-shadow: none;
     white-space: pre;
-    width: 300px;
-    height: 55px;
-    margin: 40px 10px 10px;
 }
 </style>
 <head>
   <script src="https://kit.fontawesome.com/95965157ef.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet"></head>
 </head>
-<h2> You chose <%= @game.player.move%> <br> Computer chose <%= @game.comp.move%> </h2><br>
-<h1> <%= @game.result%> <h1>
-<form action='/newgame' method='post'>
-<input type='submit' value='Play again'>
+<body>
+<h1> <%= @game.player.name %> select your move!</h1>
+<form action="/move" method="post">
+<input type='submit' name='move' value='rock'>
+<input type="submit" name='move'value='scissors'>
+<input type='submit'name='move' value='paper'>
+<input type='submit' name='move' value='lizard'>
+<input type='submit'name='move'value='spock'>
 </form>
+</body>

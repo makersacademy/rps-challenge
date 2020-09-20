@@ -3,7 +3,6 @@ body {
   background-color: #FFFAFA;
   text-align : center;
   font-family: 'Notable', sans-serif;
-  margin-top: 70px;
 }
 input[type="submit"] {
     -moz-appearance: button;
@@ -16,21 +15,21 @@ input[type="submit"] {
     cursor: default;
     font-family: 'Notable', sans-serif;;
     line-height: normal;
-    padding: 0 6px;
+    padding: 20 6px;
     text-align: center;
     text-shadow: none;
     white-space: pre;
     width: 300px;
     height: 55px;
-    margin: 40px 10px 10px;
 }
 </style>
 <head>
   <script src="https://kit.fontawesome.com/95965157ef.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet"></head>
 </head>
-<h2> You chose <%= @game.player.move%> <br> Computer chose <%= @game.comp.move%> </h2><br>
-<h1> <%= @game.result%> <h1>
+<h2> You chose <%= @game.player.move%><h2> <br>
+<h2> Computer chose <%= @game.comp.move%> <br>
+<%= @game.result%>
 <form action='/newgame' method='post'>
 <input type='submit' value='Play again'>
 </form>
