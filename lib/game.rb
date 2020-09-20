@@ -21,4 +21,8 @@ class Game
   def player_wins?(player_move, bot_move)
     [['rock', 'scissors'], ['scissors', 'paper'], ['paper', 'rock']].include?([player_move, bot_move])
   end
+
+  def player_loses?(player_move, bot_move)
+    [['scissors', 'rock'], ['paper', 'scissors'], ['rock', 'paper']].include?([player_move, bot_move])
+  end
 end

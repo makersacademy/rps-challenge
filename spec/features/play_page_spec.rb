@@ -90,3 +90,11 @@ feature 'allows user to play again' do
     expect(page).to have_content "Please select your weapon"
   end
 end
+
+feature 'no selection is made' do
+  scenario 'user plays a game without choseing a weapon' do
+    enter_name
+    click_button 'Submit'
+    expect(page).to have_content "muppet"
+  end
+end
