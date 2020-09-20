@@ -7,7 +7,6 @@ class RPS < Sinatra::Base
     enable :sessions
     
     get '/' do
-    "Hello world!!!"
     erb :index #player register name
     end
 

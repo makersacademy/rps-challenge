@@ -1,0 +1,52 @@
+
+body {
+    background:  #FF59C7;
+}
+header {
+    background: red;
+    margin: 20px;
+    font-family: 'Paytone One'; font-size: 30px;
+    text-align: center;
+    color:  #FFA6FC;
+}
+
+section {
+    height: 500px;
+    background: url("https://media3.giphy.com/media/lMameLIF8voLu8HxWV/giphy.gif");
+    background-repeat: repeat;
+    font-family: 'Paytone One'; font-size: 100px;
+    color: yellow;
+}
+
+input[type=submit] {
+    background-color: blue;
+    padding: 15px 40px;
+    color: #34ccd1;
+}
+input[type=text] {
+    background-color: #8442f5;
+    color: #e0dee3;
+}
+
+.marginauto {
+    margin: 10px auto 20px;
+    display: block;
+}
+
+
+.button {
+    font: bold 11px Arial;
+    border-left: 10px solid #ffa6fc;
+    text-decoration: none;
+    background-color: #ffa6fc;
+    color: #333333;
+    padding: 20px 60px 20px 60px;
+    border-top: 10px solid #ff94e0;
+    border-right: 10px solid #000000;
+    border-bottom: 10px solid#000000;
+}
+
+.button_position {
+    text-align: center;
+
+}
