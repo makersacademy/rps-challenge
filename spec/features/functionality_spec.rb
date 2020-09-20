@@ -33,9 +33,12 @@ feature "naming capability" do
     srand(15)
     click_button "scissors"
     click_link "Play Again?"
-    click_button "rock"
-    click_linkk "Play Again?"
-    click_button "rock"
-    expect(page).to have_content "Contestant: Ollie Wins: 2 Losses:1 Draws: 0\nContestant: Computer Wins: 1 Losses: 2, Draws: 0"
+    srand(15)
+    click_button "paper"
+    click_link "Play Again?"
+    srand(15)
+    click_button "paper"
+    click_link "Play Again?"
+    expect(page).to have_content "Contestant: Ollie Wins: 2 Losses: 1 Draws: 0\nContestant: Computer Wins: 1 Losses: 2 Draws: 0"
   end
 end
