@@ -2,13 +2,12 @@ require 'player'
 require 'game'
 
 describe Game do
-  let(:name) {double("name")}
-  let(:player_1) {Player.new(name)}
+  let(:player_1) {double("Player", name: 'Farhaan')}
   subject(:game) {Game.new(player_1)}
   let(:input) {"rock"}
   
   it 'stores the names of the player 1' do
-    expect(game.player1).to eq name 
+    expect(game.player1).to eq 'Farhaan' 
   end
 
   it 'default name of player 2 is Computer' do
