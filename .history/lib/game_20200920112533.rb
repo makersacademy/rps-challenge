@@ -5,12 +5,13 @@ class Game
 
 	attr_accessor :player, :comp
 
-WIN = { rock: ["lizard", "scissors"],
+WIN = {
+	rock: ["lizard", "scissors"],
 	paper: ["rock", "spock"],
 	scissors: ["paper", "lizard"],
 	lizard: ["paper", "spock"],
-	spock: ["scissors", "rock"] }
-
+	spock: ["scissors", "rock"]
+}
 	def initialize(player)
 		@player = player
 		@comp = Comp.new
@@ -23,7 +24,6 @@ WIN = { rock: ["lizard", "scissors"],
 	def self.instance
 		@game
 	end
-
 	def result
 		if @player.move == @comp.move
 			return "It's a draw"
@@ -31,6 +31,8 @@ WIN = { rock: ["lizard", "scissors"],
 			return "#{@player.name} is a winner!!!"
 		elsif WIN[(@comp.move).to_sym].include?(@player.move)
 			return "Computer won"
+		else
+			return "This is not working!"
 		end
 	end
 end 

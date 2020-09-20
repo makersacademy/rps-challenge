@@ -31,6 +31,8 @@ WIN = { rock: ["lizard", "scissors"],
 			return "#{@player.name} is a winner!!!"
 		elsif WIN[(@comp.move).to_sym].include?(@player.move)
 			return "Computer won"
+		else
+			return "This is not working!"
 		end
 	end
 end 

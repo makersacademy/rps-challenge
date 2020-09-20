@@ -24,13 +24,15 @@ WIN = { rock: ["lizard", "scissors"],
 		@game
 	end
 
-	def result
-		if @player.move == @comp.move
+	def result(player, comp)
+		if player.move == comp.move
 			return "It's a draw"
-		elsif WIN[(@player.move).to_sym].include?(@comp.move)
-			return "#{@player.name} is a winner!!!"
-		elsif WIN[(@comp.move).to_sym].include?(@player.move)
+		elsif WIN[(player.move).to_sym].include?(comp.move)
+			return "#{player.name} is a winner!!!"
+		elsif WIN[(comp.move).to_sym].include?(player.move)
 			return "Computer won"
+		else
+			return "This is not working!"
 		end
 	end
 end 
