@@ -29,7 +29,7 @@ class Game
 
     when ["Rock", "Paper"], ["Rock", "Spock"], ["Paper", "Scissors"], ["Paper", "Lizard"], ["Scissors", "Rock"], ["Scissors", "Spock"], ["Lizard", "Rock"], ["Lizard", "Scissors"], ["Spock", "Paper"], ["Spock", "Lizard"]
      
-      "You lose, #{@computer_play}, beats #{@item}" 
+      "You lose, #{@computer_play} beats #{@item}" 
    
     end
   end 

@@ -13,7 +13,7 @@ describe Game do
   end
   describe "#win?" do
     it 'returns lose' do
-      expect(game.win?).to eq "You lose"
+      expect(game.win?).to eq "You lose, Paper beats Rock"
     end
   end
 end

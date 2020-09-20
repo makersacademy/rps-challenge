@@ -4,7 +4,7 @@ feature 'Playing RPS' do
 
   before do
     enter_name
-    srand(4)
+    srand(10)
   end
 
   scenario 'expect Rock/Paper/Scissors buttons to be on page' do
@@ -33,7 +33,7 @@ feature 'Playing RPS' do
     expect(page).to have_content "You lose"
   end
   scenario 'Drawing' do
-    click_button "Scissors"
+    click_button "Lizard"
     expect(page).to have_content "Draw"
   end   
 end
