@@ -1,6 +1,7 @@
 
 require 'sinatra/base'
 require './lib/player'
+require './lib/comp'
 require './lib/game'
 class RPS < Sinatra::Base
 	enable :sessions
@@ -13,6 +14,8 @@ class RPS < Sinatra::Base
 	end
 	
 	post '/name' do
+		#player = Player.new(params[:name])
+		#comp = Comp.new
 		@game = Game.create(Player.new(params[:name]))
   	redirect '/play'
 	end
@@ -24,7 +27,7 @@ class RPS < Sinatra::Base
 
 	post '/move' do 
 		@game.player.move = params[:move]
-		@game.bot
+		@game.comp_move
 		redirect '/result'
 	end
 

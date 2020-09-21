@@ -15,6 +15,7 @@ class Game
 
 	def initialize(player)
 		@player = player
+		@comp = Comp.new
 	end 
 
 	def self.create(player)
@@ -30,9 +31,9 @@ class Game
 	end
 
 	def result(player_move)
-		if WIN[(@player.move).to_sym].include?(@bot_move)
+		if WIN[(@player_move).to_sym].include?(@bot_move)
 			return "#{@player.name} is a winner!!!"
-		elsif  @player.move == @bot_move
+		elsif  @player.move == @comp_move
 			return "It's a draw"
 		else
 			return "Computer won!"

@@ -1,5 +1,5 @@
 require './lib/player.rb'
-#require './lib/comp.rb'
+require './lib/comp.rb'
 
 class Game 
 
@@ -15,6 +15,7 @@ class Game
 
 	def initialize(player)
 		@player = player
+		@comp = Comp.new
 	end 
 
 	def self.create(player)
@@ -25,14 +26,10 @@ class Game
 		@game
 	end
 
-	def bot
-		@bot_move = ["rock", "paper", "scissors", "lizard", "spock"].sample
-	end
-
-	def result(player_move)
-		if WIN[(@player.move).to_sym].include?(@bot_move)
+	def result
+		if WIN[(player.move).to_sym].include?(comp.move)
 			return "#{@player.name} is a winner!!!"
-		elsif  @player.move == @bot_move
+		elsif  player.move == comp.move
 			return "It's a draw"
 		else
 			return "Computer won!"

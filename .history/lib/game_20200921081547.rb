@@ -15,6 +15,7 @@ class Game
 
 	def initialize(player)
 		@player = player
+		@comp = Comp.new
 	end 
 
 	def self.create(player)

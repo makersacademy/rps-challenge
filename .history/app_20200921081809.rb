@@ -13,6 +13,8 @@ class RPS < Sinatra::Base
 	end
 	
 	post '/name' do
+		#player = Player.new(params[:name])
+		#comp = Comp.new
 		@game = Game.create(Player.new(params[:name]))
   	redirect '/play'
 	end
