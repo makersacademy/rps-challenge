@@ -2,7 +2,7 @@ require_relative 'score'
 
 class Game
 
-  attr_reader :player_1, :player_2, :p1_selection, :comp_selection, :p1_score, :p2_score
+  attr_reader :player_1, :player_2, :p1_selection, :p2_selection, :p1_score, :p2_score
 
   OPTION = ["rock", "spock", "paper", "lizard", "scissors"]
 
@@ -26,11 +26,11 @@ class Game
   end
 
   def randomiser
-    @comp_selection = OPTION.sample
+    @p2_selection = OPTION.sample
   end
 
   def compare
-    @result = convert(@p1_selection) - convert(@comp_selection)
+    @result = convert(@p1_selection) - convert(@p2_selection)
   end
 
   def message
