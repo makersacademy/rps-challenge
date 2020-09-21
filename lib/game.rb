@@ -45,6 +45,10 @@ class Game
       "It's a tie"
     end
   end 
+
+  def clear_selection
+    @p1_selection = nil
+  end
   
   private
   

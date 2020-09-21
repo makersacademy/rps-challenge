@@ -11,4 +11,11 @@ describe Score do
       expect { p1_score.increase }.to change { p1_score.score }.by(1)
     end
   end
+
+  describe '#reset' do
+    it 'resets the score to zero' do
+      p1_score.increase
+      expect { p1_score.reset }.to change { p1_score.score }.by(-1)
+    end
+  end
 end

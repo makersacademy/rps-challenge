@@ -31,6 +31,13 @@ class RPSLS < Sinatra::Base
     @game.compare
     redirect '/play'
   end
+
+  post '/reset' do
+    @game.p1_score.reset
+    @game.p2_score.reset
+    @game.clear_selection
+    redirect '/play'
+  end
   
   run! if app_file == $0
 

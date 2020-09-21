@@ -95,4 +95,14 @@
   img {
     height: 25px;
     width: 25px
-  }​
+  }
+
+  input[id='reset'] {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer
+  }
+​

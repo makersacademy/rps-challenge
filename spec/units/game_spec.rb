@@ -50,7 +50,14 @@ describe Game do
       game.compare
       expect(game.message).to eq "It's a tie"
     end
+  end
 
+  describe '#clear_selection' do
+    it 'clears the player selection' do
+      game.p1_choice('paper')
+      game.clear_selection
+      expect(game.p1_selection).to eq nil
+    end
   end
 
 end

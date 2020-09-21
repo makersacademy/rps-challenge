@@ -44,4 +44,13 @@ feature 'score' do
     expect(page).to have_content 0
   end
 end
+
+feature 'reset' do
+  it 'resets the player scores' do
+    enter_names
+    20.times { find("[id='rock']").click }
+    click_button 'Reset scores'
+    expect(page).to have_content 0
+  end
+end
     

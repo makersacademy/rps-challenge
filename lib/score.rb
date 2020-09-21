@@ -17,5 +17,9 @@ class Score
   def increase
     @score += 1
   end
+
+  def reset
+    @score = 0
+  end
   
 end
