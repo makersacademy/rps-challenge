@@ -36,10 +36,25 @@ describe Game do
   end
 
   describe '#result' do
-    it 'expects to return win/lose or tie' do
+    it 'expects to return tie' do
       game.player1_choice('rock')
-      game.player2_choice('rock')
+      srand(2323)
+      game.computer_choice
       expect(game.result).to eq 'tie'
+    end
+
+    it 'expects to return win' do
+      game.player1_choice('rock')
+      srand(1234)
+      game.computer_choice
+      expect(game.result).to eq 'win'
+    end
+
+    it 'expects to return lose' do
+      game.player1_choice('scissors')
+      srand(567)
+      game.computer_choice
+      expect(game.result).to eq 'lose'
     end
   end
 
