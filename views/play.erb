@@ -1,0 +1,75 @@
+<head>
+  <title>RPSLS Game</title>
+  <link href="<%= url('/play.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div>
+<form action='/selection' method='post'>
+  <input type='hidden' name='selection' value='rock'>
+  <input id='rock' type='submit' value=''>
+</form>
+</div>
+
+<div>
+<form action='/selection' method='post'>
+  <input type='hidden' name='selection' value='paper'>
+  <input id='paper' type='submit' value=''>
+</form>
+
+<form action='/selection' method='post'>
+  <input type='hidden' name='selection' value='scissors'>
+  <input id='scissors' type='submit' value=''>
+</form>
+</div>
+
+<div>
+<form action='/selection' method='post'>
+  <input type='hidden' name='selection' value='lizard'>
+  <input id='lizard' type='submit' value=''>
+</form>
+
+<form action='/selection' method='post'>
+  <input type='hidden' name='selection' value='spock'>
+  <input id='spock' type='submit' value=''>
+</form>
+</div>
+
+<% if @game.p1_selection %>
+<p>
+  <%= @game.player_1 %> chose <img src='<%= @game.p1_selection %>.jpg' >
+  <%= @game.player_2 %> chose <img src='<%= @game.p2_selection %>.jpg' >
+</p>
+<p id='winner'>
+  <%= @game.message %>
+</p>
+<% end %>
+
+<h1 id='p1'>
+  <%= @game.player_1 %>
+</h1>
+<h1 id='p2'>
+  <%= @game.player_2 %>
+</h1>
+
+<h2 id='p1'>
+  <%= @game.p1_score.score %> 
+</h2>
+<h2 id='p2'>
+  <%= @game.p2_score.score %>
+</h2>
+
+</body>
+
+<footer>
+  <div>
+    <form action='/reset' method='post'>
+      <input class='reset' type='submit' value='Reset scores'>
+    </form>
+    <form action='/end' method='post'>
+      <input class='reset' type='submit' value='End game'>
+    </form>
+  </div>
+</footer>
+
+

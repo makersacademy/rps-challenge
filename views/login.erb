@@ -1,0 +1,23 @@
+<head>
+  <title>Login</title>
+  <link href="<%= url('/login.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+  
+  <form action='/names' method='post'>
+  <div>
+    Player 1
+    <input type='text' name="p1" >
+  </div>
+  <div>
+    Player 2
+    <input type='text' name='p2' value='Computer'>
+  </div>
+    <input id='submit' type='submit' value="Let's play!">
+  </form>
+  
+</body>
+
