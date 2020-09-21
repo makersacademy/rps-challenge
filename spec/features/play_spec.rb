@@ -14,9 +14,4 @@ feature 'RPS choices' do
     expect(page).to have_content 'Xavier picked Rock!'
   end
 
-  # scenario 'returns computer choice' do
-  #   sign_in_and_play
-  #   click_on 'Rock'
-  #   expect(page).to have_content 'Computer picked Paper!'
-  # end
 end
