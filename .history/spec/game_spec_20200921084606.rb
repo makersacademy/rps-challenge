@@ -14,7 +14,7 @@ describe Game do
   it "can return a rendom bot selections of moves" do 
     expect(game.bot).to eq('rock').or eq('paper').or eq('scissors').or eq('lizard').or eq('spock')
   end 
-
+  
   describe 'result' do
     it "can state if it's a draw" do
       player.choice('spock')

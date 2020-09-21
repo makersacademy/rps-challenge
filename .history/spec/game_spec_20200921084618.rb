@@ -12,7 +12,7 @@ describe Game do
   end
 
   it "can return a rendom bot selections of moves" do 
-    expect(game.bot).to eq('rock').or eq('paper').or eq('scissors').or eq('lizard').or eq('spock')
+    expect(game.bot).to eq('rock').or eq('paper').or eq('scissarss').or eq('lizard').or eq('spock')
   end 
 
   describe 'result' do
