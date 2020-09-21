@@ -12,10 +12,10 @@ describe Game do
 
 	describe "result" do
 		it "can state if it's a draw" do
-			player.choice('spock')
+			player.choice('rock')
 			srand(0)
 			game.bot
-			expect(game.result('rock')).to eq "It's a draw"
+			expect(game.result).to eq "It's a draw"
 		end 
 
 		it "can state when the computer won" do
@@ -28,8 +28,8 @@ describe Game do
 		it "can state when the player won" do 
 			player.choice('paper')
 			srand(0)
-			game.bot
-			expect(game.result('paper')).to eq "Ursie is a winner!!!"
+			comp
+			expect(game.result).to eq "Ursie is a winner!!!"
 		end
 	end 
 end

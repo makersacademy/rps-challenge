@@ -12,7 +12,7 @@ describe Game do
 
 	describe "result" do
 		it "can state if it's a draw" do
-			player.choice('spock')
+			player.choice('lizard')
 			srand(0)
 			game.bot
 			expect(game.result('rock')).to eq "It's a draw"
