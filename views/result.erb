@@ -1,0 +1,38 @@
+<style>
+center {
+  padding-top: 10px
+      }
+</style>
+<style>
+.div {
+  background-color: lightgrey;
+  width: 400px;
+  border: 5px solid grey;
+  padding: 50px;
+  margin: 1px;
+}
+<%if @game.win?.include?("lose") %>
+  body { background-image : url(https://www.onlygfx.com/wp-content/uploads/2018/10/10-blood-paint-splatter-background-1.jpg);
+
+  }
+  <%else%>
+body {
+    background-image : url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
+}
+<%end%>
+</style>
+
+<center>
+<head>
+
+<div class="div">
+
+<h2> You selected <%=@game.item%> </h2>
+<h2> The computer selected <%=@game.computer_play%>
+
+<h1> <%=@game.win?%></h1>
+<form action="/play">
+<input type="submit" value="Play again?">
+</form>
+
+</div>

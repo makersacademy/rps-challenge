@@ -1,0 +1,38 @@
+<style>
+center {
+  padding-top: 5px
+      }
+</style>
+<style>
+.div {
+  background-color: lightgrey;
+  width: 400px;
+  border: 5px solid darkgrey;
+  padding: 50px;
+  margin: 1px;
+}
+</style>
+
+<style>
+body {
+    background-image : url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
+}
+</style>
+<center>
+<body>
+<head>
+
+<div class="div"><h1>Good luck <%= @game.name %>.</h1>
+      <h2>Make your selection:</h2>
+      <br>
+      <br>
+         <form  method="POST" action="/result">
+  <input type="submit" name="item" value="Rock" />
+  <input type="submit" name="item" value="Paper" />
+  <input type="submit" name="item" value="Scissors" />
+  <input type="submit" name="item" value="Lizard" />
+  <input type="submit" name="item" value="Spock" />
+</form>
+</div>
+<img src="https://cdn.instructables.com/ORIG/FIU/AIWE/I7Q0TCUT/FIUAIWEI7Q0TCUT.jpg">
+
