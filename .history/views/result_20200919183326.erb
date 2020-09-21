@@ -1,0 +1,13 @@
+<style> 
+body {
+  background-color: #FFFAFA;
+  text-align : center;
+}
+</style>
+
+<h2> You chose <%= @game.player.move%><h2> <br>
+<h2> Computer chose <%= @game.comp.move%> <br>
+<%= @game.result %>
+<form action='/newgame' method='post'>
+<input type='submit' value='Play again'>
+</form>

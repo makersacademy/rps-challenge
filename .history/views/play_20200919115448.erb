@@ -1,0 +1,9 @@
+<h1> <%= @game.player.name %> </h1>
+<form action="/move" method="post">
+<select class='' name='move'>
+<option value='rock'>Rock</option>
+<option value='paper'>Paper</option>
+<option value='scissors'>Scissors</option>
+</select><br>
+<input type="submit" value="GO!">
+</form>
