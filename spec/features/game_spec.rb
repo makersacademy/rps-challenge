@@ -53,4 +53,12 @@ feature 'reset' do
     expect(page).to have_content 0
   end
 end
+
+feature 'end game' do
+  it 'resets back to login page' do
+    enter_names
+    click_button 'End game'
+    expect(page).to have_content "Rock, Paper, Scissors"
+  end
+end
     
