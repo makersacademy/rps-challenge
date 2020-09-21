@@ -33,16 +33,12 @@ class RPSLS < Sinatra::Base
   end
 
   post '/reset' do
-    @game.p1_score.reset
-    @game.p2_score.reset
-    @game.clear_selection
+    @game.reset
     redirect '/play'
   end
   
   post '/end' do
-    @game.p1_score.reset
-    @game.p2_score.reset
-    @game.clear_selection
+    @game.reset
     redirect '/'
   end
 

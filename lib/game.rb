@@ -46,7 +46,9 @@ class Game
     end
   end 
 
-  def clear_selection
+  def reset
+    @p1_score.reset
+    @p2_score.reset
     @p1_selection = nil
   end
   

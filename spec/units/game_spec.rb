@@ -52,10 +52,10 @@ describe Game do
     end
   end
 
-  describe '#clear_selection' do
+  describe '#reset' do
     it 'clears the player selection' do
       game.p1_choice('paper')
-      game.clear_selection
+      game.reset
       expect(game.p1_selection).to eq nil
     end
   end
