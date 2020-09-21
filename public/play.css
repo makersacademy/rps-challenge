@@ -51,6 +51,15 @@
     width: 158px;
     height: 158px;
     border: none;
+    border-radius: 79px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.05s
+  }
+
+  input:hover { 
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
   }
 
   input[id='spock'] {
@@ -58,15 +67,14 @@
     background-size: 158px;
     height: 157px;
     margin-left: 10px;
-    cursor: pointer;
   }
+
 
   input[id='scissors'] {
     background: url(scissors.jpg);
     background-size: 158px;
     margin-left: 85px;
     margin-bottom: 20px;
-    cursor: pointer;
   }
 
   input[id='lizard'] {
@@ -74,14 +82,12 @@
     background-size: 158px;
     height: 157px;
     margin-left: 30px;
-    cursor: pointer;
   }
 
   input[id='paper'] {
     background: url(paper.jpg);
     background-size: 158px;
     margin-bottom: 20px;
-    cursor: pointer;
   }
 
   input[id='rock'] {
@@ -89,7 +95,6 @@
     background-size: 158px;
     margin-left: 125px;
     background-repeat: no-repeat;
-    cursor: pointer;
   }
   
   img {
@@ -97,12 +102,13 @@
     width: 25px
   }
 
-  input[id='reset'] {
+  .reset {
     padding: 0;
     border: none;
+    border-radius: 158px;
     font: inherit;
     color: inherit;
     background-color: transparent;
-    cursor: pointer
+  
   }
 ​
