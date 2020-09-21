@@ -11,9 +11,9 @@ describe Game do
     expect(game.player).to eq player
   end
 
-  it "can return a rendom bot selections of moves" do 
+  it 'can return a rendom bot selections of moves' do
     expect(game.bot).to eq('rock').or eq('paper').or eq('scissors').or eq('lizard').or eq('spock')
-  end 
+  end
 
   describe 'result' do
     it "can state if it's a draw" do
