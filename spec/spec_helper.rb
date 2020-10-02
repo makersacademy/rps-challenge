@@ -1,6 +1,9 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require './app.rb'
+Capybara.app = Rps
+
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -18,3 +21,14 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+
+
+
+# ENV['RACK_ENV'] = 'test'
+# require 'capybara'
+# require 'rspec'
+# require 'capybara/rspec'
+# require './app.rb'
+# require 'features/web_helpers.rb'
+# Capybara.app = Battle
