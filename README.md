@@ -1,21 +1,33 @@
-# RPS Challenge
++ Rock Paper Scissors Challenge
 
-Instructions
--------
+++ How to run
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+```sh
+rackup config.ru
+```
 
-Task
-----
+Then access localhost on the port specified by rackup in a web browser.
 
-Knowing how to build web applications is getting us almost there as web developers!
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+++ Approach
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Having previously implemented Rock Paper Scissors as a terminal program using Python, making use of a master hash table to look up the result of different weapons combinations, I was keen to try a different approach.
+
+Exploring the principle of **Tell, Don't Ask**, I decided that an object representing a weapon (Rock or Paper or Scissors) was the appropriate entity for knowing the win or lose conditions for that weapon. I was also interested in experimenting with item factories (inspired by [Sandi Metz's approach to the Gilded Rose challenge](https://www.youtube.com/watch?v=8bZh5LMaSmE)), so I chose to convert user inputted weapons into weapon objects via a WeaponFactory module.
+
+Thinking about skinny controllers, I didn't want my controller (app.rb) to have much responsibility for running the Rock Paper Scissors game. Instead, I wanted it to delegate everything to a Game class, which could in turn look after the generation of the computer opponent's weapon and then find out the result of pitting those two weapons against each other.
+
+
+++ Challenges
+
+I'm still uncertain about mocking for randomness. I saw an example in the Battle challenge walkthrough where Rspec was used to modify the result of calling `Kernel.rand` in order to control the random elements in feature tests, and demonstrate expected winning or losing behaviour. I didn't particularly want my source code to use `Kernel.rand` since calling `['Rock', 'Paper', 'Scissors'].sample` is more readable. I therefore extracted this function out to a RandomWeapon class so that I could stub its outputs as part of my feature tests (`allow(RandomWeapon).to receive(:choose).and_return('Rock')`). I'm not sure if this is the best approach, since it removes part of my code base from being executed by my feature test. I also wasn't confident about the unit tests I wrote for RandomWeapon itself - they test validity of output, but do not really test randomness - although perhaps it's acceptable to lean on Ruby's built in random functionality in this way.
+
+I'm also uncertain about mocking item factories effectively. I found some disagreement online about whether it's really appropriate for a mock to return another mock. This seems to be because it isn't very in-keeping with the Law of Demeter - if the class you're testing needs to call functionality on an instance of a class, shouldn't it just instantiate that class itself, rather than reaching it through another object? In the case of my code, I decided it was acceptable for my mock WeaponFactory to return a mock weapon instance, since the entire point of WeaponFactory was to extract logic for choosing item types out of the Game class - Game doesn't mind what weapon the player chooses, it just needs an appropriate object that it can call #fight on. Really my Game class needed a mock weapon instance, it just happened to have to go through WeaponFactory to get to it.
+
+I did not commit at all while working on the project. This was lazy, and reflected that I struggled sometimes to trace a clear line through writing this code. There weren't many natural pauses, since I found myself accidentally writing tests after source code, having failed to identify what really needed testing, and constantly revisiting and second guessing my approach. The new layer of web application control logic seems to have brought back old bad habits of imagining source code/implementation detail before imagining tests.
+
+
+++ The Brief
 
 ```
 As a marketeer
@@ -26,60 +38,3 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!

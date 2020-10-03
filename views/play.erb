@@ -1,0 +1,12 @@
+<h1>Choose your weapon, <%= player %></h1>
+<form action='/attack' method='post'>
+  <input type="radio" name="weapon" value="Rock">
+  <label for="Rock">Rock</label><br>
+  <input type="radio" name="weapon" value="Paper">
+  <label for="Paper">Paper</label><br>
+  <input type="radio" name="weapon" value="Scissors">
+  <label for="other">Scissors</label>
+  <p class="button">
+    <button type="submit">Go!</button>
+  </p>
+</form>
