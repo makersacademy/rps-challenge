@@ -8,7 +8,7 @@ feature 'result of game' do
   let(:draws_against) { 'Rock' }
 
   before do
-    submit_name(player_name)
+    play_solo(player_name)
     # choose_weapon(chosen_weapon)
   end
 

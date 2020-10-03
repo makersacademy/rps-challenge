@@ -3,6 +3,7 @@ feature 'player selects their weapon' do
   
   scenario 'full choice of weapons provided' do
     submit_name
+    play_solo
     expect(page).to have_content 'Rock'
     expect(page).to have_content 'Paper'
     expect(page).to have_content 'Scissors'
@@ -10,6 +11,7 @@ feature 'player selects their weapon' do
   
   scenario 'chosen weapon shown' do
     submit_name
+    play_solo
     choose option: chosen_weapon
     click_button 'Go!'
     expect(page).to have_content "You chose #{chosen_weapon}"
