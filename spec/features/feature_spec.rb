@@ -4,6 +4,6 @@ require 'capybara/rspec'
 feature 'Visit app homepage' do
   it 'Displays a welcome message' do
     visit('/')
-    expect(page).to have_content 'Are you ready for a good old game of ROCK, PAPER, SCISSORS?'
+    expect(page).to have_content 'Would you like to play ROCK, PAPER, SCISSORS?'
   end
 end
