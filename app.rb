@@ -23,7 +23,6 @@ class RPS < Sinatra::Base
     @computer = Computer.new.weapon
     @player = Player.new(@name, @weapon)
     @game = Game.new(@player, @computer)
-    @game.result
     erb :result
   end
 

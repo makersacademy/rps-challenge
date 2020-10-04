@@ -1,9 +1,9 @@
 require 'game.rb'
 
 describe Game do
-  subject(:game) { Game.new(player, computer) }
-  let(:player) { double :player, weapon: :PAPER }
-  let(:computer) { double :computer, weapon: :SCISSORS }
+  subject(:game) { Game.new(player, computer.weapon) }
+  let(:player) { double :player, weapon: 'PAPER' }
+  let(:computer) { double :computer, weapon: 'SCISSORS' }
   
   it 'the computer wins' do
     expect(game.result).to eq 'Computer won!'
@@ -11,9 +11,9 @@ describe Game do
 end
 
 describe Game do
-  subject(:game) { Game.new(player, computer) }
-  let(:player) { double :player, weapon: :ROCK }
-  let(:computer) { double :computer, weapon: :SCISSORS }
+  subject(:game) { Game.new(player, computer.weapon) }
+  let(:player) { double :player, weapon: 'ROCK' }
+  let(:computer) { double :computer, weapon: 'SCISSORS' }
 
   it 'the player wins' do
     expect(game.result).to eq 'You win!'
@@ -21,9 +21,9 @@ describe Game do
 end
 
 describe Game do
-  subject(:game) { Game.new(player, computer) }
-  let(:player) { double :player, weapon: :PAPER }
-  let(:computer) { double :player, weapon: :PAPER }
+  subject(:game) { Game.new(player, computer.weapon) }
+  let(:player) { double :player, weapon: 'PAPER' }
+  let(:computer) { double :player, weapon: 'PAPER' }
   
   it 'it is a draw' do
     expect(game.result).to eq 'It is a draw!'
