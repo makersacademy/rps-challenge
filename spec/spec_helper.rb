@@ -11,6 +11,11 @@ SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
+require './app'
+require './spec/features/web_helpers'
+
+Capybara.app = RockPaperScissors
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts

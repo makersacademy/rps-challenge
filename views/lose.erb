@@ -1,0 +1,11 @@
+<h1><%= player1 %> vs <%= player2 %></h1>
+<% case game_type %>
+<% when "solo" %>
+  <h2>You chose <%= game.weapon1 %></h2>
+  <h2>I chose <%= game.weapon2 %></h2>
+  <p>Sorry, <%= player1 %>, you lost!</p>
+<% when "multiplayer" %>
+  <h2><%= player1 %> chose <%= game.weapon1 %></h2>
+  <h2><%= player2 %> chose <%= game.weapon2 %></h2>
+  <p><%= player2 %> wins!</p>
+<% end %>
