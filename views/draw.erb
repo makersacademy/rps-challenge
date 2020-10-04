@@ -1,2 +1,11 @@
-<h2>You chose <%= game.weapon1%></h2>
-<p>Oh, that was a draw, <%= player %>.</p>
+<h1><%= player1 %> vs <%= player2 %></h1>
+<% case game_type %>
+<% when "solo" %>
+  <h2>You chose <%= game.weapon1 %></h2>
+  <h2>I chose <%= game.weapon2 %></h2>
+  <p>Oh, that was a draw, <%= player1 %>.</p>
+<% when "multiplayer" %>
+  <h2><%= player1 %> chose <%= game.weapon1 %></h2>
+  <h2><%= player2 %> chose <%= game.weapon2 %></h2>
+  <p>Oh, that was a draw.</p>
+<% end %>

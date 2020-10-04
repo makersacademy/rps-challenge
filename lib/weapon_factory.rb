@@ -10,7 +10,7 @@ module WeaponFactory
   }
 
   def self.create(weapon)
-    self.klass_for(weapon).new
+    klass_for(weapon).new
   end
 
   def self.klass_for(weapon)

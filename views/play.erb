@@ -1,12 +1,21 @@
 <h1><%= player1 %> vs <%= player2 %></h1>
-<h2>Choose your weapon, <%= player1 %></h2>
 <form action='/attack' method='post'>
-  <input type="radio" name="weapon" value="Rock">
+  <label for="weapon1">Choose your weapon, <%= player1 %></label>
+  <input type="radio" name="weapon1" id="rock1" value="Rock">
   <label for="Rock">Rock</label><br>
-  <input type="radio" name="weapon" value="Paper">
+  <input type="radio" name="weapon1" id="paper1" value="Paper">
   <label for="Paper">Paper</label><br>
-  <input type="radio" name="weapon" value="Scissors">
+  <input type="radio" name="weapon1" id="scissors1" value="Scissors">
   <label for="other">Scissors</label>
+  <% if game_type == "multiplayer" %>
+  <label for="weapon2">Choose your weapon, <%= player2 %></label>
+  <input type="radio" name="weapon2" id="rock2" value="Rock">
+  <label for="Rock">Rock</label><br>
+  <input type="radio" name="weapon2" id="paper2" value="Paper">
+  <label for="Paper">Paper</label><br>
+  <input type="radio" name="weapon2" id="scissors2" value="Scissors">
+  <label for="other">Scissors</label>
+  <% end %>
   <p class="button">
     <button type="submit">Go!</button>
   </p>
