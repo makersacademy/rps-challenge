@@ -1,27 +1,30 @@
 require 'sinatra/base'
 require './lib/game.rb'
-
+require './lib/opponent.rb'
+require './lib/player.rb'
 class Rps < Sinatra::Base
+  enable :sessions
+
 
 get '/' do
-erb :index
+  erb :index
 end
 
 
-get '/namesplaysingle' do
-erb :namessingle
+post '/name' do
+  @name = params[:name]
+  session[:name]= params[:name]
+  erb:play
 end
 
+get '/result' do
+  @name=session[:name]
+  @player_option=params[:shape]
+  @player=Player.new(@name,@player_option)
+  @opponent=Opponent.new.shape
+  @game=Game.new(@player,@opponent)
 
-post '/namesplaysingle' do
-  # $player_1 = Player.new(params[:player_1_name])
-  # $player_2 = Player.new(params[:player_2_name])
-  $game = Game.new(params[:player_1_name])
-  redirect '/playsingle'
+erb :result
 end
-get '/playsingle' do
- "sdfsdfsdf"
-end
-
 
 end
