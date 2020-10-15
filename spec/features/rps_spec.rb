@@ -5,9 +5,11 @@ require_relative "../../lib/app"
 
 Capybara.app = RPS
 
-feature "Shows the words RPS" do
-  scenario "Load the base page and display 'RPS" do
+feature "Allows the user to enter their name and see it displayed" do
+  scenario "User enters 'Dan' and sees it on the next page" do
     visit("/")
-    expect(page).to have_content "RPS"
+    fill_in :name, with: "Dan"
+    click_button "Submit"
+    expect(page).to have_content("Dan")
   end
 end
