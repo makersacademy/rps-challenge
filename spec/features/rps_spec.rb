@@ -30,4 +30,9 @@ feature "Rock, paper and scissors buttons" do
     click_link "Rock"
     expect(page).to have_content("You chose rock.")
   end
+
+  scenario "Name is still displayed after choice selected" do
+    click_link "Rock"
+    expect(page).to have_content("Dan")
+  end
 end
