@@ -1,2 +1,2 @@
-require_relative 'lib/app.rb'
-run StruggleTableFlipperApp
+require_relative "lib/app.rb"
+run RPS

@@ -9,4 +9,9 @@ class RPS < Sinatra::Base
     @name = params["name"]
     erb :game
   end
+
+  get "/game" do
+    @choice_text = "You chose #{params["choice"]}." if !params["choice"].nil?
+    erb :game
+  end
 end
