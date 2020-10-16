@@ -14,7 +14,7 @@ feature "Allows the user to enter their name and see it displayed" do
   end
 end
 
-feature "Rock, paper and scissors buttons" do
+feature "Rock, paper and scissors links" do
   before :each do
     visit("/")
     fill_in :name, with: "Dan"
@@ -35,4 +35,22 @@ feature "Rock, paper and scissors buttons" do
     click_link "Rock"
     expect(page).to have_content("Dan")
   end
+
+  scenario "clicking the link returns a successful status code" do
+    click_link "Rock"
+    expect(page.status_code).to eq(200)
+  end
+end
+
+feature "computer player" do
+  before :each do
+    srand(2020)
+    visit("/")
+    fill_in :name, with: "Dan"
+    click_button "Submit"
+  end
+  # scenario "Once you've selected your choice, so will the computer" do
+  #   click_link "Rock"
+  #   expect(page).to have_content("Your opponent chose Paper.")
+  # end
 end
