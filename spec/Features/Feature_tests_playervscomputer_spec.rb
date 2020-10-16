@@ -5,11 +5,30 @@ require_relative "../../lib/Game"
 Capybara.app = Selection
 
 feature "Players names appear" do
-  scenario "Player 1 and 2 enter names" do
+  scenario "Player 1 enters name" do
     visit("/playervscomp")
-    fill_in :Player1_name, with: "Tom"
-    fill_in :Player2_name, with: "Ben"
+    fill_in :Player_name, with: "Tom"
     click_button "Submit"
-    expect(page).to have_content "Welcome Tom and Ben"
+    expect(page).to have_content("Welcome Tom")
+  end
+end
+
+feature "Players names appear" do
+  scenario "Player selected Rock" do
+    visit("/playervscomp")
+    fill_in :Player_name, with: "Tom"
+    select('Rock', from: 'Playerselection')
+    click_button "Submit"
+    expect(page).to have_content("Welcome Tom you selected Rock")
+  end
+end
+
+feature "Players names appear" do
+  scenario "Player selected Rock" do
+    visit("/playervscomp")
+    fill_in :Player_name, with: "Tom"
+    select('Rock', from: 'Playerselection')
+    click_button "Submit"
+    expect(page).to have_text("Computer selected")
   end
 end

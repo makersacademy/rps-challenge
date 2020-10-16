@@ -1,7 +1,17 @@
 require 'game'
 
 describe Game do
-  context 'Player 1 wins' do
+describe 'Player vs comp' do
+  let(:subject) {Game.new("Paper", "Scissors")}
+  it 'expect computer selection to be rock' do
+    expect(subject).to receive(:rand).and_return(2)
+    expect(subject.comp_selection).to eq "Rock"
+  end
+
+end
+
+  describe 'player vs player' do
+  context '#result shows Player 1 wins' do
   it 'expects Paper to beat Rock and player 2 wins' do
     this = Game.new("Paper", "Rock")
     expect(this.result).to eq("Player 1 wins")
@@ -18,7 +28,7 @@ describe Game do
   end
   end
 
-  context 'Player 2 wins' do
+  context '#result shows Player 2 wins' do
   it 'expects Paper to beat Rock and player 2 wins' do
     this = Game.new("Rock", "Paper")
     expect(this.result).to eq("Player 2 wins")
@@ -35,7 +45,7 @@ describe Game do
   end
   end
 
-  context 'draw' do
+  context '#result shows draw' do
   it 'expects Paper to beat Rock and player 2 wins' do
     this = Game.new("Rock", "Rock")
     expect(this.result).to eq("Draw")
@@ -51,4 +61,5 @@ describe Game do
     expect(this.result).to eq("Draw")
   end
   end
+end
 end
