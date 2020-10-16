@@ -1,3 +1,10 @@
-<h1>Player 1 has gone.  Player 2 select:</h1>
+<h1> <%=@Player1_name%> has gone. <%=@Player2_name%> select: </h1>
 
-<h1> <%=@Player1_selection%> </h1>
+<form action="/result" method="post">
+<select name="Player2selection" id="Player2selection">
+<option value="Rock">Rock</option>
+<option value="Paper">Paper</option>
+<option value="Scissors">Scissors</option>
+</select>
+<input type="submit" value="Submit">
+</form>
