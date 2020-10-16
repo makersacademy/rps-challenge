@@ -8,10 +8,16 @@ feature "ask for the players name" do
     sign_in_and_play
     expect(page).to have_content "Meryl vs. Computer"
   end
+end
 
+
+feature "ask player for a move" do
    scenario "player choses rock/paper/scissors" do
+
     sign_in_and_play
-    click_button "Rock"
+    save_and_open_page
+    find_by_id('rock').check
+    click_on 'Make Move!'
     
     expect(page).to have_content "Meryl played rock"
    end

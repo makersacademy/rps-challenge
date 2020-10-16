@@ -2,6 +2,7 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base
   enable :sessions
+  attr_reader :name, :move
   
   get '/' do
     erb :index
@@ -18,13 +19,13 @@ class RPS < Sinatra::Base
   end
 
   post '/chooses_action' do
-    session[:Move] = params[:move]
-    redirct '/move'
+    session[:move] = params[:move]
+    redirect '/move'
   end
 
-  get 'move' do
-    @move = session[:Move]
-    you made a move
+  get '/move' do
+    @move = session[:move]
+    erb :move
   end
     run! if app_file == $0
 end
