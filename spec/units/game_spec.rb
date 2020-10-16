@@ -9,10 +9,26 @@ describe Game do
     end
   end
 
-  describe "#instance"
-  it "can create an instance of itself as a class variable and retrieve that instance" do
-    game = Game.create("Dan")
-    expect(Game.instance).to eq game
+  describe "#instance" do
+    it "can create an instance of itself as a class variable and retrieve that instance" do
+      game = Game.create("Dan")
+      expect(Game.instance).to eq game
+    end
+  end
+
+  describe "#random_choice" do
+    it "sometimes returns rock" do
+      srand 2020
+      expect(subject.random_choice).to eq "rock"
+    end
+    it "sometimes returns paper" do
+      srand 1066
+      expect(subject.random_choice).to eq "paper"
+    end
+    it "sometimes returns scissors" do
+      srand 1994
+      expect(subject.random_choice).to eq "scissors"
+    end
   end
 
   describe "#play" do

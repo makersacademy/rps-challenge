@@ -18,6 +18,10 @@ class Game < SimpleDelegator
     @game
   end
 
+  def random_choice
+    ["rock", "paper", "scissors"].sample
+  end
+
   def play(choice)
     computer_choice = random_choice
     if choice == computer_choice
