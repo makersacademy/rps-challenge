@@ -4,7 +4,6 @@ require_relative "./game"
 class RPS < Sinatra::Base
   before do
     @game = Game.instance
-    @name = @game.name if !@game.nil?
   end
 
   get "/" do
@@ -18,8 +17,12 @@ class RPS < Sinatra::Base
   end
 
   get "/game" do
-    @name = @game.name
-    @choice = params["choice"]
     erb :game
+  end
+
+  get "/result" do
+    @choice = params["choice"]
+    @result = @game.play(@choice)
+    erb :result
   end
 end
