@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rock Paper Scissors!</title>
+</head>
+
+<body>
+  <div style="text-align:center">
+    <p style="text-shadow: 12px 12px 9px rgba(197,171,63,0.89);">
+     <%= @name %> vs. Computer </p>
+     
+     <form action="/chooses_action" method="post">
+      Rock <input type="radio" id="rock" value="Move"/>
+      Paper <input type="radio" id="paper" value="Move"/>
+      Scissors <input type="radio" id="scissors" value="Move"/>
+      <br><input type="submit" value="Make Move!"
+      </form>
+   
+  </div>
+
+<body>
