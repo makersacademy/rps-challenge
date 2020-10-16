@@ -6,6 +6,22 @@ class Selection < Sinatra::Base
   enable :sessions
   attr_reader :game
 
+  get '/playervscomp' do
+    erb(:index_vs_comp)
+  end
+
+  post '/playervscompresult' do
+    session[:Playerselection] = params[:Playerselection]
+      session[:Player_name] = params[:Player_name]
+      redirect '/vscompresult'
+  end
+
+  get '/vscompresult' do
+    @Player_name = session[:Player_name]
+    @Playerselection = session[:Playerselection]
+    erb(:names_and_player_select)
+  end
+
   get '/' do
     erb(:index)
   end
