@@ -35,6 +35,7 @@ Hints on functionality
 - Paper beats Rock
 
 ## Domain Model
+![RPS domain model](./public/images/rps_diagram.png)
 
 ## to install gems
 ```
