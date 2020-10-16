@@ -57,4 +57,23 @@ feature "results page" do
     expect(page).to have_content("Computer: 0")
     expect(page).to have_content("Draws: 0")
   end
+
+  scenario "The player can go back to the selection page" do
+    click_link "Rock"
+    click_link "Play Again"
+    expect(page).to have_selector(:link_or_button, "Rock")
+    expect(page).to have_selector(:link_or_button, "Paper")
+    expect(page).to have_selector(:link_or_button, "Scissors")
+  end
+
+  scenario "The player can play multiple times and see an aggregate score" do
+    srand 1994
+    click_link "Rock"
+    click_link "Play Again"
+    srand 2020
+    click_link "Scissors"
+    expect(page).to have_content("Dan: 1")
+    expect(page).to have_content("Computer: 1")
+    expect(page).to have_content("Draws: 0")
+  end
 end
