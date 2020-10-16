@@ -3,7 +3,7 @@ require 'game'
 describe Game do
 describe 'Player vs comp' do
   let(:subject) {Game.new("Paper", "Scissors")}
-  it 'expect computer selection to be rock' do
+  it 'expect computer selection to be rock therefore player 1 wins as paper beats rock' do
     allow(subject).to receive(:rand).and_return(2)
     subject.comp_selection
     expect(subject.result).to eq "Player 1 wins"

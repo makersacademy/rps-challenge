@@ -19,6 +19,9 @@ class Selection < Sinatra::Base
   get '/vscompresult' do
     @Player_name = session[:Player_name]
     @Playerselection = session[:Playerselection]
+    @comp_selection = ["Rock","Paper","Scissors"].sample
+    @game1 = Game.new(@Player1_selection, @comp_selection)
+    @game1.result
     erb(:names_and_player_select)
   end
 
@@ -57,8 +60,8 @@ class Selection < Sinatra::Base
     @Player2_name = session[:Player2_name]
     @Player1_selection = session[:Player1_selection]
     @Player2_selection = session[:Player2_selection]
-    @game = Game.new(@Player1_selection, @Player2_selection)
-    @game.result
+    @game2 = Game.new(@Player1_selection, @Player2_selection)
+    @game2.result
     erb(:result)
   end
 

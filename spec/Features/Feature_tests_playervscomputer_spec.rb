@@ -29,6 +29,6 @@ feature "Players names appear" do
     fill_in :Player_name, with: "Tom"
     select('Rock', from: 'Playerselection')
     click_button "Submit"
-    expect(page).to have_text("Computer selected")
+    expect(page).to have_text("Welcome Tom you selected Rock.\nComputer selected Rock. Draw")
   end
 end
