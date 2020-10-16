@@ -6,10 +6,8 @@ feature "homepage" dod
   end 
 
   scenario "user visits homepage and is greeted by their name" do 
-    visit('/')
-    fill_in "name", with: "Bob"
-    click_button("register")
-    expect(current_path).to eq('/game')
+    sign_in
+    expect(current_path).to have_content("")
   end 
 
 
