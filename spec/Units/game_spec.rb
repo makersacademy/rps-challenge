@@ -5,7 +5,8 @@ describe 'Player vs comp' do
   let(:subject) {Game.new("Paper", "Scissors")}
   it 'expect computer selection to be rock' do
     allow(subject).to receive(:rand).and_return(2)
-    expect(subject.comp_selection).to eq "Rock"
+    subject.comp_selection
+    expect(subject.result).to eq "Player 1 wins"
   end
 end
 end
