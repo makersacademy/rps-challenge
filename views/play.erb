@@ -1,0 +1,13 @@
+<h1>Welcome, <%= @name %>!</h1>
+<p>Choose a move!</p>
+
+<form action="/result" method="POST">
+  <input type="radio" name="choice" value="Rock">
+  <label for="Rock">Rock</label><br>
+  <input type="radio" name="choice" value="Paper">
+  <label for="Paper">Paper</label><br>
+  <input type="radio" name="choice" value="Scissors">
+  <label for="Scissors">Scissors</label><br>
+  <input type="submit" value="Play">
+</form>
+

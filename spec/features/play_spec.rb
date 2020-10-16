@@ -8,4 +8,12 @@ feature "rps" do
     sign_in
     expect(page).to have_content ("Choose a move!")
   end
-end
+
+  scenario "user chooses Rock and gets shown the result" do
+    sign_in
+    # fill_in "choice",	with: "Rock"
+    choose(option: 'Rock')
+    click_button("Play")
+    expect(page).to have_content ("You chose Rock")
+  end
+end 
