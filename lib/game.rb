@@ -23,34 +23,24 @@ class Game < SimpleDelegator
   end
 
   def play(choice)
-    computer_choice = random_choice
-    if choice == computer_choice
-      @draws += 1
-      "draw"
-    elsif computer_choice == "rock"
-      if choice == "paper"
-        @wins += 1
-        "win"
-      elsif choice == "scissors"
-        @losses += 1
-        "lose"
-      end
-    elsif computer_choice == "paper"
-      if choice == "scissors"
-        @wins += 1
-        "win"
-      elsif choice == "rock"
-        @losses += 1
-        "lose"
-      end
-    elsif computer_choice == "scissors"
-      if choice == "rock"
-        @wins += 1
-        "win"
-      elsif choice == "paper"
-        @losses += 1
-        "lose"
-      end
-    end
+    result = evaluate(choice, random_choice)
+    update_scores(result)
+    result
+  end
+
+  private
+
+  def evaluate(player_choice, computer_choice)
+    return "draw" if player_choice == computer_choice
+    return "win" if player_choice == "rock" && computer_choice == "scissors"
+    return "win" if player_choice == "scissors" && computer_choice == "paper"
+    return "win" if player_choice == "paper" && computer_choice == "rock"
+    return "lose"
+  end
+
+  def update_scores(result)
+    @wins += 1 if result == "win"
+    @losses += 1 if result == "lose"
+    @draws += 1 if result == "draw"
   end
 end
