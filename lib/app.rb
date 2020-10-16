@@ -4,6 +4,7 @@ require_relative 'Game'
 
 class Selection < Sinatra::Base
   enable :sessions
+  attr_reader :game
 
   get '/' do
     erb(:index)
@@ -40,7 +41,8 @@ class Selection < Sinatra::Base
     @Player2_name = session[:Player2_name]
     @Player1_selection = session[:Player1_selection]
     @Player2_selection = session[:Player2_selection]
-    @result = Game.new(@Player1_selection, @Player2_selection)
+    @game = Game.new(@Player1_selection, @Player2_selection)
+    @game.result
     erb(:result)
   end
 

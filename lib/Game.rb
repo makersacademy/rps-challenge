@@ -11,8 +11,16 @@ attr_reader :result
       "Player 2 wins"
     elsif @player1_turn == "Paper" && @player2_turn == "Scissors"
       "Player 2 wins"
+    elsif @player1_turn == "Scissors" && @player2_turn == "Rock"
+      "Player 2 wins"
+    elsif @player2_turn == "Rock" && @player1_turn == "Paper"
+        "Player 1 wins"
+    elsif @player2_turn == "Paper" && @player1_turn == "Scissors"
+        "Player 1 wins"
+    elsif @player2_turn == "Scissors" && @player1_turn == "Rock"
+        "Player 1 wins"
+    else
+      "Draw"
     end
   end
-
-
 end
