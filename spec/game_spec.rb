@@ -16,4 +16,17 @@ describe Game do
       expect(new_game.player_2.name).to eq("Ron")
     end
   end
+
+  describe '#current_turn' do
+    it 'returns the current_turn' do
+      expect(new_game.current_turn).to eq(player_1)
+    end
+  end
+
+  describe '#switch_turns' do
+    it 'switches turns' do
+      new_game.switch_turns
+      expect(new_game.current_turn).to eq(player_2)
+    end
+  end
 end
