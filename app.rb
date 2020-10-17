@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/computer'
 require './lib/results_calculator'
 require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -17,9 +18,8 @@ class RPS < Sinatra::Base
     erb :computer_game
   end
 
-  post '/player_choice' do
-    @player_1 = Player.new(params[:player_1])
-    @player_2 = Player.new(params[:player_2])
+  post '/play_eachother' do
+    @game = Game.new(Player.new(params[:player_1]), Player.new(params[:player_2]))
     erb :play_eachother
   end
 
