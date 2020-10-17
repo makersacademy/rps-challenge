@@ -1,7 +1,42 @@
 # RPS Challenge
 
-Instructions
--------
+Makers week 3 weekend challenge: creating a basic Rock, Paper, Scissors web app.
+
+## Goals
+- Use Sinatra and Ruby to create this project.
+- Use Capybara and rspec to test-drive each feature.
+
+## User Stories Analysis
+
+```
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+```
+Required: 
+- Form rendered on home page with name field.
+- Name saved and rendered in next web page. 
+
+```
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+```
+Required: 
+- Array of RPS options and a sample method to select computer's turn.
+- Ability for user to choose only one of Rock, Paper or Scissors.
+- Link to page congratulating the winner.
+- Link to restart the game.
+
+Refractoring and Improvements:
+- Create Player, Computer, Game and ResultsCalculator classes.
+- Player: stores information about player (name and move).
+- Computer: ability to select it's own choice each game.
+- Game: begins a new game and stores both Players.
+- Results Calculator: responsible for calculating the results of each game.
+
+## Makers Instructions:
+------------------------
 
 * Feel free to use google, your notes, books, etc. but work on your own
 * If you refer to the solution of another coach or student, please put a link to that in your README
