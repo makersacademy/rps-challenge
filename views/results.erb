@@ -7,9 +7,10 @@
 
   <body>
     <h1 class='title'>Results</h1>
-    <p>You chose <%=@choice%></p>
+    <p>You chose <%=@game.user_move%></p>
+    <p>Computer chose <%=@game.computer_move%></p>
     <%if @result%>
-    <p>It's a <%=@result%>!</p>
+    <p><%=@result%>!</p>
     <%end%>
   </body>
 </html> 

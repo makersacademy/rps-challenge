@@ -5,8 +5,9 @@ class Computer
     @choices = ['Rock', 'Paper', 'Scissors']
   end
 
-  def move
-    index = Kernel.rand(2)
-    @choices[index]
+  def choice
+    index = Kernel.rand(3)
+    @move = @choices[index]
+    @move
   end
 end

@@ -6,6 +6,7 @@ feature 'computer can tie with user' do
   
   scenario 'computer and user choose rock' do
     click_button("Rock")
-    expect(page).to have_content('draw')
+    expect(page).to have_content('Draw')
   end
 end
+
