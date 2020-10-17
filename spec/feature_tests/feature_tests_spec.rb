@@ -22,6 +22,21 @@ describe "feature tests" do
       click_button('ROCK')
       expect(page).to have_text('RESULT')
     end
+    scenario "The results page accurately reflects the player's choice of rock" do
+      sign_in_and_play
+      click_button('ROCK')
+      expect(page).to have_text('ROCK')
+    end
+    scenario "The results page accurately reflects the player's choice of paper" do
+      sign_in_and_play
+      click_button('PAPER')
+      expect(page).to have_text('PAPER')
+    end
+    scenario "The results page accurately reflects the player's choice of scissors" do
+      sign_in_and_play
+      click_button('SCISSORS')
+      expect(page).to have_text('SCISSORS')
+    end
   end
 
 end

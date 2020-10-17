@@ -21,19 +21,23 @@ class RPS < Sinatra::Base
   end
 
   post "/rock" do
+    session[:player1_choice] = :rock
     redirect "/result"
   end
 
   post "/paper" do
+    session[:player1_choice] = :paper
     redirect "/result"
   end
 
   post "/scissors" do
+    session[:player1_choice] = :scissors
     redirect "/result"
   end
 
   get "/result" do
-    "RESULT"
+    @player1_choice = session[:player1_choice]
+    erb(:result)
   end
 
 end
