@@ -10,7 +10,13 @@ class RPSGame < Sinatra::Base
 
 
   get '/' do
-    # session[:logic] = Game.new
+    session[:logic] = Game.new
     erb :index
+  end
+
+  post '/add-name' do
+    @game = session[:game]
+    @game.add_names(params[:name_input])
+
   end
 end
