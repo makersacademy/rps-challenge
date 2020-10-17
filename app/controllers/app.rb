@@ -10,7 +10,7 @@ class RPSGame < Sinatra::Base
 
 
   get '/' do
-    session[:logic] = Game.new
+    # session[:logic] = Game.new
     erb :index
   end
 end
