@@ -1,19 +1,14 @@
 # RPS Challenge
 
-Instructions
--------
+I used a test-driven approach to the challenge, creating a simple web app that allows the user to play a game of Rock, Paper, Scissors with a virtual opponent.
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+The app uses the MVC structure, with separate directories for the Model and View components.
 
-Task
-----
+I have implemented the basic functionality outlined in the user stories. Instead of opting to increase the complexity of the app (see bonus levels 1 and 2 below), I decided to focus on improving the aesthetics of the app by creating and implementing CSS. I am interested in Front End development and wanted to take the chance to explore this aspect of web development further.
 
-Knowing how to build web applications is getting us almost there as web developers!
+I should note that the controller, as it stands, uses sessions to store information across different requests. It was my intention to use a single global variable ($game) for this purpose, however this seemed to cause issues when running the app via Shotgun (although not when "ruby app.rb" was called from the command line).
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+* * * 
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
@@ -55,31 +50,3 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
