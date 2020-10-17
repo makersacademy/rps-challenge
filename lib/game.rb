@@ -1,12 +1,19 @@
 class Game
 
+  attr_reader :computer 
+
   def initialize(choice = 'rock')
     @choice = choice
-    @computer = choose_rps
+    @computer = nil
   end
 
-  def choose_rps
-    ['rock', 'paper', 'scissors'].sample
+  def play_rps
+    comp_choose_rps
+    compare_choices
+  end
+
+  def comp_choose_rps
+    @computer = ['rock', 'paper', 'scissors'].sample
   end
 
   def compare_choices

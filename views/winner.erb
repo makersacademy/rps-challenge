@@ -1,0 +1,15 @@
+<%= erb :game %>
+<br>
+<% if session[:winner] == 'tie' %>
+  It's a tie! 
+<% end %>
+<% if session[:winner] == 'Player Wins!' %>
+  You win! Great job, <%= session[:name] %>!
+<% end %>
+<% if session[:winner] == 'Computer Wins!' %>
+  You lose. Better luck next time, <%= session[:name] %>!
+<% end %>
+<br>
+Play again?
+<br>
+<%= erb :selection %>

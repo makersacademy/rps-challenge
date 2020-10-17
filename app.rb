@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -17,7 +18,15 @@ class RockPaperScissors < Sinatra::Base
     erb :greeting
   end
 
-  post '/play' do
+  post '/input-choice' do
+    session[:choice] = params[:selection]
+    session[:game] = Game.new(session[:choice])
+    session[:winner] = session[:game].play_rps
+    redirect to '/show-winner'
+  end
+
+  get '/show-winner' do
+    erb :winner
   end
 
   run! if app_file == $0
