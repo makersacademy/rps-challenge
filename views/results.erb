@@ -8,5 +8,8 @@
   <body>
     <h1 class='title'>Results</h1>
     <p>You chose <%=@choice%></p>
+    <%if @result%>
+    <p>It's a <%=@result%>!</p>
+    <%end%>
   </body>
 </html> 

@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -12,6 +13,13 @@ class RPS < Sinatra::Base
 
   post '/results' do
     @choice = params[:choice]
+    @computers_move = Computer.new.move
+    if @choice == @computers_move 
+      @result = 'draw'
+    end
+    p @computers_move
+    p params
+    p @result
     erb :results
   end
 
