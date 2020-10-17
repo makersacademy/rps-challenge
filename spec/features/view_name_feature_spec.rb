@@ -7,9 +7,7 @@ end
 
 feature 'Name in lights' do
   scenario 'PLayer can see the name they have entered on the screen' do
-    visit("/")
-    fill_in :Player1, with: 'Beca'
-    click_button 'Play'
+    sign_in_and_play
     expect(page).to have_content 'Beca'
   end
 end
