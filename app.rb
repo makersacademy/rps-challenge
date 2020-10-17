@@ -1,8 +1,20 @@
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
+  enable :sessions
+
   get '/' do
-    'Hello RPS!'
+    erb :index
+  end
+
+  post '/name' do
+    session[:marketeer1] = params[:marketeer1]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @marketeer1 = session[:marketeer1]
+    erb :play
   end
 
   # start the server if ruby file executed directly
