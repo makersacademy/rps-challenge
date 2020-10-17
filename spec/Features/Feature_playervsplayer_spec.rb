@@ -36,6 +36,16 @@ end
       click_button "Submit"
       select('Paper', from: 'Player2selection')
       click_button "Submit"
-      expect(page).to have_content('Player 2 wins')
+      expect(page).to have_content('Ben wins')
+    end
+  end
+
+  feature "testing game functionality" do
+    scenario "player two selects paper and beats player 1" do
+      visit("/")
+      fill_in :Player1_name, with: "Tom"
+      fill_in :Player2_name, with: "Ben"
+      click_button "Submit"
+      expect(page).to have_content('Tom please make a selection:')
     end
   end

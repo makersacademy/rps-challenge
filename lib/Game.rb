@@ -1,36 +1,28 @@
 class Game
-attr_reader :result, :comp_selection
+attr_reader :result, :comp_selection, :player2_name
 
-  def initialize(player1_turn, player2_turn)
+  def initialize(player1_turn, player2_turn, player1_name, player2_name = "Computer")
     @player1_turn = player1_turn
     @player2_turn = player2_turn
-  end
-
-  def comp_selection
-    if rand(4) == 1
-      @player2_turn = "Scissors"
-    elsif rand(4) == 2
-      @player2_turn = "Rock"
-    elsif rand(4) == 3
-      @player2_turn = "Paper"
-    end
+    @player1_name = player1_name
+    @player2_name = player2_name
   end
 
   def result
     if @player1_turn == "Rock" && @player2_turn == "Paper"
-      "Player 2 wins"
+      "#{@player2_name} wins"
     elsif @player1_turn == "Paper" && @player2_turn == "Scissors"
-      "Player 2 wins"
+      "#{@player2_name} wins"
     elsif @player1_turn == "Scissors" && @player2_turn == "Rock"
-      "Player 2 wins"
+      "#{@player2_name} wins"
     elsif @player2_turn == "Rock" && @player1_turn == "Paper"
-      "Player 1 wins"
+      "#{@player1_name} wins"
     elsif @player2_turn == "Paper" && @player1_turn == "Scissors"
-      "Player 1 wins"
+      "#{@player1_name} wins"
     elsif @player2_turn == "Scissors" && @player1_turn == "Rock"
-      "Player 1 wins"
-    else
-      "Draw"
+      "#{@player1_name} wins"
+    elsif @player1_turn == @player2_turn
+      "It is a Draw!"
     end
   end
 end
