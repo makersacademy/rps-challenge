@@ -19,14 +19,14 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    session[:choice] = params[:choice]
+    $marketeer1.choice = params[:choice]
     redirect '/result'
   end
 
   get '/result' do
     @marketeer1 = $marketeer1.name
     @marketeer2 = $computer.name
-    @marketeer1_choice = session[:choice]
+    @marketeer1_choice = $marketeer1.choice
     @marketeer2_choice = ["Rock", "Paper", "Scissors"].sample
     @result = rps(@marketeer1_choice, @marketeer2_choice)
     erb :result

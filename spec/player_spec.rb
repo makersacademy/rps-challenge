@@ -7,8 +7,8 @@ describe Player do
     expect(alex.name).to eq("Alex")
   end
 
-  # it 'has a choice' do
-  #   expect(alex.choice).to eq nil
-  # end
+  it 'can make a choice' do
+    expect(alex.choice).to eq nil
+  end
 
 end
