@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/base'
 require_relative 'Game'
+require_relative 'computer_selection'
 
 class Selection < Sinatra::Base
   enable :sessions
@@ -19,14 +20,15 @@ class Selection < Sinatra::Base
   get '/vscompresult' do
     @Player_name = session[:Player_name]
     @Playerselection = session[:Playerselection]
-    @comp_selection = ["Rock", "Paper", "Scissors"].sample
+    @computer = ComputerSelection.new
+    @comp_selection = @computer.random_selection
     @game1 = Game.new(@Playerselection, @comp_selection, @Player_name)
     @game1.result
     @computer = @game1.player2_name
     erb(:names_and_player_select)
   end
 
-  get '/' do
+  get '/playervsplayer' do
     erb(:index)
   end
 

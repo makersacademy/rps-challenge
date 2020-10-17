@@ -1,5 +1,5 @@
 class Game
-attr_reader :result, :comp_selection, :player2_name
+  attr_reader :result, :comp_selection, :player2_name
 
   def initialize(player1_turn, player2_turn, player1_name, player2_name = "Computer")
     @player1_turn = player1_turn
