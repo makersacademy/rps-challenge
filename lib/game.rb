@@ -19,6 +19,7 @@ class Game
   def compare_choices
     return 'tie' if choices_equal?
     return 'Player Wins!' if player_wins?
+    
     'Computer Wins!'
   end
 
@@ -38,5 +39,4 @@ class Game
   def choices_equal?
     @choice == @computer
   end
-
 end
