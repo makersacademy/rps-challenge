@@ -8,7 +8,6 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    p params
     session[:marketeer1] = params[:marketeer1]
     redirect '/play'
   end
@@ -19,14 +18,13 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    p params
     session[:choice] = params[:choice]
-    redirect '/confirmation'
+    redirect '/result'
   end
 
-  get '/confirmation' do
+  get '/result' do
     @choice = session[:choice]
-    erb :confirmation
+    erb :result
   end
 
   # start the server if ruby file executed directly
