@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require 'shotgun'
+require_relative 'model/game'
+require_relative 'model/player'
 
 class RPS < Sinatra::Base
 
@@ -11,33 +12,37 @@ class RPS < Sinatra::Base
   end
 
   post "/names" do
-    session[:player1_name] = params[:player1_name]
+    $game = Game.new(Player.new(session[:player1_name]))
     redirect "/play"
   end
 
   get "/play" do
-    @player1_name = session[:player1_name]
+    @player1_name = $game.return_player_name
     erb(:play)
   end
 
   post "/rock" do
-    session[:player1_choice] = :rock
+    $game.make_player_choice(:rock)
     redirect "/result"
   end
 
   post "/paper" do
-    session[:player1_choice] = :paper
+    $game.make_player_choice(:paper)
     redirect "/result"
   end
 
   post "/scissors" do
-    session[:player1_choice] = :scissors
+    $game.make_player_choice(:scissors)
     redirect "/result"
   end
 
   get "/result" do
-    @player1_choice = session[:player1_choice]
+    @player1_choice = $game.return_player_choice
+    @robo_choice = $game.return_robo_choice
+    @result = $game.calculate_result
     erb(:result)
   end
+
+  run!
 
 end

@@ -1,9 +1,21 @@
-require_relative '../app.rb'
+require_relative '../app'
 
 class Game
 
   def initialize(player)
     @player = player
+  end
+
+  def return_player_name
+    @player.name
+  end
+
+  def make_player_choice(selection)
+    @player.choose(selection)
+  end
+
+  def return_player_choice
+    @player.choice
   end
 
   def make_robo_choice
