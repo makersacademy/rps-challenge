@@ -21,19 +21,26 @@ class Game
     @played = true
     case user_input
       when "ROCK"
-        return "Noone" if @computer_input == "ROCK"
-        return "#{@computer_name}" if @computer_input == "PAPER"
-        return "#{@player_name}" if @computer_input == "SCISSORS"
+        @winner = "Noone" if @computer_input == "ROCK"
+        @winner = @computer_name if @computer_input == "PAPER"
+        @winner = @player_name if @computer_input == "SCISSORS"
       when "PAPER"
-        return "Noone" if @computer_input == "PAPER"
-        return "#{@computer_name}" if @computer_input == "SCISSORS"
-        return "#{@player_name}" if @computer_input == "ROCK"
+        @winner = "Noone" if @computer_input == "PAPER"
+        @winner = @computer_name if @computer_input == "SCISSORS"
+        @winner = @player_name if @computer_input == "ROCK"
       when "SCISSORS"
-        return "Noone" if @computer_input == "SCISSORS"
-        return "#{@computer_name}" if @computer_input == "ROCK"
-        return "#{@player_name}" if @computer_input == "PAPER"
+        @winner = "Noone" if @computer_input == "SCISSORS"
+        @winner = @computer_name if @computer_input == "ROCK"
+        @winner = @player_name if @computer_input == "PAPER"
     end
   end
 
-  attr_reader :player_name, :computer_name
+  def print_winner
+    @winner
+  end
+
+  def again
+    @played = false
+  end
+  attr_reader :player_name, :computer_name, :played
 end

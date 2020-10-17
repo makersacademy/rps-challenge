@@ -2,9 +2,46 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <title></title>
   </head>
   <body>
     <h1><%= "#{@game.player_name} Vs. #{@game.computer_name}" %> </h1>
+
+    <ul class="options">
+      <li>
+        <form action="/rock" method="post">
+          <input type="submit" name="ROCK" value="Rock">
+        </form>
+      </li>
+      <li>
+        <form  action="/paper" method="post">
+          <input type="submit" name="PAPER" value="Paper">
+        </form>
+      </li>
+      <li>
+        <form action="/scissors" method="post">
+          <input type="submit" name="SCISSORS" value="Scissors">
+        </form>
+      </li>
+    </ul>
+
+    <% if @game.played %>
+    <h1><%= @game.print_winner %> Wins!</h1>
+    <h2>Would you like to play again?</h2>
+    <ul class="play_again">
+      <li>
+        <form action="/again" method="post">
+          <input type="submit" name="again" value="Yes">
+        </form>
+      </li>
+      <li>
+        <form  action="/" method="get">
+          <input type="submit" name="finished" value="No">
+        </form>
+      </li>
+    </ul>
+    <% end %>
+
   </body>
 </html>

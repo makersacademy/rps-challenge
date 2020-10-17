@@ -11,33 +11,33 @@ describe Game do
 
   context '#calculate_winner' do
     it "puts noone as it's a draw" do
-      srand(45)
-      expect(game.calculate_winner("SCISSORS")).to eq "Noone"
-      srand(50)
-      expect(game.calculate_winner("ROCK")).to eq "Noone"
-      srand(1)
-      expect(game.calculate_winner("PAPER")).to eq "Noone"
+      play_logic(game, 45, "SCISSORS")
+      expect(game.print_winner).to eq "Noone"
+      play_logic(game, 50, "ROCK")
+      expect(game.print_winner).to eq "Noone"
+      play_logic(game, 1, "PAPER")
+      expect(game.print_winner).to eq "Noone"
     end
 
     it "puts Tanya as computer won" do
       srand(2)
       game.add_names("Ben")
-      srand(45)
-      expect(game.calculate_winner("PAPER")).to eq "Tanya"
-      srand(50)
-      expect(game.calculate_winner("SCISSORS")).to eq "Tanya"
-      srand(1)
-      expect(game.calculate_winner("ROCK")).to eq "Tanya"
+      play_logic(game, 45, "PAPER")
+      expect(game.print_winner).to eq "Tanya"
+      play_logic(game, 50, "SCISSORS")
+      expect(game.print_winner).to eq "Tanya"
+      play_logic(game, 1, "ROCK")
+      expect(game.print_winner).to eq "Tanya"
     end
 
     it "puts Ben as Ben won" do
       game.add_names("Ben")
-      srand(45)
-      expect(game.calculate_winner("ROCK")).to eq "Ben"
-      srand(50)
-      expect(game.calculate_winner("PAPER")).to eq "Ben"
-      srand(1)
-      expect(game.calculate_winner("SCISSORS")).to eq "Ben"
+      play_logic(game, 45, "ROCK")
+      expect(game.print_winner).to eq "Ben"
+      play_logic(game, 50, "PAPER")
+      expect(game.print_winner).to eq "Ben"
+      play_logic(game, 1, "SCISSORS")
+      expect(game.print_winner).to eq "Ben"
     end
   end
 end
