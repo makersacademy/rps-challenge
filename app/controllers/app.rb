@@ -1,4 +1,5 @@
 require 'sinatra'
+require './app/models/logic.rb'
 
 class RPSGame < Sinatra::Base
   set :views, File.expand_path('../../views',__FILE__)
@@ -9,6 +10,7 @@ class RPSGame < Sinatra::Base
 
 
   get '/' do
+    session[:logic] = Game.new
     erb :index
   end
 end
