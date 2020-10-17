@@ -43,6 +43,7 @@ class RPS < Sinatra::Base
     erb(:result)
   end
 
-  run! if app_file == $0
+  #run! if app_file == $0
+  run!
 
 end
