@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <head>
   <title>Rock, Paper, Scissors - Main page</title>
+  <link rel="stylesheet" type="text/css" href="/play.css" />
 </head>
 <body>
 <h1>Welcome, <%= @player1_name %>. Make your choice, and make it well.</h1>
-<form action="/rock" method="post">
-<input type="submit" value="ROCK">
-</form>
-<form action="/paper" method="post">
-<input type="submit" value="PAPER">
-</form>
-<form action="/scissors" method="post">
-<input type="submit" value="SCISSORS">
-</form>
+<div id="buttons">
+  <form action="/rock" method="post">
+  <input type="submit" value="ROCK">
+  </form>
+  <form action="/paper" method="post">
+  <input type="submit" value="PAPER">
+  </form>
+  <form action="/scissors" method="post">
+  <input type="submit" value="SCISSORS">
+  </form>
+</div>
 </body>
