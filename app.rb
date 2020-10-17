@@ -30,19 +30,17 @@ class RPS < Sinatra::Base
     erb :result
   end
 
-  def rps(p1, p2)
+  def rps(choice1, choice2)
     winning_moves = {
       'Rock' => 'Scissors',
       'Scissors' => 'Paper',
       'Paper' => 'Rock'
     }
-    if p1 == p2
-      return "It's a draw"
-    elsif winning_moves[p1] == p2
-      return "#{@marketeer1} wins"
-    else
-      return "Computer wins"
-    end
+    return "It's a draw" if choice1 == choice2
+
+    return "#{@marketeer1} wins" if winning_moves[choice1] == choice2
+
+    return "Computer wins"
   end
 
   # start the server if ruby file executed directly
