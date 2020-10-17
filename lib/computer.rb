@@ -3,7 +3,6 @@ class Computer
 
   def initialize
     @choices = ['Rock', 'Paper', 'Scissors']
-    ## test it has name!!
     @name = "Computer"
   end
 

@@ -1,8 +1,8 @@
 require 'results_calculator'
 
 describe ResultsCalculator do
-  let(:computer) { double :computer, choose: "rock", move: "Rock" }
-  let(:user_2) { double :user, move: "Paper"}
+  let(:computer) { double :computer, choose: "rock", move: "Rock", name: "Computer" }
+  let(:user_2) { double :user, move: "Paper" }
   let(:user) { double :user, move: "Rock" }
 
   describe '#result' do

@@ -17,7 +17,7 @@ class RPS < Sinatra::Base
   post '/enter_names' do
     @game = Game.new(Player.new(params[:player_1]), Player.new(params[:player_2]))
     session[:game] = @game
-    redirect to ('/play_eachother')
+    redirect to '/play_eachother'
   end
 
   get '/play_eachother' do
@@ -32,9 +32,9 @@ class RPS < Sinatra::Base
     ## switch turns
     if @game.player_2.move.nil?
       @game.switch_turns
-      redirect to ('/play_eachother')
+      redirect to '/play_eachother'
     else 
-      redirect to ('/multiplayer_results')
+      redirect to '/multiplayer_results'
     end
   end
 
