@@ -12,7 +12,7 @@ class RPS < Sinatra::Base
   end
 
   post "/names" do
-    $game = Game.new(Player.new(session[:player1_name]))
+    $game = Game.new(Player.new(params[:player1_name]))
     redirect "/play"
   end
 
@@ -38,11 +38,11 @@ class RPS < Sinatra::Base
 
   get "/result" do
     @player1_choice = $game.return_player_choice
-    @robo_choice = $game.return_robo_choice
+    @robo_choice = $game.robo_choice
     @result = $game.calculate_result
     erb(:result)
   end
 
-  run!
+  run! if app_file == $0
 
 end

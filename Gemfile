@@ -5,7 +5,6 @@ gem 'sinatra'
 group :test do
   gem 'capybara'
   gem 'rspec'
-  gem 'shotgun'
   gem 'selenium-webdriver'
   gem 'rubocop', '0.79.0'
   gem 'simplecov', require: false

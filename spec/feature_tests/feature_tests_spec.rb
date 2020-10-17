@@ -42,8 +42,21 @@ describe "feature tests" do
   feature "Winning and losing" do
     scenario "Player chooses rock, computer chooses paper. Computer wins." do
       sign_in_and_play
+      srand(1)
       click_button('ROCK')
       expect(page).to have_text('YOU LOST, GET OVER IT')
+    end
+    scenario "Player chooses scissors, computer chooses scissors. DRAW." do
+      sign_in_and_play
+      srand(5)
+      click_button('SCISSORS')
+      expect(page).to have_text("It's a draw")
+    end
+    scenario "Player chooses paper, computer chooses rock. Player wins." do
+      sign_in_and_play
+      srand(2)
+      click_button('PAPER')
+      expect(page).to have_text("You won, ok. Big deal.")
     end
   end
 

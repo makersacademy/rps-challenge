@@ -1,5 +1,3 @@
-require_relative '../app'
-
 class Player
 
   def initialize(name)
