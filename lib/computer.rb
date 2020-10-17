@@ -1,13 +1,12 @@
 class Computer
-  attr_reader :choices
+  attr_reader :choices, :move
 
   def initialize
     @choices = ['Rock', 'Paper', 'Scissors']
   end
 
-  def choice
+  def choose
     index = Kernel.rand(3)
     @move = @choices[index]
-    @move
   end
 end

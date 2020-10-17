@@ -1,6 +1,6 @@
 feature 'computer can lose' do
   before do
-    enter_name_and_play
+    solo_enter_name_and_play
     allow(Kernel).to receive(:rand).and_return(2)
   end
   
@@ -9,4 +9,3 @@ feature 'computer can lose' do
     expect(page).to have_content('You Win!')
   end
 end
-

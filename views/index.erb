@@ -7,13 +7,12 @@
 
   <body>
     <h1 class='title'>Rock, Paper, Scissors</h1>
-    <p>Welcome to Rock, Paper, Scissors. Please enter your name to continue.</p>
-    <form action='/play' method='post'>
-      <label for='name'>
-        Name: 
-        <input type='text' name='name'>
-      </label>
-      <input type='submit' name='Begin'>
+    <p>Welcome to Rock, Paper, Scissors. Would you like to play the multiplayer or solo?.</p>
+    <form action='/computer_game' method='post'>
+      <input type='submit' value='Computer Game'>
+    </form>
+    <form action='/multiplayer_game' method='post'>
+      <input type='submit' value='Multiplayer'>
     </form>
   </body>
 </html>

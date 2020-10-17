@@ -1,10 +1,11 @@
-class Game
+class ResultsCalculator
   attr_reader :computer_move, :user_move
 
-  def initialize(user_move, computer)
-    @user_move = user_move
-    @computer_move = computer.choice
-    @beats = {"Rock" => "Paper", "Paper" => "Scissors", "Scissors" => "Rock"}
+  def initialize(user, computer)
+    @user_move = user.move
+    computer.choose
+    @computer_move = computer.move
+    @beats = { "Rock" => "Paper", "Paper" => "Scissors", "Scissors" => "Rock" }
   end
 
   def result

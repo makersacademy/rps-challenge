@@ -1,20 +1,39 @@
 require 'sinatra/base'
 require './lib/computer'
-require './lib/game'
+require './lib/results_calculator'
+require './lib/player'
 
 class RPS < Sinatra::Base
+  enable :sessions
   get '/' do
-    erb :index
+    erb :index 
   end
-  
-  post '/play' do
-    @name = params[:name]
-    erb :play
+
+  post '/multiplayer_game' do
+    erb :multiplayer_game
+  end
+
+  post '/computer_game' do
+    erb :computer_game
+  end
+
+  post '/player_choice' do
+    @player_1 = Player.new(params[:player_1])
+    @player_2 = Player.new(params[:player_2])
+    erb :play_eachother
+  end
+
+  post '/play_computer' do
+    @player = Player.new(params[:name])
+    session[:player] = @player
+    erb :play_computer
   end
 
   post '/results' do
-    @game = Game.new(params[:choice], Computer.new)
-    @result = @game.result
+    @player = session[:player]
+    @player.choose(params[:choice])
+    @results_calc = ResultsCalculator.new(@player, Computer.new)
+    @result = @results_calc.result
     erb :results
   end
 
