@@ -20,5 +20,20 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  post "/rock" do
+    redirect "/result"
+  end
+
+  post "/paper" do
+    redirect "/result"
+  end
+
+  post "/scissors" do
+    redirect "/result"
+  end
+
+  get "/result" do
+    "RESULT"
+  end
 
 end
