@@ -8,5 +8,6 @@ class Computer
   def choose
     index = Kernel.rand(3)
     @move = @choices[index]
+    self
   end
 end

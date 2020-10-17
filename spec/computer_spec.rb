@@ -10,7 +10,8 @@ describe Computer do
   describe '#move' do
     it 'can return a single choice' do
       allow(Kernel).to receive(:rand).and_return(0)
-      expect(subject.choose).to eq('Rock')
+      subject.choose
+      expect(subject.move).to eq('Rock')
     end
   end
 end

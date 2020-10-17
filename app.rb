@@ -32,7 +32,7 @@ class RPS < Sinatra::Base
   post '/results' do
     @player = session[:player]
     @player.choose(params[:choice])
-    @results_calc = ResultsCalculator.new(@player, Computer.new)
+    @results_calc = ResultsCalculator.new(@player, Computer.new.choose)
     @result = @results_calc.result
     erb :results
   end

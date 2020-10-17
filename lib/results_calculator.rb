@@ -3,7 +3,6 @@ class ResultsCalculator
 
   def initialize(user, computer)
     @user_move = user.move
-    computer.choose
     @computer_move = computer.move
     @beats = { "Rock" => "Paper", "Paper" => "Scissors", "Scissors" => "Rock" }
   end
