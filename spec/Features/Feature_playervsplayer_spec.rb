@@ -4,6 +4,18 @@ require_relative "../../lib/Game"
 
 Capybara.app = Selection
 
+feature "Homepage title and instructions show" do
+  scenario "Title shows" do
+    visit("/playervsplayer")
+    expect(page).to have_content "Rock, Paper, Scissors game."
+  end
+
+  scenario "Instructions shows" do
+    visit("/playervsplayer")
+    expect(page).to have_text("Please enter your names.")
+  end
+end
+
 feature "Players names appear" do
   scenario "Player 1 and 2 enter names" do
     visit("/playervsplayer")
