@@ -92,3 +92,42 @@ feature "testing game functionality" do
     expect(page).to have_content('Ben wins')
   end
 end
+
+feature "Results page shows" do
+
+  scenario "Title shows" do
+    visit("/playervsplayer")
+    fill_in :Player1_name, with: "Tom"
+    fill_in :Player2_name, with: "Ben"
+    click_button "Submit"
+    select('Scissors', from: 'Player1selection')
+    click_button "Submit"
+    select('Rock', from: 'Player2selection')
+    click_button "Submit"
+    expect(page).to have_content "The result:"
+  end
+
+  scenario "Title shows" do
+    visit("/playervsplayer")
+    fill_in :Player1_name, with: "Tom"
+    fill_in :Player2_name, with: "Ben"
+    click_button "Submit"
+    select('Scissors', from: 'Player1selection')
+    click_button "Submit"
+    select('Rock', from: 'Player2selection')
+    click_button "Submit"
+    expect(page).to have_content "Each player selected:"
+  end
+
+  scenario "Title shows" do
+    visit("/playervsplayer")
+    fill_in :Player1_name, with: "Tom"
+    fill_in :Player2_name, with: "Ben"
+    click_button "Submit"
+    select('Scissors', from: 'Player1selection')
+    click_button "Submit"
+    select('Rock', from: 'Player2selection')
+    click_button "Submit"
+    expect(page).to have_content "Congratulations to the winner! Here is an invisible bottle of Champagne..."
+  end
+end
