@@ -8,12 +8,13 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:marketeer1] = params[:marketeer1]
+    $marketeer1 = Player.new(params[:marketeer1])
+    $computer = Player.new("Computer")
     redirect '/play'
   end
 
   get '/play' do
-    @marketeer1 = session[:marketeer1]
+    @marketeer1 = $marketeer1.name
     erb :play
   end
 
@@ -23,10 +24,11 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @marketeer1 = session[:marketeer1]
+    @marketeer1 = $marketeer1.name
+    @marketeer2 = $computer.name
     @marketeer1_choice = session[:choice]
-    @computer_choice = ["Rock", "Paper", "Scissors"].sample
-    @result = rps(@marketeer1_choice, @computer_choice)
+    @marketeer2_choice = ["Rock", "Paper", "Scissors"].sample
+    @result = rps(@marketeer1_choice, @marketeer2_choice)
     erb :result
   end
 
@@ -40,7 +42,7 @@ class RPS < Sinatra::Base
 
     return "#{@marketeer1} wins" if winning_moves[choice1] == choice2
 
-    return "Computer wins"
+    return "#{@marketeer2} wins"
   end
 
   # start the server if ruby file executed directly
