@@ -39,4 +39,12 @@ describe "feature tests" do
     end
   end
 
+  feature "Winning and losing" do
+    scenario "Player chooses rock, computer chooses paper. Computer wins." do
+      sign_in_and_play
+      click_button('ROCK')
+      expect(page).to have_text('YOU LOST, GET OVER IT')
+    end
+  end
+
 end

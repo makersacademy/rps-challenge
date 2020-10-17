@@ -1,5 +1,5 @@
-# require_relative '../model/game.rb'
-#
-# describe Game do
-#
-# end
+require 'model/game'
+
+describe Game do
+
+end
