@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'sinatra'
 gem 'shotgun'
+gem 'launchy', require: false
 
 group :test do
   gem 'capybara'

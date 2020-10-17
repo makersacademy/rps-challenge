@@ -15,8 +15,12 @@ class RPSGame < Sinatra::Base
   end
 
   post '/add-name' do
-    @game = session[:game]
-    @game.add_names(params[:name_input])
+    session[:logic].add_names(params[:name_input])
+    redirect '/game'
+  end
 
+  get '/game' do
+    @game = session[:logic]
+    erb :game
   end
 end

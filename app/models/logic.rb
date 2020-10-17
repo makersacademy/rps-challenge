@@ -2,6 +2,10 @@ class Game
   COMPUTER_NAMES = ["Tanya", "Mike", "Carlos", "Megan", "Beth", "Patricia", "Patrick", "Stewart"]
   CHOICES = ["ROCK", "PAPER", "SCISSORS"]
 
+  def initialize
+    @played = false
+  end
+
   def add_names(player_name)
     @computer_name = COMPUTER_NAMES.sample
     @player_name = player_name
@@ -14,30 +18,22 @@ class Game
 
   def calculate_winner(user_input)
     @computer_input = CHOICES.sample
+    @played = true
     case user_input
       when "ROCK"
-        return "Noone" if computer == 1
-        return "#{@computer_name}" if computer == 2
-        return "#{@player_name}" if computer == 3
+        return "Noone" if @computer_input == "ROCK"
+        return "#{@computer_name}" if @computer_input == "PAPER"
+        return "#{@player_name}" if @computer_input == "SCISSORS"
       when "PAPER"
-        return "Noone" if computer == 2
-        return "#{@computer_name}" if computer == 3
-        return "#{@player_name}" if computer == 1
+        return "Noone" if @computer_input == "PAPER"
+        return "#{@computer_name}" if @computer_input == "SCISSORS"
+        return "#{@player_name}" if @computer_input == "ROCK"
       when "SCISSORS"
-        return "Noone" if computer == 3
-        return "#{@computer_name}" if computer == 1
-        return "#{@player_name}" if computer == 2
-      end
-
-  end
-
-  def computer
-    if @computer_input == "ROCK"
-      return 1
-    elsif @computer_input == "PAPER"
-      return 2
-    elsif @computer_input == "SCISSORS"
-      return 3
+        return "Noone" if @computer_input == "SCISSORS"
+        return "#{@computer_name}" if @computer_input == "ROCK"
+        return "#{@player_name}" if @computer_input == "PAPER"
     end
   end
+
+  attr_reader :player_name, :computer_name
 end
