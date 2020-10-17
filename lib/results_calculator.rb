@@ -28,6 +28,15 @@ class ResultsCalculator
     return "The Computer Wins" if player_2_wins
     return "You Win" if player_1_wins
   end
+
+  def self.create(player_1, player_2)
+    @results_calc = ResultsCalculator.new(player_1, player_2)
+  end
+
+  def self.instance
+    @results_calc
+  end
+
   private 
 
   def tie

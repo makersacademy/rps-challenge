@@ -8,7 +8,7 @@
 
   <body>
     <h1 class='title'>Make your choice, <%=@game.player_1.name%>.</h1>
-    <form action='/results' method='post'>
+    <form action='/calculate_results' method='post'>
       <input type='submit', name ='choice', value='Rock'>
       <input type='submit', name='choice', value='Paper'>
       <input type='submit', name='choice', value='Scissors'>
