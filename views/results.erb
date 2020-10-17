@@ -2,13 +2,14 @@
 <html>
 
   <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Rock, Paper, Scissors</title>
   </head>
 
   <body>
     <h1 class='title'>Results</h1>
-    <p>You chose <%=@results_calc.user_move%></p>
-    <p>Computer chose <%=@results_calc.computer_move%></p>
+    <p>You chose <%=@results_calc.player_1_move%>.</p>
+    <p>Computer chose <%=@results_calc.player_2_move%></p>
     <%if @result%>
     <p><%=@result%>!</p>
     <%end%>

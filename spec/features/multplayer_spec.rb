@@ -14,4 +14,14 @@ feature 'current turn displayed on screen' do
     click_button('Begin')
     expect(page).to have_content('Make your choice, Harry')
   end
+
+  scenario "player 2's turn displayed on screen next" do
+    visit('/')
+    click_button('Multiplayer')
+    fill_in :player_1, with: "Harry"
+    fill_in :player_2, with: "Ron"
+    click_button('Begin')
+    click_button('Rock')
+    expect(page).to have_content('Make your choice, Ron')
+  end
 end

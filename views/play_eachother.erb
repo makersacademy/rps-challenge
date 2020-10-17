@@ -2,12 +2,13 @@
 <html>
 
   <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Rock, Paper, Scissors</title>
   </head>
 
   <body>
-    <h1 class='title'>Make your choice, <%=@game.player_1.name%>.</h1>
-    <form action='/multiplayer_results' method='post'>
+    <h1>Make your choice, <%=@game.current_turn.name%>.</h1>
+    <form action='/multiplayer_move' method='post'>
       <input type='submit', name ='choice', value='Rock'>
       <input type='submit', name='choice', value='Paper'>
       <input type='submit', name='choice', value='Scissors'>

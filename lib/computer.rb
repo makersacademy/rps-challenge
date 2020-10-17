@@ -1,8 +1,10 @@
 class Computer
-  attr_reader :choices, :move
+  attr_reader :choices, :move, :name
 
   def initialize
     @choices = ['Rock', 'Paper', 'Scissors']
+    ## test it has name!!
+    @name = "Computer"
   end
 
   def choose

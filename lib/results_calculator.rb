@@ -1,9 +1,9 @@
 class ResultsCalculator
-  attr_reader :computer_move, :user_move
+  attr_reader :player_1_move, :player_2_move
 
-  def initialize(user, computer)
-    @user_move = user.move
-    @computer_move = computer.move
+  def initialize(player_1, player_2)
+    @player_1_move = player_1.move
+    @player_2_move = player_2.move
     @beats = { "Rock" => "Paper", "Paper" => "Scissors", "Scissors" => "Rock" }
   end
 
@@ -16,14 +16,14 @@ class ResultsCalculator
   private 
 
   def tie
-    @user_move == @computer_move
+    @player_1_move == @player_2_move
   end
 
   def computer_wins
-    @computer_move == @beats[@user_move]
+    @player_2_move == @beats[@player_1_move]
   end
 
   def user_wins
-    @user_move = @beats[@computer_move]
+    @player_1_move = @beats[@player_2_move]
   end
 end
