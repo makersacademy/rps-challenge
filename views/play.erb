@@ -1,0 +1,9 @@
+<h1 class=player1 > <%=  @player1.capitalize %> </h1>
+
+<h2 class=move > Make your move! </h2>
+
+<form action="/move" method="post">
+  <input type="submit" name="move" value="Rock">
+  <input type="submit" name="move" value="Paper">
+  <input type="submit" name="move" value="Scissors">
+</form>
