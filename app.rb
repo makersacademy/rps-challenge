@@ -26,23 +26,23 @@ class RPS < Sinatra::Base
   get '/result' do
     @marketeer1 = $marketeer1
     @marketeer2 = $computer
-    @marketeer1_choice = $marketeer1.choice
-    @marketeer2_choice = ["Rock", "Paper", "Scissors"].sample
-    @result = rps(@marketeer1_choice, @marketeer2_choice)
+    @marketeer1.choice = $marketeer1.choice
+    @marketeer2.choice = ["Rock", "Paper", "Scissors"].sample
+    @result = rps(@marketeer1, @marketeer2)
     erb :result
   end
 
-  def rps(choice1, choice2)
+  def rps(player1, player2)
     winning_moves = {
       'Rock' => 'Scissors',
       'Scissors' => 'Paper',
       'Paper' => 'Rock'
     }
-    return "It's a draw" if choice1 == choice2
+    return "It's a draw" if player1.choice == player2.choice
 
-    return "#{@marketeer1.name} wins" if winning_moves[choice1] == choice2
+    return "#{player1.name} wins" if winning_moves[player1.choice] == player2.choice
 
-    return "#{@marketeer2.name} wins"
+    return "#{player2.name} wins"
   end
 
   # start the server if ruby file executed directly
