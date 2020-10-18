@@ -1,5 +1,6 @@
 def sign_in
   visit '/'
+  click_link 'solo'
   fill_in :name, with: "Rachel"
   click_button 'Submit'
 end
