@@ -1,1 +1,12 @@
 <p>You chose <%= @choice %></p>
+<% if @result == "Draw" %>
+  <h1>Draw!</h1>
+<% elsif @result == "Win" %>
+  <h1>Win!</h1>
+<% else %>
+  <h1>Loss!</h1>
+<% end %>
+
+<form action="/play">
+  <input type="submit" value="Play Again">
+</form>

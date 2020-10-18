@@ -6,20 +6,22 @@ class Game
     @player_move = player_move.upcase
   end
 
-  def move
-    OUTCOMES.sample
-  end
-
   def play
     @game_move = move
     if @player_move == @game_move
-      puts "Draw!"
+      @result = "Draw"
     elsif @player_move == "ROCK" && @game_move == "SCISSORS" ||
       @player_move == "SCISSORS" && @game_move == "PAPER" ||
       @player_move == "PAPER" && @game_move == "ROCK"
-      puts "You win!"
+      @result = "Win"
     else 
-      puts "You lose!"
+      @result = "Loss"
     end
   end
+
+  private
+  def move
+    OUTCOMES.sample
+  end
+  
 end
