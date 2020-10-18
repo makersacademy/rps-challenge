@@ -12,5 +12,14 @@ feature 'Home page' do
   #   visit('/play')
   #   expect(page).to have_content('Tim')
   # end
+end
 
+feature 'Attacking' do
+
+  scenario 'user has inputted a weapon' do
+    visit('/')
+    fill_in(:player_name, with: 'Tim')
+    visit('/play')
+    expect(page).to have_content 'Rock'
+  end
 end
