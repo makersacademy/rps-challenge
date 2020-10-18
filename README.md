@@ -83,3 +83,16 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+
+Progress Notes
+
+Reasonably good progress was made in regards to getting a fairly good working website.
+
+RGR Testing is something that I need to improve on as I have a test coverage of 84%. There was a lot of time spent on this to the hindrance of the overall project.
+
+SRP principle needs to be worked at as well, as well as separating classes.
+
+If there was more time, I would work on all the above points, resulting in easier de-bugging and more professional looking code quality.
+
+The GET and POST methods is something that I understand well as is the CSS formatting.

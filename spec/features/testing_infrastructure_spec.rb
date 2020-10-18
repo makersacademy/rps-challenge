@@ -3,7 +3,7 @@ require '././app.rb'
 feature 'Testing infrastructure' do
   scenario 'can run app and check page content' do
     visit('/')
-    expect(page).to have_content 'What is your name?'
+    expect(page).to have_content 'Welcome to Rock, Paper, Scissors! What is your name?'
   end
 end
 
@@ -12,22 +12,17 @@ feature 'Enter player name' do
     visit('/')
     fill_in :player_name, with: 'Oli'
     click_button "Enter"
-    expect(page).to have_content 'Welcome Oli', 'Would you like to pick Rock, Paper, or Scissors?'
+    expect(page).to have_content 'Choose your move....if you dare!'
   end
 end
 
-feature 'Enter move' do
-  scenario 'submitting player move' do
-    visit('/play')
-    fill_in :chosen_move, with: "Rock"
-    click_button "Enter"
-    expect(page).to have_content 'You picked Rock'
+feature 'Playing the game' do
+  scenario "When I submit 'Rock' I am told if I have won" do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
+    visit '/play'
+    fill_in('player_name', with: 'Oli')
+    select('Rock', from: 'chosen_move')
+    click_button('Enter')
+    expect(page).to have_content "You chose Rock"
   end
 end
-
-# What does the user have to do?
-# What does the user expect to see?
-
-# Visit the home page ('/')
-# Fill in a text field with a name
-# Click a Submit button
