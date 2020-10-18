@@ -15,28 +15,37 @@ $ bundle install
 $ rackup config.ru
 ```
 Homepage offers two routes: computer game or multiplayer game:
-![Homepage Screenshot](https://i.imgur.com/vgFwuUr.png)
+![Homepage Screenshot](https://i.imgur.com/XF8fFRp.png)
 
 Selecting computer option:
-![Selecting Computer Option](https://i.imgur.com/s6UbOfe.png)
+![Selecting Computer Option](https://i.imgur.com/Ev92drk.png)
 
 User picks a move:
-![Player Choice](https://i.imgur.com/VirS5aB.png)
+![Player Choice](https://i.imgur.com/q0kIbvR.png)
 
-Results page:
-![User Wins](https://i.imgur.com/a0HLTcX.png)
+Results page if computer wins:
+![Computer Wins](https://i.imgur.com/hLlEteI.png)
+
+Results page if draw:
+![Computer Draw](https://i.imgur.com/YOKupNp.png)
+
+Results page if user wins:
+![User Wins](https://i.imgur.com/nT7BrO6.png)
 
 Selecting multiplayer option:
-![Selecting Multiplayer Option](https://i.imgur.com/s4gBekJ.png)
+![Selecting Multiplayer Option](https://i.imgur.com/KsMM7Ko.png)
 
 First player selects a move:
-![First Player Choice](https://i.imgur.com/B90pyxS.png)
+![First Player Choice](https://i.imgur.com/OABqz0s.png)
 
 Second player selects a move:
-![Second Player Choice](https://i.imgur.com/3sd8ox8.png)
+![Second Player Choice](https://i.imgur.com/JuwaBxS.png)
 
-Multiplayer results page:
-![Multiplayer Results Page](https://i.imgur.com/nQFJByO.png)
+Multiplayer results page if a player wins:
+![Multiplayer Player Wins](https://i.imgur.com/i3q9mEX.png)
+
+Multiplayer results page if players draw:
+![Multiplayers draw](https://i.imgur.com/G4aoQX9.png)
 
 
 ## User Stories Analysis
