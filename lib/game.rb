@@ -1,15 +1,15 @@
 class Game
-
   def initialize
     @scoring = {
         "rock" => "scissors",
         "scissors" => "paper",
         "paper" => "scissors"
     }
+    @move_options = ["rock", "paper", "scissors"]
   end
   
   def bot_move
-    ["rock", "paper", "scissors"].sample
+    @move_options.sample
   end
   
   def winner(p1move)
