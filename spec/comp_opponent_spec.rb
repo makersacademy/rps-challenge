@@ -5,5 +5,5 @@ describe CompOpponent do
     it 'has a list of moves' do
       expect(subject.moves).to eq ["Rock", "Paper", "Scissors"]
     end
-  end
+  end 
 end

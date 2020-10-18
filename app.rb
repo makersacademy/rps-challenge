@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/comp_opponent'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -15,13 +16,21 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player1 = session[:Player1]
+    session[:move] = params[:move]
     erb(:play)
   end
 
   post '/move' do
-    @move = params[:move]
-    erb(:move)
+    @player1 = session[:Player1]
+    session[:move] = params[:move]
+    redirect '/result'
   end
 
+  get '/result' do
+    @player1 = session[:Player1]
+    @move = session[:move]
+    erb(:result)
+  end
+ 
   run! if app_file == $0
 end
