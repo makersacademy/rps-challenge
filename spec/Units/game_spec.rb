@@ -1,6 +1,5 @@
-require 'game'
-require 'computer_selection'
-
+require_relative "../../lib/Game"
+require_relative "../../lib/computer_selection"
 describe Game do
   it 'expect computer selection to be rock therefore player 1 wins as paper beats rock' do
     comp = ComputerSelection.new
