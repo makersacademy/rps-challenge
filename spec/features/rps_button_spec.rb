@@ -1,18 +1,24 @@
 feature '/play should have rock paper and scissors buttons' do
 
-  scenario 'should have a rock button' do
+  scenario 'player can select rock from a dropdown list' do
     sign_in_and_play
-    expect(page).to have_button("Rock")
+    page.select("Rock", :from => "options")
+    click_button("Confirm")
+    expect(page).to have_content "You chose rock"
   end
 
-  scenario 'should have a paper button' do
+  scenario 'player can select paper from a dropdown list' do
     sign_in_and_play
-    expect(page).to have_button("Paper")
+    page.select("Paper", :from => "options")
+    click_button("Confirm")
+    expect(page).to have_content "You chose paper"
   end
 
-  scenario 'should have a scissors button' do
+  scenario 'player can select scissors from a dropdown list' do
     sign_in_and_play
-    expect(page).to have_button("Scissors")
+    page.select("Scissors", :from => "options")
+    click_button("Confirm")
+    expect(page).to have_content "You chose scissors"
   end
 
 end
