@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/comp_opponent'
 require_relative 'lib/player'
+require_relative 'lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -31,6 +32,7 @@ class RockPaperScissors < Sinatra::Base
     @player1 = session[:Player1].name
     @move = session[:move]
     @comp_move = CompOpponent.new.comp_move
+    @result = Game.new(@move, @comp_move).result
     erb(:result)
   end
  

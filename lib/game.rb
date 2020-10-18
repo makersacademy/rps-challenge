@@ -14,7 +14,7 @@ class Game
     if RULES[@comp_move] == @player_move 
       "You lose!"
     elsif @player_move == @comp_move
-      "It's a tie, play again?"
+      "It's a draw, play again?"
     else
       "You won!"
     end
