@@ -25,8 +25,6 @@ feature 'Enter move' do
   end
 end
 
-
-
 # What does the user have to do?
 # What does the user expect to see?
 
