@@ -10,7 +10,11 @@ class RPS < Sinatra::Base
     erb :index 
   end
 
-  post '/multiplayer_game' do
+  post '/multiplayer' do
+    redirect to '/multiplayer_game'
+  end
+
+  get '/multiplayer_game' do
     erb :multiplayer_game
   end
 
@@ -42,10 +46,14 @@ class RPS < Sinatra::Base
     erb :multiplayer_results
   end
 
-  post '/computer_game' do
-    erb :computer_game
+  post '/computer' do
+    redirect to '/computer_game'
   end
 
+  get '/computer_game' do
+    erb :computer_game
+  end
+ 
   post '/enter_name' do
     @game = Game.create(Player.new(params[:name]), Computer.new)
     redirect to 'play_computer'
