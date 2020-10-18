@@ -47,10 +47,9 @@ class RockPaperScissors < Sinatra::Base
       session[:choice_1] = params[:selection]
       redirect to '/greet'
     else
-    session[:choice_2] = params[:selection]
-    redirect to '/multiplayer-game'
+      session[:choice_2] = params[:selection]
+      redirect to '/multiplayer-game'
     end
-    
   end
 
   get '/single-player-game' do
