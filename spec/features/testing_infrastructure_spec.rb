@@ -12,9 +12,11 @@ feature 'Enter player name' do
     visit('/')
     fill_in :player_name, with: 'Oli'
     click_button "Enter"
-    expect(page).to have_content 'Welcome Oli'
+    expect(page).to have_content 'Welcome Oli', 'Would you like to pick Rock, Paper, or Scissors?'
   end
 end
+
+
 
 # What does the user have to do?
 # What does the user expect to see?
