@@ -10,11 +10,7 @@
     <h1 class='title'>Results</h1>
     <p><%=@game.player_1.name%> chose <%=@results_calc.player_1_move%>.</p>
     <p><%=@game.player_2.name%> chose <%=@results_calc.player_2_move%>.</p>
-    <p><%=@result%>!</p>
+    <p>It's a Draw!</p>
   </body>
-  <%if @result == "It's a Draw"%>
   <iframe src="https://giphy.com/embed/Uq5VbYeJOfoIl2fsSH" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/molangofficialpage-dance-music-dancing-Uq5VbYeJOfoIl2fsSH">via GIPHY</a></p>
-  <%else%>
-  <iframe src="https://giphy.com/embed/dCBtILeibNcLmzW9dU" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/molangofficialpage-game-cute-dCBtILeibNcLmzW9dU">via GIPHY</a></p>
-  <%end%>
 </html> 

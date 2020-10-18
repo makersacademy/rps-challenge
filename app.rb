@@ -42,8 +42,22 @@ class RPS < Sinatra::Base
   get '/multiplayer_results' do
     @game = Game.instance
     @results_calc = ResultsCalculator.new(@game.player_1, @game.player_2)
-    @result = @results_calc.result
-    erb :multiplayer_results
+    erb @results_calc.result
+  end
+
+  get '/multi_tie' do
+    @results_calc = ResultsCalculator.instance
+    erb :multi_tie 
+  end
+
+  get '/player_1_wins' do
+    @results_calc = ResultsCalculator.instance
+    erb :player_1_wins
+  end
+
+  get '/player_2_wins' do
+    @results_calc = ResultsCalculator.instance
+    erb :player_2_wins
   end
 
   post '/computer' do
@@ -72,10 +86,23 @@ class RPS < Sinatra::Base
   end
 
   get '/results' do
-    @game = Game.instance
     @results_calc = ResultsCalculator.instance
-    @result = @results_calc.result
-    erb :results
+    erb @results_calc.result
+  end
+
+  get '/computer_tie' do
+    @results_calc = ResultsCalculator.instance
+    erb :computer_tie
+  end
+
+  get '/user_wins' do
+    @results_calc = ResultsCalculator.instance
+    erb :user_wins
+  end
+
+  get '/computer_wins' do
+    @results_calc = ResultsCalculator.instance
+    erb :computer_wins
   end
 
   run! if app_file == $0

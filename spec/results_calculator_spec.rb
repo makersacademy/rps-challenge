@@ -17,29 +17,29 @@ describe ResultsCalculator do
     
     context 'computer game' do
       it 'calculates draw result' do
-        expect(comp_game_draw.result).to eq("It's a Draw")
+        expect(comp_game_draw.result).to eq(:computer_tie)
       end
 
       it 'calculates computer wins outcome' do
-        expect(comp_game_comp_wins.result).to eq("The Computer Wins")
+        expect(comp_game_comp_wins.result).to eq(:computer_wins)
       end
 
       it 'calculates user wins outcome' do
-        expect(comp_game_user_wins.result).to eq("You Win")
+        expect(comp_game_user_wins.result).to eq(:user_wins)
       end
     end
 
     context 'multiplayer game' do
       it 'calculates draw results' do
-        expect(multi_game_draw.result).to eq("It's a Draw")
+        expect(multi_game_draw.result).to eq(:multi_tie)
       end
 
       it 'calculates player 1 wins outcome' do
-        expect(multi_game_player1_wins.result).to eq("Player 1 Wins")
+        expect(multi_game_player1_wins.result).to eq(:player_1_wins)
       end
 
       it 'calculates player 2 wins outcome' do
-        expect(multi_game_player2_wins.result).to eq("Player 2 Wins")
+        expect(multi_game_player2_wins.result).to eq(:player_2_wins)
       end
     end
   end
