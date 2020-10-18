@@ -1,9 +1,14 @@
 require 'sinatra/base'
 require 'shotgun'
+require './lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
   set :session_secret, 'Rock is my favourite move'
+  
+  def initialize
+    @game = Game.new
+  end
 
   get '/' do
     erb(:index)
@@ -20,13 +25,24 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  post '/move' do
-    session[:move] = params[:move]
+  post '/rock' do
+    @game.winner('rock')
+    redirect '/result'
+  end
+
+  post '/scissors' do
+    @game.winner('scissors')
+    redirect '/result'
+  end
+
+  post '/paper' do
+    @game.winner('paper')
     redirect '/result'
   end
 
   get '/result' do
-    @move = params[:move]
-    erb(:result)
+    "you won"
+    # Game.new.winner(@move)
+    # erb(:result)
   end
 end
