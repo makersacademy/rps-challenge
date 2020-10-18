@@ -3,6 +3,6 @@ feature 'game result' do
     sign_in_and_play
     srand(1)
     click_button("Rock")
-    expect(page).to have_text "Game result"
+    expect(page).to have_text "You lose!"
   end
 end
