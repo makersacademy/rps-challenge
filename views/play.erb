@@ -1,6 +1,22 @@
-<h1> Welcome <%=@player_name%> to your game of Rock, Paper, Scissors</h1>
-<h1> Would you like to pick Rock, Paper, or Scissors? </h1>
+<h1> <%=@player_name%> </h1>
+<h2> Choose your move....if you dare! </h2>
 
+<style>
+  h1 {
+    color: orange;
+    font-size: 150px;
+    text-align: center;
+    margin: 150px;
+    font-family: impact
+  }
+</style>
+
+<style>
+  h2 {
+    color: orange;
+    text-align: center
+  }
+</style>
 
 <div>
 <form action="/choice" method="post">
@@ -14,7 +30,15 @@
 </form>
 </div>
 
-<!-- <form action="/result" method="post">
-  <input type="text" name="player_names">
-  <input type="submit" value="Enter">
-</form> -->
+<style>
+  form {
+    color: blue;
+    text-align: center
+  }
+</style>
+
+<style>
+  body {
+    background-color: rgb(25, 70, 150);
+  }
+</style>
