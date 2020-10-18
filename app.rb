@@ -35,6 +35,10 @@ class RockPaperScissors < Sinatra::Base
     @result = Game.new(@move, @comp_move).result
     erb(:result)
   end
+
+  get '/again' do
+    redirect '/play'
+  end
  
   run! if app_file == $0
 end
