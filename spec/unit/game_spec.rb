@@ -8,32 +8,27 @@ describe Game do
   
   it 'returns player when player chooses rock and computer chooses scissors' do
     srand(4)
-    computer_choice = computer.choice
-    expect(game.rps(cam.choice('Rock'), computer_choice)).to eq cam
+    expect(game.rps(cam.choice('Rock'), computer.choice)).to eq cam.name
   end
 
   it 'returns player when player chooses paper and computer chooses rock' do
     srand(7)
-    computer_choice = computer.choice
-    expect(game.rps(cam.choice('Paper'), computer_choice)).to eq cam
+    expect(game.rps(cam.choice('Paper'), computer.choice)).to eq cam.name
   end
 
   it 'returns player when player chooses scissors and computer chooses paper' do
     srand(1)
-    computer_choice = computer.choice
-    expect(game.rps(cam.choice('Scissors'), computer_choice)).to eq cam
+    expect(game.rps(cam.choice('Scissors'), computer.choice)).to eq cam.name
   end
 
   it 'returns tie when player and computer choose the same' do
     srand(7)
-    computer_choice = computer.choice
-    expect(game.rps(cam.choice('Rock'), computer_choice)).to eq "Tie"
+    expect(game.rps(cam.choice('Rock'), computer.choice)).to eq "Tie"
   end
 
   it 'returns computer when computer beats player' do
     srand(4)
-    computer_choice = computer.choice
-    expect(game.rps(cam.choice('Paper'), computer_choice)).to eq computer
+    expect(game.rps(cam.choice('Paper'), computer.choice)).to eq "Computer"
   end
 
 end

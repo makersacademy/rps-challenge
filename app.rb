@@ -1,5 +1,7 @@
 require 'sinatra'
 require './lib/player'
+require './lib/computer'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -20,7 +22,15 @@ class RPS < Sinatra::Base
   end
 
   post '/outcome' do  
-    $player_choice = $player.choice(params[:options])
+    @player_choice = $player.choice(params[:options])
+    @computer = Computer.new
+    @game = Game.new($player, @computer)
+    $result = @game.rps(@player_choice, @computer.choice)
+    redirect to('/decider')
+  end
+
+  get '/decider' do
+    @result = $result
     erb :outcome
   end
 
