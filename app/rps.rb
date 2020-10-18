@@ -20,11 +20,12 @@ class RPS < Sinatra::Base
 
   post '/chooses_action' do
     session[:move] = params[:move]
-    redirect '/move'
+    redirect 'move'
   end
 
   get '/move' do
     @move = session[:move]
+    @name = session[:player1]
     erb :move
   end
     run! if app_file == $0
