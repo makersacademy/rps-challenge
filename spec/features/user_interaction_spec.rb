@@ -6,6 +6,6 @@ feature 'testing infrastructure' do
     visit('/')
     fill_in 'player1', with: 'Ara'
     click_button('Go!')
-    expect(page).to have_content('Get ready Ara')
+    expect(page).to have_content('Choose your move Ara')
   end
 end
