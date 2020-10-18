@@ -1,11 +1,11 @@
 class CompOpponent 
-  attr_reader :moves
+  attr_reader :moves, :rand_move
   
   def initialize
     @moves = ["Rock", "Paper", "Scissors"]
   end
-
+  
   def comp_move
-    moves.sample
+    @rand_move = moves.sample
   end
 end
