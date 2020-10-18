@@ -11,6 +11,7 @@ class Game
     return @player.name if player_choice == 'Paper' && computer_choice == 'Rock'
     return @player.name if player_choice == 'Scissors' && computer_choice == 'Paper'
     return @tie = 'Tie' if player_choice == computer_choice
+    
     return "Computer"
   end
 

@@ -2,9 +2,9 @@ require './lib/game'
 
 describe Game do
 
-  let(:cam) {Player.new('Cam')}
-  let(:computer) {Computer.new}
-  let(:game) {game = Game.new(cam, computer)}
+  let(:cam) { Player.new('Cam') }
+  let(:computer) { Computer.new }
+  let(:game) { Game.new(cam, computer) }
   
   it 'returns player when player chooses rock and computer chooses scissors' do
     srand(4)
