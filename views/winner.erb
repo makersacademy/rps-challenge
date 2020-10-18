@@ -1,15 +1,29 @@
+<link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+<div id='centered'>
 <%= erb :game %>
-<br>
+</div>
+
+<div id='bottom'>
 <% if session[:winner] == 'tie' %>
-  It's a tie! 
+  It's a tie!
+  <div class='gif'>
+  <img src= '/images/tie.gif'>
+  </div>
 <% end %>
 <% if session[:winner] == 'Player Wins!' %>
   You win! Great job, <%= session[:name] %>!
+  <div class='gif'>
+  <img src= '/images/winner.gif'>
+  </div>
 <% end %>
 <% if session[:winner] == 'Computer Wins!' %>
   You lose. Better luck next time, <%= session[:name] %>!
+  <div class='gif'>
+  <img src= '/images/loser.gif'>
+  </div>
 <% end %>
-<br>
+<p>
 Play again?
 <br>
 <%= erb :selection %>
+</div>
