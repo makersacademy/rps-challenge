@@ -10,6 +10,8 @@ From here, enjoy a game of rock, paper, scissors! You can choose to play alone b
 
 Enjoy!
 
+![image of homepage](https://imgur.com/xl6nJCk)
+
 ## Requirements:
 
 - the marketeer should be able to enter their name before the game
