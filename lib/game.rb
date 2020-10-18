@@ -11,6 +11,8 @@ class Game
   end
 
   def play
+    @game_move = move
+    
     puts "You win!"
   end
 end
