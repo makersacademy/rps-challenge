@@ -1,1 +1,6 @@
-Get ready <%= @player1 %> 
+<h1> Choose your move <%= @player1 %> ! <h1>
+<form action='/move' method='post'>
+  <input type='submit' name='move' value='rock'>
+  <input type='submit' name='move' value='paper'>
+  <input type='submit' name='move' value='scissors'>
+</form>
