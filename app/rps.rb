@@ -28,7 +28,7 @@ class RPS < Sinatra::Base
     @move = session[:move]
     @name = session[:player1]
     computer = ComputerMove.new(@move.to_s)
-    
+    @computers_move = computer.computer_move
 
     @message = computer.who_wins
     

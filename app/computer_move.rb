@@ -3,7 +3,7 @@ class ComputerMove
 
   def initialize(players_move)
     @players_move = players_move
-    @rps = ['rock', 'paper', 'scissors']
+    @rps = ['Rock', 'Paper', 'Scissors']
     make_move
   end
   
@@ -14,20 +14,20 @@ class ComputerMove
   def who_wins
     case @computer_move
 
-    when 'rock'
-      if @players_move == 'paper'
+    when 'Rock'
+      if @players_move == 'Paper'
         "You Win!!"
       else
         "Computer Wins :("
       end
-    when 'paper'
-      if @players_move == 'scissors'
+    when 'Paper'
+      if @players_move == 'Scissors'
         "You Win!!"
       else
         "Computer Wins :("
       end
-    when 'scissors'
-      if @players_move == 'rock'
+    when 'Scissors'
+      if @players_move == 'Rock'
         "You Win!!"
       else
         "Computer Wins :("
