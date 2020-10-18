@@ -1,8 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
 <div id='centered'>
-<%= erb :game %>
+<%= erb :multi_game %>
 </div>
-
 <div id='bottom'>
 <% if session[:winner] == 'tie' %>
   It's a tie!
@@ -10,18 +9,18 @@
   <img src= '/images/tie.gif'>
   </div>
 <% elsif session[:winner] == 'Player 1 Wins!' %>
-  You win! Great job, <%= session[:name] %>!
+  <%= session[:name_1] %> wins!
+<% elsif session[:winner] == 'Player 2 Wins!' %>
+  <%= session[:name_2] %> wins!
+<% end %>
+<% unless session[:winner] == 'tie' %>
   <div class='gif'>
   <img src= '/images/winner.gif'>
-  </div>
-<% elsif session[:winner] == 'Player 2 Wins!' %>
-  You lose. Better luck next time, <%= session[:name] %>!
-  <div class='gif'>
-  <img src= '/images/loser.gif'>
   </div>
 <% end %>
 <p>
 Play again?
 <br>
-<%= erb :selection %>
+<form action='/greet' method=POST>
+  <input type='submit' value="Let's Go">
 </div>

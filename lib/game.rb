@@ -37,6 +37,6 @@ class Game
   end
 
   def choices_equal?
-    @player_1 == @computer
+    @player_1 == @player_2
   end
 end

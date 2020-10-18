@@ -1,6 +1,14 @@
 <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
 <div id='centered'>
-Hey <%= session[:name] %>!
+<% if !session[:multiplayer] %>
+  Hey <%= session[:name] %>!
+<% elsif session[:multiplayer] == 1 %>
+  Hey <%= session[:name_1] %>!
+  <% session[:multiplayer] = 2 %>
+<% elsif session[:multiplayer] == 2 %>
+  Hey <%= session[:name_2] %>!
+  <% session[:multiplayer] = 1 %>
+<% end %>
 <p>
 Are you ready to play?
 
