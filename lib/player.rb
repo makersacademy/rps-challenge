@@ -8,4 +8,8 @@ class Player
   def player_move(picked_move)
     @picked_move = picked_move
   end
+
+  def move
+    @picked_move 
+  end
 end
