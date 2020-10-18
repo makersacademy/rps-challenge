@@ -6,6 +6,32 @@ Makers week 3 weekend challenge: creating a basic Rock, Paper, Scissors web app.
 - Use Sinatra and Ruby to create this project.
 - Use Capybara and rspec to test-drive each feature.
 
+## Instructions
+Getting started:
+```
+$ git clone https://github.com/emilyalice2708/rps-challenge
+$ cd rps-challenge
+$ bundle install
+$ rackup config.ru
+```
+
+![Homepage Screenshot](https://imgur.com/vgFwuUr)
+
+![Selecting Computer Option](https://imgur.com/s6UbOfe)
+
+![Player Choice](https://imgur.com/VirS5aB)
+
+![Computer Wins](https://imgur.com/a0HLTcX)
+
+![Selecting Multiplayer Option](https://imgur.com/s4gBekJ)
+
+![First Player Choice](https://imgur.com/B90pyxS)
+
+![Second Player Choice](https://imgur.com/3sd8ox8)
+
+![Multiplayer Results Page](https://imgur.com/nQFJByO)
+
+
 ## User Stories Analysis
 
 ```
