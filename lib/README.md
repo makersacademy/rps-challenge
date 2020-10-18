@@ -8,6 +8,7 @@ http://localhost:9292/playervsplayer
 
 Versus a computer:
 - Enter your name and make a Selection
+- Then click submit
 - The results then show
 
 Player vs Player:
