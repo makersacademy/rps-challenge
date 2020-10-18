@@ -1,2 +1,11 @@
-<h1>Rock/Paper/Scissors</h1>
-<h2>Players: <%= @player_name %> vs. <%= @computer %></h2>
+<h1><%= @player_name %> vs. <%= @computer %></h1>
+<h2>Welcome <%= @player_name %>.</h2>
+<p>Please make a selection:-</p>
+<form method="get" action='/battle'>
+  <input type='submit' name='player_choice' value='rock'/>
+  <input type='submit' name='player_choice' value='paper'/>
+  <input type='submit' name='player_choice' value='scissors'/>
+</form>
+<% if @player_choice %>
+<p><%= @player_name %> selected <%= @player_choice %>.</p>
+<% end %>
