@@ -12,5 +12,17 @@ describe Game do
         expect(game.winner("rock")).to eq("The computer wins!")
       end
     end
+    context 'player 1 chooses rock and computer output is scissors' do
+      it "returns it's a draw" do
+        allow(game).to receive(:bot_move) { "scissors" }
+        expect(game.winner("rock")).to eq("Player 1 wins!")
+      end
+    end 
+    context 'player 1 chooses rock and computer output is rock' do
+      it "returns it's a draw" do
+        allow(game).to receive(:bot_move) { "rock" }
+        expect(game.winner("rock")).to eq("It's a draw!")
+      end
+    end
   end
 end
