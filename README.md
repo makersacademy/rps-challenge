@@ -14,22 +14,29 @@ $ cd rps-challenge
 $ bundle install
 $ rackup config.ru
 ```
+Homepage offers two routes: computer game or multiplayer game:
+![Homepage Screenshot](https://i.imgur.com/vgFwuUr.png)
 
-![Homepage Screenshot](https://imgur.com/vgFwuUr)
+Selecting computer option:
+![Selecting Computer Option](https://i.imgur.com/s6UbOfe.png)
 
-![Selecting Computer Option](https://imgur.com/s6UbOfe)
+User picks a move:
+![Player Choice](https://i.imgur.com/VirS5aB.png)
 
-![Player Choice](https://imgur.com/VirS5aB)
+Results page:
+![User Wins](https://i.imgur.com/a0HLTcX.png)
 
-![Computer Wins](https://imgur.com/a0HLTcX)
+Selecting multiplayer option:
+![Selecting Multiplayer Option](https://i.imgur.com/s4gBekJ.png)
 
-![Selecting Multiplayer Option](https://imgur.com/s4gBekJ)
+First player selects a move:
+![First Player Choice](https://i.imgur.com/B90pyxS.png)
 
-![First Player Choice](https://imgur.com/B90pyxS)
+Second player selects a move:
+![Second Player Choice](https://i.imgur.com/3sd8ox8.png)
 
-![Second Player Choice](https://imgur.com/3sd8ox8)
-
-![Multiplayer Results Page](https://imgur.com/nQFJByO)
+Multiplayer results page:
+![Multiplayer Results Page](https://i.imgur.com/nQFJByO.png)
 
 
 ## User Stories Analysis
