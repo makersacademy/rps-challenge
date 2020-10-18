@@ -16,13 +16,13 @@ describe Game do
     end
     it 'confirms player win' do
       allow(subject).to receive(:choices_equal?) { false }
-      allow(subject).to receive(:player_wins?) { true }
-      expect(subject.compare_choices).to eq 'Player Wins!'
+      allow(subject).to receive(:player_1_wins?) { true }
+      expect(subject.compare_choices).to eq 'Player 1 Wins!'
     end
     it 'confirms computer win' do
       allow(subject).to receive(:choices_equal?) { false }
-      allow(subject).to receive(:player_wins?) { false }
-      expect(subject.compare_choices).to eq 'Computer Wins!'
+      allow(subject).to receive(:player_1_wins?) { false }
+      expect(subject.compare_choices).to eq 'Player 2 Wins!'
     end
   end
 

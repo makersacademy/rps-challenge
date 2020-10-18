@@ -1,42 +1,42 @@
 class Game
 
-  attr_reader :computer 
+  attr_reader :player_2
 
-  def initialize(choice = 'rock')
-    @choice = choice
-    @computer = nil
+  def initialize(choice = 'rock', player_2 = nil)
+    @player_1 = choice
+    @player_2 = player_2
   end
 
   def play_rps
-    comp_choose_rps
+    comp_choose_rps if @player_2.nil?
     compare_choices
   end
 
   def comp_choose_rps
-    @computer = ['rock', 'paper', 'scissors'].sample
+    @player_2 = ['rock', 'paper', 'scissors'].sample
   end
 
   def compare_choices
     return 'tie' if choices_equal?
-    return 'Player Wins!' if player_wins?
+    return 'Player 1 Wins!' if player_1_wins?
     
-    'Computer Wins!'
+    'Player 2 Wins!'
   end
 
   private
 
-  def player_wins?
-    if @choice == 'scissors'
-      return true if @computer == 'paper'
-    elsif @choice == 'paper'
-      return true if @computer == 'rock'
+  def player_1_wins?
+    if @player_1 == 'scissors'
+      return true if @player_2 == 'paper'
+    elsif @player_1 == 'paper'
+      return true if @player_2 == 'rock'
     else
-      return true if @computer == 'scissors'
+      return true if @player_2 == 'scissors'
     end
     false
   end
 
   def choices_equal?
-    @choice == @computer
+    @player_1 == @computer
   end
 end

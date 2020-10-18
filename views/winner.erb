@@ -10,13 +10,13 @@
   <img src= '/images/tie.gif'>
   </div>
 <% end %>
-<% if session[:winner] == 'Player Wins!' %>
+<% if session[:winner] == 'Player 1 Wins!' %>
   You win! Great job, <%= session[:name] %>!
   <div class='gif'>
   <img src= '/images/winner.gif'>
   </div>
 <% end %>
-<% if session[:winner] == 'Computer Wins!' %>
+<% if session[:winner] == 'Player 2 Wins!' %>
   You lose. Better luck next time, <%= session[:name] %>!
   <div class='gif'>
   <img src= '/images/loser.gif'>
