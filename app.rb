@@ -5,15 +5,10 @@ require './lib/player'
 require './lib/game'
 
 class RPS < Sinatra::Base
-  enable :sessions
   get '/' do
     erb :index 
   end
-
-  post '/multiplayer' do
-    redirect to '/multiplayer_game'
-  end
-
+  
   get '/multiplayer_game' do
     erb :multiplayer_game
   end
@@ -35,33 +30,14 @@ class RPS < Sinatra::Base
       @game.switch_turns
       redirect to '/play_eachother'
     else 
-      redirect to '/multiplayer_results'
+      redirect to '/results'
     end
   end
 
-  get '/multiplayer_results' do
+  get '/results' do
     @game = Game.instance
     @results_calc = ResultsCalculator.new(@game.player_1, @game.player_2)
     erb @results_calc.result
-  end
-
-  get '/multi_tie' do
-    @results_calc = ResultsCalculator.instance
-    erb :multi_tie 
-  end
-
-  get '/player_1_wins' do
-    @results_calc = ResultsCalculator.instance
-    erb :player_1_wins
-  end
-
-  get '/player_2_wins' do
-    @results_calc = ResultsCalculator.instance
-    erb :player_2_wins
-  end
-
-  post '/computer' do
-    redirect to '/computer_game'
   end
 
   get '/computer_game' do
@@ -85,19 +61,19 @@ class RPS < Sinatra::Base
     redirect to '/results'
   end
 
-  get '/results' do
+  get '/tie' do
     @results_calc = ResultsCalculator.instance
-    erb @results_calc.result
+    erb :tie 
   end
 
-  get '/computer_tie' do
+  get '/player_1_wins' do
     @results_calc = ResultsCalculator.instance
-    erb :computer_tie
+    erb :player_1_wins
   end
 
-  get '/user_wins' do
+  get '/player_2_wins' do
     @results_calc = ResultsCalculator.instance
-    erb :user_wins
+    erb :player_2_wins
   end
 
   get '/computer_wins' do

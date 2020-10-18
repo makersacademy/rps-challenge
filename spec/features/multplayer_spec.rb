@@ -1,7 +1,7 @@
 feature 'multiplayer option' do
   scenario 'user can choose multiplayer' do
     visit('/')
-    expect(page).to have_button("Multiplayer")
+    expect(page).to have_link("Multiplayer")
   end
 end
 

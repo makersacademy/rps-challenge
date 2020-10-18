@@ -6,6 +6,6 @@ feature 'computer can lose' do
   
   scenario 'computer chooses scissors, user chooses rock' do
     click_button("Rock")
-    expect(page).to have_content('You Win!')
+    expect(page).to have_content('Hermione Wins!')
   end
 end
