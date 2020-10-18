@@ -23,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/move' do
     @player1 = session[:Player1].name
-    session[:move] = params[:move]
+    session[:move] = Player.new(params[:Player1]).player_move(params[:move])
     redirect '/result'
   end
 
