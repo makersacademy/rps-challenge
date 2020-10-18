@@ -29,6 +29,7 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     @player1 = session[:Player1]
     @move = session[:move]
+    @comp_move = CompOpponent.new.comp_move
     erb(:result)
   end
  
