@@ -4,8 +4,8 @@ describe Game do
   subject(:game) { described_class.new("rock") }
 
   describe "#initialize" do
-    it "knows how the player moved" do
-      expect(game.player_move).to eq "rock"
+    it "knows how the player moved and upcases it" do
+      expect(game.player_move).to eq "ROCK"
     end
   end
 
@@ -25,6 +25,12 @@ describe Game do
     it "user wins if rock vs scissors" do
       srand(5)
       expect { game.play }.to output("You win!\n").to_stdout
+    end
+
+    it "game wins if paper vs scissors" do
+      srand(5)
+      game_with_paper = described_class.new("paper")
+      expect { game_with_paper.play }.to output("You lose!\n").to_stdout
     end
   end
 end
