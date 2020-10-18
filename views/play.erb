@@ -1,5 +1,5 @@
-<h1><%= @player_name %> vs. <%= @computer %></h1>
-<h2>Welcome <%= @player_name %>.</h2>
+<h2><%= @player_name %> vs. <%= @computer_name %></h2>
+<h3>Welcome <%= @player_name %>.</h3>
 <p>Please make a selection:-</p>
 <form method="get" action='/battle'>
   <input type='submit' name='player_choice' value='rock'/>
@@ -8,4 +8,5 @@
 </form>
 <% if @player_choice %>
 <p><%= @player_name %> selected <%= @player_choice %>.</p>
+<p><%= @computer_name %> selected <%= @computer_choice %>.</p>
 <% end %>

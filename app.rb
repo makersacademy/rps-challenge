@@ -1,9 +1,11 @@
 require 'sinatra/base'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
+    $computer = Computer.new
     erb(:index)
   end
 
@@ -15,7 +17,8 @@ class RPS < Sinatra::Base
   get '/play' do
     @player_name = session[:player_name]
     @player_choice = session[:player_choice]
-    @computer = 'Computer'
+    @computer_name = $computer.name
+    @computer_choice = $computer.choice
     erb(:play)
   end
 
