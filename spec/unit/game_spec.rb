@@ -4,12 +4,36 @@ describe Game do
 
   let(:cam) {Player.new('Cam')}
   let(:computer) {Computer.new}
+  let(:game) {game = Game.new(cam, computer)}
   
-  it 'determines a winner between the computer and the player' do
+  it 'returns player when player chooses rock and computer chooses scissors' do
     srand(4)
-    game = Game.new(cam, computer)
     computer_choice = computer.choice
-    expect(game.rps(cam.choice('Rock'), computer_choice)).to eq cam.name
+    expect(game.rps(cam.choice('Rock'), computer_choice)).to eq cam
+  end
+
+  it 'returns player when player chooses paper and computer chooses rock' do
+    srand(7)
+    computer_choice = computer.choice
+    expect(game.rps(cam.choice('Paper'), computer_choice)).to eq cam
+  end
+
+  it 'returns player when player chooses scissors and computer chooses paper' do
+    srand(1)
+    computer_choice = computer.choice
+    expect(game.rps(cam.choice('Scissors'), computer_choice)).to eq cam
+  end
+
+  it 'returns tie when player and computer choose the same' do
+    srand(7)
+    computer_choice = computer.choice
+    expect(game.rps(cam.choice('Rock'), computer_choice)).to eq "Tie"
+  end
+
+  it 'returns computer when computer beats player' do
+    srand(4)
+    computer_choice = computer.choice
+    expect(game.rps(cam.choice('Paper'), computer_choice)).to eq computer
   end
 
 end
