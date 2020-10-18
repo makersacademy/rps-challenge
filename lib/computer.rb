@@ -1,7 +1,9 @@
 class Computer
   attr_reader :weapons, :name
 
-  def initialize(name = 'Computer', weapons = ['rock', 'paper', 'scissors'])
+  WEAPONS = ['rock', 'paper', 'scissors']
+
+  def initialize(name = 'Computer', weapons = WEAPONS )
     @weapons = weapons
     @name = name
   end
