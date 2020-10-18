@@ -22,15 +22,18 @@ class RPS < Sinatra::Base
   end
 
   post '/outcome' do  
-    @player_choice = $player.choice(params[:options])
+    $player_choice = $player.choice(params[:options])
     @computer = Computer.new
+    $computer_choice = @computer.choice
     @game = Game.new($player, @computer)
-    $result = @game.rps(@player_choice, @computer.choice)
+    $result = @game.rps($player_choice, $computer_choice)
     redirect to('/decider')
   end
 
   get '/decider' do
     @result = $result
+    @player_choice = $player_choice
+    @computer_choice = $computer_choice
     erb :outcome
   end
 
