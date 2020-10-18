@@ -1,0 +1,45 @@
+<h1> <%=@player_name%> </h1>
+<h2> Choose your move....if you dare! </h2>
+
+<style>
+  h1 {
+    color: orange;
+    font-size: 150px;
+    text-align: center;
+    margin: 150px;
+    text-transform: uppercase;
+    font-family: impact
+  }
+</style>
+
+<style>
+  h2 {
+    color: orange;
+    text-align: center
+  }
+</style>
+
+<div>
+<form action="/choice" method="post">
+<select name ="chosen_move" id="chosen_move" >
+    <option>choose</option>
+    <option value="Rock" name = "chosen_move">Rock</option>
+    <option value="Paper" name = "chosen_move">Paper</option>
+    <option value="Scissors" name = "chosen_move">Scissors</option>
+</select>
+<input type="submit" value="Enter">
+</form>
+</div>
+
+<style>
+  form {
+    color: blue;
+    text-align: center
+  }
+</style>
+
+<style>
+  body {
+    background-color: rgb(25, 70, 150);
+  }
+</style>
