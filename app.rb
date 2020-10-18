@@ -20,7 +20,7 @@ class RPS < Sinatra::Base
   end
 
   post '/outcome' do  
-    @player_choice  = params[:options]
+    $player_choice = $player.choice(params[:options])
     erb :outcome
   end
 
