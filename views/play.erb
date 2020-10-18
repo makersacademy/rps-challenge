@@ -2,12 +2,19 @@
 <h1> Would you like to pick Rock, Paper, or Scissors? </h1>
 
 
-<!-- <div class="mainselection">
-<select name="State" id="input7">
-    <option></option>
-    <option value="Alabama">Rock</option>
-    ...
-    <option value="Wisconsin">Paper</option>
-    <option value="Wyoming">Scissors</option>
+<div>
+<form action="/choice" method="post">
+<select name ="chosen_move" id="chosen_move" >
+    <option>choose</option>
+    <option value="Rock" name = "chosen_move">Rock</option>
+    <option value="Paper" name = "chosen_move">Paper</option>
+    <option value="Scissors" name = "chosen_move">Scissors</option>
 </select>
-</div> -->
+<input type="submit" value="Enter">
+</form>
+</div>
+
+<!-- <form action="/result" method="post">
+  <input type="text" name="player_names">
+  <input type="submit" value="Enter">
+</form> -->

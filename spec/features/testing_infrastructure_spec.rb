@@ -16,6 +16,15 @@ feature 'Enter player name' do
   end
 end
 
+feature 'Enter move' do
+  scenario 'submitting player move' do
+    visit('/play')
+    fill_in :chosen_move, with: "Rock"
+    click_button "Enter"
+    expect(page).to have_content 'You picked Rock'
+  end
+end
+
 
 
 # What does the user have to do?
