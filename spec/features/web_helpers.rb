@@ -1,14 +1,12 @@
-
 def sign_in_and_play
-  visit ('/')
+  visit('/')
   fill_in :player1, with: "Meryl"
   click_button "Submit"
 end
 
 def play_game
-  visit ('/')
+  visit('/')
   fill_in :player1, with: "Meryl"
   click_button "Submit"
   click_button "Play Game"
 end
-

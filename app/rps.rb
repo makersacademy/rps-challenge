@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative "./computer_move"
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -10,7 +11,7 @@ class RPS < Sinatra::Base
 
   post '/start_game' do
     session[:player1] = params[:player1]
-     redirect '/play'
+    redirect '/play'
   end
 
   get '/play' do
@@ -26,7 +27,13 @@ class RPS < Sinatra::Base
   get '/move' do
     @move = session[:move]
     @name = session[:player1]
+    computer = ComputerMove.new(@move.to_s)
+    
+
+    @message = computer.who_wins
+    
     erb :move
   end
-    run! if app_file == $0
+
+  run! if app_file == $0
 end
