@@ -22,7 +22,6 @@ class RPS < Sinatra::Base
 
   post '/rock' do
     session[:game] = Game.new
-    @game = session[:game]
     @result = session[:game].winner('rock')
     redirect '/result'
   end
