@@ -1,25 +1,39 @@
 # require 'app.rb'
+require 'spec_helper'
+require_relative 'web_helpers'
 
 feature 'Home page' do
   scenario 'Welcomes and prompts to enter player name' do
-    visit('/')
-    expect(page).to have_content('For your chance')
+    visit '/'
+    expect(page).to have_content 'famous game'
   end
 
-  # scenario 'can take a players name from a form, post them to /names which redirects to /play and are displayed on that page' do
-  #   visit('/')
-  #   fill_in(:player_name, with: 'Tim')
-  #   visit('/play')
-  #   expect(page).to have_content('Tim')
+  # scenario 'register your name' do
+  #   visit '/'
+  #   fill_in 'name', with: 'Tim'
+  #   expect(page).to have_content 'Tim'
   # end
 end
 
-feature 'Attacking' do
+feature 'playing the game' do
+  
+  before do
+    visit '/'
+    fill_in 'name', with: 'Tim'
+    click_button('Submit')
+  end
 
-  scenario 'user has inputted a weapon' do
-    visit('/')
-    fill_in(:player_name, with: 'Tim')
-    visit('/play')
-    expect(page).to have_content 'Rock'
+  scenario 'to see the weapon options' do
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
   end
 end
+# feature 'Attacking' do
+
+#   scenario 'user has inputted a weapon' do
+#     register_and_play
+#     expect(page).to have_button ('Rock')
+#   end
+
+# end

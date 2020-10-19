@@ -1,8 +1,19 @@
-<h2>Welcome to the game <%= @player %></h2>
+<h2>Welcome to the game <%= @name %></h2>
 
 <h4>Choose either Rock, Paper or Scissors from the buttons below:</h4>
-  <form method="POST" action="/attack">
-    <input id="rock" type='submit' value='Rock'>
-    <input id="paper" type="submit" value='Paper'>
-    <input id="scissors" type="submit" value="Scissors">
+  <form method="POST" action="/play">
+    <input id="rock" name="weapon" type='submit' value='Rock' />
+    <input id="paper" name="weapon" type="submit" value='Paper' />
+    <input id="scissors" name="weapon" type="submit" value="Scissors" />
   </form>
+
+  <h3> You chose <%= @weapon %>
+  <h3> The computer chose <%= @opponent_weapon %>
+
+  <%if @game.win? %>
+    <h1>You win!</h1>
+  <%elsif @game.lose? %>
+    <h1>You lose!</h1>
+  <%elsif @game.draw? %>
+    <h1>It's a draw</h1>
+  <% end %>

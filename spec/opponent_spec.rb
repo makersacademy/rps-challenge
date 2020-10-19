@@ -1,4 +1,4 @@
-require_relative '../opponent'
+require_relative '../lib/opponent'
 
 describe Opponent do
 
@@ -9,5 +9,5 @@ describe Opponent do
     expect(subject.turn).to eq('rock')
   end
 
-  
+
 end

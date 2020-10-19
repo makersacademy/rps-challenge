@@ -1,5 +1,5 @@
 def register_and_play
   visit('/')
-  fill_in(:player_name, with: 'Tim')
-  click_button('Play')
+  fill_in('name', with: 'Tim')
+  click_button('submit')
 end
