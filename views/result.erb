@@ -1,0 +1,11 @@
+<center>
+  <%= @marketeer1.name %> choice: <%= @marketeer1.choice %> <br>
+  <%= @marketeer2.name %> choice: <%= @marketeer2.choice %> <br>
+  Result: <%= @result %>
+  <form action="/play" method="get">
+    <input type="submit" value="Play again">
+    </form>
+    <form action="/" method="get">
+      <input type="submit" value="I have enough">
+      </form>
+</center>
