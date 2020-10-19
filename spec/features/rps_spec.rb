@@ -16,6 +16,6 @@ feature 'ask player for a move' do
     find_by_id('rock').check
     click_on 'Make Move!'
     
-    expect(page).to have_content "Meryl played rock"
+    expect(page).to have_content "Meryl played: Rock"
   end
 end
