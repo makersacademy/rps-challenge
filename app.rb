@@ -20,6 +20,9 @@ class RockPaperScissors < Sinatra::Base
 
   post '/store-name' do
     session[:name] = params[:name]
+    if session[:multiplayer]
+      session[:multiplayer] = nil
+    end
     redirect to '/greet'
   end
 
@@ -38,7 +41,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/input-choice' do
-    unless session[:multiplayer]
+    unless session[:multiplayer] || !session[:multiplayer].nil?
       session[:choice] = params[:selection]
       redirect to '/single-player-game'
     end
