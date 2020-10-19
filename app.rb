@@ -15,28 +15,35 @@ class RPS < Sinatra::Base
 
   post '/enter_player_names' do
     @game = Game.create(Player.new(params[:player_1]), Player.new(params[:player_2]))
-    redirect to '/play_eachother'
+    redirect to '/player_1_move'
   end
 
-  get '/play_eachother' do
+  get '/player_1_move' do
     @game = Game.instance
-    erb :play_eachother
+    erb :player_1_move
+  end
+
+  post '/save_player_1' do
+    @game = Game.instance
+    @game.current_turn.choose(params[:choice])
+    redirect to '/player_2_move'
+  end
+
+  get '/player_2_move' do
+    @game = Game.instance
+    @game.switch_turns
+    erb :player_2_move
   end
 
   post '/calculate_multiplayer_results' do
     @game = Game.instance
     @game.current_turn.choose(params[:choice])
-    if @game.player_2.move.nil?
-      @game.switch_turns
-      redirect to '/play_eachother'
-    else 
-      redirect to '/results'
-    end
+    redirect to '/results'
   end
 
   get '/results' do
     @game = Game.instance
-    @results_calc = ResultsCalculator.new(@game.player_1, @game.player_2)
+    @results_calc = ResultsCalculator.create(@game.player_1, @game.player_2)
     erb @results_calc.result
   end
 
@@ -54,10 +61,10 @@ class RPS < Sinatra::Base
     erb :play_computer
   end
 
-  post '/calculate_results' do
+  post '/calculate_computer_results' do
     @game = Game.instance
     @game.player_1.choose(params[:choice])
-    @results_calc = ResultsCalculator.create(@game.player_1, @game.player_2.choose)
+    @game.player_2.choose
     redirect to '/results'
   end
 
