@@ -16,23 +16,22 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player1 = session[:player1]
+    $player1 = session[:player1]
     erb(:play)
   end
 
   post '/rock' do
-    session[:game] = Game.new
-    @result = session[:game].winner('rock')
+    $result = Game.new.winner('rock')
     redirect '/result'
   end
 
   post '/scissors' do
-    @result = session[:game].winner('scissors')
+    $result = Game.new.winner('scissors')
     redirect '/result'
   end
 
   post '/paper' do
-    @result = session[:game].winner('paper')
+    $result = Game.new.winner('paper')
     redirect '/result'
   end
 
