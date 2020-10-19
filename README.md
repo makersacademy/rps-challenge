@@ -1,7 +1,20 @@
 # RPS Challenge
 
-Instructions
+## Basic Rules
+
+- Rock beats Scissors
+- Scissors beats Paper
+- Paper beats Rock
+
+## Instructions
 -------
+
+- Clone this repository onto your computer via your terminal 
+- Run bundle
+- Open the application
+- Run rackup
+- Go onto your browser of choice and enter localhost.9292
+
 
 * Feel free to use google, your notes, books, etc. but work on your own
 * If you refer to the solution of another coach or student, please put a link to that in your README
@@ -50,11 +63,7 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
-## Basic Rules
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
 
 In code review we'll be hoping to see:
 
