@@ -1,0 +1,141 @@
+body {
+  background-color: #fcc9b1;
+  text-align: center;
+} 
+
+.enter_name {
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+  font-size: 50px;
+  text-align: center;  
+}
+
+.player1 {
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.form {
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+  font-size: 20px;
+  text-align: center;  
+}
+
+.play_button {
+  position: absolute;
+  top: 52%;
+  left: 48%;
+  background-color: black; 
+  border-radius: 8px;
+  color: white;
+  padding: 4px 25px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+}
+
+.play_button:hover {
+  background-color: #fcc9b1;
+  color: black;
+}
+
+.actions {
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+  font-size: 20px;
+  text-align: center;  
+}
+
+.rock {
+  position: absolute;
+  top: 45%;
+  left: 38%;
+  background-color: black; 
+  border-radius: 8px;
+  color: white;
+  padding: 4px 25px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+}
+
+.rock:hover {
+  background-color: #fcc9b1;
+  color: black;
+}
+
+.paper {
+  position: absolute;
+  top: 45%;
+  left: 46%;
+  background-color: black; 
+  border-radius: 8px;
+  color: white;
+  padding: 4px 25px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+}
+
+.paper:hover {
+  background-color: #fcc9b1;
+  color: black;
+}
+
+.scissors {
+  position: absolute;
+  top: 45%;
+  left: 55%;
+  background-color: black; 
+  border-radius: 8px;
+  color: white;
+  padding: 4px 25px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+}
+
+.scissors:hover {
+  background-color: #fcc9b1;
+  color: black;
+}
+
+.you_picked {
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.comp {
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+  font-size: 35px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.result {
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+  font-size: 32px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.again {
+  position: absolute;
+  top: 62%;
+  left: 47%;
+  background-color: black; 
+  border-radius: 8px;
+  color: white;
+  padding: 4px 22px;
+  font-size: 12px;
+  transition-duration: 0.4s;
+}
+.again:hover {
+  background-color: #fcc9b1;
+  color: black;
+}

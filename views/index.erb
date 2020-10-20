@@ -1,0 +1,17 @@
+<head>
+  <title> Home Page </title>
+  <link type="text/css" rel="stylesheet" href="<%=url('/style.css')%>" />
+</head>
+
+
+<img src="https://img.icons8.com/carbon-copy/200/000000/diamond.png"/>
+<img src="https://img.icons8.com/carbon-copy/200/000000/paper-plane.png" /> 
+<img src="https://img.icons8.com/carbon-copy/200/000000/barber-scissors.png"/>
+
+<h2 class='enter_name'> Enter your name to play </h2>
+
+<form class="form" action="/names" method='post'>
+  <label for="Player1">Player1:</label>
+  <input type="text" name="Player1" required >
+  <input class="play_button" type="submit" value="Play">
+</form>

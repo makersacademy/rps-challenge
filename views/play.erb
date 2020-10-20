@@ -1,0 +1,15 @@
+<head>
+  <title> Make your move </title>
+  <link type="text/css" rel="stylesheet" href="<%=url('/style.css')%>" />
+</head>
+<img src="https://img.icons8.com/carbon-copy/200/000000/diamond.png"/>
+<img src="https://img.icons8.com/carbon-copy/200/000000/paper-plane.png" /> 
+<img src="https://img.icons8.com/carbon-copy/200/000000/barber-scissors.png"/>
+
+<h1 class=player1 > <%=  @player1.capitalize %> make your move
+</h1>
+<form class="actions" action="/move" method="post">
+  <input class="rock" type="submit" name="move" value="Rock">
+  <input class="paper"type="submit" name="move" value="Paper">
+  <input class="scissors"type="submit" name="move" value="Scissors">
+</form>
