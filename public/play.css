@@ -1,0 +1,29 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  font-size: 100px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 50px;
+  text-align: center;
+}
+
+#buttons {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+}
+
+input[type=submit] {
+  background-color: black;
+  color: white;
+  font-size: 300%;
+  border-radius: 12px;
+  margin: 30px;
+}

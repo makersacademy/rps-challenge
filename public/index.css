@@ -1,0 +1,30 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  font-size: 100px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 50px;
+  text-align: center;
+}
+
+#main {
+  display: block;
+  text-align: center;
+}
+
+input[type=text] {
+  width: 20%;
+  font-size: 200%;
+}
+
+input[type=submit] {
+  background-color: black;
+  color: white;
+  font-size: 200%;
+  border-radius: 12px;
+}
