@@ -4,6 +4,14 @@ class Game
     @player = player
   end
 
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
   def return_player_name
     @player.name
   end

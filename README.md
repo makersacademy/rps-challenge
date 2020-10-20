@@ -8,7 +8,7 @@ I have implemented the basic functionality outlined in the user stories. Instead
 
 I should note that the controller, as it stands, uses sessions to store information across different requests. It was my intention to use a single global variable ($game) for this purpose, however this seemed to cause issues when running the app via Shotgun (although not when "ruby app.rb" was called from the command line).
 
-TOP TIP: Run with Shotgun to get the benefit of the front-end stuff
+<em>I have since refactored to remove reliance on sessions and global variables, using the Singleton Pattern to store information across requests as a class instance variable</em>
 
 * * *
 
