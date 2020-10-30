@@ -1,5 +1,9 @@
 # RPS Challenge
 
+[Challenge Analysis](./docs/analysis.md)
+
+[Domain Model](./docs/domain_model.md)
+
 Instructions
 -------
 
