@@ -1,7 +1,15 @@
 <html>
 <head>
+  <title>Your RPS Game</title>
 </head>
 <body>
-"Welcome to your RPS Game!"
+<h1>"Welcome to your RPS Game!"</h1>
+<h2>Player 1: <%= @player1_name %></h2>
+<h2>Player 2: <%= @player2_name %></h2>
+<form action='/game' method='post'>
+  <input type='text' name='player_name' id='player_name'><br>
+  <br>
+  <input type='submit' value='Sign In' id='sign_in'>
+</form>
 </body>
 </html>
