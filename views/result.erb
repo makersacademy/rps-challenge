@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>Your RPS Game</title>
+</head>
+<body>
+<h1>And the results are in!!</h1><br>
+<h2><%= @game.player1.name %>: <%= @game.player1.choice %></h2>
+<h2><%= @game.player2.name %>: <%= @game.player2.choice %></h2>
+<br>
+<h1>The winner is: <%= @game.winner %></h1>
+<form action='/game' method='get'>
+  <input type='submit' id='restart' value='Restart'>
+</form>
+</body>
+</html>

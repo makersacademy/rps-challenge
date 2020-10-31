@@ -1,6 +1,7 @@
 require 'sinatra/base'
-require 'game'
-require 'player'
+require './lib/game'
+require './lib/player'
+require './lib/game_logic_ls'
 
 class RPSGame < Sinatra::Base
   before do
@@ -12,11 +13,9 @@ class RPSGame < Sinatra::Base
   end
 
   post '/game' do
-    if @game.nil?
-      player1 = Player.new(params[:player_name])
-      player2 = Player.new('COMPUTER')
-      @game = Game.create(player1, player2)
-    end
+    player1 = Player.new(params[:player_name])
+    player2 = Player.new('COMPUTER')
+    @game = Game.create(GameLogic, player1, player2)
 
     redirect '/game'
   end
@@ -24,6 +23,17 @@ class RPSGame < Sinatra::Base
   get '/game' do
     erb :game
   end
-  
+
+  post '/result' do
+    @game.player1.choice = params[:choice]
+    @game.player2.choice = GameLogic.ai_selection
+
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
+  end
+
   run! if app_file == $PROGRAM_NAME
 end

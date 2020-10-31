@@ -4,6 +4,15 @@
 
 [Domain Model](domain_model.md)
 
+## In Development changes
+- during development the need for a "GameLogic" class became apparent, due to the requirements for testing, and the extension requirement for RPS/Spock/Lizard.
+- moved the game logic elements into a separate class, that can be swapped in/out to enable different games to be played
+  - the testing was corrected to be GameLogic independent, except for the specifics of the particular GameLogic validation (separate files)
+- also made the ERB play view, dynamically created based on the options available in the GameLogic class
+- and included the "AI" component, as this is a feature of the GameLogic
+  - this also made some of the feature testing possible (stubbing the AI result)
+
+
 ## Basic Model
 for minimum development work to meet user story requirements:
 

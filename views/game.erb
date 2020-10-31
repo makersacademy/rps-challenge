@@ -3,8 +3,14 @@
   <title>Your RPS Game</title>
 </head>
 <body>
-<h1>"Welcome to your RPS Game!"</h1>
+<h1>Welcome to your RPS Game!</h1><br>
 <h2>Player 1: <%= @game.player1.name %></h2>
 <h2>Player 2: <%= @game.player2.name %></h2>
+<% GameLogic.new.options.each do |selection| %>
+  <form action='/result' method='post'>
+    <input type='hidden' id=<%= selection %>'_value' name='choice' value=<%= selection %>>
+    <input type='submit' id=<%= selection %> value=<%= selection.capitalize %>><br>
+  </form>
+<% end %>
 </body>
 </html>
