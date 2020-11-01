@@ -1,4 +1,4 @@
-require 'Player'
+require 'player'
 
 RSpec.describe Player do
   subject { Player.new('Janet') }
