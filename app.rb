@@ -13,7 +13,8 @@ class RPSGame < Sinatra::Base
   end
 
   post '/game' do
-    player1 = Player.new(params[:player_name])
+    player1_name = params[:player_name] == "" ? 'Annonymous' : params[:player_name]
+    player1 = Player.new(player1_name)
     player2 = Player.new('COMPUTER')
     @game = Game.create(GameLogic, player1, player2)
 
