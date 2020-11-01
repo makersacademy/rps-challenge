@@ -22,13 +22,13 @@ class Game
   end
 
   def winner
-    get_winner
+    determin_winner
   end
 
   private
   attr_reader :players
 
-  def get_winner
+  def determin_winner
     case @game_logic_class.new.result(player1.choice, player2.choice)
     when 'draw'
       "It is a Draw!"

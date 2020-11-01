@@ -21,22 +21,21 @@ class GameLogic
   end
 
   def result(selection1, selection2)
-    if selection1 == selection2
-      return 'draw'
-    elsif p1_win(selection1, selection2)
-      return 'player1'
-    else
-      return 'player2'
-    end
+    return 'draw' if selection1 == selection2
+
+    return 'player1' if p1_win(selection1, selection2)
+
+    'player2'
   end
 
   private
 
   def p1_win(selection1, selection2)
-    [
-      [options[0], options[2]],
-      [options[1], options[0]],
-      [options[2], options[1]]
-    ].include? [selection1, selection2]
+    win_conditions = {
+      options[0] => [options[2]],
+      options[1] => [options[0]],
+      options[2] => [options[1]]
+    }
+    win_conditions[selection1].include? selection2
   end
 end

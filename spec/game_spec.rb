@@ -1,8 +1,8 @@
 require 'game'
 
 RSpec.describe Game do
-  let(:player1) { double :player1, name: 'Test1', choice: 'rock'}
-  let(:player2) { double :player2, name: 'Test2', choice: 'rock'}
+  let(:player1) { double :player1, name: 'Test1', choice: 'rock' }
+  let(:player2) { double :player2, name: 'Test2', choice: 'rock' }
   subject! { described_class.create(GameLogic, player1, player2) }
 
   it { is_expected.to respond_to :player1 }
