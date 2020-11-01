@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>Your RPS Game</title>
+  <link href="<%= url('/stylesheets/rps_game.css') %>" type='text/css' rel='stylesheet' />
+</head>
+<body>
+<h1 class='c_center rps_title'>Welcome to your RPS Game!</h1>
+<div class='title_image c_center'>
+  <img src="<%= url('/images/rps_title.png') %>">
+  Image from: <a href="https://www.akshaybahadur.com/post/rock-paper-scissors-lizard-spock">
+    akshaybahadur</a>
+</div>
+<form class='sign_in c_center' action='/game' method='post'>
+  <label for='player_name'>Please sign in with your name, for the game.<br>
+    <br>
+  <input type='text' name='player_name' id='player_name'><br>
+  </label>
+  <br>
+  <input type='submit' value='Sign In' id='sign_in'>
+</form>
+</body>
+</html>

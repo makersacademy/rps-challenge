@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>Your RPS Game</title>
+  <link href="<%= url('/stylesheets/rps_game.css') %>" type='text/css' rel='stylesheet' />
+</head>
+<body>
+<h1 class='l_margin'>And the results are in!!</h1><br>
+<h2 class='player1 l_margin size_player'><%= @game.player1.name %>:
+  <%= @game.player1.choice.capitalize %></h2>
+<h2 class='player2 size_player'><%= @game.player2.name %>:
+  <%= @game.player2.choice.capitalize %></h2>
+<br>
+<h1>The winner is: <%= @game.winner %></h1>
+<form class='options' action='/game' method='get'>
+  <input type='submit' id='restart' value='Restart'>
+</form>
+</body>
+</html>
