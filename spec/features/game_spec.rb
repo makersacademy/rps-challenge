@@ -1,5 +1,5 @@
-feature "Displaying choice" do
-  scenario "display choice" do
+feature "Displaying player's choice" do
+  scenario "display player's choice" do
     sign_in_and_play
     fill_in :choice, with: "rock"
     click_button "Enter"
