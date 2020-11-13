@@ -1,5 +1,10 @@
 # RPS Challenge
 
+This is my solution to the challenge found at this repo https://github.com/makersacademy/rps-challenge
+
+
+
+
 Instructions
 -------
 
