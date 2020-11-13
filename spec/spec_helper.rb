@@ -21,7 +21,7 @@ end
 
 
 # Setting environmental variable RACK_ENV
-  ENV['RACK_ENV'] = 'test'
+ENV['RACK_ENV'] = 'test'
 
 # Requiring the Sinatra app file, capybara, capybara/rspec and rspec
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
