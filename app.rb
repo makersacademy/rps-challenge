@@ -9,9 +9,14 @@ class RPS < Sinatra::Base
 
   post '/name' do
     session[:name] = params[:name]
+    redirect '/home'
   end
 
-  get '/game' do
+  get '/home' do
+    erb(:home)
+  end
+
+  post '/game' do
   end
 
 
