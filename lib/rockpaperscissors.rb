@@ -6,7 +6,7 @@ class RockPaperScissors
     :paper => { :rock => :win, :paper => :draw, :scissors => :loss, :lizard => :loss, :spock => :win },
     :scissors => { :rock => :loss, :paper => :win, :scissors => :draw, :lizard => :win, :spock => :loss },
     :lizard => { :rock => :loss, :paper => :win, :scissors => :loss, :lizard => :draw, :spock => :win },
-    :spock => { :rock => :win, :paper => :lose, :scissors => :win, :lizard => :lose, :spock => :draw }
+    :spock => { :rock => :win, :paper => :loss, :scissors => :win, :lizard => :loss, :spock => :draw }
   }
 
   attr_reader :round, :player1, :player2

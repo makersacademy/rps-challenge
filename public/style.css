@@ -25,6 +25,11 @@ h1 {
     height: auto;
 }
 
+.circular-border {
+    border-radius: 50%;
+    border: thick solid #fed88f;
+}
+
 button, input {
     background-color: #bfe2ca;
     margin-bottom: 15px;
