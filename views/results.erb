@@ -14,12 +14,10 @@
             <h2><%= @game.player1.name%> chose: <%= params[:player].capitalize%></h2>
             <h2><%= @game.player2.name%> chose: <%= params[:computer].capitalize%></h2>
             <h2>The winner is <%= @winner_name%>!</h2>
-
-
     </div>
 
-    <form action="/play">
-        <button>Next Round</button>
+    <form action="/next-round">
+        <button name="next">Next Round</button>
     </form>
 </body>
 </html>

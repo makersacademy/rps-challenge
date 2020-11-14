@@ -49,18 +49,17 @@ feature "Single Player" do
     expect(page).to have_content(/The winner is Computer!/)
   end
 
-  scenario "player can lose" do
+  scenario "win condition can be achieved" do
     srand(420)
     visit('/')
     click_button('Single Player')
     fill_in('name', with: 'Partario')
     click_button('Submit')
-    RockPaperScissors::WIN_CONDITION.times do
+    (RockPaperScissors::WIN_CONDITION * 2).times do
       click_button('rock')
       click_button('next')
     end
-    expect(page).to have_content(/Computer wins the game!/)
-
+    expect(page).to have_content(/Partario wins the game!/)
   end
 end
 

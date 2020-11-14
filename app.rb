@@ -33,7 +33,7 @@ class Game < Sinatra::Base
   get "/round-results" do
     @game = RockPaperScissors.instance
     result = params[:result]
-    p result
+    
     if result == 'win'
       @winner_name = @game.player1.name
     elsif result == 'loss'
@@ -41,13 +41,22 @@ class Game < Sinatra::Base
     else
       @winner_name = "no one, it's a draw"
     end
-    p "winner:"
-    p @winner_name
+   
     erb(:results)
   end
 
   get '/play' do
     @game = RockPaperScissors.instance
     erb(:play)
+  end
+
+  get '/next-round' do
+    @game = RockPaperScissors.instance
+    @game.winner.nil? ? redirect('/play') : redirect('/final-results')
+  end
+
+  get '/final-results' do
+    @game = RockPaperScissors.instance
+    erb(:final_results)
   end
 end

@@ -1,5 +1,5 @@
 class RockPaperScissors
-  WIN_CONDITION = 5
+  WIN_CONDITION = 3
   CHOICES = [:rock, :paper, :scissors]
   COMBINATION_MAP = {
     :rock => { :rock => :draw, :paper => :loss, :scissors => :win },
