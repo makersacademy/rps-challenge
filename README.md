@@ -80,8 +80,5 @@ Capybara.app = RPS
 ## Spend time planning
 I had committed to spending more time in the planning and diagramming stage so here it is. I tried to visualise what will happen. This is not the correct way to draw a sequence diagram but it helped me think about the different steps.
 
+![](Diagramming.png)
 
-![My thoughts](Screenshot 2020-11-14 at 19.05.07.png)
-
-
-require 'simplecov-console'
