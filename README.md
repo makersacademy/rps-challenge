@@ -29,10 +29,25 @@ Hints on functionality
 - a winner will be declared
 
 
-As usual please start by
+## Getting Started
 
-* Forking this repo
-* TEST driving development of your app
+1. Clone this directory
+1. Navigate to the project directory
+1. Run `bundle` to install gem dependencies
+1. Run `rackup` to start the application server
+1. Go to `localhost:9292` in a browser
+
+## Gameplay
+
+1. Enter your name
+![Enter name](First.png)
+
+1. Choose your move - rock, paper or scissors
+![Choose move](Second.png)
+
+1. See the results
+The results screen has conditional formatting depending on the outcome.
+![Result](Third.png)
 
 
 ## How I got started
