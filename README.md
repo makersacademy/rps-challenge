@@ -14,7 +14,10 @@ Overall, I enjoyed this challenge and I think I hit the brief quite well. If I w
 
 ## My Approach
 I started by mapping how my classes ought to behave with a diagram, that I largely stuck to throughout the process.
-![The class diagram that I put together while planning this exercise](https://i.ibb.co/s99mYw0/Screenshot-2020-11-14-at-17-52-38.png)I followed the principles of TDD as best as I could, and focused on trying to cleanly refactor after getting everything working.  My test coverage is sitting at 100%.
+
+![The class diagram that I put together while planning this exercise](https://i.ibb.co/s99mYw0/Screenshot-2020-11-14-at-17-52-38.png)
+
+I followed the principles of TDD as best as I could, and focused on trying to cleanly refactor after getting everything working.  My test coverage is sitting at 100%.
 
 Initially, I saved the state of my application in a class variable. This worked really well locally, but when I deployed to Heroku I found that this led to unpredictable results with multiple users.  I transitioned to using sessions again to counter this.
 
@@ -168,6 +171,3 @@ SimpleCov.start
   
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
-
-
-![The class diagram that I put together while planning this exercise](https://i.ibb.co/s99mYw0/Screenshot-2020-11-14-at-17-52-38.png)
