@@ -41,6 +41,22 @@ class RPS < Sinatra::Base
     erb :rpss
   end
 
+  post '/player1' do
+    @game.p1_turn(params[:player1])
+    redirect '/player2'
+  end
+
+  get '/player2' do
+    erb :anotherturn
+  end
+
+  post '/games' do
+    p params[:player2]
+    p @game.p1_go[-1]
+    @game.play(@game.p1_go[-1], params[:player2])
+    redirect '/results'
+  end
+
   get '/rock' do
     @game.play("rock")
     redirect '/result'
@@ -58,6 +74,10 @@ class RPS < Sinatra::Base
 
   get '/result' do
     erb :result
+  end
+
+  get '/results' do
+    erb :results
   end
 
   run! if app_file == $0

@@ -56,4 +56,8 @@ describe Game do
   it 'can tell you i you are against a computer' do
     expect(subject.computer?).to eq true
   end
+
+  it 'stores player1s turn in 2p' do
+    expect { subject.p1_turn("rock") }.to change { subject.p1_go.length }.by 1
+  end
 end

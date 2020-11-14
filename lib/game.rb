@@ -1,11 +1,12 @@
 class Game
 
-  attr_reader :name, :name2
+  attr_reader :name, :name2, :p1_go
 
   def initialize(name, name2 = "all his friends <3")
     @name = name
     @name2 = name2
     @results = []
+    @p1_go = []
   end
 
   def self.create(name, name2 = "all his friends <3")
@@ -18,6 +19,10 @@ class Game
 
   def computer?
     @name2 == "all his friends <3"
+  end
+
+  def p1_turn(weapon)
+    @p1_go << weapon
   end
 
   def results
