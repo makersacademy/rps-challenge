@@ -1,11 +1,4 @@
-Rock Paper Scissors!!!
-
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
+Rock, Paper, Scissors!!!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
