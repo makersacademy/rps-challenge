@@ -82,3 +82,6 @@ I had committed to spending more time in the planning and diagramming stage so h
 
 
 ![My thoughts](Screenshot 2020-11-14 at 19.05.07.png)
+
+
+require 'simplecov-console'
