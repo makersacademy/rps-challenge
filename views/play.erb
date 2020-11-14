@@ -11,9 +11,9 @@
         <h1><%= @game.player1.name%>: <%= @game.player1.score%> <%=@game.player2.name%>: <%= @game.player2.score%></h1>
         <h2><%= @game.player1.name%> - make your choice!</h2>
         <form action="/single-player-choice" method="post">
-            <button name="choice" value="Rock">Rock</button>
-            <button name="choice" value="Paper">Paper</button>
-            <button name="choice" value="Scissors">Scissors</button>
+            <button name="choice" value="rock">Rock</button>
+            <button name="choice" value="paper">Paper</button>
+            <button name="choice" value="scissors">Scissors</button>
         </form>
     </div>
 </body>

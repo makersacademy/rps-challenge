@@ -22,6 +22,30 @@ class Game < Sinatra::Base
     redirect('/play')
   end
 
+  post "/single-player-choice" do
+    @game = RockPaperScissors.instance
+    player_choice = params[:choice].to_sym
+    computer_choice = RockPaperScissors::CHOICES.sample
+    result = @game.play_round(player_choice, computer_choice)
+    redirect to("/round-results?result=#{result.to_s}&computer=#{computer_choice}&player=#{player_choice}")
+  end
+
+  get "/round-results" do
+    @game = RockPaperScissors.instance
+    result = params[:result]
+    p result
+    if result == 'win'
+      @winner_name = @game.player1.name
+    elsif result == 'loss'
+      @winner_name = @game.player2.name
+    else
+      @winner_name = "no one, it's a draw"
+    end
+    p "winner:"
+    p @winner_name
+    erb(:results)
+  end
+
   get '/play' do
     @game = RockPaperScissors.instance
     erb(:play)

@@ -35,6 +35,19 @@ feature "Single Player" do
     click_button('Submit')
     expect(page).to have_css("button", :count => RockPaperScissors::CHOICES.length)
   end
+
+  scenario "player shown computers choice after theirs and whether they've won" do
+    srand(420)
+    visit('/')
+    click_button('Single Player')
+    fill_in('name', with: 'Partario')
+    click_button('Submit')
+    click_button('rock')
+    expect(page).to have_content(/Round 1 results!/)
+    expect(page).to have_content(/Partario chose: Rock/)
+    expect(page).to have_content(/Computer chose: Paper/)
+    expect(page).to have_content(/The winner is Computer!/)
+  end
 end
 
 feature "Play screen" do
