@@ -1,1 +1,18 @@
-<%= @player.name %>? That's a funny name.
+<%= @player1.name %>? That's a funny name.
+
+<p> What move will you choose? </p>
+
+<div>
+  <form action="/choice" method="post" style="float:left; padding-right:15px">
+    <input name="move" value="rock"
+    <input type="submit" value="Rock">
+  </form>
+  <form action="/choice" method="post" style="float:left; padding-right:15px">
+    <input name="move" value="paper"
+    <input type="submit" value="Paper">
+  </form>
+  <form action="/choice" method="post" style="float:left">
+    <input name="move" value="scissors"
+    <input type="submit" value="Scissors">
+  </form>
+</div>
