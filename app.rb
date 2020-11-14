@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RPS < Sinatra::Base 
   enable :sessions
@@ -22,7 +23,8 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-
+    @winner = (Game.new(session[:name], session[:move])).round
+    erb(:result)
   end
 
 run! if app_file == $0

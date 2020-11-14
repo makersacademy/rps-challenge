@@ -14,11 +14,11 @@ class Game
     combinations = {"Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper"}
     computer_move = move_sample
     if user_move == computer_move
-      "Draw"
+      "It's a draw!"
     elsif combinations[user_move] == computer_move
-      @name
+      "You won!"
     else
-      "Computer"
+      "You lost!"
     end
   end
 

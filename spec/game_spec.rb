@@ -20,19 +20,19 @@ describe Game do
   end
 
   describe '#round' do 
-  it 'Returns "Computer" when computer wins' do
-    allow(subject).to receive(:move_sample) {"Rock"}
-    expect(subject.round).to eq("Computer")
+    it 'Returns "The computer won!" when computer wins' do
+      allow(subject).to receive(:move_sample) {"Rock"}
+      expect(subject.round).to eq("You lost!")
+    end
+    it 'Returns "It\'s a draw!" when draw' do
+      allow(subject).to receive(:move_sample) {"Scissors"}
+      expect(subject.round).to eq("It's a draw!")
+    end
+    it 'Returns "You won!" when user wins' do
+      allow(subject).to receive(:move_sample) {"Paper"}
+      expect(subject.round).to eq("You won!")
+    end
   end
-  it 'Returns "Draw" when draw' do
-    allow(subject).to receive(:move_sample) {"Scissors"}
-    expect(subject.round).to eq("Draw")
-  end
-  it 'Returns "Symion" when user wins' do
-    allow(subject).to receive(:move_sample) {"Paper"}
-    expect(subject.round).to eq("Symion")
-  end
-end
 
 
 end
