@@ -11,7 +11,7 @@ class Bot
   attr_reader :name, :move
 
   def initialize
-    @name = COMPNAME.sample
+    @name = RAND_NAME.sample
   end
 
   # def move

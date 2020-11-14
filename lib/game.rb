@@ -9,16 +9,16 @@ class Game
     @player_2 = player_2
   end
 
-  def rps(player_1, player_2)
-    victory = { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
+  # def rps(player_1, player_2)
+  #   victory = { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
 
-    if player_1 == player_2
-      "Draw!"
-    elsif victory[player_1] == player_2
-      "Player 1 won!"
-    else
-      "Player 2 won!"
-    end
-  end
-  
+  #   if player_1 == player_2
+  #     "Draw!"
+  #   elsif victory[player_1] == player_2
+  #     "Player 1 won!"
+  #   else
+  #     "Player 2 won!"
+  #   end
+  # end
+
 end
