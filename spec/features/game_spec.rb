@@ -23,16 +23,18 @@ feature 'rock, paper, scisors' do
     expect(page).to have_content "You Won!"
   end
 
-  scenario "after playing you can replay" do
-    click_link "Rock"
-    click_link "Play Again!"
-    expect(page).to have_content "Well hey there Sheldon!"
-  end
+  context "rock and play again" do
+    before do
+      click_link "Rock"
+      click_link "Play Again!"
+    end
+    scenario "after playing you can replay" do
+      expect(page).to have_content "Well hey there Sheldon!"
+    end
 
-  scenario "you can see your results history" do
-    click_link "Rock"
-    click_link "Play Again!"
-    click_link "Rock"
-    expect(page).to have_content "Your history: Drew, Drew"
+    scenario "you can see your results history" do
+      click_link "Rock"
+      expect(page).to have_content "Your history: Drew, Drew"
+    end
   end
 end

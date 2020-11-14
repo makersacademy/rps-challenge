@@ -7,6 +7,14 @@ class Game
     @results = []
   end
 
+  def self.create(name)
+    @game = Game.new(name)
+  end
+
+  def self.instance
+    @game
+  end
+
   def results
     @results.join(", ")
   end
