@@ -30,7 +30,7 @@ class Game < Sinatra::Base
     player1 = Player.new(params[:name1])
     player2 = Player.new(params[:name2])
     RockPaperScissors.new_game(player1, player2)
-    redirect('/play')
+    redirect('/p1-turn-multiplayer')
   end
 
   post "/single-player-choice" do
@@ -54,6 +54,10 @@ class Game < Sinatra::Base
 
   get '/play' do
     erb(:play)
+  end
+
+  get '/p1-turn-multiplayer' do
+    erb(:p1_turn_multiplayer)
   end
 
   get '/next-round' do
