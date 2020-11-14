@@ -51,8 +51,6 @@ class RPS < Sinatra::Base
   end
 
   post '/games' do
-    p params[:player2]
-    p @game.p1_go[-1]
     @game.play(@game.p1_go[-1], params[:player2])
     redirect '/results'
   end
