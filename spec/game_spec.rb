@@ -1,8 +1,8 @@
 describe Game do
-  describe '#initialize' do
-    let(:player) { double('player', name: 'Human') }
-    let(:game) { Game.new(player) }
+  let(:player) { double('player', name: 'Human') }
+  let(:game) { Game.new(player) }
 
+  describe '#initialize' do
     it 'takes in a Player object' do
       expect(game.player).to eq(player)
     end
@@ -10,7 +10,7 @@ describe Game do
 
   describe '#create' do
     it 'creates an instance of Game' do
-      expect(Game.create).to be_instance_of(Game)
+      expect(Game.create(player)).to be_instance_of(Game)
     end
   end
 end
