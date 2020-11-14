@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base
   get '/' do
-    'Welcome to RPS Challenge!'
+    'Welcome to RSP Game!'
   end
 
   # start the server if ruby file executed directly
