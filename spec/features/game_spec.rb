@@ -28,4 +28,11 @@ feature 'rock, paper, scisors' do
     click_link "Play Again!"
     expect(page).to have_content "Well hey there Sheldon!"
   end
+
+  scenario "you can see your results history" do
+    click_link "Rock"
+    click_link "Play Again!"
+    click_link "Rock"
+    expect(page).to have_content "Your history: Drew, Drew"
+  end
 end
