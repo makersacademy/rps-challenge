@@ -9,16 +9,36 @@ class RPS < Sinatra::Base
   end
 
   get '/' do
+    erb :players
+  end
+
+  get '/index' do
     erb :index
+  end
+
+  get '/index2' do
+    erb :indexs
   end
 
   post '/name' do
     @game = Game.create(params[:name])
+
     redirect '/rps'
   end
 
+  post '/name2' do
+    @game = Game.create(params[:name], params[:name2])
+
+    redirect '/rps2'
+  end
+
+
   get '/rps' do
     erb :rps
+  end
+
+  get '/rps2' do
+    erb :rpss
   end
 
   get '/rock' do

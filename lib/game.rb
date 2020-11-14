@@ -1,18 +1,23 @@
 class Game
 
-  attr_reader :name
+  attr_reader :name, :name2
 
-  def initialize(name)
+  def initialize(name, name2 = "all his friends <3")
     @name = name
+    @name2 = name2
     @results = []
   end
 
-  def self.create(name)
-    @game = Game.new(name)
+  def self.create(name, name2 = "all his friends <3")
+    @game = Game.new(name, name2)
   end
 
   def self.instance
     @game
+  end
+
+  def computer?
+    @name2 == "all his friends <3"
   end
 
   def results
@@ -23,12 +28,13 @@ class Game
     @results[-1]
   end
 
-  def play(weapon)
-    @results << game(weapon)
+  def play(weapon, weapon2 = nil)
+    @results << game(weapon, weapon2)
   end
 
-  def game(weapon)
-    comp_choice = ["rock", "paper", "scissors"].sample
+  def game(weapon, comp_choice = nil)
+
+    comp_choice = ["rock", "paper", "scissors"].sample unless comp_choice
 
     return "Drew" if draw?(weapon, comp_choice)
 
