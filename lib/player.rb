@@ -1,9 +1,14 @@
 class Player
 
-  attr_reader :name
+  attr_reader :name, :computer
 
   def initialize(name)
     @name = name
+    @computer = computer
   end
 
-end 
+  def move
+    @computer = [ "Rock", "Paper", "Scissors"].sample
+  end
+
+end

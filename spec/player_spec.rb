@@ -1,4 +1,4 @@
-require 'Player'
+require 'player'
 
 describe Player do
   subject(:dave) { Player.new('Dave') }
@@ -8,5 +8,5 @@ describe Player do
       expect(dave.name).to eq 'Dave'
     end
   end
-  
+
 end
