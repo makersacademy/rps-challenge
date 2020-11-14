@@ -1,13 +1,32 @@
 class Game
 
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+    @results = []
+  end
+
+  def results
+    @results.join(", ")
+  end
+
+  def result
+    @results[-1]
+  end
+
   def play(weapon)
+    @results << game(weapon)
+  end
+
+  def game(weapon)
     comp_choice = ["rock", "paper", "scissors"].sample
 
-    return "Draw" if draw?(weapon, comp_choice)
+    return "Drew" if draw?(weapon, comp_choice)
 
-    return "Win" if win?(weapon, comp_choice)
+    return "Won" if win?(weapon, comp_choice)
 
-    return "Loss"
+    return "Lost"
   end
 
   private

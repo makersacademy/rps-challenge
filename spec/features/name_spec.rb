@@ -5,9 +5,7 @@ feature 'can fill in name' do
   end
 
   scenario "It stores your name, and says hi" do
-    visit '/'
-    fill_in :name, with: 'Sheldon'
-    click_button "I'm ready!"
+    sign_in
     expect(page).to have_content "Well hey there Sheldon!"
   end
 end
