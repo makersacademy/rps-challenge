@@ -1,4 +1,4 @@
-feature 'enter names' do
+feature 'enter name' do
   scenario "the user can submit their name" do
     visit('/')
     fill_in(:player_name, with: 'Human')
