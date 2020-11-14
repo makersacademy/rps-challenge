@@ -11,8 +11,8 @@
         <header>
             <h1>Round <%= @game.round%> results!</h1>
         </header>
-            <h2><%= @game.player1.name%> chose: <%= params[:player].capitalize%></h2>
-            <h2><%= @game.player2.name%> chose: <%= params[:computer].capitalize%></h2>
+            <h2><%= @game.player1.name%> chose: <%= session[:p1choice].capitalize%></h2>
+            <h2><%= @game.player2.name%> chose: <%= session[:p2choice].capitalize%></h2>
             <h2>The winner is <%= @winner_name%>!</h2>
     </div>
 
