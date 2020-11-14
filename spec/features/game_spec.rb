@@ -9,23 +9,27 @@ feature 'rock, paper, scisors' do
   end
 
   scenario "you can enter rock" do
-    click_link "Rock"
+    fill_in :choice, with: "rock"
+    click_button "I'm ready!"
     expect(page).to have_content "You Drew!"
   end
 
   scenario "you can enter paper" do
-    click_link "Paper"
+    fill_in :choice, with: "paper"
+    click_button "I'm ready!"
     expect(page).to have_content "You Won!"
   end
 
   scenario "you can enter scissors" do
-    click_link "Scissors"
-    expect(page).to have_content "You Won!"
+    fill_in :choice, with: "scissors"
+    click_button "I'm ready!"
+    expect(page).to have_content "You Lost!"
   end
 
   context "rock and play again" do
     before do
-      click_link "Rock"
+      fill_in :choice, with: "rock"
+      click_button "I'm ready!"
       click_link "Play Again!"
     end
     scenario "after playing you can replay" do
@@ -33,9 +37,9 @@ feature 'rock, paper, scisors' do
     end
 
     scenario "you can see your results history" do
-      click_link "Rock"
+      fill_in :choice, with: "rock"
+      click_button "I'm ready!"
       expect(page).to have_content "Your history: Drew, Drew"
     end
-    
   end
 end

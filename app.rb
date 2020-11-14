@@ -52,18 +52,8 @@ class RPS < Sinatra::Base
     redirect '/results'
   end
 
-  get '/rock' do
-    @game.play("rock")
-    redirect '/result'
-  end
-
-  get '/paper' do
-    @game.play("paper")
-    redirect '/result'
-  end
-
-  get '/scissors' do
-    @game.play("paper")
+  post '/did_you_win' do
+    @game.play(params[:choice])
     redirect '/result'
   end
 

@@ -1,5 +1,13 @@
 <h1> Wow its <%= @game.name %> and <%= @game.name2 %>! </h1>
 <h2> So, rock, paper or scissors? </h2>
-<a href= '/rock' > Rock </a>
-<a href= '/paper' > Paper </a>
-<a href= '/scissors' > Scissors </a>
+<form action="/did_you_win" method=post>
+  <div>
+  <label for="choice">
+    Honestly, me explaining this game to you, isn't a good look
+    <input type="text" name="choice">
+  </label>
+  </div>
+  <div>
+  <input type="submit" name="I'm ready!">
+  </div>
+</form>
