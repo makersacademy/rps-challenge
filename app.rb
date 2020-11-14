@@ -11,11 +11,15 @@ class RPS < Sinatra::Base
 
   post '/submit_names' do
     session[:game] = Game.new(Player.new(params[:name]), Player.new)
-    redirect('/greet_and_choose')
+    redirect('/first_choose')
   end
 
-  get '/greet_and_choose' do
-    erb(:greet_and_choose)
+  get '/first_choose' do
+    erb(:first_choose)
+  end
+
+  get '/later_choose' do
+    erb(:later_choose)
   end
 
   post '/choice' do

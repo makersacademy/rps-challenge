@@ -1,12 +1,18 @@
 <%= @game.player_1.name.capitalize %>, you chose <%= @game.player_1.choice %>. <br>
-<%= @game.player_2.name.capitalize %> chose <%= @game.player_2.choice %>.
+<%= @game.player_2.name.capitalize %> chose <%= @game.player_2.choice %>. <br>
 
 <%=
   result = @game.who_won
 
   if result == "draw"
-    "its a draw!"
+    "Its a draw!"
   else
     "Congratulations #{result.name.capitalize} you won!"
   end
 %>
+
+<br>
+
+<form action="/later_choose" method="get">
+  <input type="submit" name="Play" value="Play again"></input>
+</form>
