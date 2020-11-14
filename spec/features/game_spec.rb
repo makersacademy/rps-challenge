@@ -5,7 +5,7 @@ feature 'rock, paper, scisors' do
   end
 
   scenario 'it has a field to fill in your entry' do
-    expect(page).to have_content "So, rock, paper or scissors?"
+    expect(page).to have_content "So, rock, paper, scissors, gecko, or space nerd?"
   end
 
   scenario "you can enter rock" do
