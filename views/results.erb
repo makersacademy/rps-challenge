@@ -1,0 +1,30 @@
+<div style="margin-top:-15px">
+  <div style="float:left">
+
+    <p><%= @game.player_1.name.capitalize %>, you chose <%= @game.player_1.choice %>.</p>
+    <p><%= @game.player_2.name.capitalize %> chose <%= @game.player_2.choice %>.</p>
+
+    <p><%=
+      result = @game.who_won
+
+      if result == "draw"
+        "Its a draw!"
+      else
+        "Congratulations #{result.name.capitalize} you won!"
+      end
+    %></p>
+    <div>
+      <form action="/later_choose" method="get">
+        <input type="submit" name="Play" value="Play again"></input>
+      </form>
+    </div>
+
+  </div>
+
+  <div style="float:right; padding-right:15em">
+    <p style="text-decoration:underline">Scoreboard</p>
+    <p><%= @game.player_1.name.capitalize %>: <%= @game.player_1.score %> </p>
+    <p><%= @game.player_2.name.capitalize %>: <%= @game.player_2.score %> </p>
+  </div>
+
+</div>

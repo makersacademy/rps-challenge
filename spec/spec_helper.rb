@@ -18,3 +18,19 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+
+# Setting environmental variable RACK_ENV
+ENV['RACK_ENV'] = 'test'
+
+# Requiring the Sinatra app file, capybara, capybara/rspec and rspec
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+require 'capybara'
+require 'rspec'
+
+# Telling capybara about my app class
+Capybara.app = RPS
+
+# Requiring web helpers file
+require File.join(File.dirname(__FILE__), './features', 'web_helpers.rb')
