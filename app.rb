@@ -6,7 +6,7 @@ class Game < Sinatra::Base
   enable :sessions
 
   before do
-    @game = RockPaperScissors.instance
+    @game = session[:game]
   end
 
   get '/' do
@@ -24,14 +24,14 @@ class Game < Sinatra::Base
   post "/give-one-name" do
     player1 = Player.new(params[:name])
     player2 = Player.new("Computer", true)
-    RockPaperScissors.new_game(player1, player2)
+    session[:game] = RockPaperScissors.new(player1, player2)
     redirect('/play')
   end
 
   post "/give-two-names" do
     player1 = Player.new(params[:name1])
     player2 = Player.new(params[:name2])
-    RockPaperScissors.new_game(player1, player2)
+    session[:game] = RockPaperScissors.new(player1, player2)
     redirect('/p1-turn-multiplayer')
   end
 
