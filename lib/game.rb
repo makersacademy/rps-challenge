@@ -39,7 +39,7 @@ class Game
 
   def game(weapon, comp_choice = nil)
 
-    comp_choice = ["rock", "paper", "scissors"].sample unless comp_choice
+    comp_choice = ["rock", "paper", "scissors", "lizard", "spock"].sample unless comp_choice
 
     return "Drew" if draw?(weapon, comp_choice)
 
@@ -55,18 +55,26 @@ class Game
   end
 
   def win?(weapon, comp_choice)
-    rock_and_scissors?(weapon, comp_choice) || paper_and_rock?(weapon, comp_choice) || scissors_and_paper?(weapon, comp_choice)
+    rock_scissors_and_lizard?(weapon, comp_choice) || paper_rock_and_spock?(weapon, comp_choice) || scissors_paper_and_lizard?(weapon, comp_choice) || spock_rock_and_scissors?(weapon, comp_choice) || lizard_spock_and_paper?(weapon, comp_choice)
   end
 
-  def rock_and_scissors?(weapon, comp_choice)
-    weapon == "rock" && comp_choice == "scissors"
+  def rock_scissors_and_lizard?(weapon, comp_choice)
+    weapon == "rock" && comp_choice == "scissors" || weapon == "rock" && comp_choice == "lizard"
   end
 
-  def paper_and_rock?(weapon, comp_choice)
-    weapon == "paper" && comp_choice == "rock"
+  def paper_rock_and_spock?(weapon, comp_choice)
+    weapon == "paper" && comp_choice == "rock" || weapon == "paper" && comp_choice == "spock"
   end
 
-  def scissors_and_paper?(weapon, comp_choice)
-    weapon == "scissors" && comp_choice == "paper"
+  def scissors_paper_and_lizard?(weapon, comp_choice)
+    weapon == "scissors" && comp_choice == "paper" || weapon == "scissors" && comp_choice == "lizard"
+  end
+
+  def spock_rock_and_scissors?(weapon, comp_choice)
+    weapon == "spock" && comp_choice == "rock" || weapon == "spock" && comp_choice == scissors
+  end
+
+  def lizard_spock_and_paper?(weapon, comp_choice)
+    weapon == "lizard" && comp_choice == "spock" || weapon == "lizard" && comp_choice == "paper"
   end
 end

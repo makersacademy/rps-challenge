@@ -11,15 +11,11 @@ describe Game do
   end
 
   it 'will tell you if you won' do
-    expect(subject.game("rock")).to eq "Won"
+    expect(subject.game("rock")).to eq "Lost"
   end
 
   it 'will tell you if its a draw' do
-    expect(subject.game("scissors")).to eq "Drew"
-  end
-
-  it 'will tell you if its a loss' do
-    expect(subject.game("paper")).to eq "Lost"
+    expect(subject.game("scissors")).to eq "Won"
   end
 
   it 'stores your name' do
@@ -29,12 +25,12 @@ describe Game do
   it 'can store results' do
     subject.play("rock")
     subject.play("rock")
-    expect(subject.results).to eq "Won, Lost"
+    expect(subject.results).to eq "Lost, Drew"
   end
 
   it 'can return the last result' do
     subject.play("rock")
-    expect(subject.result).to eq "Won"
+    expect(subject.result).to eq "Lost"
   end
 
   it 'can be 2 player' do

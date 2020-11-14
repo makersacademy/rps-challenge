@@ -39,7 +39,7 @@ feature 'rock, paper, scisors' do
     scenario "you can see your results history" do
       fill_in :choice, with: "rock"
       click_button "I'm ready!"
-      expect(page).to have_content "Your history: Drew, Drew"
+      expect(page).to have_content "Your history: Drew, Lost"
     end
   end
 end
