@@ -9,8 +9,15 @@ class RPSApp < Sinatra::Base
   end
 
   post '/names' do
-    @player_1 = params[:player_1_name]
+    session[:player_1_name] = params[:player_1_name]
+    @player_1_name = session[:player_1_name]
     erb :play
+  end
+
+  post '/move' do
+    @player_1_name = session[:player_1_name]
+    $move = params[:move]
+    erb :move
   end
 
   run! if app_file == $0
