@@ -3,6 +3,7 @@ require 'simplecov'
 require 'simplecov-console'
 require_relative '../app.rb'
 require_relative '../lib/game.rb'
+require_relative '../lib/player.rb'
 
 Capybara.app = RockPaperScissors
 
