@@ -69,4 +69,18 @@ feature "Multiplayer" do
     click_button('rock')
     expect(page).to have_content(/Hamilton Meathouse - make your choice!/)
   end
+
+  scenario "The correct player wins in a draw" do
+    go_to_play_page_multiplayer
+    click_button('rock')
+    click_button('rock')
+    expect(page).to have_content("The winner is no one, it's a draw!")
+  end
+
+  scenario "P1 wins" do
+    go_to_play_page_multiplayer
+    click_button('rock')
+    click_button('scissors')
+    expect(page).to have_content("The winner is Basil Jet!")
+  end
 end

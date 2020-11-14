@@ -10,10 +10,10 @@
     <div class="container">
         <h1><%= @game.player1.name%>: <%= @game.player1.score%> <%=@game.player2.name%>: <%= @game.player2.score%></h1>
         <h2><%= @game.player2.name%> - make your choice!</h2>
-        <form action="/p1-multiplayer-choice" method="post">
-            <button name="choice" value="rock">Rock</button>
-            <button name="choice" value="paper">Paper</button>
-            <button name="choice" value="scissors">Scissors</button>
+        <form action="/p2-multiplayer-choice" method="post">
+            <button name="player2choice" value="rock">Rock</button>
+            <button name="player2choice" value="paper">Paper</button>
+            <button name="player2choice" value="scissors">Scissors</button>
         </form>
     </div>
 </body>

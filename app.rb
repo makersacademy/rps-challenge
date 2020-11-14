@@ -3,6 +3,8 @@ require_relative './lib/player.rb'
 require_relative './lib/rockpaperscissors.rb'
 
 class Game < Sinatra::Base
+  enable :sessions
+
   before do
     @game = RockPaperScissors.instance
   end
@@ -61,8 +63,28 @@ class Game < Sinatra::Base
   end
 
   post '/p1-multiplayer-choice' do
-    p1_choice = params[:choice]
+    session[:p1choice] = params[:player1choice]
     erb(:p2_turn_multiplayer)
+  end
+
+  post '/p2-multiplayer-choice' do
+    session[:p2choice] = params[:player2choice]
+    session[:result] = @game.play_round(session[:p1choice].to_sym, session[:p2choice].to_sym)
+    redirect('/multiplayer-results')
+  end
+
+  get '/multiplayer-results' do
+    p session[:result]
+
+    if session[:result] == :win
+      @winner_name = @game.player1.name
+    elsif session[:result] == :loss
+      @winner_name = @game.player2.name
+    else
+      @winner_name = "no one, it's a draw"
+    end
+
+    erb(:multiplayer_results)
   end
 
   get '/next-round' do

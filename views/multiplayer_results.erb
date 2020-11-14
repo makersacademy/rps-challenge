@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <%# <link type="text/css" rel="stylesheet" href="style.css" /> %>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Round <%= @game.round%> results!</h1>
+        </header>
+            <h2><%= @game.player1.name%> chose: <%= session[:p1choice].capitalize%></h2>
+            <h2><%= @game.player2.name%> chose: <%= session[:p2choice].capitalize%></h2>
+            <h2>The winner is <%= @winner_name%>!</h2>
+    </div>
+
+    <form action="/next-round">
+        <button name="next">Next Round</button>
+    </form>
+</body>
+</html>
