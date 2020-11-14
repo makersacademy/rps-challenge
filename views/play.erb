@@ -1,4 +1,8 @@
 Hello <%=  @player_1_name %>!
-<form action="/player-attack">
-  <input type="submit" value="Rock">
+<form action="/player-attack" method="post">
+  <label for="player_attack">
+    Rock, Paper or Scissors?
+  <input type="text" name="player_attack">
+  </label>
+  <input type="submit" value="Submit">
 </form>

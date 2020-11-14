@@ -1,9 +1,32 @@
 feature 'Attacking' do
   scenario 'Player attacks Computer' do
     sign_in_and_play
-    click_button 'Rock'
+    fill_in :player_attack, with: 'Rock'
+    click_button 'Submit'
     expect(page).not_to have_content 'Dave chooses Paper!'
     expect(page).not_to have_content 'Dave chooses Scissors!'
     expect(page).to have_content 'Dave chooses Rock!'
+  end
+end
+
+feature 'Attacking' do
+  scenario 'Player attacks Computer' do
+    sign_in_and_play
+    fill_in :player_attack, with: 'Paper'
+    click_button 'Submit'
+    expect(page).not_to have_content 'Dave chooses Rock!'
+    expect(page).not_to have_content 'Dave chooses Scissors!'
+    expect(page).to have_content 'Dave chooses Paper!'
+  end
+end
+
+feature 'Attacking' do
+  scenario 'Player attacks Computer' do
+    sign_in_and_play
+    fill_in :player_attack, with: 'Scissors'
+    click_button 'Submit'
+    expect(page).not_to have_content 'Dave chooses Paper!'
+    expect(page).not_to have_content 'Dave chooses Rock!'
+    expect(page).to have_content 'Dave chooses Scissors!'
   end
 end
