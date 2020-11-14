@@ -1,1 +1,9 @@
 <h1> <%= @game.player.name %> vs AI </h1>
+
+<form action="/choice" method="post">
+  <input type="radio" name="choice" value="rock"> Rock
+  <input type="radio" name="choice" value="paper"> Paper
+  <input type="radio" name="choice" value="scissors"> Scissors
+  <br>
+  <input type="submit" value="Submit">
+</form>

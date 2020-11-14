@@ -23,5 +23,14 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  post '/choice' do
+    @game.player.choose(params[:choice])
+    redirect('/round-end')
+  end
+
+  get '/round-end' do
+    erb(:round_end)
+  end
+
   run! if app_file == $0
 end
