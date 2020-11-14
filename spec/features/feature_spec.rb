@@ -63,4 +63,10 @@ feature "Multiplayer" do
     go_to_play_page_multiplayer
     expect(page).to have_content(/Basil Jet: 0 Hamilton Meathouse: 0/)
   end
+
+  scenario "Both players can take turns" do
+    go_to_play_page_multiplayer
+    click_button('rock')
+    expect(page).to have_content(/Hamilton Meathouse - make your choice!/)
+  end
 end

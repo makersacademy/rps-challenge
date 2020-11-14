@@ -60,6 +60,11 @@ class Game < Sinatra::Base
     erb(:p1_turn_multiplayer)
   end
 
+  post '/p1-multiplayer-choice' do
+    p1_choice = params[:choice]
+    erb(:p2_turn_multiplayer)
+  end
+
   get '/next-round' do
     @game.winner.nil? ? redirect('/play') : redirect('/final-results')
   end
