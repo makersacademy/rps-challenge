@@ -6,6 +6,7 @@ class Game < Sinatra::Base
   before do
     @game = RockPaperScissors.instance
   end
+
   get '/' do
     erb(:index)
   end
@@ -21,6 +22,13 @@ class Game < Sinatra::Base
   post "/give-one-name" do
     player1 = Player.new(params[:name])
     player2 = Player.new("Computer", true)
+    RockPaperScissors.new_game(player1, player2)
+    redirect('/play')
+  end
+
+  post "/give-two-names" do
+    player1 = Player.new(params[:name1])
+    player2 = Player.new(params[:name2])
     RockPaperScissors.new_game(player1, player2)
     redirect('/play')
   end
