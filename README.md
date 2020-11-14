@@ -17,15 +17,15 @@ The user should ensure that they have installed the Gems listed in the Gemfile.
 ![Sequence diagram for RPS challenge](Sequence_diagram.png)
 
 ## Challenge status & steps to finish
-Planned game using a sequence diagram, set up README.
+Planned game using a sequence diagram, set up README.  
 To improve the README I would:
-* add a paragraph describing set-up
-* add a run through
-To improve the code I would:
-* ???
-To extend the game I would:
-* Change the game so that two marketeers can play against each other
-* Extend the game to rock, paper, scissors, lizard, Spock.
+* add a paragraph describing set-up  
+* add a run through  
+To improve the code I would:  
+* ???  
+To extend the game I would:  
+* Change the game so that two marketeers can play against each other  
+* Extend the game to rock, paper, scissors, lizard, Spock.  
 
 ## User stories & working notes
 
