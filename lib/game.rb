@@ -50,5 +50,4 @@ class Game
     @player2.you_won
     return @player2
   end
-
 end

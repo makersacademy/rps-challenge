@@ -10,10 +10,60 @@ describe RPS, type: :feature do
   end
 
   it "Welcomes player correctly after filling out name" do
-    visit '/'
-    fill_in("name", with: "dumb")
-    click_button("Submit")
-    expect(page).to have_content("dumb? That's a funny name.")
+    sign_in_and_play
+    expect(page).to have_content("Dumb? That's a funny name.")
+  end
+
+  it "States choice correctly" do
+    sign_in_and_play
+    click_button("scissors")
+    expect(page).to have_content("Dumb, you chose scissors.")
+  end
+
+  it "Gives correct win message" do
+    srand(52)
+    sign_in_and_play
+    click_button("scissors")
+    expect(page).to have_content("Congratulations Dumb you won!")
+  end
+
+  it "Correctly tracks score" do
+    srand(52)
+    sign_in_and_play
+    click_button("scissors")
+    expect(page).to have_content("Dumb: 1")
+  end
+
+  it "Tracks score correctly after several games" do
+    srand(52)
+    sign_in_and_play
+    click_button("scissors")
+    click_button("Play again")
+    click_button("paper")
+    click_button("Play again")
+    click_button("rock")
+    click_button("Play again")
+    click_button("paper")
+    click_button("Play again")
+    click_button("paper")
+    click_button("Play again")
+    click_button("scissors")
+    click_button("Play again")
+    click_button("paper")
+    click_button("Play again")
+    click_button("rock")
+    click_button("Play again")
+    click_button("paper")
+    click_button("Play again")
+    click_button("rock")
+    click_button("Play again")
+    click_button("paper")
+    click_button("Play again")
+    click_button("paper")
+    click_button("Play again")
+    click_button("scissors")
+    expect(page).to have_content("Dumb: 5")
+    expect(page).to have_content("Computer: 5")
   end
 
 end
