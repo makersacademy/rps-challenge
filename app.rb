@@ -20,7 +20,7 @@ class RockPaperScissors < Sinatra::Application
   get '/result' do
     @player_name = session[:player_name]
     @player_choice = params[:choice]
-    computer_choice = ["Rock", "Paper", "Scissors"].sample
+    @computer_choice = ["Rock", "Paper", "Scissors"].sample
     erb :result
   end
 
