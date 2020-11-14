@@ -32,6 +32,6 @@ feature 'Player wins' do
     expect(page).to have_selector(:link_or_button, 'Paper')
     expect(page).to have_selector(:link_or_button, 'Scissors')
     click_button 'Rock'
-    expect(page).to have_content("You won!")
+    expect(page).to have_content("You win!")
   end
 end
