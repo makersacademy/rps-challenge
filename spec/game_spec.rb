@@ -7,4 +7,10 @@ describe Game do
       expect(game.player).to eq(player)
     end
   end
+
+  describe '#create' do
+    it 'creates an instance of Game' do
+      expect(Game.create).to be_instance_of(Game)
+    end
+  end
 end
