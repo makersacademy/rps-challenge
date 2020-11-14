@@ -40,13 +40,15 @@ Hints on functionality
 ## Gameplay
 
 1. Enter your name
+
 ![Enter name](First.png)
 
 1. Choose your move - rock, paper or scissors
+
 ![Choose move](Second.png)
 
 1. See the results
-The results screen has conditional formatting depending on the outcome.
+
 ![Result](Third.png)
 
 
