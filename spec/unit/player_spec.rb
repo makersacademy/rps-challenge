@@ -10,7 +10,7 @@ describe Player do
   end
 
   it "initialises as an AI player" do
-    expect(example_ai.ai).to eq(true)
+    expect(example_ai.is_ai).to eq(true)
   end
 
   describe "score" do
@@ -47,5 +47,4 @@ describe Player do
       expect(choices_made.uniq.length).to eq(3)
     end
   end
-
 end

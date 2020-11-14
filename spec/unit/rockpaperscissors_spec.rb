@@ -32,4 +32,22 @@ describe RockPaperScissors do
       expect(testgame.play_round(:rock, :paper)).to eq(:loss)
     end
   end
+
+  describe "#winner" do
+    it "initializes with no winner declared" do
+      expect(testgame.winner).to eq(nil)
+    end
+
+    it "declares a winner after winner gets to WIN_CONDITION" do
+      allow(player1).to receive(:score).and_return(RockPaperScissors::WIN_CONDITION)
+      allow(player2).to receive(:score).and_return(0)
+      expect(testgame.winner).to eq(player1)
+    end
+
+    it "returns nil if scores are between 0 and WIN_CONDITION for both players" do
+      allow(player1).to receive(:score).and_return(RockPaperScissors::WIN_CONDITION - 1)
+      allow(player2).to receive(:score).and_return(RockPaperScissors::WIN_CONDITION - 1)
+      expect(testgame.winner).to eq(nil)
+    end
+  end
 end

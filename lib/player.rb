@@ -1,11 +1,11 @@
 class Player
-  attr_reader :name, :ai
+  attr_reader :name, :is_ai
   attr_accessor :score, :current_choice
 
-  def initialize(name, ai = false)
+  def initialize(name, is_ai = false)
     @name = name
     @score = 0
-    @ai = ai
+    @is_ai = is_ai
     @current_choice = nil
   end
 
