@@ -88,7 +88,9 @@ class Game < Sinatra::Base
   end
 
   get '/next-round' do
-    @game.winner.nil? ? redirect('/play') : redirect('/final-results')
+    redirect('/final-results') unless @game.winner.nil?
+
+    @game.player2.is_ai ? redirect('/play') : redirect('/p1-turn-multiplayer')  
   end
 
   get '/final-results' do

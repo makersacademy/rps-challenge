@@ -83,4 +83,26 @@ feature "Multiplayer" do
     click_button('scissors')
     expect(page).to have_content("The winner is Basil Jet!")
   end
+
+  scenario "can play two rounds" do
+    go_to_play_page_multiplayer
+    click_button('rock')
+    click_button('rock')
+    click_button('next')
+    expect(page).to have_content(/Basil Jet: 0 Hamilton Meathouse: 0/)
+    click_button('scissors')
+    click_button('rock')
+    expect(page).to have_content("The winner is Hamilton Meathouse!")
+  end
+
+  scenario "allows a winner" do
+    go_to_play_page_multiplayer
+    
+    RockPaperScissors::WIN_CONDITION.times do
+      click_button('paper')
+      click_button('rock')
+      click_button('next')
+    end
+    expect(page).to have_content("Basil Jet wins the game!")
+  end
 end
