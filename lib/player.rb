@@ -1,11 +1,15 @@
 class Player
-  attr_reader :name
-  attr_accessor :choice, :score
+  attr_reader :name, :score
+  attr_accessor :choice
 
-  def initialize(name = "")
+  def initialize(name = "Computer")
     @name = name
     @choice = nil
     @score = 0
+  end
+
+  def you_won
+    @score +=1
   end
 
   # might be able to get the below working, but best to move on and come back to it later

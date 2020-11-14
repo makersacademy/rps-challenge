@@ -1,1 +1,12 @@
-Hello <%= @player1.name %>, you chose <%= @player1.choice %>.
+<%= @game.player_1.name.capitalize %>, you chose <%= @game.player_1.choice %>. <br>
+<%= @game.player_2.name.capitalize %> chose <%= @game.player_2.choice %>.
+
+<%=
+  result = @game.who_won
+
+  if result == "draw"
+    "its a draw!"
+  else
+    "Congratulations #{result.name.capitalize} you won!"
+  end
+%>

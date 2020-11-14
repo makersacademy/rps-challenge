@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/player'
+require_relative './lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions # for session variables
@@ -9,7 +10,7 @@ class RPS < Sinatra::Base
   end
 
   post '/submit_names' do
-    session[:player1] = Player.new(params[:name])
+    session[:game] = Game.new(Player.new(params[:name]), Player.new)
     redirect('/greet_and_choose')
   end
 
@@ -18,9 +19,8 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    @player1.choice = params[:move]
-    session[:player1] = @player1
-
+    @game.set_choice(@game.player_1, params[:move])
+    @game.rand_choice(@game.player_2)
     redirect('/results')
   end
 
@@ -28,10 +28,9 @@ class RPS < Sinatra::Base
     erb(:results)
   end
 
-
   # before block below will execute before each route above, saving from defining @player multiple times
   before do
-    @player1 = session[:player1]
+    @game = session[:game]
   end
 
   # start the server if ruby file executed directly
