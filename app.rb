@@ -23,9 +23,9 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @winner = (Game.new(session[:name], session[:move])).round
+    @winner = Game.new(session[:name], session[:move]).round
     erb(:result)
   end
 
-run! if app_file == $0
+  run! if app_file == $0
 end

@@ -7,11 +7,11 @@ class Game
   end
 
   def move_sample
-    ["Rock","Paper","Scissors"].sample
+    ["Rock", "Paper", "Scissors"].sample
   end
 
   def round
-    combinations = {"Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper"}
+    combinations = { "Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper" }
     computer_move = move_sample
     if user_move == computer_move
       "It's a draw!"

@@ -1,5 +1,5 @@
 def enter_name
-  visit ('/')
+  visit '/'
   fill_in :name, with: 'Symion'
   click_button('Submit!')
 end

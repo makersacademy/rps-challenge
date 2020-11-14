@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  subject {described_class.new("Symion", "Scissors")}
+  subject { described_class.new("Symion", "Scissors") }
 
   describe '#initialize' do 
     it 'Instances of the game class are initialzed with the user name' do
@@ -21,18 +21,17 @@ describe Game do
 
   describe '#round' do 
     it 'Returns "The computer won!" when computer wins' do
-      allow(subject).to receive(:move_sample) {"Rock"}
+      allow(subject).to receive(:move_sample) { "Rock" }
       expect(subject.round).to eq("You lost!")
     end
     it 'Returns "It\'s a draw!" when draw' do
-      allow(subject).to receive(:move_sample) {"Scissors"}
+      allow(subject).to receive(:move_sample) { "Scissors" }
       expect(subject.round).to eq("It's a draw!")
     end
     it 'Returns "You won!" when user wins' do
-      allow(subject).to receive(:move_sample) {"Paper"}
+      allow(subject).to receive(:move_sample) { "Paper" }
       expect(subject.round).to eq("You won!")
     end
   end
-
 
 end
