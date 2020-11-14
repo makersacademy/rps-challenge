@@ -1,5 +1,5 @@
 class Game
-  attr_reader :name, :user_move
+  attr_reader :name, :user_move, :computer_move
 
   def initialize(name, user_move)
     @user_move = user_move
@@ -12,7 +12,7 @@ class Game
 
   def round
     combinations = { "Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper" }
-    computer_move = move_sample
+    @computer_move = move_sample
     if user_move == computer_move
       "It's a draw!"
     elsif combinations[user_move] == computer_move

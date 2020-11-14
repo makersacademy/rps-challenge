@@ -9,7 +9,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    session[:player_1_name] = params[:player_1_name]
     redirect '/home'
   end
 
@@ -18,12 +18,14 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    session[:move] = params[:move]
+    session[:player_1_move] = params[:player_1_move]
     redirect '/result'
   end
 
   get '/result' do
-    @winner = Game.new(session[:name], session[:move]).round
+    game = Game.new(session[:player_1_name], session[:player_1_move])
+    @result = game.round
+    @computer_move = game.computer_move
     erb(:result)
   end
 

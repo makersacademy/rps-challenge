@@ -13,17 +13,17 @@ feature 'RPS Game' do
 
   scenario 'User wins' do
     click_button('Rock')
-    expect(page).to have_content("You won!")
+    expect(page).to have_content("You won!\nSymion: Rock | Computer: Scissors")
   end
 
   scenario 'User loses' do
     click_button('Paper')
-    expect(page).to have_content("You lost!")
+    expect(page).to have_content("You lost!\nSymion: Paper | Computer: Scissors")
   end
 
   scenario 'User draws' do
     click_button('Scissors')
-    expect(page).to have_content("It's a draw!")
+    expect(page).to have_content("It's a draw!\nSymion: Scissors | Computer: Scissors")
   end
 
 end
