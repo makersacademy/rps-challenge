@@ -17,10 +17,13 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
+    session[:move] = params[:move]
+    redirect '/result'
   end
 
+  get '/result' do
 
-
+  end
 
 run! if app_file == $0
 end
