@@ -1,4 +1,22 @@
-<%= session[:player_1_name] %> vs. Computer - Make a choice
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<style>
+body {
+  background-color: lightblue;
+}
+h1 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+</style>
+</head>
+
+<h1> <%= session[:player_1_name] %> vs. Computer - Make a choice </h1>
 
 <form action="/choice" method="post">
   <label for="Rock">
