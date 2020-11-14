@@ -3,6 +3,10 @@ class Game
     @game = Game.new(player)
   end
 
+  def self.instance
+    @game
+  end
+
   attr_reader :player
 
   def initialize(player)
