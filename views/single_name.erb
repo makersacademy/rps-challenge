@@ -9,13 +9,13 @@
 <body>
     <div class="container">
         <header>
-            <h1>ROCK, PAPER, SCISSORS!</h1>
+            <h1>Enter your name!</h1>
         </header>
     </div>
 
-    <form action="/game-mode" method="post">
-        <button name="choice" value="single_player">Single Player</button>
-        <button name="choice" value="two_player">Two Player</button>
+    <form action="/give-one-name" method="post">
+        <input type="text" name="name">
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>

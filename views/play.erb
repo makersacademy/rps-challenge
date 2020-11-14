@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <%# <link type="text/css" rel="stylesheet" href="style.css" /> %>
+</head>
+<body>
+    <div class="container">
+        <h1><%= @game.player1.name%>: <%= @game.player1.score%> <%=@game.player2.name%>: <%= @game.player2.score%></h1>
+        <h2><%= @game.player1.name%> - make your choice!</h2>
+        <form action="/single-player-choice" method="post">
+            <button name="choice" value="Rock">Rock</button>
+            <button name="choice" value="Paper">Paper</button>
+            <button name="choice" value="Scissors">Scissors</button>
+        </form>
+    </div>
+</body>
+</html>

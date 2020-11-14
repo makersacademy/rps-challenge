@@ -7,7 +7,7 @@ class RockPaperScissors
     :scissors => { :rock => :loss, :paper => :win, :scissors => :draw }
   }
 
-  attr_reader :round
+  attr_reader :round, :player1, :player2
 
   def initialize(player1, player2)
     @player1 = player1
