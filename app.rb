@@ -22,16 +22,13 @@ class RPS < Sinatra::Base
 
   post '/name' do
     @game = Game.create(params[:name])
-
     redirect '/rps'
   end
 
   post '/name2' do
     @game = Game.create(params[:name], params[:name2])
-
     redirect '/rps2'
   end
-
 
   get '/rps' do
     erb :rps

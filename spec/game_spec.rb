@@ -53,7 +53,7 @@ describe Game do
     expect(players.name2).to eq "Leonard"
   end
 
-  it 'can tell you i you are against a computer' do
+  it 'can tell you if you are against a computer' do
     expect(subject.computer?).to eq true
   end
 
