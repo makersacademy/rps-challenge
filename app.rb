@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 
-class Game < Sinatra::Base
+class Rps < Sinatra::Base
 
   set :session_secret, 'rps'
 
@@ -29,7 +29,7 @@ class Game < Sinatra::Base
   end
 
   post 'scissors' do
-    
+
   end
 
   run! if app_file == $0
