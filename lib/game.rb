@@ -14,7 +14,7 @@ class Game
     @cpu = cpu
   end
 
-  def play_round(choice)
-    @player.choose(choice)
+  def play_round(player_choice)
+    @player.choose(player_choice)
   end
 end

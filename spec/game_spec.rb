@@ -1,6 +1,8 @@
 describe Game do
-  let(:player) { double('player', name: 'Human') }
+  let(:player) { double('player', name: :Human) }
+  let(:cpu) { double('cpu', name: :AI) }
   let(:game) { Game.new(player) }
+  let(:game_with_fake_cpu) { Game.new(player, cpu) }
 
   describe '#initialize' do
     it 'takes in a Player object' do
@@ -29,6 +31,12 @@ describe Game do
     it 'calls the Player choose method' do
       expect(player).to receive(:choose).with('rock')
       game.play_round('rock')
+    end
+
+    it 'calls the CPU choose method' do
+      allow(player).to receive(:choose)
+      expect(cpu).to receive(:choose)
+      game_with_fake_cpu.play_round('rock')
     end
   end
 end
