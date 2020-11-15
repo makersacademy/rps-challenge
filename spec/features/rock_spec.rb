@@ -9,6 +9,8 @@ feature 'Player chooses rock' do
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content 'Matt wins!'
+    expect(page).to have_button 'Play again?'
+    expect(page).to have_button 'New Player'
   end
 
   scenario 'Player chooses rock and draws' do
@@ -16,6 +18,8 @@ feature 'Player chooses rock' do
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content 'Matt & AI drew!'
+    expect(page).to have_button 'Play again?'
+    expect(page).to have_button 'New Player'
   end
 
   scenario 'Player choose rock and loses' do
@@ -23,5 +27,7 @@ feature 'Player chooses rock' do
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content 'Matt lost to an AI!'
+    expect(page).to have_button 'Play again?'
+    expect(page).to have_button 'New Player'
   end
 end

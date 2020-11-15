@@ -10,7 +10,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
-Capybara.app = Rps
+Capybara.app = Clicker
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
 RSpec.configure do |config|

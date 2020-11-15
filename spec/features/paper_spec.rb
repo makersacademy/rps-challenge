@@ -9,6 +9,8 @@ feature 'Player chooses paper' do
     sign_in_and_play
     click_button 'Paper'
     expect(page).to have_content 'Matt wins!'
+    expect(page).to have_button 'Play again?'
+    expect(page).to have_button 'New Player'
   end
 
   scenario 'Player chooses paper and draws' do
@@ -16,6 +18,8 @@ feature 'Player chooses paper' do
     sign_in_and_play
     click_button 'Paper'
     expect(page).to have_content 'Matt & AI drew!'
+    expect(page).to have_button 'Play again?'
+    expect(page).to have_button 'New Player'
   end
 
   scenario 'Player chooses scissors and loses' do
@@ -23,5 +27,7 @@ feature 'Player chooses paper' do
     sign_in_and_play
     click_button 'Paper'
     expect(page).to have_content 'Matt lost to an AI!'
+    expect(page).to have_button 'Play again?'
+    expect(page).to have_button 'New Player'
   end
 end

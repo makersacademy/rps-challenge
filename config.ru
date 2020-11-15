@@ -1,3 +1,3 @@
 require './app.rb'
 
-run Game
+run Clicker

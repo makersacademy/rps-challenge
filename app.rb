@@ -1,22 +1,25 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
-class Rps < Sinatra::Base
+class Clicker < Sinatra::Base
 
   set :session_secret, 'rps'
+
+  before do
+    @player = Player.instance
+  end
 
   get '/' do
     erb :index
   end
 
   post '/names' do
-    $player_1 = Player.new(params[:player_1_name])
+    @player = Player.create(params[:player_1_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_1 = $player_1
-
     erb :play
   end
 
@@ -60,15 +63,15 @@ class Rps < Sinatra::Base
   end
 
   get '/winner' do
-    "Matt wins!"
+    erb :winner
   end
 
   get '/loser' do
-    "Matt lost to an AI!"
+    erb :loser
   end
 
   get '/draw' do
-    "Matt & AI drew!"
+    erb :draw
   end
 
   run! if app_file == $0
