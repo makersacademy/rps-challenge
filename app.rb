@@ -30,7 +30,12 @@ class RockPaperScissors < Sinatra::Base
 
   get '/round-end' do
     @game.update_scores
+    redirect('/outcome') if @game.status == 'complete'
     erb(:round_end)
+  end
+
+  get '/outcome' do
+    erb(:outcome)
   end
 
   run! if app_file == $0

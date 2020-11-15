@@ -2,9 +2,10 @@ feature 'winner declared' do
   scenario 'when a player wins, there is confirmation' do
     sign_in_and_play
     
-    until current_url == '/outcome' do
+    loop do
       choose('choice', option: 'rock')
       click_button('Submit')
+      break if current_url == 'http://www.example.com/outcome'
       click_button('Next Round')
     end
 
