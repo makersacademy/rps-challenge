@@ -59,5 +59,11 @@ describe Game do
       expect(game_with_fake_cpu).to receive(:winner?)
       game_with_fake_cpu.status
     end
+
+    it 'calls assign_outcomes if there is a winner?' do
+      allow(game_with_fake_cpu).to receive(:winner?) { true }
+      expect(game_with_fake_cpu).to receive(:assign_outcomes)
+      game_with_fake_cpu.status
+    end
   end
 end
