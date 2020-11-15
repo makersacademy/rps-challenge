@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/rps'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -20,8 +21,9 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do 
+    round = Rps.new
     session[:choice] = params[:choice]
-    session[:cpu_choice] = :Rock
+    session[:cpu_choice] = round.cpu_choice
     redirect '/play'
   end
    
