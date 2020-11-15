@@ -6,20 +6,19 @@ class Rps
     choices.sample
   end
 
-  def compare(user_choice)
-    cpu = cpu_choice
+  def compare(user_choice, cpu_move)
 
-    if(user_choice == "Rock" && cpu == "Scissors") 
+    if(user_choice == "Rock" && cpu_move == "Scissors") 
       return "You win" 
-    elsif(user_choice == "Rock" && cpu == "Paper") 
+    elsif(user_choice == "Rock" && cpu_move == "Paper") 
       return "Computer wins :(" 
-    elsif(user_choice == "Paper" && cpu == "Scissors") 
+    elsif(user_choice == "Paper" && cpu_move == "Scissors") 
       return "Computer wins :(" 
-    elsif(user_choice == "Paper" && cpu == "Rock") 
+    elsif(user_choice == "Paper" && cpu_move == "Rock") 
       return "You win" 
-    elsif(user_choice == "Scissors" && cpu == "Rock") 
+    elsif(user_choice == "Scissors" && cpu_move == "Rock") 
       return "Computer wins :(" 
-    elsif(user_choice == "Scissors" && cpu == "Paper") 
+    elsif(user_choice == "Scissors" && cpu_move == "Paper") 
       return "You win" 
     else 
       return "It's a tie!" 

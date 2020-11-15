@@ -17,6 +17,7 @@ class RPS < Sinatra::Base
     @name = session[:name]
     @choice = session[:choice]
     @cpu_choice = session[:cpu_choice]
+    @result = session[:result]
     erb :play
   end
 
@@ -24,6 +25,7 @@ class RPS < Sinatra::Base
     round = Rps.new
     session[:choice] = params[:choice]
     session[:cpu_choice] = round.cpu_choice
+    session[:result] = round.compare(session[:choice], session[:cpu_choice])
     redirect '/play'
   end
    
