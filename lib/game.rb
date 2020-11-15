@@ -38,4 +38,14 @@ class Game
       @cpu.receive_point
     end
   end
+
+  def status
+    winner?
+  end
+
+  private
+
+  def winner?
+    [@player, @cpu].any? { |player| player.score == 5 }
+  end
 end
