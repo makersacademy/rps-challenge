@@ -8,22 +8,28 @@ class RockPaperScissors < Sinatra::Application
   end
 
   post '/names' do
-    session[:player_name] = params[:player_name]
+    player = params[:player_name]
+    p params[:player_name]
+    $game = Game.new(player)
+    p $game
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
+    @player_name = $game.player
     erb :play
   end
 
-  get '/result' do
-    @player_name = session[:player_name]
+  post '/result' do
+    @player_name = $game.player
     @player_choice = params[:choice]
-    @computer_choice = ["Rock", "Paper", "Scissors"].sample
+    @computer_choice = $game.computer_choice
     erb :result
   end
 
 # start the server if ruby file executed directly
   run! if app_file == $0
 end
+
+# add winner test back in once game class working
+# add the rules for the game to the game class - see rubric for hash suggestion

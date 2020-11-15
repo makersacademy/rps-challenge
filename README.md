@@ -29,7 +29,7 @@ To improve the README I would:
 * add a run through  
 
 To improve the code I would:  
-* ???  
+* change the wording on the winner screen to use the appropriate verb for conquest  
 
 To extend the game I would:  
 * Change the game so that two marketeers can play against each other  

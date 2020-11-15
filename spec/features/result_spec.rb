@@ -14,4 +14,6 @@ feature 'logs player & computer selection' do
     expect(page).to have_content 'Computer chose Scissors!'
   end
 
+
+
 end
