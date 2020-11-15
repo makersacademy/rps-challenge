@@ -38,13 +38,11 @@ class Game < Sinatra::Base
     redirect("/round-results")
   end
 
-  get "/round-results" do    
-    if session[:result] == :win
-      @winner_name = @game.player1.name
-    elsif session[:result] == :loss
-      @winner_name = @game.player2.name
-    else
-      @winner_name = "no one, it's a draw"
+  get "/round-results" do   
+    case session[:result]
+    when :win then @winner_name = @game.player1.name 
+    when :loss then @winner_name = @game.player2.name
+    when :draw then @winner_name = "no one, it's a draw"
     end
    
     erb(:results)
