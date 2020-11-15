@@ -1,1 +1,5 @@
-<h1> <%= @game.winner.name %> is the winner! </h1>
+<% if @game.winner == @game.player %>
+  <h1> Well done <%= @game.player.name %>, you are the winner! </h1>
+<% else %>
+    <h1> <%= @game.cpu.name %> is the winner, better luck next time! </h1>
+<% end %>

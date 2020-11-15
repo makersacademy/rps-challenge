@@ -60,9 +60,9 @@ describe Game do
       game_with_fake_cpu.status
     end
 
-    it 'calls assign_outcomes if there is a winner?' do
+    it 'calls assign_winner if there is a winner?' do
       allow(game_with_fake_cpu).to receive(:winner?) { true }
-      expect(game_with_fake_cpu).to receive(:assign_outcomes)
+      expect(game_with_fake_cpu).to receive(:assign_winner)
       game_with_fake_cpu.status
     end
 
@@ -73,7 +73,7 @@ describe Game do
 
     it "returns 'complete' if there is a winner" do
       allow(game_with_fake_cpu).to receive(:winner?) { true }
-      allow(game_with_fake_cpu).to receive(:assign_outcomes)
+      allow(game_with_fake_cpu).to receive(:assign_winner)
       expect(game_with_fake_cpu.status).to eq('complete')
     end
   end

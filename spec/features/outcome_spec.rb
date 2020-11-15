@@ -5,10 +5,10 @@ feature 'winner declared' do
     loop do
       choose('choice', option: 'rock')
       click_button('Submit')
-      break if current_url == 'http://www.example.com/outcome'
+      break if current_path == '/outcome'
       click_button('Next Round')
     end
 
-    expect(page).to have_content('is the winner!')
+    expect(page).to have_content('the winner')
   end
 end
