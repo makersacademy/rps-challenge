@@ -23,4 +23,20 @@ describe Game do
       expect(game.player_2).to eq player_2
     end
   end
+
+  describe "#winner" do
+    before(:each) do
+      allow(player_1).to receive(:hand).and_return("Rock")
+    end
+
+    it "return the winner of the game" do
+      allow(player_2).to receive(:hand).and_return("Scissors")
+      expect(game.winner(player_1, player_2)).to eq player_1
+    end
+
+    it "return the winner of the game" do
+      allow(player_2).to receive(:hand).and_return("Rock")
+      expect(game.winner(player_1, player_2)).to eq "Draw"
+    end
+  end
 end
