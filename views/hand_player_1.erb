@@ -1,7 +1,7 @@
-<h1><%= @player_1_name %> vs. <%= @player_2_name %></h1>
-<h2><%= @player_1_name %>'s turn!</h2>
+<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+<h2><%= @game.player_1.name %>'s turn!</h2>
 
-<form action="/hand-player-1">
+<form action="/hand-player-2">
   <lable for="rock">
     <input type="submit" value="Rock">
   </lable>
