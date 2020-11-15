@@ -12,9 +12,10 @@ feature 'rps game' do
   expect(page).to have_content 'You chose Rock!'
   end
 
-  scenario 'CPU chooses Rock' do 
+  scenario 'CPU chooses Paper' do 
+  srand(23332)
   sign_in
   click_button 'Rock'
-  expect(page).to have_content "CPU chose Rock!"
+  expect(page).to have_content "CPU chose Paper!"
   end
 end
