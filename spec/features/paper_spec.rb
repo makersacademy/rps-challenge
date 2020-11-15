@@ -22,7 +22,7 @@ feature 'Player chooses paper' do
     expect(page).to have_button 'New Player'
   end
 
-  scenario 'Player chooses scissors and loses' do
+  scenario 'Player chooses paper and loses' do
     srand(67809)
     sign_in_and_play
     click_button 'Paper'

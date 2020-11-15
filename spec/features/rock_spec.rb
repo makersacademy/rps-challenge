@@ -14,7 +14,7 @@ feature 'Player chooses rock' do
   end
 
   scenario 'Player chooses rock and draws' do
-    srand(67810)
+    srand(67811)
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content 'Matt & AI drew!'

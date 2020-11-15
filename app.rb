@@ -25,7 +25,7 @@ class Clicker < Sinatra::Base
 
   post '/rock' do
     p1 = 'rock'
-    p2 = ['rock', 'paper', 'scissors'].sample
+    p2 = ['rock', 'paper', 'scissors', 'spock', 'lizard'].sample
     @game = Game.new(p1, p2)
     if @game.result == 'rock'
       redirect '/winner'
@@ -38,7 +38,7 @@ class Clicker < Sinatra::Base
 
   post '/paper' do
     p1 = 'paper'
-    p2 = ['rock', 'paper', 'scissors'].sample
+    p2 = ['rock', 'paper', 'scissors', 'spock', 'lizard'].sample
     @game = Game.new(p1, p2)
     if @game.result == 'paper'
       redirect '/winner'
@@ -51,9 +51,35 @@ class Clicker < Sinatra::Base
 
   post '/scissors' do
     p1 = 'scissors'
-    p2 = ['rock', 'paper', 'scissors'].sample
+    p2 = ['rock', 'paper', 'scissors', 'spock', 'lizard'].sample
     @game = Game.new(p1, p2)
     if @game.result == 'scissors'
+      redirect '/winner'
+    elsif @game.result == 'draw'
+      redirect '/draw'
+    else
+      redirect '/loser'
+    end
+  end
+
+  post '/spock' do
+    p1 = 'spock'
+    p2 = ['rock', 'paper', 'scissors', 'spock', 'lizard'].sample
+    @game = Game.new(p1, p2)
+    if @game.result == 'spock'
+      redirect '/winner'
+    elsif @game.result == 'draw'
+      redirect '/draw'
+    else
+      redirect '/loser'
+    end
+  end
+
+  post '/lizard' do
+    p1 = 'lizard'
+    p2 = ['rock', 'paper', 'scissors', 'spock', 'lizard'].sample
+    @game = Game.new(p1, p2)
+    if @game.result == 'lizard'
       redirect '/winner'
     elsif @game.result == 'draw'
       redirect '/draw'

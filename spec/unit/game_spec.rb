@@ -24,6 +24,16 @@ describe Game do
     expect(paper.result).to eq 'paper'
   end
 
+  it 'allows spock to win' do
+    spock = Game.new('spock', 'rock')
+    expect(spock.result).to eq 'spock'
+  end
+
+  it 'allows lizard to win' do
+    lizard = Game.new('lizard', 'spock')
+    expect(lizard.result).to eq 'lizard'
+  end
+
   describe '#a drawing game' do
 
     it 'allows the user to draw' do
