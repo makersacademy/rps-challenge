@@ -1,9 +1,9 @@
-<h1><%= @player_1_name %> vs. The Machine! </h1>
+<h1><%= session[:player_1_name] %> vs. The Machine! </h1>
 
 <h2>Make your pick!</h2>
 <form action="/move" method="post">
-  <input type="radio" name="move" value="Rock"/> Rock
-  <input type="radio" name="move" value="Paper"/> Paper
-  <input type="radio" name="move" value="Scissors"/> Scissors
+  <input type="radio" name="player_1_move" value="Rock"/> Rock
+  <input type="radio" name="player_1_move" value="Paper"/> Paper
+  <input type="radio" name="player_1_move" value="Scissors"/> Scissors
   <input type="submit" value="Submit">
 </form>
