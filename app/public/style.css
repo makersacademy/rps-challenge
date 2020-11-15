@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(57, 169, 219);
+    font-family: Rubik, Arial;
+}
+
+form {
+    text-align: center;
+    line-height: 30px;
+    height: 80%;
+    overflow: auto;
+}
+
+form hr {
+    width: 15%;
+}
+
+h1 {
+    text-align: center;
+}
+
+#overlay {
+    width: 80%;
+    margin: 3% auto;
+    height: 95vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 40px;
+}
+
+.game-interface {
+    display: table;
+}
+
+div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 50%;
+    padding: 16.5rem;
+}
+
+.player-interface {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.computer-interface {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+footer {
+    text-align: center;
+    font-size: larger;
+}

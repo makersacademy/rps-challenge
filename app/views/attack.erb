@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+<section id="overlay">
+  <header>
+    <h1>Rock Paper Scissors</h1>
+  </header><br>
+  <section class="game-interface">
+    <div class='player-interface'>
+      <p>
+      <h3><%= @game.player.name %></h3>
+      </p>
+      <form action="/play" method="get">
+        <p>
+          Chosen weapon: <h3><%= @game.weapon.weapon_choice %></h3>
+        </p>
+        <input type="submit" value="Replay">
+      </form>
+    </div>
+    <div class="computer-interface">
+      <p>
+      <h3>Computer</h3>
+      </p>
+      <span>
+        <p>
+        Chosen weapon: <h3><%= @game.opponent.random_weapon %></h3>
+        </p>
+      </span>
+
+    </div>
+  </section>
+  <footer>
+    <p>
+      The winner is Constantine!
+    </p>
+  </footer>
+</section>
+</body>
+</html>

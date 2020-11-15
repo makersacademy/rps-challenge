@@ -18,3 +18,14 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+ENV['RACK_ENV'] = 'test'
+
+# require our Sinatra app file
+require File.join(File.dirname(__FILE__), '../app', 'rps_web.rb')
+
+require 'capybara'
+require 'rspec'
+
+# tell Capybara about our app class
+Capybara.app = RPSWeb
