@@ -1,2 +1,2 @@
 <h1><%= @round %> </h1>
-<h2> <%= session[:player_1_name] %>: <%= session[:player_1_move] %> | Computer: <%= @comp_move %></h2>
+<h2> <%= $game.player_1.name %>: <%= session[:player_1_move] %> | <%= $game.player_2.name %>: <%= @comp_move %></h2>

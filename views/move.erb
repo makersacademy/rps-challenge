@@ -1,4 +1,4 @@
-<h1><%= session[:player_1_name] %> picked <%= session[:player_1_move] %> </h1>
+<h1><%= $game.player_1.name %> picked <%= session[:player_1_move] %> </h1>
   <form action="/fight">
   <input type="submit" value="Let's Pick a Fight!">
   </form>
