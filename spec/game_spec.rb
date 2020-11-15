@@ -1,15 +1,37 @@
 require 'game'
+require 'player'
 require 'human'
 require 'computer'
 
 describe Game do
-  let(:player1) { double 'human'}
-  let(:player2) { double 'computer'}
+
+  let(:game) { Game.new }
+  let(:savanna) { double 'human', move: 'rock' }
+  let(:alexa) { double 'computer', move: 'paper'}
+
   describe '#initialize' do
     it 'creates 2 instances of the Player class on instantiation' do
-      game1 = Game.new(player1,player2)
-      expect(player1).to be_an_instance_of Human
-      expect(player2).to be_an_instance_of Computer
+      expect(game.human_player).to be_a Human
+      expect(game.bot_player).to be_a Computer
     end
   end
+
+  describe '#game_over?' do
+    it 'lets us know if the game is over - i.e if there is no tie' do
+      game.human_player.move == game.bot_player.move
+      expect(game.game_over?).to eq false
+    end
+  end
+
+  describe '#play' do
+    it 'lets the two players pick rock, paper or scissors' do
+      expect{ game.play('paper') }.to change{ game.human_player.move }.from(nil).to('paper')
+    end
+  end
+
+  #describe '#who_won' do
+    #it 'determines the winner' do
+      #expect(game.who_won).to eq 'The computer won!'
+    #end
+  #end
 end

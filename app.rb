@@ -9,7 +9,6 @@ class RPS < Sinatra::Base
 
   post '/name' do
     session[:player_name] = params[:player_name]
-    @game = Game.new(player1=Human.new(session[:player_name]), player2=Computer.new)
     redirect '/play'
   end
 
@@ -20,7 +19,6 @@ class RPS < Sinatra::Base
 
   post '/move' do
     session[:player_move] = params[:player_move]
-    redirect '/play' if !@game.game_over?
     redirect '/result'
   end
 
