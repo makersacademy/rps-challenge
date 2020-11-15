@@ -1,4 +1,4 @@
-# RPS Challenge
+gem insta# RPS Challenge
 
 Instructions
 -------
