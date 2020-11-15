@@ -53,4 +53,11 @@ describe Game do
       game_with_fake_cpu.update_scores
     end
   end
+
+  describe '#status' do
+    it 'calls the winner? method' do
+      expect(game_with_fake_cpu).to receive(:winner?)
+      game_with_fake_cpu.status
+    end
+  end
 end
