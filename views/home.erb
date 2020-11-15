@@ -1,6 +1,8 @@
 <html>
   <body>
-  <h2> Welcome <%= session[:player_1_name] %>! </h2>
+  <h2> Welcome! </h2><br>
+  <h3> <%= session[:player_1_name]%> vs <%= session[:player_2_name]%> </h3> <br>
+  <h4> <%= session[:player_1_name]%> select your weapon! </h4> <br>
     <form action="/game" method="POST">
      <input type="submit" name="player_1_move" value="Rock"><br> <br>
      <input type="submit" name="player_1_move" value="Paper"><br> <br>

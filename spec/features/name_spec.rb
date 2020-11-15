@@ -1,10 +1,15 @@
 feature 'Name input' do
 
-  scenario 'User can enter their name' do
-    enter_name
+  scenario 'Two players can enter their names' do
+    two_players
     expect(page).to have_content("Symion")
+    expect(page).to have_content("Sandy")
   end
 
-  # scenario 'A second user can enter their name' do
-
+  scenario 'One player can enter their name' do
+    one_player
+    expect(page).to have_content("Symion")
+    expect(page).to have_content("Computer")
+  end
+  
 end

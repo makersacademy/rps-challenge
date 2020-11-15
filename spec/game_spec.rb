@@ -1,37 +1,43 @@
 require 'game'
 
 describe Game do
-  subject { described_class.new("Symion", "Scissors") }
 
-  describe '#initialize' do 
-    it 'Instances of the game class are initialzed with the user name' do
-      expect(subject.name).to eq("Symion")
-    end
-    it 'Instances of the game class are initialized with the user move' do
-      expect(subject.user_move).to eq("Scissors")
-    end
-  end
+  let(:player1) { double("player1", name: "Symion", move: "Scissors") }
+  let(:player2) { double("player2", name: "Sandy", move: "Rock") }
+  let(:computer) { double("computer", name: "Computer") }
+  subject { Game.new(player1, player2) }
 
-  describe '#move_sample' do 
-    it 'Returns Rock, Paper or Scissors' do
-      srand(4)
-      expect(subject.move_sample).to eq("Scissors")
+  describe '#initialize' do
+    it 'Instances of the Game class are initialzed two players' do
+      expect(subject.player_1).to eq(player1)
+    end
+    it 'Instances of the Game class are initialzed two players' do
+      expect(subject.player_2).to eq(player2)
     end
   end
 
   describe '#round' do 
-    it 'Returns "The computer won!" when computer wins' do
-      allow(subject).to receive(:move_sample) { "Rock" }
-      expect(subject.round).to eq("You lost!")
+
+    context 'Computer' do
+      let(:computer_player) { Game.new(player1, computer) }
+      it 'Returns "The computer won!" when computer wins' do
+        allow(computer).to receive(:move) { "Rock" }
+        expect(computer_player.round).to eq("Computer won!")
+      end
+      it 'Returns "It\'s a draw!" when draw' do
+        allow(computer).to receive(:move) { "Scissors" }
+        expect(computer_player.round).to eq("It's a draw!")
+      end
+      it 'Returns "You won!" when user wins' do
+        allow(computer).to receive(:move) { "Paper" }
+        expect(computer_player.round).to eq("Symion won!")
+      end
     end
-    it 'Returns "It\'s a draw!" when draw' do
-      allow(subject).to receive(:move_sample) { "Scissors" }
-      expect(subject.round).to eq("It's a draw!")
-    end
-    it 'Returns "You won!" when user wins' do
-      allow(subject).to receive(:move_sample) { "Paper" }
-      expect(subject.round).to eq("You won!")
+
+    context 'Two real players' do
+      it 'Returns player 2 won' do
+        expect(subject.round).to eq("Sandy won!")
+      end
     end
   end
-
 end
