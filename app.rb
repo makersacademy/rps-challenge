@@ -20,6 +20,18 @@ class Game < Sinatra::Base
     erb :play
   end
 
+  post '/rock' do
+
+  end
+
+  post '/paper' do
+
+  end
+
+  post 'scissors' do
+    
+  end
+
   run! if app_file == $0
 
 end
