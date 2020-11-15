@@ -1,6 +1,6 @@
 describe Game do
-  let(:player) { double('player', name: :Human, score: 0) }
-  let(:cpu) { double('cpu', name: :AI, score: 0) }
+  let(:player) { double('player', name: :Human) }
+  let(:cpu) { double('cpu', name: :AI) }
   let(:game) { Game.new(player) }
   let(:game_with_fake_cpu) { Game.new(player, cpu) }
 
@@ -27,22 +27,30 @@ describe Game do
     end
   end
 
-  describe '#play' do
+  describe '#play_round' do
     it 'calls the Player choose method' do
       expect(player).to receive(:choose).with('rock')
-      game.play('rock')
+      game.play_round('rock')
     end
 
     it 'calls the CPU choose method' do
       allow(player).to receive(:choose)
       expect(cpu).to receive(:choose)
-      game_with_fake_cpu.play('rock')
+      game_with_fake_cpu.play_round('rock')
     end
 
-    it 'updates the scores' do
-      allow(player).to receive(:choose).with('scissors')
-      allow(cpu).to receive(:choose) { :rock }
-      expect { game_with_fake_cpu.play('scissors') }.to change { cpu.score }.from(0).to(1)
+    it 'updates the round number' do
+      allow(player).to receive(:choose)
+      expect { game.play_round('rock') }.to change { game.round }.by(1)
+    end
+  end
+
+  describe '#update_scores' do
+    it 'calls receive_point method for winner of the round' do
+      allow(player).to receive(:choice) { :rock }
+      allow(cpu).to receive(:choice) { :paper }
+      expect(cpu).to receive(:receive_point)
+      game_with_fake_cpu.update_scores
     end
   end
 end
