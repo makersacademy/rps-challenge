@@ -12,4 +12,10 @@ describe Player do
       expect { player.choose('rock') }.to change { player.choice }.from(nil).to(:rock)
     end
   end
+
+  describe '#receive_point' do
+    it "adds a point to the Player's score" do 
+      expect { player.receive_point }.to change { player.score }.by(1)
+    end
+  end
 end
