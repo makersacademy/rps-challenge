@@ -3,9 +3,11 @@
 <div style='border: solid red 2px'>
   <h2> <%= @player_1 %> vs. The Computer </h2>
 
-<%= @player_1 %> pick your hand:<br><br>
+<%= @player_1 %> play your hand:<br><br>
 
-Rock<br>
-Paper<br>
-Scissors<br><br>
+<form action='/choose' method='post'>
+  <input type='submit' value='Rock'>
+  <input type='submit' value='Paper'>
+  <input type='submit' value='Scissors'>
+</form>
 </div>
