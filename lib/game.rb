@@ -12,7 +12,7 @@ class Game
     %w[Rock Paper Scissors].sample
   end
 
-  def match(move)
+  def single_match(move)
     winning_moves = {
       'rock' => 'scissors',
       'scissors' => 'paper',
@@ -22,5 +22,18 @@ class Game
     return 'Draw!' if move == computer_move
 
     winning_moves[move] == computer_move ? 'You won!' : 'You lost!'
+  end
+
+  def mp_match(p1, p2)
+    player_1 = @player_1
+    player_2 = @player_2
+    winning_moves = {
+      'rock' => 'scissors',
+      'scissors' => 'paper',
+      'paper' => 'rock'
+    }    
+    return 'Draw!' if p1 == p2
+
+    winning_moves[p1] == p2 ? "#{player_1.name} won!" : "#{player_2.name} won!"
   end
 end
