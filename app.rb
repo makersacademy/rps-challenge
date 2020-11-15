@@ -24,7 +24,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    @game.player.choose(params[:choice])
+    @game.play_round(params[:choice])
     redirect('/round-end')
   end
 

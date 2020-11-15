@@ -12,6 +12,6 @@ feature 'choose option' do
     sign_in_and_play
     choose('choice', option: 'rock')
     click_button('Submit')
-    expect(page).to have_content("AI chose #{%w[rock paper scissors].sample}")
+    expect(page).to have_content("AI chose")
   end
 end
