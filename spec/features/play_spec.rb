@@ -7,4 +7,10 @@ feature "playing" do
     expect(page).to have_link("Paper", href: "/game?option=paper")
     expect(page).to have_link("Scissors", href: "/game?option=scissors")
   end
+
+  scenario "player choose rock" do
+    register_and_play
+    click_link('Rock')
+    expect(page).to have_content 'John chose rock'
+  end
 end
