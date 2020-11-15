@@ -11,4 +11,10 @@ feature 'rps game' do
   click_button 'Rock'
   expect(page).to have_content 'You chose Rock!'
   end
+
+  scenario 'CPU chooses Rock' do 
+  sign_in
+  click_button 'Rock'
+  expect(page).to have_content "CPU chose Rock!"
+  end
 end
