@@ -27,8 +27,8 @@ describe Game do
 
   describe '#play_round' do
     it 'calls the Player choose method' do
-      expect(player).to receive(:choose)
-      game.play_round
+      expect(player).to receive(:choose).with('rock')
+      game.play_round('rock')
     end
   end
 end
