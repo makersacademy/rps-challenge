@@ -1,7 +1,3 @@
-require 'capybara/rspec'
-require_relative './web_helpers'
-require 'spec_helper'
-
 feature 'Attacking' do
   scenario 'Player attacks Computer with Rock' do
     sign_in_and_play

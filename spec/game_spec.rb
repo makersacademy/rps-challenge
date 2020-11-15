@@ -1,11 +1,11 @@
 require 'game'
 
 describe Game do
-  subject(:dave) { Game.new("Michael", "Rock") }
-  subject(:computer) { Game.new("Michael", "Rock") }
+  subject(:dave) { Game.new("Dave", "Rock") }
+  subject(:computer) { Game.new("Dave", "Rock") }
 
   it "initializes with the player name" do
-    expect(dave.player_1_name).to eq "Michael"
+    expect(dave.player_1_name).to eq "Dave"
   end
 
   it "initializes with teh player's move" do
