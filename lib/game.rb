@@ -4,7 +4,7 @@ require_relative './bot'
 class Game
   attr_reader :player_1, :player_2, :computer_move
 
-  MOVES = { 'Scissors' => 'Paper', 'Paper' => 'Rock', 'Rock' => 'Scissors' }
+  MOVES = { 'Scissors' => 'Paper', 'Paper' => 'Rock', 'Rock' => 'Scissors' }.freeze
 
   def initialize(player_1, player_2)
     @player_1 = player_1

@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Rock Paper Scissors!</title>
 </head>
+
 <body>
-<h1><%= @round %> </h1>
-<img src="https://i.gifer.com/origin/b3/b3e7f2ee4a85ddac132f8ec48da0c877_w200.gif">
-<h2> <%= $game.player_1.name %>'s <%= params[:player_1_move] %> played <%= $game.player_2.name %>'s <%= @computer_move %></h2>
+  <h1><%= @round %> </h1>
+  <img src="https://i.gifer.com/origin/b3/b3e7f2ee4a85ddac132f8ec48da0c877_w200.gif">
+  <h2> <%= $game.player_1.name %>'s <%= params[:player_1_move] %> played <%= $game.player_2.name %>'s
+    <%= @computer_move %></h2>
   <a href="/play"><button name="submit" value="Submit">Play again?</button></a>
-  </body>
+</body>
+
 </html>

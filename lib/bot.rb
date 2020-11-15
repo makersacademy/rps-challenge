@@ -8,17 +8,10 @@ class Bot
                 Cobalt
                 Nickel].freeze
                 
-  attr_reader :name, :move
+  attr_reader :name
 
   def initialize
     @name = RAND_NAME.sample
   end
-
-  # def move
-  #   @move = %w[Rock Paper Scissors].sample
-  # end
-
-  # Commented out for the moment as unsure whether it should sit here
-  # Or in game class
 
 end
