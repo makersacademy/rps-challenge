@@ -1,7 +1,10 @@
 require 'sinatra/base'
+require_relative 'lib/game'
 
 class RockPaperScissors < Sinatra::Application
   enable :sessions
+
+  attr_reader :player_choice
 
   get '/' do
     erb :index
@@ -9,9 +12,7 @@ class RockPaperScissors < Sinatra::Application
 
   post '/names' do
     player = params[:player_name]
-    p params[:player_name]
     $game = Game.new(player)
-    p $game
     redirect '/play'
   end
 
@@ -24,12 +25,11 @@ class RockPaperScissors < Sinatra::Application
     @player_name = $game.player
     @player_choice = params[:choice]
     @computer_choice = $game.computer_choice
+    $game.player_choice = @player_choice
+    @result = $game.result
     erb :result
   end
 
 # start the server if ruby file executed directly
   run! if app_file == $0
 end
-
-# add winner test back in once game class working
-# add the rules for the game to the game class - see rubric for hash suggestion

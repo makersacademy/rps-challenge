@@ -14,6 +14,14 @@ feature 'logs player & computer selection' do
     expect(page).to have_content 'Computer chose Scissors!'
   end
 
-
+  feature 'winner' do
+    scenario 'Winner receives congratulations' do
+      srand(4)
+      sign_in_and_play
+      choose('Rock')
+      click_button "Submit"
+      expect(page).to have_content 'You win!'
+    end
+  end
 
 end

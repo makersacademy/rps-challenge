@@ -22,16 +22,17 @@ $ rackup
 ![Sequence diagram for RPS challenge](Sequence_diagram.png)
 
 ## Challenge status & steps to finish
-Planned game using a sequence diagram, set up README.
+Have basic version of the game working, with passing tests and good coverage.
 
 To improve the README I would:
-* add a paragraph describing set-up  
 * add a run through  
 
 To improve the code I would:  
-* change the wording on the winner screen to use the appropriate verb for conquest  
+* use a hash or similar to describe winning conditions  
+* change the wording on the winner screen to use the conditional verb for conquest, e.g. 'Rock *blunts* Scissors'  
 
-To extend the game I would:  
+To improve/extend the game I would:  
+* Add CSS to improve the look of the game  
 * Change the game so that two marketeers can play against each other  
 * Extend the game to rock, paper, scissors, lizard, Spock.  
 
