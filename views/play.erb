@@ -1,4 +1,4 @@
-<h1> Hello <%= @player_name.capitalize %>! </h1>
+<h1> Hello <%= @game.human_player.name.capitalize%>! </h1>
 Please choose Rock, Paper or Scissors?
 <form action='/move' method='post'>
   <input type='test' name='player_move'>
