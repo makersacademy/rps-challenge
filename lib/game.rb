@@ -38,6 +38,14 @@ class Game
       puts "You won!"
     end
   end
+
+  def self.create(human_player, bot_player)
+    @game = Game.new(human_player, bot_player)
+  end
+
+  def self.instance
+    @game
+  end
 end
 #savanna=Human.new('savanna')
 #alexa = Computer.new

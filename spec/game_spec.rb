@@ -8,6 +8,8 @@ describe Game do
   let(:game) { Game.new }
   let(:savanna) { double 'human', move: 'rock' }
   let(:alexa) { double 'computer', move: 'paper'}
+  let(:human_player) { double 'human' }
+  let(:bot_player) { double 'computer' }
 
   describe '#initialize' do
     it 'creates 2 instances of the Player class on instantiation' do
@@ -34,4 +36,13 @@ describe Game do
       #expect(game.who_won).to eq 'The computer won!'
     #end
   #end
+
+  describe "#self.create" do
+    it "instantiates a new game and returns it with #instance" do
+      Game.create(human_player, bot_player)
+      expect(Game.instance).to be_an_instance_of(Game)
+    end
+  end
+
+
 end
