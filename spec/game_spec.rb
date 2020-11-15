@@ -24,4 +24,11 @@ describe Game do
       expect(Game.instance).to eq(created_game)
     end
   end
+
+  describe '#play_round' do
+    it 'calls the Player choose method' do
+      expect(player).to receive(:choose)
+      game.play_round
+    end
+  end
 end
