@@ -1,9 +1,9 @@
 <h1> Time to play! </h1>
 
 <div style='border: dashed red 2px'>
-  <h2> <%= @player_1 %> vs. The Computer </h2>
+  <h2> <%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h2>
 
-<%= @player_1 %> choose your shape:<br><br>
+<%= @game.player_1.name %> choose your shape:<br><br>
 
 <form action='/choose' method='post'>
   <input type='submit' value='Rock'>
