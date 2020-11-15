@@ -16,5 +16,6 @@ class Game
 
   def play_round(player_choice)
     @player.choose(player_choice)
+    @cpu.choose
   end
 end
