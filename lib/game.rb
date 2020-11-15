@@ -4,16 +4,15 @@ require_relative './bot'
 class Game
   attr_reader :player_1, :player_2, :computer_move
 
-  MOVES = { 'rock' => ['scissor', 'lizard'], 'paper' => ['rock', 'spock'],
-           'scissor' => ['paper', 'lizard'], 'lizard' => ['spock', 'paper'],
-           'spock' => ['rock', 'scissor'] }
+  MOVES = { 'Scissors' => 'Paper', 'Paper' => 'Rock', 'Rock' => 'Scissors' }
+
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
   end
 
   def sample_move
-    %w[Rock Paper Scissors Lizard Spock].sample
+    %w[Rock Paper Scissors].sample
   end
 
   def single_match(move)
