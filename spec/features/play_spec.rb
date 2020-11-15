@@ -1,4 +1,3 @@
-
 feature "playing" do
   scenario "presented with the different choices" do
     register_and_play
