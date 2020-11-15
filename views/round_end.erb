@@ -1,1 +1,10 @@
+
 <h2> You chose <%= @game.player.choice %>, AI chose <%= @game.cpu.choice %> </h2>
+
+<h1> <%= @game.player.name %>: <%= @game.player.score %> </h1>
+
+<h1> <%= @game.cpu.name %>: <%= @game.cpu.score %> </h1>
+
+<form action="/play" method="get">
+  <input type="submit" value="Next Round">
+</form>

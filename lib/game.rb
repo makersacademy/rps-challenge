@@ -1,3 +1,5 @@
+require_relative './cpu.rb'
+
 class Game
   def self.create(player)
     @game = Game.new(player)

@@ -29,6 +29,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/round-end' do
+    @game.update_scores
     erb(:round_end)
   end
 
