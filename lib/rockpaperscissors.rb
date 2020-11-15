@@ -21,7 +21,7 @@ class RockPaperScissors
     :spock => { :rock => :win, :paper => :loss,
                 :scissors => :win,
                 :lizard => :loss, :spock => :draw }
-  }
+    }
 
   attr_reader :round, :player1, :player2
 
