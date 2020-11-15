@@ -65,5 +65,16 @@ describe Game do
       expect(game_with_fake_cpu).to receive(:assign_outcomes)
       game_with_fake_cpu.status
     end
+
+    it 'returns nil if there is no winner' do
+      allow(game_with_fake_cpu).to receive(:winner?) { false }
+      expect(game_with_fake_cpu.status).to eq(nil)
+    end
+
+    it "returns 'complete' if there is a winner" do
+      allow(game_with_fake_cpu).to receive(:winner?) { true }
+      allow(game_with_fake_cpu).to receive(:assign_outcomes)
+      expect(game_with_fake_cpu.status).to eq('complete')
+    end
   end
 end

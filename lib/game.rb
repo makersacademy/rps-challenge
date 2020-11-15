@@ -42,6 +42,7 @@ class Game
   def status
     if winner?
       assign_outcomes
+      'complete'
     end
   end
 
