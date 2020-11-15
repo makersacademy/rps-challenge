@@ -23,9 +23,9 @@ class RPS < Sinatra::Base
     @player_choice = params[:option]
 
 
-    @computer_choice = ['rock', 'paper', 'scissors'].sample
+    @computer_choice = ['rock', 'paper', 'scissors', 'spock', 'lizard'].sample
 
-    @winner = Game.new(@player_choice, @computer_choice, @player_name).rps
+    @winner = Game.new(@player_choice, @computer_choice, @player_name).rpssl
 
     erb :game
   end
