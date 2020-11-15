@@ -9,7 +9,7 @@ class Game
     @game
   end
 
-  attr_reader :player, :cpu, :round
+  attr_reader :player, :cpu, :round, :winner, :loser
 
   def initialize(player, cpu = CPU.new)
     @player = player
@@ -40,12 +40,21 @@ class Game
   end
 
   def status
-    winner?
+    if winner?
+      assign_outcomes
+    end
   end
 
   private
 
   def winner?
     [@player, @cpu].any? { |player| player.score == 5 }
+  end
+
+  def assign_outcomes
+    [@player, @cpu].each do |player|
+      @winner = player if player.score == 5
+      @loser = player if player.score != 5
+    end
   end
 end
