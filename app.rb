@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -20,9 +21,14 @@ class RPS < Sinatra::Base
   get '/game' do
     @player_name = session[:player_name]
     @player_choice = params[:option]
+
+
+    @computer_choice = ['rock', 'paper', 'scissors'].sample
+
+    @winner = Game.new(@player_choice, @computer_choice, @player_name).rps
+
     erb :game
   end
-
 
   run! if app_file == $0
 end
