@@ -9,14 +9,15 @@ class Game
 
   def result
     return 'draw' if @p1 == @p2
+
     if rock_win
-        'rock'
+      'rock'
     elsif scissors_win
-        'scissors'
+      'scissors'
     elsif paper_win
-        'paper'
+      'paper'
     else
-        'lose'
+      'lose'
     end
   end
 
