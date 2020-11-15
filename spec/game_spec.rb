@@ -6,6 +6,10 @@ describe Game do
     it 'takes in a Player object' do
       expect(game.player).to eq(player)
     end
+
+    it 'has a CPU opponent injected' do
+      expect(game.cpu).to be_instance_of(Object)
+    end
   end
 
   describe '.create' do
