@@ -3,23 +3,24 @@ require_relative './bot'
 
 class Game
   attr_reader :player_1, :player_2, :computer_move
-  MAP = { "Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper" }
-
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
-    @computer_move = %w[Rock Paper Scissors].sample
   end
 
-  def result(player_1_move)
-    if player_1_move == @computer_move then "Draw"
-    elsif MAP[player_1_move] == @computer_move then "You won!"
-    else
-      "You lost!"
-    end
+  def sample_move
+    %w[Rock Paper Scissors].sample
   end
 
-  def comp_pick
+  def match(move)
+    winning_moves = {
+      'rock' => 'scissors',
+      'scissors' => 'paper',
+      'paper' => 'rock'
+    }
+    @computer_move = sample_move
+    return 'Draw!' if move == computer_move
 
+    winning_moves[move] == computer_move ? 'You won!' : 'You lost!'
   end
 end

@@ -27,8 +27,8 @@ class RPSApp < Sinatra::Base
   end
 
   get '/fight' do
-    @round = $game.result(params[:player_1_move])
-    @comp_move = $game.computer_move
+    @round = $game.match(session[:player_1_move])
+    @computer_move = $game.computer_move
     erb :outcome
   end
   run! if app_file == $0
