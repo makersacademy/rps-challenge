@@ -1,4 +1,4 @@
-require 'sinatra/base'
+require 'sinatra'
 require './lib/game'
 require './lib/player'
 require './lib/bot'
@@ -24,24 +24,16 @@ class RPSApp < Sinatra::Base
     erb :playmp
   end
 
-  post '/move' do
+  post '/fight' do
     session[:player_1_move] = params[:player_1_move]
-    erb :move
-  end
-  
-  post '/move_mp' do
-    session[:player_1_move] = params[:player_1_move]
-    session[:player_2_move] = params[:player_2_move]
-    erb :movemp
-  end
-
-  get '/fight' do
     @round = $game.single_match(session[:player_1_move])
     @computer_move = $game.computer_move
     erb :outcome
   end
 
-  get '/fight_mp' do
+  post '/fight_mp' do
+    session[:player_1_move] = params[:player_1_move]
+    session[:player_2_move] = params[:player_2_move]
     @round = $game.mp_match(session[:player_1_move], session[:player_2_move])
     erb :outcomemp
   end

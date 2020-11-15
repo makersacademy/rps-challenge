@@ -1,4 +1,5 @@
-require_relative '../lib/bot'
+require 'bot'
+
 describe Bot do
   subject(:bot) { described_class.new }
   it 'returns a name' do
