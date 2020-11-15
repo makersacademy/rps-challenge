@@ -14,11 +14,7 @@ class Game < Sinatra::Base
   end
 
   post "/game-mode" do
-    if params[:choice] == "single_player"
-      erb(:single_name)
-    else
-      erb(:multiple_names)
-    end
+    params[:choice] == "single_player" ? erb(:single_name) : erb(:multiple_names)
   end
 
   post "/give-one-name" do
