@@ -26,7 +26,11 @@ class RPS < Sinatra::Base
 
   post '/move' do
     @game.play(params[:player_move])
-    redirect '/result'
+    if @game.game_over?
+      redirect '/result'
+    else
+      redirect '/play'
+    end
   end
 
   get '/result' do

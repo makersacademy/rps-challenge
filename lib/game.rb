@@ -12,7 +12,7 @@ class Game
   end
 
   def game_over?
-    !@human_player.move == @bot_player.move
+    @human_player.move != @bot_player.move
   end
 
   def play(move)
@@ -53,4 +53,5 @@ end
 #game.play('paper')
 #savanna.move
 #alexa.move
+#puts game.game_over?
 #game.who_won
