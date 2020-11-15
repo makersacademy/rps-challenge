@@ -7,9 +7,10 @@ class Game
     @game
   end
 
-  attr_reader :player
+  attr_reader :player, :cpu
 
-  def initialize(player)
+  def initialize(player, cpu = CPU.new)
     @player = player
+    @cpu = cpu
   end
 end

@@ -8,7 +8,7 @@ describe Game do
     end
 
     it 'has a CPU opponent injected' do
-      expect(game.cpu).to be_instance_of(Object)
+      expect(game.cpu).to be_a_kind_of(Object)
     end
   end
 
