@@ -42,7 +42,7 @@ describe Game do
   end
 
   it 'will tell you if youre playing the computer' do
-    expect(subject.name2).to eq 'all his friends <3'
+    expect(subject.name2).to eq 'all their friends <3'
   end
 
   it 'will tell you your opponent' do
