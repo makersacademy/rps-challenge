@@ -1,1 +1,16 @@
-<h2> 💎 🏳 ✂ <%=@player_name%> vs Computer  💎 🏳 ✂</h2>
+<h2> ⛰ 📃 ✂️ <%= @game.player.name %> vs Computer  ⛰ 📃 ✂️</h2>
+<h3>First to 3 wins</h3>
+<!-- <h3>Current score: 0/3</h3> -->
+<h3>Choose your weapon:</h3>
+
+<form action="/rock" method="post">
+    <input type="submit" value="ROCK">
+<form>
+
+<form action="/paper" method="post">
+    <input type="submit" value="PAPER">
+<form>
+
+<form action="/scissors" method="post">
+    <input type="submit" value="SCISSORS">
+<form>

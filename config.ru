@@ -1,2 +1,2 @@
-require_relative './rps_app'
+require_relative './rps'
 run RPS
