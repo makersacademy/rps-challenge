@@ -5,7 +5,6 @@ require './lib/computer.rb'
 require './lib/game.rb'
 
 class RPS < Sinatra::Base
-  enable :sessions
 
   before do
     @game = Game.instance
