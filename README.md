@@ -83,3 +83,12 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+## Comments
+Going forward with this challenge, I would like to :
+
+ - Implement the special rules (Rock, Paper, Scissors, Spock, Lizard). Additionally.
+ - Improve the HTML formatting.
+ - Add CSS to make the app more visually appealing.
+ - Create a return button so that the users can re-enter names.
+ - Implement a score tracker.  
