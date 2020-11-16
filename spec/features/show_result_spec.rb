@@ -1,3 +1,4 @@
+# failing test- I need to find out how to test the multiple possible outcomes using capypara
 feature 'shows result' do
   scenario "prints 'You won!' if marketeer wins and 'The computer won!' if bot wins" do
     visit '/'
