@@ -1,0 +1,31 @@
+<head>
+  <title>RPS</title>
+</head>
+
+<h1 align="center">Rock, Paper Scissors</h1>
+
+<h2 align="center">[ <%= @player1_score %> ] <%= @player_name %> versus Computer [ <%= @player2_score %> ]</h2>
+
+<div id="master" style="width: 700px; border: 1px solid red; height: 500px;
+margin: 0 auto;">
+
+<%= @winner %>
+
+<div id="player1" style="width: 300px; float: left; ">
+  <ul>
+    <li><a href="/move?move=rock">Rock</a></li>
+    <li><a href="/move?move=paper">Paper</a></li>
+    <li><a href="/move?move=scissors">Scissors</a></li>
+  </ul>
+
+  <%= @player1_move %>
+
+</div>
+
+<div id="player2" style="width: 300px; float: right;">
+
+<%= @player2_move %>
+
+</div>
+
+</div> <!-- master -->
