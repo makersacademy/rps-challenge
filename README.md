@@ -24,4 +24,5 @@ functionality:
 
 ![Screenshot 2020-11-14 at 21 49 31](https://user-images.githubusercontent.com/71889577/99157709-561ab080-26c3-11eb-8ccf-715fd938b55b.png)
 
-![Screenshot 2020-11-14 at 22 42 15](https://user-images.githubusercontent.com/71889577/99158488-24a5e300-26cb-11eb-922a-49be872688f0.png)
+<img width="799" alt="Screenshot 2020-11-16 at 00 27 17" src="https://user-images.githubusercontent.com/71889577/99201363-8dac5a00-27a2-11eb-9230-2fe369674071.png">
+
