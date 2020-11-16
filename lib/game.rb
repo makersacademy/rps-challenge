@@ -7,6 +7,13 @@ class Game
     @name2 = name2
     @results = []
     @p1_go = []
+    @game_logic = {
+      "rock" => ["scissors", "lizard"],
+      "paper" => ["rock", "spock"],
+      "scissors" => ["paper", "lizard"],
+      "spock" => ["rock", "scissors"],
+      "lizard" => ["spock", "paper"]
+    }
   end
 
   def self.create(name, name2 = "all his friends <3")
@@ -55,26 +62,6 @@ class Game
   end
 
   def win?(weapon, comp_choice)
-    rock_scissors_and_lizard?(weapon, comp_choice) || paper_rock_and_spock?(weapon, comp_choice) || scissors_paper_and_lizard?(weapon, comp_choice) || spock_rock_and_scissors?(weapon, comp_choice) || lizard_spock_and_paper?(weapon, comp_choice)
+    @game_logic[weapon].include?(comp_choice)
   end
-
-  def rock_scissors_and_lizard?(weapon, comp_choice)
-    weapon == "rock" && comp_choice == "scissors" || weapon == "rock" && comp_choice == "lizard"
-  end
-
-  def paper_rock_and_spock?(weapon, comp_choice)
-    weapon == "paper" && comp_choice == "rock" || weapon == "paper" && comp_choice == "spock"
-  end
-
-  def scissors_paper_and_lizard?(weapon, comp_choice)
-    weapon == "scissors" && comp_choice == "paper" || weapon == "scissors" && comp_choice == "lizard"
-  end
-
-  def spock_rock_and_scissors?(weapon, comp_choice)
-    weapon == "spock" && comp_choice == "rock" || weapon == "spock" && comp_choice == scissors
-  end
-
-  def lizard_spock_and_paper?(weapon, comp_choice)
-    weapon == "lizard" && comp_choice == "spock" || weapon == "lizard" && comp_choice == "paper"
-  end
-end
+end 
