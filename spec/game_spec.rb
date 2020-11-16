@@ -7,7 +7,7 @@ describe Game do
 
   let(:game) { Game.new }
   let(:savanna) { double 'human', move: 'rock' }
-  let(:alexa) { double 'computer', move: 'paper'}
+  let(:alexa) { double 'computer', move: 'paper' }
   let(:human_player) { double 'human' }
   let(:bot_player) { double 'computer' }
 
@@ -27,7 +27,7 @@ describe Game do
 
   describe '#play' do
     it 'lets the two players pick rock, paper or scissors' do
-      expect{ game.play('paper') }.to change{ game.human_player.move }.from(nil).to('paper')
+      expect { game.play('paper') }.to change { game.human_player.move }.from(nil).to('paper')
     end
   end
 
@@ -43,6 +43,5 @@ describe Game do
       expect(Game.instance).to be_an_instance_of(Game)
     end
   end
-
 
 end

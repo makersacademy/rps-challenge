@@ -5,7 +5,7 @@ class Human < Player
   attr_reader :name
 
   def initialize(name, move = nil)
-    super( move )
+    super(move)
     @name = name
   end
 

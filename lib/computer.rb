@@ -1,12 +1,13 @@
 require_relative 'player'
-
-class Computer < Player #computer is a descendent of the Player class
+# computer is a descendent of the Player class
+class Computer < Player
 
   def initialize(move = nil)
-    super( move )
+    super(move)
   end
-
-  def random_move # puts 'rock', 'paper' or 'scissors' randomly
+  
+  # puts 'rock', 'paper' or 'scissors' randomly
+  def random_move
     @move = ['rock', 'paper', 'scissors'].sample
   end
 

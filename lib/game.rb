@@ -20,13 +20,13 @@ class Game
     @bot_player.random_move
   end
 
-  def who_won#(human_move, bot_move)
+  def who_won
     human_move = @human_player.move
     bot_move = @bot_player.move
     case
     when human_move == "paper" && bot_move == "rock"
       return "You won!"
-    when human_move== "paper" && bot_move == "scissors"
+    when human_move == "paper" && bot_move == "scissors"
       return "The computer won!"
     when human_move == "rock" && bot_move == "paper"
       return "The computer won!"
@@ -34,7 +34,7 @@ class Game
       return "You won!"
     when human_move == "scissors" && bot_move == "rock"
       return "The computer won!"
-    when human_move == "scissors" && bot_move =="paper"
+    when human_move == "scissors" && bot_move == "paper"
       return "You won!"
     end
   end
@@ -47,11 +47,3 @@ class Game
     @game
   end
 end
-#savanna=Human.new('savanna')
-#alexa = Computer.new
-#game = Game.new(savanna, alexa)
-#game.play('paper')
-#savanna.move
-#alexa.move
-#puts game.game_over?
-#game.who_won

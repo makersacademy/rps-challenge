@@ -10,7 +10,7 @@ describe Computer do
     expect(bot).to respond_to :random_move
   end
   it 'knows its move' do
-    allow(bot).to receive(:random_move) {'rock'}
+    allow(bot).to receive(:random_move) { 'rock' }
     expect(bot.random_move).to eq 'rock'
   end
 end
