@@ -18,9 +18,12 @@
       </p>
       <form action="/play" method="get">
         <p>
-          Chosen weapon: <h3><%= @game.weapon.weapon_choice %></h3>
+          Chosen weapon: <h3><%= @game.player.weapon.weapon_choice %></h3>
         </p>
         <input type="submit" value="Replay">
+      </form>
+      <form action="/" method="get">
+        <input type="submit" value="New Player">
       </form>
     </div>
     <div class="computer-interface">
@@ -37,7 +40,7 @@
   </section>
   <footer>
     <p>
-      The winner is Constantine!
+      <%= @game.winner %>
     </p>
   </footer>
 </section>

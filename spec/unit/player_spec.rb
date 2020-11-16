@@ -11,5 +11,9 @@ describe Player do
     it "creates a name instance variable by entering an argument"do
       expect(player.name).to eq("Constantine")
     end
+
+    it 'creates a weapon instance variable' do
+      expect(player.weapon).to be_nil
+    end
   end
 end

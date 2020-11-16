@@ -21,7 +21,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/attack' do
-    $game.weapon = Weapon.new(params[:weapon])
+    $game.player.weapon = Weapon.new(params[:weapon])
     @game = $game
     erb :attack
   end
