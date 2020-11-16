@@ -1,0 +1,13 @@
+<h1> Wow its <%= @game.name %> and <%= @game.name2 %>! </h1>
+<h2> So, rock, paper, scissors, gecko, or space nerd? </h2>
+<form action="/games" method=post>
+  <div>
+  <label for="player2">
+    Player 1 better not be cheating
+    <input type="text" name="player2">
+  </label>
+  </div>
+  <div>
+  <input type="submit" name="I'm ready!">
+  </div>
+</form>
