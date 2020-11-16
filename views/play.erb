@@ -1,4 +1,13 @@
-<p><%= @player_name %> vs. Computer</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1><%= @player_name %> vs. Computer</h1>
+<br>
+<br>
 
 <form action='/result' method='post'>
   <input type="radio" id='rock' name='choice' value="Rock">
@@ -7,5 +16,9 @@
   <label for='paper'>Paper</label><br>
   <input type="radio" id='scissors' name='choice' value="Scissors">
   <label for='scissors'>Scissors</label><br>
+  <br>
   <input type="submit" value="Submit">
 </form>
+
+</body>
+</html>
