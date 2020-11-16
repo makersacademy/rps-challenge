@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <section id="overlay">
+      <header>
+        <h1>Rock Paper Scissors</h1>
+      </header><br>
+      <section class="game-interface">
+        <div class='player-interface'>
+          <p>
+          <h3><%= @game.player.name %></h3>
+          </p>
+          <form action="/attack" method="post">
+            <label for="weapon">Choose a weapon:</label>
+            <select id="weapon" name="weapon" required>
+              <option value="rock">Rock 🪨</option>
+              <option value="paper">Paper 📜</option>
+              <option value="scissors">Scissors ✂️</option>
+            </select><br><br>
+            <input type="submit" value="Attack">
+          </form>
+        </div>
+        <div class="computer-interface">
+          <p>
+          <h3>Computer</h3>
+          </p>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>

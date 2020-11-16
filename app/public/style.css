@@ -1,0 +1,73 @@
+body {
+    background-color: #50394c;
+    font-family: Rubik, Arial;
+}
+
+form {
+    text-align: center;
+    line-height: 30px;
+    height: 80%;
+    overflow: auto;
+}
+
+form hr {
+    width: 15%;
+}
+
+h1 {
+    text-align: center;
+    font-size: xx-large;
+}
+
+#overlay {
+    width: 80%;
+    margin: 3% auto;
+    height: 95vh;
+    background-color: #f4e1d2;
+    border-radius: 40px;
+}
+
+.game-interface {
+    display: table;
+}
+
+div {
+    display: table-cell;
+    text-align: center;
+    font-size: large;
+    vertical-align: middle;
+    width: 50%;
+    padding: 16.5rem;
+}
+
+.player-interface {
+    background: #f4e1d2;
+}
+
+.computer-interface {
+    background: #f4e1d2;
+}
+
+footer {
+    text-align: center;
+    font-size: larger;
+}
+
+.imgGIF {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    width: 100px;
+    height: 50px;
+    background: #f3f0f1;
+    position: relative;
+    background: #f3f0f1;
+    margin-bottom: 25px;
+    border-radius: 32px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
