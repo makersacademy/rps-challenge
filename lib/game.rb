@@ -25,17 +25,17 @@ class Game
     bot_move = @bot_player.move
     case
     when human_move == "paper" && bot_move == "rock"
-      puts "You won!"
+      return "You won!"
     when human_move== "paper" && bot_move == "scissors"
-      puts "The computer won!"
+      return "The computer won!"
     when human_move == "rock" && bot_move == "paper"
-      puts "The computer won!"
+      return "The computer won!"
     when human_move == "rock" && bot_move == "scissors"
-      puts "You won!"
+      return "You won!"
     when human_move == "scissors" && bot_move == "rock"
-      puts "The computer won!"
+      return "The computer won!"
     when human_move == "scissors" && bot_move =="paper"
-      puts "You won!"
+      return "You won!"
     end
   end
 

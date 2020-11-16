@@ -11,7 +11,6 @@ class Human < Player
 
   def inputed_move(move)
     @move = move
-    puts @move
   end
 
 end

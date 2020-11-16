@@ -8,7 +8,6 @@ class Computer < Player #computer is a descendent of the Player class
 
   def random_move # puts 'rock', 'paper' or 'scissors' randomly
     @move = ['rock', 'paper', 'scissors'].sample
-    puts @move
   end
 
 end

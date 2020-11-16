@@ -34,7 +34,8 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-
+    erb :result
   end
+
   run! if app_file == $0
 end
