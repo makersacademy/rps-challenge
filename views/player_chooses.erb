@@ -1,0 +1,11 @@
+<h1>Well...</h1>
+
+It's good to have you here <%= session[:name] %>, what shall you choose?<br><br>
+
+<form action="/choice" method="post">
+  <label for="choice">
+    Rock, Paper or Scissors?
+  <input type="text" name="choice">
+  </label>
+  <input type="submit" value="Attack!!!">
+</form>
