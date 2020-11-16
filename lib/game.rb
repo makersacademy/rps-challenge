@@ -46,7 +46,7 @@ class Game
 
   def game(weapon, comp_choice = nil)
 
-    comp_choice = ["rock", "paper", "scissors", "lizard", "spock"].sample unless comp_choice
+    comp_choice = computer_says_no unless comp_choice
 
     return "Drew" if draw?(weapon, comp_choice)
 
@@ -57,6 +57,10 @@ class Game
 
   private
 
+  def computer_says_no
+    ["rock", "paper", "scissors", "lizard", "spock"].sample
+  end
+
   def draw?(weapon, comp_choice)
     weapon == comp_choice
   end
@@ -64,4 +68,4 @@ class Game
   def win?(weapon, comp_choice)
     @game_logic[weapon].include?(comp_choice)
   end
-end 
+end
