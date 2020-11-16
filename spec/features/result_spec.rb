@@ -3,7 +3,7 @@ feature 'logs player & computer selection' do
     sign_in_and_play
     choose('Rock')
     click_button "Submit"
-    expect(page).to have_content 'You chose Rock!'
+    expect(page).to have_content 'You chose Rock...'
   end
 
   scenario 'Player receives confirmation of computer selection' do
@@ -11,7 +11,7 @@ feature 'logs player & computer selection' do
     sign_in_and_play
     choose('Rock')
     click_button "Submit"
-    expect(page).to have_content 'Computer chose Scissors!'
+    expect(page).to have_content 'Computer chose Scissors...'
   end
 
   feature 'winner' do
