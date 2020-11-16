@@ -19,18 +19,25 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @game = session[:game]
-    @player_1 = session[:player_1].name
     erb(:play)
   end
 
   post '/choose' do
     @game = session[:game]
+    session[:p1_choice] = params[:choice]
+    @p1_choice = session[:p1_choice]
+    session[:p2_choice] = @game.player_2.choose
+    @p2_choice = session[:p2_choice]
+    session[:outcome] = @game.result(@p1_choice, @p2_choice)
     redirect('/outcome')
   end
 
   get '/outcome' do
     @game = session[:game]
-    erb(:outcome)
+    @p1_choice = session[:p1_choice]
+    @p2_choice = session[:p2_choice]
+    @outcome = session[:outcome]
+    erb(@outcome)
   end
 
   run! if app_file == $0
