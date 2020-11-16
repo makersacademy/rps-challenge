@@ -15,15 +15,7 @@ class Game
   end
 
   def result(p1_choice, p2_choice)
-    if p1_choice == p2_choice
-      :draw
-    elsif BEATS[p1_choice] == p2_choice
-      :win
-    else
-      :lose
-    end
-
-    # return :draw if p1_choice == p2_choice
-    # BEATS[p1_choice] == p2_choice ? :win : :lose
+    return :draw if p1_choice == p2_choice
+    BEATS[p1_choice] == p2_choice ? :win : :lose
   end
 end
