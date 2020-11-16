@@ -10,5 +10,9 @@ describe Player do
     it 'returns the name given' do
       expect(player.name).to eq('Chris')
     end
+
+    it 'returns the choice that was made' do
+      expect(player.choice).to eq('Rock')
+    end
   end
 end

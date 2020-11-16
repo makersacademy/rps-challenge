@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require_relative './lib/game.rb'
 require_relative './lib/player.rb'
 
 class RPS < Sinatra::Base
@@ -24,9 +23,9 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    
-    #game = Game.new
-
+    game = Player.new(session[:name], session[:choice])
+    @result = game.play
+    erb :result
   end
 
   run! if app_file == $0
