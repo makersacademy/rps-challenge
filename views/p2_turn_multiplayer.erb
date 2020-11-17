@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link type="text/css" rel="stylesheet" href="style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1><%= @game.player1.name%>: <%= @game.player1.score%> <%=@game.player2.name%>: <%= @game.player2.score%></h1>
-        <h2><%= @game.player2.name%> - make your choice!</h2>
-        <form action="/p2-multiplayer-choice" method="post">
-            <button name="player2choice" value="rock">Rock</button>
-            <button name="player2choice" value="paper">Paper</button>
-            <button name="player2choice" value="scissors">Scissors</button>
-            <button name="player2choice" value="lizard">Lizard</button>
-            <button name="player2choice" value="spock">Spock</button>
-        </form>
+      <h1><%= @game.player1.name%>: <%= @game.player1.score%> <%=@game.player2.name%>: <%= @game.player2.score%></h1>
+      <h2><%= @game.player2.name%> - make your choice!</h2>
+      <form action="/p2-multiplayer-choice" method="post">
+        <% RockPaperScissors::CHOICES.each do |choice|%>
+          <button name="choice" value="<%= choice %>"><%= choice.capitalize %></button>
+        <% end%>
+      </form>
     </div>
-</body>
+  </body>
 </html>
