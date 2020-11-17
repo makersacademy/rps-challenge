@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Neuton&display=swap');
+
+body {
+    font-family: 'Neuton', serif;
+    text-align: center;
+    background-color: #a6daef;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 70%;
+    margin: auto;
+    margin-top: 5em;
+    border: thick solid black;
+}
+
+h1 {
+    font-family: 'Concert One', cursive;
+    padding-top: 15px;
+    font-size: 3em;
+}
+
+.responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.circular-border {
+    border-radius: 50%;
+    border: thick solid #fed88f;
+}
+
+button, input {
+    background-color: #bfe2ca;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    font-size: 120%;
+    border: thin solid #fed88f;
+    padding: 2px 8px;
+}
+
+button:hover {
+    opacity: 80%;
+    cursor: pointer;
+}
