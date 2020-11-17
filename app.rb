@@ -19,11 +19,7 @@ class RPS < Sinatra::Base
 
   post '/player-attack' do
     session[:player_attack] = params[:player_attack]
-    redirect '/player-move'
-  end
-
-  get '/player-move' do
-    erb :player_move
+    redirect '/game_over'
   end
 
   get '/game_over' do

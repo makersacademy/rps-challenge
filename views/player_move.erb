@@ -1,8 +1,0 @@
-<% if session[:player_attack] == "Rock" %>
-<%= session[:player_1_name] %> chooses Rock!
-<% elsif session[:player_attack] == "Paper" %>
-<%= session[:player_1_name] %> chooses Paper!
-<% else session[:player_attack] == "Scissors" %>
-<%= session[:player_1_name] %> chooses Scissors!
-<% end %>
-<a href="/game_over">OK</a>
