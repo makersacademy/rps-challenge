@@ -57,10 +57,6 @@ class Game < Sinatra::Base
     erb(:play)
   end
 
-  # get '/p1-turn-multiplayer' do
-  #   erb(:p1_turn_multiplayer)
-  # end
-
   get '/p2-turn' do
     erb(:p2_turn_multiplayer)
   end
