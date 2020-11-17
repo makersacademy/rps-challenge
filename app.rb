@@ -57,13 +57,13 @@ class Game < Sinatra::Base
   end
 
   post '/p1-multiplayer-choice' do
-    session[:p1choice] = params[:player1choice]
+    session[:p1choice] = params[:player1choice].to_sym
     erb(:p2_turn_multiplayer)
   end
 
   post '/p2-multiplayer-choice' do
-    session[:p2choice] = params[:player2choice]
-    session[:result] = @game.play_round(session[:p1choice].to_sym, session[:p2choice].to_sym)
+    session[:p2choice] = params[:player2choice].to_sym
+    session[:result] = @game.play_round(session[:p1choice], session[:p2choice])
     redirect('/round-results')
   end
 
