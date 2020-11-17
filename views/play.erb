@@ -10,7 +10,7 @@
     <div class="container">
         <h1><%= @game.player1.name%>: <%= @game.player1.score%> <%=@game.player2.name%>: <%= @game.player2.score%></h1>
         <h2><%= @game.player1.name%> - make your choice!</h2>
-        <form action="/single-player-choice" method="post">
+        <form action="/p1-choice" method="post">
         <% RockPaperScissors::CHOICES.each do |choice|%>
             <button name="choice" value="<%= choice %>"><%= choice.capitalize %></button>
         <% end%>

@@ -28,14 +28,19 @@ class Game < Sinatra::Base
     player1 = Player.new(params[:name1])
     player2 = Player.new(params[:name2])
     session[:game] = RockPaperScissors.new(player1, player2)
-    redirect('/p1-turn-multiplayer')
+    redirect('/play')
   end
 
-  post "/single-player-choice" do
+  post "/p1-choice" do
     session[:p1choice] = params[:choice].to_sym
-    session[:p2choice] = RockPaperScissors::CHOICES.sample
-    session[:result] = @game.play_round(session[:p1choice], session[:p2choice])
-    redirect("/round-results")
+
+    if @game.player2.is_ai
+      session[:p2choice] = RockPaperScissors::CHOICES.sample
+      session[:result] = @game.play_round(session[:p1choice], session[:p2choice])
+      redirect("/round-results")
+    else
+      redirect('/p2-turn')
+    end
   end
 
   get "/round-results" do   
@@ -52,12 +57,11 @@ class Game < Sinatra::Base
     erb(:play)
   end
 
-  get '/p1-turn-multiplayer' do
-    erb(:p1_turn_multiplayer)
-  end
+  # get '/p1-turn-multiplayer' do
+  #   erb(:p1_turn_multiplayer)
+  # end
 
-  post '/p1-multiplayer-choice' do
-    session[:p1choice] = params[:choice].to_sym
+  get '/p2-turn' do
     erb(:p2_turn_multiplayer)
   end
 
@@ -70,7 +74,7 @@ class Game < Sinatra::Base
   get '/next-round' do
     redirect('/final-results') unless @game.winner.nil?
 
-    @game.player2.is_ai ? redirect('/play') : redirect('/p1-turn-multiplayer')  
+    redirect('/play')
   end
 
   get '/final-results' do
