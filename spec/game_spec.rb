@@ -2,8 +2,6 @@ require 'game'
 
 describe Game do
   subject(:game) { Game.new("Dave", "Rock") }
-  let(:player) { double :player }
-  let(:computer_move) { double :computer_move }
 
   it "initializes with the player name" do
     expect(game.player_1_name).to eq "Dave"
@@ -20,17 +18,17 @@ describe Game do
 
   context "Player chooses Rock" do
     it "Returns draw when both choose rock" do
-      allow(computer_move).to receive(:move).and_return("Rock")
+      allow(game).to receive(:move).and_return("Rock")
       expect(game.play).to eq "Draw!"
     end
 
     it "Returns win, when computer chooses Scissors" do
-      allow(computer_move).to receive(:move).and_return("Scissors")
+      allow(game).to receive(:move).and_return("Scissors")
       expect(game.play).to eq "You win!"
     end
 
     it "Returns lose, when computer chooses Paper" do
-      allow(computer_move).to receive(:move).and_return("Paper")
+      allow(game).to receive(:move).and_return("Paper")
       expect(game.play).to eq "You lose!"
     end
 
