@@ -29,10 +29,27 @@ Hints on functionality
 - a winner will be declared
 
 
-As usual please start by
+## Getting Started
 
-* Forking this repo
-* TEST driving development of your app
+1. Clone this directory
+1. Navigate to the project directory
+1. Run `bundle` to install gem dependencies
+1. Run `rackup` to start the application server
+1. Go to `localhost:9292` in a browser
+
+## Gameplay
+
+1. Enter your name
+
+![Enter name](First.png)
+
+1. Choose your move - rock, paper or scissors
+
+![Choose move](Second.png)
+
+1. See the results
+
+![Result](Third.png)
 
 
 ## How I got started
@@ -79,4 +96,6 @@ Capybara.app = RPS
 
 ## Spend time planning
 I had committed to spending more time in the planning and diagramming stage so here it is. I tried to visualise what will happen. This is not the correct way to draw a sequence diagram but it helped me think about the different steps.
-![My thoughts](Screenshot 2020-11-14 at 11.57.28.png)
+
+![](Diagramming.png)
+
