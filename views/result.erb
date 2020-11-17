@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<style>
+body {
+  background-color: lightblue;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #00008B;
+  padding: 10px;
+  text-align: center;
+}
+</style>
+</head>
+<div class="center">
+<h1> <%= @result %> </h1>
+<br>
+<br>
+<h3> <%= session[:player_1_name] %>: <%= session[:player_1_move] %> </h3>
+<br>
+<br>
+<h3>Computer: <%= @computer_move %> </h3>
+<br>
+<br>
+<a href="/play">Try Again?</a>
+<a href="/">New Player?</a>
+</div>

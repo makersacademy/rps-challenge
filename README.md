@@ -1,12 +1,5 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
 
 Task
 ----
@@ -36,39 +29,51 @@ Hints on functionality
 - a winner will be declared
 
 
-As usual please start by
+## Getting Started
 
-* Forking this repo
-* TEST driving development of your app
+1. Clone this directory
+1. Navigate to the project directory
+1. Run `bundle` to install gem dependencies
+1. Run `rackup` to start the application server
+1. Go to `localhost:9292` in a browser
+
+## Gameplay
+
+1. Enter your name
+
+![Enter name](First.png)
+
+1. Choose your move - rock, paper or scissors
+
+![Choose move](Second.png)
+
+1. See the results
+
+![Result](Third.png)
 
 
-## Bonus level 1: Multiplayer
+## How I got started
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+- I forked to my github, then cloned to my machine. I ran `bundle install` to install those dependencies to my project.
+- I created an `app.rb` file in the root of my project. Inside `app.rb`, I have set up to use Sinatra's [Modular Style]. Defining apps like this at the top level is only suitable for micro-applications. Sinatra is a DSL for quickly creating web applications in Ruby with minimal effort.
+```ruby
+# in app.rb
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+require 'sinatra/base'
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+class RPS < Sinatra::Base
 
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+  # start the server if ruby file executed directly
+  run! if app_file == $0
+end
+```
+-  There are two common options for starting a modular app. 1) The  server starts if the ruby file 'app.rb' is run directly. 2) Or with a `config.ru` file, which allows using any Rack handler.
+- I therefore created a `config.ru` (rackup file) in the root of my project, which allows my app.rb to be run using any Rack handler. The console outputs a port and we use that to create a URL like `localhost:XXXX`.
+```
+require_relative "./app"
+run RPS
+```
+- As per the instructions, I ensured I have the following **AT THE TOP** of my spec_helper.rb in order to have test coverage stats generated on my pull request:
 
 ```ruby
 require 'simplecov'
@@ -81,5 +86,16 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 ```
+- I added this to tell Capybara about my app class:
+```ruby
+require 'capybara/rspec'
+require './app'
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+Capybara.app = RPS
+```
+
+## Spend time planning
+I had committed to spending more time in the planning and diagramming stage so here it is. I tried to visualise what will happen. This is not the correct way to draw a sequence diagram but it helped me think about the different steps.
+
+![](Diagramming.png)
+
