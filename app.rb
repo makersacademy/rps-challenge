@@ -23,7 +23,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    game = Game.new(@player_1_name, session[:player_1_move])
+    game = Game.new(session[:player_1_name], session[:player_1_move])
     @result = game.play
     @computer_move = game.computer_move
     erb :result
