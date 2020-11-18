@@ -1,5 +1,10 @@
 class Game
-  attr_accessor :player, :computer_choice, :player_choice
+  attr_reader :player, :computer_choice
+  attr_accessor :player_choice
+
+  RULES = { "Rock" => "Scissors",
+          "Paper" => "Rock",
+          "Scissors" => "Paper" }
 
   def initialize(player)
     @player = player
@@ -10,43 +15,14 @@ class Game
   end
 
   def result
-    if @player_choice == "Rock"
-      rock_comparators
-    elsif @player_choice == "Paper"
-      paper_comparators
+    if @player_choice == @computer_choice
+      @status = "draw"
+    elsif RULES[@player_choice] == @computer_choice
+      @status = "win"
     else
-      scissors_comparators
+      @status = "lose"
     end
     @status
-  end
-
-  private
-
-  def rock_comparators
-    if @computer_choice == "Rock"
-      @status = "draw"
-    elsif @computer_choice == "Paper"
-      @status = "lose"
-    else @status = "win"
-    end
-  end
-
-  def paper_comparators
-    if @computer_choice == "Paper"
-      @status = "draw"
-    elsif @computer_choice == "Scissors"
-      @status = "lose"
-    else @status = "win"
-    end
-  end
-
-  def scissors_comparators
-    if @computer_choice == "Scissors"
-      @status = "draw"
-    elsif @computer_choice == "Rock"
-      @status = "lose"
-    else @status = "win"
-    end
   end
 
 end

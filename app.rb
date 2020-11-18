@@ -26,6 +26,10 @@ class RockPaperScissors < Sinatra::Application
     @player_choice = params[:choice]
     @computer_choice = $game.computer_choice
     $game.player_choice = @player_choice
+    p "in app rb, player then computer"
+    p @player_choice
+    p @computer_choice
+    p $game.result
     @result = $game.result
     erb :result
   end
