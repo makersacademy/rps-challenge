@@ -5,6 +5,13 @@ require './lib/computer'
 
 class RPS < Sinatra::Base
 
+  configure do
+    # allows sinatra to find my CSS stylesheet
+    set :public_folder, File.expand_path('../public', __FILE__)
+    set :views        , File.expand_path('../views', __FILE__)
+    set :root         , File.dirname(__FILE__)
+  end
+
   before do
     @game = Game.instance
   end
@@ -22,18 +29,8 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  post '/rock' do
-    @game.player.choice("ROCK")
-    redirect '/result'
-  end
-
-  post '/paper' do
-    @game.player.choice("PAPER")
-    redirect '/result'
-  end
-
-  post '/scissors' do
-    @game.player.choice("SCISSORS")
+  post '/choice' do
+    @game.player.choice(params[:weapon])
     redirect '/result'
   end
 

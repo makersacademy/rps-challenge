@@ -3,7 +3,7 @@ require_relative 'player'
 
 class Game
 
-  attr_accessor :player, :computer
+  attr_reader :player, :computer
 
   RULES = {
     "ROCK" => "SCISSORS",
@@ -11,7 +11,7 @@ class Game
     "SCISSORS" => "PAPER"
   }
 
-  def initialize(player = Player.new, computer = Computer.new)
+  def initialize(player, computer = Computer.new)
     @player = player
     @computer = computer
   end
@@ -24,9 +24,13 @@ class Game
     @game
   end
 
+  def computer_move
+    @computer_move = @computer.weapon
+  end
+
   def results
-    if @player.weapon == @computer.weapon then "It's a draw!"
-    elsif RULES[@player.weapon] == @computer.weapon then "#{player.name} wins!"
+    if @player.weapon == @computer_move then "It's a draw!"
+    elsif RULES[@player.weapon] == @computer_move then "#{player.name} wins!"
     else
       "The computer wins."
     end

@@ -1,16 +1,18 @@
-<h2> ⛰ 📃 ✂️ <%= @game.player.name %> vs Computer  ⛰ 📃 ✂️</h2>
-<h3>First to 3 wins</h3>
+<link rel="stylesheet" href="/style.css"/>
+
+<h1> ⛰ 📃 ✂️ <%= @game.player.name %> vs Computer  ⛰ 📃 ✂️</h1>
+<!-- <h3>First to 3 wins</h3> -->
 <!-- <h3>Current score: 0/3</h3> -->
-<h3>Choose your weapon:</h3>
+<h2>Choose your weapon:</h2>
 
-<form action="/rock" method="post">
-    <input type="submit" value="ROCK">
+<form action="/choice" method="post">
+    <input type="submit" name="weapon" value="ROCK">
 <form>
 
-<form action="/paper" method="post">
-    <input type="submit" value="PAPER">
+<form action="/choice" method="post">
+    <input type="submit" name="weapon" value="PAPER">
 <form>
 
-<form action="/scissors" method="post">
-    <input type="submit" value="SCISSORS">
+<form action="/choice" method="post">
+    <input type="submit" name="weapon" value="SCISSORS">
 <form>

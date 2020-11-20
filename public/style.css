@@ -1,0 +1,15 @@
+body {
+  background-color: #E7EFF0;
+  font-family: monospace;
+  text-align: center;
+}
+
+input[type=submit] {
+  background-color: #95A5A6;
+  border-radius: 4px;
+  color: white;
+  font-family: monospace;
+  padding: 2px 4px;
+  margin: 2px 1px;
+  cursor: pointer;
+}

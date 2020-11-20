@@ -2,7 +2,7 @@ class Player
 
   DEFAULT_SCORE = 0
 
-  attr_reader :score, :name, :weapon
+  attr_accessor :score, :name, :weapon
 
   def initialize(name, score = DEFAULT_SCORE)
     @name = name

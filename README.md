@@ -15,20 +15,16 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Functionality
+### Implemented Functionality
 
-- the marketeer can enter their name before the game
-- the marketeer is presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game chooses a random option
-- a winner is declared
+- Player enters their name and game remembers it
+- Player is presented the choices (rock, paper and scissors)
+- Player can choose one option
+- The game chooses a random option for the computer
+- Each player's choice is shown and a winner is declared
+- Simple use of CSS for a nice user experience
 
-## Basic Rules
+### Further improvements
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-I had intended to implement a "best of three" element to the game but ran out of time!
-
-The formatting is super simple too, but it works!
+- I had intended to implement a "best of three" element to the game but ran out of time
+- Build a multi-player option so two players can play against each other
