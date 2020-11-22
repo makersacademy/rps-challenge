@@ -1,5 +1,4 @@
 feature 'Choose' do
-  let(:computer) { double :computer }
 
   context 'seeing the 3 play options' do
     scenario 'at the start of the game' do

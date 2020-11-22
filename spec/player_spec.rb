@@ -13,11 +13,4 @@ describe Player do
       expect(ahsoka.name).to eq('Ahsoka')
     end
   end
-
-  describe '#choose' do
-    it 'returns the chosen shape' do
-      allow(ahsoka).to receive(:choose).and_return(rock)
-      expect(ahsoka.choose).to eq(rock) # testing anything meaningful?
-    end
-  end
 end

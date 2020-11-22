@@ -4,8 +4,4 @@ class Player
   def initialize(name)
     @name = name
   end
-
-  def choose(shape)
-    @shape = shape
-  end
 end

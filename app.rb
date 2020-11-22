@@ -11,9 +11,7 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1] = Player.new(params[:player_1])
-    session[:computer] = Computer.new
-    session[:game] = Game.new(session[:player_1], session[:computer])
+    session[:game] = Game.new(Player.new(params[:player_1]), Computer.new)
     redirect('/play')
   end
 
@@ -25,10 +23,7 @@ class RPS < Sinatra::Base
   post '/choose' do
     @game = session[:game]
     session[:p1_choice] = params[:choice]
-    @p1_choice = session[:p1_choice]
     session[:p2_choice] = @game.player_2.choose
-    @p2_choice = session[:p2_choice]
-    session[:outcome] = @game.result(@p1_choice, @p2_choice)
     redirect('/outcome')
   end
 
@@ -36,8 +31,7 @@ class RPS < Sinatra::Base
     @game = session[:game]
     @p1_choice = session[:p1_choice]
     @p2_choice = session[:p2_choice]
-    @outcome = session[:outcome]
-    erb(@outcome)
+    erb(@game.result(@p1_choice, @p2_choice))
   end
 
   run! if app_file == $0

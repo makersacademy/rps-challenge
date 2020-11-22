@@ -15,9 +15,9 @@ describe Computer do
   end
 
   describe '#choose' do
-    it 'returns a randomly chooses a shape' do
-      allow(computer).to receive(:choose).and_return(rock)
-      expect(computer.choose).to eq(rock) # testing anything meaningful?
+    it 'returns a randomly choosen shape' do
+      allow(Game::OPTIONS).to receive(:sample).and_return(rock)
+      expect(computer.choose).to eq(rock)
     end
   end
 end
