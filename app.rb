@@ -15,4 +15,9 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/result' do
+    p params
+    @shape = params[:shape]
+    erb :result
+  end
 end
