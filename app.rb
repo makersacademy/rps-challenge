@@ -24,6 +24,7 @@ class Rps < Sinatra::Base
   end
 
   get '/playing' do
+    @player_name = $game.player_name
     @player_move = $game.player_move
     $game.update_computer_move
     @computer_move = $game.computer_move
