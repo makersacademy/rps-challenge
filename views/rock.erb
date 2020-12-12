@@ -1,0 +1,16 @@
+<%= erb :header %>
+<h1><%= @game.winner %>
+
+<div id="wrapper">
+  <div id="player">
+    <h3>Your choice</h3>
+    <img src="/images/rock.png" alt="rock_img">
+  </div>
+
+  <div id="computer">
+    <h3>Computer choice</h3>
+    <img src="/images/<%= @game.computer_choice %>.png" alt="<%= @game.computer_choice.to_s %>_img">
+  </div>
+</div>
+
+<form action="/play" method="post"><button type="submit">Play Again</button></form>

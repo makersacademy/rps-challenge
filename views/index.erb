@@ -1,0 +1,8 @@
+<%= erb :header %>
+<h1>Welcome!</h1>
+<h3>Please enter your name</h3>
+<form action="/play" method="post">
+  <label for="name"></label>
+  <input type="text" name="name" value="name">
+  <button type="submit" id="name-button">Enter</button>
+</form>
