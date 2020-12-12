@@ -1,5 +1,28 @@
 # RPS Challenge
 
+##How to Use:
+- Sign in with your name on the index page
+- This takes you to a ‘/start’ page (via a post-redirect-get loop) where you can choose a move.
+- This takes you to a ‘/playing’ page (via another post-redirect-get loop) where background ruby logic generates a random computer move, calculates the winner and shows the result.
+- There is a ‘play again’ button on this page, which takes the user back to the ‘/start’ page so that they can play again with the same name.
+
+##Done:
+Basic completion of first 2 user stories
+
+##Still to do:
+Add a ‘play again with a different name’ button once game has finished
+Make generate_random_move method private (and change unit tests accordingly)
+Extract Player class from Game and use to make multiplayer
+Kill global variables (replace with class methods)
+
+##Remaining Questions:
+Are my feature tests thorough enough?
+
+
+
+
+------------------------------------
+
 Instructions
 -------
 
