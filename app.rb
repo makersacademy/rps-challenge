@@ -4,7 +4,12 @@ class Rps < Sinatra::Base
   set :sessions, true
 
   get '/' do
-    "Hello!"
+    erb(:index)
+  end
+
+  get '/play' do
+    @name = params[:player]
+    erb(:play)
   end
 
 end
