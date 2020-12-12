@@ -9,5 +9,4 @@ group :test do
   gem "simplecov", require: false
   gem "simplecov-console", require: false
   gem "selenium-webdriver"
- 
 end
