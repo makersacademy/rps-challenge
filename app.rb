@@ -9,6 +9,15 @@ class Rps < Sinatra::Base
 
   post '/names' do
     @player_name = params[:player_name]
+    erb :names
+  end
+
+  # get '/names' do
+  #   erb :names
+  # end
+
+  get '/play' do
+    @player_name = params[:player_name]
     erb :play
   end
 
