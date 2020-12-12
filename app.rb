@@ -17,7 +17,15 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
+  post '/move' do
+    # print "params player_move: "
+    # puts "#{params[:player_move]}"
+    session[:player_move] = params[:player_move]
+    redirect '/playing'
+  end
+
   get '/playing' do
+    @player_move = session[:player_move]
     erb(:playing)
   end
 
