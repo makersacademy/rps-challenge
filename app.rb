@@ -25,6 +25,7 @@ class Rps < Sinatra::Base
 
   get '/playing' do
     @player_move = $game.player_move
+    @computer_move = $game.generate_computer_move
     erb(:playing)
   end
 
