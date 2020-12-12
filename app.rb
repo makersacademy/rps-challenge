@@ -9,24 +9,22 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:player] = params[:player]
+    $game = Game.new(params[:player])
     redirect '/start'
   end
 
   get '/start' do
-    @name = session[:player]
+    @name = $game.player_name
     erb(:play)
   end
 
   post '/move' do
-    # print "params player_move: "
-    # puts "#{params[:player_move]}"
-    session[:player_move] = params[:player_move]
+    $game.player_move = params[:player_move]
     redirect '/playing'
   end
 
   get '/playing' do
-    @player_move = session[:player_move]
+    @player_move = $game.player_move
     erb(:playing)
   end
 
