@@ -9,4 +9,9 @@ feature "Results" do
     click_button "ROCK"
     expect(page).to have_content "You choosed paper"
   end
+  scenario "player click scissors" do
+    signin
+    click_button "ROCK"
+    expect(page).to have_content "You choosed scissors"
+  end
 end
