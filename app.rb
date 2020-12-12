@@ -25,7 +25,9 @@ class Rps < Sinatra::Base
 
   get '/playing' do
     @player_move = $game.player_move
-    @computer_move = $game.generate_computer_move
+    $game.update_computer_move
+    @computer_move = $game.computer_move
+    @winner = $game.return_winner_name
     erb(:playing)
   end
 
