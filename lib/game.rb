@@ -9,9 +9,9 @@ class Game
     @player_name = name
   end
 
-  def update_player_move(move)
-    @player_move = move
-  end
+  # def update_player_move(move)
+  #   @player_move = move
+  # end
 
   def update_computer_move
     @computer_move = generate_random_move

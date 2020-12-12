@@ -14,14 +14,6 @@ describe Game do
     expect(game.computer_move).to eq(nil)
   end
 
-  describe "#update_player_move" do
-    it "updates @player_move " do
-      game = Game.new("Kevin")
-      game.update_player_move("spock")
-      expect(game.player_move).to eq("spock")
-    end
-  end
-
   describe "#update_computer_move" do
     it "updates @computer_move " do
       game = Game.new("Kevin")
