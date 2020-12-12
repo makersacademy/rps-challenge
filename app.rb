@@ -6,4 +6,7 @@ class RPS < Sinatra::Base
         erb(:home)
     end
     
+    get '/play' do
+        erb(:play)
+    end
 end
