@@ -8,4 +8,8 @@ feature "check cards" do
     signin
     find_button("ROCK").click
   end
+  scenario "there is a 'rock' card" do
+    signin
+    find_button("PAPER").click
+  end
 end
