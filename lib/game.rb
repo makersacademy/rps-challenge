@@ -1,11 +1,15 @@
 class Game
 
-  attr_reader :player_wins, :computer_shape
+  attr_reader :player_wins, :computer_shape, :player_shape
 
   def initialize(player_shape)
     @player_shape = player_shape
     @computer_shape = computer_shape_picker
     @player_wins = false
+  end
+
+  def draw?
+    @player_shape == @computer_shape
   end
 
   def winner_calculator

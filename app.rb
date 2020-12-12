@@ -16,10 +16,19 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/result' do
+  post '/outcome' do
     p params
     @shape = params[:shape]
     $game = Game.new(@shape)
+    redirect '/draw' if $game.draw?
+    redirect '/result'
+  end
+
+  get '/draw' do
+    erb :draw
+  end
+
+  get '/result' do
     erb :result
   end
 end

@@ -22,6 +22,7 @@ describe Game do
   describe 'winner_calculator' do
     it 'calculates the correct winner: computer' do
       srand(4)
+      game = Game.new("paper")
       subject.winner_calculator
       expect(subject.player_wins).to eq false
     end
