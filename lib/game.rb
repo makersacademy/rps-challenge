@@ -1,10 +1,10 @@
 class Game
 
-  attr_reader :player_wins
+  attr_reader :player_wins, :computer_shape
 
   def initialize(player_shape)
     @player_shape = player_shape
-    @computer_shape = computer_shape
+    @computer_shape = computer_shape_picker
     @player_wins = false
   end
 
@@ -18,7 +18,7 @@ class Game
     end
   end
   
-  def computer_shape
+  def computer_shape_picker
     ["rock", "paper", "scissors"].sample
   end
 
