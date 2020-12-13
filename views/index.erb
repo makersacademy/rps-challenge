@@ -1,8 +1,14 @@
 <%= erb :header %>
 <h1>Welcome!</h1>
-<h3>Please enter your name</h3>
-<form action="/play" method="post">
-  <label for="name"></label>
-  <input type="text" name="name" value="name">
-  <button type="submit" id="name-button">Enter</button>
-</form>
+<h3>Choose game mode</h3>
+<div id="single-mode-wrapper">
+  <form action="/single" method="post">
+    <button type="submit" id='mode-button' >Single Player</button>
+  </form>
+</div>
+<div id="multi-mode-wrapper">
+  <form action="/multi" method="post" >
+    <button type="submit"  id='mode-button'>Multi Player</button>
+  </form>
+</div>
+

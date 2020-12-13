@@ -9,6 +9,10 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
+  post '/single' do
+    erb :single
+  end
+
   post '/play' do
     @game = Game.new(Player.new(params[:name]))
     session[:game] = @game
@@ -36,4 +40,15 @@ class RockPaperScissors < Sinatra::Base
   post '/new-round' do
     erb :'new-round'
   end
+
+  post '/multi' do
+    erb :multi
+  end
+
+  post '/play-multi' do
+    @player_1_name = params[:player_1_name]
+    @player_2_name = params[:player_2_name]
+    erb :'play-multi'
+  end
+
 end

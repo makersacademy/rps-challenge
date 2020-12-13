@@ -1,6 +1,20 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/aracho/Makers/Projects/rps-challenge/spec/features/entering multiplayers_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/aracho/Makers/Projects/rps-challenge/spec/features/entering_choices_spec.rb": {
         "lines": [
           1,
@@ -93,6 +107,6 @@
         ]
       }
     },
-    "timestamp": 1607850207
+    "timestamp": 1607850744
   }
 }

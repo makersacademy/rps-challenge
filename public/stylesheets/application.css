@@ -29,6 +29,7 @@ h3 {
   text-align: center;
   font-size: 50px;
   margin: 10px;
+  padding-top: 3%;
 }
 
 button {
@@ -38,6 +39,7 @@ button {
   padding: 10px 2%;
   display: block;
   margin: 3% auto;
+  font-family: 'Lobster', cursive;
 }
 
 button:hover {
@@ -89,3 +91,18 @@ input[type=text]:focus {
   font-size: 1em;
 }
 
+#single-mode-wrapper {
+  float: left;
+  padding-left: 35%;
+  padding-top: 6%;
+}
+
+#multi-mode-wrapper {
+  float: right;
+  padding-right: 35%;
+  padding-top: 6%;
+}
+
+#mode-button {
+  font-size: 20px;
+}

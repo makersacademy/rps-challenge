@@ -7,6 +7,7 @@ class Game
 
   def initialize(player, player_2 = nil)
     @player = player
+    @player_2 = player_2
     @options = DEFAULT_OPTIONS
     @computer_choice = self.generate_random
     @outcome = {
