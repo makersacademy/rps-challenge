@@ -1,13 +1,14 @@
 class Game
-    RULES = { rock: :scissors,
-        paper: :rock,
-        scissors: :paper }
+    # RULES = { rock: :scissors,
+    #     paper: :rock,
+    #     scissors: :paper }
+attr_accessor :user_move
 
     OPTIONS = [ :rock, :paper, :scissors]
 
-    def user_move
-        OPTIONS
-
+    def initialize(user_move)
+        @user_move = user_move
+        @computer_move = computer_move
     end
 
     def computer_move
@@ -23,4 +24,6 @@ class Game
             false
         end
     end
+
+
 end
