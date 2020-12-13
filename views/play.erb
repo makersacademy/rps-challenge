@@ -1,1 +1,7 @@
-<%=$game.player_1.name %> choice: <%=$game.player_1.choice %> vs <%=$game.player_2.name %> choice: <%=$game.player_2.choice %>Winner!
+<%=$game.player_1.name %> choice: <%=$game.player_1.choice %> vs <%=$game.player_2.name %> choice: <%=$game.player_2.choice %>
+
+<%=$game.declare_winner %>!
+
+<form action='/choose' method='get'>
+  <input type='submit' value='Play Again'>
+</form>
