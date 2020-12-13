@@ -11,6 +11,7 @@ Single Player Mode:
 
 Multi Player Mode:
 ![multi_player](https://github.com/Aracho1/rps-challenge/blob/master/screenshots/multi_player.png)
+![multi_player](https://github.com/Aracho1/rps-challenge/blob/master/screenshots/multi_player_2.png)
 ![multi_player](https://github.com/Aracho1/rps-challenge/blob/master/screenshots/multi_player_win.png)
 
 
