@@ -1,6 +1,12 @@
-require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'rspec'
+require 'capybara'
+require 'capybara/rspec'
+require 'game'
+require_relative '../app'
+
+Capybara.app = App
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
