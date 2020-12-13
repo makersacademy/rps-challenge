@@ -32,6 +32,12 @@ h3 {
   padding-top: 3%;
 }
 
+h5 {
+  display: inline;
+  color: #75638b;
+  font-size: 40px;
+}
+
 button {
   background-color: #e8d0d9;
   color: #ff6fa5;
@@ -105,4 +111,12 @@ input[type=text]:focus {
 
 #mode-button {
   font-size: 20px;
+}
+
+#winner-img {
+  margin: 5% 40%;
+}
+
+#multi {
+  margin: 0 5%;
 }
