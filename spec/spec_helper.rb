@@ -1,4 +1,5 @@
 require File.dirname(__FILE__) + '/../app.rb'
+require File.dirname(__FILE__) + '/features/web_helpers.rb'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
