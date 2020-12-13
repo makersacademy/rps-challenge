@@ -2,3 +2,4 @@
 - Whilst I initially found this challenge quite tricky, once I got over the hurdle of how to make the buttons interact with the ruby, things became slightly easier.
 - I must admit that there isn't a huge amount to offer beyong what the specification is asking for. Next time I would like to implement some CSS to spice up the webpages a bit.
 - CONFESSION: Unfortunately, despite being told only two days ago of this cardinal sin, I have included 2 global variables in my work. This was done as I tried implementing the same features to no success without those dodgy little dollar signs. I hope to identify a few alternatives to using these in the future.
+- Didn't Manage to get the results to output the correct messages. Tried rearranging all of my if/else statements, made them unless', had a crack at a case statement but nothing seemed to do the trick.
