@@ -1,0 +1,13 @@
+<% $game.winner_calculator %>
+
+<h2> You selected: <%= $game.player_shape %>!<br><br>
+
+The computer selected: <%= $game.computer_shape %>!</h2><br>
+
+<h3>
+<% if $game.player_wins == true %>
+Congratulations <%= $name %> - you won!
+<% else %>
+Comiserations <%= $name %> - you lost :(
+<% end %>
+</h3>
