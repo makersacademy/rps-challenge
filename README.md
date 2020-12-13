@@ -83,3 +83,7 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+Thoughts on challenge
+-----------------------
+User story 1 is complete but i did not get to complete the 2nd user story, finding it difficult to create links between each files. Also finding it hard to test the randomness of my computer picking between rock,paper,scissors. 
