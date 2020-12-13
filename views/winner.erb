@@ -1,0 +1,17 @@
+<%= erb :header %>
+<h1><%= @game.compare %></h1>
+
+<div id="wrapper">
+  <div id="player">
+    <h3><%= @game.player.name %> played</h3>
+    <img src="/images/<%= @game.player.choice %>.png" alt="rock_img" id = "winner-img">
+  </div>
+
+  <div id="computer">
+    <h3><%= @game.player_2.name %> played</h3>
+    <img src="/images/<%= @game.player_2.choice %>.png" alt="rock_img" id = "winner-img">
+  </div>
+</div>
+
+
+<form action="/play-multi-again" method="post"><button type="submit">Play Again</button></form>
