@@ -11,6 +11,10 @@ SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
+require File.dirname(__FILE__) + '/../app.rb'
+
+Capybara.app = RockPaperScissorsApp
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts

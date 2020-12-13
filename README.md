@@ -1,5 +1,33 @@
 # RPS Challenge
 
+## Rock Paper Scissors
+
+An online game of rock paper scissors for a bit of light relief
+
+# How to Use #
+```shell
+rackup -p 1234
+```
+
+Navigate to localhost:1234
+
+# Things I felt went well #
+
+I felt the flow through the controller is good, and that most of the work is taking place in the modal. Think my understanding of MVC is okay.
+
+# Things I need to improve #
+
+I couldn't get the Game.create and Game.load methods to work, even following the "Killing the variable" step of the afternoon challenge Battle. Not sure what's going wrong here, might need to speak to a coach.
+
+I spent a while updating stuff that I actually then found was just shotgun not reloading it. Not sure what I'm missing - I even had the session secret set.
+
+I didn't focus on my model and think I should probably extract a Player class from Game. I found the feature testing quite difficult as I think it requires stubbing the random part of the computer's hand?! And wasn't sure how to test for presence of images.
+
+Also I have a VERY basic knowledge of CSS, huh!
+
+Please be aware there is only one commit on this repo because I set up and completed the whole thing in my own repository, only remembering I should have forked the Makers repo when I went to submit a pull request. 
+
+
 Instructions
 -------
 
