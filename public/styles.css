@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(105, 105, 221);
+}
+h1 {
+  color: rgb(218, 188, 107);
+}
+h2 {
+  color: rgb(199, 149, 108);
+}
+h3 {
+  color: rgb(219, 151, 119);
+}
+.center {
+  padding: 80px 0;
+  text-align: center;
+}
