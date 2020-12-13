@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input[type=submit] {
+  width: 10em;  height: 5em; background-color: yellow; font-size: 150%;
+}
+div.title {
+  text-align: center;
+  font-size: 200%;
+}
+div.message {
+  text-align: center;
+  font-size: 200%;
+}
+div.images {
+  border: dashed black;
+  background-color: white;
+  text-align: center;
+}
+body {
+  background-color: powderblue;
+}
+</style>
+</head>
+<body>
+<div class="title">
+  <h1><%= @game.player %>: <%= @game.player_score %> vs Ropas: <%= @game.computer_score %></h1>
+</div>
+<div class='images'>
+  <img style='height: 100px'
+    src=<%= @game.rock_image %>>
+  <img style='height: 100px'
+    src=<%= @game.paper_image %>>
+  <img style='height: 100px'
+    src=<%= @game.scissors_image %>>
+</div>
+<div class='images'>
+  <img style='height: 100px'
+    src=<%= @game.player_image %>>
+  <img style='height: 100px'
+    src=<%= @game.computer_image %>>
+</div>
+<div class="message">
+  <p><%= @game.message %></p>
+</div>
+<div style='text-align: center'>
+<form style='display: inline-block' action="/rock" method="post">
+  <input type="submit" value="Rock">
+</form>
+<form style='display: inline-block' action="/paper" method="post">
+  <input type="submit" value="Paper">
+</form>
+<form style='display: inline-block' action="/scissors" method="post">
+  <input type="submit" value="Scissors">
+</form>
+</div>
