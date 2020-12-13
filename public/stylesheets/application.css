@@ -120,3 +120,11 @@ input[type=text]:focus {
 #multi {
   margin: 0 5%;
 }
+
+#go-back {
+  display: block;
+  padding: 0;
+  margin: 0;
+  float: left;
+  color: #75638b;
+}

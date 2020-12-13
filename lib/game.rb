@@ -1,7 +1,7 @@
 require_relative 'player'
 
 class Game
-  attr_reader :winner, :computer_choice, :player, :player_2
+  attr_reader :winner, :computer_choice, :player, :player_2, :options
 
   DEFAULT_OPTIONS = ['rock', 'paper', 'scissors']
 

@@ -9,6 +9,10 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
+  post '/' do
+    redirect '/'
+  end
+
   post '/single' do
     erb :single
   end

@@ -9,7 +9,7 @@ describe 'Player' do
 
   it 'chooses what to play' do
     player.choose("rock")
-    expect(player.choice).to eq :rock
+    expect(player.choice).to eq "rock"
   end
 
 end
