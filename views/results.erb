@@ -1,0 +1,13 @@
+<%= @player.name %> plays with <%= @player.chosen_weapon %>
+<br>
+<br>
+Computer plays with <%= @computer.random_weapon %>
+<br>
+<br>
+<% if @game.result(@player.chosen_weapon, @computer.random_weapon) == "win" %>
+  <%= @player.name.upcase %> IS THE WINNER!
+<% elsif @game.result(@player.chosen_weapon, @computer.random_weapon) == 'lose' %>
+  <%= @player.name %> is the loser.
+<% else %>
+  <%= @player.name %> and the Computer have drawn.
+<% end %>
