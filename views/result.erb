@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RockPaperScissors - The Game</title>
+    <meta name="A game of Rock Paper Scissors" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+ 
+  </head>
+  <body>
+  <div class="login_div">
+
+    <% @random_choice = ["Rock", "Paper", "Scissors"].sample %> 
+
+    You chose <%= @choice %>.<br>
+    The computer chose <%= @random_choice %>.<br>
+
+    <% if @choice == "Rock" && @random_choice == "Scissors" || @choice == "Scissors" && @random_choice == "Paper" || @choice == "Paper" && @random_choice == "Rock" %>
+       Congratulations <%= @username %>! You beat the computer!
+    <% elsif @choice == @random_choice %>
+      So close! Its a Draw!
+    <% else %>
+      Sorry <%= @username %>! You were beaten by the computer.
+    <% end %><p>
+    Would you like to play again?
+    <form action="/replay" method="POST">
+      <input type="submit" class="login_btn" name="submit" value="Lets Play"/>
+    </form>
+  </div>  
+    <script src="" async defer></script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+
+  </head>
+  <body>
+  <div class="main_div">
+    <h2>Welcome <%= @username %>!</h2>
+    Make your choice...<p>
+    <div class="radio-div">
+    <form method="post" action="/result">
+      <input type="radio" id="Rock" class="" name="choice" value="Rock"/> <label for="Rock">Rock</label><br>
+      <input type="radio" id="Paper" class="" name="choice" value="Paper"/> <label for="Paper">Paper</label><br>
+      <input type="radio" id="Scissors"class="" name="choice" value="Scissors"/> <label for="Scissors">Scissors</label><p>
+      <input type="submit" class="login_btn" name="submit" value="Lets Play"/>
+    </div>
+  </div>  
+    <script src="" async defer></script>
+  </body>
+</html>
+
