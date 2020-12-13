@@ -8,7 +8,7 @@ class Game
     @player_score = 0
     @computer_score = 0
     @message = "Okay #{@player}, first to 10! Let's go!"
-    @rock_image = 'https://lh3.googleusercontent.com/proxy/w78CZPYyHa8QU_ciYe9hMOw1pgqY1x1k0sHLIZTLwDDA_RaLIDgLwIldkCcW9qkLqyzqq80aACUjzr6WT1ffFt2P'
+    @rock_image = "https://i.pinimg.com/originals/49/a6/e9/49a6e9c659b49cf1f90909f79efde5b6.jpg"
     @paper_image = "https://cdn4.vectorstock.com/i/1000x1000/64/13/cartoon-notebook-paper-holding-a-pencil-vector-1986413.jpg"
     @scissors_image = "https://i.pinimg.com/originals/de/d7/34/ded734058afb08d065830124d3d97a54.png"
     @player_image = ""
