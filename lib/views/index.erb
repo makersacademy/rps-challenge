@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+    </head>
+    <body>
+        <h1>MAMA</h1>
+
+        <h2>Makers Academy Marketing Array</h2>
+            <p> Sign in to play </p>
+
+        <form action="/game" method="get">
+        <label for="player_1">
+            Player_1:
+        <input type="text" name="player_1">
+        </label>
+        
+            <label for="player_2">
+            Player_2:
+        <input type="text" name="player_2">
+        </label>
+        <div>
+        <br>
+        <input type="submit" value="Play the game!">
+        </div>
+        </form>
+    </body>
+</html>
