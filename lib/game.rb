@@ -1,10 +1,12 @@
+require_relative 'player'
+
 class Game
-  attr_reader :winner, :computer_choice, :player_choice
+  attr_reader :winner, :computer_choice, :player, :player_2
 
   DEFAULT_OPTIONS = [:rock, :paper, :scissors]
 
-  def initialize(player_choice)
-    @player_choice = player_choice.to_sym
+  def initialize(player, player_2 = nil)
+    @player = player
     @options = DEFAULT_OPTIONS
     @computer_choice = self.generate_random
     @outcome = {
@@ -21,7 +23,7 @@ class Game
   def winner
     case @computer_choice
     when :scissors
-      case @player_choice
+      case @player.choice
       when :rock
         @outcome[:win]
       when :paper
@@ -30,7 +32,7 @@ class Game
         @outcome[:tie]
       end
     when :rock
-      case @player_choice
+      case @player.choice
       when :rock
         @outcome[:tie]
       when :paper
@@ -39,7 +41,7 @@ class Game
         @outcome[:lose]
       end
     when :paper
-      case @player_choice
+      case @player.choice
       when :rock
         @outcome[:lose]
       when :paper

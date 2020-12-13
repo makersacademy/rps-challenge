@@ -1,15 +1,17 @@
 require 'game'
 
 describe Game do
-  subject { Game.new("rock") }
+  let(:player) { double(:player, name:'Luna')}
+  let(:game) { Game.new(player) }
 
-  it 'takes in user choice' do
-    expect(subject.player_choice).to eq :rock
+  it 'takes in player name and choice' do
+    allow(player).to receive(:choice).and_return("rock")
+    expect(game.player.name).to eq "Luna"
+    expect(game.player.choice).to eq "rock"
   end
 
   it 'gives a random choice' do
-    allow(subject).to receive(:generate_random).and_return :scissors
-    expect(subject.computer_choice).to eq :scissors
-    p subject.generate_random    
+    allow(self).to receive(:generate_random).and_return :scissors
+    expect(game.computer_choice).to eq :scissors
   end
 end
