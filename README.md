@@ -3,11 +3,11 @@ A small once person web app game; rock, paper, scissors.
 
     As a marketeer
     So that I can see my name in lights
-    I would like to *register* my **name** before *playing* an online **game**
+    I would like to register my name before playing an online game
 
     As a marketeer
     So that I can enjoy myself away from the daily grind
-    I would like to be able to *play* ***rock/paper/scissors***
+    I would like to be able to play rock/paper/scissors
 
 ## Motivation
 This project was a test of TDD, OOD, MVC, in a small unguided web application build.
@@ -101,15 +101,15 @@ Fork repository. Run bundle to install gems.
 ### Unit Tests:
 
 **Game**
-  self.create
-    *should accept two player arguments*
-    *should create a new instance of a game*
-  self.instance
-    *should return instance of a game*
-  .new
-    *should accept two player arguments*
-    *should record both players in a players array*
-  .player_1
+* self.create
+  * *should accept two player arguments*
+  * *should create a new instance of a game*
+* self.instance
+  * *should return instance of a game*
+* .new
+  * *should accept two player arguments*
+  * *should record both players in a players array*
+* .player_1
     *should return the player_1 object*
   .player_2
     *should return the player_2 object*
