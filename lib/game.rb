@@ -1,14 +1,14 @@
 require_relative 'player'
 
 class Game
-  attr_reader :winner, :computer_choice, :player, :player_2, :options
+  attr_reader :computer_choice, :player, :player_2, :options
 
   DEFAULT_OPTIONS = ['rock', 'paper', 'scissors']
 
   PAIRS = {
-    'rock': {loseTo: 'paper', winTo: 'scissors'},
-    'paper': {loseTo: 'scissors', winTo: 'rock'},
-    'scissors': {loseTo: 'rock', winTo: 'paper'}
+    'rock': { loseTo: 'paper', winTo: 'scissors' },
+    'paper': { loseTo: 'scissors', winTo: 'rock' },
+    'scissors': { loseTo: 'rock', winTo: 'paper' }
   }
 
   def initialize(player, player_2 = nil)
@@ -19,7 +19,7 @@ class Game
   end
   
   def generate_random
-   @computer_choice = @options.sample
+    @computer_choice = @options.sample
   end
 
   def winner
