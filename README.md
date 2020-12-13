@@ -110,28 +110,28 @@ Fork repository. Run bundle to install gems.
   * *should accept two player arguments*
   * *should record both players in a players array*
 * .player_1
-    *should return the player_1 object*
-  .player_2
-    *should return the player_2 object*
-  .random_choice
-    *should return a random choice*
-  .declare_winner
-    Player 1: Rock vs Player 2: Scissors
-      *should return Player 1 Wins*
-    Player 1: Rock vs Computer: Paper
-      *should return Computer Wins*
-    Player 1: Rock vs Computer: Rock
-      *should return Draw*
+  * *should return the player_1 object*
+* .player_2
+  * *should return the player_2 object*
+* .random_choice
+  * *should return a random choice*
+* .declare_winner
+  * Player 1: Rock vs Player 2: Scissors
+    * *should return Player 1 Wins*
+  * Player 1: Rock vs Computer: Paper
+    * *should return Computer Wins*
+  * Player 1: Rock vs Computer: Rock
+    * *should return Draw*
 
 **Player**
-  .new(name)
-    *should accept a name parameter*
-  .name
-    *should return the player name*
-  .add_choice
-    *should record the players choice*
-  .choice
-    *should return the player choice*
+* .new(name)
+  * *should accept a name parameter*
+* .name
+  * *should return the player name*
+* .add_choice
+  * *should record the players choice*
+* .choice
+  * *should return the player choice*
 
 ## How to use?
 Run rackup. Then type 'localhost:' with assigned port number into web browser.
