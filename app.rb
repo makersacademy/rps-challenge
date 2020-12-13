@@ -14,17 +14,19 @@ class RPS < Sinatra::Base
     # $game = Game.new
     player_1 = Player.new(params[:player_1_name])
     player_2 = Player.new("Computer")
-    $game = Game.new(player_1, player_2)
+    @game = Game.create(player_1, player_2)
     redirect '/choose'
   end
 
   get '/choose' do
+    @game = Game.instance
     erb :choose
   end
 
   get '/play' do
-    $game.player_1.add_choice(params[:rps])
-    $game.player_2.add_choice($game.random_choice)
+    @game = Game.instance
+    @game.player_1.add_choice(params[:rps])
+    @game.player_2.add_choice(@game.random_choice)
     erb :play
   end
 

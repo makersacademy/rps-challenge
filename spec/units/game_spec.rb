@@ -4,6 +4,23 @@ describe Game do
   let(:game_class) { described_class }
   let(:game) { game_class.new(player_1_double, player_2_double) }
 
+  describe "self.create" do
+    it 'should accept two player arguments' do
+      expect(described_class).to respond_to(:create).with(2).arguments
+    end
+
+    it 'should create a new instance of a game' do
+      expect(described_class.create(player_1_double, player_2_double)).to be_instance_of described_class
+    end
+  end
+
+  describe "self.instance" do
+    it 'should return instance of a game' do
+      described_class.create(player_1_double, player_2_double)
+      expect(described_class.instance).to be_instance_of described_class
+    end
+  end
+
   describe ".new" do
     it 'should accept two player arguments' do
       expect(game_class).to respond_to(:new).with(2).arguments

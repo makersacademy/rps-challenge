@@ -1,6 +1,6 @@
 describe RPS do
   feature "1. Registration" do
-    scenario 'I would like to register my name before plating an online game' do
+    scenario 'I would like to register my name before playing an online game' do
       sign_in
       expect(page).to have_content "Player 1"
     end
