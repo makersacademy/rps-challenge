@@ -1,6 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="center">
 <form action='/result'>
-<h3>Choose an option</h3>
-<input type='submit' value='Rock'>
-<input type='submit' value='Paper'>
-<input type='submit' value='Scissors'>
+<h2>Hello <%=$game.player.name%>, let's play!</h2>
+<h1>Choose an option</h1>
+<input name='choice' type='submit' value='Rock'>
+<input name='choice' type='submit' value='Paper'>
+<input name='choice' type='submit' value='Scissors'>
 </form>
+</div>
+</body>
+</html>

@@ -14,4 +14,5 @@ feature "play page" do
     expect(page).to have_button 'Scissors'
   end
 
+  
 end

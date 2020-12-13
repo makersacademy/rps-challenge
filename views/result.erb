@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="center">
+<h2>You chose <%= $game.player.choice %>!</h2>
+<h2>The computer chose <%= $game.computer.choice %>!</h2>
+<h1><%= $game.winner %></h1>
+<form action='/play'>
+<input type='submit' value='Play again!'>
+</form>
+</div>
+<body>
+</html>

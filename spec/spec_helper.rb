@@ -4,6 +4,9 @@ require 'simplecov-console'
 require 'capybara'
 require 'sinatra'
 require './spec/features/web_helpers'
+require 'game'
+require 'player'
+require 'computer'
 
 ENV['RACK_ENV'] = 'test'
 
