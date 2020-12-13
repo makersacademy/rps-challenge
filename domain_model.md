@@ -11,7 +11,7 @@ Actions highlighted with *italics*.
 
     As a marketeer
     So that I can enjoy myself away from the daily grind
-    I would like to be able to *play **rock/paper/scissors***
+    I would like to be able to *play* ***rock/paper/scissors***
 
 ### Hints on functionality
 
