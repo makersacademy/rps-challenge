@@ -37,11 +37,11 @@ feature "Multi Player" do
   end
   scenario "player one wins" do
     p1_multiplayer
-    expect(page).to have_content "Player 1 wins!!"
+    expect(page).to have_content "Player 1 wins!"
   end
   scenario "player two wins" do
     p2_multiplayer
-    expect(page).to have_content "Player 2 wins!!"
+    expect(page).to have_content "Player 2 wins!"
   end
   scenario "reset the game by a link" do
     p2_multiplayer
