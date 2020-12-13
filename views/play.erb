@@ -1,7 +1,7 @@
 <h1>Rock, Paper, Scissors!</h1>
 <p><%= @player %> vs. The Machine</p>
 <h2><%= @player %>, pick one option...</h2>
-<form action="/move">
+<form action="/move" method='get'>
 <input type="submit" name='user_move' value="ROCK">
 <input type="submit" name='user_move' value="PAPER">
 <input type="submit" name='user_move' value="SCISSORS">

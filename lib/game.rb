@@ -1,10 +1,8 @@
 class Game
-    # RULES = { rock: :scissors,
-    #     paper: :rock,
-    #     scissors: :paper }
-attr_accessor :user_move
+attr_reader :user_move, :computer_move
+attr_accessor :user_move, :computer_move
 
-    OPTIONS = [ :rock, :paper, :scissors]
+    OPTIONS = [ :ROCK, :PAPER, :SCISSORS]
 
     def initialize(user_move)
         @user_move = user_move
@@ -15,15 +13,26 @@ attr_accessor :user_move
         OPTIONS.sample
     end
 
-    def user_win?
-        if user_move == :rock && computer_move == :scissors
-            true
-        elsif user_move == :paper && computer_move == :rock
-            true
-        else
-            false
-        end
+    def winner
+    unless (@user_move == :SCISSORS && @computer_move == :ROCK) || (@user_move == :ROCK && @computer_move == :PAPER) || (@user_move == :PAPER && @computer_move == :SCISSORS)
+        cpu_win_message
+    else
+        user_win_message
+     end
     end
 
+    private
+    
+    def user_win_message
+        "You win, WOOHOO!!"
+    end
 
+    def draw_message
+        "It's a draw!"
+    end
+
+    def cpu_win_message
+        "Unlucky champ... the machine has got the better of you."
+        
+    end
 end

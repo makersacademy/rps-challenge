@@ -16,9 +16,10 @@ feature RPS do
         register_name 
         expect(page).to have_content "Paper"
     end
-    
+
     scenario 'have the option to pick scissors' do
         register_name 
         expect(page).to have_content "Scissors"
     end
+
 end
