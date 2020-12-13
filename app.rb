@@ -27,9 +27,7 @@ class RPS < Sinatra::Base
 
   get '/results' do
     @computer = Computer.new
-    # @computer_weapon = computer.random_weapon
     @player = Player.new(session[:player_name], session[:weapon])
-    # @player_weapon = @player.chosen_weapon
     @game = Game.new(@player, @computer)
     erb :results
   end
