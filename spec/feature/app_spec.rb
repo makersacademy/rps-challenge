@@ -1,6 +1,14 @@
 require "capybara/rspec"
 require_relative "../../lib/app"
 require_relative "web_helper"
+require 'simplecov'
+require 'simplecov-console'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+  SimpleCov::Formatter::HTMLFormatter
+])
+SimpleCov.start
 
 Capybara.app = Rps
 
@@ -24,7 +32,7 @@ feature Rps do
   scenario "showing players' score" do
     sign_in_and_play
     visit("/score")
-    expect(page).to have_content("Ties:")
+    expect(page).to have_content("Ties")
   end
   scenario "resetting game" do
     sign_in_and_play
