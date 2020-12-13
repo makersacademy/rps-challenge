@@ -1,8 +1,17 @@
+# controller file
 require File.dirname(__FILE__) + '/../app.rb'
+
+# helper file for feature tests
 require File.dirname(__FILE__) + '/features/web_helpers.rb'
+
+# gems for testing
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+# model files
+require 'game'
+require 'player'
 
 Capybara.app = RPS
 

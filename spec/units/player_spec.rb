@@ -1,5 +1,3 @@
-require 'player'
-
 describe Player do
   let(:player_class) {described_class}
   let(:player) {described_class.new('Player 1')}

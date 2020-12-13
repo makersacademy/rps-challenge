@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player.rb'
+require './lib/game.rb'
 
 class RPS < Sinatra::Base
   set :session_secret, 'super secret'
@@ -9,7 +11,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:player_1_name])
+    $game = Game.new
+    $game.new_player(params[:player_1_name])
     redirect '/choose'
   end
 
@@ -18,6 +21,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    $game.add_player_choice(params[:rps])
     erb :play
   end
 
