@@ -3,6 +3,12 @@
 - I programmed a Rock Paper Scissors game using Sinatra using an MVC model.
 - Completed all user stories, including single and multi player modes.
 - Test Coverage: 100%
+- Use shotgun or rackup to run server
+- Access the game from '/' route
+
+### Questions
+- Is it possible to store parameters based on user click on images?
+- Is it possible to dynamically load a page depending on user input on the same page? (or do you need JS)
 
 Welcome Page:
 ![welcome](https://github.com/Aracho1/rps-challenge/blob/master/screenshots/Welcome.png)
