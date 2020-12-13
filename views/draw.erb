@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+  <h1>IT'S A TIE!!!</h1>
+</head>
+<body>
+  <img src="https://media1.tenor.com/images/7aa9d545747082fd69f7f0f1e7a54ec4/tenor.gif?itemid=6221123">
+  <form action="/preparation" method="get">
+    <input id="battleButton" type="submit" value="PLAY AGAIN <%= @game.challenger_name.upcase %>?">
+  </form>
+  <form action="/" method="get">
+    <input id="battleButton" type="submit" value="CHANGE PLAYER">
+  </form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+  <h1>YOUR MOVE <%= @game.challenger_name.upcase %></h1>
+</head>
+<body>
+  <img src="https://media3.giphy.com/media/7ISIRaCMrgFfa/giphy.gif">
+  <form action="/move1" method="get">
+    <input id="battleButton" type="submit" value="MAKE A MOVE!">
+  </form>
+</body>
+</html>

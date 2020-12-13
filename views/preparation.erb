@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+  <h1>It's time to du-du-du-du-dueellllllll</h1><br><br>
+</head>
+<body>
+  <h1 id="header"><%= @game.challenger_name.upcase %> VERSUS PSYDUCK</h1>
+  <div id="gifs">
+    <img src="https://media.tenor.com/images/12705e6df3a814dc2fce61008ec957b1/tenor.gif">
+    <img src="https://64.media.tumblr.com/tumblr_m6tgx0AjXh1qd87hlo1_500.gifv">
+  </div><br><br>
+  <form id="battleButton" action="/battle" method="get">
+    <input id="battleButton" type="submit" value="START BATTLE!">
+  </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+h1 {
+  color: blue;
+
+}
+
+body {
+  background-color: lightblue;
+  font-family: monospace;
+  text-align: center;
+  margin: 100px;
+}
+
+#gifs {
+  display: flex;
+  margin-left: 200px;
+}
+
+#header {
+  align: center;
+}
+
+#battleButton {
+  font-family: monospace;
+}
