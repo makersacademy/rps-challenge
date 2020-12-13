@@ -1,3 +1,6 @@
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,23 +26,23 @@
         <title>RPS</title>
     </head>
     <body>
-        <h1>Single Player:</h1>
+        <h1>Multiplayer:</h1>
         <h2>ROCK, PAPER, SCISSORS</h3>
         <div class="option-game col-10 col-md-6 col-sm-8">
-            <h3 class="m-4"><%= @result %></h3>
+            <h3 class="m-4"><%= @results %></h3>
             <div class="m-4 col-12 d-flex flex-wrap justify-content-center">
                 <div class="option">
-                    <h4>Your choice: </h4>
-                    <h4><%= @choice %></h4>
+                    <h4>Player 1 </h4>
+                    <h4><%= @p1 %></h4>
                 </div>
                 <div class="option">
-                    <h4>Computer:</h4>                 
-                    <h4><%= @computer %></h4>
+                    <h4>PLayer 2</h4>                 
+                    <h4><%= @p2 %></h4>
                 </div>
             </div>
         </div>
-        <a href="singlegame">New game</a>
-        <a href="singleplayer">New player</a>
+        <a href="multigame">New game</a>
+        <a href="multiplayer">New players</a>
         <a href="/">Game options</a>
     </body>
 </html>

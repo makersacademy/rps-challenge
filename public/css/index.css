@@ -1,0 +1,56 @@
+body {
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+
+  font-size: larger;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Dancing Script", cursive;
+}
+h1,
+h2 {
+  color: white;
+  padding-bottom: 2em;
+}
+.option-game {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.option {
+  background-image: linear-gradient(
+    to right,
+    #1fa2ff 0%,
+    #12d8fa 51%,
+    #1fa2ff 100%
+  );
+}
+.option {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.option:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+a {
+  color: white !important;
+  text-decoration: none;
+  font-weight: bolder;
+  margin: 1em 2em;
+}

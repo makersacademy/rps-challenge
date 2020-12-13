@@ -10,6 +10,7 @@
    
 </body>
 </html>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -26,20 +27,14 @@
         <h1>Single Player:</h1>
         <h2>ROCK, PAPER, SCISSORS</h3>
         <div class="option-game col-10 col-md-6 col-sm-8">
-            <h3 class="m-4"><%= @result %></h3>
+            <h3 class="m-4"><%= @name %> please choose your card</h3>
             <div class="m-4 col-12 d-flex flex-wrap justify-content-center">
-                <div class="option">
-                    <h4>Your choice: </h4>
-                    <h4><%= @choice %></h4>
-                </div>
-                <div class="option">
-                    <h4>Computer:</h4>                 
-                    <h4><%= @computer %></h4>
-                </div>
+                <form class="m-4 col-10 d-flex flex-column flex-wrap justify-content-center"  action="/checkresult" method="post">
+                    <input class="option" value="ROCK" type="submit" name="choice">
+                    <input class="option" value="PAPER" type="submit"  name="choice">
+                    <input class="option" value="SCISSORS" type="submit"  name="choice">
+                </form> 
             </div>
         </div>
-        <a href="singlegame">New game</a>
-        <a href="singleplayer">New player</a>
-        <a href="/">Game options</a>
     </body>
 </html>
