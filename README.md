@@ -1,6 +1,14 @@
 # RPS Challenge
 A small once person web app game; rock, paper, scissors.
 
+    As a marketeer
+    So that I can see my name in lights
+    I would like to *register* my **name** before *playing* an online **game**
+
+    As a marketeer
+    So that I can enjoy myself away from the daily grind
+    I would like to be able to *play* ***rock/paper/scissors***
+
 ## Motivation
 This project was a test of TDD, OOD, MVC, in a small unguided web application build.
 
@@ -14,7 +22,25 @@ Possible Extensions:
 * Rock, Paper, Scissors, Lizard, Spock
 
 ## Screenshots
-Include logo/demo screenshot etc.
+
+### Domain Model
+|Class | Game |
+|------|------|
+|Properties|players_list, rps_list|
+|Actions|player_1, player_2, random_choice, declare_winner|
+
+|Class|Player|
+|-----|------|
+|Properties|name, choice|
+|Actions|add_choice|
+
+### Sequence Diagram
+![Sequence Diagram](https://github.com/chriswhitehouse/rps-challenge/blob/main/sequence_diagram.svg)
+
+### Screenshots
+![Register Name](https://github.com/chriswhitehouse/rps-challenge/blob/main/screenshots/Screenshot%202020-12-13%20at%2022.02.50.png)
+![Pick Weapon](https://github.com/chriswhitehouse/rps-challenge/blob/main/screenshots/Screenshot%202020-12-13%20at%2022.03.11.png)
+![Play!](https://github.com/chriswhitehouse/rps-challenge/blob/main/screenshots/Screenshot%202020-12-13%20at%2022.03.47.png)
 
 ## Tech/framework used
 Ruby, with Sinatra web framework. Rspec, and Capybara for testing.
