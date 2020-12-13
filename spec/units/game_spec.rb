@@ -54,21 +54,21 @@ describe Game do
   describe ".declare_winner" do
     context "Player 1: Rock vs Player 2: Scissors" do
       let(:player_2_double) { double :player, name: "Computer", choice: "Scissors" }
-      it 'should return the name of the winning player' do
+      it 'should return Player 1 Wins' do
         expect(game.declare_winner).to eq 'Player 1 Wins'
       end
     end
 
     context "Player 1: Rock vs Computer: Paper" do
       let(:player_2_double) { double :player, name: "Computer", choice: "Paper" }
-      it 'should return the name of the winning player' do
+      it 'should return Computer Wins' do
         expect(game.declare_winner).to eq 'Computer Wins'
       end
     end
 
     context "Player 1: Rock vs Computer: Rock" do
       let(:player_2_double) { double :player, name: "Computer", choice: "Rock" }
-      it 'should return the name of the winning player' do
+      it 'should return Draw' do
         expect(game.declare_winner).to eq 'Draw'
       end
     end

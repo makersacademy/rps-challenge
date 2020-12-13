@@ -1,5 +1,7 @@
+<h1><%=@game.player_1.name %>, Pick Your Weapon!</h1>
+<h2>Choose Rock, Paper, or Scissors: </h2>
 <form action='/play' method='get'>
-  <label for='rps'> <%=@game.player_1.name %> choice: </label>
+  <label for='rps'></label>
   <select id='rps' name='rps'>
     <option value='Rock'>Rock</option>
     <option value='Paper'>Paper</option>

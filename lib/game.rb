@@ -9,13 +9,12 @@ class Game
     @game
   end
 
-
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
     @rps_hash = {
-      'Rock' => {"Scissors" => 0, "Paper" => 1},
-      'Paper' => {"Rock" => 0 , "Scissors" => 1},
-      'Scissors' => {"Paper" => 0, "Rock" => 1}
+      'Rock' => { "Scissors" => 0, "Paper" => 1 },
+      'Paper' => { "Rock" => 0, "Scissors" => 1 },
+      'Scissors' => { "Paper" => 0, "Rock" => 1 }
      }
   end
 
@@ -35,11 +34,15 @@ class Game
     if player_1.choice == player_2.choice then
       "Draw"
     else
-      @players[@rps_hash[player_1.choice][player_2.choice]].name + " Wins"
+      @players[winner].name + " Wins"
     end
   end
 
   private
+
+  def winner
+    @rps_hash[player_1.choice][player_2.choice]
+  end
 
   def random_number
     rand(3)

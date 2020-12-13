@@ -1,8 +1,8 @@
 describe Player do
-  let(:player_class) {described_class}
-  let(:player) {described_class.new('Player 1')}
+  let(:player_class) { described_class }
+  let(:player) { described_class.new('Player 1') }
 
-  let(:choice) {"Rock"}
+  let(:choice) { "Rock" }
 
   describe '.new(name)' do
     it 'should accept a name parameter' do

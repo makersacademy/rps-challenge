@@ -26,10 +26,10 @@ Actions highlighted with *italics*.
 
 |Class | Game |
 |------|------|
-|Properties|rock, paper, scissors|
-|Actions|show_choices, pick_choice, play, show_winner|
+|Properties|players_list, rps_list|
+|Actions|player_1, player_2, random_choice, declare_winner|
 
 |Class|Player|
 |-----|------|
-|Properties|name, status|
-|Actions|register, pick_choice, winner?|
+|Properties|name, choice|
+|Actions|add_choice|

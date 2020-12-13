@@ -20,16 +20,16 @@ class RPS < Sinatra::Base
 
   get '/choose' do
     @game = Game.instance
+    @game.player_2.add_choice(@game.random_choice)
     erb :choose
   end
 
   get '/play' do
     @game = Game.instance
     @game.player_1.add_choice(params[:rps])
-    @game.player_2.add_choice(@game.random_choice)
     erb :play
   end
 
-  #establish server if file run directly
+  # establish server if file run directly
   run! if app_file == $0
 end

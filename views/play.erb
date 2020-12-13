@@ -1,6 +1,7 @@
-<%=@game.player_1.name %> choice: <%=@game.player_1.choice %> vs <%=@game.player_2.name %> choice: <%=@game.player_2.choice %>
+<h1>Fight!</h1>
+<h3><%=@game.player_1.choice %> vs <%=@game.player_2.choice%></h3>
 
-<%=@game.declare_winner %>!
+<h2><%=@game.declare_winner %>!</h2>
 
 <form action='/choose' method='get'>
   <input type='submit' value='Play Again'>
