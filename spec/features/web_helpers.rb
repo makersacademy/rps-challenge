@@ -8,6 +8,6 @@ def sign_in_and_choose
   visit '/'
   fill_in 'name', with: 'Player 1'
   click_button 'Register'
-  fill_in 'choice', with: 'Rock'
+  page.select 'Rock', from: 'rps'
   click_button 'Play'
 end

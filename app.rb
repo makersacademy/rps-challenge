@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require 'player'
 
 class RPS < Sinatra::Base
   set :session_secret, 'super secret'
@@ -11,7 +10,15 @@ class RPS < Sinatra::Base
 
   post '/name' do
     $player = Player.new(params[:player_1_name])
-    erb :name
+    redirect '/choose'
+  end
+
+  get '/choose' do
+    erb :choose
+  end
+
+  get '/play' do
+    erb :play
   end
 
   #establish server if file run directly
