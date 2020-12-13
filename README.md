@@ -25,7 +25,7 @@ I didn't focus on my model and think I should probably extract a Player class fr
 
 Also I have a VERY basic knowledge of CSS, huh!
 
-
+Please be aware there is only one commit on this repo because I set up and completed the whole thing in my own repository, only remembering I should have forked the Makers repo when I went to submit a pull request. 
 
 
 Instructions
