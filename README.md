@@ -1,6 +1,8 @@
 # RPS Challenge
 
-I programmed a Rock Paper Scissors game using Sinatra using the MVC model.
+I programmed a Rock Paper Scissors game using Sinatra using an MVC model.
+Completed all user stories, including single and multi player modes.
+Test Coverage: 100%
 
 Welcome Page:
 ![welcome](https://github.com/Aracho1/rps-challenge/blob/master/screenshots/Welcome.png)
