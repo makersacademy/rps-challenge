@@ -45,7 +45,7 @@ As usual please start by
 
 ## Bonus level 1: Multiplayer
 
-:ballot*box_with_check: Change the game so that two marketeers can play against each other ( \_yes there are two of them* ).
+:ballot_box_with_check: Change the game so that two marketeers can play against each other ( \_yes there are two of them\* ).
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
