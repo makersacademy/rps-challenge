@@ -9,7 +9,7 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
+  post '/name' do
     $player = Player.new(params[:player_name])
     redirect '/play'
   end
@@ -17,6 +17,11 @@ class RPS < Sinatra::Base
   get '/play' do
     @player = $player
     erb :play 
+  end
+
+  get '/Rock' do
+    @player_choice = 'rock'
+    erb :winner_declared
   end
 
   run! if app_file == $0
