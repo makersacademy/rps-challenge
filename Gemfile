@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
-gem "sinatra"
 gem "shotgun"
+gem "sinatra"
+
 group :test do
   gem "capybara"
   gem "rspec"
