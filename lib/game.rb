@@ -14,11 +14,24 @@ attr_accessor :user_move, :computer_move
     end
 
     def winner
-    unless (@user_move == :SCISSORS && @computer_move == :ROCK) || (@user_move == :ROCK && @computer_move == :PAPER) || (@user_move == :PAPER && @computer_move == :SCISSORS)
-        cpu_win_message
-    else
-        user_win_message
-     end
+        case 
+    
+        when @user_move == :SCISSORS && @computer_move == :ROCK
+            cpu_win_message
+        when @user_move == :ROCK && @computer_move == :PAPER
+            cpu_win_message
+        when @user_move == :PAPER && @computer_move == :SCISSORS
+            cpu_win_message
+        # when @user_move == :SCISSORS && @computer_move == :PAPER
+        #     user_win_message
+        # when @user_move == :PAPER && @computer_move == :ROCK
+        #     user_win_message
+        # when @user_move == :ROCK && @computer_move == :SCISSORS
+        #     user_win_message
+        when @user_move == @computer_move 
+            draw_message
+        else user_win_message
+        end
     end
 
     private
