@@ -10,4 +10,3 @@ feature 'select shape' do
     expect(page).to have_button("Scissors")
   end
 end
-

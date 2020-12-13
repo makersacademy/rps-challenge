@@ -15,7 +15,7 @@ describe Game do
     it 'calculates the correct winner: player' do
       srand(4)
       game = Game.new("rock")
-      expect{ game.winner_calculator }.to change{ game.player_wins }.to true
+      expect { game.winner_calculator }.to change { game.player_wins }.to true
     end
   end
 
@@ -24,7 +24,7 @@ describe Game do
       srand(4)
       game = Game.new("paper")
       subject.winner_calculator
-      expect(subject.player_wins).to eq false
+      expect(game.player_wins).to eq false
     end
   end
 
