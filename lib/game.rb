@@ -1,5 +1,5 @@
 class Game
-attr_reader :user_move, :computer_move
+
 attr_accessor :user_move, :computer_move
 
     OPTIONS = [ :ROCK, :PAPER, :SCISSORS]
@@ -10,7 +10,7 @@ attr_accessor :user_move, :computer_move
     end
 
     def computer_move
-        OPTIONS.sample
+        @computer_move = OPTIONS.sample
     end
 
     def winner

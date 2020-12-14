@@ -16,7 +16,7 @@ class RPS < Sinatra::Base
 
   get '/move' do
       $new_game = Game.new(params[:user_move])
-      $move = params[:user_move]
+      @move = $new_game.user_move
       erb :move
   end
 
