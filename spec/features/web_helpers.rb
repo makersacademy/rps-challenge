@@ -1,6 +1,6 @@
 def sign_in
   visit '/'
-  fill_in 'name', with: 'Player 1'
+  find("fill_in 'name', with: 'Player 1'
   click_button 'Register'
 end
 
