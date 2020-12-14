@@ -10,6 +10,13 @@ class Game
     @display_reset_button = false
   end 
 
+  def self.create(player_1_name, player_2_name)
+    @game = Game.new(player_1_name, player_2_name)
+  end
+  
+  def self.instance
+    @game
+  end
   def play_a_match(player_1_move, player_2_move)
     if player_1_move == player_2_move
       @ties += 1
