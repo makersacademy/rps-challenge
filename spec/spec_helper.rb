@@ -17,4 +17,11 @@ RSpec.configure do |config|
     puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
+  # ENV["RACK_ENV"]="test"
+  require 'capybara'
+  require 'capybara/rspec'
+  require 'rspec'
+  require_relative './features/web_helpers.rb'
+  require_relative '../app.rb'
+  Capybara.app = RPS
 end

@@ -1,0 +1,21 @@
+<div>
+<% if @game.comp_move == 0 %>
+Computer chose Rock!
+<% elsif @game.comp_move == 1 %>
+Computer chose Paper!
+<% else %>
+Computer chose Scissors!
+<% end %>
+</div>
+
+<div>
+<%= @game.player.name %>...you lose! <br>
+</div>
+
+<form action="/play">
+  <input type="submit" value="Play again?">
+</form>
+
+<div>
+  <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS60WgVCW5tozK2IBqC6Ty9tQG3n3ho7unZ4w&usqp=CAU'>
+</div>
