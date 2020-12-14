@@ -1,4 +1,3 @@
-# require_relative './features/../../../lib/sampler.rb'
 
 class Sampler
 
