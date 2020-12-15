@@ -1,12 +1,3 @@
-class Sampler
-
-  def generate
-    choice = ["Rock", "Paper", "Scissors"]
-    Kernel.rand(choice.length)
-  end
-
-end
-
 feature 'player receives outcome of game' do
   scenario 'player draws with Rock vs. computer Rock' do
     allow_any_instance_of(Sampler).to receive(:generate).and_return(0)
