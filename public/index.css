@@ -1,0 +1,33 @@
+html {
+    background-color: teal;
+} 
+
+h2 {
+    color: pink; 
+    font-size: 50px; 
+    font-family: Arial, Helvetica, sans-serif;
+} 
+
+label {
+    color: pink; 
+    font-size: 30px;  
+    font-family: Arial, Helvetica, sans-serif;
+}  
+
+input {
+    font-size: 25px; 
+    font-family: Arial, Helvetica, sans-serif; 
+    color: teal; 
+    background-color: pink; 
+    border: pink; 
+    margin: 20px 0px;  
+}
+
+div#page {
+    display: flex; 
+    width: 100%; 
+    height: 700px; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+} 

@@ -19,7 +19,6 @@ class Game < Sinatra::Base
 
     get '/play' do
         @name = session[:name] 
-        @mes = "here is a name #{ @name }" 
         erb :game 
     end    
 
@@ -38,9 +37,9 @@ class Game < Sinatra::Base
         computer = ["Rock", "Papaer", "Scissors"].shuffle.first 
 
         if value == "Rock" && computer == "Scissors" ||  value == "Scissors" && computer == "Paper" || value == "Paper" && computer == "Rock"  
-            @meg = "#{ @name } winnes"
+            @meg = "#{ @name.capitalize } Winnes"
         elsif computer == "Rock" && value != "Rock" ||  computer == "Scissors" && value == "Paper" || computer == "Paper" && value == "Rock"
-            @meg = "Computer winnes"
+            @meg = "Computer Winnes"
         else  value == computer 
             @meg = "Draw!"
         end
