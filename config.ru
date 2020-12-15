@@ -1,0 +1,3 @@
+require './game' 
+
+run Game 

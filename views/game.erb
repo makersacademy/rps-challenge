@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href= "game.css"> 
+    <title>Document</title>
+</head>
+    <body> 
+        <div id='page'>    
+            <div id='page_content'>
+                <h2> <%= @name.capitalize %> choice rock, paper, or scisors </h2>
+                    <div>
+                    <form action='/play_game' method='post'> 
+                        <input type='submit' value='Rock' name='choice'> 
+                        <input type='submit' value='Paper' name='choice'> 
+                        <input type='submit' value='Scissors' name='choice'>
+                    </form>
+                <div>  
+            </div>
+        <div>
+    </body>
+</html>
