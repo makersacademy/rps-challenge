@@ -1,85 +1,139 @@
 # RPS Challenge
+A small once person web app game; rock, paper, scissors.
 
-Instructions
--------
+    As a marketeer
+    So that I can see my name in lights
+    I would like to register my name before playing an online game
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+    As a marketeer
+    So that I can enjoy myself away from the daily grind
+    I would like to be able to play rock/paper/scissors
 
-Task
-----
+## Motivation
+This project was a test of TDD, OOD, MVC, in a small unguided web application build.
 
-Knowing how to build web applications is getting us almost there as web developers!
+## Build status
+[![Build Status](https://travis-ci.com/chriswhitehouse/rps-challenge.svg?branch=main)](https://travis-ci.com/chriswhitehouse/rps-challenge)
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+Basic functionality built.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Possible Extensions:
 
+* CSS Styling
+* Multiplayer functionality
+* Rock, Paper, Scissors, Lizard, Spock
+
+## Screenshots
+
+### Domain Model
+|Class | Game |
+|------|------|
+|Properties|players_list, rps_list|
+|Actions|player_1, player_2, random_choice, declare_winner|
+
+|Class|Player|
+|-----|------|
+|Properties|name, choice|
+|Actions|add_choice|
+
+### Sequence Diagram
+![Sequence Diagram](https://github.com/chriswhitehouse/rps-challenge/blob/main/sequence_diagram.svg)
+
+### Screenshots
+![Register Name](https://github.com/chriswhitehouse/rps-challenge/blob/main/screenshots/Screenshot%202020-12-13%20at%2022.02.50.png)
+![Pick Weapon](https://github.com/chriswhitehouse/rps-challenge/blob/main/screenshots/Screenshot%202020-12-13%20at%2022.03.11.png)
+![Play!](https://github.com/chriswhitehouse/rps-challenge/blob/main/screenshots/Screenshot%202020-12-13%20at%2022.03.47.png)
+
+## Tech/framework used
+Ruby, with Sinatra web framework. Rspec, and Capybara for testing.
+
+## Features
+Single player:
+
+* Add name
+* Play game
+
+## Code Example
+Controller:
+```Ruby
+class RPS < Sinatra::Base
+  set :session_secret, 'super secret'
+  enable :sessions
+
+  get '/' do
+    erb :index
+  end
+
+  post '/name' do
+    # $game = Game.new
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new("Computer")
+    @game = Game.create(player_1, player_2)
+    redirect '/choose'
+  end
+
+  get '/choose' do
+    @game = Game.instance
+    @game.player_2.add_choice(@game.random_choice)
+    erb :choose
+  end
+
+  get '/play' do
+    @game = Game.instance
+    @game.player_1.add_choice(params[:rps])
+    erb :play
+  end
+
+  # establish server if file run directly
+  run! if app_file == $0
+end
 ```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+## Installation
+Fork repository. Run bundle to install gems.
 
-Hints on functionality
+## Tests
+100% Coverage. All tests passing.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+### Feature Tests:
 
+1. I would like to register my name before playing an online game
+2. I would like to be able to  play rock/paper/scissors
 
-As usual please start by
+### Unit Tests:
 
-* Forking this repo
-* TEST driving development of your app
+**Game**
+* self.create
+  * *should accept two player arguments*
+  * *should create a new instance of a game*
+* self.instance
+  * *should return instance of a game*
+* .new
+  * *should accept two player arguments*
+  * *should record both players in a players array*
+* .player_1
+  * *should return the player_1 object*
+* .player_2
+  * *should return the player_2 object*
+* .random_choice
+  * *should return a random choice*
+* .declare_winner
+  * Player 1: Rock vs Player 2: Scissors
+    * *should return Player 1 Wins*
+  * Player 1: Rock vs Computer: Paper
+    * *should return Computer Wins*
+  * Player 1: Rock vs Computer: Rock
+    * *should return Draw*
 
+**Player**
+* .new(name)
+  * *should accept a name parameter*
+* .name
+  * *should return the player name*
+* .add_choice
+  * *should record the players choice*
+* .choice
+  * *should return the player choice*
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+## How to use?
+Run rackup. Then type 'localhost:' with assigned port number into web browser.
