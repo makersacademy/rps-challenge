@@ -13,6 +13,8 @@ A small once person web app game; rock, paper, scissors.
 This project was a test of TDD, OOD, MVC, in a small unguided web application build.
 
 ## Build status
+[![Build Status](https://travis-ci.com/chriswhitehouse/rps-challenge.svg?branch=master)](https://travis-ci.com/chriswhitehouse/rps-challenge)
+
 Basic functionality built.
 
 Possible Extensions:
