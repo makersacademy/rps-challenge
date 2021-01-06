@@ -12,11 +12,11 @@ A Ruby webapp that takes the users name and choice of rock, paper or scissors an
 - Clone this repository onto your computer via your terminal 
 - To install required dependencies, run:
 ``` 
-bundle
+$ bundle
 ```
 - Open the application:
 ```
-rackup
+$ rackup
 ```
 - Go onto your browser and enter localhost.9292
 
