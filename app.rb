@@ -13,15 +13,16 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    p params
     @name = session[:name]
     @move = session[:move]
+    @computer_move = session[:computer_move]
     erb :play
   end
 
   post '/play' do
     session[:move] = params[:move]
-      redirect '/play'
+    session[:computer_move] = [:rock, :paper, :scissors].sample
+    redirect '/play'
   end
 
   run! if app_file == $0
