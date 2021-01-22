@@ -10,8 +10,8 @@ class Game < Sinatra::Base
   end
 
   post '/name' do
-    'Louis'
-    erb(:index)
+    @name = params[:name]
+    erb(:register)
   end
 
   run! if app_file == $0
