@@ -2,6 +2,12 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
+ENV['RACK_ENV'] = 'test'
+# require our Sinatra app file
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require 'capybara'
+require 'rspec'
+
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
@@ -18,3 +24,5 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+Capybara.app = Rps
