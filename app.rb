@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative './lib/go.rb'
+require_relative './lib/computer_move.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -13,15 +15,13 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @name = session[:name]
-    @move = session[:move]
-    @computer_move = session[:computer_move]
+    @go = Go.new(session)
     erb :play
   end
 
   post '/play' do
     session[:move] = params[:move]
-    session[:computer_move] = [:rock, :paper, :scissors].sample
+    session[:computer_move] = Computer.new.move
     redirect '/play'
   end
 
