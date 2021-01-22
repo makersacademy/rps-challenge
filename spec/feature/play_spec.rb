@@ -1,3 +1,5 @@
+require_relative './lib/computer_move.rb'
+
 feature 'playing a game of RPS' do
 
   scenario 'be able to see the move options' do
@@ -16,8 +18,10 @@ feature 'playing a game of RPS' do
   scenario 'the computer chooses "Rock"' do
     sign_in_and_play
     click_button 'Rock'
-    message = find(:css, "#computer").text
-    expect(possible_moves).to include(message)
+    # message = find(:css, "#computer").text
+    # expect(possible_moves).to include(message)
+    allow(session[:computer_move]).to receive(Computer.new.move).and_return(:rock)
+    expect(page).to have_content('The computer selected Rock!')
   end
 
   def possible_moves
