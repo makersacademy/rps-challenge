@@ -19,17 +19,10 @@ feature 'playing a game of RPS' do
     expect(page).to have_content("Sean you selected Rock!")
   end
 
-  scenario 'the computer chooses "Rock"' do
-
+  scenario 'the computer chooses a random move' do
     sign_in_and_play
+    srand(2007)
     click_button 'Rock'
-    # message = find(:css, "#computer").text
-    # expect(possible_moves).to include(message)
-    allow(Go.new(sessions)).to receive(:computer_move).and_return(:rock)
-    expect(page).to have_content('The computer selected Rock!')
-  end
-
-  def possible_moves
-    [:rock, :paper, :scissors].map { |move| "The computer selected #{ move.to_s.capitalize }!"}
+    expect(page).to have_content('The computer selected Paper!')
   end
 end
