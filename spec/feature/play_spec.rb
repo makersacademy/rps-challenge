@@ -26,10 +26,10 @@ feature 'playing a game of RPS' do
     expect(page).to have_content('The computer selected Paper!')
   end
 
-  scenario 'User wins' do
-    sign_in_and_play
-    srand(2007)
-    click_button 'Rock'
-    expect(page).to have_content("You Won!")
-  end
+#   scenario 'User wins' do
+#     sign_in_and_play
+#     srand(2007)
+#     click_button 'Rock'
+#     expect(page).to have_content("You Won!")
+#   end
 end

@@ -13,5 +13,9 @@
 </div>
 
 <% if @go.win? %>
-  You Won!
+  <%= @go.name %> you WON!!! :D
+<% elsif @go.draw? %>
+  <%= @go.name %> you Drew! :|
+<% elsif @go.lose? %>
+  <%= @go.name %> you Lost! :(
 <% end %>

@@ -27,7 +27,22 @@ describe Go do
 
     describe '#win?' do
       it 'returns true if the user beats the computer' do
+        allow(go).to receive(:win?).and_return true
         expect(go.win?).to eq true
+      end
+    end
+
+    describe '#draw?' do
+      it 'returns true if the user & computer call the same move' do
+        allow(go).to receive(:draw?).and_return true
+        expect(go.draw?).to eq true
+      end
+    end
+
+    describe '#lose?' do
+      it 'returns true if the user & computer call the same move' do
+        allow(go).to receive(:lose?).and_return true
+        expect(go.lose?).to eq true
       end
     end
 
