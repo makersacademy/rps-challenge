@@ -10,7 +10,12 @@ class Game < Sinatra::Base
   end
 
   post '/name' do
-    @name = params[:name]
+    session[:name] = params[:name]
+    redirect '/register'
+  end
+
+  get '/register' do
+    @name = session[:name]
     erb(:register)
   end
 
