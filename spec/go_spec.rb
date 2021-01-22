@@ -2,7 +2,7 @@ require 'go'
 
 describe Go do
   subject(:go) { described_class.new(sessions) }
-  let(:sessions) { { name: "Sean", move: :rock, computer_move: :rock } }
+  let(:sessions) { { name: "Sean", move: :rock, computer_move: :scissors } }
 
   describe "#name" do
     it 'returns the players name' do
@@ -21,5 +21,16 @@ describe Go do
       allow(go).to receive(:computer_move).and_return :paper
       expect(go.computer_move).to eq :paper
     end
+  end
+
+  context 'Full game' do
+
+    describe '#win?' do
+      it 'returns true if the user beats the computer' do
+        expect(go.win?).to eq true
+      end
+    end
+
+
   end
 end

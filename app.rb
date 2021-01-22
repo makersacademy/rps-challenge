@@ -14,7 +14,7 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
-  get '/play' do
+  get '/play' do 
     @go = Go.new(session)
     erb :play
   end

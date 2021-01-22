@@ -11,3 +11,7 @@
 <div>
   The computer selected <%= @go.computer_move.to_s.capitalize %>!
 </div>
+
+<% if @go.win? %>
+  You Won!
+<% end %>
