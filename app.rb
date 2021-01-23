@@ -1,12 +1,12 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/player'
-require './lib/game'
+# require './lib/player'
+# require './lib/game'
 
-class Battle < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
 
   get '/' do
-    "HELLO WORLD"
+    erb :index
   end
 
 end
