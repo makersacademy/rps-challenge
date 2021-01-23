@@ -13,7 +13,7 @@ feature 'Learning the results' do
     enter_name_and_submit
     select 'Paper', from: 'choice'
     click_button 'Play'
-    expect(page).to have_content "YOU LOST! Try again!"
+    expect(page).to have_content "YOU LOST!"
   end
 
   scenario 'the game is a draw' do
