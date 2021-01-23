@@ -1,11 +1,28 @@
+<html>
+<head>
+  <style>
+    body {background-color: yellow;}
+    h1 {
+  color: darkgreen;
+  font-family: verdana;
+  font-size: 300%;
+
+  }
+  h2  {
+  color: green;
+  font-family: courier;
+  font-size: 160%;
+}
+</style>
+</head>
 <% if @result == 'win' %>
-  YOU WON!
+  <h1 align='center'>YOU WON!</h1>
 <% elsif @result == 'lose' %>
-  YOU LOST!
-  Try again!
+  <h1 align='center'>YOU LOST!</h1>
+  <h2 align='center'>Try again!</h2>
 <%else%>
-  IT'S A DRAW!
+  <h1 align='center'>IT'S A DRAW!</h1>
 <%end%>
-  <form action='/play' method='post'>
-    <input type='submit' value='Try Again!'>
+  <form action='/play' method='post' align='center'>
+    <input type='submit' value='Try Again!' align='center'>
   </form>
