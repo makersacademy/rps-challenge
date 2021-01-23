@@ -17,11 +17,13 @@ class Game < Sinatra::Base
   get '/register' do
     @name = session[:name]
     @shape = session[:shape]
+    @opponent_shape = session[:opponent_shape]
     erb(:register)
   end
 
   post '/play' do
     session[:shape] = params[:shape]
+    session[:opponent_shape] = :rock
     redirect '/register'
   end
 
