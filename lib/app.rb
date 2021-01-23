@@ -20,10 +20,13 @@ class RockPaperScissors < Sinatra::Base
 
   post "/choice" do
     @game = Game.instance
-    p params
-    p params.key("")
-    @choice = params["rock"]
-    "#{@game.players[0].name} chose #{params.key("")}!"
+    @game.players[0].make_choice(params.key(""))
+    redirect "/results"
+  end
+
+  get "/results" do
+    @game = Game.instance
+    erb :results
   end
 
 
