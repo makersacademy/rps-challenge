@@ -1,4 +1,5 @@
 require "player"
+require "playerbot"
 
 class Game
 
@@ -6,7 +7,7 @@ class Game
 
   def initialize(player1)
     @player1 = player1
-    @player2 = Player.new("opponentbot")
+    @player2 = PlayerBot.new("opponentbot")
     @players = [@player1, @player2]
   end
 
@@ -19,14 +20,7 @@ class Game
   end
 
   def get_results
-    @results = Hash.new
-    @results[:player1] = players[0].choice
-    @results[:player2] = players[1].choice
-    @results
-  end
-
-  def random_choice
-    ["rock", "paper", "scissors"].sample
+    @results = {player1: players[0].choice, player2: players[1].choice}
   end
 
 end
