@@ -1,8 +1,58 @@
 
 # Domain Model
 This is a domain model for the ruby elements of this challenge.
-Rather than using the user stories, which display the interactio of the user, I'll write
-out how I want the ruby parts to work myself.
+This time, I used the user stories to draw up this [sequence diagram](diagram.svg) and from that I drew up the list of [routes with interactions](#routes_with_interactions).
+It is this list that guides the ruby objects, actions and properties I want to have.
+
+
+## Routes with Interactions
+Based on [sequence diagram](diagram.svg)  
+#### 'GET /'   
+- Home page
+- index.erb
+  - only needs to load form, no embedded RUBY needed
+  - includes name form
+    - POSTs to /new-game
+    - player name is output
+
+#### 'POST /new-game'  
+- Sets up new game
+- Not seen by user
+- new_game.erb
+  - creates new Player object for user (from instance variable set to given name)
+  - creates new Player object for computer (from instance variable set to 'Computer')
+  - calls Game.new with player objects as input
+- redirect to '/play'
+
+#### 'GET /play'  
+- Game page
+- play.erb
+  - Three buttons/form buttons
+    - One each for rock, paper, scissors
+    - All post to '/action'
+    - Choice is output  
+
+#### 'POST /action'  
+- Runs game
+- Not seen by user
+- action.erb
+  - calls game.play with user selection
+      - calls pick_specified on human player
+        - sets choice attribute of human player
+      - calls pick_random on computer player
+        - sets choice attribute of computer player
+- redirect to '/result'
+
+#### 'GET /result'
+- Results page
+- results.erb
+  - Displays names and choices for human & computer player
+    - Based on game.player_1/2 objects
+  - Displays message saying who won
+    - Based on game.player_1/2 object
+
+
+
 
 ## Intended Actions
 
