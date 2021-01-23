@@ -23,4 +23,8 @@ class Game
     @results = {player1: players[0].choice, player2: players[1].choice}
   end
 
+  def draw?
+    results[:player1] == results[:player2]
+  end
+
 end

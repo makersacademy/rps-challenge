@@ -16,7 +16,14 @@ feature "playing RPS game" do
     srand(3)
     enter_name_and_start_game
     click_button "SCISSORS"
-    expect(page).to have_content "opponentbot chose scissors!"
+    expect(page).to have_content "opponentbot also chose scissors!"
+  end
+
+  scenario "find out it was a draw" do
+    srand(3)
+    enter_name_and_start_game
+    click_button "SCISSORS"
+    expect(page).to have_content "It was a draw"
   end
 
 

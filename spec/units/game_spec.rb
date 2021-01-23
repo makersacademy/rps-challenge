@@ -30,4 +30,9 @@ describe Game do
     expect(game.results[:player2]).to eq "rock"
   end
 
+  it "knows if there was a draw" do
+    allow(game).to receive(:results).and_return({player1: "paper", player2: "paper"})
+    expect(game).to be_a_draw
+  end
+
 end
