@@ -1,7 +1,7 @@
 class Computer
-  attr_reader :computer_weapon
-  
+  attr_reader :weapon
+
   def initialize
-    @computer_weapon = ['rock', 'paper', 'scissors'].sample
+    @weapon = ['rock', 'paper', 'scissors'].sample
   end
 end
