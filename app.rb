@@ -10,6 +10,7 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
+    @name = params[:name]
     erb(:play)
   end
 end
