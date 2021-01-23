@@ -1,0 +1,73 @@
+
+Nouns
+------------------------------
+Property or owner of property?
+------------------------------
+Name/player  ->    Owner of property
+computer     ->    Owner of property
+game         ->    Owner of property
+Weapon (rock/paper/scissors)  -> Owner of property
+
+Actions
+------------------------------
+Owned by?
+------------------------------
+Add player name   ->  computer
+play              ->  game
+Choose weapon     ->  Computer & player
+Result      -> game
+
+
+Actions
+------------------------------
+Property it reads or changes
+------------------------------
+Add player name      ->   Submissions in server/ params > @player_1
+
+players_choice       ->   Players choice of weapon
+computer             ->   Random choice of weapons
+result               ->    Return winner
+
+
+Class diagrams for these user stories:
+Summarise what we have learned from the three tables in the previous section into class diagrams.
+
+Class
+------------------------------
+Game
+------------------------------
+Properties (instance variables)
+------------------------------
+@game
+CONSTANTS: WEAPONS, RULES
+------------------------------
+Actions (methods)
+------------------------------
+play?
+result
+
+
+Class
+------------------------------
+Computer
+------------------------------
+Properties (instance variables)
+------------------------------
+@computer
+------------------------------
+Actions (methods)
+------------------------------
+sample(WEAPONS)
+
+
+Class
+------------------------------
+Player
+------------------------------
+Properties (instance variables)
+------------------------------
+@players_choice
+------------------------------
+actions (methods)
+------------------------------
+pick_weapon(WEAPONS)
