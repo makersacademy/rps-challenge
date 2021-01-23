@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
 
   post '/play' do
     session[:option] = params[:option]
-    session[:computer_option] = :Rock
+    session[:computer_option] = [:Rock, :Paper, :Scissor].sample
     redirect '/play'
   end
 

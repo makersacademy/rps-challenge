@@ -23,6 +23,12 @@ feature 'Select Rock, Paper or Scissor' do
     expect(computer_move).to include message
   end
 
+  scenario 'computer chooses a random option' do
+    srand(69)
+    click_button('Rock')
+    expect(page).to have_content 'Computer has selected Scissor'
+  end
+
   def computer_move
     [:Rock, :Paper, :Scissor].map { |option| "Computer has selected #{option.to_s}" }
   end
