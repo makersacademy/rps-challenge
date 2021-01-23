@@ -5,5 +5,9 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  post '/name' do
+
+  end
+
   run! if app_file == $0
 end
