@@ -9,4 +9,9 @@ describe Game do
     expect(game.players).to include player1
   end
 
+  it "creates and stores an instance of itself" do
+    Game.create(player1)
+    expect(Game.instance.players).to include player1
+  end
+
 end

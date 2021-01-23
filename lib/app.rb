@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative "game"
+require_relative "player"
 
 class RockPaperScissors < Sinatra::Base
 
@@ -7,14 +9,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/new_player" do
-    @name = params["name"]
-    "Welcome #{@name}"
-    # redirect "/start"
+    Game.create(Player.new(params["name"]))
+    redirect "/play"
   end
 
-  # get "/start" do
-  #   Welcome
-  # end
+  get "/play" do
+    @game = Game.instance
+    
+    erb :play
+  end
 
 
   run! if app_file == $0
