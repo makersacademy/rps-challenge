@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative "game"
 require_relative "player"
+require_relative "playerbot"
 
 class RockPaperScissors < Sinatra::Base
 
@@ -23,10 +24,12 @@ class RockPaperScissors < Sinatra::Base
 
   post "/choice" do
     @game.players[0].make_choice(params.key(""))
+    @game.players[1].make_choice
     redirect "/results"
   end
 
   get "/results" do
+    @game.get_results
     erb :results
   end
 

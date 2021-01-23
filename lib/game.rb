@@ -1,5 +1,5 @@
-require "player"
-require "playerbot"
+require_relative "player"
+require_relative "playerbot"
 
 class Game
 
