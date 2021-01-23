@@ -7,6 +7,7 @@ require 'simplecov'
 require 'simplecov-console'
 
 require './app.rb'
+require 'features/web_helpers.rb'
 
 Capybara.app = RockPaperScissors
 

@@ -17,9 +17,10 @@ feature "Start page" do
     click_button('One Player')
   end
 
-  # scenario "redirects to one_player name page if player clicks One Player" do
-  #   visit('/')
-  #   click_button("One Player").to have_content "One Player"
-  # end
+  scenario "redirects to name page" do
+    visit('/')
+    click_button('One Player')
+    expect(page).to have_content "Enter your name"
+  end
 
 end
