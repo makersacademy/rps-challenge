@@ -2,7 +2,7 @@ require "player"
 
 class Game
 
-  attr_reader :players
+  attr_reader :players, :results
 
   def initialize(player1)
     @player1 = player1
@@ -18,5 +18,11 @@ class Game
     @game
   end
 
+  def get_results
+    @results = Hash.new
+    @results[:player1] = players[0].choice
+    @results[:player2] = players[1].choice
+    @results
+  end
 
 end

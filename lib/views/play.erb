@@ -1,4 +1,4 @@
-<h2><%= @game.players[0].name %> vs opponentbot!</h2>
+<h2><%= @game.players[0].name %> vs <%= @game.players[1].name %>!</h2>
 
 <form action="/choice" method="post">
   <button name="rock" >ROCK</button>
