@@ -23,5 +23,12 @@ class RPS < Sinatra::Base
     @player_2 = session[:P2]
     erb :play
   end
+
+  get '/move' do 
+    @player_1 = session[:P1]
+    @player_2 = session[:P2]
+    erb :move
+  end
+
   run! if app_file == $0
 end
