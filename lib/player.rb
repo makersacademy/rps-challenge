@@ -8,4 +8,9 @@ class Player
   def pick_specified(choice)
     @choice = choice
   end
+
+  def pick_random
+    "Rock"
+  end
+  
 end

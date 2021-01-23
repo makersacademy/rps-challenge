@@ -23,7 +23,13 @@ describe Player do
     it 'Sets choice to the input' do
       expect { subject.pick_specified(choice) }.to change { subject.choice }.to choice
     end
-
   end
 
+  describe '#pick_random' do
+    let(:options) { ["Rock", "Paper", "Scissors"] }
+    it 'returns one of rock, paper or scissors' do
+      expect(options).to include subject.pick_random
+    end
+  end
+  
 end
