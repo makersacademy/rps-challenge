@@ -38,6 +38,17 @@ feature 'play a game of rock paper scissors' do
     expect(possible_message).to include message
   end
 
+  # As a marketeer
+  # So that I can play a game of rock paper scissors
+  # the game will choose a random option
+  # scenario 'computer to generate a random weapon' do
+  #   sign_in
+  #   player_picks_weapon
+  #   # this finds an element within the .erb file and gives you access to the element's contents
+  #   message = find(:css, "#computer").text
+  #   expect(possible_message).to include message
+  # end
+
 
 # helper method
   def possible_message
