@@ -1,8 +1,9 @@
 class Game
 
-  attr_reader :player, :opponent
+  attr_reader :player
+  attr_accessor :opponent
 
-  def initialize(player, opponent = Opponent.new)
+  def initialize(player)
     @player = player
     @opponent = opponent
   end

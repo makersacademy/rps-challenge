@@ -11,18 +11,18 @@ feature 'Selecting choice' do
   scenario 'Making rock selection' do
     enter_name_and_play
     click_button "Rock"
-    expect(page).to have_content('Kelly, Rock was your choice')
+    expect(page).to have_content('Kelly chose Rock')
   end
 
   scenario 'Making paper selection' do
     enter_name_and_play
     click_button "Paper"
-    expect(page).to have_content('Kelly, Paper was your choice')
+    expect(page).to have_content('Kelly chose Paper')
   end
 
   scenario 'Making rock selection' do
     enter_name_and_play
     click_button "Scissors"
-    expect(page).to have_content('Kelly, Scissors was your choice')
+    expect(page).to have_content('Kelly chose Scissors')
   end
 end
