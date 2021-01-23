@@ -37,7 +37,6 @@ class RockPaperScissors < Sinatra::Base
     redirect '/game_one_player'
   end
 
-
   get '/game_one_player' do
     @player_one_character = session[:player_one_character]
     @player_one_name = session[:player_one_name]

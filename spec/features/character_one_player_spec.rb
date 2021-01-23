@@ -1,5 +1,5 @@
 feature "Character selection page" do
-  let(:player) {"Claude"}
+  let(:player) { "Claude" }
 
   scenario "Greets player by name" do
     sign_in
@@ -34,11 +34,10 @@ feature "Character selection page" do
     expect(page).to have_content("#{player} is Rock")
   end
 
-   scenario "scissors button selects scissors" do
+  scenario "scissors button selects scissors" do
     sign_in
     click_on("scissors")
     expect(page).to have_content("#{player} is Scissors")
   end
-
 
 end
