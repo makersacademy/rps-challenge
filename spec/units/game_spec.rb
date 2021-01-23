@@ -30,4 +30,11 @@ describe Game do
     expect(game.random_choice).to eq "scissors"
   end
 
+  it "makes a random decision for player 2" do
+    srand(3)
+    allow(game).to receive(:players).and_return [player1, botplayer]
+    allow(botplayer).to receive(:choice).and_return("scissors")
+    expect(game.players[1].choice).to eq "scissors"
+  end
+
 end
