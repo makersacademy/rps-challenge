@@ -1,20 +1,17 @@
-feature 'Be able to see list of options'do
-scenario 'Be able to see rock' do
-    visit '/'
-        fill_in :player_1_name, with: "Alex"
-        click_button 'Submit'
-        expect(page).to have_content "Rock"
-    end
-scenario 'Be able to see paper' do
-    visit '/'
-        fill_in :player_1_name, with: "Alex"
-        click_button 'Submit'
-        expect(page).to have_content "Paper"
-    end
-scenario 'Be able to see scissors' do
-    visit '/'
-        fill_in :player_1_name, with: "Alex"
-        click_button 'Submit'
-        expect(page).to have_content "Scissors"
-    end
+feature 'After user has selected shape' do
+    scenario 'shows user has selected rock' do
+    sign_in_and_play
+    click_button 'Rock'
+expect(page).to have_content('You selected Rock')
+end
+scenario 'shows user has selected paper' do
+    sign_in_and_play
+    click_button 'Paper'
+expect(page).to have_content('You selected Paper')
+end
+scenario 'shows user has selected scissors' do
+    sign_in_and_play
+    click_button 'Scissors'
+expect(page).to have_content('You selected Scissors')
+end
 end

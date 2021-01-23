@@ -1,5 +1,10 @@
 <h1><%=@player_1_name%> has registered</h1>
 <h2>First fight:</h2>
-<%= @player_1_name %> vs. Computer
+<h3><%= @player_1_name %> vs. Computer</h3>
 
-<br>Rock<br>Paper<br>Scissors
+Please select one of the following options:
+<form method ="post" action='/select_shape'>
+<input type="submit" name="shape"value="     Rock    "/>
+<input type="submit" name="shape"value="    Paper    "/>
+<input type="submit" name="shape"value="   Scissors   "/>
+</form>
