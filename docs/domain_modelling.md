@@ -5,7 +5,8 @@ This time, I used the user stories to draw up this [sequence diagram](diagram.sv
 It is this list that guides the ruby objects, actions and properties I want to have.
 
 
-## Routes with Interactions
+Routes with Interactions
+------
 Based on [sequence diagram](diagram.svg)  
 #### 'GET /'   
 - Home page
@@ -54,92 +55,64 @@ Based on [sequence diagram](diagram.svg)
 
 
 
-## Intended Actions
+Ruby Structure
+-------
 
 
+### Nouns:
+- Game
+- Player
+- Choice
+- Choice options
+- Name
+- Player 1
+- Player 2
 
-## Nouns:
-- Menu (implied)
-- Dishes (implied list)
-- Dish
-- Dish Name (implied)
-- Price
-- Order
-- Basket (implied)
-- Total Price
-- Text
-- Phone Number (implied)
-- Delivery Time (implied)
-- Text Contents (implied)
-
-## Actions:
-- add dish to menu
-- list dishes
-- select dish from menu
-- select price from menu
-- add dish to order (implied)
-- place order (implied)
-- sum of dishes
-- send text with expected delivery time
+### Actions:
+- create new game
+- create new player
+- play game
+- pick random choice
+- pick specified choice
 
 
-## Identifying Object Types
+### Identifying Object Types
 
 | Noun          | Owner of Properties or Property |
 |---------------|---------------------------------|
-| Menu          | Owner of Properties             |
-| Dishes        | Property of Menu                |
-| Dish          | Owner of Properties             |
-| Price         | Property of Dish                |
-| Name          | Property of Dish                |
-| Order         | Owner of Properties             |
-| Basket        | Property of Order               |
-| Total_Price   | Property of Order               |
-| Text          | Owner of Properties             |
-| Delivery_Time | Property of Order               |
-| Text_Contents | Property of Text                |
-| Phone_Number  | Property of Text                |
+| Game          | Owner of Properties             |
+| Player 1/2    | Properties of Game              |
+| Player        | Owner of Properties                |
+| Choice          | Property of Player             |
+| Choice Options         | Property of Player             |
+| Name          | Property of Player                |
 
-## Identifying Action Owners
+### Identifying Action Owners
 
 | Action        | Action Owner   |
 |---------------|----------------|
-| add_dish      | Menu           |
-| list_dishes   | Menu           |
-| select_dish   | Menu           |
-| select_price  | Menu           |
-| add_dish      | Order          |
-| place_order   | Order          |
-| check_total   | Order          |
-| sum_of_dishes | Menu           |
-| send_text     | Text           |
+| Game.initialize(player_1, player_2)      | Game           |
+| play(choice)      | Game           |
+| Player.initialize(player_name)   | Player           |
+| pick_random   | Player           |
+| pick_specified   | Player           |
 
-## Action Impacts
+### Action Impacts
 
 | Action        | Property it reads or changes  |
 |-------------  |-------------------------------|
-| add_dish      | changes - Menu.Dishes |
-| list_dishes   | reads - Menu.Dishes |
-| select_dish   | reads - Menu.Dishes |
-| select_price  | reads - Menu.Dishes -> Dish.Price |
-| add_to_basket | changes - Order.Basket |
-| place_order   | changes - Order.Delivery_Time, Text.contents |
-| send_text     | reads - Text.Text_Contents, Text.Phone_Number|
+| Game.initialize      | changes - player_1, player_2 |
+| play      | changes - player_1, player_2 -> choice |
+| Player.initialize   | changes - name |
+| pick_random   | changes - choice |
+| pick_specified  | changes - choice |
 
-## Classes with Actions & Properties
+### Classes with Actions & Properties
 
 | Class      | Properties | Actions |
 |------------|------------|---------|
-| Menu       | Dishes     | select_dish, add_dish, list_dishes, select_price  |
+| Game       | player_1, player_2     | initialize, play  |
 
 | Class      | Properties | Actions |
 |------------|------------|---------|
-| Dish       | Price, Name           |         |
-
-| Class      | Properties | Actions |
-|------------|------------|---------|
-| Order      | Total_Price, Delivery_Time  | add_to_basket, place_order  |
-
-| Class      | Properties | Actions |
-|------------|------------|---------|
-| Text       | Contents           | send_delivery_expected        |
+| Player       | name, choice, choice_options  | pick_random, pick_specified  |
