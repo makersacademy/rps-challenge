@@ -21,7 +21,7 @@ class Game < Sinatra::Base
 
   post '/play' do
     session[:player_shape] = params[:shape]
-    session[:opponent_shape] = :rock #opponent.new.shape
+    session[:opponent_shape] = Opponent.new.shape
     redirect '/register'
   end
 

@@ -18,4 +18,11 @@ feature 'playing a game' do
     message = find(:css, "#opponent").text.strip
     expect(possible_messages).to include message
   end
+
+  scenario "game to chose a random option" do
+    sign_in_and_submit
+    srand(221563)
+    click_button "Rock"
+    expect(page).to have_content "Opponent chose Scissors"
+  end
 end
