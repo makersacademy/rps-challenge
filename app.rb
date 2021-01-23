@@ -1,5 +1,4 @@
 require 'sinatra'
-
 class Rps < Sinatra::Base
 enable :sessions
 
@@ -19,7 +18,7 @@ enable :sessions
 
   post '/select_shape' do
   session[:shape] = params[:shape]
-  session[:computer_shape] = :rock
+  session[:computer_shape] = Computer.new.shape
   redirect '/select_shape'
 end
 
