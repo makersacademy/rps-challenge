@@ -13,7 +13,24 @@ feature 'play a game of rock paper scissors' do
   # I want to see what weapons i can play with
   scenario "be able to see what weapons i can play with" do
     sign_in
-    expect(page).to have_content 'Choose your weapon: Rock, Paper of Scissors'
+    expect(page).to have_button "ROCK"
+    expect(page).to have_button "PAPER"
+    expect(page).to have_button "SCISSORS"
   end
+
+  # As a marketeer
+  # So that I can play a game of rock paper scissors
+  # I can choose one option
+
+  scenario "be able to choose a weapon" do
+    sign_in
+    have_button "ROCK"
+    have_button "PAPER"
+    have_button "SCISSORS"
+    click_button 'ROCK'
+    expect(page).to have_content 'You picked ROCK as your weapon!'
+  end
+
+
 
 end
