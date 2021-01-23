@@ -1,9 +1,10 @@
 feature 'Entering names' do
 
-  scenario 'You can enter your name' do
-    visit '/'
-    fill_in('Name', with: 'Dicky Brush')
-    click_button('Submit')
-    expect(page).to have_content "It's Hugh against Computer"
+  feature 'when you enter your name' do
+    scenario 'Website displays it' do
+      sign_in_and_play
+      expect(page).to have_content "It's #{player_name} against Computer"
+    end
   end
+
 end

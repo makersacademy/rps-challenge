@@ -3,6 +3,7 @@ require 'simplecov'
 require 'simplecov-console'
 # require our Sinatra app file
 require './app.rb'
+require_relative 'feature/web_helpers'
 
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
