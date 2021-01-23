@@ -1,0 +1,18 @@
+<%= @game.player.name %>, <%= @game.player.choice %> was your choice <br>
+
+
+<!-- <a href='/play'>
+   <button>Play again</button>
+</a> -->
+
+<form action = '/play' method = 'get'>
+  <input type = "submit" value = "Play again">
+</form> <br>
+
+<!-- <a href='/'>
+   <button>Quit</button>
+</a> -->
+
+<form action = '/' method = 'get'>
+  <input type = "submit" value = "Quit">
+</form> <br>
