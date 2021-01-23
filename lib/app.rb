@@ -15,8 +15,15 @@ class RockPaperScissors < Sinatra::Base
 
   get "/play" do
     @game = Game.instance
-    
     erb :play
+  end
+
+  post "/choice" do
+    @game = Game.instance
+    p params
+    p params.key("")
+    @choice = params["rock"]
+    "#{@game.players[0].name} chose #{params.key("")}!"
   end
 
 
