@@ -1,1 +1,11 @@
-YOU WON!
+<% if @result == 'win' %>
+  YOU WON!
+<% elsif @result == 'lose' %>
+  YOU LOST!
+  Try again!
+<%else%>
+  IT'S A DRAW!
+<%end%>
+  <form action='/play' method='post'>
+    <input type='submit' value='Try Again!'>
+  </form>

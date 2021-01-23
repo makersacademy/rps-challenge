@@ -12,11 +12,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     session[:player] = params[:player]
-    p 'Session player in play: '
-    p session[:player]
     @player = Player.new(session[:player],params[:choice])
-    p 'player in play: '
-    p @player
     erb :play
   end
 
