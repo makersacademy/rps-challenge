@@ -3,6 +3,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
 require './lib/game'
+require './lib/opponent'
 
 class Rps < Sinatra::Base
   configure :development do
