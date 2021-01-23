@@ -10,4 +10,9 @@ feature "Character selection page" do
     expect(page).to have_button("rock")
   end
 
+  scenario "displays Paper option" do
+    sign_in
+    expect(page).to have_button("paper")
+  end 
+
 end
