@@ -25,4 +25,9 @@ describe Game do
     expect(game.results[:player2]).to eq "rock"
   end
 
+  it "randomly chooses between the options" do
+    srand(3)
+    expect(game.random_choice).to eq "scissors"
+  end
+
 end

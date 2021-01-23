@@ -25,4 +25,8 @@ class Game
     @results
   end
 
+  def random_choice
+    ["rock", "paper", "scissors"].sample
+  end
+
 end

@@ -4,6 +4,10 @@ require_relative "player"
 
 class RockPaperScissors < Sinatra::Base
 
+  before do
+    @game = Game.instance
+  end
+
   get "/" do
     erb :index
   end
@@ -14,21 +18,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/play" do
-    @game = Game.instance
     erb :play
   end
 
   post "/choice" do
-    @game = Game.instance
     @game.players[0].make_choice(params.key(""))
     redirect "/results"
   end
 
   get "/results" do
-    @game = Game.instance
     erb :results
   end
-
 
   run! if app_file == $0
 end
