@@ -10,4 +10,20 @@ describe Player do
     end
   end
 
+  describe '#choice' do
+    context 'when player first created' do
+      it 'is nil' do
+        expect(subject.choice).to be nil
+      end
+    end
+  end
+
+  describe '#pick_specified' do
+    let(:choice) { "Rock" }
+    it 'Sets choice to the input' do
+      expect { subject.pick_specified(choice) }.to change { subject.choice }.to choice
+    end
+
+  end
+
 end
