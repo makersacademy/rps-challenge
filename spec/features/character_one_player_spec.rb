@@ -15,4 +15,10 @@ feature "Character selection page" do
     expect(page).to have_button("paper")
   end 
 
+  scenario "displays Scissors option" do
+    sign_in
+    expect(page).to have_button("scissors")
+  end
+
+
 end
