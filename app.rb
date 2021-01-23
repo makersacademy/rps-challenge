@@ -15,7 +15,7 @@ end
 
 post '/play' do 
     session[:shape] = params[:shape]
-    session[:opponent_shape] = :rock
+    session[:opponent_shape] = Opponent.new.shape
     @shape = session[:shape]
     @opponent_shape = session[:opponent_shape]
     erb :play
