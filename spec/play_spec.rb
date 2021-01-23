@@ -9,8 +9,13 @@ feature 'playing a game' do
         expect(page).to have_content 'Meg'
     end
     scenario 'I want to see the different options' do 
-       expect(page).to have_content 'Rock'
-       expect(page).to have_content 'Paper'
-       expect(page).to have_content 'Scissors'
+       expect(page).to have_button 'Rock'
+       expect(page).to have_button 'Paper'
+       expect(page).to have_button 'Scissors'
+    end 
+
+    scenario "i want to be able to choose an option" do 
+        click_button "Rock"
+        expect(page).to have_content "You chose Rock!"
     end 
 end 

@@ -13,6 +13,14 @@ post '/names' do
     erb :play
 end
 
+post '/play' do 
+    session[:shape] = params[:shape]
+    @shape = session[:shape]
+    erb :play
+end
+
+
+
 
 
 run! if app_file == $0

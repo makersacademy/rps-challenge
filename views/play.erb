@@ -1,4 +1,7 @@
 Hello <%= @player_name %>!
-Rock 
-Paper
-Scissors
+<form method="post" action="/play">
+    <input type="submit" name="shape" value="Rock" />
+    <input type="submit" name="shape" value="Paper" />
+    <input type="submit" name="shape" value="Scissors" />
+</form>
+You chose <%= @shape %>!
