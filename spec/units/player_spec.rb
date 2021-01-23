@@ -6,6 +6,11 @@ describe Player do
 
   it "has a name" do
     expect(player.name).to eq "Xena"
-  end 
+  end
+
+  it "makes a choice of R P or S" do
+    player.make_choice("paper")
+    expect(player.choice).to eq "paper"
+  end
 
 end
