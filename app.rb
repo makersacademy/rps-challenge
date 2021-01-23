@@ -16,7 +16,13 @@ class Game < Sinatra::Base
 
   get '/register' do
     @name = session[:name]
+    @shape = session[:shape]
     erb(:register)
+  end
+
+  post '/play' do
+    session[:shape] = params[:shape]
+    redirect '/register'
   end
 
   run! if app_file == $0
