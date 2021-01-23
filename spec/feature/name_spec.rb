@@ -1,5 +1,5 @@
 feature 'Enter name' do
-  scenario 'submitting name' do
+  scenario 'register' do
     visit('/')
     fill_in :player_1_name, with: 'Oscar'
     click_button 'Submit'
