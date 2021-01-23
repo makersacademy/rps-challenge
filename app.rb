@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base
   get '/' do
-    'TEST'
+    erb(:index)
   end
 
   run! if app_file == $0
