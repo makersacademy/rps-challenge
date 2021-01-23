@@ -26,5 +26,11 @@ feature "playing RPS game" do
     expect(page).to have_content "It was a draw"
   end
 
+  scenario "winning the game" do
+    srand(3)
+    enter_name_and_start_game
+    click_button "ROCK"
+    expect(page).to have_content "Charlotte is the winner!"    
+  end
 
 end

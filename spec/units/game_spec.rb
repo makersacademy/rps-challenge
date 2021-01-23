@@ -6,11 +6,6 @@ describe Game do
   let(:botplayer) { double(:player2, name: "bot", choice: "rock")}
   subject(:game) { Game.new(player1) }
 
-  # before do
-  #   allow(Game).to receive(:new)
-  # end
-
-
   it "stores players" do
     expect(game.players).to include player1
   end
@@ -33,6 +28,11 @@ describe Game do
   it "knows if there was a draw" do
     allow(game).to receive(:results).and_return({player1: "paper", player2: "paper"})
     expect(game).to be_a_draw
+  end
+
+  it "reports on the winner if it's not a draw" do
+    allow(game).to receive(:results).and_return({player1: "scissors", player2: "paper"})
+    expect(game.winner).to be player1
   end
 
 end
