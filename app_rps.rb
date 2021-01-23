@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/turn'
 
 class Game < Sinatra::Base
   enable :sessions
