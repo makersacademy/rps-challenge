@@ -12,13 +12,13 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     session[:player] = params[:player]
-    @player = Player.new(session[:player],params[:choice])
+    @player = Player.new(session[:player], params[:choice])
     erb :play
   end
 
   get '/result' do
     session[:choice] = params[:choice]
-    @@player = Player.new(session[:player],session[:choice])
+    @@player = Player.new(session[:player], session[:choice])
     @computer = Computer.new
     @game = Game.new(players: [@computer.weapon, @@player.weapon])
     @result = @game.result

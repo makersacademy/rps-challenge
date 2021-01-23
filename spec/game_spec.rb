@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(players:[computer, player]) }
+  subject(:game) { described_class.new(players: [computer, player]) }
 
   describe '#result' do
 
@@ -40,7 +40,6 @@ describe Game do
         expect(game.result).to eq 'draw'
       end
     end
-
 
     context 'the player wins' do
       let(:player) { 'rock' }

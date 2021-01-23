@@ -1,23 +1,26 @@
 class Game
 
   attr_reader :players
+  RULES = { rock: :scissors,
+            paper: :rock,
+            scissors: :paper }
 
   def initialize(players:)
-    @players= players
+    @players = players
   end
 
   def result
+    computer = RULES[@players[0].to_sym]
+    player = @players[1].to_sym
+
     if @players[0] == @players[1]
       'draw'
-    elsif @players[0] == 'rock' && @players[1] == 'scissors'
-      'lose'
-    elsif @players[0] == 'paper' && @players[1] == 'rock'
-      'lose'
-    elsif @players[0] == 'scissors' && @players[1] == 'paper'
-      'lose'
-    else
+    elsif computer != player
       'win'
+    elsif computer == player
+      'lose'
     end
+
   end
 
 end
