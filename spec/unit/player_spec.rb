@@ -3,6 +3,9 @@ require 'player'
 describe Player do
 
   subject { described_class.new(player_name) }
+  let(:rock) { "Rock" }
+  let(:paper) { "Paper" }
+  let(:scissors) { "Scissors" }
 
   describe '#name' do
     it 'returns name player was created with' do
@@ -19,17 +22,23 @@ describe Player do
   end
 
   describe '#pick_specified' do
-    let(:choice) { "Rock" }
     it 'Sets choice to the input' do
-      expect { subject.pick_specified(choice) }.to change { subject.choice }.to choice
+      expect { subject.pick_specified(rock) }.to change { subject.choice }.to rock
     end
   end
 
   describe '#pick_random' do
-    let(:options) { ["Rock", "Paper", "Scissors"] }
+    let(:options) { [paper, rock, scissors] }
     it 'returns one of rock, paper or scissors' do
       expect(options).to include subject.pick_random
     end
+    context 'when run many times' do
+      it 'returns rock, paper and scissors but nothing else' do
+        results = []
+        100_000.times { results |= [subject.pick_random] }
+        expect(results.sort).to eq options
+      end
+    end
   end
-  
+
 end

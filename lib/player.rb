@@ -10,7 +10,7 @@ class Player
   end
 
   def pick_random
-    "Rock"
+    ["Rock", "Paper", "Scissors"].sample
   end
-  
+
 end
