@@ -1,2 +1,2 @@
-require './app/app_rps'
+require './app_rps'
 run Game

@@ -6,7 +6,7 @@ Property or owner of property?
 Name/player  ->    Owner of property
 computer     ->    Owner of property
 game         ->    Owner of property
-Weapon (rock/paper/scissors)  -> Owner of property
+Weapon (rock/paper/scissors)  -> Property (game)
 
 Actions
 ------------------------------
