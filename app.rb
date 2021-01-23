@@ -1,7 +1,7 @@
 require 'sinatra/base'
 
 class Rps < Sinatra::Base
-  get '/test' do
+  get '/' do
     'Testing infrastructure working!'
   end
 end
