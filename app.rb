@@ -12,8 +12,9 @@ class RPS < Sinatra::Base
   end
 
   get '/game_page' do
+    $cpu = CPU.new
     @name = $player.name
-    p @name
+    @cpu_name = $cpu.name
     erb(:game_page)
   end
 
