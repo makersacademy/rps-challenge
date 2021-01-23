@@ -6,10 +6,6 @@ require './lib/game'
 require './lib/opponent'
 
 class Rps < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
-  end
-
   before do
     @game = Game.instance
   end
@@ -30,6 +26,7 @@ class Rps < Sinatra::Base
   post '/choice' do
     @game.player.choice = params[:choice]
     @game.opponent = Opponent.new
+    @game.win_lose_draw
     redirect '/result'
   end
 

@@ -36,5 +36,21 @@ Hints on functionality
 ## Methodology
 1. Built out web framework without game functionality
 2. Create ```Player``` class with attributes ```@name``` and ```@choice```
-3. Created ```Game``` class which reviews choice and calculates winner
-4. Added multiplayer functionality
+3. Create ```Game``` class which reviews choice and calculates winner
+4. Create ```Opponent``` class to compete with ```Player```
+4. Added multiplayer functionality?...
+
+#### Results Table
+| Player 1 | Opponent | Winner |
+| --- | --- | --- |
+| Rock | Scissors | Player 1 |
+| Scissors | Paper | Player 1 |
+| Paper | Rock | Player 1 |
+| --- | --- | --- |
+| Rock | Rock | Draw |
+| Scissors | Scissors | Draw |
+| Paper | Paper | Draw |
+| --- | --- | --- |
+| Rock | Paper | Opponent |
+| Scissors | Scissors | Opponent |
+| Paper | Rock | Opponent |

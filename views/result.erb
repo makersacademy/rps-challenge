@@ -1,6 +1,7 @@
 <h1> <%= @game.player.name %> chose <%= @game.player.choice %> </h1>
 <h1> Computer chose  <%= @game.opponent.choice %> </h1>
 
+<<h2><%= @game.winner %> won!</h2>>
 
 <!-- <a href='/play'>
    <button>Play again</button>
@@ -8,7 +9,7 @@
 
 <form action = '/play' method = 'get'>
   <input type = "submit" value = "Play again">
-</form> <br>
+</form>
 
 <!-- <a href='/'>
    <button>Quit</button>
