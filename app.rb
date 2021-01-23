@@ -6,6 +6,10 @@ class Rps < Sinatra::Base
   end
 
   get '/' do
-    erb :index
+    erb(:index)
+  end
+
+  post '/name' do
+    erb(:play)
   end
 end
