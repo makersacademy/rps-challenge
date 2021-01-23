@@ -5,7 +5,6 @@ class Game
 
   def initialize(player)
     @player = player
-    @winner = "test"
   end
 
   def self.create(player)
