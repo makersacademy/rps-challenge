@@ -1,1 +1,14 @@
 <p>Hi there, <%= @name %>!</p>
+<p>Please select one option from the choices below:</p>
+
+<form method="post" action="/play">
+  <input name="choice" type="submit" value="Rock" />
+  <input name="choice" type="submit" value="Paper" />
+  <input name="choice" type="submit" value="Scissors" />
+</form>
+
+<% if @player_choice %>
+<p>You selected <%= @player_choice %>!</p>
+<p>Computer selected <%= @computer_choice %>!</p>
+<p><%= @result.winner %></p>
+<% end %>
