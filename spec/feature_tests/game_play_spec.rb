@@ -21,16 +21,27 @@ feature 'play a game of rock paper scissors' do
   # As a marketeer
   # So that I can play a game of rock paper scissors
   # I can choose one option
-
   scenario "be able to choose a weapon" do
     sign_in
-    have_button "ROCK"
-    have_button "PAPER"
-    have_button "SCISSORS"
-    click_button 'ROCK'
-    expect(page).to have_content 'You picked ROCK as your weapon!'
+    player_picks_weapon
+    expect(page).to have_content "You picked ROCK as your weapon!"
+  end
+
+  # As a marketeer
+  # So that I can play a game of rock paper scissors
+  # the game will choose an option
+  scenario 'computer to generate a weapon' do
+    sign_in
+    player_picks_weapon
+    # this finds an element within the .erb file and gives you access to the element's contents
+    message = find(:css, "#computer").text
+    expect(possible_message).to include message
   end
 
 
+# helper method
+  def possible_message
+  [:rock, :paper, :scissors].map {|weapon| "Computer has picked #{weapon.to_s.upcase} as it's weapon!" }
+  end
 
 end

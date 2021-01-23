@@ -18,12 +18,14 @@ class Game < Sinatra::Base
     p params
     @player_1_name = session[:player_1_name]
     @weapon = session[:weapon]
+    @computers_weapon = session[:computers_weapon]
     erb(:lets_fight)
   end
 
   post '/lets_fight' do
     p params
     session[:weapon] = params[:weapon]
+    session[:computers_weapon] = :rock
     redirect 'lets_fight'
   end
 
