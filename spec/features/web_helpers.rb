@@ -1,6 +1,5 @@
 def sign_in_and_play
   visit '/'
-      fill_in :name, with: "P1"
-      fill_in :name, with: "P2" 
-      click_button "Create players"
+    fill_in :P1, with: "P1"
+    click_button "Create player"
 end

@@ -6,6 +6,7 @@ require 'simplecov-console'
 require 'sinatra'
 require 'capybara'
 require 'rspec'
+require 'features/web_helpers'
 
 Capybara.app = RPS 
 
