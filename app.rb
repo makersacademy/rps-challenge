@@ -19,11 +19,13 @@ enable :sessions
 
   post '/select_shape' do
   session[:shape] = params[:shape]
+  session[:computer_shape] = :rock
   redirect '/select_shape'
 end
 
 get '/select_shape' do
   @shape = session[:shape]
+  @computer_shape = session[:computer_shape]
   erb(:select_shape)
 end
 end
