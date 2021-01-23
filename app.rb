@@ -10,20 +10,18 @@ class Game < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    session[:player_name] = params[:name]
     redirect '/register'
   end
 
   get '/register' do
-    @name = session[:name]
-    @shape = session[:shape]
-    @opponent_shape = session[:opponent_shape]
+    @turn = Turn.new(session)
     erb(:register)
   end
 
   post '/play' do
-    session[:shape] = params[:shape]
-    session[:opponent_shape] = :rock
+    session[:player_shape] = params[:shape]
+    session[:opponent_shape] = :rock #opponent.new.shape
     redirect '/register'
   end
 
