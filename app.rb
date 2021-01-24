@@ -30,7 +30,6 @@ class RPS < Sinatra::Base
   get '/result' do
     @player = $player
     @game = Game.new
-    #@computer = Computer.new
     @game.winner(@player.moved)
     erb(:result)
   end

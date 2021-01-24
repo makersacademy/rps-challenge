@@ -4,7 +4,7 @@ class Game
   def winner(player)
     @computer = Computer.new
     if player.to_sym == @computer.moved
-    elsif SET[player.to_sym] == @computer.moved.to_sym
+    elsif SET[player.to_sym] == @computer.moved
       self.champion = 'player'
     else
       self.champion = 'computer'
