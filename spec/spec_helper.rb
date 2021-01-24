@@ -1,6 +1,10 @@
+require './app.rb'
+require 'capybara'
 require 'capybara/rspec'
+require './spec/web_helpers.rb'
 require 'simplecov'
 require 'simplecov-console'
+require 'rspec'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -12,6 +16,8 @@ SimpleCov.start
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
 RSpec.configure do |config|
+  ENV['RACK_ENV'] = 'test'
+  Capybara.app = Game
   config.after(:suite) do
     puts
     puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
