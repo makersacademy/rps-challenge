@@ -1,7 +1,15 @@
 <h1> <%= @game.player.name %> chose <%= @game.player.choice %> </h1>
 <h1> Computer chose  <%= @game.opponent.choice %> </h1>
 
-<<h2><%= @game.winner %> won!</h2>>
+
+
+<% if @game.winner == @game.player.name %>
+  <%= @game.player.name %> won!
+<% elsif @game.winner == "Computer" %>
+  Computer won!
+<% else @game.winner == "Draw" %>
+  It was a Draw!
+<% end %>
 
 <!-- <a href='/play'>
    <button>Play again</button>
