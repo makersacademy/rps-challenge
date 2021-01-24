@@ -22,9 +22,7 @@ Super Rock Paper Scissors Turbo Alpha: Ultimate Grudge Match simulates the tradi
 
 Users can participate in solo battles against the computer, which randomly generates its choices.
 
-The game also allows two people to play for extended periods of time without tiring out their hands.
-
-Beyond providing many hours of entertainment, Super Rock Paper Scissors Turbo Alpha: Ultimate Grudge Match can be used as a conflict-mitigation tool to resolve disputes that involve a choice between two outcomes.
+Beyond providing many hours of entertainment, Super Rock Paper Scissors Turbo Alpha: Ultimate Grudge Match can be used as a conflict-mitigation tool to resolve disputes or help users to make difficult choices.
 
 <h3>How to play</h3>
 
