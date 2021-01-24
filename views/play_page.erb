@@ -1,4 +1,20 @@
-Welcome <%=@player_name%>
+Welcome <%= @player_name %>
 <br>
 Are you ready to play Rock-Paper-Scissors?
 <br>
+
+<form action="/result" method="post">
+  <label>
+    Please choose Rock/Paper/Scissors:
+  </label>
+  <br>
+  <button type="submit" value="Rock" name = "player_choice">
+    ROCK
+  </button>
+  <button type="submit" value="Paper" name = "player_choice">
+    PAPER
+  </button>
+  <button type="submit" value="Scissors" name = "player_choice">
+    SCISSORS
+  </button>
+</form>

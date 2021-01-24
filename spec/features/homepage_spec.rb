@@ -1,4 +1,3 @@
-
 feature 'Homepage' do
   scenario 'Can run app and display Homepage' do
     visit('/')
