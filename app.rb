@@ -24,15 +24,14 @@ class RPS < Sinatra::Base
   post '/move' do
     @player = $player
     @player.move(params[:hand])
-    p params
     redirect '/result'
   end
 
   get '/result' do
     @player = $player
     @game = Game.new
-    @computer = Computer.new
-    @game.winner(@player.moved, @computer.moved)
+    #@computer = Computer.new
+    @game.winner(@player.moved)
     erb(:result)
   end
 end
