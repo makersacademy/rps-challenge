@@ -1,7 +1,6 @@
 
 # Domain Model
-This is a domain model for the ruby elements of this challenge.
-This time, I used the user stories to draw up this [sequence diagram](diagram.svg) and from that I drew up the list of [routes with interactions](#routes_with_interactions).
+This is a domain model for this challenge. I used the user stories to draw up this [sequence diagram](diagram.svg) and from that I drew up the list of [routes with interactions](#routes_with_interactions).
 It is this list that guides the ruby objects, actions and properties I want to have.
 
 
@@ -67,6 +66,7 @@ Ruby Structure
 - Name
 - Player 1
 - Player 2
+- Result
 
 ### Actions:
 - create new game
@@ -82,6 +82,7 @@ Ruby Structure
 |---------------|---------------------------------|
 | Game          | Owner of Properties             |
 | Player 1/2    | Properties of Game              |
+| Result    | Property of Game              |
 | Player        | Owner of Properties                |
 | Choice          | Property of Player             |
 | Choice Options         | Property of Player             |
@@ -102,7 +103,7 @@ Ruby Structure
 | Action        | Property it reads or changes  |
 |-------------  |-------------------------------|
 | Game.initialize      | changes - player_1, player_2 |
-| play      | changes - player_1, player_2 -> choice |
+| play      | changes - player_1, player_2 -> choice, result |
 | Player.initialize   | changes - name |
 | pick_random   | changes - choice |
 | pick_specified  | changes - choice |
@@ -111,7 +112,7 @@ Ruby Structure
 
 | Class      | Properties | Actions |
 |------------|------------|---------|
-| Game       | player_1, player_2     | initialize, play  |
+| Game       | player_1, player_2, result     | initialize, play  |
 
 | Class      | Properties | Actions |
 |------------|------------|---------|
