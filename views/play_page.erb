@@ -1,20 +1,52 @@
-Welcome <%= @player_name %>
-<br>
-Are you ready to play Rock-Paper-Scissors?
-<br>
+<head>
+  <title>Fighter selection</title>
+</head>
+<body>
+  <!-- css style of the page and its elements -->
+  <style>
+    body{
+      margin:auto;
+      background:rgb(150, 150, 150);
+    }
+    h1{
+      position:relative;
+      top:20px;
+      text-align:center;
+    }
+    h2{
+      text-align:center;
+    }
+    section{
+      margin:auto;
+      background:rgb(255, 255, 255);
+      text-align:center;
+      padding: 250px;
+    }
+    label{
+      color:rgb(255, 50, 50);
+    }
+  </style>
 
-<form action="/result" method="post">
-  <label>
-    Please choose Rock/Paper/Scissors:
-  </label>
+  <h1>Welcome <%= @player_name %></h1>
   <br>
-  <button type="submit" value="Rock" name = "player_choice">
-    ROCK
-  </button>
-  <button type="submit" value="Paper" name = "player_choice">
-    PAPER
-  </button>
-  <button type="submit" value="Scissors" name = "player_choice">
-    SCISSORS
-  </button>
-</form>
+  <h2>Are you ready to play Rock-Paper-Scissors?</h2>
+  <br>
+  <section>
+    <form action="/result" method="post">
+      <label>
+        Please choose your fighter:
+      </label>
+      <br>
+      <img src="./rock.jpg">
+      <button type="submit" value="Rock" name = "player_choice">
+        ROCK
+      </button>
+      <button type="submit" value="Paper" name = "player_choice">
+        PAPER
+      </button>
+      <button type="submit" value="Scissors" name = "player_choice">
+        SCISSORS
+      </button>
+    </form>
+  </section>
+</body>
