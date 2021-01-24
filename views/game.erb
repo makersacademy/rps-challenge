@@ -1,3 +1,7 @@
 <h1> You chose <%= @player_weapon %>
 <h1> Computer chose  <%= @computer_weapon %> </h1>
 <h1> You <%= @result %>! </h1>
+
+<form method='get' action='/play'>
+    <input type='submit' value='Play again?'>
+</form>

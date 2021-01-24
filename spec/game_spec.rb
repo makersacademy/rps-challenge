@@ -2,7 +2,7 @@ describe Game do
   describe '#the_winner_is' do
     let(:computer) { double :computer, :choice => 'scissors' }
     let(:player_1) { double :player, :choice => 'rock' }
-    let(:computer2) { double :computer, :choice => 'paper'}
+    let(:computer2) { double :computer, :choice => 'paper' }
 
     it 'returns true when player wins' do
       weapon = Game.new(player_1.choice)

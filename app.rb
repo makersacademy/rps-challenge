@@ -20,18 +20,13 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  post '/weapon' do
-    @player_weapon = $player_1.weapon(params[:weapon])
-    redirect to('/results')
-  end
-
-  post '/results' do
+  get '/game' do
     @player_1_name = $player_1.name
     @player_weapon = $player_1.weapon(params[:weapon])
     @computer_weapon = Computer.new.weapon
-    @result = Results.new(@player_weapon).beats?(@computer_weapon)
+    @result = Game.new(@player_weapon).beats?(@computer_weapon)
 
-    erb(:results)
+    erb(:game)
   end
 
   run! if app_file == $0
