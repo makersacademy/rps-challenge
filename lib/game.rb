@@ -25,37 +25,37 @@ class Game
     if choice == opposition_choice 
       "Draw"
     else
-      case choice
-      when "rock"
-        case opposition_choice
-        when "paper"
-          "Lose"
-        when "scissors"
-          "Win"
-        end
-      when "paper"
-        case opposition_choice
-        when "rock"
-          "Win"
-        when "scissors"
-          "Lose"
-        end
-      when "scissors"
-        case opposition_choice
-        when "paper"
-          "Win"
-        when "rock"
-          "Lose"
-        end
-      end
+      different_choices_outcomes
     end
   end
-    
 
   private
 
   def random_choice
     ["rock", "paper", "scissors"].sample
+  end
+
+  def different_choices_outcomes
+    case choice
+    when "rock"
+      calculate_outcome_if_rock
+    when "paper"
+      calculate_outcome_if_paper
+    when "scissors"
+      calculate_outcome_if_scissors
+    end
+  end
+
+  def calculate_outcome_if_rock
+    opposition_choice == "paper" ? "Lose" : "Win"
+  end
+
+  def calculate_outcome_if_paper
+    opposition_choice == "scissors" ? "Lose" : "Win"
+  end
+
+  def calculate_outcome_if_scissors
+    opposition_choice == "rock" ? "Lose" : "Win"
   end
 
 end
