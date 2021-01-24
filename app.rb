@@ -18,7 +18,8 @@ class RPS < Sinatra::Base
   end
 
   get '/game_page' do
-    @name, @ai_name = @game.p1_name, @game.p2_name
+    @name = @game.p1_name
+    @cpu_name = @game.p2_name
     erb(:game_page)
   end
 
