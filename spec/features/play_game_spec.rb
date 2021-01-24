@@ -9,7 +9,7 @@ feature "playing RPS game" do
   scenario "the opponent played the same type" do
     enter_name_and_start_game
     click_button "SCISSORS"
-    expect(page).to have_content "opponentbot also chose scissors!"
+    expect(page).to have_content "Opponentbot also chose scissors!"
   end
 
   scenario "find out it was a draw" do
@@ -28,7 +28,7 @@ feature "playing RPS game" do
     enter_name_and_start_game
     click_button "ROCK"
     click_link "Play again?"
-    expect(page).to have_content "Charlotte vs opponentbot!"
+    expect(page).to have_content "Charlotte vs Opponentbot!"
   end
 
   scenario "starting again from the beginning with a new player name" do

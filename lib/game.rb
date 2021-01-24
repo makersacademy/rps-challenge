@@ -7,7 +7,7 @@ class Game
 
   def initialize(player1)
     @player1 = player1
-    @player2 = PlayerBot.new("opponentbot")
+    @player2 = PlayerBot.new(["RPSbot", "Murderbot", "Opponentbot", "Badloserbot", "Goodgamebot"].sample)
     @players = [@player1, @player2]
   end
 
