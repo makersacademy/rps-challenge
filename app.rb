@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'game'
+require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -47,9 +47,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game_one_player' do
-    p "Generating game"
-    @game = Game.new
-    p @game
+    @game = Game.create(session[:player_one_character])
+    @game.play
+    erb(:one_player_game)
+  end
+
+  before do
+    @game = Game.instance
+  end
+
+  get '/one_player_result' do
+    erb(:one_player_end)
   end
 
   run! if app_file == $0
