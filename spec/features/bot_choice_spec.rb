@@ -2,6 +2,9 @@ feature 'Choose' do
   scenario 'the bot chooses Paper' do
     sign_in_and_play
     click_button("Paper")
-    expect(page).to have_content "Bot chooses Paper!"
+    #This is a built in capybara
+    message =
+
+    expect(all_bot_options).to include message
   end
 end
