@@ -28,6 +28,8 @@ class RPS < Sinatra::Base
     @result = $computer.game_results(@choice, @computer_choice)
     # declares winner name:
     $computer.player_wins?(@choice, @result) ? (@winner = session[:player_name]) : (@winner = $computer.name)
+    # declares noone a winner if it's a draw 
+    @winner = 'Noone' if @result == "Noone! It's a Draw"
     erb(:results)
   end
 end

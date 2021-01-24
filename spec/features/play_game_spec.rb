@@ -16,4 +16,11 @@ feature 'Playing the game' do
     click_button 'Scissors'
     expect(page).to have_content("You have chosen Scissors")
   end
+
+  scenario 'you can return to this page after playing a game of rps' do
+    sign_in_and_play
+    click_button 'Paper'
+    click_link 'Play again?'
+    expect(page).to have_content('Welcome Richard')
+  end
 end
