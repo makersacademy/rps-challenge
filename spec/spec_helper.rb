@@ -1,7 +1,7 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-require 'web_helpers'
+require 'features/web_helpers'
 
 # require our Sinatra app file
 require './app.rb'
