@@ -3,6 +3,7 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/outcome'
 require './lib/play'
 require './lib/player'
 
@@ -38,7 +39,8 @@ class Game < Sinatra::Base
     end
   end
 
-  get '/move' do
+  post '/outcome' do
+    outcome.compare(params[:move], session[:game].mode)
   end
 
 end
