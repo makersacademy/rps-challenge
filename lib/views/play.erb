@@ -1,3 +1,9 @@
+<head>
+  <title>Rock Paper Scissors: Decision</title>
+  <link href="/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
 <h2><%= @game.players[0].name %> vs <%= @game.players[1].name %>!</h2>
 
 <form action="/choice" method="post">
@@ -5,3 +11,4 @@
   <button name="paper" >PAPER</button>
   <button name="scissors" >SCISSORS</button>
 </form>
+</body>

@@ -1,16 +1,24 @@
+<head>
+  <title>Rock Paper Scissors: Results</title>
+  <link href="/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
 <% if @game.draw? %>
 
 <%= @game.players[0].name %> chose <%= @game.results[:player1] %> but <%= @game.players[1].name %> also chose <%= @game.results[:player2] %>!
 <br>
-It was a draw.
+<strong>It was a draw</strong>.
 
 <% else %>
 
 <%= @game.players[0].name %> chose <%= @game.results[:player1] %> - <%= @game.players[1].name %> chose <%= @game.results[:player2] %>!
 <br>
-<%= @game.winner.name %> is the winner!
+<strong><%= @game.winner.name %> is the winner</strong>!
 
 <% end %>
 <br>
+<br>
 <a href="/play"><button>Play again?</button></a>
 <a href="/"><button>Start again with a new name</button></a>
+</body>

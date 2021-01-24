@@ -4,6 +4,9 @@ require_relative "player"
 require_relative "playerbot"
 
 class RockPaperScissors < Sinatra::Base
+  configure do
+    set :public_dir, "public"
+  end
 
   before do
     @game = Game.instance
