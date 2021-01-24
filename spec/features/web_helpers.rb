@@ -8,3 +8,8 @@ def start_game
   enter_name
   click_button "Play!"
 end
+
+def pick_rock
+  start_game
+  click_button "Rock"
+end
