@@ -23,6 +23,7 @@ class Game
   end
 
   def result
+    p "Getting to result method"
     return "It's a draw!" if draw?
     "#{winner_name} wins!"
   end

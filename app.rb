@@ -37,7 +37,7 @@ class RockPaperScissors < Sinatra::Base
     @player_1_choice = @game.player_1.choice
     @player_2_name = @game.player_2.name
     @player_2_choice = @game.player_2.choice
-    # @player_2_choice = @game.player_2.choice
+    @result = @game.result
     erb :result
   end
 
