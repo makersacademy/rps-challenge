@@ -18,6 +18,6 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
-    erb :play
+    erb(:play)
   end
 end
