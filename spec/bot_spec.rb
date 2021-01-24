@@ -5,8 +5,7 @@ describe Bot do
 
   describe "#choice" do
     it "selects a random option" do
-      allow(bot).to receive(:choice).and_return("Scissors")
-      expect(bot.choice).to eq "Scissors"
+      expect(Bot::CHOICES).to include bot.choice
     end
   end
 end

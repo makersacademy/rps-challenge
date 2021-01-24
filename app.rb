@@ -24,7 +24,7 @@ class Rps < Sinatra::Base
 
   post '/play' do
     session[:choice] = params[:choice]
-    session[:bot_choice] = params[:bot_choice]
+    session[:bot_choice] = Bot.new.choice
     redirect '/play'
   end
 end

@@ -7,9 +7,10 @@ feature 'Choose' do
     expect(all_bot_options).to include message
   end
 
-  # scenario 'the bot chooses a random option' do
-  #   sign_in_and_play
-  #   click_button("Rock")
-  #   expect(page).to have_content "Bot chooses Scissors!"
-  # end
+  scenario 'the bot chooses a random option' do
+    sign_in_and_play
+    srand(12)
+    click_button("Rock")
+    expect(page).to have_content "Bot chooses Scissors!"
+  end
 end

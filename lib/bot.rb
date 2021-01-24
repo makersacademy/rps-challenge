@@ -1,6 +1,5 @@
 class Bot
-
-  CHOICES = ["rock", "paper", "scissors"]
+  CHOICES = ["Rock", "Paper", "Scissors"]
 
   def choice
     CHOICES.sample
