@@ -9,7 +9,7 @@ feature 'playing a game' do
   scenario "choose a shape" do
     sign_in_and_submit
     click_button "Rock"
-    expect(page).to have_content "You chose Rock!"
+    expect(page).to have_content "You chose rock!"
   end
 
   scenario "game to chose an option" do
@@ -25,4 +25,26 @@ feature 'playing a game' do
     click_button "Rock"
     expect(page).to have_content "Opponent chose Scissors"
   end
+
+  scenario 'I can win' do
+    sign_in_and_submit
+    srand(221563)
+    click_button "Rock"
+    expect(page).to have_content "You win!"
+  end
+
+  scenario 'If I lose' do
+    sign_in_and_submit
+    srand(221563)
+    click_button "Paper"
+    expect(page).to have_content "You lose!"
+  end
+
+  scenario 'If I draw' do
+    sign_in_and_submit
+    srand(221563)
+    click_button "Scissors" 
+    expect(page).to have_content "You draw!"
+  end
+
 end
