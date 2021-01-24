@@ -1,10 +1,10 @@
 Player <%= @player_1_name %> created
 
-<form action='move'>
+<form action='/move' method='get'>
   <label for='player_move'>
     Choose your move
-  <input type='submit' value='Rock'>
-  <input type='submit' value='Paper'>
-  <input type='submit' value='Scissors'>
+  <input type='submit' name='player_move' value='Rock'>
+  <input type='submit' name='player_move' value='Paper'>
+  <input type='submit' name='player_move' value='Scissors'>
   </label>
 </form>

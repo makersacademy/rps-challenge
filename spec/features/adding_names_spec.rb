@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 feature ' adding in player name' do
   scenario ' add in players name to start' do
     visit('/')
