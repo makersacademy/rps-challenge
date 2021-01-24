@@ -18,7 +18,7 @@ class Game < Sinatra::Base
     erb(:homepage)
   end
 
-  post '/play' do
+  post '/names' do
     player_1 = Player.new(params[:player_1_name])
     player_2 = Player.new(params[:player_2_name])
     session[:game] = Play.new(params[:mode], player_1, player_2)
@@ -26,7 +26,19 @@ class Game < Sinatra::Base
   end
 
   get '/game' do
-    erb(session[:game].mode)
+    case session[:game].mode
+      when 'normal_solo'
+        erb :normal_solo
+      when 'expanded_solo'
+        erb :expanded_solo
+      when 'normal_duo'
+        erb :normal_duo
+      when 'expanded_duo'
+        erb :expanded_duo
+    end
+  end
+
+  get '/move' do
   end
 
 end
