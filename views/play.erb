@@ -96,4 +96,20 @@ h1 {
 </head>
 <body>
 
-<h1><%=@game.player.name%> has entered the game!</h1>
+<h1>Enter your move, <%=@game.player.name%>, and try to beat the computer!<h/1>
+<h2>Choose - rock, paper, or scissors!</h2>
+
+<form action="/result" method="post" >
+  <input type="text" name="move"></br>
+  <input type="submit" value="Into the fray!">
+</form>
+
+
+<hr>
+    
+    <img class="rps" src="https://www.pngitem.com/pimgs/m/266-2667226_rock-paper-scissors-rules-hd-png-download.png"
+    alt= "Picture of the rock, paper, scissor rules"
+    />
+    <hr>
+ 
+</body>

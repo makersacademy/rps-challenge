@@ -20,4 +20,7 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-end
+  post '/result' do
+    
+  end
+  end
