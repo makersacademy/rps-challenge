@@ -1,50 +1,36 @@
 
-Nouns
-------------------------------
-Property or owner of property?
-------------------------------
-Name/player  ->    Owner of property
-computer     ->    Owner of property
-game         ->    Owner of property
-Weapon (rock/paper/scissors)  -> Property (game)
+Class diagrams for user stories:
 
-Actions
-------------------------------
-Owned by?
-------------------------------
-Add player name   ->  computer
-play              ->  game
-Choose weapon     ->  Computer & player
-Result      -> game
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
 
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
 
-Actions
-------------------------------
-Property it reads or changes
-------------------------------
-Add player name      ->   Submissions in server/ params > @player_1
+Functionality of game broken down:
 
-players_choice       ->   Players choice of weapon
-computer             ->   Random choice of weapons
-result               ->    Return winner
-
-
-Class diagrams for these user stories:
-Summarise what we have learned from the three tables in the previous section into class diagrams.
+# the marketeer will be presented the choices (rock, paper and scissors)
+# the marketeer can choose one option
+# the game will choose a random option
+# a winner will be declared
 
 Class
 ------------------------------
-Game
+turn
 ------------------------------
 Properties (instance variables)
 ------------------------------
-@game
+@player_name
+@player_weapon
+@computer_weapon
 CONSTANTS: WEAPONS, RULES
 ------------------------------
 Actions (methods)
 ------------------------------
-play?
-result
+winner?
+
 
 
 Class
@@ -53,21 +39,8 @@ Computer
 ------------------------------
 Properties (instance variables)
 ------------------------------
-@computer
+CONSTANTS: WEAPONS
 ------------------------------
 Actions (methods)
 ------------------------------
-sample(WEAPONS)
-
-
-Class
-------------------------------
-Player
-------------------------------
-Properties (instance variables)
-------------------------------
-@players_choice
-------------------------------
-actions (methods)
-------------------------------
-pick_weapon(WEAPONS)
+weapon

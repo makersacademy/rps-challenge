@@ -1,13 +1,5 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
 Task
 ----
 
@@ -33,4 +25,14 @@ I would like to be able to play rock/paper/scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-##
+## TO IMPROVE
+
+- DRY
+- SRP
+- turn class is a bit clumsy and could be turned into seperate classes such as player / game / computer
+
+## NEED FURTHER UNDERSTANDING
+- path between get and post requests.
+- understanding when to keep the code within the controller (app-rsp.rb) or create a class file.
+- creating class and process diagrams
+- CSS for design elements

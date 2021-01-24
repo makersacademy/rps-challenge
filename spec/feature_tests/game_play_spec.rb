@@ -51,12 +51,12 @@ feature 'play a game of rock paper scissors' do
   # As a marketeer
   # So that I can play a game of rock paper scissors
   # # a winner will be declared
-  # scenario 'declare who has won' do
-  #   srand(43268)
-  #   sign_in
-  #   player_picks_weapon
-  #   expect(page).to have_content "Computer is the winner!"
-  # end
+  scenario 'declare who has won' do
+    srand(43268)
+    sign_in
+    player_picks_weapon
+    expect(page).to have_content "You are the winner!"
+  end
 
 
 # helper method
