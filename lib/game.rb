@@ -26,19 +26,13 @@ class Game
   end
 
   def winner
-    p @player_1.choice, @player_2.choice
-    case @player_1.choice
-    when 'Rock'
-      return @player_1 if @player_2.choice == 'Scissors'
-      p 'getting to returning player 2'
-      @player_2
-    when 'Paper'
-      return @player_1 if @player_2.choice == 'Rock'
-      @player_2
-    when 'Scissors'
-      return @player_1 if @player_2.choice == 'Paper'
-      @player_2
-    end
+    return @player_1 if player_1_wins?
+    @player_2
+  end
+
+  def player_1_wins?
+    victory_hash = { "Rock" => "Scissors", "Scissors" => "Paper", "Paper" => "Rock" }
+    victory_hash[@player_1.choice] == @player_2.choice
   end
 
 end
