@@ -7,22 +7,34 @@ class RockPaperScissors < Sinatra::Base
 
   attr_reader :game
 
+
   get '/' do
     erb(:index)
   end
 
   get '/one_player' do
+    session[:two_players] = false
     erb(:one_player_name)
   end
+
+  # get '/two_players' do
+  #   session[:two_players] = true
+  #   erb(:two_player_names)
+  # end
 
   post '/name_assign_one_player' do
     session[:player_one_name] = params[:player_one]
     redirect '/character_one_player'
   end
 
+  post '/name_assign_two_player' do
+    session[:player_one_name] = params[:player_one]
+    session[:player_two_name] = params[:player_two]
+  end
+
   get '/character_one_player' do
-    @player_one_name = session[:player_one_name]
-    erb(:character_one_player)
+    @player_name = session[:player_one_name]
+    erb(:character_selection)
   end
 
   post '/selection_rock' do

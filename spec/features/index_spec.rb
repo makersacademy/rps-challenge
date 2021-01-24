@@ -17,10 +17,21 @@ feature "Start page" do
     click_button('One Player')
   end
 
-  scenario "redirects to name page" do
+  scenario "redirects to one-player name page" do
     visit('/')
     click_button('One Player')
     expect(page).to have_content "Enter your name"
   end
+
+  # scenario "gives options for two players" do
+  #   visit('/')
+  #   click_button('Two Players')
+  # end
+
+  # scenario "redirects to two-player name page" do
+  #   visit('/')
+  #   click_button('Two Players')
+  #   expect(page).to have_content "Enter player names"
+  # end
 
 end

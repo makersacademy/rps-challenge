@@ -6,7 +6,7 @@ class Game
 
   def initialize(character)
     @character = character
-    @opponent = nil
+    @opponent = "none"
     @result = nil
   end
 
@@ -19,17 +19,20 @@ class Game
   end
 
   def play
-    enemy
+    @opponent = enemy
+    p @opponent
     battle
-  end 
+  end
 
   def enemy
-    @opponent = ["Rock", "Paper", "Scissors"].sample
+    ["Rock", "Paper", "Scissors"].sample
   end
 
   def battle
     if @character == "Rock"
       rock_game
+      p "opponent:"
+      p @opponent
     elsif @character == "Paper"
       paper_game
     else
@@ -38,6 +41,7 @@ class Game
   end
 
     def rock_game
+      p @opponent
       if @opponent == "Scissors"
         @result =  "Rock blunts Scissors. You win!"
       elsif @opponent == "Paper"
