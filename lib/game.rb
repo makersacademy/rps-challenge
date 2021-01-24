@@ -1,6 +1,15 @@
 require_relative 'player'
 
 class Game
+
+  def self.new_game(player_1, player_2)
+    @current_game = Game.new(player_1, player_2)
+  end
+
+  def self.current_game
+    @current_game
+  end
+
   attr_reader :player_1, :player_2
 
   def initialize(player_1, player_2)
@@ -26,7 +35,7 @@ class Game
 
   def winner_name
     return @player_1.name if player_1_wins?
-    @player_2.name 
+    @player_2.name
   end
 
   def player_1_wins?

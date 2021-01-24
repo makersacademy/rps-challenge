@@ -56,4 +56,12 @@ describe Game do
   end
 
 
+  describe '::new_game' do
+    it 'stores a game in a class instance variable' do
+      described_class.new_game(player_1, player_2)
+      expect(described_class.current_game).to be_instance_of(described_class)
+    end
+  end
+
+
 end
