@@ -13,7 +13,7 @@ class Rps < Sinatra::Base
 
   post '/name' do
     session[:name] = params[:name]
-    erb(:play)
+    redirect '/play'
   end
 
   get '/play' do
