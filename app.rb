@@ -21,8 +21,11 @@ class Game < Sinatra::Base
   post '/play' do
     player_1 = Player.new(params[:player_1_name])
     player_2 = Player.new(params[:player_2_name])
-    @game = Play.new(params[:mode], player_1, player_2)
-    p @game
-    erb(:play)
+    game = Play.new(params[:mode], player_1, player_2)
+    if game.player_2.name.empty?
+      erb(:play_solo)
+    else
+      erb(:play_duo)
+    end
   end
 end
