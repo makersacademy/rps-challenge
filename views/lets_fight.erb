@@ -1,0 +1,18 @@
+<h1> GET READY TO FIGHT: </h1>
+<h2> <%= @turn.player_name %> vs Computer </h2>
+
+<h3> Choose your weapon: </h3>
+
+<form method="post" action="/lets_fight">
+    <input type="submit" name="player_weapon" value="ROCK">
+    <input type="submit" name="player_weapon" value="PAPER">
+    <input type="submit" name="player_weapon" value="SCISSORS">
+</form>
+
+You picked <%= @turn.player_weapon %> as your weapon!
+
+<div id="computer">
+Computer has picked <%= @turn.computer_weapon.to_s.upcase %> as it's weapon!
+</div>
+
+<%= @turn.winner %> HAS WON!
