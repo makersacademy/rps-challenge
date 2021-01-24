@@ -18,9 +18,6 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @game = Game.new(session)
-    @name = session[:name]
-    @choice = session[:choice]
-    @bot_choice = session[:bot_choice]
     erb(:play)
   end
 

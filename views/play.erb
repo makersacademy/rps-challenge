@@ -1,4 +1,4 @@
-<%= @name %> vs. Bot
+<%= @game.name %> vs. Bot
 
 <form method="post" action="/play">
   <input type="submit" name="choice" value="Rock" />
@@ -6,9 +6,10 @@
   <input type="submit" name="choice" value="Scissors" />
 </form>
 
-You chose <%= @choice %>!
+You chose <%= @game.choice %>!
 
 # Need to use an ID so capybara can find the bot choice
+
 <div ID="bot">
-  Bot chooses Paper<%= @bot_choice %>!
+  Bot chooses Paper<%= @game.bot_choice %>!
 </div>
