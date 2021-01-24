@@ -1,6 +1,7 @@
 require 'sinatra'
 require_relative './lib/player'
 require_relative './lib/game'
+require_relative './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -21,6 +22,7 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
+    choice = 
     
   end
   end
