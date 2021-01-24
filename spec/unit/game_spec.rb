@@ -29,47 +29,27 @@ describe Game do
         expect(subject).to eq "It's a draw!"
       end
     end
-    context 'when player 1 chooses rock' do
-      context 'when player 2 chooses scissors' do
-        it 'returns player 1 wins' do
+    context 'when one player chooses rock' do
+      context 'when other player chooses scissors' do
+        it 'returns win for player who played rock' do
           allow(player_2).to receive(:choice).and_return scissors
           game.play(rock)
           expect(subject).to eq "#{player_name} wins!"
         end
       end
-      context 'when player 2 chooses paper' do
-        it 'returns player 2 wins' do
+      context 'when other player chooses paper' do
+        it 'returns win for player who played paper' do
           allow(player_2).to receive(:choice).and_return paper
           game.play(rock)
           expect(subject).to eq "#{player_2_name} wins!"
         end
       end
     end
-    context 'when player 1 chooses paper' do
-      context 'when player 2 chooses scissors' do
-        it 'returns player 2 wins' do
+    context 'when one player chooses paper' do
+      context 'when other player chooses scissors' do
+        it 'returns win for player who played scissors' do
           allow(player_2).to receive(:choice).and_return scissors
           game.play(paper)
-        end
-      end
-      context 'when player 2 chooses rock' do
-        it 'returns player 1 wins' do
-          allow(player_2).to receive(:choice).and_return rock
-          game.play(paper)
-        end
-      end
-    end
-    context 'when player 1 chooses scissors' do
-      context 'when player 2 choosers rock' do
-        it 'returns player 2 wins' do
-          allow(player_2).to receive(:choice).and_return rock
-          game.play(rock)
-        end
-      end
-      context 'when player 2 chooses paper' do
-        it 'returns player 1 wins' do
-          allow(player_2).to receive(:choice).and_return paper
-          game.play(rock)
         end
       end
     end
