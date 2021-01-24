@@ -5,5 +5,5 @@ def sign_in_and_play
 end
 
 def possible_options
-    [:rock, :paper, :scissors].map { |shape| "opponent selected #{shape.to_s.capitalize} "}
+    [:rock, :paper, :scissors].map { |shape| "computer selected #{shape}"}
 end
