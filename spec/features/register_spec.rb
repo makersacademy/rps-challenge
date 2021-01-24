@@ -1,8 +1,6 @@
-feature "registering name" do
-  scenario "registering name before playing an online game" do
-    visit("/")
-    fill_in("name", with: "Bob")
-    click_button("New Game")
-    expect(page).to have_content("Bob")
+feature "entering name before playing game" do
+  scenario "being greeted by name" do
+    fill_in_name_and_start_new_game
+    expect(page).to have_content("Hi there, Bob!")
   end
 end

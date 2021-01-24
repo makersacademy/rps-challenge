@@ -1,5 +1,6 @@
 require "sinatra/base"
-require "./lib/selections"
+require "./lib/game"
+require "./lib/computer"
 
 class RPS < Sinatra::Base
 
@@ -7,25 +8,26 @@ class RPS < Sinatra::Base
   set :session_secret, "super secret"
 
   get "/" do
-    "Let's play Rock, Paper, Scissors!"
     erb(:index)
   end
 
   post "/register" do
-    session[:name] = params[:name]
+    session[:player_name] = params[:name]
     redirect("/play")
   end
 
   get "/play" do
-    @name = session[:name]
-    @player_choice = session[:choice]
-    @computer_choice = ["Rock", "Paper", "Scissors"].sample
-    @result = Selections.new(@player_choice, @computer_choice)
+    @game = Game.new(session)
+
+    @name = session[:player_name]
+    @player_weapon = session[:player_weapon]
+    @computer_weapon = session[:computer_weapon]
     erb(:play)
   end
 
   post "/play" do
-    session[:choice] = params[:choice]
+    session[:player_weapon] = params[:player_weapon].downcase.to_sym
+    session[:computer_weapon] = Computer.new.weapon
     redirect("/play")
   end
 
