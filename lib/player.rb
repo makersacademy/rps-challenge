@@ -10,7 +10,13 @@ class Player
   end
 
   def pick_random
-    @choice = ["Rock", "Paper", "Scissors"].sample
+    @choice = random_choice
   end
 
+  private
+
+  def random_choice
+    ["Rock", "Paper", "Scissors"].sample
+  end
+  
 end
