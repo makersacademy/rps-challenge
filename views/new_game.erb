@@ -1,1 +1,2 @@
-<% #Create players based on input, computer. Create game %>
+<% player_1, player_2 = Player.new(@player_1_name), Player.new(@player_2_name) %>
+<% @game = Game.new_game(player_1, player_2) %>

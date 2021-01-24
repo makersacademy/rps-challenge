@@ -4,6 +4,6 @@ end
 
 def sign_in_and_play
   visit '/'
-  fill_in('Name', with: player_name)
+  fill_in('name', with: player_name)
   click_button('Start playing')
 end
