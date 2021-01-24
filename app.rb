@@ -22,7 +22,7 @@ class Rps < Sinatra::Base
   end
 
   post '/play' do
-    @name = session[:name]
-    erb(:play)
+    session[:choice] = params[:choice]
+    redirect '/play'
   end
 end
