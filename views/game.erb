@@ -1,1 +1,14 @@
-<h3>Welcome to your game <%= @player1 %>!</h3>
+<h2>Welcome to your game <%= @player1 %>!</h2>
+<div>
+    Select an option below and click play
+</div>
+<form action="/result" method="post">
+    <input type="radio" id="rock" name="choice" value="Rock">
+    <label for="rock">Rock</label><br>
+    <input type="radio" id="paper" name="choice" value="Paper">
+    <label for="paper">Paper</label><br>
+    <input type="radio" id="scissors" name="choice" value="Scissors">
+    <label for="scissors">Scissors</label><br>
+    <br>
+    <input type="submit" value="Play">
+</form>
