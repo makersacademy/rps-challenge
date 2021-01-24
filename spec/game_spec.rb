@@ -2,9 +2,9 @@ require 'game.rb'
 
 describe Game do
 
-  let(:player) { double(:player, score: Player::DEFAULT_SCORE, name: 'TEST', choice: Player::DEFAULT_CHOICE) }
-  let(:CPU) { double(:CPU, score: CPU::DEFAULT_SCORE, name: 'TEST2', choice: CPU::DEFAULT_CHOICE) }
-  let(:game) { described_class.new(player, CPU) }
+  let(:player) { double(:player, score: Player::DEFAULT_SCORE, name: 'Dude', choice: Player::DEFAULT_CHOICE) }
+  let(:cpu) { double(:cpu, score: CPU::DEFAULT_SCORE, name: 'Steve', choice: CPU::DEFAULT_CHOICE) }
+  let(:game) { described_class.new(player, cpu) }
 
   describe '#player1' do
     it 'Should return the first player of the game' do
@@ -20,7 +20,7 @@ describe Game do
 
     describe '#p1_name' do
       it 'Should return the name of the first player' do
-        expect(game.p1_name).to eq 'TEST'
+        expect(game.p1_name).to eq 'Dude'
       end
 
     end
@@ -36,7 +36,7 @@ describe Game do
 
   describe '#player2' do
     it 'Should return the second player of the game' do
-      expect(game.player2).to eq CPU
+      expect(game.player2).to eq cpu
     end
 
     describe '#p2_score' do
@@ -48,7 +48,7 @@ describe Game do
 
     describe '#p2_name' do
       it 'Should return the name of the first player' do
-        expect(game.p2_name).to eq 'TEST2'
+        expect(game.p2_name).to eq 'Steve'
       end
 
     end

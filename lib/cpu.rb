@@ -10,4 +10,5 @@ class CPU
     @score = DEFAULT_SCORE	   
     @choice = DEFAULT_CHOICE
   end
+  
 end

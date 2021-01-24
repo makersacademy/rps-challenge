@@ -4,7 +4,7 @@ feature 'choice' do
     expect(page).to have_content("ROCK") and have_content("PAPER") and have_content("SCISSORS")
   end
 
-  scenario 'Can view the choice you made on the next page' do
+  xscenario 'Can view the choice you made on the next page' do
     sign_in_and_play
     choose "PAPER"
     click_button('I AM READY!')
