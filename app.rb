@@ -26,4 +26,17 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/action' do
+    @player_1_choice = params[:choice]
+    erb :action
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player_1_name = @game.player_1.name
+    @player_1_choice = @game.player_1.choice
+    # @player_2_choice = @game.player_2.choice
+    erb :result
+  end
+
 end
