@@ -1,7 +1,8 @@
 feature 'Choose' do
-  scenario 'choose rock, paper or scissors' do
+  scenario 'show all 3 options being rock, paper and scissors' do
     sign_in_and_play
-    click_link 'Rock'
-    expect(page).to have_content 'You picked Rock'
+    expect(page).to have_content 'Rock'
+    expect(page).to have_content 'Paper'
+    expect(page).to have_content 'Scissors'
   end
 end
