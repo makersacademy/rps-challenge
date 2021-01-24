@@ -5,24 +5,26 @@ require './lib/game.rb'
 
 class RPS < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    $player_1 = Player.new(params[:player_1])
-    @player_1_name = $player_1.name
+    session[:player_1_name] = params[:player_1]
+    @player_1_name = Player.new(session[:player_1_name])
     redirect to('/play')
   end
 
   get '/play' do
-    @player_1_name = $player_1.name
+    @player_1_name = session[:player_1_name]
     erb(:play)
   end
 
   get '/game' do
-    @player_1_name = $player_1.name
-    @player_weapon = $player_1.weapon(params[:weapon])
+    session[:player_1_weapon] = params[:weapon]
+    @player_weapon = session[:player_1_weapon]
     @computer_weapon = Computer.new.weapon
     @result = Game.new(@player_weapon).beats?(@computer_weapon)
 
