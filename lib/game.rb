@@ -3,7 +3,7 @@ require_relative "playerbot"
 
 class Game
 
-  attr_reader :players, :results, :winner
+  attr_reader :players, :results
 
   def initialize(player1)
     @player1 = player1
@@ -19,8 +19,8 @@ class Game
     @game
   end
 
-  def get_results
-    @results = {player1: players[0].choice, player2: players[1].choice}
+  def gather_results
+    @results = { player1: players[0].choice, player2: players[1].choice }
   end
 
   def draw?

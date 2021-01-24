@@ -1,15 +1,16 @@
 <% if @game.draw? %>
 
 <%= @game.players[0].name %> chose <%= @game.results[:player1] %> but <%= @game.players[1].name %> also chose <%= @game.results[:player2] %>!
-
+<br>
 It was a draw.
 
 <% else %>
 
 <%= @game.players[0].name %> chose <%= @game.results[:player1] %> - <%= @game.players[1].name %> chose <%= @game.results[:player2] %>!
-
+<br>
 <%= @game.winner.name %> is the winner!
 
 <% end %>
-
+<br>
 <a href="/play"><button>Play again?</button></a>
+<a href="/"><button>Start again with a new name</button></a>

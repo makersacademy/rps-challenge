@@ -29,7 +29,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/results" do
-    @game.get_results
+    @game.gather_results
     erb :results
   end
 
