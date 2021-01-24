@@ -16,5 +16,4 @@ end
 def possible_options
     [:rock, :paper, :scissors].map { |shape| "computer selected #{shape}"}
 end
-
 end
