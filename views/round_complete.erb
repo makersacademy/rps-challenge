@@ -1,0 +1,9 @@
+<h2>You chose <%= @choice %>!</h2>
+  <h2><%=@cpu_name%> chose <%=@cpu_choice%>!</h2>
+  <h2><%="The winner of this round is #{@winner_name}!" if @winner_name%></h2>
+  <h2><%="This round is a draw" if !@winner_name%></h2>
+  <h3><%=@name%>: Score:<%=@score%></h3>
+  <h3><%=@cpu_name%>: Score:<%=@cpu_score%></h3>
+  <form action="/game_page" method="get">
+    <input type="submit" value="Ok">
+  </form>
