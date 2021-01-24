@@ -1,10 +1,9 @@
 require 'sinatra/base'
 require './lib/computer.rb'
 require './lib/player.rb'
-require './lib/winner.rb'
+require './lib/game.rb'
 
-class Game < Sinatra::Base
-  enable :sessions
+class RPS < Sinatra::Base
 
   get '/' do
     erb(:index)
@@ -21,11 +20,18 @@ class Game < Sinatra::Base
     erb(:play)
   end
 
-  get '/weapon' do
+  post '/weapon' do
+    @player_weapon = $player_1.weapon(params[:weapon])
+    redirect to('/results')
+  end
+
+  post '/results' do
     @player_1_name = $player_1.name
     @player_weapon = $player_1.weapon(params[:weapon])
-    @computer_weapon = Computer.new.move
-    erb(:weapon)
+    @computer_weapon = Computer.new.weapon
+    @result = Results.new(@player_weapon).beats?(@computer_weapon)
+
+    erb(:results)
   end
 
   run! if app_file == $0

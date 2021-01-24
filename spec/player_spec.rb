@@ -9,7 +9,8 @@ describe Player do
   describe '#weapon' do
     it 'returns the chosen weapon' do
       player_1 = Player.new("Charlie")
-      expect(player_1.weapon("rock")).to eq "rock"
+      player_1.weapon("rock")
+      expect(player_1.choice).to eq "rock"
     end
-  end 
+  end
 end
