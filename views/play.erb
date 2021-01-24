@@ -1,0 +1,23 @@
+<h1><%= @player.name %> is playing RPS! </h1>
+
+<h3><%= @player.name %> vs. Computer! </h3>
+<strong><%= @player.name %>'s turn</strong>
+
+<!-- <form action="/result">
+  <input type="submit" value="Rock!">
+  <input type="submit" value="Paper!">
+  <input type="submit" value="Scissors!">
+</form> -->
+
+<form method="post" action="/move">
+    <input type="hidden" name="hand" value="rock">
+    <input class='btn btn-primary' type='submit' value='Rock'>
+</form>
+<form method="post" action="/move">
+    <input type="hidden" name="hand" value="paper">
+    <input class='btn btn-primary' type='submit' value='Paper'>
+</form>
+<form method="post" action="/move">
+    <input type="hidden" name="hand" value="scissors">
+    <input class='btn btn-primary' type='submit' value='Scissors'>
+</form>
