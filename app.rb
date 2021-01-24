@@ -1,8 +1,11 @@
 require 'sinatra/base'
+require 'game'
 
 class RockPaperScissors < Sinatra::Base
 
   enable :sessions
+
+  attr_reader :game
 
   get '/' do
     erb(:index)
@@ -24,23 +27,29 @@ class RockPaperScissors < Sinatra::Base
 
   post '/selection_rock' do
     session[:player_one_character] = params[:rock]
-    redirect '/game_one_player'
+    redirect '/setup_one_player'
   end
 
   post '/selection_paper' do
     session[:player_one_character] = params[:paper]
-    redirect '/game_one_player'
+    redirect '/setup_one_player'
   end
 
   post '/selection_scissors' do
     session[:player_one_character] = params[:scissors]
-    redirect '/game_one_player'
+    redirect '/setup_one_player'
+  end
+
+  get '/setup_one_player' do
+    @player_one_character = session[:player_one_character]
+    @player_one_name = session[:player_one_name]
+    erb(:game_intro_one_player)
   end
 
   get '/game_one_player' do
-    @player_one_character = session[:player_one_character]
-    @player_one_name = session[:player_one_name]
-    erb(:game_one_player)
+    p "Generating game"
+    @game = Game.new
+    p @game
   end
 
   run! if app_file == $0
