@@ -20,4 +20,9 @@ class Rps < Sinatra::Base
     @name = session[:name]
     erb(:play)
   end
+
+  post '/play' do
+    @name = session[:name]
+    erb(:play)
+  end
 end
