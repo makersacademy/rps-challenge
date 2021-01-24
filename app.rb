@@ -3,6 +3,7 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/bot_move'
 require './lib/outcome'
 require './lib/play'
 require './lib/player'
@@ -39,8 +40,25 @@ class Game < Sinatra::Base
     end
   end
 
-  post '/outcome' do
-    outcome.compare(params[:move], session[:game].mode)
+  post '/move' do
+    case session[:game].mode
+      when 'normal_solo'
+        session[:first_move] = params[:move]
+        session[:second_move] = bot_move('normal')
+      when 'expanded_solo'
+        session[:first_move] = params[:move]
+        session[:second_move] = bot_move('expanded')
+      when 'normal_duo'
+        erb :normal_duo
+      when 'expanded_duo'
+        erb :expanded_duo
+    end
+
+    redirect '/outcome'
+  end
+
+  get '/outcome' do
+
   end
 
 end
