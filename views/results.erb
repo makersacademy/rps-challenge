@@ -24,14 +24,17 @@
   <div style = "color: goldenrod; font-weight: bolder; font-size: larger; background: white; ">
     The winner is... <%= @result %>!
     <br>
-    <%= @winner %> is the winner
+    <br>
+    <%= @winner %> is the winner!!!!
   </div>
   <br>
   <!-- play again link -->
   <div style = "color: green;">
-    <a href="/play-page">
-      Play again?
-    </a>
+    <form action="/play-page" method="get">
+      <button type="submit" name="Play again?">
+        Play again?
+      </button>
+    </form>
   </div>
 
 </body>

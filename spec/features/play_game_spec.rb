@@ -20,7 +20,7 @@ feature 'Playing the game' do
   scenario 'you can return to this page after playing a game of rps' do
     sign_in_and_play
     click_button 'Paper'
-    click_link 'Play again?'
+    click_button 'Play again?'
     expect(page).to have_content('Welcome Richard')
   end
 end
