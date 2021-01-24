@@ -14,4 +14,7 @@ class Program < Sinatra::Base
   get '/' do
     erb(:index)
   end
+
+  get '/game' do
+  end
 end
