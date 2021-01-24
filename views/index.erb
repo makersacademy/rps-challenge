@@ -1,0 +1,65 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle</title>
+    <style>
+div {display: block;}
+h1 {
+        color: #ebebeb;
+        font-size: 48px;
+        font-weight: 100;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 20px;
+        border: 1px solid #214252;
+        border-radius: 4px;
+      }
+ 
+      h2 {
+        color: #e8ffff;
+        font-size: 30px;
+        text-align: center;
+        font-weight: normal;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          padding: 0px
+      }
+
+      body {
+          background-color: #214252;
+      }
+
+      
+
+            button {
+        color: #ebebeb;
+        font-size: 18px;
+        background: transparent;
+        display: block;
+        margin: 0 auto 30px auto;
+        padding: 15px 30px;
+        border-radius: 40px;
+        box-shadow: 5px 5px 5px  #41aea9;
+        border-color: #41aea9;
+        transition: all 200ms ease-in-out;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+      button:hover {
+        cursor: pointer;
+        color: white;
+        background:#41aea9;
+      }
+          form {
+        text-align: center;
+      }
+    </style>
+</head>
+
+
+<h1>Welcome to the ultimate challenge of rock, paper, scissors!<h/1>
+<h2>Enter player names below:</h2>
+
+<form action="/names" method="post" >
+  <input type="text" name="player_1">
+  <input type="text" name="player_2">
+  <input type="submit" value="Let's do this!">
+</form>
