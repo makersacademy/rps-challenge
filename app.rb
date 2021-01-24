@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player.rb'
 require_relative './lib/cpu.rb'
+require_relative './lib/game.rb'
 
 class RPS < Sinatra::Base
 
@@ -23,10 +24,17 @@ class RPS < Sinatra::Base
     erb(:game_page)
   end
 
-  post '/battle' do
+  post '/game_page' do
     @game.player1.choice = params[:pick]
-    redirect '/round_over'
+    redirect '/round_complete'
   end
+
+  get '/round_complete' do
+    @game.player2.choose
+    @choice = @game.p1_choice 
+    @cpu_name = @game.p2_name
+    @cpu_choice = @game.p2_choice
+  end	
 
   run! if app_file == $0
 end
