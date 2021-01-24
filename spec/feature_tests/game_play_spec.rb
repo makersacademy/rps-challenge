@@ -30,23 +30,32 @@ feature 'play a game of rock paper scissors' do
   # As a marketeer
   # So that I can play a game of rock paper scissors
   # the game will choose an option
-  scenario 'computer to generate a weapon' do
-    sign_in
-    player_picks_weapon
-    # this finds an element within the .erb file and gives you access to the element's contents
-    message = find(:css, "#computer").text
-    expect(possible_message).to include message
-  end
-
-  # As a marketeer
-  # So that I can play a game of rock paper scissors
-  # the game will choose a random option
-  # scenario 'computer to generate a random weapon' do
+  # scenario 'computer to generate a rock as weapon' do
   #   sign_in
   #   player_picks_weapon
   #   # this finds an element within the .erb file and gives you access to the element's contents
   #   message = find(:css, "#computer").text
   #   expect(possible_message).to include message
+  # end
+
+  # As a marketeer
+  # So that I can play a game of rock paper scissors
+  # the game will choose a random option
+  scenario 'computer to generate a random weapon' do
+    srand(43268)
+    sign_in
+    player_picks_weapon
+    expect(page).to have_content "Computer has picked SCISSORS as it's weapon!"
+  end
+
+  # As a marketeer
+  # So that I can play a game of rock paper scissors
+  # # a winner will be declared
+  # scenario 'declare who has won' do
+  #   srand(43268)
+  #   sign_in
+  #   player_picks_weapon
+  #   expect(page).to have_content "Computer is the winner!"
   # end
 
 

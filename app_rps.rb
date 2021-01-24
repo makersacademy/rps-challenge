@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/turn'
+require './lib/computer'
 
 class Game < Sinatra::Base
   enable :sessions
@@ -24,7 +25,7 @@ class Game < Sinatra::Base
   post '/lets_fight' do
     p params
     session[:player_weapon] = params[:player_weapon]
-    session[:computer_weapon] = :rock
+    session[:computer_weapon] = Computer.new.weapon
     redirect 'lets_fight'
   end
 
