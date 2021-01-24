@@ -1,11 +1,37 @@
-You have chosen <%= @choice %>
-<br>
-The AI has chosen <%= @computer_choice %>
-<br>
-The winner is... <%= @result %>!
-<br>
-<%= @winner %> is the winner
-<br>
-<a href="/play-page">
-  Play again?
-</a>
+<head>
+  <title>Results page</title>
+</head>
+<body>
+  <style>
+    body{
+      position:relative;
+      top: 200px;
+      background: palegoldenrod;
+      text-align: center;
+    }
+  </style>
+  <!-- player's choice -->
+  <div style = "color: red;">
+    You have chosen <%= @choice %>
+  </div>
+  <br>
+  <!-- computer's choice -->
+  <div style = "color: blue;">
+    The AI has chosen <%= @computer_choice %>
+  </div>
+  <br>
+  <!-- winner declared -->
+  <div style = "color: goldenrod; font-weight: bolder; font-size: larger; background: white; ">
+    The winner is... <%= @result %>!
+    <br>
+    <%= @winner %> is the winner
+  </div>
+  <br>
+  <!-- play again link -->
+  <div style = "color: green;">
+    <a href="/play-page">
+      Play again?
+    </a>
+  </div>
+
+</body>
