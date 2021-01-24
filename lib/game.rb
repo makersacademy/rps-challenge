@@ -7,4 +7,19 @@ class Game
     @choice = options["choice"]
     @bot_choice = options["bot_choice"]
   end
+
+  def win?
+    return if @bot_choice.nil?
+    if @choice == @bot_choice
+      "draw"
+    elsif @choice == "Rock" && @bot_choice == "Scissors"
+      "win"
+    elsif @choice == "Scissors" && @bot_choice == "Paper"
+      "win"
+    elsif @choice == "Paper" && @bot_choice == "Rock"
+      "win"
+    else
+      "lose"
+    end
+  end
 end

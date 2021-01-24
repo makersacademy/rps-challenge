@@ -11,3 +11,7 @@ You chose <%= @game.choice %>!
 <div ID="bot">
   Bot chooses <%= @game.bot_choice %>!
 </div>
+
+<% if @game.win? %>
+  You win!
+<% end %>
