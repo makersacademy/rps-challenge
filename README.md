@@ -23,4 +23,12 @@ Solution
 This is a Ruby app using the Sinatra web framework. I used Rspec for testing (TDD), with Capybara for the feature tests.
 In the model, the Game class is in charge of the Players and working out who won. The Player class, and its subclass PlayerBot, have names and choose one of rock, paper or scissors. Playerbots pick randomly while the user chooses for their Player by clicking on an HTML form button.
 
-There's no CSS or styling so it looks quite basic!
+I added a bit of basic CSS to make it look nice.
+
+It looks like this:
+![start page](/public/home_page.png)
+![about to choose](/public/about_to_choose.png)
+![lost the game](/public/results_lost.png)
+![game was a draw](/public/results_draw.png)
+
+
