@@ -3,34 +3,39 @@
 
  Intro
  ---------
+This is the third weekend challenge of the Makers Academy course. This week has been focused on the web, which has been our first introduction to embedding code in HTML.
+The challenge was to build a simple implementation of a Rock Paper Scissors game, as described in [Task](#task) below. I've tried to use an MVC approach.
 
 
  The Code
  -------
+ - The controller of the app is saved in the app.rb file, with views in the views folder written in HTML/erb and the model itself written in ruby.
+ - The ruby model has Game and Player classes
+ - Players have a name and a choice associated with them
+ - The name is set at instantiation but the choice is only set when one of the pick methods is called
+ - Game objects have two player objects passed in at instantiation
+ - To allow for saving user information, a Game object is saved into a class instance variable in the Game class
+ - For the full flow of user/client/server interactions, see [this sequence diagram](docs/diagram.svg)
 
 
 My Approach
  --------
- - Built in ruby, spec written using rspec, and using rubocop for style checking.
- - 
- - I tried to use a TDD approach when coding this challenge.
- - I started off by converting the user stories given into a [domain model](docs/domain_model.md). This was a more thorough domain model than for the airport challenge, having had a workshop on domain modelling in the week. It separates out objects and actions, with properties and methods listed by class. Having a thorough plan definitely helped when it came to writing the code.
- - Then, starting with the first user story, I built features one at a time, ensuring all tests still passed.
- - I tried to ensure I was committing regularly - pretty much after every test was passed.
- - I then would often refactor to follow the SRP as much as possible, meaning there are lots of short methods, but hopefully the result is easy to follow.  
- - I also tried to make sure I wasn't over-engineering, which I think I did last week a bit. I made sure to only create what was in the user stories, rather than overcomplicating things for myself.
+ - Built in ruby and HTML/erb, using sinatra for the hosting, and rspec and capybara for testing.
+ - I tried to use a TDD approach when coding this challenge, and set the app up with an MVC approach.
+ - I started off by converting the user stories given into a [sequence diagram](docs/diagram.svg), which I then used as the basis for a [domain model](docs/domain_model.md).
+ - I wrote a few of the feature tests first, then set about writing unit tests and the ruby, once the routes I had became more complex and started to interact with the model more  
+
 
  New Learnings
  ---------
- - This was the first time I had used environment variables in any actual code. Storing them in a .env file (not committed to Github of course) and then using the Dotenv gem to load them on deployment of the code was relatively painless.
- - I used mocking in a couple of places which took me a while to set up and make sure I was checking the right inputs for it. I feel a little uneasy still with whether some of the tests I've done are completely rigorous but I think they'll do.
- - Using Twilio was a first for me, and indeed it was the first time I've built something in Ruby that interacts with something outside of its own environment. Setting it up was easier than testing it, since Twilio have some good documentation on using it.
+ - This was the first web app I've built without step by step guidance (as in the pairing challenges)
+ - It was also my first use of a class instance variable
 
  Issues Encountered
  --------
- - Drew back from over-engineering the basket - the user stories actually don't look at a way to look at the basket contents for example, only the price of what's in there. This was something I began thinking about how to build before realising I didn't need to.
- - I began fiddling about with calculating the item price for things in an order from the order class, but then realised this should be functionality of the menu, so moved it into there.  
- - Having added `Menu#select_price` to solve the above issue, I realised that `#select_dish` actually wasn't being used, but I decided to leave it in there as it would likely be useful with only very slightly more complex functionality required.
+ - I was a little troubled by the setup, but once I made sure I was using the right version of ruby I got it working
+ - For some time the 'Start playing' button wasn't working on the website, although capybara was able to select it and pass tests. Eventually I realised I hadn't closed the input tag, and once I did that it worked.
+ - Testing that the right result was put to the website was a little tricky, but since there were unit tests for having the correct response to result, I decided to just check that the result was being displayed. There is some coupling there involved in the testing but the other alternatives would have had the same.
 
 
 Instructions
