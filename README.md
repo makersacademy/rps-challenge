@@ -1,5 +1,43 @@
 # RPS Challenge
 
+
+ Intro
+ ---------
+This is the third weekend challenge of the Makers Academy course. This week has been focused on the web, which has been our first introduction to embedding code in HTML.
+The challenge was to build a simple implementation of a Rock Paper Scissors game, as described in [Task](#task) below. I've tried to use an MVC approach.
+
+
+ The Code
+ -------
+ - The controller of the app is saved in the app.rb file, with views in the views folder written in HTML/erb and the model itself written in ruby.
+ - The ruby model has Game and Player classes
+ - Players have a name and a choice associated with them
+ - The name is set at instantiation but the choice is only set when one of the pick methods is called
+ - Game objects have two player objects passed in at instantiation
+ - To allow for saving user information, a Game object is saved into a class instance variable in the Game class
+ - For the full flow of user/client/server interactions, see [this sequence diagram](docs/diagram.svg)
+
+
+My Approach
+ --------
+ - Built in ruby and HTML/erb, using sinatra for the hosting, and rspec and capybara for testing.
+ - I tried to use a TDD approach when coding this challenge, and set the app up with an MVC approach.
+ - I started off by converting the user stories given into a [sequence diagram](docs/diagram.svg), which I then used as the basis for a [domain model](docs/domain_model.md).
+ - I wrote a few of the feature tests first, then set about writing unit tests and the ruby, once the routes I had became more complex and started to interact with the model more  
+
+
+ New Learnings
+ ---------
+ - This was the first web app I've built without step by step guidance (as in the pairing challenges)
+ - It was also my first use of a class instance variable
+
+ Issues Encountered
+ --------
+ - I was a little troubled by the setup, but once I made sure I was using the right version of ruby I got it working
+ - For some time the 'Start playing' button wasn't working on the website, although capybara was able to select it and pass tests. Eventually I realised I hadn't closed the input tag, and once I did that it worked.
+ - Testing that the right result was put to the website was a little tricky, but since there were unit tests for having the correct response to result, I decided to just check that the result was being displayed. There is some coupling there involved in the testing but the other alternatives would have had the same.
+
+
 Instructions
 -------
 
