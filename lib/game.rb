@@ -17,7 +17,7 @@ class Game
 
   def win_lose_draw
     if player.choice == "Rock" && opponent.choice == "Scissors"
-      @winner = @player.name
+      @winner = :player
     elsif player.choice == "Rock" && opponent.choice == "Paper"
       @winner = "Computer"
     elsif player.choice == "Rock" && opponent.choice == "Rock"
@@ -25,7 +25,7 @@ class Game
     elsif player.choice == "Scissors" && opponent.choice == "Scissors"
       @winner = "Draw"
     elsif player.choice == "Scissors" && opponent.choice == "Paper"
-      @winner = @player.name
+      @winner = :player
     elsif player.choice == "Scissors" && opponent.choice == "Rock"
       @winner = "Computer"
     elsif player.choice == "Paper" && opponent.choice == "Scissors"
@@ -33,7 +33,7 @@ class Game
     elsif player.choice == "Paper" && opponent.choice == "Paper"
       @winner = "Draw"
     elsif player.choice == "Paper" && opponent.choice == "Rock"
-      @winner = @player.name
+      @winner = :player
     end
   end
 

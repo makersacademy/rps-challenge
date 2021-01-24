@@ -3,7 +3,7 @@
 
 
 
-<% if @game.winner == @game.player.name %>
+<% if @game.winner == :player %>
   <%= @game.player.name %> won!
 <% elsif @game.winner == "Computer" %>
   Computer won!
