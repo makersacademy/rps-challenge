@@ -15,8 +15,7 @@ class Game
 
   def result
     return "It's a draw!" if draw?
-    p winner
-    "#{winner.name} wins!"
+    "#{winner_name} wins!"
   end
 
   private
@@ -25,9 +24,9 @@ class Game
     @player_1.choice == @player_2.choice
   end
 
-  def winner
-    return @player_1 if player_1_wins?
-    @player_2
+  def winner_name
+    return @player_1.name if player_1_wins?
+    @player_2.name 
   end
 
   def player_1_wins?
