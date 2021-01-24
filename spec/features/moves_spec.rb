@@ -1,7 +1,7 @@
 feature 'Player moves' do 
   scenario 'player should have option of rock' do 
     sign_in_and_play
-    expect(page).to have_content "Rock"
+    expect(page).to have_content "Rock" 
   end
 end
 
@@ -17,6 +17,7 @@ feature 'Player moves' do
     sign_in_and_play
     expect(page).to have_content "Scissors"
   end
+end
 
   feature 'Player move' do 
     scenario 'confirm player move' do 
@@ -25,5 +26,3 @@ feature 'Player moves' do
       expect(page).to have_content "P1 played Paper"
     end
   end
-
-end
