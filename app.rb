@@ -3,18 +3,19 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/play'
 require './lib/player'
 
-# The Program class is the main game class.
-class Program < Sinatra::Base
+# The Game class is the main game class.
+class Game < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
 
   get '/' do
-    erb(:index)
+    erb(:homepage)
   end
 
-  get '/game' do
+  get '/play' do
   end
 end
