@@ -1,4 +1,7 @@
 feature 'Choose' do
+
+  TEST_SEED_SCISSORS = 12
+
   scenario 'show all 3 options being rock, paper and scissors' do
     sign_in_and_play
     expect(page).to have_button "Rock"
@@ -12,7 +15,6 @@ feature 'Choose' do
     expect(page).to have_content "You chose Rock!"
   end
 
-  TEST_SEED_SCISSORS = 12
   scenario 'the bot chooses Paper' do
     sign_in_and_play
     click_button("Paper")
@@ -26,5 +28,12 @@ feature 'Choose' do
     srand(TEST_SEED_SCISSORS)
     click_button("Rock")
     expect(page).to have_content "Bot chooses Scissors!"
+  end
+
+  scenario 'the user wins' do
+    sign_in_and_play
+    srand(TEST_SEED_SCISSORS)
+    click_button("Rock")
+    expect(page).to have_content "You win!"
   end
 end
