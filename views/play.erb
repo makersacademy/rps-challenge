@@ -14,4 +14,8 @@ You chose <%= @game.choice %>!
 
 <% if @game.win? %>
   You win!
+<% elsif @game.win? == false %>
+  You lose!
+<% elsif @game.win? == nil %>
+  You draw!
 <% end %>

@@ -11,15 +11,15 @@ class Game
   def win?
     return if @bot_choice.nil?
     if @choice == @bot_choice
-      "draw"
+      nil
     elsif @choice == "Rock" && @bot_choice == "Scissors"
-      "win"
+      true
     elsif @choice == "Scissors" && @bot_choice == "Paper"
-      "win"
+      true
     elsif @choice == "Paper" && @bot_choice == "Rock"
-      "win"
+      true
     else
-      "lose"
+      false
     end
   end
 end

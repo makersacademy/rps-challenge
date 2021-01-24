@@ -30,10 +30,27 @@ feature 'Choose' do
     expect(page).to have_content "Bot chooses Scissors!"
   end
 
-  scenario 'the user wins' do
-    sign_in_and_play
-    srand(TEST_SEED_SCISSORS)
-    click_button("Rock")
-    expect(page).to have_content "You win!"
+  context "game ends" do
+    before do
+      srand(TEST_SEED_SCISSORS)
+    end
+
+    scenario 'the user wins' do
+      sign_in_and_play
+      click_button("Rock")
+      expect(page).to have_content "You win!"
+    end
+
+    scenario 'the user loses' do
+      sign_in_and_play
+      click_button("Paper")
+      expect(page).to have_content "You lose!"
+    end
+
+    scenario 'the user draws' do
+      sign_in_and_play
+      click_button("Scissors")
+      expect(page).to have_content "You draw!"
+    end
   end
 end
