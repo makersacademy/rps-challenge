@@ -26,11 +26,11 @@ class RPS < Sinatra::Base
 
   post '/game_page' do
     @game.player1.choice = params[:pick]
+    @game.player2.choose
     redirect '/round_complete'
   end
 
   get '/round_complete' do
-    @game.player2.choose
     @choice = @game.p1_choice 
     @cpu_name = @game.p2_name
     @cpu_choice = @game.p2_choice

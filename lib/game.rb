@@ -42,4 +42,17 @@ class Game
     @player2.choice
   end
 
+  def who_wins
+    rule_grid = [
+      [nil, @player1, @player2],
+      [@player2, nil, @player1],
+      [@player1, @player2, nil]]
+    locate = { 'ROCK' => 0, 'PAPER' => 1, 'SCISSORS' => 2 }
+    rule_grid[locate[p2_choice]][locate[p1_choice]]
+  end
+
+  def win_point
+    who_wins.win if who_wins
+  end
+
 end
