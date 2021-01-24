@@ -9,7 +9,7 @@ feature 'Choose' do
 
   scenario 'the bot chooses a random option' do
     sign_in_and_play
-    srand(12)
+    srand(13)
     click_button("Rock")
     expect(page).to have_content "Bot chooses Scissors!"
   end
