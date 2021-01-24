@@ -6,29 +6,29 @@ require_relative './lib/computer'
 class RPS < Sinatra::Base
   enable :sessions
   set :session_secret, 'super secret'
+  before do
+    @player = Player.instance
+  end
 
   get '/' do
     erb(:index)
   end
 
   post '/names' do
-    $player = Player.new(params['player_1_name'])
+    @player = Player.create(params['player_1_name'])
     redirect '/play'
   end
 
   get '/play' do
-    @player = $player
     erb(:play)
   end
 
   post '/move' do
-    @player = $player
     @player.move(params[:hand])
     redirect '/result'
   end
 
   get '/result' do
-    @player = $player
     @game = Game.new
     @game.winner(@player.moved)
     erb(:result)

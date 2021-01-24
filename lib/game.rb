@@ -5,9 +5,9 @@ class Game
     @computer = Computer.new
     if player.to_sym == @computer.moved
     elsif SET[player.to_sym] == @computer.moved
-      self.champion = 'player'
+      @champion = 'player'
     else
-      self.champion = 'computer'
+      @champion = 'computer'
     end
   end
 
