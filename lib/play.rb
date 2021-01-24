@@ -14,9 +14,9 @@ class Play
 
   def set_play_mode
     if @player_2.name.empty?
-      @mode = @mode + "_solo"
+      @mode = @mode += "_solo"
     else
-      @mode = @mode + "_duo"
+      @mode = @mode += "_duo"
     end
   end
 

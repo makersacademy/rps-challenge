@@ -6,7 +6,7 @@ end
 
 def play_expanded
   visit('/')
-  choose ('Expanded')
+  choose 'Expanded'
 end
 
 def play_solo
