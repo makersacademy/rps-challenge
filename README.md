@@ -38,7 +38,8 @@ Hints on functionality
 2. Create ```Player``` class with attributes ```@name``` and ```@choice```
 3. Create ```Game``` class which reviews choice and calculates winner
 4. Create ```Opponent``` class to compete with ```Player```
-4. Added multiplayer functionality?...
+5. Made it look a little nicer with some inline HTML styling
+6. Thought about adding multiplayer functionality...Could allow player 2 to default to  opponent if a second player didn't enter. Couldn't work out how each player wouldn't see each others turn. 
 
 #### Results Table
 | Player 1 | Opponent | Winner |

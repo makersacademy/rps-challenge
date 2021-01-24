@@ -1,14 +1,24 @@
-<h1> <%= @game.player.name %> chose <%= @game.player.choice %> </h1>
-<h1> Computer chose  <%= @game.opponent.choice %> </h1>
+<head>
+<h1 style="background-color:black;color:white;"> Makers Academy Marketing Array Game Suite </h1>
+</head>
+<!-- <style>
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+</style> -->
+<body style="background-color:white;color:black;text-align:center;font-family:verdana"">
+<h2>Welcome to Rock, Paper, Scissors!</h2>
 
-
+<h2> <%= @game.player.name %> chose <%= @game.player.choice %> </h2>
+<h2> Computer chose  <%= @game.opponent.choice %> </h2>
 
 <% if @game.winner == :player %>
-  <%= @game.player.name %> won!
-<% elsif @game.winner == "Computer" %>
-  Computer won!
-<% else @game.winner == "Draw" %>
-  It was a Draw!
+  <h2><%= @game.player.name %> won!</h2>
+<% elsif @game.winner == :opponent %>
+  <h2>Computer won!</h2>
+<% else @game.winner == :draw %>
+  <h2>It was a Draw!</h2>
 <% end %>
 
 <!-- <a href='/play'>
