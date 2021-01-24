@@ -23,6 +23,7 @@ class Rps < Sinatra::Base
 
   post '/turn' do
     @game.choice = params[:choice]
+    @game.choose_opponents_choice
     erb(:turn)
   end
 
