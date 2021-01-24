@@ -2,14 +2,14 @@ require 'player'
 
 describe Player do
 
-  subject { described_class.new(player_name) }
+  subject { described_class.new(player_1_name) }
   let(:rock) { "Rock" }
   let(:paper) { "Paper" }
   let(:scissors) { "Scissors" }
 
   describe '#name' do
     it 'returns name player was created with' do
-      expect(subject.name).to eq player_name
+      expect(subject.name).to eq player_1_name
     end
   end
 

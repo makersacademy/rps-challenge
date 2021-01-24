@@ -2,8 +2,7 @@ require 'game'
 
 describe Game do
 
-  let(:player_2_name) { "Computer" }
-  let(:player_1) { Player.new(player_name) }
+  let(:player_1) { Player.new(player_1_name) }
   let(:player_2) { Player.new(player_2_name) }
   subject(:game) { described_class.new(player_1, player_2) }
   let(:rock) { "Rock" }
@@ -34,7 +33,7 @@ describe Game do
         it 'returns win for player who played rock' do
           allow(player_2).to receive(:choice).and_return scissors
           game.play(rock)
-          expect(subject).to eq "#{player_name} wins!"
+          expect(subject).to eq "#{player_1_name} wins!"
         end
       end
       context 'when other player chooses paper' do
