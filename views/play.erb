@@ -1,3 +1,28 @@
+<head>
+<style>
+body { 
+  max-height: 100vh;
+  overflow: hidden;
+    height: 100vh;
+    background-color: #BBDBB4 ;
+    font-family: Helvetica;
+    text-align: center;
+    margin: 80px auto auto auto;
+}
+img {
+    height: 60%; 
+}
+input[type=text] {
+    width: 20%;
+    padding: 16px;
+}
+input[type=submit] {
+    padding: 16px;
+    font-family: Helvetica;
+    font-weight: 600;
+}
+</style>
+
 <h1> <%= @player_1_name %> choose your weapon </h1>
 
 <form action='/game' method='get'>
@@ -5,3 +30,5 @@
   <input type="submit" name='weapon' value='paper'>
   <input type="submit" name='weapon' value='scissors'>
 </form>
+
+<img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/2ed49b21233643.562fdc0d34f0f.png">

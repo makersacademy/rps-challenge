@@ -1,3 +1,35 @@
+<head>
+<style>
+body { 
+    max-height: 100vh;
+    overflow: hidden;
+    background-color: #BBDBB4 ;
+    font-family: Helvetica;
+    text-align: center;
+    margin: 80px auto auto auto;
+}
+img {
+    height: 60%; 
+}
+input[type=text] {
+    width: 20%;
+    padding: 16px;
+}
+input[type=text] :focus{
+    width: 20%;
+    padding: 16px;
+    border:none ; 
+}
+input[type=submit] {
+    padding: 16px;
+    font-family: Helvetica;
+    font-weight: 600;
+}
+
+</style>
+
+
+
 <h1> You chose <%= @player_weapon %>
 <h1> Computer chose  <%= @computer_weapon %> </h1>
 <h1> You <%= @result %>! </h1>
@@ -5,3 +37,5 @@
 <form method='get' action='/play'>
     <input type='submit' value='Play again?'>
 </form>
+
+<img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b680a062246147.5a8a773c6932d.gif">
