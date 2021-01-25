@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/base'
 require './lib/game'
+require './lib/turn'
 
 class Rps < Sinatra::Base
 
@@ -22,8 +23,7 @@ class Rps < Sinatra::Base
   end
 
   post '/turn' do
-    @game.choice = params[:choice]
-    @game.choose_opponents_choice
+    @turn = Turn.new(params[:choice])
     erb(:turn)
   end
 
