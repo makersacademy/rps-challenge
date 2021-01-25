@@ -18,11 +18,3 @@ feature 'Player moves' do
     expect(page).to have_content "Scissors"
   end
 end
-
-  feature 'Player move' do 
-    scenario 'confirm player move' do 
-      sign_in_and_play
-      click_button 'Paper'
-      expect(page).to have_content "P1 played Paper"
-    end
-  end
