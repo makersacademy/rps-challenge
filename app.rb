@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative './lib/game.rb'
+require './lib/game.rb'
 
 class RPS < Sinatra::Base
 

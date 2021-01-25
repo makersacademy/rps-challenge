@@ -1,5 +1,5 @@
-require_relative 'player'
-require_relative 'cpu'
+require_relative 'player.rb'
+require_relative 'cpu.rb'
 
 class Game
 
