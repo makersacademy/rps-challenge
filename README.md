@@ -1,13 +1,13 @@
 # RPS Challenge
 
-Complete me please.
+A basic web-based Rock, Paper, Scissors game.
 
 ## Installation
 
 Use the Ruby package manager [Bundler](https://bundler.io/) to setup your environment after cloning the repository.
 
 ```bash
-git clone git@github.com:Mornevanzyl/Oystercard.git
+git clone git@github.com:Mornevanzyl/rps-challenge.git
 
 gem install bundle
 
@@ -17,7 +17,7 @@ bundle
 ## Usage
 
 ```ruby
-require './lib/oystercard'
+# t.b.a
 
 
 ```

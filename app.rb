@@ -17,6 +17,13 @@ class RPS < Sinatra::Base
         erb(:game)
     end
 
+    get '/game' do
+        # session[:player1] = Player.new(params[:player1])
+        # session[:player2] = Player.new()
+        @player1 = session[:player1]
+        erb(:game)
+    end
+
     post '/result' do
         session[:game] = Game.new(session[:player1], session[:player2])
         session[:game].play(params[:choice])
