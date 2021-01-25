@@ -5,12 +5,11 @@ feature 'playing a game of RPS' do
   let(:go) { Go.new(sessions) }
   let(:sessions) { { name: "Sean", move: :rock, computer_move: :rock } }
 
-
   scenario 'be able to see the move options' do
-      sign_in_and_play
-      expect(page).to have_button("Rock")
-      expect(page).to have_button("Paper")
-      expect(page).to have_button("Scissors")
+    sign_in_and_play
+    expect(page).to have_button("Rock")
+    expect(page).to have_button("Paper")
+    expect(page).to have_button("Scissors")
   end
 
   scenario 'choose a move to play' do

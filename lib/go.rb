@@ -25,6 +25,4 @@ class Go
     return true if @move == "Scissors" && @computer_move == :paper
     return true if @move == "Rock" && @computer_move == :scissors
   end
-
-
 end

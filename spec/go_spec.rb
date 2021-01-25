@@ -45,7 +45,5 @@ describe Go do
         expect(go.lose?).to eq true
       end
     end
-
-
   end
 end

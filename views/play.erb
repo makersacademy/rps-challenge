@@ -6,16 +6,20 @@
   <input type="submit" name="move" value="Scissors">
 </form>
 
-<%= @go.name %> you selected <%= @go.move %>!
+<p>
+  <%= @go.name %> you selected <%= @go.move %>!
+</p>
 
-<div>
+<p>
   The computer selected <%= @go.computer_move.to_s.capitalize %>!
-</div>
+</p>
 
-<% if @go.win? %>
-  <%= @go.name %> you WON!!! :D
-<% elsif @go.draw? %>
-  <%= @go.name %> you Drew! :|
-<% elsif @go.lose? %>
-  <%= @go.name %> you Lost! :(
-<% end %>
+<h2>
+  <% if @go.win? %>
+    <%= @go.name %> you WON!!! :D
+  <% elsif @go.draw? %>
+    <%= @go.name %> you Drew! :|
+  <% elsif @go.lose? %>
+    <%= @go.name %> you Lost! :(
+  <% end %>
+</h2>
