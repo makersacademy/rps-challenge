@@ -24,4 +24,9 @@ describe RandomPlayer do
     expect(array).not_to include('lizard', 'spock')
   end
 
+  it 'returns lizard' do
+    srand(5)
+    expect(return_extended).to eq 'lizard'
+  end
+
 end

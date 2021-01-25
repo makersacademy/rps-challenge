@@ -5,4 +5,8 @@ module RandomPlayer
     MOVES[rand(0..2)]
   end
 
+  def return_extended
+    MOVES.sample
+  end
+
 end
