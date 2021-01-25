@@ -1,0 +1,8 @@
+<%= @player.name %> chose <%= @player.moved.capitalize %></br>
+Computer chose <%= @game.computer.moved.capitalize%>
+
+<% if @game.champion %>
+  <h1><%= @game.champion.capitalize %> has won!</h1>
+<% else %>
+<h1> It's a draw! </h1>
+<% end %>
