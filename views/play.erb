@@ -1,0 +1,13 @@
+<%= @name %>
+
+<form action="/play" method="post">
+  <input type="submit" name="option" value="Rock">
+  <input type="submit" name="option" value="Paper">
+  <input type="submit" name="option" value="Scissor">
+</form>
+
+You have selected <%= @option %>
+
+<div id="computer">
+  Computer has selected <%= @computer_option %>
+</div>
