@@ -10,6 +10,11 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
+ENV['RACK_ENV'] = 'test'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require 'sinatra'
+
+Capybara.app = Rps
 
 RSpec.configure do |config|
   config.after(:suite) do

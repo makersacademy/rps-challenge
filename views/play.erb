@@ -1,0 +1,13 @@
+<h1>Hi <%=@game.player_name%>!</h1>
+
+<h2>Please choose your move:</h2>
+
+<form action ='/turn' method='post'>
+  <input type="radio" id="rock" name="choice" value="rock">
+  <label for="rock">Rock</label><br>
+  <input type="radio" id="paper" name="choice" value="paper">
+  <label for="paper">Paper</label><br>
+  <input type="radio" id="scissors" name="choice" value="scissors">
+  <label for="scissors">Scissors</label>
+  <input type='submit' value='Submit'>
+</form>
