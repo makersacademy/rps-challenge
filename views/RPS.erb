@@ -1,11 +1,13 @@
 Hi <%= @name %>! Enter your move:
-
-<form action='/rock' method='post'>
-  <button type=submit>Rock!</button>
+<br>
+<form action='/rock' method='get'>
+  <button type=submit name='rock' >Rock!</button>
 </from>
-<form action='/paper' method='post'>
-  <button type=submit>Paper!</button>
+<br>
+<form action='/paper' method='get'>
+  <button type=submit name='paper' >Paper!</button>
 </from>
-<form action='/sissors' method='post'>
-  <button type=submit>Sissors!</button>
+<br>
+<form action='/sissors' method='get'>
+  <button type=submit name='sissors' >Sissors!</button>
 </from>
