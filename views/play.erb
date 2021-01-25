@@ -1,0 +1,25 @@
+<h1> Hello, <%= @go.name %> </h1>
+
+<form action="/play" method="POST">
+  <input type="submit" name="move" value="Rock">
+  <input type="submit" name="move" value="Paper">
+  <input type="submit" name="move" value="Scissors">
+</form>
+
+<p>
+  <%= @go.name %> you selected <%= @go.move %>!
+</p>
+
+<p>
+  The computer selected <%= @go.computer_move.to_s.capitalize %>!
+</p>
+
+<h2>
+  <% if @go.win? %>
+    <%= @go.name %> you WON!!! :D
+  <% elsif @go.draw? %>
+    <%= @go.name %> you Drew! :|
+  <% elsif @go.lose? %>
+    <%= @go.name %> you Lost! :(
+  <% end %>
+</h2>
