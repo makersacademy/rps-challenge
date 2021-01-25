@@ -2,8 +2,10 @@ require_relative "player"
 
 class PlayerBot < Player
 
+  WEAPONS = ["rock", "paper", "scissors"]
+
   def random_choice
-    ["rock", "paper", "scissors"].sample
+    WEAPONS.sample
   end
 
   def make_choice

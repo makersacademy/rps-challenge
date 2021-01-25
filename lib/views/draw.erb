@@ -5,9 +5,9 @@
 
 <body>
 
-<%= @game.players[0].name %> chose <%= @game.results[:player1] %> - <%= @game.players[1].name %> chose <%= @game.results[:player2] %>!
+<%= @game.players[0].name %> chose <%= @game.results[:player1] %> but <%= @game.players[1].name %> also chose <%= @game.results[:player2] %>!
 <br>
-<strong><%= @game.winner.name %> is the winner</strong>!
+<strong>It was a draw</strong>.
 
 <br>
 <br>
