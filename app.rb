@@ -31,8 +31,7 @@ class Game < Sinatra::Base
   get '/players' do
     if session[:game].player_2.name.empty?
       redirect '/solo'
-    elsif
-      redirect '/duo_move_1'
+    elsif redirect '/duo_move_1'
     end
   end
 

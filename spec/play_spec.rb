@@ -11,22 +11,22 @@ describe Play do
   describe '#initialize' do
     it 'with normal mode and one player' do
       subject = Play.new(normal, alfred, none)
-      expect(subject.mode).to eq 'normal_solo'
+      expect(subject.mode).to eq 'normal'
     end
 
     it 'with expanded mode and one player' do
       subject = Play.new(expanded, alfred, none)
-      expect(subject.mode).to eq 'expanded_solo'
+      expect(subject.mode).to eq 'expanded'
     end
 
     it 'with normal mode and one player' do
       subject = Play.new(normal, alfred, bruce)
-      expect(subject.mode).to eq 'normal_duo'
+      expect(subject.mode).to eq 'normal'
     end
 
     it 'with expanded mode and one player' do
       subject = Play.new(expanded, alfred, bruce)
-      expect(subject.mode).to eq 'expanded_duo'
+      expect(subject.mode).to eq 'expanded'
     end
   end
 end

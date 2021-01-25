@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-@winmap = {
+WINMAP = {
   'rock' => ['scissors', 'lizard'],
   'paper' => ['rock', 'spock'],
   'scissors' => ['paper', 'lizard'],
@@ -11,7 +11,7 @@
 def outcome(player_1_move, player_2_move)
   if player_1_move == player_2_move
     "Draw!"
-  elsif @winmap.fetch(player_1_move).include? player_2_move
+  elsif WINMAP.fetch(player_1_move).include? player_2_move
     "Player One Wins!"
   else
     "Player Two Wins!"
