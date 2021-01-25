@@ -1,32 +1,29 @@
-require_relative 'player'
-require_relative 'computer'
-
 class Game 
 
-  attr_reader :player
-   RULES = { scissors: :paper,
-                    paper: :rock,
-                    rock: :scissors }
+  attr_reader :name, :move, :computer_move
 
-  WEAPONS = [:rock, :paper, :scissors]
-
-  def initialize(player)
-    @player = player
-    @computer = Computer.new.move
+  def initialize(sessions)
+    @name = sessions[:name]
+    @computer_move = sessions[:computer_move]
+    @move = sessions[:move]
   end
 
-#need to have user enter a move, feed that move to the model
-#need to have a fake player 2 to give a countermove
-#need to have one of the moves beat the other move
-#need to feed that output to the views and controller
-def result
-  if @player == @computer  
-    "It's a draw!"
-  elsif RULES[@player] == @computer
-    "Congratulations, you win!"
-  else 
-    "Sorry, you lost! Better luck next time."
-end
+  def win?
+    true if @move == "paper" && @computer_move == :rock
+    true if @move == "scissors" && @computer_move == :paper
+    true if @move == "rock" && @computer_move == :scissors
+  end
 
+  def lose?
+    true if @move == "scissors" && @computer_move == :rock
+    true if @move == "rock" && @computer_move == :paper
+    true if @move == "paper" && @computer_move == :scissors
+  end
+
+  def draw?
+    true if @computer_move == :rock && @move == "rock"
+    true if @computer_move == :scissors && @move == "scissors"
+    true ifi @computer_move == :paper && @move == "paper"
+  end
 
 end

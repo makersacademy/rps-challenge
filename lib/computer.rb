@@ -1,9 +1,11 @@
-require_relative 'game'
-
 class Computer 
 
-  def move
-    Game::WEAPONS.sample
+  attr_reader :move
+  
+  WEAPONS = [:rock, :paper, :scissors]
+  
+  def initialize
+    @move = WEAPONS.sample
   end
   
 end
