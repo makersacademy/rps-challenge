@@ -24,11 +24,20 @@ Users can participate in solo battles against the computer, which randomly gener
 
 Beyond providing many hours of entertainment, Super Rock Paper Scissors Turbo Alpha: Ultimate Grudge Match can be used as a conflict-mitigation tool to resolve disputes or help users to make difficult choices.
 
+Coming soon - two player mode!
+
 <h3>How to play</h3>
 
 In terminal enter:
 
 ```
+bundle install
+
+```
+Once installation is complete enter:
+
+```
+
 rackup -p 4567
 
 ```

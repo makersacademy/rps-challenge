@@ -17,7 +17,7 @@ describe "Game" do
   describe "enemy" do
 
     it "chooses an opponent randomly" do
-      opponent_test =[]
+      opponent_test = []
       100.times do
         opponent_test.push(rock.enemy)
       end
@@ -30,57 +30,57 @@ describe "Game" do
   describe "play" do
 
     it "plays a game and responds with victory conditions for Rock v Paper" do
-       allow(rock).to receive(:enemy) { 'Paper' }
-       rock.play
-       expect(rock.result).to eq("Paper covers Rock. You lose!")
+      allow(rock).to receive(:enemy) { 'Paper' }
+      rock.play
+      expect(rock.result).to eq("Paper covers Rock. You lose!")
     end
 
     it "plays a game and responds with victory conditions for Rock v Scissors" do
-       allow(rock).to receive(:enemy) { 'Scissors' }
-       rock.play
-       expect(rock.result).to eq("Rock blunts Scissors. You win!")
+      allow(rock).to receive(:enemy) { 'Scissors' }
+      rock.play
+      expect(rock.result).to eq("Rock blunts Scissors. You win!")
     end
 
     it "plays a game and responds with victory conditions for Rock v Rock" do
-       allow(rock).to receive(:enemy) { 'Rock' }
-       rock.play
-       expect(rock.result).to eq("It's a draw")
+      allow(rock).to receive(:enemy) { 'Rock' }
+      rock.play
+      expect(rock.result).to eq("It's a draw")
     end
 
     it "plays a game and responds with victory conditions for Paper v Scissors" do
-       allow(paper).to receive(:enemy) { 'Scissors' }
-       paper.play
-       expect(paper.result).to eq("Scissors cuts Paper. You lose!")
+      allow(paper).to receive(:enemy) { 'Scissors' }
+      paper.play
+      expect(paper.result).to eq("Scissors cuts Paper. You lose!")
     end
 
     it "plays a game and responds with victory conditions for Paper v Rock" do
-       allow(paper).to receive(:enemy) { 'Rock' }
-       paper.play
-       expect(paper.result).to eq("Paper covers Rock. You win!")
+      allow(paper).to receive(:enemy) { 'Rock' }
+      paper.play
+      expect(paper.result).to eq("Paper covers Rock. You win!")
     end
 
     it "plays a game and responds with victory conditions for Paper v Paper" do
-       allow(paper).to receive(:enemy) { 'Paper' }
-       paper.play
-       expect(paper.result).to eq("It's a draw")
+      allow(paper).to receive(:enemy) { 'Paper' }
+      paper.play
+      expect(paper.result).to eq("It's a draw")
     end
 
     it "plays a game and responds with victory conditions for Scissors v Rock" do
-       allow(scissors).to receive(:enemy) { 'Rock' }
-       scissors.play
-       expect(scissors.result).to eq("Rock blunts Scissors. You lose!")
+      allow(scissors).to receive(:enemy) { 'Rock' }
+      scissors.play
+      expect(scissors.result).to eq("Rock blunts Scissors. You lose!")
     end
 
     it "plays a game and responds with victory conditions for Scissors v Paper" do
-       allow(scissors).to receive(:enemy) { 'Paper' }
-       scissors.play
-       expect(scissors.result).to eq("Scissors cuts Paper. You win!")
+      allow(scissors).to receive(:enemy) { 'Paper' }
+      scissors.play
+      expect(scissors.result).to eq("Scissors cuts Paper. You win!")
     end
 
     it "plays a game and responds with victory conditions for Scissors v Scissors" do
-       allow(scissors).to receive(:enemy) { 'Scissors' }
-       scissors.play
-       expect(scissors.result).to eq("It's a draw")
+      allow(scissors).to receive(:enemy) { 'Scissors' }
+      scissors.play
+      expect(scissors.result).to eq("It's a draw")
     end
 
   end

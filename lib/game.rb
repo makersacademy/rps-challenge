@@ -40,39 +40,39 @@ class Game
     end
   end
 
-    def rock_game
-      p @opponent
-      if @opponent == "Scissors"
-        @result =  "Rock blunts Scissors. You win!"
-      elsif @opponent == "Paper"
-        @result = "Paper covers Rock. You lose!"
-      else
-        draw
-      end
+  def rock_game
+    p @opponent
+    if @opponent == "Scissors"
+      @result =  "Rock blunts Scissors. You win!"
+    elsif @opponent == "Paper"
+      @result = "Paper covers Rock. You lose!"
+    else
+      draw
     end
+  end
 
-    def paper_game
-      if @opponent == "Rock"
-        @result =  "Paper covers Rock. You win!"
-      elsif @opponent == "Scissors"
-        @result = "Scissors cuts Paper. You lose!"
-      else
-        draw
-      end
+  def paper_game
+    if @opponent == "Rock"
+      @result =  "Paper covers Rock. You win!"
+    elsif @opponent == "Scissors"
+      @result = "Scissors cuts Paper. You lose!"
+    else
+      draw
     end
+  end
 
-    def scissors_game
-      if @opponent == "Paper"
-        @result =  "Scissors cuts Paper. You win!"
-      elsif @opponent == "Rock"
-        @result = "Rock blunts Scissors. You lose!"
-      else
-        draw
-      end
+  def scissors_game
+    if @opponent == "Paper"
+      @result =  "Scissors cuts Paper. You win!"
+    elsif @opponent == "Rock"
+      @result = "Rock blunts Scissors. You lose!"
+    else
+      draw
     end
+  end
 
-    def draw
-      @result = "It's a draw"
-    end
+  def draw
+    @result = "It's a draw"
+  end
 
 end

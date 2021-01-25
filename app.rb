@@ -7,7 +7,6 @@ class RockPaperScissors < Sinatra::Base
 
   attr_reader :game
 
-
   get '/' do
     erb(:index)
   end
