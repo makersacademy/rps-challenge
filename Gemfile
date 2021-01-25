@@ -1,6 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
+
+group :web do
+  gem 'selenium-webdriver'
+  gem 'shotgun'
+  gem 'sinatra'
+  gem 'sinatra-contrib'
+  gem 'webrick'
+end
 
 group :test do
   gem 'capybara'
