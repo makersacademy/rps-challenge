@@ -2,7 +2,7 @@
   <div><%= session[:game].player_1.name %> vs. Computer</div>
   <div><%= session[:game].player_1.name %>, choose your move!</div>
 
-  <form action ='/move' method = 'post'>
+  <form action ='/solo_move' method = 'post'>
     <div>
       <input type='radio' id='rock' name='move' value='rock' checked='checked'>
       <label for='rock'>Rock</label><br>

@@ -20,45 +20,66 @@ class Game < Sinatra::Base
     erb(:homepage)
   end
 
-  post '/names' do
+  post '/mode' do
     player_1 = Player.new(params[:player_1_name])
     player_2 = Player.new(params[:player_2_name])
     session[:game] = Play.new(params[:mode], player_1, player_2)
-    redirect '/game'
+    p session[:game]
+    redirect '/players'
   end
 
-  get '/game' do
-    case session[:game].mode
-      when 'normal_solo'
-        erb :normal_solo
-      when 'expanded_solo'
-        erb :expanded_solo
-      when 'normal_duo'
-        erb :normal_duo
-      when 'expanded_duo'
-        erb :expanded_duo
+  get '/players' do
+    if session[:game].player_2.name.empty?
+      redirect '/solo'
+    elsif
+      redirect '/duo_move_1'
     end
   end
 
-  post '/move' do
-    case session[:game].mode
-      when 'normal_solo'
-        session[:first_move] = params[:move]
-        session[:second_move] = bot_move('normal')
-      when 'expanded_solo'
-        session[:first_move] = params[:move]
-        session[:second_move] = bot_move('expanded')
-      when 'normal_duo'
-        erb :normal_duo
-      when 'expanded_duo'
-        erb :expanded_duo
+  get '/solo' do
+    if session[:game].mode == 'normal'
+      session[:player_2_move] = bot_move('normal')
+      erb :normal_solo
+    else
+      session[:player_2_move] = bot_move('expanded')
+      erb :expanded_solo
     end
+  end
 
+  post '/solo_move' do
+    session[:player_1_move] = params[:move]
+    redirect '/outcome'
+  end
+
+  get '/duo_move_1' do
+    if session[:game].mode == 'normal'
+      erb :normal_duo_1
+    else
+      erb :expanded_duo_1
+    end
+  end
+
+  post '/duo_move_1' do
+    session[:player_1_move] = params[:move]
+    redirect '/duo_move_2'
+  end
+
+  get '/duo_move_2' do
+    if session[:game].mode == 'normal'
+      erb :normal_duo_2
+    else
+      erb :expanded_duo_2
+    end
+  end
+
+  post '/duo_outcome' do
+    session[:player_2_move] = params[:move]
     redirect '/outcome'
   end
 
   get '/outcome' do
-
+    session[:outcome] = outcome(session[:player_1_move], session[:player_2_move])
+    erb :outcome
   end
 
 end

@@ -8,12 +8,12 @@
   'spock' => ['scissors', 'rock']
 }
 
-def compare(player_1_move, player_2_move)
+def outcome(player_1_move, player_2_move)
   if player_1_move == player_2_move
     "Draw!"
   elsif @winmap.fetch(player_1_move).include? player_2_move
-    "Win!"
+    "Player One Wins!"
   else
-    "Loss!"
+    "Player Two Wins!"
   end
 end
