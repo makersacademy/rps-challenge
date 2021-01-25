@@ -1,0 +1,21 @@
+<%= @game.name %> vs. Bot
+
+<form method="post" action="/play">
+  <input type="submit" name="choice" value="Rock" />
+  <input type="submit" name="choice" value="Paper" />
+  <input type="submit" name="choice" value="Scissors" />
+</form>
+
+You chose <%= @game.choice %>!
+
+<div ID="bot">
+  Bot chooses <%= @game.bot_choice %>!
+</div>
+
+<% if @game.win? %>
+  You win!
+<% elsif @game.win? == false %>
+  You lose!
+<% elsif @game.win? == nil %>
+  You draw!
+<% end %>
