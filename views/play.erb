@@ -96,13 +96,27 @@ h1 {
 </head>
 <body>
 
-<h1>Enter your move, <%=@game.player.name%>, and try to beat the computer!<h/1>
+<h1>Enter your move, <%=@game.name%>, and try to beat the computer!<h/1>
 <h2>Choose - rock, paper, or scissors!</h2>
 
-<form action="/result" method="post" >
-  <input type="text" name="choice"></br>
-  <input type="submit" value="Into the fray!">
+<form action="/play" method="post" >
+  <input type="submit" name="move" value="rock"></br>
+  <input type="submit" name="move" value="paper"></br>
+  <input type="submit" name="move" value="scissors"></br>
 </form>
+
+<h2><%=@game.name%> you selected <%=@game.move%>!</br>
+The computer selected <%= @game.computer_move.to_s%>!</h2>
+
+<h2> 
+<% if @game.win? %>
+<%= @game.name %>, you won!! Amazing!!
+<% elsif @game.lose? %>
+<%= @game.name %>, you lost. Better luck next time!
+<% elsif @game.draw? %>
+You drew! Oh well!
+<% end %>
+</h2>
 
 
 <hr>

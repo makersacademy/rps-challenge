@@ -1,5 +1,4 @@
 require 'sinatra'
-require_relative './lib/player'
 require_relative './lib/game'
 require_relative './lib/computer'
 
@@ -11,18 +10,21 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:player])
-   $game = Game.new(player)
+   session[:name] = params[:name]
     redirect '/play'
   end
 
   get "/play" do
-     @game = $game
-    erb(:play)
+     @game = Game.new(session)
+    erb :play
   end
 
-  post '/result' do
-    choice = 
-    
-  end
+  post '/play' do
+    session[:move] = params[:move]
+    session[:computer_move] = Computer.new.move
+    redirect '/play'
+   end
+
+   run! if app_file ==$0
+   
   end

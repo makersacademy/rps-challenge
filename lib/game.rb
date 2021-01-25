@@ -23,7 +23,7 @@ class Game
   def draw?
     true if @computer_move == :rock && @move == "rock"
     true if @computer_move == :scissors && @move == "scissors"
-    true ifi @computer_move == :paper && @move == "paper"
+    true if @computer_move == :paper && @move == "paper"
   end
 
 end
