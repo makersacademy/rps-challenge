@@ -11,4 +11,8 @@ class Player
     @choice = DEFAULT_CHOICE
   end
 
+  def win 
+    @score += 1
+  end
+
 end

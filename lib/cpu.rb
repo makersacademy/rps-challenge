@@ -10,5 +10,13 @@ class CPU
     @score = DEFAULT_SCORE	   
     @choice = DEFAULT_CHOICE
   end
-  
+
+  def win
+    @score += 1
+  end
+
+  def choose
+    @choice = ['ROCK', 'PAPER', 'SCISSORS'].sample
+  end
+
 end
