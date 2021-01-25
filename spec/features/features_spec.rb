@@ -9,6 +9,6 @@ feature 'play the game' do
         enter_name_and_play
         choose 'Paper'
         click_button 'Play'
-        expect(page).to have_content 'You chose [Paper]'
+        expect(page).to have_content 'Boris selected [Paper]'
     end
 end
