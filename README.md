@@ -62,3 +62,5 @@ Hints on functionality
 | Rock | Paper | Opponent |
 | Scissors | Scissors | Opponent |
 | Paper | Rock | Opponent |
+
+#### [Video Walkthrough](https://www.youtube.com/watch?v=zHEDpQkdr3s&feature=youtu.be)
