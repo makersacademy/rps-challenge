@@ -105,19 +105,21 @@ h1 {
   <input type="submit" name="move" value="scissors"></br>
 </form>
 
-<h2><%=@game.name%> you selected <%=@game.move%>!</br>
-The computer selected <%= @game.computer_move.to_s%>!</h2>
-
 <h2> 
 <% if @game.win? %>
-<%= @game.name %>, you won!! Amazing!!
+<%=@game.name%>, you selected <%=@game.move%>!</br>
+The computer selected <%= @game.computer_move.to_s%>!</br></br></br>
+<%= @game.name %>, you won!! 🤩 Amazing!! 
 <% elsif @game.lose? %>
-<%= @game.name %>, you lost. Better luck next time!
+<%=@game.name%> you selected <%=@game.move%>!</br>
+The computer selected <%= @game.computer_move.to_s%>!</br></br></br>
+<%= @game.name %>, you lost. 🥲 Better luck next time!
 <% elsif @game.draw? %>
-You drew! Oh well!
+<%=@game.name%> you selected <%=@game.move%>!</br>
+The computer selected <%= @game.computer_move.to_s%>! </br></br></br>
+<%=@game.name%>, you drew! 🤨 Oh well!
 <% end %>
 </h2>
-
 
 <hr>
     
@@ -126,4 +128,7 @@ You drew! Oh well!
     />
     <hr>
  
+
+   
+
 </body>
