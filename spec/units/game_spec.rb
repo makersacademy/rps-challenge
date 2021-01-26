@@ -25,14 +25,37 @@ describe Game do
     expect(game.results[:player2]).to eq "rock"
   end
 
-  it "knows if there was a draw" do
-    allow(game).to receive(:results).and_return( {player1: "paper", player2: "paper"} )
-    expect(game).to be_a_draw
+  describe "draw condition" do
+    before do
+      allow(game).to receive(:results).and_return( {player1: "paper", player2: "paper"} )
+    end
+
+    it "knows if there was a draw" do
+      expect(game).to be_a_draw
+    end
+
+    it "returns the correct erb view for the weapon choice" do
+      expect(game.draw_with_weapon).to eq :draw_paper
+    end
   end
 
-  it "reports on the winner if it's not a draw" do
-    allow(game).to receive(:results).and_return( {player1: "scissors", player2: "paper"} )
-    expect(game.winner).to be player1
+  describe "win condition" do
+    before do
+      allow(game).to receive(:results).and_return( {player1: "scissors", player2: "paper"} )
+    end
+
+    it "reports on the winner if it's not a draw" do
+      expect(game.winner).to be player1
+    end
+
+    it "returns the correct erb view for the chosen weapons" do
+      expect(game.win_with_weapons).to eq :win_paper_scissors
+    end
+
+    it "returns the correct erb view overall" do
+      expect(game.results_page).to eq :win_paper_scissors
+    end
+
   end
 
 end
