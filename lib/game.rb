@@ -2,6 +2,14 @@ class Game
 
   attr_reader :name, :move, :computer_move
 
+  # def self.create(sessions)
+  #   @game = Game.new(sessions)
+  # end
+
+  # def self.instance
+  #   @game
+  # end
+
   def initialize(sessions)
     @name = sessions[:name]
     @computer_move = sessions[:computer_move]
