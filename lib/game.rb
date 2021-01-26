@@ -28,10 +28,10 @@ class Game
   end
 
   def draw_with_weapon
-    draw_views = { "paper" => :draw_paper,
+    draw_erbs = { "paper" => :draw_paper,
                   "rock" => :draw_rock,
                   "scissors" => :draw_scissors }
-    draw_views[results[:player1]]
+    draw_erbs[results[:player1]]
   end
 
   def winner
@@ -43,14 +43,14 @@ class Game
   end
 
   def win_with_weapons
-    win_views = { "paper+scissors" => :win_paper_scissors,
+    win_erbs = { "paper+scissors" => :win_paper_scissors,
                   "scissors+paper" => :win_paper_scissors,
                   "paper+rock" => :win_paper_rock,
                   "rock+paper" => :win_paper_rock,
                   "rock+scissors" => :win_rock_scissors,
                   "scissors+rock" => :win_rock_scissors }
     combined_results = [results[:player1], results[:player2]].join("+")
-    win_views[combined_results]
+    win_erbs[combined_results]
   end
 
   def results_page

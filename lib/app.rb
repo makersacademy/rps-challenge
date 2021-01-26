@@ -33,7 +33,7 @@ class RockPaperScissors < Sinatra::Base
 
   get "/results" do
     @game.gather_results
-    erb @game.draw? ? :draw : :results
+    erb @game.results_page
   end
 
   run! if app_file == $0
