@@ -14,24 +14,6 @@ describe Game do
       end
     end
 
-    context 'the computer wins' do
-      let(:computer) { 'paper' }
-      let(:player) { 'rock' }
-
-      it 'returs lose for the player' do
-        expect(game.result).to eq 'lose'
-      end
-    end
-
-    context 'the computer wins' do
-      let(:computer) { 'scissors' }
-      let(:player) { 'paper' }
-
-      it 'returs lose for the player' do
-        expect(game.result).to eq 'lose'
-      end
-    end
-
     context 'there is a draw' do
       let(:computer) { 'paper' }
       let(:player) { 'paper' }
@@ -50,22 +32,5 @@ describe Game do
       end
     end
 
-    context 'the player wins' do
-      let(:player) { 'paper' }
-      let(:computer) { 'rock' }
-
-      it 'returs win for the player' do
-        expect(game.result).to eq 'win'
-      end
-    end
-
-    context 'the player wins' do
-      let(:player) { 'scissors' }
-      let(:computer) { 'paper' }
-
-      it 'returs win for the player' do
-        expect(game.result).to eq 'win'
-      end
-    end
   end
 end

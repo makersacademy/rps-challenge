@@ -1,30 +1,17 @@
-<html>
 <head>
-  <style>
-    body {background-color: yellow;}
-    h1 {
-  color: darkgreen;
-  font-family: verdana;
-  font-size: 300%;
-
-  }
-  h2  {
-  color: green;
-  font-family: courier;
-  font-size: 160%;
-}
-</style>
+  <title> Playing time </title>
+  <link href='style.css' type='text/css' rel='stylesheet'>
 </head>
+<body>
+  <h2>What will you choose, <%=session[:player]%>?</h2>
 
-<h2 align='center'>What will you choose, <%=session[:player]%>?</h2>
-
-<form action='/result' method='get' align='center'>
-  <label for='choice'>Choose from:</label>
-  <select id='choice' name='choice' align='center'>
-    <option value='rock'>Rock</option>
-    <option value='paper'>Paper</option>
-    <option value='scissors'>Scissors</option>
-  </select>
-  <input type='submit' value='Play'>
-</form>
-</html>
+  <form action='/result' method='get'>
+    <label for='choice'>Choose from:</label>
+    <select id='choice' name='choice'>
+      <option value='rock'>Rock</option>
+      <option value='paper'>Paper</option>
+      <option value='scissors'>Scissors</option>
+    </select>
+    <input type='submit' value='Play'>
+  </form>
+</body>
