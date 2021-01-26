@@ -27,19 +27,19 @@ class Game
     results[:player1] == results[:player2]
   end
 
-  def draw_with_weapon
-    draw_erbs = { "paper" => :draw_paper,
-                  "rock" => :draw_rock,
-                  "scissors" => :draw_scissors }
-    draw_erbs[results[:player1]]
-  end
-
   def winner
     return nil if draw?
 
     winning_combos = [["paper", "rock"], ["rock", "scissors"], ["scissors", "paper"]]
     actual_results = [results[:player1], results[:player2]]
     winning_combos.include?(actual_results) ? players[0] : players[1]
+  end
+
+  def draw_with_weapon
+    draw_erbs = { "paper" => :draw_paper,
+                  "rock" => :draw_rock,
+                  "scissors" => :draw_scissors }
+    draw_erbs[results[:player1]]
   end
 
   def win_with_weapons
