@@ -5,14 +5,12 @@
 <body>
 
 <h2><%= @game.players[0].name %> vs <%= @game.players[1].name %>!</h2>
+Choose your weapon!
 
 <form action="/choice" method="post">
-  <button name="rock" >ROCK</button>
-  <button name="paper" >PAPER</button>
-  <button name="scissors" >SCISSORS</button>
+  <button name="rock" style="background-color: white;"><img src="rock.png" alt="rock" style="width: 15vw;"/></button>
+  <button name="paper" style="background-color: white;"><img src="paper.png" alt="paper" style="width: 15vw;"/></button>
+  <button name="scissors" style="background-color: white;"><img src="scissors.png" alt="scissors" style="width: 15vw;"/></button>
   <br>
-  <img src="rock.png" alt="rock" style="width: 25vw;"/>
-  <img src="paper.png" alt="paper" style="width: 25vw;"/>
-  <img src="scissors.png" alt="scissors" style="width: 25vw;"/>
 </form>
 </body>
