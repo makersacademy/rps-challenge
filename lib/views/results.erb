@@ -7,6 +7,16 @@
 
 <%= @game.players[0].name %> chose <%= @game.results[:player1] %> - <%= @game.players[1].name %> chose <%= @game.results[:player2] %>!
 <br>
+
+<% if @game.results[:player1] == "rock" %>
+<img src="rock_scissors.png" alt="rock and scissors" style="width: 25vw;"/>
+<% elsif @game.results[:player1] == "paper" %>
+<img src="paper_rock.png" alt="paper and rock" style="width: 25vw;"/>
+<% else %>
+<img src="paper_scissors.png" alt="paper and scissors" style="width: 25vw;"/>
+
+<% end %>
+<br>
 <strong><%= @game.winner.name %> is the winner</strong>!
 
 <br>
