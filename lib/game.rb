@@ -1,5 +1,6 @@
 require_relative './player.rb'
 require_relative './cpu.rb'
+
 class Game 
 
   attr_reader :player_1 

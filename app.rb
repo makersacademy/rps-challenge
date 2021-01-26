@@ -15,36 +15,34 @@ class RPS < Sinatra::Base
   end
 
   post'/names' do 
-    $player_1 = Player.new(params[:P1])
+    player_1 = Player.new(params[:P1])
+    $game = Game.new(player_1)
     redirect '/play' 
   end
 
   get '/play' do 
-    @player_1 = $player_1.name
+    @game = $game
     erb :play
   end
 
   get '/paper' do 
-    @player_1 = $player_1
-    @player_1.move("paper")
-    $game = Game.new(@player_1)
-    @outcome = $game.turn(@player_1)
+    player_1_move = $game.player_1.move("paper")
+    player_1 = $game.player_1
+    @outcome = $game.turn(player_1)
     erb :paper
   end
 
   get '/rock' do 
-    @player_1 = $player_1
-    @player_1.move("rock")
-    $game = Game.new(@player_1)
-    @outcome = $game.turn(@player_1)
+    player_1_move = $game.player_1.move("rock")
+    player_1 = $game.player_1
+    @outcome = $game.turn(player_1)
     erb :rock
   end
 
   get '/scissors' do 
-    @player_1 = $player_1
-    @player_1.move("scissors")
-    $game = Game.new(@player_1)
-    @outcome = $game.turn(@player_1)
+    player_1_move = $game.player_1.move("scissors")
+    player_1 = $game.player_1
+    @outcome = $game.turn(player_1)
     erb :scissors
   end
 
