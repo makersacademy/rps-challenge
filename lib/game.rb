@@ -26,7 +26,7 @@ class Game
       @winner = :player
     elsif player.choice == opponent.choice
       @winner = :draw
-    elsif RULES[player.choice] != opponent.choice && player.choice != opponent.choice
+    else
       @winner = :opponent
     end
   end
