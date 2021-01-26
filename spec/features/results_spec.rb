@@ -9,7 +9,6 @@ feature 'Game results' do
     enter_name_and_play
     click_button 'Rock'
     click_button 'Play again'
-    p "what is going on here"
     expect(page).to have_content('Kelly make your choice...')
   end
 
