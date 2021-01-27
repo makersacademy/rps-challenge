@@ -1,0 +1,17 @@
+<head>
+  <title> Playing time </title>
+  <link href='style.css' type='text/css' rel='stylesheet'>
+</head>
+<body>
+  <h2>What will you choose, <%=session[:player]%>?</h2>
+
+  <form action='/result' method='get'>
+    <label for='choice'>Choose from:</label>
+    <select id='choice' name='choice'>
+      <option value='rock'>Rock</option>
+      <option value='paper'>Paper</option>
+      <option value='scissors'>Scissors</option>
+    </select>
+    <input type='submit' value='Play'>
+  </form>
+</body>

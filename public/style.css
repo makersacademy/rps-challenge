@@ -1,0 +1,42 @@
+body {
+  font-family: verdana;
+  font-size: 30px;
+  text-align: center;
+  background-color: purple;
+}
+
+h1 {
+  color: yellow;
+  font-size: 300%;
+
+  }
+
+h2  {
+  color: yellow;
+  font-size: 160%;
+}
+
+label {
+  color: yellow;
+}
+
+ input[type=submit]{
+   border: black;
+   background-color: darkgreen;
+   color: yellow;
+   font-size: 20px;
+}
+
+input[type=text]{
+  padding: 10px 30px;
+  border: 2px solid mediumvioletred;
+  border-radius: 3px;
+  font-size: 20px;
+}
+
+select {
+  padding: 10px 30px;
+  border: 2px solid mediumvioletred;
+  border-radius: 3px;
+  font-size: 20px;
+}

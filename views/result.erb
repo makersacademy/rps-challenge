@@ -1,0 +1,21 @@
+<head>
+  <title>Results</title>
+  <link href="style.css" type='text/css' rel='stylesheet'>
+</head>
+<body>
+  <% if @result == 'win' %>
+    <h1>YOU WON!</h1>
+  <% elsif @result == 'lose' %>
+    <h1>YOU LOST!</h1>
+    <h2>Try again!</h2>
+  <%else%>
+    <h1>IT'S A DRAW!</h1>
+  <%end%>
+  <h2>The computer chose <%=@computer.weapon%>.</h2>
+    <form action='/play' method='post'>
+      <input type='submit' value='Try Again!'>
+    </form>
+    <form action='/' method='get'>
+      <input type='submit' value='Play from the beginning!'>
+    </form>
+</body>
