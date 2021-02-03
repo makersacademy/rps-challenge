@@ -31,7 +31,6 @@ class Game
   def battle
     if @character == "Rock"
       rock_game
-      p "opponent:"
       p @opponent
     elsif @character == "Paper"
       paper_game

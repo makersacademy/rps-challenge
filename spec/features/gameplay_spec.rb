@@ -21,7 +21,7 @@ feature "Gameplay" do
     click_on("fight")
     expect(page).to have_content(@game.result)
     click_on("finish")
-    expect(page).to have_content("Super Rock-Paper-Scissors Turbo Alpha: Ultimate Grudge Match")
+    expect(page).to have_content("Super Rock-Paper-Scissors Turbo Alpha")
   end
 
 end

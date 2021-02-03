@@ -9,7 +9,7 @@ feature "Start page" do
 
   scenario "can run app and check page content" do
     visit('/')
-    expect(page).to have_content "Super Rock-Paper-Scissors Turbo Alpha: Ultimate Grudge Match"
+    expect(page).to have_content "Super Rock-Paper-Scissors Turbo Alpha"
   end
 
   scenario "gives options for one player" do
@@ -17,11 +17,11 @@ feature "Start page" do
     click_button('One Player')
   end
 
-  scenario "redirects to one-player name page" do
-    visit('/')
-    click_button('One Player')
-    expect(page).to have_content "Enter your name"
-  end
+  # scenario "redirects to one-player name page" do
+  #   visit('/')
+  #   click_button('One Player')
+  #   expect(page).to have_content "Enter your name"
+  # end
 
   # scenario "gives options for two players" do
   #   visit('/')

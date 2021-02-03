@@ -49,3 +49,15 @@ localhost:4567
 ```
 
 Follow the on-screen prompts and instructions.
+
+**Technologies used**
+
+- sinatra
+- ruby (version 2.6.5)
+
+**Credits**
+- Stylesheets/CSS rely heavily on <a href="https://github.com/webdevjeffus/css-for-sinatra">css-for-sinatra</a> by Jeff George
+- fonts are licensed under the Open Font License
+ - <a href="https://fonts.google.com/specimen/Londrina+Shadow?category=Sans+Serif,Display,Monospace&preview.text_type=custom&selection.family=Bungee+Shade|Londrina+Shadow|Press+Start+2P&sidebar.open=true#about">Londrina Shadow</a> by Marcelo Magalhães
+ -  <a href="https://fonts.google.com/specimen/Bungee+Shade?category=Sans+Serif,Display,Monospace&selection.family=Londrina+Shadow|Press+Start+2P&query=bungee&preview.text_type=custom#about">Bungee Shade</a> by David Jonathan Ross
+ -  <a href="https://fonts.google.com/specimen/Press+Start+2P?category=Sans+Serif,Display,Monospace&selection.family=Londrina+Shadow|Press+Start+2P&query=press+s&preview.text_type=custom&sidebar.open=true#about">Press Start 2P</a> by Cody "CodeMan38" Boisclair  
