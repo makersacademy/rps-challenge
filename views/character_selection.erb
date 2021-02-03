@@ -1,0 +1,28 @@
+<h1> <%= @player_name %> - choose your warrior </h1>
+<body>
+<p>
+  <form action="/selection_rock" method="post">
+
+  <label for="rock">
+    <button type="submit" id="rock" value="Rock" name="rock"><strong>R O C K</strong></button>
+    <p>Forged in hellish flames deep beneath the earth. Slow but powerful. Rock obliterates opponents with brute force.</p>
+  </label>
+</form>
+</p>
+<p>
+<form action="/selection_paper" method="post">
+  <label for="paper">
+    <button type="submit" id="paper" value="Paper" name="paper"><strong>P A P E R</strong></button>
+    <p>Charged with great wisdom. Delicate. Tactical. Paper uses strategy to outwit enemies.</p>
+  </label>
+</form>
+</p>
+<p>
+<form action="/selection_scissors" method="post">
+  <label for="scissors">
+    <button type="submit" id="scissors" value="Scissors" name="scissors"><strong>S C I S S O R S</strong></button>
+    <p>Swift and to the point. Scissors deftly cuts through its rivals. Only well-timed blows can blunt its edge.</p>
+  </label>
+</form>
+</p>
+</body>
