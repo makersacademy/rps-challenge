@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/style.css"/>
+
+<h2><%=@game.player.name%> chose: <%=@game.player.weapon%></h2>
+
+<h2>The computer chose: <%=@game.computer_move%></h2>
+
+<h1><%=@game.results%></h1>
+
+<form action="/play" >
+  <input type="submit" value="Play again">
+</form>
