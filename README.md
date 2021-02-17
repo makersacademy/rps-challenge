@@ -15,7 +15,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-### Implemented Functionality
+### Functionality
 
 - Player enters their name and game remembers it
 - Player is presented the choices (rock, paper and scissors)
