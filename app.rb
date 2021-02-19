@@ -7,6 +7,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
+    erb :index
+  end
 
+  post '/name' do
+    session[:name] = params[:name]
+    redirect '/name'
+  end
+
+  get '/name' do
+    @name = session[:name]
+    erb :name
   end
 end
