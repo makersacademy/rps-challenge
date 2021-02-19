@@ -19,4 +19,8 @@ class RockPaperScissors < Sinatra::Base
     @name = session[:name]
     erb :name
   end
+
+  get '/play' do
+    erb :play
+  end
 end
