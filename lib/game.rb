@@ -1,4 +1,10 @@
 class Game
+  RESULT = {
+    rock:     { scissors: :win, paper: :lose },
+    paper:    { rock: :win, scissors: :lose },
+    scissors: { paper: :win, rock: :lose }
+  }
+
   attr_reader :player, :player_name, :ai
 
   class << self
@@ -16,11 +22,25 @@ class Game
     @ai           = ai_class.new
   end
 
+  def result
+    return "It's a draw!" if draw?
+
+    "#{winner.name} wins!"
+  end
+
   private
 
   attr_reader :player_class, :ai_class
 
+  def winner
+    RESULT[player.choice][ai.choice] == :win ? player : ai
+  end
+
   def player_factory
     player_class.new(player_name)
+  end
+
+  def draw?
+    player.choice == ai.choice
   end
 end

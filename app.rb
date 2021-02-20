@@ -24,7 +24,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game' do
-    @game.player.choice = params[:choice]
+    @game.player.choice = params[:choice].to_sym
     erb :game
   end
 
