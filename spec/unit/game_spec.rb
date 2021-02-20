@@ -1,6 +1,6 @@
 describe Game do
-  let(:player)       { instance_double(Player) }
   let(:player_class) { class_double(Player, new: player) }
+  let(:player)       { instance_double(Player) }
   subject            { described_class.new('Frank', player_class) }
 
   describe '#player' do

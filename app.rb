@@ -13,11 +13,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    @game = Game.create(params[:name])
+    session[:game] = Game.create(params[:name])
     redirect '/name'
   end
 
-  before { @game = Game.instance }
+  before { @game = session[:game] }
 
   get '/name' do
     erb :name

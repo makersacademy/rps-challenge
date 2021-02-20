@@ -9,10 +9,10 @@ require_relative 'feature/web_helpers'
 require_relative '../app'
 require 'player'
 require 'game'
+require 'ai'
 
 ENV['RACK_ENV'] = 'test'
-
-Capybara.app = RockPaperScissors
+Capybara.app    = RockPaperScissors
 
 # SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 #   SimpleCov::Formatter::Console

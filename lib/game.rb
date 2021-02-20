@@ -4,8 +4,8 @@ class Game
   class << self
     attr_reader :instance
 
-    def create(name)
-      @instance = new(name)
+    def create(player_name)
+      @instance = new(player_name)
     end
   end
 
@@ -19,7 +19,7 @@ class Game
 
   attr_reader :player_class
 
-  def player_factory
-    player_class.new(player_name)
+  def player_factory(name = player_name)
+    player_class.new(name)
   end
 end
