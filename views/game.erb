@@ -18,7 +18,17 @@ body {background-color: #33bbff; font-family:verdana; text-align: center;}
 <body class="center">
 <h1>Hi <%= @name %>!</h1>
 <h1>Choose a move:</h1>
-<img src="/RPSLS.png">
+<div style="display: flex;">
+<form action="/rock" method="post">
+<input type="image" src="/images/Rock.png" name="rock" height=200>
+</form>
+<form action="/paper" method="post">
+<input type="image" src="/images/Paper.png" name="paper" height=200>
+</form>
+<form action="/scissors" method="post">
+<input type="image" src="/images/Scissors.png" name="scissors" height=200>
+</form>
+</div>
 </body>
 
 </html>

@@ -6,9 +6,7 @@ feature 'homepage' do
   end
 
   scenario 'takes players name' do
-    visit '/'
-    fill_in 'name', with: 'Pete'
-    click_button 'Play'
+    sign_in_and_play
     expect(page).to have_content "Hi Pete!"
   end
 
