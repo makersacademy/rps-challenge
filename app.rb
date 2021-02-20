@@ -26,4 +26,20 @@ class RPS < Sinatra::Base
     erb :rps_selection
   end
 
+  post '/rps_choice' do
+ 
+    $player_weapon = params[:selection]
+    redirect '/start_game'
+  end
+
+  get '/start_game' do
+    @player = $player
+    # @player_weapon = $player.weapon
+    erb :start_game
+  end
+
+  get '/fight' do
+
+  end
+
 end
