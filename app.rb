@@ -1,23 +1,19 @@
 require 'sinatra'
 require './lib/game'
 require './lib/player'
+require './lib/ai'
 
 class RockPaperScissors < Sinatra::Base
-  configure do
-    enable :sessions
-    set    :session_secret, ENV['SESSION_SECRET']
-  end
+  before { @game = Game.instance }
 
   get '/' do
     erb :index
   end
 
   post '/name' do
-    session[:game] = Game.create(params[:name])
+    @game = Game.create(params[:name])
     redirect '/name'
   end
-
-  before { @game = session[:game] }
 
   get '/name' do
     erb :name

@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player, :player_name
+  attr_reader :player, :player_name, :ai
 
   class << self
     attr_reader :instance
@@ -9,17 +9,18 @@ class Game
     end
   end
 
-  def initialize(player_name, player_class = Player)
+  def initialize(player_name, player_class = Player, ai_class = Ai)
     @player_class = player_class
     @player_name  = player_name
     @player       = player_factory
+    @ai           = ai_class.new
   end
 
   private
 
-  attr_reader :player_class
+  attr_reader :player_class, :ai_class
 
-  def player_factory(name = player_name)
-    player_class.new(name)
+  def player_factory
+    player_class.new(player_name)
   end
 end
