@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/computer_player'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -23,6 +24,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/outcome' do
+    @rps_computer = Computer_Player.new.play
     @choice = session[:choice]
     erb :outcome
   end

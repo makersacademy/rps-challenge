@@ -1,10 +1,25 @@
 <title>RPS Result</title>
   <body style='background-color: HoneyDew'>
     <center>
-      <h1>You have chosen <%= @choice %></h1>
-        <h2> </h2>
+      <h2><em> You chose <%= @choice %>--- the RPS computer chose <%= @rps_computer %></em>
 
-            <br><br>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/1200px-Rock-paper-scissors.svg.png' width='550' height='550' alt='RPS'
-    </center>
+      <% if @choice == @rps_computer %>
+        <h1> It's a draw! </h1>
+        <img src='https://www.thebalance.com/thmb/slRp7_x40HBkBOgHb3Ft-agAEZM=/1848x1623/filters:fill(auto,1)/GettyImages-76127708-bc01f5b8b6284d75aaa5e18dab2cbf5d.jpg' width='550' height ='450' alt='Equal'
+      <% elsif @choice == 'rock' && @rps_computer == 'scissors' %>
+        <h1> You Win! &#128588 </h1><br>
+        <img src='https://images.unsplash.com/photo-1525857597365-5f6dbff2e36e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cm9ja3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80' width='550' height ='550' alt='Rock'
+      <% elsif @choice == 'paper' && @rps_computer == 'rock' %>
+        <h1> You Win! &#128588 </h1><br>
+        <img src='https://cdn02.nintendo-europe.com/media/images/08_content_images/games_6/nintendo_switch_7/nswitch_papermariotheorigamiking/NSwitch_PaperMarioTheOrigamiKing_Overview_Beautiful_Headline_PaperBG.jpg' width='550' height ='550' alt='Paper'
+      <% elsif @choice == 'scissors' && @rps_computer == 'paper' %>
+        <h1> You Win! &#128588 </h1><br>
+        <img src='https://cdn.thewirecutter.com/wp-content/uploads/2015/03/scissors-kitchen-shears-lowres.jpg' width='550' height ='400' alt='Scissors'
+      <% else %>
+       <h1> You Lose! &#128533 </h1><br>
+       <img src='https://d3laewezlz9ul2.cloudfront.net/wp-content/uploads/2017/03/07170719/03061-stop-counting-calories-if-you-want-to-lose-weight-700x394.jpg' width='650' height ='350' alt='Defeated'
+      <% end %>
+        <br><br>
+
+      </center>
   </body>
