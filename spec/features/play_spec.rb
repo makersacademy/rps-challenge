@@ -11,10 +11,20 @@ feature 'playing a game' do
   scenario 'see the different options' do
     register_name
     expect(page).to have_content 'Rock'
-    expect(page).to have_button("Rock")
     expect(page).to have_content 'Paper'
-    expect(page).to have_button("Paper")
     expect(page).to have_content 'Scissors'
+  end
+
+  scenario 'user can choose options' do
+    register_name
+    expect(page).to have_button("Rock")
+    expect(page).to have_button("Paper")
     expect(page).to have_button("Scissors")
+  end
+
+  scenario 'confirmation of users choice' do
+    register_name
+    click_button "Rock"
+    expect(page).to have_content "Morgan chose Rock!"
   end
 end

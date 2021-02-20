@@ -14,7 +14,13 @@ end
 
 get '/play' do
   @name = session[:player_1_name]
+  @move = session[:move]
   erb :play
+end
+
+post '/play' do
+  session[:move] = params[:move]
+  redirect '/play'
 end
 
 

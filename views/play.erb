@@ -6,13 +6,16 @@
 <h2>Make your move!</h2>
 
 <form action="/play" method="post">
-  <input type="submit" value="Rock">
+  <input type="submit" name="move" value="Rock">
 </form>
 
 <form action="/play" method="post">
-  <input type="submit" value="Paper">
+  <input type="submit" name = "move" value="Paper">
 </form>
 
 <form action="/play" method="post">
-  <input type="submit" value="Scissors">
+  <input type="submit" name="move" value="Scissors">
 </form>
+
+
+<%= @name %> chose <%= @move %>!
