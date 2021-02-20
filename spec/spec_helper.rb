@@ -1,13 +1,16 @@
 require 'coveralls'
 Coveralls.wear!
 
-ENV['RACK_ENV'] = 'test'
-
-require_relative '../app'
-require_relative 'feature/web_helpers'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+require_relative 'feature/web_helpers'
+require_relative '../app'
+require 'player'
+require 'game'
+
+ENV['RACK_ENV'] = 'test'
 
 Capybara.app = RockPaperScissors
 

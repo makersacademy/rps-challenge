@@ -1,4 +1,6 @@
 require 'sinatra'
+require './lib/game'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
   configure do
@@ -11,17 +13,22 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    @game = Game.create(params[:name])
     redirect '/name'
   end
 
+  before { @game = Game.instance }
+
   get '/name' do
-    @name = session[:name]
     erb :name
   end
 
   get '/play' do
     erb :play
+  end
+
+  get '/game' do
+    erb :game
   end
 
   run! if app_file == $0
