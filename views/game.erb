@@ -1,0 +1,19 @@
+You chose: <%= @player_choice %> <br>
+Computer chose: <%= @comp_choice %> <br>
+<%= @result %>
+
+<% if @player_choice.to_sym == :Rock && @comp_choice == :Scissors %>
+  You won!
+<% elsif @player_choice.to_sym == :Scissors && @comp_choice == :Paper %>
+  You won!
+<% elsif @player_choice.to_sym == :Paper && @comp_choice == :Rock %>
+  You won!
+<% elsif @player_choice.to_sym == @comp_choice %>
+  You drew!
+<% else %>
+  You lost! :(
+<% end %>
+
+<form action="/" method="get">
+  <input type="submit" value="Replay?" >
+</form>
