@@ -13,10 +13,20 @@ body {background-color: #33bbff; font-family:verdana; text-align: center;}
   transform: translate(-50%, -50%);
 }
 
+div {
+  padding: 50px;
+}
+
 </style>
 
 <body class="center">
+<div style="display: flex;">
 <h1>You chose <%= @choice %></h1>
+<img src="/images/<%= @choice %>.png" height=200>
+<h1>Your opponent chose <%= @rand %></h1>
+<img src="/images/<%= @rand %>.png" height=200>
+<br>
+<h1><%= @message %></h1>
 </body>
 
 </html>

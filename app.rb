@@ -22,6 +22,7 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @choice = session[:choice]
+    @rand = ['Rock', 'Paper', 'Scissors'].sample
     erb :result
   end
 
