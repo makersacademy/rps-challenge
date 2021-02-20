@@ -1,6 +1,6 @@
 feature 'winning and losing' do
   scenario 'player rock - AI scissors' do
-    allow_any_instance_of(Ai).to receive(:choice) { :scissors }
+    allow_any_instance_of(Ai).to receive(:move) { :scissors }
     sign_up_and_go
     click_button 'Play'
     click_link 'Rock'

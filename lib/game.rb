@@ -33,7 +33,7 @@ class Game
   attr_reader :player_class, :ai_class
 
   def winner
-    RESULT[player.choice][ai.choice] == :win ? player : ai
+    RESULT[player.move][ai.move] == :win ? player : ai
   end
 
   def player_factory
@@ -41,6 +41,6 @@ class Game
   end
 
   def draw?
-    player.choice == ai.choice
+    player.move == ai.move
   end
 end

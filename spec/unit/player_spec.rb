@@ -7,14 +7,14 @@ describe Player do
     end
   end
 
-  describe '#choice' do
+  describe '#move' do
     it 'is nil by default' do
-      expect(subject.choice).to be_nil
+      expect(subject.move).to be_nil
     end
 
-    it 'can be set to player choice' do
-      subject.choice = :scissors
-      expect(subject.choice).to be :scissors
+    it 'can be set to player move' do
+      subject.move = :scissors
+      expect(subject.move).to be :scissors
     end
   end
 end

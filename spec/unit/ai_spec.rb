@@ -5,10 +5,17 @@ describe Ai do
     end
   end
 
-  describe 'choice' do
+  describe 'choose' do
     it 'picks a choice at random' do
       allow_any_instance_of(Array).to receive(:sample) { :rock }
-      expect(subject.choice).to be :rock
+      expect(subject.choose).to be :rock
+    end
+  end
+
+  describe 'move' do
+    it 'returns the choice' do
+      move = subject.choose
+      expect(subject.move).to be move
     end
   end
 end

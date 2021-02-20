@@ -24,7 +24,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game' do
-    @game.player.choice = params[:choice].to_sym
+    @game.player.move = params[:choice].to_sym
+    @game.ai.choose
     erb :game
   end
 
