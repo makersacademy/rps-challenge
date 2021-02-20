@@ -1,6 +1,8 @@
 feature 'gets the names' do
   scenario 'get player names' do
-    sign_in_and_play
-    expect(page).to have_content 'Player: Max'
+    visit('/')
+    fill_in :player_name, with: 'Max'
+    click_button 'submit player name'
+    expect(page).to have_content 'Hello Max!'
   end
 end
