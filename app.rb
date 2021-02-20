@@ -14,6 +14,7 @@ enable :sessions
     "Rock, paper, scissors"
     # create the game instance
     # create player instance
+    @player_1 = Player.new(params[:player_1_name])
     # redirect to choice page
     redirect '/one_player/choice'
   end

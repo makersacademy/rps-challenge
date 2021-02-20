@@ -3,6 +3,6 @@ feature 'rps game' do
     visit('/')
     expect(page).to have_content 'Welcome to rock, paper, scissors!'
     expect(page).to have_button 'Player VS. Computer'
-    expect(page).to have_button 'Player 1 VS. Player 2'
+    expect(page).to have_button 'Player VS. Player'
   end
 end

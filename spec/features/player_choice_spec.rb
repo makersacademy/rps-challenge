@@ -10,8 +10,8 @@ feature 'rps game - player selection' do
     expect(page).not_to have_content('Welcome to rock, paper, scissors!')
     expect(page).to have_content('Rock, paper, scissors!')
     expect(page).to have_content('Make your choice:')
-    expect(page).to have_button('rock')
-    expect(page).to have_button('paper')
-    expect(page).to have_button('scissors')
+    expect(page).to have_button('Rock')
+    expect(page).to have_button('Paper')
+    expect(page).to have_button('Scissors')
   end
 end
