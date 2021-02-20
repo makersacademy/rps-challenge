@@ -1,10 +1,8 @@
 feature 'Player can select Rock Paper or Scissors' do
   scenario 'Selecting RPS' do
-    visit ('/')
-    fill_in :player_1_name, with: 'p1'
-    click_button 'Play'
+    sign_in
     select "Paper", :from => "choice"
     click_button 'submit'
-    expect(page).to have_content 'You have chosen paper'
+    expect(page).to have_content 'You chose paper'
   end
 end
