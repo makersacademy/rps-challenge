@@ -1,5 +1,6 @@
 require 'sinatra/base'
 
+
 class RoShamBo < Sinatra::Base
 	enable :sessions
 

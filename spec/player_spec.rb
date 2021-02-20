@@ -7,4 +7,8 @@ describe Player do
 			expect(subject.name).to eq "Ken"
 		end
 	end
+
+	describe'#play'do
+		it { is_expected.to respond_to(:play).with(1).argument }
+	end
 end
