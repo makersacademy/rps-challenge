@@ -40,9 +40,9 @@ describe Game do
 
   describe '#results' do
     it 'decides who is the winner' do
-      player = instance_double('Player', :name => 'sandy', :choice => 'Rock')
-      computer = instance_double('Player', :name => 'Computer', :choice => 'Paper')
-      expect(my_game.results).to eq player
+      player = instance_double('Player', :choice => 'Rock')
+      computer = instance_double('Player', :choice => 'Paper')
+      expect(my_game.results(player, computer)).to eq computer
     end
   end
 
