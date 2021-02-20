@@ -34,6 +34,8 @@ class RpsGame < Sinatra::Base
   end
 
   get '/one_player/results' do
+    @game = $game
+    @game.results(@game.player_1, @game.player_2)
     erb :results
   end
 end

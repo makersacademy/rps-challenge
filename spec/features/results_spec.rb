@@ -7,7 +7,7 @@ feature 'rps - result anouncement' do
     click_button('Submit')
     visit('/one_player/choice')
     click_button('Rock')
-    expect(page).to have_content('Sandy played Rock')
-    expect(page).to have_content('Computer played Rock')
+    visit('/one_player/results')
+    expect(page).to have_content('Sandy played: Rock')
   end
 end
