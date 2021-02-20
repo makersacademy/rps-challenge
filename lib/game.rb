@@ -16,7 +16,7 @@ class Game
     player.set_choice(value)
   end
 
-  def random_selection
-    ['Rock', 'Paper', 'Scissors'].sample
+  def random_selection(player)
+    player.set_choice(['Rock', 'Paper', 'Scissors'].sample)
   end
 end

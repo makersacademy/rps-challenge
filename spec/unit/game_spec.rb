@@ -31,8 +31,19 @@ describe Game do
     end
   end
   describe '#random_selection' do
-    it 'select a random value' do
-      expect(my_game.random_selection).to satisfy { |value| ['Rock', 'Paper', 'Scissors'].include?(value) }
+    it 'sends a random value to #set_choice' do
+      expect(player_1).to receive(:set_choice) { 'Rock' }
+      my_game.random_selection(player_1)
+      allow(my_game).to receive(:random_selection) { 'Rock' }
     end
   end
+
+  describe '#results' do
+    it 'decides who is the winner' do
+      player = instance_double('Player', :name => 'sandy', :choice => 'Rock')
+      computer = instance_double('Player', :name => 'Computer', :choice => 'Paper')
+      expect(my_game.results).to eq player
+    end
+  end
+
 end

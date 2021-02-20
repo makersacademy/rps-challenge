@@ -29,10 +29,11 @@ class RpsGame < Sinatra::Base
     selection = params['selection']
     @game = $game
     @game.selection(@game.player_1, selection)
+    @game.random_selection(@game.player_2)
     redirect '/one_player/results'
   end
 
   get '/one_player/results' do
-    "The winner is ...."
+    erb :results
   end
 end
