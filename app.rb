@@ -16,11 +16,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/name' do
-    erb :name
+    erb :name, layout: :name_layout
   end
 
   get '/play' do
-    erb :play
+    erb :play, layout: :play_layout
   end
 
   get '/game' do

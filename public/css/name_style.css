@@ -1,0 +1,36 @@
+html, body {
+  background-image: url(../images/lights.jpg);
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  font-size: 70px;
+  font-weight: 900;
+  font-family: helvetica;
+  color: rgb(70, 61, 60);
+  text-align: center;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.intro {
+  margin-top: 40px;
+  margin-left: 200px;
+  text-align: left;
+}
+
+.name {
+  font-size: 150px;
+  margin-left: 400px;
+}
+
+input {
+  margin-right: 400px;
+  border-radius: 60px;
+  padding: 40px;
+  color: rgb(109, 108, 109);
+  background-color: burlywood;
+  box-shadow:0 0 15px 4px
+}

@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: helvetica;
+  box-sizing: border-box;
+  font-size: 30px;
+  text-align: center;
+  background-color: cornsilk;
+  font-weight: 900;
+}
+
+/* body {
+  background-image: url("images/rps.png");
+} */
+
+h1 {
+  font-size: 100px;
+  margin-top: 90px;
+  font-weight: 800;
+  color: rgb(119, 89, 44);
+}
+
+h2 {
+  font-size: 60px;
+  margin-top: 40px;
+  color: rgb(106, 83, 41);
+  font-weight: 800;
+}
+
+input {
+  margin: 20px;
+  background-color: rgb(254, 223, 99);
+  box-shadow: 0 0 15px 4px;
+  font-size: 50px;
+  font-weight: 600;
+  color: rgb(113, 113, 113);
+  font-family: inherit;
+  border: 0px;
+}
+
+.field {
+  height: 80px;
+  width: 500px;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.button {
+  border-radius: 50%;
+  font-size: 40px;
+  padding: 70px;
+  background-color: rgb(192, 255, 147);
+  font-weight: 900;
+  color: rgb(125, 125, 125);
+  font-size: 70px;
+}
+
+.play {
+  border-radius: 80px;
+  padding: 60px;
+  color: rgb(136, 136, 136);
+}
+
+p {
+  font-size: 60px;
+  margin-top: 40px;
+  color: rgb(210, 136, 0);
+}
+
+.name {
+  font-size: 100px;
+}
+
+img {
+  width: 300px;
+  border: 0;
+  margin: 0px;
+}
+
+.rock {
+  margin-left: 180px;
+  margin-top: 80px;
+  /* margin-top:px; */
+}
+
+.paper {
+  margin-left: 850px;
+  margin-top: 150px;
+}
+
+.scissors {
+  margin-left: 400px;
+  object-fit: scale-down;
+  height: 300px;
+  margin-top: 300px;
+}

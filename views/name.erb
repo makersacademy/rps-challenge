@@ -1,5 +1,6 @@
-<h1>Let's hear it for... <%= @game.player_name %>!</h1>
+<p class="intro">Let's hear it for...</p><br>
+<p class="name"><%= @game.player_name %>!</p><br>
 
 <form action="/play">
-  <input type="submit" value="Play">
+  <input class="play" type="submit" value="Play">
 </form>

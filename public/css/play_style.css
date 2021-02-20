@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: helvetica;
+  box-sizing: border-box;
+  font-size: 30px;
+  text-align: center;
+  background-color: cornsilk;
+  font-weight: 900;
+  position: fixed;
+}
+
+img {
+  width: 300px;
+  border: 0;
+  margin: 0px;
+}
+
+.rock {
+  margin-left: 200px;
+  margin-top: 80px;
+  /* margin-top:px; */
+}
+
+.paper {
+  margin-left: 880px;
+  margin-top: 150px;
+}
+
+.scissors {
+  margin-left: 450px;
+  object-fit: scale-down;
+  height: 300px;
+  margin-top: 300px;
+}
