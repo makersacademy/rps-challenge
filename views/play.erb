@@ -1,11 +1,11 @@
 <title>RPS Play</title>
-  <body style='background-color: lightblue'>
+  <body style='background-color: HoneyDew'>
     <center>
       <h1>Let's play Rock Paper Scissors!</h1>
         <h2> Do your best <%= @player_1_name %> </h2>
           <label for="player1"><em><b>Choose either Rock, Paper or Scissors:</em><b></label>
-            <form action="/outcome">
-              <select name="choose" id="choose">
+            <form action="/choice" method='post'>
+              <select name="choice" id="choose">
                 <option value="rock">Rock</option>
                 <option value="paper">Paper</option>
                 <option value="scissors">Scissors</option>
