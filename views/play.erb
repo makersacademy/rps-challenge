@@ -4,12 +4,14 @@
       <h1>Let's play Rock Paper Scissors!</h1>
         <h2> Do your best <%= @player_1_name %> </h2>
           <label for="player1"><em><b>Choose either Rock, Paper or Scissors:</em><b></label>
-            <select name="choose" id="choose">
-              <option value="rock">Rock</option>
-              <option value="paper">Paper</option>
-              <option value="scissors">Scissors</option>
-            </select>
-              <button type='submit'>Submit</button>
+            <form action="/outcome">
+              <select name="choose" id="choose">
+                <option value="rock">Rock</option>
+                <option value="paper">Paper</option>
+                <option value="scissors">Scissors</option>
+              </select>
+                <input type='submit' value='submit'>
+            </form>
             <br><br>
         <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/1200px-Rock-paper-scissors.svg.png' width='550' height='550' alt='RPS'
     </center>

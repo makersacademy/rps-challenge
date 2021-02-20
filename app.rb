@@ -17,6 +17,10 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  get '/outcome' do
+    "Outcome"
+  end
+
   run! if app_file == $0
 
 end
