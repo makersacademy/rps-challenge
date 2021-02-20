@@ -12,11 +12,9 @@ ruby app.rb
 ```
 Navigate to your localhost in your browser, and play the game.
 
-At present, with the exception of the use of CSS, the only item I have not completed is testing that the website outputs the result of the game.  I have not been able to effectively stub the random behaviour of the computer's choice.
+Whilst not understanding at all how 'srand' works, I have successfully incorporated this into my test suite which has allowed me to test the display of the game result.
 
-If I am able to create a Game class, I think I will be able to do this.
-
-
+I have decided to use minimum CSS in this project.
 
 
 
