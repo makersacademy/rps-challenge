@@ -5,4 +5,12 @@
   <div>
     Welcome, <%= @player_name %>!
   </div>
+  <div>
+    Make your choice: Rock, Paper, or Scissors!
+    <form action='/choice' method='post'>
+      <input type='submit' name='rock' value='Rock'>
+      <input type='submit' name='paper' value='Paper'>
+      <input type='submit' name='scissors' value=Scissors>
+    </form>
+  </div>
 </body>
