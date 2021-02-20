@@ -1,0 +1,21 @@
+<center>
+
+<h1>You chose Paper</h1>
+<h1>The computer chose <%= $computer.capitalize %></h1>
+
+<% if $computer == "rock" %>
+<h2>You wrap up the rock with your paper.  You win!</h2>
+
+<% elsif $computer == "paper" %>
+<h2>The pages brushed past each other.  It's a tie!</h2>
+
+<% elsif $computer == "scissors" %>
+<h2>Your paper is cut to shred by the scissors.  You lose!</h2>
+<% end %>
+
+<form action="/playagain" method="post">
+<input type="submit" value="Play again!">
+</form>
+
+
+</center>

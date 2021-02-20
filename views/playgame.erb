@@ -1,0 +1,23 @@
+<center><h1>Rock, Paper, Scissors</h1>
+<% if $name == "" %>
+<h2>It's you against the computer</h2>
+<% elsif %>
+<h2>It's <%= $name %> against the computer</h2>
+<% elsif $name = nil %>
+<h2>Let's play again!</h2>
+<% end %>
+<h3>To play, make a selction from the 3 options below</h3>
+<form action="/rock" method="post">
+<input type="submit" value="Rock">
+</form>
+<form action="/paper" method="post">
+<input type="submit" value="Paper">
+</form>
+<form action="/scissors" method="post">
+<input type="submit" value="Scissors">
+</form>
+
+<p>Rules of the game: Make your decision above.  The computer will make a choice randomly.</p>
+<p>Rock beats scissors; scissors beat paper; paper beats rock.</p>
+
+</center>
