@@ -9,19 +9,19 @@ class RockPaperScissors
 
     def play(player_choice)
     if player_choice == "rock" && @choice == "rock"
-        puts "It's a draw"
+        "It's a draw"
       elsif player_choice == "paper" && @choice == "paper"
-        puts "It's a draw"
+         "It's a draw"
       elsif player_choice == "scissors" && @choice == "scissors"
-        puts "It's a draw"
+        "It's a draw"
       elsif player_choice == "rock" && @choice == "scissors"
-        puts "#{@name} wins"
+         "#{@name} wins"
       elsif player_choice == "paper" && @choice == "rock"
-        puts "#{@name} wins"
+         "#{@name} wins"
       elsif player_choice == "scissors" && @choice == "paper"
-        puts "#{@name} wins"
+         "#{@name} wins"
       else
-        puts "Computer wins"
+         "Computer wins"
       end
     end
 
