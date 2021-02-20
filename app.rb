@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'classes'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions # refactoring note - might not need this
@@ -8,12 +9,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/submit' do
-    session[:player_name] = params[:player_name]
+    session[:player_1_name] = Player.new(params[:player_name])
+    session[:player_2_name] = Player.new("computer")
     redirect '/start_game'
   end
 
   get '/start_game' do
-    @player_name = session[:player_name]
+    @player_1_name = session[:player_1_name].name
     erb :start_game
   end
 
