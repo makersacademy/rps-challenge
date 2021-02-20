@@ -3,6 +3,6 @@ feature 'Starting game' do
     visit('/')
     fill_in :player_name, with: "Kevin"
     click_button "Start Game"
-    expect(page).to have_content "Make your choice: Rock, Paper or Scissors!"
+    expect(page).to have_content "Welcome, Kevin!"
   end
 end

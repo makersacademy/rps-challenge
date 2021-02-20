@@ -7,8 +7,14 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/start_game' do
-    'Make your choice: Rock, Paper or Scissors!'
+  post '/submit' do
+    session[:player_name] = params[:player_name]
+    redirect '/start_game'
+  end
+
+  get '/start_game' do
+    @player_name = session[:player_name]
+    erb :start_game
   end
 
   run! if app_file == $0
