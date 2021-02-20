@@ -5,4 +5,4 @@ feature 'Enter names' do
     click_button 'Go'
     expect(page).to have_content 'James'
   end
-end
+end 
