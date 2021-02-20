@@ -11,6 +11,11 @@ class RockPaperScissors < Sinatra::Base
     @player = Player.new(params[:player1])
     erb(:weapons)
   end 
+
+  post '/game_over' do 
+    @weapon = params[:weapon]
+    erb(:game_over)
+  end 
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

@@ -1,3 +1,12 @@
 <div style="text-align: center; color: cadetblue">
   <h2><span style="color: chocolate"><%= @player.name %></span> choose your weapon!</h2>
+  <form action="/game_over" method="post">
+    <input type="radio" id="rock" name="weapon" value="rock">
+    <label for="rock">Rock</label><br>
+    <input type="radio" id="paper" name="weapon" value="paper">
+    <label for="paper">Paper</label><br>
+    <input type="radio" id="scissors" name="weapon" value="scissors">
+    <label for="scissors">Scissors</label><br>
+    <input type="submit" id="submit" value="Fight!">
+  </form> 
 </div>
