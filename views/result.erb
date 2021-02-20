@@ -25,8 +25,13 @@ div {
 <img src="/images/<%= @choice %>.png" height=200>
 <h1>Your opponent chose <%= @rand %></h1>
 <img src="/images/<%= @rand %>.png" height=200>
-<br>
+</div>
 <h1><%= @message %></h1>
+<form action="/game">
+<br>
+<input type="submit" value="Play again">
+</form>
+
 </body>
 
 </html>

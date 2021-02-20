@@ -23,6 +23,15 @@ class RPS < Sinatra::Base
   get '/result' do
     @choice = session[:choice]
     @rand = ['Rock', 'Paper', 'Scissors'].sample
+
+    if @choice == @rand
+      @message = "It's a draw!"
+    elsif @choice == 'Rock' && @rand == 'Scissors' || @choice == 'Scissors' && @rand == 'Paper' || @choice == 'Paper' && @rand == 'Rock'
+      @message = "You won!"
+    elsif @choice == 'Rock' && @rand == 'Paper' || @choice == 'Scissors' && @rand == 'Rock' || @choice == 'Paper' && @rand == 'Scissors'
+      @message = "You Lost!"
+    end
+
     erb :result
   end
 
