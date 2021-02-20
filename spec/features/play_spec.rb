@@ -27,4 +27,17 @@ feature 'playing a game' do
     click_button "Rock"
     expect(page).to have_content "Morgan chose Rock!"
   end
+
+  #I want the game/computer to choose an option
+  scenario 'the computer chooses an option' do
+    register_name
+    click_button "Rock"
+    message = find(:css, '#opponent').text.strip
+    expect(possible_moves).to include message
+    # expect(page).to have_content "Opposing player chose Rock!"
+  end
+
+  def possible_moves
+    [:rock, :paper, :scissors].map { |shape| "Opposing player chose #{shape.to_s.capitalize}!"}
+  end
 end

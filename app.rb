@@ -15,11 +15,13 @@ end
 get '/play' do
   @name = session[:player_1_name]
   @move = session[:move]
+  @opponent_move = session[:opponent_move]
   erb :play
 end
 
 post '/play' do
   session[:move] = params[:move]
+  session[:opponent_move] = :rock
   redirect '/play'
 end
 
