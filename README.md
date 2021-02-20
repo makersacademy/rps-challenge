@@ -25,4 +25,4 @@ I would like to be able to play rock/paper/scissors
 ## Planning
 ## Learnings
 ## Issues encountered
-- `Capybara::ElementNotFound: Unable to find field "player_1_name" that is not disabled` but my field exist and is enabled
+- `Capybara::ElementNotFound: Unable to find field "player_1_name" that is not disabled` but my field exist and is enabled -> set my capybara steps incorrectly

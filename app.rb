@@ -15,9 +15,11 @@ enable :sessions
     # create the game instance
     # create player instance
     # redirect to choice page
+    redirect '/one_player/choice'
   end
 
-  get 'one_player/choice' do
+  get '/one_player/choice' do
+    erb :player_choice
     # choose btw rock, paper, scissors
   end
 
