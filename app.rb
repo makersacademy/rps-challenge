@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
-require './lib/game'
+require './lib/comp'
 
 class RPS < Sinatra::Base
 
@@ -15,7 +15,7 @@ class RPS < Sinatra::Base
 
   post '/game' do
     @player_choice = $player.choice = params[:player_choice]
-    @comp_choice = Game.new.comp_choice
+    @comp_choice = Comp.new.choice
     erb(:game)
   end
 

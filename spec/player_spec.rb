@@ -1,5 +1,4 @@
 require 'player'
-require 'features/web_helpers'
 
 describe Player do
 
