@@ -1,3 +1,5 @@
 <p><%= @game.player_1.name %> played: <%= @game.player_1.choice%></p>
 <p><%= @game.player_2.name %> played: <%= @game.player_2.choice%></p>
 <h4>And the winner is... <%= @game.winner.name %></h4>
+
+<button type="button" onClick="location.href='/'" name="restart">Play again</button>
