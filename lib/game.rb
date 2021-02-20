@@ -5,7 +5,7 @@ class Game
     scissors: { paper: :win, rock: :lose }
   }
 
-  attr_reader :player, :player_name, :ai
+  attr_reader :player, :ai
 
   class << self
     attr_reader :instance
@@ -17,8 +17,8 @@ class Game
 
   def initialize(player_name, player_class = Player, ai_class = Ai)
     @player_class = player_class
-    @player_name  = player_name
-    @player       = player_factory
+    @ai_class     = ai_class
+    @player       = player_class.new(player_name)
     @ai           = ai_class.new
   end
 
@@ -34,10 +34,6 @@ class Game
 
   def winner
     RESULT[player.move][ai.move] == :win ? player : ai
-  end
-
-  def player_factory
-    player_class.new(player_name)
   end
 
   def draw?

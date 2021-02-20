@@ -26,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
   get '/game' do
     @game.player.move = params[:choice].to_sym
     @game.ai.choose
-    erb :game
+    erb :game, layout: :game_layout
   end
 
   run! if app_file == $PROGRAM_NAME

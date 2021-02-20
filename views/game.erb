@@ -1,6 +1,6 @@
-<p><%= @game.player_name %> chose <%= @game.player.move.capitalize %></p>
-<h2><%= @game.result %></h2>
-<p><%= @game.ai.name %> chose <%= @game.ai.move.capitalize %></p>
+<h2 class="player"><%= @game.player.name %> chose <%= @game.player.move.capitalize %></h2>
+<h1><%= @game.result %></h1>
+<h2 class="ai"><%= @game.ai.name %> chose <%= @game.ai.move.capitalize %></h2>
 
 <form action="play">
   <input type="submit" value="Play Again">
