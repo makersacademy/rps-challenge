@@ -16,7 +16,18 @@ class Rps < Sinatra::Base
 
   get '/play' do 
     @player_name = session[:player_name]
+    @move = session[:move]
     erb :play
+  end
+
+  post '/play' do
+    session[:move] = params[:move]
+    redirect to('/move1')
+  end
+
+  get '/move1' do
+    @move = session[:move]
+    erb :move1
   end
 
 
