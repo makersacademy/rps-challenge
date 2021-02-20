@@ -10,7 +10,7 @@ describe Player do
   end
 
   it 'should return player_choice' do
-    expect(player.choice=('Rock')).to eq('Rock')
+    expect(player.choice = 'Rock').to eq('Rock')
   end
 
 end
