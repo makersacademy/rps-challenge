@@ -1,0 +1,25 @@
+<center><h1>Rock, Paper, Scissors</h1>
+<% if @@name == "" %>
+<h2>It's you against the computer</h2>
+<% elsif %>
+<h2>It's <%= @@name %> against the computer</h2>
+<% end %>
+<h3>To play, make a selction from the 3 options below</h3>
+<form action="/rock" method="post">
+<!-- <input type="submit" value="Rock"> -->
+<input type="image" name="submit" src="https://www.kindpng.com/picc/m/248-2486440_chronic-kidney-stones-monster-sticker-cartoon-rock-clipart.png" border="0" alt="Rock" style="width: 200px;" />
+</form>
+<form action="/paper" method="post">
+<!-- <input type="submit" value="Paper"> -->
+<input type="image" name="submit" src="https://icon-library.com/images/rock-paper-scissors-icon/rock-paper-scissors-icon-12.jpg" border="0" alt="Paper" style="width: 200px;" />
+
+</form>
+<form action="/scissors" method="post">
+<!-- <input type="submit" value="Scissors"> -->
+<input type="image" name="submit" src="https://thumbs.dreamstime.com/b/angry-scissors-cartoon-vector-illustration-49122109.jpg" border="0" alt="Scissors" style="width: 200px;" />
+</form>
+
+<p>Rules of the game: Make your decision above.  The computer will make a choice randomly.</p>
+<p>Rock beats scissors; scissors beat paper; paper beats rock.</p>
+
+</center>

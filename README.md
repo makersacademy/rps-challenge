@@ -1,6 +1,24 @@
-# RPS Challenge
+# RPS Challenge #
 
-Instructions
+I have created a Rock, Paper Scissors game that the user can play against the computer.
+
+To use this program, clone this repo onto your device, and navigate to the project directory. Then run:
+```shell
+bundle
+```
+Start your local server:
+```shell
+ruby app.rb
+```
+Navigate to your localhost in your browser, and play the game.
+
+Whilst not understanding at all how 'srand' works, I have successfully incorporated this into my test suite which has allowed me to test the display of the game result.
+
+I have decided to use minimum CSS in this project.
+
+
+
+Challenge Instructions
 -------
 
 * Feel free to use google, your notes, books, etc. but work on your own
@@ -9,7 +27,6 @@ Instructions
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
 Task
-----
 
 Knowing how to build web applications is getting us almost there as web developers!
 
