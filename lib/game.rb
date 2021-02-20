@@ -1,13 +1,12 @@
 class Game
-  attr_reader :player, :player_name, :player_class
-  private     :player_class
+  attr_reader :player, :player_name
 
-  def self.instance
-    @instance
-  end
+  class << self
+    attr_reader :instance
 
-  def self.create(name)
-    @instance = self.new(name)
+    def create(name)
+      @instance = new(name)
+    end
   end
 
   def initialize(player_name, player_class = Player)
@@ -17,6 +16,8 @@ class Game
   end
 
   private
+
+  attr_reader :player_class
 
   def player_factory
     player_class.new(player_name)
