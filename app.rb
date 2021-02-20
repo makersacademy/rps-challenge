@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
+require './lib/random_pick'
 
 class RPS < Sinatra::Base
 
@@ -11,42 +14,37 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    session[:name] = params[:name]
+    session[:game] = Game.new(params[:name])
     redirect '/game'
   end
 
   get '/game' do
-    @name = session[:name]
+    @name = session[:game].player1.name
     erb :game
   end
 
   get '/result' do
-    @choice = session[:choice]
-    @rand = ['Rock', 'Paper', 'Scissors'].sample
-
-    if @choice == @rand
-      @message = "It's a draw!"
-    elsif @choice == 'Rock' && @rand == 'Scissors' || @choice == 'Scissors' && @rand == 'Paper' || @choice == 'Paper' && @rand == 'Rock'
-      @message = "You won!"
-    elsif @choice == 'Rock' && @rand == 'Paper' || @choice == 'Scissors' && @rand == 'Rock' || @choice == 'Paper' && @rand == 'Scissors'
-      @message = "You Lost!"
-    end
+    @player1 = session[:game].player1.name
+    @player2 = session[:game].player2.name
+    @pick1 = session[:game].pick1
+    @pick2 = session[:game].pick2    
+    @result = session[:game].result
 
     erb :result
   end
 
   post '/rock' do
-    session[:choice] = 'Rock'
+    session[:game].turn('Rock')
     redirect '/result'
   end
 
   post '/paper' do
-    session[:choice] = 'Paper'
+    session[:game].turn('Paper')
     redirect '/result'
   end
 
   post '/scissors' do
-    session[:choice] = 'Scissors'
+    session[:game].turn('Scissors')
     redirect '/result'
   end
 
