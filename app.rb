@@ -14,6 +14,7 @@ enable :sessions
 
   get '/move' do
     @player1 = session[:player1].name
+    session[:move] = Player.new(params[:move])
     erb(:move)
   end
 
