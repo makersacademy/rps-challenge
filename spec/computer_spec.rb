@@ -1,6 +1,5 @@
 require './lib/computer.rb'
 
-
 describe Computer do
 
   it "should provide a computer move in the game" do

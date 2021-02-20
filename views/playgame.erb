@@ -1,10 +1,8 @@
 <center><h1>Rock, Paper, Scissors</h1>
-<% if $name == "" %>
+<% if @@name == "" %>
 <h2>It's you against the computer</h2>
 <% elsif %>
-<h2>It's <%= $name %> against the computer</h2>
-<% elsif $name = nil %>
-<h2>Let's play again!</h2>
+<h2>It's <%= @@name %> against the computer</h2>
 <% end %>
 <h3>To play, make a selction from the 3 options below</h3>
 <form action="/rock" method="post">

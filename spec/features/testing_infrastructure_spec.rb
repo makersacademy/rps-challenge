@@ -57,4 +57,12 @@ feature "upon seeing the result" do
     click_on("Scissors")
     expect(page).to have_button('Play again!')
   end
+
+  # scenario "tells the player the outcome of the game" do
+  #   computer = double(:computer)
+  #   allow(computer).to receive(:result).and_return("paper")
+  #   sign_in_and_play
+  #   click_on("Scissors")
+  #   expect(page).to have_content "win"
+  # end
 end

@@ -1,15 +1,15 @@
 <center>
 
 <h1>You chose Rock</h1>
-<h1>The computer chose <%= $computer.capitalize %></h1>
+<h1>The computer chose <%= @@computer.capitalize %></h1>
 
-<% if $computer == "rock" %>
+<% if @@computer == "rock" %>
 <h2>The rocks bounce off each other.  It's a tie!</h2>
 
-<% elsif $computer == "paper" %>
+<% elsif @@computer == "paper" %>
 <h2>Your rock is wrapped up tight!  You lose!</h2>
 
-<% elsif $computer == "scissors" %>
+<% elsif @@computer == "scissors" %>
 <h2>Your rock crushes the scissors.  You win!</h2>
 <% end %>
 
