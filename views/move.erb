@@ -1,7 +1,6 @@
 <h1> <%= @player1 %> </h1>
 <h2> Select your move </h2>
 <form action="/choice" method="post">
-    <input type="submit" value="Rock">
-    <input type="submit" value="Paper">
-    <input type="submit" value="Scissors">
+    <input type="text" placeholder="rock,paper,or scissors?" name="move">
+    <input type="submit" value="Let's play!">
   </form>
