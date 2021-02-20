@@ -15,11 +15,11 @@ class RockPaperScissors < Sinatra::Base
   post '/name' do
     player = Player.new(params[:name])
     @game = RPS.create(player)
-    redirect '/play'
+    redirect '/choose'
   end
 
-  get '/play' do
-    erb :play
+  get '/choose' do
+    erb :choose
   end
 
   # start the server if ruby file executed directly
