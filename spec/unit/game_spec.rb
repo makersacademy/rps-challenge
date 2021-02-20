@@ -33,17 +33,41 @@ describe Game do
 
   describe '#result' do
     context 'when player wins' do
-      it 'announces player as winner' do
+      it 'announces player as winner with rock' do
         allow(player).to receive(:choice) { :rock }
         allow(ai).to receive(:choice) { :scissors }
+        expect(subject.result).to eq 'Frank wins!'
+      end
+
+      it 'announces player as winner with paper' do
+        allow(player).to receive(:choice) { :paper }
+        allow(ai).to receive(:choice) { :rock }
+        expect(subject.result).to eq 'Frank wins!'
+      end
+
+      it 'announces player as winner with scissors' do
+        allow(player).to receive(:choice) { :scissors }
+        allow(ai).to receive(:choice) { :paper }
         expect(subject.result).to eq 'Frank wins!'
       end
     end
 
     context 'when ai wins' do
-      it 'announces ai as winner' do
+      it 'announces ai as winner with scissors' do
         allow(player).to receive(:choice) { :paper }
         allow(ai).to receive(:choice) { :scissors }
+        expect(subject.result).to eq 'AI wins!'
+      end
+
+      it 'announces ai as winne with paper' do
+        allow(player).to receive(:choice) { :rock }
+        allow(ai).to receive(:choice) { :paper }
+        expect(subject.result).to eq 'AI wins!'
+      end
+
+      it 'announces ai as winner with rock' do
+        allow(player).to receive(:choice) { :scissors }
+        allow(ai).to receive(:choice) { :rock }
         expect(subject.result).to eq 'AI wins!'
       end
     end
