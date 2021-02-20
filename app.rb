@@ -22,6 +22,7 @@ class MyApp < Sinatra::Base
     erb(:playgame)
   end
 
+
   post "/playagain" do
     redirect to('/playgame')
   end
