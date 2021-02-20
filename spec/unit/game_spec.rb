@@ -5,9 +5,9 @@ describe Game do
   let(:player_2) { instance_double('Player', :name => 'finn') }
   let(:my_game) { Game.new(player_1, player_2) }
 
-  it 'takes two players as parameters' do
-    expect(Game).to respond_to(:new).with(2)
-  end
+  # it 'takes two players as parameters' do
+  #   expect(Game).to respond_to(:new).with(2)
+  # end
 
   describe '#players' do
     it 'knows the players participating to the game' do

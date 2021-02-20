@@ -9,5 +9,6 @@ feature 'rps - result anouncement' do
     click_button('Rock')
     visit('/one_player/results')
     expect(page).to have_content('Sandy played: Rock')
+    expect(page).to have_button('Play again')
   end
 end

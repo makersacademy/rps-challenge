@@ -14,27 +14,27 @@ class RpsGame < Sinatra::Base
   post '/one_player/game_setup' do
     # create the game instance
     player_1 = Player.new(params['player_1_name'])
-    $game = Game.new(player_1, Player.new)
+    @game = Game.create(player_1, Player.new)
     # redirect to choice page
     redirect '/one_player/choice'
   end
 
   get '/one_player/choice' do
-    @game = $game
+    @game = Game.instance
     erb :player_choice
     # choose btw rock, paper, scissors
   end
 
   post '/one_player/set_choice' do
     selection = params['selection']
-    @game = $game
+    @game = Game.instance
     @game.selection(@game.player_1, selection)
     @game.random_selection(@game.player_2)
     redirect '/one_player/results'
   end
 
   get '/one_player/results' do
-    @game = $game
+    @game = Game.instance
     @game.results(@game.player_1, @game.player_2)
     erb :results
   end
