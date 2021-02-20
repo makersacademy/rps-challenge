@@ -1,9 +1,12 @@
 <div>
-  <h1>Hello <%= @player_name %>!</h1>
+  <h1>Hello <%= @player_name %>! </h1>
+  <h1>Hello <%= @player2_name %>! </h1>
   <h2> Enter your choice below! </h2>
+  *Note if you're playing against RPSBot3000 leave his move blank, unless you want to cheat!*
 
   <form action ="/move" method="post">
     <input type="text" name="player_move">
+    <input type="text" name="player2_move">
     <input type="submit" value="Submit Move">
   </form>
 
