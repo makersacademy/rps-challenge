@@ -16,7 +16,6 @@ class RPS < Sinatra::Base
   post '/game' do
     @player_choice = $player.choice = params[:player_choice]
     @comp_choice = Game.new.comp_choice
-    $comp_choice = @comp_choice
     erb(:game)
   end
 
