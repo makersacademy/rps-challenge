@@ -3,6 +3,7 @@ GEM
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ansi (1.5.0)
     ast (2.4.0)
     capybara (3.31.0)
       addressable
@@ -65,6 +66,10 @@ GEM
       docile (~> 1.1)
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
+    simplecov-console (0.7.2)
+      ansi
+      simplecov
+      terminal-table
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.2)
     sinatra (2.0.8.1)
@@ -75,6 +80,8 @@ GEM
     sync (0.5.0)
     term-ansicolor (1.7.1)
       tins (~> 1.0)
+    terminal-table (1.8.0)
+      unicode-display_width (~> 1.1, >= 1.1.1)
     thor (1.1.0)
     tilt (2.0.10)
     tins (1.28.0)
@@ -92,6 +99,8 @@ DEPENDENCIES
   rspec
   rubocop (= 0.79.0)
   shotgun
+  simplecov
+  simplecov-console
   sinatra
 
 BUNDLED WITH

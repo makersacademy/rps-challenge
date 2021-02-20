@@ -1,13 +1,19 @@
 feature 'playing the game' do
-  scenario 'seeing the options' do
-    visit '/'
-    fill_in :name, with: 'Frank'
-    click_button 'Go!'
+  scenario 'choosing an option' do
+    sign_up_and_go
     click_button 'Play'
-    expect(page).to have_content 'Rock Paper Scissors'
+    find_link('Rock').visible?
   end
 
   scenario 'choosing an option' do
-    # expect(page).not_to have_content
+    sign_up_and_go
+    click_button 'Play'
+    find_link('Paper').visible?
+  end
+
+  scenario 'seeing the options' do
+    sign_up_and_go
+    click_button 'Play'
+    find_link('Scissors').visible?
   end
 end
