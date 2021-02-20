@@ -55,6 +55,7 @@ feature 'testing multiplayer move selection' do
 end
 
 feature 'testing match outcomes' do
+  #Rock Tests
   scenario 'player 1 chooses rock and player 2 chooses scissors' do
     sign_in_and_play_multiplayer
     rock_and_scissors
@@ -65,11 +66,22 @@ feature 'testing match outcomes' do
     rock_and_paper
     expect(page).to have_content 'You Lose!'
   end
+  scenario 'player 1 chooses rock and player 2 chooses spock' do
+    sign_in_and_play_multiplayer
+    rock_and_spock
+    expect(page).to have_content 'You Lose!'
+  end
+  scenario 'player 1 chooses rock and player 2 chooses lizard' do
+    sign_in_and_play_multiplayer
+    rock_and_lizard
+    expect(page).to have_content 'You Win!'
+  end
   scenario 'player 1 chooses rock and player 2 chooses rock' do
     sign_in_and_play_multiplayer
     both_choose_rock
     expect(page).to have_content 'Draw!'
   end
+  #Paper Tests
   scenario 'player 1 chooses paper and player 2 chooses rock' do
     sign_in_and_play_multiplayer
     paper_and_rock
@@ -80,11 +92,22 @@ feature 'testing match outcomes' do
     paper_and_scissors
     expect(page).to have_content 'You Lose!'
   end
+  scenario 'player 1 chooses paper and player 2 chooses spock' do
+    sign_in_and_play_multiplayer
+    paper_and_spock
+    expect(page).to have_content 'You Win!'
+  end
+  scenario 'player 1 chooses paper and player 2 chooses lizard' do
+    sign_in_and_play_multiplayer
+    paper_and_lizard
+    expect(page).to have_content 'You Lose!'
+  end
   scenario 'player 1 chooses paper and player 2 chooses paper' do
     sign_in_and_play_multiplayer
     both_choose_paper
     expect(page).to have_content 'Draw!'
   end
+#Scissors Tests
   scenario 'player 1 chooses scissors and player 2 chooses rock' do
     sign_in_and_play_multiplayer
     scissors_and_rock
@@ -95,9 +118,71 @@ feature 'testing match outcomes' do
     scissors_and_paper
     expect(page).to have_content 'You Win!'
   end
+  scenario 'player 1 chooses scissors and player 2 chooses spock' do
+    sign_in_and_play_multiplayer
+    scissors_and_spock
+    expect(page).to have_content 'You Lose!'
+  end
+  scenario 'player 1 chooses scissors and player 2 chooses lizard' do
+    sign_in_and_play_multiplayer
+    scissors_and_lizard
+    expect(page).to have_content 'You Win!'
+  end
   scenario 'player 1 chooses scissors and player 2 chooses scissors' do
     sign_in_and_play_multiplayer
     both_choose_scissors
+    expect(page).to have_content 'Draw!'
+  end
+#Spock Tests
+  scenario 'player 1 chooses spock and player 2 chooses rock' do
+    sign_in_and_play_multiplayer
+    spock_and_rock
+    expect(page).to have_content 'You Lose!'
+  end
+  scenario 'player 1 chooses spock and player 2 chooses paper' do
+    sign_in_and_play_multiplayer
+    spock_and_paper
+    expect(page).to have_content 'You Lose!'
+  end
+  scenario 'player 1 chooses spock and player 2 chooses scissors' do
+    sign_in_and_play_multiplayer
+    spock_and_scissors
+    expect(page).to have_content 'You Win!'
+  end
+  scenario 'player 1 chooses spock and player 2 chooses lizard' do
+    sign_in_and_play_multiplayer
+    spock_and_lizard
+    expect(page).to have_content 'You Lose!'
+  end
+  scenario 'player 1 chooses spock and player 2 chooses spock' do
+    sign_in_and_play_multiplayer
+    both_choose_spock
+    expect(page).to have_content 'Draw!'
+  end
+#Lizard Tests
+  scenario 'player 1 chooses Lizard and player 2 chooses rock' do
+    sign_in_and_play_multiplayer
+    lizard_and_rock
+    expect(page).to have_content 'You Lose!'
+  end
+  scenario 'player 1 chooses lizard and player 2 chooses paper' do
+    sign_in_and_play_multiplayer
+    lizard_and_paper
+    expect(page).to have_content 'You Win!'
+  end
+  scenario 'player 1 chooses lizard and player 2 chooses spock' do
+    sign_in_and_play_multiplayer
+    lizard_and_spock
+    expect(page).to have_content 'You Win!'
+  end
+  scenario 'player 1 chooses lizard and player 2 chooses scissors' do
+    sign_in_and_play_multiplayer
+    lizard_and_scissors
+    expect(page).to have_content 'You Lose!'
+  end
+  scenario 'player 1 chooses lizard and player 2 chooses Lizard' do
+    sign_in_and_play_multiplayer
+    both_choose_lizard
     expect(page).to have_content 'Draw!'
   end
 end
