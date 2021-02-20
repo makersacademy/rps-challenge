@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/Player.rb'
 
 class Rps < Sinatra::Base
 enable :sessions
@@ -7,12 +8,12 @@ enable :sessions
   end
 
   post '/names' do
-    session[:player1] = params[:player1]
+    session[:player1] = Player.new(params[:player1])
     redirect '/move'
   end
 
   get '/move' do
-    @player1 = session[:player1]
+    @player1 = session[:player1].name
     erb(:move)
   end
 
