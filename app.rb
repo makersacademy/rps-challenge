@@ -6,4 +6,9 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
+  post '/name' do
+    @player = params[:name]
+    erb :play
+  end
+
 end

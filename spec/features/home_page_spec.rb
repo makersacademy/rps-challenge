@@ -3,7 +3,11 @@ feature 'home page' do
     visit('/')
     expect(page).to have_content 'Rock, Paper, Scissors'
   end
-
-# expect to see name entry form
+  scenario 'player can sign in' do
+    visit('/')
+    fill_in :name, with: 'Hannah'
+    click_button "Submit"
+    expect(page).to have_content("Hannah, let's play!")
+  end
 
 end
