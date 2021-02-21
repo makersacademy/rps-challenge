@@ -6,7 +6,6 @@ feature 'play' do
     click_button "Submit"
     fill_in("move", with: 'Scissors')
     click_button "Submit"
-    save_and_open_page
     expect(page).to have_content "Computer chose rock – you lose!"
   end
 end

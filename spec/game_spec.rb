@@ -1,8 +1,4 @@
 require 'game'
-# new class
-# new instance
-# pass in moves and get desired outcome
-# expect computer = rock and player = scissor to eq...
 
 describe Game do
   describe '#calculate_winner' do
@@ -12,5 +8,17 @@ describe Game do
         expect(game.calculate_winner).to eq("Computer chose scissors – it's a draw!")
       end
     end
+    context 'computer has winning move' do
+      it 'returns you lose' do
+        game = Game.new('scissors', 'rock')
+        expect(game.calculate_winner).to eq("Computer chose rock – you lose!")
+      end
+    end
+
   end
 end
+
+
+# how to calculate winners and maintain SRP...?
+# Will refactoring do this naturally?
+#
