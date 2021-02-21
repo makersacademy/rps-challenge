@@ -1,5 +1,10 @@
 # RPS Challenge
 
+Used a video to help me complete the challenge - https://www.youtube.com/watch?v=GoHKmartBYo
+
+
+
+
 Instructions
 -------
 
