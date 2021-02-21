@@ -1,14 +1,35 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="<%= url('/main.css') %>">
+  <title>Rock Paper Scissors!</title>
+</head>
+<body>
+<div id="center">
 <h1>It's time to play, <%= @name %>!</h1>
+<br>
 <h2>Choose your move!</h2>
+<div class="moves">
+<div class="emoji">&#x1f918;</div>
+<div class="emoji">&#x1f4c4;</div>
+<div class="emoji">&#x1f487;</div>
+<div class="line-break"></div>
+<div class="item">
 <form action= "/move?move=rock" method="post">
   <input type="submit" value="Rock">
-</form>
+</form></div>
+<div class = "item">
 <form action= "/move?move=paper" method="post">
   <input type="submit" value="Paper">
 </form>
+</div>
+<div class="item">
 <form action= "/move?move=scissors" method="post">
   <input type="submit" value="Scissors">
 </form>
+</div>
+</div>
 <% if @game.game_log.games.length > 0 %>
   <%= @game.game_log.show_game %>
 <% end %>
@@ -24,4 +45,8 @@
 <% if @game.game_log.games.length > 0 %>
   <p>The current score is <%= @name %>: <%= @game.game_log.score[:player] %>, COMPUTER: <%= @game.game_log.score[:computer] %></p>
 <% end %>
+<div class="item">
 <a href = "/">End current game</a>
+</div>
+</div>
+</body>

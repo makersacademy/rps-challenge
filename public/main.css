@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+#center {
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+#signin {
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.moves {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+.item {
+  padding: 20px;
+  flex-basis: 100px;
+}
+.emoji {
+  padding: 20px;
+  font-size: 20pt;
+  flex-basis: 100px;
+}
+.line-break {
+  width: 200%;
+}
+input[type=text] {
+  background-color: hotpink;
+  color: white;
+  border-style: solid;
+  border-color: white;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
+}
+input[type=submit]{
+  background-color: black;
+  box-sizing: border-box;
+  background-color: hotpink;
+  border-style: dotted;
+  border-color: white;
+  color: white;
+}
+body{
+    background-color: black;
+    color: chartreuse;
+    text-align: center;
+}
+h1{
+    color:white;
+    font-weight: 900;
+    font-size: 40pt;
+    margin: 15px auto;
+    text-align: center;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+}
+h2{
+    font-style: oblique;
+    font-size: 15pt;
+}
+
+a:link{
+    color:hotpink;
+    text-decoration: none;
+}
+a:visited{
+    color:hotpink;
+    text-decoration: none;
+}
+a:hover{
+    color:pink;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+}
