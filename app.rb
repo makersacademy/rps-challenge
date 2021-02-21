@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
@@ -7,14 +9,14 @@ class RpsGame < Sinatra::Base
     erb :index
   end
 
-# Solo mode
+  # Solo mode
   get '/one_player' do
     erb :enter_name
   end
 
   post '/one_player/game_setup' do
-    player_1 = Player.new(params['player_1_name'])
-    @game = Game.create(player_1, Player.new)
+    player_one = Player.new(params['player_one_name'])
+    @game = Game.create(player_one, Player.new)
     redirect '/one_player/choice'
   end
 
@@ -24,54 +26,54 @@ class RpsGame < Sinatra::Base
     # choose btw rock, paper, scissors
   end
 
-  post '/one_player/set_choice' do
+  post '/one_player/receive_choice' do
     selection = params['selection']
     @game = Game.instance
-    @game.selection(@game.player_1, selection)
-    @game.random_selection(@game.player_2)
+    @game.selection(@game.player_one, selection)
+    @game.random_selection(@game.player_two)
     redirect '/results'
   end
 
-# Two players mode
+  # Two players mode
   get '/two_players' do
     erb :two_players_enter_names
   end
 
   post '/two_players/game_setup' do
-    player_1 = Player.new(params['player_1_name'])
-    player_2 = Player.new(params['player_2_name'])
-    @game = Game.create(player_1, player_2)
-    redirect '/two_players/player_1/choice'
+    player_one = Player.new(params['player_one_name'])
+    player_two = Player.new(params['player_two_name'])
+    @game = Game.create(player_one, player_two)
+    redirect '/two_players/player_one/choice'
   end
 
-  get '/two_players/player_1/choice' do
+  get '/two_players/player_one/choice' do
     @game = Game.instance
-    erb :two_players_player_1_choice
+    erb :two_players_player_one_choice
   end
 
-  post '/two_players/player_1/set_choice' do
+  post '/two_players/player_one/receive_choice' do
     selection = params['selection']
     @game = Game.instance
-    @game.selection(@game.player_1, selection)
-    redirect 'two_players/player_2/choice'
+    @game.selection(@game.player_one, selection)
+    redirect 'two_players/player_two/choice'
   end
 
-  get '/two_players/player_2/choice' do
+  get '/two_players/player_two/choice' do
     @game = Game.instance
-    erb :two_players_player_2_choice
+    erb :two_players_player_two_choice
   end
 
-  post '/two_players/player_2/set_choice' do
+  post '/two_players/player_two/receive_choice' do
     selection = params['selection']
     @game = Game.instance
-    @game.selection(@game.player_2, selection)
+    @game.selection(@game.player_two, selection)
     redirect '/results'
   end
 
-# Results route
+  # Results route
   get '/results' do
     @game = Game.instance
-    @game.results(@game.player_1, @game.player_2)
+    @game.results(@game.player_one, @game.player_two)
     erb :results
   end
 

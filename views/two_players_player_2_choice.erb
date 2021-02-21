@@ -1,7 +1,7 @@
 <div style="text-align:center">
-  <h2>Ready to play <%= @game.player_2.name %>?</h2>
+  <h2>Ready to play <%= @game.player_two.name %>?</h2>
   <p>Make your choice:</p>
-  <form action="/two_players/player_2/set_choice" method="post">
+  <form action="/two_players/player_two/receive_choice" method="post">
     <input type="submit" name="selection" value="Rock">
     <input type="submit" name="selection" value="Paper">
     <input type="submit" name="selection" value="Scissors">

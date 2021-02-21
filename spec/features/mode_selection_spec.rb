@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'rps game' do
   scenario 'select one or two players mode' do
     visit('/')

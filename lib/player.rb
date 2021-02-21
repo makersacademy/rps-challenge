@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Player
   attr_reader :name, :choice
 
@@ -5,7 +7,7 @@ class Player
     @name = name
   end
 
-  def set_choice(value)
+  def receive_choice(value)
     @choice = value
   end
 end

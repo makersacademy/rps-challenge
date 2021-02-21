@@ -1,37 +1,43 @@
-class Game
-  attr_reader :players, :player_1, :player_2, :winner
+# frozen_string_literal: true
 
-  def initialize(player_1 = Player.new, player_2 = Player.new)
-    @players = [player_1, player_2]
+class Game
+  attr_reader :players, :winner
+
+  def initialize(player_one = Player.new, player_two = Player.new)
+    @players = [player_one, player_two]
   end
 
-  def player_1
+  def player_one
     @players.first
   end
-  def player_2
+
+  def player_two
     @players.last
   end
 
   def selection(player, value)
-    player.set_choice(value)
+    player.receive_choice(value)
   end
 
   def random_selection(player)
-    player.set_choice(['Rock', 'Paper', 'Scissors', 'Rock', 'Paper', 'Scissors'].sample)
+    player.receive_choice(%w[Rock Paper Scissors Rock Paper Scissors].sample)
   end
 
-  def results(player_1, player_2)
-    if (player_1.choice == 'Rock' && player_2.choice == 'Scissors') || (player_1.choice == 'Scissors' && player_2.choice == 'Paper') || (player_1.choice == 'Paper' && player_2.choice == 'Rock')
-      @winner = player_1.name
-    elsif player_1.choice == player_2.choice
+  def results(player_one, player_two)
+    combo_one = (player_one.choice == 'Rock' && player_two.choice == 'Scissors')
+    combo_two = (player_one.choice == 'Scissors' && player_two.choice == 'Paper')
+    combo_three = (player_one.choice == 'Paper' && player_two.choice == 'Rock')
+    if combo_one || combo_two || combo_three
+      @winner = player_one.name
+    elsif player_one.choice == player_two.choice
       @winner = nil
     else
-      @winner = player_2.name
+      @winner = player_two.name
     end
   end
 
-  def self.create(player_1, player_2)
-    @game ||= Game.new(player_1, player_2)
+  def self.create(player_one, player_two)
+    @game ||= Game.new(player_one, player_two)
   end
 
   def self.instance
@@ -41,5 +47,4 @@ class Game
   def self.remove(game)
     remove_instance_variable(game)
   end
-
 end
