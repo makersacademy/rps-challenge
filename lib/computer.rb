@@ -1,7 +1,7 @@
-class Ai
+class Computer
   attr_reader :name, :move
 
-  def initialize(name = 'AI')
+  def initialize(name = 'Computer')
     @name = name
   end
 

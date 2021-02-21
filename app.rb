@@ -1,7 +1,7 @@
 require 'sinatra'
 require './lib/game'
 require './lib/player'
-require './lib/ai'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   before { @game = Game.instance }
@@ -20,13 +20,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    erb :play, layout: :play_layout
+    erb :play
   end
 
   get '/game' do
     @game.player.move = params[:choice].to_sym
-    @game.ai.choose
-    erb :game, layout: :game_layout
+    @game.computer.choose
+    erb :game
   end
 
   run! if app_file == $PROGRAM_NAME

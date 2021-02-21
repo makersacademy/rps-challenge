@@ -9,7 +9,7 @@ require_relative 'feature/web_helpers'
 require_relative '../app'
 require 'player'
 require 'game'
-require 'ai'
+require 'computer'
 
 ENV['RACK_ENV'] = 'test'
 Capybara.app    = RockPaperScissors

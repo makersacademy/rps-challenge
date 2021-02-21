@@ -1,7 +1,10 @@
-<h2 class="player"><%= @game.player.name %> chose <%= @game.player.move.capitalize %></h2>
-<h1><%= @game.result %></h1>
-<h2 class="ai"><%= @game.ai.name %> chose <%= @game.ai.move.capitalize %></h2>
+<p class="player"><%= @game.player.name %> chose <%= @game.player.move.capitalize %></p>
+<h1 class="winner"><%= @game.result %></h1>
+<p class="computer"><%= @game.computer.name %> chose <%= @game.computer.move.capitalize %></p>
 
 <form action="play">
-  <input type="submit" value="Play Again">
+  <input class="play-again" type="submit" value="Play Again">
 </form>
+
+<img class="player-move" src="images/<%= @game.player.move%>.png">
+<img class="computer-move" src="images/<%= @game.computer.move%>.png">

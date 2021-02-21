@@ -1,30 +1,35 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: helvetica;
+  font-family: impact;
   box-sizing: border-box;
   font-size: 30px;
   text-align: center;
   background-color: cornsilk;
   font-weight: 900;
+  position: fixed;
 }
 
-/* body {
-  background-image: url("images/rps.png");
-} */
+h1, h2, form {
+  background-color: transparent;
+  color: rgb(80, 80, 80);
+  margin-left: 150px;
+}
+
+form {
+  margin-top: 350px;
+}
 
 h1 {
-  font-size: 100px;
-  margin-top: 90px;
-  font-weight: 800;
-  color: rgb(119, 89, 44);
+  font-size: 120px;
+  margin-top: 60px;
+  margin-left: 190px;
 }
 
 h2 {
   font-size: 60px;
-  margin-top: 40px;
-  color: rgb(106, 83, 41);
-  font-weight: 800;
+  margin-top: 250px;
+  margin-left: 470px;
 }
 
 input {
@@ -32,8 +37,7 @@ input {
   background-color: rgb(254, 223, 99);
   box-shadow: 0 0 15px 4px;
   font-size: 50px;
-  font-weight: 600;
-  color: rgb(113, 113, 113);
+  color: rgb(80, 80, 80);
   font-family: inherit;
   border: 0px;
 }
@@ -43,6 +47,7 @@ input {
   width: 500px;
   border-radius: 30px;
   padding: 20px;
+  margin-left: 260px;
 }
 
 .button {
@@ -50,23 +55,101 @@ input {
   font-size: 40px;
   padding: 70px;
   background-color: rgb(192, 255, 147);
-  font-weight: 900;
-  color: rgb(125, 125, 125);
   font-size: 70px;
+  margin-left: 400px;
+  margin-top: 100px;
 }
 
-.play {
-  border-radius: 80px;
+.play, .play-again {
+  border-radius: 100px;
   padding: 60px;
-  color: rgb(136, 136, 136);
+  color: rgb(80, 80, 80);
 }
 
 p {
   font-size: 60px;
   margin-top: 40px;
-  color: rgb(210, 136, 0);
+  color: rgb(80, 80, 80);
 }
 
 .name {
   font-size: 100px;
+}
+
+.rps {
+  width: 500px;
+  margin-left: 880px;
+  margin-top: 340px;
+
+}
+
+.fist {
+  width: 250px;
+  margin-top: 250px;
+  margin-left: 100px;
+}
+
+
+/* play */
+img {
+  width: 350px;
+  border: 0;
+  margin: 0px;
+  background-color: transparent;
+}
+
+.rock {
+  margin-left: 170px;
+  margin-top: 140px;
+  /* margin-top:px; */
+}
+
+.paper {
+  margin-left: 880px;
+  margin-top: 150px;
+}
+
+.scissors {
+  margin-left: 450px;
+  object-fit: scale-down;
+  height: 300px;
+  margin-top: 300px;
+}
+
+.rules {
+  margin-left: 520px;
+  margin-top: 50px;
+  font-size: 70px;
+}
+
+.player {
+  margin-left: 100px;
+}
+
+.player-move {
+  margin-top: 150px;
+  margin-left: 175px;
+  width: 250px;
+}
+
+.computer {
+  margin-left: 750px;
+  margin-top: 375px;
+}
+
+.computer-move {
+  margin-top: 475px;
+  margin-left: 900px;
+  width: 250px;
+  object-fit: scale-down;
+}
+
+.winner {
+  margin-top: 145px;
+  margin-left: 550px;
+}
+
+.play-again {
+  margin-top: 125px;
+  margin-left: 200px;
 }

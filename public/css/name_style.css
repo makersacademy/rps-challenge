@@ -1,36 +1,47 @@
 html, body {
-  background-image: url(../images/lights.jpg);
-  height: 100%;
-  width: 100%;
+  animation: blinkingBackground 2s infinite;
 }
+
+@keyframes blinkingBackground{
+  0%		{ background-color: rgb(255, 235, 123);}
+  25%		{ background-color: #ec9b30;}
+  50%		{ background-color: #dd6e52;}
+  75%		{ background-color: #ec9b30;}
+  100%	{ background-color: rgb(255, 171, 116);}
+}
+
 
 * {
   font-size: 70px;
   font-weight: 900;
-  font-family: helvetica;
-  color: rgb(70, 61, 60);
+  font-family: impact;
+  color: rgb(80, 80, 80);
   text-align: center;
   margin: 0;
   border: 0;
   box-sizing: border-box;
+  position: fixed;
 }
 
 .intro {
-  margin-top: 40px;
-  margin-left: 200px;
+  margin-top: 80px;
+  margin-left: 100px;
   text-align: left;
 }
 
 .name {
-  font-size: 150px;
-  margin-left: 400px;
+  font-size: 250px;
+  margin-top: 80px;
+  margin-left: 700px;
 }
 
 input {
-  margin-right: 400px;
-  border-radius: 60px;
-  padding: 40px;
-  color: rgb(109, 108, 109);
+  margin-left: 300px;
+  margin-top: 250px;
+  border-radius: 80px;
+  padding: 60px;
+  color: rgb(82, 82, 82);
   background-color: burlywood;
-  box-shadow:0 0 15px 4px
+  box-shadow:0 0 15px 4px;
+  margin-bottom: 150px;
 }

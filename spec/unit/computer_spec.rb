@@ -1,7 +1,7 @@
-describe Ai do
+describe Computer do
   describe '#name' do
-    it 'is AI by default' do
-      expect(subject.name).to eq 'AI'
+    it 'is Computer by default' do
+      expect(subject.name).to eq 'Computer'
     end
   end
 

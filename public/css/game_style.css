@@ -1,45 +1,40 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: helvetica;
+  font-family: impact;
   box-sizing: border-box;
   font-size: 30px;
   text-align: center;
   background-color: cornsilk;
   font-weight: 900;
+  color: rgb(80, 80, 80)
 }
 
 h1 {
   font-size: 100px;
-  margin-top: 40px;
-  font-weight: 800;
-  color: rgb(119, 89, 44);
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 h2 {
   font-size: 60px;
   margin-top: 40px;
-  color: rgb(174, 141, 7);
-  font-weight: 800;
 }
 
 input {
   border-radius: 100px;
   font-size: 40px;
   padding: 40px;
-  background-color: rgb(210, 131, 13);
-  font-weight: 900;
-  color: rgb(80, 63, 63);
   font-size: 70px;
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .player {
-  text-align: right;
-  margin-right: 200px;
-}
-
-.ai {
   text-align: left;
   margin-left: 200px;
+}
+
+.computer {
+  text-align: right;
+  margin-right: 200px;
 }
