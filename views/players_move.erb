@@ -1,14 +1,16 @@
-<p style="font-size:48px"> <%= @player_1_name %> vs. <%= @player_2_name %> </p>
+
+
+<p style="font-size:48px"> <%= @player_1_name %> vs. Computer </p>
 <div style="display:grid;grid-template-columns:1fr 1fr;grid-gap:50px">
 <p> <%= @player_1_name %> </p>
 
-<p> <%= @player_2_name %> </p>
+<p> Computer </p>
 </div>
 
-<form style="display:grid;grid-template-columns:1fr 1fr;grid-gap:50px;" method="post" action="/send-names">
-    <input type='text' name="player_1_name" value="player_1_name">
 
-    <input type='text' name="player_2_name" value="player_2_name">
 
-    <input style="color:blue; height:50px; width:100px"  type="submit" name="Submit" value="Confirm moves" />
+<form   method="post" action='/send-move'>
+    <input style="color:blue; height:50px;"  type="submit" name="move" value="Rock" />
+    <input style="color:blue; height:50px;"  type="submit" name="move" value="Paper" />
+    <input style="color:blue; height:50px;"  type="submit" name="move" value="Scissors" />
 </form>
