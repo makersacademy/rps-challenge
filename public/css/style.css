@@ -101,7 +101,6 @@ img {
 .rock {
   margin-left: 170px;
   margin-top: 140px;
-  /* margin-top:px; */
 }
 
 .paper {
@@ -122,25 +121,25 @@ img {
   font-size: 70px;
 }
 
-.player {
+.player1 {
   margin-top: 100px;
   margin-left: 125px;
   font-size: 50px;
 }
 
-.player-move {
+.player1-move {
   margin-top: 180px;
   margin-left: 220px;
   width: 175px;
 }
 
-.computer {
+.player2 {
   margin-top: 100px;
   margin-left: 840px;
   font-size: 50px;
 }
 
-.computer-move {
+.player2-move {
   margin-top: 180px;
   margin-left: 1000px;
   width: 175px;
