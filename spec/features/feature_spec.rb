@@ -2,18 +2,31 @@ require 'spec_helper'
 
 
 feature 'Filling out the form' do
-  scenario 'Can fill form out and posts valid value' do
-    visit("/")
-    fill_in 'player_1_name', with: 'Olga'
-    click_on'Submit'
-    expect(page).to have_content "Olga vs. Computer"
+  scenario 'Takes names and uses them to show players on /get-player1-move' do
+    sign_in_and_play
+    expect(page).to have_content "#{@player_1_name} vs. #{@player_2_name}"
   end
-  scenario 'Can enter moves and confirm them' do
-    visit("/")
-    fill_in 'player_1_name', with: 'Olga'
-    click_on'Submit'
-    click_on'Rock'
-    expect(page).to have_content "Player 1 won."
+  scenario 'Redirects to /get-player2-move after player1 submits their move' do
+    sign_in_and_play
+    click_on('rock')
+    expect(page).to have_content "#{@player_2_name}'s turn"
   end
-
+  scenario 'Displays correct game result in case of draw' do
+    sign_in_and_play
+    click_on('rock')
+    click_on('rock')
+    expect(page).to have_content "Its a draw!"
+  end
+  scenario 'Displays correct game result in case of players 1 victory' do
+    sign_in_and_play
+    click_on('paper')
+    click_on('rock')
+    expect(page).to have_content "#{@player_1_name} won with paper"
+  end
+  scenario 'Displays correct game result in case of players 2 victory' do
+    sign_in_and_play
+    click_on('paper')
+    click_on('scissors')
+    expect(page).to have_content "#{@player_2_name} won with scissors"
+  end
 end
