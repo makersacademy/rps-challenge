@@ -17,16 +17,13 @@
 <center><img src="/images/rpspixel.png" width="250" height="250"></center>
 <p style="text-align:center">
   <span style="font-size:22px">
-    <span style="font-family:Arial,Helvetica,sans-serif">Welcome! To start playing, please enter your name.</span>
+    <span style="font-family:Arial,Helvetica,sans-serif">Welcome! To start playing, please enter your names.</span>
   </span>
 </p>
 <center>
-<form autocomplete="off" action="/name" method="post">
-  <input type="text" name="name">
+<form autocomplete="off" action="/names" method="post">
+  Player 1: <input type="text" name="name"> Player 2: <input type="text" name="name2">
   <input type="submit" value="Ready">
   </form>
   <br>
-<form action="/multiplayer" method="get">
-  <input type="submit" value="Multiplayer Mode">
-  </form>
   </center>

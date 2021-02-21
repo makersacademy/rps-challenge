@@ -24,11 +24,33 @@ class RockPaperScissors < Sinatra::Base
 
   post '/check' do
     @game.player_choose(params[:weapon])
+    @game.multiplayer == true ? (redirect '/choose2') : (redirect '/result')
+  end
+
+  get '/choose2' do
+    erb :choose2
+  end
+
+  post '/check2' do
+    @game.player2_choose(params[:weapon])
     redirect '/result'
   end
 
   get '/result' do
     erb @game.result
+  end
+
+  get '/multiplayer' do
+    erb :multiplayer
+  end
+
+  post '/names' do
+    player = Player.new(params[:name])
+    player2 = Player.new(params[:name2])
+    @game = RPS.create(player)
+    @game.player_2(player2)
+    @game.switch_to_multiplayer
+    redirect '/choose'
   end
 
   run! if app_file == $0

@@ -3,10 +3,11 @@ require_relative 'weapon'
 require_relative 'player'
 
 class RPS
-  attr_reader :computer, :player_choice, :player
+  attr_reader :computer, :player_choice, :player2_choice, :player, :player2, :multiplayer
 
   def initialize(player, weapon_class = Weapon, computer = Computer.new)
     @player = player
+    @player2 = nil
     @player_choice = nil
     @weapon_class = weapon_class
     @computer = computer
@@ -27,7 +28,7 @@ class RPS
   end
 
   def player_2(player)
-    @player2 = Player.new(player)
+    @player2 = player
   end
 
   def player_choose(choice)
