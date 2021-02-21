@@ -20,4 +20,28 @@ describe Player do
       expect(described_class.new(1, "Herodotus").bot).to be false
     end
   end
+
+  it "move returns copy" do
+    move = subject.move
+    move = "R"
+    expect(subject.move).to eq nil
+  end
+
+  context "#make_move" do
+    it "adds a move" do
+      (0...3).each do |i|
+        move = ["R", "P", "S"][i]
+        subject.enter_move(move)
+        expect(subject.move).to eq move
+      end
+    end
+  end
+
+  context "#bot" do
+    it "randomly chooses a turn" do
+      bot = described_class.new(1, "Herodotus", bot = true)
+      # expect(bot.move).to be_an_instance_of(String)
+      expect(["R", "P", "S"]).to include(bot.move)
+    end
+  end
 end
