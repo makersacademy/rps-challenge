@@ -2,12 +2,12 @@ require 'rps'
 
 describe RPS do
   let(:bimini) { double(:player, :name => "BIMINI BON BOULASH") }
-  let(:game_log) { double(:game_log, :games => [], :add_game => [] ) }
+  let(:game_log) { double(:game_log, :games => [], :add_game => []) }
   subject(:game) { described_class.new(bimini, game_log) }
 
   describe '#create' do
     it 'creates a game and stores it' do
-      expect { RPS.create(bimini, game_log) }.to change { RPS.game }
+      expect { RPS.create(bimini, game_log) }.to(change { RPS.game })
     end
     it 'stores the game to class instance var' do
       RPS.create(bimini, game_log)
@@ -17,7 +17,7 @@ describe RPS do
 
   describe '#play' do
     it 'returns a winner' do
-      expect { game.play("rock", "paper") }.to change { game.result }
+      expect { game.play("rock", "paper") }.to(change { game.result })
     end
   end
 

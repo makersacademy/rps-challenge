@@ -1,16 +1,9 @@
 class GameLog
+  attr_reader :score, :games
 
   def initialize
     @games = []
     @score = { player: 0, computer: 0 }
-  end
-
-  def games
-    @games
-  end
-
-  def score
-    @score
   end
 
   def add_game(player_move, computer_move, result)

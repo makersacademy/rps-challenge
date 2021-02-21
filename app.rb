@@ -3,9 +3,8 @@ require './lib/rps.rb'
 require './lib/player.rb'
 require './lib/game_log.rb'
 
-
 class RockPaperScissors < Sinatra::Base
-enable :sessions
+  enable :sessions
   before do
     @game = RPS.game
   end
@@ -38,5 +37,7 @@ enable :sessions
     @game.play("scissors")
     redirect to('/play')
   end
+
+  run! if app_file == $0
 
 end

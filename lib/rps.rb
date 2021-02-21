@@ -1,4 +1,5 @@
 class RPS
+  attr_reader :game_log, :player, :result
 
   def self.create(player, game_log)
     @game = RPS.new(player, game_log)
@@ -14,18 +15,6 @@ class RPS
     @result = nil
   end
 
-  def game_log
-    @game_log
-  end
-
-  def player
-    @player
-  end
-
-  def result
-    @result
-  end
-
   def play(player_move, computer_move = random_move)
     @result = get_result(player_move, computer_move)
     @game_log.add_game(player_move, computer_move, @result)
@@ -37,16 +26,15 @@ private
     ["rock", "paper", "scissors"].sample
   end
 
-  def get_result(player_move, computer_move)
-    case player_move
-    when computer_move
+  def get_result(player, comp)
+    if player == comp
       :draw
-    when "rock"
-      computer_move == "scissors" ? :win : :loss
-    when "scissors"
-        computer_move == "paper" ? :win : :loss
-    when "paper"
-        computer_move == "rock" ? :win : :loss
+    elsif (player == "rock" && comp == "scissors") ||
+      (player == "scissors" && comp == "paper") ||
+      (player == "paper" && comp == "rock")
+      :win
+    else
+      :loss
     end
   end
 
