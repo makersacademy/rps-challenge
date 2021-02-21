@@ -23,7 +23,7 @@ end
 
 post '/play' do
   session[:player_move] = params[:move]
-  session[:opponent_move] = :rock
+  session[:opponent_move] = Opponent.new.move
   redirect '/play'
 end
 

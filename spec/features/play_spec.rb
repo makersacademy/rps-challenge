@@ -37,6 +37,13 @@ feature 'playing a game' do
     # expect(page).to have_content "Opposing player chose Rock!"
   end
 
+  scenario 'game chooses a random option' do
+    register_name
+    srand(4)
+    click_button "Rock"
+    expect(page).to have_content "Opposing player chose Scissors!"
+  end
+
   def possible_moves
     [:rock, :paper, :scissors].map { |shape| "Opposing player chose #{shape.to_s.capitalize}!"}
   end
