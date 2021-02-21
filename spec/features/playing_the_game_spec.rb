@@ -3,7 +3,7 @@ feature 'Playing the game' do
     allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     sign_in_and_play
     click_button 'Rock'
-    expect(page).to have_content "Congratulations, Chrissy you won!"
+    expect(page).to have_content "Yay Chrissy you won!"
   end
 
   scenario "when I click 'Paper' I am told that it's a draw" do
