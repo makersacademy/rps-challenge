@@ -1,0 +1,19 @@
+<p style="text-align:center">&nbsp;</p>
+<p style="text-align:center">
+<span style="font-size:28px">
+  <span style="font-family:Arial,Helvetica,sans-serif"><%= @game.player.name %> chose <%= @game.player_choice.type %>
+  <br>
+  Computer chose <%= @game.computer.weapon_choice %></span>
+</span></p>
+<p style="text-align:center">
+  <span style="font-size:28px">
+    <span style="font-family:Arial,Helvetica,sans-serif">Sorry <%= @game.player.name %>, you lost...</span>
+  </span>
+</p>
+<p style="text-align:center">&nbsp;</p>
+<center><img src="/images/gameover.gif" width="300" height="300">
+  <br>
+  <br>
+  <form action='/choose' method='get'>
+    <input type='submit' value = 'Play again'>
+  </center>

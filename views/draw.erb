@@ -1,0 +1,20 @@
+<p style="text-align:center">&nbsp;</p>
+<p style="text-align:center">
+<span style="font-size:28px">
+  <span style="font-family:Arial,Helvetica,sans-serif"><%= @game.player.name %> chose <%= @game.player_choice.type %>
+  <br>
+  Computer chose <%= @game.computer.weapon_choice %></span>
+</span></p>
+<p style="text-align:center">
+<p style="text-align:center">
+  <span style="font-size:28px">
+    <span style="font-family:Arial,Helvetica,sans-serif"><%= @game.player.name %> it's a draw!</span>
+  </span>
+</p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<center><img src="/images/draw.gif" width="300" height="300">
+  <form action='/choose' method='get'>
+    <input type='submit' value='Play again'>
+  </center>
