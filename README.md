@@ -1,4 +1,7 @@
 
+# Theory of Operation
+
+note: the game was originally supposed to have an unlimited number of players, with a scoring system based off of "bigger army diplomacy" (i.e. rock only beats scissors if rock equals or outnumbers scissors). game.rb and players.rb were written with this in mind, but I decided to limit the game to two players when writing score.rb
 ## Classes
 
 Game
