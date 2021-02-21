@@ -4,6 +4,8 @@
 
 🪨  📄  ✂️
 
+![demo](public/demo.mov)
+
 ## Dependencies
 - `ruby version`
 - `gems`
@@ -47,7 +49,12 @@ head to local host
 localhost:9292
 
 ## using the app
-- instructions
+
+Are the stresses of marketeering are getting you down? Unwind with some soothing RPS.
+
+No friends? No problem! Play against a sophisticated AI!
+
+Enter your name
 
 ## reflections
 - my approach
