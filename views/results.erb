@@ -1,5 +1,15 @@
 <p><%= @game.player_1.name %> played: <%= @game.player_1.choice%></p>
 <p><%= @game.player_2.name %> played: <%= @game.player_2.choice%></p>
-<h4>And the winner is... <%= @game.winner.name %></h4>
 
-<button type="button" onClick="location.href='/'" name="restart">Play again</button>
+<% if @game.winner != nil %>
+  <h4>And the winner is... <b><%= @game.winner %></b></h4>
+<% else %>
+  <h4>It is a draw!</h4>
+<% end %>
+<% if @game.player_2.name == 'Computer' %>
+  <button type="button" onClick="location.href='/one_player/choice'" name="restart">Play again</button>
+<%else%>
+  <button type="button" onClick="location.href='/two_players/player_1_choice'" name="restart">Play again</button>
+<%end%>
+
+<button type="button" onClick="location.href='/reset'" name="menu">Main menu</button>

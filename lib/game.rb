@@ -21,10 +21,13 @@ class Game
   end
 
   def results(player_1, player_2)
-    @winner = player_1 if player_1.choice == 'Rock' && player_2.choice == 'Scissors'
-    @winner = player_1 if player_1.choice == 'Scissors' && player_2.choice == 'Paper'
-    @winner = player_1 if player_1.choice == 'Paper' && player_2.choice == 'Rock'
-    @winner = player_2
+    if (player_1.choice == 'Rock' && player_2.choice == 'Scissors') || (player_1.choice == 'Scissors' && player_2.choice == 'Paper') || (player_1.choice == 'Paper' && player_2.choice == 'Rock')
+      @winner = player_1.name
+    elsif player_1.choice == player_2.choice
+      @winner = nil
+    else
+      @winner = player_2.name
+    end
   end
 
   def self.create(player_1, player_2)
@@ -34,4 +37,10 @@ class Game
   def self.instance
     @game
   end
+
+  # Testing how I can remove an self instance
+  def self.remove(game)
+    remove_instance_variable(game)
+  end
+
 end

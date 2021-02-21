@@ -1,0 +1,9 @@
+<div style="text-align:center">
+  <h2>Ready to play <%= @game.player_1.name %>?</h2>
+  <p>Make your choice:</p>
+  <form action="/two_players/player_1/set_choice" method="post">
+    <input type="submit" name="selection" value="Rock">
+    <input type="submit" name="selection" value="Paper">
+    <input type="submit" name="selection" value="Scissors">
+  </form>
+</div>
