@@ -13,7 +13,17 @@ class Game
     @player2 = player2
   end
 
-  def beats?
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.instance
+    @game
+  end
+
+  def result
+    return 'Its a draw!' if @player1.move == @player2.move
+
     RULES[@player1.move.to_sym].include?(@player2.move.to_sym) ? "#{@player1.name} won with #{@player1.move}" : "#{@player2.name} won with #{@player2.move}"
   end
 
