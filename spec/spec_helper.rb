@@ -1,6 +1,3 @@
-require 'coveralls'
-Coveralls.wear!
-
 require 'simplecov'
 require 'simplecov-console'
 
@@ -10,6 +7,9 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+
+require 'coveralls'
+Coveralls.wear!
 
 require 'capybara/rspec'
 require_relative 'feature/web_helpers'
