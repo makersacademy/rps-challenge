@@ -8,11 +8,14 @@ class RPS < Sinatra::Base
 
     post '/name' do
         @player_name = params[:player_name]
-        puts params
         redirect '/game'
     end
 
     get '/game' do
-        'This is the game'
+        erb :game
     end
+
+    post '/result' do
+        p params[:rock]
+    end      
 end
