@@ -13,6 +13,10 @@ class RPS
     @result = nil
   end
 
+  def player
+    @player
+  end
+
   def result
     @result
   end

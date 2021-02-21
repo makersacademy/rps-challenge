@@ -21,17 +21,19 @@ describe RPS do
   end
 
   describe '#play' do
-    srand(4)
     it 'player wins if they pick rock and computer picks scissors' do
+      srand(4)
       game.play("rock")
       expect(game.result).to eq :win
     end
     it 'player loses if they pick paper and computer picks scissors' do
+      srand(4)
       game.play("paper")
       expect(game.result).to eq :loss
     end
     it 'player draws if they pick scissors and computer picks scissors' do
-      game.play("paper")
+      srand(4)
+      game.play("scissors")
       expect(game.result).to eq :draw
     end
 

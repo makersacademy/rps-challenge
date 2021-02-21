@@ -1,1 +1,20 @@
-<h1>It's time to play, <%= @name %>!</h2>
+<h1>It's time to play, <%= @name %>!</h1>
+<h2>Choose your move!</h2>
+<form action= "/rock" method="get">
+  <input type="submit" value="Rock">
+</form>
+<form action= "/paper" method="get">
+  <input type="submit" value="Paper">
+</form>
+<form action= "/scissors" method="get">
+  <input type="submit" value="Scissors">
+</form>
+<% if @game.result == :win %>
+<p><%= @name %> won!</p>
+<% end %>
+<% if @game.result == :loss %>
+<p><%= @name %> lost :(</p>
+<% end %>
+<% if @game.result == :draw %>
+<p>It's a draw!</p>
+<% end %>
