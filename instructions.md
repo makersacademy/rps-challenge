@@ -198,19 +198,19 @@ Run `rspec` and the tests should now fail. (Because the instance variables have 
 
 ## Add Web Helper
 
-1) To keep the code DRY, make a new file in features and call it web_helpers.rb
+1) To keep the code DRY, make a new file in features and call it `web_helpers.rb`
 
-    touch spec/features/web_helpers.rb
+    `touch spec/features/web_helpers.rb`
 
-2) Inside spec_helper, require the web_helpers_spec file
+2) Inside `spec_helper`, `require` the `web_helpers_spec `file
 
-    require 'features/web_helpers'
+    `require 'features/web_helpers'`
 
-3) Inside web_helpers_spec, define a method called sign_in_and_play, extract the code that visits the homepage, enters the name and clicks submit
+3) Inside `web_helpers_spec`, define a method called `sign_in_and_play`, extract the code that visits the homepage, enters the name and clicks submit
 
-4) Replace these lines in features test with the sign_in_and_play method
+4) Replace these lines in features test with the `sign_in_and_play` method
 
-5) Run rspec and make sure all tests still pass
+5) Run `rspec` and make sure all tests still pass
 
 ## Building The Game
 
@@ -220,11 +220,11 @@ Run `rspec` and the tests should now fail. (Because the instance variables have 
 
 ## Pressing Buttons
 
-1) Create a new feature file for testing the rock, paper, scissors buttons
+1) Create a new `feature` file for testing the `rock`, `paper`, `scissors` buttons
 
-    touch spec/features/buttons_spec.rb
+    `touch spec/features/buttons_spec.rb`
 
-2) Write a feature test for the rock button
+2) Write a feature test for the `rock` button
 ```
     feature 'Player chooses a move' do
       scenario 'Submits user choice of rock' do
@@ -233,42 +233,42 @@ Run `rspec` and the tests should now fail. (Because the instance variables have 
         expect(page).to have_content 'Rock'
       end
     end
+```
 
-This should give an error of being unable to find a button called rock
+This should give an error of being unable to find a button called `rock`
 
-3) In the play.erb view, add a button called rock that using the <form> element that will take the user to a results.erb view
+3) In the `play.erb view`, add a button called `rock` using the `<form>` element that will take the user to a `results.erb` view
 ```
     <form action="/results">
       <input type="submit" value="Rock">
     </form>
 ```
-4) Change the text in the play view to ask the user to choose their move
+4) Change the text in the `play` view to ask the user to choose their move
 
-5) Run rspec and check test passes
+5) Run `rspec` and check test passes
 
-6) Before w3riting the other button tests, add a before hook for sign_in_and_play to make code DRY
+6) Before writing the other button tests, add a `before` hook for `sign_in_and_play` to make code DRY
 ```
     before(:each) do
       sign_in_and_play
     end
+```
 
-7) Write tests for paper and scissors, make them all pass
-
-8) Write a post request  
+7) Write tests for `paper` and `scissors`, make them all pass
 
 ## Displaying Results
 
-1) At the bottom of the tests in buttons_spec, add test functonality to check for the results to be displayed:
+1) At the bottom of the tests in `buttons_spec`, add test functonality to check for the results to be displayed:
 
-    expect(page).to have_content 'Rock'
+    `expect(page).to have_content 'Rock'`
 
-2) Run rspec and see tests fail because the /results view does not exist yet
+2) Run `rspec` and see tests fail because the `/results` view does not exist yet
 
-3) In the view folder make a new page called results.erb
+3) In the `view` folder make a new page called `results.erb`
 
-    touch views/results.erb
+    `touch views/results.erb`
 
-4) In app.rb make a get request to this new route:
+4) In `app.rb` make a `get` request to this new route:
 ```
     get '/results' do
       @player_name = session[:player_name]
@@ -276,6 +276,20 @@ This should give an error of being unable to find a button called rock
     end
 ```
 
-5) To pass the tests in the most simple way, add text rock, paper and scissors to the results view
+5) To pass the tests in the most simple way, add text `rock`, `paper` and `scissors` to the `results` view
 
-## Randomly Generate A Move
+## Tracking Players Moves
+
+1) Create a `lib` folder to store the model layer 
+
+    `mkdir lib`
+
+2) Make a new `spec` called `player_spec `
+
+    `touch spec/player_spec.rb`
+
+This will be for the `Player` class so that it can return its own name.
+
+**NB** This is not a feature test so do not put it into the features folder
+
+
