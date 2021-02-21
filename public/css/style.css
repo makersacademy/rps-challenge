@@ -23,13 +23,13 @@ form {
 h1 {
   font-size: 120px;
   margin-top: 60px;
-  margin-left: 190px;
+  margin-left: 200px;
 }
 
 h2 {
-  font-size: 60px;
-  margin-top: 250px;
-  margin-left: 470px;
+  font-size: 50px;
+  margin-top: 290px;
+  margin-left: 520px;
 }
 
 input {
@@ -47,7 +47,7 @@ input {
   width: 500px;
   border-radius: 30px;
   padding: 20px;
-  margin-left: 260px;
+  margin-left: 280px;
 }
 
 .button {
@@ -56,7 +56,7 @@ input {
   padding: 70px;
   background-color: rgb(192, 255, 147);
   font-size: 70px;
-  margin-left: 400px;
+  margin-left: 420px;
   margin-top: 100px;
 }
 
@@ -77,15 +77,15 @@ p {
 }
 
 .rps {
-  width: 500px;
-  margin-left: 880px;
-  margin-top: 340px;
+  width: 400px;
+  margin-left: 1000px;
+  margin-top: 425px;
 
 }
 
 .fist {
-  width: 250px;
-  margin-top: 250px;
+  width: 200px;
+  margin-top: 400px;
   margin-left: 100px;
 }
 
@@ -123,33 +123,37 @@ img {
 }
 
 .player {
-  margin-left: 100px;
+  margin-top: 100px;
+  margin-left: 125px;
+  font-size: 50px;
 }
 
 .player-move {
-  margin-top: 150px;
-  margin-left: 175px;
-  width: 250px;
+  margin-top: 180px;
+  margin-left: 220px;
+  width: 175px;
 }
 
 .computer {
-  margin-left: 750px;
-  margin-top: 375px;
+  margin-top: 100px;
+  margin-left: 840px;
+  font-size: 50px;
 }
 
 .computer-move {
-  margin-top: 475px;
-  margin-left: 900px;
-  width: 250px;
+  margin-top: 180px;
+  margin-left: 1000px;
+  width: 175px;
   object-fit: scale-down;
 }
 
 .winner {
-  margin-top: 145px;
-  margin-left: 550px;
+  margin-top: 470px;
+  margin-left: 175px;
+  font-size: 100px;
 }
 
 .play-again {
-  margin-top: 125px;
-  margin-left: 200px;
+  margin-top: 100px;
+  margin-left: 750px;
 }
