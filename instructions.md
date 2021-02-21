@@ -46,23 +46,23 @@
 
 ## Setting Up Tests
 
-12) Set up spec_helper with what it needs to prepare Capybara and to get Capybara to test the app, starting with chaning the rack environment to test:
+12) Set up `spec_helper` with what it needs to prepare Capybara and to get Capybara to test the app, starting with chaning the rack environment to test:
 
-    ENV['RACK_ENV'] = 'test'
+    `ENV['RACK_ENV'] = 'test'`
 
-13) In spec_helper, require the sinatra app file:
+13) In `spec_helper`, require the sinatra app file:
 
-    require File.join(File.dirname(__FILE__), '..', 'app.rb')
+    `require File.join(File.dirname(__FILE__), '..', 'app.rb')`
 
-14) In spec_helper, tell Capybara about the app class:
+14) In `spec_helper`, tell Capybara about the app class:
 
-    Capybara.app = Game
+    `Capybara.app = Game`
 
-15) Inside the spec directory, create a new directory called features. This is to store feature tests.
+15) Inside the `spec` directory, create a new directory called `features`. This is to store feature tests.
 
-16) Inside the features directory, add a new file for the first feature test to check if the testings set up works:
+16) Inside the `features` directory, add a new file for the first feature test to check if the testings set up works:
 
-    touch spec/features/testing_spec.rb
+    `touch spec/features/testing_spec.rb`
 
 17) Inside this file, write a simple test to check that the homepage can be visited and to check that it has some content:
 ```
@@ -78,3 +78,8 @@
 
 
 ## Building The Game
+
+### User Story 1:
+As a marketeer So that I can see my name in lights I would like to register my name before playing an online game
+
+1) 
