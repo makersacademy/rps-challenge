@@ -4,10 +4,10 @@
 <img width="1419" alt="Screenshot 2021-02-21 at 06 32 49" src="https://user-images.githubusercontent.com/75075773/108617718-81264600-7410-11eb-9e03-7ae6eeb2c211.png">
 
 
-This is my solution to the Makers Academy week 3 challenge. The task is to create a rock  
-paper scissors game that can be played on a local server. This project incorporated HTML,  
-CSS, ERB, Sinatra and the use of Capybara for testing purposes. Following TDD principles, I created an  
-app to meet the following user requirements:
+This is my solution to the Makers Academy week 3 challenge. The task is to create a rock paper  
+scissors game that can be played on a local server. This project incorporated HTML, CSS, ERB,  
+Sinatra and the use of Capybara for testing purposes. Following TDD principles, I created an app  
+to meet the following user requirements:
 ```
 As a marketeer
 So that I can see my name in lights
@@ -31,7 +31,7 @@ As well as HTML with some CSS:
 
 <img width="309" alt="Screenshot 2021-02-21 at 06 35 01" src="https://user-images.githubusercontent.com/75075773/108617895-98b1fe80-7411-11eb-8a2e-9622180b683b.png">
 
-This all came together by utilising Sinatra:
+This all works together by utilising Sinatra:
 
 <img width="501" alt="Screenshot 2021-02-21 at 06 36 00" src="https://user-images.githubusercontent.com/75075773/108618048-c64b7780-7412-11eb-8625-1faf0e688dc1.png">
 
