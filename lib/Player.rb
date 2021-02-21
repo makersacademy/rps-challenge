@@ -1,7 +1,10 @@
 class Player
 attr_reader :name, :move
-AI_NAME = "Bot"
-  def initialize(name = AI_NAME)
-    @name = name
+  def initialize(args)
+    @name = args
+  end
+
+  def choice(args)
+    @move = args
   end
 end

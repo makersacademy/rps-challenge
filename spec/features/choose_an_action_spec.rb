@@ -17,7 +17,6 @@ feature 'after submiting you choice' do
   scenario 'it shows the bot move' do
     sign_in_and_play
     make_a_choice
-    rps = double("rps", :player2_choice => "rock")
     expect(page).to have_content "The Bot chose rock"
   end
 end
