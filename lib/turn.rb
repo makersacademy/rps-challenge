@@ -18,6 +18,14 @@ attr_reader :player_name, :player_move, :opponent_move
     result == :win
   end
 
+  def draw?
+    result == :draw
+  end
+
+  def lose?
+    result == :lose
+  end
+
   private
 
   def result

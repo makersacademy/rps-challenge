@@ -26,4 +26,8 @@
 
 <% if @turn.win? %>
   You win!
+<% elsif @turn.lose? %>
+  You lose!
+<% elsif @turn.draw? %>
+  You draw!
   <% end %>

@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/turn'
+require './lib/opponent'
 
 class RPS < Sinatra::Base
 enable :sessions
@@ -14,10 +16,6 @@ end
 
 get '/play' do
   @turn = Turn.new(session)
-
-  # @name = session[:player_1_name]
-  # @move = session[:move]
-  # @opponent_move = session[:opponent_move]
   erb :play
 end
 
@@ -27,7 +25,6 @@ post '/play' do
   redirect '/play'
 end
 
-# Opponent.new.move
 
 run! if app_file == $0
 end

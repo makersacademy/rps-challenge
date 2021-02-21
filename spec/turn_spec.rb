@@ -23,9 +23,28 @@ describe Turn do
   end
 
   context 'end game' do
+  subject(:win_turn) { turn }
+  subject(:lose_turn) { described_class.new(lose_options)}
+  subject(:draw_turn) { described_class.new(draw_options)}
+
+  let(:lose_options) { {:player_name => "Morgan", :player_move => :rock, :opponent_move => :paper} }
+  let(:draw_options) { {:player_name => "Morgan", :player_move => :rock, :opponent_move => :rock} }
+
     describe '#win?' do
       it 'returns true if the player_move is rock and the opponent_move is scissors' do
-        expect(turn.win?).to eq true
+        expect(win_turn.win?).to eq true
+      end
+    end
+
+    describe '#lose?' do
+      it 'returns true if the player_move is rock and the opponent_move is paper' do
+        expect(lose_turn.lose?).to eq true
+      end
+    end
+
+    describe '#draw?' do
+      it 'returns true if the player_move is rock and the opponent_move is rock' do
+        expect(draw_turn.draw?).to eq true
       end
     end
   end

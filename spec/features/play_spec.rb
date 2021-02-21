@@ -5,6 +5,7 @@ require 'spec_helper'
 # I would like to be able to play rock/paper/scissors
 
 feature 'playing a game' do
+  PLAY_SEED = 4
   # As a marketeer
   # So I can play,
   # I want to see the rock, paper, scissors option
@@ -39,20 +40,34 @@ feature 'playing a game' do
 
   scenario 'game chooses a random option' do
     register_name
-    srand(4)
+    srand(PLAY_SEED)
     click_button "Rock"
     expect(page).to have_content "Opposing player chose Scissors!"
   end
 
-# I want to see if I win
+context '#end_game' do
 
   scenario 'I am a winner' do
     register_name
-    srand(4)
+    srand(PLAY_SEED)
     click_button "Rock"
     expect(page).to have_content "You win!"
   end
 
+  scenario 'I am a loser' do
+    register_name
+    srand(PLAY_SEED)
+    click_button "Paper"
+    expect(page).to have_content "You lose!"
+  end
+
+  scenario 'I have drawn' do
+    register_name
+    srand(PLAY_SEED)
+    click_button "Scissors"
+    expect(page).to have_content "You draw!"
+  end
+end
 
   def possible_moves
     [:rock, :paper, :scissors].map { |shape| "Opposing player chose #{shape.to_s.capitalize}!"}
