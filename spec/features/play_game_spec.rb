@@ -1,9 +1,9 @@
 feature 'Playing the game' do
   scenario 'player can choose rock, paper or scissors' do
     sign_in
-    expect(page).to have_button("Rock")
-    expect(page).to have_button("Paper")
-    expect(page).to have_button("Scissors")
+    expect(page).to have_button("rock")
+    expect(page).to have_button("paper")
+    expect(page).to have_button("scissors")
   end
 
   scenario 'player choice takes them to the next page' do

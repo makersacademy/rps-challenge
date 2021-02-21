@@ -1,1 +1,16 @@
-<button>Play again?</button>
+<head>
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <div>
+    <%= @player_1_name %> chose <%= @p1_choice %>
+  </div>
+  <div>
+    <%= @player_2_name %> chose <%= @p2_choice %>
+  </div>
+  <div>
+    <%= @result.print %>
+  </div>
+  <div>
+    <a href='/start_game'><button>Play again?</button></a>
+  </div>

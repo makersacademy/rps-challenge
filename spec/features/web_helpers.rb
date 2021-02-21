@@ -6,5 +6,5 @@ end
 
 def sign_in_and_play
   sign_in
-  click_button "Rock"
+  click_button "rock"
 end
