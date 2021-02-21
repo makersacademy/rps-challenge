@@ -8,9 +8,5 @@ feature 'play' do
     click_button "Submit"
     save_and_open_page
     expect(page).to have_content "Computer chose rock – you lose!"
-    # click one of three options
-    # expect to see computer's move
-    # expect to see 'you win' or 'you lose'
-    # logic is going out to the model to randomise
   end
 end

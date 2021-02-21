@@ -20,26 +20,23 @@ class RockPaperScissors < Sinatra::Base
 
   post '/move' do
     session[:move] = params[:move]
-
-    # new instance of computer
-    # call move method on that instance
-
-    # store the session move in instance variable
-    # Get the computer's move
-
     redirect('/outcome')
   end
 
   get '/outcome' do
     @your_move = session[:move]
-    
-
-    # erb :outcome
-    # include a play again button
-    # redriect to play
+    computer = Computer.new
+    @computer_move = computer.move
+    erb :outcome
   end
 
-
+  # if I have a game class, it would calculate the winner and
+  # print the string.
+  # it needs a method that takes 2 arguments - the computer
+  # move and the player move.
+  # Will I be able to access these variables in the new class
+  # create a new instance of game in the controller. Call the
+  # outcome method on the new instance.
 
 
 end
