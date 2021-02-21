@@ -1,6 +1,7 @@
 # Rock, Paper, Scisscors weekend challenge
 # Eds
 require 'sinatra/base'
+require './lib/rps_game'
 
 
 class RPS < Sinatra::Base
@@ -26,10 +27,15 @@ class RPS < Sinatra::Base
     @player_selection = $player_selection
     erb :start_game
   end
+  
+  post '/get_results' do
+    p "The /get_results route is being reached" 
+    game = Rps_Game.new.add_player($player, $player_selection)
+    winner = game.select_winner
+    p winner
+    erb :you_won unless winner == :PC
 
-  get '/get_results' do
-    
-    erb :index
+    erb :you_lose
   end
 
 
