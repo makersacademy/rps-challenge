@@ -1,0 +1,18 @@
+<div style="text-align:center">
+<% if @game.winner != nil %>
+<h4>And the winner is... <b><%= @game.winner %></b></h4>
+<% else %>
+<h4>It is a draw!</h4>
+<% end %>
+
+<p><%= @game.player_one.name %> played: <%= @game.player_one.choice%></p>
+<p><%= @game.player_two.name %> played: <%= @game.player_two.choice%></p>
+
+<% if @game.player_two.name == 'Computer' %>
+<button type="button" onClick="location.href='/one_player/choice'" name="restart">Play again</button>
+<%else%>
+<button type="button" onClick="location.href='/two_players/player_one/choice'" name="restart">Play again</button>
+<%end%>
+
+<button type="button" onClick="location.href='/reset'" name="menu">Main menu</button>
+</div>
