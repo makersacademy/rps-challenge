@@ -1,3 +1,5 @@
+[![Build Status](https://www.travis-ci.com/kerisic/rps-challenge.svg?branch=master)](https://www.travis-ci.com/kerisic/rps-challenge)
+
 # RPS Challenge
 
 <img src="https://user-images.githubusercontent.com/71288920/108640539-3f3de400-7492-11eb-8587-def2fe2db34c.gif" width="450" height="300">
