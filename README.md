@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.com/AJ8GH/rps-challenge.svg?branch=master)](https://travis-ci.com/AJ8GH/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/AJ8GH/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/AJ8GH/rps-challenge?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/fdca0bdec16a564c5209/maintainability)](https://codeclimate.com/github/AJ8GH/rps-challenge/maintainability)
 
-### *Are the stresses of marketeering are getting you down? Unwind with some soothing RPS*
+*Are the stresses of marketing getting you down? Unwind with some soothing RPS*
 
-### *No friends? No problem! Play against a sophisticated AI opponent*
+*No friends? No problem! Play against a sophisticated AI opponent*
 
 ## Dependencies
 - `ruby version`
@@ -61,7 +61,7 @@ In your browser, head to [localhost:9292](http://localhost:9292)
 
 ![play-again](public/images/play-again.gif)
 
-## reflections
+## Reflections
 
 In building the app, my main focuses were:
 - Applying a strict red green refactor TDD approach
