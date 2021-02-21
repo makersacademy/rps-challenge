@@ -11,10 +11,10 @@ class Weapon
   end
 
   def beats?(other)
-    RULES[@type] == other.weapon
+    RULES[@type] == other.type
   end
 
   def draw?(other)
-    @type == other.weapon
+    @type == other.type
   end
 end

@@ -1,9 +1,9 @@
 require 'weapon'
 
 describe Weapon do
-  let(:rock1) { described_class.new('rock')}
-  let(:scissors) { described_class.new('scissors')}
-  subject(:rock) { described_class.new('rock')}
+  let(:rock1) { described_class.new('rock') }
+  let(:scissors) { described_class.new('scissors') }
+  subject(:rock) { described_class.new('rock') }
 
   describe '#type' do
     it 'returns type of weapon from initialization' do

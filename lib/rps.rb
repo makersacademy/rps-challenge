@@ -17,9 +17,7 @@ class RPS
     @rps
   end
 
-  def player
-    @player
-  end
+  attr_reader :player
 
   def player_choose(choice)
     @player_choice = @weapon_class.new(choice)
