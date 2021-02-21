@@ -5,6 +5,7 @@ require './lib/game.rb'
 AI_MOVE = ["rock", "paper", "scissors"]
 
 class Rps < Sinatra::Base
+attr_reader :player2_choice
 enable :sessions
   get '/' do
     erb(:index)
