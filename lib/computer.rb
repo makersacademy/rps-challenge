@@ -1,11 +1,11 @@
 require_relative 'weapon'
 
 class Computer
-  def type
-    @type = Weapon::WEAPONS.sample
+  def weapon
+    @weapon = Weapon::WEAPONS.sample
   end
 
-  def weapon_choice
-    @type.dup
+  def type
+    @weapon.dup
   end
 end

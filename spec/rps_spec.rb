@@ -38,6 +38,7 @@ describe RPS do
       describe 'if it is a draw' do
         it 'returns a draw' do
           computer = double("computer", :type => rock)
+          allow(computer).to receive(:weapon)
           game = RPS.new(chrissy, weaponclass, computer)
           game.player_choose(rock)
           expect(game.result).to eq(:draw)
@@ -46,6 +47,7 @@ describe RPS do
       describe 'if the player wins' do
         it 'returns a win' do
           computer = double("computer", :type => scissors)
+          allow(computer).to receive(:weapon)
           rockweapon = double(:rockweapon, :draw? => false, :beats? => true)
           weaponclass = double(:weaponclass, :new => rockweapon)
           game = RPS.new(chrissy, weaponclass, computer)
@@ -56,6 +58,7 @@ describe RPS do
       describe 'if it is a loss' do
         it 'returns lose' do
           computer = double("computer", :type => paper)
+          allow(computer).to receive(:weapon)
           rockweapon = double(:rockweapon, :draw? => false, :beats? => false)
           weaponclass = double(:weaponclass, :new => rockweapon)
           game = RPS.new(chrissy, weaponclass, computer)

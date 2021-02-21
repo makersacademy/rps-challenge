@@ -15,7 +15,7 @@ class Weapon
   end
 
   def beats?(other)
-    RULES[@type].include?(other.weapon_choice)
+    RULES[@type].include?(other.type)
   end
 
   def draw?(other)
