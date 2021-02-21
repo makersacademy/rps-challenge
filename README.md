@@ -45,7 +45,6 @@ Visit http://localhost:9292/
 ## Planning
 
 ### Views
-I started by reflecting on how I'd like the user would interact with the game.
 
 ![Welcome Page](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20welcome_page.png)
 
@@ -66,3 +65,8 @@ I started by reflecting on how I'd like the user would interact with the game.
 ![Result Draw](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20draw%20-%20results_page.png)
 
 ### Controller
+![Process Model](https://github.com/sandyMax974/rps-challenge/blob/master/images/process_model.png)
+
+## Model
+`Player` class, responsable for storing the player's `name` and `choice`.
+`Game` class, responsable for storing/accessing the players, making a choice for the solo mode and retrieving the winner.

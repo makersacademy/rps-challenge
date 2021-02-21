@@ -38,7 +38,6 @@ class Game
     @game
   end
 
-  # Testing how I can remove an self instance
   def self.remove(game)
     remove_instance_variable(game)
   end
