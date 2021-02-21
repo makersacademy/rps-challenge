@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer_play'
 
 class Game < Sinatra::Base
   enable :sessions
@@ -25,19 +26,10 @@ class Game < Sinatra::Base
     erb :new_game
   end
 
-  get '/rock' do
-  @choice = "rock"
-    erb :result
-  end
-
-  get '/paper' do
-  @choice = "paper"
-    erb :result
-  end
-
-  get '/scissors' do
-  @choice = "scissors"
-    erb :result
+  post '/result' do
+  @player_choice =(params[:player_choice])
+  @computer = Play.new
+  erb :result
   end
 
 run! if app_file == $0

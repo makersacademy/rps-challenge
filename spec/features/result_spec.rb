@@ -1,8 +1,15 @@
-feature 'start a game of rock paper scissors' do
-  scenario 'click button to start game' do
+feature 'select rock, paper or scissors' do
+  scenario 'input field to make selection' do
     sign_in_and_play
-    click_button 'Start Game'
-    click_link 'Rock'
-    expect(page).to have_content "You chose rock"
+    start_game_and_choose_rock
+    expect(page).to have_content "You chose rock Computer chose...rock"
+end
+end
+
+feature 'computer selects rock, paper or scissors' do
+  scenario 'displays computer selection on page' do
+  sign_in_and_play
+  start_game_and_choose_rock
+  expect(page).to have_content "You chose rock Computer chose... Scissors !"
 end
 end

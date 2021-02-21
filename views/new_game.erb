@@ -1,6 +1,8 @@
 <h1> <%= @player_name %> Choose rock, paper or scissors</h1></br>
-<form action="/display_name" method="post">
-  <a href="/rock"> Rock</a>
-  <a href="/paper"> Paper</a>
-    <a href="/scissors"> Scissors</a>
+<form action="/result" method="post">
+  <label for ="player_choice">
+    Your weapon will be...
+    <input type="text" name="player_choice">
+    </label>
+    <input type = "submit" value ="Submit">
 </form>
