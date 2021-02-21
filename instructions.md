@@ -157,3 +157,17 @@ In  `app.rb`:
 ```
 
 14) Run `rspec` and make sure all tests pass
+
+15) Refactor: To make the game more user friendly, add `h1` and `label` elements.
+In `homepage.erb`:
+```
+  <h1>Rock, Paper, Scissors</h1>
+  <h2>Enter your name to play</h2>
+  <form action="/names" method="post">
+    <label for="player_name">
+      Enter Name:
+    <input type="text" name="player_name">
+    </label>
+    <input type="submit" name="Submit">
+  </form>
+```
