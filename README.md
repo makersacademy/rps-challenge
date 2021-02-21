@@ -4,7 +4,7 @@
 
 🪨  📄  ✂️
 
-![demo](public/demo.mov)
+![entering-name](public/entering_name.gif)
 
 ## Dependencies
 - `ruby version`
