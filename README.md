@@ -1,6 +1,6 @@
 # RPS Challenge
 
-![demorps](https://user-images.githubusercontent.com/71288920/108629663-e69e2500-7458-11eb-9e90-cd4349e89847.gif)
+![demorps](https://user-images.githubusercontent.com/71288920/108629663-e69e2500-7458-11eb-9e90-cd4349e89847.gif =150x100)
 
 Task
 ----
