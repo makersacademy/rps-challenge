@@ -2,17 +2,24 @@
 
 <p style="text-align:center">
   <span style="font-size:28px">
-    <span style="font-family:Arial,Helvetica,sans-serif">Will <%= (@game.player.name).capitalize %> choose rock, paper or scissors?</span>
+    <span style="font-family:Arial,Helvetica,sans-serif">Will <%= @game.player.name %> choose rock, paper or scissors?</span>
   </span>
 </p>
 
 <p style="text-align:center">&nbsp;</p>
 
-<center><img src="/images/fight.gif" width="500" height="400"></center>
+<center><img src="/images/fight.gif" width="350" height="300"></center>
 
-<p style="text-align:center"><center>
-  <form><input type="submit" value="rock" name="weapon" />
-    <input type="submit" value="paper"  name="weapon" />
-  <input type="submit" value="scissors"  name="weapon" />
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center">
+  <center>
+    <form action='/check' method='post'>
+      <input type="submit" value="Lizard" name="weapon">
+      <input type="submit" value="Rock" name="weapon">
+      <input type="submit" value="Paper"  name="weapon">
+      <input type="submit" value="Scissors"  name="weapon">
+      <input type="submit" value="Spock" name="weapon">
+    </form>
   </center>
 </p>

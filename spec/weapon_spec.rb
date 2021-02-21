@@ -1,8 +1,8 @@
 require 'weapon'
 
 describe Weapon do
-  let(:rock1) { described_class.new('rock') }
-  let(:scissors) { described_class.new('scissors') }
+  let(:rock1) { double('rock1', type: :rock) }
+  let(:scissors) { double('scissors', weapon_choice: :scissors) }
   subject(:rock) { described_class.new('rock') }
 
   describe '#type' do
