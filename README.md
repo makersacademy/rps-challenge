@@ -37,7 +37,7 @@ I started by reflecting on how I'd like the user would interact with the game.
 **Player VS Computer mode**
 ![Player name form](images/RPS - fill_name_page.png)
 ![Player options](images/RPS - player_options_page.png)
-![Result Page](/Users/admin/Projects/makers/week_3/rps-challenge/images/RPS - 1 player - results_page.png)
+![Result Page](https://github.com/sandyMax974/rps-challenge/images/RPS - 1 player - results_page.png)
 **Player VS Player mode**
 ![Players name form](images/RPS - fill_names_page.png)
 ![Player 2 options](images/RPS - player2_option_page.png)
