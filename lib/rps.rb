@@ -1,14 +1,14 @@
 class RPS
 
-  def self.create(player)
-    @game = RPS.new(player)
+  def self.create(player, game_log)
+    @game = RPS.new(player, game_log)
   end
 
   def self.game
     @game
   end
 
-  def initialize(player, game_log = GameLog.new)
+  def initialize(player, game_log)
     @game_log = game_log
     @player = player
     @result = nil

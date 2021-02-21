@@ -9,12 +9,19 @@
 <form action= "/scissors" method="get">
   <input type="submit" value="Scissors">
 </form>
+<% if @game.game_log.games.length > 0 %>
+  <%= @game.game_log.show_game %>
+<% end %>
 <% if @game.result == :win %>
-<p><%= @name %> won!</p>
+<p>You won!</p>
 <% end %>
 <% if @game.result == :loss %>
-<p><%= @name %> lost :(</p>
+<p>You lost :(</p>
 <% end %>
 <% if @game.result == :draw %>
 <p>It's a draw!</p>
 <% end %>
+<% if @game.game_log.games.length > 0 %>
+  <p>The current score is <%= @name %>: <%= @game.game_log.score[:player] %>, COMPUTER: <%= @game.game_log.score[:computer] %></p>
+<% end %>
+<a href = "/">End current game</a>

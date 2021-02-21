@@ -7,10 +7,10 @@ describe RPS do
 
   describe '#create' do
     it 'creates a game and stores it' do
-      expect { RPS.create(bimini) }.to change { RPS.game }
+      expect { RPS.create(bimini, game_log) }.to change { RPS.game }
     end
     it 'stores the game to class instance var' do
-      RPS.create(bimini)
+      RPS.create(bimini, game_log)
       expect(RPS.game).to be_instance_of(RPS)
     end
   end

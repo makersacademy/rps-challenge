@@ -12,4 +12,12 @@ describe GameLog do
         expect(subject.show_game).to include("You picked rock, the computer picked scissors")
       end
     end
+    describe '#score' do
+      it 'changes if player wins' do
+        expect { subject.add_game("rock", "scissors", :win) }.to change { subject.score[:player] }.by 1
+      end
+      it 'changes if player loses' do
+        expect { subject.add_game("scissors", "rock", :loss) }.to change { subject.score[:computer] }.by 1
+      end
+    end
 end

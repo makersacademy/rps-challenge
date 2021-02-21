@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/rps.rb'
 require './lib/player.rb'
+require './lib/game_log.rb'
 
 
 class RockPaperScissors < Sinatra::Base
@@ -14,7 +15,7 @@ enable :sessions
   end
 
   post '/name' do
-    RPS.create(Player.new(params[:name]))
+    RPS.create(Player.new(params[:name]), GameLog.new)
     redirect to('/play')
   end
 

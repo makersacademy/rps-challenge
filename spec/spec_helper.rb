@@ -5,6 +5,8 @@ require 'simplecov-console'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'web_helpers'
 
+srand(4)
+
 Capybara.app = RockPaperScissors
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([

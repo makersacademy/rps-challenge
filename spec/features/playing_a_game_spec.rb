@@ -3,7 +3,7 @@ feature 'user can play a game of rock paper scissors' do
     sign_in_and_play
     srand(4)
     click_button "Rock"
-    expect(page).to have_content("BIMINI BON BOULASH won!")
+    expect(page).to have_content("You won!")
   end
   scenario 'user picks scissors while computer picks scissors' do
     sign_in_and_play
@@ -15,7 +15,7 @@ feature 'user can play a game of rock paper scissors' do
     sign_in_and_play
     srand(4)
     click_button "Paper"
-    expect(page).to have_content("BIMINI BON BOULASH lost :(")
+    expect(page).to have_content("You lost :(")
   end
 
 end
