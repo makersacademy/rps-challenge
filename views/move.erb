@@ -1,6 +1,6 @@
-<h1> <%= @player1 %> </h1>
+<h1> <%= @player1 %> vs. <%= @bot %> </h1>
 <h2> Select your move </h2>
-<form action="/choice" method="post">
-    <input type="text" placeholder="rock,paper,or scissors?" name="move">
+<form action="/choices" method="post">
+    <input type="text" placeholder="rock,paper,or scissors?" name="choice1">
     <input type="submit" value="Let's play!">
   </form>
