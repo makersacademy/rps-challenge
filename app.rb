@@ -7,15 +7,14 @@ class RpsGame < Sinatra::Base
     erb :index
   end
 
+# Solo mode
   get '/one_player' do
     erb :enter_name
   end
 
   post '/one_player/game_setup' do
-    # create the game instance
     player_1 = Player.new(params['player_1_name'])
     @game = Game.create(player_1, Player.new)
-    # redirect to choice page
     redirect '/one_player/choice'
   end
 
@@ -30,26 +29,24 @@ class RpsGame < Sinatra::Base
     @game = Game.instance
     @game.selection(@game.player_1, selection)
     @game.random_selection(@game.player_2)
-    redirect '/one_player/results'
+    redirect '/results'
   end
 
+# Two players mode
   get '/two_players' do
     erb :two_players_enter_names
   end
 
   post '/two_players/game_setup' do
-    # create the game instance
     player_1 = Player.new(params['player_1_name'])
     player_2 = Player.new(params['player_2_name'])
     @game = Game.create(player_1, player_2)
-    # redirect to choice page
-    redirect '/two_players/player_1_choice'
+    redirect '/two_players/player_1/choice'
   end
 
-  get '/two_players/player_1_choice' do
+  get '/two_players/player_1/choice' do
     @game = Game.instance
     erb :two_players_player_1_choice
-    # choose btw rock, paper, scissors
   end
 
   post '/two_players/player_1/set_choice' do
@@ -62,17 +59,17 @@ class RpsGame < Sinatra::Base
   get '/two_players/player_2/choice' do
     @game = Game.instance
     erb :two_players_player_2_choice
-    # choose btw rock, paper, scissors
   end
 
   post '/two_players/player_2/set_choice' do
     selection = params['selection']
     @game = Game.instance
     @game.selection(@game.player_2, selection)
-    redirect '/one_player/results'
+    redirect '/results'
   end
 
-  get '/one_player/results' do
+# Results route
+  get '/results' do
     @game = Game.instance
     @game.results(@game.player_1, @game.player_2)
     erb :results
@@ -83,5 +80,4 @@ class RpsGame < Sinatra::Base
     Game.remove(:@game)
     redirect '/'
   end
-
 end

@@ -1,5 +1,5 @@
-feature 'rps game - player selection' do
-  scenario 'player chooses option' do
+feature 'rps game - player can choose what option to play' do
+  scenario 'one player only' do
     visit('/')
     click_button('one_player')
     visit('/one_player')

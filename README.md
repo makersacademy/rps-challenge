@@ -22,7 +22,30 @@ I would like to be able to play rock/paper/scissors
 * a winner will be declared
 
 ## How to run locally
+```
+$ git clone git@github.com:sandyMax974/rps-challenge.git
+$ cd rps-challenge
+$ bundle install
+$ rackup
+```
+Visit http://localhost:9292/
+
 ## Planning
-## Learnings
-## Issues encountered
-- `Capybara::ElementNotFound: Unable to find field "player_1_name" that is not disabled` but my field exist and is enabled -> set my capybara steps incorrectly
+I started by reflecting on how I'd like the user would interact with the game.
+##### Views
+![Welcome Page](images/RPS - welcome_page.png)
+**Player VS Computer mode**
+![Player name form](images/RPS - fill_name_page.png)
+![Player options](images/RPS - player_options_page.png)
+![Result Page](images/RPS - 1 player - results_page.png)
+**Player VS Player mode**
+![Players name form](images/RPS - fill_names_page.png)
+![Player 2 options](images/RPS - player2_option_page.png)
+![Result Page](images/RPS - 2 players - results_page.png)
+**Edge case**
+![Result Draw](images/RPS - draw - results_page.png)
+
+## If I had more time
+- Refactor the control flow in the #results method to be shorter
+- Use images instead of buttons to display the player options
+- Centre all elements on the page and use implement attractive fonts
