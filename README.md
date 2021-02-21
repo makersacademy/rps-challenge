@@ -31,21 +31,31 @@ $ rackup
 Visit http://localhost:9292/
 
 ## Planning
+
+### Views
 I started by reflecting on how I'd like the user would interact with the game.
-##### Views
-![Welcome Page](images/RPS - welcome_page.png)
+![Welcome Page](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20welcome_page.png)
 **Player VS Computer mode**
-![Player name form](images/RPS - fill_name_page.png)
-![Player options](images/RPS - player_options_page.png)
+![Player name form](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20fill_name_page.png)
+![Player options](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20player_options_page.png)
 ![Result Page](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%201%20player%20-%20results_page.png)
 **Player VS Player mode**
-![Players name form](images/RPS - fill_names_page.png)
-![Player 2 options](images/RPS - player2_option_page.png)
-![Result Page](images/RPS - 2 players - results_page.png)
+![Players name form](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20fill_names_page.png)
+![Player 2 options](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20player2_option_page.png)
+![Result Page](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%202%20players%20-%20results_page.png)
 **Edge case**
-![Result Draw](images/RPS - draw - results_page.png)
+![Result Draw](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20draw%20-%20results_page.png)
+
+### Controller
 
 ## If I had more time
 - Refactor the control flow in the #results method to be shorter
 - Use images instead of buttons to display the player options
 - Centre all elements on the page and use implement attractive fonts
+
+## Focus
+- Are all my unit test isolated?
+- Do I have any fake positive test?
+- Did I design my Capybara test correctly?
+- What methods should I make private?
+- Any feedbacks on the method I used to reset the game instance?
