@@ -32,7 +32,7 @@ feature 'playing a game' do
   scenario 'the computer chooses an option' do
     register_name
     click_button "Rock"
-    message = find(:css, '#opponent').text.strip
+    message = find(:css, '#opponent').text
     expect(possible_moves).to include message
     # expect(page).to have_content "Opposing player chose Rock!"
   end

@@ -13,6 +13,8 @@ post '/names' do
 end
 
 get '/play' do
+  @turn = Turn.new(session)
+
   @name = session[:player_1_name]
   @move = session[:move]
   @opponent_move = session[:opponent_move]
@@ -25,6 +27,7 @@ post '/play' do
   redirect '/play'
 end
 
+# Opponent.new.move
 
 run! if app_file == $0
 end
