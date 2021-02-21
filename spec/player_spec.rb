@@ -44,4 +44,11 @@ describe Player do
       expect(["R", "P", "S"]).to include(bot.move)
     end
   end
+
+  it "#reset resets move, but preserves everything else" do
+    subject.reset
+    expect(subject.ID).to eq 1
+    expect(subject.name).to eq "Herodotus"
+    expect(subject.move).to eq nil
+  end
 end

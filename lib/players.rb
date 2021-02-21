@@ -13,6 +13,10 @@ class Player
     @move = move
   end
 
+  def reset
+    @move = nil
+  end
+
   private
 
   def random_move

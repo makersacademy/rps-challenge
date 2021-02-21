@@ -1,14 +1,21 @@
 require_relative "players"
+require_relative "score"
 
 class Game
   @@game = nil
-  attr_reader :players
+  attr_reader :players, :scores, :winner
 
-  def initialize(names, player_class = nil, bots = 1)
+  def initialize(names, player_class = Player, score_class = Score)
     @Player = player_class
-    names = [names] if names.is_a?(String)
-    create_players(names)
-    create_bots(bots)
+    @Score = score_class
+    @winner = nil
+    if names.is_a?(String)
+      create_players([names])
+      create_player(2, "Talos, son of Hephaestus", true)
+    else
+      create_players(names)
+    end
+    @scores = {1 => 0, 2 => 0}
   end
 
   def self.store(game)
@@ -49,6 +56,20 @@ class Game
 
   def score
     raise "Players haven't entered moves" unless finished?
+    results = @Score.new(@players)
+    @winner = results.winner?
+    if results.draw?
+      @scores[1] += 1
+      @scores[2] += 1
+      return "draw"
+    else
+      @scores[@winner.ID] += 1
+    end
+    return @winner
+  end
+
+  def new_round
+    @players.each{ |player| player.reset }
   end
 
   private
@@ -62,22 +83,4 @@ class Game
     @players << @Player.new(id, name, bot)
   end
 
-  def create_bots n_bots
-    n_players = @players.length
-    (1..n_bots).each{ |i| create_player(i+n_players, bot_name(i), bot = true)}
-  end
-
-  def bot_name(i)
-    case i
-    when 1
-      str = "1st"
-    when 2
-      str = "2nd"
-    when 3
-      str = "3rd"
-    else
-      str = "#{i}th"
-    end
-    "Lord bottington, the " + str
-  end
 end

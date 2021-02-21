@@ -4,16 +4,16 @@ require "players"
 describe Game do
   let(:player) { double :Player }
   let(:bot) { double :bot }
-  subject { Game.new("Nabonidus", player, 0)}
+  subject { Game.new("Nabonidus", player)}
   before(:each) do
-    allow(player).to receive(:new).with(1, "Nabonidus", false)
+    allow(player).to receive(:new)#.with(1, "Nabonidus", false)
     allow(player).to receive(:ID).and_return(1)
     allow(player).to receive(:name).and_return("Nabonidus")
     allow(player).to receive(:bot).and_return(false)
     allow(player).to receive(:move).and_return(nil)
     
     allow(bot).to receive(:ID).and_return(2)
-    allow(bot).to receive(:name).and_return("Talos")
+    allow(bot).to receive(:name).and_return("Talos, son of Hephaestus")
     allow(bot).to receive(:bot).and_return(true)
     allow(bot).to receive(:move).and_return("R")
 
@@ -22,7 +22,13 @@ describe Game do
   
 
   it "stores players as an array" do
+    game = Game.new("Nabondidus", Player)
     expect(subject.players).to be_an_instance_of(Array)
+  end
+
+  it "scoring_hash is empty" do
+    init_scores = {1 => 0, 2 => 0}
+    expect(subject.scores).to eq init_scores
   end
 
   it "has a bot by default" do
@@ -68,6 +74,7 @@ describe Game do
       before(:each) do
         allow(player).to receive(:move).and_return("R")
       end
+
       it "raises error if player already has a move" do
         expect { subject.add_move(1, "R") }.to raise_error("Player 1 already has a move")
       end
@@ -84,8 +91,40 @@ describe Game do
   end
 
   context "#score" do
+    let(:game){ Game.new(["Xerxes", "Talos"]) }
+    
+
     it "raises error when a player has no move" do
       expect{subject.score}.to raise_error("Players haven't entered moves")
+    end
+
+    it "player 1 beats player 2" do
+      game.add_move(1, "R")
+      game.add_move(2, "S")
+      expect(game.score).to eq game.players[0]
+    end
+
+  end
+
+  context "#new_round" do
+    let(:game){ Game.new(["Xerxes", "Talos"]) }
+    before(:each) do
+      game.add_move(1, "R")
+      game.add_move(2, "S")
+      game.score
+      game.new_round
+    end
+
+    it "resets player moves" do
+      expect(game.winner).to eq game.players[0]
+    end
+    
+    it "new round adds to score hash" do
+      game.add_move(1, "S")
+      game.add_move(2, "R")
+      game.score
+      score_hash = {1 => 1, 2 => 1}
+      expect(game.scores).to eq score_hash
     end
 
     
