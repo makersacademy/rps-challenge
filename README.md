@@ -1,7 +1,8 @@
 # Rock Paper Scissors Battle System
 
 
-<img width="1419" alt="Screenshot 2021-02-21 at 06 32 49" src="https://user-images.githubusercontent.com/75075773/108617718-81264600-7410-11eb-9e03-7ae6eeb2c211.png">
+<img width="1424" alt="Screenshot 2021-02-21 at 17 57 06" src="https://user-images.githubusercontent.com/75075773/108633859-8e721d80-746e-11eb-95fa-b65972ae3c00.png">
+
 
 
 This is my solution to the Makers Academy week 3 challenge. The task is to create a rock paper scissors game that can be played on a local server. This project incorporated HTML, CSS, ERB, Sinatra and the use of Capybara for testing purposes. Following TDD principles, I created an app to meet the following user requirements:
@@ -14,7 +15,9 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-<img width="1414" alt="Screenshot 2021-02-21 at 06 33 57" src="https://user-images.githubusercontent.com/75075773/108618112-4bcf2780-7413-11eb-8c5c-b039aa5ef64c.png">
+
+<img width="1428" alt="Screenshot 2021-02-21 at 18 00 50" src="https://user-images.githubusercontent.com/75075773/108633905-ced19b80-746e-11eb-832d-a4c5787e9150.png">
+
 
 ## App creation
 
@@ -49,4 +52,4 @@ rackup
 
 If you don't have rackup installed, please follow the [instructions here](https://github.com/rack/rack)
 
-<img width="1428" alt="Screenshot 2021-02-21 at 06 34 43" src="https://user-images.githubusercontent.com/75075773/108618088-19bdc580-7413-11eb-8ce7-bb803d772874.png">
+<img width="1426" alt="Screenshot 2021-02-21 at 17 57 42" src="https://user-images.githubusercontent.com/75075773/108633956-00e2fd80-746f-11eb-8669-dffb83d34e54.png">

@@ -1,4 +1,3 @@
-
 class Computer_Player
 
   def play
