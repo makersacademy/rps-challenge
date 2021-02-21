@@ -1,0 +1,16 @@
+
+
+<p style="font-size:48px"> <%= @player_1_name %> vs. <%= @player_1_name %> </p>
+<div style="display:grid;grid-template-columns:1fr 1fr;grid-gap:50px">
+<p> <%= @player_1_name %> turn</p>
+
+
+</div>
+
+
+
+<form   method="post" action='/send-player1-move'>
+    <input style="color:blue; height:50px;"  type="submit" name="move" value="rock" />
+    <input style="color:blue; height:50px;"  type="submit" name="move" value="paper" />
+    <input style="color:blue; height:50px;"  type="submit" name="move" value="scissors" />
+</form>
