@@ -30,6 +30,56 @@
   padding: 15px;
 }
 
+/* img {
+  object-fit: scale-down;
+} */
+
+.rock {
+    /* display: inline-block; */
+    float: left;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    height: 100px;
+    padding: 0;
+    margin: 10px;
+    /* vertical-align: top; */
+    width: 104px;
+    imageObject.value = "rock"
+}
+
+.paper {
+    /* display: inline-block; */
+    float: left;
+    left: 210px;
+    position: relative;
+    text-align: center;
+    height: 100px;
+    padding: 0;
+    margin: 10px;
+    /* vertical-align: top; */
+    width: 104px;
+}
+
+.scissors {
+    /* display: inline-block; */
+    float: right;
+    right: 100px;
+    position: relative;
+    text-align: center;
+    height: 100px;
+    padding: 0;
+    margin: 10px;
+    /* vertical-align: top; */
+    width: 104px;
+}
+
+#rock img {
+  object-fit: contain;
+  height: 200px;
+  /* width: 200px; */
+}
+
 </style>
 </head>
 <body style="background-color:#00ff0080;">
@@ -45,11 +95,28 @@
 </div>
 
 <div class="main">
-  <form action=/take_turn>
-    <button type='submit' value='R'>Rock</button>
-    <button type='submit' value='P'>Paper</button>
-    <button type='submit' value='S'>Scissors</button>
+
+<div class = 'rock'>
+  <form action=/rock method=post>
+    <label for='rock'>Rock</label>
+    <input type = "image" id='rock' name='rock' src="rock.jpeg" height=200px>
   </form>
+</div>
+
+
+<div class = 'paper'>
+  <form action=/paper method=post>
+    <label for='paper'>Paper</label>
+    <input type = "image" id='paper' name='paper' src="paper.jpg" height=200px>
+  </form>
+</div>
+
+<div class = 'scissors'>
+  <form action=/scissors method=post>
+    <label for='scissors'>Scissors</label>
+    <input type = "image" id='scissors' name='scissors' src="scissors.jpg" height=200px>
+  </form>
+</div>
 
 </p>
 </body>

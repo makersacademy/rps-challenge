@@ -48,6 +48,11 @@ class Game
     raise "All players have taken their turns"
   end
 
+  def enter_move move
+    player_id = whose_turn?[0]
+    add_move(player_id, move)
+  end
+  
   def add_move player_id, move
     player = @players[player_id - 1]
     raise "Player #{player_id} already has a move" unless player.move == nil

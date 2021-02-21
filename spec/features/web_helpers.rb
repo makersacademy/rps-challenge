@@ -9,11 +9,13 @@
 # end
 
 def enter_1_player
+  visit('/')
   fill_in "player_1_name", with: "Sargon of Akkad"
   click_button 'Begin Game'
 end
 
 def enter_2_players
+  visit('/')
   fill_in :player_1_name, with: "Sargon of Akkad"
   check 'enable_player_2'
   fill_in :player_2_name, with: "Luh-ishan"
