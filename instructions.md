@@ -158,7 +158,9 @@ In  `app.rb`:
 
 14) Run `rspec` and make sure all tests pass
 
-15) Refactor: To make the game more user friendly, add `h1` and `label` elements.
+## Refactor
+
+1) To make the game more user friendly, add `h1` and `label` elements.
 In `homepage.erb`:
 ```
   <h1>Rock, Paper, Scissors</h1>
@@ -171,3 +173,26 @@ In `homepage.erb`:
     <input type="submit" name="Submit">
   </form>
 ```
+
+2) In the `post` request, the logic extracts `parameters` to state and then renders the `:play` view. A `post` loop is not intended to render a view - a `get` request should be used for that instead. 
+In `app.rb`, `enable` the `session` under the `class Game` line:
+
+    `enable: sessions`
+
+3) In the `post '/names'` route, store the player name in a `session` rather than in an instance variable:
+
+    `session[:player_name] = params[:player_name]`
+
+Run `rspec` and the tests should now fail. (Because the instance variables have been removed, they can no longer be called in `play.erb`)
+
+4) Render the `play.erb` view from a new `get` request where the required instance variables can be stored instead:
+```
+    get '/play' do
+      @player_name = session[:player_name]
+    end
+```
+
+5) In the `post` request, change `erb :play` to `redirect :play`. This is to issue an internal `get` request within the server, this activates the `get '/play'` action and renders the `play.erb` view.
+
+5) Run `rspec` to check all tests are passing.
+
