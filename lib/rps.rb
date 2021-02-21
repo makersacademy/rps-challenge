@@ -2,6 +2,8 @@ require_relative 'computer'
 require_relative 'weapon'
 
 class RPS
+  attr_reader :computer, :player_choice
+
   def initialize(player, weapon_class = Weapon, computer = Computer.new)
     @player = player
     @player_choice = nil
@@ -26,4 +28,5 @@ class RPS
   def result
     @player_choice.draw?(@computer) ? :draw : @player_choice.beats?(@computer) ? :win : :lose
   end
+
 end

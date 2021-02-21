@@ -1,13 +1,11 @@
 require_relative 'weapon'
 
 class Computer
-  attr_reader :type
-
-  def initialize
-    @type = nil
+  def type
+    @type = Weapon::WEAPONS.sample
   end
 
-  def weapon
-    @type = Weapon::WEAPONS.sample
+  def weapon_choice
+    @type.dup
   end
 end
