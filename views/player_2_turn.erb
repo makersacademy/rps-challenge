@@ -1,0 +1,37 @@
+<head>
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <div>
+    <%= @player_1_name %> vs. <%= @player_2_name %>
+  </div>
+  <div>
+    <%= @player_2_name %>, make your choice: Rock, Paper, or Scissors!
+    <table border=5 bordercolor=red>
+      <tr>
+        <td>
+          <form action='/p2_choice' method='post'>
+            <img src='/images/rock.png'>
+            <br>
+            <input type='submit' name='choice' value='rock'>
+          </form>
+        </td>
+        <td>
+          <form action='/p2_choice' method='post'>
+            <img src='/images/paper.jpg'>
+            <br>
+            <input type='submit' name='choice' value='paper'>
+          </form>
+        </td>
+        <td>
+          <form action='/p2_choice' method='post'>
+            <img src='/images/scissors.jpg'>
+            <br>
+            <input type='submit' name='choice' value='scissors'>
+          </form>
+        </td>
+      </tr>
+    </table>
+    <br>
+  </div>
+</body>

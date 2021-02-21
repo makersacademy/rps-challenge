@@ -1,0 +1,20 @@
+<head>
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <div>
+    <%= @player_1_name %> chose <%= @player_1_weapon %>
+  </div>
+  <div>
+    <%= @player_2_name %> chose <%= @player_2_weapon %>
+  </div>
+  <div>
+    <%= @result.print %>
+  </div>
+  <div>
+    <a href='/restart'><button>Play again?</button></a>
+  </div>
+  <div>
+    <a href='/'><button>Back to Main Menu</button></a>
+  </div>
+</body>
