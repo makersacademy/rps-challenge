@@ -79,7 +79,81 @@
 
 ## Building The Game
 
-### User Story 1:
-As a marketeer So that I can see my name in lights I would like to register my name before playing an online game
+**User Story 1:**
+*As a marketeer So that I can see my name in lights I would like to register my name before playing an online game*
 
-1) 
+1) In the features directory, make a new file for a feature test:
+
+    `touch spec/features/enter_name_spec.rb`
+
+2) Write a capybara feature test to check the user can enter their name:
+```
+    feature 'Enter player name' do
+      scenario 'Submits players name' do
+        visit('/')
+        fill_in :player_name, with: 'Dave'
+        click_button 'Submit'
+        expect(page).to have_content 'Dave'
+      end
+    end
+```
+
+3) Run `rspec` and make sure there is a failing test with an `Unable to find field :player_name` error
+
+4) To fix the error, in `app.rb`, add a route that gets a `homepage.erb` view:
+```
+    get '/' do
+      erb :homepage
+    end
+```
+*NB:* Make sure to delete or comment out the `'Rock, Paper, Scissors'` text and comment out the test for it.
+
+5) Create a new directory called `views` to store all erb documents:
+
+    `mkdir views`
+
+6) Inside the `views` directory, create a file called `homepage.erb`
+
+    `touch views/homepage.erb`
+
+7) Inside the `homepage.erb` file, solve the error by writing the code:
+
+    `<input type="text" name="player_name">`
+
+8) The new error should say that it expected to find the text `'Dave'` on the page
+
+9) Fix this error in `homepage.erb` by adding a form and a `submit` button:
+```
+    <form>
+      <input type="text" name="player_name"
+      <input type="submit" name="Submit"
+    </form>
+
+10) The test still fails because capybara tries to submit the form and fails. This can be fixed by pointing the form to a specific route ans using a post request. The post request makes the server 'remember' the names.
+Inside the opening form tag:
+
+    <form action="/names" method="post">
+
+11) In app.rb add the `post` request route:
+```
+    post '/name' do
+      erb :play
+    end
+```
+
+12) For the `post` request to work, make a new erb view called `play`:
+
+    `touch views/play.erb`
+
+This document is where the players name will be displayed. Use erb syntax to add a `@player_name` instance variable.
+
+13) To be able to pass the instance variables into the view, extract them from the `params` in the `post '/names'` request
+In  `app.rb`:
+```
+    post '/names' do
+      @player_name = params[:player_name]
+      erb :play
+    end
+```
+
+14) Run `rspec` and make sure all tests pass
