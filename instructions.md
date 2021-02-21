@@ -77,7 +77,7 @@
 18) Run `rspec` and check there are `1 example, 0 failures`
 
 
-## Building The Game
+## Building The Basics
 
 **User Story 1:**
 *As a marketeer So that I can see my name in lights I would like to register my name before playing an online game*
@@ -211,3 +211,71 @@ Run `rspec` and the tests should now fail. (Because the instance variables have 
 4) Replace these lines in features test with the sign_in_and_play method
 
 5) Run rspec and make sure all tests still pass
+
+## Building The Game
+
+**User Story 2**
+
+*As a marketeer So that I can enjoy myself away from the daily grind I would like to be able to play rock/paper/scissors*
+
+## Pressing Buttons
+
+1) Create a new feature file for testing the rock, paper, scissors buttons
+
+    touch spec/features/buttons_spec.rb
+
+2) Write a feature test for the rock button
+```
+    feature 'Player chooses a move' do
+      scenario 'Submits user choice of rock' do
+        sign_in_and_play
+        click_button 'Rock'
+        expect(page).to have_content 'Rock'
+      end
+    end
+
+This should give an error of being unable to find a button called rock
+
+3) In the play.erb view, add a button called rock that using the <form> element that will take the user to a results.erb view
+```
+    <form action="/results">
+      <input type="submit" value="Rock">
+    </form>
+```
+4) Change the text in the play view to ask the user to choose their move
+
+5) Run rspec and check test passes
+
+6) Before w3riting the other button tests, add a before hook for sign_in_and_play to make code DRY
+```
+    before(:each) do
+      sign_in_and_play
+    end
+
+7) Write tests for paper and scissors, make them all pass
+
+8) Write a post request  
+
+## Displaying Results
+
+1) At the bottom of the tests in buttons_spec, add test functonality to check for the results to be displayed:
+
+    expect(page).to have_content 'Rock'
+
+2) Run rspec and see tests fail because the /results view does not exist yet
+
+3) In the view folder make a new page called results.erb
+
+    touch views/results.erb
+
+4) In app.rb make a get request to this new route:
+```
+    get '/results' do
+      @player_name = session[:player_name]
+      erb :results
+    end
+```
+
+5) To pass the tests in the most simple way, add text rock, paper and scissors to the results view
+
+## Randomly Generate A Move

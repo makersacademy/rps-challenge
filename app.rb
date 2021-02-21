@@ -18,5 +18,12 @@ class Game < Sinatra::Base
     erb :play
   end
 
+  get '/results' do
+    @player_name = session[:player_name]
+    erb :results
+  end
+
+
+
   run! if app_file == $0
 end
