@@ -1,5 +1,6 @@
-def sign_in_and_go
+def complete_form
   visit('/')
   fill_in :name, with: 'James'
-  click_button 'Go'
+  page.choose 'rock'
+  click_button 'Confirm'
 end

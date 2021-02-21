@@ -12,34 +12,25 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/name' do
-    p "The /name route is being reached" 
-    p params
+  post '/enter_details' do
     $player = params[:name]
-    redirect '/rps_selection'
-  end
-
-  get '/rps_selection' do
-    p "The /rps_selection route is being reached" 
-    p $player
-    @player = $player
-    erb :rps_selection
-  end
-
-  post '/rps_choice' do
- 
-    $player_weapon = params[:selection]
+    $player_selection = params[:rps_choice]
+    p params
     redirect '/start_game'
   end
 
   get '/start_game' do
+    p "The /start_game route is being reached" 
+    p $player_selection, $player
     @player = $player
-    # @player_weapon = $player.weapon
+    @player_selection = $player_selection
     erb :start_game
   end
 
-  get '/fight' do
-
+  get '/get_results' do
+    
+    erb :index
   end
+
 
 end

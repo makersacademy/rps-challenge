@@ -1,10 +1,24 @@
-<h1>Rock Paper Scisscors</h1>
+<h1>Rock Paper Scissors</h1>
 <h2>Play against the PC</h2>
 
-<form action="/name" method="post">
+<form action="/enter_details" method="post">
   <label for="name">
-    Please enter your name 
-    <input type="text" name="name">
+    Please enter your name: <br> 
+    <input type="text" name="name"> <br>
   </label>
-  <input type="submit" value="Go">
+
+  <label for="selection">
+    Select your weapon: <br>
+  </label>
+
+  <input type="radio" id="rock" name="rps_choice" value="rock">
+  <label for="male">Rock</label><br>
+
+  <input type="radio" id="paper" name="rps_choice" value="paper">
+  <label for="female">Paper</label><br>
+
+  <input type="radio" id="scissors" name="rps_choice" value="scissors">
+  <label for="other">Scissors<br></label>
+
+  <input type="submit" value="Confirm">
 </form>

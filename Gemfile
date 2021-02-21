@@ -10,4 +10,5 @@ group :test do
   gem 'simplecov-console', require: false
   gem 'thin'
   gem 'shotgun'
+  gem 'rack'
 end
