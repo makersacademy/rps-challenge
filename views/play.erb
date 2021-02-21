@@ -1,12 +1,12 @@
 <h1>It's time to play, <%= @name %>!</h1>
 <h2>Choose your move!</h2>
-<form action= "/rock" method="get">
+<form action= "/move?move=rock" method="post">
   <input type="submit" value="Rock">
 </form>
-<form action= "/paper" method="get">
+<form action= "/move?move=paper" method="post">
   <input type="submit" value="Paper">
 </form>
-<form action= "/scissors" method="get">
+<form action= "/move?move=scissors" method="post">
   <input type="submit" value="Scissors">
 </form>
 <% if @game.game_log.games.length > 0 %>

@@ -23,18 +23,8 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  get '/rock' do
-    @game.play("rock")
-    redirect to('/play')
-  end
-
-  get '/paper' do
-    @game.play("paper")
-    redirect to('/play')
-  end
-
-  get '/scissors' do
-    @game.play("scissors")
+  post '/move' do
+    @game.play(params[:move])
     redirect to('/play')
   end
 
