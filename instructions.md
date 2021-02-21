@@ -196,3 +196,18 @@ Run `rspec` and the tests should now fail. (Because the instance variables have 
 
 5) Run `rspec` to check all tests are passing.
 
+## Add Web Helper
+
+1) To keep the code DRY, make a new file in features and call it web_helpers.rb
+
+    touch spec/features/web_helpers.rb
+
+2) Inside spec_helper, require the web_helpers_spec file
+
+    require 'features/web_helpers'
+
+3) Inside web_helpers_spec, define a method called sign_in_and_play, extract the code that visits the homepage, enters the name and clicks submit
+
+4) Replace these lines in features test with the sign_in_and_play method
+
+5) Run rspec and make sure all tests still pass
