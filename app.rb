@@ -22,6 +22,14 @@ class RockPaperScissors < Sinatra::Base
     erb :choose
   end
 
-  # start the server if ruby file executed directly
+  post '/check' do
+    @game.player_choose(params[:weapon])
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb @game.result
+  end
+
   run! if app_file == $0
 end
