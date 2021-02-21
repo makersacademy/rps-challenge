@@ -3,10 +3,14 @@
 </head>
 <body>
   <div>
-    Please enter your name!
-    <form action="/submit" method="post">
-      <input type="text" name="player_name">
-      <input type="submit" name="Start Game">
+    Please select game mode
+  </div>
+  <div>
+    <form action='/single_player'>
+      <input type='submit' value='Single Player'>
+    </form>
+    <form action='/multiplayer'>
+      <input type='submit' value='Multiplayer'>
     </form>
   </div>
 </body>

@@ -19,4 +19,8 @@ class Game
     @players.last
   end
 
+  def single_player?
+    player_2.name == "Computer"
+  end
+
 end
