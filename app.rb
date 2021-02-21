@@ -48,7 +48,7 @@ class RpsGame < Sinatra::Base
 
   get '/two_players/player_one/choice' do
     @game = Game.instance
-    erb :two_players_player_one_choice
+    erb :two_players_player_1_choice
   end
 
   post '/two_players/player_one/receive_choice' do
@@ -60,7 +60,7 @@ class RpsGame < Sinatra::Base
 
   get '/two_players/player_two/choice' do
     @game = Game.instance
-    erb :two_players_player_two_choice
+    erb :two_players_player_2_choice
   end
 
   post '/two_players/player_two/receive_choice' do
