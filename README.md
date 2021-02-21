@@ -1,22 +1,13 @@
-# RPS Challenge
+# Rock Paper Scissors Battle System
 
-Instructions
--------
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+<img width="1419" alt="Screenshot 2021-02-21 at 06 32 49" src="https://user-images.githubusercontent.com/75075773/108617718-81264600-7410-11eb-9e03-7ae6eeb2c211.png">
 
-Task
-----
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
+This is my solution to the Makers Academy week 3 challenge. The task is to create a rock  
+paper scissors game that can be played on a local server. This project incorporated HTML,  
+CSS, ERB, Sinatra and the use of Capybara for testing purposes. Following TDD principles, I created an  
+app to meet the following user requirements:
 ```
 As a marketeer
 So that I can see my name in lights
@@ -26,60 +17,39 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+<img width="1414" alt="Screenshot 2021-02-21 at 06 33 57" src="https://user-images.githubusercontent.com/75075773/108618112-4bcf2780-7413-11eb-8c5c-b039aa5ef64c.png">
 
-Hints on functionality
+## App creation
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+This app was an oppertunity to explore the topics covered in week 3 of the Makers course.  
+I utilised Embedded Ruby(ERB):
 
+<img width="1109" alt="Screenshot 2021-02-21 at 06 35 13" src="https://user-images.githubusercontent.com/75075773/108618002-6654d100-7412-11eb-8037-28854d12a770.png">
 
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
+As well as HTML with some CSS:
 
 
-## Bonus level 1: Multiplayer
+<img width="309" alt="Screenshot 2021-02-21 at 06 35 01" src="https://user-images.githubusercontent.com/75075773/108617895-98b1fe80-7411-11eb-8a2e-9622180b683b.png">
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+This all came together by utilising Sinatra:
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+<img width="501" alt="Screenshot 2021-02-21 at 06 36 00" src="https://user-images.githubusercontent.com/75075773/108618048-c64b7780-7412-11eb-8625-1faf0e688dc1.png">
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
-## Basic Rules
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
 
-In code review we'll be hoping to see:
+## To Install
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+Firstly, clone this repo then run the following in your terminal.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+```
+bundle install
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+```
+rackup
+```
+
+If you don't have rackup installed, please follow the [instructions here](https://github.com/rack/rack)
+
+<img width="1428" alt="Screenshot 2021-02-21 at 06 34 43" src="https://user-images.githubusercontent.com/75075773/108618088-19bdc580-7413-11eb-8ce7-bb803d772874.png">
