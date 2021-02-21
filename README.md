@@ -49,7 +49,7 @@ In your browser, head to [localhost:9292](http://localhost:9292)
 ## using the app
 
 
-### Enter your name
+### Enter your name
 
 ![entering-name](public/images/entering_name.gif)
 
