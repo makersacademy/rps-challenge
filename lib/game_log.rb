@@ -11,6 +11,18 @@ class GameLog
     get_score(result)
   end
 
+  def game_over?
+    true if @score[:player] == 10 || score[:computer] == 10
+  end
+
+  def end_message
+    if @score[:player] > @score[:computer]
+      "YOU ARE THE CHAMPION!!!\nYou've won a cash prize of $100,000 subject to t & cs"
+    else
+      "GAME OVER\nYou are a loser :( :( :("
+    end
+  end
+
   def show_game
     "You picked #{@games.last.first}, the computer picked #{@games.last[1]}"
   end

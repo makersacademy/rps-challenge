@@ -7,6 +7,6 @@ feature 'shows the running score of the games' do
     click_button("Paper")
     srand(4)
     click_button("Scissors")
-    expect(page).to have_content("The current score is BIMINI BON BOULASH: 1, COMPUTER: 1")
+    expect(page).to have_content("The score is BIMINI BON BOULASH: 1, COMPUTER: 1")
   end
 end

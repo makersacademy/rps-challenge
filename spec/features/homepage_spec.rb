@@ -3,9 +3,10 @@ feature 'welcome page' do
     visit("/")
     expect(page).to have_content("Hello and welcome to Rock Paper Scissors!")
   end
-  scenario 'can be returned to' do
+  scenario 'can be returned to once game is over' do
     sign_in_and_play
-    click_link "End current game"
+    win_game
+    click_link "Start again"
     expect(page).to have_content("Hello and welcome to Rock Paper Scissors!")
   end
 end
