@@ -1,4 +1,4 @@
-<%= @name %> is playing Rock, Paper, Scissors!
+<%= @turn.player_name %> is playing Rock, Paper, Scissors!
 
 <!-- <form action="/decrement" method="post">
   <input type="submit" value="Decrement">
@@ -18,8 +18,8 @@
 </form>
 
 
-<%= @name %> chose <%= @move %>!
+<%= @turn.player_name %> chose <%= @turn.player_move %>!
 
 <div id="opponent">
-  Opposing player chose <%= @opponent_move.to_s.capitalize %>!
+  Opposing player chose <%= @turn.opponent_move.to_s.capitalize %>!
 </div>
