@@ -23,7 +23,6 @@ feature 'Gameplay' do
     click_button('Rock')
     expect(page).to have_content "Computer chose: Scissors"
   end
-
 end
 
 feature 'Game results' do
@@ -39,7 +38,7 @@ feature 'Game results' do
 
   scenario 'Player draws' do
     click_button('Scissors')
-    expect(page).to have_content "You drew!"
+    expect(page).to have_content "You both drew the same hand!"
   end
 
   scenario 'Player loses' do
