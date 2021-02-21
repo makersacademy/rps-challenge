@@ -7,7 +7,9 @@ class RPS < Sinatra::Base
 
   enable :sessions
   set :session_secret, 'secret'
-  set :public_folder, '/public'
+  set :public_folder, 'public'
+
+  MESSAGE = {win: "You Won!", lose: "You Lost!", draw: "It's a draw!"}
 
   get '/' do
     erb :index
@@ -26,9 +28,11 @@ class RPS < Sinatra::Base
   get '/result' do
     @player1 = session[:game].player1.name
     @player2 = session[:game].player2.name
+    @score1 = session[:game].score1
+    @score2 = session[:game].score2
     @pick1 = session[:game].pick1
     @pick2 = session[:game].pick2    
-    @result = session[:game].result
+    @result = MESSAGE[session[:game].result]
 
     erb :result
   end

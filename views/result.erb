@@ -27,11 +27,15 @@ div {
 <img src="/images/<%= @pick2 %>.png" height=200>
 </div>
 <h1><%= @result %></h1>
+<h3>Current Score:<br><%= @score1 %> - <%= @score2 %></h3>
 <form action="/game">
 <br>
 <input type="submit" value="Play again">
 </form>
-
+<form action="/">
+<br>
+<input type="submit" value="Restart">
+</form>
 </body>
 
 </html>
