@@ -28,4 +28,13 @@ describe Game do
 			expect(round2.winner).to eq 'draw'
 		end
 	end
+
+	describe '#result' do
+		it { is_expected.to respond_to(:print_result)}
+
+		it 'should return the name of the winner' do
+			subject.round
+			expect(subject.print_result).to eq "Rohan wins!"
+		end
+	end
 end

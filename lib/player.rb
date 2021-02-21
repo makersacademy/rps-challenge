@@ -3,11 +3,8 @@ require_relative 'game'
 class Player
 	attr_reader :name, :move
 	
-	def initialize(name)
+	def initialize(name = 'Computer', move = ["rock", "paper", "scissors"].sample)
 		@name = name
-	end
-
-	def play(move)
-		@move = move
+		@move = move.downcase
 	end
 end

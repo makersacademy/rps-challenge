@@ -4,6 +4,4 @@ feature 'Name in lights' do
 		expect(page).to have_content 'Ken is ready to play!'
 		# expect(page).to have_content 'Rohan is ready to play!'
 	end
-
-
 end

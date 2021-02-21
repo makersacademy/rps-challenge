@@ -6,7 +6,7 @@ def sign_in_and_play
 end
 
 def make_moves
-	fill_in :move_1, with: 'rock'
+	fill_in :player_1_move, with: 'rock'
 	# fill_in :move_2, with: 'paper'
-	click_submit
+	click_button 'Submit'
 end
