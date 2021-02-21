@@ -1,7 +1,11 @@
-class Random_Choice
+class Random_Weapon
   CHOICES = ['rock', 'paper', 'scissors']
 
-  def spin
-    CHOICES.sample
+  def initialize
+    @weapon = CHOICES.sample
+  end
+
+  def show
+    @weapon
   end
 end

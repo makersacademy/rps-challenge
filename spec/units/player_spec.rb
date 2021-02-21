@@ -6,4 +6,7 @@ describe Player do
   it 'has a name attribute' do
     expect(subject.name).to eq("Kevin")
   end
+  it 'player starts with no weapon choice made' do
+    expect(subject.weapon).to eq nil
+  end
 end

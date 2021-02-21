@@ -1,5 +1,6 @@
 require_relative 'player'
-require_relative 'turn'
 require_relative 'calculator'
 require_relative 'random'
 require_relative 'result_printer'
+require_relative 'game'
+require_relative 'helper_methods'

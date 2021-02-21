@@ -1,9 +1,9 @@
 require 'random'
 
-describe Random_Choice do
+describe Random_Weapon do
   subject { described_class.new }
 
   it 'selects a random option' do
-    expect(subject.spin).to satisfy { |value| ['rock', 'paper', 'scissors'].include?(value) }
+    expect(subject.show).to satisfy { |value| ['rock', 'paper', 'scissors'].include?(value) }
   end
 end

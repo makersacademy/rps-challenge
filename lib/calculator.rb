@@ -5,9 +5,9 @@ class Calculator
     'paper' => 'rock'
   }
 
-  def initialize(p1_turn, p2_turn)
-    @p1 = p1_turn.choice
-    @p2 = p2_turn.choice
+  def initialize(player_1_weapon, player_2_weapon)
+    @p1 = player_1_weapon
+    @p2 = player_2_weapon
   end
 
   def result
