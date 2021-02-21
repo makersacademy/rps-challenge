@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+body {background-color: #33bbff; font-family:verdana; text-align: center;}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+</style>
+
+<body class="center">
+<h1>Welcome <%= @name %>!</h1>
+<h1>Select a game type</h1>
+<br><br>
+<div style="display: flex;">
+<form action="/rps" method="post">
+<input type="image" src="/images/RPS.png" name="rps" height=290 style="margin-right: 30px">
+</form>
+<form action="/rpsls" method="post">
+<input type="image" src="/images/RPSLS.png" name="rpsls" height=290 style="margin-left: 30px">
+</form>
+</div>
+</body>
+
+</html>

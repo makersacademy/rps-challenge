@@ -15,25 +15,34 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/game' do
-    session[:game] = Game.new(params[:name])
-    redirect '/game'
+  post '/type' do
+    session[:name] = params[:name]
+    redirect '/type'
   end
 
+  get '/type' do
+    @name = session[:name]
+    erb :type
+  end
+
+  post '/rps' do
+    session[:game] = Game.new(session[:name], 'RPS')
+    redirect '/game'
+   end
+
+  post '/rpsls' do
+    session[:game] = Game.new(session[:name], 'RPSLS')
+    redirect '/game'
+   end
+
   get '/game' do
-    @name = session[:game].player1.name
+    @game = session[:game].type
     erb :game
   end
 
   get '/result' do
-    @player1 = session[:game].player1.name
-    @player2 = session[:game].player2.name
-    @score1 = session[:game].score1
-    @score2 = session[:game].score2
-    @pick1 = session[:game].pick1
-    @pick2 = session[:game].pick2    
+    @player1, @player2, @pick1, @pick2, @score1, @score2 = session[:game].stats.values
     @result = MESSAGE[session[:game].result]
-
     erb :result
   end
 
@@ -49,6 +58,16 @@ class RPS < Sinatra::Base
 
   post '/scissors' do
     session[:game].turn('Scissors')
+    redirect '/result'
+  end
+
+  post '/lizard' do
+    session[:game].turn('Lizard')
+    redirect '/result'
+  end
+
+  post '/spock' do
+    session[:game].turn('Spock')
     redirect '/result'
   end
 
