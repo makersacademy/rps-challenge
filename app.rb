@@ -22,7 +22,7 @@ get '/play' do
 end
 
 post '/play' do
-  session[:player_move] = params[:move]
+  session[:player_move] = params[:move].downcase.to_sym
   session[:opponent_move] = Opponent.new.move
   redirect '/play'
 end

@@ -2,7 +2,7 @@ require 'turn'
 
 describe Turn do
   subject(:turn) {described_class.new(options)}
-  let(:options) { {:player_name => "Morgan", :player_move => :rock, :opponent_move => :rock}}
+  let(:options) { {:player_name => "Morgan", :player_move => :rock, :opponent_move => :scissors}}
 
   describe '#player_name' do
     it 'returns player name' do
@@ -18,7 +18,15 @@ describe Turn do
 
   describe '#opponent_move' do
     it 'returns opponent move' do
-      expect(turn.opponent_move).to eq :rock
+      expect(turn.opponent_move).to eq :scissors
+    end
+  end
+
+  context 'end game' do
+    describe '#win?' do
+      it 'returns true if the player_move is rock and the opponent_move is scissors' do
+        expect(turn.win?).to eq true
+      end
     end
   end
 end

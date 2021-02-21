@@ -23,3 +23,7 @@
 <div id="opponent">
   Opposing player chose <%= @turn.opponent_move.to_s.capitalize %>!
 </div>
+
+<% if @turn.win? %>
+  You win!
+  <% end %>

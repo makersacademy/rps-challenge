@@ -25,7 +25,7 @@ feature 'playing a game' do
   scenario 'confirmation of users choice' do
     register_name
     click_button "Rock"
-    expect(page).to have_content "Morgan chose Rock!"
+    expect(page).to have_content "Morgan chose rock!"
   end
 
   #I want the game/computer to choose an option
@@ -43,6 +43,16 @@ feature 'playing a game' do
     click_button "Rock"
     expect(page).to have_content "Opposing player chose Scissors!"
   end
+
+# I want to see if I win
+
+  scenario 'I am a winner' do
+    register_name
+    srand(4)
+    click_button "Rock"
+    expect(page).to have_content "You win!"
+  end
+
 
   def possible_moves
     [:rock, :paper, :scissors].map { |shape| "Opposing player chose #{shape.to_s.capitalize}!"}
