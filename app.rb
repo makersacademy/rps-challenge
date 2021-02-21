@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/computer.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -18,12 +19,26 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
+    session[:move] = params[:move]
+
     # new instance of computer
     # call move method on that instance
+
+    # store the session move in instance variable
+    # Get the computer's move
+
+    redirect('/outcome')
+  end
+
+  get '/outcome' do
+    @your_move = session[:move]
+    
+
     # erb :outcome
     # include a play again button
     # redriect to play
   end
+
 
 
 
