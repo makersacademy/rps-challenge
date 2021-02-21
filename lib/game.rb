@@ -9,7 +9,7 @@ class Game
     @Player = player_class
     @Score = score_class
     @winner = nil
-    if names.is_a?(String)
+    if names.is_a?(String) or names.length == 1
       create_players([names])
       create_player(2, "Talos, son of Hephaestus", true)
     else
@@ -18,17 +18,17 @@ class Game
     @scores = {1 => 0, 2 => 0}
   end
 
-  def self.store(game)
-    @@game = game
-  end
+  # def self.store(game)
+  #   @@game = game
+  # end
 
-  def self.create (names)
-    @@game = Game.new(names)
-  end
+  # def self.create (names)
+  #   @@game = Game.new(names)
+  # end
 
-  def self.instance
-    @@game
-  end
+  # def self.instance
+  #   @@game
+  # end
 
   def real_players
     real = []
@@ -70,6 +70,14 @@ class Game
 
   def new_round
     @players.each{ |player| player.reset }
+  end
+
+  # def self.players
+  #   @players
+  # end
+
+  def names
+    @players.map{ |player| player.name }
   end
 
   private

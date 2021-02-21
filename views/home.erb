@@ -15,33 +15,21 @@ table, td {
 <form action='/names' method=post>
   <div id="addlist" class="alt1" style="padding:10px;">
       Add player names to get started:
-      <br /><br />
+      <input type="text" id="player_1_name" name="player_1_name">
+      <br>
   </div>
-
-  <button type ="button" onclick="addInput()">Add Player</button><br>
-  <button type='submit' value='Begin Game'>Begin Game</button>
+  <div>
+    Enter player 2?
+    <input type="checkbox" id="enable_player_2">
+    <input type="text" id="player_2_name" name="player_2_name" disabled >
+  </div>
+  <button type='submit' value='Submit'>Begin Game</button>
 </form>
 
 <script>
-var addid = 0;
-
-function addInput() {
-    
-    var addList = document.getElementById('addlist');
-    var docstyle = addList.style.display;
-    if (docstyle == 'none') addList.style.display = '';
-
-    addid++;
-    
-    var text = document.createElement('div');
-    var id = 'player_' + addid + '_name';
-    text.id = id;
-    text.innerHTML = "<input type='text' value='' class='buckinput' name='" + id + "' style='padding:5px;' /> ";
-
-    addList.appendChild(text);
-}
-
-addInput(1);
+document.getElementById('enable_player_2').onchange = function() {
+    document.getElementById('player_2_name').disabled = !this.checked;
+};
 </script>
 
 </body>

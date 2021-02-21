@@ -12,17 +12,13 @@ feature 'play' do
 
   scenario 'enters player name', js: true do
     visit('/')
-    fill_in "player_1_name", with: "Sargon of Akkad"
-    click_button 'Begin Game'
+    enter_1_player()
     expect(page).to have_content "Sargon of Akkad"
   end
 
   scenario 'enters two player names', js: true do
     visit('/')
-    fill_in :player_1_name, with: "Sargon of Akkad"
-    click_button 'Add Player'
-    fill_in :player_2_name, with: "Luh-ishan"
-    click_button 'Begin Game'
+    enter_2_players()
     expect(page).to have_content "Sargon of Akkad"
     expect(page).to have_content "Luh-ishan"
   end

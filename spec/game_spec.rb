@@ -35,6 +35,7 @@ describe Game do
     # this one might have to be a live test
     game = described_class.new("Nabonidus", Player)
     expect(game.players.map{ |p| p.bot }).to include(true)
+    expect(game.players.map{ |p| p.bot }).to include(false)
   end
 
   context "#real_players" do
@@ -127,7 +128,15 @@ describe Game do
       expect(game.scores).to eq score_hash
     end
 
-    
+    it "adds score to score hash" do
+      # puts game.scores
+      game.add_move(1, "P")
+      game.add_move(2, "P")
+      game.score
+      score_hash = {1 => 2, 2 => 1}
+      expect(game.scores).to eq score_hash
+    end
+
   end
 
 end

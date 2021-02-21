@@ -15,19 +15,31 @@ class Play < Sinatra::Base
   end
 
   post '/names' do
-    # puts params
-    Game.store(Game.new(extract_names(params)))
-    puts "/names: ", Game.instance.players
-    @game = Game.instance
-    puts @game
+    puts params
+    # Game.store(Game.new(extract_names(params)))
+    @game = Game.new(extract_names(params))
+    puts "/names: ", @game.names
+    # @game = Game.instance
+    # puts @game
     session[:game] = @game
     redirect '/game'
   end
 
   get '/game' do
     @game = session[:game]
-    puts "/game: ", @game.class
-    @player_names = @game.players
+    # puts "/game: ", @game.class
+    players = @game.players
+    # puts players.length
+    # puts "players: ", players[0].name
+    @player_1 = players[0].name
+    @player_2 = players[1].name
+    @bot = players[1].bot
+    puts "player 1 : ", @player_1
+    puts "player 2 : ", @player_2
+
+    turn_id, @turn_name = @game.whose_turn?
+    @turn_id = ".p_#{turn_id}"
+
     erb :game
   end
   
@@ -40,7 +52,9 @@ def extract_names params
       names << v
     end
   end
+
+  puts "entered names: ", names
   return names
 
-  run! if app_file == $0
+  # run! if app_file == $0
 end
