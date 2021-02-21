@@ -36,7 +36,7 @@ describe Game do
       end
 
       it 'should increase the score for player 1' do
-        expect{subject.turn("Rock", "Scissors")}.to change{subject.stats[:score1]}.by 1
+        expect { subject.turn("Rock", "Scissors") }.to change { subject.stats[:score1] }.by 1
       end
 
     end
@@ -49,7 +49,7 @@ describe Game do
       end
 
       it 'should increase the score for player 2' do
-        expect{subject.turn("Rock", "Paper")}.to change{subject.stats[:score2]}.by 1
+        expect { subject.turn("Rock", "Paper") }.to change { subject.stats[:score2] }.by 1
       end
 
     end
@@ -62,11 +62,11 @@ describe Game do
       end
 
       it 'should not increase the score for player 1' do
-        expect{subject.turn("Rock", "Rock")}.to change{subject.stats[:score2]}.by 0
+        expect { subject.turn("Rock", "Rock") }.to change { subject.stats[:score2] }.by 0
       end
     
       it 'should not increase the score for player 2' do
-        expect{subject.turn("Rock", "Rock")}.to change{subject.stats[:score2]}.by 0
+        expect { subject.turn("Rock", "Rock") }.to change { subject.stats[:score2] }.by 0
       end
 
     end

@@ -2,7 +2,7 @@ class Game
 
   CHOICES = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
   R, P, S, L, SP = CHOICES
-  TO_WIN = { R => [S,L], P => [R,SP], S => [P,L], L => [P,SP], SP => [R,S] }
+  TO_WIN = { R => [S, L], P => [R, SP], S => [P, L], L => [P, SP], SP => [R, S] }
 
   attr_reader :result, :type
 

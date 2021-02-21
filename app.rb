@@ -9,7 +9,7 @@ class RPS < Sinatra::Base
   set :session_secret, 'secret'
   set :public_folder, 'public'
 
-  MESSAGE = {win: "You Won!", lose: "You Lost!", draw: "It's a draw!"}
+  MESSAGE = { win: "You Won!", lose: "You Lost!", draw: "It's a draw!" }
 
   get '/' do
     erb :index
@@ -28,12 +28,12 @@ class RPS < Sinatra::Base
   post '/rps' do
     session[:game] = Game.new(session[:name], 'RPS')
     redirect '/game'
-   end
+  end
 
   post '/rpsls' do
     session[:game] = Game.new(session[:name], 'RPSLS')
     redirect '/game'
-   end
+  end
 
   get '/game' do
     @game = session[:game].type
