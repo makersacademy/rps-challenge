@@ -8,9 +8,9 @@ describe ResultPrinter do
   let(:result_2) { :player_2_wins }
   let(:result_3) { :draw }
 
-  subject(:p1wins) { described_class.new(player_1, player_2, result_1)}
-  subject(:p2wins) { described_class.new(player_1, player_2, result_2)}
-  subject(:draw) { described_class.new(player_1, player_2, result_3)}
+  subject(:p1wins) { described_class.new(player_1, player_2, result_1) }
+  subject(:p2wins) { described_class.new(player_1, player_2, result_2) }
+  subject(:draw) { described_class.new(player_1, player_2, result_3) }
 
   it 'prints the result' do
     expect(p1wins.print).to eq("Kevin has won!")

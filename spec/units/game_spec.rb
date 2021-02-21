@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   let(:kevin) { double(:player, name: "Kevin") }
-  let(:computer) { double(:player, name: "Computer" ) }
+  let(:computer) { double(:player, name: "Computer") }
   subject { described_class.create(kevin, computer) }
 
   describe '#players' do

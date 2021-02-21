@@ -1,4 +1,4 @@
-class Random_Weapon
+class RandomWeapon
   CHOICES = ['rock', 'paper', 'scissors']
 
   def initialize
