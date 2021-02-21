@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+table, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body style="background-color:#00ff0080;">
+
+<p></p>
+
+<form action='/names' method=post>
+  <div id="addlist" class="alt1" style="padding:10px;">
+      Add player names to get started:
+      <br /><br />
+  </div>
+
+  <button type ="button" onclick="addInput()">Add Player</button><br>
+  <button type='submit' value='Begin Game'>Begin Game</button>
+</form>
+
+<script>
+var addid = 0;
+
+function addInput() {
+    
+    var addList = document.getElementById('addlist');
+    var docstyle = addList.style.display;
+    if (docstyle == 'none') addList.style.display = '';
+
+    addid++;
+    
+    var text = document.createElement('div');
+    var id = 'player_' + addid + '_name';
+    text.id = id;
+    text.innerHTML = "<input type='text' value='' class='buckinput' name='" + id + "' style='padding:5px;' /> ";
+
+    addList.appendChild(text);
+}
+
+addInput(1);
+</script>
+
+</body>
+</html>
