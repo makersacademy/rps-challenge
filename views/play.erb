@@ -1,0 +1,33 @@
+<%= @turn.player_name %> is playing Rock, Paper, Scissors!
+
+<!-- <form action="/decrement" method="post">
+  <input type="submit" value="Decrement">
+</form> -->
+<h2>Make your move!</h2>
+
+<form action="/play" method="post">
+  <input type="submit" name="move" value="Rock">
+</form>
+
+<form action="/play" method="post">
+  <input type="submit" name = "move" value="Paper">
+</form>
+
+<form action="/play" method="post">
+  <input type="submit" name="move" value="Scissors">
+</form>
+
+
+<%= @turn.player_name %> chose <%= @turn.player_move %>!
+
+<div id="opponent">
+  Opposing player chose <%= @turn.opponent_move.to_s.capitalize %>!
+</div>
+
+<% if @turn.win? %>
+  You win!
+<% elsif @turn.lose? %>
+  You lose!
+<% elsif @turn.draw? %>
+  You draw!
+  <% end %>
