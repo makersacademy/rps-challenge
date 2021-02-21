@@ -2,7 +2,8 @@ require 'rps'
 
 describe RPS do
   let(:bimini) { double(:player, :name => "BIMINI BON BOULASH") }
-  subject(:game) { described_class.new(bimini) }
+  let(:game_log) { double(:game_log, :games => [], :add_game => [] ) }
+  subject(:game) { described_class.new(bimini, game_log) }
 
   describe '#create' do
     it 'creates a game and stores it' do
@@ -35,6 +36,10 @@ describe RPS do
       srand(4)
       game.play("scissors")
       expect(game.result).to eq :draw
+    end
+    it 'adds a game to the gamelog' do
+      expect(game_log).to receive(:add_game)
+      game.play("scissors")
     end
 
   end

@@ -8,9 +8,14 @@ class RPS
     @game
   end
 
-  def initialize(player)
+  def initialize(player, game_log = GameLog.new)
+    @game_log = game_log
     @player = player
     @result = nil
+  end
+
+  def game_log
+    @game_log
   end
 
   def player
@@ -23,6 +28,7 @@ class RPS
 
   def play(player_move, computer_move = random_move)
     @result = get_result(player_move, computer_move)
+    @game_log.add_game(player_move, computer_move, @result)
   end
 
 private
