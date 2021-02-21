@@ -1,4 +1,6 @@
 class Computer
+  CHOICES = [:rock, :paper, :scissors]
+
   attr_reader :name, :move
 
   def initialize(name = 'Computer')
@@ -6,7 +8,7 @@ class Computer
   end
 
   def choose
-    self.move = [:rock, :paper, :scissors].sample
+    self.move = CHOICES.sample
   end
 
   private

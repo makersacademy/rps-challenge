@@ -1,7 +1,7 @@
 describe Game do
-  let(:player_class)   { class_double(Player, new: player) }
+  let(:player_class)   { class_double(Player, new: player1) }
   let(:computer_class) { class_double(Computer, new: computer) }
-  let(:player)         { instance_double(Player, name: 'Frank') }
+  let(:player1)         { instance_double(Player, name: 'Frank') }
   let(:computer)       { instance_double(Computer, name: 'Computer') }
 
   subject { described_class.new('Frank', player_class, computer_class) }
@@ -19,63 +19,75 @@ describe Game do
     end
   end
 
-  describe '#player' do
-    it 'returns the player' do
-      expect(subject.player).to be player
+  describe '#player1' do
+    it 'returns player1' do
+      expect(subject.player1).to be player1
     end
   end
 
-  describe '#computer' do
-    it 'returns the computer' do
-      expect(subject.computer).to be computer
+  describe '#player2' do
+    it 'is the computer by default' do
+      expect(subject.player2).to be computer
     end
   end
 
   describe '#result' do
-    context 'when player wins' do
-      it 'announces player as winner with rock' do
-        allow(player).to receive(:move) { :rock }
+    context 'when player1 wins' do
+      it 'announces player1 as winner with rock' do
+        allow(player1).to receive(:move) { :rock }
         allow(computer).to receive(:move) { :scissors }
         expect(subject.result).to eq 'Frank wins!'
       end
 
-      it 'announces player as winner with paper' do
-        allow(player).to receive(:move) { :paper }
+      it 'announces player1 as winner with paper' do
+        allow(player1).to receive(:move) { :paper }
         allow(computer).to receive(:move) { :rock }
         expect(subject.result).to eq 'Frank wins!'
       end
 
-      it 'announces player as winner with scissors' do
-        allow(player).to receive(:move) { :scissors }
+      it 'announces player1 as winner with scissors' do
+        allow(player1).to receive(:move) { :scissors }
         allow(computer).to receive(:move) { :paper }
         expect(subject.result).to eq 'Frank wins!'
       end
     end
 
-    context 'when computer wins' do
-      it 'announces computer as winner with scissors' do
-        allow(player).to receive(:move) { :paper }
+    context 'when player2 wins' do
+      it 'announces player2 as winner with scissors' do
+        allow(player1).to receive(:move) { :paper }
         allow(computer).to receive(:move) { :scissors }
         expect(subject.result).to eq 'Computer wins!'
       end
 
       it 'announces computer as winne with paper' do
-        allow(player).to receive(:move) { :rock }
+        allow(player1).to receive(:move) { :rock }
         allow(computer).to receive(:move) { :paper }
         expect(subject.result).to eq 'Computer wins!'
       end
 
-      it 'announces computer as winner with rock' do
-        allow(player).to receive(:move) { :scissors }
+      it 'announces player2 as winner with rock' do
+        allow(player1).to receive(:move) { :scissors }
         allow(computer).to receive(:move) { :rock }
         expect(subject.result).to eq 'Computer wins!'
       end
     end
 
     context 'when draw' do
-      it 'announces draw' do
-        allow(player).to receive(:move) { :rock }
+      it 'announces draw with rock' do
+        allow(player1).to receive(:move) { :rock }
         allow(computer).to receive(:move) { :rock }
+        expect(subject.result).to eq "It's a draw!"
+      end
+
+      it 'announces draw with paper' do
+        allow(player1).to receive(:move) { :paper }
+        allow(computer).to receive(:move) { :paper }
+        expect(subject.result).to eq "It's a draw!"
+      end
+
+      it 'announces draw with scissors' do
+        allow(player1).to receive(:move) { :scissors }
+        allow(computer).to receive(:move) { :scissors }
         expect(subject.result).to eq "It's a draw!"
       end
     end

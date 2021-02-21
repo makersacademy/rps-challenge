@@ -1,11 +1,11 @@
 class Game
   RESULT = {
-    rock:     { scissors: :win, paper: :lose },
-    paper:    { rock: :win, scissors: :lose },
-    scissors: { paper: :win, rock: :lose }
+    rock:     { scissors: :win, paper:    :lose },
+    paper:    { rock:     :win, scissors: :lose },
+    scissors: { paper:    :win, rock:     :lose }
   }
 
-  attr_reader :player, :computer
+  attr_reader :player1, :player2
 
   class << self
     attr_reader :instance
@@ -16,10 +16,10 @@ class Game
   end
 
   def initialize(player_name, player_class = Player, computer_class = Computer)
-    @player_class   = player_class
-    @player         = player_class.new(player_name)
     @computer_class = computer_class
-    @computer       = computer_class.new
+    @player_class   = player_class
+    @player1        = player_class.new(player_name)
+    @player2        = computer_class.new
   end
 
   def result
@@ -33,10 +33,10 @@ class Game
   attr_reader :player_class, :computer_class
 
   def winner
-    RESULT[player.move][computer.move] == :win ? player : computer
+    RESULT[player1.move][player2.move] == :win ? player1 : player2
   end
 
   def draw?
-    player.move == computer.move
+    player1.move == player2.move
   end
 end
