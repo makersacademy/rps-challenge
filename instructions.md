@@ -128,11 +128,11 @@
       <input type="text" name="player_name"
       <input type="submit" name="Submit"
     </form>
-
+```
 10) The test still fails because capybara tries to submit the form and fails. This can be fixed by pointing the form to a specific route ans using a post request. The post request makes the server 'remember' the names.
 Inside the opening form tag:
 
-    <form action="/names" method="post">
+    `<form action="/names" method="post">`
 
 11) In app.rb add the `post` request route:
 ```
