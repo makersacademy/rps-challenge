@@ -30,24 +30,6 @@ $ rackup
 ```
 Visit http://localhost:9292/
 
-## Planning
-
-### Views
-I started by reflecting on how I'd like the user would interact with the game.
-![Welcome Page](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20welcome_page.png)
-**Player VS Computer mode**
-![Player name form](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20fill_name_page.png)
-![Player options](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20player_options_page.png)
-![Result Page](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%201%20player%20-%20results_page.png)
-**Player VS Player mode**
-![Players name form](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20fill_names_page.png)
-![Player 2 options](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20player2_option_page.png)
-![Result Page](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%202%20players%20-%20results_page.png)
-**Edge case**
-![Result Draw](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20draw%20-%20results_page.png)
-
-### Controller
-
 ## If I had more time
 - Refactor the control flow in the #results method to be shorter
 - Use images instead of buttons to display the player options
@@ -59,3 +41,28 @@ I started by reflecting on how I'd like the user would interact with the game.
 - Did I design my Capybara test correctly?
 - What methods should I make private?
 - Any feedbacks on the method I used to reset the game instance?
+
+## Planning
+
+### Views
+I started by reflecting on how I'd like the user would interact with the game.
+
+![Welcome Page](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20welcome_page.png)
+
+**Player VS Computer mode**
+
+![Player name form](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20fill_name_page.png)
+![Player options](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20player_options_page.png)
+![Result Page](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%201%20player%20-%20results_page.png)
+
+**Player VS Player mode**
+
+![Players name form](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20fill_names_page.png)
+![Player 2 options](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20player2_option_page.png)
+![Result Page](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%202%20players%20-%20results_page.png)
+
+**Edge case**
+
+![Result Draw](https://github.com/sandyMax974/rps-challenge/blob/master/images/RPS%20-%20draw%20-%20results_page.png)
+
+### Controller
