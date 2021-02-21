@@ -2,7 +2,6 @@ require 'sinatra/base'
 require_relative 'lib/classes.rb'
 
 class RockPaperScissors < Sinatra::Base
-  enable :sessions # refactoring note - might not need this
 
   before do
     @game = Game.instance
