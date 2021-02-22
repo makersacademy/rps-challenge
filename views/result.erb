@@ -1,0 +1,10 @@
+<h3> You chose <%= @player1_choice %> </h3>
+<h3> The Bot chose <%= @player2_choice %> </h3>
+<h2> <%= @result %> </h2> <br>
+
+<h4> Play Again? </h4>
+<h4> Select your move </h4>
+<form action="/choices" method="post">
+    <input type="text" placeholder="rock,paper,or scissors?" name="choice1">
+    <input type="submit" value="Let's play!">
+  </form>
