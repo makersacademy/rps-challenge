@@ -19,7 +19,7 @@ end
 
 post '/game' do
   @choice = params[:choice]
-  @turn = Turn.new(params[:choice])
+  @turn = Turn.new(@choice)
   @computer_choice = @turn.computer_choice
   @result = @turn.result
   erb(:game)
