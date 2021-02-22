@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 ruby '2.7.2'
+gem 'puma'
+gem 'rack'
+gem 'sinatra'
 
 group :development do
   gem 'shotgun'
-  gem 'sinatra'
-  gem 'rack'
-  gem 'puma'
 end
 
 group :test do
