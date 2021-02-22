@@ -25,12 +25,15 @@ GEM
     mini_portile2 (2.4.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.5.5)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     parallel (1.19.1)
     parser (2.7.0.4)
       ast (~> 2.4.0)
     public_suffix (4.0.3)
+    puma (5.2.1)
+      nio4r (~> 2.0)
     rack (2.2.2)
     rack-protection (2.0.8.1)
       rack
@@ -96,6 +99,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coveralls_reborn (~> 0.20.0)
+  puma
   rack
   rspec
   rubocop (= 0.79.0)

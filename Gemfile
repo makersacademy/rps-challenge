@@ -6,6 +6,7 @@ group :development do
   gem 'shotgun'
   gem 'sinatra'
   gem 'rack'
+  gem 'puma'
 end
 
 group :test do
