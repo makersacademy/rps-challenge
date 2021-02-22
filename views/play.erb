@@ -1,0 +1,18 @@
+<h2> <%= @player_1_name %> is ready to play! </h2>
+
+<form action="/move" method="post">
+  <label for="player_1_move">
+    Rock, Paper or Scissors?
+    <input type="text" name="player_1_move">
+  </label>
+
+   <label for="player_2_move">
+    Rock, Paper or Scissors?
+    <input type="text" name="player_2_move">
+  </label>
+
+  <input type="submit" value="Submit">
+</form>
+<!--
+<h2> <%= @player_2_name %> is ready to play! </h2>
+-->
