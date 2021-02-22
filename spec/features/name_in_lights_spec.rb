@@ -1,7 +1,6 @@
 feature 'Name in lights' do
-	scenario 'submitting names' do
-		sign_in_and_play
-		expect(page).to have_content 'Ken is ready to play!'
-		# expect(page).to have_content 'Rohan is ready to play!'
-	end
+  scenario 'submitting names' do
+    sign_in_and_play
+    expect(page).to have_content 'Ken is ready to play!'
+  end
 end
