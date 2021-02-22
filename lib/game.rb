@@ -8,7 +8,7 @@ class Game
           lizard: [:paper, :spock],
           spock: [:rock, :scissors] }
 
-  def initialize(player1 = Player.new('pug'),player2 = Player.new('pom'))
+  def initialize(player1 = Player.new('pug'), player2 = Player.new('pom'))
     @player1 = player1
     @player2 = player2
   end
