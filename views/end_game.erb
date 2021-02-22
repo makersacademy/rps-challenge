@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+.scores {
+  font-family: Helvetica;
+  width: 25%;
+  float: left;
+  padding: 15px;
+}
+
+.header {
+  font-family: Helvetica;
+  text-align: center;
+  margin-right: 20%;
+  padding: 15px;
+}
+
+.main {
+  font-family: Helvetica;
+  width: 75%;
+  float: left;
+  padding: 15px;
+}
+
+.play_again {
+    /* display: inline-block; */
+    float: right;
+    right: 200px;
+    position: relative;
+    text-align: center;
+    height: 100px;
+    padding: 0;
+    margin: 10px;
+    /* vertical-align: top; */
+    width: 104px;
+}
+
+.new_game {
+    /* display: inline-block; */
+    float: center;
+    left: 30%;
+    position: relative;
+    text-align: center;
+    height: 100px;
+    padding: 0;
+    margin: 10px;
+    /* vertical-align: top; */
+    width: 104px;
+}
+
+</style>
+</head>
+<body style="background-color:#00ff0080;">
+
+<div class='scores'>
+<h2>Scores</h2>
+  <table>
+    <tr>
+      <th><%= @player_1 %></th>
+      <th><%= @player_2 %></th>
+    </tr>
+    <tr>
+      <td><%= @player_1_score %>
+      <td><%= @player_2_score %>
+    </tr>
+  </table>
+</div>
+
+<div class="header">
+<% if @draw == false %>
+  <h1>Congrats on the win,</h1>
+  <h1><%= @winner.name %></h1>
+<% else %>
+  <h1>Congrats on the draw,</h1>
+  <h1>you should decide the winner with a round of rock paper scissors</h1>
+<% end %>
+</div>
+
+<div class="main">
+<div class = 'play_again'>
+  <form action=/play_again method=post>
+    <label for='play_again'>Play again?</label>
+    <input type = "image" id='play_again' name='play_again' src="play_again.gif" height=200px>
+  </form>
+</div>
+
+<div class = 'new_game'>
+  <form action=/new_game method=post>
+    <label for='new_game'>Play a new game with fresh scores?</label>
+    <input type = "image" id='new_game' name='new_game' src="new_game.gif" height=200px>
+  </form>
+</div>
+</div>
+</body>

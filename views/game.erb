@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+<%= @turn_id %> { font-size: 30px;}
+
+.header {
+  font-family: Helvetica;
+  text-align: center;
+  margin-right: 20%;
+  padding: 15px;
+}
+
+.names {
+  font-family: Helvetica;
+  width: 25%;
+  float: left;
+  padding: 15px;
+}
+
+.main {
+  font-family: Helvetica;
+  width: 75%;
+  float: left;
+  padding: 15px;
+}
+
+/* img {
+  object-fit: scale-down;
+} */
+
+.rock {
+    /* display: inline-block; */
+    float: left;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    height: 100px;
+    padding: 0;
+    margin: 10px;
+    /* vertical-align: top; */
+    width: 104px;
+    imageObject.value = "rock"
+}
+
+.paper {
+    /* display: inline-block; */
+    float: left;
+    left: 210px;
+    position: relative;
+    text-align: center;
+    height: 100px;
+    padding: 0;
+    margin: 10px;
+    /* vertical-align: top; */
+    width: 104px;
+}
+
+.scissors {
+    /* display: inline-block; */
+    float: right;
+    right: 100px;
+    position: relative;
+    text-align: center;
+    height: 100px;
+    padding: 0;
+    margin: 10px;
+    /* vertical-align: top; */
+    width: 104px;
+}
+
+#rock img {
+  object-fit: contain;
+  height: 200px;
+  /* width: 200px; */
+}
+
+</style>
+</head>
+<body style="background-color:#00ff0080;">
+
+<div class="names">
+  <p class=p_1><%= @player_1 %></p>
+  <p class=p_2><%= @player_2 %></p>
+</div>
+
+<div class="header">
+  <h1>Make your move,</h1>
+  <h1><%= @turn_name%></h1>
+</div>
+
+<div class="main">
+
+<div class = 'rock'>
+  <form action=/rock method=post>
+    <label for='rock'>Rock</label>
+    <input type = "image" id='rock' name='rock' src="rock.jpeg" height=200px>
+  </form>
+</div>
+
+
+<div class = 'paper'>
+  <form action=/paper method=post>
+    <label for='paper'>Paper</label>
+    <input type = "image" id='paper' name='paper' src="paper.jpg" height=200px>
+  </form>
+</div>
+
+<div class = 'scissors'>
+  <form action=/scissors method=post>
+    <label for='scissors'>Scissors</label>
+    <input type = "image" id='scissors' name='scissors' src="scissors.jpg" height=200px>
+  </form>
+</div>
+
+</p>
+</body>

@@ -1,85 +1,45 @@
-# RPS Challenge
 
-Instructions
--------
+# Theory of Operation
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+note: the game was originally supposed to have an unlimited number of players, with a scoring system based off of "bigger army diplomacy" (i.e. rock only beats scissors if rock equals or outnumbers scissors). game.rb and players.rb were written with this in mind, but I decided to limit the game to two players when writing score.rb
+## Classes
 
-Task
-----
+Game
+--------------
+@players (list of player instances)
+--------------
 
-Knowing how to build web applications is getting us almost there as web developers!
+tally_score
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+## Sequence Diagram
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+copy and paste into [playground.diagrams](https://playground.diagram.codes/d/sequence):
 
 ```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+alias server="Server"
+alias home="homepage"
+alias game="Game"
+alias player="Player"
+
+server->home: "get /"
+home->server: "returns /"
+server->home: "user clicks 'New Game'"
+home-->server: "redirects, asks for player names"
+server->home: "returns player names, starts game"
+home->game: "initializes with player names"
+game->player: "creates Player instances for each player"
+player->game: "returns self"
+game=>home: "asks for player1 move"
+home->server: "sends 'enter move player n' screen"
+server->home: "enters move"
+home->game: "passes move to game"
+game->player: "passes move to player"
+game=>home: "repeats above for each player"
+game->game: "counts each move"
+game->player: "calculates score for each player (nW/nL)"
+game->home: "shows score, ranking table"
+
+
+
 ```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!

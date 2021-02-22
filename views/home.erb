@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+</style>
+</head>
+<body style="background-color:#00ff0080;">
+
+<p></p>
+
+<form action='/names' method=post>
+  <div id="addlist" class="alt1" style="padding:10px;">
+      Add player names to get started:
+      <input type="text" id="player_1_name" name="player_1_name">
+      <br>
+  </div>
+  <div>
+    Enter player 2?
+    <input type="checkbox" id="enable_player_2">
+    <input type="text" id="player_2_name" name="player_2_name" disabled >
+  </div>
+  <button type='submit' value='Submit'>Begin Game</button>
+</form>
+
+<script>
+document.getElementById('enable_player_2').onchange = function() {
+    document.getElementById('player_2_name').disabled = !this.checked;
+};
+</script>
+
+</body>
+</html>
