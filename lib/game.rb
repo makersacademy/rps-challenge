@@ -7,18 +7,12 @@ class RockPaperScissors
     end
 
 
-    def play(player_choice)
-    if player_choice == "rock" && @choice == "rock"
+    def play(player_choice, computer_choice = @choice)
+    if player_choice == computer_choice
         "It's a draw"
-      elsif player_choice == "paper" && @choice == "paper"
-         "It's a draw"
-      elsif player_choice == "scissors" && @choice == "scissors"
-        "It's a draw"
-      elsif player_choice == "rock" && @choice == "scissors"
-         "#{@name} wins"
-      elsif player_choice == "paper" && @choice == "rock"
-         "#{@name} wins"
-      elsif player_choice == "scissors" && @choice == "paper"
+      elsif player_choice == "rock" && computer_choice == "scissors" || 
+        player_choice == "paper" && computer_choice == "rock" || 
+        player_choice == "scissors" && computer_choice == "paper"
          "#{@name} wins"
       else
          "Computer wins"
