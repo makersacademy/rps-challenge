@@ -5,6 +5,6 @@ class Player
   
   def initialize(name = 'Computer', move = ["rock", "paper", "scissors"].sample)
     @name = name
-    @move = move.downcase
+    @move = move #.downcase
   end
 end
