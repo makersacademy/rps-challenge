@@ -36,7 +36,7 @@ class RoShamBo < Sinatra::Base
 	end
 		
 		
-		run! if app_file == $0 # this basically does witchcraft to make the website be a website
+		run! if app_file == $0 
 
 end
 
