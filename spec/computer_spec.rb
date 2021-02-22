@@ -7,5 +7,3 @@ describe Computer do
     end
   end
 end
-
-# also calculates winner or loser - takes 2 args

@@ -9,16 +9,29 @@ class Game
 
     case @player
     when "rock"
-      you_win if @computer == "scissors"
-      computer_wins if @computer == "paper"
+      if @computer == "scissors"
+        you_win
+      elsif @computer == "paper"
+        computer_wins
+      else
+        draw
+      end
     when "scissors"
-      you_win if @computer == "paper"
-      computer_wins if @computer == "rock"
+      if @computer == "paper"
+        you_win
+      elsif @computer == "rock"
+        computer_wins
+      else
+        draw
+      end
     when "paper"
-      you_win if @computer == "rock"
-      computer_wins if @computer == "scissors"
-    else
-      "Computer chose #{@computer} – it's a draw!"
+      if @computer == "rock"
+        you_win
+      elsif @computer == "scissors"
+        computer_wins
+      else
+        draw
+      end
     end
   end
 
@@ -30,5 +43,8 @@ class Game
     "Computer chose #{@computer} – you win!"
   end
 
+  def draw
+    "Computer chose #{@computer} – it's a draw!"
+  end
 
 end

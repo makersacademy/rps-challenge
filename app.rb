@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/computer.rb'
+require_relative './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -27,16 +28,10 @@ class RockPaperScissors < Sinatra::Base
     @your_move = session[:move]
     computer = Computer.new
     @computer_move = computer.move
+    game = Game.new(@your_move, @computer_move)
+    @outcome = game.calculate_winner
     erb :outcome
   end
-
-  # if I have a game class, it would calculate the winner and
-  # print the string.
-  # it needs a method that takes 2 arguments - the computer
-  # move and the player move.
-  # Will I be able to access these variables in the new class
-  # create a new instance of game in the controller. Call the
-  # outcome method on the new instance.
 
 
 end

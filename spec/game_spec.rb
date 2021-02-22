@@ -11,14 +11,9 @@ describe Game do
     context 'computer has winning move' do
       it 'returns you lose' do
         game = Game.new('scissors', 'rock')
-        expect(game.calculate_winner).to eq("Computer chose rock – you lose!")
+        expect(game.calculate_winner).to eq(game.computer_wins)
       end
     end
 
   end
 end
-
-
-# how to calculate winners and maintain SRP...?
-# Will refactoring do this naturally?
-#
