@@ -1,29 +1,36 @@
 class Rps_Game
+  attr_reader :pc_choice
 
   def initialize
     @game = { :rock => nil, :paper => nil, :scissors => nil }
   end
-
- 
   def add_player(name, choice)
-    @game[choice.to_sym] = name.to_sym
+    @game[choice.to_sym] = name.to_sym # user selects choice
   end
-
   def pc_choose_rps
     leftover_options = @game.select {|k,v| v == nil}
-    pc_choice = leftover_options.keys.sample
-    # puts pc_choice
+    # pc chooses from remaining options
+    pc_choice = leftover_options.keys.sample 
     @game[pc_choice] = :PC
+    @pc_choice = pc_choice.to_s #accesible for results
+  end
+  def run_game
+    pc_choose_rps
+    # remove unused choice to select winner
+    selected_choices = @game.select {|k,v| v != nil} 
+    winner = run_game_logic(selected_choices)
+    print_winner(winner) # as string, for controller comparison
   end
 
-  def select_winner
-    pc_choose_rps
-    selected_choices = @game.select {|k,v| v != nil}  # check only 2 entries
-    # selected_choices.each {|k,v| p k,v }
+  def run_game_logic(choices)
+    # returns name of winner from two choices
+    return @game.fetch(:rock) if choices.key?(:rock) && choices.key?(:scissors)
+    return @game.fetch(:paper) if choices.key?(:rock) && choices.key?(:paper)
+    return @game.fetch(:scissors) if choices.key?(:paper) && choices.key?(:scissors)
+  end
 
-    @game.fetch(:rock) if selected_choices.key?(:rock) && selected_choices.key?(:scissors)
-    @game.fetch(:paper) if selected_choices.key?(:rock) && selected_choices.key?(:paper)
-    @game.fetch(:scissors) if selected_choices.key?(:paper) && selected_choices.key?(:scissors)
+  def print_winner(winner)
+    puts winner.to_s
   end
 
 end

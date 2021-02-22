@@ -16,27 +16,29 @@ class RPS < Sinatra::Base
   post '/enter_details' do
     $player = params[:name]
     $player_selection = params[:rps_choice]
-    p params
     redirect '/start_game'
   end
 
   get '/start_game' do
     p "The /start_game route is being reached" 
-    p $player_selection, $player
     @player = $player
     @player_selection = $player_selection
+    @@game = Rps_Game.new
+    @@game.add_player($player, $player_selection)
     erb :start_game
   end
   
-  post '/get_results' do
-    p "The /get_results route is being reached" 
-    game = Rps_Game.new.add_player($player, $player_selection)
-    winner = game.select_winner
-    p winner
-    erb :you_won unless winner == :PC
-
-    erb :you_lose
+  post '/run_game' do
+    p "The /run_game route is being reached" 
+    redirect '/results'
   end
-
+  
+  get '/results' do
+    p "The /results route is being reached" 
+    p @@game
+    @winner = @@game.run_game
+    @pc_choice = @@game.pc_choice
+    erb :results
+  end
 
 end
