@@ -17,7 +17,10 @@ class Play < Sinatra::Base
   post '/names' do
     # puts params
     # Game.store(Game.new(extract_names(params)))
-    @game = Game.new(extract_names(params))
+    names = extract_names(params)
+    names = ["Nabonidus"] if names.empty?
+    
+    @game = Game.new(names)
     # puts "/names: ", @game.names
     # @game = Game.instance
     # puts @game
@@ -29,18 +32,22 @@ class Play < Sinatra::Base
     @game = session[:game]
     # puts "/game: ", @game.class
     players = @game.players
-    # puts players.length
+    # puts "players: ", @game.names
     # puts "players: ", players[0].name
     @player_1, @player_2 = @game.names
     @bot = players[1].bot
-    # puts "player 1 : ", @player_1
+    # puts "player 1 : ", @player_1.is_a?(Array)
     # puts "player 2 : ", @player_2
+
+    @player_1 = @player_1[0] if @player_1.is_a?(Array)
 
     if @game.finished?
       redirect '/end_game'
     else
       turn_id, @turn_name = @game.whose_turn?
       @turn_id = ".p_#{turn_id}"
+      # puts "turn name:", @turn_name.is_a?(Array)
+      @turn_name = @turn_name[0] if @turn_name.is_a?(Array)
     end
     erb :game
   end
@@ -64,9 +71,29 @@ class Play < Sinatra::Base
   end
 
   get '/end_game' do
+    @game = session[:game]
+    @player_1, @player_2 = @game.names
+    @bot = @game.players[1].bot
+    @game.score if @game.finished?
+    @winner = @game.winner
+    # puts "winner: ", @winner.move
+    @winner == nil ? @draw = true : @draw = false
+    @player_1_score, @player_2_score = @game.scores.values
+    @game.new_round
+    # puts "winner: ", @winner.move
     erb :end_game
   end
 
+  post '/new_game' do
+    session[:game] = nil
+    redirect '/'
+  end
+
+  post '/play_again' do
+    redirect '/game'
+  end
+
+  run! if app_file == $0
 end
 
 def extract_names params

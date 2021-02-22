@@ -14,7 +14,11 @@ class Player
   end
 
   def reset
-    @move = nil
+    if @bot
+      random_move
+    else
+      @move = nil
+    end
   end
 
   private

@@ -9,9 +9,10 @@ class Game
     @Player = player_class
     @Score = score_class
     @winner = nil
+    @players = []
     if names.is_a?(String) or names.length == 1
-      create_players([names])
-      create_player(2, "Talos, son of Hephaestus", true)
+      create_player(1, names)
+      create_player(2, "Talos, son of Hephaestus(bot)", true)
     else
       create_players(names)
     end
@@ -52,7 +53,7 @@ class Game
     player_id = whose_turn?[0]
     add_move(player_id, move)
   end
-  
+
   def add_move player_id, move
     player = @players[player_id - 1]
     raise "Player #{player_id} already has a move" unless player.move == nil
@@ -86,13 +87,13 @@ class Game
   end
 
   private
-
+ 
   def create_players(names)
-    @players = []
     names.each_with_index{ |name, i| create_player(i+1, name)}
   end
 
   def create_player(id, name, bot = false)
+    name = name[0] if name.is_a?(Array)
     @players << @Player.new(id, name, bot)
   end
 
