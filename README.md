@@ -7,10 +7,16 @@
 *No friends? No problem! Play against a sophisticated AI opponent*
 
 ## Dependencies
-- `ruby version`
-- `gems`
+
+ruby version
+- `2.6.5`
+- `2.7.2`
+
+gems
 - `capybara`
 - `coveralls_reborn (~> 0.20.0)`
+- `puma`
+- `rack`
 - `rspec`
 - `rubocop (= 0.79.0)`
 - `shotgun`
@@ -19,6 +25,12 @@
 - `sinatra`
 
 ## Getting started
+
+Quick start:
+
+play the game here [Rock-Paper-Scissors](https://fast-fortress-79695.herokuapp.com/)
+
+Or to run locally:
 
 Clone
 
