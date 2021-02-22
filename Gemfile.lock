@@ -96,12 +96,16 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coveralls_reborn (~> 0.20.0)
+  rack
   rspec
   rubocop (= 0.79.0)
   shotgun
   simplecov
   simplecov-console
   sinatra
+
+RUBY VERSION
+   ruby 2.6.5p114
 
 BUNDLED WITH
    2.2.8

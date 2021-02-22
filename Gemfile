@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
+ruby '2.6.5'
+
 group :development do
   gem 'shotgun'
   gem 'sinatra'
+  gem 'rack'
 end
 
 group :test do
