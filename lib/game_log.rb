@@ -1,18 +1,20 @@
 class GameLog
-  attr_reader :score, :games
+  attr_reader :score, :games, :first_to
+  FIRST_TO = 10
 
-  def initialize
+  def initialize(first_to = FIRST_TO)
     @games = []
     @score = { player: 0, computer: 0 }
+    @first_to = first_to
   end
 
-  def add_game(player_move, computer_move, result)
-    @games << [player_move, computer_move, result]
-    get_score(result)
+  def add_game(options)
+    @games << options
+    get_score(options[:result])
   end
 
   def game_over?
-    true if @score[:player] == 10 || score[:computer] == 10
+    true if @score[:player] == @first_to|| score[:computer] == @first_to
   end
 
   def end_message
@@ -24,7 +26,7 @@ class GameLog
   end
 
   def show_game
-    "You picked #{@games.last.first}, the computer picked #{@games.last[1]}"
+    "You picked #{@games.last[:player_move]}, the computer picked #{@games.last[:computer_move]}"
   end
 
   private

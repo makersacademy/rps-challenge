@@ -1,7 +1,7 @@
 class RPS
   attr_reader :game_log, :player, :result
 
-  def self.create(player, game_log)
+  def self.create(player, game_log = GameLog.new)
     @game = RPS.new(player, game_log)
   end
 
@@ -17,7 +17,7 @@ class RPS
 
   def play(player_move, computer_move = random_move)
     @result = get_result(player_move, computer_move)
-    @game_log.add_game(player_move, computer_move, @result)
+    @game_log.add_game({ player_move: player_move, computer_move: computer_move, result: @result })
   end
 
 private

@@ -14,7 +14,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    RPS.create(Player.new(params[:name]), GameLog.new)
+    RPS.create(Player.new(params[:name]))
     redirect to('/play')
   end
 

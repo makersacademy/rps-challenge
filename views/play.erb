@@ -10,7 +10,7 @@
 <% unless @game.game_log.game_over? %>
 <h1>It's time to play, <%= @name %>!</h1>
 <br>
-<h2>Choose your move! First to 10 wins...</h2>
+<h2>Choose your move! First to <%= @game.game_log.first_to %> wins...</h2>
 <div class="moves">
 <div class="emoji">&#x1f918;</div>
 <div class="emoji">&#x1f4c4;</div>
