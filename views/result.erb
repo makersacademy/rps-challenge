@@ -1,15 +1,11 @@
 <img src='https://www.afiniti.com/static/media/heroimg.ddffaa34.png' id="bg-image"> 
+
 <div class='bg-text'>
-<h1> You chose <%= @move %>  </h1>
 
+<h1> You  #win or lose </h1>
+<h1> You chose Rock <%= @player_move %> </h1>
+<h1> and the computer chose  <%= @ai_move %>  </h1>
 
-  <h2> What is your move? </h2>
-    <form method='POST' action='/play'>
-      <input type='submit' name='move' value='Rock' id='button'>
-      <input type='submit' name='move' value='Paper' id='button'>
-      <input type='submit' name='move' value='Scissors' id='button'> 
-    </form>
-  </div>
 
 
 

@@ -1,6 +1,7 @@
 require 'sinatra/base'
-# require 'player'
-# require 'game'
+require './models/player'
+require './models/computer'
+require './models/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -10,26 +11,24 @@ class Rps < Sinatra::Base
   end
 
   post '/named-player' do
-    session[:player_name] = params[:player_name]
+    $player = Player.new(params[:player_name])
     redirect to('/play')
   end
 
   get '/play' do 
-    @player_name = session[:player_name]
-    @move = session[:move]
+    @player_name = $player.name
     erb :play
   end
-
+  
   post '/play' do
-    session[:move] = params[:move]
-    redirect to('/move1')
+    redirect to('/result')
   end
 
-  get '/move1' do
-    @move = session[:move]
-    erb :move1
+  get '/result' do
+    @player_move = (params[:player_move])
+    Computer.new.ai_move
+    erb :result
   end
-
 
 
   run! if app_file == $0

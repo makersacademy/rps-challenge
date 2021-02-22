@@ -5,7 +5,7 @@
 
 
 feature 'making a move' do
-    let(:move) { double(:move) }
+    let(:player_move) { double(:player_move) }
     scenario 'Seeing available moves' do
       sign_in_and_play
       expect(page).to have_button 'Rock'
