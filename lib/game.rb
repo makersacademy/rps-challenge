@@ -6,7 +6,6 @@ class Game
   end
 
   def calculate_winner
-
     case @player
     when "rock"
       if @computer == "scissors"
