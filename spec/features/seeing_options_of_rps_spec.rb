@@ -6,10 +6,10 @@ feature 'seeing options of rock paper or scissors' do
         expect(page).to have_button('Rock')
     end
     scenario '# seeing paper button' do  
-        expect(page).to have_button('paper')
+        expect(page).to have_button('Paper')
     end
     scenario '# seeing scissors button' do
-        expect(page).to have_button('scissors')
+        expect(page).to have_button('Scissors')
     end
 end
     
