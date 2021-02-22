@@ -1,0 +1,10 @@
+<p class="player1"><%= @game.player1.name %> chose <%= @game.player1.move.capitalize %></p>
+<p class="winner"><%= @game.result %></p>
+<p class="player2"><%= @game.player2.name %> chose <%= @game.player2.move.capitalize %></p>
+
+<form action="play">
+  <input class="play-again" type="submit" value="Play Again">
+</form>
+
+<img class="player1-move" src="images/<%= @game.player1.move%>.png">
+<img class="player2-move" src="images/<%= @game.player2.move%>.png">

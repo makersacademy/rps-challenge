@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: impact;
+  box-sizing: border-box;
+  font-size: 30px;
+  text-align: center;
+  background-color: cornsilk;
+  font-weight: 900;
+  position: fixed;
+}
+
+h1, h2, form {
+  background-color: transparent;
+  color: rgb(80, 80, 80);
+  margin-left: 150px;
+}
+
+form {
+  margin-top: 350px;
+}
+
+h1 {
+  font-size: 120px;
+  margin-top: 60px;
+  margin-left: 200px;
+}
+
+h2 {
+  font-size: 50px;
+  margin-top: 290px;
+  margin-left: 520px;
+}
+
+input {
+  margin: 20px;
+  background-color: rgb(254, 223, 99);
+  box-shadow: 0 0 15px 4px;
+  font-size: 50px;
+  color: rgb(80, 80, 80);
+  font-family: inherit;
+  border: 0px;
+}
+
+.field {
+  height: 80px;
+  width: 500px;
+  border-radius: 30px;
+  padding: 20px;
+  margin-left: 280px;
+}
+
+.button {
+  border-radius: 50%;
+  font-size: 40px;
+  padding: 70px;
+  background-color: rgb(192, 255, 147);
+  font-size: 70px;
+  margin-left: 420px;
+  margin-top: 100px;
+}
+
+.play, .play-again {
+  border-radius: 100px;
+  padding: 60px;
+  color: rgb(80, 80, 80);
+}
+
+p {
+  font-size: 60px;
+  margin-top: 40px;
+  color: rgb(80, 80, 80);
+}
+
+.name {
+  font-size: 100px;
+}
+
+.rps {
+  width: 400px;
+  margin-left: 1000px;
+  margin-top: 425px;
+
+}
+
+.fist {
+  width: 200px;
+  margin-top: 400px;
+  margin-left: 100px;
+}
+
+
+/* play */
+img {
+  width: 350px;
+  border: 0;
+  margin: 0px;
+  background-color: transparent;
+}
+
+.rock {
+  margin-left: 170px;
+  margin-top: 140px;
+}
+
+.paper {
+  margin-left: 880px;
+  margin-top: 150px;
+}
+
+.scissors {
+  margin-left: 450px;
+  object-fit: scale-down;
+  height: 300px;
+  margin-top: 300px;
+}
+
+.rules {
+  margin-left: 520px;
+  margin-top: 50px;
+  font-size: 70px;
+}
+
+.player1 {
+  margin-top: 100px;
+  margin-left: 125px;
+  font-size: 50px;
+}
+
+.player1-move {
+  margin-top: 180px;
+  margin-left: 220px;
+  width: 175px;
+}
+
+.player2 {
+  margin-top: 100px;
+  margin-left: 840px;
+  font-size: 50px;
+}
+
+.player2-move {
+  margin-top: 180px;
+  margin-left: 1000px;
+  width: 175px;
+  object-fit: scale-down;
+}
+
+.winner {
+  margin-top: 470px;
+  margin-left: 175px;
+  font-size: 100px;
+}
+
+.play-again {
+  margin-top: 100px;
+  margin-left: 750px;
+}
