@@ -1,5 +1,14 @@
 # RPS Challenge
 
+Progress
+-------
+* It's not a fully functioning game - having issues with passing instance variables around in the controller (app.rb)
+* Some tests are now outdated due to reworking the controller last minute
+* The hard coding in the lib is in working order
+
+TBC
+
+
 Instructions
 -------
 

@@ -1,0 +1,11 @@
+<h1>It's time for rock, paper, scissors vs the PC</h1>
+
+<h3>Your name: <%= @player %></h3>
+<h3>Your selection: <%= @player_selection %></h3>
+
+<h2>Ready to fight the title?</h2>
+
+<form action="/run_game" method="post">
+  <input type="submit" value="Start Game">
+</form>
+
