@@ -24,14 +24,14 @@ class RockPaperScissors < Sinatra::Base
 
   post '/check' do
     @game.player_choose(params[:weapon])
-    @game.multiplayer == true ? (redirect '/choose2') : (redirect '/result')
+    @game.multiplayer ? (redirect '/player2choose') : (redirect '/result')
   end
 
-  get '/choose2' do
-    erb :choose2
+  get '/player2choose' do
+    erb :player2choose
   end
 
-  post '/check2' do
+  post '/checkplayer2' do
     @game.player2_choose(params[:weapon])
     redirect '/result'
   end
