@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/computer_player'
+require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -24,7 +25,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/outcome' do
-    @rps_computer = Computer_Player.new.play
+    comp = Computer_Player.new.play
+    @rps_computer = comp
+    @result = Game.new.letsPlayRPS(session[:choice], comp )
     @choice = session[:choice]
     erb :outcome
   end
