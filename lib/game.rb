@@ -4,7 +4,7 @@ class Game
 
     if p1 == comp
       "It's a draw"
-    elsif (p1 == 'paper' && comp == 'rock') || (p1 == 'rock' && comp == 'scissors') || (p1 == 'scissors' && comp == 'rock')
+    elsif (p1 == 'paper' && comp == 'rock') || (p1 == 'rock' && comp == 'scissors') || (p1 == 'scissors' && comp == 'paper')
       "You win!"
     else
       "You lose!"
