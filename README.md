@@ -1,7 +1,8 @@
 # RPS Challenge
 
 
-# Raf's Approach
+Raf's Approach
+---------
 
 I was happy setting up the testing frameworks, sinatra, rackup etc. The problems that i encountered were when i tried to increase the scope of the instance variables.
 I spent a lot of time trying to use the class instances to try and increase the scope of the @player_choice instance variables to reach the /results get request. 
