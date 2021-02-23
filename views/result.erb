@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+body {background-color: #33bbff; font-family:verdana; text-align: center;}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+div {
+  padding: 50px;
+}
+
+</style>
+
+<body class="center">
+<div style="display: flex;">
+<h1><%= @game.player1.name %> chose <%= @game.pick1 %></h1>
+<img src="/images/<%= @game.pick1 %>.png" height=200>
+<h1><%= @game.player2.name %> chose <%= @game.pick2 %></h1>
+<img src="/images/<%= @game.pick2 %>.png" height=200>
+</div>
+<h1><%= @result %></h1>
+<h3>Current Score:<br><%= @game.score1 %> - <%= @game.score2 %></h3>
+<form action="/game">
+<br>
+<input type="submit" value="Play again">
+</form>
+<form action="/">
+<br>
+<input type="submit" value="Restart">
+</form>
+</body>
+
+</html>

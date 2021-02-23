@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+body {background-color: #33bbff; font-family:verdana; text-align: center;}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+</style>
+
+<body class="center">
+<h1>Choose a move <%= @game.player1.name %></h1>
+<div style="display: flex;">
+<form action="/choice" method="post">
+<input type="image" src="/images/Rock.png" name="Rock" height=200>
+<input type="image" src="/images/Paper.png" name="Paper" height=200>
+<input type="image" src="/images/Scissors.png" name="Scissors" height=200>
+<% if @game.gametype == 'RPSLS'%>
+<input type="image" src="/images/Lizard.png" name="Lizard" height=200>
+<input type="image" src="/images/Spock.png" name="Spock" height=200>
+<%end%>
+</form>
+</div>
+<div>
+<h4>Rules:</h4>
+<% if @game.gametype == 'RPSLS'%>
+<p>Scissors cuts Paper<br>
+Paper covers Rock<br>
+Rock crushes Lizard<br>
+Lizard poisons Spock<br>
+Spock smashes Scissors<br>
+Scissors decapitates Lizard<br>
+Lizard eats Paper<br>
+Paper disproves Spock<br>
+Spock vaporizes Rock<br>
+(and as it always has) Rock crushes Scissors</p>
+<% else %>
+<p>Rock beats Scissors<br>
+Scissors beats Paper<br>
+Paper beats Rock</p>
+<% end %>
+</div>
+</body>
+
+</html>
