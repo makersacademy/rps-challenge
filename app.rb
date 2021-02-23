@@ -25,49 +25,27 @@ class RPS < Sinatra::Base
     erb :type
   end
 
-  post '/rps' do
-    session[:game] = Game.new(session[:name], 'RPS')
-    redirect '/game'
-  end
-
-  post '/rpsls' do
-    session[:game] = Game.new(session[:name], 'RPSLS')
+  post '/gametype' do
+    type = params.keys[0].gsub(".x","")
+    p type
+    Game.start_new(session[:name], type)
     redirect '/game'
   end
 
   get '/game' do
-    @game = session[:game].type
+    @game = Game.current
     erb :game
   end
 
   get '/result' do
-    @player1, @player2, @pick1, @pick2, @score1, @score2 = session[:game].stats.values
-    @result = MESSAGE[session[:game].result]
+    @game = Game.current
+    @result = MESSAGE[@game.result]
     erb :result
   end
 
-  post '/rock' do
-    session[:game].turn('Rock')
-    redirect '/result'
-  end
-
-  post '/paper' do
-    session[:game].turn('Paper')
-    redirect '/result'
-  end
-
-  post '/scissors' do
-    session[:game].turn('Scissors')
-    redirect '/result'
-  end
-
-  post '/lizard' do
-    session[:game].turn('Lizard')
-    redirect '/result'
-  end
-
-  post '/spock' do
-    session[:game].turn('Spock')
+  post '/choice' do
+    choice = params.keys[0].gsub(".x","")
+    Game.current.turn(choice)
     redirect '/result'
   end
 

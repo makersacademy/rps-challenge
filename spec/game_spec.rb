@@ -6,22 +6,24 @@ describe Game do
   let(:player) { double :player, name: "Pete", score: 0, won: true } 
   let(:random_class) { double :random_class, new: random }
   let(:random) { double :random, pick: 'Rock' }
-  let(:subject) { Game.new(player, "RPS", "The computer", player_class, random_class) }
+  let(:subject) {Game.current}
 
-  # [@player1.name, @player2.name, @pick1, @pick2, @score1, @score2]
-
+  before(:each) do
+    Game.start_new(player, "RPS", "The computer", player_class, random_class)
+  end
+  
   context 'when initialized' do
-    
+
     it 'should store players' do
-      expect(subject.stats[:player1]).to eq "Pete"
+      expect(subject.player1.name).to eq "Pete"
     end
 
     it 'should have a score of 0 for player 1' do
-      expect(subject.stats[:score1]).to eq 0
+      expect(subject.score1).to eq 0
     end
 
     it 'should have a score of 0 for player 2' do
-      expect(subject.stats[:score2]).to eq 0
+      expect(subject.score2).to eq 0
     end
 
   end
@@ -36,7 +38,7 @@ describe Game do
       end
 
       it 'should increase the score for player 1' do
-        expect { subject.turn("Rock", "Scissors") }.to change { subject.stats[:score1] }.by 1
+        expect { subject.turn("Rock", "Scissors") }.to change { subject.score1 }.by 1
       end
 
     end
@@ -49,7 +51,7 @@ describe Game do
       end
 
       it 'should increase the score for player 2' do
-        expect { subject.turn("Rock", "Paper") }.to change { subject.stats[:score2] }.by 1
+        expect { subject.turn("Rock", "Paper") }.to change { subject.score2 }.by 1
       end
 
     end
@@ -62,11 +64,11 @@ describe Game do
       end
 
       it 'should not increase the score for player 1' do
-        expect { subject.turn("Rock", "Rock") }.to change { subject.stats[:score2] }.by 0
+        expect { subject.turn("Rock", "Rock") }.to change { subject.score2 }.by 0
       end
     
       it 'should not increase the score for player 2' do
-        expect { subject.turn("Rock", "Rock") }.to change { subject.stats[:score2] }.by 0
+        expect { subject.turn("Rock", "Rock") }.to change { subject.score2 }.by 0
       end
 
     end

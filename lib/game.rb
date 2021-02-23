@@ -1,15 +1,29 @@
 class Game
 
+@current = ''
+
   CHOICES = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
   R, P, S, L, SP = CHOICES
   TO_WIN = { R => [S, L], P => [R, SP], S => [P, L], L => [P, SP], SP => [R, S] }
 
-  attr_reader :result, :type
+  attr_reader :player1, :player2, :score1, :score2, :pick1, :pick2, :result, :gametype
 
-  def initialize(player1, type, player2 = "The computer", player_class = Player, random_class = RandomPick)
-    set_players(player1, player2, player_class)
-    set_scores
-    set_game_type(type, random_class)
+  def self.start_new(player1, gametype, player2 = "The computer", player_class = Player, random_class = RandomPick)
+    @current = Game.new(player1, gametype, player2, player_class, random_class)
+  end
+
+  def self.current
+    @current
+  end
+
+  def initialize(player1, gametype, player2 = "The computer", player_class = Player, random_class = RandomPick)
+    @player1 = player_class.new(player1)
+    @player2 = player_class.new(player2)
+    @score1 = 0
+    @score2 = 0
+    @gametype = gametype
+    @random_class = random_class
+    set_game_type
   end
 
   def turn(pick1, pick2 = random_pick)
@@ -21,32 +35,10 @@ class Game
     drew if draw?
   end
 
-  def stats
-    {
-      player1: @player1.name,
-      player2: @player2.name,
-      pick1: @pick1,
-      pick2: @pick2,
-      score1: @score1,
-      score2: @score2
-    }
-  end
-
   private
 
-  def set_players(player1, player2, player_class)
-    @player1 = player_class.new(player1)
-    @player2 = player_class.new(player2)
-  end
-
-  def set_scores
-    @score1 = 0
-    @score2 = 0
-  end
-
-  def set_game_type(type, random_class)
-    @type = type
-    type == 'RPS' ? @rand = random_class.new(CHOICES[0..2]) : @rand = random_class.new(CHOICES)
+  def set_game_type
+    @gametype == 'RPS' ? @rand = @random_class.new(CHOICES[0..2]) : @rand = @random_class.new(CHOICES)
   end
 
   def won

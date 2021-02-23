@@ -21,13 +21,13 @@ div {
 
 <body class="center">
 <div style="display: flex;">
-<h1><%= @player1 %> chose <%= @pick1 %></h1>
-<img src="/images/<%= @pick1 %>.png" height=200>
-<h1><%= @player2 %> chose <%= @pick2 %></h1>
-<img src="/images/<%= @pick2 %>.png" height=200>
+<h1><%= @game.player1.name %> chose <%= @game.pick1 %></h1>
+<img src="/images/<%= @game.pick1 %>.png" height=200>
+<h1><%= @game.player2.name %> chose <%= @game.pick2 %></h1>
+<img src="/images/<%= @game.pick2 %>.png" height=200>
 </div>
 <h1><%= @result %></h1>
-<h3>Current Score:<br><%= @score1 %> - <%= @score2 %></h3>
+<h3>Current Score:<br><%= @game.score1 %> - <%= @game.score2 %></h3>
 <form action="/game">
 <br>
 <input type="submit" value="Play again">
