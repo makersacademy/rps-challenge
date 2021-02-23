@@ -1,0 +1,36 @@
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+</head>
+
+<p style="text-align:center">&nbsp;</p>
+<p style="text-align:center">
+<span style="font-size:28px">
+  <span style="font-family:Arial,Helvetica,sans-serif"><%= @game.player.name %> chose <%= @game.player_choice.type %>
+  <br>
+<% if @game.multiplayer == true %>
+  <%= @game.player2.name %> chose <%= @game.player2_choice.type %>
+  <% else %>
+  Computer chose <%= @game.computer.type %>
+<% end %>
+</span>
+</span></p>
+<p style="text-align:center">
+  <span style="font-size:28px">
+    <span style="font-family:Arial,Helvetica,sans-serif">Yay <%= @game.player.name %> you won!</span>
+  </span>
+</p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<center><img src="/images/winner.gif" width="300" height="300">
+<br>
+<br>
+<form action='/choose' method='get'>
+<input type='submit' value='Play again'>
+</form>
+<form action='/' method='get'>
+<input type='submit' value='New player'>
+</form>
+</center>
