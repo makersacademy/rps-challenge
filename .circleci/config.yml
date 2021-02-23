@@ -1,19 +1,21 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@0.1.2 
+  heroku: circleci/heroku@0.0.10
+workflow:
+  jobs:
+    build:
+      docker:
+        - image: circleci/ruby:2.6.3-stretch-node
+      executor: ruby/default
+      steps:
+        - checkout
+        - run:
+            name: Force Bundler Version
+            command: |
+               sudo gem update --system
+                echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+                source $BASH_ENV
+                gem install bundler
+        - heroku/deploy-via-git
 
-jobs:
-  build:
-    docker:
-      - image: circleci/ruby:2.6.3-stretch-node
-    executor: ruby/default
-    steps:
-      - checkout
-      - run:
-          name: Force Bundler Version
-          command: |
-             sudo gem update --system
-              echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
-              source $BASH_ENV
-              gem install bundler
-     
