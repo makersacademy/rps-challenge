@@ -4,11 +4,12 @@ require './lib/result'
 require './lib/player'
 
 class RPS < Sinatra::Base
+enable :sessions
 
-    before do
-        @result = Result.instance
-        @player = Player.instance
-    end
+    # before do
+    #     @result = Result.instance
+    #     @player = Player.instance
+    # end
 
     get '/' do
         'Please enter your name'
@@ -16,9 +17,7 @@ class RPS < Sinatra::Base
     end
 
     post '/name' do
-        player_name = params[:player_name]
-        @player = Player.create(player_name)
-        p @player
+        session[:player_name] = params[:player_name]
         redirect '/game'
     end
 
@@ -27,14 +26,19 @@ class RPS < Sinatra::Base
     end
 
     post '/choices' do
-        @player_choice = Game.new(params[:player_choice])
-        @cpu_choice = @player_choice.cpu_choice
-        @result = Result.create(@player_choice.player_choice, @cpu_choice)
+        @game = Game.new(params[:player_choice])
+        @cpu_choice = @game.cpu_choice
+        @player_choice = @game.player_choice
+        session[:player_choice] = @player_choice
+        session[:cpu_choice] = @cpu_choice
+        session[:result] = @game.result 
         redirect '/result'
     end      
 
     get '/result' do
-        
+        @player_choice = session[:player_choice]
+        @cpu_choice = session[:cpu_choice] 
+        @result = session[:result]
         erb :result
     end
 
