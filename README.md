@@ -50,6 +50,12 @@ bundle install
 rackup
 ```
 
+To run the RSpec tests, run:
+
+```
+rspec
+```
+
 If you don't have rackup installed, please follow the [instructions here](https://github.com/rack/rack)
 
 <img width="1426" alt="Screenshot 2021-02-21 at 17 57 42" src="https://user-images.githubusercontent.com/75075773/108633956-00e2fd80-746f-11eb-8669-dffb83d34e54.png">

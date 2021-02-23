@@ -26,8 +26,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/outcome' do
     @rps_computer = Computer_Player.new.play
-    @result = Game.new.letsPlayRPS(session[:choice], @rps_computer)
     @choice = session[:choice]
+    @result = Game.new.letsPlayRPS(@choice, @rps_computer)
     erb :outcome
   end
 
