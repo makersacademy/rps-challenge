@@ -1,8 +1,6 @@
 require 'game'
 
 describe Game do
-  # let(:choice) { double :choice }
-  # let(:rps_comp) { double :rock }
 
   it 'gives the result of rock paper scissors' do
     expect(subject.letsPlayRPS('paper','rock')).to eq('You win!')
