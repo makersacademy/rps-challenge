@@ -7,7 +7,7 @@ describe RPS do
   let(:rock) { double(:rock) }
   let(:chrissy) { double(:chrissy) }
   let(:weaponclass) { double(:weaponclass, new: rockweapon) }
-  subject(:game) { described_class.new(chrissy, weaponclass) }
+  subject(:game) { described_class.new(chrissy, false, weaponclass) }
 
   describe 'self.create' do
     it 'uses a class method to return an instance' do
@@ -39,7 +39,7 @@ describe RPS do
         it 'returns a draw' do
           computer = double("computer", :type => rock)
           allow(computer).to receive(:weapon)
-          game = RPS.new(chrissy, weaponclass, computer)
+          game = RPS.new(chrissy, false, weaponclass, computer)
           game.player_choose(rock)
           expect(game.result).to eq(:draw)
         end
@@ -50,7 +50,7 @@ describe RPS do
           allow(computer).to receive(:weapon)
           rockweapon = double(:rockweapon, :draw? => false, :beats? => true)
           weaponclass = double(:weaponclass, :new => rockweapon)
-          game = RPS.new(chrissy, weaponclass, computer)
+          game = RPS.new(chrissy, false, weaponclass, computer)
           game.player_choose(rock)
           expect(game.result).to eq(:win)
         end
@@ -61,7 +61,7 @@ describe RPS do
           allow(computer).to receive(:weapon)
           rockweapon = double(:rockweapon, :draw? => false, :beats? => false)
           weaponclass = double(:weaponclass, :new => rockweapon)
-          game = RPS.new(chrissy, weaponclass, computer)
+          game = RPS.new(chrissy, false, weaponclass, computer)
           game.player_choose(rock)
           expect(game.result).to eq(:lose)
         end
