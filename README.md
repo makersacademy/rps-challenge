@@ -1,5 +1,15 @@
 # RPS Challenge
 
+
+# Raf's Approach
+
+I was happy setting up the testing frameworks, sinatra, rackup etc. The problems that i encountered were when i tried to increase the scope of the instance variables.
+I spent a lot of time trying to use the class instances to try and increase the scope of the @player_choice instance variables to reach the /results get request. 
+It was only when we got to codereview on monday that i realised we could use the sessions hash as an easier alternative.
+
+Which is better to increase the scope of the instance variables? Sessions or ruby classes? I'd appreciate some more help on this 
+
+
 Instructions
 -------
 
