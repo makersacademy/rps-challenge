@@ -21,15 +21,18 @@ class Rps < Sinatra::Base
   end
   
   post '/play' do
+    session[:player_move] = params[:move]
     redirect to('/result')
   end
 
   get '/result' do
-    @player_move = (params[:player_move])
-    Computer.new.ai_move
+    @player_move = session[:player_move]
+    @ai_move = Computer.new.ai_move
+    p @ai_move
     erb :result
   end
-
+  # p @player_move
+  # p params
 
   run! if app_file == $0
 end

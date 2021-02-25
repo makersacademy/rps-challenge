@@ -6,13 +6,12 @@ class Game
         scissors: {rock: :lose, paper: :win, scissors: :draw}
       }
     
-    attr_reader :player_move, :ai_move
+    attr_reader :ai_move
     
     def initialize(ai_move)
       @ai_move = Computer.new.ai_move
     end
 
-=begin
     def win?
         result == :win
       end
@@ -31,7 +30,5 @@ class Game
       def result
         GAME_RULES[@player_move][@ai_move]
       end
-   
-
-=end
+  
 end
