@@ -27,8 +27,11 @@ class Rps < Sinatra::Base
 
   get '/result' do
     @player_move = session[:player_move]
+    @game = Game.new(session)
     @ai_move = Computer.new.ai_move
-    p @ai_move
+    @winner_is = @game.winner_is
+    p @game
+    p @winner_is
     erb :result
   end
   # p @player_move

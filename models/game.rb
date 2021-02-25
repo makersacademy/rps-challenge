@@ -1,34 +1,31 @@
 class Game 
 
-    GAME_RULES = {
-        rock: {rock: :draw, paper: :lose, scissors: :win},
-        paper: {rock: :win, paper: :draw, scissors: :lose},
-        scissors: {rock: :lose, paper: :win, scissors: :draw}
-      }
     
-    attr_reader :ai_move
+    attr_reader :ai_move, :player_move
     
-    def initialize(ai_move)
-      @ai_move = Computer.new.ai_move
+    def initialize(options)
+      @ai_move = Computer.new.ai_move.capitalize
+      @player_move = options["player_move"].to_sym
     end
 
-    def win?
-        result == :win
+    def winner_is
+      if rule_engine[@ai_move].include? @player_move
+        'Computer wins'
+      elsif rule_engine[@player_move].include? @ai_move
+        'You win!'
+      else
+        'Tie'
       end
-    
-      def lose?
-        result == :lose
-      end
-    
-      def draw?
-        result == :draw
-      end
+    end
     
 
-      private
-    
-      def result
-        GAME_RULES[@player_move][@ai_move]
-      end
-  
+     
+
+def rule_engine
+  {
+    'rock': ['scissors'],
+    'paper': ['rock'],
+    'scissors': ['paper']
+  }
+end
 end
