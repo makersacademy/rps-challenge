@@ -1,0 +1,3 @@
+require './rps'
+
+run Rps
