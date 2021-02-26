@@ -1,12 +1,12 @@
+filter: 
+  branches: 
+    only: 
+      -master 
 version: 2.1
 orbs:
   ruby: circleci/ruby@0.1.2 
   heroku: circleci/heroku@0.0.10
 jobs:
-general:
-  branches:
-    only:
-     - master
   build:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
