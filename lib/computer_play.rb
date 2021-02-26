@@ -8,11 +8,11 @@ class Play
     @RPS.sample
   end
 
-  def result
-    if @computer == "rock" && @play == "rock" || @computer == "paper" && @play == "paper" || @computer == "scissors" && @play = "scissors"
-    puts "It's a tie!"
+  def result(player_choice, computer)
+    if player_choice == "rock" && computer == "rock"
+    "It's a tie"
     else
-    puts "It's not a tie!"
+    "It's not a tie!"
   end
 end
 end

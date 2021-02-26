@@ -28,7 +28,11 @@ class Game < Sinatra::Base
 
   post '/result' do
   @player_choice =(params[:player_choice])
-  @computer = Play.new
+  computer = Play.new
+  @computer_choice = computer.draw
+  @result = computer.result(@player_choice, @computer_choice)
+  p 'I am here'
+  p @result
   erb :result
   end
 
