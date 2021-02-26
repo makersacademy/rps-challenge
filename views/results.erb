@@ -1,0 +1,40 @@
+<head>
+  <title>Results page</title>
+</head>
+<body>
+  <style>
+    body{
+      position:relative;
+      top: 200px;
+      background: palegoldenrod;
+      text-align: center;
+    }
+  </style>
+  <!-- player's choice -->
+  <div style = "color: red;">
+    You have chosen <%= @choice %>
+  </div>
+  <br>
+  <!-- computer's choice -->
+  <div style = "color: blue;">
+    The AI has chosen <%= @computer_choice %>
+  </div>
+  <br>
+  <!-- winner declared -->
+  <div style = "color: goldenrod; font-weight: bolder; font-size: larger; background: white; ">
+    The winner is... <%= @result %>!
+    <br>
+    <br>
+    <%= @winner %> is the winner!!!!
+  </div>
+  <br>
+  <!-- play again link -->
+  <div style = "color: green;">
+    <form action="/play-page" method="get">
+      <button type="submit" name="Play again?">
+        Play again?
+      </button>
+    </form>
+  </div>
+
+</body>

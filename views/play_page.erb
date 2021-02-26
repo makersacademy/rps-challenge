@@ -1,0 +1,71 @@
+<head>
+  <title>Fighter selection</title>
+</head>
+<body>
+  <!-- css style of the page and its elements -->
+  <style>
+    body{
+      margin:auto;
+      background:rgb(150, 150, 150);
+    }
+    h1{
+      position:relative;
+      top:20px;
+      text-align:center;
+    }
+    h2{
+      text-align:center;
+    }
+    section{
+      margin:auto;
+      background:rgb(255, 255, 255);
+      text-align:center;
+      padding: 100px;
+    }
+    label{
+      color:rgb(255, 50, 50);
+      text-transform: UPPERCASE;
+      text-weight: bold;
+    }
+    button{
+      padding
+    }
+  </style>
+
+  <h1>Welcome <%= @player_name %>!</h1>
+  <br>
+  <h2>Are you ready to play Rock-Paper-Scissors?</h2>
+  <br>
+  <section>
+    <form action="/result" method="post">
+      <label>
+        Please choose your fighter:
+      </label>
+      <br>
+      <!-- rock button and image section -->
+      <div style = "display: inline-block; margin: 20px;">
+        <img src="https://lh3.googleusercontent.com/AqX0XxncX_1NuBmK5Eh9UohAAIX7_0gdj5qfE79El35vjAyAxlyYjD1Flif-5uuhjyKYrGk=s162">
+        <br>
+        <button type="submit" value="Rock" name = "player_choice">
+          ROCK
+        </button>
+      </div>
+      <!-- paper button and image section-->
+      <div style = "display: inline-block; margin: 40px;">
+        <img src="https://lh3.googleusercontent.com/k04uHMCLcDphfFr96oahoncyHi17pZyAA-Cr6y5Q8riCwwOOPPbvsRQRx28LL2ar1ik9OtY=s85">
+        <br>
+        <button type="submit" value="Paper" name = "player_choice">
+          PAPER
+        </button>
+      </div>
+      <!-- scissors button and image section -->
+      <div style = "display: inline-block; margin: 40px;">
+        <img src="https://lh3.googleusercontent.com/8hhYjwyBpVguvmiPp2i_WknssoP_IwcH5NVY03pwW84fN5femDiioXUO0P2m-zDwsvpjFF0=s85">
+        <br>
+        <button type="submit" value="Scissors" name = "player_choice">
+          SCISSORS
+        </button>
+      </div>
+    </form>
+  </section>
+</body>
