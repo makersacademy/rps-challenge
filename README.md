@@ -24,7 +24,8 @@ I would like to be able to play rock/paper/scissors
 This app was an oppertunity to explore the topics covered in week 3 of the Makers course.  
 I utilised Embedded Ruby(ERB):
 
-<img width="1109" alt="Screenshot 2021-02-21 at 06 35 13" src="https://user-images.githubusercontent.com/75075773/108618002-6654d100-7412-11eb-8037-28854d12a770.png">
+<img width="489" alt="Screenshot 2021-02-27 at 09 47 57" src="https://user-images.githubusercontent.com/75075773/109383816-f1393e00-78e0-11eb-8f3b-939b6a427c5a.png">
+
 
 As well as HTML with some CSS:
 
