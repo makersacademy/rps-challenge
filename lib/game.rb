@@ -16,19 +16,8 @@ attr_reader:player,:opponent,:result
       def chooses
         @opponent.shape
       end
-      def win?
-        result == :win
-      end
 
-      def lose?
-        result == :lose
-      end
-
-      def draw?
-        result==:draw
-      end
-
-
+      
      def result
        GAME_TABLE[@player.player_option.downcase.to_sym][@opponent]
      end
