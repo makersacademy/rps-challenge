@@ -12,7 +12,7 @@ class Rps < Sinatra::Base
     @player_1 = params[:player_1]
     @player_2 = params[:player_2]
     @game = Game.create(@player_1, @player_2)
-    @game = Game.instance
+    # @game = Game.instance
     erb(:game)
   end
 

@@ -17,6 +17,7 @@ class Game
   def self.instance
     @game
   end
+  
   def play_a_match(player_1_move, player_2_move)
     if player_1_move == player_2_move
       @ties += 1

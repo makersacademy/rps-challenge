@@ -4,7 +4,7 @@ gem 'sinatra'
 
 group :test do
   gem 'capybara'
-  gem 'rack'
+  # gem 'rack'
   gem 'rspec'
   gem 'rubocop', '0.79.0'
   gem 'selenium-webdriver'

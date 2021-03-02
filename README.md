@@ -1,11 +1,9 @@
 # RPS Challenge
 
-Task
-----
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+Build a Rock Paper Scissors game using Sinatra and MVC model.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+## User stories
 
 ```
 As a marketeer
@@ -18,10 +16,26 @@ I would like to be able to play rock/paper/scissors
 ```
 
 
-## Basic Rules
+## How to run
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+```
+git clone https://github.com/lisabardelli/rps-challenge.git
+
+cd rps-challenge
+
+ruby app.rb
+```
+Then visit http://localhost:4567/
 
 
+## **Home**
+![Home](home.png)
+
+## **Play the game**
+![Play the game](moves.png)
+
+## **Score**
+![Score](player.png)
+
+## **Final score**
+![Final score](score.png)
