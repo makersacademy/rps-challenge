@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+    </head>
+    <body>
+<% if @game.display_reset_button == true %>
+    <h1><%=@game.message%></h1>
+    <form action="/reset" method="get">
+    <h2>Round: <%=@game.round%></h2>
+    <br>
+    <h2>Player 1</h2>
+    <h2>Player 1 score: <%=@game.player_1_win%></h2>
+    <h2>Ties: <%=@game.ties%></h2>
+    <br>
+    <h2>Player 2</h2>
+    <h2>Player 2 score: <%=@game.player_2_win%></h2>
+    <br>
+    <button type="submit" value="Reset">Reset</button>
+    </form>
+<% else %>
+    <form action="/play_again" method="get">
+    <h2>Round: <%=@game.round%></h2>
+    
+    <h2><%= @game.player_1_name%>'s score: <%=@game.player_1_win%></h2>
+    <h2>Ties: <%=@game.ties%></h2>
+    
+    <h2><%= @game.player_2_name%>'s score: <%=@game.player_2_win%></h2>
+    
+    <button type="submit" value="Play again">Play again!</button>
+    </form>
+<% end %>
+<form action="/" method="get">
+<br>
+    <button type="submit" value="New game">New game</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+    </head>
+    <body>
+        <form action="/score" method="get">
+            <h2> <%= @game.player_1_name%>'s move<h2>
+            <label for="move:"></label>
+            <select id="move_player_1" name="move_player_1"> 
+                <option value="Paper">Paper</option> 
+                <option value="Scissor">Scissor</option> 
+                <option value="Rock">Rock</option>
+            </select>
+            <h2>  <%= @game.player_2_name%>'s move<h2>
+            <label for="Player 2 move:"></label>
+            <select id="move_player_2" name="move_player_2">
+                <option value="Paper">Paper</option>
+                <option value="Scissor">Scissor</option>
+                <option value="Rock">Rock</option>
+            </select>
+            <br>
+            <button type="submit" value="Play!">Play!</button>
+        </form>
+    </body>
+</html>
