@@ -1,12 +1,10 @@
 ENV['RACK_ENV'] = 'test'
-require './app.rb'
+require './app'
 require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-
-
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
