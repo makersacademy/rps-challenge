@@ -1,9 +1,10 @@
 require_relative './player'
 
 class Game
-  attr_reader :player
+  attr_reader :player, :selection
   def initialize(player)
-    @player = player    
+    @player = player
+    @selection
   end
 
   def self.instance
@@ -13,5 +14,9 @@ class Game
   def self.new_game(name)
     player = Player.new(name)
     @game = Game.new(player)
+  end
+
+  def update_selection(selection)
+    @selection = selection
   end
 end

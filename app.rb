@@ -19,6 +19,15 @@ class App < Sinatra::Base
   get '/play' do
     erb :play
   end
+
+  post '/selection' do
+    @game.update_selection(params[:choices])
+    redirect '/end'
+  end
+
+  get '/end' do
+    erb :end
+  end
   
 end
 
