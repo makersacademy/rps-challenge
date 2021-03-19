@@ -97,7 +97,7 @@ DEPENDENCIES
   capybara
   rake
   rspec
-  rubocop (= 1.11.0)
+  rubocop
   simplecov
   simplecov-console
   sinatra
