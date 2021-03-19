@@ -21,10 +21,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choose' do
-    Game.stored_game.player_1_turn = params[:choose_turn]
+    Game.stored_game.play(params[:choose_turn])
     redirect '/play'
   end
-  
+
   run! if app_file == $0
 
 end

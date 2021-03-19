@@ -11,7 +11,12 @@ describe RockPaperScissors do
     it "Allows the user to choose from Rock, Paper and Scissors" do
       select 'Rock', from: 'choose_turn'
       click_on 'submit'
-      expect(page).to have_text "You chose Rock"
+      expect(page).to have_text "you chose Rock"
+    end
+    it 'Declares a winner' do
+      select 'Rock', from: 'choose_turn'
+      click_on 'submit'
+      expect(page).to have_text "The winner"\
     end
   end
 end

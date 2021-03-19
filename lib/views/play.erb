@@ -1,9 +1,9 @@
 <%=Game.stored_game.player1.name%>
-
-<% if Game.stored_game.player_1_turn !=nil %>
-You chose <%=Game.stored_game.player_1_turn%>
+<% if Game.stored_game.player1.turn !=nil %>
+, you chose <%=Game.stored_game.player1.turn%><p>
+Your opponent chose <%=Game.stored_game.player2.turn%><p>
+The winner was <%=Game.stored_game.winner%>
 <%end%>
-
 <form action='/choose' method="post">
   <label for="turn">Choose from Rock, Paper, Scissors:</label>
   <select id="choose_turn" name="choose_turn">
