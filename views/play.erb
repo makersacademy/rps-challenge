@@ -1,0 +1,14 @@
+<h1>Player 1 - <%= @name %></h1>
+<h3>vs.</h3>
+<h1>Player 2 - Deep Thought</h1>
+
+<h2>Choose your move:</h2>
+<p>
+<form action="/outcome" method="post">
+  <input type="radio" name="player_move" id="rock" value="Rock"><label for="rock">Rock</label>
+  <input type="radio" name="player_move" id="paper" value="Paper"><label for="paper">Paper</label>
+  <input type="radio" name="player_move" id="scissors" value="Scissors"><label for="scissors">Scissors</label>
+  
+  <button type="submit" value="submit">Go!</button>
+</form>
+</p>
