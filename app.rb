@@ -17,4 +17,11 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/result' do
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
+  end
 end

@@ -10,10 +10,17 @@ describe RockPaperScissors do
 
   feature 'player can enter a name' do
     scenario 'the player can see their name on the play page' do
-      visit '/home'
-      fill_in 'player_name', with: "Sneaky Racoon"
-      click_button 'Submit'
+      sign_in_and_play
       expect(page).to have_content "Sneaky Racoon"
     end
   end
+
+  feature 'player can select rock' do
+    scenario 'the player can select a button called rock and receive a confirmation' do
+      sign_in_and_play
+      click_button 'Rock'
+      expect(page).to have_content "You played Rock!"
+    end
+  end
+
 end
