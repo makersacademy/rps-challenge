@@ -19,5 +19,4 @@ class RPS < Sinatra::Base
   run! if app_file == $0
 end
 
-
 # need tests for all the shiz inside index and stuff now

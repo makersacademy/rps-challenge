@@ -12,5 +12,4 @@ class Player
   end
 end
 
-
 # add computer user stuff, if computer then this etc
