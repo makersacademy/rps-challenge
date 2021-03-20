@@ -20,14 +20,40 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end 
 
-  post '/play' do
+  post '/rock' do
     $game = Rps.new
-    $user_input = params[:ATTACK]
-   redirect '/result'
+    $computer = $game.computer_play
+    redirect '/tie' if $computer == 'ROCK'
+    redirect '/win' if $computer == 'SCISSORS'
+    redirect '/lose' if $computer == 'PAPER'
   end 
 
-  get '/result' do
-     erb :play 
+  post '/paper' do
+    $game = Rps.new
+    $computer = $game.computer_play
+    redirect '/tie' if $computer == 'PAPER'
+    redirect '/win' if $computer == 'ROCK'
+    redirect '/lose' if $computer == 'SCISSORS'
+  end 
+
+  post '/scissors' do
+    $game = Rps.new
+    $computer = $game.computer_play
+    redirect '/tie' if $computer == 'SCISSORS'
+    redirect '/win' if $computer == 'PAPER'
+    redirect '/lose' if $computer == 'ROCK'
+  end 
+
+  get '/tie' do
+    erb :tie 
+  end 
+
+  get '/win' do
+    erb :win 
+  end
+
+  get '/lose' do 
+    erb :lose 
   end 
 
 end

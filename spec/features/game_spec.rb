@@ -21,6 +21,7 @@ feature '/play' do
     fill_in 'player', with: 'Emma'
     click_button 'go!'
     click_button 'ROCK'
-    expect(page).to have_text 'You'
+    allow($game).to receive(:computer_play) { 'SCISSORS' }
+    expect(page).to have_text 'You win!'
   end 
 end 

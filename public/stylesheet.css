@@ -10,7 +10,16 @@
 h1 { 
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
-  text-decoration: darkgray;
+}
+
+h2 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+}
+
+p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
 }
 
 .image:hover {

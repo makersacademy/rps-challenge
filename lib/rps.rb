@@ -1,7 +1,7 @@
 class Rps
 
   attr_reader :user_input
-  
+
   def user_play(user_input)
     @user_input = user_input
   end 
@@ -14,7 +14,7 @@ class Rps
     user_play(user_input)
     return tie if @user_input == computer_play
     return win if user_win?
-    return lose if !user_win?
+    return lose unless user_win?
   end 
 
   def user_win?
