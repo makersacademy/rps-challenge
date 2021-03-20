@@ -1,16 +1,16 @@
-<% if @player_choice == "Rock" %>
+<% if @game.player_choice == "Rock" %>
 <h2>You played Rock!</h2>
-<% elsif @player_choice == "Paper" %>
+<% elsif @game.player_choice == "Paper" %>
 <h2>You played Paper!</h2>
-<% elsif @player_choice == "Scissors" %>
+<% elsif @game.player_choice == "Scissors" %>
 <h2>You played Scissors!</h2>
 <% end %>
 
-<% if @computer_choice == "Rock" %>
+<% if @game.computer_choice == "Rock" %>
 <h2>Computer played Rock!</h2>
-<% elsif @computer_choice == "Paper" %>
+<% elsif @game.computer_choice == "Paper" %>
 <h2>Computer played Paper!</h2>
-<% elsif @computer_choice == "Scissors" %>
+<% elsif @game.computer_choice == "Scissors" %>
 <h2>Computer played Scissors!</h2>
 <% end %>
 

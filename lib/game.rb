@@ -1,13 +1,26 @@
 class Game
 
-  attr_reader :player, :computer
+  attr_reader :player, :computer_choice, :player_choice
   def initialize(player)
     @player = player
-    @computer = nil
+    @computer_choice = nil
+    @player_choice = nil
   end
 
-  def computer_choice
-    @computer = Game.random
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
+  def computer_chooses
+    @computer_choice = Game.random
+  end
+
+  def player_chooses(choice)
+    @player_choice = choice
   end
 
   def self.random
