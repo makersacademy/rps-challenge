@@ -90,8 +90,26 @@ describe RockPaperScissors do
       sign_in_and_play
       click_button 'Scissors'
       expect(page).not_to have_content "You lose o(╥﹏╥)o"
-      expect(page).not_to have_content "It's a draw  ¯\_(ツ)_/¯ "
+      expect(page).not_to have_content "It's a draw ʅ(°﹃°)ʃ"
       expect(page).to have_content "You win! (づ｡◕‿‿◕｡)づ"
+    end
+
+    scenario 'player loses game when playing rock against computers paper' do
+      allow(Game).to receive(:random).and_return('Paper')
+      sign_in_and_play
+      click_button 'Rock'
+      expect(page).not_to have_content "It's a draw ʅ(°﹃°)ʃ"
+      expect(page).not_to have_content "You win! (づ｡◕‿‿◕｡)づ"
+      expect(page).to have_content "You lose o(╥﹏╥)o"
+    end
+
+    scenario 'player draws game when playing paper against computers paper' do
+      allow(Game).to receive(:random).and_return('Paper')
+      sign_in_and_play
+      click_button 'Paper'
+      expect(page).not_to have_content "You lose o(╥﹏╥)o"
+      expect(page).not_to have_content "You win! (づ｡◕‿‿◕｡)づ"
+      expect(page).to have_content "It's a draw ʅ(°﹃°)ʃ"
     end
   end
 end

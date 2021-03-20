@@ -43,8 +43,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    @game = $game
     @player_choice = $player_choice
     @computer_choice = $computer_choice
+    @win_lose_draw = @game.win_lose_draw(@player_choice, @computer_choice)
     # p "-----R2"
     # p $computer_choice
     # p @computer_choice

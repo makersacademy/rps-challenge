@@ -14,7 +14,16 @@
 <h2>Computer played Scissors!</h2>
 <% end %>
 
+<% if @win_lose_draw == "win" %>
 <h2>You win! (づ｡◕‿‿◕｡)づ</h2>
+<% elsif @win_lose_draw == "lose" %>
+<h2>You lose o(╥﹏╥)o</h2>
+<% elsif @win_lose_draw == "draw" %>
+<h2>It's a draw ʅ(°﹃°)ʃ</h2>
+<% end %>
+
+
+
 <form action="/nextgame" method="post">
   <input type="submit" value="Next Game">
 </form>
