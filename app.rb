@@ -4,9 +4,8 @@ require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
-
-  get '/home' do
-      erb :home
+  get '/' do
+    erb :home
   end
 
   post '/play' do

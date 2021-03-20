@@ -4,7 +4,8 @@
          text-align: center;
          padding: 200px;
        }
-  h2   { color: #ff9966; }
+h1 { color: #ff6699; }
+h2 { color: #ff9966; }
   #submit { background: white;
             color: #ff6699;
             font-size:18px;
@@ -42,15 +43,15 @@
 <% end %>
 
 <% if @win_lose_draw == "win" %>
-<h2>You win! (づ｡◕‿‿◕｡)づ</h2>
+<h1>You win! (づ｡◕‿‿◕｡)づ</h1>
 <% elsif @win_lose_draw == "lose" %>
-<h2>You lose o(╥﹏╥)o</h2>
+<h1>You lose o(╥﹏╥)o</h1>
 <% elsif @win_lose_draw == "draw" %>
-<h2>It's a draw ʅ(°﹃°)ʃ</h2>
+<h1>It's a draw ʅ(°﹃°)ʃ</h1>
 <% end %>
 
 
 
 <form action="/nextgame" method="post">
-  <input id="submit" type="submit" value="Next Game">
+  <input id="submit" type="submit" value="New Game">
 </form>

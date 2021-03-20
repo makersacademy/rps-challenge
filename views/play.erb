@@ -6,7 +6,7 @@
        }
   h1   { color: #ff6699; }
   h2   { color: #ff9966; }
-  h3   { color: #b3003b; }
+  h3   { color: #ff9966; }
   #submit { background: white;
             color: #ff6699;
             font-size:18px;
@@ -18,9 +18,8 @@
           }
 </style>
 
-<h2>Hi <%= @game.player.name %>!</h2>
-<h2>Let's play </h2>
-<h2>Rock, Paper, Scissors!</h2>
+<h1>Hi <%= @game.player.name %>!</h1>
+<h2>Let's play! </h2>
 
 <form action="/result" name="choice" method="post">
   <input id="submit" type="submit" name="choice" value="Rock">
