@@ -11,10 +11,23 @@ I would like to register my name before playing an online game
 >Visit index page
 >See enter name option
 
+#### USER STORY 1 DONE
+
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
-- play rock paper scissors
+- play rock paper scissors  
+
+#### USER STORY 2 DONE
+
+Refactoring:
+ 1. Move all of the instance variables into the Game Model instead.
+   a. player 1 name - DONE
+   b. store player 1 move - DONE
+   c. store computer /player 2 move - Done
+   d. put victory message into game - Done.
+
+
 
 ## Bonus level 1: Multiplayer
 

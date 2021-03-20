@@ -1,8 +1,8 @@
 
-<h2>Player 1: <%= @player_1_name %> </h2>
+<h2>Player 1: <%= @game.player_1_name %> </h2>
 
-<h2>You chose <%= @move %>!</h2>
+<h2>You chose <%= @game.player_1_move %>!</h2>
 
-<h2>Computer chose <%= @computer_move %>!</h2>
+<h2>Computer chose <%= @game.player_2_move %>!</h2>
 
-<h1><%= @game_message %></h1>
+<h1><%= @game.round_result %></h1>
