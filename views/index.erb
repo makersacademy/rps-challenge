@@ -1,8 +1,16 @@
-<h2>Select your opponent:</h2>
+<h3>Leave player 2 blank to play against the computer</h3>
 
-<form action="/vscomputer" method="get">
-<input type="submit" value="Computer">
+<form action="/names" method="post">
+  <p>Enter player names:</p>
+  <label for="player1">Player one name:</label>
+  <input type="text" name="player1"><br>
+  <label for="player2">Player two name:</label>
+  <input type="text" name="player2">
+  <p>Please select game type:</p>
+  <input type="radio" id="type" name="type" value="3">
+  <label for="type1">Rock Paper Scissors</label><br>
+  <input type="radio" id="type" name="type" value="5">
+  <label for="type2">Rock Paper Scissors Lizard Spock</label><br>
+  <input type="submit" value="Submit">
 </form>
-<form action="/vshuman" method="get">
-<input type="submit" value="Human">
-</form>
+<br>
