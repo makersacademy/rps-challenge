@@ -12,8 +12,16 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.new_game(params[:player1], params[:player2], 3)
-    erb :play  
+    @game = Game.new_game(params[:player1], params[:player2], params[:weapons])
+    if params[:weapons].to_i == 5
+      @gamemode = 
+    end
+    redirect '/play'
+  end
+
+  get '/play' do
+
+    erb :play
   end
 
   run! if app_file == $0

@@ -2,7 +2,7 @@ require './lib/player'
 
 class Game 
 
-  def self.new_game(player1_name, player2_name, weapons)
+  def self.new_game(player1_name, player2_name = "computer", weapons)
     @game = Game.new(player1_name, player2_name, weapons)
   end
 
@@ -10,12 +10,12 @@ class Game
     @game
   end
 
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :weapons
 
-  def initialize(player1_name, player2_name = "computer", weapons = 3)
+  def initialize(player1_name, player2_name, weapons)
     @player1 = Player.new(player1_name)
     @player2 = Player.new(player2_name)
-    @weapons = weapons
+    @weapons = weapons.to_i
   end
 
   def match(player1move, player2move)
