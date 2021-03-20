@@ -1,0 +1,18 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+h1 { 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  text-decoration: darkgray;
+}
+
+.image:hover {
+  animation: rotation 2s infinite linear;
+}
