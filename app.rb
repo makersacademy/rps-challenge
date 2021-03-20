@@ -20,7 +20,18 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/move' do
+    @game.get_move(params[:moves])
+    if @game.current_player == @game.player2
+      redirect '/play'
+    else
+      redirect '/result'
+    end
+  end
+
+  get '/result' do
+    erb :result
+  end
+
   run! if app_file == $0
 end
-
-# need tests for all the shiz inside index and stuff now

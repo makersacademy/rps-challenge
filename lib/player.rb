@@ -15,5 +15,3 @@ class Player
     @move = move
   end
 end
-
-# add computer user stuff, if computer then this etc

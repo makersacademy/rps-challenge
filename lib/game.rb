@@ -11,7 +11,7 @@ class Game
     @game
   end
 
-  attr_reader :player1, :player2, :weapons
+  attr_reader :player1, :player2, :weapons, :current_player
 
   def initialize(player1_name, player2_name, weapons)
     @player1 = Player.new(player1_name)
@@ -21,6 +21,16 @@ class Game
       @player2 = Player.new(player2_name)
     end
     @weapons = weapons.to_i
+    @current_player = @player1
+  end
+
+  def get_move(move)
+    @current_player.next_move(move)
+    whos_turn
+  end
+
+  def vs_computer? 
+    @player2.is_a? Computer
   end
 
   def match(player1move, player2move)
@@ -32,6 +42,16 @@ class Game
       [player1move, player2move].min
     else
       [player1move, player2move].max
+    end
+  end
+
+  private
+
+  def whos_turn
+    if @current_player == @player1
+      @current_player = @player2
+    else
+      @current_player = @player1
     end
   end
 end
