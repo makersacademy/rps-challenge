@@ -1,13 +1,7 @@
-<%= @game.player.name %>
+<h1>"Welcome <%= @game.player.name %>! Let's play Rock, Paper, Scissors!"</h1>
 
-<form action="/result" method="post">
-  <input type="submit" value="Rock">
-</form>
-
-<form action="/result" method="post">
-  <input type="submit" value="Paper">
-</form>
-
-<form action="/result" method="post">
-  <input type="submit" value="Scissors">
+<form action="/result" name="choice" method="post">
+  <input type="submit" name="choice" value="Rock">
+  <input type="submit" name="choice" value="Paper">
+  <input type="submit" name="choice" value="Scissors">
 </form>
