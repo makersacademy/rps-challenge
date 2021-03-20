@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -8,12 +9,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    $player = params[:player_name]
+    $player = Player.new(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player = $player
+    @player = $player.player_name
     erb :play
   end
 
