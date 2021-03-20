@@ -2,12 +2,12 @@ class Game
   RPS_MOVES = ['rock', 'paper', 'scissors']
   WIN_MATRIX = { 'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper' }
 
-  attr_reader :counter, :player_1_name, :player_2_name, :round_result, :two_players
+  attr_reader :round_number, :player_1_name, :player_2_name, :round_result, :two_players
   attr_accessor :player_1_move, :player_2_move
 
   def initialize
     @moves = RPS_MOVES
-    @counter = 0
+    @round_number = 1
   end
 
   def number_players(number)
@@ -25,8 +25,10 @@ class Game
     @round_result = win_lose(@player_1_move, @player_2_move)
   end
 
-  def counter_up
-    @counter += 1
+  def reset_round
+    @player_1_move = nil
+    @player_2_move = nil
+    @round_number += 1
   end
 
   private
@@ -48,8 +50,8 @@ class Game
   end
 end
 
-# test = Game.new
-# srand 3
+test = Game.new
+puts test.reset_round
 #
 # 10.times {
 # puts test.computer_move

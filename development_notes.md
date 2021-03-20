@@ -42,10 +42,11 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
   Optional extras:
    - new round button
-   - round statistics
-   - history?   
+   - round statistics  
    - add an icon
    - css styling
+   - refactor with partials
+   - guard against no name being entered
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 

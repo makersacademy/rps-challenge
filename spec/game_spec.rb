@@ -35,6 +35,15 @@ describe Game do
     end
   end
 
+  describe '#reset_round' do
+    it 'updates the round number and sets some variables to nil' do
+      test_game.number_players('Two Players')
+      test_game.setup('Jack', 'Pam')
+      test_game.player_1_move = 'scissors'
+      test_game.player_2_move = 'rock'
+      expect(test_game.reset_round).to eq 2
+    end
+  end
   # redundant tests, but useful to show private methods work
 
   describe "#computer_move" do

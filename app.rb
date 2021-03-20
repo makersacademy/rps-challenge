@@ -52,4 +52,10 @@ class GameRPS < Sinatra::Base
     @game.play_round
     erb :round_end
   end
+
+  post '/new_round' do
+    @game.reset_round
+    redirect '/round_start' if params[:new_round] == "Play again!"
+    redirect '/' if params[:new_round] == "New Players"
+  end
 end

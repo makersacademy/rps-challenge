@@ -6,3 +6,8 @@
 <h2><%= @game.player_2_name %>  chose <%= @game.player_2_move %>!</h2>
 
 <h1><%= @game.round_result %></h1>
+
+<form action="/new_round" method="post">
+  <input type="submit" name="new_round" value="Play again!">
+  <input type="submit" name="new_round" value="New Players">
+</form>
