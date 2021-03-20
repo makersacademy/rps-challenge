@@ -1,0 +1,14 @@
+
+<h2>Player 1: <%= @player_1_name %> </h2>
+
+<h2>Player 1: Choose your move!</h2>
+
+<form action="/selection" method="post">
+  <input type="radio" id="rock" name="move" value="rock">
+  <label for="male">Rock</label><br>
+  <input type="radio" id="paper" name="move" value="paper">
+  <label for="female">Paper</label><br>
+  <input type="radio" id="scissors" name="move" value="scissors">
+  <label for="other">Scissors</label>
+  <input type="submit" value="Play!">
+</form>
