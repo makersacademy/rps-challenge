@@ -26,17 +26,29 @@ class RockPaperScissors < Sinatra::Base
 
   post '/result' do
     if params[:choice] == 'Rock'
-        $player_choice = "Rock"
+      $player_choice = "Rock"
     elsif params[:choice] == 'Paper'
-        $player_choice = "Paper"
+      $player_choice = "Paper"
     elsif params[:choice] == 'Scissors'
       $player_choice = "Scissors"
     end
+    @game = $game
+    @game.computer_choice
+    $computer_choice = @game.computer
+    p "-----R1"
+    p $computer_choice
+    p @game.computer
+    p "-----R1"
     redirect '/result'
   end
 
   get '/result' do
     @player_choice = $player_choice
+    @computer_choice = $computer_choice
+    p "-----R2"
+    p $computer_choice
+    p @computer_choice
+    p "-----R"
     erb :result
   end
 end

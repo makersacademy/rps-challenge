@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 describe RockPaperScissors do
   feature 'the homepage' do
     scenario 'the hompage has the title rock paper, scissors' do
@@ -43,22 +44,34 @@ describe RockPaperScissors do
   end
 
   feature 'computer play confirmation message' do
-    scenario 'the player receives confirmation of computers choice' do
-    sign_in_and_play
-    click_button 'Scissors'
-    expect(page).to have_content "Computer played Rock!"
+    scenario 'the player receives confirmation of computers choice of rock' do
+      #allow(Game).to receive(:new) do |player|
+      #  double('Game', player: player, computer: "Rock", computer_choice: nil)
+      #end
+      allow(Game).to receive(:random).and_return('Rock')
+      sign_in_and_play
+      click_button 'Scissors'
+      expect(page).not_to have_content "Computer played Paper!"
+      expect(page).not_to have_content "Computer played Scissors!"
+      expect(page).to have_content "Computer played Rock!"
     end
 
-    scenario 'the player receives confirmation of computers choice' do
-    sign_in_and_play
-    click_button 'Scissors'
-    expect(page).to have_content "Computer played Paper!"
+    scenario 'the player receives confirmation of computers choice of paper' do
+      allow(Game).to receive(:random).and_return('Paper')
+      sign_in_and_play
+      click_button 'Scissors'
+      expect(page).not_to have_content "Computer played Rock!"
+      expect(page).not_to have_content "Computer played Scissors!"
+      expect(page).to have_content "Computer played Paper!"
     end
 
-    scenario 'the player receives confirmation of computers choice' do
-    sign_in_and_play
-    click_button 'Scissors'
-    expect(page).to have_content "Computer played Scissors!"
+    scenario 'the player receives confirmation of computers choice of scissors' do
+      allow(Game).to receive(:random).and_return('Scissors')
+      sign_in_and_play
+      click_button 'Scissors'
+      expect(page).not_to have_content "Computer played Rock!"
+      expect(page).not_to have_content "Computer played Paper!"
+      expect(page).to have_content "Computer played Scissors!"
     end
   end
 
