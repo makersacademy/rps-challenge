@@ -29,5 +29,19 @@ describe RockPaperScissors do
       player2_sign_in
       expect(page).to have_text "Bart, choose"
     end
+    it 'Explains why one thing wins over another' do
+      player2_sign_in
+      select 'Rock', from: 'choose_turn'
+      select 'Scissors', from: 'choose_turn2'
+      click_on 'submit'
+      expect(page).to have_text "Rock blunts Scissors!"
+    end
+    it 'Says that great minds think alike if both turns are equal' do
+      player2_sign_in
+      select 'Rock', from: 'choose_turn'
+      select 'Rock', from: 'choose_turn2'
+      click_on 'submit'
+      expect(page).to have_text "Great minds think alike!"
+    end
   end
 end

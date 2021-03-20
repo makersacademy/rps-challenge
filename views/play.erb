@@ -2,11 +2,12 @@
 <head>
   <link rel="stylesheet" type="text/css" href="../style.css">
 <head>
-<%=Game.stored_game.player1.name%>
+
 <% if Game.stored_game.player1.turn !=nil %>
-, you chose <%=Game.stored_game.player1.turn%><p>
+<%=Game.stored_game.player1.name%>, you chose <%=Game.stored_game.player1.turn%><p>
 <%=Game.stored_game.player2.name%> chose <%=Game.stored_game.player2.turn%><p>
-The winner was <%=Game.stored_game.winner%>
+The winner was <%=Game.stored_game.winner%><br>
+<%=Game.stored_game.explanation%>
 <%end%>
 <form action='/choose' method="post">
   <label for="turn"><%=Game.stored_game.player1.name%>, choose from Rock, Paper, Scissors:</label>
@@ -16,7 +17,7 @@ The winner was <%=Game.stored_game.winner%>
     <option value="Scissors">Scissors</option>
   </select>
 
-  <% if Game.stored_game.type == "real" %>
+  <% if Game.stored_game.opponent == "real" %>
   <p>
   <label for="turn2"><%=Game.stored_game.player2.name%>, choose from Rock, Paper, Scissors:</label>
   <select id="choose_turn2" name="choose_turn2">

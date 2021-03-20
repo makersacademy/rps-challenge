@@ -6,12 +6,17 @@
 <img src="https://pxt.azureedge.net/blob/68f66c3ddc3acfc4c53157abf92eace202d46db2/static/courses/csintro/conditionals/rock-paper-scissors-items.png">
 <form action='/get-names' method="post">
   <label for="player1">Player 1:</label>
-    <input type="text" id="player1" name="player1">
+    <input type="text" id="player1" name="player1"><p>
   <label for="choose_opponent">Would you like to play against a real opponent, or a virtual one?</label>
     <select id="choose_opponent" name="choose_opponent">
       <option value="virtual">Virtual</option>
       <option value="real">Real</option>
-    </select>
+    </select><p>
+  <label for="game_type">Would you like to play with the normal rules, or the special rules?</label>
+    <select id="game_type" name="game_type">
+      <option value="normal">Normal</option>
+      <option value="special">Special</option>
+    </select><p>
   <button name="submit" type="submit">Let's Go!</button>
 </form>
 </body>
