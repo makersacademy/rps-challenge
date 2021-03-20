@@ -22,11 +22,12 @@ class RPS < Sinatra::Base
 
   post '/move' do
     @game.get_move(params[:moves])
-    if @game.current_player == @game.player2
-      redirect '/play'
-    else
+    if @game.vs_computer?
       redirect '/result'
+    elsif @game.current_player == @game.player2
+      redirect '/play'
     end
+    redirect '/result'
   end
 
   get '/result' do

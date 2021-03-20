@@ -27,3 +27,27 @@ def enter_names_rpsls_computer
   choose('rpsls')
   click_button 'Submit'
 end
+
+def two_player_moves_rps
+  select('Scissors', :from => 'moves')
+  click_button 'Submit'
+  select('Rock', :from => 'moves')
+  click_button 'Submit'
+end
+
+def two_player_moves_rpsls
+  select('Spock', :from => 'moves')
+  click_button 'Submit'
+  select('Lizard', :from => 'moves')
+  click_button 'Submit'
+end
+
+def single_move_rps
+  select('Scissors', :from => 'moves')
+  click_button 'Submit'
+end
+
+def single_move_rpsls
+  select('Spock', :from => 'moves')
+  click_button 'Submit'
+end

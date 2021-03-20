@@ -25,27 +25,50 @@ class Game
   end
 
   def get_move(move)
-    @current_player.next_move(move)
-    whos_turn
+    @current_player.next_move(move.to_i)
+    if vs_computer?
+      player2.next_move
+    else
+      whos_turn
+    end
+  end
+
+  def get_weapon(index)
+    weapon_list = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
+    weapon_list[index - 1]
   end
 
   def vs_computer? 
     @player2.is_a? Computer
   end
 
-  def match(player1move, player2move)
-    if player1move == player2move 
-      return true
-    end
-
-    if player2move.odd? && player1move.odd? || player1move.even? && player2move.even?
-      [player1move, player2move].min
+  def match
+    if draw?
+      result = "It's a Draw!"
     else
-      [player1move, player2move].max
+      settle.wins
+      result = "#{settle.name} wins!"
     end
+    return result
   end
 
   private
+
+  def settle
+    if odds_or_evens?
+      [player1.move, player2.move].min == player1.move ? @player1 : @player2
+    else
+      [player1.move, player2.move].max == player1.move ? @player1 : @player2
+    end
+  end
+
+  def odds_or_evens?
+    player2.move.odd? && player1.move.odd? || player1.move.even? && player2.move.even?
+  end
+
+  def draw?
+    player1.move == player2.move
+  end
 
   def whos_turn
     if @current_player == @player1

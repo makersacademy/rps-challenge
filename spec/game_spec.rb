@@ -12,14 +12,26 @@ describe Game do
     let(:rpsls) { Game.new("Gordon", "Caroline", 5) }    
     let(:rps) { Game.new("Gordon", "Caroline", 3) } 
 
-    it "determines the winner in a game of Rock Paper Scissors " do
-      expect(rps.match(1, 2)).to eq(2)
+    context "for rps" do
+      it "determines the winner in a game of Rock Paper Scissors " do
+        rps.get_move(1)
+        rps.get_move(2)
+        expect { rps.match }.to change { rps.player2.score }.by(1)
+      end
+
+      it "returns true if the result of a game of rock paper scissors is a draw" do
+        rps.get_move(2)
+        rps.get_move(2)
+        expect(rps.match).to eq("It's a Draw!")
+      end
     end
-    it "returns true if the result of a game of rock paper scissors is a draw" do
-      expect(rps.match(2, 2)).to eq(true)
-    end
-    it "determines the winner in a game of Rock Paper Scissors Lizard Spock" do
-      expect(rpsls.match(2, 4)).to eq(2)
+
+    context "for rpsls" do
+      it "determines the winner in a game of Rock Paper Scissors Lizard Spock" do
+        rpsls.get_move(2)
+        rpsls.get_move(4)
+        expect { rpsls.match }.to change { rpsls.player1.score }.by(1)
+      end 
     end
   end
 end
