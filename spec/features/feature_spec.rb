@@ -15,11 +15,23 @@ describe RockPaperScissors do
     end
   end
 
-  feature 'player can select rock' do
+  feature 'player confirmation message' do
     scenario 'the player can select a button called rock and receive a confirmation' do
       sign_in_and_play
       click_button 'Rock'
       expect(page).to have_content "You played Rock!"
+    end
+
+    scenario 'the player can select a button called rock and receive a confirmation' do
+      sign_in_and_play
+      click_button 'Paper'
+      expect(page).to have_content "You played Paper!"
+    end
+
+    scenario 'the player can select a button called rock and receive a confirmation' do
+      sign_in_and_play
+      click_button 'Scissors'
+      expect(page).to have_content "You played Scissors!"
     end
   end
 
