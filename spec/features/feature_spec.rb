@@ -35,4 +35,23 @@ describe RockPaperScissors do
     end
   end
 
+  feature 'computer play confirmation message' do
+    scenario 'the player receives confirmation of computers choice' do
+    sign_in_and_play
+    click_button 'Scissors'
+    expect(page).to have_content "Computer played Rock!"
+    end
+
+    scenario 'the player receives confirmation of computers choice' do
+    sign_in_and_play
+    click_button 'Scissors'
+    expect(page).to have_content "Computer played Paper!"
+    end
+
+    scenario 'the player receives confirmation of computers choice' do
+    sign_in_and_play
+    click_button 'Scissors'
+    expect(page).to have_content "Computer played Scissors!"
+    end
+  end
 end
