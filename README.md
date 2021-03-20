@@ -13,7 +13,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors/lizard/spock
 ```
 
-####Functionality:
+#### Functionality:
 
 [x] the player can enter their name before the game  
 [x] the player will be presented the choices (rock, paper, scissors, lizard and spock)  
@@ -22,7 +22,8 @@ I would like to be able to play rock/paper/scissors/lizard/spock
 [x] the player will know if they have won or lost  
 
 
-####Functionality not added:
+#### Functionality not added:  
+
 [ ] the game is not a two player (the player currently plays against the computer)
 
 
@@ -36,6 +37,5 @@ I would like to be able to play rock/paper/scissors/lizard/spock
 - Spock beats Scissors and Rock
 
 ```
-
 To test the webapp locally:
 type rackup -p 4567 in your command line and visit localhost:4567
