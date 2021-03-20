@@ -55,15 +55,27 @@ class Game
   private
 
   def settle
-    if odds_or_evens?
-      [player1.move, player2.move].min == player1.move ? @player1 : @player2
+    if odds? || evens?
+      moves_min 
     else
-      [player1.move, player2.move].max == player1.move ? @player1 : @player2
+      moves_max
     end
   end
 
-  def odds_or_evens?
-    player2.move.odd? && player1.move.odd? || player1.move.even? && player2.move.even?
+  def evens?
+    player1.move.even? && player2.move.even?
+  end
+
+  def odds?
+    player2.move.odd? && player1.move.odd?
+  end
+
+  def moves_min
+    [player1.move, player2.move].min == player1.move ? @player1 : @player2
+  end
+
+  def moves_max
+    [player1.move, player2.move].max == player1.move ? @player1 : @player2
   end
 
   def draw?
