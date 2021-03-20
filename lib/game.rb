@@ -1,9 +1,21 @@
+require './lib/player'
+
 class Game 
 
-  def initialize(weapons = 3)
+  def self.new_game(player1_name, player2_name, weapons)
+    @game = Game.new(player1_name, player2_name, weapons)
+  end
+
+  def self.current_game
+    @game
+  end
+
+  attr_reader :player1, :player2
+
+  def initialize(player1_name, player2_name = "computer", weapons = 3)
+    @player1 = Player.new(player1_name)
+    @player2 = Player.new(player2_name)
     @weapons = weapons
-    @player1move = 0 
-    @player2move = 0
   end
 
   def match(player1move, player2move)
