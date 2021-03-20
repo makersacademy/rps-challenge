@@ -1,8 +1,9 @@
 require './lib/player'
+require './lib/computer'
 
 class Game 
 
-  def self.new_game(player1_name, player2_name = "computer", weapons)
+  def self.new_game(player1_name, player2_name, weapons)
     @game = Game.new(player1_name, player2_name, weapons)
   end
 
@@ -14,7 +15,11 @@ class Game
 
   def initialize(player1_name, player2_name, weapons)
     @player1 = Player.new(player1_name)
-    @player2 = Player.new(player2_name)
+    if player2_name == ""
+      @player2 = Computer.new("Computer")
+    else
+      @player2 = Player.new(player2_name)
+    end
     @weapons = weapons.to_i
   end
 
