@@ -1,3 +1,3 @@
-require_relative './lib/app'
+require_relative './app'
 
 run RockPaperScissors
