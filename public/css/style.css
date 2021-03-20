@@ -1,0 +1,16 @@
+body {
+  text-align: center;
+  background-color: #e4d1d1;
+}
+
+.layout {
+  display: grid;
+  padding: 20%;
+  grid-row-gap: 2em;
+}
+
+.division {
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+  grid-row-gap: 2em;
+}

@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Rock Paper Scissors</title>
+  </head>
+
+  <body>
+    <div class="layout">
+      <div><h2><%= @game.result %></h2></div>
+      <div class="division">
+        <div><%= @game.player1.name %></div>
+        <div></div>
+        <div><%= @game.player2.name %></div>
+        <div><img src=<%= @player1_choice_img %> alt=<%= @game.player1.name %> width="60" height="70"></div>
+        <div>VS</div>
+        <div><img src=<%= @player2_choice_img %> alt=<%= @game.player2.name %> width="60" height="70"></div>
+      </div>
+      <div>
+        <form action="/play">
+          <input type="submit" value="Back">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
