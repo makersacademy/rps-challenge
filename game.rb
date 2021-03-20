@@ -27,21 +27,43 @@ class Game
   def winner
     if @player1.turn == "Rock"
       case @player2.turn
-      when "Rock" then @winner = "none"
+      when "Rock" then @winner = "Nobody won - TIE"
       when "Paper" then @winner = @player2.name
       when "Scissors" then @winner = @player1.name
+      when "Spock" then @winner = @player2.name
+      when "Lizard" then @winner = @player1.name
       end
     elsif @player1.turn == "Paper"
       case @player2.turn
       when "Rock" then @winner = @player1.name
-      when "Paper" then @winner = "none"
+      when "Paper" then @winner = "Nobody won - TIE"
       when "Scissors" then @winner = @player2.name
+      when "Spock" then @winner = @player1.name
+      when "Lizard" then @winner = @player2.name
       end
     elsif @player1.turn == "Scissors"
       case @player2.turn
       when "Rock" then @winner = @player2.name
       when "Paper" then @winner = @player1.name
-      when "Scissors" then @winner = "none"
+      when "Scissors" then @winner = "Nobody won - TIE"
+      when "Spock" then @winner = @player2.name
+      when "Lizard" then @winner = @player1.name
+      end
+    elsif @player1.turn == "Spock"
+      case @player2.turn
+      when "Rock" then @winner = @player1.name
+      when "Paper" then @winner = @player2.name
+      when "Scissors" then @winner = @player1.name
+      when "Spock" then @winner = "Nobody won - TIE"
+      when "Lizard" then @winner = @player2.name
+      end
+    elsif @player1.turn == "Lizard"
+      case @player2.turn
+      when "Rock" then @winner = @player2.name
+      when "Paper" then @winner = @player1.name
+      when "Scissors" then @winner = @player2.name
+      when "Spock" then @winner = @player1.name
+      when "Lizard" then @winner = "Nobody won - TIE"
       end
     end
   end
