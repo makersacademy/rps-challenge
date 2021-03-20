@@ -13,16 +13,16 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors/lizard/spock
 ```
 
-Functionality:
+####Functionality:
 
-[x] the player can enter their name before the game
-[x] the player will be presented the choices (rock, paper, scissors, lizard and spock)
-[x] the player can choose one option
-[x] the game (computer) will choose a random option
-[x] the player will know if they have won or lost
+[x] the player can enter their name before the game  
+[x] the player will be presented the choices (rock, paper, scissors, lizard and spock)  
+[x] the player can choose one option  
+[x] the game (computer) will choose a random option  
+[x] the player will know if they have won or lost  
 
 
-Functionality not added:
+####Functionality not added:
 [ ] the game is not a two player (the player currently plays against the computer)
 
 
