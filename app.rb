@@ -22,21 +22,12 @@ class App < Sinatra::Base
 
   post '/selection' do
     @game.update_selection(params[:choices])
+    @game.computer
     redirect '/end'
   end
 
   get '/end' do
-    erb :end
+    erb @game.evaluate_game
   end
-  
+
 end
-
-
-# def result
-#   RULES[player_choice][computer.choice()] ? :win : :lose
-# end
-
-# get '/play' do
-#   @game.player1_choice = params[:choice]
-#   erb @game.result
-# end
