@@ -2,7 +2,7 @@ class Game
   RPS_MOVES = ['rock', 'paper', 'scissors']
   WIN_MATRIX = { 'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper' }
 
-  attr_reader :counter, :player_1_name, :player_2_name, :round_result
+  attr_reader :counter, :player_1_name, :player_2_name, :round_result, :two_players
   attr_accessor :player_1_move, :player_2_move
 
   def initialize
@@ -10,13 +10,18 @@ class Game
     @counter = 0
   end
 
-  def setup(player_1_name, player_2_name = 'K-2SO')
+  def number_players(number)
+    return @two_players = true if number == "Two Players"
+    @two_players = false
+  end
+
+  def setup(player_1_name, player_2_name)
     @player_1_name = player_1_name
     @player_2_name = player_2_name
   end
 
   def play_round
-    @player_2_move = computer_move
+    @player_2_move = computer_move if !two_players
     @round_result = win_lose(@player_1_move, @player_2_move)
   end
 
@@ -30,13 +35,15 @@ class Game
     @moves.sample
   end
 
-  def win_lose(player_move, computer_move)
-    if player_move == computer_move
-      'You DRAW...fight again!'
-    elsif WIN_MATRIX[player_move] == computer_move
-      "You WIN!!"
+  def win_lose(player_1_move, player_2_move)
+    if player_1_move == player_2_move
+      'Its a DRAW...fight again!'
+    elsif WIN_MATRIX[player_1_move] == player_2_move
+      return "You WIN!!" if !@two_players
+      "#{player_1_name} is the WINNER!"
     else
-      "You LOSE...:("
+      return "You LOSE...:(" if !@two_players
+      "#{player_2_name} is the WINNER!"
     end
   end
 end

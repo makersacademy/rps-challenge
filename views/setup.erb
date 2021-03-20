@@ -1,0 +1,35 @@
+<h1>Welcome to the THUNDERDOME</h1>
+
+<h2>Enter your information</h2>
+
+<% if !@game.two_players %>
+  <form action="/startgame" method="post">
+    <label>Player 1</label>
+    <br>
+    <label for="player_1_name">Name: </label>
+    <input type="text" id="player_1_name" name="player_1_name">
+    <br>
+    <br>
+    <label>Player 2</label>
+    <br>
+    <label for="player_2_name">K-2SO</label>
+    <br>
+    <input type="submit" value="Start Game!">
+  </form>
+
+<% elsif @game.two_players %>
+  <form action="/startgame" method="post">
+    <label>Player 1</label>
+    <br>
+    <label for="player_1_name">Name: </label>
+    <input type="text" id="player_1_name" name="player_1_name">
+    <br>
+    <label>Player 2</label>
+    <br>
+    <label for="player_2_name">Name: </label>
+    <input type="text" id="player_2_name" name="player_2_name">
+    <br>
+    <input type="submit" value="Start Game!">
+  </form>
+
+<% end %>

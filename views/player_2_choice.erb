@@ -3,12 +3,12 @@
 <h2>Player 2: <%= @game.player_2_name %> </h2>
 
 <% if @game.two_players %>
-  <h2><%= @game.player_2_name %> LOOK AWAY!</h2>
+  <h2><%= @game.player_1_name %> LOOK AWAY!</h2>
 <% end %>
 
-<h2><%= @game.player_1_name %> Choose your move!</h2>
+<h2><%= @game.player_2_name %> Choose your move!</h2>
 
-<form action="/player_1_move" method="post">
+<form action="/player_2_move" method="post">
   <input type="radio" id="rock" name="move" value="rock">
   <label for="male">Rock</label><br>
   <input type="radio" id="paper" name="move" value="paper">

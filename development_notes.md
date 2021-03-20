@@ -27,11 +27,25 @@ Refactoring:
    c. store computer /player 2 move - Done
    d. put victory message into game - Done.
 
+  2. Ran rubocop and fixed errors
 
 
 ## Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+
+  > will implement a selection screen to select 1 or 2 players
+  > new index screen needed
+  >
+
+  DONE!
+
+  Optional extras:
+   - new round button
+   - round statistics
+   - history?   
+   - add an icon
+   - css styling
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
