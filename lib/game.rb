@@ -24,16 +24,26 @@ class Game
   end
 
   def self.random
-    ["Rock", "Paper", "Scissors"].sample
+    ["Rock", "Paper", "Scissors", "Lizard", "Spock"].sample
   end
 
   def win_lose_draw(player, computer)
-    if (player == "Rock" && computer == "Scissors") || (player == "Paper" && computer == "Rock") || (player == "Scissors" && computer == "Paper")
-      "win"
-    elsif (player == "Rock" && computer == "Paper") || (player == "Paper" && computer == "Scissors") || (player == "Scissors" && computer == "Rock")
-      "lose"
-    elsif (player == "Rock" && computer == "Rock") || (player == "Paper" && computer == "Paper") || (player == "Scissors" && computer == "Scissors")
-      "draw"
-    end
+
+    rules = { "Rock" => { "Rock" => "draw" , "Paper" => "lose", "Scissors" => "win", "Lizard" => "win", "Spock" => "lose"},
+              "Paper" => { "Rock" => "win", "Paper" => "draw", "Scissors" => "lose", "Lizard" => "lose", "Spock" => "win"},
+              "Scissors" => { "Rock" => "lose", "Paper" => "win" , "Scissors" => "draw", "Lizard" => "win", "Spock" => "lose" },
+              "Lizard" => { "Rock" => "lose", "Paper" => "win", "Scissors" => "lose", "Lizard" => "draw", "Spock" => "win" },
+              "Spock" => { "Rock" => "win", "Paper" => "win", "Scissors" => "lose", "Lizard" => "lose", "Spock" => "draw" }
+            }
+
+    rules[player][computer]
+
+    # if (player == "Rock" && computer == "Scissors") || (player == "Paper" && computer == "Rock") || (player == "Scissors" && computer == "Paper")
+    #   "win"
+    # elsif (player == "Rock" && computer == "Paper") || (player == "Paper" && computer == "Scissors") || (player == "Scissors" && computer == "Rock")
+    #   "lose"
+    # elsif (player == "Rock" && computer == "Rock") || (player == "Paper" && computer == "Paper") || (player == "Scissors" && computer == "Scissors")
+    #   "draw"
+    # end
   end
 end

@@ -12,7 +12,7 @@ describe RockPaperScissors do
   feature 'player can enter a name' do
     scenario 'the player can see their name on the play page' do
       sign_in_and_play
-      expect(page).to have_content "Welcome Sneaky Racoon! Let's play Rock, Paper, Scissors!"
+      expect(page).to have_content "Hi Sneaky Racoon!\nLet's play\nRock, Paper, Scissors!"
     end
   end
 
@@ -22,6 +22,8 @@ describe RockPaperScissors do
       click_button 'Rock'
       expect(page).not_to have_content "You played Paper!"
       expect(page).not_to have_content "You played Scissors!"
+      expect(page).not_to have_content "You played Lizard!"
+      expect(page).not_to have_content "You played Spock!"
       expect(page).to have_content "You played Rock!"
 
     end
@@ -31,6 +33,8 @@ describe RockPaperScissors do
       click_button 'Paper'
       expect(page).not_to have_content "You played Rock!"
       expect(page).not_to have_content "You played Scissors!"
+      expect(page).not_to have_content "You played Lizard!"
+      expect(page).not_to have_content "You played Spock!"
       expect(page).to have_content "You played Paper!"
     end
 
@@ -39,9 +43,30 @@ describe RockPaperScissors do
       click_button 'Scissors'
       expect(page).not_to have_content "You played Rock!"
       expect(page).not_to have_content "You played Paper!"
+      expect(page).not_to have_content "You played Lizard!"
+      expect(page).not_to have_content "You played Spock!"
       expect(page).to have_content "You played Scissors!"
     end
+
+    scenario 'the player can select a button called lizard and receive a confirmation' do
+      sign_in_and_play
+      click_button 'Lizard'
+      expect(page).not_to have_content "You played Paper!"
+      expect(page).not_to have_content "You played Scissors!"
+      expect(page).not_to have_content "You played Rock!"
+      expect(page).not_to have_content "You played Spock!"
+      expect(page).to have_content "You played Lizard!"
+    end
+      scenario 'the player can select a button called spock and receive a confirmation' do
+        sign_in_and_play
+        click_button 'Spock'
+        expect(page).not_to have_content "You played Paper!"
+        expect(page).not_to have_content "You played Scissors!"
+        expect(page).not_to have_content "You played Rock!"
+        expect(page).not_to have_content "You played Lizard!"
+        expect(page).to have_content "You played Spock!"
   end
+end
 
   feature 'computer play confirmation message' do
     scenario 'the player receives confirmation of computers choice of rock' do
@@ -73,6 +98,28 @@ describe RockPaperScissors do
       expect(page).not_to have_content "Computer played Paper!"
       expect(page).to have_content "Computer played Scissors!"
     end
+
+    scenario 'the player receives confirmation of computers choice of lizard' do
+      allow(Game).to receive(:random).and_return('Lizard')
+      sign_in_and_play
+      click_button 'Scissors'
+      expect(page).not_to have_content "Computer played Rock!"
+      expect(page).not_to have_content "Computer played Scissors!"
+      expect(page).not_to have_content "Computer played Paper!"
+      expect(page).not_to have_content "Computer played Spock!"
+      expect(page).to have_content "Computer played Lizard!"
+    end
+
+    scenario 'the player receives confirmation of computers choice of spock' do
+      allow(Game).to receive(:random).and_return('Spock')
+      sign_in_and_play
+      click_button 'Scissors'
+      expect(page).not_to have_content "Computer played Rock!"
+      expect(page).not_to have_content "Computer played Scissors!"
+      expect(page).not_to have_content "Computer played Paper!"
+      expect(page).not_to have_content "Computer played Lizard!"
+      expect(page).to have_content "Computer played Spock!"
+    end
   end
 
   feature 'play next game' do
@@ -80,7 +127,7 @@ describe RockPaperScissors do
     sign_in_and_play
     click_button 'Scissors'
     click_button 'Next Game'
-    expect(page).to have_content "Welcome Sneaky Racoon! Let's play Rock, Paper, Scissors!"
+    expect(page).to have_content "Hi Sneaky Racoon!\nLet's play\nRock, Paper, Scissors!"
     end
   end
 

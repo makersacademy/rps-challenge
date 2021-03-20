@@ -1,9 +1,32 @@
+<style>
+  body { background-color: powderblue;
+         font-family: 'verdana';
+         text-align: center;
+         padding: 200px;
+       }
+  h2   { color: #ff9966; }
+  #submit { background: white;
+            color: #ff6699;
+            font-size:18px;
+            width: 100px;
+            height: 100px;
+            border: none;
+            border-radius: 50%;
+            margin: 20px
+          }
+</style>
+
+
 <% if @game.player_choice == "Rock" %>
 <h2>You played Rock!</h2>
 <% elsif @game.player_choice == "Paper" %>
 <h2>You played Paper!</h2>
 <% elsif @game.player_choice == "Scissors" %>
 <h2>You played Scissors!</h2>
+<% elsif @game.player_choice == "Lizard" %>
+<h2>You played Lizard!</h2>
+<% elsif @game.player_choice == "Spock" %>
+<h2>You played Spock!</h2>
 <% end %>
 
 <% if @game.computer_choice == "Rock" %>
@@ -12,6 +35,10 @@
 <h2>Computer played Paper!</h2>
 <% elsif @game.computer_choice == "Scissors" %>
 <h2>Computer played Scissors!</h2>
+<% elsif @game.computer_choice == "Lizard" %>
+<h2>Computer played Lizard!</h2>
+<% elsif @game.computer_choice == "Spock" %>
+<h2>Computer played Spock!</h2>
 <% end %>
 
 <% if @win_lose_draw == "win" %>
@@ -25,5 +52,5 @@
 
 
 <form action="/nextgame" method="post">
-  <input type="submit" value="Next Game">
+  <input id="submit" type="submit" value="Next Game">
 </form>
