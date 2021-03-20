@@ -6,13 +6,13 @@ img {
       margin-left: auto;
       margin-right: auto;}
 h2  {
-      font-family: Verdana;
-      font-size: 15px;
+      font-family: "Courier New", monospace;
+      font-size: 20px;
       text-align: center;}
 
-h1 {  font-family: Verdana;
+h1 {  font-family: "Courier New", monospace;
       font-size: 30px;
       text-align: center;}
-p {   font-family: Verdana;
+p {   font-family: "Courier New", monospace;
       font-size: 15px;
       text-align: center; }
