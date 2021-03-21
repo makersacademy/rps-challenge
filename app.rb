@@ -26,7 +26,12 @@ class Rps < Sinatra::Base
     $game.move(params[:move])
     @move = params[:move]
     @computer_move = $game.computer_move
+    @outcome = $game.determines_outcome
     erb(:game)
+  end
+
+  get '/game' do
+      @outcome = $game.determines_outcome
   end
 
 end

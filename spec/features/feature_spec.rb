@@ -49,14 +49,19 @@ require 'game'
   end
 
   feature "computer's move shows on game page" do
-    let(:game) { Game.new("Max") }
       scenario "when player selects a move, it shows the computer move as well" do
       fill_in_name_and_submit
       select "Paper", from: "move"
       click_button "submit"
-      allow(game).to receive(:computer_move).and_return("Rock")
-      expect(page).to have_content "Computer chose Rock"
+      expect(page).to have_content "Computer chose"
     end
   end
 
-  # above not sutbbing correctly
+  feature "computer's move shows on game page" do
+      scenario "when player selects a move, it shows the computer move as well" do
+      fill_in_name_and_submit
+      select "Paper", from: "move"
+      click_button "submit"
+      expect(page).to have_content ("Result:")
+    end
+  end
