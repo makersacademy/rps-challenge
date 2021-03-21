@@ -30,3 +30,13 @@ feature 'user' do
 	expect(page).to have_content "Scissors"
   end
 end
+
+feature 'opponent' do
+  scenario 'exists' do
+    visit '/'
+    fill_in "user", :with => "Will"
+    click_on "submit"
+    find_button('Rock').click
+    expect(page).to have_content "Opponent:"
+  end
+end
