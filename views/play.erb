@@ -1,0 +1,23 @@
+<html>
+<head>
+<style>
+body {background-color: lightblue;
+font-family: Helvetica, sans-serif;
+text-align: center}
+h1   {color: black;}
+p    {color: black;}
+</style>
+</head>
+
+
+<body>
+<h1>Let's play!</h1> 
+<h2>  <%= @player_1 %> vs. the computer </h2>
+<form action="/result" method="POST">
+<input type="submit" name="move" value="Rock"> <br> <br>
+<input type="submit" name="move" value="Scissors"><br> <br>
+<input type="submit" name="move" value="Paper"><br> <br>
+</form>
+</body>
+</html>
+  
