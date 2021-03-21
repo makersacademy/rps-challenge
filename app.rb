@@ -24,7 +24,7 @@ class GameRPS < Sinatra::Base
   end
 
   post '/startgame' do
-    p2 = (params[:player_2_name] == nil ? 'K-2SO': params[:player_2_name])
+    p2 = (params[:player_2_name].nil? ? 'K-2SO' : params[:player_2_name])
     @game.setup(params[:player_1_name], p2)
     redirect '/round_start'
   end
@@ -56,6 +56,10 @@ class GameRPS < Sinatra::Base
   post '/new_round' do
     @game.reset_round
     redirect '/round_start' if params[:new_round] == "Play again!"
-    redirect '/' if params[:new_round] == "New Players"
+    redirect '/victory_screen' if params[:new_round] == "New Players"
+  end
+
+  get '/victory_screen' do
+    erb :victory
   end
 end

@@ -8,6 +8,7 @@ feature 'second_round' do
   scenario 'after first round you can select new players' do
     win_scenario
     click_on 'New Players'
+    click_on 'New Game'
     expect(page).to have_content 'Welcome to the THUNDERDOME'
   end
 end

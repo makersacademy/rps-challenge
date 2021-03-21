@@ -11,3 +11,16 @@
   <input type="submit" name="new_round" value="Play again!">
   <input type="submit" name="new_round" value="New Players">
 </form>
+
+<table>
+  <tr>
+    <th><%= @game.player_1_name %></th>
+    <th>Draws</th>
+    <th><%= @game.player_2_name %></th>
+  </tr>
+  <tr>
+    <th><%= @game.display_score[@game.player_1_name] %></th>
+    <th><%= @game.display_score['Draws'] %></th>
+    <th><%= @game.display_score[@game.player_2_name] %></th>
+  </tr>
+</table>

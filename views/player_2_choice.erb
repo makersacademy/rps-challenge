@@ -1,3 +1,6 @@
+<h1>THE THUNDERDOME</h1>
+
+<h2>Round <%= @game.round_number %>! FIGHT!</h2>
 
 <h2>Player 1: <%= @game.player_1_name %> </h2>
 <h2>Player 2: <%= @game.player_2_name %> </h2>
@@ -10,10 +13,10 @@
 
 <form action="/player_2_move" method="post">
   <input type="radio" id="rock" name="move" value="rock">
-  <label for="male">Rock</label><br>
+  <label for="rock">Rock</label><br>
   <input type="radio" id="paper" name="move" value="paper">
-  <label for="female">Paper</label><br>
-  <input type="radio" id="scissors" name="move" value="scissors">
-  <label for="other">Scissors</label>
+  <label for="paper">Paper</label><br>
+  <input type="radio" id="scissors" name="move" value="scissors" required>
+  <label for="scissors">Scissors</label>
   <input type="submit" value="Play!">
 </form>

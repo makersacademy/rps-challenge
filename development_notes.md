@@ -40,13 +40,20 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
   DONE!
 
-  Optional extras:
-   - new round button
-   - round statistics  
-   - add an icon
-   - css styling
-   - refactor with partials
-   - guard against no name being entered
+Optional extras:
+- new round button - DONE
+- round statistics - DONE
+- victory screen - DONE
+- guard against no name being entered - DONE (use 'required' on the html field)
+- css styling
+- add an icon
+- refactor with partials
+- refactor the model game class
+
+write README.md
+implement travis ci
+write fake history
+
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 

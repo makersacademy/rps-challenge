@@ -13,10 +13,25 @@
 
 <form action="/player_1_move" method="post">
   <input type="radio" id="rock" name="move" value="rock">
-  <label for="male">Rock</label><br>
+  <label for="rock">Rock</label><br>
   <input type="radio" id="paper" name="move" value="paper">
-  <label for="female">Paper</label><br>
-  <input type="radio" id="scissors" name="move" value="scissors">
-  <label for="other">Scissors</label>
+  <label for="paper">Paper</label><br>
+  <input type="radio" id="scissors" name="move" value="scissors" required>
+  <label for="scissors">Scissors</label>
   <input type="submit" value="Play!">
 </form>
+
+<% if @game.round_number > 1 %>
+  <table>
+    <tr>
+      <th><%= @game.player_1_name %></th>
+      <th>Draws</th>
+      <th><%= @game.player_2_name %></th>
+    </tr>
+    <tr>
+      <th><%= @game.display_score[@game.player_1_name] %></th>
+      <th><%= @game.display_score['Draws'] %></th>
+      <th><%= @game.display_score[@game.player_2_name] %></th>
+    </tr>
+  </table>
+<% end %>
