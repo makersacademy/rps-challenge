@@ -2,7 +2,7 @@
     <body>
         <h1> The computer played <%= $game.computer %>. You win! </h1>
         <p> Play again! </p>
-        
+
         <div class='row'>
             <div class='column'>
                 <form action='/rock'  method='post' class='image'>
@@ -19,6 +19,18 @@
             <div class='column'>
                 <form action='/scissors'  method='post' class='image'>
                     <input type='image' src='scissors.png' width="50%" name='ATTACK' value='SCISSORS'>
+                </form>
+            </div>
+
+            <div class='column'>
+                <form action='/lizard' method='post' class='image'>
+                    <input type='image' src='lizard.png' width="50%" name='ATTACK' value='LIZARD'>
+                </form>
+            </div>
+
+            <div class='column'>
+                <form action='/spock' method='post' class='image'>
+                    <input type='image' src='spock.png' width="50%" name='ATTACK' value='SPOCK'>
                 </form>
             </div>
         </div>

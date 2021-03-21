@@ -63,7 +63,7 @@ input[type="submit" i] {
 
   .column {
     float: left;
-    width: 33.33%;
+    width: 19%;
   }
   
   .row:after {

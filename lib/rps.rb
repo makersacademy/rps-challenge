@@ -5,9 +5,9 @@ class Rps
   def user_play(user_input)
     @user_input = user_input
   end
-  
+
   def computer_play
-    @computer = ['ROCK', 'PAPER', 'SCISSORS'].sample
+    @computer = ['ROCK', 'PAPER', 'SCISSORS', 'LIZARD', 'SPOCK'].sample
   end 
 
   def play(user_input)
@@ -20,8 +20,15 @@ class Rps
 
   def user_win?
     @user_input == 'ROCK' && @computer == 'SCISSORS' ||
+    @user_input == 'ROCK' && @computer == 'LIZARD' ||
     @user_input == 'SCISSORS' && @computer == 'PAPER' ||
-    @user_input == 'PAPER' && @computer == 'ROCK'
+    @user_input == 'SCISSORS' && @computer == 'LIZARD' ||
+    @user_input == 'PAPER' && @computer == 'SPOCK' ||
+    @user_input == 'PAPER' && @computer == 'ROCK' || 
+    @user_input == 'LIZARD' && @computer == 'SPOCK' ||
+    @user_input == 'LIZARD' && @computer == 'PAPER' ||
+    @user_input == 'SPOCK' && @computer == 'ROCK' ||
+    @user_input == 'SPOCK' && @computer == 'SCISSORS'
   end
 
   private
