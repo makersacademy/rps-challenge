@@ -33,6 +33,18 @@ class Game
     end
   end
 
+  def winner
+    if @player1.score == @weapons
+      @player1
+    elsif @player2.score == @weapons
+      @player2
+    end
+  end
+
+  def gameover?
+    @player1.score == @weapons || @player2.score == @weapons
+  end
+
   def get_weapon(index)
     weapon_list = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
     weapon_list[index - 1]

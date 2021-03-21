@@ -1,10 +1,24 @@
 <h1><%=@game.player1.name%> vs. <%=@game.player2.name%></h1>
 
+
+
 <h1><%=@game.get_weapon(@game.player1.move)%> vs. <%=@game.get_weapon(@game.player2.move)%></h1>
 
-
 <h1><%=@game.match%></h1>
+
+<h2><%=@game.player1.name%>: <%=@game.player1.score%> <%=@game.player2.name%>: <%=@game.player2.score%></h2>
+
+<% if @game.gameover? %>
+
+<h1><%=@game.winner.name%> wins the game!
+<form action='/'>
+  <input type="submit" value="New Game">
+</form>
+
+<% else %>
 
 <form action='/play'>
   <input type="submit" value="Next round">
 </form>
+
+<% end %>
