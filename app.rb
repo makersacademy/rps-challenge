@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions 
@@ -9,7 +10,7 @@ class RockPaperScissors < Sinatra::Base
   end
  
   post '/names' do
-    $player = params[:player]
+    $player = Player.new(params[:player])
     erb(:play)
   end
 

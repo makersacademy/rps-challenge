@@ -1,20 +1,12 @@
-<h2> <%=$player%> chose: <%=$player_choice%> <h2>
+<h2> <%=$player.name%> chose: <%=$player_choice%> <h2>
 <h2> Computer chose: <%= $computer_choice =["Rock", "Paper", "Scissors"].sample %> <h2>
-<h1> <%= if $player_choice == $computer_choice 
-          "It's a draw!" 
-          elsif $player_choice == "Rock" && $computer_choice == "Paper"
-          "Computer Wins!" 
-          elsif $player_choice == "Rock" && $computer_choice == "Scissors"
-          "#{$player} Wins!" 
-          elsif $player_choice == "Paper" && $computer_choice == "Rock" 
-          "#{$player} Wins!" 
-          elsif $player_choice == "Paper" && $computer_choice == "Scissors"
-          "Computer Wins!"
-          elsif $player_choice == "Scissors" && $computer_choice == "Paper"
-          "#{$player} Wins!"
-          elsif $player_choice == "Scissors" && $computer_choice == "Rock"
-          "Computer Wins!"
-          end  %> <h1>
+<h1> <%= $player.play($player_choice, $computer_choice)  %> 
+<% if $player.player_wins == true %> 
+<h2> <%=$player.name%> Wins! <h2>
+<% end%> 
+<% if $player.player_wins == false %> 
+<h2> <%=$player.name %> Lost!  <h2>
+<% end%> 
 
     <div>
     <img src= 'https://www.ads.org.uk/wp-content/uploads/thumb_6917_rockpaperscissors-480.jpg'>
