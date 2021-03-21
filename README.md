@@ -12,4 +12,4 @@ Functionality:
 
 The user can put their name in, and will see their name when they start playing.
 
-The user has three choises: rock, paper, and scissors. These choises are presented as images. When pressing the image, the computer chooses a random option, and the winner is declared. The player can now select a new option and play again. 
+The user has five choises: rock, paper, scissors, lizard, and spock. These choises are presented as images. When pressing an image, the computer chooses a random option, and the winner is declared. The player can now select a new option and play again. 
