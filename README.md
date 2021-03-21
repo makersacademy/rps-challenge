@@ -19,11 +19,11 @@
 
 * Select the game type you want to play, traditional Rock-Paper-Scissors or 5 weapon Rock-Paper-Scissors-Lizard-Spock.
 
+
+<img align="left" width="300" src="./docs/rps-no-css.png">
 ## Planning / Execution
 
 * I tried to play from the outset with the stretch goals in mind, so I made sure that the logic for the RPS resolver would be able to handle any number of weapons that the game was set to. It can handle any number of odd number weapons.
-
-<img align="left" width="330" src="./docs/rps-no-css.png">
 
 * I followed the [drop-in-CSS tutorial](https://github.com/webdevjeffus/css-for-sinatra) for [Sinatra](https://github.com/sinatra/sinatra) from [@webdevfejjus](https://github.com/webdevjeffus) and added my own `application.css` with code of my own to complete the styling.
 
@@ -31,7 +31,7 @@
 
 ## Gems
 
-* Nothing too special here, [Sinatra](https://github.com/sinatra/sinatra) web app using [Capybara](https://github.com/teamcapybara/capybara) for testing.
+* Nothing too special here, [Sinatra](https://github.com/sinatra/sinatra) web app using [Capybara](https://github.com/teamcapybara/capybara) for testing, and then the usual suspects, Rake, Simplecov, Robucop and RSpec.
 
 ## Reflection
 
