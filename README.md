@@ -23,9 +23,11 @@
 
 * I tried to play from the outset with the stretch goals in mind, so I made sure that the logic for the RPS resolver would be able to handle any number of weapons that the game was set to. It can handle any number of odd number weapons.
 
-<img align="left" width="430" src="./docs/rps-no-css.png">
+<img align="left" width="330" src="./docs/rps-no-css.png">
 
-* I followed the drop-in-CSS tutorial for [Sinatra](https://github.com/sinatra/sinatra) from [@webdevfejjus](https://github.com/webdevjeffus/css-for-sinatra) and added my own `application.css` with code of my own to complete the styling.
+* I followed the [drop-in-CSS tutorial](https://github.com/webdevjeffus/css-for-sinatra) for [Sinatra](https://github.com/sinatra/sinatra) from [@webdevfejjus](https://github.com/webdevjeffus) and added my own `application.css` with code of my own to complete the styling.
+
+* For me the CSS was really fun and I look forward to doing more in the future. I'll probably use the drop-in with some of my own tweaks to quickly style any other future web apps.
 
 ## Gems
 
