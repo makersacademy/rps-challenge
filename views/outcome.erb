@@ -1,0 +1,13 @@
+<h2><%= @game.player1.name %> played <%= @game.player1.move.capitalize %></h2>
+
+<h2><%= @game.player2.name %> played <%= @game.player2.move.capitalize %></h2>
+
+<p> ... </p>
+<p> ... </p>
+<p> ... </p>
+<p> ... </p>
+<% if @game.winner == nil %>
+<h1>It's a draw!</h1>
+<% else %>
+<h1><%= @game.winner.name %> wins!</h1>
+<% end %>

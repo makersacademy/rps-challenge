@@ -1,0 +1,14 @@
+<h1>Player 1 - <%= @game.player1.name %></h1>
+<h3>vs.</h3>
+<h1>Player 2 - <%= @game.player2.name %></h1>
+
+<h2>Choose your move wisely...</h2>
+<p>
+<form action="/outcome" method="post">
+  <input type="radio" name="player_move" id="rock" value="rock" required><label for="rock">Rock</label>
+  <input type="radio" name="player_move" id="paper" value="paper" required><label for="paper">Paper</label>
+  <input type="radio" name="player_move" id="scissors" value="scissors" required><label for="scissors">Scissors</label>
+  
+  <button type="submit" value="submit">Go!</button>
+</form>
+</p>
