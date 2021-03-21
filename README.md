@@ -1,3 +1,31 @@
+*As a marketeer*
+*So that I can see my name in lights*
+*I would like to register my name before playing an online game*
+---------------------------------------------------------------
+
+- Difficulty setting up rackup, consulting https://github.com/teamcapybara/capybara#setup definitely helped.
+
+-  '1) register name register user name
+     Failure/Error: expect(page).to have_content('Cadbury')
+       expected to find text "Cadbury" in "vs. player_2"'
+having an issue with this. This was due to a syntax error - session[:player_1_name] was the correct syntax not session alone.
+
+
+*As a marketeer*
+*So that I can enjoy myself away from the daily grind*
+*I would like to be able to play rock/paper/scissors*
+------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 # RPS Challenge
 
 Instructions
