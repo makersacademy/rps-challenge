@@ -35,11 +35,13 @@ describe Player do
 
       it 'can set move attribute randomly to paper' do
         srand(99)
+        computer.make_move
         expect(computer.move).to eq('paper')
       end
 
       it 'can set move attribute randomly to scissors' do
         srand(98)
+        computer.make_move
         expect(computer.move).to eq('scissors')
       end
     end
