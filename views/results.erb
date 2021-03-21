@@ -1,0 +1,24 @@
+<head>
+<style>
+body {background-color: lightblue;
+font-family: Helvetica, sans-serif;
+text-align: center}
+h1   {color: black;}
+p    {color: black;}
+</style>
+</head>
+
+<body>
+<h1> Results are in! </h1>
+<h2> <%= @game.player_1 %> played <%= @player_1_move %> </h2> <br><br>
+<h2> <%= @game.player_2 %> played <%= @player_2_move %> </h2> <br><br>
+<% if @result == nil %>
+<h2> It was a draw! </h2>
+<% else %>
+<h2> <%= @result %> won! </h2> 
+<% end %>
+
+<form action="/play-rps" method="GET">
+<input type="submit" value="Play again!"> <br> <br>
+</form>
+</body>

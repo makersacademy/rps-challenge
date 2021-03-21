@@ -1,85 +1,32 @@
 # RPS Challenge
 
-Instructions
--------
+To create a simple web app where a user can play 'Rock, Paper Scissors' with the computer.
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+My code works for a player (a user) and a computer generated player. 
+With more time I would like to the multiplayer functionality.
 
-Task
-----
+## Some remarks on the code:
 
-Knowing how to build web applications is getting us almost there as web developers!
+I would like to extract a player class from the game class (this would be useful for two players)
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+I would like to refactor method #play in the game class, it's too long.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+I think the controller could be 'skinnier'. 
+Specifically, I think line 28 ` @player_2_move = @game.computer` could be in the model layer? Not sure exactly.
 
-```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+I would also like to make the presentation nicer, I was just playing around with HTML at the end of a long weekend!
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+## Notes on my tests:
 
-Hints on functionality
+I am pretty sure that my test for the randomly generated computer move is vacuous and I would like some help with this if possible!
+This might be true of some other tests too
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+When running Rspec, all my tests pass and I get 100% coverage.
+Running rubocop gives 4 offenses - related to the length and complexity of the play method which I would like to refactor. 
 
+## Future work/To-do:
 
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+Implement the multiplayer functionality
+Refactor the play method
+Extract player class from game
+Store how many games a player has one
