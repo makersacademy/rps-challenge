@@ -11,7 +11,7 @@
 
 4. open a web browser and navigate to `127.0.0.1:4567`
 
-5. or view it on Heroku [here](https://roc-pap-sci.herokuapp.com/)
+5. or play it on Heroku [here!](https://roc-pap-sci.herokuapp.com/)
 
 ## Function
 
