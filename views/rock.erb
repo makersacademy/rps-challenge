@@ -1,11 +1,11 @@
 
 <h1>Player: <%= @user %></h1>
 
-<h2> Rock </h2>
+<h2><%= @user_choice %></h2>
 
 <h1>Opponent: Edward Scissor Hands</h1>
 
-<h2><%= ["Rock", "Paper", "Scissors"].sample %></h2>
+<h2><%= @opponent_choice %></h2>
 
 <form action ='/play' method='post'>
   <input type='submit' value='Rematch'>

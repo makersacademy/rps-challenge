@@ -20,16 +20,22 @@ class RPS < Sinatra::Base
 	end
 
 	post '/rock' do
+		@opponent_choice = ["Rock", "Paper", "Scissors"].sample
+		@user_choice = "Rock"
 		@user = session[:user]
 		erb :rock
 	end
 
 	post '/paper' do
+		@opponent_choice = ["Rock", "Paper", "Scissors"].sample
+		@user_choice = "Paper"
 		@user = session[:user]
 		erb :paper
 	end
 
 	post '/scissors' do
+		@opponent_choice = ["Rock", "Paper", "Scissors"].sample
+		@user_choice = "Scissors"
 		@user = session[:user]
 		erb :scissors
 	end
