@@ -16,9 +16,26 @@ having an issue with this. This was due to a syntax error - session[:player_1_na
 *I would like to be able to play rock/paper/scissors*
 ------------------------------------------------------
 
+*the game will choose a random option*
+---------------------------------------
 
+- 1) starting a round of RPS RPS-A-TRON 5000 chooses Slicing Scissors
+     Failure/Error: click_button 'Slicing Scissors'
 
+     Capybara::ElementNotFound:
+       Unable to find button "Slicing Scissors" that is not disabled
 
+Unsure why this error is being thrown up -- needed to sign_in_and_play
+
+- defined a method called random_weapon in gameplay_spec - it passes the test but I need to implement into my play.erb
+
+- realised the above was silly so I am creating an opponent class which handles this random_weapon method which calls .sample on an constant with available weapons
+
+- settled for srand for random feature test, this ultimately clashed with previous test so that has been removed
+
+- uninitialized constant RPS::Opponent error upon loading. require opponent in the controller doesn't seem to work
+
+- had to use require './lib/opponent.rb'
 
 
 
