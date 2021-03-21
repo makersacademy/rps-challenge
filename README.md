@@ -38,8 +38,20 @@ Unsure why this error is being thrown up -- needed to sign_in_and_play
 - had to use require './lib/opponent.rb'
 
 
+*a winner will be declared*
+----------------------------
 
+- Difficulty trying to set up let test result scenarios in rspec, unable to get my hash to pass without syntax error
 
+- had to include my params from the controller (player_1_name, weapon, pc_weapon)
+
+- Adding nested if statements, but they look messy - aiming to find a solution that looks tidy and DRY and I can't quit get it to work
+
+- settled for a constant named WEAPON_RIVALS of each weapon and their weaknesses/strengths
+
+- undefined method (win, lose, draw) for hash WEAPON_RIVALS doesn't seem to be working
+
+- reverting back to if statements but still can't get it to work
 
 
 

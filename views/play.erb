@@ -11,3 +11,11 @@
 <h2> You chose <%= @weapon %>! </h2>
 
 <h2> RPS-A-TRON 5000 chose <%= @pc_weapon %>! </h2>
+
+<% if @turn_result.win? %>
+Congratulations..You bested RPS-A-TRON 5000..Wait for RPS-A-TRON 5001!
+<% elsif @turn_result.lose? %>
+HA! Naturally you lsot to RPS-A-TRON 5000
+<% elsif @turn_result.draw? %>
+I-i-imposible you drew with RPS-A-TRON 5000?!?
+<% end %>

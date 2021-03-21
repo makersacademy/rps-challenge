@@ -1,5 +1,6 @@
 require 'sinatra'
 require './lib/opponent.rb'
+require './lib/turn_result.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -14,6 +15,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    @turn_result = Turn_Result.new
     @player_1_name = session[:player_1_name]
     @weapon = session[:weapon]
     @pc_weapon = session[:pc_weapon]
