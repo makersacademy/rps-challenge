@@ -10,7 +10,7 @@ describe Game do
     end
     it 'stores the game in a class variable' do
       game = Game.new_game("Caesar", "real", "normal")
-      expect(Game).to receive(:stored_game) {game}
+      expect(Game).to receive(:stored_game) { game }
       Game.stored_game
     end
   end
@@ -22,35 +22,20 @@ describe Game do
       game.instance_variable_set(:@player1, player1)
       game.instance_variable_set(:@player2, player2)
     end
-    it "uses the player's turn choices to request a winner" do
+    it "uses the player's turn choices to request a winner and an explanation" do
       player1 = double("Player 1 double", :name => "Caesar", :type => "real")
       player2 = double("Player 2 double", :name => "Computer", :type => "virtual")
-      calc_winner = double("Calc Winner double")
+      rock_double = double("Rock double")
       game = Game.new(player1, "real", "normal", player2)
       game.instance_variable_set(:@player1, player1)
       game.instance_variable_set(:@player2, player2)
-      game.instance_variable_set(:@calc_winner, calc_winner)
-      allow(player1).to receive(:turn=).with("Rock")
-      allow(player2).to receive(:turn=).with("Scissors")
-      allow(player1).to receive(:turn) { "Rock" }
+      allow(player1).to receive(:turn=)
+      allow(player2).to receive(:turn=)
+      allow(player1).to receive(:turn) { rock_double }
       allow(player2).to receive(:turn) { "Scissors" }
-      expect(calc_winner).to receive(:winner)
-      game.play("Rock","Scissors")
-    end
-    it "uses the player's turn choices to request an explanation" do
-      player1 = double("Player 1 double", :name => "Caesar", :type => "real")
-      player2 = double("Player 2 double", :name => "Computer", :type => "virtual")
-      explain_winner = double("Explain Winner double")
-      game = Game.new(player1, "real", "normal", player2)
-      game.instance_variable_set(:@player1, player1)
-      game.instance_variable_set(:@player2, player2)
-      game.instance_variable_set(:@explain_winner, explain_winner)
-      allow(player1).to receive(:turn=).with("Rock")
-      allow(player2).to receive(:turn=).with("Scissors")
-      allow(player1).to receive(:turn) { "Rock" }
-      allow(player2).to receive(:turn) { "Scissors" }
-      expect(explain_winner).to receive(:explanation_code)
-      game.play("Rock","Scissors")
+      expect(rock_double).to receive(:winner)
+      expect(rock_double).to receive(:explanation)
+      game.play("Rock", "Scissors")
     end
   end
 end

@@ -25,6 +25,9 @@ describe RockPaperScissors do
       rock_turn
       expect(page).to have_text "The winner"
     end
+    it 'allows the user to start a new game' do
+      expect(page).to have_text "Start a new game"
+    end
   end
 
   describe "Playing with a real opponent", type: :feature do

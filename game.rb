@@ -1,5 +1,9 @@
-require_relative 'explain_winner'
-require_relative 'calc_winner'
+require_relative 'lizard'
+require_relative 'rock'
+require_relative 'paper'
+require_relative 'scissors'
+require_relative 'spock'
+
 class Game
   attr_accessor :player1, :player2
   attr_reader :winner, :opponent, :type, :explanation
@@ -7,11 +11,13 @@ class Game
     @player_class = player_class
     @player1 = @player_class.new(player1)
     @player2 = @player_class.new(player2)
-    type == "normal" ? @rps = ["Rock", "Paper", "Scissors"] : @rps = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
+    if type == "normal"
+      @rps = ["Rock", "Paper", "Scissors"]
+    else
+      @rps = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
+    end
     @opponent = opponent
     @type = type
-    @calc_winner = CalcWinner.new
-    @explain_winner = ExplainWinner.new
   end
 
   def self.new_game(player1, opponent, type, player2 = "Your opponent")
@@ -23,10 +29,21 @@ class Game
     @@this_game
   end
 
+  def create_object(choice1)
+    case choice1
+    when "Rock" then @player1.turn = Rock.new
+    when "Paper" then @player1.turn = Rock.new
+    when "Scissors" then @player1.turn = Rock.new
+    when "Lizard" then @player1.turn = Rock.new
+    when "Spock" then @player1.turn = Rock.new
+    end
+  end
+
   def play(choice1, choice2 = @rps.sample)
-    @player1.turn = choice1
+    create_object(choice1)
     @player2.turn = choice2
-    @explanation = @explain_winner.explanation_code(@player1.turn,@player2.turn)
-    @winner = @calc_winner.winner(@player1.turn,@player2.turn,@player1.name,@player2.name)
+    @explanation = @player1.turn.explanation(@player2.turn)
+    @winner = @player1.turn.winner(@player2.turn, @player1.name, @player2.name)
+    @player1.turn = choice1
   end
 end
