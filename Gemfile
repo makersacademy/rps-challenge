@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'sinatra', '~>2.1.0'
 gem 'capybara', '~> 2.7', '>= 2.7.1'
 gem 'rspec', '~> 3.10'
+gem 'sinatra', '~>2.1.0'
 ruby "2.6.5"
 
 group :test do

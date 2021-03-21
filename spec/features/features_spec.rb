@@ -1,6 +1,6 @@
 feature 'Homepage' do
-  scenario 'homepage says "Hi"' do
-	visit '/'
-	expect(page).to have_text("Hi")
+  scenario 'homepage says "Hello Player!"' do
+	   visit '/'
+	   expect(page).to have_text("Hello Hello!")
   end
 end
