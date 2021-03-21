@@ -1,1 +1,11 @@
-<%= @player_1_name %> vs. <%= @player_2_name %>
+<h1> <%= @player_1_name %> vs. <%= @player_2_name %> </h1>
+
+<h2> Choose your weapon! </h2>
+
+<form action="/play" method="post">
+  <input type="submit" name="weapon" value="Rocking Rock"</>
+  <input type="submit" name="weapon" value="Powerful Paper"</>
+  <input type="submit" name="weapon" value="Slicing Scissors"</>
+</form>
+
+<h2>You chose <%= @weapon %>! </h2>
