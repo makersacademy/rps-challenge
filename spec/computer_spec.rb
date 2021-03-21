@@ -2,10 +2,9 @@ require 'computer'
 
 describe Computer do
   describe '#next_move' do
-    let(:computer) { Computer.new("computer") }
-    it 'chooses a move between 1 and the set number of weapons for the game' do
-      allow(Game.current_game).to receive(:weapons).and_return(5)
-      expect(computer.next_move).to be_between(1, 5)
+    it 'responds to the call to return a move' do
+      computer = Computer.new("Computer")
+      expect(computer).to respond_to(:next_move)
     end
   end
 end
