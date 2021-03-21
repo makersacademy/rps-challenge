@@ -1,26 +1,27 @@
 class Rps
 
-  attr_reader :user_input
+  attr_reader :user_input, :computer
 
   def user_play(user_input)
     @user_input = user_input
-  end 
-
+  end
+  
   def computer_play
-    ['ROCK', 'PAPER', 'SCISSORS'].sample
+    @computer = ['ROCK', 'PAPER', 'SCISSORS'].sample
   end 
 
   def play(user_input)
     user_play(user_input)
-    return tie if @user_input == computer_play
+    computer_play
+    return tie if @user_input == @computer
     return win if user_win?
     return lose unless user_win?
   end 
 
   def user_win?
-    @user_input == 'ROCK' && computer_play == 'SCISSORS' ||
-    @user_input == 'SCISSORS' && computer_play == 'PAPER' ||
-    @user_input == 'PAPER' && computer_play == 'ROCK'
+    @user_input == 'ROCK' && @computer == 'SCISSORS' ||
+    @user_input == 'SCISSORS' && @computer == 'PAPER' ||
+    @user_input == 'PAPER' && @computer == 'ROCK'
   end
 
   private

@@ -16,7 +16,7 @@ class RockPaperScissors < Sinatra::Base
   end 
 
   get '/game' do
-    @name = $user_name
+    $name = $user_name.capitalize
     erb :game
   end 
 
