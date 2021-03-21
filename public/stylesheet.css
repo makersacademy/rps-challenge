@@ -1,0 +1,73 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+body { 
+  background-color: lightgoldenrodyellow;
+  justify-content: center;
+}
+
+h1 { 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+}
+
+p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+}
+
+.image:hover {
+  transform: scale(1.5);
+}
+
+.name_form {
+  justify-content: center;
+}
+
+
+input[type="text" i] {
+  border: black;
+  text-align: center;
+  min-width: 500px;
+  max-width: 500px;
+  font-size: 0.8em;
+  justify-content: center;
+}
+
+input[type="submit" i] {
+  min-width: 300;
+  max-width: 300;
+  border: none;
+  background-color: transparent;
+  font-family: Futura;
+  text-transform: uppercase;
+  color: black;
+  font-size: 0.8em;
+  border: 1px solid black;
+  padding-left: 0;
+  margin-top: 5px;
+  padding-bottom: 25px;
+  justify-content: center;
+  }
+
+  .column {
+    float: left;
+    width: 19%;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
