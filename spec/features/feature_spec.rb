@@ -1,6 +1,15 @@
 require_relative '../../app'
 
 describe RockPaperScissors do
+  describe "Not entering a name", type: :feature do
+    before do
+      visit '/'
+      click_button 'submit'
+    end
+    it "Uses anonymous if the player doesn't enter a name" do
+      expect(page).to have_text "Anonymous"
+    end
+  end
   describe "Playing with a virtual opponent", type: :feature do
     before do
       sign_in_and_play_virtual

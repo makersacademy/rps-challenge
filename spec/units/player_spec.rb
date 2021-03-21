@@ -12,4 +12,9 @@ describe Player do
       expect(player.name).to eq "Caesar"
     end
   end
+  describe '#score' do
+    it 'responds to score' do
+      expect(player).to respond_to(:score)
+    end
+  end
 end

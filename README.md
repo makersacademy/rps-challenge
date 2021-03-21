@@ -85,7 +85,11 @@ SimpleCov.start
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
 
 
----- Stats?
 ---- Refactor to avoid endless if/case statements
----- Extract explanation into new class
----- Extract winner into new class
+
+game.play -----
+@explanation = @explain_winner.explanation_code(@player1.turn,@player2.turn)
+explanation code returns calc_explanation => explanation
+
+winner returns name of winner
+@winner = @calc_winner.winner(@player1.turn,@player2.turn,@player1.name,@player2.name)
