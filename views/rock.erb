@@ -7,6 +7,24 @@
 
 <h2><%= @opponent_choice %></h2>
 
+<% if @opponent_choice == "Rock" %>
+
+<h1>It's a draw!</h1>
+
+<% end %>
+
+<% if @opponent_choice == "Paper" %>
+
+<h1>Edward Scissor Hands wins!</h1>
+
+<% end %>
+
+<% if @opponent_choice == "Scissors" %>
+
+<h1><%= @user %> wins!</h1>
+
+<% end %>
+
 <form action ='/play' method='post'>
   <input type='submit' value='Rematch'>
 </form>

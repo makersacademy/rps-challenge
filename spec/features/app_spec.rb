@@ -1,4 +1,4 @@
-feature 'user' do
+feature 'User' do
   scenario 'can register in their name' do
     visit '/'
     fill_in "user", :with => "Will"
@@ -27,11 +27,11 @@ feature 'user' do
     fill_in "user", :with => "Will"
     click_on "submit"
     find_button('Scissors').click
-	expect(page).to have_content "Scissors"
+    expect(page).to have_content "Scissors"
   end
 end
 
-feature 'opponent' do
+feature 'Opponent' do
   scenario 'exists' do
     visit '/'
     fill_in "user", :with => "Will"
@@ -47,5 +47,14 @@ feature 'opponent' do
     find_button('Rock').click
     expect(page).to satisfy {|page| page.has_content?("Rock") or page.has_content?("Paper") or page.has_content?("Scissors")}
   end
+end
 
+feature 'Winner' do
+  scenario 'is determined correctly' do
+    visit '/'
+    fill_in "user", :with => "Will"
+    click_on "submit"
+    find_button('Rock').click
+    expect(page).to satisfy {|page| page.has_content?("Will wins!") or page.has_content?("Edward Scissor Hands wins!") or page.has_content?("It's a draw!")}
+  end
 end
