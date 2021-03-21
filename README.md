@@ -21,6 +21,7 @@
 
 
 <img align="left" width="300" src="./docs/rps-no-css.png">
+
 ## Planning / Execution
 
 * I tried to play from the outset with the stretch goals in mind, so I made sure that the logic for the RPS resolver would be able to handle any number of weapons that the game was set to. It can handle any number of odd number weapons.
