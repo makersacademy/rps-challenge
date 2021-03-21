@@ -32,3 +32,9 @@
 ## Gems
 
 * Nothing too special here, [Sinatra](https://github.com/sinatra/sinatra) web app using [Capybara](https://github.com/teamcapybara/capybara) for testing.
+
+## Reflection
+
+* If I had more time I would probably refactor the `Game` class, there is a lot going on there and it's where I've lost all the marks I have from [Codebeat](https://codebeat.co). There is definately a lot of functionality I could pull out. 
+
+* I would try and make the pages optimised for mobile, once I finished I sent the [Heroku](https://roc-pap-sci.herokuapp.com/) link to my family whatsapp, so all of the exposure was to people on mobile!
