@@ -1,0 +1,18 @@
+body {
+      font-family: "Courier New", monospace;
+      text-align: center;
+      background: #D1ADE3;}
+img {
+      margin-left: auto;
+      margin-right: auto;}
+h2  {
+      font-family: "Courier New", monospace;
+      font-size: 20px;
+      text-align: center;}
+
+h1 {  font-family: "Courier New", monospace;
+      font-size: 30px;
+      text-align: center;}
+p {   font-family: "Courier New", monospace;
+      font-size: 15px;
+      text-align: center; }

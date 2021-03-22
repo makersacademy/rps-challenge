@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+<head>
+<% if Game.stored_game.player1.turn !=nil %>
+<%=Game.stored_game.player1.name%>, you chose <%=Game.stored_game.player1.turn%><p>
+<%=Game.stored_game.player2.name%> chose <%=Game.stored_game.player2.turn%><p>
+The winner was <%=Game.stored_game.winner%><br>
+<%=Game.stored_game.explanation%>
+<%end%>
+<form action='/choose' method="post">
+  <label for="turn"><%=Game.stored_game.player1.name%>, choose from Rock, Paper, Scissors, Lizard, Spock:</label>
+  <select id="choose_turn" name="choose_turn">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+    <option value="Spock">Spock</option>
+    <option value="Lizard">Lizard</option>
+  </select>
+
+  <% if Game.stored_game.type == "real" %>
+  <p>
+  <label for="turn2"><%=Game.stored_game.player2.name%>, choose from Rock, Paper, Scissors:</label>
+  <select id="choose_turn2" name="choose_turn2">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+    <option value="Spock">Lizard</option>
+    <option value="Lizard">Spock</option>
+  </select>
+  <% end %>
+  <p>
+  <button name="submit" type="submit">Play!</button>
+</form>
+<a href="/">Start a new game </a>

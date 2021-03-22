@@ -1,6 +1,12 @@
-require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'capybara/rspec'
+ENV['RACK_ENV'] = 'test'
+require_relative "../app"
+require 'capybara'
+require 'rspec'
+require 'features/web_helpers'
+Capybara.app = RockPaperScissors
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
