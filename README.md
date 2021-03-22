@@ -1,3 +1,60 @@
+*As a marketeer*
+*So that I can see my name in lights*
+*I would like to register my name before playing an online game*
+---------------------------------------------------------------
+
+- Difficulty setting up rackup, consulting https://github.com/teamcapybara/capybara#setup definitely helped.
+
+-  '1) register name register user name
+     Failure/Error: expect(page).to have_content('Cadbury')
+       expected to find text "Cadbury" in "vs. player_2"'
+having an issue with this. This was due to a syntax error - session[:player_1_name] was the correct syntax not session alone.
+
+
+*As a marketeer*
+*So that I can enjoy myself away from the daily grind*
+*I would like to be able to play rock/paper/scissors*
+------------------------------------------------------
+
+*the game will choose a random option*
+---------------------------------------
+
+- 1) starting a round of RPS RPS-A-TRON 5000 chooses Slicing Scissors
+     Failure/Error: click_button 'Slicing Scissors'
+
+     Capybara::ElementNotFound:
+       Unable to find button "Slicing Scissors" that is not disabled
+
+Unsure why this error is being thrown up -- needed to sign_in_and_play
+
+- defined a method called random_weapon in gameplay_spec - it passes the test but I need to implement into my play.erb
+
+- realised the above was silly so I am creating an opponent class which handles this random_weapon method which calls .sample on an constant with available weapons
+
+- settled for srand for random feature test, this ultimately clashed with previous test so that has been removed
+
+- uninitialized constant RPS::Opponent error upon loading. require opponent in the controller doesn't seem to work
+
+- had to use require './lib/opponent.rb'
+
+
+*a winner will be declared*
+----------------------------
+
+- Difficulty trying to set up let test result scenarios in rspec, unable to get my hash to pass without syntax error
+
+- had to include my params from the controller (player_1_name, weapon, pc_weapon)
+
+- Adding nested if statements, but they look messy - aiming to find a solution that looks tidy and DRY and I can't quit get it to work
+
+- settled for a constant named WEAPON_RIVALS of each weapon and their weaknesses/strengths
+
+- undefined method (win, lose, draw) for hash WEAPON_RIVALS doesn't seem to be working
+
+- reverting back to if statements but still can't get it to work
+
+
+
 # RPS Challenge
 
 Instructions
