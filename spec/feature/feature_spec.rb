@@ -52,4 +52,3 @@ feature 'Determine Win, draw and lose' do
     expect(page).to have_content("lost")
   end
 end
-

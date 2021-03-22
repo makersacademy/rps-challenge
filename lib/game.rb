@@ -1,25 +1,26 @@
 require_relative './player'
 
 class Game
-  attr_reader :player, :selection, :computer_choice
+  attr_reader :player, :opponent, :computer_choice, :history
   CHOICES = ["Rock", "Paper", "Scissors"]
 
-  def initialize(player)
+  def initialize(player, opponent)
     @player = player
-    @selection
+    @opponent = opponent
   end
 
   def self.instance
     @game
   end
 
-  def self.new_game(name)
+  def self.new_game(name, second_name)
     player = Player.new(name)
-    @game = Game.new(player)
+    opponent = Player.new(second_name)
+    @game = Game.new(player, opponent)
   end
 
-  def update_selection(selection)
-    @selection = selection
+  def update_player_selection(selection)
+    @player.update_selection(selection)
   end
 
   def computer
@@ -27,17 +28,34 @@ class Game
   end
 
   def evaluate_game
-    return :draw if @computer_choice == @selection
-    return check_win? ? :win : :lose
+    result = RULES[INDEX[@player.selection]][INDEX[@computer_choice]]
+    return :draw if result == "D"
+
+    result ? :win : :lose
+  end
+  
+  # Extra methods for two-player game
+
+  def update_opponent_selection(selection)
+    @opponent.update_selection(selection)
   end
 
-  private
+  def evaluate_player_game
+    result = RULES[INDEX[@player.selection]][INDEX[@opponent.selection]]
+    return :draw if result == "D"
 
-  def check_win?
-    return true if 
-    @selection == "Paper" && @computer_choice == "Rock" ||
-    @selection == "Scissors" && @computer_choice == "Paper" ||
-    @selection == "Rock" && @computer_choice == "Scissors"
-    false
+    result ? :win : :lose
   end
+
+  # Paper, Scissors, Rock, Lizard, Spock
+  INDEX = { "Paper" => 0, "Scissors" => 1, "Rock" => 2,
+            "Lizard" => 3, "Spock" => 4 }
+  RULES = [
+  ["D", false, true, false, true],
+  [true, "D", false, true, false],
+  [false, true, "D", true, false],
+  [true, false, false, "D", true],
+  [false, true, true, false, "D"]
+  ]
+ 
 end

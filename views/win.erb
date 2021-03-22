@@ -1,5 +1,13 @@
-<h1> <%= @game.player.name %> picked <%= @game.selection %> </h1>
-<h1> Computer picked <%= @game.computer_choice %> </h1>
+<h1> <%= @game.player.name %> picked <%= @game.player.selection %> </h1>
+<% if @game.opponent.name == nil %>
+  <h1> Computer picked <%= @game.computer_choice %> </h1>
+<% else %>
+  <h1> <%= @game.opponent.name %> picked <%= @game.opponent.selection %> </h1>
+<% end %>
 <h2> <%= @game.player.name %> won! </h2>
-
 <img src="https://i.pinimg.com/originals/4b/2d/52/4b2d5254b52912811129713a00203ffe.gif"/>
+
+<h2> Play again? </h2>
+<form action = '/' method = 'get'>
+  <input type = 'submit' value = 'Yesssssss' name = play>
+</form>

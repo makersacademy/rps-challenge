@@ -1,7 +1,7 @@
-<h1> Hi <%= @game.player.name %>, pick Rock, Paper or Scissors and press confirm </h1>
+<h1><%= @game.player.name %> vs <%= @game.opponent.name %>!  </h1>
 
-<form action="/selection" method="post" >
-  <label>What's your selection?</label>
+<form action="/player-1-selection" method="post" >
+  <label>What's your selection <%= @game.player.name %>? </label>
 
   <select name="choices">
     <option value="Rock">Rock</option>
@@ -11,5 +11,5 @@
     <option value="Spock">Spock</option>
   </select>
 
-  <input type="submit" value="Confirm">
+  <input type="submit" value="Submit">
 <form>
