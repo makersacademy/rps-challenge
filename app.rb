@@ -1,7 +1,13 @@
 require 'sinatra/base'
+require './lib/game.rb'
+require './lib/score.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
+
+  before do
+	  @game = Game.current_game
+    end
 
   get '/' do
     erb :index
@@ -12,7 +18,12 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  get '/outcome' do
-    "You won!"
+  get '/play' do
+    erb :play
+  end
+
+  post '/outcome' do
+    @game = Game.new_game(@player1_name, params[:player_weapon])
+    erb @game.outcome
   end
 end
