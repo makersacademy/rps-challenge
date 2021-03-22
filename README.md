@@ -1,5 +1,32 @@
 # RPS Challenge
 
+#How to use
+
+* Clone this repository
+* Bundle install
+* Rspec to ensure tests work
+* rackup (to localhost:9292)
+
+# Running Tests
+
+From the root folder run the following command
+
+$rspec
+
+# Planning and Learning
+
+* The details of the user stories and planning can be found in the links below:
+
+https://docs.google.com/document/d/1MthNQ9SgmGM7Y7LQRjMKx5h07VfDl-o2wLnYwu8kos8/edit?usp=sharing
+
+https://miro.com/app/board/o9J_lOB0CxE=/
+
+# Further Development
+
+* I would like to refactor the code in determines_outcome to be more DRY
+* I would like to use CSS to improve the aesthetics
+* I would like to make the game 2 player
+
 Instructions
 -------
 
