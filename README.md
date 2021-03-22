@@ -1,5 +1,39 @@
 # RPS Challenge
 
+## Makers Week 3 - Weekend Challenge
+
+#### Problem Solve
+
+Solution to the Makers Week 2 Weekend Challenge by Jack McCarthy (jackmcc08).
+
+Applied TDD to the challenge, and added on several extra features beyond the basic user stories, including stats and looping rounds.
+
+Notes on development available in the file 'development_notes.md'
+
+On completion:
+- all basic user stories were delivered
+- all RSPEC tests passed
+- there was 100% test coverage
+- there were no Rubocop errors
+
+Potential Improvements:
+- Refactor the game.rb code to extract classes and improve on encapsulation and srp.
+- add images and moving text to improve game play
+- add a leaderboard
+
+##Instructions for use
+
+Run the following in your terminal:
+
+1. 'bundle install'
+2. 'rackup config.ru -p 4567'
+
+Visit in the browser of your choice
+
+3. 'http://localhost:4567/'
+
+## Original Instructions
+
 Instructions
 -------
 
