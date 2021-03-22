@@ -1,6 +1,6 @@
 # RPS Challenge
 
-#How to use
+# How to use
 
 * Clone this repository
 * Bundle install
