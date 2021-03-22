@@ -1,0 +1,14 @@
+
+<!-- #Player x Wins/Loses
+
+#Play again button -->
+
+<h1> Player move: <%=  @player_move %> </h1>
+<h1> Computer move: <%=  @computer_move %> </h1>
+
+<h1> <%= @win_lose %> </h1>
+
+
+<form action="/play">
+<input type="submit" value="Play Again">
+<form>
