@@ -2,7 +2,7 @@ class Game
   RPS_MOVES = ['rock', 'paper', 'scissors']
   WIN_MATRIX = { 'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper' }
 
-  attr_reader :round_number, :player_1_name, :player_2_name, :round_result, :two_players
+  attr_reader :round_number, :player_1_name, :player_2_name, :round_result, :two_players, :victory, :victory_2
   attr_accessor :player_1_move, :player_2_move
 
   def initialize
@@ -25,6 +25,7 @@ class Game
   def play_round
     @player_2_move = computer_move unless two_players
     winner = win_lose(@player_1_move, @player_2_move)
+    @victory = winner
     update_scores(winner)
     @round_result = win_lose_message(@player_1_move, @player_2_move)
   end
@@ -42,10 +43,13 @@ class Game
 
   def victory_message
     if @game_score[@player_1_name] == @game_score[@player_2_name]
+      @victory_2 = 'Draw'
       'It was a draw!'
     elsif @game_score[@player_1_name] > @game_score[@player_2_name]
+      @victory_2 = @player_1_name
       "#{@player_1_name} defeated #{@player_2_name}"
     else
+      @victory_2 = @player_2_name
       "#{@player_2_name} defeated #{@player_1_name}"
     end
   end

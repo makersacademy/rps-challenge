@@ -15,6 +15,32 @@
       <h2>Player 1: <%= @game.player_1_name %> </h2>
       <h2>Player 2: <%= @game.player_2_name %> </h2>
     </div>
+    <div id="display">
+      <% if @game.victory == @game.player_1_name %>
+        <img src='https://lumiere-a.akamaihd.net/v1/images/open-uri20150608-27674-1ly2wd_eb4b4064.jpeg?region=0%2C0%2C1200%2C674' style='height:100px;'>
+      <% elsif @game.victory == @game.player_2_name %>
+        <img src='https://variety.com/wp-content/uploads/2016/12/fisher-star-wars-1.jpg?w=1000' style='height:100px;'>
+      <% else %>
+        <img src='https://i2-prod.mirror.co.uk/incoming/article6819249.ece/ALTERNATES/s1200d/MAIN-Princess-Leia-changed-name-in-new-Star-Wars.jpg' style='height:100px;'>
+      <% end %>
+      <% if @game.player_2_name == 'K-2SO' %>
+        <% if @game.victory == @game.player_2_name %>
+          <img src='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a0853385-8a52-4b79-89c3-ffe5a26ba950/dd0hviq-42433c0a-bf27-4c16-a9f4-dd02d0143285.jpg/v1/fill/w_1600,h_900,q_75,strp/star_wars___k_2so_battle_damaged_by_andibaze_dd0hviq-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD05MDAiLCJwYXRoIjoiXC9mXC9hMDg1MzM4NS04YTUyLTRiNzktODljMy1mZmU1YTI2YmE5NTBcL2RkMGh2aXEtNDI0MzNjMGEtYmYyNy00YzE2LWE5ZjQtZGQwMmQwMTQzMjg1LmpwZyIsIndpZHRoIjoiPD0xNjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.43rbEENWr1bLtwt2nR_grWUgN6eVJYTF2EDG0yjjGGQ' style='height:100px;'>
+        <% elsif @game.victory == @game.player_1_name %>
+          <img src='https://i.redd.it/mlswl8t5idr11.jpg' style='height:100px;'>
+        <% else %>
+          <img src='https://lumiere-a.akamaihd.net/v1/images/rogue-one-k-2so-quotes-3_053caf66.jpeg?region=0%2C30%2C1154%2C577&width=960' style='height:100px;'>
+        <% end %>
+      <% else %>
+        <% if @game.victory == @game.player_2_name %>
+          <img src='https://media.comicbook.com/2018/01/star-wars-10-best-han-solo-moments-1078556-1280x0.jpeg' style='height:100px;'>
+        <% elsif @game.victory == @game.player_1_name %>
+          <img src='https://live.staticflickr.com/773/31649435213_0c76a78e02_b.jpg' style='height:100px;'>
+        <% else %>
+          <img src='https://lumiere-a.akamaihd.net/v1/images/han-solo-main_a4c8ff79.jpeg?region=0%2C0%2C1920%2C960' style='height:100px;'>
+        <% end %>
+      <% end %>
+    </div>
 
     <div id="display">
       <h2><%= @game.player_1_name %> chose <%= @game.player_1_move %>!</h2>
