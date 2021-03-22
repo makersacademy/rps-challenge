@@ -32,10 +32,10 @@ class Game
   def create_object(choice1)
     case choice1
     when "Rock" then @player1.turn = Rock.new
-    when "Paper" then @player1.turn = Rock.new
-    when "Scissors" then @player1.turn = Rock.new
-    when "Lizard" then @player1.turn = Rock.new
-    when "Spock" then @player1.turn = Rock.new
+    when "Paper" then @player1.turn = Paper.new
+    when "Scissors" then @player1.turn = Scissors.new
+    when "Lizard" then @player1.turn = Lizard.new
+    when "Spock" then @player1.turn = Spock.new
     end
   end
 
