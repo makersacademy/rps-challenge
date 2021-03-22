@@ -1,0 +1,15 @@
+<h1> Hi <%= @game.player.name %>, pick Rock, Paper or Scissors and press confirm </h1>
+
+<form action="/selection" method="post" >
+  <label>What's your selection?</label>
+
+  <select name="choices">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+    <option value="Lizard">Lizard</option>
+    <option value="Spock">Spock</option>
+  </select>
+
+  <input type="submit" value="Confirm">
+<form>

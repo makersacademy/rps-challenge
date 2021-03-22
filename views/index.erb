@@ -1,0 +1,19 @@
+<% if @game != nil %>
+  <h1> Welcome back! </h1>
+<% else %>
+  <h1> Welcome to Rock, Paper, Scissors! </h1>
+<% end %>
+
+<h1> Play Against a computer </h1>
+
+<form action = '/names' method = 'post'>
+  <input type = 'text', name = name>
+  <input type = 'submit' name = Submit>
+</form>
+
+<h1> Play Against a friend </h1>
+<form action = '/names-two-player' method = 'post'>
+  <input type = 'text', name = player_1>
+  <input type = 'text', name = player_2>
+  <input type = 'submit' name = two_player_submit>
+</form>
