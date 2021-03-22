@@ -1,34 +1,57 @@
-<h1>Welcome to the THUNDERDOME</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>RPS - Makers Week 3</title>
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
 
-<h2>Enter your information</h2>
+  <body>
+    <header id="header">
+      <h1>Welcome to the THUNDERDOME!</h1>
+    </header>
 
-<% if !@game.two_players %>
-  <form action="/startgame" method="post">
-    <label>Player 1</label>
-    <br>
-    <label for="player_1_name">Name: </label>
-    <input type="text" id="player_1_name" name="player_1_name" required>
-    <br>
-    <br>
-    <label>Player 2</label>
-    <br>
-    <label for="player_2_name">K-2SO</label>
-    <br>
-    <input type="submit" value="Start Game!">
-  </form>
+    <h2>Enter your information</h2>
 
-<% elsif @game.two_players %>
-  <form action="/startgame" method="post">
-    <label>Player 1</label>
-    <br>
-    <label for="player_1_name">Name: </label>
-    <input type="text" id="player_1_name" name="player_1_name" required>
-    <br>
-    <label>Player 2</label>
-    <br>
-    <label for="player_2_name">Name: </label>
-    <input type="text" id="player_2_name" name="player_2_name" required>
-    <br>
-    <input type="submit" value="Start Game!">
-  </form>
-<% end %>
+    <% if !@game.two_players %>
+      <form action="/startgame" method="post">
+        <div id="name_entries">
+          <div id="name_containers">
+            <label>Player 1</label>
+            <br>
+            <label for="player_1_name">Name: </label>
+            <input type="text" id="player_1_name" name="player_1_name" required>
+          </div>
+          <div id="name_containers">
+            <label>Player 2</label>
+            <br>
+            <label for="player_2_name">Name: </label>
+            <label for="player_2_name">K-2SO</label>
+          </div>
+        </div>
+        <br>
+        <input type="submit" value="Start Game!" id="player_buttons">
+      </form>
+
+    <% elsif @game.two_players %>
+      <form action="/startgame" method="post">
+        <div id="name_entries">
+          <div id="name_containers">
+            <label>Player 1</label>
+            <br>
+            <label for="player_1_name">Name: </label>
+            <input type="text" id="player_1_name" name="player_1_name" required>
+          </div>
+          <div id="name_containers">
+            <label>Player 2</label>
+            <br>
+            <label for="player_2_name">Name: </label>
+            <input type="text" id="player_2_name" name="player_2_name" required>
+          </div>
+        </div>
+        <br>
+        <input type="submit" value="Start Game!" id="player_buttons">
+      </form>
+    <% end %>
+  </body>
+</html>

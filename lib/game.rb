@@ -53,7 +53,8 @@ class Game
   private
 
   def computer_move
-    @moves.sample
+    number = rand 0..2
+    @moves[number]
   end
 
   def win_lose(player_1_move, player_2_move)

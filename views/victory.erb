@@ -1,6 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>RPS - Makers Week 3</title>
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
 
-  <h1><%= @game.victory_message %></h1>
+  <body>
+    <header id="header">
+      <h1>THE THUNDERDOME!</h1>
+    </header>
 
-  <form action="/" method="get">
-    <input type="submit" name="new_round" value="New Game">
-  </form>
+    <h2><%= @game.victory_message %></h2>
+
+    <form action="/" method="get">
+      <input type="submit" name="new_round" value="New Game" id="player_buttons">
+    </form>
+  </body>
+</html>

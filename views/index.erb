@@ -1,6 +1,21 @@
-<h1>Welcome to the THUNDERDOME</h1>
-<h2>Choose number of players</h2>
-<form action="/number_players" method="post">
-  <input type="submit" name="players" value="One Player">
-  <input type="submit" name="players" value="Two Players">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>RPS - Makers Week 3</title>
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
+
+  <body>
+    <header id="header">
+      <h1>Welcome to the THUNDERDOME!</h1>
+    </header>
+
+    <h2>Choose number of players</h2>
+    
+    <form action="/number_players" method="post">
+      <input type="submit" name="players" value="One Player" id="player_buttons">
+      <input type="submit" name="players" value="Two Players" id="player_buttons">
+    </form>
+  </body>
+</html>

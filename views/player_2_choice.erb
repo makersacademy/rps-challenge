@@ -1,22 +1,46 @@
-<h1>THE THUNDERDOME</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>RPS - Makers Week 3</title>
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
 
-<h2>Round <%= @game.round_number %>! FIGHT!</h2>
+  <body>
+    <header id="header">
+      <h1>THE THUNDERDOME!</h1>
+    </header>
 
-<h2>Player 1: <%= @game.player_1_name %> </h2>
-<h2>Player 2: <%= @game.player_2_name %> </h2>
+    <h2>Round <%= @game.round_number %>! FIGHT!</h2>
 
-<% if @game.two_players %>
-  <h2><%= @game.player_1_name %> LOOK AWAY!</h2>
-<% end %>
+    <div id="display">
+      <h2>Player 1: <%= @game.player_1_name %> </h2>
+      <h2>Player 2: <%= @game.player_2_name %> </h2>
+    </div>
 
-<h2><%= @game.player_2_name %> Choose your move!</h2>
+    <% if @game.two_players %>
+      <h2><%= @game.player_1_name %> - LOOK AWAY!</h2>
+    <% end %>
 
-<form action="/player_2_move" method="post">
-  <input type="radio" id="rock" name="move" value="rock">
-  <label for="rock">Rock</label><br>
-  <input type="radio" id="paper" name="move" value="paper">
-  <label for="paper">Paper</label><br>
-  <input type="radio" id="scissors" name="move" value="scissors" required>
-  <label for="scissors">Scissors</label>
-  <input type="submit" value="Play!">
-</form>
+    <h2><%= @game.player_2_name %> - Choose your move!</h2>
+
+    <form action="/player_2_move" method="post">
+      <div id="rps_choice">
+        <div>
+          <input type="radio" id="rock" name="move" value="rock">
+          <label for="rock">Rock</label><br>
+        </div>
+        <div>
+          <input type="radio" id="paper" name="move" value="paper">
+          <label for="paper">Paper</label><br>
+        </div>
+        <div>
+          <input type="radio" id="scissors" name="move" value="scissors" required>
+          <label for="scissors">Scissors</label>
+        </div>
+      </div>
+      <br>
+      <input type="submit" value="Play!" id="player_buttons">
+    </form>
+  </body>
+</html>

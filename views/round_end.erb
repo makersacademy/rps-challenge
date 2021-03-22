@@ -1,26 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>RPS - Makers Week 3</title>
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
 
-<h2>Player 1: <%= @game.player_1_name %> </h2>
+  <body>
+    <header id="header">
+      <h1>THE THUNDERDOME!</h1>
+    </header>
 
-<h2><%= @game.player_1_name %> chose <%= @game.player_1_move %>!</h2>
+    <div id="display">
+      <h2>Player 1: <%= @game.player_1_name %> </h2>
+      <h2>Player 2: <%= @game.player_2_name %> </h2>
+    </div>
 
-<h2><%= @game.player_2_name %>  chose <%= @game.player_2_move %>!</h2>
+    <div id="display">
+      <h2><%= @game.player_1_name %> chose <%= @game.player_1_move %>!</h2>
+      <h2><%= @game.player_2_name %>  chose <%= @game.player_2_move %>!</h2>
+    </div>
+    <h1><%= @game.round_result %></h1>
 
-<h1><%= @game.round_result %></h1>
+    <form action="/new_round" method="post" id="new_round">
+      <input type="submit" name="new_round" value="Play again!" id="player_buttons">
+      <input type="submit" name="new_round" value="New Players" id="player_buttons">
+    </form>
 
-<form action="/new_round" method="post">
-  <input type="submit" name="new_round" value="Play again!">
-  <input type="submit" name="new_round" value="New Players">
-</form>
-
-<table>
-  <tr>
-    <th><%= @game.player_1_name %></th>
-    <th>Draws</th>
-    <th><%= @game.player_2_name %></th>
-  </tr>
-  <tr>
-    <th><%= @game.display_score[@game.player_1_name] %></th>
-    <th><%= @game.display_score['Draws'] %></th>
-    <th><%= @game.display_score[@game.player_2_name] %></th>
-  </tr>
-</table>
+    <table id="table">
+      <tr>
+        <th><%= @game.player_1_name %></th>
+        <th>Draws</th>
+        <th><%= @game.player_2_name %></th>
+      </tr>
+      <tr>
+        <th><%= @game.display_score[@game.player_1_name] %></th>
+        <th><%= @game.display_score['Draws'] %></th>
+        <th><%= @game.display_score[@game.player_2_name] %></th>
+      </tr>
+    </table>
+  </body>
+</html>
