@@ -2,8 +2,6 @@
 
 ## Makers Week 3 - Weekend Challenge
 
-#### Problem Solve
-
 Solution to the Makers Week 2 Weekend Challenge by Jack McCarthy (jackmcc08).
 
 Applied TDD to the challenge, and added on several extra features beyond the basic user stories, including stats and looping rounds.
@@ -21,7 +19,7 @@ Potential Improvements:
 - add images and moving text to improve game play
 - add a leaderboard
 
-##Instructions for use
+## Instructions for use
 
 Run the following in your terminal:
 
