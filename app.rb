@@ -13,8 +13,19 @@ class RpsApp < Sinatra::Base
     erb(:index)
   end
 
-  post '/name' do
-    @game = RPS.create(params[:player_1])
+  post '/names' do
+    @player_1 = Player.new(params[:player_1])
+    @game = RPS.create(@player_1)
     redirect '/play'
   end
+
+  get '/play' do
+    erb(:play)
+  end
+
+  get '/result' do
+    @result = @game.calculate_winner(params[:move], ["Rock", "Paper", "Scissors"].sample)
+    erb(:result)
+  end
+
 end
