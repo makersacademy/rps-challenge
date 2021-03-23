@@ -14,3 +14,13 @@ body {
   grid-template-columns: 40% 20% 40%;
   grid-row-gap: 2em;
 }
+
+.circular {
+  background-color: #f9f3f3;
+  border-style: solid;
+  border-radius: 100%;
+}
+
+.img-buttons input:hover {
+  background-color: #f25287;
+}
