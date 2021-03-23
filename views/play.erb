@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Rock Paper Scissors</title>
+  </head>
+
+  <body>
+
+    <div class="layout">
+      <div><h2>Hello, <%= @game.player1.name %>!</h2></div>
+
+      <div>Please choose:</div>
+
+      <form class="img-buttons" action="/choose" method="post">
+        <input type="image" class="circular" name="rock" src="/img/rock.png" alt="rock" width="70" height="70">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="image" class="circular" name="paper" src="/img/paper.png" alt="paper" width="70" height="70">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="image" class="circular" name="scissors" src="/img/scissors.png" alt="scissors" width="70" height="70">
+      </form>
+      </div>
+  </body>
+</html>

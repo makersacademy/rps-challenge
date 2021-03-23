@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Rock Paper Scissors</title>
+  </head>
+
+  <body>
+    <div class="layout">
+      <div>
+        <img src="/img/rock.png" alt="rock" width="60" height="70">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="/img/paper.png" alt="paper" width="60" height="70">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="/img/scissors.png" alt="scissors" width="60" height="70">
+      </div>
+      <div>
+        <h2> Enter name to play </h2>
+      </div>
+      <div>
+        <form action="/name" method="post">
+          <label for="player_name">
+            Player name:
+            <input type="text" name="player_name">
+          </label>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </body>
+
+</html>
