@@ -9,6 +9,7 @@ describe Game do
   describe '#outcome' do
     it 'tells you if you won' do
       allow(test_game).to receive(:opponent_weapon).and_return('scissors')
+      test_game.opponent_weapon
       expect(test_game.outcome).to eq(:win)
     end
   end
