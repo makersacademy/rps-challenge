@@ -1,7 +1,11 @@
 <div class="center">
   <h1><%=@game.player1.name%> vs. <%=@game.player2.name%></h1>
   <br>
+  <% if @game.weapons == 15%>
+  <h1><%=@game.get_ultra_weapon(@game.player1.move)%> vs. <%=@game.get_ultra_weapon(@game.player2.move)%></h1>
+  <% else %>
   <h1><%=@game.get_weapon(@game.player1.move)%> vs. <%=@game.get_weapon(@game.player2.move)%></h1>
+  <% end %>
   <br>
   <h1><%=@game.match%></h1>
   <br>

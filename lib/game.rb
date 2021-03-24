@@ -2,6 +2,9 @@ require './lib/player'
 require './lib/computer'
 
 class Game 
+  ULTRA_WEAPONS_LIST = ["Rock", "Paper", "Fire", "Air", "Scissors", "Water", 
+                        "Snake", "Dragon", "Human", "Devil", "Tree", "Lightning", 
+                        "Wolf", "Gun", "Sponge"]
 
   def self.new_game(player1_name, player2_name, weapons)
     @game = Game.new(player1_name, player2_name, weapons)
@@ -11,7 +14,7 @@ class Game
     @game
   end
 
-  attr_reader :player1, :player2, :weapons, :current_player
+  attr_reader :player1, :player2, :weapons, :current_player, :ultra_weapons_list
 
   def initialize(player1_name, player2_name, weapons)
     @player1 = Player.new(player1_name)
@@ -22,6 +25,7 @@ class Game
     end
     @weapons = weapons.to_i
     @current_player = @player1
+    @ultra_weapons_list = ULTRA_WEAPONS_LIST
   end
 
   def get_move(move)
@@ -48,6 +52,10 @@ class Game
   def get_weapon(index)
     weapon_list = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
     weapon_list[index - 1]
+  end
+
+  def get_ultra_weapon(index)
+    @ultra_weapons_list[index - 1]
   end
 
   def vs_computer? 

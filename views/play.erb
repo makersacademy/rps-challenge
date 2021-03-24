@@ -15,7 +15,7 @@
       <option value="3">Scissors</option>
     </select>
 
-    <%else%>
+    <%elsif @game.weapons == 5%>
 
     <select name="moves" id="moves">
       <option value="1">Rock</option>
@@ -23,6 +23,16 @@
       <option value="3">Scissors</option>
       <option value="4">Spock</option>
       <option value="5">Lizard</option>
+    </select>
+
+    <%else%>
+
+    <select name="moves" id="moves">
+    <% int = 1 %>
+    <% @game.ultra_weapons_list.each do |weapon| %>
+      <option value="<%=int%>"><%=weapon%></option>
+      <% int += 1 %>
+    <% end %>
     </select>
 
     <%end%>
