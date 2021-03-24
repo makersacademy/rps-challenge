@@ -1,0 +1,43 @@
+<div class="center">
+  <h1><%=@game.player1.name%> vs. <%=@game.player2.name%></h1>
+  <br>
+  <h1><%=@game.current_player.name%>'s move!</h1>
+  <br>
+  <form action="/move" method="post">
+    <label for="moves">Make a move:</label>
+    <br>
+
+    <%if @game.weapons == 3%>
+
+    <select name="moves" id="moves">
+      <option value="1">Rock</option>
+      <option value="2">Paper</option>
+      <option value="3">Scissors</option>
+    </select>
+
+    <%elsif @game.weapons == 5%>
+
+    <select name="moves" id="moves">
+      <option value="1">Rock</option>
+      <option value="2">Paper</option>
+      <option value="3">Scissors</option>
+      <option value="4">Spock</option>
+      <option value="5">Lizard</option>
+    </select>
+
+    <%else%>
+
+    <select name="moves" id="moves">
+    <% int = 1 %>
+    <% @game.ultra_weapons_list.each do |weapon| %>
+      <option value="<%=int%>"><%=weapon%></option>
+      <% int += 1 %>
+    <% end %>
+    </select>
+
+    <%end%>
+    <div class="center">
+    <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
