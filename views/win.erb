@@ -1,0 +1,10 @@
+<h1>You...WON,<%= @game.player1_name %>!!!</h1>
+<div>
+<h2>Your weapon : <%= @game.player_weapon%></h2>
+</div>
+<div>
+<h2>Opponents weapon : <%= @game.opponent_weapon%></h2>
+</div>
+<form action="/play" >
+  <input type="submit" value="New Game">
+</form>
