@@ -1,5 +1,7 @@
 # Rock Paper Scissors Battle System
 
+[![Build Status](https://travis-ci.com/charlierdm/rps-challenge.svg?branch=master)](https://travis-ci.com/charlierdm/rps-challenge)
+
 
 <img width="1424" alt="Screenshot 2021-02-21 at 17 57 06" src="https://user-images.githubusercontent.com/75075773/108633859-8e721d80-746e-11eb-95fa-b65972ae3c00.png">
 
