@@ -1,0 +1,22 @@
+<head>
+  <title>Rock Paper Scissors: Results</title>
+  <link href="/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+<%= @game.players[0].name %> chose <%= @game.results[:player1] %> - <%= @game.players[1].name %> chose <%= @game.results[:player2] %>!
+<br>
+
+<img src="paper_scissors.png" alt="paper and scissors" style="height: 25vw;"/>
+
+<br>
+<strong><%= @game.winner.name %> is the winner</strong>!
+
+<br>
+<br>
+<a href="/play"><button>Play again?</button></a>
+<br><br>
+<a href="/"><button>Start again with a new name</button></a>
+
+</body>

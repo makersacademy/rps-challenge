@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, Helvetica;
+  font-size: 30px;
+  color: darkslateblue;
+  text-align: center;
+}
+
+input {
+  padding: 10px 30px;
+  border: 2px solid mediumvioletred;
+  border-radius: 3px;
+  font-size: 20px;
+}
+
+input[type=submit] {
+  border: none;
+  color: white;
+  background-color: darkslateblue;
+  padding: 10px 30px;
+  text-align: center;
+  font-size: 20px;
+}
+
+button {
+  border: none;
+  color: white;
+  background-color: mediumvioletred;
+  padding: 10px 30px;
+  text-align: center;
+  font-size: 20px;
+}

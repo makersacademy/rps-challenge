@@ -1,0 +1,22 @@
+<head>
+  <title>Rock Paper Scissors: Results</title>
+  <link href="/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+<%= @game.players[0].name %> chose paper but <%= @game.players[1].name %> also chose paper!
+<br>
+
+<img src="paper_paper.png" alt="paper and paper" style="height: 25vw;"/>
+
+<br>
+<strong>It was a draw</strong>.
+
+<br>
+<br>
+<a href="/play"><button>Play again?</button></a>
+<br><br>
+<a href="/"><button>Start again with a new name</button></a>
+
+</body>

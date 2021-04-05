@@ -1,0 +1,16 @@
+<head>
+  <title>Rock Paper Scissors: Decision</title>
+  <link href="/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<h2><%= @game.players[0].name %> vs <%= @game.players[1].name %>!</h2>
+Choose your weapon!
+
+<form action="/choice" method="post">
+  <button id="rock" name="rock" style="background-color: white;"><img src="rock.png" alt="rock" style="width: 15vw;"/></button>
+  <button id="paper" name="paper" style="background-color: white;"><img src="paper.png" alt="paper" style="width: 15vw;"/></button>
+  <button id="scissors" name="scissors" style="background-color: white;"><img src="scissors.png" alt="scissors" style="width: 15vw;"/></button>
+  <br>
+</form>
+</body>
