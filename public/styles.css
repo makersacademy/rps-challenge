@@ -1,0 +1,25 @@
+body {
+  background-color: #f8a488;
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+  margin-top: 1em;
+}
+
+h2 {
+  color: #f8f5f1;
+}
+
+.submit {
+  background-color: #5aa897;
+  border-radius: 25px;
+  border: none;
+  padding: 0.75em 1.35em;
+}
+
+.submit:hover {
+  background-color: #f8f5f1;
+  cursor: pointer;
+}
