@@ -7,7 +7,7 @@ class Rps < Sinatra::Base
   end
 
   get '/' do 
-    "Testing infrastructure working!"
+    erb :index
   end
 
   run! if app_file == $0
