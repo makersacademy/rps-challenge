@@ -1,8 +1,6 @@
 feature 'Player name' do
   scenario 'it welcomes the player' do
-    visit('/')
-    fill_in :player_name, with: "John"
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_content 'Welcome John'
   end
 end
