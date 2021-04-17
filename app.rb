@@ -23,16 +23,12 @@ class RPS < Sinatra::Base
   end
 
   post '/your_choice' do
-    session['rock'] = params['rock']
-    session['paper'] = params['paper']
-    session['scissors'] = params['scissors']
+    session['your_play'] = params['play_option']
     redirect '/outcome'
   end
 
   get '/outcome' do
-    @rock = session['rock']
-    @paper = session['paper']
-    @scissors = session['scissors']
+    @your_play = session['your_play']
     erb :outcome
   end
 
