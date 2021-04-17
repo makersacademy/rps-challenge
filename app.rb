@@ -29,7 +29,7 @@ class Rps < Sinatra::Application
   end
 
   get '/result' do
-    
+    erb :result
   end
 
   run! if app_file == $PROGRAM_NAME
