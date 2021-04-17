@@ -1,0 +1,12 @@
+<%= "Welcome #{@game.player.name.capitalize} please choose a move" %>
+<br>
+
+<form action="/move" method="post">
+    <label for="move"> 
+    Enter a move (Rock, Paper or Scissors)
+    <input type="text" name="move">
+    <input type="submit" value="Take turn">
+  </label>
+</form>
+
+  
