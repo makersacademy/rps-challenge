@@ -17,6 +17,10 @@ class Rps < Sinatra::Application
     @player_name = session[:player_name]
     erb(:welcome)
   end
+
+  post '/choice' do
+    "you chose #{params[:choice]}"
+  end
   
   run! if app_file == $PROGRAM_NAME
 end  
