@@ -25,17 +25,17 @@ class Game
     if player_weapon == computer_weapon
       "It's a draw"
     elsif player_weapon== "rock" && computer_weapon == "paper"
-      "you win!"
+      "computer wins, you lose"
     elsif player_weapon == "paper" && computer_weapon == "scissors"
-      "you win!"
+      "computer wins, you lose"
     elsif player_weapon == "scissors" && computer_weapon == "rock"
-      "you win!"
+      "computer wins, you lose"
     elsif player_weapon == "paper" && computer_weapon == "rock"
-      "computer wins, you lose"
+      "you win!"
     elsif player_weapon == "scissors" && computer_weapon == "paper"
-      "computer wins, you lose"
+      "you win!"
     elsif player_weapon == "rock" && computer_weapon == "scissors"
-      "computer wins, you lose"
+      "you win!"
     end
   end
 end

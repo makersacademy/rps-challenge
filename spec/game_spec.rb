@@ -16,9 +16,9 @@ describe Game do
     it { is_expected.to respond_to(:winner).with(2).arguments }
 
     it 'gives us a winner of the game' do
-      expect(subject.winner('scissors', 'paper')).to eq  "computer wins, you lose"
-      expect(subject.winner('rock', 'scissors')).to eq  "computer wins, you lose"
-      expect(subject.winner('paper', 'rock')).to eq  "computer wins, you lose"
+      expect(subject.winner('scissors', 'paper')).to eq  "you win!"
+      expect(subject.winner('rock', 'scissors')).to eq  "you win!"
+      expect(subject.winner('paper', 'rock')).to eq  "you win!"
       expect(subject.winner('rock', 'rock')).to eq "It's a draw"
     end
   end

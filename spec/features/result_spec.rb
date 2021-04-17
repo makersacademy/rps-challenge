@@ -11,6 +11,13 @@ feature 'result of game' do
 
   scenario 'it displays the choice made by the computer' do
     play_and_chose_rock
-    expect(page).to have_content 'you win!'
+    expect(page).to have_content "computer wins, you lose"
+  end
+
+
+  scenario 'play again after the match' do
+    play_and_chose_rock
+    click_button("play again")
+    expect(page).to have_content('muhammad, choose one of the following options')
   end
 end
