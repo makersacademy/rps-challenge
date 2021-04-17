@@ -10,26 +10,19 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
   </head>
 
   <body>
     <div class="container">
       <h1>Rock, Paper, Scissors</h1>
 
-      <div class="player">
-        <div class="userchoice Rock"></div>
-        <p>Player</p>
-      </div>
+      <h2>Welcome Player 1</h2>
 
-      <div class="player">
-        <div class="computerchoice Rock"></div>
-        <p>Computer</p>
-      </div>
-
-      <div class="result"></div>
-
-      <button class="startbutton">Play</button>
+      <form action="/name" method="post">
+      <input type="text" class="input" placeholder="Enter a name" name="name" >
+      <p><input id="SubmitButton" class="submit" type="submit" value="Submit"></p>
+    </form>
       <footer>
         <p>
           Jason Rowsell<br />
@@ -37,6 +30,5 @@
         </p>
       </footer>
     </div>
-    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
