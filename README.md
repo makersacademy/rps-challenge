@@ -12,13 +12,15 @@ I would like to be able to play rock/paper/scissors
 |---------|-----------------|
 | Player  |	owner           |
 | Name    |	property        |
-| Game    |	                |
+| Game    |	n/a - implicit  |
 
 | Actions  |	owned by? | What it changes |
 |----------|------------|-----------------|
 | Register |	player    |	@name           |
 | Play     |	player    |	@choice         |
 
+| Class diagram                          |
+|------------|---------------------------|
 | Class      |	Player                   |
 | Properties |	name, choice             |
 | Actions    | 	register name, play game |
