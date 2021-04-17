@@ -31,7 +31,7 @@
 
       <div class="result"></div>
 
-      <button class="startbutton">Play</button>
+      <button id="start" class="startbutton">Play</button>
 
       <footer>
         <p>
@@ -41,50 +41,50 @@
       </footer>
     </div>
     <script>
-    (function () {
-  // configure variables needed to access DOM elements
+          (function () {
+        // configure variables needed to access DOM elements
 
-  var user = document.querySelector(".userchoice"),
-    computer = document.querySelector(".computerchoice"),
-    startbutton = document.querySelector(".startbutton"),
-    result = document.querySelector(".result"),
-    userchoice = <%= @game.player.weapon.to_json %>,
-    winsStates = { Rock: "Scissors", Paper: "Rock", Scissors: "Paper" };
+        var user = document.querySelector(".userchoice"),
+          computer = document.querySelector(".computerchoice"),
+          startbutton = document.querySelector(".startbutton"),
+          result = document.querySelector(".result"),
+          userchoice = <%= @game.player.weapon.to_json %>,
+          winsStates = { Rock: "Scissors", Paper: "Rock", Scissors: "Paper" };
 
-  // listens for click on 'play' button to start game
+        // listens for click on 'play' button to start game
 
-  startbutton.addEventListener("click", function () {
-    this.disabled = true;
-    result.innerHTML = "";
-    user.className = "userchoice Rock count-in";
-    computer.className = "computerchoice Rock count-in";
-  });
+        startbutton.addEventListener("click", function () {
+          this.disabled = true;
+          result.innerHTML = "";
+          user.className = "userchoice Rock count-in";
+          computer.className = "computerchoice Rock count-in";
+        });
 
-  document.addEventListener("animationend", function () {
-    startbutton.disabled = false;
-    var computerchoice = getRandomChoice();
-    user.className = "userchoice " + userchoice;
-    computer.className = "computerchoice " + computerchoice;
-    result.innerHTML = getWinner(userchoice, computerchoice);
-  });
+        document.addEventListener("animationend", function () {
+          var computerchoice = getRandomChoice();
+          user.className = "userchoice " + userchoice;
+          computer.className = "computerchoice " + computerchoice;
+          result.innerHTML = getWinner(userchoice, computerchoice);
+          document.getElementById('start').remove();
+        });
 
-  // gets random string from winning states obj
+        // gets random string from winning states obj
 
-  function getRandomChoice() {
-    return Object.keys(winsStates)[Math.floor(Math.random() * 3)];
-  }
+        function getRandomChoice() {
+          return Object.keys(winsStates)[Math.floor(Math.random() * 3)];
+        }
 
-  // compares user and computer choice to determine winner
+        // compares user and computer choice to determine winner
 
-  function getWinner(userchoice, computerchoice) {
-    if (userchoice === computerchoice) {
-      return "A tie.";
-    } else if (userchoice === winsStates[computerchoice]) {
-      return "Computer Wins! " + computerchoice + " beats " + userchoice;
-    }
-    return "You Win! " + userchoice + " beats " + computerchoice;
-  }
-})();
-</script>
+        function getWinner(userchoice, computerchoice) {
+          if (userchoice === computerchoice) {
+            return "A tie.";
+          } else if (userchoice === winsStates[computerchoice]) {
+            return "Computer Wins! " + computerchoice + " beats " + userchoice;
+          }
+          return "You Win! " + userchoice + " beats " + computerchoice;
+        }
+      })();
+    </script>
   </body>
 </html>
