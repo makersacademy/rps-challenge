@@ -7,5 +7,5 @@ class Player
   
   def chose_weapon(weapon)
     @weapon = weapon  
-  end  
+  end
 end  

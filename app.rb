@@ -3,18 +3,18 @@ require 'sinatra/reloader'
 
 
 class Rps < Sinatra::Application
-  enable :sessions
+  before { @game = Game.load_game }
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    session[:player_name] = params[:player]
+    @game = Game.save_game(Player.new(params[:player]), Player.new('Computer'))
     redirect('/welcome')
   end
 
   get '/welcome' do
-    @player_name = session[:player_name]
+    @player_name = @game.players[0].name
     erb(:welcome)
   end
 
