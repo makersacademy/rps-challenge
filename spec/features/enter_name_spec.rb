@@ -8,6 +8,6 @@ feature 'welcome page' do
     visit '/'
     fill_in('player_name', with: 'muhammad')
     click_button "Let's play"
-    expect(page).to have_content("Muhammad's turn")
+    expect(page).to have_content("muhammad's turn")
   end
 end

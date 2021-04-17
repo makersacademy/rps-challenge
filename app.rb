@@ -1,20 +1,22 @@
 require 'sinatra'
-require 'sinatra/reloader'
+require 'sinatra/reloader' if development?
 
 class Rps < Sinatra::Application
-  # configure :development do
-  #   register Sinatra::Reloader
-  # end
 
   get '/' do
     erb :index
   end
 
   post '/names' do
+    @player = Player.new(params[:player_name])
+    @game = Game.new(@player)
+    $game = @game
     redirect '/play'
   end
 
   get '/play' do
+    @game = $game
+    @player_name = @game.player.name
     erb :play
   end
 
