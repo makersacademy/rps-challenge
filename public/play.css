@@ -95,6 +95,7 @@ body {
   color: rgba(255, 255, 255, 1);
   border-radius: 2rem;
 }
+
 .startbutton:disabled {
   background-color: rgba(102, 0, 102, 0.1);
   font-weight: 450;

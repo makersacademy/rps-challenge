@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container" id="container">
       <h1>Rock, Paper, Scissors</h1>
 
       <h2>Your weapon is <%= @game.player.weapon %></h2>
@@ -29,10 +29,10 @@
         <p>Computer</p>
       </div>
 
-      <div class="result"></div>
+      <div class="result" id="result"></div>
 
       <button id="start" class="startbutton">Play</button>
-
+      <div class="retry"></div>
       <footer>
         <p>
           Jason Rowsell<br />
@@ -40,8 +40,9 @@
         </p>
       </footer>
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script>
-          (function () {
+      (function () {
         // configure variables needed to access DOM elements
 
         var user = document.querySelector(".userchoice"),
@@ -66,6 +67,7 @@
           computer.className = "computerchoice " + computerchoice;
           result.innerHTML = getWinner(userchoice, computerchoice);
           document.getElementById('start').remove();
+          playAgain();
         });
 
         // gets random string from winning states obj
@@ -83,6 +85,18 @@
             return "Computer Wins! " + computerchoice + " beats " + userchoice;
           }
           return "You Win! " + userchoice + " beats " + computerchoice;
+        }
+
+        // creates play again button
+
+        function playAgain() {
+          var form = $("<form/>",
+                 { action:'/choice' }
+            );
+          form.append(
+              $("<button type='submit', class='startbutton'>Play Again</button>")
+          );
+          $('.retry').append(form);
         }
       })();
     </script>
