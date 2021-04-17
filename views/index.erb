@@ -1,0 +1,22 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors!!</title>
+    <link href="<%= url("/styles.css") %>" rel="stylesheet" type="text/css"/>
+  </head>
+
+  <body>
+    <h1>Rock Paper Scissors</h1>
+    <form action="/names" method="post">
+      <ul>
+        <li>
+          <label for "player1" id="player1">Please enter your name:</label>
+          <input type="text" name="player1">
+        </li>
+        <li>
+          <input class="submit" value="Submit" type="submit">
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>
