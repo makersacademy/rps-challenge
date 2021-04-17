@@ -7,9 +7,7 @@ end
 
 feature "Players can add enter their names" do
   scenario "submit names" do
-    visit("/")
-    fill_in :player_1_name, with: "Player 1"
-    click_button "Start game"
+    sign_in_and_submit
     expect(page).to have_content "Welcome Player 1, let's play Rock, Paper, Scissors!"
   end
 end
