@@ -3,6 +3,6 @@ feature 'Enter name' do
     visit('/')
     fill_in :player_name, with: 'Yohann'
     click_button 'Submit'
-    expect(page).to have_content 'Yohann entered the game'
+    expect(page).to have_content 'Welcome, Yohann'
   end
 end
