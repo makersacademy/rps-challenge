@@ -1,4 +1,4 @@
-require 'sinatra/base'
+require 'sinatra'
 require 'sinatra/reloader'
 
 class Rps < Sinatra::Base
@@ -7,7 +7,15 @@ class Rps < Sinatra::Base
   end
 
   get '/' do
-    'test infrastructure is working'
+    erb :index
   end
-end
 
+  post '/names' do
+    redirect '/play'
+  end
+
+  get '/play' do
+    erb :play
+  end
+
+end
