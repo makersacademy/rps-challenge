@@ -9,21 +9,22 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 | Noun    |	Property/owner? |
-|---------|-----------------|
+|---------|---------------------|
 | Player  |	owner           |
 | Name    |	property        |
 | Game    |	n/a - implicit  |
 
-| Actions  |	owned by? | What it changes |
-|----------|------------|-----------------|
+| Actions  |	owned by? | What it changes     |
+|----------|--------------|---------------------|
 | Register |	player    |	@name           |
 | Play     |	player    |	@choice         |
 
-| Class diagram                          |
+| Template   | details                   |
 |------------|---------------------------|
 | Class      |	Player                   |
 | Properties |	name, choice             |
 | Actions    | 	register name, play game |
+
 
 * I could make the opponent a class, but this only seems necessary if I make the game more complex (like introducing a ‘win tally’ attribute). Otherwise, I can reduce the opponent to a win/lose/draw message.
 
