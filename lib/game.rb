@@ -7,5 +7,5 @@ class Game
     @player1 = player1
     @computer = computer
   end
-  
+
 end
