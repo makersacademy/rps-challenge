@@ -19,6 +19,7 @@ class Rps < Sinatra::Application
 
   get '/play' do
     @player_name = @game.player.name
+    @computer_name = @game.computer.name
     erb :play
   end
 
