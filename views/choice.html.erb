@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rock Paper Scissors</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="choice.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Rock, Paper, Scissors</h1>
+
+      <h2>Welcome, <%= @game.player.name.capitalize %></h2>
+
+      <h3>Choose your weapon</h3>
+
+      <form action="/weapon" method="post">
+        <button
+          type="submit"
+          name="rock"
+          value="Rock"
+          style="background-color: transparent; border: none"
+        >
+          <img src="images/rock.png" alt="Rock" />
+        </button>
+        <button
+          type="submit"
+          name="paper"
+          value="Paper"
+          style="background-color: transparent; border: none"
+        >
+          <img src="images/paper.png" alt="Paper" />
+        </button>
+        <button
+          type="submit"
+          name="scissors"
+          value="Scissors"
+          style="background-color: transparent; border: none"
+        >
+          <img src="images/scissors.png" alt="Scissors" />
+        </button>
+      </form>
+      <footer>
+        <p>
+          Jason Rowsell<br />
+          <a href="https://github.com/jasonrowsell">Github</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -45,9 +45,10 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'features/web_helpers'
 
 # tell Capybara about our app class
-Capybara.app = Game
+Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -134,4 +135,3 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
-

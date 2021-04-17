@@ -1,0 +1,119 @@
+html {
+  height: 100%;
+}
+
+@keyframes count-in {
+  0% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+body {
+  background: -webkit-linear-gradient(
+    to top,
+    #12c2e9,
+    #c471ed,
+    #f64f59
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #12c2e9,
+    #c471ed,
+    #f64f59
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 6);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.count-in {
+  animation: 0.7s count-in 3;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 650px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 25px;
+  border-radius: 2rem;
+}
+
+.player {
+  width: 150px;
+  height: 150px;
+  margin: 100px 50px;
+  display: inline-block;
+}
+
+.player p {
+  font-weight: 700;
+}
+
+.player div {
+  width: 100%;
+  height: 100%;
+}
+
+.Rock {
+  background-image: url("images/rock.png");
+}
+
+.Paper {
+  background-image: url("images/paper.png");
+}
+
+.Scissors {
+  background-image: url("images/scissors.png");
+}
+
+.Rock,
+.Paper,
+.Scissors {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.startbutton {
+  background-color: rgba(102, 0, 102, 0.3);
+  border: none;
+  padding: 10px 100px;
+  font-weight: 450;
+  font-size: 20px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 2rem;
+}
+.startbutton:disabled {
+  background-color: rgba(102, 0, 102, 0.1);
+  font-weight: 450;
+  font-size: 20px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+}
+
+.result {
+  margin-bottom: 25px;
+  font-weight: 700;
+  height: 50px;
+  font-size: 2em;
+}
+
+footer {
+  font-weight: 200;
+  font-size: 15px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+}
