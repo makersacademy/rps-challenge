@@ -6,7 +6,7 @@ feature 'welcome page' do
 
   scenario 'user can enter their name to begin game' do
     visit '/'
-    fill_in('player_1_name', with: 'muhammad')
+    fill_in('player_name', with: 'muhammad')
     click_button "Let's play"
     expect(page).to have_content("Muhammad's turn")
   end

@@ -1,10 +1,10 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-class Rps < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
-  end
+class Rps < Sinatra::Application
+  # configure :development do
+  #   register Sinatra::Reloader
+  # end
 
   get '/' do
     erb :index
