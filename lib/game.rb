@@ -1,7 +1,7 @@
 require_relative 'player'
 
 class Game
-  attr_reader :moves, :player
+  attr_reader :moves, :player, :result
 
   def self.create(player)
     @game = Game.new(player)
@@ -14,17 +14,18 @@ class Game
   def initialize(player)
     @player = player
     @moves = ["rock", "paper", "scissors"]
+    @result = nil
   end
 
   def take_turn(player, move)
-    # move = gets.chomp.downcase
-    if move == "rock" then rock_move(player)
-    elsif move == "scissors" then scissor_move(player)
-    elsif move == "paper" then paper_move(player)
-    else "Invalid move"
+    if move == "rock" then @result = rock_move(player)
+    elsif move == "scissors" then @result = scissor_move(player)
+    elsif move == "paper" then @result = paper_move(player)
+    else @result = "Invalid move"
     end
+    return @result
   end
-
+  
   private 
 
   def rock_move(player)

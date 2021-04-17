@@ -3,7 +3,7 @@ feature 'Playing the game' do
     visit('/')
     fill_in :player_1, with: 'matt'
     click_button 'Submit'
-    click_button('Rock')
+    click_button('rock')
 
     expect(page).to have_content("You have chosen Rock")
   end
@@ -12,7 +12,7 @@ feature 'Playing the game' do
     visit('/')
     fill_in :player_1, with: 'matt'
     click_button 'Submit'
-    click_button('Paper')
+    click_button('paper')
 
     expect(page).to have_content("You have chosen Paper")
   end
@@ -21,7 +21,7 @@ feature 'Playing the game' do
     visit('/')
     fill_in :player_1, with: 'matt'
     click_button 'Submit'
-    click_button('Scissors')
+    click_button('scissors')
 
     expect(page).to have_content("You have chosen Scissors")
   end

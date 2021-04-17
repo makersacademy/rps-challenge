@@ -26,8 +26,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
-    @move = params[:move]
-    @result = @game.take_turn(@game.player, @move)
+    session[:choice] = params[:choice]
+    @game.take_turn(@game.player, session[:choice])
     redirect '/outcome'
   end
 
