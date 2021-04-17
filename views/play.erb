@@ -1,3 +1,9 @@
 <h1> Thank you for entering your name </h1>
 <br>
-Welcome <%= @player_1_name %>, let's play Rock, Paper, Scissors!
+Welcome <span style="text-transform:uppercase"><b><%= @player_1_name %></b> </span> let's play Rock, Paper, Scissors!
+<br>
+Pick either Rock, Paper or Scissors 
+<br>
+<form action="/rock">
+<input type="submit" value="Rock">
+</form>
