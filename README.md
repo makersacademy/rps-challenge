@@ -31,7 +31,4 @@ I would like to be able to play rock/paper/scissors
 Page setup: 5 views.
 
 Name input links to choice-input, which flows to one of three outcomes: win, lose or draw.
-
-						—>	[win	  ]
-[name] —> 	[choice]		—>	[lose	  ]
-						—>	[draw ]
+(name) --> (choice) --> (win) OR (lose) OR (draw)
