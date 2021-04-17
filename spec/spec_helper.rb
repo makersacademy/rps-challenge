@@ -10,13 +10,12 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
-require 'rspec'
-require 'capybara/rspec'
-ENV['RACK_ENV'] = 'test'
+
+
+
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
-Capybara.app = Rps
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts
@@ -25,4 +24,13 @@ RSpec.configure do |config|
   end
 end
 
+ENV['RACK_ENV'] = 'test'
+require 'rspec'
+require 'capybara'
+require 'capybara/rspec'
+require_relative 'web_helper'
+
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+Capybara.app = Rps
 
