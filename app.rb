@@ -11,7 +11,6 @@ class Rps < Sinatra::Application
   end
 
   post '/names' do
-    p params
     player = Player.new(params[:player_name])
     new_game = Game.new(player)
     Game.save_game(new_game)
@@ -25,10 +24,15 @@ class Rps < Sinatra::Application
   end
 
   post '/choice' do
+    @game.player_choice = params[:player_choice]
     redirect '/result'
   end
 
   get '/result' do
+    @player_name = @game.player.name
+    @computer_name = @game.computer.name
+    @player_choice = @game.player_choice
+    @computer_choice = @game.computer.chose_weapon
     erb :result
   end
 

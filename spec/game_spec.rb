@@ -9,5 +9,4 @@ describe Game do
   it 'creates a new instance with player name' do
     expect(subject.player.name).to eq('muhammad')
   end
-
 end
