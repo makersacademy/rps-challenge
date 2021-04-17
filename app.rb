@@ -24,15 +24,15 @@ class Rps < Sinatra::Application
   end
 
   post '/choice' do
-    @game.player_choice = params[:player_choice]
+    @game.player_weapon = params[:player_weapon]
     redirect '/result'
   end
 
   get '/result' do
     @player_name = @game.player.name
     @computer_name = @game.computer.name
-    @player_choice = @game.player_choice
-    @computer_choice = @game.computer.chose_weapon
+    @player_weapon = @game.player_weapon
+    @computer_weapon = @game.computer.chose_weapon
     erb :result
   end
 

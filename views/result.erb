@@ -1,12 +1,19 @@
 <html>
   <h3><%= @player_name %> vs. <%= @computer_name %></h3>
   <p1>
-    you have chosen <%= @player_choice %>
+    you have chosen <%= @player_weapon %>
   </p1>
-
+  <br>
+  <br>
   <p2>
-    computer has chosen <%= @computer_choice%>
+    computer has chosen <%= @computer_weapon %>
   </p2>
 
+  <br>
+  <br>
+
+  <p3>
+    <%= @game.winner(@player_weapon, @computer_weapon) %>
+  </p3>
 
 </html>
