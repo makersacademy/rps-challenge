@@ -60,4 +60,27 @@ describe Game do
     end
   end
 
+  describe '#player_points' do
+    context 'after playing a game' do
+      it 'increases player points' do
+        allow(player).to receive(:weapon).and_return 'Rock'
+        allow(computer).to receive(:weapon).and_return 'Scissors'
+        allow(player).to receive(:points)
+        expect(subject).to receive(:check_player_points)
+        subject.player_points
+      end
+    end
+  end
+
+  describe '#computer_points' do
+    context 'after playing a game' do
+      it 'increases player points' do
+        allow(player).to receive(:weapon).and_return 'Rock'
+        allow(computer).to receive(:weapon).and_return 'Paper'
+        allow(computer).to receive(:points)
+        expect(subject).to receive(:check_computer_points)
+        subject.computer_points
+      end
+    end
+  end
 end

@@ -1,13 +1,8 @@
 require 'sinatra'
-require "sinatra/reloader" if development?
 require './lib/player'
 require './lib/game'
 
-
 class RockPaperScissors < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
-  end
 
   before { @game = Game.instance }
 

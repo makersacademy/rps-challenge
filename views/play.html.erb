@@ -22,13 +22,13 @@
       <div class="player">
         <div class="userchoice Rock"></div>
         <p><%= @game.player.name.capitalize %></p>
-        <p>Score: </p>
+        <div class="playerscore">Score: <%= @game.player.points %></div>
       </div>
 
       <div class="player">
         <div class="computerchoice Rock"></div>
         <p>Computer</p>
-        <p>Score: </p>
+        <p class="computerscore">Score: <%= @game.computer.points %></p>
       </div>
 
       <div class="result" id="result"></div>
@@ -52,7 +52,8 @@
           startbutton = document.querySelector(".startbutton"),
           result = document.querySelector(".result"),
           userchoice = <%= @game.player.weapon.to_json %>,
-          winsStates = { Rock: "Scissors", Paper: "Rock", Scissors: "Paper" };
+          userscore = document.querySelector(".playerscore"),
+          computerscore = document.querySelector(".computerscore");
 
         // listens for click on 'play' button to start game
 
@@ -63,11 +64,15 @@
           computer.className = "computerchoice Rock count-in";
         });
 
+        // listens for animation end to return result
+
         document.addEventListener("animationend", function () {
           var computerchoice = <%= @game.computer.rand_weapon.to_json %>;
           user.className = "userchoice " + userchoice;
           computer.className = "computerchoice " + computerchoice;
           result.innerHTML = <%= @game.check_winner.to_json %>;
+          userscore.innerHTML = "Score: " + <%= (@game.player_points).to_json %>;
+          computerscore.innerHTML = "Score: " + <%= (@game.computer_points).to_json %>;
           document.getElementById('start').remove();
           playAgain();
         });

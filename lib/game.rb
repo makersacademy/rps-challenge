@@ -31,8 +31,38 @@ class Game
     end
   end
 
+  def player_points
+    check_player_points
+    return self.player.points
+  end
+
+  def computer_points
+    check_computer_points
+    return self.computer.points
+  end
+
   private
 
   attr_reader :player_class, :computer_class
+
+  def check_player_points
+    if player.weapon == computer.weapon
+      @player.points += 0
+    elsif player.weapon == win_states[computer.weapon.to_sym]
+      @player.points += 0
+    else
+      @player.points += 1
+    end
+  end
+
+  def check_computer_points
+    if player.weapon == computer.weapon
+      @computer.points += 0
+    elsif player.weapon == win_states[computer.weapon.to_sym]
+      @computer.points += 1
+    else
+      @computer.points += 0
+    end
+  end
 
 end
