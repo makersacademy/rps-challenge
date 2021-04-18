@@ -13,11 +13,4 @@ describe Weapon do
       expect(subject.choices).to include('Scissors')
     end
   end
-
-  # it 'rocks beats paper' do
-  #   allow(game.player_1).to receive(:choose_weapon).and_return(subject.choices[0])
-  #   allow(game.player_2).to receive(:choose_weapon).and_return(subject.choices[1])
-  #   expect(game.)
-  # end
-
 end

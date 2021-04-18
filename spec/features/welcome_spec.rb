@@ -9,10 +9,5 @@ feature 'Home page' do
     expect(page).to have_button('Paper')
     expect(page).to have_button('Scissors')
   end
-  scenario 'shows the choice selected' do
-    fillin_and_submit
-    click_button('Rock')
-    expect(page).to have_content('you chose Rock')
-  end
 
 end

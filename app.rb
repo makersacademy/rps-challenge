@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require_relative './lib/game'
 
 
 class Rps < Sinatra::Application
@@ -9,7 +10,7 @@ class Rps < Sinatra::Application
   end
 
   post '/name' do
-    @game = Game.save_game(Player.new(params[:player]), Player.new('Computer'))
+    p @game = Game.save_game(Player.new(params[:player]), Player.new('Computer'))
     redirect('/welcome')
   end
 
@@ -19,7 +20,7 @@ class Rps < Sinatra::Application
   end
 
   post '/choice' do
-    "you chose #{params[:choice]}"
+    erb(:choice)
   end
   
   run! if app_file == $PROGRAM_NAME
