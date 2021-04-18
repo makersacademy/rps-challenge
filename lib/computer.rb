@@ -1,5 +1,5 @@
 class Computer
-  attr_accessor :moves 
+  attr_reader :moves
 
   MOVES = [:Rock, :Paper, :Scissors]
 
@@ -7,7 +7,7 @@ class Computer
     @moves = MOVES
   end
 
-  def move
+  def computer_move
     @moves.sample.to_s
   end
 end

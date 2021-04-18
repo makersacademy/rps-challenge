@@ -28,7 +28,7 @@ class RPSWeb < Sinatra::Base
     @player_name = session[:player_name]
     @player_name.make_move(params[:move])
     session[:computer] = Computer.new
-    @computer = session[:computer].move
+    @computer = session[:computer].computer_move
     erb(:move)
   end
   
