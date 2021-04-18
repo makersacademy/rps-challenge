@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player'
 
 class RPSWeb < Sinatra::Base 
   enable :sessions
@@ -13,7 +14,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_name] = params[:player_name]
+    session[:player_name] = Player.new(params[:player_name])
     redirect '/play'
   end
 
