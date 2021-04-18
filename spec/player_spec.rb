@@ -12,7 +12,7 @@ describe Player do
   describe '#selection' do
     it "records the player's move" do
       dom.make_move('Rock')
-      expect(dom.move).to eq 'Rock'
+      expect(dom.player_move).to eq 'Rock'
     end
   end
 end

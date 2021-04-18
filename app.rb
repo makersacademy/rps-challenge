@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/computer'
 
 class RPSWeb < Sinatra::Base 
   enable :sessions
@@ -26,6 +27,8 @@ class RPSWeb < Sinatra::Base
   post '/move' do
     @player_name = session[:player_name]
     @player_name.make_move(params[:move])
+    session[:computer] = Computer.new
+    @computer = session[:computer].move
     erb(:move)
   end
   
