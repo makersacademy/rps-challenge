@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Play Rock, Paper, Scissors!</title>
+  </head>
+  <body>
+    <h2>Welcome <%= @player_1_name %>!</h2>
+    <h3> Make your choice!</h3>
+    <form action="/choice" method='post'>
+      <input type="hidden" name="choice" value="rock">
+      <input type="submit" value="Rock">
+    </form>
+    <form action="/choice" method='post'>
+      <input type="hidden" name="choice" value="paper">
+      <input type="submit" value="Paper">
+    </form>
+    <form action="/choice" method='post'>
+      <input type="hidden" name="choice" value="scissors">
+      <input type="submit" value="Scissors">
+    </form>
+  </body>
+</html>

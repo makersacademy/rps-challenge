@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>Draw!</title>
+  </head>
+  <body>
+    <h2>It's a draw!</h2>
+    <h3>You chose: <%= @choice.capitalize %>, Your opponent chose: <%= @game.computer_choice.capitalize %></h3>
+    <form action="/">
+      <input type="submit" value="Restart" id="restart">
+    </form>
+  </body>
+</html>
