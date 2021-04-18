@@ -1,3 +1,5 @@
+# require_relative 'weapons'
+
 class Player
   attr_reader :name, :weapon
 
@@ -5,7 +7,7 @@ class Player
     @name = name
   end 
   
-  def chose_weapon(weapon)
-    @weapon = weapon  
-  end
+  def choose_weapon(weapon = Weapon.new.choices.sample)
+    @weapon = weapon
+  end  
 end  
