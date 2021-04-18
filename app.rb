@@ -29,6 +29,8 @@ class RPS < Sinatra::Base
 
   get '/outcome' do
     @your_play = session['your_play']
+    @opponent_play = ['rock', 'paper', 'scissors'].sample
+    p @opponent_play
     erb :outcome
   end
 
