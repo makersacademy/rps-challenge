@@ -22,11 +22,13 @@
       <div class="player">
         <div class="userchoice Rock"></div>
         <p><%= @game.player.name.capitalize %></p>
+        <p>Score: </p>
       </div>
 
       <div class="player">
         <div class="computerchoice Rock"></div>
         <p>Computer</p>
+        <p>Score: </p>
       </div>
 
       <div class="result" id="result"></div>
@@ -62,19 +64,13 @@
         });
 
         document.addEventListener("animationend", function () {
-          var computerchoice = getRandomChoice();
+          var computerchoice = <%= @game.computer.rand_weapon.to_json %>;
           user.className = "userchoice " + userchoice;
           computer.className = "computerchoice " + computerchoice;
           result.innerHTML = getWinner(userchoice, computerchoice);
           document.getElementById('start').remove();
           playAgain();
         });
-
-        // gets random string from winning states obj
-
-        function getRandomChoice() {
-          return Object.keys(winsStates)[Math.floor(Math.random() * 3)];
-        }
 
         // compares user and computer choice to determine winner
 

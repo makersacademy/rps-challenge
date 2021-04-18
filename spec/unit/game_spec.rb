@@ -4,8 +4,10 @@ describe Game do
 
   let(:player_class)   { class_double(Player, new: player) }
   let(:player)         { instance_double(Player, name: 'Jason') }
+  let(:computer_class) { class_double(Computer, new: computer) }
+  let(:computer)       { instance_double(Computer) }
 
-  subject { described_class.new('Jason', player_class) }
+  subject { described_class.new('Jason', player_class, computer_class) }
 
   describe '.create' do
     it 'creates a new instance of self' do
@@ -20,9 +22,16 @@ describe Game do
     end
   end
 
-  describe '#player1' do
-    it 'returns player1' do
+  describe '#player' do
+    it 'returns player' do
       expect(subject.player).to be player
     end
   end
+
+  describe '#computer' do
+    it 'returns computer' do
+      expect(subject.computer).to be computer
+    end
+  end
+
 end

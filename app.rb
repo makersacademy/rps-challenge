@@ -37,6 +37,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
+    @game.computer.rand_weapon
+
     erb "play.html".to_sym
   end
 
