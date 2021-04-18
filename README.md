@@ -8,7 +8,7 @@
 4. Run `rackup`
 5. Navigate to http://localhost:9292/ in your browser
 
-![image](https://imgur.com/OeA43Cy)
+![image]([Imgur](https://imgur.com/jwiccsi))
 
 ![image](https://imgur.com/DGDMm2k)
 
