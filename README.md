@@ -99,3 +99,5 @@ Improvements
  * Multiplayer option
  * css to style the webpage
  * score counter
+ * Move all result pages into a single page using if to show specific results
+ * errors for invalid weapons
