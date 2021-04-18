@@ -33,12 +33,13 @@ class RPS < Sinatra::Base
 
   post '/your_choice' do
     @game.player.play_option = params['play_option']
+    @game.computer.play_option = @game.make_random_choice
     redirect '/outcome'
   end
 
   get '/outcome' do
     @your_play = @game.player.play_option
-    @opponent_play = ['rock', 'paper', 'scissors'].sample
+    @opponent_play = @game.computer.play_option
     erb :outcome
   end
 
