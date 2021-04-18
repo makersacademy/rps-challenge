@@ -5,6 +5,7 @@ describe Player do
 
   it { is_expected.to respond_to :name }
   it { is_expected.to respond_to :weapon }
+  it { is_expected.to respond_to :points }
 
   describe "#name" do
     context 'once initialized' do
@@ -20,6 +21,12 @@ describe Player do
         subject.weapon = 'Rock'
         expect(subject.weapon).to eq 'Rock'
       end
+    end
+  end
+
+  describe '#points' do
+    it 'has a default value of 0' do
+      expect(subject.points).to eq Player::POINTS
     end
   end
 end
