@@ -15,10 +15,11 @@
       </div>
       <div class="selection-entry">
         <form method="post" action="/selection"> 
-          <input class='submit' name="rock" type='submit' value='Rock'>
-          <%# <input class='submit' type='submit' value='Paper'>
-          <input class='submit' type='submit' value='Scissors'> %>
-           <%# <input class='submit' type='submit' value='Random?'> %>
+          <input class='submit' name="playerchoice" type='submit' value='Rock'>
+          <input class='submit' name="playerchoice" type='submit' value='Paper'>
+          <input class='submit' name="playerchoice" type='submit' value='Scissors'>
+          <input class='submit' name="playerchoice" type='submit' value="I'm Feeling Lucky">
+          <p>You clicked <%=@move%>!</p>
         </form>
       </div>
     </div>

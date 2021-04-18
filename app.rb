@@ -25,7 +25,7 @@ end
   end
 
   post '/selection' do 
-    @move = params[:rock]
+    @move = params[:playerchoice]
     @game = $game
     erb :playgame
   end 
