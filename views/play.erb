@@ -1,0 +1,14 @@
+<html>
+  <h3><%= @player_name %> vs. <%= @computer_name %></h3>
+
+    <p1>
+      <%= @player_name %>, choose one of the following options
+    </p1><br>
+    <br>
+    <br>
+    <form action="/choice" method="post">
+      <input type="submit" name="player_weapon" value="rock">
+      <input type="submit" name="player_weapon" value="paper">
+      <input type="submit" name="player_weapon" value="scissors">
+    </form>
+</html>

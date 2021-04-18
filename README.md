@@ -1,85 +1,76 @@
-# RPS Challenge
+# RPS Challenge - Solution
 
-Instructions
--------
+Welcome to my solution for the RPS challenge. Below I have explained how I approached the challenge, the process I followed and the learning outcomes. 
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Objective
+---------
+The objective of this challenge was to create a web app which lets the user play rock, paper, scissors with the computer. 
 
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
+How to play
+-----------
+First, enter following commands into your terminal. 
 ```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+git clone git@github.com:ahmad047/rps-challenge
+bundle
+rackup
 ```
+Then you can go the local host web page on your web browser and play the game from there.
 
-Hints on functionality
+Progress and Learning Outcomes
+------------------------------
+This was a very fun challenge, and I really learned a lot while completing this. Some of the highlights from learning objectives covered are below. 
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
+1. Understanding of MVC pattern
+2. Debugging web apps
+3. Writing feature test using capybara
+4. Understanding of how web apps work
+5. An extensive understanding and application of class
+6. variables, class methods and class instance variables
 
 
-## Bonus level 1: Multiplayer
+Program (Features and Functionality)
+------------------------------------
+The program allows user to play a game where they can choose from one of three options which are rock, paper and scissors.
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+**Domain model**
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+Please follow this link for [Domain model and user story representations](https://docs.google.com/document/d/1xfRNeKF8D11Tye7pwrr5v-diAF5m8dJ72TO8D6LT8WY/edit?usp=sharing). 
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+**Rules of the game**
 
-## Basic Rules
+The basic rules of the game which have been implemented can be found [here](https://en.wikipedia.org/wiki/Rock_paper_scissors).
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+**Classes**
 
-In code review we'll be hoping to see:
+The program has three classes which are game, player and computer. For each class the methods and features have been clearly defined in the code and have all been tested out. 
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+* Game - This class is responsible for creating a new game, saving that game, loading the game and determining a winner.
+* Computer - This class is responsible for creating a new computer instance which can choose either one of the three game options randomly.
+* Plyer - Player is responsible for creating a new instance of player which will face off against the computer during the game.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
+**Controller**
+The file called app.rb acts as the controller for the game and is the bridge between the front end and the back end. The controller has been made as skinny as possible and all the rules of web application development known to me have been followed in writing this. However, it still needs further improvement.
 
-Notes on test coverage
-----------------------
+**Views**
+The front end of this game is not very sophisticated at the moment and has been written using basic HTML. This is subject to improvement as well and I will be adding a more user friendly design in the future. However, it still has all the functional features that can be expected of the game. They allow player to enter their name and play the game. The name is then displayed on top of other views for the duration of the game. The user can press one of three buttons to choose an option. Once user has finished a game they are then prompted to play again. 
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+Challenges Faced
+----------------
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+This has been a really fun weekend as I enjoyed building the game and moreover playing it. However, some of the challenges faced are below. 
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
+**Web App concepts**
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+This was the first time that I have ever created a web app. I had no prior knowledge of even the basic concepts of most of new topics covered this week. The concept of get and post request did not start making sense until I had built something using that practically. However, I overcame this by reminding myself "it's not hard, it's new". 
+
+**MVC**
+
+MVC was something which seemed very difficult at first, but after completing the week and weekend challenge I do understand the concept and application. However, there is still a long way to go on this. 
+
+
+Conclusion
+----------
+
+The weekend challenge was a lot of fun and it really kept me engaged. I feel that I can break down any problem now which is very empowering. I did not get blocked like I was during first two weeks.
+
+I am excited about the prospect of solving more challenged over coming weeks!
