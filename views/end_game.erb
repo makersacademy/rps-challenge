@@ -1,0 +1,12 @@
+<% if @game.won(@game.player, @game.engine) == @game.player.name %>
+  <%= @game.player.name %>, YOU WIN THIS TIME <br>
+  You played <%= @game.player.move %> and the <%= @game.engine.name %> chose <%= @game.engine.rmove %> <br>
+  You think you're slick, don't you!?!
+<% elsif @game.won(@game.player, @game.engine) == @game.engine.name%>
+  <%= @game.player.name %>, YOU ARE A SORE LOSER <br>
+  You played <%= @game.player.move %> and the <%= @game.engine.name %> chose <%= @game.engine.rmove %> <br>
+  Don't hate the player, hate the game!!
+<% else%>
+  IT'S A DRAW THIS TIME <br>
+  You both played <%= @game.player.move %>
+<% end %>
