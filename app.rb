@@ -11,7 +11,7 @@ class RPS < Sinatra::Base
   end
 
   # instance of Game available in every route
-  # overidden in /player_name, where instance of game is setup
+  # @game overidden in /player_name, where instance of game is setup
   before do
     @game = Game.instance
   end
@@ -32,12 +32,12 @@ class RPS < Sinatra::Base
   end
 
   post '/your_choice' do
-    session['your_play'] = params['play_option']
+    @game.player.play_option = params['play_option']
     redirect '/outcome'
   end
 
   get '/outcome' do
-    @your_play = session['your_play']
+    @your_play = @game.player.play_option
     @opponent_play = ['rock', 'paper', 'scissors'].sample
     erb :outcome
   end

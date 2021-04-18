@@ -57,18 +57,6 @@ Below are the basic rules of the game as specified by the client (these were pro
 - Scissors beats Paper
 - Paper beats Rock
 
-### Additional Requests
-
-Below are additional requests from the client (these were provided in the challenge):
-
-##### Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-##### Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules (http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock) to expand the game
-
 ## Running Tests
 
 ```zsh
