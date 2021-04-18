@@ -18,8 +18,9 @@
           <input class='submit' name="playerchoice" type='submit' value='Rock'>
           <input class='submit' name="playerchoice" type='submit' value='Paper'>
           <input class='submit' name="playerchoice" type='submit' value='Scissors'>
-          <input class='submit' name="playerchoice" type='submit' value="I'm Feeling Lucky">
+          <%# <input class='submit' name="playerchoice" type='submit' value="I'm Feeling Lucky"> %>
           <p>You clicked <%=@move%>!</p>
+          <p>Game Result: <%=@game.playgame(@move, @game.computer_move)%></p>
         </form>
       </div>
     </div>

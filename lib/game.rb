@@ -1,30 +1,30 @@
 require_relative './player.rb'
 
 class Game
-  attr_reader :player1, :computer
+  attr_reader :player1, :computer, :computer_move
 
   def initialize(player1 = Player.new, computer = Player.new)
     @player1 = player1
     @computer = computer
   end
 
-  def move
+  def computer_move
     ['Rock', 'Paper', 'Scissors'].sample
   end
 
   def playgame(player1, computer)
     @results = {
-      'rock/rock' => "It's a tie",
-      'rock/paper' => "Computer Wins",
-      'rock/scissors' => "You Win",
-      'paper/paper' => "It's a tie",
-      'paper/rock' => "You Win",
-      'paper/scissors' => "Computer Wins",
-      'scissors/scissors' => "It's a tie",
-      'scissors/rock' => "Computer Wins",
-      'scissors/paper' => "Computer Wins"
+      'Rock/Rock' => "It's a tie",
+      'Rock/Paper' => "Computer Wins",
+      'Rock/Scissors' => "You Win",
+      'Paper/Paper' => "It's a tie",
+      'Paper/Rock' => "You Win",
+      'Paper/Scissors' => "Computer Wins",
+      'Scissors/Scissors' => "It's a tie",
+      'Scissors/Rock' => "Computer Wins",
+      'Scissors/Paper' => "Computer Wins"
     }
-    @results["#{player1}/#{computer}"]
+    return @results["#{player1}/#{computer}"]
   end
 
 end
