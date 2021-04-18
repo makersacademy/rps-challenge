@@ -83,3 +83,19 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+Process
+--------
+Website was created via test driven development.
+* The user can enter their name to begin with and then make their own choice via a button. 
+* The `Game` class creates a computer generated choice upon initialization and is stored in a class variable via `new_game` and `load_game`.
+* `Game` has two methods `draw?` and `win?` which decide wether the user draws or wins.
+* The result of the game directs the user to a win, draw or loss page based upon the results.
+* The result webpages have a button to return to the root directory and restart the game.
+
+Improvements
+------------
+ * Does the computer choice need to be created once the user input has been enetered (to prevent potential cheating)
+ * Multiplayer option
+ * css to style the webpage
+ * score counter

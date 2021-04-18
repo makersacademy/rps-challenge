@@ -9,6 +9,8 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  before { @game = Game.load_game }
+
   get '/' do
     erb :index
   end
@@ -26,7 +28,6 @@ class RPS < Sinatra::Base
 
   post '/choice' do
     session[:choice] = params[:choice]
-    @game = Game.load_game
     if @game.draw?(session[:choice]) 
       redirect('/draw')
     else
@@ -36,19 +37,16 @@ class RPS < Sinatra::Base
 
   get '/draw' do
     @choice = session[:choice]
-    @game = Game.load_game
     erb :draw
   end
 
   get '/win' do
     @choice = session[:choice]
-    @game = Game.load_game
     erb :win
   end
 
   get '/loss' do
     @choice = session[:choice]
-    @game = Game.load_game
     erb :loss
   end
 

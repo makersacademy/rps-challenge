@@ -5,6 +5,9 @@
   <body>
     <h2>You win!</h2>
     <h3>You chose: <%= @choice.capitalize %>, Your opponent chose: <%= @game.computer_choice.capitalize %></h3>
+    <form action="/">
+      <input type="submit" value="Restart" id="restart">
+    </form>
   </body>
 
 </html>
