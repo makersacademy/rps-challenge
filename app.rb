@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
 require './lib/ai'
+require './lib/judge'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -26,6 +27,7 @@ class RPS < Sinatra::Base
   post '/result'do
     session[:choice] = params[:choice]
     session[:ai_choice] = Ai.new.choice
+    session[:winner] = Judge.new.winner(session[:choice],session[:ai_choice])
     erb :result
   end
 
