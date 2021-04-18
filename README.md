@@ -8,11 +8,11 @@
 4. Run `rackup`
 5. Navigate to http://localhost:9292/ in your browser
 
-![Screenshot](https://imgur.com/OeA43Cy)
+![image](https://imgur.com/OeA43Cy)
 
-![Screenshot](https://imgur.com/DGDMm2k)
+![image](https://imgur.com/DGDMm2k)
 
-![Screenshot](https://imgur.com/jwiccsi)
+![image](https://imgur.com/jwiccsi)
 
 ## Kerri's notes
 * There's still a lot to work on in this app - I couldn't quite get the stubbing right when testing the output of the computer's sample of rock, paper and scissors
