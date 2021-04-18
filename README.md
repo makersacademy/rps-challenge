@@ -1,4 +1,5 @@
 
+## USER STORIES ##
 ```
 As a marketeer
 So that I can see my name in lights
@@ -8,37 +9,36 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-| Noun    |	Property/owner? |
-|---------|---------------------|
-| Player  |	owner           |
-| Name    |	property        |
-| Game    |	n/a - implicit  |
 
-| Actions  |	owned by? | What it changes     |
-|----------|------------|---------------------|
-| Register |	player    |	@name           |
-| Play     |	player    |	@choice         |
+## PAGE SETUP ##
+
+3 views:
+(name) --> (choose) --> (result)
+
+## DOMAIN MODEL TEMPLATE ##
+
+
+* IMPORTANT: instead of storing player and AI choices in an instance variable, I decided to store them in the sessions object. This makes the player classes very sparse.
+
+* This choice kind of emerged as I built the site, it didn't seem crucial to make any extra variables.
 
 | Template   | details                   |
 |------------|---------------------------|
 | Class      |	Player                   |
-| Properties |	name, choice             |
-| Actions    | 	register name, play game |
-
-
-* ~~I could make the AI opponent a class, but this only seems necessary if I make the game more complex (like introducing a ‘win tally’ attribute). Otherwise, I can reduce the opponent to a win/lose/draw message.~~
-* actually I'm not very sure how to do the random choice without making a class.. so I'll do that.
+| Properties |	name                     |
+| Methods    | 	n/a                      |
 
 | Template   | details                   |
 |------------|---------------------------|
 | Class      |	AI                       |
 | Properties |	choice (rand @ creation) |
-| Actions    | 	n/a                      |
-
-* I want to try storing the winner in the Session object and accessing it on the 'winner' page.
+|  Methods   | 	n/a                      |
 
 
-Page setup: 5 views.
+* I also decided later to make a Judge class to handle who the winner is, because my rspec knowledge is very class-based.
 
-Name input links to choice-input, to fin page (which shows winner).
-(name) --> (choice) --> (fin)
+| Template   | details                   |
+|------------|---------------------------|
+| Class      |	Judge                    |
+| Properties |	n/a                      |
+| Actions    | 	declare_winner           |
