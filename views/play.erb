@@ -1,0 +1,15 @@
+Welcome <%= @game.player.name.capitalize %>!
+<br>
+<H1> <%= "Select from one of the following options:" %> </H1>
+
+<form action="/rock">
+  <button type="submit">Rock</button>
+</form>
+
+<form action="/paper">
+  <button type="submit">Paper</button>
+</form>
+
+<form action="/scissors">
+  <button type="submit">Scissors</button>
+</form>
