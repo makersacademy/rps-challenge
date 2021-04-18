@@ -5,4 +5,3 @@ feature "Homepage" do
     expect(page).to have_content("Welcome to Rock, Paper, Scissors, please enter your name")
   end
 end
-

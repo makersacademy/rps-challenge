@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'launchy'
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'launchy'
 
 group :test do
   gem 'capybara'
