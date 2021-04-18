@@ -9,7 +9,9 @@
 5. Navigate to http://localhost:9292/ in your browser
 
 ![Screenshot](https://imgur.com/OeA43Cy)
+
 ![Screenshot](https://imgur.com/DGDMm2k)
+
 ![Screenshot](https://imgur.com/jwiccsi)
 
 ## Kerri's notes
