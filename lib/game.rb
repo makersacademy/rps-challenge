@@ -1,10 +1,12 @@
+require_relative 'computer'
+
 class Game
   attr_reader :computer_choice
 
   @game = nil
 
   def initialize
-    @computer_choice = ['rock', 'paper', 'scissors'][rand(3)]
+    @computer_choice = Computer.choice
   end
 
   def self.new_game(game)

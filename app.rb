@@ -31,7 +31,7 @@ class RPS < Sinatra::Base
     if @game.draw?(session[:choice]) 
       redirect('/draw')
     else
-      @game.win?(session[:choice])  ? redirect('/win') : redirect('/loss')
+      @game.win?(session[:choice]) ? redirect('/win') : redirect('/loss')
     end
   end
 
