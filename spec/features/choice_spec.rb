@@ -8,7 +8,7 @@ feature 'choices' do
     click_button('Rock')
     expect(page).to have_content('you chose Rock')
   end
-  xscenario 'shows the choice of coputer' do
+  scenario 'shows the choice of coputer' do
     click_button('Rock')
     expect(page).to have_content('Computer chose Scissors')
   end
