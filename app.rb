@@ -25,6 +25,7 @@ class RPSWeb < Sinatra::Base
 
   post '/move' do
     @player_name = session[:player_name]
+    @player_name.make_move(params[:move])
     erb(:move)
   end
   
