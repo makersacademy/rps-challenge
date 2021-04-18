@@ -2,12 +2,12 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player_move, :cp_move, :message
+  attr_reader :player_move, :cp_move
 
-  def initialize
-    @player_move
-    @cp_move 
-  end
+  # def initialize
+  #   @player_move
+  #   @cp_move 
+  # end
 
   def move
     @cp_move = ["Rock", "Paper", "Scissors"].sample
@@ -22,10 +22,9 @@ class Game
       @player_move == "Scissors" && @cp_move == "Rock" || 
       @player_move == "Paper" && @cp_move == "Scissors"
       return @message = "Sorry, you lost!"
-    else @player_move == @cp_move
+    else
       return @message = "It's a draw!"
     end 
   end
 
 end
-

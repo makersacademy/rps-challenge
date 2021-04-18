@@ -20,10 +20,10 @@ feature "playing RPS" do
   end
 end
 
-feature "Player wins with playing rock" do
-  scenario "pick rock and win round" do
+feature "a game can be played" do
+  scenario "player picks and computer picks to play a game" do
     sign_in_and_submit
     click_button "Rock"
-    expect(page).to have_content "You win!"
+    expect(page).to have_content "The result is: "
   end
 end
