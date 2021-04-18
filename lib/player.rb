@@ -6,6 +6,5 @@ class Player
     @name = nil
   end
 
-  # replacing Register function w/ attr_accessor.
-  # name should be set by the input button.
+  # Name is set by the input button.
 end
