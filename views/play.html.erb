@@ -67,21 +67,10 @@
           var computerchoice = <%= @game.computer.rand_weapon.to_json %>;
           user.className = "userchoice " + userchoice;
           computer.className = "computerchoice " + computerchoice;
-          result.innerHTML = getWinner(userchoice, computerchoice);
+          result.innerHTML = <%= @game.check_winner.to_json %>;
           document.getElementById('start').remove();
           playAgain();
         });
-
-        // compares user and computer choice to determine winner
-
-        function getWinner(userchoice, computerchoice) {
-          if (userchoice === computerchoice) {
-            return "A tie.";
-          } else if (userchoice === winsStates[computerchoice]) {
-            return "Computer Wins! " + computerchoice + " beats " + userchoice;
-          }
-          return "You Win! " + userchoice + " beats " + computerchoice;
-        }
 
         // creates play again button
 

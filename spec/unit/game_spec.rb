@@ -34,4 +34,30 @@ describe Game do
     end
   end
 
+  describe '#check_winner' do
+    context 'player wins' do
+      it 'returns the winner' do
+        allow(player).to receive(:weapon).and_return 'Rock'
+        allow(computer).to receive(:weapon).and_return 'Scissors'
+        expect(subject.check_winner).to eq "Jason Wins! Rock beats Scissors"
+      end
+    end
+
+    context 'computer wins' do
+      it 'returns the winner' do
+        allow(player).to receive(:weapon).and_return 'Rock'
+        allow(computer).to receive(:weapon).and_return 'Paper'
+        expect(subject.check_winner).to eq "Computer Wins! Paper beats Rock"
+      end
+    end
+
+    context 'a tie' do
+      it 'returns the winner' do
+        allow(player).to receive(:weapon).and_return 'Rock'
+        allow(computer).to receive(:weapon).and_return 'Rock'
+        expect(subject.check_winner).to eq "A tie."
+      end
+    end
+  end
+
 end
