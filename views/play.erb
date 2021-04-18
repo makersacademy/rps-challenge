@@ -1,0 +1,35 @@
+<h1> <%= @player_name %> is playing Rock, Paper, Scissors vs. the computer </h1>
+<h2>Please choose one of the options below:
+<form action='/game' method="post">
+  <button type="submit">Rock</button>
+  <button type="submit">Paper</button>
+  <button type="submit">Scissors</button>
+</form>
+
+  <style>
+    input, textarea, select, button {
+    width : 100px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+    h1 {
+    font : 2em "typewriter", monospace;
+    align-self : end;
+  }
+    h2 {
+   font : 1.5em "typewriter", monospace;
+    align-self : end;
+  }
+    button {
+    margin-left: .5em;
+  }
+    button {
+    padding      : 5px;
+    font         : bold .7em "typewriter", monospace;
+    border       : 2px solid #333;
+    border-radius: 5px;
+    background   : none;
+    cursor       : pointer;
+  }
+  </style>

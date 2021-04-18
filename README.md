@@ -1,3 +1,5 @@
+Partial solution for the RPS challenge.
+
 # RPS Challenge
 
 Instructions
