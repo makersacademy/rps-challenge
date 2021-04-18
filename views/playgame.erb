@@ -6,9 +6,21 @@
   </head>
 
   <body>
-    <h1>Rock Paper Scissors</h1>
-    <h2><%=@game.player1.name%> vs. <%=@game.computer.name%>!</h2>
-    <h2><%=@game.player1.name%>'s Score: <%=@game.player1.score%></h2>
-    <h2><%=@game.computer.name%>'s Score: <%=@game.computer.score%></h2>
+    <div class = "wrapper">
+      <div class = "game-score">
+        <h1>Rock Paper Scissors</h1>
+        <h2><%=@game.player1.name%> vs. <%=@game.computer.name%>!</h2>
+        <h2><%=@game.player1.name%>'s Score: <%=@game.player1.score%></h2>
+        <h2><%=@game.computer.name%>'s Score: <%=@game.computer.score%></h2>
+      </div>
+      <div class="selection-entry">
+        <form method="post" action="/selection"> 
+          <input class='submit' name="rock" type='submit' value='Rock'>
+          <%# <input class='submit' type='submit' value='Paper'>
+          <input class='submit' type='submit' value='Scissors'> %>
+           <%# <input class='submit' type='submit' value='Random?'> %>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

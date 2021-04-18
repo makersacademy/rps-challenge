@@ -8,4 +8,23 @@ class Game
     @computer = computer
   end
 
+  def move
+    ['Rock', 'Paper', 'Scissors'].sample
+  end
+
+  def playgame(player1, computer)
+    @results = {
+      'rock/rock' => "It's a tie",
+      'rock/paper' => "Computer Wins",
+      'rock/scissors' => "You Win",
+      'paper/paper' => "It's a tie",
+      'paper/rock' => "You Win",
+      'paper/scissors' => "Computer Wins",
+      'scissors/scissors' => "It's a tie",
+      'scissors/rock' => "Computer Wins",
+      'scissors/paper' => "Computer Wins"
+    }
+    @results["#{player1}/#{computer}"]
+  end
+
 end

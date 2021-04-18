@@ -14,7 +14,7 @@ end
 
   post '/names' do
     player1 = Player.new(params[:player1])
-    computer = Player.new("computer")
+    computer = Player.new("Computer")
     $game = Game.new(player1, computer)
     redirect '/playgame'
   end
@@ -23,6 +23,12 @@ end
     @game = $game
     erb :playgame
   end
+
+  post '/selection' do 
+    @move = params[:rock]
+    @game = $game
+    erb :playgame
+  end 
 
   run! if app_file == $0
 end

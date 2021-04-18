@@ -19,7 +19,7 @@ h2 {
   padding: 0.75em 1.35em;
 }
 
-.submit:hover {
+.submit:hover, .btn:hover {
   background-color: #f8f5f1;
   cursor: pointer;
 }
