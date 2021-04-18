@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
-# require './lib/result'
+require './lib/ai'
 
 class RPS < Sinatra::Base
   enable :sessions

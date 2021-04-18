@@ -26,8 +26,17 @@ I would like to be able to play rock/paper/scissors
 | Actions    | 	register name, play game |
 
 
-* I could make the AI opponent a class, but this only seems necessary if I make the game more complex (like introducing a ‘win tally’ attribute). Otherwise, I can reduce the opponent to a win/lose/draw message.
+* ~~I could make the AI opponent a class, but this only seems necessary if I make the game more complex (like introducing a ‘win tally’ attribute). Otherwise, I can reduce the opponent to a win/lose/draw message.~~
+* actually I'm not very sure how to do the random choice without making a class.. so I'll do that.
+
+| Template   | details                   |
+|------------|---------------------------|
+| Class      |	AI                       |
+| Properties |	choice (rand @ creation) |
+| Actions    | 	n/a                      |
+
 * I want to try storing the winner in the Session object and accessing it on the 'winner' page.
+
 
 Page setup: 5 views.
 
