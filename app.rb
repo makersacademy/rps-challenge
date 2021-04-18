@@ -17,7 +17,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.create(Player.new(params[:player_1]))
+    @game = Game.create(Player.new(params[:player_1].capitalize))
     redirect '/play'
   end
 
@@ -27,7 +27,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/move' do
     session[:choice] = params[:choice]
-    @game.take_turn(@game.player, session[:choice])
+    session[:result] = @game.take_turn(@game.player, session[:choice])
     redirect '/outcome'
   end
 

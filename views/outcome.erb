@@ -1,3 +1,11 @@
 <%= "You have chosen #{session[:choice].capitalize}" %>
 <br>
-<%= "#{@game.result}"%>
+<%= "#{session[:result]}"%>
+
+<div>
+<form action="/play" method="get">
+    <label for="choice"> 
+    <input type='submit' value='Play again'>
+  </label>
+</form> 
+</div>
