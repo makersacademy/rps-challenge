@@ -33,17 +33,18 @@ class Game
 
   def player_points
     check_player_points
-    return self.player.points
+    return player.points
   end
 
   def computer_points
     check_computer_points
-    return self.computer.points
+    return computer.points
   end
 
   private
 
   attr_reader :player_class, :computer_class
+
 
   def check_player_points
     if player.weapon == computer.weapon
