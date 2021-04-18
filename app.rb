@@ -18,8 +18,8 @@ class RPS < Sinatra::Base
   end
 
   get "/game" do
-   @player_name = @game.player.name
-   erb(:game)
+    @player_name = @game.player.name
+    erb(:game)
   end
 
   post "/rps" do

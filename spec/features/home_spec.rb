@@ -11,3 +11,10 @@ feature "Home page" do
     expect(page).to have_content("Hey, Wanna play?")
   end
 end
+
+feature "In player registration section" do
+  scenario "the player should fill in the name" do
+    login_and_play
+    expect(page).to have_content("Mike vs MATRIX")
+  end
+end

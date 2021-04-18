@@ -1,0 +1,115 @@
+* { 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    
+}
+body {
+    height: 100%;
+    background-color: #2b2e4a;
+    color: #e84545;
+    font-family: 'Permanent Marker', cursive;
+
+}
+
+header {
+    background-color: #903749;
+    display: flex;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 8px 3vh;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+}
+
+.site-container {
+    display: grid;
+    grid-template-rows: 1fr 20px 3fr 1fr;
+    height: 100vh;
+    gap: 1%;
+}
+
+.rps-title {
+    font-weight: 1900;
+    font-size: 55px;
+    animation: blink 10s infinite;
+}
+
+@keyframes blink {
+    0% {color: red;}
+    25% {color: orange;}
+    50% {color: yellow;}
+    75% {color: green;}
+    100% {color: blue;}
+}
+
+
+.home-h2, .versus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px 
+}
+
+
+.home-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+
+.enter-name {
+    font-size: 24px;
+}
+
+.name-label {
+    font-size: 24px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+
+  .play-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rps-buttons, .keep-playing, .restart, .name-entry {
+    background-color: #e84545;
+    color: midnightblue;
+    font-size: 24px;
+    padding: 20px 25px;
+    margin: auto;
+    border-radius: 12px;
+    border: none;
+    font-family: 'Permanent Marker', cursive;
+  }
+
+  .rps-buttons:hover, .keep-playing:hover, .restart:hover, .name-entry:hover {
+    cursor: pointer;
+    color: gold;
+}
+
+.end-message, .ending {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.end-message {
+    padding: 10%;
+    color: gold;
+    font-size: 25px;
+    font-family: 'Permanent Marker', cursive;
+}

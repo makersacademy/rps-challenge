@@ -7,14 +7,14 @@ describe Engine do
     end
 
     it "should have a name - MATRIX" do
-        expect(subject.name).to eq "MATRIX"
-      end
+      expect(subject.name).to eq "MATRIX"
+    end
   end
 
   context "#auto_move" do
     it "should be able to make a random move" do
-        subject.auto_move
-        expect(['rock', 'paper', 'scissors']).to include(subject.rmove)
+      subject.auto_move
+      expect(['rock', 'paper', 'scissors']).to include(subject.rmove)
     end
   end
 end

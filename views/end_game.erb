@@ -1,3 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="<%= url('/style.css') %>" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+
+<body >
+<div class="site-container">
+<header>
+<h1 class="rps-title">Rock - Paper - Scissors</h1>
+</header>
+
+<div class="end-message">
+<% if @game.won(@game.player, @game.engine) == @game.player.name %>
+  <%= @game.player.name %>, YOU WIN THIS TIME <br>
+  You played <%= @game.player.move %> and the <%= @game.engine.name %> chose <%= @game.engine.rmove %> <br>
+  You think you're slick, don't you!?!
+<% elsif @game.won(@game.player, @game.engine) == @game.engine.name%>
+  <%= @game.player.name %>, YOU ARE A SORE LOSER <br>
+  You played <%= @game.player.move %> and the <%= @game.engine.name %> chose <%= @game.engine.rmove %> <br>
+  Don't hate the player, hate the game!!
+<% else%>
+  IT'S A DRAW THIS TIME <br>
+  You both played <%= @game.player.move %>
+<% end %>
+</div>
+
+<div class="ending">
+<a href="/game"><button class="keep-playing">Keep playing</button></a>
+<a href="/"><button class="restart">New Game</button></a>
+</div>
+
+
+</body>
+</div>
+</html>
+
+
+
+
+
 <% if @game.won(@game.player, @game.engine) == @game.player.name %>
   <%= @game.player.name %>, YOU WIN THIS TIME <br>
   You played <%= @game.player.move %> and the <%= @game.engine.name %> chose <%= @game.engine.rmove %> <br>

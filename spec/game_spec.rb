@@ -1,8 +1,8 @@
 require "game"
 
 describe Game do
-  let(:michael) {double :player, name: "Michael", points: 0}
-  let(:matrix) {double :engine, name: "MATRIX", points: 0}
+  let(:michael) { double :player, name: "Michael", points: 0 }
+  let(:matrix) { double :engine, name: "MATRIX", points: 0 }
 
   context "#initialize" do
     it "should have initiated a player" do
@@ -12,7 +12,7 @@ describe Game do
     end
 
     it "should have initiated the engine too" do
-        expect(subject.engine).to be_an(Engine)
+      expect(subject.engine).to be_an(Engine)
     end
   end
 
