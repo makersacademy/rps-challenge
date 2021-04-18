@@ -25,6 +25,7 @@ class RPS < Sinatra::Base
 
   # post 'move' do
 
+      #redirect '/results'
   # end
 
 
