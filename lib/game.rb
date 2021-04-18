@@ -5,6 +5,7 @@ class Game
     @player = player
     @computer = Player.new('Computer')
   end
+  
   def self.create(player)
     @game = Game.new(player)
   end
