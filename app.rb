@@ -25,6 +25,7 @@ class RPS < Sinatra::Base
 
   post '/result'do
     session[:choice] = params[:choice]
+    session[:ai_choice] = Ai.new.choice
     erb :result
   end
 
