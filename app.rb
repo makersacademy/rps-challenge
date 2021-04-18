@@ -23,6 +23,14 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  # post 'move' do
+
+  # end
+
+
+  #get '/result'
+
+  #end
 
   run! if app_file == $0
 end
