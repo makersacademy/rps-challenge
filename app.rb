@@ -25,7 +25,7 @@ class RPS < Sinatra::Base
 
   post '/result'do
     session[:choice] = params[:choice]
-    # erb :result
+    erb :result
   end
 
   run! if app_file == $0
