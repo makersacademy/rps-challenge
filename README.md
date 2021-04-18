@@ -8,14 +8,6 @@
 4. Run `rackup`
 5. Navigate to http://localhost:9292/ in your browser
 
-See screenshots:
-
-https://imgur.com/jwiccsi
-
-https://imgur.com/DGDMm2k
-
-https://imgur.com/jwiccsi
-
 ## Kerri's notes
 * There's still a lot to work on in this app - I couldn't quite get the stubbing right when testing the output of the computer's sample of rock, paper and scissors
 * I also struggled to implement a way to display the outcome of the game win/lose/draw, so it will be a work in progress for now
