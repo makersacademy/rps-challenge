@@ -19,6 +19,7 @@ class Game
   end
 
   def winner
+    return "it's a tie" if tie?
     "#{winner_name} wins!"
   end  
 
@@ -26,4 +27,8 @@ class Game
   def winner_name
     @weapon.results[@players[0].weapon.to_sym][@players[1].weapon.to_sym] ? @players[0].name : @players[1].name
   end
+
+  def tie?
+    @players[0].weapon == @players[1].weapon
+  end  
 end  

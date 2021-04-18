@@ -16,6 +16,6 @@
       subject.choose_weapon(weapon.choices[0])
       expect(subject.weapon).to eq('Rock')
     end
-   end
+  end
     
  end

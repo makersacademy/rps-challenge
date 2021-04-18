@@ -10,7 +10,7 @@ class Rps < Sinatra::Application
   end
 
   post '/name' do
-    p @game = Game.save_game(Player.new(params[:player]), Player.new('Computer'))
+    @game = Game.save_game(Player.new(params[:player]), Player.new('Computer'))
     redirect('/welcome')
   end
 
@@ -20,7 +20,16 @@ class Rps < Sinatra::Application
   end
 
   post '/choice' do
-    erb(:choice)
+    @game.players[0].choose_weapon(params[:choice])
+    @game.players[1].choose_weapon
+    redirect('/results')
+  end
+
+  get '/results' do
+    @player_1_weapon = @game.players[0].weapon
+    @player_2_weapon = @game.players[1].weapon
+    @winner_message = @game.winner
+    erb(:results)
   end
   
   run! if app_file == $PROGRAM_NAME
