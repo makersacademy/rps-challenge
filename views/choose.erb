@@ -1,0 +1,21 @@
+<h2> <%="hi, #{session[:p1_name]}" %> </h2>
+<h3>  pick an option  </h3>
+
+<form action="/result" method="post">
+
+  <div>
+    <input type="radio" id="rock" name="choice" value="rock">
+  <label for="rock">rock</label>
+  </div>
+  <div>
+    <input type="radio" id="paper" name="choice" value="paper">
+  <label for="paper">paper</label>
+  </div>
+  <div>
+    <input type="radio" id="scissors" name="choice" value="scissors">
+  <label for="scissors">scissors</label>
+  </div>
+  <div>
+  <input type="submit" value="play">
+  </div>
+</form>
