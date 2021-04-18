@@ -7,10 +7,12 @@
   
   <body>
     <h1>Welcome, <%= @game.player.name %></h1>
-    <form action="/play" method="post">
-        <input type="submit" value="rock">
-        <input type="submit" value="scissors">
-        <input type="submit" value="paper">
+    <form action="/pick" method="post">
+        <input type="submit" value="rock" name="weapon">
+        <input type="submit" value="scissors" name="weapon">
+        <input type="submit" value="paper" name="weapon">
+        <input type="submit" value="lizard" name="weapon">
+        <input type="submit" value="spock" name="weapon">
     </form>
 </body>
 

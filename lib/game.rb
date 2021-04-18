@@ -1,7 +1,8 @@
-class Game
-  # attr_reader :player, :computer
+require_relative 'beatmap'
 
-  def initialize(player, computer)
+class Game
+
+  def initialize(player, computer = Computer.new)
     @players = [player, computer]
   end
 

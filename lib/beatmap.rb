@@ -1,10 +1,8 @@
 class Beatmap
   MAP = {
-    rock: [:scissors, :lizard],
-    scissors: [:paper, :lizard],
-    paper: [:rock, :spock],
-    lizard: [:spock, :paper],
-    spock: [:scissors, :rock]
+    rock: :scissors,
+    scissors: :paper,
+    paper: :rock
   }
   attr_reader :weapon
 
@@ -13,7 +11,7 @@ class Beatmap
   end
 
   def win?(item)
-    MAP[@weapon].include?(item.weapon)
+    MAP[@weapon] == item.weapon
   end
 
   def draw?(item)

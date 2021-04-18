@@ -4,5 +4,7 @@ feature 'start game' do
     expect(page).to have_button("rock")
     expect(page).to have_button('paper')
     expect(page).to have_button('scissors')
+    expect(page).to have_button('lizard')
+    expect(page).to have_button('spock')
   end
 end

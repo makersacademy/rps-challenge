@@ -5,6 +5,7 @@ describe Game do
   let(:player) { double :player }
   let(:computer) { double :player}
   
+  
   it 'allows to create a new player' do
     expect(game.player).to eq player
   end

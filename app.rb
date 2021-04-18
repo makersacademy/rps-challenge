@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/game'
-require './lib/player'
+require './lib/script'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -24,8 +23,12 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player = session[:player]
     erb :play
+  end
+
+  post '/pick' do
+    @game.player.pick(params[:weapon])
+    @game.computer.pick(Computer.new.cpu_pick)
   end
 
   run if app_file == $0

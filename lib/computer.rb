@@ -8,5 +8,4 @@ class Computer
   def cpu_pick
     @cpu_weapon
   end
- 
 end
