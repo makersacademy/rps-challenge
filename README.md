@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors with Web Framework
 
-[![Build Status](https://travis-ci.com/jasonrowsell/rps-challenge.svg?branch=master)](https://travis-ci.com/jasonrowsell/rps-challenge)
+[![Build Status](https://travis-ci.com/jasonrowsell/rps-challenge.svg?branch=master)](https://travis-ci.com/jasonrowsell/rps-challenge) [![Maintainability](https://api.codeclimate.com/v1/badges/13f76238bbe692bd3cb8/maintainability)](https://codeclimate.com/github/jasonrowsell/rps-challenge/maintainability)
 
 A simple game of Rock, Paper, Scissors played against an AI opponent. The web app allows the user to sign-in, choose a weapon, and play a game of Rock, Paper, Scissors.
 
