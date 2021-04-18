@@ -19,12 +19,13 @@ feature 'choices' do
   end
   scenario 'displays the winner' do
     fillin_and_submit
-    click_button('Rock')
+    allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
+    click_button('Paper')
     expect(page).to have_content('abdur wins!')
   end
   scenario 'displays a tie' do
     fillin_and_submit
-    allow_any_instance_of(Player).to receive(:weapon).and_return('Rock')
+    allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
     click_button('Rock')
     expect(page).to have_content('it\'s a tie')
   end  
