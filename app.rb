@@ -27,6 +27,7 @@ end
   post '/selection' do 
     @move = params[:playerchoice]
     @game = $game
+    @move == "I'm Feeling Lucky" ? @move = @game.computer_move : @move = params[:playerchoice]
     erb :playgame
   end 
 

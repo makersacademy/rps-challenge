@@ -3,6 +3,8 @@
     <meta charset="utf-8">
     <title>Rock Paper Scissors!!</title>
     <link href="<%= url("/styles.css") %>" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">    
   </head>
 
   <body>
@@ -18,9 +20,9 @@
           <input class='submit' name="playerchoice" type='submit' value='Rock'>
           <input class='submit' name="playerchoice" type='submit' value='Paper'>
           <input class='submit' name="playerchoice" type='submit' value='Scissors'>
-          <%# <input class='submit' name="playerchoice" type='submit' value="I'm Feeling Lucky"> %>
-          <p>You clicked <%=@move%>!</p>
-          <p>Game Result: <%=@game.playgame(@move, @game.computer_move)%></p>
+          <input class='submit' name="playerchoice" type='submit' value="I'm Feeling Lucky">
+          <h2>You clicked <%=@move%>!</h2>
+          <h2>Game Result: <%=@game.playgame(@move, @game.computer_move)%></h2>
         </form>
       </div>
     </div>

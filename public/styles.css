@@ -1,6 +1,7 @@
 body {
   background-color: #f8a488;
   text-align: center;
+  font-family: 'Oswald', sans-serif;
 }
 
 li {
@@ -8,8 +9,14 @@ li {
   margin-top: 1em;
 }
 
+h1 {
+  font-size: 3.125rem;
+  margin-top: 20%;
+}
+
 h2 {
   color: #f8f5f1;
+  font-size: 1.875rem;
 }
 
 .submit {
@@ -17,6 +24,14 @@ h2 {
   border-radius: 25px;
   border: none;
   padding: 0.75em 1.35em;
+}
+
+.player1{
+  padding: 1em;
+  background-color: #f8f5f1;
+  border-radius: 25px;
+  text-align: center;
+  border: none;
 }
 
 .submit:hover, .btn:hover {
