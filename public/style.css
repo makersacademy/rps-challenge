@@ -113,3 +113,9 @@ header {
     font-size: 25px;
     font-family: 'Permanent Marker', cursive;
 }
+
+.credit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
