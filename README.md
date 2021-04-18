@@ -4,6 +4,8 @@ A simple game of Rock, Paper, Scissors played against an AI opponent. The web ap
 
 ## Play
 
+(https://jasonrowsell-rps-sinatra.herokuapp.com/)
+
 ## Screenshots
 
 ![Sign-in](public/images/sign_in.gif)
