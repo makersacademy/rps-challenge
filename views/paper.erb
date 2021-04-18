@@ -1,0 +1,17 @@
+<H1> You selected Paper </H1>
+
+<% @game.com_move %>
+<% if @game.com_move == :rock %>
+  <H2>COM selected Rock</H2>
+  <H3>Congratulations <%= @game.player.name.capitalize %>. You won!</H3>
+<% elsif @game.com_move == :paper %>
+  <H2> COM selected Scissors</H2>
+  <H3> You lose! </H3>
+<% else %>
+  <H2> COM also selected Paper</H2>
+  <H3>Its a tie!</H3>
+<%end%>
+
+<form action="/play">
+  <button type="submit">Play Again</button>
+</form>
