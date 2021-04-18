@@ -4,7 +4,7 @@ describe Beatmap do
   subject(:rock) { described_class.new('rock') }
   let(:scissors) { double 'scissor', weapon: :scissors }
 
-  it 'should store a type' do
+  it 'should store a weapon' do
     expect(rock.weapon).to eq :rock
   end
   
