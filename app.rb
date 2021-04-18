@@ -12,7 +12,7 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
+    session[:player_1_name] = Player.new(params[:player_1_name])
     redirect '/play'
   end
 
@@ -21,9 +21,15 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  get '/rock' do
+  post '/move' do
     @player_1_name = session[:player_1_name]
-    erb :rock
+    @cp_move = Game.new.cp_move
+    @player_move = Game.new.player_move
+    @message = Game.new.message
+    session[:cp_move] = @cp_move
+    session[:player_move] = @player_move
+    session[:message] = @message
+    erb :move
   end
 
   run! if app_file == $0
