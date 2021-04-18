@@ -1,1 +1,17 @@
-<h1>Welcome, <%= @player_name %></h1>
+<!doctype html>
+<html>
+
+  <head>
+    <title>Rock Paper Scissor game challenge</title>
+  </head>
+  
+  <body>
+    <h1>Welcome, <%= @game.player.name %></h1>
+    <form action="/play" method="post">
+        <input type="submit" value="rock">
+        <input type="submit" value="scissors">
+        <input type="submit" value="paper">
+    </form>
+</body>
+
+</html>
