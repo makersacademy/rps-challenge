@@ -1,4 +1,4 @@
-require 'capybara/rspec'
+
 require 'simplecov'
 require 'simplecov-console'
 
@@ -11,6 +11,14 @@ SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
+ENV['RACK_ENV'] = 'test'
+
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+require './spec/web_helpers'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts
@@ -18,3 +26,5 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+Capybara.app = RPS
