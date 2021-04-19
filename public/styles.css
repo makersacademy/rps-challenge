@@ -45,7 +45,7 @@ h2 {
   color: white;
   border-radius: 30px;
   border: none;
-  padding: 25px 45px;
+  padding: 15px 45px;
   margin-left: 1em;
 }
 
@@ -75,11 +75,12 @@ h2 {
 }
 
 .player1{
-  padding: 20px 1.25em;
+  padding:1.25em;
   background-color: #f8f5f1;
   border-radius: 25px;
   text-align: center;
   border: none;
+  font-size: 0.9rem;
 }
 
 .player1:focus{
@@ -90,7 +91,7 @@ h2 {
   color: #2412d1;
 }
 
-.submit:hover, .btn:hover {
+.btn:hover {
   background-color: #f8f5f1;
   cursor: pointer;
   color: black;

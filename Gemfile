@@ -4,7 +4,6 @@ ruby "2.7.2"
 group :development, :test do
   gem "capybara"
   gem "dm-core"
-  gem "puma"
   gem "rexml"
   gem "rspec"
   gem "rubo"
