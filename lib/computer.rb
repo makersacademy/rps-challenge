@@ -1,13 +1,13 @@
 class Computer
-  attr_reader :moves
+  attr_reader :name
 
-  MOVES = [:Rock, :Paper, :Scissors]
-
-  def initialize
-    @moves = MOVES
+  def initialize(name = 'computer')
+    @name = name
+    @moves = ["Rock", "Paper", "Scissors"]
   end
 
   def computer_move
-    @moves.sample.to_s
+    p rand
+    @moves[rand(0..2)]
   end
 end
