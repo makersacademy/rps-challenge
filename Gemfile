@@ -3,6 +3,7 @@ ruby "2.7.2"
 
 group :development, :test do
   gem "capybara"
+  gem "dm-core"
   gem "rexml"
   gem "rspec"
   gem "rubo"
@@ -13,3 +14,5 @@ group :development, :test do
   gem "sinatra"
   gem "sinatra-reloader"
 end
+
+
