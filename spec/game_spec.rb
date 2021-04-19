@@ -1,11 +1,6 @@
 require 'game.rb'
 
 describe Game do 
-
-  # let (:player){ double :player }
-  # let (:player){ double :player }
-  # let (:game){ double :game }
-
   it 'stores two players for playing the game' do 
     player1 = Player.new("player1")
     computer = Player.new("computer")
