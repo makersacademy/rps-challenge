@@ -10,8 +10,8 @@
   <body>
     <h1>Results....</h1>
     <h2>You clicked <span class="move"><%=@move%></span></h2>
-    <h2>Computer selected <span class="move"><%=@game.computer_move%></span></h2>
-    <h2>Game Result: <%=@game.playgame(@move, @game.computer_move)%></h2>
+    <h2>Computer selected <span class="move"><%=@computer_move%></span></h2>
+    <h2>Game Result: <%=@results%></h2>
 
     <form method="get" action="/playgame"> 
      <input class='btn play_again' name="play_again" type='submit' value='Play Again?'>

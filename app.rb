@@ -25,9 +25,11 @@ class RPS < Sinatra::Base
   end
 
   post "/selection" do
-    @move = params[:playerchoice]
+    # @move = params[:playerchoice]
     @game = $game
-    @move == "I'm Feeling Lucky" ? @move = @game.computer_move : @move = params[:playerchoice]
+    @move = params[:playerchoice]
+    @computer_move = @game.computer_move
+    @results = @game.playgame(@move, @computer_move)
     erb :results
   end
 

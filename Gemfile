@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.7.2"
+ruby "2.6.5"
 
 gem 'puma'
 gem 'rack'
@@ -7,6 +7,7 @@ gem 'sinatra'
 
 group :development do
   gem 'shotgun'
+  gem 'sinatra-reloader', '~> 1.0'
 end
 
 group :test do
