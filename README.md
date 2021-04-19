@@ -37,5 +37,5 @@ ruby app.rb
 
 Navigate to your browser and view using: 
 ```
-<http://localhost:4567/>
+http://localhost:4567/
 ```
