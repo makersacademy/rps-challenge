@@ -7,6 +7,9 @@
 ## Ruby Version
 ruby '2.7.2'
 
+## Gems
+
+
 ## Setup 
 
 To run locally: 
@@ -34,5 +37,5 @@ ruby app.rb
 
 Navigate to your browser and view using: 
 ```
-[http://localhost:4567/](http://localhost:4567/)
+[localhost:4567](http://localhost:4567/)
 ```
