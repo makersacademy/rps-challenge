@@ -10,19 +10,17 @@
   <body>
     <div class = "wrapper">
       <div class = "game-score">
-        <h1>Rock Paper Scissors</h1>
+        <h1>Let's Play Rock Paper Scissors</h1>
         <h2><%=@game.player1.name%> vs. <%=@game.computer.name%>!</h2>
-        <h2><%=@game.player1.name%>'s Score: <%=@game.player1.score%></h2>
-        <h2><%=@game.computer.name%>'s Score: <%=@game.computer.score%></h2>
       </div>
-      <div class="selection-entry">
+      <img src="rps_block-colors.png" class="main-logo" alt="Rock Paper Scissors Icon">
         <form method="post" action="/selection"> 
-          <input class='submit' name="playerchoice" type='submit' value='Rock'>
-          <input class='submit' name="playerchoice" type='submit' value='Paper'>
-          <input class='submit' name="playerchoice" type='submit' value='Scissors'>
-          <input class='submit' name="playerchoice" type='submit' value="I'm Feeling Lucky">
-          <h2>You clicked <%=@move%>!</h2>
-          <h2>Game Result: <%=@game.playgame(@move, @game.computer_move)%></h2>
+            <input class='btn rock' name="playerchoice" type='submit' value='Rock'>
+            <input class='btn paper' name="playerchoice" type='submit' value='Paper'>
+            <input class='btn scissors' name="playerchoice" type='submit' value='Scissors'>
+            <br>
+            <br>
+            <input class='btn' name="playerchoice" type='submit' value="I'm Feeling Lucky">
         </form>
       </div>
     </div>

@@ -28,7 +28,7 @@ end
     @move = params[:playerchoice]
     @game = $game
     @move == "I'm Feeling Lucky" ? @move = @game.computer_move : @move = params[:playerchoice]
-    erb :playgame
+    erb :results
   end 
 
   run! if app_file == $0
