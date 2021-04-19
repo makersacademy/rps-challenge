@@ -1,0 +1,28 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors!!</title>
+    <link href="<%= url("/styles.css") %>" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">    
+  </head>
+
+  <body>
+    <div class = "wrapper">
+      <div class = "game-score">
+        <h1><%=@game.player1.name%> vs. <%=@game.computer.name%>!</h1>
+        <h2>Let's Play Rock Paper Scissors</h2>
+      </div>
+      <img src="rps_block-colors.png" class="main-logo" alt="Rock Paper Scissors Icon">
+        <form method="post" action="/selection"> 
+            <input class='btn rock' name="playerchoice" type='submit' value='Rock'>
+            <input class='btn paper' name="playerchoice" type='submit' value='Paper'>
+            <input class='btn scissors' name="playerchoice" type='submit' value='Scissors'>
+            <br>
+            <br>
+            <input class='btn feelinglucky' name="playerchoice" type='submit' value="I'm Feeling Lucky">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

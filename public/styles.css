@@ -1,0 +1,106 @@
+/* ---------------- Default Styling ----------------*/
+
+body {
+  background: rgb(248,164,136);
+  background: linear-gradient(0deg, rgba(248,164,136,1) 0%, rgba(253,187,45,1) 86%) fixed;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  height: 100%;
+  max-width: 70vw;
+  margin: 0 auto;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  margin-top: 1em;
+}
+
+h1 {
+  font-size: 3.125rem;
+  margin-top: 2em;
+}
+
+h2 {
+  color: #f8f5f1;
+  font-size: 1.875rem;
+}
+
+/*---------------- Wrappers ----------------*/
+
+/* .wrapper{
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+} */
+
+/*---------------- Buttons ----------------*/
+
+
+.btn{
+  background-color: rgb(243, 104, 57);
+  text-transform: uppercase;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  padding: 15px 45px;
+  margin-left: 1em;
+}
+
+.btn.rock{
+  background-color: #fd0000;
+}
+
+.btn.paper{
+  background-color: #2412d1;
+}
+
+.btn.scissors{
+  background-color: #ff8a00;
+}
+
+.btn.play_again{
+  background-color: rgb(243, 104, 57);
+  text-decoration: none;
+}
+
+.btn.feelinglucky{
+  background-color: rgb(243, 104, 57);
+}
+
+.btn.play_again:visited{
+  text-decoration: none;
+}
+
+.player1{
+  padding:1.25em;
+  background-color: #f8f5f1;
+  border-radius: 25px;
+  text-align: center;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.player1:focus{
+  outline: none;
+}
+
+.move {
+  color: #2412d1;
+}
+
+.btn:hover {
+  background-color: #f8f5f1;
+  cursor: pointer;
+  color: black;
+  transition: background-color 125ms linear;
+}
+
+/*---------------- Images ----------------*/
+
+.main-logo{
+  max-width: 500px;
+  margin: 2em 0;
+}

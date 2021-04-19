@@ -1,0 +1,25 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors!!</title>
+    <link href="<%= url("/styles.css") %>" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">   
+  </head>
+
+  <body>
+    <h1>Welcome to Rock Paper Scissors!!</h1>
+    <h2>Please enter your name to start</h2>
+    <img src="rps_block-colors.png" class="main-logo" alt="Rock Paper Scissors Icon">
+    <form action="/names" method="post">
+      <ul>
+        <li>
+          <input class="player1" type="text" name="player1" placeholder="Enter your name" required>
+        </li>
+        <li>
+          <input class="btn" value="Submit" type="submit">
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>
