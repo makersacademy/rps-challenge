@@ -66,6 +66,10 @@ h2 {
   text-decoration: none;
 }
 
+.btn.feelinglucky{
+  background-color: rgb(243, 104, 57);
+}
+
 .btn.play_again:visited{
   text-decoration: none;
 }

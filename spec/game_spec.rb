@@ -13,5 +13,4 @@ describe Game do
     expect(game.player1.name).to eq("player1")
     expect(game.computer.name).to eq("computer")
   end
-
 end

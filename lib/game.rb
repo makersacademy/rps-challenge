@@ -24,13 +24,14 @@ class Game
       'Scissors/Rock' => "Computer Wins",
       'Scissors/Paper' => "Computer Wins"
     }
-    # if @results == "You Win"
-    #   @player1.score += 10 
-    # elsif @results == "Computer Wins"
-    #   @computer.score += 10
-    # end
     return @results["#{player1}/#{computer}"]
   end
-
-
 end
+
+# def winner?
+#   # if @results == "You Win"
+#   #   @player1.score += 10 
+#   # elsif @results == "Computer Wins"
+#   #   @computer.score += 10
+#   # end
+# end
