@@ -10,6 +10,8 @@ feature 'player should be presented with three choices after entering their name
     scenario 'player should be able to choose one of the options presented' do
       sign_in_and_play
       click_button "👊"
+      srand(4)
+      expect(page).to have_content "Finn: 👊 Computer: ✌"
     end
 
   # scenario 'user picks rock, computer picks scissors' do

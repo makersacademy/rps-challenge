@@ -1,9 +1,9 @@
 class Player
   
-  attr_reader :name
+  attr_reader :name, :weapon
 
-  def initialize(name)
-    @name = name
+  def initialize(player)
+    @name = player.capitalize
   end
 
 end

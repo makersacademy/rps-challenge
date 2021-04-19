@@ -12,5 +12,6 @@ describe Player do
         expect(subject.name).to eq 'Finn'
       end
     end
+
   end
 end
