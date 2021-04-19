@@ -1,0 +1,24 @@
+<html>
+  <h3><%= @player_1%> vs Computer </h3>
+  <p1>
+    you have chosen <%= @player_move %>
+  </p1>
+  <br>
+  <br>
+  <p2>
+    computer has chosen <%= @pc_move %>
+  </p2>
+
+  <br>
+  <br>
+
+  <p3>
+    <%= @game.winner(@player_move, @pc_move) %>
+  </p3>
+  <br>
+  <br>
+  <form action="/play">
+    <input type="submit" value="play again">
+  </form>
+
+</html>
