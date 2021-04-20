@@ -17,7 +17,7 @@ class RPS < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:player])
-    computer = Player.new(params[:player])
+    computer = Computer.new
     @game = Game.create(player, computer)
     redirect :play
   end
@@ -27,8 +27,13 @@ class RPS < Sinatra::Base
   end
 
   post '/pick' do
-    @game.player.pick(params[:weapon])
-    @game.computer.pick(Computer.new.cpu_pick)
+    @game.player.weapon = params[:weapon]
+    @game.computer.random_choice
+    redirect :winner
+  end
+
+  get '/winner' do
+   erb :winner
   end
 
   run if app_file == $0

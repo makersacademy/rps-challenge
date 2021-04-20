@@ -1,11 +1,12 @@
 class Computer
-  CHOICE = [:rock, :paper, :scissors, :lizard, :spock]
+  CHOICE = [:rock, :paper, :scissors]
+  attr_accessor :weapon
 
-  def initialize
-    @cpu_weapon = CHOICE.sample
+  def initialize(weapon = CHOICE)
+    @weapon = weapon
   end
 
-  def cpu_pick
-    @cpu_weapon
+  def random_choice
+    @weapon = CHOICE.sample
   end
 end

@@ -1,19 +1,14 @@
 require 'player'
 
 describe Player do
-  subject(:yohann) { Player.new('Yohann') }
-  let(:weapon) { double :weapon}
+  subject(:player) { described_class.new('Yohann') }
 
-  context '#name' do
-    it 'allows to return a name' do
-      expect(yohann.name).to eq 'Yohann'
-    end
-  end
-  it 'store a weapon' do
-    expect(yohann.weapon).to eq nil
+  it 'returns a name' do
+    expect(player.name).to eq 'Yohann'
   end
 
-  it 'allow to pick a weapon' do
-    expect(yohann.pick(weapon)).to eq weapon
+  it 'returns a weapon' do
+    player.weapon = :rock
+    expect(player.weapon).to eq :rock
   end
 end

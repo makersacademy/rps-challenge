@@ -7,4 +7,11 @@ feature 'start game' do
     expect(page).to have_button('lizard')
     expect(page).to have_button('spock')
   end
+
+  scenario 'it should show the winner' do
+    sign_in_and_play
+    allow_any_instance_of(Array).to receive(:sample) { :scissors }
+    click_button('rock')
+    expect(page).to have_content 'You are the winner'
+  end
 end

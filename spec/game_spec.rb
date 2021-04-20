@@ -22,4 +22,16 @@ describe Game do
     Game.create(player, computer)
     expect(Game.instance).to be_a Game
   end
+
+  it 'returns a winner' do
+    allow(player).to receive(:weapon) { :rock }
+    allow(computer).to receive(:weapon) { :scissors }
+    expect(game.win?).to eq 'You win'
+  end
+
+  it 'returns a draw' do
+    allow(player).to receive(:weapon) { :rock }
+    allow(computer).to receive(:weapon) { :rock }
+    expect(game.draw?).to eq "It's a draw"
+  end
 end

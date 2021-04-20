@@ -1,17 +1,18 @@
-require_relative 'beatmap'
+require_relative 'player'
+require_relative 'computer'
 
 class Game
 
-  def initialize(player, computer = Computer.new)
-    @players = [player, computer]
-  end
+  MAP = {
+    rock: :scissors,
+    scissors: :paper,
+    paper: :rock
+  }
+  attr_reader :player, :computer
 
-  def player
-    @players.first
-  end
-
-  def computer
-    @players.last
+  def initialize(player = Player.new, computer = Computer.new)
+    @player = player
+    @computer = computer
   end
 
   def self.create(player, computer)
@@ -20,5 +21,13 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def win?
+    'You win' if MAP[@player.weapon] == @computer.weapon
+  end
+
+  def draw?
+    "It's a draw" if player.weapon == computer.weapon
   end
 end
