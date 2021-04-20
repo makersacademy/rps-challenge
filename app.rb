@@ -3,10 +3,10 @@ require 'sinatra/reloader'
 require './lib/script'
 
 class RPS < Sinatra::Base
-  enable :sessions
   configure :development do
     register Sinatra::Reloader
   end
+
   before do
     @game = Game.instance
   end
