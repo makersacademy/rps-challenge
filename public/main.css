@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap");
 #center {
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 100px;
+  width: 100%;
+  height: 100%;
 }
 #signin {
   justify-content: center;
@@ -30,17 +32,17 @@
 .line-break {
   width: 200%;
 }
-input[type=text] {
+input[type="text"] {
   background-color: hotpink;
   color: white;
   border-style: solid;
   border-color: white;
 }
 * {
-    box-sizing: border-box;
-    font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace, Arial, Helvetica, sans-serif;
 }
-input[type=submit]{
+input[type="submit"] {
   background-color: black;
   box-sizing: border-box;
   background-color: hotpink;
@@ -48,33 +50,35 @@ input[type=submit]{
   border-color: white;
   color: white;
 }
-body{
-    background-color: black;
-    color: chartreuse;
-    text-align: center;
+body {
+  background-color: black;
+  color: chartreuse;
+  text-align: center;
 }
-h1{
-    color:white;
-    font-weight: 900;
-    font-size: 40pt;
-    margin: 15px auto;
-    text-align: center;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+h1 {
+  color: white;
+  font-weight: 900;
+  font-size: 40pt;
+  margin: 15px auto;
+  text-align: center;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080,
+    0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
 }
-h2{
-    font-style: oblique;
-    font-size: 15pt;
+h2 {
+  font-style: oblique;
+  font-size: 15pt;
 }
 
-a:link{
-    color:hotpink;
-    text-decoration: none;
+a:link {
+  color: hotpink;
+  text-decoration: none;
 }
-a:visited{
-    color:hotpink;
-    text-decoration: none;
+a:visited {
+  color: hotpink;
+  text-decoration: none;
 }
-a:hover{
-    color:pink;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+a:hover {
+  color: pink;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080,
+    0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
 }

@@ -1,6 +1,6 @@
 class GameLog
   attr_reader :score, :games, :first_to
-  FIRST_TO = 10
+  FIRST_TO = 3
 
   def initialize(first_to = FIRST_TO)
     @games = []
