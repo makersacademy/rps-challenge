@@ -1,0 +1,57 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="<%= url('/main.css') %>">
+  <title>Rock Paper Scissors!</title>
+</head>
+<body>
+<div id="center">
+<% unless @game.game_log.game_over? %>
+<h1>It's time to play, <%= @name %>!</h1>
+<br>
+<h2>Choose your move! First to <%= @game.game_log.first_to %> wins...</h2>
+<div class="moves">
+<div class="emoji">&#x1f918;</div>
+<div class="emoji">&#x1f4c4;</div>
+<div class="emoji">&#x1f487;</div>
+<div class="line-break"></div>
+<div class="item">
+<form action= "/move?move=rock" method="post">
+  <input type="submit" value="Rock">
+</form></div>
+<div class = "item">
+<form action= "/move?move=paper" method="post">
+  <input type="submit" value="Paper">
+</form>
+</div>
+<div class="item">
+<form action= "/move?move=scissors" method="post">
+  <input type="submit" value="Scissors">
+</form>
+</div>
+</div>
+<% end %>
+<% if @game.game_log.games.length > 0 %>
+  <%= @game.game_log.show_game %>
+<% end %>
+<% if @game.result == :win %>
+<p>You won!</p>
+<% end %>
+<% if @game.result == :loss %>
+<p>You lost :(</p>
+<% end %>
+<% if @game.result == :draw %>
+<p>It's a draw!</p>
+<% end %>
+<% if @game.game_log.games.length > 0 %>
+  <p>The score is <%= @name %>: <%= @game.game_log.score[:player] %>, COMPUTER: <%= @game.game_log.score[:computer] %></p>
+<% end %>
+<% if @game.game_log.game_over? %>
+<div class="item">
+  <h2> <%= @game.game_log.end_message %></h2>
+<a href = "/">Start again</a>
+</div>
+<% end %>
+</div>
+</body>

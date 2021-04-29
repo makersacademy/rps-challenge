@@ -1,5 +1,15 @@
 # RPS Challenge
 
+Approach
+-------
+
+* This code works in a very similar way to the battle app from the afternoon challenge. there are 3 classes in the model, for the player, the rock paper scissors game, and a log of games played, to enable score keeping and and the player seeing what moves had been made.
+* The Player class does not currently have any responsibility other than storing a name. My thought is that this class could be expanded, and the game history stored in the game log made use of, if the game were to be expanded to involve multiple players, tournaments, etc etc.
+* I have opted for having the game all take place on a single page, rather than taking the user to a results page.
+* For storing the player move, I initially used independent get requests that then put the move into the model logic and redirect to the play page with the result.  i had intended to use a post request and store the move as a parameter, but I couldn't figure out how to. Ultimately I realised I could just type the parameter into the form action manually!
+* My chief problem is that rubocop doesn't like my logic for getting the result of the game as it thinks it's over complicated. I changed it from a case..when formula to its current form but this didn't make rubocop any happier. I can't think of any other way to do it!
+* The first player to 10 wins, and the player has the option to start again. if they win, they get $100,000...maybe
+
 Instructions
 -------
 
