@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 feature 'Playing a game' do
   scenario 'before pressing play' do
     sign_in

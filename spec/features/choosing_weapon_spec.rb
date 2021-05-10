@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 feature 'Choosing a weapon' do
   scenario 'clicking rock' do
     sign_in
