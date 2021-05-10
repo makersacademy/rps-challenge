@@ -15,6 +15,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/name" do
+    
     session[:name] = params[:name]
     redirect "/singlegame"
   end
