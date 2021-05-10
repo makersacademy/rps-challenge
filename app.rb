@@ -43,7 +43,7 @@ class RockPaperScissors < Sinatra::Base
 
   post "/player_1_turn" do
     session[:choice_1] = params[:choice_1]
-    $multigame = MultiGame.new(session[:choice_1], session[:choice_2])
+    p $multigame = MultiGame.new(session[:choice_1], session[:choice_2])
     redirect "/player_2"
   end
 
@@ -55,7 +55,7 @@ class RockPaperScissors < Sinatra::Base
   post "/player_2_turn" do
     session[:choice_2] = params[:choice_2]
     # update the game with the 2 choices
-    $multigame = MultiGame.new(session[:choice_1], session[:choice_2])
+    p $multigame = MultiGame.new(session[:choice_1], session[:choice_2])
     redirect "/results"
   end
 
@@ -67,7 +67,6 @@ class RockPaperScissors < Sinatra::Base
   get "/results" do
     function_multigame
     erb :results
-    
   end
 
   def function_singlegame
