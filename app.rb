@@ -43,7 +43,7 @@ class RockPaperScissors < Sinatra::Base
 
   post "/player_1_turn" do
     session[:choice_1] = params[:choice_1]
-    p $multigame = MultiGame.new(session[:choice_1], session[:choice_2])
+    $multigame = MultiGame.new(session[:choice_1], session[:choice_2])
     redirect "/player_2"
   end
 
