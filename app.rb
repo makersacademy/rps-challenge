@@ -67,6 +67,7 @@ class RockPaperScissors < Sinatra::Base
   get "/results" do
     function_multigame
     erb :results
+    
   end
 
   def function_singlegame
