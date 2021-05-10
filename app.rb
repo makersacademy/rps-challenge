@@ -55,7 +55,7 @@ class RockPaperScissors < Sinatra::Base
   post "/player_2_turn" do
     session[:choice_2] = params[:choice_2]
     # update the game with the 2 choices
-    p $multigame = MultiGame.new(session[:choice_1], session[:choice_2])
+    $multigame = MultiGame.new(session[:choice_1], session[:choice_2])
     redirect "/results"
   end
 
