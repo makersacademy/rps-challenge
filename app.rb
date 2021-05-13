@@ -38,6 +38,7 @@ class RockPaperScissors < Sinatra::Base
   post "/checkresult" do
     session[:choice] = params[:choice]
     @newgame = Game.new(session[:choice])
+    function_singlegame(@newgame)
     redirect "/result"
   end
 
@@ -61,7 +62,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/result" do
-    function_singlegame(@newgame)
+    function_singlegame(selection)
     erb :result
   end
 
@@ -70,7 +71,7 @@ class RockPaperScissors < Sinatra::Base
     erb :results
   end
 
-  def function_singlegame(selection)
+  def function_singlegame(selection = @newgame)
     @choice = selection.selected
     p "Your choice: #{@choice}"
     @computer = selection.random
