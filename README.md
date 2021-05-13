@@ -3,7 +3,7 @@
 
 What does this code do?
 -----------------------
-A _Rock, Paper, Scissors_ game to play on the web
+A _Rock, Paper, Scissors_ game to play on the web. Here's a [model of the request/response sequence] (https://github.com/BecaLParker/rps-challenge/blob/master/RPS_requestrepsonse%20model.svg). 
 
 ## Basic Game Rules
 
