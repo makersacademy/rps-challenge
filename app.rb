@@ -73,11 +73,10 @@ class RockPaperScissors < Sinatra::Base
     p "Computer choice: #{@computer}"
     @result = selection.playing
     p @result
-    return @result
   end
 
   get "/result" do
-    
+    p "RESULT #{@result}"
     erb :result
   end
 
