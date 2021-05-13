@@ -15,8 +15,12 @@ A _Rock, Paper, Scissors_ game to play on the web
 Setup
 -------
 
-* [Tell user/reviewer how to install/run tests]
+* `$ git clone https://github.com/BecaLParker/rps-challenge.git`
+* `$ cd rps-challenge`
+* `$ bundle`
+* `$ rackup`
 * 
+
 
 User stories
 ----
