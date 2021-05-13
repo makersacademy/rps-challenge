@@ -66,7 +66,7 @@ class RockPaperScissors < Sinatra::Base
     erb :results
   end
 
-  def function_singlegame(selection)
+  def function_singlegame(*selection)
     @choice = selection.selected
     p "Your choice: #{@choice}"
     @computer = selection.random
@@ -76,7 +76,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/result" do
-    p "RESULT #{@result}"
+    function_singlegame()
     erb :result
   end
 
