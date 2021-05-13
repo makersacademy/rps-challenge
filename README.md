@@ -11,6 +11,9 @@ A _Rock, Paper, Scissors_ game to play on the web
 - Scissors beats Paper
 - Paper beats Rock
 
+Credits
+-------
+I referred to the [code review rubric](https://github.com/BecaLParker/rps-challenge/blob/master/docs/review.md) during my build. 
 
 Setup
 -------
