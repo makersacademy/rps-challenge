@@ -41,6 +41,7 @@ class RockPaperScissors < Sinatra::Base
     @sel = Game.new(session[:choice])
     p @sel
     p @sel.selected
+    function_singlegame(@sel)
     p "THISSS"
     redirect "/result"
   end
@@ -74,9 +75,9 @@ class RockPaperScissors < Sinatra::Base
     erb :results
   end
 
-  def function_singlegame
+  def function_singlegame(cho)
     p "I am here"
-    p @sel.selected
+    p cho.selected
     # @choice = Game.selected
     # p @choice
     # @computer = @newgame.random
