@@ -37,7 +37,11 @@ class RockPaperScissors < Sinatra::Base
 
   post "/checkresult" do
     session[:choice] = params[:choice]
-    $newgame = Game.new(session[:choice])
+    p "THAAA"
+    @sel = Game.new(session[:choice])
+    p @sel
+    p @sel.selected
+    p "THISSS"
     redirect "/result"
   end
 
@@ -56,6 +60,7 @@ class RockPaperScissors < Sinatra::Base
     session[:choice_2] = params[:choice_2]
     # update the game with the 2 choices
     $multigame = MultiGame.new(session[:choice_1], session[:choice_2])
+    
     redirect "/results"
   end
 
@@ -70,9 +75,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   def function_singlegame
-    @choice = $newgame.selected
-    @computer = $newgame.random
-    @result = $newgame.playing
+    p "I am here"
+    p @sel.selected
+    # @choice = Game.selected
+    # p @choice
+    # @computer = @newgame.random
+    # p "THISSS"
+    # p @computer
+    # @result = @newgame.playing
+    # p @result
   end
 
   def function_multigame
