@@ -11,8 +11,8 @@ describe Player do
 
   describe '#select_random' do
     it 'returns a random choice of rock, paper or scissors' do
-      # rand(3) returns 2
       srand(1234)
+      # rand(3) returns 2 so 'scissors' is always returned from array of options
       expect(subject.select_random).to eq('scissors')
     end
   end
