@@ -3,7 +3,8 @@
 
 What does this code do?
 -----------------------
-A _Rock, Paper, Scissors_ game to play on the web. Here's a [model of the request/response sequence](https://github.com/BecaLParker/rps-challenge/blob/master/RPS_requestrepsonse%20model.svg). 
+A one-player _Rock, Paper, Scissors_ game to on the web. Here's a model of the request/response sequence
+<p align="center"><img src="./RPS_requestrepsonse%20model.svg" alt="Request/Response Model" width="50%"/></p>
 
 ## Basic Game Rules
 
