@@ -1,8 +1,6 @@
-feature 'Testing enter names' do
-  scenario 'submitting the names' do
-    visit('/')
-    fill_in :name, with: 'Bob'
-    click_button 'Play!'
+feature 'Entering name to play' do
+  scenario 'displaying players name' do
+    sign_in_and_play
     # save_and_open_page
     expect(page).to have_content 'Bob'
   end

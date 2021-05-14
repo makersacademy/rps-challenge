@@ -9,7 +9,17 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    'bob'
+    erb(:index)
+  end
+  
+  get '/play' do
+    @name = session[:name]
+    erb(:play)
+  end
+
+  post '/name' do
+    session[:name] = params[:name]
+    redirect('/play')
   end
 
   run! if app_file == $0
