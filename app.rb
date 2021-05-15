@@ -6,8 +6,10 @@ class RPS < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :sessions
+
   get '/' do
-    'Hello RPS!'
+    erb :index
   end
 
   # start the server if ruby file executed directly
