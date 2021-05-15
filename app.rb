@@ -23,7 +23,8 @@ class Rps < Sinatra::Base
 
   get '/attack' do
     @player_name = session[:player_name]
-    @move = params[:move]
+    @player_move = params[:move]
+    @computer_move = Game.new.computer_move
     erb :attack
   end
 end
