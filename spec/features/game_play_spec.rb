@@ -27,7 +27,7 @@
 
   context 'game result' do
     before do 
-      srand(67889)
+      srand(67889) # gives 'rock' option
     end
 
     scenario 'Player 1 wins' do
@@ -44,6 +44,6 @@
       click_button('Rock')
       expect(page).to have_content('Draw!')
     end
-    
+
   end 
 end
