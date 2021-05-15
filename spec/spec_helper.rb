@@ -6,6 +6,7 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 require './app'
+require 'features/web_helpers'
 
 ENV['RACK_ENV'] = 'test'
 Capybara.app = RPS
