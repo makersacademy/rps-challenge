@@ -3,6 +3,7 @@ require 'sinatra/base'
 
 
 class Rps < Sinatra::Base
+  enable :sessions
   configure :development do 
     # register Sinatra::Reloader
   end
@@ -13,10 +14,14 @@ class Rps < Sinatra::Base
   end
 
   post '/registered' do
-    @player_name = params[:player_name]
-    erb :play
+    session[:player_name] = params[:player_name]
+    redirect '/play'
   end
 
+  get '/play' do
+    @player_name = session[:player_name]
+    erb :play
+  end
 
 
   run! if app_file ==$0
