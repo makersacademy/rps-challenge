@@ -4,16 +4,11 @@ Your choice is <%=session[:choice].capitalize%>!
 
 Opponent chose <%=@opponent_choice.capitalize%>!
 
+<div>
+<%= @game.confirmation_message(@end_result)%>
+</div>
+
 <br>
 <a href="/play">Play again</a>
-
-
-<% if @game.result(@choice, @opponent_choice) =='win' %>
-  You win!
-<% elsif @game.result(@choice, @opponent_choice) =='lose' %>
-  You lose!
-  <% else %>
-  Draw!
-<% end %>
 
    
