@@ -18,4 +18,9 @@
     click_button('Rock')
     expect(page).to have_link('Play again')
   end
+
+  scenario 'computer chooses Rock' do
+    click_button('Rock')
+    expect(page).to have_content("Opponent chose Rock")
+  end
 end

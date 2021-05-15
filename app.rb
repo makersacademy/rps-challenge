@@ -5,6 +5,8 @@ class RPS < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
+  
+  attr_reader :name, :choice, :opponent_choice
 
   enable :sessions
 
@@ -18,16 +20,19 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    session[:choice] = params[:choice]
+    @name = session[:name]
     erb :play
   end
 
-  post "/play" do 
+  post "/play" do
+    session[:choice] = params[:choice]
+    session[:opponent_choice] = :Rock
     redirect '/choice'
   end
 
   get '/choice' do
     @choice = session[:choice]
+    @opponent_choice = session[:opponent_choice]
     erb :choice
   end 
 
