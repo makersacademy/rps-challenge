@@ -1,5 +1,22 @@
- <h1>Hello there!</h1>
-<form action="/name" method="POST" >
-  <input type="text" name="player_name"/>
-  <input type="submit" value="Play"/>
-</form>
+<div class="layout">
+  <div>
+    <img src="/img/rock.png" alt="rock" width="70" height="70">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="/img/paper.png" alt="paper" width="70" height="70">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="/img/scissors.png" alt="scissors" width="70" height="70">
+  </div>
+  
+  <h1>Hello there!</h1>
+    <div>
+      <h2> Enter name to play </h2>
+    </div>
+    <div>
+      <form action="/name" method="POST" >
+        <label for="player_name">
+          Player name:
+        <input type="text" name="player_name"/>
+        <input type="submit" value="Play"/>
+      </form>
+    </div>
+  </div>
