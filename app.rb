@@ -28,15 +28,12 @@ class App < Sinatra::Base
   end
 
   get '/result' do
-    @result = @game.declare_winner(@game.player.option)
+    @game.declare_winner(@game.player.option)
     erb(:result)
   end
 
 
   post '/select' do
-    # refactor to store player_option in game.player_option
-    # @game.player_1.choose_option(v)
-    # @game.player_2.choose_option(v)
     # @game.declare_winner(@game.player_1.option, @game.player_2.option)
     params.each_value { |v| @game.player.choose_option(v) } 
     redirect('/result') 

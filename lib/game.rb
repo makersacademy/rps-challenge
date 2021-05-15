@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player, :game_choice
+  attr_reader :player, :game_choice, :result
   
   def self.create(player)
     @game = Game.new(player)
@@ -12,6 +12,7 @@ class Game
   def initialize(player)
     @player = player
     @game_choice = ''
+    @result = ''
   end
 
   def select_random
@@ -21,15 +22,15 @@ class Game
   def declare_winner(user_choice)
     @game_choice = select_random
     if game_choice == user_choice
-      'draw'
+      @result = 'draw'
     elsif game_choice == 'Rock' && user_choice == 'Paper'
-      'win'
+      @result = 'win'
     elsif game_choice == 'Scissors' && user_choice == 'Rock'
-      'win'
+      @result = 'win'
     elsif game_choice == 'Paper' && user_choice == 'Scissors'
-      'win'
+      @result = 'win'
     else 
-      'lose'
+      @result = 'lose'
     end
   end
 end

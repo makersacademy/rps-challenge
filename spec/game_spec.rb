@@ -20,21 +20,24 @@ describe Game do
 
   describe '#declare_winner' do
     context 'when user enters rock' do
-      it "returns win" do
+      it "sets #result to win" do
         srand(1234)
-        expect(subject.declare_winner('Rock')).to eq('win')     
+        subject.declare_winner('Rock')    
+        expect(subject.result).to eq('win')
       end
     end
     context 'when user enters paper' do
-      it "returns lose" do
+      it "sets #result to lose" do
         srand(1234)
-        expect(subject.declare_winner('Paper')).to eq('lose')
+        subject.declare_winner('Paper')
+        expect(subject.result).to eq('lose')
       end
     end
     context 'when user enters scissors' do
-      it "returns draw" do
+      it "sets #result to draw" do
         srand(1234)
-        expect(subject.declare_winner('Scissors')).to eq('draw')
+        subject.declare_winner('Scissors')
+        expect(subject.result).to eq('draw')
       end
     end
   end
