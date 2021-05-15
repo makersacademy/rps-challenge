@@ -19,13 +19,14 @@
     expect(page).to have_link('Play again')
   end
 
-  scenario 'computer chooses Rock' do
-    click_button('Rock')
-    expect(page).to have_content("Opponent chose Rock")
-  end
-
-  # scenario 'computer chooses a random option' do
-  #   click_button('Paper')
-  #   expect(page).to have_content("Opponent chose Scissors!")
+  # scenario 'computer chooses Rock' do
+  #   click_button('Rock')
+  #   expect(page).to have_content("Opponent chose Rock")
   # end
+
+  scenario 'computer chooses a random option' do
+    srand(67889)
+    click_button('Paper')
+    expect(page).to have_content('Opponent chose Rock!')
+  end
 end
