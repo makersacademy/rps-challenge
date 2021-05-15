@@ -1,5 +1,5 @@
 <div>
-Your choice is <%=session[:choice]%>!
+Your choice is <%=session[:choice].capitalize%>!
 </div>
 
 Opponent chose <%=@opponent_choice.capitalize%>!
@@ -7,4 +7,13 @@ Opponent chose <%=@opponent_choice.capitalize%>!
 <br>
 <a href="/play">Play again</a>
 
- 
+
+<% if @game.result(@choice, @opponent_choice) =='win' %>
+  You win!
+<% elsif @game.result(@choice, @opponent_choice) =='lose' %>
+  You lose!
+  <% else %>
+  Draw!
+<% end %>
+
+   

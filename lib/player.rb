@@ -1,14 +1,14 @@
 class Player
-  attr_reader :name, :choice, :opponent_choice
+  attr_reader :name, :player_choice, :opponent_choice
 
   def initialize(name)
     @name = name
-    @choice = nil
+    @player_choice = nil
     @opponent_choice = nil
   end
 
   def choose(option)
-    @choice = option
+    @player_choice = option
   end
 
   def random_choice

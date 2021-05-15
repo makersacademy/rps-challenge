@@ -12,7 +12,7 @@ subject(:player) { described_class.new("Hulk") }
   describe "#choose" do
     it 'sets the choice to rock' do
       player.choose("rock")
-      expect(player.choice).to eq("rock")
+      expect(player.player_choice).to eq("rock")
     end
   end
 

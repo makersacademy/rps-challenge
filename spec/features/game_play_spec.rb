@@ -25,9 +25,21 @@
     expect(page).to have_content('Opponent chose Rock!')
   end
 
-  # scenario 'Player 1 wins' do
-  #   srand(67889)
-  #   click_button('Rock')
-  #   expect(page).to have_content('Player 1 wins!')
-  # end
+  scenario 'Player 1 wins' do
+    srand(67889)
+    click_button('Paper')
+    expect(page).to have_content('You win!')
+  end
+
+  scenario 'Player 2 wins' do
+    srand(67889)
+    click_button('Scissors')
+    expect(page).to have_content('You lose!')
+  end
+
+  scenario 'Draw' do
+    srand(67889)
+    click_button('Rock')
+    expect(page).to have_content('Draw!')
+  end
 end

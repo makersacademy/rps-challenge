@@ -8,7 +8,7 @@ class RPS < Sinatra::Base
     register Sinatra::Reloader
   end
   
-  attr_reader :player_1_name, :choice, :opponent_choice
+  attr_reader :player_1_name, :choice, :opponent_choice, :game
 
   enable :sessions
 
@@ -36,7 +36,8 @@ class RPS < Sinatra::Base
   end
 
   get '/choice' do
-    @choice = session[:choice]
+    @game = Game.new(@player_1_name)
+    @choice = session[:choice].downcase
     @opponent_choice = session[:opponent_choice]
     erb :choice
   end 
