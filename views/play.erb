@@ -1,7 +1,9 @@
-<p>Hello <%= @game.player.name %></p>
-<p>Choose rock, paper or scissors</p>
+<div>
+<h1>Hello <%= @game.player.name %></h1>
+<h1>Choose rock, paper or scissors</h1>
 <form action="/select" method="post">
   <input type="submit" name="rock" value="Rock">
   <input type="submit" name="paper" value="Paper">
   <input type="submit" name="scissors" value="Scissors">
 </form>
+</div>

@@ -11,7 +11,7 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    erb(:index)
+    erb(:index, :layout => :layout)
   end
   
   post '/name' do

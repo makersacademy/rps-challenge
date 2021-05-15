@@ -1,3 +1,5 @@
-<p><%= @game.player.name%> chose: <%= @game.player.option%></p>
-<p>Game chose: <%= @game.game_choice%></p>
-<p>Result: <%= @game.result%></p>
+<div>
+<h1><%= @game.player.name%> chose: <%= @game.player.option%></h1>
+<h1>Game chose: <%= @game.game_choice%></h1>
+<h1>Result: <%= @game.result.upcase%></h1>
+</div>
