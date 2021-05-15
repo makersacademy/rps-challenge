@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player_1, :player_2, :game_choice, :result
+  attr_reader :player_1, :player_2, :game_choice, :result, :current_turn
   
   def self.create(player_1, player_2)
     @game = Game.new(player_1, player_2)
@@ -14,10 +14,15 @@ class Game
     @player_2 = player_2
     @game_choice = ''
     @result = ''
+    @current_turn = player_1
   end
 
   def select_random
     ['Rock', 'Paper', 'Scissors'][rand(3)]
+  end
+
+  def next_turn
+    @current_turn = player_2
   end
 
   def declare_winner(user_choice)

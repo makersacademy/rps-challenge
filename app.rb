@@ -35,8 +35,13 @@ class App < Sinatra::Base
 
   post '/select' do
     # @game.declare_winner(@game.player_1.option, @game.player_2.option)
-    params.each_value { |v| @game.player_1.choose_option(v) } 
-    redirect('/result') 
+    params.each_value { |v| @game.current_turn.choose_option(v) } 
+    if @game.current_turn == @game.player_2
+      redirect('/result') 
+    else 
+      @game.next_turn
+      redirect('/play')
+    end
   end
  
   run! if app_file == $0

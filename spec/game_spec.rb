@@ -1,20 +1,35 @@
 require 'game'
 
 describe Game do
-  let(:player) { double("Player", name: 'Bob')}
-  subject { described_class.new(player) }
+  let(:player_1) { double("Player", name: 'Bob')}
+  let(:player_2) { double("Player", name: 'Jeremy')}
+  subject { described_class.new(player_1, player_2) }
 
   describe '#player_name' do
     it 'returns the players name' do
-      expect(subject.player.name).to eq('Bob')
+      expect(subject.player_1.name).to eq('Bob')
     end
   end
 
   describe '#select_random' do
     it 'returns a random choice of rock, paper or scissors' do
       srand(1234)
-      # rand(3) returns 2 so 'scissors' is always returned from array of options
       expect(subject.select_random).to eq('Scissors')
+    end
+  end
+
+  describe '#current_turn' do
+    context 'at the start of the game' do
+      it 'returns player_1' do
+        expect(subject.current_turn).to eq(player_1)
+      end
+    end
+
+    context 'after #next_turn' do
+      it 'returns player_2' do
+        subject.next_turn
+        expect(subject.current_turn).to eq(player_2)
+      end
     end
   end
 
