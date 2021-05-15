@@ -13,4 +13,9 @@
     click_button('Paper')
     expect(page).to have_content 'Your choice is Paper!'
   end
+
+  scenario 'play again' do
+    click_button('Rock')
+    expect(page).to have_link('Play again')
+  end
 end

@@ -27,6 +27,7 @@ class RPS < Sinatra::Base
   end
 
   get '/choice' do
+    @choice = session[:choice]
     erb :choice
   end 
 
