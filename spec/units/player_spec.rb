@@ -15,4 +15,13 @@ subject(:player) { described_class.new("Hulk") }
       expect(player.choice).to eq("rock")
     end
   end
+
+  describe  "#random_choice" do
+    it 'sets the choice from rock, paper or scissors' do
+      # allow(player).to receive(:random_choice).and_return('scissors')
+      player.random_choice
+      # expect(player.opponent_choice).to eq('scissors')
+      expect(["rock", "paper", "scissors"]).to include(player.opponent_choice)
+    end 
+  end 
 end 
