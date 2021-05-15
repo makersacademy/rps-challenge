@@ -28,8 +28,7 @@ class App < Sinatra::Base
   end
 
   get '/result' do
-    @option = session[:option]
-    @result = @game.declare_winner(@option)
+    @result = @game.declare_winner(@game.player.option)
     erb(:result)
   end
 
@@ -39,7 +38,7 @@ class App < Sinatra::Base
     # @game.player_1.choose_option(v)
     # @game.player_2.choose_option(v)
     # @game.declare_winner(@game.player_1.option, @game.player_2.option)
-    params.each_value { |v| session[:option] = v } 
+    params.each_value { |v| @game.player.choose_option(v) } 
     redirect('/result') 
   end
  
