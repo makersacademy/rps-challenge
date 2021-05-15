@@ -1,11 +1,11 @@
-require 'player'
+require 'game'
 
-describe Player do
+describe Game do
   subject { described_class.new('Bob') }
 
-  describe '#name' do
+  describe '#player_name' do
     it 'returns the players name' do
-      expect(subject.name).to eq('Bob')
+      expect(subject.player_name).to eq('Bob')
     end
   end
 
@@ -17,23 +17,23 @@ describe Player do
     end
   end
 
-  describe '#choose' do
+  describe '#declare_winner' do
     context 'when user enters rock' do
       it "returns win" do
         srand(1234)
-        expect(subject.choose('Rock')).to eq('win')     
+        expect(subject.declare_winner('Rock')).to eq('win')     
       end
     end
     context 'when user enters paper' do
       it "returns lose" do
         srand(1234)
-        expect(subject.choose('Paper')).to eq('lose')
+        expect(subject.declare_winner('Paper')).to eq('lose')
       end
     end
     context 'when user enters scissors' do
       it "returns draw" do
         srand(1234)
-        expect(subject.choose('Scissors')).to eq('draw')
+        expect(subject.declare_winner('Scissors')).to eq('draw')
       end
     end
   end

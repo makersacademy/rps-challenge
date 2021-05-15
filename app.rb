@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/player.rb'
+require './lib/game.rb'
 
 class App < Sinatra::Base
   enable :sessions
@@ -13,24 +13,28 @@ class App < Sinatra::Base
     erb(:index)
   end
   
+  post '/name' do
+    @game = Game.create(params[:name])
+    redirect('/play')
+  end
+
+  before do
+    @game = Game.instance
+  end
+
   get '/play' do
-    @player = session[:player]
     erb(:play)
   end
 
   get '/result' do
     @option = session[:option]
-    @player = session[:player]
-    @result = @player.choose(@option)
+    @result = @game.declare_winner(@option)
     erb(:result)
   end
 
-  post '/name' do
-    session[:player] = Player.new(params[:name])
-    redirect('/play')
-  end
 
   post '/select' do
+    # refactor to store player_option in game.player_option
     params.each_value { |v| session[:option] = v } 
     redirect('/result') 
   end
