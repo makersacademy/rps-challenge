@@ -4,13 +4,13 @@
   end
 
   scenario 'see the choices' do
-    expect(page).to have_content 'Rock'
-    expect(page).to have_content 'Paper'
-    expect(page).to have_content 'Scissors'
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
   end
   
   scenario 'choose an option' do
     click_button('Paper')
-    expect(page).to have_content 'Your choice is paper!'
+    expect(page).to have_content 'Your choice is Paper!'
   end
 end

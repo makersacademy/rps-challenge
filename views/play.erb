@@ -1,9 +1,13 @@
+<div>
 Hello, <%=session[:name]%>!
+</div>
 
-<form action='/choices' method='POST'>
+<div>
+<p> Choose one of the options below:</p>
+</div>
+
+<form action="/choices" method="POST">
   <input type="submit" value="Rock" name="choice"/>
   <input type="submit" value="Paper" name="choice"/>
   <input type="submit" value="Scissors" name="choice"/>
 </form>
-
-Your choice is <%=session[:choice]%>!

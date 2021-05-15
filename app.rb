@@ -18,12 +18,16 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    session[:choice] = params[:choice]
     erb :play
   end
 
-  post '/choices' do
-    session[:choice] = params[:choice]
-    redirect '/play'
+  post "/choices" do 
+    redirect '/choice'
+  end
+
+  get '/choice' do
+    erb :choice
   end 
 
   # start the server if ruby file executed directly
