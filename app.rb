@@ -22,7 +22,7 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post "/choices" do 
+  post "/play" do 
     redirect '/choice'
   end
 
