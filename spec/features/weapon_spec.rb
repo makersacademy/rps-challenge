@@ -13,10 +13,10 @@ feature "player's weapons" do
     expect(page).to have_button('Scissors')
   end
 
-  it 'stores player weapon selection' do
+  it 'displays player weapon selection' do
     sign_in_and_play
     click_button('Rock')
-    expect(page).to have_content('You selected ROCK')
+    expect(page).to have_content('you selected ROCK')
   end
 end
 
