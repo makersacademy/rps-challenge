@@ -23,9 +23,9 @@ end
 feature "game's weapons" do
   
   it 'displays the generated weapon' do
-    sign_in_and_play
     allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+    sign_in_and_play
     click_button('Rock')
-    expect(page).to have_content(/^[The Game selected SCISSORS]+$/)
+    expect(page).to have_content("The Game selected SCISSORS")
   end
 end
