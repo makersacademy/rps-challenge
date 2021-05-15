@@ -23,4 +23,9 @@
     click_button('Rock')
     expect(page).to have_content("Opponent chose Rock")
   end
+
+  # scenario 'computer chooses a random option' do
+  #   click_button('Paper')
+  #   expect(page).to have_content("Opponent chose Scissors!")
+  # end
 end

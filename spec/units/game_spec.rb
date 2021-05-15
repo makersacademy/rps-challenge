@@ -13,4 +13,6 @@ describe Game do
     expect(game.opponent).to eq opponent
   end
 
+  it
+
 end 
