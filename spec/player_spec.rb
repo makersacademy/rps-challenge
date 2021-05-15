@@ -13,27 +13,27 @@ describe Player do
     it 'returns a random choice of rock, paper or scissors' do
       srand(1234)
       # rand(3) returns 2 so 'scissors' is always returned from array of options
-      expect(subject.select_random).to eq('scissors')
+      expect(subject.select_random).to eq('Scissors')
     end
   end
-  # limited testing for all possible outcomes
+
   describe '#choose' do
     context 'when user enters rock' do
       it "returns win" do
         srand(1234)
-        expect(subject.choose('rock')).to eq('win')     
+        expect(subject.choose('Rock')).to eq('win')     
       end
     end
     context 'when user enters paper' do
       it "returns lose" do
         srand(1234)
-        expect(subject.choose('paper')).to eq('lose')
+        expect(subject.choose('Paper')).to eq('lose')
       end
     end
     context 'when user enters scissors' do
       it "returns draw" do
         srand(1234)
-        expect(subject.choose('scissors')).to eq('draw')
+        expect(subject.choose('Scissors')).to eq('draw')
       end
     end
   end

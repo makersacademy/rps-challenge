@@ -6,18 +6,18 @@ class Player
   end
 
   def select_random
-    ['rock', 'paper', 'scissors'][rand(3)]
+    ['Rock', 'Raper', 'Scissors'][rand(3)]
   end
 
   def choose(option)
     game_option = select_random
     if game_option == option
       'draw'
-    elsif game_option == 'rock' && option == 'paper'
+    elsif game_option == 'Rock' && option == 'Paper'
       'win'
-    elsif game_option == 'scissors' && option == 'rock'
+    elsif game_option == 'Scissors' && option == 'Rock'
       'win'
-    elsif game_option == 'paper' && option == 'scissors'
+    elsif game_option == 'Paper' && option == 'Scissors'
       'win'
     else 
       'lose'

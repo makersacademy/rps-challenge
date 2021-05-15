@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player.rb'
 
 class App < Sinatra::Base
   enable :sessions
@@ -20,6 +21,7 @@ class App < Sinatra::Base
   get '/result' do
     @option = session[:option]
     @name = session[:name]
+    @random_option = Player.new('Game').select_random
     erb(:result)
   end
 
