@@ -11,13 +11,6 @@ describe Game do
     end
   end
 
-  describe '#select_random' do
-    it 'returns a random choice of rock, paper or scissors' do
-      srand(1234)
-      expect(subject.select_random).to eq('Scissors')
-    end
-  end
-
   describe '#current_turn' do
     context 'at the start of the game' do
       it 'returns player_1' do
@@ -34,24 +27,21 @@ describe Game do
   end
 
   describe '#declare_winner' do
-    context 'when user enters rock' do
+    context 'when player_1 wins' do
       it "sets #result to win" do
-        srand(1234)
-        subject.declare_winner('Rock')    
+        subject.declare_winner('Rock', 'Scissors')    
         expect(subject.result).to eq('win')
       end
     end
-    context 'when user enters paper' do
+    context 'when player_1 loses' do
       it "sets #result to lose" do
-        srand(1234)
-        subject.declare_winner('Paper')
+        subject.declare_winner('Paper', 'Scissors')
         expect(subject.result).to eq('lose')
       end
     end
-    context 'when user enters scissors' do
+    context 'when its a draw' do
       it "sets #result to draw" do
-        srand(1234)
-        subject.declare_winner('Scissors')
+        subject.declare_winner('Scissors', 'Scissors')
         expect(subject.result).to eq('draw')
       end
     end

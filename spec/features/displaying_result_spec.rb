@@ -3,6 +3,6 @@ feature 'selecting a random option for the game' do
     sign_in_and_play
     click_button('Rock')
     click_button('Rock')
-    expect(page).to have_content("Result: Draw")
+    expect(page).to have_content("Result: DRAW")
   end
 end
