@@ -1,11 +1,12 @@
 require 'game'
 
 describe Game do
-  subject { described_class.new('Bob') }
+  let(:player) { double("Player", name: 'Bob')}
+  subject { described_class.new(player) }
 
   describe '#player_name' do
     it 'returns the players name' do
-      expect(subject.player_name).to eq('Bob')
+      expect(subject.player.name).to eq('Bob')
     end
   end
 

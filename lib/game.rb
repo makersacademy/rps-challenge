@@ -1,16 +1,16 @@
 class Game
-  attr_reader :player_name, :game_choice
+  attr_reader :player, :game_choice
   
-  def self.create(player_name)
-    @game = Game.new(player_name)
+  def self.create(player)
+    @game = Game.new(player)
   end
 
   def self.instance
     @game
   end
-  
-  def initialize(player_name)
-    @player_name = player_name
+
+  def initialize(player)
+    @player = player
     @game_choice = ''
   end
 

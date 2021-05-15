@@ -9,9 +9,10 @@ describe Player do
     end
   end
 
-  describe '#choose_option' do
+  describe '#option' do
     it 'returns the players choice' do
-      expect(subject.choose_option('Rock')).to eq('Rock')
+      subject.choose_option('Rock')
+      expect(subject.option).to eq('Rock')
     end
   end
 end
