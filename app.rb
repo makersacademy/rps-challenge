@@ -8,7 +8,7 @@ class RPS < Sinatra::Base
     register Sinatra::Reloader
   end
   
-  attr_reader :name, :choice, :opponent_choice
+  attr_reader :player_1_name, :choice, :opponent_choice
 
   enable :sessions
 
@@ -22,16 +22,16 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @name = session[:name]
+    @player_1_name = session[:name]
     erb :play
   end
 
   post "/play" do
-    player = Player.new(@name)
-    player.random_choice
+    @game = Game.new(@player_1_name)
+    opponent = @game.opponent
+    opponent.random_choice
     session[:choice] = params[:choice]
-    session[:opponent_choice] = player.opponent_choice
-    p player.opponent_choice
+    session[:opponent_choice] = opponent.opponent_choice
     redirect '/choice'
   end
 
