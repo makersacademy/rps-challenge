@@ -20,4 +20,10 @@ class Rps < Sinatra::Base
     @player_name = session[:player_name]
     erb :play
   end
+
+  get '/attack' do
+    @player_name = session[:player_name]
+    @move = params[:move]
+    erb :attack
+  end
 end
