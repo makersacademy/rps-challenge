@@ -1,16 +1,17 @@
 class Player
-  attr_reader :name
+  attr_reader :name, :game_option
 
   def initialize(name)
     @name = name
+    @game_option = ''
   end
 
   def select_random
-    ['Rock', 'Raper', 'Scissors'][rand(3)]
+    ['Rock', 'Paper', 'Scissors'][rand(3)]
   end
 
   def choose(option)
-    game_option = select_random
+    @game_option = select_random
     if game_option == option
       'draw'
     elsif game_option == 'Rock' && option == 'Paper'

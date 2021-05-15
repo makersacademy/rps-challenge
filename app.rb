@@ -21,7 +21,7 @@ class App < Sinatra::Base
   get '/result' do
     @option = session[:option]
     @player = session[:player]
-    @random_option = @player.select_random
+    @result = @player.choose(@option)
     erb(:result)
   end
 
