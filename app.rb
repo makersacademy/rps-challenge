@@ -22,4 +22,14 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/weapon_selection' do
+    session[:player_weapon] = params[:weapon]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player_weapon = session[:player_weapon]
+    erb :result
+  end
+
 end

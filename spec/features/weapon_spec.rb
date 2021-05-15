@@ -12,4 +12,10 @@ feature 'player weapons' do
     expect(page).to have_button('Paper')
     expect(page).to have_button('Scissors')
   end
+
+  it 'stores player weapon selection' do
+    sign_in_and_play
+    click_button('Rock')
+    expect(page).to have_content('You selected ROCK')
+  end
 end
