@@ -1,6 +1,12 @@
-feature 'Testing infrastructure' do
-  scenario 'Can run app and check page content' do
+# As a marketeer
+# So that I can see my name in lights
+# I would like to register my name before playing an online game
+
+feature 'Enter name' do
+  scenario 'Player can enter their name' do
     visit('/')
-    expect(page).to have_content 'Testing infrastructure working!'
+    fill_in('player_name', with: 'Bob')
+    click_button('Submit')
+    expect(page).to have_content 'Hello Bob'
   end
 end
