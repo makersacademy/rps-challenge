@@ -7,6 +7,21 @@ feature 'Enter name' do
     visit('/')
     fill_in('player_name', with: 'Bob')
     click_button('Submit')
-    expect(page).to have_content 'Hello Bob'
+    expect(page).not_to have_content 'Player name:'
+  end
+end
+
+# As a marketeer
+# So that I can enjoy myself away from the daily grind
+# I would like to be able to play rock/paper/scissors
+
+feature 'Game' do
+  scenario 'player has 3 choices' do
+    visit('/')
+    fill_in('player_name', with: 'Bob')
+    click_button('Submit')
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Scissors'
+    expect(page).to have_button 'Paper'
   end
 end
