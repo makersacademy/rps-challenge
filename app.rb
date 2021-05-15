@@ -32,15 +32,15 @@ class RPS < Sinatra::Base
     opponent.random_choice
     session[:choice] = params[:choice]
     session[:opponent_choice] = opponent.opponent_choice
-    redirect '/choice'
+    redirect '/results'
   end
 
-  get '/choice' do
+  get '/results' do
     @game = Game.new(@player_1_name)
     @choice = session[:choice].downcase
     @opponent_choice = session[:opponent_choice]
     @end_result = @game.result(@choice, @opponent_choice)
-    erb :choice
+    erb :results
   end 
 
   # start the server if ruby file executed directly
