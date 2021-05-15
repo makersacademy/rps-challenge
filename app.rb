@@ -3,11 +3,13 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'rack'
+require './lib/game.rb'
 
 # RPS class is responsible for Controller actions to run the webapp game functionality
 class RPS < Sinatra::Base
   enable :sessions
-
+  game = Game.new
+  
   get '/' do
     erb :index
   end
@@ -29,6 +31,7 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @player_weapon = session[:player_weapon]
+    @random_weapon = game.select_random
     erb :result
   end
 
