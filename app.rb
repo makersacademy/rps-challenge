@@ -15,7 +15,7 @@ class App < Sinatra::Base
   end
   
   post '/name' do
-    @game = Game.create(Player.new(params[:name]))
+    @game = Game.create(Player.new(params[:player_1_name]), Player.new(params[:player_2_name]))
     redirect('/play')
   end
 
@@ -28,14 +28,14 @@ class App < Sinatra::Base
   end
 
   get '/result' do
-    @game.declare_winner(@game.player.option)
+    @game.declare_winner(@game.player_1.option)
     erb(:result)
   end
 
 
   post '/select' do
     # @game.declare_winner(@game.player_1.option, @game.player_2.option)
-    params.each_value { |v| @game.player.choose_option(v) } 
+    params.each_value { |v| @game.player_1.choose_option(v) } 
     redirect('/result') 
   end
  

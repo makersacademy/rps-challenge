@@ -1,5 +1,5 @@
 <div>
-<h1>Hello <%= @game.player.name %></h1>
+<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name%></h1>
 <h1>Choose rock, paper or scissors</h1>
 <form action="/select" method="post">
   <input type="submit" name="rock" value="Rock">
