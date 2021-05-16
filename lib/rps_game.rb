@@ -2,11 +2,11 @@ class RPSGame
   def play(choice)
     outcome = outcome()
     opponent = opponent(choice, outcome)
-    {outcome: outcome, opponent: opponent}
+    { outcome: outcome, opponent: opponent }
   end
 
   def self.instance
-    @game ||= RPSGame.new
+    @instance ||= RPSGame.new
   end
 
   private

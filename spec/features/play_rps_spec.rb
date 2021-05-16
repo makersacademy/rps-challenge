@@ -8,7 +8,7 @@ feature 'play RPS' do
     visit '/'
     fill_in('name', with: 'Alice')
     click_button('submit')
-    srand(23525)
+    srand(23_525)
 
     expect(page).to have_selector(:link_or_button, 'rock')
     expect(page).to have_selector(:link_or_button, 'paper')
@@ -19,4 +19,3 @@ feature 'play RPS' do
     expect(page).to have_text('You win! Rock beats scissors.')
   end
 end
-

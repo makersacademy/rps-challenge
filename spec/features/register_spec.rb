@@ -13,4 +13,3 @@ feature 'register name' do
     expect(page).to have_text('You: Nushi')
   end
 end
-

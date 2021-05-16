@@ -5,11 +5,11 @@ describe RPSGame do
 
   describe '#play' do
     it 'returns the outcome of the game and the opponent\'s choice' do
-      srand(23523)
+      srand(23_523)
 
       outcome = game.play('rock')
 
-      expect(outcome).to eq({outcome: 'win', opponent: 'scissors'})
+      expect(outcome).to eq({ outcome: 'win', opponent: 'scissors' })
     end
   end
 end
