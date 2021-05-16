@@ -4,15 +4,16 @@ This is a simple web app to allow a player to enter their name and play a game o
 
 ## How to download and run:
 
-1. in terminal
+1. In terminal
 
     $ git clone https://github.com/jennybell/rps-challenge.git
     $ cd rps-challenge
     $ bundle install
-    $rackup
+    $ rackup
 
-2.in browser visit : http://localhost:9292/
+2. In browser visit : http://localhost:9292/
+3. PLAY!
 
 ## Still to do:
-- extract computer class
 - add multiplayer functionality
+- lizard/spock
