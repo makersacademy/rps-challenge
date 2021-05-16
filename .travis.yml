@@ -1,6 +1,0 @@
-language: ruby
-
-script:
-  - bundle
-  - rspec
-  
