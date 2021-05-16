@@ -16,4 +16,9 @@ class RPSApp < Sinatra::Base
     @name = session[:name]
     erb(:game)
   end
+
+  post 'rps-play' do
+    @game.play(params[:choice])
+    redirect '/rps-outcome'
+  end
 end
