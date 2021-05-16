@@ -26,6 +26,7 @@ class Rps < Sinatra::Base
   post '/move' do 
     @player_name = session[:player_name]
     @move = params[:move]
+    @c_move = params[:c_move]
     erb :move
   end
 
