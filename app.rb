@@ -33,7 +33,7 @@ class Rps < Sinatra::Base
     @player_name = session[:player_name]
     @player_move = session[:player_move]
     @computer_move = session[:computer_move]
-    #@winner = $game.winner     ----     Start from here on Sunday
+    @winner = $game.winner(@player_move, @computer_move)
     erb :attack
   end
 end

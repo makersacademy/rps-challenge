@@ -21,4 +21,8 @@ describe Game do
     allow(Kernel).to receive(:rand).and_return(2)
     expect(game.computer_move).to eq('Paper')
   end   
+
+  it 'randomly selects an element from an array' do
+    expect(['Scissors', 'Rock', 'Paper']).to include (game.computer_move)
+  end
 end

@@ -26,14 +26,14 @@ feature 'Computer selecting a move' do
     expect(page).to have_content 'Computer selected Scissors'
   end
 
-  scenario 'Selecting scissors' do
+  scenario 'Selecting rock' do
     sign_in_and_play
     allow(Kernel).to receive(:rand).and_return(1)
     click_button 'Scissors'
     expect(page).to have_content 'Computer selected Rock'
   end
 
-  scenario 'Selecting scissors' do
+  scenario 'Selecting paper' do
     sign_in_and_play
     allow(Kernel).to receive(:rand).and_return(2)
     click_button 'Scissors'
