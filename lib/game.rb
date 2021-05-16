@@ -8,7 +8,7 @@ class Game
   end
 
   def declare_winner
-    if player_wins_with_rock? || player_wins_with_paper? || player_wins_with_paper?
+    if player_wins_with_rock? || player_wins_with_paper? || player_wins_with_scissors?
       "You win!"
     elsif draw?
       "Draw!"
