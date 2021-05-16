@@ -4,10 +4,6 @@ require_relative './lib/rps_game'
 class RPSApp < Sinatra::Base
   enable :sessions
 
-  before do
-    @game = RPSGame.instance
-  end
-
   get '/' do
     erb(:registration)
   end
@@ -23,7 +19,7 @@ class RPSApp < Sinatra::Base
   end
 
   post '/rps-play' do
-    result = @game.play(params[:choice])
+    result = RPSGame.new.play(params[:choice])
     session[:outcome] = result[:outcome]
     session[:choice] = params[:choice]
     session[:opponent] = result[:opponent]

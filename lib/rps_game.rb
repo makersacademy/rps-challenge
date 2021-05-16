@@ -5,10 +5,6 @@ class RPSGame
     { outcome: outcome, opponent: opponent }
   end
 
-  def self.instance
-    @instance ||= RPSGame.new
-  end
-
   private
 
   def outcome
