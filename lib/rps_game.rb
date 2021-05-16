@@ -21,7 +21,7 @@ class RPSGame
       choice
     when 'win'
       loses_against(choice)
-    when 'lose'
+    when 'loss'
       wins_against(choice)
     end
   end
