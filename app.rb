@@ -26,12 +26,12 @@ class Rps < Sinatra::Base
   end
 
   post '/play' do
-    session[:choice] = params[:choice].upcase
-    session[:comp_choice] = CompChoice.new.comp_choice.to_sym.upcase
+    session[:choice] = params[:choice].downcase.to_sym
+    session[:comp_choice] = CompChoice.new.comp_choice.to_sym.to_sym
     redirect '/play'
   end
 
-  post '/reset' do
+  post '/restart' do
     session[:choice] = nil
     session[:name] = nil
     session[:comp_choice] = nil

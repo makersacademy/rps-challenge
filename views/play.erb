@@ -1,15 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>RPSLS</title>
+</head>
+<body>
 <h1><%="Welcome to the thunderdome #{@play.name}!!!" %></h1>
 <br>
 <h3> Make your choice</h2> 
 <br>
+<div class="btnbox">
+<div class="centering">
 <form action='/play' method='POST'> 
 <input type='submit' name='choice' value="Rock"> 
 <input type='submit' name='choice' value="Paper"> 
 <input type='submit' name='choice' value="Scissors"> 
-<input type='submit' name='choice' value="Lizzard"> 
+<input type='submit' name='choice' value="Lizard"> 
 <input type='submit' name='choice' value="Spock"> 
 </form>
-
+</div>
+</div>
+<% if @play.choice != nil && @play.comp_choice !=nil %>
 <h2> <%="You chose #{@play.choice}!!!"%> </h2>
 <br> 
 <h2> <%="The computer chose #{@play.comp_choice}!!!"%> </h2>
+<% end %>
+
+<h3 id="result">  
+<% if @play.draw? %>
+  You Drew!
+<% elsif @play.win?  %>
+  You Won!!!!
+<% elsif @play.lose? %>
+  You Lost!!!
+<% end  %>  
+</h3>
+<form action='/restart' id="restart" method='POST'> 
+<input  type='submit' value="Restart"> 
+</form>
+</body>
+</html>

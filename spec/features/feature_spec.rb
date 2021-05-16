@@ -27,7 +27,7 @@ feature 'results' do
   scenario 'the page should display the player choice of rock' do
     sign_in_and_play
     click_button('Rock')
-    expect(page).to have_content('You chose ROCK')
+    expect(page).to have_content('You chose rock')
   end
 
   scenario 'The computers choice is displayed' do
@@ -35,11 +35,11 @@ feature 'results' do
     click_button('Rock')
     expect(page).to have_content('The computer chose')
   end
-  # scenario 'It says if the player or the computer has won' do
-  #   sign_in_and_play
-  #   allow(CompChoice::CHOICE).to receive(:sample).and_return(:scissors)
-  #   click_button('Rock')
-  #   expect(page).to have_content('You Win!')
-  # end
+  scenario 'It says if the player or the computer has won' do
+    sign_in_and_play
+    allow(CompChoice::CHOICE).to receive(:sample).and_return(:scissors)
+    click_button('Rock')
+    expect(page).to have_content('You Win!')
+  end
 
 end
