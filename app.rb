@@ -37,5 +37,5 @@ class Rps < Sinatra::Base
     session[:comp_choice] = nil
     redirect '/'
   end
-
+  run! if app_file == $0
 end
