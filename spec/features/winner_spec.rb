@@ -3,7 +3,7 @@ feature 'Winner' do
     sign_in_and_play
     allow(Kernel).to receive(:rand).and_return(0)
     click_button 'Rock'
-    expect(page).to have_content 'Player wins!'
+    expect(page).to have_content 'Charlie wins!'
   end
 
   scenario 'Rock vs Paper' do
@@ -17,14 +17,14 @@ feature 'Winner' do
     sign_in_and_play
     allow(Kernel).to receive(:rand).and_return(2)
     click_button 'Scissors'
-    expect(page).to have_content 'Player wins!'
+    expect(page).to have_content 'Charlie wins!'
   end
 
   scenario 'Paper vs Rock' do
     sign_in_and_play
     allow(Kernel).to receive(:rand).and_return(1)
     click_button 'Paper'
-    expect(page).to have_content 'Player wins!'
+    expect(page).to have_content 'Charlie wins!'
   end
 
   scenario 'Paper vs Scissors' do
