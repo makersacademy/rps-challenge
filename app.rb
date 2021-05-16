@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'rack'
+require './lib/player'
 
 class Game < Sinatra::Base
   enable :sessions 
@@ -14,26 +15,27 @@ class Game < Sinatra::Base
   end
 
   post '/names' do
-    $player = Player.new(params[:name])
+    $player_1 = Player.new(params[:player_1_name])
+    redirect '/play'
   end
 
   get '/play' do
-    @name = $player.name
+    @player_1_name = $player_1.name
     erb :play
   end
 
   get '/rock' do
-    @name = $player.name
+    @player_1_name = $player_1.name
     erb :rock
   end
 
   get '/paper' do
-    @name = $player.name
-    erb :rock
+    @player_1_name = $player_1.name
+    erb :paper
   end
 
   get '/scissors' do
-    @name = $player.name
+    @player_1_name = $player_1.name
     erb :scissors
   end
 
