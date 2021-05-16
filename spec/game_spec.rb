@@ -14,29 +14,29 @@ RSpec.describe Game do
 
   describe '#declare_winner' do
     context 'player wins' do
-      let (:player_choice) { "Rock"}
+      let (:player_choice) { "Rock" }
       let (:computer_choice) { "Scissors" }
-      let (:game1) {described_class.new(player_choice, computer_choice)}
+      let (:game1) { described_class.new(player_choice, computer_choice) }
       it 'should return a win message' do
         expect(game1.declare_winner).to eq("You win!")
       end
     end
 
     context 'player draws' do
-      let (:player_choice) { "Rock"}
+      let (:player_choice) { "Rock" }
       let (:computer_choice) { "Rock" }
-      let (:game1) {described_class.new(player_choice, computer_choice)}
+      let (:game2) { described_class.new(player_choice, computer_choice) }
       it 'should return a draw message' do
-        expect(game1.declare_winner).to eq("Draw!")
+        expect(game2.declare_winner).to eq("Draw!")
       end
     end
 
     context 'player loses' do
-      let (:player_choice) { "Rock"}
+      let (:player_choice) { "Rock" }
       let (:computer_choice) { "Paper" }
-      let (:game1) {described_class.new(player_choice, computer_choice)}
+      let (:game3) { described_class.new(player_choice, computer_choice) }
       it 'should return a lose message' do
-        expect(game1.declare_winner).to eq("You lose!")
+        expect(game3.declare_winner).to eq("You lose!")
       end
     end
   end
