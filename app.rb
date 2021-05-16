@@ -1,6 +1,7 @@
 require 'sinatra/base'
 # require 'sinatra/reloader'
-
+require './lib/player'
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -8,7 +9,6 @@ class Rps < Sinatra::Base
     # register Sinatra::Reloader
   end
 
-  
   get '/' do 
     erb :index
   end
@@ -23,6 +23,11 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/move' do 
+    @player_name = session[:player_name]
+    @move = params[:move]
+    erb :move
+  end
 
-  run! if app_file ==$0
+  run! if app_file == $0
 end

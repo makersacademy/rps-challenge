@@ -17,7 +17,6 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 # tell Capybara about our app class
 Capybara.app = Rps
 
-
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
 RSpec.configure do |config|

@@ -1,5 +1,8 @@
 <h1> Welcome to the game <%= @player_name %></h1>
 
-<button type="button">Rock</button>
-<button type="button">Paper</button>
-<button type="button">Scissors</button>
+<form action="/move" method=post>
+  <input type="submit" name="move" value='Rock'>
+  <input type="submit" name="move" value='Paper'> 
+  <input type="submit" name="move" value='Scissors'>
+</form>
+
