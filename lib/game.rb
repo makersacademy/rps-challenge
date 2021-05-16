@@ -22,7 +22,7 @@ class Game
     if result =='win'
       "You win!"
     elsif result =='lose'
-      "You lose!"
+      "Bad luck - next time!"
     else
       "Draw!"
     end

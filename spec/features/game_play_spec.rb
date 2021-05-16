@@ -16,7 +16,7 @@
 
   scenario 'play again' do
     click_button('Rock')
-    expect(page).to have_button('Play again!')
+    expect(page).to have_button('Play again')
   end
 
   scenario 'computer chooses a random option' do
@@ -37,7 +37,7 @@
 
     scenario 'Player 2 wins' do
       click_button('Scissors')
-      expect(page).to have_content('You lose!')
+      expect(page).to have_content('Bad luck - next time!')
     end
 
     scenario 'Draw' do
