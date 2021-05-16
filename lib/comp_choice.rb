@@ -1,6 +1,6 @@
 class CompChoice
 
-  CHOICE = [:rock, :paper, :scissors]
+  CHOICE = [:rock, :paper, :scissors, :lizzard, :spock]
 
   def comp_choice
     CHOICE.sample

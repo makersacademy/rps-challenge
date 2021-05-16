@@ -10,4 +10,4 @@ describe CompChoice do
     end
   end
 
-end  
+end

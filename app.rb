@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/play'
+require './lib/comp_choice'
 
 class Rps < Sinatra::Base
   configure :development do
@@ -25,9 +26,16 @@ class Rps < Sinatra::Base
   end
 
   post '/play' do
-    session[:choice] = params[:choice]
-    session[:comp_choice] = CompChoice.new.comp_choice
+    session[:choice] = params[:choice].upcase
+    session[:comp_choice] = CompChoice.new.comp_choice.to_sym.upcase
     redirect '/play'
+  end
+
+  post '/reset' do
+    session[:choice] = nil
+    session[:name] = nil
+    session[:comp_choice] = nil
+    redirect '/'
   end
 
 end
