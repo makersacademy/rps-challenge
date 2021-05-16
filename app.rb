@@ -21,4 +21,10 @@ class RPSApp < Sinatra::Base
     @game.play(params[:choice])
     redirect '/rps-outcome'
   end
+
+  get '/rps-outcome' do
+    @outcome = @game.outcome
+    @opponent = @game.opponent
+    erb(:outcome)
+  end
 end
