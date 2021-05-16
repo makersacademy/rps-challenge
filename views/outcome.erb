@@ -1,0 +1,8 @@
+<% if @outcome == 'win' %>
+  <%= "You win! #{@choice.capitalize} beats #{@opponent}." %>
+<% elsif @outcome == 'loss' %>
+  <%= "Sorry, you lose. #{@choice.capitalize} loses against #{@opponent}." %>
+<% else %>
+  <%= "Draw. You both chose #{@choice}." %>
+<% end %>
+<a href='/rps-game'>Play again?</a>
