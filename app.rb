@@ -26,8 +26,8 @@ class Rps < Sinatra::Base
 
   post '/play' do
     session[:choice] = params[:choice]
+    session[:comp_choice] = CompChoice.new.comp_choice
     redirect '/play'
   end
-
 
 end

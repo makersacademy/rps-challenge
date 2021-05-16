@@ -1,5 +1,5 @@
 require_relative 'web_helpers'
-feature 'a player' do
+feature 'Display name player' do
   scenario 'the player can enter their name and it is displayed' do
     sign_in_and_play
     expect(page).to have_content('Rob')
@@ -12,12 +12,10 @@ feature 'Choices' do
     expect(page).to have_button('Rock')
   end
 
-
   scenario 'the page should have the choice of paper' do
     sign_in_and_play
     expect(page).to have_button('Paper')
   end
-
 
   scenario 'the page should have the choice of scissors' do
     sign_in_and_play
@@ -31,5 +29,11 @@ feature 'results' do
     click_button('Rock')
     expect(page).to have_content('You chose Rock')
   end
-  p @play
+
+  scenario 'The computers choice is displayed' do
+    sign_in_and_play
+    click_button('Rock')
+    expect(page).to have_content('The computer chose')
+  end
+  
 end
