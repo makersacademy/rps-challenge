@@ -1,0 +1,215 @@
+/* GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.reg_form_land_page {
+    background-image: url('./images/land_bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    box-shadow: inset 3500px 0 0 0 #000000cc;
+    border-color: #000000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.reg_form {
+    display: block;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    height: 50vh;
+}
+
+.reg_form label {
+    font-size: 4vw;
+    color: #00e1ff80;
+    text-shadow: 10px 10px 20px 0px #000000bf;
+}
+
+#name {
+    width: 50%;
+    height: 40px;
+    margin: 50px;
+    background-color: #00e1ff80;
+    border: none;
+    outline: none;
+    box-shadow: 10px 10px 20px 0px #000000bf;
+    -webkit-box-shadow: 10px 10px 20px 0px #000000bf;
+    -moz-box-shadow: 10px 10px 20px 0px #000000bf;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vw;
+}
+
+.sub_btn { 
+    width: 200px;
+    height: 200px;
+    border: none;
+    border-radius: 50%;
+    background-color: #00e1ff80;
+}
+
+/* PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY PLAY */
+
+.window {
+    background-image: url('https://www.criver.com/sites/default/files/content/uploads/going-viral.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 3500px 0 0 0 #000000cc;
+    border-color: #000000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    color: #00e1ff80;
+}
+
+.welcome h1 {
+    letter-spacing: 2px;
+    font-size: 4vw;
+    color: #00e1ff80;
+    text-shadow: 10px 10px 20px 0px #000000bf;
+}
+
+.welcome h3 {
+    letter-spacing: 2px;
+    font-size: 2vw;
+    color: #00e1ff80;
+    text-shadow: 10px 10px 20px 0px #000000bf;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.buttons form {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons input {
+    height: 15vh;
+    width: 15vw;
+    border: none;
+    border-radius: 50%;
+    color: #00000000;
+    background-color: #00e1ff80;
+}
+
+#rock {
+    background-image: url('./images/rock.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#paper {
+    background-image: url('./images/paper.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#scissors {
+    background-image: url('./images/scissors.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#lizard {
+    background-image: url('./images/lizard.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#spock {
+    background-image: url('./images/spock.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    color: #fff;
+}
+
+.box-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25vh;
+    width: 50%;
+}
+
+.choices img {
+    width: 300px;
+}
+
+.outcome {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
+.outcome h3 {
+    letter-spacing: 2px;
+    font-size: 2vw;
+    color: #00e1ff80;
+    text-shadow: 10px 10px 20px 0px #000000bf;
+}
+
+.restart {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}
+
+.restart input {
+    width: 400px;
+    height: 40px;
+    font-size: 1.5vw;
+    background-color: #00e1ff80;
+    border: none;
+    outline: none;
+}
