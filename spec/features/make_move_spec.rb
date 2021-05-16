@@ -1,7 +1,7 @@
 feature 'Rock' do 
   scenario 'p1 chooses rock' do
     sign_in_and_play
-    click_button 'rock'
+    click_link 'rock'
     expect(page).to have_content 'Charlotte chose Rock'
 
   end
