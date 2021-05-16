@@ -1,1 +1,6 @@
-<%= @player_name%>: Rock, Paper, or Scissors?
+<%= @player.name%>: Rock, Paper, or Scissors?
+<form name="player choice" action="/choice" method="post">
+  <input type="button" value="Rock">
+  <input type="button" value="Paper">
+  <input type="button" value="Scissors">
+</form>
