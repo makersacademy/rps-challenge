@@ -2,6 +2,8 @@
 
 # Rock Paper Scissors
 
+![index](docs/img/index.png) ![index](docs/img/play.png) ![index](docs/img/results.png)
+
 ---
 
 ## Introduction
@@ -16,6 +18,14 @@ The learning intentions for this project revolved around Sinatra, Rspec and Capy
 
 ---
 
+# Bonus level 1: Multiplayer
+
+Change the game so that two marketeers can play against each other ( yes there are two of them ).
+
+# Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+
+Use the special rules ( you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock )
+
 # Technology
 
 - Ruby
@@ -26,10 +36,11 @@ The learning intentions for this project revolved around Sinatra, Rspec and Capy
 
 ### Functions
 
-1. Enter player name
-2. Choose rock, paper or scissors
-3. View result
-4. Go back (to play)
+1. Register player name
+2. Choose rock, paper, scissors, spock or lizard
+3. Multiple players: Play against computer
+4. View result - win, lose or draw
+5. Play again!
 
 ---
 
@@ -48,3 +59,9 @@ The learning intentions for this project revolved around Sinatra, Rspec and Capy
 3. In web browser, enter i.e. "localhost:9292" (or the port provided from previous step)
 
 ---
+
+### Future Scope
+
+- Add more than 2 players
+- Make more interactive using Javascript
+- Host on the cloud

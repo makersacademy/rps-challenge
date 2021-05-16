@@ -10,8 +10,7 @@ body {
 }
 
 #main-image {
-  margin-top: 0;
-  margin-bottom: -24px;
+  margin-top: 0.5em;
   padding-top: 0;
   padding-bottom: 0;
   top: -2px;
@@ -33,6 +32,7 @@ body {
   display: inline-block;
   font-size: 46px;
   transition-duration: 0.4s;
+  margin-top: 0.5em;
 }
 
 .button:hover {
