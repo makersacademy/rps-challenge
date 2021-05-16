@@ -8,7 +8,7 @@ Clone the repo to your computer with the following command:
 
 `git clone https://github.com/ArifEbrahim/rps-challenge.git`
 
-Navigate to the new directory and run bundler from the commanbd line to install dependencies 
+Navigate to the new directory and run bundler from the command line to install dependencies 
 
 `bundle`
 
