@@ -5,6 +5,7 @@ Capybara.app = RPSApp
 
 feature 'play RPS' do
   scenario 'user plays rock-paper-scissors' do
+    pending
     visit '/'
     fill_in('name', with: 'Alice')
     click_button('submit')
