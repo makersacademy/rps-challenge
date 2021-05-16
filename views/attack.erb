@@ -1,0 +1,9 @@
+<%= @game.player_name %> selected <%= @game.player_move %>
+
+Computer selected <%= @game.computer_move %>
+
+<%= @winner %>
+
+<form action="/play">
+  <input type="submit" value="Play Again">
+</form>
