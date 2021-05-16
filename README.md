@@ -1,7 +1,66 @@
 # RPS Challenge
 
-Instructions
--------
+The RPS Challenge is a `<game>` that allows `<stressed coders in training>` to do `<relax and distract themselves with a simple game of Rock, Paper & Scissors>`.
+
+My personal goal for this weekend challenge is to complete the exercise proposed to my best knowledge, and also make sure to document it in a good README.
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+* You have installed the latest version of `<ruby, rspec, sinatra & capybara>`
+* You have a `<Gemfile>` that includes:
+    ** gem 'sinatra'
+    ** gem 'capybara'
+    ** gem 'rspec'
+* You modified your spec_helper to include  `<require 'capybara/rspec'>`.
+
+## Installing <project_name>
+
+To install <RPS Challenge>, follow these steps:
+
+* Forking this repo
+
+## Using <project_name>
+
+To use <rps-challenge>, follow these steps:
+
+  * Run `<rackup>` in your terminal to start your local host
+  * Open your browser and put 'localhost:4567'
+
+## Contributing to <project_name>
+<!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
+To contribute to <project_name>, follow these steps:
+
+1. Fork this repository.
+2. Create a branch: `git checkout -b <branch_name>`.
+3. Make your changes and commit them: `git commit -m '<commit_message>'`
+4. Push to the original branch: `git push origin <project_name>/<location>`
+5. Create the pull request.
+
+Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+
+## Contributors
+
+Thanks to the following people who have contributed to this project:
+
+* [@scottydocs](https://github.com/scottydocs) 📖
+* [@cainwatson](https://github.com/cainwatson) 🐛
+* [@calchuchesta](https://github.com/calchuchesta) 🐛
+
+You might want to consider using something like the [All Contributors](https://github.com/all-contributors/all-contributors) specification and its [emoji key](https://allcontributors.org/docs/en/emoji-key).
+
+## Acknowledgements
+
+Thanks to the following people whose support & inspiration helped me develop this:
+
+* [@BecaLParker](https://github.com/BecaLParker) for her Readme inspiration 📖
+* [@GunelMC](https://github.com/GunelMC) for her support and brainstorming 🤔
+
+You might want to consider using something like the [All Contributors](https://github.com/all-contributors/all-contributors) specification and its [emoji key](https://allcontributors.org/docs/en/emoji-key).
+
+# MAKERS Instructions
+-------------------
 
 * Feel free to use google, your notes, books, etc. but work on your own
 * If you refer to the solution of another coach or student, please put a link to that in your README
