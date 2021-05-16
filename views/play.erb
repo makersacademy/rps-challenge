@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS</title>
+</head>
+<body>
+
+<div class="window">
+       <div class="welcome">
+           <h3><%= @play.name %>, Welcome to</h3>
+           <h1>Rock, Paper, Scissor, Lizard, Spock</h1>
+           <br>
+           <h3>Make Your Choice Below</h3>
+       </div>
+       <div class="buttons">
+            <form action="/play" method="post">
+                <input type="submit" name="choice" id="rock" value="Rock">
+                <input type="submit" name="choice" id="paper" value="Paper">
+                <input type="submit" name="choice" id="scissors" value="Scissors">
+                <input type="submit" name="choice" id="lizard" value="Lizard">
+                <input type="submit" name="choice" id="spock" value="Spock">
+            </form>
+       </div>
+       <div class="choices">
+           <div class="box-1">
+                <h3>You chose <%= @play.choice.to_s %><h3>
+                <img src="./images/<%= @play.choice.to_s %>.png" alt="">
+           </div>
+           <div class="box-1">
+                <h3>The Machine chose <%= @play.machine_choice.to_s %><h3><img src="./images/<%= @play.machine_choice.to_s %>.png" alt="">
+           </div>
+       </div>
+       <div class="outcome">
+            <h3>  
+                <% if @play.draw? %>
+                    You Draw!
+                <% elsif @play.lose? %>
+                    You Lose!
+                <% elsif @play.win? %>
+                    You Win!
+                <% end %></h3>
+       </div>
+       <div class="restart">
+            <form action="/restart" method="post">
+                <input type="submit" value="Restart">
+            </form>
+       </div>
+   </div>
+
+</body>
+</html>
