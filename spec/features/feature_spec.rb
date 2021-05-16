@@ -45,7 +45,9 @@ feature 'Game' do
     fill_in('player_name', with: 'Bob')
     click_button('Submit')
     click_button('Rock')
-    expect(page).to have_content 'Computer picked Scissors'
+    expect(page).to have_content 'Computer picked'
   end
-  
+
+  # a winner will be declared
+
 end
