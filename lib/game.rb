@@ -22,15 +22,15 @@ class Game
 
   def declare_winner(player_1_choice, player_2_choice)
     if player_1_choice == player_2_choice
-      @result = 'draw'
+      @result = "It's a draw!"
     elsif player_1_choice == 'Rock' && player_2_choice == 'Paper'
-      @result = 'win'
+      @result = "#{@player_2.name} wins!"
     elsif player_1_choice == 'Scissors' && player_2_choice == 'Rock'
-      @result = 'win'
+      @result = "#{@player_2.name} wins!"
     elsif player_1_choice == 'Paper' && player_2_choice == 'Scissors'
-      @result = 'win'
+      @result = "#{@player_2.name} wins!"
     else 
-      @result = 'lose'
+      @result = "#{@player_1.name} wins!"
     end
   end
 end

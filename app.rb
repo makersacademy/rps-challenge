@@ -28,13 +28,12 @@ class App < Sinatra::Base
   end
 
   get '/result' do
-    @game.declare_winner(@game.player_1.option)
+    @game.declare_winner(@game.player_1.option, @game.player_2.option)
     erb(:result)
   end
 
 
   post '/select' do
-    # @game.declare_winner(@game.player_1.option, @game.player_2.option)
     params.each_value { |v| @game.current_turn.choose_option(v) } 
     if @game.current_turn == @game.player_2
       redirect('/result') 

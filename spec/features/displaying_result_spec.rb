@@ -1,8 +1,8 @@
-feature 'selecting a random option for the game' do
-  scenario 'displays the result of this' do
+feature 'displaying result' do
+  scenario 'both players chose the same option' do
     sign_in_and_play
     click_button('Rock')
     click_button('Rock')
-    expect(page).to have_content("Result: DRAW")
+    expect(page).to have_content("It's a draw!")
   end
 end

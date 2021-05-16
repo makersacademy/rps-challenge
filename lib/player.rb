@@ -5,7 +5,7 @@ class Player
     @name = name
     @option = ''
   end
-  # TODO rename option choice 
+
   def choose_option(option)
     @option = option
   end

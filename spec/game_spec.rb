@@ -30,19 +30,19 @@ describe Game do
     context 'when player_1 wins' do
       it "sets #result to win" do
         subject.declare_winner('Rock', 'Scissors')    
-        expect(subject.result).to eq('win')
+        expect(subject.result).to eq('Bob wins!')
       end
     end
     context 'when player_1 loses' do
       it "sets #result to lose" do
         subject.declare_winner('Paper', 'Scissors')
-        expect(subject.result).to eq('lose')
+        expect(subject.result).to eq('Jeremy wins!')
       end
     end
     context 'when its a draw' do
       it "sets #result to draw" do
         subject.declare_winner('Scissors', 'Scissors')
-        expect(subject.result).to eq('draw')
+        expect(subject.result).to eq("It's a draw!")
       end
     end
   end
