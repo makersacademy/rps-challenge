@@ -30,7 +30,7 @@ The learning intentions for this project revolved around Sinatra, Rspec and Capy
 
 1. Register player name
 2. Choose rock, paper, scissors, spock or lizard
-3. Multiple players: Play against computer
+3. Play against computer
 4. View result - win, lose or draw
 5. Play again!
 
