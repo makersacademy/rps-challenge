@@ -34,7 +34,7 @@ Use the special rules ( you can find them here http://en.wikipedia.org/wiki/Rock
 
 ---
 
-### Functions
+# Functions
 
 1. Register player name
 2. Choose rock, paper, scissors, spock or lizard
@@ -44,23 +44,23 @@ Use the special rules ( you can find them here http://en.wikipedia.org/wiki/Rock
 
 ---
 
-### How to use
+# How to use
 
-# Setup
+## Setup
 
 1. Install Ruby (version 2.6.5 or above)
 2. Clone this depository and navigate to the root folder
 3. Run the command `gem install bundle` (if you don't have bundle already)
 4. When the installation completes, run `bundle`
 
-# How to run
+## How to run
 
 2. Run command `rackup` or `ruby app/app.rb` to start the local server
 3. In web browser, enter i.e. "localhost:9292" (or the port provided from previous step)
 
 ---
 
-### Future Scope
+# Future Scope
 
 - Add more than 2 players
 - Make more interactive using Javascript
