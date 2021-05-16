@@ -5,12 +5,40 @@ body {
 
 .layout {
   display: grid;
-  padding: 20%;
+  padding-top: 0;
   grid-row-gap: 2em;
 }
 
-.division {
-  display: grid;
-  grid-template-columns: 40% 20% 40%;
-  grid-row-gap: 2em;
+#main-image {
+  margin-top: 0;
+  margin-bottom: -24px;
+  padding-top: 0;
+  padding-bottom: 0;
+  top: -2px;
+}
+
+#main-page-headers {
+  padding: 0;
+  margin: 0;
+}
+
+.button {
+  background-color: #0d98ba; /* Red */
+  border: none;
+  color: white;
+  padding: 14px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 46px;
+}
+
+.center {
+  margin: 0 auto;
+  display: block;
+}
+
+#name-field {
+  margin-bottom: 1em;
+  margin-top: -4em;
 }
