@@ -9,9 +9,9 @@ feature 'play RPS' do
     fill_in('name', with: 'Alice')
     click_button('submit')
 
-    expect(page).to have_text('rock')
-    expect(page).to have_text('paper')
-    expect(page).to have_text('scissors')
+    expect(page).to have_selector(:link_or_button, 'rock')
+    expect(page).to have_selector(:link_or_button, 'paper')
+    expect(page).to have_selector(:link_or_button, 'scissors')
 
     allow(game).to receive_message(:outcome).and_return('win')
     allow(game).to receive_message(:opponent).and_return('scissors')
