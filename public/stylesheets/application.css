@@ -27,10 +27,17 @@ body {
   border: none;
   color: white;
   padding: 14px 40px;
+  border-radius: 4px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 46px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
 }
 
 .center {
