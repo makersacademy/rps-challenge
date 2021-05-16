@@ -20,14 +20,14 @@
   end
 
   scenario 'computer chooses a random option' do
-    srand(67889)
+    srand(6788910)
     click_button('Paper')
     expect(page).to have_content('Opponent chose Rock!')
   end
 
   context 'game result' do
     before do 
-      srand(67889) # gives 'rock' option
+      srand(6788910) # gives 'rock' option
     end
 
     scenario 'Player 1 wins' do

@@ -14,7 +14,7 @@ class Game
 
   def result(user_input = @player_choice, computer_input = @opponent_choice)
     return 'draw' if user_input == computer_input
-    winning_couples[user_input.to_sym] == computer_input ? 'win' : 'lose'
+    winning_couples[user_input.to_sym].include?(computer_input) ? 'win' : 'lose'
   end
 
   def confirmation_message(result)
@@ -33,9 +33,11 @@ private
 
   def winning_couples
     {
-      rock: 'scissors',
-      scissors: 'paper',
-      paper: 'rock'
+      rock: ['scissors', 'lizard'],
+      scissors: ['paper', 'lizard'],
+      paper: ['rock', 'spock'],
+      spock: ['scissors', 'rock'],
+      lizard: ['spock', 'paper']
     }
   end
 

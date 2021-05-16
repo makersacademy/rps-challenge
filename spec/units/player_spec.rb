@@ -21,7 +21,7 @@ subject(:player) { described_class.new("Hulk") }
       # allow(player).to receive(:random_choice).and_return('scissors')
       player.random_choice
       # expect(player.opponent_choice).to eq('scissors')
-      expect(["rock", "paper", "scissors"]).to include(player.opponent_choice)
+      expect(['rock', 'paper', 'scissors', 'spock', 'lizard']).to include(player.opponent_choice)
     end 
   end 
 end 
