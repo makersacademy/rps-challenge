@@ -1,7 +1,12 @@
 require 'sinatra/base'
+require_relative './lib/rps_game'
 
 class RPSApp < Sinatra::Base
   enable :sessions
+
+  before do
+    @game = RPSGame.instance
+  end
 
   get '/' do
     erb(:registration)
@@ -17,14 +22,18 @@ class RPSApp < Sinatra::Base
     erb(:game)
   end
 
-  post 'rps-play' do
-    @game.play(params[:choice])
+  post '/rps-play' do
+    result = @game.play(params[:choice])
+    session[:outcome] = result[:outcome]
+    session[:choice] = params[:choice]
+    session[:opponent] = result[:opponent]
     redirect '/rps-outcome'
   end
 
   get '/rps-outcome' do
-    @outcome = @game.outcome
-    @opponent = @game.opponent
+    @outcome = session[:outcome]
+    @choice = session[:choice]
+    @opponent = session[:opponent]
     erb(:outcome)
   end
 end
