@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/game.rb'
+require './lib/computer.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -21,13 +23,13 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    session[:player_choice] = params[:player_choice]
+    @game = Game.create(params[:player_choice], Computer.new.choice)
     redirect '/result'
   end
 
   get '/result' do
     @player_name = session[:player_name]
-    @player_choice = session[:player_choice]
+    @game = Game.instance
     erb(:result)
   end
 
