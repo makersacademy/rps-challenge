@@ -1,85 +1,59 @@
 # RPS Challenge
 
-Instructions
--------
+# Rock Paper Scissors Spock Lizard
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+![index](docs/img/index.png) ![index](docs/img/play.png) ![index](docs/img/results.png)
 
-Task
-----
+---
 
-Knowing how to build web applications is getting us almost there as web developers!
+# Introduction
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+The intention of this project was to build a working implementation of the popular game Rock, Paper Scissors. As a bonus, the project implemented special rules incorporating five-weapon expansion of the game with ["rock paper scissors Spock lizard"](https://en.wikipedia.org/wiki/Rock_paper_scissors#Additional_weapons), as per invention of Sam Kass and Karen Bryla.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+This is an individual project created for the Makers Academy week 3 weekend challenge.
 
-```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+This project was built using Ruby, and was structured around the Sinatra framework. The Rspec testing framework was implemented to provide feature and unit testing capabilities, and Capybara was included to allow for testing of front-end elements.
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+The learning intentions for this project revolved around Sinatra, Rspec and Capybara, and at this point in the Makers Academy curriculum databases have not yet been covered. Due to this global variables have been implemented throughout to assist with persistence, although we have been made well aware that the use of global variables is far from best practice, and that once databases have been addressed we should no longer use them in almost all circumstances.
 
-Hints on functionality
+---
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+# Technology
 
+- Ruby
+- Twilio
+- Rspec
 
-As usual please start by
+---
 
-* Forking this repo
-* TEST driving development of your app
+# Functions
 
+1. Register player name
+2. Choose rock, paper, scissors, spock or lizard
+3. Play against computer
+4. View result - win, lose or draw
+5. Play again!
 
-## Bonus level 1: Multiplayer
+---
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+# How to use
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+## Setup
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+1. Install Ruby (version 2.6.5 or above)
+2. Clone this depository and navigate to the root folder
+3. Run the command `gem install bundle` (if you don't have bundle already)
+4. When the installation completes, run `bundle`
 
-## Basic Rules
+## How to run
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+2. Run command `rackup` or `ruby app/app.rb` to start the local server
+3. In web browser, enter i.e. "localhost:9292" (or the port provided from previous step)
 
-In code review we'll be hoping to see:
+---
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+# Future Scope
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+- Add more than 2 players
+- Make more interactive using Javascript
+- Host on cloud

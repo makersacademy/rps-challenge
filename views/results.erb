@@ -1,0 +1,15 @@
+<div>
+  <h2>Your choice is <%=session[:choice].capitalize%>!</h2>
+  </div>
+    <h2>Opponent chose <%=@opponent_choice.capitalize%>!</h2>
+  <div>
+    <h1><%= @game.confirmation_message(@end_result)%></h1>
+</div>
+
+<%# <a href="/play">Play again</a> %>
+<div>
+  <form action="/play">
+    <input class="button" type="submit" value="Play again">
+  </form>
+</div>
+   

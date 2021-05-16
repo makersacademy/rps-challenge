@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'rack'
+gem 'shotgun'
 gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'pry'
 
 group :test do
   gem 'capybara'
