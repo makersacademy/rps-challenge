@@ -16,10 +16,14 @@ The views are contained in ERB files (registration.erb, game.erb, outcome.erb an
 
 app.rb controls routing.
 
+![image](https://user-images.githubusercontent.com/36577903/118403253-84bf1700-b665-11eb-9ecf-69f6149b4047.png)
+
 # Installation
 
 ```
 git clone https://github.com/rdupplaw/rps-challenge.git
+cd rps-challenge
+bundle
 ```
 
 # Usage
@@ -28,3 +32,8 @@ git clone https://github.com/rdupplaw/rps-challenge.git
 rackup
 ```
 
+# Testing
+
+```
+rspec
+```
