@@ -28,7 +28,7 @@ Build a simple game that allows a user to play rock, paper, scissors, lizard, sp
 * I attempted to use .travis.yml and tried to fix the error (The command "bundle install --jobs=3 --retry=3 --deployment" failed and exited with 16 during .)
 * I found 4 references online that indicated that this was an issue and I should update my bundle version, which I did. However, this did not resolve the issue.
 * I have deleted the file so I can complete the pull request.
-<img src="images/error.png" width="33%">
+<img src="./public/images/error.png" width="50%">
 
 ## Code style
 * Test-driven development
@@ -57,8 +57,8 @@ Build a simple game that allows a user to play rock, paper, scissors, lizard, sp
 
 ## Screenshots
 
-<img src="images/index.png" width="33%">
-<img src="images/play.png" width="33%">
+<img src="./public/images/index.png" width="50%">
+<img src="./public/images/play.png" width="50%">
 
 ## How to use?
 * Run rackup in the terminal
