@@ -3,11 +3,7 @@ require_relative 'lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions 
-
-  configure :development do
-    
-  end
-
+  
   before do
     @game = Game.instance
   end
