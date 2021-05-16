@@ -15,5 +15,6 @@ This is a simple web app to allow a player to enter their name and play a game o
 3. PLAY!
 
 ## Still to do:
+- implement sessions
 - add multiplayer functionality
 - lizard/spock
