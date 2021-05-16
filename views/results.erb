@@ -1,11 +1,11 @@
 <div>
-Your choice is <%=session[:choice].capitalize%>!
+<h2>Your choice is <%=session[:choice].capitalize%>!</h2>
 </div>
 
-Opponent chose <%=@opponent_choice.capitalize%>!
+<h2>Opponent chose <%=@opponent_choice.capitalize%>!</h2>
 
 <div>
-<%= @game.confirmation_message(@end_result)%>
+<h1><%= @game.confirmation_message(@end_result)%></h1>
 </div>
 
 <br>
