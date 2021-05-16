@@ -6,7 +6,7 @@
 
 ---
 
-## Introduction
+# Introduction
 
 The intention of this project was to build a working implementation of the popular game Rock, Paper Scissors.
 
@@ -18,11 +18,11 @@ The learning intentions for this project revolved around Sinatra, Rspec and Capy
 
 ---
 
-# Bonus level 1: Multiplayer
+## Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( yes there are two of them ).
 
-# Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
 Use the special rules ( you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock )
 
@@ -64,4 +64,4 @@ Use the special rules ( you can find them here http://en.wikipedia.org/wiki/Rock
 
 - Add more than 2 players
 - Make more interactive using Javascript
-- Host on the cloud
+- Host on cloud
