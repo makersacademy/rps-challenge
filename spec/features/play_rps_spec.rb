@@ -16,7 +16,7 @@ feature 'play RPS' do
 
     click_button('rock')
 
-    expect(page).to have_text('You win! Rock beats Scissors.')
+    expect(page).to have_text('You win! Rock beats scissors.')
   end
 end
 
