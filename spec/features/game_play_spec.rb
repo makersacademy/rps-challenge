@@ -16,7 +16,7 @@
 
   scenario 'play again' do
     click_button('Rock')
-    expect(page).to have_link('Play again')
+    expect(page).to have_button('Play again!')
   end
 
   scenario 'computer chooses a random option' do
