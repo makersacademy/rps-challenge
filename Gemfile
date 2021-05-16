@@ -1,11 +1,22 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem 'sinatra'
+source "https://rubygems.org"
 
-group :test do
-  gem 'capybara'
-  gem 'rspec'
-  gem 'rubocop', '0.79.0'
-  gem 'simplecov', require: false
-  gem 'simplecov-console', require: false
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
+group :development do 
+    gem "rspec"
+    gem "rspec-sinatra"
+    gem "sinatra"
+    gem "webrick"
+    gem "sinatra-contrib"
+    gem "capybara"
+    gem "selenium-webdriver"
+    gem "pry"
+    gem "chromedriver-helper"
+    gem "rexml"
+    gem 'simplecov', require: false
+    gem 'simplecov-console', require: false
 end
+
+# gem "rails"
