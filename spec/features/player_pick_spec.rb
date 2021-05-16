@@ -1,17 +1,17 @@
 feature 'player picks' do
   scenario 'player chooses rock' do
     sign_in_and_play
-    click_button('Rock')
-    expect(page).to have_content('You picked Rock')
+    click_button('rock')
+    expect(page).to have_content('You picked rock')
   end
   scenario 'player chooses scissors' do
     sign_in_and_play
-    click_button('Scissors')
-    expect(page).to have_content('You picked Scissors')
+    click_button('scissors')
+    expect(page).to have_content('You picked scissors')
   end
   scenario 'player chooses paper' do
     sign_in_and_play
-    click_button('Paper')
-    expect(page).to have_content('You picked Paper')
+    click_button('paper')
+    expect(page).to have_content('You picked paper')
   end
 end

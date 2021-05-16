@@ -19,10 +19,11 @@ class Rps < Sinatra::Base
 
   post '/result' do
     @player_pick = params[:player_pick].to_sym
-    p @opponent_pick
     @game = Game.new(@player_pick)
-    "You picked #{@player_pick}. Game result: #{@game.result}"
-
+    p @game.player_pick
+    p @game.opponent_pick
+    p @game.result
+    erb :result
   end
 
   run! if app_file == $0
