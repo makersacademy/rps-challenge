@@ -1,7 +1,7 @@
 require 'sinatra/base'
 
 class RPSApp < Sinatra::Base
-  enable: sessions
+  enable :sessions
 
   get '/' do
     erb(:registration)
