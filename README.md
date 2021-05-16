@@ -38,6 +38,7 @@ Build a simple game that allows a user to play rock, paper, scissors, lizard, sp
 * Embedded Ruby
 * Rspec
 * Sinatra
+* Sinatra-Contrib
 * Capybara
 
 ## Installation
