@@ -42,7 +42,6 @@ describe Play do
 
     describe '#lose?' do
       it 'returns true when the player losses to the computer' do
-        p OUTCOME
         expect(loss.lose?).to eq(true)
       end
     end
