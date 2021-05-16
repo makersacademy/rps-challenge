@@ -15,8 +15,6 @@ end
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
 
-
-
 feature 'Game' do
   # the marketeer will be presented the choices (rock, paper and scissors)
   scenario 'player has 3 choices' do
@@ -28,7 +26,6 @@ feature 'Game' do
     expect(page).to have_button 'Paper'
   end
 
-
   # the marketeer can choose one option
   scenario 'player can pick 1 choice' do
     visit('/')
@@ -37,7 +34,6 @@ feature 'Game' do
     click_button('Rock')
     expect(page).to have_content 'Bob picked Rock'
   end
-
 
   # the game will choose a random option
   scenario 'computer picks a choice' do

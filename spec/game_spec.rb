@@ -39,8 +39,5 @@ RSpec.describe Game do
         expect(game1.declare_winner).to eq("You lose!")
       end
     end
-
   end
-
-
 end

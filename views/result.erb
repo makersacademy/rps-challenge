@@ -1,7 +1,10 @@
-<%=@player_name%> picked <%=@game.player_choice%><br>
-Computer picked <%=@game.computer_choice%><br>
-<%=@game.declare_winner%><br>
-<form action='/play'>
-  <input type="submit" value="Play again">
-</form>
-
+<div style="text-align:center;">
+  <h3>
+  <%=@player_name%> picked <%=@game.player_choice%><br>
+  Computer picked <%=@game.computer_choice%><br>
+  <%=@game.declare_winner%><br>
+  <form action='/play'>
+    <input type="submit" value="Play again">
+  </form>
+  </h3>
+</div>
