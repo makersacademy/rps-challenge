@@ -14,8 +14,8 @@ describe Game do
   end
 
   context 'game over' do
-     describe '#result' do
-      
+    describe '#result' do
+     
       it 'returns win if player: paper vs computer: rock' do
         allow(player1).to receive(:player_choice).and_return('paper')
         allow(opponent).to receive(:opponent_choice).and_return('rock')
@@ -34,6 +34,6 @@ describe Game do
         expect(game.result('paper', 'paper')).to eq 'draw'
       end
 
-     end
+    end
   end  
-end 
+end

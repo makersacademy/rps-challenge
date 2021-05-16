@@ -12,6 +12,6 @@ class Player
   end
 
   def random_choice
-    @opponent_choice = ['rock','paper','scissors','spock', 'lizard'].sample
+    @opponent_choice = ['rock', 'paper', 'scissors', 'spock', 'lizard'].sample
   end 
 end

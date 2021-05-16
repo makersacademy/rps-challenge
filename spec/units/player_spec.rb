@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-subject(:player) { described_class.new("Hulk") }
+  subject(:player) { described_class.new("Hulk") }
 
   describe "#initialize" do 
     it 'returns a name' do
@@ -16,7 +16,7 @@ subject(:player) { described_class.new("Hulk") }
     end
   end
 
-  describe  "#random_choice" do
+  describe "#random_choice" do
     it 'sets the choice from rock, paper or scissors' do
       # allow(player).to receive(:random_choice).and_return('scissors')
       player.random_choice
@@ -24,4 +24,4 @@ subject(:player) { described_class.new("Hulk") }
       expect(['rock', 'paper', 'scissors', 'spock', 'lizard']).to include(player.opponent_choice)
     end 
   end 
-end 
+end

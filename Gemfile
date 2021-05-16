@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
-gem 'sinatra-contrib'
 gem 'rack'
 gem 'shotgun'
+gem 'sinatra'
+gem 'sinatra-contrib'
 
 group :test do
   gem 'capybara'

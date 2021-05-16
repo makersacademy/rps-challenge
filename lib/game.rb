@@ -3,7 +3,7 @@ require_relative './player.rb'
 class Game
   attr_reader :player1, :opponent
   
-  def initialize(player1, opponent=Player.new('Computer'))
+  def initialize(player1, opponent = Player.new('Computer'))
     @player1 = player1
     @opponent = opponent
   end 
@@ -14,14 +14,15 @@ class Game
 
   def result(user_input = @player_choice, computer_input = @opponent_choice)
     return 'draw' if user_input == computer_input
+
     winning_couples[user_input.to_sym].include?(computer_input) ? 'win' : 'lose'
   end
 
   def confirmation_message(result)
 
-    if result =='win'
+    if result == 'win'
       "You win!"
-    elsif result =='lose'
+    elsif result == 'lose'
       "Bad luck - next time!"
     else
       "Draw!"
