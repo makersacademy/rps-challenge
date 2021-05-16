@@ -1,6 +1,6 @@
 # RPS Challenge
 
-# Rock Paper Scissors
+# Rock Paper Scissors Spock Lizard
 
 ![index](docs/img/index.png) ![index](docs/img/play.png) ![index](docs/img/results.png)
 
@@ -8,7 +8,7 @@
 
 # Introduction
 
-The intention of this project was to build a working implementation of the popular game Rock, Paper Scissors.
+The intention of this project was to build a working implementation of the popular game Rock, Paper Scissors. As a bonus, the project implemented special rules incorporating five-weapon expansion of the game with ["rock paper scissors Spock lizard"](https://en.wikipedia.org/wiki/Rock_paper_scissors#Additional_weapons), as per invention of Sam Kass and Karen Bryla.
 
 This is an individual project created for the Makers Academy week 3 weekend challenge.
 
@@ -17,14 +17,6 @@ This project was built using Ruby, and was structured around the Sinatra framewo
 The learning intentions for this project revolved around Sinatra, Rspec and Capybara, and at this point in the Makers Academy curriculum databases have not yet been covered. Due to this global variables have been implemented throughout to assist with persistence, although we have been made well aware that the use of global variables is far from best practice, and that once databases have been addressed we should no longer use them in almost all circumstances.
 
 ---
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( yes there are two of them ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the special rules ( you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock )
 
 # Technology
 
