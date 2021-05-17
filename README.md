@@ -3,7 +3,7 @@
 
 What does this code do?
 -----------------------
-A one-player _Rock, Paper, Scissors_ game to on the web. Here's a model of the request/response sequence
+A one-player _Rock, Paper, Scissors_ game to play on the web. Here's a model of the request/response sequence
 <p align="center"><img src="./RPS_requestrepsonse%20model.svg" alt="Request/Response Model" width="50%"/></p>
 
 You'll get a final page a bit like this (depending on your inputs and the laws of probability!):
