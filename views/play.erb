@@ -1,0 +1,10 @@
+<%= @game.player.name%>: Rock, Paper, or Scissors?
+<form name="player-choice" action="/choice" method="post">
+  <input type="radio" id="Rock" name="move" value="Rock">
+  <label for="Rock">Rock</label><br>
+  <input type="radio" id="Paper" name="move" value="Paper">
+  <label for="Paper">Paper</label><br>
+  <input type="radio" id="Scissors" name="move" value="Scissors">
+  <label for="Scissors">Scissors</label><br>
+  <input type="submit" value="Submit">
+</form>
