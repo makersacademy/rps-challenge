@@ -31,6 +31,7 @@ game->user: "winner is declared"  --- in /result
 There is a basic setup of an app.rb that connects pages and modules, with only one module in game.rb for the calculations of the random result of the computer, and the calculation on who is the winner.
 The class game should give back a String with the result, that will be public to the user in the final page.
 
+The exercise is not yet finished: the main frame of how it should work is drafted but not working entirely: So far it takes the player's name, it appears in the next page, where also the choice of rock, paper or scissor is given, and I progressed to the outlineas of the calculations, but that is not working yet. I also have a problem with the rspec, alestring me of a problem with rack-up that I haven't figured out yet.
 
 ## Prerequisites
 
