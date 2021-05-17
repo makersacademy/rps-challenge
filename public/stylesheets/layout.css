@@ -1,0 +1,21 @@
+body {
+  background-color: #b1f5f3;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  font: caption;
+}
+input {
+  padding: 18px;
+  border-radius: 4px;
+  font-size: large;
+}
+div.index {
+  display: flex;
+  flex-direction: column;
+}
