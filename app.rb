@@ -23,5 +23,16 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  post '/choice' do
+    @player = $player
+    @player.save_move(params[:move])
+    redirect '/game'
+  end
+
+  get '/game' do
+    @player = $player
+    erb(:game)
+  end
+
   run! if app_file == $0
 end
