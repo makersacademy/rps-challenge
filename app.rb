@@ -59,16 +59,14 @@ class RockPaperScissors < Sinatra::Base
     redirect "/results"
   end
 
-
-
   get "/results" do
     function_multigame
     erb :results
   end
 
-  def function_singlegame(*selection)
-    @choice = selection.selected
-    p "Your choice: #{@choice}"
+  def function_singlegame(selection)
+    session[:choice] = selection.selected
+    # p "Your choice: #{@choice}"
     @computer = selection.random
     p "Computer choice: #{@computer}"
     @result = selection.playing
@@ -76,7 +74,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/result" do
-    function_singlegame()
+    p "RESULT"
+    p session[:choice]
+    p @choice = session[:choice]
+    p "RESULT"
+    p @choice
     erb :result
   end
 
