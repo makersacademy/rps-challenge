@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require 'capybara'
 require './lib/player'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -14,24 +15,25 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:player_name])
+    player = Player.new(params[:player_name])
+    $game = Game.new(player)
     redirect '/play'
   end
 
   get '/play' do
-    @player = $player
+    @game = $game
     erb(:play)
   end
 
   post '/choice' do
-    @player = $player
-    @player.save_move(params[:move])
-    redirect '/game'
+    @game = $game
+    @game.player.save_move(params[:move])
+    redirect '/outcome'
   end
 
-  get '/game' do
-    @player = $player
-    erb(:game)
+  get '/outcome' do
+    @game = $game
+    erb(:outcome)
   end
 
   run! if app_file == $0
