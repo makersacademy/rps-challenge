@@ -8,17 +8,21 @@ class Rps < Sinatra::Base
     register Sinatra::Reloader
   end
 
+enable :sessions
+
   get '/' do
     erb :index
   end
 
   post '/player' do
-    @player = Player.new(params[:name])
+    session[:name] = params[:name]
+    @player = Player.new(session[:name])
     erb :player_pick
   end
 
   post '/result' do
-    @player_pick = params[:player_pick].to_sym
+    session[:player_pick] = params[:player_pick]
+    @player_pick = session[:player_pick].to_sym
     @game = Game.new(@player_pick)
     erb :result
   end
