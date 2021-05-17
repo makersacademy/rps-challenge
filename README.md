@@ -1,8 +1,8 @@
 # RPS Challenge
 
-The RPS Challenge is a `<game>` that allows `<stressed coders in training>` to do `<relax and distract themselves with a simple game of Rock, Paper & Scissors>`.
+The RPS Challenge is a game that allows the user to play a simple game of Rock, Paper & Scissors.
 
-My personal goal for this weekend challenge is to complete the exercise proposed to my best knowledge, and also make sure to document it in a good README.rsxpec
+My personal goal for this weekend challenge is to complete the exercise proposed to my best knowledge, and also make sure to document it in a good README.md
 
 ## Domain Model
 
@@ -12,6 +12,26 @@ My personal goal for this weekend challenge is to complete the exercise proposed
 - the game will choose a random option
 - a winner will be declared
 
+USER                      GAME
+user->game:"enter name" --- in /index
+
+game->user: "name printed" --- in /play
+
+game->user: "RPS options" --- in /play
+
+user->game: "gives choice" --- from /play
+
+game->user: "post result" --- in /result
+
+game->user: "winner is declared"  --- in /result
+
+
+## Build Status
+
+There is a basic setup of an app.rb that connects pages and modules, with only one module in game.rb for the calculations of the random result of the computer, and the calculation on who is the winner.
+The class game should give back a String with the result, that will be public to the user in the final page.
+
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
@@ -20,7 +40,7 @@ Before you begin, ensure you have met the following requirements:
 - You have a `<Gemfile>` that includes:
   ** gem 'sinatra'
   ** gem 'capybara'
-  \*\* gem 'rspec'
+  ** gem 'rspec'
 - You modified your spec_helper to include `<require 'capybara/rspec'>`.
 
 ## Installing RPS Challenge
@@ -40,10 +60,9 @@ To use <rps-challenge>, follow these steps:
 
 Thanks to the following people whose support & inspiration helped me develop this:
 
-- [@BecaLParker](https://github.com/BecaLParker) for her Readme inspiration 📖
-- [@GunelMC](https://github.com/GunelMC) for her support and brainstorming 🤔
+- [@BecaLParker](https://github.com/BecaLParker) for her Readme inspiration 
 
-You might want to consider using something like the [All Contributors](https://github.com/all-contributors/all-contributors) specification and its [emoji key](https://allcontributors.org/docs/en/emoji-key).
+---
 
 # MAKERS Instructions
 
