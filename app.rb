@@ -1,8 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
-
-class Game  < Sinatra::Base
+class Game < Sinatra::Base
   enable :sessions
   attr_reader :name, :choice
   
@@ -38,5 +37,6 @@ class Game  < Sinatra::Base
     @player_name = session[:player_name]
     erb :play
   end
-
+  # start the server if ruby file executed directly
+  run! if app_file == $0
 end
