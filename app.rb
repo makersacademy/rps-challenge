@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative 'computer_move'
+require_relative 'winner'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -25,17 +27,23 @@ class RPS < Sinatra::Base
   end
 
   get '/rock' do 
-    "You played Rock!"
+    @computer_move = computer_move
+    #"You played rock, and the computer played #{computer_move}!"
+    #"You Win" if computer_move == 'scissors'
+    :rock
   end
 
   get '/paper' do
-    "You played Paper!"
+    @computer_move = computer_move
+    "You played paper, and the computer played #{computer_move}!"
   end
 
   get '/scissors' do 
-    "You played Scissors!"
+    @computer_move = computer_move
+    "You played scissors, the computer played #{computer_move}!"
+
   end
-  
+
 
 
   run! if app_file == $0
