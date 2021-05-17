@@ -442,7 +442,7 @@ class RPSWeb < Sinatra::Application
     erb :result
   end
 end
-```
+``` 
 
 ```html
 <h1><%= @result %></h1>
