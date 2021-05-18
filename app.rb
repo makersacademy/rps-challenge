@@ -34,7 +34,10 @@ class RPS < Sinatra::Base
     @player_name = session[:player_name]
     game = Game.new
     @computer_weapon = Computer.new.select_random
-    @winner = game.calculate_outcome(@player_weapon, @computer_weapon)
+    outcome = game.calculate_outcome(@player_weapon, @computer_weapon)
+    @winner = outcome if outcome == :draw
+
+    @winner = game.winning_player(@player_weapon, @computer_weapon)
     erb :result
   end
 
