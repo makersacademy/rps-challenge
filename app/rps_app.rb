@@ -5,8 +5,7 @@ require_relative '../lib/RPS'
 class RPSapp < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
-    @rps = RPS.instance
-    @cpu = @rps.rock_paper_scissors
+    
     
   end
   
@@ -19,7 +18,8 @@ class RPSapp < Sinatra::Base
     p params
     @name = params[:name]
     @selection = params[:selection]
-    @cpu = params[:cpu]
+    @rps = RPS.instance
+    @cpu = @rps.rock_paper_scissors
 
     erb(:results)
   end
