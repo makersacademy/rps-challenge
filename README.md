@@ -1,21 +1,43 @@
-# RPS Challenge
+# BecaLParker's Solution to Rock Paper Scissor Challenge
+<p align=center> :metal:     :page_facing_up:    :scissors:</p>
 
-Instructions
+What does this code do?
+-----------------------
+A one-player _Rock, Paper, Scissors_ game to play on the web. Here's a model of the request/response sequence
+<p align="center"><img src="./RPS_requestrepsonse%20model.svg" alt="Request/Response Model" width="50%"/></p>
+
+You'll get a final page a bit like this (depending on your inputs and the laws of probability!):
+<p align="center"><img src="./RPS%20result%20screenshot.png" alt="Screenshot" width="50%"/></p>
+
+## Basic Game Rules
+
+- Rock beats Scissors
+- Scissors beats Paper
+- Paper beats Rock
+
+
+Credits
+-------
+I referred to the [code review rubric](https://github.com/BecaLParker/rps-challenge/blob/master/docs/review.md) during my build. 
+
+I discussed MVC patterns and unit vs. feature testing with a non-Rubyist Dev [@allymparker](https://github.com/allymparker) to refactor my solution.
+
+Setup
 -------
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+* `$ git clone https://github.com/BecaLParker/rps-challenge.git`
+* `$ cd rps-challenge`
+* `$ bundle`
+* Now you can run `rspec` to see my feature and unit testing at work, or
+* `$ rackup` and play with the web interface via localhost in your browser
+* Usage instructions for web interface will appear onscreen at each stage
+> If the messages on the browser display are unclear, I'd appreciate feedback by way of an [issue](https://github.com/BecaLParker/rps-challenge/issues) or PR comment - thanks :)
 
-Task
+
+User stories
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
-
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ```
 As a marketeer
@@ -27,59 +49,10 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Additional notes on functionality
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
 - the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+- a winner will be declared :trophy:
