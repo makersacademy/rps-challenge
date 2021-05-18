@@ -12,25 +12,29 @@ class Game
 
   attr_reader :winning_weapon
 
-  def calculate_outcome(weapon_a, weapon_b)
-    return :draw if weapon_a == weapon_b 
-
-    winner_weapon(weapon_a, weapon_b)
+  def initialize(player_1, player_2 = DEFAULT_PLAYER_2)
+    @player_1 = player_1
+    @player_2 = player_2
   end
-
+  
   def winner_weapon(weapon_a, weapon_b) 
     if (RULES[weapon_a]) == weapon_b
       @winning_weapon = weapon_a 
-    else @winning_weapon = weapon_b
+    elsif (RULES[weapon_b]) == weapon_a
+      @winning_weapon = weapon_b 
+    else @winning_weapon = :draw
     end
 
     return @winning_weapon
   end
 
-  def winning_player(_weapon_a, weapon_b)
-    return DEFAULT_PLAYER_2 if @winning_weapon == weapon_b
-
-    @player_name
+  def winning_player(weapon_a, weapon_b)
+    if @winning_weapon == weapon_b
+      @player_2
+    elsif @winning_weapon == weapon_a
+      @player_1
+    else :draw
+    end
 
   end
    
