@@ -1,0 +1,44 @@
+<title>RPS Result</title>
+<style type="text/css">
+  body{
+    font-family:courier;
+    color:darkslategrey;
+    background-color:lavenderblush;
+  }
+  h2{
+    background-color:floralwhite;
+
+  }
+  h1{
+    font-size:40px;
+    color:salmon;
+  }
+  button{
+    background-color:ghostwhite;
+    font-family:courier;
+    border-radius:16px;
+    font-size:18px;
+  }
+  </style>
+  <body>
+    <center>
+      <h2><em> You chose <%= @choice %> & the RPS computer chose <%= @rps_computer %></em>
+       <br><br>
+
+       <form action='/play' method='get'>
+         <button type='submit'>Play Again?</button>
+       </form><br>
+
+      <%= @result %><br>
+
+      <% if @result == "It's a draw" %>
+        <img src='https://www.thebalance.com/thmb/slRp7_x40HBkBOgHb3Ft-agAEZM=/1848x1623/filters:fill(auto,1)/GettyImages-76127708-bc01f5b8b6284d75aaa5e18dab2cbf5d.jpg' width='550' height ='450' alt='Equal'
+      <% elsif @result == "You win!" %>
+        <img src='https://cdn.shopify.com/s/files/1/1581/1003/articles/finding-pure-bliss-in-the-everyday-world_1400x.progressive.jpg?v=1504282840'  width='750' height ='450' alt='Win'
+      <% else %>
+       <img src='https://d3laewezlz9ul2.cloudfront.net/wp-content/uploads/2017/03/07170719/03061-stop-counting-calories-if-you-want-to-lose-weight-700x394.jpg' width='650' height ='350' alt='Defeated'
+      <% end %>
+        <br><br>
+
+      </center>
+  </body>

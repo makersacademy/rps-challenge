@@ -1,0 +1,36 @@
+<title>RPS Play</title>
+<style type="text/css">
+  body{
+    background-color:oldlace;
+    color:darkslategrey;
+    font-family:courier;
+    color:slategrey;
+  }
+  h1{
+    background-color:mintcream;
+    font-size:40px;
+  }
+  input{
+    background-color:ghostwhite;
+    font-family:courier;
+    border-radius:16px;
+    font-size:18px;
+  }
+</style>
+  <body>
+    <center>
+      <h1>Let's play Rock Paper Scissors!</h1>
+        <h2> Do your best <%= @player_1_name %> </h2>
+          <label for="player1"><em><b>Choose either Rock, Paper or Scissors:</em><b></label>
+            <br><br>
+            <form action="/choice" method='post'>
+              <select name="choice" id="choose">
+                <option value="rock">Rock</option>
+                <option value="paper">Paper</option>
+                <option value="scissors">Scissors</option>
+              </select>
+                <input type='submit' value='submit'>
+            </form>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/1200px-Rock-paper-scissors.svg.png' width='550' height='550' alt='RPS'
+    </center>
+  </body>
