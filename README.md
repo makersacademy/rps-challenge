@@ -23,18 +23,11 @@ I would like to be able to play rock/paper/scissors
 
 ## App creation
 
-This app was an oppertunity to explore the topics covered in week 3 of the Makers course.  
-I utilised Embedded Ruby(ERB):
+This app was an opportunity to explore the topics covered in week 3 of the Makers course. MVC architecture, HTTP requests, Basic HTML/CSS and so on. 
 
 <img width="489" alt="Screenshot 2021-02-27 at 09 47 57" src="https://user-images.githubusercontent.com/75075773/109383816-f1393e00-78e0-11eb-8f3b-939b6a427c5a.png">
 
-
-As well as HTML with some CSS:
-
-
-<img width="309" alt="Screenshot 2021-02-21 at 06 35 01" src="https://user-images.githubusercontent.com/75075773/108617895-98b1fe80-7411-11eb-8a2e-9622180b683b.png">
-
-This all works together by utilising Sinatra:
+Sinatra handles all routing within the RPS webapp.  
 
 <img width="501" alt="Screenshot 2021-02-21 at 06 36 00" src="https://user-images.githubusercontent.com/75075773/108618048-c64b7780-7412-11eb-8625-1faf0e688dc1.png">
 
