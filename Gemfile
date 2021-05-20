@@ -13,4 +13,5 @@ group :test do
   gem 'sinatra'
   gem 'sinatra-contrib'
   gem 'webrick'
+  gem 'puma'
 end
