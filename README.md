@@ -1,5 +1,13 @@
 # RPS Challenge
 
+## Screenshots
+<img src="public/img/Welcome to RPS.png" width="45%">
+<img src="public/img/Single player enter name.png" width="45%">
+<img src="public/img/Single player choose card.png" width="45%">
+<img src="public/img/Multiplayer enter names.png" width="45%">
+<img src="public/img/Multiplayer Player 1 chooses card.png" width="45%">
+<img src="public/img/Multiplayer Player 2 choose card.png" width="45%">
+
 ## Instructions
 
 - Feel free to use google, your notes, books, etc. but work on your own
