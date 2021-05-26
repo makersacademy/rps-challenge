@@ -1,0 +1,31 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/index.css">
+         <% # Boostrap %>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <% # FONTAWESOME %>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <title>RPS</title>
+    </head>
+    <body>
+        <h1>Multiplayer:</h1>
+        <h2>ROCK, PAPER, SCISSORS</h3>
+        <div class="option-game col-10 col-md-6 col-sm-8">
+            <h3 class="m-4">Enter your name</h3>
+            <div class="m-4 col-12 d-flex flex-wrap justify-content-center">
+                <form  class="m-4 col-10 d-flex flex-column flex-wrap justify-content-center" action="/names" method="post">
+                    <div class="mb-3">
+                        <input class="form-control mb-2" type="text" name="name_1" placeholder="Player 1" required>
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control mb-2" type="text" name="name_2" placeholder="Player 2" required>
+                    </div>
+                    <input class="option"  type="submit" value="Play">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
