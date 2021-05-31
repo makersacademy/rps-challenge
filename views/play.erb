@@ -1,0 +1,15 @@
+<h1>Welcome to Rock, Paper, Scissors <%= @player_name.name %>!</h1>
+<h2>Try beat the computer, make your choice below:</h2>
+
+<form action="/move" method="post">
+<div>
+  <label for="Rock">Rock</label>
+  <input type="radio" name="move" value="Rock">
+  <label for="Paper">Paper</label>
+  <input type="radio" name="move" value="Paper">
+  <label for="Scissor">Scissors</label>
+  <input type="radio" name="move" value="Scissors">
+  <button type="submit" value="submit"><%= @player_name.name %>'s move</button>
+</div>
+</form>
+
