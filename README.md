@@ -1,3 +1,28 @@
+# Maker's Week 3: Weekend challenge
+This challenge was the third of my Maker's weekend challenge, intended to be done alone to reinforce the week's learning and concepts.
+The necessary skills covered in this challenge were:
+
+* How to render a backend program so it is no longer REPL only
+* How to use MVC to update application as you run through its' functions
+* Move on from purely back-end focussed code
+
+
+Successes
+-----
+
+* Successful usage of multiple stub types to fully test the possible outcomes of the game in both unit and feature testing
+* Codebase is concise and simple 
+* Button and redirection based interface makes it extremely user friendly
+* Challenge was straightforward and easy, showing a strong understanding of the weeks lessons
+
+
+To improve
+-----
+* It is preferred that the computer logic be written using symbols and only return outcomes, that the views handle the message presentation. No time to do it this challenge but an easy fix for the future 
+* Styling, even without CSS it could be improved substantially with better HTML knowledge
+* Business logic could be simplied/ made more easily changeable in the future by using separate class or by using hashes to map winning/ losing pairs
+
+
 # RPS Challenge
 
 ```
@@ -26,20 +51,6 @@ Usage
 * Use the play again button to redirect back to the play page
 
 
-Successes
------
 
-* Successful usage of multiple stub types to fully test the possible outcomes of the game in both unit and feature testing
-* Codebase is concise and simple 
-* Button and redirection based interface makes it extremely user friendly
-* Challenge was straightforward and easy, showing a strong understanding of the weeks lessons
-
-------------------
-
-To improve
------
-* It is preferred that the computer logic be written using symbols and only return outcomes, that the views handle the message presentation. No time to do it this challenge but an easy fix for the future 
-* Styling, even without CSS it could be improved substantially with better HTML knowledge
-* Business logic could be simplied/ made more easily changeable in the future by using separate class or by using hashes to map winning/ losing pairs
 
 
