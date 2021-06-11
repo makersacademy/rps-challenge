@@ -20,4 +20,12 @@ class RPS < Sinatra::Base
   get '/play' do
     erb :play
   end
+
+  post '/move' do
+    redirect '/outcome'
+  end
+
+  get '/outcome' do 
+    "Player chooses Paper"
+  end
 end

@@ -8,7 +8,6 @@ feature '/' do
     visit('/')
     fill_in('name', with: 'Mikey')
     click_button('Submit')
-    expect(page)
     expect(page).to have_content 'Mikey vs. Computer'
   end
 end
