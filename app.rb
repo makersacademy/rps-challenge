@@ -9,6 +9,15 @@ class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
-    "Test"
+    erb :index
+  end
+
+  post '/name' do
+    $player_name = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    erb :play
   end
 end
