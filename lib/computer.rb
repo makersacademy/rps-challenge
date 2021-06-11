@@ -1,5 +1,5 @@
 class Computer
-  attr_reader :score
+  attr_reader :points, :name
 
   STARTING_POINTS = 0
 
