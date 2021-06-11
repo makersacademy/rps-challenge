@@ -1,9 +1,9 @@
 class Computer
-  attr_reader :points, :name
+  attr_reader :name, :points
 
   STARTING_POINTS = 0
 
-  def initialize(points = STARTING_POINTS)
+  def initialize
     @name = "Computer"
     @points = STARTING_POINTS
   end

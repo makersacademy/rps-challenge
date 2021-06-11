@@ -3,7 +3,7 @@ class Player
 
   STARTING_POINTS = 0
 
-  def initialize(name, points = STARTING_POINTS)
+  def initialize(name)
     @name = name
     @points = STARTING_POINTS
   end
