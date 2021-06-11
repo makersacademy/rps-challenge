@@ -1,10 +1,10 @@
 class Player
-  attr_reader :name, :score
+  attr_reader :name, :points
 
-  DEFAULT_SCORE = 0
+  STARTING_POINTS = 0
 
-  def initialize(name, score = DEFAULT_SCORE)
+  def initialize(name, points = STARTING_POINTS)
     @name = name
-    @score = DEFAULT_SCORE
+    @points = STARTING_POINTS
   end
 end

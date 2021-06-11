@@ -1,5 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player'
+require './lib/computer'
+require './lib/game'
 
 class RPS < Sinatra::Base
   configure :development do
@@ -13,7 +16,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $player_name = params[:name]
+    $player = Player.new(params[:name])
     redirect '/play'
   end
 

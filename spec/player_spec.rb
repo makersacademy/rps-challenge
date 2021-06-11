@@ -11,7 +11,7 @@ describe Player do
 
   describe '#score' do
     it 'returns player score' do
-      expect(mikey.score).to eq described_class::DEFAULT_SCORE
+      expect(mikey.points).to eq described_class::STARTING_POINTS
     end
   end
 end
