@@ -1,14 +1,15 @@
 
 class Rps
 
-  attr_reader :move, :p1_move, :p2_move, :winner
+  attr_reader :move, :p1_move, :p2_move, :winner, :draw
 
   def initialize(player_1, player_2)
   @player_1 = player_1
   @player_2 = player_2
   @p1_move
   @p2_move
-  @winner
+  @winner = nil
+  @draw
   end
 
   def player_1
@@ -20,11 +21,11 @@ class Rps
   end
 
   def p1_choice(move)
-    @p1_move = move
+    @p1_move = move.to_sym
   end
 
   def p2_choice(move)
-    @p2_move = move
+    @p2_move = move.to_sym
   end
 
   def game
@@ -33,7 +34,7 @@ class Rps
     elsif ( p2_move == :scissors && p1_move == :paper ) || ( p2_move == :paper && p1_move == :rock ) || ( p2_move == :rock && p1_move == :scissors )
       wins(player_2)
     else
-      draw
+      @draw = true
     end
   end
 
@@ -41,8 +42,8 @@ class Rps
     @winner = player
   end
 
-  def the_winner
-    "the winner is #{@winner.name}"
+  def draw_or_win?
+    @draw == nil ? "the winner is #{@winner.name}" : draw
   end
 
 
