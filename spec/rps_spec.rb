@@ -49,13 +49,16 @@ describe Rps do
       end
     end
 
-    describe '#the_winner' do
+    describe '#draw_or_win?' do
       it 'returns the winner in a string' do
-        expect(rps.the_winner).to eq "the winner is Sean"
+        expect(rps.draw_or_win?).to eq "the winner is Sean"
+      end
+    end
+
+    describe '#draw' do
+      it 'returns a string telling us it has been a draw' do
+        expect(rps.draw).to eq 'No one wins, it was a draw'
       end
     end
   end
 end
-
-
-    
