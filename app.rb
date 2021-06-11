@@ -26,6 +26,6 @@ class RPS < Sinatra::Base
   end
 
   get '/outcome' do 
-    "Player chooses Paper"
+    erb :outcome
   end
 end
