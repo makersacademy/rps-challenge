@@ -6,6 +6,6 @@ class Computer
   end
 
   def move
-    ["rock"].sample
+    ["rock", "paper", "scissors"].sample
   end
 end
