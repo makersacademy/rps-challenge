@@ -2,12 +2,12 @@ require 'sinatra/base'
 # require 'sinatra/reloader'
 
 class RPS < Sinatra::Base
-  enable :sessions
+  
   configure :development do
     register Sinatra::Reloader
     
   end
-  
+  enable :sessions
   
   get '/' do
     erb :index
@@ -20,7 +20,13 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
+    @shape = session[:shape]
     erb :play
+  end
+
+  post '/play' do
+    session[:shape] = params[:shape]
+    redirect '/play'
   end
 
   run! if app_file == $0
