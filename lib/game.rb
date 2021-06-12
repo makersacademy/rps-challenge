@@ -6,4 +6,8 @@ class Game
 	 def initialize(player_1)
 		  @player_1 = player_1
 	 end
+
+	 def robot
+	   ['rock', 'paper', 'scissors'].sample
+	 end
 end
