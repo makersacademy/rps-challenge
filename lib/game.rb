@@ -17,6 +17,10 @@ class Game
       return "Win"
     elsif @p1_move == "paper" && @p2_move == "scissors"
       return "Lose"
+    elsif @p1_move == "scissors" && @p2_move == "paper"
+      return "Win"
+    elsif @p1_move == "scissors" && @p2_move == "rock"
+      return "Lose"
     end
 
   end
