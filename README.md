@@ -86,7 +86,10 @@ You can see your test coverage when you run your tests. If you want this in a gr
 
 
 # My Solution
+A Makers Week 3 solo weekend challenge.
 
+* **Languages used**: Ruby, HTML
+* **Frameworks used**: RSpec, Capybara, Sinatra
 
 ## Approach
 * set up a web framework with RSpec testing framework, and using Sinatra's Modular Style
@@ -98,7 +101,6 @@ You can see your test coverage when you run your tests. If you want this in a gr
 * created Player class in Model layer to deal with player name and their move. 
 * created Computer class in Model layer to deal with CPU random moves and stores it as a fixed move. Allows for further moves by calling `make_random_move`. 
 * used `srand` to seed random for feature testing.
-
 
 
 ## Usage

@@ -25,12 +25,12 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/move' do 
+  post '/results' do 
     session[:move] = params[:move]
-    redirect '/move'  
+    redirect '/results'  
   end
 
-  get '/move' do
+  get '/results' do
     @player_1 = Player.new(session[:player_1_name])
     @player_1.move = session[:move]
     @cpu = Computer.new

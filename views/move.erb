@@ -10,3 +10,8 @@ CPU picked <%= @cpu.move %>.
 <% else %>
   It's a draw!
 <% end %>
+<br><br>
+
+<form action="/play" method="get">
+  <input type="submit" value="Rematch!">
+</form>
