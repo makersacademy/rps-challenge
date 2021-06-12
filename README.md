@@ -83,3 +83,25 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+
+# My Solution
+
+
+# Approach
+* set up a web framework with RSpec testing framework, and using Sinatra's Modular Style
+
+# Usage
+Install Gems required using bundler:
+```
+bundle install
+```
+
+Start the server in the terminal using:
+```
+rackup
+```
+Note down the port number and access the website via:
+http://localhost:PORT_NUMBER
+
+
