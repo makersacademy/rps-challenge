@@ -4,10 +4,15 @@ feature 'Pick a move' do
   end
 
   scenario 'pick rock' do
-    click_button 'Rock'
-    
+    click_button 'Rock!'
+
     expect(page).to have_content 'You picked Rock.'
   end
 
+  scenario 'pick paper' do
+    click_button 'Paper!'
+
+    expect(page).to have_content 'You picked Paper.'
+  end
 
 end

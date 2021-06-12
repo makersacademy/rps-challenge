@@ -114,3 +114,4 @@ http://localhost:PORT_NUMBER
 ## TODO
 * ✨ Aesthetics ✨
 * flashing lights for P1 name?
+* Could you refactor repetitive unit tests into a web helper method? Would you include the assertion in the helper method?
