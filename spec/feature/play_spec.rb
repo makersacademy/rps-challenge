@@ -24,6 +24,12 @@ feature 'playing the game' do
     expect(posssible_moves).to include message
   end
 
+  scenario 'computer choses a random move' do
+    srand(221563)
+    click_button 'Rock'
+    expect(page).to have_content 'Opponent chose Scissors'
+  end
+
   def posssible_moves
     [:rock, :paper, :scissors].map { |move| "Opponent chose #{move.to_s.capitalize}!"}
   end
