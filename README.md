@@ -88,10 +88,11 @@ You can see your test coverage when you run your tests. If you want this in a gr
 # My Solution
 
 
-# Approach
+## Approach
 * set up a web framework with RSpec testing framework, and using Sinatra's Modular Style
 
-# Usage
+
+## Usage
 Install Gems required using bundler:
 ```
 bundle install
