@@ -6,6 +6,6 @@ class Computer
   end
 
   def move
-    
+    ["rock"].sample
   end
 end

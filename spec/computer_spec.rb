@@ -10,7 +10,9 @@ describe Computer do
   context '#move' do
     it { is_expected.to respond_to(:move) }
 
-    
+    it 'can randomly return rock' do
+      expect(subject.move).to eq "rock"
+    end
   end
 
 end
