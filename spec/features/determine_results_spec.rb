@@ -16,4 +16,11 @@ feature 'results' do
 
     expect(page).to have_content 'CPU wins!'
   end
+
+  scenario 'Draw' do
+    srand(2)
+    click_button 'Rock!'
+
+    expect(page).to have_content "It's a draw!"
+  end
 end
