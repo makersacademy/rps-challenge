@@ -39,8 +39,4 @@ class RPS < Sinatra::Base
     @rps_game.game
     erb :result
   end
-
-
-
-
 end
