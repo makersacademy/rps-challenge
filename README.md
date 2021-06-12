@@ -90,6 +90,10 @@ You can see your test coverage when you run your tests. If you want this in a gr
 
 ## Approach
 * set up a web framework with RSpec testing framework, and using Sinatra's Modular Style
+* use `params` to extract information from a request
+* feature tested with Capybara
+* debugging Capybara feature tests: used `save_and_open_page` method with `launchy` gem to screenshot test results of the webpage when test failed. 
+
 
 
 ## Usage
@@ -106,3 +110,5 @@ Note down the port number and access the website via:
 http://localhost:PORT_NUMBER
 
 
+## TODO
+* ✨ Aesthetics ✨
