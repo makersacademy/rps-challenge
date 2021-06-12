@@ -17,6 +17,18 @@ describe Game do
 
       expect(subject.results).to eq 'Win'
     end
+
+    it 'can draw' do
+      allow(player_2).to receive(:move).and_return('rock')
+
+      expect(subject.results).to eq 'Draw'
+    end
+
+    it 'can lose' do
+      allow(player_2).to receive(:move).and_return('paper')
+
+      expect(subject.results).to eq 'Lose'
+    end
   end
 
 end
