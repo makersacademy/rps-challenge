@@ -24,7 +24,7 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    session[:player_move] = params[:shape]
+    session[:player_move] = params[:shape].to_sym.downcase
     session[:opponent_move] = Opponent.new.move
     redirect '/play'
   end

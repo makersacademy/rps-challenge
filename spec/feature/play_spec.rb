@@ -30,6 +30,27 @@ feature 'playing the game' do
     expect(page).to have_content 'Opponent chose Scissors'
   end
 
+  context 'game over' do
+    scenario 'players wins' do
+      srand(221563)
+      click_button 'Rock'
+      expect(page).to have_content 'You win!'
+    end
+
+    scenario 'players loses' do
+      srand(221563)
+      click_button 'Paper'
+      expect(page).to have_content 'You lose!'
+    end
+
+    scenario 'players loses' do
+      srand(221563)
+      click_button 'Scissors'
+      expect(page).to have_content 'You Draw!'
+    end
+
+  end
+
   def posssible_moves
     [:rock, :paper, :scissors].map { |move| "Opponent chose #{move.to_s.capitalize}!"}
   end
