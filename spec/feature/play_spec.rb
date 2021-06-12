@@ -17,4 +17,14 @@ feature 'playing the game' do
     click_button 'Rock'
     expect(page).to have_content 'You chose Rock!'
   end
+
+  scenario 'computer choses Rock' do
+    click_button 'Rock'
+    message = find(:css, "#opponent").text
+    expect(posssible_moves).to include message
+  end
+
+  def posssible_moves
+    [:rock, :paper, :scissors].map { |move| "Opponent chose #{move.to_s.capitalize}!"}
+  end
 end
