@@ -94,7 +94,9 @@ You can see your test coverage when you run your tests. If you want this in a gr
 * feature tested with Capybara
 * debugging Capybara feature tests: used `save_and_open_page` method with `launchy` gem to screenshot test results of the webpage when test failed. 
 * used buttons to restrict inputs for moves
-* created classes: Game in Model layer to deal with game logic. 
+* created Game class in Model layer to deal with game logic. 
+* created Player class in Model layer to deal with player name and their move. 
+* created Computer class in Model layer to deal with CPU random moves.
 
 
 

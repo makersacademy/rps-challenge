@@ -12,16 +12,22 @@ describe Computer do
 
     it 'can randomly return rock' do
       srand(2)
+      subject.random_move
+
       expect(subject.move).to eq "rock"
     end
 
     it 'can randomly return paper' do
       srand(1)
+      subject.random_move
+      
       expect(subject.move).to eq "paper"
     end
 
     it 'can randomly return scissors' do
       srand(3)
+      subject.random_move
+      
       expect(subject.move).to eq "scissors"
     end
   end
