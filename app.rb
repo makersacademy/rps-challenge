@@ -28,7 +28,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/move' do
-    @move = session[:move]
+    @player_1 = Player.new(session[:player_1_name])
+    @player_1.move = session[:move]
+    @cpu = Computer.new
     erb :move
   end
 

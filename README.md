@@ -90,13 +90,14 @@ You can see your test coverage when you run your tests. If you want this in a gr
 
 ## Approach
 * set up a web framework with RSpec testing framework, and using Sinatra's Modular Style
-* use `params` to extract information from a request
+* used `params` to extract information from a request
 * feature tested with Capybara
 * debugging Capybara feature tests: used `save_and_open_page` method with `launchy` gem to screenshot test results of the webpage when test failed. 
 * used buttons to restrict inputs for moves
 * created Game class in Model layer to deal with game logic. 
 * created Player class in Model layer to deal with player name and their move. 
 * created Computer class in Model layer to deal with CPU random moves and stores it as a fixed move. Allows for further moves by calling `make_random_move`. 
+* used `srand` to seed random for feature testing.
 
 
 
