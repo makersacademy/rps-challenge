@@ -31,4 +31,28 @@ describe Game do
     end
   end
 
+  context 'P1 picks paper' do
+    before do
+      allow(player_1).to receive(:move).and_return('paper')
+    end
+
+    it 'can win' do
+      allow(player_2).to receive(:move).and_return('rock')
+
+      expect(subject.results).to eq 'Win'
+    end
+
+    xit 'can draw' do
+      allow(player_2).to receive(:move).and_return('rock')
+
+      expect(subject.results).to eq 'Draw'
+    end
+
+    xit 'can lose' do
+      allow(player_2).to receive(:move).and_return('paper')
+
+      expect(subject.results).to eq 'Lose'
+    end
+  end
+
 end
