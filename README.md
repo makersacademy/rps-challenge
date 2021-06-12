@@ -96,7 +96,7 @@ You can see your test coverage when you run your tests. If you want this in a gr
 * used buttons to restrict inputs for moves
 * created Game class in Model layer to deal with game logic. 
 * created Player class in Model layer to deal with player name and their move. 
-* created Computer class in Model layer to deal with CPU random moves.
+* created Computer class in Model layer to deal with CPU random moves and stores it as a fixed move. Allows for further moves by calling `make_random_move`. 
 
 
 
