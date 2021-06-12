@@ -42,14 +42,14 @@ describe Game do
       expect(subject.results).to eq 'Win'
     end
 
-    xit 'can draw' do
-      allow(player_2).to receive(:move).and_return('rock')
+    it 'can draw' do
+      allow(player_2).to receive(:move).and_return('paper')
 
       expect(subject.results).to eq 'Draw'
     end
 
-    xit 'can lose' do
-      allow(player_2).to receive(:move).and_return('paper')
+    it 'can lose' do
+      allow(player_2).to receive(:move).and_return('scissors')
 
       expect(subject.results).to eq 'Lose'
     end
