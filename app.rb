@@ -33,6 +33,7 @@ class RockPaperScissors < Sinatra::Base
     @player_1 = Player.new(session[:player_1_name])
     @player_1.move = session[:move]
     @cpu = Computer.new
+    @game = Game.new(@player_1, @cpu)
     erb :move
   end
 

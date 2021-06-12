@@ -2,4 +2,9 @@ You picked <%= @player_1.move %>.
 <br>
 CPU picked <%= @cpu.move %>.
 <br>
-<%= @player_1.name %> wins!
+
+<% if @game.results == "Win" %>
+  <%= @player_1.name %> wins!
+<% elsif @game.results == "Lose" %>
+  <%= @cpu.name %> wins!
+<% end %>
