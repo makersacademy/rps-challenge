@@ -5,7 +5,7 @@ feature 'Attack' do
     click_button('Submit')
     select("Paper", from: "rps")
     click_button('Submit')
-    expect(page).to have_content "Player chooses Paper"
+    expect(page).to have_content "Mikey chooses"
   end
 
   scenario 'Able to go back by clicking move selection link' do
@@ -15,6 +15,6 @@ feature 'Attack' do
     select("Paper", from: "rps")
     click_button('Submit')
     click_link('Back to move selection')
-    expect(page).to have_content "Make your move!"
+    expect(page).to have_content "Make your move"
   end
 end

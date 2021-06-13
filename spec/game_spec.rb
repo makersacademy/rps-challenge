@@ -7,7 +7,8 @@ describe Game do
 
   describe '#players' do
     scenario 'expect array to equal two players' do
-    expect(game.players).to eq [player, computer]
+    expect(game.player).to eq player
+    expect(game.computer).to eq computer
     end
   end 
 end

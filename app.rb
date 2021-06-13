@@ -9,6 +9,10 @@ class RPS < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  before do
+    @game = Game.instance
+  end
+
   enable :sessions
 
   get '/' do
@@ -16,24 +20,23 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:player_name])
-    computer = Computer.new
-    $game = Game.new(player, computer)
+    @game = Game.create(Player.new(params[:player_name]), Computer.new)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
     erb :play
   end
 
   post '/move' do
-    @game = $game
+      @game.play(params.dig(:rps).to_sym)
+      @game.choice
+      # @game.result
+      @game.play_rps
     redirect '/outcome'
   end
 
-  get '/outcome' do
-    @game = $game 
+  get '/outcome' do 
     erb :outcome
   end
 end
