@@ -3,13 +3,11 @@ require 'sinatra/reloader'
 require './lib/player'
 require './lib/rps'
 
-
 class RPS < Sinatra::Base
   
   configure :development do
     register Sinatra::Reloader
   end
-
 
   get '/' do
     erb :enter_names

@@ -1,15 +1,14 @@
-
 class Rps
 
   attr_reader :move, :p1_move, :p2_move, :winner, :draw
 
   def initialize(player_1, player_2)
-  @player_1 = player_1
-  @player_2 = player_2
-  @p1_move
-  @p2_move
-  @winner = nil
-  @draw
+    @player_1 = player_1
+    @player_2 = player_2
+    @p1_move 
+    @p2_move 
+    @winner = nil
+    @draw
   end
 
   def player_1
