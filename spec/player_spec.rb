@@ -9,6 +9,6 @@ RSpec.describe Player do
 
   it 'can return his move' do
     subject.move = "rock"
-    expect(subject.move).to eq('rock')
+    expect(subject.move).to eq("rock")
   end
 end
