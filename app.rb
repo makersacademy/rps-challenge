@@ -24,6 +24,7 @@ class RPS < Sinatra::Base
   get '/result' do
     @game = $game
     @move = params[:move].downcase
+    @comp_move = @game.player_2.action
     erb :result
   end
 
