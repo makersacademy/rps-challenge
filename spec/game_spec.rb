@@ -13,7 +13,7 @@ describe Game do
   end
 
   it 'returns draw when both players throw the same hand' do
-    expect(subject.round('rock', 'rock')).to eq 'draw'
+    expect(subject.round('rock', 'rock')).to eq "It's a draw"
   end
 
   it 'returns a message if player 1 wins' do
