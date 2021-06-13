@@ -100,8 +100,10 @@ A Makers Week 3 solo weekend challenge.
 * created Game class in Model layer to deal with game logic. 
 * created Player class in Model layer to deal with player name and their move. 
 * created Computer class in Model layer to deal with CPU random moves and stores it as a fixed move. Allows for further moves by calling `make_random_move`. 
+* implemented a feature from Model layer
 * used `srand` to seed random for feature testing.
-
+* implemented optional multiplayer feature 
+* **avoided** use of global variables
 
 
 ## Usage
@@ -117,9 +119,11 @@ rackup
 Note down the port number and access the website via:
 http://localhost:PORT_NUMBER
 
+N.B. You can play against CPU if you leave the player 2 name blank.
+
 
 ## TODO
-* ✨ Aesthetics ✨
-* flashing lights for P1 name?
-* Could you refactor repetitive unit tests into a web helper method? Would you include the assertion in the helper method?
+* ✨ Aesthetics ✨ : flashing lights for player names?
+* Question: When refactoring repetitive unit tests into a web helper method, is it ok to include the assertion itself in the helper method?
+
 * Refactor feature tests
