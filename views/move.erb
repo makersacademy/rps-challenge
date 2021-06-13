@@ -1,0 +1,17 @@
+<%= @player_1.name %> picked <%= @player_1.move %>.
+<br>
+<%= @player_2.name %> picked <%= @player_2.move %>.
+<br><br>
+
+<% if @game.results == "Win" %>
+  <%= @player_1.name %> wins!
+<% elsif @game.results == "Lose" %>
+  <%= @player_2.name %> wins!
+<% else %>
+  It's a draw!
+<% end %>
+<br><br>
+
+<form action="/play" method="get">
+  <input type="submit" value="Rematch!">
+</form>
