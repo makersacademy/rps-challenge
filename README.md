@@ -103,6 +103,7 @@ A Makers Week 3 solo weekend challenge.
 * used `srand` to seed random for feature testing.
 
 
+
 ## Usage
 Install Gems required using bundler:
 ```
@@ -121,3 +122,4 @@ http://localhost:PORT_NUMBER
 * ✨ Aesthetics ✨
 * flashing lights for P1 name?
 * Could you refactor repetitive unit tests into a web helper method? Would you include the assertion in the helper method?
+* Refactor feature tests

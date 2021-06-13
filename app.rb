@@ -17,6 +17,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/names' do
     session[:player_1_name] = params[:player_1_name]
+    session[:player_2_name] = params[:player_2_name] unless params[:player_2_name].empty?
     redirect '/play'
   end
 
@@ -26,13 +27,26 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/results' do 
-    session[:move] = params[:move]
-    redirect '/results'  
+    session[:p1_move] = params[:p1_move]
+    if !!session[:player_2_name]
+      redirect '/play_2'
+    else
+      redirect '/results'
+    end
   end
+
+  get '/play_2' do
+    @player_2_name = session[:player_2_name]
+    erb :play_2
+  end
+
+  # post '/results_2' do
+
+  # end
 
   get '/results' do
     @player_1 = Player.new(session[:player_1_name])
-    @player_1.move = session[:move]
+    @player_1.move = session[:p1_move]
     @cpu = Computer.new
     @game = Game.new(@player_1, @cpu)
     erb :move

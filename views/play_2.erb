@@ -1,0 +1,17 @@
+<h1> Welcome, <%= @player_2_name %>! </h1>
+
+What is your move?
+<form action="/results_2" method="post">
+  <input type="hidden" name="p2_move" value="rock">
+  <input type="submit" value="Rock!">
+</form>
+
+<form action="/results_2" method="post">
+  <input type="hidden" name="p2_move" value="paper">
+  <input type="submit" value="Paper!">
+</form>
+
+<form action="/results_2" method="post">
+  <input type="hidden" name="p2_move" value="scissors">
+  <input type="submit" value="Scissors!">
+</form>
