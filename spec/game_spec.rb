@@ -28,6 +28,14 @@ describe Game do
     end
   end
 
+  describe '#result' do
+    scenario 'returns the result' do
+      allow(player).to receive(:choice) { :rock }
+      allow(computer).to receive(:choice) { :rock }
+      expect(game.result).to eq :draw
+    end
+  end
+
   describe '#win' do
     scenario 'Outcome is a win' do
       allow(player).to receive_messages(:points => 5)
@@ -39,6 +47,13 @@ describe Game do
     scenario 'Outcome is a loss' do
       allow(computer).to receive_messages(:points => 5)
       expect(computer.points).to eq(5)
+    end
+  end
+
+  describe 'self_create' do
+    scenario 'allows to create an instance of the game' do
+      Game.create(player, computer)
+      expect(Game.instance).to be_a Game
     end
   end
 end
