@@ -26,7 +26,7 @@
 
 A simple game of Rock, Paper, Scissors played against an AI opponent. The web app allows the user to sign-in, choose a weapon, and play a game of Rock, Paper, Scissors.
 
-## Getting Started
+## Getting Started
 
 ### Local Development
 
