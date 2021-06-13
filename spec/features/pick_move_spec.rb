@@ -6,18 +6,18 @@ feature 'Pick a move' do
   scenario 'pick rock' do
     click_button 'Rock!'
 
-    expect(page).to have_content 'You picked rock.'
+    expect(page).to have_content 'Halloumi picked rock.'
   end
 
   scenario 'pick paper' do
     click_button 'Paper!'
 
-    expect(page).to have_content 'You picked paper.'
+    expect(page).to have_content 'Halloumi picked paper.'
   end
 
   scenario 'pick scissors' do
     click_button 'Scissors!'
 
-    expect(page).to have_content 'You picked scissors.'
+    expect(page).to have_content 'Halloumi picked scissors.'
   end
 end

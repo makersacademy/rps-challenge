@@ -1,12 +1,12 @@
-You picked <%= @player_1.move %>.
+<%= @player_1.name %>  picked <%= @player_1.move %>.
 <br>
-CPU picked <%= @cpu.move %>.
+<%= @player_2.name %> picked <%= @player_2.move %>.
 <br><br>
 
 <% if @game.results == "Win" %>
   <%= @player_1.name %> wins!
 <% elsif @game.results == "Lose" %>
-  <%= @cpu.name %> wins!
+  <%= @player_2.name %> wins!
 <% else %>
   It's a draw!
 <% end %>

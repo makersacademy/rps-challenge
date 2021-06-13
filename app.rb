@@ -40,15 +40,23 @@ class RockPaperScissors < Sinatra::Base
     erb :play_2
   end
 
-  # post '/results_2' do
-
-  # end
+  post '/results_2' do
+    session[:p2_move] = params[:p2_move]
+    redirect '/results'
+  end
 
   get '/results' do
     @player_1 = Player.new(session[:player_1_name])
     @player_1.move = session[:p1_move]
-    @cpu = Computer.new
-    @game = Game.new(@player_1, @cpu)
+
+    if !!session[:player_2_name]
+      @player_2 = Player.new(session[:player_2_name])
+      @player_2.move = session[:p2_move]
+    else
+      @player_2 = Computer.new
+    end
+    
+    @game = Game.new(@player_1, @player_2)
     erb :move
   end
 
