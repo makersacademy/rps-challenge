@@ -15,10 +15,9 @@ describe Computer do
     end
   end
 
-  describe '#score' do
+  describe '#random_choice' do
     it 'returns a random selection' do
-    allow_any_instance_of(computer).to receive(:sample).and_return(:rock)
-    expect(computer.choice).to eq :rock
+    expect([:rock, :paper, :scissors, :lizard, :spock]).to include(computer.random_choice)
     end
   end
 end

@@ -31,7 +31,6 @@ class RPS < Sinatra::Base
   post '/move' do
       @game.play(params.dig(:rps).to_sym)
       @game.choice
-      # @game.result
       @game.play_rps
     redirect '/outcome'
   end

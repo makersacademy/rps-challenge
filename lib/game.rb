@@ -9,18 +9,17 @@ class Game
   player_moves = []
 
   RPS_COMBOS = {
-    rock:     {scissors: :win,  paper: :lose, rock: :draw},
-    paper:    {scissors: :lose, paper: :draw,  rock: :win},  
-    scissors: {scissors: :draw,   paper: :win,  rock: :lose}
+    rock:     {scissors: :win,  paper: :loss, rock: :draw, spock: :win, lizard: :loss},
+    paper:    {scissors: :loss, paper: :draw, rock: :win, spock: :loss, lizard: :loss},  
+    scissors: {scissors: :draw, paper: :win,  rock: :loss, spock: :win, lizard: :win},
+    spock:    {scissors: :win,  paper: :loss, rock: :win, spock: :draw, lizard: :win}, 
+    lizard:   {scissors: :loss, paper: :win,  rock: :loss, sock: :loss, lizard: :draw}
     }
 
   def initialize(player = Player.new, computer = Computer.new)
     @player = player 
     @computer = computer
   end
-
-  TESTING = { rock: :win, paper: :lose, scissors: :win }
-
 
   def play(player_move)
     @player.move(player_move)
@@ -60,10 +59,8 @@ class Game
     case result
     when :win
       player.give_point
-      puts "One point for #{player.name}"
-    when :lose
+    when :loss
       computer.give_point
-      puts "One point for #{computer.name}"
     else
       puts "No points for either player."
     end

@@ -1,6 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="<%= url('stylesheets/style.css') %>" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
 
-<h2><%= "#{@game.player.name}"%> chooses <%= "#{@game.player.choice}"%></h2> 
-<h2><%= "#{@game.computer.name}"%> chooses <%= "#{@game.computer.choice}"%></h2> 
-<%= "#{@game.result}"%></h2> 
+<div>
+<h2><span><%="#{@game.player.name}"%></span> chooses <span><%= "#{@game.player.choice}"%></span>!</h2>
+<h2><span><%="#{@game.computer.name}"%></span> chooses <span><%= "#{@game.computer.choice}"%></span>!</h2> 
+<h2><%= "It's a #{@game.result}!"%></h2> 
+<% if @game.result == :win %>       
+<img src=”/images/rock.svg”>
+<% elsif @game.result == :loss %>
+display loss
+ <% elsif @game.result == :draw %> 
+display draw
+<% end %>
+<h2>Scores will be updated on the play screen.</h2>
 
-<br><a href="/play">Back to move selection</a>
+<br>
+<form method="get" action="/play">
+    <button type="submit">Play again</button>
+</form>
+</div>
+</body>
+</html>

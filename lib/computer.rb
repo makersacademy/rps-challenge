@@ -2,7 +2,7 @@ class Computer
   attr_reader :name, :points, :choice
 
   STARTING_POINTS = 0
-  HAND = [:rock, :paper, :scissors]
+  HAND = [:rock, :paper, :scissors, :lizard, :spock]
 
   def initialize
     @name = "Computer"

@@ -1,9 +1,17 @@
-<div><h1>[Names]</h1> 
-<h2><%= @game.player.name%> vs. <%=@game.computer.name%></h2>
-<h1>[Scores] </h1>
-<h2>Player = <%= @game.player.points%> Computer = <%= @game.computer.points%> </h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="<%= url('stylesheets/style.css') %>" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
 
 <div>
+<h1><span>[Names]</span></h1> 
+<h2><%= @game.player.name%> vs. <%=@game.computer.name%></h2>
+<h1><span>[Scores]</span> </h1>
+<h2>Player = <%= @game.player.points%> Computer = <%= @game.computer.points%> </h2>
+
+
 <h2>Rock, Paper, Scissors!</h2>
 <form action="/move" method="post">
   <label for="rps">Make your move:</label>
@@ -11,7 +19,13 @@
       <option value="rock">Rock</option>
       <option value="paper">Paper</option>
       <option value="scissors">Scissors</option>
+      <option value="lizard">Lizard</option>
+      <option value="spock">Spock</option>
   </select>
-  <br><br>
+  <br>
   <input type="submit" value="Submit">
 </form>
+</div>
+</body>
+</html>
+

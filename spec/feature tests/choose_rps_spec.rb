@@ -14,7 +14,7 @@ feature 'Attack' do
     click_button('Submit')
     select("Paper", from: "rps")
     click_button('Submit')
-    click_link('Back to move selection')
+    click_button('Play again')
     expect(page).to have_content "Make your move"
   end
 end
