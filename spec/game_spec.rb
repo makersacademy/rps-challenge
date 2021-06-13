@@ -9,74 +9,78 @@ describe Game do
   
   context 'P1 picks rock' do
     before do
-      allow(player_1).to receive(:move).and_return('rock')
+      pick_rock(player_1)
     end
 
     it 'can win' do
-      allow(player_2).to receive(:move).and_return('scissors')
-
+      pick_scissors(player_2)
       expect(subject.results).to eq 'Win'
     end
 
     it 'can draw' do
-      allow(player_2).to receive(:move).and_return('rock')
-
+      pick_rock(player_2)
       expect(subject.results).to eq 'Draw'
     end
 
     it 'can lose' do
-      allow(player_2).to receive(:move).and_return('paper')
-
+      pick_paper(player_2)
       expect(subject.results).to eq 'Lose'
     end
   end
 
   context 'P1 picks paper' do
     before do
-      allow(player_1).to receive(:move).and_return('paper')
+      pick_paper(player_1)
     end
 
     it 'can win' do
-      allow(player_2).to receive(:move).and_return('rock')
-
+      pick_rock(player_2)
       expect(subject.results).to eq 'Win'
     end
 
     it 'can draw' do
-      allow(player_2).to receive(:move).and_return('paper')
-
+      pick_paper(player_2)
       expect(subject.results).to eq 'Draw'
     end
 
     it 'can lose' do
-      allow(player_2).to receive(:move).and_return('scissors')
-
+      pick_scissors(player_2)
       expect(subject.results).to eq 'Lose'
     end
   end
 
   context 'P1 picks scissors' do
     before do
-      allow(player_1).to receive(:move).and_return('scissors')
+      pick_scissors(player_1)
     end
 
     it 'can win' do
-      allow(player_2).to receive(:move).and_return('paper')
-
+      pick_paper(player_2)
       expect(subject.results).to eq 'Win'
     end
 
     it 'can draw' do
-      allow(player_2).to receive(:move).and_return('scissors')
-
+      pick_scissors(player_2)
       expect(subject.results).to eq 'Draw'
     end
 
     it 'can lose' do
-      allow(player_2).to receive(:move).and_return('rock')
-
+      pick_rock(player_2)
       expect(subject.results).to eq 'Lose'
     end
   end
 
+  private
+
+  def pick_rock(player)
+    allow(player).to receive(:move).and_return('rock')
+  end
+
+  def pick_paper(player)
+    allow(player).to receive(:move).and_return('paper')
+  end
+
+  def pick_scissors(player)
+    allow(player).to receive(:move).and_return('scissors')
+  end
 end

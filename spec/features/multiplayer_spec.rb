@@ -1,13 +1,10 @@
-feature 'multiplayer' do
+feature 'Multiplayer' do
   background do
-    visit '/'
-    fill_in :player_1_name, with: 'Halloumi'
-    fill_in :player_2_name, with: 'Pizza'
-    click_button 'Start game!'
+    enter_names_and_start_multiplayer
     click_button 'Rock!'
   end
 
-  scenario "Player 2 can enter name" do
+  scenario 'Player 2 can enter name' do
     expect(page).to have_content 'Welcome, Pizza!'
   end
 
@@ -26,9 +23,22 @@ feature 'multiplayer' do
     expect(page).to have_content 'Pizza picked scissors.'
   end
 
-  scenario 'Player 2 wins' do
+  scenario 'Player 2 wins against Player 1' do
     click_button 'Paper!'
+    expect(page).not_to have_content 'Halloumi wins!'
     expect(page).to have_content 'Pizza wins!'
   end
 
+  scenario 'Player 2 loses against Player 1' do
+    click_button 'Scissors!'
+    expect(page).not_to have_content 'Pizza wins!'
+    expect(page).to have_content 'Halloumi wins!'
+  end
+
+  scenario 'Player 2 draws with Player 1' do
+    click_button 'Rock!'
+    expect(page).not_to have_content 'Halloumi wins!'
+    expect(page).not_to have_content 'Pizza wins!'
+    expect(page).to have_content "It's a draw!"
+  end
 end

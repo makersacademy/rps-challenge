@@ -97,13 +97,15 @@ A Makers Week 3 solo weekend challenge.
 * feature tested with Capybara
 * debugging Capybara feature tests: used `save_and_open_page` method with `launchy` gem to screenshot test results of the webpage when test failed. 
 * used buttons to restrict inputs for moves
-* created Game class in Model layer to deal with game logic. 
-* created Player class in Model layer to deal with player name and their move. 
-* created Computer class in Model layer to deal with CPU random moves and stores it as a fixed move. Allows for further moves by calling `make_random_move`. 
+* created Game class in Model layer to deal with game logic
+* created Player class in Model layer to deal with player name and their move
+* created Computer class in Model layer to deal with CPU random moves and stores it as a fixed move. Allows for further moves by calling `make_random_move`
 * implemented a feature from Model layer
-* used `srand` to seed random for feature testing.
+* used `srand` to seed random for feature testing
 * implemented optional multiplayer feature 
 * **avoided** use of global variables
+* linted with rubocop
+* reviewed feature/unit tests and refactoring
 
 
 ## Usage
@@ -125,5 +127,4 @@ N.B. You can play against CPU if you leave the player 2 name blank.
 ## TODO
 * ✨ Aesthetics ✨ : flashing lights for player names?
 * Question: When refactoring repetitive unit tests into a web helper method, is it ok to include the assertion itself in the helper method?
-
-* Refactor feature tests
+* Once project complete, what happens in order move to production?

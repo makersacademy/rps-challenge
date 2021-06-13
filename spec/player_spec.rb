@@ -6,6 +6,10 @@ describe Player do
 
   context 'name' do
     it { is_expected.to respond_to(:name) }
+
+    it 'has a name' do
+      expect(subject.name).to eq name
+    end
   end
 
   context '#move' do

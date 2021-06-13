@@ -2,8 +2,8 @@ require 'computer'
 
 describe Computer do
   context 'name' do
-    it "has a name" do
-      expect(subject.name).to eq "CPU"
+    it 'has a name' do
+      expect(subject.name).to eq 'CPU'
     end
   end
   
