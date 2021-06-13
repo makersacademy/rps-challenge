@@ -1,0 +1,16 @@
+<h1> <%= @rps_game.player_1.name %> vs <%= @rps_game.player_2.name %> </h1>
+<br><br>
+<form action="/result" method="post">
+
+  <label for="player_1_move">
+    Player One Move!
+    <input type="text" name="player_1_move">
+  </label>
+
+  <label for="player_2_move">
+    Player Two Move!
+   <input type="text" name="player_2_move">
+   </label>
+
+  <input type="submit" value="Submit">
+</form>
