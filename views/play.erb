@@ -1,20 +1,55 @@
-<h2><%= %>, your turn</h2>
 
-<section>
-<form action = '/outcome' method ='post'>
-  <input type='submit' value ='rock' name='rock'>
-  <input type='submit' value ='paper' name='paper'>
-  <input type='submit' value ='scissors' name='scissors'>
-</form>
-</section>
+<h1><%= @rps.player_1.name %>, its your turn!</h1>
 
+<div class = 'forms'>
+<div>
+<form action = '/choice' method ='get'>
+<label for ="choice">
+  <input type='submit' name ='choice' value ='rock'>
+  
+</div>
+<div>
+<input type='submit' name ='choice' value ='paper'>
+</div>
+<div>
+  <input type='submit' name ='choice' value ='scissors'>
+  </label>
+</form> 
+</div>
+</div>
+
+<form action ='/rps' method='post'>
+  <input type ='submit'>
+  </form>
+  
 <style>
-section {
+body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
 }
+
+.forms {
+  display: flex;
+  margin: 2rem;
+  width: 50%;
+  justify-content: space-evenly;
+}
+
+input {
+  display: flex;
+  height: 100%;
+  width: 13rem;;
+  margin: 0 auto;
+  padding: 2rem;
+  justify-content: center;
+  font-size: 2rem;
+}
+
 
 
 </style>

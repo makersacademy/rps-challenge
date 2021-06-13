@@ -1,9 +1,9 @@
 require 'sinatra'
 require "sinatra/reloader"
-require './lib/game'
+require_relative './lib/game'
 require './lib/player'
 
-class RockPaperScissors < Sinatra::Base
+class RockPaperScissors < Sinatra::Application
   configure :development do
     register Sinatra::Reloader
   end
@@ -15,19 +15,26 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/players' do
-    @player_1 = params[:player_1]
-    $rsp = RPS.new(@player_1)
+    player_1_name = Player.new(params[:player_1])
+    $rps = RPS.new(player_1_name)
     redirect '/play'
   end
 
   get '/play' do
-    @rsp = $rsp
+    @rps = $rps
     erb :play
   end
 
-  post '/outcome' do
-    @rsp = $rsp
-    erb :outcome
+  get '/choice' do
+    $choice = params[:choice]
+    @rps = $rps
+    redirect '/play'
+  end
+
+  post '/rps' do
+    @rps = $rps
+    @choice = $choice
+    erb :rps
   end
 
   run! if app_file == $0

@@ -1,11 +1,29 @@
-<h1>Rock Paper Scissors</h1>
+<h1>Rock, Paper, Scissors</h1>
 <form action ="/players" method ="post">
-  <label for= 'player_1'>Player 1
-    <input type = 'text' name ="player_1">
-  </label>
-   <label for= 'player_2'>Player 2
-    <input type = 'text' name ="player_2">
+  <label for= 'player_1'>
+    <input type = 'text' name ="player_1" placeholder ='Enter player name...'>
   </label>
 
   <input type ='Submit'>
 </form>
+
+<style>
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+input {
+  margin: 10px;
+  padding: 20px;
+  width: 20rem;
+}
