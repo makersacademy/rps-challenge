@@ -3,12 +3,16 @@ require 'sinatra/reloader'
 
 class RPS < Sinatra::Base
 
-  get '/' do
+configure :development do
+  register Sinatra::Reloader
+end 
+
+get '/' do
   erb(:index)
 end
 
 post '/names' do
-  params[:player1_name]
+  @player1 = params[:player1_name]
 end
 
 end
