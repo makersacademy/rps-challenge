@@ -1,13 +1,5 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
 Task
 ----
 
@@ -27,59 +19,44 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Motivation --
+-----
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+Applying my existing knowledge and adapting new concepts, such as MVC to setup a Sinatra application with a working interface that offers the user to play Rock, Paper Scissors against a computer player. This involved building out my views for the layout and front-end interface that I wanted the user to see. Creating my business logic inside of the model to include any back-end functionaltiy and finally the app.rb for the controller aspect of the application. 
 
 
-As usual please start by
 
-* Forking this repo
-* TEST driving development of your app
+Process -
+-----
+
+I started by creating some wire frame diagrams to get a visual idea of what I wanted to achieve. Once I was ready I started writing my feature tests to set out a plan before starting to build the routes in the app.rb file. I followed this test driven approach and started to eventually create my logic for the backend functionality.  
+Once the logic was setup and working inside the erb files I created singleton method to get rid of the global variables used earlier. Finally I added some CSS to tidy up my interface.
 
 
-## Bonus level 1: Multiplayer
+Challenges - 
+-----
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+It took some time to properly build an understanding of how the different sections MVC were interconnected, due to this I ran into multiple nil method issues which took some time to de-bug. I eventually realised that the param wasn't returning what I expected and this stopped my program from returning the RPS results.
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+Edge cases considered -
+-----
+* Users can only select items available on the menu
+* Meal value resets on entering total to avoid duplicating total_cost
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
+Criteria met -
+-----
 * All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+* High [Test coverage]
+* The code is elegant: every class has a clear responsibility, methods are short etc. 
+* Code meets Rubocop guidelines
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
+What I've learnt - 
+-----
+* How to debug using PRY.
+* Using inspect to uncover what is inside a data type ( param data in this case) 
+* Singleton method
+* How to build a Sinatra application
 
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+How to run - 
+-----
+Program created in Ruby. Can be ran directly from terminal, or inside IRB. (Follow install steps - https://github.com/ruby/irb)
