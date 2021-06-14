@@ -10,7 +10,7 @@ I started coding the functionality of the classes that would be needed, such as 
 
 # Domain Modelling
 
-![Sequence Diagram]()
+![Sequence Diagram](https://raw.githubusercontent.com/frodri13/rps-challenge/master/img/rps-diagram.png)
 
 # User Stories
 
