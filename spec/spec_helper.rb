@@ -1,4 +1,3 @@
-require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
@@ -8,8 +7,18 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
-
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
+
+ENV['RACK_ENV'] = 'test'
+
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+# Setting up RSpec frame work
+
+require 'capybara'
+require 'capybara/rspec'
+require 'features/enter_p1_name_helper'
+
+Capybara.app = RPS
 
 RSpec.configure do |config|
   config.after(:suite) do
