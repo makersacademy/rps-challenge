@@ -24,41 +24,19 @@ Motivation --
 
 Applying my existing knowledge and adapting new concepts, such as MVC to setup a Sinatra application with a working interface that offers the user to play Rock, Paper Scissors against a computer player. This involved building out my views for the layout and front-end interface that I wanted the user to see. Creating my business logic inside of the model to include any back-end functionaltiy and finally the app.rb for the controller aspect of the application. 
 
-User Specification --
------
 
-We have a request from a client to write the software to design an application that allows users to order takeaway food. The user can view a menu to see all of the items and their prices. Once the user would like to select their meal they can use the takeaway program to order food, view their basket and view the order total. Here are the user stories that we worked out in collaboration with the client:
-
-```
-As a customer
-So that I can check if I want to order something
-I would like to see a list of dishes with prices
-
-As a customer
-So that I can order the meal I want
-I would like to be able to select some number of several available dishes
-
-As a customer
-So that I can verify that my order is correct
-I would like to check that the total I have been given matches the sum of the various dishes in my order
-
-As a customer
-So that I am reassured that my order will be delivered on time
-I would like to receive a text such as "Thank you! Your order was placed and will be delivered before 18:52" after I have ordered 
-```
 
 Process -
 -----
-To structure my design I first looked at extracting the messages and objects available from the user stories. Next I built out my design using wireframing and sequence diagrams to decide how I would be storing the menu and accessing the items and their prices. 
 
-I followed a TDD approach to build out my project. Making sure that each method was working before moving onto the next. 
+I started by creating some wire frame diagrams to get a visual idea of what I wanted to achieve. Once I was ready I started writing my feature tests to set out a plan before starting to build the routes in the app.rb file. I followed this test driven approach and started to eventually create my logic for the backend functionality.  
+Once the logic was setup and working inside the erb files I created singleton method to get rid of the global variables used earlier. Finally I added some CSS to tidy up my interface.
+
 
 Challenges - 
 -----
 
-Further challenges faced with RSpec. My next focus will be drilling down on Mocks, spies and doubles to help improve my tools available for TDD.
-
-Trying to access the takeaway menu inside of the Takeaway class and difficulties faced extracting the key / values to store inside the users basket.
+It took some time to properly build an understanding of how the different sections MVC were interconnected, due to this I ran into multiple nil method issues which took some time to de-bug. I eventually realised that the param wasn't returning what I expected and this stopped my program from returning the RPS results.
 
 Edge cases considered -
 -----
@@ -68,15 +46,16 @@ Edge cases considered -
 Criteria met -
 -----
 * All tests passing
-* High [Test coverage] (100.00%)
+* High [Test coverage]
 * The code is elegant: every class has a clear responsibility, methods are short etc. 
 * Code meets Rubocop guidelines
 
 What I've learnt - 
 -----
-* Dependency injection for methods from different classes
-* How to plan my desing using Domain Modelling
-* IRB to de-bug
+* How to debug using PRY.
+* Using inspect to uncover what is inside a data type ( param data in this case) 
+* Singleton method
+* How to build a Sinatra application
 
 How to run - 
 -----
