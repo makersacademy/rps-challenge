@@ -1,13 +1,17 @@
 <center>
-<h1> Welcome <%= @p1_name %>.</h1>
+<h1 style='color: blue'> Welcome <%= @p1_name %>.</h1>
 <br>
-<div>
-<h3>What move would you like to pick?</h3>
+<h2 style='color: Pink'>Basic Rules:</h2>
+Rock wins over Scissors, <br>
+Paper wins over Rock,<br>
+Scissors wins over Paper.
+<br>
+<br>
+<h3 style='color: blue'>Pick your choice of poison from below:</h3>
 
 <form action="/choice" method="get">
   <input type="submit" name="choices" value="Rock">
   <input type="submit" name="choices" value="Paper">
   <input type="submit" name="choices" value="Scissors">
 </form>
-</div>
 </center>
