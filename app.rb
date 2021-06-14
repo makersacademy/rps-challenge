@@ -1,5 +1,8 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require './lib/computer'
+require './lib/game'
+require './lib/player'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -27,6 +30,5 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
