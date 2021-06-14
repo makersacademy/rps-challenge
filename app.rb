@@ -30,7 +30,7 @@ class Tournament < Sinatra::Base
 	
 		case $result
 		when "This hand was a draw! Try again."
-			redirect '/play'
+			redirect '/draw'
 		when "#{@game.player_1.name} has won!"
 			redirect '/winner'
 		when "#{@game.player_1.name} has lost!"
@@ -45,7 +45,7 @@ class Tournament < Sinatra::Base
 
 		case $result
 		when "This hand was a draw! Try again."
-			redirect '/play'
+			redirect '/draw'
 		when "#{@game.player_1.name} has won!"
 			redirect '/winner'
 		when "#{@game.player_1.name} has lost!"
