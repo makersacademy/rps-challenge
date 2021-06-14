@@ -1,13 +1,5 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
 Task
 ----
 
@@ -27,59 +19,65 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Motivation --
+-----
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+Applying my existing knowledge and adapting new concepts, such as MVC to setup a Sinatra application with a working interface that offers the user to play Rock, Paper Scissors against a computer player. This involved building out my views for the layout and front-end interface that I wanted the user to see. Creating my business logic inside of the model to include any back-end functionaltiy and finally the app.rb for the controller aspect of the application. 
 
+User Specification --
+-----
 
-As usual please start by
+We have a request from a client to write the software to design an application that allows users to order takeaway food. The user can view a menu to see all of the items and their prices. Once the user would like to select their meal they can use the takeaway program to order food, view their basket and view the order total. Here are the user stories that we worked out in collaboration with the client:
 
-* Forking this repo
-* TEST driving development of your app
+```
+As a customer
+So that I can check if I want to order something
+I would like to see a list of dishes with prices
 
+As a customer
+So that I can order the meal I want
+I would like to be able to select some number of several available dishes
 
-## Bonus level 1: Multiplayer
+As a customer
+So that I can verify that my order is correct
+I would like to check that the total I have been given matches the sum of the various dishes in my order
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+As a customer
+So that I am reassured that my order will be delivered on time
+I would like to receive a text such as "Thank you! Your order was placed and will be delivered before 18:52" after I have ordered 
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+Process -
+-----
+To structure my design I first looked at extracting the messages and objects available from the user stories. Next I built out my design using wireframing and sequence diagrams to decide how I would be storing the menu and accessing the items and their prices. 
+
+I followed a TDD approach to build out my project. Making sure that each method was working before moving onto the next. 
+
+Challenges - 
+-----
+
+Further challenges faced with RSpec. My next focus will be drilling down on Mocks, spies and doubles to help improve my tools available for TDD.
+
+Trying to access the takeaway menu inside of the Takeaway class and difficulties faced extracting the key / values to store inside the users basket.
+
+Edge cases considered -
+-----
+* Users can only select items available on the menu
+* Meal value resets on entering total to avoid duplicating total_cost
+
+Criteria met -
+-----
+* All tests passing
+* High [Test coverage] (100.00%)
+* The code is elegant: every class has a clear responsibility, methods are short etc. 
+* Code meets Rubocop guidelines
+
+What I've learnt - 
+-----
+* Dependency injection for methods from different classes
+* How to plan my desing using Domain Modelling
+* IRB to de-bug
+
+How to run - 
+-----
+Program created in Ruby. Can be ran directly from terminal, or inside IRB. (Follow install steps - https://github.com/ruby/irb)

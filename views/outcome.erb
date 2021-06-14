@@ -9,13 +9,13 @@
 <h2><span><%="#{@game.player.name}"%></span> chooses <span><%= "#{@game.player.choice}"%></span>!</h2>
 <h2><span><%="#{@game.computer.name}"%></span> chooses <span><%= "#{@game.computer.choice}"%></span>!</h2> 
 <h2><%= "It's a #{@game.result}!"%></h2> 
-<% if @game.result == :win %>       
-<img src=”/images/rock.svg”>
-<% elsif @game.result == :loss %>
-display loss
- <% elsif @game.result == :draw %> 
-display draw
-<% end %>
+<%# <% if @game.result == :win %>       
+<%# <img src=”/images/rock.svg”>
+<% elsif @game.result == :loss %> 
+<%# display loss
+ <% elsif @game.result == :draw %>  
+<%# display draw
+<% end %> 
 <h2>Scores will be updated on the play screen.</h2>
 
 <br>
