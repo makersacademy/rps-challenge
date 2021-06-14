@@ -8,7 +8,9 @@ The whole application was written in Ruby and HTML, with RSpec for Unit Tests an
 
 I started coding the functionality of the classes that would be needed, such as 'game' and 'player' before I coded the view or controller aspect of it.
 
-# Diagrams
+# Domain Modelling
+
+![Sequence Diagram]()
 
 # User Stories
 
