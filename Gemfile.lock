@@ -93,7 +93,7 @@ DEPENDENCIES
   capybara
   rspec
   rubocop (= 0.79.0)
-  simplecov (= 0.21.2)
+  simplecov
   simplecov-console
   sinatra
   sinatra-contrib
