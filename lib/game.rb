@@ -1,7 +1,7 @@
 require_relative 'player'
 
 class Game
-	 attr_reader :player_1
+	 attr_reader :player_1, :r_move
 
 	 def initialize(player_1)
 		  @player_1 = player_1
@@ -28,10 +28,8 @@ class Game
 		 end
 	 end
 
-	private
-
 	 def rock_move
-		  r_move = robot
+		  @r_move = robot
 		case r_move
 		when "scissors"
 			 player_won
@@ -43,8 +41,8 @@ class Game
 	 end
 
 	 def paper_move
-		  r_move = robot
-		case r_move
+		  @r_move = robot
+		case @r_move
 		when "rock"
 			 player_won
 		when "scissors"
@@ -55,8 +53,8 @@ class Game
 	 end
 
 	 def scissors_move
-		  r_move = robot
-		case r_move
+		  @r_move = robot
+		case @r_move
 		when "paper"
 			 player_won
 		when "rock"
@@ -78,3 +76,5 @@ class Game
 	  	"#{player_1.name} has lost!"
 	 end
 end
+
+

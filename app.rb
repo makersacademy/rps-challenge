@@ -23,9 +23,64 @@ class Tournament < Sinatra::Base
 		erb(:play)
 	end
 
+	post '/rock' do
+		@game = $game
+		@game.player_1.move='rock'
+		$result = @game.hand
+	
+		case $result
+		when "This hand was a draw! Try again."
+			redirect '/play'
+		when "#{@game.player_1.name} has won!"
+			redirect '/winner'
+		when "#{@game.player_1.name} has lost!"
+			redirect '/loser'
+		end
+	end
+
+	post '/paper' do
+		@game = $game
+		@game.player_1.move='paper'
+		$result = @game.hand
+
+		case $result
+		when "This hand was a draw! Try again."
+			redirect '/play'
+		when "#{@game.player_1.name} has won!"
+			redirect '/winner'
+		when "#{@game.player_1.name} has lost!"
+			redirect '/loser'
+		end
+	end
+
+	post '/scissors' do
+		@game = $game
+		@game.player_1.move='scissors'
+		$result = @game.hand
+
+		case $result
+		when "This hand was a draw! Try again."
+			redirect '/draw'
+		when "#{@game.player_1.name} has won!"
+			redirect '/winner'
+		when "#{@game.player_1.name} has lost!"
+			redirect '/loser'
+		end
+	end
+
 	get '/winner' do
 		@game = $game
 		erb(:winner)
+	end
+
+	get '/loser' do
+		@game = $game
+		erb(:loser)
+	end
+
+	get '/draw' do
+		@game = $game
+		erb(:draw)
 	end
 
 	run if app_file == $0
