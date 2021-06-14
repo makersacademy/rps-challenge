@@ -1,4 +1,5 @@
 require 'capybara/rspec'
+# require 'codecov'
 require 'simplecov'
 require 'simplecov-console'
 require 'coveralls'
@@ -8,6 +9,9 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
 ])
 SimpleCov.start
+
+# SimpleCov.formatter = SimpleCov::Formatter::Codecov
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts

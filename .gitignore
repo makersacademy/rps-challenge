@@ -3,3 +3,8 @@
 
 # Local cache of Rubocop remote config
 .rubocop-*
+
+.rubocop.yml
+
+node_modules
+.coveralls.yml

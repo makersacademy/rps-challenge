@@ -55,7 +55,7 @@ Navigate to [localhost:9292](http://127.0.0.1:9292) in your browser.
 
 [Contents](#table-of-contents)
 
---------
+---
 
 ## Spec
 
@@ -63,10 +63,10 @@ Navigate to [localhost:9292](http://127.0.0.1:9292) in your browser.
 
 ##### Instructions
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+- Feel free to use google, your notes, books, etc. but work on your own
+- If you refer to the solution of another coach or student, please put a link to that in your README
+- If you have a partial solution, **still check in a partial solution**
+- You must submit a pull request to this repo with your code by 9am Monday morning
 
 ##### Task
 
@@ -94,12 +94,10 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
 As usual please start by
 
-* Forking this repo
-* TEST driving development of your app
-
+- Forking this repo
+- TEST driving development of your app
 
 ##### Bonus level 1: Multiplayer
 
@@ -119,11 +117,11 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 
 In code review we'll be hoping to see:
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+- All tests passing
+- High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
+- The code is elegant: every class has a clear responsibility, methods are short etc.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
+Reviewers will potentially be using this [code review rubric](docs/review.md). Referring to this rubric in advance may make the challenge somewhat easier. You should be the judge of how much challenge you want this at this moment.
 
 ##### Notes on test coverage
 
@@ -146,7 +144,7 @@ You can see your test coverage when you run your tests. If you want this in a gr
 
 [Contents](#table-of-contents)
 
---------
+---
 
 ## Play
 
@@ -168,11 +166,11 @@ https://jasonrowsell-rps-sinatra.herokuapp.com/
 
 [Contents](#table-of-contents)
 
---------
+---
 
 ## Design
 
-### Testing 
+### Testing
 
 Extensive testing and error checking was undertaken throughout the development process. I have broken the specs into unit and feature test suites to make it easier to navigate the tests.
 
@@ -183,22 +181,26 @@ Extensive testing and error checking was undertaken throughout the development p
 - Unit tests in isolation
 - Red Green Refactor loop
 
+### Test Coverage
+
+![Test Coverage](./public/images/test.png)
+
 ### Technologies Used
 
 I used the following technologies to create Rosstagram:
 
 - [Sinatra](http://sinatrarb.com/)
   - Used as the main framework for the application.
-- [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5) 
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
   - Used as the main language for the templates
-- [CSS3](https://developer.mozilla.org/en-US/docs/Archive/CSS3) 
+- [CSS3](https://developer.mozilla.org/en-US/docs/Archive/CSS3)
   - Used for the overall look of the site and player animations.
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
   - Used to aid site functionality.
-- [JQuery](https://jquery.com) 
+- [JQuery](https://jquery.com)
   - Used to simplify DOM manipulation.
 - [Git](https://git-scm.com/)
-  - Used for version control. 
+  - Used for version control.
 - [Heroku](https://www.heroku.com/)
   - Used to host the web app.
 - [RSpec](https://rspec.inof/)
@@ -207,7 +209,7 @@ I used the following technologies to create Rosstagram:
   - Used for functional tests that simulate how users would interact with the application.
 - [Selenium WebDriver](https://www.selenium.dev/)
   - Used to automate web-based application testing to verify that it performs expectedly.
-- [Google fonts](https://fonts.google.com/) 
+- [Google fonts](https://fonts.google.com/)
   - Used for website fonts.
 
 <div align="center">
