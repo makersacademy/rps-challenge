@@ -1,15 +1,24 @@
 RPS Challenge - Chuka Okoye
 ==================
 
-First user story completed, 100% coverage however having occuring RSpec error:
-```
-  1) Adding name Type name
-     Failure/Error: expect(page).to have_content "Welcome, Charlotte!"
-       expected to find text "Welcome, Charlotte!" in ""
-     # ./spec/features/name_spec.rb:5:in `block (2 levels) in <top (required)>'
+First user story completed, 100% coverage and passes RSpec feature test. 2nd user story not completed.
 
-```
-Website works so I am not sure what is wrong with the name_spec.rb
+Here is a screenshot of user story sequence diagram:
+![Screenshot](https://www.dropbox.com/s/bqbshe5ks6yjzza/Screenshot%202021-06-14%20at%2008.39.44.png?dl=0)
+
+I created multiple paths but struggled to combine the computer logic through links, the idea was the 'Rock, Paper, Scissors' links to be the players input and go against the computers randomisation, and another method for the outcome to be displayed whether the player won or lost.
+
+As shown below:
+
+-Add name to home screen
+![Screenshot](https://www.dropbox.com/s/bqbshe5ks6yjzza/Screenshot%202021-06-14%20at%2008.39.44.png?dl=0)
+
+-Name is recognised and welcomed
+![Screenshot](https://www.dropbox.com/s/bqbshe5ks6yjzza/Screenshot%202021-06-14%20at%2008.39.44.png?dl=0)
+
+-Clicking 'Scissors' leads to losing as computer chose 'Rock'
+![Screenshot](https://www.dropbox.com/s/fltwukluv5cw52a/Screenshot%202021-06-14%20at%2008.40.19.png?dl=0)
+
 
 How to run in terminal:
 
