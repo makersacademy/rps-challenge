@@ -19,10 +19,16 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    p @p1_name
     @p1_name = session[:p1_name]
+    p @p1_name
     erb(:play)
   end 
+
+  get '/choice' do
+    @choice = params[:choices]
+    p @choice
+    erb(:choices)
+  end
 
   run! if app_file == $0
 

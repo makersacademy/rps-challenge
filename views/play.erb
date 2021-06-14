@@ -1,7 +1,13 @@
 <center>
 <h1> Welcome <%= @p1_name %>.</h1>
-
+<br>
 <div>
 <h3>What move would you like to pick?</h3>
+
+<form action="/choice" method="get">
+  <input type="submit" name="choices" value="Rock">
+  <input type="submit" name="choices" value="Paper">
+  <input type="submit" name="choices" value="Scissors">
+</form>
 </div>
 </center>
