@@ -25,7 +25,7 @@ class Rps < Sinatra::Base
     game = Game.new
     @random = game.random
     @player_score = game.player_score
-    #@result1 = game.result1
+    # @result1 = game.result1
     
     erb :lose
   end

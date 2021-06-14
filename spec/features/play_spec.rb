@@ -21,5 +21,3 @@ feature 'Clicking RPS links' do
     end
   end
 end
-
-
