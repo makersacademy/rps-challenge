@@ -5,8 +5,6 @@ describe Player do
 
   it 'can submit name' do
     expect(player.player_name).to eq ('Jenny')
-    player.player_name = 'Claire'
-    expect(player.player_name).to eq ('Claire')
   end
 
   it 'can choose : Rock, Paper, Scissors' do
