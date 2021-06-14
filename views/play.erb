@@ -1,4 +1,5 @@
-<h2>Pick Rock, Paper or Scissors!</h2>
+<h2>Hello <%= @player.name %>!</h2> 
+<h3>Pick Rock, Paper or Scissors</h3>
 <form action="/play" method="post">
   <input type="radio" id="rock" name="turn" value="rock">
   <label for="rock">Rock</label>
@@ -11,3 +12,7 @@
   <br>
   <input type="submit" value="Submit" style="margin-top: 10px;">
 </form>
+
+You chose: <%= @player_turn %>
+<br>
+CPU chose: <%= @cpu_turn%>
