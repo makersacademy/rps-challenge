@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rock Paper Scissors</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="play.css" />
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <h1>Rock, Paper, Scissors</h1>
+
+      <h2>Your weapon is <%= @game.player.weapon %></h2>
+
+      <div class="player">
+        <div class="userchoice Rock"></div>
+        <p><%= @game.player.name.capitalize %></p>
+        <div class="playerscore">Score: <%= @game.player.points %></div>
+      </div>
+
+      <div class="player">
+        <div class="computerchoice Rock"></div>
+        <p>Computer</p>
+        <p class="computerscore">Score: <%= @game.computer.points %></p>
+      </div>
+
+      <div class="result" id="result"></div>
+
+      <button id="start" class="startbutton">Play</button>
+      <div class="retry"></div>
+      <footer>
+        <p>
+          Jason Rowsell<br />
+          <a href="https://github.com/jasonrowsell">Github</a>
+        </p>
+      </footer>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script>
+      (function () {
+        // configure variables needed to access DOM elements
+
+        var user = document.querySelector(".userchoice"),
+          computer = document.querySelector(".computerchoice"),
+          startbutton = document.querySelector(".startbutton"),
+          result = document.querySelector(".result"),
+          userchoice = <%= @game.player.weapon.to_json %>,
+          userscore = document.querySelector(".playerscore"),
+          computerscore = document.querySelector(".computerscore");
+
+        // listens for click on 'play' button to start game
+
+        startbutton.addEventListener("click", function () {
+          this.disabled = true;
+          result.innerHTML = "";
+          user.className = "userchoice Rock count-in";
+          computer.className = "computerchoice Rock count-in";
+        });
+
+        // listens for animation end to return result
+
+        document.addEventListener("animationend", function () {
+          var computerchoice = <%= @game.computer.rand_weapon.to_json %>;
+          user.className = "userchoice " + userchoice;
+          computer.className = "computerchoice " + computerchoice;
+          result.innerHTML = <%= @game.check_winner.to_json %>;
+          userscore.innerHTML = "Score: " + <%= (@game.player_points).to_json %>;
+          computerscore.innerHTML = "Score: " + <%= (@game.computer_points).to_json %>;
+          document.getElementById('start').remove();
+          playAgain();
+        });
+
+        // creates play again button
+
+        function playAgain() {
+          var form = $("<form/>",
+                 { action:'/choice' }
+            );
+          form.append(
+              $("<button type='submit', class='startbutton'>Play Again</button>")
+          );
+          $('.retry').append(form);
+        }
+      })();
+    </script>
+  </body>
+</html>
