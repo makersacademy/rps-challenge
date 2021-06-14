@@ -2,11 +2,14 @@ require 'game'
 
 describe Game do
   let(:player_turn) { double(:player_turn) }
-  let(:cpu_turn) { double(:cpu_turn) }
-  subject(:game) { described_class.new(player_turn, cpu_turn) }
+  subject(:game) { described_class.new(player_turn) }
 
-  it 'accepts player turn and cpu turn as a string' do
+  it 'accepts player turn as a string' do
     expect(game.player_turn).to eq(player_turn)
-    expect(game.cpu_turn).to eq(cpu_turn)
+  end
+
+  it 'picks a random RPS string' do
+    allow(game).to receive(:cpu_turn).and_return('rock')
+    expect(game.cpu_turn).to eq('rock')
   end
 end

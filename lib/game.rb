@@ -1,9 +1,9 @@
 class Game 
   attr_reader :player_turn, :cpu_turn
 
-  def initialize(player_turn, cpu_turn)
+  def initialize(player_turn)
+    @rps_array = ['rock', 'paper', 'scissors']
     p @player_turn = player_turn
-    @cpu_turn = cpu_turn
   end
 
   def who_won
@@ -25,9 +25,10 @@ class Game
   def cpu_won
 
   end
-
-
   
+  def cpu_turn
+    @rps_array.sample
+  end
     # def player
     #   @players.first
     # end
@@ -36,9 +37,6 @@ class Game
     #   @players.last
     # end
   
-    # def cpu_turn
-    #   rps_array.sample
-    # end
   
     # def switch_turns
     #   @current_turn == player ? @current_turn = cpu : @current_turn = player
