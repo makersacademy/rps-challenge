@@ -1,0 +1,14 @@
+<h2>Hello <%= @player.name %>!</h2> 
+<h3>Pick Rock, Paper or Scissors</h3>
+<form action="/play" method="post">
+  <input type="radio" id="rock" name="turn" value="rock">
+  <label for="rock">Rock</label>
+  <br>
+  <input type="radio" id="paper" name="turn" value="paper">
+  <label for="paper">Paper</label>
+  <br>
+  <input type="radio" id="scissors" name="turn" value="scissors">
+  <label for="scissors">Scissors</label>
+  <br>
+  <input type="submit" value="Submit" style="margin-top: 10px;">
+</form>
