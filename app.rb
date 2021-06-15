@@ -22,17 +22,26 @@ class Rps < Sinatra::Base
   get '/play' do
     @player = $player
     @player_turn = session[:player_turn]
-    @cpu_turn = 'rock'
-    session[:cpu_turn]
+    @cpu_turn = session[:cpu_turn]
     erb(:play)
   end
 
   post '/play' do
     session[:player_turn] = params[:turn]
-    @game = Game.new(params[:turn])
-    session[:cpu_turn] = @game.cpu_turn
-    # @game = Game.new(params[:turn], randomPick)
-    # @game.who_won
+    game = Game.new(params[:turn])
+    session[:cpu_turn] = game.cpu_turn
+    session[:result] = game.who_won
+    redirect '/result'
+  end
+
+  get '/result' do
+    session[:result]
+    session[:player_turn]
+    session[:cpu_turn]
+    erb(:result)
+  end
+
+  post '/result' do
     redirect '/play'
   end
 

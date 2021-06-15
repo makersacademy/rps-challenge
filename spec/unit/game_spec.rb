@@ -9,7 +9,12 @@ describe Game do
   end
 
   it 'picks a random RPS string' do
-    allow(game).to receive(:cpu_turn).and_return('rock')
-    expect(game.cpu_turn).to eq('rock')
+    allow(game).to receive(:cpu_turn).and_return('Rock')
+    expect(game.cpu_turn).to eq('Rock')
+  end
+
+  it 'determines who won' do
+    allow(game).to receive(:cpu_turn).and_return('Rock')
+    expect(game.who_won).to eq('You lost, better luck next time!')
   end
 end
