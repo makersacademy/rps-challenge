@@ -26,7 +26,7 @@ class RPS < Sinatra::Base
 
   post '/play' do
     session[:choice] = params[:choice]
-    session[:computer_choice] = Computer.new
+    session[:computer_choice] = Computer.new.computer_choice
     redirect '/play'
   end
 
