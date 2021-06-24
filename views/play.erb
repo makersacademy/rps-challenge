@@ -1,0 +1,22 @@
+<h1>Hello <%= @player_name%></h1>
+<h2>Rock, Paper, Scissors - you choose :) <h2>
+
+<form action="/play" method="post">
+  <label for="choice">
+    <input type="text" name= "choice">
+  </label>
+  <input type="submit" value="Submit">
+</form>
+
+<p> * You chose <%= @choice%>! </p>
+
+<p> * Computer chose <%= @computer_choice %>!</p>
+
+
+<% if @choice == @computer_choice%>
+Result: Draw!
+<% elsif { 'Scissors' => 'Paper', 'Paper' => 'Rock', 'Rock' => 'Scissors' }[@choice] == @computer_choice%>
+Result: You won!
+<% else%>
+Result: You lost!
+<%end%> 
