@@ -36,9 +36,4 @@ The following are modifications that could have been implemented with more time:
 - Upgrade the game to include Lizard and Spock options
 - Improve the (currently very basic) user interface 
 
-
-Original readme:
-
-# RPS Challenge
-
 Original README [here]
