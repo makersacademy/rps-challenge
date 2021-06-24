@@ -1,13 +1,12 @@
 require 'spec_helper'
 
-
- feature 'Playing game' do
-  
+feature 'Playing game' do
+ 
   before do
     visit('/')
     fill_in :player_name, with: 'Jenny'
     click_button 'Submit'
-   end
+  end
 
   scenario 'See options: Rock, Paper, Scissors' do
     expect(page).to have_content 'Rock'
@@ -25,4 +24,3 @@ require 'spec_helper'
     expect(page).to have_content 'Result:'
   end
 end
-
