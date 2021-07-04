@@ -1,5 +1,7 @@
 # RPS Challenge
 
+Play a quick round of Rock Paper Scissors with your device [here](https://rpsgamechallenge.herokuapp.com/)
+
 ## Stories Completed
 - [x] User Story 1: "As a marketeer, So that I can see my name in lights,
 I would like to register my name before playing an online game"
