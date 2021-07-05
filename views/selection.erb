@@ -1,0 +1,11 @@
+<%= @player_1_name %> vs. <%= @player_2_name %>
+<br />
+<br />
+<h3>Enter 'rock', 'paper' or 'scissors'</h3>
+<br />
+<%= @player_1_name %>'s move
+<form action="/assign_move1" method="post">
+<label for="player_1_move">
+  <input type="text" name="player_1_move">
+</label>
+</form>
