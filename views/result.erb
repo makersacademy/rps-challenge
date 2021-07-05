@@ -1,0 +1,34 @@
+<div style="text-align:center; margin-top: 20%; margin-bottom: 20%">
+<% if @game.result == true %>
+
+<h1>
+<%=@game.player_move%>!<br><br>
+
+And the AI threw <%=@game.ai_move%>.<br><br>
+
+<%=@game.player.name%> wins!<br>
+<%=@game.instance[0]%> beats <%=@game.instance[1]%>!
+</h1>
+
+<% elsif @game.result == "draw" %>
+
+<h1>
+<%=@game.player_move%>!<br><br>
+
+... Huh. The AI also threw <%=@game.ai_move%>. Awkward.<br><br>
+
+It's a draw. Run it again!
+</h1>
+
+<% else %>
+
+<h1>
+<%=@game.player_move%>!<br><br>
+
+And the AI threw <%=@game.ai_move%>.<br><br>
+
+The AI Gestalt is victorious. We are doomed.<br>
+<%=@game.instance[1]%> beats <%=@game.instance[0]%>!
+</h1>
+
+<%end%>
