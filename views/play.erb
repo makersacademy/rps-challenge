@@ -1,0 +1,40 @@
+<style>
+ body {
+   background-image: url("https://www.sciencealert.com/images/articles/processed/RockPaper_web_1024.jpg");
+         background-repeat:no-repeat;
+        background-size:fit;
+ } 
+ p {
+   font: bold 20px arial, sans-serif;
+   text-align: center;
+   color : white;
+ }
+ form {
+   font: bold 20px arial, sans-serif;
+   text-align: center;
+   color : white;
+ }
+ </style>
+ <p>
+<%= @turn.player_name %>
+</p>
+<form method="POST" action="/play">
+  <input type="submit" name="shape" value="Rock" />
+  <input type="submit" name="shape" value="Paper" />
+  <input type="submit" name="shape" value="Scissors" />
+  </form>
+  <p>
+  You chose <%= @turn.player_shape.to_s.capitalize %>!
+</p>
+
+  <div id="opponent"><p>
+    Opponent chose <%= @turn.opponent_shape.to_s.capitalize %>!</p>
+  </div>
+
+  <% if @turn.win? %>
+  <p>You win!</p>
+  <% elsif @turn.lose? %>
+  <p>You lose!</p>
+  <% elsif @turn.draw? %>
+  <p>You draw!</p>
+  <% end %>

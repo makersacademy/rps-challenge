@@ -83,3 +83,8 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+______
+Barri's comment: I started the RPS by myself.
+Halfway through got distracted by working on html and css instead of coding the  challenge.
+So I followed the walkthrough and that's why my code has changed .
+I will finish the last Error during the week 4.
