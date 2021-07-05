@@ -1,0 +1,18 @@
+You chose: <%= @user_choice %><br>
+
+
+<% if @random_choice == "Rock" %>
+Computer chose: Rock
+<% elsif @random_choice == "Paper" %>
+Computer chose: Paper
+<% elsif @random_choice == "Scissors" %>
+Computer chose: Scissors
+<% end %><br><br>
+
+<% if @winner == "Human" %>
+Human wins!
+<% elsif @winner == "Computer" %>
+Computer wins!
+<% elsif @winner == "Draw" %>
+It's a draw!
+<% end %>
