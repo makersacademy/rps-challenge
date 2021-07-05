@@ -1,0 +1,23 @@
+<style>
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: violet;
+  text-align: center;
+}
+
+h2 {
+  color: violet;
+  text-align: center;
+}
+</style>
+<h2><%= @player.name %> has chosen <%= @player.move %></h2>
+<h2><%= @computer.name %> has chosen <%= @computer.move %></h2>
+
+<% if @game.winner? == 'Draw' %>
+ <h1> It's a draw! </h1>
+<% else %>
+ <h1><%= "#{@game.winner?} wins!" %></h1>
+<% end %>

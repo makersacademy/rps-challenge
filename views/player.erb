@@ -1,0 +1,29 @@
+<style>
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: violet;
+  text-align: center;
+}
+
+h2 {
+  color: violet;
+  text-align: center;
+}
+h3 {
+  color: violet;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+</style>
+<h1>Welcome to Makers Marketers RPS</h1>
+<h2>Players:</h2>
+<h3><%= @player_1 %> vs The Computer</h3>
+<form action="/start" method="post">
+    <input type="submit" value="Play!">
+</form>
