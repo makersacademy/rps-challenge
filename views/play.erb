@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+    <body>
+      <h2><p class="glow"><%= @game.player.name %></p></h2>
+      <h2><p><%= @game.player.name %>, pick an option.</p>
+      <p>Rock, paper or scissors?</p></h2>
+
+         <form action="/game" method="post">
+           <p>
+             <p><center><button class="button" type="submit" name="item" value="rock" id="rock-button">Rock</button></center></p>
+             <p><center><button class="button" type="submit" name="item" value="paper" id="paper-button">Paper</button></center></p>
+             <p><center><button class="button" type="submit" name="item" value="scissors" id="scissors-button">Scissors</button></center></p>
+           </p>
+         </form>
+   </body>
+</html>

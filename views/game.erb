@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="/style.css">
+</head>
+  <body>
+    <center>
+      <h1><p><%= @game.player.name %> selected <%= @game.player.chosen_item.to_s.capitalize %>.</p><h1>
+      <h1><p>Computer selected <%= @game.computer.computer_turn.to_s.capitalize %>.<p><h1>
+
+      <p class="flashit"><%= @game.result %><p>
+    </center>
+  </body>
+</html>
