@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: #495867
+
+  }
+
+  .button {
+    background-color: #A1C6EA;
+    border: none;
+    color: white;
+    padding: 64px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+
+  .button1 {width: 250px;}
+
+  .button1 {border-radius: 8px;}
+
+  .button1 {
+    background-color: #BDD5EA;
+    color: #495867;
+    border: 2px solid #495867;
+  }
+
+  .button1:hover {
+    background-color: #507DBC;
+    color: #BBD1EA;
+  }
+
+  h1 {
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #BBD1EA;
+  }
+
+  h2 {
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #BBD1EA;
+  }
+
+</style>
+</head>
+<BODY>
+  <center>
+    <h1>Prepare for glorious combat</h1>
+    <div></div>
+    <h2><%= @name %> vs. HAL</h2>
+    <form action="/choice" method="post">
+      <button type="submit" name="choice" value="Rock" class="button button1">Rock</button>
+      <button type="submit" name="choice" value="Paper" class="button button1">Paper</button>
+      <button type="submit" name="choice" value="Scissors" class="button button1">Scissors</button>
+    </form>
+    <h2>Fear is a reflex.</h2>
+    <h2>Courage is a choice.</h2>
+  </center>
+
+</BODY>
+</html>
