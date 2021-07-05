@@ -1,0 +1,20 @@
+<h2>Welcome <%=@game.player_1.name%> to Rock, Paper, Scissors!</h2>
+
+<body>
+Choose below <%=@game.player_1.name%>
+<br>
+<br>
+
+<form action='/play/rock' method='post'>
+<div><input type='submit' value ='Rock'></div>
+</form>
+
+<form action='/play/paper' method='post'>
+<div><input type='submit' value ='Paper'></div>
+</form>
+
+<form action='/play/scissors' method='post'>
+<div><input type='submit' value ='Scissors'></div>
+</form>
+
+</body>

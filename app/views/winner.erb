@@ -1,0 +1,14 @@
+<p>You choose: <%= @game.player_move.capitalize %></p>
+<p>Computer choose: <%= @game.computer_move.capitalize %></p>
+
+<% if @game.winner == @game.player_1.name %>
+<p><%=@game.player_1.name%> wins!</p>
+<% elsif @game.winner == "Computer" %>
+<p>Computer wins!</p>
+<% else %>
+<p> It's a draw! </p>
+<% end %>
+
+<form action='/play' method='get'>
+<input type='submit' value ='Play Again'>
+</form>
