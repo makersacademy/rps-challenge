@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK, PAPER, SCISSORS</title>
+    <link href="<%= url('/stylesheet.css') %>" rel="stylesheet" type="text/css" />
+    <link href="<%= url('/fontawesome/css/all.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="grad1">
+    
+    <div class="row">
+        <div class="col-6 centre vs">
+            <h2><%= @player1.name %></h2>
+            <h3>Score: <%= @player1.score %></h3>
+            <h4>
+                <p><%= @player1.move %></p>  
+            </h4>
+            <form action="/move_p1" method="post">
+                <button type="submit" value="Rock" name="player1move" id="p1_rock" class="btn"><i class="fas fa-hand-rock"></i></button>
+                <button type="submit" value="Paper" name="player1move" id="p1_paper"  class="btn"><i class="fas fa-hand-paper"></i></button>
+                <button type="submit" value="Scissors" name="player1move" id="p1_scissors" class="btn"><i class="fas fa-hand-scissors"></i></button>
+            </form>
+            
+        </div>
+        <div class="col-6 centre">
+            <%if @player2 == nil %>
+
+                <h2>Computer</h2>
+                <h3>Score: <%= @computer.score %></h3>
+                <h4>
+                    <p> <%= @computer_move %></p>  
+                </h4>
+            <% else %>
+                <h2><%= @player2.name %></h2>
+                <h3>Score: <%= @player2.score %></h3>
+                <h4>
+                    <p><%= @player2.move %></p>  
+                </h4>
+                <form action="/move_p2" method="post">
+                    <button type="submit" value="Rock" name="player2move" id="p2_rock" class="btn"><i class="fas fa-hand-rock"></i></button>
+                    <button type="submit" value="Paper" name="player2move" id="p2_paper" class="btn"><i class="fas fa-hand-paper"></i></button>
+                    <button type="submit" value="Scissors" name="player2move" id="p2_scissors" class="btn"><i class="fas fa-hand-scissors"></i></button>
+                </form>
+            <% end %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 centre">
+           <h5><%= @winner %></h5>
+        </div>
+    </div>
+    
+   
+</body>
+</html>
