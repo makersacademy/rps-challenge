@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="css/game.css">
+
+<body>
+
+  <div class='content'>
+    <p id='welcome'> Welcome to the game <%= @player_name %> </p>
+    <p id='rules'> Rules are easy, choose a move </p>
+
+    <div id='div-img'>
+      <img id='rules-img' src='https://media.istockphoto.com/vectors/hand-game-rock-paper-scissors-gesture-illustration-in-line-art-style-vector-id1192471814?k=6&m=1192471814&s=612x612&w=0&h=0qUB0bJUr2Tz2fbx8AZvvr0Dodq8c0282xtbvKayuQI=' alt='rules'>
+    </div>
+
+    <br>
+
+    <form action='/choice' method='post'>
+      <input id='rock' type='submit' name='choice' value='Rock'>
+      <input id='paper' type='submit' name='choice' value='Paper'>
+      <input id='scissors' type='submit' name='choice' value='Scissors'>
+    </form>
+  </div>
+
+</body>
