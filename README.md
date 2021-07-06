@@ -1,3 +1,6 @@
+Ed's questions - what's the difference in scope between a required class and a global variable?
+
+
 # RPS Challenge
 
 Instructions
