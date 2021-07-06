@@ -1,0 +1,23 @@
+Let's play <%= @turn.player_1_name %>!
+<br>
+<br>
+<form action="/play" method="post">
+  <input type="submit" name="player_1_move" value="Rock">
+  <input type="submit" name="player_1_move" value="Paper">
+  <input type="submit" name="player_1_move" value="Scissors">
+</form>
+
+You chose <%= @turn.player_1_move %>!
+<br>
+<br>
+<div id="opponent">
+  Opponent chose <%= @turn.opponent_move %>!
+</div>
+<br>
+<% if @turn.win? %>
+  You win!
+<% elsif @turn.lose? %>
+  You lose!
+<% elsif @turn.draw? %>
+  You draw!
+<% end %>
