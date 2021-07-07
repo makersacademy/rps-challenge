@@ -1,0 +1,19 @@
+<h1>Result</h1>
+
+<% if @game.winner.nil? %>
+  <p>It's a tie!</p>
+<% else %>
+  <p><%= @game.winner.name %> wins! <%= @game.loser.name %> loses!</p>
+  <br>
+  <%= @game.winner.name %>: <%= @game.winner.choice %>
+  <br>
+  <%= @game.loser.name %>: <%= @game.loser.choice %>
+<% end %>
+
+<% @game.reset %>
+
+<br>
+<br>
+<a href="http://localhost:9292/rock_paper_scissors">New round</a>
+<br>
+<a href="http://localhost:9292/">New game</a>

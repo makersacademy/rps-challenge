@@ -1,0 +1,16 @@
+<p><%= @game.current_player.name %>, please select rock, paper or scissors</p>
+
+<form action="/choice_selected" method="post">
+  <input type="hidden" name="choice" value="rock">
+  <input type="submit" value="rock">
+</form>
+
+<form action="/choice_selected" method="post">
+  <input type="hidden" name="choice" value="paper">
+  <input type="submit" value="paper">
+</form>
+
+<form action="/choice_selected" method="post">
+  <input type="hidden" name="choice" value="scissors">
+  <input type="submit" value="scissors">
+</form>
