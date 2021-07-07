@@ -1,0 +1,15 @@
+<h1>Welcome <%=@name.name%>! </h1>
+
+<!-- <a href="/game">Scissors</a> -->
+
+<!-- <form action="/game" method="get">
+  <button type="submit" name="Scissors">Scissors</button>
+  <button type="submit" name="Scissors">Scissors</button>
+  <button type="submit" name="Scissors">Scissors</button>
+</form> -->
+<form method="POST" action="/game">
+  <input type="submit" name='choice' value="Scissors" ><!-- <form method="POST" action="/game"> -->
+  <input type="submit" name='choice' value="Rock" >
+<!-- <form method="POST" action="/game"> -->
+  <input type="submit" name='choice' value="Paper" >
+</form>

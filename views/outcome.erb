@@ -1,0 +1,9 @@
+
+
+<h1><%=@name.outcome%></h1>
+<p>Your choice: <%=@name.user_choice%></p>
+<p>computer's choice: <%=@name.computer_choice%></p>
+
+<form method="get" action="/play-again">
+  <input type="submit" name="submit" value="Play again?" />
+</form>
