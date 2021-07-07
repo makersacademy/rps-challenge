@@ -1,0 +1,31 @@
+<div class="game">
+<h3>Now it's time to play <%= @player_name %> !</h3>
+
+
+<div>
+<form action="/choose" method="post">
+<label for=text>Rock
+<input type="radio" name="option" value="rock" id="rock">
+<label>
+
+<label for=text>Paper
+<input type="radio" name="option" value="paper" id="paper">
+<label>
+
+<label for=text>Scissors
+<input type="radio" name="option" value="scissors" id="scissors">
+<label>
+
+<input type="submit" value="Go">
+</form>
+</div>
+
+</div>
+
+<style>
+.game{
+margin: auto;
+width: 50%;
+padding: 10px;
+}
+</style>

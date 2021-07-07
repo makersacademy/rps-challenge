@@ -1,0 +1,29 @@
+<div class="game">
+<p>You chose <%= @move %></p>
+<p>Your opponent's move: <%= @opponent_move %></p>
+<div>
+<h3>Results: 
+<% if @opponent_move == @move %>
+It's a draw!
+<% elsif @move == "scissors" && @opponent_move == "paper" ||
+    @move == "rock" && @opponent_move == "scissors" ||
+    @opponent_move == "rock" && @move == "paper" %> 
+You won!
+<% else %>
+You lost!
+<% end %>
+</h3>
+
+
+</div>
+</div>
+
+<style>
+.game{
+margin: auto;
+width: 50%;
+padding: 10px;
+}
+</style>
+
+ 
