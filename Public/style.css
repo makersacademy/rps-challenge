@@ -1,0 +1,152 @@
+body
+{
+    background-color: #F5B098;
+    font-family: 'Gaegu', cursive;
+    color: #7c3c21;
+}
+
+
+.title {
+  z-index: 1;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* font-family: 'Amatic SC', cursive; */
+  font-family: 'Gaegu', cursive;
+  margin-bottom: 0;
+  color: #7c3c21;
+  font-size: 4.62rem;
+  text-align: center;
+}
+
+.name-title {
+  z-index: 1;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* font-family: 'Amatic SC', cursive; */
+  font-family: 'Gaegu', cursive;
+  margin-bottom: 0;
+  color: #7c3c21;
+  font-size: 4.62rem;
+  text-align: center;
+}
+
+h2
+{
+  z-index: 1;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.8rem;
+  text-align: center;
+
+}
+
+.player-choice {
+  position: absolute;
+  width: 50%;
+  margin-left: 340px;
+  margin-top: 195px;
+  }
+
+.play-link {
+  position: absolute;
+  text-decoration: none;
+  bottom: 13%;
+  left: 46%;
+  font-size:60px;
+  color: #7c3c21;
+  font-family: 'Gaegu', cursive;
+}
+.play-link:hover {
+  text-decoration: none;
+	color: white;
+}
+
+.play-link-2 {
+  text-decoration: none;
+  bottom: 15%;
+  left: 70%;
+  font-size:25px;
+  color: #BB4A16;
+  /* color: #7c3c21; */
+  font-family: 'Gaegu', cursive;
+}
+
+.button {
+  text-decoration: none;
+  bottom: 15%;
+  left: 70%;
+  font-size:25px;
+  color: #7c3c21;
+  font-family: 'Gaegu', cursive;
+}
+
+.background {
+  width: 100%;
+  z-index: 0;
+}
+
+
+.form {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+.rock-link {
+  position: absolute;
+  text-decoration: none;
+  bottom: 19%;
+  left: 32%;
+  font-size:60px;
+  color: white;
+}
+
+.rock-link:hover {
+  text-decoration: none;
+	color: #7c3c21;
+}
+
+.paper-link {
+  position: absolute;
+  text-decoration: none;
+  bottom: 19%;
+  left: 45%;
+  font-size:60px;
+  color: white;
+}
+
+.paper-link:hover {
+  text-decoration: none;
+	color: #7c3c21;
+}
+
+
+.scissor-link {
+  position: absolute;
+  text-decoration: none;
+  bottom: 19%;
+  left: 58%;
+  font-size:60px;
+  color: white;
+}
+
+.scissor-link:hover {
+  text-decoration: none;
+	color: #7c3c21;
+}
+
+/* .final_page { */
+  /* position: absolute; */
+  /* width: 40%;
+  margin-left: 340px;
+  margin-top: 20%; */
+/* } */
