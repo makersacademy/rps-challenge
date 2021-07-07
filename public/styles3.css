@@ -1,0 +1,24 @@
+body {
+  background-image: url("https://i.pinimg.com/originals/1d/02/27/1d0227678f04e0ce5e8b7048746264c5.jpg");
+  background-position: left 13px; 
+  margin-top: 340px;
+}
+
+h1 { 
+  text-align: center;
+  color: cornsilk;
+  }
+  
+  h2 { 
+    text-align: center;
+    color: cornsilk;
+  }
+  
+  form { 
+  text-align: center;
+  color: cornsilk;
+  }
+  
+  label {
+    color: cornsilk;
+  }

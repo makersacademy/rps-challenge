@@ -1,0 +1,24 @@
+body {
+  background-image: url("https://cdn.clipart.email/fe10d67c76146309b8b2dcf3ecd2a6c9_rock-paper-scissors-clipart_640-400.png");
+  background-position: left 13px; 
+  margin-top: 340px;
+}
+
+h1 { 
+  text-align: center;
+  color: black;
+  }
+  
+  h2 { 
+    text-align: center;
+    color: black;
+  }
+  
+  form { 
+  text-align: center;
+  color: black;
+  }
+  
+  label {
+  color: black;
+  }

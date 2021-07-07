@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<link rel='stylesheet' type='text/css' href='styles3.css'>
+<div class = "main"> 
+
+<h1>Hello <%=@turn.player_name.capitalize%>, welcome to Rock paper scissors.</h1>
+<h1>Choose one of the three shapes.</h1>
+
+<form method="POST" action="/play">
+  <input type="submit" name="shape" value="Rock"/>
+  <input type="submit" name="shape" value="Paper"/>
+  <input type="submit" name="shape" value="Scissors"/>
+</form>
+
+<h2>Your move is: <%=@turn.player_shape%></h2>
+
+<div id="Opponent">
+<h2><br>Opponent chose: <%=@turn.opponents_shape.to_s.capitalize%><br></h2>
+</div>
+
+  </div>
+</form>
+</body>
+</html>
