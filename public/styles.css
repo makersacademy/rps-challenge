@@ -1,0 +1,92 @@
+.button {
+  background-color: lightgreen;
+  border: none;
+  font-size: 16px;
+  width: 90px;
+  height: 90px;
+  padding: 32px 16px;
+  font-family: futura;
+  border-radius: 50%;
+  box-shadow: 0 9px #999;
+}
+.button:hover {
+  background-color: #a82a2a;
+}
+.button:active {
+  background-color: #90EE90;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.header {
+  background-color: linen;
+  background-image: url("https://i.ytimg.com/vi/T_ZvWkMgVFM/maxresdefault.jpg") 100% 100% no-repeat;
+  border: solid black;
+  height: 20%;
+}
+
+.header_two {
+  background-color: lightblue;
+  border: solid black;
+  height: 10%;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+/* Top left text */
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+/* Top right text */
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("https://i.imgur.com/go86K5Y.gif?noredirect");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

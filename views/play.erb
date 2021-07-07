@@ -1,0 +1,64 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class='bg' background="https://i.imgur.com/go86K5Y.gif?noredirect" height='100%' width="100%" margin='0'>
+
+<center>
+  <h1 class='header'>
+    <%= @game.player_one.name %> VS RPS
+    <img src='https://ksr-ugc.imgix.net/assets/001/057/549/5ca7f2d6c2e946024b8fad44c85e654d_original.jpg?ixlib=rb-1.1.0&w=680&fit=max&v=1381479586&auto=format&gif-q=50&q=92&s=6abb0fb3956cbe88651ab861db9df8aa' height='70%' width='95%' >
+  </h1>
+</center>
+
+<div class="container" style='float: left; border:5px solid black;'>
+  <img src='https://uploads.disquscdn.com/images/d151788cd04ad2fe888570798af5c4ac644a5eb541c43c26f427a13007b0e28f.gif' width="400px">
+  <div class="bottom-left"> Name: <%= @game.player_one.name %> </div>
+  <div class="bottom-right"> HP: <%= @game.player_one.hp %> </div>
+</div>
+<div class="container" style='float: right; border:5px solid black;'>
+  <img src='https://uploads.disquscdn.com/images/d151788cd04ad2fe888570798af5c4ac644a5eb541c43c26f427a13007b0e28f.gif' width="400px">
+  <div class="bottom-left"> Name: <%= @game.player_two.name %> </div>
+  <div class="bottom-right"> HP: <%= @game.player_two.hp %> </div>
+</div>
+
+  <div>
+    <% if "Rock" == @player_choice %>
+    <img src='https://cdn4.vectorstock.com/i/1000x1000/17/73/punching-fist-hand-vector-10801773.jpg' height='100px' width='100px'>
+    <% elsif @player_choice == "Paper" %>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/5/58/Shuto.png' >
+    <% elsif @player_choice == "Scissors" %>
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD74tD-AsevPmG1F8-I0cZHeQWuo3O_PePJq-L75YrTNdhEuR5' >
+    <% elsif @player_choice == "Lizard" %>
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZMiUoiGAznH9x6lBBCEwpDZehF5DzS5MNhBDjFSU04ZDF1DIBiQ' >
+    <% elsif @player_choice == "Spock" %>
+    <img src='https://i.pinimg.com/originals/ef/72/ee/ef72eea802c63ecab6f40b5d051276ab.png' >
+    <% else %>
+    <% end %>
+  </div>
+
+
+
+
+<center>
+  <form action = "/play" method = "post">
+    <div>
+      <button class="button" type='submit' name="choice" value='Rock'>Rock</button>
+    </div>
+    <div>
+      <button class="button" type='submit' name="choice"  value='Paper'>Paper</button>
+      &emsp;
+      &emsp;
+      &emsp;
+      &emsp;
+      <button class="button" type='submit' name="choice" value='Scissors'>Scissors</button>
+    </div>
+    &emsp;
+    <div>
+      <button class="button" type='submit' name="choice" value='Lizard'>Lizard</button>
+      &emsp;
+      <button class="button" type='submit' name="choice" value='Spock'>Spock</button>
+    </div>
+  </form>
+</center>
