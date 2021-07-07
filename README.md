@@ -170,7 +170,7 @@ https://jasonrowsell-rps-sinatra.herokuapp.com/
 
 ## Design
 
-### Testing
+### Testing
 
 Extensive testing and error checking was undertaken throughout the development process. I have broken the specs into unit and feature test suites to make it easier to navigate the tests.
 
