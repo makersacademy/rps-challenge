@@ -83,3 +83,23 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+#
+### Challenge progress
+
+Process I used for to tackle this challenge
+Install all relevant gems specified in the gemfile along with rack.
+1. Create the main page where the user can enter their name.
+2. The next page will link the user to a form where they can select their option from a dropdown box.
+3. The final page displays the user selection along with the random generated computer selection and displays the result.
+
+I used Sinatra for this RPS challenge and ran my tests simulating user input using capybara. I only have 2 classes inside model which are the computer and result class.
+There are 3 files within view to handle the different pages, the index page, user selection and result page.
+
+### Progress update
+Have built all relevant files, written 5 tests that all pass, have used a stub to test for random output of computer selection. On the result page, the logic is not matching up with user selection and computer selection, all is output but logic does not function properly. Believe it may be due to an additional object being created when computer selection is called.
+
+Final commit - after discussing my code with Miri and doing some debugging found the error was related to my computer array being symbols rather than strings, corrected and code now works fine.
+Corrected final test and committed.
+Additional steps for further improvement to add players, work on the html, css portion to make the page look nicer and a score counter.
+
