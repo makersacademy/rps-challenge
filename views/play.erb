@@ -1,0 +1,20 @@
+<body style="background-color:#FFFF00">
+
+<p> Ok, <%= @game.player_1.name %>, make your choice...</p>
+
+<form action='/player_1_move' method='post'>
+<input type="submit" name="Choice" value="Rock">
+<input type="submit" name="Choice" value="Paper">
+<input type="submit" name="Choice" value="Scissors">
+</form>
+
+<% if @game.rpssl %>
+
+<form action='/player_1_move' method='post'>
+<input type="submit" name="Choice" value="Spock">
+<input type="submit" name="Choice" value="Lizard">
+</form>
+
+<% end %>
+
+</body>

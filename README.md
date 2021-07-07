@@ -1,3 +1,22 @@
+A simple RockPaperScissors app.  
+
+The index page offers various options to the user:
+- Practice mode (1 player v computer) or 2 player
+- RockPaperScissors or RockPaperScissorsSpockLizard
+
+The model includes two classes: Player and Game.
+- Player stores the name and the move selected (i.e. Rock, Paper, Scissors...).
+- Game stores the various options selected: player names, practice or multi, rps or rpssl.
+
+In practice mode, a default second player if created.  Once the user has made their
+move, the second player calls a random-move selection method.
+
+Once a game has been played, players are offered the option to play again, switch to practice / multi,
+switch to rps / rpssl as appropriate.
+
+Enjoy.
+
+
 # RPS Challenge
 
 Instructions
