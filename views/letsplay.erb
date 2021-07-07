@@ -1,0 +1,17 @@
+<h1> Welcome <%= @name%>. Let's play Rock Paper Scissors!</h1>
+
+<form action ='/RPS' method="post">
+<input type="submit" name = "move" value="Rock">
+<input type="submit" name = "move" value="Paper">
+<input type="submit" name = "move" value="Scissors">
+</form>
+<h2>
+  <% if @move != nil %>You selected <%= @move%>!<% end %>
+</h2>
+<h2>
+  <% if @computer != nil %>Computer selected <%= @computer%>!<% end %>
+</h2>
+<h2>
+  <% if @computer != nil %><%= @result%><% end %>
+</h2>
+  
