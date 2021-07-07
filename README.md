@@ -1,4 +1,109 @@
-# RPS Challenge
+Rock Paper Scissors - Matt Thompson
+===================================
+
+## Description
+
+This Ruby web app allows users to regsiter their name and play rock, paper, scissors against the computer.
+
+![demo gif](https://github.com/mattTea/rps-challenge/blob/master/problem/rps.gif)
+
+
+#### Technologies used
+
+- Ruby
+- Rspec (test framework)
+- Sinatra (Ruby web framework)
+- Capybara (web feature test library)
+
+
+#### Personal motivation
+
+- Building a web app
+- Separation of concerns using the MVC model
+- Encapsulation and delegation between classes
+- Test driving using automated feature tests as well as unit test
+- Testing behaviour over state
+
+
+## Steps to download
+
+1. Fork this [repo](https://github.com/mattTea/rps-challenge)
+
+2. `git clone git@github.com:<userName>/rps-challenge.git` onto your local machine
+
+
+## Steps to run
+
+1. Run `ruby app.rb` in root project directory
+
+2. Visit `http://localhost:4567/`
+
+
+## To run tests
+
+Run `rspec` directly in root of your local project
+
+
+## My approach
+
+1. Break down user stories into an [object model](https://github.com/mattTea/rps-challenge/blob/master/problem/problem_breakdown.md) and simple feature steps
+
+2. Add capybara config requirements into `spec_helper.rb`
+    - `config.include Capybara::DSL`
+    - `require File.join(File.dirname(__FILE__), '..', 'app.rb')`
+
+3. Write first feature test - testing infrastructure on `home (/)` route
+
+4. Make it pass by creating `app.rb` controller file with "/" route
+
+5. Extend by creating `index.erb` view file
+
+6. Check in client by running `ruby app.rb` and visiting `localhost:4567`
+
+7. Continue with second feature test - testing enter name form
+
+8. Follow red, green, refactor cycle for each feature test
+
+9. Repeat until basic user story functionality is covered
+
+10. Test-drive extracting `Score` class from the controller code into the model, using units tests, ensuring features tests don't break
+
+
+#### Structure
+
+- Controller: `app.rb`
+- Views: `views/<name>.erb`
+- Models: `lib/<name>.rb`
+
+
+#### User stories
+
+```
+User story 1: Register name
+---------------------------
+As a marketeer,
+So that I can see my name in lights,
+I would like to register my name before playing an online game.
+
+
+User story 2: Play game
+-----------------------
+As a marketeer,
+So that I can enjoy myself away from the daily grind,
+I would like to be able to play rock/paper/scissors.
+```
+
+
+
+
+------
+
+------
+
+
+Original Readme - RPS Challenge
+===============================
+
 
 Instructions
 -------
