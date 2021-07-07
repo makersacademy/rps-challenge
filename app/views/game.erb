@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="main">
+      <h1>Good day master <%=@game.player.name%></h1>
+      <h2>Welcome to Rock Paper Scissors. May the odds be in your favour</h2>
+      <form action="/game" method="post">
+        <input type="submit" name="choice" value="ROCK">
+        <input type="submit" name="choice" value="PAPER">
+        <input type="submit" name="choice" value="SCISSORS">
+      </form>
+    </div>
+    
+    <div class="player">
+      <p><%=@game.player.name%>'s Choice: <%=@game.player.choice%></p>
+      <p><%=@game.player.name%>'s Score: <%=@game.player.score %></p>
+    </div>
+
+    <div class="computer">
+      <p>Computer's Choice: <%=@game.computer.choice %></p>
+      <p>Computers Score: <%=@game.computer.score %></p>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,20 @@
+body {
+  background-color: #fffdd0;
+}
+
+.main {
+  text-align: center;
+  margin-top: 15%
+}
+
+.player {
+  position: absolute;
+  left: 25%;
+  margin-top: 2%;
+}
+
+.computer {
+  position: absolute;
+  right: 25%;
+  margin-top: 2%;
+}
