@@ -1,0 +1,17 @@
+<style>
+  .container {
+    text-align: center;
+  }
+</style>
+<div class="container">
+  <h2>
+    Choose your weapon <%= @game.player1.name %>:
+  </h2
+  <div class="weapon">
+    <form action="/weapon" method="post">
+      <input type="submit" name="weapon" value="Rock">
+      <input type="submit" name="weapon" value="Paper">
+      <input type="submit" name="weapon" value="Scissors">
+    </form>
+  </div>
+</div>

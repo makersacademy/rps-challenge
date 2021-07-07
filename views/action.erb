@@ -1,0 +1,22 @@
+<style>
+  .container {
+    text-align: center;
+  }
+</style>
+<div class="container">
+  <h2>
+    <%= @game.player1.name %> selected <%= @weapon1.capitalize %>!
+  </h2>
+  <h2>
+    Computer selected <%= @weapon2.capitalize %>!
+  </h2>
+  <h1>
+    <% if @game.result(@weapon1, @weapon2) == 'win' %>
+      <%= @game.player1.name %> wins!
+    <% elsif @game.result(@weapon1, @weapon2) == 'lose' %>
+      Computer wins!
+    <% elsif @game.result(@weapon1, @weapon2) == 'draw' %>
+      It's a draw!
+    <% end %>
+  </h1>
+</div>
