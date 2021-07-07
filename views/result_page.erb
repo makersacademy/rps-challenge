@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <% if @end_game == :draw %>
+    <%=  "It's a draw!"%>
+    <% elsif @end_game == :lose %>
+    <%= "You lost :(" %>
+    <% else %>
+    <%= "You won!" %>
+    <% end %>
+
+    <div>
+    <img src= 'https://allthingsbooker.files.wordpress.com/2016/12/winner.jpg'>
+    <div>
+
+
+    <form action="/game_lobby">
+    <input type="submit" value="Play again?" />
+    </form>
+
+  </body>
+</html>
