@@ -1,5 +1,15 @@
 # RPS Challenge
 
+PROGRESS
+-------
+Have gotten app to take name, then confirm it, and ask the player to enter either rock, paper, or scissors
+
+It then confirms what the player has entered
+
+I now need to pass that entry through as an argument into my game class, and have it compare with a
+random .sample entry, and say if the play has won or lost. I need to implement this using class methods
+and test it with doubles. Unsure of how test should look at this time
+
 Instructions
 -------
 
