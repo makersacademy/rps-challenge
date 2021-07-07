@@ -1,0 +1,15 @@
+<h1> Is there a second player or will <%= @game.player_1.name %> play against Computer? </h1>
+
+<form action="/names">
+  <label for="player_2_name">
+    Player 2 name:
+  <input type="text" name="player_2_name">
+  </label>
+  <input type="submit" name="Submit">
+</form>
+
+<h2> OR </h2>
+
+<form action="/play_singleplayer">
+  <input type="submit" value="Computer">
+</form>

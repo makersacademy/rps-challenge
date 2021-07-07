@@ -1,0 +1,15 @@
+<h2> <%= @game.player_1.name %> threw scissors! </h2>
+
+<h2> <%= @game.player_2.name %> threw <%= @computer_move %>! </h2>
+
+<% if @computer_move == "scissors" %>
+<h1> You and <%= @game.player_2.name %> tied </h1>
+<% elsif @computer_move == "rock" %>
+<h1> You lost to <%= @game.player_2.name %>! </h1>
+<% else %>
+<h1> You beat <%= @game.player_2.name %>! </h1>
+<% end %>
+
+<form action="/play_singleplayer">
+  <input type="submit" value="Play again?">
+</form>
