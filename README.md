@@ -1,5 +1,7 @@
 # RPS Challenge
 
+PLEASE SEE README_NEW.md FOR OVERVIEW OF FUNCIONALITY : https://github.com/Dhara-95/rps-challenge/blob/master/README_NEW.md 
+
 Instructions
 -------
 
