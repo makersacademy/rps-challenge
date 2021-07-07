@@ -1,0 +1,53 @@
+<style>
+div {
+  position: absolute;
+  background-color: #B9DEED;
+  font-family: Helvetica;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+form {
+  text-align: center;
+  margin: auto auto 35% auto;
+}
+p{
+  text-align: center;
+  font-size: 75px;
+}
+ul {
+  list-style: none;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px
+}
+li {
+  margin: 10px auto auto auto;
+}
+</style>
+
+<div>
+
+  <h1>Hey <%= @game.player1_name %>, let's play!</h1>
+
+  <form action="/turn" method="post">
+    <ul>
+      <li>
+        <input class=rock type=radio value="Rock" name=move id=rock>Rock
+        <input class=paper type=radio value="Paper" name=move id=paper>Paper
+        <input class=scissors type=radio value="Scissors" name=move id=scissors>Scissors
+      </li>
+      <li>
+        <input class =submit type=submit value=Play! name=submit>
+      </li>
+    </ul>
+  </form>
+
+</div>
