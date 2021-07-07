@@ -1,0 +1,18 @@
+<h1><%= session[:players][0].name %> vs <%= session[:players][1].name %></h1>
+<br /><br />
+What's your move <%= session[:players][0].name %>:
+<form action="/move" method="post">
+	<ul style="list-style-type:none;font-size:40px">
+		<li><input style="padding: 0;border: none;cursor: pointer;font-family: inherit;font-size: inherit" type="submit" value="🗿" name="commit"></li>
+		<li><input style="padding: 0;border: none;cursor: pointer;font-family: inherit;font-size: inherit" type="submit" value="📄" name="commit"></li>
+		<li><input style="padding: 0;border: none;cursor: pointer;font-family: inherit;font-size: inherit" type="submit" value="✂" name="commit"></li>
+	</ul>
+</form>
+
+<!-- <form action="/move" method="post">
+  <ul style="list-style-type:none;font-size:64px">
+    <li><input style="padding: 0;border: none;cursor: pointer;font-family: inherit;font-size: inherit" type="submit" value="🗿"></li>
+    <li><input style="padding: 0;border: none;cursor: pointer;font-family: inherit;font-size: inherit" type="submit" value="📄"></li>
+    <li><input style="padding: 0;border: none;cursor: pointer;font-family: inherit;font-size: inherit" type="submit" value="✂"></li>
+  </ul>
+</form> -->

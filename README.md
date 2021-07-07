@@ -1,4 +1,23 @@
-# RPS Challenge
+# 🗿📄✂ Challenge
+
+## Testing
+
+To run Feature and Unit tests run script:
+./tdd/tdd.test
+
+To test in browser, run script:
+./web.test
+
+
+## To do:
+
+* Add current_player to session
+* Add two stages to player flow so each player makes and stores a move
+* Refactor to use symbols instead of strings
+* Add tests to check winning results page? (Winning logic is tested elsewhere)
+
+
+# Original README.md
 
 Instructions
 -------
