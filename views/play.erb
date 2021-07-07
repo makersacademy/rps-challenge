@@ -1,0 +1,41 @@
+<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel='stylesheet'>
+<style>
+  body { font-family: 'Major Mono Display', monospace;
+  ;font-size: 30px;}
+</style>
+<body style="background-color: #FD4B4B;" align="center">
+  <br>
+<h1>Rock Paper Scissors</h1>
+  <br>
+<% if @player_1.shape == nil %>
+<h2><%= @player_1.name %> make your choice!</h2>
+  <br>
+  <form action="/choose" method="post">
+    <table width="50%" align="center">
+      <tr>
+      <th><input type="submit" name="shape" value="Rock" height ="50px" width="200px"></th>
+      <th><input type="submit" name="shape" value="Paper" height ="50px" width="200px"></th>
+      <th><input type="submit" name="shape" value="Scissors" height ="50px" width="200px"></th>
+      </tr>
+    </table>
+  </form>
+<% else %>
+  <%= @player_1.name %> you have chosen <%= @player_1.shape %>!
+  <br>
+  <br>
+  <br>
+  <% if @winner == "equal shape" %>
+  There is no winner! You have both choosen <%= @player_1.shape %>!
+  <% elsif @winner == @player_1.shape %>
+  Hey! Hey! Bravo! you won against the <%= @player_2.shape %>!
+  <% else %>
+  Olala! Mister Computer won with <%= @player_2.shape %>! So clever!
+  <% end %>
+  <br>
+  <br>
+  <br>
+  <form action="/" method="get">
+    <th><input type="submit" value="Play again">
+  </form>
+<% end %>
+</body>
