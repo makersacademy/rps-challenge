@@ -1,0 +1,28 @@
+body {background-color: palevioletred;}
+h1   {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: whitesmoke; text-align: center;}
+h2   {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: whitesmoke; text-align: center;}
+h3   {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: whitesmoke; text-align: center;}
+
+p   {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: whitesmoke; text-align: center;}
+
+input[type=submit] {
+  background-color: crimson;
+  color: white;
+  padding: 12px 30px;
+  margin: 8px 0;
+  border: 1pt;
+  border-radius: 7px;
+  cursor: pointer;
+  text-align: center;
+  align-items: center;
+}
+
+input[type=text] {
+  padding: 12px 30px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid whitesmoke;
+  border-radius: 9px;
+  text-align: center;
+  align-items: center;
+}

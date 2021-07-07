@@ -13,6 +13,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    childprocess (3.0.0)
     diff-lcs (1.3)
     docile (1.3.2)
     jaro_winkler (1.5.4)
@@ -54,8 +55,16 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
     ruby-progressbar (1.10.1)
+<<<<<<< HEAD
+    rubyzip (2.2.0)
+    selenium-webdriver (3.142.7)
+      childprocess (>= 0.5, < 4.0)
+      rubyzip (>= 1.2.2)
+    simplecov (0.17.1)
+=======
     ruby2_keywords (0.0.2)
     simplecov (0.18.5)
+>>>>>>> d738e9d77caeb184de19b75076ba61f688e419ab
       docile (~> 1.1)
       simplecov-html (~> 0.11)
     simplecov-console (0.7.2)
@@ -81,7 +90,12 @@ PLATFORMS
 DEPENDENCIES
   capybara
   rspec
+<<<<<<< HEAD
+  rubocop (= 0.71.0)
+  selenium-webdriver
+=======
   rubocop (= 0.79.0)
+>>>>>>> d738e9d77caeb184de19b75076ba61f688e419ab
   simplecov
   simplecov-console
   sinatra
