@@ -1,0 +1,33 @@
+<style> 
+input[type=submit] {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 24px 50px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=text], select, textarea{
+  width: 25%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+html,body,h1,h2,h3,h4,h5,h6 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+<center>
+<body style="background-color:grey;">
+<h1><%=@player_name%> vs Computer</h1>
+<img src="https://media.giphy.com/media/dsKALVnvGKgn4bLu2a/giphy.gif">
+<h2>Choose your weapon:</h2>
+<form action="/game" method="get">
+<input type="submit" name="weapon_choice" value="Rock">
+<input type="submit" name="weapon_choice" value="Paper">
+<input type="submit" name="weapon_choice" value="Scissors">
+</form>
+</center>
