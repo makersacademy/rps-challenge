@@ -1,0 +1,10 @@
+<html>
+  <h2> <%= @result %> </h2> <br><br>
+
+  <h3> <%= @game.player_1.name %>: <%= @game.player_1.move%> | <%= @game.player_2.name %>: <%= @game.player_2.move%></h3> <br><br>
+
+  <form action="/home" method="GET">
+  <input type="submit" value="Return">
+  </form>
+</html>
+
