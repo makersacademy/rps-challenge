@@ -83,3 +83,41 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+Sara Rancati - 2 November 2019
+----------------------
+Development process:
+
+I have first set up folders and initial files.
+
+1. First user story:
+the user would like to register their name before playing. I created a feature test to check that the home page displays a welcome message. I then implemented this in my index.erb and starting adding routes to my app.rb file. Second feature test was to check that, after entering names, some text with the name would be displayed on the page. For this I had to include a simple form in index.erb with both a text field (for the name) and a submit button. The form would 'post' to a different page (/names), where I would be able to take the name param from the previous step and store it in a session. From the /names page I redirected to another page (/play) where the session variable would be assigned to an instance variable. This page would use the play.erb template to display the text with the name. Tests passed.
+
+*2nd commit*
+
+2. Second user story: on the second page, the player will play rock, paper, scissors. I'd like to implement this using buttons instead of text for the user's input. I wrote a feature test for the three buttons then implemented in the play.erb template.
+
+*3rd commit*
+
+At this point I worked on the "logic" of the game, starting from simple unit tests (e.g. returning a random choice from the computer, rock beats scissors etc).
+
+*4th commit*
+
+Then I updated the commander to store the session variable (user's input) to be used as first argument in the method "winner" (the second argument is the computer-generated choice). I did some manual tests as well at this point, and fixed errors.
+
+*5th commit*
+
+I refactored the model and shortened some methods.
+
+*6th commit*
+
+3. Extension: adding 'Spock', 'Lizard'. I updated the game.rb controller to include the two extra options, and included some extra tests. RUBOCOP: I was not able to shorten/simplify the method with the complex if statement.
+
+*7th commit*
+
+I slightly changed the style in the two erb templates.
+
+*8th commit*
+
+TRAVIS CI
+[![Build Status](https://travis-ci.org/sarar0/rps-challenge.svg?branch=master)](https://travis-ci.org/sarar0/rps-challenge)
