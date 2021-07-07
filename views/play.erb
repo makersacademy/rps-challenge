@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body style="background-color:powderblue;">
+    <center>
+      <h1>Welcome <%= @game.player %>!</h1>
+      <br>
+      <h2>I have but one question!<h2>
+      <h2>Rock, Paper or Scissors?</h2>
+      <form action="/comp" method="post">
+        <select class="" name="choice">
+          <option value="rock">rock</option>
+          <option value="paper">paper</option>
+          <option value="scissors">scissors</option>
+        </select>
+          <input type="submit" value="Select weapon!">
+      </form>
+    </center>
+  </body>
+</html>
