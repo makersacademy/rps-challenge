@@ -41,14 +41,61 @@ As usual please start by
 * Forking this repo
 * TEST driving development of your app
 
+--------------
+# Plan for completeing the task
+
+#### Website Side
+
+get '/' - form to enter a name  pointing to post '/name'
+
+post 'name' - save name in a session redirect to get '/move'
+
+get '/move' - option to pick more (R,S,P) pointing to post '/selected_move'
+
+post '/selected_move' - save selected, redirect to get '/result'
+
+get '/result' - interact with code to find out result, shows result
+                option to return to get '/move'
+
+
+#### Code Side
+
+\#computer move - Array.sample
+winning hash [R: S, P: R, S: P]
+\#result(player move)
+
+### Comments About Used Resources
+
+mostly for checking syntax, I used the repository made for the battle (this weeks afternoon challenge) and also [Tristian's Birthday App one](https://github.com/tristanlangford/birthdaygreeterV2) for the RPS selection HTML syntax.
 
 ## Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
+### Plan
+
+On name page have two names in the form (if player_2 is nil then run single player)
+if multiplayer run similar code but on two separate pages ask of a user move.
+Then compare using the same hash to find out the winner, button to play again
+
+### Changes
+
+This went ok, but did refactor the model into a Game class holding the player names and moves.
+
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+
+### Plan
+
+option on start to play RPSSL
+add the addition options to the winning hash, and in computer move - RPSSL random_move
+
+### Changes
+
+No real changes but was a little stumped about the return value from #random_move before realising than an if statement also returns a value, so I had to explicitly return a value if rpssl wasn't chosen.
+
+--------------
 
 ## Basic Rules
 
