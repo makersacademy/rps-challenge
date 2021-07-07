@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet" href = "style.css" >
+</head>
+<body>
+
+<h1> Hello <%= @turn.player_name %></h1>
+<h2> Please select your weapon of choice...</h2>
+
+<form method="POST" action="/play">
+  <input type="submit" name="shape" value="Rock" />
+  <input type="submit" name="shape" value="Paper" />
+  <input type="submit" name="shape" value="Scissors" />
+</form>
+
+
+<p>You chose <%= @turn.player_shape.to_s.capitalize %></p>
+
+<div id="opponent">
+  Opponent chose <%= @turn.opponent_shape.to_s.capitalize %>!
+</div>
+
+<% if @turn.win? %>
+  <p>You win!</p>
+<% elsif @turn.lose? %>
+  <p>You lose :(</p>
+<% elsif @turn.draw? %>
+  <p>You draw!</p>
+<% end %>
+
+</body>
+</html>
