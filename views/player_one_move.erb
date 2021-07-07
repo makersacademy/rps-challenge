@@ -1,0 +1,16 @@
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+
+<h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h2>
+
+<p><%= @game.player_1.name %>, what is your move?</p>
+
+<form action="/player_one_choice" method="post">
+  <select name="player_one_choice">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Submit">
+</form>

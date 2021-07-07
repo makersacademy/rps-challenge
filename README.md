@@ -1,5 +1,18 @@
 # RPS Challenge
 
+To run
+-----
+
+`$ git clone git@github.com:melissasedgwick/rps-challenge.git`
+
+`$ cd rps-challenge`
+
+`$ bundle`
+
+`$ rackup`
+
+
+
 Instructions
 -------
 
