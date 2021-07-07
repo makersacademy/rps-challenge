@@ -1,4 +1,11 @@
 # RPS Challenge
+Joanne Chen
+--------------
+I finished the game that one player can enter his/her name and then play a game of rock, paper, scissors with the computer.
+The player can also choose to play again and the previous page will reload.
+
+I managed to use a drop-down selector for the input and would like to insert a photo for the final page but it doesn't load.
+
 
 Instructions
 -------

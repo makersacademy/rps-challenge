@@ -1,0 +1,12 @@
+<h1 style="color: DarkCyan; font-family: verdana">Welcome <%= @player %>!</h1>
+
+<h3>Please select a choice to play:</h3>
+<form action="/choice" method="post">
+  <select id="choice" name='choice'>
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Submit">
+
+</form>
