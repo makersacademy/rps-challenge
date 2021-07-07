@@ -1,0 +1,37 @@
+<h3> Player 1, make your choice: </h3>
+
+<form action="/choice1" method="post">
+    <input type="hidden" name="choice1" value="Rock">
+    <input type="submit" name="Rock1" value="Rock">
+</form>
+<form action="/choice1" method="post">
+    <input type="hidden" name="choice1" value="Paper">
+    <input type="submit" name="Paper1" value="Paper">
+</form>
+<form action="/choice1" method="post">
+    <input type="hidden" name="choice1" value="Scissors">
+    <input type="submit" name="Scissors1" value="Scissors">
+</form>
+<br>
+
+<h3> Player 2, make your choice: </h3>
+
+<form action="/choice2" method="post">
+    <input type="hidden" name="choice2" value="Rock">
+    <input type="submit" name="Rock2" value="Rock">
+</form>
+<form action="/choice2" method="post">
+    <input type="hidden" name="choice2" value="Paper">
+    <input type="submit" name="Paper2" value="Paper">
+</form>
+<form action="/choice2" method="post">
+    <input type="hidden" name="choice2" value="Scissors">
+    <input type="submit" name="Scissors2" value="Scissors">
+</form>
+<br>
+
+<h3> Once you have both made your choices, click below to see who wins! </h3>
+
+<form action="/mpmatch" method="get">
+    <input type="submit" value="See who won!">
+</form>

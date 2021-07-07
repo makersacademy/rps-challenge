@@ -1,0 +1,28 @@
+<style>
+h3 { text-align: center; border: 2px dotted teal }
+h4 { text-align: center; border: 2px solid darkmagenta }
+h5 { text-align: left; border: 2px solid red }
+a { text-decoration: none; }
+div {
+    width:150px;
+    margin: auto;
+}
+</style>
+
+<div>
+
+<h5 style="color:purple">
+You have chosen: <%= player_choice = @game.first_player.last_choice %>
+<br>
+The opponent chose: <%= ai_choice = @game.ai_choice %>
+
+<br>
+<%= @game.who_wins(player_choice, ai_choice) %>
+<br>
+</h5>
+
+<h3 style="color:green">
+<a href="http://localhost:9292/game">Play again</a>
+</h3>
+
+</div>

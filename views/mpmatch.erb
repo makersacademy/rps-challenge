@@ -1,0 +1,27 @@
+<style>
+h3 { text-align: center; border: 2px dotted teal }
+h4 { text-align: center; border: 2px solid darkmagenta }
+h5 { text-align: left; border: 2px solid red }
+a { text-decoration: none; }
+div {
+    width:150px;
+    margin: auto;
+}
+</style>
+
+<div>
+
+<h5 style="color:purple">
+Player 1 chose: <%= player1_choice = @game.first_player.last_choice %>
+<br>
+Player 2 chose: <%= player2_choice = @game.second_player.last_choice %>
+<br>
+<%= @game.who_wins(player1_choice, player2_choice) %>
+<br>
+</h5>
+
+<h3 style="color:green">
+<a href="http://localhost:9292/mpgame">Play again</a>
+</h3>
+
+</div>
