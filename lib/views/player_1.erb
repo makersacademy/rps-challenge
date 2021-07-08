@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+<div>
+  Player 1: <%= @player_one_name %><br>
+  Player 2: <%= @player_two_name %>
+</div>
+
+<div class="left-heading">
+<h2> <%= @player_one_name %>, choose your weapon! </h2>
+<h3>( <%= @player_two_name %>, please look away! )</h3>
+
+</div>
+
+
+
+<div class>
+  <form action="/player_1" method="post">
+    <input type="submit" name="p1_weapon" value="Rock">
+    <input type="submit" name="p1_weapon" value="Paper">
+    <input type="submit" name="p1_weapon" value="Scissors">
+    <input type="submit" name="p1_weapon" value="Lizard">
+    <input type="submit" name="p1_weapon" value="Spock">
+  </form>
+</div>
+
+<% if @player_one_weapon %>
+  <div><%= @player_one_name %> has chosen <%= @player_one_weapon %>!</div>
+  <div>
+    <form action="/player_2" method="post">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+<% end %>
+</html>
+
