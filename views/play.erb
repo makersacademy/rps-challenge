@@ -1,0 +1,19 @@
+<h2>@game >>> <%= @game %></h2>
+
+<h1><%= @game.p1 %> vs. <%= @game.p2 %>]</h1>
+<h2>Rock, Paper or Scissors?</h2>
+
+<form action="/go" method="post">
+  <input type="hidden" name="move" value="Rock">
+  <input type="submit" value="Rock">
+</form>
+
+<form action="/go" method="post">
+  <input type="hidden" name="move" value="Paper">
+  <input type="submit" value="Paper">
+</form>
+
+<form action="/go" method="post">
+  <input type="hidden" name="move" value="Scissors">
+  <input type="submit" value="Scissors">
+</form>
