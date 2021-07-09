@@ -1,0 +1,5 @@
+<h2> <%= @game.player_1.name %>'s move: <%= @game.player_1.action(@move) %> </h2>
+
+<h2> <%= @game.player_2.name %>'s move: <%= @comp_move %> </h2>
+
+<h1> <%= @game.round(@game.player_1.action(@move), @comp_move) %>! </h1>

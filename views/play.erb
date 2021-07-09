@@ -1,0 +1,14 @@
+<h1>Let's Play!</h1>
+
+<h2> <%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h2>
+
+<h2> <%= @game.player_1.name %> take your move: </h2>
+
+<form action="/result">
+  <label for="move">
+    Rock, paper or scissors:
+    <input type="text" name="move">
+  </label>
+
+  <input type="submit" value="Submit">
+</form>
