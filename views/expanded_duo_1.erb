@@ -1,0 +1,23 @@
+<div style="max-width: 500px; height: 500px; border: 5px solid black; margin: 25px; padding: 25px">
+  <div><%= session[:game].player_1.name %> vs. <%= session[:game].player_2.name %></div>
+  <div><%= session[:game].player_1.name %>, choose your move!</div>
+
+  <form action ='/duo_move_1' method = 'post'>
+    <div>
+      <input type='radio' id='rock' name='move' value='rock' checked='checked'>
+      <label for='rock'>Rock</label><br>
+      <input type='radio' id='paper' name='move' value='paper'>
+      <label for='paper'>Paper</label><br>
+      <input type='radio' id='scissors' name='move' value='scissors'>
+      <label for='scissors'>Scissors</label><br>
+      <input type='radio' id='lizard' name='move' value='lizard'>
+      <label for='lizard'>Lizard</label><br>
+      <input type='radio' id='spock' name='move' value='spock'>
+      <label for='spock'>Spock</label><br>
+    </div>
+
+    <div>
+      <input type='submit' value='Play'>
+    <div>
+  </form>
+</div>

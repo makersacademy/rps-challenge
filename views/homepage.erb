@@ -1,0 +1,29 @@
+<div style="max-width: 500px; height: 500px; border: 5px solid black; margin: 25px; padding: 25px">
+  <div>Rock - Paper - Scissors - Lizard - Spock</div>
+
+  <div>Type in the players' names!</div>
+
+  <form action ='/mode' method = 'post'>
+    <div>
+      <input type='radio' id='normal' name='mode' value='normal' checked='checked'>
+      <label for='normal'>Normal Mode</label><br>
+      <input type='radio' id='expanded' name='mode' value='expanded'>
+      <label for='expanded'>Expanded Mode</label>
+    </div>
+
+    <div>
+      <label for="player_1_name">
+        Player 1
+        <input type='text' name='player_1_name' required='required'>
+      </label><br>
+      <label for="player_2_name">
+        Player 2
+        <input type='text' name='player_2_name'>
+      </label>
+    </div>
+
+    <div>
+      <input type='submit' value='Play'>
+    <div>
+  </form>
+</div>

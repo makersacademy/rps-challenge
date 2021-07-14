@@ -1,0 +1,8 @@
+<div style="max-width: 500px; height: 500px; border: 5px solid black; margin: 25px; padding: 25px">
+  <div><%= session[:game].player_1.name %> vs. <%= session[:game].player_2.name %></div>
+  <div>
+    <%= session[:game].player_1.name %>'s move: <%= session[:player_1_move] %><br>
+    <%= session[:game].player_2.name %>'s move: <%= session[:player_2_move] %>
+  </div>
+  <div><%= session[:outcome] %></div>
+</div>
