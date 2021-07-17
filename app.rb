@@ -6,12 +6,20 @@ class RPS < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   post '/names' do
-    @player_name = params[:player_name]
+    p params
+    session[:player_name] = params[:player_name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_name = session[:player_name]
     erb :play
   end
 
