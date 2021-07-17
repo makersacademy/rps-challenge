@@ -24,7 +24,13 @@ class RPS < Sinatra::Base
 
   post '/weapon'do
     p params
-    session[:weapon] = params[:weapon]
+    session[:weapon] = params[:weapon] 
+    redirect '/fight'
+  end
+
+  get '/fight' do
+    @weapon = session[:weapon]
+    erb :fight
   end
 
   run! if app_file == $0
