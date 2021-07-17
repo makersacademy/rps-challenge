@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'launchy'
 gem 'sinatra'
 gem 'sinatra-contrib'
 
