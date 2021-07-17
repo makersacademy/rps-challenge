@@ -13,11 +13,10 @@ class RPS < Sinatra::Base
   post '/play' do
     @player_name = params[:player_name]
     erb(:play)
-
   end
 
-
-
+  post '/outcome' do
+  end
 
 
 
