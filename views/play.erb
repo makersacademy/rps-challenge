@@ -1,1 +1,13 @@
-Once again, a huge welcome to RPS, <%=@player_name%>! You definitely won't regret this ...
+<h3>Once again, a huge welcome to RPS, <%=@player_name%>!</h3>
+
+<h4>You definitely won't regret this ... </h4>
+
+<p>Choose one of rock, paper or scissors:</p>
+<form action='/weapon' method='post'>
+  <label for='weapon'>
+  Weapon:
+  <input type='text' name='weapon'>
+  </label>
+  <input type='submit' value='Submit'>
+</form>
+

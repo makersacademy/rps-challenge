@@ -13,7 +13,6 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    p params
     session[:player_name] = params[:player_name]
     redirect '/play'
   end
@@ -21,6 +20,11 @@ class RPS < Sinatra::Base
   get '/play' do
     @player_name = session[:player_name]
     erb :play
+  end
+
+  post '/weapon'do
+    p params
+    session[:weapon] = params[:weapon]
   end
 
   run! if app_file == $0
