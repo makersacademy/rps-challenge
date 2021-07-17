@@ -5,6 +5,6 @@ def sign_in_and_play
 end
 
 def choose_weapon
-    fill_in :weapon, with: 'rock'
-    click_button 'Submit'
+  fill_in :weapon, with: 'rock'
+  click_button 'Submit'
 end

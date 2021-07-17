@@ -12,7 +12,7 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
+  post '/name' do
     session[:player_name] = params[:player_name]
     redirect '/play'
   end
@@ -22,8 +22,7 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/weapon'do
-    p params
+  post '/weapon' do
     session[:weapon] = params[:weapon] 
     redirect '/fight'
   end
