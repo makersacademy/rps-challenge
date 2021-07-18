@@ -17,6 +17,9 @@ class RPS < Sinatra::Base
   end
 
   post '/outcome' do
+    @player_name = params[:player_name]
+    @player_choice = params[:rock]
+    erb(:outcome)
   end
 
 
