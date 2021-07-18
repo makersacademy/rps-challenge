@@ -1,1 +1,10 @@
-You selected <%=@game.player.move%>!
+You selected <%=@game.player.move%>!<br>
+The computer selected <%=@game.opponent_move%><br>
+
+<% if @game.player_win?  %>
+You won!
+<% elsif @game.player_draw?%>
+You drew!
+<% else%>
+You lose!
+<%end%>

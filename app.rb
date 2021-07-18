@@ -34,6 +34,7 @@ class Rps < Sinatra::Base
 
   get '/determine' do
     @game = Game.instance
+    @game.computer_move
     erb(:determine)
   end
 
