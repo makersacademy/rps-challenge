@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/npc'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -30,6 +31,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/results' do
     @player = session[:player]
+    @npc = Npc.new
     erb(:results)
   end
 

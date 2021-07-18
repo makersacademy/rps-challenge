@@ -1,8 +1,7 @@
 feature 'choice' do
   scenario 'can choose rock' do
     begin_game
-    choose 'rock'
-    click_button 'Submit'
+    choose_rock
     expect(page).to have_content 'You chose Rock'
   end
 
