@@ -18,6 +18,16 @@ RSpec.feature 'RPS' do
     fill_in('player1name', with: 'Karim')
     click_button('Submit')
     click_link('Rock')
-    expect(page).to have_text('You selected rock!')
+    expect(page).to have_text('You selected Rock!')
+    visit "/"
+    fill_in('player1name', with: 'Karim')
+    click_button('Submit')
+    click_link('Paper')
+    expect(page).to have_text('You selected Paper!')
+    visit "/"
+    fill_in('player1name', with: 'Karim')
+    click_button('Submit')
+    click_link('Scissors')
+    expect(page).to have_text('You selected Scissors!')
   end
 end 

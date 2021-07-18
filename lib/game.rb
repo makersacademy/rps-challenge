@@ -1,1 +1,1 @@
-require 'player'
+require_relative 'player'

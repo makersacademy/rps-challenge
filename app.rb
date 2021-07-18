@@ -1,11 +1,8 @@
-require 'sinatra'
-require 'sinatra/reloader' if development?
+require 'sinatra/base'
 require './lib/game'
-
 
 class Rps < Sinatra::Base
   configure :development do
-    register Sinatra::Reloader
   end
 
   get '/' do
@@ -23,7 +20,20 @@ class Rps < Sinatra::Base
     redirect to '/determine'
   end
 
+  get '/paper' do
+    @player = Player.instance
+    @player.move = 'Paper'
+    redirect to '/determine'
+  end
+
+  get '/scissors' do
+    @player = Player.instance
+    @player.move = 'Scissors'
+    redirect to '/determine'
+  end
+
   get '/determine' do
+    @player = Player.instance
     erb(:determine)
   end
 
