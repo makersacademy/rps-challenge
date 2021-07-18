@@ -1,10 +1,11 @@
 require 'sinatra/base'
-require 'sinatra/reloader'
 
 class Rps < Sinatra::Base
   configure :development do
     register Sinatra::Reloader  
   end
+
+  enable :sessions
 
   get '/' do
     erb(:index)
@@ -14,8 +15,8 @@ class Rps < Sinatra::Base
 
   post '/name' do
     ''
-    @player = params[:player]
-    erb(:play)
+    session[:player] = params[:player]
+    redirect '/play'
   end
 
   post '/selection1' do
@@ -31,5 +32,17 @@ class Rps < Sinatra::Base
   post '/selection3' do
     @choice3 = params[:Scissors]
     erb(:selection3)
+  end
+
+  get '/play' do
+    @player = session[:player]
+    erb(:play)
+  end
+  
+  get '/result' do
+    @choice = session[:rock]
+    @choice2 = session[:paper]
+    @choice3 = session[:Scissors]
+    erb(:result)
   end
 end
