@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -8,24 +9,28 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $player = params[:player]
+    Game.instance.start(params[:player])
     redirect to('/game')
   end
 
   get '/game' do
-    @player = $player
+    @player = Game.instance.player_name
     erb(:game)
   end
 
   post '/choice' do
-    p params
-    $choice = params[:choice]
-    redirect to('/result')
+    @computer_choice = Game.instance.RPS_sample
+    redirect to(Game.instance.result_check(params[:choice], @computer_choice))
   end
 
-  get '/result' do
-    @choice = $choice
-    erb(:result)
+  get '/win' do
+    erb(:win)
+  end
+  get '/draw' do
+    erb(:draw)
+  end
+  get '/lose' do
+    erb(:lose)
   end
 
 end
