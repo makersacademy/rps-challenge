@@ -28,5 +28,9 @@ class RPS < Sinatra::Base
     erb(:outcome)
   end
 
-  
+  get '/play' do
+    @game = Game.instance
+    @player_name = @game.player.name
+    erb(:play)
+  end
 end
