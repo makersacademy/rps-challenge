@@ -4,6 +4,7 @@ This is a Rock, Paper, Scissors game where the player can input their name. I st
 
 ## TODO
 * Refactor result check method in game.rb to be shorter / extract methods from it
+* Refactor tests to be DRY and cover every possible option
 * Add a rematch button
 * Add more styling
 * Add more flavour text
