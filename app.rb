@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/opponent'
+require './lib/fight'
 
 class RPS < Sinatra::Base
   configure :development do
@@ -33,7 +35,16 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
+    @weapon = session[:weapon].to_sym
+    @opponent = Opponent.new
+    @opponent_weapon = @opponent.random_weapon
+    @match = Fight.new
+    @outcome = @match.rps(@weapon, @opponent_weapon)
     erb :result
+  end
+
+  post '/play_again' do
+    redirect '/play'
   end
 
   run! if app_file == $0

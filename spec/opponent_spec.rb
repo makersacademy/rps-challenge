@@ -1,13 +1,7 @@
 require 'opponent'
 
 RSpec.describe Opponent do
-  subject(:denzel) { described_class.new('Denzel') }
-
-  # describe '#name' do
-  #   it 'returns the name' do
-  #     expect(denzel.name).to eq 'Denzel'
-  #   end
-  # end
+  subject(:denzel) { described_class.new }
 
   describe '#random_weapon' do
     it 'chooses a random weapon' do

@@ -1,10 +1,8 @@
 class Opponent 
-  
-  def initialize(name)
-    @name = name
-  end
 
+  attr_reader :opponent_weapon
+  
   def random_weapon
-    [:rock, :paper, :scissors].sample
+    @opponent_weapon = [:rock, :paper, :scissors].sample
   end
 end
