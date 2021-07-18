@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/game'
 
 
 class RPS < Sinatra::Base
@@ -12,14 +13,17 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    @player_name = params[:player_name]
-    session[:player_name] = params[:player_name]
+   player = Player.new(params[:player_name])
+   Game.create(player)
+   @player_name = player.name
     erb(:play)
   end
 
   post '/outcome' do
-    @player_name = session[:player_name]
-    @player_choice = params[:rock]
+    @game = Game.instance
+    @player_name = @game.player.name
+    @player_choice = params[:player_choice]
+    @pc_choice = @game.computer_choice
     erb(:outcome)
   end
 
