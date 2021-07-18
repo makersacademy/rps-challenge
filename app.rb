@@ -23,12 +23,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/selection' do
-    session[:selection] = params[:selection]
+    session[:player].choose(params[:selection])
     redirect '/results'
   end
 
   get '/results' do
-    @selection = session[:selection]
+    @player = session[:player]
     erb(:results)
   end
 
