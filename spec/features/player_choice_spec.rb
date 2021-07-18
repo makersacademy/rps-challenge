@@ -5,4 +5,3 @@ feature 'Player choice' do
     expect(page).to have_content 'Luke chose Rock!'
   end
 end
-    

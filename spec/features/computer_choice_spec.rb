@@ -5,7 +5,7 @@ feature 'Computer choice' do
   scenario 'computer makes a choice' do
     allow(Game).to receive(:instance) { game }
     allow(Game).to receive(:create) { game } 
-    allow(game.computer_choices).to receive(:sample) {"Paper"}
+    allow(game.computer_choices).to receive(:sample) { "Paper" }
     name_entered
     click_button 'Rock'
     expect(page).to have_content 'Computer chose Paper!'

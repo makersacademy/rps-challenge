@@ -1,5 +1,3 @@
-
-
 class Game
 
   attr_reader :computer_choices, :player
@@ -22,21 +20,18 @@ class Game
   end
 
   def result(player_choice, computer_choice)
-    
     if player_choice == computer_choice
       return 'It\'s a draw!'
-    end 
-    
+    end
+
     choices = @computer_choices.reverse
     index = choices.index(player_choice)
-    winning_choice = choices[index - 1] 
-    
+    winning_choice = choices[index - 1]
+
     if computer_choice == winning_choice
       'Computer wins!'
     else
       "#{@player.name} wins!"
     end
   end
-
-
 end

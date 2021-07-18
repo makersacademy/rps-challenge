@@ -3,7 +3,7 @@ require 'game'
 describe Game do
   
   let(:player) { double :player, :name => 'Luke' }
-  subject{ Game.new(player) }
+  subject { Game.new(player) }
 
   it 'should have a list of choices' do
     expect(subject.computer_choices).to eq(["Rock", "Paper", "Scissors"]) 
@@ -11,7 +11,7 @@ describe Game do
 
   describe '#computer_choice' do
     it 'should choose an option from the list' do
-      allow(subject.computer_choices).to receive(:sample) {"Rock"}
+      allow(subject.computer_choices).to receive(:sample) { "Rock" }
       expect(subject.computer_choice).to eq("Rock")
     end
 
