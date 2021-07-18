@@ -24,13 +24,9 @@ class RPS < Sinatra::Base
     @player_name = @game.player.name
     @player_choice = params[:player_choice]
     @pc_choice = @game.computer_choice
+    @result = @game.result(@player_choice, @pc_choice)
     erb(:outcome)
   end
 
-
-
-
-
-
-
+  
 end
