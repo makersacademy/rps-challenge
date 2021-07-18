@@ -32,6 +32,7 @@ class RockPaperScissors < Sinatra::Base
   get '/results' do
     @player = session[:player]
     @npc = Npc.new
+    @result = Result.new(@player, @npc)
     erb(:results)
   end
 
