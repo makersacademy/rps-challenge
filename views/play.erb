@@ -1,1 +1,13 @@
 Welcome <%= @name %>!
+<br>
+What do you Choose?
+
+<form action='/selection' method='post'>
+  <input type='radio' id='rock' name='selection' value='Rock'>
+  <label for='rock'>Rock</label>
+  <input type='radio' id='paper' name='selection' value='Paper'>
+  <label for='rock'>Paper</label>
+  <input type='radio' id='scissors' name='selection' value='Scissors'>
+  <label for='rock'>Scissors</label>
+  <input type='submit' name='Submit'>
+</form>
