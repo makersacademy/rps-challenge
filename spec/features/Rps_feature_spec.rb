@@ -13,7 +13,7 @@ RSpec.feature 'RPS' do
     expect(page).to have_text('Karim, pick your move:')
   end
 
-  xscenario 'Selecting your relevant move link will set game move correctly' do
+  scenario 'Selecting your relevant move link will set game move correctly' do
     visit "/"
     fill_in('player1name', with: 'Karim')
     click_button('Submit')

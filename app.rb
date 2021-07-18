@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require './lib/game'
 
+
 class Rps < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
@@ -12,9 +13,18 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    @player1name = params[:player1name]
+    @player = Player.create(params[:player1name])
     erb(:play)
-  end  
+  end 
 
+  get '/rock' do
+    @player = Player.instance
+    @player.move = 'Rock'
+    redirect to '/determine'
+  end
+
+  get '/determine' do
+    erb(:determine)
+  end
 
 end
