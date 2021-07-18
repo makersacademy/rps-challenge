@@ -49,6 +49,12 @@ and visit the localhost port in your browser ( i.e localhost:9292 )
 
 You should be able to play then game!
 
+## Todo
+
+I would like to try and condense or refactor the result method in the game class so it handles less logic than it does currently.
+
+I'd also look to ad a score counter and make the game a best of 5 rounds, assuming we are sticking with the computer vs player model.
+
 # RPS Challenge
 
 Instructions
