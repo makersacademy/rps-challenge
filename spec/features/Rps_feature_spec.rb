@@ -30,4 +30,15 @@ RSpec.feature 'RPS' do
     click_link('Scissors')
     expect(page).to have_text('You selected Scissors!')
   end
+
+  scenario 'Works out winner correctly' do
+    visit "/"
+    fill_in('player1name', with: 'Karim')
+    click_button('Submit')
+    click_link('Rock')
+    allow_any_instance_of(Game).to receive(:generate_move).and_return('Rock')
+    allow_any_instance_of(Game).to receive(:player_win?).and_return(false)
+    allow_any_instance_of(Game).to receive(:player_drew?).and_return(true)
+    expect(page).to have_text('drew')
+  end
 end 
