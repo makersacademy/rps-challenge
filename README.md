@@ -2,13 +2,13 @@
 
 This is a Rock, Paper, Scissors game where the player can input their name. I started by setting up the project and writing a Capybara feature test. After writing several feature tests and passing them I needed to implement the rock paper scissors logic so I created an rspec file for my game logic and wrote a test for random sampling of rock, paper, and scissors. I implemented the rest of my game logic but I needed to refactor so that I could access variables from anywhere without using global variables. Because of some trial and error not all my lines of code were tested, so I made sure to include all needed tests and remove or refactor redundant ones. The basics are complete, but there are many more things I would like to add!
 
-# TODO
+## TODO
 * Refactor result check method in game.rb to be shorter / extract methods from it
 * Add a rematch button
 * Add more styling
 * Add more flavour text
 
-# Instructions
+## Instructions
 ```ruby
 $ git clone git@github.com: SipofTea/rps-challenge.git
 $ cd rps-challenge
