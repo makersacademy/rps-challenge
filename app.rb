@@ -11,4 +11,9 @@ class Rps < Sinatra::Base
   end
 
   run! if app_file == $0
+
+  post '/name' do
+    @player = params[:player]
+    erb(:play)
+  end
 end
