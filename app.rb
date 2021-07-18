@@ -10,30 +10,30 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    @player = Player.create(params[:player1name])
+    @game = Game.create(params[:player1name])
     erb(:play)
   end 
 
   get '/rock' do
-    @player = Player.instance
-    @player.move = 'Rock'
+    @game = Game.instance
+    @game.player.move = 'Rock'
     redirect to '/determine'
   end
 
   get '/paper' do
-    @player = Player.instance
-    @player.move = 'Paper'
+    @game = Game.instance
+    @game.player.move = 'Paper'
     redirect to '/determine'
   end
 
   get '/scissors' do
-    @player = Player.instance
-    @player.move = 'Scissors'
+    @game = Game.instance
+    @game.player.move = 'Scissors'
     redirect to '/determine'
   end
 
   get '/determine' do
-    @player = Player.instance
+    @game = Game.instance
     erb(:determine)
   end
 
