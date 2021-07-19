@@ -19,8 +19,8 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    @computer_choice = Game.instance.RPS_sample
-    redirect to(Game.instance.result_check(params[:choice], @computer_choice))
+    @computer_choice = Game.instance.rps_sample
+    redirect to(Game.instance.choice_handler(params[:choice], @computer_choice))
   end
 
   get '/win' do

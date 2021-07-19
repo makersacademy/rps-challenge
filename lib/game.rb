@@ -2,20 +2,23 @@ class Game
   attr_reader :player_name, :player_choice, :computer_choice
 
   def self.instance
-    @game ||= Game.new
+    @instance ||= Game.new
   end
 
   def start(name)
     @player_name = name
   end
 
-  def RPS_sample
+  def rps_sample
     ['Rock', 'Paper', 'Scissors'].sample
   end
 
-  def result_check(player_choice, computer_choice)
+  def set_choices(player_choice, computer_choice)
     @player_choice = player_choice
     @computer_choice = computer_choice
+  end
+
+  def result_check(player_choice, computer_choice)
     if player_choice == computer_choice
       '/draw'
     elsif player_choice == 'Rock' && computer_choice == 'Paper' ||
@@ -25,5 +28,11 @@ class Game
     else
       '/win'
     end
+  end  
+
+  def choice_handler
+    set_choices(player_choice, computer_choice)
+    result_check(player_choice, computer_choice)
   end
+  
 end

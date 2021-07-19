@@ -2,11 +2,11 @@ require 'game'
 
 describe Game do
   it 'returns rock, paper, or scissors' do
-    expect(subject.RPS_sample).to eq('Rock').or(eq('Paper')).or(eq('Scissors'))
+    expect(subject.rps_sample).to eq('Rock').or(eq('Paper')).or(eq('Scissors'))
   end
   it 'returns rock' do
-    allow(subject).to receive(:RPS_sample).and_return('Rock')
-    expect(subject.RPS_sample).to eq('Rock')
+    allow(subject).to receive(:rps_sample).and_return('Rock')
+    expect(subject.rps_sample).to eq('Rock')
   end
   it 'returns draw' do
     draw = subject.result_check('Rock', 'Rock')
