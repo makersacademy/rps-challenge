@@ -18,21 +18,22 @@ class Game
     @computer_choice = computer_choice
   end
 
-  def result_check(player_choice, computer_choice)
-    if player_choice == computer_choice
+  def result_check
+    current_match = { @player_choice => @computer_choice }
+    lose_matches = [{ "Rock" => "Paper" }, { "Paper" => "Scissors" }, { "Scissors" => "Rock" }]
+    
+    if @player_choice == @computer_choice
       '/draw'
-    elsif player_choice == 'Rock' && computer_choice == 'Paper' ||
-      player_choice == 'Paper' && computer_choice == 'Scissors' ||
-      player_choice == 'Scissors' && computer_choice == 'Rock'
+    elsif lose_matches.include? current_match
       '/lose'
     else
       '/win'
     end
   end  
 
-  def choice_handler
+  def choice_handler(player_choice, computer_choice)
     set_choices(player_choice, computer_choice)
-    result_check(player_choice, computer_choice)
+    result_check
   end
   
 end

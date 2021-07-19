@@ -9,15 +9,15 @@ describe Game do
     expect(subject.rps_sample).to eq('Rock')
   end
   it 'returns draw' do
-    draw = subject.result_check('Rock', 'Rock')
-    expect(draw).to eq('/draw')
+    subject.choice_handler('Rock', 'Rock')
+    expect(subject.result_check).to eq('/draw')
   end
   it 'returns win' do
-    draw = subject.result_check('Rock', 'Scissors')
-    expect(draw).to eq('/win')
+    subject.choice_handler('Rock', 'Scissors')
+    expect(subject.result_check).to eq('/win')
   end
   it 'returns lose' do
-    draw = subject.result_check('Rock', 'Paper')
-    expect(draw).to eq('/lose')
+    subject.choice_handler('Rock', 'Paper')
+    expect(subject.result_check).to eq('/lose')
   end
 end
