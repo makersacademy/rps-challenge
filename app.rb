@@ -8,7 +8,7 @@ class Rps < Sinatra::Base
   get '/' do
     erb(:index)
   end
-
+  
   post '/names' do
     @game = Game.create(params[:player1name])
     erb(:play)

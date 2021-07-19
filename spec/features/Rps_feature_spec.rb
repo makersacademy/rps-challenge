@@ -1,6 +1,7 @@
 require_relative '../../app.rb'
 
 RSpec.feature 'RPS' do
+  let(:login_and_submit) { fill_in('player1name', with: 'Karim') ; click_button('Submit')}
   scenario 'is expected to have title on home page' do
     visit "/"
     expect(page).to have_text("Welcome!\nPlease enter your name:")
@@ -8,15 +9,13 @@ RSpec.feature 'RPS' do
 
   scenario 'name is correctly recorded' do
     visit "/"
-    fill_in('player1name', with: 'Karim')
-    click_button('Submit')
+    login_and_submit
     expect(page).to have_text('Karim, pick your move:')
   end
 
   scenario 'Selecting your relevant move link will set game move correctly' do
     visit "/"
-    fill_in('player1name', with: 'Karim')
-    click_button('Submit')
+    login_and_submit
     click_link('Rock')
     expect(page).to have_text('You selected Rock!')
     visit "/"
@@ -33,8 +32,7 @@ RSpec.feature 'RPS' do
 
   scenario 'Works out winner correctly' do
     visit "/"
-    fill_in('player1name', with: 'Karim')
-    click_button('Submit')
+    login_and_submit
     click_link('Rock')
     allow_any_instance_of(Game).to receive(:generate_move).and_return('Rock')
     allow_any_instance_of(Game).to receive(:player_win?).and_return(false)
