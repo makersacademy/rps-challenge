@@ -1,2 +1,2 @@
-require './app/rps.rb'
+require './rps.rb'
 run RPS
