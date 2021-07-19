@@ -10,7 +10,8 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
-require './app.rb'
+require File.expand_path('../app/RPS', __dir__)
+require_relative './features/web_helpers'
 
 Capybara.app = RPS
 

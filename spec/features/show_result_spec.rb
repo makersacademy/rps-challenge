@@ -5,31 +5,23 @@ feature 'Show matchup' do
       allow_any_instance_of(Game).to receive(:RPS_sample).and_return('Rock')
     end
     scenario 'will show computer choice' do
-      visit('/')
-      fill_in 'player',	with: 'Marketeer'
-      click_button 'START GAME'
+      start_game
       click_button 'Rock'
       expect(page).to have_content 'Rock vs. Rock'
     end
 
     scenario 'will show result draw' do
-      visit('/')
-      fill_in 'player',	with: 'Marketeer'
-      click_button 'START GAME'
+      start_game
       click_button 'Rock'
       expect(page).to have_content("It's a draw!")
     end
     scenario 'will show result win' do
-      visit('/')
-      fill_in 'player',	with: 'Marketeer'
-      click_button 'START GAME'
+      start_game
       click_button 'Paper'
       expect(page).to have_content("You won!")
     end
     scenario 'will show result lose' do
-      visit('/')
-      fill_in 'player',	with: 'Marketeer'
-      click_button 'START GAME'
+      start_game
       click_button 'Scissors'
       expect(page).to have_content("You lost!")
     end
