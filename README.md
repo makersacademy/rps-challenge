@@ -41,6 +41,7 @@ As usual please start by
 * Forking this repo
 * TEST driving development of your app
 
+[You may find this guide to setting up a new Ruby web project helpful.](https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md)
 
 ## Bonus level 1: Multiplayer
 
