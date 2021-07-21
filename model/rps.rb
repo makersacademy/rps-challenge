@@ -3,15 +3,14 @@ require './app'
 class Opponent
   
   def roll
-    @array = ["Rock", "Paper", "Scissors"]
-    return @array.sample
+    ["Rock", "Paper", "Scissors"].sample
   end
 
-  def result(choice)
-
-    roll = Opponent.new.roll
-
-    if choice == "Rock" && roll == "Paper"
+  def result(choice, roll)
+    
+    if choice == roll 
+      "Draw!"
+    elsif choice == "Rock" && roll == "Paper"
       "You lose!"
     elsif choice == "Paper" && roll == "Scissors"
       "You lose!"
@@ -23,12 +22,11 @@ class Opponent
       "You win!"
     elsif choice == "Scissors" && roll == "Paper"
       "You win!"
-    else
-      "Draw!"
     end
   end
 
 end
 
 # This logic is extremely broken or somewhere else is wrong
-# It does not return intended win/lose result
+# It does not return intended win/lose result 
+# Most likely because roll makes a new instance

@@ -21,8 +21,9 @@ class Rps < Sinatra::Base
 
   post '/selection' do
     @choice = params[:choice]
-    @result = Opponent.new.result(@choice)
-    @roll = Opponent.new.roll
+    op = Opponent.new
+    @roll = op.roll
+    @result = op.result(@choice, @roll)
     erb(:results)
   end
 
