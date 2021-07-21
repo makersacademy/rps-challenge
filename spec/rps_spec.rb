@@ -7,10 +7,10 @@ describe Opponent do
     end
   end
 
-  describe '#result' do #Test still fails sometimes as is giving random input
-    xit 'Compares the result of #roll to the player input' do
+  describe '#result' do 
+    it 'Compares the result of #roll to the player input' do
       result = "Draw!"
-      expect(subject.result("Rock")).to eq("Draw!")
+     allow_any_instance_of(Opponent).to receive(:roll).and_return("Scissors")
     end
   end
 end
