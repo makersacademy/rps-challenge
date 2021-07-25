@@ -23,7 +23,9 @@ The learning intentions for this project revolved around Sinatra, Rspec and Capy
 - Ruby
 - Sinatra
 - Rspec
+- Capybara
 - Rubocop
+- SimpleCov
 
 ---
 
