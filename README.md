@@ -21,8 +21,9 @@ The learning intentions for this project revolved around Sinatra, Rspec and Capy
 # Technology
 
 - Ruby
-- Twilio
+- Sinatra
 - Rspec
+- Rubocop
 
 ---
 
