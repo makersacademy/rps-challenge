@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="<%= url('../style.css') %>" rel="stylesheet" type="text/css"/>
+  </head>
+
+  <body>
+    <div class="content">
+      <h1><%= @player %>, please choose Rock, Paper, or Scissors.</h1>
+      <form action='/choice' method='post' >
+        <button name='choice' value='Rock'>Rock</button>
+        <button name='choice' value='Paper'>Paper</button>
+        <button name='choice' value='Scissors'>Scissors</button>
+      </form>
+      </div>
+    <footer class="footer">
+      <a href="https://www.vecteezy.com/free-vector/cartoon">Cartoon Vectors by Vecteezy</a>
+    </footer>
+  </body>
+</html>
