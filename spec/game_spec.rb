@@ -12,7 +12,4 @@ describe Game do
     player.player_score
     expect(player.player_score).to eq 'Rock'
   end
-
-  
-
 end

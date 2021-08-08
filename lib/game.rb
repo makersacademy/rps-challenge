@@ -14,9 +14,9 @@ class Game
 
   def result1
     if player_score && @random == "Paper"
-      puts "You won!"
+      "You won!"
     elsif player_score && @random == "Scissors"
-      puts "You lost!"
+      "You lost!"
     end
   end
 
