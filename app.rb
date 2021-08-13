@@ -21,5 +21,15 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post "/move" do
+    $move = params[:choice]
+    redirect "/arena"
+  end
+
+  get "/arena" do
+    @move = $move
+    erb :arena
+  end
+
   run! if app_file == $0
 end
