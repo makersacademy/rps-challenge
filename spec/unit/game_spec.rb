@@ -34,12 +34,19 @@ describe Game do
       expect(game.winner).to eq(game.player2)
     end
 
-    it "sets player 2 is the winner" do
-      skip "TODO"
+    it "both players choosing rock results in a draw" do
+      game.judge(:rock, :rock)
+      expect(game.winner).to eq(nil)
     end
 
-    it "sets a draw" do
-      skip "TODO"
+    it "both players choosing paper results in a draw" do
+      game.judge(:paper, :paper)
+      expect(game.winner).to eq(nil)
+    end
+
+    it "both players choosing scissors results in a draw" do
+      game.judge(:scissors, :scissors)
+      expect(game.winner).to eq(nil)
     end
   end
 end
