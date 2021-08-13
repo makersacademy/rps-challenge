@@ -1,11 +1,13 @@
 require 'player'
 
 describe Player do  
-  subject(:player) { described_class.new("Wulfie") }
+  it 'can be created with a name' do
+    player = described_class.new('Wulfie')
 
-  before { skip "TODO" }
+    expect(player).to have_attributes(:name => 'Wulfie')
+  end
 
-  it 'should have a name' do
+  it 'can return its name' do
     expect(subject).to respond_to(:name)
   end
 end
