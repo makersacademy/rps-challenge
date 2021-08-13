@@ -1,3 +1,5 @@
+require_relative './lib/player'
+require_relative './lib/game'
 require 'sinatra/base'
 require 'sinatra/reloader'
 
@@ -5,8 +7,6 @@ class RockPaperScissors < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
-
-  enable :sessions
 
   get '/' do
     erb(:index)
@@ -21,6 +21,15 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @game = Game.instance
     erb(:play)
+  end
+
+  post '/choice' do
+    # deal with choice here - will need game/player unit tests
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb(:result)
   end
 
   run! if app_file == $0

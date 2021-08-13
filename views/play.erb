@@ -1,1 +1,9 @@
 <h1>Choose your weapon, <%=@game.player.name%></h1>
+
+<form action="/choice" method="POST">
+  <label for="rock">Rock</label>
+  <input type="radio" name="rock" id="rock">
+  <br>
+  <br>
+  <input type="submit" name="submit" value="Confirm Choice">
+</form>
