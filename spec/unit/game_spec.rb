@@ -1,13 +1,17 @@
 require 'game'
 
-describe Game do  
-  let(:player1) { double :player1 }
-  let(:player2) { double :player2 }
-  let(:player_class) { double :player_class }
+describe Game do
+  let(:p1) { double Player, name: 'Alice' }
+  let(:p2) { double Player, name: 'Bob' }
+  let(:game) { Game.new(p1, p2) }
 
-  subject(:game) {
-    described_class.new("Alice", "Bob", player_class: player_class)
-  }
+  it 'can be created with two players' do
+    expect(game).to have_attributes(:player1 => p1, :player2 => p2)
+  end
+
+  it 'does not have a winner to start with' do
+    expect(game).to have_attributes(:winner => nil)
+  end
 
   describe '#move' do
     it "sets both player's moves" do
