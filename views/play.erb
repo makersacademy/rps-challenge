@@ -9,6 +9,14 @@
 
 <body>
   <h1>Rock, Paper, Scissors</h1>
-  <h2> <%=@player%>% </h2>
+  <h2> <%=@player%> </h2>
+  <form action="" method="POST">
+  <input id="rock" type="radio" name="choice" value="rock">
+  <label for="rock">Rock</label>
+  <input id="paper" type="radio" name="choice" value="paper">
+  <label for="paper">Paper</label>
+  <input id="scissors" type="radio" name="choice" value="scissors">
+  <label for="scissors">Scissors</label>
+  <input type="submit" value="Choose">
 </body>
 </html>

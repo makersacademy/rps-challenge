@@ -7,9 +7,7 @@ describe 'Registering', type: :feature do
   end
 
   it 'allows user to submit a name and shows it to them' do
-    visit ('/')
-    fill_in 'name', with: 'Bob'
-    click_button 'Go'
+    sign_in_and_start
     expect(page).to have_content "Bob"
   end
 end

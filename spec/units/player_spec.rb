@@ -9,8 +9,8 @@ describe Player do
 
   context 'playing' do
     it 'can choose rock, paper or scissors' do
-      subject.choose(:rock)
-      expect(subject.choice).to eq :rock
+      subject.choose('rock')
+      expect(subject.choice).to eq 'rock'
     end
   end
 end
