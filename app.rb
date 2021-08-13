@@ -7,7 +7,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    'Hello World'
+    erb :index
+  end
+
+  post "/name" do
+    $player = Player.new(params[:name])
+    redirect "/play"
+   end
+
+  get "/play" do
+    @player = $player.name 
+    erb :play
   end
 
   run! if app_file == $0
