@@ -13,13 +13,15 @@ describe Game do
     expect(game).to have_attributes(:winner => nil)
   end
 
-  describe '#move' do
-    it "sets both player's moves" do
-      skip "TODO"
+  context 'when both players make a move' do
+    it "player 1 beats rock with paper" do
+      game.judge(:paper, :rock)
+      expect(game.winner).to eq(game.player1)
     end
 
-    it "sets player 1 as the winner" do
-      skip "TODO"
+    it "player 1 beats scissors with rock" do
+      game.judge(:rock, :scissors)
+      expect(game.winner).to eq(game.player1)
     end
 
     it "sets player 2 is the winner" do
