@@ -24,7 +24,6 @@ class RockPaperScissors < Sinatra::Base
     session[:rps] = params[:rps]
     @player1_choice = session[:rps]
     rps = GamePlay.new
-    @comp_choice = rps.computer
     @result = rps.game_result(@player1_choice)
     erb(:result)
   end

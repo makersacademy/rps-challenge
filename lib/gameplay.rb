@@ -2,8 +2,6 @@ require_relative './computer_rps'
 
 class GamePlay
 
-  attr_reader :computer
-
   def initialize(computer = ComputerRPS.new)
     @computer = computer
   end
