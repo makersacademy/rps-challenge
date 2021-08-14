@@ -8,4 +8,13 @@ describe Player do
     expect(subject.name).to eq "Ed"
   end
 
+  it "player weapon default is nil" do
+    expect(subject.weapon).to eq nil
+  end
+
+  it "can change player weapon" do
+    subject.choose(:rock)
+    expect(subject.weapon).to eq :rock
+  end
+
 end

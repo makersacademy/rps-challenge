@@ -24,11 +24,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    # deal with choice here - will need game/player unit tests
+    @game = Game.instance
+    p params
+    @game.player.choose(params[:choice])
     redirect '/result'
   end
 
   get '/result' do
+    @game = Game.instance
     erb(:result)
   end
 
