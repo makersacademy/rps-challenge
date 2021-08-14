@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player.rb'
+require './lib/game.rb'
 
 class RPS < Sinatra::Base
   configure :development do
@@ -13,21 +15,22 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1] = Player.new(params[:player_1]).name
-    session[:player_2] = Player.new(params[:player_2]).name
+    player_1 = Player.new(params[:player_1])
+    player_2 = Player.new(params[:player_2])
+    @game = Game.game(player_1, player_2)
     redirect(:play)
   end
 
   get '/play' do
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
+    @game = Game.game_instance
+    @game.reset_winner_loser
     erb(:play)
   end
 
-  get '/r-p-s' do
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
-    erb(:r_p_s)
+  get '/result' do
+    @game = Game.game_instance
+    @game.play
+    erb(:result)
   end
 
 

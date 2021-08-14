@@ -1,4 +1,5 @@
 require 'game'
+
 describe Game do
 
   let(:player_1) { double('Tom') }

@@ -12,7 +12,7 @@ describe Player do
     describe '#r_p_s' do
 
       it 'is expected to return rock, paper or scissors' do
-        expect(player_1.r_p_s).to eq("Rock").or eq("Paper").or eq("Scissors")
+        expect(player_1.r_p_s).to eq(:Rock).or eq(:Paper).or eq(:Scissors)
       end
 
     end
