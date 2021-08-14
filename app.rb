@@ -11,19 +11,23 @@ class Game < Sinatra::Base
   enable :sessions
 
   get '/' do
-    # 'Lets play Rock Paper Scissors!'
     erb :index
   end
 
   post '/welcome' do
     $name = Play.new(params[:player])
-    # session[:player] = params[:player]
     redirect '/game'
   end
 
   get '/game' do
-    # @player = session[:player]
     erb :game
+  end
+
+  get '/victory' do
+  end
+
+  get '/defeat' do
+
   end
 
 
