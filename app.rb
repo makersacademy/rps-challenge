@@ -1,4 +1,4 @@
-require_relative 'lib/rps'
+require_relative 'lib/player'
 require 'sinatra/base'
 require 'sinatra/reloader'
 
@@ -15,21 +15,19 @@ class Game < Sinatra::Base
   end
 
   post '/welcome' do
-    $name = Play.new(params[:player])
+    $player = Player.new(params[:name])
     redirect '/game'
   end
 
   get '/game' do
+    # $game = Rps.new(params[:move])
     erb :game
   end
 
-  get '/victory' do
-  end
+  # get '/victory' do
+  # end
 
-  get '/defeat' do
-
-  end
-
-
+  # get '/defeat' do
+  # end
   run! if app_file == $0
 end

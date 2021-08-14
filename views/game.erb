@@ -7,13 +7,14 @@
   <body>
     <section id='box'>
     <form id='game' action='/welcome'>
-      <h2>Hi <%= $name.player %>! Please make a move</h2>
+      <h2>Hi <%= $player.name %>! Please make a move</h2>
       <section id='moves'>
-        <input type='image' id='rock' src='images/rock.png' 
+        <input type='image' name='move' value='rock' src='images/rock.png' 
                alt='Submit Rock Move' width='100' height='100'/>
-        <input type='image' id='paper' src='images/paper.png' 
+        <%# <%= f.submit 'rock', %>
+        <input type='image' name='move' value='paper' src='images/paper.png' 
                alt='Submit Paper Move' width='100' height='100' />
-        <input type='image' id='scissor' src='images/scissor.png' 
+        <input type='image' name='move' value='scissors' src='images/sss.png' 
                alt='Submit Scissor Move' width='100' height='100' />
       </section>
       <h3>Choose wisely...</h3>

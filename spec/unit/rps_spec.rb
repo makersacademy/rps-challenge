@@ -1,7 +1,10 @@
 require 'rps'
 
-describe Play do
-  it 'initializes with players name' do
-    expect(subject.player).to eq 'Gandalf'
+describe Rps do
+
+  subject { described_class.new(:move) }
+
+  it 'takes move value attribute' do
+    expect(subject.move).to eq :move
   end
 end

@@ -1,7 +1,7 @@
-class Play
-  attr_reader :player
+class Rps
+  attr_reader :move
 
-  def initialize(player = 'Gandalf')
-    @player = player
+  def initialize(move)
+    @move = move
   end
 end
