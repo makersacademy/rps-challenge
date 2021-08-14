@@ -5,7 +5,7 @@ describe 'New Game', type: :feature do
     sign_in_and_start
     choose 'choose_rock'
     click_button 'Fight'
-    click_button 'New Game'
+    click_on 'New Game'
     expect(page).to have_current_path '/'
   end
 end
