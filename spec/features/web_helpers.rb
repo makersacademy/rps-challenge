@@ -5,6 +5,5 @@ def visit_root_and_enter_name
 end
 
 def enter_move(move)
-  choose move
-  click_button 'Go!'
+  click_button move
 end

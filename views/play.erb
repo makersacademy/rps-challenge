@@ -15,23 +15,8 @@
   <% end %>
 </h2>
 
-<form method="POST" name="move" action="/move">
-  <div>
-    <label for="rock">Rock</label>
-    <input type="radio" name="move" id="rock" value="rock">
-  </div>
-
-  <div>
-    <label for="paper">Paper</label>
-    <input type="radio" name="move" id="paper" value="paper">
-  </div>
-
-  <div>
-    <label for="scissors">Scissors</label>
-    <input type="radio" name="move" id="scissors" value="scissors">
-  </div>
-
-  <div>
-    <input id="submit-button" type="submit" value="Go!">
-  </div>
+<form method="POST" action="/move">
+    <button type="submit" name="move" value="rock">rock</button>
+    <button type="submit" name="move" value="paper">paper</button>
+    <button type="submit" name="move" value="scissors">scissors</button>
 </form>
