@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/opponent'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -29,6 +30,7 @@ class RockPaperScissors < Sinatra::Base
   get "/arena" do
     @name = $player.name
     @move = $move
+    @opponent_move = Opponent.new.opponent_move
     erb :arena
   end
 

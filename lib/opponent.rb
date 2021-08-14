@@ -1,9 +1,9 @@
 # Responsible for choosing a move. Has a name.
 
 class Opponent 
-  attr_reader :move
+  attr_reader :opponent_move
 
   def initialize
-    @move = ["Rock", "Paper", "Scissors"].sample
+    @opponent_move = ["Rock", "Paper", "Scissors"].sample
   end
 end
