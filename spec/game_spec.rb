@@ -10,10 +10,4 @@ describe Game do
       expect(game.player_1).to eq player_1
     end
   end
-
-  describe '#move' do
-    it 'returns correct move for player_1' do
-      expect(game.move('rock')).to eq 'rock'
-    end
-  end
 end

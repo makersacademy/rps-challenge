@@ -1,16 +1,13 @@
 class Player
-  attr_reader :name
+  attr_reader :name, :move_choice
 
   def initialize(name)
     @name = name
-  end
-  
-  def hello
-    puts "hello"
+    @move_choice
   end
 
   def move(choice)
-    print choice
+    @move_choice = choice
   end
   
 end

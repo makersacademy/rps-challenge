@@ -21,21 +21,19 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @game = Game.game_instance
-    print @game.move("get play test")
     erb(:play)
   end
 
   post '/move' do
     @game = Game.game_instance
-    print @game.move(params[:move])
+    # @game.move(params[:move])
+    @game.player_1.move(params[:move])
     redirect '/result'
   end
 
   get '/result' do
     @game = Game.game_instance
-    print @game
-    # @player_1_move = @game.move("rock")
-    # print @game.move("get result test")
+    # print @game.player_1.move_choice
     erb(:result)
   end
 
