@@ -9,8 +9,21 @@
 
 <body>
   <h1>Rock, Paper, Scissors</h1>
-  <p><%=@name%> has chosen <%=@move%></p>
-  <p>Opponent has chosen <%=@opponent_move%></p>
-  <p><%@outcome%>  </p>
+
+  <div id="player1">
+    <p><%=session[:player].name%> has chosen <%=session[:move]%></p>
+  </div>
+
+  <div id="player2">
+    <p><%=@opponent.name%> has chosen <%=@opponent.choice%></p>
+  </div>
+
+  <div id="result">
+    <%if @game.winner == :draw %>
+      <p>It's a draw</p>
+    <%else%>
+      <p>The winner is <%=@game.winner.name%>  </p>
+    <%end%>
+  </div>
 </body>
 </html>

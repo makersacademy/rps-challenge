@@ -1,8 +1,8 @@
 require 'game' 
 
 describe Game do
-  let(:rock_player) { double('Player', choice: :rock) }
-  let(:scissors_player) { double('Player', choice: :scissors) }
+  let(:rock_player) { double('Player', choice: "Rock") }
+  let(:scissors_player) { double('Player', choice: "Scissors") }
  
 
   context 'new' do

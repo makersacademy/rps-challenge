@@ -1,39 +1,40 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   post "/name" do
-    $player = Player.new(params[:name])
+    session[:player] = Player.new(params[:name])
     redirect "/play"
   end
 
   get "/play" do
-    @player = $player.name 
+    @player = session[:player].name 
     erb :play
   end
 
   post "/move" do
-    $move = params[:choice]
+    session[:move] = params[:choice]
+    session[:player].choose(session[:move])
     redirect "/arena"
   end
 
   get "/arena" do
-    @name = $player.name
     @opponent = Player.new
-    @move = $move
-    @opponent_move = @opponent.choose_random
-    @game = Game.new($player, @opponent)
+    @opponent.choose_random
+    @game = Game.new(session[:player], @opponent)
     @game.fight
-    @outcome = @game.winner
     erb :arena
   end
 

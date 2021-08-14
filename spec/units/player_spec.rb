@@ -9,8 +9,8 @@ describe Player do
 
   context 'playing' do
     it 'can choose rock, paper or scissors' do
-      subject.choose(:rock)
-      expect(subject.choice).to eq :rock
+      subject.choose("Rock")
+      expect(subject.choice).to eq "Rock"
     end
   end
 
@@ -18,19 +18,19 @@ describe Player do
     it 'can randomly choose rock' do
       srand(2)
       subject.choose_random
-      expect(subject.choice).to eq :rock
+      expect(subject.choice).to eq "Rock"
     end
   
     it 'can randomly choose paper' do
       srand(1)
       subject.choose_random
-      expect(subject.choice).to eq :paper
+      expect(subject.choice).to eq "Paper"
     end
   
     it 'can randomly choose scissors' do
       srand(3)
       subject.choose_random
-      expect(subject.choice).to eq :scissors
+      expect(subject.choice).to eq "Scissors"
     end
   end
 end

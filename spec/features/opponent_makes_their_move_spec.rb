@@ -5,6 +5,7 @@ describe 'Opponent makes their move', type: feature do
     sign_in_and_start
     choose 'choose_rock'
     click_button 'Choose'
-    expect(page).to have_content "Opponent has chosen"
+    srand(3)
+    expect(page).to have_content 'The winner is Bob'
   end
 end
