@@ -1,21 +1,23 @@
-<head>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='mystyle.css'>
+  </head>
+  <body>
 
-</head>
-
-<body class='page_layout' class='page__style'>
-
-  <h1 class='header_layout' class='header__style'>
-  <% if !@game.winner.nil? %>
-    <%= @game.winner.name %> wins with <%= @game.winner.key %> against <%= @game.loser.name %>'s garbage <%= @game.loser.key %>
-  <% else %>
-    Boring, it's a draw...
-  <% end %>
-  </h1>
+    <h1 class='header_layout' class='header__style'>
+    <% if !@game.winner.nil? %>
+      <%= @game.winner.name %> wins with <%= @game.winner.key %> against <%= @game.loser.name %>'s <%= @insult %> <%= @game.loser.key %>
+    <% else %>
+      Boring, it's a draw...
+    <% end %>
+    </h1>
 
 
-  </h1>
-  <form action='/play' class='form_layout'>
-    <input type='submit' class='button__style' value='Back'>
-  </form>
+    </h1>
+    <form action='/play' class='form_layout'>
+      <input type='submit' class='button__style' value='Back'>
+    </form>
 
-</body>
+  </body>
+</html>

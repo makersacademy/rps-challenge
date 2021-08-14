@@ -1,14 +1,17 @@
-<head>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='mystyle.css'>
+  </head>
+  <body>
 
-</head>
+    <h1 class='header_layout' class='header__style'>
+      Are you ready to Rock, Paper, Scissors, <%= @game.player_1.name %> and <%= @game.player_2.name %>?
+    </h1>
 
-<body class='page_layout' class='page__style'>
+    <form action='/result' class='form_layout'>
+      <input type='submit' class='button__style' value='R-P-S!'>
+    </form>
 
-  <h1 class='header_layout' class='header__style'>
-    Are you ready to Rock, Paper, Scissors, <%= @game.player_1.name %> and <%= @game.player_2.name %>?
-  </h1>
-
-  <form action='/result' class='form_layout'>
-    <input type='submit' class='button__style' value='R-P-S!'>
-  </form>
-</body>
+  </body>
+</html>

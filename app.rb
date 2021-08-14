@@ -30,6 +30,7 @@ class RPS < Sinatra::Base
   get '/result' do
     @game = Game.game_instance
     @game.play
+    @insult = ["garbage", "rubbish", "trash"].sample
     erb(:result)
   end
 
