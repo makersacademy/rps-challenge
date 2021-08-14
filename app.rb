@@ -7,10 +7,7 @@ class RPS < Sinatra::Base
   end
   
   enable :sessions
-  #get '/' do
-    #'Welcome to RPS Game!'
-  #end
-   
+
   get '/' do
     erb :index
   end

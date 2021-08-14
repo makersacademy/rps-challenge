@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'selenium-webdriver'
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'selenium-webdriver'
 
 group :test do
   gem 'capybara'
