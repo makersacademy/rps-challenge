@@ -14,7 +14,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/players' do
-    $Player_1 = Player.new(params[:player1])
+    $Player_1 = Game.new(params[:player1])
     redirect '/begin'
   end
 
