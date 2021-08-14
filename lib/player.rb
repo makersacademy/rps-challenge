@@ -6,4 +6,8 @@ class Player
     @name = name
   end
 
+  def r_p_s
+    ["Rock", "Paper", "Siccors"].sample
+  end
+
 end
