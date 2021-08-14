@@ -1,1 +1,22 @@
-<h1><%="Hi #{@player_1}!"%></h1><br>
+<body>
+
+<h1><%="Hi #{@player_1.name}!"%></h1><br>
+
+<h2>Make your move! Rock, Paper, or Scissors?</h2>
+
+<form id="rps_move" action="/make_move" method="post">
+
+  <input type="radio" id="rock" name="rps_move" value="rock">
+  <label for="rock">Rock</label><br>
+
+  <input type="radio" id="paper" name="rps_move" value="paper">
+  <label for="paper">Paper</label><br>
+
+  <input type="radio" id="scissors" name="rps_move" value="scissors">
+  <label for="scissors">Scissors</label><br>
+
+  <input type="submit" value="Submit"><br>
+
+</form>
+
+</body>
