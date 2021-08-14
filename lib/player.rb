@@ -12,6 +12,6 @@ class Player
   end
 
   def choose_random
-    @choice = ["Rock", "Paper", "Scissors"].sample
+    @choice = ["Rock", "Paper", "Scissors"].sample if @choice.nil?
   end
 end

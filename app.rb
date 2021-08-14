@@ -31,9 +31,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/arena" do
-    @opponent = Player.new
-    @opponent.choose_random
-    @game = Game.new(session[:player], @opponent)
+    session[:opponent] = Player.new if session[:opponent].nil?
+    session[:opponent].choose_random
+    @game = Game.new(session[:player], session[:opponent])
     @game.fight
     erb :arena
   end
