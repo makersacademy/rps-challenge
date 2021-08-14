@@ -20,6 +20,7 @@ describe RPS do
     context 'program is able to run a game' do
         let(:player1){double = 'rock'}
         let(:player2){double = 'paper'}
+
         it 'returns rock for player1' do
             expect(player1).to eq('rock')
         end
@@ -30,14 +31,14 @@ describe RPS do
     end
 
     context 'expects the game to return the correct result' do
-        new_game = RPS.new
-        let(:player1){double(player1 = 'rock')}
-        let(:player2){double(player2 = 'paper')}
-        it 'expects the game to run correctly' do
-        expect{new_game.game}.to output('Player 2 wins\n').to_stdout
-        end
+
+    let(:game) { RPS.new() }
+
+    it 'Should allow player2 to win' do
+      game.stub(:player1).and_return('rock')
+      game.stub(:player2).and_return('rock')
+      expect{game.game}.to output("It's a draw!\n").to_stdout
     end
-
-
+    end 
 
 end

@@ -12,10 +12,9 @@ class RPS
     def game
         if @player1 == 'rock' && @player2 == 'scissors' || @player1 == 'scissors' && @player2 == 'paper' || @player1 == 'paper' && @player2 == 'rock'
             puts 'Player 1 wins'
-        elsif @player2 == 'rock' && @player1 == 'scissors' || @player2 == 'scissors' && @player1 == 'paper' || @player2 == 'paper' && @player1 == 'rock'
-            puts 'Player 2 wins'
-        else
+        elsif @player1 == @player2
             puts 'It\'s a draw!'
+        else puts "Player 2 wins"
         end
     end
 end
