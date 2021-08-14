@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>RPS - Makers Week 3</title>
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
+
+  <body>
+    <header id="header">
+      <h1>Welcome to the THUNDERDOME!</h1>
+    </header>
+
+    <h2>Enter your information</h2>
+
+    <% if !@game.two_players %>
+      <form action="/startgame" method="post">
+        <div id="name_entries">
+          <div id="name_containers">
+            <label>Player 1</label>
+            <br>
+            <label for="player_1_name">Name: </label>
+            <input type="text" id="player_1_name" name="player_1_name" required>
+            <br>
+            <br>
+            <img src='https://i2-prod.mirror.co.uk/incoming/article6819249.ece/ALTERNATES/s1200d/MAIN-Princess-Leia-changed-name-in-new-Star-Wars.jpg' style='height:100px;'>
+          </div>
+          <div id="name_containers">
+            <label>Player 2</label>
+            <br>
+            <label for="player_2_name">Name: </label>
+            <label for="player_2_name">K-2SO</label>
+            <br>
+            <br>
+            <img src='https://lumiere-a.akamaihd.net/v1/images/rogue-one-k-2so-quotes-3_053caf66.jpeg?region=0%2C30%2C1154%2C577&width=960' style='height:100px;'>
+          </div>
+        </div>
+        <br>
+        <input type="submit" value="Start Game!" id="player_buttons">
+      </form>
+
+    <% elsif @game.two_players %>
+      <form action="/startgame" method="post">
+        <div id="name_entries">
+          <div id="name_containers">
+            <label>Player 1</label>
+            <br>
+            <label for="player_1_name">Name: </label>
+            <input type="text" id="player_1_name" name="player_1_name" required>
+            <br>
+            <br>
+            <img src='https://i2-prod.mirror.co.uk/incoming/article6819249.ece/ALTERNATES/s1200d/MAIN-Princess-Leia-changed-name-in-new-Star-Wars.jpg' style='height:100px;'>
+          </div>
+          <div id="name_containers">
+            <label>Player 2</label>
+            <br>
+            <label for="player_2_name">Name: </label>
+            <input type="text" id="player_2_name" name="player_2_name" required>
+            <br>
+            <br>
+            <img src='https://lumiere-a.akamaihd.net/v1/images/han-solo-main_a4c8ff79.jpeg?region=0%2C0%2C1920%2C960' style='height:100px;'>
+          </div>
+        </div>
+        <br>
+        <input type="submit" value="Start Game!" id="player_buttons">
+      </form>
+    <% end %>
+  </body>
+</html>

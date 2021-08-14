@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>RPS - Makers Week 3</title>
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
+
+  <body>
+    <header id="header">
+      <h1>THE THUNDERDOME!</h1>
+    </header>
+
+    <h2><%= @game.victory_message %></h2>
+
+    <% if @game.victory_2 == @game.player_1_name %>
+      <iframe src="https://giphy.com/embed/3ornk0ndWxpVYILAVq" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/starwars-movie-star-wars-3ornk0ndWxpVYILAVq">via GIPHY</a></p>
+    <% elsif @game.victory_2 == 'K-2SO' %>
+      <iframe src="https://giphy.com/embed/l3fZBHUa4vwuGDUgo" width="480" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/starwars-star-wars-rogue-one-l3fZBHUa4vwuGDUgo">via GIPHY</a></p>
+    <% elsif @game.victory_2 == @game.player_2_name %>
+      <iframe src="https://giphy.com/embed/wvtGFFbk2rcs" width="480" height="431" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/marcelo-vieira-wvtGFFbk2rcs">via GIPHY</a></p>
+    <% else %>
+      <iframe src="https://giphy.com/embed/dvD0OAETRfCXC" width="480" height="184" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/star-wars-fail-dvD0OAETRfCXC">via GIPHY</a></p>
+    <% end %>
+
+    <form action="/" method="get">
+      <input type="submit" name="new_round" value="New Game" id="player_buttons">
+    </form>
+  </body>
+</html>
