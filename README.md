@@ -1,3 +1,9 @@
+To Do
+* Hide player two options unless 'additional human' has been selected
+* Do not allow user to continue without selection
+
+
+
 # RPS Challenge
 
 Instructions

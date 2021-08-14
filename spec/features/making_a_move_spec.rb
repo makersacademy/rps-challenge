@@ -22,7 +22,7 @@ describe 'Making a Move', type: :feature do
   
   it 'allows user to submit their choice' do
     choose 'choose_scissors'
-    click_button 'Choose'
+    click_button 'Fight'
     expect(page).to have_content "Bob has chosen Scissors"
   end
 end

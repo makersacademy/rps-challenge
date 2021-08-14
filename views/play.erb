@@ -9,15 +9,23 @@
 
 <body>
   <h1>Rock, Paper, Scissors</h1>
-  <h2> <%=@player%> </h2>
   <form action="/move" method="POST">
-    <input id="choose_rock" type="radio" name="choice" value="Rock">
-    <label for="rock">Rock</label>
-    <input id="choose_paper" type="radio" name="choice" value="Paper">
-    <label for="paper">Paper</label>
-    <input id="choose_scissors" type="radio" name="choice" value="Scissors">
-    <label for="scissors">Scissors</label>
-    <input type="submit" value="Choose">
+    <p> <%=@player%> </p>
+      <input id="choose_rock" type="radio" name="choice" value="Rock">
+      <label for="rock">Rock</label>
+      <input id="choose_paper" type="radio" name="choice" value="Paper">
+      <label for="paper">Paper</label>
+      <input id="choose_scissors" type="radio" name="choice" value="Scissors">
+      <label for="scissors">Scissors</label>
+      <input type="button" value="Choose">
+    <p> <%=@player2%> </p>
+      <input class="choice2" id="choose_rock2" type="radio" name="choice2" value="Rock">
+      <label class="choice2" for="rock">Rock</label>
+      <input class="choice2" id="choose_paper2" type="radio" name="choice2" value="Paper">
+      <label class="choice2" for="paper">Paper</label>
+      <input class="choice2" id="choose_scissors2" type="radio" name="choice2" value="Scissors">
+      <label class="choice2" for="scissors">Scissors</label>
+    <input type="submit" value="Fight">
   </form>
 </body>
 </html>
