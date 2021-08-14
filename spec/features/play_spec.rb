@@ -1,8 +1,10 @@
 feature 'playing a game of rps' do
-  scenario 'see game choices' do
+  before do
     sign_in_and_play
-    expect(page).to have_content "Rock"
-    expect(page).to have_content "Paper"
-    expect(page).to have_content "Scissors"
+  end
+  scenario 'see game options' do
+    expect(page).to have_button "Rock"
+    expect(page).to have_button "Paper"
+    expect(page).to have_button "Scissors"
   end
 end
