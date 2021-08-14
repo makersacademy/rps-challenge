@@ -2,6 +2,12 @@ require 'spec_helper'
 
 feature 'playing the game' do
   describe 'play page' do
+    it 'redirects to the root page unless the player has chosen a name' do
+      visit('/play')
+
+      expect(page).to have_content('Player Name')
+    end
+    
     it 'prompts the player to make a move when they play for the first time' do
       visit_root_and_enter_name
 

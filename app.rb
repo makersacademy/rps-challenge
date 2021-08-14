@@ -18,6 +18,8 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    redirect '/' unless session[:player]
+    
     @player = session[:player]
     @player_move = session[:player_move]
     @robot_move = session[:robot_move]
