@@ -8,8 +8,13 @@ class Game < Sinatra::Base
   end
 
   get '/' do
-    'Lets play Rock Paper Scissors!'
-    # erb :index
+    # 'Lets play Rock Paper Scissors!'
+    erb :index
   end
+
+  # post '/welcome' do
+  #   erb :index
+  # end
+
   run! if app_file == $0
 end
