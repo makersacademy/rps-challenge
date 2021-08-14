@@ -15,8 +15,6 @@ require_relative './features/rps_website_helpers'
 # Tell capybara to talk to RockPaperScissors
 Capybara.app = RockPaperScissors
 
-
-
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
