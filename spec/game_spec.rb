@@ -19,8 +19,8 @@ describe Game do
     end
 
     it 'allows a loser' do
-      allow(game).to receive(:winner) { player_1 }
-      expect(game.winner).to eq(player_1)
+      allow(game).to receive(:loser) { player_1 }
+      expect(game.loser).to eq(player_1)
     end
 
     it 'is a tie if winner and loser are nil' do
@@ -36,6 +36,17 @@ describe Game do
       allow(game).to receive(:winner) { player_1 }
       allow(game).to receive(:loser) { player_2 }
       expect(game.reset_winner_loser).to eq(nil)
+    end
+
+  end
+
+  describe ' #set_winner_loser' do
+
+    it 'is expected to reset the winner loser values' do
+      allow(game).to receive(:winner) { player_1 }
+      allow(game).to receive(:loser) { player_2 }
+      expect(game.winner).to eq(player_1)
+      expect(game.loser).to eq(player_2)
     end
 
   end
