@@ -1,13 +1,21 @@
 <h2><%= @game.player1.name %> has chosen <%= @game.player1.weapon %></h2>
+
 <br>
+
 <h2><%= @game.player2.name %> has chosen <%= @game.player2.weapon %></h2>
+
 <br>
+
 <% if @game.outcome == :p1 %>
   <h1><%= @game.player1.name %> wins, <%= @game.player2.name %> loses!</h1>
 <% elsif @game.outcome == :p2 %>
-  h1><%= @game.player1.name %> loses, <%= @game.player2.name %> wins!</h1>
+  <h1><%= @game.player1.name %> loses, <%= @game.player2.name %> wins!</h1>
 <% else %>
   <h1>It's a draw!</h2>
 <% end %>
+
+<form action="/play-again" method="GET">
+  <input type="submit" value="Play Again">
+</form>
 
 

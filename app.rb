@@ -35,5 +35,13 @@ class RockPaperScissors < Sinatra::Base
     erb(:result)
   end
 
+  get '/play-again' do
+    @game = Game.instance
+    p @game.player2
+    @game.player2.choose_weapon
+    p @game.player2
+    erb(:play)
+  end
+
   run! if app_file == $0
 end

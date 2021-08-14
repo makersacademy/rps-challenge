@@ -36,4 +36,20 @@ feature "playing the game" do
     expect(page).to have_content("Ed wins, HAL 9000 loses!")
   end
 
+  scenario "can start a new game" do
+    sign_in_and_play
+    player_chooses_rock
+    click_button 'Play Again'
+    expect(page).to have_content("Choose your weapon, Ed")
+    expect(page).to_not have_content("Ed loses, HAL 9000 wins!")
+  end
+
+  scenario "computer player chooses different weapon in new game" do
+    sign_in_and_play
+    player_chooses_rock
+    click_button 'Play Again'
+    player_chooses_rock
+    expect(page).to have_content("It's a draw!")
+  end
+
 end
