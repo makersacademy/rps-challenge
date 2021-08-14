@@ -15,7 +15,6 @@ class RPS < Sinatra::Base
   post '/names' do
     session[:player_1] = params[:player_1]
     session[:player_2] = params[:player_2]
-    p params
     redirect(:play)
   end
 
@@ -23,6 +22,12 @@ class RPS < Sinatra::Base
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
     erb(:play)
+  end
+
+  get '/r-p-s' do
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    erb(:r_p_s)
   end
 
 
