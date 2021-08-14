@@ -10,7 +10,3 @@ class Computer
   MOVES = ['rock', 'paper', 'scissors']
   
 end
-
-cp = Computer.new
-p cp
-# p cp.random_move
