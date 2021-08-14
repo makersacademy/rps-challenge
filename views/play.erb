@@ -1,1 +1,28 @@
 <h1><%= @player %> vs. Robot</h1>
+<% if @winner %>
+<h3>You chose: <%= @player_move.capitalize %></h3>
+<h1><%= @winner %> wins!</h1>
+<% end %>
+
+<h2>Make your move!</h2>
+
+<form method="POST" name="move" action="/move">
+  <div>
+    <label for="rock">Rock</label>
+    <input type="radio" name="move" id="rock" value="rock">
+  </div>
+
+  <div>
+    <label for="paper">Paper</label>
+    <input type="radio" name="move" id="paper" value="paper">
+  </div>
+
+  <div>
+    <label for="scissors">Scissors</label>
+    <input type="radio" name="move" id="scissors" value="scissors">
+  </div>
+
+  <div>
+    <input id="submit-button" type="submit" value="Go!">
+  </div>
+</form>

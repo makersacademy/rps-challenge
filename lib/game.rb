@@ -1,15 +1,21 @@
-class Game
-  attr_reader :player, :winner
+module Game
+  @@move = {
+    rock: { beats: { scissors: true, paper: false } },
+    paper: { beats: { rock: true, scissors: false } },
+    scissors: { beats: { paper: true, rock: false } }
+  }
 
-  @@moves = [:scissors, :paper, :rock]
-
-  def initialize(player)
-    @player = player
-    @winner = nil
+  def self.random_move
+    @@move.keys.sample
   end
 
-  def judge(move1, move2)
-    @winner = @player.name if @@moves[@@moves.index(move1)] == @@moves[@@moves.index(move2) - 1]
-    @winner = "Robot" if @@moves[@@moves.index(move2)] == @@moves[@@moves.index(move1) - 1]
+  def self.judge(move1, move2)
+    move1, move2 = move1.to_sym, move2.to_sym
+
+    return case
+           when @@move[move1][:beats][move2]; -1
+           when @@move[move2][:beats][move1]; 1
+           else 0
+           end
   end
 end
