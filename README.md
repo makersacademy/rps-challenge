@@ -1,6 +1,10 @@
 To Do
+* Add new game button
 * Hide player two options unless 'additional human' has been selected
+* Style!
 * Do not allow user to continue without selection
+* Add Spock & Lizard rules
+* Save results, keep score, allow rematch with same named players
 
 
 
