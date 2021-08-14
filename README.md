@@ -1,5 +1,4 @@
 To Do
-* Add new game button
 * Hide player two options unless 'additional human' has been selected
 * Style!
 * Do not allow user to continue without selection

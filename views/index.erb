@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>Rock, Paper, Scissors</title>
+  <link href="/styles.css" rel="stylesheet" type="text/css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
@@ -9,16 +10,33 @@
 
 <body>
   <h1>Rock, Paper, Scissors</h1>
-  <form action="/name" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" name="name">
+  <%# <form action="/name" method="POST">
+    <div class="player1">
+      <label for="name">Name:</label>
+      <input type="text" name="name">
+    </div>
 
-    <input type="checkbox" name="player2">
-    <label class="player2" for="player2">Add another human player</label>
-    <label class="player2" for="name2">Name:</label>
-    <input class="player2" type="text" name="name2">
+    <div class="additional_player">
+      <input id="toggle" type="checkbox" name="player2">
+      <label for="player2">Add another human player</label>
+    </div>
+    <div class="player2">
+      <label for="name2">Name:</label>
+      <input type="text" name="name2">
+    </div> %>
+  
 
-    <input type="submit" value="Go">
+<form action="/name" method="POST">
+  <div class="additional_player">
+    <table><tbody>
+    <input type="checkbox" id="expand-player2" /><label for="expand-player2">Add another human player</label>
+    <tr class="non-expandable"><td><label for="name">Name:</label></td><td> <input type="text" name="name"></td></tr>
+    <tr class="expandable" id="player2"><td><label for="name2">Name:</label></td><td> <input type="text" name="name2"></td></tr>
+    </tbody></table>
+  </div>
+    <div class="confirm_players">
+      <input type="submit" value="Go">
+    </div>
   </form>
 </body>
 </html>

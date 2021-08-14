@@ -1,0 +1,44 @@
+/* #4D3E3E
+#FFF3CD
+#FFC38B
+#FF926B */
+
+body {
+  margin: 24px;
+  font-family: ;
+  font-size: ;
+  font-weight: ;
+  line-height: ;
+  color: #4D3E3E;
+  text-align: ;
+  background-color: #FFF3CD;
+}
+
+form {
+  display: block;
+  position: relative;
+  top: 50px;
+}
+
+.confirm_players {
+  position: relative;
+  left: 240px;
+  top: -86px;;
+}
+
+.non-expandable {
+  position: relative;
+  top: -60px;;
+}
+
+/* Hide expandable content by default */
+.expandable {
+  visibility: collapse;
+  position: absolute;
+  top: 30px;
+}
+
+/* Show hidden content when the checkbox is checked */
+#expand-player2:checked ~ * .expandable {
+  visibility: visible;
+}
