@@ -27,6 +27,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/arena" do
+    @name = $player.name
     @move = $move
     erb :arena
   end
