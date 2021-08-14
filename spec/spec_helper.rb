@@ -4,6 +4,7 @@ require 'simplecov'
 require 'simplecov-console'
 require 'rack_session_access'
 require 'rack_session_access/capybara'
+require './spec/features/web_helpers.rb'
 
 ENV['RACK_ENV'] = 'test'
 
