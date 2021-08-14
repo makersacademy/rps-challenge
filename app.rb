@@ -35,7 +35,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/arena" do
-    session[:player2] = Player.new("Computer") if session[:player2].name == ""
+    session[:player2] = Player.new if session[:player2].name == ""
     session[:player2].choose_random
     @game = Game.new(session[:player], session[:player2])
     @game.fight
