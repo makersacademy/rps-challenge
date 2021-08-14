@@ -1,22 +1,29 @@
-<h1><%= @player %> vs. Robot</h1>
+<header>
+  <%= @player %> vs. Robot
+</header>
 
 <% if @winner %>
-  <h3>You chose: <%= @player_move.capitalize %>...</h3>
-  <h3>Robot chose: <%= @robot_move.capitalize %>...</h3>
-  <h1><%= @winner %> wins!</h1>
-  <br />
+  <div id="results">
+    <h3>You chose: <%= @player_move.capitalize %>...</h3>
+    <h3>Robot chose: <%= @robot_move.capitalize %>...</h3>
+    <h1><%= @winner %> wins!</h1>
+  </div>
 <% end %>
 
-<h2>
-  <% if @winner %>
-    Play again
-  <% else %>
-    Make your move
-  <% end %>
-</h2>
+<div id="move-prompt">
+  <h2>
+    <% if @winner %>
+      Play again
+    <% else %>
+      Make your move
+    <% end %>
+  </h2>
+</div>
 
-<form method="POST" action="/move">
-  <button id="rock-button" class="move-button" type="submit" name="move" value="rock"></button>
-  <button id="paper-button" class="move-button" type="submit" name="move" value="paper"></button>
-  <button id="scissors-button" class="move-button" type="submit" name="move" value="scissors"></button>
-</form>
+<div id="choices">
+  <form method="POST" action="/move">
+    <button id="rock-button" class="move-button" type="submit" name="move" value="rock"></button>
+    <button id="paper-button" class="move-button" type="submit" name="move" value="paper"></button>
+    <button id="scissors-button" class="move-button" type="submit" name="move" value="scissors"></button>
+  </form>
+</div>

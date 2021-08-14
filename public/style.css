@@ -1,9 +1,24 @@
+body {
+  background-color: #e6e6ff;
+  background: rgb(222,134,197);
+  background: -moz-linear-gradient(0deg, rgba(222,134,197,1) 0%, rgba(230,230,255,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(222,134,197,1) 0%, rgba(230,230,255,1) 100%);
+  background: linear-gradient(0deg, rgba(222,134,197,1) 0%, rgba(230,230,255,1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0;
+  overflow: hidden;
+}
+
 .move-button {
   background-color: transparent;
-  opacity:0.5;
+  opacity:0.6;
   border: none;
-  width: 5rem;
-  height: 5rem;
+  height: 10rem;
+  width: 10rem;
 }
 
 .move-button:hover {
