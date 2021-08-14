@@ -14,7 +14,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:name])
-    @game = Game.generate(player)
+    opponent = Opponent.new
+    @game = Game.generate(player, opponent)
     redirect '/play'
   end
 
@@ -25,7 +26,6 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice' do
     @game = Game.instance
-    p params
     @game.player.choose(params[:choice])
     redirect '/result'
   end
