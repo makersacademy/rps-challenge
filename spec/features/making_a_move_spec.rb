@@ -6,23 +6,23 @@ describe 'Making a Move', type: :feature do
   end
 
   it 'can choose rock' do
-    choose 'Rock'
-    expect(page).to have_field('Rock', checked: true)
+    choose 'choose_rock'
+    expect(page).to have_field('choose_rock', checked: true)
   end
 
   it 'can choose paper' do
-    choose 'Paper'
-    expect(page).to have_field('Paper', checked: true)
+    choose 'choose_paper'
+    expect(page).to have_field('choose_paper', checked: true)
   end
-
+  
   it 'can choose scissors' do
-    choose 'Scissors'
-    expect(page).to have_field('Scissors', checked: true)
+    choose 'choose_scissors'
+    expect(page).to have_field('choose_scissors', checked: true)
   end
   
   it 'allows user to submit their choice' do
-    choose 'Scissors'
+    choose 'choose_scissors'
     click_button 'Choose'
-    expect(page).to have_content "Bob has chosen"
+    expect(page).to have_content "Bob has chosen Scissors"
   end
 end

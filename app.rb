@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
-require './lib/opponent'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -15,7 +14,7 @@ class RockPaperScissors < Sinatra::Base
   post "/name" do
     $player = Player.new(params[:name])
     redirect "/play"
-   end
+  end
 
   get "/play" do
     @player = $player.name 
@@ -29,8 +28,12 @@ class RockPaperScissors < Sinatra::Base
 
   get "/arena" do
     @name = $player.name
+    @opponent = Player.new
     @move = $move
-    @opponent_move = Opponent.new.opponent_move
+    @opponent_move = @opponent.choose_random
+    @game = Game.new($player, @opponent)
+    @game.fight
+    @outcome = @game.winner
     erb :arena
   end
 

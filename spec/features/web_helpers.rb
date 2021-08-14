@@ -1,5 +1,5 @@
 def sign_in_and_start
-  visit ('/')
+  visit '/'
   fill_in 'name', with: 'Bob'
   click_button 'Go' 
 end
