@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/reloader' if development?
+require 'sinatra/reloader' if test?
 require_relative 'lib/game'
 require_relative 'lib/player'
 
@@ -7,10 +7,10 @@ class RPS < Sinatra::Base
   include Game
   enable :sessions
 
-  configure :development do
+  configure :test do 
     register Sinatra::Reloader
   end
-
+  
   get '/' do
     erb :welcome
   end

@@ -2,6 +2,8 @@ require 'capybara'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'rack_session_access'
+require 'rack_session_access/capybara'
 
 ENV['RACK_ENV'] = 'test'
 
@@ -13,6 +15,10 @@ SimpleCov.start
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 Capybara.app = RPS
+
+RPS.configure do |app|
+  app.use RackSessionAccess::Middleware
+end
 
 RSpec.configure do |config|
   config.after(:suite) do
