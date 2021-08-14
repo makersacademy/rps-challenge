@@ -1,3 +1,4 @@
+require_relative 'lib/rps'
 require 'sinatra/base'
 require 'sinatra/reloader'
 
@@ -15,12 +16,13 @@ class Game < Sinatra::Base
   end
 
   post '/welcome' do
-    session[:player] = params[:player]
+    $name = Play.new(params[:player])
+    # session[:player] = params[:player]
     redirect '/game'
   end
 
   get '/game' do
-    @player = session[:player]
+    # @player = session[:player]
     erb :game
   end
 
