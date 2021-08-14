@@ -18,4 +18,13 @@ class Game
     @opponent = opponent
   end
 
+  def outcome
+    return "It's a draw!" if @player.weapon == @opponent.weapon
+    return "You lose!" if @player.weapon == "Rock" && @opponent.weapon == "Paper"
+    return "You lose!" if @player.weapon == "Paper" && @opponent.weapon == "Scissors"
+    return "You lose!" if @player.weapon == "Scissors" && @opponent.weapon == "Rock"
+    
+    "You win!"
+  end
+
 end

@@ -12,16 +12,28 @@ feature "playing the game" do
     end
   end
 
-  scenario "computer selects rock" do
-    srand 1233
-    sign_in_and_play
+  scenario "computer selects a weapon" do
+    sign_in_and_play(5)
     player_chooses_rock
-    expect(page).to have_content("Your opponent has chosen Rock")
+    expect(page).to have_content("Your opponent has chosen Scissors")
   end
 
-# 1230 paper
-# 1233 rock
-# 1234 scissors
-# based on [Rock, Paper, Scissors].sample
+  scenario "player & computer select same weapon: drawn game" do
+    sign_in_and_play(2)
+    player_chooses_rock
+    expect(page).to have_content("It's a draw!")
+  end
+
+  scenario "player rock & computer paper: computer wins" do
+    sign_in_and_play
+    player_chooses_rock
+    expect(page).to have_content("You lose!")
+  end
+
+  scenario "player rock & computer scissors: player wins" do
+    sign_in_and_play(5)
+    player_chooses_rock
+    expect(page).to have_content("You win!")
+  end
 
 end
