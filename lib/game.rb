@@ -1,3 +1,4 @@
+require './lib/player.rb'
 class Game
 
   attr_reader :player_1, :player_2
@@ -7,6 +8,8 @@ class Game
     @player_2 = player_2_class
   end
 
-
+  def show_hand
+    puts "#{@player_1.r_p_s} #{@player_2.r_p_s}"
+  end
 
 end

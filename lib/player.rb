@@ -7,7 +7,7 @@ class Player
   end
 
   def r_p_s
-    ["Rock", "Paper", "Siccors"].sample
+    ["Rock", "Paper", "Scissors"].sample
   end
 
 end
