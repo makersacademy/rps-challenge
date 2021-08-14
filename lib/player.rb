@@ -7,7 +7,7 @@ class Player
   end
 
   def move(choice)
-    @move_choice = choice
+    @move_choice = choice.downcase
   end
   
 end

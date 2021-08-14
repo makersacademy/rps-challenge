@@ -12,8 +12,8 @@ class Game
   end
 
   def compare_moves
-    @moves << player_1.move_choice.downcase
-    @moves << player_2.move_choice.downcase
+    @moves << player_1.move_choice
+    @moves << player_2.move_choice
   end
 
   def score_game(player_moves)
