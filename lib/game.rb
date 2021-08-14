@@ -1,30 +1,26 @@
-require_relative 'player'
 require_relative 'opponent'
+require_relative 'player'
+require_relative 'rules'
 
 class Game
 
-  attr_reader :player, :opponent
+  attr_reader :player1, :player2
 
-  def self.generate(player, opponent)
-    @game = Game.new(player, opponent)
+  def self.generate(player1, player2)
+    @game = Game.new(player1, player2)
   end
 
   def self.instance
     @game
   end
 
-  def initialize(player, opponent)
-    @player = player
-    @opponent = opponent
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
   end
 
-  def outcome
-    return "It's a draw!" if @player.weapon == @opponent.weapon
-    return "You lose!" if @player.weapon == "Rock" && @opponent.weapon == "Paper"
-    return "You lose!" if @player.weapon == "Paper" && @opponent.weapon == "Scissors"
-    return "You lose!" if @player.weapon == "Scissors" && @opponent.weapon == "Rock"
-    
-    "You win!"
+  def outcome(rules = Rules.new(@player1.weapon, @player2.weapon))
+    rules.result
   end
 
 end

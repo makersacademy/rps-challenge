@@ -13,8 +13,8 @@ describe Player do
   end
 
   it "can change player weapon" do
-    subject.choose(:rock)
-    expect(subject.weapon).to eq :rock
+    subject.choose("Rock")
+    expect(subject.weapon).to eq "Rock"
   end
 
 end

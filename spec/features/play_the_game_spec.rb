@@ -8,14 +8,14 @@ feature "playing the game" do
       choose weapon
       click_button 'Confirm Choice'
       expect(page).to_not have_content("Choose your weapon, Ed")
-      expect(page).to have_content("You have chosen #{weapon}")
+      expect(page).to have_content("Ed has chosen #{weapon}")
     end
   end
 
   scenario "computer selects a weapon" do
     sign_in_and_play(5)
     player_chooses_rock
-    expect(page).to have_content("Your opponent has chosen Scissors")
+    expect(page).to have_content("HAL 9000 has chosen Scissors")
   end
 
   scenario "player & computer select same weapon: drawn game" do
@@ -27,13 +27,13 @@ feature "playing the game" do
   scenario "player rock & computer paper: computer wins" do
     sign_in_and_play
     player_chooses_rock
-    expect(page).to have_content("You lose!")
+    expect(page).to have_content("Ed loses, HAL 9000 wins!")
   end
 
   scenario "player rock & computer scissors: player wins" do
     sign_in_and_play(5)
     player_chooses_rock
-    expect(page).to have_content("You win!")
+    expect(page).to have_content("Ed wins, HAL 9000 loses!")
   end
 
 end
