@@ -1,26 +1,19 @@
+require_relative './computer_rps'
+
 class GamePlay
 
-  def random_number
-    rand(1..3)
-  end
+  attr_reader :computer
 
-  def computer_rps
-    case random_number
-      when 1
-        "Rock"
-      when 2
-        "Paper"
-      else
-        "Scissors"
-    end
+  def initialize(computer = ComputerRPS.new)
+    @computer = computer
   end
 
   def game_result(player_choice)
-    if player_choice.downcase == "rock" && computer_rps == "Scissors" ||
-      player_choice.downcase  == "paper" && computer_rps == "Rock" ||
-      player_choice.downcase  == "scissors" && computer_rps == "Paper"  
+    if player_choice.downcase == "rock" && @computer.rock_paper_scissors == "Scissors" ||
+      player_choice.downcase  == "paper" && @computer.rock_paper_scissors == "Rock" ||
+      player_choice.downcase  == "scissors" && @computer.rock_paper_scissors == "Paper"  
       "Congrats, you win!"
-    elsif player_choice.downcase  == computer_rps.downcase
+    elsif player_choice.downcase  == @computer.rock_paper_scissors.downcase
       "Its a tie!"
     else
       "You loose!"
@@ -28,3 +21,5 @@ class GamePlay
   end
 
 end
+
+

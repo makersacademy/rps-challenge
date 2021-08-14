@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative "./lib/gameplay.rb"
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -22,6 +23,9 @@ class RockPaperScissors < Sinatra::Base
     @player1_name = session[:player_1]
     session[:rps] = params[:rps]
     @player1_choice = session[:rps]
+    rps = GamePlay.new
+    @comp_choice = rps.computer
+    @result = rps.game_result(@player1_choice)
     erb(:result)
   end
 
