@@ -36,15 +36,11 @@ class RPS < Sinatra::Base
     session[:player_move] = params[:move]
     session[:robot_move] = Game.random_move
     session[:result] = true
+
+    parse = { -1 => session[:player], 1 => 'Robot', 0 => 'Nobody' }
     result = Game.judge(session[:player_move], session[:robot_move])
 
-    if result == -1
-      session[:winner] = session[:player]
-    elsif result == 1
-      session[:winner] = "Robot"
-    else
-      session[:winner] = "Nobody"
-    end
+    session[:winner] = parse[result]
 
     redirect '/play'
   end
