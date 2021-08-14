@@ -10,6 +10,10 @@ class RPS
     def game
         @player1 = ['rock', 'paper', 'scissors'].sample
         @player2 = ['rock', 'paper', 'scissors'].sample
+        game_results
+    end
+
+    def game_results
         if @player1 == 'rock' && @player2 == 'scissors' || @player1 == 'scissors' && @player2 == 'paper' || @player1 == 'paper' && @player2 == 'rock'
             puts "#{@Player1name} wins"
         elsif @player1 == @player2

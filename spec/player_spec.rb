@@ -7,5 +7,7 @@ describe Player do
         it 'initializes with a name value' do
             expect(player.name).to eq("Apps")
         end
+
+        
     end
 end
