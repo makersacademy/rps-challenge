@@ -3,7 +3,7 @@ require "sinatra/reloader" if development?
 
 class RockPaperScissors < Sinatra::Base
 
-  # enable :sessions
+  enable :sessions
 
   configure :development do
     register Sinatra::Reloader
@@ -11,6 +11,16 @@ class RockPaperScissors < Sinatra::Base
 
   get '/' do
     erb(:index)
+  end
+
+  post '/names' do
+    session[:player_1] = params[:player_1]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_1 = session[:player_1]
+    erb(:play)
   end
 
   run! if app_file == $0
