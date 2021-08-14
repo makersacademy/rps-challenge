@@ -1,0 +1,32 @@
+.move-button {
+  background-color: transparent;
+  opacity:0.5;
+  border: none;
+  width: 5rem;
+  height: 5rem;
+}
+
+.move-button:hover {
+  opacity: 1;
+}
+
+#rock-button {
+  margin: 2rem;
+  background-image: url('/images/rock.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#paper-button {
+  margin: 2rem;
+  background-image: url('/images/paper.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#scissors-button {
+  margin: 2rem;
+  background-image: url('/images/scissors.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}

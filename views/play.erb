@@ -9,14 +9,14 @@
 
 <h2>
   <% if @winner %>
-    Play again!
+    Play again
   <% else %>
-    Make your move!
+    Make your move
   <% end %>
 </h2>
 
 <form method="POST" action="/move">
-    <button type="submit" name="move" value="rock">rock</button>
-    <button type="submit" name="move" value="paper">paper</button>
-    <button type="submit" name="move" value="scissors">scissors</button>
+  <button id="rock-button" class="move-button" type="submit" name="move" value="rock"></button>
+  <button id="paper-button" class="move-button" type="submit" name="move" value="paper"></button>
+  <button id="scissors-button" class="move-button" type="submit" name="move" value="scissors"></button>
 </form>
