@@ -8,7 +8,15 @@ class RPS
     end
 
     def game
+        game_round_1
+    end
+
+    def game_round_1
         @player1 = ['rock', 'paper', 'scissors'].sample
+        game_round_2
+    end
+
+    def game_round_2
         @player2 = ['rock', 'paper', 'scissors'].sample
         game_results
     end
