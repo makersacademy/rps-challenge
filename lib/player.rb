@@ -1,6 +1,6 @@
 class Player
 
-  def initialize(name, move) 
+  def initialize(name) 
     @name = name
   end
 

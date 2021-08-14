@@ -7,7 +7,7 @@ class Winner
   end
 
   def draw
-    @move_1 == @move_2
+    @move_1.to_sym == @move_2.to_sym
   end
 
   def player_1_wins

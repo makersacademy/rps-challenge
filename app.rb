@@ -2,6 +2,8 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 
 require './lib/player'
+require './lib/game'
+require './lib/winner'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -28,13 +30,18 @@ class RockPaperScissors < Sinatra::Base
   post '/make_move' do
     p params
     session[:rps_move] = params[:rps_move]
-    redirect '/winner'
+    session[:game] = Game.new(params[:rps_move], winner_class: Winner)
+    redirect '/result'
   end
 
-  get '/winner' do
-    @selection = session[:rps_move]
-    p @selection
-    erb(:winner)
+  get '/result' do
+    @user_move = session[:rps_move]
+    @game = session[:game]
+    @computer_move = @game.computer_move
+    puts @user_move
+    puts @computer_move
+    puts @game.return_message
+    erb(:result)
   end
 
   run! if app_file == $0
