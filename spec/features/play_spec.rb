@@ -1,17 +1,20 @@
-feature 'play page' do
-  scenario 'player visits the play page for the first time' do
-    skip 'TODO'
-  end
+require 'spec_helper'
 
-  scenario 'player chooses a winning move' do
-    skip 'TODO'
-  end
+feature 'starting the game for the first time' do
+  describe 'play page' do
+    # it 'asks the player to make a move' do
+    #   visit('/')
+    #   fill_in 'player', with: 'Alice'
+    #   click_button 'Go!'
+    #   expect(page).to have_content('Make your move!')
+    # end
 
-  scenario 'player chooses a losing move' do
-    skip 'TODO'
-  end
-
-  scenario 'player chooses a move which results in a draw' do
-    skip 'TODO'
+    # it 'allows user to provide a name' do
+    #   visit('/')
+    #   fill_in 'player', with: 'Alice'
+    #   click_button 'Go!'
+    #   expect(page).to have_content('Alice vs. Robot')
+    # end
   end
 end
+
