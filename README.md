@@ -56,6 +56,7 @@ As a result this app ended up a lot simpler than during my initial planning and 
 - Counter to keep track of rounds won
 - *True* multiplayer, maybe using the [litecable](https://github.com/palkan/litecable) gem?
 - I feel like there's an inordinate amount of instance variable-setting in my controller. I don't know if this is just inevitable, or there's a best way to factor this out, so TORESEARCH
+- Make it nice on mobile
 
 ## Implementation
 
