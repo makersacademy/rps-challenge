@@ -4,7 +4,7 @@ describe Game do
 
   let(:player_1) { double(name: 'player_1', move_choice: 'rock') }
   let(:player_2) { double(name: 'player_2', move_choice: 'scissors') }
-  let(:game)  { described_class.new( player_class_1: player_1, player_class_2: player_2) }
+  let(:game) { described_class.new(player_class_1: player_1, player_class_2: player_2) }
 
   describe '#initialize' do
     it 'initializes class with player_1 instance' do
@@ -88,13 +88,13 @@ describe Game do
   describe '#self.game_instance' do
 
     it 'creates new game instance with correct player_1 name' do
-      subject.game(player_1, player_2)
+      Game.game(player_1, player_2)
       stored_game = Game.game_instance
       expect(stored_game.player_1.name).to eq 'player_1'
     end
 
     it 'creates new game instance with correct player_1 move_choice' do
-      subject.game(player_1, player_2)
+      Game.game(player_1, player_2)
       stored_game = Game.game_instance
       expect(stored_game.player_1.move_choice).to eq 'rock'
     end

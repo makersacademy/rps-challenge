@@ -4,10 +4,9 @@ class Game
 
   attr_reader :player_1, :player_2, :stored_game, :moves
 
-  def initialize( player_class_1:, player_class_2: )
+  def initialize(player_class_1:, player_class_2:)
     @player_1 = player_class_1
     @player_2 = player_class_2
-    @stored_game
     @moves = []
   end
 
@@ -37,7 +36,7 @@ class Game
   end
 
   def self.game(player_1, player_2)
-    @stored_game = Game.new( player_class_1: player_1, player_class_2: player_2 )
+    @stored_game = Game.new(player_class_1: player_1, player_class_2: player_2)
   end
 
   def self.game_instance

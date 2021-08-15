@@ -3,7 +3,6 @@ class Player
 
   def initialize(name)
     @name = name
-    @move_choice
   end
 
   def move(choice)
