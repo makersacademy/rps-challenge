@@ -1,1 +1,13 @@
 <h1>Welcome <%= @Player1 %>, you are Player 1</h1>
+
+Which move would you like to play?
+
+<form action='/move' method='post'>
+<!-----------------
+  <input type='submit' id='rock' name='rock' value='Rock'>
+  <input type='submit' id='paper' value='Paper'>
+  <input type='submit' id='scissors' value='Scissors'>
+  ----------------->
+  <input type="text" id="move1" name="move1"><br>
+  <input type='submit' value='Submit'>
+</form>

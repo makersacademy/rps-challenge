@@ -18,10 +18,9 @@ describe RPS do
     end
 
    context 'expects the game to return the correct result' do
-
     it 'Should allow player2 to win' do
       game.stub(:move2).and_return('rock')
-      expect{game.game_results}.to output("Player 2 wins\n").to_stdout
+      expect(game.game_results).to eq("Player 2 wins")
     end
     end 
 
