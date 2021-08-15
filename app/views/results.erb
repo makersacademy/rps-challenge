@@ -1,0 +1,17 @@
+<hr style="border-top:rgba(0, 0, 0, .1)">
+<h2 style="color:#6c757d; text-align:center; margin-top:2rem">
+  Well done <div style="display:inline; color:#212529"><%= @winner %>!</div>
+  <div style="margin-top:2rem">brilliant action</div>
+</h2>
+<hr style="width:30%; border-top:rgba(0, 0, 0, .1)">
+<h3 style="text-align:center">
+  <div style="display:inline; color:#6c757d">you had: </div>
+  <%= @winner_act %>
+  <br/>
+  <div  style="color:#6c757d; margin-top:1.5rem">against poor <div style="margin-left:1rem; transform: rotate(90deg); display:inline-block; transform-origin:center">:)</div> </div> <br/>
+  <%= @loser_act %>
+</h3>
+<hr style="width:30%; border-top:rgba(0, 0, 0, .1)">
+<h4 style="text-align:center">
+  <a href="/game" style="text-decoration:none; border-radius:0.25rem; border:1px solid rgba(0, 0, 0, .1); padding: 0.25rem 0.5rem">play again</a>
+</h4>

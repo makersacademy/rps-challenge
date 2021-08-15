@@ -6,7 +6,7 @@ feature "the  game should have 3 action button" do
     @rock = find("input[@name='rock']")
     @paper = find("input[@name='paper']")
     @scissors = find("input[@name='scissors']")
-    expect([@rock, @paper, @scissors].any?(:nil)).to eq(false)
+    expect([@rock, @paper, @scissors].any?{ |val| val == nil }).to eq(false)
   end
 
 end
