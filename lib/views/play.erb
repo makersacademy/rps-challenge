@@ -1,7 +1,7 @@
+<% if @choice.nil? %>
 <h1><%= @name %> vs Computer</h1>
 <br>
 <br>
-<% if @choice.nil? %>
 <h2>Choose: </h2>
 <form action="/rock" method="POST">
 <input type="submit" value="Rock">
@@ -14,5 +14,14 @@
 </form>
 <% else %>
 <h1><%= @name %> chose <%= @choice %></h1>
-<h1>Computer chose <%= @computer %></h1>
+<h1>The computer chose <%= @computer %></h1>
+ <br>
+<% beatmap = { 'Scissors' => 'Paper', 'Paper' => 'Rock', 'Rock' => 'Scissors' }%>
+  <% if @choice == @computer %>
+   <h1>It's a Draw!</h1>
+  <% elsif beatmap[@choice] == @computer %>
+    <h1><%= @name %> won!</h1>
+  <% else %>
+    <h1>The computer won!</h1>
+  <% end %>
 <% end %>
