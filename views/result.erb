@@ -1,1 +1,16 @@
-<h2>blabla<%= @move %>blabla</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <section id='box'>
+    <form id='game' action='/result'>
+      
+      <h2>blabla <%= @game.player_move.name %> blabla</h2>
+    </form>
+    </section>
+  </body>
+</html>
+

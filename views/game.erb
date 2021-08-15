@@ -6,15 +6,14 @@
   </head>
   <body>
     <section id='box'>
-    <form id='game' action='/result' method='post'>
+    <form id='game' action='/move' method='post'>
       <h2>Hi <%= @game.player_move.name %>! Please make a move</h2>
       <section id='moves'>
-        <input type='image' name='move' value='rock' src='images/rock.png' 
+        <input type='submit' type='image' name='move' value='rock' src='images/rock.png' 
                alt='Submit Rock Move' width='100' height='100'/>
-        <%# <%= f.submit 'rock', %>
-        <input type='image' name='move' value='paper' src='images/paper.png' 
+        <input type='submit' type='image' name='move' value='paper' src='images/paper.png' 
                alt='Submit Paper Move' width='100' height='100' />
-        <input type='image' name='move' value='scissors' src='images/sss.png' 
+        <input type='submit' type='image' name='move' value='scissors' src='images/sss.png' 
                alt='Submit Scissor Move' width='100' height='100' />
       </section>
       <h3>Choose wisely...</h3>

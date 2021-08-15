@@ -27,18 +27,18 @@ class Game < Sinatra::Base
     # session[:move] = params[:move]
     @game = Rps.instance
     erb :game
-    
-    # redirect '/result'
   end
 
-  post '/result' do
-    @move = session[:move]
-    # p @move
-    # @game = Rps.new(@move)
+  post '/move' do
+    @game = Rps.instance
+    redirect '/result'
+    # erb :result
+  end
+
+  get '/result' do
+    @game = Rps.instance
     erb :result
   end
-  # get '/victory' do
-  # end
 
   # get '/defeat' do
   # end

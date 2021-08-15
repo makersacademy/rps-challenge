@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(0, 204, 153);
+  background-color: rgb(255, 255, 153);
   font-family: courier new;
 }
 
@@ -22,7 +22,7 @@ form {
   width: 75%;
   margin: 10% auto;
   height: 80vh;
-  background-color: rgba(179, 255, 240, 0.5);
+  background-color: rgba(255, 255, 153);
   border-radius: 40px;
 }
 
