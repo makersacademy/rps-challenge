@@ -38,11 +38,11 @@ describe Game do
     end
 
     it 'returns corrent outcome bases on player moves' do
-      expect(game.score_game(['rock', 'scissors'])).to eq player_1
+      expect(game.score_game(['rock', 'scissors'])).to eq "player_1"
     end
 
     it 'returns corrent outcome bases on player moves' do
-      expect(game.score_game(['scissors', 'rock'])).to eq player_2
+      expect(game.score_game(['scissors', 'rock'])).to eq "player_2"
     end
 
     it 'returns corrent outcome bases on player moves' do
@@ -50,11 +50,11 @@ describe Game do
     end
 
     it 'returns corrent outcome bases on player moves' do
-      expect(game.score_game(['paper', 'rock'])).to eq player_1
+      expect(game.score_game(['paper', 'rock'])).to eq "player_1"
     end
 
     it 'returns corrent outcome bases on player moves' do
-      expect(game.score_game(['rock', 'paper'])).to eq player_2
+      expect(game.score_game(['rock', 'paper'])).to eq "player_2"
     end
 
     it 'returns corrent outcome bases on player moves' do
@@ -62,19 +62,41 @@ describe Game do
     end
 
     it 'returns corrent outcome bases on player moves' do
-      expect(game.score_game(['scissors', 'paper'])).to eq player_1
+      expect(game.score_game(['scissors', 'paper'])).to eq "player_1"
     end
 
     it 'returns corrent outcome bases on player moves' do
-      expect(game.score_game(['paper', 'scissors'])).to eq player_2
+      expect(game.score_game(['paper', 'scissors'])).to eq "player_2"
     end
   end
 
-  # describe '#result' do
-  #   it 'correctly returns score message' do
-  #     game.score_game(['paper', 'scissors'])
-  #     expect(game.result).to eq 'Player 1 wins'
-  #   end
-  # end
+  describe '#result' do
+    it 'correctly returns score message when player 1 wins' do
+      game.compare_moves
+      moves = game.moves
+      game.score_game(moves)
+      expect(game.result).to eq 'player_1 wins'
+    end
+  end
 
+  describe '#self.game' do
+    it 'receives player two arguments' do
+      allow(Game).to receive(:game).with(player_1, player_2)
+    end
+  end
+
+  describe '#self.game_instance' do
+
+    it 'creates new game instance with correct player_1 name' do
+      subject.game(player_1, player_2)
+      stored_game = Game.game_instance
+      expect(stored_game.player_1.name).to eq 'player_1'
+    end
+
+    it 'creates new game instance with correct player_1 move_choice' do
+      subject.game(player_1, player_2)
+      stored_game = Game.game_instance
+      expect(stored_game.player_1.move_choice).to eq 'rock'
+    end
+  end
 end

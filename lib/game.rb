@@ -29,11 +29,11 @@ class Game
       ["scissors", "paper"] => @player_1,
       ["paper", "scissors"] => @player_2,
     }
-    scores_hash[player_moves]
+    scores_hash[player_moves] == "draw" ? "draw" : scores_hash[player_moves].name
   end
 
   def result
-    score_game(@moves) == "draw" ? "Game is a draw" : "#{score_game(@moves).name} wins"
+    score_game(@moves) == "draw" ? "Game is a draw" : "#{score_game(@moves)} wins"
   end
 
   def self.game(player_1, player_2)
