@@ -1,6 +1,5 @@
 # RPS CHALLENGE
 
-
 I wrote an implementation of Rock, Paper, Scissors, in response to the specification in CHALLENGE.md
 
 There were two user stories
@@ -21,9 +20,9 @@ As a result this app ended up a lot simpler than during my initial planning and 
 
 ## Assesment
 
----
+
 ### Succeeded
----
+
 
 - Player is able to enter their name
 - Player is able to play Rock, Paper, Scissors against the computer's random moves
@@ -40,16 +39,16 @@ As a result this app ended up a lot simpler than during my initial planning and 
 - Seperated unit & feature tests
 - Shared HTML put in layout.erb to reduce repetition in the views
 
----
+
 ### Failed
----
+
 
 - Didn't implement the additional game rules because I couldn't find an image of a lizard in an acceptably matching art style!
 - Didn't implement multiplayer functionality
 
----
+
 ### TODO
----
+
 
 - Things I failed above, plus -
 - Counter to keep track of rounds won
@@ -79,9 +78,9 @@ As a result this app ended up a lot simpler than during my initial planning and 
   - Testing with Capybara in PRY
   - rack_session_access gem for testing session vars
 
----
+
 ### Routes
----
+
 
   The app has 4 routes
 
@@ -129,9 +128,9 @@ As a result this app ended up a lot simpler than during my initial planning and 
     
     - redirects back to `/play`
 
----
+
 ### Classes and Modules
----
+
 
   The app has two of these
 
@@ -145,9 +144,9 @@ As a result this app ended up a lot simpler than during my initial planning and 
 
     - a method `self.judge` which compares the moves passed to it, and returns `-1`, `0`, `1` (just like the `<=>` operator) for _left arg wins_, _args are equal_, and _right arg wins_ respectively
 
----
+
 ### Screenshots
----
+
 
 ![welcome view](https://github.com/sa-mcquanzie/rps-challenge/blob/main/screenshots/welcome.png?raw=true)
 
