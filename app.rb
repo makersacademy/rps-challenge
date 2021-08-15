@@ -23,35 +23,19 @@ class RPS < Sinatra::Base
     @player = session[:player]
     @player_move = session[:player_move]
     @robot_move = session[:robot_move]
+    @player_image = picture_for(@player_move)
+    @robot_image =  picture_for(@robot_move)
     @winner = session[:winner]
     @victory_message = @winner == 'Nobody' ? 'Draw!' : "#{@winner} wins!"
-    
+
     @comparator = case @winner
-    when session[:player]
-      '>'
-    when 'Robot'
-      '<'
-    else
-      '=='
-    end
-
-    @player_image = case @player_move
-    when 'rock'
-      '/images/rock.png'
-    when 'paper'
-      '/images/paper.png'
-    else
-      '/images/scissors.png'
-    end
-
-    @robot_image = case @robot_move
-    when 'rock'
-      '/images/rock.png'
-    when 'paper'
-      '/images/paper.png'
-    else
-      '/images/scissors.png'
-    end
+                  when session[:player]
+                    '>'
+                  when 'Robot'
+                    '<'
+                  else
+                    '=='
+                  end
  
     erb :play
   end
@@ -66,14 +50,29 @@ class RPS < Sinatra::Base
     session[:winner] = nil
     session[:player_move] = params[:move]
     session[:robot_move] = Game.random_move
-
-    parse = { -1 => session[:player], 1 => 'Robot', 0 => 'Nobody' }
     result = Game.judge(session[:player_move], session[:robot_move])
-
-    session[:winner] = parse[result]
+    session[:winner] = parse_winner(result)
 
     redirect '/play'
   end
 
   run! if app_file == $0
+
+  private
+
+  def picture_for(move)
+    return  case move
+            when 'rock'
+              '/images/rock.png'
+            when 'paper'
+              '/images/paper.png'
+            else
+              '/images/scissors.png'
+            end
+  end
+
+  def parse_winner(result)
+    lookup = { -1 => session[:player], 1 => 'Robot', 0 => 'Nobody' }
+    lookup[result]
+  end
 end

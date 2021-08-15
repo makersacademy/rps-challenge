@@ -30,6 +30,27 @@ main {
   flex-direction: column;
 }
 
+#welcome-form {
+  margin : 20vh auto;
+  padding: 1em;
+  box-sizing: border-box;
+  background : #9900cc url(background.jpg);
+  border-radius: 16px;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-family: 'Press Start 2', monospace;
+}
+
+input {
+  font    : 1.4em "inconsolata", monospace;
+  box-sizing: border-box;
+  border  : none;
+  border-radius: 4px;
+  padding : 0.4rem;
+  margin  : 1rem 0 1rem 0;
+  width   : 100%;
+}
+
 #victor {
   margin: 2rem;
   padding: 4rem 7rem;
@@ -65,16 +86,11 @@ main {
   opacity: 1;
 }
 
-#play-again {
-  color: #009933;
-  font-size: 2rem;
-  font-family: 'Press Start 2', monospace;
-
-  letter-spacing: 6;
-}
-
 #move-prompt {
-  padding: 2rem;
+  color: #009933;
+  font-size: 1.4rem;
+  font-family: 'Press Start 2', monospace;
+  letter-spacing: 6;
 }
 
 #rock-button {
