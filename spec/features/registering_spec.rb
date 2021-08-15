@@ -10,4 +10,6 @@ describe 'Registering', type: :feature do
     sign_in_and_start
     expect(page).to have_content "Bob"
   end
+
+  it 'stops user from proceeding without entering a name' 
 end

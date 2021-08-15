@@ -1,7 +1,7 @@
 To Do
-* Hide player two options unless 'additional human' has been selected
-* Style!
-* Do not allow user to continue without selection
+* if 1 human, show just human option on /play. if two humans, show one at a time with instructions to look away, and sort out the choose button.
+* Style! responsive, things in consistent block locations, add images.
+* Do not allow user to continue without selection - form validation, need to have move selection as 2 forms?
 * Add Spock & Lizard rules
 * Save results, keep score, allow rematch with same named players
 

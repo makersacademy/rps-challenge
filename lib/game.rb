@@ -10,7 +10,7 @@ class Game
 
   def fight
     moves
-    wins = { "Rock" => "Scissors", "Scissors" => "Paper", "Paper" => "Rock" }
+    wins = { "Rock" => "Scissors", "Scissors" => "Paper", "Paper" => "Rock" } #
     case
       when wins[@move1] == @move2 then @winner = players[0]
       when wins[@move2] == @move1 then @winner = players[1]
