@@ -38,7 +38,7 @@ As a result this app ended up a lot simpler than during my initial planning and 
 - Animated feedback to provide an indicator of page updates
 - Written in an _almost_ totally TDD way, apart from a short lapse during a radical rewrite
 - Put repetitive Capybara instructions in web_helpers.rb to reduce repetition in the tests
-- Seperated unit & feature tests
+- Separated unit & feature tests
 - Shared HTML put in layout.erb to reduce repetition in the views
 
 
