@@ -20,9 +20,17 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    # assigning param name to an instance variable
+    # assigning param name and user choice to an instance variable
     @name = session[:name]
+    @choice = session[:choice]
     erb :play
+  end
+
+  post '/play' do
+    # added user choice parameter to a session
+    session[:choice] = params[:choice]
+    redirect '/play'
+
   end
 
   run! if app_file == $0

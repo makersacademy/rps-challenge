@@ -2,6 +2,11 @@
 <br>
 <h3>Pick one:</h3>
 <br>
-<button type="button">Rock</button>
-<button type="button">Paper</button>
-<button type="button">Scissors</button>
+
+<form action='/play' method="post">
+  <input type="submit" name='choice' value="Rock">
+  <input type="submit" name='choice' value="Paper">
+  <input type="submit" name='choice' value="Scissors">
+</form>
+
+You chose <%=@choice %>!
