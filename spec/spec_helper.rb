@@ -109,12 +109,12 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
-require 'byebug'
+
 require 'capybara/rspec'
-require 'coveralls'
+
 require 'simplecov'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
+
 ]
