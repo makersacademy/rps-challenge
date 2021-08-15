@@ -10,6 +10,10 @@ class RockPaperScissors < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
@@ -23,12 +27,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @game = Game.instance
     erb(:play)
   end
 
   post '/choice' do
-    @game = Game.instance
     @game.current_player.choose(params[:choice])
     @game.change_current_player(@game.player2.type)
     redirect '/play' if @game.player2.weapon.nil? 
@@ -36,12 +38,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    @game = Game.instance
     erb(:result)
   end
 
   get '/play-again' do
-    @game = Game.instance
     @game.player2.generate_weapon
     erb(:play)
   end
