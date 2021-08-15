@@ -18,18 +18,27 @@ class RPS < Sinatra::Base
     player_1 = Player.new(params[:player_1])
     player_2 = Player.new(params[:player_2])
     @game = Game.game(player_1, player_2)
-    redirect(:play)
+    redirect(:welcome)
   end
 
-  get '/play' do
+  get '/welcome' do
     @game = Game.game_instance
-    @game.reset_winner_loser
-    erb(:play)
+    erb(:welcome)
+  end
+
+  get '/first_player' do
+    @game = Game.game_instance
+    erb(:first_player)
+  end
+
+  get '/second_player' do
+    @game = Game.game_instance
+    erb(:second_player)
   end
 
   get '/result' do
     @game = Game.game_instance
-    @game.play
+    @game.calculate_result
     @insult = ["garbage", "rubbish", "trash"].sample
     erb(:result)
   end

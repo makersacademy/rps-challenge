@@ -1,16 +1,15 @@
 class Player
-
-  attr_reader :name, :value, :key
+  attr_reader :name, :hand, :beats, :rock_paper_scissors
 
   def initialize(name)
     @name = name
-    @rock_paper_scissors = [ {"Rock": 1}, {"Paper": 2}, {"Scissors": 3}]
+    @rock_paper_scissors = [ {"Rock": "Scissors"}, {"Paper": "Rock"}, {"Scissors": "Paper"}]
   end
 
-  def r_p_s
-    hand = @rock_paper_scissors.sample
-    @value = hand.values.pop
-    @key = hand.keys.pop
+  def choose(hand)
+    selected = @rock_paper_scissors[hand]
+    @beats = selected.values.pop
+    @hand = selected.keys.pop
   end
 
 end

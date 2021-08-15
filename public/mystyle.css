@@ -80,3 +80,7 @@ input[type=text] {
   transition: 500ms;
   background-color: var(--clr-dark);
 }
+
+.r-p-s_button {
+  width: 30%;
+}

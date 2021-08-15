@@ -19,30 +19,36 @@ class Game
     @stored_game
   end
 
-  def play
-    @player_1.r_p_s
-    @player_2.r_p_s
-    calculate_result
-  end
-
   def calculate_result
-    if @player_1.value == @player_2.value
-      @tie = true
-    elsif @player_1.value == @player_2.value + 1 || @player_1.value + 2 == @player_2.value
+
+    if @player_1.hand == @player_2.hand
+      reset_winner_loser
+    elsif @player_1.beats == @player_2.hand
       set_winner_loser(@player_1, @player_2)
     else
       set_winner_loser(@player_2, @player_1)
     end
+    reset_winner_loser
   end
+  
+  def reset_winner_loser
+    @winner = nil
+    @loser = nil
+  end
+
+  private
 
   def set_winner_loser(player, opponent)
     @winner = player
     @loser = opponent
   end
 
-  def reset_winner_loser
-    @winner = nil
-    @loser = nil
+  def player_1_choose(hand)
+    @player_1.choose(hand)
+  end
+
+  def player_2_choose(hand)
+    @player_2.choose(hand)
   end
 
 end
