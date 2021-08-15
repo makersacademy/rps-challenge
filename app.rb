@@ -27,15 +27,7 @@ class RPS < Sinatra::Base
     @robot_image =  picture_for(@robot_move)
     @winner = session[:winner]
     @victory_message = @winner == 'Nobody' ? 'Draw!' : "#{@winner} wins!"
-
-    @comparator = case @winner
-                  when session[:player]
-                    '>'
-                  when 'Robot'
-                    '<'
-                  else
-                    '=='
-                  end
+    @comparator = generate_comparator(@winner)
  
     erb :play
   end
@@ -74,5 +66,16 @@ class RPS < Sinatra::Base
   def parse_winner(result)
     lookup = { -1 => session[:player], 1 => 'Robot', 0 => 'Nobody' }
     lookup[result]
+  end
+
+  def generate_comparator(winner)
+    return  case winner
+            when session[:player]
+              '>'
+            when 'Robot'
+              '<'
+            else
+              '=='
+            end
   end
 end
