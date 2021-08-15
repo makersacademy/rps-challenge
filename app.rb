@@ -13,7 +13,7 @@ class BookmarkManager < Sinatra::Base
     erb :index
   end
 
-  post '/players' do
+  post '/player1' do
     $player1 = Player.new(params[:player1])
     redirect '/begin'
   end
@@ -33,7 +33,6 @@ class BookmarkManager < Sinatra::Base
     @game_result = $game.game_results
     erb :game_result
   end
-
 
   run! if app_file == $0
 end

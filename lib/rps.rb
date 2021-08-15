@@ -14,13 +14,10 @@ class RPS
 
     def game_results
         if @move1 == 'rock' && @move2 == 'scissors' || @move1 == 'scissors' && @move2 == 'paper' || @move1 == 'paper' && @move2 == 'rock'
-            #puts "Player 1 wins"
             return "Player 1 wins"
         elsif @move1 == @move2
-            #puts "It's a draw!"
             return "It's a draw!"
         else
-            #puts "Player 2 wins"
             return 'Player 2 wins'
         end
     end

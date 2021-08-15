@@ -10,7 +10,7 @@ feature 'Allow user interaction with website' do
     end
 
     scenario 'Player 1 has entered their name and wants to play' do
-        click_on 'Rock'
+        click_on 'Go!'
         expect(page).to have_current_path(/game_result/)
     end
 end
