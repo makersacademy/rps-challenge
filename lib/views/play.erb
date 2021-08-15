@@ -15,13 +15,6 @@
 <br>
 <h1><%= @name %> chose <%= @choice %></h1>
 <h1>The computer chose <%= @computer %></h1>
- <br>
-<% beatmap = { 'Scissors' => 'Paper', 'Paper' => 'Rock', 'Rock' => 'Scissors' }%>
-  <% if @choice == @computer %>
-   <h1>It's a Draw!</h1>
-  <% elsif beatmap[@choice] == @computer %>
-    <h1><%= @name %> won!</h1>
-  <% else %>
-    <h1>The computer won!</h1>
-  <% end %>
+<br>
+<h1><%= @winner %></h1>
 <% end %>
