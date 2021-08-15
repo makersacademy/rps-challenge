@@ -147,8 +147,20 @@ As a result this app ended up a lot simpler than during my initial planning and 
 
 ### Screenshots
 
-
+*Welcome view*
 ![welcome view](https://github.com/sa-mcquanzie/rps-challenge/blob/main/screenshots/welcome.png?raw=true)
+
+*First play view*
+![first play view](https://github.com/sa-mcquanzie/rps-challenge/blob/main/screenshots/first-play.png?raw=true)
+
+*Result: win*
+![winning view](https://github.com/sa-mcquanzie/rps-challenge/blob/main/screenshots/win.png?raw=true)
+
+*Result: lose*
+![losing view](https://github.com/sa-mcquanzie/rps-challenge/blob/main/screenshots/lose.png?raw=true)
+
+*Result: draw*
+![drawing view](https://github.com/sa-mcquanzie/rps-challenge/blob/main/screenshots/draw.png?raw=true)
 
 
 
