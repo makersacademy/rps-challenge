@@ -28,18 +28,8 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
-  post "/rock" do
-    session[:choice] = "Rock"
-    redirect "/play"
-  end
-
-  post "/paper" do
-    session[:choice] = "Paper"
-    redirect "/play"
-  end
-
-  post "/scissors" do
-    session[:choice] = "Scissors"
+  post "/choice" do
+    session[:choice] = params[:choice]
     redirect "/play"
   end
 end
