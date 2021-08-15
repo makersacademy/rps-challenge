@@ -19,18 +19,18 @@ class Game < Sinatra::Base
   post '/welcome' do
     player = Player.new(params[:name])
     robot = Robot.new
-    @game = Rps.create(player, robot)
+    @game = Rps.create(player, robot, 1)
     redirect '/game'
   end
 
   get '/game' do
-    # session[:move] = params[:move]
     @game = Rps.instance
     erb :game
   end
 
   post '/move' do
     @game = Rps.instance
+    @game.player_move.move(params[:move])
     redirect '/result'
     # erb :result
   end

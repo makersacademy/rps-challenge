@@ -6,7 +6,7 @@ describe Player do
   end
 
   it 'takes players move as argument' do
-    subject.players_move('rock')
-    expect(subject.player_move).to eq 'rock'
+    subject.move('rock')
+    expect(subject.p_move).to eq 'rock'
   end
 end

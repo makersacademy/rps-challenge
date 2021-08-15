@@ -7,10 +7,21 @@
   <body>
     <section id='box'>
     <form id='game' action='/result'>
-      
-      <h2>blabla <%= @game.player_move.name %> blabla</h2>
+      <br>
+      <br>
+      <h2>o <%= @game.player_move.p_move %></h2>
+      <h2>o <%= @game.robot_move.random_move %></h2>
+      <h2>o <%= @game.score %></h2>
+      <h2>o <%= @game.result %></h2>
+      <h2>o <%= @game.score %></h2>
+      <% if @game.result && @game.score == 2 %>
+        <h2>You win <%= @game.player_move.name %>!</h2>
+      <% elsif @game.score == 0 %>
+        <h2>You loose <%= @game.player_move.name %>!</h2>
+      <% else %>
+        <h1>It's a draw <%= @game.player_move.name %>!</h2>
+      <% end %>
     </form>
     </section>
   </body>
 </html>
-

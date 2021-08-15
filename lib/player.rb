@@ -1,13 +1,13 @@
 class Player
-  attr_reader :name, :player_move
+  attr_reader :name, :p_move
 
   def initialize(name = 'Gandalf')
     @name = name
-    @player_move = player_move
+    @p_move = p_move
   end
 
-  def players_move(move)
-    @player_move = move
+  def move(move_choice)
+    @p_move = move_choice
   end
 end
 
