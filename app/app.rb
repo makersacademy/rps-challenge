@@ -13,8 +13,8 @@ class RPS < Sinatra::Base
   end
 
   post "/game" do
-    @user = params[:name].downcase.split(" ").map(&:capitalize).join(" ")
-    session[:name] = @user
+    @name = params[:name].downcase.split(" ").map(&:capitalize).join(" ")
+    session[:name] = @name
     session[:wins] = 0
     session[:total] = 0
     @wins = 0 # session[:wins]
@@ -24,24 +24,32 @@ class RPS < Sinatra::Base
 
   get "/game" do 
     session[:total] = session[:total].to_i + 1
-    @user = session[:name]
+    @name = session[:name]
     @wins = session[:wins]
     @total = session[:total]
     erb(:game)
   end
 
   post "/results" do
-    @winner = "Radu"
+    @winner = session[:name]
     @winner_act = "rock"
     @loser_act = "scissors"
-    redirect("/results?winner=" << @winner << "&wact=" << @winner_act << "&lact=" << @loser_act)
+    @name = session[:name]
+      redirect("/results_lost?wact=" << @winner_act << "&lact=" << @loser_act)
   end
 
-  get "/results" do
-    @winner = params[:winner]
-    @winner_act = params[:wact]
-    @loser_act = params[:lact]
-    erb(:results)
+  get "/results_won" do
+    params[:name].nil? ? (@name = session[:name]) : (@name = params[:name])
+    @first_act = params[:wact]
+    @second_act = params[:lact]
+    erb(:results_won)
+  end
+
+  get "/results_lost" do
+    params[:name].nil? ? (@name = session[:name]) : (@name = params[:name])
+    @first_act = params[:wact]
+    @second_act = params[:lact]
+    erb(:results_lost)
   end
 
   run! if app_file ==$0
