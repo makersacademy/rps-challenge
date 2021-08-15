@@ -1,4 +1,3 @@
-require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
@@ -12,7 +11,7 @@ SimpleCov.start
 ENV["RACK_ENV"] = "test"
 
 require_relative "../lib/app"
-# require_relative "features/web_helpers"
+require_relative "feature/web_helpers"
 require "capybara"
 require "capybara/rspec"
 require "rspec"

@@ -1,1 +1,17 @@
-<h1><%= @name %> vs Computer</h2>
+<h1><%= @name %> vs Computer</h1>
+<br>
+<br>
+<% if @choice.nil? %>
+<h2>Choose: </h2>
+<form action="/rock" method="POST">
+<input type="submit" value="Rock">
+</form>
+<form action="/paper" method="POST">
+<input type="submit" value="Paper">
+</form>
+<form action="/scissors" method="POST">
+<input type="submit" value="Scissors">
+</form>
+<% else %>
+<h1><%= @name %> chose <%= @choice %></h1>
+<% end %>

@@ -9,6 +9,7 @@ class Rps < Sinatra::Base
   enable :sessions
 
   get "/" do
+    session[:choice] = nil
     erb(:index)
   end
 
@@ -19,6 +20,22 @@ class Rps < Sinatra::Base
 
   get "/play" do
     @name = session[:name]
+    @choice = session[:choice]
     erb(:play)
+  end
+
+  post "/rock" do
+    session[:choice] = "Rock"
+    redirect "/play"
+  end
+
+  post "/paper" do
+    session[:choice] = "Paper"
+    redirect "/play"
+  end
+
+  post "/scissors" do
+    session[:choice] = "Scissors"
+    redirect "/play"
   end
 end
