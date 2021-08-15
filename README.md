@@ -2,6 +2,8 @@
 
 I wrote an implementation of Rock, Paper, Scissors, in response to the specification in CHALLENGE.md
 
+You can see it in action [here](https://evening-river-24594.herokuapp.com/)
+
 There were two user stories
 
 ```
