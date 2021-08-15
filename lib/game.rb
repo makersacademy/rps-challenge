@@ -20,7 +20,7 @@ class Game
   end
 
   def outcome(rules = Rules.new(@player1.weapon, @player2.weapon))
-    rules.result
+    rules.winner
   end
 
 end

@@ -12,6 +12,11 @@ feature "playing the game" do
     end
   end
 
+  scenario "ensures rock is checked by default" do
+    sign_in_and_play_vs_computer
+    expect(find_field("Rock")).to be_checked
+  end
+
   scenario "computer selects a weapon" do
     p1_signs_in_chooses_rock_vs_computer(:scissors)
     expect(page).to have_content("HAL 9000 has chosen Scissors")

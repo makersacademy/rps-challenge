@@ -7,7 +7,7 @@ class Rules
     @player2 = player2
   end
 
-  def result
+  def winner
     return nil if @player1 == @player2
     
     p2_wins?[@player1] == @player2 ? :p2 : :p1

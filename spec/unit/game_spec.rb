@@ -20,7 +20,7 @@ describe Game do
   describe '#outcome' do
     it 'tests weapons against rules to get outcome' do
       rules = double
-      expect(rules).to receive(:result)
+      expect(rules).to receive(:winner)
       subject.outcome(rules)
     end
   end
