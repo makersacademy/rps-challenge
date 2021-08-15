@@ -6,8 +6,8 @@
   </head>
   <body>
     <section id='box'>
-    <form id='game' action='/welcome'>
-      <h2>Hi <%= $player.name %>! Please make a move</h2>
+    <form id='game' action='/result' method='post'>
+      <h2>Hi <%= @game.player_move.name %>! Please make a move</h2>
       <section id='moves'>
         <input type='image' name='move' value='rock' src='images/rock.png' 
                alt='Submit Rock Move' width='100' height='100'/>

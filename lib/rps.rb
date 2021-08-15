@@ -1,23 +1,27 @@
-require_relative 'computer'
+require_relative 'player'
+require_relative 'robot'
 
 class Rps
-  attr_reader :move, :computer
+  attr_reader :player_move, :robot_move, :game
 
-  def initialize
-    @move = move
-    @computer = computer
+  def initialize(player_move, robot_move)
+    @player_move = player_move
+    @robot_move = robot_move
+    @game = game
   end
 
-  def computer_move
-    @computer = Computer.new.random_move
+  def self.create(player_move, robot_move)
+    @game = Rps.new(player_move, robot_move)
   end
 
-  def players_move(move)
-   @move = move
+  def self.instance
+    @game
   end
+
+  private
+
+  SCORE = { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
 end
 
-rps = Rps.new
-rps.players_move('paper')
-rps.computer_move
-p rps
+rps = Rps.new(Player.new('will'), Robot.new)
+p rps.player_move.name

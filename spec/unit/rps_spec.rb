@@ -1,17 +1,40 @@
 require 'rps'
-require 'computer'
 
 describe Rps do
 
-  subject { described_class.new }
+  let(:player) { double }
+  let(:robot) { double }
+  let(:subject) { described_class.new(player, robot) }
 
-  it 'takes players_move as move attribute' do
-    subject.players_move(:move)
-    expect(subject.move).to eq :move
+  context "#initialize" do 
+    it 'takes player and compter moves attribute' do
+      rps = Rps.new('rock', 'paper')
+      expect(rps).to have_attributes(:player_move => 'rock', :robot_move => 'paper')
+    end
+
+
+    # it 'prints fake' do
+    #   p subject
+    # end
   end
 
-  it 'takes pcomputers_move as computer attribute' do 
-    subject.computer_move
-    expect(subject.computer).not_to eq(nil)
+  context '#result' do
+
+    let(:rps) { double }
+    
+    # it 'lets player win' do
+    #   allow(rps).to receive(:move) { 'rock' }
+    #   allow(rps).to receive(:comp_move) { 'paper' }
+    #   allow(rps).to receive(:result) 
+    #   expect(rps.result).to eq 'Victory!'
+    # end
+
+    # it 'lets player loose' do
+    #   # expect(rps_loose.result).to eq 'Defeat!'
+    # end
+
+    # it 'evaluates draw' do
+    #   expect(rps_draw.result).to eq 'Draw!'
+    # end
   end
 end
