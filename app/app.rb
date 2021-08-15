@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require './lib/game.rb'
 
 
 class RPS < Sinatra::Base
@@ -8,34 +9,51 @@ class RPS < Sinatra::Base
   end
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
   post "/game" do
-    @name = params[:name]
-    session[:name] = @name
-    session[:wins] = 0
+    session[:name] = params[:name].downcase.split(" ").map(&:capitalize).join(" ")
     session[:total] = 0
-    @wins = 0 # session[:wins]
-    @total = 0 # session[:total]
+    session[:score] = 0
+    @name = session[:name]
+    @wins = session[:score] 
+    @total = session[:total]
     erb(:game)
   end
 
   get "/game" do 
     session[:total] = session[:total].to_i + 1
     @name = session[:name]
-    @wins = session[:wins]
+    @wins = session[:score]
     @total = session[:total]
     erb(:game)
   end
 
   post "/results" do
-    @winner = session[:name]
-    @winner_act = "rock"
-    @loser_act = "scissors"
     @name = session[:name]
-    redirect("/results_lost?wact=" << @winner_act << "&lact=" << @loser_act)
+    @game = Game.new(params[:name])
+    @game.player1.set_option(params[:option].to_sym)
+    @game.player2.set_option
+    @result = @game.results_setup
+    
+    case @result
+    when :win
+        session[:score] = session[:score].to_i + 1
+        redirect("/results_won?wact=" << @game.player1.option.to_s << "&lact=" << @game.player2.option.to_s)
+    when :lose
+        redirect("/results_lost?wact=" << @game.player1.option.to_s << "&lact=" << @game.player2.option.to_s)
+    when :draw
+        redirect("/results_draw?wact=" << @game.player1.option.to_s << "&lact=" << @game.player2.option.to_s)
+    else
+        @error = true
+        redirect("/game")
+    end
   end
 
   get "/results_won" do

@@ -3,7 +3,7 @@ require "./lib/player.rb"
 class Game
   attr_accessor :player1, :player2
 
-  def initialize(player1, player2 = "Computer")
+  def initialize(player1 = "", player2 = "Computer")
     @player1 = Player.new(player1)
     @player2 = Player.new(player2)
     @winners = ['', '', 'sp', 'ps', 'pr', 'rp', 'rs', 'sr']
@@ -18,6 +18,10 @@ class Game
     return :error unless [:rock, :paper, :scissors].include?(choice2)
     option = choice1.to_s[0] << choice2.to_s[0]
     @winners.include?(option) ? ((@winners.index(option) % 2 == 0) ? :win : :lose) : :draw
+  end
+
+  def self.instance
+    @game ||= Game.new
   end
 
 end

@@ -1,9 +1,9 @@
 class Player
   attr_reader :name
 
-  def initialize(name)
+  def initialize(name = "Computer")
     @score = 0
-    @name = name.downcase.split(" ").map(&:capitalize).join(" ")
+    @name = name
     @option = nil
   end
 

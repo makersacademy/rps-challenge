@@ -10,12 +10,12 @@
     <div style="display:inline-block">..choose wisely <i style="color:#212529"><%= @name %></i></div>
     <div style="text-align:right; float:right">wins:  <div style="display:inline"><%= @wins.to_s %></div> / <%= @total.to_s %></div>
   </h3>
-  <form action="/results" method="post">
+  <form action="/results" method="post" on>
     <h5 style="text-align:center">
-      <input type="hidden" value="none"/>
-      <input type="submit" value="Rock" name="rock" style="margin:1rem; width:25%"/>
-      <input type="submit" value="Paper" name="paper" style="margin:1rem; width:25%"/>
-      <input type="submit" value="Scissors" name="scissors" style="margin:1rem; width:25%"/>
+      <input type="hidden" value="" name="option" id="option"/>
+      <input type="submit" value="Rock" name="rock" style="margin:1rem; width:25%" onclick="document.getElementById('option').value='rock'"/>
+      <input type="submit" value="Paper" name="paper" style="margin:1rem; width:25%" onclick="document.getElementById('option').value='paper'"/>
+      <input type="submit" value="Scissors" name="scissors" style="margin:1rem; width:25%" onclick="document.getElementById('option').value='scissors'"/>
     </h5>
     <hr style="border-top: rgba(0, 0, 0, .1); margin-top:3rem; width:75%">
     <h5 style="text-align:center; color:#454749">The future of this rock world is in your hands</h5>
