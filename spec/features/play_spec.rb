@@ -21,11 +21,11 @@ feature 'playing the game' do
       expect(page).to have_content('Play again')
     end
 
-    it 'allows the player to enter a move' do
+    it 'displays the move the player has entered' do
       visit_root_and_enter_name
-      enter_move('rock')
+      enter_move('scissors')
 
-      expect(page).to have_content('You chose: Rock')
+      expect(page.find('#player_image')['src']).to have_content('scissors.png')
     end
   end
 end

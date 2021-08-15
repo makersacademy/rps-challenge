@@ -6,7 +6,7 @@ module Game
   }
 
   def self.random_move
-    @@move.keys.sample
+    @@move.keys.sample.to_s
   end
 
   def self.judge(move1, move2)

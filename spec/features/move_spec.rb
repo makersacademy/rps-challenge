@@ -13,7 +13,7 @@ feature 'after entering a move' do
       visit_root_and_enter_name
       enter_move('paper')
 
-      expect([:rock, :paper, :scissors])
+      expect(['rock', 'paper', 'scissors'])
       .to include(page.get_rack_session_key('robot_move'))
     end
 

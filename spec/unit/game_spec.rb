@@ -3,7 +3,7 @@ require 'game'
 describe Game do
   describe '#random_move' do
     it 'returns a random move' do
-      expect([:rock, :paper, :scissors]).to include(described_class.random_move)
+      expect(['rock', 'paper', 'scissors']).to include(described_class.random_move)
     end
   end
 

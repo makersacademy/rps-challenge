@@ -19,11 +19,39 @@ class RPS < Sinatra::Base
 
   get '/play' do
     redirect '/' unless session[:player]
-    
+
     @player = session[:player]
     @player_move = session[:player_move]
     @robot_move = session[:robot_move]
     @winner = session[:winner]
+    @victory_message = @winner == 'Nobody' ? 'Draw!' : "#{@winner} wins!"
+    
+    @comparator = case @winner
+    when session[:player]
+      '>'
+    when 'Robot'
+      '<'
+    else
+      '=='
+    end
+
+    @player_image = case @player_move
+    when 'rock'
+      '/images/rock.png'
+    when 'paper'
+      '/images/paper.png'
+    else
+      '/images/scissors.png'
+    end
+
+    @robot_image = case @robot_move
+    when 'rock'
+      '/images/rock.png'
+    when 'paper'
+      '/images/paper.png'
+    else
+      '/images/scissors.png'
+    end
  
     erb :play
   end
@@ -35,9 +63,9 @@ class RPS < Sinatra::Base
   end
 
   post '/move' do
+    session[:winner] = nil
     session[:player_move] = params[:move]
     session[:robot_move] = Game.random_move
-    session[:result] = true
 
     parse = { -1 => session[:player], 1 => 'Robot', 0 => 'Nobody' }
     result = Game.judge(session[:player_move], session[:robot_move])
