@@ -9,11 +9,18 @@ class Rules
 
   def result
     return nil if @player1 == @player2
-    return :p2 if @player1 == "Rock" && @player2 == "Paper"
-    return :p2 if @player1 == "Paper" && @player2 == "Scissors"
-    return :p2 if @player1 == "Scissors" && @player2 == "Rock"
     
-    :p1
+    p2_wins?[@player1] == @player2 ? :p2 : :p1
+  end
+
+  private 
+
+  def p2_wins?
+    {
+      'Rock' => 'Paper',
+      'Paper' => 'Scissors',
+      'Scissors' => 'Rock'
+    }
   end
 
 end

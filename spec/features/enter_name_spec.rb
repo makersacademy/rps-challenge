@@ -8,7 +8,7 @@ feature "start game" do
   end
 
   scenario "can enter name and generate new message" do
-    sign_in_and_play
+    sign_in_and_play_vs_computer
     expect(page).to_not have_content("Welcome to Rock, Paper, Scissors")
     expect(page).to have_content("Choose your weapon, Ed")
   end  
