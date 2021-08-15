@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative 'computer'
 
 class Rps < Sinatra::Base
   configure :development do
@@ -21,25 +22,22 @@ class Rps < Sinatra::Base
   get "/play" do
     @name = session[:name]
     @choice = session[:choice]
-    @computer = session[:computer]
+    @computer = Computer.new.choose
     erb(:play)
   end
 
   post "/rock" do
     session[:choice] = "Rock"
-    session[:computer] = ["Rock", "Paper", "Scissors"].sample
     redirect "/play"
   end
 
   post "/paper" do
     session[:choice] = "Paper"
-    session[:computer] = ["Rock", "Paper", "Scissors"].sample
     redirect "/play"
   end
 
   post "/scissors" do
     session[:choice] = "Scissors"
-    session[:computer] = ["Rock", "Paper", "Scissors"].sample
     redirect "/play"
   end
 end
