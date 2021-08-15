@@ -1,11 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
+ruby '3.0.2'
 
 group :test do
   gem 'capybara'
+  gem 'sinatra'
+  gem 'sinatra-reloader'
+  gem 'webrick'
   gem 'rspec'
-  gem 'rubocop', '0.79.0'
-  gem 'simplecov', require: false
-  gem 'simplecov-console', require: false
+  gem 'rubocop-rspec'
+  gem 'cucumber'
+  gem 'rubocop'
+  gem 'coveralls', require: false
 end
