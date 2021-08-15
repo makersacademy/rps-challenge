@@ -1,17 +1,28 @@
- Welcome <%= "#{@player_name}" %>! Please select your move! 
-
- <form action="/rock" method="post">
+ <h1>Welcome <%= "#{@single_player.name}" %>! Please select your move! </h1>
+<br>
+ A dense boulder of raw adamantite ready to crush your enemies.
+ <form action="/singleplayer/rock" method="post">
     <input type="submit" value="Rock">
 </form>
-<form action="/scissors" method="post">
+Freshly sharpened fine blades ready to slice and decapitate your enemy.
+<form action="/singleplayer/scissors" method="post">
   <input type="submit" value="Scissors">
 </form>
-<form action="/paper" method="post">
+Thick inscribed parchment capable of either wrapping or denouncing the opponent.
+<br>
+<form action="/singleplayer/paper" method="post">
   <input type="submit" value="Paper">
 </form>
-<form action="/spock" method="post">
+A long living, prosperous and very wise Vulcan.
+<br>
+<form action="/singleplayer/spock" method="post">
   <input type="submit" value="Spock">
 </form>
-<form action="/lizard" method="post">
+A mighty reptillian beast ready to be uncaged and unleashed!
+<br>
+<form action="/singleplayer/lizard" method="post">
   <input type="submit" value="Lizard">
 </form>
+<div>
+<img src='https://content.instructables.com/ORIG/FIU/AIWE/I7Q0TCUT/FIUAIWEI7Q0TCUT.jpg?auto=webp&frame=1&fit=bounds&md=5b8102e911f24990417073b8517e53d2'>
+</div>

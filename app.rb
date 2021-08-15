@@ -1,12 +1,17 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require './lib/game.rb'
+require './lib/player.rb'
 
 class Rpssl < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
 
-  enable :sessions
+  before do
+    @single_player = Player.instance
+    @game = Game.instance
+  end
 
   get '/' do
     erb(:index)
@@ -20,42 +25,46 @@ class Rpssl < Sinatra::Base
     erb(:singleplayer)
   end
 
-  post '/singleplayer_name' do
-    session[:Player1] = params[:Player1]
-    redirect '/singleplayer_move'
+  post '/singleplayer/name' do
+    @single_player = Player.create(params[:Player1])
+    redirect '/singleplayer/move'
   end
 
-  get '/singleplayer_move' do
-    @player_name = session[:Player1]
+  get '/singleplayer/move' do
     erb(:singleplayer_move)
   end
 
-  post '/rock' do
-    rpssl = Game.new("Rock")
-    redirect '/result'
+  post '/singleplayer/rock' do
+    computer_player = Player.new("SuperComputer 5000")
+    @game = Game.create(@single_player, "Rock", computer_player)
+    redirect '/singleplayer/result'
   end
 
-  post '/scissors' do
-    rpssl = Game.new("Scissors")
-    redirect '/result'
+  post '/singleplayer/scissors' do
+    computer_player = Player.new("SuperComputer 5000")
+    @game = Game.create(@single_player, "Scissors", computer_player)
+    redirect '/singleplayer/result'
   end
 
-  post '/paper' do
-    rpssl = Game.new("Paper")
-    redirect '/result'
+  post '/singleplayer/paper' do
+    computer_player = Player.new("SuperComputer 5000")
+    @game = Game.create(@single_player, "Paper", computer_player)
+    redirect '/singleplayer/result'
   end
 
-  post '/spock' do
-    rpssl = Game.new("Spock")
-    redirect '/result'
+  post '/singleplayer/spock' do
+    computer_player = Player.new("SuperComputer 5000")
+    @game = Game.create(@single_player, "Spock", computer_player)
+    redirect '/singleplayer/result'
   end
 
-  post '/lizard' do
-    rpssl = Game.new("Lizard")
-    redirect '/result'
+  post '/singleplayer/lizard' do
+    computer_player = Player.new("SuperComputer 5000")
+    @game = Game.create(@single_player, "Lizard", computer_player)
+    redirect '/singleplayer/result'
   end
 
-  get '/result' do
+  get '/singleplayer/result' do
     erb(:result)
   end
 

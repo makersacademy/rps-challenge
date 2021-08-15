@@ -1,3 +1,17 @@
+William's attempt at the RPS challenge.
+
+This was a fun challenge for this weekend, which I really enjoyed, I just wish I had more time to do them, as family commitments once again hampered my available time to do it, and I regret not starting on Friday during our free time. Everything was going dandy until I hit a major roadblock with Capybara not being able to read a click_button command, stating in the test that the button was disabled (which it clearly wasn't as I had been navigating the website and tested it there). Upon realizing that it would only respond to the button if it was called "Submit" and nothing else, and that I wasted a lot of time trying to figure it out, you could argue that I fell out of love with the Capybara tests when it happened again further down the line, and probably didn't write as many feature tests as I should have.
+
+I dived straight into the deep end here and right from the get go set up for the Spock and the Lizard, as well as the multiplayer options. Although I did not get time to finish the multiplayer options, I believe I have set up my game.rb to easily to be flexible both with single player and multiplayer, and adding it in wouldn't be too hard. Once I had completed the game.rb, everything was passing pretty well, besides Rubocop which stated that my method for determining what beat what was too long, but given how long it had taken to write, and the fact that it had gone wrong numerous times, and I felt I had refactored it pretty well already, lead me to disregard that notice, as I had no plans to waste any time messing around with it again.
+
+As late Sunday evening loomed, I finally caved in and created a Player class to ensure my Game class could be used for both modes (even though I knew at this point I was not going to be making multiplayer), doing so made literally all of my Game_spec tests fail, and I did briefly try to get some doubles going to save this, but it was just error after error and the problem just seemed to be getting worse, it was very late into Sunday night at this point, my brain was well and truly fried (and I also knew that after writing this and wrapping up, a new challenge of how to push to Github given their very vague "we no longer accept passwords - good luck" message on Friday awaits me), so I unwound with some tidying up on my HTML views (which in turn, failed even more tests), and called it a night.
+
+Despite literally no test passing at this point, I kind of felt that testing has become obsolete and served it's purpose, the app clearly works, as I had run many IRB tests and had been testing it extensively in the browser the whole time, and felt that spending another hour fixing tests on something that clearly works seems a bit pointless.
+
+All in all while these challenges are fun, to make any substancial progress on them really seems like it requires the whole weekend, which quite regularly, I don't have.
+
+
+
 # RPS Challenge
 
 Instructions
