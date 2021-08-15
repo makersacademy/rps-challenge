@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader' if test?
 require_relative 'lib/game'
-require_relative 'lib/player'
+# require_relative 'lib/player'
 
 class RPS < Sinatra::Base
   include Game
