@@ -1,5 +1,5 @@
 # in app.rb
-require './lib/game'
+require './lib/Player'
 require 'sinatra/base'
 require 'sinatra/reloader'
 
@@ -14,15 +14,12 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/players' do
-    $player1 = Game.new(params[:player1])
+    $player1 = Player.new(params[:player1])
     redirect '/begin'
   end
 
   get '/begin' do
     @Player1 = $player1.name
-    #@Player_1_HP = $Player_1.hp
-    #@Player_2 = $Player_2.name
-    #@Player_2_HP = $Player_2.hp
     erb :play
   end
 
