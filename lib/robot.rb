@@ -12,5 +12,5 @@ class Robot
   
 end
 
-robot = Robot.new
-p robot
+# robot = Robot.new
+# p robot

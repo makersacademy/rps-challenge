@@ -18,10 +18,28 @@ class Rps
     @game
   end
 
-  private
+  def result
+    score = { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
 
-  SCORE = { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
+    if @player_move == @robot_move
+      return 'Draw!'
+    elsif score[@player_move] == @robot_move
+      return 'Victory!'
+    else return 'Defeat!'
+    end
+  end
+
 end
 
-rps = Rps.new(Player.new('will'), Robot.new)
-p rps.player_move.name
+# rps = Rps.new(Player.new('will'), Robot.new)
+# rps.player_move.players_move('rock')
+
+rps = Rps.new('scissors', 'rock')
+p rps.result
+
+# a = Rps.new('rock', 'rock')
+# b = Rps.new('paper', 'rock')
+# c = Rps.new('scissors', 'rock')
+# p a.result
+# p b.result
+# p c.result
