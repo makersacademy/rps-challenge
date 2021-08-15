@@ -1,4 +1,4 @@
-class Winner
+class Game
   attr_reader :player_choice, :computer_choice
 
   def initialize(player_choice, computer_choice)
@@ -9,11 +9,11 @@ class Winner
 
   def calculate_winner
     if @player_choice == @computer_choice
-      @winner = "It's a Draw!"
+      "It's a Draw!"
     elsif @beatmap[@player_choice] == @computer_choice
-      @winner = "You won!"
+      "You won!"
     else
-      @winner = "The computer won!"
+      "The computer won!"
     end
   end
 end

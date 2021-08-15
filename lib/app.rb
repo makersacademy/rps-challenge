@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative 'computer'
-require_relative 'winner'
+require_relative 'game'
 
 class Rps < Sinatra::Base
   configure :development do
@@ -24,7 +24,7 @@ class Rps < Sinatra::Base
     @name = session[:name]
     @choice = session[:choice]
     @computer = Computer.new.choose
-    @winner = Winner.new(@choice, @computer).calculate_winner
+    @winner = Game.new(@choice, @computer).calculate_winner
     erb(:play)
   end
 
