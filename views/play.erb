@@ -1,0 +1,27 @@
+<html>
+
+<head>
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+form {text-align: center;}
+</style>
+</head>
+<body>
+<body style="background-color:lightpink;">
+<h1>Welcome <%= @Player1 %>, you are Player 1</h1><p><p>
+
+<p>Which move would you like to play?</p>
+
+
+
+<form action="/move" method='post'>
+<input class="input" type="text" placeholder="rock, paper or scissors?" name="move1">
+<br>
+<p>
+<input class="button" type="submit" value="Go!"></p>
+</form>
+
+</body>
+</html>
