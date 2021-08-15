@@ -57,9 +57,9 @@ As a result this app ended up a lot simpler than during my initial planning and 
 
 ## Implementation
 
----
+
 ### Technologies & Assets
----
+
 
 - Ruby
 - Sinatra
