@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require './lib/game.rb'
 
 class RPS < Sinatra::Base
   configure :development do
@@ -18,14 +19,19 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @name = session[:name]
-    @choice = session[:choice]
     erb :play
   end
 
-  post '/play' do
-    session[:choice] = params[:choice]
-    redirect '/play'
+  post '/choice' do
+    session[:player_choice] = params[:player_choice]
+    redirect '/result'
+  end
+
+  get '/result' do
+    game = Game.new(session[:name], session[:player_choice])
+    @result = game.play
+    @comp_choice = game.comp_choice
+    erb :result
   end
 
   run! if app_file == $0
