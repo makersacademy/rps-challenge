@@ -1,22 +1,55 @@
 # RPS Challenge
 
-Instructions
--------
+## Introduction
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+This is a web app that uses Ruby and Sinatra to deliver a one or two player game of Rock, Paper, Scissors (or paper, scissors, stone as I called it when I was a child).
 
-Task
-----
+There is of course HTML, and also a tiny bit of CSS to liven things up slightly.
 
-Knowing how to build web applications is getting us almost there as web developers!
+It is fully tested, with 100% coverage using RSpec and Capybara.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+I really enjoyed this project: I used class methods and class instance variables from the outset, which made things relatively simple. I think I've kept the classes and methods in the model relatively lean. I wrote the single player version first, and then included two-player functionality. I am happy with my code, although there is perhaps still some logic in the controller that could be moved into the model. I'm happy with my unit tests on the whole, but I'm not sure I've got the hang of Capybara yet (or, at least, the skill of writing elegant Capybara feature tests). 
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+There's lots of functionality I could add: a score tally, graphics, 'lizard' and 'spock' weapons?
 
+## Installation
+
+```
+git clone https://github.com/edpackard/rps-challenge.git
+cd rps-challenge
+gem install bundler # if required
+bundle install
+```
+
+## How to use this program
+
+From the `rsp-challenge` directory, run `rackup` from Terminal. 
+
+If rackup starts correctly, you should see a port number (i.e. `port=9292`)
+
+Open a browser windows and enter http://localhost:9292/
+
+You should see a screen welcoming you to Rock, Paper, Scissors
+
+To play one player vs. the computer, enter your name in the player 1 box and click 'Let's Play!'
+
+To play two player, enter names in both player boxes before clicking 'Let's Play!'
+
+The game will not start if the player 1 box is left blank.
+
+At the end of the game, you will be given the option to play again (vs. the same opponent), or return to the homepage.
+
+## Basic Rules
+
+- Rock beats Scissors
+- Scissors beats Paper
+- Paper beats Rock
+
+## How to run the tests
+
+Run `rspec` from Terminal within the `rps-challenge` directory. This will run all of the feature and unit tests. To run individual tests, put the file path after `rspec`, such as `rspec ./spec/unit/player_spec.rb`.
+
+## User Stories
 ```
 As a marketeer
 So that I can see my name in lights
@@ -26,61 +59,3 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-[You may find this guide to setting up a new Ruby web project helpful.](https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md)
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/main/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
