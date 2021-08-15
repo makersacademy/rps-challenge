@@ -78,8 +78,20 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
   coveralls
   cucumber
   rspec
   rubocop
   rubocop-rspec
+=======
+  capybara
+  rspec
+  rubocop (= 0.79.0)
+  simplecov
+  simplecov-console
+  sinatra
+
+BUNDLED WITH
+   2.1.4
+>>>>>>> main
