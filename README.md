@@ -72,9 +72,11 @@ As a result this app ended up a lot simpler than during my initial planning and 
 - CSS
 - Wow, no Javascript!
 
-- Animations from [Animate.css](https://animate.style/)
-- Rock Paper Scissor illustrations found on [openclipart](https://openclipart.org/artist/mazeo)
-- Background gradient made with [cssgradient.io](https://cssgradient.io/)
+- Assets
+  - Fonts used are 'Bangers', 'Luckiest Guy' and 'Press Start 2'
+  - Animations from [Animate.css](https://animate.style/)
+  - Rock Paper Scissor illustrations found on [openclipart](https://openclipart.org/artist/mazeo)
+  - Background gradient made with [cssgradient.io](https://cssgradient.io/)
 
 - Testing
   - RSPEC
