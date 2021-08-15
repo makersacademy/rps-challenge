@@ -1,0 +1,26 @@
+<section class="header">
+  <h1 style="text-align: center;color:#212529; margin:2rem 0">
+   What is your weapon of choice?
+  </h1>
+  <hr style="border-top: rgba(0, 0, 0, .1); margin-bottom:2rem">
+  <h3 style="color:#6c757d; margin-top:2rem; position:relative; width:100%">
+    <% if @error == true %>
+     <h2>An error has occured</h2>
+    <% end %>
+    <div style="display:inline-block">..choose wisely <i style="color:#212529"><%= @name %></i></div>
+    <div style="text-align:right; float:right">wins:  <div style="display:inline"><%= @wins.to_s %></div> / <%= @total.to_s %></div>
+  </h3>
+  <form action="/results" method="post" on>
+    <h5 style="text-align:center">
+      <input type="hidden" value="" name="option" id="option"/>
+      <input type="submit" value="Rock" name="rock" style="margin:1rem; width:25%" onclick="document.getElementById('option').value='rock'"/>
+      <input type="submit" value="Paper" name="paper" style="margin:1rem; width:25%" onclick="document.getElementById('option').value='paper'"/>
+      <input type="submit" value="Scissors" name="scissors" style="margin:1rem; width:25%" onclick="document.getElementById('option').value='scissors'"/>
+    </h5>
+    <hr style="border-top: rgba(0, 0, 0, .1); margin-top:3rem; width:75%">
+    <h5 style="text-align:center; color:#454749">The future of this rock world is in your hands</h5>
+  </form>
+</section>
+<h5 style="text-align:center">
+  <a href="/" style="text-decoration:none; border-radius:0.25rem; border:1px solid rgba(0, 0, 0, .1); padding: 0.25rem 0.5rem">New player / game</a>
+</h5>
