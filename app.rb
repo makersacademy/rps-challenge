@@ -30,5 +30,34 @@ class Rpssl < Sinatra::Base
     erb(:singleplayer_move)
   end
 
+  post '/rock' do
+    rpssl = Game.new("Rock")
+    redirect '/result'
+  end
+
+  post '/scissors' do
+    rpssl = Game.new("Scissors")
+    redirect '/result'
+  end
+
+  post '/paper' do
+    rpssl = Game.new("Paper")
+    redirect '/result'
+  end
+
+  post '/spock' do
+    rpssl = Game.new("Spock")
+    redirect '/result'
+  end
+
+  post '/lizard' do
+    rpssl = Game.new("Lizard")
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb(:result)
+  end
+
   run! if app_file == $0
 end
