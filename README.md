@@ -47,6 +47,7 @@ As a result this app ended up a lot simpler than during my initial planning and 
 
 - Didn't implement the additional game rules because I couldn't find an image of a lizard in an acceptably matching art style!
 - Didn't implement multiplayer functionality
+- Had two people playtest it and both tried to click on the 'play again?' text, rather than image buttons. Changed the text to be hopefully less confusing but still not sure if it's clear enough.
 
 
 ### TODO
@@ -57,6 +58,7 @@ As a result this app ended up a lot simpler than during my initial planning and 
 - *True* multiplayer, maybe using the [litecable](https://github.com/palkan/litecable) gem?
 - I feel like there's an inordinate amount of instance variable-setting in my controller. I don't know if this is just inevitable, or there's a best way to factor this out, so TORESEARCH
 - Make it nice on mobile
+- Fix UX issues mentioned above
 
 ## Implementation
 
