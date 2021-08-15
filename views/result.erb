@@ -1,0 +1,5 @@
+<h2><%= session[:result] %></h2>
+You chose: <%= session[:player_turn].capitalize %> - CPU chose: <%= session[:cpu_turn].capitalize %>
+<form name="play" method="post">
+  <input type="submit" value="Play Again!" style="margin-top: 10px">
+</form>
