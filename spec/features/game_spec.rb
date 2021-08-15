@@ -9,4 +9,10 @@ feature "the  game should have 3 action button" do
     expect([@rock, @paper, @scissors].any?{ |val| val == nil }).to eq(false)
   end
 
+  scenario "navigate back to game from results where you lost" do
+    visit("/game")
+    click_link("New player / game")
+    expect(page).to have_content("Welcome to Rock - Paper - Scissors")
+  end
+
 end

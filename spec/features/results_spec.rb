@@ -23,6 +23,12 @@ feature "it should present a winner" do
     expect(page).to have_content("you had:\npaper")
   end
 
+  scenario "draw" do
+    visit("results_draw?wact=paper&lact=paper")
+    expect(page).to have_content("against same\npaper")
+    expect(page).to have_content("you had:\npaper")
+  end
+
   scenario "navigate back to game from results where you won" do
     visit("/results_won")
     click_link("Play again")
@@ -30,6 +36,12 @@ feature "it should present a winner" do
   end
 
   scenario "navigate back to game from results where you lost" do
+    visit("/results_lost")
+    click_link("Play again")
+    expect(page).to have_content("What is your weapon of choice?")
+  end
+
+  scenario "navigate back to game from results where draw" do
     visit("/results_lost")
     click_link("Play again")
     expect(page).to have_content("What is your weapon of choice?")

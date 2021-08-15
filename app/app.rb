@@ -52,5 +52,12 @@ class RPS < Sinatra::Base
     erb(:results_lost)
   end
 
+  get "/results_draw" do
+    params[:name].nil? ? (@name = session[:name]) : (@name = params[:name])
+    @first_act = params[:wact]
+    @second_act = params[:lact]
+    erb(:results_draw)
+  end
+
   run! if app_file ==$0
 end
