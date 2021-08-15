@@ -23,24 +23,6 @@ header {
   justify-content: center;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#welcome-form {
-  margin : 20vh auto;
-  padding: 1em;
-  box-sizing: border-box;
-  background : #9900cc url(background.jpg);
-  border-radius: 16px;
-  color: #ffffff;
-  font-size: 1.4rem;
-  font-family: 'Press Start 2', monospace;
-}
-
 input {
   font    : 1.4em "inconsolata", monospace;
   box-sizing: border-box;
@@ -49,6 +31,65 @@ input {
   padding : 0.4rem;
   margin  : 1rem 0 1rem 0;
   width   : 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.move-button {
+  background-color: transparent;
+  opacity:0.6;
+  border: none;
+  height: 10rem;
+  width: 10rem;
+}
+
+.move-button:hover {
+  opacity: 1;
+}
+
+#battle-illustration img {
+  margin-top: 2rem;
+  width: 6rem;
+  height: auto;
+}
+
+#comparator {
+  margin: 2rem;
+  font-size: 4rem;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+#move-prompt {
+  color: #009933;
+  font-size: 1.4rem;
+  font-family: 'Press Start 2', monospace;
+  letter-spacing: 6;
+}
+
+#paper-button {
+  margin: 2rem;
+  background-image: url('/images/paper.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#rock-button {
+  margin: 2rem;
+  background-image: url('/images/rock.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#scissors-button {
+  margin: 2rem;
+  background-image: url('/images/scissors.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #victor {
@@ -68,54 +109,13 @@ input {
   letter-spacing: 2;
 }
 
-#comparator {
-  margin: 2rem;
-  font-size: 4rem;
-  font-family: 'Luckiest Guy', cursive;
-}
-
-.move-button {
-  background-color: transparent;
-  opacity:0.6;
-  border: none;
-  height: 10rem;
-  width: 10rem;
-}
-
-.move-button:hover {
-  opacity: 1;
-}
-
-#move-prompt {
-  color: #009933;
+#welcome-form {
+  margin : 20vh auto;
+  padding: 1em;
+  box-sizing: border-box;
+  background : #9900cc url(background.jpg);
+  border-radius: 16px;
+  color: #ffffff;
   font-size: 1.4rem;
   font-family: 'Press Start 2', monospace;
-  letter-spacing: 6;
-}
-
-#rock-button {
-  margin: 2rem;
-  background-image: url('/images/rock.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-#paper-button {
-  margin: 2rem;
-  background-image: url('/images/paper.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-#scissors-button {
-  margin: 2rem;
-  background-image: url('/images/scissors.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-#battle-illustration img {
-  margin-top: 2rem;
-  width: 6rem;
-  height: auto;
 }
