@@ -22,8 +22,7 @@ class RPSgame < Sinatra::Base
     @playername = session[:playername]
     session[:playermove] = params[:playermove]
     @playermove = session[:playermove]
-    game = RPS.new(@playermove)
-    @result = game.winner
+    @result = RPS.new(@playermove).winner
     erb :results
   end
 

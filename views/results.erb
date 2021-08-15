@@ -1,21 +1,31 @@
-<h1>
-  <div>
-    <%= @playername %> you chose <%= @playermove%>
-  </div>
-</h1>
-<hr>
-<h2>
-  <div> 
-    <% if @result  == 'Win' %> 
-      <%= @playername%> Wins!!!
-    <% elsif @result == 'Lose' %>
-      <%= @playername%> Losses!!!
-    <% else%>
-      Draw!!
-    <%end%>
-  </div>
+<head>
+  <style>
+    body {
+      background-color: SteelBlue;
+      text-align: center;
+    }
+  </style>
+</head>
 
-  <form action='/' method='get'>
-    <input type="submit" value="Return to start">
-  </form>
-</h2>
+<body>
+  <h1>
+    <div>
+      <%= @playername %> you chose <%= @playermove%>
+    </div>
+  </h1>
+  <hr>
+  <h2>
+    <div> 
+      <% if @result  == 'Win' %> 
+        <%= @playername%> Wins!!!
+      <% elsif @result == 'Lose' %>
+        <%= @playername%> Losses!!!
+      <% else%>
+        Draw!!
+      <%end%>
+    </div>
+    <form action='/' method='get'>
+      <input type="submit" value="Return to start">
+    </form>
+  </h2>
+</body>
