@@ -5,7 +5,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 
 class RockPaperScissors < Sinatra::Base
-  
+
   configure :development do
     register Sinatra::Reloader
   end
@@ -18,6 +18,7 @@ class RockPaperScissors < Sinatra::Base
     player1 = Player.new(params[:name])
     player2 = Player.new(params[:name2])
     @game = Game.generate(player1, player2)
+    redirect '/' if params[:name].empty?
     redirect '/play'
   end
 
