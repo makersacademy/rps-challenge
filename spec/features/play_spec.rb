@@ -18,7 +18,7 @@ feature 'playing the game' do
       visit_root_and_enter_name
       enter_move('paper')
 
-      expect(page).to have_content('Play again')
+      expect(page).to have_content('choose your weapon')
     end
 
     it 'displays the move the player has entered' do
