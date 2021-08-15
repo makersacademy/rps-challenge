@@ -1,0 +1,12 @@
+
+feature "the  game should have 3 action button" do
+
+  scenario "the action buttons are present on game load" do 
+    visit('/game')
+    @rock = find("input[@name='rock']")
+    @paper = find("input[@name='paper']")
+    @scissors = find("input[@name='scissors']")
+    expect([@rock, @paper, @scissors].any?(:nil)).to eq(false)
+  end
+
+end

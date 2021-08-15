@@ -1,5 +1,6 @@
-def login_and_play
+
+def login_and_play(name)
   submit_form = find("//input[type='submit']")
-  fill_in(:name, with: "Mike")
+  fill_in(:name, with: name)
   submit_form.click
 end

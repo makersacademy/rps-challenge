@@ -1,10 +1,18 @@
 <section class="header">
   <h1 style="text-align: center;color:#212529; margin:2rem 0">
-    Choose your weapon!
+   What is your weapon of choice?
   </h1>
   <hr style="border-top: rgba(0, 0, 0, .1); margin-bottom:2rem">
   <h3 style="color:#6c757d">
-    ..choose wisely 
+    ..choose wisely <%= @user %> 
   </h3>
-  
+  <form action="/results" method="post">
+    <h5 style="text-align:center">
+      <input type="submit" value="rock" name="rock" style="margin:1rem; width:25%"/>
+      <input type="submit" value="Paper" name="paper" style="margin:1rem; width:25%"/>
+      <input type="submit" value="Scissors" name="scissors" style="margin:1rem; width:25%"/>
+    </h5>
+    <hr style="border-top: rgba(0, 0, 0, .1); margin-top:3rem; width:75%">
+    <h5 style="text-align:center; color:#454749">The future of this rock world is in your hands</h5>
+  </form>
 </section>

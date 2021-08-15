@@ -13,6 +13,12 @@ class RPS < Sinatra::Base
   end
 
   post "/game" do
+    @user = params[:name].downcase.split(" ").map(&:capitalize).join(" ")
+    session[:name] = @user
+    erb(:game)
+  end
+
+  get "/game" do 
     erb(:game)
   end
 

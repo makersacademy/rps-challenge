@@ -1,5 +1,4 @@
 
-
 feature "test app structure" do
   scenario "the app is runnig as a whole" do 
     visit('/')
