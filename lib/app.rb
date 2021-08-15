@@ -21,21 +21,25 @@ class Rps < Sinatra::Base
   get "/play" do
     @name = session[:name]
     @choice = session[:choice]
+    @computer = session[:computer]
     erb(:play)
   end
 
   post "/rock" do
     session[:choice] = "Rock"
+    session[:computer] = ["Rock", "Paper", "Scissors"].sample
     redirect "/play"
   end
 
   post "/paper" do
     session[:choice] = "Paper"
+    session[:computer] = ["Rock", "Paper", "Scissors"].sample
     redirect "/play"
   end
 
   post "/scissors" do
     session[:choice] = "Scissors"
+    session[:computer] = ["Rock", "Paper", "Scissors"].sample
     redirect "/play"
   end
 end
