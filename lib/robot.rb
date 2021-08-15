@@ -7,10 +7,6 @@ class Robot
   end
 
   private
-
   MOVES = ['rock', 'paper', 'scissors']
   
 end
-
-# robot = Robot.new
-# p robot
