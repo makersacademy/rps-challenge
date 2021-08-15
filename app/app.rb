@@ -13,7 +13,7 @@ class RPS < Sinatra::Base
   end
 
   post "/game" do
-    @name = params[:name].downcase.split(" ").map(&:capitalize).join(" ")
+    @name = params[:name]
     session[:name] = @name
     session[:wins] = 0
     session[:total] = 0
@@ -35,7 +35,7 @@ class RPS < Sinatra::Base
     @winner_act = "rock"
     @loser_act = "scissors"
     @name = session[:name]
-      redirect("/results_lost?wact=" << @winner_act << "&lact=" << @loser_act)
+    redirect("/results_lost?wact=" << @winner_act << "&lact=" << @loser_act)
   end
 
   get "/results_won" do

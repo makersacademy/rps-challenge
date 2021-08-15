@@ -3,7 +3,8 @@ class Player
 
   def initialize(name)
     @score = 0
-    @name = name
+    @name = name.downcase.split(" ").map(&:capitalize).join(" ")
+    @option = nil
   end
 
   def score
@@ -12,6 +13,14 @@ class Player
 
   def score_plus
     @score += 1
+  end
+
+  def set_option(option = [:rock, :paper, :scissors].sample)
+    ([:rock, :paper, :scissors].include?(option)) ? (@option = option) : (@option = nil)
+  end
+
+  def option
+    @option
   end
 
 end

@@ -4,6 +4,9 @@
   </h1>
   <hr style="border-top: rgba(0, 0, 0, .1); margin-bottom:2rem">
   <h3 style="color:#6c757d; margin-top:2rem; position:relative; width:100%">
+    <% if @error == true %>
+     <h2>An error has occured</h2>
+    <% end %>
     <div style="display:inline-block">..choose wisely <i style="color:#212529"><%= @name %></i></div>
     <div style="text-align:right; float:right">wins:  <div style="display:inline"><%= @wins.to_s %></div> / <%= @total.to_s %></div>
   </h3>
