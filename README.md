@@ -20,9 +20,10 @@ Although I started off with different classes for Game and Player (and attendant
 As a result this app ended up a lot simpler than during my initial planning and I spent a lot of saved time beautifying it!
 
 ## Assesment
----
 
-## Succeeded:
+---
+### Succeeded
+---
 
 - Player is able to enter their name
 - Player is able to play Rock, Paper, Scissors against the computer's random moves
@@ -39,12 +40,16 @@ As a result this app ended up a lot simpler than during my initial planning and 
 - Seperated unit & feature tests
 - Shared HTML put in layout.erb to reduce repetition in the views
 
-## Failed:
+---
+### Failed
+---
 
 - Didn't implement the additional game rules because I couldn't find an image of a lizard in an acceptably matching art style!
 - Didn't implement multiplayer functionality
 
-## TODO:
+---
+### TODO
+---
 
 - Things I failed above, plus -
 - Counter to keep track of rounds won
@@ -144,7 +149,7 @@ As a result this app ended up a lot simpler than during my initial planning and 
 ### Screenshots
 ---
 
-![welcome view](https://github.com/sa-mcquanzie/rps-challenge/blob/main/screenshots/welcome.jpg?raw=true)
+![welcome view](https://github.com/sa-mcquanzie/rps-challenge/blob/main/screenshots/welcome.png?raw=true)
 
 
 
