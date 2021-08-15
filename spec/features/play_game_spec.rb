@@ -24,5 +24,9 @@ feature 'player can select an attack' do
     expect(page).to have_content 'Godzilla you chose Scissors'
   end
 
-
+  # scenario 'displays player victory' do
+  #   register_to_play
+  #   click_button('Scissors')
+  #   expect(page).to have_content 'Godzilla Wins!!!'
+  # end
 end

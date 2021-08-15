@@ -1,1 +1,21 @@
-<%= @playername %> you chose <%= @playermove%>
+<h1>
+  <div>
+    <%= @playername %> you chose <%= @playermove%>
+  </div>
+</h1>
+<hr>
+<h2>
+  <div> 
+    <% if @result  == 'Win' %> 
+      <%= @playername%> Wins!!!
+    <% elsif @result == 'Lose' %>
+      <%= @playername%> Losses!!!
+    <% else%>
+      Draw!!
+    <%end%>
+  </div>
+
+  <form action='/' method='get'>
+    <input type="submit" value="Return to start">
+  </form>
+</h2>

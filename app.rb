@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative 'lib/rps'
 
 class RPSgame < Sinatra::Base
   enable :sessions
@@ -21,7 +22,8 @@ class RPSgame < Sinatra::Base
     @playername = session[:playername]
     session[:playermove] = params[:playermove]
     @playermove = session[:playermove]
-    p @playermove
+    game = RPS.new(@playermove)
+    @result = game.winner
     erb :results
   end
 
