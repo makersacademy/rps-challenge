@@ -23,12 +23,14 @@ class RPS < Sinatra::Base
     # assigning param name and user choice to an instance variable
     @name = session[:name]
     @choice = session[:choice]
+    @computer_choice = session[:computer_choice]
     erb :play
   end
 
   post '/play' do
     # added user choice parameter to a session
     session[:choice] = params[:choice]
+    session[:computer_choice] = :paper
     redirect '/play'
 
   end

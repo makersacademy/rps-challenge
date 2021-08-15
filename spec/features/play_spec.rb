@@ -8,7 +8,7 @@ feature 'gameplay' do
     click_button 'Submit'
   end
 
-  scenario 'see the shape options' do
+  scenario 'See the shape options' do
     
     expect(page).to have_button 'Rock'
     expect(page).to have_button 'Paper'
@@ -16,9 +16,19 @@ feature 'gameplay' do
 
   end
 
-  scenario 'choosing a shape' do
+  scenario 'Choosing a shape' do
     click_button 'Rock'
     expect(page).to have_content 'You chose Rock!'
-
   end
+
+  scenario 'The computer should choose a random option' do
+    click_button 'Rock'
+    message = find(:css, "#opponent").text
+    expect(poss_responses).to include message
+  end
+
+  def poss_responses
+    [:rock, :paper, :scissors].map { |shape| "The computer has chosen #{shape.to_s.capitalize}!"}
+  end
+
 end
