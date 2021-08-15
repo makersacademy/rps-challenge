@@ -1,0 +1,5 @@
+h1, h2, form, input[type=submit] { 
+  color: red;
+  font-family: Verdana;
+  text-align: center;
+}
