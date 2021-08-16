@@ -38,9 +38,6 @@ class RockPaperScissors < Sinatra::Base
     @user_move = session[:rps_move]
     @game = session[:game]
     @computer_move = @game.computer_move
-    puts @user_move
-    puts @computer_move
-    puts @game.return_message
     erb(:result)
   end
 
