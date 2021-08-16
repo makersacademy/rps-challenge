@@ -2,6 +2,8 @@ require 'spec_helper'
 
 feature 'after entering a move' do
   describe 'move route' do
+    let(:game) { double Game }
+
     it 'adds the correct player move to the session' do
       visit_root_and_enter_name
       enter_move('rock')
@@ -21,25 +23,18 @@ feature 'after entering a move' do
       visit_root_and_enter_name
       enter_move('scissors')
 
-      player = page.get_rack_session_key('player')
-
       expect(page.get_rack_session_key('winner')).to_not eq(nil)
-      expect([
-        player, 'Nobody', 'Robot'
-          ]).to include(page.get_rack_session_key('winner'))
+      expect([-1, 0, 1]).to include(page.get_rack_session_key('winner'))
     end
 
     it 'adds the correct winner to the session' do
       visit_root_and_enter_name
       enter_move('rock')
 
-      player = page.get_rack_session_key('player')
-      player_move = page.get_rack_session_key('player_move')
+      winner = page.get_rack_session_key('winner')
       robot_move = page.get_rack_session_key('robot_move')
-      parse = { -1 => player, 1 => 'Robot', 0 => 'Nobody' }
-      result = Game.judge(player_move, robot_move)
 
-      expect(page.get_rack_session_key('winner')).to eq(parse[result])
+      expect(winner).to eq(result_vs_rock(robot_move))
     end
   end
 end

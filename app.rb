@@ -1,8 +1,12 @@
 require 'sinatra'
 require 'sinatra/reloader' if test?
 require_relative 'lib/game'
+require_relative 'lib/helpers/string'
 
 class RPS < Sinatra::Base
+  include Game
+  include StringHelpers
+  
   enable :sessions
 
   configure :test do 
@@ -19,13 +23,11 @@ class RPS < Sinatra::Base
     redirect '/' unless session[:player]
 
     @player = session[:player]
-    @player_move = session[:player_move]
-    @robot_move = session[:robot_move]
-    @player_image = "/images/#{@player_move}.png"
-    @robot_image = "/images/#{@robot_move}.png"
+    @player_image = "/images/#{session[:player_move]}.png"
+    @robot_image = "/images/#{session[:robot_move]}.png"
     @winner = session[:winner]
-    @victory_message = @winner == 'Nobody' ? 'Draw!' : "#{@winner} wins!"
-    @comparator = generate_comparator(@winner)
+    @victory_message = victory_string(@winner, @player)
+    @comparator = comparator_string(@winner)
  
     erb :play
   end
@@ -39,30 +41,11 @@ class RPS < Sinatra::Base
   post '/move' do
     session[:winner] = nil
     session[:player_move] = params[:move]
-    session[:robot_move] = Game.random_move
-    result = Game.judge(session[:player_move], session[:robot_move])
-    session[:winner] = parse_winner(result)
+    session[:robot_move] = random_move
+    session[:winner] = judge(session[:player_move], session[:robot_move])
 
     redirect '/play'
   end
 
   run! if app_file == $0
-
-  private
-
-  def parse_winner(result)
-    lookup = { -1 => session[:player], 1 => 'Robot', 0 => 'Nobody' }
-    lookup[result]
-  end
-
-  def generate_comparator(winner)
-    return  case winner
-            when session[:player]
-              '>'
-            when 'Robot'
-              '<'
-            else
-              '=='
-            end
-  end
 end
