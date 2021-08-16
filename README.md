@@ -17,7 +17,7 @@ Rock-Paper-Scissors Challenge
 
 Functional representation of user requirements:
 
-[Check out my workflow mindmap](https://github.com/CorinneBosch/airport_challenge/blob/main/workflow/screenshot.png)
+[Check out my workflow mindmap](https://github.com/CorinneBosch/rps-challenge/blob/main/public/images/workflow.png)
 
 ## Setup
 
@@ -29,18 +29,18 @@ Functional representation of user requirements:
 
 ## How to run
 
-You can frature test and run this airport program in any `code editor` or `IRB`.
+You can play rock-paper-scissors after loading `rackup` or `ruby app.rb` to start `localhost`.
 
 ## Run test 
 
 To test specific features in your terminal.
 ```
-$ cd airport_challenge/lib
-$ rspec spec/file_name.rb
+$ rspec spec/unit/file_name.rb
+$ rspec spec/feature/file_name.rb
 ```
-To test all features at once in your terminal.
+To test all units and features at once in your terminal.
 ```
-$ cd airport_challenge
+$ cd rps_challenge
 $ rspec
 ```
 
