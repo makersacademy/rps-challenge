@@ -1,3 +1,39 @@
+# Rock, Paper, Scissors
+
+A game of rock, paper, scissors played with the computer. Please enter your name and select either rock, paper or scissors and the
+computer will also do so. Can you beat the compouter ?!
+
+## To do
+
+* Improve the front end to make the website look nicer.
+* Align the radio buttons for a user selecting either rock, paper or scissors.
+
+## Getting started
+
+Please clone the repo and run bundle install to install all specified gems.
+
+`git clone https://github.com/Battery0/rps-challenge.git`
+`bundle install`
+
+## Usage
+
+To run the program:
+
+`ruby.app`
+Navigate to `http://localhost:4567/`
+
+
+## Running tests
+
+To run RSpec tests - please run rspec in the project root folder.
+
+`rspec`
+
+
+
+
+
+
 # RPS Challenge
 
 Instructions
