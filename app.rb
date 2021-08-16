@@ -27,7 +27,6 @@ class RockPaperScissors < Sinatra::Base
 
   post '/move' do
     @game = Game.game_instance
-    # @game.move(params[:move])
     @game.player_1.move(params[:player_1_move])
     @game.player_2.move(params[:player_2_move])
     redirect '/result'
