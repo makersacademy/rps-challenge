@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <section id='box'>
+    <form id='game' action='/move' method='post'>
+      <br>
+      <br>
+      <h2>Hi <%= @game.player_move.p_move %>! Please make a move</h2>
+      <section id='moves'>
+        <br>
+        <input type='image' name='move' value='rock' src='images/rock.png' 
+               alt='Submit Rock Move' width='100' height='100'/>
+        <input type='image' name='move' value='paper' src='images/paper.png' 
+               alt='Submit Paper Move' width='100' height='100' />
+        <input type='image' name='move' value='scissors' src='images/sss.png' 
+               alt='Submit Scissor Move' width='100' height='100' />
+      </section>
+      <h3>Choose wisely...</h3>
+    </form>
+    </section>
+  </body>
+</html>
