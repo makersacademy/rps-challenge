@@ -1,20 +1,14 @@
 <!doctype html>
 <html>
-
   <head>
     <title>Rock Paper Scissors Game</title>
-    <style>
-      body {
-        font-family:helvetica;
-      }
-    </style>
+    <link rel="stylesheet" type='text/css' href="style.css">
   </head>
-
-  <body style="background-color:#00bfff;">
-    <div style="width:800px; margin: 0 auto; text-align: center;">
-      <h1 style="font-size: 50px;"><%= @player1_name %>, you chose <%= @player1_choice %>!</h1><br><br><br><br><br><br><br><br><br>
-      <h1 style="font-size: 100px;"><%= @result %></h1>
+  <body>
+    <div class="title">
+      <h1> <%= @player1_name %>, you chose <%= @player1_choice %>!</h1><br><br><br><br>
+      <h2>Computer chose <%= @comp_move %>!</h2><br><br>
+      <h3><%= @result %></h1>
     </div>
   </body>
-
 </html>

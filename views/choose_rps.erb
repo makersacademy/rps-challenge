@@ -1,36 +1,23 @@
 <!doctype html>
 <html>
-
   <head>
     <title>Rock Paper Scissors Game</title>
-    <style>
-      body {
-        font-family:helvetica;
-      }
-    </style>
+    <link rel="stylesheet" type='text/css' href="style.css">
   </head>
-
-  <body style="background-color:#00bfff;">
-    <div style="width:800px; margin: 0 auto; text-align: center;">
-      <h1 style="font-size: 50px;">Welcome <%= @player1_name %></h1>
-      <br><br><br><br>
-      <p style="font-size: 20px;">To play the game please choose either: Rock, Paper or Scissors !</p><br><br><br>
-    </div>
-    
+  <body>
+    <div class="title">
+      <h1>Welcome <%= @player1_name %></h1><br><br><br><br>
+      <p>To play the game please choose either: Rock, Paper or Scissors !</p><br><br><br>
+    </div>   
     <div style="margin: 0 auto; text-align: center;">
       <form action="/result" method="post">
         <input type="radio" id="rock" name="rps" value="Rock">
         <label for="rock">Rock</label><br>
-
         <input type="radio" id="paper" name="rps" value="Paper">
         <label for="paper">Paper</label><br>
-
         <input type="radio" id="scissors" name="rps" value="Scissors">
-        <label for="scissors">Scissors</label><br>
-        <br>
+        <label for="scissors">Scissors</label><br><br>
         <input type="submit" value="Submit">
       </form>
-
   </body>
-
 </html>

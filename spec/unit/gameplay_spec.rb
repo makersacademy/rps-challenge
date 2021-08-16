@@ -13,6 +13,7 @@ describe GamePlay do
   context 'run game logic to determine if player wins' do
     it "player picks 'rock' computer picks 'scissors'" do
       expect(computer_choice).to receive(:rock_paper_scissors)
+      subject.computer_move
       expect(subject.game_result(player_choice_rock)).to eq("Congrats, you win!")
     end
   end
@@ -20,6 +21,7 @@ describe GamePlay do
   context 'run game logic to determine if tie' do
     it "player picks 'scissors' computer picks 'scissors'" do
       expect(computer_choice).to receive(:rock_paper_scissors)
+      subject.computer_move
       expect(subject.game_result(player_choice_scissors)).to eq("Its a tie!")
     end
   end
@@ -27,6 +29,7 @@ describe GamePlay do
   context 'run game logic to determine if player looses' do
     it "player picks 'paper' computer picks 'scissors'" do
       expect(computer_choice).to receive(:rock_paper_scissors)
+      subject.computer_move
       expect(subject.game_result(player_choice_paper)).to eq("You loose!")
     end
   end

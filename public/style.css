@@ -1,0 +1,26 @@
+body {
+  font-family:helvetica;
+  background-color:#00bfff;
+}
+
+h1 { 
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 70px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.title{
+  width:800px; 
+  margin: 0 auto; 
+  text-align: center;
+}
