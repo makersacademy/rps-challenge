@@ -21,8 +21,8 @@ class RPS < Sinatra::Base
     @player = session[:player]
     @player_move = session[:player_move]
     @robot_move = session[:robot_move]
-    @player_image = picture_for(@player_move)
-    @robot_image =  picture_for(@robot_move)
+    @player_image = "/images/#{@player_move}.png"
+    @robot_image = "/images/#{@robot_move}.png"
     @winner = session[:winner]
     @victory_message = @winner == 'Nobody' ? 'Draw!' : "#{@winner} wins!"
     @comparator = generate_comparator(@winner)
@@ -49,17 +49,6 @@ class RPS < Sinatra::Base
   run! if app_file == $0
 
   private
-
-  def picture_for(move)
-    return  case move
-            when 'rock'
-              '/images/rock.png'
-            when 'paper'
-              '/images/paper.png'
-            else
-              '/images/scissors.png'
-            end
-  end
 
   def parse_winner(result)
     lookup = { -1 => session[:player], 1 => 'Robot', 0 => 'Nobody' }
