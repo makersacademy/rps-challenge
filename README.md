@@ -10,8 +10,6 @@ Rock-Paper-Scissors Challenge
 ---.__(___)        ---.__________)           ---.__(___)
 
 ```
-## Ladies and gentlemen welcome on board! 
-
 
 ## Implementation
 
