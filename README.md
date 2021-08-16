@@ -1,4 +1,18 @@
 # RPS Challenge
+Our third weekend challenge of this Makers academy course and our first that is buiding a web app. Simply build a Rock, paper, scissors that can be played online. 
+
+First user story:
+
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+Second user story:
+
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+
 
 Instructions
 -------
