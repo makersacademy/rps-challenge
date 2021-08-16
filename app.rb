@@ -25,7 +25,8 @@ class Game < Sinatra::Base
 
   get '/game' do
     @game = Rps.instance
-    erb :game
+    erb :game_images
+    # erb :game
   end
 
   post '/move' do
@@ -36,7 +37,9 @@ class Game < Sinatra::Base
 
   get '/result' do
     @game = Rps.instance
+    @game.result
     erb :result
+    # @game.result
   end
 
   # get '/defeat' do

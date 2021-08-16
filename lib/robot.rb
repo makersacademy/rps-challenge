@@ -6,7 +6,6 @@ class Robot
     @random_move = random_move
   end
 
-  private
   MOVES = ['rock', 'paper', 'scissors']
   
 end

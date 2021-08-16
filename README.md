@@ -29,7 +29,7 @@ Functional representation of user requirements:
 
 ## How to run
 
-You can play rock-paper-scissors after loading `rackup` or `ruby app.rb` to start `localhost`.
+To interact and play rock-paper-scissors web app, run `rackup` or `ruby app.rb` to start `localhost`.
 
 ## Run test 
 
