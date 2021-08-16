@@ -1,20 +1,24 @@
+require 'capybara'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'rack_session_access'
+require 'rack_session_access/capybara'
+require './spec/features/web_helpers.rb'
+
+ENV['RACK_ENV'] = 'test'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
+  SimpleCov::Formatter::HTMLFormatter
 ])
+
 SimpleCov.start
 
-# For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
-RSpec.configure do |config|
-  config.after(:suite) do
-    puts
-    puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
-    puts "\e[33mTry it now! Just run: rubocop\e[0m"
-  end
+Capybara.app = RPS
+
+RPS.configure do |app|
+  app.use RackSessionAccess::Middleware
 end

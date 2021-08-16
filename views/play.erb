@@ -1,0 +1,36 @@
+<header>
+  <div><%= @player %> vs. Robot</div>
+  
+  <% if @winner %>
+  <div id="battle-illustration">
+    <img id="player_image" src="<%= @player_image %>" class="animate__animated animate__slideInLeft animate__faster">
+    <span id="comparator" class="animate__animated animate__slideInTop"><%= @comparator %></span>
+    <img id="robot_image" src="<%= @robot_image %>" class="animate__animated animate__slideInRight animate__faster">
+  </div>
+  <% end %>
+</header>
+<main>
+  <% if @winner %>
+    <div id="victor" class="animate__animated animate__zoomIn animate__faster">
+      <p><%= @victory_message %></p>
+    </div>
+  <% end %>
+
+  <div id="move-prompt" class="animate__animated animate__flipInX">
+    <h2>
+      <% if @winner %>
+        Choose a weapon
+      <% else %>
+        Make your move
+      <% end %>
+    </h2>
+  </div>
+
+  <div id="choices" class="animate__animated animate__rubberBand">
+    <form method="POST" action="/move">
+      <button id="rock-button" class="move-button" type="submit" name="move" value="rock"></button>
+      <button id="paper-button" class="move-button" type="submit" name="move" value="paper"></button>
+      <button id="scissors-button" class="move-button" type="submit" name="move" value="scissors"></button>
+    </form>
+  </div>
+</main>
