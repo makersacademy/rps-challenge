@@ -1,0 +1,12 @@
+You chose 
+  <%= @choice %>  
+<br>
+  Your opponent chose <%= @opponent_selection %>
+
+  <% if (@choice == 'rock') && (@opponent_selection == 'paper') || (@user_choice == 'paper') && (@opponent_selection == 'scissors') || (@choice == 'scissors') && (@opponent_selection == 'rock')%>
+   <h1>result: you lost!</h1>
+  <% elsif (@choice == 'rock') && (@opponent_selection == 'paper') || (@choice == 'scissors') && (@opponent_selection == 'paper') || (@choice == 'paper') && (@opponent_selection == 'rock')%>
+   <h1>result: you won!</h1>
+  <% else %>
+  <h1>result: draw!</h1>
+  <% end %>
