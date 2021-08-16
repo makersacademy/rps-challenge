@@ -139,9 +139,15 @@ As a result this app ended up a lot simpler than during my initial planning and 
 ### Classes and Modules
 
 
-  The app has two of these
+  The app has three of these
 
   - the `RPS` class is the main Sinatra app
+
+  - the `StringHelpers` class which has
+
+    - a method `victory_string` for generating the corect victory message
+
+    - a method `comparator_string` for generating the right comparison string ('<', '>' or '==')
 
   - the `Game` module which holds
 
