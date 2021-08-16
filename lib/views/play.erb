@@ -1,0 +1,23 @@
+<% if @choice.nil? %>
+<h1><%= @name %> vs Computer</h1>
+<h2>Choose: </h2>
+<form action="/choice" method="POST">
+<input type="hidden", name="choice" value="Rock">
+<input type="submit" value="Rock">
+</form>
+<form action="/choice" method="POST">
+<input type="hidden", name="choice" value="Paper">
+<input type="submit" value="Paper">
+</form>
+<form action="/choice" method="POST">
+<input type="hidden", name="choice" value="Scissors">
+<input type="submit" value="Scissors">
+</form>
+<h2>The computer will choose randomly</h2>
+<% else %>
+<br>
+<h1><%= @name %> chose <%= @choice %></h1>
+<h1>The computer chose <%= @computer %></h1>
+<br>
+<h1><%= @winner %></h1>
+<% end %>
