@@ -1,7 +1,6 @@
 require_relative 'player'
 require_relative 'robot'
 
-
 class Rps
   attr_reader :player_move, :robot_move, :game, :score
 
@@ -36,4 +35,5 @@ class Rps
 end
 
 rps = Rps.new('rock', 'scissors')
+rps.result
 p rps

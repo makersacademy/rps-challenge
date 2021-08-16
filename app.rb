@@ -32,7 +32,6 @@ class Game < Sinatra::Base
     @game = Rps.instance
     @game.player_move.move(params[:move])
     redirect '/result'
-    # erb :result
   end
 
   get '/result' do
