@@ -16,7 +16,7 @@ require "capybara"
 require "capybara/rspec"
 require "rspec"
 
-Capybara.app = Rps
+Capybara.app = RockPaperScissors
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
