@@ -1,14 +1,34 @@
 <h1><%= @game.player_1.name %> vs <%= @game.player_2.name %></h1>
 <h2>Choose either rock, paper or scissors!</>
-
+<link rel="stylesheet" type="text/css" href="style.css">
 
 <form action='/move' method="POST">
+<div>--------------------------------------------</div>
 <h3><%= @game.player_1.name %> move: </h3>
-  <input type='text' name='player_1_move'>
+  <label id='hide-move' for=player_1>Hide move</label>
+  <input type='checkbox' style='display: none' id=player_1>
+  <div>
+    <label for='paper'>Paper</label>
+    <input type='radio' name='player_1_move' value='paper'>
+    <label for='paper'>Rock</label>
+    <input type='radio' name='player_1_move' value='rock'>
+    <label for='paper'>Scissors</label>
+    <input type='radio' name='player_1_move' value='scissors'>
+  </div>  
   <br>
+  <div>--------------------------------------------</div>
   <h3><%= @game.player_2.name %> move: </h3>
-  <input type='text' name='player_2_move'>
-  <br></br>
+  <label id='hide-move' for=player_2>Hide move</label>
+  <input type='checkbox' style='display: none' id=player_2>
+  <div>
+    <label for='paper'>Paper</label>
+    <input type='radio' name='player_2_move' value='paper'>
+    <label for='paper'>Rock</label>
+    <input type='radio' name='player_2_move' value='rock'>
+    <label for='paper'>Scissors</label>
+    <input type='radio' name='player_2_move' value='scissors'>
+  </div>
+  <br>
+  <div>--------------------------------------------</div>
   <input type="submit" value="GO!">
 </form>
-
