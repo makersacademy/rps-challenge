@@ -3,7 +3,6 @@ class Winner
   def initialize(move_1, move_2)
     @move_1 = move_1
     @move_2 = move_2
-    @winner
   end
 
   def draw
@@ -17,11 +16,11 @@ class Winner
 
   def winner
     if draw
-      @winner = 'draw'
+      'draw'
     elsif player_1_wins
-      @winner = 'player_1'
+      'player_1'
     else
-      @winner = 'player_2'
+      'player_2'
     end
   end
 
