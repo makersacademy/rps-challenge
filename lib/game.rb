@@ -36,8 +36,6 @@ class Game
     @loser = nil
   end
 
-  private
-
   def set_winner_loser(player, opponent)
     @winner = player
     @loser = opponent
