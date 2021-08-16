@@ -13,6 +13,7 @@ computer will also do so. Can you beat the compouter ?!
 Please clone the repo and run bundle install to install all specified gems.
 
 `git clone https://github.com/Battery0/rps-challenge.git`
+
 `bundle install`
 
 ## Usage
@@ -20,6 +21,7 @@ Please clone the repo and run bundle install to install all specified gems.
 To run the program:
 
 `ruby.app`
+
 Navigate to `http://localhost:4567/`
 
 
