@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='mystyle.css'>
+  </head>
+  <body>
+
+    <h1 class='header_layout' class='header__style'>
+      Choose your weapon <%= @game.player_2.name %>!
+    </h1>
+
+    <form action='/result' class='form_layout'>
+      <input type='submit' class='button__style' value='Rock!'>
+      <% @game.player_2_choose(0) %>
+    </form>
+
+    <form action='/result' class='form_layout'>
+      <input type='submit' class='button__style' value='Paper!'>
+      <% @game.player_2_choose(1) %>
+    </form>
+
+    <form action='/result' class='form_layout'>
+      <input type='submit' class='button__style' value='Scissors!'>
+      <% @game.player_2_choose(0) %>
+    </form>
+
+  </body>
+</html>

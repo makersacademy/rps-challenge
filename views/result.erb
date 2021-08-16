@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='mystyle.css'>
+  </head>
+  <body>
+
+    <h1 class='header_layout' class='header__style'>
+    <% if !@game.winner.nil? %>
+    
+      <%= @game.winner.name %> wins with <%= @game.winner.hand %> against <%= @game.loser.name %>'s <%= @insult %> <%= @game.loser.hand %>
+    <% else %>
+    <%= @game.player_1.hand %> <%= @game.player_2.hand %> <%= @game.winner.nil? %> <%= @game.player_1.name %> <%= @game.player_2.name %>
+      Boring, it's a draw...
+    <% end %>
+    </h1>
+
+
+    </h1>
+    <form action='/first_player' class='form_layout'>
+      <input type='submit' class='button__style' value='Play Again?'>
+    </form>
+
+  </body>
+</html>

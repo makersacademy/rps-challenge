@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='mystyle.css'>
+  </head>
+  <body>
+
+    <h1 class='header_layout' class='header__style'>
+      Welcome to the world RPS Championship!</br>
+      Are you ready to play <%= @game.player_1.name %> and <%= @game.player_2.name %>!
+    </h1>
+
+    <form action='/first_player' class='form_layout'>
+      <input type='submit' class='button__style' value='Yes!'>
+    </form>
+
+  </body>
+</html>
