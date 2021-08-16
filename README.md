@@ -145,7 +145,7 @@ As a result this app ended up a lot simpler than during my initial planning and 
 
   - the `StringHelpers` class which has
 
-    - a method `victory_string` for generating the corect victory message
+    - a method `victory_string` for generating the correct victory message
 
     - a method `comparator_string` for generating the right comparison string ('<', '>' or '==')
 
@@ -153,9 +153,9 @@ As a result this app ended up a lot simpler than during my initial planning and 
 
     -  a nested hash `@move` for looking up which moves beat which
 
-    - a method `self.random_move` which returns a move sampled from the keys of the above hash
+    - a method `random_move` which returns a move sampled from the keys of the above hash
 
-    - a method `self.judge` which compares the moves passed to it, and returns `-1`, `0`, `1` (just like the `<=>` operator) for _left arg wins_, _args are equal_, and _right arg wins_ respectively
+    - a method `judge` which compares the moves passed to it, and returns `-1`, `0`, `1` (just like the `<=>` operator) for _left arg wins_, _args are equal_, and _right arg wins_ respectively
 
 
 ### Screenshots
