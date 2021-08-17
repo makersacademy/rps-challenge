@@ -36,7 +36,7 @@ describe Game do
     end
   end
 
-  describe '#self.game' do
+  describe '#self.new_game' do
     it 'receives player two arguments' do
       allow(Game).to receive(:game).with(player_1, player_2)
     end
