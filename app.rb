@@ -10,7 +10,10 @@ class Game < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  enable :sessions
+  before do
+    @game = Rps.instance
+    @game.result
+  end
 
   get '/' do
     erb :index
@@ -24,20 +27,22 @@ class Game < Sinatra::Base
   end
 
   get '/game' do
-    @game = Rps.instance
-    erb :game_images
-    # erb :game
+    # @game = Rps.instance
+    # erb :game_images
+    erb :game
   end
 
   post '/move' do
-    @game = Rps.instance
+    # @game = Rps.instance
     @game.player_move.move(params[:move])
     redirect '/result'
   end
 
   get '/result' do
-    @game = Rps.instance
+    # @game = Rps.instance
     @game.result
+    # @game.result
+
     erb :result
     # @game.result
   end

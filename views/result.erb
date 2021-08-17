@@ -11,13 +11,14 @@
       <br>
       <h2>o <%= @game.player_move.p_move %></h2>
       <h2>o <%= @game.robot_move.random_move %></h2>
-      <h2>o <%= @game.score %></h2>
-      <h2>o <%= @game.result %></h2>
-      <h2>o <%= @game.score %></h2>
-      <% if @game.score == 2 %>
+
+
+      <% if @game.result == "Victory!" %>
         <h2>You win <%= @game.player_move.name %>!</h2>
-      <% elsif @game.score == 0 %>
+      <% elsif @game.result == 'Defeat!' %>
         <h2>You loose <%= @game.player_move.name %>!</h2>
+      <% elsif @game.result == nil %>
+        <h2>Its Nil Bitch <%= @game.player_move.name %>!</h2>
       <% else %>
         <h1>It's a draw <%= @game.player_move.name %>!</h2>
       <% end %>
