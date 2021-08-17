@@ -10,6 +10,12 @@ Rock-Paper-Scissors Challenge
 ---.__(___)        ---.__________)           ---.__(___)
 
 ```
+## To improve:
+
+- create rock paper scissors buttons as images
+- enaple 'play again' feature
+- game results in something else than Draw! :) 
+
 
 ## Implementation
 

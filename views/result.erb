@@ -18,7 +18,7 @@
       <% elsif @game.result == 'Defeat!' %>
         <h2>You loose <%= @game.player_move.name %>!</h2>
       <% elsif @game.result == nil %>
-        <h2>Its Nil Bitch <%= @game.player_move.name %>!</h2>
+        <h2>Its Nil <%= @game.player_move.name %>!</h2>
       <% else %>
         <h1>It's a draw <%= @game.player_move.name %>!</h2>
       <% end %>

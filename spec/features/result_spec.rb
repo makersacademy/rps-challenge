@@ -27,7 +27,7 @@ feature 'result' do
   end
 
   scenario 'play again button' do
-    visit('/result')
+    # visit('/result')
 
     # click_button 'play again'
   end
