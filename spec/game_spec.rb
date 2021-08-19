@@ -4,7 +4,7 @@ describe Game do
 
   let(:player_1) { double(name: 'player_1', move_choice: 'rock') }
   let(:player_2) { double(name: 'player_2', move_choice: 'scissors') }
-  let(:game) { described_class.new(player_class_1: player_1, player_class_2: player_2) }
+  let(:game) { described_class.new(player_1, player_2) }
 
   describe '#initialize' do
     it 'initializes class with player_1 instance' do
@@ -23,22 +23,19 @@ describe Game do
   describe '#winning_player' do
 
     it 'returns corrent outcome bases on player moves' do
-      player_1.move_choice
-      player_2.move_choice
       expect(game.winning_player).to eq "player_1"
     end
   end
 
   describe '#result' do
     it 'correctly returns score message when player 1 wins' do
-      game.winning_player
       expect(game.result).to eq 'player_1 wins'
     end
   end
 
   describe '#self.new_game' do
     it 'receives player two arguments' do
-      allow(Game).to receive(:game).with(player_1, player_2)
+      expect(Game).to respond_to(:new_game).with(2)
     end
   end
 

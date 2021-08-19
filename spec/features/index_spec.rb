@@ -1,7 +1,7 @@
 feature 'players can correctly see everything on play page' do
 
   before do
-    sign_in_and_play
+    sign_in_and_play('Dan', 'Opponent')
   end
 
   feature 'Player form' do
@@ -20,9 +20,12 @@ feature 'players can correctly see everything on play page' do
     end
 
     scenario 'expects player to see list of options to choose from' do
-      sign_in_and_play
       expect(page).to have_content "Choose either rock, paper or scissors!"
     end
   end
 
+  scenario 'expect players to see HTML input fields for their moves' do
+    expect(page).to have_selector("input[name='player_1_move']")
+    expect(page).to have_selector("input[name='player_2_move']")
+  end
 end

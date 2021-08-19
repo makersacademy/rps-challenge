@@ -1,6 +1,6 @@
 feature "Player chooses move and next page confirms moves" do
   scenario "Player 1 makes move and gets confirmation" do
-    sign_in_and_play
+    sign_in_and_play('Dan', 'Opponent')
     choose('player_1_move', with: 'rock')
     choose('player_2_move', with: 'rock')
     click_button('GO!')
@@ -8,7 +8,7 @@ feature "Player chooses move and next page confirms moves" do
   end
 
   scenario "Player 2 makes move and gets confirmation" do
-    sign_in_and_play
+    sign_in_and_play('Dan', 'Opponent')
     choose('player_1_move', with: 'rock')
     choose('player_2_move', with: 'rock')
     click_button('GO!')
@@ -20,7 +20,7 @@ end
 feature "Players both choose move and result page correctly displays winner" do
   
   before do
-    sign_in_and_play
+    sign_in_and_play('Dan', 'Opponent')
   end
 
   scenario "Dan chooses rock and Opponent chooses rock" do

@@ -16,7 +16,7 @@ class RockPaperScissors < Sinatra::Base
   post '/name' do
     player_1 = Player.new(params[:player_1])
     player_2 = Player.new(params[:player_2])
-    @stored_game = Game.new_game(player_1, player_2)
+    Game.new_game(player_1, player_2)
     redirect '/play'
   end
 
@@ -34,7 +34,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @game = Game.game_instance
-    # @game.compare_moves
     @result = @game.result
     erb(:result)
   end
