@@ -20,7 +20,7 @@ class Game
   end
 
   def result
-    winning_player.nil ? "Game is a draw" : "#{winning_player} wins"
+    winning_player.nil? ? "Game is a draw" : "#{winning_player} wins"
   end
 
   def self.new_game(player_1, player_2)

@@ -16,18 +16,18 @@ How to install
 
 Building the program
 -------
-
+- I used Jam Board to map out the class structure using the user stories.
+- I coded the program using TDD. First I wrote a failing unit test and then wrote the method to pass the test. I also used feature
+tests to ensure everything was working correctly on the browser. I followed the red, green, refactor process.
+- I made sure my methods/tests covered all of the user stories plus any edge cases.
+- I also ensured that I got 100% test coverage.
 
 How to use this program
 -------
-
-
+- Open app with rackup and enter the name of each player
+- On the '/play' page both players can enter their moves. They can also hide their move to prevent the other player from seeing
+- Once moves are submitted, the results page will show each move and confirm the winner
 -------
-Below is an example of how to use the program:
-```
-
-
-```
 User Stories
 ---------
 ```
