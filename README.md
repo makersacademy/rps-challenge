@@ -23,7 +23,7 @@ bundle install
 
 ## How to use this program
 
-From the `rsp-challenge` directory, run `rackup` from Terminal. 
+From the `rps-challenge` directory, run `rackup` from Terminal. 
 
 If rackup starts correctly, you should see a port number (i.e. `port=9292`)
 
