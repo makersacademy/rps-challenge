@@ -1,0 +1,15 @@
+/* # element selectors */
+
+body {
+  background-color: powderblue;
+}
+
+p.oblique {
+  font-style: oblique;
+}
+
+
+/* class selectors */
+.text {
+
+}
