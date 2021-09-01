@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative 'lib/game'
+require_relative 'lib/computer'
 
 class Rps < Sinatra::Base
   configure :development do
@@ -23,7 +24,7 @@ class Rps < Sinatra::Base
 
   get '/lose' do
     game = Game.new
-    @random = game.random
+    computer = Computer.new
     @player_score = game.player_score
     @result1 = game.result1
     
