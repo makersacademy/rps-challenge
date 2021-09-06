@@ -29,6 +29,7 @@ Applying my existing knowledge and adapting new concepts, such as MVC to setup a
 Process -
 -----
 
+
 I started by creating some wire frame diagrams to get a visual idea of what I wanted to achieve. Once I was ready I started writing my feature tests to set out a plan before starting to build the routes in the app.rb file. I followed this test driven approach and started to eventually create my logic for the backend functionality.  
 Once the logic was setup and working inside the erb files I created singleton method to get rid of the global variables used earlier. Finally I added some CSS to tidy up my interface.
 
@@ -60,3 +61,4 @@ What I've learnt -
 How to run - 
 -----
 Program created in Ruby. Can be ran directly from terminal, or inside IRB. (Follow install steps - https://github.com/ruby/irb)
+
