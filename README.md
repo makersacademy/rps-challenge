@@ -20,9 +20,7 @@ Creating a game of Rock Paper Scissors as a Web App.
   - Map the `nouns` and `verbs` into attributes / methods
   - Map User Journey (HTTP Requests) from Client/Server
 - Build initial test inc form
--
-
----
+- ***
 
 ## User Stories
 
@@ -64,21 +62,19 @@ I would like to be able to play rock/paper/scissors
 | -------- | ------- |
 | name | make_selection() |
 | selection | |
-| | |
 
 `computer < player`
 | Attr | Methods |
 | -------- | ------- |
 | name | random_selection() |
 | selection | |
-| | |
 
 `game`
 | Attr | Methods |
 | --------| ------- |
 | player | declare_winner() |
 | | show_options()|
-| @game (class instance var)| game_instance() |
+| @game (class instance var)| self.game_instance() |
 
 ## Layout
 
@@ -105,17 +101,34 @@ I would like to be able to play rock/paper/scissors
 
 ## HTTP requests
 
-#### /
+#### get /
 
 - Request:: Client HTTP GET request to visit the route Route
-- Response:: Status 200
+- Response:: Server responds with 200
   - erb: :register
+    - 1x title description to enter name
+    - Form with 1x input text, 1x input submit
 
-#### /register
+#### post /register
 
 - Request:: Client HTTP POST request, submitting their name
-- Response:: Status 200
+- Response:: Server responds with 200
   - create Game.instance(Player.new(:name))
   - redirect /play
 
-#### /play
+#### get /play
+
+- Request:: Client HTTP GET request, requesting to begin playing the game
+- Response:: Server responds with 200
+  - create instance var @game, the @game from out Game class
+  - erb: :play
+    - shows player name vs computer
+    - 1x title description to chose an option
+    - 3x submit buttons with values as rock/paper/scissors
+
+#### get /result
+
+- Request:: Client HTTP GET request, user clicks rock/paper/scissors
+- Response:: Server responds with 200
+  - Run computer random guess
+  - display winner
