@@ -2,7 +2,8 @@ require 'simplecov'
 require 'simplecov-console'
 require 'capybara'
 require 'capybara/rspec'
-require 'rspec'
+require 'rspec' 
+require_relative '../app/app.rb'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -10,6 +11,14 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+
+Capybara.configure do |config|
+  config.run_server = false
+  config.server = :webrick
+  config.default_driver = :selenium
+  config.app = RockPaperScissors
+  config.app_host = "localhost:9292"
+end
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
