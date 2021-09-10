@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
     configure :development do
@@ -12,17 +13,17 @@ class RockPaperScissors < Sinatra::Base
     end
 
     post '/name' do 
-      session[:player_name] = params[:player_name]
+      $player = Player.new(params[:player_name])
       redirect '/play'
     end
 
     get '/play' do
-      @player_name = session[:player_name]
+      $player_name = $player.name
       erb :play
     end
 
     get '/game' do     
-      @player_name = session[:player_name]
+      $player_name = $player.name
       erb :game
     end
   
