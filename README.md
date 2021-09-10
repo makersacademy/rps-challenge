@@ -1,86 +1,121 @@
-# RPS Challenge
+# Rock Paper Scissors
 
-Instructions
--------
+## Introduction
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Creating a game of Rock Paper Scissors as a Web App.
 
-Task
-----
+## How To Run
 
-Knowing how to build web applications is getting us almost there as web developers!
+### Tech used
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+- Tested with `RSpec` + `Capybara`
+- Used `simplecov` to assess test coverage
+- Written in `Ruby`
+- Used `Sinatra` framework
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+## My Approach
+
+- Understand the user stories fully
+- Map each requirement into a Domain model
+  - Map the `nouns` and `verbs` into attributes / methods
+  - Map User Journey (HTTP Requests) from Client/Server
+- Build initial test inc form
+-
+
+---
+
+## User Stories
 
 ```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
+```
 
+`noun` = name, game
+`verb` = register, play
+
+```
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+`noun` = rock/paper/scissors
+`verb` = play
 
+```
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-[You may find this guide to setting up a new Ruby web project helpful.](https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md)
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/main/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+`noun` = choices,
+`verb` = presented, chose (option), declare (winner)
+
+---
+
+## Domain Model
+
+`player`
+| Attr | Methods |
+| -------- | ------- |
+| name | make_selection() |
+| selection | |
+| | |
+
+`computer < player`
+| Attr | Methods |
+| -------- | ------- |
+| name | random_selection() |
+| selection | |
+| | |
+
+`game`
+| Attr | Methods |
+| --------| ------- |
+| player | declare_winner() |
+| | show_options()|
+| @game (class instance var)| game_instance() |
+
+## Layout
+
+- lib
+  - game.rb
+  - player.rb
+  - computer.rb
+- app
+  - app.rb
+  - views
+    - register.erb
+    - play.erb
+    - results.erb
+- spec
+  - feature
+    - register_spec.rb
+    - play_spec.rb
+    - results_spec.rb
+  - game_spec.rb
+  - player_spec.rb
+  - computer_spec.rb
+
+---
+
+## HTTP requests
+
+#### /
+
+- Request:: Client HTTP GET request to visit the route Route
+- Response:: Status 200
+  - erb: :register
+
+#### /register
+
+- Request:: Client HTTP POST request, submitting their name
+- Response:: Status 200
+  - create Game.instance(Player.new(:name))
+  - redirect /play
+
+#### /play
