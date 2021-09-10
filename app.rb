@@ -15,5 +15,9 @@ class RpsChallenge < Sinatra::Base
     erb(:play)
   end
 
+  get '/result' do
+    erb(:result)
+  end
+
   run! if app_file == $0
 end
