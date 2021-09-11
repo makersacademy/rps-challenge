@@ -7,7 +7,16 @@ class RPS < Sinatra::Base
   end
 
   get '/' do
-    'Hello World'
+    erb :index
+  end
+
+  post '/name' do
+    session[:player_name] = params[:player_name]
+    redirect :play
+  end
+
+  get '/play' do
+    "rock paper scissor"
   end
 
   run! if app_file == $0
