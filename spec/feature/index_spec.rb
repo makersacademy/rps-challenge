@@ -14,6 +14,25 @@ describe 'Entry Page', type: :feature do
       expect(page).to have_content(player_output)
     end
 
+    it 'shows options' do
+      register_name
+      expect(click_button('rock'))
+      register_name
+      expect(click_button('paper'))
+      register_name
+      expect(click_button('scissors'))
+    end
+
+  end
+
+  context 'I would like to be able to play rock/paper/scissors' do
+
+    let(:rock) {"rock"}
+    let(:paper) {"paper"}
+    let(:scissors) {"scissors"}
+
+    
+
   end
 
 end
