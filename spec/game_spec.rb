@@ -10,7 +10,11 @@ describe Game do
   end
 
   it 'shows who wins' do
-    expect(subject.result("Rock", "Paper")).to eq("Player 2 wins")
-    expect(subject.result("Scissors", "Paper")).to eq("Player 1 wins")
+    expect(subject.result("Rock", "Paper")).to eq("Computer wins")
+    expect(subject.result("Scissors", "Paper")).to eq("Player wins")
+  end
+
+  it 'shows if it is a draw' do
+    expect(subject.result("Rock", "Rock")).to eq("This is a draw")
   end
 end

@@ -6,7 +6,12 @@ class Game
   end
 
   def result(choice1, choice2)
-    @choices.find_index(choice1) - 1 == @choices.find_index(choice2) ? "Player 1 wins" : "Player 2 wins"
+    return "This is a draw" if choice1 == choice2
+    if @choices.find_index(choice1) - 1 == @choices.find_index(choice2)
+      "Player wins"
+    else  
+      "Computer wins"
+    end
   end
 
   def random_choice

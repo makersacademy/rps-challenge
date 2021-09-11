@@ -1,7 +1,9 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/game'
 
 class RpsChallenge < Sinatra::Base
+  enable :sessions
   configure :development do
     register Sinatra::Reloader
   end
@@ -10,12 +12,22 @@ class RpsChallenge < Sinatra::Base
     erb(:index)
   end
 
-  post '/name' do
-    @name = params[:name]
+  get '/play' do
+    @name = session[:name]
     erb(:play)
   end
 
-  get '/result' do
+  post '/play' do
+    session[:name] = params[:name]
+    @name = session[:name]
+    erb(:play)
+  end
+
+  post '/result' do
+    @player_choice = params[:player_choice]
+    game = Game.new
+    @computer_choice = game.random_choice
+    @result = game.result(@player_choice, @computer_choice)
     erb(:result)
   end
 

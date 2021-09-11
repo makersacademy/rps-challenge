@@ -4,6 +4,7 @@ require 'simplecov'
 require 'simplecov-console'
 require 'capybara'
 require 'rspec'
+require 'features/web_helpers'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
@@ -25,8 +26,3 @@ RSpec.configure do |config|
 end
 
 Capybara.app = RpsChallenge
-
-
-
-
-

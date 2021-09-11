@@ -1,7 +1,7 @@
-<h1>Play <%= @name %></h1>
+<h1>Hello <%= @name %>. Ready to play?</h1>
 
-<form action="/result">
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+<form action="/result" method='post'>
+  <input type="submit" value="Rock" name="player_choice">
+  <input type="submit" value="Paper" name="player_choice">
+  <input type="submit" value="Scissors" name="player_choice">
 </form>
