@@ -1,15 +1,18 @@
 class Game 
-  attr_reader :player
+  attr_reader :input
 
-  def initialize(player = "paper")
-    @player = player
+  def initialize(player_input = "paper")
+    @input = [player_input]
   end
   
   def opponent
-    ["rock", "paper", "scissor"].sample
+    opponent_input = ["rock", "paper", "scissor"].sample
+    @input << opponent_input
+    opponent_input
   end
 
   def result
+    player, opponent = @input[0], @input[1]
     case 
       when opponent == player then "Draw!"
       when opponent == "paper" && player == "rock" then "You lose!"
