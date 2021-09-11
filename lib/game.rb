@@ -2,13 +2,13 @@ require_relative 'logic'
 
 class Game
 
-    attr_reader :player, :options, :player_pick, :current_turn, :human, :comp, :human_score
+    attr_reader :player, :human_score, :comp_score
 
     def initialize(player)
         @player = player        
         @comp_score = 0
         @human_score = 0
-    end
+    end    
 
     def player_chooses(choice)        
         @choice = choice 
@@ -21,9 +21,9 @@ class Game
         result = logic.play_game(@choice)
         p result
         
-        if result == "You won!"
+        if result[0] == "You won!"
             @human_score += 1           
-        elsif result == "You lose."
+        elsif result[0] == "You lose."
             @comp_score += 1
         end
     end

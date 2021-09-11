@@ -1,4 +1,4 @@
-<form action="/game-result" method="post">
+<form action="/player-choose" method="post">
 <body>
     <h1>Hello <%= @player_1_name %></h1>
     
@@ -6,12 +6,6 @@
     <input type="radio" name="choice"value="paper">Paper</input>
     <input type="radio" name="choice"value="scissor">Scissor</input>                                
     <input type="submit" value="submit">
-
-    <div id="results">
-        <p id="player-score">Your score is: 0</p>
-        <p id="computer-score">The computer score is: 0</p>
-        <p id="result-tie">Tie rounds: 0</p>
-    </div>
     
 </body>
 </form>
