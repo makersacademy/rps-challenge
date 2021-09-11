@@ -1,0 +1,16 @@
+<h3><%= @player_name %></h3>
+
+<form action='/move' method='get'>
+  <input type='hidden' name='player_move' value='ROCK'>
+  <input type='submit' value='ROCK'>
+</form>
+
+<form action='/move' method='get'>
+  <input type='hidden' name='player_move' value='PAPER'>
+  <input type='submit' value='PAPER'>
+</form>
+
+<form action='/move' method='get'>
+  <input type='hidden' name='player_move' value='SCISSORS'>
+  <input type='submit' value='SCISSORS'>
+</form>

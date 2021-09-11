@@ -7,16 +7,20 @@ class Rps < Sinatra::Base
   end 
 
   get '/' do 
-    p params
-    @player_name = params[:name]
     erb :index
   end 
-  
-  get '/player_name' do
-  erb :index
+
+  get '/play' do
+    p params 
+    @player_name = params[:player_name]
+  erb :play
   end 
 
-
+  get '/move' do
+    @player_name = params[:player_name]
+    @player_move = params[:player_move]
+    erb :move
+  end 
 
   run! if app_file == $0
 end 
