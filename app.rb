@@ -1,13 +1,18 @@
 require 'sinatra/base'
-require 'sinatra/reloader'
+require 'sinatra/reloader' 
 
-class BookmarkManager < Sinatra::Base
+class RockPaperScissor < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
 
   get '/' do
-    'Hello World'
+    erb :index
+  end
+
+  post '/play' do
+    @player_name = params[:player_name]
+    erb :play
   end
 
   run! if app_file == $0
