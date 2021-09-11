@@ -3,15 +3,12 @@ class Game
 
   def initialize
     @choices = ["Rock", "Paper", "Scissors"]
+    @winmap = { 'Scissors' => 'Paper', 'Paper' => 'Rock', 'Rock' => 'Scissors' }
   end
 
   def result(choice1, choice2)
     return "This is a draw" if choice1 == choice2
-    if @choices.find_index(choice1) - 1 == @choices.find_index(choice2)
-      "Player wins"
-    else  
-      "Computer wins"
-    end
+    @winmap[choice1] == choice2 ? "Player wins" : "Computer wins"
   end
 
   def random_choice

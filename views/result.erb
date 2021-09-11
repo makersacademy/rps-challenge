@@ -1,4 +1,10 @@
-<p>You chose <%= @player_choice %></p>
-<p>The computer chose <%= @computer_choice %></p>
-<p><%= @result %></p>
-<a href="/play">Play again</a>
+<h1><%= @result %></h1>
+
+<p>You chose: <%= @player_choice %></p>
+<p>The computer chose: <%= @computer_choice %></p>
+
+<form id="play_again" action="/play">
+    <input type="submit" value="Play again">
+</form>
+
+<a href='/'>Change your name</a>
