@@ -5,6 +5,7 @@ class RPS < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
+  enable :sessions
 
   get '/' do
     erb :index
