@@ -12,3 +12,5 @@ I would like to be able to play rock/paper/scissors
 
 noun/class: rps
 verb/method: play 
+
+additional player - cclass: computer
