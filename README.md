@@ -1,4 +1,4 @@
-# RPS Challenge
+# Rock, Paper, Scissors Game
 
 About
 -----
@@ -17,6 +17,8 @@ Rules
 Commands to install dependencies for game functionality:
 
 Gems `bundle install`
+
+`gem install webrick`
 
 ## Usage
 
