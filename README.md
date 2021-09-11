@@ -23,7 +23,11 @@ Creating a game of Rock Paper Scissors as a Web App.
 - Steps
   - Feature test the instructions to the form, and also the form, then code the form
   - Add the form and allow for a form submit, with expectation of "name vs computer"
-  - Create the Person class, initialize with a name
+  - Create the player class, initialize with a name
+  - Create a computer class and inherit from the player class
+  - Create a game class which has Class methods to store the games state throughout the app.
+  - Display options to the user on screen to click one of 3 buttons
+  - Integrate all of the classes together to display on the screen with a winner
 
 ## User Stories
 

@@ -13,17 +13,21 @@ class RockPaperScissors < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  before do
+    @rps = RPS.current_game
+  end
+
   get '/' do
     erb :index
   end
 
   post '/register' do
-    @rock_paper_scissors = RPS.new_game(Player.new(params[:name]),Computer.new)
+    @rps = RPS.new_game(Player.new(params[:name]),Computer.new)
     redirect '/play'
   end
 
   get '/play' do
-    @name = RPS.player_one.name
+    @name = @rps.player_one.name
     erb :play
   end
 
