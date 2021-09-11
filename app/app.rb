@@ -1,5 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative '../lib/rps.rb'
+require_relative '../lib/player.rb'
+require_relative '../lib/computer.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -15,12 +18,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/register' do
-    session[:name] = params[:name]
+    @rock_paper_scissors = RPS.new_game(Player.new(params[:name]),Computer.new)
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:name]
+    @name = RPS.player_one.name
     erb :play
   end
 
