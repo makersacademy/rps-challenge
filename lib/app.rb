@@ -2,7 +2,9 @@ require "sinatra"
 require "sinatra/reloader"
 #require "./rps.rb"
 
-class GameApp < Sinatra::Base
+#Sinatra::Reloader
+
+#class GameApp < Sinatra::Base
 	get '/' do
 		erb :index
 	end
@@ -11,4 +13,4 @@ class GameApp < Sinatra::Base
 		@options = ["rock", "paper", "scissors"]
 		erb :game
 	end
-end
+#end
