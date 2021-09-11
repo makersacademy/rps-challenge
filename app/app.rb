@@ -30,4 +30,5 @@ class RockPaperScissors < Sinatra::Base
   end
 
   run! if app_file == $0
+
 end

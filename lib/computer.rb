@@ -1,7 +1,7 @@
 require_relative 'player'
 class Computer < Player
 
-  def initialize(name="Computer")
+  def initialize(name = "Computer")
     super(name)
   end
 

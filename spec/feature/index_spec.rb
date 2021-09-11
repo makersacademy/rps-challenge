@@ -27,11 +27,9 @@ describe 'Entry Page', type: :feature do
 
   context 'I would like to be able to play rock/paper/scissors' do
 
-    let(:rock) {"rock"}
-    let(:paper) {"paper"}
-    let(:scissors) {"scissors"}
-
-        
+    let(:rock) { "rock" }
+    let(:paper) { "paper" }
+    let(:scissors) { "scissors" }
 
   end
 

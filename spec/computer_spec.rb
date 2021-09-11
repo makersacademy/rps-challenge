@@ -1,10 +1,13 @@
 require 'computer'
 describe Computer do
 
-    let(:computer) {Computer.new }
+  context 'the game will choose a random option' do
+    # let(:computer) {Computer.new }
 
     it "checks computer has name" do
-      expect(computer.name).to eq "Computer"
+      expect(subject.name).to eq "Computer"
     end
+
+  end
 
 end
