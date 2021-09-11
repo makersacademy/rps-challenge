@@ -8,4 +8,4 @@ feature 'Registering name' do
 
     expect(page).to have_content 'Keldra'
   end
-end
+end 
