@@ -10,4 +10,12 @@ let (:player) { Player.new('Florence') }
     end 
   end 
 
+  describe '#select_move' do
+    it 'user selects a move' do
+      player.select_move 'ROCK'
+      expect(player.move).to eq 'ROCK'
+    end 
+  end 
+
 end 
+
