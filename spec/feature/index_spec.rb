@@ -9,7 +9,7 @@ describe 'Entry Page', type: :feature do
       expect(page).to have_content('Welcome to RPS, Please enter your Name and click "Play"')
     end
 
-    xit 'Shows name after submit' do
+    it 'Shows name after submit' do
       register_name
       expect(page).to have_content(player_output)
     end

@@ -2,6 +2,10 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 
 class RockPaperScissors < Sinatra::Base
+
+  set :session_secret, 'super secret'
+  enable :sessions
+
   configure :development do
     register Sinatra::Reloader
   end
@@ -11,7 +15,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/register' do
-    p params[:name]
+    session[:name] = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @name = session[:name]
+    erb :play
   end
 
   run! if app_file == $0
