@@ -32,7 +32,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-
+    
     erb :results
   end
 

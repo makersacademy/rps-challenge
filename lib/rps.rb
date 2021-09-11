@@ -22,8 +22,30 @@ class RPS
     @players[1]
   end
 
-  # def self.show_winner(player_choice)
-  #   this_worked
-  # end
+  def show_winner(player_choice)
+    p1 = player_choice
+    p2 = get_computer_choice
+    calculate_winner(p1,p2)
+  end
+
+  private 
+
+  def calculate_winner(p1,p2)
+    if p1 == p2
+      "Draw"
+    elsif win_matrix[p1] == p2
+      @players[0].name
+    else
+      @players[1].name
+    end
+  end
+
+  def win_matrix
+    { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
+  end
+
+  def get_computer_choice
+    @player_two.chose
+  end
 
 end
