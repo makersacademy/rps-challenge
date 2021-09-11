@@ -6,15 +6,18 @@ class Rps < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  
+  # get '/' do
+  #   'Testing infrastructure working!'
+  # end
+
   get '/' do
-    'Testing infrastructure working!'
+    erb :index
   end
 
-
-  # get '/' do
-  #   'Hello World'
-  # end
+  post '/names' do
+    @player_1_name = params[:player_1_name]
+    erb :play
+  end
 
   run! if app_file == $0
 end
