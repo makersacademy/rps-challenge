@@ -19,8 +19,9 @@ Creating a game of Rock Paper Scissors as a Web App.
 - Map each requirement into a Domain model
   - Map the `nouns` and `verbs` into attributes / methods
   - Map User Journey (HTTP Requests) from Client/Server
-- Build initial test inc form
-- ***
+  - Create planned files within the terminal ... `touch n.rb`
+- Steps
+  - Feature test the instructions to the form, and also the form, then code the form
 
 ## User Stories
 
@@ -85,14 +86,15 @@ I would like to be able to play rock/paper/scissors
 - app
   - app.rb
   - views
-    - register.erb
+    - index.erb
     - play.erb
     - results.erb
 - spec
   - feature
-    - register_spec.rb
+    - index_spec.rb
     - play_spec.rb
     - results_spec.rb
+    - helper.rb
   - game_spec.rb
   - player_spec.rb
   - computer_spec.rb

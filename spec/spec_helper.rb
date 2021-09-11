@@ -3,7 +3,8 @@ require 'simplecov-console'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec' 
-require_relative '../app/app.rb'
+require_relative '../app/app.rb' 
+require_relative './feature/helper'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -19,8 +20,6 @@ Capybara.configure do |config|
   config.app = RockPaperScissors
   config.app_host = "localhost:9292"
 end
-
-# For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
 RSpec.configure do |config|
   config.after(:suite) do
