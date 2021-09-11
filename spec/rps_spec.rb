@@ -25,18 +25,18 @@ describe RPS do
     it 'user: WIN, paper' do
       p "first #{rps.player_one}"
       allow(rps).to receive(:get_computer_choice).and_return("rock")
-      expect(rps.show_winner("paper")).to eq "Ed"
+      expect(rps.show_winner("paper")).to eq "Congratulations! Your paper demolished Computer's rock"
     end
 
     it 'user: Lose, paper' do
       p "second #{rps.player_two}"
       allow(rps).to receive(:get_computer_choice).and_return("scissors")
-      expect(rps.show_winner("paper")).to eq "Computer"
+      expect(rps.show_winner("paper")).to eq "Unlucky, your paper was beaten by Computer's scissors"
     end
 
     it 'user: Draw, paper' do
       allow(rps).to receive(:get_computer_choice).and_return("paper")
-      expect(rps.show_winner("paper")).to eq "Draw"
+      expect(rps.show_winner("paper")).to eq "Draw...A fair fight is a fair fight, you both chose paper"
     end
 
   end

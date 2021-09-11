@@ -32,11 +32,11 @@ class RPS
 
   def calculate_winner(p1,p2)
     if p1 == p2
-      "Draw"
+      "Draw...A fair fight is a fair fight, you both chose #{p1}"
     elsif win_matrix[p1] == p2
-      @players[0].name
+      "Congratulations! Your #{p1} demolished #{@players[1].name}'s #{p2}"
     else
-      @players[1].name
+      "Unlucky, your #{p1} was beaten by #{@players[1].name}'s #{p2}"
     end
   end
 
