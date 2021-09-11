@@ -1,11 +1,6 @@
 feature 'Registering name' do
   scenario 'Player enters name' do
-    visit('/')
-    fill_in(:player_name, with: 'Keldra') 
-    click_button 'Submit'
-
-    save_and_open_page
-
-    expect(page).to have_content 'Keldra'
+    sign_in_and_play
+    expect(page).to have_content 'Keldra, choose an option below'
   end
 end 
