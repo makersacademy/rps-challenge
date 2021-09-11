@@ -31,7 +31,7 @@ describe 'Entry Page', type: :feature do
     let(:paper) {"paper"}
     let(:scissors) {"scissors"}
 
-    
+        
 
   end
 
