@@ -17,8 +17,18 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    "rock paper scissor"
+    erb :play
   end
 
+  post '/turn' do
+    session[:selected] = params[:selected]
+    redirect :result
+  end
+  # using a checkbox form for input - will require a post request
+
+  get '/result' do
+    erb :result
+  end
+  
   run! if app_file == $0
 end
