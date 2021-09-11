@@ -7,4 +7,8 @@ class Computer < Player
 
   attr_reader :name
 
+  def choose
+    ["rock","paper","scissors"].sample
+  end
+
 end
