@@ -22,6 +22,8 @@ Creating a game of Rock Paper Scissors as a Web App.
   - Create planned files within the terminal ... `touch n.rb`
 - Steps
   - Feature test the instructions to the form, and also the form, then code the form
+  - Add the form and allow for a form submit, with expectation of "name vs computer"
+  - Create the Person class, initialize with a name
 
 ## User Stories
 

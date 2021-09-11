@@ -10,5 +10,9 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
+  post '/register' do
+    p params[:name]
+  end
+
   run! if app_file == $0
 end
