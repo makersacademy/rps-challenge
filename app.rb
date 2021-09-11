@@ -6,9 +6,15 @@ class Rps < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  
   get '/' do
-    'Hello World'
+    'Testing infrastructure working!'
   end
+
+
+  # get '/' do
+  #   'Hello World'
+  # end
 
   run! if app_file == $0
 end
