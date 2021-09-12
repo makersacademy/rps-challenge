@@ -1,12 +1,8 @@
 class Opponent
+  attr_reader :weapon_choice
 
-  def weapon_choice
-    @weapon_choice = random_weapon  
-  end
-  
   def random_weapon
-    ['Rock', 'Paper', 'Scissors'].sample
+    @weapon_choice = ['Rock', 'Paper', 'Scissors'].sample
   end
-
 end
 

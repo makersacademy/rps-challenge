@@ -10,7 +10,6 @@ feature "Starting the game" do
     expect(page).to have_button "Scissors"
   end
 
-  # Need to figure out how to test for ramdom results
   scenario "Player 1 can pick RPS" do
     click_button "Paper"
     expect(page).to have_content "Jake chose Paper"
