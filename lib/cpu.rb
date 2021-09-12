@@ -10,5 +10,4 @@ class CPU
     @choices.sample
   end 
 
-
 end 

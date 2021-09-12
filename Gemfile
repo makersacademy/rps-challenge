@@ -7,6 +7,7 @@ source 'https://rubygems.org'
   gem 'sinatra'
   gem 'sinatra-contrib'
   gem 'simplecov-console'
+  gem 'rubocop'
  
 
 # group :development, :test do

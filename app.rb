@@ -32,8 +32,6 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    # cap_name = session[:player_1_name]
-    # @player_1_name = cap_name.capitalize
     @player_choice = params[:choice]
     @computer = CPU.new
     @game = Game.new

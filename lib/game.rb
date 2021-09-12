@@ -2,7 +2,6 @@
 class Game 
 
   def result(player, computer)
-
     if player == "Rock" && computer == "Scissors"
       "Rock beats Scissors, you win!" 
     elsif player == "Paper" && computer == "Rock"
@@ -13,7 +12,6 @@ class Game
       "Draw!"
     else "#{computer} beats #{player}, you lose!"
     end
-  
   end 
 
 
