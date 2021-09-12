@@ -11,7 +11,7 @@ require 'capybara/rspec'
 require 'rspec'
 
 
-Capybara.app = BookmarkManager
+Capybara.app = Rpsgame
 
 ### the rest of the file ###
 
