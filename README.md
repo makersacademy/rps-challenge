@@ -53,7 +53,25 @@ Capybara.app = Rspgame
 
 -------
 
-##
+## First user story
+
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+
+1. Created register_spec.rb file in spec folder and written the scenario.
+
+2. Created view folder for the .erb files:
+  * index.erb 
+  * play.erb
+
+3.RSpec test passed!
+
+
+
+
+
 
 * Feel free to use google, your notes, books, etc. but work on your own
 * If you refer to the solution of another coach or student, please put a link to that in your README
