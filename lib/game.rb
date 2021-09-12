@@ -1,6 +1,6 @@
 class Game 
 
-attr_reader :player_name, :player_choice, :game_choice
+attr_reader :player_choice, :computer_choice
 
 WEAPONS = {rock: :scissors, scissors: :paper, paper: :rock}
 
@@ -22,5 +22,5 @@ WEAPONS = {rock: :scissors, scissors: :paper, paper: :rock}
   def random_number
     rand(3)
   end
-  
+
 end 

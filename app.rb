@@ -28,7 +28,10 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/result' do
+ post '/result' do
+    # @marketer_name_1 = session[:marketer_name_1]
+    # @player_choice
+    # @computer_choice
     erb :result
   end
 

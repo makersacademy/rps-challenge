@@ -16,4 +16,8 @@ describe Game do
       expect(game.select_computer_choice).to eq :rock
     end
   end
+
+#   context 'Determining a wonner' do
+#   end 
+
 end 
