@@ -46,10 +46,12 @@ class Rps < Sinatra::Base
 
   post '/pre_result' do
     # computer picks randomly
+    Game.instance.player2.choose_random
     redirect '/result'
   end
 
   get '/result' do
+    @game = Game.instance
     erb :result
   end
 
