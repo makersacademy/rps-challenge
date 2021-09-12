@@ -21,9 +21,15 @@ class Game
         result = logic.play_game(@choice)
         p result
         
-        if result[0] == "You won!"
+        # if result[0] == "You won!"
+        #     @human_score += 1           
+        # elsif result[0] == "You lose."
+        #     @comp_score += 1
+        # end
+
+        if result == "You won!"
             @human_score += 1           
-        elsif result[0] == "You lose."
+        elsif result == "You lose."
             @comp_score += 1
         end
     end
