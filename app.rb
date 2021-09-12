@@ -28,6 +28,7 @@ class RpsChallenge < Sinatra::Base
     game = Game.new
     @computer_choice = game.random_choice
     @result = game.result(@player_choice, @computer_choice)
+    @statement = game.statement(@player_choice, @computer_choice)
     erb(:result)
   end
 
