@@ -7,7 +7,15 @@ class Rps < Sinatra::Base
   end
 
   get '/' do
-    'Testing 1 2 3'
+    erb(:index)
+  end
+
+  get '/test' do
+   'Testing 1 2 3'
+  end
+
+  post '/name' do
+    erb(:play)
   end
 
   run! if app_file == $0
