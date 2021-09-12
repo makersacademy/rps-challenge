@@ -1,25 +1,28 @@
 class Logic
 
-    attr_reader :comp
+    attr_reader :options
 
     def initialize      
-      @options = ['rock', 'paper', 'scissors']
-      @score = []   
+      @options = ['rock', 'paper', 'scissors'] 
+    end
+
+    def computer_picks
+        @options.sample
     end
     
-    def play_game(choice)
-        comp = @options.sample
-        if (choice == "rock" && comp == "scissors") || (choice == "scissors" && comp == "paper") || (choice == "paper" && comp == "rock")
+    def play_game(player, computer)
+        if (player == "rock" && computer == "scissors") || (player == "scissors" && computer == "paper") || (player == "paper" && computer == "rock")
             @message = "You won!"
-            #@score.push("You won!","Computer picks #{comp} - You chose #{choice}")   
-        elsif (choice == "rock" && comp == "rock") || (choice == "paper" && comp == "paper") || (choice == "scissors" && comp == "scissors")
-            #@score.push("Draw! No point awarded","Computer picks #{comp} - You chose #{choice}") 
+        elsif (player == "rock" && computer == "rock") || (player == "paper" && computer == "paper") || (player == "scissors" && computer == "scissors")
             @message = "Draw! No point awarded"
         else            
             @message = "You lose."
-            #@score.push("You lose.","Computer picks #{comp} - You chose #{choice}") 
         end
         @message
-        #@score
     end
+
+    def game_over?(human_score, comp_score)
+        human_score == 3 || comp_score == 3            
+    end  
+
   end 

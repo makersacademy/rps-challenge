@@ -16,79 +16,48 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
-    p "-----#{session[:player_1_name]}------"
-    
-    session[:hands] = Game.new(@player_1_name)
-    @hands = session[:hands]
+    session[:player_1_name] = params[:player_1_name]    
 
     session[:comp_score] = 0
-    session[:human_score] = 0
-    
-    # @comp_score = 0
-    # @human_score = 0
-   
+    session[:human_score] = 0    
+      
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
-    #@hands = Game.new(@player_1_name)
-    # session[:hands] = Game.new(@player_1_name)
-    #@hands = session[:hands]
-    # @hands = @hands
-    # p @hands
-    p session[:comp_score] 
-    p session[:human_score]
-    
+    @player_1_name = session[:player_1_name]    
     erb :play
   end
 
   post '/player-choose' do
     @player_1_name = session[:player_1_name]
-    @choice = params[:choice]
-
-    p "this is where we are ---#{session[:comp_score]}----" 
-    p session[:human_score]
-
-    # @comp_score = session[:comp_score]
-    # @human_score = session[:human_score]
-
-    # @hands = session[:hands]
-    # p "-----#{session[:hands]}------"
-    
-
-    p "-----#{session[:player_1_name]}------"
-    p "--------#{@choice}-----"  
+    @choice = params[:choice]    
     
     game = Logic.new
-    @game_result = game.play_game(@choice)
-    p "-----#{@game_result}------"
 
-    if @game_result == "You won!"
+    computer_choice = game.computer_picks
+    game_logic = game.play_game(@choice, computer_choice)
+    
+    p "-----#{game_logic}------"
+
+    if game_logic == "You won!"
       session[:human_score] += 1
-    elsif @game_result == "You lose."
+    elsif game_logic == "You lose."
       session[:comp_score] += 1
     end
 
     @comp_score = session[:comp_score]
     @human_score = session[:human_score]
 
-    
+    @game_result = "Computer picks #{computer_choice}, you pick #{@choice}, #{game_logic}"
 
+          
+    if game.game_over?(@human_score, @comp_score)
+      redirect '/game-over'
+    else
+      erb :results      
+    end 
 
-    # @hands.player_chooses(@choice)
-    # p @hands.human_score
-
-      
-    # if @game.game_over?
-    #   redirect '/game-over'
-    # else
-    #   redirect '/names'
-    # end 
-
-    #redirect '/game-score'
-    erb :results
   end
 
   get '/game-score' do
@@ -99,7 +68,11 @@ class BookmarkManager < Sinatra::Base
   end
   
   get '/game-over' do
-    @game = $game
+    @comp_score = session[:comp_score]
+    @human_score = session[:human_score]
+    @player_1_name = session[:player_1_name]
+    
+    @comp_score == 3 ? @winner = "Computer Wins!" : @winner = "#{@player_1_name} Wins!"
     erb :game_over
   end
 
