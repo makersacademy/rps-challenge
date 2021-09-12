@@ -1,5 +1,9 @@
 class Game 
 
+attr_reader :player_name, :player_choice, :game_choice
+
+WEAPONS = {rock: :scissors, scissors: :paper, paper: :rock}
+
     def initialize
       @player_choice = nil
       @computer_choice = nil
@@ -9,8 +13,14 @@ class Game
     @player_choice = choice
   end
 
-  def select_computer_choice(choice)
-    @pcomputer_choice = choice
+  def select_computer_choice
+    @computer_choice = WEAPONS.keys[random_number]
   end
 
+  private
+
+  def random_number
+    rand(3)
+  end
+  
 end 
