@@ -4,7 +4,7 @@ require './lib/player'
 require './lib/computer'
 require './lib/game'
 
-class RockPaperScissor < Sinatra::Base
+class RockPaperScissorsLizardSpock < Sinatra::Base
   enable :sessions
 
   configure :development do

@@ -1,8 +1,10 @@
 class Game
   RULES = {
-    Rock: :Scissors,
-    Scissors: :Paper,
-    Paper: :Rock
+    Rock: %i[Scissors Lizard],
+    Paper: %i[Rock Spock],
+    Scissors: %i[Paper Lizard],
+    Lizard: %i[Paper Spock],
+    Spock: %i[Scissors Rock]
   }
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
@@ -17,8 +19,8 @@ class Game
   end
 
   def check_result(player_choice, computer_choice)
-    return :win if RULES[player_choice.to_sym] == computer_choice
-    return :loss if RULES[computer_choice] == player_choice.to_sym
+    return :win if RULES[player_choice.to_sym].include?(computer_choice)
+    return :loss if RULES[computer_choice].include?(player_choice.to_sym)
     return :draw
   end
 end

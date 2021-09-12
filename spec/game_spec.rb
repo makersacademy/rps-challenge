@@ -23,7 +23,7 @@ describe Game do
 
   describe "#check_result" do
     it "returns win" do
-      expect(game.check_result(:Rock, :Scissors)).to eq :win
+      expect(game.check_result(:Rock, :Lizard)).to eq :win
     end
 
     it "returns draw" do
