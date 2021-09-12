@@ -1,3 +1,9 @@
+# Mabon's RPS Game
+
+A Rock, Paper, Scissors game built using Sinatra. A total of 14 RSpec tests were written using standard RSpec and Capybara user simulation, all of which pass successfully, covering 100% of the code base. 
+
+Game allows player to enter their name and begin a game of RPS. Current functionality only supports a Player vs Computer mode but various class interaction within the model layer of the code is designed to easily facilitate an additional Player vs Player mode given further development time.
+
 # RPS Challenge
 
 Instructions
