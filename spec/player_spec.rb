@@ -1,9 +1,14 @@
 require 'player'
 
 describe Player do
-  subject(:player) { Player.new('Mabon') }
+  subject(:player) { described_class.new('Mabon') }
 
-  it 'expect player to return a name when called' do
+  it 'return a name when called' do
     expect(player.name).to eq 'Mabon'
+  end
+
+  it 'returns player choice when called' do
+    player.choose_play('Rock')
+    expect(player.choice).to eq 'Rock'
   end
 end

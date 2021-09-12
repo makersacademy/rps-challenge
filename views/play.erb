@@ -1,1 +1,16 @@
-<h2><%= @player_name %> vs Computer</h2>
+<h2><%= @player.name %> vs Computer</h2>
+
+<% if !!@player.choice %>
+  You chose <%= @player.choice %>
+  Click Submit to reveal your opponents choice and the game result.
+  <form action='/result'>
+    <input type='submit' value='Submit'>
+  </form>
+<% else %>
+  Choose your object:
+  <form action='/choice' method='post'>
+    <input type='submit' value='Rock' name='choice'>
+    <input type='submit' value='Paper' name='choice'>
+    <input type='submit' value='Scissors' name='choice'>
+  </form>
+<% end %>
