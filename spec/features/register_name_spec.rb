@@ -3,6 +3,6 @@ feature 'Register name' do
     visit('/')
     fill_in :player, with: 'John'
     click_button 'Submit'
-    expect(page).to have_content 'ROCK, PAPER, SCISSORS John vs Computer'
+    expect(page).to have_content 'John vs. Computer'
   end
 end

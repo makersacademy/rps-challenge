@@ -4,6 +4,7 @@ require 'sinatra/reloader'
 class Rps < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
+    enable :sessions
   end
 
   get '/' do
@@ -11,10 +12,16 @@ class Rps < Sinatra::Base
   end
 
   get '/test' do
-   'Testing 1 2 3'
+    'Testing 1 2 3'
   end
 
   post '/name' do
+    session[:player] = params[:player]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player = session[:player]
     erb(:play)
   end
 
