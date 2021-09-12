@@ -1,6 +1,5 @@
 require 'game'
-require 'player_one'
-require 'cpu'
+
 
 describe Game do 
   

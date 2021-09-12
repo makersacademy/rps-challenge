@@ -1,5 +1,4 @@
 
-
 class Game 
 
   def result(player, computer)
