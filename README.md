@@ -1,6 +1,6 @@
 # RPS Challenge
 
-Instructions
+## Instructions
 -------
 1. Setting up Sinatra and Rack:
   * set up basic Sinatra application file called app.rb
@@ -51,8 +51,9 @@ Capybara.app = Rspgame
 
 5. Creating folder for features test in spec directory: spec/features
 
-
 -------
+
+##
 
 * Feel free to use google, your notes, books, etc. but work on your own
 * If you refer to the solution of another coach or student, please put a link to that in your README
