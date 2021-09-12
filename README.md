@@ -26,11 +26,11 @@ Instructions
   run RPS
 
 3. Installing extra gems files :
-    $ gem 'thin'
-    $ gem 'puma'
-    $ gem 'reel'
-    $ gem 'http'
-    $ gem 'webrick'
+    -$ gem 'thin'
+    -$ gem 'puma'
+    -$ gem 'reel'
+    -$ gem 'http'
+    -$ gem 'webrick'
 
 4. Making Capybara talks to Sinatra
 
