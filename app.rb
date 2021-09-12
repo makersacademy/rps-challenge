@@ -2,6 +2,8 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/computer'
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -24,14 +26,27 @@ class Rps < Sinatra::Base
     erb :pre
   end
 
-  get '/play' do
-    @player = session[:player]
-    erb :play
+  post '/pre_play_vs_comp' do
+    player1 = session[:player]
+    comp = Computer.new
+    @game = Game.create(player1, comp)
+    redirect '/play_vs_comp'
+  end
+
+  get '/play_vs_comp' do
+    @game = Game.instance
+    erb :play_vs_comp
   end
 
   post '/choice' do
-    session[:player].choose_play(params[:choice])
-    redirect '/play'
+    @game = Game.instance
+    @game.player1.choose_play(params[:choice])
+    redirect '/play_vs_comp'
+  end
+
+  post '/pre_result' do
+    # computer picks randomly
+    redirect '/result'
   end
 
   get '/result' do

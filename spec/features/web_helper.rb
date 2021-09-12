@@ -4,7 +4,7 @@ def sign_in
   click_button 'Submit'
 end
 
-def sign_in_and_play
+def sign_in_and_play_vs_computer
   sign_in
-  click_button 'Play'
+  click_button 'Play vs Computer'
 end

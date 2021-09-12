@@ -1,9 +1,9 @@
-<h2><%= @player.name %> vs Computer</h2>
+<h2><%= @game.player1.name %> vs Computer</h2>
 
-<% if !!@player.choice %>
-  You chose <%= @player.choice %>
+<% if !!@game.player1.choice %>
+  You chose <%= @game.player1.choice %>
   Click Submit to reveal your opponents choice and the game result.
-  <form action='/result'>
+  <form action='/pre_result' method='post'>
     <input type='submit' value='Submit'>
   </form>
 <% else %>
