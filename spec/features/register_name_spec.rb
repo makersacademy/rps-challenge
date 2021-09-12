@@ -1,7 +1,7 @@
 feature "Enter name" do
   scenario "register name" do
     register_name
-    expect(page).to have_content "Gianluca you are now facing the champion of the arena"
+    expect(page).to have_content "Gianluca you are now facing Archaon"
   end
 
   scenario "page has Rock button" do
