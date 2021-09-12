@@ -1,0 +1,8 @@
+<h2>Welcome, <%= @player_name.capitalize %>!</h2> 
+<p>Choose whether to play vs a computer or your friend.</p>
+<form action='/pre_play_vs_comp' method='post'>
+  <input type="submit" value="Play vs Computer">
+</form>
+<form>
+  <input type="submit" value="Play vs friend">
+</form>
