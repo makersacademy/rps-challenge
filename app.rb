@@ -3,5 +3,7 @@ require 'sinatra/reloader' if development?
 
 
 get '/' do
-  'hello'
+  p params
+  @name = params[:name]
+  erb (:index)
 end
