@@ -2,10 +2,10 @@
 
 
 <form action="/play" method="post">
-  <input type="submit" name="rps_choice" value="Rock">
-  <input type="submit" name="rps_choice" value="Paper">
-  <input type="submit" name="rps_choice" value="Scissors">
+  <input type="submit" name="weapon_choise" value="Rock">
+  <input type="submit" name="weapon_choise" value="Paper">
+  <input type="submit" name="weapon_choise" value="Scissors">
 </form>
+<br>
+<%= @player_1_name %> chose <%= @weapon_choise %>
 
-<%= @player_1_name %> chose <%= @rps_choice %> <br>
-Computer chose <%= @computer_choise %>

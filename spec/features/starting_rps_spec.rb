@@ -14,8 +14,5 @@ feature "Starting the game" do
   scenario "Player 1 can pick RPS" do
     click_button "Paper"
     expect(page).to have_content "Jake chose Paper"
-  end
-
-  #scenario "Computer picks RPS" do
-  
+  end  
 end
