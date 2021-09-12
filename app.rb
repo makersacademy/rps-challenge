@@ -1,6 +1,12 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 
+class Game 
+  def result
+    :win
+  end 
+end
+
 class RockPaperScissors < Sinatra::Base
     enable :sessions
 
@@ -22,10 +28,9 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  get '/option' do 
-    @marketer_name_1 = session[:marketer_name_1]
-    erb :option
-  end 
+  post '/result' do
+    erb :result
+  end
 
 # start the server if ruby file executed directly
   run! if app_file == $0
