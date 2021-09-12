@@ -1,4 +1,6 @@
 require 'capybara/rspec'
+require 'capybara'
+require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 
@@ -17,4 +19,10 @@ RSpec.configure do |config|
     puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
+
+  ENV['RACK-ENV'] = 'test'
+
+  require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+  Capybara.app = Rps
 end

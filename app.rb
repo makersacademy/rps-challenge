@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require 'capybara/rspec'
 
 class Rps < Sinatra::Base
   configure :development do
@@ -8,7 +7,7 @@ class Rps < Sinatra::Base
   end
 
   get '/' do
-    'Hello Chloe'
+    'Testing 1 2 3'
   end
 
   run! if app_file == $0
