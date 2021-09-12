@@ -1,6 +1,6 @@
 class Computer
   attr_reader :name
-  WEAPONS = %w[Rock Paper Scissors].freeze
+  WEAPONS = %i[Rock Paper Scissors]
 
   def initialize(name = "Archaon")
     @name = name

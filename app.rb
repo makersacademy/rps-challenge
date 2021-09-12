@@ -1,7 +1,8 @@
 require 'sinatra/base'
-require 'sinatra/reloader' 
+require 'sinatra/reloader'
 require './lib/player'
 require './lib/computer'
+require './lib/game'
 
 class RockPaperScissor < Sinatra::Base
   enable :sessions
@@ -15,22 +16,27 @@ class RockPaperScissor < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_name] = Player.new(params[:player_name]).name
+    player = Player.new(params[:player_name])
+    computer = Computer.new
+    session[:game] = Game.new(player, computer)
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
-    $computer = Computer.new
+    @game = session[:game]
     erb :play
   end
 
   post '/move' do
-    @player_name = session[:player_name]
-    @player_move = params[:weapon]
-    @computer = $computer
-    @computer_move = @computer.choose
-    erb :move
+    @game = session[:game]
+    session[:player_move] = params[:weapon]
+    session[:computer_move] = @game.player_2.choose
+    redirect '/results'
+  end
+
+  get '/results' do
+    @game = session[:game]
+    erb @game.check_result(session[:player_move], session[:computer_move])
   end
 
   run! if app_file == $0
