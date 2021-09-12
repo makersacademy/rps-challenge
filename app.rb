@@ -20,8 +20,14 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @marketer_name_1 = session[:marketer_name_1]
     erb :play
+  end
+
+  get '/option' do 
+    @marketer_name_1 = session[:marketer_name_1]
+    erb :option
   end 
-  
-  # start the server if ruby file executed directly
+
+# start the server if ruby file executed directly
   run! if app_file == $0
+
 end
