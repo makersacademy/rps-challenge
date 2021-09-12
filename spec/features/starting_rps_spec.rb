@@ -5,8 +5,17 @@ feature "Starting the game" do
       click_button "Submit"
     end
   scenario "Selecting RPS" do
-    expect(page).to have_content "Rock"
-    expect(page).to have_content "Paper"
-    expect(page).to have_content "Scissors"
+    expect(page).to have_button "Rock"
+    expect(page).to have_button "Paper"
+    expect(page).to have_button "Scissors"
   end
+
+  # Need to figure out how to test for ramdom results
+  scenario "Player 1 can pick RPS" do
+    click_button "Paper"
+    expect(page).to have_content "Jake chose Paper"
+  end
+
+  #scenario "Computer picks RPS" do
+  
 end

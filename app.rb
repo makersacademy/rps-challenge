@@ -7,10 +7,6 @@ class Rps < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  # get '/' do
-  #   'Testing infrastructure working!'
-  # end
-
   get '/' do
     erb :index
   end
@@ -22,8 +18,17 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @player_1_name = session[:player_1_name]
+    @rps_choice = session[:rps_choice]
+    @computer_choise = session[:computer_choise]
     erb :play
   end
+
+  post '/play' do
+    session[:rps_choice] = params[:rps_choice]
+    session[:computer_choise]
+    redirect '/play'
+  end
+
 
   run! if app_file == $0
 end

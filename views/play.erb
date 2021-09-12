@@ -1,4 +1,11 @@
-<%= @player_1_name %> vs <%= "Computer" %>
-Rock
-Paper
-Scissors
+<h2><%= @player_1_name %> vs Computer</h2>
+
+
+<form action="/play" method="post">
+  <input type="submit" name="rps_choice" value="Rock">
+  <input type="submit" name="rps_choice" value="Paper">
+  <input type="submit" name="rps_choice" value="Scissors">
+</form>
+
+<%= @player_1_name %> chose <%= @rps_choice %> <br>
+Computer chose <%= @computer_choise %>
