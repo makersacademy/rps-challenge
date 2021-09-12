@@ -7,7 +7,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    'Rock Paper Scissors'
+    erb(:index)
+  end
+
+  post '/name' do
+    @name = params[:name]
+    erb(:play)
   end
 
   run! if app_file == $0
