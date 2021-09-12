@@ -23,9 +23,6 @@ def decide_winner(move, comp_move)
       "Congratulations, you win! Scissors cuts paper!"
     end
   else
-    "You never win any games you don't play.<br>
-    Mark Cuban.<br><br>
-    
-    Make sure you select a move next time!"
+    "You never win any games you don't play.<br>Mark Cuban.<br><br>Make sure you select a move next time!"
   end
 end
