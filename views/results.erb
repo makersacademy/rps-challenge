@@ -1,0 +1,14 @@
+<form action="/game-score" method="get">
+<body>
+<h1><%= @game_result %></h1>
+
+    <div id="results">
+        <p <%= @game_result %></p>
+        <p id="player-score">Your score is: <%= @human_score %></p>
+        <p id="computer-score">The computer score is: <%= @comp_score %></p>
+    </div>
+
+    <input type="submit">
+    
+</body>
+</form>

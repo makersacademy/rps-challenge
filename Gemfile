@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '3.0.2'
+ruby '2.7.3'
 
 gem 'sinatra'
+gem 'sinatra-contrib'
 
 group :test do
   gem 'capybara'
@@ -14,3 +15,4 @@ end
 group :development, :test do
   gem 'rubocop', '1.20'
 end
+
