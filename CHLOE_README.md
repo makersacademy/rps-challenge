@@ -1,5 +1,7 @@
 # Rock, Paper, Scissors 
 
+A simple game to let off a little steam after a hard days marketing. 
+
 ## User Story 1:
 
 ```
@@ -67,15 +69,27 @@ I would like to be able to play rock/paper/scissors
 
 ### 1. What does a user have to do?
 - Visit the homepage ('/')
-- Fill in the test field with a name
+- Fill in the text field with a name
 - Click a submit button
-- Click either rock, paper, or scissors button
+- Fill in text field with hand
 - See who has won!
 - (Edge case (?): Rematch)
 ### 2. What does the user expect? 
 - A page showing a option of either rock, paper, scissor to choose their hand
 - To see who won!
 - (Edge case(?): Button to replay)
+
+<br>
+
+-------
+<br>
+
+## Overview
+- I covered as far as I managed to get in the week challenge. 
+- I did read the later chapters to see what would of been the next steps but as it was late on Sunday evening by this point I felt it was best to prioritise sleep over completion.
+- Overly I am proud of myself for attempting this weekend project as I had been having issues with getting started on previous weekends. Along with a great amount of stress associated with this. 
+- I understand that the next part would be to add in the M (Model) of MVC by creating a Player and Computer classes etc, building out tests for this in rspec respectively . 
+
 
 <br>
 

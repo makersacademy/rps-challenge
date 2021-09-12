@@ -24,6 +24,11 @@ class Rps < Sinatra::Base
     @player = session[:player]
     erb(:play)
   end
+  
+  # post '/game' do
+  #   @player_hand = params[:player_hand]
+  #   erb(:game)
+  # end
 
   run! if app_file == $0
 end
