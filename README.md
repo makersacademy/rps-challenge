@@ -2,6 +2,57 @@
 
 Instructions
 -------
+1. Setting up Sinatra and Rack:
+  * set up basic Sinatra application file called app.rb
+
+  require 'sinatra/base'
+  require 'sinatra/reloader'
+
+  class Rpsgame < Sinatra::Base
+    configure :development do
+     register Sinatra::Reloader
+  end
+
+    get '/' do
+      'Hello Rock, Paper, Scissors game!'
+    end
+
+    run! if app_file == $0
+  end
+
+2. Configuring rackup command to run the application in app.rb, via a file called config.ru
+
+  require_relative "./app"
+  run RPS
+
+3. Installing extra gems files :
+    $ gem 'thin'
+    $ gem 'puma'
+    $ gem 'reel'
+    $ gem 'http'
+    $ gem 'webrick'
+
+4. Making Capybara talks to Sinatra
+
+  * Set the environment to "test".
+  * Bring in the contents of the app.rb file.
+  * Require all the testing gems (RSpec, Capybara, and the Capybara RSpec    package that lets them talk to each other).
+  * Tell Capybara that any instructions like visit('/') should be directed at the application called 'Rspgame'.
+
+ENV['RACK_ENV'] = 'test'
+
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+
+Capybara.app = Rspgame
+
+5. Creating folder for features test in spec directory: spec/features
+
+
+-------
 
 * Feel free to use google, your notes, books, etc. but work on your own
 * If you refer to the solution of another coach or student, please put a link to that in your README
