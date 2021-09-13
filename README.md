@@ -56,11 +56,11 @@ Capybara.app = Rspgame
 -------
 
 ## First user story
-
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
-
+```
 
 1. Created register_spec.rb file in spec folder and written the scenario.
 
