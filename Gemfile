@@ -4,6 +4,8 @@ ruby '3.0.1'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'thin'
+gem 'foreman'
 
 group :test do
   gem 'capybara'
