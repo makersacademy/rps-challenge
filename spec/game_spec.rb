@@ -1,8 +1,6 @@
 require 'game'
 
-
 describe Game do 
-  
 
   context 'Player one should be declared the winner of the game' do 
 
@@ -49,8 +47,5 @@ describe Game do
       expect(subject.result("Scissors", "Scissors")).to eq "Draw!"
     end
   end
-  
-
-
 
 end 

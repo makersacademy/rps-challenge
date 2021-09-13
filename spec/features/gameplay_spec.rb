@@ -5,6 +5,3 @@ feature 'Gameplay' do
     expect(page).to have_content "Choose your hand"
   end
 end
-
-
-
