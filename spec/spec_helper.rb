@@ -3,6 +3,7 @@ require "simplecov"
 require "simplecov-console"
 require "rspec"
 
+# !!commmented out as had trouble opening:
 # Capybara.app = MyRackApp
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
