@@ -1,8 +1,11 @@
+require 'features/web_helpers'
 require 'capybara/rspec'
 require 'capybara'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+include Capybara::DSL
 
 ENV['RACK_ENV'] = 'test'
 
