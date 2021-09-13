@@ -80,17 +80,17 @@ The second user story is more complex and it needs to be braek down to few scana
 
 * the marketeer should be able to enter their name before the game:
 
-
+```ruby
 scenario 'see the game options' do
-        expect(page).to have_button 'Rock'
-        expect(page).to have_button 'Paper'
-        expect(page).to have_button 'Scissors'
-    end
-
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
+end
+```
 
 * the marketeer will be presented the choices (rock, paper and scissors):
 
-
+```ruby
 scenario 'choise a object to start game' do
         click_button 'Rock'
         expect(page).to have_content 'You chose Rock!'
@@ -99,7 +99,7 @@ scenario 'choise a object to start game' do
         click_button 'Scissors'
         expect(page).to have_content 'You chose Scissors!'
 end
-
+```
 
 * the marketeer can choose one option:
 
