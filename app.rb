@@ -2,6 +2,8 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 
 class RockPaperScissors < Sinatra::Base
+  enable :sessions
+  
   configure :development do
     register Sinatra::Reloader
   end
@@ -11,12 +13,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    $player1 = params[:player1] # global var not ideal but only way I could get it to work
+    session[:player] = params[:player]
     redirect '/game'
   end
 
   get '/game' do
-    @player1 = $player1
+    @player = session[:player]
     erb :game
   end
 
