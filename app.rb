@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/game'
+require './lib/player'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -14,21 +16,22 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    session[:player] = params[:player]
+    $player = Player.new(params[:player])
     redirect '/game'
   end
 
   get '/game' do
-    @player = session[:player]
+    @player_name = $player.name
     erb :game
   end
 
   post '/get_result' do
-    @choice = params[:choice]
-    @player = session[:player]
-    game = Game.new(@choice, @player)
+    @player_choice = params[:choice]
+    @player_name = $player.name
+    $cpu = Computer.new
+    @cpu_choice = $cpu.get_choice
+    game = Game.new(@player_choice, @player_name, @cpu_choice)
     @winner = game.results
-    @cpu_choice = game.cpu_choice
     erb :winner
   end
 

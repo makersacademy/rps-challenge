@@ -9,10 +9,7 @@ describe 'able to play RPS' do
   end
 
   scenario 'can win game' do
-    get_to_game
-    fill_in :choice, with: 'rock'
-    game = Game.new('rock', 'Bob')
-    @cpu_choice = :computer_choice
+    game = Game.new('rock', 'Bob', computer_choice)
     expect(game.results).to eq 'Bob wins!'
   end
 
