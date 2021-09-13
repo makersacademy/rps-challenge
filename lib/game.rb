@@ -1,11 +1,14 @@
 class Game
-  attr_reader :cpu_choice
 
   def initialize(player_choice, player_name)
     @player_name = player_name
     @player_choice = player_choice
     @win_logic = { 'Scissors' => 'Paper', 'Paper' => 'Rock', 'Rock' => 'Scissors' }
     @cpu_choice = computer_choice
+  end
+
+  def cpu_choice
+    @cpu_choice
   end
 
   def computer_choice

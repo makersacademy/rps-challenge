@@ -14,6 +14,11 @@ describe 'able to play RPS' do
     game = Game.new('rock', 'Bob')
     @cpu_choice = :computer_choice
     expect(game.results).to eq 'Bob wins!'
-    save_and_open_page
+  end
+
+  scenario 'can lose game' do
+    get_to_game
+    fill_in :choice, with: 'rock'
+    
   end
 end
