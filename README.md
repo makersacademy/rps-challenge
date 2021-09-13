@@ -15,9 +15,11 @@ As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
+```
+
 I approached this user story by creating a form input on the index page. The idea was for the user to input their name then this would be saved and displayed in a sort of welcome message e.g. "Welcome to RPS (player_name)".
 
-
+```
 Yet to be completed:
 As a marketeer
 So that I can enjoy myself away from the daily grind
