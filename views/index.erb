@@ -1,7 +1,10 @@
-<% if @name %>
-<h1>Hello <%=@name%> <h1/>
-<% end %>
+<h1>Rock Paper Scissors!</h1>
+<h2>Sign in to play</h2>
+
 <form action ='/' method ='post'>
-  <input type='text' name='name'>
+  <label for= 'player_name'>
+    Player name
+    <input type='text' name='player_name'>
+  </label>
   <input type='submit' value='Submit'>
 </form> 
