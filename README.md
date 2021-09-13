@@ -39,6 +39,7 @@
   * Require all the testing gems (RSpec, Capybara, and the Capybara RSpec    package that lets them talk to each other).
   * Tell Capybara that any instructions like visit('/') should be directed at the application called 'Rspgame'.
 
+```ruby
 ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
@@ -48,6 +49,7 @@ require 'capybara/rspec'
 require 'rspec'
 
 Capybara.app = Rspgame
+```
 
 5. Creating folder for features test in spec directory: spec/features
 
@@ -81,6 +83,7 @@ The second user story is more complex and it needs to be braek down to few scana
 * the marketeer should be able to enter their name before the game:
 
 ```ruby
+# in spec/play_spec.rb
 scenario 'see the game options' do
     expect(page).to have_button 'Rock'
     expect(page).to have_button 'Paper'
@@ -91,6 +94,7 @@ end
 * the marketeer will be presented the choices (rock, paper and scissors):
 
 ```ruby
+# in spec/play_spec.rb
 scenario 'choise a object to start game' do
         click_button 'Rock'
         expect(page).to have_content 'You chose Rock!'
