@@ -1,13 +1,5 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
 Task
 ----
 
@@ -18,10 +10,15 @@ The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ```
+Part completed:
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
+I approached this user story by creating a form input on the index page. The idea was for the user to input their name then this would be saved and displayed in a sort of welcome message e.g. "Welcome to RPS (player_name)".
+
+
+Yet to be completed:
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
