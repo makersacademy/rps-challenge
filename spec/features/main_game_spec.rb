@@ -19,6 +19,5 @@ describe 'able to play RPS' do
   scenario 'can lose game' do
     get_to_game
     fill_in :choice, with: 'rock'
-    
   end
 end
