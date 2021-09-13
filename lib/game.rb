@@ -1,7 +1,8 @@
 class Game 
   attr_reader :input
 
-  def initialize(player_input = "paper")
+  def initialize(player_input = "paper") #default for testing
+    @player_input = player_input
     @input = [player_input]
   end
   

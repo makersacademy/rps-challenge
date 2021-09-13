@@ -3,7 +3,7 @@ require 'sinatra/reloader'
 
 class RPS < Sinatra::Base
   configure :development do
-    register Sinatra::Reloader
+    register Sinatra::Reloader #registering necessary for modular applications (if development works only for 'classic applications #sinatrarb.com/contrib/reloader
   end
   enable :sessions
 
@@ -20,11 +20,12 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/turn' do
-    session[:selected] = params[:selected]
+  post '/input' do
+    # using a checkbox form for input - will require a post request
+    # need to save the tickbox selected - as params?
     redirect :result
   end
-  # using a checkbox form for input - will require a post request
+
 
   get '/result' do
     erb :result
