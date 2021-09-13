@@ -1,12 +1,51 @@
 # RPS Challenge
 
-Instructions
--------
+Comments: 
+I was able to complete the first user story. 
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+When it came to the second user story it was clear that it needed to be divided up into several user stories based on the 'Hints on functionality' listed below. With this in mind I attempted the next steps using the following user stories: 
+
+-
+
+Hints on functionality: The marketeer will be presented the choices (rock, paper and scissors)
+
+As a marketeer 
+So that I can select a choice of rock, paper and scissors
+I would like to be presented with the choices of rock, paper and scissors
+
+I was able to complete this section and make buttons that allowed the player to see their choices.
+
+-
+
+Hints on functionality: The marketeer can choose one option
+
+As a marketeer 
+So that I can choose an option 
+I would like to be able to select one of the options presented to me 
+
+It was this part I found tricky because I managed to get the buttons going through to the '/result' webpage but I couldn't figure out how to link the buttons to the game.rb code and present a result. I think the issue lies with the game.rb code not being able to define a winner between ther computer and the player just yet. 
+
+-
+
+Hints on functionality: The game will choose a random option
+
+As the computer 
+So that I can go up against the player
+I would like to be able to given a random choice of rock, paper or scissors
+
+I attempted to code this in game.rb and wrote a unit test for it but also couldn't quite figure this out. 
+
+-
+
+Hints on functionality: a winner will be declared
+
+As a Player 
+So that I can know if I've won the game 
+I would like for a winner to be declared 
+
+This was not attempted due to the above not being complete. Although I did start on the result.erb webpage and plan on adding a line that says who the winner is, which will most likely come from the game.rb code. 
+
+--
 
 Task
 ----
