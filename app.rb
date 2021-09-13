@@ -19,7 +19,13 @@ class Rpsgame < Sinatra::Base
 
   get '/play' do
     @name = session[:name]  
+    @object = session[:object] 
     erb :play
+  end
+
+  post '/play' do
+    session[:object] = params[:object]
+    redirect '/play'
   end
 
   run! if app_file == $0

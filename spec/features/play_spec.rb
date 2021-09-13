@@ -8,8 +8,18 @@ feature 'start playing a game' do
     end
 
     scenario 'see the game options' do
-        expect(page).to have_content 'Rock'
-        expect(page).to have_content 'Paper'
-        expect(page).to have_content 'Scissors'
+        expect(page).to have_button 'Rock'
+        expect(page).to have_button 'Paper'
+        expect(page).to have_button 'Scissors'
     end
+
+    scenario 'choise a object to start game' do
+        click_button 'Rock'
+        expect(page).to have_content 'You chose Rock!'
+        click_button 'Paper'
+        expect(page).to have_content 'You chose Paper!'
+        click_button 'Scissors'
+        expect(page).to have_content 'You chose Scissors!'
+    end
+
 end

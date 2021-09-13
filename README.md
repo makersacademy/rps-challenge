@@ -26,11 +26,11 @@
   run RPS
 
 3. Installing extra gems files :
-    -$ gem 'thin'
-    -$ gem 'puma'
-    -$ gem 'reel'
-    -$ gem 'http'
-    -$ gem 'webrick'
+    > gem 'thin'
+    > gem 'puma'
+    > gem 'reel'
+    > gem 'http'
+    > gem 'webrick'
 
 4. Making Capybara talks to Sinatra
 
@@ -69,7 +69,40 @@ I would like to register my name before playing an online game
 3.RSpec test passed!
 
 
+## Second user story
 
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+
+The second user story is more complex and it needs to be braek down to few scanarios: 
+
+* the marketeer should be able to enter their name before the game:
+
+''' ruby
+scenario 'see the game options' do
+        expect(page).to have_button 'Rock'
+        expect(page).to have_button 'Paper'
+        expect(page).to have_button 'Scissors'
+    end
+'''ruby
+
+* the marketeer will be presented the choices (rock, paper and scissors):
+
+'''ruby
+scenario 'choise a object to start game' do
+        click_button 'Rock'
+        expect(page).to have_content 'You chose Rock!'
+        click_button 'Paper'
+        expect(page).to have_content 'You chose Paper!'
+        click_button 'Scissors'
+        expect(page).to have_content 'You chose Scissors!'
+'''ruby
+
+
+* the marketeer can choose one option
+* the game will choose a random option
+* a winner will be declared
 
 
 
