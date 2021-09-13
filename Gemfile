@@ -6,6 +6,7 @@ gem 'sinatra'
 
 group :test do
   gem 'capybara'
+  gem 'sinatra-reloader'
   gem 'rspec'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
