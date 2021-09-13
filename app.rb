@@ -12,13 +12,11 @@ class RockPaperScissors < Sinatra::Base
 
   post '/names' do
     $player1 = params[:player1] # global var not ideal but only way I could get it to work
-    $player2 = params[:player2]
     redirect '/game'
   end
 
   get '/game' do
     @player1 = $player1
-    @player2 = $player2
     erb :game
   end
 
