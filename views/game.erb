@@ -1,3 +1,11 @@
-<%= @player %> VS Computer
+<h1> <%= @player %> VS Computer </h1>
 
-<h1> <%= @player %>, please pick rock, paper or scissors: </h1>
+<h2> <%= @player %>, please pick rock, paper or scissors: </h2>
+
+<form action='/get_result' method='post'>
+  <label for='choice'>
+    Choice
+    <input type='text' name='choice'>
+  </label>
+  <input type='submit' value='Submit'>
+</form>
