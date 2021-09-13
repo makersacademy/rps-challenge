@@ -20,6 +20,7 @@ describe Game do
 #   Testing out all scenarios where the player choice is rock
   context 'Determining the winner' do
     game = Game.new
+    #  getting an error message about this test as it is returning nil
     it 'correctly returns the player as winner' do
       allow(game).to receive(:random_number) {1}
       allow(game).to receive(:player_choice) {:rock}
@@ -27,6 +28,7 @@ describe Game do
       expect(game.who_wins).to eq :marketer_name_1
     end
 
+    #  getting an error message about this test as it is returning nil
     it 'correctly returns the computer as winner' do
     game = Game.new
       allow(game).to receive(:random_number) {2}

@@ -23,7 +23,7 @@ As a marketeer
 So that I can choose an option 
 I would like to be able to select one of the options presented to me 
 
-It was this part I found tricky because I managed to get the buttons going through to the '/result' webpage but I couldn't figure out how to link the buttons to the game.rb code and present a result. I think the issue lies with the game.rb code not being able to define a winner between ther computer and the player just yet. 
+It was this part I found tricky because I managed to get the buttons going through to the '/result' webpage but I couldn't figure out how to link the buttons to the game.rb code and present a result. I think the issue lies with the game.rb code not being able to define a winner between the computer and the player just yet. 
 
 -
 
@@ -33,7 +33,7 @@ As the computer
 So that I can go up against the player
 I would like to be able to given a random choice of rock, paper or scissors
 
-I attempted to code this in game.rb and wrote a unit test for it but also couldn't quite figure this out. 
+I attempted to code this in game.rb. 
 
 -
 
@@ -43,7 +43,7 @@ As a Player
 So that I can know if I've won the game 
 I would like for a winner to be declared 
 
-This was not attempted due to the above not being complete. Although I did start on the result.erb webpage and plan on adding a line that says who the winner is, which will most likely come from the game.rb code. 
+This was attempted but I am getting errors running rspec on the tests that are supposed to return the winner. These are commented in the game_spec.
 
 --
 
