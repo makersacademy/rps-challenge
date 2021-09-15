@@ -32,6 +32,9 @@ class RockPaperScissors < Sinatra::Base
     @cpu_choice = $cpu.get_choice
     game = Game.new(@player_choice, @player_name, @cpu_choice)
     @winner = game.results
+    p params
+    p @cpu_choice
+    p @winner
     erb :winner
   end
 
