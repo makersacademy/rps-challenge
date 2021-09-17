@@ -1,11 +1,8 @@
 class Player
   attr_reader :name, :weapon_choice
 
-  def initialize(name)
+  def initialize(name, weapon_choice)
     @name = name
-  end
-
-  def select(weapon_choice)
     @weapon_choice = weapon_choice
   end
 end

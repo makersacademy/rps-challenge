@@ -1,5 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/opponent'
+require './lib/player'
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -17,15 +20,18 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
-    @weapon_choise = session[:weapon_choise]
-    erb :play
+    erb :play, :locals => {:player_name => session[:player_1_name]}
   end
 
   post '/play' do
-    session[:weapon_choise] = params[:weapon_choise]
-    redirect '/play'
+    opponent = Opponent.new
+    opponent.choose_weapon
+    player = Player.new(session[:player_1_name], params[:weapon_choise])
+    game = Game.new(player, opponent)
+
+    erb :results, :locals => {:game => game}
   end
+  
 
   run! if app_file == $0
 end
