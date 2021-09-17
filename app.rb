@@ -3,7 +3,10 @@ require 'sinatra/reloader'
 require './lib/game'
 
 class RpsChallenge < Sinatra::Base
+
+  set :public, 'public'
   enable :sessions
+  
   configure :development do
     register Sinatra::Reloader
   end
