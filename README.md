@@ -1,3 +1,11 @@
+My Approach
+=================
+
+* I started by building the app with the minimum required (3 options to chose from and player vs computer
+* When adding the css, I couldn't figure out what to do to make it work with an external .css file so I added all styles in the head of the layout.erb
+* When adding the 2 additional options (Lizard and Spock), I had to change the method to return who the winner is, so I adapted my data structure for something more simple coupled with regex matchers.
+* In the end, I decided against adding another player to keep the app and user flow as simple as possible.
+
 # RPS Challenge
 
 Instructions
