@@ -1,17 +1,22 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/game'
 
-class Game 
-  def result
-    :win
-  end 
-end
+# class Game 
+#   def result
+#     :win
+#   end 
+# end
 
 class RockPaperScissors < Sinatra::Base
     enable :sessions
 
     configure :development do
       register Sinatra::Reloader
+    end
+
+    configure do
+      enable :sessions
     end
 
   get '/' do
@@ -29,14 +34,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    # @game = $game
-    # @game.select_player_choice = params[:choice]
-    # @game.select_computer_choice
+    @game = Game.new
+    session[:player_choice] = params[:player_choice]
+    session[:computer_choice] = params[:computer_choice]
     redirect '/result'
   end
 
  get '/result' do
-    # @game = $game
+    @game = Game.new
+    @player_choice = session[:player_choice]
+    @computer_choice = session[:computer_choice]
+    @win_logic = params[:win_logic]
     erb :result
   end
 
