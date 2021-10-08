@@ -25,9 +25,12 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  get '/results' do
+  post '/moves' do
     @game.set_moves(params[:submit].downcase)
-    @player_move
+    redirect '/results'
+  end
+
+  get '/results' do
     @output = @game.output
     erb(:results)
   end

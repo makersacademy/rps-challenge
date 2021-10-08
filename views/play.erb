@@ -1,6 +1,6 @@
 <h1><%= @player_name %> VS. Computer</h1>
 <br><br>
-<form action="/results">
+<form action="/moves" method="post">
     <% @game.choices.each do |choice| %>
     <input type="submit" name="submit" value=<%= choice.name %>>
     <% end %>
