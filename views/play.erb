@@ -1,5 +1,17 @@
 <%= session[:player_name] %> what is your choice?
 <br><br>
-<form action="/result" method="post">
+
+<form action="/play_again" method="post">
+  <input type="hidden" name="button" value="Rock"/>
+  <input type="submit" value="Rock">
+</form>
+
+<form action="/play_again" method="post">
+  <input type="hidden" name="button" value="Paper"/>
   <input type ="submit" value="Paper">
+</form>
+
+<form action="/play_again" method="post">
+  <input type="hidden" name="button" value="Scissors"/>
+  <input type ="submit" value="Scissors">
 </form>

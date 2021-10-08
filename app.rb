@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 
+require './lib/player'
+
 class Rps < Sinatra::Base
   enable :sessions
 
@@ -20,8 +22,13 @@ class Rps < Sinatra::Base
   get '/play' do
     erb :play
   end
+  
+  post '/play_again' do
+    session[:button] = params[:button]
+    redirect '/result'
+  end
 
-  post '/result' do
+  get '/result' do
     erb :result
   end
 
