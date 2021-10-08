@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 
-require './lib/player'
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -25,6 +25,7 @@ class Rps < Sinatra::Base
   
   post '/play_again' do
     session[:button] = params[:button]
+    @player_choice = session[:button]
     redirect '/result'
   end
 
