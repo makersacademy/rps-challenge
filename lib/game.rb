@@ -13,44 +13,24 @@ class Game
   # Game.new.instance goes out of scope when response is sent
   # Game.instance stays in scope
   
+  WEAPONS = [:rock, :paper, :scissors]
+
+  RULES = {
+    :rock     => {:rock => :draw, :paper => :lose, :scissors => :win},
+    :paper    => {:rock => :win, :paper => :draw, :scissors => :lose},
+    :scissors => {:rock => :lose, :paper => :win, :scissors => :draw}
+  }
   
-    attr_reader :current_turn, :players
+    attr_reader :players
   
     def initialize(player_1, player_2)
-      @players = [player_1, player_2]
-      @current_turn = player_1
+      @player_1 = player_1
+      @player_2 = player_2
+    end
+
+    def result
+      RULES[@player_1.weapon][@player_2.weapon]
     end
   
-    def player_1
-      @players.first
-    end
-  
-    def player_2
-      @players.last
-    end
-  
-    def attack(player)
-      player.receive_damage
-    end
-    
-    def switch_turns
-      @current_turn = opponent_of(current_turn)
-    end
-    
-    def opponent_of(the_player)
-      @players.select { |player| player != the_player }.first
-    end
-  
-     def game_over?
-       losing_players.any?
-     end
-  
-    def loser
-      losing_players.first
-    end
-  
-    def losing_players
-      @players.select { |player| player.hit_points <= 0 }
-    end
   
   end

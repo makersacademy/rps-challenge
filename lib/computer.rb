@@ -1,12 +1,13 @@
 class Computer
-  
-  attr_reader :name
+
+  attr_reader :name, :weapon
 
   def initialize(name)
     @name = name
   end
 
   def weapon
-    [:rock, :paper, :scissors].sample
+    Game::WEAPONS.sample
   end
+
 end

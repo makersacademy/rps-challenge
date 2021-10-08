@@ -8,7 +8,8 @@ class Player
   end
 
   def weapon=(weapon)
-    fail 'not a possible weapon' unless [:rock, :paper, :scissors].includes? weapon
+    fail 'not a possible weapon' unless Game::WEAPONS.include? weapon
     @weapon = weapon
   end
+  
 end
