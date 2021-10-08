@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/weapons'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -26,8 +27,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/results' do
     @game.set_moves(params[:submit].downcase)
+    @player_move
     @output = @game.output
-    p "me:#{@game.player_move}  computer:#{@game.computer_move} "
     erb(:results)
   end
 

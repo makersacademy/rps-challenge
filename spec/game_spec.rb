@@ -22,4 +22,9 @@ describe Game do
       expect(["tie", "Computer", "James"]).to include(subject.output)
     end
   end
+  describe '.name_to_object' do
+    it "should return object associated with name" do
+      expect(subject.name_to_object('rock')).to eq(subject.rock)
+    end
+  end
 end
