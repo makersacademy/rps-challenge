@@ -21,15 +21,25 @@
       </div>
       <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1>Let's go, Buffon</h1>
+          <h1>Let's go, <%= @player.name %></h1>
         </div>
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Enter your name</span>
+              <span class="padding-bottom--15">Make your choice!</span>
               <form id="create_game" action="/play" method="post">
                 <div class="field padding-bottom--24">
-                  <input type="text" name="player_name">
+<%#               <div id="icons">
+                    <div>
+                      <label for="rock">✊</label>
+                      <input type="radio" id="rock" name="rock">
+                      <label for="paper">🖐️</label>
+                      <input class = "radio-paper"  type="radio" id="paper" name="paper">
+                      <label for="scissors">✌</label>
+                      <input type="radio" id="scissors" name="scissors"> <!-- put the radio buttons here -->
+                    </div>
+                  </div> %>
+                  <input type="text" name="player_action">
                 </div>
                 <div class="field padding-bottom--24">
                   <input type="submit" name="submit" value="Continue">
