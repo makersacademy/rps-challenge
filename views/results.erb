@@ -1,5 +1,8 @@
-<% if @outcome == "tie" %>
+<% if @output == "tie" %>
   <h1>IT WAS A TIE!</h1>
 <% else %>
-  <h1><%= @outcome %> WON!</h1>
+  <h1><%= @output %> WON!</h1>
 <% end %>
+<form action="/">
+  <input type="submit" name="submit" value="Play again!">
+</form>

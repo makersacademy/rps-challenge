@@ -29,9 +29,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/results' do
-    p params
-    @game.set_moves(params[0])
+    @game.set_moves(params[:submit].downcase)
     @output = @game.output
+    p "me:#{@game.player_move}  computer:#{@game.computer_move} "
     erb(:results)
   end
 
