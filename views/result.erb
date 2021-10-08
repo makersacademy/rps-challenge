@@ -1,4 +1,6 @@
 You played <%= session[:button] %>
 <br><br>
+Computer played <%= @computer_choice %>
+<br><br>
 
-<%= Game.new.play %>
+<%= Game.new("Paper").play %>

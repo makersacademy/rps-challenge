@@ -25,7 +25,6 @@ class Rps < Sinatra::Base
   
   post '/play_again' do
     session[:button] = params[:button]
-    @player_choice = session[:button]
     redirect '/result'
   end
 
