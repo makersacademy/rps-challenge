@@ -31,11 +31,13 @@ class RPS < Sinatra::Base
   end
 
   post '/results' do
-
+    @game.who_won(params[:hand])
+    redirect '/winner'
   end
 
-  get '/results' do
-    erb(:results)
+  get '/winner' do
+    @game.winner
+    erb(:winner)
   end
 
 
