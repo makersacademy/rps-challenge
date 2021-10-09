@@ -14,14 +14,23 @@ class App < Sinatra::Base
 
   post '/name' do
     session[:player_1_name] = params[:player_1_name]
-
-
     redirect '/play'
   end
 
   get '/play' do
     @player_1_name = session[:player_1_name]
     erb :play
+  end
+
+  post '/submit' do
+    session[:choice] = params[:choice]
+    p session[:choice]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @choice = session[:choice]
+    erb :result
   end
 
 end
