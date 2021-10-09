@@ -3,7 +3,7 @@ require 'computer'
 describe Computer do 
   describe '.move' do 
     it 'should return a random move' do 
-      expect(subject.move == subject.move && subject.move == subject.move).to eq(false)
+      expect(subject.move == subject.move && subject.move == subject.move && subject.move == subject.move).to eq(false)
     end 
 
     it 'should return rock, paper or scissors as a symbol' do 
