@@ -8,11 +8,11 @@ describe Player do
   end
 
   it "has a win count" do
-    expect(player.win).to eq Player::STARTING_COUNTS
+    expect(player.win_count).to eq Player::STARTING_COUNTS
   end
 
   it "has a loss count" do
-    expect(player.lose).to eq Player::STARTING_COUNTS
+    expect(player.lose_count).to eq Player::STARTING_COUNTS
   end
 
 end

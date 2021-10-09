@@ -1,12 +1,12 @@
 class Player
   STARTING_COUNTS = 0
 
-  attr_reader :name, :win, :lose
+  attr_reader :name, :win_count, :lose_count
 
   def initialize(input_name)
     @name = input_name
-    @win = STARTING_COUNTS
-    @lose = STARTING_COUNTS
+    @win_count = STARTING_COUNTS
+    @lose_count = STARTING_COUNTS
   end
 
 end
