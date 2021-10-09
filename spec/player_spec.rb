@@ -24,7 +24,7 @@ describe Player do
     end
     it 'stays the same for a draw' do
       outcome = 'DRAW'
-      expect { player1.update_score(outcome) }.to_not change {player1.score }
+      expect { player1.update_score(outcome) }.to_not change { player1.score }
     end
 
   end

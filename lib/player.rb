@@ -6,6 +6,14 @@ class Player
     @score = 0
   end
 
+  def self.create(name)
+    @player = Player.new(name)
+  end
+
+  def self.instance
+    @player 
+  end
+
   def update_score(outcome)
     if outcome == 'WIN!'
       @score += 1

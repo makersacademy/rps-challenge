@@ -10,17 +10,20 @@ class App < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  before do
+    @player = Player.instance
+  end
+
   get '/' do
     erb :index
   end
 
   post '/name' do
-    session[:player_1_name] = params[:player_1_name]
+    @player = Player.create(params[:player_1_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
     erb :play
   end
 
@@ -29,6 +32,7 @@ class App < Sinatra::Base
     game = Game.new
     session[:npc] = game.random
     session[:result] = game.result(session[:choice], session[:npc])
+    @player.update_score(session[:result])
     redirect '/result'
   end
 
@@ -36,9 +40,7 @@ class App < Sinatra::Base
     @choice = session[:choice]
     @npc_choice = session[:npc]
     @result = session[:result]
-    @score = 
     erb :result
   end
 
 end
-

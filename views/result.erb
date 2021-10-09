@@ -4,7 +4,7 @@ You chose <%= @choice%><br>
 Your opponent chose <%= @npc_choice%><br>
 
 <h1><%= @result%></h1>
-<h2><%= @score%></h2>
+<h2>Your score: <%= @player.score%></h2>
 <br>
 <form action="/play" method="get">
   <input type="submit" value="Play again?">
