@@ -1,5 +1,12 @@
 # Rock Paper Scissors Game with one player against the computer
 
+This app is built using:
+Ruby
+Sinatra
+Rspec
+Capybara
+HTML
+
 I started with a sequence diagram which I refined towards the end to the following:
 
 ![](./sequence_diagram.jpg)
