@@ -4,3 +4,14 @@
 <br><br>
 
 <h1><%= Game.instance.play %></h1>
+
+Do you want to play again?
+<form action="/play_again" method="post">
+<input type="hidden" name="button" value="Yes"/>
+  <input type="submit" value="Yes">
+</form>
+
+<form action="/play_again" method="post">
+<input type="hidden" name="button" value="No"/>
+  <input type="submit" value="No">
+</form>
