@@ -1,1 +1,11 @@
-Welcome <%= @player_name %>!
+<h1>Welcome <%= @player_name %>!</h1>
+<br>
+<h2>Make you choice:</h2>
+<form action="/choice" method="post">
+  <input type="submit" value="ROCK" name="player_choice">
+  <input type="submit" value="PAPER" name="player_choice">
+  <input type="submit" value="SCISSORS" name="player_choice">
+</form>
+<br>
+<br>
+<h3><%= @player_name %> chooses <%= @player_choice %>!<h3>
