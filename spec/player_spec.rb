@@ -15,15 +15,15 @@ describe Player do
 
   describe '#update score' do
     it 'increase by 1 for a win' do
-      outcome = 'win'
+      outcome = 'WIN!'
       expect { player1.update_score(outcome) }.to change { player1.score }.by (1)
     end
     it 'decreases by 1 for a loss' do
-      outcome = 'lose'
+      outcome = 'LOSE!'
       expect { player1.update_score(outcome) }.to change { player1.score }.by (-1)
     end
     it 'stays the same for a draw' do
-      outcome = 'draw'
+      outcome = 'DRAW'
       expect { player1.update_score(outcome) }.to_not change {player1.score }
     end
 

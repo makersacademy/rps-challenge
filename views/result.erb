@@ -1,14 +1,14 @@
 <h1>Rock Paper Scissors</h1>
 
 You chose <%= @choice%><br>
-Your opponent chose X<br>
+Your opponent chose <%= @npc_choice%><br>
 
-WIN/DRAW/LOSE<br>
+<h1><%= @result%></h1>
+<h2><%= @score%></h2>
 <br>
-<div class="inline">
-<form action="/play">
+<form action="/play" method="get">
   <input type="submit" value="Play again?">
-<form action="/">
+</form>
+<form action="/" method="get">
   <input type="submit" value="Restart">
 </form>
-</div>

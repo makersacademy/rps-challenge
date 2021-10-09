@@ -26,12 +26,17 @@ class App < Sinatra::Base
 
   post '/submit' do
     session[:choice] = params[:choice]
-    p session[:choice]
+    game = Game.new
+    session[:npc] = game.random
+    session[:result] = game.result(session[:choice], session[:npc])
     redirect '/result'
   end
 
   get '/result' do
     @choice = session[:choice]
+    @npc_choice = session[:npc]
+    @result = session[:result]
+    @score = 
     erb :result
   end
 

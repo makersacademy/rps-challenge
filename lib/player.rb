@@ -7,9 +7,9 @@ class Player
   end
 
   def update_score(outcome)
-    if outcome == 'win'
+    if outcome == 'WIN!'
       @score += 1
-    elsif outcome == 'lose'
+    elsif outcome == 'LOSE!'
       @score -= 1
     end
   end
