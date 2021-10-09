@@ -6,6 +6,7 @@ gem 'sinatra'
 
 group :test do
   gem 'capybara'
+  gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
   gem 'rspec'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
