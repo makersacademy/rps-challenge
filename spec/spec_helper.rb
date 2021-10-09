@@ -27,5 +27,10 @@ require "capybara"
 require "capybara/rspec"
 require "rspec"
 require "features/web_helpers.rb"
+require "rack/test"
+
+RSpec.configure do |conf|
+  conf.include Rack::Test::Methods
+end
 
 Capybara.app = RockPaperScissor

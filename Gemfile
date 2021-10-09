@@ -10,6 +10,7 @@ group :test do
   gem "rspec"
   gem "simplecov", require: false
   gem "simplecov-console", require: false
+  gem "rack-test"
 end
 
 group :development, :test do
