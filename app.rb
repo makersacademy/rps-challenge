@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'rack'
-require './lib/rps_computer.rb'
+require './lib/rps_computer'
 
 class RockPaperScissors < Sinatra::Base
 
