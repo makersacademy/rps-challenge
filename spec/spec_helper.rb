@@ -20,4 +20,4 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rack'
 
-Capybara.app = BookmarkManager
+Capybara.app = RPS

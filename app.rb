@@ -1,15 +1,6 @@
 require 'sinatra/base'
 
-# class Weapon 
-#   get '/options' do 
-#     erb :options
-#   end
-# end
-
-class BookmarkManager < Sinatra::Base
-  configure :development do 
-    register Sinatra::Reloader
-  end
+class RPS < Sinatra::Base
 
   get '/' do
     erb :index

@@ -85,5 +85,9 @@ SimpleCov.start
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
 
-
-"Enter: Rock, Paper or Scissors"
+<%# <h1>Rock Paper or Scissors?</h1>
+<form action="/option" method="post">   
+  <input type="text" name="">
+ 
+  <input type="submit" value="Submit">
+</form> %>
