@@ -13,6 +13,12 @@
 <body>
   <h1>You chose <%=@player_move%> </h1>
 
-  
+  <h1>The computer chose <%=@new_game.computer_move%> </h1>
+
+  <h1> <%=@new_game.result%> </h1>
+
+  <form action="/game" method="get">
+  <input type="submit" value="Play Again">
+  </form>
 </body>
 </html>

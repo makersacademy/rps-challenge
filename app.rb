@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'rack'
+require './lib/rps_computer.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -30,6 +31,8 @@ class RockPaperScissors < Sinatra::Base
 
   get ('/result') do
     @player_move = session[:move]
+    @new_game = RPSComputer.new(@player_move)
+    @new_game.rps_result
     erb :result
   end
 
