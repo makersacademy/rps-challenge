@@ -1,1 +1,20 @@
 <h2>Player one: <%= @player_name %></h2>
+
+<form class="gestures" action="/gesture-choice" method="post">
+  <div class="">
+    <label for="rock">Rock</label>
+    <input type="radio" id="rock" name="gesture" value="rock">
+  </div>
+
+  <div class="">
+    <label for="paper">Paper</label>
+    <input type="radio" id="paper" name="gesture" value="paper">
+  </div>
+
+<div class="">
+  <label for="scissors">Scissors</label>
+  <input type="radio" id="scissors" name="gesture" value="scissors">
+</div>
+
+  <input type="submit" name="Submit" value="Go!">
+</form>

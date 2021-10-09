@@ -26,5 +26,17 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
+  post '/gesture-choice' do
+    session[:gesture] = params['gesture']
+
+    redirect 'result'
+  end
+
+  get '/result' do
+    @user_choice = session[:gesture]
+
+    erb :result
+  end
+
   run! if app_file == $0
 end
