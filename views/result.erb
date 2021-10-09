@@ -1,0 +1,13 @@
+
+You chose: <%= @game.player_1.weapon(@p1_weapon) %>
+<br><br>
+
+<%= @game.player_2.name %> chose: <%= @p2_weapon %>
+<br><br>
+
+You <%= @result %>.
+<br><br>
+
+<form action="/play" method="get">
+  <input type="submit" value="Play_again">
+</form> 

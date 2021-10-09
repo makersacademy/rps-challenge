@@ -32,7 +32,7 @@ class BookmarkManager < Sinatra::Base
     erb :play
   end
 
-  get '/attack' do
+  get '/result' do
     @p1_weapon = params[:player_1_choice]
     @p2_weapon = @game.player_2.weapon_select
     
@@ -42,7 +42,7 @@ class BookmarkManager < Sinatra::Base
       @result = @game.result(@p1_weapon, @p2_weapon)
     end
 
-    erb :attack
+    erb :result
   end
 
 
