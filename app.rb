@@ -6,9 +6,9 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/play' do 
+  post '/options' do 
     @player_1_name = params[:player_1_name]
-    erb :play
+    erb :options
   end
 
   get '/options' do 
