@@ -1,6 +1,6 @@
 require "sinatra/base"
 require "sinatra/reloader"
-require "./lib/bot"
+require "bot"
 
 class RockPaperScissor < Sinatra::Base
   enable :sessions
