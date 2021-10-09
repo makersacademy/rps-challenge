@@ -22,5 +22,12 @@ h2 {
 form { 
   margin: 0 auto; 
   width:220px;
+  /* width: 50%; */
+  text-align: center;
   }
+
+label {
+  text-align:match-parent;
+  font-size:18;
+}
   
