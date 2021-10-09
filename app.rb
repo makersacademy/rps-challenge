@@ -1,32 +1,32 @@
 require "sinatra/base"
 require "sinatra/reloader"
-require "bot"
+require_relative "./lib/game"
+require_relative "./lib/player"
 
 class RockPaperScissor < Sinatra::Base
-  enable :sessions
+  use Rack::Session::Pool
+
   configure :development do
     register Sinatra::Reloader
   end
 
   get "/" do
+    session[:game] = Game.new
     erb :index
   end
 
-  post "/names" do
-    session[:player_name] = params[:player_name]
+  post "/start" do
+    session[:game].human = Player.new(params[:player_name])
     redirect "/play"
   end
 
-  post "/choice" do
-    session[:player_choice] = params[:player_choice]
-    session[:bot_choice] = Bot.new.choose
+  post "/choose" do
+    session[:game].choose(params[:player_choice])
     redirect "/play"
   end
 
   get "/play" do
-    @player_name = session[:player_name]
-    @player_choice = session[:player_choice]
-    @bot_choice = session[:bot_choice]
+    @game = session[:game]
     erb :play
   end
 

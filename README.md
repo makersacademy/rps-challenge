@@ -1,5 +1,14 @@
 # RPS Challenge
 
+Steps
+----
+
+- I initialized the project and gave the user, the possibility to display its name and start a game.
+- I made possible for the user to select: ROCK, PAPER or SCISSORS and to display its choice.
+- I created a class that takes care of generating a random choice for the bot.
+- I stubbed the test checking that the randomize bot choice appears correctly on the "/play" page.
+- 
+
 Task
 ----
 

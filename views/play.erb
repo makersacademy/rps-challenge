@@ -1,12 +1,17 @@
-<h1>Welcome <%= @player_name %>!</h1>
+<h1>Welcome <%= @game.human.name %>!</h1>
 <br>
-<h2>Make you choice:</h2>
-<form action="/choice" method="post">
-  <input type="submit" value="ROCK" name="player_choice">
-  <input type="submit" value="PAPER" name="player_choice">
-  <input type="submit" value="SCISSORS" name="player_choice">
+<h2>Make your choice:</h2>
+<form action="/choose" method="post">
+  <% Player::CHOICES.each.with_index do |choice, i| %>
+    <button name="player_choice" value="<%= i %>" type="submit">
+      <%= choice %>
+    </button>
+  <% end %>
 </form>
 <br>
 <br>
-<h3><%= @player_name %> chooses <%= @player_choice %>!<h3>
-<h3>Computer chooses <%= @bot_choice %>!<h3>
+<% if @game.finished? %>
+<h3><%= @game.human.name %> chooses <%= @game.human.choice %>!<h3>
+<h3><%= @game.bot.name %> chooses <%= @game.bot.choice %>!<h3>
+<%= @game.winner %>
+<% end %>

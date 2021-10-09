@@ -7,13 +7,10 @@ feature "let player choose" do
   end
 
   scenario "bot choose paper" do
-    bot = Bot.new
-    allow(bot).to receive(:rand).and_return(1)
-    allow(Bot).to receive(:new).and_return(bot)
-
+    allow(Player::CHOICES).to receive(:sample).and_return("PAPER")
     sign_in_and_play
     click_button "ROCK"
-    expect(page).to have_content "Computer chooses PAPER!"
-    expect(page).not_to have_content "Computer chooses!"
+    expect(page).to have_content "Bot chooses PAPER!"
+    expect(page).not_to have_content "Bot chooses!"
   end
 end
