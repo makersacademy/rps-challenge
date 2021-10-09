@@ -1,13 +1,7 @@
 class User
+  attr_accessor :name, :points
   def initialize(name)
     @name = name
-  end
-
-  def self.create(name)
-    @user = User.new(name)
-  end
-
-  def self.instance
-    @user
+    @points = 0
   end
 end
