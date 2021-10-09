@@ -21,16 +21,16 @@ class Game
     :scissors => {:rock => :lose, :paper => :win, :scissors => :draw}
   }
   
-    attr_reader :players
+    attr_reader :player_1, :player_2
   
     def initialize(player_1, player_2)
       @player_1 = player_1
       @player_2 = player_2
     end
 
-    def result
-      RULES[@player_1.weapon][@player_2.weapon]
+    def result(p1_choice, p2_choice)
+      RULES[@player_1.weapon(p1_choice)][p2_choice]
     end
-  
+
   
   end

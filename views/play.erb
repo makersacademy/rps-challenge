@@ -1,2 +1,14 @@
 <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
 <br><br>
+Choose rock, paper or scissors!
+<br><br>
+
+<form action='/attack' method='get'>
+  <label for='player_1_choice'>
+    Your choice:
+    <input type='text' name='player_1_choice'>
+  </label> 
+<br><br>
+ 
+  <input type='submit' value='Choice'>
+</form>

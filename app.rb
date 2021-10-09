@@ -32,5 +32,20 @@ class BookmarkManager < Sinatra::Base
     erb :play
   end
 
+  get '/attack' do
+    @p1_weapon = params[:player_1_choice]
+    @p2_weapon = @game.player_2.weapon_select
+    
+    if @p1_weapon == @p2_weapon.to_s
+      @result = "tied with the opponent" 
+    else
+      @result = @game.result(@p1_weapon, @p2_weapon)
+    end
+
+    erb :attack
+  end
+
+
+
   run! if app_file == $0
 end
