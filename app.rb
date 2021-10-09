@@ -22,6 +22,13 @@ class RPS < Sinatra::Base
     erb(:play)
   end
   
+  post '/play' do
+    @game = Game.instance
+    @game.player_turn(params[:choice])
+    @game.computer_turn
+    redirect '/play'
+  end
+
   run! if app_file == $0
 
 end

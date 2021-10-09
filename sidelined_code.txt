@@ -1,3 +1,4 @@
+
 <%= @game.player_1 %> vs. the computer
 <br>
 <%= @game.player_1 %>, make your choice below
@@ -15,11 +16,7 @@
 </form>
 <% else %>
 <!-- SHOW RESULT OF PREVIOUS -->
-<%= @game.player_1 %> chose <%= @game.player_choice %> 
-<br>
-Computer chose <%= @game.computer_choice %> 
-<br>
-<%= @game.outcome %>
+<% @game.outcome %>
 <!-- AND -->
 <!-- SHOW BUTTON SELECTION, html code -->
 <form action="/play" method="post">

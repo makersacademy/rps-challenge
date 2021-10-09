@@ -7,7 +7,7 @@ require './lib/judge'
 class Game
   attr_reader :player_1, :player_choice, :computer_choice
 
-  def initialize(player_1, computer = Computer, _judge = Judge)
+  def initialize(player_1, computer = Computer)
     @player_1 = player_1
     @computer = computer.new
     @player_choice = nil
@@ -22,9 +22,9 @@ class Game
     @game
   end
 
-  def player_turn
+  def player_turn(choice)
     print_message
-    @player_choice = gets.chomp
+    @player_choice = choice
   end
 
   def print_message
@@ -36,7 +36,7 @@ class Game
   end
 
   def outcome
-    judge = judge.new(@player_choice, @computer_choice)
-    judge.winner
+    judge = Judge.new(@player_choice, @computer_choice)
+    p judge.winner
   end
 end
