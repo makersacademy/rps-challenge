@@ -84,3 +84,6 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+
+"Enter: Rock, Paper or Scissors"
