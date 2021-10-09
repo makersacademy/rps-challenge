@@ -15,6 +15,15 @@ class RPS < Sinatra::Base
     erb :options
   end
 
+  get '/result' do 
+    erb :result
+  end
+
+  post '/result' do
+    @player_1_option = params[:player_1_option]
+    erb :result
+  end
+
   run! if app_file == $0
 end
 
