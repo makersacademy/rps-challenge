@@ -6,6 +6,14 @@ class Game
     @player_choice = player_choice
   end
 
+  def self.create(player_choice)
+    @game = new(player_choice)
+  end
+
+  def self.instance
+    @game
+  end
+
   def play
     combinations = { "Scissors" => "Paper", "Paper" => "Rock", "Rock" => "Scissors" }
     if @player_choice == @computer_choice
@@ -16,6 +24,8 @@ class Game
       "Computer won!"
     end
   end
+
+  private
 
   def choice
     ["Rock", "Paper", "Scissors"].sample

@@ -23,8 +23,9 @@ class Rps < Sinatra::Base
     erb :play
   end
   
-  post '/play_again' do
+  post '/play_round' do
     session[:button] = params[:button]
+    @game = Game.create(session[:button])
     redirect '/result'
   end
 
