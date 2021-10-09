@@ -1,0 +1,19 @@
+Round <%= @game.current_round %><br>
+
+<%= @game.p1.name %>: <%= @game.p1.points %><br>
+<%= @game.p2.name %>: <%= @game.p2.points %><br>
+
+<%= @game.current_turn.name %>'s turn<br>
+
+<form action="<%= @game.post(@game.current_turn)%>" method="post">
+  <input type="radio" value="rock" id="rock-id" name="hand">
+  <label for="rock-id">rock</label>
+
+  <input type="radio" value="paper" id="paper-id" name="hand">
+  <label for="paper-id">paper</label>
+
+  <input type="radio" value="scissors" id="scissors-id" name="hand">
+  <label for="scissors-id">scissors</label>
+
+  <input type="submit" value="submit">
+</form>
