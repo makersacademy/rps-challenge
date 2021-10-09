@@ -2,7 +2,8 @@ require 'capybara/rspec'
 require 'capybara'
 require 'simplecov'
 require 'simplecov-console'
-require_relative '../app.rb'
+require_relative '../app'
+require 'features/web_helpers'
 
 Capybara.app = RockPaperScissors
 

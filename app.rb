@@ -7,7 +7,6 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get ('/') do
-    # "Welcome to Rock Paper Scissors!"
     erb :index
   end
 
@@ -20,6 +19,18 @@ class RockPaperScissors < Sinatra::Base
   get ('/game') do
     @player_name = session[:player_name]
     erb :game
+  end
+
+  post ('/move') do
+    session[:move] = params[:move]
+    # @player_move = session
+    p params
+    redirect to ('/result')
+  end
+
+  get ('/result') do
+    @player_move = session[:move]
+    erb :result
   end
 
   run! if app_file == $0
