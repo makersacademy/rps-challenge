@@ -8,20 +8,15 @@ class Game
     @game
   end
   
-  # ^^ Class methods, not a Class instance methods like below.
-  # Game.new is a method on the class Game
-  # Game.new.instance goes out of scope when response is sent
-  # Game.instance stays in scope
-  
   WEAPONS = [:rock, :paper, :scissors]
 
   RULES = {
     :rock     => {:rock => :draw, :paper => :lose, :scissors => :win},
     :paper    => {:rock => :win, :paper => :draw, :scissors => :lose},
     :scissors => {:rock => :lose, :paper => :win, :scissors => :draw}
-  }
+    }
   
-    attr_reader :player_1, :player_2
+  attr_reader :player_1, :player_2
   
     def initialize(player_1, player_2)
       @player_1 = player_1
