@@ -1,11 +1,6 @@
-Round <%= @game.current_round %><br>
+<%= @game.user.name %><br>
 
-<%= @game.p1.name %>: <%= @game.p1.points %><br>
-<%= @game.p2.name %>: <%= @game.p2.points %><br>
-
-<%= @game.current_turn.name %>'s turn<br>
-
-<form action="<%= @game.post(@game.current_turn)%>" method="post">
+<form action="results" method="post">
   <input type="radio" value="rock" id="rock-id" name="hand">
   <label for="rock-id">rock</label>
 
