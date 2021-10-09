@@ -2,8 +2,6 @@
 
 I started with a sequence diagram which I refined towards the end to the following:
 
-![](https://i.imgur.com/YPckZ1y.jpg)
-
 ![](./sequence_diagram.jpg)
 
 
