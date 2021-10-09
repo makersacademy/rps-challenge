@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/classic_game'
 
 class RockPaperScissors < Sinatra::Base
   
@@ -14,17 +15,22 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    session[:player] = Player.new(params[:name])
     redirect '/start'
   end
 
   get '/start' do
-    @name = session[:name]
+    @name = session[:player].name
     erb :start
   end
 
+  post '/create_classic' do
+    session[:game] = ClassicGame.new(session[:player])
+    redirect '/classic'
+  end
+
   get '/classic' do
-    @name = session[:name]
+    @name = session[:player].name
     erb :classic
   end
 
