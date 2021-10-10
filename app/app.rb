@@ -35,12 +35,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
-    session[:rps_select] = params[:rps_select]
+    game = session[:game]
+    game.move(params[:rps_select])
+    game.ai_move
     redirect '/result'
   end
 
   get '/result' do
-    @rps_selection = session[:rps_select]
+    game = session[:game]
+    @p_selection = game.p_turn
+    @ai_selection = game.ai_turn
+    @result = game.result
     erb :result
   end
 

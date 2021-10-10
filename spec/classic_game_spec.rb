@@ -42,6 +42,10 @@ describe ClassicGame do
     it "fails if no input" do
       expect { game.result }.to raise_error "turns not completed"
     end
+
+    let(:win) { "You win!" }
+    let(:lose) { "I win!" }
+    let(:draw) { "It's a draw!" }
   
     describe '.wins' do
       it "returns win if PvR" do
@@ -49,7 +53,7 @@ describe ClassicGame do
 
         game.move("Paper")
         game.ai_move
-        expect(game.result).to eq player_one
+        expect(game.result).to eq win
       end
 
       it "returns win if RvS" do
@@ -57,7 +61,7 @@ describe ClassicGame do
 
         game.move("Rock")
         game.ai_move
-        expect(game.result).to eq player_one
+        expect(game.result).to eq win
       end
 
       it "returns win if SvP" do
@@ -65,7 +69,7 @@ describe ClassicGame do
 
         game.move("Scissors")
         game.ai_move
-        expect(game.result).to eq player_one
+        expect(game.result).to eq win
       end
     end 
 
@@ -75,7 +79,7 @@ describe ClassicGame do
 
         game.move("Paper")
         game.ai_move
-        expect(game.result).to eq player_two
+        expect(game.result).to eq lose
       end
 
       it "returns lose if RvP" do
@@ -83,7 +87,7 @@ describe ClassicGame do
 
         game.move("Rock")
         game.ai_move
-        expect(game.result).to eq player_two
+        expect(game.result).to eq lose
       end
 
       it "returns lose if SvR" do
@@ -91,7 +95,7 @@ describe ClassicGame do
 
         game.move("Scissors")
         game.ai_move
-        expect(game.result).to eq player_two
+        expect(game.result).to eq lose
       end
     end 
 
@@ -101,7 +105,7 @@ describe ClassicGame do
 
         game.move("Paper")
         game.ai_move
-        expect(game.result).to eq 0
+        expect(game.result).to eq draw
       end
 
       it "returns lose if RvR" do
@@ -109,7 +113,7 @@ describe ClassicGame do
 
         game.move("Rock")
         game.ai_move
-        expect(game.result).to eq 0
+        expect(game.result).to eq draw
       end
 
       it "returns lose if SvS" do
@@ -117,7 +121,7 @@ describe ClassicGame do
 
         game.move("Scissors")
         game.ai_move
-        expect(game.result).to eq 0
+        expect(game.result).to eq draw
       end
     end 
   end

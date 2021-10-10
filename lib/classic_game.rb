@@ -2,7 +2,7 @@ require_relative 'player'
 
 class ClassicGame
 
-  attr_reader :player
+  attr_reader :player, :p_turn, :ai_turn
 
   def initialize(player = Player.new('PLAYER ONE'), player_two = Player.new('COMPUTER'))
     @player = player
@@ -11,28 +11,28 @@ class ClassicGame
 
   def move(input)
     fail "invalid move" unless valid_move(input)
-    @p_move = input
+    @p_turn = input
   end
 
   def ai_move
     case random_number
     when 1
-      @ai_move = "Rock"
+      @ai_turn = "Rock"
     when 2
-      @ai_move = "Paper"
+      @ai_turn = "Paper"
     when 3
-      @ai_move = "Scissors"
+      @ai_turn = "Scissors"
     end
   end
 
   def result
-    raise "turns not completed" if @p_move.nil? || @ai_move.nil?
-    win_condition
+    raise "turns not completed" if @p_turn.nil? || @ai_turn.nil?
+    score_counter
   end
 
   def reset
-    @p_move = nil
-    @ai_move = nil
+    @p_turn = nil
+    @ai_turn = nil
   end
 
   private
@@ -47,13 +47,23 @@ class ClassicGame
   end
 
   def win_condition
-    return 0 if @p_move == @ai_move
-    if @p_move == "Rock"
-      @ai_move == "Paper" ? @player_two : @player
-    elsif @p_move == "Scissors"
-      @ai_move == "Rock" ? @player_two : @player
+    return 0 if @p_turn == @ai_turn
+    if @p_turn == "Rock"
+      @ai_turn == "Paper" ? @player_two : @player
+    elsif @p_turn == "Scissors"
+      @ai_turn == "Rock" ? @player_two : @player
     else
-      @ai_move == "Scissors" ? @player_two : @player
+      @ai_turn == "Scissors" ? @player_two : @player
+    end
+  end
+
+  def score_counter
+    if win_condition == @player
+      "You win!"
+    elsif win_condition == @player_two
+      "I win!"
+    else
+      "It's a draw!"
     end
   end
 end
