@@ -6,6 +6,7 @@ This program lets the user:
 - enter a name
 - play **Rock Paper Scissors** against a **Computer** 
 - see their result and play again
+- change user name
 
 ---------
 === Approach ===
