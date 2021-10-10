@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/player.rb'
+require './lib/player'
+require './lib/game'
+require './lib/result'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -17,18 +19,25 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    player1 = Player.new(params[:player_name])
-    computer = Player.new(computer)
+    player1 = Player.new(params[:player_name].to_s)
+    computer = Player.new("Computer")
     @game = Game.create(player1, computer)
     redirect '/play'
   end
 
   get '/play' do
-    @game.player1.pick_action(params[:player_choice])
-    @game.player2.pick_action
     erb :play
   end
 
-  get '/result' do
+  post '/decide-winner' do
+    @game.player1.pick_action(params[:player_action])
+    @game.player2.pick_action
+    redirect '/result'
   end
+
+  get '/result' do
+    erb :result
+  end
+
+  run! if app_file == $0
 end

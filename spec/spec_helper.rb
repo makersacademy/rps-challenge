@@ -9,7 +9,6 @@ require 'feature/web_helpers'
 
 Capybara.app = RockPaperScissors
 
-
 RSpec.configure do |config|
   config.after(:suite) do
     puts

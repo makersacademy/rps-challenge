@@ -16,7 +16,7 @@ class Game
 
   def winner
     if @player1.action == @player2.action
-      "tie"
+      "draw"
     elsif @player1.action == "rock" && @player2.action == "scissors"
       @player1
     elsif @player1.action == "scissors" && @player2.action == "paper"
