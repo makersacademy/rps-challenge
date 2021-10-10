@@ -24,20 +24,20 @@ describe Game do
 
   describe '#winner' do
     before do
-      allow(gianluigi).to receive(:action).and_return("rock")
+      allow(gianluigi).to receive(:action).and_return("✊")
     end
     it "returns tie when a draw" do
-      allow(mario).to receive(:action).and_return("rock")
+      allow(mario).to receive(:action).and_return("✊")
       expect(game.winner).to eq "draw"
     end
 
     it "returns player 1 when they win" do
-      allow(mario).to receive(:action).and_return("scissors")
+      allow(mario).to receive(:action).and_return("✌")
       expect(game.winner).to eq gianluigi
     end
 
     it "returns player 2 when they win" do
-      allow(mario).to receive(:action).and_return("paper")
+      allow(mario).to receive(:action).and_return("🖐️")
       expect(game.winner).to eq mario
     end
   end

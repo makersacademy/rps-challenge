@@ -9,6 +9,6 @@ class Player
   end
 
   def select_random
-    ["rock", "paper", "scissors"].sample
+    ["✊", "🖐️", "✌"].sample
   end
 end

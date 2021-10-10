@@ -17,11 +17,11 @@ class Game
   def winner
     if @player1.action == @player2.action
       "draw"
-    elsif @player1.action == "rock" && @player2.action == "scissors"
+    elsif @player1.action == "✊" && @player2.action == "✌"
       @player1
-    elsif @player1.action == "scissors" && @player2.action == "paper"
+    elsif @player1.action == "✌" && @player2.action == "🖐️"
       @player1
-    elsif @player1.action == "paper" && @player2.action == "rock"
+    elsif @player1.action == "🖐️" && @player2.action == "✊"
       @player1
     else
       @player2

@@ -26,21 +26,15 @@
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Make your choice!</span>
+              <span class="padding-bottom--15 ">Make your choice!</span>
               <form id="play_game" action="/decide-winner" method="post">
                 <div class="field padding-bottom--24">
-<%#               <div id="icons">
-                    <div>
-                      <label for="rock">✊</label>
-                      <input type="radio" id="rock" name="rock">
-                      <label for="paper">🖐️</label>
-                      <input class = "radio-paper"  type="radio" id="paper" name="paper">
-                      <label for="scissors">✌</label>
-                      <input type="radio" id="scissors" name="scissors"> <!-- put the radio buttons here -->
+              <div id="icons">
+                    <div class="radio-toolbar">
+                      <input type="radio" id="rock" name="player_action" value="✊"><label for="rock">✊</label>
+                      <input type="radio" id="paper" name="player_action" value ="🖐️"><label for="paper">🖐️</label>
+                      <input type="radio" id="scissors" name="player_action" value="✌"><label for="scissors">✌</label>
                     </div>
-                  </div> %>
-                  <input type="text" name="player_action">
-                </div>
                 <div class="field padding-bottom--24">
                   <input type="submit" name="submit" value="Continue">
                 </div>

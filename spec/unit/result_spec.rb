@@ -11,7 +11,7 @@ describe Result do
     allow(game).to receive(:player2).and_return(mario)
     allow(gianluigi).to receive(:name).and_return("Gianluigi")
     allow(mario).to receive(:name).and_return("Mario")
-    allow(mario).to receive(:action).and_return("scissors")
+    allow(mario).to receive(:action).and_return("✌")
   end
 
   context "player1 wins" do
@@ -26,7 +26,7 @@ describe Result do
     end
 
     it "returns player 1 winning string if player 1 wins" do
-      expect(subject.result_string).to eq "You won Gianluigi, Mario chose scissors"
+      expect(subject.result_string).to eq "You won Gianluigi, Mario chose ✌"
     end
   end
 
@@ -42,7 +42,7 @@ describe Result do
     end
 
     it "returns player 2 winning string if player 2 wins" do
-      expect(subject.result_string).to eq "Mario chose scissors so you lose, Gianluigi"
+      expect(subject.result_string).to eq "Mario chose ✌ so you lose, Gianluigi"
     end
   end
 
@@ -58,7 +58,8 @@ describe Result do
     end
 
     it "shows 'it's a draw' string if neither player 1 nor player 2 wins" do
-      expect(subject.result_string).to eq "It's a draw, you both chose scissors"
+      expect(subject.result_string).to eq "It's a draw, you both chose ✌"
     end
   end
 end
+

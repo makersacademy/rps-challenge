@@ -36,6 +36,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    @result = Result.new(@game)
     erb :result
   end
 
