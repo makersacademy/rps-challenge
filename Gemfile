@@ -5,6 +5,8 @@ ruby '3.0.2'
 group :test do
   gem 'capybara'
   gem 'rspec'
+  gem 'simplecov', require: false, group: :test
+  gem 'simplecov-console', require: false, group: :test
 end
 
 group :development, :test do

@@ -41,4 +41,18 @@ describe Game do
       expect(game.winner).to eq mario
     end
   end
+
+  context "testing variations of #winner to ensure complete unit code coverage" do
+    it "returns player 1 when player 1 beats player 2 with paper" do
+      allow(mario).to receive(:action).and_return("✊")
+      allow(gianluigi).to receive(:action).and_return("🖐️")
+      expect(game.winner).to eq gianluigi
+    end
+    
+    it "returns player 1 when player 2 beats player 2 with scissors" do
+      allow(gianluigi).to receive(:action).and_return("✌")
+      allow(mario).to receive(:action).and_return("🖐️")
+      expect(game.winner).to eq gianluigi
+    end
+  end
 end

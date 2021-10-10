@@ -15,4 +15,10 @@ describe Player do
       expect(buffon.action).to eq :rock
     end
   end
+
+  describe "#select random" do
+    it "should return a random selection of rock, paper, or scissors" do
+      expect(buffon.pick_action).to eq buffon.action
+    end
+  end
 end

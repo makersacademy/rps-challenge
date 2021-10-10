@@ -8,6 +8,8 @@ class Player
     @action = action
   end
 
+  private
+
   def select_random
     ["✊", "🖐️", "✌"].sample
   end
