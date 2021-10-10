@@ -9,3 +9,11 @@ if (document.querySelector('input[type="radio"]')) {
     });
   });
 }
+
+if (document.querySelector('input[type="text"]')) {
+  document.querySelectorAll('input[type="text"]').forEach((elem) => {
+    elem.addEventListener("change", function(event) {
+      $("#name-submit").addClass('shoot_shake');
+    });
+  });
+}
