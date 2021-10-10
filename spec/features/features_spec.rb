@@ -30,7 +30,7 @@ feature RPSController do
     enter_name_and_submit
     choose "rock"
     click_button "submit"
-    expect(page).to_not have_button "submit"
+    expect(page).to have_button "submit"
       
   end
 
