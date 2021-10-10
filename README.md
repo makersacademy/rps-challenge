@@ -1,4 +1,18 @@
-# RPS Challenge
+# Rock Paper Scissors
+
+### setup
+
+- git clone this repository
+- then type in terminal:
+- `cd rps-challenge`
+- `bundle install`
+
+### run
+
+type: `rackup`
+
+
+## RPS Challenge
 
 Instructions
 -------

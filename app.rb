@@ -2,6 +2,8 @@
 
 require 'sinatra'
 require 'sinatra/reloader'
+require './lib/computer'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -33,9 +35,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    @player_name = session[:name]
     @user_choice = session[:gesture]
+    @computer_choice = Computer.new.random_gesture
 
-    erb :result
+    erb Game.new.result(@user_choice.to_sym, @computer_choice.to_sym)
   end
 
   run! if app_file == $0
