@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+<h1>Welcome <%= @game.human.name %>!</h1>
+<img class="rps-img" src="./images/rps.png">
+<h2>Make your choice:</h2>
+<form action="/choose" method="post">
+  <% Player::CHOICES.each.with_index do |choice, i| %>
+    <button class="button" name="player_choice" value="<%= i %>" type="submit">
+      <%= choice %>
+    </button>
+  <% end %>
+</form>
+<% if @game.finished? %>
+<h3><%= @game.human.name %> chooses <%= @game.human.choice %>!<h3>
+<h3><%= @game.bot.name %> chooses <%= @game.bot.choice %>!<h3>
+<p class="winner"><%= @game.winner %></p>
+<% end %>
+</body>
+</html>
