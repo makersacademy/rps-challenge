@@ -1,3 +1,18 @@
+## Approach
+
+* Read through the two user stories
+* Created a model of the classes and methods required
+* Used the singleton method on the player class to make attributes available
+* Borrowed some of the code from the Battle challenge
+* Ran rubocop before each git commit to keep the code clean
+* Added some CSS to make it look nicer
+
+## Thoughts
+* I'm happy with how this turned out but I know adding multiplayer and the other game types would have led to a lot more complexity
+
+## Outstanding issues
+* Did not attempt multiplayer or addition game type
+
 # RPS Challenge
 
 Instructions
