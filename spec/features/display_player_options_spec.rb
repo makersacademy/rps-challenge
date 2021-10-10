@@ -1,7 +1,6 @@
 
 feature "Options" do 
 
-
   scenario "player wants to make a move" do 
     sign_up_play
     expect(page.find_by_id('rock').value).to have_content 'Rock'

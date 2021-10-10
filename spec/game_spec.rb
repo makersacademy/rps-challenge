@@ -21,15 +21,14 @@ describe Game do
   end 
 
   describe '.turn' do 
-=begin
-    it 'should set off player.set_move' do 
-      expect(rooney).to receive(:set_move).with('rock')
-      subject.turn('rock', rooney, cpu)
-    end 
-=end
     it 'should add a point to cpu_score if cpu wins' do 
       subject.turn('rock', rooney, cpu)
       expect(subject.cpu_score).to eq(1)
+    end
+
+    it 'should add a point to player_score if player wins' do 
+      subject.turn('scissors', rooney, cpu)
+      expect(subject.player_score).to eq(1)
     end
   end 
 end 
