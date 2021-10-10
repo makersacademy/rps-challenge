@@ -46,6 +46,14 @@ PLAYER ONE: rock, COMPUTER: paper
 ```
 In this sample ```game.result``` prints out the Player/Computer choices in the terminal.  I have done this so that we can see the computer's choice, because ```c1.weapon_select``` is random.  But the final code does not print out Player/Computer choices in the terminal.  It only returns the result :win, :lose or :draw.  Instead Player/Computer choices are displayed on the '/result' webpage.
 
+6. Images
+
+[rps1](https://imgur.com/nDcrpg5)
+
+[rps2](https://imgur.com/80lK0UN)
+
+[rps3](https://imgur.com/pFyQ5kWm)
+
 **Improvements that are possible**
 
 * Make webpage attractive
