@@ -21,6 +21,7 @@ class RPS < Sinatra::Base
 
   post '/result' do
     @player_1_option = params[:player_1_option]
+    @bot_option = ["Rock", "Paper", "Scissors"]
     erb :result
   end
 
