@@ -1,15 +1,14 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(player1, player2) }
-  let(:player1) { double("Player1") }
-  let(:player2) { double("Player2") }
+  subject(:game) { described_class.new(player) }
+  let(:player) { double("Player") }
 
-  it 'stores the first player' do
-    expect(game.player1).to eq(player1)
+  it 'stores a player' do
+    expect(game.player).to eq(player)
   end
-  
-  it 'stores the second player' do
-    expect(game.player2).to eq(player2)
+
+  it 'determines the winner' do
+    expect(game.result("rock", "paper")).to eq("paper")
   end
 end

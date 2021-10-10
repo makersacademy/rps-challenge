@@ -1,21 +1,36 @@
+module Rules
+  def winner(player1_move, player2_move)
+    moves = {
+      "rock" => "scissors",
+      "paper" => "rock",
+      "scissors" => "paper"
+    }
+    return player1_move if moves[player1_move] == player2_move
+    return player2_move if moves[player2_move] == player1_move
+  end
+end
+
 class Game
-  def initialize(player1, player2)
-    @players = [player1, player2]
+  include Rules
+  attr_reader :player
+
+  def initialize(player)
+    @player = player
   end
 
-  def self.start(player1, player2 = nil)
-    @game = Game.new(player1, player2)
+  def self.start(player)
+    @game = Game.new(player)
   end
 
   def self.game
     @game
   end
 
-  def player1
-    @players.first
+  def result(player1_move, player2_move)
+    winner(player1_move, player2_move)
   end
 
-  def player2
-    @players.last
+  def winning_player
+    
   end
 end
