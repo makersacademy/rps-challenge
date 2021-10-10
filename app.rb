@@ -2,6 +2,12 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base
 
+  module TestHelper
+    def res
+      "win!"
+    end
+  end
+
   get '/' do
     erb :index
   end
@@ -21,9 +27,11 @@ class RPS < Sinatra::Base
 
   post '/result' do
     @player_1_option = params[:player_1_option]
-    @bot_option = ["Rock", "Paper", "Scissors"]
+    @option = ["Rock", "Paper", "Scissors"]
+    @bot_option = @option.sample
     erb :result
   end
+
 
   run! if app_file == $0
 end
