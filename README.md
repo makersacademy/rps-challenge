@@ -49,11 +49,11 @@ In this sample ```game.result``` prints out the Player/Computer choices in the t
 6. Images
 
 
-[![Imgur]<kbd>(https://imgur.com/nDcrpg5m.png)</kbd>
+![Img]<kbd><img src= "https://imgur.com/nDcrpg5" /></kbd>
 
-[![rps2](https://imgur.com/80lK0UNm.png)
+![rps2](https://imgur.com/80lK0UNm.png)
 
-[![rps3](https://imgur.com/pFyQ5kWm.png)
+![rps3](https://imgur.com/pFyQ5kWm.png)
 
 **Improvements that are possible**
 
