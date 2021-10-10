@@ -19,15 +19,15 @@ class Game
   def who_won(user_hand)
     comp_hand = @computer.hand
     @winner = if user_hand == comp_hand
-      'draw'
+      'we have a draw'
     else
       case user_hand
         when 'rock'
-          comp_hand == 'scissors' ? "user" : "computer"
+          comp_hand == 'scissors' ? "#{@user.name} wins!" : "Computer wins!"
         when 'paper'
-          comp_hand == 'rock' ? "user" : "computer"
+          comp_hand == 'rock' ? "#{@user.name} wins!" : "Computer wins!"
         when 'scissors'
-          comp_hand == 'paper' ? "user" : "computer"
+          comp_hand == 'paper' ? "#{@user.name} wins!" : "Computer wins!"
       end
     end
   end
