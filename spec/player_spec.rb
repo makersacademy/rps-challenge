@@ -14,5 +14,4 @@ describe Player do
   it "has a loss count" do
     expect(player.lose_count).to eq Player::STARTING_COUNTS
   end
-
 end
