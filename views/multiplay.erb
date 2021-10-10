@@ -3,7 +3,7 @@
 </div>
 <form action="multiresults" method="post" class="flex_col" id="options">
 
-  <div id="firstgo">
+  <div id="firstgo" class="flex_col">
     <h2><%= @game.user.name.capitalize%>'s turn</h2>
     <div class="flex_row">
       <input class="firstgo" type="radio" value="rock" id="rock-id" name="hand">
@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div id="secondgo">
+  <div id="secondgo" class="flex_col">
   <h2><%= @game.computer.name.capitalize%>'s turn</h2>
     <div class="flex_row">
       <input type="radio" value="rock" id="rock2-id" name="second">
