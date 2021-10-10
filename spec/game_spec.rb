@@ -2,11 +2,11 @@ require 'game'
 
 describe Game do 
 
-  subject(:game) {described_class.new(:rooney, :cpu)}
-  let(:rooney) {double :player}
-  before { allow(rooney).to receive(:set_move).and_return(:rock)}
-  let(:cpu) {double :cpu}
-  before { allow(cpu).to receive(:move).and_return(:paper)}
+  subject(:game) { described_class.new(:rooney, :cpu) }
+  let(:rooney) { double :player }
+  before { allow(rooney).to receive(:set_move).and_return(:rock) }
+  let(:cpu) { double :cpu }
+  before { allow(cpu).to receive(:move).and_return(:paper) }
 
   context '.player' do
     it 'should hold a player object' do 

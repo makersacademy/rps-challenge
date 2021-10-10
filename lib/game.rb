@@ -10,30 +10,24 @@ class Game
     @result = "Take a spin!"
   end 
 
-  def turn(turn, player = @player, cpu = @cpu)
+  def turn(turn, _player = @player, cpu = @cpu)
     @cpu_turn = computer_turn(cpu)
     if (turn.to_sym) == @cpu_turn
       @result = "#{@player.name} picked #{turn.to_sym}, CPU picked #{@cpu_turn}. Draw. Try again!"
     elsif @cpu_turn == winning_choice(turn.to_sym)
       add_points("cpu")
       @result = "#{@player.name} picked #{turn.to_sym}, CPU picked #{@cpu_turn}. CPU wins!!"
-    elsif #player.set_move(turn) == winning_choice(computer_turn(cpu))
-      add_points("player")
+    elsif add_points("player") # player.set_move(turn) == winning_choice(computer_turn(cpu))
       @result = "#{@player.name} picked #{turn.to_sym}, CPU picked #{@cpu_turn}. #{@player.name} wins!!"
     end
   end
 
   private
-=begin
-  def display(result)
-    "The result is #{result}"
-  end
-=end
+
   def winning_choice(players_go)
     index = [:scissors, :paper, :rock].index(players_go)
     winning_choice = [:scissors, :paper, :rock][index - 1]
   end 
-
 
   def computer_turn(cpu)
     cpu.move 

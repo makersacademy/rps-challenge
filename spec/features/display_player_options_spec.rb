@@ -1,4 +1,7 @@
+=begin
 feature "Options" do 
+
+
   scenario "player wants to make a move" do 
     visit ('/')
     fill_in :player_1_name, with: 'Ronaldo'
@@ -20,3 +23,4 @@ feature "Options" do
     expect(page).to have_content 'Scissors'
   end 
 end 
+=end

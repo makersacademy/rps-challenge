@@ -13,5 +13,5 @@ describe Computer do
     it 'should return either rock, paper or scissors' do 
       expect([:rock, :paper, :scissors].include? subject.move).to eq(true)
     end 
-end 
-end 
+  end 
+end

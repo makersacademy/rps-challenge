@@ -17,10 +17,10 @@ describe Player do
 
   describe '.set_move' do 
     it 'should return one of RPS as a symbol' do
-    expect(subject.set_move('rock')).to eq(:rock)
+      expect(subject.set_move('rock')).to eq(:rock)
     end 
     it 'should raise an error if trying to enter anything but RPS' do
-    expect{subject.set_move('cows')}.to raise_error("Please select a valid option")
+      expect { subject.set_move('cows') }.to raise_error("Please select a valid option")
     end 
   end
-end 
+end

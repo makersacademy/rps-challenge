@@ -7,9 +7,9 @@ feature 'Names' do
   end
 
   scenario 'user faces CPU' do 
-visit ('/')
+    visit ('/')
     fill_in :player_1_name, with: 'Ronaldo'
     click_button 'Go'    
     expect(page).to have_content 'CPU'
   end
-end 
+end
