@@ -19,6 +19,7 @@ $ bundle
 $ rackup
 ```
 rackup will launch app.rb and show the 4 digit port number (ex. 5678).  In your browser type in http://localhost:5678
+
 You will see the starting page
 
 === Approach ===
