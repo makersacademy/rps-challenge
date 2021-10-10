@@ -1,22 +1,22 @@
 require_relative 'rpscomputer'
 
 module Rules
+  MOVE_LIST = {
+    "rock" => "scissors",
+    "paper" => "rock",
+    "scissors" => "paper"
+  }
+
   def winning_move(move1, move2)
-    moves = {
-      "rock" => "scissors",
-      "paper" => "rock",
-      "scissors" => "paper"
-    }
-    return "draw" if move1 == move2
-    return move1 if moves[move1] == move2
-    return move2 if moves[move2] == move1
-    "FAIL"
+    return move1 if MOVE_LIST[move1] == move2
+    return move2 if MOVE_LIST[move2] == move1
+    "draw"
   end
 end
 
 class Game
   include Rules
-  attr_reader :player, :computer, :player_move, :computer_move
+  attr_reader :player, :player_move, :computer_move
 
   def initialize(player, computer = RPSComputer.new)
     @player = player
@@ -33,16 +33,17 @@ class Game
 
   def move(move)
     @player_move = move
-    @computer_move = @computer.move
-  end
-
-  def outcome
-    winning_move(@player_move, @computer_move)
+    @computer_move = @computer.move(MOVE_LIST.keys)
+    # computer move is saved here so the same random move can be shown in the view
   end
 
   def winner
-    return "Draw" if outcome == "draw"
-    return "You win" if @player_move == outcome
-    return "You lose" if @computer_move == outcome
+    winning_move(@player_move, @computer_move)
+  end
+
+  def result
+    return "You win" if winner == @player_move
+    return "You lose" if winner == @computer_move
+    "Draw"
   end
 end

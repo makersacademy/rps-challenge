@@ -7,6 +7,6 @@
 </form>
 
 <% if @game.player_move %>
-<h2> Your move <%= @game.player_move %>, Computer's move <%= @game.computer_move %> </h2>
-<h1> <%= @game.winner %>! </h1>
+<h2> Your move: <%= @game.player_move %>, Computer's move: <%= @game.computer_move %> </h2>
+<h1> <%= @game.result %>! </h1>
 <% end %>

@@ -1,5 +1,5 @@
 class RPSComputer
-  def move
-    ["rock", "paper", "scissors"].sample
+  def move(moves)
+    moves.sample
   end
 end
