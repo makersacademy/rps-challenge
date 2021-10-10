@@ -26,7 +26,7 @@
     }
 
     input[type="submit"]:hover {
-    border: 1px solid;
+    border: 2px solid;
     background: #D0D0D0;
     color: #500000;
 }
@@ -59,13 +59,13 @@
   <div> <%= @game.player.name %>: <%= @game.player_score%></div><div> CPU: <%=@game.cpu_score%></div><br>
   <div><%= @game.result %></div><br>
   <form method = "post" action="/rock">
-    <input type="submit" id="submit" name="rock" value="Rock"></input>
+    <input type="submit" id="rock" name="rock" value="Rock"></input>
   </form><br>
   <form method = "post" action="/paper">
-    <input type="submit" name="paper" value="Paper"></input>
+    <input type="submit" id="paper" name="paper" value="Paper"></input>
   </form><br>
   <form method = "post" action="/scissors">
-    <input type="submit" name="scissors" value="Scissors"></input>
+    <input type="submit" id="scissors" name="scissors" value="Scissors"></input>
   </form><br>
 </body>
 </html>

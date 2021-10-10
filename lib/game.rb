@@ -1,5 +1,5 @@
 class Game 
-  attr_reader :player, :cpu, :cpu_score, :player_score, :result, :cpu_turn
+  attr_reader :player, :cpu, :cpu_score, :player_score, :result#, :cpu_turn
 
   def initialize(player = Player.new, cpu = Computer.new)
     @player = player
@@ -17,7 +17,7 @@ class Game
     elsif @cpu_turn == winning_choice(turn.to_sym)
       add_points("cpu")
       @result = "#{@player.name} picked #{turn.to_sym}, CPU picked #{@cpu_turn}. CPU wins!!"
-    elsif add_points("player") # player.set_move(turn) == winning_choice(computer_turn(cpu))
+    else add_points("player") 
       @result = "#{@player.name} picked #{turn.to_sym}, CPU picked #{@cpu_turn}. #{@player.name} wins!!"
     end
   end

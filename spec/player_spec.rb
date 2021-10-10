@@ -1,6 +1,7 @@
 require 'player'
 
 describe Player do 
+=begin
   describe '.set_name' do 
     it 'should set the name instance variable to whatever its given' do
       subject.set_name("Rooney")
@@ -10,11 +11,12 @@ describe Player do
 
   context '.name' do 
     it 'should hold the players name as a string' do 
-      subject.set_name("Tevez")
-      expect(subject.name).to be_a String
+      game = Game.new(Player"Tevez")
+      expect(game.name).to be_a String
     end 
   end 
-
+=end
+=begin
   describe '.set_move' do 
     it 'should return one of RPS as a symbol' do
       expect(subject.set_move('rock')).to eq(:rock)
@@ -23,4 +25,5 @@ describe Player do
       expect { subject.set_move('cows') }.to raise_error("Please select a valid option")
     end 
   end
+=end 
 end

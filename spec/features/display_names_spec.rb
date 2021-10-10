@@ -1,15 +1,11 @@
 feature 'Names' do 
   scenario 'user enters their name on the home page, it should be displayed on play page' do
-    visit ('/')
-    fill_in :player_1_name, with: 'Ronaldo'
-    click_button 'Go'
+    sign_up_play
     expect(page).to have_content 'Ronaldo'
   end
 
   scenario 'user faces CPU' do 
-    visit ('/')
-    fill_in :player_1_name, with: 'Ronaldo'
-    click_button 'Go'    
+    sign_up_play   
     expect(page).to have_content 'CPU'
   end
 end
