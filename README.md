@@ -9,6 +9,18 @@ This program lets the user:
 - change user name
 
 ---------
+=== How to install ===
+---------
+In your terminal run the commands:
+```
+$ git clone https://github.com/jtc27/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+rackup will launch app.rb and show the 4 digit port number (ex. 5678).  In your browser type in http://localhost:5678
+You will see the starting page
+
 === Approach ===
 ---------
 1. I approached this the same way as the Battle challenge.  I created a directory outline with the lib, spec and views folders.
