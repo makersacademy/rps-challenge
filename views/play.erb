@@ -1,19 +1,18 @@
-<div class="flex_col" id="versus">
-  <h1><%= @game.user.name %></h1>
-  <h1>v</h1>
-  <h1>Computer</h1>
+<div class="flex_row" id="versus">
+  <h1><%= @game.user.name.capitalize%> v Computer</h1>
 </div>
 
 <form action="results" method="post" class="flex_col" id="options">
 <div class="flex_row">
   <input type="radio" value="rock" id="rock-id" name="hand">
-  <label for="rock-id">rock</label>
+  <label id="rock-label" for="rock-id">rock</label>
 
   <input type="radio" value="paper" id="paper-id" name="hand">
-  <label for="paper-id">paper</label>
+  <label id="paper-label" for="paper-id">paper</label>
 
   <input type="radio" value="scissors" id="scissors-id" name="hand">
-  <label for="scissors-id">scissors</label>
+  <label id="scissors-label" for="scissors-id">scissors</label>
 </div>
   <input type="submit" value="shoot">
 </form>
+
