@@ -7,9 +7,9 @@ This program lets the user:
 - play **Rock Paper Scissors** against a **Computer** 
 - see their result and play again
 
--------
-Approach
--------
+---------
+=== Approach ===
+---------
 1. I approached this the same way as the Battle challenge.  I created a directory outline with the lib, spec and views folders.
 
 2. The biggest blocker was creating a set of rules for RPS.  I wanted the rules to be orderly and readable, so I used [this hash](https://stackoverflow.com/questions/10923486/hw-impossibility-create-a-rock-paper-scissors-program-in-ruby-without-using-c)
@@ -52,7 +52,7 @@ In this sample ```game.result``` prints out the Player/Computer choices in the t
 ----
 
 
-**Improvements that are possible**
+**Improvements that are possible: **
 
 * Some refactoring of code between P1 and P2.  (String to symbol conversions)
 * Implement human 2 player option 
