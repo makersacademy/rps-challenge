@@ -70,5 +70,6 @@ In this sample code ```game.result``` prints out the Player/Computer choices in 
 
 * Some refactoring of code between P1 and P2.  (String to symbol conversions)
 * Implement human 2 player option 
+* Scorekeeping between P1 and P2
 * Improve app.rb tests
 * Incorporate better web coding so that 3 results pages (for wins, losses and draws) are not needed
