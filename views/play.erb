@@ -1,0 +1,11 @@
+<h1><%= Game.instance.players.first.name %> is Playing</h1>
+<h2>Select Move:</h>
+<form action="/player_choice" method='POST'>
+  <input type="radio" id="rock" name="player_choice" value="rock">
+  <label for="rock">Rock</label><br>
+  <input type="radio" id="paper" name="player_choice" value="paper">
+  <label for="css">Paper</label><br>
+  <input type="radio" id="scissors" name="player_choice" value="scissors">
+  <label for="javascript">Scissors</label>
+  <input type="submit" id="submit">
+</form>

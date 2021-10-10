@@ -25,7 +25,10 @@ class RPSController < Sinatra::Base
 
   get "/play" do
     @game = Game.instance
-    "#{Game.instance.players.first.name} is Playing"
+    erb(:play)
+  end
+
+  post "/player_choice" do
   end
 
   run! if app_file == $0
