@@ -15,8 +15,4 @@ class Judge
     end
   end
 
-  # def player_wins?
-  #   (@player_choice == "Rock" && @computer_choice == "Scissors") || (@player_choice == "Scissors" && @computer_choice == "Paper") || (@player_choice == "Paper" && @computer_choice == "Rock")
-  # end
-
 end
