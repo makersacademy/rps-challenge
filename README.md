@@ -50,12 +50,12 @@ In this sample ```game.result``` prints out the Player/Computer choices in the t
 
 ----
 ![rps1](https://imgur.com/nDcrpg5m.png)
-
-- This is my weekend challenge for Makers Academy week 3
 ----
-![rps2](https://imgur.com/80lK0UNm.png)
-
+![rps2](https://imgur.com/80lK0UNm.png) You can click on your name to change it 
+----
 ![rps3](https://imgur.com/pFyQ5kWm.png)
+
+----
 
 **Improvements that are possible**
 
