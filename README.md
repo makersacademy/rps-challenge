@@ -33,11 +33,11 @@ I would like to be able to play rock/paper/scissors
 
 Hints on functionality
 
-[x] the marketeer should be able to enter their name before the game
-[x] the marketeer will be presented the choices (rock, paper and scissors)
-[x] the marketeer can choose one option
-[x] the game will choose a random option
-[x] a winner will be declared
+- [x] the marketeer should be able to enter their name before the game
+- [x] the marketeer will be presented the choices (rock, paper and scissors)
+- [x] the marketeer can choose one option
+- [x] the game will choose a random option
+- [x] a winner will be declared
 
 What I have learned during this project  
 -----  
