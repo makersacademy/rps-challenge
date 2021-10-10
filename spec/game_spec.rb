@@ -2,7 +2,6 @@ require './lib/game'
 
 describe Game do
   let(:p1) { double :player }
-  let(:p2) { double :player }
 
   describe '#initialize' do
     it 'gets initialised with one player' do
@@ -27,23 +26,29 @@ describe Game do
 
   # this is not stubbing out the randomness currently!
   # xdescribe '#computer_turn' do
+  # let(:@computer) { double :@computer }
   #   it 'returns the game instance' do
   #     game = Game.create(p1)
-  #     allow(@computer).to receive(:choose) { "Rock" }
+  #     allow(@computer).to receive(:choose).and_return( "Rock" )
   #     expect(game.computer_turn).to eq "Rock"
   #   end
   # end
 
-  # issues with stubbing, distracting me from the actual task, re web technologies and servers
-  # xdescribe '#outcome' do
-  #   let(:Judge) { double :Judge }
-  #   let(:judge) { double :judge }
-  #   it 'returns a text outcome' do
-  #     game = Game.create(p1)
-  #     allow(Judge).to receive(:new).with(2) { judge }
-  #     allow(judge).to receive(:winner) { "Computer wins" }
-  #     expect(game.outcome).to eq "Computer wins"
-  #   end
-  # end
+  describe '#outcome' do
+    let(:judge) { double :judge }
+    it 'returns a text outcome' do
+      game = Game.create(p1)
+      allow(Judge).to receive(:new) { judge }
+      allow(judge).to receive(:winner) { "Computer wins" }
+      expect(game.outcome).to eq "Computer wins"
+    end
+  end
+
+  describe '#player_turn' do
+    it 'returns a text outcome' do
+      game = Game.create(p1)
+      expect(game.player_turn("Rock")).to eq "Rock"
+    end
+  end
 
 end

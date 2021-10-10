@@ -1,7 +1,5 @@
 <%= @game.player_1 %> vs. the computer
 <br>
-<%= @game.player_1 %>, make your choice below
-<br>
 <% if @game.player_choice.nil? %>
 <!-- SHOW BUTTON SELECTION, html code -->
 <form action="/play" method="post">
@@ -19,8 +17,10 @@
 <br>
 Computer chose <%= @game.computer_choice %> 
 <br>
-<%= @game.outcome %>
+Result: <%= @game.outcome %>
 <!-- AND -->
+<br>
+<%= @game.player_1 %>, make your choice below
 <!-- SHOW BUTTON SELECTION, html code -->
 <form action="/play" method="post">
   <input type="radio" id="rock" name="choice" value="Rock">

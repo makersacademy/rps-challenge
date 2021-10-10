@@ -28,7 +28,7 @@ class Game
   end
 
   def print_message
-    p "Enter Rock, Paper or Scissors"
+    "Enter Rock, Paper or Scissors"
   end
 
   def computer_turn
@@ -37,6 +37,6 @@ class Game
 
   def outcome
     judge = Judge.new(@player_choice, @computer_choice)
-    p judge.winner
+    judge.winner
   end
 end
