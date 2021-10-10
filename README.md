@@ -59,25 +59,28 @@ In this sample code ```game.result``` prints out the Player/Computer choices in 
 
 6. Simple webpage designs like ```.gifs``` were added.  While making these I wanted the '/result' webpage to display different images for wins, losses and draws.  But that seemed beyond my knowledge of Html and Java, so instead I created 3 different '/result' pages.  The 3 pages are nearly identical, but they have different pictures.  I know that repetitive code is not ideal, but it does serve my purpose here.
 
-7. Originally I had planned only 1 /result webpage.  I wanted to pass on the result (:win, :lose, :draw) and create custom messages in /result.  But after making 3 result pages, I had this code in ```app.rb```:
+7. The Game result has 3 possible outcomes (:win, :lose, :draw).  After making 3 result ```.erb``` pages, I had this code in ```app.rb```:
 
 ```
 get '/result' do
 ...
-if @result == :win
+  if @result == :win
       erb :result_win
-    if @result == :lose
+    elsif @result == :lose
       erb :result_loss
     else
       erb :result_draw
-    end
+  end
+end
 ```
-Then I changed the names of my ```.erb``` pages to match the symbols (:win, :lose, :draw).  My refactored ```app.rb``` is cleaner:
+Then I changed the names of my ```.erb``` pages to match the Game result symbols (:win, :lose, :draw).  My refactored ```app.rb``` is cleaner:
 
 ```
 get '/result' do
 ...
-erb @result
+  erb @result
+end
+
 ```
 
 
