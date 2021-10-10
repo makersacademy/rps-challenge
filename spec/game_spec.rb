@@ -5,14 +5,14 @@ require 'game'
 RSpec.describe Game do
   describe '#result' do
     context 'when both players draw' do
-      it 'returns that it is a draw' do
+      it 'returns draw symbol' do
         result = subject.result(:scissors, :scissors)
 
         expect(result).to eq :draw
       end
     end
     context 'when rock beats scissors' do
-      it 'returns player 1' do
+      it 'returns player_one symbol' do
         player_one = :rock
 
         result = subject.result(player_one, :scissors)
@@ -20,7 +20,7 @@ RSpec.describe Game do
         expect(result).to eq :player_one
       end
 
-      it 'returns player 2' do
+      it 'returns player_two symbol' do
         player_two = :rock
 
         result = subject.result(:scissors, player_two)
@@ -29,7 +29,7 @@ RSpec.describe Game do
       end
     end
     context 'when scissors beats paper' do
-      it 'returns player 1' do
+      it 'returns player_one symbol' do
         player_one = :scissors
 
         result = subject.result(player_one, :paper)
@@ -37,7 +37,7 @@ RSpec.describe Game do
         expect(result).to eq :player_one
       end
 
-      it 'returns player 2' do
+      it 'returns player_two symbol' do
         player_two = :scissors
 
         result = subject.result(:paper, player_two)
@@ -46,7 +46,7 @@ RSpec.describe Game do
       end
     end
     context 'when paper beats rock' do
-      it 'returns player 1' do
+      it 'returns player_one symbol' do
         player_one = :paper
 
         result = subject.result(player_one, :rock)
@@ -54,7 +54,7 @@ RSpec.describe Game do
         expect(result).to eq :player_one
       end
 
-      it 'returns player 2' do
+      it 'returns player_two symbol' do
         player_two = :paper
 
         result = subject.result(:rock, player_two)
