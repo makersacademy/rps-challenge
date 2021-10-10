@@ -3,7 +3,7 @@ This is the weekend challenge for the Makers Academy for week 3. It is a simple,
 
 ## To install
 - git clone "https://github.com/t-kellett/takeaway-challenge"
-- run `bundle install` (assuming you have bundler installed, and a recent version of Ruby - this is build in Ruby 3.0.2)
+- run `bundle install` (assuming you have bundler installed, and a recent version of Ruby - this is built in Ruby 3.0.0)
 - run `rackup`
 - in your web browser, visit `http://localhost:[THE PORT OPENED IN YOUR TERMINAL]` e.g. 9292
 
