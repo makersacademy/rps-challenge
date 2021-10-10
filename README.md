@@ -48,11 +48,11 @@ In this sample ```game.result``` prints out the Player/Computer choices in the t
 
 6. Images
 
-[rps1](https://imgur.com/nDcrpg5)
+![rps1](https://imgur.com/nDcrpg5)
 
-[rps2](https://imgur.com/80lK0UN)
+![rps2](https://imgur.com/80lK0UN)
 
-[rps3](https://imgur.com/pFyQ5kWm)
+![rps3](https://imgur.com/pFyQ5kWm)
 
 **Improvements that are possible**
 
