@@ -1,21 +1,26 @@
+require_relative 'rpscomputer'
+
 module Rules
-  def winner(player1_move, player2_move)
+  def winning_move(move1, move2)
     moves = {
       "rock" => "scissors",
       "paper" => "rock",
       "scissors" => "paper"
     }
-    return player1_move if moves[player1_move] == player2_move
-    return player2_move if moves[player2_move] == player1_move
+    return "draw" if move1 == move2
+    return move1 if moves[move1] == move2
+    return move2 if moves[move2] == move1
+    "FAIL"
   end
 end
 
 class Game
   include Rules
-  attr_reader :player
+  attr_reader :player, :computer, :player_move, :computer_move
 
-  def initialize(player)
+  def initialize(player, computer = RPSComputer.new)
     @player = player
+    @computer = computer
   end
 
   def self.start(player)
@@ -26,11 +31,18 @@ class Game
     @game
   end
 
-  def result(player1_move, player2_move)
-    winner(player1_move, player2_move)
+  def move(move)
+    @player_move = move
+    @computer_move = @computer.move
   end
 
-  def winning_player
-    
+  def outcome
+    winning_move(@player_move, @computer_move)
+  end
+
+  def winner
+    return "Draw" if outcome == "draw"
+    return "You win" if @player_move == outcome
+    return "You lose" if @computer_move == outcome
   end
 end

@@ -8,7 +8,11 @@ describe Game do
     expect(game.player).to eq(player)
   end
 
-  it 'determines the winner' do
-    expect(game.result("rock", "paper")).to eq("paper")
+  it 'determines the winning move' do
+    expect(game.winner("rock", "paper")).to eq("paper")
+  end
+
+  it 'declares a draw' do
+    expect(game.winner("rock", "rock")).to eq("draw")
   end
 end
