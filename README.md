@@ -1,7 +1,6 @@
 # RPS Challenge
 
-Task
-----
+## Task
 
 Knowing how to build web applications is getting us almost there as web developers!
 
@@ -26,6 +25,35 @@ Hints on functionality
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
+
+## How To Use The App
+
+### Web-based
+
+Directly playable at: https://rps-fun.herokuapp.com/
+
+### Local
+
+Clone the repo & cd into program directory
+
+```
+git clone git@github.com:s-palmer/rps-challenge.git
+```
+
+If you don't have bundler installed:
+```
+gem install bundler
+```
+Then run:
+```
+bundle install
+```
+Local server can be started by running:
+```
+rackup
+```
+The app should be usable at localhost:9292.
+
 
 ## Bonus level 1: Multiplayer
 
