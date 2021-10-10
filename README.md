@@ -7,10 +7,7 @@ This program lets the user:
 - play **Rock Paper Scissors** against a **Computer** 
 - see their result and play again
 
-
-----
-- This is my weekend challenge for Makers Academy week 3
-----
+-------
 Approach
 -------
 1. I approached this the same way as the Battle challenge.  I created a directory outline with the lib, spec and views folders.
