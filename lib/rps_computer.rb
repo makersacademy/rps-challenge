@@ -26,7 +26,6 @@ class RPSComputer
   end
 end
 
-
 # rock & rock - TIE
 # paper & paper - TIE
 # scissors & scissors - TIE
