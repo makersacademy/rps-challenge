@@ -66,7 +66,7 @@ In this sample code ```game.result``` prints out the Player/Computer choices in 
 ----
 
 
-**Improvements that are possible: **
+**Improvements that are possible**:
 
 * Some refactoring of code between P1 and P2.  (String to symbol conversions)
 * Implement human 2 player option 
