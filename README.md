@@ -18,9 +18,9 @@ $ cd rps-challenge
 $ bundle
 $ rackup
 ```
-rackup will launch app.rb and show the 4 digit port number (ex. port=5678).  In your browser type in http://localhost:5678
+rackup will launch app.rb and show the 4 digit port number (example: port=5678).  In your browser type in  that port number like this: http://localhost:5678
 
-You will see the starting page there
+In that address you will see the starting page of the RPS web app
 
 === Approach ===
 ---------
