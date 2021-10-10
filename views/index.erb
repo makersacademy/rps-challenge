@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  
+  body {
+    background-color: linen;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  input[type=text]:focus {
+  border: 3px solid #555;
+  background-color: lightblue
+}
+
+  input[type=submit] {
+	    padding:2px;
+	    width:60px;
+	    height:auto;
+      color: #500000;
+	    background:#eeeee4;
+	    border-radius:30px;
+  }
+
+  h1 {
+  margin-left: 40px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: #500000;
+  text-align: center
+  }
+</style>
+</head>
+<body>
+<h1>Enter player name</h1>
+  <form method="post" action="/names"> 
+    <input type="text" name="player_1_name" placeholder="Enter player name">
+    <input type="submit" value="Go">
+  </form>
+</body>
+</html>

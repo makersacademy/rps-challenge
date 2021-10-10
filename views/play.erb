@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <style>
+
+    body {
+      background-color: linen;
+    }
+
+  input[type=submit] {
+
+      text-align: center
+      margin:10% auto 0 auto;
+	    padding:30px;
+	    width:400px;
+	    height:auto;
+	    overflow:hidden;
+      color: #500000;
+      font-family: "Arial Black", Gadget, sans-serif;
+	    background:#eeeee4;
+	    border-radius:10px;
+    }
+
+    input[type="submit"]:hover {
+    border: 2px solid;
+    background: #D0D0D0;
+    color: #500000;
+}
+
+input[id="home"]{
+  color: #500000;
+  width:120px;
+	height:auto;
+  font-size: 18px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-right: auto;
+  text-align: center;
+  background-color: linen;
+  border: none
+
+  
+}
+
+    h1 {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #500000;
+    text-align: center
+    }
+
+    body {
+    color: navy;
+    margin-left: 40px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    text-align: center
+    }
+  </style>
+  <div>
+  <form method = "get" action="/">
+    <input type="submit" id="home" name="home" value="Home"></input>
+  </form><br>
+  </div>
+</head>
+<body>
+  <h1><%= @game.player.name%> vs CPU </h1>
+  <div> Player pick your move! </div><br>
+  <div> Scores </div>
+  <div> <%= @game.player.name %>: <%= @game.player_score%></div><div> CPU: <%=@game.cpu_score%></div><br>
+  <div><%= @game.result %></div><br>
+  <form method = "post" action="/rock">
+    <input type="submit" id="rock" name="rock" value="Rock"></input>
+  </form><br>
+  <form method = "post" action="/paper">
+    <input type="submit" id="paper" name="paper" value="Paper"></input>
+  </form><br>
+  <form method = "post" action="/scissors">
+    <input type="submit" id="scissors" name="scissors" value="Scissors"></input>
+  </form><br>
+</body>
+</html>
