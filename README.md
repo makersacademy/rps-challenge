@@ -53,6 +53,7 @@ What I would like to implement in the future
 
 * Win vs Loss counter
 * More attractive design
+* Extract move class from ClassicGame
 * Bonus level 1: Multiplayer functionality
 * Bonus level 2: RPSLS expansion (see below)
 
