@@ -49,7 +49,7 @@ In this sample ```game.result``` prints out the Player/Computer choices in the t
 6. Images
 
 ----
-![rps1](https://imgur.com/nDcrpg5m.png) (https://imgur.com/80lK0UNm.png)
+![rps1](https://imgur.com/nDcrpg5m.png) ![rps2](https://imgur.com/80lK0UNm.png)
 ----
 ![rps2](https://imgur.com/80lK0UNm.png) You can click on your name to change it 
 ----
