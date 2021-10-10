@@ -58,6 +58,6 @@ In this sample ```game.result``` prints out the Player/Computer choices in the t
 **Improvements that are possible**
 
 * Some refactoring of code between P1 and P2.  (String to symbol conversions)
-* Implement 2 player option 
+* Implement human 2 player option 
 * Improve app.rb tests
 * Incorporate better web coding so that 3 results pages (for wins, losses and draws) are not needed
