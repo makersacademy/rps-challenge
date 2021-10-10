@@ -3,7 +3,7 @@ class Game
     @players = [player1, player2]
   end
 
-  def self.start(player1, player2)
+  def self.start(player1, player2 = nil)
     @game = Game.new(player1, player2)
   end
 
