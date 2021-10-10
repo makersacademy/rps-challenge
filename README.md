@@ -1,7 +1,7 @@
 # Rock Paper Scissors Challenge - Week 2 Makers
 This is the weekend challenge for the Makers Academy for week 3. It is a simple, locally-hosted web app to play rock, paper, scissors against the computer.
 
-## To intall
+## To install
 - git clone "https://github.com/t-kellett/takeaway-challenge"
 - run `bundle install` (assuming you have bundler installed, and a recent version of Ruby - this is build in Ruby 3.0.2)
 - run `rackup`
