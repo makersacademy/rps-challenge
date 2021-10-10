@@ -17,3 +17,8 @@ if (document.querySelector('input[type="text"]')) {
     });
   });
 }
+
+$(".firstgo").click(function() {
+  $("#firstgo").addClass('hide_buttons');
+  $("#secondgo").addClass('show_buttons');
+    });

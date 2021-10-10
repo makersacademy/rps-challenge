@@ -1,0 +1,37 @@
+<div class="flex_row" id="versus">
+  <h1><%= @game.user.name.capitalize%> v <%= @game.computer.name.capitalize%></h1>
+</div>
+<form action="multiresults" method="post" class="flex_col" id="options">
+
+  <div id="firstgo">
+    <h2><%= @game.user.name.capitalize%>'s turn</h2>
+    <div class="flex_row">
+      <input class="firstgo" type="radio" value="rock" id="rock-id" name="hand">
+      <label id="rock-label" for="rock-id">rock</label>
+
+      <input class="firstgo"  type="radio" value="paper" id="paper-id" name="hand">
+      <label id="paper-label" for="paper-id">paper</label>
+
+      <input class="firstgo" type="radio" value="scissors" id="scissors-id" name="hand">
+      <label id="scissors-label" for="scissors-id">scissors</label>
+
+    </div>
+  </div>
+
+  <div id="secondgo">
+  <h2><%= @game.computer.name.capitalize%>'s turn</h2>
+    <div class="flex_row">
+      <input type="radio" value="rock" id="rock2-id" name="second">
+      <label id="rock2-label" for="rock2-id">rock</label>
+
+      <input type="radio" value="paper" id="paper2-id" name="second">
+      <label id="paper2-label" for="paper2-id">paper</label>
+
+      <input type="radio" value="scissors" id="scissors2-id" name="second">
+      <label id="scissors2-label" for="scissors2-id">scissors</label>
+    </div>
+      <input type="submit" value="shoot">
+  </div>
+
+</form>
+

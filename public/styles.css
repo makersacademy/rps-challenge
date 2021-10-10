@@ -270,3 +270,27 @@ input[type="radio"]:checked+label {
     transform: translate(0.3px, -0.6px) rotate(-1deg);
   }
 }
+
+#secondgo {
+  display: none;
+}
+
+.hide_buttons {
+  display: none !important;
+}
+
+.show_buttons {
+  display: flex !important;
+}
+
+#first_go_button {
+  display: inline-block;
+  font-size: 40px;
+  font-family: "coconut";
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 7px 7px 10px 5px;
+  line-height: 30px;
+  margin: 5px;
+  background-color: rgb(255, 236, 218);
+}

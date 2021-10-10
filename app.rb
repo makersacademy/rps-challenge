@@ -12,14 +12,37 @@ class RPS < Sinatra::Base
   end
 
   get '/' do
+    erb(:mode)
+  end
+
+  post '/mode' do
+    if params[:game_mode] == "singleplayer"
+      redirect '/index'
+    else
+      redirect '/multi'
+    end
+  end
+
+  get '/multi' do
+    erb(:multi)
+  end
+
+  get '/index' do
     erb(:index)
   end
 
-  post '/names' do
+  post '/singlename' do
     user = User.new(params[:username])
     computer = Computer.new
     @game = Game.create(user, computer)
     redirect '/play'
+  end
+
+  post '/multinames' do
+    user = User.new(params[:username])
+    player2 = User.new(params[:player2])
+    @game = Game.create(user, player2)
+    redirect '/multiplay'
   end
 
   before do
@@ -30,8 +53,17 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/multiplay' do
+    erb(:multiplay)
+  end
+
   post '/results' do
     @game.who_won(params[:hand])
+    redirect '/winner'
+  end
+
+  post '/multiresults' do
+    @game.multi_who_won(params[:hand], params[:second])
     redirect '/winner'
   end
 
