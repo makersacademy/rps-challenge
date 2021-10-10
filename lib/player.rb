@@ -3,6 +3,7 @@ class Player
     @name = name
     @choice = nil
     @bot = bot
+    @wins = 0
   end
 
   def name
@@ -23,6 +24,14 @@ class Player
 
   def assign_rand
     @choice = ['rock', 'paper', 'scissors'].sample
+  end
+
+  def add_win
+    @wins += 1
+  end
+
+  def wins
+    @wins
   end
 
 end

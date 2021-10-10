@@ -1,16 +1,32 @@
 <h1><%= @game.players.first.name %> is Playing</h1>
-<h2>Select Move:</h>
-<form action="/player_choice" method='POST'>
-  <input type="radio" id="rock" name="player_choice" value="rock">
-  <label for="rock">Rock</label><br>
-  <input type="radio" id="paper" name="player_choice" value="paper">
-  <label for="css">Paper</label><br>
-  <input type="radio" id="scissors" name="player_choice" value="scissors">
-  <label for="javascript">Scissors</label>
-  <input type="submit" id="submit">
-  <% if @game.players.first.choice %>
+
+<% unless @game.players.first.choice %>
+  <h2>Select Move:</h>
+    <form action="/player_choice" method='POST'>
+      <input type="radio" id="rock" name="player_choice" value="rock">
+      <label for="rock">Rock</label><br>
+      <input type="radio" id="paper" name="player_choice" value="paper">
+      <label for="css">Paper</label><br>
+      <input type="radio" id="scissors" name="player_choice" value="scissors">
+      <label for="javascript">Scissors</label>
+      
+      <input type="submit" id="submit">
+    </form>
+<% end %>
+<% if @game.players.first.choice && @game.players.last.bot? %>
     <h2><%= @game.players.first.name %> chose <%= @game.players.first.choice.capitalize %></h2>
     <% @game.players.last.assign_rand %>
     <h2> <%= @game.players.last.name %> chose  <%= @game.players.last.choice.capitalize %></h2>
+
+    <% @game.find_winner %>
+    <% if @game.winner %>
+      <h1><%=@game.winner.name%> Wins!</h1>
+      <% @game.winner.add_win %>
+    <% else %>
+      <h1>It's a Draw</h1>
     <% end %>
+  <% end %>
+
+  
+
 </form>

@@ -23,4 +23,9 @@ describe Player do
     
   end
 
+  it 'can have a win added to it' do
+    bernard.add_win
+    expect(bernard.wins).to eq 1
+  end
+
 end

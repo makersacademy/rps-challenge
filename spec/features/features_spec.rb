@@ -30,8 +30,12 @@ feature RPSController do
     enter_name_and_submit
     choose "rock"
     click_button "submit"
-    expect(page).to have_button "submit"
+    expect(page).not_to have_button "submit"
       
+  end
+
+  scenario "winner is shown" do
+    
   end
 
 end
