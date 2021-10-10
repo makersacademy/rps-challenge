@@ -13,7 +13,6 @@ class RockPaperScissors < Sinatra::Base
 
   post ('/name') do
     session[:player_name] = params[:name]
-    p params
     redirect to ('/game')
   end
   
@@ -24,8 +23,6 @@ class RockPaperScissors < Sinatra::Base
 
   post ('/move') do
     session[:move] = params[:move]
-    # @player_move = session
-    p params
     redirect to ('/result')
   end
 
