@@ -49,8 +49,9 @@ In this sample ```game.result``` prints out the Player/Computer choices in the t
 6. Images
 
 ----
-greagegfdgtf
 ![rps1](https://imgur.com/nDcrpg5m.png)
+
+- This is my weekend challenge for Makers Academy week 3
 ----
 ![rps2](https://imgur.com/80lK0UNm.png)
 
