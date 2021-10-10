@@ -46,7 +46,9 @@ PLAYER ONE: rock, COMPUTER: paper
 ```
 In this sample ```game.result``` prints out the Player/Computer choices in the terminal.  I have done this so that we can see the computer's choice, because ```c1.weapon_select``` is random.  But the final code does not print out Player/Computer choices in the terminal.  It only returns the result :win, :lose or :draw.  Instead Player/Computer choices are displayed on the '/result' webpage.
 
-6. Images
+6. Simple web designs like ```.gifs``` were added.  In this process I wanted the '/result' webpage to display different images for wins, losses and draws.  But that seemed beyond my knowledge of html and java, so instead I created 3 different '/result' pages.  The 3 pages are nearly identical, but they have different pictures.  I know that repetitive code is not ideal, but it does serve my purpose here.
+
+7. Images
 
 ----
 ![rps1](https://imgur.com/nDcrpg5m.png) ![rps2](https://imgur.com/80lK0UNm.png) ![rps3](https://imgur.com/pFyQ5kWm.png)
