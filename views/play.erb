@@ -15,8 +15,6 @@
     </button>
   <% end %>
 </form>
-<br>
-<br>
 <% if @game.finished? %>
 <h3><%= @game.human.name %> chooses <%= @game.human.choice %>!<h3>
 <h3><%= @game.bot.name %> chooses <%= @game.bot.choice %>!<h3>
