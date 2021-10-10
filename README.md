@@ -5,7 +5,7 @@
 This program lets the user:
 - enter a name
 - play **Rock Paper Scissors** against a **Computer** 
-- see their result and play again
+- see their result and play again.  Each result will show a different image (win, lose or draw)
 - change user name
 
 ---------
@@ -42,9 +42,9 @@ PLAYER ONE: rock, COMPUTER: scissors
 PLAYER ONE: rock, COMPUTER: paper
  => :lose
 ```
-In this sample ```game.result``` prints out the Player/Computer choices in the terminal.  I have done this so that we can see the computer's choice, because ```c1.weapon_select``` is random.  But the final code does not print out Player/Computer choices in the terminal.  It only returns the result :win, :lose or :draw.  Instead Player/Computer choices are displayed on the '/result' webpage.
+In this sample code ```game.result``` prints out the Player/Computer choices in the terminal.  I have done this so that we can clearly see the computer's random choices, otherwise ```c1.weapon_select``` would remain hidden from us.  (We would still know the result, of course).  My final ```game.result``` code does not print out Player/Computer choices in the terminal.  It does not need to.  Instead Player/Computer choices are displayed on the '/result' webpages.
 
-6. Simple web designs like ```.gifs``` were added.  In this process I wanted the '/result' webpage to display different images for wins, losses and draws.  But that seemed beyond my knowledge of html and java, so instead I created 3 different '/result' pages.  The 3 pages are nearly identical, but they have different pictures.  I know that repetitive code is not ideal, but it does serve my purpose here.
+6. Simple webpage designs like ```.gifs``` were added.  While making these I wanted the '/result' webpage to display different images for wins, losses and draws.  But that seemed beyond my knowledge of Html and Java, so instead I created 3 different '/result' pages.  The 3 pages are nearly identical, but they have different pictures.  I know that repetitive code is not ideal, but it does serve my purpose here.
 
 7. Images
 
