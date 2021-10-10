@@ -37,14 +37,7 @@ class BookmarkManager < Sinatra::Base
     @p2_weapon = @game.player_2.weapon_select
     @result = @game.result(@p1_weapon, @p2_weapon)
 
-    if @result == :win
-      erb :result_win
-    elsif @result == :lose
-      @result = "Computer wins"
-      erb :result_loss
-    else
-      erb :result_draw
-    end
+    erb @result
 
   end
 
