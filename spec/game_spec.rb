@@ -14,4 +14,5 @@ describe Game do
     expect(Game.instance).to be_instance_of Game
   end
 
+ 
 end

@@ -13,10 +13,25 @@ feature RPSController do
 
   scenario "Enters choice and sees confirmation" do
     enter_name_and_submit
-    expect(page).to have_content "Select Move"
     choose "rock"
     click_button "submit"
     expect(page).to have_content "Bernard chose Rock"
+  end
+
+  scenario "computer chooses randomly" do
+    enter_name_and_submit
+    choose "rock"
+    click_button "submit"
+    expect(page).to have_content "Computer chose" #rock, paper or scissors
+    #or we could somehow inject a double 
+  end
+
+  scenario "submit button goes after choosing" do
+    enter_name_and_submit
+    choose "rock"
+    click_button "submit"
+    expect(page).to_not have_button "submit"
+      
   end
 
 end

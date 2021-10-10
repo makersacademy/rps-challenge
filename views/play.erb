@@ -1,4 +1,4 @@
-<h1><%= Game.instance.players.first.name %> is Playing</h1>
+<h1><%= @game.players.first.name %> is Playing</h1>
 <h2>Select Move:</h>
 <form action="/player_choice" method='POST'>
   <input type="radio" id="rock" name="player_choice" value="rock">
@@ -8,4 +8,9 @@
   <input type="radio" id="scissors" name="player_choice" value="scissors">
   <label for="javascript">Scissors</label>
   <input type="submit" id="submit">
+  <% if @game.players.first.choice %>
+    <h2><%= @game.players.first.name %> chose <%= @game.players.first.choice.capitalize %></h2>
+    <% @game.players.last.assign_rand %>
+    <h2> <%= @game.players.last.name %> chose  <%= @game.players.last.choice.capitalize %></h2>
+    <% end %>
 </form>
