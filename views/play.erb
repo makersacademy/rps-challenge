@@ -1,16 +1,44 @@
-<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
-<br><br>
-Choose rock, paper or scissors!
-<br><br>
+
+<h1 style="color:blue;" ><a href="/">
+<label title="Click to change name">
+<%= @game.player_1.name %></a></h1> 
+</label>
+
+
+<center><b>vs. </b></center>
+<h1 style="color:red;" ><%= @game.player_2.name %></h1>
+<h2>Choose rock, paper or scissors!</h2>
 
 <form action='/result' method='get'>
-  <%# <label for='player_1_choice'>
-    Your choice:
-    <input type='text' name='player_1_choice'>
-  </label> 
-<br><br> %>
- 
-  <input type='submit' value='rock' name='player_1_choice'>
-   <input type='submit' value='paper' name='player_1_choice'>
+  <div id="centerbuttons">
+    <input type='submit' value='rock' name='player_1_choice'>
+    <input type='submit' value='paper' name='player_1_choice'>
     <input type='submit' value='scissors' name='player_1_choice'>
+  </div>
 </form>
+
+<h2>
+<iframe src="https://giphy.com/embed/ZNo3OCM9CoEVz71ilQ" width="480" height="180" frameBorder="0" allowFullScreen></iframe><p>
+</h2>
+
+<center>*Click on your name to change it</center>
+
+<style>
+#centerbuttons{
+   width:190px; 
+   margin:0 auto;
+}       
+
+h1 {text-align: center;}
+h1 a:hover {
+  color: Blue;
+  text-decoration: underline
+  }
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+h2 {text-align: center;}
+</style>

@@ -35,14 +35,17 @@ class BookmarkManager < Sinatra::Base
   get '/result' do
     @p1_weapon = params[:player_1_choice]
     @p2_weapon = @game.player_2.weapon_select
-    
-    if @p1_weapon == @p2_weapon.to_s
-      @result = "tied with the opponent" 
+    @result = @game.result(@p1_weapon, @p2_weapon)
+
+    if @result == :win
+      erb :result_win
+    elsif @result == :lose
+      @result = "Computer wins"
+      erb :result_loss
     else
-      @result = @game.result(@p1_weapon, @p2_weapon)
+      erb :result_draw
     end
 
-    erb :result
   end
 
 

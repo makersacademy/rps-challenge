@@ -1,0 +1,30 @@
+
+<h2>
+<iframe src="https://giphy.com/embed/XcE32ynIYM2HIvWqcb" width="480" height="190" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/thebachelorette-abc-the-bachelorette-bacheloretteabc-XcE32ynIYM2HIvWqcb"></a></p>
+</h2>
+
+<h2><%= @result %></h2>
+
+<h1 style="color:blue;" >
+You chose: <%= @game.player_1.weapon(@p1_weapon) %>
+</h1>
+
+<h1 style="color:red;" >
+<%= @game.player_2.name %> chose: <%= @p2_weapon %>
+</h1>
+
+<form action="/play" method="get">
+  <div id="centerbuttons">
+    <input type="submit" value="Play again">
+  </div>
+</form> 
+
+<style>
+#centerbuttons{
+   width:90px; 
+   margin:0 auto;
+}       
+
+h1 {text-align: center;}
+h2 {text-align: center;}
+</style>
