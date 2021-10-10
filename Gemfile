@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '3.0.2'
 
 gem 'sinatra'
-gem 'sinatra/reloader'
+
 
 group :test do
   gem 'capybara'
@@ -11,6 +11,8 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'webrick'
+  gem 'selenium-webdriver'
+  gem 'sinatra/reloader'
 end
 
 group :development, :test do
