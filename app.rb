@@ -14,7 +14,7 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/player-name' do
+  post '/' do
     session[:name] = params['player_name']
 
     redirect '/play'
@@ -26,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
-  post '/gesture-choice' do
+  post '/play' do
     session[:gesture] = params['gesture']
 
     redirect 'result'

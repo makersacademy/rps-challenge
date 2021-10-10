@@ -1,37 +1,21 @@
 # frozen_literal_string: true
 
 class Game
-  def random_gesture
-    %w[rock paper scissors][random_choice]
-  end
+  RULES = {
+    rock: :scissors,
+    paper: :rock,
+    scissors: :paper
+  }.freeze
 
-  def result(gesture_one, gesture_two)
-    gestures_to_players(gesture_one, gesture_two)
-    p_one = player_one[:gesture]
-    p_two = player_two[:gesture]
+  def result(play_one, play_two)
+    return :draw if play_one == play_two
 
-    return 'Its a draw!' if p_one == p_two
-
-    player_one_win?(p_one, p_two) ? player_one[:player] : player_two[:player]
+    player_one_win?(play_one, play_two) ? :player_one : :player_two
   end
 
   private
 
-  attr_reader :player_one, :player_two
-
-  def random_choice
-    rand(0..2)
-  end
-
-  def gestures_to_players(gesture_one, gesture_two)
-    @player_one = { player: 'player_one', gesture: gesture_one }
-    @player_two = { player: 'player_two', gesture: gesture_two }
-  end
-
-  def player_one_win?(p_one, p_two)
-    return true if p_one == 'rock' && p_two == 'scissors' ||
-                   p_one == 'paper' && p_two == 'rock' ||
-                   p_one == 'scissors' && p_two == 'paper'
-    false
+  def player_one_win?(play_one, play_two)
+    RULES[play_one] == play_two
   end
 end
