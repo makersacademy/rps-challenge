@@ -4,7 +4,7 @@
 
 This program lets the user:
 - enter a name
-- play Rock Paper Scissors against a computer 
+- play **Rock Paper Scissors** against a **Computer** 
 - see their result and play again
 
 
@@ -57,7 +57,7 @@ In this sample ```game.result``` prints out the Player/Computer choices in the t
 
 **Improvements that are possible**
 
-* Make webpage attractive
 * Some refactoring of code between P1 and P2.  (String to symbol conversions)
 * Implement 2 player option 
 * Improve app.rb tests
+* Incorporate better web coding so that 3 results pages (for wins, losses and draws) are not needed
