@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <h1>Rock. Paper. Scissors.</h1>
+    <h2>Welcome, <%= @name %>.</h2>
+    <h2>Please select game mode:</h2>
+    <form action='/create_classic' method='post'>
+      <label>Classic:</label>
+      <br>
+      <input type="submit" value="Select">
+    </form>
+    <br><br>
+    <div style="text-align:center"> 
+      <a href='/'>Not <%= @name %>?</a>
+    </div>
+  </body>
+</html>

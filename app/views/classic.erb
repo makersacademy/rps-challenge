@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <h1>Classic Mode</h1>
+    <h2><%= @name %>, please select your move:</h2>
+    <form action='/move' method='post'>
+    <input name="rps_select" type="submit" value="Rock">
+    <input name="rps_select" type="submit" value="Paper">
+    <input name="rps_select" type="submit" value="Scissors">
+  </form>
+  <br>
+  <div style="text-align:center"> 
+    <a href='/start'>Return to menu</a>
+  </div>
+  </body>
+</html>
