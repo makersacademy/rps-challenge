@@ -9,7 +9,7 @@ feature 'Choosing a move' do
     end
     
     scenario "computer's move is displayed" do
-      expect(page).to have_content(/^.*Computer's move: (rock|paper|scissors).*$/)
+      expect(page).to have_content(/.*Computer's move: (rock|paper|scissors).*/)
     end
   end
   
@@ -17,7 +17,7 @@ feature 'Choosing a move' do
     scenario "computer's move is displayed" do
       start_lizard_spock_game
       click_button 'lizard'
-      expect(page).to have_content(/^.*Computer's move: (rock|paper|scissors|lizard|spock).*$/)
+      expect(page).to have_content(/.*Computer's move: (rock|paper|scissors|lizard|spock).*/)
     end
   end
 end
