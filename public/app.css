@@ -148,6 +148,7 @@ input[type="submit"] {
                 rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                 rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
     color: #fff;
+    padding: 20px 31px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -179,10 +180,11 @@ a.ssolink {
 }
 
 
-.radio-toolbar input[type="radio"] {
+.radio-toolbar input[type="submit"] {
   opacity: 0;
   position: fixed;
   width: 0;
+  padding: 20px 31px;
 }
 
 .radio-toolbar label {
