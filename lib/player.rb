@@ -7,7 +7,7 @@ class Player
     @name = name
   end
 
-  def weapon(weapon)
+  def set_weapon(weapon)
     fail 'not a possible weapon' unless Game::WEAPONS.include? weapon.to_sym
     @weapon = weapon.to_sym
   end

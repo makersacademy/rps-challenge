@@ -28,7 +28,6 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/play' do
-    @game 
     erb :play
   end
 
