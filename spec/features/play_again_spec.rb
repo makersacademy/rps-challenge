@@ -1,4 +1,4 @@
-feature 'check play again option' do
+feature 'WEBPAGE: check play again option' do
 
   scenario 'Play again after 1 round' do
     sign_in_and_play

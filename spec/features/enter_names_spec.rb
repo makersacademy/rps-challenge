@@ -1,4 +1,4 @@
-feature 'Enter names' do
+feature 'WEBPAGE: Enter names' do
 
   scenario 'Submitting names' do
     sign_in_and_play
