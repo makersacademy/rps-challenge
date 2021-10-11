@@ -1,0 +1,35 @@
+<div style="text-align: center;">
+  <h1>Welcome <%= @multi_game.player1.name %></h1>
+  <% if @multi_game.player2.nil? %>
+    <iframe src="https://giphy.com/embed/3ohhwoBAMH1MkCfl7i" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <h2>Send the link to 2nd player and wait for join</h2>
+    <p></p><button onclick="copyToClipboard()" style="width:140px;height:30px;" >Copy Invite Link</button></p>
+  <% else %>
+    <h2><%= @multi_game.player1.name %> join in to the game</h2>
+    <iframe src="https://giphy.com/embed/0BP6TC2sPVnNFxsF96" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <h2>Game is ready to begin</h2>
+    <form action="/play_game_multi_1st_player">
+      <input type="submit" value="Join Game" style="width:150px;height:50px;">
+    </form>
+  <% end %>
+  
+  <script>
+    function copyToClipboard(text) {
+      var inputc = document.body.appendChild(document.createElement("input"));
+      inputc.value = window.location.href + "<%= "_2nd_player?hash=#{@hash}" %>";
+      inputc.focus();
+      inputc.select();
+      document.execCommand('copy');
+      inputc.parentNode.removeChild(inputc);
+      alert("URL Copied.");
+    }
+  </script>
+  
+  <script>
+    window.setInterval('refresh()', 15000); 	
+    function refresh() {
+        window .location.reload();
+    }
+  </script>
+
+</div>

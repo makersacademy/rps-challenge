@@ -1,0 +1,13 @@
+<div style="text-align: center;">
+  <h1>Multi Player</h1>
+  <h2>You've been invited by <%= @multi_game.player1.name %> to play together</h2>
+  <p><iframe src="https://giphy.com/embed/v4ytgS0zsejjG" width="480" height="411" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></p>
+  <form action="/names_2nd_player" method="post">
+    <label for="player">
+      <b>Enter your name:</b>
+    </label>
+    <input type="text" name="player2"> <br>
+    <p><input type="submit" value="Submit" style="width:90px;height:30px;"></p>
+  </form>
+</div>
+    
