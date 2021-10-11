@@ -1,0 +1,57 @@
+<div style="display: flex; align-items: stretch;">
+  <div style="text-align: center;">
+    <h1>Welcome <%= @multi_game.player2.name %></h1>
+    <h2>You are playing against <%= @multi_game.player1.name %></h2>
+    <h1>Make your choice</h1>
+    <div style="position:relative;"><iframe src="https://giphy.com/embed/ZNo3OCM9CoEVz71ilQ" width="600" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+  </div>
+  <% if @multi_game.turn_player2? %>
+    <div style="text-align: center;">
+      <h2>Turn: <%= @multi_game.player2_turn %> </h2>
+      <h3>Random Choice</h3>
+      <form action="/action_multi_2nd_player" method="post">
+        <input type="hidden" name="choice" value="random">
+        <p><input type="submit" value="Random" style="width:90px;height:30px;"></p>
+      </form>
+      <h3>Your Choice</h3>
+      <form action="/action_multi_2nd_player" method="post">
+        <input type="hidden" name="choice" value="rock">
+        <p><input type="submit" value="Rock" style="width:90px;height:30px;"></p>
+      </form>
+        <form action="/action_multi_2nd_player" method="post">
+        <input type="hidden" name="choice" value="paper">
+        <input type="submit" value="Paper" style="width:90px;height:30px;">
+      </form>
+        <form action="/action_multi_2nd_player" method="post">
+        <input type="hidden" name="choice" value="scissors">
+        <input type="submit" value="Scissors" style="width:90px;height:30px;">
+      </form>
+    </div>
+  <% else %>
+    <h2>Please wait for next turn</h2>
+  <% end %>
+</div>
+<div style="text-align: center;">
+  <% if @multi_game.turn_compare? %>
+    <% unless @finish.nil? %>
+      <h2>Your move: <%= @multi_game.player2_choice %></h2>
+      <h2><%= @multi_game.player1.name %> move: <%= @multi_game.player1_choice %></h2>
+    <% end %>
+    <% if @finish == "It's a draw" %>
+      <iframe src="https://giphy.com/embed/A0KitrLeiHw52" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <% elsif @finish == "Player 1 wins" %>
+      <iframe src="https://giphy.com/embed/xT1R9GYCO1eRlwxW24" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <% elsif @finish == "Player 2 wins" %>
+      <iframe src="https://giphy.com/embed/L8a5NHroNWv6nP1YxR" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <% end %>
+  <% else %>
+   <h2>Awaiting player move</h2>
+  <% end %>
+</div>
+
+<script>
+  window.setInterval('refresh()', 15000); 	
+  function refresh() {
+      window .location.reload();
+  }
+</script>
