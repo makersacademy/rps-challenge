@@ -1,5 +1,8 @@
 # RPS Challenge
 
+[![GitHub stats](https://github-readme-stats.vercel.app/api?username=s-palmer)](https://github.com/anuraghazra/github-readme-stats)
+
+
 ## Task
 
 Knowing how to build web applications is getting us almost there as web developers!
