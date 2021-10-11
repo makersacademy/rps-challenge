@@ -1,7 +1,18 @@
 <h1> Rock, Paper, Scissors </h1>
 
-<h2> Enter your name: </h1>
-<form action="/names" method="post">
+<form action="/settings" method="post">
+  <p>Enter your name:</p>
   <input type="text" name="name">
-  <input type="submit" value="start">
+
+  <p>Choose which version you would like to play:</p>
+  <div>
+    <input type="radio" name="mode" value="normal" required>
+    <label for="normal">Regular rock, paper, scissors</label>
+
+    <input type="radio" name="mode" value="lizard_spock" required>
+    <label for="lizard_spock">Rock, paper, scissors, lizard, spock</label>
+  </div>
+  <div>
+    <button type="submit">Start</button>
+  </div>
 </form>

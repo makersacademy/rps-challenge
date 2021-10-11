@@ -16,9 +16,9 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
+  post '/settings' do
     player = Player.new(params[:name])
-    @game = Game.start(player)
+    @game = Game.start(params[:mode], player)
     redirect '/play'
   end
 

@@ -1,13 +1,23 @@
 feature 'Choosing a move' do
-  scenario 'player clicks a move and it is displayed' do
-    sign_in_1_player
-    click_button 'rock'
-    expect(page).to have_content 'Your move: rock'
+  feature 'normal game' do
+    before do
+      start_normal_game
+      click_button 'rock'
+    end
+    scenario 'player clicks a move and it is displayed' do
+      expect(page).to have_content 'Your move: rock'
+    end
+    
+    scenario "computer's move is displayed" do
+      expect(page).to have_content(/^.*Computer's move: (rock|paper|scissors).*$/)
+    end
   end
   
-  scenario "computer's move is displayed" do
-    sign_in_1_player
-    click_button 'rock'
-    expect(page).to have_content(/^.*Computer's move: (rock|paper|scissors).*$/)
+  feature 'lizard spock game' do
+    scenario "computer's move is displayed" do
+      start_lizard_spock_game
+      click_button 'lizard'
+      expect(page).to have_content(/^.*Computer's move: (rock|paper|scissors|lizard|spock).*$/)
+    end
   end
 end
