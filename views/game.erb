@@ -1,0 +1,32 @@
+<style>
+.center {
+  text-align: center;
+  color: purple;
+}
+.button {
+    border: 2;
+    color: green;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+</style>
+<h1 class = "center"> Welcome to Rock, Paper, Scissors Game </h1>
+
+<% if @player_name %>
+
+ <h2> Hi <%= @player_name %>, choose your play: </h2>
+
+<% end %>
+
+<form action = "/play_option" method = "post">
+    <button class = "button" type = "submit" name = "play" value = "scissors">Scissors</button>
+    <button class = "button" type = "submit" name = "play" value = "rock">Rock</button> 
+    <button class = "button" type = "submit" name = "play" value = "paper">Paper</button>
+</form>
+
