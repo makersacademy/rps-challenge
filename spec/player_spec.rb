@@ -9,4 +9,11 @@ describe Player do
     end
   end
 
+  describe '#choose_weapon' do
+    it 'allows the player to select a weapon' do
+      player.choose_weapon("paper")
+      expect(player.weapon_of_choice).to eq("paper")
+    end
+  end
+
 end

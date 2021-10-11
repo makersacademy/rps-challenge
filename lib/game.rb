@@ -2,16 +2,31 @@ require_relative 'player'
 
 class Game
 
-  def initialize(player1)
-    @players = [player1, "Computer"]
+  attr_reader :players, :weapons, :computer_weapon
+
+  def initialize(player1, computer)
+    @players = [player1, computer]
+    @weapons = ["Rock", "Paper", "Scissors"]
   end
 
   def player1
     @players.first
   end
 
-  private
+  def computer
+    @players.last
+  end
 
-  attr_reader :players
+  def weapon_selection
+    player1.weapon_of_choice
+  end
+
+  def computer_random_weapon
+    @computer_weapon = @weapons.sample
+  end
+
+  def winning_choices
+    winning_choices = { "Scissors" => "Paper", "Paper" => "Rock", "Rock" => "Scissors" }
+  end
 
 end
