@@ -69,7 +69,6 @@ class RPS < Sinatra::Base
   
   post '/names_2nd_player' do
     @multi_game.player2 = Player.new(params[:player2])
-    p @multi_game
     redirect '/play_game_multi_2nd_player'
   end
   
