@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 /coverage
+=======
+/**/.DS_Store
+/coverage
+
+# Local cache of Rubocop remote config
+.rubocop-*
+>>>>>>> 374ce322d7c019398f19b47faf3b05df8643b9f5
