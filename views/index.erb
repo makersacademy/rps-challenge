@@ -1,18 +1,26 @@
-<h1> Rock, Paper, Scissors </h1>
+<head>
+  <title> Rock, Paper, Scissors </title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-<form action="/settings" method="post">
-  <p>Enter your name:</p>
-  <input type="text" name="name">
+<body>
+  <div class="container">
+  <div class="box">
+    <h1> Rock, Paper, Scissors </h1>
+    <form action="/settings" method="post">
+      <p>Enter your name:</p>
+      <input type="text" name="name" required>
 
-  <p>Choose which version you would like to play:</p>
-  <div>
-    <input type="radio" name="mode" value="normal" required>
-    <label for="normal">Regular rock, paper, scissors</label>
+      <p>Choose which version you would like to play:</p>
+      <div class="mode">
+        <input type="radio" name="mode" value="normal" required>
+        <label for="normal">Regular rock, paper, scissors</label>
 
-    <input type="radio" name="mode" value="lizard_spock" required>
-    <label for="lizard_spock">Rock, paper, scissors, lizard, spock</label>
+        <input type="radio" name="mode" value="lizard_spock" required>
+        <label for="lizard_spock">Rock, paper, scissors, lizard, spock</label>
+      </div>
+      <button class="button" type="submit">Start</button>
+    </form>
   </div>
-  <div>
-    <button type="submit">Start</button>
   </div>
-</form>
+</body>

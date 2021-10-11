@@ -3,7 +3,7 @@ require 'game'
 describe Game do
   subject(:normal_game) { described_class.new("normal", player, computer) }
   let(:player) { double("Player") }
-  let(:computer) { double("Computer", :move => "paper")}
+  let(:computer) { double("Computer", :move => "paper") }
 
   it 'stores a player' do
     expect(normal_game.player).to eq(player)
@@ -30,7 +30,7 @@ describe Game do
 
   context 'lizard spock game' do
     subject(:lizard_spock_game) { described_class.new("lizard_spock", player, computer) }
-    let(:computer) { double("Computer", :move => "spock")}
+    let(:computer) { double("Computer", :move => "spock") }
 
     it 'determines the winning move' do
       lizard_spock_game.move("lizard")

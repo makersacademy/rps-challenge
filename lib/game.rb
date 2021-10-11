@@ -5,7 +5,7 @@ module Rules
     "rock" => "scissors",
     "paper" => "rock",
     "scissors" => "paper"
-  }
+  }.freeze
 
   LIZARD_SPOCK = {
     "rock" => ["scissors", "lizard"],
@@ -13,7 +13,7 @@ module Rules
     "scissors" => ["paper", "lizard"],
     "spock" => ["rock", "scissors"],
     "lizard" => ["paper", "spock"]
-  }
+  }.freeze
 
   def move_list
     return NORMAL if @mode == "normal"
@@ -41,8 +41,8 @@ class Game
     @game = Game.new(mode, player)
   end
 
-  def self.game
-    @game
+  class << self
+    attr_reader :game
   end
 
   def move(move)

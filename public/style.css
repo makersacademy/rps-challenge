@@ -1,0 +1,55 @@
+h1 {
+  color: coral;
+  font-family: Tahoma;
+}
+body {
+  background-color: beige;
+  line-height: 1.5em;
+  font-family: Verdana;
+}
+input[type=text] {
+  border: none;
+  border-bottom: 2px solid grey;
+  border-radius: 5px;
+  width: 50%;
+  padding: 10px 10px;
+}
+.button {
+  display: inline-block;
+  background-color: beige;
+  color: coral;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Verdana;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 5px 20px;
+  margin: 2px;
+}
+.button:hover {
+  background-color: white;
+}
+
+.mode {
+  margin: 30px 0;
+}
+
+.container{
+  width: 50%;
+  margin: auto;
+}
+
+.box {
+  color: beige;
+  background-color: darkslategrey;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.box h1{
+  font-weight: 700;
+  word-spacing: 0.2em;
+  text-align: center;
+  margin: 40px 0;
+}
