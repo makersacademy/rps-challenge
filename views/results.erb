@@ -1,0 +1,10 @@
+<h1><%= @game.player.name %> played <%= @game.player_move.name%></h1>
+<h1>The Computer played <%= @game.computer_move.name%></h1>
+<% if @output == "tie" %>
+  <h1>IT WAS A TIE!</h1>
+<% else %>
+  <h1><%= @output %> WON!</h1>
+<% end %>
+<form action="/">
+  <input type="submit" name="submit" value="Play again!">
+</form>
