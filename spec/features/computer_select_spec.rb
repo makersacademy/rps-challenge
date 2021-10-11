@@ -1,9 +1,9 @@
-feature 'register players\'s names' do
-  scenario 'Players start the game by entering their names' do 
-    visit('/')
+feature 'Computer selects weapon' do
+  scenario 'Weapon chosen randomly' do
+    visit '/'
     fill_in :player_name, with: 'Cat'
     click_button 'rock'
     expect(page).to have_content 'Cat'
     expect(page).to have_content 'rock'
-  end 
-end 
+  end
+end
