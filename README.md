@@ -18,4 +18,4 @@ The game starts with prompting for a players name, the allows the player to make
 It announces the players and the computer's choice and declares the winner or a tie.
 The player is then asked if they want to play again, in which case they are asked for a new choice or if not, the game returns to the index page waiting for a new player name.
 
-
+Run the app with `rackup` or `ruby app.rb`
