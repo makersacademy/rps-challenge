@@ -1,5 +1,17 @@
 # RPS Challenge
 
+## How to use the App
+Clone the repo
+Gem install bundler
+Run bundle install
+Start the local server by running 'rackup'
+
+## Areas of difficulty 
+
+It is continuosly outputting that the Computer is the Winner, therefore there is a bug in the code. 
+
+
+
 Instructions
 -------
 
