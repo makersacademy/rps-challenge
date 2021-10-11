@@ -1,0 +1,52 @@
+body {
+  background-image: url("https://www.dropbox.com/s/z507inyfwkq2fqi/background.jpg?dl=0");
+  background-size: auto;
+}
+
+#header {
+  font-family: cursive;
+  font-size: 30px;
+  color: #bbac98;
+}
+
+#player_1 {
+  font-family: cursive;
+  font-size: 30px;
+  color: white;
+}
+
+.results {
+  font-family:fantasy;
+  font-size: 30px;
+  color: white;
+}
+
+#link {
+  font-family: inherit;
+  font-size: 20px;
+  color: #eb172f;
+}
+
+#rock    {
+  background:url("./images/rock.png");
+  background-repeat: no-repeat;
+  width:  150px;
+  height: 150px;
+  border: 0;
+}
+
+#paper    {
+  background:url("./images/paper.jpeg");
+  background-repeat: no-repeat;
+  width:  150px;
+  height: 150px;
+  border: 0;
+}
+
+#scissors   {
+  background:url("./images/scissors.png");
+  background-repeat: no-repeat;
+  width:  150px;
+  height: 150px;
+  border: 0;
+}
