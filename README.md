@@ -1,9 +1,9 @@
 <div align="center">
 
 ### rock_paper_scissors
-![](https://img.shields.io/github/last-commit/arthurfincham/rps_challenge)
-![](https://img.shields.io/github/languages/count/arthurfincham/rps_challenge)
-![](https://img.shields.io/github/languages/code-size/arthurfincham/rps_challenge)
+![](https://img.shields.io/github/last-commit/arthurfincham/rps-challenge)
+![](https://img.shields.io/github/languages/count/arthurfincham/rps-challenge)
+![](https://img.shields.io/github/languages/code-size/arthurfincham/rps-challenge)
 
 ## single player
 <img src="public/images/single_preview.gif" width="600px">
@@ -33,7 +33,7 @@ Try it out in your browser [here](https://arthur-r-p-s.herokuapp.com/).
 
 Or to install:
 ``` bash
-% git clone https://github.com/arthurfincham/rps_challenge
+% git clone https://github.com/arthurfincham/rps-challenge
 ```
 
 ## Usage
