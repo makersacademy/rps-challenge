@@ -1,0 +1,296 @@
+@font-face {
+  font-family: "Coconut";
+  src: url("fonts/Coconutz-EaZjl.ttf")
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Coconut";
+  color: black;
+  background-color: antiquewhite;
+}
+
+h1 {
+  margin: 0;
+  font-size: 80px;
+  color: black;
+}
+
+h2 {
+  font-size: 60px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+.container {
+  height: 60%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_container {
+  /* margin-top: 15px; */
+}
+
+input[type="text"] {
+  margin: 30px;
+  height: 50px;
+  width: 400px;
+  font-family: "Coconut";
+  font-size: 40px;
+  border-radius: 5px;
+  border: 2px dashed rgb(226, 201, 170);
+}
+
+input[type="text"]:focus {
+  border: 2px solid rgb(226, 201, 170);
+  outline: none;
+}
+
+input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+label, input[type="submit"] {
+  display: inline-block;
+  font-size: 40px;
+  font-family: "coconut";
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 7px 7px 10px 5px;
+  line-height: 30px;
+  margin: 5px;
+  background-color: rgb(255, 236, 218);
+}
+
+input[type="radio"]+label {
+  background-color: aliceblue;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+#rock-label {
+  animation: wobble_rock;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+#paper-label {
+  animation: wobble_paper;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+#scissors-label {
+  animation: wobble_scissors;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+.no_animation {
+  animation: none !important;
+  background-color: antiquewhite !important;
+}
+
+.background_change {
+  background-color: white !important;
+}
+
+.shoot_shake {
+  animation: wobble_rock;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  background-color: white !important;
+}
+
+input[type="radio"]:checked+label {
+  border: 4px solid black;
+}
+
+#versus {
+  height: 30%;
+  width: 100%;
+}
+
+#options {
+  height: 70%;
+  width: 100%;
+}
+
+.startovertext {
+  margin: 0px;
+  font-size: 40px;
+  color: rgb(221, 175, 157);
+  animation: fadeIn;
+  animation-duration: 5s;
+}
+
+#resultslink {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  text-decoration: none;
+}
+
+@keyframes wobble_rock {
+  0% {
+    transform: translate(0.3px, 0.3px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-0.3px, -0.6px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-0.3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(0.3px, 0.6px) rotate(0deg);
+  }
+  40% {
+    transform: translate(0.3px, -0.3px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-0.3px, 0.6px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-0.3px, 0.3px) rotate(0deg);
+  }
+  70% {
+    transform: translate(0.3px, 0.3px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-0.3px, -0.3px) rotate(1deg);
+  }
+  90% {
+    transform: translate(0.3px, 0.6px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0.3px, -0.6px) rotate(-1deg);
+  }
+}
+
+@keyframes wobble_paper {
+  0% {
+    transform: translate(-0.3px, -0.6px) rotate(-1deg);
+  }
+  10% {
+    transform: translate(0.3px, 0.3px) rotate(0deg);
+  }
+  20% {
+    transform: translate(-0.3px, 0.6px) rotate(-1deg);
+  }
+  30% {
+    transform: translate(0.3px, 0.6px) rotate(0deg);
+  }
+  40% {
+    transform: translate(0.3px, -0.3px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-0.3px, 0px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-0.3px, -0.3px) rotate(1deg);
+  }
+  70% {
+    transform: translate(0.3px, 0.3px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(0.3px, 0.6px) rotate(0deg);
+  }
+  90% {
+    transform: translate(0.3px, -0.6px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(-0.3px, 0.3px) rotate(0deg);
+  }
+}
+
+@keyframes wobble_scissors {
+  0% {
+    transform: translate(0.3px, -0.3px) rotate(1deg);
+  }
+  10% {
+    transform: translate(0.3px, 0.3px) rotate(0deg);
+  }
+  20% {
+    transform: translate(-0.3px, -0.6px) rotate(-1deg);
+  }
+  30% {
+    transform: translate(0.3px, 0.6px) rotate(0deg);
+  }
+  40% {
+    transform: translate(-0.3px, 0.6px) rotate(-1deg);
+  }
+  50% {
+    transform: translate(-0.3px, 0px) rotate(1deg);
+  }
+  60% {
+    transform: translate(-0.3px, 0.3px) rotate(0deg);
+  }
+  70% {
+    transform: translate(0.3px, 0.3px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-0.3px, -0.3px) rotate(1deg);
+  }
+  90% {
+    transform: translate(0.3px, 0.6px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0.3px, -0.6px) rotate(-1deg);
+  }
+}
+
+#secondgo {
+  display: none;
+}
+
+.hide_buttons {
+  display: none !important;
+}
+
+.show_buttons {
+  display: flex !important;
+}
+
+#first_go_button {
+  display: inline-block;
+  font-size: 40px;
+  font-family: "coconut";
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 7px 7px 10px 5px;
+  line-height: 30px;
+  margin: 5px;
+  background-color: rgb(255, 236, 218);
+}
