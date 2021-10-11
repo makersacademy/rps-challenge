@@ -1,0 +1,14 @@
+<h2><%= session[:player_name] %> what is your choice?</h2>
+<br><br>
+
+<form action="/play_round" method="post">
+  <input type="submit" name="button" value="Rock"/>
+</form>
+
+<form action="/play_round" method="post">
+  <input type ="submit" name="button" value="Paper"/>
+</form>
+
+<form action="/play_round" method="post">
+  <input type ="submit" name="button" value="Scissors"/>
+</form>

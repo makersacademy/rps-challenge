@@ -1,0 +1,15 @@
+<h2>You played <%= session[:button] %></h2>
+<br><br>
+<h2>Computer played <%= Game.instance.computer_choice %></h2>
+<br><br>
+
+<h1><%= Game.instance.play %></h1>
+
+Do you want to play again?
+<form action="/play_again" method="post">
+  <input type="submit" name="button" value="Yes"/>
+</form>
+
+<form action="/play_again" method="post">
+  <input type="submit" name="button" value="No"/>
+</form>
