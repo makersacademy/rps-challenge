@@ -1,9 +1,13 @@
 require 'game'
+require 'player'
 
 describe Game do
+  mario = Player.new("Mario")
   let(:gianluigi) { double("Gianluigi") }
-  let(:mario) { double("Mario") }
+  #let(:mario) { double("Mario") }
   let(:game) { described_class.create(gianluigi, mario) }
+  
+
 
   before do
     allow(gianluigi).to receive(:name).and_return("Gianluigi")
