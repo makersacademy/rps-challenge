@@ -60,7 +60,7 @@ The app should be usable at localhost:9292.
 - Scissors beats Paper
 - Paper beats Rock
 
-## STACK
+## Stack
 
 |  | Tool | Use? | Where can I see it? |
 |------------------|------------------|------------------|------------------|
