@@ -59,3 +59,14 @@ The app should be usable at localhost:9292.
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
+## STACK
+
+|                                                        | Tool                                                 | Use?                                       | Where can I see it?                                                  |
+|--------------------------------------------------------|------------------------------------------------------|--------------------------------------------|----------------------------------------------------------------------|
+| <img src="public/images/rspec.png" height="40" width="auto">       | [RSpec](https://rspec.info/)                         | Testing tool for Ruby.                     | In game_spec.rb - tests pure Ruby code.                              |
+| <img src="public/images/capybara.png" height="40" width="auto">    | [Capybara](https://github.com/teamcapybara/capybara) | Acceptance test framework for Ruby.        |  In spec/features - testing for expected features.                   |
+| <img src="public/images/ruby.png" height="40" width="auto">        | [Ruby](https://www.ruby-lang.org/en/)                | Programming language.               
+| <img src="public/images/sinatra.png" height="40" width="auto">     | [Sinatra](http://sinatrarb.com/)                     | DSL for quickly making web apps with Ruby. | In the file structure for the project - it is built on Sinatra.      |
+
+
