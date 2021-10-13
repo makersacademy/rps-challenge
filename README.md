@@ -1,15 +1,6 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
+## Task
 
 Knowing how to build web applications is getting us almost there as web developers!
 
@@ -35,21 +26,33 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
+## How To Use The App
 
-As usual please start by
+### Web-based
 
-* Forking this repo
-* TEST driving development of your app
+Directly playable at: https://rps-fun.herokuapp.com/
 
-[You may find this guide to setting up a new Ruby web project helpful.](https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md)
+### Local
 
-## Bonus level 1: Multiplayer
+Clone the repo & cd into program directory
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+```
+git clone git@github.com:s-palmer/rps-challenge.git
+```
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+If you don't have bundler installed:
+```
+gem install bundler
+```
+Then run:
+```
+bundle install
+```
+Local server can be started by running:
+```
+rackup
+```
+The app should be usable at localhost:9292.
 
 ## Basic Rules
 
@@ -57,30 +60,12 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+## Stack
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/main/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+|  | Tool | Use? | Where can I see it? |
+|------------------|------------------|------------------|------------------|
+| <img src="public/images/rspec.png" height="40" width="auto"> | [RSpec](https://rspec.info/) | Testing tool for Ruby.| ./spec/rps_computer_spec.rb |
+| <img src="public/images/capybara.png" height="40" width="auto"> | [Capybara](https://github.com/teamcapybara/capybara) | Acceptance test framework for Ruby. | In ./spec/features |
+| <img src="public/images/ruby.png" height="40" width="auto"> | [Ruby](https://www.ruby-lang.org/en/) | Programming language. | Everywhere! |
+| <img src="public/images/sinatra.jpg" height="40" width="auto">  | [Sinatra](http://sinatrarb.com/)  | Sinatra is a DSL for quickly creating web applications in Ruby. | In the file structure for the project - it is built on Sinatra. |
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
