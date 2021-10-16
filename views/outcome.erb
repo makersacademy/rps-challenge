@@ -3,27 +3,31 @@
 <p style="font-family:Courier; color:Blue; font-size: 20px;"><%= $game.player1.name %>: <%= $game.player1.lives %> life </p>
 <p style="font-family:Courier; color:Red; font-size: 20px;"> Computer:<%= $game.computer.lives %> life </p>
 
+<div style='border: 5px solid blue'>
 <center><p style="font-family:Courier; color:Black; font-size: 20px;">You chose <%= $game.player1.weapon_of_choice %> </p>
 <% if $game.player1.weapon_of_choice == "Rock" %>
-<center><p style="font-family:Courier; color:Black; font-size: 20px;">PICTURE OF A ROCK</p>
+<img src="./public/images/dwayne_johnson.png" alt="picture of Dwayne 'The Rock' Johnson" style="width:128px;height:128px;">
 <% elsif $game.player1.weapon_of_choice == "Paper" %>
-<center><p style="font-family:Courier; color:Black; font-size: 20px;">PICTURE OF SOME PAPER</p>
+<img src="./public/images/paper.png" alt="picture of some paper" style="width:128px;height:128px;">
 <% elsif $game.player1.weapon_of_choice == "Scissors" %>
-<center><p style="font-family:Courier; color:Black; font-size: 20px;">PICTURE OF SCISSORS</p>
+<img src="./public/images/scissors.png" alt="picture of some scissors" style="width:128px;height:128px;">
 <% end %> 
-
+</div>
 
 <center><h2> and... </h2>
 
+<div style='border: 5px solid red'>
 <center><p style="font-family:Courier; color:Black; font-size: 20px;">Computer chose <%= $game.computer_weapon %> </p>
 <% if $game.computer_weapon == "Rock" %>
-  <center><p style="font-family:Courier; color:Black; font-size: 20px;">PICTURE OF A ROCK</p>
+<img src='./public/images/dwayne_johnson.png' alt="picture of Dwayne 'The Rock' Johnson" style="width:128px;height:128px;">
 <% elsif $game.computer_weapon == "Paper" %>
-  <center><p style="font-family:Courier; color:Black; font-size: 20px;">PICTURE OF SOME PAPER</p>
+<img src="./public/images/paper.png" alt="picture of some paper" style="width:128px;height:128px;">
 <% elsif $game.computer_weapon == "Scissors" %>
-  <center><p style="font-family:Courier; color:Black; font-size: 20px;">PICTURE OF SCISSORS</p>
+<img src="./public/images/scissors.png" alt="picture of some scissors" style="width:128px;height:128px;">
 <% end %>
+</div>
 
+<div style='border: 5px solid black'>
 <center><h1> Outcome </h1>
 
 <% if $game.player1.weapon_of_choice == $game.computer_weapon %>
@@ -34,6 +38,7 @@
   <center><p style="font-family:Courier; color:Red; font-size: 40px;"><%= $game.player1.name %> lost!</p>
   <center><p style="font-family:Courier; color:Red; font-size: 40px;">Better luck next time...</p>
 <%end%>
+</div>
 
 
 
