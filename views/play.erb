@@ -1,0 +1,26 @@
+<center><h1><%= @game.player1.name %> vs. Computer </h1>
+
+<center><p style="font-family:Courier; color:Blue; font-size: 20px;"><%= @game.player1.name %>: 1 life </p>
+<center><p style="font-family:Courier; color:Red; font-size: 20px;"> Computer: 1 life </p>
+
+
+<form action="/weapon_choice" method="post">
+  <label for="player1_weapon">
+   PICTURE OF A ROCK...
+  </label>
+  <input type="submit" name="player1_weapon" value="Rock">
+</form>
+
+<form action="/weapon_choice" method="post">
+  <label for="player1_weapon">
+   PICTURE OF PAPER...
+  </label>
+  <input type="submit" name="player1_weapon" value="Paper">
+</form>
+
+<form action="/weapon_choice" method="post">
+  <label for="player1_weapon">
+   PICTURE OF SCISSORS...
+  </label>
+  <input type="submit" name="player1_weapon" value="Scissors">
+</form>
