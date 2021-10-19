@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/jasonrowsell/rps-challenge.svg?branch=master)](https://travis-ci.com/jasonrowsell/rps-challenge) [![Maintainability](https://api.codeclimate.com/v1/badges/13f76238bbe692bd3cb8/maintainability)](https://codeclimate.com/github/jasonrowsell/rps-challenge/maintainability) [![BCH compliance](https://bettercodehub.com/edge/badge/jasonrowsell/rps-challenge?branch=master)](https://bettercodehub.com/)
 
-[Check it our here.](https://jasonrowsell-rps-sinatra.herokuapp.com/)
+[Check it out here.](https://jasonrowsell-rps-sinatra.herokuapp.com/)
 
 ## Table of Contents
 
