@@ -2,11 +2,8 @@ require 'game'
 
 describe Game do
 
-  let(:player_1) { double('player_1') }
+  let(:player_1) { double('player_1', :name => 'player_1') }
   let(:game) { Game.new(player_1) }
-
-  before { allow(player_1).to receive(:name) {'player_1'} }
-  before { allow(game).to receive(:name) {'player_1'} }
 
   describe 'player selects rock' do
 
