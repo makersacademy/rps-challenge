@@ -10,22 +10,22 @@ describe Game do
 
   describe 'player selects rock' do
 
-    before { allow(player_1).to receive(:player_weapon) { 'rock' } }
+    before { allow(player_1).to receive(:weapon) { 'rock' } }
 
     it 'cpu selects scissors' do
-      allow(player_2).to receive(:player_weapon) { 'scissors' }
+      allow(player_2).to receive(:weapon) { 'scissors' }
       game.run_game
       expect(game.result).to eq 'win'
     end
       
     it 'cpu selects rock' do
-      allow(player_2).to receive(:player_weapon) { 'rock' }
+      allow(player_2).to receive(:weapon) { 'rock' }
       game.run_game
       expect(game.result).to eq 'draw'
     end
 
     it 'cpu selects paper' do
-      allow(player_2).to receive(:player_weapon) { 'paper' }
+      allow(player_2).to receive(:weapon) { 'paper' }
       game.run_game
       expect(game.result).to eq 'loss'
     end
@@ -34,22 +34,22 @@ describe Game do
 
   describe 'player selects paper' do
 
-    before { allow(player_1).to receive(:player_weapon) { 'paper' } }
+    before { allow(player_1).to receive(:weapon) { 'paper' } }
 
     it 'cpu selects scissors' do
-      allow(player_2).to receive(:player_weapon) { 'scissors' }
+      allow(player_2).to receive(:weapon) { 'scissors' }
       game.run_game
       expect(game.result).to eq 'loss'
     end
       
     it 'cpu selects rock' do
-      allow(player_2).to receive(:player_weapon) { 'rock' }
+      allow(player_2).to receive(:weapon) { 'rock' }
       game.run_game
       expect(game.result).to eq 'win'
     end
 
     it 'cpu selects paper' do
-      allow(player_2).to receive(:player_weapon) { 'paper' }
+      allow(player_2).to receive(:weapon) { 'paper' }
       game.run_game
       expect(game.result).to eq 'draw'
     end
@@ -58,22 +58,22 @@ describe Game do
 
   describe 'player selects scissors' do
 
-    before { allow(player_1).to receive(:player_weapon) { 'scissors' } }
+    before { allow(player_1).to receive(:weapon) { 'scissors' } }
 
     it 'cpu selects scissors' do
-      allow(player_2).to receive(:player_weapon) { 'scissors' }
+      allow(player_2).to receive(:weapon) { 'scissors' }
       game.run_game
       expect(game.result).to eq 'draw'
     end
       
     it 'cpu selects rock' do
-      allow(player_2).to receive(:player_weapon) { 'rock' }
+      allow(player_2).to receive(:weapon) { 'rock' }
       game.run_game
       expect(game.result).to eq 'loss'
     end
 
     it 'cpu selects paper' do
-      allow(player_2).to receive(:player_weapon) { 'paper' }
+      allow(player_2).to receive(:weapon) { 'paper' }
       game.run_game
       expect(game.result).to eq 'win'
     end

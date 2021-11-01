@@ -9,10 +9,17 @@ class RPSApp < Sinatra::Base
   end
 
   get '/' do
-    player = Player.new('Ben')
-    game = Game.new(player)
-    game.player_weapon('rock')
-    game.run_game
+    erb(:game)
+  end
+
+  post '/result' do
+    p params
+    @player = Player.new(params[:player], params[:rps])
+    @cpu = Computer.new('cpu')
+    @game = Game.new(@player, @cpu)
+    @game.run_game
+    @result = @game.result
+    erb(:game)
   end
 
   run! if app_file == $0
