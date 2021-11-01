@@ -1,42 +1,37 @@
+require_relative './player.rb'
+require_relative './computer.rb'
+
 class Game
 
-  attr_reader :result
+  attr_accessor :result
 
-  @@weapons = ['paper', 'scissors', 'rock']
+  WEAPONS = [:paper, :scissors, :rock]
 
-  def initialize(player)
-    @player = player
-  end
-
-  def player_weapon(weapon)
-    @player_weapon = weapon
-    puts "You selected #{@player_weapon}"
+  def initialize(player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
   def run_game
-    @cpu_weapon = cpu_weapon
+    @p1_weapon = @player_1.player_weapon.to_sym
+    @p2_weapon = @player_2.player_weapon.to_sym
     @result = determine_result
     print_result
   end
 
   private
 
-  def cpu_weapon
-    @@weapons[rand(0..2)]
-    puts "CPU selected #{@cpu_weapon}"
-  end
-
   def determine_result
-    return 'draw' if @player_weapon == @cpu_weapon
-    return 'loss' if @player_weapon == @@weapons[@@weapons.index(@cpu_weapon)-1]
+    return 'draw' if @p1_weapon == @p2_weapon
+    return 'loss' if @p1_weapon == WEAPONS[WEAPONS.index(@p2_weapon)-1]
     'win'
   end
 
   def print_result
     case @result
-      when 'win' then "Contratulations #{@player.name}! YOU WIN"
-      when 'loss' then "Sorry #{@player.name}! YOU LOST"
-      when 'draw' then "Its a DRAW, #{@player.name}!"
+      when 'win' then "Contratulations #{@player_1.name}! YOU WIN"
+      when 'loss' then "Sorry #{@player_1.name}! YOU LOST"
+      when 'draw' then "Its a DRAW, #{@player_1.name}!"
     end
   end
 

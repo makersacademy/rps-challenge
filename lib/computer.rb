@@ -1,4 +1,6 @@
-class Player
+require_relative './player.rb'
+
+class Computer < Player
 
   attr_reader :name
 
@@ -7,7 +9,7 @@ class Player
   end
 
   def player_weapon
-    gets.chomp
+    Game::WEAPONS[rand(0..2)]
   end
 
 end
