@@ -12,28 +12,15 @@ class Game
     @player_2 = player_2
   end
 
-  def run_game
+  def weapons
     @p1_weapon = @player_1.weapon.to_sym
     @p2_weapon = @player_2.weapon.to_sym
-    @result = determine_result
   end
-
-  private
 
   def determine_result
-    return 'draw' if @p1_weapon == @p2_weapon
-    return 'loss' if @p1_weapon == WEAPONS[WEAPONS.index(@p2_weapon)-1]
-    'win'
+    return :draw if @p1_weapon == @p2_weapon
+    return :lose if @p1_weapon == WEAPONS[WEAPONS.index(@p2_weapon)-1]
+    :win
   end
-
-=begin
-  def print_result
-    case @result
-      when 'win' then "Contratulations #{@player_1.name}! YOU WIN"
-      when 'loss' then "Sorry #{@player_1.name}! YOU LOST"
-      when 'draw' then "Its a DRAW, #{@player_1.name}!"
-    end
-  end
-=end
 
 end

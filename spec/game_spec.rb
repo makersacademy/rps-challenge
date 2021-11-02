@@ -1,12 +1,13 @@
 require 'game'
 require 'computer'
 require 'player'
+require 'controller'
 
 describe Game do
 
   let(:player_1) { double('player_1', :name => 'player_1') }
   let(:player_2) { double('player_2', :name => 'player_2') }
-  let(:game) { Game.new(player_1, player_2) }
+  let(:controller) { Controller.new }
 
   describe 'player selects rock' do
 
@@ -14,20 +15,17 @@ describe Game do
 
     it 'cpu selects scissors' do
       allow(player_2).to receive(:weapon) { 'scissors' }
-      game.run_game
-      expect(game.result).to eq 'win'
+      expect(controller.new_game(player_1, player_2)).to eq :win
     end
       
     it 'cpu selects rock' do
       allow(player_2).to receive(:weapon) { 'rock' }
-      game.run_game
-      expect(game.result).to eq 'draw'
+      expect(controller.new_game(player_1, player_2)).to eq :draw
     end
 
     it 'cpu selects paper' do
       allow(player_2).to receive(:weapon) { 'paper' }
-      game.run_game
-      expect(game.result).to eq 'loss'
+      expect(controller.new_game(player_1, player_2)).to eq :lose
     end
 
   end
@@ -38,20 +36,17 @@ describe Game do
 
     it 'cpu selects scissors' do
       allow(player_2).to receive(:weapon) { 'scissors' }
-      game.run_game
-      expect(game.result).to eq 'loss'
+      expect(controller.new_game(player_1, player_2)).to eq :lose
     end
       
     it 'cpu selects rock' do
       allow(player_2).to receive(:weapon) { 'rock' }
-      game.run_game
-      expect(game.result).to eq 'win'
+      expect(controller.new_game(player_1, player_2)).to eq :win
     end
 
     it 'cpu selects paper' do
       allow(player_2).to receive(:weapon) { 'paper' }
-      game.run_game
-      expect(game.result).to eq 'draw'
+      expect(controller.new_game(player_1, player_2)).to eq :draw
     end
 
   end
@@ -62,20 +57,17 @@ describe Game do
 
     it 'cpu selects scissors' do
       allow(player_2).to receive(:weapon) { 'scissors' }
-      game.run_game
-      expect(game.result).to eq 'draw'
+      expect(controller.new_game(player_1, player_2)).to eq :draw
     end
       
     it 'cpu selects rock' do
       allow(player_2).to receive(:weapon) { 'rock' }
-      game.run_game
-      expect(game.result).to eq 'loss'
+      expect(controller.new_game(player_1, player_2)).to eq :lose
     end
 
     it 'cpu selects paper' do
       allow(player_2).to receive(:weapon) { 'paper' }
-      game.run_game
-      expect(game.result).to eq 'win'
+      expect(controller.new_game(player_1, player_2)).to eq :win
     end
 
   end
