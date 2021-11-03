@@ -15,6 +15,7 @@ class RPSApp < Sinatra::Base
   get '/' do
     erb :game
   end
+  
 
   post '/setup' do
     session[:player_name] = params[:player_name]
@@ -32,12 +33,12 @@ class RPSApp < Sinatra::Base
   end
 
   get '/result' do
-    #can i extract these two lines elsewhere?
-    cpu = Computer.new('cpu')
-    controller = Controller.new
-    @result = controller.new_game(Player.new('',session[:weapon]),Computer.new('cpu'))
+    player_1 = Player.new(session[:player_name], session[:weapon])
+    player_2 = Computer.new('cpu')
+    @game = Controller.create(player_1, player_2)
+    @result = Controller.run_game
     @weapon = session[:weapon]
-    @cpu_weapon = cpu.weapon
+    @cpu_weapon = player_2.weapon
     @player_name = session[:player_name]
     erb @result
   end
