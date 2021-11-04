@@ -11,9 +11,7 @@ feature 'Enter names' do
   end
 
   scenario 'player 2 defaults to cpu if left blank' do
-    visit('/')
-    fill_in :p1_name, with: 'Ben'
-    click_button 'Submit'
+		sign_in_and_play_1_player
     expect(page).to have_content 'CPU'
   end
 

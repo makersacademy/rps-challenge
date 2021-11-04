@@ -1,4 +1,4 @@
-feature 'shows winner' do
+feature 'shows winner for 2 player game' do
 
 	scenario 'player 1 wins' do
 		sign_in_and_play_2_player
@@ -26,5 +26,18 @@ feature 'shows winner' do
 		click_button 'Submit'
 		expect(page).to have_content 'It\'s a draw'
 	end
+
+end
+
+feature 'shows winner for single player game' do
+
+	scenario 'player wins' do
+		allow_any_instance_of(Computer).to receive(:weapon_rand).and_return(:scissors)
+		sign_in_and_play_1_player
+		fill_in :p1_weapon, with: 'rock'
+		click_button 'Submit'
+		expect(page).to have_content 'Ben wins!'
+	end
+
 
 end
