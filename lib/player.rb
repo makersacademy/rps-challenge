@@ -8,7 +8,7 @@ class Player
     @name = name
   end
 
-  def weapon(weapon)
+  def select_weapon(weapon)
     raise "That it not an option" unless Game::WEAPONS.include? weapon.to_sym
     @weapon = weapon.to_sym
   end
