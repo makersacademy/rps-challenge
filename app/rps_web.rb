@@ -13,7 +13,7 @@ class RPSApp < Sinatra::Base
   end
 
   helpers do
-    #question: is there a way to combine the logic of player_1 and player_2 into
+    #is there a way to combine the logic of player_1 and player_2 into
     #just 2 methods instead of 4?
     def player_1
       Player.find(session[:player_1_id])
@@ -44,7 +44,7 @@ class RPSApp < Sinatra::Base
   post '/setup' do
     player_1 = Player.new(params[:p1_name])
     add_player_1(player_1)
-    #question: is this too much logic in here? where could this go?
+    #is this too much logic in here? where could this go?
     if params[:p2_name].length == 0
       player_2 = Computer.new('CPU')
       add_player_2(player_2)

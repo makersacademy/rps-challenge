@@ -4,6 +4,11 @@ require_relative './computer.rb'
 
 class Controller
 
+  #class methods used in order to access games  across server calls. the use of
+  #a Controller class might be nonsense I'm really not sure. This logic could
+  #maybe have gone in the game class, and I'm not sure the class methods were
+  #required in the end.
+
   def self.create(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
