@@ -10,7 +10,7 @@ class Computer < Player
   end
 
   def weapon_rand
-    Game::WEAPONS[rand(0..2)]
+    Game::WEAPONS[rand(0..2)].to_sym
   end
 
 end

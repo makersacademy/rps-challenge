@@ -1,3 +1,3 @@
-require_relative "./app/rps_web.rb"
+require_relative "./app"
 
 run RPSApp
