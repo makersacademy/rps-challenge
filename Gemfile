@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '3.0.2'
 
 gem 'sinatra'
+gem 'sinatra-reloader', '~> 1.0'
 
 group :test do
   gem 'capybara'
