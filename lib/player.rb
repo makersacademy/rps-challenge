@@ -1,5 +1,6 @@
 class Player
-  attr_reader :name
+  attr_reader :name, :choice
+  
   def initialize(name)
     @name = name
   end
@@ -8,7 +9,7 @@ class Player
     @choice = choice
   end
 
-  def choice
-    @choice
+  def choose_random
+    @choice = ["Rock", "Paper", "Scissors"].sample
   end
 end

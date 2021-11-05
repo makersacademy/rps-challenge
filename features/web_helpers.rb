@@ -1,5 +1,5 @@
 def sign_in_and_play
   visit('/')
-  fill_in 'name', with: 'Albert'
+  fill_in 'player_1_name', with: 'Albert'
   click_button 'Submit'
 end

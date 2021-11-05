@@ -1,15 +1,15 @@
-<p>Hello <span style="color: red"><%= $player.name %></span>!</p>
+<p>Hello <span style="color: red"><%= @game.player1.name %></span>!</p>
 
 <form action="/result" method="post">
   <p>Please select either rock, paper or scissors:</p>
 
-  <input type="radio" id="" name="choice" value="rock">
+  <input type="radio" id="" name="choice" value="Rock">
   <label for="rock">Rock</label><br>
 
-  <input type="radio" id="" name="choice" value="paper">
+  <input type="radio" id="" name="choice" value="Paper">
   <label for="paper">Paper</label><br>
 
-  <input type="radio" id="" name="choice" value="scissors">
+  <input type="radio" id="" name="choice" value="Scissors">
   <label for="scissors">Scissors</label><br/><br/>
 
   <input type="submit" value="Submit choice">
