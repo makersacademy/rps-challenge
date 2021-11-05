@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="<%= url('/style.css') %>" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+
+<body >
+<div class="site-container">
+<header>
+<h1 class="rps-title">Rock - Paper - Scissors</h1>
+</header>
+
+<h1 class="versus"><%= @player_name %> vs <%= @game.engine.name %></h1>
+
+<form action="/rps" method="post" class="play-form">
+  <input type="submit"  name="player_move" value="rock" class="rps-buttons">
+  <input type="submit"  name="player_move" value="paper" class="rps-buttons">
+  <input type="submit" name="player_move" value="scissors" class="rps-buttons">
+</form>
+
+<footer>
+  <div class="credit">
+      <p>&copy; Michael Jeuga &nbsp;-&nbsp; Blue March 2021.</p>
+    </div>
+</footer>
+</body>
+</div>
+</html>
+ 
