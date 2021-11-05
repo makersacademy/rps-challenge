@@ -9,7 +9,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    'Hello'
+    erb :index
+  end
+
+  post '/game' do
+    @name = params[:name]
+    erb :game
   end
 
   run! if app_file == $0
