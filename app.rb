@@ -9,7 +9,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    'Hello world!'
+    'Hello'
   end
 
   run! if app_file == $0
