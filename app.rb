@@ -14,6 +14,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
+    @computer = 'Computerddddd'
     erb :game
   end
 
