@@ -12,7 +12,12 @@ class RPS < Sinatra::Base
 
   post '/play' do
     $player = Player.new(params[:name])
+    $choice = $player.chosen_hand(params[:choice])
     erb :play
+  end
+
+  post '/result' do
+    erb :result
   end
 
   run! if app_file == $0

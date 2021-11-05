@@ -1,12 +1,16 @@
 <p>Hello <span style="color: red"><%= $player.name %></span>!</p>
 
-<form action="/result">
+<form action="/result" method="post">
   <p>Please select either rock, paper or scissors:</p>
-  <input type="radio" id="" name="rock" value="rock">
+
+  <input type="radio" id="" name="choice" value="rock">
   <label for="rock">Rock</label><br>
-  <input type="radio" id="" name="paper" value="paper">
+
+  <input type="radio" id="" name="choice" value="paper">
   <label for="paper">Paper</label><br>
-  <input type="radio" id="" name="scissors" value="scissors">
+
+  <input type="radio" id="" name="choice" value="scissors">
   <label for="scissors">Scissors</label><br/><br/>
-  <input type="submit" value="Submit">
+
+  <input type="submit" value="Submit choice">
 </form>
