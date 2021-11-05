@@ -14,7 +14,7 @@ class RPS < Sinatra::Base
   post '/names' do
     player1 = Player.new(params[:player_1_name])
     player2 = Player.new("Computer")
-    player2.choose_random
+    @pc_choice = player2.choose_random
     @game = Game.create(player1, player2)
     redirect '/play'
   end
@@ -27,6 +27,7 @@ class RPS < Sinatra::Base
   post '/result' do
     @game = Game.instance
     choice = params[:choice]
+    @outcome = @game.calculate_winner(choice, @pc_choice)
     erb :result
   end
 

@@ -9,4 +9,15 @@ describe Game do
     end
   end
 
+  describe '#calculate_winnder' do
+    it 'correctly states who wins when given players choices' do
+      expect(subject.calculate_winner("Rock", "Scissors")).to eq "player1 wins!"
+    end
+    it 'correctly states who wins when given players choices' do
+      expect(subject.calculate_winner("Paper", "Scissors")).to eq "player2 wins!"
+    end
+    it 'correctly states when there is a draw' do
+      expect(subject.calculate_winner("Rock", "Rock")).to eq "It's a draw!"
+    end
+  end
 end
