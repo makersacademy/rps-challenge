@@ -1,2 +1,19 @@
 <h1>Welcome to the game, <%= @name %>! LET'S PLAY!!!</h1>
 <h2><%= @name %>, choose one option:</h2>
+
+<form action='/winner' method='post'>
+  <ul style="list-style: none;">
+    <li>
+      <label for="ROCK">1.</label>
+      <input type="submit" name="rps" value="ROCK">
+    </li>
+    <li>
+      <label for="PAPER">2.</label>
+      <input type="submit" name="rps" value="PAPER">
+    </li>
+    <li>
+      <label for="SCISSORS">3.</label>
+      <input type="submit" name="rps" value="SCISSORS">
+    </li>
+  </ul>
+</form>

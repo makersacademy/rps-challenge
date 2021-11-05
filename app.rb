@@ -22,5 +22,9 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
+  post '/winner' do
+    erb :winner
+  end
+
   run! if app_file == $0
 end
