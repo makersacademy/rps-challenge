@@ -7,10 +7,13 @@ class RockPaperScissors < Sinatra::Base
   end
  
   get '/' do
-    'Hi Homepage!'
+    erb(:index)
+    # redirect '/play'
   end
 
-  
+  post '/' do
+    'Welcome Doby!'
+  end
   
   # start the server if ruby file executed directly
   run! if app_file == $0
