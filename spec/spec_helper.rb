@@ -9,6 +9,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+require './spec/features/web_helpers'
 
 Capybara.app = RockPaperScissors
 
