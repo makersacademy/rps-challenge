@@ -3,7 +3,9 @@ require_relative "player"
 class Game
 
   IMPLEMENT_LIST = [
-    :rock, :paper, :scissors
+    { :imp => :rock, :winv => [:scissors], :losev => [:paper] },
+    { :imp => :paper, :winv => [:rock], :losev => [:scissors] },
+    { :imp => :scissors, :winv => [:paper], :losev => [:rock] }
   ].freeze
 
   attr_reader :player_one, :player_two
