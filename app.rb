@@ -8,10 +8,10 @@ class RockPaperScissors < Sinatra::Base
  
   get '/' do
     erb(:index)
-    # redirect '/play'
   end
 
-  post '/' do
+  post '/play' do
+    # erb(:play)
     'Welcome Doby!'
   end
   
