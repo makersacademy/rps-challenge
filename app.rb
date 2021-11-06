@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 
+
 class RockPaperScissors < Sinatra::Base
   enable :sessions 
   configure :development do
@@ -23,7 +24,13 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  post '/result' do
+  post '/option' do
+    session[:option] = params[:option]
+    redirect('/result')
+  end
+
+  get '/result' do
+    @option = session[:option]
     erb(:result)
   end
   
