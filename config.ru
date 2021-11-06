@@ -1,2 +1,2 @@
 require './app'
-run Game
+run RpsGame

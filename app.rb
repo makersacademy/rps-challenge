@@ -4,7 +4,7 @@ require 'sinatra/reloader' if development?
 # http://localhost:4567
 # rackup -p 4567
 
-class Game < Sinatra::Base
+class RpsGame < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
