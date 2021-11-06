@@ -5,5 +5,8 @@ Welcome <%= @player_name %>!
 
 <p> What's going to be? Rock, Paper or Scissors? </p> 
 
-
-<button type="submit"> Rock </button>
+<form action="/result" method="post">
+<button type="submit" name="rock" value="rock"> Rock </button>
+<button type="submit" name="paper" value="paper"> Paper </button>
+<button type="submit" name="scissors" value="scissors"> Scissors </button>
+</form>

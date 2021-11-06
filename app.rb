@@ -22,6 +22,10 @@ class RockPaperScissors < Sinatra::Base
     @player_name = session[:player_name]
     erb(:play)
   end
+
+  post '/result' do
+    erb(:result)
+  end
   
   # start the server if ruby file executed directly
   run! if app_file == $0
