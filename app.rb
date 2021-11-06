@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/computer'
+require './lib/player'
 
 
 class RockPaperScissors < Sinatra::Base
@@ -13,8 +15,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    # @player_name = params[:player_name]
-    # instead of using the dummy variables we store the player name in the session which is a short-term information store that lives on the server. 
     session[:player_name] = params[:player_name]
     redirect '/play'
   end
@@ -31,6 +31,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @option = session[:option]
+    @computer = Computer.new
     erb(:result)
   end
   
