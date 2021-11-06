@@ -12,12 +12,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @player_name = params[:player_name]
-    @computer_name = params[:computer_name]
-    erb :play
+    session[:player_name] = params[:player_name]
+    session[:computer_name] = params[:computer_name]
+    redirect '/play'
   end
 
-  # get '/play' do
-    
-  # end
+  get '/play' do
+    @player_name = session[:player_name]
+    @computer_name = session[:computer_name]
+    erb :play
+  end
 end
