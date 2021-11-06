@@ -1,0 +1,22 @@
+<%= @player_name %> chose <%= @player_move.downcase %><br>
+<%= @computer_name %> chose <%= @computer_move %><br>
+
+<% if @player_move == 'rock' && @computer_move == 'scissors' %>
+<%= @player_name %> wins!
+<% elsif @player_move == 'rock' && @computer_move == 'paper' %>
+<%= @computer_name %> wins!
+<% elsif @player_move == 'scissors' && @computer_move == 'paper' %>
+<%= @player_name %> wins!
+<% elsif @player_move == 'scissors' && @computer_move == 'rock' %>
+<%= @computer_name %> wins!
+<% elsif @player_move == 'paper' && @computer_move == 'rock' %>
+<%= @player_name %> wins!
+<% elsif @player_move == 'paper' && @computer_move == 'scissors' %>
+<%= @computer_name %> wins!
+<% else %>
+no one! It's a draw!
+<% end %>
+
+<form action='/new-Game' method='post'>
+  <input type="submit" value="New game">
+</form>
