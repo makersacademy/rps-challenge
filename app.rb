@@ -7,7 +7,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    'Hello Rock Paper Scissors! Test'
+    'Hello Rock Paper Scissors!'
   end
 
   # start the server if ruby file executed directly
