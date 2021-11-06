@@ -1,9 +1,9 @@
 require 'sinatra'
-# require 'sinatra/reloader'
+require 'sinatra/reloader'
 
 
 class Game < Sinatra::Base
-  configure :test do
+  configure :development do
   end
   # enable :sessions
 
@@ -15,4 +15,6 @@ class Game < Sinatra::Base
     @player_name = params[:player_name]
     erb :play
   end
+
+  run! if app_file == $0
 end
