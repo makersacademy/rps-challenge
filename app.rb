@@ -38,5 +38,9 @@ class RpsGame < Sinatra::Base
     erb(:game)
   end
 
+  get '/rock' do
+    "Oh hey!"
+  end
+
   run! if app_file == $0
 end

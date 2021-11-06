@@ -87,4 +87,13 @@ describe Game do
     end
   end
 
+  describe '#make_choice' do
+    it 'calls give_implement on player 1 for turn 1, or player 2 for turn 2' do
+      expect(player_red).to receive(:receive_implement).with({ :imp => :paper, :winv => [:rock] })
+      multi_game.make_choice(1)
+      expect(player_blue).to receive(:receive_implement).with({ :imp => :paper, :winv => [:rock] })
+      multi_game.make_choice(1)
+    end
+  end
+
 end

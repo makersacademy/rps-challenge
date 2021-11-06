@@ -17,6 +17,12 @@ class Game
     @turn = 1
   end
 
+  def make_choice(n = nil)
+    give_with_random(this_turns_player) if n.nil?
+    give_with_choice(this_turns_player, n)
+    switch_turn
+  end
+
   def give_implement(player, n = random_implement)
     player.receive_implement(@implements[n])
     return @implements[n]
@@ -64,6 +70,18 @@ class Game
 
   def has_implement(player)
     player.implement != nil
+  end
+
+  def give_with_choice(player, n)
+    give_implement(player, n)
+  end
+
+  def give_with_random(player)
+    give_implement(player)
+  end
+
+  def this_turns_player
+    turn == 1 ? @player_one : @player_two
   end
 
 end
