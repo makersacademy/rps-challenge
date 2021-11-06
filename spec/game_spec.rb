@@ -1,7 +1,7 @@
 require "game"
 
 describe Game do
-  let(:player_red) { double("Player 1", :name => "Red", :computer? => false, :receive_implement => true) }
+  let(:player_red) { double("Player 1", :name => "Red", :computer? => false, :receive_implement => true, :implement => nil) }
   let(:player_blue) { double("Player 2", :name => "Blue", :computer? => false) }
   let(:player_computer) { double("Computer", :name => "COMPUTER", :computer? => true) }
   let(:implement_list) { [
@@ -59,6 +59,16 @@ describe Game do
 
     it 'returns nil if both players have :rock' do
       expect(player_draw_game.winner).to eq nil
+    end
+  end
+
+  describe '#ready_to_declare' do
+    it 'returns false when one player has not yet chosen an implement' do
+      expect(solo_game.ready_to_declare).to be false
+    end
+
+    it 'returns true when both players have an implement' do
+      expect(player_one_victory_game.ready_to_declare).to be true
     end
   end
 

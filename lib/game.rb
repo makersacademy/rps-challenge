@@ -27,6 +27,10 @@ class Game
     return nil
   end
 
+  def ready_to_declare
+    @player_one.implement != nil && @player_two.implement != nil
+  end
+
   def single_game?
     @player_two.computer?
   end

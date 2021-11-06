@@ -12,9 +12,10 @@ describe RpsGame do
     end
   end
 
-  # feature '#Testing name display' do
-  #   scenario '#Presents the user with a choice between Rock, Paper and Scissors' do
-
-  #   end
-  # end
+  feature '#Testing game page' do
+    scenario '#Includes the name of both players at the top of the page' do
+      sign_in_and_play
+      expect(page).to have_content 'Red vs. Blue'
+    end
+  end
 end

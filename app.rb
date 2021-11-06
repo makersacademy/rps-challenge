@@ -23,11 +23,15 @@ class RpsGame < Sinatra::Base
     if params[:player_1_name] == ""
       redirect to('/warning')
     else
-      player_one = Player.new(params[:player_1_name])
-      player_two = Player.new(params[:player_2_name])
-      $game = Game.new(player_one, player_two)
+      create_game
       redirect to('/game')
     end
+  end
+
+  def create_game
+    player_one = Player.new(params[:player_1_name])
+    player_two = Player.new(params[:player_2_name])
+    $game = Game.new(player_one, player_two)
   end
 
   get '/game' do
