@@ -1,7 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 
-class RockPaperScissors < Sinatra::Base 
+class RockPaperScissors < Sinatra::Base
+  enable :sessions 
   configure :development do
     register Sinatra::Reloader 
   end
@@ -11,7 +12,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    @player_name = params[:player_name]
+    # @player_name = params[:player_name]
+    # instead of using the dummy variables we store the player name in the session which is a short-term information store that lives on the server. 
+    session[:player_name] = params[:player_name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_name = session[:player_name]
     erb(:play)
   end
   
