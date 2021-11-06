@@ -5,9 +5,9 @@ describe Game do
   let(:player_blue) { double("Player 2", :name => "Blue", :computer? => false) }
   let(:player_computer) { double("Computer", :name => "COMPUTER", :computer? => true) }
   let(:implement_list) { [
-    { :imp => :rock, :winv => [:scissors], :losev => [:paper] },
-    { :imp => :paper, :winv => [:rock], :losev => [:scissors] },
-    { :imp => :scissors, :winv => [:paper], :losev => [:rock] }]
+    { :imp => :rock, :winv => [:scissors] },
+    { :imp => :paper, :winv => [:rock] },
+    { :imp => :scissors, :winv => [:paper] }]
   }
   let(:solo_game) { Game.new(player_red, player_computer, implement_list) }
   let(:multi_game) { Game.new(player_red, player_blue, implement_list) }
@@ -25,14 +25,14 @@ describe Game do
     end
 
     it 'calls receive_implement on whichever player is chosen to receive' do
-      expect(player_red).to receive(:receive_implement).with({ :imp => :paper, :winv => [:rock], :losev => [:scissors] })
+      expect(player_red).to receive(:receive_implement).with({ :imp => :paper, :winv => [:rock] })
       solo_game.give_implement(player_red,1)
     end
 
     it 'gives a random implement if no implement is specified' do # [srand = rand]: [1,1], [2,0], [3,2]
-      expect_implement({ :imp => :paper, :winv => [:rock], :losev => [:scissors] }, 1)
-      expect_implement({ :imp => :rock, :winv => [:scissors], :losev => [:paper] }, 2)
-      expect_implement({ :imp => :scissors, :winv => [:paper], :losev => [:rock] }, 3)
+      expect_implement({ :imp => :paper, :winv => [:rock] }, 1)
+      expect_implement({ :imp => :rock, :winv => [:scissors] }, 2)
+      expect_implement({ :imp => :scissors, :winv => [:paper] }, 3)
     end
 
     def expect_implement(imp, n)
@@ -42,12 +42,24 @@ describe Game do
     end
   end
 
-  # describe '#winner' do
-  #   it 'returns @player_one if @player_one has :rock and @player_2 has :scissors' do
-  #     multi_game.give_implement(player_red, 0)
-  #     multi_game.give_implement(player_blue, 2)
-  #     expect(multi_game.winner).to eq player_red
-  #   end
-  # end
+  let(:player_with_rock) { double("A player with a rock", :implement => { :imp => :rock, :winv => [:scissors] }) }
+  let(:player_with_scissors) { double("A player with scissors", :implement => { :imp => :scissors, :winv => [:paper] }) }
+  let(:player_one_victory_game) { Game.new(player_with_rock, player_with_scissors, implement_list) }
+  let(:player_two_victory_game) { Game.new(player_with_scissors, player_with_rock, implement_list) }
+  let(:player_draw_game) { Game.new(player_with_rock, player_with_rock, implement_list) }
+
+  describe '#winner' do
+    it 'returns @player_one if @player_one has :rock and @player_2 has :scissors' do
+      expect(player_one_victory_game.winner).to eq player_with_rock
+    end
+
+    it 'returns @player_two if @player_one has :scissors and @player_2 has :rock' do
+      expect(player_two_victory_game.winner).to eq player_with_rock
+    end
+
+    it 'returns nil if both players have :rock' do
+      expect(player_draw_game.winner).to eq nil
+    end
+  end
 
 end
