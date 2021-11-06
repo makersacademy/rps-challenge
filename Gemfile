@@ -7,7 +7,6 @@ group :test do
   gem 'sinatra-reloader'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
-  gem "capybara"
   gem "selenium-webdriver"
   gem 'rack'
   gem "thin"
