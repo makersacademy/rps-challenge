@@ -22,11 +22,9 @@ class Game
   end
 
   def winner
-    case
-    when player_one_win_list.include?(player_two_implement) then return @player_one
-    when player_two_win_list.include?(player_one_implement) then return @player_two
-    else return nil
-    end
+    return @player_one if player_one_win_list.include?(player_two_implement)
+    return @player_two if player_two_win_list.include?(player_one_implement)
+    return nil
   end
 
   def single_game?

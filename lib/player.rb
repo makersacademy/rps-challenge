@@ -4,9 +4,9 @@ class Player
 
   attr_reader :name, :implement
 
-  def initialize(name = COMPUTER_NAME)
-    @computer = name == COMPUTER_NAME
-    @name = name
+  def initialize(name)
+    @computer = name == ""
+    @name = (name == "" ? COMPUTER_NAME : name)
     @implement = nil
   end
 

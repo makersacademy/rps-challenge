@@ -24,11 +24,15 @@
       margin: 10px 2px 0 0; padding: 5px;
       border-radius: 5px; border-color: rgba(0,0,0,0.25);
     }
+    .warning {
+      color: red; margin: 0; padding: 0; position: relative; top: 10px; font-size: 16px;
+    }
     input[type=submit] {
       background-color: DarkTurquoise;
       margin: 0 0 0 5px;
       border-radius: 5px; border-color: rgba(0,0,0,0.25);
     }
+    #p1box{ border-color: red; }
   </style>
 
 </head>
@@ -36,14 +40,15 @@
 <body>
 
 <div class="signin">
-  <h2>Player 1</h2>
-  <p>Make your choice:</p>
+  <h2>Welcome to <br>Rock, Paper, Scissors!</h2>
 
-  <form action="/choose" method="post">
-    <label>Please enter and submit your name here</label><br>
-    <input type="text" name="player_1_name" class="signin_box" placeholder="Player 1">
-    <input type="submit" value="Submit">
+  <form action="/begin" method="post">
+    <label>Please enter your name here</label><br>
+    <input type="text" name="player_1_name" class="signin_box" id="p1box" placeholder="Player 1">
+    <input type="text" name="player_2_name" class="signin_box" placeholder="Player 2 (optional)">
+    <input type="submit" value="Enter">
   </form>
+  <div class="warning">Please enter a name for Player 1.</div>
 </div>
 
 </body>

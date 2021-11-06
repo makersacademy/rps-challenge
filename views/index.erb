@@ -38,10 +38,11 @@
 <div class="signin">
   <h2>Welcome to <br>Rock, Paper, Scissors!</h2>
 
-  <form action="/choose" method="post">
-    <label>Please enter and submit your name here</label><br>
-    <input type="text" name="player_1_name" class="signin_box" placeholder="Player 1">
-    <input type="submit" value="Submit">
+  <form action="/begin" method="post">
+    <label>Please enter your name here</label><br>
+    <input type="text" name="player_1_name" class="signin_box" id="p1box" placeholder="Player 1">
+    <input type="text" name="player_2_name" class="signin_box" placeholder="Player 2 (optional)">
+    <input type="submit" value="Enter">
   </form>
 </div>
 

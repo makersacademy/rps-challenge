@@ -1,3 +1,5 @@
+require './lib/player'
+require './lib/game'
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader' if development?
@@ -11,6 +13,25 @@ class RpsGame < Sinatra::Base
 
   get '/' do
     erb(:index)
+  end
+
+  get '/warning' do
+    erb(:index_warning)
+  end
+
+  post '/begin' do
+    if params[:player_1_name] == ""
+      redirect to('/warning')
+    else
+      player_one = Player.new(params[:player_1_name])
+      player_two = Player.new(params[:player_2_name])
+      $game = Game.new(player_one, player_two)
+      redirect to('/game')
+    end
+  end
+
+  get '/game' do
+    erb(:game)
   end
 
   run! if app_file == $0
