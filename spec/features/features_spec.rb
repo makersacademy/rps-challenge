@@ -14,8 +14,13 @@ describe RpsGame do
 
   feature '#Testing game page' do
     scenario '#Includes the name of both players at the top of the page' do
-      sign_in_and_play
+      sign_in_and_play_mult
       expect(page).to have_content 'Red vs. Blue'
+    end
+
+    scenario '#Includes the COMPUTER name for single games' do
+      sign_in_and_play_single
+      expect(page).to have_content 'Red vs. COMPUTER'
     end
   end
 end

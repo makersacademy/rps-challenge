@@ -8,12 +8,13 @@ class Game
     { :imp => :scissors, :winv => [:paper] }
   ].freeze
 
-  attr_reader :player_one, :player_two
+  attr_reader :player_one, :player_two, :turn
 
   def initialize(player_one, player_two = Player.new, implements = IMPLEMENT_LIST)
     @player_one = player_one
     @player_two = player_two
     @implements = implements
+    @turn = 1
   end
 
   def give_implement(player, n = random_implement)
@@ -27,8 +28,12 @@ class Game
     return nil
   end
 
+  def switch_turn
+    @turn = (@turn == 1 ? 2 : 1)
+  end
+
   def ready_to_declare
-    @player_one.implement != nil && @player_two.implement != nil
+    has_implement(@player_one) && has_implement(@player_two)
   end
 
   def single_game?
@@ -55,6 +60,10 @@ class Game
 
   def player_two_implement
     @player_two.implement[:imp]
+  end
+
+  def has_implement(player)
+    player.implement != nil
   end
 
 end

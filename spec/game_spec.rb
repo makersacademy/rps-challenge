@@ -72,4 +72,19 @@ describe Game do
     end
   end
 
+  describe '#switch_turn' do
+    it 'switches turns when called' do
+      expect(solo_game.turn).to eq 1
+      3.times do
+        switch_and_expect(2)
+        switch_and_expect(1)
+      end
+    end
+
+    def switch_and_expect(n)
+      solo_game.switch_turn
+      expect(solo_game.turn).to eq n
+    end
+  end
+
 end
