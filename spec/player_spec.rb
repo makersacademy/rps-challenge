@@ -18,4 +18,11 @@ describe Player do
     end
   end
 
+  describe '#receive_implement' do
+    it 'sets the value of @implement to whatever is passed in' do
+      subject.receive_implement(:rock)
+      expect(subject.implement).to eq :rock
+    end
+  end
+
 end
