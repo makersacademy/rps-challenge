@@ -11,8 +11,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    # erb(:play)
-    'Welcome Doby!'
+    @player_name = params[:player_name]
+    erb(:play)
   end
   
   # start the server if ruby file executed directly
