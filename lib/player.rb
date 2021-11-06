@@ -9,7 +9,7 @@ class Player
   end
 
   def player_choice(choice)
-    capitalized_choice = choice.downcase.capitalize
-    @choice = capitalized_choice if Game::CHOICES.include?(capitalized_choice)
+    # capitalized_choice = choice.downcase.capitalize
+    @choice = choice if Game::CHOICES.include?(choice)
   end
 end

@@ -9,6 +9,6 @@ class Computer
   end
 
   def random_choice
-    @pc_choice = Game::CHOICES.sample
+    @choice = Game::CHOICES.sample
   end
 end

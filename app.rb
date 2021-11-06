@@ -16,8 +16,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    # @name = $player1.name
-    # @computer = $computer.name
     @game = $game
     erb :game
   end
@@ -29,7 +27,11 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
-  get '/winner' do
+  post '/winner' do
+    @game = $game
+    choice = params[:rps]
+    @player_choice = @game.player.player_choice(choice)
+    @computer_choice = $game.computer.random_choice
     erb :winner
   end
 

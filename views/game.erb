@@ -3,19 +3,19 @@
 
 <h2><%= @game.player.name %>, choose one option:</h2>
 
-<form action='/winner' method='get'>
+<form action='/winner' method='post'>
   <ul style="list-style: none;">
     <li>
-      <label for="ROCK">1.</label>
-      <input type="submit" name="rps" value="ROCK">
+      <label for="Rock">1.</label>
+      <input type="submit" name="rps" value="Rock">
     </li>
     <li>
-      <label for="PAPER">2.</label>
-      <input type="submit" name="rps" value="PAPER">
+      <label for="Paper">2.</label>
+      <input type="submit" name="rps" value="Paper">
     </li>
     <li>
-      <label for="SCISSORS">3.</label>
-      <input type="submit" name="rps" value="SCISSORS">
+      <label for="Scissors">3.</label>
+      <input type="submit" name="rps" value="Scissors">
     </li>
   </ul>
 </form>
