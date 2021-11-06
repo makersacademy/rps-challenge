@@ -1,11 +1,11 @@
 require './lib/game'
 
 class Computer
-  attr_reader :name, :pc_choice
+  attr_reader :name, :choice
 
   def initialize(name='Computer')
     @name = name
-    @pc_choice = nil
+    @choice = nil
   end
 
   def random_choice

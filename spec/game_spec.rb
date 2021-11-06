@@ -5,9 +5,9 @@ describe Game do
   subject(:game2) { Game.new(player1, computer_s) }
   subject(:game3) { Game.new(player1, computer_p) }
   let(:player1) { double :player, :player_choice => 'Rock', :choice => "Rock" }
-  let(:computer_p) { double :computer_p, :random_choice =>'Paper', :pc_choice => "Paper" }
-  let(:computer_r) { double :computer_r, :random_choice =>'Rock', :pc_choice => "Rock" }
-  let(:computer_s) { double :computer_s, :random_choice =>'Scissors', :pc_choice => 'Scissors' }
+  let(:computer_p) { double :computer_p, :random_choice =>'Paper', :choice => "Paper" }
+  let(:computer_r) { double :computer_r, :random_choice =>'Rock', :choice => "Rock" }
+  let(:computer_s) { double :computer_s, :random_choice =>'Scissors', :choice => 'Scissors' }
 
   describe '#player' do
     it 'should have player1' do

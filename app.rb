@@ -32,6 +32,7 @@ class RockPaperScissors < Sinatra::Base
     choice = params[:rps]
     @player_choice = @game.player.player_choice(choice)
     @computer_choice = $game.computer.random_choice
+    @result = @game.result
     erb :winner
   end
 

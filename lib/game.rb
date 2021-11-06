@@ -2,11 +2,12 @@ require './lib/player'
 require './lib/computer'
 
 class Game
-  attr_reader :players
+  attr_reader :players, :result
   CHOICES = ['Rock', 'Paper', 'Scissors']
 
   def initialize(player, computer)
     @players = [player, computer]
+    @result = ""
   end
 
   def player
@@ -23,14 +24,14 @@ class Game
   end
 
   def result
-    if (player.choice == computer.pc_choice)
-      "It is a draw!"
-    elsif (player.choice == 'Rock' && computer.pc_choice == 'Scissors') ||
-      (player.choice == 'Scissors' && computer.pc_choice == 'Paper') ||
-      (player.choice == 'Paper' && computer.pc_choice == 'Rock')
-      "You WON!"
+    if (player.choice == computer.choice)
+      @result = "It is a draw!"
+    elsif (player.choice == 'Rock' && computer.choice == 'Scissors') ||
+      (player.choice == 'Scissors' && computer.choice == 'Paper') ||
+      (player.choice == 'Paper' && computer.choice == 'Rock')
+      @result = "You WON!"
     else
-      "You LOST!"
+      @result = "You LOST!"
     end
   end
 end
