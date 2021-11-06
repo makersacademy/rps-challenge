@@ -1,7 +1,7 @@
-<h1>Welcome to the game, <%= @name %>!</h1>
-<h2>You will be playing against Computer. LET'S PLAY!!!</h2>
+<h1>Welcome to the game, <%= @game.player.name %>!</h1>
+<h2>You will be playing against <%= @game.computer.name %>. LET'S PLAY!!!</h2>
 
-<h2><%= @name %>, choose one option:</h2>
+<h2><%= @game.player.name %>, choose one option:</h2>
 
 <form action='/winner' method='get'>
   <ul style="list-style: none;">

@@ -3,8 +3,8 @@ require './lib/game'
 class Computer
   attr_reader :name, :pc_choice
 
-  def initialize
-    @name = 'Computer'
+  def initialize(name='Computer')
+    @name = name
     @pc_choice = nil
   end
 

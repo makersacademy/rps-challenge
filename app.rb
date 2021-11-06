@@ -16,14 +16,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @name = $player1.name
-    # @computer = $player2.name
+    # @name = $player1.name
+    # @computer = $computer.name
+    @game = $game
     erb :game
   end
 
   post '/game' do
-    $player1 = Player.new(params[:name])
-    # $player2 = Computer.new
+    player1 = Player.new(params[:name])
+    computer = Computer.new
+    $game = Game.new(player1, computer)
     redirect '/play'
   end
 
