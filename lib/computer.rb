@@ -1,7 +1,7 @@
 require './lib/game'
 
 class Computer
-  attr_reader :name, :choice
+  attr_reader :name, :pc_choice
 
   def initialize
     @name = 'Computer'

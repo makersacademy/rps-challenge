@@ -17,8 +17,9 @@ class Game
     @players.last
   end
 
-  def play
-    
+  def play(p_choice)
+    player.player_choice(p_choice)
+    computer.random_choice
   end
 
   def result
