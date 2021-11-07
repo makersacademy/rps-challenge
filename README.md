@@ -124,8 +124,16 @@ end
 ```
 - I needlessly required 'app' in my features spec, which stopped it from working.
 - I typed `erb: index` instead of `erb :index`
+- When making the web helper methods, I got the ruby syntax wrong for method definition - I added an end.
+- Even with that, it would not work.
 
 **Questions:**
 
 - [] What does this do in the app.rb: `run! if app_file == $0`
 - [] Should feature tests be in the same or separate files?
+- [] I could not make this code work: 
+``` ruby
+it 'has clickable button' do
+ expect(page).to have_button('Rock')
+end
+```
