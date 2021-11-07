@@ -1,4 +1,4 @@
-feature 'RPS battle' do
+feature 'RPS_battle' do
   scenario 'The game declares a result' do
     sign_in_and_play
     fill_in :player_move, with: 'paper'

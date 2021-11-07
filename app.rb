@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
 require './lib/computer'
-require './lib/game' #just added this
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -42,8 +42,8 @@ class RockPaperScissors < Sinatra::Base
     erb :end_of_round 
   end
 
- post '/new-game' do
-  redirect '/play'
- end
+  post '/new-game' do
+    redirect '/play'
+  end
 
 end

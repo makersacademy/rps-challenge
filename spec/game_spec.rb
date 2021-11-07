@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  subject(:game) {Game.new("Ryan", "Imposter Ryan")}
+  subject(:game) { Game.new("Ryan", "Imposter Ryan") }
   let(:ryan) { double :player }
   let(:imposter_ryan) { double :computer }
 

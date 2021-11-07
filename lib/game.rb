@@ -26,20 +26,20 @@ class Game
     @players.last
   end
 
-  def winner #This needs tidying up if I had more time
-    if self.player.move.downcase == 'rock' && self.computer.move == 'scissors'
+  def winner # This needs tidying up if I had more time
+    if player.move.downcase == 'rock' && computer.move == 'scissors'
       player_wins
-    elsif self.player.move.downcase == 'rock' && self.computer.move == 'paper'
+    elsif player.move.downcase == 'rock' && computer.move == 'paper'
       computer_wins
-    elsif self.player.move.downcase == 'scissors' && self.computer.move == 'paper'
+    elsif player.move.downcase == 'scissors' && computer.move == 'paper'
       player_wins
-    elsif self.player.move.downcase == 'scissors' && self.computer.move == 'rock'
+    elsif player.move.downcase == 'scissors' && computer.move == 'rock'
       computer_wins
-    elsif self.player.move.downcase == 'paper' && self.computer.move == 'rock'
+    elsif player.move.downcase == 'paper' && computer.move == 'rock'
       player_wins
-    elsif self.player.move.downcase == 'paper' && self.computer.move == 'scissors'
+    elsif player.move.downcase == 'paper' && computer.move == 'scissors'
       computer_wins
-    elsif self.player.move == 'Invalid user move'
+    elsif player.move == 'Invalid user move'
       invalid_player_move
     else
       draw
@@ -49,13 +49,13 @@ class Game
   private
 
   def player_wins
-    @declare_winner = "#{self.player.name} wins!"
-    self.player.add_point
+    @declare_winner = "#{player.name} wins!"
+    player.add_point
   end
 
   def computer_wins
-    @declare_winner = "#{self.computer.name} wins!"
-    self.computer.add_point
+    @declare_winner = "#{computer.name} wins!"
+    computer.add_point
   end
 
   def draw
@@ -63,8 +63,8 @@ class Game
   end
 
   def invalid_player_move
-    @declare_winner = "#{self.computer.name} wins! #{self.player.name} entered an invalid move!"
-    self.computer.add_point
+    @declare_winner = "#{computer.name} wins! #{player.name} entered an invalid move!"
+    computer.add_point
   end
 
 end
