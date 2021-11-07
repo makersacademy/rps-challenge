@@ -1,4 +1,5 @@
 feature 'Choose move' do
+  
   scenario 'Choosing player 1 move' do
     sign_in_and_enter_names
     click_button 'Choose your move'
@@ -35,8 +36,5 @@ feature 'Choose move' do
     choose 'rock'
     click_button 'Submit your choice'
     expect(page).to have_content 'Computer chose'
-    # Question - how can I make this test check for random rock, paper or scissors?
-    # This test will still pass if the page fails to display some of the content
-    # That content would be rock, paper or scissors and is generated randomly
   end
 end
