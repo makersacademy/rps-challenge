@@ -10,12 +10,37 @@
       width: 700px; margin: 0 auto; background-color: ghostwhite; 
 	  }
     p, h2 { padding: 0; margin: 3%; }
-    .arena {
+    img {
       width: 90%;
-      font-size: 18px; text-align: center;
-      padding: 8px 10px 20px; margin: 15% auto;
+      background-color: white;
+      border-style: solid; border-width: 2px; border-radius: 5px; border-color: rgba(0,0,0,0.25);
+    }
+    .arena, .options {
+      width: 60%;
+      text-align: center;
+    }
+    .arena {
+      font-size: 18px;
+      padding: 8px 10px 20px; margin: 15% auto 2%;
       background-color: rgba(175, 238, 238, 0.35);
       border-style: solid; border-width: 2px; border-radius: 5px; border-color: rgba(0,0,0,0.25);
+    }
+    .corner {
+      width: 48%; display: inline-block;
+    }
+    #left {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+    .options {
+      height: 40px; margin: 0 auto;
+    }
+    .button {
+      font-size: 16px; text-align: center;
+      width: 38%; display: inline-block; height: 80%;
+      padding: 5px; margin: 1%;
+      border-style: solid; border-width: 2px; border-radius: 15px; border-color: rgba(0,0,0,0.25);
+      background-color: DarkTurquoise; color: white; text-decoration: none; font-weight: bold;
     }
   </style>
 
@@ -23,17 +48,24 @@
 
 <body>
   <div class="arena">
-    <%= $game.player_one.name %> chose <%= $game.player_one.weapon.title %>.
-    <%= $game.player_two.name %> chose <%= $game.player_two.weapon.title %>.
-
     <% if $game.winner.nil? %>
-      It's a draw!
+      <h2>It's a draw!</h2>
     <% end %>
     <% if !$game.winner.nil? %>
-      <%= $game.winner.name %> is the winner!
+      <h2><%= $game.winner.name %> wins!</h2>
     <% end %>
-    <a href="/reset">Play again</a>
-
+    <div class="corner">
+      <img id="left" src=<%= $game.player_one.weapon.image %> alt=<%= $game.player_one.weapon.title %>>
+      <p><%= $game.player_one.name %> chose <br><b><%= $game.player_one.weapon.title %></b></p>
+    </div>
+    <div class="corner">
+      <img src=<%= $game.player_two.weapon.image %> alt=<%= $game.player_two.weapon.title %>>
+      <p><%= $game.player_two.name %> chose <br><b><%= $game.player_two.weapon.title %></b></p>
+    </div>
+  </div>
+  <div class="options">
+    <a class="button" href="/reset">Play again</a><br>
+    <a class="button" href="/">Return to sign-in</a>
   </div>
 </body>
 </html>

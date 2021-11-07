@@ -29,7 +29,7 @@ describe RpsGame do
     scenario '#Declares player 1 to be the winner for player 1: rock and player 2: scissors' do
       sign_in_and_play_mult
       click_buttons(0, 2)
-      expect(page).to have_content 'Red is the winner!'
+      expect(page).to have_content 'Red wins!'
     end
 
     scenario '#Declares a draw if both players pick the same implement' do
@@ -41,8 +41,8 @@ describe RpsGame do
     scenario '#Displays choices' do
       sign_in_and_play_mult
       click_buttons
-      expect(page).to have_content "Red chose Golem."
-      expect(page).to have_content "Blue chose Golem."
+      expect(page).to have_content "Red chose Golem"
+      expect(page).to have_content "Blue chose Golem"
     end
 
     def click_buttons(n = 0, m = 0)
