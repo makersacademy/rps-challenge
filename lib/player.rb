@@ -18,4 +18,8 @@ class Player
     @implement = implement
   end
 
+  def remove_implement
+    @implement = nil
+  end
+
 end

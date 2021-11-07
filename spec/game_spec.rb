@@ -109,4 +109,11 @@ describe Game do
     end
   end
 
+  describe '#reset' do
+    it 'calls remove_implement on all players' do
+      expect(player_red).to receive(:remove_implement)
+      expect(player_blue).to receive(:remove_implement)
+      multi_game.reset
+    end
+  end
 end

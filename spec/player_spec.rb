@@ -26,4 +26,11 @@ describe Player do
     end
   end
 
+  describe '#remove_implement' do
+    it 'removes the current implement from the player' do
+      named_player.receive_implement(:rock)
+      named_player.remove_implement
+      expect(named_player.implement).to eq nil
+    end
+  end
 end

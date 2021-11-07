@@ -28,14 +28,14 @@ class Game
   end
 
   def winner
-    return nil if !ready_to_declare?
+    return nil unless ready_to_declare?
     return @player_one if player_one_win_list.include?(player_two_implement)
     return @player_two if player_two_win_list.include?(player_one_implement)
     return nil
   end
 
   def draw?
-    winner == nil
+    winner.nil?
   end
 
   def switch_turn
@@ -48,6 +48,11 @@ class Game
 
   def single_game?
     @player_two.computer?
+  end
+
+  def reset
+    @player_one.remove_implement
+    @player_two.remove_implement
   end
 
   private

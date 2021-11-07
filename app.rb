@@ -15,10 +15,6 @@ class RpsGame < Sinatra::Base
     erb(:index)
   end
 
-  get '/warning' do
-    erb(:index_warning)
-  end
-
   post '/begin' do
     if params[:player_1_name] == ""
       redirect to('/warning')
@@ -26,6 +22,10 @@ class RpsGame < Sinatra::Base
       create_game
       redirect to('/game')
     end
+  end
+
+  get '/warning' do
+    erb(:index_warning)
   end
 
   get '/game' do
