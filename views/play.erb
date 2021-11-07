@@ -1,0 +1,23 @@
+<style>
+  body
+  {
+    background-color: #AAEEFF;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  }
+</style>
+
+<p>Hello <span style="color: red"><%= @game.player1.name %></span>!</p>
+<form action="/result" method="post">
+  <p>Please select either Rock, Paper or Scissors:</p>
+
+  <input type="radio" id="" name="choice" value="Rock">
+  <label for="rock">Rock</label><br/>
+
+  <input type="radio" id="" name="choice" value="Paper">
+  <label for="paper">Paper</label><br/>
+
+  <input type="radio" id="" name="choice" value="Scissors">
+  <label for="scissors">Scissors</label><br/><br/>
+
+  <input type="submit" value="Submit choice">
+</form>
