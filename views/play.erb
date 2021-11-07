@@ -1,11 +1,17 @@
 <h1> <%= @player_name %> vs Computer</h1>
 <br><br>
-<h1> <%= @player_name %> choose Rock, Paper, or Scissors</h1>
+<h2>Rules: <br><br>
+Rock beats Scissors <br><br>
+Paper beats Rock <br><br>
+Scissors beats Paper</h2>
+<br><br>
+<!-- TODO: dynamically load elements instead of hard coding -->
+<h3> <%= @player_name %> choose Rock, Paper, or Scissors</h3>
 <form action="/who_is_winner" method="post">
   <select id="element_select" name="element">
    <!-- <option value="">--Please choose an option--</option> -->
   <!-- TODO: consider functionality to make sure they have actually made a choice by opening above and validating -->
-  <!-- TODO: dynamically load elements instead of hardcoding -->
+  <!-- TODO: dynamically load elements instead of hard coding -->
     <option value="Rock">Rock</option>
     <option value="Paper">Paper</option>
     <option value="Scissors">Scissors</option>

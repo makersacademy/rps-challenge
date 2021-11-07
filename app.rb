@@ -37,8 +37,11 @@ class RPS < Sinatra::Base
   end
 
   get '/winner' do
+    @game = $game
     @player_name = session[:player_name]
     @selected_option = session[:selected_option]
+    @computer_option = $game.computer_selection
+    @winner = $game.determine_winner(@selected_option, @computer_option)
     erb :winner
   end
 

@@ -1,5 +1,3 @@
-# accounts for a computer player
-# pulls rules and issues a winner
 require_relative 'rules'
 
 class Game
@@ -10,7 +8,17 @@ class Game
     computer_move_options = @rules.elements.map { |h| "#{h.name}"}
     computer_move_options.sample
   end
-end
 
-# TODO: Still to complete: I need to create a method to compare player choice vs computer choice to decide a winner or a tie
-# TODO: will still need to impliment this on the controller side
+  def determine_winner(player_selection, computer_choice)
+    result = 'something is wrong'
+    element = @rules.elements.select { |element| element.name == player_selection}.first #find element whose name matches player selection
+    if element.beats == computer_choice
+      result = "wins"
+    elsif element.loses == computer_choice
+      result = "loses"
+    elsif element.ties == computer_choice
+      result = "- It's a tie"
+    end
+    result
+  end
+end
