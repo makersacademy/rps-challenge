@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -20,6 +21,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player_1 = $player_1
+    $computer = Computer.new
+    @computer = $computer
     erb(:play)
   end
 
