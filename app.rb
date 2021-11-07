@@ -25,6 +25,12 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  get '/choose' do
+    @player_1 = $player_1
+    @player_2 = $player_2
+    erb(:choose)
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
