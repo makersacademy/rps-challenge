@@ -9,4 +9,11 @@ describe Player do
     end
   end
 
+  describe '#add_choice' do
+    it 'Adds the players choice as a local variable' do
+      john.add_choice('Rock')
+      expect(john.choice).to eq 'Rock'
+    end
+  end
+
 end

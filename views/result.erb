@@ -7,9 +7,9 @@
 </section>
 
 <% if @game.game_result == "Win" %>
-<p><%= @game.player_1.name %> wins!<p>
+<p><%= @game.player_1.name %> wins! <br/> <%= @game.player_1.choice %> beats <%= @game.player_2.choice %><p>
 <% elsif @game.game_result == "Lose" %>
-<p><%= @game.player_1.name %> loses!<p>
+<p><%= @game.player_1.name %> loses! <br/> <%= @game.player_2.choice %> beats <%= @game.player_1.choice %><p>
 <% else %>
 <p>Draw!</p>
 <% end %>
