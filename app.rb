@@ -39,6 +39,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/choice_made' do
     @player_1 = $player_1
+    @computer = $computer
+    @computer.random
     erb(:choice_made)
   end
 

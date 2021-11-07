@@ -8,7 +8,7 @@ class Computer
   end
 
   def random
-    @move.sample
+    @move = @move.sample
   end
 
 end
