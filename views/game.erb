@@ -1,0 +1,21 @@
+<h1>Welcome to the game, <%= @game.player.name %>!</h1>
+<h2>You will be playing against <%= @game.computer.name %>. LET'S PLAY!!!</h2>
+
+<h2><%= @game.player.name %>, choose one option:</h2>
+
+<form action='/winner' method='post'>
+  <ul style="list-style: none;">
+    <li>
+      <label for="Rock">1.</label>
+      <input type="submit" name="rps" value="Rock">
+    </li>
+    <li>
+      <label for="Paper">2.</label>
+      <input type="submit" name="rps" value="Paper">
+    </li>
+    <li>
+      <label for="Scissors">3.</label>
+      <input type="submit" name="rps" value="Scissors">
+    </li>
+  </ul>
+</form>
