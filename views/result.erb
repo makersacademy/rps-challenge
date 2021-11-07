@@ -1,11 +1,39 @@
+<!DOCTYPE html>
+<html>
 
-<%= $game.player_one.name %> chose <%= $game.player_one.weapon.name.capitalize %>.
-<%= $game.player_two.name %> chose <%= $game.player_two.weapon.name.capitalize %>.
+<head>
+  <title>Arena</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: sans-serif; font-size: 15px; color: rgb(50, 60, 70);
+      width: 700px; margin: 0 auto; background-color: ghostwhite; 
+	  }
+    p, h2 { padding: 0; margin: 3%; }
+    .arena {
+      width: 90%;
+      font-size: 18px; text-align: center;
+      padding: 8px 10px 20px; margin: 15% auto;
+      background-color: rgba(175, 238, 238, 0.35);
+      border-style: solid; border-width: 2px; border-radius: 5px; border-color: rgba(0,0,0,0.25);
+    }
+  </style>
 
-<% if $game.winner.nil? %>
-  It's a draw!
-<% end %>
-<% if !$game.winner.nil? %>
-  <%= $game.winner.name %> is the winner!
-<% end %>
-<a href="/reset">OK</a>
+</head>
+
+<body>
+  <div class="arena">
+    <%= $game.player_one.name %> chose <%= $game.player_one.weapon.title %>.
+    <%= $game.player_two.name %> chose <%= $game.player_two.weapon.title %>.
+
+    <% if $game.winner.nil? %>
+      It's a draw!
+    <% end %>
+    <% if !$game.winner.nil? %>
+      <%= $game.winner.name %> is the winner!
+    <% end %>
+    <a href="/reset">Play again</a>
+
+  </div>
+</body>
+</html>

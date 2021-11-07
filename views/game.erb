@@ -9,38 +9,35 @@
       font-family: sans-serif; font-size: 15px; color: rgb(50, 60, 70);
       width: 700px; margin: 0 auto; background-color: ghostwhite; 
 	  }
+    p, h2 { padding: 0; margin: 3%; }
     .arena {
-      width: 55%;
+      width: 90%;
       font-size: 18px; text-align: center;
       padding: 8px 10px 20px; margin: 15% auto;
-      background-color: rgba(175, 238, 238, 0.5);
+      background-color: rgba(175, 238, 238, 0.35);
       border-style: solid; border-width: 2px; border-radius: 5px; border-color: rgba(0,0,0,0.25);
     }
+    <% if $game.turn == 1 %>
+    button {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+    <% end %>
   </style>
-
 </head>
 
 <body>
+  <div class="arena">
+    <h2> <%= $game.player_one.name %> vs. <%= $game.player_two.name %> </h2>
+    <p> <%= $game.this_turns_player.name %>, please make your choice.</p>
 
-  <h2> <%= $game.player_one.name %> vs. <%= $game.player_two.name %> </h2>
-
-  <p> <%= $game.this_turns_player.name %>, please make your choice.</p>
-
-  <form action="/choice" method="post">
-    <button name="choice" value="0"><img src="https://cdn2.bulbagarden.net/upload/3/31/Spr_5b_076.png" alt="Golem"></button>
-  </form>
-  <form action="/choice" method="post">
-    <button name="choice" value="1"><img src="https://cdn2.bulbagarden.net/upload/1/19/Spr_5b_103.png" alt="Exeggutor"></button>
-  </form>
-  <form action="/choice" method="post">
-    <button name="choice" value="2"><img src="https://cdn2.bulbagarden.net/upload/2/2c/Spr_5b_123_m.png" alt="Scyther"></button>
-  </form>
-  <form action="/choice" method="post">
-    <button name="choice" value="3"><img src="https://cdn2.bulbagarden.net/upload/b/b1/Spr_5b_127.png" alt="Pinsir"></button>
-  </form>
-  <form action="/choice" method="post">
-    <button name="choice" value="4"><img src="https://cdn2.bulbagarden.net/upload/e/e1/Spr_5b2_080.png" alt="Slowbro"></button>
-  </form>
-
+    <form action="/choice" method="post">
+      <button name="choice" value="0"><img src=<%= $game.weapons[0].image %> alt=<%= $game.weapons[0].name %>></button>
+      <button name="choice" value="1"><img src=<%= $game.weapons[1].image %> alt=<%= $game.weapons[1].name %>></button>
+      <button name="choice" value="2"><img src=<%= $game.weapons[2].image %> alt=<%= $game.weapons[2].name %>></button>
+      <button name="choice" value="3"><img src=<%= $game.weapons[3].image %> alt=<%= $game.weapons[3].name %>></button>
+      <button name="choice" value="4"><img src=<%= $game.weapons[4].image %> alt=<%= $game.weapons[4].name %>></button>
+    </form>
+  </div>
 </body>
 </html>

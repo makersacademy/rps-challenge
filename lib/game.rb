@@ -4,14 +4,14 @@ require_relative "weapon"
 class Game
 
   WEAPON_LIST = [
-    Weapon.new(:golem, [:scyther, :pinsir]),
-    Weapon.new(:exeggutor, [:golem, :slowbro]),
-    Weapon.new(:scyther, [:exeggutor, :pinsir]),
-    Weapon.new(:pinsir, [:exeggutor, :slowbro]),
-    Weapon.new(:slowbro, [:scyther, :golem])
+    Weapon.new(:golem, [:scyther, :pinsir], "https://cdn2.bulbagarden.net/upload/3/31/Spr_5b_076.png"),
+    Weapon.new(:exeggutor, [:golem, :slowbro], "https://cdn2.bulbagarden.net/upload/1/19/Spr_5b_103.png"),
+    Weapon.new(:scyther, [:exeggutor, :pinsir], "https://cdn2.bulbagarden.net/upload/2/2c/Spr_5b_123_m.png"),
+    Weapon.new(:pinsir, [:exeggutor, :slowbro], "https://cdn2.bulbagarden.net/upload/b/b1/Spr_5b_127.png"),
+    Weapon.new(:slowbro, [:scyther, :golem], "https://cdn2.bulbagarden.net/upload/e/e1/Spr_5b2_080.png")
   ].freeze
 
-  attr_reader :player_one, :player_two, :turn
+  attr_reader :player_one, :player_two, :turn, :weapons
 
   def initialize(player_one, player_two = Player.new, weapons = WEAPON_LIST)
     @player_one = player_one
