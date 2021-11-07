@@ -4,7 +4,7 @@ require_relative './lib/ai.rb'
 
 class Game < Sinatra::Base
   enable :sessions
-  
+
   configure :development do
     register Sinatra::Reloader
   end
@@ -14,12 +14,12 @@ class Game < Sinatra::Base
   end
 
   post '/play' do
-    @player_one = params[:player_one]
-    erb :play
+    session[:player_one] = params[:player_one]
+    redirect '/play'
   end
 
   get '/play' do
-    @player_one = params[:player_one]
+    @player_one = session[:player_one]
     erb :play
   end
 

@@ -19,4 +19,12 @@ feature 'rps' do
     click_on 'Play!'
     expect(page).to have_content 'Result:'
   end
+
+  scenario 'allows you to play again' do
+    register_name 
+    click_on 'Play!'
+    click_on 'Play Again'
+    expect(page).to have_content 'Choose your weapon:'
+    expect(page).to have_content 'Rock Paper Scissors'
+  end
 end
