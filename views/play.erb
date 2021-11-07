@@ -1,3 +1,6 @@
+<body style= "background-color: teal">
+<div style= "text-align:center; font-size:50px; font-style:oblique;">
+
 <h1> Hello <%= @turn.player_name %>, you are now ready to play!  </h1>
 
 <form action="/play" method="post"> 
@@ -12,3 +15,6 @@ You chose <%= @turn.player_shape.to_s.capitalize %>!
 <div id="opponent">
 Opponent chose <%= @turn.opponent_shape.to_s.capitalize %>!
 </div>
+
+</div>
+</body>
