@@ -47,15 +47,8 @@ class RpsGame < Sinatra::Base
 
   def make_choice(n)
     $game.make_choice(n)
-    if $game.single_game?
-      $game.make_choice
-    end
-
-    if $game.ready_to_declare?
-      redirect to('/result')
-    else
-      redirect to('/game')
-    end
+    $game.make_choice if $game.single_game?
+    redirect to($game.ready_to_declare? ? ('/result') : ('/game'))
   end
 
   def create_game

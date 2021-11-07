@@ -4,9 +4,11 @@ require_relative "weapon"
 class Game
 
   WEAPON_LIST = [
-    Weapon.new(:golem, [:scyther]),
-    Weapon.new(:exeggutor, [:golem]),
-    Weapon.new(:scyther, [:exeggutor])
+    Weapon.new(:golem, [:scyther, :pinsir]),
+    Weapon.new(:exeggutor, [:golem, :slowbro]),
+    Weapon.new(:scyther, [:exeggutor, :pinsir]),
+    Weapon.new(:pinsir, [:exeggutor, :slowbro]),
+    Weapon.new(:slowbro, [:scyther, :golem])
   ].freeze
 
   attr_reader :player_one, :player_two, :turn
