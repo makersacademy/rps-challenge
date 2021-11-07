@@ -10,8 +10,8 @@ feature 'rps' do
 
   scenario 'generates a random computer choice' do
     register_name 
-    click_on 'Rock'
-    expect(page).to have_content 'Computers choice:'
+    click_on 'Play!'
+    expect(page).to have_content 'Computer choice:'
   end
 
 end

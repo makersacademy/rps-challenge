@@ -8,5 +8,21 @@ describe Ai do
     end
   end
 
+  describe '#declare_winner' do
+    it 'recognises a win' do
+      ai = Ai.new
+      ai_choice = "paper"
+      player_choice = "rock"
+      expect(ai.declare_winner).to eq "The computer won!"
+    end
+
+    it 'recognises a tie' do
+      ai = Ai.new
+      ai_choice = "paper"
+      player_choice = "paper"
+      expect(ai.declare_winner).to eq "It was a tie!"
+    end
+
+  end
 
 end

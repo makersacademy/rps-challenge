@@ -1,7 +1,14 @@
 <h1 style="text-align: center;"><%= @player_1%> vs Computer</h1>
-<p style="text-align: center;" >Choose your weapon:</p>
 <div style="text-align: center;">
-  <button>Rock</button>
-  <button>Paper</button>
-  <button>Scissors</button>
+  <form action="/results" method="post">
+    <p>Choose your weapon:</p>
+    <input type="radio" name="choice" value="rock">
+    <label for="rock">Rock</label>
+    <input type="radio" name="choice" value="paper">
+    <label for="paper">Paper</label>
+    <input type="radio" name="choice" value="scissors">
+    <label for="scissors">Scissors</label>
+    <br>
+    <button type="submit">Play!</button>
+  </form>
 </div>
