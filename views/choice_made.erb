@@ -1,5 +1,5 @@
 <h1> Let's play! </h1>
 
-<h2> <%= @player_1.name %> chose <%= @player_1.choice %> </h2>
+<h2> <%= @game.player_1.name %> chose <%= @game.player_1.choice %> and Computer chose <%= @game.computer.move %> </h2>
 
-<h2> Computer chose <%= @computer.move %> </h2>
+<h2> <%= @game.decide_winner %> </h2>
