@@ -1,0 +1,12 @@
+<body bgcolor="darkslategrey">
+<h2 style="color: goldenrod; font-family: sans-serif"> <%= @game.player.name %> vs. <%= @game.computer.name %> </h2>
+<br>
+<p style="color: goldenrod; font-family: sans-serif">
+<%= @game.player.name %> please enter below: rock, paper or scissors
+</p>
+<br>
+<form action='/rps' method='post'>
+  <input type='text' name='player_move'>
+  <input type="submit" value="Submit">
+</form>
+</body>
