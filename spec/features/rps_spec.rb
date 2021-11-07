@@ -14,4 +14,9 @@ feature 'rps' do
     expect(page).to have_content 'Computer choice:'
   end
 
+  scenario 'declares a result' do
+    register_name 
+    click_on 'Play!'
+    expect(page).to have_content 'Result:'
+  end
 end

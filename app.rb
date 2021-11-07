@@ -11,7 +11,7 @@ class Game < Sinatra::Base
   end
 
   post '/play' do
-    @player_1 = params[:player_1]
+    @player_one = params[:player_one]
     erb :play
   end
 
