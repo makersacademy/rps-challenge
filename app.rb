@@ -16,22 +16,22 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
     erb :game
   end
 
   post '/game' do
     player1 = Player.new(params[:name])
     computer = Computer.new
-    $game = Game.new(player1, computer)
+    @game = Game.create(player1, computer)
     redirect '/play'
   end
 
   post '/winner' do
-    @game = $game
+    @game = Game.instance
     choice = params[:rps]
     @player_choice = @game.player.player_choice(choice)
-    @computer_choice = $game.computer.random_choice
+    @computer_choice = @game.computer.random_choice
     @result = @game.result
     erb :winner
   end
