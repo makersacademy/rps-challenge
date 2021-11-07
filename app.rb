@@ -33,7 +33,11 @@ class RpsGame < Sinatra::Base
   end
 
   post '/choice' do
-    make_choice(:choice.to_s.to_i) 
+    make_choice(params[:choice].to_s.to_i) 
+  end
+
+  get '/result' do
+    erb(:result)
   end
 
   def make_choice(n)
@@ -43,7 +47,7 @@ class RpsGame < Sinatra::Base
     end
 
     if $game.ready_to_declare?
-      "Ready to declare"
+      redirect to('/result')
     else
       redirect to('/game')
     end

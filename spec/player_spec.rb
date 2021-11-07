@@ -33,4 +33,5 @@ describe Player do
       expect(named_player.implement).to eq nil
     end
   end
+
 end

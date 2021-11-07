@@ -23,4 +23,13 @@ describe RpsGame do
       expect(page).to have_content 'Red vs. COMPUTER'
     end
   end
+
+  feature '#Testing results page' do
+    scenario '#Declares player 1 to be the winner for player 1: rock and player 2: paper' do
+      sign_in_and_play_mult
+      click_button("0")
+      click_button("2")
+      expect(page).to have_content 'Red is the winner!'
+    end
+  end
 end
