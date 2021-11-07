@@ -2,7 +2,7 @@ require_relative "player"
 
 class Game
 
-  IMPLEMENT_LIST = [
+  WEAPON_LIST = [
     { :imp => :rock, :winv => [:scissors] },
     { :imp => :paper, :winv => [:rock] },
     { :imp => :scissors, :winv => [:paper] }
@@ -10,10 +10,10 @@ class Game
 
   attr_reader :player_one, :player_two, :turn
 
-  def initialize(player_one, player_two = Player.new, implements = IMPLEMENT_LIST)
+  def initialize(player_one, player_two = Player.new, weapons = WEAPON_LIST)
     @player_one = player_one
     @player_two = player_two
-    @implements = implements
+    @weapons = weapons
     @turn = 1
   end
 
@@ -22,15 +22,15 @@ class Game
     switch_turn
   end
 
-  def give_implement(player, n = random_implement)
-    player.receive_implement(@implements[n])
-    return @implements[n]
+  def give_weapon(player, n = random_weapon)
+    player.receive_weapon(@weapons[n])
+    return @weapons[n]
   end
 
   def winner
     return nil unless ready_to_declare?
-    return @player_one if player_one_win_list.include?(player_two_implement)
-    return @player_two if player_two_win_list.include?(player_one_implement)
+    return @player_one if player_one_win_list.include?(player_two_weapon)
+    return @player_two if player_two_win_list.include?(player_one_weapon)
     return nil
   end
 
@@ -43,7 +43,7 @@ class Game
   end
 
   def ready_to_declare?
-    implement?(@player_one) && implement?(@player_two)
+    weapon?(@player_one) && weapon?(@player_two)
   end
 
   def single_game?
@@ -51,46 +51,47 @@ class Game
   end
 
   def reset
-    @player_one.remove_implement
-    @player_two.remove_implement
-  end
-
-  private
-
-  def random_implement
-    rand(@implements.length)
-  end
-
-  def player_one_win_list
-    @player_one.implement[:winv]
-  end
-
-  def player_two_win_list
-    @player_two.implement[:winv]
-  end
-
-  def player_one_implement
-    @player_one.implement[:imp]
-  end
-
-  def player_two_implement
-    @player_two.implement[:imp]
-  end
-
-  def implement?(player)
-    player.implement != nil
-  end
-
-  def give_with_choice(n)
-    give_implement(this_turns_player, n)
-  end
-
-  def give_with_random
-    give_implement(this_turns_player)
+    @turn = 1
+    @player_one.remove_weapon
+    @player_two.remove_weapon
   end
 
   def this_turns_player
     turn == 1 ? @player_one : @player_two
+  end
+
+  private
+
+  def random_weapon
+    rand(@weapons.length)
+  end
+
+  def player_one_win_list
+    @player_one.weapon[:winv]
+  end
+
+  def player_two_win_list
+    @player_two.weapon[:winv]
+  end
+
+  def player_one_weapon
+    @player_one.weapon[:imp]
+  end
+
+  def player_two_weapon
+    @player_two.weapon[:imp]
+  end
+
+  def weapon?(player)
+    player.weapon != nil
+  end
+
+  def give_with_choice(n)
+    give_weapon(this_turns_player, n)
+  end
+
+  def give_with_random
+    give_weapon(this_turns_player)
   end
 
 end

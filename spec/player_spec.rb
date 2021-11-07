@@ -19,18 +19,18 @@ describe Player do
     end
   end
 
-  describe '#receive_implement' do
-    it 'sets the value of @implement to whatever is passed in' do
-      unnamed_player.receive_implement(:rock)
-      expect(unnamed_player.implement).to eq :rock
+  describe '#receive_weapon' do
+    it 'sets the value of @weapon to whatever is passed in' do
+      unnamed_player.receive_weapon(:rock)
+      expect(unnamed_player.weapon).to eq :rock
     end
   end
 
-  describe '#remove_implement' do
-    it 'removes the current implement from the player' do
-      named_player.receive_implement(:rock)
-      named_player.remove_implement
-      expect(named_player.implement).to eq nil
+  describe '#remove_weapon' do
+    it 'removes the current weapon from the player' do
+      named_player.receive_weapon(:rock)
+      named_player.remove_weapon
+      expect(named_player.weapon).to eq nil
     end
   end
 

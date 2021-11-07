@@ -40,6 +40,11 @@ class RpsGame < Sinatra::Base
     erb(:result)
   end
 
+  get '/reset' do
+    $game.reset
+    redirect to('/game')
+  end
+
   def make_choice(n)
     $game.make_choice(n)
     if $game.single_game?

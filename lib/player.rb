@@ -2,24 +2,24 @@ class Player
 
   COMPUTER_NAME = "COMPUTER".freeze
 
-  attr_reader :name, :implement
+  attr_reader :name, :weapon
 
   def initialize(name)
     @computer = name == ""
     @name = (name == "" ? COMPUTER_NAME : name)
-    @implement = nil
+    @weapon = nil
   end
 
   def computer?
     @computer
   end
 
-  def receive_implement(implement)
-    @implement = implement
+  def receive_weapon(weapon)
+    @weapon = weapon
   end
 
-  def remove_implement
-    @implement = nil
+  def remove_weapon
+    @weapon = nil
   end
 
 end

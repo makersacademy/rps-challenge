@@ -17,14 +17,16 @@
 
   <h2> <%= $game.player_one.name %> vs. <%= $game.player_two.name %> </h2>
 
+  <p> <%= $game.this_turns_player.name %>, please make your choice.</p>
+
   <form action="/choice" method="post">
-    <button name="choice" value="0">Rock</button>
+    <button name="choice" value="0"><img src="https://cdn2.bulbagarden.net/upload/3/31/Spr_5b_076.png" alt="Rock"></button>
   </form>
   <form action="/choice" method="post">
-    <button name="choice" value="1">Paper</button>
+    <button name="choice" value="1"><img src="https://cdn2.bulbagarden.net/upload/1/19/Spr_5b_103.png" alt="Paper"></button>
   </form>
   <form action="/choice" method="post">
-    <button name="choice" value="2">Scissors</button>
+    <button name="choice" value="2"><img src="https://cdn2.bulbagarden.net/upload/2/2c/Spr_5b_123_m.png" alt="Scissors"></button>
   </form>
 
 </body>

@@ -22,21 +22,38 @@ describe RpsGame do
       sign_in_and_play_single
       expect(page).to have_content 'Red vs. COMPUTER'
     end
+
+    scenario '#Displays the player whose turn it is' do
+      sign_in_and_play_mult
+      expect(page).to have_content 'Red, please make your choice'
+      click_button("0")
+      expect(page).to have_content 'Blue, please make your choice'
+    end
   end
 
   feature '#Testing results page' do
     scenario '#Declares player 1 to be the winner for player 1: rock and player 2: scissors' do
       sign_in_and_play_mult
-      click_button("0")
-      click_button("2")
+      click_buttons(0, 2)
       expect(page).to have_content 'Red is the winner!'
     end
 
     scenario '#Declares a draw if both players pick the same implement' do
       sign_in_and_play_mult
-      click_button("0")
-      click_button("0")
+      click_buttons
       expect(page).to have_content "It's a draw!"
+    end
+
+    scenario '#Displays choices' do
+      sign_in_and_play_mult
+      click_buttons
+      expect(page).to have_content "Red chose rock."
+      expect(page).to have_content "Blue chose rock."
+    end
+
+    def click_buttons(n = 0, m = 0)
+      click_button(n)
+      click_button(m)
     end
   end
 end
