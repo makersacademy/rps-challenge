@@ -17,9 +17,15 @@
 
   <h2> <%= $game.player_one.name %> vs. <%= $game.player_two.name %> </h2>
 
-  <a href="/rock">Rock</a>
-  <a href="/paper">Paper</a>
-  <a href="/scissors">Scissors</a>
+  <form action="/choice" method="post">
+    <button name="rock" value="0">Rock</button>
+  </form>
+  <form action="/choice" method="post">
+    <button name="paper" value="1">Paper</button>
+  </form>
+  <form action="/choice" method="post">
+    <button name="scissors" value="2">Scissors</button>
+  </form>
 
 </body>
 </html>

@@ -28,26 +28,12 @@ class RpsGame < Sinatra::Base
     end
   end
 
-  def create_game
-    player_one = Player.new(params[:player_1_name])
-    player_two = Player.new(params[:player_2_name])
-    $game = Game.new(player_one, player_two)
-  end
-
   get '/game' do
     erb(:game)
   end
 
-  get '/rock' do
-    make_choice(0)
-  end
-
-  get '/paper' do
-    make_choice(1)
-  end
-
-  get '/scissors' do
-    make_choice(2)
+  post '/choice' do
+    make_choice(:choice.to_s.to_i) 
   end
 
   def make_choice(n)
@@ -61,6 +47,12 @@ class RpsGame < Sinatra::Base
     else
       redirect to('/game')
     end
+  end
+
+  def create_game
+    player_one = Player.new(params[:player_1_name])
+    player_two = Player.new(params[:player_2_name])
+    $game = Game.new(player_one, player_two)
   end
 
   run! if app_file == $0
