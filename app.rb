@@ -31,6 +31,17 @@ class RockPaperScissors < Sinatra::Base
     erb(:choose)
   end
 
+  post '/choice' do
+    @player_1 = $player_1
+    @player_1.update_choice(params["choice"])
+    redirect '/choice_made'
+  end
+
+  get '/choice_made' do
+    @player_1 = $player_1
+    erb(:choice_made)
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
