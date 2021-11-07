@@ -6,8 +6,8 @@ feature 'registering name' do
     fill_in 'name', with: 'Dave'
     click_button 'Submit'
 
-    save_and_open_page
-    
+    # save_and_open_page
+
     expect(page).to have_content 'Dave'
   end
 end

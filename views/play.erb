@@ -1,5 +1,55 @@
-Hello, <%= @name %>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  color: purple;
+  font-family: verdana;
+  font-size: 300%;
+}
+p {
 
-Rock
-Paper
-Scissors
+  color: black;
+  font-family: courier;
+  font-size: 160%;
+}
+</style>
+</head>
+<header>
+  <!--navbar controller icon-->
+  <a href="#">
+    <img
+      class="lazyload logo"
+      src="https://image.flaticon.com/icons/png/128/860/860168.png"
+      alt="logo"
+  /></a>
+  ...
+</header>
+<body style="background-color:powderblue;">
+<h1 style="text-align:center">Hello, <%= @turn.player_name %> </h1>
+<p> You will be playing against a computer! Here are the winning turns ;
+<ul>
+  <li>Rock wins over scissors</li>
+  <li>Scissors wins over paper</li>
+  <li>Paper wins over rock!</li>
+</ul>
+
+
+Best of luck! </p>
+<form method="POST" action="/play">
+  <input type="submit" name="shape" value="Rock" />
+  <input type="submit" name="shape" value="Paper" />
+  <input type="submit" name="shape" value="Scissors" />
+</form>
+You chose <%= @turn.player_shape.to_s.capitalize %>!
+
+<div id="opponent">
+  Opponent chose <%= @turn.opponent_shape.to_s.capitalize %>!
+</div>
+
+<% if @turn.win? %>
+You win!
+<% end  %>
+
+<h1 style="text-align:center">How to play?</h1>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/152022319?h=69b13415f0" width="640" height="360" frameborder="0" allowfullscreen></iframe>

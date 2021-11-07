@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/turn'
+require './lib/opponent'
 
 class BookmarkManager < Sinatra::Base
   enable :sessions
@@ -11,23 +13,25 @@ class BookmarkManager < Sinatra::Base
     erb(:index)
   end
 
-  get '/name' do
-    erb(:play)
-  end
+  # get '/name' do
+  #   erb(:play)
+  # end
 
   post '/name' do
-    session[:name] = params[:name]
-    # @name = params[:name]
-    # @player_2_name = params[:player_2_name]
+    session[:player_name] = params[:name]
     redirect '/play'
-    # erb(:play)
   end
 
   get '/play' do
-    @name = session[:name]
-    erb :play
+    @turn = Turn.new(session)
+    erb(:play)
   end
 
+  post '/play' do
+    session[:player_shape] = params[:shape].downcase.to_sym
+    session[:opponent_shape] = Opponent.new.shape
+    redirect '/play'
+  end
 
   run! if app_file == $0
 end
