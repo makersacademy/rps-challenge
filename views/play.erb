@@ -2,7 +2,12 @@
 <br><br>
 <h1> <%= @player_name %> choose Rock, Paper, or Scissors</h1>
 <form action="/winner" method="get">
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+  <input type="select" id="element_select" name="element">
+   <!-- <option value="">--Please choose an option--</option> -->
+  <!-- TODO: consider functionality to make sure they have actually made a choice by opening above and validating -->
+  <!-- TODO: dynamically load elements instead of hardcoding -->
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+    </select>
 </form>
