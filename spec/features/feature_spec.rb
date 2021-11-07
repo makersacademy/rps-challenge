@@ -1,9 +1,9 @@
 
 feature RockPaperScissors do
-  context 'start' do
-    it 'has contents "Hello World" ' do
-      visit '/'
-      expect(page).to have_content('Hello World')
-    end
-  end
+  scenario 'registering a name' do
+    visit '/'
+    fill_in :name, with: 'Kate'
+    click_button 'Submit'
+    expect(page).to have_content('Thank you, Kate')
+  end  
 end

@@ -91,7 +91,7 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 
 - At this point I referred to https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md to correct my setup (see errors below).
 - I got the first feature test to pass ('Hello World'), ran rubocop then committed.
-
+- Then I took a 10 min break.
 
 
 
@@ -106,6 +106,7 @@ I chose this approach to really activate and apply my learning.
 - I remembered a pairing partner copying and pasting the correct code in and comparing it with the incorrect code, which was great for learning, so I'm trying this (see examples below)
 
 - the rack error is reminding me that I think I've missed a step: setting up selenium as the driver maybe? Something like capybara comes with one as standard but it is not so useful??
+- The syntax for the capybara feature tests are different: `scenario`
 
 
 **Error: (Mistakes are rich opportunities for learning)**
@@ -122,8 +123,9 @@ configure :development do
 end
 ```
 - I needlessly required 'app' in my features spec, which stopped it from working.
-
+- I typed `erb: index` instead of `erb :index`
 
 **Questions:**
 
 - [] What does this do in the app.rb: `run! if app_file == $0`
+- [] Should feature tests be in the same or separate files?

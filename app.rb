@@ -1,5 +1,5 @@
 require 'sinatra/base' 
-require 'sinatra/reloader' 
+require 'sinatra/reloader'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do # forgot this step
@@ -7,7 +7,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    'Hello World'
+    erb :index
+  end
+
+  post '/play' do
+    # p params
+    @player_name = params[:name]
+    erb :play
   end
   
   run! if app_file == $0
