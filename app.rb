@@ -1,8 +1,10 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require './lib/rules'
+require './lib/element'
+require './lib/game'
 
-
-class Game < Sinatra::Base
+class RPS < Sinatra::Base
   configure :development do
   end
 
@@ -19,11 +21,13 @@ class Game < Sinatra::Base
 
   get '/start' do
     @player_name = session[:player_name]
+
     erb :name
   end
 
   get '/play' do
     @player_name = session[:player_name]
+    $game = Game.new
     erb :play
   end
 
