@@ -5,7 +5,7 @@ describe Computer do
 
   describe '#option' do
     it 'returns a random option' do
-      expect(Computer::OPTIONS).to include computer.option
+      expect(Game::OPTIONS).to include computer.option
     end
   end
 

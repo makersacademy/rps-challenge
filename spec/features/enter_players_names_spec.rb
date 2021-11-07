@@ -1,11 +1,11 @@
 feature 'Enter player name' do
-  scenario 'submitting player name' do
-    sign_in_and_play
+  scenario 'Player enters name' do
+    enter_name
     expect(page).to have_content 'Welcome Doby!'
   end
 
   scenario 'redirect to play page' do
-    sign_in_and_play
+    enter_name
     expect(current_path).to eq '/play'
   end
 

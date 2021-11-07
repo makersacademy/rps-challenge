@@ -1,9 +1,11 @@
-class Computer
+require 'game'
+require 'player'
 
-  OPTIONS = [:rock, :paper, :scissors]
+class Computer
+  attr_reader :computer_option
 
   def option
-    OPTIONS.sample
+    @computer_option = Game::OPTIONS.sample
   end
 
 end

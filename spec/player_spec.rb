@@ -9,4 +9,11 @@ describe Player do
     end
   end
 
+  describe '#option' do
+    it 'stores player option in a variable' do
+      player.move('Paper')
+      expect(player.option).to eq('Paper')
+    end
+  end
+
 end
