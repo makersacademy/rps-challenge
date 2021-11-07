@@ -34,10 +34,10 @@ class RockPaperScissors < Sinatra::Base
   post '/choice' do
     @player_1 = $player_1
     @player_1.update_choice(params["choice"])
-    redirect '/choice_made'
+    redirect '/choice-made'
   end
 
-  get '/choice_made' do
+  get '/choice-made' do
     @player_1 = $player_1
     @computer = $computer
     @computer.random
