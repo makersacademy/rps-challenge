@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/turn'
+require './lib/opponent'
 
 
 class RockPaperScissors < Sinatra::Base
@@ -25,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     session[:player_shape] = params[:shape]
-    session[:opponent_shape] = :rock
+    session[:opponent_shape] = Opponent.new.shape
     redirect '/play'
   end
 
