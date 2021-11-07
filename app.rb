@@ -1,5 +1,8 @@
-require "sinatra/base"
-require "sinatra/reloader"
+require 'sinatra/base'
+require 'sinatra/reloader'
+require './lib/player'
+require './lib/computer'
+require './lib/game' #just added this
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -12,33 +15,33 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_name] = params[:player_name]
-    session[:computer_name] = params[:computer_name]
+    player = Player.new(params[:player_name])
+    computer = Computer.new(params[:computer_name])
+    @game = Game.create(player, computer)
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
-    @computer_name = session[:computer_name]
+    @game = Game.instance
     erb :play
   end
 
   post '/rps' do
-    session[:player_move] = params[:player_move]
-    session[:computer_move] = ['rock', 'paper', 'scissors'].sample
+    @game = Game.instance
+    player_move = params[:player_move]
+    @game.player.select_move(player_move)
+    @game.computer.computer_move
     redirect '/end_of_round'
   end
 
   get '/end_of_round' do
-    @player_name = session[:player_name]
-    @computer_name = session[:computer_name]
-    @player_move = session[:player_move]
-    @computer_move = session[:computer_move]
-    erb :end_of_round
+    @game = Game.instance
+    erb :end_of_round 
   end
 
  post '/new-game' do
-   redirect '/play'
+  @game.reset
+  redirect '/play'
  end
 
 end

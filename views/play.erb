@@ -1,6 +1,6 @@
-<h2> <%= @player_name %> vs. <%= @computer_name %> </h2>
+<h2> <%= @game.player.name %> vs. <%= @game.computer.name %> </h2>
 <br>
-<%= @player_name %> please enter below: rock, paper or scissors 
+<%= @game.player.name %> please enter below: rock, paper or scissors 
 <br>
 <form action='/rps' method='post'>
   <input type='text' name='player_move'>

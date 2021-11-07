@@ -1,18 +1,20 @@
-<%= @player_name %> chose <%= @player_move.downcase %><br>
-<%= @computer_name %> chose <%= @computer_move %><br>
+<%= @game.player.name %> chose <%= @game.player.move %><br>
+<%= @game.computer.name %> chose <%= @game.computer.move %><br>
 
-<% if @player_move == 'rock' && @computer_move == 'scissors' %>
-<%= @player_name %> wins!
-<% elsif @player_move == 'rock' && @computer_move == 'paper' %>
-<%= @computer_name %> wins!
-<% elsif @player_move == 'scissors' && @computer_move == 'paper' %>
-<%= @player_name %> wins!
-<% elsif @player_move == 'scissors' && @computer_move == 'rock' %>
-<%= @computer_name %> wins!
-<% elsif @player_move == 'paper' && @computer_move == 'rock' %>
-<%= @player_name %> wins!
-<% elsif @player_move == 'paper' && @computer_move == 'scissors' %>
-<%= @computer_name %> wins!
+<% if @game.player.move.downcase == 'rock' && @game.computer.move == 'scissors' %>
+<%= @game.player.name %> wins!
+<% elsif @game.player.move.downcase == 'rock' && @game.computer.move == 'paper' %>
+<%= @game.computer.name %> wins!
+<% elsif @game.player.move.downcase == 'scissors' && @game.computer.move == 'paper' %>
+<%= @game.player.name %> wins!
+<% elsif @game.player.move.downcase == 'scissors' && @game.computer.move == 'rock' %>
+<%= @game.computer.name %> wins!
+<% elsif @game.player.move.downcase == 'paper' && @game.computer.move == 'rock' %>
+<%= @game.player.name %> wins!
+<% elsif @game.player.move.downcase == 'paper' && @game.computer.move == 'scissors' %>
+<%= @game.computer.name %> wins!
+<% elsif @game.player.move.downcase == 'Invalid user move'%>
+<%= @game.computer.name %> wins! <%= @game.player.name %>  picked an invalid move.
 <% else %>
 No one wins! It's a draw!
 <% end %>
