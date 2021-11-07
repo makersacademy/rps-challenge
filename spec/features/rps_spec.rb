@@ -7,4 +7,11 @@ feature 'rps' do
     expect(page).to have_content 'Paper'
     expect(page).to have_content 'Scissors'
   end
+
+  scenario 'generates a random computer choice' do
+    register_name 
+    click_on 'Rock'
+    expect(page).to have_content 'Computers choice:'
+  end
+
 end
