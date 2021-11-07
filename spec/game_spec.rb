@@ -7,9 +7,7 @@ describe Game do
 
   describe '#computer_selection' do
     it 'randomly selects one of the move options' do
-    expect(game.computer_selection).to eq('Paper') # ||'Rock'||'Scissors')
+    expect(game.computer_selection).not_to be nil
     end
   end
-
-
 end

@@ -31,5 +31,16 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/who_is_winner' do
+    session[:selected_option] = params[:element]
+    redirect '/winner'
+  end
+
+  get '/winner' do
+    @player_name = session[:player_name]
+    @selected_option = session[:selected_option]
+    erb :winner
+  end
+
   run! if app_file == $0
 end
