@@ -14,6 +14,9 @@ class Game
   def initialize(player1, player2)
     @players = [player1, player2]
     @outcome = ""
+    @player1_win = "#{player1.name} wins!"
+    @player2_win = "#{player2.name} wins!"
+    @draw = "It's a draw!"
   end
 
   def player1
@@ -24,32 +27,47 @@ class Game
     @players[1]
   end 
 
-  def calculate_winner(player1choice, player2choice)
-    case player1choice
+  def calculate_winner(player1_choice, player2_choice)
+    case player1_choice
       when "Rock"
-        if player2choice == "Rock"
-          @outcome = "It's a draw!"
-        elsif player2choice == "Paper"
-          @outcome = "#{player2.name} wins!"
-        elsif player2choice == "Scissors"
-          @outcome = "#{player1.name} wins!"
-        end
+        compare_rock_with(player2_choice)
       when "Paper"
-        if player2choice == "Rock"
-          @outcome = "#{player1.name} wins!"
-        elsif player2choice == "Paper"
-          @outcome = "It's a draw!"
-        elsif player2choice == "Scissors"
-          @outcome = "#{player2.name} wins!"
-        end
+        compare_paper_with(player2_choice)
       when "Scissors"
-        if player2choice == "Rock"
-          @outcome = "#{player2.name} wins!"
-        elsif player2choice == "Paper"
-          @outcome = "#{player1.name} wins!"
-        elsif player2choice == "Scissors"
-          @outcome = "It's a draw!"
-        end
+        compare_scissors_with(player2_choice)
+    end
+  end
+
+  def compare_rock_with(player2_choice)
+    case player2_choice
+      when "Rock"
+        @outcome = @draw
+      when "Paper"
+        @outcome = @player2_win
+      when "Scissors"
+        @outcome = @player1_win
+    end
+  end
+
+  def compare_paper_with(player2_choice)
+    case player2_choice
+      when "Rock"
+        @outcome = @player1_win
+      when "Paper"
+        @outcome = @draw
+      when "Scissors"
+        @outcome = @player2_win
+    end
+  end
+
+  def compare_scissors_with(player2_choice)
+    case player2_choice
+      when "Rock"
+        @outcome = @player2_win
+      when "Paper"
+        @outcome = @player1_win
+      when "Scissors"
+        @outcome = @draw
     end
   end
 end

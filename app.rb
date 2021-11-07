@@ -9,7 +9,7 @@ class RPS < Sinatra::Base
 
   get '/' do 
     erb :index
-  end 
+  end
 
   post '/names' do
     player1 = Player.new(params[:player_1_name])

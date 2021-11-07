@@ -1,3 +1,11 @@
+<style>
+  body
+  {
+    background-color: #AAEEFF;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  }
+</style>
+
 <p><%= @game.player1.name %> chose <span style="color: red"><%= @game.player1.chosen_hand(params[:choice]) %></span>!</p>
 <p><%= @game.player2.name %> chose <span style="color: red"><%= @game.player2.choice %></span>!</p>
 <p><%= @game.calculate_winner(@game.player1.chosen_hand(params[:choice]), @game.player2.choice) %></p>
