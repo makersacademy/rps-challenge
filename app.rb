@@ -1,7 +1,10 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/ai.rb'
 
 class Game < Sinatra::Base
+  enable :sessions
+  
   configure :development do
     register Sinatra::Reloader
   end
@@ -15,9 +18,17 @@ class Game < Sinatra::Base
     erb :play
   end
 
+  get '/play' do
+    @player_one = params[:player_one]
+    erb :play
+  end
+
   post '/results' do
-    @player_choice = params[:choice]
-    p @player_choice
+    @player_choice = params[:choice].to_s.downcase
+    ai = Ai.new
+    @ai_choice = ai.random_choice
+    @results_declaration = ai.declare_winner(@player_choice, @ai_choice)
+
     erb :results
   end
 
