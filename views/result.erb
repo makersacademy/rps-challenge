@@ -1,6 +1,6 @@
 
-<%= $game.player_one.name %> chose <%= $game.player_one.weapon[:imp] %>.
-<%= $game.player_two.name %> chose <%= $game.player_two.weapon[:imp] %>.
+<%= $game.player_one.name %> chose <%= $game.player_one.weapon.name.capitalize %>.
+<%= $game.player_two.name %> chose <%= $game.player_two.weapon.name.capitalize %>.
 
 <% if $game.winner.nil? %>
   It's a draw!

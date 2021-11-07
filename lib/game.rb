@@ -1,11 +1,12 @@
 require_relative "player"
+require_relative "weapon"
 
 class Game
 
   WEAPON_LIST = [
-    { :imp => :rock, :winv => [:scissors] },
-    { :imp => :paper, :winv => [:rock] },
-    { :imp => :scissors, :winv => [:paper] }
+    Weapon.new(:golem, [:scyther]),
+    Weapon.new(:exeggutor, [:golem]),
+    Weapon.new(:scyther, [:exeggutor])
   ].freeze
 
   attr_reader :player_one, :player_two, :turn
@@ -67,19 +68,19 @@ class Game
   end
 
   def player_one_win_list
-    @player_one.weapon[:winv]
+    @player_one.weapon.targets
   end
 
   def player_two_win_list
-    @player_two.weapon[:winv]
+    @player_two.weapon.targets
   end
 
   def player_one_weapon
-    @player_one.weapon[:imp]
+    @player_one.weapon.name
   end
 
   def player_two_weapon
-    @player_two.weapon[:imp]
+    @player_two.weapon.name
   end
 
   def weapon?(player)

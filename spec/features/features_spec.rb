@@ -47,8 +47,8 @@ describe RpsGame do
     scenario '#Displays choices' do
       sign_in_and_play_mult
       click_buttons
-      expect(page).to have_content "Red chose rock."
-      expect(page).to have_content "Blue chose rock."
+      expect(page).to have_content "Red chose Golem."
+      expect(page).to have_content "Blue chose Golem."
     end
 
     def click_buttons(n = 0, m = 0)
