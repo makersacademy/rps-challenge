@@ -1,24 +1,10 @@
-<%= @game.player.name %> chose <%= @game.player.move %><br>
+<%= @game.player.name %> chose <%= @game.player.move.downcase %><br>
 <%= @game.computer.name %> chose <%= @game.computer.move %><br>
 
-<% if @game.player.move.downcase == 'rock' && @game.computer.move == 'scissors' %>
-<%= @game.player.name %> wins!
-<% elsif @game.player.move.downcase == 'rock' && @game.computer.move == 'paper' %>
-<%= @game.computer.name %> wins!
-<% elsif @game.player.move.downcase == 'scissors' && @game.computer.move == 'paper' %>
-<%= @game.player.name %> wins!
-<% elsif @game.player.move.downcase == 'scissors' && @game.computer.move == 'rock' %>
-<%= @game.computer.name %> wins!
-<% elsif @game.player.move.downcase == 'paper' && @game.computer.move == 'rock' %>
-<%= @game.player.name %> wins!
-<% elsif @game.player.move.downcase == 'paper' && @game.computer.move == 'scissors' %>
-<%= @game.computer.name %> wins!
-<% elsif @game.player.move.downcase == 'Invalid user move'%>
-<%= @game.computer.name %> wins! <%= @game.player.name %>  picked an invalid move.
-<% else %>
-No one wins! It's a draw!
-<% end %>
-
-<form action='/new-Game' method='post'>
+<%= @game.declare_winner %> 
+<br> The score is...
+<%= @game.player.name %> <%= @game.player.score %> - <%= @game.computer.name %> <%= @game.computer.score %>
+<br>
+<form action='/new-game' method='post'>
   <input type="submit" value="New game">
 </form>

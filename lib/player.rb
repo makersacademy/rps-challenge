@@ -1,13 +1,18 @@
 class Player
-  attr_reader :name, :move
+  attr_reader :name, :move, :score
   
   def initialize(name = 'Player', move = nil)
     @name = name
     @move = move
+    @score = 0
   end
 
   def select_move(input)
     valid_input(input).downcase
+  end
+
+  def add_point
+    @score += 1
   end
 
 private

@@ -21,13 +21,15 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
-  get '/play' do
+  before do
     @game = Game.instance
+  end
+
+  get '/play' do
     erb :play
   end
 
   post '/rps' do
-    @game = Game.instance
     player_move = params[:player_move]
     @game.player.select_move(player_move)
     @game.computer.computer_move
@@ -35,12 +37,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/end_of_round' do
-    @game = Game.instance
+    @game.winner
+    @game.declare_winner
     erb :end_of_round 
   end
 
  post '/new-game' do
-  @game.reset
   redirect '/play'
  end
 
