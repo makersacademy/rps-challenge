@@ -11,12 +11,13 @@
 	  }
     p, h2 { padding: 0; margin: 3%; }
     .arena {
-      width: 90%;
+      width: 73%;
       font-size: 18px; text-align: center;
       padding: 8px 10px 20px; margin: 15% auto;
       background-color: rgba(175, 238, 238, 0.35);
       border-style: solid; border-width: 2px; border-radius: 5px; border-color: rgba(0,0,0,0.25);
     }
+    button { margin: 5px 0 0 0; }
     <% if $game.turn == 1 %>
     button {
       -webkit-transform: scaleX(-1);
@@ -37,6 +38,17 @@
       <button name="choice" value="2"><img src=<%= $game.weapons[2].image %> alt=<%= $game.weapons[2].name %>></button>
       <button name="choice" value="3"><img src=<%= $game.weapons[3].image %> alt=<%= $game.weapons[3].name %>></button>
       <button name="choice" value="4"><img src=<%= $game.weapons[4].image %> alt=<%= $game.weapons[4].name %>></button>
+      <button name="choice" value="5"><img src=<%= $game.weapons[5].image %> alt=<%= $game.weapons[5].name %>></button>
+      <button name="choice" value="6"><img src=<%= $game.weapons[6].image %> alt=<%= $game.weapons[6].name %>></button>
+      <button name="choice" value="7"><img src=<%= $game.weapons[7].image %> alt=<%= $game.weapons[7].name %>></button>
+      <button name="choice" value="8"><img src=<%= $game.weapons[8].image %> alt=<%= $game.weapons[8].name %>></button>
+      <button name="choice" value="9"><img src=<%= $game.weapons[9].image %> alt=<%= $game.weapons[9].name %>></button>
+      <button name="choice" value="10"><img src=<%= $game.weapons[10].image %> alt=<%= $game.weapons[10].name %>></button>
+      <button name="choice" value="11"><img src=<%= $game.weapons[11].image %> alt=<%= $game.weapons[11].name %>></button>
+      <button name="choice" value="12"><img src=<%= $game.weapons[12].image %> alt=<%= $game.weapons[12].name %>></button>
+      <button name="choice" value="13"><img src=<%= $game.weapons[13].image %> alt=<%= $game.weapons[13].name %>></button>
+      <button name="choice" value="14"><img src=<%= $game.weapons[14].image %> alt=<%= $game.weapons[14].name %>></button>
+      <button name="choice" value="15"><img src=<%= $game.weapons[15].image %> alt=<%= $game.weapons[15].name %>></button>
     </form>
   </div>
 </body>

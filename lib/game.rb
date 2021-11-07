@@ -4,12 +4,26 @@ require_relative "weapon"
 class Game
 
   WEAPON_LIST = [
-    Weapon.new(:golem, [:scyther, :pinsir], "https://cdn2.bulbagarden.net/upload/3/31/Spr_5b_076.png"),
-    Weapon.new(:exeggutor, [:golem, :slowbro], "https://cdn2.bulbagarden.net/upload/1/19/Spr_5b_103.png"),
-    Weapon.new(:scyther, [:exeggutor, :pinsir], "https://cdn2.bulbagarden.net/upload/2/2c/Spr_5b_123_m.png"),
-    Weapon.new(:pinsir, [:exeggutor, :slowbro], "https://cdn2.bulbagarden.net/upload/b/b1/Spr_5b_127.png"),
-    Weapon.new(:slowbro, [:scyther, :golem], "https://cdn2.bulbagarden.net/upload/e/e1/Spr_5b2_080.png")
+    Weapon.new(:golem, [:pidgeot,:rapidash,:pikachu,:dragonite,:scyther,:pinsir], "https://cdn2.bulbagarden.net/upload/3/31/Spr_5b_076.png"),
+    Weapon.new(:exeggutor, [:primeape,:golem,:seaking,:omastar,:poliwrath], "https://cdn2.bulbagarden.net/upload/1/19/Spr_5b_103.png"),
+    Weapon.new(:scyther, [:primeape,:exeggutor,:pinsir,:victreebel,:poliwrath,:tangela], "https://cdn2.bulbagarden.net/upload/2/2c/Spr_5b_123_m.png"),
+    Weapon.new(:pinsir, [:primeape,:exeggutor,:tangela], "https://cdn2.bulbagarden.net/upload/b/b1/Spr_5b_127.png"),
+    Weapon.new(:primeape, [:golem,:lapras,:omastar,:steelix], "https://cdn2.bulbagarden.net/upload/0/07/Spr_5b2_057.png"),
+    Weapon.new(:steelix, [:pidgeot,:pikachu,:dragonite,:scyther,:pinsir], "https://cdn2.bulbagarden.net/upload/4/49/Spr_5b_208_m.png"),
+    Weapon.new(:tangela, [:golem,:seaking,:pikachu,:omastar], "https://cdn2.bulbagarden.net/upload/a/aa/Spr_5b_114.png"),
+    Weapon.new(:pidgeot, [:primeape,:pinsir,:victreebel,:poliwrath,:tangela], "https://cdn2.bulbagarden.net/upload/8/8a/Spr_5b_018.png"),
+    Weapon.new(:rapidash, [:exeggutor,:scyther,:pinsir,:victreebel,:tangela], "https://cdn2.bulbagarden.net/upload/5/58/Spr_5b_078.png"),
+    Weapon.new(:seaking, [:golem,:rapidash,:steelix], "https://cdn2.bulbagarden.net/upload/f/f0/Spr_5b_119_m.png"),
+    Weapon.new(:poliwrath, [:golem,:steelix,:rapidash,:seaking,:lapras], "https://cdn2.bulbagarden.net/upload/5/57/Spr_5b_062.png"),
+    Weapon.new(:lapras, [:pidgeot,:golem,:rapidash,:dragonite,:scyther,:victreebel], "https://cdn2.bulbagarden.net/upload/6/62/Spr_5b_131.png"),
+    Weapon.new(:dragonite, [:primeape,:rapidash,:seaking,:exeggutor,:scyther,:pinsir,
+      :victreebel,:poliwrath,:tangela], "https://cdn2.bulbagarden.net/upload/9/96/Spr_5b_149.png"),
+    Weapon.new(:omastar, [:pidgeot,:golem,:rapidash,:lapras,:dragonite,:scyther,:pinsir], "https://cdn2.bulbagarden.net/upload/f/fc/Spr_5b_139.png"),
+    Weapon.new(:victreebel, [:golem,:seaking,:omastar,:poliwrath,:tangela], "https://cdn2.bulbagarden.net/upload/5/55/Spr_5b_071.png"),
+    Weapon.new(:pikachu, [:pidgeot,:seaking,:lapras,:scyther,:omastar,:poliwrath], "https://cdn2.bulbagarden.net/upload/2/2b/Spr_5b2_025_m.png")
   ].freeze
+
+  # TL[]
 
   attr_reader :player_one, :player_two, :turn, :weapons
 
