@@ -62,13 +62,13 @@ describe Game do
     end
   end
 
-  describe '#ready_to_declare' do
+  describe '#ready_to_declare?' do
     it 'returns false when one player has not yet chosen an implement' do
-      expect(solo_game.ready_to_declare).to be false
+      expect(solo_game.ready_to_declare?).to be false
     end
 
     it 'returns true when both players have an implement' do
-      expect(player_one_victory_game.ready_to_declare).to be true
+      expect(player_one_victory_game.ready_to_declare?).to be true
     end
   end
 
@@ -93,6 +93,19 @@ describe Game do
       multi_game.make_choice(1)
       expect(player_blue).to receive(:receive_implement).with({ :imp => :paper, :winv => [:rock] })
       multi_game.make_choice(1)
+    end
+
+    it 'gives a random implement if called without a choice' do
+      srand(1)
+      expect(player_red).to receive(:receive_implement).with({ :imp => :paper, :winv => [:rock] })
+      multi_game.make_choice
+    end
+  end
+
+  describe '#draw?' do
+    it 'returns true if there is a draw, false otherwise' do
+      expect(player_one_victory_game.draw?).to eq false
+      expect(multi_game.draw?).to eq true
     end
   end
 

@@ -39,7 +39,28 @@ class RpsGame < Sinatra::Base
   end
 
   get '/rock' do
-    "Oh hey!"
+    make_choice(0)
+  end
+
+  get '/paper' do
+    make_choice(1)
+  end
+
+  get '/scissors' do
+    make_choice(2)
+  end
+
+  def make_choice(n)
+    $game.make_choice(n)
+    if $game.single_game?
+      $game.make_choice
+    end
+
+    if $game.ready_to_declare?
+      "Ready to declare"
+    else
+      redirect to('/game')
+    end
   end
 
   run! if app_file == $0

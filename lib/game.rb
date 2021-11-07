@@ -18,8 +18,7 @@ class Game
   end
 
   def make_choice(n = nil)
-    give_with_random(this_turns_player) if n.nil?
-    give_with_choice(this_turns_player, n)
+    n.nil? ? give_with_random : give_with_choice(n)
     switch_turn
   end
 
@@ -29,17 +28,22 @@ class Game
   end
 
   def winner
+    return nil if !ready_to_declare?
     return @player_one if player_one_win_list.include?(player_two_implement)
     return @player_two if player_two_win_list.include?(player_one_implement)
     return nil
+  end
+
+  def draw?
+    winner == nil
   end
 
   def switch_turn
     @turn = (@turn == 1 ? 2 : 1)
   end
 
-  def ready_to_declare
-    has_implement(@player_one) && has_implement(@player_two)
+  def ready_to_declare?
+    implement?(@player_one) && implement?(@player_two)
   end
 
   def single_game?
@@ -68,16 +72,16 @@ class Game
     @player_two.implement[:imp]
   end
 
-  def has_implement(player)
+  def implement?(player)
     player.implement != nil
   end
 
-  def give_with_choice(player, n)
-    give_implement(player, n)
+  def give_with_choice(n)
+    give_implement(this_turns_player, n)
   end
 
-  def give_with_random(player)
-    give_implement(player)
+  def give_with_random
+    give_implement(this_turns_player)
   end
 
   def this_turns_player
