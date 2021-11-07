@@ -7,10 +7,13 @@ gem 'sinatra'
 group :test do
   gem 'capybara'
   gem 'rspec'
+  # require 'capybara/rspec'?
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
 
 group :development, :test do
   gem 'rubocop', '1.20'
+  gem 'sinatra-contrib'
+  gem 'webrick'
 end
