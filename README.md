@@ -32,6 +32,25 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
+## How to use
+
+1. Fork and clone this repo
+2. `cd` into the folder
+3. Run `bundle`
+4. Run `rackup`
+5. Open the url
+6. Play
+
+## Screenshots
+
+
+## How to test
+
+1. Fork and clone this repo
+2. `cd` into the folder
+3. Run `bundle`
+4. Run `rspec`
+
 ## Basic Rules
 
 - Rock beats Scissors
@@ -40,17 +59,3 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
 
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
