@@ -4,4 +4,5 @@ class Game
   def initilize(player1)
     @player1 = player1
   end
+
 end
