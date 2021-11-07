@@ -25,11 +25,18 @@ describe RpsGame do
   end
 
   feature '#Testing results page' do
-    scenario '#Declares player 1 to be the winner for player 1: rock and player 2: paper' do
+    scenario '#Declares player 1 to be the winner for player 1: rock and player 2: scissors' do
       sign_in_and_play_mult
       click_button("0")
       click_button("2")
       expect(page).to have_content 'Red is the winner!'
+    end
+
+    scenario '#Declares a draw if both players pick the same implement' do
+      sign_in_and_play_mult
+      click_button("0")
+      click_button("0")
+      expect(page).to have_content "It's a draw!"
     end
   end
 end

@@ -1,5 +1,7 @@
 
-
-<%= $game.player_one.implement %><br><%= $game.player_two.implement %>
-
-<%= $game.winner.name %> is the winner!
+<% if $game.winner.nil? %>
+  It's a draw!
+<% end %>
+<% if !$game.winner.nil? %>
+  <%= $game.winner.name %> is the winner!
+<% end %>
