@@ -137,3 +137,4 @@ it 'has clickable button' do
  expect(page).to have_button('Rock')
 end
 ```
+- [] What's the good spec guide say about class names, where instance methods are #method_name
