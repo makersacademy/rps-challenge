@@ -1,10 +1,13 @@
-<%= @game.player.name %> chose <%= @game.player.move.downcase %><br>
+<body bgcolor="darkslategrey" >
+<p style="color: goldenrod; font-family: sans-serif" ><%= @game.player.name %> chose <%= @game.player.move.downcase %><br>
 <%= @game.computer.name %> chose <%= @game.computer.move %><br>
 
 <%= @game.declare_winner %> 
-<br> The score is...
-<%= @game.player.name %> <%= @game.player.score %> - <%= @game.computer.name %> <%= @game.computer.score %>
+<br><br><br> The score is...
+<br>
+<%= @game.player.name %> <%= @game.player.score %> - <%= @game.computer.score  %> <%= @game.computer.name%></p>
 <br>
 <form action='/new-game' method='post'>
   <input type="submit" value="New game">
 </form>
+</body>
