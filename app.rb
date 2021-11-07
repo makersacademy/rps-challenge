@@ -12,12 +12,18 @@ class RpsGame < Sinatra::Base
   end
 
   get '/' do
+    $request_name = false
+    redirect to('/sign_in')
+  end
+
+  get '/sign_in' do
     erb(:index)
   end
 
   post '/begin' do
     if params[:player_1_name] == ""
-      redirect to('/warning')
+      $request_name = true
+      redirect to('/sign_in')
     else
       create_game
       redirect to('/game')
@@ -48,7 +54,7 @@ class RpsGame < Sinatra::Base
   def make_choice(n)
     $game.make_choice(n)
     $game.make_choice if $game.single_game?
-    redirect to($game.ready_to_declare? ? ('/result') : ('/game'))
+    redirect to($game.ready_to_declare? ? '/result' : '/game')
   end
 
   def create_game

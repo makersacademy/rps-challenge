@@ -6,14 +6,16 @@
   <style>
     * { box-sizing: border-box; }
     body {
-      font-family: sans-serif; font-size: 15px; color: rgb(50, 60, 70);
-      width: 700px; margin: 0 auto; background-color: ghostwhite; 
+      font-family: sans-serif; font-size: 15px; color: rgba(50, 60, 70, 0.9);
+      width: 700px; margin: 0 auto; background-color: white;
 	  }
+    h2 { padding: 0; margin: 3%; }
+    p { padding: 0; margin: 0; }
     .signin {
       width: 55%;
       font-size: 18px; text-align: center;
       padding: 8px 10px 20px; margin: 15% auto;
-      background-color: PaleTurquoise;
+      background-color: rgba(175, 238, 238, 0.5);
       border-style: solid; border-width: 2px; border-radius: 5px; border-color: rgba(0,0,0,0.25);
     }
     .signin_box, input[type=submit] {
@@ -24,11 +26,17 @@
       margin: 10px 2px 0 0; padding: 5px;
       border-radius: 5px; border-color: rgba(0,0,0,0.25);
     }
+    .warning {
+      color: red; margin: 0; padding: 0; position: relative; top: 10px; font-size: 16px;
+    }
     input[type=submit] {
       background-color: DarkTurquoise;
       margin: 0 0 0 5px;
       border-radius: 5px; border-color: rgba(0,0,0,0.25);
     }
+    <% if $request_name == true %>
+      #p1box{ border-color: red; }
+    <% end %>
   </style>
 
 </head>
@@ -36,10 +44,9 @@
 <body>
 
 <div class="signin">
-  <h2>Welcome to <br>Rock, Paper, Scissors!</h2>
-
+  <h2>Welcome to the Arena</h2>
+  <p>Please enter your name here</p>
   <form action="/begin" method="post">
-    <label>Please enter your name here</label><br>
     <input type="text" name="player_1_name" class="signin_box" id="p1box" placeholder="Player 1">
     <input type="text" name="player_2_name" class="signin_box" placeholder="Player 2 (optional)">
     <input type="submit" value="Enter">
