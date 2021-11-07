@@ -12,7 +12,7 @@ class RpsGame < Sinatra::Base
   end
 
   get '/' do
-    $request_name = false
+    $request_name = false # This will change to true if user tries to sign-in without a name
     redirect to('/sign_in')
   end
 
@@ -28,10 +28,6 @@ class RpsGame < Sinatra::Base
       create_game
       redirect to('/game')
     end
-  end
-
-  get '/warning' do
-    erb(:index_warning)
   end
 
   get '/game' do

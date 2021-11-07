@@ -7,4 +7,10 @@ describe Weapon do
     expect(subject.targets).to eq []
   end
 
+  describe '#title' do
+    it 'returns a capitalised string of the name symbol' do
+      expect(subject.title).to eq "Missingno"
+    end
+  end
+
 end

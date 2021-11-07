@@ -7,4 +7,8 @@ class Weapon
     @targets = targets
   end
 
+  def title
+    @name.to_s.capitalize
+  end
+
 end
