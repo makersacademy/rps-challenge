@@ -1,6 +1,6 @@
 # ROCK, PAPER, SCISSORS game
 
-I covered both user stories and the app is working as it suppose to. The Player can enter his name and play against computer. After the Player chooses his option he can see computers choice and the output of the game. 
+I covered both user stories and the app is working as it supposed to. The Player can enter his name and play against computer. After the Player chooses his option he can see computers choice and the output of the game. 
 The outputs: 'You won', 'You lost', 'It is a draw'.
 The rules of this game is simple. Rock beats Scissors, Scissors beats Paper and Paper beats Rock. 
 
