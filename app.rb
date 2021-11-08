@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   configure :development do
@@ -12,17 +14,19 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_name] = params[:player_name]
+    $player = Player.new(params[:player_name])
+    $computer = Computer.new
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
+    @player_name = $player.name
     erb :play
   end
 
   get '/result' do
-    @player_name = session[:player_name]
+    @computer_move = $computer.choose_rps
+    @player_name = $player.name
     @player_move = params.values.join('')
     erb :result
   end
