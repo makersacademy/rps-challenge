@@ -1,0 +1,15 @@
+<section>
+  <h1><%= @game.player_1.name %> picks: <%= @game.player_1.choice %></h1>
+</section>
+
+<section>
+  <h1><%= @game.player_2.name %> picks: <%= @game.player_2.choice %></h1>
+</section>
+
+<% if @game.game_result == "Win" %>
+<p><%= @game.player_1.name %> wins! <br/> <%= @game.player_1.choice %> beats <%= @game.player_2.choice %><p>
+<% elsif @game.game_result == "Lose" %>
+<p><%= @game.player_1.name %> loses! <br/> <%= @game.player_2.choice %> beats <%= @game.player_1.choice %><p>
+<% else %>
+<p>Draw!</p>
+<% end %>
