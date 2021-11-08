@@ -1,8 +1,8 @@
-<h1><%=@player_name%> choose one of the three options</h1>
+<h1><%=@game.player.name%> choose one of the three options</h1>
 <form action='/result' >
   <input type='submit' value='Rock' name='Rock'>
   <input type='submit' value='Paper' name='Paper'>
   <input type='submit' value='Scissors' name='Scissors'>
 </form>
 <h2>Score Counter</h2>
-<h2><%=@player_name%> : 0 vs Computer : 0</h2>
+<h2><%=@game.player.name%> : <%=@game.player_score%> vs Computer : <%=@game.computer_score%></h2>

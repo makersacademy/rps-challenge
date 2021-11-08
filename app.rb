@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
 require './lib/computer'
+require './lib/game'
 
 class RPS < Sinatra::Base
   configure :development do
@@ -14,20 +15,21 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:player_name])
-    $computer = Computer.new
+    player = Player.new(params[:player_name])
+    computer = Computer.new
+    $game = Game.new(player, computer)
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = $player.name
+    @game = $game
     erb :play
   end
 
   get '/result' do
-    @computer_move = $computer.choose_rps
-    @player_name = $player.name
-    @player_move = params.values.join('')
+    @game = $game
+    @game.player_input(params)
+    @game.rps
     erb :result
   end
 
