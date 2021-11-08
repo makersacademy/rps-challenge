@@ -5,12 +5,17 @@ class GameLogic
   end
 
   def result
-    if @player_1.choice == "Rock"
+    case @player_1.choice
+    when "Rock"
       result_rock
-    elsif @player_1.choice == "Paper"
+    when "Paper"
       result_paper
-    else
+    when "Scissors"
       result_scissors
+    when "Lizard"
+      result_lizard
+    when "Spock"
+      result_spock
     end
   end
 
@@ -20,32 +25,55 @@ class GameLogic
     case @player_2.choice
     when "Rock"
       "Draw"
-    when "Paper"
+    when "Paper", "Spock"
       "Lose"
-    when "Scissors"
+    when "Scissors", "Lizard"
       "Win"
     end
   end
 
   def result_paper
     case @player_2.choice
-    when "Rock"
+    when "Rock", "Spock"
       "Win"
     when "Paper"
       "Draw"
-    when "Scissors"
+    when "Scissors", "Lizard"
       "Lose"
     end
   end
 
   def result_scissors
     case @player_2.choice
-    when "Rock"
+    when "Rock", "Spock"
       "Lose"
-    when "Paper"
+    when "Paper", "Lizard"
       "Win"
     when "Scissors"
       "Draw"
     end
   end
+
+  def result_lizard
+    case @player_2.choice
+    when "Rock", "Scissors"
+      "Lose"
+    when "Paper", "Spock"
+      "Win"
+    when "Lizard"
+      "Draw"
+    end
+  end
+
+  def result_spock
+    case @player_2.choice
+    when "Rock", "Scissors"
+      "Win"
+    when "Paper", "Lizard"
+      "Lose"
+    when "Spock"
+      "Draw"
+    end
+  end
+
 end
