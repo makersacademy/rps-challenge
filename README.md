@@ -3,7 +3,7 @@
 A web app that allows a player to play the game Rock, Paper, Scissors. 
 I have implemented the first user story which allows a player to register their name. 
 
-##To complete the project I would:
+## To complete the project I would:
 - 
 - [ ] Add a method `#play` to the `Game` class in model `game.rb`, containig the logic for which moves beat which other moves.
 - [ ] Develop the app.rb to use this logic in the `/winner` route.
