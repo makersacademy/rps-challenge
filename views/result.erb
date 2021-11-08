@@ -1,6 +1,6 @@
 <h1><%=@game.player.name%> vs Computer AI</h1>
 <h2>You chose <%=@game.player_move%> Computer chose <%=@game.computer_move %></h2>
-<h2><%=%></h2>
+<h2><%=@game.result%></h2>
 <form action='/play' >
   <label for="play_again">
     <input type='submit' value='Play Again'>
