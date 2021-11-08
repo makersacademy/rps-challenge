@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/game'
 
 class BookmarkManager < Sinatra::Base
   configure :development do
@@ -17,7 +18,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/result' do
-      @selection = params[:selection]
+      @game = Game.new(@selection = params[:selection])
+      #@selection = params[:selection]
       erb(:result)
   end
 
