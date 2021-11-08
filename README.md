@@ -1,9 +1,9 @@
 # Rock Paper Scissors Challenge
 
 A web app that allows a player to play the game Rock, Paper, Scissors. 
-
 I have implemented the first user story which allows a player to register their name. 
-To complete the project I would: 
+
+##To complete the project I would:##
 - 
 - [ ] Add a method `#play` to the `Game` class in model `game.rb`, containig the logic for which moves beat which other moves.
 - [ ] Develop the app.rb to use this logic in the `/winner` route.
@@ -11,7 +11,7 @@ To complete the project I would:
 - [ ] Store the `move` parameter that is posted from the `/play` route in an instance variable (not yet working).
 
 ## Reflections:
-I feel this has been a lesson in how **not** to do development, as I initally began using a TDD process, then felt pressed for time and so began coding directlty, and ended up wasting a lot of time and deleting a lot of code that did not work. So a good lesson learnt in the power of TDD!
+I feel this has been a lesson in how **not** to do development, as I initally began using a TDD process, then felt pressed for time and so began coding directlty, and ended up wasting a lot of time and deleting a lot of code that did not work. So a good lesson learnt in the power of TDD! See more refletions (below)
  
 ## How to play:
 *update this*
@@ -98,7 +98,7 @@ I would like to be able to play rock/paper/scissors
 - I forgot several steps of set up in the `spec_helper.rb` file to get Capybara working: the `require File.join(File.dirname(__FILE__), '..', 'app.rb')` line, requiring capybara and rspec gems, and the `Capybara.app = RockPaperScissors` line.
 - I also forgot that config.ru was to do with Rack
 _ I also forgot in the app file, within the `RockPaperScissors` class:
-```
+``` ruby
 configure :development do
     register Sinatra::Reloader
 end
