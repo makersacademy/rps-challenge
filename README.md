@@ -1,21 +1,46 @@
-# RPS Challenge
+# Rock Paper Scissors Challenge
 
-Instructions
--------
+A web app that allows a player to play the game Rock, Paper, Scissors. 
+I have implemented the first user story which allows a player to register their name. 
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+## To complete the project I would:
+- 
+- [ ] Add a method `#play` to the `Game` class in model `game.rb`, containig the logic for which moves beat which other moves.
+- [ ] Develop the app.rb to use this logic in the `/winner` route.
+- [ ] Refactor so that an instance of Player could be used by an instance of Game (not yet working)
+- [ ] Store the `move` parameter that is posted from the `/play` route in an instance variable (not yet working).
 
-Task
-----
+## Reflections:
+I feel this has been a lesson in how **not** to do development, as I initally began using a TDD process, then felt pressed for time and so began coding directlty, and ended up wasting a lot of time and deleting a lot of code that did not work. So a good lesson learnt in the power of TDD! See more refletions [below](https://github.com/katemyoung/rps-challenge/blob/main/README.md#reflections-1)
+ 
+## How to play:
+*update this*
+1. Use git clone to create a local repo. 
+`git clone https://github.com/katemyoung/rps-challenge.git` 
 
-Knowing how to build web applications is getting us almost there as web developers!
+2. Use bundler to install the required gems by running the command `bundle` in the project directory.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+3. Navigate to the local repo then run `rackup`.
+`rackup`
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+4. Locate the port, e.g. `port=9292`
+```
+[2021-11-08 09:18:43] INFO  WEBrick 1.7.0
+[2021-11-08 09:18:43] INFO  ruby 3.0.2 (2021-07-07) [x86_64-darwin20]
+[2021-11-08 09:18:43] INFO  WEBrick::HTTPServer#start: pid=54134 port=9292
+```
+5. In a web broswer, navigate to localhost:<port-number>
+e.g. `localhost:L9292`
+ 
+6. Play
+
+## How to run the tests:
+
+Run `rspec` from the project directory to run the tests.
+
+**You can use this programme in irb to:**
+
+## User Stories:
 
 ```
 As a marketeer
@@ -27,60 +52,70 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+## Code review checklist:
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+- [ ] All tests pass
+- [x] >95% test coverage
+- [ ] The code is elegant: every class has a clear responsibility, methods are short etc.
 
 
-As usual please start by
+## What I did:
 
-* Forking this repo
-* TEST driving development of your app
+**Setup:**
+- [x] Forked the repo and then made a local clone
+- [x] Ran `bundle` within the local repo to install required dependencies
+- [x] Set up file structure
+- [x] Added a config.ru file
+- [x] Tried to run the rps_controller file, which did not work
+- [x] Added gems for `sinatra/contrib` and then `webrick` to the Gemfile
+- [x] Ran ruby './rps_controller' and did manual check in web browser at `localhost:4567`
 
-[You may find this guide to setting up a new Ruby web project helpful.](https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md)
+**TDD:**
+- [x] Began TDD: created `features_spec.rb` file and wrote first Capybara feature test for route '/'.
+*At this point I referred to https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md to correct my setup (see errors below).*
+- [x] I got the first feature test to pass ('Hello World'), ran rubocop then committed.
 
-## Bonus level 1: Multiplayer
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+## Reflections:
+- My focus for this challenge was to maximise my learning, so I decided to take the following approach:
+-- Set up and TDD and the Sinatra project from memory, adding inline comments to the code where I was not sure about something, to flag potential bugs
+-- Testing the code
+-- Checking projects I'd worked on the previous week
+-- Checking the documentation
+*I chose this approach to really activate and apply my learning.*
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+- I remembered a pairing partner copying and pasting the correct code in and comparing it with the incorrect code, which was great for learning, so I'm trying this (see examples below)
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+- The rack error is reminding me that I think I've missed a step: setting up selenium as the driver maybe? Something like capybara comes with one as standard but it is not so useful??
+- The syntax for the capybara feature tests are different: `scenario`. 
 
-## Basic Rules
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/main/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+**Error: (Mistakes are rich opportunities for learning)**
+- I forgot the Capybara 'visit('/') method, looked in a previous repp
+- I miss-wrote `ENV['RACK_ENV'] = 'test'`as this `ENV[RACK_ENV] = :test`
+- I got the syntax for the Capybara RSPec feature type wrong: I wrote `describe RPS do type: :feature` instead of `describe ..., :type => :feature` *check book as this is still not correct*
+- rack-test requires a rack application, but none was given: 
+- I forgot several steps of set up in the `spec_helper.rb` file to get Capybara working: the `require File.join(File.dirname(__FILE__), '..', 'app.rb')` line, requiring capybara and rspec gems, and the `Capybara.app = RockPaperScissors` line.
+- I also forgot that config.ru was to do with Rack
+_ I also forgot in the app file, within the `RockPaperScissors` class:
+``` ruby
+configure :development do
+    register Sinatra::Reloader
+end
 ```
+- I needlessly required 'app' in my features spec, which stopped it from working.
+- I typed `erb: index` instead of `erb :index`
+- When making the web helper methods, I got the ruby syntax wrong for method definition - I added an end.
+- Even with that, it would not work.
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+**Questions:**
+
+- [ ] What does this do in the app.rb: `run! if app_file == $0`
+- [ ] Should feature tests be in the same or separate files?
+- [ ] I could not make this code work: 
+``` ruby
+it 'has clickable button' do
+ expect(page).to have_button('Rock')
+end
+```
+- [ ] What's the good spec guide say about class names, where instance methods are #method_name

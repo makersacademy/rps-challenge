@@ -1,6 +1,17 @@
+ENV['RACK_ENV'] = 'test' # sets the environment to test
+
+# bring in contents of app.rb, equivalent to 
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+# require all the testing gems here
+require 'capybara'
+require 'rspec'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+# tell capybara to talk to our app
+Capybara.app = RockPaperScissors
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
