@@ -1,0 +1,9 @@
+Welcome <%= @game.player.player_name %>!
+
+<p> What's going to be? Rock, Paper or Scissors? </p> 
+
+<form action="/option" method="post">
+<button type="submit" name="option" value="rock"> Rock </button>
+<button type="submit" name="option" value="paper"> Paper </button>
+<button type="submit" name="option" value="scissors"> Scissors </button>
+</form>
