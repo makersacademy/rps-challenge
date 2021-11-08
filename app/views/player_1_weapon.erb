@@ -1,0 +1,10 @@
+<h1> It's <%=@p1_name%> vs <%=@p2_name%> </h1>
+
+<h2>Player 1 please select your weapon</h2>
+<form action="/player_1_weapon" method="post">
+  <label for="p1_weapon">
+    Weapon
+    <input type="text" name="p1_weapon">
+  </label>
+  <input type="submit" value="Submit">
+</form>
