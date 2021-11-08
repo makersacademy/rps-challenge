@@ -29,6 +29,7 @@ go to localhost:9292 on a web browser of choice
   - Implement HTML
   - Test with 'rackup' to get a visual representation
 - Steps
+
   - Create the required homepage form and test that the input received in the 'param' is fed back is a POST request when the form is submitted
   - Create inputs that allows the user to click and choose a move
   - Create the player class, initialize with a name
@@ -38,6 +39,11 @@ go to localhost:9292 on a web browser of choice
   - Display the result with a winner and ability to play again
   - The game object should be able to store scores dependant on the result
   - Update the score counter when game is restarted
+
+- Things to fix in the future
+  - I am starting to understand how to use classes together and to build out the functionality of a program using the User Stories. But I find it harder to write good tests.
+  - I lack a clear understanding of how to use doubles and mocking. I need to learn about this moving forward.
+  - I do not adhere to TDD fully when I know how to get the functionality of the program to work. I end up writing the code rather than write tests first.
 
 ## User Stories
 
