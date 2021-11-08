@@ -1,0 +1,27 @@
+<h1>You selected <%= @selection %> </h1>
+<!--<%= @cpuselection = ["Rock","Paper","Scissors"].sample%>-->
+<h1>Your opponent selected <%= @cpuselection %>
+
+<% if @selection == @cpuselection %>
+<h1>Its a draw</h1>
+<%end%>
+<% if @selection == "Rock" && @cpuselection == "Paper"%>
+<h1>You Loose!</h1>
+<%end%>
+<% if @selection == "Rock" && @cpuselection == "Scissors"%>
+<h1>You Win!</h1>
+<%end%>
+<% if @selection == "Paper" && @cpuselection == "Scissors"%>
+<h1>You Loose!</h1>
+<%end%>
+<% if @selection == "Paper" && @cpuselection == "Rock"%>
+<h1>You Win!</h1>
+<%end%>
+<% if @selection == "Scissors" && @cpuselection == "Rock"%>
+<h1>You Loose!</h1>
+<%end%>
+<% if @selection == "Scissors" && @cpuselection == "Paper"%>
+<h1>You Win!</h1>
+<%end%>
+<a href="/info">Play Again</a>
+

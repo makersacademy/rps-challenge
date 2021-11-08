@@ -16,5 +16,10 @@ class BookmarkManager < Sinatra::Base
       erb(:welcome)
   end
 
+  get '/result' do
+      @selection = params[:selection]
+      erb(:result)
+  end
+
   run! if app_file == $0
 end
