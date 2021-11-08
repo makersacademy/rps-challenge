@@ -3,6 +3,12 @@ require_relative "weapon"
 
 class Game
 
+  #-----------------------------------------------------------------------------------------------------------------------------
+  # NOTE TO CODE REVIEWERS:
+  # Just for fun, I went a bit beyond the rock-paper-scissors challenge and implemented a 16-item system instead of
+  # the normal 3-item one (or the 5-item mentioned as a bonus level). Please note that although the weapon list is 
+  # quite extensive (i.e. 16 items), the code is exactly the same as what I'd use for a 3-item system. 
+  #-----------------------------------------------------------------------------------------------------------------------------
   WEAPON_LIST = [
     Weapon.new(:golem, [:pidgeot,:rapidash,:pikachu,:dragonite,:scyther,:pinsir], "https://cdn2.bulbagarden.net/upload/3/31/Spr_5b_076.png"),
     Weapon.new(:exeggutor, [:primeape,:golem,:seaking,:omastar,:poliwrath], "https://cdn2.bulbagarden.net/upload/1/19/Spr_5b_103.png"),
@@ -22,8 +28,6 @@ class Game
     Weapon.new(:victreebel, [:golem,:seaking,:omastar,:poliwrath,:tangela], "https://cdn2.bulbagarden.net/upload/5/55/Spr_5b_071.png"),
     Weapon.new(:pikachu, [:pidgeot,:seaking,:lapras,:scyther,:omastar,:poliwrath], "https://cdn2.bulbagarden.net/upload/2/2b/Spr_5b2_025_m.png")
   ].freeze
-
-  # TL[]
 
   attr_reader :player_one, :player_two, :turn, :weapons
 
