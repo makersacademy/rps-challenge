@@ -17,6 +17,14 @@ class Game
     @computer_score = 0
   end
 
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
+  end
+
+  def self.instance
+    @game
+  end
+
   def player_input(move)
     @player_move = move.values.join('')
   end

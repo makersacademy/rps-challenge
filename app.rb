@@ -17,17 +17,17 @@ class RPS < Sinatra::Base
   post '/name' do
     player = Player.new(params[:player_name])
     computer = Computer.new
-    $game = Game.new(player, computer)
+    @game = Game.create(player, computer)
     redirect '/play'
   end
 
+  before { @game = Game.instance }
+
   get '/play' do
-    @game = $game
     erb :play
   end
 
   get '/result' do
-    @game = $game
     @game.player_input(params)
     @game.rps
     erb :result
