@@ -13,6 +13,15 @@ p {
   font-family: courier;
   font-size: 160%;
 }
+
+h2 {
+
+  color: black;
+  font-family: courier;
+  font-size: 160%;
+}
+
+
 </style>
 </head>
 <header>
@@ -37,9 +46,9 @@ p {
 
 Best of luck! </p>
 <form method="POST" action="/play">
-  <input type="submit" name="shape" value="Rock" />
-  <input type="submit" name="shape" value="Paper" />
-  <input type="submit" name="shape" value="Scissors" />
+  <input type="submit" name="shape" value="Rock"style="height:100px; width:200px" />
+  <input type="submit" name="shape" value="Paper" style="height:100px; width:200px"/>
+  <input type="submit" name="shape" value="Scissors" style="height:100px; width:200px"/>
 </form>
 You chose <%= @turn.player_shape.to_s.capitalize %>!
 
@@ -47,6 +56,7 @@ You chose <%= @turn.player_shape.to_s.capitalize %>!
   Opponent chose <%= @turn.opponent_shape.to_s.capitalize %>!
 </div>
 
+<h2> Here are the results....... </h2>
 <% if @turn.win? %>
 You win!
 <% end  %>
