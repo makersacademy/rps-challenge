@@ -3,7 +3,7 @@
 A web app that allows a player to play the game Rock, Paper, Scissors. 
 I have implemented the first user story which allows a player to register their name. 
 
-##To complete the project I would:##
+##To complete the project I would:
 - 
 - [ ] Add a method `#play` to the `Game` class in model `game.rb`, containig the logic for which moves beat which other moves.
 - [ ] Develop the app.rb to use this logic in the `/winner` route.
@@ -11,7 +11,7 @@ I have implemented the first user story which allows a player to register their 
 - [ ] Store the `move` parameter that is posted from the `/play` route in an instance variable (not yet working).
 
 ## Reflections:
-I feel this has been a lesson in how **not** to do development, as I initally began using a TDD process, then felt pressed for time and so began coding directlty, and ended up wasting a lot of time and deleting a lot of code that did not work. So a good lesson learnt in the power of TDD! See more refletions (below)
+I feel this has been a lesson in how **not** to do development, as I initally began using a TDD process, then felt pressed for time and so began coding directlty, and ended up wasting a lot of time and deleting a lot of code that did not work. So a good lesson learnt in the power of TDD! See more refletions [below](https://github.com/katemyoung/rps-challenge/blob/main/README.md#reflections-1)
  
 ## How to play:
 *update this*
