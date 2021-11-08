@@ -1,6 +1,5 @@
 # RPS Challenge
 
-
 Task
 ----
 
@@ -24,14 +23,6 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
 ## How to use
 
 1. Fork and clone this repo
@@ -41,9 +32,6 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 5. Open the url
 6. Play
 
-## Screenshots
-
-
 ## How to test
 
 1. Fork and clone this repo
@@ -51,11 +39,5 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 3. Run `bundle`
 4. Run `rspec`
 
-## Basic Rules
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
 
