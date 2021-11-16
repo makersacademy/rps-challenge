@@ -14,7 +14,7 @@ group :test do
   gem 'codecov', :require => false
   gem 'coveralls', require: false
   gem 'rspec'
-  gem 'rubocop', '1.22.1'
+  gem 'rubocop', '1.23.0'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
