@@ -5,6 +5,6 @@ feature 'enter names' do
     click_button 'Submit'
 
     save_and_open_page
-    expect(page).to have_content 'Welcome to RPS Leah'
+    expect(page).to have_content 'Leah'
   end
 end

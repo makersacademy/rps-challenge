@@ -11,7 +11,7 @@ class Rock_paper_scissors <Sinatra::Base
   end
 
   post '/' do
-    'hello'
+    'Leah'
   end
 
   post '/names' do
