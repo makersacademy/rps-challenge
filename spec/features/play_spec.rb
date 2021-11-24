@@ -10,10 +10,19 @@ feature 'playing a game' do
   end
   # As a markerteer 
   # So I can play a game
-  # I want to be able to see the shapes I can play
+  # I want to see the shapes I can play
   scenario 'see the shape options' do
-    expect(page).to have_content 'Rock'
-    expect(page).to have_content 'Paper'
-    expect(page).to have_content 'Scissors'
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
   end
+
+  # As a markerteer 
+  # So I can play a game
+  # I want to choose the shapes to play
+  scenario 'choose a shape' do
+    click_button 'Rock'
+    expect(page).to have_content 'You chose Rock!'
+  end
+
 end
