@@ -1,9 +1,10 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/game'
 
 class RPS < Sinatra::Base
   configure :development do
-    register Sinatra::Reloader #registering necessary for modular applications (if development works only for 'classic applications #sinatrarb.com/contrib/reloader
+    register Sinatra::Reloader
   end
   enable :sessions
 
@@ -13,21 +14,25 @@ class RPS < Sinatra::Base
 
   post '/name' do
     session[:player_name] = params[:player_name]
-    redirect :play
+    p params
+    redirect('/play')
   end
 
   get '/play' do
-    erb :play
+    erb :play 
   end
 
   post '/input' do
-    # using a checkbox form for input - will require a post request
-    # need to save the tickbox selected - as params?
-    redirect :result
+    session[:input] = params[:input]
+    p params
+    redirect('/result')
   end
 
-
   get '/result' do
+    @player_name = session[:player_name]
+    @player_input = session[:input]
+    @game = Game.new(@player_input)
+    p params
     erb :result
   end
   
