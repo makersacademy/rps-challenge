@@ -19,13 +19,13 @@ describe Game do
   context "result" do
     it 'LOSE: rock vs. scissor' do 
       game = Game.new("scissor")
-      allow(game).to receive(:opponent_input).and_return("rock")
+      allow(game).to receive(:opponent_input) { "rock" }
       expect(game.result).to eq(:lose)
     end
 
     it 'WIN: rock vs. paper' do 
       game = Game.new("paper")
-      allow(game).to receive(:opponent_input).and_return("rock")
+      allow(game).to receive(:opponent_input) { "rock" }
       expect(game.result).to eq(:win)
     end
 
@@ -38,7 +38,7 @@ describe Game do
     it 'LOSE: scissor vs. paper' do 
       game = Game.new("paper")
       allow(game).to receive(:opponent_input) { "scissor" }
-      expect(subject.result).to eq(:lose)
+      expect(game.result).to eq(:lose)
     end
 
     it 'WIN: paper vs. scissor' do 
@@ -55,7 +55,7 @@ describe Game do
 
     it 'DRAW: when it is a draw' do
       game = Game.new("rock")
-      allow(game).to receive(:opponent_input).and_return("rock")
+      allow(game).to receive(:opponent_input) { "rock" }
       expect(game.result).to eq(:draw)
     end
   end
