@@ -1,27 +1,36 @@
 class Game 
-  attr_reader :input
+  attr_reader :inputs, :player_input
 
-  def initialize(player_input = "paper") #default for testing
+  def initialize(player_input = "paper") # default for testing
     @player_input = player_input
-    @input = [player_input]
+    @inputs = [player_input]
   end
   
-  def opponent
-    opponent_input = ["rock", "paper", "scissor"].sample
-    @input << opponent_input
+  def store_opponent_input
+    @inputs << opponent_input
     opponent_input
   end
 
+  def opponent_input # encapsulate to enable stubbing while testing
+    ["rock", "paper", "scissor"].sample
+  end
+
   def result
-    player, opponent = @input[0], @input[1]
-    case 
-      when opponent == player then "Draw!"
-      when opponent == "paper" && player == "rock" then "You lose!"
-      when opponent == "paper" && player == "scissor" then "You win!"
-      when opponent == "rock" && player == "scissor" then "You lose!"
-      when opponent == "rock" && player == "paper" then "You win!" 
-      when opponent == "scissor" && player == "paper" then "You lose!"
-      when opponent == "scissor" && player == "rock" then "You win!"
+    store_opponent_input
+    player, opponent = @inputs
+    p player
+    p opponent
+    case
+      when player == "rock" && opponent == "paper" then return :lose
+      when player == "scissor" && opponent == "paper" then return :win
+      when player == "scissor" && opponent == "rock" then return :lose
+      when player == "paper" && opponent == "rock" then return :win
+      when player == "paper"  && opponent == "scissor" then return :lose
+      when player == "rock" && opponent == "scissor" then return :win
+      else
+        :draw
     end 
   end
 end
+
+

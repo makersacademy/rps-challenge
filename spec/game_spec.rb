@@ -1,62 +1,62 @@
 require 'game'
 
 describe Game do 
-
   context "set up" do
     it 'input from the player' do
-      expect(subject.input).to eq(["paper"])
+      expect(subject.inputs).to eq(["paper"])
     end
 
     it 'input from a computer opponent' do
-      allow(subject).to receive(:opponent) { "rock" }
-      expect(subject.opponent).to eq("rock")
+      allow(subject).to receive(:opponent_input) { "rock" }
+      expect(subject.store_opponent_input).to eq("rock")
     end
 
     it 'answer is random from the computer opponent' do
-      expect(["rock","paper","scissor"]).to include(subject.opponent)
+      expect(["rock","paper","scissor"]).to include(subject.store_opponent_input)
     end
   end 
 
   context "result" do
-  #   it 'rock vs. scissor' do 
-  #     allow(game).to receive(:input) { ["rock", "scissor"] }
-  #     expect(game.result).to eq("You lose!")
-  #   end
+    it 'LOSE: rock vs. scissor' do 
+      game = Game.new("scissor")
+      allow(game).to receive(:opponent_input).and_return("rock")
+      expect(game.result).to eq(:lose)
+    end
 
-    # it 'rock vs. paper' do 
-    #   allow(subject).to receive(:opponent) { "rock" }
-    #   allow(subject).to receive(:player_input) { "paper" }
-    #   expect(subject.result).to eq("You win!")
-    # end
+    it 'WIN: rock vs. paper' do 
+      game = Game.new("paper")
+      allow(game).to receive(:opponent_input).and_return("rock")
+      expect(game.result).to eq(:win)
+    end
 
-  #   it 'scissor vs. paper' do 
-  #     allow(subject).to receive(:opponent) { "scissor" }
-  #     allow(subject).to receive(:player_input) { "rock" }
-  #     expect(subject.result).to eq("You win!")
-  #   end
+    it 'WIN: scissor vs. rock' do 
+      game = Game.new("rock")
+      allow(game).to receive(:opponent_input) { "scissor" }
+      expect(game.result).to eq(:win)
+    end
 
-  #   it 'scissor vs. paper' do 
-  #     allow(subject).to receive(:opponent) { "scissor" }
-  #     allow(subject).to receive(:player_input) { "paper" } 
-  #     expect(subject.result).to eq("You lose!")
-  #   end
+    it 'LOSE: scissor vs. paper' do 
+      game = Game.new("paper")
+      allow(game).to receive(:opponent_input) { "scissor" }
+      expect(subject.result).to eq(:lose)
+    end
 
-  #   it 'paper vs. scissor' do 
-  #     allow(subject).to receive(:opponent) { "paper" }
-  #     allow(subject).to receive(:player_input) { "scissor" }
-  #     expect(subject.result).to eq("You win!")
-  #   end
+    it 'WIN: paper vs. scissor' do 
+      game = Game.new("scissor")
+      allow(game).to receive(:opponent_input) { "paper" }
+      expect(game.result).to eq(:win)
+    end
 
-  #   it 'paper vs. rock' do 
-  #     allow(subject).to receive(:opponent) { "paper" }
-  #     allow(subject).to receive(:player_input) { "rock" }
-  #     expect(subject.result).to eq("You lose!")
-  #   end
+    it 'LOSE: paper vs. rock' do 
+      game = Game.new("rock")
+      allow(game).to receive(:opponent_input) { "paper" }
+      expect(game.result).to eq(:lose)
+    end
 
-  #   it 'when it is a draw' do
-  #     allow(subject).to receive(:opponent) { "rock" }
-  #     allow(subject).to receive(:player_input) { "rock" }
-  #     expect(subject.result).to eq("Draw!")
-  #   end
+    it 'DRAW: when it is a draw' do
+      game = Game.new("rock")
+      allow(game).to receive(:opponent_input).and_return("rock")
+      expect(game.result).to eq(:draw)
+    end
   end
 end
