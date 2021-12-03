@@ -1,3 +1,12 @@
+require_relative './../app.rb'
+require_relative './features/web_helpers'
+
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+
+ENV['RACK_ENV'] = 'test'
+
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'

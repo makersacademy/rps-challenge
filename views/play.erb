@@ -1,0 +1,29 @@
+<html>  
+<head>
+<link href="<%= url("/styles.css") %>" rel="stylesheet" type='text/css'/>
+</head>
+
+<body>
+
+<% if @move == nil %>
+<h1> Please select an option, <%= @name %> </h1>
+<form action="/move" method="post"> 
+<button id='rock' name="move" type="submit" value="Rock">Rock</button>
+<button id='paper' name="move"  type="submit" value="Paper">Paper</button> 
+<button id='scissors' name="move"  type="submit" value="Scissors"> Scissors</button>
+</form>
+
+<% else %>
+
+<h2> You chose <%= @move %> </h2>
+<h2> Computer chose <%= @computer_move %> </h2>
+
+<h2> <%= GameLogic.new.winner(@move,@computer_move)  %> </h2>
+
+<form action="/play_again" method="get"> 
+<button id='play_again' name="play_again" type="submit" >Play again?</button>
+
+<% end %>
+
+</body>
+</html>
