@@ -1,3 +1,5 @@
+require 'randomiser'
+
 describe Randomiser do
   let(:subject) { described_class.new }
   
