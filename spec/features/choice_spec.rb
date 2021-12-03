@@ -1,8 +1,6 @@
 feature 'user can choose between rock, paper, and scissors' do
   scenario 'user clicks rock and gets a notification' do
-    visit('/')
-    fill_in :name, with: 'Win'
-    click_button "Go!"
+    sign_in_and_play
     click_button "Rock"
     expect(page).to have_content "Win chose Rock!"
   end
