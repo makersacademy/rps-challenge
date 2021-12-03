@@ -12,5 +12,14 @@ class RPSApp < Sinatra::Base
     erb(:index)
   end
 
+  post '/game' do
+    @name = params[:name]
+    erb(:game)
+  end
+
+  post '/result' do
+    p params[:move]
+  end
+
   run! if app_file == $0
 end
