@@ -14,6 +14,5 @@ feature 'enter player name' do
   scenario 'homepage has a name field' do
     expect(page.has_field?('name')).to be_truthy
   end
-
   
 end

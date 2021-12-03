@@ -43,4 +43,10 @@ feature 'play RPS' do
     expect(page).to have_content('You chose Scissors')
     expect(page).not_to have_content('You chose Rock')
   end
+
+  scenario 'player can click play again button' do
+    click_button("Paper")
+    find_button('Play again?').click
+  end
+
 end
