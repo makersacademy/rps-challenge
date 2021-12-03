@@ -4,10 +4,10 @@ describe Game do
 
   let(:game) { described_class.new(player1,player2) }
   let(:draw) { described_class.new(player1,player3) }
+  let(:lose) { described_class.new(player2,player1) }
   let(:player1) { double("Winner", :move => "Scissors") }
   let(:player2) { double("Loser", :move => "Paper") }
   let(:player3) { double("Draw", :move => "Scissors") }
-
 
   context "#initialize"
 
@@ -23,6 +23,10 @@ describe Game do
 
   it "should be able to decide the winner" do
     expect(game.decide_winner).to eq player1
+  end
+
+  it "player 2 is also able to win" do
+    expect(lose.decide_winner).to eq player1
   end
 
   it "should declare no winner in the event of a draw" do

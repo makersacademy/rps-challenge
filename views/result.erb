@@ -1,0 +1,15 @@
+<body>
+<% if @game.decide_winner == nil %>
+<h1>The game was a draw!</h1>
+<% else %>
+<h1><%= @game.decide_winner.name %> is the winner!</h1>
+<% end %>
+<h2>You played <%= @game.player1.move %>.</h2>
+<h2><%= @game.player2.name %> played <%= @game.player2.move %>.</h2>
+<h3>Thank you for playing!</h3>
+
+<form action="/game" method="get">
+<label for="submit">Click to play again:</label>
+<input type="submit" value="Play again!">
+</form>
+</body>
