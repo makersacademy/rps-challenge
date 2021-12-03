@@ -1,6 +1,8 @@
+require 'randomiser'
+
 class Computer 
   attr_reader :choice
-  def initialize(randomiser)
+  def initialize(randomiser = Randomiser.new)
     @choice = nil
     @randomiser = randomiser
   end

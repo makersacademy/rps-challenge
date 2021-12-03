@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require 'computer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -9,6 +10,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
+    session[:opponent] = Computer.new
     erb :index
   end
 
@@ -27,6 +29,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice' do
     session[:choice] = params[:choice]
+    session[:opponent_choice] = session[:opponent].select_choice
     redirect '/turn'
   end
 
