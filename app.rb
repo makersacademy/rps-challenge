@@ -16,6 +16,10 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  get '/turn' do
+    erb :turn
+  end
+
   post '/name' do
     session[:name] = params[:name]
     redirect '/play'
@@ -23,7 +27,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice' do
     session[:choice] = params[:choice]
-    redirect '/play'
+    redirect '/turn'
   end
 
   run! if app_file == $0
