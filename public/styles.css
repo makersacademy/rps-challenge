@@ -1,0 +1,91 @@
+html {
+	height: 100%;
+	background-color: #8EC5FC;
+	background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+	background-repeat: repeat-y;
+	font-family: 'Sora', sans-serif;
+	color: white;
+}
+
+body{ margin: auto;
+top: 50%; }
+
+.rock {
+	background-image: url("/motivation.png");
+	background-color: transparent;
+	background-size: cover;
+	width: 200px;
+	height: 200px;
+	font-size: 0;
+	border-width: 0px;
+	filter: invert(100%);
+}
+
+.rock:hover {
+	filter: invert(50%);
+}
+
+.paper {
+	background-image: url("/open-hands.png");
+	background-color: transparent;
+	background-size: cover;
+	width: 200px;
+	height: 200px;
+	font-size: 0;
+	border-width: 0px;
+	filter: invert(100%);
+}
+
+.paper:hover {
+	filter: invert(50%);
+}
+
+.scissors {
+	background-image: url("/scissors.png");
+	background-color: transparent;
+	background-size: cover;
+	width: 200px;
+	height: 200px;
+	font-size: 0;
+	border-width: 0px;
+	filter: invert(100%);
+}
+
+.scissors:hover {
+	filter: invert(50%);
+}
+
+.again {
+	background-image: url("/replay.png");
+	background-color: transparent;
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+	font-size: 0;
+	border-width: 0px;
+	filter: invert(100%);
+}
+
+.again:hover {
+	filter: invert(50%);
+}
+
+.content {
+	text-align: center;
+}
+
+h1 {
+	font-size: 70px;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+h3 {
+	font-size:25px;
+}
+
+label {
+	font-size:30px;
+}
