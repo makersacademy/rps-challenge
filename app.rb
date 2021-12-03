@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require 'computer'
+require_relative './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions

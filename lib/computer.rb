@@ -1,4 +1,4 @@
-require 'randomiser'
+require_relative './randomiser'
 
 class Computer 
   attr_reader :choice
