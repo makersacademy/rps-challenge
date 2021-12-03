@@ -2,15 +2,21 @@
 
 A Rock, Paper, Scissors game built in Ruby using Sinatra and Capybara.
 
-Functionality
-- user can enter their name before the game
-- user will be presented the choices (rock, paper and scissors)
-- user can choose one option
-- the game will choose a random option
-- a winner will be declared
+## Installation & Usage
 
-## Todo
+```sh
+$ git clone git@github.com:sherwingp/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
 
-- Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+## Functionality
 
-- Use the _special_ rules ( http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+- [x] user can enter their name before the game
+- [x] user will be presented the choices (rock, paper and scissors)
+- [x] user can choose one option
+- [x] the game will choose a random option
+- [x] a winner will be declared
+- [ ] Implement multiplayer
+- [ ] Use the _special_ rules ( http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock )
