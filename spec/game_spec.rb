@@ -7,7 +7,7 @@ describe Game do
 
   describe "#get_outcome" do
     it "can declare the winner" do
-      expect(subject.get_outcome("Rock", "Scissors")).to eq("Player 1")
+      expect(subject.get_outcome("Rock", "Scissors")).to eq("Player 1 wins!")
     end
 
     it "can declare a draw" do

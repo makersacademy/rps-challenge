@@ -9,23 +9,23 @@ class Game
     if player1_choice == "Rock"
       case player2_choice
       when "Paper"
-        @player2
+        "#{@player2} wins!"
       when "Scissors"
-        @player1
+        "#{@player1} wins!"
       end
     elsif player1_choice == "Paper"
       case player2_choice
       when "Rock"
-        @player1
+        "#{@player1} wins!"
       when "Scissors"
-        @player2
+        "#{@player2} wins!"
       end
     else
       case player2_choice
       when "Rock"
-        @player2
+        "#{@player2} wins!"
       when "Paper"
-        @player1
+        "#{@player1} wins!"
       end
     end
   end
