@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative './lib/computer'
+require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -10,6 +11,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
+    session[:game] = Game.new
     session[:opponent] = Computer.new
     erb :index
   end
@@ -30,7 +32,7 @@ class RockPaperScissors < Sinatra::Base
   post '/choice' do
     session[:choice] = params[:choice]
     session[:opponent_choice] = session[:opponent].select_choice
-    session[:outcome] = session[:game].get_outcome
+    session[:outcome] = session[:game].get_outcome(session[:choice], session[:opponent_choice])
     redirect '/turn'
   end
 

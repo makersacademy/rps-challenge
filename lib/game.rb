@@ -1,5 +1,5 @@
 class Game
-  def initialize(player1 = Player.new, player2 = Computer.new)
+  def initialize(player1 = "Player 1", player2 = "Computer")
     @player1 = player1
     @player2 = player2
   end
@@ -9,23 +9,23 @@ class Game
     if player1_choice == "Rock"
       case player2_choice
       when "Paper"
-        @player2.name
+        @player2
       when "Scissors"
-        @player1.name
+        @player1
       end
     elsif player1_choice == "Paper"
       case player2_choice
       when "Rock"
-        @player1.name
+        @player1
       when "Scissors"
-        @player2.name
+        @player2
       end
     else
       case player2_choice
       when "Rock"
-        @player2.name
+        @player2
       when "Paper"
-        @player1.name
+        @player1
       end
     end
   end
