@@ -7,7 +7,7 @@ feature 'play RPS' do
     sign_in_and_play
   end
 
-  scenario 'player name should be displayed on next page' do
+  scenario 'player name should be displayed on the next page' do
     expect(page).to have_content('Please select an option, Titus')
   end 
 
@@ -25,26 +25,27 @@ feature 'play RPS' do
     expect(page).to have_content("Scissors")
     find_button("Scissors").click   
   end
-  
-  scenario 'player can choose Rock' do
-    click_button("Rock")
-    expect(page).to have_content('You chose Rock')
-    expect(page).not_to have_content('You chose Paper')
-  end
 
-  scenario 'player can choose Paper' do
+  scenario 'can display player 1 as the winner' do
     click_button("Paper")
-    expect(page).to have_content('You chose Paper')
-    expect(page).not_to have_content('You chose Scissors')
+    click_button("Rock")
+    expect(page).to have_content("Player 1 wins")
   end
 
-  scenario 'player can choose Scissors' do
-    click_button("Scissors")
-    expect(page).to have_content('You chose Scissors')
-    expect(page).not_to have_content('You chose Rock')
+  scenario 'can display player 2 as the winner' do
+    click_button("Rock")
+    click_button("Paper")
+    expect(page).to have_content("Player 2 wins")
   end
 
+  scenario 'can display a draw' do
+    click_button("Paper")
+    click_button("Paper")
+    expect(page).to have_content("It's a draw")
+  end
+  
   scenario 'player can click play again button' do
+    click_button("Paper")
     click_button("Paper")
     find_button('Play again?').click
   end
