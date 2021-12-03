@@ -18,6 +18,12 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     session[:name] = params[:name]
+    redirect '/play'
+  end
+
+  post '/choice' do
+    session[:choice] = params[:choice]
+    redirect '/play'
   end
 
   run! if app_file == $0
