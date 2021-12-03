@@ -16,4 +16,9 @@ describe Player do
     expect(@player.move).to eq "Rock"
   end
 
+  it "should select a random move if none are specified" do
+    srand(1)
+    expect(subject.move).to eq "Paper"
+  end
+
 end
