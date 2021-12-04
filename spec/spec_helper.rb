@@ -4,7 +4,7 @@ require 'simplecov'
 require 'simplecov-console'
 require 'capybara'
 
-ENV['RACK_ENV']='test'
+ENV['RACK_ENV'] = 'test'
 
 Capybara.app = Rps
 
