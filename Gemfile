@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 ruby '3.0.2'
 
 gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'rack'
+gem 'selenium-webdriver'
+gem "puma", "~> 5.5"
 
 group :test do
   gem 'capybara'
@@ -14,3 +18,4 @@ end
 group :development, :test do
   gem 'rubocop', '1.20'
 end
+
