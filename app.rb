@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
   configure :development do
@@ -10,18 +11,29 @@ class Battle < Sinatra::Base
   enable :session
 
   get '/' do
-    erb :index
+    erb :homepage
   end
 
-  post '/names' do
-    session[:player1] = Player.new(params[:name1])
-    @name = session[:player1].name
-    @victories = session[:player1].victories
+  post '/play' do
+    player1 = Player.new(params[:name1])
+    $game = Game.new(player1)
+    # @game = $game
     erb :play
   end
 
-  get '/play' do
-  
+  post '/move' do
+    @game = $game
+    # p @game
+    @move = params[:p1move]
+    # p @move
+    erb :move
+    # redirect '/outcome'
+  end
+
+  get '/outcome' do
+    @game = $game
+ 
+    erb :outcome
   end
 
   run! if app_file == $0

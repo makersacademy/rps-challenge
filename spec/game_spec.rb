@@ -14,4 +14,12 @@ describe Game do
       expect(game.player2).to eq player2
     end
   end
+
+  context "options for the player" do
+    it "can choose rock" do
+      move = "ROCK"
+      game.choose_move(move)
+      expect(game.choosen_move).to eq "ROCK"
+    end
+  end 
 end

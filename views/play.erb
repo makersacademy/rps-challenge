@@ -1,5 +1,12 @@
 <h1>✌🏾 🖐🏽 ✊🏻 Welcome to Rock-Paper-Scissors✊🏻 🖐🏽 ✌🏾</h1>
 <h2>
-  <%= @name %> vs Thing
-  <%= @victories %> victories
+  <%= $game.player1.name %> vs Thing
 </h2>
+<h4>
+  <%= $game.player1.victories %> victories / <%= $game.player1.victories %> victories
+</h4>
+<h3>
+  <form method="post" action="/move"> 
+      <input type="submit" name="p1move" value="ROCK" />
+  </form>
+</h3>
