@@ -1,22 +1,17 @@
 require 'game'
 describe Game do 
-  game = Game.new("Rock")
-  describe '#player2_move' do 
-    it 'returns rock, paper or scissors only' do 
-      expect(['Rock', 'Paper', 'Scissors']).to include (game.player2_move)
-    end
-
-  end
   context 'Game logic' do 
-    it 'Rock beats Scissors' do 
-
+    it 'Players can draw' do 
+      game = Game.new("Rock", "Rock")
+      expect(game.result).to eq :draw
     end
-    it 'Paper beats Rock' do 
-  
+    it 'Player 1 can lose' do 
+      game = Game.new("Rock", "Paper")
+      expect(game.result).to eq :loss
     end
-    it 'Scissors beats Paper' do 
-  
+    it 'Player 1 can win' do 
+      game = Game.new("Rock", "Scissors")
+      expect(game.result).to eq :win
     end
   end
-  
 end

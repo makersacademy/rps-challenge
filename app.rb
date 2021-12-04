@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
 require './lib/game'
+require './lib/computer'
 
 class Rps < Sinatra::Base
   configure :development do
@@ -14,7 +15,7 @@ class Rps < Sinatra::Base
 
   post '/name' do 
     $player1 = Player.new(params[:player_name])
-    $player2 = Player.new("The Computer")
+    $player2 = Computer.new("The Computer")
     erb :name
   end
 
@@ -24,8 +25,9 @@ class Rps < Sinatra::Base
 
   post '/move' do
     @player1_move = params[:move]
-    @player2_move = Game.new(@player1_move).player2_move
-    erb :move
+    @player2_move = $player2.weapon
+    @game = Game.new(@player1_move, @player2_move)
+    erb @game.result
   end
 
 end
