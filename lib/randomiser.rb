@@ -1,5 +1,5 @@
 class Randomiser
   def call
-    ["Rock", "Paper", "Scissors"].sample
+    [:rock, :paper, :scissors].sample
   end
 end

@@ -30,8 +30,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    session[:choice] = params[:choice]
-    session[:opponent_choice] = session[:opponent].select_choice
+    session[:choice] = params[:choice].to_sym
+    session[:opponent_choice] = session[:opponent].select_choice.to_sym
     session[:outcome] = session[:game].get_outcome(session[:choice], session[:opponent_choice])
     redirect '/turn'
   end
