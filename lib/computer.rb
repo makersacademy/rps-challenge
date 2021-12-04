@@ -4,7 +4,7 @@ class Computer
     @name = name
   end
 
-  def weapon
+  def move
     ['Rock', 'Paper', 'Scissors'].sample
   end
 end

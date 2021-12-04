@@ -25,7 +25,7 @@ class Rps < Sinatra::Base
 
   post '/move' do
     @player1_move = params[:move]
-    @player2_move = $player2.weapon
+    @player2_move = $player2.move
     @game = Game.new(@player1_move, @player2_move)
     erb @game.result
   end
