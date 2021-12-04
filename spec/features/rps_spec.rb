@@ -9,6 +9,6 @@ feature "Rock Paper Scissors Game" do
     visit '/'
     fill_in 'name', with: "Paul Dirac"
     click_button 'Go!'
-    expect(page).to have_content 'Hi Paul Dirac! make your choice:'
+    expect(page).to have_content 'Hi Paul Dirac! Make your choice:'
   end
 end

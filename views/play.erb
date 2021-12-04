@@ -7,6 +7,24 @@
   <title>Play a game</title>
 </head>
 <body>
-  <%= $game.player.name %>
+  <form action='/result' method='POST'>
+  <p>Hi <%= $game.player.name %>! Make your choice:</p>
+  <div>
+    <input type="radio" id="rock"
+     name="move" value="rock" checked>
+    <label for="rock">ROCK</label>
+
+    <input type="radio" id="paper"
+     name="move" value="paper">
+    <label for="paper">PAPER</label>
+
+    <input type="radio" id="scissors"
+     name="move" value="scissors">
+    <label for="scissors">SCISSORS</label>
+  </div>
+  <div>
+    <button type="submit">Play</button>
+  </div>
+</form>
 </body>
 </html>
