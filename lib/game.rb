@@ -5,7 +5,6 @@ class Game
     @player2_move = player2_move
   end
 
-
   def result
     if @player1_move == 'Rock' && @player2_move == "Scissors" || @player1_move == 'Paper' && @player2_move == "Rock" || @player1_move == 'Scissors' && @player2_move == "Paper"
       :win
