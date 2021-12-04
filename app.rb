@@ -1,8 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player'
 
 class Rps < Sinatra::Base
-  enable :sessions
   configure :development do
     register Sinatra::Reloader
   end
@@ -12,13 +12,13 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do 
-    @name = params[:player_name]
-    session[:name] = params[:player_name]
+    $player1 = Player.new(params[:player_name])
+    @name = $player1.name
     erb :name
   end
 
   post '/game' do 
-    @name = session[:name]
+    @name = $player1.name
     erb :game
   end
 

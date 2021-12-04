@@ -4,6 +4,6 @@ feature 'User can start the game' do
     fill_in 'player_name', with: 'Dwayne'
     click_button 'Submit'
     click_button 'Born Ready!'
-    expect(page).to have_content "You seem confident Dwayne, what are you going for?"
+    expect(page).to have_content 'You seem confident Dwayne, what are you going for?'
   end
 end
