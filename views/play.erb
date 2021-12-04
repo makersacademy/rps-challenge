@@ -7,8 +7,9 @@
       text-shadow: 1px 1px black;
     }
     #container {
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.6);
       position: absolute;
+      top: 100;
       right: 0;
       left: 0;
       margin: auto;
@@ -16,11 +17,12 @@
       height: 60%;
       text-align: center;
     }
-    #choice {
+    .choice {
       margin-top: 1.5rem;
       margin-bottom: 0;
+      font-size: 1.1rem;
     }
-    #rps {
+    .rps {
       font-size: 1.6rem;
       text-transform: uppercase;
       margin-top: 0.5rem;
@@ -36,10 +38,10 @@
 </head>
 <body>
   <div id="container">
+
     <h1> Bot vs. <%= @player.name %> </h1>
-
     <p> Choose wisely: </p>
-
+    <%# 3 choices %>
     <section id='rps-options'>
       <form action='/choose_rock'>
         <input type='submit' value='Rock'>
@@ -51,7 +53,15 @@
         <input type='submit' value='Scissors'>
       </form>
     </section>
-    <p id='choice'><%= @player.name %>'s choice: </p>
-    <p id='rps'><%= @rock || @paper || @scissors %> </p>
+    <%# after player picks one this section is updated %>
+    <section>
+      <p class='choice'><%= @player.name %>'s choice:</p>
+      <p class='rps'><%= @rock || @paper || @scissors %> </p>
+    </section>
+
+    <section>
+      <p class='choice'>Bot's choice:</p>
+      <p class='rps'> <%= @choice %> </p>
+    </section>
   </div>
 </body>
