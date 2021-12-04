@@ -1,3 +1,5 @@
+require 'simplecov'
+require 'simplecov-console'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -9,6 +11,7 @@ SimpleCov.start
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
 
+
 ENV['RACK_ENV'] = 'test'
 
 # require our Sinatra app file
@@ -17,11 +20,6 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 require 'capybara/rspec'
 Capybara.app = Game
-require 'simplecov'
-require 'simplecov-console'
-
-
-
 
 RSpec.configure do |config|
   config.after(:suite) do
