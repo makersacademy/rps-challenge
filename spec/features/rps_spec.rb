@@ -10,10 +10,10 @@ feature "Rock Paper Scissors Game" do
     expect(page).to have_content 'Hi Paul Dirac! Make your choice:'
   end
 
-  scenario "player can win a game" do
+  scenario "player can play a game" do
     enter_name
     page.choose('rock')
     click_button 'Play'
-    expect(page).to have_content(/It's a (?:draw|win|lose)/)
+    expect(page).to have_content(/You (?:draw|win|lose)!/)
   end
 end

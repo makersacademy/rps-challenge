@@ -28,7 +28,10 @@ class RpsGame < Sinatra::Base
   end 
 
   get '/gameover' do
-    
+    @result = params[:result]
+    @player_move = $game.player.move
+    @computer_move = $game.computer_move
+    erb :gameover
   end
 
   run! if app_file == $0
