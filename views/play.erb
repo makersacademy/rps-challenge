@@ -1,9 +1,8 @@
-<h1><%= @marketeer_name %>! Welcome to the Rock, Paper, Scissors Game! </h1>
-
-<form action="/play" method="post">
+<h1><%= @marketeer_name %> vs. Computer</h1>
+<h2> Welcome to the Rock, Paper, Scissors Game!</h2>
+<h3> Please choose your weapon!</h3>
+<form action="/option" method="post">
   <input type="submit" name="play_option" value="Rock">
   <input type="submit" name="play_option" value="Paper">
   <input type="submit" name="play_option" value="Scissors">
 </form>
-
-You chose: <%= @play_option %>
