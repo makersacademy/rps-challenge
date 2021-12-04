@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -30,6 +31,7 @@ class RockPaperScissors < Sinatra::Base
   get '/selectedchoice' do
     @name = session[:name]
     @choice = session[:choice]
+    @computer_choice = Computer.new.choice
     erb :selectedchoice
   end
   run! if app_file == $0

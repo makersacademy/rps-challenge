@@ -8,7 +8,7 @@ describe Computer do
     end
 
     it "computer choice is randomly chosen from array" do
-      choices = ["rock", "paper", "scissors"].sample
+      choices = ["rock", "paper", "scissors"]
       expect(choices).to include(subject.choice)
     end
   end
