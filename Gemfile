@@ -5,6 +5,7 @@ ruby '3.0.2'
 gem 'sinatra'
 gem "webrick"
 gem 'sinatra-contrib'
+gem 'rack'
 
 group :test do
   gem 'capybara'
