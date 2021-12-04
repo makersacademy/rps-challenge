@@ -13,12 +13,10 @@ class Rps < Sinatra::Base
 
   post '/name' do 
     $player1 = Player.new(params[:player_name])
-    @name = $player1.name
     erb :name
   end
 
   post '/game' do 
-    @name = $player1.name
     erb :game
   end
 
