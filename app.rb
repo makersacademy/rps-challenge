@@ -10,5 +10,10 @@ class RockPaperScissor < Sinatra::Base
     erb :index
   end
 
+  post '/play' do
+    @player = params[:name]
+    erb :play
+  end
+
   run! if app_file == $0
 end
