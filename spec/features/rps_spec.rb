@@ -6,9 +6,14 @@ feature "Rock Paper Scissors Game" do
   end
 
   scenario "Submit your name" do
-    visit '/'
-    fill_in 'name', with: "Paul Dirac"
-    click_button 'Go!'
+    enter_name  
     expect(page).to have_content 'Hi Paul Dirac! Make your choice:'
+  end
+
+  scenario "player can win a game" do
+    enter_name
+    page.choose('rock')
+    click_button 'Play'
+    expect(page).to have_content(/It's a (?:draw|win|lose)/)
   end
 end

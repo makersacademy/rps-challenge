@@ -22,9 +22,14 @@ class RpsGame < Sinatra::Base
   end
 
   post '/result' do
-    # $game.player.move(params[:move])
-    # $game.play
+    $game.player.move=(params[:move])
+    result = $game.play
+    redirect "/gameover?result=#{result}"
   end 
+
+  get '/gameover' do
+    
+  end
 
   run! if app_file == $0
 end
