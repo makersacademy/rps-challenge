@@ -1,6 +1,5 @@
 feature 'Feature test' do
 
-
   feature 'Home page functionality:' do
     scenario 'shows game title' do
       visit('/')
@@ -18,32 +17,28 @@ feature 'Feature test' do
   end
 
   feature 'Results page functionality:' do
-    scenario 'shows rock if rock picked' do
+    scenario 'shows rock if picked' do
       sign_in_and_play
-      expect(page).to have_content('Rock')
+      expect(page).to have_content('Rock vs')
     end
 
-    scenario 'shows paper if rock picked' do
+    scenario 'shows paper if picked' do
       visit('/')
       select 'Paper'
       click_button 'Play'
-      expect(page).to have_content('Paper')
+      expect(page).to have_content('Paper vs')
     end
 
     scenario 'Shows draw result if same chosen' do
+      allow_any_instance_of(Computer).to receive(:selected).and_return(:Rock)
       sign_in_and_play
-      allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
-      visit('/result')
-      expect(page).to have_content('Rock vs Rock')
-      expect(page).to have_content('Draw')
+      expect(page).to have_content("Rock vs Rock\nClose one Alfonso! You drew.")
     end
 
     scenario 'Shows player winning' do
+      allow_any_instance_of(Computer).to receive(:selected).and_return(:Scissor)
       sign_in_and_play
-      allow_any_instance_of(Array).to receive(:sample).and_return('Scissor')
-      visit('/result')
-      expect(page).to have_content('Rock vs Scissor')
-      expect(page).to have_content('Alfonso wins')
+      expect(page).to have_content("Rock vs Scissor\nCongratulations")
     end
   end
 

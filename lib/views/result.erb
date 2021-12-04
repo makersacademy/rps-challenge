@@ -1,13 +1,20 @@
 <center>
 <br>
 <h1> <%= @player.selected %> vs <%= @computer%> </h1>
+
 <h2> 
 <% if @result == :win %> 
 Congratulations <%=@player.name%>, you won!
 <% elsif @result == :loss %> 
-Whoops .. <%=@player.name%> you lost!
-<% else %>
-Close one <%=@player.name%>! You drew!
+Whoops... <%=@player.name%> you lost!
+<% elsif @result == :draw %>
+Close one <%=@player.name%>! You drew.
 <%end%>
 </h2>
+
+
+<form action="/">
+  <input type="submit" value="Restart">
+</form>
+
 </center>
