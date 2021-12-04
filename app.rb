@@ -23,8 +23,7 @@ class Battle < Sinatra::Base
 
   post '/move' do
     @game = $game
-    # p @game
-    @move = params[:p1move]
+    @move = $game.choose_move(params[:p1move])
     # p @move
     erb :move
     # redirect '/outcome'
