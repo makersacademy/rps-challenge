@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player.rb'
 
 class Battle < Sinatra::Base
   configure :development do
@@ -13,7 +14,8 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    @name1 = params[:name1]
+    @player1 = Player.new(params[:name1])
+    @name1 = @player1.name
     erb :play
   end
 
