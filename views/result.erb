@@ -1,0 +1,8 @@
+<%= "#{@game.player1.name}" %> selected <%= "#{@game.player1_move}" %>!<br>
+<%= "#{@game.player2.name}" %> selected <%= "#{@game.player2_move}" %>!<br>
+<h1><%= "#{@game.winner}" %></h1>
+
+<form>
+<input type="button" value="Play Again?" onclick="history.back()">
+</form>
+
