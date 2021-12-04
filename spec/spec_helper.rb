@@ -9,7 +9,7 @@ require 'simplecov'
 require 'simplecov-console'
 
 # Tell Capybara to talk to Game
-Capybara.app = Game
+Capybara.app = RpsGame
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

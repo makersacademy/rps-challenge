@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 
-class Game < Sinatra::Base
+class RpsGame < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
@@ -11,7 +11,7 @@ class Game < Sinatra::Base
   end
 
   post '/name' do
-    
+
   end
 
   run! if app_file == $0
