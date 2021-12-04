@@ -14,9 +14,14 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    @player1 = Player.new(params[:name1])
-    @name1 = @player1.name
+    session[:player1] = Player.new(params[:name1])
+    @name = session[:player1].name
+    @victories = session[:player1].victories
     erb :play
+  end
+
+  get '/play' do
+  
   end
 
   run! if app_file == $0
