@@ -14,6 +14,7 @@ class Rps < Sinatra::Base
 
   post '/name' do 
     $player1 = Player.new(params[:player_name])
+    $player2 = Player.new("The Computer")
     erb :name
   end
 
