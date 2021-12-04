@@ -84,3 +84,38 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+Notes & Thoughts
+----------------------
+
+we now have a basic file structure
+
+the player can enter his/her name and see it displayed
+
+-> capybara feature test
+-> update Controller
+-> update views
+= pass the feature test
+
+we need the player's name to be stored so we can display it back
+now it is just an instance variable
+I might need to use the Sinatra sessions or, worst-case scenario, the global v...I don't know yet
+
+Now I will focus on test driving the rock-paper-scissor game:
+
+As a player, I can choose rock
+As a player, I can choose paper
+As a player, I can choose scissors
+
+
+the opponent - a computer - randomly picks a move from [rock, paper, scissors]
+
+we have different case scenarios :
+TIES: player and computer pick the same move!
+
+Player wins
+
+Computer wins
+
+I assume we declare a winner after each game
+there are no rounds (like three wins to be declared the winner, but I might add a win_counter or similar to keep track of the victories. I don't know yet.
