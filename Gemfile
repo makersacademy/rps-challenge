@@ -10,7 +10,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'sinatra-contrib'   # to have the extension sinatra reloader
-  gem 'launchy'           # to open the file automatically. add #save_and_open_page to features test to save the web page and open the browser to display it
+  gem 'launchy'           # to open the file automatically. add #save_and_open_page
   gem 'rack'
 end
 
