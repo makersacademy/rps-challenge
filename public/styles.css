@@ -1,4 +1,21 @@
-body { background-color: linen; }
-.title {   color: #1F1D36;text-align:center; }
-.center { text-align: center; }
-.title {   color: #1F1D36;text-align:center;  }
+body {
+ background-color: linen;
+}
+
+.center { 
+  position: relative;
+  left: 45px;
+  top: 200px;
+  text-align: center; 
+}
+
+.container { 
+    position: relative;
+
+    
+}
+
+.title {
+  color: #1F1D36;
+  text-align:center;
+}
