@@ -20,4 +20,9 @@ class Rps < Sinatra::Base
     erb :game
   end
 
+  post '/move' do
+    @player1_move = params[:move]
+    erb :move
+  end
+
 end
