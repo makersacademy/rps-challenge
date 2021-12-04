@@ -22,5 +22,15 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/choice' do
+    session[:choice] = params[:choice] 
+    redirect '/selectedchoice'
+  end
+
+  get '/selectedchoice' do
+    @name = session[:name]
+    @choice = session[:choice]
+    erb :selectedchoice
+  end
   run! if app_file == $0
 end
