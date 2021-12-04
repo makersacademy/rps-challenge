@@ -1,3 +1,57 @@
-<h1>Rock Paper Scissors</h1>
+<head>
+  <style>
+    body {
+      background-image: url('https://wrpsa.com/wp-content/uploads/2021/08/rock-paper-scissors-neon-icons-vector.jpg');
+      background-size: cover;
+      color: #1aff1a;
+      text-shadow: 1px 1px black;
+    }
+    #container {
+      background-color: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin: auto;
+      width: 40%;
+      height: 60%;
+      text-align: center;
+    }
+    #choice {
+      margin-top: 1.5rem;
+      margin-bottom: 0;
+    }
+    #rps {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+    /* #rps-options {
+      background-color: pink;
+    } */
+    input {
+      background-color: #ffff33;
+      color: #000099;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1> Bot vs. <%= @player.name %> </h1>
 
-<h2> Bot vs. <%= @player %> </h2>
+    <p> Choose wisely: </p>
+
+    <section id='rps-options'>
+      <form action='/choose_rock'>
+        <input type='submit' value='Rock'>
+      </form>
+      <form action='/choose_paper'>
+        <input type='submit' value='Paper'>
+      </form>
+      <form action='/choose_scissors'>
+        <input type='submit' value='Scissors'>
+      </form>
+    </section>
+    <p id='choice'><%= @player.name %>'s choice: </p>
+    <p id='rps'><%= @rock || @paper || @scissors %> </p>
+  </div>
+</body>
