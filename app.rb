@@ -1,14 +1,16 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 
-class ..... < Sinatra::Base
- configure :development do
+class Game < Sinatra::Base
+
+    configure :development do
      register Sinatra::Reloader
- end
+    end
 
- get '/' do
-     'Hellow World'
- end
+    run! if app_file == $0
 
- run! if app_file == $0
+    get '/' do
+     'Testing infrastructure working'
+    end
+
 end
