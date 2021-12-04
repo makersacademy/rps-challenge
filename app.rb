@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/game'
 
 class Rps < Sinatra::Base
   configure :development do
@@ -22,6 +23,7 @@ class Rps < Sinatra::Base
 
   post '/move' do
     @player1_move = params[:move]
+    @player2_move = Game.new(@player1_move).player2_move
     erb :move
   end
 
