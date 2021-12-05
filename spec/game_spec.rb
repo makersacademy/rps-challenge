@@ -4,7 +4,7 @@ describe Game do
   let(:player1) { double('player1', :name => 'player1', :move => 'ROCK') }
   let(:player2) { double('player2', :name => 'player2', :move => 'PAPER') }
   let(:player3) { double('player3', :name => 'player3', :move => 'PAPER') }  
-  let(:game) { Game.new(player1, player2) }
+  let(:game) { Game.new(player1, player2, '2 player') }
 
   context '#initialize' do
     it 'holds players in an array called by an instance variable' do
@@ -25,7 +25,7 @@ describe Game do
     end
 
     it 'returns a draw when players moves are equal' do
-      game = Game.new(player2, player3)
+      game = Game.new(player2, player3, '2 player')
 
       expect(game.return_winner).to eq "It's a draw!"
     end
