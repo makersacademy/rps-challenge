@@ -10,4 +10,24 @@ describe Player do
   it "can track his/her number of victories" do
     expect(player.victories).to eq 0
   end
+
+  context "options for the player" do
+    it "can choose rock" do
+      move = "ROCK"
+      player.choose_move(move)
+      expect(player.choosen_move).to eq move
+    end
+
+    it "can choose paper" do
+      move = "PAPER"
+      player.choose_move(move)
+      expect(player.choosen_move).to eq move
+    end
+
+    it "can choose scissors" do
+      move = "SCISSORS"
+      player.choose_move(move)
+      expect(player.choosen_move).to eq move
+    end
+  end
 end
