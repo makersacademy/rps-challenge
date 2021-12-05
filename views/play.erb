@@ -5,8 +5,8 @@
 
 <body>
 
-<% if @playermoves.move_list.count < 2 %>
-<h1> Please select an option, <%= @playermoves.turn %> </h1>
+<% if @player2.move == nil %>
+<h1> Please select an option, <%= @player1.move == nil ? @player1.name : @player2.name %> </h1>
 <form action="/move" method="post"> 
 <button id='rock' name="move" type="submit" value="Rock">Rock</button>
 <button id='paper' name="move"  type="submit" value="Paper">Paper</button> 
@@ -15,13 +15,18 @@
 
 <% else %>
 
-<h2> <%= @name_1 %> chose <%= @playermoves.move_list[0] %> </h2>
-<h2> <%= @name_2 %> chose <%= @playermoves.move_list[1] %> </h2>
+<h2> <%= @player1.name %> chose <%= @player1.move %> </h2>
+<h2> <%= @player2.name %> chose <%= @player2.move %> </h2>
 
-<h2> <%= @gamelogic.winner(@playermoves.move_list[0],@playermoves.move_list[1]) %> </h2>
+<h2> <%= @gamelogic.winner %> </h2>
 
 <form action="/play_again" method="get"> 
-<button id='play_again' name="play_again" type="submit" >Play again?</button>
+<button id='play_again' name="play_again" type="submit"> Play again? </button> 
+</form>
+
+<form action="/new_game" method="get"> 
+<button id='new_game' name="new_game" type="submit"> Change players? </button>
+</form>
 
 <% end %>
 

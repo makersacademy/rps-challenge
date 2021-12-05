@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require_relative './lib/player_moves'
+require_relative './lib/player'
 require_relative './lib/game_logic'
 
 class RPS < Sinatra::Base 
@@ -10,32 +10,33 @@ class RPS < Sinatra::Base
   end
 
   get '/' do
-    @@gamelogic = GameLogic.instance
-    @@playermoves = PlayerMoves.instance
-    @@playermoves.reset
     erb :index
   end
 
   post '/names' do
-    @@playermoves.add_name(params[:name_1])
-    @@playermoves.add_name(params[:name_2])
+    @@gamelogic = GameLogic.new(Player.new(params[:name_1]), Player.new(params[:name_2]))
     redirect '/play'
   end
 
   get '/play' do
-    @playermoves = @@playermoves
     @gamelogic = @@gamelogic
-    @name_1 = @@playermoves.name_list[0]
-    @name_2 = @@playermoves.name_list[1]
+    @player1 = @gamelogic.players[0]
+    @player2 = @gamelogic.players[1]
     erb :play
   end
 
   post '/move' do
-    @@playermoves.add_move(params[:move])
+    @@gamelogic.current_turn.assign_move(params[:move])
+    @@gamelogic.change_turn    
     redirect '/play'
   end
 
   get '/play_again' do
+    @@gamelogic.reset_moves
+    redirect '/play'
+  end
+
+  get '/new_game' do
     redirect '/'
   end
 
