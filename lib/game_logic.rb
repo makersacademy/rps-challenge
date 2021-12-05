@@ -19,7 +19,7 @@ class GameLogic
   end
 
   def reset_moves
-    @players.each { |player| player.reset_moves }
+    @players.each { |player| player.reset_move }
   end 
 
   def winner

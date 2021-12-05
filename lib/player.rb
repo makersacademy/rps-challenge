@@ -1,7 +1,5 @@
-# require 'singleton'
 
 class Player
-  # include Singleton
   attr_reader :name, :move
 
   def initialize(name)
@@ -12,7 +10,7 @@ class Player
     @move = move
   end
 
-  def reset_moves
+  def reset_move
     @move = nil
   end
 
