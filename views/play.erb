@@ -5,15 +5,26 @@
 <body>
   <div id="container">
 
+    <% if @game.bot.points == 10 %>
+    <div id='game-winner'>
+      <h1>GAME OVER</h1>
+      <h2> The 🤖Bot wins the game! </h2>
+    </div>
+    <% elsif @game.player.points == 10 %>
+      <div id='game-winner'>
+        <h1>GAME OVER</h1>
+        <h2> <%= @game.player.name %> wins the game!🎉 </h2>
+      </div>
+    <% else %>
     <div id="points">
-      <h1><%= @game.bot.points %> - Bot vs. <%= @game.player.name %> - <%= @game.player.points %></h1>
+      <h1><%= @game.bot.points %> - Bot🤖 vs. 😊<%= @game.player.name %> - <%= @game.player.points %></h1>
     </div>
     <%# after player click on one button this section is updated %>
     <section>
-      <p class='choice'><%= @game.player.name %>'s choice:</p>
+      <p class='choice'>😊<%= @game.player.name %>'s choice:</p>
       <p class='rps'><%= @rock || @paper || @scissors %> </p>
-    <%# Bot's random pick %>vs.
-      <p class='choice'>Bot's choice:</p>
+      vs.
+      <p class='choice'>🤖Bot's choice:</p>
       <p class='rps'> <%= @choice %> </p>
     </section>
 
@@ -30,5 +41,6 @@
     <% if @game.winner %>
      <h3><%= @game.winner %> wins!🥳</h3>
     <% end %>
+  <% end %>
   </div>
 </body>

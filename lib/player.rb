@@ -8,7 +8,7 @@ class Player
   end
 
   def add_point
-    @points += 1
+    @points += 1 if @points < 10
   end
 
   def choose_rock

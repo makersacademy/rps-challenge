@@ -1,4 +1,4 @@
-feature 'Pick one option' do
+feature 'Player picks one option' do
   scenario 'click on rock' do
     sign_in_and_play
     click_button('Rock')
