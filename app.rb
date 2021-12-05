@@ -22,5 +22,11 @@ class RockPaperScissors < Sinatra::Base
     erb(:game)
   end
 
+  post '/result' do
+    @game = $game
+    @game.players[0].assign_move(params[:move])
+    erb(:game)
+  end
+
   run! if app_file == $0
 end

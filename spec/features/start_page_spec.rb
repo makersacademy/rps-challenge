@@ -12,7 +12,7 @@ feature 'user can start a game' do
   end
 
   scenario 'user will see their name on screen after clicking on the start button' do
-    sign_in_and_play
+    sign_in
     expect(page).to have_content 'Patos'
   end
 end

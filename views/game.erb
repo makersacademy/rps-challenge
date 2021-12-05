@@ -1,3 +1,20 @@
 <div class="interactive_zone">
-  <h1><%= @game.players[0].name %></h1>
+  <h1><%= @game.players[0].name %> vs. <%= @game.players[1] %></h1>
+
+  <form action="/result" method="post">
+    <input type="hidden" name="move" value="ROCK">
+    <input type="submit" value="ROCK">
+  </form>
+  <form action="/result" method="post">
+    <input type="hidden" name="move" value="PAPER">
+    <input type="submit" value="PAPER">
+  </form>
+  <form action="/result" method="post">
+    <input type="hidden" name="move" value="SCISSORS">
+    <input type="submit" value="SCISSORS">
+  </form>
+
+  <% if @game.players[0].read_move %>
+    <h4><%= @game.players[0].name%>: <%= @game.players[0].read_move %></h4>
+  <% end %>
 </div>
