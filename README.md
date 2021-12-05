@@ -202,3 +202,13 @@ But first, let's do some tests.
 I was so sure of what I wanted to do, so I didn't manage to test drive it...
 
 I have read about the Open-Close principle, so I guess my RPS_list, which is the list of possible moves, should be an independent class, but I kept it in Game.rb to keep it simple. rb class though it makes my Game class open for modification :(
+
+I have to say I was quite lost with the capybara feature tests; I had no idea where I was going; I spend a lot of time on the game logic and finding out how the elements would work together.
+even when a test passed, I had to make lots of amends to use my models logic with the controller.
+
+I didn't manage to format the forms; I wanted the buttons to have another shape etc.
+I added the counter a bit later and forgot to test it.
+
+I did test everything in IRB before making amends to the controller
+
+We still have a lot of horrible global variables everywhere, but I hope I will learn to use databases soon to remove them...
