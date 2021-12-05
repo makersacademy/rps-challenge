@@ -1,6 +1,8 @@
 feature 'results page' do
 
   before do
+    visit ('/')
+    click_button('one player')
     sign_in
     click_button('ROCK')
   end

@@ -1,6 +1,8 @@
 feature 'user can play a game of rock paper scissors with the computer' do
 
   before(:each) do 
+    visit ('/')
+    click_button('one player')
     sign_in
   end
 

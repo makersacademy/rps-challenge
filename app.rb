@@ -12,8 +12,15 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
+  post '/mode' do
+    @mode = params[:mode]
+    erb(:index)
+  end
+
   post '/names' do
-    $game = Game.new(Player.new(params[:player1]), Player.new('Computer'))
+    player1 = Player.new(params[:player1])
+    player2 = Player.new((params[:player2] || 'Computer'))
+    $game = Game.new(player1, player2)
     redirect '/game'
   end
 
