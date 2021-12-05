@@ -5,6 +5,18 @@ feature 'user can play a game of rock paper scissors with the computer' do
   end
 
   feature 'user can choose rock, paper or scissors' do
+    scenario 'rock button present' do
+      expect(page).to have_selector(:link_or_button, 'ROCK')
+    end
+ 
+    scenario 'paper button present' do
+      expect(page).to have_selector(:link_or_button, 'PAPER')
+    end
+
+    scenario 'scissors button present' do
+      expect(page).to have_selector(:link_or_button, 'SCISSORS')
+    end
+
     scenario 'user can select rock' do 
       click_button('ROCK')
       expect(page).to have_content 'Patos: ROCK'

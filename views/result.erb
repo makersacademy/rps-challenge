@@ -1,11 +1,10 @@
-<div>
-  <h4><%= @game.players[0].name%>: <%= @game.players[0].read_move %></h4>
-  <h4><%= @game.players[1].name%>: <%= @game.players[1].read_move %></h4>
-</div>
-<div>
+<div class='heading'>
   <h1><%= @game.return_winner %></h1>
 </div>
 <div>
-  <a href='/game'>PLAY ANOTHER ROUND</a>
-  <a href='/'>RETURN TO HOMEPAGE</a>
+  <h3><%= @game.players[0].name%>: <%= @game.players[0].read_move %> | <%= @game.players[1].name%>: <%= @game.players[1].read_move %></h3>
+</div>
+<div class='hero-text'>
+  <p><a href='/game'>PLAY ANOTHER ROUND</a></p>
+  <p><a href='/'>RETURN TO HOMEPAGE</a></p>
 </div>

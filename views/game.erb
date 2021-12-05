@@ -1,16 +1,17 @@
-<div class="interactive_zone">
+<div class="heading"><br>
   <h1><%= @game.players[0].name %> vs. <%= @game.players[1].name %></h1>
-
+</div>
+<div class="hero-text">
   <form action="/return_result" method="post">
     <input type="hidden" name="move" value="ROCK">
-    <input type="submit" value="ROCK">
+    <input class="rps-options" type="submit" value="ROCK">
   </form>
   <form action="/return_result" method="post">
     <input type="hidden" name="move" value="PAPER">
-    <input type="submit" value="PAPER">
+    <input class="rps-options" type="submit" value="PAPER">
   </form>
   <form action="/return_result" method="post">
     <input type="hidden" name="move" value="SCISSORS">
-    <input type="submit" value="SCISSORS">
+    <input class="rps-options" type="submit" value="SCISSORS">
   </form>
 </div>
