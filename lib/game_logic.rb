@@ -1,7 +1,4 @@
-# require 'singleton'
-
 class GameLogic
-  # include Singleton
   attr_reader :players, :turn_number
 
   def initialize(p1,p2)
