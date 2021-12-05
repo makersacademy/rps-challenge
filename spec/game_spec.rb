@@ -10,6 +10,10 @@ describe Game do
     it 'holds players in an array called by an instance variable' do
       expect(game.players[0]).to eq player1
     end
+
+    it 'holds player mode in an instance variable' do
+      expect(game.mode).to eq '2 player'
+    end
   end
 
   # this test doesn't feel great... is there a better way/ should I be testing array.sample at all?

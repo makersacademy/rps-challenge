@@ -1,6 +1,6 @@
 body {
 margin: 0;
-font-family: 'Play', sans-serif;
+font-family: 'Fruktur', cursive;
 background-color:#dddddd;
 color: peru;
 text-align: center;
@@ -39,12 +39,15 @@ input {
   text-align: center;
   font-weight: bold;
   margin: 4px;
+  padding: 7px;
 }
 
 .options {
   font-size: 150%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgba(255, 255, 255, 0.5);
   margin: 10px;
+  padding: 7px;
 }
 
 a{

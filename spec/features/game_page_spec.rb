@@ -62,10 +62,10 @@ feature 'user(s) can play a game of rock paper scissors' do
       expect(page).to have_content('Quackers make your move')
     end   
 
-    # scenario 'both players moves are presented on the results page' do
-    #   click_button('ROCK')
-    #   click_button('SCISSORS')
-    #   expect(page).to have_content('Patos: ROCK | Quackers: SCISSORS')
-    # end
+    scenario 'both players moves are presented on the results page' do
+      click_button('ROCK')
+      click_button('SCISSORS')
+      expect(page).to have_content('Patos: ROCK | Quackers: SCISSORS')
+    end
   end
 end

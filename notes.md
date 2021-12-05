@@ -13,6 +13,3 @@ end
 
 # things id like to add on
 - count down like 3, 2, 1 before showing the user the computers choice
-
-- need to check mode method on game
-- play another round needs to clear player moves for logic to work
