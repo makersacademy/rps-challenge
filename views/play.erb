@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Play</title>
+    <link rel="stylesheet" href="play.css">
+  </head>
+  <body>
+		
+		<h1>Well hello there, <%=@player_1.name%>!</h1>
+		<h3>Let's play a game of RPS</h3>
+		
+			<form action='/battle' method='post'>
+				<label>
+				Choose:
+					<select name="player_choice">
+								<option value="Rock">Rock</option>
+								<option value="Paper">Paper</option>
+								<option value="Scissors">Scissors</option>
+						</select>
+				</label>
+				<input type='submit' value='Submit'>
+			</form>
+
+  </body>
+</html>

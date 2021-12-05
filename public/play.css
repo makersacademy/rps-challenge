@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@300;400;500&display=swap');
+
+body{
+	padding: 0;
+	margin: 0;
+	min-height: 100vh;
+	font-family: 'Permanent Marker', cursive;
+	background-color: #f8d3e2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1, h3{
+	color: #e52165;
+}
+
+form{
+	display: flex;
+	flex-direction: column;
+}
+
+input{
+	margin-top: 2em;
+}
+
+label{
+	color: #0d1137;
+}
+
+form input[type=submit]{
+	font-family: 'Permanent Marker', cursive;
+	background: #0d1137;
+	color: #e52165;
+	padding: 7px 10px;
+	border: none;
+	border-radius: 7px;
+	cursor: pointer;
+}
+
+select {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	-webkit-padding-end: 20px;
+	-moz-padding-end: 20px;
+	-webkit-padding-start: 2px;
+	-moz-padding-start: 2px;
+	font-family: 'Permanent Marker', cursive;
+	background-color: #f8d3e2; 
+	background-position: center right;
+	background-repeat: no-repeat;
+	padding: 5px;
+	border: 2px solid #0d1137;
+	border-radius: 2px;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	color: #e52165;
+	font-size: inherit;
+	margin: 0;
+	overflow: hidden;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+}

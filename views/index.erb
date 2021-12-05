@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPS challenge</title>
+    <link rel="stylesheet" href="index.css">
+
+  </head>
+  <body>
+
+	<section id ='main-section'>
+		<div id='img-box'>
+			<img id= 'my-img' src='https://pxt.azureedge.net/blob/68f66c3ddc3acfc4c53157abf92eace202d46db2/static/courses/csintro/conditionals/rock-paper-scissors-items.png'>
+		</div>
+		<div id='message-box'>
+			<h1>Welcome to Rock, Paper, Scissors!</h1>
+			<h2>Let's begin the game, shall we!</h2>
+			
+			<div class='form-div'>
+				<form action='/data' method='post'>
+					<label for='player_1_name' class="my-label">
+						<h3>What's your name?</h3>
+						<input type='text' name='player_1_name' placeholder='enter name'>
+						<input type='submit' value='Go!'>
+					</label>
+				</form>
+			</div>
+		</div>
+	</section>
+
+  </body>
+</html>

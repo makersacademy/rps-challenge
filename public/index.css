@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@300;400;500&display=swap');
+
+body{
+	padding: 0;
+	margin: 0;
+	min-height: 100vh;
+	font-family: 'Permanent Marker', cursive;
+	display: flex;
+	justify-content: center;
+	background-color: #f8d3e2;
+}
+
+h1, h2{
+	color: #e52165;
+}
+
+#main-section{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 4em
+}
+
+#my-img{
+	width: 450px;
+}
+
+.my-label{
+	color: #e52165;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.my-label h3{
+	font-size: 1.7em;
+}
+
+.my-label input{
+	width: 40%;
+	margin-bottom: 1em;
+}
+
+form input[type=text]{
+	background: #0d1137;
+	color: #00CAB1;
+	padding: 10px;
+	font-family: 'Permanent Marker', cursive;
+	text-align: center;
+}
+
+form input[type=submit]{
+	font-family: 'Permanent Marker', cursive;
+	background: #0d1137;
+	color: #e52165;
+	padding: 7px 10px;
+	border: none;
+	border-radius: 7px;
+	cursor: pointer;
+}
+
+::placeholder { 
+  color: #e52165;
+	font-family: 'Permanent Marker', cursive;
+	text-align: center;
+  opacity: 0.7;
+}
