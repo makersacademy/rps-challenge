@@ -13,9 +13,9 @@ describe Bot do
     end
   end
 
-  # describe 'points' do
-  #   it 'returns the points before game starts' do
-  #     expect(subject.points).to eq 0
-  #   end
-  # end
+  describe 'points' do
+    it 'returns the points before game starts' do
+      expect(subject.points).to eq 0
+    end
+  end
 end

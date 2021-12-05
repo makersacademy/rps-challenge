@@ -21,9 +21,9 @@ describe Player do
     end
   end
 
-  # describe 'points' do
-  #   it 'returns points at the start of the game' do
-  #     expect(subject.points).to eq 0
-  #   end
-  # end
+  describe 'points' do
+    it 'returns points at the start of the game' do
+      expect(subject.points).to eq 0
+    end
+  end
 end

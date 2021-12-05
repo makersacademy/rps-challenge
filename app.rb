@@ -16,7 +16,7 @@ class RockPaperScissor < Sinatra::Base
   post '/name' do
     $player = Player.new(params[:name])
     $bot = Bot.new
-    $game = Game.new($player)
+    $game = Game.new($player, $bot)
     redirect '/play'
   end
 
@@ -27,9 +27,9 @@ class RockPaperScissor < Sinatra::Base
 
   get '/choose_rock' do
     @game = $game
-    @rock = $game.player.choose_rock
+    @rock = @game.player.choose_rock
     @choice = $bot.random_choice
-    @winner = $game.winner_with_rock(@choice)
+    $game.winner_with_rock(@choice)
     erb :play
   end
 
@@ -37,7 +37,7 @@ class RockPaperScissor < Sinatra::Base
     @game = $game
     @paper = @game.player.choose_paper
     @choice = $bot.random_choice
-    @winner = $game.winner_with_paper(@choice)
+    $game.winner_with_paper(@choice)
     erb :play
   end
 
@@ -45,7 +45,7 @@ class RockPaperScissor < Sinatra::Base
     @game = $game
     @scissors = @game.player.choose_scissors
     @choice = $bot.random_choice
-    @winner = $game.winner_with_scissors(@choice)
+    $game.winner_with_scissors(@choice)
     erb :play
   end
 

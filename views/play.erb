@@ -5,7 +5,9 @@
 <body>
   <div id="container">
 
-    <h1> Bot vs. <%= @game.player.name %> </h1>
+    <div id="points">
+      <h1><%= @game.bot.points %> - Bot vs. <%= @game.player.name %> - <%= @game.player.points %></h1>
+    </div>
     <%# after player click on one button this section is updated %>
     <section>
       <p class='choice'><%= @game.player.name %>'s choice:</p>
@@ -25,8 +27,8 @@
       </form>
     </section>
     
-    <% if @winner %>
-     <h3><%= @winner %> wins!🥳</h3>
+    <% if @game.winner %>
+     <h3><%= @game.winner %> wins!🥳</h3>
     <% end %>
   </div>
 </body>
