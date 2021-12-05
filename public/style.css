@@ -54,3 +54,22 @@
         between the labels and their text fields */
     margin-left: .5em;
     }
+
+
+    /* Player styling */
+
+    .player-card {
+        padding: 2em;
+        margin: 2em;
+        border: 1px solid black;
+        width: 170px;
+        height: 200px;
+        text-align: center;
+        border-radius: 5%;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
