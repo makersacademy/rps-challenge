@@ -1,0 +1,47 @@
+body {
+  padding: 30px;
+  background-color: rgb(193, 212, 219);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(34, 46, 44);
+}
+
+h2 {
+  font-size: 21px;
+  font-weight: bold;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(67, 97, 92);
+}
+
+h3 {
+  font-size: 21px;
+  font-weight: bold;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(67, 97, 92);
+}
+
+h4 {
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(67, 97, 92);
+}
+
+/* form {
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  margin: 11px auto;
+  background: rgb(206, 165, 164);
+  font-size: 18px;
+  padding: 15px 20px;
+  border: 2px solid (183, 69, 66);
+  border-radius: 100px;
+} */

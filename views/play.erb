@@ -1,0 +1,23 @@
+<body>
+<head>
+  <title>RPS GAME</title>
+  <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+</head>
+<h1>✌🏾 🖐🏽 ✊🏻 Welcome to Rock-Paper-Scissors✊🏻 🖐🏽 ✌🏾</h1>
+<h2>
+  <%= $game.player1.name %> vs <%= $game.player2.name %>
+</h2>
+<h4>
+  <%= $game.player1.victories %> victories / <%= $game.player2.victories %> victories
+</h4>
+<h3>
+<%= $game.player1.name %> pick your move :
+<br>
+<br>
+  <form method="post" action="/play2"> 
+      <input type="submit" name="p1move" value="ROCK" />
+      <input type="submit" name="p1move" value="PAPER" />
+      <input type="submit" name="p1move" value="SCISSORS" />
+  </form>
+</h3>
+</body>

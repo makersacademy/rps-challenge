@@ -9,6 +9,9 @@ group :test do
   gem 'rspec'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'sinatra-contrib'   # to have the extension sinatra reloader
+  gem 'launchy'           # to open the file automatically. add #save_and_open_page
+  gem 'rack'
 end
 
 group :development, :test do
