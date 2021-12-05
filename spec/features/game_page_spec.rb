@@ -1,9 +1,7 @@
-require 'game'
-
 feature 'user can play a game of rock paper scissors with the computer' do
+
   before(:each) do 
     sign_in
-    allow_any_instance_of(Game).to receive(:generate_move).and_return("PAPER")
   end
 
   feature 'user can choose rock, paper or scissors' do
@@ -17,7 +15,7 @@ feature 'user can play a game of rock paper scissors with the computer' do
       expect(page).to have_content 'Patos: PAPER'
     end
 
-    scenario 'user can select rock' do 
+    scenario 'user can select scissors' do 
       click_button('SCISSORS')
       expect(page).to have_content 'Patos: SCISSORS'
     end
