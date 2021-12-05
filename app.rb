@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require_relative './lib/player.rb'
-require_relative './lib/game.rb'
+require_relative './lib/player'
+require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -13,7 +13,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    $game = Game.new(Player.new(params[:player1]))
+    $game = Game.new(Player.new(params[:player1]), Player.new('Computer'))
     redirect '/game'
   end
 
@@ -25,7 +25,8 @@ class RockPaperScissors < Sinatra::Base
   post '/result' do
     @game = $game
     @game.players[0].assign_move(params[:move])
-    erb(:game)
+    @game.players[1].assign_move(@game.generate_move)
+    redirect '/game'
   end
 
   run! if app_file == $0

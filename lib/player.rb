@@ -7,7 +7,8 @@ class Player
     @name
   end
 
-  # can i make these two one method and use a default reading for move = @move or make it an optional param?
+  # can i make these two one method and use a default reading 
+  # for move = @move or make it an optional param?
   def assign_move(move)
     @move = move
   end
