@@ -1,8 +1,8 @@
 class Game
   MATCHUPS = {
     Rock: :Paper,
-    Paper: :Scissor,
-    Scissor: :Rock }
+    Paper: :Scissors,
+    Scissors: :Rock }
 
   def initialize(player_class:,computer_class:)
     @player = player_class

@@ -3,7 +3,7 @@ feature 'Feature test' do
   feature 'Home page functionality:' do
     scenario 'shows game title' do
       visit('/')
-      expect(page).to have_content('Rock Paper Scissor')
+      expect(page).to have_content('Rock Paper Scissors')
     end
 
     scenario 'lets user type in his name' do
@@ -12,7 +12,7 @@ feature 'Feature test' do
 
     scenario 'index page has button for each option' do
       visit('/')
-      expect(page).to have_select('options', :options => ['Rock','Paper','Scissor'])
+      expect(page).to have_select('options', :options => ['Rock','Paper','Scissors'])
     end
   end
 
@@ -36,9 +36,9 @@ feature 'Feature test' do
     end
 
     scenario 'Shows player winning' do
-      allow_any_instance_of(Computer).to receive(:choice).and_return(:Scissor)
+      allow_any_instance_of(Computer).to receive(:choice).and_return(:Scissors)
       sign_in_and_play
-      expect(page).to have_content("Rock vs Scissor\nCongratulations Alfonso, you won!")
+      expect(page).to have_content("Rock vs Scissors\nCongratulations Alfonso, you won!")
     end
 
     scenario 'Shows player losing' do

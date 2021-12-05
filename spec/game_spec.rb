@@ -12,7 +12,7 @@ describe Game do
   end
 
   it "returns win" do
-    allow(@computer).to receive(:choice).and_return(:Scissor)
+    allow(@computer).to receive(:choice).and_return(:Scissors)
     @game = Game.new(player_class: @player, computer_class: @computer)
     expect(@game.result).to eq :win
   end
@@ -22,8 +22,4 @@ describe Game do
     @game = Game.new(player_class: @player, computer_class: @computer)
     expect(@game.result).to eq :draw
   end
-
-
-  
-  
 end
