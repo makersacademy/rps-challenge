@@ -8,7 +8,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    index.erb
+    erb :index
+  end
+
+  post '/names' do
+    player = Player.new(params['name'])
   end
 
   run! if app_file = $0
