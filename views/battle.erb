@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Battle</title>
+    <link rel="stylesheet" href="battle.css">
+  </head>
+  <body>
+
+    <div id='main-display'>
+      <h2>Player chose: <span id='player'> <%=@player_1_choice%> </span></h2>
+      <h2>Computer chose: <span id='comp'><%=@computer_choice%></span> </h2>
+      
+      <% if (@player_1_choice == "Rock" && @computer_choice == "Scissors") || (@player_1_choice == "Scissors" && @computer_choice == "Paper") || (@player_1_choice == "Paper" && @computer_choice == "Rock") %>
+        <h2>Result: <span id='player'> Player wins! </span> </h2>
+      <% elsif (@player_1_choice == @computer_choice) %>
+        <h2>Result: <span id="draw"> It's a draw! </span> </h2>
+      <% else %>
+        <h3>Result: <span id='comp'>Computer wins!</span> </h3>
+      <%end %>
+
+    <form action="/play" method='get' class='takemeback-form'>
+      <input type='submit' value='Take me back' class='back-button'>
+    </form>
+
+    </div>
+
+  </body>
+</html> 
