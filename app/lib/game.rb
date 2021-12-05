@@ -10,13 +10,9 @@ class Game
   end
 
   def result
-    if @computer.choice == @player.choice
-      return :draw
-    elsif MATCHUPS[@player.choice] == @computer.choice
-      return :loss
-    elsif MATCHUPS[@computer.choice] == @player.choice
-      return :win
-    end
+    return :draw if @computer.choice == @player.choice
+    
+    MATCHUPS[@player.choice] == @computer.choice ? :loss : :win
   end
   
 end
