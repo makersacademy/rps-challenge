@@ -1,0 +1,14 @@
+<h1> Would you like to play against a computer or human? If playing against another player, please input their name:</h1>
+<form name="input" action="/soloredirect" method="post">
+  <label for="Multiplayer?">
+    <select name = "Multiplayer?">
+    <option value ="Solo" >Solo</option>
+    <option value ="Multiplayer" >Multiplayer</option>
+    </select>
+  </label>
+  <label for="name">
+      Player name: 
+      <input type=text name="name">
+    </label>
+<input type="submit" value="Submit">
+</form>

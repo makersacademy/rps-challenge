@@ -1,3 +1,14 @@
-<h1>You chose <%=$game.player1.hand%>!</h1>
-<h1>The computer chose <%=$game.player2.hand%>  </h1>
+<h1><%=$game.player1.name%> chose <%=$game.player1.hand%>!</h1>
+<h1>The <%=$game.player2.name%> chose <%=$game.player2.hand%>  </h1>
 <h1> <%=$game.winner%>  won! </h1>
+<h1> <%=$game.player1.name%> wins: <%=$game.player1.wins%> </h1>
+<h1> <%=$game.player2.name%> wins: <%=$game.player2.wins%> </h1>
+<h1> <%=$game.draws%> draws </h1>
+<h1> Play again? </ha>
+<form name="input" action="/play">
+  <input type="submit" value="Yes!">
+</form>
+<form name="input" action="/">
+  <input type="submit" value="Yes, but with new players!">
+</form>
+

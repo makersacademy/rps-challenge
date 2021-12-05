@@ -21,7 +21,7 @@ describe Game do
     subject.thrown_hands("Paper", 2)
     expect(subject.winner).to eq "Computer"
     subject.thrown_hands("Rock", 2)
-    expect(subject.winner).to eq "Draw!"
+    expect(subject.winner).to eq "Draw! No one"
     subject.thrown_hands("Scissors", 2)
     expect(subject.winner).to eq "JOHN"
   end
