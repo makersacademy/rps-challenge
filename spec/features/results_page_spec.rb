@@ -8,4 +8,9 @@ feature 'results page' do
   scenario 'presents the winner of the round' do
     expect(page).to have_content 'Computer wins!'
   end
+
+  scenario 'user has the option to play again' do
+    click_on('PLAY ANOTHER ROUND')
+    expect(page).to have_content 'Patos vs. Computer'
+  end
 end
