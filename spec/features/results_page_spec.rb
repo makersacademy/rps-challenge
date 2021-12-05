@@ -13,4 +13,9 @@ feature 'results page' do
     click_on('PLAY ANOTHER ROUND')
     expect(page).to have_content 'Patos vs. Computer'
   end
+
+  scenario 'user has the option to end game and return to homepage' do
+    click_on('RETURN TO HOMEPAGE')
+    expect(page).to have_content "Let's play Rock Paper Scissors!"
+  end
 end
