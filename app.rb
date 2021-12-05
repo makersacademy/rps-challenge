@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/computer'
+
 class RPS < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
@@ -31,6 +33,8 @@ class RPS < Sinatra::Base
 
   get '/game' do
     @play_option = session[:play_option]
+    $computer = Computer.new
+    @computer = $computer.move
     erb :game
   end
 

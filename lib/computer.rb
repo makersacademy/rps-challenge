@@ -1,12 +1,12 @@
 class Computer
   
-  attr_reader :choices
-  
-  def initialize
-    @choices = ["Rock", "Paper", "Scissors"] 
-  end
+  # attr_reader :choices
+  CHOICES = ["Rock", "Paper", "Scissors"]
+  # def initialize
+    # @choices = ["Rock", "Paper", "Scissors"] 
+  # end
 
   def move
-    @choices.sample
+    CHOICES.sample
   end
 end
