@@ -24,14 +24,14 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/option' do
+  post '/game' do
     session[:play_option] = params[:play_option]
-    redirect '/option'
+    redirect '/game'
   end
 
-  get '/option' do
+  get '/game' do
     @play_option = session[:play_option]
-    erb :option
+    erb :game
   end
 
   run! if app_file == $0

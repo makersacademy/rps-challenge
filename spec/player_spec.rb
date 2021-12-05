@@ -8,4 +8,11 @@ describe Player do
 			expect(player.name).to eq('Sam')
 		end
 	end
+
+	describe '#player move' do
+	  it 'player selects move' do
+		  #player.select_move 'Rock'
+			expect(player.select_move('Rock')).to eq 'Rock'
+		end
+	end
 end
