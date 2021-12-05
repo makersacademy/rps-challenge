@@ -1,15 +1,15 @@
 <div class="interactive_zone">
   <h1><%= @game.players[0].name %> vs. <%= @game.players[1].name %></h1>
 
-  <form action="/result" method="post">
+  <form action="/return_result" method="post">
     <input type="hidden" name="move" value="ROCK">
     <input type="submit" value="ROCK">
   </form>
-  <form action="/result" method="post">
+  <form action="/return_result" method="post">
     <input type="hidden" name="move" value="PAPER">
     <input type="submit" value="PAPER">
   </form>
-  <form action="/result" method="post">
+  <form action="/return_result" method="post">
     <input type="hidden" name="move" value="SCISSORS">
     <input type="submit" value="SCISSORS">
   </form>

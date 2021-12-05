@@ -22,10 +22,15 @@ class RockPaperScissors < Sinatra::Base
     erb(:game)
   end
 
-  post '/result' do
+  post '/return_result' do
     @game = $game
     @game.players[0].assign_move(params[:move])
     @game.players[1].assign_move(@game.generate_move)
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game = $game
     erb(:result)
   end
 
