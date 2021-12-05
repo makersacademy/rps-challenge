@@ -9,3 +9,5 @@ specify do
 end
 
  - should i be stubbing on capybara? because it's not testing logic?
+
+ https://miro.com/app/board/uXjVOdT2gz0=/
