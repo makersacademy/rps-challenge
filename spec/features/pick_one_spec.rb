@@ -15,7 +15,7 @@ feature 'Pick one option' do
     expect(page).to have_content("Pikachu's choice:\npaper")
   end
 
-    scenario 'click on scissors' do
+  scenario 'click on scissors' do
     visit('/')
     fill_in 'name', with: 'Pikachu'
     click_button('Play')

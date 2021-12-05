@@ -26,6 +26,7 @@ class RockPaperScissor < Sinatra::Base
     @player = $player
     @rock = @player.choose_rock
     @choice = Bot.new.random_choice
+    @winner = @player.winner_with_rock(@choice)
     erb :play
   end
 
@@ -33,6 +34,7 @@ class RockPaperScissor < Sinatra::Base
     @player = $player
     @paper = @player.choose_paper
     @choice = Bot.new.random_choice
+    @winner = @player.winner_with_paper(@choice)
     erb :play
   end
 
@@ -40,6 +42,7 @@ class RockPaperScissor < Sinatra::Base
     @player = $player
     @scissors = @player.choose_scissors
     @choice = Bot.new.random_choice
+    @winner = @player.winner_with_scissors(@choice)
     erb :play
   end
 

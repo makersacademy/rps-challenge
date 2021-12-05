@@ -1,5 +1,5 @@
 class Bot
   def random_choice
-    ['rock', 'paper', 'scissors'].sample
+    Player::RPS.sample
   end
 end
