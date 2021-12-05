@@ -2,7 +2,7 @@
   <h1><%= @game.return_winner %></h1>
 </div>
 <div>
-  <h3><%= @game.players[0].name%>: <%= @game.players[0].read_move %> | <%= @game.players[1].name%>: <%= @game.players[1].read_move %></h3>
+  <h3><%= @game.players[0].name%>: <%= @game.players[0].move %> | <%= @game.players[1].name%>: <%= @game.players[1].move %></h3>
 </div>
 <div class='hero-text'>
   <p><a href='/game'>PLAY ANOTHER ROUND</a></p>

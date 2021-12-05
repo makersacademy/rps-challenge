@@ -1,9 +1,9 @@
 require 'game'
 
 describe Game do
-  let(:player1) { double('player1', :name => 'player1', :read_move => 'ROCK') }
-  let(:player2) { double('player2', :name => 'player2', :read_move => 'PAPER') }
-  let(:player3) { double('player3', :name => 'player3', :read_move => 'PAPER') }  
+  let(:player1) { double('player1', :name => 'player1', :move => 'ROCK') }
+  let(:player2) { double('player2', :name => 'player2', :move => 'PAPER') }
+  let(:player3) { double('player3', :name => 'player3', :move => 'PAPER') }  
   let(:game) { Game.new(player1, player2) }
 
   context '#initialize' do

@@ -12,8 +12,8 @@ class Game
   end
 
   def return_winner
-    p1 = @players[0].read_move[0]
-    p2 = @players[1].read_move[0]
+    p1 = @players[0].move[0]
+    p2 = @players[1].move[0]
 
     calculate_result(p1, p2)
   end

@@ -9,11 +9,11 @@ describe Player do
     end
   end
 
-  context 'move' do
-    it '#assign_move and #read_move' do
-      player.assign_move("ROCK")
+  context '#move' do
+    it 'assigns move to instance variable and returns it' do
+      player.move("ROCK")
 
-      expect(player.read_move).to eq "ROCK"
+      expect(player.move).to eq "ROCK"
     end
   end
 end
