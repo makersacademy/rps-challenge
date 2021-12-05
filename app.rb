@@ -9,7 +9,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    @mode = nil
     $game = nil
     erb(:index)
   end
@@ -29,6 +28,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/game' do
     @game = $game
+    @game.players[0].move(nil)
+    @game.players[1].move(nil) 
     erb(:game)
   end
 
