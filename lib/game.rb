@@ -7,7 +7,7 @@ class Game
     @players
   end
   
-  # randomly generate computers move
-
-  
+  def generate_move
+    ['ROCK', 'PAPER', 'SCISSORS'].sample
+  end
 end
