@@ -13,7 +13,7 @@ class Game
   def the_winner(player,computer)
     if player == computer
       "It is a tie"
-    elsif computer_win?
+    elsif computer_win?(player, computer)
       "You lose"
     else
       "Well Done, you won!"

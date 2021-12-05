@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative './lib/game'
 
-class Rps < Sinatra::Base
+class Rockpaperscissors < Sinatra::Base
   enable :sessions
 
   configure :development do
