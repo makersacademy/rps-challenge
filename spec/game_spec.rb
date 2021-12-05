@@ -50,11 +50,12 @@ describe Game do
         player1.choose_move("ROCK")
         player2.choose_move("ROCK")
         expect(game.fight_outcome).to eq ("It's a tie!")
+        expect(game.player1.victories).to eq 0
       end
     end
 
     context "player1 picks ROCK" do
-      it "know when player1 wins" do
+      it "knows when player1 wins" do
         player1 = double("player", name: "Wednesday", victories: 0, choose_move: "ROCK", p_move: "ROCK")
         player2 = double("player", name: "Thing", victories: 0, choose_move: "SCISSORS", p_move: "SCISSORS")
         game = Game.new(player1, player2)
@@ -67,7 +68,7 @@ describe Game do
         expect(game.fight_outcome).to eq "Wednesday wins!"
       end
 
-      it "know when player2 wins" do
+      it "knows when player2 wins" do
         player1 = double("player", name: "Wednesday", victories: 0, choose_move: "ROCK", p_move: "ROCK")
         player2 = double("player", name: "Thing", victories: 0, choose_move: "PAPER", p_move: "PAPER")
         game = Game.new(player1, player2)
