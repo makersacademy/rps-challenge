@@ -1,4 +1,4 @@
-require_relative './player.rb'
+require_relative './player'
 
 class Game
 
@@ -8,7 +8,7 @@ class Game
     @player1 = Player.new
     @player2 = Player.new
     @draws = 0
-    @winner_hash = {"Scissors" => "Paper", "Paper" => "Rock", "Rock" => "Scissors"}
+    @winner_hash = { "Scissors" => "Paper", "Paper" => "Rock", "Rock" => "Scissors" }
   end
 
   def set_name(name1, name2 = "Computer")

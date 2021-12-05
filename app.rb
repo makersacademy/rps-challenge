@@ -1,7 +1,7 @@
 require "sinatra/base"
 require "sinatra/reloader"
-require_relative './lib/player.rb'
-require_relative './lib/game.rb'
+require_relative './lib/player'
+require_relative './lib/game'
 
 class Rts < Sinatra::Base
   enable :sessions
