@@ -29,13 +29,13 @@ feature 'play RPS' do
   scenario 'can display player 1 as the winner' do
     click_button("Paper")
     click_button("Rock")
-    expect(page).to have_content("Player 1 wins")
+    expect(page).to have_content("Titus wins")
   end
 
   scenario 'can display player 2 as the winner' do
     click_button("Rock")
     click_button("Paper")
-    expect(page).to have_content("Player 2 wins")
+    expect(page).to have_content("Chang wins")
   end
 
   scenario 'can display a draw' do
@@ -48,6 +48,26 @@ feature 'play RPS' do
     click_button("Paper")
     click_button("Paper")
     find_button('Play again?').click
+  end
+
+  scenario 'player can click play again button and get redirected to play' do
+    click_button("Paper")
+    click_button("Paper")
+    click_button('Play again?')
+    expect(page).to have_current_path('/play')
+  end
+
+  scenario 'player can click change players button' do
+    click_button("Paper")
+    click_button("Paper")
+    find_button('Change players?').click
+  end
+
+  scenario 'player can click change players button and get redirected to home' do
+    click_button("Paper")
+    click_button("Paper")
+    click_button('Change players?')
+    expect(page).to have_current_path('/')
   end
 
 end
