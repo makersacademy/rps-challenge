@@ -7,7 +7,7 @@
     <div class = "player-card">
        <H1> <%= @player_name %> </H1>
         <p>You picked:</p>
-        <h1><%= @tool %></h1>
+        <h1><%= @player_tool %></h1>
     </div>
 
     <div><H1>VS.</H1></div>
@@ -20,7 +20,6 @@
 </div>
 
 <div class = "winner_container">
- <div id = "winner"> Test</div>
+ <div id = "winner"><h1> <%= @game.play %></h1></div>
  
-
 </div>

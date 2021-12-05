@@ -73,3 +73,9 @@
         justify-content: center;
         align-items: center;
     }
+
+    /* winner styling */
+
+    .winner_container {
+        text-align: center;
+    }

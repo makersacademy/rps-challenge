@@ -1,3 +1,3 @@
 require_relative './app'
 
-run Game
+run Rock_paper_scissors

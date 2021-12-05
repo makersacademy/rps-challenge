@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative('./lib/game.rb')
 
 class Rock_paper_scissors < Sinatra::Base
 
@@ -38,10 +39,12 @@ set :views, File.dirname(__FILE__) + '/views'
   end
 
   get '/play' do
-    @tool = session[:tool]
+    @player_tool = session[:tool]
     @player_name = session[:player_name]
     @computer_tool = ['Rock','Paper','Scissors'].sample
+    @game = Game.new(@player_tool, @computer_tool) # how is this able to update the page without being a POST? 
     erb :play
   end
+
 
 end
