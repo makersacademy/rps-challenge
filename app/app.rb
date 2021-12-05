@@ -5,7 +5,6 @@ require './app/lib/player.rb'
 require './app/lib/computer.rb'
 
 class RPS < Sinatra::Base
-  enable :sessions
   configure :development do
     register Sinatra::Reloader
   end
@@ -15,9 +14,9 @@ class RPS < Sinatra::Base
   end
   
   post '/result' do
-    @player = Player.new(name: params[:name],selected: params[:options])
-    @computer = Computer.new.selected
-    @game = Game.new(player_class: @player, computer: @computer)
+    @player = Player.new(name: params[:name],choice: params[:options])
+    @computer = Computer.new
+    @game = Game.new(player_class: @player, computer_class: @computer)
     erb @game.result
   end
 

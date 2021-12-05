@@ -1,14 +1,14 @@
 class Player
-  def initialize(name:, selected:)
+  def initialize(name:, choice:)
     @player_name = name
-    @player_selected = selected.to_sym
+    @player_choice = choice.to_sym
   end
 
   def name
     @player_name
   end
 
-  def selected 
-    @player_selected
+  def choice 
+    @player_choice
   end
 end

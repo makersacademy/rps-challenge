@@ -30,16 +30,24 @@ feature 'Feature test' do
     end
 
     scenario 'Shows draw result if same chosen' do
-      allow_any_instance_of(Computer).to receive(:selected).and_return(:Rock)
+      allow_any_instance_of(Computer).to receive(:choice).and_return(:Rock)
       sign_in_and_play
       expect(page).to have_content("Rock vs Rock\nClose one Alfonso! You drew.")
     end
 
     scenario 'Shows player winning' do
-      allow_any_instance_of(Computer).to receive(:selected).and_return(:Scissor)
+      allow_any_instance_of(Computer).to receive(:choice).and_return(:Scissor)
       sign_in_and_play
-      expect(page).to have_content("Rock vs Scissor\nCongratulations")
+      expect(page).to have_content("Rock vs Scissor\nCongratulations Alfonso, you won!")
     end
+
+    scenario 'Shows player losing' do
+      allow_any_instance_of(Computer).to receive(:choice).and_return(:Paper)
+      sign_in_and_play
+      expect(page).to have_content("Rock vs Paper\nWhoops... Alfonso you lost!")
+    end
+
+
   end
 
 end

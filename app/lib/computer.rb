@@ -1,7 +1,11 @@
 require_relative 'game'
 
 class Computer
-  def selected
-    Game::MATCHUPS.keys.sample
+  def initialize
+    @choice = Game::MATCHUPS.keys.sample
+  end
+  
+  def choice
+    @choice
   end
 end

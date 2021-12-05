@@ -2,24 +2,24 @@ require_relative '../app/lib/game.rb'
 
 describe Game do
   before do
-    @player = double("Player", :selected => :Rock)
+    @player = double("Player", :choice => :Rock)
+    @computer = double("Computer", :choice => :Paper)
   end
 
   it "returns loss" do
-    @computer = :Paper
-    @game = Game.new(player_class: @player, computer: @computer)
+    @game = Game.new(player_class: @player, computer_class: @computer)
     expect(@game.result).to eq :loss
   end
 
   it "returns win" do
-    @computer = :Scissor
-    @game = Game.new(player_class: @player, computer: @computer)
+    allow(@computer).to receive(:choice).and_return(:Scissor)
+    @game = Game.new(player_class: @player, computer_class: @computer)
     expect(@game.result).to eq :win
   end
 
   it "returns draw" do
-    @computer = :Rock
-    @game = Game.new(player_class: @player, computer: @computer)
+    allow(@computer).to receive(:choice).and_return(:Rock)
+    @game = Game.new(player_class: @player, computer_class: @computer)
     expect(@game.result).to eq :draw
   end
 

@@ -4,17 +4,17 @@ class Game
     Paper: :Scissor,
     Scissor: :Rock }
 
-  def initialize(player_class:,computer:)
+  def initialize(player_class:,computer_class:)
     @player = player_class
-    @computer = computer
+    @computer = computer_class
   end
 
   def result
-    if @computer == @player.selected
+    if @computer.choice == @player.choice
       return :draw
-    elsif MATCHUPS[@player.selected] == @computer
+    elsif MATCHUPS[@player.choice] == @computer.choice
       return :loss
-    elsif MATCHUPS[@computer] == @player.selected
+    elsif MATCHUPS[@computer.choice] == @player.choice
       return :win
     end
   end
