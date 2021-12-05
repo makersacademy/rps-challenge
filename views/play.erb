@@ -1,21 +1,27 @@
 <head>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Space+Mono&display=swap');
     body {
       background-image: url('https://wrpsa.com/wp-content/uploads/2021/08/rock-paper-scissors-neon-icons-vector.jpg');
       background-size: cover;
       color: #1aff1a;
       text-shadow: 1px 1px black;
+      font-family: 'Space Mono', monospace;
     }
     #container {
       background-color: rgba(0, 0, 0, 0.7);
       position: absolute;
-      top: 100;
+      top: 90;
       right: 0;
       left: 0;
       margin: auto;
-      width: 40%;
-      height: 60%;
+      width: 45%;
+      height: 70%;
       text-align: center;
+    }
+    h1, h3 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2.5rem;
     }
     .choice {
       margin-top: 1.4rem;
@@ -23,12 +29,13 @@
       font-size: 1.1rem;
     }
     button {
-      width: 5rem;
+      width: 8rem;
       height: 2rem;
       background-color: #ffff33;
       color: #000099;
       font-size: 1rem;
       font-weight: bold;
+      border-radius: 8px;
     }
     .rps {
       font-size: 1.4rem;
@@ -36,6 +43,7 @@
       margin-top: 0.5rem;
       color: #00ffff;
       text-shadow: 1px 1px black;
+      font-family: 'Fredoka One', cursive;
     }
     h3 {
       color: #ff3399;
@@ -49,15 +57,6 @@
   <div id="container">
 
     <h1> Bot vs. <%= @player.name %> </h1>
-    <p> Choose wisely: </p>
-    <%# 3 choices %>
-    <section id='rps-options'>
-      <form action='/choose_rock'>
-        <button type='submit'>Rock</button>
-        <button type='submit' formaction='/choose_paper'>Paper</button>
-        <button type='submit' formaction='/choose_scissors'>Scissors</button>
-      </form>
-    </section>
     <%# after player click on one button this section is updated %>
     <section>
       <p class='choice'><%= @player.name %>'s choice:</p>
@@ -66,6 +65,19 @@
       <p class='choice'>Bot's choice:</p>
       <p class='rps'> <%= @choice %> </p>
     </section>
-    <h3><%= @winner %> wins!🥳</h3>
+
+    <p> Choose wisely: </p>
+    <%# 3 choices %>
+    <section id='rps-options'>
+      <form action='/choose_rock'>
+        <button type='submit'>Rock🗿</button>
+        <button type='submit' formaction='/choose_paper'>Paper📃</button>
+        <button type='submit' formaction='/choose_scissors'>Scissors✂️</button>
+      </form>
+    </section>
+    
+    <% if @winner %>
+     <h3><%= @winner %> wins!🥳</h3>
+    <% end %>
   </div>
 </body>
