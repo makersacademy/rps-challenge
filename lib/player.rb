@@ -1,9 +1,10 @@
 class Player
   RPS = ['rock', 'paper', 'scissors'].freeze
-  attr_reader :name
+  attr_reader :name, :points
 
   def initialize(name)
     @name = name
+    # @points = 0
   end
 
   def choose_rock

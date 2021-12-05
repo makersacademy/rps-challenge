@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
 require './lib/bot'
-require './lib/winner'
+require './lib/game'
 
 class RockPaperScissor < Sinatra::Base
   configure :development do
@@ -15,39 +15,37 @@ class RockPaperScissor < Sinatra::Base
 
   post '/name' do
     $player = Player.new(params[:name])
-    $winner = Winner.new($player)
+    $bot = Bot.new
+    $game = Game.new($player)
     redirect '/play'
   end
 
   get '/play' do
-    @player = $player
+    @game = $game
     erb :play
   end
 
   get '/choose_rock' do
-    @player = $player
-    @winner = $winner
-    @rock = @player.choose_rock
-    @choice = Bot.new.random_choice
-    @winner = @winner.with_rock(@choice)
+    @game = $game
+    @rock = $game.player.choose_rock
+    @choice = $bot.random_choice
+    @winner = $game.winner_with_rock(@choice)
     erb :play
   end
 
   get '/choose_paper' do
-    @player = $player
-    @winner = $winner
-    @paper = @player.choose_paper
-    @choice = Bot.new.random_choice
-    @winner = @winner.with_paper(@choice)
+    @game = $game
+    @paper = @game.player.choose_paper
+    @choice = $bot.random_choice
+    @winner = $game.winner_with_paper(@choice)
     erb :play
   end
 
   get '/choose_scissors' do
-    @player = $player
-    @winner = $winner
-    @scissors = @player.choose_scissors
-    @choice = Bot.new.random_choice
-    @winner = @winner.with_scissors(@choice)
+    @game = $game
+    @scissors = @game.player.choose_scissors
+    @choice = $bot.random_choice
+    @winner = $game.winner_with_scissors(@choice)
     erb :play
   end
 

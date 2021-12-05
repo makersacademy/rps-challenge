@@ -1,12 +1,12 @@
-class Winner
-  attr_reader :winner
+class Game
+  attr_reader :winner, :player
 
   def initialize(player)
     @player = player
     @winner = nil
   end
 
-  def with_rock(bot_choice)
+  def winner_with_rock(bot_choice)
     @player.choose_rock
     case bot_choice
     when 'scissors' then @winner = @player.name
@@ -16,7 +16,7 @@ class Winner
     end
   end
 
-  def with_paper(bot_choice)
+  def winner_with_paper(bot_choice)
     @player.choose_paper
     case bot_choice
     when 'rock' then @winner = @player.name
@@ -26,7 +26,7 @@ class Winner
     end
   end
 
-  def with_scissors(bot_choice)
+  def winner_with_scissors(bot_choice)
     @player.choose_scissors
     case bot_choice
     when 'paper' then @winner = @player.name

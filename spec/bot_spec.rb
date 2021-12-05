@@ -12,4 +12,10 @@ describe Bot do
       expect(subject.random_choice).not_to be_empty
     end
   end
+
+  # describe 'points' do
+  #   it 'returns the points before game starts' do
+  #     expect(subject.points).to eq 0
+  #   end
+  # end
 end

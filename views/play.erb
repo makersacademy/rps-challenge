@@ -5,10 +5,10 @@
 <body>
   <div id="container">
 
-    <h1> Bot vs. <%= @player.name %> </h1>
+    <h1> Bot vs. <%= @game.player.name %> </h1>
     <%# after player click on one button this section is updated %>
     <section>
-      <p class='choice'><%= @player.name %>'s choice:</p>
+      <p class='choice'><%= @game.player.name %>'s choice:</p>
       <p class='rps'><%= @rock || @paper || @scissors %> </p>
     <%# Bot's random pick %>vs.
       <p class='choice'>Bot's choice:</p>
