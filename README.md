@@ -3,8 +3,8 @@
 ![game screnshot](./Public/rps_game_screenshot.png)
 ![mcv diagram](./Public/mcv_diagram.png)
 
-Completed Tasks
----------------
+Completed Tasks using TDD
+-------------------------
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
