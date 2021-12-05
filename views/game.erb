@@ -13,9 +13,4 @@
     <input type="hidden" name="move" value="SCISSORS">
     <input type="submit" value="SCISSORS">
   </form>
-
-  <% if @game.players[0].read_move %>
-    <h4><%= @game.players[0].name%>: <%= @game.players[0].read_move %></h4>
-    <h4><%= @game.players[1].name%>: <%= @game.players[1].read_move %></h4>
-  <% end %>
 </div>

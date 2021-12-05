@@ -26,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
     @game = $game
     @game.players[0].assign_move(params[:move])
     @game.players[1].assign_move(@game.generate_move)
-    redirect '/game'
+    erb(:result)
   end
 
   run! if app_file == $0
