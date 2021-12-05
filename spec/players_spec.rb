@@ -10,7 +10,7 @@ describe Player do
   end
 
   context '#move' do
-    it 'assigns move to instance variable and returns it' do
+    it 'assigns move to an instance variable and returns it' do
       player.move("ROCK")
 
       expect(player.move).to eq "ROCK"

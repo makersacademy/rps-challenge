@@ -35,14 +35,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/return_result' do
     @game = $game
-    if @game.mode == '1 player'
-      @game.players[0].move(params[:move])
-      @game.players[1].move(@game.generate_move)
-      redirect '/result'
-    elsif @game.mode == '2 player'
-      @game.players[0].move.nil? ? @game.players[0].move(params[:move]) : @game.players[1].move(params[:move])
-      @game.players[1].move.nil? ? erb(:game) : (redirect '/result')
-    end
+    @game.update_move(params[:move])
+    @game.players[1].move.nil? ? erb(:game) : (redirect '/result')
   end
 
   get '/result' do

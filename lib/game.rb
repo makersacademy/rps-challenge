@@ -1,45 +1,42 @@
 class Game
+  attr_reader :players, :mode
+
   def initialize(player1, player2, mode)
     @players = [player1, player2]
     @mode = mode
   end
 
-  def players
-    @players
+  def update_move(move)
+    one_player_update(move) if mode == '1 player'
+    two_player_update(move) if mode == '2 player'
   end
 
-  def mode
-    @mode
+  def return_winner
+    draw ? "It's a draw!" : player1_wins ? "#{@players[0].name} wins!" : "#{@players[1].name} wins!"
   end
-  
+
+  private
+    
   def generate_move
     ['ROCK', 'PAPER', 'SCISSORS'].sample
   end
 
-  def return_winner
+  def one_player_update(move)
+    @players[0].move(move)
+    @players[1].move(generate_move)
+  end
+
+  def two_player_update(move)
+    @players[0].move.nil? ? @players[0].move(move) : @players[1].move(move)
+  end
+
+  def draw
+    @players[0].move == @players[1].move
+  end
+
+  def player1_wins
     p1 = @players[0].move[0]
     p2 = @players[1].move[0]
-
-    calculate_result(p1, p2)
-  end
-
-  private
-
-  def calculate_result(p1, p2)
-    if draw(p1, p2)
-      "It's a draw!"
-    elsif player1_wins(p1, p2)
-      "#{@players[0].name} wins!"
-    else
-      "#{@players[1].name} wins!"
-    end
-  end
-
-  def draw(p1, p2)
-    p1 == p2
-  end
-
-  def player1_wins(p1, p2)
     (p1 == "R" && p2 == "S") || (p1 == "P" && p2 == "R") || (p1 == "S" && p2 == "P")
   end
 end

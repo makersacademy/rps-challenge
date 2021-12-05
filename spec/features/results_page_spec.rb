@@ -2,10 +2,7 @@ feature 'results page' do
 
   feature 'shared features' do
     before do
-      visit ('/')
-      click_button('one player')
-      sign_in
-      click_button('ROCK')
+      one_player_sign_in_and_play
     end
 
     scenario 'user has the option to play again' do
@@ -20,30 +17,16 @@ feature 'results page' do
   end
 
   feature 'one player mode' do
-    before do
-      visit ('/')
-      click_button('one player')
-      sign_in
-      click_button('ROCK')
-    end
-
     scenario 'presents the winner of the round' do
+      one_player_sign_in_and_play
       expect(page).to have_content 'Computer wins!'
     end
   end
 
   feature 'two player mode' do
-    before do 
-      visit ('/')
-      click_button('two player')
-      fill_in('player2', with: 'Quackers')
-      sign_in
-      click_button('ROCK')
-      click_button('SCISSORS')
-    end
-
     scenario 'presents the winner of the round' do
-      expect(page).to have_content('Patos wins!')
+      two_player_sign_in_and_play
+      expect(page).to have_content 'Patos wins!'
     end
   end
 end

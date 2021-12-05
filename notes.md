@@ -9,7 +9,3 @@ specify do
 end
 
  - should i be stubbing on capybara? because it's not testing logic?
-
-
-# things id like to add on
-- count down like 3, 2, 1 before showing the user the computers choice

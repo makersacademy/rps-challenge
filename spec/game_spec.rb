@@ -7,8 +7,8 @@ describe Game do
   let(:game) { Game.new(player1, player2, '2 player') }
 
   context '#initialize' do
-    it 'holds players in an array called by an instance variable' do
-      expect(game.players[0]).to eq player1
+    it 'holds Player instances in an array Game instance variable' do
+      expect(game.players).to eq [player1, player2]
     end
 
     it 'holds player mode in an instance variable' do
@@ -17,11 +17,11 @@ describe Game do
   end
 
   # this test doesn't feel great... is there a better way/ should I be testing array.sample at all?
-  context '#generate_move' do
-    it 'randomly generates a move' do
-      expect(game.generate_move).to be_a String
-    end
-  end
+  # context '#generate_move' do
+  #   it 'randomly generates a move' do
+  #     expect(game.generate_move).to be_a String
+  #   end
+  # end
 
   context '#calculate_result' do
     it 'returns the winning player' do
@@ -32,6 +32,14 @@ describe Game do
       game = Game.new(player2, player3, '2 player')
 
       expect(game.return_winner).to eq "It's a draw!"
+    end
+  end
+
+  context '#update_move' do
+    it 'updates Player instance variables to store chosen move' do
+      expect(player1).to receive(:move)
+      
+      game.update_move('ROCK')
     end
   end
 end

@@ -1,5 +1,5 @@
 feature 'user chooses set up for the game' do
-  before(:each) do 
+  before do 
     visit('/')
   end
 
@@ -18,7 +18,6 @@ feature 'user chooses set up for the game' do
   end
 
   feature 'user completes set up for one player' do
-
     before do
       click_button('one player')
     end
@@ -27,14 +26,13 @@ feature 'user chooses set up for the game' do
       expect(page.has_field?('player1')).to be_truthy
     end
 
-    scenario 'user will see their name on screen after clicking on the start button' do
+    scenario 'user will see their name on screen after set up' do
       sign_in
       expect(page).to have_content 'Patos'
     end
   end
 
   feature 'user completes set up for two player' do
-
     before do
       click_button('two player')
     end
@@ -49,15 +47,14 @@ feature 'user chooses set up for the game' do
 
     feature 'players fill in their names for the game' do
       before do
-        fill_in('player2', with: 'Quackers')
-        sign_in        
+        two_player_sign_in
       end
 
-      scenario 'player1 will see their name on screen after clicking on the start button' do
+      scenario 'player1 will see their name on screen after set up' do
         expect(page).to have_content 'Patos'
       end
 
-      scenario 'player2 will see their name on screen after clicking on the start button' do
+      scenario 'player2 will see their name on screen after set up' do
         expect(page).to have_content 'Quackers'
       end
     end

@@ -1,4 +1,5 @@
 feature 'user(s) can play a game of rock paper scissors' do
+
   feature 'user can play a game of rock paper scissors with the computer' do
 
     before do 
@@ -36,12 +37,9 @@ feature 'user(s) can play a game of rock paper scissors' do
       end
     end
 
-    # should i be stubbing on capybara? because it's not testing logic?
-    feature 'computer generates a move' do
-      scenario 'after user selects their move, the computer presents their move' do
-        click_button('ROCK')
-        expect(page).to have_content 'Computer: PAPER'
-      end
+    scenario 'after user selects their move, the computer presents their move' do
+      click_button('ROCK')
+      expect(page).to have_content 'Computer: PAPER'
     end
   end
 
