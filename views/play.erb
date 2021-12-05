@@ -2,6 +2,7 @@
   <title>Play</title>
   <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
 </head>
+
 <div class = container>
     <div class = "player-card">
        <H1> <%= @player_name %> </H1>
@@ -14,6 +15,12 @@
      <div class = "player-card">
         <H1>Computer</H1>
           <p>Computer picked:</p>
-        <h1><%= @computer_tool %></h1>
+       <div id ="computer"><h1><%= @computer_tool %></h1></div>
     </div>
+</div>
+
+<div class = "winner_container">
+ <div id = "winner"> Test</div>
+ 
+
 </div>
