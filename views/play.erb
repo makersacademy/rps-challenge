@@ -1,0 +1,24 @@
+<h1 class="title is-2">Hi <%= $game.player.name %>! Make your choice:</h1>
+<form action='/result' method='POST'>
+  <div class="field">
+    <div class="control">
+      <label class="radio" for="rock">
+        <input type="radio" id="rock" name="move" value="rock" checked>
+        ROCK
+      </label>
+      <label class="radio" for="paper">
+        <input type="radio" id="paper" name="move" value="paper">
+        PAPER
+      </label>
+      <label class="radio" for="scissors">
+        <input type="radio" id="scissors" name="move" value="scissors">
+        SCISSORS
+      </label>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <button class="button is-link" style="width: 35%" type="submit">Play</button>
+    </div>
+  </div>
+</form>
