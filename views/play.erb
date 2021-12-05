@@ -1,0 +1,25 @@
+<head>
+  <title>Play</title>
+  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
+<div class = container>
+    <div class = "player-card">
+       <H1> <%= @player_name %> </H1>
+        <p>You picked:</p>
+        <h1><%= @player_tool %></h1>
+    </div>
+
+    <div><H1>VS.</H1></div>
+
+     <div class = "player-card">
+        <H1>Computer</H1>
+          <p>Computer picked:</p>
+       <div id ="computer"><h1><%= @computer_tool %></h1></div>
+    </div>
+</div>
+
+<div class = "winner_container">
+ <div id = "winner"><h1> <%= @game.play %></h1></div>
+ 
+</div>

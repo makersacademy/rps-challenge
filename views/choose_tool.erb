@@ -1,0 +1,31 @@
+
+<head>
+  <title>Choose tool</title>
+  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
+<H2> Hi <%= @player_name %>! Choose your item: </H2>
+
+
+<form name="input" action="/save_tool" method="post">
+ <ul> 
+   <li>
+   <label for="rock">Rock:</label>
+   <input type = "radio" name="tool" value="Rock">
+   </li>
+
+     <li>
+   <label for="paper">Paper:</label>
+   <input type = "radio" name="tool" value="Paper">
+   </li>
+
+     <li>
+   <label for="scissors">Scissors:</label>
+   <input type = "radio" name="tool" value="Scissors">
+   </li>
+
+   <li class = "button">
+     <button type="submit">Submit</button>
+   </li>
+ </ul>
+</form>
