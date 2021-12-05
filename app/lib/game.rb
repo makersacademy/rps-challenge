@@ -2,14 +2,14 @@ class Game
   MATCHUPS = {
     Rock: :Paper,
     Paper: :Scissor,
-    Scissor: :Rock }.freeze
+    Scissor: :Rock }
 
   def initialize(player_class:,computer:)
     @player = player_class
     @computer = computer
   end
 
-  def winner
+  def result
     if @computer == @player.selected
       return :draw
     elsif MATCHUPS[@player.selected] == @computer
