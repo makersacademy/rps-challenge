@@ -7,7 +7,7 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-require_relative './features/web_helpers.rb'
+require_relative './features/web_helpers'
 
 # Tell Capybara to talk to Game
 Capybara.app = RpsGame

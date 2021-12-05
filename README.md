@@ -1,5 +1,13 @@
 # RPS Challenge
 
+Approach
+-------
+
+* MODEL: I have used 2 classes, Player create a new player initialised with a name and a move set to nil. Game initialised with a Player instance and a computer_move set to nil. Game is responsible for playing a game of RPS by checking the palyer and computer move. (I didn't reach the bonus level 1, but it will be easy to implement a second player by just replacing computer_move)
+* CONTROLLER: app.rb control the flow of the program handling GET and POST request by rendering the right view file and controlling the incoming parameters from forms. For " GET '/gameover' " I am passing the incoming "result" as a query string when redirecting.
+* VIEW: I have used layout.erb(default name recognised by sinatra) as a boilerplate for the rest of the view files. The rest of the files render the appropriate content for the various GET requests. I have used forms to handle data to the model. I have used https://bulma.io/ as CSS framework to quickly apply some styles without defining my own css file.
+
+
 Instructions
 -------
 

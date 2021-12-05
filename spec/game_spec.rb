@@ -7,7 +7,7 @@ describe Game do
   end
   
   it "initialize a game with a player" do
-    expect(@game).to have_attributes(player: @player)
+    expect(@game).to have_attributes(player: @player, computer_move: nil)
   end
 
   it "play a game where player wins" do

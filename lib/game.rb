@@ -9,11 +9,15 @@ class Game
   def play
     @computer_move = rand_choice
     player_move = @player.move
-    if player_move == computer_move
+    check_winner(player_move, computer_move)
+  end
+
+  def check_winner(move1, move2)
+    if move1 == move2
       "You draw!"
-    elsif (player_move == "rock" && computer_move == "scissors") || 
-          (player_move == "paper" && computer_move == "rock") || 
-          (player_move == "scissors" && computer_move == "paper")
+    elsif (move1 == "rock" && move2 == "scissors") || 
+          (move1 == "paper" && move2 == "rock") || 
+          (move1 == "scissors" && move2 == "paper")
       "You win!"
     else
       "You lose!"

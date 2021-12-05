@@ -16,4 +16,21 @@ feature "Rock Paper Scissors Game" do
     click_button 'Play'
     expect(page).to have_content(/You (?:draw|win|lose)!/)
   end
+
+  scenario "player can play again" do
+    enter_name
+    page.choose('rock')
+    click_button 'Play'
+    click_on 'Play again'
+    expect(page).to have_content 'Hi Paul Dirac! Make your choice:'
+  end
+
+  scenario "user can start again with a new name" do
+    enter_name
+    page.choose('rock')
+    click_button 'Play'
+    click_on 'Enter a new name'
+    expect(page).to have_content 'RPS GAME'
+    expect(page).to have_content 'Enter your name'
+  end
 end
