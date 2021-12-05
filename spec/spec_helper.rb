@@ -9,7 +9,7 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'rspec'
 
 # tell Capybara about our app class
-Capybara.app = Battle
+Capybara.app = RSP
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

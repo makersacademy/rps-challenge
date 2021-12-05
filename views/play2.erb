@@ -6,10 +6,10 @@
   <%= $game.player1.victories %> victories / <%= $game.player2.victories %> victories
 </h4>
 <h3>
-<%= $game.player1.name %> pick your move :
-  <form method="post" action="/play2"> 
-      <input type="submit" name="p1move" value="ROCK" />
-      <input type="submit" name="p1move" value="PAPER" />
-      <input type="submit" name="p1move" value="SCISSORS" />
+<%= $game.player2.name %> pick your move :
+  <form method="post" action="/outcome"> 
+      <input type="submit" name="p2move" value="ROCK" />
+      <input type="submit" name="p2move" value="PAPER" />
+      <input type="submit" name="p2move" value="SCISSORS" />
   </form>
 </h3>

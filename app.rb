@@ -3,7 +3,7 @@ require 'sinatra/reloader'
 require './lib/player'
 require './lib/game'
 
-class Battle < Sinatra::Base
+class RSP < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
@@ -16,24 +16,24 @@ class Battle < Sinatra::Base
 
   post '/play' do
     player1 = Player.new(params[:name1])
-    $game = Game.new(player1)
-    # @game = $game
+    player2 = Player.new(params[:name2])
+    $game = Game.new(player1, player2)
     erb :play
   end
 
-  post '/move' do
-    @game = $game
-    @p_move = $game.player1.choose_move(params[:p1move])
-    @p2_move = $game.pick_random
-    erb :move
-    # redirect '/outcome'
+  post '/play2' do
+    $game.player1.choose_move(params[:p1move])
+    erb :play2
   end
 
   post '/outcome' do
-    @game = $game
-    @game.fight_outcome
-    @outcome = @game.fight_outcome
+    $game.player2.choose_move(params[:p2move])
+    @outcome = $game.fight_outcome
     erb :outcome
+  end
+
+  post '/play_again' do
+    erb :play
   end
 
   run! if app_file == $0

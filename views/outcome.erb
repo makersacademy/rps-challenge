@@ -1,10 +1,16 @@
 <h1>✌🏾 🖐🏽 ✊🏻 Welcome to Rock-Paper-Scissors✊🏻 🖐🏽 ✌🏾</h1>
 <h2>
-  <%= $game.player1.name %> vs Thing
+  <%= $game.player1.name %> vs <%= $game.player2.name %>
 </h2>
+<h4>
+  <%= $game.player1.victories %> victories / <%= $game.player2.victories %> victories
+</h4>
 <h3>
-<%= @outcome %>
-<h3>
-  <form method="post" action="/play"> 
+  <%=$game.p1_move%> ⚔️ <%=$game.p2_move%>
+<br>
+ <%= @outcome %>
+<br>
+  <form method="post" action="/play_again"> 
       <input type="submit" value="Play Again" />
   </form>
+</h3>
