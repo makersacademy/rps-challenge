@@ -31,7 +31,8 @@ class Battle < Sinatra::Base
 
   post '/outcome' do
     @game = $game
- 
+    @game.fight_outcome
+    @outcome = @game.fight_outcome
     erb :outcome
   end
 
