@@ -11,24 +11,28 @@ class Game
   end 
 
   def pick_random(move_list = RPS_LIST)
-    @c_move = move_list.sample
+    @p2_move = move_list.sample
   end
 
-  def get_player_move
+  def get_player1_move
     @p1_move = @player1.p_move
   end
 
+  def get_player2_move
+    @p2_move = @player2.p_move
+  end
+
   def fight_outcome
-    get_player_move
-    pick_random
-    if @c_move == @p1_move
-      @outcome = 1
-    elsif (@p1_move == "ROCK" && @c_move == "SCISSORS") || (@p1_move == "PAPER" && @c_move == "ROCK") || (@p1_move == "SCISSORS" && @c_move == "PAPER")
+    get_player1_move
+    player2.name == "Computer" ? pick_random : get_player2_move
+    if @p2_move == @p1_move
+      @outcome = "#{@p2_move} = #{@p1_move}"
+    elsif (@p1_move == "ROCK" && @p2_move == "SCISSORS") || (@p1_move == "PAPER" && @p2_move == "ROCK") || (@p1_move == "SCISSORS" && @p2_move == "PAPER")
       @player1.victory
-      @outcome = 2
+      @outcome = "player wins #{@p1_move} beats #{@p2_move} "
     else
       @player2.victory
-      @outcome = 3
+      @outcome = "computer wins #{@p2_move} beats #{@p1_move} "
     end
   end
 end

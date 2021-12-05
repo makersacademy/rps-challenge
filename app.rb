@@ -24,7 +24,7 @@ class Battle < Sinatra::Base
   post '/move' do
     @game = $game
     @p_move = $game.player1.choose_move(params[:p1move])
-    @c_move = $game.pick_random
+    @p2_move = $game.pick_random
     erb :move
     # redirect '/outcome'
   end
