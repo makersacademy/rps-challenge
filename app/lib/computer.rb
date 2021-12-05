@@ -1,11 +1,6 @@
-require_relative 'game'
-
 class Computer
+  attr_reader :choice
   def initialize
     @choice = Game::MATCHUPS.keys.sample
-  end
-  
-  def choice
-    @choice
   end
 end

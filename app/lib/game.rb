@@ -2,7 +2,7 @@ class Game
   MATCHUPS = {
     Rock: :Paper,
     Paper: :Scissors,
-    Scissors: :Rock }
+    Scissors: :Rock }.freeze
 
   def initialize(player_class:,computer_class:)
     @player = player_class

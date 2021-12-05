@@ -1,8 +1,8 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require './app/lib/game.rb'
-require './app/lib/player.rb'
-require './app/lib/computer.rb'
+require './app/lib/game'
+require './app/lib/player'
+require './app/lib/computer'
 
 class RPS < Sinatra::Base
   configure :development do

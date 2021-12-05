@@ -47,7 +47,6 @@ feature 'Feature test' do
       expect(page).to have_content("Rock vs Paper\nWhoops... Alfonso you lost!")
     end
 
-
   end
 
 end

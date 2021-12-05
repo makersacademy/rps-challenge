@@ -1,4 +1,4 @@
-require_relative '../app/lib/player.rb'
+require_relative '../app/lib/player'
 
 describe Player do
   it "Stores parameters given on initialization" do
