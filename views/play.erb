@@ -1,0 +1,42 @@
+<head>
+  <title> PLAY! </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+<div class="box">
+  <h1> <%= @game.player.name %> vs Computer  </h2>
+
+  <% if @game.mode == "normal" %>
+  <div class="container">
+    <form action="/move" method="post">
+      <input class="button" type="submit" name="move" value="rock">
+      <input class="button" type="submit" name="move" value="paper">
+      <input class="button" type="submit" name="move" value="scissors">
+    </form>
+  </div>
+  <% elsif @game.mode == "lizard_spock" %>
+  <div class="container">
+    <form action="/move" method="post">
+      <input class="button" type="submit" name="move" value="rock">
+      <input class="button" type="submit" name="move" value="paper">
+      <input class="button" type="submit" name="move" value="scissors">
+      <input class="button" type="submit" name="move" value="lizard">
+      <input class="button" type="submit" name="move" value="spock">
+    </form>
+  </div>
+  <% end %>
+
+  <% if @game.player_move %>
+  <h2> Your move: <%= @game.player_move %>, Computer's move: <%= @game.computer_move %> </h2>
+  <h1> <%= @game.result %>! </h1>
+  <% end %>
+
+  <form action="/" method="get">
+    <input class="button" type="submit" value="Back to homepage">
+  </form>
+
+</div>
+</div>
+</body>
