@@ -31,4 +31,4 @@ Functionality
 
 ## Screenshot
 
-![Screenshot](http://public/RPS_screenshot.png)RPS_screenshot.png
+![Screenshot](https://github.com/kim-morgan/rps-challenge/blob/main/public/RPS_screenshot.png)
