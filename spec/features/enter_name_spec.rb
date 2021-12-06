@@ -1,11 +1,8 @@
 feature 'Enter names' do
     scenario 'submitting names' do
-        # sign_in_and_play
-        # save_and_open_page
         visit ('/')
-        fill_in :player_1, with: 'Player 1'
-        # fill_in :player_2, with: 'Player 2'
+        fill_in :player_1, with: 'Player'
         click_button 'Submit'
-        expect(page).to have_content 'Player 1 vs. Computer'
+        expect(page).to have_content 'Ok Player choose your weapon:'
     end
 end
