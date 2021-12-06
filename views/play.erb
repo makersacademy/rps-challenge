@@ -1,0 +1,13 @@
+<h1><%=@player_name%> vs Computer</h1>
+
+<form action="/selection" method="post">
+  <h2>Choose Rock, Paper or Scissors...</h2>
+  <input type="radio" id="rock" name="player_choice" value="ROCK" required>
+  <label for="rock">ROCK</label><br>
+  <input type="radio" id="paper" name="player_choice" value="PAPER" required>
+  <label for="paper">PAPER</label><br>
+  <input type="radio" id="scissors" name="player_choice" value="SCISSORS" required>
+  <label for="scissors">SCISSORS</label>
+  <input type="submit" value="Submit">
+</form>
+  
