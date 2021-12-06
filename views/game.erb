@@ -1,0 +1,35 @@
+<style>
+h2 {
+  color: black;
+  font-family: "Monaco";
+  font-size: 150%;
+  background-color: powderblue;
+}
+
+h3 {
+  color: black;
+  font-family: "Lucida Handwriting";
+  font-size: 100%;
+  background-color: powderblue;
+}
+body {
+  background-color: powderblue;
+}
+</style>
+
+<h2> Let the games begin!</h2>
+
+<h3> You seem confident <%= $player1.name %>, what are you going for? </h3>
+
+<form action="/move" method="post">
+  <input type="submit" name="move" value="Rock">
+  <img src="https://i.imgur.com/lUVCZbS.jpg" title="source: imgur.com" /></a>
+  
+  <input type="submit" name="move" value="Paper">
+  <img src="https://i.imgur.com/5tloP0v.jpg" title="source: imgur.com" /></a>
+
+  <input type="submit" name="move" value="Scissors">
+  <img src="https://i.imgur.com/1WrfweW.jpg" title="source: imgur.com" /></a>
+
+</form>
+
