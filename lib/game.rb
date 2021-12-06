@@ -1,5 +1,5 @@
 class Game
-  
+ 
   def result(player, computer)
     return 'You Win!' if player == 'Rock' && computer == 'Scissors'
     return 'You Win!' if player == 'Paper' && computer == 'Rock'
