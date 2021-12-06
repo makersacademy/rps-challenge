@@ -8,19 +8,10 @@
     <div class='center'>
       <h1><%=@name%> you have chosen <%=@choice%></h1>
       <h1>Computer have chosen <%=@computer_choice%></h1>
-    </div>
-    <div class='center'>
-      <% if @choice == @computer_choice %>
-<h1>This round is a draw!</h1>
-<% elsif
-   @choice == "rock" && @computer_choice == "scissors" ||
-   @choice == "paper" && @computer_choice == "rock"  ||
-   @choice == "scissors" && @computer_choice == "paper"
-%>
- <h1><%=@name%> has won!</h1>
-<% else %>
-<h1>Computer has won!</h1>
-<% end %>
-    </div>
+      <h2><%=@outcome%></h1>
+      <form action='/play' method='get'>
+        <input type='submit' value='Play again'>
+      </form>
+    </div
   </body>
 </html>
