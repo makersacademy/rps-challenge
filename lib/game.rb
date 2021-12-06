@@ -14,13 +14,13 @@ class Game
   def return_winner
     draw ? "It's a draw!" : player1_wins ? "#{@players[0].name} wins!" : "#{@players[1].name} wins!"
   end
-
-  private
     
   def generate_move
     ['ROCK', 'PAPER', 'SCISSORS'].sample
   end
 
+  private
+  
   def one_player_update(move)
     @players[0].move(move)
     @players[1].move(generate_move)
@@ -35,8 +35,8 @@ class Game
   end
 
   def player1_wins
-    p1 = @players[0].move[0]
-    p2 = @players[1].move[0]
-    (p1 == "R" && p2 == "S") || (p1 == "P" && p2 == "R") || (p1 == "S" && p2 == "P")
+    (@players[0].move == "ROCK" && @players[1].move == "SCISSORS") || 
+    (@players[0].move == "PAPER" && @players[1].move == "ROCK") || 
+    (@players[0].move == "SCISSORS" && @players[1].move == "PAPER")
   end
 end

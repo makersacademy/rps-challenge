@@ -3,9 +3,7 @@ feature 'user(s) can play a game of rock paper scissors' do
   feature 'user can play a game of rock paper scissors with the computer' do
 
     before do 
-      visit ('/')
-      click_button('one player')
-      sign_in
+      one_player_sign_in
     end
 
     feature 'user can choose rock, paper or scissors' do
@@ -45,10 +43,7 @@ feature 'user(s) can play a game of rock paper scissors' do
 
   feature 'two players can play a game of rock paper scissors together' do
     before do 
-      visit ('/')
-      click_button('two player')
-      fill_in('player2', with: 'Quackers')
-      sign_in
+      two_player_sign_in
     end
 
     scenario 'player1 is prompted to select their move' do

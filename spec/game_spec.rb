@@ -16,12 +16,11 @@ describe Game do
     end
   end
 
-  # this test doesn't feel great... is there a better way/ should I be testing array.sample at all?
-  # context '#generate_move' do
-  #   it 'randomly generates a move' do
-  #     expect(game.generate_move).to be_a String
-  #   end
-  # end
+  context '#generate_move' do
+    it 'randomly generates a move' do
+      expect(['ROCK', 'PAPER', 'SCISSORS']).to include(game.generate_move)
+    end
+  end
 
   context '#calculate_result' do
     it 'returns the winning player' do

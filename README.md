@@ -1,7 +1,7 @@
 # RPS Challenge
 
 ![game screnshot](./Public/rps_game_screenshot.png)
-![mcv diagram](./Public/mcv_diagram.png)
+![mcv diagram https://miro.com/app/board/uXjVOdT2gz0=/](./Public/mcv_diagram.png)
 
 Completed Tasks using TDD
 -------------------------

@@ -9,7 +9,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    $game = nil
+    @@game = nil
     erb(:index)
   end
 
@@ -22,25 +22,25 @@ class RockPaperScissors < Sinatra::Base
     player1 = Player.new(params[:player1])
     player2 = Player.new((params[:player2] || 'Computer'))
     mode = params[:player2] ? '2 player' : '1 player'
-    $game = Game.new(player1, player2, mode)
+    @@game = Game.new(player1, player2, mode)
     redirect '/game'
   end
 
   get '/game' do
-    @game = $game
+    @game = @@game
     @game.players[0].move(nil)
     @game.players[1].move(nil) 
     erb(:game)
   end
 
   post '/return_result' do
-    @game = $game
+    @game = @@game
     @game.update_move(params[:move])
     @game.players[1].move.nil? ? erb(:game) : (redirect '/result')
   end
 
   get '/result' do
-    @game = $game
+    @game = @@game
     erb(:result)
   end
 
