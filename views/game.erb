@@ -1,0 +1,23 @@
+<div class="heading"><br>
+  <h1><%= @game.players[0].name %> vs. <%= @game.players[1].name %></h1>
+  <h4><% if @game.players[0].move == nil %>
+        <%= @game.players[0].name %> 
+      <% else %>
+        <%= @game.players[1].name %> 
+      <% end %>      
+      make your move</h4>
+</div>
+<div class="hero-text">
+  <form action="/return_result" method="post">
+    <input type="hidden" name="move" value="ROCK">
+    <input class="options" type="submit" value="ROCK">
+  </form>
+  <form action="/return_result" method="post">
+    <input type="hidden" name="move" value="PAPER">
+    <input class="options" type="submit" value="PAPER">
+  </form>
+  <form action="/return_result" method="post">
+    <input type="hidden" name="move" value="SCISSORS">
+    <input class="options" type="submit" value="SCISSORS">
+  </form>
+</div>
