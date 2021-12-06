@@ -9,7 +9,7 @@ class RPS < Sinatra::Base
     register Sinatra::Reloader
   end
 
-   enable :sessions
+  enable :sessions
 
   get '/' do
     erb :index
