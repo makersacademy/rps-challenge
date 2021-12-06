@@ -1,0 +1,46 @@
+<head>
+  <link href="<%= url('/play.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="container">
+
+    <% if @game.bot.points == 10 %>
+    <div id='game-winner'>
+      <h1>GAME OVER</h1>
+      <h2> The 🤖Bot wins the game! </h2>
+    </div>
+    <% elsif @game.player.points == 10 %>
+      <div id='game-winner'>
+        <h1>GAME OVER</h1>
+        <h2> <%= @game.player.name %> wins the game!🎉 </h2>
+      </div>
+    <% else %>
+    <div id="points">
+      <h1><%= @game.bot.points %> - Bot🤖 vs. 😊<%= @game.player.name %> - <%= @game.player.points %></h1>
+    </div>
+    <%# after player click on one button this section is updated %>
+    <section>
+      <p class='choice'>😊<%= @game.player.name %>'s choice:</p>
+      <p class='rps'><%= @rock || @paper || @scissors %> </p>
+      vs.
+      <p class='choice'>🤖Bot's choice:</p>
+      <p class='rps'> <%= @choice %> </p>
+    </section>
+
+    <p> Choose wisely: </p>
+    <%# 3 choices %>
+    <section id='rps-options'>
+      <form action='/choose_rock'>
+        <button type='submit'>Rock🗿</button>
+        <button type='submit' formaction='/choose_paper'>Paper📃</button>
+        <button type='submit' formaction='/choose_scissors'>Scissors✂️</button>
+      </form>
+    </section>
+    
+    <% if @game.winner %>
+     <h3><%= @game.winner %> wins!🥳</h3>
+    <% end %>
+  <% end %>
+  </div>
+</body>
