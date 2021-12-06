@@ -8,6 +8,10 @@ Overview
 * Ruby, HTML, and CSS
 * Game logic written in Ruby (two classes `Game` and `Player`)
 
+## Screenshot
+
+![Screenshot](https://github.com/kim-morgan/rps-challenge/blob/main/public/RPS_screenshot.png)
+
 User stories
 ----
 
@@ -29,6 +33,3 @@ Functionality
 - the game will choose a random option
 - a winner will be declared
 
-## Screenshot
-
-![Screenshot](https://github.com/kim-morgan/rps-challenge/blob/main/public/RPS_screenshot.png)
