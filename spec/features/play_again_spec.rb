@@ -1,10 +1,7 @@
 feature 'play again' do
   scenario 'returns you the play page' do
-    visit '/'
-    fill_in 'name', with: 'kenny'
-    click_button "Submit"
-    select 'rock', from: 'choice'
-    click_button "Submit"
+    sign_in_and_play
+    select_rock_and_submit
     click_button "Play again"
     expect(page).to have_content("Welcome kenny to a game of Rock, Paper, Sissors")
   end
