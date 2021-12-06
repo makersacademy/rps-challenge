@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock, Paper, Scissors</title>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class='center'>
+      <h1><%=@name%> you have chosen <%=@choice%></h1>
+      <h1>Computer have chosen <%=@computer_choice%></h1>
+      <h2><%=@outcome%></h1>
+      <form action='/play' method='get'>
+        <input type='submit' value='Play again'>
+      </form>
+    </div
+  </body>
+</html>

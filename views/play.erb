@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock, Paper, Scissors</title>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+  <div class='container'>
+    <div class='center'>
+      <h1>Welcome <%=@name%> to a game of Rock, Paper, Sissors</h1>
+      <h2>Your opponent: Computer</h2>
+    </div>
+    <div class='center'>
+      <form action='/choice' method='post'>
+        <label for='choice'>Make a choice:</label>
+        <select name='choice'>
+          <option value='rock'>rock</option>
+          <option value='paper'>paper</option>
+          <option value='scissors'>scissors</option>
+        </select>
+        <input type='submit' value='Submit'>
+     </form>
+   </div>
+</div>
+ </body>
+</html>
