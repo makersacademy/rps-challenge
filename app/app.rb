@@ -32,21 +32,5 @@ post '/result' do
   erb :result
 end
 
-# post '/result_rock' do
-#   @computer_play = ["Rock", "Paper", "Scissors"].sample
-#   erb :result_rock
-# end
-
-# post '/result_paper' do
-#   @computer_play = ["Rock", "Paper", "Scissors"].sample
-#   erb :result_paper
-# end
-
-# post '/result_scissors' do
-#   @computer_play = ["Rock", "Paper", "Scissors"].sample
-#   erb :result_scissors
-# end
-
-
   run! if app_file == $0
 end
