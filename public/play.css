@@ -13,13 +13,16 @@ body {
   right: 0;
   left: 0;
   margin: auto;
-  width: 45%;
-  height: 70%;
+  width: 65%;
+  height: 65%;
   text-align: center;
 }
-h1, h3 {
+h1 {
   font-family: 'Fredoka One', cursive;
-  font-size: 2.5rem;
+  font-size: 2.4rem;
+}
+h2 {
+  font-size: 2rem;
 }
 .choice {
   margin-top: 1.4rem;
@@ -48,7 +51,8 @@ h3 {
   font-size: 1.5rem;
   text-transform: uppercase;
   text-shadow: 1px 1px black;
+  font-family: 'Fredoka One', cursive;
 }
 #game-winner {
-  margin: 40% auto;
+  margin: 25% auto;
 }
