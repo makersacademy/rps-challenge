@@ -1,9 +1,6 @@
 # RPS Challenge
 
-I'm checking in a partial solution. So far, I have not been able to implement the logic that decides the outcome of the game.
-I am unsure about how to make the different elements of the MVC speak to each. Some work ok: it's the final page that is the problem. Any thoughts or feedback would be greatly appreciated.
-
-
+Solution complete.
 
 Instructions
 -------
