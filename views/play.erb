@@ -1,6 +1,6 @@
 <h3>rock paper scissor</h3>
 <form action='/input' method='post'>
-  <p>it's up to you:</p>
+  <h4><%= @player_name.upcase %>, let's play:</h4>
   <label for="rock">r  o  c  k</label>
   <input id="rock" name="input" type="checkbox" value="rock">
   <br>
@@ -12,5 +12,5 @@
   <br>
   <br>
   <input type="submit" value="did you win or lose?"/>
-  </form>
+</form>
 
