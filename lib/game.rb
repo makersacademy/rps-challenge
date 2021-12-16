@@ -1,7 +1,7 @@
 class Game 
   attr_reader :inputs
 
-  def initialize(player_input = "paper") # default for testing
+  def initialize(player_input)
     @player_input = player_input
     @inputs = [player_input]
   end
@@ -17,6 +17,7 @@ class Game
 
   def result
     store_opponent_input
+    p @inputs
     player, opponent = @inputs
     case
       when player == "rock" && opponent == "paper" then return :lose

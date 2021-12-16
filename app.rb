@@ -29,7 +29,8 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @player_name = session[:player_name]
+    @player_name = session[:player_name] 
+    p @player_name # Output is nil, session has not persisted?
     @player_input = session[:input]
     @game = Game.new(@player_input)
     p params

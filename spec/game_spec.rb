@@ -1,6 +1,7 @@
 require 'game'
 
 describe Game do 
+  let(:subject) { Game.new("paper") }
   context "set up" do
     it 'input from the player' do
       expect(subject.inputs).to eq(["paper"])
