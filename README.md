@@ -1,12 +1,27 @@
 # RPS Challenge
 
-Instructions
--------
+Plan
+----
+* `/` root page --(GET request) 
+  * views: play game button and field for name 
+  * action: enter name
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+* `/name` page --(POST request)
+  * views: no view, redirect to `/play` page
+
+* `/play` page --(GET request)
+  * views: rock paper scissor as checkboxes
+  * action: select one
+
+* `/input` page --(POST request)
+  * views: no view, redirect to `result` page
+
+* `/result` page --(GET request)
+  * views: player_name won / lost, button to play again
+  * action: click_button redirect to `play` page 
+
+* `game.rb` model - computer provides random answer (.opponent_input method) and returns result (.result method)
+
 
 Task
 ----

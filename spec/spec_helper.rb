@@ -1,6 +1,9 @@
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'features/web_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -8,8 +11,15 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
-
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
+
+# Set the environment to "test"
+ENV['RACK_ENV'] = 'test'
+
+# Bring in the contents of the `app.rb` file. The below is equivalent to: require_relative '../app.rb'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+# Tell Capybara to talk to RPS
+Capybara.app = RPS
 
 RSpec.configure do |config|
   config.after(:suite) do
