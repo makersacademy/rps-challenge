@@ -1,5 +1,6 @@
-require 'game'
-require 'player'
+require_relative 'game'
+require_relative 'player'
+
 
 class Computer
   attr_reader :computer_option

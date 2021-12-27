@@ -5,7 +5,7 @@ class Game
 
   OPTIONS = ["Rock", "Paper", "Scissors"]
 
-  attr_reader :player_name, :computer, :player_option, :computer_option, :winner
+  attr_reader :player, :computer, :option, :computer_option, :winner
 
   def self.create(player_name, computer)
     @game = Game.new(player_name, computer)
@@ -16,13 +16,13 @@ class Game
   end
   
   def initialize(player_name, computer)
-    @player_name = player_name
+    @player = player_name
     @computer = computer
   end
 
   def winner
     if @player.option == @computer.computer_option
-      "It's a draw"
+      "It is a draw"
     elsif @player.option == "Rock" && @computer.computer_option == "Scissors"
       "#{@player.player_name} wins"
     elsif @player.option == "Scissors" && @computer.computer_option == "Paper"

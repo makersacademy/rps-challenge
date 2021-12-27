@@ -34,7 +34,7 @@ class RockPaperScissors < Sinatra::Base
     redirect('/result')
   end
 
-  get '/result' do
+  get '/result' do 
     @player_option = @game.player.move(session[:option])
     @computer_option = @game.computer.option
     erb(:result)
