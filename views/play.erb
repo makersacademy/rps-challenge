@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-<h1><%= @marketeer_name.name %> vs. Computer</h1>
-</head>
+  <head>
+    <h1><%= @marketeer_name.name %> vs. Computer</h1>
+  </head>
 
-<body>
-<link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
-<h2>Please choose your weapon! </h2>
-<form action="/game" method="post">
-  <input type="submit" name="play_option" value="Rock">
-  <input type="submit" name="play_option" value="Paper">
-  <input type="submit" name="play_option" value="Scissors">
-</form>
-</div>
-</body>
+  <body>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+    <h2>Please choose your weapon! </h2>
+    <div>
+      <form action="/game" method="post">
+        <input type="submit" name="play_option" value="Rock">
+        <input type="submit" name="play_option" value="Paper">
+        <input type="submit" name="play_option" value="Scissors">
+      </form>
+    </div>
+  </body>
 
 </html>
