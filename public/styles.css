@@ -1,0 +1,22 @@
+body {
+    background-color: lightblue;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: verdana;
+}
+
+h2 {
+    text-align: center;
+    font-family: verdana;
+}
+
+form {
+    margin: auto;
+    width: 300px;
+    padding: 1em;
+    border: 1px solid rgb(85, 102, 157);
+    font-family: verdana;
+}

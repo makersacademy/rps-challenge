@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new }
+  subject(:game) {described_class.new}
 
   context 'when player is declared the winner' do
 
