@@ -6,10 +6,10 @@ Makers Academy Bootcamp | Week 3 Weekend Challenge
 The requirement for this end of week 3 challenge was to build a RPS game on the web so a player can register and play online.  
 
 Notes: 
-- this game has been TDD
-- 100% coverage 
-- all tests pass
-- no design implemented, just the required functionality
+- built using Ruby, Rspec, Capybara, Git, Sinatra, HTML
+- this game has been built through TDD and with 100% test coverage 
+- all tests passing
+- no design (CSS) implemented, just the required functionality
 
 ```
 Functionality required and implemented:
@@ -30,3 +30,5 @@ Want to give it a go?
 - run 'ruby app.rb'
 - navigate to http://localhost:4567/
 ```
+
+![Test Coverage](https://user-images.githubusercontent.com/10349072/147600240-264ce540-d830-4490-8340-9612c080709c.png)
