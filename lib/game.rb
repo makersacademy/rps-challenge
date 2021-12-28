@@ -3,9 +3,9 @@ require_relative 'player'
 
 class Game
 
-  OPTIONS = ["Rock", "Paper", "Scissors"]
+  OPTIONS = ["Rock", "Paper", "Scissors"].freeze
 
-  attr_reader :player, :computer, :option, :computer_option, :winner
+  attr_reader :player, :computer, :option, :computer_option
 
   def self.create(player_name, computer)
     @game = Game.new(player_name, computer)
@@ -29,8 +29,7 @@ class Game
       "#{@player.player_name} wins"
     elsif @player.option == "Paper" && @computer.computer_option == "Rock"
       "#{@player.player_name} wins"
-    else
-      "Computer wins"
+    else "Computer wins"
     end
   end
 end

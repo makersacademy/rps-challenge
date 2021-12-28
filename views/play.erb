@@ -1,9 +1,10 @@
-Welcome <%= @game.player.player_name %>!
+<h2> Welcome <%= @game.player.player_name %>! <h2>
 
-<p> What's going to be? Rock, Paper or Scissors? </p> 
+<h3> What is it going to be? Rock, Paper or Scissors? </h3> 
 
-<form action="/option" method="post">
-<button type="submit" name="option" value="rock"> Rock </button>
-<button type="submit" name="option" value="paper"> Paper </button>
-<button type="submit" name="option" value="scissors"> Scissors </button>
+<form action="/option" method="POST">
+<button type="submit" name="option" value="Rock"> Rock </button>
+<button type="submit" name="option" value="Paper"> Paper </button>
+<button type="submit" name="option" value="Scissors"> Scissors </button>
 </form>
+

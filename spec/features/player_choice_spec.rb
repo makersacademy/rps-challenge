@@ -17,8 +17,3 @@ feature 'Player selects Rock | Paper | Scissors' do
     expect(page).to have_content 'Doby chose Scissors'
   end
 end
-
-
-
-
-  
