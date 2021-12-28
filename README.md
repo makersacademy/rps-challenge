@@ -1,4 +1,4 @@
-# Rock Paper Scissors
+# 🪨 Rock 📜 Paper ✂️ Scissors
 
 Makers Academy Bootcamp | Week 3 Weekend Challenge
 -------
