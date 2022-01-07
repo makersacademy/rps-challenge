@@ -13,7 +13,7 @@ require 'simplecov-console'
 
 require 'features/web_helpers' # putting reusable code as methods into web_helpers.rb will help dry up our spec files
 
-Capybara.app = Game # Tell Capybara to talk to Game i.e any instructions like visit('/') should be directed at the application called Game
+Capybara.app = RockPaperScissors # Tell Capybara to talk to RockPaperScissors i.e any instructions like visit('/') should be directed at the application called RockPaperScissors
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
