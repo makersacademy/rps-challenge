@@ -1,6 +1,19 @@
+ENV['RACK_ENV'] = 'test' #setting the environment to test. We do this as part of steps to configure Capybara, which configures our tests. 
+
+require File.join(File.dirname(__FILE__), '..', 'app.rb') # Bring in the contents of the `app.rb` file. The below is equivalent to: require_relative '../app.rb'
+
+# the testing gems
+require 'capybara'
 require 'capybara/rspec'
-require 'simplecov'
+require 'rspec'
+
+# the test coverage gems:
+require 'simplecov' 
 require 'simplecov-console'
+
+require 'features/web_helpers' # putting reusable code as methods into web_helpers.rb will help dry up our spec files
+
+Capybara.app = Game # Tell Capybara to talk to Game i.e any instructions like visit('/') should be directed at the application called Game
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
