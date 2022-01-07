@@ -5,17 +5,13 @@ feature 'RPS Game' do
 #end
 
 scenario 'registering names' do 
-  visit ('/')
-  fill_in :player_name, with: 'Gwen'
-  click_button 'Start Game'
+  start_game
   expect(page).to have_content 'Gwen vs. Computer'
   expect(page).to_not have_content 'Sinatra'
 end 
 
 scenario 'showing three options for player turn' do 
-  visit ('/')
-  fill_in :player_name, with: 'Gwen'
-  click_button 'Start Game'
+  start_game
   expect(page).to have_content 'Rock'
 end
 
