@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require_relative './lib/computer.rb'
-require_relative './lib/game.rb'
+require_relative './lib/computer'
+require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -26,7 +26,6 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice' do
     session[:choice] = params[:choice]
-    p params
     redirect('/outcome')
   end
 

@@ -1,8 +1,10 @@
 feature 'name submission' do
-  scenario 'player can register name' do
+  scenario 'player 1 can register name' do
     sign_in_and_play
     expect(page).to have_content("Hannah – it's time to play Rock, Paper, Scissors!")
   end
+end
+feature 'play game' do 
   scenario 'player is presented choices' do
     sign_in_and_play
     expect(page).to have_content("Choose rock, paper or scissors:")
@@ -15,5 +17,4 @@ feature 'name submission' do
     play_and_win
     expect(page).to have_content("Computer chose rock – you win!")
   end
- end
-
+end

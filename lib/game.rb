@@ -29,6 +29,4 @@ class Game
     "Computer chose #{@computer_move} – it's a draw!"
   end
 
-
 end
-
