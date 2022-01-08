@@ -1,9 +1,12 @@
 feature 'name submission' do
   scenario 'player can register name' do
-    visit('/')
-    fill_in 'player_1_name', with: 'Hannah'
-    click_button('Submit')
+    sign_in_and_play
     expect(page).to have_content("Hannah – it's time to play Rock, Paper, Scissors!")
   end
+  scenario 'player is presented choices' do
+    sign_in_and_play
+    expect(page).to have_content("Choose rock, paper or scissors")
+  end
+  
  end
 

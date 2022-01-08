@@ -7,6 +7,8 @@ require 'rspec'
 require 'capybara'
 require 'capybara/rspec'
 
+require './spec/features/web_helpers.rb'
+
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 Capybara.app = RockPaperScissors
