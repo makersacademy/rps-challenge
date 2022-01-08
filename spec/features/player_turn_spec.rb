@@ -14,5 +14,10 @@ feature 'Playing RPS game' do
     expect(page).to have_content 'Gwen chose Rock'
   end  
     #the game will choose a random option
+  scenario 'computer chooses random option' do 
+    start_game
+    computer_message = find(:css, '#computer_choice').text #retrieves an element from the page. :css is the selector type, '#computer choice' is the locator string. .text retrieves the text of this element and returns string
+    expect(computer_options).to include computer_message
+  end
     #a winner will be declared
   end
