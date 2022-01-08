@@ -12,6 +12,7 @@ require 'rspec'
 Capybara.app = RpsChallenge
 require 'simplecov'
 require 'simplecov-console'
+require 'features/web_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
