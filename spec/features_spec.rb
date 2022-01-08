@@ -5,7 +5,8 @@ feature 'Enter Name' do
         click_button 'Submit'
 
         save_and_open_page 
-        
+
         expect(page).to have_content 'Welcome JimBob!'
     end 
+
 end 
