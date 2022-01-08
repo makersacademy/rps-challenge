@@ -9,7 +9,7 @@ class MyApp < Sinatra::Base
 
   # our routes would go here
   get '/' do 
-    'Hello World!'
+    erb(:index)
   end 
 
   # # Start the server if this file is executed directly (do not change the line below)
