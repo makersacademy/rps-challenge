@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player.rb'
+require './lib/game.rb'
 
 class MyApp < Sinatra::Base
   enable :sessions 
@@ -8,6 +10,8 @@ class MyApp < Sinatra::Base
     register Sinatra::Reloader
     also_reload 'lib/index.erb'
     also_reload 'lib/play.erb'
+    also_reload 'lib/player.rb'
+    also_reload 'lib/game.rb'
   end
 
   # our routes would go here
@@ -16,12 +20,13 @@ class MyApp < Sinatra::Base
   end
 
   post '/names' do
-    session[:name1] = params[:name1]
+    $player_1 = Player.new(params[:name1])
+    p $player_1
     redirect '/play'
   end
   
   get '/play' do
-    @name1 = session[:name1]
+    @name1 = $player_1.name
     erb(:play)
   end 
 
@@ -32,13 +37,13 @@ class MyApp < Sinatra::Base
 
   get '/random_move' do 
     @move1 = session[:move1]
-    @name1 = session[:name1]
+    @name1 = $player_1.name
     erb(:random_move)
   end 
 
   get '/outcome' do 
     @move1 = session[:move1]
-    @name1 = session[:name1]  
+    @name1 = $player_1.name
     erb(:outcome)
   end 
   
