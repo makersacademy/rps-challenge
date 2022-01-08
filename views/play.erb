@@ -1,2 +1,6 @@
 <h1><%= @player_1_name%> – it's time to play Rock, Paper, Scissors!<h1>
-<p>Choose rock, paper or scissors</p>
+<p>Choose rock, paper or scissors:</p>
+<form action="/choice" method="post">
+  <input type="text" name="choice">
+  <input type="submit" value="Submit">
+<form>

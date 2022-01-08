@@ -5,8 +5,11 @@ feature 'name submission' do
   end
   scenario 'player is presented choices' do
     sign_in_and_play
-    expect(page).to have_content("Choose rock, paper or scissors")
+    expect(page).to have_content("Choose rock, paper or scissors:")
   end
-  
+  scenario '' do
+    # sign in and play
+    # choose choice
+  end
  end
 

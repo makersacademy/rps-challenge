@@ -19,7 +19,20 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player_1_name = session[:player_1_name]
+    # new game instance of class in instance variable?
     erb(:play)
+  end
+
+  post '/choice' do
+    session[:choice] = params[:choice]
+    redirect('/outcome')
+  end
+
+  get '/outcome' do
+    @choice = session[:choice]
+    # new game instance
+    # call methods from class 
+    # render outcome view with instance variables
   end
 
   run! if app_file == $0
