@@ -9,11 +9,11 @@ feature 'name submission' do
   end
   scenario 'player loses' do
     play_and_lose
-    expect(page).to have_content("Computer chose paper. You lose!")
+    expect(page).to have_content("Computer chose paper – you lose!")
   end
   scenario 'player wins' do
     play_and_win
-    expect(page).to have_content("Computer chose rock. You win!")
+    expect(page).to have_content("Computer chose rock – you win!")
   end
  end
 

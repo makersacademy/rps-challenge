@@ -30,12 +30,10 @@ class RockPaperScissors < Sinatra::Base
 
   get '/outcome' do
     @choice = session[:choice]
-    computer = Computer.new
-    @computer_move = computer.move
+    @computer_move = Computer.new.move
+    @game = Game.new(player: @choice, computer: @computer_move)
     erb(:result)
   end
-
-
 
   run! if app_file == $0
 end
