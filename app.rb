@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/game'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   configure :development do
@@ -18,13 +19,14 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
+    @game = Game.new(session)
+    # @player_1_name = session[:player_1_name]
     erb :play
   end
 
   post '/play' do
     session[:user_choice] = params[:user_choice]
-    session[:comp_choice] = :Rock
+    session[:comp_choice] = Computer.new.move
     redirect('/result')
   end
 
@@ -32,7 +34,6 @@ class RPS < Sinatra::Base
     @player_1_name = session[:player_1_name]
     @player_1_choice = session[:user_choice]
     @comp_choice = session[:comp_choice]
-    p session
     erb :result
   end
 

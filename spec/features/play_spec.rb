@@ -11,6 +11,7 @@
 
 feature 'Game play' do
   let(:game) { instance_double('Game') }
+  let(:computer) { instance_double('Computer') }
 
   before do
     enter_name_click_submit
@@ -25,6 +26,12 @@ feature 'Game play' do
   scenario 'Player can choose Rock, Paper or Scissors and be taken to result page' do
     click_button 'Rock'
     expect(page).to have_content 'Peter chose Rock'
+  end
+
+  scenario 'Computer can make a random choice' do
+    click_button 'Rock'
+    allow(computer).to receive(:move).and_return('Paper')
+    expect(page).to have_content 'Computer chose Paper'
   end
 
   context 'On result page' do

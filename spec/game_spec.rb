@@ -26,15 +26,6 @@ describe Game do
     it 'returns comp_choice' do
       expect(game.comp_choice).to eq('Rock')
     end
-  end  
-
-  describe '#comp_move' do
-    context 'So the computer can play' do
-      it 'chooses Rock, Paper or Scissors at random' do
-        allow(game).to receive(:comp_move).and_return('Rock')
-        expect(game.comp_choice).to eq('Rock')
-      end
-    end
-  end
+  end 
 
 end
