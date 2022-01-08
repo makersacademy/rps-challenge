@@ -9,7 +9,13 @@
     <div class='header_box'>
       <h2><%=@player_1_name%> chose <%=@player_1_choice%></h2>
       <h2 id="comp_choice">Computer chose <%=@comp_choice%></h2>
-      <h2>... wins the round</h2>
+      <% if @game.win? %>
+        <h2><%=@player_1_name%> won this round!</h2>
+      <% elsif @game.lose? %>
+        <h2>Computer won this round!</h2>
+      <% elsif @game.draw? %>
+        <h2>Draw!</h2>
+      <% end %>
       <form action='/play' method='get'>
         <input class='standard_button' type='submit' value='next round'>
       </form>

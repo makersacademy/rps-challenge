@@ -2,12 +2,17 @@
 # So that I can see my name in lights
 # I would like to register my name before playing an online game
 
+
+# As a marketeer
+# So that I can enjoy myself away from the daily grind
+# I would like to be able to play rock/paper/scissors
+
 #Player sees options
 #Player can choose option
 #Player can see result
-#Computer can choose a shape
-#Computers choice is printed to the result page
 #Computer can choose a random (R, P, S)
+#Computers choice is printed to the result page
+#Player can see if they won
 
 feature 'Game play' do
   let(:game) { instance_double('Game') }
@@ -29,8 +34,8 @@ feature 'Game play' do
   end
 
   scenario 'Computer can make a random choice' do
+    allow_any_instance_of(Computer).to receive(:move).and_return("Paper")
     click_button 'Rock'
-    allow(computer).to receive(:move).and_return('Paper')
     expect(page).to have_content 'Computer chose Paper'
   end
 
@@ -45,6 +50,22 @@ feature 'Game play' do
       click_button 'Rock'
       click_button 'next round'
       expect(page).to have_content 'Peter vs. Computer'
+    end
+
+    context 'When the player has won the round' do
+      scenario 'Player can see that they won the round' do
+        allow_any_instance_of(Computer).to receive(:move).and_return("Paper")
+        click_button 'Scissors'
+        expect(page).to have_content 'Peter won this round!'
+      end
+    end
+
+    context 'When the computer has won the round' do
+      scenario 'Player can see that the computer won the round' do
+        allow_any_instance_of(Computer).to receive(:move).and_return("Rock")
+        click_button 'Scissors'
+        expect(page).to have_content 'Computer won this round!'
+      end
     end
   end
 end
