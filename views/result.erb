@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style> 
+  </head>
+  <body>
+    <div class='header_box'>
+      <h2><%=@player_1_name%> chose <%=@player_1_choice%></h2>
+      <h2 id="comp_choice">Computer chose <%=@comp_choice%></h2>
+      <h2>... wins the round</h2>
+      <form action='/play' method='get'>
+        <input class='standard_button' type='submit' value='next round'>
+      </form>
+    </div>
+  </body>
+</html>
