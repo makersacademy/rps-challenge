@@ -1,3 +1,12 @@
 <%= @player_name %> vs. Computer
-
-<button type="button">Rock</button>
+<br>
+<%= @player_name %>'s turn. Choose your move
+<br>
+<form method="POST" action='/play'>
+<input type="submit" name='player_choice' value='Rock'></input>
+<br>
+<input type="submit" name='player_choice' value='Paper'></input>
+<br>
+<input type="submit" name='player_choice' value='Scissors'></input>
+</form>
+<%= @player_name %> chose <%= @player_choice %>

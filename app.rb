@@ -17,8 +17,14 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play' #issues an 'internal GET request' within the server. Now, when we submit the form, we can see a POST request with the form params, followed by a GET request(the redirect). The internal GET request will activate the '/play' action which will render the play.erb view
   end
 
+  post '/play' do 
+    session[:player_choice] = params[:player_choice]
+    redirect '/play'
+  end
+
   get '/play' do
     @player_name = session[:player_name] 
+    @player_choice = session[:player_choice]
     erb :play
   end
 
