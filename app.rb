@@ -6,8 +6,24 @@ class RPS_Game < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :sessions
+
   get '/' do
-    'Hello Beautiful World'
+    erb(:index)
+  end
+
+  get '/test' do
+    'Testing infrastructure working!'
+  end
+
+  post '/names' do
+    session[:player_1] = params[:player_1]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_1 = session[:player_1]
+    erb(:play)
   end
 
   run! if app_file == $0
