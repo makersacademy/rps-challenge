@@ -1,13 +1,14 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require_relative 'lib/player'
+require_relative './lib/player'
+require_relative './lib/game'
 
 class RPSGame < Sinatra::Base
+  enable :sessions
+
   configure :development do
     register Sinatra::Reloader
   end
-
-  enable :sessions
 
   get '/' do
     erb :index
@@ -15,28 +16,27 @@ class RPSGame < Sinatra::Base
 
   post '/names' do
     # I promise to never use global variables in tech tests
-    $player_1 = Player.new(params[:player_1_name].capitalize)
-    # $player_2 = Player.new(params[:player_2_name].capitalize)
+    player = Player.new(params[:player_1_name].capitalize)
+    $game = Game.new(player.name)
   
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = $player_1.name
-    # @player_2_name = $player_2.name
+    @game = $game
     
     erb :play
   end
 
   post '/attackchoice' do
-    session[:attack_style] = params[:attack_choice]
+    session[:attack] = params[:attack]
 
     redirect '/attack'
   end
 
   get '/attack' do
-    @attack_style = session[:attack_style]
-    @computer_move = 'Scissors'
+    @attack = session[:attack]
+    @computer_move = $game.computer_move
 
     erb :attack
   end

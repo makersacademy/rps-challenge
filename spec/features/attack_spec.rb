@@ -9,8 +9,9 @@ feature 'Attack' do
 end
 
 feature 'Computer attack' do
-  scenario 'computer attacks'do
+  scenario 'computer attacks' do
     sign_in_and_play
+    srand(4)
     click_on 'Rock'
     expect(page).to have_content 'Computer chose Scissors!!'
   end
