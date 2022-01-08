@@ -13,7 +13,7 @@ class Game
     return "You Win" if player == 'Rock' && computer == 'Scissor'
     return "You Win" if player == 'Scissor' && computer == 'Paper'
     return "You Win" if player == 'Paper' && computer == 'Rock'
-    return "It's a DRAW!" if player == computer_move
+    return "It's a DRAW!" if player == computer
     "You Lose"
   end
     

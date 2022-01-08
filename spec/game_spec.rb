@@ -23,6 +23,13 @@ describe Game do
       computer = 'Rock'
       expect(game.result(player, computer)).to eq("It's a DRAW!")
     end 
+
+    it 'recognises a loss' do 
+      game = Game.new
+      player = 'Scissor'
+      computer = 'Rock'
+      expect(game.result(player, computer)).to eq("You Lose")
+    end 
   end 
 end 
 
