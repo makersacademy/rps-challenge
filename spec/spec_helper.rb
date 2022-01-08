@@ -6,7 +6,8 @@ require 'simplecov-console'
 require 'rspec'
 require 'capybara'
 require 'capybara/rspec'
-require_relative '../app.rb'
+
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 Capybara.app = RockPaperScissors
 
