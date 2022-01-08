@@ -1,8 +1,10 @@
 <%=@name1 %> has joined and is ready.  <br><br>
 
+<! name is select name = "first_move">
+
 <form action="/moves" method="post"">
-      <label for="first_move">Your Move</label>
-      <select name="first_move" id="first_move">
+      <label for="move1"><%=@name1 %>'s Move</label>
+      <select name="first_move" id="move1">
         <option value="rock">Rock</option>
         <option value="paper">Paper</option>
         <option value="scissor">Scissor</option>

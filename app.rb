@@ -17,21 +17,31 @@ class MyApp < Sinatra::Base
 
   post '/names' do
     session[:name1] = params[:name1]
-    @name1 = session[:name1]
-    erb(:play)
+    redirect '/play'
   end
   
   get '/play' do
-    @player_name = session[:name1]
+    @name1 = session[:name1]
     erb(:play)
   end 
 
-
   post '/moves' do
-    @name1 = session[:name1]
-    @move1 = params[:first_move]
-    erb(:second_move)
+    session[:move1] = params[:first_move]
+    redirect '/random_move'
   end 
+
+  get '/random_move' do 
+    @move1 = session[:move1]
+    @name1 = session[:name1]
+    erb(:random_move)
+  end 
+
+  get '/outcome' do 
+    @move1 = session[:move1]
+    @name1 = session[:name1]  
+    erb(:outcome)
+  end 
+  
   # # Start the server if this file is executed directly (do not change the line below)
   run! if app_file == $0
 end
