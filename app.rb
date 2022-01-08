@@ -2,6 +2,8 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 
 class MyApp < Sinatra::Base
+  enable :sessions 
+
   configure :development do
     register Sinatra::Reloader
     also_reload 'lib/index.erb'
@@ -14,11 +16,22 @@ class MyApp < Sinatra::Base
   end
 
   post '/names' do
-    p params
-    @name1 = params[:name1]
+    session[:name1] = params[:name1]
+    @name1 = session[:name1]
+    erb(:play)
+  end
+  
+  get '/play' do
+    @player_name = session[:name1]
     erb(:play)
   end 
-  
+
+
+  post '/moves' do
+    @name1 = session[:name1]
+    @move1 = params[:first_move]
+    erb(:second_move)
+  end 
   # # Start the server if this file is executed directly (do not change the line below)
   run! if app_file == $0
 end

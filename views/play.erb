@@ -1,1 +1,11 @@
-<h1> Player <%=@name1 %> has joined </h1>
+<%=@name1 %> has joined and is ready.  <br><br>
+
+<form action="/moves" method="post"">
+      <label for="first_move">Your Move</label>
+      <select name="first_move" id="first_move">
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissor">Scissor</option>
+      </select>
+      <input type="submit" value="Submit" />
+</form>
