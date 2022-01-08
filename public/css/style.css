@@ -1,0 +1,65 @@
+body {
+  height: 100%;
+  background-image: url(blood-png-7140.png), linear-gradient(90deg, white 0%, grey 100%);
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.header_box {
+  position: relative;
+  width: 500px;
+  padding: 10px;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: solid 1px black;  */
+  text-align: center;
+}
+
+.box {
+  width: 500px;
+  padding: 10px;
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: solid 1px black; */
+  text-align: center;
+}
+
+.box input[type ='text'] {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 10px;
+  width: 195px;
+  border: 0;
+  border-radius: 24px;
+  font-size: 12px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.box input[type ='submit'] {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 10px;
+  width: 195px;
+  border: 0;
+  border-radius: 24px;
+  font-size: 10px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.scoreboard_box {
+  position: relative;
+  display: block;
+  padding: 10px;
+  margin: 20px auto;
+  width: 300px;
+  top: -25%;
+  left: 35%;
+  text-align: left;
+  border: dashed 2px black;
+  background-color: rgba(192, 192, 192, 0.509);
+}
+

@@ -9,13 +9,14 @@
 
     <div class='header_box'>
       <h1>Rock Paper Scissors</h1>
+      <h2><%=@player_1_name%> vs. Computer</h2>
     </div>
 
-    <form class='box' action='/names' method='post'>
-      <h3>Enter your name<h3>
-      <input type='text' name='player_1_name' placeholder='player 1'>
-      <input type='submit' value='Submit'>
-    </form>
+    <div class='scoreboard_box'>
+      <h3>Scoreboard</h3>
+      <h3><%=@player_1_name%> 0</h3>
+      <h3>Computer 0</h3>
+    </div>
 
   </body>
 </html>
