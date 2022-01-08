@@ -11,5 +11,9 @@ feature 'name submission' do
     play_and_lose
     expect(page).to have_content("Computer chose paper. You lose!")
   end
+  scenario 'player wins' do
+    play_and_win
+    expect(page).to have_content("Computer chose rock. You win!")
+  end
  end
 
