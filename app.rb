@@ -7,7 +7,11 @@ class Rps < Sinatra::Base
   end
 
   get '/' do
-    'Hello Mikitaro!'
+    erb :index
+  end
+
+  get '/play' do
+    erb :play
   end
 
   run! if app_file == $0

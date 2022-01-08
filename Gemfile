@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '3.0.0'
 
 gem 'sinatra'
+gem 'sinatra-contrib'
 
 group :test do
   gem 'selenium-webdriver'
