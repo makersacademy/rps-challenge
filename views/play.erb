@@ -1,4 +1,6 @@
-<h1><%= @player_1_name %> vs Computer!!</h1>
-<form action='/attack'>
-  <input type='submit' value='Attack!' />
+<h1 style='text-align:center'><%= @player_1_name %> vs Computer!!</h1>
+<form style='text-align:center' method='post'action='/attackchoice'>
+  <button type='submit' name='attack_choice' value='Rock'></button>Rock
+  <button type='submit' name='attack_choice' value='Paper'></button>Paper
+  <button type='submit' name='attack_choice' value='Scissors'></button>Scissors
 </form>

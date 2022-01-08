@@ -7,6 +7,8 @@ class RPSGame < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
@@ -24,6 +26,19 @@ class RPSGame < Sinatra::Base
     # @player_2_name = $player_2.name
     
     erb :play
+  end
+
+  post '/attackchoice' do
+    session[:attack_style] = params[:attack_choice]
+
+    redirect '/attack'
+  end
+
+  get '/attack' do
+    @attack_style = session[:attack_style]
+    @computer_move = 'Scissors'
+
+    erb :attack
   end
 
   run! if app_file == $0
