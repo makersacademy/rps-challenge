@@ -7,9 +7,9 @@ feature 'name submission' do
     sign_in_and_play
     expect(page).to have_content("Choose rock, paper or scissors:")
   end
-  scenario '' do
-    # sign in and play
-    # choose choice
+  scenario 'player loses' do
+    play_and_lose
+    expect(page).to have_content("Computer chose paper. You lose!")
   end
  end
 

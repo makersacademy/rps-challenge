@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/computer.rb'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -19,7 +20,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player_1_name = session[:player_1_name]
-    # new game instance of class in instance variable?
     erb(:play)
   end
 
@@ -30,10 +30,12 @@ class RockPaperScissors < Sinatra::Base
 
   get '/outcome' do
     @choice = session[:choice]
-    # new game instance
-    # call methods from class 
-    # render outcome view with instance variables
+    computer = Computer.new
+    @computer_move = computer.move
+    erb(:result)
   end
+
+
 
   run! if app_file == $0
 end
