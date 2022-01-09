@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
   end
 
   get '/results' do
-    $match.match_decider
+    $match.decider
     @message = $match.show_message
     erb :results
   end
@@ -33,7 +33,6 @@ class RPS < Sinatra::Base
   end
 
   post '/moves' do
-    p params
     $match = Match.new(params[:move])
     redirect '/results'
   end
