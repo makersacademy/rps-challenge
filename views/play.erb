@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style> 
+  </head>
+  <body>
+
+    <div class='header_box'>
+      <h1>Rock Paper Scissors</h1>
+      <h2><%=@game.player_1_name%> vs. Computer</h2>
+    </div>
+
+    <div class='box'>
+      <form action='/play' method='post'>
+        <input class='standard_button' type='submit' name='player_1_choice' value='Rock'>
+        <input class='standard_button' type='submit' name='player_1_choice' value='Paper'>
+        <input class='standard_button' type='submit' name='player_1_choice' value='Scissors'>
+      </form>
+    </div>
+  </body>
+</html>

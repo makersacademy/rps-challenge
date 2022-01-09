@@ -2,7 +2,12 @@ source 'https://rubygems.org'
 
 ruby '3.0.2'
 
-gem 'sinatra'
+group :web do
+  gem 'sinatra'
+  gem 'sinatra-contrib'
+  gem 'webrick'
+  gem 'rack'
+end
 
 group :test do
   gem 'capybara'
