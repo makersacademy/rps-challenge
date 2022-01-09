@@ -17,3 +17,8 @@ I would like to be able to play rock/paper/scissors
 - the game will choose a random option
 - winner is declared
 
+## Demo
+![first page](/assets/step1.jpg)
+![choice page](/assets/step2.jpg)
+![result page](/assets/step3.jpg)
+
