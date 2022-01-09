@@ -15,8 +15,8 @@ class RPSGame < Sinatra::Base
   end
 
   post '/names' do
-    # I promise to never use global variables in tech tests
     player = Player.new(params[:player_1_name].capitalize)
+    # I promise to never use global variables in tech tests
     $game = Game.new(player.name)
   
     redirect '/play'

@@ -1,0 +1,83 @@
+body {
+  height: 100%;
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  margin: 0;
+  padding: 0;
+  font-family: 'Amatic SC', cursive;
+  overflow: hidden;
+}
+
+.header {
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  color: black;
+  font-size: 80px;
+}
+
+.subheader {
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  color: black;
+  font-size: 60px;
+}
+
+.button {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+  padding: 16px 32px;
+  margin: 4px 2px;
+}
+
+.box {
+  width: 300px;
+  padding: 20px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size:30px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.rockbutton {
+  background-image: url('/images/rock.png');
+  background-size: cover;
+  background-color: transparent;
+  width: 450px;
+  height: 450px;
+  font-size: 30px;
+  font-family: 'Amatic SC', cursive;
+  display: inline-block; 
+  text-align: center; 
+}
+
+.paperbutton {
+  background-image: url('/images/paper.png');
+  background-size: cover;
+  background-color: transparent;
+  width: 450px;
+  height: 450px;
+  font-size: 30px;
+  font-family: 'Amatic SC', cursive;
+  display: inline-block; 
+  text-align: center; 
+}
+
+.scissorsbutton {
+  background-image: url('/images/scissors.png');
+  background-size: cover;
+  background-color: transparent;
+  width: 450px;
+  height: 450px;
+  font-size: 30px;
+  font-family: 'Amatic SC', cursive;
+  display: inline-block;
+}
+
+#outer
+{
+    width:100%;
+    text-align: center;
+}

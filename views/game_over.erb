@@ -1,7 +1,18 @@
-<h1 style='text-align:center'>Game over!!</h1>
-<h1 style='text-align:center'>You chose <%= @move %>!!</h1>
-<h2 style='text-align:center'>Computer chose <%= @computer_move %>!!</h2>
-<h2 style='text-align:center'><%= $game.result %></h2>
-<form action='/play'>
-  <input type='submit' value='Play again?' />
-</form>
+<html>
+  <head>
+    <link href="<%= url('/style.css') %>" rel='stylesheet' type='text/css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class='subheader'>Computer chose <%= @computer_move %> so...</div>
+    <div id='outer' class='header'><%= $game.result %></div>
+
+    <form style='text-align:center' action='/play'>
+      <input class='button' type='submit' value='Play again?' />
+    </form>
+  </body>
+</html>
+
