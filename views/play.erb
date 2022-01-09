@@ -1,7 +1,7 @@
-<h1>Hi <%= @player_name%>! Welcome to the Rock, Paper, Scissors Game!</h1>
-
+<h1><%= @player_name%> vs. Computer</h1>
+<h2>Welcome to the Rock, Paper, Scissors Game!</h2>
 <hr>
-<h3>Please select your play option!</h3>
+<h3>Please select your weapon!</h3>
 <div style='background-color: #000; padding: 2rem'>
 <form action='/play' method='post'>
     <ul style='display: flex; justify-content: space-around; list-style-type: none; color:white'>
@@ -15,3 +15,4 @@
 <hr>
 
 <p>Your chooice: <b><%=@play_option %></b></p>
+<p> Computer chooice: <b>Rock</b></p>
