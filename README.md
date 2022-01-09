@@ -18,7 +18,7 @@ I would like to be able to play rock/paper/scissors
 - winner is declared
 
 ## Demo
-![first page](/assets/step1.jpg)
-![choice page](/assets/step2.jpg)
-![result page](/assets/step3.jpg)
+![first page](/assets/step1.png)
+![choice page](/assets/step2.png)
+![result page](/assets/step3.png)
 
