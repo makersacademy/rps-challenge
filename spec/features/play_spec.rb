@@ -20,9 +20,7 @@ feature 'playing a game' do
 
     scenario 'game chooses "Rock"' do
         click_button 'Rock'
-
         message = find(:css, "#opponent").text
-
         expect(possible_messages).to include message
     end
 
