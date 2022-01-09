@@ -14,6 +14,8 @@ require 'simplecov-console'
 # tell Capybara to talk to BookMarkManager
 Capybara.app = RPS
 
+require(File.join(File.dirname(__FILE__), '/features', 'web_helpers.rb'))
+
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
