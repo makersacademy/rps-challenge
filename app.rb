@@ -17,9 +17,30 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  get '/result' do
+    @player = $player
+    @selection = $selection
+    erb :result
+  end
+
   post '/name' do
     $player = params['name']
     redirect '/play'
+  end
+
+  post '/rock' do
+    $selection = 'Rock'
+    redirect '/result'
+  end
+
+  post '/paper' do
+    $selection = 'Paper'
+    redirect '/result'
+  end
+
+  post '/scissors' do
+    $selection = 'Scissors'
+    redirect '/result'
   end
 
   run if app_file == $0
