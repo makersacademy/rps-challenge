@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 feature "playing RPS" do
+  PLAY_SEED = 221563
     before do
         visit('/')
-        fill_in :player_1, with: 'Vanessa'
-        fill_in :player_2, with: 'Silvia' 
+        fill_in :player_name, with: 'Vanessa'
+        
         click_button 'Submit'
     end
 
@@ -15,7 +16,7 @@ feature "playing RPS" do
     end
 
 
-    scenario "choose a shape" do
+      scenario "chooses a shape" do
       click_button "Rock"
       expect(page).to have_content "You chose Rock!"
     end
@@ -23,10 +24,18 @@ feature "playing RPS" do
     scenario "chooses Rock" do
         click_button "Rock"
 
-        shape = find(:css, "#opponent").text.strip 
+        shapes = find(:css, "#opponent").text
 
-        expect(possible_shapes).to include shape
+        expect(possible_shapes).to include shapes  
     end
+
+    scenario "chooses random option" do
+      srand(PLAY_SEED)
+      click_button "Rock"
+
+      expect(page).to have_content "Opponent chose Scissors!"
+    end
+
 
     def possible_shapes
       [:rock, :paper, :scissors].map { |shape| "Opponent chose #{shape.to_s.capitalize}!" }

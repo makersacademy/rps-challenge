@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require 'game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -11,25 +12,22 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-post '/names' do
-    session[:player_1] = params[:player_1]
-    session[:player_2] = params[:player_2]
+  post '/names' do
+    session[:player_name] = params[:player_name]
     redirect '/play'
-end
+  end
 
-get '/play' do
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
-    @shape = session[:shape]
-    @opponent_shape = session[:opponent_shape]
+  get '/play' do
+    @game = Game.new(session)
     erb :play
-end
+  end
 
-post '/play' do
-  session[:shape] = params[:shape]
-  session[:opponent_shape] = :rock
-  redirect '/play'
-end
+  post '/play' do
+   session[:player_shape] = params[:shape]
+   session[:opponent_shape] = Opponent.new.shape
+   
+   redirect '/play'
+  end
   
 
 
