@@ -6,6 +6,7 @@ class Rps < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
     also_reload './lib/game.rb'
+    also_reload './lib/player.rb'
   end
 
   enable :sessions
@@ -15,25 +16,29 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:player] = params[:player]
+    @player = Player.new(params[:player])
+    # $game should not be a global variable
+    # How to change this?
+    $game = Game.new(@player)
     redirect to '/play'
   end
 
   get '/play' do
-    @player = session[:player]
+    @game = $game
     erb :play
   end
 
   post '/choice' do
-    session[:choice] = params[:choice]
+    @game = $game
+    @game.player.save_choice(params[:choice])
     redirect to '/result'
   end
 
   get '/result' do
-    @user_choice = session[:choice]
-    @game = Game.new
+    @game = $game
     @computer_choice = @game.make_choice
-    erb @game.give_result(@user_choice, @computer_choice)
+    p @computer_choice, @game.player.choice
+    erb @game.give_result(@computer_choice)
   end
 
   run! if app_file == $0
