@@ -1,1 +1,6 @@
-<h2>Make your choice, Max.</h2>
+<h2>Make your choice, <%= @player %>.</h2>
+<form action='/choice' method='post'>
+  <input name='choice' type='submit' value='rock'>
+  <input name='choice' type='submit' value='paper'>
+  <input name='choice' type='submit' value='scissors'>
+</form>
