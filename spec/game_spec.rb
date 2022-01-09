@@ -3,9 +3,9 @@ require 'game'
 describe Game do
   subject(:game) { described_class.new(session_win) }
 
-  let(:session_win) { { "player_1_name" => "Peter", "user_choice" => "Rock", "comp_choice" => "Scissors" } }
-  let(:session_lose) { { "player_1_name" => "Peter", "user_choice" => "Rock", "comp_choice" => "Paper" } }
-  let(:session_draw) { { "player_1_name" => "Peter", "user_choice" => "Rock", "comp_choice" => "Rock" } }
+  let(:session_win) { { "player_1_name" => "Peter", "player_1_choice" => "Rock", "comp_choice" => "Scissors" } }
+  let(:session_lose) { { "player_1_name" => "Peter", "player_1_choice" => "Rock", "comp_choice" => "Paper" } }
+  let(:session_draw) { { "player_1_name" => "Peter", "player_1_choice" => "Rock", "comp_choice" => "Rock" } }
 
   describe '#player_1_name' do
     it 'returns entered name' do
@@ -13,9 +13,9 @@ describe Game do
     end
   end
 
-  describe '#user_choice' do
-    it 'returns user_choice' do
-      expect(game.user_choice).to eq('Rock')
+  describe '#player_1_choice' do
+    it 'returns player_1_choice' do
+      expect(game.player_1_choice).to eq('Rock')
     end
   end
 

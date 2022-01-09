@@ -12,7 +12,7 @@ body {
   top: 25%;
   left: 50%;
   text-align: center;
-  margin: 150px auto 0;
+  margin: 200px auto 0;
 }
 
 .box {
@@ -21,7 +21,7 @@ body {
   top: 30%;
   left: 50%;
   text-align: center;
-  margin: 0 auto;
+  margin: 50 auto;
 }
 
 .box input[type ='text'] {
