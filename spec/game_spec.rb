@@ -3,7 +3,7 @@ require 'game'
 describe Game do
 
   subject(:game) { described_class.new(session) }
-  let(:session) {{ :player_name => 'Jack', :player_choice => 'Rock', :computer_choice => 'Scissors' }}
+  let(:session) { { :player_name => 'Jack', :player_choice => 'Rock', :computer_choice => 'Scissors' } }
     
   describe '#player_name' do
     it 'returns the player name' do

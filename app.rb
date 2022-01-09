@@ -38,7 +38,7 @@ class BookmarkManager < Sinatra::Base
     @computer_choice = @game.computer_choice
     @outcome = @game.assign_outcome
     erb :result
-  end  
+  end
 
   run! if app_file == $0
 end
