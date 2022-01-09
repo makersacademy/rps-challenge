@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/game'
 require './lib/player'
+require './lib/match'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -15,14 +16,26 @@ class RPS < Sinatra::Base
   end
 
   get '/game' do
-    @player_1_name = $game.player_1.name
+    @player_one_name = $game.player_one.name
     erb :game
   end
 
+  get '/results' do
+    $match.match_decider
+    @message = $match.show_message
+    erb :results
+  end
+
   post '/names' do
-    player_1 = Player.new(params[:player_1_name])
-    $game = Game.new(player_1)
+    player_one = Player.new(params[:player_one_name])
+    $game = Game.new(player_one)
     redirect '/game'
+  end
+
+  post '/moves' do
+    p params
+    $match = Match.new(params[:move])
+    redirect '/results'
   end
 
   run! if app_file == $0

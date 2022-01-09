@@ -3,6 +3,15 @@
 
 <body>
 <div class='tittle'>
-  <h1><%= @player_1_name %>, pick your move</h1>
+  <h1><%= @player_one_name %>, pick your move</h1>
+</div>
+
+<div class='moves'>
+<form action='/moves' method='post' name='moves'>
+    <input type='submit' name='move' value='Rock'>
+    <input type='submit' name='move' value='Paper'>
+    <input type='submit' name='move' value='Scissors'>
+  </form>
+</li>
 </div>
 </body>
