@@ -38,7 +38,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/results' do
+    @name = session[:name]
     @player_choice = session[:player_choice]
+    @gamebot_choice = ["ROCK", "PAPER", "SCISSORS"].sample
     erb(:results)
   end
 end
