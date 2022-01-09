@@ -7,8 +7,18 @@
   </head>
 
   <body>
-    <div class='subheader'>Computer chose <%= @computer_move %> so...</div>
-    <div id='outer' class='header'><%= $game.result %></div>
+    <% if $game.result == 'You lose!!' %>
+      <img src='/images/blood-splatter.png' id='bloodsplatter'/>
+      <div class='subheader'> You chose <%= @move %> and Computer chose <%= @computer_move %> so...</div>
+      <div id='outer' class='header'><%= $game.result %></div>
+    <% elsif $game.result == 'You win!!' %>
+      <img src='/images/confetti.png' id='confetti'/>
+      <div class='subheader'> You chose <%= @move %> and Computer chose <%= @computer_move %> so...</div>
+      <div id='outer' class='header'><%= $game.result %></div>
+    <% else %>
+      <div class='subheader'> You chose <%= @move %> and Computer chose <%= @computer_move %> so...</div>
+      <div id='outer' class='header'><%= $game.result %></div>
+    <% end %>
 
     <form style='text-align:center' action='/play'>
       <input class='button' type='submit' value='Play again?' />

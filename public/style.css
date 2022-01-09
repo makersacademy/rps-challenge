@@ -81,3 +81,22 @@ body {
     width:100%;
     text-align: center;
 }
+
+#bloodsplatter {
+  width:100%;
+  position:absolute;
+  left:0;
+  top:0;
+  z-index: 999;
+  pointer-events: none;
+}
+
+#confetti {
+  width:100%;
+  position:absolute;
+  left:0;
+  top:0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 50%;
+}
