@@ -6,6 +6,6 @@ feature 'Player 1 move submission' do
     fill_in 'name1', with: 'Josh'
     click_button('Submit')
     select "Rock", :from => "first_move"
-    expect(page).to have_content('Josh has selected Rock')
+    expect(page).to have_content('Rock')
   end 
 end 

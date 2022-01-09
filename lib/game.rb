@@ -7,6 +7,10 @@ class Game
 
   def computer_move
     @options.sample
+  end
+
+  def move1(move)
+    @move1 = move
   end 
 
   def result(player, computer)

@@ -38,7 +38,10 @@ class MyApp < Sinatra::Base
   get '/random_move' do 
     @move1 = session[:move1]
     @name1 = $player_1.name
-    erb(:random_move)
+    game = Game.new
+    @move2 = game.computer_move
+    @outcome = game.result(@move1, @move2)
+    redirect '/outcome'
   end 
 
   get '/outcome' do 

@@ -9,6 +9,20 @@ describe Game do
     end 
   end 
 
+  describe '#move1' do 
+    it 'stores the first move' do 
+      game = Game.new
+      expect(game.move1('Rock')).to eq('Rock')
+    end
+  end 
+
+  # describe '#move2' do 
+  #   it 'stores the second move' do 
+  #     game = Game.new
+  #     expect(game.move2('Paper')).to eq('Paper')
+  #   end 
+  # end
+
   describe '#result' do
     it 'recognises a win' do 
       game = Game.new
