@@ -17,7 +17,7 @@ class Rps < Sinatra::Base
 
   post '/name' do
     @player = Player.new(params[:player])
-    # $game should not be a global variable
+    # game should not be a global variable!
     # How to change this?
     $game = Game.new(@player)
     redirect to '/play'
@@ -37,7 +37,6 @@ class Rps < Sinatra::Base
   get '/result' do
     @game = $game
     @computer_choice = @game.make_choice
-    p @computer_choice, @game.player.choice
     erb @game.give_result(@computer_choice)
   end
 
