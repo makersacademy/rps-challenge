@@ -12,3 +12,7 @@
 <%= @player_name %> chose <%= @player_choice %>
 
 Your opponent chose <%= @computer_choice %>
+
+<% if @turn.win? %>
+<%= @player_name %> wins!
+<% end %>

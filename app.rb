@@ -19,14 +19,12 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do 
     session[:player_choice] = params[:player_choice]
-    session[:computer_choice] = ['Rock', 'Paper', 'Scissors'].sample
+    session[:opponent_choice] = Opponent.new.random_choice
     redirect '/play'
   end
 
-  get '/play' do
-    @player_name = session[:player_name] 
-    @player_choice = session[:player_choice]
-    @computer_choice = session[:computer_choice]
+  get '/play' do # originally I had 3 instance var but refactored so that these are contained within a Gameplay class, the Model layer
+    @gameplay = Gameplay.new(session) #session being a hash of the params 
     erb :play
   end
 

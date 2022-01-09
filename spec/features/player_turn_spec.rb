@@ -21,7 +21,13 @@ feature 'Playing RPS game' do
     click_button 'Rock'
     expect(page).to have_content 'Your opponent chose Paper'
   end
-    #a winner will be declared
+    #a winner will be declared 
+    scenario 'player wins' do
+      click_button 'Rock'
+      srand(54321)
+      expect(page).to have_content 'Gwen wins!'
+    end
+
     scenario 'declares winner' do
       click_button 'Rock'
       computer_choice = 
