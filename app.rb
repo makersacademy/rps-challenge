@@ -7,7 +7,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   enable :sessions
-  
+
   get '/' do 
     erb(:index)
   end
@@ -20,5 +20,17 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do 
     @name = session[:name]
     erb(:play)
+  end
+
+  get '/rock' do 
+    erb(:rock)
+  end
+
+  get '/paper' do
+    erb(:paper)
+  end
+
+  get '/scissors' do
+    erb(:scissors)
   end
 end
