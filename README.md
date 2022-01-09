@@ -36,7 +36,7 @@ Playing Rock, Paper, Scissors
 
 * Pick Rock, Paper or Scissors 
 
-![Alt text](screenshots/result_screenshot.png?raw=true "index view")
+![Alt text](screenshots/results_screenshot.png?raw=true "index view")
 
 * Hopefully win!
 
