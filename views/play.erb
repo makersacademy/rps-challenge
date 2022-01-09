@@ -1,0 +1,14 @@
+<img src="https://logosarchive.com/wp-content/uploads/2021/10/Squid-Game-logo.png" width="200" height= "100" alt="Squid Game">
+<h2> First Players Move </h2>
+
+<! name is select name = "first_move">
+Look away <%=@name2 %>. Your turn is second.  <br> <br> 
+<form action="/moves" method="post"">
+      <label for="move1"><%=@name1 %>'s Move  </label>
+      <select name="first_move" id="move1">
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissor">Scissor</option>
+      </select>
+      <input type="submit" value="Submit" />
+</form>

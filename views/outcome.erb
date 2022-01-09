@@ -1,0 +1,19 @@
+<img src="https://logosarchive.com/wp-content/uploads/2021/10/Squid-Game-logo.png" width="200" height= "100" alt="Squid Game">
+<h2> Outcome </h2>
+
+SUMMARY <br>
+<%= @name1 %> played <%= @move1 %> <br>
+<%= @name2 %> played <%= @move2 %> <br>
+ <br> <br>
+ 
+OUTCOME <br>
+<%= @outcome %> <br> 
+
+<br>
+<form method="get" action="/">
+    <button type="submit">New Game</button>
+</form>
+
+<form method="get" action="/play">
+    <button type="submit">Same Players</button>
+</form>
