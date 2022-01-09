@@ -34,7 +34,7 @@ I started out by using a TDD approach to make a very basic, not so user-friendly
 requirements in a very simple way. I had the vague thought that modulo could be used to decide the outcome
 of the game, and after a quick google, came across [this article](https://therenegadecoder.com/code/rock-paper-scissors-using-modular-arithmetic/) and adapted the method for my code.
 After I had a playable game, I set about refactoring and making the user experience more enjoyable. 
-I decided to adda way to keep track of the score to keep users clicking :)
+I decided to add a way to keep track of the score to keep users clicking :)
 
 ### Things I'd Like to Improve
 
