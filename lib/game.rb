@@ -1,7 +1,7 @@
 class Game
 
   attr_reader :player1, :player2
-  attr_writer :move1, :move2
+  attr_accessor :move1, :move2
 
   def initialize(name1, name2)
     @options = ['Rock', 'Paper', 'Scissor']
@@ -10,10 +10,6 @@ class Game
     @player2 = name2
 
   end
-
-  attr_reader :move1 
-
-  attr_reader :move2 
 
   def computer_move
     @options.sample

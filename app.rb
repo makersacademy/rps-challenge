@@ -39,16 +39,22 @@ class MyApp < Sinatra::Base
   end 
 
   get '/play_2' do 
-    
+    @name2 = $game.player2
+    erb(:play_2)
+  end 
 
-    
+  post '/moves2' do 
+    params[:second_move]
+    $game.move2 = params[:second_move]
+    redirect '/outcome'
   end 
 
   get '/outcome' do 
-    @move1 = session[:move1]
-    @name1 = $player_1.name
-    @move2 = game.computer_move
-    @outcome = game.result(@move1, @move2)
+    @move1 = $game.move1
+    @move2 = $game.move2
+    @name1 = $game.player1
+    @name2 = $game.player2
+    @outcome = $game.result(@move1, @move2)
     erb(:outcome)
   end 
   
