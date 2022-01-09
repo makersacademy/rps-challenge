@@ -28,7 +28,7 @@ class RPSGame < Sinatra::Base
     erb :play
   end
 
-  post '/movechoice' do
+  post '/move' do
     session[:move] = params[:move]
 
     redirect '/move'
@@ -38,8 +38,16 @@ class RPSGame < Sinatra::Base
     @move = session[:move]
     session[:computer_move] = $game.computer_move
     @computer_move = session[:computer_move]
-    p session
+
     erb :move
+  end
+
+  post '/gameover' do
+    @result = $game.outcome(session[:move], session[:computer_move])
+  end
+
+  get '/gameover' do
+    erb :gameover
   end
 
   run! if app_file == $0

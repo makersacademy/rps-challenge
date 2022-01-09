@@ -1,2 +1,5 @@
 <h1 style='text-align:center'>You chose <%= @move %>!!</h1>
 <h2 style='text-align:center'>Computer chose <%= @computer_move %>!!</h2>
+<form action='/gameover' method='post' >
+  <input type='submit' value='See the results' />
+</form>
