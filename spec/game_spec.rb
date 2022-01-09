@@ -25,9 +25,9 @@ describe Game do
   end 
 
   describe '#result' do
-  let(:player1) {double :player }
-  let(:player2) {double :player }
-  subject(:game) { described_class.new(:player1, :player2) }
+    let(:player1) { double :player }
+    let(:player2) { double :player }
+    subject(:game) { described_class.new(:player1, :player2) }
 
     it 'recognises a win' do 
       game.move1 = 'Rock'
