@@ -36,8 +36,9 @@ class RPSGame < Sinatra::Base
 
   get '/move' do
     @move = session[:move]
-    @computer_move = $game.computer_move
-
+    session[:computer_move] = $game.computer_move
+    @computer_move = session[:computer_move]
+    p session
     erb :move
   end
 
