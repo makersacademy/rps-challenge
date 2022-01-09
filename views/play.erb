@@ -1,9 +1,9 @@
-<%=@name1 %> has joined and is ready.  <br><br>
+<%=@name1 %> & <%=@name2 %> has joined and are ready.  <br><br>
 
 <! name is select name = "first_move">
-
+Look away <%=@name2 %> <br> <br> 
 <form action="/moves" method="post"">
-      <label for="move1"><%=@name1 %>'s Move</label>
+      <label for="move1"><%=@name1 %>'s Move  </label>
       <select name="first_move" id="move1">
         <option value="Rock">Rock</option>
         <option value="Paper">Paper</option>

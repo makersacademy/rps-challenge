@@ -14,39 +14,41 @@ class MyApp < Sinatra::Base
     also_reload 'lib/game.rb'
   end
 
-  # our routes would go here
+  #index page where players submit their names
   get '/' do 
     erb(:index)
   end
 
   post '/names' do
     $player_1 = Player.new(params[:name1])
-    p $player_1
+    $player_2 = Player.new(params[:name2])
     redirect '/play'
   end
   
   get '/play' do
-    @name1 = $player_1.name
+    $game = Game.new($player_1.name, $player_2.name)
+    @name1 = $game.player1
+    @name2 = $game.player2
     erb(:play)
   end 
 
   post '/moves' do
-    session[:move1] = params[:first_move]
-    redirect '/random_move'
+    params[:first_move]
+    $game.move1 = params[:first_move]
+    redirect '/play_2'
   end 
 
-  get '/random_move' do 
-    @move1 = session[:move1]
-    @name1 = $player_1.name
-    game = Game.new
-    @move2 = game.computer_move
-    @outcome = game.result(@move1, @move2)
-    redirect '/outcome'
+  get '/play_2' do 
+    
+
+    
   end 
 
   get '/outcome' do 
     @move1 = session[:move1]
     @name1 = $player_1.name
+    @move2 = game.computer_move
+    @outcome = game.result(@move1, @move2)
     erb(:outcome)
   end 
   
