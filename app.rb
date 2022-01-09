@@ -35,13 +35,13 @@ class MyApp < Sinatra::Base
   post '/moves' do
     params[:first_move]
     $game.move1 = params[:first_move]
-    redirect '/play_2'
+    redirect '/play_two'
   end 
 
-  get '/play_2' do 
+  get '/play_two' do 
     @name1 = $game.player1
     @name2 = $game.player2
-    erb(:play_2)
+    erb(:play_two)
   end 
 
   post '/moves2' do 
