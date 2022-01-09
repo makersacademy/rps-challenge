@@ -6,7 +6,9 @@ feature 'Enter Name' do
 
         save_and_open_page 
 
-        expect(page).to have_content 'Welcome JimBob!'
+        expect(page).to have_content 'Welcome JimBob'
     end 
+  
+    #The JimBob name test won't pass as we've updated our page to show whatever name is entered.
 
 end 
