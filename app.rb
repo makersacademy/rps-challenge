@@ -6,8 +6,20 @@ class RockPaperScissors < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :sessions
+
   get '/' do
-    'Hello World'
+    erb :index
+  end
+
+  get '/play' do 
+    @player = $player
+    erb :play
+  end
+
+  post '/name' do
+    $player = params['name']
+    redirect '/play'
   end
 
   run if app_file == $0
