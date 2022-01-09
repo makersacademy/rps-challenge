@@ -1,6 +1,6 @@
 ENV["RACK_ENV"] = 'test'
 
-#require our Sinatra app file
+# require our Sinatra app file
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 require 'capybara'
@@ -18,7 +18,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
-
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
 RSpec.configure do |config|
@@ -28,4 +27,3 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
-

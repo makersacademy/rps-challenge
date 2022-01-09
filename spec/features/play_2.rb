@@ -9,4 +9,4 @@ feature 'Second Player Move' do
     select "Paper", :from => "second_move"
     expect(page).to have_content('Paper')
   end 
-end 
+end

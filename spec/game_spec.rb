@@ -53,6 +53,4 @@ describe Game do
       expect(game.result(game.move1, game.move2)).to eq("Sorry, this time #{game.player2} is the winner.")
     end 
   end 
-end 
-
-
+end

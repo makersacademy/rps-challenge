@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/player.rb'
-require './lib/game.rb'
+require './lib/player'
+require './lib/game'
 
 class MyApp < Sinatra::Base
   enable :sessions 
@@ -14,7 +14,7 @@ class MyApp < Sinatra::Base
     also_reload 'lib/game.rb'
   end
 
-  #index page where players submit their names
+  # index page where players submit their names
   get '/' do 
     erb(:index)
   end

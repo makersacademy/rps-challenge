@@ -11,13 +11,9 @@ class Game
 
   end
 
-  def move1
-    @move1
-  end 
+  attr_reader :move1 
 
-  def move2
-    @move2
-  end 
+  attr_reader :move2 
 
   def computer_move
     @options.sample

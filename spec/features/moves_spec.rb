@@ -8,4 +8,4 @@ feature 'Player 1 move submission' do
     select "Rock", :from => "first_move"
     expect(page).to have_content('Rock')
   end 
-end 
+end
