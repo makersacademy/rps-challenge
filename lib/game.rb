@@ -1,11 +1,12 @@
 class Game
-  RULES = {
-    rock: :scissors,
-    paper: :rock,
-    scissors: :paper
-    }
+  WEAPONS = [:rock, :paper, :scissors]
+  
+  RULES = { rock: :scissors,
+            paper: :rock,
+            scissors: :paper }
 
-  def initialize(choices = ['rock', 'paper', 'scissors'])
+
+  def initialize(choices = WEAPONS)
     @choices = choices
   end
 
