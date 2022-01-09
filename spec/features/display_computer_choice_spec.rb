@@ -1,8 +1,5 @@
 feature 'randomising computer move' do
 
-  # Is this correctly stubbing the Game?
-  # Should this be done?
-
   before do
     allow_any_instance_of(Game).to receive(:make_choice)  { 'paper' }
   end
