@@ -1,6 +1,7 @@
 ## Rock, Paper, Scissors Challenge
 
 ```
+    _______
 ---'   ____)
       (_____)
       (_____)
