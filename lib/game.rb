@@ -4,7 +4,6 @@ class Game
   attr_accessor :move1, :move2
 
   def initialize(name1, name2)
-    @computer_move
     @player1 = name1
     @player2 = name2
   end
