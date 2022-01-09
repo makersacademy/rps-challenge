@@ -28,17 +28,17 @@ class RPSGame < Sinatra::Base
     erb :play
   end
 
-  post '/attackchoice' do
-    session[:attack] = params[:attack]
+  post '/movechoice' do
+    session[:move] = params[:move]
 
-    redirect '/attack'
+    redirect '/move'
   end
 
-  get '/attack' do
-    @attack = session[:attack]
+  get '/move' do
+    @move = session[:move]
     @computer_move = $game.computer_move
 
-    erb :attack
+    erb :move
   end
 
   run! if app_file == $0
