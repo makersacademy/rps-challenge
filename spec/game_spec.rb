@@ -2,13 +2,6 @@ require 'game'
 
 describe Game do
 
-  describe '#computer_move' do
-    it 'randomises the move of the computer' do 
-      game = Game.new('Josh', 'Peter')
-      expect(['Rock', 'Paper', 'Scissor']).to include(game.computer_move)
-    end 
-  end 
-
   describe '#player1' do 
     it 'stores the two players name' do
       game = Game.new('Josh', 'Peter')
