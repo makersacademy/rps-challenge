@@ -20,6 +20,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @game = Game.new(session)
+    @player_1_name = @game.player_1_name
     erb :play
   end
 
@@ -31,9 +32,9 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @game = Game.new(session)
-    @player_1_name = session[:player_1_name]
-    @player_1_choice = session[:user_choice]
-    @comp_choice = session[:comp_choice]
+    @player_1_name = @game.player_1_name
+    @player_1_choice = @game.user_choice
+    @comp_choice = @game.comp_choice
     erb :result
   end
 

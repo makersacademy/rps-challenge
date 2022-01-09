@@ -1,8 +1,11 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(session) }
-  let(:session) { { "player_1_name" => "Peter", "user_choice" => "Rock", "comp_choice" => "Scissors" } }
+  subject(:game) { described_class.new(session_win) }
+
+  let(:session_win) { { "player_1_name" => "Peter", "user_choice" => "Rock", "comp_choice" => "Scissors" } }
+  let(:session_lose) { { "player_1_name" => "Peter", "user_choice" => "Rock", "comp_choice" => "Paper" } }
+  let(:session_draw) { { "player_1_name" => "Peter", "user_choice" => "Rock", "comp_choice" => "Rock" } }
 
   describe '#player_1_name' do
     it 'returns entered name' do
@@ -21,13 +24,32 @@ describe Game do
       expect(game.comp_choice).to eq('Scissors')
     end
   end
-  
-  describe '#win?' do
-    context 'when player and computer chosen' do
-      it 'returns the winner of the round' do
-         expect(game.win?).to eq true
+
+  context 'when player wins the round' do
+    describe '#win?' do
+      it 'returns true' do
+        expect(game.win?).to eq true
+      end
+    end
+
+  end
+
+  context 'when computer wins the round' do
+    describe '#lose?' do
+      it 'returns true' do
+        game_lose = Game.new(session_lose)
+        expect(game_lose.lose?).to eq true
+      end
+    end
+
+  end
+
+  describe '#draw?' do
+    context 'when player and computer draw' do
+      it 'returns true' do
+        game_draw = Game.new(session_draw)
+        expect(game_draw.draw?).to eq true
       end
     end
   end
-
 end

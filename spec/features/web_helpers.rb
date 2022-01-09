@@ -5,5 +5,5 @@ def enter_name_click_submit
 end
 
 def comp_choice_outcomes
-  %w[Rock Paper Scissors].map {|choice| "Computer chose #{choice}"}
+  %w[Rock Paper Scissors].map { |choice| "Computer chose #{choice}" }
 end

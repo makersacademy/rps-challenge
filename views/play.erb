@@ -12,17 +12,12 @@
       <h2><%=@game.player_1_name%> vs. Computer</h2>
     </div>
 
-    <div class='scoreboard_box'>
-      <h3>Scoreboard</h3>
-      <h3><%=@game.player_1_name%> 0</h3>
-      <h3>Computer 0</h3>
+    <div class='box'>
+      <form action='/play' method='post'>
+        <input class='standard_button' type='submit' name='user_choice' value='Rock'>
+        <input class='standard_button' type='submit' name='user_choice' value='Paper'>
+        <input class='standard_button' type='submit' name='user_choice' value='Scissors'>
+      </form>
     </div>
-
-    <form action='/play' method='post'>
-      <input class='standard_button' type='submit' name='user_choice' value='Rock'>
-      <input class='standard_button' type='submit' name='user_choice' value='Paper'>
-      <input class='standard_button' type='submit' name='user_choice' value='Scissors'>
-    </form>
-
   </body>
 </html>

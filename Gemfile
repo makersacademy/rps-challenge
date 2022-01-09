@@ -9,7 +9,6 @@ group :web do
   gem 'rack'
 end
 
-
 group :test do
   gem 'capybara'
   gem 'rspec'

@@ -1,19 +1,3 @@
-# As a marketeer
-# So that I can see my name in lights
-# I would like to register my name before playing an online game
-
-
-# As a marketeer
-# So that I can enjoy myself away from the daily grind
-# I would like to be able to play rock/paper/scissors
-
-#Player sees options
-#Player can choose option
-#Player can see result
-#Computer can choose a random (R, P, S)
-#Computers choice is printed to the result page
-#Player can see if they won
-
 feature 'Game play' do
   let(:game) { instance_double('Game') }
   let(:computer) { instance_double('Computer') }
@@ -48,7 +32,7 @@ feature 'Game play' do
 
     scenario 'Player can click next round button to return to play view' do
       click_button 'Rock'
-      click_button 'next round'
+      click_button 'play again'
       expect(page).to have_content 'Peter vs. Computer'
     end
 
