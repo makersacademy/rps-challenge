@@ -1,5 +1,6 @@
-def enter_bob_hit_play
+def gamebot_bob_play
   visit('/')
-  fill_in :name, with: "Bob"
-  click_button "Play!"
+  click_button "Play GameBot"
+  fill_in :name1, with: "Bob"
+  click_button "Play"
 end

@@ -1,6 +1,6 @@
 class Game
   def initialize
-    @computer_choice = computer_choice
+    @player2_choice = computer_choice
     @scenarios = {
       "ROCK" => {"ROCK" => 2, "PAPER" => 1, "SCISSORS" => 0},
       "PAPER" => {"ROCK" => 0, "PAPER" => 2, "SCISSORS" => 1},
@@ -13,14 +13,18 @@ class Game
     @player1_choice = player1_choice
   end
 
+  def player2_choice(player2_choice)
+    @player2_choice = player2_choice
+  end
+
   def summary
-    [@player1_choice, @computer_choice, result]
+    [@player1_choice, @player2_choice, result]
   end
 
   private
 
   def result
-    @outcomes[@scenarios[@player1_choice][@computer_choice]]
+    @outcomes[@scenarios[@player1_choice][@player2_choice]]
   end
 
 
