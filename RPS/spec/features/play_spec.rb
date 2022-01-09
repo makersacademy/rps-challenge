@@ -19,4 +19,16 @@ feature "playing RPS" do
       click_button "Rock"
       expect(page).to have_content "You chose Rock!"
     end
+
+    scenario "chooses Rock" do
+        click_button "Rock"
+
+        shape = find(:css, "#opponent").text.strip 
+
+        expect(possible_shapes).to include shape
+    end
+
+    def possible_shapes
+      [:rock, :paper, :scissors].map { |shape| "Opponent chose #{shape.to_s.capitalize}!" }
+    end
 end

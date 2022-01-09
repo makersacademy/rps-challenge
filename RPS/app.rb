@@ -21,11 +21,13 @@ get '/play' do
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
     @shape = session[:shape]
+    @opponent_shape = session[:opponent_shape]
     erb :play
 end
 
 post '/play' do
   session[:shape] = params[:shape]
+  session[:opponent_shape] = :rock
   redirect '/play'
 end
   
