@@ -14,13 +14,8 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
-  post '/humans' do
-    session[:mode] = "humans"
-    redirect '/deets'
-  end
-
-  post '/gamebot' do 
-    session[:mode] = "gamebot"
+  post '/mode' do
+    session[:mode] = params[:mode]
     redirect '/deets'
   end
 
@@ -32,33 +27,18 @@ class RockPaperScissors < Sinatra::Base
   post '/name' do 
     session[:name1] = params[:name1]
     session[:name2] = session[:mode] == "gamebot" ? "GameBot" : params[:name2]
-    redirect '/play'
+    redirect '/play1'
   end
 
-  get '/play' do 
+  get '/play1' do 
     session[:game] = nil
     @name1, @name2 = session[:name1], session[:name2]
-    erb(:play)
+    erb(:play1)
   end
 
-  post '/rock1' do
-    session[:player_choice] = "ROCK"
-    session[:game] = Game.new
-    session[:game].player1_choice("ROCK")
-    session[:mode] == "gamebot" ? (redirect '/results') : (redirect '/play2')
-  end
-
-  post '/paper1' do
-    session[:player_choice] = "PAPER"
-    session[:game] = Game.new
-    session[:game].player1_choice("PAPER")
-    session[:mode] == "gamebot" ? (redirect '/results') : (redirect '/play2')
-  end
-
-  post '/scissors1' do
-    session[:player_choice] = "SCISSORS"
-    session[:game] = Game.new
-    session[:game].player1_choice("SCISSORS")
+  post '/select1' do
+    session[:player1_choice] = params[:player1]
+    session[:game] = Game.new(session[:player1_choice])
     session[:mode] == "gamebot" ? (redirect '/results') : (redirect '/play2')
   end
 
@@ -67,21 +47,9 @@ class RockPaperScissors < Sinatra::Base
     erb(:play2)
   end
 
-  post '/rock2' do
-    session[:player2_choice] = "ROCK"
-    session[:game].player2_choice("ROCK")
-    redirect '/results'
-  end
-
-  post '/paper2' do
-    session[:player2_choice] = "PAPER"
-    session[:game].player2_choice("PAPER")
-    redirect '/results'
-  end
-
-  post '/scissors2' do
-    session[:player2_choice] = "SCISSORS"
-    session[:game].player2_choice("SCISSORS")
+  post '/select2' do
+    session[:player2_choice] = params[:player2]
+    session[:game].player2_choice(session[:player2_choice])
     redirect '/results'
   end
 

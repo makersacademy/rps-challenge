@@ -1,16 +1,13 @@
 class Game
-  def initialize
+  def initialize(player1_choice)
+    @player1_choice = player1_choice
     @player2_choice = computer_choice
     @scenarios = {
       "ROCK" => {"ROCK" => 2, "PAPER" => 1, "SCISSORS" => 0},
       "PAPER" => {"ROCK" => 0, "PAPER" => 2, "SCISSORS" => 1},
       "SCISSORS" => {"ROCK" => 1, "PAPER" => 0, "SCISSORS" => 2}
     }
-    @outcomes = ["You Win!", "GameBot wins!", "It's a draw"]
-  end
-
-  def player1_choice(player1_choice)
-    @player1_choice = player1_choice
+    @outcomes = ["You Win!", "GameBot wins!", "It's a draw!"]
   end
 
   def player2_choice(player2_choice)
