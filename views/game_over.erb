@@ -20,6 +20,8 @@
       <div id='outer' class='header'><%= $game.result %></div>
     <% end %>
 
+    <div class='subheader'>Player: <%= $game.tally[:player] %> Computer: <%= $game.tally[:computer] %> Draws: <%= $game.tally[:draws] %></div>
+
     <form style='text-align:center' action='/play'>
       <input class='button' type='submit' value='Play again?' />
     </form>

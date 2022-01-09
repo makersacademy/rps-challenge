@@ -1,6 +1,6 @@
 body {
   height: 100%;
-  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
   margin: 0;
   padding: 0;
   font-family: 'Amatic SC', cursive;
@@ -10,7 +10,7 @@ body {
 .header {
   padding: 20px;
   text-align: center;
-  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  background-color: transparent;
   color: black;
   font-size: 80px;
 }
@@ -18,7 +18,7 @@ body {
 .subheader {
   padding: 20px;
   text-align: center;
-  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  background-color: transparent;
   color: black;
   font-size: 60px;
 }
