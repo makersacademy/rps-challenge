@@ -20,7 +20,13 @@ end
 get '/play' do
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
+    @shape = session[:shape]
     erb :play
+end
+
+post '/play' do
+  session[:shape] = params[:shape]
+  redirect '/play'
 end
   
 

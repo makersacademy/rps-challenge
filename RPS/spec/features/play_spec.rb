@@ -7,9 +7,16 @@ feature "playing RPS" do
         fill_in :player_2, with: 'Silvia' 
         click_button 'Submit'
     end
-  scenario "marketeer chooses either r,p,s" do
-    expect(page).to have_content "Rock"
-    expect(page).to have_content "Paper"
-    expect(page).to have_content "Scissors"
-  end
+
+    scenario "marketeer chooses either r,p,s" do
+      expect(page).to have_button "Rock"
+      expect(page).to have_button "Paper"
+      expect(page).to have_button "Scissors"
+    end
+
+
+    scenario "choose a shape" do
+      click_button "Rock"
+      expect(page).to have_content "You chose Rock!"
+    end
 end
