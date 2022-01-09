@@ -19,6 +19,7 @@ class Rps < Sinatra::Base
     @player = Player.new(params[:player])
     # game should not be a global variable!
     # How to change this?
+    # Saving game to session did not work- 'singleton can't be dumped' error
     $game = Game.new(@player)
     redirect to '/play'
   end
