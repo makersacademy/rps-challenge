@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/game'
+require './lib/computer'
 
 class BookmarkManager < Sinatra::Base
   configure :development do
@@ -26,6 +27,7 @@ class BookmarkManager < Sinatra::Base
 
   post '/play' do
     session[:player_choice] = params[:player_choice]
+    session[:computer_choice] = Computer.new.move
     redirect('/result')
   end
 
@@ -33,6 +35,8 @@ class BookmarkManager < Sinatra::Base
     @game = Game.new(session)
     @player_name = @game.player_name
     @player_choice = @game.player_choice
+    @computer_choice = @game.computer_choice
+    @outcome = @game.assign_outcome
     erb :result
   end  
 

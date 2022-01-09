@@ -1,1 +1,10 @@
  <%= @player_name %> picked <%= @player_choice %>
+ <br><br>
+Computer picked <%= @computer_choice %>
+<br><br>
+You <%= @outcome %>
+<br><br>
+
+<form action="/play" method="get"> 
+  <input type="submit" value="Play Again?">
+</form>
