@@ -12,7 +12,7 @@ require 'simplecov'
 require 'simplecov-console'
 
 # tell Capybara to talk to BookMarkManager
-Capybara.app = BookMarkManager
+Capybara.app = RPS
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
