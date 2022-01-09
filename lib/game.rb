@@ -7,7 +7,7 @@ class Game
       "PAPER" => {"ROCK" => 0, "PAPER" => 2, "SCISSORS" => 1},
       "SCISSORS" => {"ROCK" => 1, "PAPER" => 0, "SCISSORS" => 2}
     }
-    @outcomes = ["You Win!", "GameBot wins!", "It's a draw!"]
+    @outcomes = ["Player 1 Wins!", "Player 2 Wins!", "It's a draw!"]
   end
 
   def player2_choice(player2_choice)
@@ -23,7 +23,6 @@ class Game
   def result
     @outcomes[@scenarios[@player1_choice][@player2_choice]]
   end
-
 
   def computer_choice
     ["ROCK", "PAPER", "SCISSORS"].sample

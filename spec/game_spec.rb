@@ -16,7 +16,7 @@ describe Game do
     end
 
     it 'returns the winner or tie' do
-      expect(["You Win!", "GameBot wins!", "It's a draw!"]).to include(game.summary[2])
+      expect(["Player 1 Wins!", "Player 2 Wins!", "It's a draw!"]).to include(game.summary[2])
     end
   end
 end

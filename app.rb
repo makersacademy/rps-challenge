@@ -1,11 +1,11 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/game'
+require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
-    also_reload './lib/game'
+    also_reload './lib/game.rb'
   end
 
   enable :sessions
