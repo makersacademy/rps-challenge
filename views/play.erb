@@ -1,7 +1,8 @@
-<%=@name1 %> & <%=@name2 %> has joined and are ready.  <br><br>
+<h1> Squid Game </h1>
+<h2> First Players Move </h2>
 
 <! name is select name = "first_move">
-Look away <%=@name2 %> <br> <br> 
+Look away <%=@name2 %>. Your turn is second.  <br> <br> 
 <form action="/moves" method="post"">
       <label for="move1"><%=@name1 %>'s Move  </label>
       <select name="first_move" id="move1">

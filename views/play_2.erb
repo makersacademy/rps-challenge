@@ -1,3 +1,8 @@
+<h1> Squid Game </h1>
+<h2> Next Players Move </h2>
+
+<! name is select name = "first_move">
+Your turn <%=@name2 %>. Make sure <%=@name1 %> isn't peaking.  <br> <br> 
 <form action="/moves2" method="post"">
       <label for="move2"><%=@name2 %>'s Move  </label>
       <select name="second_move" id="move2">
@@ -7,3 +12,4 @@
       </select>
       <input type="submit" value="Submit" />
 </form>
+

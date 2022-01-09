@@ -39,6 +39,7 @@ class MyApp < Sinatra::Base
   end 
 
   get '/play_2' do 
+    @name1 = $game.player1
     @name2 = $game.player2
     erb(:play_2)
   end 

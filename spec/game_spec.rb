@@ -24,30 +24,25 @@ describe Game do
     end
   end 
 
-  # describe '#move2' do 
-  #   it 'stores the second move' do 
-  #     game = Game.new
-  #     expect(game.move2('Paper')).to eq('Paper')
-  #   end 
-  # end
-
   describe '#result' do
+  let(:player1) {double :player }
+  let(:player2) {double :player }
+  subject(:game) { described_class.new(:player1, :player2) }
+
     it 'recognises a win' do 
-      game = Game.new('Josh', 'Peter')
       game.move1 = 'Rock'
       game.move2 = 'Scissor'
       expect(game.result(game.move1, game.move2)).to eq("#{game.player1} is the winner!")
+      
     end 
 
     it 'recognises a draw' do 
-      game = Game.new('Josh', 'Peter')
       game.move1 = 'Rock'
       game.move2 = 'Rock'
       expect(game.result(game.move1, game.move2)).to eq("It's a DRAW!")
     end 
 
     it 'recognises a loss' do 
-      game = Game.new('Josh', 'Peter')
       game.move1 = 'Scissor'
       game.move2 = 'Rock'
       expect(game.result(game.move1, game.move2)).to eq("Sorry, this time #{game.player2} is the winner.")
