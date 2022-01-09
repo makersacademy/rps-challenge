@@ -20,7 +20,6 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @game = Game.new(session)
-    @player_1_name = @game.player_1_name
     erb :play
   end
 
