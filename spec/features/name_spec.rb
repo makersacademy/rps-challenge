@@ -1,9 +1,7 @@
-feature 'name' do
-  scenario 'displays name' do
-    visit '/'
-    fill_in :name1, with: 'Jack'
-    click_button 'Submit'
-
+feature 'names' do
+  scenario 'displays names' do
+    enter_names
     expect(page).to have_content 'Jack'
+    expect(page).to have_content 'Jill'
   end
 end

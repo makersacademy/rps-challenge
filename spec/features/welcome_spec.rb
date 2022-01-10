@@ -4,9 +4,9 @@ feature 'home' do
     expect(page).to have_content 'Welcome to Rock, Paper, Scissors'
   end
 
-  scenario 'enter name' do
+  scenario 'enter names' do
     visit '/'
-    expect(page).to have_content 'Please enter your name:'
+    expect(page).to have_content 'Please enter your names:'
   end
 
   scenario 'submit button' do
