@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player'
 
 class RPS < Sinatra::Base
   configure :development do
@@ -12,17 +13,17 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_name] = params[:player_name]
+    $player_1 = Player.new(params[:player_name])
     redirect '/play'
   end
   
   get '/play' do 
-    @player_name = session[:player_name]
+    @player_1 = $player_1
     erb :play
   end
 
   post '/result' do
-    @player_name =  session[:player_name]
+    @player_1 =  $player_1
     erb :results
   end
   run! if app_file == $0
