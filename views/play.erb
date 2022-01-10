@@ -7,7 +7,7 @@
   </head>
 
   <body>
-    <div class='header'><%= "#{$game.player}" %> vs Computer!! </div>
+    <div class='header'><%= "#{session[:player]}" %> vs Computer!! </div>
     
     <div id='outer'>
       <form style='text-align:center' method='post' action='/move'>

@@ -16,7 +16,7 @@ class RPSGame < Sinatra::Base
   post '/names' do
     session[:player] = params[:player_1_name].capitalize
     # I promise to never use global variables in tech tests
-    $game = Game.new(session[:player])
+    $game = Game.new
   
     redirect '/play'
   end

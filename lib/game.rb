@@ -3,8 +3,7 @@ class Game
 
   MOVES = ['Rock', 'Paper', 'Scissors'].freeze
 
-  def initialize(player)
-    @player = player
+  def initialize
     @tally = { player: 0, computer: 0, draws: 0 }
   end
 

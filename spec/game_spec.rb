@@ -1,12 +1,8 @@
 require 'game'
 
 describe 'Game' do
-  subject(:game) { Game.new(player) }
+  subject(:game) { Game.new }
   let(:player) { double :player }
-  
-  it 'returns player names' do
-    expect(game.player).to eq player
-  end
 
   it 'gives correct outcome' do
     expect(game.outcome('Rock', 'Scissors')).to eq :win
