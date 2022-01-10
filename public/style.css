@@ -1,0 +1,91 @@
+/* HOMEPAGE */
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.title__main{
+  font-size: 2.5em;
+  -webkit-animation: glitch 3s infinite;
+  animation: glitch 3s infinite;
+  text-align: center;
+  -webkit-text-fill-color: yellow;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: #d0bc06;
+  transition-timing-function: ease-in-out;
+  margin-bottom: -50px;
+}
+
+@keyframes glitch {
+    0%  {padding-right: 10px; }
+    50%  {padding-left: 20px; }
+    100% {padding-right: 10px; }
+}
+
+.div--main{
+  width: 80%;
+  height: 50%;
+  padding: 10px;
+  margin: auto;
+  border: black 5px solid;
+  border-top: black 46px solid;
+}
+
+.form--main {
+  text-align: center;
+  margin: 2px auto 10px;
+  border: grey 0.5px solid;
+}
+
+.title__sub {
+  margin-bottom: -2px;
+}
+
+.input {
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+.btn {
+  margin: 10px auto;
+  display: block;
+  width: 60px;
+  border-radius: 5px;
+}
+
+.img__svg{
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.btn--choice {
+  border-radius: 20%;
+  border: none;
+  outline-color: green;
+}
+
+.img__svg--multi {
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px 2px;
+  border: solid white 2px;
+  border-radius: 20%;
+}
+
+.img__svg--multi:active {
+  border: solid 2px green ;
+}
+
+@media only screen and (min-width: 800px) {
+  .div--main {
+    margin: 25px auto;
+    width: 30%;
+  }
+  .title__main {
+    margin: 25px auto -75px;
+  }
+}
