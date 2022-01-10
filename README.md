@@ -45,6 +45,10 @@ Hints on functionality
 - Run ```rackup```
 - Visit ```http://localhost:9292/```
 - Click away as you please!
+![Screenshot 1](/screenshots/screenshot1.png)
+![Screenshot 1](/screenshots/screenshot2.png)
+![Screenshot 1](/screenshots/screenshot3.png)
+![Screenshot 1](/screenshots/screenshot4.png)
 ---
 ## Running Tests
 
