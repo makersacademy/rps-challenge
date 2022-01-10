@@ -11,7 +11,7 @@
     <div class='subheader'> You chose <%= @move %> and Computer chose <%= @computer_move %> so...</div>
     <div id='outer' class='header'>You win!!</div>
 
-    <div class='subheader'>Player: <%= $game.tally[:player] %> Computer: <%= $game.tally[:computer] %> Draws: <%= $game.tally[:draws] %></div>
+    <div class='subheader'>Player: <%= session[:tally][:player] %> Computer: <%= session[:tally][:computer] %> Draws: <%= session[:tally][:draws] %></div>
 
     <form style='text-align:center' action='/play'>
       <input class='button' type='submit' value='Play again?' />

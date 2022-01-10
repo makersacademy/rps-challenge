@@ -38,7 +38,8 @@ I decided to add a way to keep track of the score to keep users clicking :)
 
 ### Things I'd Like to Improve
 
-- I've used a global variable to instantiate the Game class which needs to go as soon as possible!
 - I'd really like to make it multiplayer
 - It's my first time using CSS and I think there might be a lot of redundancies and things in the
 stylesheet
+- I haven't made any effort to account for edge cases
+- Everything about how the tally works is so ugly :(
