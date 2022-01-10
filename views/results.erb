@@ -1,12 +1,13 @@
-<p><%= @name1 %> picked: <%= @player1_choice %></p>
-<p id='player2'><%= @name2 %> picked: <%= @player2_choice %></p>
-<p>The results are in: <%= @result %></p>
+<p><%= @name1 %> picked: <%= @player1_choice.upcase %></p>
+<p id='player2'><%= @name2 %> picked: <%= @player2_choice.upcase %></p>
+<p>The results are in:</p>
 
-<% if @result == "Player 1 Wins!" %>
-  <p>Congratulations <%= @name1 %>!</p>
-<% elsif @result == "Player 2 Wins!" %>
-  <p>Congratulations <%= @name2 %>!</p>
+<% if @winner == 1 %>
+  <p>Congratulations, <%= @name1 %>!</p>
+<% elsif @winner == 2 %>
+  <p>Congratulations, <%= @name2 %>!</p>
 <% else %>
+  <p>It's a draw!</p>
   <form action='/play1' method='get'>
     <input type='submit' value='Rematch?'>
   </form>

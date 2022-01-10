@@ -1,11 +1,13 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/game.rb'
+require './lib/game'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
     also_reload './lib/game.rb'
+    also_reload './lib/player.rb'
   end
 
   enable :sessions
@@ -16,6 +18,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/mode' do
     session[:mode] = params[:mode]
+    session[:player2] = Player.new if session[:mode] == "gamebot"
     redirect '/deets'
   end
 
@@ -25,35 +28,36 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do 
-    session[:name1] = params[:name1]
-    session[:name2] = session[:mode] == "gamebot" ? "GameBot" : params[:name2]
+    session[:player1name] = params[:name1]
+    session[:player2name] = params[:name2]
     redirect '/play1'
   end
 
   get '/play1' do 
     session[:game] = nil
-    @name1 = session[:name1]
+    @name1 = session[:player1name]
     erb(:play1)
   end
 
   post '/select1' do
-    session[:game] = Game.new(params[:player1choice])
+    session[:player1] = Player.new(session[:player1name], params[:player1choice])
     session[:mode] == "gamebot" ? (redirect '/results') : (redirect '/play2')
   end
 
   get '/play2' do
-    @name2 = session[:name2]
+    @name2 = session[:player2name]
     erb(:play2)
-  end
+  end 
 
   post '/select2' do
-    session[:game].player2_choice(params[:player2choice])
+    session[:player2] = Player.new(session[:player2name], params[:player2choice])
     redirect '/results'
   end
 
   get '/results' do
-    @name1, @name2 = session[:name1], session[:name2]
-    @player1_choice, @player2_choice, @result = session[:game].summary
+    @name1, @name2 = session[:player1].name, session[:player2].name
+    @player1_choice, @player2_choice = session[:player1].choice, session[:player2].choice
+    @winner = Game.new(session[:player1], session[:player2]).winner
     erb(:results)
   end
 end
