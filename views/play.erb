@@ -1,6 +1,6 @@
-<%= @player_name %> vs. Computer
+<%= @gameplay.player_name %> vs. Computer
 <br>
-<%= @player_name %>'s turn. Choose your move
+<%= @gameplay.player_name %>'s turn. Choose your move
 <br>
 <form method="POST" action='/play'>
 <input type="submit" name='player_choice' value='Rock'></input>
@@ -9,10 +9,12 @@
 <br>
 <input type="submit" name='player_choice' value='Scissors'></input>
 </form>
-<%= @player_name %> chose <%= @player_choice %>
+<%= @gameplay.player_name %> chose <%= @gameplay.player_choice %>
 
-Your opponent chose <%= @computer_choice %>
+<div id='computer_choice'>
+  Computer chose <%= ['Rock', 'Paper', 'Scissors'].sample %> 
+</div 
 
-<% if @turn.win? %>
-<%= @player_name %> wins!
+<% if @gameplay.win? %>
+ You win!
 <% end %>

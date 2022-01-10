@@ -1,86 +1,16 @@
 # RPS Challenge
 
-Instructions
--------
+Weekend challenge (week 2) of Makers bootcamp. 
+I created a Rock Paper Scissors game on the web to meet these user story requirements: 
+* player can register my name before playing the online game
+* player can play rock/paper/scissors
+* player is presented the choices (rock, paper and scissors)
+* player can choose one of those options
+* game/computer chooses a random option (rock, paper, scissors)
+* winner will be declared
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+I am partway through satisfying the final requirement i.e. implementing methods within the model layer that calculate a result (win/lose/draw, using a hash of hashes - see Gameplay.rb) and a win? method to return true/false dependent on result. Currently struggling to fix errors in all my feature tests due to @player_choice and @opponent_choice being nil. Think it's because the if @turn.win? is calling the result and win methods and looking for @player_choice and @opponent choice right after we enter player name but before the choices aren't defined... therefore they are nil. 
+NoMethodError:
+       undefined method `[]' for nil:NilClass
 
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-[You may find this guide to setting up a new Ruby web project helpful.](https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md)
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/main/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+nb: I got stuck on a few steps of how to implement this challenge, and I learned a lot on how to implement this sort of game from youtube video Sam Morgan

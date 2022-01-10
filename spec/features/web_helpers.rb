@@ -7,5 +7,6 @@ end
 def computer_options
   ['Rock', 'Paper', 'Scissors'].map do 
     |option| 'Computer chose ' + option
-  end
 end
+
+end 

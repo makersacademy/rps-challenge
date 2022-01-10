@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/gameplay'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -18,13 +19,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do 
-    session[:player_choice] = params[:player_choice]
+    session[:player_choice] = params[:player_choice].to_sym
     session[:opponent_choice] = Opponent.new.random_choice
     redirect '/play'
   end
 
-  get '/play' do # originally I had 3 instance var but refactored so that these are contained within a Gameplay class, the Model layer
-    @gameplay = Gameplay.new(session) #session being a hash of the params 
+  get '/play' do 
+    @gameplay = Gameplay.new(session) 
     erb :play
   end
 
