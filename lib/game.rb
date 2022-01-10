@@ -17,27 +17,27 @@ class Game
   def result
     if @computer_selection == 'Rock'
       if @selection == 'Rock'
-        'It is a tie!'
+        'Result: It is a tie!'
       elsif @selection == 'Paper'
-        '#{@player} Wins!!!'
+        'Result: Player Wins!!!'
      else
-        'Computer Wins!!!'
+        'Result: Computer Wins!!!'
      end
     elsif @computer_selection == 'Paper'
       if @selection == 'Rock'
-        'Computer Wins!!!'
+        'Result: Computer Wins!!!'
       elsif @selection == 'Paper'
-        'It is a tie!'
+        'Result: It is a tie!'
      else
-        '#{@player} Wins!!!'
+        'Result: Player Wins!!!'
      end
     else
       if @selection == 'Rock'
-        '#{@player} Wins!!!'
+        'Result: Player Wins!!!'
       elsif @selection == 'Paper'
-        'Computer Wins!!!'
+        'Result: Computer Wins!!!'
      else
-        'It is a tie!'
+        'Result: It is a tie!'
      end
     end
   end

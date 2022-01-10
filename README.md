@@ -9,3 +9,12 @@ Rock Paper Scissors Game
  - I set up the game class to receive the players name and choice from app.rb
 
  - I wrote the tests to give the result of who wins, and have begun the code but not been able to complete it yet.
+
+ - I finished the code to calculate the results and show them on the results page.
+
+ ---------
+ 
+ Things I would like to do next to improve the program:
+
+- I want to get rid of the global variables
+- I want to set it up for multiple players
