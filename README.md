@@ -7,3 +7,5 @@ Rock Paper Scissors Game
  - I added buttons so the player can pick out of Rock, Paper and Scissors to play. They are redirected to the results page that shows their choice.
 
  - I set up the game class to receive the players name and choice from app.rb
+
+ - I wrote the tests to give the result of who wins, and have begun the code but not been able to complete it yet.
