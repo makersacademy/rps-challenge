@@ -17,26 +17,23 @@ class Rps < Sinatra::Base
 
   post '/name' do
     @player = Player.new(params[:player])
-    # game should not be a global variable!
-    # How to change this?
-    # Saving game to session did not work- 'singleton can't be dumped' error
-    $game = Game.new(@player)
+    Game.create(@player)
     redirect to '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
     erb :play
   end
 
   post '/choice' do
-    @game = $game
+    @game = Game.instance
     @game.player.save_choice(params[:choice])
     redirect to '/result'
   end
 
   get '/result' do
-    @game = $game
+    @game = Game.instance
     @computer_choice = @game.make_choice
     erb @game.give_result(@computer_choice)
   end

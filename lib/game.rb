@@ -1,6 +1,15 @@
 require './lib/player'
 
 class Game
+
+  def self.create(player)
+    @instance = Game.new(player)
+  end
+
+  def self.instance
+    @instance
+  end
+
   attr_reader :player
   
   WEAPONS = [:rock, :paper, :scissors]
