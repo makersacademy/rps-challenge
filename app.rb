@@ -1,17 +1,21 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/turn'
+require './lib/opponent'
 
  class MyApp < Sinatra::Base 
-    enable :sessions
+ 
     configure :development do
         register Sinatra::Reloader 
     end 
+
+    enable :sessions
 
     get '/' do
         erb :index
     end 
 
-    post '/names' do 
+    post '/name' do 
         session[:player_name] = params[:player_1_name]
         redirect '/play'
     end 
