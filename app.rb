@@ -32,13 +32,12 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play1' do 
     session[:game] = nil
-    @name1, @name2 = session[:name1], session[:name2]
+    @name1 = session[:name1]
     erb(:play1)
   end
 
   post '/select1' do
-    session[:player1_choice] = params[:player1]
-    session[:game] = Game.new(session[:player1_choice])
+    session[:game] = Game.new(params[:player1choice])
     session[:mode] == "gamebot" ? (redirect '/results') : (redirect '/play2')
   end
 
@@ -48,8 +47,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/select2' do
-    session[:player2_choice] = params[:player2]
-    session[:game].player2_choice(session[:player2_choice])
+    session[:game].player2_choice(params[:player2choice])
     redirect '/results'
   end
 
