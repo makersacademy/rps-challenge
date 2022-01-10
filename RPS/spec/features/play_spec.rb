@@ -3,10 +3,7 @@ require 'spec_helper'
 feature "playing RPS" do
   PLAY_SEED = 221563
     before do
-        visit('/')
-        fill_in :player_name, with: 'Vanessa'
-        
-        click_button 'Submit'
+      sign_in_and_play
     end
 
     scenario "marketeer chooses either r,p,s" do

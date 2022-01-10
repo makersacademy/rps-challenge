@@ -1,9 +1,6 @@
 feature "player names" do
   scenario "show player names" do
-    visit('/')
-    fill_in :player_name, with: 'Vanessa'
-    
-    click_button 'Submit'
+    sign_in_and_play
     
     save_and_open_page
 
