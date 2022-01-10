@@ -1,9 +1,17 @@
 class Game
-  attr_reader :computer
+  attr_reader :computer, :player, :selection
 
-  def computer_pick
+  def initialize(player)
+    @player = player
+  end
+
+  def computer
     choices = ['Rock', 'Paper', 'Scissors']
-    @computer = choices[rand(2)]
+    choices[rand(2)]
+  end
+
+  def player_selection(selection)
+    @selection = selection
   end
 
 end
