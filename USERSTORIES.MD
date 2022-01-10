@@ -38,7 +38,7 @@ I would like to register my name before playing an online game
 ____________________
 noun     |   verb
 ---------|----------
-maketeer | see
+marketeer | see
 name     | register 
 game     | 
 
@@ -52,7 +52,7 @@ I would like to be able to play rock/paper/scissors
 ____________________
 noun     |   verb
 ---------|----------
-maketeer | enjoy
+marketeer | enjoy
 I        | play 
 
 takeaway ---> .menu ---> { dishes & prices }

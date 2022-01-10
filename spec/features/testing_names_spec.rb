@@ -6,7 +6,7 @@ feature 'Submitting first players name' do
         visit('/')
         fill_in :player_1, with: 'Ellz'
         click_on 'Submit'
-        #asser
+        #assert
         expect(page).to have_content('Ellz')
     end
 end
