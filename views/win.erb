@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link href="<%= url('/style.css') %>" rel='stylesheet' type='text/css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <img src='/images/confetti.png' id='confetti'/>
+    <div class='subheader'> You chose <%= @move %> and Computer chose <%= @computer_move %> so...</div>
+    <div id='outer' class='header'>You win!!</div>
+
+    <div class='subheader'>Player: <%= $game.tally[:player] %> Computer: <%= $game.tally[:computer] %> Draws: <%= $game.tally[:draws] %></div>
+
+    <form style='text-align:center' action='/play'>
+      <input class='button' type='submit' value='Play again?' />
+    </form>
+  </body>
+</html>

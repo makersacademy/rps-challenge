@@ -40,7 +40,7 @@ class RPSGame < Sinatra::Base
     @move = session[:move]
     @computer_move = session[:computer_move]
     
-    erb :game_over
+    erb @result
   end
 
   run! if app_file == $0

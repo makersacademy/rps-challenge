@@ -9,9 +9,9 @@ describe 'Game' do
   end
 
   it 'gives correct outcome' do
-    expect(game.outcome('Rock', 'Scissors')).to eq 'You win!!'
-    expect(game.outcome('Rock', 'Rock')).to eq 'Draw!!'
-    expect(game.outcome('Rock', 'Paper')).to eq 'You lose!!'
+    expect(game.outcome('Rock', 'Scissors')).to eq :win
+    expect(game.outcome('Rock', 'Rock')).to eq :draw
+    expect(game.outcome('Rock', 'Paper')).to eq :lose
   end
 
   it 'keeps score' do
