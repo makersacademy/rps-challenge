@@ -3,7 +3,7 @@ require 'sinatra/reloader'
 require './lib/game'
 require './lib/player'
 
-class RockPaperScissors < Sinatra::Base
+class RockPaperScissorsLizardSpock < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
     also_reload './lib/game.rb'
@@ -18,7 +18,6 @@ class RockPaperScissors < Sinatra::Base
 
   post '/mode' do
     session[:mode] = params[:mode]
-    session[:player2] = Player.new if session[:mode] == "gamebot"
     redirect '/deets'
   end
 
@@ -34,13 +33,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play1' do 
-    session[:game] = nil
     @name1 = session[:player1name]
     erb(:play1)
   end
 
   post '/select1' do
     session[:player1] = Player.new(session[:player1name], params[:player1choice])
+    session[:player2] = Player.new
     session[:mode] == "gamebot" ? (redirect '/results') : (redirect '/play2')
   end
 
