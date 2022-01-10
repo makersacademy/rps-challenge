@@ -1,6 +1,20 @@
+# set the environment to "test"
+ENV['RACK_ENV'] = 'test'
+
+# Bring in the contents of the `app.rb` file. The below is equivalent to: require_relative '../app.rb'
+require(File.join(File.dirname(__FILE__), '..', 'app.rb'))
+
+# require all the testing gems
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+# tell Capybara to talk to BookMarkManager
+Capybara.app = RPS
+
+require(File.join(File.dirname(__FILE__), '/features', 'web_helpers.rb'))
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
