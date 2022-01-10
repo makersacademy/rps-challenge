@@ -1,0 +1,12 @@
+<form action='/name' method='post'>
+  <p>Enter your name:</p>  
+  <input type='text' name='name1'>
+  <% if @mode == "humans" %>
+    <br/>
+    <p>and your name too:</p>  
+    <input type='text' name='name2'>
+  <% end %>
+  <br/>
+  <br/>
+  <input type='submit' value='Play!'>
+</form>
