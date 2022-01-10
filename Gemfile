@@ -6,6 +6,8 @@ gem 'sinatra'
 gem 'sinatra-reloader'
 gem 'webrick'
 gem 'rack'
+gem 'selenium'
+gem 'selenium-webdriver'
 
 group :test do
   gem 'capybara'
