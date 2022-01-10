@@ -15,35 +15,38 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do 
-    @player = $game.player
+    @game = Game.instance
     erb :play
   end
 
   get '/result' do
-    @game = $game
+    @game = Game.instance
     erb :result
   end
 
   post '/name' do
-    $game = Game.new(params['name'])
+    @game = Game.create(params['name'])
     redirect '/play'
   end
 
   post '/rock' do
     selection = 'Rock'
-    $game.player_selection(selection)
+    @game = Game.instance
+    @game.player_selection(selection)
     redirect '/result'
   end
 
   post '/paper' do
     selection = 'Paper'
-    $game.player_selection(selection)
+    @game = Game.instance
+    @game.player_selection(selection)
     redirect '/result'
   end
 
   post '/scissors' do
     selection = 'Scissors'
-    $game.player_selection(selection)
+    @game = Game.instance
+    @game.player_selection(selection)
     redirect '/result'
   end
 

@@ -42,4 +42,16 @@ class Game
     end
   end
 
+  def self.create(player)
+    if @instance {
+      return @instance
+    }
+    @instance = Game.new(player)
+    return @instance
+  end
+
+  def self.instance
+    return @instance
+  end
+
 end

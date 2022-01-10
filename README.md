@@ -16,5 +16,6 @@ Rock Paper Scissors Game
  
  Things I would like to do next to improve the program:
 
-- I want to get rid of the global variables
+- I want to get rid of the global variables (I have now done this using the singleton method)
+
 - I want to set it up for multiple players
