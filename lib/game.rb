@@ -1,7 +1,7 @@
 class Game
   attr_reader :player, :result, :tally
 
-  MOVES = ['Rock', 'Paper', 'Scissors']
+  MOVES = ['Rock', 'Paper', 'Scissors'].freeze
 
   def initialize(player)
     @player = player

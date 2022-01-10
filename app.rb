@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require_relative './lib/player'
 require_relative './lib/game'
 
 class RPSGame < Sinatra::Base
@@ -15,9 +14,9 @@ class RPSGame < Sinatra::Base
   end
 
   post '/names' do
-    player = Player.new(params[:player_1_name].capitalize)
+    session[:player] = params[:player_1_name].capitalize
     # I promise to never use global variables in tech tests
-    $game = Game.new(player.name)
+    $game = Game.new(session[:player])
   
     redirect '/play'
   end
@@ -39,7 +38,7 @@ class RPSGame < Sinatra::Base
     @result = $game.outcome(session[:move], session[:computer_move])
     @move = session[:move]
     @computer_move = session[:computer_move]
-    
+
     erb @result
   end
 
