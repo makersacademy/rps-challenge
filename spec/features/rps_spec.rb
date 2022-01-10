@@ -3,6 +3,7 @@ feature 'name submission' do
     sign_in_and_play
     expect(page).to have_content("Hannah – it's time to play Rock, Paper, Scissors!")
   end
+
 end
 feature 'play game' do 
   scenario 'player is presented choices' do
