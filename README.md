@@ -1,86 +1,45 @@
-# RPS Challenge
-
-Instructions
--------
-
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+### Rock, Paper, Scissors Challenge
 
 ```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
 ```
 
-Hints on functionality
+### The Challenge
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+This is the third weekend challenge of the Makers Academy bootcamp. The challenge was to create a web app
+Rock, Paper, Scissors game using Sinatra. I've deployed it through Heroku and you can play it [here](http://rockpaperscissors-42.herokuapp.com/).
 
+### My Approach
 
-As usual please start by
+I started out by using a TDD approach to make a very basic, not so user-friendly game that met the
+requirements in a very simple way. I had the vague thought that modulo could be used to decide the outcome
+of the game, and after a quick google, came across [this article](https://therenegadecoder.com/code/rock-paper-scissors-using-modular-arithmetic/) and adapted the method for my code.
+After I had a playable game, I set about refactoring and making the user experience more enjoyable.
+I decided to add a way to keep track of the score to keep users clicking :)
 
-* Forking this repo
-* TEST driving development of your app
+### Things I'd Like to Improve
 
-[You may find this guide to setting up a new Ruby web project helpful.](https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md)
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/main/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+- I'd really like to make it multiplayer
+- It's my first time using CSS and I think there might be a lot of redundancies and things in the
+stylesheet
+- I haven't made any effort to account for edge cases
+- Everything about how the tally works is so ugly :(
