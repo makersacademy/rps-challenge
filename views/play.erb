@@ -1,0 +1,17 @@
+<%= @player1_name %> vs. <%= @player2_name %>
+<br><br>
+<%= @player1_name %>, please, select your choice (No peeking <%= @player2_name %>!):
+<form action = '/player1_choice' method = 'post'>
+  <input type = 'submit' value = 'Rock' name='player1_choice'>
+  <input type = 'submit' value = 'Paper' name='player1_choice'>
+  <input type = 'submit' value = 'Scissors' name='player1_choice'>
+</form>
+<br><br>
+<%= @player2_name %>, please, select your choice (No peeking <%= @player1_name %>!):
+<form action = '/player2_choice' method = 'post'>
+  <input type = 'submit' value = 'Rock' name='player2_choice'>
+  <input type = 'submit' value = 'Paper' name='player2_choice'>
+  <input type = 'submit' value = 'Scissors' name='player2_choice'>
+</form>
+<br><br>
+<%= @player1_choice %> vs. <%= @player2_choice %>
