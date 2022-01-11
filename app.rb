@@ -34,8 +34,7 @@ class Rps < Sinatra::Base
 
   get '/result' do
     @game = Game.instance
-    @computer_choice = @game.make_choice
-    erb @game.give_result(@computer_choice)
+    erb @game.give_result
   end
 
   run! if app_file == $0

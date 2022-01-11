@@ -1,7 +1,7 @@
 feature 'randomising computer move' do
 
   before do
-    allow_any_instance_of(Game).to receive(:make_choice)  { 'paper' }
+    allow_any_instance_of(Array).to receive(:sample)  { 'paper' }
   end
 
   scenario 'display computer move' do

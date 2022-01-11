@@ -1,3 +1,4 @@
+# not sure if we need this require 
 require './lib/player'
 
 class Game
@@ -10,7 +11,7 @@ class Game
     @instance
   end
 
-  attr_reader :player
+  attr_reader :player, :computer_choice
   
   WEAPONS = [:rock, :paper, :scissors]
   
@@ -23,13 +24,18 @@ class Game
     @choices = choices
   end
 
-  def make_choice
-    @choices.sample
-  end
-
-  def give_result(computer_choice)
+  
+  def give_result
+    @computer_choice = make_choice
     return :draw if @player.choice.to_sym == computer_choice.to_sym
     return :win if RULES[player.choice.to_sym] == computer_choice.to_sym
     :loss
+  end
+  
+
+  private
+  
+  def make_choice
+    @choices.sample
   end
 end
