@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
 require './lib/computer'
+require './lib/game'
 
 
 class RpsChallenge < Sinatra::Base
@@ -31,6 +32,7 @@ class RpsChallenge < Sinatra::Base
   
   post '/game' do
     session[:play_option] = params[:play_option]
+    
     redirect('/game')
   end
 
@@ -39,6 +41,7 @@ class RpsChallenge < Sinatra::Base
     @play_option = session[:play_option]
     $computer = Computer.new
     @computer_weapon = $computer.select_move
+    @result = Game.new.result(@play_option, @computer_weapon)
     erb :game
   end
 
