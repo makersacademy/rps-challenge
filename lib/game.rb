@@ -1,6 +1,3 @@
-# not sure if we need this require 
-require './lib/player'
-
 class Game
 
   def self.create(player)
@@ -32,7 +29,6 @@ class Game
     :loss
   end
   
-
   private
   
   def make_choice
