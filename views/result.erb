@@ -1,0 +1,10 @@
+ <head> 
+  <title>The winner is...</title>
+  <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+</head>
+<div>
+  <p><%= @game.winner %></p>
+  <form action="/play" method="get">
+    <input type="submit" value="Play More">
+  </form>
+</div>
