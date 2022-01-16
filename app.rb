@@ -1,5 +1,5 @@
-require "sinatra/base"
-require "sinatra/reloader"
+require 'sinatra/base'
+require 'sinatra/reloader'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -7,19 +7,28 @@ class RPS < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get "/" do
+  get '/' do
     erb :index
   end
   
-  post "/name" do
+  post '/name' do
     session[:name] = params[:name]
-    redirect "/play"
+    redirect '/play'
   end
 
-  get "/play" do
+  get '/play' do
     @name = session[:name]
+    @move = session[:move]
     erb :play
+  end
+
+  post '/play' do
+    session[:move] = params[:move]
+    redirect '/play'
   end
   
   run! if app_file == $0
 end
+
+
+   
