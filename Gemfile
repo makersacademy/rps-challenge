@@ -1,8 +1,13 @@
 source 'https://rubygems.org'
 
-ruby '3.0.2'
+ruby '3.0.0'
 
 gem 'sinatra'
+gem 'sinatra-reloader'
+gem 'webrick'
+gem 'rack'
+gem 'selenium'
+gem 'selenium-webdriver'
 
 group :test do
   gem 'capybara'
