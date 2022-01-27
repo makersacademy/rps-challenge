@@ -50,9 +50,18 @@ Total rspec testing coverage: 100%; 28 rspec tests; rubocop passed with no offen
 
 ### Interaction:
 
-![Screenshot](./media/screenshot.png)
+![Screenshot](./media/screenrecording.gif)
 
 1. Enter a name for Player 1 and press Enter to play a single-player game against the computer. If you also enter a name for Player 2, you will play a multiplayer game
 2. Choose a Pokemon for Player 1
 3. If playing a multiplayer game, Player 2 will then be prompted to choose their Pokemon
 4. You will be presented with the result. Play again, or return to the sign-in page
+
+### Technologies:
+
+Pokemon png files are linked from [Bulbagarden](https://bulbapedia.bulbagarden.net/wiki/Main_Page) and are used in line with their [guidance](https://bulbapedia.bulbagarden.net/wiki/File:Spr_5b_114.png).
+
+- Ruby
+- Sinatra
+- Rspec
+- Capybara
