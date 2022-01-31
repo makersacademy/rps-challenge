@@ -2,12 +2,6 @@
 
 class Computer
   def random_gesture
-    %w[rock paper scissors][random_choice]
-  end
-
-  private
-
-  def random_choice
-    rand(0..2)
+    %w[rock paper scissors][rand(0..2)]
   end
 end

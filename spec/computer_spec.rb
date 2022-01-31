@@ -11,7 +11,7 @@ RSpec.describe Computer do
     end
 
     it 'chooses paper' do
-      random_to_return(1)
+      srand(123_456)
 
       gesture = subject.random_gesture
 
@@ -19,7 +19,7 @@ RSpec.describe Computer do
     end
 
     it 'chooses rock' do
-      random_to_return(0)
+      srand(0)
 
       gesture = subject.random_gesture
 
@@ -27,15 +27,11 @@ RSpec.describe Computer do
     end
 
     it 'chooses scissors' do
-      random_to_return(2)
+      srand(123_458)
 
       gesture = subject.random_gesture
 
       expect(gesture).to eq 'scissors'
     end
-  end
-
-  def random_to_return(number)
-    allow(subject).to receive(:random_choice).and_return(number)
   end
 end
