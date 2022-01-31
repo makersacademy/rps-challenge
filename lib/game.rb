@@ -10,7 +10,7 @@ class Game
   def result(play_one, play_two)
     return :draw if play_one == play_two
 
-    player_one_win?(play_one, play_two) ? :player_one : :player_two
+    player_one_win?(play_one, play_two) ? :player_one_win : :player_two_win
   end
 
   private

@@ -17,7 +17,7 @@ RSpec.describe Game do
 
         result = subject.result(player_one, :scissors)
 
-        expect(result).to eq :player_one
+        expect(result).to eq :player_one_win
       end
 
       it 'returns player_two symbol' do
@@ -25,7 +25,7 @@ RSpec.describe Game do
 
         result = subject.result(:scissors, player_two)
 
-        expect(result).to eq :player_two
+        expect(result).to eq :player_two_win
       end
     end
     context 'when scissors beats paper' do
@@ -34,7 +34,7 @@ RSpec.describe Game do
 
         result = subject.result(player_one, :paper)
 
-        expect(result).to eq :player_one
+        expect(result).to eq :player_one_win
       end
 
       it 'returns player_two symbol' do
@@ -42,7 +42,7 @@ RSpec.describe Game do
 
         result = subject.result(:paper, player_two)
 
-        expect(result).to eq :player_two
+        expect(result).to eq :player_two_win
       end
     end
     context 'when paper beats rock' do
@@ -51,7 +51,7 @@ RSpec.describe Game do
 
         result = subject.result(player_one, :rock)
 
-        expect(result).to eq :player_one
+        expect(result).to eq :player_one_win
       end
 
       it 'returns player_two symbol' do
@@ -59,7 +59,7 @@ RSpec.describe Game do
 
         result = subject.result(:rock, player_two)
 
-        expect(result).to eq :player_two
+        expect(result).to eq :player_two_win
       end
     end
   end
