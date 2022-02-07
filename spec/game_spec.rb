@@ -24,15 +24,16 @@ describe Game do
     end
   end
 
-  # this is not stubbing out the randomness currently!
-  # xdescribe '#computer_turn' do
-  # let(:@computer) { double :@computer }
-  #   it 'returns the game instance' do
-  #     game = Game.create(p1)
-  #     allow(@computer).to receive(:choose).and_return( "Rock" )
-  #     expect(game.computer_turn).to eq "Rock"
-  #   end
-  # end
+  # this is now stubbing randomness
+  describe '#computer_turn' do
+  let(:computer) { double :computer }
+    it 'returns the computer choice' do
+      allow(computer).to receive(:new).and_return( @computer )
+      allow(@computer).to receive(:choose).and_return( "Rock" )
+      game = Game.create(p1, computer)
+      expect(game.computer_turn).to eq "Rock"
+    end
+  end
 
   describe '#outcome' do
     let(:judge) { double :judge }

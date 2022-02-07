@@ -7,15 +7,15 @@ require './lib/judge'
 class Game
   attr_reader :player_1, :player_choice, :computer_choice
 
-  def initialize(player_1, computer = Computer)
+  def initialize(player_1, computer)
     @player_1 = player_1
     @computer = computer.new
     @player_choice = nil
     @computer_choice = nil
   end
 
-  def self.create(player_1)
-    @game = Game.new(player_1)
+  def self.create(player_1, computer = Computer)
+    @game = Game.new(player_1, computer)
   end
 
   def self.instance
