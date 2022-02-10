@@ -1,6 +1,8 @@
 require 'sinatra'
 require "sinatra/reloader" if development?
 
+require File.join(File.dirname(__FILE__), 'lib', 'player.rb')
+
 class RPS < Sinatra::Base
 
   configure :development do
@@ -14,12 +16,13 @@ class RPS < Sinatra::Base
   end
 
   post '/register_name' do
-    session[:player_name] = params[:player_name]
+    # Using globals until I know more about databases with Sinatra
+    $player = Player.new(params[:player_name])
     redirect('/play')
   end
 
   get '/play' do
-    @player_name = session[:player_name]
+    @player = $player
     erb(:play)
   end
 
