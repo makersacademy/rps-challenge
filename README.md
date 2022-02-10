@@ -1,5 +1,23 @@
 # RPS Challenge
 
+## Author Notes
+
+----------------------
+ This is a rock paper scissor game played through a web interface.
+
+## Installation
+----------------------
+
+Install gems with [bundler](https://bundler.io/ "bundler") 
+~~~~
+bundle install 
+~~~~
+To install code from the latest source
+~~~~
+git@github.com:nyahehnagi/rps-challenge.git
+~~~~
+
+
 Instructions
 -------
 

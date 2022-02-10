@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
 
-ruby '3.0.2'
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
+ruby '3.0.0'
 
 gem 'sinatra'
+gem "sinatra-contrib"
+gem 'webrick'
 
 group :test do
   gem 'capybara'
