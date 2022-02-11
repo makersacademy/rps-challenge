@@ -14,19 +14,19 @@ class RPS < Sinatra::Base
 
   helpers do
     # Using PStore to store state
-    # names need to be unique
     def add_player(player)
-      data = PStore.new("#{player.name}.pstore")
+      data = PStore.new("#{player.id}.pstore")
       data.transaction do  
-        data[player.name] = player.name 
+        data[player.id] = [player.id,player.name]
         data.commit
       end
     end
 
-    def load_player(name)
-      data = PStore.new("#{name}.pstore")
+    def load_player(player_id)
+      data = PStore.new("#{player_id}.pstore")
+      p "Player ID: #{player_id}"
       data.transaction do
-        Player.new(data[name])
+        Player.new(data[player_id].first,data[player_id].last )
       end
     end
 
@@ -37,14 +37,15 @@ class RPS < Sinatra::Base
   end
 
   post '/register_name' do
-    session[:player_name] = params[:player_name]
-    add_player(Player.new(session[:player_name]))
+    player = Player.new(params[:player_name])
+    session[:player_id] = player.object_id
+    add_player(player)
     redirect('/play')
   end
 
   get '/play' do
-    @player = load_player(session[:player_name])
-    p "Player Name is: #{@player.name}"
+    @player = load_player(session[:player_id])
+    p "Player Name is: #{@player.id}"
     erb(:play)
   end
 

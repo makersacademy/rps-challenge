@@ -1,9 +1,10 @@
 class Player
 
-  attr_reader :name
+  attr_reader :name, :id
 
-  def initialize(name)
+  def initialize(id = self.object_id, name)
     @name = name
+    @id = id
   end
   
 end
