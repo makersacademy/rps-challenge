@@ -1,4 +1,4 @@
-feature "The infrastructure", type: :feature do
+xfeature "The infrastructure", type: :feature do
   scenario "It shows us helllo world" do
     visit '/'
     expect(page).to have_content "Hello World"

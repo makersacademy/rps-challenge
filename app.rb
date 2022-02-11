@@ -5,9 +5,21 @@ class Rps < Sinatra::Base
   configure :devlopment do
     register Sinatra::Reloader
   end
+  
+  enable :sessions
 
     get '/' do
-      "Hello World"
+      erb :index
+    end
+
+    post '/name' do
+      session[:name] = params[:name]
+      redirect '/play'
+    end
+
+    get '/play' do
+      @name = session[:name]
+      erb :play  
     end
 
   run! if @app_file == $0
