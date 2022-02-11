@@ -3,7 +3,7 @@
 My notes
 -------
 
-Run 'rackup', then open localhost:(port name)
+Run 'rackup', then open localhost:(port name) in your web browser
 
 
 Challenge Instructions
