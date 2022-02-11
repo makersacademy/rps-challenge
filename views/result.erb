@@ -5,7 +5,21 @@
 <h1>Rock, Paper, Scissors</h1>
 <h2>A true game of skill...</h2>
 
-
+<%= @game.player_one.name %>, you played <b><%=@game.player_one.weapon.to_s.upcase%></b><br>
+Your opponent played  <b><%= @game.player_two.weapon.to_s.upcase%></b><br><br>
 <% if @result == :win %>
-  <%= @game.player_one.name %>, your opponent played <%= @game.player_two.weapon.to_s%>, you win!
+  You win!
 <% end %>
+
+<% if @result == :lose %>
+  You lose!
+<% end %>
+
+<% if @result == :draw %>
+  You draw!
+<% end %>
+
+<br><br>
+<form action="/play" method="get">
+<input type="submit" value="Play Again?"> 
+</form>

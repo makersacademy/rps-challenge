@@ -1,12 +1,11 @@
 class Player
 
-  attr_reader :name, :id
-  attr_accessor :weapon
+  attr_reader :name, :weapon
+  # attr_accessor :weapon
 
-  def initialize(name, id = object_id)
+  def initialize(name, weapon = "")
     @name = name
-    @id = id
-    @weapon = ""
+    @weapon = weapon
   end
   
 end

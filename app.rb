@@ -14,50 +14,27 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
-  # Change these to store data in ./data
-  # extract Pstore processing into a separate class
-  helpers do
-    # Using PStore to store state
-    def add_player(player)
-      data = PStore.new("#{player.id}.pstore")
-      data.transaction do  
-        data[player.id] = [player.id,player.name]
-        data.commit
-      end
-    end
-
-    def load_player(player_id)
-      data = PStore.new("#{player_id}.pstore")
-      data.transaction do
-        Player.new(data[player_id].last, data[player_id].first)
-      end
-    end
-  end
-
   get '/' do
     erb(:index)
   end
 
   post '/register_name' do
-    player = Player.new(params[:player_name])
-    session[:player_id] = player.object_id
-    add_player(player)
+    session[:player_name] = params[:player_name]
     redirect('/play')
   end
 
   get '/play' do
-    @player = load_player(session[:player_id])
+    @player = session[:player_name]
     erb(:play)
   end
 
   post '/move' do
-    session[:player_choice] = params[:selection]
+    session[:player_choice] = params[:selection].to_sym
     redirect('/result')
   end
 
   get '/result' do
-    player = load_player(session[:player_id])
-    player.weapon = session[:player_choice].to_sym
+    player = Player.new(session[:player_name], session[:player_choice]) 
     @game = Game.new(player, BotPlayer.new)
     @result = @game.play_game
     erb(:result)
