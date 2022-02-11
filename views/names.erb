@@ -1,1 +1,8 @@
-Hello, and welcome to Rock, Paper, Scissors <%= @player_name %>
+<h1>Rock Paper Scissors</h1>
+
+<p>Hello <%= @player_name %> welcome to Rock, Paper, Scissors</p>
+
+<p>When ready, please hit Start Game</p>
+
+<form action="/start_game" method=get>
+<input type="submit" value="Start Game">
