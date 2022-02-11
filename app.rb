@@ -8,7 +8,11 @@ class Rps < Sinatra::Base
   end
 
 get "/" do
-  "Welcome to Rps"
+  erb :index
+end
+
+post "/register" do
+  erb :register
 end
 
 run! if app_file == $0
