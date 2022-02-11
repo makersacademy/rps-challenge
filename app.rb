@@ -3,6 +3,8 @@ require "sinatra/reloader" if development?
 require 'pstore'
 
 require File.join(File.dirname(__FILE__), 'lib', 'player.rb')
+require File.join(File.dirname(__FILE__), 'lib', 'game.rb')
+require File.join(File.dirname(__FILE__), 'lib', 'botplayer.rb')
 
 class RPS < Sinatra::Base
 
@@ -26,12 +28,10 @@ class RPS < Sinatra::Base
 
     def load_player(player_id)
       data = PStore.new("#{player_id}.pstore")
-      p "Player ID: #{player_id}"
       data.transaction do
         Player.new(data[player_id].last, data[player_id].first)
       end
     end
-
   end
 
   get '/' do
@@ -47,8 +47,20 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player = load_player(session[:player_id])
-    p "Player Name is: #{@player.id}"
     erb(:play)
+  end
+
+  post '/move' do
+    session[:player_choice] = params[:selection]
+    redirect('/result')
+  end
+
+  get '/result' do
+    player = load_player(session[:player_id])
+    player.weapon = session[:player_choice].to_sym
+    @game = Game.new(player, BotPlayer.new)
+    @result = @game.play_game
+    erb(:result)
   end
 
   # Start the server if this file is executed directly 

@@ -9,12 +9,15 @@
 <br>
 <br>
 
-<input type="radio" id="paper" name="selection">
+<form action="/move" method="post">
+<input type="radio" id="paper" value="paper" name="selection">
 <label for="paper">PAPER</label>
-<input type="radio" id="scissors" name="selection">
+<input type="radio" id="scissors" value="scissors" name="selection">
 <label for="paper">SCISSORS</label>
-<input type="radio" id="rock" name="selection">
+<input type="radio" id="rock" value="rock" name="selection">
 <label for="paper">ROCK</label>
+<input type="submit" value="Play"> 
+</form>
 
 </body>
 </html>

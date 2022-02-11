@@ -12,4 +12,9 @@ describe Player do
     expect(player.id).to eq 1
   end
 
+  it "has a weapon" do
+    player.weapon = "paper"
+    expect(player.weapon).to eq "paper"
+  end
+
 end
