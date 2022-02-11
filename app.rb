@@ -12,6 +12,8 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  # Change these to store data in ./data
+  # extract Pstore processing into a separate class
   helpers do
     # Using PStore to store state
     def add_player(player)
@@ -26,7 +28,7 @@ class RPS < Sinatra::Base
       data = PStore.new("#{player_id}.pstore")
       p "Player ID: #{player_id}"
       data.transaction do
-        Player.new(data[player_id].first,data[player_id].last )
+        Player.new(data[player_id].last, data[player_id].first)
       end
     end
 

@@ -2,7 +2,7 @@ require_relative '../lib/player'
 
 describe Player do
 
-  subject(:player) { described_class.new(1, "Bob") }
+  subject(:player) { described_class.new("Bob", 1) }
 
   it "has a name" do
     expect(player.name).to eq "Bob"

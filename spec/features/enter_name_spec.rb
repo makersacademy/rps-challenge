@@ -4,9 +4,7 @@
 
 feature "Registering name to play the game" do
   scenario 'submit player name' do
-    visit '/'
-    fill_in :player_name, with: "Bob"
-    click_button 'Register'
-    expect(page).to have_content 'Bob you have registered to play'
+    visit_and_sign_on
+    expect(page).to have_content 'Bob, are you ready to play?'
   end
 end

@@ -11,10 +11,8 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
-
 # tell Capybara about the app class
 Capybara.app = RPS
-
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
