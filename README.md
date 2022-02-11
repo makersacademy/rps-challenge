@@ -1,6 +1,12 @@
 # RPS Challenge
 
-Instructions
+My notes
+-------
+
+Run 'rackup', then open localhost:(port name)
+
+
+Challenge Instructions
 -------
 
 * Feel free to use google, your notes, books, etc. but work on your own
