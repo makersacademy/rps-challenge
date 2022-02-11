@@ -29,3 +29,7 @@ To run a locally hosted server of the site
 rackup
 ~~~~
 from the root directory of the installation
+
+Navigate to http://localhost:9292/
+
+Play the game
