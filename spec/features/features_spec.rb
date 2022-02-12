@@ -33,4 +33,12 @@ feature 'Plays Rock, Paper, Scissors' do
     expect(page).to have_button("Scissors")
   end
 
+  scenario 'player makes a move' do
+    register
+    click_button "Play"
+    click_button "Rock"
+    expect(page).to have_content("Marketeer chose Rock")
+
+  end
+
 end

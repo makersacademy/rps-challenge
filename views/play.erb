@@ -1,7 +1,14 @@
 Game Started
 
-<form>
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+<form action="/move" method="post">
+  <input type="submit" name="move" value="Rock">
+  <input type="submit" name="move" value="Paper">
+  <input type="submit" name="move" value="Scissors">
 </form>
+
+<% if $game.chosen_move.nil? %>
+<%= "Make a move" %>
+<% else %>
+<%= $game.player.name %> chose <%= $game.chosen_move %>
+<% end %>
+
