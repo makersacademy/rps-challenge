@@ -29,6 +29,7 @@ class RPS < Sinatra::Base
   end
 
   post '/move' do
+    redirect('/play') if params.empty?
     session[:player_choice] = params[:selection].to_sym
     redirect('/result')
   end

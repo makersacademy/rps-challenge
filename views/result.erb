@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<body style="background-color:#e6ffe6;">
-
-<h1>Rock, Paper, Scissors</h1>
-<h2>A true game of skill...</h2>
+<%=erb(:header)%>
 
 <%= @game.player_one.name %>, you played <b><%=@game.player_one.weapon.to_s.upcase%></b><br>
 Your opponent played  <b><%= @game.player_two.weapon.to_s.upcase%></b><br><br>
@@ -23,3 +18,5 @@ Your opponent played  <b><%= @game.player_two.weapon.to_s.upcase%></b><br><br>
 <form action="/play" method="get">
 <input type="submit" value="Play Again?"> 
 </form>
+
+<%=erb(:footer)%>
