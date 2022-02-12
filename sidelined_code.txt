@@ -1,0 +1,32 @@
+
+<%= @game.player_1 %> vs. the computer
+<br>
+<%= @game.player_1 %>, make your choice below
+<br>
+<% if @game.player_choice.nil? %>
+<!-- SHOW BUTTON SELECTION, html code -->
+<form action="/play" method="post">
+  <input type="radio" id="rock" name="choice" value="Rock">
+  <label for="rock">Rock</label><br>
+  <input type="radio" id="paper" name="choice" value="Paper">
+  <label for="paper">Paper</label><br>
+  <input type="radio" id="scissors" name="choice" value="Scissors">
+  <label for="scissors">Scissors</label>
+  <input type="submit" value="Submit">
+</form>
+<% else %>
+<!-- SHOW RESULT OF PREVIOUS -->
+<% @game.outcome %>
+<!-- AND -->
+<!-- SHOW BUTTON SELECTION, html code -->
+<form action="/play" method="post">
+  <input type="radio" id="rock" name="choice" value="Rock">
+  <label for="rock">Rock</label><br>
+  <input type="radio" id="paper" name="choice" value="Paper">
+  <label for="paper">Paper</label><br>
+  <input type="radio" id="scissors" name="choice" value="Scissors">
+  <label for="scissors">Scissors</label>
+  <input type="submit" value="Submit">
+</form>
+<% end %>
+<br>
