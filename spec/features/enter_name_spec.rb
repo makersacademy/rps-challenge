@@ -35,14 +35,14 @@ feature "Registering names to play the game" do
       expect(page).to have_content 'Bob, are you ready to play?'
     end
 
-    scenario 'submit an empty player name for player 2' do
+    scenario 'submit an empty player name for player 1' do
       select_human_opponent
       fill_in :player_one, with: "Bob"
       click_button 'Register'
       expect(page).to have_content 'Please enter your name'
     end
 
-    scenario 'submit an empty player name for player 1' do
+    scenario 'submit an empty player name for player 2' do
       select_human_opponent
       fill_in :player_two, with: "Fred"
       click_button 'Register'
