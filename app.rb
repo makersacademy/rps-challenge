@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do 
@@ -22,13 +23,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/result' do
-    session[:choice] = params[:choice]
+    $player.choose(params[:choice])
     redirect '/winner'
   end
 
   get '/winner' do
     @player_name = $player.name
-    @choice = session[:choice]
+    @choice = $player.chosen_option
     erb :winner
   end
 
