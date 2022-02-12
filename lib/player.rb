@@ -1,12 +1,12 @@
 class Player
 
-  attr_reader :name, :move, :computer_score, :your_score
+  attr_reader :name, :move, :computer_score, :your_score, :result
 
-  def initialize(name="Mystery Person")
+  def initialize(name = "Mystery Person")
     @name = name
-    @move
     @computer_score = 0
     @your_score = 0
+  
 
   end
 
@@ -23,10 +23,22 @@ class Player
   end
 
   def play
-   outcome(@move)
+    return unless @move != nil
+    result = outcome(@move)
+    score(result)
+    result
   end
 
       private 
+
+  def score(result)
+    if result.include?("win")
+      @your_score += 1
+    elsif result.include?("lose")
+      @computer_score += 1
+    else
+    end
+  end
 
   def computer
     ["ROCK", "PAPER", "SCISSORS"].sample
@@ -34,32 +46,26 @@ class Player
 
   def outcome(choice)
     case choice
-    when"ROCK"
+    when "ROCK"
       if computer == "SCISSORS"
-        @your_score += 1
         "ROCK beats SCISSORS. #{@name} wins!"
       elsif computer == "PAPER"
-        @computer_score += 1
         "SCISSORS beats ROCK. #{@name} loses!"
       else
         "DRAW"
       end
     when "PAPER"
       if computer == "SCISSORS"
-        @computer_score += 1
         "SCISSORS beats PAPER.  #{@name} loses!"
       elsif computer == "ROCK"
-        @your_score += 1
         "PAPER beats ROCK. #{@name} wins!"
       else
         "DRAW"
       end
     when "SCISSORS"
-      if  computer == "ROCK"
-        @computer_score += 1
+      if computer == "ROCK"
         "ROCK beats SCISSORS. #{@name} loses!"
-      elsif  computer == "PAPER"
-        @your_score += 1
+      elsif computer == "PAPER"
         "SCISSORS beats PAPER. #{@name} wins!"
       else
         "DRAW"
