@@ -7,7 +7,7 @@ class Game < Sinatra::Base
   end
 
   enable :sessions
-  
+
   get '/' do
     erb :index
   end
@@ -20,6 +20,11 @@ class Game < Sinatra::Base
   get '/play' do
     @player_1 = session[:player_1_name]
     erb :play
+  end
+
+  get '/selection' do
+    @selection = params[:subject]
+    erb :selection
   end
 
 

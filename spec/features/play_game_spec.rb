@@ -10,6 +10,8 @@ feature 'Play game' do
   end
 
   scenario "Players selection is displayed" do
-    
+    sign_in_and_play
+    click_button('Rock')
+    expect(page).to have_content 'You have chosen Rock'
   end
 end
