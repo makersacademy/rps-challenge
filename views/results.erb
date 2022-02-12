@@ -4,4 +4,7 @@
 
 <p>The computer selected <%= @cpu_move %></p>
 
-<p><%= @player_name %> you <%= session[:result] %></p>
+<p><%= @player_name %> you <%= @result.confirm_result %></p>
+
+<form action="/" method="get">
+  <input type="submit" value="Play again?">

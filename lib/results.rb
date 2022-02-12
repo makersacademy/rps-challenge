@@ -15,7 +15,7 @@ attr_reader :player_name, :player_move, :cpu_move
     elsif @calc_win[cpu_move] == player_move
       "Lose"
     else
-      "Draw"
+      "Drew"
     end
   end
   

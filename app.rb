@@ -29,7 +29,7 @@ class RockPaperScissor < Sinatra::Base
     @move = params[:move]
     game = StartGame.new
     @cpu_move = game.random_move
-    session[:result] = Results.new(@player_name, @move, @cpu_move)
+    @result = Results.new(@player_name.to_sym, @move.to_sym, @cpu_move.to_sym)
     erb(:results)
   end
 

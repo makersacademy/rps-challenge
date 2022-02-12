@@ -13,7 +13,7 @@ describe Results do
     it 'should result in a draw if player and cpu select same move' do
       allow(result).to receive(:player_move).and_return(:Rock)
       allow(result).to receive(:cpu_move).and_return(:Rock)
-      expect(result.confirm_result).to eq "Draw"
+      expect(result.confirm_result).to eq "Drew"
     end
   end
 
