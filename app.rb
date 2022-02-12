@@ -1,8 +1,8 @@
-require "sinatra/base"
+require "sinatra"
 # require 'sinatra/reloader' if development?
 require './lib/game'
 
-class RPS < Sinatra::Base
+# class RPS < Sinatra::Base
 
   # configure :development do
   #   register Sinatra::Reloader
@@ -29,6 +29,6 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
-  run! if app_file == $0
+  # run! if app_file == $0
 
-end
+# end
