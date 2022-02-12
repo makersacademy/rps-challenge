@@ -11,8 +11,11 @@ class Rockpaperscissors < Sinatra::Base
   end
 
   get '/signin' do
-    #erb(:index)
     erb(:signin)
+  end
+
+  post '/object' do
+    erb(:object)
   end
 
 
