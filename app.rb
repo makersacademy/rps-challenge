@@ -6,13 +6,20 @@ class Game < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :sessions
+  
   get '/' do
     erb :index
   end
 
   post '/name' do
-    @player_1 = params[:player_1_name]
-    "New Challenger: #{@player_1}"
+    session[:player_1_name] = params[:player_1_name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_1 = session[:player_1_name]
+    erb :play
   end
 
 
