@@ -64,7 +64,7 @@ feature "playing a move" do
       expect(page).to have_content "Fred wins!"
     end
 
-    scenario "Player 2 wins" do
+    scenario "It's a draw" do
       human_and_sign_on
       choose('rock')
       click_button('Play')
