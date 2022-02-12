@@ -8,7 +8,7 @@ require 'simplecov'
 require 'simplecov-console'
 
 # tell Capybara to talk to Rock_paper_Scissors
-Capybara.app = Rock_paper_scissors
+Capybara.app = RockPaperScissors
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

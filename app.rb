@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 
-class Rock_paper_scissors < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
   configure :development do 
     register Sinatra::Reloader
   end
@@ -11,8 +11,13 @@ class Rock_paper_scissors < Sinatra::Base
     erb :start
   end
 
-  post '/name' do
-    @player_name = params[:player_name]
+  post '/names' do
+    session[:player_name] = params[:player_name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_name = session[:player_name]
     erb :play
   end
 
