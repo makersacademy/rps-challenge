@@ -1,9 +1,20 @@
 <%=erb(:header)%>
 
-Please enter your name:
-<form action="/register_name" method="post">
-<input type="text" name="player_name"> 
-<input type="submit" value="Register"> 
-</form>
+<%if @game_type == :computer %>
+  Please enter your name:
+  <form action="/register_name" method="post">
+  <input type="text" name="player_one"> 
+  <input type="submit" value="Register"> 
+  </form>
+<%end%>
+
+<%if @game_type == :human %>
+  Please enter your names:
+  <form action="/register_name" method="post">
+  <input type="text" name="player_one"> 
+  <input type="text" name="player_two"> 
+  <input type="submit" value="Register"> 
+  </form>
+<%end%>
 
 <%=erb(:footer)%>

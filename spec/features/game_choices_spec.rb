@@ -1,7 +1,7 @@
 feature "play choices available to the player" do
 
   scenario "user selects paper option" do
-    visit_and_sign_on
+    computer_and_sign_on
     choose('rock')
     choose('paper')
     expect(find_field("paper")).to be_checked
@@ -10,7 +10,7 @@ feature "play choices available to the player" do
   end
 
   scenario "user selects rock option" do
-    visit_and_sign_on
+    computer_and_sign_on
     choose('paper')
     choose('rock')
     expect(find_field("paper")).not_to be_checked
@@ -19,7 +19,7 @@ feature "play choices available to the player" do
   end
 
   scenario "user selects scissors option" do
-    visit_and_sign_on
+    computer_and_sign_on
     choose('paper')
     choose('scissors')
     expect(find_field("paper")).not_to be_checked

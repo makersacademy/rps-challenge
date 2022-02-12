@@ -1,6 +1,6 @@
 feature "play again?" do
   scenario "the player click play again" do
-    visit_and_sign_on
+    computer_and_sign_on
     choose('paper')
     click_button('Play')
     click_button('Play Again?')

@@ -18,22 +18,23 @@ class RPS < Sinatra::Base
   end
 
   post '/game_type' do
-    session[:game_type] = params[:game_type]
+    session[:game_type] = params[:game_type].to_sym
     redirect('/enter_names')
   end
 
   get '/enter_names' do
+    @game_type = session[:game_type]
     erb(:names)
   end
 
   post '/register_name' do
-    redirect('/enter_names') if params[:player_name].empty?
-    session[:player_name] = params[:player_name]
+    redirect('/enter_names') if params[:player_one].empty?
+    session[:player_one] = params[:player_one]
     redirect('/play')
   end
 
   get '/play' do
-    @player = session[:player_name]
+    @player = session[:player_one]
     erb(:play)
   end
 
@@ -44,7 +45,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    player = Player.new(session[:player_name], session[:player_choice]) 
+    player = Player.new(session[:player_one], session[:player_choice]) 
     @game = Game.new(player, BotPlayer.new)
     @result = @game.play_game
     erb(:result)

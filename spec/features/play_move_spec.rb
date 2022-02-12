@@ -5,7 +5,7 @@ feature "playing a move" do
   end
 
   scenario "the player wins" do
-    visit_and_sign_on
+    computer_and_sign_on
     choose('paper')
     click_button('Play')
     expect(page).to have_content "Bob, you played PAPER"
@@ -14,7 +14,7 @@ feature "playing a move" do
   end
 
   scenario "the player loses" do
-    visit_and_sign_on
+    computer_and_sign_on
     choose('scissors')
     click_button('Play')
     expect(page).to have_content "Bob, you played SCISSORS"
@@ -23,7 +23,7 @@ feature "playing a move" do
   end
 
   scenario "the player draw" do
-    visit_and_sign_on
+    computer_and_sign_on
     choose('rock')
     click_button('Play')
     expect(page).to have_content "Bob, you played ROCK"

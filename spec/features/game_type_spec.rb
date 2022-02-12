@@ -11,4 +11,10 @@ feature "selecting single or 2 player game" do
     expect(page).to have_content('Please enter your name:')
   end
 
+  scenario "game vs human is selected" do
+    visit('/')
+    click_button("human")
+    expect(page).to have_content('Please enter your names:')
+  end
+
 end
