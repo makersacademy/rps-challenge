@@ -6,6 +6,6 @@ feature 'Register names' do
     visit('/')
     fill_in('player_1_name', with: 'Jack')
     click_button('Submit')
-    expec(page).to have_content 'New Challenger: Jack'
+    expect(page).to have_content 'New Challenger: Jack'
   end
 end

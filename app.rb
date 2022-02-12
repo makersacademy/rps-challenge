@@ -7,7 +7,12 @@ class Game < Sinatra::Base
   end
 
   get '/' do
-    
+    erb :index
+  end
+
+  post '/name' do
+    @player_1 = params[:player_1_name]
+    "New Challenger: #{@player_1}"
   end
 
 
