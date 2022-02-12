@@ -6,8 +6,6 @@ class RPS < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  #enable :sessions
-
   get '/' do
     erb(:index)
   end
@@ -15,6 +13,10 @@ class RPS < Sinatra::Base
   get '/game' do
     @player = $player
     erb(:game)
+  end
+
+  get '/play' do
+    erb(:play)
   end
 
   post '/login' do
