@@ -1,6 +1,9 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 
+require './lib/start_game.rb'
+require './lib/results.rb'
+
 class RockPaperScissor < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
@@ -22,8 +25,11 @@ class RockPaperScissor < Sinatra::Base
   end
 
   get '/results' do
-    @move = params[:move]
     @player_name = session[:player_name]
+    @move = params[:move]
+    game = StartGame.new
+    @cpu_move = game.random_move
+    @result = Results.new(@player_name, @move, @cpu_move)
     erb(:results)
   end
 

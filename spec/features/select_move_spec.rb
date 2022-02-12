@@ -13,7 +13,7 @@ feature 'select move' do
     expect(page).to have_content "Ben, you selected Paper"
   end
 
-  scenario 'when you select Scissort it should present your choice' do
+  scenario 'when you select Scissors it should present your choice' do
     register_to_play
     click_button 'Start Game'
     click_button 'Scissors'

@@ -1,5 +1,4 @@
-require 'game'
-require 'names'
+require 'start_game'
 
 feature 'start game' do
   scenario 'A new game begins when Start Game button pressed' do

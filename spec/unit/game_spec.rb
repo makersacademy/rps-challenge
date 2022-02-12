@@ -1,3 +1,3 @@
-describe Game do
+describe StartGame do
   subject(:game) { described_class.new }
 end
