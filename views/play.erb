@@ -4,13 +4,44 @@
 <head> 
   <title> Rock, paper, Scissors</title>
   <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+  <style>
+    html, body {
+      height: 100%;
+    }
+    html {
+        display: table;
+        margin: auto;
+    }
+    body {
+      font-family: "Audiowide", sans-serif;
+      margin: auto;
+      display: table-cell;
+      vertical-align: middle;
+    }
+</style>
 </head>
-  <body>
-    <h1> Okay <%= @name %>... Make your move</h1>
-    <form>
-      <input type="submit" value="ROCK"> 
-      <input type="submit" value="PAPER"> 
-      <input type="submit" value="SCISSORS"> 
-    </form>
-  </body>
+<body>
+     Okay <%= @player.name %>... Make your move
+   <h3> <%= @player.play%><h3>
+     <form action="/paper" method="post">
+        <input type="submit" value="PAPER">
+      <input type="submit" value="SCISSORS" formaction="/scissors">
+      <input type="submit" value="ROCK" formaction="/rock">
+   </form>
+  <label>
+    Computer
+    <%= @player.computer_score %>
+  </label>
+  <label>
+  <%= @player.name %>
+   <%= @player.your_score %>
+   </label>
+   </body>
 </html>
+
+
+
+
+ 
+  

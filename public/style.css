@@ -1,8 +1,5 @@
-h1 {
-  color: green;
-  font-family: verdana;
-  font-size: 300%;
-  }
+
+
   input {
     color: red;
     margin: 20px;
@@ -10,3 +7,11 @@ h1 {
   label{
     color: green;
   }
+  html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}

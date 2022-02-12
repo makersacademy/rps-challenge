@@ -1,9 +1,8 @@
-feature "we see the start of the game" do
-  scenario "player enters their name and sees it printed with the game raeady to play" do
-    sign_in_and_play
-    expect(page).to have_content "Okay Eddie... Make your move"
-    expect(page).to have_button("ROCK")
-    expect(page).to have_button("PAPER")
-    expect(page).to have_button("SCISSORS")
+feature "The home page" do
+  scenario "we see the Rock Paper scissor index page" do
+    visit '/'
+    expect(page).to have_content "Let's Rock Paper Scissor"
+    expect(page).to have_field("name")
+    expect(page).to have_button("Let's Play")
   end
 end
