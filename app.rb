@@ -6,8 +6,20 @@ class RPS < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  #enable :sessions
+
   get '/' do
-    "Infrastructure Test"
+    erb(:index)
+  end
+  
+  get '/game' do
+    @player = $player
+    erb(:game)
+  end
+
+  post '/login' do
+    $player = params["player"]
+    redirect '/game'
   end
 
   run! if app_file == $0
