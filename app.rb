@@ -14,8 +14,12 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = Player.new(params[:name])
-    redirect '/play'
+    if params[:name].empty?
+      redirect '/'
+    else
+      session[:name] = Player.new(params[:name])
+      redirect '/play'
+    end
   end
 
   get '/play' do
