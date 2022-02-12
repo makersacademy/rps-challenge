@@ -10,7 +10,7 @@ class RPSgame < Sinatra::Base
 
   # our routes would go here
   get '/' do
-    'Testing infrastructure working!'
+    erb :index
   end
 
   # # Start the server if this file is executed directly (do not change the line below)
