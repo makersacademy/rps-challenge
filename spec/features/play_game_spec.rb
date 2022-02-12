@@ -1,4 +1,4 @@
-require_relative '../../app.rb'
+require_relative '../../app'
 
 feature 'Play game' do
   # As a marketeer
@@ -23,4 +23,11 @@ feature 'Play game' do
     click_button('Rock')
     expect(page).to have_content "The Computer has chosen "
   end
+
+  # scenario "The player wins" do
+  #   sign_in_and_play
+  #   click_button('Rock')
+  #   # $selection.computer = 'Scissors'
+  #   expect(page).to have_content "You win!"
+  # end
 end

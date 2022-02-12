@@ -24,10 +24,9 @@ class Game < Sinatra::Base
   end
 
   get '/selection' do
-    @selection = Selection.new(params[:subject])
+    $selection = Selection.new(params[:subject])
     erb :selection
   end
-
 
   run! if app_file == $0
 end
