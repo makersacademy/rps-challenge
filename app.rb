@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/game'
 
 
 class Rps < Sinatra::Base
@@ -13,6 +14,14 @@ end
 
 post "/register" do
   erb :register
+end
+
+post "/play" do
+  erb :play
+end
+
+post "/result" do
+  erb :result
 end
 
 run! if app_file == $0
