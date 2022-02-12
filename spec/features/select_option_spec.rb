@@ -8,6 +8,6 @@ feature 'select option' do
     click_button 'Play'
     choose(option: 'Scissors')
     click_button 'Play'
-    expect(page).to have_content 'Marie choose Scissors'
+    expect(page).to have_content 'Marie chose Scissors'
   end
 end
