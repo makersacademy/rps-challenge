@@ -5,9 +5,15 @@ class Rock_paper_scissors < Sinatra::Base
   configure :development do 
     register Sinatra::Reloader
   end
+  enable :sessions
 
   get '/' do
-    'Starting RPS application!'
+    erb :start
+  end
+
+  post '/name' do
+    @player_name = params[:player_name]
+    erb :play
   end
 
   run! if app_file == $0
