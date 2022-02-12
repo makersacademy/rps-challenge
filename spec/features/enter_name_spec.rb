@@ -16,4 +16,10 @@ feature "Registering name to play the game" do
     click_button 'Register'
     expect(page).to have_content 'Anne, are you ready to play?'
   end
+
+  scenario 'submit an empty player name' do
+    visit '/'
+    click_button 'Register'
+    expect(page).to have_content 'Please enter your name'
+  end
 end

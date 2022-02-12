@@ -19,6 +19,7 @@ class RPS < Sinatra::Base
   end
 
   post '/register_name' do
+    redirect('/') if params[:player_name].empty?
     session[:player_name] = params[:player_name]
     redirect('/play')
   end
