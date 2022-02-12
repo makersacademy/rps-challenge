@@ -1,3 +1,17 @@
 <h1>
-  <%= @player_name %> choose:
+  <%= @player_name %> 
+  <br>
+  choose
+  <br>
+  one
 </h1>
+<form>
+  <input type="radio" id="rock" name="choice" value="Rock">
+  <label for="rock">Rock</label> <br>
+  <input type="radio" id="paper" name="choice" value="Paper">
+  <label for="paper">Paper</label> <br>
+  <input type="radio" id="scissors" name="choice" value="Scissors">
+  <label for="scissors">Scissors</label> <br>
+  <br>
+  <input type="submit" value="Play">
+</form>
