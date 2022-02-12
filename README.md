@@ -9,7 +9,7 @@ My task was to provide a _Rock, Paper, Scissors_ game for them so they can play 
 
 How to run this program
 -------
-* Follow this [link] (http://localhost:9292/) to the game.
+* Follow this [link](http://localhost:9292/) to the game.
 * Click on 'Enter'
 * Fill in your name
 
