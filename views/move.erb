@@ -1,0 +1,13 @@
+<h2>Welcome <%= @marketeer %> to Rock, Paper and Scissors!</h2>
+
+<form action="/rock" method="post">
+  <input type="submit" value="Rock">
+</form> 
+<form action="/paper" method="post"> 
+  <input type="submit" value="Paper">
+</form> 
+<form action="/scissors" method="post">  
+  <input type="submit" value="Scissors">
+</form>
+
+<h2><%= @marketeer %> you have chosen <%= @marketeer_move %></h2>
