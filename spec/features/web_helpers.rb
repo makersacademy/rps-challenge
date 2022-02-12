@@ -14,3 +14,10 @@ def computer_and_sign_on
   fill_in :player_one, with: "Bob"
   click_button 'Register'
 end
+
+def human_and_sign_on
+  select_human_opponent
+  fill_in :player_one, with: "Bob"
+  fill_in :player_two, with: "Fred"
+  click_button 'Register'
+end

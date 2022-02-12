@@ -13,6 +13,17 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  helpers do
+    def have_name_params?
+      if session[:game_type] == :computer
+        !params[:player_one].empty?
+      else
+        !(params[:player_one].empty? || params[:player_two].empty?)
+      end
+    end
+  end
+
+
   get '/' do
     erb(:index)
   end
@@ -28,25 +39,44 @@ class RPS < Sinatra::Base
   end
 
   post '/register_name' do
-    redirect('/enter_names') if params[:player_one].empty?
+    redirect('/enter_names') unless have_name_params?
     session[:player_one] = params[:player_one]
-    redirect('/play')
+    session[:player_two] = params[:player_two]
+    redirect('/player_one')
   end
 
-  get '/play' do
+  get '/player_one' do
     @player = session[:player_one]
-    erb(:play)
+    @game_type = session[:game_type]
+    erb(:player_one_select)
   end
 
-  post '/move' do
-    redirect('/play') if params.empty?
-    session[:player_choice] = params[:selection].to_sym
+  get '/player_two' do
+    @player = session[:player_two]
+    erb(:player_two_select)
+  end
+
+  post '/player_one_plays' do
+    redirect('/player_one') if params.empty?
+    session[:player_one_choice] = params[:selection].to_sym
+    session[:game_type] == :computer ? redirect('/result') : redirect('/player_two') 
+  end
+
+  post '/player_two_plays' do
+    redirect('/player_two') if params.empty?
+    session[:player_two_choice] = params[:selection].to_sym
     redirect('/result')
   end
 
   get '/result' do
-    player = Player.new(session[:player_one], session[:player_choice]) 
-    @game = Game.new(player, BotPlayer.new)
+    player_one = Player.new(session[:player_one], session[:player_one_choice]) 
+    if session[:game_type] == :computer
+      player_two = BotPlayer.new
+    else
+      player_two = Player.new(session[:player_two], session[:player_two_choice]) 
+    end
+     
+    @game = Game.new(player_one, player_two)
     @result = @game.play_game
     erb(:result)
   end

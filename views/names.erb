@@ -2,6 +2,7 @@
 
 <%if @game_type == :computer %>
   Please enter your name:
+  <br><br>
   <form action="/register_name" method="post">
   <input type="text" name="player_one"> 
   <input type="submit" value="Register"> 
@@ -10,6 +11,7 @@
 
 <%if @game_type == :human %>
   Please enter your names:
+  <br><br>
   <form action="/register_name" method="post">
   <input type="text" name="player_one"> 
   <input type="text" name="player_two"> 

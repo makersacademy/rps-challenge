@@ -1,13 +1,14 @@
 <%=erb(:header)%>
 
-<%= @game.player_one.name %>, you played <b><%=@game.player_one.weapon.to_s.upcase%></b><br>
-Your opponent played  <b><%= @game.player_two.weapon.to_s.upcase%></b><br><br>
+<%= @game.player_one.name %> played <b><%=@game.player_one.weapon.to_s.upcase%></b><br>
+<%= @game.player_two.name %> played <b><%=@game.player_two.weapon.to_s.upcase%></b><br>
+
 <% if @result == :win %>
-  You win!
+  <%= @game.player_one.name%> wins!
 <% end %>
 
 <% if @result == :lose %>
-  You lose!
+  <%= @game.player_two.name%> wins!
 <% end %>
 
 <% if @result == :draw %>
@@ -15,7 +16,7 @@ Your opponent played  <b><%= @game.player_two.weapon.to_s.upcase%></b><br><br>
 <% end %>
 
 <br><br>
-<form action="/play" method="get">
+<form action="/player_one" method="get">
 <input type="submit" value="Play Again?"> 
 </form>
 
