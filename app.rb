@@ -20,12 +20,21 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
+    @shape = session[:shape]
     erb :play
   end
 
-  get '/game2' do
-    
+  post '/play' do
+    session[:shape] = params[:shape]
+    redirect '/selected_options'
   end
+
+  get '/selected_options' do
+    @shape = session[:shape]
+    erb :selected_option
+  end
+
+
   # our routes would go here
 
   # # Start the server if this file is executed directly (do not change the line below)

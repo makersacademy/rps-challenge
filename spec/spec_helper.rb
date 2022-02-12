@@ -6,6 +6,7 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'rspec'
+require File.join(File.dirname(__FILE__), 'features', 'web_helpers.rb')
 # tell Capybara about the Rps class
 Capybara.app = Rps
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
