@@ -50,7 +50,7 @@ class Player
       if computer == "SCISSORS"
         "ROCK beats SCISSORS. #{@name} wins!"
       elsif computer == "PAPER"
-        "SCISSORS beats ROCK. #{@name} loses!"
+        "PAPER beats ROCK. #{@name} loses!"
       else
         "DRAW"
       end
