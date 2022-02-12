@@ -1,7 +1,10 @@
+require_relative '../../app.rb'
+
 feature 'Play game' do
   # As a marketeer
   # So that I can enjoy myself away from the daily grind
   # I would like to be able to play rock/paper/scissors
+  let(:selection) { double :selection, computer: 'Paper' }
   scenario "Player is given an option to choose 'Rock', 'Paper' or 'Scissors'" do
     sign_in_and_play
     expect(page).to have_content 'Rock'
@@ -13,5 +16,11 @@ feature 'Play game' do
     sign_in_and_play
     click_button('Rock')
     expect(page).to have_content 'You have chosen Rock'
+  end
+
+  scenario "Computers selection is generated and displayed" do
+    sign_in_and_play
+    click_button('Rock')
+    expect(page).to have_content "The Computer has chosen "
   end
 end

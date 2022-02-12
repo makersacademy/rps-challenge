@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/selection'
 
 class Game < Sinatra::Base
   configure :development do
@@ -23,7 +24,7 @@ class Game < Sinatra::Base
   end
 
   get '/selection' do
-    @selection = params[:subject]
+    @selection = Selection.new(params[:subject])
     erb :selection
   end
 
