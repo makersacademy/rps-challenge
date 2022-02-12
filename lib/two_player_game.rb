@@ -1,4 +1,4 @@
-require './lib/player.rb'
+require './lib/player'
 
 class TwoPlayer
 
@@ -11,10 +11,9 @@ class TwoPlayer
     @player2_score = 0
   end
 
-
   def play
-    return unless @player1.move && @player2.move != nil
-    result = outcome(@move)
+    return unless @player1.move || @player2.move != nil
+    result = outcome(players_moves)
     score(result)
     result
   end
@@ -30,7 +29,7 @@ class TwoPlayer
     end
   end
 
-  def outcome(player1_move)
+  def outcome(_)
     case @player1.move
     when "ROCK"
       if @player2.move == "SCISSORS"
