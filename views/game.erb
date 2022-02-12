@@ -13,10 +13,6 @@
       <h1>Rock, paper and scissors</h1>
     </header>
 
-      <h2>Hello <%= @marketeer %>! Rock, paper or scissors?</h2>
-       <form action="/game" method="post">
-         <input type="text" name="move" placeholder="Write your move">
-         <button type="submit">Play</button>
-       </form>
+      <h2>You've chosen <%= @move %>, <%= @marketeer %></h2>
   </body>
 </html>
