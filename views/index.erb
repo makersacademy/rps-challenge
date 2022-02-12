@@ -3,9 +3,15 @@
 <html>
   <head>
     <title> Rock, paper, Scissors</title>
-    <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
   <style>
+    input {
+    background: red;
+    margin: 20px;
+    border-color: red;
+    font-size: 24px;
+    font-family: "Audiowide", sans-serif;
+    }
     html, body {
         height: 100%;
     }
@@ -14,8 +20,10 @@
         margin: auto;
     }
     body {
+      background-color: yellow;
       font-family: "Audiowide", sans-serif;
-      margin: auto;
+       margin-left: auto;
+      margin-right: auto;
       display: table-cell;
       vertical-align: middle;
     }
@@ -23,7 +31,7 @@
   </head>
 
 <body>
-  Let's Rock Paper Scissor 
+  <h1>Let's Rock Paper Scissor </h1>
   <form action="/name" method="post">
     <label for="name">
     Enter your name to play

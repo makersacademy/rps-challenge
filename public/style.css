@@ -1,17 +1,1 @@
 
-
-  input {
-    color: red;
-    margin: 20px;
-  }
-  label{
-    color: green;
-  }
-  html, body {
-    height: 100%;
-}
-
-html {
-    display: table;
-    margin: auto;
-}
