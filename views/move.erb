@@ -1,4 +1,4 @@
-<h2>Welcome <%= @marketeer %> to Rock, Paper and Scissors!</h2>
+<h2>Welcome <%= @player.name %> to Rock, Paper and Scissors!</h2>
 
 <form action="/rock" method="post">
   <input type="submit" value="Rock">
@@ -10,4 +10,4 @@
   <input type="submit" value="Scissors">
 </form>
 
-<h2><%= @marketeer %> you have chosen <%= @marketeer_move %></h2>
+<h2><%= @player.name %> you have chosen <%= @player.move %></h2>
