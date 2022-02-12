@@ -13,6 +13,7 @@ get "/" do
 end
 
 post "/register" do
+  @player = params[:player]  
   erb :register
 end
 

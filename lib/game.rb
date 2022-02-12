@@ -11,6 +11,12 @@ attr_reader :player
     choice[rand(choice.size)]
   end  
 
-#   RPS Code here
+  def result
+    return "#{player} won!" if player == "Rock" && ai == "Scissors"
+    return "#{player} won!" if player == "Scissors" && ai == "Paper"
+    return "#{player} won!" if player == "Paper" && ai == "Rock"
+    return "Draw" if player == ai
+    return "The Computer won!"
+  end
 
 end
