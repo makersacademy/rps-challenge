@@ -1,6 +1,5 @@
 require 'sinatra'
 require "sinatra/reloader" if development?
-require 'pstore'
 
 require File.join(File.dirname(__FILE__), 'lib', 'player.rb')
 require File.join(File.dirname(__FILE__), 'lib', 'game.rb')
@@ -18,8 +17,17 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  post '/game_type' do
+    session[:game_type] = params[:game_type]
+    redirect('/enter_names')
+  end
+
+  get '/enter_names' do
+    erb(:names)
+  end
+
   post '/register_name' do
-    redirect('/') if params[:player_name].empty?
+    redirect('/enter_names') if params[:player_name].empty?
     session[:player_name] = params[:player_name]
     redirect('/play')
   end
