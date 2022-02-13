@@ -1,17 +1,43 @@
-<h1>
-  <%= @player_name %> 
-  <br>
-  choose
-  <br>
-  one
-</h1>
-<form action="/result" method="post">
-  <input type="radio" id="rock" name="choice" value="Rock">
-  <label for="rock">Rock</label> <br>
-  <input type="radio" id="paper" name="choice" value="Paper">
-  <label for="paper">Paper</label> <br>
-  <input type="radio" id="scissors" name="choice" value="Scissors">
-  <label for="scissors">Scissors</label> <br>
-  <br>
-  <input type="submit" value="Play">
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+  <div class="container">
+    <h1 class="title">
+      Marie
+    </h1>
+    <p class="subtitle">
+      choose <strong>one</strong>!
+    </p>
+  </div>
+</section>
+  <section class="section">
+    <div class="container">
+      <form class="is-medium" action="/result" method="post">
+        <input type="radio" id="rock" name="choice" value="rock">
+        <label for="rock">rock</label> <br>
+        <input type="radio" id="paper" name="choice" value="paper">
+        <label for="paper">paper</label> <br>
+        <input type="radio" id="scissors" name="choice" value="scissors">
+        <label for="scissors">scissors</label> <br>
+      <br>
+        <button class="button is-success is-medium is-responsive is-rounded" type="submit" value="Play">
+        play rps!
+        </button>
+      </form>
+    </div>
+  </section>
+<section class="section">
+  <div class="container">
+    <figure class="image is-128x128">
+      <img src='/images/RockPaperScissors.png'>
+    </figure>
+  </div>
+</section>
+</body>
+</html>
