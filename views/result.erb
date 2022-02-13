@@ -1,0 +1,20 @@
+<p>Your move: <%= $player1.choice %> </p>
+<p>Your opponent's move: <%= $game.computer_choice %> </p>
+
+<br>
+
+<p>
+  <% if $result == 'Win' %>
+    You won!
+  <% elsif $result == 'Lose' %>
+    You lost!
+  <% else %>
+    It was a draw!
+  <% end %>
+</p>
+
+<br>
+
+<form action='/play'>
+  <input type='submit' value='Play again?'>
+</form>
