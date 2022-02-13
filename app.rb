@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra'
+require './lib/game'
+require './lib/computer'
 
 class Rps < Sinatra::Base
   configure :development do
@@ -14,24 +16,28 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_name] = Player.new(params[:player_name])
+    session[:player_name] = params[:player_name]
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name].name
+    @player_name = session[:player_name]
     # @shape = session[:shape]
     erb :play
   end
 
   post '/play' do
     session[:shape] = params[:shape]
+    session[:rand_shape] = Computer.new.move
     redirect '/selected_options'
   end
 
   get '/selected_options' do
-    @player_name = session[:player_name].name
-    @shape = session[:shape]
+    @game = Game.new(session)
+    @player = @game.name
+    @playershape = @game.player_shape
+    @random_shape = @game.rand_shape
+    @outcome =@game.game_result
     erb :selected_option
   end
 

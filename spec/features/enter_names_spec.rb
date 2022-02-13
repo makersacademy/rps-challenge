@@ -7,3 +7,5 @@ feature 'Enter names' do
     expect(page).to have_content 'Player Name: John'
   end
 end
+
+#Test Doesnt work
