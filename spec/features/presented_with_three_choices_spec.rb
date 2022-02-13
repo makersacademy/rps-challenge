@@ -6,6 +6,6 @@ feature 'Three choices available' do
     expect(page).to have_content 'Enter your name'
     fill_in :player_name, with: 'Marie'
     click_button 'Play'
-    expect(page).to have_content 'Rock Paper Scissors'
+    expect(page).to have_content 'rock paper scissors'
   end
 end

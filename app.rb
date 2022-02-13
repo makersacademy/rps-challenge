@@ -1,12 +1,14 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/game'
+require './lib/random'
+require './lib/result'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do 
     register Sinatra::Reloader
   end
-  enable :sessions
 
   get '/' do
     erb :start
@@ -18,19 +20,19 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player_name = $player.name
     erb :play
   end
 
   post '/result' do
     $player.choose(params[:choice])
-    redirect '/winner'
+    redirect '/game_play'
   end
 
-  get '/winner' do
-    @player_name = $player.name
-    @choice = $player.chosen_option
-    erb :winner
+  get '/game_play' do
+    $game = Game.new("test")
+    $game.generate_option
+    $game.play_game($player.chosen_option)
+    erb :game_play
   end
 
   run! if app_file == $0

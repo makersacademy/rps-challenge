@@ -11,18 +11,16 @@ describe Player do
 
   describe '#choose' do
     it 'choose one option' do
-      marie.choose('Scissors')
-      expect(marie.choice).to eq 'Scissors'
+      marie.choose('scissors')
+      expect(marie.choice).to eq 'scissors'
     end
   end
 
   describe '#chosen_option' do
     it 'display the chosen option' do
-      marie.choose('Scissors')
-      expect(marie.chosen_option).to eq 'Scissors'
+      marie.choose('scissors')
+      expect(marie.chosen_option).to eq 'scissors'
     end
   end
 
-
-  
 end

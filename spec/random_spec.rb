@@ -1,3 +1,5 @@
+require './lib/random'
+
 describe Random do
 
   describe '#random_option' do
