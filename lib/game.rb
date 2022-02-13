@@ -1,17 +1,11 @@
 class Game
 
 attr_reader :player, :ai
-# attr_accessor :ai
 
   def initialize(player)
     @player = player
     @ai = ["Rock", "Paper", "Scissors"].sample
   end
-
-#   def ai
-#     choice = ["Rock", "Paper", "Scissors"]
-#     choice[rand(choice.size)]
-#   end  
 
   def result
     return "You win!" if @player == "Rock" && @ai == "Scissors"
