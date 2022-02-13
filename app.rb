@@ -5,17 +5,25 @@ require './lib/RPS'
 require './lib/computer_player'
 
 class RPS < Sinatra::Base
+
   configure :development do
     register Sinatra::Reloader
   end
 
   enable :sessions
 
+  helpers do
+    def player_1_params?
+      !params[:Player1].empty?
+    end
+  end
+
   get "/" do
     erb(:index)
   end
 
   post '/match' do
+    redirect('/') unless player_1_params?
     @player1 = Player.new(params[:Player1])
     if params[:Player2].empty?
       @player2 = ComputerPlayer.new

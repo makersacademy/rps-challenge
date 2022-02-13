@@ -31,9 +31,9 @@ html, body {
 
   .image {
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
   }
   
   .container {

@@ -3,7 +3,7 @@ require 'capybara/rspec'
 feature 'Players' do 
   scenario 'enter player information' do
     sign_in_and_play
-    expect(page).to have_content 'Welcome Claire what would you like to play?'
+    expect(page).to have_content 'Claire'
   end
 
   scenario "home page returned" do
@@ -13,7 +13,7 @@ feature 'Players' do
 
   scenario "name input on match page" do
     sign_in_and_play
-    expect(page).to have_content('Welcome Claire')
+    expect(page).to have_content('Game On Claire')
   end
 
   scenario "Player plays rock" do
