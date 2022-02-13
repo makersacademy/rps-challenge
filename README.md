@@ -46,7 +46,7 @@ Run `rspec` directly in root of your local project
 
 ## My approach
 
-1. Break down user stories into an [object model](https://github.com/nelsonclaire/rps-challenge/blob/master/problem/problem_user_stories.md) and simple feature steps
+1. Break down user stories into an [object model](https://github.com/nelsonclaire/rps-challenge/blob/master/task_stories/user_stories.md) and simple feature steps
 
 2. Add capybara config requirements into `spec_helper.rb`
     - `config.include Capybara::DSL`
