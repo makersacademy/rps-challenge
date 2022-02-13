@@ -7,20 +7,28 @@
 <img class="image" src="rockpaperscissors.png"/>
 </br>
 
-<h1><%= @player1.name %> played <%= @player_move %> </h1>
-      <h1> The computer played <%= @computer_move %>
+<h1><%= @player1.name %> played <%= @player1.move %> </h1>
+      <h1> <%= @player2.name %> played <%= @player2.move %>
       </br>
       </h1>
     
       <% if @result == "win" %>
       <h2> Congratulations <%= @player1.name %> </h2>
+      <% if !@player2.computer? %>
+      <h3> Unlucky <%= @player2.name %> </h3>
+    <% end %>
     <% elsif @result == "lose"%>
+    <% if !@player2.computer? %>
+    <h2> Congratulations <%= @player2.name %> </h2>
+    <% end %>
       <h3> Unlucky <%= @player1.name %> </h3>
     <% else %>
-      <h3> Oooh <%= @player1.name %> </h3>
+      <h3> Its a draw! <%= @player1.name %> </h3>
+      <% if !@player2.computer? %>
+      <h3> and <%= @player2.name %> </h3>
+      <% end %>
     <% end %>
-    <h3> You <%= @result %> the game</h3>
-    <form class="container" action="/match" method="get">
+    <form class="container" action="/player_1_choice" method="get">
       </br>
       <button class="submit-button" type="submit">Play Again?</button>
     </form>

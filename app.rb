@@ -22,7 +22,7 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  post '/match' do
+  post '/player_choices' do
     redirect('/') unless player_1_params?
     @player1 = Player.new(params[:Player1])
     if params[:Player2].empty?
@@ -32,22 +32,36 @@ class RPS < Sinatra::Base
     end
     session[:Player1] = @player1
     session[:Player2] = @player2
-    redirect to('/match')
+    redirect to('/player_1_choice')
   end
 
-  get '/match' do
+  get '/player_1_choice' do
     @player1 = session[:Player1]
-    @player2 = session[:Player2]
-    erb(:match)
+    erb(:matchplayer1)
   end
 
-  post '/result' do
+  post '/choice_player_1' do
+    @player1 = session[:Player1]
+    @player2 = session[:Player2] 
+    @player1.move = params[:player1]
+    @player2.computer? ? redirect('/result') : redirect('/player_2_choice') 
+  end
+
+  get '/player_2_choice' do
+    @player2 = session[:Player2]
+    erb(:matchplayer2)
+  end
+
+  get '/result' do
     @player1 = session[:Player1]
     @player2 = session[:Player2]
     rps_game = RockPaperScissors.new
-    @player_move = params[:player1]
-    @computer_move = rps_game.random_move
-    @result = rps_game.play(@player_move, @computer_move)
+    if @player2.computer?
+      @player2.move = rps_game.random_move
+    else
+      @player2.move = params[:player2]
+    end
+    @result = rps_game.play(@player1.move, @player2.move)
     erb(:result)
   end
 
