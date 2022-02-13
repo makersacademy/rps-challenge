@@ -8,6 +8,6 @@ feature "Computer move" do
     fill_in :move, with: "rock"
     click_button "Play"
     # computer picks scissors.
-    expect(page).to have_content "You've won, Frankie"
+    expect(page).to have_content "you won"
     end
 end

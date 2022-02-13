@@ -20,9 +20,7 @@ class Game
   end
 
   def run
-    if @marketeer_move == @computer_move
-      "Draw"
-    elsif @marketeer_move == "rock" && @computer_move == "scissors"
+    if @marketeer_move == "rock" && @computer_move == "scissors"
       "#{$marketeer.name} wins"
     elsif @marketeer_move == "scissors" && @computer_move == "paper"
       "#{$marketeer.name} wins"
@@ -34,6 +32,8 @@ class Game
       "Computer wins"
     elsif @marketeer_move == "rock" && @computer_move == "paper"
       "Computer wins"
+    elsif @marketeer_move == @computer_move
+        "Draw"
     end
   end
 end
