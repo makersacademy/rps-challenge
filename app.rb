@@ -22,5 +22,16 @@ class RockPaperScissors < Sinatra::Base
       erb(:play_view)
     end
 
+    post '/move' do
+      session[:player_move] = params[:player_move]
+      redirect('/outcome')
+    end
+
+    get '/outcome' do
+      @player_name = session[:player_name]
+      @player_move = session[:player_move]
+      erb(:outcome_view)
+    end
+
     run! if @app_file == $0
 end
