@@ -14,12 +14,12 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_name] = params[:player_name]
+    session[:player_name] = Player.new(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
+    @player_name = session[:player_name].name
     # @shape = session[:shape]
     erb :play
   end
@@ -30,7 +30,7 @@ class Rps < Sinatra::Base
   end
 
   get '/selected_options' do
-    @player_name = session[:player_name]
+    @player_name = session[:player_name].name
     @shape = session[:shape]
     erb :selected_option
   end
