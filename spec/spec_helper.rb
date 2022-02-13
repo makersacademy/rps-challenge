@@ -10,6 +10,7 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'webrick'
+require 'features/web_helpers'
 #require 'sinatra-reloader'
 
 # Tell Capybara to talk to BookmarkManager

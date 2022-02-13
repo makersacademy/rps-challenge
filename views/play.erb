@@ -1,1 +1,27 @@
-<h1>Welcome to the game, <%= @player1_name %>!</h1>
+<h1>Welcome to the game, <%= @game.player1.name %>!</h1>
+
+<!DOCTYPE hmtl>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+
+  <body>
+   <div id="player1">
+      <h2> Make your choice! </h2>
+    </div>
+    <div class='options'>
+      <form action="/result" method="post">
+        <input id="Rock" type="submit" name="player_choice" value="Rock">
+      </form>
+
+      <form action="/result" method="post">
+        <input id=Ppaper" type="submit" name="player_choice" value="Paper">
+      </form>
+
+      <form action="/result" method="post">
+        <input id="Scissors" type="submit" name="player_choice" value="Scissors">
+      </form>
+    </div>
+  </body>
+</html>
