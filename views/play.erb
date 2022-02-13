@@ -1,13 +1,8 @@
-<h1>Choose Rock, Paper, or Scissors!</h1>
+<h1>Choose Rock, Paper, or Scissors, <%= @player_1 %>! </h1>
 
-<form action='/result' method='post'>
-    <input type='submit' value='Rock'>
-    <input type='submit' value='Paper'>
-    <input type='submit' value='Scissors'>
+<form action='/result'>
+    <button name='button' type='submit' value='Rock'>Rock</button>
+    <button name='button' type='submit' value='Paper'>Paper</button>
+    <button name='button' type='submit' value='Scissors'>Scissors</button>
 </form>
 
-<!-- To do list
-- Add the registered persons name to the register route
-- Do an if statement in the result route
-- 
--->
