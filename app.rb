@@ -15,28 +15,25 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    player1 = Player.new(params[:player1_name])
-    $game = Game.new(player1)
+    $player1 = Player.new(params[:player1_name])
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @player1_name = $player1.name
     erb :play
   end
 
   post '/outcome' do
-    @game = $game
-    @game.p1_move(params[:player_move])
-    redirect '/outcome'
+    $player.choice = params[:choice]
+    $result = $game.outcome($player.choice)
+    $game.computer_choice
+    redirect '/result'
   end
 
-  get '/outcome' do
-    @game = $game
-    @game.computer_choice
+  get '/result' do
     erb :result
   end
-
 
   run! if app_file == $0
 end
