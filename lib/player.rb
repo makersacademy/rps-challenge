@@ -14,7 +14,7 @@ class Player
   end  
    
   def auto_move(player)
-    num = rand(2)
+    num = rand(3)
     move = ''
     if num.zero?
       move = 'rock' 

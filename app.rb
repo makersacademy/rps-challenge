@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative './lib/player'
+require_relative './lib/game'
 
 class RPSgame < Sinatra::Base
   configure :development do
@@ -15,34 +16,35 @@ class RPSgame < Sinatra::Base
   end
 
   post '/marketeer' do
-    $player = Player.new(params[:marketeer])
-    @player = $player
+    player = Player.new(params[:marketeer]) 
+    opponent = Player.new("Angelica Pickles")
+    $game = Game.new(player, opponent)
+    @game = $game
     erb :play
   end
 
   post '/rock' do
-    @player = $player
-    @player.set_move(@player, "rock")
+    @game = $game
+    @game.player.set_move(@game.player, "rock")
     redirect '/move'
   end  
 
   post '/paper' do
-    @player = $player
-    @player.set_move(@player, "paper")
+    @game = $game
+    @game.player.set_move(@game.player, "paper")
     redirect '/move'
   end
 
   post '/scissors' do
-    @player = $player
-    @player.set_move(@player, "scissors")
+    @game = $game
+    @game.player.set_move(@game.player, "scissors")
     redirect '/move'
   end 
   
   get '/move' do
-    @player = $player
-    $opponent = Player.new("Angelica Pickles")
-    @opponent = $opponent
-    @opponent.auto_move(@opponent)
+    @game = $game
+    @game.opponent.auto_move(@game.opponent)
+    @game.get_winner(@game.player, @game.opponent)
     erb :move
   end  
 
