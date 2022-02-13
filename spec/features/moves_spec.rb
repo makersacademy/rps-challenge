@@ -16,7 +16,7 @@ feature 'Testing marketeer move and also opponent move' do
     expect(page).to have_content 'Welcome Jane Lucas to Rock, Paper and Scissors!'
     click_on 'Rock'
     expect(page).to have_content 'Jane Lucas you have chosen rock'
-    # expect(page).to have_content 'Opponent you have chosen scissors'
+    expect(page).to have_content 'Angelica Pickles you have chosen'
   end
 
 end
