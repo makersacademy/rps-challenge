@@ -25,6 +25,18 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/outcome' do
+    @game = $game
+    @game.p1_move(params[:player_move])
+    redirect '/outcome'
+  end
+
+  get '/outcome' do
+    @game = $game
+    @game.computer_choice
+    erb :result
+  end
+
 
   run! if app_file == $0
 end
