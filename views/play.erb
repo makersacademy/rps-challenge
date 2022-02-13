@@ -7,8 +7,15 @@ Game Started
 </form>
 
 <% if $game.chosen_move.nil? %>
-<%= "Make a move" %>
+Make a move
 <% else %>
 <%= $game.player.name %> chose <%= $game.chosen_move %>
 <% end %>
 
+<div id="opponent">
+<% if $game.opponent_chosen_move.nil? %>
+The opponent is waiting...
+<% else %>
+<%= $game.opponent.name %> chose <%= $game.opponent_chosen_move %> 
+<% end %>
+</div>

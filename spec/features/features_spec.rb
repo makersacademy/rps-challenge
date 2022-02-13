@@ -8,6 +8,10 @@ def register
   click_button "Register"
 end
 
+def computer_choice
+  ["Rock", "Paper", "Scissors"].map { |move| "Computer chose #{move}" }
+end
+
 feature 'Registering a name' do
   scenario 'player submits their name' do
     register
@@ -39,6 +43,14 @@ feature 'Plays Rock, Paper, Scissors' do
     click_button "Rock"
     expect(page).to have_content("Marketeer chose Rock")
 
+  end
+  
+  scenario 'computer makes a random move' do
+    register
+    click_button "Play"
+    click_button "Scissors"
+    computer_response = find_by_id('opponent').text
+    expect(computer_choice).to include(computer_response)
   end
 
 end

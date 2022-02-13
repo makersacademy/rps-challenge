@@ -20,7 +20,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    $game = Game.new(session["player"]) if $game.nil?
+    $game = Game.new(session["player"], Player.new("Computer")) if $game.nil?
     erb(:play)
   end
 
@@ -31,9 +31,9 @@ class RPS < Sinatra::Base
 
   post '/move' do
     $game.make_move(params["move"])
+    $game.opponent_move
     redirect '/play'
   end
-
 
   run! if app_file == $0
 
