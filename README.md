@@ -1,6 +1,6 @@
 # My RPS Challenge
 
-My takje on creating a 'Rock, Paper, Scissors game'
+My take on creating a 'Rock, Paper, Scissors game'
 
 
 
