@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html>
-<body>
+  <head>
+    <title> Rock ~ Paper ~ Scissors </title>
+    <!-- <link rel="stylesheet" href="stylesheet.css"> External style sheet is not being recognised for some reason -->
+    <style>
 
- <h1> New Challenger: <%= @player_1 %> </h1>
+    body {
+      background-color: rgb(247, 235, 220);
+      position:absolute; top:250px; left:600px;
+    }
 
-</body>
+    h1 {
+      color:rgb(170, 46, 2);
+      text-align: center;
+    }
 
-<form action='/selection'>
-  <button name="subject" type="submit" value="Rock">Rock</button>
-  <button name="subject" type="submit" value="Paper">Paper</button>
-  <button name="subject" type="submit" value="Scissors">Scissors</button>
+    button {
+      color:rgb(255, 255, 255);
+      padding: 10px 10px;
+      cursor: pointer;
+    }
 
-</form>
-
+    .rock {background-color: #504848;} 
+    .rock:hover {background: rgb(158, 155, 155);}
+    .paper {background-color: antiquewhite; color: black;}
+    .paper:hover {background: rgb(253, 253, 253);}
+    .scissors {background-color: silver; color: black;} 
+    .scissors:hover {background: rgb(236, 233, 233);}
+ 
+    </style>
+  </head>
+  
+  <h1> New Challenger: <%= @player_1 %> </h1>
+  <body>
+      <form action='/selection'>
+        <button class="rock" name="subject" type="submit" value="Rock">Rock</button>
+        <button class="paper" name="subject" type="submit" value="Paper">Paper</button>
+        <button class="scissors" name="subject" type="submit" value="Scissors">Scissors</button>
+      </form>
+  </body>
 
 </html>
