@@ -1,0 +1,30 @@
+<h1>
+      <%= @player1.name %> played <%= @player_move %>
+      </br>
+      The computer played <%= @computer_move %>
+      </br>
+</h1>
+
+    <% if @result == "win" %>
+      <h3> Congratulations <%= @player1.name %> </h3>
+    <% elsif @result == "lose"%>
+      <h3> Unlucky <%= @player1.name %> </h3>
+    <% else %>
+      <h3> Oooh <%= @player1.name %> </h3>
+    <% end %>
+    <h3> You <%= @result %> the game</h3>
+    <form action="/match" method="get">
+      </br>
+      <button type="submit">Play Again?</button>
+    </form>
+
+    <% if @player1.points == 3 %>
+    <h1> Congratulations <%= @player1.name %>  you have got over 3 points</h3>
+    <% end %>
+
+    <% if @player2.points == 3 %>
+    <h1> Congratulations <%= @player2.name %>  you have got over 3 points</h3>
+    <% end %>
+
+
+
