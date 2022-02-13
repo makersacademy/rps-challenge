@@ -31,4 +31,21 @@ describe Game do
     expect(game.opponent_chosen_move).to eq "Paper"
   end
 
+  describe "#compare"
+  it "Player wins" do
+    game.make_move("Rock")
+    game.opponent_move("Scissors")
+    expect(game.compare).to eq player
+  end
+  it "Opponent wins" do
+    game.make_move("Rock")
+    game.opponent_move("Paper")
+    expect(game.compare).to eq opponent
+  end
+  it "Draws" do
+    game.make_move("Rock")
+    game.opponent_move("Rock")
+    expect(game.compare).to eq nil
+  end
+
 end

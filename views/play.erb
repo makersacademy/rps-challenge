@@ -19,3 +19,17 @@ The opponent is waiting...
 <%= $game.opponent.name %> chose <%= $game.opponent_chosen_move %> 
 <% end %>
 </div>
+
+<br>
+
+<div id="result">
+<% if !$game.chosen_move.nil? %>
+  <% if $game.compare == $game.player %>
+    <%= $game.player.name %> Wins!
+  <% elsif $game.compare == $game.opponent %>
+    <%= $game.opponent.name %> Wins!
+  <% else %>
+    Draw Play again
+  <% end %>
+<% end %>
+</div>
