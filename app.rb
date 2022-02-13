@@ -29,9 +29,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game_play' do
-    $game = Game.new
-    $game.generate_option
-    $game.play_game($player.chosen_option)
+    @game = Game.new
+    @game.generate_option
+    @game.play_game($player.chosen_option)
     erb :game_play
   end
 
