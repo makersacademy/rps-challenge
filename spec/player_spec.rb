@@ -1,7 +1,8 @@
-require "marketeer"
+require "player"
 
-describe Marketeer do
-  subject(:frankie) { Marketeer.new("Frankie") }
+describe Player do
+  subject(:frankie) { Player.new("Frankie", "rock") }
+
   describe "#name" do
     it "should return the marketeer's name" do
       expect(frankie.name).to eq "Frankie"

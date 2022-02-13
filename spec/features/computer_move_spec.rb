@@ -3,7 +3,7 @@
 feature "Computer move" do
     scenario "Computer picks a random move" do
     visit('/')
-    fill_in :marketeer, with: "Frankie"
+    fill_in :name, with: "Frankie"
     click_button "Play"
     fill_in :move, with: "rock"
     click_button "Play"

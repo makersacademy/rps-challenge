@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -12,22 +13,27 @@ class Rps < Sinatra::Base
   end
 
   post "/name" do
-    session[:marketeer] = params[:marketeer]
+    session[:name] = params[:name]
     redirect "/play"
   end
 
   get "/play" do
-    @marketeer = session[:marketeer]
+    @name = session[:name]
+    p "printing the value of human name"
+    p @name
     erb :play
   end
 
   post "/game" do
+    @name = session[:name]
     session[:move] = params[:move]
+    @move = session[:move]
+    @marketeer = Player.new(@name, @move)
     redirect "/game"
   end
 
   get "/game" do
-    @marketeer = session[:marketeer]
+    @name = session[:name]
     @move = session[:move]
     erb :game
   end

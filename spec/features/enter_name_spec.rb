@@ -4,7 +4,7 @@
 feature "Enter name" do
     scenario "Marketeer enters their name before the game" do
     visit('/')
-    fill_in :marketeer, with: "Frankie"
+    fill_in :name, with: "Frankie"
     click_button "Play"
     expect(page).to have_content "Hello Frankie! Rock, paper or scissors?"
     end

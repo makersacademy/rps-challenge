@@ -4,7 +4,7 @@
 feature "Enter move" do
     scenario "Marketeer picks their move" do
     visit('/')
-    fill_in :marketeer, with: "Frankie"
+    fill_in :name, with: "Frankie"
     click_button "Play"
     fill_in :move, with: "rock"
     click_button "Play"
