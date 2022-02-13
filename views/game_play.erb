@@ -8,25 +8,28 @@
   <body>
   <section class="section">
   <div class="container">
+    <p class="subtitle">
+      <%= $player.name %> chose <strong><%= $player.chosen_option %></strong>!
+    </p>
+    <p class="subtitle">
+      I chose <strong><%= $game.computer%></strong>!
+    </p>
     <h1 class="title">
-      <%= $player.name %>
-    </h1>
-    <p class="subtitle">
-      chose <strong><%= $player.chosen_option %></strong>
-    </p>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <h1 class="title">
-      I
-    </h1>
-    <p class="subtitle">
-      chose <strong>$game.computer</strong>!
-    </p>
-    <p class="subtitle">
-      <strong>You win</strong>!
-    </p>
+    <br>
+    <%= $game.play_game($player.chosen_option)%>
+  </h1>
+  <form class="is-medium" action="/replay" method="post">
+    <button class="button is-success is-medium is-responsive is-rounded" type="submit" value="Play">
+      play again
+    </button>
+    </form>
+    <br>
+    <br>
+    <form class="is-medium" action="/new_player" method="post">
+    <button class="button is-success is-medium is-responsive is-rounded" type="submit" value="Play">
+      new player
+    </button>
+    </form>
   </div>
 </section>
 <section class="section">
@@ -36,5 +39,6 @@
     </figure>
   </div>
 </section>
+
 </body>
 </html>
