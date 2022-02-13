@@ -7,13 +7,18 @@ class RPS < Sinatra::Base
   end
 
   enable :sessions
+
   get '/' do
     erb :index
   end
 
   post '/names' do
-    @player1_name = params[:player1_name]
-    #@player2_name = params[:player2_name]
+    $player1 = Player.new(params[:player1_name])
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player1_name = $player1.name
     erb :play
   end
 
