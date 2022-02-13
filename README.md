@@ -1,5 +1,49 @@
 # RPS Challenge
 
+# The following RSPEC tests have been implemented
+````
+Computer
+  random sample of paper
+    is expected to eq "rock"
+shirleymacfarlane@Shirleys-MacBook-Air rps-challenge % rspec
+
+Computer
+  random sample of paper
+    is expected to eq "rock"
+
+the homepage
+  display a form for a player to register their name
+
+Enter Weapon
+  display a form for a player to enter their weapon
+
+Enter Play
+  display a a page with the result of the game
+
+Game
+  add players
+    expects to respond to receive two arguments
+  play the game
+    expects shirley to win
+
+Player
+  returns the player's name
+  add_weapon
+    it provides a player with a weapon
+
+Weapon
+  add players
+    it expects initialise a type
+  beat?
+    it respond with false if one weapon is rock and the other is scissors
+
+Have you considered running rubocop? It will help you improve your code!
+Try it now! Just run: rubocop
+
+Finished in 0.05278 seconds (files took 0.28805 seconds to load)
+10 examples, 0 failures
+````
+
 Instructions
 -------
 

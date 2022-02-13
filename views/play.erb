@@ -1,0 +1,11 @@
+<h2><%= @player_1.name %> Let's Play Rock, Paper Scissor</h2>
+
+<form action="/game" method="post" >
+<label for="choice">Choose a weapon</label>
+<select id="choice" name="choice">
+  <option value="rock">rock</option>
+  <option value="paper">paper</option>
+  <option value="scissors">scissors</option>
+</select>
+<input type="submit" value="Play"> 
+</form>
