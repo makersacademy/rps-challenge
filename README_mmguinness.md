@@ -1,5 +1,12 @@
 # RPS Challenge
 
+
+Progress note
+----
+I am aware that I did not remove the global variables from my code! This would be the next step if I had more time, through using a session variable instead.
+I am also aware that I could refactor and clean-up my tests to automate some of the repeated filling-in of forms etc.
+After this, I would tackle adding a second player, and removing the random choice.
+
 Task
 ----
 
