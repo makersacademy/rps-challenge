@@ -1,10 +1,10 @@
-<%=erb(:header)%>
 
 <%if @game_type == :computer %>
   Please enter your name:
   <br><br>
   <form action="/register_name" method="post">
   <input type="text" name="player_one"> 
+  <br><br>
   <input type="submit" value="Register"> 
   </form>
 <%end%>
@@ -15,8 +15,7 @@
   <form action="/register_name" method="post">
   <input type="text" name="player_one"> 
   <input type="text" name="player_two"> 
+  <br><br>
   <input type="submit" value="Register"> 
   </form>
 <%end%>
-
-<%=erb(:footer)%>
