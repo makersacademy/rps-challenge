@@ -14,10 +14,12 @@ class Rps < Sinatra::Base
     erb :index
   end
 
-  post '/play' do 
-    @player_1 = Player.new(params[:player_1])
-    # store player_1 in the session
-    session[:message] = @player_1
+  get '/play' do
+    @player_1 = session[:message] 
+    if @player_1 == nil
+      @player_1 = Player.new(params[:player_1])
+      session[:message] = @player_1
+    end
     erb :play 
   end
 
@@ -26,7 +28,7 @@ class Rps < Sinatra::Base
     # retrieve player_1 from the session
     @player_1 = session[:message] 
     @player_1.add_weapon(@weapon)
-    # rcreate a player_2 to simulate the computer 
+    # create a player_2 to simulate the computer. I have left the logic here to create a multuplayer option
     @player_2 = Player.new("Computer")
     @weapon_2 = Weapon.new(Computer.new.weapon)
     @player_2.add_weapon(@weapon_2)
@@ -37,10 +39,11 @@ class Rps < Sinatra::Base
   end
 
   post '/finish' do
-    # rset the session to nil
-    @player_1 = session[:message] 
-    @player_1 = nil
-    session[:message] = @player_1
+    redirect '/play'
+  end
+
+  post '/quit' do
+    session[:message] = nil
     redirect '/'
   end
 

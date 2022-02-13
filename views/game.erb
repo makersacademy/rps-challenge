@@ -3,5 +3,7 @@
 <h1><%= @player_1.name %> Your weapon  was "<%= @player_1.weapon.type %>" and the challenging weapon was "<%= @player_2.weapon.type %>"</h1>
 
 <form action="/finish" method="post">
+<input name="NewGame "type="submit" value="New Game"></form>
 
-<input name="NewGame "type="submit" value="New Game"> 
+<form action="/quit" method="post">
+<input name="Quit" type="submit" value="Quit Game"></form>
