@@ -13,4 +13,10 @@ feature 'The marketeer will be playing rock, paper and scissors' do
     click_button "Rock"
     expect(page).to have_content("You selected Rock")
   end
+
+  scenario 'the computer chooses its action' do
+    sign_in_and_play
+    click_button "Rock"
+    expect(page).to have_content("Your opponent selected Rock")
+  end
 end
