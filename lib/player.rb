@@ -5,8 +5,4 @@ class Player
     @name = name
     @move = move
   end
-
-  # def move
-  #   "rock"
-  # end
 end

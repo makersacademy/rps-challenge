@@ -14,11 +14,8 @@
     </header>
 
       <div class="center">
-      <h2>Hello <%= @name %>! Rock, paper or scissors?</h2>
-       <form action="/game" method="post">
-         <input type="text" name="move" placeholder="Write your move">
-         <button type="submit">Play</button>
-       </form>
+      <h2>You've chosen <%= @move %>, <%= @name %></h2>
+      <p>And you won / lost / draw</p>
       </div>
   </body>
 </html>
