@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require 'player'
 
 class Rps < Sinatra::Base
     configure :development do
@@ -13,13 +14,14 @@ get '/' do
 end
 
 post '/names' do
-    session[:player1] = params[:player1]
+    $player1 = Player.new(params[:player1])
+    #session[:player1] = params[:player1]
     redirect ('/view_name')
 end
 
 get '/view_name' do
-    @player1 = session[:player1]
-    @shape = session[:shape]
+    @player1 = $player1.name
+    # @shape = session[:shape]
     erb :view_name
 end
 
@@ -30,7 +32,11 @@ post '/view_option' do
 end
 
 get '/submit_move' do
-   erb :submit_move
+   @shape = session[:shape]
+# instance var for winner
+
+   erb :result
+  
 end
 
 
