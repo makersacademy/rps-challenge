@@ -6,10 +6,6 @@ class Game
   attr_accessor :computer
 
   def initialize
-    @computer = nil
-  end
-
-  def generate_option
     @computer = Random.new.random_option
   end
 

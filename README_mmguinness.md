@@ -3,32 +3,98 @@
 Task
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
+To provide a _Rock, Paper, Scissors_ game:
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
+- the user should be able to enter their name before the game
+- the user will be presented the choices (rock, paper and scissors)
+- the user can choose one option
 - the game will choose a random option
 - a winner will be declared
 
-## Basic Rules
+* How to use
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+Fork this repo.
+Run the command 'bundle' in the project directory to ensure you have all the gems.
+Run tests with RSpec.
+Run tests with Rubocop.
+Run ruby app.rb in terminal to view in localhost port.
+
+## File Tree
+.
+├── CONTRIBUTING.md
+├── Gemfile
+├── Gemfile.lock
+├── LICENSE
+├── README.md
+├── README_mmguinness.md
+├── app.rb
+├── check.sh
+├── config.ru
+├── coverage
+├── docs
+│   └── review.md
+├── lib
+│   ├── game.rb
+│   ├── player.rb
+│   ├── random.rb
+│   └── result.rb
+├── public
+│   └── images
+│       └── RockPaperScissors.png
+├── spec
+│   ├── features
+│   │   ├── enter_names_spec.rb
+│   │   ├── presented_with_three_choices_spec.rb
+│   │   ├── select_option_spec.rb
+│   │   └── testing_infrastructure_spec.rb
+│   ├── game_spec.rb
+│   ├── player_spec.rb
+│   ├── random_spec.rb
+│   ├── result_spec.rb
+│   └── spec_helper.rb
+└── views
+    ├── game_play.erb
+    ├── play.erb
+    └── start.erb
+
+* RSpec Tests
+
+## Feature Tests
+
+- Enter name
+  submitting name
+
+- Three choices available
+  Has three options
+
+- select option
+  player has selected one option
+
+- Testing infrastructure
+  Can run app and check page content
+
+## Unit Tests
+
+- Game
+  should start with a random choice for computer
+  #play_game
+    should evaluate a round of the game
+
+- Player
+  #name
+    returns the name
+  #choose
+    choose one option
+  #chosen_option
+    display the chosen option
+
+- Random
+  #random_option
+    should chose a random option
+
+- Result
+  #winner
+    should accept two variables
+    should result in a draw
+    should result in player one winning
+    should result in player two winning
