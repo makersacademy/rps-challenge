@@ -14,7 +14,7 @@ feature '' do
 
   scenario 'choose a shape' do
     click_button 'Paper'
-    expect(page).to have_content 'You picked Paper'
+    expect(page).to have_content 'You picked: Paper'
   end
 
 end
