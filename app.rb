@@ -7,9 +7,13 @@ class RPS < Sinatra::Base
   end
 
   get '/' do 
-    "Does this work?"
+    erb :index
   end
 
+  post '/names' do
+    @player = params[:player_name]
+    erb :player
+  end
   run! if app_file == $0
 
 
