@@ -21,3 +21,15 @@ def human_and_sign_on
   fill_in :player_two, with: "Fred"
   click_button 'Register'
 end
+
+def one_player_plays(choice)
+  choose(choice)
+  click_button('Play')
+end
+
+def two_players_play(player_one_choice, player_two_choice)
+  choose(player_one_choice)
+  click_button('Play')
+  choose(player_two_choice)
+  click_button('Play')
+end
