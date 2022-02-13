@@ -38,4 +38,23 @@ Play the game
 
 Not sure how to play Rock, Paper, Scissors, look no further...
 
+Enter your game type
+
+![alt text](https://github.com/nyahehnagi/rps-challenge/blob/main/docs/game_type_selection.png)
+
+Enter your names
+
+![alt text](https://github.com/nyahehnagi/rps-challenge/blob/main/docs/enter_names.png)
+
+Make your plays
+
+![alt text](https://github.com/nyahehnagi/rps-challenge/blob/main/docs/player_one_plays.png)
+![alt text](https://github.com/nyahehnagi/rps-challenge/blob/main/docs/player_two_plays.png)
+
+Rejoice or cry at the result
+
+![alt text](https://github.com/nyahehnagi/rps-challenge/blob/main/docs/winner_declared.png)
+
+
+
 
