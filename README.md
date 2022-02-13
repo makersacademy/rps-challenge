@@ -1,8 +1,8 @@
 # My RPS Challenge
 
-My take on creating a 'Rock, Paper, Scissors game'
-
-
+My take on creating a 'Rock, Paper, Scissors game'. 
+I used user stories to write the first set of tests and steps.
+Had a go at implimenting the second user story. Hope to finish when I have the time. 
 
 # RPS Challenge
 

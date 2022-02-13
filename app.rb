@@ -6,7 +6,7 @@ class RPS < Sinatra::Base
     register Sinatra::Reloader 
   end
 
-  enable :sessions
+ enable :sessions
 
   get '/' do 
     erb :index
@@ -18,7 +18,7 @@ class RPS < Sinatra::Base
   end
 
   get '/player' do
-  @player = session[:player_name]
+    @player = session[:player_name]
   erb :player
   end
 
