@@ -9,18 +9,18 @@ feature 'Select Option' do
   scenario 'Able to Select Rock' do
     sign_in_and_play
     click_button "Rock"
-    expect(page).to have_content 'You Have choosen Rock'
+    expect(page).to have_content 'John has choosen Rock'
   end
 
   scenario 'Able to Select Paper' do
     sign_in_and_play
     click_button "Paper"
-    expect(page).to have_content 'You Have choosen Paper'
+    expect(page).to have_content 'John has choosen Paper'
   end
 
   scenario 'Able to Select Scissors' do
     sign_in_and_play
     click_button "Scissors"
-    expect(page).to have_content 'You Have choosen Scissors'
+    expect(page).to have_content 'John has choosen Scissors'
   end
 end
