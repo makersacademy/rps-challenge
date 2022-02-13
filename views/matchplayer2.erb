@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<img class="image" src="rockpaperscissors.png"/>
+</br>
+<h3> Game On <%= @player2.name %> </h3>
+<p> Choose your move! </p>
+
+    <form class="container" action="/result" method="get">
+      </br>
+      <button class="submit-button" type="submit" value="rock" name="player2">ROCK</button>
+      </br>
+      <button class="submit-button" type="submit" value="paper" name="player2">PAPER</button>
+      </br>
+      <button class="submit-button" type="submit" value="scissors" name="player2">SCISSORS</button>
+    </form>
+    </h3>
+
+  
