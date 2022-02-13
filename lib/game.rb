@@ -6,7 +6,8 @@ class Game
   attr_reader :computer
 
   def initialize
-    @computer = Random.new
+    @computer = Random.new.random_option
   end
+
 
 end
