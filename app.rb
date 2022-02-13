@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require 'player'
+require './lib/player'
 
 class Rps < Sinatra::Base
     configure :development do
@@ -38,7 +38,6 @@ get '/submit_move' do
    erb :result
   
 end
-
 
     run! if app_file == $0
 end

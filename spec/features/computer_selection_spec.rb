@@ -5,9 +5,9 @@ feature 'Computer picks a move' do
         click_button 'Submit'
       end
     
-      scenario 'Computer chooses Rock and player chooses Paper' do
-        click_button 'Paper'
+      # scenario 'Computer chooses Rock and player chooses Paper' do
+      #   click_button 'Paper'
         
-      end 
+      # end 
 
 end
