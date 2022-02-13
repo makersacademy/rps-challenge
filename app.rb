@@ -24,10 +24,6 @@ class RPS < Sinatra::Base
     end
     session[:Player1] = @player1
     session[:Player2] = @player2
-    p @player1
-    p @player2 
-    p @player2.computer?
-    p "redirect to show page now"
     redirect to('/match')
   end
 
@@ -44,10 +40,6 @@ class RPS < Sinatra::Base
     @player_move = params[:player1]
     @computer_move = rps_game.random_move
     @result = rps_game.play(@player_move, @computer_move)
-    if @result == "win"
-      @player1.pointswon
-      p @player1.points
-    end    
     erb(:result)
   end
 

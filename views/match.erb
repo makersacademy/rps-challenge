@@ -1,16 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
 
-<h3> Welcome <%= @player1.name %> what would you like to play?</h3>
+<img class="image" src="rockpaperscissors.png"/>
+</br>
+<h3> Game On <%= @player1.name %> </h3>
+<p> Choose your move! </p>
 
-    <form action="/result" method="post">
+    <form class="container" action="/result" method="post">
       </br>
+      <button class="submit-button" type="submit" value="rock" name="player1">ROCK</button>
       </br>
-      <button type="submit" value="rock" name="player1">ROCK</button>
+      <button class="submit-button" type="submit" value="paper" name="player1">PAPER</button>
       </br>
-      </br>
-      <button type="submit" value="paper" name="player1">PAPER</button>
-      </br>
-      </br>
-      <button type="submit" value="scissors" name="player1">SCISSORS</button>
+      <button class="submit-button" type="submit" value="scissors" name="player1">SCISSORS</button>
     </form>
     </h3>
 
