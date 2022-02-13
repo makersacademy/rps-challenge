@@ -1,0 +1,16 @@
+<% if @player_name %>
+<h1>Player Name: <%= @player_name %></h1>
+<% end %>
+
+<h1>Rock, Paper, Scissors</h1>
+
+<code class="hljs xml"><form method="post" action="/result">
+    <fieldset>
+        <legend>Please choose?</legend>
+        <input type="radio" name="choice" value="Rock">Rock<br>
+        <input type="radio" name="choice" value="Paper">Paper<br>
+        <input type="radio" name="choice" value="Scissors">Scissors<br>
+        <br>
+        <input type="submit" value="Submit now">
+    </fieldset>
+</form></code>
