@@ -76,6 +76,11 @@ Run `rspec` directly in root of your local project
 - Specs: `spec/<name>.rb`
 - Features: `spec/features/<name>.rb`
 
+#### What I know I need to work on
+- Improving the two player experience (simplifying)
+- Add points tally
+
+
 
 
 ------
