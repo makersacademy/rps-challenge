@@ -1,5 +1,6 @@
 require "sinatra/base"
 require "sinatra/reloader"
+require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -23,13 +24,17 @@ class RockPaperScissors < Sinatra::Base
     end
 
     post '/move' do
-      session[:player_move] = params[:player_move]
+      session[:game] = Game.new(params[:player_move])
+      # session[:player_move] = params[:player_move]
       redirect('/outcome')
     end
 
     get '/outcome' do
       @player_name = session[:player_name]
-      @player_move = session[:player_move]
+      @game = session[:game]
+      @player_move = @game.player_move
+      @comp_move = @game.comp_move
+      @result = @game.outcome
       erb(:outcome_view)
     end
 
