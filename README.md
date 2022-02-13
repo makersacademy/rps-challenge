@@ -33,3 +33,9 @@ from the root directory of the installation
 Navigate to http://localhost:9292/
 
 Play the game
+
+## How to Play
+
+Not sure how to play Rock, Paper, Scissors, look no further...
+
+
