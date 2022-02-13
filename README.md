@@ -3,6 +3,8 @@
 ## Author Notes
 ----------------------
  This is a rock paper scissor game played through a web interface.
+ 
+ The purpose of this exercise was to learn about test driving a web interface from scratch through the use of Capybara user interface feature testing along with RSpec and the implementation of the Model, View, Controller design pattern.
 
 ## Installation
 ----------------------
