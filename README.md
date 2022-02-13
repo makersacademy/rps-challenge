@@ -84,3 +84,8 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+My attempt
+----------------------
+
+I managed to complete what I have done so far, via the week's Battle challenge. I have hit a crossroad where I need to randomise the computers turn. I have tried to use the .sample method however keep getting errors. I decided to timelock and hand in. 
