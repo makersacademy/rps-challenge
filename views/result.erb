@@ -1,0 +1,20 @@
+
+<%= @game.player_one.name %> played <b><%=@game.player_one.weapon.to_s.upcase%></b><br>
+<%= @game.player_two.name %> played <b><%=@game.player_two.weapon.to_s.upcase%></b><br>
+
+<% if @result == :win %>
+  <%= @game.player_one.name%> wins!
+<% end %>
+
+<% if @result == :lose %>
+  <%= @game.player_two.name%> wins!
+<% end %>
+
+<% if @result == :draw %>
+  You draw!
+<% end %>
+
+<br><br>
+<form action="/player_one_select" method="get">
+<input type="submit" value="Play Again?"> 
+</form>
