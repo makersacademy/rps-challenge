@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 ruby '3.0.2'
 
-gem 'sinatra'
+gem 'sinatra', '~> 1.4', '>= 1.4.7'
+gem 'rack', '~> 1.6', '>= 1.6.4'
 
 group :test do
   gem 'capybara'
