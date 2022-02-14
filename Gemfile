@@ -14,3 +14,8 @@ end
 group :development, :test do
   gem 'rubocop', '1.20'
 end
+
+gem 'selenium-webdriver'
+gem "sinatra-contrib"
+gem 'webrick'
+gem 'launchy'
