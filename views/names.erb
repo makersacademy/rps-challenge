@@ -1,8 +1,17 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 <h1>Rock Paper Scissors</h1>
-
-<p>Hello <%= session[:player_name] %> welcome to Rock, Paper, Scissors</p>
-
+</br>
+</br>
+<h2>Hello <%= session[:player_name] %> welcome to Rock, Paper, Scissors</h2>
+</br>
+</br>
 <p>When ready, please hit Start Game</p>
-
+</br>
+</br>
 <form action="/start_game" method=get>
-<input type="submit" value="Start Game">
+<input class="enter-button" type="submit" value="Start Game">
+</body>

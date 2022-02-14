@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-
 require './lib/start_game.rb'
 require './lib/results.rb'
 
