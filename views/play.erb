@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+<head> 
+  <title> Rock, paper, Scissors</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+  <style>
+    input {
+      background: red;
+      margin: 20px;
+      border-color: red;
+      font-size: 30px;
+      font-family: "Audiowide", sans-serif;
+    }
+    html, body {
+      height: 100%;
+    }
+    html {
+      display: table;
+      margin: auto;
+    }
+    body {
+      background-color: yellow;
+      font-family: "Audiowide", sans-serif;
+      margin: auto;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    h1, h3, h2 {
+      margin: auto;
+      display: table;
+    }
+    #return {
+        font-size: 18px;
+        margin: auto;
+        display: table
+    }
+    img {
+      border-radius: 100px;
+      margin: auto;
+      display: table
+    }
+    #ready, #happy, #sadface, #bored {
+      width: 150px;
+    }
+</style>
+</head>
+<body>
+  <h2> Okay <%= @player.name %>... Make your move </h2>
+
+  <% result = @player.play%>
+   <% if result == nil %>
+     <img id="ready" src="ready.png"> 
+    <% elsif result.include? "wins!" %>
+      <img id="happy" src="HAPPY.png">
+      <h1> <%= result %> <h1>
+    <% elsif result.include? "loses!" %> 
+      <img id="sadface" src="sadface.png">
+      <h1> <%= result %> <h1>
+    <% else %>
+      <img id="bored" src="bored.png">
+      <h1> <%= result %> <h1>
+    <% end %>
+
+    <form action="/paper" method="post">
+      <input type="submit" value="PAPER">
+      <input type="submit" value="SCISSORS" formaction="/scissors">
+      <input type="submit" value="ROCK" formaction="/rock">
+   </form>
+ <h3> <label>
+    Computer
+    <%= @player.computer_score %>
+  </label>
+  <label>
+  <%= @player.name %>
+   <%= @player.your_score %>
+   </label>
+   </h3><br>
+   <form >
+    <input id="return" type="submit" value="Play as another user" formaction="/">
+   </form>
+   </body>
+</html>
+
+
+
+
+ 
+  
