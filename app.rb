@@ -25,7 +25,6 @@ class RPS < Sinatra::Base
   end
 
   get '/start' do
-    @player = $player
     erb(:game)
   end
 
