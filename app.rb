@@ -21,5 +21,9 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/start' do
+    erb(:game)
+  end
+
   run! if app_file == $0
 end
