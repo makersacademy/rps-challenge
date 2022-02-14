@@ -1,6 +1,13 @@
+require_relative '../app.rb'
+require 'web_helpers.rb'
+
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+ENV['RACK_ENV'] = "test"
+
+Capybara.app = RPS
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -16,5 +23,9 @@ RSpec.configure do |config|
     puts
     puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
-  end
+  end  
+
 end
+
+
+
