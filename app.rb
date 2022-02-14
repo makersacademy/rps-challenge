@@ -15,37 +15,26 @@ class RPSgame < Sinatra::Base
     erb :index
   end
 
-  post '/marketeer' do
+  post '/player' do
     player = Player.new(params[:marketeer]) 
     opponent = Player.new("Angelica Pickles")
     $game = Game.new(player, opponent)
     @game = $game
-    erb :play
+    erb :choose
   end
 
-  post '/rock' do
+  get '/choice' do
     @game = $game
-    @game.player.set_move(@game.player, "rock")
-    redirect '/move'
+    choice = params[:choice]
+    @game.player.set_move(@game.player, choice)
+    redirect '/playgame'
   end  
 
-  post '/paper' do
-    @game = $game
-    @game.player.set_move(@game.player, "paper")
-    redirect '/move'
-  end
-
-  post '/scissors' do
-    @game = $game
-    @game.player.set_move(@game.player, "scissors")
-    redirect '/move'
-  end 
-  
-  get '/move' do
+  get '/playgame' do
     @game = $game
     @game.opponent.auto_move(@game.opponent)
-    @game.get_winner(@game.player, @game.opponent)
-    erb :move
+    @game.results
+    erb :playgame
   end  
 
   # # Start the server if this file is executed directly (do not change the line below)

@@ -8,17 +8,17 @@ describe Game do
   describe '#get winner' do
     it 'tests for a draw' do
       game = Game.new(player,opponent)
-      expect(game.get_winner(game.player, game.opponent)).to eq "It's a draw!!"
+      expect(game.results).to eq "It's a draw!!"
     end
     it 'tests for a player win' do
       opponent = Player.new('Angelica Pickles', 'scissors') 
       game = Game.new(player,opponent)
-      expect(game.get_winner(game.player, game.opponent)).to eq "Lucas wins!!"
+      expect(game.results).to eq "Lucas wins!!"
     end
     it 'tests for an opponent win' do
       opponent = Player.new('Angelica Pickles', 'paper') 
       game = Game.new(player,opponent)
-      expect(game.get_winner(game.player, game.opponent)).to eq "Angelica Pickles wins!!"
+      expect(game.results).to eq "Angelica Pickles wins!!"
     end
   end
   

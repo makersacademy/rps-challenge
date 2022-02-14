@@ -18,15 +18,12 @@ class Player
     move = ''
     if num.zero?
       move = 'rock' 
-    end
-    if num == 1
+    elsif num == 1
       move = 'paper' 
-    end
-    if num == 2
+    else
       move = 'scissors' 
     end
     player.move = move
-    return player
   end 
   
 end  

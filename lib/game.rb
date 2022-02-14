@@ -17,25 +17,24 @@ class Game
     @players.last
   end
 
-  def get_winner(player, opponent)
-    result = ""
+  def results
     if player.move == opponent.move
       @result = "It's a draw!!"
-    else    
-      if player.move == "rock"
-        opponent.move == "paper" ? @result = "#{opponent.name} wins!!" 
-                                 : @result = "#{player.name} wins!!"
-      end
-      if player.move == "scissors"
-        opponent.move == "rock" ? @result = "#{opponent.name} wins!!" 
-          : @result = "#{player.name} wins!!"
-      end
-      if player.move == "paper"
-        opponent.move == "scissors" ? @result = "#{opponent.name} wins!!" 
-          : @result = "#{player.name} wins!!"
-      end
-    end 
-    return @result
+    else  
+      winner
+    end
+  end 
+
+  private
+
+  def winner
+    if ((player.move == "rock" && opponent.move == "paper") || 
+      (player.move == "scissors" && opponent.move == "rock") || 
+      (player.move == "paper" && opponent.move == "scissors"))
+      @result = "#{opponent.name} wins!!" 
+    else
+      @result = "#{player.name} wins!!"
+    end  
   end 
 
 end

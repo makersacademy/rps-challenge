@@ -1,17 +1,20 @@
-feature 'Testing marketeer move and also opponent move' do
 
-  scenario 'Test marketeer move' do
+feature 'Testing entry and display of player' do
+
+  scenario 'Test basic content when loading screen' do
     visit('/')
-    fill_in 'marketeer', with: 'Jane Lucas'
-    click_on 'Submit'
-    expect(page).to have_content 'Welcome to Rock, Paper and Scissors'
-    expect(page).to have_content 'Jane Lucas!'
-    find('form').choose('Rock')
-    visit('/playgame')
-    expect(page).to have_content 'Jane Lucas you have chosen rock'
+    expect(page).to have_content 'Please enter your name to begin a game'
   end
 
-  scenario 'Test marketeer move and opponents move' do
+  scenario 'Test entering a player' do
+    visit('/')
+    fill_in 'marketeer', with: 'Jane Lucas'
+    click_on 'Submit'
+    expect(page).to have_content 'Welcome to Rock, Paper and Scissors'
+    expect(page).to have_content 'Jane Lucas!'
+  end
+  
+  scenario 'Test player entering a choice' do
     visit('/')
     fill_in 'marketeer', with: 'Jane Lucas'
     click_on 'Submit'
@@ -20,7 +23,6 @@ feature 'Testing marketeer move and also opponent move' do
     find('form').choose('Rock')
     visit('/playgame')
     expect(page).to have_content 'Jane Lucas you have chosen rock'
-    expect(page).to have_content 'Angelica Pickles you have chosen'
   end
 
 end
