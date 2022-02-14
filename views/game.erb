@@ -1,0 +1,22 @@
+<h2><%= @game.player.name %> vs Computer</h2>
+<form action = "/rps" method="post">
+    <input type="submit" name='RPS' value= "Rock">
+    <input type="submit" name='RPS' value= "Paper">
+    <input type="submit" name='RPS' value= "Scissors">
+</form>
+
+<h3><%= @game.player.name %>: <%= @game.score_hash[:player] %> | Computer: <%= @game.score_hash[:computer] %></h3>
+
+<% if @game.move != nil %> 
+<h2 class="player-move"><%= @game.player.name %> chose <%= @game.move %></h2>
+<h2 class="computer-move">Computer chose <%= @game.c_move %></h2>
+
+<% if @game.result == "Draw" %>
+<h2>This round is a Draw</h2>
+<% elsif @game.result == @game.player %>
+<h2 style="color:green;"><%= @game.player.name %> won this round :)</h2>
+<% elsif @game.result == "Computer" %>
+<h2 style="color:red;">Computer is the winner :(</h2>
+<% end %>
+
+<% end %>
