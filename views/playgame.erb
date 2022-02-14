@@ -1,0 +1,34 @@
+
+<style>
+h2 {text-align: center;}
+</style>
+
+<h2>Welcome to Rock, Paper and Scissors</h2>
+<h2 text-align: center;><%= @game.player.name %>!</h2>
+
+<h4 style="padding-left:525px;">
+<form action="/choice">
+  <% if @game.player.move == "rock" %>
+    <input type="radio" class="rock" id="rock" name="choice" value="rock" onClick='this.form.submit();' checked="checked">
+  <% else %>
+    <input type="radio" id="rock" name="choice" value="rock" onClick='this.form.submit();'>
+  <% end %>
+  <label for="rock">Rock</label><br>
+  <% if @game.player.move == "paper" %>
+    <input type="radio" class="paper" id="paper" name="choice" value="paper" onClick='this.form.submit();' checked="checked">
+  <% else %>
+    <input type="radio" id="paper" name="choice" value="paper" onClick='this.form.submit();'>
+  <% end %>
+  <label for="paper">Paper</label><br>
+  <% if @game.player.move == "scissors" %>
+    <input type="radio" class="scissors" id="scissors" name="choice" value="scissors" onClick='this.form.submit();' checked="checked">
+  <% else %>
+    <input type="radio" id="scissors" name="choice" value="scissors" onClick='this.form.submit();'>
+  <% end %>
+  <label for="scissors">Scissors</label><br>
+</form>
+</h4>
+
+<h2><%= @game.player.name %> you have chosen <%= @game.player.move %></h2>
+<h2><%= @game.opponent.name %> you have chosen <%= @game.opponent.move %></h2>
+<h2><%= @game.result %></h2>

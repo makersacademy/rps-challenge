@@ -1,0 +1,18 @@
+
+<style>
+h2 {text-align: center;}
+</style>
+
+<h2 text-align: center;>Welcome to Rock, Paper and Scissors</h2>
+<h2 text-align: center;><%= @game.player.name %>!</h2>
+
+<h4 style="padding-left:525px;">
+<form action="/choice">
+  <input type="radio" id="rock" name="choice" value="rock" onclick='this.form.submit();'>
+  <label for="rock">Rock</label><br>
+  <input type="radio" id="paper" name="choice" value="paper" onclick='this.form.submit();'>
+  <label for="paper">Paper</label><br>
+  <input type="radio" id="scissors" name="choice" value="scissors" onclick='this.form.submit();'>
+  <label for="scissors">Scissors</label><br>
+</form>
+</h4>
