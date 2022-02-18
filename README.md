@@ -24,3 +24,19 @@ Process
 * Had I got this to work, I wouldn't know how to render this logic on the `.erb` files.
 * With hindsight I might have been better off with just one class and simpler logic.
 * Because of time constraint, I polished a little the front-end, and submitted unfinished.
+
+Update 18 Feb 2022
+---
+
+### Game Spec
+- Kept the marketeer double
+- Created a new instance of Game in a Before block.
+- Changed all instances of Game from `subject` to the instance variable.
+- In the computer move test, mocked the `computer_move` method to always return a certain string.
+- Test passes.
+
+### Game logic
+- I don't think I still need the `marketeer_move` method.
+- Using the `$marketeer.move` instance instead.
+- Using the `computer_move` method.
+- I think I need to call `computer_move` at the beginning of `run`
