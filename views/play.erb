@@ -1,0 +1,19 @@
+
+<%= "Welcome to the game, #{@player}!" %>
+<p>Choose your weapon</p>
+<form action="/outcome" method='post'>
+  <div>
+    <input type="radio" name="answer" value="rock">
+    <label>Rock</label>
+
+    <input type="radio" name="answer" value="paper">
+    <label>Paper</label>
+
+    <input type="radio" name="answer" value="scissors">
+    <label>Scissors</label>
+  </div>
+  <br>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
