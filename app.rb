@@ -19,6 +19,9 @@ class Rps < Sinatra::Base
 
   post '/outcome' do
     @answer = params[:answer]
+    game1 = Game.new(@answer)
+    @computer_input = game1.computer_input
+    @victory = game1.win_lose_draw
     erb :outcome
   end
 
