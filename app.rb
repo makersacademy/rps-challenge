@@ -24,7 +24,6 @@ class Rps < Sinatra::Base
   end
 
   post '/outcome' do
-    
     @input = params[:input]
     @player = session[:player_name]
     $game = Game.new(@input, @player)
