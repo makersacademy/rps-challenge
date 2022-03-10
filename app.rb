@@ -8,7 +8,7 @@ class Rps < Sinatra::Base
   end
 
   enable :sessions
-  
+
   get '/' do
     erb :index
   end
@@ -24,16 +24,15 @@ class Rps < Sinatra::Base
   end
 
   post '/outcome' do
-    session[:answer] = params[:answer]
+    
+    @input = params[:input]
+    @player = session[:player_name]
+    $game = Game.new(@input, @player)
     redirect '/outcome'
   end
 
   get '/outcome' do
-    @player = session[:player_name]
-    @answer = session[:answer]
-    game1 = Game.new(@answer)
-    @computer_input = game1.computer_input
-    @victory = game1.win_lose_draw
+    @game = $game
     erb :outcome
   end
 
