@@ -15,9 +15,9 @@ If you're ready to dive into the game that's gonna make your adrenaline spike up
   3. `rackup`
   4. visit `http://localhost:` + 4 numbers given by rack
   5. don't forget your friends and family while playing this crazy game
-  
+
 ## Screenshot
-![RPS Screenshot](https://github.com/ruiined/rps-challenge/blob/main/screens/rps-game-medium.png)
+![RPS Screenshot](https://github.com/ruiined/rps-challenge/blob/main/screens/rps-game-medium.jpeg)
 
 ## Credits
   * Thank you to [Makers](https://github.com/makersacademy/rps-challenge) for providing this challenge to work on.
