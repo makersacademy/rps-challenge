@@ -7,7 +7,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    "Hi"
+    erb :index
   end
 
   # run! if app_file == $0
