@@ -1,74 +1,72 @@
 <head>
 <style>
   body {
-      background-color: #fafafa;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #4a4a4a;
-    }
+    background-color: #fafafa;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4a4a4a;
+  }
   div {
-      position: absolute;
-      text-align: center;
-      top: 20%;
-      left: 32%;
-    }
-  input[type=text] {
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 30px;
-      letter-spacing: 3px;
-      background-color: #fafafa;
-      color: #87CEEB;
-      font-weight: bold;
-      width: 30%;
-      height: 40px;
-      border: none;
-      border-bottom: 6px solid #bababa;
-      -webkit-transition: border-color 1s ease;
-      -moz-transition: border-color 1s ease;
-      -o-transition: border-color 1s ease;
-      -ms-transition: border-color 1s ease;
-      transition: border-color 1s ease;
-    }
-    input[type=text]:focus {
-      border-bottom: 6px solid #87CEEB;
-      outline: none;
-    }
-    input[type=text]:hover {
-      border-bottom: 6px solid #c8262c;
-    }
-    input[type=submit] {
-      margin-top: 20px;
-      width: 10%;
-      border:none;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 1.5vw;
-      letter-spacing: 3px;
-      background-color: #fafafa;
-      color: #4a4a4a;
-      font-weight: bold;
-      width: 190px;
-      height: 40px;
-      border: none;
-      background-color: #fff;
-      -webkit-transition: color 1s ease;
-      -moz-transition: color 1s ease;
-      -o-transition: color 1s ease;
-      -ms-transition: color 1s ease;
-      transition: color 1s ease;
-    }
+    position: absolute;
+    text-align: center;
+    top: 15%;
+    left: 30%;
+  }
+  input[type=submit] {
+    margin-top: 20px;
+    width: 10%;
+    border:none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0vw;
+    letter-spacing: 3px;
+    background-color: #fafafa;
+    color: #4a4a4a;
+    font-weight: bold;
+    width:10vw;
+    height: 10vw;
+    border: none;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+  }
   input[type=submit]:hover {
-      color: #c8262c;
-      cursor: pointer;
-    }
+    opacity: 1.0;
+    cursor: pointer;
+  }
+  input[type=submit]#rock {
+    background-image: url("https://i.ibb.co/g6Pr9qh/rock.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    margin-right: 1vw;
+  }
+  input[type=submit]#paper {
+    background-image: url("https://i.ibb.co/DwLSJCg/paper.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    margin-right: 1vw;
+  }
+  input[type=submit]#scissors {
+    background-image: url("https://i.ibb.co/b3r12bR/scissors.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+  }
   h1 {
     font-size: 3.5vw;
   }
   h2 {
-      font-size: 2vw;
-      color: #bababa;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+    font-size: 2vw;
+    color: #bababa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
   h3 {
     font-size: 1.5vw;
@@ -78,7 +76,7 @@
     font-style: oblique;
   }
   b {
-    color: #c8262c
+    color: #6c3b96;
   }
 </style>
 </head>
@@ -88,9 +86,9 @@
 <h2><%= @game.player.name %> <b>VS</b> Computer</h2>
 <h3>Pick your move, <%= @game.player.name %></h3>
 <form action="/move">
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+  <input type="submit" id="rock" value="Rock">
+  <input type="submit" id="paper" value="Paper">
+  <input type="submit" id="scissors" value="Scissors">
 </form>
 </div>
 </body>
