@@ -6,13 +6,19 @@ class RockScissorsPaper < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   post '/name' do
-    p params
-    @player = params[:player]
+    session[:player] = params[:player]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player = session[:player]
     erb :play
   end
 
