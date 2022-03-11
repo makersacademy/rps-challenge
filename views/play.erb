@@ -1,0 +1,21 @@
+<h1>Welcome <%= @name%>!</h1>
+<h2>Choose your move:<h2>
+
+<form action="/move" method="post">
+    <button type="submit"> 
+      <img border="0" alt="rock" src="https://www.thesun.co.uk/wp-content/uploads/2021/02/NINTCHDBPICT000629318522-1.jpg?strip=all&w=617" width="300" height="450">
+    </button>
+    <input type="hidden" name="move" value="rock">
+</form>
+<form action="/move" method="post">
+    <button type="submit"> 
+      <img border="0" alt="paper" src="https://nationaltoday.com/wp-content/uploads/2021/08/National-Toilet-Paper-Day-1200x834.jpg" width="300" height="250">
+    </button>
+    <input type="hidden" name="move" value="paper">
+</form>
+<form action="/move" method="post">
+    <button type="submit"> 
+      <img border="0" alt="scissors" src="https://images2.minutemediacdn.com/image/upload/c_fill,w_2160,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/66366-20th-century-fox-home-entertainment-25ba70d9738e8c22a0e996efaa52d5fa.jpg" width="300" height="200">
+    </button>
+    <input type="hidden" name="move" value="scissors">
+</form>
