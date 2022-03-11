@@ -8,8 +8,8 @@
   div {
       position: absolute;
       text-align: center;
-      top: 25%;
-      left: 25%;
+      top: 20%;
+      left: 32%;
     }
   input[type=text] {
       text-align: center;
@@ -42,14 +42,15 @@
       border:none;
       text-align: center;
       text-transform: uppercase;
-      font-size: 30px;
+      font-size: 1.5vw;
       letter-spacing: 3px;
       background-color: #fafafa;
       color: #4a4a4a;
       font-weight: bold;
-      width: 30%;
+      width: 190px;
       height: 40px;
       border: none;
+      background-color: #fff;
       -webkit-transition: color 1s ease;
       -moz-transition: color 1s ease;
       -o-transition: color 1s ease;
@@ -61,17 +62,35 @@
       cursor: pointer;
     }
   h1 {
-    font-size: 5vw;
+    font-size: 3.5vw;
   }
   h2 {
       font-size: 2vw;
       color: #bababa;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+  }
+  h3 {
+    font-size: 1.5vw;
+    color: #bababa;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    font-style: oblique;
+  }
+  b {
+    color: #c8262c
   }
 </style>
 </head>
 <body>
 <div>
 <h1>Rock, Paper, Scissors</h1>
-<h2><%= @game.player.name %> VS Computer</h2>
+<h2><%= @game.player.name %> <b>VS</b> Computer</h2>
+<h3>Pick your move, <%= @game.player.name %></h3>
+<form action="/move">
+  <input type="submit" value="Rock">
+  <input type="submit" value="Paper">
+  <input type="submit" value="Scissors">
+</form>
 </div>
 </body>
