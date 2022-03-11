@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require 'player'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -12,11 +13,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @player = params[:player]
+    @player = Player.new(params[:player]).name
     erb :play
   end 
 
-  
+  # get '/play' do
+
+  # end 
 
   # run! if app_file == $0
 end
