@@ -8,7 +8,7 @@
   div {
     position: absolute;
     text-align: center;
-    top: 15%;
+    top: 3%;
     left: 30%;
   }
   div.options {
@@ -72,6 +72,13 @@
     color: #bababa;
     text-transform: uppercase;
     letter-spacing: 2px;
+    line-height: 60%;
+  }
+  h2#score {
+    color: #575757;
+  }
+  h2#vs {
+    font-size: 1.5vw;
   }
   h3 {
     font-size: 1.5vw;
@@ -80,25 +87,44 @@
     letter-spacing: 3px;
     font-style: oblique;
   }
+  h4 {
+    font-size: 5vw;
+    color: #bababa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  h4#win {
+    color: #edd415;
+  }
+  h4#loss {
+    color: #6c3b96;
+  }
   b {
     color: #6c3b96;
+  }
+  i {
+    color: #87CEEB;
+    font-style: normal;
+  }
+  u {
+    border-bottom: 8px solid #87CEEB;
+    text-decoration: none;
   }
 </style>
 </head>
 <body>
 <div>
 <h1>Rock, Paper, Scissors</h1>
+<h2 id="score"><u><%= @game.player.name%>'s score: <b><%= @game.player.score %></b></u></h2>
+<h2 id="vs">(<%= @game.player.name %> VS Computer)</h2>
 <% if @game.result == nil %>
-<h2><%= @game.player.name %> <b>VS</b> Computer</h2>
-<f4>It's a tie!</f4>
+<h4>It's a tie!</h4>
 <% end %>
 <% if @game.result == false %>
-<h2><%= @game.player.name %> <b>VS</b> <i>Computer</i></h2>
-<h4>You lost!</h4>
+<h4 id="loss">You lost!</h4>
 <% end %>
 <% if @game.result == true %>
-<h2><i><%= @game.player.name %></i> <b>VS</b> Computer</h2>
-<h4>You won!</h4>
+<h4 id="win">You won!</h4>
 <% end %>
 
 <h3>Play again?</h3>
