@@ -12,5 +12,16 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
+  get '/username' do
+    player = Player.new(params[:player_name])
+    $game = Game.new(player)
+    redirect '/game'
+  end
+
+  get '/game' do
+    @game = $game
+    erb :game
+  end
+
   run! if app_file == $0
 end
