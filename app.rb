@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative 'lib/player'
+require_relative 'lib/game'
 
 class Rps < Sinatra::Base
     enable :sessions
@@ -12,14 +14,14 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    @player_1 = params[:player_1]
-    @player_2 = params[:player_2]
+    @player_1 = Player.new.take_name(params[:player_1])
     erb(:play)
   end
 
   get '/game' do
-    @player_1 = params[:player_1]
-    @player_2 = params[:player_2]
+    @player_1 = Player.name
+    @p1_pick = params[:p1_pick]
+    @machine_pick = Game.machine_pick
     erb(:game)
   end
 

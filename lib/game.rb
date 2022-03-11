@@ -1,23 +1,25 @@
+
 class Game
-  RPS = ["Rock", "Paper", "Scissors"]
   
-  attr_reader :player1, :player2
-    
-  def initialize(player_1, player_2)
-    @player1 = player_1
-    @player2 = player_2
+  @@machine_pick = ""
+
+  def self.machine_pick
+    @@machine_pick = ["Rock", "Paper", "Scissors"].sample
   end
 
-  def random
-    rand(3)
-  end
+  # def winner
+  #   if p1_pick == p2_pick
+  #     "You Tie!"
+  #   elsif p1_pick == "Rock" && p2_pick == "Scissors"
+  #     "#{@player1.name} you win!"
+  #   elsif p1_pick == "Paper" && p2_pick == "Rock"
+  #     "#{@player1.name} you win!"
+  #   elsif p1_pick == "Scissors" && p2_pick == "Paper"
+  #     "#{@player1.name} you win!"
+  #   else
+  #     "The Machine wins!"
+  #   end
 
-  def p1_pick
-    RPS[random - 1]
-  end
-
-  def p2_pick
-    RPS[random - 1]
-  end
+  # end
 
 end

@@ -1,0 +1,21 @@
+
+<%= @p1_pick %> <%= @machine_pick %>  <%= @player_1 %>
+
+<div>
+  <% if @p1_pick == @machine_pick %>
+    <p>You tie!</p>
+  <% elsif @p1_pick == "Rock" && @machine_pick == "Scissors"  %>
+    <p><%= @player_1%> you win!</p>
+  <% elsif @p1_pick == "Paper" && @machine_pick == "Rock"  %>
+    <p><%= @player_1%> you win!</p>
+  <% elsif @p1_pick == "Scissors" && @machine_pick == "Paper"  %>
+    <p><%= @player_1%> you win!</p>
+  <% else %>
+    <p>The Machine Wins!</p>
+  <% end %>
+</div>
+<div>
+  <form action="/names" method="post">
+    <input type="submit" value="Play Again">
+  </form>
+</div>
