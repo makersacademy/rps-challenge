@@ -1,1 +1,18 @@
-<%= @player_1 %> vs. <%= @player_2%>
+<style>div{
+  text-align: center;
+  font-size:30px;
+  border: 1px solid;
+  padding: 50px;
+  box-shadow: 5px 10px #888888;
+  margin: 150px
+}
+input{
+    width: 10%;
+    font-size: 15px;
+}
+</style>
+<div>
+  <form action="/game" method="get">
+  <%= @player_1 %> vs. <%= @player_2%><br><br>
+  <input type="submit" value="Play">
+</div>
