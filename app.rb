@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require 'player'
+require './lib/player'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -13,12 +14,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @player = Player.new(params[:player]).name
+    $game = Game.new(Player.new(params[:player]))
+    redirect '/play'
+  end 
+
+  get '/play' do
+    @game = $game
     erb :play
   end 
 
-  # get '/play' do
-
+  # post '/go' do 
+    
   # end 
 
   # run! if app_file == $0
