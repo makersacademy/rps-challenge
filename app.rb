@@ -22,9 +22,9 @@ class RockScissorsPaper < Sinatra::Base
     erb :play
   end
 
-  get '/rock' do
+  get '/game' do
     @player = session[:player]
-    erb :rock
+    erb :game
   end
 
   run! if app_file == $0
