@@ -1,1 +1,6 @@
-<h1> <%= What is your move Valentina?</h1>
+<h1> What is your move <%= @player %>?</h1>
+  <form action="/rock" method="get">
+    <input type="submit" value="Rock">
+    <input type="submit" value="Paper">
+    <input type="submit" value="Scissors">
+  </form>
