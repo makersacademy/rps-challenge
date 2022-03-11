@@ -8,27 +8,55 @@ class Game
     @result = nil
   end
 
-  def computer
-    moves = ["rock", "paper", "scissors"]
-    moves.sample
-  end
-
   def rock
     computer
-    if computer == "rock"
+    if computer_picks_rock
       @result = nil
-    elsif computer == "paper"
+    elsif computer_picks_paper
       @result = false
-    elsif computer == "scissors"
+    elsif computer_picks_scissors
       @result = true
     end
   end
 
   def paper
-
+    computer
+    if computer_picks_rock
+      @result = nil
+    elsif computer_picks_paper
+      @result = false
+    elsif computer_picks_scissors
+      @result = true
+    end
   end
 
   def scissors
+    computer
+    if computer_picks_rock
+      @result = nil
+    elsif computer_picks_paper
+      @result = false
+    elsif computer_picks_scissors
+      @result = true
+    end
+  end
 
+private
+
+  def computer
+    moves = ["rock", "paper", "scissors"]
+    moves.sample
+  end
+
+  def computer_picks_rock
+    computer == "rock"
+  end
+
+  def computer_picks_paper
+    computer == "paper"
+  end
+
+  def computer_picks_scissors
+    computer == "scissors"
   end
 end
