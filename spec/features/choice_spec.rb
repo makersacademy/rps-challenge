@@ -26,4 +26,11 @@ feature 'Making choice' do
     click_on 'Submit'
     expect(page).to have_content 'Jonny has chosen scissors'
   end
+
+  scenario 'computer also chooses' do
+    sign_in
+    choose 'rock'
+    click_on 'Submit'
+    expect(page).to have_button 'computer_choice'
+  end
 end
