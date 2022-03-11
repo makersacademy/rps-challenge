@@ -51,7 +51,7 @@ class Game
     end
   end
 
-private
+  private
 
   def computer
     moves = ["rock", "paper", "scissors"]
