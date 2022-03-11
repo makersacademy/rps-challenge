@@ -10,6 +10,9 @@ describe Game do
     end
   end
 
-  
-
+  context 'adding a new player' do
+    it 'increases the player array by 1' do
+      expect { game.new_player('Bob') }.to change { game.players.count }.by(1) 
+    end
+  end
 end
