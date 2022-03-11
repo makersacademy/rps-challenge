@@ -1,5 +1,6 @@
 class Game
   attr_reader :outcomes, :computer_input, :input, :name
+  attr_writer :computer_input
 
   def initialize(input, name)
     @input = input
