@@ -1,6 +1,13 @@
 require 'capybara/rspec'
+require 'capybara'
+require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+require_relative './app.rb'
+
+ENV['RACK_ENV'] = 'test'
+
+
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -10,6 +17,8 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
+
+Capybara.app = RPS
 
 RSpec.configure do |config|
   config.after(:suite) do
