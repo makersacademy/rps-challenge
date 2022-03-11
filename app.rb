@@ -7,7 +7,7 @@ class RockScissorsPaper < Sinatra::Base
   end
 
     get '/' do
-      'Welcome to Rock Scissors Paper game!'
+      erb :index
     end
   
     run! if app_file == $0
