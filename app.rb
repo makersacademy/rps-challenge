@@ -9,7 +9,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   before do
-    @game = Game.new
+    @game = Game.instance
   end
 
   get '/' do

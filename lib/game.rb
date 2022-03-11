@@ -10,4 +10,10 @@ class Game
     @players << Player.new(name) # Need to mock this out at some point
   end
 
+  def self.instance
+    @game ||= Game.new
+  end
+
+
+
 end
