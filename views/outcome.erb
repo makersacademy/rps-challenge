@@ -1,0 +1,10 @@
+<p>You chose <%= @game.input %></p>
+<p>Your opponent chose <%= @game.computer_input %></p>
+
+<% if @game.win_lose_draw == "win" %>
+  <p>Congratulations <%= @game.name %>, you won!</p>
+<% elsif @game.win_lose_draw == "lose" %>
+  <p>You lost. Better luck next time, <%= @game.name %>. <p>
+<% else %>
+  <p>It's a draw<p>
+<% end %>
