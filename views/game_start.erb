@@ -88,20 +88,8 @@
 <body>
 <div>
 <h1>Rock, Paper, Scissors</h1>
-<% if @game.result == nil %>
 <h2><%= @game.player.name %> <b>VS</b> Computer</h2>
-<f4>It's a tie!</f4>
-<% end %>
-<% if @game.result == false %>
-<h2><%= @game.player.name %> <b>VS</b> <i>Computer</i></h2>
-<h4>You lost!</h4>
-<% end %>
-<% if @game.result == true %>
-<h2><i><%= @game.player.name %></i> <b>VS</b> Computer</h2>
-<h4>You won!</h4>
-<% end %>
-
-<h3>Play again?</h3>
+<h3>Pick your move, <%= @game.player.name %></h3>
 <div class="options">
 <form action="/rock">
   <input type="submit" id="rock" value="Rock">

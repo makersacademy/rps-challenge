@@ -17,12 +17,35 @@ class RockPaperScissors < Sinatra::Base
   post '/username' do
     player = Player.new(params[:player_name])
     $game = Game.new(player)
-    redirect '/game'
+    redirect '/game_start'
+  end
+
+  get '/game_start' do
+    @game = $game
+    erb :game_start
   end
 
   get '/game' do
     @game = $game
     erb :game
+  end
+
+  get '/rock' do
+    @game = $game
+    @game.rock
+    redirect '/game'
+  end
+
+  get '/paper' do
+    @game = $game
+    @game.paper
+    redirect '/game'
+  end
+
+  get '/scissors' do
+    @game = $game
+    @game.scissors
+    redirect '/game'
   end
 
   run! if app_file == $0
