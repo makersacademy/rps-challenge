@@ -29,11 +29,18 @@ feature 'Playing a game of rock paper scissors' do
     end
   end
 
-  scenario 'it shows computer choice' do
+  scenario 'it prompts computer choice' do
     sign_in
     choose 'rock'
     click_button 'Submit'
-    fake_computer = double(:fake_computer, :computer_choice => 'scissors')
-    expect(page).to have_content 'Computer chose'
+    expect(page).to have_link 'Did you beat the computer?'
   end
+
+  # scenario 'it shows computer choice' do
+  #   sign_in
+  #   choose 'rock'
+  #   click_button 'Submit'
+  #   fake_computer = double(:fake_computer, :computer_choice => 'scissors')
+  #   expect(page).to have_content 'Computer chose'
+  # end
 end
