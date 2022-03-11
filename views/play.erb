@@ -1,1 +1,11 @@
-Hello <%= @name %>
+<h1>Hello <%= @name %></h1>
+<h2>Please make your selection:</h2>
+ <form action="/choice" method="post">
+   <input type="radio" id="rock" name="choice" value="rock">
+   <label for="rock">Rock</label><br>
+   <input type="radio" id="paper" name="choice" value="paper">
+   <label for="paper">Paper</label><br>
+   <input type="radio" id="scissors" name="choice" value="scissors">
+   <label for="javascript">Scissors</label>
+   <input type="submit" value="Submit">
+ </form> 
