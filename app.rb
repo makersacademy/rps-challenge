@@ -38,6 +38,7 @@ class RockScissorsPaper < Sinatra::Base
     @game = $game
     @choice = $choice
     @comp_choice = $comp_choice
+    @game.game_over
     erb :result
   end
 

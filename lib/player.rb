@@ -7,6 +7,6 @@ class Player
   end
 
   def choose_attack(option)
-    @choice = option
+    @choice = option.to_sym
   end
 end

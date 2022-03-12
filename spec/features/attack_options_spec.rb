@@ -4,18 +4,18 @@ feature 'Player has three attack options' do
     sign_in_and_play
   end
 
-  scenario 'Player can click on Rock button' do
-    click_button 'Rock'
-    expect(page).to have_content('Valentina chose Rock')
+  scenario 'Player selects rock' do
+    click_button 'rock'
+    expect(page).to have_content('Valentina chose rock')
   end
 
-  scenario 'Player can click on Paper button' do
-    click_button 'Paper'
-    expect(page).to have_content('Valentina chose Paper')
+  scenario 'Player selects paper' do
+    click_button 'paper'
+    expect(page).to have_content('Valentina chose paper')
   end
 
-  scenario 'Player can click on Scissors button' do
-    click_button 'Scissors'
-    expect(page).to have_content('Valentina chose Scissors')
+  scenario 'Player selects scissors' do
+    click_button 'scissors'
+    expect(page).to have_content('Valentina chose scissors')
   end
 end

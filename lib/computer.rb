@@ -2,7 +2,7 @@ class Computer
 
   attr_reader :choice
 
-  OPTIONS = ['Rock', 'Paper', 'Scissors'].freeze
+  OPTIONS = [:rock, :paper, :scissors].freeze
 
   def attack
     @choice = OPTIONS.sample

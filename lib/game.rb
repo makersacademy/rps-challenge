@@ -14,8 +14,12 @@ class Game
   end
   
   def game_over
-    return "It's a draw!" if @player.choice == @computer.choice
-    RESULTS[@player.choice] == @computer.choice ?
-    "Player wins!" : "Computer wins!"
+    if @player.choice == @computer.choice
+      "It's a draw!" 
+    elsif RESULTS[@player.choice] == @computer.choice
+      "Player wins!" 
+    else
+      "Computer wins!"
+    end
   end
 end
