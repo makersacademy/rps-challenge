@@ -6,7 +6,23 @@ class RockPaperScissors < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  # Add routes here
+  enable :sessions
+
+  get "/" do
+    erb(:index)
+  end
+
+  post "/name-form-page" do
+    @name = params[:name]
+    session[:name] = @name
+
+    redirect '/play'
+  end
+
+  get '/play' do
+    @name = session[:name]
+    erb :play
+  end
 
   run! if app_file == $0
 end

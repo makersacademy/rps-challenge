@@ -4,6 +4,9 @@ ruby '3.0.2'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'webdrivers', '~> 5.0', require: false
+gem "rack"
+gem 'puma'
 
 group :test do
   gem 'capybara'
