@@ -15,39 +15,33 @@ class Game
   def rock
     computer
     if computer_picks_rock
-      @result = nil
+      tie
     elsif computer_picks_paper
-      @player.decrease_score
-      @result = false
+      lose
     elsif computer_picks_scissors
-      @player.increase_score
-      @result = true
+      win
     end
   end
 
   def paper
     computer
     if computer_picks_rock
-      @player.increase_score
-      @result = true
+      win
     elsif computer_picks_paper
-      @result = nil
+      tie
     elsif computer_picks_scissors
-      @player.decrease_score
-      @result = false
+      lose
     end
   end
 
   def scissors
     computer
     if computer_picks_rock
-      @player.decrease_score
-      @result = false
+      lose
     elsif computer_picks_paper
-      @player.increase_score
-      @result = true
+      win
     elsif computer_picks_scissors
-      @result = nil
+      tie
     end
   end
 
@@ -68,5 +62,19 @@ class Game
 
   def computer_picks_scissors
     computer == "scissors"
+  end
+
+  def win
+    @player.increase_score
+    @result = true
+  end
+
+  def tie
+    @result = nil
+  end
+
+  def lose
+    @player.decrease_score
+    @result = false
   end
 end
