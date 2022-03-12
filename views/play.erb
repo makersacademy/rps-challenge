@@ -4,6 +4,9 @@
 
 <br>
 <br>
+<h3 style='text-align:center;color:rgb(230, 80, 80)'' name='message'><%= @message %></h3>
+<br>
+<br>
 
 <h3 style='text-align:center;color:rgb(230, 80, 80)'> Rock, Paper or Scissors? </h3>
 
@@ -14,9 +17,9 @@
 
   <table style="width:30%;margin-left:auto;margin-right:auto">
     <tr style="text-align:center">
-      <th><input type="button" name="rock" value="Rock"></th>
-      <th><input type="button" name="paper" value="Paper"></th>
-      <th><input type="button" name="scissors" value="Scissors"></th>
+      <form action="/rock" method="post"><th><button>Rock</button></th></form>
+      <form action="/paper" method="post"><th><button>Paper</button></th></form>
+      <form action="/scissors" method="post"><th><button>Scissors</button></th></form>
     </tr>
   </table>
 

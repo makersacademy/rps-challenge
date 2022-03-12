@@ -20,12 +20,30 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @game = $game
+    @message = session[:message]
     erb :play
   end 
 
-  # post '/go' do 
-    
-  # end 
+  post '/rock' do
+    @game = $game
+    @game.rock
+    session[:message] = @game.message
+    redirect '/play'
+  end 
 
-  # run! if app_file == $0
+  post '/paper' do
+    @game = $game
+    @game.paper
+    session[:message] = @game.message
+    redirect '/play'
+  end 
+
+  post '/scissors' do
+    @game = $game
+    @game.scissors
+    session[:message] = @game.message
+    redirect '/play'
+  end 
+
+  run! if app_file == $0
 end
