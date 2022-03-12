@@ -1,4 +1,4 @@
-<h1> What is your move <%= $player.name %>?</h1>
+<h1> What is your move <%= @game.player.name %>?</h1>
 
   <form action="/attack" method="post">
     <input type="submit" value="Rock" name="choice">
