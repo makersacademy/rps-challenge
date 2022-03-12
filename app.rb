@@ -21,4 +21,6 @@ class Marketeer < Sinatra::Base
     @name = session[:name]
     erb :play
   end
+
+  
 end
