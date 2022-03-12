@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> 
+    <% if win %> 
+    You won!
+    <% else %> 
+    You lost!
+    </title>
+  </head>
+  <body>
+    <form action="/roll" method="post">
+      Rock, paper or Scissors?: <input type="text" value="player_rps">
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

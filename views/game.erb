@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RPS</title>
+  </head>
+  <h1>Ready for a round of RPS <%=@player_name%>?</h1>
+  <body>
+    <form action="/roll" method="post">
+      Rock, Paper or Scissors?: <input type="text" name="answer">
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
