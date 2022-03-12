@@ -12,7 +12,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-
+    erb :play
   end
 
   post '/play' do
