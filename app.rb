@@ -13,6 +13,7 @@ class RPSApp < Sinatra::Base
 
   # Routes
   get '/' do
+    @game.reset
     erb :index
   end
 
@@ -32,7 +33,7 @@ class RPSApp < Sinatra::Base
   post '/name_entry' do
     p params
     @game.add_player(params[:player1_name])
-    @game.add_player(params[:player2_name]) unless params[:player2_name].nil?
+    params[:player2_name].nil? ? @game.add_player('Computer', true) : @game.add_player(params[:player2_name])
     redirect '/welcome'
   end
 

@@ -8,8 +8,8 @@ class Game
     @player_class = player_class
   end
 
-  def add_player(player_name)
-    @players << @player_class.new(player_name)
+  def add_player(player_name, computer_controlled = false)
+    @players << @player_class.new(player_name, computer_controlled)
   end
 
   def number_of_players
