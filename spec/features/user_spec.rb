@@ -3,6 +3,6 @@ feature 'User is able to enter a name' do
     visit '/'
     fill_in 'name', with: 'Samuel'
     click_button 'Register'
-    expect(page).to have_content 'Welcome: Samuel'
+    expect(page).to have_content 'Bienvenue Samuel!'
   end
 end

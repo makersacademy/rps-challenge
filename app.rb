@@ -20,11 +20,13 @@ class Marketeer < Sinatra::Base
   get '/play' do
     @name = session[:name]
     @choice = session[:choice]
+    @computer_choice = session[:computer_choice]
     erb :play
   end
 
   post '/play' do
     session[:choice] = params[:choice]
+    session[:computer_choice] = :scissors
     redirect ('/play')
   end
 end

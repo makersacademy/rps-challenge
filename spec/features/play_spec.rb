@@ -14,4 +14,10 @@ feature 'User will be presented the choices (rock, paper and scissors) ' do
     click_button 'Scissors'
     expect(page).to have_content('You chose: Scissors')
   end
+
+  scenario 'game can choose an option' do
+    click_button 'Scissors'
+    computer_choice = find(:css, ".computer_choice").text
+    expect(message_for_random_choice).to include(computer_choice)
+  end
 end
