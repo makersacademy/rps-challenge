@@ -13,20 +13,20 @@
 </style>
 
 <div class="style1">
-  <p class="style2"><%= @player_1%>: <%= @p1_pick %> The Machine: <%= @machine_pick %></p>
+  <p class="style2"><%= @player1%>: <%= @p1_pick %> The Machine: <%= @machine_pick %></p>
   <% if @p1_pick == @machine_pick %>
     <p><b>You tie!</p>
   <% elsif @p1_pick == "Rock" && @machine_pick == "Scissors"  %>
-    <p><b><%= @player_1%> you win!</p>
+    <p><b><%= @player1%> you win!</p>
   <% elsif @p1_pick == "Paper" && @machine_pick == "Rock"  %>
-    <p><b><%= @player_1%> you win!</p>
+    <p><b><%= @player1%> you win!</p>
   <% elsif @p1_pick == "Scissors" && @machine_pick == "Paper"  %>
-    <p><b><%= @player_1%> you win!</p>
+    <p><b><%= @player1%> you win!</p>
   <% else %>
     <p><b>The Machine Wins!</p>
   <% end %>
   <form action="/names" method="post">
-    <input type="hidden" name="player_1" value="<%= @player_1%>">
+    <input type="hidden" name="player_1" value="<%= @player1%>">
     <input type="submit" value="Play Again">
   </form>
   <form action="/" method="get">

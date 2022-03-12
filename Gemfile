@@ -7,7 +7,6 @@ gem 'sinatra'
 group :test do
   gem 'capybara'
   gem 'rspec'
-  gem 'sinatra'
   gem 'sinatra-contrib'
   gem 'webrick'
   gem 'matrix'
