@@ -27,12 +27,12 @@ describe Game do
 
       it 'returns the player as winner when computer selects paper' do
         allow(computer).to receive(:choice).and_return(:paper)
-        expect(game.game_over).to eq 'Player wins!'
+        expect(game.game_over).to eq 'You won!'
       end
 
       it 'returns the computer as winner when computer selects rock' do
         allow(computer).to receive(:choice).and_return(:rock)
-        expect(game.game_over).to eq 'Computer wins!'
+        expect(game.game_over).to eq 'You lost!'
       end
 
       it 'returns draw when computer selects scissors' do

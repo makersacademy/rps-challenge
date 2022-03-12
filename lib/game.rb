@@ -17,9 +17,9 @@ class Game
     if @player.choice == @computer.choice
       "It's a draw!" 
     elsif RESULTS[@player.choice] == @computer.choice
-      "Player wins!" 
+      "You won!" 
     else
-      "Computer wins!"
+      "You lost!"
     end
   end
 end

@@ -12,7 +12,7 @@ describe Player do
 
   describe '#choose_attack' do
     it 'select one option to attack' do
-      expect(player.choose_attack('Rock')).to eq 'Rock'
+      expect(player.choose_attack('rock')).to eq :rock
     end
   end
 end

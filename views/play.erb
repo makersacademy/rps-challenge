@@ -1,7 +1,16 @@
-<h1> What is your move <%= @game.player.name %>?</h1>
-
+<body style="background-color:darkseagreen;">
+<h1 style="font-size:50px; font-family:verdana; color:#F0FFFF; margin:10px"> What is your move <%= @game.player.name %>?</h1>
+<br>
+<br>
+<br>
+<br>
   <form action="/attack" method="post">
-    <input type="submit" value="rock" name="choice">
-    <input type="submit" value="paper" name="choice">
-    <input type="submit" value="scissors" name="choice">
+    <input style="background-color:#F0FFFF; border-color:green; border-radius: 12px; font-size:30px; font-family:verdana; color:#306754" type="submit" value="rock" name="choice">
+    <input style="background-color:#F0FFFF; border-color:green; border-radius: 12px; font-size:30px; font-family:verdana; color:#306754" type="submit" value="paper" name="choice">
+    <input style="background-color:#F0FFFF; border-color:green; border-radius: 12px; font-size:30px; font-family:verdana; color:#306754" type="submit" value="scissors" name="choice">
   </form>
+</br>
+</br>
+</br>
+</br>
+</body>

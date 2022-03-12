@@ -1,10 +1,16 @@
-<h1> <%= @game.player.name %> chose <%= @choice %>  </h1>
-<h1> Computer chose <%= @comp_choice %>  </h1>
-<h1> <%= @game.game_over %> </h1>
+<body style="background-color:darkseagreen;">
+<h1 style="font-size:50px; font-family:verdana; color:#F0FFFF; margin:10px"> <%= @game.player.name %> chose <%= @choice %>  </h1>
+<h1 style="font-size:50px; font-family:verdana; color:#F0FFFF; margin:10px"> Computer chose <%= @comp_choice %>  </h1>
+<h1 style="font-size:50px; font-family:verdana; color:#306754; margin:10px"> <%= @game.game_over %> </h1>
+<br>
+<br>
   <form action="/play_again" method="post">
-    <input type="submit" value="Play again :)">
+    <input style="background-color:#F0FFFF; border-color:green; border-radius: 12px; font-size:30px; font-family:verdana; color:#306754"  type="submit" value="Play again 😊">
   </form>
     <form action="/change_player" method="post">
-    <input type="submit" value="Change player">
+    <input style="background-color:#F0FFFF; border-color:green; border-radius: 12px; font-size:30px; font-family:verdana; color:#306754"  type="submit" value="Change player 🎮">
   </form>
+  </br>
+  </br>
+</body>
   
