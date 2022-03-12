@@ -1,3 +1,10 @@
 <h1> <%= @game.player.name %> chose <%= @choice %>  </h1>
 <h1> Computer chose <%= @comp_choice %>  </h1>
 <h1> <%= @game.game_over %> </h1>
+  <form action="/play_again" method="post">
+    <input type="submit" value="Play again :)">
+  </form>
+    <form action="/change_player" method="post">
+    <input type="submit" value="Change player">
+  </form>
+  

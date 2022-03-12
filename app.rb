@@ -42,5 +42,13 @@ class RockScissorsPaper < Sinatra::Base
     erb :result
   end
 
+  post '/play_again' do
+    redirect '/play'
+  end
+
+  post '/change_player' do
+    redirect '/'
+  end
+
   run! if app_file == $0
 end
