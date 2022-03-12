@@ -13,34 +13,25 @@ feature 'Playing a game of rock paper scissors' do
     scenario 'make choice' do
       choose 'rock'
       click_button 'Submit'
-      expect(page).to have_content 'Jonny chose rock'
+      expect(page).to have_content 'Hello Jonny! You chose rock'
     end
 
     scenario 'make choice' do
       choose 'paper'
       click_button 'Submit'
-      expect(page).to have_content 'Jonny chose paper'
+      expect(page).to have_content 'Hello Jonny! You chose paper'
     end
 
     scenario 'make choice' do
       choose 'scissors'
       click_button 'Submit'
-      expect(page).to have_content 'Jonny chose scissors'
+      expect(page).to have_content 'Hello Jonny! You chose scissors'
+    end
+
+    scenario 'it prompts computer choice' do
+      choose 'rock'
+      click_button 'Submit'
+      expect(page).to have_link 'Did you beat the computer?'
     end
   end
-
-  scenario 'it prompts computer choice' do
-    sign_in
-    choose 'rock'
-    click_button 'Submit'
-    expect(page).to have_link 'Did you beat the computer?'
-  end
-
-  # scenario 'it shows computer choice' do
-  #   sign_in
-  #   choose 'rock'
-  #   click_button 'Submit'
-  #   fake_computer = double(:fake_computer, :computer_choice => 'scissors')
-  #   expect(page).to have_content 'Computer chose'
-  # end
 end
