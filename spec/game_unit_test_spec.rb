@@ -6,6 +6,8 @@ describe Game do
   end
 
   it 'returns the result of the game' do
-    p gameplay('rock')
+    expect(["CPU chose paper. Paper wraps rock. You lose.",  
+      "CPU chose scissors. Rock destroys scissors. You win.", 
+      "CPU chose the same move. It's a tie."]).to include(subject.gameplay('rock'))
   end
 end

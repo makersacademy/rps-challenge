@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require_relative './lib/game.rb'
+require_relative './lib/game'
 
 class RPS < Sinatra::Base
   configure :development do
@@ -29,7 +29,9 @@ class RPS < Sinatra::Base
   end
 
   get '/outcome' do
-    p @result = Game.new.gameplay($move)
+    @game = Game.new
+    @game.cpu_move
+    @result = @game.gameplay($move)
     erb :outcome
   end
 

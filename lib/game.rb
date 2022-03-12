@@ -4,24 +4,23 @@ class Game
   end
 
   def gameplay(move)
-    if move == "rock" && @cpu_move == "paper"
-      false
-      "CPU chose paper. Paper wraps rock. You lose."
-    elsif move == "rock" && @cpu_move == "scissors"
-      true
-      "CPU chose scissors. Rock destroys scissors. You win."
-    elsif move == "paper" && @cpu_move == "rock"
-      true
-      "CPU chose rock. Paper wraps rock. You win."
-    elsif move == "paper" && @cpu_move == "scissors"
-      false
-      "CPU chose scissors. Scissors cut paper. You lose."
-    elsif move == "scissors" && @cpu_move == "rock"
-      true
-      "CPU chose rock. Rock destroys scissors. You lose."
-    elsif move == "scissors" && @cpu_move == "paper"
-      false
-      "CPU chose paper. Scissors cut paper. You win."
+    possible_outcomes = [
+    "CPU chose paper. Paper wraps rock. You lose.",
+    "CPU chose scissors. Rock destroys scissors. You win.",
+    "CPU chose rock. Paper wraps rock. You win.",
+    "CPU chose scissors. Scissors cut paper. You lose.",
+    "CPU chose rock. Rock destroys scissors. You lose.",
+    "CPU chose paper. Scissors cut paper. You win.",
+    "CPU chose the same move. It's a tie."
+    ]
+
+    if move == "rock" && @cpu_move == "paper"; possible_outcomes[0]
+    elsif move == "rock" && @cpu_move == "scissors"; possible_outcomes[1]
+    elsif move == "paper" && @cpu_move == "rock"; possible_outcomes[2]
+    elsif move == "paper" && @cpu_move == "scissors"; possible_outcomes[3]
+    elsif move == "scissors" && @cpu_move == "rock"; possible_outcomes[4]
+    elsif move == "scissors" && @cpu_move == "paper"; possible_outcomes[5]
+    else; possible_outcomes[6]
     end
   end
 end
