@@ -2,7 +2,7 @@ class Player
 
     @@name = ""
 
-    def take_name(name)
+    def self.take_name(name)
         @@name = name
     end
 

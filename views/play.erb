@@ -8,28 +8,28 @@
   margin: 120px
 }
 input{
-    width: 10%;
-    font-size: 15px;
+  width: 10%;
+  font-size: 15px;
 }
 .style2{
-    text-align: center;
-    border: 1px dashed;
-    box-shadow: 5px 10px #888888;
-    margin: 50px
+  text-align: center;
+  border: 1px dashed;
+  box-shadow: 5px 10px #888888;
+  margin: 50px
 }
-
 </style>
-<form action="/game" method="get">
-<div class="style2">
-<h4>** PAPER covers ROCK</h4>
-<h4>** ROCK smashes SCISSORS</h4>
-<h4>** SCISSORS cut PAPER</h4>
-</div>
 
-<div class="style1">
-  It is <%= @player_1 %> vs. The Machine<br>
-  <p><b>Enter your pick! </p>
-  <input type="text" name="p1_pick">
-  <input type="submit" value="  Enter  "><br><br>
-</div>
+<form action="/game" method="get">
+  <div class="style2">
+    <h4>** PAPER covers ROCK</h4>
+    <h4>** ROCK smashes SCISSORS</h4>
+    <h4>** SCISSORS cut PAPER</h4>
+  </div>
+
+  <div class="style1">
+    It is <%= @player_1 %> vs. The Machine<br>
+    <p><b>Enter your pick! </p>
+    <input type="text" name="p1_pick">
+    <input type="submit" value="  Enter  "><br><br>
+  </div>
 </form>

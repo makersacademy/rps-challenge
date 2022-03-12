@@ -14,7 +14,7 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    @player_1 = Player.new.take_name(params[:player_1])
+    @player_1 = Player.take_name(params[:player_1])
     erb(:play)
   end
 
@@ -25,4 +25,4 @@ class Rps < Sinatra::Base
     erb(:game)
   end
 
-end  
+end
