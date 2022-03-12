@@ -1,0 +1,147 @@
+<head>
+<style>
+  body {
+    background-color: #fafafa;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4a4a4a;
+  }
+  div {
+    position: absolute;
+    text-align: center;
+    top: 3%;
+    left: 30%;
+  }
+  div.options {
+    position: relative;
+    float: left;
+    left: 4%;
+  }
+  input[type=submit] {
+    margin-top: 2vw;
+    width: 10%;
+    border:none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0vw;
+    letter-spacing: 3px;
+    background-color: #fafafa;
+    color: #4a4a4a;
+    font-weight: bold;
+    width:10vw;
+    height: 10vw;
+    border: none;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+  }
+  input[type=submit]:hover {
+    opacity: 1.0;
+    cursor: pointer;
+  }
+  input[type=submit]#rock {
+    background-image: url("https://i.ibb.co/g6Pr9qh/rock.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    margin-right: 2vw;
+  }
+  input[type=submit]#paper {
+    background-image: url("https://i.ibb.co/DwLSJCg/paper.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    margin-right: 2vw;
+  }
+  input[type=submit]#scissors {
+    background-image: url("https://i.ibb.co/b3r12bR/scissors.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+  }
+  h1 {
+    font-size: 3.5vw;
+  }
+  h2 {
+    font-size: 2vw;
+    color: #bababa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 60%;
+  }
+  h2#score {
+    color: #575757;
+  }
+  h2#vs {
+    font-size: 1.5vw;
+  }
+  h3 {
+    font-size: 1.5vw;
+    color: #bababa;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    font-style: oblique;
+  }
+  h4 {
+    font-size: 5vw;
+    color: #bababa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  h4#win {
+    color: #edd415;
+  }
+  h4#loss {
+    color: #6c3b96;
+  }
+  b {
+    color: #6c3b96;
+  }
+  i {
+    color: #87CEEB;
+    font-style: normal;
+  }
+  u {
+    border-bottom: 8px solid #87CEEB;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<div>
+<h1>Rock, Paper, Scissors</h1>
+<h2 id="score"><u><%= @game.player.name%>'s score: <b><%= @game.player.score %></b></u></h2>
+<h2 id="vs">(<%= @game.player.name %> VS Computer)</h2>
+<% if @game.result == nil %>
+<h4>It's a tie!</h4>
+<% end %>
+<% if @game.result == false %>
+<h4 id="loss">You lost!</h4>
+<% end %>
+<% if @game.result == true %>
+<h4 id="win">You won!</h4>
+<% end %>
+
+<h3>Play again?</h3>
+<div class="options">
+<form action="/rock">
+  <input type="submit" id="rock" value="Rock">
+</form>
+</div>
+<div class="options">
+<form action="/paper">
+  <input type="submit" id="paper" value="Paper">
+</form>
+</div>
+<div class="options">
+<form action="/scissors">
+  <input type="submit" id="scissors" value="Scissors">
+</form>
+</div>
+</div>
+</body>

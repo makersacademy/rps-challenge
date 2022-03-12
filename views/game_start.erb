@@ -1,0 +1,109 @@
+<head>
+<style>
+  body {
+    background-color: #fafafa;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4a4a4a;
+  }
+  div {
+    position: absolute;
+    text-align: center;
+    top: 15%;
+    left: 30%;
+  }
+  div.options {
+    position: relative;
+    float: left;
+    left: 4%;
+  }
+  input[type=submit] {
+    margin-top: 2vw;
+    width: 10%;
+    border:none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0vw;
+    letter-spacing: 3px;
+    background-color: #fafafa;
+    color: #4a4a4a;
+    font-weight: bold;
+    width:10vw;
+    height: 10vw;
+    border: none;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+  }
+  input[type=submit]:hover {
+    opacity: 1.0;
+    cursor: pointer;
+  }
+  input[type=submit]#rock {
+    background-image: url("https://i.ibb.co/g6Pr9qh/rock.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    margin-right: 2vw;
+  }
+  input[type=submit]#paper {
+    background-image: url("https://i.ibb.co/DwLSJCg/paper.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    margin-right: 2vw;
+  }
+  input[type=submit]#scissors {
+    background-image: url("https://i.ibb.co/b3r12bR/scissors.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+  }
+  h1 {
+    font-size: 3.5vw;
+  }
+  h2 {
+    font-size: 2vw;
+    color: #bababa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  h3 {
+    font-size: 1.5vw;
+    color: #bababa;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    font-style: oblique;
+  }
+  b {
+    color: #6c3b96;
+  }
+</style>
+</head>
+<body>
+<div>
+<h1>Rock, Paper, Scissors</h1>
+<h2><%= @game.player.name %> <b>VS</b> Computer</h2>
+<h3>Pick your move, <%= @game.player.name %></h3>
+<div class="options">
+<form action="/rock">
+  <input type="submit" id="rock" value="Rock">
+</form>
+</div>
+<div class="options">
+<form action="/paper">
+  <input type="submit" id="paper" value="Paper">
+</form>
+</div>
+<div class="options">
+<form action="/scissors">
+  <input type="submit" id="scissors" value="Scissors">
+</form>
+</div>
+</div>
+</body>
