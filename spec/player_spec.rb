@@ -9,4 +9,10 @@ describe Player do
       expect(player.name).to eq 'Valentina'
     end
   end
+
+  describe '#choose_attack' do
+    it 'select one option to attack' do
+      expect(player.choose_attack('Rock')).to eq 'Rock'
+    end
+  end
 end

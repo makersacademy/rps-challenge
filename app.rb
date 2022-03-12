@@ -23,9 +23,15 @@ class RockScissorsPaper < Sinatra::Base
     erb :play
   end
 
-  get '/win' do
+  post '/attack' do
     @player = $player
-    erb :win
+    $choice = @player.choose_attack(params[:choice])
+    redirect '/result'
+  end
+
+  get '/result' do
+    @choice = $choice
+    erb :result
   end
 
   run! if app_file == $0
