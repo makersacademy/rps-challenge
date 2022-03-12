@@ -20,18 +20,19 @@ class RPSApp < Sinatra::Base
   get '/welcome' do
     @number = @game.number_of_players
     @player1 = @game.players[0]
-    @player2 = @game.players[1] || Player.new('Computer')
+    @game.add_computer_opponents
+    @player2 = @game.players[1]
     erb :welcome
   end
 
   post '/number-of-players' do
-    p params
+    # p params
     @number = params[:players].to_i
     erb :name_entry
   end
 
   post '/name_entry' do
-    p params
+    # p params
     @game.add_player(params[:player1_name])
     params[:player2_name].nil? ? @game.add_player('Computer', true) : @game.add_player(params[:player2_name])
     redirect '/welcome'

@@ -1,9 +1,15 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new }
-  let(:player1) { double(:player_double) }
+  let(:player_class) { double(:player_class) }
+  subject(:game) { described_class.new(player_class) }
+  let(:player1) { double(:player_double, :name => 'Player 1', :choice => 'rock') }
+  let(:player2) { double(:player_double, :name => 'Player 2', :choice => 'paper') }
   
+  before do
+    allow(player_class).to receive(:new).with(kind_of(String), any_args).and_return(player1, player2)
+  end
+
   it 'initializes with an empty player array' do
     expect(game.players).to eq []
   end
@@ -16,16 +22,24 @@ describe Game do
 
   describe '#add_player' do
     it 'adds a player to the players array' do
-      expect { game.add_player(player1) }.to change { game.number_of_players }.by 1
+      expect { game.add_player('Player 1') }.to change { game.number_of_players }.by 1
     end
   end
 
   describe '#reset' do
     it 'clears the players array' do
-      game.add_player(player1)
+      game.add_player('Player 1')
       expect(game.number_of_players).to eq 1
       game.reset
       expect(game.number_of_players).to eq 0
+    end
+  end
+
+  describe '#compare_choices' do
+    it 'outputs the two player choices' do
+      game.add_player('Player 1')
+      game.add_player('Player 2')
+      expect { game.compare_choices }.to output("Player 1: Rock\nPlayer 2: Paper\n").to_stdout
     end
   end
 

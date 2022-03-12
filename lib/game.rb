@@ -12,12 +12,22 @@ class Game
     @players << @player_class.new(player_name, computer_controlled)
   end
 
+  def add_computer_opponents
+    add_player('Computer', true) if @players[1].nil?
+  end
+
   def number_of_players
     @players.count
   end
 
   def reset
     @players = []
+  end
+
+  def compare_choices
+    @players.each do |player|
+      puts "#{player.name}: #{player.choice.capitalize}"
+    end
   end
 
   def self.instance
