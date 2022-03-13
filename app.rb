@@ -20,7 +20,7 @@ class Marketeer < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
-    @choice = session[:choice]
+    @player_choice = session[:choice]
     @computer_choice = session[:computer_choice]
     erb :play
   end

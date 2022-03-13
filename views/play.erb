@@ -14,14 +14,20 @@
   </style>
 </head>
 <body>
-  <h1>Bienvenue <%= @name %>!</h1>
+  <h1>Hi <%= @name %>!</h1>
+
   <form action='/play' method='POST'>
     <label>Enter your choice: </label>
     <input type='submit' name='choice' value='Rock'/>
     <input type='submit' name='choice' value='Scissors'/>
     <input type='submit' name='choice' value='Paper'/>
   </form>
-  <h4>You chose: <%= @choice %></h4>
+
+  <h4>You chose: <%= @player_choice %></h4>
   <h4 class='computer_choice'>Computer chose:  <%= @computer_choice.to_s.capitalize%> </h4>
+
+  # <=% if @game.win? %>
+  #   You won!
+  # <=% end %>
 </body>
 </html>

@@ -9,4 +9,3 @@ class Computer
     @choices.sample.to_s.capitalize
   end
 end
-
