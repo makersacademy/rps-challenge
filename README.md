@@ -53,6 +53,6 @@ Approach to challenge
 I commenced the challenge by setting up the test environment and user interface using HTML and CSS. When I began to create the model, I chose to create a flow chart to ensure the MVC pattern is followed.
 ![Screenshot 2022-03-13 at 11 46 30](https://user-images.githubusercontent.com/74867241/158057911-0a32e0f1-4b59-4f0f-8f2d-46ceead8ddba.png)
 
-Upon completing the challenge, and although my controller is skinny and model is fat, I am not entirely pleased with the way my code was written as the methods were too large (code was not DRY). Whilst I could have incorporate SRP to shrink my methods, I attempted to opt for an alternative way. This has been illustrated in the flow chart below. Unfortunately I did not have sufficient time to complete the actual code.
+Upon completing the challenge, and although my controller is skinny and model is fat, I was not entirely pleased with the way my code was written as the methods were too large (code was not DRY). Whilst I could have incorporated SRP to shrink my methods, I attempted to opt for an alternative way. This has been illustrated in the flow chart below. Unfortunately I did not have sufficient time to complete the actual code.
 ![Screenshot 2022-03-13 at 23 12 24](https://user-images.githubusercontent.com/74867241/158083344-6df5c61c-3cd1-43d2-a1ec-b31d2755c8f6.png)
 
