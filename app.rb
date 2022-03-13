@@ -58,7 +58,7 @@ class RPSApp < Sinatra::Base
 
   get '/play-again' do
     @game.reset_choices
-    redirect '/welcome'
+    redirect '/game-screen'
   end
 
   get '/player1-selection' do
