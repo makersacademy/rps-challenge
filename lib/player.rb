@@ -1,6 +1,6 @@
 class Player
   attr_reader :name, :choice
-  VALID_OPTIONS = [ 'rock', 'paper', 'scissors' ]
+  VALID_OPTIONS = ['rock', 'paper', 'scissors'].freeze
 
   def initialize(name, npc = false)
     @name = name
@@ -12,11 +12,19 @@ class Player
     @computer_controlled
   end
 
-  def set_choice(choice)
+  def choice_made?
+    @choice != nil
+  end
+
+  def choice=(choice)
     choice.downcase!
     raise 'Not a valid option' unless VALID_OPTIONS.include?(choice)
 
     @choice = choice
+  end
+
+  def set_random_choice
+    @choice = VALID_OPTIONS.sample
   end
 
   def clear_choice
