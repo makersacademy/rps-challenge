@@ -1,0 +1,14 @@
+<strong><%= @game.player1.name %></strong>, you selected <em><%= @game.player1.move %></em>
+<br> <br>
+<strong><%= @game.player2.name %></strong> chose <em> <%= @game.player2.move %> </em>
+<br> <br>
+<h4><strong> <%= @game.check_winner_or_draw %> </strong> </h4>
+
+
+<form action="/multiplayer-game" method="get">
+  <input type="submit" value="Play another multiplayer game">
+</form>
+
+<form action="/" method="get">
+  <input type="submit" value="Home">
+</form>

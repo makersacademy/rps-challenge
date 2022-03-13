@@ -12,7 +12,7 @@ feature "Select whether to play vs computer or pass and play" do
     click_button "Solo Game"
     fill_in :player_1_name, with: "Chris"
     click_button 'Submit'
-    expect(page).to have_content "Hello, Chris"
+    expect(page).to have_content "Chris vs Computer"
   end
 
 end
