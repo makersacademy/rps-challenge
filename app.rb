@@ -27,12 +27,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player-choice' do
-    # if @game.turn = 1
-    #   @game.turn.reset 
-    #   redirect '/result'
-    # else
-    #   redirect '/play'
-    # end
+    if @game.turn_manager.turn == 1
+      @game.turn_manager.reset 
+      redirect '/result'
+    else
+      @game.change_player
+      redirect '/play'
+    end
   end
 
   run! if app_file == $0

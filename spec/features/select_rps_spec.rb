@@ -1,4 +1,4 @@
-feature 'loading play page' do
+feature 'loading play page first time' do
   scenario 'expect rock, paper, scissors to be choices' do
     setup_players('Vic', 'Bob') # will redirect to '/play'
     expect(page).to have_content 'Rock'
@@ -12,4 +12,15 @@ feature 'loading play page' do
     expect(page).to have_content 'Vic - please select your choice'
     Game.instance.reset_players
   end
+end
+
+feature 'loading play page second time' do
+  scenario 'expect second player to be prompted' do
+    setup_players('Vic', 'Bob') # will redirect to '/play'
+    choose('rock')
+    click_on('submit')
+    expect(page).to have_content 'Bob - please select your choice'
+    Game.instance.reset_players
+  end
+
 end

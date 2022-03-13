@@ -20,6 +20,10 @@ class Game
     @players = []
   end
 
+  def change_player
+    turn_manager.change_turn
+  end
+
   def self.instance
     @game ||= Game.new
   end
