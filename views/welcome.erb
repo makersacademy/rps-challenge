@@ -6,4 +6,10 @@
   <% else %>
     <h2>Hello <%= @player2.name %></h2>
   <% end %>
+  <form action='/rules' method='get'>
+    <input type='submit' value='Check Rules'>
+  </form>
+  <form action='/game-screen' method='get'>
+    <input type='submit' value='Continue to Game'>
+  </form>
 </html>

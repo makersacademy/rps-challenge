@@ -1,7 +1,7 @@
 <html>
   <h1>Enter Name<%= 's' if @number == 2 %></h1>
   <h2>Number of Players: <%= @number %></h2>
-  <form action='/name_entry' method='post'>
+  <form action='/submit-names' method='post'>
     <input type='text' name='player1_name'>
     <% if @number == 2 %>
     <input type='text' name='player2_name'>

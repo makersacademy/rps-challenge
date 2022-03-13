@@ -19,23 +19,55 @@ class RPSApp < Sinatra::Base
 
   get '/welcome' do
     @number = @game.number_of_players
-    @player1 = @game.players[0]
-    @game.add_computer_opponents
-    @player2 = @game.players[1]
+    @player1, @player2 = @game.players
     erb :welcome
   end
 
   post '/number-of-players' do
-    # p params
     @number = params[:players].to_i
-    erb :name_entry
+    redirect '/name-entry'
   end
 
-  post '/name_entry' do
-    # p params
+  get '/name-entry' do
+    erb :name_entry
+  end
+  
+  post '/submit-names' do
     @game.add_player(params[:player1_name])
-    params[:player2_name].nil? ? @game.add_player('Computer', true) : @game.add_player(params[:player2_name])
+    params[:player2_name].nil? ? @game.add_computer_opponents : @game.add_player(params[:player2_name])
     redirect '/welcome'
+  end
+  
+  get '/rules' do
+    erb :rules
+  end
+
+  get '/game-screen' do
+    @player1, @player2 = @game.players
+    @player2.set_random_choice if @player2.computer?
+    if @player1.choice_made? && @player2.choice_made?
+      erb :game_complete
+    else
+      erb :game_screen
+    end
+  end
+
+  get '/player1-selection' do
+    erb :player1_choice_entry
+  end
+  
+  post '/player1-choice' do
+    p params
+    redirect '/game-screen'
+  end
+  
+  get '/player2-selection' do
+    erb :player2_choice_entry
+  end
+
+  post '/player2-choice' do
+    p params
+    redirect '/game-screen'
   end
 
   # Start the server if the file is executed directly
