@@ -29,7 +29,7 @@ class RockScissorsPaper < Sinatra::Base
 
   post '/attack' do
     @game = $game
-    $choice = @game.player.choose_attack(params[:choice])
+    $choice = @game.player.choose_attack(params[:choice].downcase.to_sym)
     $comp_choice = @game.computer.attack
     redirect '/result'
   end

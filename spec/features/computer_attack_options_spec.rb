@@ -5,7 +5,7 @@ feature 'Computer has three attack options' do
   end
 
   scenario 'Computer can choose a random option' do
-    click_button 'rock'
+    click_button 'Rock'
     expect(page).to have_content('Computer chose')
   end
 end

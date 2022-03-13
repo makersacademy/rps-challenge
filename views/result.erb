@@ -1,6 +1,6 @@
 <body style="background-color:darkseagreen;">
-<h1 style="font-size:50px; font-family:verdana; color:#F0FFFF; margin:10px"> <%= @game.player.name %> chose <%= @choice %>  </h1>
-<h1 style="font-size:50px; font-family:verdana; color:#F0FFFF; margin:10px"> Computer chose <%= @comp_choice %>  </h1>
+<h1 style="font-size:50px; font-family:verdana; color:#F0FFFF; margin:10px"> <%= @game.player.name %> chose <%= @choice.to_s.capitalize %>  </h1>
+<h1 style="font-size:50px; font-family:verdana; color:#F0FFFF; margin:10px"> Computer chose <%= @comp_choice.to_s.capitalize %>  </h1>
 <h1 style="font-size:50px; font-family:verdana; color:#306754; margin:10px"> <%= @game.game_over %> </h1>
 <br>
 <br>
