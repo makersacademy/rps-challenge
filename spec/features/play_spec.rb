@@ -12,34 +12,4 @@ feature "play" do
     expect(page).to have_button("Scissors")
   end 
 
-  # scenario "player selects rock and loses" do
-  #   click_on("Rock")
-  #   expect(page).to have_content("You've lost!")
-  # end 
-
-  # scenario "player selects paper and loses" do
-  #   click_on("Paper")
-  #   expect(page).to have_content("You've lost")
-  # end 
-
-  # scenario "player selects scissors and loses" do
-  #   click_on("Scissors")
-  #   expect(page).to have_content("You've lost")
-  # end 
-
-  # scenario "player selects rock and wins" do
-  #   click_on("Rock")
-  #   expect(page).to have_content("You've won!")
-  # end 
-
-  # scenario "player selects paper and wins" do
-  #   click_on("Paper")
-  #   expect(page).to have_content("You've won!")
-  # end 
-
-  # scenario "player selects scissors and wins" do
-  #   click_on("Scissors")
-  #   expect(page).to have_content("You've won!")
-  # end 
-
 end
