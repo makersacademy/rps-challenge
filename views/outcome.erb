@@ -1,0 +1,15 @@
+<h2> Good sir, here is your <%= @player_answer %> </h2>
+<h2> We have just had word from our man in the enemy camp, they have armed your opponent with: <%= @cpu_answer %> </h2>
+<h2> <%= @outcome_announcement %> </h2>
+
+<body>
+  <form action="/play">
+    <input type="submit" value="If you are brave enough to play again, CLICK HERE">
+  </form>
+</body>
+
+<body>
+  <form action="/">
+    <input type="submit" value="OR, if a different warrior has the will to take on the battle, CLICK HERE">
+  </form>
+</body>
