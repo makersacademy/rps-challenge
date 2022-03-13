@@ -25,20 +25,36 @@ class Game
     @players = []
   end
 
+  def choices_made?
+    @players.all? { |player| player.choice_made? }
+  end
+
   def outcome
     player1, player2 = @players
     return "It's a Draw" if player1.choice == player2.choice
 
-    player1_wins = [
-      (player1.choice == 'rock' && player2.choice == 'scissors'),
-      (player1.choice == 'paper' && player2.choice == 'rock'),
-      (player1.choice == 'scissors' && player2.choice == 'paper')
-    ]
-    @winner = player1_wins.any? ? player1 : player2
+    @winner = player1_win? ? player1 : player2
     return "#{@winner.name} Wins!"
+  end
+
+  def reset_choices
+    @players.each do |player|
+      player.clear_choice
+    end
   end
 
   def self.instance
     @game ||= Game.new
+  end
+
+  private
+
+  def player1_win?
+    player1, player2 = @players
+    [
+      player1.choice == 'rock' && player2.choice == 'scissors',
+      player1.choice == 'paper' && player2.choice == 'rock',
+      player1.choice == 'scissors' && player2.choice == 'paper'
+    ].any?
   end
 end
