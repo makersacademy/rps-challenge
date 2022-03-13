@@ -22,10 +22,10 @@ describe Game do
 
   context 'mechanics' do
 
-    let(:cpu_paper) { double(:cpu_paper, :name => "CPU", :move => "paper") }
-    let(:cpu_rock) { double(:cpu_rock, :name => "CPU", :move => "rock") }
-    let(:adam_scissors) { double(:adam_scissors, :name => "Adam", :move => "scissors") }
-    let(:adam_rock) { double(:adam_rock, :name => "Adam", :move => "rock") }
+    let(:cpu_paper) { double(:cpu_paper, :name => "CPU", :move => "Paper") }
+    let(:cpu_rock) { double(:cpu_rock, :name => "CPU", :move => "Rock") }
+    let(:adam_scissors) { double(:adam_scissors, :name => "Adam", :move => "Scissors") }
+    let(:adam_rock) { double(:adam_rock, :name => "Adam", :move => "Rock") }
 
     it 'should return player 1 if player 1 wins' do
       stubbed_game = Game.new(adam_scissors, cpu_paper)

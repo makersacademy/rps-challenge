@@ -8,7 +8,7 @@ class Player
   end
 
   def move
-    {"#{@name}" => "#{@move}"}
+    @move
   end
 
 end

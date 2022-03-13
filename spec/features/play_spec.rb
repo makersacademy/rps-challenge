@@ -8,7 +8,7 @@ feature 'Play' do
 
   scenario 'should display a players name' do
     sign_in_and_play
-    expect(page).to have_content 'Adam v CPU'
+    expect(page).to have_content 'Adam'
   end
 
   context 'gameplay' do

@@ -1,12 +1,22 @@
 <h1 style="text-align:center">Rock-Paper-Scissors</h1>
 <h3 style="text-align:center; color:gray">The workplace grind-ungrinder</h3>
-<h2 style="text-align:center"><%= @game.player1.name%> v <%= @game.player2.name%> </h2>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
 <body style="text-align:center">
+
+<table style="margin-left:auto;margin-right:auto;">
+  <tr style="text-align:center">
+    <th><h2><%= @game.player1.name%></h2></th>
+    <th><h2> v <%= @game.player2.name%></h2></th>
+  </tr>
+  <tr>
+    <td> <%= @move_1%> </td>
+    <td> <%= @move_2%> </td>
+  </tr>
+</table><br>
+
+<h2> The winner is: <%= @winner%> </h2>
+
 Choose your move:</p>
 
 <form action="/move" method="post">

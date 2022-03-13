@@ -3,7 +3,7 @@ require 'cpu.rb'
 describe CPU do
 
   it 'should return a random move' do
-    expect(subject.move).to eq('rock').or eq('paper').or eq('scissors')
+    expect(subject.random_move).to eq('Rock').or eq('Paper').or eq('Scissors')
   end
 
   it 'should be return the name CPU' do

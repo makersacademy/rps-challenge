@@ -15,6 +15,11 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @game = $game
+    @move_1 = $game.player1.move
+    @move_2 = session[:move_2]
+    @winner = session[:winner]
+
+    puts "The winner is #{@winner}"
     erb :play
   end
 
@@ -25,6 +30,9 @@ class RPS < Sinatra::Base
 
   post '/move' do
     $game.player1.move = params[:move]
+    session[:move_2] = $game.player2.random_move
+    session[:winner] = $game.winner
+    redirect '/play'
   end
 
   run! if app_file == $0

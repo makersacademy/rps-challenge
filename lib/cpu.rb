@@ -1,9 +1,11 @@
 class CPU
 
+  attr_reader :move
+
   NAME = "CPU"
 
-  def move
-    ["rock", "paper", "scissors"].sample
+  def random_move
+    @move = ["Rock", "Paper", "Scissors"].sample
   end
 
   def name

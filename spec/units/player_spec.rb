@@ -11,9 +11,9 @@ describe Player do
   end
 
   it 'should return the players last move' do
-    player = Player.new(:adam)
-    player.move = :rock
-    expect(player.move).to eq({"adam" => "rock"})
+    player = Player.new(adam)
+    player.move = rock
+    expect(player.move).to eq rock
   end
 
 end
