@@ -13,6 +13,6 @@ feature "names" do
     fill_in("player", with: "Archie")
     click_on("Let's Go!")
     expect(page).to have_content("Let's Play Archie")
-    expect(page).to have_content("Rock, Paper or Scissors?")
+    expect(page).to have_content("Rock, Paper, Scissors, Spock or Lizard?")
   end
 end

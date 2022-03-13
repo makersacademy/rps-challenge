@@ -16,6 +16,10 @@ class Game
       @win = false
     when "scissors"
       @win = true
+    when "spock"
+      @win = false
+    when "lizard"
+      @win = true
     end
   end 
 
@@ -27,6 +31,10 @@ class Game
       @win = nil
     when "scissors"
       @win = false
+    when "spock"
+      @win = true
+    when "lizard"
+      @win = false
     end
   end 
 
@@ -37,6 +45,40 @@ class Game
     when "paper"
       @win = true
     when "scissors"
+      @win = nil
+    when "spock"
+      @win = false
+    when "lizard"
+      @win = true
+    end
+  end
+
+  def spock
+    case npc_play
+    when "rock"
+      @win = true
+    when "paper"
+      @win = false
+    when "scissors"
+      @win = true
+    when "spock"
+      @win = nil
+    when "lizard"
+      @win = false
+    end
+  end
+
+  def lizard
+    case npc_play
+    when "rock"
+      @win = false
+    when "paper"
+      @win = true
+    when "scissors"
+      @win = false
+    when "spock"
+      @win = true
+    when "lizard"
       @win = nil
     end
   end
@@ -55,7 +97,7 @@ class Game
   private
 
   def npc_play
-    ["rock", "paper", "scissors"].sample
+    ["rock", "paper", "scissors", "spock", "lizard"].sample
   end
 
 end

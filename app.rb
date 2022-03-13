@@ -45,5 +45,19 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end 
 
+  post '/spock' do
+    @game = $game
+    @game.spock
+    session[:message] = @game.message
+    redirect '/play'
+  end 
+
+  post '/lizard' do
+    @game = $game
+    @game.lizard
+    session[:message] = @game.message
+    redirect '/play'
+  end 
+
   run! if app_file == $0
 end

@@ -4,10 +4,6 @@ describe Game do
   let(:player) { Player.new("Archie") }
   let(:game) { Game.new(player) }
 
-  # before do
-  #   @game = Game.new(player)
-  # end
-
   context "player" do
 
     it "returns player when initializes" do
@@ -36,6 +32,17 @@ describe Game do
       expect(game.win).to eq nil
     end 
     
+    it "player choose spock and wins" do
+      allow_any_instance_of(Game).to receive(:npc_play).and_return("rock")
+      game.spock
+      expect(game.win).to eq true
+    end 
+
+    it "player choose lizard and ties" do
+      allow_any_instance_of(Game).to receive(:npc_play).and_return("lizard")
+      game.lizard
+      expect(game.win).to eq nil
+    end 
   end
   
   context "return messages after play" do
