@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body {
+        background-image: url("images/hp.jpeg");
+        background-repate: repeat;
+        position: relative; 
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+   
+      h1, form {
+        background-color: #fff;
+        padding: 10px 10px;
+        font-family: sans-serif;
+        color: #354550;
+        opacity: 0.9;
+      }
+    
+      .form-text{
+       padding: 10px 0;
+      }
+
+      .button {
+        background: #016ABC;
+        color: #fff;
+        border: 1px solid #eee;
+        padding: 10px 25px;
+        font-size: 16px;
+        display: inline-block;
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px #eee;
+        text-shadow: none;
+      }
+
+    </style>
+  </head>
+
+  <body class="center">
+    <h1>Enter your name to play:</h1> 
+    
+    <form action="/names" method="post">
+      <input class="form-text" type="text" name="player_name">
+      <input class="button" type="submit" value="Submit">
+    </form>
+  </body>
+</html>
+
+    
