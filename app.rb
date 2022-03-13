@@ -36,9 +36,16 @@ class RPSApp < Sinatra::Base
   end
   
   post '/submit-names' do
-    @game.add_player(params[:player1_name])
-    player2_name = params[:player2_name]
-    player2_name.nil? ? @game.add_computer_opponents : @game.add_player(player2_name)
+    player1_name, player2_name = params[:player1_name], params[:player2_name]
+    player1_name = 'Player 1' if player1_name.empty?
+    @game.add_player(player1_name)
+    if player2_name.nil?
+      @game.add_computer_opponents
+    elsif player2_name.empty?
+      player2_name = 'Player 2'
+    else
+      @game.add_player(player2_name)
+    end
     redirect '/welcome'
   end
   
