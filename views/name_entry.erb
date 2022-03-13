@@ -3,9 +3,15 @@
     <h1>Enter Name<%= 's' if @number == 2 %></h1>
     <h2>Number of Players: <%= @number %></h2>
     <form action='/submit-names' method='post'>
-      <input type='text' name='player1_name'>
+      <div>
+        <label for='player1_name'>Player 1 Name:</label>
+        <input type='text' id="player1_name" name='player1_name'>
+      </div>
       <% if @number == 2 %>
-      <input type='text' name='player2_name'>
+      <div>
+        <label for='player2_name'>Player 2 Name:</label>
+        <input type='text' id='player2_name' name='player2_name'>
+      </div>
       <% end %>
       <input type='submit' value='Confirm Names'>
     </form>

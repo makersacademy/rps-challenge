@@ -6,11 +6,11 @@ module GameHelper
     click_button('Confirm Names')
   end
   
-  def setup_2_players(name_1, name_2)
+  def setup_2_players(name1, name2)
     visit('/')
     click_button('2')
-    fill_in 'player1_name', with: name_1
-    fill_in 'player2_name', with: name_2
+    fill_in 'player1_name', with: name1
+    fill_in 'player2_name', with: name2
     click_button('Confirm Names')
   end
 end
