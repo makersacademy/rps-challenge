@@ -32,7 +32,7 @@ feature 'loading play page second time' do
     click_on('submit')
     choose('Rock')
     click_on('submit')
-    expect(page).to have_content 'The winner is'
+    expect(page).to have_content 'draw'
     Game.instance.reset_turns
     Game.instance.reset_players
   end

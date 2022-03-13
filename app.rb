@@ -4,9 +4,7 @@ require_relative './lib/game'
 require_relative './lib/player'
 
 class RockPaperScissors < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
-  end
+  register Sinatra::Reloader
 
   before do
     @game = Game.instance
@@ -27,6 +25,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player-choice' do
+    @game.players[@game.turn_manager.turn].assign_choice(params[:radio_button])
     if @game.turn_manager.turn == 1
       @game.turn_manager.reset 
       redirect '/result'
@@ -37,6 +36,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    @game.determine_winner
+    p @game.result_message
     erb :result
   end
 

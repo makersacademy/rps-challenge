@@ -7,4 +7,8 @@ class Player
     @choice = nil
   end
 
+  def assign_choice(radio_button_selection)
+    @choice = radio_button_selection
+  end
+
 end

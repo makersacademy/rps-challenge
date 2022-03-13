@@ -3,7 +3,7 @@ require 'game'
 describe Game do
 
   subject(:game) { Game.new }
-  let(:player_double) { double(:player) }
+  let(:player_double) { double(:player, :name => 'Bob') }
   let(:player1_double) { double(:player, :choice => 'rock')}
   let(:player2_double) { double(:player, :choice => 'scissors')}
   
@@ -32,8 +32,19 @@ describe Game do
     end
   end
 
-  # context 'determine result' do
-  #   it 'declares the correct winner'
+  context 'result message' do
+    it 'returns draw message' do
+      game.determine_winner('rock', 'rock')
+      expect(game.result_message).to eq 'You both selected the same option - the game is a draw!'
+    end
 
-  # end
+    it 'returns draw message' do
+      allow(Player).to receive(:new).and_return(player_double)
+      game.new_player('Bob')
+      game.new_player('Vic')
+      game.determine_winner('rock', 'paper')
+      expect(game.result_message).to include 'The winner is'
+    end
+  end
+
 end
