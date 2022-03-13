@@ -1,5 +1,5 @@
-<h1>Computer chose <%= @game.computer_choice %></h1>
-<h2>
+<h1>You chose <%= @choice %>
+<h2>Computer chose <%= @game.computer_choice %></h2>
 <% if @game.win? %>
   You win!
 <% elsif @game.draw? %>
@@ -8,4 +8,6 @@
   You lose
 <% end %>
 </h2>
-<a href="/">Play again</a>
+<form action="/reset" method="post">
+  <input type="submit" value="Play again">
+</form>

@@ -15,19 +15,29 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:name], params[:choice])
+    $player = Player.new(params[:name])
     redirect '/play'
   end
 
   get '/play' do
     @player_name = $player.name
-    @player_choice = $player.choice
     erb :play
+  end
+
+  post '/choice' do
+    $player.choice << params[:choice]
+    redirect '/result'
   end
 
   get '/result' do
     @game = Game.new($player)
+    @choice = $player.choice
     erb :result
+  end
+
+  post '/reset' do
+    ?????
+    redirect '/play'
   end
 
   run! if app_file == $0

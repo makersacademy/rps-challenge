@@ -1,3 +1,10 @@
-<h1>Hello <%= @player_name %>! You chose <%= @player_choice %></h1>
-<br>
-<a href="/result">Did you beat the computer?</a>
+<h1>Hello <%= @player_name %>! Choose your weapon:</h1>
+<form action="/choice" method="post">
+<input type="radio" id="rock" name="choice" value="rock">
+<label for="rock">Rock</label><br>
+<input type="radio" id="paper" name="choice" value="paper">
+<label for="paper">Paper</label><br>
+<input type="radio" id="scissors" name="choice" value="scissors">
+<label for="scissors">Scissors</label>
+<input type="submit" value="Submit">
+</form>
