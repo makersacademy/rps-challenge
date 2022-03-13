@@ -15,7 +15,9 @@ How to download the program
 
 Output example
 -----
-ADD SCREENSHOTS HERE
+![screenshot](https://github.com/valentina-maggio/rps-challenge/blob/main/assets/Screenshot%202022-03-13%20at%2011.22.19.png?raw=true)
+![screenshot2](https://github.com/valentina-maggio/rps-challenge/blob/main/assets/Screenshot%202022-03-13%20at%2011.23.35.png?raw=true)
+![screenshot3](https://github.com/valentina-maggio/rps-challenge/blob/main/assets/Screenshot%202022-03-13%20at%2011.24.24.png?raw=true)
 
 How to navigate the website
 -----
