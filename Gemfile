@@ -10,6 +10,11 @@ group :test do
   gem 'rspec'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'thin'
+  gem 'puma'
+  gem 'reel'
+  gem 'http'
+  gem 'webrick'
 end
 
 group :development, :test do

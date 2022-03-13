@@ -7,7 +7,13 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/' do
-    'Hello World'
+    erb(:form)
+  end
+
+  post '/name' do
+    @player_name = params[:player_name]
+    p params
+    erb(:name)
   end
 
   run! if app_file == $0
