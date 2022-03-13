@@ -1,15 +1,14 @@
 class Player
 
+  attr_reader :name
+  attr_accessor :move
+
   def initialize(name)
-    @player = name
+    @name = name
   end
 
-  def name
-    @player
+  def last_move
+    {"#{@name}" => "#{@move}"}
   end
-
-  private
-
-  attr_reader :player
 
 end
