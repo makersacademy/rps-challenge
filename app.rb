@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/computer'
 
 class Marketeer < Sinatra::Base
   enable :sessions
@@ -26,7 +27,7 @@ class Marketeer < Sinatra::Base
 
   post '/play' do
     session[:choice] = params[:choice]
-    session[:computer_choice] = :scissors
+    session[:computer_choice] = Computer.new.choice
     redirect ('/play')
   end
 end
