@@ -1,4 +1,4 @@
 language: ruby
 
-script:
+script: 
   - bundle exec rspec
