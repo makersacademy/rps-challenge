@@ -1,7 +1,6 @@
 require 'comp'
 
 describe Comp do
-
   describe '#make_choice' do
     it { is_expected.to respond_to(:make_choice)}
 
