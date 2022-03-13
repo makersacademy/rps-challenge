@@ -7,6 +7,8 @@ class RPSApp < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :sessions
+
   before do
     @game = Game.instance
   end
@@ -22,14 +24,15 @@ class RPSApp < Sinatra::Base
     @player1, @player2 = @game.players
     erb :welcome
   end
-
-  post '/number-of-players' do
-    @number = params[:players].to_i
-    redirect '/name-entry'
+  
+  get '/name-entry' do
+    @number = session.delete(:number_of_players)
+    erb :name_entry
   end
 
-  get '/name-entry' do
-    erb :name_entry
+  post '/name-entry' do
+    session[:number_of_players] = params["players"].to_i
+    redirect '/name-entry'
   end
   
   post '/submit-names' do
@@ -45,11 +48,16 @@ class RPSApp < Sinatra::Base
   get '/game-screen' do
     @player1, @player2 = @game.players
     @player2.set_random_choice if @player2.computer?
-    if @player1.choice_made? && @player2.choice_made?
+    if @game.choices_made?
       erb :game_complete
     else
       erb :game_screen
     end
+  end
+
+  get '/play-again' do
+    @game.reset_choices
+    redirect '/welcome'
   end
 
   get '/player1-selection' do
@@ -57,7 +65,8 @@ class RPSApp < Sinatra::Base
   end
   
   post '/player1-choice' do
-    p params
+    @player1 = @game.players[0]
+    @player1.choice = (params[:player1_choice])
     redirect '/game-screen'
   end
   
@@ -66,7 +75,8 @@ class RPSApp < Sinatra::Base
   end
 
   post '/player2-choice' do
-    p params
+    @player2 = @game.players[1]
+    @player2.choice = (params[:player2_choice])
     redirect '/game-screen'
   end
 
