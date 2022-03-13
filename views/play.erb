@@ -1,3 +1,25 @@
 <html>
 <h1><%= @game.players[0].name %> vs. <%= @game.players[1].name %></h1>
+<form action='player-choice' method ='post'>
+  <h2><%= @game.players[@game.turn_manager.turn].name %> - please select your choice</h2>
+  <div>
+    <input type="radio" id="Choice1"
+           name="choice" value="rock">
+    <label for="contactChoice1">Rock</label>
+  </div>
+  <div>
+    <input type="radio" id="contactChoice2"
+           name="choice" value="paper">
+    <label for="contactChoice2">Paper</label>
+  </div>
+  <div>
+    <input type="radio" id="contactChoice3"
+           name="choice" value="scissors">
+    <label for="contactChoice3">Scissors</label>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+
 </html>
