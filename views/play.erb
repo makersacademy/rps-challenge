@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+      h1 {text-align: center;
+        font-family: sans-serif;
+        color: #354550;
+        padding: 40px 0 0 0;
+      }
+
+      h2 {text-align: center;
+        font-family: sans-serif;
+        color: #354550;
+        padding: 15px 0 0 0;
+      }
+
+      .exit-button {
+        background: red;
+        color: #fff;
+        border: 1px solid #eee;
+        padding: 5px 20px;
+        font-size: 16px;
+        display: inline-block;
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px #eee;
+        text-shadow: none;
+        }
+
+      .button {
+        background: #016ABC;
+        color: #fff;
+        border: 1px solid #eee;
+        padding: 10px 25px;
+        font-size: 16px;
+        display: inline-block;
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px #eee;
+        text-shadow: none;
+        }
+        
+      .images {
+        text-align: center;
+        padding: 15px 0 0 0;
+         
+      }
+    </style>
+  </head>
+  
+  <body>
+    <form action="/exit" method="post" style='text-align: right'>
+      <input class="exit-button" type="submit" value="Exit">
+    </form>
+  
+    <h1>Welcome <%= @player_name %>!</h1>
+
+    <h2>Choose from Rock, Paper or Scissors</h2>
+
+    <div>
+      <form action="/play" method="post" style='text-align: center'>
+        <input class="button" name="choice" type="submit" value="Rock">
+        <input class="button" name="choice" type="submit" value="Paper">
+        <input class="button" name="choice" type="submit" value="Scissors">
+      </form>
+    </div>
+
+    <% if @player_choice != nil %>
+      <h2>You chose <%= @player_choice %></h2>
+
+      <h2>Computer chose <%= @comp_choice %></h2>
+
+      <div class="images">
+        <img src='images/<%= @player_choice %>.jpeg' height="125" width="125">
+        <img src='images/<%= @comp_choice %>.jpeg'height="125" width="125">
+      </div> 
+
+      <h2><%= @winner %></h2>
+    <% end %>   
+  </body>
+</html>
