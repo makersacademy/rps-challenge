@@ -36,5 +36,9 @@ class RockPaperScissors < Sinatra::Base
     end
   end
 
+  get '/result' do
+    erb :result
+  end
+
   run! if app_file == $0
 end

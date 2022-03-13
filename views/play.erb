@@ -3,19 +3,19 @@
 <h2><%= @game.players[@game.turn_manager.turn].name %> - please select your choice</h2>
 <form action='player-choice' method ='post'>
   <div>
-    <input type="radio" id="Choice1"
-           name="rock" value="rock">
-    <label for="Choice1">Rock</label>
+    <input type="radio" id="Rock"
+           name="radio_button" value="rock">
+    <label for="Rock">Rock</label>
   </div>
   <div>
-    <input type="radio" id="Choice2"
-           name="paper" value="paper">
-    <label for="Choice2">Paper</label>
+    <input type="radio" id="Paper"
+           name="radio_button" value="paper">
+    <label for="Paper">Paper</label>
   </div>
   <div>
-    <input type="radio" id="Choice3"
-           name="scissors" value="scissors">
-    <label for="Choice3">Scissors</label>
+    <input type="radio" id="Paper"
+           name="radio_button" value="scissors">
+    <label for="Paper">Scissors</label>
   </div>
   <div>
     <button type="submit" name ="submit">Submit</button>

@@ -21,7 +21,11 @@ class Game
   end
 
   def change_player
-    turn_manager.change_turn
+    @turn_manager.change_turn
+  end
+
+  def reset_turns
+    @turn_manager.reset
   end
 
   def self.instance

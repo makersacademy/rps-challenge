@@ -14,7 +14,7 @@ describe TurnManager do
 
   it 'resets player turnt to 0' do
     subject.change_turn
-    subject.reset_turns
+    subject.reset
     expect(subject.turn).to eq 0
   end
 end

@@ -10,7 +10,7 @@ class TurnManager
     @turn += 1
   end
 
-  def reset_turns
+  def reset
     @turn = 0
   end
 
