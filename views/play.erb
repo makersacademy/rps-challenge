@@ -1,0 +1,30 @@
+<head>
+  <h1 style='text-align:center'> Let's Play <%= @game.player.name %> </h1>
+</head>
+
+<br>
+<br>
+<h3 style='text-align:center;color:rgb(230, 80, 80)'' name='message'><%= @message %></h3>
+<br>
+<br>
+
+<h3 style='text-align:center;color:rgb(230, 80, 80)'> Rock, Paper, Scissors, Spock or Lizard? </h3>
+
+<br>
+<br>
+
+<body style='background-image:linear-gradient(rgb(241, 163, 244),rgb(167, 225, 235))'>
+
+  <table style="width:30%;margin-left:auto;margin-right:auto">
+    <tr style="text-align:center">
+      <form action="/rock" method="post"><th><button>Rock</button></th></form>
+      <form action="/paper" method="post"><th><button>Paper</button></th></form>
+      <form action="/scissors" method="post"><th><button>Scissors</button></th></form>
+      <form action="/spock" method="post"><th><button>Spock</button></th></form>
+      <form action="/lizard" method="post"><th><button>Lizard</button></th></form>
+    </tr>
+  </table>
+
+  <br>
+
+</body>
