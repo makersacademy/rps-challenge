@@ -39,7 +39,7 @@ describe Game do
     it 'outputs the two player choices' do
       game.add_player('Player 1')
       game.add_player('Player 2')
-      expect { game.compare_choices }.to output("Player 1: Rock\nPlayer 2: Paper\n").to_stdout
+      expect { game.compare_choices }.to output("Player 1: Rock\nPlayer 2: Paper\nPlayer 2 Wins!\n").to_stdout
     end
   end
 
@@ -50,8 +50,8 @@ describe Game do
     end
 
     it 'returns itself' do
-      game2 = Game.instance
-      expect(Game.instance).to be game2
+      instance_of_game = Game.instance
+      expect(Game.instance).to be instance_of_game
     end
   end
 end
