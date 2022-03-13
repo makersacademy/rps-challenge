@@ -18,16 +18,51 @@ feature 'checking that game' do
     sign_in
     expect(page).to have_content "Ready for a round of RPS Nico?"
   end
+
   scenario 'prompts the player for an answer' do
     sign_in
     expect(page).to have_content "Please select your hand"
     expect(page).to have_field "player_answer"
   end
-  scenario 'saves the player answer' do
+end
+
+feature 'checking the result page' do
+  scenario 'saves and returns the player answer' do
+    sign_in
+    choose 'Paper'
+    click_on 'Submit'
+    expect(page).to have_content "You have selected Paper"
+  end
+
+  scenario 'returns the pc answer' do
+    sign_in
+    choose 'Paper'
+    click_on 'Submit'
+    #this stubbing doesn't work
+    allow($game).to receive(:sample).and_return("Rock")
+    expect(page).to have_content "The computer selected"
+  end
+
+  xscenario 'returns the result' do
     sign_in
     choose 'Paper'
     click_on 'Submit'
     expect(page).to have_content "You have selected Rock"
+  end
+
+  scenario 'holds a button to play another round' do
+    sign_in
+    choose 'Paper'
+    click_on 'Submit'
+    expect(page).to have_button "Another round?"
+  end
+
+  scenario 'starts another round' do
+    sign_in
+    choose 'Paper'
+    click_on 'Submit'
+    click_on 'Another round?'
+    expect(page).to have_content "Ready for a round of RPS"
   end
 
 
