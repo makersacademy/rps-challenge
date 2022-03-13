@@ -5,6 +5,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+require_relative './support/game_helper'
 
 Capybara.app = RPSApp
 
@@ -18,6 +19,7 @@ SimpleCov.start
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
 RSpec.configure do |config|
+  config.include GameHelper
   # config.after(:suite) do
   #   puts
   #   puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
