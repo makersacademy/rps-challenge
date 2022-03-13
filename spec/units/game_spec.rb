@@ -35,11 +35,11 @@ describe Game do
     end
   end
 
-  describe '#compare_choices' do
-    it 'outputs the two player choices' do
+  describe '#outcome' do
+    it 'returns the correct winner' do
       game.add_player('Player 1')
       game.add_player('Player 2')
-      expect { game.compare_choices }.to output("Player 1: Rock\nPlayer 2: Paper\nPlayer 2 Wins!\n").to_stdout
+      expect(game.outcome).to eq 'Player 2 Wins!'
     end
   end
 

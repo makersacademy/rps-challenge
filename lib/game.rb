@@ -25,27 +25,17 @@ class Game
     @players = []
   end
 
-  def compare_choices
+  def outcome
     player1, player2 = @players
-    @players.each do |player|
-      puts "#{player.name}: #{player.choice.capitalize}"
-    end
-    return 'Draw' if player1.choice == player2.choice
+    return "It's a Draw" if player1.choice == player2.choice
 
     player1_wins = [
       (player1.choice == 'rock' && player2.choice == 'scissors'),
       (player1.choice == 'paper' && player2.choice == 'rock'),
       (player1.choice == 'scissors' && player2.choice == 'paper')
     ]
-    if player1_wins.any? true
-      @winner = player1
-      return 'Player 1 Wins!'
-
-    else
-      @winner = player2
-      return 'Player 2 Wins!'
-      
-    end
+    @winner = player1_wins.any? ? player1 : player2
+    return "#{@winner.name} Wins!"
   end
 
   def self.instance
