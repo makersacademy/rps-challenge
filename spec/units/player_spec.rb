@@ -13,7 +13,7 @@ describe Player do
   it 'should return the players last move' do
     player = Player.new(:adam)
     player.move = :rock
-    expect(player.last_move).to eq({"adam" => "rock"})
+    expect(player.move).to eq({"adam" => "rock"})
   end
 
 end

@@ -7,7 +7,7 @@ class Player
     @name = name
   end
 
-  def last_move
+  def move
     {"#{@name}" => "#{@move}"}
   end
 

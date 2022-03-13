@@ -1,15 +1,28 @@
+require 'cpu.rb'
+
 class Game
 
-  attr_reader :player
+  attr_reader :player1, :player2
 
-  def initialize(player) 
-    @player = player
+  def initialize(player1, player2 = CPU.new) 
+    @player1 = player1
+    @player2 = player2
   end
 
-  def winner(player_1_move:, player_2_move:)
-    return "#{@player}" if calculate_winner == player_1_move
-    return "#{@player2}" if calculate_winner == player_2_move
-    #or something similar
+  def winner
+    calculate_winner(@player1.move, @player2.move)
+  end
+
+  private
+
+  def calculate_winner(move_1, move_2)
+    if (move_1 == 'rock' && move_2 == 'scissors') || (move_1 == 'paper' && move_2 == 'rock') || (move_1 == 'scissors' && move_2 == 'paper')
+      return @player1.name
+    elsif (move_2 == 'rock' && move_1 == 'scissors') || (move_2 == 'paper' && move_1 == 'rock') || (move_2 == 'scissors' && move_1 == 'paper')
+      return @player2.name
+    elsif move_1 == move_2
+      return "Draw"
+    end
   end
 
 

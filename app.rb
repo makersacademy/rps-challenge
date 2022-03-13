@@ -24,7 +24,7 @@ class RPS < Sinatra::Base
   end
 
   post '/move' do
-    $game.player.move = params[:move]
+    $game.player1.move = params[:move]
   end
 
   run! if app_file == $0
