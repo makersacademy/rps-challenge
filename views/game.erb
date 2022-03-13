@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RPS</title>
+  </head>
+  <h1>Ready for a round of RPS <%=@player_name%>?</h1>
+  <body>
+  <form action="/result" method='post'>
+  <p>Please select your hand:</p>
+    <input type="radio" id="Rock" name="player_answer" value="Rock">
+    <label for="Rock">Rock</label><br>
+    <input type="radio" id="Scissors" name="player_answer" value="Scissors">
+    <label for="Scissors">Scissors</label><br>
+    <input type="radio" id="Paper" name="player_answer" value="Paper">
+    <label for="Paper">Paper</label>
+    <br>
+    <input type='submit' value='Submit'>
+  </body>
+</html>

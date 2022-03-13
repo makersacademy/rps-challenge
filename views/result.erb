@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <h2> You have selected <%= @player_answer %> </h2>
+  <h2> The computer selected <%= @pc_answer %> </h2>
+  <h2> <%= @result_message %> </h2>
+  
+  <body>
+    <form action="/game">
+      <input type="submit" value="Another round?">
+    </form>
+  </body>
+</html>
