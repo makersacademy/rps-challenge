@@ -1,10 +1,12 @@
 <html>
-  <h1>Player 1, Make your Choice</h1>
-  <form action='/player1-choice' method='post'>
-    <input type='submit' value='Rock'>
-    <br>
-    <input type='submit' value='Paper'>
-    <br>
-    <input type='submit' value='Scissors'>
-  </form>
+  <body>
+    <h1><%= (@game.players[0]).name %>, Make your Choice</h1>
+    <form action='/player1-choice' method='post'>
+      <input type='submit' name='player1_choice' value='Rock'>
+      <br>
+      <input type='submit' name='player1_choice' value='Paper'>
+      <br>
+      <input type='submit' name='player1_choice' value='Scissors'>
+    </form>
+  </body>
 </html>
