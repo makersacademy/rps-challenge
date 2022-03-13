@@ -10,7 +10,7 @@ class Game
     @answers.sample
   end
 
-  def player_won?(player_answer,pc_answer)
+  def result(player_answer,pc_answer)
     if player_answer == "Rock"
       case pc_answer
       when "Rock"

@@ -16,7 +16,7 @@ describe Game do
   
   it 'returns a win/lose/tie message depending on player_answer' do
     allow(game).to receive(:pc_answer).and_return('Rock')
-    expect(game.player_won?("Scissors",game.pc_answer)).to eq "You've lost :("
+    expect(game.result("Scissors",game.pc_answer)).to eq "You've lost :("
   end
 
 end

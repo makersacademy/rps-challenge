@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title> 
-    <% if win %> 
-    You won!
-    <% else %> 
-    You lost!
-    </title>
-  </head>
+  <h2> You have selected <%= @player_answer %> </h2>
+  <h2> The computer selected <%= @pc_answer %> </h2>
+  <h2> <%= @result_message %> </h2>
+  
   <body>
-    <form action="/roll" method="post">
-      Rock, paper or Scissors?: <input type="text" value="player_rps">
-      <input type="submit" value="Submit">
+    <form action="/game">
+      <input type="submit" value="Another round?">
     </form>
   </body>
 </html>
