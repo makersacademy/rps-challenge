@@ -8,6 +8,9 @@ class RPS < Sinatra::Base
     # :nocov:
   end
 
+  get "/" do
+    erb(:index)
+  end
  
 
   run! if app_file == $0
