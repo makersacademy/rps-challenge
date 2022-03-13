@@ -37,4 +37,15 @@ feature 'loading play page second time' do
     Game.instance.reset_players
   end
 
+  scenario 'expect second player inputting choice to redirect to result page' do
+    setup_players('Vic', 'Bob') # will redirect to '/play'
+    choose('Rock')
+    click_on('submit')
+    choose('Scissors')
+    click_on('submit')
+    expect(page).to have_content 'The winner is Vic'
+    Game.instance.reset_turns
+    Game.instance.reset_players
+  end
+
 end

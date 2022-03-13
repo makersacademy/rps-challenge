@@ -4,7 +4,9 @@ describe Game do
 
   subject(:game) { Game.new }
   let(:player_double) { double(:player) }
-
+  let(:player1_double) { double(:player, :choice => 'rock')}
+  let(:player2_double) { double(:player, :choice => 'scissors')}
+  
   context 'creating a new game' do
     it 'creates a new game with 0 players' do
       expect(game.players.size).to eq 0
@@ -29,4 +31,9 @@ describe Game do
       expect(game.players).to eq []
     end
   end
+
+  # context 'determine result' do
+  #   it 'declares the correct winner'
+
+  # end
 end
