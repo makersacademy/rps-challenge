@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-
   <style>
     body {
       background: #041C32;
@@ -15,13 +14,8 @@
   </style>
 </head>
 <body>
-  <h1>Hi <%= @name %>!</h1>
-
-  <form action='/result' method='POST'>
-    <label><strong>Enter your choice:</strong> </label>
-    <input type='submit' name='choice' value='Rock'/>
-    <input type='submit' name='choice' value='Scissors'/>
-    <input type='submit' name='choice' value='Paper'/>
-  </form>
+  <h1>You chose: <%= @player_choice %></h1>
+  <h1 class='computer_choice'>Computer chose:  <%= @computer_choice.to_s.capitalize%> </h1>
+  <h3><%= @result %></h3>
 </body>
 </html>

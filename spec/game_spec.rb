@@ -1,14 +1,7 @@
 require 'game'
 
-
 describe Game do
-  subject(:game) { described_class.new ('Samuel')}
-
-  describe '#new' do
-    it 'returns a player name' do
-      expect(game.player).to eq 'Samuel'
-    end
-  end
+  subject(:game) { described_class.new }
 
   describe '#result' do
     it "when player wins" do

@@ -21,8 +21,8 @@ feature 'User will be presented the choices (rock, paper and scissors) ' do
     expect(message_for_random_choice).to include(computer_choice)
   end
 
-  scenario 'user can win' do
-    click_button 'Rock'
-    expect(page).to have_content 'You won!'
-  end
+  # scenario 'user can win' do
+  #   click_button 'Rock'
+  #   expect(page).to have_content 'Rock smashes scissors! You win!'
+  # end
 end

@@ -8,15 +8,16 @@
 
   <style>
     body {
-      background: azure;
+      background: #041C32;
       text-align: center;
+      color: #FFE6BC;
     }
   </style>
 </head>
 <body>
-  <h1>Enter your name to play a game.</h1>
-  <form action='/name' method='post'>
-    <label>First Name: </label>
+  <h1>Enter your name to play the game.</h1>
+  <form action='/play' method='post'>
+    <label><strong>First Name:</strong> </label>
     <input type='text' name='name'/>
     <button type='submit' value="Register">Register</button>
   </form>

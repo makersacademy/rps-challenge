@@ -15,21 +15,27 @@ class Rps < Sinatra::Base
     erb :register
   end
 
-  post '/name' do
+  post '/play' do
     $player = Player.new(params[:name])
+    $game = Game.new
     redirect ('/play')
   end
 
   get '/play' do
     @name = $player.name
-    @player_choice = session[:choice]
-    @computer_choice = session[:computer_choice]
     erb :play
   end
 
-  post '/play' do
+  post '/result' do
     session[:choice] = params[:choice]
     session[:computer_choice] = Computer.new.choice
-    redirect ('/play')
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player_choice = session[:choice]
+    @computer_choice = session[:computer_choice]
+    @result = $game.result(@player_choice, @computer_choice)
+    erb :result
   end
 end
