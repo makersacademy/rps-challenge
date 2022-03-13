@@ -1,8 +1,10 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative './lib/computer'
+require_relative './lib/player'
+require_relative './lib/game'
 
-class Marketeer < Sinatra::Base
+class Rps < Sinatra::Base
   enable :sessions
   configure :development do
     register Sinatra::Reloader
@@ -14,12 +16,12 @@ class Marketeer < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    $player = Player.new(params[:name])
     redirect ('/play')
   end
 
   get '/play' do
-    @name = session[:name]
+    @name = $player.name
     @player_choice = session[:choice]
     @computer_choice = session[:computer_choice]
     erb :play
