@@ -29,7 +29,6 @@ class Game
   end
 
   def result
-    return if @computer_choice.nil?
     OUTCOMES[@player.choice][@computer_choice]
   end
 end
