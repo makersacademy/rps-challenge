@@ -1,3 +1,7 @@
+[![Ruby](https://github.com/r94o/rps-challenge/actions/workflows/ruby.yml/badge.svg)](https://github.com/r94o/rps-challenge/actions/workflows/ruby.yml)
+
+
+
 # 100% coverage - will amend readme later
 
 
