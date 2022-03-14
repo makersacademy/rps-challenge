@@ -38,4 +38,13 @@ RSpec.feature "home_page", type: :feature do
     end
 
   end
+  
+  context "After user has selected his option and clicked the 'see winner' button he should see the outcome" do
+    xscenario "User selects Rock and Computer Selects Scissors" do
+      user_chooses_rock
+      click_on "See Winner"
+
+      expect(page).to have_content("You won!")
+    end
+  end
 end

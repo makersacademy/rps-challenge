@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -36,6 +37,13 @@ class RockPaperScissors < Sinatra::Base
     @users_choice = session[:users_choice]
 
     erb :confirmation_page
+  end
+
+  get"/result" do
+    game = Game.new(session[:users_choice])
+    @outcome = game.decide_winner
+
+    erb :result
   end
 
   run! if app_file == $0

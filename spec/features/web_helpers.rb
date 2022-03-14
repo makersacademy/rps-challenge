@@ -5,3 +5,10 @@ def user_signs_in
   end
   click_on "Submit"
 end
+
+def user_chooses_rock
+  user_signs_in
+
+  check 'R'
+  click_on "Submit"
+end
