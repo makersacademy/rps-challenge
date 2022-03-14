@@ -5,7 +5,7 @@ describe Game do
   game = Game.new("Rock")
 
   it "should take the users choice as a parameter and store it" do
-    expect(game.users_choice).to eq("Rock")
+    expect(game.user_choice).to eq("Rock")
   end
 
   describe "making a random choice for the computer" do
@@ -28,5 +28,17 @@ describe Game do
       expect(game.generate_computer_choice).to eq("Scissors")
     end 
 
+  end
+
+  describe "the #decide_winner method" do
+    describe "situations where the user wins" do
+      it "should return 'user' if user_choice = 'Rock' and comp_choice = 'Scissors'" do
+        game1 = Game.new("Rock")
+
+        allow(game1).to receive(:rand).and_return(2)
+
+        expect(game1.decide_winner).to eq("user")
+      end
+    end
   end
 end
