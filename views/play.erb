@@ -1,0 +1,34 @@
+<div style="text-align: center;">
+  <h1>Rock Paper Scissors</h1>
+
+  <% if @game.round > 0 %>
+    <h1>Round <%= @game.round %>  <%= @player.name %> <%= @player.score %> - <%= @computer.score%> <%= @computer.name %></h1>
+      <% if @game.winner %>
+        <h3><%= @game.winner.name %> wins!</h3>
+      <% else %>
+        <h3>Draw!</h3>
+      <% end %>
+    <%= @player.name %>: <%= @player.move %>
+    <br>
+    <%= @computer.name %>: <%= @computer.move %>
+    <br>
+    <br>
+  <% end %>
+
+    <form action="/move" method="POST">
+      <label for="rock">Rock</label>
+      <input type="radio" id="rock" name="player_move" value="Rock">
+      <br>
+      <label for="paper">Paper</label>
+      <input type="radio" id="paper" name="player_move" value="Paper">
+      <br>
+      <label for="scissors">Scissors</label>
+      <input type="radio" id="scissors" name="player_move" value="Scissors">
+      <br>
+      <br>
+      <input type="submit" name="submit" id="submit">
+    </form>
+    
+    <br>
+    <a href="/">Reset</a>
+</div>
