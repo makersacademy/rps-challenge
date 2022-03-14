@@ -20,5 +20,22 @@ RSpec.feature "home_page", type: :feature do
 
       expect(page).to have_content("You chose Rock!")
     end
+
+    scenario "User chooses 'Paper'" do
+      user_signs_in
+      check 'P'
+      click_on "Submit"
+
+      expect(page).to have_content("You chose Paper!")
+    end
+
+    scenario "User chooses 'Scissors'" do
+      user_signs_in
+      check 'S'
+      click_on "Submit"
+
+      expect(page).to have_content("You chose Scissors!")
+    end
+
   end
 end
