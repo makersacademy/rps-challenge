@@ -7,6 +7,9 @@ Instructions
 - run bundle install
 - ruby app.rb
 
+Notes for futher development:
+- mock out classes in unit tests
+
 Task
 ----
 
