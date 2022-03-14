@@ -8,7 +8,8 @@ class Rps < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  enable :sessions
+  # enable :sessions 
+  #Didn't use sessions in the end... used the dreaded global variable
 
   get '/' do
     erb :index
