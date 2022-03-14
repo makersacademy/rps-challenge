@@ -33,8 +33,8 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
-    @player_choice = session[:player_choice]
     @ai_choice = $game.ai_choice
+    @player_choice = session[:player_choice]
     @result = $game.evaluation(@ai_choice, @player_choice)
     erb :result
   end
