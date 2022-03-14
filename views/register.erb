@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+  <title></title>
+
+  <style>
+    body {
+      font-family: 'Syne Mono', monospace;
+      background: #E8E2DB;
+      text-align: center;
+      color: #010059;
+    }
+    input {
+      width : 150px;
+      padding: 6px;
+      box-sizing: border-box;
+      background: none;
+      outline: none;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 5.5px;
+      font-size: 14px;
+      border: 2px solid #333;
+      border-radius: 5px;
+      background: none;
+      cursor: pointer;
+      width: 76px;
+    }
+    button:hover,
+    button:focus {
+      outline: none;
+      background: #010059;
+      color: #FFF;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enter your name to play the game.</h1>
+  <div>
+    <form action='/play' method='post'>
+      <label for="name" class="form__label">Name</label>
+      <input type="text" class="form__field" name="name" id='name' required />
+      <button type='submit' value="Register">Register</button>
+    </form>
+  </div>
+</body>
+</html>

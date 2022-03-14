@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+  <title></title>
+  <style>
+    body {
+      font-family: 'Syne Mono', monospace;
+      background: #E8E2DB;
+      text-align: center;
+      color: #010059;
+    }
+
+    a {
+      color: #019267;
+      cursor: pointer;
+      outline: none;
+      text-decoration: none;
+      display: inline-block;
+      width: 15.5%;
+      text-align: center;
+      line-height: 2;
+    }
+
+    a:hover {
+      background: #65C18C;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>You chose: <%= @player_choice %></h1>
+  <h1 class='computer_choice'>Computer chose:  <%= @computer_choice.to_s.capitalize%> </h1>
+  <h3><%= @result %></h3>
+
+  <div>
+    <a class='link' href='/play'>Play again?</a>
+  </div>
+
+  <div>
+    <a class='link' href='/'>Choose a new player</a>
+  </div>
+
+</body>
+</html>

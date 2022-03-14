@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+  <title></title>
+
+  <style>
+    body {
+      font-family: 'Syne Mono', monospace;
+      background: #E8E2DB;
+      text-align: center;
+      color: #010059;
+    }
+
+    input {
+      width : 150px;
+      padding: 6px;
+      box-sizing: border-box;
+      background: none;
+      outline: none;
+      border-radius: 5px;
+    }
+
+    input:hover{
+      background: #010059;
+      color: #FFF;
+      cursor: pointer;
+    }
+
+  input[value] {
+    font-size: 15px;
+    font-family: 'Syne Mono', monospace;
+  }
+
+  </style>
+</head>
+<body>
+  <h1>Hi <%= @name %>!</h1>
+
+  <form action='/result' method='POST'>
+    <label><strong>Enter your choice:</strong> </label>
+    <input type='submit' name='choice' value='Rock'/>
+    <input type='submit' name='choice' value='Scissors'/>
+    <input type='submit' name='choice' value='Paper'/>
+  </form>
+</body>
+</html>
