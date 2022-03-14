@@ -1,5 +1,7 @@
 # RPS Challenge
 
+[![Build Status](https://app.travis-ci.com/valentina-maggio/rps-challenge.svg?branch=main)](https://app.travis-ci.com/valentina-maggio/rps-challenge)
+
 Description
 -------
 
