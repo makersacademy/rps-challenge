@@ -1,0 +1,16 @@
+<body style="background-color:darkseagreen;">
+<h1 style="font-size:50px; font-family:verdana; color:#F0FFFF; margin:10px"> <%= @game.player.name %> chose <%= @choice.to_s.capitalize %>  </h1>
+<h1 style="font-size:50px; font-family:verdana; color:#F0FFFF; margin:10px"> Computer chose <%= @comp_choice.to_s.capitalize %>  </h1>
+<h1 style="font-size:50px; font-family:verdana; color:#306754; margin:10px"> <%= @game.game_over %> </h1>
+<br>
+<br>
+  <form action="/play_again" method="post">
+    <input style="background-color:#F0FFFF; border-color:green; border-radius: 12px; font-size:30px; font-family:verdana; color:#306754"  type="submit" value="Play again 😊">
+  </form>
+    <form action="/change_player" method="post">
+    <input style="background-color:#F0FFFF; border-color:green; border-radius: 12px; font-size:30px; font-family:verdana; color:#306754"  type="submit" value="Change player 🎮">
+  </form>
+  </br>
+  </br>
+</body>
+  
