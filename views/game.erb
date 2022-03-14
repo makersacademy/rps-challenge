@@ -1,0 +1,18 @@
+<h1><%=@player1_name%> VS <%=@player2_name%>!</h1> 
+<h2>Choose your move and then press Play!<%= %></h2> 
+
+<form action="/choose_rock" method="post">
+  <input type="submit" value="Rock">
+</form>
+
+<form action="/choose_paper" method="post">
+  <input type="submit" value="Paper">
+</form>
+
+<form action="/choose_scissors" method="post">
+  <input type="submit" value="Scissors">
+</form>
+
+<form action="/result" method="get">
+  <input type="submit" value="Play">
+</form>
