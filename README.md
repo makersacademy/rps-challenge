@@ -1,4 +1,4 @@
-[![Ruby](https://github.com/r94o/rps-challenge/actions/workflows/ruby.yml/badge.svg)](https://github.com/r94o/rps-challenge/actions/workflows/ruby.yml)
+[![build](https://github.com/r94o/rps-challenge/actions/workflows/ruby.yml/badge.svg)](https://github.com/r94o/rps-challenge/actions/workflows/ruby.yml)
 
 
 
