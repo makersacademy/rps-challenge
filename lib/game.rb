@@ -1,5 +1,3 @@
-# require_relative 'computer'
-
 class Game
 
   def result(player_choice, computer_choice)
