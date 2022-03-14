@@ -1,6 +1,4 @@
 class Computer < Player
-  attr_reader :move
-
   def self.instance
     @computer ||= Computer.new
   end
