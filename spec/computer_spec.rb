@@ -24,5 +24,4 @@ describe Computer do
       expect { computer.reset }.to change { computer.score }.by(-1)
     end
   end
-  
 end

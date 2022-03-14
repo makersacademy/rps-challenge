@@ -3,7 +3,7 @@ class Winner
     "Rock" => "Scissors",
     "Paper" => "Rock",
     "Scissors" => "Paper"
-  }
+  }.freeze
 
   def initialize(player, computer)
     @player = player

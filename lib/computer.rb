@@ -11,11 +11,16 @@ class Computer < Player
   end
 
   def generate_move
-    @move = ["Rock", "Paper", "Scissors"].sample
+    @move = random_move
   end
 
   def reset
     @score = 0
   end
 
+  private
+
+  def random_move
+    ["Rock", "Paper", "Scissors"].sample
+  end
 end

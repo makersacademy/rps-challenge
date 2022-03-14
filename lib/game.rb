@@ -32,7 +32,7 @@ class Game
   end
 
   def add_score
-    @winner.increment_score unless @winner.nil?
+    @winner&.increment_score
   end
 
   def increment_round

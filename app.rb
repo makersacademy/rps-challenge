@@ -6,9 +6,7 @@ require './lib/computer'
 
 class RPS < Sinatra::Base
   configure do
-    # :nocov:
     register Sinatra::Reloader
-    # :nocov:
   end
 
   before do
