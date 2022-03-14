@@ -14,7 +14,7 @@ feature 'Homepage functionality' do
   end
 end
 
-feature 'Playing the game exluding the outcome' do
+feature 'Playing the game excluding the outcome' do
   scenario 'says we are starting game and player name' do
     start_game_with_name
     expect(page).to have_content "Ready, set... choose your weapon James!"
@@ -28,7 +28,7 @@ feature 'Playing the game exluding the outcome' do
 end
 
 feature 'Outcome page' do
-  scenario 'Shows the weapn you have picked' do
+  scenario 'Shows the weapon you have picked' do
     start_game_with_name
     choose 'Rock'
     click_on 'Submit'
