@@ -14,7 +14,7 @@ require 'simplecov'
 require 'simplecov-console'
 
 # Tell Capybara to talk to BookmarkManager
-Capybara.app = BookmarkManager
+Capybara.app = RockPaperScissors
 
 ### the rest of the file ###
 
