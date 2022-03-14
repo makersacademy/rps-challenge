@@ -1,11 +1,11 @@
 class Player
-  attr_reader :name
+  attr_reader :name, :choice
   
   def initialize(name)
     @name = name
   end
 
-  def choice
-    @choice = ''
+  def input_choice(player_choice)
+    @choice = player_choice
   end
 end

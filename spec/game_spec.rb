@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(lyna) }
-  let(:lyna) { double :player }
+  subject(:game) { described_class.new(player) }
+  let(:player) { double :player }
   
   describe '#computer_choice' do
     it 'generates a random choice for the computer' do

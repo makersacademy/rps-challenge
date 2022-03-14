@@ -25,7 +25,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    $player.choice << params[:choice]
+    $player.input_choice(params[:choice])
     redirect '/result'
   end
 
@@ -33,11 +33,6 @@ class RockPaperScissors < Sinatra::Base
     @game = Game.new($player)
     @choice = $player.choice
     erb :result
-  end
-
-  post '/reset' do
-    ?????
-    redirect '/play'
   end
 
   run! if app_file == $0

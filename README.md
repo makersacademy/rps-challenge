@@ -26,9 +26,9 @@ I would like to be able to play rock/paper/scissors
 
 ## My Approach
 
-1. Test-drove the creation of an index page with an input form for the user to enter their name and selection fields to choose from rock, paper and scissors
+1. Test-drove the creation of an index page with an input form for the user to enter their name
 
-2. Pointed the form action to a POST method which redirected to a play.erb page welcoming the user and prompting them to get the computer's selection
+2. Pointed the form action to a POST method which redirected to a play.erb page welcoming the user and prompting them to choose rock, paper or scissors
 
 3. Created a Game class and a Player class in the model layer to handle the action, which included storing 'rock', 'paper' and 'scissors' in an array for the computer to randomly select from
 
@@ -38,7 +38,7 @@ I would like to be able to play rock/paper/scissors
 
 * As I hadn't yet learned how to use databases at the time of writing this program, its controller uses global variables. This is something I will be avoiding in future.
 
-* If I was writing this program again from scratch, I'd make an extra page to separate the user name input and user selection. In doing so, the user could play the game multiple times without having to enter their name on each occasion.
+* If I was writing this program again, I'd like to implement a two-player mode
 
 ## Technologies Used
 

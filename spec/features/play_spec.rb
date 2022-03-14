@@ -13,25 +13,19 @@ feature 'Playing a game of rock paper scissors' do
     scenario 'make choice' do
       choose 'rock'
       click_button 'Submit'
-      expect(page).to have_content 'Hello Jonny! You chose rock'
+      expect(page).to have_content 'You chose rock'
     end
 
     scenario 'make choice' do
       choose 'paper'
       click_button 'Submit'
-      expect(page).to have_content 'Hello Jonny! You chose paper'
+      expect(page).to have_content 'You chose paper'
     end
 
     scenario 'make choice' do
       choose 'scissors'
       click_button 'Submit'
-      expect(page).to have_content 'Hello Jonny! You chose scissors'
-    end
-
-    scenario 'it prompts computer choice' do
-      choose 'rock'
-      click_button 'Submit'
-      expect(page).to have_link 'Did you beat the computer?'
+      expect(page).to have_content 'You chose scissors'
     end
   end
 end
