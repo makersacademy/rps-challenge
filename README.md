@@ -84,3 +84,15 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+
+Where did I get to and What would I do next?
+
+I managed to create the logic for the RPS game, I stopped at rendering the result to the user using HTML as I encountered an error during this stage. 
+
+My next would be to begin a series of debugging steps such as:
+- using print statments to visualise the code
+- user the stack trace to narrow down where the error is originating from
+- commenting out parts of my code to identify where the error is originating from.
+
+I believe once this has been completed The last user story would have been completed.
