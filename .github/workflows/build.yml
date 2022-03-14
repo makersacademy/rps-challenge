@@ -1,4 +1,4 @@
-name: Ruby
+name: build
 
 on: [push,pull_request]
 
@@ -8,9 +8,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
-      uses: ruby/setup-ruby@v1.84.0
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0.2
         bundler-cache: true
-    - name: Run the default task
+    - name: Run tests
       run: bundle exec rspec
