@@ -3,9 +3,9 @@
 ## Installation
 
 - Clone the repository to your computer
-- Run command ```shell bundle install ``` in the terminal
-- Run ```shell rackup `` in the terminal to start the server
-- Visit ```shell localhost:9292 ``` in your browser
+- Run command ``` bundle install ``` in the terminal
+- Run ``` rackup``` in the terminal to start the server
+- Visit ``` localhost:9292 ``` in your browser
 
 ## User stories
 ----
