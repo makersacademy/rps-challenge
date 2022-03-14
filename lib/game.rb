@@ -28,6 +28,8 @@ class Game
     result == 'lose'
   end
 
+private
+
   def result
     OUTCOMES[@player.choice][@computer_choice]
   end
