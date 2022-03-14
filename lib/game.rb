@@ -15,20 +15,26 @@ class Game
 
   def decide_winner
     generate_computer_choice
-    p @user_choice
-    p @comp_choice
+    return "draw" if is_draw?
 
-    if @user_choice == @comp_choice
-      "draw"
-    elsif @user_choice == "Rock" && @comp_choice == "Scissors"
-      "user" 
+    return "user" if user_won?
+    return "computer"
+  end
+
+  private 
+
+  def user_won?
+    if @user_choice == "Rock" && @comp_choice == "Scissors"
+      true
     elsif @user_choice == "Paper" && @comp_choice == "Rock"
-      "user"
+      true
     elsif @user_choice == "Scissors" && @comp_choice == "Paper"
-      "user"
-    else
-      "computer"
+      true
     end
+  end
+
+  def is_draw?
+    @user_choice == @comp_choice
   end
 
 
