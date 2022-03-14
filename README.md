@@ -1,3 +1,13 @@
+[![Tests](https://github.com/r94o/rps-challenge/actions/workflows/tests.yml/badge.svg)](https://github.com/r94o/rps-challenge/actions/workflows/tests.yml)
+
+
+
+# 100% coverage - will amend readme later
+
+
+
+
+
 # RPS Challenge
 
 Instructions
