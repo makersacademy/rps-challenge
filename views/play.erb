@@ -1,1 +1,9 @@
-<h1>Welcome <%=@game.player_1.name%> and <%=@game.player_2.name%>!</h1>
+<h1>Welcome <%=@player.name%>, please pick your choice!</h1>
+
+
+
+<form action="/result" method="get">
+    <button type="submit" name="player_choice" value = "rock">Rock</button>
+    <button type="submit" name="player_choice" value = "paper">Paper</button>
+    <button type="submit" name="player_choice" value = "scissors">Scissors</button>
+</form>

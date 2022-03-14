@@ -14,15 +14,21 @@ class RPS < Sinatra::Base
     end
 
     post '/names' do
-        player_1 = Player.new(params[:player_1])
-        player_2 = Player.new(params[:player_2])
-        $game = Game.new(player_1, player_2)
+        $player = Player.new(params[:player])
         redirect '/play'
     end
 
     get '/play' do
-        @game = $game
+        @player = $player
         erb(:play)
+    end
+
+    get '/result' do
+        @player_choice = params[:player_choice]
+        $game = Game.new
+        @ai_choice = $game.ai_choice
+        @result = $game.evaluate(@player_choice, @ai_choice)
+        erb(:result)
     end
 
     # start the server if ruby file executed directly

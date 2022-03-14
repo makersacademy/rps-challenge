@@ -1,25 +1,32 @@
 class Game
 
-    def initialize(player_1, player_2)
-        @players = [player_1, player_2]
-        @current_turn = player_1
+    def initialize
+        @moves = ["rock", "paper", "scissors"]
+        
     end
 
-    def player_1
-        @players.first
+    def ai_choice
+        @moves.sample
     end
 
-    def player_2
-        @players.last
-    end
-
-    def switch_turns
-        @current_turn = opponent_of(current_turn)
+    def evaluate(player_choice, ai_choice)
+        if player_choice == "rock" && ai_choice == "paper"
+          return 'Player lost'
+        elsif player_choice == "scissors" && ai_choice == "rock"
+            return 'Player lost'
+        elsif player_choice == "paper" && ai_choice == "scissors"
+            return 'Player lost'
+        elsif player_choice == ai_choice
+            return 'This is a draw.'
+        elsif player_choice == "scissors" && ai_choice == "papaer"
+            return 'Player won'
+        elsif player_choice == "rock" && ai_choice == "scissors"
+            return 'Player won'
+        elsif player_choice == "paper" && ai_choice == "rock"
+            return 'Player won'
+        end
     end
     
     private
 
-    def opponent_of(the_player)
-        @players.select { |player| player != the_player }.first
-    end
 end
