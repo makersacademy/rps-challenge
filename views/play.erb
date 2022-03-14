@@ -1,2 +1,11 @@
 
 <%= "Hello #{@name} get ready to RUMBLE!!!" %>
+
+Please choose from the options below:
+
+<form action="/store-users-choice" method="post">
+  <input id="R" value="Rock" name="Choice" type="checkbox"> Rock
+  <input id="P" value="Paper" name="Choice" type="checkbox"> Paper
+  <input id="S" value="Scissors" name="Choice" type="checkbox"> Scissors
+  <input type=submit value="Submit">
+</form>

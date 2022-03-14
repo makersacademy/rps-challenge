@@ -34,4 +34,4 @@ This also served as a space for me to brainstorm any questions I have on keyword
   * Save the session hash to another @name variable
   * Have "/play" render the play.erb page which should include the users name using @name
 
-We have completed this user story and performed a feature test to ensure the web app is working as intended.
+We have completed this user story and performed a feature test to ensure the web app is working as intended.?"

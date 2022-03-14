@@ -24,5 +24,19 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post "/store-users-choice" do
+    @users_choice = params[:Choice]
+
+    session[:users_choice] = @users_choice
+
+    redirect '/confirmation-page'
+  end
+
+  get "/confirmation-page" do
+    @users_choice = session[:users_choice]
+
+    erb :confirmation_page
+  end
+
   run! if app_file == $0
 end

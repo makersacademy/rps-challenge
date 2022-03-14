@@ -1,3 +1,4 @@
+require_relative 'web_helpers'
 
 RSpec.feature "home_page", type: :feature do
   scenario "the home-page should successfully say hello to users" do
@@ -6,10 +7,18 @@ RSpec.feature "home_page", type: :feature do
   end
 
   scenario "Filling out form with users name should redirect to /play and show user name" do
-    visit '/'
-    fill_in("name", with: "James")
-    click_on "Submit"
+    user_signs_in
 
     expect(page).to have_content "James"
+  end
+
+  context "Filling out the users selection of either Rock, paper or scissors" do
+    scenario "User chooses 'Rock'" do
+      user_signs_in
+      check 'R'
+      click_on "Submit"
+
+      expect(page).to have_content("You chose Rock!")
+    end
   end
 end
