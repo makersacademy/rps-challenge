@@ -27,11 +27,3 @@ class Game
 
 
 end
-
-# initialise with an optional player 2 that defaults to a CPU.new
-# CPU should have a move method that returns [Rock, Paper, Scissors].sample
-# player already has a last_move method
-# rename last_move to move so that the 2 objects have polymorphism
-# winner should take a player 1 and player 2 move
-# should calculate which is the winning move
-# need to figure out how to return the winning entity, maybe a hash
