@@ -1,13 +1,5 @@
-ENV['RACK_ENV'] = 'test'
-require_relative '../app'
-require 'capybara'
-require 'capybara/rspec'
-require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
-require_relative './support/game_helper'
-
-Capybara.app = RPSApp
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -16,7 +8,14 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
-# For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
+ENV['RACK_ENV'] = 'test'
+require_relative '../app'
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+require_relative './support/game_helper'
+
+Capybara.app = RPSApp
 
 RSpec.configure do |config|
   config.include GameHelper
