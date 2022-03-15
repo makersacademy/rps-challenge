@@ -3,10 +3,12 @@ require 'sinatra/reloader'
 require './lib/game'
 
 class RPSApp < Sinatra::Base
+  # :nocov:
   configure :development do
     register Sinatra::Reloader
   end
-
+  # :nocov:
+  
   enable :sessions
 
   before do
@@ -37,15 +39,7 @@ class RPSApp < Sinatra::Base
   
   post '/submit-names' do
     player1_name, player2_name = params[:player1_name], params[:player2_name]
-    player1_name = 'Player 1' if player1_name.empty?
-    @game.add_player(player1_name)
-    if player2_name.nil?
-      @game.add_computer_opponents
-    elsif player2_name.empty?
-      player2_name = 'Player 2'
-    else
-      @game.add_player(player2_name)
-    end
+    @game.create_players(player1_name, player2_name)
     redirect '/welcome'
   end
   

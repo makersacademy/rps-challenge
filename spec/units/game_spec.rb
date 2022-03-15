@@ -35,6 +35,16 @@ describe Game do
     end
   end
 
+  describe '#reset_choices' do
+    it 'clears player choices without clearing players themselves' do
+      game.add_player('Player 1')
+      game.add_player('Player 2')
+      expect(player1).to receive(:clear_choice)
+      expect(player2).to receive(:clear_choice)
+      game.reset_choices
+    end
+  end
+
   describe '#outcome' do
     it 'returns the correct winner' do
       game.add_player('Player 1')

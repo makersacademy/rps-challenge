@@ -167,6 +167,8 @@ Hints on functionality
 - What's best practice with having multiple instance variables for a controller?
   - Is it better to have @game and then access the players directly from that object in the view
   - Is it better to declare @player1 and @player2 in each route?
-- Why is SimpleCov reporting 100% test coverage?
+- ~Why is SimpleCov reporting 100% test coverage?~
   - seems to be testing the spec files instead of the library files
-- How to get Sinatra Reloader to play nicely with Travis CI?
+  - It was testing the spec files -> the SimpleCov config needed to be before any require to the library files to work properly
+- ~How to get Sinatra Reloader to play nicely with Travis CI?~
+  - Now solved -> Gemfile was missing specific reference to sinatra-contrib and so it wasn't being installed with bundle
