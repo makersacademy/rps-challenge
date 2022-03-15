@@ -1,10 +1,6 @@
 feature "Playing through to the end of the game" do
   scenario "shows the randomly generated move of computer" do
-    visit("/")
-    click_button "Pass and Play (2 player mode)"
-    fill_in :player_1_name, with: "Chris"
-    fill_in :player_2_name, with: "Coding"
-    click_button 'Submit'
+    pass_and_play_submit_names
     click_button "Paper"
     click_button "Rock"
 
@@ -12,11 +8,7 @@ feature "Playing through to the end of the game" do
   end
 
   scenario "shows two options, play another multiplayer game or go to home page" do
-    visit("/")
-    click_button "Pass and Play (2 player mode)"
-    fill_in :player_1_name, with: "Chris"
-    fill_in :player_2_name, with: "Coding"
-    click_button 'Submit'
+    pass_and_play_submit_names
     click_button "Paper"
     click_button "Rock"
 

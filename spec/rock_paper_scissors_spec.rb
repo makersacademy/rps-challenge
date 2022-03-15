@@ -15,5 +15,4 @@ describe RPS do
     expect { mocked_game.check_winner_or_draw }.to change { mocked_game.winner_or_draw }.from(nil).to("#{chris.name} wins!")
   end
 
-
 end
