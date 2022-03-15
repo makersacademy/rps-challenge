@@ -13,6 +13,17 @@ class Game
     @players << @player_class.new(player_name, computer_controlled)
   end
 
+  def create_players(player1_name, player2_name)
+    player1_name = 'Player 1' if player1_name.empty?
+    add_player(player1_name)
+    if player2_name.nil?
+      add_computer_opponents
+    else
+      player2_name = 'Player 2' if player2_name.empty?
+      add_player(player2_name)
+    end
+  end
+
   def add_computer_opponents
     add_player('Computer', true) if number_of_players < 2
   end
