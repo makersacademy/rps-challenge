@@ -1,21 +1,80 @@
 # RPS Challenge
 
-Instructions
--------
+[![Build Status](https://app.travis-ci.com/PKilgarriff/rps-challenge.svg?branch=main)](https://app.travis-ci.com/PKilgarriff/rps-challenge)
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+The Rock-Paper-Scissors (RPS) challenge is a web-app that allows a user to play a game of [Rock, Paper, Scissors](https://en.wikipedia.org/wiki/Rock_paper_scissors), either against a computer-controlled character, or an actual person in the room with them.
 
-Task
-----
+## Getting started
 
-Knowing how to build web applications is getting us almost there as web developers!
+```shell
+$ git clone https://github.com/PKilgarriff/rps-challenge
+$ bundle
+```
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+## Usage
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+This is a webapp, with instructions given on the site itself.
+
+```
+rackup
+```
+Navigate to `http://localhost:9292/`
+
+## Running tests
+
+Tests can be run with rspec, when run with the documentation formatting flag this will also provide insight into the functions of the classes.
+
+```
+rspec --format documentation
+```
+
+### Current Testing Output
+
+```http
+Choice Entry Pages
+  player 1 has a page where they can make a choice
+  a multiplayer game has a page for player 2 to make choices as well
+
+Welcome Page
+  entering a player name displays it on a welcome page
+  playing as a single player causes a computer controlled player to be generated
+
+Game
+  initializes with an empty player array
+  #number_of_players
+    returns a count of the players in the array
+  #add_player
+    adds a player to the players array
+  #reset
+    clears the players array
+  #outcome
+    returns the correct winner
+  .instance
+    creates a new game
+    returns itself
+
+Player
+  initializes with a name
+  #computer?
+    when player controlled
+      returns false
+    when computer controlled
+      returns true
+  #choice=
+    when choice is valid
+      stores it in lowercase
+    when choice is invalid
+      raises an error
+  #set_random_choice
+    updates choice with a random valid option
+  #clear_choice
+    sets choice to nil
+
+Finished in 0.17571 seconds (files took 0.54871 seconds to load)
+18 examples, 0 failures
+```
+
+## User Stories
 
 ```
 As a marketeer
@@ -35,52 +94,81 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
+## My Approach
 
-As usual please start by
+- Begin by diagramming the process that a user might go through.
+  - [Diagram](./RockPaperScissors.drawio.html)
+- Use the process diagram to inform the creation of basic views
+- Test user experience in browser.
+- create unit spec file for Player class
+  - Test Drive development of Player class
+    - attr_reader for name
+    - @computer_controlled variable
+    - computer? method to check if Player is 'live'
+- create unit spec file for Game class
+  - Test Drive development of Game class
+    - attr_reader for @players
+    - add_player method
+    - number_of_players
+    - add class method .instance
+    - add reset method to clear player array
+- Added config.ru for Rackup
+- views added for UI
+  - number of players selection screen
+  - name submission form
+    - conditionally loads based on number of players
+  - Welcome page with user names displayed
+- Referred back to User Stories as first (name in lights) now complete - ~Needs feature test~
+- refocused on implementing single-player
+- Changed direction - beginning to drive game logic in library files
+  - then will integrate with front-end once basic function in place
+- Update Player class
+  - set_choice method
+  - clear_choice method
+  - choice attr_reader
+- Add feature test to check that User Story 1 has been properly implemented
+- Extract creation of a computer controlled player from the controller into the Game class
+  - add add_computer_opponents method to Game
+  - add outcome method to Game
+- Properly mocked out the dependency injection in the Game spec
+  - previously had been creating its own instances of Player
+  - now passes a player_class double that can respond to calls for new with specific Player doubles
+- Update Player class
+  - add set_random_choice method (used by computer-controlled players)
+  - add choice_made? method (allows game to be completed)
+- Get very frustrated with session hash appearing not to persist any data
+  - finally read that you need to enable sessions in the controller for this to work
+- Both User Stories have now been implemented
+- Bonus step with multiplayer has now also been implemented
+  - Computer player has always been an instance of the Player class, so this was relatively simple to bring in.
 
-* Forking this repo
-* TEST driving development of your app
+## Technologies Used
 
-[You may find this guide to setting up a new Ruby web project helpful.](https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md)
+- Ruby
+- Sinatra
+- RSpec
+- Capybara
+- SimpleCov (100%)
+  - _Suspiciously high test coverage, so will need to check why and get the actual test coverage_
+- Travis CI (Currently Failing to build)
 
-## Bonus level 1: Multiplayer
+## Next Steps
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+1. Bring in images
+  - certainly for the final page
+  - for use as buttons on the player choices
+2. Stretch challenge Rock-Paper-Scissors-Lizard-Spock
+  - Back to diagramming to understand win conditions
+3. Actual Multiplayer?
+  - more than two players
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+## Further Questions
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/main/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+- What's best practice with having multiple instance variables for a controller?
+  - Is it better to have @game and then access the players directly from that object in the view
+  - Is it better to declare @player1 and @player2 in each route?
+- ~Why is SimpleCov reporting 100% test coverage?~
+  - seems to be testing the spec files instead of the library files
+  - It was testing the spec files -> the SimpleCov config needed to be before any require to the library files to work properly
+- ~How to get Sinatra Reloader to play nicely with Travis CI?~
+  - Now solved -> Gemfile was missing specific reference to sinatra-contrib and so it wasn't being installed with bundle

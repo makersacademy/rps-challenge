@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>RPS - Player 2</title>
+  </head>
+  <body>
+    <h1><%= (@game.players[1]).name %>, Make your Choice</h1>
+    <form action='/player2-choice' method='post'>
+      <input type='submit' name='player2_choice' value='Rock'>
+      <br>
+      <input type='submit' name='player2_choice' value='Paper'>
+      <br>
+      <input type='submit' name='player2_choice' value='Scissors'>
+    </form>
+  </body>
+</html>
