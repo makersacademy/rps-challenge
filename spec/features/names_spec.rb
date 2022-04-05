@@ -8,7 +8,7 @@ feature "Select whether to play vs computer or pass and play" do
   end
 
   scenario "Names page displays the users name" do
-    solo_submit_name
+    solo_submit_name('Chris')
 
     expect(page).to have_content "Chris vs Computer"
   end

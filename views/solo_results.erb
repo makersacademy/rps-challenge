@@ -2,7 +2,13 @@
 <br> <br>
 <strong> The computer </strong> chose <em> <%= @rps.player2.move %> </em>
 <br> <br>
-<h4><strong> <%= @rps.check_winner_or_draw %> </strong> </h4>
+<% if @rps.check_winner_or_draw == :player1 %>
+<h4><strong> <%= @rps.player1.name %> wins! </strong> </h4>
+<% elsif @rps.check_winner_or_draw == :player2 %>
+<h4><strong> <%= @rps.player2.name %> wins! </strong> </h4>
+<% else %>
+<h4><strong> Draw! </strong> </h4>
+<% end %>
 
 
 <form action="/solo-game-choice" method="get">

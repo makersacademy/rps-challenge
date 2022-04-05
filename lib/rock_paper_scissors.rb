@@ -13,11 +13,11 @@ class RPS
   def check_winner_or_draw
     win_matrix = { 'Rock' => 'Scissors', 'Paper' => 'Rock', 'Scissors' => 'Paper'}
     if @player1.move == @player2.move
-      @winner_or_draw = 'Draw'
+      @winner_or_draw = :draw
     elsif win_matrix[@player1.move] == @player2.move
-      @winner_or_draw = "#{@player1.name} wins!"
+      @winner_or_draw = :player1
     else
-      @winner_or_draw = "#{@player2.name} wins!"
+      @winner_or_draw = :player2
     end
   end
 

@@ -3,7 +3,7 @@ require 'sinatra/reloader'
 require './lib/player'
 require './lib/rock_paper_scissors'
 
-class BookmarkManager < Sinatra::Base
+class RockPaperScissorsApp < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
@@ -32,6 +32,7 @@ class BookmarkManager < Sinatra::Base
     @rps = $rps
     @rps.player1.pick(params[:selection])
     @rps.random_choice
+    p @rps.random_choice
     @rps.check_winner_or_draw
     redirect "/solo-results"
   end
@@ -70,7 +71,6 @@ class BookmarkManager < Sinatra::Base
 
   post "/player2" do
     @game = $multiplayer_game
-    p @game
     @game.player2.pick(params[:selection])
     redirect "/multiplayer-results"
   end

@@ -2,8 +2,13 @@
 <br> <br>
 <strong><%= @game.player2.name %></strong> chose <em> <%= @game.player2.move %> </em>
 <br> <br>
-<h4><strong> <%= @game.check_winner_or_draw %> </strong> </h4>
-
+<% if @game.check_winner_or_draw == :player1 %>
+<h4><strong> <%= @game.player1.name %> wins! </strong> </h4>
+<% elsif @game.check_winner_or_draw == :player2 %>
+<h4><strong> <%= @game.player2.name %> wins! </strong> </h4>
+<% else %>
+<h4><strong> Draw! </strong> </h4>
+<% end %>
 
 <form action="/multiplayer-game" method="get">
   <input type="submit" value="Play another multiplayer game">

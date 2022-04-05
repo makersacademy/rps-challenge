@@ -1,6 +1,6 @@
 feature "Playing through to the end of the game" do
   scenario "shows the randomly generated move of computer" do
-    pass_and_play_submit_names
+    pass_and_play_submit_names('Chris', 'Coding')
     click_button "Paper"
     click_button "Rock"
 
@@ -8,7 +8,7 @@ feature "Playing through to the end of the game" do
   end
 
   scenario "shows two options, play another multiplayer game or go to home page" do
-    pass_and_play_submit_names
+    pass_and_play_submit_names('Chris', 'Coding')
     click_button "Paper"
     click_button "Rock"
 

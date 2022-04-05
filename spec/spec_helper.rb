@@ -10,7 +10,7 @@ require 'simplecov-console'
 require 'features/web_helpers'
 
 # Tell Capybara to talk to BookmarkManager
-Capybara.app = BookmarkManager
+Capybara.app = RockPaperScissorsApp
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
