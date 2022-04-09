@@ -1,5 +1,5 @@
 <h1>Hello <%= @name %>! Let's play rock paper scissors!</h1>
-
+<%= @name %> vs <%= @com %><br><br>
 <form action='/choose' method='post'>
   <label for='choice'>Make your move:</label>
   <select name='choice' id='player_choice'>

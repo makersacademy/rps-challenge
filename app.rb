@@ -22,6 +22,7 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @name = session[:game].player
+    @com = session[:game].com
     erb :play
   end
 
@@ -35,6 +36,10 @@ class Rps < Sinatra::Base
   get '/result' do
     @result = session[:result]
     erb :result
+  end
+
+  post '/play_again' do
+    redirect to '/play'
   end
 
   run! if app_file == $0
