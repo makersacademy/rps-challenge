@@ -22,7 +22,9 @@ class Game
     @player.choose('Scissors')
   end
 
-  
+  def computer_move
+    @computer.random_move
+  end
 
   
 end
