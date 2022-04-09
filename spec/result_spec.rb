@@ -27,19 +27,19 @@ describe Result do
     it "Player ties with rock" do
       allow(player).to receive(:move).and_return("Rock")
       allow(computer).to receive(:move).and_return("Rock")
-      expect(result.winner).to eq("Tie")
+      expect(result.winner).to eq(nil)
     end
 
     it "Player ties with paper" do
       allow(player).to receive(:move).and_return("Paper")
       allow(computer).to receive(:move).and_return("Paper")
-      expect(result.winner).to eq("Tie")
+      expect(result.winner).to eq(nil)
     end
 
     it "Player ties with scissors" do
       allow(player).to receive(:move).and_return("Scissors")
       allow(computer).to receive(:move).and_return("Scissors")
-      expect(result.winner).to eq("Tie")
+      expect(result.winner).to eq(nil)
     end
 
     it "Player loses with rock" do

@@ -16,7 +16,6 @@ class Result
   def winner
     return @player if player_win
     return @computer if computer_win
-    return "Tie"
   end
 
   private

@@ -7,7 +7,7 @@ I have been asked to create a Rock-Paper-Scissors game that can be played on the
 ## Instructions
 Clone this repository to your desired location using `git clone path-to-your-repo` then run `gem install bundler` (if you don't already have bundler), and then use the command `bundle install`.\
 \
-Whilst in the main directory of the `rps_challenge` repository, use the command `rackup` to begin (alternatively use `ruby app.rb`) which will then allow you navigate to the URL `localhost:9292` inside your web browser. From there, you can your name and begin your game of Rock-Paper-Scissors versus the computer. \
+Whilst in the main directory of the `rps_challenge` repository, use the command `rackup` to begin (alternatively use `ruby app.rb`) which will then allow you navigate to the URL `localhost:9292` inside your web browser. From there, you can enter your name and begin your game of Rock-Paper-Scissors versus the computer. \
 \
 In order to run tests, use the command `rspec` inside your terminal whilst inside the main directory.
 
@@ -32,3 +32,7 @@ used the above to do radio buttons for player choice\
 used the above to do `or` in rspec
 
 ## Functionality yet to be added
+Need to find a way to stop using the global variable.\
+Multiplayer\
+Rock Paper Scissors Spock Lizard\
+Keep track of win/loss/total rounds
