@@ -30,12 +30,29 @@ class Rps < Sinatra::Base
     @choice = params[:choice]
     @com_move = session[:game].move
     session[:result] = session[:game].compare(@choice, @com_move)
-    redirect to '/result'
+    case session[:result]
+    when "It's a draw."
+      redirect to '/draw'
+    when "Computer wins!"
+      redirect to '/lose'
+    else
+      redirect to '/win'
+    end
   end
 
-  get '/result' do
+  get '/draw' do
     @result = session[:result]
-    erb :result
+    erb :draw
+  end
+
+  get '/lose' do
+    @result = session[:result]
+    erb :lose
+  end
+
+  get '/win' do
+    @result = session[:result]
+    erb :win
   end
 
   post '/play_again' do
