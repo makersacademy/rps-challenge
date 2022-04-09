@@ -24,11 +24,15 @@ class Rockps < Sinatra::Base
   end
   
   post '/result' do
-    player_move = params[:player_choice]
+    @player_move = params[:player_choice]
+    $game.player_move(params[:player_choice])
     redirect '/final'
   end
 
   get '/final' do
+    @result =  $game.playing
+    @player_move = $game.player_move_v
+    @computer_move = $game.computer_move
     erb :final
   end
 
