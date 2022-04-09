@@ -24,5 +24,11 @@ I would like to be able to play rock/paper/scissors
 ```
 
 ## References
+```
+https://www.htmlhelp.com/reference/html40/forms/input.html#radio
+https://relishapp.com/rspec/rspec-expectations/docs/compound-expectations#use-%60or%60-to-chain-expectations
+```
+used the above to do radio buttons for player choice\
+used the above to do `or` in rspec
 
 ## Functionality yet to be added
