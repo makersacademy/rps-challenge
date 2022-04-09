@@ -1,15 +1,23 @@
+# Set the environment to "test"
+ENV['RACK_ENV'] = 'test'
+
+# Require all the testing gems
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 
+# Set up code coverage analysis
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
+  SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
+require File.join(File.dirname(__FILE__), '...', 'app.rb')
 
 RSpec.configure do |config|
   config.after(:suite) do
@@ -18,3 +26,6 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+# Tell Capybara to talk to RPS
+Capybara.app = RPS
