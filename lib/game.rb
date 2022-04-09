@@ -2,7 +2,7 @@ class Game
   
   attr_reader :player, :player_move
 
-  def initialize(player = Player.new("Player 1"), move)
+  def initialize(player = Player.new("Player 1"), move = 'Rock')
     @player = player
     @player_move = move
   end

@@ -9,14 +9,10 @@ body {
 </head>
 <h1>Welcome <%= @player_name %> to the game of Rock, Paper and scissors !</h1>
 <form action="/result" method="post">
-  <p>Please select your one of the moves:</p>
-  <input type="radio" id="rock" name="rps" value="rock">
-  <label for="rock">ROCK</label><br>
-  <input type="radio" id="paper" name="rps" value="paper">
-  <label for="paper">PAPER</label><br>
-  <input type="radio" id="scissors" name="rps" value="scisorrs">
-  <label for="scisorrs">SCISSORS</label>
-<br>
-<br>
- <input type="submit" value="Submit">
+  <h2>Please select your one of the moves:</h2>
+  <div style = "position:relative; left:260px; top:55px;">
+  <input type="submit" name="player_choice" value="Rock" style="width: 150px; margin: 0 auto;">
+  <input type="submit" name="player_choice" value="Paper" style="width: 150px; margin: 0 auto;">
+  <input type="submit" name="player_choice" value="Scissors" style="width: 150px; margin: 0 auto;">
+  </div>
 </form>
