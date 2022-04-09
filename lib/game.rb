@@ -12,19 +12,17 @@ class Game
   end
 
   def playing
-    
     @computer_move = move
-    
     if @player_move == @computer_move
-       'Draw'
+      'Draw'
     elsif @player_move == "Rock" && @computer_move == "Scissors"
-        'Win'
+      'Win'
     elsif @player_move == "Paper" && @computer_move == "Rock"
-        'Win'
-    elsif  @player_move == "Scissors" && @computer_move == "Paper"
-        'Win'
+      'Win'
+    elsif @player_move == "Scissors" && @computer_move == "Paper"
+      'Win'
     else
-       'Lost'
+      'Lost'
     end
   end
 
