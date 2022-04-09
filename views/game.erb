@@ -1,3 +1,7 @@
+<% if @game.player.move %>
+Computer has chosen
+<% end %>
+
 <%= @game.player.name %>
 <form action ="/move" method = "post">
 <label for 'Rock'> Rock </label>

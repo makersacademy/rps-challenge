@@ -5,7 +5,7 @@ describe Computer do
 
   describe '#move' do
     it 'computer does a random move' do
-      expect(computer.move).to eq("Rock").or eq("Paper").or eq("Scissors")
+      expect(computer.random_move).to eq("Rock").or eq("Paper").or eq("Scissors")
     end
   end
 end
