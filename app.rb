@@ -19,6 +19,14 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/select' do
+    erb(:select)
+  end
+
+  get '/round_outcome' do
+    erb(:round_outcome)
+  end
+
   run! if app_file == $0
 
 end
