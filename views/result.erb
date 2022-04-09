@@ -1,8 +1,13 @@
-<% if @game.player.move %>
 <%= @game.player.name %> has chosen <%= @game.player.move %>
 <br>
 Computer has chosen <%= @game.computer.move %>
 <br>
+<% if @result.winner == @game.player %>
+Congratulations <%= @game.player.name %>, you have won!
+<% elsif @result.winner == @game.computer %>
+<%= @game.player.name %>, you have lost. Better luck next time!
+<% else %>
+<%= @game.player.name %>, this round is a tie! Try again.
 <% end %>
 
 <form action = '/game'>
