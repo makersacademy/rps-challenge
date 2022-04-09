@@ -63,4 +63,3 @@ describe Result do
   end
 
 end
-

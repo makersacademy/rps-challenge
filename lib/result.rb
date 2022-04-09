@@ -1,12 +1,12 @@
-require_relative 'computer.rb'
-require_relative 'player.rb'
+require_relative 'computer'
+require_relative 'player'
 
 class Result
   RULES = { 
     "Rock" => "Scissors",
     "Paper" => "Rock",
     "Scissors" => "Paper"
-  }
+  }.freeze
 
   def initialize(player = Player.new("Player"), computer = Computer.new)
     @player = player
@@ -28,4 +28,5 @@ class Result
   def computer_win
     RULES[@computer.move] == @player.move
   end
+
 end

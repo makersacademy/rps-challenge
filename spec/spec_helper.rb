@@ -4,7 +4,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-require './spec/features/web_helpers.rb'
+require './spec/features/web_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -13,7 +13,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
-require './app.rb'
+require './app'
 Capybara.app = RPS
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'

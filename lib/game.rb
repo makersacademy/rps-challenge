@@ -1,5 +1,5 @@
-require_relative 'computer.rb'
-require_relative 'player.rb'
+require_relative 'computer'
+require_relative 'player'
 
 class Game
 
@@ -8,18 +8,6 @@ class Game
   def initialize(player = Player.new("Player"), computer = Computer.new)
     @player = player
     @computer = computer
-  end
-
-  def rock
-    @player.choose('Rock')
-  end
-
-  def paper
-    @player.choose('Paper')
-  end
-
-  def rock
-    @player.choose('Scissors')
   end
 
   def computer_move

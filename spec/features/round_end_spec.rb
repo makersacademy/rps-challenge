@@ -1,4 +1,4 @@
-require './app.rb'
+require './app'
 
 feature 'Round result' do
 

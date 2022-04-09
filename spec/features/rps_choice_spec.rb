@@ -1,4 +1,4 @@
-require './app.rb'
+require './app'
 
 feature 'RPS choice' do
   scenario 'Can choose between rock, paper or scissors as their intended move' do

@@ -1,4 +1,4 @@
-require './app.rb'
+require './app'
 
 feature 'Player name' do
   scenario 'Can fill in name and see name on-screen' do
