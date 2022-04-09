@@ -1,9 +1,3 @@
-<% if @game.player.move %>
-<%= @game.player.name %> has chosen <%= @game.player.move %>
-<br>
-Computer has chosen <%= @game.computer.move %>
-<br>
-<% end %>
 <%= @game.player.name %>, what is your move?
 <form action ="/move" method = "post">
 <input type='radio' id = 'Rock' name = 'move' value = 'Rock'>

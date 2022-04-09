@@ -3,7 +3,7 @@ require 'game'
 describe Game do
   let(:player) { double "player" }
   let(:computer) { double "computer" }
-  let(:game) { described_class.new(player) }
+  let(:game) { described_class.new(player, computer) }
 
   describe "#rock" do
     it 'allows player to choose rock' do

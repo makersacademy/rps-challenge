@@ -1,0 +1,10 @@
+<% if @game.player.move %>
+<%= @game.player.name %> has chosen <%= @game.player.move %>
+<br>
+Computer has chosen <%= @game.computer.move %>
+<br>
+<% end %>
+
+<form action = '/game'>
+<input type='submit' id = 'Back' value='Back'>
+</form>

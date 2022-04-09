@@ -1,0 +1,3 @@
+class Result
+  
+end

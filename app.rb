@@ -29,7 +29,12 @@ class RPS < Sinatra::Base
     @game = $game
     @game.player.choose(params[:move])
     @game.computer_move
-    redirect '/game'
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game = $game
+    erb(:result)
   end
 
   run! if app_file == $0
