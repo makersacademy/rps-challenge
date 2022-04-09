@@ -24,6 +24,8 @@ I would like to be able to play rock/paper/scissors
 
 Using bonus rules of Spock and lizard.
 
+![](./Pierre_ciseaux_feuille_l%C3%A9zard_spock_aligned.svg)
+
 _image from Wikipedia by Nojhan and licensed under [GNU Free Documentation License, v 1.2](https://commons.wikimedia.org/wiki/Commons:GNU_Free_Documentation_License,_version_1.2)
 
 ## Getting started
