@@ -11,7 +11,8 @@ feature 'RPS choice' do
   scenario 'Computer will randomly choose between rock, paper or scissors' do
     sign_in_and_play
     choose('Rock')
+    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
     click_button('Submit')
-    expect(page).to have_content('Computer has chosen')
+    expect(page).to have_content('Computer has chosen Scissors')
   end
 end

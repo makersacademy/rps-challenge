@@ -3,7 +3,7 @@ require_relative 'player.rb'
 
 class Game
 
-  attr_reader :player
+  attr_reader :player, :computer
 
   def initialize(player = Player.new("Player"), computer = Computer.new)
     @player = player
@@ -25,6 +25,5 @@ class Game
   def computer_move
     @computer.random_move
   end
-
   
 end
