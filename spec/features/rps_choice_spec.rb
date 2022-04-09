@@ -5,8 +5,8 @@ feature 'RPS choice' do
     visit('/')
     fill_in 'Player name', with: "Michael"
     click_button 'Submit'
-    expect(page).to have_button 'Rock'
-    expect(page).to have_button 'Paper'
-    expect(page).to have_button 'Scissors'
+    expect(page).to have_unchecked_field('Rock')
+    expect(page).to have_unchecked_field('Paper')
+    expect(page).to have_unchecked_field('Scissors')
   end
 end

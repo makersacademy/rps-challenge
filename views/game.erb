@@ -1,1 +1,11 @@
 <%= @player.name %>
+<form action ="/move" method = "post">
+<label for 'Rock'> Rock </label>
+<input type='radio' id = 'Rock' name = 'move' value = 'Rock'>
+<label for 'Paper'> Paper </label>
+<input type='radio' id = 'Paper' name = 'move' value = 'Paper'>
+<label for 'Scissors'> Scissors </label>
+<input type='radio' id = 'Scissors' name = 'move' value = 'Scissors'>
+<br>
+<input type='submit' id = 'Submit' value='Submit'>
+</form>
