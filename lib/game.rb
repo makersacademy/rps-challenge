@@ -1,21 +1,21 @@
 class Game
 
   attr_reader :player
-  
+
   def initialize(player)
     @player = player
   end
 
   def rock
-    @player.choice('Rock')
+    @player.choose('Rock')
   end
 
   def paper
-    @player.choice('Paper')
+    @player.choose('Paper')
   end
 
   def rock
-    @player.choice('Scissors')
+    @player.choose('Scissors')
   end
 
   
