@@ -1,5 +1,7 @@
 class Computer
+  attr_reader :move
+
   def random_move
-    ["Rock", "Paper", "Scissors"].sample
+    @move = ["Rock", "Paper", "Scissors"].sample
   end
 end

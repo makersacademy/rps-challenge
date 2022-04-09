@@ -1,17 +1,19 @@
 <% if @game.player.move %>
 <%= @game.player.name %> has chosen <%= @game.player.move %>
 <br>
-Computer has chosen <%= @game.computer_move %>
+Computer has chosen <%= @game.computer.move %>
 <br>
 <% end %>
-<%= @game.player.name %>
+<%= @game.player.name %>, what is your move?
 <form action ="/move" method = "post">
-<label for 'Rock'> Rock </label>
 <input type='radio' id = 'Rock' name = 'move' value = 'Rock'>
-<label for 'Paper'> Paper </label>
+<label for 'Rock'> Rock </label>
+<br>
 <input type='radio' id = 'Paper' name = 'move' value = 'Paper'>
-<label for 'Scissors'> Scissors </label>
+<label for 'Paper'> Paper </label>
+<br>
 <input type='radio' id = 'Scissors' name = 'move' value = 'Scissors'>
+<label for 'Scissors'> Scissors </label>
 <br>
 <input type='submit' id = 'Submit' value='Submit'>
 </form>
