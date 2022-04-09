@@ -13,7 +13,7 @@ class Rockps < Sinatra::Base
   end
   
   post '/name' do
-   session[:player_name] = params[:pname]
+    session[:player_name] = params[:pname]
     redirect '/play'
   end
   
