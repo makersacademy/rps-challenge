@@ -4,12 +4,19 @@ describe Game do
   let(:player_double) { double(:player, name: "Joe") }
   let(:computer_double) { double(:computer_player, name: "Computer", random_choice: "Scissors") }
   let(:game) { Game.new(player_double, computer_double) }
-  let(:computer_choice) { computer_double.random_choice }
+  let(:computer_choice) { game.move }
 
   context "#creation" do
     it "has two players, 1 person and the computer" do
       expect(game.player).to eq "Joe"
       expect(game.com).to eq "Computer"
+    end
+  end
+
+  context "#move" do
+    it "makes the computer make a move" do
+      expect(computer_double).to receive :random_choice
+      game.move
     end
   end
 

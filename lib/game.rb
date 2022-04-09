@@ -12,6 +12,10 @@ class Game
     @computer.name
   end
 
+  def move
+    @computer.random_choice
+  end
+
   def compare(player_choice, computer_choice)
     if player_choice == computer_choice
       "It's a draw."
