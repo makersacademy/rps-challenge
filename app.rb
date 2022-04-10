@@ -27,6 +27,32 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  get '/game' do
+    @game = current_game
+    erb(:game)
+  end
+
+  get '/result' do
+    @game = current_game
+    player = @game.player
+    player2 = @game.player2
+    @result = Result.new(player, player2)
+    if @result.winner == player
+      @game.add_win
+    elsif @result.winner == player2 
+      @game.add_loss
+    else 
+      @game.add_round
+    end
+    erb(:result)
+  end
+
+  post '/reset' do
+    @game = current_game
+    @game.player.reset 
+    redirect '/game'
+  end
+
   # Single Player
 
   post '/name' do
@@ -36,31 +62,11 @@ class RPS < Sinatra::Base
     redirect '/game' 
   end
 
-  get '/game' do
-    @game = current_game
-    erb(:game)
-  end
-
   post '/move' do 
     @game = current_game
     @game.player.choose(params[:move])
     @game.computer_move
     redirect '/result'
-  end
-
-  get '/result' do
-    @game = current_game
-    player = @game.player
-    player2 = @game.player2
-    @result = Result.new(player, player2)
-      if @result.winner == player
-        @game.add_win
-      elsif @result.winner == player2 
-        @game.add_loss
-      else 
-        @game.add_round
-      end
-    erb(:result)
   end
 
   # Multiplayer
@@ -82,12 +88,6 @@ class RPS < Sinatra::Base
       @game.player2.choose(params[:move])
       redirect '/result'
     end
-  end
-
-  post '/reset' do
-    @game = current_game
-    @game.player.reset 
-    redirect '/game'
   end
 
   run! if app_file == $0
