@@ -11,6 +11,7 @@
 ## Task
 
 I have been asked to create a Rock-Paper-Scissors game that can be played on the web.\
+\
 The program will allow the player to play against the computer and the outcome of the game will be declared when there is a winner. 
 
 ## Instructions
@@ -43,11 +44,13 @@ I would like to be able to play rock/paper/scissors
 ```
 https://www.htmlhelp.com/reference/html40/forms/input.html#radio
 https://relishapp.com/rspec/rspec-expectations/docs/compound-expectations#use-%60or%60-to-chain-expectations
+https://github.com/makersacademy/rps-challenge/blob/main/docs/review.md
 https://gist.github.com/wynand1004/b5c521ea8392e9c6bfe101b025c39abe
 https://commons.wikimedia.org/wiki/File:Rock-paper-scissors.svg
 ```
 used the above to do radio buttons for player choice\
 used the above to do `or` in rspec\
+used the above in order to store objects inside the session so that global variable is no longer needed\
 ASCII art used in README by Christian Thompson (`wynand1004` on GitHub)\
 used the above picture in the homepage, taken from the user `Enzoklop` on Wikipedia. The image is published under the license: `https://creativecommons.org/licenses/by-sa/3.0/deed.en`
 
