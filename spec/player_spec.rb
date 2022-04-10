@@ -1,2 +1,6 @@
-# describe Player do
-#   it "determines if the player wins or loses a game" do
+describe Player do
+  it "returns the players name" do
+    player = Player.new("Jordan")
+    expect(player.name).to eq "Jordan"
+  end
+end

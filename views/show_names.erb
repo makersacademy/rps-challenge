@@ -7,10 +7,10 @@ body {
 </style>
 </head>
 <body>
-<center><h1 style="font-family:verdana;"><%= $game.player.name %> VS Computer </h1>
+<center><h1 style="font-family:verdana;"><%= $game.player1.name %> VS <%= $game.player2.name %> </h1>
 <br>
-<form action='/rps'>
-<input type="submit" value='Im Ready'>
+<form action='/player_1'>
+<input type="submit" value='Lets play!'>
 </form>
 </center>
 </body>

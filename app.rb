@@ -14,47 +14,35 @@ class Rps < Sinatra::Base
   end
 
   post '/enter_names' do
-  $game = Game.new(Player.new(params[:player_name]))
-  redirect '/show_names'
+    $game = Game.new(Player.new(params[:player_1_name]), Player.new(params[:player_2_name]))
+    redirect '/show_names'
   end
 
   get '/show_names' do
     erb(:show_names)
   end
 
-  get '/rps' do
-    erb(:rps)
+  get '/player_1' do
+    erb(:player_1_rps)
   end
 
-  get '/selection' do
-    erb(:selection)
+  post '/player_1_selection' do
+    $game.player_1_choice = params[:weapon]
+    redirect '/player_2_rps'
   end
 
-  get '/rock' do
-    $game.player_choice=(:rock)
-    redirect '/selection'
+  get '/player_2_rps' do
+    erb(:player_2_rps)
   end
 
-  get '/scissors' do
-    $game.player_choice=(:scissors)
-    redirect '/selection'
-  end
-
-  get '/paper' do
-    $game.player_choice=(:paper)
-    redirect '/selection'
+  post '/player_2_selection' do
+    $game.player_2_choice = params[:weapon]
+    redirect '/result'
   end
 
   get '/result' do
-    if $game.result == :win
-      erb(:win)
-    elsif $game.result == :draw
-      erb(:draw)
-    else
-      erb(:lose)
-    end
+    erb(:result)
   end
 
   run! if app_file == $0
 end
-

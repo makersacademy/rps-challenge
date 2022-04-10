@@ -5,5 +5,4 @@ class Player
   def initialize(name = "Jordan")
     @name = name
   end
-
 end

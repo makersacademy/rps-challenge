@@ -59,7 +59,7 @@ body {
 </style>
 </head>
 <body>
-<h1 style="font-family:verdana;"><center> <%= $game.player.name %>... Select your weapon</h1></center>
+<h1 style="font-family:verdana;"><center> <%= $game.player2.name %>... Select your weapon</h1></center>
 <br>
 <br>
 <br>
@@ -70,8 +70,8 @@ body {
     <img src="https://m.media-amazon.com/images/M/MV5BMTkyNDQ3NzAxM15BMl5BanBnXkFtZTgwODIwMTQ0NTE@._V1_UY1200_CR84,0,630,1200_AL_.jpg" alt="Rock" height="320" width="250">
   <br>
   <br>
-  <center><form action="/rock">
-  <button id="submit">Rock</button>
+  <center><form action="/player_2_selection" method="post">
+  <button id="submit" name='weapon' value="Rock">Rock</button>
   </form>
   </center>
   </div>
@@ -80,8 +80,8 @@ body {
     <img src="https://i.insider.com/5fbfc9a2037cbd00186127de?width=1200&format=jpeg&auto=webp" alt="Scissors" height="320" width="250">
   <br>
   <br>
-  <center><form action="/scissors">
-  <button id="submit">Scissors</button>
+  <center><form action="/player_2_selection" method="post">
+  <button id="submit" name='weapon' value="Scissors">Scissors</button>
 </form>
 </center>
 </div>
@@ -89,8 +89,8 @@ body {
     <img src="https://creativityintherapy.com/wp-content/uploads/2012/07/Origami-crane.jpg" alt="Paper" height="320" width="250">
   <br>
   <br>
-  <center><form action="/paper">
-  <button id="submit">Paper</button>
+  <center><form action="/player_2_selection" method="post">
+  <button id="submit" name='weapon' value="Paper">Paper</button>
 </form>
 </center>
 </div>

@@ -1,0 +1,22 @@
+<html>
+<head>
+<style>
+body {
+  background-image: url('https://thumbs.dreamstime.com/z/you-win-banner-retro-winner-congratulation-glowing-light-bulbs-golden-confetti-burst-purple-background-winners-164212283.jpg');
+}
+</style>
+</head>
+<body>
+<center><h1 style="background-color:#ffff99;" style="font-family:verdana;"><%= $game.player1.name %> selected <%= $game.player_1_choice %> & <%= $game.player2.name %> <%= $game.player_2_choice %>
+<br>
+<br>
+The winner is....
+<br>
+<br>
+<% if $game.result == :player_1_win %> <%= $game.player1.name %>
+<% elsif $game.result == :player_2_win %> <%= $game.player2.name %>
+<% elsif $game.result == :draw %> It's a draw!</h1>
+<% end %>
+<center>
+</body>
+</html>
