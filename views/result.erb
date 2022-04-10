@@ -1,27 +1,27 @@
 <% if @game.player2.name.nil? %>
-<%= @game.player.name %> has chosen <%= @game.player.move %>
-<br>
-Computer has chosen <%= @game.player2.move %>
-<br>
-<% if @result.winner == @game.player %>
-Congratulations <%= @game.player.name %>, you have won!
-<% elsif @result.winner == @game.player2 %>
-<%= @game.player.name %>, you have lost. Better luck next time!
+  <%= @game.player.name %> has chosen <%= @game.player.move %>
+  <br>
+  Computer has chosen <%= @game.player2.move %>
+  <br>
+  <% if @result.winner == @game.player %>
+    Congratulations <%= @game.player.name %>, you have won!
+  <% elsif @result.winner == @game.player2 %>
+    <%= @game.player.name %>, you have lost. Better luck next time!
+  <% else %>
+    <%= @game.player.name %>, this round is a tie! Try again.
+  <% end %>
 <% else %>
-<%= @game.player.name %>, this round is a tie! Try again.
-<% end %>
-<% else %>
-<%= @game.player.name %> has chosen <%= @game.player.move %>
-<br>
-<%= @game.player2.name %> has chosen <%= @game.player2.move %>
-<br>
-<% if @result.winner == @game.player %>
-Congratulations <%= @game.player.name %>, you have won!
-<% elsif @result.winner == @game.player2 %>
-Congratulations <%= @game.player2.name %>, you have won!
-<% else %>
-<%= @game.player.name %>, this round is a tie! Try again.
-<% end %>
+  <%= @game.player.name %> has chosen <%= @game.player.move %>
+  <br>
+  <%= @game.player2.name %> has chosen <%= @game.player2.move %>
+  <br>
+  <% if @result.winner == @game.player %>
+    Congratulations <%= @game.player.name %>, you have won!
+  <% elsif @result.winner == @game.player2 %>
+    Congratulations <%= @game.player2.name %>, you have won!
+  <% else %>
+    <%= @game.player.name %>, this round is a tie! Try again.
+  <% end %>
 <% end %>
 
 <form action = '/reset' method = "POST">

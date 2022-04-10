@@ -8,24 +8,24 @@ class Result
     "Scissors" => "Paper"
   }.freeze
 
-  def initialize(player = Player.new("Player"), computer = Computer.new)
+  def initialize(player = Player.new("Player"), player2 = Computer.new)
     @player = player
-    @computer = computer
+    @player2 = player2
   end
 
   def winner
     return @player if player_win
-    return @computer if computer_win
+    return @player2 if player2_win
   end
 
   private
 
   def player_win
-    RULES[@player.move] == @computer.move
+    RULES[@player.move] == @player2.move
   end
 
-  def computer_win
-    RULES[@computer.move] == @player.move
+  def player2_win
+    RULES[@player2.move] == @player.move
   end
 
 end

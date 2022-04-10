@@ -20,4 +20,22 @@ describe Game do
     end
   end
 
+  describe "add_win" do
+    it 'able to add a win for player 1 to keep track of score' do
+      expect { game.add_win }.to change { game.wins }.by(1)
+    end
+  end
+
+  describe "#add_loss" do
+    it 'able to add a loss for player 1 to keep track of score' do
+      expect { game.add_loss }.to change { game.loss }.by(1)
+    end
+  end
+
+  describe "#add_round" do
+    it 'adds a round to the total no matter the result' do
+      expect { game.add_round }.to change { game.rounds }.by(1)
+    end
+  end
+
 end
