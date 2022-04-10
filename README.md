@@ -15,7 +15,7 @@ How To Use
 ----
 
 1. Run either `rackup` or `ruby app.rb` in the terminal while in the main directory to start the server.
-2. Type [localhost:9292] or [localhost:4567] into their browser to bring up the homepage (depending on which method the user executed to start the server).
+2. Type [localhost:9292](localhost:9292) or [localhost:4567](localhost:4567) into your browser to bring up the homepage (depending on which method the user executed to start the server).
 3. Type in your name into the field and click 'Play' to start playing.
 4. Make your move by slecting either 'Rock', 'Paper' or 'Scissors' from the drop-down menu and click 'Submit'.
 5. See the results of your move choice!
@@ -24,7 +24,7 @@ How To Use
 Testing
 ----
 
-Run `rspec` in the terminal in the main directory in order to run the tests present in the spec folder. This tests have provided a 100% test coverage while this program also commits 0 offenses when running RuboCop. This program was made using the TDD (Test-Driven Development) process where each test was written before the code that that they were targeting.
+Run `rspec` in the terminal in the main directory in order to run the tests present in the spec folder. These tests have provided a 100% test coverage from SimpleCov while this program also commits 0 offenses when running RuboCop. This program was made using the TDD (Test-Driven Development) process where each test was written before the code that it was targeting.
 
 User Stories
 ----
