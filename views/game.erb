@@ -1,0 +1,47 @@
+<% if @game.player2.name.nil? %>
+  <%= @game.player.name %>, what is your move?
+  <form action ="/move" method = "post">
+  <input type='radio' id = 'Rock' name = 'move' value = 'Rock'>
+  <label for 'Rock'> Rock </label>
+  <br>
+  <input type='radio' id = 'Paper' name = 'move' value = 'Paper'>
+  <label for 'Paper'> Paper </label>
+  <br>
+  <input type='radio' id = 'Scissors' name = 'move' value = 'Scissors'>
+  <label for 'Scissors'> Scissors </label>
+  <br>
+  <input type='submit' id = 'Submit' value='Submit'>
+  </form>
+<% else %>
+  <%= @game.player.name %> vs <%= @game.player2.name %>
+  <br>
+  <% if @game.player.move.nil? %>
+    <%= @game.player.name %>, what is your move?
+    <form action ="/multi_move" method = "post">
+    <input type='radio' id = 'Rock' name = 'move' value = 'Rock'>
+    <label for 'Rock'> Rock </label>
+    <br>
+    <input type='radio' id = 'Paper' name = 'move' value = 'Paper'>
+    <label for 'Paper'> Paper </label>
+    <br>
+    <input type='radio' id = 'Scissors' name = 'move' value = 'Scissors'>
+    <label for 'Scissors'> Scissors </label>
+    <br>
+    <input type='submit' id = 'Submit' value='Submit'>
+    </form>
+  <% else %>
+    <%= @game.player2.name %>, what is your move?
+    <form action ="/multi_move" method = "post">
+    <input type='radio' id = 'Rock' name = 'move' value = 'Rock'>
+    <label for 'Rock'> Rock </label>
+    <br>
+    <input type='radio' id = 'Paper' name = 'move' value = 'Paper'>
+    <label for 'Paper'> Paper </label>
+    <br>
+    <input type='radio' id = 'Scissors' name = 'move' value = 'Scissors'>
+    <label for 'Scissors'> Scissors </label>
+    <br>
+    <input type='submit' id = 'Submit' value='Submit'>
+    </form>
+  <% end %>
+<% end %>
