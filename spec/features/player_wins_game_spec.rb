@@ -3,6 +3,6 @@ feature "Player wins" do
     sign_in_and_play
     click_button("Rock")
     click_button("Get Result")
-    expect(page).to have_content "Congratulation!! You won"
+    expect(page).to have_content "Congratulations!! You won"
   end
 end

@@ -1,5 +1,17 @@
-You selected <%= $game.player_choice %> & the computer selected <%= $game.computer_choice %>
-
+<html>
+<head>
+<style>
+body {
+  background-image: url('https://images.pexels.com/photos/7130535/pexels-photo-7130535.jpeg');
+}
+</style>
+</head>
+<body>
+<center><h1 style="font-family:verdana;">You selected <%= $game.player_choice %> & the computer selected <%= $game.computer_choice %> </h1>
+<br>
 <form action='/result' >
 <input type="submit" value="Get Result">
 </form>
+<center>
+</body>
+</html>
