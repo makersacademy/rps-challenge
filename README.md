@@ -1,5 +1,13 @@
 # RPS Challenge
+```
+    _______                _______                  _______
+---'   ____)          ---'    ____)____         ---'   ____)____
+      (_____)                    ______)                  ______)
+      (_____)                   _______)               __________)
+      (____)                   _______)               (____)
+---.__(___)           ---.__________)           ---.__(___)
 
+```
 ## Task
 
 I have been asked to create a Rock-Paper-Scissors game that can be played on the web. To do this, I will need to use TDD, Capybara and Ruby. The program will allow the player to play against the computer and the outcome of the game will be declared when there is a winner. 
@@ -27,12 +35,13 @@ I would like to be able to play rock/paper/scissors
 ```
 https://www.htmlhelp.com/reference/html40/forms/input.html#radio
 https://relishapp.com/rspec/rspec-expectations/docs/compound-expectations#use-%60or%60-to-chain-expectations
+https://gist.github.com/wynand1004/b5c521ea8392e9c6bfe101b025c39abe
 ```
 used the above to do radio buttons for player choice\
 used the above to do `or` in rspec
+ASCII art used in README by Christian Thompson (`wynand1004` on GitHub)
 
 ## Functionality yet to be added
-Need to find a way to stop using the global variable.\
 Multiplayer\
 Rock Paper Scissors Spock Lizard\
 Keep track of win/loss/total rounds

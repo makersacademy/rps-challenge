@@ -13,5 +13,17 @@ class Game
   def computer_move
     @computer.random_move
   end
+
+  def self.find(id)
+    games[id]
+  end
+
+  def self.add(id, game)
+    games[id] = game
+  end
+
+  def self.games
+    @games ||= {}
+  end
   
 end
