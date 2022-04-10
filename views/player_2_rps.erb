@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+
+<style type="text/css">
+#submit {
+ background-color: #bbb;
+ padding: .5em;
+ -moz-border-radius: 5px;
+ -webkit-border-radius: 5px;
+ border-radius: 6px;
+ color: #fff;
+ font-family: 'Oswald';
+ font-size: 20px;
+ text-decoration: none;
+ border: none;
+ .text-center {
+  text-align: center;
+}
+}
+#submit:hover {
+ border: none;
+ background: orange;
+ box-shadow: 0px 0px 1px #777;
+}
+</style>
+
+
+
+<html>
+<head>
+<style>
+body {
+  background-image: url('https://images.pexels.com/photos/7130535/pexels-photo-7130535.jpeg');
+}
+body {
+  font-family: Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+<h1 style="font-family:verdana;"><center> <%= $game.player2.name %>... Select your weapon</h1></center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="column">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTkyNDQ3NzAxM15BMl5BanBnXkFtZTgwODIwMTQ0NTE@._V1_UY1200_CR84,0,630,1200_AL_.jpg" alt="Rock" height="320" width="250">
+  <br>
+  <br>
+  <center><form action="/player_2_selection" method="post">
+  <button id="submit" name='weapon' value="Rock">Rock</button>
+  </form>
+  </center>
+  </div>
+
+   <div class="column">
+    <img src="https://i.insider.com/5fbfc9a2037cbd00186127de?width=1200&format=jpeg&auto=webp" alt="Scissors" height="320" width="250">
+  <br>
+  <br>
+  <center><form action="/player_2_selection" method="post">
+  <button id="submit" name='weapon' value="Scissors">Scissors</button>
+</form>
+</center>
+</div>
+   <div class="column">
+    <img src="https://creativityintherapy.com/wp-content/uploads/2012/07/Origami-crane.jpg" alt="Paper" height="320" width="250">
+  <br>
+  <br>
+  <center><form action="/player_2_selection" method="post">
+  <button id="submit" name='weapon' value="Paper">Paper</button>
+</form>
+</center>
+</div>
+</div>
+
+
+
+</body>
+</html>
