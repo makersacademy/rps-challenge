@@ -27,9 +27,11 @@ class Rps < Sinatra::Base
   end
 
   post '/choose' do
-    @choice = params[:choice]
-    @com_move = session[:game].move
-    session[:result] = session[:game].compare(@choice, @com_move)
+    session[:move] = params[:choice]
+    session[:com_move] = session[:game].move
+    move = session[:move]
+    com_move = session[:com_move]
+    session[:result] = session[:game].compare(move, com_move)
     case session[:result]
     when "It's a draw."
       redirect to '/draw'
@@ -41,16 +43,28 @@ class Rps < Sinatra::Base
   end
 
   get '/draw' do
+    @name = session[:game].player
+    @com = session[:game].com
+    @move = session[:move]
+    @com_move = session[:com_move]
     @result = session[:result]
     erb :draw
   end
 
   get '/lose' do
+    @name = session[:game].player
+    @com = session[:game].com
+    @move = session[:move]
+    @com_move = session[:com_move]
     @result = session[:result]
     erb :lose
   end
 
   get '/win' do
+    @name = session[:game].player
+    @com = session[:game].com
+    @move = session[:move]
+    @com_move = session[:com_move]
     @result = session[:result]
     erb :win
   end

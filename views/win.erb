@@ -1,32 +1,39 @@
 <head>
 <style>
-.header{
-  text-align: center;
-}
-.happy{
-  text-align: center;
-}
-.button{
-  text-align: center;
-}
+  .header{
+    text-align: center;
+  }
+  .text{
+    text-align: center;
+    font-size: 15pt;
+  }
+  .happy{
+    text-align: center;
+    padding: 20px;
+  }
+  .button{
+    text-align: center;
+  }
 </style>
 </head>
 
 <body>
 <div class='header'>
-<h1><%= @result %></h1>
+  <h1><%= @result %></h1>
+</div>
+
+<div class='text'>
+  <%= @name %> chose <%= @move %>. <%= @com %> chose <%= @com_move %>.
 </div>
 
 <div class='happy'>
-<img src="https://media2.giphy.com/media/AcfTF7tyikWyroP0x7/giphy.gif?cid=790b7611c2a1dfb0b9f606bec82f61f0b9de0a466de429ad&amp;rid=giphy.gif&amp;ct=g"
-width='600' height='340'>
+  <img src="https://media2.giphy.com/media/AcfTF7tyikWyroP0x7/giphy.gif?cid=790b7611c2a1dfb0b9f606bec82f61f0b9de0a466de429ad&amp;rid=giphy.gif&amp;ct=g"
+  width='600' height='340'>
 </div>
 
-<br>
-
 <div class='button'>
-<form action='/play_again' method='post'>
-  <input type='submit' value='Play again' style="height:30px; width:100px">
-</form>
+  <form action='/play_again' method='post'>
+    <input type='submit' value='Play again' style="height:30px; width:100px">
+  </form>
 </div>
 </body>

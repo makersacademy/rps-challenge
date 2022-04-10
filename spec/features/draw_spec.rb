@@ -6,5 +6,6 @@ feature "Draw is declared" do
     srand 0
     click_button 'Submit'
     expect(page).to have_content "It's a draw."
+    expect(page).to have_content "Joe chose Rock. Computer chose Rock"
   end
 end

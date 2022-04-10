@@ -6,5 +6,6 @@ feature "Computer is declared the winner" do
     srand 1
     click_button 'Submit'
     expect(page).to have_content "Computer wins!"
+    expect(page).to have_content "Joe chose Rock. Computer chose Paper"
   end
 end
