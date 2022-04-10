@@ -1,5 +1,32 @@
-<h1><%= @result %></h1>
+<head>
+<style>
+.header{
+  text-align: center;
+}
+.sad{
+  text-align: center;
+}
+.button{
+  text-align: center;
+}
+</style>
+</head>
 
+<body>
+<div class='header'>
+<h1><%= @result %></h1>
+</div>
+
+<div class='sad'>
+<img src="https://media4.giphy.com/media/3jVlAzkbvVRfRPsThL/giphy.gif?cid=ecf05e477ul2mre97u24in9kes4oymgubge7kklaiakgxjzo&amp;rid=giphy.gif&amp;ct=g"
+width='600' height='340'>
+</div>
+
+<br>
+
+<div class='button'>
 <form action='/play_again' method='post'>
-  <input type='submit' value='Play again'>
+  <input type='submit' value='Play again' style="height:30px; width:100px">
 </form>
+</div>
+</body>

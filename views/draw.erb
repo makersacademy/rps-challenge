@@ -1,5 +1,32 @@
-<h1><%= @result %></h1>
+<head>
+<style>
+.header{
+  text-align: center;
+}
+.bored{
+  text-align: center;
+}
+.button{
+  text-align: center;
+}
+</style>
+</head>
 
+<body>
+<div class='header'>
+<h1><%= @result %></h1>
+</div>
+
+<div class='bored'>
+<img src="https://64.media.tumblr.com/d516b7202f0492fc654d21d10cf7aae2/524ad633d413ae69-f4/s400x600/2fb2e14eee9e6053fe8edc82eda0dedfeeaf4647.gifv"
+width ='420', height='500'>
+</div>
+
+<br>
+
+<div class='button'>
 <form action='/play_again' method='post'>
-  <input type='submit' value='Play again'>
+  <input type='submit' value='Play again' style="height:30px; width:100px">
 </form>
+</div>
+</body>

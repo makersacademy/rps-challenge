@@ -1,5 +1,30 @@
+<head>
+<style>
+.header{
+  text-align: center;
+}
+.text{
+  text-align: center;
+  font-size: 20pt;
+}
+.move{
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+<div class='header'>
 <h1>Hello <%= @name %>! Let's play rock paper scissors!</h1>
-<%= @name %> vs <%= @com %><br><br>
+</div>
+
+<div class='text'>
+<%= @name %> vs <%= @com %>
+</div>
+
+<br><br>
+
+<div class='move'>
 <form action='/choose' method='post'>
   <label for='choice'>Make your move:</label>
   <select name='choice' id='player_choice'>
@@ -9,3 +34,5 @@
   </select>
   <input type='submit' value='Submit'>
 </form>
+</div>
+</body>
