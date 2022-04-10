@@ -2,6 +2,15 @@
 
 Alexis Morcrette's solution to the Makers Academy week 3 Weekend Challenge.
 
+
+| ---------------------------------------------------------------------- | 
+| IMPORTANT NOTE: Due to absence during weekend due to bereavement       |
+| discussed with coaches, I have not been able to engage fully with      |
+| weekend challenge this week. Solution is submitted and with bugs.      |
+| Nevertheless, first user story complete, and additional functionality  |
+| also test drived.                                                      | 
+| ---------------------------------------------------------------------- | 
+
 ## Scenario
 
 Knowing how to build web applications is getting us almost there as web developers!
