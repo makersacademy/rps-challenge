@@ -13,4 +13,13 @@ feature 'Single player game play:' do
       "Captain Kirk, you played 'Rock'. #{computer.name} played 'Scissors'. You win!"
     )
   end
+
+  scenario 'Player: Paper; Computer: Scissors' do
+    create_CK_player # from web_helper
+    computer.make_selection
+    play_paper  # from web_helper
+    expect(page).to have_content(
+      "Captain Kirk, you played 'Paper'. #{computer.name} played 'Scissors'. You lose!"
+    )
+  end
 end
