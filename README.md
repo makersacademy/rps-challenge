@@ -56,6 +56,8 @@ Navigate to `http://localhost:4567/`
 
 ## Project approach
 
+![](./RPS-challenge.png)
+
 ----------------------------------------------
 
 At the barest minimum, it should contain a description of what the code does, how to install it, how to use it and how to run its tests. In addition, READMEs often include other information such as:
