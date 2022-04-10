@@ -1,0 +1,21 @@
+<h3 style="color: blue"> Welcome <%= $game.player1.name %> </h3>
+
+<h4 style="color: red"> <%= $game.player1.name %> vs. <%= $game.player2.name %> </h4>
+
+Please take your weapon of choice!
+
+<br><br>
+
+<form action="/weapon-choice" method="post">
+  <input type="submit" name="weapon" value="Rock">
+</form>
+
+
+<form action="/weapon-choice" method="post">
+  <input type="submit" name="weapon" value="Paper">
+</form>
+
+
+<form action="/weapon-choice" method="post">
+  <input type="submit" name="weapon" value="Scissors">
+</form>
