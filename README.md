@@ -1,21 +1,6 @@
-# RPS Challenge
+## Introduction
 
-Instructions
--------
-
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+This repo contains the code I wrote for the RPS Challenge, the Makers Academy Week 3 end-of-week challenge. This involved creating software for a basic rock-paper-scissors web app with the following user stories:
 
 ```
 As a marketeer
@@ -27,60 +12,56 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+## My approach
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+Throughout this challenge I created new coding assets (including .rb and .erb files) through a TDD approach, creating function tests for both code and web app functionality.
 
+Before beginning this challenge, I noted two bonus challenges: change the game from a single-player to a multiplayer game, and expand the 3-item rock-paper-scissors game to a 5-item rock-paper-scissors-spock-lizard game. I therefore began by setting up the project to achieve the user stories in a way that would make completing the bonus challenges easier later on. All code was written with these challenges in mind.
 
-As usual please start by
+I began by setting up the files I believed would be necessary. This included x3 pages: a sign-in page, a game page, and a results page. I created two classes to support the main app class: Game and Player. I later expanded this to include a Weapon class when I found this might be useful. I created a sign-in page and styled it with CSS and HTML. I then proceeded to a create a page for the game to take place, and a page to display results. Once all functionality was implemented, I formatted the app with CSS and HTML. Once that was done, I expanded the scope of the project as a personal challenge.
 
-* Forking this repo
-* TEST driving development of your app
+Both user stories have been addressed and the bonuses have been completed (see Instructions for use below).
 
-[You may find this guide to setting up a new Ruby web project helpful.](https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md)
+For my own enjoyment and education, I went beyond the required user stories and bonuses in the following 5 ways:
 
-## Bonus level 1: Multiplayer
+1. I went beyond the requested 5-item system to an extensive 16-item system. As I'd hoped, this proved very challenging and required a lot of planning to devise an appropiate system. I decided to use a system I'm familiar with: the Pokemon weaknesses and strengths system, which I adapted into a rock-paper-scissors-like game using Pokemon characters
+2. I introduced image assets from external websites (permissions stated all assets were free for public use) to represent the characters
+3. I spent time formatting all .erb files with HTML and CSS to create a relatively aesthetic format
+4. I retained the ability to play single-player games as well as multiplayer games
+5. I added a system to prevent the game being played if users didn't enter a nam
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+With more time, I would have done the following:
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+1. Added credits for the image assets I used (this felt unnecessary as of now as this app is not ready for public use)
+2. Investigated how to subsititute global variables and implemented my findings
+3. Introduced a scoring system
+4. I felt the game.rb file became to extensive; I would decrease this by extracting at least one other Class and a Module
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+Total rspec testing coverage: 100%; 28 rspec tests; rubocop passed with no offences.
 
-## Basic Rules
+## Instructions for use
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+### Setup:
 
-In code review we'll be hoping to see:
+1. Clone this repository to a local directory
+2. Open a command line and navigate to the cloned directory
+3. Enter "rackup -p 4567" into the terminal
+4. Open a browser and visit http://localhost:4567 to see the sign-in page
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/main/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+### Interaction:
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
+![Screenshot](./media/screenrecording.gif)
 
-Notes on test coverage
-----------------------
+1. Enter a name for Player 1 and press Enter to play a single-player game against the computer. If you also enter a name for Player 2, you will play a multiplayer game
+2. Choose a Pokemon for Player 1
+3. If playing a multiplayer game, Player 2 will then be prompted to choose their Pokemon
+4. You will be presented with the result. Play again, or return to the sign-in page
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+## Technologies
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+Pokemon png files are linked from [Bulbagarden](https://bulbapedia.bulbagarden.net/wiki/Main_Page) and are used in line with their [guidance](https://bulbapedia.bulbagarden.net/wiki/File:Spr_5b_114.png).
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+- Ruby
+- Sinatra
+- Rspec
+- Capybara
