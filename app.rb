@@ -77,5 +77,11 @@ class RPS < Sinatra::Base
     end
   end
 
+  post '/reset' do
+    @game = current_game
+    @game.player.reset 
+    redirect '/game'
+  end
+
   run! if app_file == $0
 end
