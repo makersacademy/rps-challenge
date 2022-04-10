@@ -1,0 +1,59 @@
+<head>
+<style>
+  body {
+    background-color: lightskyblue;
+  }
+  .header{
+    font-family: arial;
+    text-align: center;
+  }
+  .text{
+    font-family: arial;
+    text-align: center;
+    font-size: 20pt;
+  }
+  .pics{
+    text-align: center;
+    padding: 20px;
+  }
+  .move{
+    font-family: arial;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+<audio autoplay>
+  <source src="https://www.televisiontunes.com/uploads/audio/Mortal%20Kombat.mp3" type="audio/mp3">
+</audio>
+
+<div class='header'>
+  <h1>Hello <%= @name %>! Let's play rock paper scissors!</h1>
+</div>
+
+<div class='text'>
+  <%= @name %> vs <%= @com %>
+</div>
+
+
+<div class='pics'>
+  <img src='https://resources.premierleague.com/premierleague/photos/players/250x250/p1593.png'
+  width='500' height='500'>
+  <img src='https://i2-prod.irishmirror.ie/incoming/article26235893.ece/ALTERNATES/s1200c/0_JS223620856.jpg'
+  width='500' height='500'>
+</div>
+
+
+<div class='move'>
+  <form action='/choose' method='post'>
+    <label for='choice'>Make your move:</label>
+    <select name='choice' id='player_choice'>
+      <option value="Rock">Rock</option>
+      <option value="Paper">Paper</option>
+      <option value="Scissors">Scissors</option>
+    </select>
+    <input type='submit' value='Submit'>
+  </form>
+</div>
+</body>

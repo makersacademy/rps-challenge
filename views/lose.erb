@@ -1,0 +1,48 @@
+<head>
+<style>
+  body {
+      background-color: lightskyblue;
+    }
+  .header{
+    font-family: arial;
+    text-align: center;
+  }
+  .text{
+    font-family: arial;
+    text-align: center;
+    font-size: 15pt;
+  }
+  .sad{
+    text-align: center;
+    padding: 20px;
+  }
+  .button{
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+<audio autoplay>
+  <source src="https://www.myinstants.com/media/sounds/export_4.mp3" type="audio/mp3">
+</audio>
+
+<div class='header'>
+  <h1><%= @result %></h1>
+</div>
+
+<div class='text'>
+  <%= @name %> chose <%= @move %>. <%= @com %> chose <%= @com_move %>.
+</div>
+
+<div class='sad'>
+  <img src="https://media4.giphy.com/media/3jVlAzkbvVRfRPsThL/giphy.gif?cid=ecf05e477ul2mre97u24in9kes4oymgubge7kklaiakgxjzo&amp;rid=giphy.gif&amp;ct=g"
+  width='600' height='340'>
+</div>
+
+<div class='button'>
+  <form action='/play_again' method='post'>
+    <input type='submit' value='Play again' style="height:30px; width:100px">
+  </form>
+</div>
+</body>
