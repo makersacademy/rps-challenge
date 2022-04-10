@@ -1,3 +1,8 @@
+<strong> Rounds: <%= @game.rounds  %> </strong>
+<br>
+Current Score: <strong>  <%= @game.player.name %> <%= @game.wins %> </strong> : <strong> <%= @game.loss %> <%= @game.player2.name.nil? ? "Computer" : @game.player2.name %>  </strong>
+<br>
+<br>
 <% if @game.player2.name.nil? %>
   <%= @game.player.name %> has chosen <%= @game.player.move %>
   <br>

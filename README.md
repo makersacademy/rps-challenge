@@ -43,4 +43,4 @@ ASCII art used in README by Christian Thompson (`wynand1004` on GitHub)
 
 ## Functionality yet to be added
 Rock Paper Scissors Spock Lizard\
-Keep track of win/loss/total rounds
+Make webpage look nicer with more pictures, spacing, formatting etc

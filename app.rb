@@ -53,6 +53,13 @@ class RPS < Sinatra::Base
     player = @game.player
     player2 = @game.player2
     @result = Result.new(player, player2)
+      if @result.winner == player
+        @game.add_win
+      elsif @result.winner == player2 
+        @game.add_loss
+      else 
+        @game.add_round
+      end
     erb(:result)
   end
 

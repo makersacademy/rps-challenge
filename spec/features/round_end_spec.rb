@@ -26,4 +26,12 @@ feature 'Round result' do
     expect(page).to have_content('Michael, you have lost. Better luck next time!')
   end
 
+  scenario 'Displays score' do
+    sign_in_and_play
+    choose('Paper')
+    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+    click_button('Submit')
+    expect(page).to have_content('Current Score: Michael 0 : 1 Computer')
+  end
+
 end
