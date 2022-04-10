@@ -10,8 +10,8 @@ describe Player do
     end
 
     it 'with a weapon' do
-      player.weapon('Scissors')
-      expect(player.weapon).to eq("Scissors")
+      player.weapon = 'Scissors'
+      expect(player.weapon = 'Scissors').to eq('Scissors')
     end
   end
 end
