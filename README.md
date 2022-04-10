@@ -15,7 +15,7 @@ I have been asked to create a Rock-Paper-Scissors game that can be played on the
 The program will allow the player to play against the computer and the outcome of the game will be declared when there is a winner. 
 
 ## Instructions
-Clone this repository to your desired location using `git clone path-to-your-repo` then run `gem install bundler` (if you don't already have bundler), and then use the command `bundle install`.\
+Clone this repository to your desired location using `git clone https://github.com/mcsuGH/rps-challenge.git` then run `gem install bundler` (if you don't already have bundler), and then use the command `bundle install`.\
 \
 Whilst in the main directory of the `rps_challenge` repository, use the command `rackup` to begin (alternatively use `ruby app.rb`) which will then allow you navigate to the URL `localhost:9292` inside your web browser. From there, you can enter your name and begin your game of Rock-Paper-Scissors versus the computer.\
 \
