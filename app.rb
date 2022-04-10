@@ -23,10 +23,11 @@ class RPS < Sinatra::Base
     end
   end
 
-
   get '/' do 
     erb(:index)
   end
+
+  # Single Player
 
   post '/name' do
     player = Player.new(params[:name])
@@ -50,9 +51,30 @@ class RPS < Sinatra::Base
   get '/result' do
     @game = current_game
     player = @game.player
-    computer = @game.player2
-    @result = Result.new(player, computer)
+    player2 = @game.player2
+    @result = Result.new(player, player2)
     erb(:result)
+  end
+
+  # Multiplayer
+
+  post '/multi_name' do
+    player = Player.new(params[:name1])
+    player2 = Player.new(params[:name2])
+    game = Game.new(player, player2)
+    add_game(game)
+    redirect '/game' 
+  end
+
+  post '/multi_move' do 
+    @game = current_game
+    if @game.player.move.nil?
+      @game.player.choose(params[:move])
+      redirect '/game'
+    else
+      @game.player2.choose(params[:move])
+      redirect '/result'
+    end
   end
 
   run! if app_file == $0
