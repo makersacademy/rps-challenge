@@ -9,4 +9,12 @@ describe Player do
     end
   end
 
+  describe "reset" do
+    it 'allows player to reset their move after match ends' do
+      player.choose("Rock")
+      player.reset
+      expect(player.move).to eq(nil)
+    end
+  end
+
 end

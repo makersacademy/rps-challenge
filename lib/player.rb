@@ -9,4 +9,8 @@ class Player
     @move = move
   end
 
+  def reset 
+    @move = nil
+  end
+
 end

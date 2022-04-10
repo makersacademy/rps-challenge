@@ -1,3 +1,4 @@
+<% if @game.player2.name.nil? %>
 <%= @game.player.name %> has chosen <%= @game.player.move %>
 <br>
 Computer has chosen <%= @game.player2.move %>
@@ -9,7 +10,20 @@ Congratulations <%= @game.player.name %>, you have won!
 <% else %>
 <%= @game.player.name %>, this round is a tie! Try again.
 <% end %>
+<% else %>
+<%= @game.player.name %> has chosen <%= @game.player.move %>
+<br>
+<%= @game.player2.name %> has chosen <%= @game.player2.move %>
+<br>
+<% if @result.winner == @game.player %>
+Congratulations <%= @game.player.name %>, you have won!
+<% elsif @result.winner == @game.player2 %>
+Congratulations <%= @game.player2.name %>, you have won!
+<% else %>
+<%= @game.player.name %>, this round is a tie! Try again.
+<% end %>
+<% end %>
 
-<form action = '/game'>
+<form action = '/game' >
 <input type='submit' id = 'Back' value='Back'>
 </form>

@@ -22,4 +22,15 @@ feature 'Multiplayer' do
     click_button('Submit')
     expect(page).to have_content 'Congratulations Michael 2, you have won!'
   end
+
+  scenario 'After round ends, can begin new round' do
+    multiplayer
+    choose('Rock')
+    click_button('Submit')
+    choose('Paper')
+    click_button('Submit')
+    click_button('Back')
+    expect(page).to have_content 'Michael, what is your move?'
+  end
+
 end

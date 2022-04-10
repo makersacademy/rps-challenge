@@ -1,11 +1,11 @@
 # RPS Challenge
 ```
-    _______                _______                  _______
----'   ____)          ---'    ____)____         ---'   ____)____
-      (_____)                    ______)                  ______)
-      (_____)                   _______)               __________)
-      (____)                   _______)               (____)
----.__(___)           ---.__________)           ---.__(___)
+    _______                  _______                  _______
+---'   ____)            ---'    ____)____         ---'   ____)____
+      (_____)                      ______)                  ______)
+      (_____)                     _______)               __________)
+      (____)                     _______)               (____)
+---.__(___)             ---.__________)           ---.__(___)
 
 ```
 ## Task
@@ -42,6 +42,5 @@ used the above to do `or` in rspec\
 ASCII art used in README by Christian Thompson (`wynand1004` on GitHub)
 
 ## Functionality yet to be added
-Multiplayer\
 Rock Paper Scissors Spock Lizard\
 Keep track of win/loss/total rounds
