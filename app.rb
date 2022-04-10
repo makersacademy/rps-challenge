@@ -7,7 +7,7 @@ class RPS < Sinatra::Base
   end
 
   get '/' do
-    'Hello World'
+    'Testing infrastructure working!'
   end
 
   run! if app_file == $0
