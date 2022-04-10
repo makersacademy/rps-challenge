@@ -2,23 +2,30 @@
 
 I am adapting the README already within the Rock Paper Scissors challenge Repo to illustrate my process.
 
-- installed relevant other gem dependencies not already included in gemfile cloned from challenge repo, tested local host receiving post request using require 'sinatra' from rps_app.rb.
+- added to gemfile and installed relevant other gem dependencies not already included in gemfile cloned from challenge repo
 
-- created rps_app.rb to route get/post requests for the game - checked it was working, then created an index erb form to hold the html and tested - posted an image of rock paper scissors to local host with text
+- created rps_app.rb to route get/post requests for the game , tested local host receiving post request using require 'sinatra' from rps_app.rb.
 
-- as per the Battle Challenge in week 3, added a Sinatra application Class in the rps_app.rb file to use th modular style and made sure able to still route post requests on home page.
+- created an index erb file to hold html and tested - posted an image of rock paper scissors to local host with text
 
-- moved onto creating model of project and creating a feature test directory and run 1st feature test based on the 1st User Story in the challenge
+- as per the Battle Challenge in week 3, added a Sinatra application Class in the rps_app.rb file to use the modular style and made sure able to still route post requests on home page.
+
+- moved onto creating model of project, creating a feature test directory and run 1st feature test based on the 1st User Story in the challenge - added erb :index file and added routing in app
+
+- Started doing feature test on rock, paper, scissors game play functionality but could not get past second feature test.
 
 
-
-# - add user story modelling diagram link here
+# - USER STORY MODELLING https://miro.com/app/board/uXjVO9jfC-Y=/
 
 # USER STORY 1
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
+# USER STORY 2
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
 
 
 # 

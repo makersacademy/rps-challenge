@@ -2,6 +2,8 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 
 class RockPaperScissors < Sinatra::Base
+  enable :sessions
+
   configure :development do
     register Sinatra::Reloader
   end
@@ -11,14 +13,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    player_name = 'player_name'
-    erb(:index)
+    @player_name = session[:player_name]
+    erb :play
   end
 
-# get '/rockpaperscissors' do
-#   @rps = ["Rock", "Paper", "Scissors"].sample
-#   erb(:index)
-# end
+  get '/play' do
+    "Rock"
+    erb :play
+  end
 
   run! if app_file == $0
 end

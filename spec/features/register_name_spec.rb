@@ -7,8 +7,8 @@ I would like to register my name before playing an online game
 feature 'Can enter name' do
   scenario 'submit name' do
     visit('/')
-    fill_in :player_name, with: 'player_name'
+    fill_in :player_name, with: 'David'
     click_button 'Submit'
-    expect(page).to have_content 'Enter Player Name:'
+    expect(page).to have_content 'David'
   end
 end
