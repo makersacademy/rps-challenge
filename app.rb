@@ -50,7 +50,7 @@ class RPS < Sinatra::Base
   get '/result' do
     @game = current_game
     player = @game.player
-    computer = @game.computer
+    computer = @game.player2
     @result = Result.new(player, computer)
     erb(:result)
   end

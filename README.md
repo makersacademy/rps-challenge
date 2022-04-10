@@ -38,7 +38,7 @@ https://relishapp.com/rspec/rspec-expectations/docs/compound-expectations#use-%6
 https://gist.github.com/wynand1004/b5c521ea8392e9c6bfe101b025c39abe
 ```
 used the above to do radio buttons for player choice\
-used the above to do `or` in rspec
+used the above to do `or` in rspec\
 ASCII art used in README by Christian Thompson (`wynand1004` on GitHub)
 
 ## Functionality yet to be added

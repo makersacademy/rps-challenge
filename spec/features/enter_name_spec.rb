@@ -5,4 +5,9 @@ feature 'Player name' do
     sign_in_and_play
     expect(page).to have_content 'Michael'
   end
+
+  scenario 'Can fill in name for a second player' do
+    multiplayer
+    expect(page).to have_content 'Michael 2'
+  end
 end

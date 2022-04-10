@@ -3,15 +3,15 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player, :computer
+  attr_reader :player, :player2
 
-  def initialize(player = Player.new("Player"), computer = Computer.new)
+  def initialize(player = Player.new("Player"), player2 = Computer.new)
     @player = player
-    @computer = computer
+    @player2 = player2
   end
 
   def computer_move
-    @computer.random_move
+    @player2.random_move
   end
 
   def self.find(id)
