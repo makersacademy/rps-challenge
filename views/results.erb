@@ -1,0 +1,9 @@
+<h2 style="text-align:center"><%= @game.player_1[0] %> chose <%= @game.player_1[1]%> and <%= @game.player_2[0] %> chose <%= @game.player_2[1]%></h2>
+<br><br><br>
+<h2 style="text-align:center"> And the winner is...</h2>
+<br><br><br>
+<h1 style="text-align:center"><%= @winner %></h1>
+<br><br><br>
+<form style="text-align:center" action="/" method="get">
+  <input type="submit" value="Play again?">
+</form>
