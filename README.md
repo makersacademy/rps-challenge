@@ -1,4 +1,27 @@
-# RPS Challenge
+# RPS (Rock,Paper,Scissors) Challenge
+
+I am adapting the README already within the Rock Paper Scissors challenge Repo to illustrate my process.
+
+- installed relevant other gem dependencies not already included in gemfile cloned from challenge repo, tested local host receiving post request using require 'sinatra' from rps_app.rb.
+
+- created rps_app.rb to route get/post requests for the game - checked it was working, then created an index erb form to hold the html and tested - posted an image of rock paper scissors to local host with text
+
+- as per the Battle Challenge in week 3, added a Sinatra application Class in the rps_app.rb file to use th modular style and made sure able to still route post requests on home page.
+
+- moved onto creating model of project and creating a feature test directory and run 1st feature test based on the 1st User Story in the challenge
+
+
+
+# - add user story modelling diagram link here
+
+# USER STORY 1
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+
+
+# 
 
 Instructions
 -------
