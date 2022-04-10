@@ -1,1 +1,13 @@
-Winner!
+<% if $game.winner %>
+<%= $game.winner.name %> is the winner!
+<% end %>
+
+<% unless $game.winner %>
+It's a draw!
+<% end %>
+
+<br><br>
+
+<form action="/game">
+  <input type="submit" value="Play again">
+</form>

@@ -1,21 +1,21 @@
-<h3 style="color: blue"> Welcome <%= $player.name %> </h3>
+<h3 style="color: blue"> Welcome <%= $game.player1.name %> </h3>
 
-<br><br>
+<h4 style="color: red"> <%= $game.player1.name %> vs. <%= $game.player2.name %> </h4>
 
 Please take your weapon of choice!
 
 <br><br>
 
-<form action="/winner" method="post">
-  <input type="submit" name="rock_button" value="Rock">
+<form action="/weapon-choice" method="post">
+  <input type="submit" name="weapon" value="Rock">
 </form>
 
 
-<form action="/winner" method="post">
-  <input type="submit" name="paper_button" value="Paper">
+<form action="/weapon-choice" method="post">
+  <input type="submit" name="weapon" value="Paper">
 </form>
 
 
-<form action="/winner" method="post">
-  <input type="submit" name="scissors_button" value="Scissors">
+<form action="/weapon-choice" method="post">
+  <input type="submit" name="weapon" value="Scissors">
 </form>
