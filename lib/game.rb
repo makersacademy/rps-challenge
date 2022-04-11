@@ -3,8 +3,7 @@ class Game
   
   def initialize(player_1, player_2)
     @player_1 = [player_1]
-    @player_2 = [player_2] unless player_2 == ''
-    @player_2 = ['The Computer'] if player_2 == ''
+    player_2 == '' ?  @player_2 = ['The Computer'] : @player_2 = [player_2]
     @current_player = @player_1
   end
 
