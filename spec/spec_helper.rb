@@ -6,6 +6,8 @@ require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
 
+
+
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -23,4 +25,5 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
 Capybara.app = RPS
