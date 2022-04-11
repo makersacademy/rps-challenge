@@ -1,0 +1,5 @@
+<h2 style="text-align:center">So, what's your move <%= @game.current_player[0] %>?</h2>
+
+<form style="text-align:center" action="/choice" method="post">
+  <input type="submit" name="choice" value="Rock">&emsp;&emsp;&emsp;&emsp;<input type="submit" name="choice" value="Paper">&emsp;&emsp;&emsp;&emsp;<input type="submit" name="choice" value="Scissors">
+</form>
