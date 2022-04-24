@@ -1,1 +1,1 @@
-web: bundle exec app -C config/app.rb
+web: bundle exec RockPaperScissors -C config/app.rb
