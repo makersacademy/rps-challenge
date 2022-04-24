@@ -1,1 +1,1 @@
-web: bundle exec RockPaperScissors -C config/app.rb
+web: bundle exec puma -C config/app.rb

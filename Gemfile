@@ -12,6 +12,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'puma'
   gem 'rubocop', '1.20'
   gem 'sinatra-contrib'
   gem 'launchy'
