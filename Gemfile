@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.0.2'
+ruby '3.0.0'
 
 gem 'sinatra'
 
@@ -13,9 +13,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'sqlite3'
-  gem 'pg'
-  gem 'puma'
+  gem 'rack'
   gem 'rubocop', '1.20'
   gem 'sinatra-contrib'
   gem 'launchy'
