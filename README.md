@@ -1,17 +1,15 @@
 # RPS Challenge
 
-<a href="url"><img src="./public/screenshots/Homepage.png" alt="Homepage" height="400" style="border-radius:50%" /></a><a href="url"><img src="./public/screenshots/ChoseOption.png" alt="Homepage" height="400" style="border-radius:50%" /></a>
+<img src="./public/screenshots/Homepage.png" alt="Homepage" height="400" style="border-radius:50%" /> | <img src="./public/screenshots/ChoseOption.png" alt="Homepage" height="400" style="border-radius:50%" />
 
 ## How to use
-----
 - Clone this repo `git clone https://github.com/mmguinness/rps-challenge.git`
 - Run the command `bundle install` in the project directory to ensure you have all the dependencies
 - Connect to server with command `rackup` and visit the localhost port to play
 - Run tests with RSpec with command `rspec`
 - Run Rubocop linter with command `rubocop`
 
-## Task
-----
+## Requirements
 To build a _Rock, Paper, Scissors_ game:
 
 - the user should be able to enter their name before the game
