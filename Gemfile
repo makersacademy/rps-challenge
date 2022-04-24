@@ -4,6 +4,7 @@ ruby '3.0.2'
 
 gem 'sinatra'
 
+
 group :test do
   gem 'capybara'
   gem 'rspec'
@@ -12,6 +13,8 @@ group :test do
 end
 
 group :development, :test do
+  gem 'sqlite3'
+  gem 'pg'
   gem 'puma'
   gem 'rubocop', '1.20'
   gem 'sinatra-contrib'
