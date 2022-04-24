@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '3.0.0'
 
 gem 'sinatra'
-
+gem 'rack'
 
 group :test do
   gem 'capybara'
@@ -13,7 +13,6 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rack'
   gem 'rubocop', '1.20'
   gem 'sinatra-contrib'
   gem 'launchy'
