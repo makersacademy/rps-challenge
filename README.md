@@ -1,6 +1,6 @@
 # RPS Challenge
 
-<img src="./public/screenshots/Homepage.png" alt="Homepage" height="400" style="border-radius:50%" /><img src="./public/screenshots/ChoseOption.png" alt="Homepage" height="400" style="border-radius:50%" />
+<a href="url"><img src="./public/screenshots/Homepage.png" alt="Homepage" height="400" style="border-radius:50%" /></a><a href="url"><img src="./public/screenshots/ChoseOption.png" alt="Homepage" height="400" style="border-radius:50%" /></a>
 
 ## How to use
 ----
