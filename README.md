@@ -1,5 +1,9 @@
 # RPS Challenge
-<img src="./public/screenshots/Homepage.png" alt="Homepage" />
+
+<img src="./public/screenshots/Homepage.png" alt="Homepage" height="400" />
+<img src="./public/screenshots/ChoseOption.png" alt="Homepage" height="400" />
+<img src="./public/screenshots/Draw.png" alt="Homepage" height="400" />
+
 ## How to use
 ----
 - Clone this repo `git clone https://github.com/mmguinness/rps-challenge.git`
