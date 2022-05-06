@@ -37,6 +37,7 @@ button {
   color: #fc79f3;
   font-size: 20px;
   line-height: 22px;
+  width: 40%;
   padding: 16px 24px;
   text-decoration: none;
   transition: all 200ms ease;
@@ -51,6 +52,12 @@ button:hover {
   display: flex;
   justify-content: center;
 }
+.action_btn1 {
+  width: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
 img {
   display: block;
   margin-left: auto;
@@ -58,7 +65,7 @@ img {
   width: 70%;
 }
 .space {
-  width: 30px;
+  width: 20px;
   height: auto;
   display: inline-block;
 }

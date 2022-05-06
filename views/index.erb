@@ -8,23 +8,25 @@
   <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
 </head>
 
+<body>
 <form action="/" method="">
 
-<body>
 <img src="https://i.postimg.cc/zfFczdYH/cartoon-rock-paper-scissors-vector-characters.jpg">
 <br />
 <h1>Please choose</h1>
+
+<form action="/game" method = post>
 <div class="buttons">
   <div class="action_btn">
-  <button name="rock" class="action_btn rock" type="submit" value="Rock" onclick="myFunction1()">Rock</button>
+  <button class="rock" type="submit" value="Rock" onclick="myFunction1()">Rock</button>
   <div class="space"></div>
-  <button name="submit" class="action_btn paper" type="submit" value="Paper" onclick="myFunction2()">Paper</button>
+  <button class="paper" type="submit" value="Paper" onclick="myFunction2()">Paper</button>
   <div class="space"></div>
-  <button name="submit" class="action_btn scissors" type="submit" value="Scissors" onclick="myFunction3()">Scissors</button>
+  <button class="scissors" type="submit" value="Scissors" onclick="myFunction3()">Scissors</button>
   </div>
 </div>
-</body>
 
 </form>
+</body>
 
 </html>

@@ -4,15 +4,18 @@
   <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
 </head>
 
-<h2>Your chose: {Scissors}</h2>
-<h2>Computer chose: {}</h2>
-<h2>{result of the game}</h2>
+<h2>You chose: <%= @player_choice %></h2>
+<h2>Computer chose: <%= @random_figure %></h2>
+<h2><%= @result %></h2>
 <br />
 <br />
-<div class="buttons">
-  <div class="action_btn">
+
+<form action="/">
+<div class="button1">
+  <div class="action_btn1">
   <button name="submit" class="action_btn play again" type="submit" value="Play again" onclick="myFunction4()">Play again</button>
   </div>
 </div>
+</form>
 
 </html>
