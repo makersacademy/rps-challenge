@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/game'
 
 class RPSGame < Sinatra::Base
   configure :development do
@@ -27,6 +28,7 @@ class RPSGame < Sinatra::Base
 
   get '/outcome' do
     @p1_choice = $p1_choice
+    @game = Game.new
     erb :outcome
   end
 
