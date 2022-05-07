@@ -1,0 +1,5 @@
+<% if ["rock", "paper", "scissors"].include?(@choice.downcase) %>
+<%= @name %> has choosen <%= @choice.downcase %>
+<% else %>
+Please choose rock, paper or scissors
+<% end %>
