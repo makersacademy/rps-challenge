@@ -12,5 +12,9 @@ group :test do
 end
 
 group :development, :test do
+  gem 'webrick'
+  gem 'sinatra-contrib'
+  gem 'rack'
+  gem 'launchy'
   gem 'rubocop', '1.20'
 end
