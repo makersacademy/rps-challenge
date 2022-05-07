@@ -15,23 +15,19 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/named' do
-    session[:player_1_name] = params[:player_1_name]
+    $player_1_name = params[:player_1_name]
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
+    @player_1_name = $player_1_name
     erb :play
   end
 
   get '/result' do
     @player_choice = params[:choice]
-    $game = Game.new(session[:player_1_name], @player_choice)
+    $game = Game.new($player_1_name, @player_choice)
     @game = $game
-    p @game.choice
-    p @game.computer_choice
-    p @game.won?
-    p @game.play
     erb :result
   end
 
