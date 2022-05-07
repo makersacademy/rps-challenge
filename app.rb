@@ -29,6 +29,7 @@ class RPSGame < Sinatra::Base
   get '/outcome' do
     @p1_choice = $p1_choice
     @game = Game.new
+    @game.play(@p1_choice)
     erb :outcome
   end
 
