@@ -58,6 +58,19 @@ button:hover {
   display: flex;
   justify-content: center;
 }
+input[type=text] {
+  border-radius: 25px;
+  background-color: #fff;
+  border: 3px solid #21c0ff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 22px;
+  padding: 16px 24px;
+  width: 150px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
 img {
   display: block;
   margin-left: auto;

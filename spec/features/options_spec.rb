@@ -13,6 +13,5 @@ feature 'Choosing the button' do
     expect(page).to have_button 'Paper'
     expect(page).to have_button 'Scissors'
     click_button 'Rock'
-    # expect(click_button).to be_redirect
   end
 end

@@ -7,12 +7,22 @@ require_relative 'lib/player'
 class Game < Sinatra::Base
   
   get '/' do
-    # create player
+    # @player = params[:player_choice]
+    # @computer = params[:computer_choice]
     erb :index
   end
 
+  post '/name' do
+    #  name
+    redirect to '/game'
+  end
+
+  get '/game' do
+    #  name vs computer
+    erb :game
+  end
+
   post '/game' do
-    # erb :result
     redirect to '/result'
   end
 
