@@ -1,6 +1,13 @@
 Welcome, <%= @player_name %>
 <form action='/winner' method='post'>
-  <button type='submit'>ROCK!</button>
-  <button type='submit'>PAPER!</button>
-  <button type='submit'>SCISSORS!</button>
+  <button name='player_choice' type='submit'>ROCK!</button>
+  <input type="hidden" name="player_choice" value="rock" />
+  </form>
+<form action='/winner' method='post'>
+  <button name='player_choice' type='submit'>PAPER!</button>
+  <input type="hidden" name="player_choice" value="paper" />
+  </form>
+<form>
+  <button name='player_choice' type='submit'>SCISSORS!</button>
+  <input type="hidden" name="player_choice" value="scissors" />
   </form>
