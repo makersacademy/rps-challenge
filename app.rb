@@ -9,11 +9,17 @@ class MyApp < Sinatra::Base
 
   # our routes would go here
   get '/' do
-    "Hello World"
+    erb :index
   end
 
-  get '/secret' do
-    'This is a secret page'
+  post '/names' do
+    session[:player_1_name] = params[:player_1_name]
+    redirect to('/play')
+  end
+
+  get '/play' do
+    @player_1_name = session[:player_1_name]
+    erb :play
   end
 
   

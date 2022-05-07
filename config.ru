@@ -1,2 +1,2 @@
-require '/.app'
-run Myapp
+require_relative './app'
+run MyApp
