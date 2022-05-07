@@ -18,12 +18,12 @@ class RockPaperScissors < Sinatra::Base
     p params
     session[:player] = params[:player]
     $player = Player.new(params[:player])
-    erb :name
     redirect '/play'
   end
 
   get '/play' do
     @player_name = $player.name
+    #tried to get the welcome message into name... but no luck
     erb :play
   end
 
