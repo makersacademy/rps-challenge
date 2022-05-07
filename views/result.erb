@@ -1,12 +1,13 @@
-<% if ["rock", "paper", "scissors"].include?(@player_choice.downcase) %>
-<%= @name %> has choosen <%= @player_choice.downcase %>
+<% if ["rock", "paper", "scissors"].include?(@player_choice) %>
+<%= @name %> has choosen <%= @player_choice %>
 <br>
 Computer has choosen <%= @computer_choice %>
 <% else %>
 Please choose rock, paper or scissors
 <% end %>
 <br>
+<%= @decision %>
+<br>
 <form action="/play" >
   <input type="submit" value="Play again">
 </form>
-

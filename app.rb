@@ -1,13 +1,15 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player'
+require './lib/judge'
 
 class Game < Sinatra::Base
 
   enable :sessions
 
-  configure :development do
-    register Sinatra::Reloader
-  end
+  # configure :development do
+  #   register Sinatra::Reloader
+  # end
 
   get '/' do
     erb :index
@@ -25,7 +27,7 @@ class Game < Sinatra::Base
   end
 
   post '/player_choice' do
-    $player.player_choice(params[:choice])
+    $player.player_choice(params[:choice].downcase)
     $computer.computer_choice
     redirect '/result'
   end
@@ -33,6 +35,7 @@ class Game < Sinatra::Base
   get '/result' do
     @player_choice = $player.choice
     @computer_choice = $computer.choice
+    @decision = Judge.new.decision($player, $computer)
     @name = $player.name
     erb :result
   end
