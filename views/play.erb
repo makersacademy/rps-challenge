@@ -1,1 +1,19 @@
-<%= @p1_name %>
+<div>
+  <h1>Hi <%= @p1_name %></h1>
+</div>
+
+<div>
+  <h2>Choose one option</h2>
+</div>
+
+<div>
+  <form action='/choice' method='post'>
+    <input type='radio' id='rock' name='play' value='rock' checked>
+      <label for='rock'>Rock</label>
+    <input type='radio' id='paper' name='play' value='paper'>
+      <label for='paper'>Paper</label>
+    <input type='radio' id='scissors' name='play' value='scissors'>
+      <label for='sicssors'>Scissors</label>
+    <input type='submit' value='Play' >
+  </form>
+</div>
