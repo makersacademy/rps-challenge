@@ -1,17 +1,8 @@
 
-xfeature 'Choosing the button' do
-  scenario 'Check if page has the buttons' do
+feature 'Name' do
+  scenario 'submitting name' do
     visit('/')
-    expect(page).to have_button 'Rock'
-    expect(page).to have_button 'Paper'
-    expect(page).to have_button 'Scissors'
-  end
-
-  scenario 'rock' do
-    visit('/')
-    expect(page).to have_button 'Rock'
-    expect(page).to have_button 'Paper'
-    expect(page).to have_button 'Scissors'
-    click_button 'Rock'
+    fill_in :player, with: 'Slava'
+    expect(page).to have_button 'Submit'
   end
 end

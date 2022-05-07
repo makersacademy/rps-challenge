@@ -10,7 +10,7 @@ describe Computer do
     end
 
     it "returns random figure" do
-      expect(["rock", "paper", "scissors"]).to include(computer.computer_choice)
+      expect(["rock", "paper", "scissors"]).to include(computer.random_choice)
     end
   end
 

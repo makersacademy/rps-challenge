@@ -14,18 +14,18 @@
     <br />
     <br />
 
-    <p><%= @player.name %> vs. Computer</p>
+    <p><%= @play.player.name %> vs. Computer</p>
 
     <br />
     <h1>Please choose</h1>
 
     <form action="/game" method="post">
       <div class="action_btn">
-        <button type="submit" value="Rock">Rock</button>
+        <button name="player_choice" type="submit" value="rock">Rock</button>
         <div class="space"></div>
-        <button type="submit" value="Paper">Paper</button>
+        <button name="player_choice" type="submit" value="paper">Paper</button>
         <div class="space"></div>
-        <button type="submit" value="Scissors">Scissors</button>
+        <button name="player_choice" type="submit" value="scissors">Scissors</button>
       </div>
     </form>
   </body>

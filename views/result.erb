@@ -5,9 +5,9 @@
     <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
   </head>
 
-  <h2><%= @player.name %> chose: <%= @player_choice %></h2>
-  <h2>Computer chose: <%= @computer_choice %></h2>
-  <h2><%= @play %></h2>
+  <h2><%= @play.player.name %> chose: <%= @play.player.player_choice %></h2>
+  <h2>Computer chose: <%= @play.computer.computer_choice %></h2>
+  <h2><%= @play.compare %></h2>
 
   <br />
   <br />

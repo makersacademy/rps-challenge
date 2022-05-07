@@ -6,7 +6,7 @@ class Computer
     @computer_choice = computer_choice
   end
 
-  def computer_choice
+  def random_choice
     options = ["rock", "paper", "scissors"]
     @computer_choice = options.sample
   end

@@ -1,12 +1,12 @@
 
-xfeature 'Receiving the result' do
+feature 'Receiving the result' do
   scenario 'result' do
     visit('/')
+    fill_in :player, with: 'Slava'
+    click_button 'Submit'
     click_button 'Scissors'
-    expect(page).to have_content 'You chose: Scissors'
-    expect(page).to have_content 'Computer chose: Paper'
-    expect(page).to have_content 'You win! Scissors beats paper!'
-    click_button 'Play again'
-    click_button 'Finish game'
+    expect(page).to have_content 'Slava chose: scissors'
+    expect(page).to have_button 'Play again'
+    expect(page).to have_button 'Finish game'
   end
 end

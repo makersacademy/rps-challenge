@@ -13,7 +13,7 @@ describe Play do
         allow(player).to receive(:player_choice).and_return('rock')
         allow(play).to receive(:computer).and_return(computer)
         allow(computer).to receive(:computer_choice).and_return('scissors')
-        expect(play.compare).to eq "Computer choice is: scissors, you win! :)"
+        expect(play.compare).to eq "You win! :)"
       end
 
       it 'rock beats paper' do 
@@ -21,7 +21,7 @@ describe Play do
         allow(player).to receive(:player_choice).and_return('rock')
         allow(play).to receive(:computer).and_return(computer)
         allow(computer).to receive(:computer_choice).and_return('paper')
-        expect(play.compare).to eq "Computer choice is: paper, computer wins :("
+        expect(play.compare).to eq "Computer wins :("
       end
 
       it 'scissors beats rock' do 
@@ -29,7 +29,7 @@ describe Play do
         allow(player).to receive(:player_choice).and_return('scissors')
         allow(play).to receive(:computer).and_return(computer)
         allow(computer).to receive(:computer_choice).and_return('rock')
-        expect(play.compare).to eq "Computer choice is: rock, computer wins :("
+        expect(play.compare).to eq "Computer wins :("
       end
     end
 

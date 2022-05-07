@@ -20,19 +20,19 @@ class Game < Sinatra::Base
   end
 
   get '/game' do
-    @player = session[:player]
-    @computer = session[:computer]
+    @play = session[:play]
     erb :game
   end
 
   post '/game' do
-    
+    @play = session[:play]
+    @play.player.player_choice = params[:player_choice]
+    @play.computer.random_choice
     redirect to '/result'
   end
 
   get '/result' do
-    @player = session[:player]
-    @computer = session[:computer]
+    @play = session[:play]
     erb :result
   end
 
