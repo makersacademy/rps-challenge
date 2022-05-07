@@ -13,7 +13,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/named' do
-    $player_1_name = params[:player_1_name]
+    $player_1_name = Player.new(params[:player_1_name])
     redirect '/play'
   end
 
