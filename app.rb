@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+# couldn't get relative path to work for this. need to find cause
+require '/Users/jimmylyons/Documents/Programming/Makers/Projects/week3/rps-challenge/lib/game.rb'
 
 class Online_Game < Sinatra::Base
   configure :development do
@@ -25,6 +27,9 @@ class Online_Game < Sinatra::Base
   end
 
   get '/result' do
+    game = Game.new('$player_choice')
+    @result = game.return_winner
+    $computer_choice
     erb :result
   end
 

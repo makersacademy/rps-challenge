@@ -6,7 +6,7 @@ class Game
   end
 
   def computer_action
-    @computer_action = random_choice
+    $computer_choice = random_choice
   end
 
   def random_choice
@@ -14,15 +14,15 @@ class Game
   end
 
   def return_winner
-    computer_action
+    computer_actioncs
     winning_choice = @pairs[@player_action.to_sym]
-    if @computer_action == winning_choice
+    if $computer_choice == winning_choice
       'Computer Wins!'
-    elsif @computer_action == @player_action
+    elsif $computer_choice == @player_action
       'Draw'
     else
       'Player Wins!'
     end
   end
-  
+
 end
