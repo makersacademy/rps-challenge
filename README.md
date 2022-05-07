@@ -1,4 +1,8 @@
-# RPS Challenge
+# RPS Challenge - Tom Solution
+
+## Instructions - 
+
+
 
 Instructions
 -------
