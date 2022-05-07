@@ -6,15 +6,30 @@ Capybara.app = RockPaperScissors
 feature 'allows player to play a game of RockPaperScissors' do
   scenario 'the player can choose from three buttons' do
     sign_in_and_play
-    expect(page).to have_button('ROCK!')
-    expect(page).to have_button('PAPER!')
-    expect(page).to have_button('SCISSORS!')
+    expect(page).to have_xpath('/html/body/form[1]/input[1]')
+    expect(page).to have_xpath('/html/body/form[2]/input[1]')
+    expect(page).to have_xpath('/html/body/div/form/input[1]')
   end
+  #the above is a workaround because I can't seem to check for a link
+  #in the same way I was able to check for a button before I turned them
+  #into images... not sure how good it is though because you need to know
+  #the xpath before writing the tests...
 
   scenario 'clicking a button takes the player to the winner page' do
     sign_in_and_play
-    click_button('ROCK!')
+    click_on(id='rock')
     expect(current_path).to eq '/battle'
   end
+
+
+  #functionality to add:
+  #takes player back to homescreen by clicking on a button
+  #taunts the player if they lose
+  #congratulates the player if they win
+  #displays an image to accompany a win or a loss
+  #credit unsplash photographers
+  #crop scissors image, if possible
+
+
 
 end
