@@ -1,0 +1,19 @@
+<h2> <%= @rps.player1.name %> vs <%= @rps.player2.name %> </h2>
+
+<h4> Please make your move! </h4>
+
+<label for="Rock">
+  <form action="/solo-choice" method="post">
+    <input type="submit" name="selection" value="Rock">
+  </form>
+</label>
+<label for="Paper">
+  <form action="/solo-choice" method="post">
+    <input type="submit" name="selection" value="Paper">
+  </form>
+</label>
+<label for="Scissors">
+  <form action="/solo-choice" method="post">
+    <input type="submit" name="selection" value="Scissors">
+  </form>
+</label>

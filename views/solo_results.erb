@@ -1,0 +1,20 @@
+<strong><%= @rps.player1.name %></strong>, you selected <em><%= @rps.player1.move %></em>
+<br> <br>
+<strong> The computer </strong> chose <em> <%= @rps.player2.move %> </em>
+<br> <br>
+<% if @rps.check_winner_or_draw == :player1 %>
+<h4><strong> <%= @rps.player1.name %> wins! </strong> </h4>
+<% elsif @rps.check_winner_or_draw == :player2 %>
+<h4><strong> <%= @rps.player2.name %> wins! </strong> </h4>
+<% else %>
+<h4><strong> Draw! </strong> </h4>
+<% end %>
+
+
+<form action="/solo-game-choice" method="get">
+  <input type="submit" value="Play another solo game">
+</form>
+
+<form action="/" method="get">
+  <input type="submit" value="Home">
+</form>

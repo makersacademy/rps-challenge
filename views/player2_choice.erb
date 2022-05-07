@@ -1,0 +1,19 @@
+<h2> <%= @game.player1.name %> vs <%= @game.player2.name %> </h2>
+
+<h4> <%= @game.player2.name %> it's now your turn. <%= @game.player1.name %>, no peeking! </h4>
+
+<label for="Rock">
+  <form action="/player2" method="post">
+    <input type="submit" name="selection" value="Rock">
+  </form>
+</label>
+<label for="Paper">
+  <form action="/player2" method="post">
+    <input type="submit" name="selection" value="Paper">
+  </form>
+</label>
+<label for="Scissors">
+  <form action="/player2" method="post">
+    <input type="submit" name="selection" value="Scissors">
+  </form>
+</label>
