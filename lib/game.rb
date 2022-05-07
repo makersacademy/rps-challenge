@@ -4,7 +4,7 @@ class Game
   def initialize(player, choice)
     @choice = choice
     @player = player
-    @computer_choice = ['rock', 'paper', 'scissors'].sample.upcase
+    @computer_choice = ['ROCK', 'PAPER', 'SCISSORS', 'SPOCK', 'LIZARD'].sample
   end
 
   def choice
@@ -14,27 +14,43 @@ class Game
   
   def won?
     if self.play == "PLAYER WINS"
-      return self.player + ' wins.'
+     self.player + ' wins.'
     elsif self.play == "CPU WINS"
-      return 'CPU wins.'
+     'CPU wins.'
     elsif self.play == "DRAW"
-      return "It's a draw."
+     "It's a draw."
     end
   end
 
   def play
     case
     when (self.choice == 'ROCK' && self.computer_choice == 'SCISSORS') || 
+         (self.choice == 'ROCK' && self.computer_choice == 'LIZARD') || 
+         (self.choice == 'PAPER' && self.computer_choice == 'SPOCK') || 
+         (self.choice == 'PAPER' && self.computer_choice == 'ROCK') ||
          (self.choice == 'SCISSORS' && self.computer_choice == 'PAPER') || 
-         (self.choice == 'PAPER' && self.computer_choice == 'ROCK')
+         (self.choice == 'SCISSORS' && self.computer_choice == 'LIZARD') ||
+         (self.choice == 'SPOCK' && self.computer_choice == 'SCISSORS') || 
+         (self.choice == 'SPOCK' && self.computer_choice == 'ROCK') ||
+         (self.choice == 'LIZARD' && self.computer_choice == 'SPOCK') || 
+         (self.choice == 'LIZARD' && self.computer_choice == 'PAPER')
      "PLAYER WINS"
-    when (self.choice == 'SCISSORS' && self.computer_choice == 'ROCK') ||
-         (self.choice == 'PAPER' && self.computer_choice == 'SCISSORS') ||
-         (self.choice == 'ROCK' && self.computer_choice == 'PAPER')
+    when (self.computer_choice == 'ROCK' && self.choice == 'SCISSORS') || 
+         (self.computer_choice == 'ROCK' && self.choice == 'LIZARD') || 
+         (self.computer_choice == 'PAPER' && self.choice == 'SPOCK') || 
+         (self.computer_choice == 'PAPER' && self.choice == 'ROCK') ||
+         (self.computer_choice == 'SCISSORS' && self.choice == 'PAPER') || 
+         (self.computer_choice == 'SCISSORS' && self.choice == 'LIZARD') ||
+         (self.computer_choice == 'SPOCK' && self.choice == 'SCISSORS') || 
+         (self.computer_choice == 'SPOCK' && self.choice == 'ROCK') ||
+         (self.computer_choice == 'LIZARD' && self.choice == 'SPOCK') || 
+         (self.computer_choice == 'LIZARD' && self.choice == 'PAPER')
      "CPU WINS"
-    when (self.choice == 'SCISSORS' && self.computer_choice == 'SCISSORS') ||
-         (self.choice == 'ROCK' && self.computer_choice == 'ROCK') ||
-         (self.choice == 'PAPER' && self.computer_choice == 'PAPER')
+    when (self.choice == 'ROCK' && self.computer_choice == 'ROCK') ||
+         (self.choice == 'PAPER' && self.computer_choice == 'PAPER') ||
+         (self.choice == 'SCISSORS' && self.computer_choice == 'SCISSORS') ||
+         (self.choice == 'SPOCK' && self.computer_choice == 'SPOCK') ||
+         (self.choice == 'LIZARD' && self.computer_choice == 'LIZARD')
      "DRAW"
    end 
   end
