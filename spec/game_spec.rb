@@ -15,7 +15,7 @@ describe Game do
     expect(game.player).to eq 'Dusty'
   end
   it 'returns win state' do 
-    expect(game.won?).to be_in([true, false])
+    expect(game.won?).to be_truthy
   end
 
 end

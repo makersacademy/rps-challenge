@@ -1,8 +1,11 @@
-<form action="/named">
-<%= @game.player%>: '<%= @game.choice%>!'
+<form action="/">
+<%= @game.player%>: '<%= @game.choice %>!'
 <br/>
 <br/>
 CPU: '<%= @game.computer_choice%>!'
+<br/>
+<br/>
+<%= @game.won?%>
 <br/>
 <br/>
 

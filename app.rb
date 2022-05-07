@@ -28,7 +28,13 @@ class RockPaperScissors < Sinatra::Base
     @player_choice = params[:choice]
     $game = Game.new(session[:player_1_name], @player_choice)
     @game = $game
+    p @game.choice
+    p @game.computer_choice
+    p @game.won?
+    p @game.play
     erb :result
   end
+
+
   run! if app_file == $0
 end
