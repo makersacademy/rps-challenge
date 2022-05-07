@@ -19,7 +19,6 @@ feature 'allows player to enter their name' do
     sign_in_and_play
     expect(current_path).to eq('/play')
     expect(page).to have_content('Alien')
-    #time to build model
   end
 
 end
