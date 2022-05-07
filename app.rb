@@ -19,5 +19,14 @@ class Online_Game < Sinatra::Base
     erb :play
   end
 
+  post '/choice' do
+    $player_choice = params[:choice]
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
+  end
+
   run! if app_file == $0
 end

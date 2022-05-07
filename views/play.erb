@@ -1,1 +1,11 @@
 <h1>Pick an action <%=$player_name%>:</h1>
+
+<form action='/choice' method='post'>
+  <input type="radio" id="rock" name="choice" value="Rock">
+  <label for="rock">Rock</label><br>
+  <input type="radio" id="paper" name="choice" value="Paper">
+  <label for="paper">Paper</label><br>
+  <input type="radio" id="scissors" name="choice" value="Scissors">
+  <label for="scissors">Scissors</label>
+  <input type='submit' value='Submit'>
+</form>
