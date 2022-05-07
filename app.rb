@@ -15,7 +15,6 @@ class Game < Sinatra::Base
     session[:player] = Player.new(params[:player])
     session[:computer] = Computer.new
     session[:play] = Play.new(session[:player], session[:computer])
-    p session[:play]
     redirect to '/game'
   end
 

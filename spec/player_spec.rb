@@ -22,4 +22,5 @@ describe Player do
       expect(subject.player_choice).to eq 'paper'
     end
   end
+  
 end

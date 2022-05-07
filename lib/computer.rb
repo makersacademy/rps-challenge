@@ -1,5 +1,4 @@
 class Computer
-  
   attr_reader :computer_choice
 
   def initialize
@@ -10,5 +9,4 @@ class Computer
     options = ["rock", "paper", "scissors"]
     @computer_choice = options.sample
   end
-
 end

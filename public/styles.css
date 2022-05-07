@@ -1,7 +1,4 @@
 
-body {
-  font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
-}
 section {
   margin: 120px 0;
 }
@@ -12,6 +9,7 @@ h1 {
   font-weight: 900;
   text-align: center;
   margin: 10px;
+  font-family: PT Mono, monospace;
 }
 h2 {
   line-height: 48px;
@@ -20,10 +18,10 @@ h2 {
   color: #272044;
   padding: 70 0 50px;
   margin: 500 px;
-  /* font-weight: 900; */
+  font-family: PT Mono, monospace;
 }
 p {
-  font-size: 18px;
+  font-size: 28px;
   line-height: 28px;
   font-family: PT Mono, monospace;
   text-align: center;
@@ -41,6 +39,7 @@ button {
   padding: 16px 24px;
   text-decoration: none;
   transition: all 200ms ease;
+  font-family: PT Mono, monospace;
 }
 button:hover {
   color: #fff;
