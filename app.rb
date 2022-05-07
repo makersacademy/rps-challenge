@@ -7,9 +7,12 @@ class Game < Sinatra::Base
   end
 
   get '/' do
+    erb :index
+  end
 
-    "Hello Battle!"
-
+  post '/play' do
+    @name = params[:player_name]
+    erb :play
   end
 
   run! if app_file == $0
