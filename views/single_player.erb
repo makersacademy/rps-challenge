@@ -1,0 +1,9 @@
+<h1><%= @player_1_name %> vs. <%= @computer_name %>    </h1>
+
+<p>Please choose an option</p>
+
+<form action="/calculate_results" method="post">
+  <button class= "selection" type="submit" value = "rock" name="choice"><img src='rock.png' alt="Rock" width="300" height="500" ></button>
+  <button class= "selection" type="submit" value = "paper" name="choice"><img src='paper.png' alt="Paper" width="300" height="500" ></button>
+  <button class= "selection" type="submit" value = "scissors" name="choice"><img src='scissors.png' alt="Scissors" width="300" height="500" ></button>
+</form>

@@ -1,0 +1,19 @@
+<h1> The results are in... </h1>
+
+<% if @result == true %>
+
+<%= @player_1_name %> wins, contratulations
+
+<% end %>
+
+<% if @result == false %>
+
+<%= @player_1_name %> loses, unlucky
+
+<% end %>
+
+<% if @result == nil %>
+
+It's a draw
+
+<% end %>
