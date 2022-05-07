@@ -12,6 +12,8 @@ class MyApp < Sinatra::Base
     erb :index
   end
 
+  enable :sessions
+
   post '/names' do
     session[:player_1_name] = params[:player_1_name]
     redirect to('/play')

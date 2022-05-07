@@ -1,5 +1,3 @@
-require 'capybara'
-require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
@@ -20,7 +18,7 @@ require 'capybara/rspec'
 require 'rspec'
 
 # tell Capybara about our app class
-Capybara.app = Battle
+Capybara.app = MyApp
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
