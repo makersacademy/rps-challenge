@@ -22,5 +22,16 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/result' do
+    @game = $game
+    @game.turn.throw(params[:throw])
+    # p params[:throw]
+    # p @game.turn.name
+    # p @game.turn.action
+    @game.calculate_outcome
+    @game.switch_turns
+    redirect '/play'
+  end
+
   run! if app_file == $0
 end
