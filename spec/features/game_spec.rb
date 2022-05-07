@@ -21,6 +21,20 @@ describe Game do
         expect(game.return_winner).to eq 'Draw'
       end
     end
+
+    context 'when player picks rock and computer picks paper' do
+      it 'returns that computer has won' do
+        allow(game).to receive(:random_choice).and_return('paper')
+        expect(game.return_winner).to eq 'Computer Wins!'
+      end
+    end
+
+    context 'when player picks rock and computer picks scissors' do
+      it 'returns that player has won' do
+        allow(game).to receive(:random_choice).and_return('scissors')
+        expect(game.return_winner).to eq 'Player Wins!'
+      end
+    end
   end
 
 end
