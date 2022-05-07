@@ -14,23 +14,26 @@ class Game < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:player_name]
+    $player = Player.new(params[:player_name])
+    $computer = Player.new
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:name]
+    @name = $player.name
     erb :play
   end
 
   post '/player_choice' do
-    session[:player_choice] = params[:choice]
+    $player.player_choice(params[:choice])
+    $computer.computer_choice
     redirect '/result'
   end
 
   get '/result' do
-    @choice = session[:player_choice]
-    @name = session[:name]
+    @player_choice = $player.choice
+    @computer_choice = $computer.choice
+    @name = $player.name
     erb :result
   end
 
