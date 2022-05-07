@@ -27,23 +27,18 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/winner' do
-    player_name = $player.name
-    @player_name = $player.name
-    player = Player.new(player_name)
-    @weapon = player.select_weapon(params[:player_choice])
-    weapon = @weapon
-    game = Game.new(weapon)
+  post '/battle' do
+    @player = $player
+    @player_weapon = @player.select_weapon(params[:player_choice])
+    game = Game.new(@player_weapon)
     @message = game.engine
-    # @game.result
-    # @weapon = params[:player_choice]
-    erb :winner
+    @computer_weapon = game.computer_weapon
+    erb :battle
   end
 
-  #run the model in the controller. Take args such as computer (contained in model)
+  # run the model in the controller. Take args such as computer (contained in model)
   # player choice (a param), and use them with the if/else statement in the engine
-  #to return a winner which can be interpolated in the view
-
+  # to return a winner which can be interpolated in the view
 
 # Start the server if this file is executed directly (don't change the line below)
   run! if app_file == $0

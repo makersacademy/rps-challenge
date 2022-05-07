@@ -14,7 +14,7 @@ feature 'allows player to play a game of RockPaperScissors' do
   scenario 'clicking a button takes the player to the winner page' do
     sign_in_and_play
     click_button('ROCK!')
-    expect(current_path).to eq '/winner'
+    expect(current_path).to eq '/battle'
   end
 
 end
