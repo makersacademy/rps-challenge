@@ -5,7 +5,7 @@
     <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
   </head>
 
-  <h2><%= @name %> chose: <%= @player_choice %></h2>
+  <h2><%= @player.name %> chose: <%= @player_choice %></h2>
   <h2>Computer chose: <%= @computer_choice %></h2>
   <h2><%= @play %></h2>
 
@@ -23,7 +23,7 @@
 
   <form action="/">
     <div class="action_btn1">
-      <button name="submit" class="action_btn" type="submit" value="New game">New game</button>
+      <button name="submit" class="action_btn" type="submit" value="Finish game">Finish game</button>
     </div>
   </form>
 

@@ -4,7 +4,7 @@ class Play
 
   def initialize(player, computer)
     @player = player
-    @computer = player
+    @computer = computer
   end
 
   def compare

@@ -3,7 +3,6 @@ require 'player'
 describe Player do
 
   subject(:slava) {Player.new('Slava') }
-  let(:player_choice) { double :player_choice }
 
   describe '#name' do
     it 'returns the name' do
@@ -17,10 +16,10 @@ describe Player do
     end
   end
 
-  describe '#set_choice' do
-    it 'setting the player choice' do
-      expect(player_choice).to receive(:compare)
+  describe 'setting player choice' do
+    it 'sets paper as player choice' do
+      subject.player_choice = 'paper'
+      expect(subject.player_choice).to eq 'paper'
     end
   end
-
 end

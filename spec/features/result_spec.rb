@@ -7,5 +7,6 @@ xfeature 'Receiving the result' do
     expect(page).to have_content 'Computer chose: Paper'
     expect(page).to have_content 'You win! Scissors beats paper!'
     click_button 'Play again'
+    click_button 'Finish game'
   end
 end

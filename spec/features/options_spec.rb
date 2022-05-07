@@ -1,5 +1,5 @@
 
-feature 'Choosing the button' do
+xfeature 'Choosing the button' do
   scenario 'Check if page has the buttons' do
     visit('/')
     expect(page).to have_button 'Rock'

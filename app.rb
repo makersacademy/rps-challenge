@@ -5,29 +5,36 @@ require_relative 'lib/play'
 require_relative 'lib/player'
 
 class Game < Sinatra::Base
-  
+  enable :sessions
+
   get '/' do
-    # @player = params[:player_choice]
-    # @computer = params[:computer_choice]
     erb :index
   end
-
+  
   post '/name' do
-    #  name
+    session[:player] = Player.new(params[:player])
+    session[:computer] = Computer.new
+    session[:play] = Play.new(session[:player], session[:computer])
+    p session[:play]
     redirect to '/game'
   end
 
   get '/game' do
-    #  name vs computer
+    @player = session[:player]
+    @computer = session[:computer]
     erb :game
   end
 
   post '/game' do
+    
     redirect to '/result'
   end
 
   get '/result' do
+    @player = session[:player]
+    @computer = session[:computer]
     erb :result
   end
 
+  run! if app_file == $0
 end

@@ -1,15 +1,10 @@
 class Player
 
-  attr_reader :player_choice, :name
+  attr_accessor :player_choice
+  attr_reader :name
 
-  def initialize
+  def initialize(name)
     @name = name
-    @player_choice = player_choice
   end
-
-  def set_choice
-    @player_choice.compare
-  end
-
 
 end
