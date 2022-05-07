@@ -22,14 +22,13 @@ class Online_Game < Sinatra::Base
   end
 
   post '/choice' do
-    $player_choice = params[:choice]
+    $player_choice = params[:choice].downcase
     redirect '/result'
   end
 
   get '/result' do
-    game = Game.new('$player_choice')
+    game = Game.new($player_choice)
     @result = game.return_winner
-    $computer_choice
     erb :result
   end
 

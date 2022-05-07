@@ -1,4 +1,6 @@
 class Game
+  attr_reader :computer_choice
+  
   def initialize(choice)
     @player_action = choice
     @options = ['rock', 'paper', 'scissors']
@@ -14,7 +16,7 @@ class Game
   end
 
   def return_winner
-    computer_actioncs
+    computer_action
     winning_choice = @pairs[@player_action.to_sym]
     if $computer_choice == winning_choice
       'Computer Wins!'

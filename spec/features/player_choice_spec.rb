@@ -3,6 +3,6 @@ feature 'Player choice' do
     sign_in_and_submit_name
     page.choose('rock')
     click_button 'Submit'
-    expect(page).to have_content 'Jimmy picked Rock'
+    expect(page).to have_content 'Jimmy picked rock'
   end
 end
