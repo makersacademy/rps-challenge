@@ -13,7 +13,8 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    p @player_name = params[:player_name]
+    @player_name = params[:player_name]
+    erb :play
   end
 
 
