@@ -28,9 +28,4 @@ class Game
       "You did not choose wisely."
     end
   end
-
-  #replace the strings with a method, either winning_message or losing_message
-  #each will run sample on an array of three messages
-  #or use the phrases to suggest another go
-
 end

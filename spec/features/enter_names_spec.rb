@@ -11,12 +11,12 @@ feature 'allows player to enter their name' do
   end
 
   scenario 'player is taken to a new page to start the game' do
-    sign_in_and_play
+    sign_in
     expect(current_path).to eq('/play')
   end
 
   scenario 'player can see their name on the play page' do
-    sign_in_and_play
+    sign_in
     expect(current_path).to eq('/play')
     expect(page).to have_content('Alien')
   end
