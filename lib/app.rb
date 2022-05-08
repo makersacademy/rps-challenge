@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative 'rps_logic'
 
 class RockPaperScissors < Sinatra::Base
   
@@ -24,6 +25,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/choices" do
+    rps = RpsLogic.new(params[:user_choice])
+    @result = rps.calculate
+    @computer_choice = rps.computer_choice
+    erb :choices
   end
   run! if app_file == $0
 end
