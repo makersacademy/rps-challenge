@@ -46,8 +46,8 @@ describe Game do
 
   describe '#calculate_outcome' do
     context 'when both players have set an action' do
-      let(:player_1) { instance_double("Player", action: :rock, increase_score: true) }
-      let(:player_2) { instance_double("Player", action: :scissors) }
+      let(:player_1) { instance_double("Player", action: :rock, thrown_action?: true, increase_score: true) }
+      let(:player_2) { instance_double("Player", action: :scissors, thrown_action?: true) }
       let(:round) { instance_double("Round", set_winner: player_1, set_looser: player_2, set_outcome: 'smashes', winner: player_1) }
       subject(:game) { Game.new(player_1, player_2, round) }
 
