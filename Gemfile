@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby '3.0.2'
 
 gem 'sinatra'
-gem 'sinatra-contrib'
 
 group :test do
   gem 'capybara'
@@ -12,7 +11,7 @@ group :test do
   gem 'simplecov-console', require: false
 end
 
-group :development, :test do
+group :development, :test, :deployment do
   gem 'webrick'
   gem 'sinatra-contrib'
   gem 'rack'
