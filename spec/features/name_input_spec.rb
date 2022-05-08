@@ -16,4 +16,3 @@ feature "Enter name on Homepage" do
     expect(page).to have_content "Kendrick"
   end
 end
-
