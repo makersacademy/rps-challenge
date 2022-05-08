@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name='viewport' content='widht=devide-width,initial-scale=1'>
+    <link href='/style.css' rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <div class='main-cont outcome'>
+      <h3>You picked <span><%= @p1_choice %></span></h3>
+      <h3>Computer picked <span><%= @game.computer_picked %></span></h3>
+      <h3><%= @game.outcome %></h3>
+      <button><a href='/play'>Play Again</a></button>
+      <br>
+      <button><a href='/'>Finish Game</a></button>
+    </div>
+  </body>
+
+</htmL>
