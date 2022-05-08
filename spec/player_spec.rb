@@ -5,4 +5,7 @@ describe Player do
   it "should return player's name" do
     expect(player.name).to eq('Clodius')
   end
+
+  xit 'allows a player to choose a weapon' do
+  end
 end

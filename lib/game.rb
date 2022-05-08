@@ -15,18 +15,22 @@ class Game
     if @player_weapon == @computer_weapon
       "draw"
     elsif @player_weapon == :rock && @computer_weapon == :scissors
-      "player wins"
+      "You win."
     elsif @player_weapon == :rock && @computer_weapon == :paper
-      "computer wins"
+      "Computer wins."
     elsif @player_weapon == :scissors && @computer_weapon == :paper
-      "player wins"
+      "You win."
     elsif @player_weapon == :scissors && @computer_weapon == :rock
-      "computer wins"
+      "Computer wins."
     elsif @player_weapon == :paper && @computer_weapon == :rock
-      "player wins"
+      "You win."
     elsif @player_weapon == :paper && @computer_weapon == :scissors
-      "computer wins"
+      "Computer wins."
     end
   end
-  
+
+  #replace the strings with a method, either winning_message or losing_message
+  #each will run sample on an array of three messages
+  #or use the phrases to suggest another go
+
 end

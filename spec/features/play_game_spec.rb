@@ -15,6 +15,13 @@ feature 'allows player to play a game of RockPaperScissors' do
   #into images... not sure how good it is though because you need to know
   #the xpath before writing the tests...
 
+  # scenario 'a player can return to the play screen to have another go' do
+  #   sign_in_and_play
+  #   click_on(id='rock')
+  #   expect(page).to have_button('try again')
+  # end
+
+
   scenario 'clicking a button takes the player to the winner page' do
     sign_in_and_play
     click_on(id='rock')
