@@ -11,7 +11,7 @@ require 'rspec'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-#require 'features/web_helpers'
+require 'features/web_helpers'
 
 # Tell Capybara to talk to RPSGame
 Capybara.app = RPSGame
