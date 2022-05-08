@@ -1,12 +1,9 @@
 class Game
-  attr_reader :outcome
+  attr_reader :outcome, :computer_picked
 
   def initialize
     @outcome = nil
-  end
-
-  def computer_picked
-    @random_option = OPTIONS.sample
+    @computer_picked = random_pick
   end
 
   def play(choice)
@@ -27,5 +24,9 @@ class Game
   private
 
   OPTIONS = ['rock', 'paper', 'scissors']
+
+  def random_pick
+    OPTIONS.sample
+  end
 
 end
