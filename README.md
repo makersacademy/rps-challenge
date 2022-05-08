@@ -15,6 +15,35 @@ Play Rock, Paper, Scissors against a Robot and find out who will win.
 * Find out the results.
 * Hit Play again?
 
+-------
+
+Planning
+
+----------------------------  ----------------------------  
+| Rock / Paper / Scissors  |  | Rock / Paper / Scissors  |
+|                          |  |                          |
+|     Player vs Robot      |  |   Submit name to play    |
+|      _____________       |  |               ______     |
+|     |Single Player|      |  |   _________  |Submit|    |
+|      -------------       |  |               ------     |
+|                          |  |                          |
+|                          |  |                          |
+|                          |  |                          |
+----------------------------  ---------------------------- 
+              1                           2
+----------------------------  ----------------------------
+| Rock / Paper / Scissors  |  | Rock / Paper / Scissors  |  
+|                          |  |                          |
+|    Russell vs. Robot     |  |    Russell vs. Robot     |
+|                          |  |                          |
+| Choose                   |  | The results are: You win.|
+| |Rock|                   |  |                          |
+|                          |  |      ____________        |
+| |Paper|                  |  |      |Play again?|       |
+|                          |  |      ------------        |
+| |Scissors|               |  |                          |
+----------------------------  ---------------------------- 
+            3                              4
 Task
 
 ----
