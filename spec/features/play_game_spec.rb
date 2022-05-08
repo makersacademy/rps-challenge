@@ -15,11 +15,11 @@ feature 'allows player to play a game of RockPaperScissors' do
   #into images... not sure how good it is though because you need to know
   #the xpath before writing the tests...
 
-  # scenario 'a player can return to the play screen to have another go' do
-  #   sign_in_and_play
-  #   click_on(id='rock')
-  #   expect(page).to have_button('try again')
-  # end
+  scenario 'a player can return to the play screen to have another go' do
+    sign_in_and_play
+    click_on(id='rock')
+    expect(page).to have_button('Have another go?')
+  end
 
 
   scenario 'clicking a button takes the player to the winner page' do
@@ -32,21 +32,21 @@ feature 'allows player to play a game of RockPaperScissors' do
     allow_any_instance_of(Computer).to receive(:weapon).and_return(:scissors)
     sign_in_and_play
     click_on(id='rock')
-    expect(page).to have_content "player wins"
+    expect(page).to have_content "You chose wisely."
   end
 
   scenario 'paper beats rock' do
     allow_any_instance_of(Computer).to receive(:weapon).and_return(:paper)
     sign_in_and_play
     click_on(id='rock')
-    expect(page).to have_content "computer wins"
+    expect(page).to have_content "You did not choose wisely."
   end
 
   scenario 'scissors beats paper' do
     allow_any_instance_of(Computer).to receive(:weapon).and_return(:paper)
     sign_in_and_play
     click_on(id='scissors')
-    expect(page).to have_content "player wins"
+    expect(page).to have_content "You chose wisely."
   end
 
 #why no need for srand here in the stubs above?
@@ -58,9 +58,9 @@ feature 'allows player to play a game of RockPaperScissors' do
 
 
   #functionality to add:
-  #takes player back to homescreen by clicking on a button
-  #taunts the player if they lose
-  #congratulates the player if they win
+
+
+
   #I'd like to route to a different image depending on the result
   #but that seems like too much for now...
   #credit unsplash photographers

@@ -21,10 +21,23 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
+  post '/name_play_again' do
+    p params
+    session[:player] = params[:player]
+    $player = Player.new(params[:player])
+    redirect '/play_again'
+  end
+
   get '/play' do
     @player_name = $player.name
     #tried to get the welcome message into name... but no luck
     erb :play
+  end
+
+  get '/play_again' do
+    @player_name = $player.name
+    #tried to get the welcome message into name... but no luck
+    erb :play_again
   end
 
   post '/battle' do

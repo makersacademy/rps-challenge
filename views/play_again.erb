@@ -1,8 +1,9 @@
 <html>
 <head>
 <style>
-h1 {text-align: center; font-family: arial; margin: 0}
-h2 {text-align: center; font-family: arial;}
+h1 {text-align: center; font-family: arial}
+h2 {text-align: center; font-family: arial}
+h3 {text-align: center; font-family: arial}
 div {text-align: center;}
 form {text-align: center;}
 form:hover {opacity: 0.7;}
@@ -10,8 +11,9 @@ form:hover {opacity: 0.7;}
 </head>
 <body>
 
-<h1>Welcome, <%= @player_name %></h1><br>
-<h2>Choose wisely.</h2>
+<h3>Insanity is doing the same thing over and over again and expecting a different result.</h3>
+<h3>Except when it comes to rock, paper, scissors.</h3>
+<h3>Choose wisely.</h3>
 <form action='/battle' method='post'>
   <input type='image' src='https://source.unsplash.com/QxjEi8Fs9Hg' width='400'
   border='2' name='player_choice' type='submit' id='rock'></>

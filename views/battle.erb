@@ -3,7 +3,7 @@
   <!-- margin: 0 auto; -->
   text-align: center;
   width: 100vw;
-  background-image: url("https://source.unsplash.com/V3DokM1NQcs");
+  background-image: url("https://source.unsplash.com/h4elZPxUXLU");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100vw;
@@ -16,5 +16,7 @@ text-align: center;}
 <h1>You chose <%= @player_weapon %>...<br></h1>
 <h1>Computer chose <%= @computer_weapon %>...<br><h1>
 <h1><%= @message %><h1>
-
+<form action='/name_play_again' method='post'>
+  <button type="submit" style="padding: 5px 10px">Have another go?</button>
+</form>
 </body>

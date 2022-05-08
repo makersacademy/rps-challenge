@@ -15,17 +15,17 @@ class Game
     if @player_weapon == @computer_weapon
       "draw"
     elsif @player_weapon == :rock && @computer_weapon == :scissors
-      "You win."
+      "You chose wisely."
     elsif @player_weapon == :rock && @computer_weapon == :paper
-      "Computer wins."
+      "You did not choose wisely."
     elsif @player_weapon == :scissors && @computer_weapon == :paper
-      "You win."
+      "You chose wisely."
     elsif @player_weapon == :scissors && @computer_weapon == :rock
-      "Computer wins."
+      "You did not choose wisely."
     elsif @player_weapon == :paper && @computer_weapon == :rock
-      "You win."
+      "You chose wisely."
     elsif @player_weapon == :paper && @computer_weapon == :scissors
-      "Computer wins."
+      "You did not choose wisely."
     end
   end
 
