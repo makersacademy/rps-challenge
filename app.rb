@@ -4,6 +4,7 @@ require './lib/player'
 require './lib/game'
 
 class Rps < Sinatra::Base
+
   configure :development do
     register Sinatra::Reloader
   end
@@ -15,7 +16,6 @@ class Rps < Sinatra::Base
   enable :sessions
 
   post '/names' do
-    
     $game = Game.new(Player.new(params[:player]))
     redirect to('/play')
   end
@@ -48,4 +48,5 @@ class Rps < Sinatra::Base
   end
   
   run! if app_file == $0
+  
 end

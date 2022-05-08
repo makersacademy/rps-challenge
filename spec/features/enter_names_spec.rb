@@ -15,4 +15,5 @@ feature "Enter names" do
     expect(page).to have_content("Please enter your name to start:")
     expect(page).to have_button("Let's play!")
   end 
+  
 end

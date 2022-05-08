@@ -1,6 +1,6 @@
 class Game
   
-  attr_reader :player, :win, :message
+  attr_reader :player, :win
 
   def initialize(player)
     @player = player

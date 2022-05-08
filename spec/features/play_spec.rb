@@ -11,4 +11,5 @@ feature "play" do
     expect(page).to have_button("Paper")
     expect(page).to have_button("Scissors")
   end 
+  
 end

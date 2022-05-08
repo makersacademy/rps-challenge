@@ -1,17 +1,23 @@
-# RPS Challenge
+# Rock, Paper, Scissors Challenge
 
-Instructions
+## Instructions to install and play the game
 -------
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+* Clone this repo in your desired directory by doing the following in the terminal: 
+```
+git clone https://github.com/Farzan-I/rps-challenge.git
+```
+* Run _bundle_ to install all the gemfiles 
+* Run _rackup_ in the directory, then go to your desired browser and enter:
+```
+localhost:9292
+```
+* Enter your name, click on "Let's play!" and play until your heart desires!
 
-Task
-----
+<br>
 
-Knowing how to build web applications is getting us almost there as web developers!
+## Task
+------
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -36,22 +42,18 @@ Hints on functionality
 - a winner will be declared
 
 
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
 [You may find this guide to setting up a new Ruby web project helpful.](https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md)
 
-## Bonus level 1: Multiplayer
+## Bonus level 1: Multiplayer - **_Did not complete_**
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard - **_Did not complete_**
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
 ## Basic Rules
+-----
 
 - Rock beats Scissors
 - Scissors beats Paper
@@ -65,22 +67,21 @@ In code review we'll be hoping to see:
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
 
-Notes on test coverage
-----------------------
+## Conclusion
+-----
+* I managed to make several files to be able to incorporate the classes and the tests that I needed
+* These were split into features and unit test folders as well as a 'lib' folder to have all the game class as well as the player class
+* The 'app.rb' file that has the specifications for the game is present in the parent folder to incorporate all of the spec and lib folder files in order to run the game
+* I had difficulty trying to apply a gradient background on the home page and therefore made it a simple, slick white background
+* I did however make the play page a gradient background and didn't apply an image
+* I managed to make a button on the home page that is required to be filled in (name) in order for the player to access the battleground and select their weapon for Rock, Paper, Scissors
+* On the play page, the buttons for the weapons I customised and would have preferred to have had more time to make them look slicker
+* A message was given for when the player won, drew or lost to the computer - I would have tried to incorporate javascript to make the messages more dynamic and eye catching
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+## Improvements if not on a time constraint
+-----
+* Make the home page more eye catchy
+* Allow the user to have a better experience i.e. see a better win/loss/draw message by using javascript and maybe CSS
+* Make the buttons more appealing and less like 1990's/2000's style by using capybara properly and javascript with CSS
+* Make the game two player by allowing two players to entrer their names on the home page and also select their weapons in the play area
+* Incorporate the 'rock, paper, scissors, lizard, spock' and make the game more complicated and appealing
