@@ -1,27 +1,36 @@
-<h1>Welcome to: Rock, Paper, Scissors!</h1>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <h1 style='text-align:center'>Welcome to: Rock, Paper, Scissors!</h1>
+  </head>
 
-<form action="/names" method="post">
-  <div>
-    <label>
-      Please enter your name to start:
-      <input for="player name" type="text" name="player_1_name" placeholder="Enter your name" required>
-    </label>
-  </div>
+  <body>
 
-  <div>
-    <label>
-      Please enter the weapon of your choice:
-      <input for="weapon" type="text" name="weapon" placeholder="rock, paper or scissors" required>
-    </label>
-  </div>
+    <form action="/names" style='text-align:center' method="post">
 
-  <div>
-      <input type="submit">
-      <input type="reset">
-  </div>
+        <label>
+          Please enter your name to start:
+          <input type="text" name="player" placeholder="Enter your name" required>
+        </label>
 
-</form>
+          <input type="submit" value="Let's play!">
+          <input type="reset">
 
-<div style='border: 3px dashed blue'>
-  <img src='https://cdn.vox-cdn.com/thumbor/D_2XiTfAk5x7VXxfYIJ3bZNUByw=/0x0:2429x2396/920x0/filters:focal(0x0:2429x2396):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/3488502/shutterstock_106919999.0.jpg'>
-</div>
+    </form>
+
+    <br>
+    <br>
+
+    <style>
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+
+
+    <img src='https://miro.medium.com/max/612/1*G9UfaUBS_VqtFILMe37fZw.jpeg' style="width:50%;">
+
+  </body>
+</html>

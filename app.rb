@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/player'
+require './lib/game'
 
 class Rps < Sinatra::Base
   configure :development do
@@ -13,13 +15,36 @@ class Rps < Sinatra::Base
   enable :sessions
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
+    
+    $game = Game.new(Player.new(params[:player]))
     redirect to('/play')
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
+    @game = $game
+    @message = session[:message]
     erb :play
+  end
+
+  post '/rock' do
+    @game = $game
+    @game.rock
+    session[:message] = @game.message
+    redirect '/play'
+  end 
+
+  post '/paper' do
+    @game = $game
+    @game.paper
+    session[:message] = @game.message
+    redirect '/play'
+  end 
+
+  post '/scissors' do
+    @game = $game
+    @game.scissors
+    session[:message] = @game.message
+    redirect '/play'
   end
   
   run! if app_file == $0
