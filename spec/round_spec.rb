@@ -3,10 +3,10 @@ describe Round do
   let(:player_1) { instance_double('Player') }
   let(:player_2) { instance_double('Player') }
 
-  describe '#set_action' do
-    it 'should change actions to include the player\'s throw' do
-      throw = :rock
-      expect { round.set_action(throw) }.to change { round.actions }.to include(throw)
+  describe '#outcome_decided?' do
+    it 'should return true when an outcome has been reached' do
+      round.set_outcome('smashes')
+      expect(round.outcome_decided?).to be true
     end
   end
 
@@ -25,13 +25,6 @@ describe Round do
   describe '#set_outcome' do
     it 'should change outcome to outcome description' do
       expect { round.set_outcome('smashes') }.to change { round.outcome }.to('smashes')
-    end
-  end
-
-  describe '#completed?' do
-    it 'should return true when an outcome has been reached' do
-      round.set_outcome('smashes')
-      expect(round.completed?).to be_truthy
     end
   end
 end
