@@ -33,11 +33,12 @@ class Game
   def act_for_computer
     if turn.computer?
       turn.random_throw
+      switch_turn
     end
   end
 
   def calculate_outcome
-    if players.all? { |player| player.thrown_action? }
+    if player_1.thrown_action? && player_2.thrown_action?
       rps_logic
     end
   end

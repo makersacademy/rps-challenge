@@ -1,0 +1,45 @@
+<head>
+  <h2 align="left">
+    <%= @game.player_1.name %>: <br> <%= @game.player_1.score %>
+  </h2>
+
+  <h2 align="right">
+    <%= @game.player_2.name %>: <br> <%= @game.player_2.score %>
+  </h3>
+</head>
+
+<body>
+  <h1 align="center">
+    <%= @game.turn.name %>'s turn
+  </h1>
+
+  <form align='center' action='/rps' method='post'>
+    <button type="submit" name='throw' value='rock'>
+      <img src="images/rock.png" width="100" height="100">
+    </button>
+    <button type="submit" name='throw' value='paper'>
+      <img src="images/paper.png" width="100" height="100">
+    </button>
+    <button type="submit" name='throw' value='scissors'>
+      <img src="images/scissors.png" width="100" height="100">
+    </button>
+  </form>
+
+  <% if @game.round.outcome && @game.round.winner %>
+    <h1 align="center">
+      <%= @game.round.winner.name %>'s
+      <%= @game.round.winner.action %>
+      <%= @game.round.outcome %>
+      <%= @game.round.looser.name %>'s
+      <%= @game.round.looser.action %>
+    </h1>
+  <% elsif @game.round.outcome %>
+    <h1 align="center">
+      <%= @game.player_1.name %>'s
+      <%= @game.player_1.action %>
+      <%= @game.round.outcome %>
+      <%= @game.player_2.name %>'s
+      <%= @game.player_2.action %>
+    </h1>
+  <% end %>
+</body>

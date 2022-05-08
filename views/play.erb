@@ -1,17 +1,19 @@
 <head>
-  <p align="center">
-    <%= @game.player_1.name %> vs <%= @game.player_2.name %>
-  </p>
-</head>
-
-<br>
-
-<body>
-  <h2 align="center">
-    <%= @game.turn.name %>'s turn
+  <h2 align="left">
+    <%= @game.player_1.name %>: <br><%= @game.player_1.score %>
   </h2>
 
-  <form align='center' action='/result' method='post'>
+  <h2 align="right">
+    <%= @game.player_2.name %>: <br><%= @game.player_2.score %>
+  </h3>
+</head>
+
+<body>
+  <h1 align="center">
+    <%= @game.turn.name %>'s turn
+  </h1>
+
+  <form align='center' action='/rps' method='post'>
     <button type="submit" name='throw' value='rock'>
       <img src="images/rock.png" width="100" height="100">
     </button>
@@ -22,14 +24,4 @@
       <img src="images/scissors.png" width="100" height="100">
     </button>
   </form>
-
-  <% if @game.outcome_message %>
-    <h3 align="center">
-      <%= @game.winner.name %>'s
-      <%= @game.winner.action %>
-      <%= @game.outcome_message %>
-      <%= @game.looser.name %>'s
-      <%= @game.looser.action %>
-    </h3>
-  <% end %>
 </body>

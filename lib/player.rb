@@ -30,6 +30,7 @@ end
 class Computer < Player
   def initialize(name = "Computer")
     @name = name
+    @score = 0
   end
 
   def random_throw

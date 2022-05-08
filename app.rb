@@ -1,6 +1,7 @@
 require "sinatra"
 require "./lib/player"
 require "./lib/game"
+require "./lib/round"
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -11,8 +12,11 @@ class RPS < Sinatra::Base
 
   post "/names" do
     player1 = Player.new(params[:player_1_name])
-    player2input = params[:player_2_name].empty? ? "Computer" : params[:player_2_name]
-    player2 = Player.new(player2input)
+    if params[:player_2_name].empty?
+      player2 = Computer.new
+    else
+      player2 = Player.new(params[:player_2_name])
+    end
     $game = Game.new(player1, player2)
     redirect '/play'
   end
@@ -22,15 +26,24 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/result' do
+  post '/rps' do
     @game = $game
-    @game.turn.throw(params[:throw])
-    # p params[:throw]
-    # p @game.turn.name
-    # p @game.turn.action
+    @game.new_round
+    @game.turn.throw(params[:throw].to_sym)
+    @game.switch_turn
+    @game.act_for_computer
     @game.calculate_outcome
-    @game.switch_turns
-    redirect '/play'
+    
+    if @game.round.outcome.nil?
+      redirect '/play'
+    else 
+      redirect '/result'
+    end
+  end
+
+  get '/result' do
+    @game = $game
+    erb :result
   end
 
   run! if app_file == $0
