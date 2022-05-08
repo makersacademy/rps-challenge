@@ -22,5 +22,8 @@ class RockPaperScissors < Sinatra::Base
     @player_1_name = session[:player_1_name]
     erb :play
   end
+
+  post "/choices" do
+  end
   run! if app_file == $0
 end

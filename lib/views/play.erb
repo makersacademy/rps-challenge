@@ -1,15 +1,17 @@
 <h1>Hello <%= @player_1_name %>!</h1>
 <h2>Choose Your Weapon:</h2>
 <br>
-<form>
+<form action="/choices" method="post">
   <div>
-    <label for="Rock">Rock</label>
-    <input type="radio" id="Rock" name="user-choice" value="Rock">
+    <label for="Rock">Rock =></label>
+    <input type="radio" id="Rock" name="user-choice" value="Rock" required>
       
-    <label for="Paper">Paper</label>
+    <label for="Paper">Paper =></label>
     <input type="radio" id="Paper" name="user-choice" value="Paper">
 
-    <label for="Scissors">Scissors</label>
+    <label for="Scissors">Scissors =></label>
     <input type="radio" id="Scissors" name="user-choice" value="Scissors">
+
+    <input type="submit" value="Submit">
   </div>
 </form>
