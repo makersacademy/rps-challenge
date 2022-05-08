@@ -12,6 +12,7 @@ class Game < Sinatra::Base
   end
   
   post '/name' do
+    p params
     session[:player] = Player.new(params[:player])
     session[:computer] = Computer.new
     session[:play] = Play.new(session[:player], session[:computer])
