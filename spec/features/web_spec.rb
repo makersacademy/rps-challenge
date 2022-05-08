@@ -39,9 +39,7 @@ feature "a user can play the game, and see the outcome accordingly" do
   let(:outcome) { "You win this time, human" }
 
   scenario 'a user plays the game and gets an outcome' do
-    sign_in
-    choose("Rock")
-    click_button("Submit")
+    sign_in_and_play
 
     expect(page).to have_content("You win this time, human")
   end
