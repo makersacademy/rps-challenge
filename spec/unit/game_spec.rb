@@ -39,19 +39,19 @@ describe Game do
     it "returns message after winning" do
       allow_any_instance_of(Game).to receive(:rpc_play).and_return("scissors")
       game.rock
-      expect(game.message).to eq "You've won!"
+      expect(game.message).to eq "You've won! Well done!"
     end 
     
     it "returns message after losing" do
       allow_any_instance_of(Game).to receive(:rpc_play).and_return("rock")
       game.scissors
-      expect(game.message).to eq "You've lost!"
+      expect(game.message).to eq "You've lost! Try again!"
     end 
 
     it "returns message after a tie" do
       allow_any_instance_of(Game).to receive(:rpc_play).and_return("paper")
       game.paper
-      expect(game.message).to eq "It's a tie!"
+      expect(game.message).to eq "It's a tie! Try again!"
     end 
     
   end
