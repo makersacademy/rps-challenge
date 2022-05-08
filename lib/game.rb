@@ -28,7 +28,5 @@ class Game
       "computer wins"
     end
   end
-
-  def result
-  end
+  
 end
