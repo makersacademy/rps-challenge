@@ -1,14 +1,21 @@
 # RPS Challenge
 
-Instructions
+Russell's - Rock . Paper . Scissors
+
+Play Rock, Paper, Scissors against a Robot and find out who will win.
 -------
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
+* Clone from this repo: https://github.com/Rmorbey/rps-challenge.git
+* Run bundle install in the project root folder
+* Type rackup, which will create a local server to play the game. 
+* Go to http://localhost:9292
+* Choose Single player
+* Enter your name
+* Pick either: Rock . Paper . Scissors
 Task
+* Find out the results.
+* Hit Play again?
+
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
