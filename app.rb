@@ -12,7 +12,7 @@ class Rps < Sinatra::Base
 
   enable :sessions
 
-  get '/names' do
+  post '/names' do
     session[:player_1_name] = params[:player_1_name]
     redirect to('/play')
   end

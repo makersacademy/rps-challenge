@@ -1,11 +1,25 @@
 <h1>Welcome to: Rock, Paper, Scissors!</h1>
 
-<form action="/names">
-  <label>
-    Please enter your name to start:
-    <input type="text" name="player_1_name">
-  </label>
-    <input type="submit" value="Submit">
+<form action="/names" method="post">
+  <div>
+    <label>
+      Please enter your name to start:
+      <input for="player name" type="text" name="player_1_name" placeholder="Enter your name" required>
+    </label>
+  </div>
+
+  <div>
+    <label>
+      Please enter the weapon of your choice:
+      <input for="weapon" type="text" name="weapon" placeholder="rock, paper or scissors" required>
+    </label>
+  </div>
+
+  <div>
+      <input type="submit">
+      <input type="reset">
+  </div>
+
 </form>
 
 <div style='border: 3px dashed blue'>
