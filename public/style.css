@@ -1,3 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+  background-color: rgb(196, 206, 216);
+  font-family: Helvetica, Arial, sans-serif;
+  color: rgb(85, 84, 84)
+}
+
+.main-cont {
+  width: 70%;
+  margin: auto;
+  margin-top: 10%;
+  text-align: center;
+  background-color: rgba(246, 244, 131, 0.86);
+  padding: 2rem;
+  box-shadow: 0.25rem 0.25rem 0.25rem rgba(85, 84, 84, 0.5);
+}
+
+.container {
+  padding: 1rem;
+}
+
 h1 {
-  color: yellow;
+  font-family: 'Futura', sans-serif;
+  color:rgb(136, 144, 153)
+}
+
+h2 {
+  
+}
+
+#p1_name {
+  height: 2rem;
+  margin: 0 0.5rem;
+}
+
+.button, 
+  button {
+  font-weight: bold;
+  height: 2rem;
+  width: 6rem;
+  cursor: pointer;
+}
+
+.button:hover, 
+  button:hover {
+  background-color: rgb(85, 84, 84);
+  color: white;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+a {
+  font-family: Helvetica, Arial, sans-serif;
+  color: rgb(85, 84, 84);
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+label {
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+
+input[type='radio'] {
+  position: relative;
+  height: 1.5rem;
+}
+
+#play {
+  margin-top: 2rem;
+}
+
+span {
+  color:rgba(231, 125, 20, 0.86);
+  font-size: 2rem;
+}
+
+.outcome h3 {
+  margin: 1rem;
+}
+
+.outcome button {
+  margin: 0.5rem;
 }

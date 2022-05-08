@@ -1,19 +1,34 @@
-<div>
-  <h1>Hi <%= @p1_name %></h1>
-</div>
+<!DOCTYPE html>
+<html>
 
-<div>
-  <h2>Choose one option</h2>
-</div>
+  <head>
+    <meta name='viewport' content='widht=devide-width,initial-scale=1'>
+    <link href='/style.css' rel="stylesheet" type="text/css">
+  </head>
 
-<div>
-  <form action='/choice' method='post'>
-    <input type='radio' id='rock' name='play' value='rock' checked>
-      <label for='rock'>Rock</label>
-    <input type='radio' id='paper' name='play' value='paper'>
-      <label for='paper'>Paper</label>
-    <input type='radio' id='scissors' name='play' value='scissors'>
-      <label for='sicssors'>Scissors</label>
-    <input type='submit' value='Play' >
-  </form>
-</div>
+  <body>
+    <div class='main-cont'>
+      <div class='container'>
+        <h2>Hi <%= @p1_name %></h2>
+      </div>
+
+      <div class='container'>
+        <h2>Choose one option</h2>
+      </div>
+
+      <div class='container'>
+        <form action='/choice' method='post'>
+          <input type='radio' id='rock' name='play' value='rock' checked>
+            <label for='rock'>Rock</label>
+          <input type='radio' id='paper' name='play' value='paper'>
+            <label for='paper'>Paper</label>
+          <input type='radio' id='scissors' name='play' value='scissors'>
+            <label for='sicssors'>Scissors</label>
+            <br>
+          <input type='submit' class='button' id='play' value='Play' >
+        </form>
+      </div>
+    </div>
+  </body>
+
+</htmL>
