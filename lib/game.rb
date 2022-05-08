@@ -23,9 +23,4 @@ class Game
     end
   end
 
-  #This function below wasn't getting rcoginised by app.rb and I have no idea why:
-  # def return_computer_action
-  #   @computer_action
-  # end
-
 end
