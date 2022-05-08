@@ -1,17 +1,24 @@
 class Player
-  attr_reader :name, :score, :computer
+  attr_reader :name, :score, :action
 
   def initialize(name)
     @name = name
     @score = 0
-    @computer = false
   end
 
-  def throw(action)
-    @action = action
+  def throw(throw)
+    @action = throw
   end
 
-  def win
+  def increase_score
     @score += 1
+  end
+
+  def reset_action
+    @action = nil
+  end
+
+  def computer?
+    @name == "Computer"
   end
 end
