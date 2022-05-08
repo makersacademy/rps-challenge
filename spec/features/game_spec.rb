@@ -8,9 +8,9 @@ describe Game do
     expect(game).to be_instance_of Game
   end
 
-  describe '# computer_action' do 
+  describe '# random_choice' do 
     it 'randomly selects an action from rock, paper or scissors' do
-      expect(game.computer_action).to eq('rock').or eq('paper').or eq('scissors')
+      expect(game.random_choice).to eq('rock').or eq('paper').or eq('scissors')
     end
   end
 
