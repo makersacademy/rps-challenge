@@ -10,12 +10,16 @@ class Player
     @action = throw
   end
 
-  def increase_score
-    @score += 1
+  def thrown_action?
+    !!action
   end
 
   def reset_action
     @action = nil
+  end
+
+  def increase_score
+    @score += 1
   end
 
   def computer?

@@ -1,38 +1,38 @@
 describe Player do
-  let(:player_1) { Player.new('Luke') }
-  let(:player_2) { Player.new('Kirsty') }
-  let(:round) { instance_double('Round') }
+  let(:player) { Player.new('Luke') }
 
-  describe '#name' do
-    it 'should return the name of the player' do
-      expect(player_1.name).to eq 'Luke'
+  describe '#throw' do
+    it 'should change the players action to their throw' do
+      action = :rock
+      expect { player.throw(action) }.to change { player.action }.from(nil).to(action)
     end
   end
 
-  describe '#throw' do
-    it 'should change action to throw' do
-      action = :rock
-      expect { player_1.throw(action) }.to change { player_1.action }.from(nil).to(action)
+  describe '#thrown_action?' do
+    it 'should return whether the player\'s action has been thrown or not' do
+      action = :paper
+      player.throw(action)
+      expect(player.thrown_action?).to be true
     end
   end
 
   describe '#reset_action' do
-    it 'should change action to nil' do
-      action = :rock
-      player_1.throw(action)
-      expect { player_1.reset_action }.to change { player_1.action }.from(action).to(nil)
+    it 'should change player\'s action to nil' do
+      action = :scissors
+      player.throw(action)
+      expect { player.reset_action }.to change { player.action }.from(action).to(nil)
     end
   end
 
   describe '#increase_score' do
     it 'should increase the score by 1' do
-      expect { player_1.increase_score}.to change { player_1.score }.by(1)
+      expect { player.increase_score}.to change { player.score }.by(1)
     end
   end
 
   describe '#computer?' do
-    it 'should return false if player 2 is not a computer' do
-      expect(player_2.computer?).to be false
+    it 'should return false if player is not a computer' do
+      expect(player.computer?).to be false
     end
   end
 end
