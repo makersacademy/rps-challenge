@@ -23,6 +23,16 @@ class Player
   end
 
   def computer?
-    @name == "Computer"
+    self.class == Computer
+  end
+end
+
+class Computer < Player
+  def initialize(name = "Computer")
+    @name = name
+  end
+
+  def random_throw
+    @action = [:rock, :paper, :scissors].sample
   end
 end
