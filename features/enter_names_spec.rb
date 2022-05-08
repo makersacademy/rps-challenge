@@ -6,6 +6,6 @@ feature "Enter names" do
 
     save_and_open_page
 
-    expect(page).to have_content "Farzan vs. Computer"
+    expect(page).to have_content("Farzan Vs. Computer")
   end
 end
