@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 ruby '3.0.2'
 
 gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'launchy'
+gem 'webrick'
 
 group :test do
   gem 'capybara'
