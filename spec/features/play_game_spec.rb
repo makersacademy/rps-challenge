@@ -54,7 +54,8 @@ feature 'allows player to play a game of RockPaperScissors' do
   #takes player back to homescreen by clicking on a button
   #taunts the player if they lose
   #congratulates the player if they win
-  #displays an image to accompany a win or a loss
+  #I'd like to route to a different image depending on the result
+  #but that seems like too much for now...
   #credit unsplash photographers
 
 
