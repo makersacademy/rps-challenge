@@ -12,9 +12,10 @@ Play Rock, Paper, Scissors against a Robot and find out who will win.
 * Choose Single player
 * Enter your name
 * Pick either: Rock . Paper . Scissors
-Task
 * Find out the results.
 * Hit Play again?
+
+Task
 
 ----
 
