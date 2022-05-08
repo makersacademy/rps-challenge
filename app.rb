@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/rps'
 
 class Rps < Sinatra::Base
   configure :development do
@@ -17,5 +18,13 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/result' do
+    @game = Rps_game.new
+    @game.play(params[:move])
+    @outcome = @game.outcome
+    erb :outcome
+  end
+
+  run! if app_file == $0
 
 end
