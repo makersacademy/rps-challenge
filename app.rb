@@ -29,6 +29,7 @@ class Online_Game < Sinatra::Base
   get '/result' do
     game = Game.new($player_choice)
     @result = game.return_winner
+    @computer_choice = game.computer_action
     erb :result
   end
 
