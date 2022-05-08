@@ -1,16 +1,16 @@
-class Rps_game
+class RpsGame
 
   attr_reader :outcome
 
   def initialize
 
     @win_matrix = {
-      "Paper" => {"Scissors" => :lose, "Paper" => :tie, "Rock" => :win},
-      "Rock" => {"Scissors" => :win, "Paper" => :lose, "Rock" => :tie},  
-      "Scissors" => {"Scissors" => :tie, "Paper" => :win, "Rock" => :lose}
-      }
+      "Paper" => { "Scissors" => :lose, "Paper" => :tie, "Rock" => :win },
+      "Rock" => { "Scissors" => :win, "Paper" => :lose, "Rock" => :tie },  
+      "Scissors" => { "Scissors" => :tie, "Paper" => :win, "Rock" => :lose }
+    }
 
-      @outcome = ""
+    @outcome = ""
 
   end
 

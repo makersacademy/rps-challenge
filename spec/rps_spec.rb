@@ -1,14 +1,14 @@
 require_relative '../lib/rps'
 
-describe Rps_game do
+describe RpsGame do
   
   context "A user can play a game of rock, paper, scissors" do
     
-    let(:rps) {described_class.new}
+    let(:rps) { described_class.new }
 
     it "the Rps class exists" do
       
-      expect(rps).to be_an_instance_of(Rps_game)
+      expect(rps).to be_an_instance_of(RpsGame)
 
     end
 

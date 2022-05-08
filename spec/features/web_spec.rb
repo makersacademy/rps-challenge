@@ -36,7 +36,7 @@ feature 'A logged in user can make a move' do
 end
 
 feature "a user can play the game, and see the outcome accordingly" do
-  let(:outcome) {"You win this time, human"}
+  let(:outcome) { "You win this time, human" }
 
   scenario 'a user plays the game and gets an outcome' do
     sign_in

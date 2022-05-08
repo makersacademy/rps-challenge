@@ -19,7 +19,7 @@ class Rps < Sinatra::Base
   end
 
   post '/result' do
-    @game = Rps_game.new
+    @game = RpsGame.new
     @game.play(params[:move])
     @outcome = @game.outcome
     erb :outcome
