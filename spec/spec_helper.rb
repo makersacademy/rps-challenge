@@ -7,7 +7,6 @@ require_relative './features/web_helpers'
 
 require 'player'
 require 'game'
-require 'computer'
 require 'round'
 
 ENV['RACK_ENV'] = 'test'

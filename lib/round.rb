@@ -1,9 +1,5 @@
 class Round
-  attr_reader :actions, :winner, :looser, :outcome
-
-  def initialize
-    @actions = []
-  end
+  attr_reader :winner, :looser, :outcome
 
   def outcome_decided?
     !!outcome

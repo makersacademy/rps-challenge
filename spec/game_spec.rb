@@ -1,86 +1,74 @@
 describe Game do
-  let(:player_1) { instance_double("Player 1") }
-  let(:player_2) { instance_double("Player 2") }
-  subject(:game) { Game.new(player_1, player_2) }
+  describe '#new_round' do
+    context 'when the previous round has had the outcome decided' do
+      let(:player_1) { instance_double("Player") }
+      let(:player_2) { instance_double("Player") }
+      let(:round) { instance_double("Round", outcome_decided?: true) }
+      subject(:game) { Game.new(player_1, player_2, round) }
 
-  describe 'players' do
-    it 'should return player 1' do
-      expect(game.player_1).to eq player_1
-    end
+      it 'should create a new Round' do
+        allow(player_1).to receive(:reset_action)
+        allow(player_2).to receive(:reset_action)
 
-    it 'should return player 2' do
-      expect(game.player_2).to eq player_2
+        expect { game.new_round }.to change { game.round }
+      end
+
+      it 'should instruct both players to reset actions' do
+        expect(game.players).to all receive :reset_action
+        game.new_round
+      end
     end
   end
 
-  describe '#switch_turns' do
-    it 'should alternate turns' do
-      expect { game.switch_turns }.to change { game.turn }.from(player_1).to(player_2)
+  describe '#switch_turn' do
+    let(:player_1) { instance_double("Player") }
+    let(:player_2) { instance_double("Player") }
+    subject(:game) { Game.new(player_1, player_2) }
+
+    it 'should change the turn to the other player' do
+      expect { game.switch_turn }.to change { game.turn }.from(player_1).to(player_2)
+    end
+  end
+
+  describe '#act_for_computer' do
+    context 'when it is player 2\'s turn and player 2 is a computer' do
+      let(:player_1) { instance_double("Player") }
+      let(:player_2) { instance_double("Computer", computer?: true) }
+      subject(:game) { Game.new(player_1, player_2) }
+
+      it 'should instruct Computer to make a random throw' do
+        game.switch_turn
+        expect(player_2).to receive(:random_throw)
+        game.act_for_computer
+      end
     end
   end
 
   describe '#calculate_outcome' do
-    context 'rock vs scissors' do
-      let(:player_1) { instance_double("Player 1", action: 'rock') }
-      let(:player_2) { instance_double("Player 2", action: 'scissors') }
-      subject(:game) { Game.new(player_1, player_2) }
-      
-      it 'should return correct winner' do
+    context 'when both players have set an action' do
+      let(:player_1) { instance_double("Player", action: :rock, increase_score: true) }
+      let(:player_2) { instance_double("Player", action: :scissors) }
+      let(:round) { instance_double("Round", set_winner: player_1, set_looser: player_2, set_outcome: 'smashes', winner: player_1) }
+      subject(:game) { Game.new(player_1, player_2, round) }
+
+      it 'should instruct round to set winner' do
+        expect(round).to receive(:set_winner).with(player_1)
         game.calculate_outcome
-        expect(game.winner).to eq player_1
       end
 
-      it 'should return "smashes"' do
+      it 'should instruct round to set looser' do
+        expect(round).to receive(:set_looser).with(player_2)
         game.calculate_outcome
-        expect(game.outcome_message).to eq "smashes"
-      end
-    end
-
-    context 'paper vs rock' do
-      let(:player_1) { instance_double("Player 1", action: 'rock') }
-      let(:player_2) { instance_double("Player 2", action: 'paper') }
-      subject(:game) { Game.new(player_1, player_2) }
-
-      it 'should return correct winner' do
-        game.calculate_outcome
-        expect(game.winner).to eq player_2
       end
 
-      it 'should return "wraps"' do
+      it 'should instruct round to set outcome' do
+        expect(round).to receive(:set_outcome).with('smashes')
         game.calculate_outcome
-        expect(game.outcome_message).to eq 'wraps'
-      end
-    end
-
-    context 'scissors vs paper' do
-      let(:player_1) { instance_double("Player 1", action: 'paper') }
-      let(:player_2) { instance_double("Player 2", action: 'scissors') }
-      subject(:game) { Game.new(player_1, player_2) }
-
-      it 'should return correct winner' do
-        game.calculate_outcome
-        expect(game.winner).to eq player_2
       end
 
-      it 'should return "cuts"' do
+      it 'should instruct round winner to increase score' do
+        expect(round.winner).to receive(:increase_score)
         game.calculate_outcome
-        expect(game.outcome_message).to eq 'cuts'
-      end
-    end
-
-    context 'paper vs paper' do
-      let(:player_1) { instance_double("Player 1", action: 'paper') }
-      let(:player_2) { instance_double("Player 2", action: 'paper') }
-      subject(:game) { Game.new(player_1, player_2) }
-
-      it 'should not return a winner' do
-        game.calculate_outcome
-        expect(game.winner).to be nil
-      end
-
-      it 'should return "draws with"' do
-        game.calculate_outcome
-        expect(game.outcome_message).to eq 'draws with'
       end
     end
   end
