@@ -35,7 +35,7 @@ Rules of the game
 - Paper beats Rock
 
 
-Instalation
+Installation
 ----
 
 ```
