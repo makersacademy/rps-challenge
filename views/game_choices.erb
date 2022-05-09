@@ -1,7 +1,7 @@
-<h1> Player: <% @name %>! </h1>
+<h1> Player: <%= @name1 %>! </h1>
 <form action="/game" method="post">
   click to `rock, paper or scissors` to play a game of rock paper scissors. Good luck!
-  <button type="submit" value='rock'> Rock </button>
-  <button type="submit" value='paper' > Paper </button>
-  <button type="submit" value= 'scissors'> Scissors </button>
+  <label for="choice"> Type in rock, paper or scissors </label>
+  <input type="text" name="choice" placeholder="enter move here">
+  <button type="submit" value=submit> Submit move </button>
 </form>
