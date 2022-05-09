@@ -1,35 +1,49 @@
-class RockPaperScissors
-  attr_writer :rand_seed
+class RockPaperScissors         
 
   def initialize(guess:)
-    @guess = guess.downcase
-  end
-
-  def randomization_alogrithm
-    rand 234_234
+    @guess = guess.to_sym
+    @computer_guess = computer_guess.to_sym
   end
 
   def computer_guess
-    srand (@rand_seed || randomization_alogrithm)
-    computer_guesses = %w{rock paper scissors}
+    computer_guesses = %w{rock paper scissors lizard spock}
     computer_guesses.sample
   end
 
   def winner_is
-    if rule_engine[computer_guess.to_sym].include? @guess
-      'Robot wins'
-    elsif rule_engine[@guess.to_sym].include? computer_guess
-      'You win'
-    else
+    case 
+    when @guess == @computer_guess
       'Tie'
+    when @guess == :rock && @computer_guess == :scissors ||
+        @guess == :rock && @computer_guess == :lizard ||
+        @guess == :paper && @computer_guess == :rock ||
+        @guess == :paper && @computer_guess == :spock ||
+        @guess == :scissors && @computer_guess == :paper ||
+        @guess == :scissors && @computer_guess == :lizard ||
+        @guess == :lizard && @computer_guess == :paper ||
+        @guess == :lizard && @computer_guess == :spock ||
+        @guess == :spock && @computer_guess == :scissors ||
+        @guess == :spock && @computer_guess == :rock
+      'You win'
+    when @computer_guess == :rock && @guess == :scissors ||
+        @computer_guess == :rock && @guess == :lizard ||
+        @computer_guess == :paper && @guess == :rock ||
+        @computer_guess == :paper && @guess == :spock ||
+        @computer_guess == :scissors && @guess == :paper ||
+        @computer_guess == :scissors && @guess == :lizard ||
+        @computer_guess == :lizard && @guess == :paper ||
+        @computer_guess == :lizard && @guess == :spock ||
+        @computer_guess == :spock && @guess == :scissors ||
+        @computer_guess == :spock && @guess == :rock
+      'Robot wins'
     end
   end
 
-  def rule_engine
-    {
-      'rock': ['scissors'],
-      'paper': ['rock'],
-      'scissors': ['paper']
-    }
+  def view_computer
+    @computer_guess
+  end
+
+  def view_player
+    @guess
   end
 end

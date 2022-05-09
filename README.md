@@ -16,6 +16,14 @@ Play Rock, Paper, Scissors against a Robot and find out who will win.
 * Hit Play again?
 
 -------
+Recent changes since initial pull request - refactored some things
+
+* Added Spock/Lizard special rules
+* Added text to show what the player chose, and what the robot chose so you can verify the outcome.
+* Changed how my engine works
+* Some of the unit spec tests are no longer working, an issue with srand I believe, that I can't figure out currently.
+
+-------
 
 Planning
 
