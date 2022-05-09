@@ -17,6 +17,8 @@ $ ruby app.rb
 ```
 
 ## How to play
+Vist https://luke-rps.herokuapp.com/ 
+
 1. Enter player names, leave player 2 blank for single player vs computer
 2. Click on rock, paper or scissors
 3. Gloat over your success, or cry in your bitter defeat
