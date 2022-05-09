@@ -13,4 +13,7 @@ end
 
 group :development, :test do
   gem 'rubocop', '1.20'
+  gem 'sinatra-reloader'
+  gem 'puma'
+  gem 'rspec-expectations'
 end
