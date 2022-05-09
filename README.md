@@ -1,28 +1,18 @@
 # RPS Challenge
 
-Instructions
--------
+Notes for review Monday morning. I have got to the stage where I have a working model, but I am struggling with the view and controller to interact with it. Any help glady recieved!
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+This is a weekend challenge for the end of week 3 of the 12 week bootcamp I am doing with [Makers Academy](https://www.makers.tech/?utm_source=adwords&utm_medium=ppc&utm_campaign=B2C%20Hybrid&utm_term=makers%20academy&hsa_acc=7172166340&hsa_cam=13568953605&hsa_grp=123027501759&hsa_ad=528554003929&hsa_src=g&hsa_tgt=aud-1330588356932%3Akwd-315575993965&hsa_kw=makers%20academy&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=EAIaIQobChMI65HU3dXR9wIViK3tCh032gfLEAAYASAAEgL3xfD_BwE). This week we have been learning how to make simple web apps using Ruby and Sinatra. Testing is being handled with Rspec and Capybara. 
 
-Task
-----
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+This weeks task is to make a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ```
-As a marketeer
+As a player
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
-As a marketeer
+As a player
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
@@ -36,20 +26,7 @@ Hints on functionality
 - a winner will be declared
 
 
-As usual please start by
 
-* Forking this repo
-* TEST driving development of your app
-
-[You may find this guide to setting up a new Ruby web project helpful.](https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md)
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
 ## Basic Rules
 
@@ -57,30 +34,39 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+## Instruction
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/main/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+```mermaid
+journey
+    title User Story
+      Enter Name: 5: User
+      Presented with a choice: 5: User
+      Choose Rock, Paper or Scissors: 5: User, Computer
+      Winner declared: 5 
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+## Class Diagram for model
+<br>
+
+```mermaid
+classDiagram
+  direction RL
+      Game <.. Player
+      Game <.. Computer
+      class Game{
+        +String result
+        +play(Player1, Player2) result
+        -calculate_winner()
+      }
+      class Player{
+          +String : name
+          +String : move
+          +play() move
+      }
+      class Computer{
+          +String : move
+          +play() move
+          -calculate_move()
+      }
+```
