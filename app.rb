@@ -20,6 +20,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player = $player
+    @move = "You haven't played yet"
     erb :play
   end
 

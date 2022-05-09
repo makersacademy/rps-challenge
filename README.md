@@ -54,7 +54,7 @@ classDiagram
       Game <.. Computer
       class Game{
         +String result
-        +play(Player, Computer) result
+        +play(Player1, Player2) result
         -calculate_winner()
       }
       class Player{

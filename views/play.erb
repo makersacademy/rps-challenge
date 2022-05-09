@@ -1,4 +1,10 @@
 <%= @player.name %> 
 
 <br>
-<a href='/attack'>Attack</a>
+<form action="/result" method="post">
+  <input type="button" id="Rock" onclick="<% @move = :rock %>">Rock</button>
+  <input type="button" id = "Paper" onclick="<% @move = :paper %>">Paper</button>
+  <input type="button" id = "Scissors" onclick="<% @move = :scissors %>">Scissors</button>
+</form>
+<br> 
+Your move is <%= @move %>
