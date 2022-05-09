@@ -1,0 +1,31 @@
+<h1> The results are in... </h1>
+
+<%= @player_1_name %> chose <%= @player_1_choice %><br><br>
+
+<%= @computer_name %> chose <%= @computer_choice %><br><br>
+
+<% if @result == true %>
+
+<%= @player_1_name %> wins, contratulations
+
+<% end %>
+
+<% if @result == false %>
+
+<%= @player_1_name %> loses, unlucky
+
+<% end %>
+
+<% if @result == nil %>
+
+It's a draw
+
+<% end %>
+
+<br>
+<br>
+<br>
+<br>
+<form action="/single_player_game" method="get">
+  <input type="submit" value = "Play again?">
+</form>
