@@ -11,6 +11,12 @@ group :test do
   gem 'simplecov-console', require: false
 end
 
-group :development, :test do
+group :development, :test :deployment do
   gem 'rubocop', '1.20'
+  # gem 'webdrivers', '~> 5.0', require: false
+  gem 'rspec-sinatra'
+  gem 'rack'
+  gem 'launchy'
+  gem 'webrick'
+  gem 'sinatra-contrib'
 end
