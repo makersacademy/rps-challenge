@@ -1,45 +1,66 @@
-<head>
-  <h2 align="left">
-    <%= @game.player_1.name %>: <br> <%= @game.player_1.score %>
-  </h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
 
-  <h2 align="right">
-    <%= @game.player_2.name %>: <br> <%= @game.player_2.score %>
-  </h3>
-</head>
+    <style type="text/css">  
+      body { height: 100%; width: margin: 0; padding: 0 } 
+            
+      .flex-container {
+        display: flex;
+      }
 
-<body>
-  <h1 align="center">
-    <%= @game.turn.name %>'s turn
-  </h1>
+      .flex-child {
+          flex: 1;
+      }   
+    </style>  
+  </head>
 
-  <form align='center' action='/rps' method='post'>
-    <button type="submit" name='throw' value='rock'>
-      <img src="images/rock.png" width="100" height="100">
-    </button>
-    <button type="submit" name='throw' value='paper'>
-      <img src="images/paper.png" width="100" height="100">
-    </button>
-    <button type="submit" name='throw' value='scissors'>
-      <img src="images/scissors.png" width="100" height="100">
-    </button>
-  </form>
+  <body align="center">
+    <header class="flex-container">
+      <h2 class="flex-child">
+        <%= @game.player_1.name %>: <br> <%= @game.player_1.score %>
+      </h2>
 
-  <% if @game.round.outcome && @game.round.winner %>
-    <h1 align="center">
-      <%= @game.round.winner.name %>'s
-      <%= @game.round.winner.action %>
-      <%= @game.round.outcome %>
-      <%= @game.round.looser.name %>'s
-      <%= @game.round.looser.action %>
-    </h1>
-  <% elsif @game.round.outcome %>
-    <h1 align="center">
-      <%= @game.player_1.name %>'s
-      <%= @game.player_1.action %>
-      <%= @game.round.outcome %>
-      <%= @game.player_2.name %>'s
-      <%= @game.player_2.action %>
-    </h1>
-  <% end %>
-</body>
+      <h2 class="flex-child">
+        <%= @game.player_2.name %>: <br> <%= @game.player_2.score %>
+      </h3>
+    </header>
+
+    <main>
+      <h1>
+        <%= @game.turn.name %>'s turn
+      </h1>
+
+      <form action='/rps' method='post'>
+        <button type="submit" name='throw' value='rock'>
+          <img src="images/rock.png" width="100" height="100">
+        </button>
+        <button type="submit" name='throw' value='paper'>
+          <img src="images/paper.png" width="100" height="100">
+        </button>
+        <button type="submit" name='throw' value='scissors'>
+          <img src="images/scissors.png" width="100" height="100">
+        </button>
+      </form>
+
+      <% if @game.round.outcome && @game.round.winner %>
+        <h1>
+          <%= @game.round.winner.name %>'s
+          <%= @game.round.winner.action %>
+          <%= @game.round.outcome %>
+          <%= @game.round.looser.name %>'s
+          <%= @game.round.looser.action %>
+        </h1>
+      <% elsif @game.round.outcome %>
+        <h1>
+          <%= @game.player_1.name %>'s
+          <%= @game.player_1.action %>
+          <%= @game.round.outcome %>
+          <%= @game.player_2.name %>'s
+          <%= @game.player_2.action %>
+        </h1>
+      <% end %>
+    </main>
+  </body>
+</html>
