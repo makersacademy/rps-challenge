@@ -4,6 +4,7 @@ ruby '3.0.2'
 
 gem 'sinatra'
 gem 'rerun'
+gem 'puma'
 
 group :test do
   gem 'capybara'
