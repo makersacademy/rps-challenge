@@ -1,0 +1,16 @@
+<form action="/play">
+<%= @game.player%>: '<%= @game.choice %>!'
+<br/>
+<br/>
+CPU: '<%= @game.computer_choice%>!'
+<br/>
+<br/>
+<%= @game.won?%>
+<br/>
+<br/>
+
+<input type="submit" value="Continue">
+</form>
+<form action="/">
+<input type="submit" value="New Player?">
+</form>
