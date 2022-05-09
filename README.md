@@ -60,11 +60,11 @@ classDiagram
       class Player{
           +String : name
           +String : move
-          +play()
+          +play() move
       }
       class Computer{
           +String : move
-          +play()
+          +play() move
           -calculate_move()
       }
 ```
