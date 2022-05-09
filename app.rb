@@ -7,7 +7,7 @@ class RPSGame < Sinatra::Base
   end
 
   get '/' do
-    erb :index
+    erb(:index)
   end
 
   post '/names' do
@@ -17,7 +17,17 @@ class RPSGame < Sinatra::Base
 
   get '/play' do
     @player_1_name = $player_1_name
-    erb :play
+    erb(:play)
+  end
+
+  post '/move' do
+    $player_1_move = params[:play]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player_1_move = $player_1_move
+    erb(:result)
   end
 
   run! if app_file == $0
