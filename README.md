@@ -1,5 +1,7 @@
 # RPS Challenge
 
+Notes for review Monday morning. I have got to the stage where I have a working model, but I am struggling with the view and controller to interact with it. Any help glady recieved!
+
 This is a weekend challenge for the end of week 3 of the 12 week bootcamp I am doing with [Makers Academy](https://www.makers.tech/?utm_source=adwords&utm_medium=ppc&utm_campaign=B2C%20Hybrid&utm_term=makers%20academy&hsa_acc=7172166340&hsa_cam=13568953605&hsa_grp=123027501759&hsa_ad=528554003929&hsa_src=g&hsa_tgt=aud-1330588356932%3Akwd-315575993965&hsa_kw=makers%20academy&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=EAIaIQobChMI65HU3dXR9wIViK3tCh032gfLEAAYASAAEgL3xfD_BwE). This week we have been learning how to make simple web apps using Ruby and Sinatra. Testing is being handled with Rspec and Capybara. 
 
 
@@ -39,7 +41,7 @@ Hints on functionality
 journey
     title User Story
       Enter Name: 5: User
-      Prented with a choice: 5: User
+      Presented with a choice: 5: User
       Choose Rock, Paper or Scissors: 5: User, Computer
       Winner declared: 5 
 ```
