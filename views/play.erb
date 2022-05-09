@@ -1,0 +1,17 @@
+<%= @player_1_name %>
+
+<div>
+  <h2>What is your next move?</h2>
+</div>
+
+<div>
+  <form action='/move' method='post'>
+    <input type='radio' id='rock' name='play' value='rock' checked>
+      <label for='rock'>Rock</label>
+    <input type='radio' id='paper' name='play' value='paper'>
+      <label for='paper'>Paper</label>
+    <input type='radio' id='scissors' name='play' value='scissors'>
+      <label for='sicssors'>Scissors</label>
+    <input type='submit' value='Select'>
+  </form>
+</div>
