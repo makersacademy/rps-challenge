@@ -1,0 +1,14 @@
+<h1>Rock/Paper/Scissors!</h1>
+<h2><%= @player_1_name %> vs. Robot </h2>
+
+<h2><%= @results%></h2>
+
+<h2><%= @player_1_name %> chose: <%= @player_guess %> </h2>
+
+<h2> Robot chose: <%= @robot_guess %> </h2>
+
+<h2>The Results are:<%= @pvr_results %> </h2>
+
+<form action="/pvr_again" method="post">
+  <input type="submit" value="Play again?">
+</form>
