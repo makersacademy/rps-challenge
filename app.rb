@@ -1,8 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/player.rb'
-require './lib/computer.rb'
-require './lib/game.rb'
+require './lib/player'
+require './lib/computer'
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -30,13 +30,18 @@ class Rps < Sinatra::Base
 
   post '/calculate_results' do
     $game = Game.new
-    $game.calculate_result(params[:choice],$computer.random_move)
+    $player_1.choose(params[:choice])
+    $computer.choose
+    $game.calculate_result($player_1.choice,$computer.choice)
     redirect '/results'
   end
 
   get '/results' do
     @result = $game.result
     @player_1_name = $player_1.name
+    @computer_name = $computer.name
+    @player_1_choice = $player_1.choice
+    @computer_choice = $computer.choice
     erb :results
   end
    

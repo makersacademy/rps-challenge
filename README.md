@@ -1,6 +1,12 @@
 # RPS Challenge - Tom Solution
 
-## Instructions - 
+## Instructions to user - 
+
+This is a simple web app that allows the user to input a name and play rock paper scissors against the computer. The player chooses an move, the computer's move is randomly selected and the winner is calculated and the result displayed to the screen.
+
+The player is then given the option to play again.
+
+I have not had as much time as I would like to refactor the code and improve the aesthetics of the app but the functionality is there (I think).
 
 
 

@@ -27,4 +27,10 @@ feature "Game outcome screen" do
     expect(page).to have_content('Mario loses')
   end
 
+  scenario "There is an option to play again at the end of the game" do
+    sign_in_and_play_1p
+    click_on 'Rock'
+    expect(page).to have_selector(:link_or_button,'Play again?')
+  end
+
 end

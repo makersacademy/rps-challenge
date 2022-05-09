@@ -1,16 +1,16 @@
 class Computer
   
-  attr_reader :name
+  attr_reader :name, :choice
 
   ALLOWED_MOVES = ["rock", "paper", "scissors"]
   
   def initialize(name)
     @name = name
+    @choice = nil
   end
 
-  def random_move
-    ALLOWED_MOVES.sample
+  def choose
+    @choice = ALLOWED_MOVES.sample
   end
-
 
 end

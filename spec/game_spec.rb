@@ -9,11 +9,11 @@ describe Game do
     end
 
     it 'fails if the first move is not rock, paper or scissors' do
-      expect{ game.calculate_result('elephant','rock') }.to raise_error 'Incorrect move'
+      expect { game.calculate_result('elephant','rock') }.to raise_error 'Incorrect move'
     end
 
     it 'fails if the first move is not rock, paper or scissors' do
-      expect{ game.calculate_result('rock','octopus') }.to raise_error 'Incorrect move'
+      expect { game.calculate_result('rock','octopus') }.to raise_error 'Incorrect move'
     end
 
     it 'outputs true for a winning game' do
