@@ -8,6 +8,11 @@ The player is then given the option to play again.
 
 I have not had as much time as I would like to refactor the code and improve the aesthetics of the app but the functionality is there (I think).
 
+I was unsure how to get buttons with a picture, I was able to follow a student from a previous cohort's code through finding him through a blogpost, his github code is here:
+
+https://github.com/awye765/rps-challenge
+
+I did not follow his code anywhere else.
 
 
 Instructions
