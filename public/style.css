@@ -1,0 +1,5 @@
+body {background-color: #f0f0f0; font-family: Arial, Helvetica, sans-serif;}
+h1   {font-size: 48px; margin-bottom: 16px;}
+.container {max-width: 1200px; text-align: center; background-color: #fff; margin: 40px auto 0 auto; padding: 20px; border-radius: 10px}
+button {background-color: #072a6c; color: #fff; border-radius: 10px; padding: 10px 30px; margin: 10px; border: 0}
+p {margin-bottom: 16px;}
