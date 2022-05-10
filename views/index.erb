@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+
+    <style type="text/css">  
+      body { height: 100%; width: margin: 0; padding: 0 }
+    </style>  
+  </head>
+
+  <body align="center">
+    <header>
+      <h1>Rock Paper Scissors</h1>
+      <br>
+      <h2>enter names to play</h2>
+    </header>
+    <main>
+      <form method="post" action="/names">
+        <input type="text" name="player_1_name" placeholder="Player 1 name" required>
+
+        <label for="player_2_name">
+          <input type="text" name="player_2_name" placeholder="Player 2 name">
+          <br>
+          <br>
+          leave p2 blank for single player vs computer
+        </label>
+        <br>
+        <br>
+        <input type="submit" value="Start">
+      </form>
+    </main>
+  </body>
+</html>
