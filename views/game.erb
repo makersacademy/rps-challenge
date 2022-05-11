@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <head>
+    <title>Game</title>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <img src="https://i.postimg.cc/43GJwg9H/cartoon-rock-paper-scissors-vector-characters.jpg" />
+    <br />
+    <br />
+    <br />
+
+    <p><%= @play.player.name %> vs. Computer</p>
+
+    <br />
+    <h1>Please choose</h1>
+
+    <form action="/game" method="post">
+      <div class="action_btn">
+        <button name="player_choice" type="submit" value="rock">Rock</button>
+        <div class="space"></div>
+        <button name="player_choice" type="submit" value="paper">Paper</button>
+        <div class="space"></div>
+        <button name="player_choice" type="submit" value="scissors">Scissors</button>
+      </div>
+    </form>
+  </body>
+
+  <footer id="footer" class="contacts">
+    <a class="icons" href="https://www.linkedin.com/in/yaroslava-yates-629517221/" target="_blank">
+        <img class="icons" src="https://i.postimg.cc/CKhnxt4D/link.png" alt="Linkedin">
+    </a>
+  </footer>
+
+</html>

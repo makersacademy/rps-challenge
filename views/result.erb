@@ -1,0 +1,36 @@
+<html>
+
+  <head>
+    <title>Game</title>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+
+  <h2><%= @play.player.name %> chose: <%= @play.player.player_choice %></h2>
+  <h2>Computer chose: <%= @play.computer.computer_choice %></h2>
+  <h2><%= @play.compare %></h2>
+
+  <br />
+  <br />
+
+  <form action="/game">
+    <div class="action_btn1">
+      <button name="submit" class="action_btn" type="submit" value="Play again">Play again</button>
+    </div>
+  </form>
+
+  <br />
+  <br />
+
+  <form action="/">
+    <div class="action_btn1">
+      <button name="submit" class="action_btn" type="submit" value="Finish game">Finish game</button>
+    </div>
+  </form>
+
+  <footer id="footer" class="contacts">
+    <a class="icons" href="https://www.linkedin.com/in/yaroslava-yates-629517221/" target="_blank">
+        <img class="icons" src="https://i.postimg.cc/CKhnxt4D/link.png" alt="Linkedin">
+    </a>
+  </footer>
+
+</html>
