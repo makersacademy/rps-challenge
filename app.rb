@@ -1,4 +1,3 @@
-require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
 # require './lib/player.rb'
@@ -25,12 +24,14 @@ class RockPaperScissors < Sinatra::Base
   end
   
   post "/result" do
-    # takes the weapon choice that was selected
-    # selects the correct erb dependng on the result
+    p params
+    $weapon = params[:weapon]
+    redirect '/win'
   end
   
   get "/win" do
-    # winner page
+    @weapon = $weapon
+    erb :win
   end
   
   get "/draw" do
