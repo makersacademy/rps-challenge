@@ -1,0 +1,9 @@
+<%= $game.player_name %> has chosen <%= $game.player_selection %>
+<p></p>
+The game has chosen <%= $game.game_selection %>
+<p></p>
+You <%= @outcome %>
+<p></p>
+<form action="/game" method="get">
+  <input type="submit" value="Play again">
+</form>

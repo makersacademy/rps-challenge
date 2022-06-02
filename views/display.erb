@@ -1,1 +1,6 @@
-<%= @user_name %>
+<%= $game.player_name %>
+<p></p>
+Click here to play RockPaperScissors:
+<form action="/game" method="get">
+  <input type="submit" value="Play">
+</form>
