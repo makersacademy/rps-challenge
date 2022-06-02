@@ -137,7 +137,7 @@ describe Game do
 
     # Computer
     describe Computer do
-      subject(:player) { described_class.new("Rosie") }
+      subject(:computer) { described_class.new }
 
       it "randomly selects a weapon" do # not entirely sure this will work
         expect(computer.weapon).to eq :paper
