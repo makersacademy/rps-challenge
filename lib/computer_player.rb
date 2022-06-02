@@ -1,9 +1,9 @@
 class ComputerPlayer
-  def initialize 
-  end
+  attr_accessor :choice
 
-  def choice # returns the computer result 
-    ["rock", "paper", "scissors"].sample
+  def initialize 
+    @choice = ["rock", "paper", "scissors"].sample
+    p @choice
   end
 
   def name

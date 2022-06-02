@@ -33,24 +33,24 @@ RSpec.describe Game do
     expect(game.user.name).to eq 'Sandra'
   end
 
-  it "returns the winner when the user wins" do
+  it "returns true when the user wins" do
     user = double :player, name: 'Sandra', choice: 'scissors'
     computer = double :computer, name: 'Computer', choice: 'paper'
     game = Game.new(user, computer)
-    expect(game.winner).to eq 'Sandra'
+    expect(game.winner).to eq true
   end
 
-  it 'returns the winner when the computer wins' do
+  it 'returns false when the computer wins' do
     user = double :player, name: 'Sandra', choice: 'scissors'
     computer = double :computer, name: 'Computer', choice: 'rock'
     game = Game.new(user, computer)
-    expect(game.winner).to eq 'Computer'
+    expect(game.winner).to eq false
   end
 
-  it 'gives the position in the array for a choice' do
-    user = double :player
-    computer = double :computer
+  it 'returns nil when there is a drawer' do
+    user = double :player, name: 'Sandra', choice: 'rock'
+    computer = double :computer, name: 'Computer', choice: 'rock'
     game = Game.new(user, computer)
-    expect(game.number('rock')).to eq 0
+    expect(game.winner).to eq nil
   end
 end

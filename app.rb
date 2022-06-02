@@ -23,6 +23,7 @@ class RockPaperScissors < Sinatra::Base
     @player = Player.new(params[:name])
     @computer = ComputerPlayer.new
     $game = Game.new(@player, @computer)
+    p @computer.choice
     erb(:play)
   end
 
@@ -34,9 +35,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    @winner = $game.winner
+    @result = 'You win!' if $game.winner == true
+    @result = 'Computer wins!' if $game.winner == false
+    @result = "It's a draw!" if $game.winner.nil?
+    p $game.computer.choice
     @player_choice = $game.user.choice
     @computer_choice = $game.computer.choice
+    p @computer_choice
     erb(:result)
   end
 

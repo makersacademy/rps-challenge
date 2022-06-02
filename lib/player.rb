@@ -1,5 +1,5 @@
 class Player
-  attr_accessor :name
+  attr_accessor :name, :choice
 
   def initialize(name)
     @name = name
@@ -7,10 +7,6 @@ class Player
 
   def add(choice)
     @choice = choice
-  end
-
-  def choice
-    @choice
   end
 
 end
