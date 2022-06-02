@@ -2,7 +2,11 @@ source 'https://rubygems.org'
 
 ruby '3.0.2'
 
+gem 'webdrivers', '~> 5.0', require: false
 gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'puma'
+gem 'launchy'
 
 group :test do
   gem 'capybara'
