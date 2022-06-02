@@ -3,7 +3,7 @@ class Player
 
   def initialize(name)
     @name = name
-    @choice = nil
+    @choice = ""
   end
 
   def make_choice(choice)

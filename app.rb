@@ -26,9 +26,12 @@ class RPS < Sinatra::Base
 
   post '/result' do
     @game = $game
-    @player_choice = @game.player_1.make_choice(params[:player_1_choice])
+    player_choice = params[:player_choice]
+    @game.player_1.make_choice(player_choice)
+    @game.ai_choice
     erb :result
   end
+
 
   run! if app_file == $0
 end
