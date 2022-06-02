@@ -1,1 +1,12 @@
-<%= @player_1_name %> vs. AI
+<%= @game.player_1.name %> vs. AI<br>
+
+Rock, paper or scissors? Make your choice:
+<form action='/result' method="post">
+  <input type='radio' id='rock' name='player_choice' value='Rock'>
+  <label for='Rock'>Rock</label><br>
+  <input type='radio' name='player_choice' value='Paper'>
+  <label for='Paper'>Paper</label><br>
+  <input type='radio' name='player_choice' value='Scissors'>
+  <label for='Scissors'>Scissors</label><br>
+  <input type="submit" value="Play">
+</form>
