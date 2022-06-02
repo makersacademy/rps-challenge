@@ -16,17 +16,32 @@ class RockPaperScissors < Sinatra::Base
   get '/single' do
     erb :single
   end
+
+  get '/multi' do
+    erb :multi
+  end
   
-  post "/names" do
+  post "/names_single" do
     player_1 = Player.new(params[:name])
     player_2 = Computer.new
+    $game = Game.new(player_1, player_2)
+    redirect "/play"
+  end
+
+  post "/names_multi" do
+    player_1 = Player.new(params[:name1])
+    player_2 = Player.new(params[:name2])
     $game = Game.new(player_1, player_2)
     redirect "/play"
   end
   
   get "/play" do
     @game = $game
-    erb :game
+    if @game.player_2.is_a? Computer
+      erb :game
+    else
+      erb :game_multi
+    end
   end
   
   post "/weapon" do

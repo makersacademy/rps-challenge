@@ -8,8 +8,8 @@ end
 def enter_and_submit_names_multi
   visit "/"
   click_button "Multiplayer"
-  fill_in :name, with: "Rosie"
-  fill_in :name, with: "Sophie"
+  fill_in :name1, with: "Rosie"
+  fill_in :name2, with: "Sophie"
   click_button "Submit"
 end
 
