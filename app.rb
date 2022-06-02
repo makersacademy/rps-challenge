@@ -12,6 +12,10 @@ class RockPaperScissors < Sinatra::Base
   get "/" do
     erb :index
   end
+
+  get '/single' do
+    erb :single
+  end
   
   post "/names" do
     player_1 = Player.new(params[:name])
@@ -26,7 +30,6 @@ class RockPaperScissors < Sinatra::Base
   end
   
   post "/weapon" do
-    p params
     @game = $game
     @game.player_1.weapon = params[:weapon]
     redirect '/result'
