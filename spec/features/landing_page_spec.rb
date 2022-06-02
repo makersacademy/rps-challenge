@@ -7,9 +7,7 @@ feature 'Landing page' do
   end
 
   scenario 'Allows user to enter name' do
-    visit('/')
-    fill_in :player_1_name, with: "Michael"
-    click_button "Let's Go!"
+    sign_in_as_michael
     expect(page).to have_content 'Michael, please choose your choice.'
   end
 
