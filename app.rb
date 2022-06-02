@@ -14,33 +14,27 @@ class RockPaperScissors < Sinatra::Base
   end
   
   post "/names" do
-    p params
-    $name = params[:name]
+    player_1 = Player.new(params[:name])
+    player_2 = Computer.new
+    $game = Game.new(player_1, player_2)
     redirect "/play"
   end
   
   get "/play" do
-    @name = $name
+    @game = $game
     erb :game
   end
   
-  post "/result" do
+  post "/weapon" do
     p params
-    $weapon = params[:weapon]
-    redirect '/win'
+    @game = $game
+    @game.player_1.weapon = params[:weapon]
+    redirect '/result'
   end
   
-  get "/win" do
-    @weapon = $weapon
-    erb :win
-  end
-  
-  get "/draw" do
-    # page for draws
-  end
-  
-  get "/lose" do
-    # page for losing
+  get "/result" do
+    @game = $game
+    erb @game.result
   end
 
   run! if app_file == $0

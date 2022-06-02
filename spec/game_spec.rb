@@ -20,19 +20,22 @@ describe Game do
     end
 
     it "returns win if player_1 wins" do
-      expect(player_1).to receive(:weapon).and_return(:rock)
-      expect(player_2).to receive(:weapon).and_return(:scissors)
+      allow(player_1).to receive(:weapon).and_return(:rock)
+      expect(player_2).to receive(:weapon_selector).and_return(:scissors)
+      allow(player_2).to receive(:weapon).and_return(:scissors)
       expect(game.result).to eq :win
     end
 
-    it "returns lose if player_1 wins" do
+    it "returns lose if player_2 wins" do
       allow(player_1).to receive(:weapon).and_return(:rock)
+      expect(player_2).to receive(:weapon_selector).and_return(:paper)
       allow(player_2).to receive(:weapon).and_return(:paper)
       expect(game.result).to eq :lose
     end
 
     it "returns draw if a draw" do
       allow(player_1).to receive(:weapon).and_return(:rock)
+      expect(player_2).to receive(:weapon_selector).and_return(:rock)
       allow(player_2).to receive(:weapon).and_return(:rock)
       expect(game.result).to eq :draw
     end

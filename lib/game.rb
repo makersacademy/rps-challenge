@@ -1,6 +1,6 @@
 class Game
   WEAPONS = [:rock, :paper, :scissors]
-  RULES = {:rock=>:scissors, :scissors=>:paper, :paper=>:rock}
+  RULES = {rock: :scissors, scissors: :paper, paper: :rock}
 
   attr_reader :players
 
@@ -17,12 +17,17 @@ class Game
     end
   
     def result
+      player_2.weapon_selector
       if player_2.weapon == RULES[player_1.weapon]
-        :win
+        puts player_2.weapon
+        p :win
       elsif player_1.weapon == RULES[player_2.weapon]
-        :lose
+        puts player_2.weapon
+        p :lose
      else
-        :draw
-     end
+        p player_1.weapon == player_2.weapon
+        puts player_2.weapon
+        p :draw
+      end
     end
   end
