@@ -12,6 +12,6 @@ class Game
   end
 
   def get_player_choice
-    @player_1.choice
+    @player_1.choice.downcase
   end
 end

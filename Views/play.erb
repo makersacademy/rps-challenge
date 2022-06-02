@@ -1,6 +1,6 @@
-<%= @game.player_1.name %> vs. AI<br>
+<h1><%= @game.player_1.name %> vs. AI</h1>
 
-Rock, paper or scissors? Make your choice:
+<h3>Rock, paper or scissors? Make your choice:</h3>
 <form action='/result' method="post">
   <input type='text' name='player_choice'>
   <input type="submit" value="Play">

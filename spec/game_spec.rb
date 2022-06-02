@@ -11,4 +11,12 @@ describe Game do
       game.ai_choice
     end
   end
+
+  describe '#get_player_choice' do
+    it "it returns the player's choice" do
+      allow(player_1).to receive(:make_choice).with('rock').and_return 'rock'
+      expect(game).to receive(:get_player_choice).and_return 'rock'
+      game.get_player_choice
+    end
+  end
 end

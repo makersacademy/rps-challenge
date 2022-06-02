@@ -1,2 +1,18 @@
-<%= @game.player_1.name %> chose <%= @game.get_player_choice %><br>
-AI chose <%= @game.comp_choice %>
+<h3><%= @game.player_1.name %> chose <%= @game.get_player_choice %></h3>
+<h3>AI chose <%= @game.comp_choice %></h3>
+
+<% if @game.comp_choice == @game.get_player_choice %>
+  <h3>It's a draw!</h3>
+<% elsif @game.comp_choice == 'rock' && @game.get_player_choice == 'scissors' %>
+  <h3>AI wins!</h3>
+<% elsif @game.comp_choice == 'scissors' && @game.get_player_choice == 'paper' %>
+  <h3>AI wins!</h3>
+<% elsif @game.comp_choice == 'paper' && @game.get_player_choice == 'rock' %>
+  <h3>AI wins!</h3>
+<% else %>
+<h3><%= @game.player_1.name %> wins!</h3>
+<% end %>
+
+<form action='/play'>
+  <input type='submit' value='Play again'>
+</form>
