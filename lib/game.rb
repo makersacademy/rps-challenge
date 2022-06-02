@@ -1,8 +1,6 @@
 class Game
   WEAPONS = [:rock, :paper, :scissors]
-  RULES = [{rock: :scissors,
-            scissors: :paper,
-            paper: :rock}]
+  RULES = {:rock=>:scissors, :scissors=>:paper, :paper=>:rock}
 
   attr_reader :players
 
@@ -19,7 +17,12 @@ class Game
     end
   
     def result
-      # returns a symbol for selecting correct erb
-      # based on the players weapons
+      if player_2.weapon == RULES[player_1.weapon]
+        :win
+      elsif player_1.weapon == RULES[player_2.weapon]
+        :lose
+     else
+        :draw
+     end
     end
   end

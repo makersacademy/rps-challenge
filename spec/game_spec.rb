@@ -16,26 +16,24 @@ describe Game do
     end
 
     it "returns rules constant" do
-      expect(Game::RULES).to eq [{rock: :scissors,
-                                  scissors: :paper,
-                                  paper: :rock}]
+      expect(Game::RULES).to eq ({rock: :scissors, scissors: :paper, paper: :rock})
     end
 
-    xit "returns win if player_1 wins" do
-      allow(player_1).to receive(weapon).and_return(:rock)
-      allow(player_2).to receive(weapon).and_return(:scissors)
+    it "returns win if player_1 wins" do
+      expect(player_1).to receive(:weapon).and_return(:rock)
+      expect(player_2).to receive(:weapon).and_return(:scissors)
       expect(game.result).to eq :win
     end
 
-    xit "returns lose if player_1 wins" do
-      allow(player_1).to receive(weapon).and_return(:rock)
-      allow(player_2).to receive(weapon).and_return(:paper)
+    it "returns lose if player_1 wins" do
+      allow(player_1).to receive(:weapon).and_return(:rock)
+      allow(player_2).to receive(:weapon).and_return(:paper)
       expect(game.result).to eq :lose
     end
 
-    xit "returns draw if a draw" do
-      allow(player_1).to receive(weapon).and_return(:rock)
-      allow(player_2).to receive(weapon).and_return(:rock)
+    it "returns draw if a draw" do
+      allow(player_1).to receive(:weapon).and_return(:rock)
+      allow(player_2).to receive(:weapon).and_return(:rock)
       expect(game.result).to eq :draw
     end
   end
