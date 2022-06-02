@@ -3,23 +3,21 @@
 feature 'Throwing page' do
   scenario 'Win' do
     sign_in_as_michael
-    
-    expect(page).to have_content 'ROCK!'
-    expect(page).to have_content 'PAPER!'
-    expect(page).to have_content 'SCISSORS!'
+    choose('rock')
+    save_and_open_page
+    click_button("Throw!")
+    expect(page).to have_content 'You Win!'
   end
 
-  scenario 'Lose' do
+  xscenario 'Lose' do
     sign_in_as_michael
-    expect(page).to have_content 'ROCK!'
-    expect(page).to have_content 'PAPER!'
-    expect(page).to have_content 'SCISSORS!'
+    choose(rock)
+    expect(page).to have_content 'You Lose!'
   end
 
-  scenario 'Tie' do
+  xscenario 'Tie' do
     sign_in_as_michael
-    expect(page).to have_content 'ROCK!'
-    expect(page).to have_content 'PAPER!'
-    expect(page).to have_content 'SCISSORS!'
+    choose(rock)
+    expect(page).to have_content 'It is a tie!'
   end
 end
