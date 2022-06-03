@@ -16,7 +16,7 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  post '/name' do
+  post '/game' do
     player_1 = Player.new(params[:player_1_name])
     player_2 = Player.new("Computer")
     $game = Game.new(player_1, player_2)
@@ -24,10 +24,11 @@ class RPS < Sinatra::Base
     erb(:game)
   end
 
-  get '/result' do
+  post '/result' do
+    $game.player_1.choice = params[:throw]
+    $game.player_2.choice
+    $game.match
     @game = $game
-    @game.player_1.choice = params[:throw]
-    @game.player_2.throw
     erb(:match)
   end
 

@@ -14,9 +14,10 @@ describe Player do
   end
 
   it 'throws and can change the result' do
-    player = Player.new("Felix")  
-    # allow_any_instance_of(Player).to receive(:throw).and_return(:rock)
+
+    player = Player.new("Felix")
+    srand(3) # to fixed the random sequence
     player.throw
-    expect(player.choice).to eq :rock
+    expect(player.choice).to eq :paper
   end
 end

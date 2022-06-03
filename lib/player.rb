@@ -12,6 +12,12 @@ class Player
   def throw
     @choice = [:rock, :scissors, :paper].sample
     puts @choice
-    return @choice
+    @choice
   end
+
+  # private 
+
+  # def throw
+  #   @choice = [:rock, :scissors, :paper].sample if @choice == nil
+  # end
 end

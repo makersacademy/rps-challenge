@@ -13,6 +13,11 @@ class Game
     }
     @players = [player1, player2]
     @winner = nil
+    @declaration = ""
+  end
+
+  def declaration
+    @declaration
   end
 
   def winner
@@ -30,14 +35,19 @@ class Game
   def match
     if player_1.choice == player_2.choice
       @winner = nil
+      puts "here"
+      @declaration = "It is a tie!"
     elsif @winmap[player_1.choice] == player_2.choice
       @winner = player_1
-      p "there #{@winner}"
+      puts "there"
+      @declaration = "You Win!"
     else
       @winner = player_2
-      p "here"
+      puts "everywhere"
+      @declaration = "You Lose!"
     end
     @winner
+    puts @declaration
   end
 
   # private

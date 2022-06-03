@@ -1,5 +1,9 @@
 <!-- views/match.erb -->
 
-<%= @game.player_1.name %>: <%= @game.player_1.choice.to_s %> vs <%= @game.player_2.name%>: <%= @game.player_2.choice.to_s%>
-<h1>You Win!</h1>
+<div class="result">
+  <%= @game.player_1.name %>: <%= @game.player_1.choice.to_s %> vs <%= @game.player_2.name%>: <%= @game.player_2.choice.to_s%>
+</div>
+
+
+<h1 class="declaration"><%= @game.declaration %></h1>
 
