@@ -56,7 +56,7 @@ class RockPaperScissors < Sinatra::Base
   
   get "/result" do
     @game = $game
-    erb @game.result
+    erb $game.result
   end
 
   run! if app_file == $0
