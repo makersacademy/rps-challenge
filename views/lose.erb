@@ -1,6 +1,11 @@
-You selected <%=@game.player_1.weapon.capitalize%></br>
-Computer selected <%=@game.player_2.weapon.capitalize%></br>
-You lose!
+<%=@game.player_1.name.capitalize%> selected <%=@game.player_1.weapon.capitalize%></br>
+<%=@game.player_2.name.capitalize%> selected <%=@game.player_2.weapon.capitalize%></br>
+<%if @game.single_player%>
+  You lose!
+<%else%>
+  <%=@game.player_2.name.capitalize%> wins!
+<%end%>
+Play again?
  <form action="/play" >
       <input type="submit" value="Yes, please">
   </form>

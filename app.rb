@@ -37,16 +37,20 @@ class RockPaperScissors < Sinatra::Base
   
   get "/play" do
     @game = $game
-    if @game.player_2.is_a? Computer
-      erb :game
-    else
-      erb :game_multi
-    end
+    erb @game.select_type
   end
   
   post "/weapon" do
     @game = $game
     @game.player_1.weapon = params[:weapon]
+    redirect '/result'
+  end
+
+  post "/weapon_multi" do
+    p params
+    @game = $game
+    @game.player_1.weapon = params[:weapon]
+    @game.player_2.weapon = params[:weapon2]
     redirect '/result'
   end
   
