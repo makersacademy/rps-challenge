@@ -11,7 +11,6 @@ class Player
 
   def throw
     @choice = [:rock, :scissors, :paper].sample
-    puts @choice
     @choice
   end
 

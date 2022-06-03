@@ -25,8 +25,8 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
-    $game.player_1.choice = params[:throw]
-    $game.player_2.choice
+    $game.player_1.choice = params[:throw].to_sym
+    $game.player_2.throw
     $game.match
     @game = $game
     erb(:match)

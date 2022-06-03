@@ -3,7 +3,7 @@
 require './lib/player'
 
 class Game
-  attr_reader :players
+  attr_reader :players, :declaration
 
   def initialize(player1, player2)
     @winmap = {
@@ -35,19 +35,15 @@ class Game
   def match
     if player_1.choice == player_2.choice
       @winner = nil
-      puts "here"
       @declaration = "It is a tie!"
     elsif @winmap[player_1.choice] == player_2.choice
       @winner = player_1
-      puts "there"
       @declaration = "You Win!"
     else
       @winner = player_2
-      puts "everywhere"
       @declaration = "You Lose!"
     end
     @winner
-    puts @declaration
   end
 
   # private

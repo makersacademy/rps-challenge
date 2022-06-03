@@ -14,7 +14,6 @@ describe Player do
   end
 
   it 'throws and can change the result' do
-
     player = Player.new("Felix")
     srand(3) # to fixed the random sequence
     player.throw
