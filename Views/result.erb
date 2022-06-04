@@ -1,0 +1,18 @@
+<h3><%= @game.player_1.name %> chose <%= @game.get_player_1_choice %></h3>
+<h3><%= @game.player_2.name %> chose <%= @game.get_player_2_choice %></h3>
+
+<% if @game.get_player_1_choice == @game.get_player_2_choice %>
+  <h3>It's a draw!</h3>
+<% elsif @game.get_player_1_choice == 'rock' && @game.get_player_2_choice == 'scissors' %>
+  <h3>Player 1 wins</h3>
+<% elsif @game.get_player_1_choice == 'scissors' && @game.get_player_2_choice == 'paper' %>
+  <h3>Player 1 wins</h3>
+<% elsif @game.get_player_1_choice == 'paper' && @game.get_player_2_choice == 'rock' %>
+  <h3>Player 1 wins</h3>
+<% else %>
+<h3><%= @game.player_2.name %> wins!</h3>
+<% end %>
+
+<form action='/play'>
+  <input type='submit' value='Play again'>
+</form>
