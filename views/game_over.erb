@@ -1,0 +1,5 @@
+<% if @game.victor.name  == "Computer" %>
+<h1>Game Over!</h1>
+<% else %>
+<h1><%= @game.victor.name %> you won!</h1>
+<% end %>

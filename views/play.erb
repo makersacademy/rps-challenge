@@ -1,0 +1,25 @@
+<style>
+.glow {
+  font-size: 40px;
+  color: navy;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 10px #000099, 0 0 10px #000099, 0 0 10px #000099, 0 0 10px #000099, 0 0 10px #000099;
+  }
+  
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 30px #000099, 0 0 10px #000099, 0 0 10px #000099, 0 0 10px #000099, 0 0 10px #000099, 0 0 10px #000099;
+  }
+}
+</style>
+
+<h1><%= @game.player_1.name %> vs. Computer</h1>
+<h2><%= @game.player_1.name %>: <%= @game.player_1.wins %></h2>
+<h2><%= @game.player_2.name %>: <%= @game.player_2.wins %></h2>
+<form action="/move" method="post">
+  <input type="submit" name="Choice" value="Rock">
+  <input type="submit" name="Choice" value="Paper">
+  <input type="submit" name="Choice" value="Scissors">
+</form>

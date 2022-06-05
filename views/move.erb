@@ -1,0 +1,11 @@
+<h1><%= @game.player_1.name %> chose <%= @game.player_1.move  %></h1>
+<h1><%= @game.player_2.name %> chose <%= @game.player_2.move  %></h1>
+<% if $outcome == "draw" %>
+<h1>It's a draw!</h1>
+<% else %>
+<h1><%= $outcome.name %> won this round!</h1>
+<% end %>
+
+<form action="/continue" method="post">
+  <input type="submit" value="Continue">
+</form>
