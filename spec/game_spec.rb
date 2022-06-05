@@ -5,52 +5,40 @@ RSpec.describe Game do
   # let(:computer) { double :computer, name: 'Computer', choice: 'paper' }
   # subject(:game) { Game.new(:user, :computer) }
 
-  it 'returns the computer choice' do
-    user = double :player
-    computer = double :computer, choice: 'paper'
-    game = Game.new(user, computer)
-    expect(game.computer.choice).to eq 'paper'
+  it 'returns the names of each player' do
+    player1 = double :player, name: 'Elspeth'
+    player2 = double :player, name: 'Cuddle'
+    game = Game.new(player1, player2)
+    expect(game.player1.name).to eq 'Elspeth'
+    expect(game.player2.name).to eq 'Cuddle'
   end
 
-  it 'returns the user choice' do
-    user = double :player, choice: 'scissors'
-    computer = double :computer
-    game = Game.new(user, computer)
-    expect(game.user.choice).to eq 'scissors'
+  it "returns the players' choices" do
+    player1 = double :player, choice: 'scissors'
+    player2 = double :player, choice: 'rock'
+    game = Game.new(player1, player2)
+    expect(game.player1.choice).to eq 'scissors'
+    expect(game.player2.choice).to eq 'rock'
   end
 
-  it 'returns the computer name' do
-    user = double :player
-    computer = double :computer, name: 'Computer'
-    game = Game.new(user, computer)
-    expect(game.computer.name).to eq 'Computer'
-  end
-
-  it 'returns the user name' do
-    user = double :player, name: 'Sandra'
-    computer = double :computer
-    game = Game.new(user, computer)
-    expect(game.user.name).to eq 'Sandra'
-  end
-
-  it "returns true when the user wins" do
-    user = double :player, name: 'Sandra', choice: 'scissors'
-    computer = double :computer, name: 'Computer', choice: 'paper'
-    game = Game.new(user, computer)
+  it "returns true when player 1 wins" do
+    player1 = double :player, name: 'Sandra', choice: 'scissors'
+    player2 = double :player, name: 'Cuddles', choice: 'paper'
+    game = Game.new(player1, player2)
     expect(game.winner).to eq true
   end
 
-  it 'returns false when the computer wins' do
-    user = double :player, name: 'Sandra', choice: 'scissors'
-    computer = double :computer, name: 'Computer', choice: 'rock'
-    game = Game.new(user, computer)
+  it 'returns false when the player 2 wins' do
+    player1 = double :player, name: 'Sandra', choice: 'scissors'
+    player2 = double :player, name: 'Cuddles', choice: 'rock'
+    game = Game.new(player1, player2)
     expect(game.winner).to eq false
   end
 
   it 'returns nil when there is a drawer' do
-    user = double :player, name: 'Sandra', choice: 'rock'
-    computer = double :computer, name: 'Computer', choice: 'rock'
-    game = Game.new(user, computer)
+    player1 = double :player, name: 'Sandra', choice: 'rock'
+    player2 = double :player, name: 'Cuddles', choice: 'rock'
+    game = Game.new(player1, player2)
     expect(game.winner).to eq nil
   end
 end

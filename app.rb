@@ -1,7 +1,6 @@
 require "sinatra/base"
 require "sinatra/reloader"
 require "./lib/player"
-require "./lib/computer_player"
 require "./lib/game"
 
 class RockPaperScissors < Sinatra::Base
@@ -20,28 +19,34 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    @player = Player.new(params[:name])
-    @computer = ComputerPlayer.new
-    $game = Game.new(@player, @computer)
-    p @computer.choice
+    @player1 = Player.new(params[:player1])
+    @player2 = Player.new(params[:player2])
+    $game = Game.new(@player1, @player2)
     erb(:play)
   end
 
-  get '/choices' do
-    $game.user.add('scissors') if params[:scissors]
-    $game.user.add('rock') if params[:rock]
-    $game.user.add('paper') if params[:paper]
+  post '/player_1_choice' do
+    $game.player1.add('scissors') if params[:scissors]
+    $game.player1.add('rock') if params[:rock]
+    $game.player1.add('paper') if params[:paper]
+    redirect ('/round2')
+  end
+
+  get '/round2' do
+    erb(:round2)
+  end
+
+  post '/player_2_choice' do
+    $game.player2.add('scissors') if params[:scissors]
+    $game.player2.add('rock') if params[:rock]
+    $game.player2.add('paper') if params[:paper]
     redirect ('/result')
   end
 
   get '/result' do
-    @result = 'You win!' if $game.winner == true
-    @result = 'Computer wins!' if $game.winner == false
+    @result = "#{$game.player1.name} wins!" if $game.winner == true
+    @result = "#{$game.player2.name} wins!" if $game.winner == false
     @result = "It's a draw!" if $game.winner.nil?
-    p $game.computer.choice
-    @player_choice = $game.user.choice
-    @computer_choice = $game.computer.choice
-    p @computer_choice
     erb(:result)
   end
 

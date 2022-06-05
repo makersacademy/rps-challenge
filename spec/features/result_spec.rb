@@ -1,11 +1,31 @@
 RSpec.describe 'results' do
-  feature 'it shows the user as the winner' do
-    scenario 'the user picks rock and computer chooses scissors' do
-      user = double :user, choice: 'rock', name: 'Sandra'
-      computer = double :computer, choice: 'scissors', name: 'Computer'
-      $game = Game.new(user, computer)
+  feature 'player 1 picks rock and player 2 chooses scissors' do
+    scenario 'shows player 1 as the winner' do
+      player1 = double :player, choice: 'rock', name: 'Sandra'
+      player2 = double :player, choice: 'scissors', name: 'Sandy'
+      $game = Game.new(player1, player2)
       visit '/result'
-      expect(page).to have_content 'You win!'
+      expect(page).to have_content 'Sandra wins!'
+    end
+  end
+
+  feature 'player 1 picks rock and player 2 picks paper' do
+    scenario 'shows player 1 as the winner' do
+      player1 = double :player, choice: 'rock', name: 'Sandra'
+      player2 = double :player, choice: 'paper', name: 'Sandy'
+      $game = Game.new(player1, player2)
+      visit '/result'
+      expect(page).to have_content 'Sandy wins!'
+    end
+  end
+
+  feature 'both players pick paper' do
+    scenario 'shows a draw' do
+      player1 = double :player, choice: 'paper', name: 'Sandra'
+      player2 = double :player, choice: 'paper', name: 'Sandy'
+      $game = Game.new(player1, player2)
+      visit '/result'
+      expect(page).to have_content "It's a draw!"
     end
   end
 end

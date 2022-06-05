@@ -1,7 +1,13 @@
 <h1>Let's play Rock Paper Scissors! <p></p></h1>
 Please enter your name to begin. <p> </p>
 <form action='/play' method='post'>
-<input type="text" name="name" placeholder="Enter name" />
-<label>
+<label for="player_1_name">
+Player 1 Name
+<input type="text" name="player1" placeholder="Player 1" />
+</label>
+<label for="player_2_name">
+PLayer 2 Name
+<input type="text" name="player2" placeholder="Player 1" />
+</label>
 <input type="submit" value="Submit" />
 </form>
