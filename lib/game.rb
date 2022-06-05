@@ -1,11 +1,11 @@
 class Game
 
-  attr_reader :player_1, :player_2, :rounds, :victor
+  attr_reader :player_1, :player_2, :rounds, :overall_winner
 
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
-    @victor = ""
+    @overall_winner = ""
   end
 
   def current_round(player_1_move, player_2_move)
@@ -32,7 +32,7 @@ class Game
       end
     end
     winner.won
-    @victor = winner if winner.wins == 3
+    @overall_winner = winner if winner.wins == 3
     return winner
   end
 end
