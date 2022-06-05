@@ -1,11 +1,12 @@
-<%=@game.player_1.name.capitalize%> selected <%=@game.player_1.weapon.capitalize%></br>
-<%=@game.player_2.name.capitalize%> selected <%=@game.player_2.weapon.capitalize%></br>
 <%if @game.single_player%>
-  You lose!
+  <h1>You lose!</h1>
 <%else%>
-  <%=@game.player_2.name.capitalize%> wins!
+  <h1><%=@game.player_2.name.capitalize%> wins!</h1>
 <%end%>
-Play again?
- <form action="/play" >
-      <input type="submit" value="Yes, please">
+<div class="container">
+<h2><%=@game.player_1.name.capitalize%> selected <%=@game.player_1.weapon.capitalize%>...<%=@game.player_2.name.capitalize%> selected <%=@game.player_2.weapon.capitalize%></h2>
+<p>Play again?</p></br>
+  <form action="/play" >
+        <input type="submit" value="Yes, please">
   </form>
+</div>

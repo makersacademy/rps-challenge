@@ -1,26 +1,29 @@
-<body>
-  <h1><%=@game.player_1.name.upcase%> VS <%=@game.player_2.name.upcase%>!</h1>
-    <div class="selector">
-        <form action="/weapon_multi" method="post">
-          <fieldset id="weapon">
-            <h3><%=@game.player_1.name.capitalize%>, please select your weapon...</h3>
-            <input type="radio" value="Rock" name="weapon" id="rock1" required>
-            <label for="rock1">Rock</label><br>
-            <input type="radio" value="Paper" name="weapon" id="paper1">
-            <label for="paper1">Paper</label><br>
-            <input type="radio" value="Scissors" name="weapon" id="scissors1">
-            <label for="scissors1">Scissors</label><br>
-          </fieldset>
-          <fieldset id="weapon2" required>
-            <h3><%=@game.player_2.name.capitalize%>, please select your weapon...</h3>
-            <input type="radio" value="Rock" name="weapon2" id="rock2" required>
-            <label for="rock2">Rock</label><br>
-            <input type="radio" value="Paper" name="weapon2" id="paper2">
-            <label for="paper2">Paper</label><br>
-            <input type="radio" value="Scissors" name="weapon2" id="scissors2">
-            <label for="scissors2">Scissors</label><br>
-        </fieldset>
-          <input type="submit" value="Submit">
-        </form>
-      </div>
+<h1><%=@game.player_1.name.upcase%> VS <%=@game.player_2.name.upcase%>!</h1>
+<div class="container">
+  <div class="child">
+    <form action="/weapon_multi" method="post">
+      <fieldset id="weapon">
+        <h2><%=@game.player_1.name.capitalize%>, please select your weapon...</h2>
+        <input type="radio" value="Rock" name="weapon" id="rock1" required>
+        <label for="rock1">Rock</label>
+        <input type="radio" value="Paper" name="weapon" id="paper1">
+        <label for="paper1">Paper</label>
+        <input type="radio" value="Scissors" name="weapon" id="scissors1">
+        <label for="scissors1">Scissors</label>
+      </fieldset>
+    </div>
+    <div class="child">
+      <fieldset id="weapon2" required>
+        <h2><%=@game.player_2.name.capitalize%>, please select your weapon...</h2>
+        <input type="radio" value="Rock" name="weapon2" id="rock2" required>
+        <label for="rock2">Rock</label>
+        <input type="radio" value="Paper" name="weapon2" id="paper2">
+        <label for="paper2">Paper</label>
+        <input type="radio" value="Scissors" name="weapon2" id="scissors2">
+        <label for="scissors2">Scissors</label>
+      </fieldset>
+    </div>
+    <input type="submit" value="Submit">
+    </form>
+</div>
 
