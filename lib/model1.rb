@@ -4,6 +4,12 @@ class RPS
 
   attr_reader :rps
 
+  RULES = { rock: :scissors,
+    paper: :rock,
+    scissors: :paper }
+
+    #found this as suggested in some online material, wondering if its suitable for this sort of thing
+
   def initialize
     @rps = ["rock", "paper", "scissors"]
     @result_player = []

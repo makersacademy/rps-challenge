@@ -6,21 +6,31 @@ class RockPaperScissors < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
+  enable :sessions
 
   get '/' do
     'Welcome to Rock Paper Scissors, get ready to play.'
     erb :name
   end
 
-  get '/names' do
-    'Hello #{@player}'
-    redirect :play
+  post '/names' do
+    session[:name] = params[:name]
+    redirect '/play'
   end
 
-  post '/assign_name' do
-    @player = Player.new(params[:name])
-    erb :player
+  get '/play' do
+    @player = session[:name]
+    erb :play
   end
+
+  get '/result' do
+    "Congratulations, You got here"
+    erb :result
+  end
+  # post '/assign_name' do
+  #   @player = Player.new(params[:name])
+  #   erb :player
+  # end
 
   run! if app_file == $0
 end
