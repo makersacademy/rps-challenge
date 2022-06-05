@@ -4,6 +4,8 @@
   <%= @game.player_1.name %>: <%= @game.player_1.choice.to_s %> vs <%= @game.player_2.name%>: <%= @game.player_2.choice.to_s%>
 </div>
 
-
 <h1 class="declaration"><%= @game.declaration %></h1>
 
+<form action="/" method="get">
+  <input type="submit" value="Play again!">
+</form>
