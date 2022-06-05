@@ -3,7 +3,7 @@
 require './lib/player'
 
 class Game
-  attr_reader :players, :declaration, :players_num, :current_player, :other_player
+  attr_reader :players, :declaration, :players_num, :current_player, :other_player, :turn
 
   def initialize(player1, player2, players_num)
     @winmap = {
@@ -13,8 +13,11 @@ class Game
     }
     @players = [player1, player2]
     @winner = nil
+
+    @turn = 1
     @current_player = @players[0]
     @other_player = @players[1]
+
     @declaration = ""
     @players_num = players_num
   end
@@ -26,6 +29,7 @@ class Game
   def switch_turn
     @current_player = player_2
     @other_player = player_1
+    @turn = 2
   end
 
   def winner
@@ -43,15 +47,23 @@ class Game
   def match
     if player_1.choice == player_2.choice
       @winner = nil
-      @declaration = "It is a tie!"
     elsif @winmap[player_1.choice] == player_2.choice
       @winner = player_1
-      @declaration = "You Win!"
     else
       @winner = player_2
-      @declaration = "You Lose!"
     end
-    @winner
+
+    if @winner == nil
+      @declaration = "It is a tie!"
+    elsif players_num == 2
+      @declaration = "#{@winner.name} wins!"
+    else
+      if @winner == player_1
+        @declaration = "You Win!"
+      else
+        @declaration = "You Lose!"
+      end
+    end
   end
 
   # private

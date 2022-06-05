@@ -7,7 +7,7 @@ feature 'Two throwing page' do
     expect(page).to have_content "Your opponent's name: Jerry"
   end
 
-  xscenario 'Showing Player 1 name for two players (when second player choosing)' do
+  scenario 'Showing Player 1 name for two players (when second player choosing)' do
     sign_in_as_tom_and_jerry
     choose('rock')
     click_button("Throw!")
@@ -15,7 +15,7 @@ feature 'Two throwing page' do
     expect(page).to have_content "Your opponent's name: Tom"
   end
 
-  xscenario 'Showing options for two players one by one' do
+  scenario 'Showing options for two players one by one' do
     sign_in_as_tom_and_jerry
     expect(page).to have_content "Tom, please choose your choice."
     expect(page).to have_content 'ROCK!'

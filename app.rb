@@ -24,14 +24,27 @@ class RPS < Sinatra::Base
     erb(:game)
   end
 
-  post '/result' do
-    $game.player_1.choice = params[:throw].to_sym
-    $game.player_2.throw
+  get '/player_2' do
+    if $game.players_num == 1
+      $game.player_1.choice = params[:throw].to_sym
+      $game.player_2.throw
+      redirect '/result'
+    elsif $game.turn == 1
+      $game.player_1.choice = params[:throw].to_sym
+      $game.switch_turn
+      @game = $game
+      erb(:game)
+    elsif $game.turn == 2
+      $game.player_2.choice = params[:throw].to_sym
+      redirect '/result'
+    end
+  end
+    
+  get '/result' do
     $game.match
     @game = $game
     erb(:match)
   end
-
 
   run! if app_file ==$0
 end
