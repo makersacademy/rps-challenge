@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative 'lib/computer_choice'
+require_relative 'lib/game'
 
 class RockPaper < Sinatra::Base
   configure :development do
