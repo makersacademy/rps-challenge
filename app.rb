@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative 'lib/computer_choice'
 
 class RockPaper < Sinatra::Base
   configure :development do
@@ -29,6 +30,7 @@ class RockPaper < Sinatra::Base
 
   get '/show_choice' do
     @player_choice = session[:player_choice]
+    @computer_choice = ComputerChoice.new.get_choice
     erb :choice
   end
   
