@@ -14,7 +14,6 @@ class RockPaper < Sinatra::Base
 
   post '/name' do
     session[:player_name] = params[:player_name]
-    erb :play
     redirect '/play'
   end 
 
@@ -23,6 +22,16 @@ class RockPaper < Sinatra::Base
     erb :play
   end
 
+  post '/choice' do
+    session[:player_choice] = params[:player_choice]
+    redirect '/show_choice'
+  end
+
+  get '/show_choice' do
+    @player_choice = session[:player_choice]
+    erb :choice
+  end
+  
   run! if app_file == $0
 end
 
