@@ -1,17 +1,18 @@
 # Introduction
-Welcome to the code review for RPS Challenge!  Again, don't worry - you are not expected to have all the answers. The following is a code-review scaffold for RPS Challenge that you can follow if you want to.  These are common issues to look out for in this challenge - but you may decide to take your own route.
+
+Welcome to the code review for RPS Challenge! Again, don't worry - you are not expected to have all the answers. The following is a code-review scaffold for RPS Challenge that you can follow if you want to. These are common issues to look out for in this challenge - but you may decide to take your own route.
 
 If you don't feel comfortable giving technical feedback at this stage, try going through this guide with your reviewee and review the code together.
 
 # Step 0: Checkout and Run tests
 
-Please checkout your reviewee's code and run their tests. Read the code and try and play the game through the web interface.  You can also experiment with the engine in IRB. How easy is it to understand the structure of their code? How readable is their code? Did you need to make any cognitive leaps to 'get it'?
+Please checkout your reviewee's code and run their tests. Read the code and try and play the game through the web interface. You can also experiment with the engine in IRB. How easy is it to understand the structure of their code? How readable is their code? Did you need to make any cognitive leaps to 'get it'?
 
 # Step 1: Structure and supporting files
 
 ## Instructions in README
 
-As we have seen previously, the README is a great place to show the full story of how your app is used (from a user's perspective).  For a web app, include instructions for how to download and run the app, e.g.:
+As we have seen previously, the README is a great place to show the full story of how your app is used (from a user's perspective). For a web app, include instructions for how to download and run the app, e.g.:
 
 ```sh
 $ git clone git@github.com:[USERNAME]/rps-challenge.git
@@ -20,28 +21,32 @@ $ bundle
 $ rackup
 ```
 
-And maybe include some screenshots?  For more info on embedding images in a README: https://guides.github.com/features/mastering-markdown/
+And maybe include some screenshots? For more info on embedding images in a README: https://guides.github.com/features/mastering-markdown/
 
 e.g.:
+
 ```
 ![Screenshot](https://path_to_your_image)
 ```
 
 You will need to host your images somewhere, e.g.:
-* http://imgur.com/
-* http://dropbox.com/
+
+- http://imgur.com/
+- http://dropbox.com/
 
 ## Inconsistent folder layout (Sinatra structure)
 
-Sinatra is not a particularly opinionated framework (unlike Rails).  This means it does not mandate folder structures and naming conventions.  This gives developers the freedom to choose their own structures according to the needs of a project.
+Sinatra is not a particularly opinionated framework (unlike Rails). This means it does not mandate folder structures and naming conventions. This gives developers the freedom to choose their own structures according to the needs of a project.
 
-Structure is an important decision in your design as it affects readability.  One of the most important considerations is the *separation of concerns*
+Structure is an important decision in your design as it affects readability. One of the most important considerations is the _separation of concerns_
 
 Here is a checklist to consider:
+
 ### If the structure has an `/app` folder:
-* Is the server file (e.g rps_web.rb or app.rb) at the top level of the `/app` folder?
-* Is the `/views` folder in `/app`?
-* Is the `/lib` folder in the project root folder?
+
+- Is the server file (e.g rps_web.rb or app.rb) at the top level of the `/app` folder?
+- Is the `/views` folder in `/app`?
+- Is the `/lib` folder in the project root folder?
 
 ```
 ├── app
@@ -57,7 +62,8 @@ Here is a checklist to consider:
 ```
 
 ### If the structure does not have an `/app` folder:
-* Is the server file (e.g rps_web.rb or app.rb) in the project root folder?
+
+- Is the server file (e.g rps_web.rb or app.rb) in the project root folder?
 
 ```
 ├── lib
@@ -73,7 +79,8 @@ Here is a checklist to consider:
 
 ## Inconsistent file naming
 
-Ruby class files should be named with the snake_case version of the class name.  Class names should be PascalCase.  Hence:
+Ruby class files should be named with the snake_case version of the class name. Class names should be PascalCase. Hence:
+
 ### Good
 
 - `class RPS` -> `rps.rb`
@@ -92,21 +99,22 @@ In `spec/spec_helper.rb`, don't forget to add `Capybara.app = MyRackApp` or simi
 
 Old code should be deleted before you commit - it is distracting and makes your code hard to read. There is no reason to keep commented-out code - if you are commiting regularly, all your code will be in git so you can easily look back at how it looked before you made changes.
 
-
-# Step 2: Tests and \*\_spec.rb files  
+# Step 2: Tests and \*\_spec.rb files
 
 ## \*\_spec.rb files (unit tests)
 
 ### Not testing all of the game logic in unit tests
-As there is a discrete number of possible outcomes, your tests should test them all.  This may seem like overkill, but how else will you know that your game logic is correct in all circumstances?
 
+As there is a discrete number of possible outcomes, your tests should test them all. This may seem like overkill, but how else will you know that your game logic is correct in all circumstances?
 
 ## \*\_spec.rb files (feature tests)
 
 ### Testing game logic in feature tests
+
 Your feature test should not need to test all of the rock/paper/scissors(/lizard/spock) possibilities - this is the responsibility of your unit tests.
 
 ### Not testing all game outcomes in feature tests
+
 Although you do not need to test all possible combinations, your feature tests should test every possible outcome - i.e.:
 
 - a win
@@ -117,7 +125,7 @@ to ensure the user interface logic is correct.
 
 ### Stub out random behaviour
 
-* stub out random behaviour to ensure your feature tests pass consistently, e.g. (i)
+- stub out random behaviour to ensure your feature tests pass consistently, e.g. (i)
 
 ```ruby
 feature 'Playing the game' do
@@ -136,7 +144,7 @@ end
 
 ## Including presentation strings in business logic layer
 
-Your `Game` class (or similar) should not return presentation strings like `"Congratulations - you won!"`.  This is a presentation concern and should be handled in another layer of code (**separation of concerns**).  Instead, return representative codes, such as `:win` and `:draw` from the `Game` class which can be translated by the presentation layer.
+Your `Game` class (or similar) should not return presentation strings like `"Congratulations - you won!"`. This is a presentation concern and should be handled in another layer of code (**separation of concerns**). Instead, return representative codes, such as `:win` and `:draw` from the `Game` class which can be translated by the presentation layer.
 
 This approach makes it possible to change the presentation layer (e.g. to add support for a different language) without changing the lower-level code (**open/closed principle**).
 
@@ -188,7 +196,7 @@ in `views/win.erb`:
 
 Long `if` and `elsif` trees are very difficult to read and nested `if` statements require too much working memory for a reader to quickly scan.
 
-There are a number of approaches to the game logic of Rock Paper Scissors,  e.g.:
+There are a number of approaches to the game logic of Rock Paper Scissors, e.g.:
 
 - Use a hash to map the rules:
 
@@ -207,6 +215,7 @@ RULES = { rock: [scissors, lizard],
           lizard: [:paper, :spock],
           spock: [:rock, :scissors] }
 ```
+
 - Use a `Weapon` class with a `beats?` or similar method that takes another weapon instance as a parameter.
 
 ```ruby
@@ -228,7 +237,7 @@ rock.beats?(Weapon.new(:scissors))
 
 ## Not encapsulating the 'computer' in a separate class
 
-By creating a `Computer` class, you can take advantage of duck-typing in the game class.  The game does not need to know if it's comparing two players or one player vs a computer or even two computers!
+By creating a `Computer` class, you can take advantage of duck-typing in the game class. The game does not need to know if it's comparing two players or one player vs a computer or even two computers!
 
 ```ruby
 class Computer
@@ -249,7 +258,7 @@ end
 
 ## Use of global variables
 
-It is tempting to use global variables to ensure instances of a game or players are persisted across calls to the server.  But [*global variables are evil*](http://c2.com/cgi/wiki?GlobalVariablesAreBad).  There are a number of other ways to achieve the same thing.  While some may argue these also introduce 'globally accessible' state, the critical difference is we have more control over this state and it is properly **namespaced**.  Here is an example using a class methods inside the server and Sinatra helper methods to encapsulate the interface:
+It is tempting to use global variables to ensure instances of a game or players are persisted across calls to the server. But [_global variables are evil_](http://c2.com/cgi/wiki?GlobalVariablesAreBad). There are a number of other ways to achieve the same thing. While some may argue these also introduce 'globally accessible' state, the critical difference is we have more control over this state and it is properly **namespaced**. Here is an example using a class methods inside the server and Sinatra helper methods to encapsulate the interface:
 
 ```ruby
 class Player
@@ -312,7 +321,7 @@ def weapons
 end
 ```
 
-Then *four* new objects will be created *every time you call `weapons`*  (what are the four objects?).  Use a constant with symbols instead:
+Then _four_ new objects will be created _every time you call `weapons`_ (what are the four objects?). Use a constant with symbols instead:
 
 ```ruby
 WEAPONS = [:rock, :paper, :scissors]
@@ -320,7 +329,7 @@ WEAPONS = [:rock, :paper, :scissors]
 
 ## Inconsistent routing and route naming
 
-Routes should not have dual purposes.  Each discrete action of your programme should have its own dedicated route (N.B. the route comprises both the verb and the path).
+Routes should not have dual purposes. Each discrete action of your programme should have its own dedicated route (N.B. the route comprises both the verb and the path).
 
 The preferred convention for naming routes is snake_case, e.g. `game` over `Game`.
 
@@ -339,11 +348,11 @@ end
 
 ```
 
-In the above example the first route GETs the form that allows a user to create a new game.  This action does not change any state on the server so it's important that we use the GET action, and not POST.  The second route corresponds to the POSTed submission of the new game form.  This action does create some state on the server, i.e. the creation of a particular game, so it makes sense to use the active verb POST here.
+In the above example the first route GETs the form that allows a user to create a new game. This action does not change any state on the server so it's important that we use the GET action, and not POST. The second route corresponds to the POSTed submission of the new game form. This action does create some state on the server, i.e. the creation of a particular game, so it makes sense to use the active verb POST here.
 
 ## Defining weapons in more than one place
 
-Don't Repeat Yourself (DRY)!  The list of available weapons should be defined in only one place.  It can be passed around or referenced or injected, but not duplicated!
+Don't Repeat Yourself (DRY)! The list of available weapons should be defined in only one place. It can be passed around or referenced or injected, but not duplicated!
 
 Let's DRY the code from the encapsulation example above:
 
@@ -370,7 +379,7 @@ end
 
 ## Calling business logic from the view
 
-It is the controller's responsibility to pass the player's weapon to the game and get the result.  Use instance variables or helper methods to represent or convert this result for rendering in the view.
+It is the controller's responsibility to pass the player's weapon to the game and get the result. Use instance variables or helper methods to represent or convert this result for rendering in the view.
 
 **bad**
 
@@ -392,12 +401,8 @@ end
 
 ```html
 <h1>
-<% @game.player1_choice(@player1_choice) %>
-<% if @game.result == :win %>
-  Congratulations - you won
-<% else %>
-  Sorry - you lost
-<% end %>
+  <% @game.player1_choice(@player1_choice) %> <% if @game.result == :win %>
+  Congratulations - you won <% else %> Sorry - you lost <% end %>
 </h1>
 ```
 
