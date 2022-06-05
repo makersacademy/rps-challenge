@@ -1,6 +1,5 @@
 * {
   text-decoration: none;
-  box-sizing: border-box;
 }
 
 body {
@@ -37,7 +36,6 @@ input[type="submit"] {
   background-color: #54ddc1;
   color: whitesmoke;
   border: 0;
-  text-transform: uppercase; 
   padding: 0.25em 0.5em;  
 }
 
@@ -55,10 +53,35 @@ input[type="text"] {
 }
 
 .child {
+  position: relative;
   display: inline-block;
   padding: 60px;
   text-align: center;
 }  
+
+.radio_bar input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  border: 0;
+}
+
+.radio_bar label {
+  display: inline-block;
+  font-size: 30px;
+  font-family: 'Oleo Script', monospace;
+  text-align: center;
+  background-color: #54ddc1;
+  color: whitesmoke;
+  border: 0;
+  padding: 7px 
+}
+
+.radio_bar input[type="radio"]:checked + label {
+  color:rgb(71, 80, 78)
+}
 
 .multi_submit {
   text-align: center;
