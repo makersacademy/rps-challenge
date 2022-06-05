@@ -2,6 +2,7 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+
 body {
   background-color: #f2e6ff;
   font-family: 'Josefin Sans', monospace;
@@ -58,6 +59,11 @@ input[type="text"] {
   padding: 60px;
   text-align: center;
 }  
+
+.multi_submit {
+  text-align: center;
+  padding: 30px
+}
 
 fieldset {
   border: 0px;
