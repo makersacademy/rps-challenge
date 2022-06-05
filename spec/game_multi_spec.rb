@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
   subject(:game) { described_class.new(player_1, player_2) }
-  let(:player_1) { double :player }
-  let(:player_2) { double :player, type: :human }
+  let(:player_1) { double :player, name: "Rosie"}
+  let(:player_2) { double :player, name: "Sophie" }
 
   it "returns false for single player" do
     expect(game.single_player).to eq false

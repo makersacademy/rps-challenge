@@ -29,7 +29,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/names_multi" do
-    player_1 = Player.new(params[:name1])
+    player_1 = Player.new(params[:name])
     player_2 = Player.new(params[:name2])
     $game = Game.new(player_1, player_2)
     redirect "/play"
@@ -47,7 +47,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/weapon_multi" do
-    p params
     @game = $game
     @game.player_1.weapon = params[:weapon]
     @game.player_2.weapon = params[:weapon2]
@@ -56,7 +55,7 @@ class RockPaperScissors < Sinatra::Base
   
   get "/result" do
     @game = $game
-    erb $game.result
+    erb @game.result
   end
 
   run! if app_file == $0

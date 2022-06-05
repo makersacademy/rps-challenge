@@ -1,10 +1,10 @@
 class Player
-  attr_reader :name, :weapon, :type
+  attr_reader :weapon, :type
+  attr_accessor :name
 
   def initialize(name)
     @name = name
     @weapon = nil
-    @type = :human
   end
 
   def weapon=(weapon)

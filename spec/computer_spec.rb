@@ -5,7 +5,7 @@ describe Computer do
   let(:game) { double :game, WEAPONS = [:rock, :paper, :scissors] }
 
   it "returns its name" do
-    expect(computer.name).to eq "Computer"
+    expect(computer.name).to eq :Computer
   end
 
   it "randomly selects a weapon" do # not entirely sure this will work
