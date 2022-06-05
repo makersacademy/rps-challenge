@@ -1,7 +1,9 @@
 <h1><%=@game.player_1.name.upcase%>!</h1>
-<h3>Please select your weapon...</h3>
-    <form action="/weapon" method="post">
-      <input type="submit" value="Rock" name="weapon">
-      <input type="submit" value="Paper" name="weapon">
-      <input type="submit" value="Scissors" name="weapon">
-    </form>
+<h2>Please select your weapon...</h3>
+<div class="container">
+  <form action="/weapon" method="post">
+    <input type="submit" value="Rock" name="weapon">
+    <input type="submit" value="Paper" name="weapon">
+    <input type="submit" value="Scissors" name="weapon">
+  </form>
+</div>

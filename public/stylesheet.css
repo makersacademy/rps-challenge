@@ -1,9 +1,46 @@
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+}
 body {
-  background-color: #EAD7FF;
-  font-family: monospace;
+  background-color: #f2e6ff;
 }
 
 h1 {
-  color: lightslategray;
-  margin-left: 20px;
+  font-size: 60px;
+  font-family: 'Fredoka One', "Courier New", monospace;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: rgb(71, 80, 78);
+  padding: 0.25em 0.5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+h2 {
+  color: rgb(18, 57, 44);
+  font-family: 'Fredoka One', "Courier New", monospace;
+  text-transform: uppercase;
+  font-size: 30px;
+  text-align: center;
+  font-weight: normal;
+  padding: 0.25em 0.5em;
+}
+
+input[type="submit"] {
+  font-size: 40px;
+  font-family: 'Fredoka One', "Courier New", monospace;
+  letter-spacing: 10px;
+  text-align: center;
+  background-color: black;
+  color: whitesmoke;
+  border: 0;
+  text-transform: uppercase; 
+  padding: 0.25em 0.5em;
+  
+}
+
+input[type="text"] {
+
+
 }
