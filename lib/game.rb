@@ -3,9 +3,9 @@
 require './lib/player'
 
 class Game
-  attr_reader :players, :declaration
+  attr_reader :players, :declaration, :players_num, :current_player, :other_player
 
-  def initialize(player1, player2)
+  def initialize(player1, player2, players_num)
     @winmap = {
       :rock => :scissors,
       :scissors => :paper,
@@ -13,11 +13,19 @@ class Game
     }
     @players = [player1, player2]
     @winner = nil
+    @current_player = @players[0]
+    @other_player = @players[1]
     @declaration = ""
+    @players_num = players_num
   end
 
   def declaration
     @declaration
+  end
+
+  def switch_turn
+    @current_player = player_2
+    @other_player = player_1
   end
 
   def winner

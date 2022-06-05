@@ -10,7 +10,7 @@ describe Game do
     it 'declares Player 1 wins' do
       expect(player1).to receive(:choice).and_return(:rock).at_most(3).times
       expect(player2).to receive(:choice).and_return(:scissors).at_most(3).times
-      game = Game.new(player1, player2)
+      game = Game.new(player1, player2, 1)
       game.match
       expect(game.winner).to eq player1
       expect(game.declaration).to eq "You Win!"
@@ -19,14 +19,14 @@ describe Game do
     it 'declares Player 1 loses' do
       expect(player1).to receive(:choice).at_most(3).times.and_return(:rock)
       expect(player2).to receive(:choice).at_most(3).times.and_return(:paper)
-      game = Game.new(player1, player2)
+      game = Game.new(player1, player2, 1)
       game.match
       expect(game.winner).to eq player2
       expect(game.declaration).to eq "You Lose!"
     end
 
     it 'declares the game was tie' do
-      game = Game.new(player1, player2)
+      game = Game.new(player1, player2, 1)
       expect(player1).to receive(:choice).and_return(:rock).at_most(3).times
       expect(player2).to receive(:choice).and_return(:rock).at_most(3).times
       game.match

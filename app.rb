@@ -5,6 +5,7 @@ require 'sinatra/base'
 require 'sinatra/reloader' # if development?
 require './lib/game'
 require './lib/player'
+require './lib/multi'
 
 
 class RPS < Sinatra::Base
@@ -17,9 +18,8 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    player_1 = Player.new(params[:player_1_name])
-    player_2 = Player.new("Computer")
-    $game = Game.new(player_1, player_2)
+    multi = Multi.new(params[:player_1_name], params[:player_2_name], params[:players_num].to_i)
+    $game = multi.game_creation
     @game = $game
     erb(:game)
   end
