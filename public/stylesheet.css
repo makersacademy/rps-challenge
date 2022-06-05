@@ -1,5 +1,6 @@
 * {
   text-decoration: none;
+  box-sizing: border-box;
 }
 body {
   background-color: #f2e6ff;
