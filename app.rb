@@ -1,7 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
-
+require './lib/computer'
+require './lib/final_result'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -41,7 +42,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game' do 
+    @username = session[:username]
+    @player_option = session[:player].option
+    session[:computer] = Computer.new(["Rock", "Paper", "Scissors"])
+    @computer_option = session[:computer].option
+
     
+    erb :game
   end 
 
   run! if app_file == $0
