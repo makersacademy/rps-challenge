@@ -18,11 +18,7 @@ class Game
     end
 
     def select_type
-      if single_player
-        :game
-      else
-        :game_multi
-      end
+      single_player ? :game : :game_multi
     end
 
     def result
