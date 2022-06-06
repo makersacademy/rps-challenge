@@ -1,5 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/turn.rb'
+require_relative './lib/opponent.rb'
+
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
