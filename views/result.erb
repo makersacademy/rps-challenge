@@ -1,0 +1,9 @@
+<h1>You played <%=@tool_selected%></h1>
+<h1>The computer played <%= @comp_selected %></h1>
+<%if @tool_selected == @comp_selected %>
+<h1>It is a draw</h1>
+<%elsif @tool_selected == "paper" && @comp_selected == "rock" || @tool_selected == "rock" && @comp_selected == "scissors" || @tool_selected == "scissors" && @comp_selected == "paper" %>
+<h1>You have won <%= @name %></h1>
+<% else %>
+<h1>Oh no! Better luck next time <%= @name %> padawan</h1>
+<% end %>
