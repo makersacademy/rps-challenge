@@ -3,7 +3,7 @@
 require './lib/player'
 
 class Game
-  attr_reader :players, :declaration, :players_num, :current_player, :other_player, :turn
+  attr_reader :declaration, :players_num, :current_player, :other_player, :turn, :player_1, :player_2, :winner
 
   def initialize(player1, player2, players_num)
     @winmap = {
@@ -11,37 +11,19 @@ class Game
       :scissors => :paper,
       :paper => :rock
     }
-    @players = [player1, player2]
     @winner = nil
-
+    @player_1 = player1
+    @player_2 = player2
     @turn = 1
-    @current_player = @players[0]
-    @other_player = @players[1]
-
-    @declaration = ""
+    @current_player = @player_1
+    @other_player = @player_2
     @players_num = players_num
-  end
-
-  def declaration
-    @declaration
   end
 
   def switch_turn
     @current_player = player_2
     @other_player = player_1
-    @turn = 2
-  end
-
-  def winner
-    @winner
-  end
-
-  def player_1
-    @players[0]
-  end
-
-  def player_2
-    @players[1]
+    @turn += 1
   end
 
   def match
@@ -52,32 +34,22 @@ class Game
     else
       @winner = player_2
     end
-
-    if @winner == nil
-      @declaration = "It is a tie!"
-    elsif players_num == 2
-      @declaration = "#{@winner.name} wins!"
-    else
-      if @winner == player_1
-        @declaration = "You Win!"
-      else
-        @declaration = "You Lose!"
-      end
-    end
+    set_winning_declaration
   end
 
-  # private
+  private
 
-  # def pick_winner
-  #   if player_1.choice == player_2.choice
-  #     @winner = nil
-  #   elsif @winmap[player_1.choice] == player_2.choice
-  #     @winner = player_1
-  #     p "there #{@winner}"
-  #   else
-  #     @winner = player_2
-  #     p "here"
-  #   end
-  # end
+  def set_winning_declaration
+    @declaration = "It is a tie!" if @winner == nil
+    
+    if players_num == 2 && (@winner != nil)
+      @declaration = "#{@winner.name} wins!"
+    end
 
+    if @winner == player_1 && players_num == 1
+      @declaration = "You Win!"
+    elsif @winner == player_2 && players_num == 1
+      @declaration = "You Lose!"
+    end
+  end
 end

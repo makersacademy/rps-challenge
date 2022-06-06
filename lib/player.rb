@@ -13,10 +13,4 @@ class Player
     @choice = [:rock, :scissors, :paper].sample
     @choice
   end
-
-  # private 
-
-  # def throw
-  #   @choice = [:rock, :scissors, :paper].sample if @choice == nil
-  # end
 end

@@ -22,9 +22,7 @@ class Multi
   end
 
   def game_creation
-    self.set_players
-    game = Game.new(@player_1, @player_2, players_num)
-    return game
+    set_players
+    return game = Game.new(@player_1, @player_2, players_num)
   end
-
 end
