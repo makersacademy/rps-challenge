@@ -47,7 +47,9 @@ class RockPaperScissors < Sinatra::Base
     session[:computer] = Computer.new(["Rock", "Paper", "Scissors"])
     @computer_option = session[:computer].option
 
-    
+    $final_result = FinalResult.new
+    $final_result.calculate(@player_option, @computer_option)
+    @final_result = $final_result.winner
     erb :game
   end 
 
