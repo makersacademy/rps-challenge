@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 
 ruby '3.0.2'
 
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'rspec'
+gem 'capybara'
+
 group :production do
   gem 'sinatra'
 end
