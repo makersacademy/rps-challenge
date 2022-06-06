@@ -1,8 +1,7 @@
-$ git clone git@github.com:[USERNAME]/rps-challenge.git
+$ git clone git@github.com/Hafizalimi7/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup
-
 
 
 <!-- # RPS Challenge
