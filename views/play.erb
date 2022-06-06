@@ -1,0 +1,10 @@
+Hey <%= @player_1_name %> Let's Play Rock, Paper, Scissor!
+
+<p>Select Rock, Paper Or Scissor ?</p>
+<form action="/intro" method="post">
+  <label for="object1">
+    Pick
+    <input type="text" name="object1">
+  </label>
+  <input type="submit" value="Play">
+</form>
