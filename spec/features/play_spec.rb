@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+PLAY_SEED = 22131
 # As a marketeer
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
@@ -36,6 +36,15 @@ feature 'playing a game' do
     message = find(:css, "#opponent").text
 
     expect(possible_messages).to include message
+  end
+
+  # As a marketeer
+  # So I can play a game
+  # I want the game to choose a random option
+  scenario 'game chooses a random option"' do
+    srand(PLAY_SEED)
+    click_button 'Rock'
+    expect(page).to have_content 'Opponent chose Scissors!'
   end
 
   def possible_messages
