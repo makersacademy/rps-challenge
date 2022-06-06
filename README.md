@@ -42,12 +42,7 @@ Then place this into your browser and you're ready to play the game:
  ```bash
 http://localhost:9292
 ```
-
-<!-- ## Usage
-???
-
-## Project status
-??? -->
+Once you're on the web app, enter your name and pick between Rock, Paper or Scissors and find out if you've beat the computer! Have fun!
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
