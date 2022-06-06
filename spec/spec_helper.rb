@@ -10,6 +10,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'features/web_helpers.rb'
 # require 'features/web_helpers'
 
 # Tell Capybara to talk to BookmarkManager
