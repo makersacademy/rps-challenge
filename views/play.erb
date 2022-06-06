@@ -14,6 +14,23 @@ form {
 
 <p> Are you ready to play? </p>
 
+<p><b>Please choose one:<b></p>
+<%# Rock button %>
+<form action="/rock" method="POST" id="option">
+<button class="inner" type="submit" value="Rock" name="player_option">Rock</button>
+</form>
 
+<%# Paper button %>
+<form action="/paper" method="POST" id="option">
+<button class="inner" type="submit" value="Paper" name="player_option">Paper</button>
+</form>
+
+<%# Scissors button %>
+<form action="/scissors" method="POST" id="option">
+<button class="inner" type="submit" value="Scissors" name="player_option">Scissors</button>
+</form>
+
+</body>
+</html>
 
 
