@@ -1,0 +1,17 @@
+<!-- views/game.erb -->
+
+<p><%= @game.current_player.name %>, please choose your choice.</p>
+<p>Your opponent's name: <%= @game.other_player.name %></p>
+
+<div class="choice">
+
+<form action="/player_2" method="get">
+  <input type="radio" id="rock" name="throw" value="rock">
+  <label for="rock">ROCK!</label><br>
+  <input type="radio" id="paper" name="throw" value="paper">
+  <label for="paper">PAPER!</label><br>
+  <input type="radio" id="scissors" name="throw" value="scissors">
+  <label for="scissors">SCISSORS!</label><br>
+<input type="submit" value="Throw!">
+</form>
+</div>

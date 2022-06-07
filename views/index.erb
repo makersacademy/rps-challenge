@@ -1,0 +1,22 @@
+<!-- views/index.erb -->
+
+<h1>Welcome to the Ultimate Rock Paper Scissors Game!</h1>
+
+<div class="PlayerDetails">
+  <p>Before we start...</p>
+  <form action="/game" method="post">
+    <p>Please choose number of players:</p>
+    <p><input type="radio" id="1" name="players_num" value="1">
+      <label for="rock">1 Player</label><br>
+    <input type="radio" id="2" name="players_num" value="2">
+      <label for="paper">2 Players</label></p>
+
+    <p><label for="player_1_name">Enter Player 1's name: 
+      <input type="text" name="player_1_name">
+    </label>
+    <label for="player_2_name">Enter Player 2's name: 
+      <input type="text" name="player_2_name">
+    </label></p>
+    <input type="submit" value="Let's Go!">
+  </form>
+</div>
