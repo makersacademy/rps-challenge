@@ -1,4 +1,10 @@
-# RPS Challenge
+$ git clone git@github.com/Hafizalimi7/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+
+
+<!-- # RPS Challenge
 
 Instructions
 -------
@@ -83,4 +89,4 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens! -->
