@@ -1,4 +1,24 @@
-# RPS Challenge
+# Rock paper scissors
+
+This is a fun app made during week 3 of Makers Academy. The user/s can play a single player or multiplayer game of rock paper scissors
+
+_Tech used_
+
+Languages: Ruby, CSS, HTML
+Framework: Sinatra
+Testing: RSpec, Capybara
+
+_Notes on design_
+
+To make the multi-player more secretive, I used CSS to hide player one's weapon selection after they had clicked on it.
+
+![Landing page](./docs/welcome.png?raw=true "Landing page")
+![Choose weapon multi-player page](./docs/choose.png?raw=true "Choose weapon multi-player page")
+![First player selected](./docs/selected.png?raw=true "First player seleted")
+![Result](./docs/wins.png?raw=true "Result")
+
+# CHALLENGE INSTRUCTIONS
+
 
 Instructions
 -------

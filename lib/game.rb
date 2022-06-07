@@ -26,7 +26,7 @@ class Game
         :win
       elsif player_1.weapon == RULES[player_2.weapon]
         :lose
-     else
+      else
         :draw
       end
     end
