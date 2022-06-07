@@ -3,7 +3,7 @@
 require './lib/player'
 require './lib/game'
 
-class Multi
+class Multiplayer
   attr_reader :players_num
   
   def initialize(player_1_name, player_2_name, players_num)

@@ -5,7 +5,7 @@ require 'sinatra/base'
 require 'sinatra/reloader' # if development?
 require './lib/game'
 require './lib/player'
-require './lib/multi'
+require './lib/multiplayer'
 
 
 class RPS < Sinatra::Base
@@ -18,12 +18,13 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    multi = Multi.new(params[:player_1_name], params[:player_2_name], params[:players_num].to_i)
-    $game = multi.game_creation
+    multiplayer = Multiplayer.new(params[:player_1_name], params[:player_2_name], params[:players_num].to_i)
+    $game = multiplayer.game_creation
     @game = $game
     erb(:game)
   end
 
+  # Can this part be refactored? Trying to reuse the game.erb for multiplayer, but the controller grew complex
   get '/player_2' do
     if $game.players_num == 1
       $game.player_1.choice = params[:throw].to_sym
