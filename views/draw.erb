@@ -1,0 +1,8 @@
+<h1>It's a draw!</h1>
+<div class="container">
+<h2><%=@game.player_1.name.capitalize%> selected <%=@game.player_1.weapon.capitalize%>...<%=@game.player_2.name.capitalize%> selected <%=@game.player_2.weapon.capitalize%></h2>
+<p>Play again?</p></br>
+  <form action="/play" >
+        <input type="submit" value="Yes, please">
+  </form>
+</div>

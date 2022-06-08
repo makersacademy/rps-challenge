@@ -1,0 +1,38 @@
+<h1><%=@game.player_1.name.upcase%> VS <%=@game.player_2.name.upcase%>!</h1>
+<div class="container">No peeking!</div>
+<div class="container">
+  <form action="/weapon_multi" method="post">
+    <div class="child">
+      <fieldset id="weapon">
+        <h2><%=@game.player_1.name.capitalize%>, please select your weapon...</h2>
+        <div class="radio_bar">
+          <input type="radio" value="Rock" name="weapon" id="rock1" class="radio"required>
+          <label for="rock1">Rock</label>
+          <input type="radio" value="Paper" name="weapon" id="paper1" class="radio">
+          <label for="paper1">Paper</label>
+          <input type="radio" value="Scissors" name="weapon" id="scissors1" class="radio">
+          <label for="scissors1">Scissors</label>
+          <div class="cover">Selected</div>
+        </div>
+       </fieldset> 
+    </div>
+    <div class="child">
+      <fieldset id="weapon2" required>
+        <h2><%=@game.player_2.name.capitalize%>, please select your weapon...</h2>
+        <div class="radio_bar">
+          <input type="radio" value="Rock" name="weapon2" id="rock2" class="radio" required>
+          <label for="rock2">Rock</label>
+          <input type="radio" value="Paper" name="weapon2" id="paper2" class="radio">
+          <label for="paper2">Paper</label>
+          <input type="radio" value="Scissors" name="weapon2" id="scissors2" class="radio">
+          <label for="scissors2">Scissors</label>
+          <div class="cover">Selected</div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="multi_submit">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+

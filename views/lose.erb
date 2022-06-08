@@ -1,0 +1,12 @@
+<%if @game.single_player%>
+  <h1>You lose!</h1>
+<%else%>
+  <h1><%=@game.player_2.name.capitalize%> wins!</h1>
+<%end%>
+<div class="container">
+<h2><%=@game.player_1.name.capitalize%> selected <%=@game.player_1.weapon.capitalize%>...<%=@game.player_2.name.capitalize%> selected <%=@game.player_2.weapon.capitalize%></h2>
+<p>Play again?</p></br>
+  <form action="/play" >
+        <input type="submit" value="Yes, please">
+  </form>
+</div>

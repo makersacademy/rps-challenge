@@ -1,0 +1,110 @@
+* {
+  text-decoration: none;
+}
+
+body {
+  background-color: #f2e6ff;
+  font-family: 'Josefin Sans', monospace;
+  font-size: 30px;
+  color: lightslategray;
+}
+
+h1 {
+  font-size: 60px;
+  font-family: 'Oleo Script', monospace;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: #54ddc1;
+  padding: 0.25em 0.5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+h2 {
+  color: rgb(71, 80, 78);
+  font-family: 'Oleo Script', monospace;
+  font-size: 30px;
+  text-align: center;
+  font-weight: normal;
+  padding: 0.25em 0.5em;
+}
+
+input[type="submit"] {
+  font-size: 30px;
+  font-family: 'Oleo Script', monospace;
+  text-align: center;
+  background-color: #54ddc1;
+  color: whitesmoke;
+  border: 0;
+  padding: 0.25em 0.5em;  
+}
+
+input[type="text"] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', monospace;
+  font-size: 20px;
+}
+
+.container {
+  text-align: center;
+  padding: 30px
+}
+
+.child {
+  position: relative;
+  display: inline-block;
+  padding: 60px;
+  text-align: center;
+}  
+
+.radio_bar {
+  position: relative;
+}
+
+.radio_bar input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  border: 0;
+}
+
+.radio_bar label {
+  display: inline-block;
+  font-size: 30px;
+  font-family: 'Oleo Script', monospace;
+  text-align: center;
+  background-color: #54ddc1;
+  color: whitesmoke;
+  border: 0;
+  padding: 7px 
+}
+
+.radio_bar input[type="radio"]:checked + label {
+  color:rgb(71, 80, 78);
+}
+
+.radio_bar input[type="radio"]:checked ~ .cover {
+  visibility: visible;
+}
+
+.cover {
+  background-color: #f2e6ff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+}
+
+.multi_submit {
+  text-align: center;
+  padding: 30px
+}
+
+fieldset {
+  border: 0px;
+}
