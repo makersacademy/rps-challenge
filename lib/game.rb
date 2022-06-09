@@ -1,4 +1,7 @@
 class Game
+
+  attr_reader :player_choice, :computer_choice
+
   def initialize(player_choice, computer_choice)
     @player_choice = player_choice
     @computer_choice = computer_choice
@@ -6,19 +9,19 @@ class Game
 
   def game_result
     if @player_choice == "Rock" && @computer_choice == "Scissors"
-      return "Win"
+      return :win
     elsif @player_choice == "Rock" && @computer_choice == "Paper"
-      return "Lose"
+      return :lose
     elsif @player_choice == "Paper" && @computer_choice == "Rock"
-      return "Win"
+      return :win
     elsif @player_choice == "Paper" && @computer_choice == "Scissors"
-      return "Lose"
+      return :lose
     elsif @player_choice == "Scissors" && @computer_choice == "Paper"
-      return "Win"
+      return :win
     elsif @player_choice == "Scissors" && @computer_choice == "Rock"
-      return "Lose"
+      return :lose
     else
-      return "Draw"
+      return :draw
     end
   end
 end

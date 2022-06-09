@@ -32,6 +32,7 @@ class RockPaper < Sinatra::Base
   get '/show_choice' do
     @player_choice = session[:player_choice]
     @computer_choice = ComputerChoice.new.get_choice
+    @game = Game.new(@player_choice, @computer_choice)
     erb :choice
   end
   
