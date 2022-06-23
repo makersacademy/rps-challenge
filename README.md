@@ -7,21 +7,21 @@
 ```
 git clone https://github.com/Farzan-I/rps-challenge.git
 ```
-* Run _bundle_ to install all the gemfiles 
-* Run _rackup_ in the directory, then go to your desired browser and enter:
+* Run `bundle` to install all the gemfiles 
+* Run `rackup` in the directory, then go to your desired browser and enter:
 ```
 localhost:9292
 ```
-* Enter your name, click on "Let's play!" and play until your heart desires!
+* Enter your name (if you don't you can't continue), click on "Let's play!" and play until your heart desires!
 
 <br>
 
 ## Task
-------
+-------
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+The Makers Academy Marketing Array ( **MAMA** ) have asked to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+The task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ```
 As a marketeer
@@ -41,17 +41,6 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-[You may find this guide to setting up a new Ruby web project helpful.](https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md)
-
-## Bonus level 1: Multiplayer - **_Did not complete_**
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard - **_Did not complete_**
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
 ## Basic Rules
 -----
 
@@ -65,7 +54,28 @@ In code review we'll be hoping to see:
 * High [Test coverage](https://github.com/makersacademy/course/blob/main/pills/test_coverage.md) (>95% is good)
 * The code is elegant: every class has a clear responsibility, methods are short etc.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this at this moment.
+Reviewers can potentially be using this [code review rubric](docs/review.md).
+
+## Demo
+-------
+### Home page
+![home_page](public/images/home.png)
+
+### Home page error
+![home_page_error](public/images/home_error.png)
+
+### Battleground
+![battleground](public/images/battle_ground.png)
+
+### Battleground win
+![battleground_win](public/images/battleground_win.png)
+
+### Battleground loss
+![battleground_win](public/images/battleground_loss.png)
+
+### Battleground draw
+![battleground_draw](public/images/battleground_draw.png)
+
 
 ## Conclusion
 -----
@@ -85,3 +95,11 @@ Reviewers will potentially be using this [code review rubric](docs/review.md).  
 * Make the buttons more appealing and less like 1990's/2000's style by using capybara properly and javascript with CSS
 * Make the game two player by allowing two players to entrer their names on the home page and also select their weapons in the play area
 * Incorporate the 'rock, paper, scissors, lizard, spock' and make the game more complicated and appealing
+
+## Bonus level 1: Multiplayer - **_Did not complete_**
+
+Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+
+## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard - **_Did not complete_**
+
+Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
