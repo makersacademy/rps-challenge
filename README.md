@@ -6,7 +6,7 @@
 - run ```bundler``` to install dependencies
 - run ```rackup```
 - navigate to the port specified by rackup
-- enjoy!
+- choose wisely...
 
 ## Further steps
 - a score-keeper
