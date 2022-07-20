@@ -8,6 +8,11 @@
 - navigate to the port specified by rackup
 - enjoy!
 
+## Further steps
+- a score-keeper
+- a login, with a database to keep scores
+- different images/messages depending on what the outcome is
+
 ## Task
 
 Knowing how to build web applications is getting us almost there as web developers!
