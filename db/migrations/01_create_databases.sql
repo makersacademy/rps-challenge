@@ -1,0 +1,3 @@
+CREATE DATABASE rps;
+
+CREATE DATABASE rps_test;

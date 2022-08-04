@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
 require './lib/game'
+require './database_connection_setup'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
