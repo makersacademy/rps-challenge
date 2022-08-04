@@ -1,3 +1,28 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.rock-button {
+  margin: 0px auto;
+  width: 400;
+  height: 265; 
+  overflow: hidden; 
+  border: 2px solid black;
+}
+
 h1 {
   text-align: center; font-family: Bangers, arial; margin: 0}
 h2 {
@@ -13,3 +38,7 @@ form {
 form:hover {
   opacity: 0.7;
 }
+
+
+
+

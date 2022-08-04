@@ -1,27 +1,32 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/play.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cormorant+Garamond:wght@300&family=Dongle:wght@300;400;700&family=IBM+Plex+Serif:wght@100;300&family=Julius+Sans+One&family=Prata&family=Russo+One&family=Varela+Round&display=swap" rel="stylesheet">
-<head>
-<link rel="stylesheet" type="text/css" href="/stylesheets/play.css">
 </head>
 <body>
-
-<h1>Welcome, <%= @player_name %></h1><br>
-<h2>Choose wisely.</h2>
-<form action='/battle' method='post'>
-  <input type='image' src='https://source.unsplash.com/QxjEi8Fs9Hg' width='400'
-  border='2' name='player_choice' type='submit' id='rock'></>
-  <input type="hidden" name="player_choice" value="rock" />
-  </form>
-<form action='/battle' method='post'>
-<input type='image' src='https://source.unsplash.com/RyrFRsVoe2Q' width='400'
-border='2' name='player_choice' type='submit' id='paper'></>
-  <input type="hidden" name="player_choice" value="paper" />
-  </form>
-<div style="margin: 0px auto; width: 400; height: 267; overflow: hidden; border: 2px solid black">
-  <form action='/battle' method='post'>
-<input type='image' src='https://source.unsplash.com/c18q3myyHLU' width='400'
-name='player_choice' type='submit' id='scissors'></>
-  <input type="hidden" name="player_choice" value="scissors" />
-  </form>
-</div>
+  <div class="welcome-container">
+    <h1>Welcome, <%= @player_name %></h1><br>
+    <h2>Choose wisely.</h2>
+  </div>
+  <div class="buttons-container">
+    <div class="rock-button">
+      <form action='/battle' method='post'>
+        <input type='image' src='https://source.unsplash.com/QxjEi8Fs9Hg' width='400' name='player_choice' type='submit' id='rock'></>
+        <input type="hidden" name="player_choice" value="rock" />
+      </form>
+    </div>
+    <div class="rock-button">
+      <form action='/battle' method='post'>
+        <input type='image' src='https://source.unsplash.com/RyrFRsVoe2Q' width='400' name='player_choice' type='submit' id='paper'></>
+        <input type="hidden" name="player_choice" value="paper" />
+      </form>
+    </div>
+    <div class="rock-button">
+        <form action='/battle' method='post'>
+          <input type='image' src='https://source.unsplash.com/c18q3myyHLU' width='400' name='player_choice' type='submit' id='scissors'></>
+          <input type="hidden" name="player_choice" value="scissors" />
+        </form>
+    </div>
+  </div>
+</body>
