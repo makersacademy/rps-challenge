@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Cormorant+Garamond:wght@300&family=Dongle:wght@300;400;700&family=IBM+Plex+Serif:wght@100;300&family=Julius+Sans+One&family=Prata&family=Russo+One&family=Varela+Round&display=swap');
+
 body {
   display: flex;
   flex-direction: column;
@@ -24,10 +26,10 @@ body {
 }
 
 h1 {
-  text-align: center; font-family: Bangers, arial; margin: 0}
+  text-align: center; font-family: 'Bangers', arial; margin: 0}
 h2 {
   text-align: center; 
-  font-family: Bangers, arial;
+  font-family: 'Bangers', arial;
 }
 div {
   text-align: center;
