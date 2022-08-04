@@ -10,7 +10,7 @@ feature 'allows player to enter their name' do
     expect(page).to have_button('Submit name')
   end
 
-  scenario 'player is taken to a new page to start the game' do
+  scenario 'player is taken to a new page to start the round' do
     sign_in
     expect(current_path).to eq('/play')
   end

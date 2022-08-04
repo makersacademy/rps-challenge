@@ -1,7 +1,7 @@
 require_relative 'computer'
 require 'pg'
 
-class Game
+class Round
 
   WEAPONS = [:rock, :paper, :scissors]
   attr_reader :player, :engine, :computer_weapon, :computer, :player_weapon

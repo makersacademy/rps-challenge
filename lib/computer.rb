@@ -1,8 +1,8 @@
-require_relative 'game'
+require_relative 'round'
 
 class Computer
   def weapon
-    Game::WEAPONS.sample
+    Round::WEAPONS.sample
     # syntax for referring to a constant in another class
   end
 end

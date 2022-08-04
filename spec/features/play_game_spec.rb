@@ -3,7 +3,7 @@ require_relative '../../app'
 
 Capybara.app = RockPaperScissors
 
-feature 'allows player to play a game of RockPaperScissors' do
+feature 'allows player to play a round of RockPaperScissors' do
   scenario 'the player can choose from three buttons' do
     sign_in
     expect(page).to have_xpath('/html/body/form[1]/input[1]')

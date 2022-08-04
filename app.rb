@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
-require './lib/game'
+require './lib/round'
 require './database_connection_setup'
 
 class RockPaperScissors < Sinatra::Base
@@ -33,9 +33,9 @@ class RockPaperScissors < Sinatra::Base
   post '/battle' do
     @player = $player
     @player_weapon = @player.select_weapon(params[:player_choice])
-    game = Game.new(@player_weapon)
-    @message = game.engine
-    @computer_weapon = game.computer_weapon
+    round = Round.new(@player_weapon)
+    @message = round.engine
+    @computer_weapon = round.computer_weapon
     erb :battle
   end
 
