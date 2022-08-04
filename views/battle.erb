@@ -2,25 +2,12 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
 </head>
 
-<style>
-  body {
-  <!-- margin: 0 auto; -->
-  text-align: center;
-  width: 100vw;
-  background-image: url("https://source.unsplash.com/h4elZPxUXLU");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: 100vw;
-}
-h1 {font-family: Bangers, arial;
-text-align: center;}
-</style>
-<body>
+<body class="results-page">
 
 <h1>You chose <%= @player_weapon %>...<br></h1>
 <h1>Computer chose <%= @computer_weapon %>...<br><h1>
 <h1><%= @message %><h1>
 <form action='/play_again' method='post'>
-  <button type="submit" style="padding: 5px 10px">Have another go?</button>
+  <button type="submit">Have another go?</button>
 </form>
 </body>
