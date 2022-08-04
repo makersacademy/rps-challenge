@@ -8,6 +8,26 @@
 - navigate to the port specified by rackup
 - choose wisely...
 
+
+## Enter your name
+
+
+
+https://user-images.githubusercontent.com/98267087/182941868-333978af-56bf-47ae-a9c7-510ac6216a22.mov
+
+## Choose an option...
+
+https://user-images.githubusercontent.com/98267087/182941875-07bc66aa-8a57-423f-90fa-2e8c4dab266f.mov
+
+## Choose another option...
+
+https://user-images.githubusercontent.com/98267087/182941881-57eba3fc-45fd-4988-84dc-6498bbdd9ec8.mov
+
+## Choose another option...
+
+https://user-images.githubusercontent.com/98267087/182941887-f2594826-201f-49d5-aff8-25ef4432662f.mov
+
+
 ## Further steps
 - a score-keeper
 - a login, with a database to keep scores
