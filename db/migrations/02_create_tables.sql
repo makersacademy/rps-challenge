@@ -1,4 +1,6 @@
-CREATE TABLE scores (id SERIAL PRIMARY KEY, won BOOLEAN, drew BOOLEAN, lost BOOL);
+CREATE TABLE scores (id SERIAL PRIMARY KEY, won INT, drew INT, lost INT);
+INSERT INTO scores (won, drew, lost) VALUES(0, 0, 0);
+
 
 -- CREATE TABLE users (id SERIAL PRIMARY KEY, username VARCHAR(30));
 

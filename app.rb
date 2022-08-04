@@ -27,6 +27,7 @@ class RockPaperScissors < Sinatra::Base
     $player = Player.new(params[:player])
     @player_name = $player.name
     erb :play_again
+    
   end
 
   post '/battle' do
