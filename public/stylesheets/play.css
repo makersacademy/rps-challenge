@@ -1,0 +1,15 @@
+h1 {
+  text-align: center; font-family: Bangers, arial; margin: 0}
+h2 {
+  text-align: center; 
+  font-family: Bangers, arial;
+}
+div {
+  text-align: center;
+}
+form {
+  text-align: center;
+}
+form:hover {
+  opacity: 0.7;
+}
