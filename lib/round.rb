@@ -42,7 +42,7 @@ class Round
     elsif @player_weapon == :paper && @computer_weapon == :scissors
       DatabaseConnection.query("UPDATE scores SET lost = lost + 1;")
       @game.increment_lost
-      "You did not choose wisely."
+      "You did not choose wisely"
     end
   end
 end
