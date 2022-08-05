@@ -37,8 +37,16 @@ body {
 }
 
 h1 {
-  text-align: center; font-family: 'Bangers', arial; margin: 0}
+  text-align: center; 
+  font-family: 'Bangers', arial; margin: 0
+}
+
 h2 {
+  text-align: center; 
+  font-family: 'Bangers', arial;
+}
+
+h3 {
   text-align: center; 
   font-family: 'Bangers', arial;
 }

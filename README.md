@@ -7,6 +7,7 @@
 - run ```rackup```
 - navigate to the port specified by rackup
 - choose wisely...
+- (the game will keep track of your score - videos to follow)
 
 
 ## Enter your name
@@ -29,7 +30,6 @@ https://user-images.githubusercontent.com/98267087/182941887-f2594826-201f-49d5-
 
 
 ## Further steps
-- a score-keeper
 - a login, with a database to keep scores
 - different images/messages depending on what the outcome is
 
