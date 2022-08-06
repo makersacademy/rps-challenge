@@ -7,11 +7,9 @@ describe Round do
   
 
   describe 'Player chooses paper' do
-    subject(:round) { Round.new(player_weapon)}
+    subject(:round) { Round.new(player_weapon, Game.new)}
     let(:player_weapon) { 'paper' }
-    # let(:computer) { double :computer }
     let(:computer_weapon) { double :computer_weapon }
-    # let(:game) {double :game}
       it 'paper v paper draws' do
         srand(1) #returns computer weapon as paper
         # allow(round).to receive(:player_weapon).and_return('paper')
