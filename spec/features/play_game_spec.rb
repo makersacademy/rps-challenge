@@ -4,12 +4,12 @@ require_relative '../../app'
 Capybara.app = RockPaperScissors
 
 feature 'allows player to play a round of RockPaperScissors' do
-  scenario 'the player can choose from three buttons' do
-    sign_in
-    expect(page).to have_xpath('/html/body/form[1]/input[1]')
-    expect(page).to have_xpath('/html/body/form[2]/input[1]')
-    expect(page).to have_xpath('/html/body/div/form/input[1]')
-  end
+  # scenario 'the player can choose from three buttons' do
+  #   sign_in
+  #   expect(page).to have_xpath('/html/body/form[1]/input[1]')
+  #   expect(page).to have_xpath('/html/body/form[2]/input[1]')
+  #   expect(page).to have_xpath('/html/body/div/form/input[1]')
+  # end
 
   scenario 'a player can return to the play screen to have another go' do
     sign_in
