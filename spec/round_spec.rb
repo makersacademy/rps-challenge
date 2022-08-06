@@ -13,21 +13,21 @@ describe Round do
       it 'paper v paper draws' do
         srand(1) #returns computer weapon as paper
         # allow(round).to receive(:player_weapon).and_return('paper')
-        # allow(round).to receive(:computer_weapon).and_return('paper')
+        allow(round).to receive(:computer_weapon)
         expect(subject.engine).to eq('draw')
       end
 
     it 'paper beats rock' do
       srand(2) #returns computer weapon as rock
       # allow(round).to receive(:player_weapon).and_return('paper')
-      # allow(round).to receive(:computer_weapon).and_return('paper')
+      allow(round).to receive(:computer_weapon)
       expect(subject.engine).to eq('You chose wisely')
     end
 
     it 'paper loses to scissors' do
       srand(3) #returns computer weapon as scissors
       # allow(round).to receive(:player_weapon).and_return('paper')
-      # allow(round).to receive(:computer_weapon).and_return('paper')
+      allow(round).to receive(:computer_weapon)
       expect(subject.engine).to eq('You did not choose wisely')
     end
   end
