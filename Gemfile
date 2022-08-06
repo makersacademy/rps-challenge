@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '3.0.2'
+ruby '3.0.0'
 
-gem 'sinatra'
-gem 'sinatra-contrib'
-gem 'webrick'
+# gem 'sinatra'
+# gem 'sinatra-contrib'
+# gem 'webrick'
+gem 'puma'
 
 group :test do
   gem 'capybara'
@@ -21,4 +22,8 @@ group :development, :test do
   gem 'rack'
   gem 'webrick'
   gem 'launchy'
+end
+
+group :production do
+  gem 'pg'
 end
