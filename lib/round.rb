@@ -7,6 +7,10 @@ class Round
   WEAPONS = [:rock, :paper, :scissors]
   attr_reader :player, :engine, :computer_weapon, :computer, :player_weapon, :game
 
+#branch off and put test improvement there, then revert this back
+  #remember to add game back into intialize, uncomment out the stuff below, and who 
+#even knows what to do with the spec
+
   def initialize(player_weapon, computer = Computer.new, game)
     @player_weapon = player_weapon.to_sym
     @computer = computer
@@ -42,7 +46,7 @@ class Round
     elsif @player_weapon == :paper && @computer_weapon == :scissors
       DatabaseConnection.query("UPDATE scores SET lost = lost + 1;")
       @game.increment_lost
-      "You did not choose wisely"
+      "You did not choose wisely."
     end
   end
 end
