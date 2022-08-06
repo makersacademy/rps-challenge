@@ -1,13 +1,15 @@
 # RPS Challenge
 
-## How to play
+# <a href="https://rock-paper-spiegl.herokuapp.com/">Play the deployed app here!!!</a> 
+
+### If you'd still rather play it locally, do the following:
 
 - clone this repo
 - run ```bundler``` to install dependencies
 - run ```rackup```
 - navigate to the port specified by rackup
 - choose wisely...
-- (the game will keep track of your score - videos to follow)
+- (the game keeps track of your score - updated videos to follow)
 
 
 ## Enter your name
