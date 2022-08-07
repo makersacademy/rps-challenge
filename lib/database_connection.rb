@@ -1,3 +1,4 @@
+require_relative 'round'
 require 'pg'
 
 class DatabaseConnection
