@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 ruby '3.0.0'
 
-# gem 'sinatra'
-# gem 'sinatra-contrib'
-# gem 'webrick'
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'webrick'
 gem 'puma'
 
 group :test do
