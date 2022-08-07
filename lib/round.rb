@@ -1,6 +1,6 @@
 require_relative 'computer'
 require_relative 'game'
-# require 'pg'
+require 'pg'
 
 class Round
 
