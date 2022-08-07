@@ -1,6 +1,7 @@
 require_relative 'computer'
 require_relative 'game'
 require 'pg'
+require_relative 'database_connection'
 
 class Round
 
