@@ -1,7 +1,7 @@
 # RPS Challenge
 
 # <a href="https://rock-paper-spiegl.herokuapp.com/">Play the deployed app here!!!</a> 
-## App currently down while I implement database - 8/8/22
+<!-- ## App currently down while I implement database - 8/8/22 -->
 
 ### If you'd still rather play it locally, do the following:
 
