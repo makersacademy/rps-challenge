@@ -1,16 +1,18 @@
 require_relative 'computer'
 require_relative 'game'
 require 'pg'
-require_relative 'database_connection'
+# require_relative 'database_connection'
 
 class Round
 
   WEAPONS = [:rock, :paper, :scissors]
   attr_reader :player, :engine, :computer_weapon, :computer, :player_weapon, :game
 
-#branch off and put test improvement there, then revert this back
-  #remember to add game back into intialize, uncomment out the stuff below, and who 
-#even knows what to do with the spec
+# player name is global, so you can presumably access it here and submit it to the database. Make a
+#table of players with a score set to 0. Keep a tally of their score too to give them a total.
+#it should start a new session automatically each time a player enters their name... then you 
+#can have a list of top-scorers, i.e. an option in the ORM that takes the table and orders it by highest
+#score...
 
   def initialize(player_weapon, computer = Computer.new, game)
     @player_weapon = player_weapon.to_sym
