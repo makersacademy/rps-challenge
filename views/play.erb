@@ -1,0 +1,32 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
+</head>
+<body>
+  <div class="welcome-container">
+    <h1>Welcome, <%= @player_name %></h1><br>
+    <h2>Choose wisely.</h2>
+    <h2>Won: <%= @game.won %>  Drew: <%= @game.drew %>  Lost: <%= @game.lost %></h2>
+    <h2></h2>
+    <h2></h2>
+  </div>
+  <div class="buttons-container">
+    <div class="rock-button">
+      <form action='/battle' method='post'>
+        <input type='image' src='https://source.unsplash.com/QxjEi8Fs9Hg' width='400' name='player_choice' type='submit' id='rock'></>
+        <input type="hidden" name="player_choice" value="rock" />
+      </form>
+    </div>
+    <div class="rock-button">
+      <form action='/battle' method='post'>
+        <input type='image' src='https://source.unsplash.com/RyrFRsVoe2Q' width='400' name='player_choice' type='submit' id='paper'></>
+        <input type="hidden" name="player_choice" value="paper" />
+      </form>
+    </div>
+    <div class="rock-button">
+        <form action='/battle' method='post'>
+          <input type='image' src='https://source.unsplash.com/c18q3myyHLU' width='400' name='player_choice' type='submit' id='scissors'></>
+          <input type="hidden" name="player_choice" value="scissors" />
+        </form>
+    </div>
+  </div>
+</body>

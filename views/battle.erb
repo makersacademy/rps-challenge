@@ -1,0 +1,13 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
+</head>
+
+<body class="results-page">
+
+<h1>You chose <%= @player_weapon %>...<br></h1>
+<h1>Computer chose <%= @computer_weapon %>...<br><h1>
+<h1><%= @message %><h1>
+<form action='/play_again' method='post'>
+  <button type="submit">Have another go?</button>
+</form>
+</body>
