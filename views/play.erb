@@ -1,0 +1,12 @@
+<h1 style="font-family: Tahoma" >
+Let's play <%= @player_name %>
+</h1>
+
+<h2 style="font-family: Tahoma">
+Make your choice, rock, paper or scissors? 
+Enter below.
+</h2>
+<form action="/choice" method="post">
+<input type="text" name="player_choice">
+<input type="submit" value="Submit">
+</form>
