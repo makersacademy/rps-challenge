@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="css/result.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+  <title>RPS - Play!</title> 
+</head>
+
+<body>
+  <h1>ROCK. PAPER. SCISSORS.</h1>
+  <h2><%=@game.player1.name%> - vs - <%=@game.computer.name%></h2> 
+  <div class="container">
+    <div class="item1">
+      <p><%=@game.player1.choice%></p>
+      <%# <img src="/images/rock.png" alt="ROCK"> %>
+    </div>
+    <div class='item2'>
+      <p class="result-message" id="showMe"><%=@result%></p>
+      <br>
+      <form action="/play">
+        <button class="play-again-btn" type="submit">Play Again</button>
+      </form>
+    </div>
+    <div class='item3'>
+      <p id="showMe"><%=@game.computer.choice%></p>
+    </div>
+  </div>
+</body>
